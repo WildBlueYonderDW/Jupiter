@@ -1,0 +1,73 @@
+// mwiii decomp prototype
+#using scripts\engine\utility.gsc;
+#using scripts\common\utility.gsc;
+#using script_5d813d45c6b1b1be;
+#using script_4c770a9a4ad7659c;
+#using scripts\common\vehicle.gsc;
+#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+
+#namespace namespace_a58b72ccaa110b13;
+
+// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x11a
+// Size: 0x59
+function init(var_5179c48492d1d2c2) {
+    function_efabc5ae0422de9e(var_5179c48492d1d2c2, 1, undefined, "sitting");
+    trigger_struct = getstruct(var_5179c48492d1d2c2.target, "targetname");
+    trigger_box = function_698513ab21b7913d(trigger_struct);
+    thread function_7de3883507acf30d(trigger_box, var_5179c48492d1d2c2);
+}
+
+// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Params 2, eflags: 0x6 linked
+// Checksum 0x0, Offset: 0x17a
+// Size: 0x7b
+function private function_7de3883507acf30d(trigger_box, var_5179c48492d1d2c2) {
+    var_5179c48492d1d2c2 endon("MRP_FREEBIRD_NOTIFY_SUCCESS");
+    while (isdefined(trigger_box)) {
+        data = trigger_box waittill("trigger");
+        if (data namespace_dbbb37eb352edf96::isvehicle()) {
+            if (istrue(data vehicle_isphysveh()) && !data vehicle_isonground()) {
+                driver = namespace_1fbd40990ee60ede::vehicle_occupancy_getdriver(data);
+                if (isplayer(driver)) {
+                    childthread function_d9710cca01e9c3a8(driver, data, var_5179c48492d1d2c2, trigger_box);
+                }
+            }
+        }
+    }
+}
+
+// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Params 4, eflags: 0x6 linked
+// Checksum 0x0, Offset: 0x1fc
+// Size: 0xa3
+function private function_d9710cca01e9c3a8(player, vehicle, var_5179c48492d1d2c2, trigger_box) {
+    player notify("MRP_FREEDBIRD_NOTIFY_COMPLETE_SINGLETON");
+    player endon("MRP_FREEDBIRD_NOTIFY_COMPLETE_SINGLETON");
+    /#
+        iprintlnbold("<unknown string>");
+    #/
+    while (isdefined(vehicle) && !vehicle vehicle_isonground()) {
+        wait(0.1);
+    }
+    driver = namespace_1fbd40990ee60ede::vehicle_occupancy_getdriver(vehicle);
+    if (isplayer(driver) && driver == player) {
+        /#
+            iprintlnbold("<unknown string>");
+        #/
+        trigger_box delete();
+        thread function_44bde26a853364c4(player, vehicle, var_5179c48492d1d2c2);
+        var_5179c48492d1d2c2 notify("MRP_FREEBIRD_NOTIFY_SUCCESS");
+    }
+}
+
+// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Params 3, eflags: 0x6 linked
+// Checksum 0x0, Offset: 0x2a6
+// Size: 0x37
+function private function_44bde26a853364c4(player, vehicle, var_5179c48492d1d2c2) {
+    function_568b8a57e0fa955f(var_5179c48492d1d2c2, player, undefined, vehicle);
+    namespace_8eedd8f6cf5d9f19::function_a4dfabe55dd4a652(player, undefined, "ob_jup_items_activity_mrp_freebird", 1);
+}
+

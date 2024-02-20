@@ -1,0 +1,184 @@
+// mwiii decomp prototype
+#using scripts\engine\utility.gsc;
+#using script_3214e6fcdce468a7;
+#using scripts\common\utility.gsc;
+#using script_4c770a9a4ad7659c;
+#using script_3b64eb40368c1450;
+#using script_38eb8f4be20d54f4;
+#using script_41387eecc35b88bf;
+#using script_3e2f8cc477d57433;
+#using script_1f97a44d1761c919;
+#using scripts\mp\gamescore.gsc;
+
+#namespace namespace_fdfa10f30c513cd7;
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x327
+// Size: 0x95
+function init() {
+    if (!getdvarint(@"hash_464559793bf93309", 1)) {
+        return;
+    }
+    level callback::add("player_item_pickup", &on_item_pickup);
+    level callback::add("player_used_item", &function_94545a9bb0878e0e);
+    level callback::add("player_item_drop", &function_8cd3ce612122fbab);
+    level callback::add("on_ammo_pouch_drop", &on_ammo_pouch_drop);
+    level callback::add("currency_add", &function_9e622ced1b338442);
+    level callback::add("zm_packed_weapon", &function_c5444b570959132e);
+    level callback::add("on_armor_break", &on_armor_break);
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x3c3
+// Size: 0x22
+function on_armor_break(params) {
+    if (isplayer(self)) {
+        thread function_dc000c302e305ce0("ravenov_tutorial_armor_broken");
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x3ec
+// Size: 0x25
+function function_c5444b570959132e(params) {
+    ent_flag_set("pap_weapon");
+    thread function_dc000c302e305ce0("ravenov_tutorial_ready_for_higher_zone");
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x418
+// Size: 0x6e
+function function_8cd3ce612122fbab(params) {
+    if (isdefined(params.itembundle) && isdefined(params.itembundle.subtype)) {
+        switch (params.itembundle.subtype) {
+        case #"hash_8499464a48c4e157":
+            thread function_dc000c302e305ce0("ravenov_tutorial_sell_junk");
+            break;
+        }
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x48d
+// Size: 0x120
+function on_item_pickup(params) {
+    if (isdefined(params.itembundle.type)) {
+        switch (params.itembundle.type) {
+        case #"hash_c04d8180feb92b2b":
+            if (!function_74fec185b50d1b4a("ravenov_tutorial_rucksack_upgrade_use")) {
+                thread function_dc000c302e305ce0("ravenov_tutorial_rucksack_upgrade_collect");
+            }
+            break;
+        case #"hash_ab671284a3fc4e3d":
+            if (!function_74fec185b50d1b4a("ravenov_tutorial_perk_can_use")) {
+                thread function_dc000c302e305ce0("ravenov_tutorial_perk_can_collect");
+            }
+            break;
+        case #"hash_d80af4621c199350":
+            if (!function_74fec185b50d1b4a("ravenov_tutorial_armor_upgrade_use")) {
+                thread function_dc000c302e305ce0("ravenov_tutorial_armor_upgrade_collect");
+            }
+            break;
+        }
+    }
+    if (isdefined(params.itembundle.subtype)) {
+        switch (params.itembundle.subtype) {
+        case #"hash_1780867e105363ce":
+            if (!function_74fec185b50d1b4a("ravenov_tutorial_aether_tool_use")) {
+                thread function_dc000c302e305ce0("ravenov_tutorial_aether_tool_collect");
+            }
+            break;
+        }
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x5b4
+// Size: 0xf0
+function function_94545a9bb0878e0e(params) {
+    if (isdefined(params.itembundle.type)) {
+        switch (params.itembundle.type) {
+        case #"hash_c04d8180feb92b2b":
+            function_dc000c302e305ce0("ravenov_tutorial_rucksack_upgrade_use");
+            break;
+        case #"hash_ab671284a3fc4e3d":
+            function_dc000c302e305ce0("ravenov_tutorial_perk_can_use");
+            break;
+        case #"hash_d80af4621c199350":
+            function_dc000c302e305ce0("ravenov_tutorial_armor_upgrade_use");
+            break;
+        }
+    }
+    if (isdefined(params.itembundle.subtype)) {
+        switch (params.itembundle.subtype) {
+        case #"hash_1780867e105363ce":
+            function_dc000c302e305ce0("ravenov_tutorial_aether_tool_collect");
+            function_dc000c302e305ce0("ravenov_tutorial_aether_tool_use");
+            break;
+        }
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x6ab
+// Size: 0x37
+function on_ammo_pouch_drop(params) {
+    if (isplayer(params.eattacker)) {
+        params.eattacker thread function_dc000c302e305ce0("ravenov_tutorial_ammo_pouch");
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x6e9
+// Size: 0x42
+function function_9e622ced1b338442(params) {
+    if (ent_flag("pap_weapon")) {
+        return;
+    }
+    var_473e4d7cccb6d00a = namespace_e8a49b70d0769b66::_getplayerscore(self);
+    if (var_473e4d7cccb6d00a >= 5000) {
+        thread function_dc000c302e305ce0("ravenov_tutorial_pap");
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x732
+// Size: 0x82
+function function_dc000c302e305ce0(var_ef20a23f2303fb02) {
+    if (!isplayer(self)) {
+        return;
+    }
+    if (!isdefined(self.var_6860664202c177f4)) {
+        self.var_6860664202c177f4 = [];
+    }
+    if (!function_74fec185b50d1b4a(var_ef20a23f2303fb02) || getdvarint(@"hash_ac3a05ba7d5a924c", 0)) {
+        self.var_6860664202c177f4[var_ef20a23f2303fb02] = 1;
+        self setplayerdata(level.var_5d69837cf4db0407, "conversation_" + var_ef20a23f2303fb02, 1);
+        overlord::function_c1c677ed7a1b1128(var_ef20a23f2303fb02, [0:self], undefined, 0);
+    }
+}
+
+// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x7bb
+// Size: 0x61
+function function_74fec185b50d1b4a(var_ef20a23f2303fb02) {
+    if (!isplayer(self)) {
+        return 1;
+    }
+    if (!isdefined(self.var_6860664202c177f4)) {
+        self.var_6860664202c177f4 = [];
+    }
+    b_played_vo = self getplayerdata(level.var_5d69837cf4db0407, "conversation_" + var_ef20a23f2303fb02) || istrue(self.var_6860664202c177f4[var_ef20a23f2303fb02]);
+    return b_played_vo;
+}
+

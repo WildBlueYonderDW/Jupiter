@@ -1,0 +1,221 @@
+// mwiii decomp prototype
+#using scripts\engine\utility.gsc;
+#using scripts\common\create_script_utility.gsc;
+
+#namespace mp_jup_st_b_ob_ambient_mimics_cs;
+
+// Namespace mp_jup_st_b_ob_ambient_mimics_cs/namespace_9677a30408bfbf28
+// Params 2, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x264
+// Size: 0x6d
+function main(unused, us) {
+    if (flag_exist("mp_jup_st_b_ob_ambient_mimics_cs")) {
+        return;
+    }
+    if (!isdefined(us)) {
+        us = function_b055d49370405173();
+    }
+    flag_init("mp_jup_st_b_ob_ambient_mimics_cs");
+    s = spawnstruct();
+    level thread cs_return_and_wait_for_flag(us, s, "mp_jup_st_b_ob_ambient_mimics_cs");
+    if (!cs_is_starttime()) {
+        endcreatescript(s);
+    }
+}
+
+// Namespace mp_jup_st_b_ob_ambient_mimics_cs/namespace_9677a30408bfbf28
+// Params 3, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x2d8
+// Size: 0x68
+function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+    level endon("game_ended");
+    wait_for_cs_flag(var_ce173d78f5680530);
+    if (!isdefined(us)) {
+        us = "pfx";
+    }
+    s cs_setup_arrays(us, "mp_jup_st_b_ob_ambient_mimics_cs");
+    cs_flags_init(s);
+    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread wait_for_flags(s, "mp_jup_st_b_ob_ambient_mimics_cs");
+}
+
+// Namespace mp_jup_st_b_ob_ambient_mimics_cs/namespace_9677a30408bfbf28
+// Params 3, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x347
+// Size: 0xbcd
+function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+    f = &strike_additem;
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_cache";
+    s.name = "mimic_spawns_cache";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_caches";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-7941.5, 37359, 1497), (0, 268.07, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_ammodepot";
+    s.name = "mimic_spawns_ammodepot";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_ammodepots";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (13137.5, 32360, 1008), (0, 344.93, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_buystation";
+    s.name = "mimic_spawns_buystation";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_buystations";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (11806.5, 27391, 1010.21), (0, 347.28, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_perk";
+    s.name = "mimic_spawns_perk";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_perkmachines";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (8059, 30599, 1200), (0, 74.29, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_safe";
+    s.name = "mimic_spawns_safe";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_safes";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (7596.5, 25726.5, 1148), (0, 344.19, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_turret";
+    s.name = "mimic_spawns_turret";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_turrettraps";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (9449.5, 21633.5, 1016.5), (0, 303.97, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_turret";
+    s.name = "mimic_spawns_turret";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_turrettraps";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-10204, 33705, 1261.79), (2.71, 16.47, -0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_turret";
+    s.name = "mimic_spawns_turret";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_turrettraps";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-4977.5, 23459, 1000.03), (0, 16.47, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_turret";
+    s.name = "mimic_spawns_turret";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_turrettraps";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (1282.5, 28355, 998), (0, 29.94, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_safe";
+    s.name = "mimic_spawns_safe";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_safes";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-6118, 25983, 1002), (0, 162.91, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_safe";
+    s.name = "mimic_spawns_safe";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_safes";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (7521.5, 37719.5, 1441), (0, 89.71, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_perk";
+    s.name = "mimic_spawns_perk";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_perkmachines";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-5816.5, 21670.5, 1273), (0, 74.29, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_perk";
+    s.name = "mimic_spawns_perk";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_perkmachines";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (9157.5, 21500, 1007), (0, 164.07, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_perk";
+    s.name = "mimic_spawns_perk";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_perkmachines";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (93.5, 32251, 1241), (0, 359.13, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_cache";
+    s.name = "mimic_spawns_cache";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_caches";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-8200.5, 29984, 1181), (0, 73.77, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_cache";
+    s.name = "mimic_spawns_cache";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_caches";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-3788, 24573.5, 1006.5), (0, 72.53, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_cache";
+    s.name = "mimic_spawns_cache";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_caches";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (2649, 19906.5, 1004), (0, 74.17, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_cache";
+    s.name = "mimic_spawns_cache";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_caches";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (14538.5, 33166, 985.5), (0, 342.91, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_buystation";
+    s.name = "mimic_spawns_buystation";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_buystations";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (1472.5, 22422, 995), (0, 252.91, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_buystation";
+    s.name = "mimic_spawns_buystation";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_buystations";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (5781.5, 28144.5, 1004.5), (0, 254.04, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_ammodepot";
+    s.name = "mimic_spawns_ammodepot";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_ammodepots";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (1911.5, 22516, 859), (0, 73.73, 0), undefined, undefined, "ambient_mimic_spawn");
+    s = s();
+    s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_ambient_mimics_cs";
+    s.groupid = "mimic_spawns_ammodepot";
+    s.name = "mimic_spawns_ammodepot";
+    s.proplist = "mimicproplist:jup_mimic_prop_list_ammodepots";
+    s.variantname = "mimic_spawn_point";
+    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-9265, 35227, 1281), (0, 85.33, 0), undefined, undefined, "ambient_mimic_spawn");
+    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    function_7af6d59eef91a7dd();
+}
+
+// Namespace mp_jup_st_b_ob_ambient_mimics_cs/namespace_9677a30408bfbf28
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xf1b
+// Size: 0x3
+function function_7af6d59eef91a7dd() {
+    
+}
+
+// Namespace mp_jup_st_b_ob_ambient_mimics_cs/namespace_9677a30408bfbf28
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xf25
+// Size: 0xf
+function cleanup() {
+    function_71a564b3bc009618("mp_jup_st_b_ob_ambient_mimics_cs");
+}
+

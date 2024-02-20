@@ -1,0 +1,421 @@
+// mwiii decomp prototype
+#using scripts\engine\utility.gsc;
+#using scripts\common\utility.gsc;
+#using scripts\mp\hud_util.gsc;
+#using scripts\mp\utility\game.gsc;
+#using scripts\mp\utility\player.gsc;
+#using scripts\mp\utility\outline.gsc;
+#using scripts\mp\utility\weapon.gsc;
+#using scripts\engine\trace.gsc;
+#using scripts\mp\utility\teams.gsc;
+#using script_64acb6ce534155b7;
+#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\mp\hud_message.gsc;
+#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\mp\gameobjects.gsc;
+#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\mp\gametypes\obj_dom.gsc;
+#using scripts\mp\objidpoolmanager.gsc;
+
+#namespace namespace_b990692ec1c5d18b;
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x59f
+// Size: 0xf2
+function function_fb7271d5ee18b98d(data) {
+    level.var_3c9ad0fee1a9350b = spawnstruct();
+    level.var_3c9ad0fee1a9350b.capturetime = getdvarint(@"hash_d1ba52fb82cf7653", 30);
+    level.var_3c9ad0fee1a9350b.time = getdvarint(@"hash_be42880c860992ec", 240);
+    level.var_3c9ad0fee1a9350b.var_29a79d378c70e0b = getdvarint(@"hash_51711b96c9b3eec0", 128);
+    /#
+        assert(isdefined(game["dialog"]));
+    #/
+    game["dialog"]["mission_dom_accept"] = "mission_mission_dom_accept_secure";
+    game["dialog"]["mission_dom_success"] = "mission_mission_dom_success";
+    data.funcs["onInit"] = &function_9088ffe8cb64311f;
+    data.funcs["onTeamAssigned"] = &function_e387efb61ad86b48;
+    setupdom();
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x698
+// Size: 0x30
+function function_9088ffe8cb64311f() {
+    placement = self.tablet function_8baad4bd99e782a3();
+    if (!isdefined(placement)) {
+        return 0;
+    }
+    self.reservedplacement = placement;
+    return 1;
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x6d0
+// Size: 0x148
+function function_e387efb61ad86b48() {
+    uiobjectiveshowtoteam("domination", self.teams[0]);
+    time = level.var_3c9ad0fee1a9350b.time;
+    time = function_9b6275085fbcb8f4(time);
+    function_5a15174d34f0670c(time);
+    thread function_a859560671de3158(time);
+    if (!isdefined(self.reservedplacement)) {
+        placement = self.tablet function_8baad4bd99e782a3();
+        if (!isdefined(placement)) {
+            return;
+        }
+        self.reservedplacement = placement;
+    }
+    function_a5ecbc99b54d31da(self.reservedplacement);
+    domflagupdateicons();
+    uiobjectiveshowtoteam("domination", self.teams[0]);
+    foreach (player in getteamdata(self.teams[0], "players")) {
+        player thread namespace_44abc05161e2e2cb::showsplash("br_domination_quest_start_team");
+    }
+    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_dom_accept", self.teams[0], 1);
+    /#
+        print("icon_waypoint_ot");
+    #/
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x81f
+// Size: 0x50
+function function_34a295960f3d086(success) {
+    self notify("task_ended");
+    self.ended = 1;
+    self.domflag namespace_19b4203b51d56488::releaseid();
+    wait(1);
+    function_93663fe58d95f174(ter_op(istrue(success), self.teams[0], undefined));
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x876
+// Size: 0x75
+function function_a859560671de3158(time) {
+    self endon("task_ended");
+    level endon("game_ended");
+    wait(time);
+    params = spawnstruct();
+    params.intvar = 0;
+    displayteamsplash(self.teams[0], "br_domination_quest_timer_expired", params);
+    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_gen_fail", self.teams[0], 1);
+    thread function_34a295960f3d086(0);
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x8f2
+// Size: 0x171
+function function_8baad4bd99e782a3() {
+    locations = array_randomize(getstructarray("dmz_dom_tower", "script_noteworthy"));
+    var_fdc6ee1b91ebb7bf = namespace_c5622898120e827f::getmintimetillpointindangercircle(self.origin);
+    placement = undefined;
+    var_2ed718e1da0b965 = undefined;
+    var_be0f4d48fa40793f = 12000;
+    foreach (i, node in locations) {
+        dist = distance2d(node.origin, self.origin);
+        if (dist > var_be0f4d48fa40793f) {
+            continue;
+        }
+        if (!level.br_circle_disabled) {
+            var_28deb7ff62e281d3 = namespace_c5622898120e827f::getmintimetillpointindangercircle(node.origin);
+            if (var_28deb7ff62e281d3 < var_fdc6ee1b91ebb7bf) {
+                continue;
+            }
+            traveltime = dist / 190;
+            var_28deb7ff62e281d3 = var_28deb7ff62e281d3 - traveltime;
+            if (var_28deb7ff62e281d3 < 30) {
+                continue;
+            }
+            var_5435995e95681b89 = 0;
+            if (dist < 8000) {
+                if (dist < 6000) {
+                    var_5435995e95681b89 = 6000 - dist;
+                }
+            } else {
+                var_5435995e95681b89 = dist - 8000;
+            }
+            if (var_5435995e95681b89 < var_be0f4d48fa40793f) {
+                var_be0f4d48fa40793f = var_5435995e95681b89;
+                var_2ed718e1da0b965 = i;
+                placement = node;
+                if (var_5435995e95681b89 <= 0) {
+                    break;
+                }
+            }
+        }
+    }
+    return placement;
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xa6b
+// Size: 0x1e6
+function function_a5ecbc99b54d31da(placement) {
+    var_1606f84a9b5bd33b = placement.origin;
+    radius = level.var_3c9ad0fee1a9350b.var_29a79d378c70e0b;
+    trigger = spawn("trigger_radius", var_1606f84a9b5bd33b, 0, int(radius), int(level.br_domheight));
+    trigger.angles = placement.angles;
+    trigger.script_label = "_a";
+    level.setdomscriptablepartstatefunc = &domflag_setdomscriptablepartstate;
+    domflag = namespace_98b55913d2326ac8::setupobjective(trigger);
+    domflag.flagmodel setmodel("lm_domination_point_01");
+    /#
+        domflag.debugtype = "dom";
+    #/
+    domflag.onuse = &domflag_onuse;
+    domflag.onbeginuse = &domflag_onbeginuse;
+    domflag.onuseupdate = &domflag_onuseupdate;
+    domflag.onenduse = &domflag_onenduse;
+    domflag.usecondition = &domflag_usecondition;
+    domflag.lockupdatingicons = 1;
+    domflag.checkuseconditioninthink = 1;
+    namespace_5a22b6f3a56f7e9b::update_objective_position(domflag.objidnum, domflag.curorigin + (0, 0, 60));
+    level.flagcapturetime = level.var_3c9ad0fee1a9350b.capturetime;
+    domflag namespace_19b4203b51d56488::setusetime(level.flagcapturetime);
+    self.lastcircletick = -1;
+    self.domflag = domflag;
+    self.curorigin = domflag.curorigin;
+    domflag.task = self;
+    self.radius = radius;
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xc58
+// Size: 0xb3
+function domflagupdateicons() {
+    objective_showtoplayersinmask(self.domflag.objidnum);
+    objective_removeallfrommask(self.domflag.objidnum);
+    foreach (player in getteamdata(self.teams[0], "players")) {
+        if (!player namespace_d3d40f75bb4e4c32::isplayeringulag()) {
+            objective_addclienttomask(self.domflag.objidnum, player);
+        }
+    }
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0xd12
+// Size: 0x26
+function domflag_hideiconfromplayer(player) {
+    objective_removeclientfrommask(self.domflag.objidnum, player);
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0xd3f
+// Size: 0x26
+function domflag_showicontoplayer(player) {
+    objective_addclienttomask(self.domflag.objidnum, player);
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xd6c
+// Size: 0x12
+function domflagupdateiconsframeend() {
+    self endon("removed");
+    waittillframeend();
+    domflagupdateicons();
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xd85
+// Size: 0x125
+function deletedomflaggameobject() {
+    foreach (vis in self.domflag.visuals) {
+        vis delete();
+    }
+    if (isdefined(self.domflag.flagmodel)) {
+        self.domflag.flagmodel delete();
+    }
+    if (isdefined(self.domflag.scriptable)) {
+        self.domflag.scriptable delete();
+    }
+    if (isdefined(self.domflag.trigger)) {
+        self.domflag.trigger delete();
+        self.domflag.trigger = undefined;
+    }
+    self.domflag thread gameobjectreleaseid_delayed();
+    self.domflag notify("deleted");
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xeb1
+// Size: 0x10
+function gameobjectreleaseid_delayed() {
+    wait(0.1);
+    namespace_19b4203b51d56488::releaseid();
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xec8
+// Size: 0x1c4
+function setupdom() {
+    if (isdefined(level.br_domheight)) {
+        return;
+    }
+    level.disableinitplayergameobjects = 0;
+    level.br_domheight = 120;
+    level.iconneutral = "waypoint_captureneutral_br";
+    level.iconcapture = "waypoint_capture_br";
+    level.icondefend = "waypoint_defend_br";
+    level.icondefending = "waypoint_defending_br";
+    level.iconcontested = "waypoint_contested_br";
+    level.icontaking = "waypoint_taking_br";
+    level.iconlosing = "waypoint_losing_br";
+    level.iconovertime = "icon_waypoint_ot";
+    _setdomflagiconinfo("icon_waypoint_dom_br", "neutral", "MP_BR_INGAME/DOM_CAPTURE", 0);
+    _setdomflagiconinfo("waypoint_taking_br", "friendly", "MP_INGAME_ONLY/OBJ_TAKING_CAPS", 1);
+    _setdomflagiconinfo("waypoint_capture_br", "enemy", "MP_BR_INGAME/DOM_CAPTURE", 0);
+    _setdomflagiconinfo("waypoint_defend_br", "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", 0);
+    _setdomflagiconinfo("waypoint_defending_br", "friendly", "MP_INGAME_ONLY/OBJ_DEFENDING_CAPS", 0);
+    _setdomflagiconinfo("waypoint_blocking_br", "friendly", "MP_INGAME_ONLY/OBJ_BLOCKING_CAPS", 0);
+    _setdomflagiconinfo("waypoint_blocked_br", "friendly", "MP_INGAME_ONLY/OBJ_BLOCKED_CAPS", 0);
+    _setdomflagiconinfo("waypoint_losing_br", "enemy", "MP_INGAME_ONLY/OBJ_LOSING_CAPS", 1);
+    _setdomflagiconinfo("waypoint_captureneutral_br", "neutral", "MP_BR_INGAME/DOM_CAPTURE", 0);
+    _setdomflagiconinfo("waypoint_contested_br", "contest", "MP_INGAME_ONLY/OBJ_CONTESTED_CAPS", 1);
+    _setdomflagiconinfo("waypoint_dom_target_br", "neutral", "MP_INGAME_ONLY/OBJ_TARGET_CAPS", 0);
+    _setdomflagiconinfo("icon_waypoint_target_br", "neutral", "MP_INGAME_ONLY/OBJ_TARGET_CAPS", 0);
+    _setdomflagiconinfo("icon_waypoint_ot", "neutral", "MP_INGAME_ONLY/OBJ_OTFLAGLOC_CAPS", 0);
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 4, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x1093
+// Size: 0x6a
+function _setdomflagiconinfo(name, colors, string, var_b50e35d9c370899b) {
+    level.waypointcolors[name] = colors;
+    level.waypointbgtype[name] = 1;
+    level.waypointstring[name] = string;
+    level.waypointshader[name] = "ui_mp_br_mapmenu_icon_dom_objective";
+    level.waypointpulses[name] = var_b50e35d9c370899b;
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 4, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x1104
+// Size: 0x6c
+function domflag_onuseupdate(team, progress, change, var_4b22e50e504339fe) {
+    if (progress < 1 && !level.gameended) {
+        play_spotrep_capture_sfx(progress, team);
+    }
+    if (progress > 0.05 && change && !istrue(self.didstatusnotify)) {
+        self.didstatusnotify = 1;
+    }
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x1177
+// Size: 0x155
+function domflag_onbeginuse(var_22282e7d48ca3400) {
+    if (!isdefined(self.obj_icon_revealed) || !self.obj_icon_revealed) {
+        self.obj_icon_revealed = 1;
+        level thread utilflare_shootflare(self.curorigin, "dom");
+        playerteam = getteamarray(var_22282e7d48ca3400.team);
+        playersinrange = namespace_7e17181d03156026::getplayersinradius(self.curorigin, 7800, undefined, playerteam);
+        foreach (player in playersinrange) {
+            if (isdefined(player) && isalive(player)) {
+                player thread namespace_44abc05161e2e2cb::showsplash("br_domination_quest_alert");
+            }
+        }
+        var_96674628376eaba6 = namespace_54d20dd0dd79277f::getfriendlyplayers(var_22282e7d48ca3400.team, 0);
+        foreach (teammate in var_96674628376eaba6) {
+            teammate notify("calloutmarkerping_warzoneKillQuestIcon");
+        }
+    }
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x12d3
+// Size: 0x1ea
+function domflag_onuse(var_22282e7d48ca3400) {
+    if (self.task.teams[0] == var_22282e7d48ca3400.team) {
+        missionid = getquestindex("domination");
+        questrewardcirclepeek(self.task.teams[0]);
+        rewards = function_d212a5e7a40d7c8d("dom", self.task.teams[0]);
+        if (rewards && rewards[0]) {
+            function_878ebcc241b54505("br_domination_quest_complete", function_3d262d56274bd22e("dom"), rewards[0], self.task.teams[0]);
+        }
+        displaysquadmessagetoteam(self.task.teams[0], var_22282e7d48ca3400, 8, missionid);
+        level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_dom_success", self.task.teams[0], 1, 1);
+        self.task.rewardorigin = self.flagmodel.origin;
+        self.task.rewardangles = self.flagmodel.angles;
+        self.task.result = "success";
+        self.task thread function_34a295960f3d086(1);
+    } else {
+        displayteamsplash(self.task.teams[0], "br_domination_quest_failure");
+        level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_gen_fail", self.task.teams[0], 1);
+        self.task.result = "fail";
+    }
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 3, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x14c4
+// Size: 0x26
+function domflag_onenduse(team, player, success) {
+    namespace_98b55913d2326ac8::dompoint_onuseend(team, player, success);
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 2, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x14f1
+// Size: 0x8f
+function play_spotrep_capture_sfx(progress, team) {
+    if (!isdefined(self.lastsfxplayedtime)) {
+        self.lastsfxplayedtime = gettime();
+    }
+    if (self.lastsfxplayedtime + 995 < gettime()) {
+        self.lastsfxplayedtime = gettime();
+        var_c3ddfb0eaa8f761c = "";
+        progress = int(floor(progress * 10));
+        var_c3ddfb0eaa8f761c = "mp_dom_capturing_tick_0" + progress;
+        self.visuals[0] playsoundtoteam(var_c3ddfb0eaa8f761c, team);
+    }
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 3, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x1587
+// Size: 0x9b
+function domflag_setdomscriptablepartstate(part, state, var_ba360e4ff7be8d96) {
+    switch (state) {
+    case #"hash_1c39674e5b0de0f3":
+    case #"hash_3699ac6c262c25ea":
+    case #"hash_86bf1a776a7c4cbe":
+        return 0;
+    default:
+        state = "using";
+        if (isdefined(var_ba360e4ff7be8d96)) {
+            state = state + var_ba360e4ff7be8d96;
+        }
+        self.scriptable setscriptablepartstate(part, state);
+        if (part == "pulse") {
+            self.scriptable setscriptablepartstate("flag", state);
+        }
+        return 1;
+        break;
+    }
+}
+
+// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x1629
+// Size: 0x45
+function domflag_usecondition(player) {
+    return self.task.teams[0] == player.team && !istrue(self.task.ended);
+}
+

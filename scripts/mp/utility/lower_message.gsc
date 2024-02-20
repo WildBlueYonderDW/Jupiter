@@ -1,0 +1,260 @@
+// mwiii decomp prototype
+#namespace lower_message;
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 3, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x174
+// Size: 0xac
+function setlowermessageomnvar(ref, timer, var_c84f97acad5b2088) {
+    gamemode = getdvar(@"hash_e65e9a96eb2ff62b");
+    if (gamemode != "cp_survival" && gamemode != "cp_wave_sv" && gamemode != "cp_specops") {
+        var_d861f893072a477e = game["lowerMessageIndex"][ref];
+        if (!isdefined(var_d861f893072a477e)) {
+            /#
+                assertmsg("setLowerMessageOmnvar() called with unknown ref: " + ref);
+            #/
+            return;
+        }
+        self setclientomnvar("ui_lower_message", var_d861f893072a477e);
+        if (isdefined(timer)) {
+            self setclientomnvar("ui_lower_message_time", timer);
+        }
+        if (isdefined(var_c84f97acad5b2088)) {
+            thread clearomnvarsaftertime(var_c84f97acad5b2088);
+        }
+    }
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x227
+// Size: 0x6a
+function clearomnvarsaftertime(var_c84f97acad5b2088) {
+    self notify("message_cleared");
+    self endon("message_cleared");
+    self endon("death_or_disconnect");
+    wait(var_c84f97acad5b2088);
+    gamemode = getdvar(@"hash_e65e9a96eb2ff62b");
+    if (gamemode != "cp_survival" && gamemode != "cp_wave_sv" && gamemode != "cp_specops") {
+        self setclientomnvar("ui_lower_message", 0);
+    }
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x298
+// Size: 0xa0
+function function_5a98c45a6252b4a() {
+    game["lowerMessageIndex"] = [];
+    numrows = tablelookupgetnumrows("mp/hints.csv");
+    for (index = 0; index < numrows; index++) {
+        var_c71a87c9229a2e91 = int(tablelookupbyrow("mp/hints.csv", index, 0));
+        var_9c3353f4c1204bfe = tablelookupbyrow("mp/hints.csv", index, 1);
+        if (var_9c3353f4c1204bfe == "") {
+            continue;
+        }
+        /#
+            assertex(!isdefined(game["lowerMessageIndex"][var_9c3353f4c1204bfe]), var_9c3353f4c1204bfe + " is already defined in game[ lowerMessageIndex ]");
+        #/
+        game["lowerMessageIndex"][var_9c3353f4c1204bfe] = var_c71a87c9229a2e91;
+    }
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 10, eflags: 0x0
+// Checksum 0x0, Offset: 0x33f
+// Size: 0xbc
+function setlowermessage(name, text, time, priority, showtimer, shouldfade, fadetoalpha, fadetoalphatime, hidewhenindemo, hidewheninmenu) {
+    if (!isdefined(priority)) {
+        priority = 1;
+    }
+    if (!isdefined(time)) {
+        time = 0;
+    }
+    if (!isdefined(showtimer)) {
+        showtimer = 0;
+    }
+    if (!isdefined(shouldfade)) {
+        shouldfade = 0;
+    }
+    if (!isdefined(fadetoalpha)) {
+        fadetoalpha = 0.85;
+    }
+    if (!isdefined(fadetoalphatime)) {
+        fadetoalphatime = 3;
+    }
+    if (!isdefined(hidewhenindemo)) {
+        hidewhenindemo = 0;
+    }
+    if (!isdefined(hidewheninmenu)) {
+        hidewheninmenu = 1;
+    }
+    addlowermessage(name, text, time, priority, showtimer, shouldfade, fadetoalpha, fadetoalphatime, hidewhenindemo, hidewheninmenu);
+    updatelowermessage();
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x402
+// Size: 0x1b
+function clearlowermessage(name) {
+    removelowermessage(name);
+    updatelowermessage();
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x424
+// Size: 0x59
+function clearlowermessages() {
+    if (!isdefined(self) || !isdefined(self.lowermessage) || !isdefined(self.lowermessages)) {
+        return;
+    }
+    for (i = 0; i < self.lowermessages.size; i++) {
+        self.lowermessages[i] = undefined;
+    }
+    updatelowermessage();
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x484
+// Size: 0xb1
+function sortlowermessages() {
+    for (i = 1; i < self.lowermessages.size; i++) {
+        message = self.lowermessages[i];
+        priority = message.priority;
+        for (j = i - 1; j >= 0 && priority > self.lowermessages[j].priority; j--) {
+            self.lowermessages[j + 1] = self.lowermessages[j];
+        }
+        self.lowermessages[j + 1] = message;
+    }
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 10, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x53c
+// Size: 0x1ac
+function addlowermessage(name, text, time, priority, showtimer, shouldfade, fadetoalpha, fadetoalphatime, hidewhenindemo, hidewheninmenu) {
+    var_28b0f661494fa67c = undefined;
+    foreach (message in self.lowermessages) {
+        if (message.name == name) {
+            if (message.text == text && message.priority == priority) {
+                return;
+            }
+            var_28b0f661494fa67c = message;
+            break;
+        }
+    }
+    if (!isdefined(var_28b0f661494fa67c)) {
+        var_28b0f661494fa67c = spawnstruct();
+        self.lowermessages[self.lowermessages.size] = var_28b0f661494fa67c;
+    }
+    var_28b0f661494fa67c.name = name;
+    var_28b0f661494fa67c.text = text;
+    var_28b0f661494fa67c.time = time;
+    var_28b0f661494fa67c.addtime = gettime();
+    var_28b0f661494fa67c.priority = priority;
+    var_28b0f661494fa67c.showtimer = showtimer;
+    var_28b0f661494fa67c.shouldfade = shouldfade;
+    var_28b0f661494fa67c.fadetoalpha = fadetoalpha;
+    var_28b0f661494fa67c.fadetoalphatime = fadetoalphatime;
+    var_28b0f661494fa67c.hidewhenindemo = hidewhenindemo;
+    var_28b0f661494fa67c.hidewheninmenu = hidewheninmenu;
+    sortlowermessages();
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x6ef
+// Size: 0xdb
+function removelowermessage(name) {
+    if (isdefined(self.lowermessages)) {
+        for (i = self.lowermessages.size; i > 0; i--) {
+            if (self.lowermessages[i - 1].name != name) {
+                continue;
+            }
+            message = self.lowermessages[i - 1];
+            for (j = i; j < self.lowermessages.size; j++) {
+                if (isdefined(self.lowermessages[j])) {
+                    self.lowermessages[j - 1] = self.lowermessages[j];
+                }
+            }
+            self.lowermessages[self.lowermessages.size - 1] = undefined;
+        }
+        sortlowermessages();
+    }
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x7d1
+// Size: 0x1d
+function getlowermessage() {
+    if (!isdefined(self.lowermessages)) {
+        return undefined;
+    }
+    return self.lowermessages[0];
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 0, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x7f6
+// Size: 0x228
+function updatelowermessage() {
+    if (!isdefined(self)) {
+        return;
+    }
+    message = getlowermessage();
+    if (!isdefined(message)) {
+        if (isdefined(self.lowermessage) && isdefined(self.lowertimer)) {
+            self.lowermessage.alpha = 0;
+            self.lowertimer.alpha = 0;
+        }
+        return;
+    }
+    self.lowermessage settext(message.text);
+    self.lowermessage.alpha = 0.85;
+    self.lowertimer.alpha = 1;
+    self.lowermessage.hidewhenindemo = message.hidewhenindemo;
+    self.lowermessage.hidewheninmenu = message.hidewheninmenu;
+    if (message.shouldfade) {
+        self.lowermessage fadeovertime(min(message.fadetoalphatime, 60));
+        self.lowermessage.alpha = message.fadetoalpha;
+    }
+    if (message.time > 0 && message.showtimer) {
+        self.lowertimer settimer(max(message.time - (gettime() - message.addtime) / 1000, 0.1));
+    } else if (message.time > 0 && !message.showtimer) {
+        self.lowertimer settext("");
+        self.lowermessage fadeovertime(min(message.time, 60));
+        self.lowermessage.alpha = 0;
+        thread clearondeath(message);
+        thread clearafterfade(message);
+    } else {
+        self.lowertimer settext("");
+    }
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xa25
+// Size: 0x43
+function clearondeath(message) {
+    self notify("message_cleared");
+    self endon("message_cleared");
+    self endon("disconnect");
+    level endon("game_ended");
+    self waittill("death");
+    clearlowermessage(message.name);
+}
+
+// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0xa6f
+// Size: 0x32
+function clearafterfade(message) {
+    wait(message.time);
+    clearlowermessage(message.name);
+    self notify("message_cleared");
+}
+

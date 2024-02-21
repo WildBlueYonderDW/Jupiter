@@ -45,10 +45,7 @@ function private function_198bfdd7fc72700a() {
     }
     self waittill("gutgo");
     target = self.var_c24f43a7d0d8d195;
-    if (isent(target)) {
-        goto LOC_00000136;
-    }
-    projectile_velocity = self function_66847aa1462af647(undefined, target, 1, self._blackboard.var_d15d23565f5a60a1);
+    projectile_velocity = self function_66847aa1462af647(isent(target) ? target : undefined, 1, self._blackboard.var_d15d23565f5a60a1);
     projectile_velocity = function_53c4c53197386572(projectile_velocity, self._blackboard.var_acff9536dc447bac);
     function_7ed594e1ada9063e(projectile_velocity);
 }

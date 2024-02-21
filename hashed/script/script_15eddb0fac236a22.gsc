@@ -78,18 +78,9 @@ function function_e6dddb660c52817() {
 // Size: 0xfb
 function function_15f9e82b69d4c27a() {
     if (namespace_36f464722d326bbe::function_beff479639e6508()) {
-        if (isdefined(getpersstat("operatorsDown"))) {
-            goto LOC_00000029;
-        }
-        self setclientomnvar("ui_gameplay_telemetry_operatorsDown", 0, getpersstat("operatorsDown"));
-        if (isdefined(getpersstat("teamRevive"))) {
-            goto LOC_00000053;
-        }
-        self setclientomnvar("ui_gameplay_telemetry_teamRevive", 0, getpersstat("teamRevive"));
-        if (isdefined(getpersstat("teamWipe"))) {
-            goto LOC_0000007d;
-        }
-        self setclientomnvar("ui_gameplay_telemetry_teamWipe", 0, getpersstat("teamWipe"));
+        self setclientomnvar("ui_gameplay_telemetry_operatorsDown", isdefined(getpersstat("operatorsDown")) ? getpersstat("operatorsDown") : 0);
+        self setclientomnvar("ui_gameplay_telemetry_teamRevive", isdefined(getpersstat("teamRevive")) ? getpersstat("teamRevive") : 0);
+        self setclientomnvar("ui_gameplay_telemetry_teamWipe", isdefined(getpersstat("teamWipe")) ? getpersstat("teamWipe") : 0);
     } else {
         childthread function_7018e21062adbaa();
         function_d8eb5fb3b35ed1a1();
@@ -591,20 +582,11 @@ function function_adcb155953291ec7(var_ff9387e409ebe4a2, var_c51f7affa4c0cd0d) {
     }
     if (isdefined(weaponname) && (isprimary || var_2e5f03c228e30968)) {
         if (namespace_36f464722d326bbe::function_beff479639e6508()) {
-            if (isdefined(getpersstat("weapDowned")[weaponname])) {
-                goto LOC_000001c1;
-            }
-            var_e3d273698f311dc2 = 0;
+            var_e3d273698f311dc2 = isdefined(getpersstat("weapDowned")[weaponname]) ? getpersstat("weapDowned")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_pri_downs", var_e3d273698f311dc2);
-            if (isdefined(getpersstat("weapLastKillDistance")[weaponname])) {
-                goto LOC_000001f5;
-            }
-            var_c3cce17e819a97e = 0;
+            var_c3cce17e819a97e = isdefined(getpersstat("weapLastKillDistance")[weaponname]) ? getpersstat("weapLastKillDistance")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_pri_dist", var_c3cce17e819a97e);
-            if (isdefined(getpersstat("weapLongestKillDistance")[weaponname])) {
-                goto LOC_00000229;
-            }
-            var_9ec85557ffab1f2e = 0;
+            var_9ec85557ffab1f2e = isdefined(getpersstat("weapLongestKillDistance")[weaponname]) ? getpersstat("weapLongestKillDistance")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_pri_longest_dist", var_9ec85557ffab1f2e);
         } else {
             var_9414c240815f3569 = isdefined(getpersstat("weapKDRatio")[weaponname]) ? getpersstat("weapKDRatio")[weaponname] : 0;
@@ -637,25 +619,16 @@ function function_adcb155953291ec7(var_ff9387e409ebe4a2, var_c51f7affa4c0cd0d) {
             var_ea726d34f3ebe296 = isdefined(getpersstat("weapLongestKillDistance")[weaponname]) ? getpersstat("weapLongestKillDistance")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_sec_longest_dist", var_ea726d34f3ebe296);
         } else {
-            if (isdefined(getpersstat("weapKDRatio")[weaponname])) {
-                goto LOC_000004dd;
-            }
-            var_5c93875db5f997a9 = 0;
+            var_5c93875db5f997a9 = isdefined(getpersstat("weapKDRatio")[weaponname]) ? getpersstat("weapKDRatio")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_sec_kdratio", var_5c93875db5f997a9);
             var_6736d6623a51a752 = isdefined(getpersstat("weapHeadShotCount")[weaponname]) ? getpersstat("weapHeadShotCount")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_sec_headshot_count", var_6736d6623a51a752);
-            if (isdefined(getpersstat("weapHeadShotAccuracy")[weaponname])) {
-                goto LOC_00000543;
-            }
-            var_3351a10825c2cf29 = 0;
+            var_3351a10825c2cf29 = isdefined(getpersstat("weapHeadShotAccuracy")[weaponname]) ? getpersstat("weapHeadShotAccuracy")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_sec_headshot_accuracy", var_3351a10825c2cf29);
         }
         var_3ae90b2c5e766474 = isdefined(getpersstat("weapAccuracy")[weaponname]) ? getpersstat("weapAccuracy")[weaponname] : 0;
         self setclientomnvar("ui_gameplay_telemetry_weap_sec_accuracy", var_3ae90b2c5e766474);
-        if (isdefined(getpersstat("weapKills")[weaponname])) {
-            goto LOC_000005a9;
-        }
-        secondarykill = 0;
+        secondarykill = isdefined(getpersstat("weapKills")[weaponname]) ? getpersstat("weapKills")[weaponname] : 0;
         self setclientomnvar("ui_gameplay_telemetry_weap_sec_kills", secondarykill);
         var_fe24127f4d77a3f6 = isdefined(getpersstat("weapDamageDealt")[weaponname]) ? getpersstat("weapDamageDealt")[weaponname] : 0;
         self setclientomnvar("ui_gameplay_telemetry_weap_sec_damagedealt", var_fe24127f4d77a3f6);
@@ -670,10 +643,7 @@ function private function_18fdff35aee0a387() {
     if (!isplayer(self) || isai(self)) {
         return 0;
     }
-    if (level.teambased) {
-        goto LOC_00000055;
-    }
-    currentscore = getpersstat("gamemodeScore");
+    currentscore = level.teambased ? self.score : getpersstat("gamemodeScore");
     if (!isdefined(currentscore)) {
         return 0;
     }

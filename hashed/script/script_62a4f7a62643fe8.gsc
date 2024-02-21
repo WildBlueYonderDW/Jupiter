@@ -5,7 +5,7 @@
 #using script_4c770a9a4ad7659c;
 #using script_38eb8f4be20d54f4;
 #using script_16ea1b94f0f381b3;
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using scripts\common\utility.gsc;
 #using script_22f1701e151b9d12;
 #using script_7d3e27aa82b5d70b;
@@ -441,10 +441,7 @@ function function_4b40a61f53dd9122() {
             break;
         }
     }
-    if (var_a9f9fc95bb88af53) {
-        goto LOC_00000811;
-    }
-    thread overlord::function_c1c677ed7a1b1128("aether_storm_final_exfil_missing", "aether_storm_final_exfil_success", level.players);
+    thread overlord::function_c1c677ed7a1b1128(var_a9f9fc95bb88af53 ? "aether_storm_final_exfil_success" : "aether_storm_final_exfil_missing", level.players);
     wait(5);
     thread function_d52bfc09d86c8636();
 }

@@ -1292,10 +1292,7 @@ function function_8076b5556f48a6cd(player) {
                 var_b96152cb873a0080 = 0;
             }
         }
-        if (!isdefined(player.pers["telemetry"].var_a3ef8d971ec61fc7)) {
-            goto LOC_00000b23;
-        }
-        var_7249f84dc6294efa = player.pers["telemetry"].var_a3ef8d971ec61fc7;
+        var_7249f84dc6294efa = isdefined(player.pers["telemetry"].var_a3ef8d971ec61fc7) ? 0 : player.pers["telemetry"].var_a3ef8d971ec61fc7;
         var_7b50c54dfbdce819 = [];
         var_bb5da1da48de6259 = [];
         if (isdefined(self.primaryweapons)) {

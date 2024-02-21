@@ -1680,11 +1680,9 @@ function sam_fireontarget() {
             rocket.sammissilegroup = var_a512aa80ea6bf396;
             self.sammissilegroups[var_a512aa80ea6bf396][i] = rocket;
             level notify("sam_missile_fired", self.owner);
-            if (i == 3) {
-                break;
-            }
             wait(0.25);
         }
+    LOC_00000235:
         level notify("sam_fired", self.owner);
         wait(3);
     }

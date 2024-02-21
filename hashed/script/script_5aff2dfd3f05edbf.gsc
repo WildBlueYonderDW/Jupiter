@@ -238,10 +238,7 @@ function function_6c6eefbd85f74bf2(position, streakinfo) {
     missile setscriptablepartstate("visibility", "hide");
     missile.exploded = 1;
     waitframe();
-    if (istrue(streakinfo.var_3c76575cf3375e9b)) {
-        goto LOC_00000169;
-    }
-    missile setscriptablepartstate("explode", "explode", "explode_water");
+    missile setscriptablepartstate("explode", istrue(streakinfo.var_3c76575cf3375e9b) ? "explode_water" : "explode");
     missile function_451201427aca809();
     streakinfo.explosion_victims = function_5ddd621f797a85b5(streakinfo.var_31b3f90c52110c13, self.team);
     streakinfo.gas_victims = [];

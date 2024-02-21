@@ -68,10 +68,7 @@ function private function_ee486eaddde6fd68() {
     self.var_cadb0f258ae78683 = 400;
     self.var_3f4dee1c560fc063 = undefined;
     is_fast = istrue(self function_11e2d4051ea44b35("snakebite_fast"));
-    if (is_fast) {
-        goto LOC_000000e2;
-    }
-    var_6388c7254040bb1f = 1;
+    var_6388c7254040bb1f = is_fast ? 2 : 1;
     var_3d61940eebf6312c = 4000;
     var_4c7853a34cd074cf = [[ self.var_c54a21ea717fe8a5 ]]();
     if (var_4c7853a34cd074cf >= 1 && self.var_f8adf1aaec88d636 >= 7 || var_4c7853a34cd074cf >= 0.8 && self.var_f8adf1aaec88d636 >= 13) {

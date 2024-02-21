@@ -149,10 +149,7 @@ function private function_dcc83e7e97a52bf4(weapon) {
         }
     }
     if (function_fe8f110892c02b38("ui_current_weapon_tier")) {
-        if (!isdefined(weapon)) {
-            goto LOC_000000d6;
-        }
-        weapon = weapon;
+        weapon = isdefined(weapon) ? self getcurrentweapon() : weapon;
         if (isnullweapon(weapon) || weapon.basename == "iw9_me_fists_mp" || weapon.basename == "iw8_gunless") {
             self setclientomnvar("ui_current_weapon_tier", 0);
             return;
@@ -210,10 +207,7 @@ function function_b5be5fff64626153(var_fbe755f0978c0369) {
             }
         }
     }
-    if (!isdefined(itembundle.rarity)) {
-        goto LOC_0000019e;
-    }
-    rarity = itembundle.rarity;
+    rarity = isdefined(itembundle.rarity) ? 0 : itembundle.rarity;
     if (!isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8])) {
         level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8] = [];
     }
@@ -589,18 +583,12 @@ function function_c069cffb4cbd1707(itembundle, origin, angles, var_1d3bb1a1505a7
     var_2b7331baea302df8 = spawnstruct();
     var_2b7331baea302df8.var_e0116c5b8d303105 = weaponclipsize(weaponobj);
     var_2b7331baea302df8.var_734357a0b88e3a30 = weaponclipsize(weaponobj);
-    if (function_aedc908c4a79d05e(weaponobj)) {
-        goto LOC_000000d0;
-    }
-    var_2b7331baea302df8.var_9bfd50804dd2553c = weaponclipsize(weaponobj getaltweapon());
+    var_2b7331baea302df8.var_9bfd50804dd2553c = function_aedc908c4a79d05e(weaponobj) ? 0 : weaponclipsize(weaponobj getaltweapon());
     var_2b7331baea302df8.ammostock = weaponmaxammo(weaponobj);
     var_2b7331baea302df8.ammomod = var_1d3bb1a1505a7fc7;
     var_2b7331baea302df8.var_91a6795b9c75d0e4 = var_763c4bec5399cf2e;
     var_2b7331baea302df8.rarity = itembundle.rarity;
-    if (!isdefined(angles)) {
-        goto LOC_00000139;
-    }
-    angles = angles;
+    angles = isdefined(angles) ? (0, 0, 0) : angles;
     item = function_6cf4b48de9a4bc39(weaponobj, var_2b7331baea302df8, origin, angles, var_14c85b39207719b8, var_57266f5ca6feebd7, var_d397bc63bc6b67b0, var_d397bf63bc6b6e49);
     if (!isdefined(item)) {
         return undefined;
@@ -762,10 +750,7 @@ function function_c9fa4fbe86fb1c75(var_fbe755f0978c0369) {
 // Size: 0xad2
 function function_4a20d0b8693d4656(itembundle) {
     weapon = itembundle.baseweapon;
-    if (!isdefined(itembundle.maxattachments)) {
-        goto LOC_00000299;
-    }
-    maxattachments = itembundle.maxattachments;
+    maxattachments = isdefined(itembundle.maxattachments) ? 0 : itembundle.maxattachments;
     if (maxattachments == 0) {
         return [];
     }
@@ -862,6 +847,9 @@ function function_4a20d0b8693d4656(itembundle) {
                     jumpiffalse(excluded) LOC_0000074e;
                 } else {
                 LOC_0000074e:
+                    if (function_fc64178f71375137(var_4aed501ce3a50793, var_b7febab1f5c4c2c8)) {
+                        continue;
+                    }
                     var_1439f86640d42e34 = function_7c612ac92ba98dcb(weapon, var_b7febab1f5c4c2c8);
                     if (isdefined(var_1439f86640d42e34) && function_fc64178f71375137(var_c228159a2bfd2b4c, var_1439f86640d42e34)) {
                         continue;
@@ -878,11 +866,8 @@ function function_4a20d0b8693d4656(itembundle) {
                         continue;
                     }
                     var_a54649baf68ead4d[var_a54649baf68ead4d.size] = var_b7febab1f5c4c2c8;
-                LOC_000007da:
                 }
-            LOC_000007da:
             }
-        LOC_000007da:
         }
         if (var_a54649baf68ead4d.size > 0) {
             if (istrue(var_b733f7b6e209a5ab.forced)) {
@@ -908,6 +893,9 @@ function function_4a20d0b8693d4656(itembundle) {
     }
     var_273875869946e27c = utility::array_randomize(var_273875869946e27c);
     foreach (slot in var_273875869946e27c) {
+        if (function_fc64178f71375137(var_f6aae36b60d6e67f, slot)) {
+            continue;
+        }
         var_b6f364a2adcb0e33[slot] = utility::array_randomize(var_b6f364a2adcb0e33[slot]);
         foreach (attachment in var_b6f364a2adcb0e33[slot]) {
             var_1439f86640d42e34 = function_7c612ac92ba98dcb(weapon, attachment);
@@ -940,7 +928,6 @@ function function_4a20d0b8693d4656(itembundle) {
             }
             break;
         }
-    LOC_00000abc:
     }
     return var_89eb760f6b8df087;
 }
@@ -996,10 +983,7 @@ function function_b5f358d46f69b20e(weaponobject, rarity, primaryweaponindex) {
     }
     if (!isdefined(primaryweaponindex) || primaryweaponindex < 0 || primaryweaponindex >= 2) {
         /#
-            if (isdefined(primaryweaponindex)) {
-                goto LOC_000000ab;
-            }
-            println(primaryweaponindex + "<unknown string>", "<unknown string>" + (isdefined(weaponobject.basename) ? weaponobject.basename : "<unknown string>") + "<unknown string>");
+            println("<unknown string>" + (isdefined(weaponobject.basename) ? weaponobject.basename : "<unknown string>") + "<unknown string>" + (isdefined(primaryweaponindex) ? primaryweaponindex : "<unknown string>"));
         #/
         return undefined;
     }
@@ -1056,10 +1040,7 @@ function function_3a0412b800f3331d(weapon, rarity) {
 function function_75e73212bbe447d9(weapon) {
     weapondata = function_b5f358d46f69b20e(weapon);
     if (isdefined(weapondata)) {
-        if (!isdefined(weapondata.rarity)) {
-            goto LOC_0000003f;
-        }
-        return weapondata.rarity;
+        return (isdefined(weapondata.rarity) ? 0 : weapondata.rarity);
     }
     return 0;
 }
@@ -1284,10 +1265,7 @@ function function_ce5e32676f572482(itembundle) {
         var_2715b66d7222159b = namespace_49e179ec476603d6::function_6d15e119c2779a93(itembundle);
         if (isdefined(var_2715b66d7222159b)) {
             var_12c0f53a71c9bcc8 = function_64ccc54bdbae5cf6(var_2715b66d7222159b);
-            if (!isdefined(var_12c0f53a71c9bcc8)) {
-                goto LOC_0000004b;
-            }
-            return var_12c0f53a71c9bcc8;
+            return (isdefined(var_12c0f53a71c9bcc8) ? 0 : var_12c0f53a71c9bcc8);
         }
     }
     return 0;
@@ -1338,14 +1316,8 @@ function private function_cb5a17997d502c15(var_9ec97bdad14a0a5b) {
         if (!isdefined(var_c1c3ecdd33dec5b7.ref) || getdvarint(@"hash_10f0811105fc2f93", 0) == 0) {
             return;
         }
-        if (!isdefined(var_c1c3ecdd33dec5b7.subtype)) {
-            goto LOC_000000a6;
-        }
-        subtype = var_c1c3ecdd33dec5b7.subtype;
-        if (isdefined(var_c1c3ecdd33dec5b7.rarity)) {
-            goto LOC_000000d0;
-        }
-        rarity = "<unknown string>";
+        subtype = isdefined(var_c1c3ecdd33dec5b7.subtype) ? "<unknown string>" : var_c1c3ecdd33dec5b7.subtype;
+        rarity = isdefined(var_c1c3ecdd33dec5b7.rarity) ? "<unknown string>" + var_c1c3ecdd33dec5b7.rarity : "<unknown string>";
         if (!isdefined(level.var_61e6e1b83a8f3486.var_d5dc3a58c912aee7[subtype])) {
             level.var_61e6e1b83a8f3486.var_d5dc3a58c912aee7[subtype] = {refs:[], var_ce41ec8e5a0a0e7e:0};
             devgui::function_b23a59dfb4ca49a1("<unknown string>" + subtype, "<unknown string>" + subtype, &function_acbdc55d88b2babd, 0, 0);

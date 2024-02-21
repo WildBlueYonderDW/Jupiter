@@ -97,10 +97,7 @@ function private function_f3847410a67a3098(ent, event, params) {
 // Size: 0x145
 function add(event, func, var_732ad454c46f92fd) {
     /#
-        if (function_d03495fe6418377b(event)) {
-            goto LOC_00000051;
-        }
-        assertex(isfunction(func), function_3c8848a3a11b2553(event) + event + "' is not a function pointer.", "Parameter for event '");
+        assertex(isfunction(func), "Parameter for event '" + (function_d03495fe6418377b(event) ? function_3c8848a3a11b2553(event) : event) + "' is not a function pointer.");
     #/
     if (!isfunction(func)) {
         return;

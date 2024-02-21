@@ -159,10 +159,7 @@ function function_dce158cd5558c35d() {
 function function_a8beffa3938460d1(eventtype) {
     level endon("event_deactivated");
     level endon("game_ended");
-    if (!isdefined(level.br_circle.circleindex)) {
-        goto LOC_000000cd;
-    }
-    var_2f442216bf3e05d7 = level.br_circle.circleindex + 1;
+    var_2f442216bf3e05d7 = (isdefined(level.br_circle.circleindex) ? 0 : level.br_circle.circleindex) + 1;
     var_adad42d080519e95 = [];
     foreach (cache in level.var_7576c890644a91ad.caches) {
         if (cache.var_527a7b84d978e792[1].circleindex >= var_2f442216bf3e05d7) {
@@ -292,10 +289,7 @@ function function_c32ed6d14f08bd09() {
         if (!iswinner && !level.var_7576c890644a91ad.var_6b034b3f45f2eaa5) {
             continue;
         }
-        if (iswinner) {
-            goto LOC_0000034c;
-        }
-        splashname = "br_pe_roguesignal_fail";
+        splashname = iswinner ? "br_pe_roguesignal_success" : "br_pe_roguesignal_fail";
         player hud_message::showsplash(splashname, undefined, undefined, undefined, undefined, "splash_list_br_pe_roguesignal");
     }
     foreach (idx, team in winners) {
@@ -327,10 +321,7 @@ function function_b78eb63b1da9329f(var_5f15b2da08f90a39, is_locked, var_adad42d0
     if (!isdefined(var_adad42d080519e95)) {
         var_adad42d080519e95 = 1;
     }
-    if (var_adad42d080519e95) {
-        goto LOC_000000ac;
-    }
-    caches = level.var_7576c890644a91ad.caches;
+    caches = var_adad42d080519e95 ? level.var_7576c890644a91ad.var_adad42d080519e95 : level.var_7576c890644a91ad.caches;
     location = utility::function_7a2aaa4a09a4d250(caches);
     if (var_adad42d080519e95) {
         location.inuse = 1;
@@ -436,10 +427,7 @@ function function_23812764e79c036e(var_5f15b2da08f90a39, time, buffer) {
 function function_43cb953ab1404232(interact, player) {
     cache = interact.cache;
     if (!istrue(cache.is_unlocked)) {
-        if (!isdefined(cache.var_2c7edecb5d6f59be)) {
-            goto LOC_00000078;
-        }
-        var_83b819b30f1965f0 = int(ceil(1 * (0 - cache.var_2c7edecb5d6f59be), level.var_7576c890644a91ad.var_2009d74909f46277));
+        var_83b819b30f1965f0 = int(ceil(level.var_7576c890644a91ad.var_2009d74909f46277 * (1 - (isdefined(cache.var_2c7edecb5d6f59be) ? 0 : cache.var_2c7edecb5d6f59be))));
         if (var_83b819b30f1965f0 > 0) {
             return {params:[0:"MP_BR_INGAME/LOOT_CACHE_ROGUESIGNAL", 1:var_83b819b30f1965f0], string:"MP_BR_INGAME/CACHE_UNLOCKED_IN_X", type:"HINT_BUTTON"};
         }

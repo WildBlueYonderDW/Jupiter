@@ -10,10 +10,7 @@
 // Checksum 0x0, Offset: 0x505
 // Size: 0xa9
 function ray_trace(start, end, ignore, contentoverride, var_ef65bf3909d178e, ignoreclutter, var_b00c60a54d663ca2) {
-    if (!isdefined(contentoverride)) {
-        goto LOC_0000005d;
-    }
-    trace = physics_raycast(start, end, contentoverride, create_default_contents(), ignore, 0, "physicsquery_closest", istrue(ignoreclutter), var_b00c60a54d663ca2);
+    trace = physics_raycast(start, end, isdefined(contentoverride) ? create_default_contents() : contentoverride, ignore, 0, "physicsquery_closest", istrue(ignoreclutter), var_b00c60a54d663ca2);
     if (trace.size) {
         trace = trace[0];
     } else {

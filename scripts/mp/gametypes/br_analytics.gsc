@@ -793,24 +793,15 @@ function branalytics_gulagend(player, type, arena) {
     eventparams[eventparams.size] = "named_arena";
     eventparams[eventparams.size] = var_363eb22fdb336a2a;
     eventparams[eventparams.size] = "primary";
-    if (!isdefined(player.loadoutprimary)) {
-        goto LOC_0000012e;
-    }
-    eventparams[eventparams.size] = player.loadoutprimary;
+    eventparams[eventparams.size] = isdefined(player.loadoutprimary) ? "" : player.loadoutprimary;
     eventparams[eventparams.size] = "secondary";
     eventparams[eventparams.size] = isdefined(player.loadoutsecondary) ? "" : player.loadoutsecondary;
     eventparams[eventparams.size] = "starting_lethal";
-    if (!isdefined(player.loadoutequipmentprimary)) {
-        goto LOC_00000190;
-    }
-    eventparams[eventparams.size] = player.loadoutequipmentprimary;
+    eventparams[eventparams.size] = isdefined(player.loadoutequipmentprimary) ? "" : player.loadoutequipmentprimary;
     eventparams[eventparams.size] = "starting_tactical";
     eventparams[eventparams.size] = isdefined(player.loadoutequipmentsecondary) ? "" : player.loadoutequipmentsecondary;
     eventparams[eventparams.size] = "pickups";
-    if (!isdefined(player.var_d919d1c70719e664)) {
-        goto LOC_000001ee;
-    }
-    eventparams[eventparams.size] = player.var_d919d1c70719e664;
+    eventparams[eventparams.size] = isdefined(player.var_d919d1c70719e664) ? 0 : player.var_d919d1c70719e664;
     player dlog_recordplayerevent("dlog_event_br_gulag_end", eventparams);
     if (_branalytics_addeventallowed()) {
         function_eefaa754fc189980("gulag_end", player, 0, type);
@@ -3007,10 +2998,7 @@ function function_8ed813c1b731ca42() {
     teamsize = namespace_54d20dd0dd79277f::getteamcount(playerteam, 0);
     maxteamsize = namespace_36f464722d326bbe::function_4fb37368ae3585bb();
     if (teamsize > maxteamsize) {
-        if (isdefined(player.pers["telemetry"].connect_index)) {
-            goto LOC_000001b9;
-        }
-        params = $addtoarray($addtoarray($addtoarray($addtoarray($addtoarray(player.pers["telemetry"].connect_index, 25, 0), 26, "lobby_id"), 27, isdefined(function_4f9373a1227db35c()) ? function_4f9373a1227db35c() : ""), 28, "is_ranked"), 29, istrue(level.var_ec2fb549b15ad827) || istrue(level.var_77907d733abe8b63) ? 1 : 0);
+        params = [0:"utc_connect_time_s", 1:player.pers["telemetry"].utc_connect_time_s, 2:"team", 3:playerteam, 4:"join_type", 5:player getjointype(), 6:"skill", 7:player getskill(), 8:"party_id", 9:player getpartyid(), 10:"is_party_host", 11:istrue(level.onlinegame) ? player isfireteamleader() : 0, 12:"was_keyboardmouse", 13:player function_989faa3e2f2d8c47() != 1, 14:"map", 15:level.mapname, 16:"playlist_id", 17:getplaylistid(), 18:"playlist_name", 19:getplaylistname(), 20:"game_type", 21:getgametype(), 22:"sub_game_type", 23:namespace_36f464722d326bbe::function_6c1fce6f6b8779d5(), 24:"connect_index", 25:isdefined(player.pers["telemetry"].connect_index) ? player.pers["telemetry"].connect_index : 0, 26:"lobby_id", 27:isdefined(function_4f9373a1227db35c()) ? function_4f9373a1227db35c() : "", 28:"is_ranked", 29:istrue(level.var_ec2fb549b15ad827) || istrue(level.var_77907d733abe8b63) ? 1 : 0];
         player dlog_recordplayerevent("dlog_event_br_player_oversize_team", params);
     }
 }

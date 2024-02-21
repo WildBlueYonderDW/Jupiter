@@ -214,18 +214,9 @@ function function_d87d5deb069bf8e5(eventref, players, delay, var_3be94fc7d74bc05
         }
         waittillframeend();
     }
-    if (!isdefined(event.var_ddcfe8a7903b687f)) {
-        goto LOC_000001c7;
-    }
-    var_96a3e1f4a902ce20 = event.var_ddcfe8a7903b687f;
-    if (!isdefined(event.var_f8bb032673fdf9ee)) {
-        goto LOC_000001e7;
-    }
-    var_d0cdb1f76a8e19e5 = event.var_f8bb032673fdf9ee;
-    if (!isdefined(event.timeout)) {
-        goto LOC_00000207;
-    }
-    var_7d6cbcc0d0fc852b = event.timeout;
+    var_96a3e1f4a902ce20 = isdefined(event.var_ddcfe8a7903b687f) ? 0 : event.var_ddcfe8a7903b687f;
+    var_d0cdb1f76a8e19e5 = isdefined(event.var_f8bb032673fdf9ee) ? 0 : event.var_f8bb032673fdf9ee;
+    var_7d6cbcc0d0fc852b = isdefined(event.timeout) ? 0 : event.timeout;
     var_bc255b263fb442b9 = var_96a3e1f4a902ce20 + var_7d6cbcc0d0fc852b + var_d0cdb1f76a8e19e5;
     foreach (player in players) {
         if (isdefined(player)) {
@@ -236,8 +227,14 @@ function function_d87d5deb069bf8e5(eventref, players, delay, var_3be94fc7d74bc05
         wait(var_96a3e1f4a902ce20);
     }
     foreach (player in players) {
+        if (!isalive(player) && !istrue(var_3be94fc7d74bc059)) {
+            continue;
+        }
         player endon(eventref + "_endon");
         player function_d453707f6b8f2c6d();
+        if (!player function_8c3011dccace47c4(eventref)) {
+            continue;
+        }
         var_a98fc745a78358c9 = player function_17c324959b47a339(event) || istrue(var_219dd70e40560a41);
         var_6313cac4d3f01dab = event.timeout;
         if (!var_a98fc745a78358c9 && !getdvarint(@"hash_ec5ffe1a34b9c8a3", 0)) {
@@ -249,7 +246,6 @@ function function_d87d5deb069bf8e5(eventref, players, delay, var_3be94fc7d74bc05
         player.var_5a2916f745d4389a[eventref] = gettime();
         player function_df4b8b09952c7066(eventref, event.alias, event.var_7ce636b3f644e502, var_7d6cbcc0d0fc852b, var_d0cdb1f76a8e19e5);
         player function_f9a207358d70923c(var_7d6cbcc0d0fc852b + var_d0cdb1f76a8e19e5, [0:"disconnect"], &function_625670c3d05d51f5, event.alias, event.var_7ce636b3f644e502);
-    LOC_0000041b:
     }
     if (istrue(var_fe8102d7751b9184) && var_7d6cbcc0d0fc852b > 0) {
         wait(var_7d6cbcc0d0fc852b);

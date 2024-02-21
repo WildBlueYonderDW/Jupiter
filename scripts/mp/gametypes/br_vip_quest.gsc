@@ -34,10 +34,7 @@
 function function_fb7271d5ee18b98d(data) {
     level.var_9462bde338826062 = spawnstruct();
     var_ad60abb5340e959d = getdvarint(@"hash_857923dd420fca71", 0);
-    if (var_ad60abb5340e959d != 0) {
-        goto LOC_00000047;
-    }
-    level.var_9462bde338826062.time = function_ea591c2a379e3424("vip");
+    level.var_9462bde338826062.time = var_ad60abb5340e959d != 0 ? var_ad60abb5340e959d : function_ea591c2a379e3424("vip");
     level.var_9462bde338826062.var_c2c8c3079f1aec6d = getdvarint(@"hash_e56f8b72f908d508", 10);
     level.var_9462bde338826062.var_117657c0f68e1bc9 = getdvarint(@"hash_7516dc47cae07042", 5);
     level.var_9462bde338826062.var_89c35eb8c5facced = getdvarint(@"hash_1c2f5c6b8b707647", 5000);

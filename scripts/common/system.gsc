@@ -9,10 +9,7 @@
 // Size: 0x13a
 function register(str_name, reqs, func_preinit, func_postinit) {
     /#
-        if (function_d03495fe6418377b(str_name)) {
-            goto LOC_00000047;
-        }
-        print(function_3c8848a3a11b2553(str_name) + str_name, "<unknown string>");
+        print("<unknown string>" + (function_d03495fe6418377b(str_name) ? function_3c8848a3a11b2553(str_name) : str_name));
     #/
     level.system_funcs = function_53c4c53197386572(level.system_funcs, []);
     if (isdefined(level.system_funcs[str_name])) {
@@ -24,10 +21,7 @@ function register(str_name, reqs, func_preinit, func_postinit) {
         return;
     }
     system = {flags:0, reqs:reqs, postfunc:func_postinit, prefunc:func_preinit};
-    if (!isdefined(func_preinit)) {
-        goto LOC_000000fb;
-    }
-    system.flags = 2 | 0;
+    system.flags = system.flags | (isdefined(func_preinit) ? 2 : 0);
     system.flags = system.flags | (isdefined(func_postinit) ? 4 : 0);
     level.system_funcs[str_name] = system;
 }
@@ -128,10 +122,7 @@ function private function_59d1eeac261314c4(func) {
         } else {
             /#
                 if (!isdefined(level.system_funcs[func.reqs])) {
-                    if (function_d03495fe6418377b(func.reqs)) {
-                        goto LOC_0000016a;
-                    }
-                    function_33363a58f899bda9(function_3c8848a3a11b2553(func.reqs) + func.reqs + "<unknown string>", "<unknown string>");
+                    function_33363a58f899bda9("<unknown string>" + (function_d03495fe6418377b(func.reqs) ? function_3c8848a3a11b2553(func.reqs) : func.reqs) + "<unknown string>");
                     func.flags = func.flags | 8;
                     return;
                 }

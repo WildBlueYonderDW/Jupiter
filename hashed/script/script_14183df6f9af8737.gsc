@@ -3267,10 +3267,7 @@ function on_squad_wiped(params) {
     }
     if (!isplayer(victim.attacker)) {
         if (getdvarint(@"hash_30bdc56c2a2ef592", 1)) {
-            if (!isdefined(victim.attacker.classname)) {
-                goto LOC_00000105;
-            }
-            logstring("undefined" + victim.attacker.classname, "[SQUAD WIPE] Attacker wasn't a player it was: ");
+            logstring("[SQUAD WIPE] Attacker wasn't a player it was: " + (isdefined(victim.attacker.classname) ? "undefined" : victim.attacker.classname));
         }
         return;
     }
@@ -3408,10 +3405,7 @@ function private function_1e1cf28c03396eb0(var_e6b4a44e236fd54f) {
             var_cbb8478f9cd15285.team = team;
         }
     }
-    if (var_cbb8478f9cd15285.streak > 0) {
-        goto LOC_000000d7;
-    }
-    return undefined;
+    return var_cbb8478f9cd15285.streak > 0 ? var_cbb8478f9cd15285 : undefined;
 }
 
 // Namespace namespace_bbb7af4f07fb391c/namespace_6176022cc9d5b3f

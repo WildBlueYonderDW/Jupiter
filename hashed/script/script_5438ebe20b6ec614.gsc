@@ -397,18 +397,9 @@ function function_d579bab00a3ef871() {
         red = float(tokens[0]);
         green = float(tokens[1]);
         blue = float(tokens[2]);
-        if (red != 0) {
-            goto LOC_0000017c;
-        }
-        sunlight[sunlight.size] = undefined;
-        if (green != 0) {
-            goto LOC_00000190;
-        }
-        sunlight[sunlight.size] = undefined;
-        if (blue != 0) {
-            goto LOC_000001a4;
-        }
-        sunlight[sunlight.size] = undefined;
+        sunlight[sunlight.size] = red != 0 ? red : undefined;
+        sunlight[sunlight.size] = green != 0 ? green : undefined;
+        sunlight[sunlight.size] = blue != 0 ? blue : undefined;
     }
     sunlight[sunlight.size] = level.var_1bb44c81edf3f3a9.state.sunlight.intensity;
     thread function_e926344af0b8a54e(sunlight, level.var_1bb44c81edf3f3a9.transitiontime);
@@ -438,15 +429,9 @@ function function_e926344af0b8a54e(final, time) {
     }
     initial = [];
     if (var_7a8d2cb8d7089e94) {
-        if (!isdefined(level.var_8c4540ab5278f235[0])) {
-            goto LOC_0000010e;
-        }
-        initial[0] = level.var_8c4540ab5278f235[0];
+        initial[0] = isdefined(level.var_8c4540ab5278f235[0]) ? level.var_ae361b9fc9ed6213 : level.var_8c4540ab5278f235[0];
         initial[1] = isdefined(level.var_8c4540ab5278f235[1]) ? level.var_8ee11212ceb130ef : level.var_8c4540ab5278f235[1];
-        if (!isdefined(level.var_8c4540ab5278f235[2])) {
-            goto LOC_00000167;
-        }
-        initial[2] = level.var_8c4540ab5278f235[2];
+        initial[2] = isdefined(level.var_8c4540ab5278f235[2]) ? level.var_f8397ff86c4282e8 : level.var_8c4540ab5278f235[2];
     }
     if (var_e951e895fb5d8c46) {
         if (var_7a8d2cb8d7089e94) {

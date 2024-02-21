@@ -142,10 +142,7 @@ function function_9aeb6df65448c679(spycam) {
         ref = spycam.var_8bf83d28be4c2d4f.ref;
         currentammo = namespace_4fb9dddfb8c1a67a::getequipmentammo(ref);
         namespace_4fb9dddfb8c1a67a::setequipmentammo(ref, currentammo + 1);
-        if (!isdefined(spycam.var_8bf83d28be4c2d4f.bundle.var_40d93f42db3bc962)) {
-            goto LOC_00000436;
-        }
-        self playlocalsound(spycam.var_8bf83d28be4c2d4f.bundle.var_40d93f42db3bc962, "eqp_spycam_nomark", undefined, undefined, 1);
+        self playlocalsound(isdefined(spycam.var_8bf83d28be4c2d4f.bundle.var_40d93f42db3bc962) ? "eqp_spycam_nomark" : spycam.var_8bf83d28be4c2d4f.bundle.var_40d93f42db3bc962, undefined, undefined, 1);
         namespace_44abc05161e2e2cb::showerrormessage("MP/NO_VALID_TARGETS");
     } else {
         playfxontag(getfx("vfx_spycam_flash"), spycam, "tag_fx");

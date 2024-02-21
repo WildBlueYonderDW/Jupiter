@@ -257,10 +257,7 @@ function function_7fb26d53f97b4152() {
         while (1) {
             waitframe();
             foreach (player in level.players) {
-                if (!isdefined(player function_2a4ecac859ca54d7())) {
-                    goto LOC_00000079;
-                }
-                print3d(player.origin + (0, 0, 60), player function_2a4ecac859ca54d7(), "<unknown string>", undefined, undefined, 0.5, undefined, 1);
+                print3d(player.origin + (0, 0, 60), isdefined(player function_2a4ecac859ca54d7()) ? "<unknown string>" : player function_2a4ecac859ca54d7(), undefined, undefined, 0.5, undefined, 1);
             }
         }
     #/
@@ -293,10 +290,7 @@ function function_c66a86ff03679ba6() {
         }
         println("<unknown string>");
         foreach (player in level.players) {
-            if (!isdefined(player function_2a4ecac859ca54d7())) {
-                goto LOC_000000f0;
-            }
-            println("<unknown string>" + player function_2a4ecac859ca54d7(), "<unknown string>" + player getentitynumber() + "<unknown string>" + player.var_a8dab01d882b1e9f + "<unknown string>");
+            println("<unknown string>" + player getentitynumber() + "<unknown string>" + player.var_a8dab01d882b1e9f + "<unknown string>" + (isdefined(player function_2a4ecac859ca54d7()) ? "<unknown string>" : player function_2a4ecac859ca54d7()));
         }
     #/
 }

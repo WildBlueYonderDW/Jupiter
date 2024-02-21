@@ -1,5 +1,5 @@
 // mwiii decomp prototype
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using scripts\engine\utility.gsc;
 
 #namespace ww_raygun;

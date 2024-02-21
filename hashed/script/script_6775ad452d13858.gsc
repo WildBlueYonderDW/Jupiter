@@ -790,10 +790,7 @@ function function_bc7534da0e22321a(bodyindex) {
 // Size: 0x40
 function function_3cacd1cd869c0feb(bodyindex) {
     var_d40ce6f1122a9111 = function_bc7534da0e22321a(bodyindex);
-    if (!isdefined(var_d40ce6f1122a9111.model)) {
-        goto LOC_0000003e;
-    }
-    return var_d40ce6f1122a9111.model;
+    return isdefined(var_d40ce6f1122a9111.model) ? "" : var_d40ce6f1122a9111.model;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -802,10 +799,7 @@ function function_3cacd1cd869c0feb(bodyindex) {
 // Size: 0x40
 function function_aa32c85a2c2a2d8b(bodymodel) {
     var_d40ce6f1122a9111 = function_8b76557a4ddccf83(bodymodel);
-    if (!isdefined(var_d40ce6f1122a9111.var_a6d11cbe1850c1a6)) {
-        goto LOC_0000003e;
-    }
-    return var_d40ce6f1122a9111.var_a6d11cbe1850c1a6;
+    return isdefined(var_d40ce6f1122a9111.var_a6d11cbe1850c1a6) ? "" : var_d40ce6f1122a9111.var_a6d11cbe1850c1a6;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -814,10 +808,7 @@ function function_aa32c85a2c2a2d8b(bodymodel) {
 // Size: 0x40
 function function_6fd12f8316d3acc6(bodymodel) {
     var_d40ce6f1122a9111 = function_8b76557a4ddccf83(bodymodel);
-    if (!isdefined(var_d40ce6f1122a9111.var_b8038eb8d24df748)) {
-        goto LOC_0000003e;
-    }
-    return var_d40ce6f1122a9111.var_b8038eb8d24df748;
+    return isdefined(var_d40ce6f1122a9111.var_b8038eb8d24df748) ? "vestlight" : var_d40ce6f1122a9111.var_b8038eb8d24df748;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -826,10 +817,7 @@ function function_6fd12f8316d3acc6(bodymodel) {
 // Size: 0x3c
 function function_9745c4739bb8fdc0(bodymodel) {
     var_d40ce6f1122a9111 = function_8b76557a4ddccf83(bodymodel);
-    if (!isdefined(var_d40ce6f1122a9111.var_9350091af671d6d8)) {
-        goto LOC_0000003a;
-    }
-    return var_d40ce6f1122a9111.var_9350091af671d6d8;
+    return isdefined(var_d40ce6f1122a9111.var_9350091af671d6d8) ? 0 : var_d40ce6f1122a9111.var_9350091af671d6d8;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -838,10 +826,7 @@ function function_9745c4739bb8fdc0(bodymodel) {
 // Size: 0x40
 function function_df03c0302b44fe9f(bodymodel) {
     var_d40ce6f1122a9111 = function_8b76557a4ddccf83(bodymodel);
-    if (!isdefined(var_d40ce6f1122a9111.var_c235b5cbfdaa44c1)) {
-        goto LOC_0000003e;
-    }
-    return var_d40ce6f1122a9111.var_c235b5cbfdaa44c1;
+    return isdefined(var_d40ce6f1122a9111.var_c235b5cbfdaa44c1) ? "" : var_d40ce6f1122a9111.var_c235b5cbfdaa44c1;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -901,10 +886,7 @@ function private function_1886c9c9213a60a2(operatorref, var_6e3de93805f15b71) {
 // Size: 0x40
 function function_2dc6ef8b84dfec64(skinref) {
     var_ff73ed080233394c = function_a2f84a43b99f877a(skinref, [0:#"hash_6474931f3a449b2a"]);
-    if (isdefined(var_ff73ed080233394c)) {
-        goto LOC_0000003e;
-    }
-    return undefined;
+    return isdefined(var_ff73ed080233394c) ? var_ff73ed080233394c.var_3291e2cbec055766 : undefined;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -913,10 +895,7 @@ function function_2dc6ef8b84dfec64(skinref) {
 // Size: 0x40
 function function_a317055d4d0a4605(skinref) {
     var_ff73ed080233394c = function_a2f84a43b99f877a(skinref, [0:#"hash_b74126130fe1bde8"]);
-    if (isdefined(var_ff73ed080233394c)) {
-        goto LOC_0000003e;
-    }
-    return undefined;
+    return isdefined(var_ff73ed080233394c) ? var_ff73ed080233394c.var_6012de269b5278ac : undefined;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -925,10 +904,7 @@ function function_a317055d4d0a4605(skinref) {
 // Size: 0x40
 function function_81360519d4836bf7(skinref) {
     var_ff73ed080233394c = function_a2f84a43b99f877a(skinref, [0:#"hash_a30796472eab0efe"]);
-    if (isdefined(var_ff73ed080233394c)) {
-        goto LOC_0000003e;
-    }
-    return undefined;
+    return isdefined(var_ff73ed080233394c) ? var_ff73ed080233394c.var_c32ff41e38b39322 : undefined;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -937,10 +913,7 @@ function function_81360519d4836bf7(skinref) {
 // Size: 0x40
 function function_8d92d3fb88a9d34(skinref) {
     var_ff73ed080233394c = function_a2f84a43b99f877a(skinref, [0:#"hash_babfddf124746871"]);
-    if (isdefined(var_ff73ed080233394c)) {
-        goto LOC_0000003e;
-    }
-    return undefined;
+    return isdefined(var_ff73ed080233394c) ? var_ff73ed080233394c.var_e2ce402981e2259d : undefined;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -949,10 +922,7 @@ function function_8d92d3fb88a9d34(skinref) {
 // Size: 0x40
 function function_e0b3eff8c73f5475(skinref) {
     var_ff73ed080233394c = function_a2f84a43b99f877a(skinref, [0:#"hash_321fae418d44abbc"]);
-    if (isdefined(var_ff73ed080233394c)) {
-        goto LOC_0000003e;
-    }
-    return undefined;
+    return isdefined(var_ff73ed080233394c) ? var_ff73ed080233394c.var_887c00efb656cce0 : undefined;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a
@@ -961,10 +931,7 @@ function function_e0b3eff8c73f5475(skinref) {
 // Size: 0x40
 function function_a3195a1d60bb2d90(skinref) {
     var_ff73ed080233394c = function_a2f84a43b99f877a(skinref, [0:#"hash_3f979bdff8dd6b0d"]);
-    if (isdefined(var_ff73ed080233394c)) {
-        goto LOC_0000003e;
-    }
-    return undefined;
+    return isdefined(var_ff73ed080233394c) ? var_ff73ed080233394c.var_942d00befa8c1d9 : undefined;
 }
 
 // Namespace operator/namespace_465d40bb08a5337a

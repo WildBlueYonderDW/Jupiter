@@ -278,10 +278,7 @@ function private function_451eefc39146b820() {
                     }
                     params = spawnstruct();
                     params.type = itembundle.scriptable;
-                    if (!isdefined(itembundle.spawncount)) {
-                        goto LOC_00000159;
-                    }
-                    params.count = function_7209c8cd4b2e3afd(itembundle.spawncount, 1);
+                    params.count = function_7209c8cd4b2e3afd(isdefined(itembundle.spawncount) ? 1 : itembundle.spawncount);
                     params.bundle = itembundle;
                     function_de489fa2ffdb7f2d(params, 0);
                     callback::callback("instance_inventory_item_equipped", params);
@@ -621,10 +618,7 @@ function private function_e26d5c543a147a8d(itemtype, var_207098e76bcac40f, locat
         #/
         return;
     }
-    if (isdefined(var_f97c456989bea293)) {
-        goto LOC_000000c9;
-    }
-    var_57ad1dc40b3000d = self [[ var_c43af6f7502b943a.var_df9b308efe82294a ]]();
+    var_57ad1dc40b3000d = isdefined(var_f97c456989bea293) ? self [[ var_c43af6f7502b943a.var_df9b308efe82294a ]](var_f97c456989bea293) : self [[ var_c43af6f7502b943a.var_df9b308efe82294a ]]();
     components = var_57ad1dc40b3000d[2];
     quantity = var_57ad1dc40b3000d[1];
     itembundle = var_57ad1dc40b3000d[0];
@@ -1033,10 +1027,7 @@ function private function_77046e6abbff19e5(instance, var_12c0f53a71c9bcc8) {
                 struct.var_9da910194dabeabe = function_64ccc54bdbae5cf6(instance.lootid);
             } else {
                 /#
-                    if (isdefined(itembundle.type)) {
-                        goto LOC_00000246;
-                    }
-                    assertmsg(itembundle.type + "undefined" + "].", "CommonInstanceInventoryERROR: Expected an item of type [weapon] for a instance inventory loadout weapon sublocation," + " but the item with ID [" + instance.lootid + "] is of type [");
+                    assertmsg("CommonInstanceInventoryERROR: Expected an item of type [weapon] for a instance inventory loadout weapon sublocation," + " but the item with ID [" + instance.lootid + "] is of type [" + (isdefined(itembundle.type) ? itembundle.type : "undefined") + "].");
                 #/
             }
         }
@@ -1050,10 +1041,7 @@ function private function_77046e6abbff19e5(instance, var_12c0f53a71c9bcc8) {
     rootname = getweaponrootname(struct.weaponref);
     var_c7bd95b10c89cff8 = weaponassetnamemap(rootname, struct.var_9da910194dabeabe);
     if (isdefined(instance.var_6cb812578f7d9ae7)) {
-        if (!isdefined(function_f6c6c8920a5333e7(13, instance, 1))) {
-            goto LOC_000002f9;
-        }
-        var_ae326d1d2b95b12c = int(function_f6c6c8920a5333e7(13, instance, 1), 0);
+        var_ae326d1d2b95b12c = int(isdefined(function_f6c6c8920a5333e7(13, instance, 1)) ? 0 : function_f6c6c8920a5333e7(13, instance, 1));
         var_e26e310b5f042288 = 0;
         while (var_e26e310b5f042288 < 22) {
             var_99b9b0b10959580e = instance.var_6cb812578f7d9ae7[var_e26e310b5f042288];
@@ -1239,10 +1227,7 @@ function private function_5bee5ced081d48c0(player) {
 function function_d1df77dc341aa4e5() {
     if (!isdefined(level.var_fb27023dc5eaa1c0)) {
         var_f1da87c2ea603754 = function_90b5b6e99aef29d6();
-        if (!isdefined(var_f1da87c2ea603754.var_bd6d1a66d695958f)) {
-            goto LOC_0000003d;
-        }
-        level.var_fb27023dc5eaa1c0 = var_f1da87c2ea603754.var_bd6d1a66d695958f;
+        level.var_fb27023dc5eaa1c0 = isdefined(var_f1da87c2ea603754.var_bd6d1a66d695958f) ? 1 : var_f1da87c2ea603754.var_bd6d1a66d695958f;
     }
     return level.var_fb27023dc5eaa1c0;
 }
@@ -1452,10 +1437,7 @@ function private function_2c7fe4b882b6d63e(var_eda1e1681182223b) {
 // Checksum 0x0, Offset: 0x4d4b
 // Size: 0x78
 function private function_ab4ddb325aae30a5(var_207098e76bcac40f, location, var_fb6bafb61d5c3d4a, weaponobj) {
-    if (!isdefined(weaponobj.variantid)) {
-        goto LOC_00000053;
-    }
-    lootid = weapon::function_79d6e6c22245687a(weapon::getweaponrootname(weaponobj), weaponobj.variantid, 0);
+    lootid = weapon::function_79d6e6c22245687a(weapon::getweaponrootname(weaponobj), isdefined(weaponobj.variantid) ? 0 : weaponobj.variantid);
     var_282ed072c12d4d4d = function_dec054b294d48a5c(weaponobj);
     self function_4f1027e74d5073c4(lootid, var_207098e76bcac40f, location, var_fb6bafb61d5c3d4a, var_282ed072c12d4d4d);
 }

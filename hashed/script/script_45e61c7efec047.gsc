@@ -276,10 +276,7 @@ function function_ea489c9a3e230419(params) {
         var_96c503c9e2fe99c4 = i;
     }
     var_7a83ce8a86de986 = self.var_614607f42dca0826;
-    if (isdefined(var_7a83ce8a86de986)) {
-        goto LOC_00000215;
-    }
-    var_17bfab818caf8234 = currency::function_15975e20bbd2c824("essence");
+    var_17bfab818caf8234 = isdefined(var_7a83ce8a86de986) ? var_7a83ce8a86de986 : currency::function_15975e20bbd2c824("essence");
     var_17bfab818caf8234 = int(var_17bfab818caf8234 * getdvarfloat(@"hash_6d31f61a8b813a5a"));
     self setplayerdata(level.var_5d69837cf4db0407, "tombstoneEssence", var_17bfab818caf8234);
     if (var_17bfab818caf8234 > 0) {

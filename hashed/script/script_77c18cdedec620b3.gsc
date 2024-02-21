@@ -597,50 +597,17 @@ function function_8245dce28f1f395c(var_8132f3edc308582c, var_cb794eb7a3de6a82, v
         if (!isdefined(self)) {
             return;
         }
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_0000012e;
-        }
-        einflictor = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_00000146;
-        }
-        eattacker = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_0000015e;
-        }
-        idamage = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_00000176;
-        }
-        smod = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_0000018e;
-        }
-        sweapon = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_000001a6;
-        }
-        vpoint = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_000001be;
-        }
-        vdir = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_000001d6;
-        }
-        shitloc = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_000001ee;
-        }
-        objweapon = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_00000206;
-        }
-        partname = var_8132f3edc308582c["<unknown string>"];
-        if (!isdefined(var_8132f3edc308582c["<unknown string>"])) {
-            goto LOC_0000021e;
-        }
-        tagname = var_8132f3edc308582c["<unknown string>"];
+        einflictor = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        eattacker = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        idamage = isdefined(var_8132f3edc308582c["<unknown string>"]) ? 0 : var_8132f3edc308582c["<unknown string>"];
+        smod = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        sweapon = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        vpoint = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        vdir = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        shitloc = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        objweapon = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        partname = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
+        tagname = isdefined(var_8132f3edc308582c["<unknown string>"]) ? undefined : var_8132f3edc308582c["<unknown string>"];
         if (istrue(var_3b3652114fdefa9f)) {
             if (!isdefined(eattacker) || isdefined(eattacker) && !isplayer(eattacker) && (!isdefined(einflictor) || isdefined(einflictor) && !isplayer(einflictor))) {
                 return;

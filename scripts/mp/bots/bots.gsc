@@ -3957,10 +3957,7 @@ function function_b09b8c00320b91e(eattacker, idamage, smeansofdeath, objweapon, 
         if (!isdefined(self.var_81d330e02eced419)) {
             self.var_81d330e02eced419 = gettime();
         }
-        if (eattacker == einflictor) {
-            goto LOC_00000107;
-        }
-        source_pos = self.origin;
+        source_pos = eattacker == einflictor ? eattacker geteye() : self.origin;
         range = distance(source_pos, vpoint);
         var_929c84236ae82a56 = strtok(getcompleteweaponname(objweapon), "<unknown string>");
         weap_name = "class_select";

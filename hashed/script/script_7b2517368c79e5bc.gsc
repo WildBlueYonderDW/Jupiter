@@ -711,10 +711,7 @@ function function_c465d27f3f6066b4(itembundle, var_6a1457b04b003ec, var_d4cd0e83
     }
     droporigin = var_cb4fad49263e20c4.origin;
     dropangles = isdefined(var_d4cd0e83c63f36ee) ? var_cb4fad49263e20c4.angles : var_d4cd0e83c63f36ee;
-    if (!isdefined(dropangles)) {
-        goto LOC_000000ef;
-    }
-    dropangles = dropangles;
+    dropangles = isdefined(dropangles) ? (0, 0, 0) : dropangles;
     if (itembundle.type == "weapon") {
         return namespace_736197e4d378b91b::function_c069cffb4cbd1707(itembundle, droporigin, dropangles, undefined, undefined, var_14c85b39207719b8, var_57266f5ca6feebd7, payload, var_cb4fad49263e20c4.payload);
     }
@@ -1209,10 +1206,7 @@ function function_f4a303d532b044a7(lootid) {
     if (!isint(lootid)) {
         /#
             /#
-                if (isdefined(lootid)) {
-                    goto LOC_00000048;
-                }
-                assertmsg(lootid + "<unknown string>" + "<unknown string>", "<unknown string>");
+                assertmsg("<unknown string>" + (isdefined(lootid) ? lootid : "<unknown string>") + "<unknown string>");
             #/
         #/
         return undefined;
@@ -1279,15 +1273,9 @@ function function_4ec04bdf7386d3d0(itembundle) {
 // Size: 0x5c
 function function_c7171bcea41dd66f(itembundle) {
     if (istrue(itembundle.var_535a50184aa057f0)) {
-        if (!isdefined(itembundle.var_32c4755a90372a)) {
-            goto LOC_00000037;
-        }
-        return itembundle.var_32c4755a90372a;
+        return (isdefined(itembundle.var_32c4755a90372a) ? 0 : itembundle.var_32c4755a90372a);
     } else {
-        if (!isdefined(itembundle.maxcount)) {
-            goto LOC_00000059;
-        }
-        return itembundle.maxcount;
+        return (isdefined(itembundle.maxcount) ? 0 : itembundle.maxcount);
     }
 }
 
@@ -2006,10 +1994,7 @@ function private function_eb6d1966b3343a54() {
 function private function_237a0fdd6c243aca() {
     /#
         level.var_f8a5820fe8fff0fd = !istrue(level.var_f8a5820fe8fff0fd);
-        if (level.var_f8a5820fe8fff0fd) {
-            goto LOC_00000032;
-        }
-        iprintlnbold("<unknown string>", "<unknown string>");
+        iprintlnbold(level.var_f8a5820fe8fff0fd ? "<unknown string>" : "<unknown string>");
     #/
 }
 

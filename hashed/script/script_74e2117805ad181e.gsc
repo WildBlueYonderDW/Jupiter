@@ -37,10 +37,7 @@ function function_3c74efe69198fbba() {
     utility::function_f3bb4f4911a1beb2("battlerage", "suspendVisionSets");
     if (!istrue(self.var_44f34fe52ca32c0d)) {
         self.var_44f34fe52ca32c0d = 1;
-        if (isdefined(level.var_e131c739741e7b1f)) {
-            goto LOC_00000059;
-        }
-        var_f0435c9deed2849d = "hms_test_zombie";
+        var_f0435c9deed2849d = isdefined(level.var_e131c739741e7b1f) ? level.var_e131c739741e7b1f : "hms_test_zombie";
         namespace_6c72573a48881070::function_27a921508cb04613(var_f0435c9deed2849d, 1);
     }
     self setscriptablepartstate("zombie", "zombie_vision");
@@ -119,10 +116,7 @@ function function_d0b2cdacbf5418ed() {
     wait(1);
     utility::function_f3bb4f4911a1beb2("battlerage", "resumeVisionSets");
     self.var_44f34fe52ca32c0d = undefined;
-    if (isdefined(level.var_e131c739741e7b1f)) {
-        goto LOC_00000057;
-    }
-    var_f0435c9deed2849d = "hms_test_zombie";
+    var_f0435c9deed2849d = isdefined(level.var_e131c739741e7b1f) ? level.var_e131c739741e7b1f : "hms_test_zombie";
     namespace_6c72573a48881070::function_9a92ae402e209ecc(var_f0435c9deed2849d, 1);
 }
 

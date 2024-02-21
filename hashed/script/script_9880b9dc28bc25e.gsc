@@ -390,10 +390,7 @@ function private function_569a4f4cf02304eb() {
                     if (isdefined(ai.var_ab04e643f38307e7)) {
                         var_db67721da828993b = ai function_b0441752fb8134be();
                         ai._blackboard.var_7e3081ff77305aa8 = 1;
-                        if (isdefined(var_db67721da828993b)) {
-                            goto LOC_00000115;
-                        }
-                        ai._blackboard.var_bba2444008510c91 = ai.origin;
+                        ai._blackboard.var_bba2444008510c91 = isdefined(var_db67721da828993b) ? var_db67721da828993b.var_da1e0a7e80f3a152 : ai.origin;
                         if (istrue(ai.var_ab04e643f38307e7.var_876ca63b7dadd87a)) {
                             ai._blackboard.var_e2ff8f281ac0a21d = 1;
                             ai._blackboard.var_7e11be2629950382 = ai.var_ab04e643f38307e7.source.origin;

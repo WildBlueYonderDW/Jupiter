@@ -179,10 +179,7 @@ function private function_b07326afbb0334d3(killstreakbundle) {
     var_5da234812450b0d7 = self.origin;
     var_170b85c668cf4b59 = self.angles;
     step = 100;
-    if (isdefined(killstreakbundle)) {
-        goto LOC_00000120;
-    }
-    maxdist = 400;
+    maxdist = isdefined(killstreakbundle) ? killstreakbundle.var_bb6132ef022b0ed1 : 400;
     waittime = 0.1;
     var_556b31282abcb132 = step;
     var_f3ea705a2e523bad = function_1fd889c40c7941b8();
@@ -421,10 +418,7 @@ function function_1fd889c40c7941b8(killstreakbundle) {
     var_f3ea705a2e523bad.team = self.team;
     var_f3ea705a2e523bad.origin = self.origin;
     var_f3ea705a2e523bad.weapon = makeweapon("electric_discharge_mp");
-    if (isdefined(killstreakbundle)) {
-        goto LOC_0000009c;
-    }
-    duration = 5;
+    duration = isdefined(killstreakbundle) ? killstreakbundle.var_6abfe91d36e0c7f : 5;
     var_f3ea705a2e523bad.var_8bf83d28be4c2d4f.var_b79e08e886b92d46 = 0;
     var_f3ea705a2e523bad.var_8bf83d28be4c2d4f.var_5dd66ebda239d1b = 1;
     var_f3ea705a2e523bad.var_8bf83d28be4c2d4f.bundle.var_33bce1558051ceb5 = 0.3;

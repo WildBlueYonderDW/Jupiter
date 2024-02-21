@@ -342,10 +342,7 @@ function function_2796212b16ece5a4(teamname, squadid, var_cfc2ca5ebfa83db2, var_
         return;
     }
     waittime = getdvarint(@"hash_7061556e5a6fcbc7", 1);
-    if (!isdefined(var_4048e94312776eed)) {
-        goto LOC_000003e1;
-    }
-    waittime = var_4048e94312776eed;
+    waittime = isdefined(var_4048e94312776eed) ? waittime : var_4048e94312776eed;
     if (getdvarint(@"hash_20aac00f832266c", 1)) {
         spawnpoint scene::function_6438932e35cbbfb7(players, undefined, waittime + 2, "jup_cin_zm_infil");
     } else {

@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using script_4c770a9a4ad7659c;
 #using script_38eb8f4be20d54f4;
 #using script_3b64eb40368c1450;

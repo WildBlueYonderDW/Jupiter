@@ -2005,15 +2005,13 @@ function updatedevsettings() {
         }
         if (getdvarint(@"hash_2972a0a5a58bfd5d") > 0) {
             foreach (player in level.players) {
-                if (isai(player)) {
-                    continue;
-                }
                 player_team = player.pers["<unknown string>"];
                 idx = 0;
                 if (game["<unknown string>"] == player_team) {
                     idx = 1;
                 }
                 player setclientomnvar("<unknown string>", idx);
+            LOC_00002388:
             }
             setdevdvar(@"hash_2972a0a5a58bfd5d", 0);
         }

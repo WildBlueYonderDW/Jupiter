@@ -128,10 +128,7 @@ function function_30f5ea60517f9e06(container, opener) {
     } else {
         opener setclientomnvar("loot_container_weapon", 0);
     }
-    if (!isdefined(container.var_4f6b97e15a6ea064)) {
-        goto LOC_000002d4;
-    }
-    opener setclientomnvar("loot_container_min_slots", container.var_4f6b97e15a6ea064, level.var_2edc664b9fb97443);
+    opener setclientomnvar("loot_container_min_slots", isdefined(container.var_4f6b97e15a6ea064) ? level.var_2edc664b9fb97443 : container.var_4f6b97e15a6ea064);
     if (!isdefined(container.var_46a3a8565ac0c17c)) {
         container.var_46a3a8565ac0c17c = 1;
     }
@@ -438,10 +435,7 @@ function function_446c7ad7bcc70992(player, index, lootid, quantity, weapondata) 
             var_8eb93a779d9df6f7 = function_3c67455f0dcec331(player, weaponobj);
             lootid = function_5b832267ff976432(lootid, var_8eb93a779d9df6f7);
         }
-        if (!isdefined(weapondata.rarity)) {
-            goto LOC_000001e1;
-        }
-        typeindex = weapondata.rarity;
+        typeindex = isdefined(weapondata.rarity) ? 0 : weapondata.rarity;
     }
     player setclientomnvar("loot_container_item_" + index, lootid);
     player setclientomnvar("loot_container_quantity_" + index, quantity);

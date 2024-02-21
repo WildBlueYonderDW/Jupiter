@@ -1615,10 +1615,7 @@ function function_a0a5114bb65fcecd() {
     }
     level.var_7d48025ea3734fa2["missile_turret"] = spawnstruct();
     level.var_7d48025ea3734fa2["missile_turret"].health = 999999;
-    if (!isdefined(bundle.maxhealth)) {
-        goto LOC_000000b0;
-    }
-    level.var_7d48025ea3734fa2["missile_turret"].maxhealth = bundle.maxhealth;
+    level.var_7d48025ea3734fa2["missile_turret"].maxhealth = isdefined(bundle.maxhealth) ? 650 : bundle.maxhealth;
     level.var_7d48025ea3734fa2["missile_turret"].burstmin = 10;
     level.var_7d48025ea3734fa2["missile_turret"].burstmax = 20;
     level.var_7d48025ea3734fa2["missile_turret"].pausemin = 1;

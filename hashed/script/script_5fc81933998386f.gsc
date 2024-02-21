@@ -85,10 +85,7 @@ function main() {
 // Checksum 0x0, Offset: 0x592
 // Size: 0x6d
 function setup_model() {
-    if (isdefined(self.var_42e5c77b1d7fe6e7)) {
-        goto LOC_00000028;
-    }
-    var_42e5c77b1d7fe6e7 = "default";
+    var_42e5c77b1d7fe6e7 = isdefined(self.var_42e5c77b1d7fe6e7) ? self.var_42e5c77b1d7fe6e7 : "default";
     switch (var_42e5c77b1d7fe6e7) {
     case #"hash_f19a3ecfe8b35af9":
         function_efa2a2a09745fbd();

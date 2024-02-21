@@ -1045,10 +1045,7 @@ function private function_e35cf2862b8a6c(var_45a2c2dd2870e004) {
                 if (var_e769acd0c61ec10) {
                     var_86b0b600e702b22f = var_86b0b600e702b22f + var_fe4586b3ec1a118b * var_fdd8f39b21c1276c;
                     var_78a80ebf1df6da5b = math::function_1c46b3e291eff242(var_69a5f8db3521d341, forward_vec);
-                    if (var_78a80ebf1df6da5b) {
-                        goto LOC_0000070e;
-                    }
-                    var_63fa055edecf2f46 = -1 * 1;
+                    var_63fa055edecf2f46 = abs(var_63fa055edecf2f46) * (var_78a80ebf1df6da5b ? -1 : 1);
                 }
             }
             var_86b0b600e702b22f = var_86b0b600e702b22f * var_63fa055edecf2f46;
@@ -1324,10 +1321,7 @@ function private function_8acdeae54b5a9492(text, pos) {
             return;
         }
         if (function_1ec53e871d501656()) {
-            if (!isdefined(pos)) {
-                goto LOC_0000004f;
-            }
-            pos = pos;
+            pos = isdefined(pos) ? self.origin + (0, 0, 70) : pos;
             print3d(pos, "<unknown string>" + text, (1, 0, 0));
         }
     #/

@@ -503,10 +503,7 @@ function function_591305dc9c07499b(objweapon, eattacker, smeansofdeath) {
 // Size: 0x7df
 function function_269657aa69da2b38(var_d27680ff86693f5c) {
     var_8a9445752cf5f1c9 = self.var_941802a0997e0c42;
-    if (isdefined(var_d27680ff86693f5c.eattacker)) {
-        goto LOC_0000008e;
-    }
-    var_d8d142881fb224 = undefined;
+    var_d8d142881fb224 = isdefined(var_d27680ff86693f5c.eattacker) ? var_d27680ff86693f5c.eattacker.var_941802a0997e0c42 : undefined;
     var_691b16f55274b1c5 = self.var_691b16f55274b1c5;
     if (!isdefined(level.ob_ai_killed_points_throttle)) {
         level.ob_ai_killed_points_throttle = function_e4c99b0f178ffb98("ob_ai_killed_points_throttle", 1, level.framedurationseconds);
@@ -520,10 +517,7 @@ function function_269657aa69da2b38(var_d27680ff86693f5c) {
         var_8a9445752cf5f1c9 namespace_301533d2f1378cb9::function_ddee59d6b1a2b9e(#"hash_f3f5a252c3efe701", undefined, 0, #"kill");
     }
     if (isplayer(var_d27680ff86693f5c.eattacker)) {
-        if (!isdefined(var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632)) {
-            goto LOC_00000172;
-        }
-        var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632 = var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632;
+        var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632 = isdefined(var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632) ? [] : var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632;
         if (isdefined(var_d27680ff86693f5c.smeansofdeath)) {
             var_d27680ff86693f5c.eattacker function_54de0dcded063f2d(var_d27680ff86693f5c.smeansofdeath);
         }
@@ -545,10 +539,7 @@ function function_269657aa69da2b38(var_d27680ff86693f5c) {
         var_d27680ff86693f5c.eattacker.var_b57b122cb903fddf++;
     }
     if (isdefined(var_d27680ff86693f5c.eattacker) && isplayer(var_d27680ff86693f5c.eattacker.owner)) {
-        if (!isdefined(var_d27680ff86693f5c.eattacker.owner.var_2d9a19517f7a4632)) {
-            goto LOC_00000452;
-        }
-        var_d27680ff86693f5c.eattacker.owner.var_2d9a19517f7a4632 = var_d27680ff86693f5c.eattacker.owner.var_2d9a19517f7a4632;
+        var_d27680ff86693f5c.eattacker.owner.var_2d9a19517f7a4632 = isdefined(var_d27680ff86693f5c.eattacker.owner.var_2d9a19517f7a4632) ? [] : var_d27680ff86693f5c.eattacker.owner.var_2d9a19517f7a4632;
         if (isdefined(var_d27680ff86693f5c.eattacker.streakname) && var_d27680ff86693f5c.eattacker.streakname == "sentry_turret") {
             var_d27680ff86693f5c.eattacker.owner function_54de0dcded063f2d("killstreak_kill");
         }

@@ -32,10 +32,7 @@ function function_fb7271d5ee18b98d(data, var_7d42b5952d47067c) {
     if (!isdefined(level.var_7e12f6eb4fcb4ea1)) {
         level.var_7e12f6eb4fcb4ea1 = spawnstruct();
         var_ad60abb5340e959d = getdvarint(@"hash_364dca8e32d958fa", 0);
-        if (var_ad60abb5340e959d != 0) {
-            goto LOC_0000005c;
-        }
-        level.var_7e12f6eb4fcb4ea1.time = function_ea591c2a379e3424("assassination");
+        level.var_7e12f6eb4fcb4ea1.time = var_ad60abb5340e959d != 0 ? var_ad60abb5340e959d : function_ea591c2a379e3424("assassination");
         level.var_7e12f6eb4fcb4ea1.minsearchradius = getdvarint(@"hash_7959df486cbcdfd1", 5000);
         level.var_7e12f6eb4fcb4ea1.var_877e83278a9f2eac = getdvarint(@"hash_c7054640761be2ef", 30000);
         level.var_7e12f6eb4fcb4ea1.var_8718aeb5b6f8eb16 = getdvarint(@"hash_34d149dfddecfa91", 5000);
@@ -75,10 +72,7 @@ function function_fb7271d5ee18b98d(data, var_7d42b5952d47067c) {
             level.var_cf303d8ee00e8deb.var_fcf04cd13cd9bc51 = getdvarint(@"hash_bd8bedf943d59eb", 0);
             level.var_cf303d8ee00e8deb.var_7613cdeef31be333 = getdvarint(@"hash_fb68cd88f410c9a9", 0);
             var_ad60abb5340e959d = getdvarint(@"hash_5795d68ef70d9001", 0);
-            if (var_ad60abb5340e959d != 0) {
-                goto LOC_000004a4;
-            }
-            level.var_cf303d8ee00e8deb.time = function_ea591c2a379e3424(var_7d42b5952d47067c + "_" + "assassination");
+            level.var_cf303d8ee00e8deb.time = var_ad60abb5340e959d != 0 ? var_ad60abb5340e959d : function_ea591c2a379e3424(var_7d42b5952d47067c + "_" + "assassination");
         }
         /#
             assert(isdefined(game["dialog"]));

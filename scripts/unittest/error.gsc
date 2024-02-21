@@ -296,10 +296,7 @@ function cond() {
     } else {
         test_print("struct ternary else");
     }
-    if (!s) {
-        goto LOC_000002d8;
-    }
-    b = 0;
+    b = s ? 1 : 0;
     if (b) {
         test_print("struct ternary not if");
     } else {

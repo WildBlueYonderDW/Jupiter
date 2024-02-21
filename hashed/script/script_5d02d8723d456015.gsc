@@ -534,16 +534,10 @@ function on_zombie_ai_killed(params) {
     var_129cfed92896a644 = string(self getentitynumber());
     weaponname = isdefined(params.objweapon) ? params.objweapon.basename : "";
     damage = isdefined(params.idamage) ? string(params.idamage) : "";
-    if (isdefined(params.eattacker)) {
-        goto LOC_000000e5;
-    }
-    entitynum = "";
+    entitynum = isdefined(params.eattacker) ? string(params.eattacker getentitynumber()) : "";
     classname = isdefined(params.eattacker) && isdefined(params.eattacker.classname) ? params.eattacker.classname : "";
     inflictor = isdefined(params.einflictor) ? params.einflictor.classname : "";
-    if (isdefined(params.einflictor)) {
-        goto LOC_00000189;
-    }
-    var_405e1f9370025d56 = "";
+    var_405e1f9370025d56 = isdefined(params.einflictor) ? string(params.einflictor getentitynumber()) : "";
     error_msg = "Bounty slain [ " + var_129cfed92896a644 + " ]. Weapon: " + weaponname + " - Damage: " + damage + " - Attacker EntNum: " + entitynum + " - Attacker Class: " + classname + " - Inflictor EntNum: " + var_405e1f9370025d56 + " - Inflictor Class: " + inflictor;
     logstring(error_msg);
 }

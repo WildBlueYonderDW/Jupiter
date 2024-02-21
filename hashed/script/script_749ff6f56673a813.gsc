@@ -2081,10 +2081,7 @@ function function_e0733edbed9b4d59(var_751df20fceaee5, var_985e82f034f67960, var
     if (isdefined(var_751df20fceaee5.var_55b9fdf7eacf9572) && isdefined(var_751df20fceaee5.var_55b9fdf7eacf9572.var_cd49f3cec04f0e2b)) {
         var_751df20fceaee5.var_55b9fdf7eacf9572.var_cd49f3cec04f0e2b setscriptablepartstate("cp_mp_exfil_smoke", "dissipate");
     }
-    if (var_751df20fceaee5.var_576f57af0204c38c tagexists("tag_ground")) {
-        goto LOC_0000084c;
-    }
-    var_72464fd78466e015 = "tag_origin_static";
+    var_72464fd78466e015 = var_751df20fceaee5.var_576f57af0204c38c tagexists("tag_ground") ? "tag_ground" : "tag_origin_static";
     var_72464fd78466e015 = function_53c4c53197386572(var_72464fd78466e015, "tag_origin");
     if (function_18a23b9f6568641e()) {
         if (isdefined(level.var_3a96331857b5f453) && isdefined(var_751df20fceaee5.var_c64d7f43bc274daf)) {
@@ -2121,6 +2118,9 @@ function function_e0733edbed9b4d59(var_751df20fceaee5, var_985e82f034f67960, var
             var_9a09f0bcc9be9dde = var_751df20fceaee5.var_576f57af0204c38c vehicle_getspeed();
             var_6b2f4df48eb57c0d = var_751df20fceaee5.var_576f57af0204c38c.angles[1] - var_6b0ec32547042455;
             n_height_diff = var_6587fb87039b58d4[2] - var_fa96ac06dccfd25c[2];
+            if (abs(n_height_diff) <= 4 || istrue(var_751df20fceaee5.var_576f57af0204c38c.var_7bb70699db655bd6)) {
+                break;
+            }
             foreach (player in level.players) {
                 if (function_8d3b8265c47a2223()) {
                     continue;
@@ -2151,7 +2151,6 @@ function function_e0733edbed9b4d59(var_751df20fceaee5, var_985e82f034f67960, var
             }
             waitframe();
         }
-    LOC_00000d08:
     } else {
         var_751df20fceaee5.var_576f57af0204c38c.interact = namespace_5775ad2badedbcaa::function_90472496b91b94b3(var_751df20fceaee5.var_55b9fdf7eacf9572.origin + (0, 0, 16), 100, &function_ef855ac387639af6, "SHARED_HINTSTRINGS/EXFIL_COMPLETE_USE");
         var_751df20fceaee5.var_576f57af0204c38c.interact.var_751df20fceaee5 = var_751df20fceaee5;
@@ -2470,10 +2469,7 @@ function function_98cfcc7bd2f1db6c(var_751df20fceaee5, var_985e82f034f67960, var
         spawndata.spawntype = "GAME_MODE";
         spawndata.var_14cde247ac3313a4 = var_751df20fceaee5.var_4cdfc3869e61bd9b;
         var_cad2ff0bf935f3d4 = namespace_9f6a961447bab709::function_7d45a9e5bf7a3d3e(var_751df20fceaee5);
-        if (!isdefined(var_cad2ff0bf935f3d4.var_a097893014a748de)) {
-            goto LOC_000000ed;
-        }
-        var_5a68cfc13f7b49de = var_cad2ff0bf935f3d4.var_a097893014a748de;
+        var_5a68cfc13f7b49de = isdefined(var_cad2ff0bf935f3d4.var_a097893014a748de) ? "veh9_palfa" : var_cad2ff0bf935f3d4.var_a097893014a748de;
         var_576f57af0204c38c = namespace_1f188a13f7e79610::vehicle_spawn(var_5a68cfc13f7b49de, spawndata);
         namespace_141c4634b6ea7b27::vehicle_interact_makeunusable(var_576f57af0204c38c);
     }
@@ -2610,10 +2606,7 @@ function private function_f814294925882e0(player) {
     if (!isdefined(self)) {
         return;
     }
-    if (!isdefined(self.var_751df20fceaee5)) {
-        goto LOC_000000f8;
-    }
-    var_751df20fceaee5 = self.var_751df20fceaee5;
+    var_751df20fceaee5 = isdefined(self.var_751df20fceaee5) ? player.var_751df20fceaee5 : self.var_751df20fceaee5;
     if (!isdefined(var_751df20fceaee5)) {
         logstring("==CPMP Exfil: Exfil vehicle exists, but can't get actual Exfil struct!");
         return;
@@ -2696,10 +2689,7 @@ function function_3cfb407e41bc7f54(var_751df20fceaee5) {
     self endon("endon_exfil_defend_mode_timer");
     self endon("death_or_disconnect");
     self setclientomnvar("ui_is_exfil_countdown", 1);
-    if (!isdefined(var_751df20fceaee5.var_74144fabf9631d37)) {
-        goto LOC_0000005f;
-    }
-    var_6d06ffa37ff9a762 = var_751df20fceaee5.var_74144fabf9631d37;
+    var_6d06ffa37ff9a762 = isdefined(var_751df20fceaee5.var_74144fabf9631d37) ? 35 : var_751df20fceaee5.var_74144fabf9631d37;
     while (1) {
         n_time_remaining = self waittill("exfil_time_remaining");
         if (n_time_remaining <= var_6d06ffa37ff9a762) {
@@ -2805,10 +2795,7 @@ function function_fbe2ebb67d8d52dd(var_751df20fceaee5, var_6b53052bba864b7a) {
     if (function_8d3b8265c47a2223() && function_18a23b9f6568641e() && isdefined(var_751df20fceaee5.var_576f57af0204c38c)) {
         foreach (player in level.players) {
             if (isalive(player) && player.sessionstate == "playing" && (var_751df20fceaee5.var_576f57af0204c38c namespace_421fb1e92658d94c::function_773691f1a617f7d9(player.origin) || array_contains_key(var_751df20fceaee5.var_576f57af0204c38c.var_878914b0358bc7b5, player.guid)) && !istrue(player.var_f7b106ebc7f3abf0)) {
-                if (!isdefined(player.name)) {
-                    goto LOC_00000110;
-                }
-                logstring("unknown" + player.name + " at exfil " + var_751df20fceaee5.name, "==CPMP Exfil: Attempting to fallback complete exfil for ");
+                logstring("==CPMP Exfil: Attempting to fallback complete exfil for " + (isdefined(player.name) ? "unknown" : player.name) + " at exfil " + var_751df20fceaee5.name);
                 if (istrue(var_6b53052bba864b7a)) {
                     player.var_764da0de2a46452c = 1;
                 }
@@ -2833,10 +2820,7 @@ function function_ef855ac387639af6(player) {
     if (!isdefined(player.var_751df20fceaee5)) {
         player.var_751df20fceaee5 = var_751df20fceaee5;
     }
-    if (!isdefined(player.name)) {
-        goto LOC_000000c2;
-    }
-    logstring("unknown" + player.name + " at " + var_751df20fceaee5.name, "==CPMP Exfil: Start of exfil completion for ");
+    logstring("==CPMP Exfil: Start of exfil completion for " + (isdefined(player.name) ? "unknown" : player.name) + " at " + var_751df20fceaee5.name);
     if (isdefined(level.var_78e0845802741355)) {
         self thread [[ level.var_78e0845802741355 ]](player);
         return;

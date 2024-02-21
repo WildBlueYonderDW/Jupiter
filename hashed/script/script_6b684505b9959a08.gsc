@@ -1471,10 +1471,7 @@ function function_f27f6ec22daf7fe9(var_bab0d10e51188531) {
             playernames[playernames.size] = player.name;
         }
     }
-    if (playernames.size > 0) {
-        goto LOC_000000a9;
-    }
-    var_18843901014125cd = "";
+    var_18843901014125cd = playernames.size > 0 ? utility::function_996b01cd49d0128d(playernames, ", ") : "";
     return var_18843901014125cd;
 }
 

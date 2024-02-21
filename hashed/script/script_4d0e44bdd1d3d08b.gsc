@@ -71,10 +71,7 @@ function function_c6668bb917e966b2() {
 // Size: 0x78
 function function_74ef4a883340b273() {
     bundle = level.var_a1ad2758fcbd2f5e["specialty_zombie_legs"];
-    if (isdefined(bundle.var_ac707f58a9f3b733)) {
-        goto LOC_00000046;
-    }
-    speedmod = 0.1;
+    speedmod = isdefined(bundle.var_ac707f58a9f3b733) ? bundle.var_ac707f58a9f3b733 : 0.1;
     self.var_7e94104134f2f40b = speedmod;
     if (utility::issharedfuncdefined("player", "updateMoveSpeed")) {
         utility::function_f3bb4f4911a1beb2("player", "updateMoveSpeed");

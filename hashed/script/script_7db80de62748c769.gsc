@@ -231,10 +231,7 @@ function private function_585606ec5af81775(var_e101dff7a9e862dc) {
             leader = self;
         }
         if (self == leader) {
-            if (isdefined(self.patroltarget)) {
-                goto LOC_0000051a;
-            }
-            targetpos = level.var_865c7977a3a308a[var_e101dff7a9e862dc].var_aed4cacc8d6a6a0c.origin;
+            targetpos = isdefined(self.patroltarget) ? self.patroltarget.origin : level.var_865c7977a3a308a[var_e101dff7a9e862dc].var_aed4cacc8d6a6a0c.origin;
             namespace_3ea25ac177a3c7db::set_goal(var_e101dff7a9e862dc, targetpos);
             wait(0.1);
             var_55576d80f4e2554d = level.var_865c7977a3a308a[var_e101dff7a9e862dc].var_55576d80f4e2554d;

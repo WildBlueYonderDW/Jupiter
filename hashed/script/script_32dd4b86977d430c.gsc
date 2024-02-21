@@ -618,10 +618,7 @@ function function_8e857ffadd6d1af2(player, itemslotindex, var_5c31c74d6d007e20) 
     var_b1f734ded9a2721a = function_38859e49d1ac69a0(var_cb325ddb4a764623);
     if (isdefined(var_cb325ddb4a764623) && isdefined(var_b1f734ded9a2721a) && isdefined(var_b1f734ded9a2721a.var_af40863a32d7792b)) {
         var_62f6f7640e4431e3 = function_90b5b6e99aef29d6();
-        if (isdefined(var_62f6f7640e4431e3.var_dc7ab0a22b829f8b)) {
-            goto LOC_00000123;
-        }
-        var_5e2bb202ae259b31 = 1;
+        var_5e2bb202ae259b31 = isdefined(var_62f6f7640e4431e3.var_dc7ab0a22b829f8b) ? var_62f6f7640e4431e3.var_dc7ab0a22b829f8b : 1;
         var_b87f7fae01ce754f = var_9fb3b576439ee3d * var_b1f734ded9a2721a.var_af40863a32d7792b * var_5e2bb202ae259b31;
         var_74806f0c4caa7e55 = var_9fb3b576439ee3d;
         player dlog_recordplayerevent("dlog_event_player_common_item", [0:"dropped", 1:0, 2:"stowed", 3:0, 4:"equipped", 5:0, 6:"bought", 7:0, 8:"sold", 9:lootid, 10:"type", 11:itembundle.type, 12:"from_cache", 13:0, 14:"from_rift_reward", 15:0]);

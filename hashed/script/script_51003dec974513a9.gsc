@@ -106,10 +106,7 @@ function private function_89c75ea3b9bff392() {
         }
     }
     var_b23fe13906e7191b = var_6b246e279fd1929f || var_de7821bc51ab43a0 >= 4 ? 3 : 4;
-    if (var_6b246e279fd1929f || var_de7821bc51ab43a0 >= 4) {
-        goto LOC_0000018f;
-    }
-    var_98462fcf733f80b5 = var_b23fe13906e7191b + 1;
+    var_98462fcf733f80b5 = var_6b246e279fd1929f || var_de7821bc51ab43a0 >= 4 ? 6 : var_b23fe13906e7191b + 1;
     var_d95356124cc5cc35 = randomintrange(var_b23fe13906e7191b, var_98462fcf733f80b5 + 1);
     for (var_d4f512e2e76b7b9f = 0; var_d4f512e2e76b7b9f < var_d95356124cc5cc35; var_d4f512e2e76b7b9f++) {
         self.var_e49062f063f27791[var_d4f512e2e76b7b9f] dontinterpolate();

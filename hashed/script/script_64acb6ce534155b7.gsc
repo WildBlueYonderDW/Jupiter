@@ -1674,10 +1674,7 @@ function utilflare_shootflare(spawn_origin, var_1da50610f94e1bfb, var_30a49dc77e
         flare setmodel("equip_flare_br");
     }
     wait(0.5);
-    if (isdefined(var_1da50610f94e1bfb) && flare getscriptableparthasstate("launch", "start_" + var_1da50610f94e1bfb)) {
-        goto LOC_00000147;
-    }
-    var_bf90cb052be008c9 = "start";
+    var_bf90cb052be008c9 = isdefined(var_1da50610f94e1bfb) && flare getscriptableparthasstate("launch", "start_" + var_1da50610f94e1bfb) ? "start_" + var_1da50610f94e1bfb : "start";
     flare setscriptablepartstate("launch", var_bf90cb052be008c9, 0);
     var_dd8972a1ae79c2e3 = isdefined(var_1da50610f94e1bfb) && flare getscriptableparthasstate("travel", "start_" + var_1da50610f94e1bfb) ? "start_" + var_1da50610f94e1bfb : "start";
     if (isdefined(var_1da50610f94e1bfb)) {
@@ -1750,18 +1747,9 @@ function _utilflare_isvalidflaretype(var_1da50610f94e1bfb) {
 function sfx_br_flare_phosphorus(var_1da50610f94e1bfb) {
     self endon("death");
     level endon("game_ended");
-    if (isdefined(var_1da50610f94e1bfb) && self getscriptableparthasstate("phosphorus", "start_" + var_1da50610f94e1bfb)) {
-        goto LOC_0000005d;
-    }
-    var_779efa68800909d1 = "start";
-    if (isdefined(var_1da50610f94e1bfb) && self getscriptableparthasstate("phosphorus_loop", "start_" + var_1da50610f94e1bfb)) {
-        goto LOC_00000089;
-    }
-    var_7593f454aad2cf18 = "start";
-    if (isdefined(var_1da50610f94e1bfb) && self getscriptableparthasstate("phosphorus", "end_" + var_1da50610f94e1bfb)) {
-        goto LOC_000000b5;
-    }
-    var_c18aafa4107a3316 = "end";
+    var_779efa68800909d1 = isdefined(var_1da50610f94e1bfb) && self getscriptableparthasstate("phosphorus", "start_" + var_1da50610f94e1bfb) ? "start_" + var_1da50610f94e1bfb : "start";
+    var_7593f454aad2cf18 = isdefined(var_1da50610f94e1bfb) && self getscriptableparthasstate("phosphorus_loop", "start_" + var_1da50610f94e1bfb) ? "start_" + var_1da50610f94e1bfb : "start";
+    var_c18aafa4107a3316 = isdefined(var_1da50610f94e1bfb) && self getscriptableparthasstate("phosphorus", "end_" + var_1da50610f94e1bfb) ? "end_" + var_1da50610f94e1bfb : "end";
     self setscriptablepartstate("phosphorus", var_779efa68800909d1, 0);
     wait(0.3);
     self setscriptablepartstate("phosphorus_loop", var_7593f454aad2cf18, 0);

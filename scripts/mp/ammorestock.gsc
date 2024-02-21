@@ -623,10 +623,7 @@ function ammorestock_playeruse(player, instance) {
             } else if (var_cf4209c200f8bbf4 == "weapon_sniper") {
                 var_662b420c8b2fcb2d = var_eb2ee014bd8dd8c8 > 0 ? var_eb2ee014bd8dd8c8 : 3;
             } else {
-                if (var_d7c2deeaf4ae5481 > 0) {
-                    goto LOC_00000619;
-                }
-                var_662b420c8b2fcb2d = 3;
+                var_662b420c8b2fcb2d = var_d7c2deeaf4ae5481 > 0 ? var_d7c2deeaf4ae5481 : 3;
             }
             if (istrue(weaponobj.hasalternate)) {
                 var_6890a4ce965bba99 = weaponobj getaltweapon();

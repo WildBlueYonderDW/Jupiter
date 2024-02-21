@@ -103,15 +103,9 @@ function private function_9e58baa59719d027(bundle) {
 // Size: 0x1c4
 function smokegrenadeexplode(position, owner, bundle) {
     level endon("game_ended");
-    if (isdefined(bundle) && isdefined(bundle.var_5375450923bc03a5)) {
-        goto LOC_0000007d;
-    }
-    var_5375450923bc03a5 = 1;
+    var_5375450923bc03a5 = isdefined(bundle) && isdefined(bundle.var_5375450923bc03a5) ? self.bundle.var_5375450923bc03a5 : 1;
     var_502f2729eb2e3ace = isdefined(bundle) && isdefined(bundle.var_502f2729eb2e3ace) ? bundle.var_502f2729eb2e3ace : 9.25;
-    if (isdefined(bundle) && isdefined(bundle.smokeradius)) {
-        goto LOC_000000cd;
-    }
-    smokeradius = 330;
+    smokeradius = isdefined(bundle) && isdefined(bundle.smokeradius) ? bundle.smokeradius : 330;
     wait(var_5375450923bc03a5);
     thread smokegrenadegiveblindeye(position, owner, bundle);
     if (isdefined(bundle) && isdefined(bundle.var_502f2729eb2e3ace) && isdefined(bundle.var_5375450923bc03a5)) {

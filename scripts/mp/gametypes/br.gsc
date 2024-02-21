@@ -4752,14 +4752,8 @@ function setplacementxpshare() {
 // Checksum 0x0, Offset: 0xfe8a
 // Size: 0x1df
 function function_690f2ce02fd51b3d(var_2b195188bf4738e7, var_786dc59a2e215fc5, var_7890cf9a2e47bd7b) {
-    if (isdefined(var_2b195188bf4738e7)) {
-        goto LOC_00000096;
-    }
-    var_e0f4d3685ff5c5bc = 99250;
-    if (isdefined(var_786dc59a2e215fc5)) {
-        goto LOC_000000a5;
-    }
-    var_2121aa51c2c8132e = 80;
+    var_e0f4d3685ff5c5bc = isdefined(var_2b195188bf4738e7) ? var_2b195188bf4738e7 : 99250;
+    var_2121aa51c2c8132e = isdefined(var_786dc59a2e215fc5) ? var_786dc59a2e215fc5 : 80;
     var_409d356961c27474 = isdefined(var_7890cf9a2e47bd7b) ? var_7890cf9a2e47bd7b : 15;
     var_d176c6fa97ae9438 = var_e0f4d3685ff5c5bc;
     teamsize = max(1, level.maxteamsize);

@@ -3160,14 +3160,8 @@ function loadout_updateplayerperks(struct, class) {
             thread namespace_b6a8027f477010e1::giveperksafterspawn();
         }
         if (!isagent(self) && namespace_296c793a004e81b3::getintproperty(@"hash_5cb1a62baf307905", 1) == 1 && game["state"] != "postgame") {
-            if (!isdefined(loadoutperks)) {
-                goto LOC_00000462;
-            }
-            perksarray = loadoutperks;
-            if (!isdefined(loadoutextraperks)) {
-                goto LOC_00000470;
-            }
-            var_9e0a050f0398edc3 = loadoutextraperks;
+            perksarray = isdefined(loadoutperks) ? [] : loadoutperks;
+            var_9e0a050f0398edc3 = isdefined(loadoutextraperks) ? [] : loadoutextraperks;
             if (istrue(level.var_606eb45e074ff204) || istrue(level.var_9a849908e60b857c)) {
                 perksarray[perksarray.size] = var_15f3e6df722fb1cf;
                 perksarray[perksarray.size] = var_15f3e5df722faf9c;

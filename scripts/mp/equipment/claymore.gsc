@@ -233,16 +233,16 @@ function claymore_watchfortrigger() {
                     var_340d59422336e85a = var_2cc97e113610ca14 - var_ad283a45677a1ea3;
                     var_a00164b06f60f5e6 = ent.origin;
                     if (vectordot(var_340d59422336e85a, (0, 0, 1)) >= 0) {
-                        if (!isdefined(ent gettagorigin("j_spineupper", 1))) {
-                            goto LOC_0000026d;
-                        }
-                        var_a00164b06f60f5e6 = ent gettagorigin("j_spineupper", 1);
+                        var_a00164b06f60f5e6 = isdefined(ent gettagorigin("j_spineupper", 1)) ? var_a00164b06f60f5e6 : ent gettagorigin("j_spineupper", 1);
                     }
                     var_44060504f23c16af[var_44060504f23c16af.size] = var_a00164b06f60f5e6;
                     handled = 0;
                     foreach (var_a00164b06f60f5e6 in var_44060504f23c16af) {
                         var_340d59422336e85a = var_a00164b06f60f5e6 - self.origin;
                         var_cc00b910bd1d69c8 = vectordot(var_340d59422336e85a, forward);
+                        if (var_cc00b910bd1d69c8 > 90) {
+                            continue;
+                        }
                         var_69211973f7d7bbd6 = vectordot(var_340d59422336e85a, up);
                         if (abs(var_69211973f7d7bbd6) > 32) {
                             continue;
@@ -258,7 +258,6 @@ function claymore_watchfortrigger() {
                         }
                         handled = 1;
                         thread claymore_trigger(ent);
-                    LOC_00000325:
                     }
                     if (handled) {
                         break;
@@ -367,10 +366,7 @@ function claymore_explode(attacker) {
         owner.var_2e8bbe611a66d602["claymore_mp"][owner.var_2e8bbe611a66d602["claymore_mp"].size] = self.index;
     }
     if (isdefined(var_25144f9160d59fd)) {
-        if (!isdefined(self.bundle.var_81e0f871add9f577)) {
-            goto LOC_00000228;
-        }
-        var_25144f9160d59fd radiusdamage(self.origin, self.bundle.var_2870c709e5604e6f, 100, 100, self.owner, "MOD_EXPLOSIVE", self.bundle.var_81e0f871add9f577, "claymore_radial_mp");
+        var_25144f9160d59fd radiusdamage(self.origin, self.bundle.var_2870c709e5604e6f, 100, 100, self.owner, "MOD_EXPLOSIVE", isdefined(self.bundle.var_81e0f871add9f577) ? "claymore_radial_mp" : self.bundle.var_81e0f871add9f577);
     }
     earthquake(0.45, 0.7, self.origin, 800);
     if (isent(self)) {
@@ -576,18 +572,13 @@ function claymore_modifieddamage(victim, objweapon, inflictor, meansofdeath, dam
                 }
             }
         }
+    } else if (objweapon.basename == (isdefined(bundle.var_81e0f871add9f577) ? "claymore_radial_mp" : bundle.var_81e0f871add9f577)) {
+        if (!istrue(namespace_f8065cafc523dba5::playersareenemies(victim, attacker))) {
+            return 0;
+        }
+        thread namespace_8c5b266f689b1e0b::claymore_blockdamageuntilframeend(inflictor);
     } else {
-        if (!isdefined(bundle.var_81e0f871add9f577)) {
-            goto LOC_000002f1;
-        }
-        if ("claymore_radial_mp" == bundle.var_81e0f871add9f577) {
-            if (!istrue(namespace_f8065cafc523dba5::playersareenemies(victim, attacker))) {
-                return 0;
-            }
-            thread namespace_8c5b266f689b1e0b::claymore_blockdamageuntilframeend(inflictor);
-        } else {
-            return damage;
-        }
+        return damage;
     }
     if (isdefined(level.gametype) && namespace_36f464722d326bbe::isBRStyleGameType()) {
         return damage;

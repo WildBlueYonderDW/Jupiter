@@ -566,10 +566,7 @@ function redeploy_drone_destroyed(eattacker, modelname, var_aae73b7b727db0c4) {
     }
     drone.owner = eattacker;
     drone function_e47fae0ab5c70a88(self);
-    if (isdefined(level.br_circle)) {
-        goto LOC_00000133;
-    }
-    var_9a6c1b85896a116e = addtostruct(addtostruct(utility::getintorzero(level.br_circle.circleindex), circle_index, -1), pos, self.origin);
+    var_9a6c1b85896a116e = {var_3213bd18697af72f:0, circle_index:isdefined(level.br_circle) ? utility::getintorzero(level.br_circle.circleindex) : -1, pos:self.origin};
     level thread namespace_a011fbf6d93f25e5::function_bfc305f32a65dee5(var_9a6c1b85896a116e);
 }
 

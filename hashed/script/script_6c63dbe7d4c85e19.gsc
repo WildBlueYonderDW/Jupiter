@@ -153,10 +153,7 @@ function private function_c8c10b313b3fcf09(params) {
     if (!isplayer(params.eattacker) || isdefined(params.idamage) && params.idamage > self.maxhealth * 0.5) {
         weaponname = isdefined(params.sweapon) ? params.sweapon.basename : "";
         damage = isdefined(params.idamage) ? string(params.idamage) : "";
-        if (isdefined(params.eattacker)) {
-            goto LOC_00000167;
-        }
-        entitynum = "";
+        entitynum = isdefined(params.eattacker) ? string(params.eattacker getentitynumber()) : "";
         classname = isdefined(params.eattacker) && isdefined(params.eattacker.classname) ? params.eattacker.classname : "";
         error_msg = "Deathworm slain incorrectly. Weapon: " + weaponname + " - Damage: " + damage + " - EntNum: " + entitynum + " - class: " + classname;
         /#

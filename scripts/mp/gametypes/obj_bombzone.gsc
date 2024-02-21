@@ -1408,9 +1408,6 @@ function ondrop(player) {
             player setgametypevip(0);
         }
     }
-    if (getdvarint(@"hash_9cf963b64e1223e7", 0) == 1) {
-        goto LOC_000000a0;
-    }
     namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_bomb");
 LOC_000000a0:
     if (!var_430e559c7df5972d) {

@@ -4165,10 +4165,7 @@ function private function_5ecd1fd13181af98(notifystring, var_80ba00b3669e6f07, v
         return;
     }
     note = tolower(var_80ba00b3669e6f07.var_b9954627fcce58b4);
-    if (istrue(var_80ba00b3669e6f07.var_a981703f16897b47)) {
-        goto LOC_000000ca;
-    }
-    var_d6549707542fa7bb = "_r" + "";
+    var_d6549707542fa7bb = "ewnr_" + self getentitynumber() + "_" + notifystring + "_" + note + "_" + (istrue(var_80ba00b3669e6f07.var_a981703f16897b47) ? "_r" : "");
     var_80ba00b3669e6f07.var_c586ec36655fd62f notify(var_d6549707542fa7bb);
     var_80ba00b3669e6f07.var_c586ec36655fd62f endon(var_d6549707542fa7bb);
     waittillframeend();

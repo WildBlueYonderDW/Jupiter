@@ -551,10 +551,7 @@ function function_b7f154368abbe463(victim, objweapon, meansofdeath, inflictor, v
     self.modifiers["hit_loc"] = 0;
     curtime = gettime();
     var_cf4209c200f8bbf4 = getweapongroup(objweapon);
-    if (isweapon(objweapon)) {
-        goto LOC_0000034d;
-    }
-    var_366b0ecc2f28aead = "";
+    var_366b0ecc2f28aead = isweapon(objweapon) ? getcompleteweaponname(objweapon) : "";
     var_7b9f10eced207b58 = victim.guid;
     if (!iskillstreakweapon(objweapon) && !_hasperk("specialty_explosivebullets")) {
         attackerisinflictor = attackerisinflictor(self, inflictor, objweapon, meansofdeath);
@@ -795,11 +792,13 @@ function function_b7f154368abbe463(victim, objweapon, meansofdeath, inflictor, v
             if (level.teambased) {
                 players = getfriendlyplayers(self.team, 1);
                 foreach (player in players) {
+                    if (player == self) {
+                        continue;
+                    }
                     if (distancesquared(self.origin, player.origin) < 90000) {
                         self.modifiers["buddy_kill"] = 1;
                         break;
                     }
-                LOC_000017ce:
                 }
             }
             if (namespace_3bbb5a98b932c46f::isstunnedorblinded()) {
@@ -2477,10 +2476,7 @@ function multikill(var_61b5d0250b328f00, killcount, var_c95c893c15217527, var_5a
     thread utility::trycall(level.matchdata_logmultikill, var_61b5d0250b328f00, killcount);
     if (isdefined(award)) {
         var_5af31c1555eb14b1 = istrue(var_5af31c1555eb14b1);
-        if (isdefined(var_c95c893c15217527)) {
-            goto LOC_00000235;
-        }
-        thread killeventtextpopup(award, 1, var_c95c893c15217527, var_5af31c1555eb14b1);
+        thread killeventtextpopup(award, isdefined(var_c95c893c15217527) ? var_c95c893c15217527 : 1, var_5af31c1555eb14b1);
         if (!var_5af31c1555eb14b1) {
             self.currentmultikill = killcount;
             namespace_aad14af462a74d08::function_e6ba0866eca5b87b(self, iskillstreakweapon);
@@ -3173,10 +3169,7 @@ function bombdefused(defuser, var_6fee348180880650) {
             }
         }
     }
-    if (!isdefined(var_6fee348180880650.objectivekey)) {
-        goto LOC_00000128;
-    }
-    var_6fee348180880650 = var_6fee348180880650.objectivekey;
+    var_6fee348180880650 = isdefined(var_6fee348180880650.objectivekey) ? undefined : var_6fee348180880650.objectivekey;
     if (isdefined(level.bombowner) && level.bombowner.bombplantedtime + 3000 + level.defusetime * 1000 > gettime() && isreallyalive(level.bombowner)) {
         defuser thread namespace_62c556437da28f50::scoreeventpopup(#"ninja_defuse", var_6fee348180880650);
         defuser thread namespace_44abc05161e2e2cb::showsplash("ninja_defuse", namespace_62c556437da28f50::getscoreinfovalue(#"defuse"));

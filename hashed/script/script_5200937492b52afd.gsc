@@ -4,7 +4,7 @@
 #using scripts\common\ai.gsc;
 #using script_4c770a9a4ad7659c;
 #using script_16ea1b94f0f381b3;
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using scripts\common\utility.gsc;
 #using script_3b64eb40368c1450;
 #using scripts\common\vehicle.gsc;
@@ -89,12 +89,12 @@ function private function_667a1af25742dded(grenade) {
     grenade thread function_f8d8329a90d0eb79();
     hitent = grenade waittill("missile_stuck");
     var_f45ac1215b82c32c = isdefined(hitent) && hitent vehicle::isvehicle();
-    if (var_f45ac1215b82c32c) {
-        goto LOC_0000005f;
-    }
-    grenade.update_time = 0.5;
+    grenade.update_time = var_f45ac1215b82c32c ? 0.1 : 0.5;
     while (1) {
         var_eb4396dfb44e2e16 = grenade function_72269ee58c0811da();
+        if (!isdefined(var_eb4396dfb44e2e16)) {
+            break;
+        }
         if (!isdefined(grenade.var_2c79ccf927f4748b)) {
             grenade.var_2c79ccf927f4748b = grenade start_timed_vortex(var_eb4396dfb44e2e16, 60, 1000, 275, 10, 32, !var_f45ac1215b82c32c);
             grenade thread function_b24870401644121d(var_eb4396dfb44e2e16, !var_f45ac1215b82c32c);
@@ -107,7 +107,6 @@ function private function_667a1af25742dded(grenade) {
         #/
         wait(grenade.update_time);
     }
-LOC_00000106:
     grenade function_ab089252607fce9b();
 }
 
@@ -378,10 +377,7 @@ function private function_75fc5c709c8b261e() {
             var_89d9e69374754848 = sighttracepassed(self.var_4d0770ac27f255d3, var_c86f50466aa10d22, 0, agent, undefined, 1);
             /#
                 if (getdvarint(@"hash_679e2a774cf4d25f", 0)) {
-                    if (var_89d9e69374754848) {
-                        goto LOC_00000135;
-                    }
-                    line(self.var_4d0770ac27f255d3, var_c86f50466aa10d22, (1, 0, 0), (0, 1, 0));
+                    line(self.var_4d0770ac27f255d3, var_c86f50466aa10d22, var_89d9e69374754848 ? (0, 1, 0) : (1, 0, 0));
                 }
             #/
             var_f6f320fcf5c9f695 = level.var_603671ff1b339327["pull"][agent.unittype];

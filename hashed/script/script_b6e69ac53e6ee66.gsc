@@ -242,10 +242,7 @@ function function_6fe4e482e9c736b9(owner, streakinfo, var_e53ab3056af949c7, nonv
     var_7622a5ad898bdbd1 = var_49dbe0a87db806d4;
     var_23e2c43c7b301241 = isdefined(level.var_25479c87b8ab495c.var_1f5176ea25f9060) ? 500 : level.var_25479c87b8ab495c.var_1f5176ea25f9060;
     var_a24a061a7076376c = spawn("script_model", pathstart);
-    if (!isdefined(level.var_25479c87b8ab495c.var_13fd3784885951a1)) {
-        goto LOC_00000258;
-    }
-    var_a24a061a7076376c setmodel(level.var_25479c87b8ab495c.var_13fd3784885951a1, "veh9_mil_air_stealth_bomber_mp");
+    var_a24a061a7076376c setmodel(isdefined(level.var_25479c87b8ab495c.var_13fd3784885951a1) ? "veh9_mil_air_stealth_bomber_mp" : level.var_25479c87b8ab495c.var_13fd3784885951a1);
     var_a24a061a7076376c.speed = var_3ae18fe8cc908b35;
     var_a24a061a7076376c.accel = 100;
     var_a24a061a7076376c.angles = var_7622a5ad898bdbd1;
@@ -562,10 +559,7 @@ function function_e01ff9fbb932ee1a() {
                     }
                 }
                 wait(self.var_c588c0602c9a3b4d);
-                if (!isdefined(level.var_25479c87b8ab495c.var_1f5176ea25f9060)) {
-                    goto LOC_000001d6;
-                }
-                launchpos = anglestoforward(var_6951cf1f43bc8ebe) + 500 * level.var_25479c87b8ab495c.var_1f5176ea25f9060;
+                launchpos = launchpos + anglestoforward(var_6951cf1f43bc8ebe) * (isdefined(level.var_25479c87b8ab495c.var_1f5176ea25f9060) ? 500 : level.var_25479c87b8ab495c.var_1f5176ea25f9060);
             }
             self setscriptablepartstate("release", "neutral", 0);
             function_464ed851fbd2e05();

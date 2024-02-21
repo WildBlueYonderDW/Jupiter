@@ -1142,10 +1142,7 @@ function private function_1c09d370de7e7a2c(victim, crushed) {
         var_7c732a97b6c59830 = vectornormalize(target_pos - fxent.origin);
         var_239aff9b47d17e5d = max_speed + vehicle.var_8f0c671e1b017f57;
         var_44f5e09c65bc0cd2 = var_44f5e09c65bc0cd2 > 0 ? var_44f5e09c65bc0cd2 - var_bf616cf6df99c76d : 0;
-        if (var_a73bcd4930abb271 < var_239aff9b47d17e5d) {
-            goto LOC_000003f4;
-        }
-        var_a73bcd4930abb271 = var_239aff9b47d17e5d;
+        var_a73bcd4930abb271 = var_a73bcd4930abb271 < var_239aff9b47d17e5d ? var_a73bcd4930abb271 + var_494de50dae6df05a : var_239aff9b47d17e5d;
     }
     if (success) {
         fxent.origin = target_pos;

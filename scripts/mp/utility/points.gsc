@@ -113,10 +113,7 @@ function doScoreEvent(event, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdf
     }
     showsplash = namespace_62c556437da28f50::function_e3dfd7e570749681(event);
     if (showsplash && !namespace_36f464722d326bbe::isBRStyleGameType()) {
-        if (isdefined(var_7ec7671a1e0c788f)) {
-            goto LOC_00000189;
-        }
-        var_715403f4ba13470a = undefined;
+        var_715403f4ba13470a = isdefined(var_7ec7671a1e0c788f) ? var_7ec7671a1e0c788f.var_715403f4ba13470a : undefined;
         thread namespace_391de535501b0143::killeventtextpopup(event, 1, undefined, var_715403f4ba13470a);
     }
     if (namespace_62c556437da28f50::function_34294184e90b96c(event)) {
@@ -136,10 +133,7 @@ function doScoreEvent(event, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdf
             /#
                 assertex(isdefined(attackerdata), "The victim of the score event has undefined attackerData. Consider removing the victim argument from your call to doScoreEvent(...) or ensuring the victim's data is well-formed.");
             #/
-            if (isdefined(attackerdata)) {
-                goto LOC_00000259;
-            }
-            var_5d459e1dea2385a3 = undefined;
+            var_5d459e1dea2385a3 = isdefined(attackerdata) ? attackerdata.psoffsettime : undefined;
             var_386245dad4e566f6 = attackerdata.firsttimedamaged;
             var_b91d5956ea4e402c = attackerdata.lasttimedamaged;
             namespace_ab70c875589b8f6a::processevent(event, var_386245dad4e566f6, var_b91d5956ea4e402c, var_5d459e1dea2385a3);

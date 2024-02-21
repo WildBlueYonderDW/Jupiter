@@ -240,10 +240,7 @@ function function_e5878a249845a03e() {
         self.var_a161875f61a76bf1.var_46a3a8565ac0c17c = 3;
         self.var_a161875f61a76bf1.contents = namespace_1b7e64f50cca9321::function_ec87b214cd429e96(items, undefined);
         lootid = namespace_38b993c4618e76cd::getLootIDFromRef("equip_geigercounter");
-        if (level.var_6d6a6fcd9e67bc58.var_15725dd697a56ab6) {
-            goto LOC_00000170;
-        }
-        var_ea156f5f477a8792 = 1;
+        var_ea156f5f477a8792 = level.var_6d6a6fcd9e67bc58.var_15725dd697a56ab6 ? var_8edc62019d327b86 : 1;
         for (i = 0; i < var_ea156f5f477a8792; i++) {
             self.var_a161875f61a76bf1.contents = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f(self.var_a161875f61a76bf1.contents, 1, lootid);
         }

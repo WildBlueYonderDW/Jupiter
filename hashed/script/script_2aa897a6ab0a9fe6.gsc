@@ -322,10 +322,7 @@ function function_ef462f102d407064() {
     if (!isdefined(self.var_e75b42e6c7c244d4)) {
         self.var_e75b42e6c7c244d4 = time;
     }
-    if (!isdefined(self.var_d54b8704cb9ea6bc)) {
-        goto LOC_00000067;
-    }
-    var_d54b8704cb9ea6bc = self.var_d54b8704cb9ea6bc;
+    var_d54b8704cb9ea6bc = isdefined(self.var_d54b8704cb9ea6bc) ? 1 : self.var_d54b8704cb9ea6bc;
     /#
         var_4aed760c6d068e13 = getdvarint(@"hash_e7cee129b1a5b6f1", 0);
         if (var_4aed760c6d068e13 > 0) {

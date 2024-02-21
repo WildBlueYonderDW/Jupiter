@@ -1688,10 +1688,8 @@ function watchpickup(droppingplayer) {
         if (isdefined(droppeditem) && var_fee12400d8814b47) {
             droppeditem delete();
         }
-        if (isdefined(droppeditem) || dirty) {
-            break;
-        }
     }
+LOC_00000520:
     /#
         assert(isdefined(player.tookweaponfrom));
     #/
@@ -5127,10 +5125,7 @@ function minedamagemonitor(var_ed674bb1196f8987) {
         if (istrue(objweapon.isemp)) {
             continue;
         }
-        if (damage::isfmjdamage(objweapon, type) || damage >= 80) {
-            goto LOC_00000207;
-        }
-        var_8c97d5d29e3f5523 = 1;
+        var_8c97d5d29e3f5523 = damage::isfmjdamage(objweapon, type) || damage >= 80 ? 2 : 1;
         hits = hits - var_8c97d5d29e3f5523;
         equipmenthit(self.owner, var_7a541e653b7997db, objweapon, type);
         if (hits <= 0) {

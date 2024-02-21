@@ -2,7 +2,7 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\ai.gsc;
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using script_4a6760982b403bad;
 #using scripts\asm\asm.gsc;
 #using script_2ed63158b46a6d6f;

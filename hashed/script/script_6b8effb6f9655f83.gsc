@@ -159,10 +159,7 @@ function function_1415d77bc67b91fc(weapon, origin) {
     var_2b7331baea302df8 = spawnstruct();
     var_2b7331baea302df8.var_e0116c5b8d303105 = weaponclipsize(weapon);
     var_2b7331baea302df8.var_734357a0b88e3a30 = weaponclipsize(weapon);
-    if (namespace_736197e4d378b91b::function_aedc908c4a79d05e(weapon)) {
-        goto LOC_00000080;
-    }
-    var_2b7331baea302df8.var_9bfd50804dd2553c = weaponclipsize(weapon getaltweapon());
+    var_2b7331baea302df8.var_9bfd50804dd2553c = namespace_736197e4d378b91b::function_aedc908c4a79d05e(weapon) ? 0 : weaponclipsize(weapon getaltweapon());
     var_2b7331baea302df8.ammostock = weaponmaxammo(weapon);
     item = namespace_736197e4d378b91b::function_6cf4b48de9a4bc39(weapon, var_2b7331baea302df8, var_cb4fad49263e20c4.origin, var_cb4fad49263e20c4.angles, var_cb4fad49263e20c4.payload);
     if (!isdefined(item)) {

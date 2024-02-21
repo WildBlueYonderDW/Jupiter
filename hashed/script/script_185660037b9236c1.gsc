@@ -413,10 +413,7 @@ function function_dca86aca511288f4(var_e6013eac45290cab, var_8e6c09b94b1b967b, v
     if (function_2a1e9879f71ab677(var_fab326681eaecf8f)) {
         var_8d76efe839af5d68 = var_e6013eac45290cab.var_9a577a7ebc413d46[var_8e6c09b94b1b967b];
         var_b6444f5d6f018b11 = "State Transition Blocker Added. There are now: " + var_8d76efe839af5d68 + " blockers for this state: " + var_8e6c09b94b1b967b + ".";
-        if (isdefined(var_f15a9eca8a072350) && isstring(var_f15a9eca8a072350)) {
-            goto LOC_000000d5;
-        }
-        var_41db0942d065e934 = "" + ".";
+        var_41db0942d065e934 = (isdefined(var_f15a9eca8a072350) && isstring(var_f15a9eca8a072350) ? " Reason for additional blocker: " + var_f15a9eca8a072350 : "") + ".";
         function_c662924b60a37407(var_b6444f5d6f018b11 + var_41db0942d065e934, var_fab326681eaecf8f, var_e6013eac45290cab);
     }
 }

@@ -35,10 +35,7 @@ function function_fb7271d5ee18b98d(data) {
     }
     level.var_d6ae5cc7b162c730 = spawnstruct();
     var_ad60abb5340e959d = getdvarint(@"hash_acdc5ce16ecc02d0", 0);
-    if (var_ad60abb5340e959d != 0) {
-        goto LOC_00000067;
-    }
-    level.var_d6ae5cc7b162c730.var_61ab58dc6657120c = function_ea591c2a379e3424("intel");
+    level.var_d6ae5cc7b162c730.var_61ab58dc6657120c = var_ad60abb5340e959d != 0 ? var_ad60abb5340e959d : function_ea591c2a379e3424("intel");
     level.var_d6ae5cc7b162c730.var_7f9f1e2eaa06d964 = 0;
     level.var_d6ae5cc7b162c730.var_8f47b7e23761e59b = 21;
     level.var_d6ae5cc7b162c730.var_7383519bde1c5ce = getdvarint(@"hash_d10426d97130e8c6", 20);

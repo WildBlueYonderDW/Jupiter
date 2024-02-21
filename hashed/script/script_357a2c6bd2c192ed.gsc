@@ -519,10 +519,7 @@ function function_9dd4990a96e47972(location, streakinfo) {
     var_e8ade8c30e272779 callback::add("on_functional_death", &function_5de4ac1e8f7a7cc1, params);
     var_e8ade8c30e272779.var_e00c5cd8871892aa = 1;
     if (istrue(bundle.candamage) && issharedfuncdefined("damage", "monitorDamage")) {
-        if (!isdefined(bundle.maxhealth)) {
-            goto LOC_000002d8;
-        }
-        var_e8ade8c30e272779 thread [[ getsharedfunc("damage", "monitorDamage") ]](bundle.maxhealth, 25, "hitequip", &function_66a7440055d386c3, &function_7bdb3610d602438d, 0);
+        var_e8ade8c30e272779 thread [[ getsharedfunc("damage", "monitorDamage") ]](isdefined(bundle.maxhealth) ? 25 : bundle.maxhealth, "hitequip", &function_66a7440055d386c3, &function_7bdb3610d602438d, 0);
     }
     var_e8ade8c30e272779 thread function_62c1c6833c19817c(65, 12);
     var_e8ade8c30e272779 thread function_74f5ba869b257143(20, 10, 7);

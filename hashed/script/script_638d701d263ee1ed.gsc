@@ -411,10 +411,7 @@ function function_39502ad669adfb0a() {
                     if (isdefined(level.var_f756bf4293f67099) && isdefined(var_6e269a3fee5ff522) && isdefined(var_6e269a3fee5ff522.targetname)) {
                         var_4225006ce1ae149b = level.var_f756bf4293f67099[var_6e269a3fee5ff522.targetname];
                     }
-                    if (isdefined(var_6e269a3fee5ff522) && isdefined(var_6e269a3fee5ff522.targetname)) {
-                        goto LOC_00000153;
-                    }
-                    var_4caf03e472c5b324 = undefined;
+                    var_4caf03e472c5b324 = isdefined(var_6e269a3fee5ff522) && isdefined(var_6e269a3fee5ff522.targetname) ? var_6e269a3fee5ff522.targetname : undefined;
                     if (!is_equal(player.region, var_4caf03e472c5b324) && (isdefined(player.region) || isdefined(var_4caf03e472c5b324))) {
                         params = spawnstruct();
                         params.player = player;

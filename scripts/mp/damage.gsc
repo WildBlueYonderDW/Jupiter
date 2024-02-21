@@ -2197,10 +2197,7 @@ function function_7e8906e2dab3d41e(inflictor, attacker, victim, objweapon, smean
             }
         }
         if (modifieddamage > 0) {
-            if (isagent(attacker)) {
-                goto LOC_00000270;
-            }
-            modifier = getdvarfloat(@"hash_82cc9b0ec1f12017", 0);
+            modifier = isagent(attacker) ? getdvarfloat(@"hash_aca7f88b7bc0b97d", 0) : getdvarfloat(@"hash_82cc9b0ec1f12017", 0);
             modifieddamage = int(modifieddamage * modifier);
             if (modifieddamage == 0) {
                 attacker damagefeedback::updatedamagefeedback("hitnobulletdamage_wm", 0, 0, undefined, 1);
@@ -2696,10 +2693,7 @@ function handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofde
             }
         }
         if (!weapon::iskillstreakweapon(objweapon) && isplayer(var_91ebb035a259e76a)) {
-            if (isspreadweapon(objweapon)) {
-                goto LOC_000009d4;
-            }
-            if (bulletdamage || function_102d677621400199(objweapon)) {
+            if (bulletdamage || (isspreadweapon(objweapon) ? !var_65cb04ee667315bc : function_102d677621400199(objweapon))) {
                 var_91ebb035a259e76a namespace_3c5a4254f2b957ea::initpersstat("shotsBulletHit");
                 var_5f7f853e0aeb4d24 = 0;
                 if (1) {

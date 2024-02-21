@@ -689,10 +689,7 @@ function tomastrike_attacktarget(var_ebfc9454321cb5c3, vehicle, marker, streakin
         } else {
             var_4d8559e1e8d5ff3d = tomastrike_getownerlookat(self);
         }
-        if (!isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"])) {
-            goto LOC_0000021a;
-        }
-        bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"];
+        bundle = isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"]) ? {var_fcca389ece98b4a3:undefined} : level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"];
         marker = spawn("script_model", var_4d8559e1e8d5ff3d);
         marker setmodel(isdefined(bundle.var_fcca389ece98b4a3) ? "ks_toma_strike_marker_mp" : bundle.var_fcca389ece98b4a3);
         marker.objidnum = 0;
@@ -966,15 +963,9 @@ function tomastrike_firestrike(var_ebfc9454321cb5c3, var_fa378e997a33a137, strea
     killcament = spawn("script_model", var_fa378e997a33a137.sourcepos);
     killcament linkto(missile, "tag_origin", (10, 0, 10), (0, 0, 0));
     missile.killcament = killcament;
-    if (!isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"])) {
-        goto LOC_00000230;
-    }
-    bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"];
+    bundle = isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"]) ? {var_7e5ed6a828e0ed8f:undefined} : level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"];
     missile.explodeent = spawn("script_model", missile.origin);
-    if (!isdefined(bundle.var_7e5ed6a828e0ed8f)) {
-        goto LOC_00000276;
-    }
-    missile.explodeent setmodel(bundle.var_7e5ed6a828e0ed8f, "ks_toma_strike_missile_mp");
+    missile.explodeent setmodel(isdefined(bundle.var_7e5ed6a828e0ed8f) ? "ks_toma_strike_missile_mp" : bundle.var_7e5ed6a828e0ed8f);
     missile.explodeent linkto(missile);
     missile.explodeent dontinterpolate();
     missile.explodeent setentityowner(self);
@@ -1463,10 +1454,7 @@ function toma_strike_branch_create_explosion(origin, angles, stuckto, streakinfo
 // Checksum 0x0, Offset: 0x49cc
 // Size: 0x123
 function toma_strike_create_explosion(origin, angles, stuckto, owner, starttime, streakinfo) {
-    if (!isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"])) {
-        goto LOC_00000088;
-    }
-    bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"];
+    bundle = isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"]) ? {var_3a1a5610b3e228c0:undefined} : level.var_b23156d776b1d85.var_38f2a11237246ac["toma_strike"];
     ent = spawn("script_model", origin);
     ent.angles = angles;
     ent.stuckto = stuckto;

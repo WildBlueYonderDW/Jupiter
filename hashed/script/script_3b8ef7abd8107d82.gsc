@@ -95,10 +95,7 @@ function breacher_drone_used(breacher_drone) {
 // Checksum 0x0, Offset: 0x56c
 // Size: 0x119
 function function_cab343d49c8e389a(var_862b6d5e858fb4f8) {
-    if (var_862b6d5e858fb4f8) {
-        goto LOC_0000003f;
-    }
-    trigger_height = getdvarint(@"hash_78873628c410e47c");
+    trigger_height = var_862b6d5e858fb4f8 ? getdvarint(@"hash_e84ef551e525beef") : getdvarint(@"hash_78873628c410e47c");
     trigger_radius = var_862b6d5e858fb4f8 ? getdvarint(@"hash_4eb410aa813c8a92") : getdvarint(@"hash_7580f29bc586eaa1");
     if (isdefined(self.playertrigger)) {
         self.playertrigger notify("deleting_trigger");

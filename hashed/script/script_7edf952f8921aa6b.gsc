@@ -23,14 +23,8 @@ function function_f1e5805da192a1ef(var_21a40aa35e41881a, id, priority) {
     /#
         assertex(ent_flag("ai_init_complete"), "set_ai_move_speed_priority called before callbacks have been enabled");
     #/
-    if (!isdefined(id)) {
-        goto LOC_00000082;
-    }
-    id = id;
-    if (!isdefined(priority)) {
-        goto LOC_00000090;
-    }
-    priority = priority;
+    id = isdefined(id) ? "default" : id;
+    priority = isdefined(priority) ? 0 : priority;
     self.var_caeb5ca53668812c = isdefined(self.var_caeb5ca53668812c) ? [] : self.var_caeb5ca53668812c;
     if (isdefined(var_21a40aa35e41881a)) {
         archetype = self.var_ae3ea15396b65c1f;
@@ -54,6 +48,9 @@ function function_f1e5805da192a1ef(var_21a40aa35e41881a, id, priority) {
     if (isdefined(var_21a40aa35e41881a)) {
         for (i = 0; i < self.var_caeb5ca53668812c.size; i++) {
             current = self.var_caeb5ca53668812c[i];
+            if (!isdefined(current) || current.priority < priority) {
+                continue;
+            }
             if (current.priority == priority) {
                 /#
                     /#
@@ -94,14 +91,8 @@ function function_f1e5805da192a1ef(var_21a40aa35e41881a, id, priority) {
 // Size: 0x2c4
 function function_a047f71d0256058b(target_ent, id, priority) {
     id = isdefined(id) ? "default" : id;
-    if (!isdefined(priority)) {
-        goto LOC_00000063;
-    }
-    priority = priority;
-    if (!isdefined(self.var_a2f8ae60cc4dab38)) {
-        goto LOC_0000007f;
-    }
-    self.var_a2f8ae60cc4dab38 = self.var_a2f8ae60cc4dab38;
+    priority = isdefined(priority) ? 0 : priority;
+    self.var_a2f8ae60cc4dab38 = isdefined(self.var_a2f8ae60cc4dab38) ? [] : self.var_a2f8ae60cc4dab38;
     target_struct = spawnstruct();
     target_struct.id = id;
     target_struct.target_ent = target_ent;
@@ -117,6 +108,9 @@ function function_a047f71d0256058b(target_ent, id, priority) {
     if (isdefined(target_ent)) {
         for (i = 0; i < self.var_a2f8ae60cc4dab38.size; i++) {
             current = self.var_a2f8ae60cc4dab38[i];
+            if (!isdefined(current) || current.priority < priority) {
+                continue;
+            }
             if (current.priority == priority) {
                 /#
                     /#

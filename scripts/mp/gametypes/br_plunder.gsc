@@ -460,10 +460,7 @@ function takeplunderpickup(pickupent) {
     }
     if (array_contains(level.br_plunder.names, pickupent.scriptablename)) {
         var_7d329a9bed628571 = isdefined(pickupent.instance) && istrue(pickupent.instance.var_6216e086379def7d);
-        if (isdefined(pickupent.instance)) {
-            goto LOC_000000e5;
-        }
-        var_9516b1b63f4da10c = undefined;
+        var_9516b1b63f4da10c = isdefined(pickupent.instance) ? pickupent.instance.var_9516b1b63f4da10c : undefined;
         data = {var_9516b1b63f4da10c:var_9516b1b63f4da10c, var_7d329a9bed628571:var_7d329a9bed628571};
         playerplunderpickup(amount, data, undefined, 1);
         level.br_plunder.plunder_items_picked_up = level.br_plunder.plunder_items_picked_up + 1;

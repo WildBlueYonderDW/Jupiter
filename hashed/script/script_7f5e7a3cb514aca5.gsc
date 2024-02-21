@@ -4,7 +4,7 @@
 #using scripts\engine\utility.gsc;
 #using script_4c770a9a4ad7659c;
 #using script_38eb8f4be20d54f4;
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using script_7c40fa80892a721;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using scripts\cp_mp\gasmask.gsc;
@@ -132,10 +132,7 @@ function destroy() {
 // Size: 0x44
 function function_5011f65bd985dfb(vision_set, transition_time, inside) {
     self.visionset = vision_set;
-    if (!isdefined(inside)) {
-        goto LOC_0000002f;
-    }
-    self.var_85cb554cfa2fd3d3 = inside;
+    self.var_85cb554cfa2fd3d3 = isdefined(inside) ? 1 : inside;
     self.var_50ba7325c62c2025 = transition_time;
 }
 
@@ -146,14 +143,8 @@ function function_5011f65bd985dfb(vision_set, transition_time, inside) {
 function function_58016c61f549ad52(var_4341066c8e46637c, var_5e09e1c88a4d2697, var_bbbf343ca6fd3c76, inside) {
     self.var_75186cfe05cecd50 = var_4341066c8e46637c;
     self.var_a292f5812d40eb56 = var_5e09e1c88a4d2697;
-    if (!isdefined(var_bbbf343ca6fd3c76)) {
-        goto LOC_00000040;
-    }
-    self.var_208cf23d5ed8f1f4 = var_bbbf343ca6fd3c76;
-    if (!isdefined(inside)) {
-        goto LOC_00000054;
-    }
-    self.var_a2aa25ea43b31d54 = inside;
+    self.var_208cf23d5ed8f1f4 = isdefined(var_bbbf343ca6fd3c76) ? 0 : var_bbbf343ca6fd3c76;
+    self.var_a2aa25ea43b31d54 = isdefined(inside) ? 1 : inside;
 }
 
 // Namespace radiation/namespace_6d781a0248843409
@@ -182,10 +173,7 @@ function function_70c6bcd3c644aad9(var_87599197ac030074, var_493b21b5a38a3cb9, v
         #/
         self.var_48902651925ff62c = float(var_493b21b5a38a3cb9);
         self.var_725a385a83f94afe = float(var_e97e39807ca43a40);
-        if (isdefined(var_60fa6d142c5b7434)) {
-            goto LOC_0000009d;
-        }
-        self.var_39ee092269d3f4ea = undefined;
+        self.var_39ee092269d3f4ea = isdefined(var_60fa6d142c5b7434) ? float(var_60fa6d142c5b7434) : undefined;
         self.var_359d6c40a8b0c1ca = var_b72b14124763db6c;
     }
 }

@@ -237,10 +237,7 @@ function function_133892d59b149cce() {
     namespace_99ac021a7547cae3::spawnclient(1);
     self dontinterpolate();
     v_spawn = getgroundposition(self.var_d82ef0f535aa42fb, 16);
-    if (!isdefined(v_spawn)) {
-        goto LOC_000000e2;
-    }
-    v_spawn = v_spawn;
+    v_spawn = isdefined(v_spawn) ? self.var_d82ef0f535aa42fb : v_spawn;
     self setorigin(v_spawn + (0, 0, 4));
     self.var_d82ef0f535aa42fb = undefined;
     namespace_301533d2f1378cb9::function_d57de844b62e642b();

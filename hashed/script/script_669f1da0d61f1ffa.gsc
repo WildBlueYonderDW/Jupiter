@@ -6,7 +6,7 @@
 #using script_4c770a9a4ad7659c;
 #using script_38eb8f4be20d54f4;
 #using script_16ea1b94f0f381b3;
-#using script_3f51a039c4a1a113;
+#using scripts\common\system.gsc;
 #using scripts\common\utility.gsc;
 #using script_3b64eb40368c1450;
 #using script_371b4c2ab5861e62;
@@ -22,17 +22,17 @@
 #using script_405d05c89e998922;
 #using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
 
-#namespace namespace_773c12e74d6509f9;
+#namespace ww_humangun;
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0x5f9
 // Size: 0x22
 function private autoexec __init__system__() {
-    system::register(#"hash_5ac61c6302a2110d", #"ww_setup", &function_ca54f37762600466, undefined);
+    system::register(#"ww_humangun", #"ww_setup", &function_ca54f37762600466, undefined);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x622
 // Size: 0x63
@@ -48,7 +48,7 @@ function private function_ca54f37762600466() {
     #/
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x68c
 // Size: 0x5ea
@@ -136,7 +136,7 @@ function private function_51479cdb5a0fd4c7() {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc7d
 // Size: 0xbf
@@ -160,7 +160,7 @@ function function_4405588a9af68a0a(params) {
     self.var_f71a970f77310f07 = undefined;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xd43
 // Size: 0x66
@@ -176,7 +176,7 @@ function private function_c0fff54bdd610fff() {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xdb0
 // Size: 0xa9
@@ -203,7 +203,7 @@ function private function_f509ccd3c26bebee(is_upgraded) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xe60
 // Size: 0xa6
@@ -224,7 +224,7 @@ function private function_c46bf1052c91620() {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x5a
@@ -237,16 +237,13 @@ function private function_7a42dc2737de32fc(attacker, weapon) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x63
 function private function_69fbf21c6968c480() {
     self endon("death");
-    if (istrue(self.is_upgraded)) {
-        goto LOC_00000025;
-    }
-    max_targets = 1;
+    max_targets = istrue(self.is_upgraded) ? 3 : 1;
     self notify("humangun_hit");
     self.var_1b7b67f665b522ca = function_53c4c53197386572(self.var_1b7b67f665b522ca, 0) + 1;
     if (self.var_1b7b67f665b522ca >= max_targets) {
@@ -255,7 +252,7 @@ function private function_69fbf21c6968c480() {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xfd8
 // Size: 0x1b
@@ -265,7 +262,7 @@ function private delay_endon(string) {
     self notify("delay_" + string);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xffa
 // Size: 0xa2
@@ -285,7 +282,7 @@ function private function_49d9f4c10c483cc4(attacker, weapon) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x10a3
 // Size: 0x5b
@@ -298,7 +295,7 @@ function private function_dd53a55c27406672(var_e702bf0dc03f8c6d) {
     return undefined;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1106
 // Size: 0x12b
@@ -324,7 +321,7 @@ function private function_b1b8bef6d07fab7b(ai, attacker, weapon) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1238
 // Size: 0xe2
@@ -351,7 +348,7 @@ function private function_2f8e6fe2d4ed8af8(var_cad65df1d1eb2c93) {
     self.var_f8acc27178c5ea5b = var_c413d6aa7dc7aba0;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1321
 // Size: 0x1b
@@ -360,7 +357,7 @@ function private function_3c0a0f8cc46643f1(var_9a6b08f16368f69f) {
     animscripted_single(var_9a6b08f16368f69f);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1343
 // Size: 0x24
@@ -369,7 +366,7 @@ function private function_a8f0e10480b1f5b4(var_9a6b08f16368f69f, node_struct) {
     animscripted_single_relative(var_9a6b08f16368f69f, node_struct);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x136e
 // Size: 0x3e0
@@ -460,7 +457,7 @@ function private function_1645c86f412894a2(var_1e6e19f31783df76, attacker, var_c
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1755
 // Size: 0x224
@@ -477,10 +474,7 @@ function private function_e61ac5f093c0ad62() {
     var_cfbb4689987a4111 = self.maxhealth;
     var_554bc47ac994662e = self function_617d6e7d0b7859cc() ? "female" : "male";
     var_f8126e87c176d7f9 = self.var_8e63ab141b9f85f9;
-    if (is_equal(self.var_ca8cda392638c7db, "default")) {
-        goto LOC_0000010b;
-    }
-    var_c3f0a3ebfd4659db = self.var_ca8cda392638c7db;
+    var_c3f0a3ebfd4659db = is_equal(self.var_ca8cda392638c7db, "default") ? undefined : self.var_ca8cda392638c7db;
     var_941802a0997e0c42 = self.var_941802a0997e0c42;
     var_988d62e7fca4e8c2 = self.var_988d62e7fca4e8c2;
     if (is_equal(self.type, "zombie")) {
@@ -508,7 +502,7 @@ function private function_e61ac5f093c0ad62() {
     return undefined;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1981
 // Size: 0xfa
@@ -537,7 +531,7 @@ function private function_2a853ff67461d06b(is_upgraded) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1a82
 // Size: 0x1f
@@ -547,7 +541,7 @@ function private function_c5b688060b9a63ae(is_upgraded) {
     thread function_2a853ff67461d06b(is_upgraded);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1aa8
 // Size: 0xaf
@@ -562,7 +556,7 @@ function private function_b4a87d1c46429f40(victim) {
     self.var_f5164c160f176e2f.var_f9761284972135c5 = self.var_f5164c160f176e2f.var_f9761284972135c5 % 3 + 1;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b5e
 // Size: 0x118
@@ -582,7 +576,7 @@ function private function_24431db3fb80ec73(agent, attacker, weapon) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1c7d
 // Size: 0xc1
@@ -593,22 +587,16 @@ function private function_b73079d82ccbc0cb(attacker, var_f9761284972135c5, is_up
     hit_fx = undefined;
     var_90fdc24590fe48f0 = self getboundshalfsize();
     if (max(var_90fdc24590fe48f0[0], var_90fdc24590fe48f0[1]) < 64) {
-        if (is_upgraded) {
-            goto LOC_0000007b;
-        }
-        hit_fx = "humangun_consecutive_hit_normal_fx_" + var_f9761284972135c5;
+        hit_fx = (is_upgraded ? "humangun_consecutive_hit_normal_pap_fx_" : "humangun_consecutive_hit_normal_fx_") + var_f9761284972135c5;
     } else {
-        if (is_upgraded) {
-            goto LOC_00000093;
-        }
-        hit_fx = "humangun_consecutive_hit_large_fx_" + var_f9761284972135c5;
+        hit_fx = (is_upgraded ? "humangun_consecutive_hit_large_pap_fx_" : "humangun_consecutive_hit_large_fx_") + var_f9761284972135c5;
     }
     if (utility::fxexists(hit_fx) && isplayer(attacker)) {
         playfxontagforclients(utility::getfx(hit_fx), self, "j_spine4", attacker);
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1d45
 // Size: 0x19c
@@ -646,7 +634,7 @@ function private function_3aac7fba9f5de153(agent, attacker, var_f9761284972135c5
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1ee8
 // Size: 0x17e
@@ -681,7 +669,7 @@ function private function_54976578adb8d7f7(agent, attacker, var_f9761284972135c5
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x206d
 // Size: 0xa2
@@ -695,7 +683,7 @@ function private function_3d2e2ae7d4a1195f(agent, attacker, var_f9761284972135c5
     agent dodamage(var_bccff4eb0fbb027a, self.origin, attacker, self, "MOD_IMPACT", weapon);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2116
 // Size: 0x3e
@@ -706,7 +694,7 @@ function private function_3f283b94120f2cf8(weapon, meansofdeath) {
     return is_equal(function_f581838ce4328f7a(weapon), "humangun") && meansofdeath == "MOD_EXPLOSIVE";
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x215c
 // Size: 0x34
@@ -717,7 +705,7 @@ function private function_95fd04af9b96bd16(params) {
     return function_248c0b74e56b5699(params);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2198
 // Size: 0x2f
@@ -728,7 +716,7 @@ function private function_ca515975069c3e76(params) {
     return -1;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x21cf
 // Size: 0x95
@@ -748,7 +736,7 @@ function private function_2dc0cad678a62470(attacker) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x226b
 // Size: 0x2f
@@ -758,7 +746,7 @@ function private function_6d650476765969f(player, attacker) {
     player thread function_70a116b31333aee3(attacker);
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x22a1
 // Size: 0xc5
@@ -784,7 +772,7 @@ function private function_70a116b31333aee3(attacker) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x236d
 // Size: 0x4a
@@ -795,7 +783,7 @@ function private function_248c0b74e56b5699(params) {
     return -1;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x23bf
 // Size: 0x2f
@@ -806,7 +794,7 @@ function private function_7c89ba702a4e1038(params) {
     return -1;
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x23f6
 // Size: 0x122
@@ -832,7 +820,7 @@ function private function_7ad0f0c81051396f(attacker) {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x251f
 // Size: 0x24
@@ -844,7 +832,7 @@ function private function_5fd2dcf6788ab3f2() {
     }
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x254a
 // Size: 0x71
@@ -859,7 +847,7 @@ function private function_9979ab75cbd987dd() {
     #/
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x25c2
 // Size: 0x15a
@@ -889,7 +877,7 @@ function private function_2b409a09a21ce63d(params) {
     #/
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x2723
 // Size: 0xc2
@@ -906,7 +894,7 @@ function private function_d566dbc05a0a774(params) {
     #/
 }
 
-// Namespace namespace_773c12e74d6509f9/namespace_bbdaab8ec2235136
+// Namespace ww_humangun/namespace_bbdaab8ec2235136
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x27ec
 // Size: 0x26

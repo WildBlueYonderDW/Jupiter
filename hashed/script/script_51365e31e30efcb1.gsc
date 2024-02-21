@@ -531,10 +531,7 @@ function function_d24f7f1b9f196edc(interact) {
     power_flag = "power_on";
     var_d3ad2dc5ad2d4ce1 = 0;
     var_f08be12e08d353d1 = self isscriptable() ? 1 : 0;
-    if (isdefined(self.var_a2738a1d42906829.script_int)) {
-        goto LOC_000000ad;
-    }
-    var_67aef9f8f6e33e53 = 0;
+    var_67aef9f8f6e33e53 = isdefined(self.var_a2738a1d42906829.script_int) ? 1 : 0;
     while (1) {
         self setscriptablepartstate("base", "power_off");
         self solid();

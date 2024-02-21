@@ -3439,10 +3439,7 @@ function placekillstreakcrate(owner, team, streakname, position, angles) {
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
     }
-    if (isdefined(owner)) {
-        goto LOC_00000071;
-    }
-    cratetype = "killstreak_no_owner";
+    cratetype = isdefined(owner) ? "killstreak" : "killstreak_no_owner";
     cratedropdata = getkillstreakcratedatabystreakname(streakname, 0);
     crate = placecrate(owner, team, cratetype, position, angles, cratedropdata);
     if (!isdefined(crate)) {
@@ -3464,10 +3461,7 @@ function dropkillstreakcrate(owner, team, streakname, position, angles, destinat
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
     }
-    if (isdefined(owner)) {
-        goto LOC_0000007b;
-    }
-    cratetype = "killstreak_no_owner";
+    cratetype = isdefined(owner) ? "killstreak" : "killstreak_no_owner";
     cratedropdata = getkillstreakcratedatabystreakname(streakname, 0);
     crate = dropcrate(owner, team, cratetype, position, angles, destination, cratedropdata);
     if (!isdefined(crate)) {
@@ -3489,10 +3483,7 @@ function dropkillstreakcratefromscriptedheli(owner, team, streakname, position, 
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
     }
-    if (isdefined(owner)) {
-        goto LOC_0000008b;
-    }
-    cratetype = "killstreak_no_owner";
+    cratetype = isdefined(owner) ? "killstreak" : "killstreak_no_owner";
     cratedropdata = getkillstreakcratedatabystreakname(streakname, 0);
     cratedropdata.vehicleisreserved = vehicleisreserved;
     scenenode = dropcratefromscriptedheli(owner, team, cratetype, position, angles, destination, cratedropdata, streakinfo);
@@ -3538,10 +3529,7 @@ function dropkillstreakcratefrommanualheli(owner, team, streakname, position, an
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
     }
-    if (isdefined(owner)) {
-        goto LOC_00000083;
-    }
-    cratetype = "killstreak_no_owner";
+    cratetype = isdefined(owner) ? "killstreak" : "killstreak_no_owner";
     cratedropdata = getkillstreakcratedatabystreakname(streakname, 0);
     cratedropdata.vehicleisreserved = vehicleisreserved;
     dropstruct = dropcratefrommanualheli(owner, team, cratetype, position, angles, 30000, 30000, destination, cratedropdata);

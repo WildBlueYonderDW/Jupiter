@@ -129,7 +129,7 @@ function private function_e5201af67a21f629() {
 // Checksum 0x0, Offset: 0x714
 // Size: 0x33
 function private function_ae008672aa696b2() {
-    thread Animscripted_SharedFunc("howl", "howl");
+    thread animscripted_sharedfunc("howl", "howl");
     self setscriptablepartstate("heal_audio", "on");
     wait(1.75);
     namespace_28edc79fcf2fe234::bb_clearanimscripted();
@@ -212,7 +212,7 @@ function private function_69e98977aca657e7(point) {
         self linkto(tag_origin);
         tag_origin.origin = safeorigin + (0, 0, -15000);
         wait(0.5);
-        thread Animscripted_SharedFunc("spawn", "spawn_end", safeorigin, self.angles, "spawn_animating");
+        thread animscripted_sharedfunc("spawn", "spawn_end", safeorigin, self.angles, "spawn_animating");
         tag_origin.origin = safeorigin;
         tag_origin delete();
         wait(1.5);

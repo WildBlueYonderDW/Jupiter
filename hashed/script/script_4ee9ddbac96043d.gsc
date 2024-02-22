@@ -93,12 +93,12 @@ function function_771cbd84a236e2ba(var_10e651ba309f0523) {
 // Checksum 0x0, Offset: 0x455
 // Size: 0xd3
 function function_dd50de34ad9f5b2f(player) {
-    level thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("quest_s1_infil_interact", player getSquadMembers(undefined, 0));
-    foreach (var_3329887886bd6a4b in player getSquadMembers(undefined, 0)) {
+    level thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("quest_s1_infil_interact", player getsquadmembers(undefined, 0));
+    foreach (var_3329887886bd6a4b in player getsquadmembers(undefined, 0)) {
         self disableplayeruse(var_3329887886bd6a4b);
     }
     namespace_6c57c664b4288f88::function_93c8f90c3bd798c6(player, 30, &function_d7cf952e6f352615);
-    foreach (var_3329887886bd6a4b in player getSquadMembers(undefined, 0)) {
+    foreach (var_3329887886bd6a4b in player getsquadmembers(undefined, 0)) {
         self enableplayeruse(var_3329887886bd6a4b);
     }
 }
@@ -108,7 +108,7 @@ function function_dd50de34ad9f5b2f(player) {
 // Checksum 0x0, Offset: 0x52f
 // Size: 0x174
 function function_d7cf952e6f352615(player) {
-    var_9b0dd04874627a99 = player getSquadMembers(undefined, 1);
+    var_9b0dd04874627a99 = player getsquadmembers(undefined, 1);
     n_time_limit = 10;
     timer = namespace_26c5a699d7cb84a2::function_3eec8a169e8a0936(n_time_limit);
     waitframe();

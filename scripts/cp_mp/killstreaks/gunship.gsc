@@ -368,12 +368,12 @@ function gunship_startuse(player, streakinfo) {
     var_78ac3c5ef5263d4f = vectornormalize((xoffset, yoffset, zoffset));
     var_78ac3c5ef5263d4f = var_78ac3c5ef5263d4f * zoffset;
     level.gunshipinuse = 1;
-    gunshipIntro = gunship_playintro(player, streakinfo, var_8945c22a67231e20, var_78ac3c5ef5263d4f, var_2136b63785ee0579);
-    if (!isdefined(gunshipIntro)) {
+    gunshipintro = gunship_playintro(player, streakinfo, var_8945c22a67231e20, var_78ac3c5ef5263d4f, var_2136b63785ee0579);
+    if (!isdefined(gunshipintro)) {
         level.gunshipinuse = 0;
         return 0;
     }
-    gunship = gunship_spawn(player, streakinfo, var_8945c22a67231e20, var_78ac3c5ef5263d4f, gunshipIntro, var_2136b63785ee0579);
+    gunship = gunship_spawn(player, streakinfo, var_8945c22a67231e20, var_78ac3c5ef5263d4f, gunshipintro, var_2136b63785ee0579);
     if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
         gunship [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&function_aaedf89b93495d4f);
     }
@@ -504,7 +504,7 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
         player _stopshellshock();
         player val::function_3633b947164be4f3("gunshipIntro", 0);
     }
-    gunshipIntro = undefined;
+    gunshipintro = undefined;
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["gunship"];
     /#
         level.var_faf1aba229e3e2a9 = getdvarint(@"hash_a59a7da9fa17c00", 0);
@@ -512,19 +512,19 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
     if (level.var_faf1aba229e3e2a9 == 1) {
         var_e4739db3b860ef4 = "intro_gunship";
         var_258b660f7db9aba6 = function_52351c3338da63f4("gunship", var_e4739db3b860ef4);
-        gunshipIntro = spawn("script_model", var_2136b63785ee0579.origin);
-        gunshipIntro setmodel(bundle.gunship_intromodel);
-        gunshipIntro.angles = var_2136b63785ee0579.angles;
-        gunshipIntro setotherent(player);
-        gunshipIntro.animname = streakinfo.streakname;
-        gunshipIntro.owner = player;
+        gunshipintro = spawn("script_model", var_2136b63785ee0579.origin);
+        gunshipintro setmodel(bundle.gunship_intromodel);
+        gunshipintro.angles = var_2136b63785ee0579.angles;
+        gunshipintro setotherent(player);
+        gunshipintro.animname = streakinfo.streakname;
+        gunshipintro.owner = player;
         if (!var_c8823e8c933ef356) {
             foreach (var_6c3d15091efa3c48 in level.players) {
                 if (var_6c3d15091efa3c48 != player) {
-                    gunshipIntro hidefromplayer(var_6c3d15091efa3c48);
+                    gunshipintro hidefromplayer(var_6c3d15091efa3c48);
                 }
             }
-            gunshipIntro thread gunship_hideintromodelonplayerconnect(player);
+            gunshipintro thread gunship_hideintromodelonplayerconnect(player);
         }
         heightoffset = 2000;
         switch (level.mapname) {
@@ -533,32 +533,32 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
             heightoffset = 500;
             break;
         }
-        gunshipIntro linkto(var_2136b63785ee0579, "tag_origin", anglevector - (0, 0, heightoffset), (0, angle + 90, 0));
-        gunshipIntro thread gunship_watchintrodisown("disconnect", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("joined_team", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("joined_spectators", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("player_fatal_death", streakinfo);
+        gunshipintro linkto(var_2136b63785ee0579, "tag_origin", anglevector - (0, 0, heightoffset), (0, angle + 90, 0));
+        gunshipintro thread gunship_watchintrodisown("disconnect", streakinfo);
+        gunshipintro thread gunship_watchintrodisown("joined_team", streakinfo);
+        gunshipintro thread gunship_watchintrodisown("joined_spectators", streakinfo);
+        gunshipintro thread gunship_watchintrodisown("player_fatal_death", streakinfo);
         waitframe();
-        if (!isdefined(gunshipIntro)) {
+        if (!isdefined(gunshipintro)) {
             return undefined;
         }
-        gunshipIntro namespace_bc4a4b9456315863::setanimtree();
-        gunshipIntro.var_ba27aac5a0f799e0 = spawn("script_model", gunshipIntro.origin);
-        gunshipIntro.var_ba27aac5a0f799e0.angles = gunshipIntro.angles;
-        gunshipIntro.var_ba27aac5a0f799e0 setmodel("tag_origin");
-        gunshipIntro playsoundtoplayer("iw9_ks_ac130_intro", player);
+        gunshipintro namespace_bc4a4b9456315863::setanimtree();
+        gunshipintro.var_ba27aac5a0f799e0 = spawn("script_model", gunshipintro.origin);
+        gunshipintro.var_ba27aac5a0f799e0.angles = gunshipintro.angles;
+        gunshipintro.var_ba27aac5a0f799e0 setmodel("tag_origin");
+        gunshipintro playsoundtoplayer("iw9_ks_ac130_intro", player);
         if (!var_c8823e8c933ef356) {
-            player cameralinkto(gunshipIntro, "tag_player", 0, 1);
+            player cameralinkto(gunshipintro, "tag_player", 0, 1);
             player painvisionoff();
             player killstreak_savenvgstate();
-            gunshipIntro setscriptablepartstate("clouds_intro", "old", 0);
-            gunshipIntro setscriptablepartstate("bodyFX_intro", "on", 0);
-            gunshipIntro thread gunship_startintroshake(var_258b660f7db9aba6, player);
-            gunshipIntro thread gunship_queuecamerazoom(var_258b660f7db9aba6, player);
-            gunshipIntro thread function_c285675bee6618a3(var_258b660f7db9aba6, player);
+            gunshipintro setscriptablepartstate("clouds_intro", "old", 0);
+            gunshipintro setscriptablepartstate("bodyFX_intro", "on", 0);
+            gunshipintro thread gunship_startintroshake(var_258b660f7db9aba6, player);
+            gunshipintro thread gunship_queuecamerazoom(var_258b660f7db9aba6, player);
+            gunshipintro thread function_c285675bee6618a3(var_258b660f7db9aba6, player);
         }
         player playkillstreakoperatordialog("gunship", "gunship" + "_use", 1, undefined, "pilot");
-        gunshipIntro.var_ba27aac5a0f799e0 namespace_bc4a4b9456315863::anim_single_solo(gunshipIntro, var_e4739db3b860ef4);
+        gunshipintro.var_ba27aac5a0f799e0 namespace_bc4a4b9456315863::anim_single_solo(gunshipintro, var_e4739db3b860ef4);
     } else {
         bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["gunship"];
         var_8fb3c3f9c5517645 = 20000;
@@ -579,14 +579,14 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
         var_ba27aac5a0f799e0 = spawn("script_model", var_d9979e10eec99504 gettagorigin("tag_control_desk"));
         var_ba27aac5a0f799e0 setmodel("tag_origin");
         var_ba27aac5a0f799e0.angles = var_d9979e10eec99504 gettagangles("tag_control_desk");
-        gunshipIntro = spawnstruct();
-        gunshipIntro.owner = player;
-        gunshipIntro.var_3589ad3885d61683 = var_d9979e10eec99504;
-        gunshipIntro.var_9bc4ed07a250f4d3 = player function_d176c031e49a9127("gunship_interior_probe", "gunship_shadow_brush");
-        gunshipIntro thread gunship_watchintrodisown("disconnect", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("joined_team", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("joined_spectators", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("player_fatal_death", streakinfo);
+        gunshipintro = spawnstruct();
+        gunshipintro.owner = player;
+        gunshipintro.var_3589ad3885d61683 = var_d9979e10eec99504;
+        gunshipintro.var_9bc4ed07a250f4d3 = player function_d176c031e49a9127("gunship_interior_probe", "gunship_shadow_brush");
+        gunshipintro thread gunship_watchintrodisown("disconnect", streakinfo);
+        gunshipintro thread gunship_watchintrodisown("joined_team", streakinfo);
+        gunshipintro thread gunship_watchintrodisown("joined_spectators", streakinfo);
+        gunshipintro thread gunship_watchintrodisown("player_fatal_death", streakinfo);
         var_e618f33d2594b25b = undefined;
         foreach (modelindex, var_7f6d36cc641739d9 in level.var_9c7d2f4c2fc66b1f) {
             var_4d4d74b2657628ee = var_ba27aac5a0f799e0.origin;
@@ -617,8 +617,8 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
                 var_b2a3f9abcee9d071 thread gunship_hideintromodelonplayerconnect(player);
             }
         }
-        gunshipIntro.var_ba27aac5a0f799e0 = var_ba27aac5a0f799e0;
-        gunshipIntro.var_5cb1f0f95e16878e = var_5cb1f0f95e16878e;
+        gunshipintro.var_ba27aac5a0f799e0 = var_ba27aac5a0f799e0;
+        gunshipintro.var_5cb1f0f95e16878e = var_5cb1f0f95e16878e;
         var_b8a46ae48904492c = "gunship_exterior";
         var_313a9e6067853ba8 = "intro_" + var_b8a46ae48904492c;
         var_1be95b011eb36224 = getdvarint(@"hash_cc9d9505b48bc357", 0);
@@ -631,18 +631,18 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
         player playkillstreakoperatordialog("gunship", "gunship" + "_use", 1, undefined, "pilot");
         player painvisionoff();
         player killstreak_savenvgstate();
-        player function_fa9987de43a6169b(gunshipIntro, var_313a9e6067853ba8);
-        gunshipIntro function_7eb343dd6a3f639(player, "light_interior_intro", "on", "ks_gunship_interior_intro", 0);
-        player function_fa9987de43a6169b(gunshipIntro, "intro");
-        gunshipIntro function_7eb343dd6a3f639(player, "light_interior_intro", "off", "ks_gunship_interior_intro", 0.5);
+        player function_fa9987de43a6169b(gunshipintro, var_313a9e6067853ba8);
+        gunshipintro function_7eb343dd6a3f639(player, "light_interior_intro", "on", "ks_gunship_interior_intro", 0);
+        player function_fa9987de43a6169b(gunshipintro, "intro");
+        gunshipintro function_7eb343dd6a3f639(player, "light_interior_intro", "off", "ks_gunship_interior_intro", 0.5);
     }
-    gunshipIntro notify("gunship_end_intro");
+    gunshipintro notify("gunship_end_intro");
     if (!var_c8823e8c933ef356) {
         player disablephysicaldepthoffieldscripting();
         _stopshellshock();
         player val::function_588f2307a3040610("gunshipIntro");
     }
-    return gunshipIntro;
+    return gunshipintro;
 }
 
 // Namespace gunship/namespace_e21c52e4e1a72be6
@@ -679,7 +679,7 @@ function gunship_detachplayerfromintro(var_69b64e348a80229e, streakinfo) {
         var_69b64e348a80229e setclientomnvar("ui_gunship_hud", 0);
         var_69b64e348a80229e painvisionon();
         var_69b64e348a80229e killstreak_restorenvgstate();
-        var_69b64e348a80229e killstreak_setMainVision("");
+        var_69b64e348a80229e killstreak_setmainvision("");
         var_69b64e348a80229e function_8b676f496920e2ab();
         var_69b64e348a80229e notify("detach_gunship_intro");
         level thread namespace_36f464722d326bbe::fadetoblackforplayer(var_69b64e348a80229e, 0);
@@ -789,7 +789,7 @@ function gunship_queuecamerazoom(animlength, owner) {
     owner endon("disconnect");
     owner endon("detach_gunship_intro");
     namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(animlength - 0.2);
-    owner killstreak_setMainVision("killstreak_slamzoom");
+    owner killstreak_setmainvision("killstreak_slamzoom");
     namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(0.1);
     level thread namespace_36f464722d326bbe::fadetoblackforplayer(owner, 1, 0.1);
 }
@@ -828,7 +828,7 @@ function gunship_returnplayer(player, crashing) {
         player _setvisibiilityomnvarforkillstreak(self.streakinfo.streakname, "off");
         player setclientomnvar("ui_gunship_hud", 0);
         player stoploopsound();
-        player killstreak_setMainVision("");
+        player killstreak_setmainvision("");
         player clearclienttriggeraudiozone(0.5);
         player painvisionon();
         player _stopshellshock();
@@ -854,10 +854,10 @@ function gunship_returnplayer(player, crashing) {
             player unlink();
             if (istrue(crashing) && level.var_faf1aba229e3e2a9 == 0) {
                 player waittill("finished_gunship_anim_outro");
-                player killstreak_setMainVision("killstreak_static");
+                player killstreak_setmainvision("killstreak_static");
                 wait(1);
                 player cameraunlink();
-                player killstreak_setMainVision("");
+                player killstreak_setmainvision("");
             }
             player val::function_588f2307a3040610("gunshipUse");
             player gunship_allowstances(1);
@@ -870,7 +870,7 @@ function gunship_returnplayer(player, crashing) {
             #/
         }
     }
-    function_3856d3338b2c7ebf(self.gunshipIntro);
+    function_3856d3338b2c7ebf(self.gunshipintro);
     gunship_lockedonremovedcallback();
     if (isdefined(self.enemytargetmarkergroup)) {
         namespace_f48c22429667eba9::targetmarkergroup_off(self.enemytargetmarkergroup);
@@ -971,7 +971,7 @@ function gunship_watchdamage(gunner) {
         }
         self.damagetaken = self.damagetaken + modifieddamage;
         self.currenthealth = self.currenthealth - modifieddamage;
-        killstreak_updateDamageState(self.currenthealth);
+        killstreak_updatedamagestate(self.currenthealth);
         if (self.damagetaken >= self.maxhealth) {
             streakname = self.streakinfo.streakname;
             damagetype = undefined;
@@ -1159,7 +1159,7 @@ function gunship_trackvelocity(gunner) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b96
 // Size: 0x34b
-function gunship_spawn(owner, streakinfo, angle, anglevector, gunshipIntro, var_2136b63785ee0579) {
+function gunship_spawn(owner, streakinfo, angle, anglevector, gunshipintro, var_2136b63785ee0579) {
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["gunship"];
     gunship = spawn("script_model", var_2136b63785ee0579.origin);
     gunship setmodel(bundle.var_9db3c2a9aa0ab053);
@@ -1169,7 +1169,7 @@ function gunship_spawn(owner, streakinfo, angle, anglevector, gunshipIntro, var_
     gunship.health = 99999;
     gunship.owner = owner;
     gunship.team = owner.team;
-    gunship.gunshipIntro = gunshipIntro;
+    gunship.gunshipintro = gunshipintro;
     gunship.var_2136b63785ee0579 = var_2136b63785ee0579;
     gunship.ispiloted = 1;
     gunship.timeout = bundle.var_1eb3e683c77a9c6f;
@@ -1310,15 +1310,15 @@ function gunship_attachgunner(gunner) {
     self endon("death");
     self endon("crashing");
     self endon("leaving");
-    gunner killstreak_setMainVision("");
+    gunner killstreak_setmainvision("");
     level thread namespace_36f464722d326bbe::fadetoblackforplayer(gunner, 0, 0.1);
     /#
         var_c8823e8c933ef356 = getdvarint(@"hash_f49f4fd233809e37", 0);
         if (var_c8823e8c933ef356) {
             if (level.var_faf1aba229e3e2a9 == 1) {
-                function_3856d3338b2c7ebf(self.gunshipIntro);
+                function_3856d3338b2c7ebf(self.gunshipintro);
             } else {
-                gunner function_5efa20e5c624be8f(self.gunshipIntro);
+                gunner function_5efa20e5c624be8f(self.gunshipintro);
             }
             self.streakinfo notify("intro_pen_1");
             return;
@@ -1340,9 +1340,9 @@ function gunship_attachgunner(gunner) {
     waitframe();
     gunner cameraunlink();
     if (level.var_faf1aba229e3e2a9 == 1) {
-        function_3856d3338b2c7ebf(self.gunshipIntro);
+        function_3856d3338b2c7ebf(self.gunshipintro);
     } else {
-        gunner function_5efa20e5c624be8f(self.gunshipIntro);
+        gunner function_5efa20e5c624be8f(self.gunshipintro);
     }
     self.camera = spawn("script_model", self.origin - (0, 0, 20));
     self.camera setmodel("tag_player");
@@ -1356,7 +1356,7 @@ function gunship_attachgunner(gunner) {
         gunner.usinggunship = 1;
         gunner playerlinkweaponviewtodelta(self.camera, "tag_player", 1, var_70b99692da5c7fef[0], var_70b99692da5c7fef[1], var_70b99692da5c7fef[2], var_70b99692da5c7fef[3], 0, 1, 1);
         gunner playerlinkedsetviewznear(0);
-        gunner killstreak_setMainVision(self.currentvisionset);
+        gunner killstreak_setmainvision(self.currentvisionset);
         gunner setclienttriggeraudiozone("gunship_killstreak", 2);
         gunner setplayerangles(self.camera.angles);
         gunner val::set("gunshipUse", "ads", 1);
@@ -1877,7 +1877,7 @@ function gunship_watchthermaltoggleinternal(gunner) {
         var_c550a393da085c54 = 1;
         gunner _shellshock("killstreak_veh_camera_flir_mp", "top", self.timeout, 0);
         gunner setclientomnvar("ui_killstreak_thermal_mode", 1);
-        gunner killstreak_setMainVision(var_93b54405fda960c);
+        gunner killstreak_setmainvision(var_93b54405fda960c);
     }
     while (1) {
         gunner waittill("switch_thermal_mode");
@@ -1889,17 +1889,17 @@ function gunship_watchthermaltoggleinternal(gunner) {
             var_c550a393da085c54 = 1;
             gunner _shellshock("killstreak_veh_camera_flir_mp", "top", self.timeout, 0);
             gunner setclientomnvar("ui_killstreak_thermal_mode", 1);
-            gunner killstreak_setMainVision(var_93b54405fda960c);
+            gunner killstreak_setmainvision(var_93b54405fda960c);
         } else {
             var_b050705ce498bcb2 = bundle.var_7a35928e082dd9b7;
             if (isdefined(level.mapname) && (issubstr(level.mapname, "_shipment") || issubstr(level.mapname, "mp_skerries") || getdvarint(@"hash_ef7e2418dc2fe517", 0))) {
                 var_b050705ce498bcb2 = bundle.var_6070115b879adfc9;
             }
             if (isdefined(level.var_bfab55c68d5dee05)) {
-                gunner killstreak_setMainVision(level.var_bfab55c68d5dee05);
+                gunner killstreak_setmainvision(level.var_bfab55c68d5dee05);
                 self.currentvisionset = level.var_bfab55c68d5dee05;
             } else {
-                gunner killstreak_setMainVision(var_b050705ce498bcb2);
+                gunner killstreak_setmainvision(var_b050705ce498bcb2);
                 self.currentvisionset = var_b050705ce498bcb2;
             }
             var_c550a393da085c54 = 0;
@@ -2118,14 +2118,14 @@ function function_43c36396180ee798(gunner) {
         self endon("death");
         gunner endon("disconnect");
         thread gunship_returnplayer(gunner, 1);
-        if (isdefined(self.gunshipIntro) && level.var_faf1aba229e3e2a9 == 0) {
-            self.gunshipIntro function_7eb343dd6a3f639(gunner, "light_interior_outro", "on", "ks_gunship_interior_outro", 0.5);
+        if (isdefined(self.gunshipintro) && level.var_faf1aba229e3e2a9 == 0) {
+            self.gunshipintro function_7eb343dd6a3f639(gunner, "light_interior_outro", "on", "ks_gunship_interior_outro", 0.5);
             self playsoundtoplayer("iw9_gunship_plr_outro", gunner);
             gunner playkillstreakoperatordialog("gunship", "gunship" + "_crash", 1, undefined, "pilot");
             var_fbde3ff0d883172a = function_52351c3338da63f4("gunship", "outro_gunner");
             gunner thread gunship_crashexplosionradiostatic(var_fbde3ff0d883172a);
-            gunner function_fa9987de43a6169b(self.gunshipIntro, "outro");
-            self.gunshipIntro function_7eb343dd6a3f639(gunner, "light_interior_outro", "off", "ks_gunship_interior_outro", 0);
+            gunner function_fa9987de43a6169b(self.gunshipintro, "outro");
+            self.gunshipintro function_7eb343dd6a3f639(gunner, "light_interior_outro", "off", "ks_gunship_interior_outro", 0);
         }
     }
 }
@@ -2264,17 +2264,17 @@ function gunship_removeplane(var_4fac8b8ce36e09f1) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76cc
 // Size: 0xd2
-function function_3856d3338b2c7ebf(gunshipIntro) {
-    if (isdefined(gunshipIntro)) {
-        if (isdefined(gunshipIntro.var_ba27aac5a0f799e0)) {
-            gunshipIntro.var_ba27aac5a0f799e0 delete();
+function function_3856d3338b2c7ebf(gunshipintro) {
+    if (isdefined(gunshipintro)) {
+        if (isdefined(gunshipintro.var_ba27aac5a0f799e0)) {
+            gunshipintro.var_ba27aac5a0f799e0 delete();
         }
-        if (isent(gunshipIntro)) {
-            gunshipIntro setscriptablepartstate("clouds_intro", "off", 0);
-            gunshipIntro setscriptablepartstate("bodyFX_intro", "off", 0);
-            gunshipIntro delete();
-        } else if (isdefined(gunshipIntro.var_5cb1f0f95e16878e)) {
-            foreach (var_b2a3f9abcee9d071 in gunshipIntro.var_5cb1f0f95e16878e) {
+        if (isent(gunshipintro)) {
+            gunshipintro setscriptablepartstate("clouds_intro", "off", 0);
+            gunshipintro setscriptablepartstate("bodyFX_intro", "off", 0);
+            gunshipintro delete();
+        } else if (isdefined(gunshipintro.var_5cb1f0f95e16878e)) {
+            foreach (var_b2a3f9abcee9d071 in gunshipintro.var_5cb1f0f95e16878e) {
                 if (isdefined(var_b2a3f9abcee9d071)) {
                     var_b2a3f9abcee9d071 delete();
                 }
@@ -2287,12 +2287,12 @@ function function_3856d3338b2c7ebf(gunshipIntro) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77a5
 // Size: 0x86
-function function_5efa20e5c624be8f(gunshipIntro) {
-    if (isdefined(gunshipIntro)) {
-        if (isdefined(gunshipIntro.var_5cb1f0f95e16878e)) {
-            foreach (var_b2a3f9abcee9d071 in gunshipIntro.var_5cb1f0f95e16878e) {
+function function_5efa20e5c624be8f(gunshipintro) {
+    if (isdefined(gunshipintro)) {
+        if (isdefined(gunshipintro.var_5cb1f0f95e16878e)) {
+            foreach (var_b2a3f9abcee9d071 in gunshipintro.var_5cb1f0f95e16878e) {
                 if (isdefined(var_b2a3f9abcee9d071)) {
-                    var_b2a3f9abcee9d071 hidefromplayer(gunshipIntro.var_dee7149209c9df8c);
+                    var_b2a3f9abcee9d071 hidefromplayer(gunshipintro.var_dee7149209c9df8c);
                 }
             }
         }
@@ -2303,54 +2303,54 @@ function function_5efa20e5c624be8f(gunshipIntro) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7832
 // Size: 0x2dc
-function function_fa9987de43a6169b(gunshipIntro, sequence) {
+function function_fa9987de43a6169b(gunshipintro, sequence) {
     self endon("disconnect");
     var_c8823e8c933ef356 = 0;
     /#
         var_c8823e8c933ef356 = getdvarint(@"hash_f49f4fd233809e37", 0);
     #/
-    if (!isdefined(gunshipIntro.var_dee7149209c9df8c)) {
-        gunshipIntro.var_dee7149209c9df8c = self;
+    if (!isdefined(gunshipintro.var_dee7149209c9df8c)) {
+        gunshipintro.var_dee7149209c9df8c = self;
     }
-    if (isdefined(gunshipIntro) && isdefined(sequence)) {
+    if (isdefined(gunshipintro) && isdefined(sequence)) {
         thread function_d13d2a81214fbfb8("80_instant_noscale", 1);
         if (sequence == "intro_gunship_exterior") {
-            var_d0b97be6dc1a3eba = gunshipIntro.var_5cb1f0f95e16878e["gunship_exterior"];
+            var_d0b97be6dc1a3eba = gunshipintro.var_5cb1f0f95e16878e["gunship_exterior"];
             var_258b660f7db9aba6 = function_52351c3338da63f4("gunship", sequence);
-            var_d0b97be6dc1a3eba showtoplayer(gunshipIntro.var_dee7149209c9df8c);
+            var_d0b97be6dc1a3eba showtoplayer(gunshipintro.var_dee7149209c9df8c);
             var_d0b97be6dc1a3eba setscriptablepartstate("clouds_intro", "old", 0);
             var_d0b97be6dc1a3eba setscriptablepartstate("bodyFX_intro", "on", 0);
-            gunshipIntro.var_ba27aac5a0f799e0 thread namespace_bc4a4b9456315863::anim_single_solo(var_d0b97be6dc1a3eba, sequence);
+            gunshipintro.var_ba27aac5a0f799e0 thread namespace_bc4a4b9456315863::anim_single_solo(var_d0b97be6dc1a3eba, sequence);
             if (!var_c8823e8c933ef356) {
-                gunshipIntro.var_dee7149209c9df8c cameralinkto(var_d0b97be6dc1a3eba, "tag_player", 1, 1);
+                gunshipintro.var_dee7149209c9df8c cameralinkto(var_d0b97be6dc1a3eba, "tag_player", 1, 1);
             }
             var_d0b97be6dc1a3eba thread gunship_startintroshake(var_258b660f7db9aba6, self, sequence);
             var_d0b97be6dc1a3eba thread function_c285675bee6618a3(var_258b660f7db9aba6, self, sequence);
             var_d0b97be6dc1a3eba thread function_2be9ae7928984f8(var_258b660f7db9aba6, self);
             wait(var_258b660f7db9aba6);
             if (!var_c8823e8c933ef356) {
-                gunshipIntro.var_dee7149209c9df8c cameraunlink();
+                gunshipintro.var_dee7149209c9df8c cameraunlink();
             }
         } else {
             if (sequence == "intro") {
-                var_d0b97be6dc1a3eba = gunshipIntro.var_5cb1f0f95e16878e["gunship_exterior"];
+                var_d0b97be6dc1a3eba = gunshipintro.var_5cb1f0f95e16878e["gunship_exterior"];
                 var_d0b97be6dc1a3eba setscriptablepartstate("clouds_intro", "off", 0);
                 var_d0b97be6dc1a3eba setscriptablepartstate("bodyFX_intro", "off", 0);
             }
-            if (isdefined(gunshipIntro.var_5cb1f0f95e16878e)) {
-                foreach (modelindex, var_b2a3f9abcee9d071 in gunshipIntro.var_5cb1f0f95e16878e) {
+            if (isdefined(gunshipintro.var_5cb1f0f95e16878e)) {
+                foreach (modelindex, var_b2a3f9abcee9d071 in gunshipintro.var_5cb1f0f95e16878e) {
                     if (isdefined(var_b2a3f9abcee9d071)) {
                         if (modelindex == "gunship_exterior") {
                             continue;
                         }
-                        var_b2a3f9abcee9d071 showtoplayer(gunshipIntro.var_dee7149209c9df8c);
+                        var_b2a3f9abcee9d071 showtoplayer(gunshipintro.var_dee7149209c9df8c);
                         if (modelindex == "gunship_interior") {
                             continue;
                         }
                         var_465db5572e637fb7 = sequence + "_" + modelindex;
-                        gunshipIntro.var_ba27aac5a0f799e0 thread namespace_bc4a4b9456315863::anim_single_solo(var_b2a3f9abcee9d071, var_465db5572e637fb7);
+                        gunshipintro.var_ba27aac5a0f799e0 thread namespace_bc4a4b9456315863::anim_single_solo(var_b2a3f9abcee9d071, var_465db5572e637fb7);
                         if (!var_c8823e8c933ef356 && modelindex == "gunner") {
-                            gunshipIntro.var_dee7149209c9df8c cameralinkto(var_b2a3f9abcee9d071, "tag_camera", 1, 1);
+                            gunshipintro.var_dee7149209c9df8c cameralinkto(var_b2a3f9abcee9d071, "tag_camera", 1, 1);
                             var_9adc9e34bc4e0c77 = function_52351c3338da63f4("gunship", sequence + "_gunner");
                             var_b2a3f9abcee9d071 thread function_c285675bee6618a3(var_9adc9e34bc4e0c77, self, sequence);
                         }
@@ -2533,13 +2533,13 @@ function function_7eb343dd6a3f639(player, var_8a46c62f0a756dd3, state, visionset
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x8228
 // Size: 0x5c
-function function_eb2299f7c29ac70c(gunshipIntro, var_b2a3f9abcee9d071, var_465db5572e637fb7) {
+function function_eb2299f7c29ac70c(gunshipintro, var_b2a3f9abcee9d071, var_465db5572e637fb7) {
     /#
         var_b2a3f9abcee9d071 endon("light");
         self notifyonplayercommand("hitequip", "attachXRays");
         while (1) {
             self waittill("hitequip");
-            gunshipIntro.var_ba27aac5a0f799e0 thread namespace_bc4a4b9456315863::anim_single_solo(var_b2a3f9abcee9d071, var_465db5572e637fb7);
+            gunshipintro.var_ba27aac5a0f799e0 thread namespace_bc4a4b9456315863::anim_single_solo(var_b2a3f9abcee9d071, var_465db5572e637fb7);
         }
     #/
 }

@@ -355,7 +355,7 @@ function private function_37ffb7a5350616ca(player) {
             return level.var_6acae859049cee46[player.team][player.var_ff97225579de16a].players;
         }
     #/
-    return namespace_54d20dd0dd79277f::getSquadmates(player.team, player.var_ff97225579de16a, 1);
+    return namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 1);
 }
 
 // Namespace namespace_9fe96b983bb4b476/namespace_6854ffbed339ca49

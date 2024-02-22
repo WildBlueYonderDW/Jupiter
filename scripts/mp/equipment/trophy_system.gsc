@@ -131,7 +131,7 @@ function private function_74c86105e1bfe367(var_53f81081d4e7f40b) {
 // Checksum 0x0, Offset: 0xab3
 // Size: 0x27
 function function_90dfe835641ca526() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         delaythread(2.5, &function_ffb7ecaf8fce4a9a);
     } else {
         namespace_85d036cb78063c4a::refundsuper();
@@ -933,7 +933,7 @@ function function_ef909a912567cbd8(data) {
     self endon("death");
     self.isdisabled = 1;
     self setscriptablepartstate("empd", "active", 0);
-    if (!isdefined(data.var_a6868aec402b3e73)) {
+    if (!isdefined(data.ksemp)) {
         wait(6);
         function_dac6193dd5a71f4b(data);
     }
@@ -1163,8 +1163,8 @@ function function_bf727b4b45ca91de(position) {
 function trophy_givepointsfordeath(attacker) {
     if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker thread doScoreEvent(#"destroyed_equipment");
-        attacker thread namespace_25c5a6f43bb97b43::onFieldUpgradeDestroy(#"hash_2a7b7fea9428cd37");
+        attacker thread doscoreevent(#"destroyed_equipment");
+        attacker thread namespace_25c5a6f43bb97b43::onfieldupgradedestroy(#"hash_2a7b7fea9428cd37");
     }
 }
 

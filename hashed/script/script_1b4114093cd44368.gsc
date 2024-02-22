@@ -49,7 +49,7 @@ function function_23a6763562820c70() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x411
 // Size: 0xe2
-function oxygenmask_tryShowHint() {
+function oxygenmask_tryshowhint() {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self notify("oxygenmask_tryShowHint");
@@ -122,7 +122,7 @@ function private function_80143a61b671bdd3() {
         namespace_1cd9f6896754adb0::set("oxygenmask", "equipment_secondary", 0);
         namespace_1cd9f6896754adb0::set("oxygenmask", "weapon_pickup", 0);
     }
-    thread oxygenmask_tryShowHint();
+    thread oxygenmask_tryshowhint();
     function_2f21b35828315a0(0);
     if (issharedfuncdefined("oxygenmask", "onGive")) {
         self [[ getsharedfunc("oxygenmask", "onGive") ]]();
@@ -466,7 +466,7 @@ function private function_87a62a5519055b00() {
     }
     self.var_d988fa5d07c2a5bd = 1;
     wait(delay);
-    self function_5c5c9cbae3114b0();
+    self stopforcedfire();
 }
 
 // Namespace oxygenmask/namespace_86d0d418da518a0e
@@ -540,12 +540,12 @@ function private function_95812dcc553470bd() {
 function private function_5ec8d8473d72b73() {
     self endon("disconnect");
     level endon("game_ended");
-    self function_9e7f47b1711dca62();
+    self startforcedfire();
     if (iscp()) {
         childthread function_87a62a5519055b00();
     } else {
         waittill_any_2("oxygenmask_fail", "oxygenmask_fired");
-        self function_5c5c9cbae3114b0();
+        self stopforcedfire();
     }
 }
 

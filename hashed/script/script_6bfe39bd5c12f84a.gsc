@@ -192,7 +192,7 @@ function private function_8419f0f3143cdcfa(client) {
     clientnum = client getentitynumber();
     self.var_79a7c8a11ed7c0e3[clientnum] = id;
     thread function_c0ae1fa01f6b706b(client);
-    thread visibilityMode_disableOutlineOnDeath();
+    thread visibilitymode_disableoutlineondeath();
     thread function_e5c56140ae690938(client);
 }
 
@@ -200,7 +200,7 @@ function private function_8419f0f3143cdcfa(client) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb3c
 // Size: 0xf3
-function private visibilityMode_disableOutlineOnDeath() {
+function private visibilitymode_disableoutlineondeath() {
     level endon("game_ended");
     self notify("visibilityMode_disableOutlineOnDeath");
     self endon("visibilityMode_disableOutlineOnDeath");
@@ -231,7 +231,7 @@ function private function_c0ae1fa01f6b706b(client) {
     clientnum = client getentitynumber();
     self notify("visibilityMode_disableOutlineOnCallback_" + clientnum);
     self endon("visibilityMode_disableOutlineOnCallback_" + clientnum);
-    oldvalue = client.visibilityModeVal;
+    oldvalue = client.visibilitymodeval;
     var_26d30630ea0383c3 = client.var_5615f87228f360c8;
     while (1) {
         var_b5c8180e91e8c890 = val = client waittill("visibilityModeVal");
@@ -241,7 +241,7 @@ function private function_c0ae1fa01f6b706b(client) {
         if (val != oldvalue || var_b5c8180e91e8c890 != var_26d30630ea0383c3) {
             function_85e0f20ba385bf6d(client);
         }
-        oldvalue = client.visibilityModeVal;
+        oldvalue = client.visibilitymodeval;
         var_26d30630ea0383c3 = client.var_5615f87228f360c8;
     }
     function_6b814eafddccdd4d(client);
@@ -351,7 +351,7 @@ function function_8c2e8285c9915b12(var_1a265c496508b47b, var_a501e8f119cc62ce) {
     var_fbc7ad2d6177ce87 = function_d7ed7d211a79ceb3(var_fbc7ad2d6177ce87);
     var_fbc7ad2d6177ce87 = function_93260fadbd47622b(var_fbc7ad2d6177ce87);
     self.var_be1e6d7ff9628b76 = var_fbc7ad2d6177ce87;
-    self.visibilityModeVal = var_1a265c496508b47b;
+    self.visibilitymodeval = var_1a265c496508b47b;
     self.var_5615f87228f360c8 = var_a501e8f119cc62ce;
     self notify("visibilityModeVal", var_1a265c496508b47b);
     level notify("visibilityModeValUpdatedForPlayer", self);
@@ -913,8 +913,8 @@ function function_8eee51af38988db6(player, target) {
 // Checksum 0x0, Offset: 0x25fa
 // Size: 0x1d
 function function_5f46cf1503a0541a() {
-    if (isdefined(self.visibilityModeVal)) {
-        return (self.visibilityModeVal > 0);
+    if (isdefined(self.visibilitymodeval)) {
+        return (self.visibilitymodeval > 0);
     }
     return 0;
 }

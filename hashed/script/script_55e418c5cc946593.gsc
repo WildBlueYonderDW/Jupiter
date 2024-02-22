@@ -48,7 +48,7 @@ function function_ca7e33035f7f102f() {
 // Checksum 0x0, Offset: 0x290
 // Size: 0x24
 function function_c0d385a09d173a36() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return (getdvarint(@"hash_9b611cf0cb4bf80e", 1) > 0);
     } else {
         return 0;
@@ -91,7 +91,7 @@ function private function_b950d479e0b6a443() {
         foreach (var_3516ac40ed0e076e in scriptbundle.var_1dace216d1a32d14) {
             var_94301e72b910a4e0 = var_3516ac40ed0e076e.package;
             if (isdefined(var_94301e72b910a4e0)) {
-                var_b65f7e354b049957 = getscriptbundle(function_2ef675c13ca1c4af(%"hash_6c80545a9b2954b4", var_94301e72b910a4e0));
+                var_b65f7e354b049957 = getscriptbundle(function_2ef675c13ca1c4af(%"perkpackage:", var_94301e72b910a4e0));
                 if (isdefined(var_b65f7e354b049957)) {
                     if (function_3f643d9c78963ad5(var_b65f7e354b049957.perks.var_89ba9d57a95da53b)) {
                         level.var_952400f520b7f68d[var_94301e72b910a4e0]["perk" + 1] = var_b65f7e354b049957.perks.var_89ba9d57a95da53b;
@@ -190,7 +190,7 @@ function private function_3af287ce55291889(var_65b695f0c0d909ed) {
     quantity = var_57acfdc40b2fba7[1];
     lootid = var_57acfdc40b2fba7[0];
     if (isdefined(lootid)) {
-        var_a1093166de09e6b8 = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+        var_a1093166de09e6b8 = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
         if (!isdefined(var_a1093166de09e6b8)) {
             var_a1093166de09e6b8 = namespace_38b993c4618e76cd::function_793e8a72cedb8ef3(lootid);
         }
@@ -325,17 +325,17 @@ function function_98f34de164fb4757(perks) {
     if (!function_7513b765bcfd9658(perks)) {
         return;
     }
-    foreach (var_702112e41b1fa351, var_28062ea658ce805c in level.var_952400f520b7f68d) {
+    foreach (var_702112e41b1fa351, perkpack in level.var_952400f520b7f68d) {
         var_737f2981593f274f = 1;
-        if (isdefined(var_28062ea658ce805c) && var_28062ea658ce805c.size > 0) {
+        if (isdefined(perkpack) && perkpack.size > 0) {
             for (i = 0; i + 1 <= 4; i++) {
                 var_88c57175dc881598 = "none";
                 var_f1ced1fc8297b8d2 = "none";
                 key = "perk" + i + 1;
-                if (array_contains_key(var_28062ea658ce805c, key) && function_3f643d9c78963ad5(var_28062ea658ce805c[key])) {
-                    var_88c57175dc881598 = var_28062ea658ce805c[key];
-                } else if (i < var_28062ea658ce805c.size && function_3f643d9c78963ad5(var_28062ea658ce805c[i])) {
-                    var_88c57175dc881598 = var_28062ea658ce805c[i];
+                if (array_contains_key(perkpack, key) && function_3f643d9c78963ad5(perkpack[key])) {
+                    var_88c57175dc881598 = perkpack[key];
+                } else if (i < perkpack.size && function_3f643d9c78963ad5(perkpack[i])) {
+                    var_88c57175dc881598 = perkpack[i];
                 }
                 if (array_contains_key(perks, key) && function_3f643d9c78963ad5(perks[key])) {
                     var_f1ced1fc8297b8d2 = perks[key];
@@ -565,10 +565,10 @@ function function_3af23b0bfaf91dbd(dropstruct, position, angles, var_65b695f0c0d
                 } else {
                     var_cf2abec2f25bae27 = getloadoutperks();
                 }
-                var_cb4fad49263e20c4.var_a0597a25c511b0ac = [0:#"hash_371d996051b67a4a"];
+                var_cb4fad49263e20c4.var_a0597a25c511b0ac = [0:#"customperkpackage"];
                 if (isdefined(var_cf2abec2f25bae27)) {
                     foreach (perk in var_cf2abec2f25bae27) {
-                        var_cb4fad49263e20c4.var_a0597a25c511b0ac[var_cb4fad49263e20c4.var_a0597a25c511b0ac.size] = namespace_38b993c4618e76cd::function_a50b607d2500dda5(perk);
+                        var_cb4fad49263e20c4.var_a0597a25c511b0ac[var_cb4fad49263e20c4.var_a0597a25c511b0ac.size] = namespace_38b993c4618e76cd::getlootidfromref(perk);
                     }
                 }
             }
@@ -756,7 +756,7 @@ function function_43044da0ed44d79f(ref) {
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0x25
 function function_8a2768bc7f7c63ec(lootid) {
-    scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+    scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
     return function_43044da0ed44d79f(scriptablename);
 }
 
@@ -780,7 +780,7 @@ function function_36de08ea672b354c(var_a0ce8000d303764c) {
 // Checksum 0x0, Offset: 0x1b3d
 // Size: 0x25
 function function_f647113719f5139b(lootid) {
-    scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+    scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
     return function_36de08ea672b354c(scriptablename);
 }
 

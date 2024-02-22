@@ -696,7 +696,7 @@ function function_13399aa20634edce(var_7c6183ce9e04512e, var_1e904d14a41d4385) {
 // Checksum 0x0, Offset: 0x1a76
 // Size: 0x96
 function function_4f6df967144e2cb4(var_934dc135aaf6f953) {
-    if (var_934dc135aaf6f953 == %"EXE/PLAYERKICKED_TEAMKILLS") {
+    if (var_934dc135aaf6f953 == %"exe/playerkicked_teamkills") {
         return 3;
     } else if (var_934dc135aaf6f953 == %"exe/disconnected") {
         return 14;
@@ -708,7 +708,7 @@ function function_4f6df967144e2cb4(var_934dc135aaf6f953) {
         return 2;
     } else if (var_934dc135aaf6f953 == %"hash_539e18c78905606e") {
         return 6;
-    } else if (var_934dc135aaf6f953 == %"EXE/PLAYERKICKED_INACTIVE") {
+    } else if (var_934dc135aaf6f953 == %"exe/playerkicked_inactive") {
         return 7;
     }
     return 0;

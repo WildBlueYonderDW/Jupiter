@@ -13,7 +13,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd3
 // Size: 0x1e4
-function function_1ccd859721e5eaee() {
+function initbosses() {
     level endon("game_ended");
     if (namespace_bd614c3c2275579a::function_a9b26d3ed078e149()) {
         level waittill("spawn_brStrongholdSpawn");

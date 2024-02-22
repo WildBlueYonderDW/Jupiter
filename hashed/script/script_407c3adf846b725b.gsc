@@ -51,18 +51,18 @@ function function_23c3d8f2ae91b6c3() {
 // Checksum 0x0, Offset: 0x37c
 // Size: 0x183
 function function_f2f0951e4a6e218c() {
-    levelData = function_23c3d8f2ae91b6c3();
-    levelData.var_4acc66ea74cdc413 = getdvarint(@"hash_c7e9a5f7f0d6fe87", 1) == 1;
-    levelData.var_71dbb8c4005d612b = getdvarint(@"hash_de33df60fcc33a48", 1) == 1;
-    levelData.lifetime = getdvarint(@"hash_e94d386176ea049c", 360);
-    levelData.var_8a25a7879becda51 = getdvarfloat(@"hash_6c0ae9b78fea9323", 1.4);
-    levelData.maxhealth = getdvarfloat(@"hash_50c1b3e18786df16", 1000);
-    levelData.meleedamage = getdvarfloat(@"hash_12cceb48a02504f", levelData.maxhealth / 3);
-    levelData.explosivedamage = getdvarfloat(@"hash_e897c5f4d99c77e2", levelData.maxhealth);
-    levelData.var_89bb3f5b08e3a5f2 = getdvarfloat(@"hash_f2559412d6f6e7d3", levelData.maxhealth / 5);
-    levelData.var_f2f46c25f5851025 = getdvarfloat(@"hash_a418d23e834a23e7", levelData.maxhealth / 12);
-    levelData.var_29fdcb922844f7f = getdvarfloat(@"hash_cce29f6632d1c759", 4);
-    levelData.debugmode = getdvarint(@"hash_4e9d8c4ac5384a14", 1) == 1;
+    leveldata = function_23c3d8f2ae91b6c3();
+    leveldata.var_4acc66ea74cdc413 = getdvarint(@"hash_c7e9a5f7f0d6fe87", 1) == 1;
+    leveldata.var_71dbb8c4005d612b = getdvarint(@"hash_de33df60fcc33a48", 1) == 1;
+    leveldata.lifetime = getdvarint(@"hash_e94d386176ea049c", 360);
+    leveldata.var_8a25a7879becda51 = getdvarfloat(@"hash_6c0ae9b78fea9323", 1.4);
+    leveldata.maxhealth = getdvarfloat(@"hash_50c1b3e18786df16", 1000);
+    leveldata.meleedamage = getdvarfloat(@"hash_12cceb48a02504f", leveldata.maxhealth / 3);
+    leveldata.explosivedamage = getdvarfloat(@"hash_e897c5f4d99c77e2", leveldata.maxhealth);
+    leveldata.var_89bb3f5b08e3a5f2 = getdvarfloat(@"hash_f2559412d6f6e7d3", leveldata.maxhealth / 5);
+    leveldata.var_f2f46c25f5851025 = getdvarfloat(@"hash_a418d23e834a23e7", leveldata.maxhealth / 12);
+    leveldata.var_29fdcb922844f7f = getdvarfloat(@"hash_cce29f6632d1c759", 4);
+    leveldata.debugmode = getdvarint(@"hash_4e9d8c4ac5384a14", 1) == 1;
 }
 
 // Namespace namespace_46a2e07dc61d9261/namespace_35cf33c9c2941133
@@ -357,7 +357,7 @@ function function_5b121785e9363ea4(einflictor, eattacker, instance, idamage, idf
 function function_7081462a3365812b(attacker) {
     if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
     }
     function_a6ad5685b28ec03a(function_23c3d8f2ae91b6c3().var_8a25a7879becda51, 1);
 }

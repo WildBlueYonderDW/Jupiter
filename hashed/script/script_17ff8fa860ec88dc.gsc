@@ -127,8 +127,8 @@ function function_5d19d3f8062e4bee() {
         foreach (player in level.players) {
             var_d1b436910914f40e = function_7bcb4b0b404dc8a8(player);
             if (isdefined(var_d1b436910914f40e)) {
-                if (isdefined(player.var_b1d7dca915c8eb6d)) {
-                    if (var_d1b436910914f40e != player.var_b1d7dca915c8eb6d) {
+                if (isdefined(player.visibilitymodeval)) {
+                    if (var_d1b436910914f40e != player.visibilitymodeval) {
                         player namespace_c5f7e08ad7ea4280::function_8c2e8285c9915b12(var_d1b436910914f40e);
                     }
                 } else {

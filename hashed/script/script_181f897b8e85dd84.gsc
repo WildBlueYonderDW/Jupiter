@@ -249,7 +249,7 @@ function onplayerscore(event, player, originalpoints, victim, var_7ec7671a1e0c78
         return 20;
     } else if (event == #"kill" || event == #"hash_49ee3d646e1fd20f" || isdefined(var_7ec7671a1e0c788f) && istrue(var_7ec7671a1e0c788f.var_e0badec2b1517ca3)) {
         return 10;
-    } else if (event == #"hash_fe68dfa78d19874e") {
+    } else if (event == #"assist_ffa") {
         player bufferednotify("earned_score_buffered", originalpoints);
     }
     return 0;

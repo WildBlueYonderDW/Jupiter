@@ -39,7 +39,7 @@ function init() {
         }
     }
     if (getdvarint(@"hash_4ba1427c86b79dc5") != 0) {
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             level.maxlogclients = 200;
         } else {
             level.maxlogclients = 30;
@@ -245,7 +245,7 @@ function logplayerdata(var_934dc135aaf6f953) {
         var_474a6d79ef62cf1a = 0;
         var_6ea7d87f1769fdb7 = 0;
         var_53565c7950c80700 = 0;
-        if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (!namespace_36f464722d326bbe::isbrstylegametype()) {
             if (isenumvaluevalid("common", "LoadoutWeapon", var_5842e592ddcef384.weapon)) {
                 var_75e61e9afcfd1e96 = self getplayerdata(level.loadoutsgroup, "squadMembers", "weapon_xp", var_5842e592ddcef384.weapon);
             }
@@ -281,7 +281,7 @@ function logplayerdata(var_934dc135aaf6f953) {
                 var_53565c7950c80700 = var_53565c7950c80700 + value;
             }
         }
-        if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (!namespace_36f464722d326bbe::isbrstylegametype()) {
             self dlog_recordplayerevent("dlog_event_mp_player_weapon_stats", [0:"weapon", 1:var_5842e592ddcef384.weapon, 2:"variant_id", 3:var_5842e592ddcef384.variantid, 4:"loadout_index", 5:var_5842e592ddcef384.loadoutindex, 6:"starting_weapon_xp", 7:var_75e61e9afcfd1e96, 8:"xp_earned", 9:var_e1e89bd150d2b6e5, 10:"deaths", 11:var_111dae76dbee9581, 12:"headshots", 13:var_4ac1d6453910f005, 14:"hits", 15:var_2cd6c62534b95eb8, 16:"kills", 17:var_8797207b95ae767, 18:"ads_kills", 19:var_c4530fef629dd385, 20:"shots", 21:var_be9811f337918ba3, 22:"timeUsed", 23:var_474a6d79ef62cf1a, 24:"damage", 25:var_6ea7d87f1769fdb7, 26:"friendly_fire_damage", 27:var_53565c7950c80700]);
         }
     }

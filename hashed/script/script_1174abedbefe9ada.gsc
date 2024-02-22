@@ -50,9 +50,9 @@ function function_3acf5939a1db7a7() {
     level.radiation.var_693e7d2a8db6a09d = [0:40, 1:75, 2:100];
     level.radiation.var_850942263638b598 = 0;
     level.radiation.var_378d3b538b839d2c = [];
-    namespace_3c37cb17ade254d::registersharedfunc("radiation", "radiation_isInit", &radiation_isInit);
-    namespace_3c37cb17ade254d::registersharedfunc("radiation", "radiation_signedDistanceFromRadiationCircle", &radiation_signedDistanceFromRadiationCircle);
-    namespace_3c37cb17ade254d::registersharedfunc("radiation", "radiation_isInRadiation", &radiation_isInRadiation);
+    namespace_3c37cb17ade254d::registersharedfunc("radiation", "radiation_isInit", &radiation_isinit);
+    namespace_3c37cb17ade254d::registersharedfunc("radiation", "radiation_signedDistanceFromRadiationCircle", &radiation_signeddistancefromradiationcircle);
+    namespace_3c37cb17ade254d::registersharedfunc("radiation", "radiation_isInRadiation", &radiation_isinradiation);
     if (getdvarint(function_2ef675c13ca1c4af(@"hash_1829a1208c528e73", "spawnAtStart"), 1)) {
         function_e97390ed5bc4fe34();
     }
@@ -106,9 +106,9 @@ function private function_dbf56756677d1ae1() {
         waitframe();
     }
     waitframe();
-    forceOrigin = getdvarvector(function_2ef675c13ca1c4af(@"hash_1829a1208c528e73", "forceOrigin"), (0, 0, 0));
-    if (forceOrigin != (0, 0, 0)) {
-        return forceOrigin;
+    forceorigin = getdvarvector(function_2ef675c13ca1c4af(@"hash_1829a1208c528e73", "forceOrigin"), (0, 0, 0));
+    if (forceorigin != (0, 0, 0)) {
+        return forceorigin;
     }
     points = [];
     foreach (set in level.startpoints) {
@@ -183,7 +183,7 @@ function private function_dbf56756677d1ae1() {
 // Checksum 0x0, Offset: 0xfbe
 // Size: 0x23
 function function_e32a9ba4aa8f9fa8() {
-    if (!radiation_isInit()) {
+    if (!radiation_isinit()) {
         return;
     }
     level.radiation.var_9957c36d26b92420 = 1;
@@ -194,11 +194,11 @@ function function_e32a9ba4aa8f9fa8() {
 // Checksum 0x0, Offset: 0xfe8
 // Size: 0x1a2
 function function_a01f654e559ee5ec() {
-    if (!radiation_isInit()) {
+    if (!radiation_isinit()) {
         return;
     }
     level notify("dmz_radiation_started");
-    namespace_d696adde758cbe79::function_ae6091699e25d8b4("dmz_radiation_spreading", level.players);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_radiation_spreading", level.players);
     setomnvar("ui_dmz_radiation_spreading", 1);
     level function_ea5fb9090223b855(level.radiation.origin, level.radiation.var_17dea46b55390175["final"], level.radiation.var_17dea46b55390175["expTime"]);
     function_378499db9e139e34();
@@ -237,7 +237,7 @@ function function_4c74b6fe35dadc38() {
         if (!isplayer(player)) {
             continue;
         }
-        playerdist = radiation_signedDistanceFromRadiationCircle(player.origin);
+        playerdist = radiation_signeddistancefromradiationcircle(player.origin);
         if (playerdist > var_5f5f6114c9d25a18) {
             continue;
         }
@@ -346,7 +346,7 @@ function private function_94224cf552a24537() {
                         waitframe();
                     }
                     agent = var_87feaef653a8c7da[i];
-                    if (isdefined(agent) && isalive(agent) && radiation_isInRadiation(agent.origin)) {
+                    if (isdefined(agent) && isalive(agent) && radiation_isinradiation(agent.origin)) {
                         function_6153ad0458d8f809(agent);
                     }
                 }
@@ -385,7 +385,7 @@ function private function_6f9619adb55e091e() {
         }
         foreach (player in level.players) {
             if (isdefined(player)) {
-                if (isdefined(player.origin) && !istrue(player.plotarmor) && radiation_isInRadiation(player.origin)) {
+                if (isdefined(player.origin) && !istrue(player.plotarmor) && radiation_isinradiation(player.origin)) {
                     function_c4a3072ce7b3f1fd(player, damage);
                 }
             }
@@ -433,7 +433,7 @@ function private function_d00e59cfb504da1a() {
 // Checksum 0x0, Offset: 0x1807
 // Size: 0x70
 function function_9bc063861b9330f1(damage) {
-    if (!radiation_isInit()) {
+    if (!radiation_isinit()) {
         return;
     }
     if (!isdefined(level.radiation.var_28da8386c5007cb1)) {
@@ -568,7 +568,7 @@ function private function_1011b2aa6f43c79(agent) {
 function private function_2f4c37edb355cfcc() {
     foreach (player in level.players) {
         if (isdefined(player) && isdefined(player.origin) && namespace_9c6cddd872ad75f7::hasgasmask(player) && !istrue(player.gasmaskswapinprogress)) {
-            if (radiation_isInRadiation(player.origin)) {
+            if (radiation_isinradiation(player.origin)) {
                 player namespace_cb965d2f71fefddc::function_cdf7f2f6bd3207("radiation");
             } else {
                 player namespace_cb965d2f71fefddc::function_8206bc54a1ed73cb("radiation");
@@ -582,7 +582,7 @@ function private function_2f4c37edb355cfcc() {
 // Checksum 0x0, Offset: 0x1edc
 // Size: 0x4c
 function function_1509b788f4410b94(player) {
-    if (radiation_isInit()) {
+    if (radiation_isinit()) {
         level.radiation.var_378d3b538b839d2c = array_add(level.radiation.var_378d3b538b839d2c, player);
         player thread function_ff259762d4378a33();
     }
@@ -598,7 +598,7 @@ function private function_ff259762d4378a33() {
         if (istrue(self.extracted)) {
             return;
         }
-        if (radiation_isInit() && isreallyalive(self)) {
+        if (radiation_isinit() && isreallyalive(self)) {
             var_744af42b66f6d746 = function_55436ce00ab60754(self.origin);
             if (isdefined(var_744af42b66f6d746)) {
                 self playlocalsound("iw9_mp_radiation_tick");
@@ -658,7 +658,7 @@ function private function_ef14a88ba5763880(origin, nodes) {
 // Checksum 0x0, Offset: 0x2144
 // Size: 0x20
 function function_f3fb60f986f267c5() {
-    if (radiation_isInit()) {
+    if (radiation_isinit()) {
         return level.radiation.origin;
     }
 }
@@ -668,7 +668,7 @@ function function_f3fb60f986f267c5() {
 // Checksum 0x0, Offset: 0x216b
 // Size: 0x20
 function function_5ce400665ee103f9() {
-    if (radiation_isInit()) {
+    if (radiation_isinit()) {
         return level.radiation.radius;
     }
 }
@@ -713,8 +713,8 @@ function private function_a47ed2d2b0485893(var_1cfccac3e5778bbb) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23fb
 // Size: 0x31
-function radiation_isInRadiation(var_1cfccac3e5778bbb) {
-    return radiation_isInit() && function_485b5a399def53d0(var_1cfccac3e5778bbb) < level.radiation.radius;
+function radiation_isinradiation(var_1cfccac3e5778bbb) {
+    return radiation_isinit() && function_485b5a399def53d0(var_1cfccac3e5778bbb) < level.radiation.radius;
 }
 
 // Namespace namespace_e47cc086b3a2ff1d/namespace_7789f919216d38a2
@@ -746,7 +746,7 @@ function private function_1aa28ad2c858d3d7(var_1cfccac3e5778bbb) {
 // Checksum 0x0, Offset: 0x24c1
 // Size: 0x3a
 function function_cdcab1374db7f007(var_1cfccac3e5778bbb) {
-    if (radiation_isInit()) {
+    if (radiation_isinit()) {
         return (function_485b5a399def53d0(var_1cfccac3e5778bbb) < level.radiation.radius + 1500);
     } else {
         return 0;
@@ -765,7 +765,7 @@ function function_485b5a399def53d0(var_1cfccac3e5778bbb) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x252f
 // Size: 0x39
-function radiation_signedDistanceFromRadiationCircle(origin) {
+function radiation_signeddistancefromradiationcircle(origin) {
     return distance2d(origin, level.radiation.origin) - level.radiation.radius;
 }
 
@@ -808,8 +808,8 @@ function private function_5b97e85e94d918a6(points) {
 // Checksum 0x0, Offset: 0x26dd
 // Size: 0x28
 function function_76ef3c8b8171d2d(origin) {
-    if (radiation_isInit()) {
-        return radiation_isInRadiation(origin);
+    if (radiation_isinit()) {
+        return radiation_isinradiation(origin);
     } else {
         return namespace_c5622898120e827f::function_24c5a8d31ae262f(origin);
     }
@@ -819,7 +819,7 @@ function function_76ef3c8b8171d2d(origin) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x270c
 // Size: 0x25
-function radiation_isInit() {
+function radiation_isinit() {
     return isdefined(level.radiation) && isdefined(level.radiation.origin);
 }
 
@@ -841,7 +841,7 @@ function private function_718576c0d4d8ca36() {
                 break;
             }
         }
-        if (!radiation_isInit()) {
+        if (!radiation_isinit()) {
             function_e97390ed5bc4fe34();
         }
         level thread function_a01f654e559ee5ec();

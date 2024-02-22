@@ -12,7 +12,7 @@ function function_69b64f047b0af1db(radius) {
     event = function_c74368899713e7e6();
     event.result = [];
     event.radiussq = radius * radius;
-    var_3c91684198954c83 = self.Mind.var_3c91684198954c83;
+    var_3c91684198954c83 = self.mind.var_3c91684198954c83;
     var_3c91684198954c83.var_ec10c084410e83fc = event;
     var_3c91684198954c83.events[var_3c91684198954c83.events.size] = event;
 }
@@ -22,7 +22,7 @@ function function_69b64f047b0af1db(radius) {
 // Checksum 0x0, Offset: 0x13a
 // Size: 0x1b9
 function function_7e7ddfa33eff2c11() {
-    event = self.Mind.var_3c91684198954c83.var_ec10c084410e83fc;
+    event = self.mind.var_3c91684198954c83.var_ec10c084410e83fc;
     if (!event.var_d0942e9d2044d6c6) {
         if (event.result.size > 0) {
             event.result = [];

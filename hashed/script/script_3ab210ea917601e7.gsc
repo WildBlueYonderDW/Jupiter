@@ -208,20 +208,20 @@ function function_cdd79617f81a46d2(var_d389f1191e609479) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xad7
 // Size: 0x4a
-function function_1281c7fff9456e18(ActivationName, playerlist) {
-    function_c662924b60a37407("Activated all broadcasts with Activation Name: " + ActivationName, @"hash_3b38e79d9ffe7e9f", self, playerlist);
-    var_4fb0bb8290e39fb3 = function_e38f1d6d5a208fe1(ActivationName);
-    function_58c9b87625671005(var_4fb0bb8290e39fb3, ActivationName, playerlist, 0);
+function function_1281c7fff9456e18(activationname, playerlist) {
+    function_c662924b60a37407("Activated all broadcasts with Activation Name: " + activationname, @"hash_3b38e79d9ffe7e9f", self, playerlist);
+    var_4fb0bb8290e39fb3 = function_e38f1d6d5a208fe1(activationname);
+    function_58c9b87625671005(var_4fb0bb8290e39fb3, activationname, playerlist, 0);
 }
 
 // Namespace namespace_a93e7904fe28c5c4/namespace_277c27ef297ef569
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb28
 // Size: 0x4b
-function function_f2a618a7ad2f558d(ActivationName, playerlist) {
-    function_c662924b60a37407("Hide all broadcasts with Activation Name: " + ActivationName, @"hash_3b38e79d9ffe7e9f", self, playerlist);
-    var_4fb0bb8290e39fb3 = function_e38f1d6d5a208fe1(ActivationName);
-    function_58c9b87625671005(var_4fb0bb8290e39fb3, ActivationName, playerlist, 1);
+function function_f2a618a7ad2f558d(activationname, playerlist) {
+    function_c662924b60a37407("Hide all broadcasts with Activation Name: " + activationname, @"hash_3b38e79d9ffe7e9f", self, playerlist);
+    var_4fb0bb8290e39fb3 = function_e38f1d6d5a208fe1(activationname);
+    function_58c9b87625671005(var_4fb0bb8290e39fb3, activationname, playerlist, 1);
 }
 
 // Namespace namespace_a93e7904fe28c5c4/namespace_277c27ef297ef569
@@ -340,7 +340,7 @@ function function_fd7a0d7af53408c9(var_d9915f8020fff325, var_e6013eac45290cab, v
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xf6b
 // Size: 0xb7
-function private function_58c9b87625671005(var_4fb0bb8290e39fb3, ActivationName, playerlist, var_35498449056da93d) {
+function private function_58c9b87625671005(var_4fb0bb8290e39fb3, activationname, playerlist, var_35498449056da93d) {
     if (!isdefined(playerlist)) {
         playerlist = self.var_6c29f2fdb0054bbe;
     }
@@ -380,11 +380,11 @@ function private function_91f301cdf6b88253(var_94bda1b3c0ae9bab) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0x8a
-function private function_1bb667dce8ec20d2(ActivationName) {
+function private function_1bb667dce8ec20d2(activationname) {
     var_c9f561285d1c4859 = [];
     foreach (var_cecb6f8a13d4084d in self.var_40b691c0a6852f73) {
         var_f3c55aafff2be133 = var_cecb6f8a13d4084d function_27486f42d37da990();
-        if (isdefined(var_f3c55aafff2be133) && var_f3c55aafff2be133 == ActivationName) {
+        if (isdefined(var_f3c55aafff2be133) && var_f3c55aafff2be133 == activationname) {
             var_c9f561285d1c4859[var_c9f561285d1c4859.size] = var_cecb6f8a13d4084d;
         }
     }

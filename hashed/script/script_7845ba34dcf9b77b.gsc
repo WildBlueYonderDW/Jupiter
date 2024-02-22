@@ -12,7 +12,7 @@
 function function_69b64f047b0af1db() {
     event = function_c74368899713e7e6();
     event.result = [];
-    var_3c91684198954c83 = self.Mind.var_3c91684198954c83;
+    var_3c91684198954c83 = self.mind.var_3c91684198954c83;
     var_3c91684198954c83.var_d338b2cc0965fdb3 = event;
     var_3c91684198954c83.events[var_3c91684198954c83.events.size] = event;
 }
@@ -22,7 +22,7 @@ function function_69b64f047b0af1db() {
 // Checksum 0x0, Offset: 0xed
 // Size: 0x126
 function function_7e7ddfa33eff2c11() {
-    event = self.Mind.var_3c91684198954c83.var_d338b2cc0965fdb3;
+    event = self.mind.var_3c91684198954c83.var_d338b2cc0965fdb3;
     if (!event.var_d0942e9d2044d6c6) {
         if (event.result.size > 0) {
             event.result = [];

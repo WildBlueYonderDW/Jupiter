@@ -53,18 +53,18 @@ function function_80d68c9701e1aea5(data) {
     level.var_28c3893738c043fe.var_15b2bbc2239d50e1 = getdvarfloat(@"hash_db4270e079922c25", 0.05);
     level.var_28c3893738c043fe.showtime = getdvarint(@"hash_9ce7fc426fd9f32e", 900);
     level.var_28c3893738c043fe.var_b7718b6e41108129 = [];
-    namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_6bdc6f56944dc3aa);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_6bdc6f56944dc3aa);
     var_58e0d036347fd542 = [];
     var_8b03497b50726bf2 = data.difficulty;
     phones = getentitylessscriptablearray("brloot_activity_starter_hunt");
     foreach (phone in phones) {
         origin = phone.origin;
-        var_171f90b9c4c76d44 = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
-        var_d1cf55b36facf5a8 = namespace_bfef6903bca5845d::function_a44e168e8cced18(origin, var_171f90b9c4c76d44);
-        if (isdefined(var_d1cf55b36facf5a8) && isdefined(var_d1cf55b36facf5a8.var_7da9883d4168b7f1) && isdefined(var_d1cf55b36facf5a8.var_7da9883d4168b7f1.var_84ecaeab58167d39) && var_d1cf55b36facf5a8.var_7da9883d4168b7f1.var_84ecaeab58167d39 >= var_8b03497b50726bf2) {
+        poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
+        subarea = namespace_bfef6903bca5845d::function_a44e168e8cced18(origin, poiname);
+        if (isdefined(subarea) && isdefined(subarea.var_7da9883d4168b7f1) && isdefined(subarea.var_7da9883d4168b7f1.var_84ecaeab58167d39) && subarea.var_7da9883d4168b7f1.var_84ecaeab58167d39 >= var_8b03497b50726bf2) {
             struct = spawnstruct();
             struct.origin = origin;
-            struct.poi = var_171f90b9c4c76d44;
+            struct.poi = poiname;
             var_58e0d036347fd542[var_58e0d036347fd542.size] = struct;
         }
         /#
@@ -319,7 +319,7 @@ function function_3f853155c6ca8319(player, origin) {
     var_4aa32c116c698ff6 = level.var_28c3893738c043fe.var_5572778d2cffe0fd * (teamplayers.size - var_6d038a7052e9467c);
     scores["generic"] = var_7a73315d7ca78155 + var_4aa32c116c698ff6;
     scores["civs"] = level.var_28c3893738c043fe.var_e01b87efdea9bf3b * ter_op(isdefined(player.var_18ccf3f412948903), player.var_18ccf3f412948903, 0);
-    scores["agents"] = level.var_28c3893738c043fe.var_69873adaf95b11a * ter_op(isdefined(player.agentKills), player.agentKills, 0);
+    scores["agents"] = level.var_28c3893738c043fe.var_69873adaf95b11a * ter_op(isdefined(player.agentkills), player.agentkills, 0);
     scores["operators"] = level.var_28c3893738c043fe.var_e8fa4e2bd0433d43 * ter_op(isdefined(player.pers["kills"]), player.pers["kills"], 0);
     scores["valuables"] = level.var_28c3893738c043fe.var_15b2bbc2239d50e1 * (player.plundercount + player namespace_512200f0f9e6ebc9::function_e2f4f470c55123b8(undefined, 1));
     return scores;
@@ -565,7 +565,7 @@ function function_d85cc7847f7fc492(origin) {
         count = function_a5f450d405d9d197(origin);
         if (count == 0) {
             self.var_4048af728f427ca2 = 1;
-            if (getSquadmates(self.targetteam, undefined, 1).size) {
+            if (getsquadmates(self.targetteam, undefined, 1).size) {
                 namespace_446fc987a980892f::function_9793a81bc3bc19e9("hunt_eliminated_ran_away", self.teams[0]);
                 function_1759acfd39bb5edf("dmz_hunt_target_over", self.targetteam);
             } else {
@@ -610,17 +610,17 @@ function function_7562a66c42d923dc() {
     if (isdefined(level.var_28c3893738c043fe) && isdefined(level.var_28c3893738c043fe.var_b7718b6e41108129)) {
         foreach (task in level.var_28c3893738c043fe.var_b7718b6e41108129) {
             if (!isdefined(task.teams[0])) {
-                task.activity.var_5ea1be154aeb609b function_66da9365bbfea8b7();
+                task.activity.activitystarter function_66da9365bbfea8b7();
             }
         }
         namespace_4b0406965e556711::gameflagwait("prematch_done");
         wait(level.var_28c3893738c043fe.showtime);
         foreach (task in level.var_28c3893738c043fe.var_b7718b6e41108129) {
             if (!isdefined(task.teams[0])) {
-                task.activity.var_5ea1be154aeb609b function_5220f38b5239eac8();
+                task.activity.activitystarter function_5220f38b5239eac8();
             }
         }
-        namespace_d696adde758cbe79::showDMZSplash("dmz_hunt_contracts_revealed", level.players);
+        namespace_d696adde758cbe79::showdmzsplash("dmz_hunt_contracts_revealed", level.players);
     }
 }
 

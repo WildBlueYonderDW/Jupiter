@@ -79,9 +79,9 @@ function private function_cc178534ef642e6f(player, vehicle) {
         return;
     }
     if (isdefined(player.vehiclecustomization)) {
-        var_7731adef63e19b0c = vehicle function_d93ec4635290febd();
+        vehicleref = vehicle function_d93ec4635290febd();
         if (!isdefined(vehicle.mtx) && !istrue(vehicle.var_7ee6203c5532a9e6)) {
-            mtx = function_471cde1983a05f66(player, var_7731adef63e19b0c);
+            mtx = function_471cde1983a05f66(player, vehicleref);
             function_4201160d49c885a7(vehicle, mtx);
             if (isdefined(vehicle.mtx)) {
                 vehicle.linked_brush notify("train_mtx_applied");

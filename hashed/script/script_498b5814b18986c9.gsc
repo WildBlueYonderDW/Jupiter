@@ -11,19 +11,19 @@
 // Checksum 0x0, Offset: 0x16c
 // Size: 0x87
 function init() {
-    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "hasScubaGasMask", &hasScubaGasMask);
-    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "isScubaGasMaskEquipped", &isScubaGasMaskEquipped);
-    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "removeScubaGasMaskFromPlayer", &removeScubaGasMaskFromPlayer);
-    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "updateScubaGasmask", &updateScubaGasmask);
+    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "hasScubaGasMask", &hasscubagasmask);
+    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "isScubaGasMaskEquipped", &isscubagasmaskequipped);
+    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "removeScubaGasMaskFromPlayer", &removescubagasmaskfromplayer);
+    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "updateScubaGasmask", &updatescubagasmask);
     namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "monitorScubaGasMaskDamage", &function_4e41bf5f9d46e115);
-    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "isUsingScubaGasMask", &isUsingScubaGasMask);
+    namespace_3c37cb17ade254d::registersharedfunc("scubaGasMask", "isUsingScubaGasMask", &isusingscubagasmask);
 }
 
 // Namespace namespace_119c80c54f2f80e1/namespace_7c996eebd51b5b1f
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x16
-function private isUsingScubaGasMask(player) {
+function private isusingscubagasmask(player) {
     return istrue(self.var_5239162658be30d6);
 }
 
@@ -31,24 +31,24 @@ function private isUsingScubaGasMask(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x218
 // Size: 0x1e
-function hasScubaGasMask(player) {
-    return isUsingScubaGasMask(player) && namespace_9c6cddd872ad75f7::hasgasmask(player);
+function hasscubagasmask(player) {
+    return isusingscubagasmask(player) && namespace_9c6cddd872ad75f7::hasgasmask(player);
 }
 
 // Namespace namespace_119c80c54f2f80e1/namespace_7c996eebd51b5b1f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x1e
-function isScubaGasMaskEquipped(player) {
-    return hasScubaGasMask(player) && namespace_9c6cddd872ad75f7::function_260708c89a11f0c3(player);
+function isscubagasmaskequipped(player) {
+    return hasscubagasmask(player) && namespace_9c6cddd872ad75f7::function_260708c89a11f0c3(player);
 }
 
 // Namespace namespace_119c80c54f2f80e1/namespace_7c996eebd51b5b1f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x264
 // Size: 0x21
-function removeScubaGasMaskFromPlayer(player) {
-    if (hasScubaGasMask(player)) {
+function removescubagasmaskfromplayer(player) {
+    if (hasscubagasmask(player)) {
         player.var_5239162658be30d6 = undefined;
     }
 }
@@ -57,7 +57,7 @@ function removeScubaGasMaskFromPlayer(player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28c
 // Size: 0x34
-function updateScubaGasmask(player, isunderwater) {
+function updatescubagasmask(player, isunderwater) {
     if (isdefined(player) && isdefined(player.origin)) {
         level thread function_9c13c9f95161d576(player, isunderwater);
     }
@@ -99,7 +99,7 @@ function function_4e41bf5f9d46e115() {
         if (!namespace_8ade6bdb04213c12::isplayerunderwater()) {
             break;
         }
-        if (!hasScubaGasMask(self)) {
+        if (!hasscubagasmask(self)) {
             break;
         }
         if (isdefined(self.origin) && !istrue(self.plotarmor)) {

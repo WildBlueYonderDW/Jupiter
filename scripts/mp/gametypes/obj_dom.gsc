@@ -32,7 +32,7 @@
 // Size: 0x77e
 function setupobjective(trigger, team, var_5ddbc1faed2c56e6, var_8b9949739f4e0f6, showoncompass) {
     visuals = undefined;
-    if (istrue(level.useStrongholdHills) || getdvarint(@"hash_a464cb031c16ee87", 0) > 0) {
+    if (istrue(level.usestrongholdhills) || getdvarint(@"hash_a464cb031c16ee87", 0) > 0) {
         visuals = [];
         visuals[0] = trigger;
         /#
@@ -56,7 +56,7 @@ function setupobjective(trigger, team, var_5ddbc1faed2c56e6, var_8b9949739f4e0f6
         level.flagcapturetime = dvarfloatvalue("flagCaptureTime", 10, 0, 30);
     }
     if (!isdefined(level.var_e42a415ae1c75964)) {
-        level.flagCaptureTimeMin = dvarfloatvalue("flagCaptureTimeMin", 0, 0, 30);
+        level.flagcapturetimemin = dvarfloatvalue("flagCaptureTimeMin", 0, 0, 30);
     }
     if (!isdefined(level.var_fb607d7bf823f6f9)) {
         level.var_fb607d7bf823f6f9 = level.flagcapturetime * 0.5;
@@ -111,13 +111,13 @@ function setupobjective(trigger, team, var_5ddbc1faed2c56e6, var_8b9949739f4e0f6
     domflag.claimgracetime = level.flagcapturetime * 1000;
     domflag.firstcapture = 1;
     domflag namespace_19b4203b51d56488::pinobjiconontriggertouch();
-    domflag.var_823c5a7bf6a0e64a = level.flagReinforcement;
-    domflag.var_fb60f3aec3a62f06 = level.flagModelHidden;
+    domflag.var_823c5a7bf6a0e64a = level.flagreinforcement;
+    domflag.var_fb60f3aec3a62f06 = level.flagmodelhidden;
     if (istrue(domflag.var_823c5a7bf6a0e64a)) {
         domflag.var_9abe4ab71ae5d548 = domflag.usetime - 1;
-        domflag.reinforcementStompScalar = level.reinforcementStompScalar;
-        if (isdefined(level.flagDecayTime) && level.flagDecayTime > 0) {
-            domflag.decayrate = domflag.usetime * level.framedurationseconds / level.flagDecayTime;
+        domflag.reinforcementstompscalar = level.reinforcementstompscalar;
+        if (isdefined(level.flagdecaytime) && level.flagdecaytime > 0) {
+            domflag.decayrate = domflag.usetime * level.framedurationseconds / level.flagdecaytime;
         }
     }
     if (istrue(level.var_dd7af80c3eb2c1e0)) {
@@ -401,7 +401,7 @@ function dompoint_setcaptured(team, var_22282e7d48ca3400) {
             player = self.assisttouchlist[team][playerid].player;
         }
     }
-    if (istrue(level.useStrongholdScoring)) {
+    if (istrue(level.usestrongholdscoring)) {
         var_bde78b1b09ae7f75 = getteamflagcount(team);
         if (var_bde78b1b09ae7f75 == level.flagsrequiredtoscore) {
             statusdialog("friendly_scoring", team);
@@ -778,9 +778,9 @@ function function_3dc46df97466e4d3(team) {
 // Size: 0xad
 function dompoint_stompprogressreward(player) {
     if (namespace_19b4203b51d56488::function_21f4c6f630b17fc4(player)) {
-        player.owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5fe7a371a8ce26a3");
+        player.owner thread namespace_48a08c5037514e04::doscoreevent(#"hash_5fe7a371a8ce26a3");
     } else {
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f648e4847b740818");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_f648e4847b740818");
     }
     namespace_19b4203b51d56488::setobjectivestatusicons(level.icondefending, level.iconcapture);
     namespace_5a22b6f3a56f7e9b::function_8f7a55bda12ebb21("MP_INGAME_ONLY/OBJ_DEFENDING_CAPS", player);
@@ -995,9 +995,9 @@ function giveflagassistedcapturepoints(touchlist) {
             player thread namespace_62c556437da28f50::scoreeventpopup(#"capture");
         }
         if (namespace_19b4203b51d56488::function_21f4c6f630b17fc4(var_1ae6a1bf1853354a)) {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_dc7a8a01b9b6aa24");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_dc7a8a01b9b6aa24");
         } else {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_52bbd83acf4acb07");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_52bbd83acf4acb07");
         }
         player setcrankedtimerdomflag(player);
         wait(0.05);
@@ -1167,7 +1167,7 @@ function givecaptureawards(player, var_ef569cf5d2f71e64, var_c9db681c20feffe2, v
         player thread namespace_62c556437da28f50::scoreeventpopup(#"capture", self.objectivekey);
         var_534be0691ddbb3ba = #"hash_5a7b15a24e10a93b";
     }
-    player thread namespace_48a08c5037514e04::doScoreEvent(var_534be0691ddbb3ba);
+    player thread namespace_48a08c5037514e04::doscoreevent(var_534be0691ddbb3ba);
     if (var_460513a84df1c3a4) {
         player namespace_58a74e7d54b56e8d::givestreakpoints(#"capture", 1, 0);
     }
@@ -1367,7 +1367,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
                     if (!var_8363beb01b537d3e) {
                         var_8363beb01b537d3e = 1;
                         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                         flag notify("assault", attacker);
                         thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
                         continue;
@@ -1376,7 +1376,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
                     if (!var_88f4967a49a22ed7) {
                         var_88f4967a49a22ed7 = 1;
                         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend", var_12198aa5b822f2c1);
-                        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:var_12198aa5b822f2c1});
+                        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:var_12198aa5b822f2c1});
                         flag notify("defend", attacker);
                         attacker incpersstat("defends", 1);
                         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
@@ -1392,7 +1392,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
                 if (var_a3a2ce8b8e74ebef) {
                     var_8363beb01b537d3e = 1;
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                     flag notify("assault", attacker);
                     thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
                     continue;
@@ -1403,7 +1403,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
             if (var_f6a091229a5e7b04) {
                 var_88f4967a49a22ed7 = 1;
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend", var_12198aa5b822f2c1);
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:var_12198aa5b822f2c1});
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:var_12198aa5b822f2c1});
                 flag notify("defend", attacker);
                 attacker incpersstat("defends", 1);
                 attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);

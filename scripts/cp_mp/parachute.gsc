@@ -134,7 +134,7 @@ function startfreefall(falltime, var_eb0c093d4b21e9dd, var_32dcb143b4eb723a, var
         self skydive_setforcethirdpersonstatus(1);
     }
     var_19bf98acee238bc1 = namespace_53fc9ddbb516e6e1::function_9d18a22123e54d05("infilParachuteVfx");
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && (!istrue(var_f9eb100d9c645f51) || var_19bf98acee238bc1) && istrue(level.var_492c3dce9458c51e)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && (!istrue(var_f9eb100d9c645f51) || var_19bf98acee238bc1) && istrue(level.var_492c3dce9458c51e)) {
         thread infilparachutevfx(getdvarint(@"hash_96e4167dd77b8cee", 1) == 1 && var_19bf98acee238bc1);
     }
     if (!istrue(var_eb0c093d4b21e9dd)) {
@@ -256,7 +256,7 @@ function isparachutegametype() {
     if (!isdefined(level.isparachutegametype)) {
         level.isparachutegametype = level.gametype == "arm" || level.gametype == "bigctf" || level.gametype == "conflict" || level.gametype == "risk" || level.gametype == "war" || level.gametype == "war_mgl" || level.gametype == "war_mgl" || level.gametype == "missions" || level.gametype == "trial" || level.gametype == "brtdm" || level.gametype == "brtdm_mgl" || level.gametype == "wm";
     }
-    return namespace_36f464722d326bbe::isBRStyleGameType() || istrue(level.isparachutegametype);
+    return namespace_36f464722d326bbe::isbrstylegametype() || istrue(level.isparachutegametype);
 }
 
 // Namespace parachute/namespace_5078ee98abb32db9
@@ -860,7 +860,7 @@ function function_3c9c50a97447b483() {
 // Size: 0x84
 function parachuteprelaststandfunction() {
     player = self;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (isdefined(player.ffsm_state) && (player.ffsm_state == 1 || player.ffsm_state == 2)) {
             player namespace_5078ee98abb32db9::ffsm_landed_stateenter();
             player.ffsm_state = 3;
@@ -988,7 +988,7 @@ function ffsm_introsetup(falltime, var_eb0c093d4b21e9dd, var_32dcb143b4eb723a, v
     if (!isdefined(var_c017d2557d7b9c53)) {
         var_c017d2557d7b9c53 = 1;
     }
-    if (var_c017d2557d7b9c53 && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (var_c017d2557d7b9c53 && !namespace_36f464722d326bbe::isbrstylegametype()) {
         self [[ level.parachutetakeweaponscb ]]();
     }
     self [[ level.freefallstartcb ]]();
@@ -1004,7 +1004,7 @@ function ffsm_introsetup(falltime, var_eb0c093d4b21e9dd, var_32dcb143b4eb723a, v
         self skydive_setforcethirdpersonstatus(1);
     }
     var_19bf98acee238bc1 = namespace_53fc9ddbb516e6e1::function_9d18a22123e54d05("infilParachuteVfx");
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && (!istrue(self.ffsm_isgulagrespawn) || var_19bf98acee238bc1) && istrue(level.var_492c3dce9458c51e)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && (!istrue(self.ffsm_isgulagrespawn) || var_19bf98acee238bc1) && istrue(level.var_492c3dce9458c51e)) {
         thread infilparachutevfx(getdvarint(@"hash_96e4167dd77b8cee", 1) == 1 && var_19bf98acee238bc1);
     }
     if (istrue(var_eb0c093d4b21e9dd)) {

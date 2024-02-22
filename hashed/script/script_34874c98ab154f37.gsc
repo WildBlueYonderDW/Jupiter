@@ -150,15 +150,15 @@ function function_2dca426ba427ff57() {
             level.var_54ced3f63493d9de[level.var_54ced3f63493d9de.size] = ai;
         }
     } else {
-        foreach (var_171f90b9c4c76d44, poi in level.poi) {
+        foreach (poiname, poi in level.poi) {
             foreach (spawnloc in poi["civInteractionSpawnLocs"]) {
-                ai = function_5fae75af200a8054(spawnloc, undefined, var_171f90b9c4c76d44, undefined, undefined, 1);
+                ai = function_5fae75af200a8054(spawnloc, undefined, poiname, undefined, undefined, 1);
                 level.var_54ced3f63493d9de[level.var_54ced3f63493d9de.size] = ai;
             }
         }
         var_9a6ecbe35c09c506 = [];
-        foreach (var_171f90b9c4c76d44, poi in level.poi) {
-            if (array_contains(level.var_ab20b3a256911579, var_171f90b9c4c76d44) || !isdefined(poi["civSpawnLocs"])) {
+        foreach (poiname, poi in level.poi) {
+            if (array_contains(level.var_ab20b3a256911579, poiname) || !isdefined(poi["civSpawnLocs"])) {
                 continue;
             }
             foreach (spawnloc in poi["civSpawnLocs"]) {
@@ -176,9 +176,9 @@ function function_2dca426ba427ff57() {
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf86
 // Size: 0x19b
-function function_5fae75af200a8054(struct, path, var_171f90b9c4c76d44, var_de371e340bd266d, var_9b2697384ed3425e, var_e195245abf56681b, var_46c6e189d91aa34c, var_81fee161ed3b0ccd) {
+function function_5fae75af200a8054(struct, path, poiname, var_de371e340bd266d, var_9b2697384ed3425e, var_e195245abf56681b, var_46c6e189d91aa34c, var_81fee161ed3b0ccd) {
     var_5b1d6f1e7985dc04 = 0;
-    var_dcf5e15c58c4152a = ter_op(var_5b1d6f1e7985dc04, "civilian_mp_dmz_male", "civilian_mp_dmz_female");
+    agenttype = ter_op(var_5b1d6f1e7985dc04, "civilian_mp_dmz_male", "civilian_mp_dmz_female");
     var_d2664652fb0cb884 = "civilian";
     if (isdefined(var_46c6e189d91aa34c)) {
         var_d2664652fb0cb884 = var_46c6e189d91aa34c;
@@ -187,7 +187,7 @@ function function_5fae75af200a8054(struct, path, var_171f90b9c4c76d44, var_de371
     if (isdefined(var_81fee161ed3b0ccd)) {
         priority = var_81fee161ed3b0ccd;
     }
-    ai = function_ea94a8bf24d3c5ef(var_dcf5e15c58c4152a, getclosestpointonnavmesh(struct.origin), struct.angles, priority, var_d2664652fb0cb884, undefined, "civs", "civilian", undefined, var_171f90b9c4c76d44);
+    ai = ai_mp_requestspawnagent(agenttype, getclosestpointonnavmesh(struct.origin), struct.angles, priority, var_d2664652fb0cb884, undefined, "civs", "civilian", undefined, poiname);
     if (!isdefined(ai)) {
         return;
     }
@@ -257,7 +257,7 @@ function function_b9c9324be6322ddf(text, offset, tag, duration) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12b4
 // Size: 0x306
-function civ_sayDialogue() {
+function civ_saydialogue() {
     self endon("death");
     self notify("civ_sayDialogue");
     self endon("civ_sayDialogue");
@@ -306,9 +306,9 @@ function civ_sayDialogue() {
     var_40cdbacda5cca105 = lookupsoundlength(alias, 1);
     self.var_6542bcc8942334da = gettime() + var_40cdbacda5cca105 + 3000;
     var_3fc6453968c77b59 = getaiarrayinradius(self.origin, 300, "team_five");
-    foreach (Civ in var_3fc6453968c77b59) {
+    foreach (civ in var_3fc6453968c77b59) {
         if (function_51d76700600cebe3(30)) {
-            Civ.var_6542bcc8942334da = self.var_6542bcc8942334da;
+            civ.var_6542bcc8942334da = self.var_6542bcc8942334da;
         }
     }
     if (!var_8e399d0d86db13ed) {
@@ -454,7 +454,7 @@ function function_2824bc477dcb2798() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b69
 // Size: 0xd1
-function fleeFromPlayerProximity() {
+function fleefromplayerproximity() {
     self endon("death");
     self notify("fleeFromPlayerProximity");
     self endon("fleeFromPlayerProximity");
@@ -495,7 +495,7 @@ function function_414e92de6d8a19ad() {
 // Checksum 0x0, Offset: 0x1cee
 // Size: 0xdf
 function function_2d6fa894e261f129(agent, killer) {
-    if (isdefined(agent.unittype) && agent.unittype == "civilian" && isdefined(killer) && namespace_14d36171baccf528::function_e2292dcf63eccf7a(agent, "category") != "mission") {
+    if (isdefined(agent.unittype) && agent.unittype == "civilian" && isdefined(killer) && namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "category") != "mission") {
         player = undefined;
         if (isplayer(killer)) {
             player = killer;
@@ -517,7 +517,7 @@ function function_2d6fa894e261f129(agent, killer) {
 // Checksum 0x0, Offset: 0x1dd4
 // Size: 0x30b
 function function_da0c4e190ee1da89() {
-    var_84e6118ff48d6fed = namespace_54d20dd0dd79277f::getSquadmates(self.team, self.var_ff97225579de16a, 1);
+    var_84e6118ff48d6fed = namespace_54d20dd0dd79277f::getsquadmates(self.team, self.var_ff97225579de16a, 1);
     var_14b4a525d116fc52 = array_remove(var_84e6118ff48d6fed, self);
     if (self.var_18ccf3f412948903 == 1) {
         namespace_446fc987a980892f::function_d87d5deb069bf8e5("player_civ_kill_frst_warning", var_84e6118ff48d6fed);
@@ -533,9 +533,9 @@ function function_da0c4e190ee1da89() {
         level thread function_1214aad9fb9087cc(self);
         foreach (team in level.teamnamelist) {
             if (team != self.team) {
-                namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_them", getteamdata(team, "players"));
+                namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_them", getteamdata(team, "players"));
             } else {
-                namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_us", getteamdata(team, "players"));
+                namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_us", getteamdata(team, "players"));
             }
         }
     } else if (self.var_18ccf3f412948903 == level.var_80038fc2cac83ed1) {
@@ -544,9 +544,9 @@ function function_da0c4e190ee1da89() {
         self iprintlnbold("WARNING: Your bounty has increased!");
         foreach (team in level.teamnamelist) {
             if (team != self.team) {
-                namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_them_inc", getteamdata(team, "players"));
+                namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_them_inc", getteamdata(team, "players"));
             } else {
-                namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_us_inc", getteamdata(team, "players"));
+                namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_us_inc", getteamdata(team, "players"));
             }
         }
     } else if (self.var_18ccf3f412948903 == level.var_dcfd97311ee632b) {
@@ -555,9 +555,9 @@ function function_da0c4e190ee1da89() {
         self iprintlnbold("WARNING: Maximum bounty has been placed on you!");
         foreach (team in level.teamnamelist) {
             if (team != self.team) {
-                namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_them_inc", getteamdata(team, "players"));
+                namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_them_inc", getteamdata(team, "players"));
             } else {
-                namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_us_inc", getteamdata(team, "players"));
+                namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_us_inc", getteamdata(team, "players"));
             }
         }
     }
@@ -706,7 +706,7 @@ function function_a5d597201278c71c(victim) {
         if (isdefined(level.var_52781be0b4e8a959)) {
             level [[ level.var_52781be0b4e8a959 ]](attacker.team);
         }
-        namespace_d696adde758cbe79::showDMZSplash("dmz_civ_bounty_complete", getteamdata(attacker.team, "players"));
+        namespace_d696adde758cbe79::showdmzsplash("dmz_civ_bounty_complete", getteamdata(attacker.team, "players"));
         foreach (player in getteamdata(attacker.team, "players")) {
             player namespace_c6ccccd95254983f::playerplunderpickup(getdvarint(@"hash_4f221c528dddee47", 100), undefined, 1);
         }
@@ -719,7 +719,7 @@ function function_a5d597201278c71c(victim) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x271b
 // Size: 0x68
-function function_5e94057030ae86c4(var_438d0dd780c02f69, var_171f90b9c4c76d44) {
+function function_5e94057030ae86c4(var_438d0dd780c02f69, poiname) {
     if (!function_47d356083884f913()) {
         if (istrue(var_438d0dd780c02f69)) {
             return level.var_c0163a9efdc36902;
@@ -727,9 +727,9 @@ function function_5e94057030ae86c4(var_438d0dd780c02f69, var_171f90b9c4c76d44) {
             return level.var_4f97aeeedc49636a;
         }
     } else if (istrue(var_438d0dd780c02f69)) {
-        return level.poi[var_171f90b9c4c76d44]["civFleeLocs_interior"];
+        return level.poi[poiname]["civFleeLocs_interior"];
     } else {
-        return level.poi[var_171f90b9c4c76d44]["civFleeLocs_exterior"];
+        return level.poi[poiname]["civFleeLocs_exterior"];
     }
 }
 
@@ -773,9 +773,9 @@ function function_5e07c420d97d072f() {
     /#
         while (1) {
             if (getdvarint(@"hash_4d802ef072f687fb", 0) == 1) {
-                foreach (Civ in level.var_54ced3f63493d9de) {
-                    if (isalive(Civ)) {
-                        thread namespace_d028276791d9cff6::drawsphere(Civ.origin, 64, 1, (1, 1, 1));
+                foreach (civ in level.var_54ced3f63493d9de) {
+                    if (isalive(civ)) {
+                        thread namespace_d028276791d9cff6::drawsphere(civ.origin, 64, 1, (1, 1, 1));
                     }
                 }
             }

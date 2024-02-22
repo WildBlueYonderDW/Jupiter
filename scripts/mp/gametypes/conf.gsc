@@ -76,7 +76,7 @@ function main() {
     level.conf_fx["vanish"] = loadfx("vfx/core/impacts/small_snowhit");
     if (function_acfcdd7f0c4401ca()) {
         level.var_c26d962ddc188b43 = 1;
-        level.wrapKillstreaks = 1;
+        level.wrapkillstreaks = 1;
         level.onplayerkilled = &onplayerkilled;
         namespace_f1d40c362677777e::registerondisconnecteventcallback(&onplayerdisconnect);
     }
@@ -143,7 +143,7 @@ function onstartgametype() {
 // Checksum 0x0, Offset: 0xafc
 // Size: 0x20
 function private function_952bd6e10104d8a() {
-    if (istrue(level.killstreakConfirmed)) {
+    if (istrue(level.killstreakconfirmed)) {
         setdvar(@"hash_cf1c084c7a6622f9", 0);
     }
 }
@@ -190,7 +190,7 @@ function updategametypedvars() {
     updatecommongametypedvars();
     level.scoreconfirm = dvarintvalue("pointsPerConfirm", 1, 0, 25);
     level.scoredeny = dvarintvalue("pointsPerDeny", 0, 0, 25);
-    level.killstreakConfirmed = dvarintvalue("killstreakConfirmed", 0, 0, 1);
+    level.killstreakconfirmed = dvarintvalue("killstreakConfirmed", 0, 0, 1);
 }
 
 // Namespace conf/namespace_19bf7fe51d183f0c
@@ -297,7 +297,7 @@ function dogtagenemyonusecb(player) {
         if (function_acfcdd7f0c4401ca()) {
             player function_5ed2699b0bd6cd0a();
         }
-        if (istrue(level.killstreakConfirmed)) {
+        if (istrue(level.killstreakconfirmed)) {
             if (!player namespace_82dcd1d5ae30ff7::_hasperk("specialty_killstreak_to_scorestreak")) {
                 player namespace_58a74e7d54b56e8d::givestreakpoints(#"capture", 1, 0);
             } else {
@@ -327,7 +327,7 @@ function givesuper() {
 // Checksum 0x0, Offset: 0x1116
 // Size: 0x1d3
 function function_5ed2699b0bd6cd0a() {
-    level.wrapKillstreaks = 1;
+    level.wrapkillstreaks = 1;
     killstreaktype = function_1823ff50bb28148d("temp_v");
     namespace_58a74e7d54b56e8d::givestreakpoints(killstreaktype, 1, 0);
     if (!isdefined(self.var_eb4ea69f8b8c0c08)) {
@@ -364,7 +364,7 @@ function function_5ed2699b0bd6cd0a() {
     case 35:
     case 40:
         thread function_40332f3e05619ec4();
-        thread namespace_48a08c5037514e04::doScoreEvent(#"hash_551eaf3c0cc43c44");
+        thread namespace_48a08c5037514e04::doscoreevent(#"hash_551eaf3c0cc43c44");
     default:
         break;
     }

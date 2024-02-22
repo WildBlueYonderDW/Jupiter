@@ -72,7 +72,7 @@ function markplayeraseliminated(player, context) {
         player setclientomnvar("ui_league_play_br_leave_penalty_timer", 180000);
         player thread function_1b5da10393c9c50e(namespace_d20f8ef223912e12::function_f8167aab51948bf0(player.team));
     }
-    namespace_92443376a63aa4bd::onMarkPlayerAsEliminated(player, 1);
+    namespace_92443376a63aa4bd::onmarkplayeraseliminated(player, 1);
     namespace_71073fa38f11492::runbrgametypefunc("onMarkPlayerAsEliminated", player);
     if (namespace_36f464722d326bbe::function_6910a4c65560c44b() && isai(player)) {
         player thread namespace_bc2665cbe6cf4e1f::function_f6e88d354cb8d3cd();
@@ -89,7 +89,7 @@ function unmarkplayeraseliminated(player, context) {
     player function_b6371a65209a055f(0, context);
     player.br_iseliminated = 0;
     player.var_14110ad8d5069e7 = -1;
-    namespace_92443376a63aa4bd::onMarkPlayerAsEliminated(player, 0);
+    namespace_92443376a63aa4bd::onmarkplayeraseliminated(player, 0);
     namespace_71073fa38f11492::runbrgametypefunc("onUnmarkPlayerAsEliminated", player);
     player namespace_58fb4f2e73fd41a0::setlowermessageomnvar("clear_lower_msg");
     player notify("br_player_revived");
@@ -107,12 +107,12 @@ function updateplayereliminatedomnvar(context) {
     var_81dab8953b9df82 = 0;
     var_95bfd92292381a4c = 0;
     if (namespace_cd0b2d039510b38d::getsubgametype() == "rumble_mgl") {
-        teammates = namespace_54d20dd0dd79277f::getSquadmates(player.team, player.var_ff97225579de16a, 0);
+        teammates = namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 0);
         var_bf873008edc8415f = level.maxsquadsize;
     } else {
         teammates = namespace_54d20dd0dd79277f::getteamdata(player.team, "players");
         if (namespace_76a219af07c28c13::function_6934349b7823d888()) {
-            var_bf873008edc8415f = namespace_76a219af07c28c13::getMaxAssimilationTeamSize();
+            var_bf873008edc8415f = namespace_76a219af07c28c13::getmaxassimilationteamsize();
         } else {
             var_bf873008edc8415f = level.maxteamsize;
         }

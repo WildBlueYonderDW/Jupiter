@@ -1557,9 +1557,9 @@ function function_a73453a4796f91f4() {
     while (1) {
         self waittill("trigger");
         vals = strtok(self.script_parameters, " ");
-        var_24f8be8b27233505 = float(vals[0]);
+        targettime = float(vals[0]);
         targetdistance = float(vals[1]);
-        thread function_1fce2623d8fec063(var_24f8be8b27233505, targetdistance);
+        thread function_1fce2623d8fec063(targettime, targetdistance);
         waitframe();
         while (level.player istouching(self)) {
             wait(0.05);
@@ -2085,14 +2085,14 @@ function function_c4c9f41e618cb8a1(time, materials, var_fb3d1110f37a2879, var_e4
         }
         var_a63452ff3147f0ad = 0.05;
         if (fadein > 0) {
-            var_1dfb7264688f4e05 = 0;
+            current_alpha = 0;
             var_bf49f656e04717f9 = max_alpha / fadein / var_a63452ff3147f0ad;
             /#
                 assertex(var_bf49f656e04717f9 > 0, "alpha not increasing; infinite loop");
             #/
-            while (var_1dfb7264688f4e05 < max_alpha) {
-                overlay.alpha = var_1dfb7264688f4e05;
-                var_1dfb7264688f4e05 = var_1dfb7264688f4e05 + var_bf49f656e04717f9;
+            while (current_alpha < max_alpha) {
+                overlay.alpha = current_alpha;
+                current_alpha = current_alpha + var_bf49f656e04717f9;
                 wait(var_a63452ff3147f0ad);
             }
         }
@@ -2100,14 +2100,14 @@ function function_c4c9f41e618cb8a1(time, materials, var_fb3d1110f37a2879, var_e4
         wait(time - fadein + fadeout);
         if (fadeout > 0) {
             if (isdefined(overlay)) {
-                var_1dfb7264688f4e05 = max_alpha;
+                current_alpha = max_alpha;
                 var_11dde1254b91d215 = max_alpha / fadeout / var_a63452ff3147f0ad;
                 /#
                     assertex(var_11dde1254b91d215 > 0, "alpha not decreasing; infinite loop");
                 #/
-                while (var_1dfb7264688f4e05 > 0) {
-                    overlay.alpha = var_1dfb7264688f4e05;
-                    var_1dfb7264688f4e05 = var_1dfb7264688f4e05 - var_11dde1254b91d215;
+                while (current_alpha > 0) {
+                    overlay.alpha = current_alpha;
+                    current_alpha = current_alpha - var_11dde1254b91d215;
                     wait(var_a63452ff3147f0ad);
                 }
             }

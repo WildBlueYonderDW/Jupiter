@@ -2764,7 +2764,7 @@ function endzone_setcaptured(team, var_22282e7d48ca3400) {
 // Checksum 0x0, Offset: 0x94ec
 // Size: 0x1e
 function endzone_stompprogressreward(player) {
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
 }
 
 // Namespace namespace_9fcaf1fc417ac0a8/namespace_d4479a4019bdeab1
@@ -2811,7 +2811,7 @@ function giveflagcapturexp(touchlist, var_22282e7d48ca3400) {
         }
         player incpersstat("captures", 1);
         player namespace_2685ec368e022695::statsetchild("round", "captures", player.pers["captures"]);
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a7b15a24e10a93b");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a7b15a24e10a93b");
         wait(0.05);
     }
 }

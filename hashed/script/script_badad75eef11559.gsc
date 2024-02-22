@@ -457,7 +457,7 @@ function function_eb7e2148a1f23c39() {
 // Checksum 0x0, Offset: 0x2d5b
 // Size: 0xec
 function function_db518d8f0ec31ae0(var_50e779230014a475) {
-    namespace_d696adde758cbe79::showDMZSplash("quest_s0_act2_start", level.players);
+    namespace_d696adde758cbe79::showdmzsplash("quest_s0_act2_start", level.players);
     foreach (samsite in self.var_cf3feeaa65a4e3f0) {
         samsite thread namespace_c5d39841678f2fb1::function_f72a6146b33f7d1("jup_ui_map_icon_generic_marker", self);
     }
@@ -2721,7 +2721,7 @@ function function_3cdcca49a665bda6(subclass, chance, var_3d028e278e3c71d8, s_loc
 // Checksum 0x0, Offset: 0x94df
 // Size: 0x3c
 function merc_spawn(var_31109020393ed11b) {
-    var_434d2faf62ed069 = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(var_31109020393ed11b, self.origin, self.angles, "team_hundred_ninety");
+    var_434d2faf62ed069 = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_31109020393ed11b, self.origin, self.angles, "team_hundred_ninety");
     if (isdefined(var_434d2faf62ed069)) {
         return var_434d2faf62ed069;
     }
@@ -2733,7 +2733,7 @@ function merc_spawn(var_31109020393ed11b) {
 // Size: 0x1c5
 function zombie_spawn(var_d1e3b6ba5360f4e3, var_30c47c676d823fea, var_b5de2f493f49bdfb, s_location, var_f33a2acfcc2fd96e) {
     team = "team_two_hundred";
-    aitypes = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc(var_d1e3b6ba5360f4e3);
+    aitypes = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc(var_d1e3b6ba5360f4e3);
     var_9f578d49d039394b = undefined;
     foreach (aitype in aitypes) {
         var_90906ae7ffd6dee3 = aitype.size;
@@ -2741,7 +2741,7 @@ function zombie_spawn(var_d1e3b6ba5360f4e3, var_30c47c676d823fea, var_b5de2f493f
             var_9f578d49d039394b = aitype;
         }
     }
-    ai_zombie = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(var_9f578d49d039394b, self.origin, self.angles, "team_two_hundred", "difficulty_yellow");
+    ai_zombie = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_9f578d49d039394b, self.origin, self.angles, "team_two_hundred", "difficulty_yellow");
     if (isdefined(ai_zombie) && ai_zombie function_8fa69650e33c84ef("spawn") && !isdefined(var_b5de2f493f49bdfb)) {
         ai_zombie thread function_577d8abff6067c23("spawn", "spawn_end", undefined, undefined, "spawn_animating");
     }
@@ -3365,8 +3365,8 @@ function function_9cf8db85d41361b9() {
     var_b98c296dcdc1e367 = getstructarray("mimic_spawn_defend", "script_noteworthy");
     var_b3a793c70e4f3186 = array_combine(var_3182fc198eec14cc, var_169015c2e960b106, var_6133cb764bf7c492, var_b98c296dcdc1e367);
     foreach (spawn_pt in var_b3a793c70e4f3186) {
-        var_9ea479f7a07714a9 = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc("zombie_mimic")[0];
-        ai_mimic = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(var_9ea479f7a07714a9, spawn_pt.origin, spawn_pt.angles, "team_two_hundred");
+        var_9ea479f7a07714a9 = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc("zombie_mimic")[0];
+        ai_mimic = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_9ea479f7a07714a9, spawn_pt.origin, spawn_pt.angles, "team_two_hundred");
         if (isdefined(ai_mimic)) {
             ai_mimic namespace_4df2ab39b0e96ec7::function_4a4fab5fd0b06d7b("difficulty_normal");
             namespace_6119efd5d1925c17::function_232cabbc43f9536(spawn_pt.origin, ai_mimic, spawn_pt, 0, 200, &function_e8ab086d51573a1d);
@@ -3505,7 +3505,7 @@ function function_514f522c0fd10ad7(s_quest, s_goal) {
                 var_31109020393ed11b = "jup_ob_enemy_basic_soldier_long";
             }
         }
-        var_434d2faf62ed069 = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(var_31109020393ed11b, self.origin, self.angles, "team_hundred_ninety");
+        var_434d2faf62ed069 = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_31109020393ed11b, self.origin, self.angles, "team_hundred_ninety");
         if (isdefined(var_434d2faf62ed069)) {
             var_434d2faf62ed069.ignore_nuke = 1;
             s_quest.var_da3a55eabb666c32[s_quest.var_da3a55eabb666c32.size] = var_434d2faf62ed069;

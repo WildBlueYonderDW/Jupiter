@@ -371,7 +371,7 @@ function initvehicles() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x198b
 // Size: 0x149c
-function getvehiclespawns(vehicleRef, vehicletype) {
+function getvehiclespawns(vehicleref, vehicletype) {
     spawns = [];
     mapname = namespace_36f464722d326bbe::getmapname();
     atvoriginsarray = [];
@@ -380,7 +380,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
     var_fb7e5f19efd9d046 = [];
     switch (mapname) {
     case #"hash_32eaa112f8caa7e4":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (21843.8, -4640.11, -476.961);
             atvoriginsarray[atvoriginsarray.size] = (20375.9, -3612.78, -454);
             atvoriginsarray[atvoriginsarray.size] = (20728.8, -3309.36, -456);
@@ -399,7 +399,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvanglesarray[atvanglesarray.size] = (0, 90, 0);
             atvoriginsarray[atvoriginsarray.size] = (22994.3, -15304.5, -216);
             atvanglesarray[atvanglesarray.size] = (0, 105, 0);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (20120.2, -3287.71, -456);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (21339.9, -4787.55, -450.176);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (0, 345, 0);
@@ -411,7 +411,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         }
         break;
     case #"hash_7a28db3c5928c489":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (26335.7, 30412.6, 655.471);
             atvoriginsarray[atvoriginsarray.size] = (27099.5, 30567.5, 639.236);
             atvoriginsarray[atvoriginsarray.size] = (27315.5, 30525.5, 639.236);
@@ -432,7 +432,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvoriginsarray[atvoriginsarray.size] = (32104.4, 41719.8, 708.773);
             atvanglesarray[atvanglesarray.size] = (349.991, 186.286, -2.23687);
             atvanglesarray[atvanglesarray.size] = (3.95499, 211.371, 4.41818);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (26310.8, 30168.4, 659.426);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (26954, 29794.1, 651.013);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (358.195, 118.006, -2.71651);
@@ -447,7 +447,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         break;
     case #"hash_50de71be6e7469ff":
     case #"hash_863773b8960b3944":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (49063.3, -22654.9, -385.662);
             atvoriginsarray[atvoriginsarray.size] = (47332.9, -23070.6, -374.497);
             atvoriginsarray[atvoriginsarray.size] = (48281.3, -22202.5, -371.375);
@@ -468,7 +468,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvoriginsarray[atvoriginsarray.size] = (43628, -5846.41, 346.636);
             atvanglesarray[atvanglesarray.size] = (357.74, 256.16, -1.56165);
             atvanglesarray[atvanglesarray.size] = (0.506229, 241.181, 0.438595);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (47872.6, -22645.4, -385.49);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (48501.7, -22505, -382.243);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (1.68464, 109.9, -3.26246);
@@ -480,7 +480,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         }
         break;
     case #"hash_12f3765ef24b4037":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (31381.3, -35260.4, -566.754);
             atvoriginsarray[atvoriginsarray.size] = (31087.5, -35307.9, -566.206);
             atvanglesarray[atvanglesarray.size] = (0, 106, 0);
@@ -497,7 +497,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvanglesarray[atvanglesarray.size] = (0, 270, 0);
             atvoriginsarray[atvoriginsarray.size] = (34323.3, -25831.8, -566);
             atvanglesarray[atvanglesarray.size] = (0, 45, 0);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (31412.5, -34658.3, -564.862);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (31042.3, -16171.6, -565.383);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (0, 105, 0);
@@ -509,7 +509,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         }
         break;
     case #"hash_924a3fbe9fbe15c6":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (-28937.7, -17197.8, -246.637);
             atvoriginsarray[atvoriginsarray.size] = (-29175.8, -17121.9, -247.909);
             atvoriginsarray[atvoriginsarray.size] = (-28096.5, -16918.8, -246.085);
@@ -530,7 +530,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvoriginsarray[atvoriginsarray.size] = (-26998.2, -9004.54, -40);
             atvanglesarray[atvanglesarray.size] = (358.715, 15.233, -10.279);
             atvanglesarray[atvanglesarray.size] = (0, 285, 0);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (-28683.3, -16741.2, -249.16);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (-29128.7, -16577.6, -229.266);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (359.734, 90.0021, -0.454);
@@ -544,7 +544,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
     case #"hash_a8b272dba33a4aed":
         break;
     case #"hash_1bc93b88575e82eb":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (-9606.95, -21527.2, -279.043);
             atvoriginsarray[atvoriginsarray.size] = (-10288.2, -20891.9, -356.989);
             atvoriginsarray[atvoriginsarray.size] = (-11011.4, -19877, -368.358);
@@ -563,7 +563,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvanglesarray[atvanglesarray.size] = (5.079, 0.128, 1.453);
             atvoriginsarray[atvoriginsarray.size] = (-18873.3, -25796.5, -199.784);
             atvanglesarray[atvanglesarray.size] = (0, 30, 0);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (-10912.6, -20079.6, -367);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (-10108.5, -21861.4, -287.271);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (0, 196.996, 0);
@@ -575,7 +575,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         }
         break;
     case #"hash_e4ca6b73b5022b26":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (-3749, 16980, -262);
             atvoriginsarray[atvoriginsarray.size] = (-2971.9, 18898, -262);
             atvoriginsarray[atvoriginsarray.size] = (-2735.8, 16203, -262);
@@ -598,7 +598,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvanglesarray[atvanglesarray.size] = (0, 310, 0);
             atvanglesarray[atvanglesarray.size] = (0, 357, 0);
             atvanglesarray[atvanglesarray.size] = (0, 35, 0);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (-3520, 17805, -262);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (-3892, 18566, -262);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (0, 165, 0);
@@ -612,7 +612,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         }
         break;
     case #"hash_3a8b050ff58578ad":
-        if (vehicleRef == "atv") {
+        if (vehicleref == "atv") {
             atvoriginsarray[atvoriginsarray.size] = (4103, 26076, 57);
             atvoriginsarray[atvoriginsarray.size] = (4247, 25021, -38);
             atvoriginsarray[atvoriginsarray.size] = (3517, 25981, 47);
@@ -633,7 +633,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
             atvoriginsarray[atvoriginsarray.size] = (-2149, 33264, 253);
             atvanglesarray[atvanglesarray.size] = (0, 325, 0);
             atvanglesarray[atvanglesarray.size] = (0, 287, 0);
-        } else if (vehicleRef == "tac_rover") {
+        } else if (vehicleref == "tac_rover") {
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (4157, 26465, 65);
             var_380b98510b5d0765[var_380b98510b5d0765.size] = (4628, 26545, 63);
             var_fb7e5f19efd9d046[var_fb7e5f19efd9d046.size] = (0, 143, 0);
@@ -649,7 +649,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
     }
     level.atvoriginsarray = atvoriginsarray;
     level.atvanglesarray = atvanglesarray;
-    if (vehicleRef == "atv") {
+    if (vehicleref == "atv") {
         for (i = 0; i < atvoriginsarray.size; i++) {
             if (i <= atvoriginsarray.size - 1) {
                 var_76239e3cb66a8278 = atvoriginsarray[i];
@@ -657,12 +657,12 @@ function getvehiclespawns(vehicleRef, vehicletype) {
                 vehicle = spawnstruct();
                 vehicle.origin = var_76239e3cb66a8278;
                 vehicle.angles = var_79bdb2f0b2f0c692;
-                vehicle.targetname = vehicleRef;
+                vehicle.targetname = vehicleref;
                 vehicle.vehicletype = vehicletype;
                 spawns[spawns.size] = vehicle;
             }
         }
-    } else if (vehicleRef == "tac_rover") {
+    } else if (vehicleref == "tac_rover") {
         for (i = 0; i < var_380b98510b5d0765.size; i++) {
             if (i <= var_380b98510b5d0765.size - 1) {
                 var_d82a9436eee389cb = var_380b98510b5d0765[i];
@@ -670,13 +670,13 @@ function getvehiclespawns(vehicleRef, vehicletype) {
                 vehicle = spawnstruct();
                 vehicle.origin = var_d82a9436eee389cb;
                 vehicle.angles = var_17085fd4c01a3645;
-                vehicle.targetname = vehicleRef;
+                vehicle.targetname = vehicleref;
                 vehicle.vehicletype = vehicletype;
                 spawns[spawns.size] = vehicle;
             }
         }
     }
-    dvarstring = function_2ef675c13ca1c4af(@"hash_ad95d7262a11119e", vehicleRef);
+    dvarstring = function_2ef675c13ca1c4af(@"hash_ad95d7262a11119e", vehicleref);
     for (index = 0; 1; index++) {
         var_f826f0378f17ae2f = function_2ef675c13ca1c4af(dvarstring, "_origin_", index);
         var_d9c6c3c1205d844 = function_2ef675c13ca1c4af(dvarstring, "_angles_", index);
@@ -689,7 +689,7 @@ function getvehiclespawns(vehicleRef, vehicletype) {
         vehicle.origin = origin;
         var_7224bacab3f8ee26 = (0, 0, 0);
         vehicle.angles = getdvarvector(var_d9c6c3c1205d844, var_7224bacab3f8ee26);
-        vehicle.targetname = vehicleRef;
+        vehicle.targetname = vehicleref;
         vehicle.vehicletype = vehicletype;
         spawns[spawns.size] = vehicle;
     }
@@ -1720,7 +1720,7 @@ function onstompeenemyprogressupdate(team) {
 // Size: 0x49
 function stompprogressreward(player) {
     player thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
     namespace_19b4203b51d56488::setobjectivestatusicons(level.icondefending, level.iconcapture);
 }
 
@@ -1814,7 +1814,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                             attacker thread function_e3e3e81453fd788b(#"hash_470103fde6a5e1ae");
                         } else {
                             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                         }
                         var_8363beb01b537d3e = 1;
                         thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
@@ -1826,7 +1826,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                             attacker thread function_e3e3e81453fd788b(#"hash_470103fde6a5e1ae");
                         } else {
                             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                         }
                         var_88f4967a49a22ed7 = 1;
                         attacker incpersstat("defends", 1);
@@ -1844,7 +1844,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                         attacker thread function_e3e3e81453fd788b(#"hash_470103fde6a5e1ae");
                     } else {
                         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                     }
                     var_8363beb01b537d3e = 1;
                     thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
@@ -1858,7 +1858,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                     attacker thread function_e3e3e81453fd788b(#"hash_470103fde6a5e1ae");
                 } else {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                 }
                 var_88f4967a49a22ed7 = 1;
                 attacker incpersstat("defends", 1);
@@ -2013,7 +2013,7 @@ function giveflagcapturexp(touchlist, oldteam, var_22282e7d48ca3400) {
             var_bb8c393c8a630338 = 50;
         }
         player thread namespace_62c556437da28f50::scoreeventpopup(#"capture");
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_32ffd90c03ec37c6", undefined, var_bb8c393c8a630338, xpreward);
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_32ffd90c03ec37c6", undefined, var_bb8c393c8a630338, xpreward);
         player incpersstat("captures", 1);
         player namespace_2685ec368e022695::statsetchild("round", "captures", player.pers["captures"]);
         player setextrascore0(player.pers["captures"]);

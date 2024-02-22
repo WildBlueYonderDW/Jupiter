@@ -21,9 +21,9 @@
 #using scripts\mp\gametypes\br_plunder.gsc;
 #using scripts\mp\utility\points.gsc;
 
-#namespace br_c130Airdrop;
+#namespace br_c130airdrop;
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f5
 // Size: 0x106
@@ -47,7 +47,7 @@ function init() {
     #/
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x402
 // Size: 0x275
@@ -110,7 +110,7 @@ function c130airdrop_managedrop() {
     }
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x67e
 // Size: 0x124
@@ -145,7 +145,7 @@ function function_34b411986509f682() {
     #/
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7a9
 // Size: 0x197
@@ -185,7 +185,7 @@ function function_73d8265b112f259d() {
     #/
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x947
 // Size: 0x6c
@@ -198,7 +198,7 @@ function c130airdrop_createpath(pathindex, var_adcb4e55deb23e76, var_60e425cb62a
     return pathstruct;
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9bb
 // Size: 0x1b3
@@ -241,13 +241,13 @@ function c130airdrop_createpathstruct(pathindex, var_adcb4e55deb23e76, var_60e42
     return pathstruct;
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb76
 // Size: 0x186
 function c130airdrop_getvalidteaminlastplace() {
     var_cf4bbe562ea35eaa = undefined;
-    teamPlacements = namespace_e8a49b70d0769b66::getteamscoreplacements();
+    teamplacements = namespace_e8a49b70d0769b66::getteamscoreplacements();
     var_176a993b8d63593a = [];
     foreach (var_e275b8e011923428 in level.teamnamelist) {
         teamplayers = getteamdata(var_e275b8e011923428, "players");
@@ -265,7 +265,7 @@ function c130airdrop_getvalidteaminlastplace() {
             if (!istrue(var_10838a721b202259)) {
                 continue;
             }
-            var_d27a4d6c71fd80d6 = teamPlacements[var_e275b8e011923428];
+            var_d27a4d6c71fd80d6 = teamplacements[var_e275b8e011923428];
             if (!isdefined(var_cf4bbe562ea35eaa) || var_d27a4d6c71fd80d6 >= var_cf4bbe562ea35eaa) {
                 var_cf4bbe562ea35eaa = var_d27a4d6c71fd80d6;
                 teamindex = var_176a993b8d63593a.size;
@@ -284,7 +284,7 @@ function c130airdrop_getvalidteaminlastplace() {
     }
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd04
 // Size: 0x191
@@ -324,7 +324,7 @@ function c130airdrop_getteamaveragepos(var_b36772ca73e9a3d) {
     return var_2f432d8c975decc6;
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe9d
 // Size: 0x1f8
@@ -353,7 +353,7 @@ function c130airdrop_spawn(var_41c8bb9afb483172, pathdist, var_f0192932004dce8d,
     return airdrop;
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x109d
 // Size: 0x63
@@ -364,7 +364,7 @@ function c130airdrop_startdelivery(var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, v
     thread c130airdrop_dropcrates(var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, dropcircle);
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1107
 // Size: 0xd8
@@ -390,7 +390,7 @@ function c130airdrop_deleteatlifetime() {
     }
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11e6
 // Size: 0x1bf
@@ -438,7 +438,7 @@ function c130airdrop_dropcrates(var_5ee94ae126526f2f, var_958bbdfed6f2e9ef, var_
     }
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13ac
 // Size: 0xef
@@ -460,7 +460,7 @@ function c130airdrop_findvaliddroplocation(starttrace, var_5ce47de2b275eec8, var
     return droplocation;
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14a3
 // Size: 0xbb
@@ -478,7 +478,7 @@ function c130airdrop_isnearotherdrop(droplocation) {
     return var_f6ea6dc7b7e56191;
 }
 
-// Namespace br_c130Airdrop/namespace_d58f8bbad53774ad
+// Namespace br_c130airdrop/namespace_d58f8bbad53774ad
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1566
 // Size: 0x280
@@ -526,6 +526,6 @@ function c130airdrop_oncrateuse(player) {
     if (namespace_cd0b2d039510b38d::getsubgametype() == "risk" || namespace_cd0b2d039510b38d::getsubgametype() == "plunder") {
         player namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("lootCachesOpened", player.lootcachesopened);
     }
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_d9180ca5c5dc7b88");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_d9180ca5c5dc7b88");
 }
 

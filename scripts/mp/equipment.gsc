@@ -170,8 +170,8 @@ function inititems() {
     var_584994fab4a8712b.callbacks["equip_battlerage"]["onTake"] = &namespace_e6ac9d98b8876b98::function_bd68ba32d66dde65;
     var_584994fab4a8712b.callbacks["equip_armor_onehanded"]["onFired"] = &namespace_f8d3520d3483c1::function_df0c4be0709e8116;
     var_584994fab4a8712b.callbacks["equip_armor_onehanded"]["onTake"] = &namespace_f8d3520d3483c1::function_dd4193b50e36fb2c;
-    var_584994fab4a8712b.callbacks["equip_flash"]["onFired"] = &namespace_5e840d01a2244aea::onFired;
-    var_584994fab4a8712b.callbacks["equip_concussion"]["onFired"] = &namespace_bcc915524a9a5eba::onFired;
+    var_584994fab4a8712b.callbacks["equip_flash"]["onFired"] = &namespace_5e840d01a2244aea::onfired;
+    var_584994fab4a8712b.callbacks["equip_concussion"]["onFired"] = &namespace_bcc915524a9a5eba::onfired;
     var_584994fab4a8712b.callbacks["equip_gas_grenade"]["onPlayerDamaged"] = &namespace_d39a86483d995ed1::gas_onplayerdamaged;
     var_584994fab4a8712b.callbacks["equip_flash"]["onPlayerDamaged"] = &namespace_5e840d01a2244aea::onplayerdamaged;
     var_584994fab4a8712b.callbacks["equip_concussion"]["onPlayerDamaged"] = &namespace_bcc915524a9a5eba::onplayerdamaged;
@@ -561,7 +561,7 @@ function getequipmentmaxammo(ref, class) {
             return namespace_f8d3520d3483c1::function_47320a25b8ee003();
         }
         maxammo = weaponmaxammo(var_8bf83d28be4c2d4f.objweapon);
-    } else if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         if (ref == "equip_armorplate") {
             return namespace_f8d3520d3483c1::function_47320a25b8ee003();
         }
@@ -1052,7 +1052,7 @@ function executeoffhandfired(objweapon) {
     foreach (slot, ref in self.equipment) {
         var_8bf83d28be4c2d4f = getequipmenttableinfo(ref);
         if (isdefined(var_8bf83d28be4c2d4f) && isdefined(var_8bf83d28be4c2d4f.objweapon) && objweapon == var_8bf83d28be4c2d4f.objweapon) {
-            if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+            if (namespace_36f464722d326bbe::isbrstylegametype()) {
                 item_type = "";
                 if (isdefined(var_8bf83d28be4c2d4f.bundle) && isdefined(var_8bf83d28be4c2d4f.bundle.var_11d2f075e9a0e643)) {
                     item_type = var_8bf83d28be4c2d4f.bundle.var_11d2f075e9a0e643;
@@ -1083,10 +1083,10 @@ function executeoffhandfired(objweapon) {
                 }
             }
             function_22bf78eca6578d7d(slot);
-            if (namespace_36f464722d326bbe::isBRStyleGameType() && namespace_aead94004cf4c147::isBackpackInventoryEnabled() && !getdvarint(@"hash_ced962345ff6ecd0", 0) && !namespace_aead94004cf4c147::function_5bf048439a846222(ref)) {
+            if (namespace_36f464722d326bbe::isbrstylegametype() && namespace_aead94004cf4c147::isbackpackinventoryenabled() && !getdvarint(@"hash_ced962345ff6ecd0", 0) && !namespace_aead94004cf4c147::function_5bf048439a846222(ref)) {
                 scriptablename = level.br_pickups.br_equipnametoscriptable[ref];
                 if (namespace_d3d40f75bb4e4c32::function_6b531c76815d77f3(scriptablename) && !namespace_d3d40f75bb4e4c32::function_ac3376fecc550ef0(scriptablename)) {
-                    namespace_aead94004cf4c147::removeSmallestItemStackBackpack(scriptablename, 1);
+                    namespace_aead94004cf4c147::removesmallestitemstackbackpack(scriptablename, 1);
                     namespace_1a507865f681850e::incrementequipmentammo(ref, 1);
                 }
             }
@@ -1352,10 +1352,10 @@ function changeowner(newowner) {
     self setotherent(newowner);
     var_c0f9139ffd72e62d namespace_3bbb5a98b932c46f::removeequip(self);
     self.owner namespace_3bbb5a98b932c46f::updateplantedarray(self);
-    onOwnerChanged = getcallback(self.equipmentref, "onOwnerChanged");
+    onownerchanged = getcallback(self.equipmentref, "onOwnerChanged");
     self notify("ownerChanged");
-    if (isdefined(onOwnerChanged)) {
-        self [[ onOwnerChanged ]](var_c0f9139ffd72e62d);
+    if (isdefined(onownerchanged)) {
+        self [[ onownerchanged ]](var_c0f9139ffd72e62d);
     }
 }
 

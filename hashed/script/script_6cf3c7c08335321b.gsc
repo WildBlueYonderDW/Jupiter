@@ -163,8 +163,8 @@ function function_32d0db3e4198e55d(var_6c2912cf6ca76e62) {
     loadout["loadoutSuper"] = var_6c2912cf6ca76e62.super;
     loadout["loadoutPerks"] = [0:var_6c2912cf6ca76e62.perks.perk1, 1:var_6c2912cf6ca76e62.perks.perk2, 2:var_6c2912cf6ca76e62.perks.perk3];
     loadout["loadoutGesture"] = var_6c2912cf6ca76e62.gesture;
-    loadout["loadoutFieldUpgrade1"] = var_6c2912cf6ca76e62.fieldUpgrades.var_7e397f4ce66bffd0;
-    loadout["loadoutFieldUpgrade2"] = var_6c2912cf6ca76e62.fieldUpgrades.var_7e39824ce66c0669;
+    loadout["loadoutFieldUpgrade1"] = var_6c2912cf6ca76e62.fieldupgrades.var_7e397f4ce66bffd0;
+    loadout["loadoutFieldUpgrade2"] = var_6c2912cf6ca76e62.fieldupgrades.var_7e39824ce66c0669;
     return loadout;
 }
 

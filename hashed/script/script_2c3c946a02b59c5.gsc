@@ -114,7 +114,7 @@ function sentryturret_modifydamage(data) {
     modifieddamage = damage;
     if (istrue(level.var_be6a42242be00b66)) {
         bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["remote_turret"];
-        modifieddamage = function_c204e7f8a2ab087f(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
+        modifieddamage = getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
         modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, type, modifieddamage, self.maxhealth, 2, 3, 4, 6, 400);
     }

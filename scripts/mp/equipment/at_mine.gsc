@@ -699,7 +699,7 @@ function at_mine_onownerchanged(var_c0f9139ffd72e62d) {
 // Size: 0x7b
 function function_416f3f7ada048ff9(attacker) {
     self endon("death");
-    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_61a2d32e72064a0f");
+    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_61a2d32e72064a0f");
     self.isdisabled = 1;
     self setscriptablepartstate("empd", "active", 0);
     if (!istrue(self.owner.var_65219c911f198c95)) {

@@ -925,7 +925,7 @@ function function_e7de8f7b4f13cd26(occupant, var_65bc331f880e4c49) {
         occupant.var_a9f709a20b6aa136 = undefined;
         self.occupants = array_remove(self.occupants, occupant);
     } else {
-        thread removeOccupantOnDeath(occupant);
+        thread removeoccupantondeath(occupant);
         occupant.var_8e2d666b5b0f2bd3 = 1;
         occupant.var_a9f709a20b6aa136 = self;
         if (!array_contains(self.occupants, occupant)) {
@@ -938,7 +938,7 @@ function function_e7de8f7b4f13cd26(occupant, var_65bc331f880e4c49) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3626
 // Size: 0x74
-function removeOccupantOnDeath(occupant) {
+function removeoccupantondeath(occupant) {
     occupant notify("removeOccupantOnDeath");
     occupant endon("removeOccupantOnDeath");
     occupant waittill("death_or_disconnect");

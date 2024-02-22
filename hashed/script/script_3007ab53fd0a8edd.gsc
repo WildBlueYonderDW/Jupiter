@@ -58,7 +58,7 @@ function function_1b5842b9b6465162(bot) {
         if (!isdefined(player) || player == bot) {
             continue;
         }
-        if (player function_a9cbf557dc66d201()) {
+        if (player iseliminated()) {
             if (!isai(player)) {
                 var_38882a650f503344 = player;
                 break;

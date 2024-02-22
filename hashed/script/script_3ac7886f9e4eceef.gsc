@@ -57,7 +57,7 @@ function function_c662924b60a37407(var_7e76b70b5d53db36, var_ba191f48881402a, va
         }
     }
     var_3018e528588498a7 = function_5f6cd9351f89d1d6();
-    namespace_187fd146947a6800::function_275c43d7dd5c74d6(var_7e76b70b5d53db36, var_d3967d9b1bf53375, var_3018e528588498a7);
+    playtest_logger::function_275c43d7dd5c74d6(var_7e76b70b5d53db36, var_d3967d9b1bf53375, var_3018e528588498a7);
 }
 
 // Namespace namespace_a1fa5fb7614c23b6/namespace_cd617f6a69dde8f5

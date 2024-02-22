@@ -25,7 +25,7 @@ function vehicle_damage_mp_init() {
     registersharedfunc("vehicle_damage", "setDeathCallback", &set_death_callback);
     registersharedfunc("vehicle_damage", "giveScore", &vehicle_damage_givescore);
     registersharedfunc("vehicle_damage", "giveAward", &vehicle_damage_giveaward);
-    registersharedfunc("vehicle_damage", "vehicle_setupHitDamageOverrideForWeapon", &vehicle_setupHitDamageOverrideForWeapon);
+    registersharedfunc("vehicle_damage", "vehicle_setupHitDamageOverrideForWeapon", &vehicle_setuphitdamageoverrideforweapon);
 }
 
 // Namespace namespace_7218c21b35eb429b/namespace_f5e82d5f0a0bebc4
@@ -36,7 +36,7 @@ function vehicle_damage_givescore(ref, objweapon, var_fc10bb0a0aa2990) {
     if (istrue(var_fc10bb0a0aa2990)) {
         namespace_62c556437da28f50::scoreeventpopup(ref);
     } else {
-        namespace_48a08c5037514e04::doScoreEvent(ref, objweapon);
+        namespace_48a08c5037514e04::doscoreevent(ref, objweapon);
     }
 }
 
@@ -47,7 +47,7 @@ function vehicle_damage_givescore(ref, objweapon, var_fc10bb0a0aa2990) {
 function vehicle_damage_giveaward(ref, objweapon, var_fc10bb0a0aa2990) {
     thread namespace_391de535501b0143::killeventtextpopup(ref);
     if (!istrue(var_fc10bb0a0aa2990)) {
-        namespace_48a08c5037514e04::doScoreEvent(ref, objweapon);
+        namespace_48a08c5037514e04::doscoreevent(ref, objweapon);
     }
 }
 
@@ -55,7 +55,7 @@ function vehicle_damage_giveaward(ref, objweapon, var_fc10bb0a0aa2990) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x359
 // Size: 0x42
-function vehicle_setupHitDamageOverrideForWeapon(weaponname, weaponhitsperattack, var_8b4500d6a881b7b2, vehiclename) {
+function vehicle_setuphitdamageoverrideforweapon(weaponname, weaponhitsperattack, var_8b4500d6a881b7b2, vehiclename) {
     if (isdefined(weaponhitsperattack)) {
         set_weapon_hit_damage_data_for_vehicle(weaponname, weaponhitsperattack, vehiclename);
     }

@@ -54,7 +54,7 @@ function function_71171b28ba5738df(players) {
             params.player = player;
             params.var_74368588170b0497 = 1;
             callback::callback("on_approach_merc_stronghold", params);
-            squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+            squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
             foreach (squadmember in squadmembers) {
                 var_694cf27a7080216[var_694cf27a7080216.size] = squadmember;
             }

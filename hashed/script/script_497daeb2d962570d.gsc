@@ -15,9 +15,9 @@
 #using script_22f1701e151b9d12;
 #using script_7cfaa6fd841fb4dd;
 
-#namespace namespace_d770e9883578056e;
+#namespace mp_jup_st_e_ob;
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x30c
 // Size: 0x11
@@ -25,7 +25,7 @@ function autoexec init() {
     level.var_d6d4a817542a6b12 = &main;
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x324
 // Size: 0x11a
@@ -58,7 +58,7 @@ function main() {
     }
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x445
 // Size: 0xd0
@@ -74,7 +74,7 @@ function function_34f9339be7842373() {
     }
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x51c
 // Size: 0x47
@@ -85,7 +85,7 @@ function private function_7a74948bde86f65(agent, requestid, data) {
     agent thread function_26ee393ba852c090();
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x56a
 // Size: 0xce
@@ -112,7 +112,7 @@ function private function_26ee393ba852c090() {
     }
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63f
 // Size: 0x82
@@ -127,7 +127,7 @@ function function_59857be1344085d3() {
     function_606642b946a01237("demo3", (16652.5, -9595.5, 2067.5), 500, 1);
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6c8
 // Size: 0x11
@@ -136,7 +136,7 @@ function function_9e62f0bf427c88b2() {
     namespace_614554f86e52695c::function_b1fa4578ef08136f();
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e0
 // Size: 0xf
@@ -144,7 +144,7 @@ function function_678622c552cadad4() {
     flag_wait("mp_jup_st_e_ob_objective_mercdefend_cs_completed");
 }
 
-// Namespace namespace_d770e9883578056e/namespace_26f5b9f025c6ef83
+// Namespace mp_jup_st_e_ob/namespace_26f5b9f025c6ef83
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0x1b7

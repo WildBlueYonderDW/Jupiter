@@ -256,7 +256,7 @@ function private function_6d35024a1f783a16(statename, params) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xc37
 // Size: 0x4e
-function private function_d104ea3fd0d1be21(var_f8d4ed108521e632, var_d293838fe8a43473) {
+function private opendoor(var_f8d4ed108521e632, var_d293838fe8a43473) {
     var_7449df250ed378c2 = function_60d6151af81a343(var_f8d4ed108521e632, "door");
     if (isdefined(var_7449df250ed378c2) && var_7449df250ed378c2 scriptabledoorisclosed()) {
         var_7449df250ed378c2 scriptabledooropen("away", self.origin);
@@ -286,7 +286,7 @@ function private function_ec9dc4b6415cd3b9(statename, params) {
     breachtype = function_60d6151af81a343(id, "breachtype");
     var_48d356c204bf2b81 = isdefined(breachtype) && breachtype == "flashbang";
     if (var_48d356c204bf2b81 && function_60d6151af81a343(id, "path_has_door")) {
-        function_d104ea3fd0d1be21(id, self.origin);
+        opendoor(id, self.origin);
     }
 }
 
@@ -379,7 +379,7 @@ function function_cea2a40434f5918() {
 // Size: 0x14d
 function function_ce30ac74cab64cfd(note) {
     if (note == "door_open") {
-        function_d104ea3fd0d1be21(self function_92435c7a6ae85c3c(), self.origin);
+        opendoor(self function_92435c7a6ae85c3c(), self.origin);
     } else if (note == "grenade_left" || note == "grenade_right") {
         grenadeweapon = function_cea2a40434f5918();
         var_b4651e7d311139e = getweaponmodel(grenadeweapon);

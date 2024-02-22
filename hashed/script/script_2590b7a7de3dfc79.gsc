@@ -112,7 +112,7 @@ function function_ddee59d6b1a2b9e(scoreevent, sweapon, var_7594386ec6f06936, rea
         return;
     }
     var_4b5a99c16abfdfb1 = function_bd0c9022c796f049(scoreevent, sweapon);
-    namespace_48a08c5037514e04::doScoreEvent(scoreevent, undefined, undefined, var_4b5a99c16abfdfb1, undefined, undefined, undefined, undefined, undefined, 1);
+    namespace_48a08c5037514e04::doscoreevent(scoreevent, undefined, undefined, var_4b5a99c16abfdfb1, undefined, undefined, undefined, undefined, undefined, 1);
     essence = function_b86115649d705017();
     namespace_7dfc6454a70f3f39::function_d0948454b7f94d18("essence", essence, reason);
     self setclientomnvar("zm_essence", essence);
@@ -126,7 +126,7 @@ function function_8c80bfd5eb313b22(eventstring, points, victim) {
     if (!isplayer(self) || namespace_7e17181d03156026::isinlaststand(self)) {
         return;
     }
-    namespace_48a08c5037514e04::doScoreEvent(eventstring, undefined, points, undefined, victim, undefined, undefined, undefined, undefined, 1);
+    namespace_48a08c5037514e04::doscoreevent(eventstring, undefined, points, undefined, victim, undefined, undefined, undefined, undefined, 1);
     essence = function_b86115649d705017();
     self.currency["essence"] = essence;
     self setclientomnvar("zm_essence", essence);
@@ -511,10 +511,10 @@ function function_269657aa69da2b38(var_d27680ff86693f5c) {
     var_c11d6c177d7ab5a2 = spawnstruct();
     function_f632348cbb773537(level.ob_ai_killed_points_throttle, var_c11d6c177d7ab5a2);
     if (isplayer(var_d8d142881fb224)) {
-        var_d8d142881fb224 namespace_301533d2f1378cb9::function_ddee59d6b1a2b9e(#"hash_f3f5a252c3efe701", undefined, 0, #"kill");
+        var_d8d142881fb224 namespace_301533d2f1378cb9::function_ddee59d6b1a2b9e(#"brainrot_kill", undefined, 0, #"kill");
     }
     if (isplayer(var_8a9445752cf5f1c9)) {
-        var_8a9445752cf5f1c9 namespace_301533d2f1378cb9::function_ddee59d6b1a2b9e(#"hash_f3f5a252c3efe701", undefined, 0, #"kill");
+        var_8a9445752cf5f1c9 namespace_301533d2f1378cb9::function_ddee59d6b1a2b9e(#"brainrot_kill", undefined, 0, #"kill");
     }
     if (isplayer(var_d27680ff86693f5c.eattacker)) {
         var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632 = isdefined(var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632) ? [] : var_d27680ff86693f5c.eattacker.var_2d9a19517f7a4632;

@@ -474,7 +474,7 @@ function binoculars_processtargetdata() {
                             self.markedents = [];
                         }
                         self.markedents[currenttarget getentitynumber()] = currenttarget;
-                        thread binoculars_updateMarkedEnts();
+                        thread binoculars_updatemarkedents();
                         waitframe();
                         break;
                     }
@@ -520,7 +520,7 @@ function function_5c3ab97c636c1b90() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12ac
 // Size: 0x117
-function binoculars_updateMarkedEnts() {
+function binoculars_updatemarkedents() {
     self endon("disconnect");
     self notify("binoculars_updateMarkedEnts");
     self endon("binoculars_updateMarkedEnts");
@@ -1186,8 +1186,8 @@ function binoculars_addmarkpoints(targetent) {
     lifeindex = ter_op(isdefined(self.matchdatalifeindex), self.matchdatalifeindex, 0);
     if (!isdefined(self.markedentitieslifeindices[entitynum]) || self.markedentitieslifeindices[entitynum] > lifeindex) {
         self.markedentitieslifeindices[entitynum] = lifeindex;
-        thread doScoreEvent(#"hash_6ebe4fc013b04480");
-        namespace_99ac021a7547cae3::playerHasMoved();
+        thread doscoreevent(#"hash_6ebe4fc013b04480");
+        namespace_99ac021a7547cae3::playerhasmoved();
     }
 }
 
@@ -1223,7 +1223,7 @@ function binoculars_giveassistpoints(attacker, victim) {
             continue;
         }
         if (teammate binoculars_targetismarked(victim)) {
-            teammate thread namespace_48a08c5037514e04::doScoreEvent(#"hash_1928d4dc8bb8669f");
+            teammate thread namespace_48a08c5037514e04::doscoreevent(#"hash_1928d4dc8bb8669f");
         }
     }
 }

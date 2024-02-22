@@ -354,7 +354,7 @@ function empdrone_explodeemp() {
     var_adb14ff6edfb13e3 = makeweapon("emp_drone_non_player_mp");
     var_6a96cebaf12d3691 = makeweapon("emp_drone_non_player_direct_mp");
     var_9644d3f7dc618eab = [];
-    ents = function_107fdcaa299cfa40(self.origin, 800);
+    ents = empdebuff_get_emp_ents(self.origin, 800);
     foreach (ent in ents) {
         if (ent == self) {
             continue;

@@ -279,13 +279,13 @@ function function_54c2056eaaf773b7() {
     if (nearby_players.size <= 0) {
         return 1;
     }
-    var_778b57f067e6888e = 0;
+    alive_count = 0;
     foreach (player in nearby_players) {
         if (isalive(player) && !istrue(player.inlaststand)) {
-            var_778b57f067e6888e = var_778b57f067e6888e + 1;
+            alive_count = alive_count + 1;
         }
     }
-    return var_778b57f067e6888e / nearby_players.size;
+    return alive_count / nearby_players.size;
 }
 
 // Namespace zombie_deathworm/namespace_d4f42bca9e290185

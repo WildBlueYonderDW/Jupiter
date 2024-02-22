@@ -33,7 +33,7 @@ function autoexec init() {
         function_28d7437a275a45c7();
         namespace_c5622898120e827f::function_eca79fa0f341ee08(16, &dangercircletick);
     }
-    registersharedfunc("brPuzzleLootCache", "spawnCacheSingleBase", &spawnCacheSingleBase);
+    registersharedfunc("brPuzzleLootCache", "spawnCacheSingleBase", &spawncachesinglebase);
     function_d9c64c99bd5f47a0();
 }
 
@@ -122,7 +122,7 @@ function function_13ace45be109698e(var_e521ba0c87dee5a4) {
     if (!isdefined(level.var_de91da3e2aa2f9a6)) {
         level.var_de91da3e2aa2f9a6 = [];
     }
-    cache = spawnCacheSingleBase(var_e521ba0c87dee5a4.origin, var_e521ba0c87dee5a4.angles);
+    cache = spawncachesinglebase(var_e521ba0c87dee5a4.origin, var_e521ba0c87dee5a4.angles);
     level.var_de91da3e2aa2f9a6[level.var_de91da3e2aa2f9a6.size] = cache;
     return cache;
 }
@@ -131,7 +131,7 @@ function function_13ace45be109698e(var_e521ba0c87dee5a4) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57b
 // Size: 0x51
-function spawnCacheSingleBase(origin, angles) {
+function spawncachesinglebase(origin, angles) {
     cache = spawnscriptable("br_puzzle_loot_cache", origin, angles);
     cache setscriptablepartstate("base", "visible");
     if (level.var_fa1aaea5978f2c8e) {

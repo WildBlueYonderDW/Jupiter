@@ -240,8 +240,8 @@ function private function_82123529e3e33752() {
 function private function_c76b3a8b1579f6b3() {
     /#
         var_e396a2efd83e0241 = [];
-        foreach (var_2fa65f34eb9042f5 in getstructarray("<unknown string>", "<unknown string>")) {
-            var_e396a2efd83e0241[var_e396a2efd83e0241.size] = "<unknown string>" + function_3a41ae43e44d1c4b(var_2fa65f34eb9042f5.poi) + function_8ca7e0ea3c4eba9f(var_2fa65f34eb9042f5.origin);
+        foreach (buystation in getstructarray("<unknown string>", "<unknown string>")) {
+            var_e396a2efd83e0241[var_e396a2efd83e0241.size] = "<unknown string>" + function_3a41ae43e44d1c4b(buystation.poi) + function_8ca7e0ea3c4eba9f(buystation.origin);
         }
         return var_e396a2efd83e0241;
     #/
@@ -285,11 +285,11 @@ function private function_d04d1f2b66d72ca() {
 function private function_aa334e5e3d060a5a() {
     /#
         var_8cc7b67b8bd0fefc = [];
-        foreach (var_7731adef63e19b0c, vehicledata in level.var_a0b2c978ca57ffc5) {
-            foreach (spawnstruct in namespace_dace9d390bc4a290::function_b08e7e3a0b14f76f(var_7731adef63e19b0c)) {
+        foreach (vehicleref, vehicledata in level.var_a0b2c978ca57ffc5) {
+            foreach (spawnstruct in namespace_dace9d390bc4a290::function_b08e7e3a0b14f76f(vehicleref)) {
                 vehicletype = spawnstruct.vehicletype;
                 if (!isdefined(vehicletype)) {
-                    vehicletype = var_7731adef63e19b0c;
+                    vehicletype = vehicleref;
                 }
                 var_8cc7b67b8bd0fefc[var_8cc7b67b8bd0fefc.size] = "<unknown string>" + vehicletype + "<unknown string>" + vehicletype + "<unknown string>" + function_1bcd1f2b4cce887e(vehicledata.model) + "<unknown string>" + function_8ca7e0ea3c4eba9f(spawnstruct.origin);
             }
@@ -306,11 +306,11 @@ function private function_9c160c396ef3a059() {
     /#
         struct = spawnstruct();
         struct.strings = [];
-        function_38c64e0d7477cd94(level.var_eb96a5f866dd19fe, struct, "<unknown string>");
-        function_38c64e0d7477cd94(level.var_23d3e499c3dde07b, struct, "<unknown string>");
+        function_38c64e0d7477cd94(level.firstkillfoddernodes, struct, "<unknown string>");
+        function_38c64e0d7477cd94(level.looseguardnodes, struct, "<unknown string>");
         function_38c64e0d7477cd94(level.var_bfb4ada8beae5881, struct, "<unknown string>");
         function_38c64e0d7477cd94(getstructarray("<unknown string>", "<unknown string>"), struct, "<unknown string>");
-        foreach (path in level.var_4e8126c3305a5431) {
+        foreach (path in level.patrolpaths) {
             function_38c64e0d7477cd94(path.path, struct, "<unknown string>");
         }
         return struct.strings;

@@ -42,11 +42,11 @@ function function_80d68c9701e1aea5(data) {
     foreach (phone in phones) {
         if (function_c8b12721d3a6c3fc(phone)) {
             origin = phone.origin;
-            var_171f90b9c4c76d44 = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
-            var_d1cf55b36facf5a8 = namespace_bfef6903bca5845d::function_a44e168e8cced18(origin, var_171f90b9c4c76d44);
+            poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
+            subarea = namespace_bfef6903bca5845d::function_a44e168e8cced18(origin, poiname);
             struct = spawnstruct();
             struct.origin = origin;
-            struct.poi = var_171f90b9c4c76d44;
+            struct.poi = poiname;
             var_58e0d036347fd542[var_58e0d036347fd542.size] = struct;
         }
     }
@@ -65,7 +65,7 @@ function function_d21c423660efca45() {
     level.var_5dddedbf2bda5311.var_982966060d10f80a = getdvarint(@"hash_330cbe811cd82406", 400);
     level.var_5dddedbf2bda5311.var_88f1bf50c2880f31 = getdvarint(@"hash_3326ba811fa9de92", 0);
     level.var_5dddedbf2bda5311.var_d6b7c0cb8162cd8e = int(level.var_5dddedbf2bda5311.var_982966060d10f80a / level.var_5dddedbf2bda5311.var_c669e317f1fd1293);
-    namespace_76a219af07c28c13::function_f3d757808130bac4(&function_6bdc6f56944dc3aa);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_6bdc6f56944dc3aa);
 }
 
 // Namespace namespace_99b5353ba6130ae4/namespace_210d6dd43cfaf195
@@ -155,7 +155,7 @@ function function_1e8f1b7f3e56d2fc(teamname) {
     self endon("task_ended");
     self.var_9f274e85b7bbd87f = 0;
     self.var_cc4cd023f0195d5f = level.var_5dddedbf2bda5311.var_be8a6484aed40352;
-    self.payoutValue = function_2fbb9e83420ca54b(teamname);
+    self.payoutvalue = function_2fbb9e83420ca54b(teamname);
     self.var_2655f1229ea3cb33 = [];
     if (!isdefined(level.teamdata[teamname]["hackerPhonePaymentCountActive"])) {
         level.teamdata[teamname]["hackerPhonePaymentCountActive"] = 0;
@@ -195,7 +195,7 @@ function private function_688a2acdd7d9d902(teamname) {
         thread namespace_446fc987a980892f::function_9793a81bc3bc19e9("hacker_phone_success", teamname, 1.5);
         function_c1fd3441ccfba6f8(teamname, "dmz_activity_win", 1.5, "dmz_activity_win_classic");
         var_e2b2bbd9e6539f11 = namespace_54d20dd0dd79277f::getteamdata(teamname, "players");
-        namespace_d696adde758cbe79::function_ae6091699e25d8b4("dmz_hacker_phone_complete", var_e2b2bbd9e6539f11, undefined, level.var_5dddedbf2bda5311.var_d6b7c0cb8162cd8e);
+        namespace_d696adde758cbe79::showdmzsplash("dmz_hacker_phone_complete", var_e2b2bbd9e6539f11, undefined, level.var_5dddedbf2bda5311.var_d6b7c0cb8162cd8e);
         level.teamdata[teamname]["hackerPhonePaymentsRemaining"] = level.var_5dddedbf2bda5311.var_d6b7c0cb8162cd8e;
         function_8f0f565d34f52633(teamname);
         var_e2b2bbd9e6539f11 = namespace_54d20dd0dd79277f::getteamdata(teamname, "players");
@@ -219,9 +219,9 @@ function private function_688a2acdd7d9d902(teamname) {
 // Size: 0x6a
 function function_c8b12721d3a6c3fc(node) {
     origin = node.origin;
-    var_171f90b9c4c76d44 = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
-    var_d1cf55b36facf5a8 = namespace_bfef6903bca5845d::function_a44e168e8cced18(origin, var_171f90b9c4c76d44);
-    return isdefined(var_d1cf55b36facf5a8) && !namespace_7789f919216d38a2::function_cdcab1374db7f007(origin) && !namespace_9823ee6035594d67::function_f59f68adc71d49b3(origin) && !namespace_58dcf42cf567f34f::function_64332f29e2409e55(origin);
+    poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
+    subarea = namespace_bfef6903bca5845d::function_a44e168e8cced18(origin, poiname);
+    return isdefined(subarea) && !namespace_7789f919216d38a2::function_cdcab1374db7f007(origin) && !namespace_9823ee6035594d67::function_f59f68adc71d49b3(origin) && !namespace_58dcf42cf567f34f::function_64332f29e2409e55(origin);
 }
 
 // Namespace namespace_99b5353ba6130ae4/namespace_210d6dd43cfaf195
@@ -291,7 +291,7 @@ function function_5198324ff80596d8(var_431a56b37aba9942, var_fba0376e0036de8d) {
     task.var_552c9e74f497621f = 0;
     var_e2b2bbd9e6539f11 = namespace_54d20dd0dd79277f::getteamdata(var_fba0376e0036de8d.team, "players");
     foreach (player in var_e2b2bbd9e6539f11) {
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f085eaf302a7e140");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_f085eaf302a7e140");
     }
     if (istrue(task function_171503a34d052b4e())) {
         task function_688a2acdd7d9d902(var_fba0376e0036de8d.team);
@@ -410,7 +410,7 @@ function function_2fbb9e83420ca54b(teamname) {
 // Checksum 0x0, Offset: 0x1500
 // Size: 0x27
 function function_cfb5d79cfe8c03a9(teamname) {
-    return level.teamdata[teamname]["hackerPhonePaymentCountActive"] * self.payoutValue;
+    return level.teamdata[teamname]["hackerPhonePaymentCountActive"] * self.payoutvalue;
 }
 
 // Namespace namespace_99b5353ba6130ae4/namespace_210d6dd43cfaf195
@@ -467,8 +467,8 @@ function function_53fcf5791ca038a0(teamname, lootid) {
     if (!var_ec2736524e4a7410.size) {
         return;
     }
-    payoutValue = function_cfb5d79cfe8c03a9(teamname);
-    var_1dd0f3dfb99017d1 = function_da38be107ae836ff(var_ec2736524e4a7410, payoutValue);
+    payoutvalue = function_cfb5d79cfe8c03a9(teamname);
+    var_1dd0f3dfb99017d1 = function_da38be107ae836ff(var_ec2736524e4a7410, payoutvalue);
     foreach (player in var_ec2736524e4a7410) {
         if (isdefined(player) && var_1dd0f3dfb99017d1 > 0 && istrue(player.var_6c8912ea30b21003)) {
             var_9f870ccae9510eab = int(ceil(function_8c5476a01afab741(player, var_1dd0f3dfb99017d1)));
@@ -498,7 +498,7 @@ function function_e387a70c3e4e731d(teamname) {
         if (var_327efeb48a68a152 == 3) {
             foreach (player in var_9c231835be3c8312) {
                 if (isdefined(player) && player.team == teamname) {
-                    namespace_d696adde758cbe79::function_ae6091699e25d8b4("dmz_hacker_phone_expiring", [0:player]);
+                    namespace_d696adde758cbe79::showdmzsplash("dmz_hacker_phone_expiring", [0:player]);
                 }
             }
         }
@@ -506,7 +506,7 @@ function function_e387a70c3e4e731d(teamname) {
     }
     foreach (player in var_9c231835be3c8312) {
         if (isdefined(player) && player.team == teamname) {
-            namespace_d696adde758cbe79::function_ae6091699e25d8b4("dmz_hacker_phone_expired", [0:player]);
+            namespace_d696adde758cbe79::showdmzsplash("dmz_hacker_phone_expired", [0:player]);
         }
     }
     wait(0.5);
@@ -720,7 +720,7 @@ function function_8f0f565d34f52633(teamname) {
             player.var_a4dd02e65175e1e7 = [];
             player.var_a4dd02e65175e1e7["tabletIndex"] = self.tablet.index;
             player.var_a4dd02e65175e1e7["totalPayout"] = 0;
-            player.var_a4dd02e65175e1e7["payoutValue"] = self.payoutValue * 10;
+            player.var_a4dd02e65175e1e7["payoutValue"] = self.payoutvalue * 10;
             namespace_f1d40c362677777e::registerondisconnecteventcallback(&function_3205795847561be3);
         }
     }
@@ -787,6 +787,6 @@ function function_7113e9264646a968(player) {
     level endon("game_ended");
     player endon("death_or_disconnect");
     wait(1);
-    namespace_d696adde758cbe79::function_ae6091699e25d8b4("dmz_hacker_phone_expired", [0:player]);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_hacker_phone_expired", [0:player]);
 }
 

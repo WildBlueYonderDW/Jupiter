@@ -34,10 +34,10 @@ function updategametypedvars() {
     level.capturecondition = dvarintvalue("captureCondition", 0, 0, 1);
     level.pickuptime = dvarfloatvalue("pickupTime", 0.5, 0, 10);
     level.returntime = dvarfloatvalue("returnTime", 0.5, -1, 25);
-    level.carryZoneSpeedScale = dvarfloatvalue("carryZoneSpeedScale", 0.6, 0, 1);
-    level.flagSwitchTP = dvarintvalue("flagSwitchTP", 0, 0, 1);
-    level.requiredFlag = dvarintvalue("requiredFlag", 1, 1, 10);
-    level.enableFlagCheckPoint = dvarintvalue("enableFlagCheckPoint", 0, 0, 1);
+    level.carryzonespeedscale = dvarfloatvalue("carryZoneSpeedScale", 0.6, 0, 1);
+    level.flagswitchtp = dvarintvalue("flagSwitchTP", 0, 0, 1);
+    level.requiredflag = dvarintvalue("requiredFlag", 1, 1, 10);
+    level.enableflagcheckpoint = dvarintvalue("enableFlagCheckPoint", 0, 0, 1);
 }
 
 // Namespace namespace_440053aa087d84ad/namespace_16a6643951556450
@@ -63,9 +63,9 @@ function function_a892b65a4cfef993(var_7dbe47f889cfa80) {
 // Checksum 0x0, Offset: 0x770
 // Size: 0x74
 function function_c10d8e3981d437eb() {
-    foreach (CaptureFlag in level.zone.var_3fcea735d5eda634) {
-        CaptureFlag namespace_19b4203b51d56488::allowcarry("none");
-        CaptureFlag namespace_19b4203b51d56488::setvisibleteam("none");
+    foreach (captureflag in level.zone.var_3fcea735d5eda634) {
+        captureflag namespace_19b4203b51d56488::allowcarry("none");
+        captureflag namespace_19b4203b51d56488::setvisibleteam("none");
     }
 }
 
@@ -74,11 +74,11 @@ function function_c10d8e3981d437eb() {
 // Checksum 0x0, Offset: 0x7eb
 // Size: 0x9c
 function function_fef84731c75ce2c5() {
-    foreach (CaptureFlag in level.zone.var_3fcea735d5eda634) {
-        objective_state(CaptureFlag.objidnum, "current");
-        CaptureFlag namespace_19b4203b51d56488::allowcarry("enemy");
-        CaptureFlag namespace_19b4203b51d56488::setvisibleteam("any");
-        namespace_87e7f6fcf1544253::function_a2ef0341d328f8e1(CaptureFlag.objectivekey);
+    foreach (captureflag in level.zone.var_3fcea735d5eda634) {
+        objective_state(captureflag.objidnum, "current");
+        captureflag namespace_19b4203b51d56488::allowcarry("enemy");
+        captureflag namespace_19b4203b51d56488::setvisibleteam("any");
+        namespace_87e7f6fcf1544253::function_a2ef0341d328f8e1(captureflag.objectivekey);
     }
 }
 
@@ -204,7 +204,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
         player function_47f0240ed7f9e0c8();
         player function_2dc4851c2a22292d();
         thread namespace_52f6938dd902c7d0::teamplayercardsplash("jup_wm_picked_up_filter", player);
-        if (istrue(level.flagSwitchTP)) {
+        if (istrue(level.flagswitchtp)) {
             player setcamerathirdperson(1);
         }
         if (getgametype() == "wm") {
@@ -213,7 +213,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
             var_f2d1c732ad41ab26 = 30000;
             if (!isdefined(player.var_998a7d0073e1ef74) || gettime() - player.var_998a7d0073e1ef74 >= var_f2d1c732ad41ab26) {
                 player.var_998a7d0073e1ef74 = gettime();
-                player namespace_48a08c5037514e04::doScoreEvent(#"hash_b2a15ba5409c3d64");
+                player namespace_48a08c5037514e04::doscoreevent(#"hash_b2a15ba5409c3d64");
             }
             thread function_6a0f0924e7106d6d(player);
         }
@@ -248,7 +248,7 @@ function function_6a0f0924e7106d6d(player) {
         attackers = namespace_54d20dd0dd79277f::getteamdata(game["attackers"], "alivePlayers");
         var_95f2a51e7b487eb2 = sortbydistancecullbyradius(attackers, player.origin, var_90b5cdd621c70d23);
         foreach (player in var_95f2a51e7b487eb2) {
-            player namespace_48a08c5037514e04::doScoreEvent(#"hash_f95e4d51587aea39");
+            player namespace_48a08c5037514e04::doscoreevent(#"hash_f95e4d51587aea39");
         }
     }
 }
@@ -267,7 +267,7 @@ function onpickupfailed(player) {
 // Size: 0x150
 function returnflag() {
     var_dbb4828154037694 = undefined;
-    if (istrue(level.enableFlagCheckPoint)) {
+    if (istrue(level.enableflagcheckpoint)) {
         checkpoints = level.zone.var_dcecc1ffe9d55d6e;
         flagzone = level.zone.flagzone;
         mindistance = 99999999;
@@ -318,7 +318,7 @@ function ondrop(player) {
         }
         player.playerstreakspeedscale = 0;
         player namespace_3bbb5a98b932c46f::updatemovespeedscale();
-        if (istrue(level.flagSwitchTP)) {
+        if (istrue(level.flagswitchtp)) {
             player setcamerathirdperson(0);
         }
         thread namespace_52f6938dd902c7d0::teamplayercardsplash("jup_wm_dropped_filter", player);
@@ -388,7 +388,7 @@ function onuse(player) {
         }
         player.playerstreakspeedscale = 0;
         player namespace_3bbb5a98b932c46f::updatemovespeedscale();
-        if (istrue(level.flagSwitchTP)) {
+        if (istrue(level.flagswitchtp)) {
             player setcamerathirdperson(0);
         }
         player.var_8d7140452ba1010e function_966c7001d35327ef(self);
@@ -426,10 +426,10 @@ function function_966c7001d35327ef(flagzone) {
     level.objectives[objectivekey].complete = 1;
     level.zone.var_a41fe785a977666f++;
     level notify("flag_placed");
-    level.defendersRespawnDelay = getdvarint(@"hash_1017300f1352f2fa", 0);
+    level.defendersrespawndelay = getdvarint(@"hash_1017300f1352f2fa", 0);
     namespace_48a08c5037514e04::function_2a66e9acc30896c(game["attackers"], #"hash_a11b33bfb5de050c");
     namespace_87e7f6fcf1544253::function_8bce9c7e1a380040(objectivekey);
-    if (level.zone.var_a41fe785a977666f >= level.requiredFlag) {
+    if (level.zone.var_a41fe785a977666f >= level.requiredflag) {
         foreach (flag in level.zone.var_3fcea735d5eda634) {
             if (!istrue(flag.completed)) {
                 objectivekey = flag.trigger.objectivekey;
@@ -516,7 +516,7 @@ function oncantuse(player) {
 // Checksum 0x0, Offset: 0x1b5c
 // Size: 0x20
 function function_ce0967f06e5921a4() {
-    return level.requiredFlag - level.zone.var_a41fe785a977666f;
+    return level.requiredflag - level.zone.var_a41fe785a977666f;
 }
 
 // Namespace namespace_440053aa087d84ad/namespace_16a6643951556450
@@ -639,8 +639,8 @@ function function_114808366456147a(time) {
 // Checksum 0x0, Offset: 0x1efe
 // Size: 0x6c
 function function_47f0240ed7f9e0c8() {
-    foreach (CaptureFlag in level.zone.var_3fcea735d5eda634) {
-        CaptureFlag.trigger disableplayeruse(self);
+    foreach (captureflag in level.zone.var_3fcea735d5eda634) {
+        captureflag.trigger disableplayeruse(self);
     }
 }
 
@@ -649,8 +649,8 @@ function function_47f0240ed7f9e0c8() {
 // Checksum 0x0, Offset: 0x1f71
 // Size: 0x6c
 function function_4c5338b95958e2bf() {
-    foreach (CaptureFlag in level.zone.var_3fcea735d5eda634) {
-        CaptureFlag.trigger enableplayeruse(self);
+    foreach (captureflag in level.zone.var_3fcea735d5eda634) {
+        captureflag.trigger enableplayeruse(self);
     }
 }
 

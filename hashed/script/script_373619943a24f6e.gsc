@@ -623,7 +623,7 @@ function function_e2f7207837fc5514(show, var_d655c4728654dc0b) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2114
 // Size: 0x1ac
-function updateEscortGoalProgress(var_7aad5f9cffb6b8ee) {
+function updateescortgoalprogress(var_7aad5f9cffb6b8ee) {
     level endon("game_ended");
     level endon("round_end");
     level.var_db789ae013b5b4de notify("updateEscortGoalProgress");
@@ -644,7 +644,7 @@ function updateEscortGoalProgress(var_7aad5f9cffb6b8ee) {
                 }
                 var_4245ed6808ee4864 incpersstat("objTime", 1);
                 if (var_4245ed6808ee4864.var_da0eb10b6935a5c8 >= 3) {
-                    var_4245ed6808ee4864 thread doScoreEvent(#"hash_9f759f38d4a33e67");
+                    var_4245ed6808ee4864 thread doscoreevent(#"hash_9f759f38d4a33e67");
                     var_4245ed6808ee4864.var_da0eb10b6935a5c8 = 0;
                 } else {
                     var_4245ed6808ee4864.var_da0eb10b6935a5c8++;
@@ -760,8 +760,8 @@ function function_15e339103fa91bff(var_2e0bdb36f81a37e4) {
         var_c48176d699313e6f = 1;
     }
     setomnvar("ui_escort_owner_team", var_c48176d699313e6f);
-    zone thread escortMoveUpdate(var_7aad5f9cffb6b8ee, var_c48176d699313e6f, var_2e0bdb36f81a37e4);
-    zone thread updateEscortGoalProgress(var_7aad5f9cffb6b8ee);
+    zone thread escortmoveupdate(var_7aad5f9cffb6b8ee, var_c48176d699313e6f, var_2e0bdb36f81a37e4);
+    zone thread updateescortgoalprogress(var_7aad5f9cffb6b8ee);
     zone function_7656a26279c75591();
 }
 
@@ -779,7 +779,7 @@ function function_387301b513006ff(var_6198f7e52220fe59, var_c48176d699313e6f) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x26e2
 // Size: 0xe3
-function escortMoveUpdate(var_7aad5f9cffb6b8ee, var_c48176d699313e6f, var_2e0bdb36f81a37e4) {
+function escortmoveupdate(var_7aad5f9cffb6b8ee, var_c48176d699313e6f, var_2e0bdb36f81a37e4) {
     level endon("game_ended");
     level endon("round_end");
     zone = self;
@@ -1025,11 +1025,11 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
     if (attackerteam != ownerteam) {
         if (victim istouching(zone.trigger)) {
             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
         }
     } else if (attacker istouching(zone.trigger)) {
         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
         attacker incpersstat("defends", 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
         attacker setextrascore1(attacker.pers["defends"]);

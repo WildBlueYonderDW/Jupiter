@@ -238,7 +238,7 @@ function updategametypedvars() {
     level.showenemycarrier = dvarintvalue("showEnemyCarrier", 5, 0, 6);
     level.idleresettime = dvarfloatvalue("idleResetTime", 0, 0, 60);
     level.pickuptime = dvarfloatvalue("pickupTime", 0, 0, 10);
-    level.allowEMPWeapon = dvarintvalue("allowEMPWeapon", 0, 0, 1);
+    level.allowempweapon = dvarintvalue("allowEMPWeapon", 0, 0, 1);
 }
 
 // Namespace cyber/namespace_5d8d5ae44462641f
@@ -473,7 +473,7 @@ function cyberattack() {
         game["empSpawn"] = level.empspawnindex;
     }
     var_f583b91c1067e38f = var_92fc6d4f242a0f8d[level.empspawnindex];
-    if (!istrue(level.allowEMPWeapon)) {
+    if (!istrue(level.allowempweapon)) {
         var_f583b91c1067e38f = spawn("trigger_radius", var_f583b91c1067e38f.origin, 0, 32, 128);
     }
     visuals[0] = spawn("script_model", var_f583b91c1067e38f.origin);
@@ -887,7 +887,7 @@ function startnpcbombusesound(weaponname, var_cb3339ece72dbdeb) {
 // Size: 0x3f9
 function onpickup(player, var_5760e0f038d1baa3, defused) {
     level notify("bomb_pickup");
-    if (istrue(level.allowEMPWeapon)) {
+    if (istrue(level.allowempweapon)) {
         curweapon = player getcurrentprimaryweapon();
         if (isdefined(curweapon.basename) && curweapon.basename == "iw8_lm_dblmg_mp") {
             player notify("switched_from_minigun");
@@ -902,7 +902,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
     player setclientomnvar("ui_emp_carrier_hud", 1);
     namespace_f5675568ccc8acc6::function_7d42d3f8dd68280c(16, player.team, player getentitynumber());
     if (self.firstpickup) {
-        player thread doScoreEvent(#"hash_bb78056c283362a4");
+        player thread doscoreevent(#"hash_bb78056c283362a4");
     }
     level.usestartspawns = 0;
     team = player.pers["team"];
@@ -985,7 +985,7 @@ function ondrop(player) {
             thread returnaftertime();
         }
     }
-    if (istrue(level.allowEMPWeapon)) {
+    if (istrue(level.allowempweapon)) {
         player _takeweapon("iw9_cyberemp_mp");
         player switchtolastweapon();
     }
@@ -1035,7 +1035,7 @@ function onuse(player) {
         player playsoundtoteam("mp_bombplaced_friendly", team);
         leaderdialog("empplanted_enemy", otherteam);
         player playsoundtoteam("mp_bombplaced_enemy", otherteam);
-        player thread doScoreEvent(#"plant");
+        player thread doscoreevent(#"plant");
         player namespace_aad14af462a74d08::onplant();
         var_7e2c53b0bcf117d9 = spawnstruct();
         var_7e2c53b0bcf117d9.player = player;
@@ -1058,7 +1058,7 @@ function onuse(player) {
         level.cyberemp namespace_19b4203b51d56488::setdropped();
         level.cyberemp namespace_19b4203b51d56488::allowuse("none");
         level.cyberemp namespace_19b4203b51d56488::setvisibleteam("none");
-        if (istrue(level.allowEMPWeapon)) {
+        if (istrue(level.allowempweapon)) {
             player _takeweapon("iw9_cyberemp_mp");
             player switchtolastweapon();
         }
@@ -1090,7 +1090,7 @@ function onuse(player) {
             player thread namespace_62c556437da28f50::scoreeventpopup(#"defuse");
             player thread namespace_44abc05161e2e2cb::showsplash("emp_defuse", namespace_62c556437da28f50::getscoreinfovalue(#"defuse"));
         }
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_d42f3a6d11e62127");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_d42f3a6d11e62127");
         player incpersstat("defuses", 1);
         player namespace_b919c4be206d3c80::function_48544e365f4f5648(15, 1);
         player namespace_2685ec368e022695::statsetchild("round", "defuses", player.pers["defuses"]);
@@ -1194,7 +1194,7 @@ function setupfordefusing(defuseobject, player) {
         self.trigger enableplayeruse(p);
     }
     if (istrue(level.var_998e6c3eeb879000)) {
-        teammates = getSquadmates(player.team);
+        teammates = getsquadmates(player.team);
         foreach (var_c98aac0e8e6eaf8c in teammates) {
             self.trigger disableplayeruse(var_c98aac0e8e6eaf8c);
         }
@@ -1613,21 +1613,21 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
         if (isdefined(attacker) && isplayer(attacker) && attacker.pers["team"] != victim.pers["team"]) {
             if (isdefined(attacker.isbombcarrier) && attackerisinflictor && isdefined(objweapon) && objweapon.basename == "iw9_cyberemp_mp") {
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"hash_381f16dd2b01c743");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_8f7ff4d5395b6ac3");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_8f7ff4d5395b6ac3");
             } else if (istrue(victim.isbombcarrier)) {
                 victim.isbombcarrier = 0;
                 if (istrue(victim.showempminimap)) {
                     victim hideminimap();
                 }
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"hash_a019ba6fda76386");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2e0245db0447f036");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2e0245db0447f036");
                 thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "carrying");
             }
             if (attacker.pers["team"] == level.cyberemp.ownerteam && attacker != level.cyberemp.carrier) {
                 var_db36f135f40e7940 = distancesquared(level.cyberemp.carrier.origin, var_86c1c8628b1d55f8);
                 if (var_db36f135f40e7940 < 105625) {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                     attacker incpersstat("defends", 1);
                     attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
                     thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
@@ -1645,7 +1645,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
             if (var_a3a2ce8b8e74ebef) {
                 var_8363beb01b537d3e = 1;
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                 bombzone notify("assault", attacker);
                 thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
                 continue;
@@ -1655,7 +1655,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
             if (var_f6a091229a5e7b04) {
                 var_88f4967a49a22ed7 = 1;
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                 bombzone notify("defend", attacker);
                 attacker incpersstat("defends", 1);
                 attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
@@ -1704,16 +1704,16 @@ function empradarwatcher() {
     self endon("bomb_planted");
     self endon("last_stand_start");
     self endon("emp_dropped");
-    if (istrue(level.allowEMPWeapon)) {
+    if (istrue(level.allowempweapon)) {
         thread weaponswapwatcher();
     }
     while (isdefined(level.cyberemp.carrier) && self == level.cyberemp.carrier) {
         waitframe();
-        if (istrue(level.allowEMPWeapon) && self.currentprimaryweapon.basename != "iw9_cyberemp_mp") {
+        if (istrue(level.allowempweapon) && self.currentprimaryweapon.basename != "iw9_cyberemp_mp") {
             continue;
         }
         if (!isdefined(self.nextradarpingtime) || gettime() > self.nextradarpingtime) {
-            if (istrue(level.allowEMPWeapon)) {
+            if (istrue(level.allowempweapon)) {
                 triggeroneoffradarsweep(self);
             } else {
                 triggerportableradarping(self.origin, self, 1000);

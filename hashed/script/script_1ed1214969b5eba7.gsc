@@ -188,16 +188,16 @@ function function_bf9c7e9dd30180e3(var_ebec497ff8b18a45) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xae6
 // Size: 0x134
-function function_62e8acc4f0862692(weaponname, var_12c0f53a71c9bcc8) {
+function function_62e8acc4f0862692(weaponname, blueprintindex) {
     if (!isdefined(weaponname)) {
         return undefined;
     }
-    if (isdefined(var_12c0f53a71c9bcc8) && var_12c0f53a71c9bcc8 > 0) {
-        var_b13ff8bade98bb3f = weaponname + "|" + string(var_12c0f53a71c9bcc8);
+    if (isdefined(blueprintindex) && blueprintindex > 0) {
+        var_b13ff8bade98bb3f = weaponname + "|" + string(blueprintindex);
         var_8cf493f209855904 = level.var_b9a844d3a5952be0[var_b13ff8bade98bb3f];
         if (!isdefined(var_8cf493f209855904)) {
             /#
-                var_67243b08ecf2e214 = "<unknown string>" + weaponname + "<unknown string>" + var_12c0f53a71c9bcc8 + "<unknown string>";
+                var_67243b08ecf2e214 = "<unknown string>" + weaponname + "<unknown string>" + blueprintindex + "<unknown string>";
                 println(var_67243b08ecf2e214);
                 iprintlnbold(var_67243b08ecf2e214);
             #/
@@ -206,12 +206,12 @@ function function_62e8acc4f0862692(weaponname, var_12c0f53a71c9bcc8) {
         attachments = [];
         var_c9b64ec1c40ac0ef = [];
         var_109ebf347b2f2ece = 0;
-        foreach (attachment, var_12c0f53a71c9bcc8 in var_8cf493f209855904) {
+        foreach (attachment, blueprintindex in var_8cf493f209855904) {
             attachments[var_109ebf347b2f2ece] = attachment;
-            var_c9b64ec1c40ac0ef[var_109ebf347b2f2ece] = var_12c0f53a71c9bcc8;
+            var_c9b64ec1c40ac0ef[var_109ebf347b2f2ece] = blueprintindex;
             var_109ebf347b2f2ece++;
         }
-        weapon = makeweapon(weaponname, attachments, undefined, undefined, var_12c0f53a71c9bcc8, var_c9b64ec1c40ac0ef);
+        weapon = makeweapon(weaponname, attachments, undefined, undefined, blueprintindex, var_c9b64ec1c40ac0ef);
     } else {
         weapon = makeweapon(weaponname);
     }

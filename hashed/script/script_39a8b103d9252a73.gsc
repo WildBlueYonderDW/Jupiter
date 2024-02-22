@@ -323,7 +323,7 @@ function onstartgametype() {
     createflagsandhud();
     setupobjectives();
     function_b8500bdd6944ff2f();
-    level.disableMajorityCapProgress = 1;
+    level.disablemajoritycapprogress = 1;
     level thread runobjectives();
     if (level.usec130spawn) {
         level thread managec130spawns();
@@ -353,8 +353,8 @@ function onstartgametype() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28a5
 // Size: 0x65
-function function_cf8266a9263b0005(var_7731adef63e19b0c) {
-    foreach (vehicle in namespace_dace9d390bc4a290::function_b08e7e3a0b14f76f(var_7731adef63e19b0c)) {
+function function_cf8266a9263b0005(vehicleref) {
+    foreach (vehicle in namespace_dace9d390bc4a290::function_b08e7e3a0b14f76f(vehicleref)) {
         vehicle.spawnflags = 1;
     }
 }
@@ -761,10 +761,10 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
     if (team != ownerteam) {
         thread teamplayercardsplash("callout_flagreturn", player);
         if (isdefined(level.closecapturekiller[player.team]) && level.closecapturekiller[player.team] == player) {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_fe8ba8ad4e2e427b");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_fe8ba8ad4e2e427b");
         }
         level.closecapturekiller[player.team] = undefined;
-        player thread doScoreEvent(#"flag_return");
+        player thread doscoreevent(#"flag_return");
         if (level.codcasterenabled) {
             level.capzones[player.team] namespace_19b4203b51d56488::resetmlgobjectivestatusicon();
         }
@@ -833,7 +833,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
             self.var_8e9c043fff68afdb = [];
         }
         if (!isdefined(self.var_8e9c043fff68afdb[player.name]) || self.var_8e9c043fff68afdb[player.name] <= gettime()) {
-            player thread doScoreEvent(#"flag_grab");
+            player thread doscoreevent(#"flag_grab");
             self.var_8e9c043fff68afdb[player.name] = gettime() + 10000;
         }
         var_7e2c53b0bcf117d9 = spawnstruct();
@@ -2321,7 +2321,7 @@ function onuse(player) {
         player updatematchstatushintonnoflag();
         thread teamplayercardsplash("callout_flagcapture", player);
         player thread namespace_62c556437da28f50::scoreeventpopup(#"flag_capture");
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_7b8c8a78ac292c0d");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_7b8c8a78ac292c0d");
         player notify("objective", "captured");
         var_7e2c53b0bcf117d9 = spawnstruct();
         var_7e2c53b0bcf117d9.player = player;

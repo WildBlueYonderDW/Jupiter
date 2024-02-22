@@ -168,13 +168,13 @@ function function_be12b3d2a01e1295(var_afb1e307ca3c0ed7) {
         level.var_2831ff636b688bf5 = 0;
         break;
     }
-    levelData = namespace_6c578d6ef48f10ef::getleveldata(var_7ce5358b6afbdf68.var_b5af62407c69adc9);
-    levelData.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
-    levelData.minimapicon = undefined;
-    if (isdefined(levelData.var_c9042cdfe65fb49d)) {
-        var_7ce5358b6afbdf68.var_5411956fb9cdc64d = levelData.var_c9042cdfe65fb49d;
+    leveldata = namespace_6c578d6ef48f10ef::getleveldata(var_7ce5358b6afbdf68.var_b5af62407c69adc9);
+    leveldata.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
+    leveldata.minimapicon = undefined;
+    if (isdefined(leveldata.var_c9042cdfe65fb49d)) {
+        var_7ce5358b6afbdf68.var_5411956fb9cdc64d = leveldata.var_c9042cdfe65fb49d;
     }
-    if (!istrue(levelData.var_a07a6cc29e3b5458) && isdefined(var_7ce5358b6afbdf68.var_73028fdd377ed0c4)) {
+    if (!istrue(leveldata.var_a07a6cc29e3b5458) && isdefined(var_7ce5358b6afbdf68.var_73028fdd377ed0c4)) {
         namespace_d76af9f804655767::showsplashtoall(var_7ce5358b6afbdf68.var_73028fdd377ed0c4, var_7ce5358b6afbdf68.var_548d317a24c84e75);
     }
     namespace_d3d40f75bb4e4c32::brleaderdialog(var_7ce5358b6afbdf68.var_7a39e7c938990279, 1);
@@ -188,7 +188,7 @@ function function_be12b3d2a01e1295(var_afb1e307ca3c0ed7) {
 // Checksum 0x0, Offset: 0x7a1
 // Size: 0x30e
 function function_1e632783fe9d057d(var_8ee83e2cbd3d747d, dropstruct) {
-    levelData = namespace_6c578d6ef48f10ef::getleveldata("battle_royale_cash_crate");
+    leveldata = namespace_6c578d6ef48f10ef::getleveldata("battle_royale_cash_crate");
     var_5d11a6a17e49fdb3 = undefined;
     var_8df771dfd9cc0975 = undefined;
     cratetype = "battle_royale_cash_crate";
@@ -199,7 +199,7 @@ function function_1e632783fe9d057d(var_8ee83e2cbd3d747d, dropstruct) {
     if (!isdefined(crate)) {
         return;
     }
-    if (!istrue(levelData.var_9ea9e33fa2a90171)) {
+    if (!istrue(leveldata.var_9ea9e33fa2a90171)) {
         crate setscriptablepartstate("trail", "active", 0);
         crate.smokesignal = spawn("script_model", var_ed2c1553ca1bd30b + (0, 0, 58));
         crate.smokesignal setmodel("ks_airdrop_crate_br");

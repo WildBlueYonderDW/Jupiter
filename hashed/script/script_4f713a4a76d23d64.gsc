@@ -67,7 +67,7 @@ function private function_7674186f5ca25b0c() {
 // Checksum 0x0, Offset: 0x217
 // Size: 0x17e
 function private function_7b781321e1c42add() {
-    aitypes = get_aitype_by_subclass_SharedFunc(self.var_47399212b3052720.var_e58a65b7a8f5973c.var_a50ee2b67d1afeb9);
+    aitypes = get_aitype_by_subclass_sharedfunc(self.var_47399212b3052720.var_e58a65b7a8f5973c.var_a50ee2b67d1afeb9);
     /#
         /#
             assert(isdefined(aitypes) && aitypes.size > 0);
@@ -81,9 +81,9 @@ function private function_7b781321e1c42add() {
         }
     }
     var_ea3e656b50d22272 = var_9f578d49d039394b;
-    crawler = spawnNewAIType_SharedFunc(var_ea3e656b50d22272, self.origin, self.angles, self.team);
+    crawler = spawnnewaitype_sharedfunc(var_ea3e656b50d22272, self.origin, self.angles, self.team);
     if (isdefined(crawler)) {
-        crawler thread Animscripted_SharedFunc("spawn_abom_crawler", "spawn_end", undefined, undefined, "spawn_animating");
+        crawler thread animscripted_sharedfunc("spawn_abom_crawler", "spawn_end", undefined, undefined, "spawn_animating");
         crawler.var_c383683308e840a7 = self;
         self.var_38d388b86915db8a = array_add(self.var_38d388b86915db8a, crawler);
         if (flag("level_stealth_initialized") && isdefined(self.enemy)) {

@@ -35,7 +35,7 @@ function emp_grenade_used(grenade) {
         level.var_ab6f6c9d4337fc0c.var_909c6082a847d955 = bundle.var_d0a989cb2841fa49;
     }
     position = grenade waittill("explode");
-    ents = function_107fdcaa299cfa40(position, level.var_ab6f6c9d4337fc0c.var_fb20e79efa369047);
+    ents = empdebuff_get_emp_ents(position, level.var_ab6f6c9d4337fc0c.var_fb20e79efa369047);
     objweapon = makeweapon("t10_emp_grenade_mp");
     foreach (ent in ents) {
         entowner = ent.owner;
@@ -63,7 +63,7 @@ function emp_grenade_used(grenade) {
 // Size: 0x77
 function private function_9be39ebfae2ac6be(data) {
     if (data.attacker != data.victim) {
-        function_693d12aa2c1c02c5(0, "emp_grenade");
+        doonactionscoreevent(0, "emp_grenade");
     }
     apply_emp_struct(data);
     _emp_grenade_end_early(data, level.var_ab6f6c9d4337fc0c.var_41621f8c94cfd912);
@@ -78,7 +78,7 @@ function private function_9be39ebfae2ac6be(data) {
 // Size: 0x158
 function private _emp_grenade_apply_player(data) {
     if (data.attacker != data.victim) {
-        function_693d12aa2c1c02c5(0, "emp_grenade");
+        doonactionscoreevent(0, "emp_grenade");
     }
     apply_emp_struct(data);
     trackdebuffassist(data.attacker, data.victim, data.objweapon.basename);

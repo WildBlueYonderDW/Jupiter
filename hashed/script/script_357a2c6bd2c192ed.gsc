@@ -18,7 +18,7 @@
 // Size: 0x2f
 function autoexec main() {
     function_df7ab5b0f898e8bc(function_1823ff50bb28148d("drone_swarm"), &function_72d7a59680238265);
-    registersharedfunc("drone_swarm", "tryUseDroneSwarm", &tryUseDroneSwarm);
+    registersharedfunc("drone_swarm", "tryUseDroneSwarm", &tryusedroneswarm);
 }
 
 // Namespace drone_swarm/namespace_e2f93bf4e107e56d
@@ -27,9 +27,9 @@ function autoexec main() {
 // Size: 0x57
 function function_72d7a59680238265() {
     if (issharedfuncdefined("killstreak", "registerKillstreak")) {
-        [[ getsharedfunc("killstreak", "registerKillstreak") ]]("drone_swarm", &tryUseDroneSwarm);
+        [[ getsharedfunc("killstreak", "registerKillstreak") ]]("drone_swarm", &tryusedroneswarm);
     }
-    namespace_3c37cb17ade254d::registersharedfunc("drone_swarm", "tryUseKillstreak", &tryUseDroneSwarm);
+    namespace_3c37cb17ade254d::registersharedfunc("drone_swarm", "tryUseKillstreak", &tryusedroneswarm);
     function_6bdbb403f0bf174d();
     function_a0e89e425d7647e9();
 }
@@ -68,7 +68,7 @@ function function_a0e89e425d7647e9() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x61c
 // Size: 0x169
-function tryUseDroneSwarm(streakinfo) {
+function tryusedroneswarm(streakinfo) {
     if (!isdefined(level.var_30811ca154f392f1) || islargemap()) {
         function_2f27caaab9a759fa();
     }

@@ -54,45 +54,45 @@ function function_5027f03acd35a5ca() {
 // Checksum 0x0, Offset: 0xa6b
 // Size: 0x243
 function function_c13d155ad0421754() {
-    levelData = function_f0698aee89c18210("tacCam");
-    levelData.var_5237a188ccda4d7b = "super_tac_camera";
-    levelData.lifetime = getdvarint(@"hash_13717e6e87cb530f", 120);
-    levelData.startfunc = &function_a10d1d70759f9e83;
-    levelData.var_be3314f77fef5d6b = &function_96ecbf2f7e001e7;
-    levelData.destroyfunc = &function_fb4a392282a75942;
-    levelData.var_d6fdc3b56b33f4e3 = &function_7acc5aa2b73fe93b;
-    levelData.var_273f2a99f4833f00 = &function_daf83774b715c487;
-    levelData.var_547e8b267c03d017 = &function_1ee10c87668846d9;
-    levelData.var_1eb35a5a7992e498 = &function_7acc5aa2b73fe93b;
-    levelData.var_6e5f6320607eb69 = &function_a60052d904a2d492;
-    levelData.var_4fbadc7102d30912 = 2480625;
-    levelData.var_16187e4d354c3c97 = 619369;
-    levelData.var_37782917998d4ff2 = 2480625;
-    levelData.var_9953dc2e8c205b77 = 619369;
-    levelData.var_eff1ab975c47fe2 = 9000000;
-    levelData.var_57b8f3bcfca33a4b = 3;
-    levelData.var_53ec43fa38fc3243 = "tacticalCameraList";
-    levelData.var_9c35ca95bd1d22fa = "tacticalCameras";
-    levelData.var_1790d4c69d5f45a4 = 2;
-    levelData.var_5b125df6b587a5c2 = 10;
-    levelData.var_4f401574fc47899e = "tacticalCamera_camera_added";
-    levelData.var_67d467748271444c = "tacticalCamera_camera_removed";
-    levelData.var_315c43d476bb095 = "tacticalCamera_location_changed";
-    levelData.var_36411d05d3f1e503 = "tacticalCamera_pilot_removed";
-    levelData.var_6c8c1a666ed5f48d = "hud_icon_fieldupgrade_tac_cam";
-    levelData.var_91389dd68a70be33 = "equip_tactical_cam_marking";
-    levelData.maxhealth = 150;
-    levelData.var_604c545b594e97ec = &function_3888b35ba7e2f0a9;
-    levelData.var_4f1335fce3765da0 = &function_79a97ee01dc267d3;
-    levelData.var_58906cc2ded735db = namespace_2a184fc4902783dc::create_contents(1, 0, 0, 1, 0, 1, 0, 1, 1);
-    levelData.var_106bf36856a998f = getentarray("tacCameraInvalid", "targetname");
+    leveldata = function_f0698aee89c18210("tacCam");
+    leveldata.var_5237a188ccda4d7b = "super_tac_camera";
+    leveldata.lifetime = getdvarint(@"hash_13717e6e87cb530f", 120);
+    leveldata.startfunc = &function_a10d1d70759f9e83;
+    leveldata.var_be3314f77fef5d6b = &function_96ecbf2f7e001e7;
+    leveldata.destroyfunc = &function_fb4a392282a75942;
+    leveldata.var_d6fdc3b56b33f4e3 = &function_7acc5aa2b73fe93b;
+    leveldata.var_273f2a99f4833f00 = &function_daf83774b715c487;
+    leveldata.var_547e8b267c03d017 = &function_1ee10c87668846d9;
+    leveldata.var_1eb35a5a7992e498 = &function_7acc5aa2b73fe93b;
+    leveldata.var_6e5f6320607eb69 = &function_a60052d904a2d492;
+    leveldata.var_4fbadc7102d30912 = 2480625;
+    leveldata.var_16187e4d354c3c97 = 619369;
+    leveldata.var_37782917998d4ff2 = 2480625;
+    leveldata.var_9953dc2e8c205b77 = 619369;
+    leveldata.var_eff1ab975c47fe2 = 9000000;
+    leveldata.var_57b8f3bcfca33a4b = 3;
+    leveldata.var_53ec43fa38fc3243 = "tacticalCameraList";
+    leveldata.var_9c35ca95bd1d22fa = "tacticalCameras";
+    leveldata.var_1790d4c69d5f45a4 = 2;
+    leveldata.var_5b125df6b587a5c2 = 10;
+    leveldata.var_4f401574fc47899e = "tacticalCamera_camera_added";
+    leveldata.var_67d467748271444c = "tacticalCamera_camera_removed";
+    leveldata.var_315c43d476bb095 = "tacticalCamera_location_changed";
+    leveldata.var_36411d05d3f1e503 = "tacticalCamera_pilot_removed";
+    leveldata.var_6c8c1a666ed5f48d = "hud_icon_fieldupgrade_tac_cam";
+    leveldata.var_91389dd68a70be33 = "equip_tactical_cam_marking";
+    leveldata.maxhealth = 150;
+    leveldata.var_604c545b594e97ec = &function_3888b35ba7e2f0a9;
+    leveldata.var_4f1335fce3765da0 = &function_79a97ee01dc267d3;
+    leveldata.var_58906cc2ded735db = namespace_2a184fc4902783dc::create_contents(1, 0, 0, 1, 0, 1, 0, 1, 1);
+    leveldata.var_106bf36856a998f = getentarray("tacCameraInvalid", "targetname");
 }
 
 // Namespace namespace_d28c068a27f52a2e/namespace_ec12f2e19aa34cc8
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcb5
 // Size: 0x96
-function tacticalCamera_set() {
+function tacticalcamera_set() {
     self notify("tacticalCamera_set");
     thread function_362c9a13d18031b1("personal_camera_status_updated", "ui_tactical_camera_cam_", "tacticalCamera_unset");
     function_b1d73dd45d89a318("tacCam");
@@ -109,7 +109,7 @@ function tacticalCamera_set() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd52
 // Size: 0x59
-function tacticalCamera_unset() {
+function tacticalcamera_unset() {
     self notify("tacticalCamera_unset");
     function_f7a32619bba6e450("tacCam");
     function_987961464bef3a3();
@@ -880,7 +880,7 @@ function private function_a10d1d70759f9e83(camera, var_bb7199406cfb48d8) {
         camera.hasbeenused = 1;
         camera notify("tactical_camera_has_been_piloted");
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && (getsubgametype() == "dmz" || getsubgametype() == "exgm")) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm")) {
         self setclientomnvar("ui_dmz_hide_inventory", 1);
     }
     self setclientomnvar("ui_mgl_tac_camera_state", 2);
@@ -905,7 +905,7 @@ function private function_a10d1d70759f9e83(camera, var_bb7199406cfb48d8) {
     thread function_2699a7c2c0b71d3e(camera, "tacCam");
     thread function_73af051ec0973e1(camera, "tacCamCluster", "tacCam");
     camera thread function_a6c751ed1df3bf48(self);
-    if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+    if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
         self setclientomnvar("ui_br_inventory_disabled", 1);
     }
     thread function_97a30ae5803a8886(camera, var_bb7199406cfb48d8);
@@ -963,7 +963,7 @@ function private function_96ecbf2f7e001e7(camera, var_7873097f48bd513, var_69de8
             namespace_9abe40d2af041eb2::starttabletscreen("super_tac_camera", 0, 1);
             self setclientomnvar("ui_total_fade", 0);
         }
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && (getsubgametype() == "dmz" || getsubgametype() == "exgm")) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm")) {
             self setclientomnvar("ui_dmz_hide_inventory", 0);
         }
         if (!istrue(var_7873097f48bd513)) {
@@ -1007,7 +1007,7 @@ function private function_96ecbf2f7e001e7(camera, var_7873097f48bd513, var_69de8
     namespace_5890eaf13eeb48fa::killstreak_restorenvgstate();
     self notify("stopMonitoringCamera");
     self setclientomnvar("ui_mgl_tac_camera_state", 1);
-    if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+    if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
         self setclientomnvar("ui_br_inventory_disabled", 0);
     }
     namespace_9abe40d2af041eb2::movingplatform_playerunlink(self);
@@ -1130,8 +1130,8 @@ function function_c0c307fac6611f33() {
 function function_1be0d458243b1ee1(attacker) {
     if (!isdefined(self.owner) || namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker)) {
         attacker notify("destroyed_equipment");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
-        attacker thread namespace_25c5a6f43bb97b43::onFieldUpgradeDestroy(#"hash_511ac9e9a1a18d8");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
+        attacker thread namespace_25c5a6f43bb97b43::onfieldupgradedestroy(#"hash_511ac9e9a1a18d8");
     }
 }
 
@@ -1209,7 +1209,7 @@ function function_49197cd063a740ea(callbackfunction) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x312f
 // Size: 0x2c
-function tacticalCamera_Hack(hacker) {
+function tacticalcamera_hack(hacker) {
     if (istrue(self.exploding)) {
         return;
     }

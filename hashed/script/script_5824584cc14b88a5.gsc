@@ -236,7 +236,7 @@ function function_42322dcd60709cc3(player) {
 // Checksum 0x0, Offset: 0xb8b
 // Size: 0x28f
 function function_5ef509a71c51c2a0(player) {
-    squad = player namespace_ca7b90256548aa40::getSquadMembers();
+    squad = player namespace_ca7b90256548aa40::getsquadmembers();
     switch (self.var_12a8270096fdd301) {
     case #"hash_99a38be9e88b5244":
         foreach (member in squad) {

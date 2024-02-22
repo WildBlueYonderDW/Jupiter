@@ -211,7 +211,7 @@ function jugg_makejuggernaut(juggconfig, streakinfo, bundle) {
     self.var_9c1941d3bc009d2e = isdefined(bundle) && istrue(bundle.var_9c1941d3bc009d2e);
     self.var_7e5d64139d5dabb6 = isdefined(bundle) && istrue(bundle.var_7e5d64139d5dabb6);
     jugg_addtoactivejugglist();
-    namespace_a850435086c88de3::function_693d12aa2c1c02c5(2, "juggernautEquipped");
+    namespace_a850435086c88de3::doonactionscoreevent(2, "juggernautEquipped");
     namespace_27c74152ccb91331::function_55b08d6d71b41402(self, "become_juggernaut");
     return 1;
 }
@@ -311,7 +311,7 @@ function jugg_createconfig(var_d493bd7620fa1af0, var_ed0b84b88196cca6) {
     config.startinghealth = config.maxhealth;
     config.movespeedscalar = -0.2;
     config.maxvehicledamagedivisor = 5;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         config.maxvehicledamagedivisor = 3;
     }
     config.forcetostand = 1;

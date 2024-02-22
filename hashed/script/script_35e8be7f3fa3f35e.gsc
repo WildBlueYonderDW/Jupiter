@@ -320,7 +320,7 @@ function function_c4601b0b1f0ffe8a(bundle) {
     self endon("death_or_disconnect");
     var_e2b6708ab0acbb38 = self waittill("stop_tracker_grenade_thirdparty");
     if (isdefined(var_e2b6708ab0acbb38) && isplayer(var_e2b6708ab0acbb38)) {
-        var_e2b6708ab0acbb38 thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment", var_e2b6708ab0acbb38.currentprimaryweapon);
+        var_e2b6708ab0acbb38 thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment", var_e2b6708ab0acbb38.currentprimaryweapon);
     }
     namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("tracker_grenade_tracked");
     var_54a1d70014cdc91d = getdvarint(@"hash_ff7342ea5798e687", bundle.var_d0e06a25c0f68c72);

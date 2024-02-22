@@ -92,10 +92,10 @@ function function_29315e279f8c2ec1() {
     s1.b = "b";
     s1.c = "c";
     player.pers["ut_struct"] = s1;
-    var_ce0ee878f55f5e93 = [];
-    var_ce0ee878f55f5e93["d"] = "d";
-    var_ce0ee878f55f5e93["e"] = "e";
-    player.pers["ut_array"] = var_ce0ee878f55f5e93;
+    a1 = [];
+    a1["d"] = "d";
+    a1["e"] = "e";
+    player.pers["ut_array"] = a1;
     test_print("-------------------------------------------------------------------------------");
     test_print("" + "Add new fields to player.pers");
     test_print("    player.pers.size             - " + (isdefined(player.pers) && isdefined(player.pers.size) ? "" + player.pers.size : "<UNDEFINED>"));

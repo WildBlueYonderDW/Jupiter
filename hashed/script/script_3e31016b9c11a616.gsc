@@ -39,15 +39,15 @@ function function_6ef305e92aa56110(var_d389f1191e609479) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x59
-function function_53a8c0ab528f44cd(var_d389f1191e609479, ProgressTracker) {
+function function_53a8c0ab528f44cd(var_d389f1191e609479, progresstracker) {
     /#
         assertex(function_2cd8a95641b4e4f1(), "SetUpAsProgressTrackerContainer was not called on this container");
     #/
     /#
         assertex(!isdefined(self.var_e3d833b1e5d30b03[var_d389f1191e609479]), "A progress tracker with the same unique name has already been added to this container");
     #/
-    ProgressTracker function_5cd1865af5a5edcf(var_d389f1191e609479);
-    self.var_e3d833b1e5d30b03[var_d389f1191e609479] = ProgressTracker;
+    progresstracker function_5cd1865af5a5edcf(var_d389f1191e609479);
+    self.var_e3d833b1e5d30b03[var_d389f1191e609479] = progresstracker;
 }
 
 // Namespace namespace_a81ff4b57c69b411/namespace_3ab0c2d9cd55890e

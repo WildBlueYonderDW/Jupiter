@@ -50,7 +50,7 @@ function begindeployableviamarker(streakinfo, lifeid, boxtype, var_dfdbf43603e79
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b0
 // Size: 0x11c
-function watchdeployablemarkerplacement(streakinfo, boxtype, lifeid, marker, weaponname, damageFunc, deathfunc, var_57e5b541fbb5ecaa) {
+function watchdeployablemarkerplacement(streakinfo, boxtype, lifeid, marker, weaponname, damagefunc, deathfunc, var_57e5b541fbb5ecaa) {
     self endon("spawned_player");
     self endon("disconnect");
     if (!isdefined(marker)) {
@@ -78,7 +78,7 @@ function watchdeployablemarkerplacement(streakinfo, boxtype, lifeid, marker, wea
         return;
     }
     marker playsoundtoplayer(level.boxsettings[boxtype].deployedsfx, self);
-    marker thread markeractivate(streakinfo, lifeid, boxtype, &box_setactive, damageFunc, deathfunc, var_57e5b541fbb5ecaa);
+    marker thread markeractivate(streakinfo, lifeid, boxtype, &box_setactive, damagefunc, deathfunc, var_57e5b541fbb5ecaa);
 }
 
 // Namespace namespace_435ab5ba1573551b/namespace_ba66181036094c7e
@@ -553,7 +553,7 @@ function boxthink(player) {
                 player [[ var_86280fefb94b6b28.onusecallback ]](self);
             }
             if (isdefined(self.owner) && player != self.owner && !namespace_f8065cafc523dba5::playersareenemies(self.owner, player)) {
-                self.owner thread doScoreEvent(#"support", undefined, var_86280fefb94b6b28.usexp);
+                self.owner thread doscoreevent(#"support", undefined, var_86280fefb94b6b28.usexp);
             }
             if (isdefined(self.usesremaining)) {
                 self.usesremaining--;

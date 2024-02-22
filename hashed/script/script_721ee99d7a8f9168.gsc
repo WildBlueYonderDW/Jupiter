@@ -10,8 +10,8 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14c
 // Size: 0x30
-function function_ccdcf48542c8a5b7(vehicleRef) {
-    vehicledata = function_29b4292c92443328(vehicleRef);
+function function_ccdcf48542c8a5b7(vehicleref) {
+    vehicledata = function_29b4292c92443328(vehicleref);
     return isdefined(vehicledata) && isdefined(vehicledata.airdrop);
 }
 
@@ -19,8 +19,8 @@ function function_ccdcf48542c8a5b7(vehicleRef) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x184
 // Size: 0x483
-function function_66c684fea143fbfd(vehicleRef, spawndata, var_ee8da5624236dc89) {
-    vehicledata = function_29b4292c92443328(vehicleRef);
+function function_66c684fea143fbfd(vehicleref, spawndata, var_ee8da5624236dc89) {
+    vehicledata = function_29b4292c92443328(vehicleref);
     var_e99460bc50772002 = vehicledata.airdrop;
     if (!isdefined(spawndata.spawnmethod)) {
         spawndata.spawnmethod = "airdrop_at_position";
@@ -32,10 +32,10 @@ function function_66c684fea143fbfd(vehicleRef, spawndata, var_ee8da5624236dc89) 
         /#
             assertmsg("Tried to airdrop a vehicle which doesn't support it");
         #/
-        if (namespace_3c37cb17ade254d::issharedfuncdefined(vehicleRef, "spawnPostAirdrop")) {
-            return [[ namespace_3c37cb17ade254d::getsharedfunc(vehicleRef, "spawnPostAirdrop") ]](spawndata, var_ee8da5624236dc89);
+        if (namespace_3c37cb17ade254d::issharedfuncdefined(vehicleref, "spawnPostAirdrop")) {
+            return [[ namespace_3c37cb17ade254d::getsharedfunc(vehicleref, "spawnPostAirdrop") ]](spawndata, var_ee8da5624236dc89);
         }
-        return vehicle_spawn(vehicleRef, spawndata, var_ee8da5624236dc89);
+        return vehicle_spawn(vehicleref, spawndata, var_ee8da5624236dc89);
     }
     var_c374a91971cb3bfa = drop_to_ground(spawndata.origin);
     if (var_c374a91971cb3bfa[2] > spawndata.origin[2]) {
@@ -59,7 +59,7 @@ function function_66c684fea143fbfd(vehicleRef, spawndata, var_ee8da5624236dc89) 
     carrier hide();
     var_d41b7d5f40f6a360 = spawn("script_model", spawndata.origin);
     var_d41b7d5f40f6a360.angles = spawndata.angles;
-    var_d41b7d5f40f6a360.animname = vehicleRef;
+    var_d41b7d5f40f6a360.animname = vehicleref;
     model = vehicledata.model;
     if (isdefined(spawndata.var_14cde247ac3313a4)) {
         model = spawndata.var_14cde247ac3313a4 + "::" + model;
@@ -72,7 +72,7 @@ function function_66c684fea143fbfd(vehicleRef, spawndata, var_ee8da5624236dc89) 
     scenenode.carrier = carrier;
     scenenode.starttime = gettime() + level.frameduration;
     scenenode.endtime = gettime();
-    scenenode.vehicleendtime = scenenode.starttime + getanimlength(level.scr_anim[vehicleRef][var_e99460bc50772002.var_e25d1d189177a7c]) * 1000;
+    scenenode.vehicleendtime = scenenode.starttime + getanimlength(level.scr_anim[vehicleref][var_e99460bc50772002.var_e25d1d189177a7c]) * 1000;
     if (scenenode.vehicleendtime > scenenode.endtime) {
         scenenode.endtime = scenenode.vehicleendtime;
     }
@@ -84,7 +84,7 @@ function function_66c684fea143fbfd(vehicleRef, spawndata, var_ee8da5624236dc89) 
     if (scenenode.carrierendtime > scenenode.endtime) {
         scenenode.endtime = scenenode.carrierendtime;
     }
-    scenenode thread function_c4f85850fb179639(vehicleRef, spawndata, var_ee8da5624236dc89, var_e99460bc50772002);
+    scenenode thread function_c4f85850fb179639(vehicleref, spawndata, var_ee8da5624236dc89, var_e99460bc50772002);
     vehicle = spawndata waittill("spawn");
     return vehicle;
 }
@@ -93,7 +93,7 @@ function function_66c684fea143fbfd(vehicleRef, spawndata, var_ee8da5624236dc89) 
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x60f
 // Size: 0x2a6
-function private function_c4f85850fb179639(vehicleRef, spawndata, var_ee8da5624236dc89, var_e99460bc50772002) {
+function private function_c4f85850fb179639(vehicleref, spawndata, var_ee8da5624236dc89, var_e99460bc50772002) {
     namespace_bc4a4b9456315863::anim_first_frame_solo(self.vehicle, var_e99460bc50772002.var_e25d1d189177a7c);
     namespace_bc4a4b9456315863::anim_first_frame_solo(self.parachute, var_e99460bc50772002.var_e25d1d189177a7c);
     namespace_bc4a4b9456315863::anim_first_frame_solo(self.carrier, var_e99460bc50772002.var_e25d1d189177a7c);
@@ -116,7 +116,7 @@ function private function_c4f85850fb179639(vehicleRef, spawndata, var_ee8da56242
     }
     while (gettime() <= self.endtime) {
         if (!isdefined(self.vehicle) || gettime() >= self.vehicleendtime) {
-            thread function_b708213b1c5dc2a8(vehicleRef, self.vehicle, spawndata, var_ee8da5624236dc89, var_e99460bc50772002);
+            thread function_b708213b1c5dc2a8(vehicleref, self.vehicle, spawndata, var_ee8da5624236dc89, var_e99460bc50772002);
         }
         if (isdefined(self.parachute) && gettime() >= self.parachuteendtime) {
             self.parachute delete();
@@ -126,7 +126,7 @@ function private function_c4f85850fb179639(vehicleRef, spawndata, var_ee8da56242
         }
         waitframe();
     }
-    function_b708213b1c5dc2a8(vehicleRef, self.vehicle, spawndata, var_ee8da5624236dc89, var_e99460bc50772002);
+    function_b708213b1c5dc2a8(vehicleref, self.vehicle, spawndata, var_ee8da5624236dc89, var_e99460bc50772002);
     if (isdefined(self.parachute)) {
         self.parachute delete();
     }
@@ -140,7 +140,7 @@ function private function_c4f85850fb179639(vehicleRef, spawndata, var_ee8da56242
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8bc
 // Size: 0x1af
-function private function_b708213b1c5dc2a8(vehicleRef, var_d41b7d5f40f6a360, spawndata, var_ee8da5624236dc89, var_e99460bc50772002) {
+function private function_b708213b1c5dc2a8(vehicleref, var_d41b7d5f40f6a360, spawndata, var_ee8da5624236dc89, var_e99460bc50772002) {
     self.vehicle = undefined;
     if (!isdefined(var_d41b7d5f40f6a360)) {
         return;
@@ -150,21 +150,21 @@ function private function_b708213b1c5dc2a8(vehicleRef, var_d41b7d5f40f6a360, spa
     spawndata.origin = var_d41b7d5f40f6a360.origin;
     spawndata.angles = var_d41b7d5f40f6a360.angles;
     var_d41b7d5f40f6a360 delete();
-    if (namespace_3c37cb17ade254d::issharedfuncdefined(vehicleRef, "spawnPostAirdrop")) {
-        vehicle = [[ namespace_3c37cb17ade254d::getsharedfunc(vehicleRef, "spawnPostAirdrop") ]](spawndata, var_ee8da5624236dc89);
+    if (namespace_3c37cb17ade254d::issharedfuncdefined(vehicleref, "spawnPostAirdrop")) {
+        vehicle = [[ namespace_3c37cb17ade254d::getsharedfunc(vehicleref, "spawnPostAirdrop") ]](spawndata, var_ee8da5624236dc89);
     } else {
-        vehicle = vehicle_spawn(vehicleRef, spawndata, var_ee8da5624236dc89);
+        vehicle = vehicle_spawn(vehicleref, spawndata, var_ee8da5624236dc89);
     }
     spawndata.origin = originalorigin;
     spawndata.angles = originalangles;
     spawndata notify("spawn", vehicle);
     if (isdefined(var_e99460bc50772002.var_150b11a4da8461bc)) {
-        endtime = gettime() + getanimlength(level.scr_anim[vehicleRef][var_e99460bc50772002.var_150b11a4da8461bc]) * 1000;
+        endtime = gettime() + getanimlength(level.scr_anim[vehicleref][var_e99460bc50772002.var_150b11a4da8461bc]) * 1000;
         if (endtime > self.endtime) {
             self.endtime = endtime;
         }
         vehicle.var_9882cd795c6bfaa = 1;
-        vehicle.animname = vehicleRef;
+        vehicle.animname = vehicleref;
         vehicle vehphys_forcekeyframedmotion();
         thread namespace_bc4a4b9456315863::anim_single_solo(vehicle, var_e99460bc50772002.var_150b11a4da8461bc);
         while (gettime() <= endtime) {

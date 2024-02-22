@@ -539,8 +539,8 @@ function private function_eec8d5bb79fb6ed5(var_3bdadc2ea30c31ba) {
         function_8de891d666db43b1("Global POI rules are being skipped as POI system is disabled");
         return spawns;
     }
-    foreach (poiName in level.var_dbb3dd5ab77ccd48) {
-        var_6ee9e5b5db0d84d3 = [[ getsharedfunc("poi", "try_TranslatePOI") ]](poiName);
+    foreach (poiname in level.var_dbb3dd5ab77ccd48) {
+        var_6ee9e5b5db0d84d3 = [[ getsharedfunc("poi", "try_TranslatePOI") ]](poiname);
         spawns = spawns function_25e8de075f034dd6(var_3bdadc2ea30c31ba, var_6ee9e5b5db0d84d3);
     }
     return spawns;
@@ -550,9 +550,9 @@ function private function_eec8d5bb79fb6ed5(var_3bdadc2ea30c31ba) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b16
 // Size: 0xe4
-function private function_25e8de075f034dd6(var_3bdadc2ea30c31ba, poiName) {
+function private function_25e8de075f034dd6(var_3bdadc2ea30c31ba, poiname) {
     spawns = self;
-    var_a9280bc89e48389a = function_3e38027e10bb939c(poiName);
+    var_a9280bc89e48389a = function_3e38027e10bb939c(poiname);
     if (!isdefined(var_a9280bc89e48389a) || var_a9280bc89e48389a.size == 0) {
         return spawns;
     }
@@ -560,12 +560,12 @@ function private function_25e8de075f034dd6(var_3bdadc2ea30c31ba, poiName) {
     var_e7fee629fee1b87f = var_c00a326249963ab5[1];
     spawns = var_c00a326249963ab5[0];
     if (isdefined(var_3bdadc2ea30c31ba.var_48b973d2a7eb9e64)) {
-        var_e7fee629fee1b87f = var_e7fee629fee1b87f function_c54881e0e112bd31(var_a9280bc89e48389a, poiName, var_3bdadc2ea30c31ba.var_48b973d2a7eb9e64);
+        var_e7fee629fee1b87f = var_e7fee629fee1b87f function_c54881e0e112bd31(var_a9280bc89e48389a, poiname, var_3bdadc2ea30c31ba.var_48b973d2a7eb9e64);
     }
     var_e7fee629fee1b87f = var_e7fee629fee1b87f function_569aa5d713ef47b4(var_a9280bc89e48389a, function_53c4c53197386572(var_3bdadc2ea30c31ba.var_48d9abd529d9d920, -1));
     var_e7fee629fee1b87f = var_e7fee629fee1b87f function_b9019dc0e88433a6(function_53c4c53197386572(var_3bdadc2ea30c31ba.var_295277097b7b81ea, -1));
     spawns = function_d1e45146e40968b9(spawns, var_e7fee629fee1b87f);
-    spawns function_ae3769c411d239f2("POI Global Single - " + poiName);
+    spawns function_ae3769c411d239f2("POI Global Single - " + poiname);
     return spawns;
 }
 
@@ -1345,9 +1345,9 @@ function private function_7a0a1c8e4051f836(key) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x3cba
 // Size: 0x7c
-function private function_3e38027e10bb939c(poiName) {
+function private function_3e38027e10bb939c(poiname) {
     var_ba65cde5d4b25523 = [];
-    var_52ab1aeee35c08cf = function_7a0a1c8e4051f836(poiName);
+    var_52ab1aeee35c08cf = function_7a0a1c8e4051f836(poiname);
     if (!isdefined(var_52ab1aeee35c08cf)) {
         return var_ba65cde5d4b25523;
     }

@@ -253,7 +253,7 @@ function function_1d7362315a15c932(data) {
     if (isdefined(self.damagetaken) && self.damagetaken >= 100) {
         if (!isdefined(self.owner) || namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker)) {
             attacker notify("destroyed_equipment");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
             attacker namespace_25c5a6f43bb97b43::equipmentdestroyed(self);
         }
         function_7a3c1b282cbfd3ab(data);
@@ -271,7 +271,7 @@ function function_14e878fafff171e9(data) {
     }
     if (!isdefined(self.owner) || namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker) || getdvarint(@"hash_58254c61de76bffe", 0)) {
         attacker notify("destroyed_equipment");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_6408c284f316c1d9");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_6408c284f316c1d9");
         attacker namespace_25c5a6f43bb97b43::equipmentdestroyed(self);
     }
     function_7a3c1b282cbfd3ab(data);
@@ -339,7 +339,7 @@ function function_1ebb9b9e63a4df54(point, var_ede169ee001cb3cf) {
         thread namespace_e4a5fcd525f0b19b::create_smoke_occluder(point, 18);
     }
     if (self.index == 1) {
-        self.owner thread namespace_48a08c5037514e04::doScoreEvent(#"super_smoke_airdrop");
+        self.owner thread namespace_48a08c5037514e04::doscoreevent(#"super_smoke_airdrop");
     }
     self playsound("iw9_smoke_airdrop_release");
     if (self.playsmokesound) {

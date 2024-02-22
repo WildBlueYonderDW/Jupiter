@@ -647,7 +647,7 @@ function updatedefaultflinchreduction() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3693
 // Size: 0x16a
-function ammodisabling_run(victim, isThrowStar) {
+function ammodisabling_run(victim, isthrowstar) {
     victim notify("disablingRun");
     victim endon("disablingRun");
     victim endon("disconnect");
@@ -657,17 +657,17 @@ function ammodisabling_run(victim, isThrowStar) {
         victim weapons::updatemovespeedscale();
         victim ammodisabling_impair();
     }
-    if (isThrowStar) {
+    if (isthrowstar) {
         timer = 0.4;
     } else {
         timer = 0.2;
     }
-    if (!istrue(isThrowStar) && victim _hasperk("specialty_frangible_resist")) {
+    if (!istrue(isthrowstar) && victim _hasperk("specialty_frangible_resist")) {
         timer = timer * (1 + getdvarfloat(@"hash_47984606bec7ddf7", -0.5));
     }
     currtime = gettime();
-    if (!isdefined(victim.var_329bc9067b9f8ac) || currtime - victim.var_329bc9067b9f8ac > 200 || isThrowStar) {
-        if (isThrowStar) {
+    if (!isdefined(victim.var_329bc9067b9f8ac) || currtime - victim.var_329bc9067b9f8ac > 200 || isthrowstar) {
+        if (isthrowstar) {
             duration = 0.4;
         } else {
             duration = 0.2;
@@ -761,9 +761,9 @@ function setaffinityextralauncher() {
         self setweaponammoclip(secondary, weaponclipsize(secondary));
     }
     if (istrue(level.var_9e090a159cb48220)) {
-        var_438edf4dc4298007 = weapon::buildweapon(self.loadoutTertiary, self.var_494870a5978b5a09, self.var_3e736d45cb66f421, self.var_447fa1cd172712ef, self.var_86f93e739d85e483);
-        if (weapon::getweapongroup(var_438edf4dc4298007.basename) == "weapon_projectile") {
-            self setweaponammoclip(var_438edf4dc4298007, weaponclipsize(var_438edf4dc4298007));
+        tertiary = weapon::buildweapon(self.loadouttertiary, self.var_494870a5978b5a09, self.loadouttertiarycamo, self.loadouttertiaryreticle, self.loadouttertiaryvariantid);
+        if (weapon::getweapongroup(tertiary.basename) == "weapon_projectile") {
+            self setweaponammoclip(tertiary, weaponclipsize(tertiary));
         }
     }
 }
@@ -982,7 +982,7 @@ function applystunresistence(attacker, victim, time) {
         }
         if (istrue(namespace_e47104b48662385b::playersareenemies(var_c52ffaed35e604dd, var_f2ae11d4d6442540))) {
             victim challenges::resistedstun(var_c52ffaed35e604dd);
-            perks::activatePerk("specialty_tac_resist");
+            perks::activateperk("specialty_tac_resist");
         }
     } else if (!istrue(victim val::get("stunned"))) {
         time = 0;
@@ -1313,7 +1313,7 @@ function unsetsteelnerves() {
 // Checksum 0x0, Offset: 0x45a8
 // Size: 0x34
 function setdelaymine() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self.var_f19a8bf0b538aaf8 = 1;
         self.var_8eaa5f2e840b1665 = 1;
         self.var_f8332be8e65d2142 = level.delayminetime;
@@ -1325,7 +1325,7 @@ function setdelaymine() {
 // Checksum 0x0, Offset: 0x45e3
 // Size: 0x2a
 function unsetdelaymine() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self.var_f19a8bf0b538aaf8 = undefined;
         self.var_8eaa5f2e840b1665 = undefined;
         self.var_f8332be8e65d2142 = undefined;
@@ -1337,7 +1337,7 @@ function unsetdelaymine() {
 // Checksum 0x0, Offset: 0x4614
 // Size: 0x13
 function setlocaljammer() {
-    if (namespace_595aac1b2bf891fc::is_empd()) {
+    if (emp_debuff::is_empd()) {
         self makescrambler();
     }
 }
@@ -4048,7 +4048,7 @@ function outlinekillstreaks_enablemarksafterprematch() {
     self endon("disconnect");
     flags::gameflagwait("prematch_done");
     dist = 1000000;
-    if (game_utility::isBRStyleGameType()) {
+    if (game_utility::isbrstylegametype()) {
         dist = 1000;
     }
     if (perk::_hasperk("specialty_tactician")) {
@@ -4094,7 +4094,7 @@ function engineer_enablemarksafterprematch() {
     self endon("disconnect");
     flags::gameflagwait("prematch_done");
     dist = 1000000;
-    if (game_utility::isBRStyleGameType()) {
+    if (game_utility::isbrstylegametype()) {
         dist = 1000;
     }
     if (isdefined(self)) {
@@ -4977,7 +4977,7 @@ function startgpsjammer() {
     self.timesincelastweaponfire = 0;
     thread ghostadvanceduavwatcher();
     bundle = level.var_a1ad2758fcbd2f5e["specialty_ghost"];
-    if (istrue(game_utility::isBRStyleGameType())) {
+    if (istrue(game_utility::isbrstylegametype())) {
         minspeed = getdvarint(@"hash_884bab3a224ed6f0", 65);
         thread function_d32c8e85d6e01e4b(minspeed);
     } else if (isdefined(bundle) && istrue(bundle.var_33c678397e625e15)) {
@@ -5080,7 +5080,7 @@ function checkforghostweaponfire() {
 function ghostadvanceduavwatcher() {
     self endon("death_or_disconnect");
     self endon("remove_gpsjammer");
-    var_498a2226e5aa47ee = game_utility::isBRStyleGameType();
+    var_498a2226e5aa47ee = game_utility::isbrstylegametype();
     if (var_498a2226e5aa47ee) {
         self setplayeradvanceduavdot(1);
         return;
@@ -6526,7 +6526,7 @@ function proximityrevive(player, var_d72d6d8c00a1b78f, reviveent) {
     if (isdefined(reviveent)) {
         reviveent.trigger hide();
         reviveent.trigger makeunusable();
-        reviveent teamRevive::revivetriggerholdonusebegin(self, 1);
+        reviveent teamrevive::revivetriggerholdonusebegin(self, 1);
     } else if (isdefined(player.laststandreviveent)) {
         player.laststandreviveent hide();
         player.laststandreviveent makeunusable();
@@ -6551,8 +6551,8 @@ function proximityrevive(player, var_d72d6d8c00a1b78f, reviveent) {
     if (istrue(player.inlaststand)) {
         player notify("last_stand_revived");
     } else {
-        reviveent teamRevive::revivetriggerholdonuseend(self.team, self, 1, 1);
-        reviveent teamRevive::revivetriggerholdonuse(self);
+        reviveent teamrevive::revivetriggerholdonuseend(self.team, self, 1, 1);
+        reviveent teamrevive::revivetriggerholdonuse(self);
     }
 }
 
@@ -6569,7 +6569,7 @@ function watchproximityrevivefail(player, var_d72d6d8c00a1b78f, reviveent) {
     if (isdefined(reviveent)) {
         reviveent.trigger show();
         reviveent.trigger makeusable();
-        reviveent teamRevive::revivetriggerholdonuseend(team, self, 0, 1);
+        reviveent teamrevive::revivetriggerholdonuseend(team, self, 0, 1);
     }
     if (isdefined(player)) {
         player player::setbeingrevivedinternal(0);
@@ -6677,7 +6677,7 @@ function setgasgrenaderesist() {
     if (namespace_e47104b48662385b::_isalive()) {
         return;
     }
-    namespace_77f66abf6de75883::gas_updateplayereffects();
+    gas_grenade::gas_updateplayereffects();
 }
 
 // Namespace namespace_30a6d7a07831c1e2/namespace_282db5a41b643e19
@@ -6688,7 +6688,7 @@ function unsetgasgrenaderesist() {
     if (namespace_e47104b48662385b::_isalive()) {
         return;
     }
-    namespace_77f66abf6de75883::gas_updateplayereffects();
+    gas_grenade::gas_updateplayereffects();
 }
 
 // Namespace namespace_30a6d7a07831c1e2/namespace_282db5a41b643e19
@@ -6738,9 +6738,9 @@ function regendelayreduce_onkill() {
     playfxontagforclients(fx, self, "tag_eye", self);
     if (self.health < 100) {
         if (_hasperk("specialty_compression_carrier")) {
-            perks::activatePerk("specialty_compression_carrier");
+            perks::activateperk("specialty_compression_carrier");
         } else {
-            perks::activatePerk("specialty_quick_fix");
+            perks::activateperk("specialty_quick_fix");
         }
     }
     thread regendelayreduce_delayedregen();
@@ -6835,7 +6835,7 @@ function updatereduceregendelayonobjective(var_8ae15d07ca991755) {
             playfxontagforclients(fx, self, "tag_eye", self);
             self.isonobjective = 1;
             perk::giveperk("specialty_regen_delay_reduced");
-            activatePerk("specialty_quick_fix");
+            activateperk("specialty_quick_fix");
         }
     } else if (istrue(self.isonobjective)) {
         self.isonobjective = 0;
@@ -6944,7 +6944,7 @@ function rechargeequipment_updateslot(player, slot) {
     if (isdefined(level.gamemodeoverriderestockrechargeperupdate)) {
         var_f4f42766799eae36 = level.gamemodeoverriderestockrechargeperupdate;
     } else {
-        var_f4f42766799eae36 = utility::ter_op(game_utility::isBRStyleGameType(), 0.01, 0.02);
+        var_f4f42766799eae36 = utility::ter_op(game_utility::isbrstylegametype(), 0.01, 0.02);
     }
     if (slot == "secondary" && ammo < ammomax && startammo > 1) {
         state.progress[slot] = state.progress[slot] + var_f4f42766799eae36 * 2;
@@ -7420,7 +7420,7 @@ function unsetbettermissionrewards() {
 // Checksum 0x0, Offset: 0xe1d3
 // Size: 0x1a
 function setspecialistbonus() {
-    if (!game_utility::isBRStyleGameType()) {
+    if (!game_utility::isbrstylegametype()) {
         self setclientomnvar("ui_specialist_bonus_active", 1);
     }
 }
@@ -7430,7 +7430,7 @@ function setspecialistbonus() {
 // Checksum 0x0, Offset: 0xe1f4
 // Size: 0x19
 function unsetspecialistbonus() {
-    if (!game_utility::isBRStyleGameType()) {
+    if (!game_utility::isbrstylegametype()) {
         self setclientomnvar("ui_specialist_bonus_active", 0);
     }
 }
@@ -7526,7 +7526,7 @@ function unsetsurvivor() {
 // Checksum 0x0, Offset: 0xe2f0
 // Size: 0xe1
 function function_17f9b8d5579b7e98() {
-    if (game_utility::isBRStyleGameType()) {
+    if (game_utility::isbrstylegametype()) {
         if (getdvarint(@"hash_8c032d1b63113ba0", 0) != 0) {
             return;
         }
@@ -7560,7 +7560,7 @@ function function_66f0cbd5ff8458fe() {
     if (!isdefined(var_d3c112e63bf53ee5)) {
         return 0;
     }
-    if (level.allowsupers && !game_utility::isBRStyleGameType()) {
+    if (level.allowsupers && !game_utility::isbrstylegametype()) {
         return 1;
     }
     if (!istrue(self.var_678855513f5076ca)) {
@@ -7583,7 +7583,7 @@ function function_448448ac4206d715() {
     if (isdefined(self.var_491f93d0219d8d44) && self.var_491f93d0219d8d44 > 1) {
         self.var_491f93d0219d8d44 = self.var_491f93d0219d8d44 - 1;
     }
-    if (game_utility::isBRStyleGameType()) {
+    if (game_utility::isbrstylegametype()) {
         if (isdefined(supers::getcurrentsuper())) {
             supers::function_8c7b1312cf5986b(0);
             if (supers::getcurrentsuperpoints() < supers::getsuperpointsneeded()) {
@@ -8106,17 +8106,17 @@ function function_de6e36b06bd630c4(pickupent, var_7f437a5779c8787c, var_db943473
         }
         if (var_a86307ef44894749 == pickupent.count) {
             pickupent.count = 0;
-            armor::setArmorHealth(var_7ab9a8f132665d68);
+            armor::setarmorhealth(var_7ab9a8f132665d68);
             return 0;
         } else if (var_a86307ef44894749 < pickupent.count) {
             pickupent.count = pickupent.count - var_a86307ef44894749;
-            armor::setArmorHealth(var_7ab9a8f132665d68);
+            armor::setarmorhealth(var_7ab9a8f132665d68);
             var_10bbeacb1429824e = br_pickups::takeequipmentpickup(pickupent, var_7f437a5779c8787c, var_db943473454f6ea6, var_44ee85dcf52b4001);
             return var_10bbeacb1429824e;
         } else {
             var_7349319252d8e770 = min(pickupent.count * var_29f26361d277c4c8, var_7ab9a8f132665d68);
             pickupent.count = 0;
-            armor::setArmorHealth(var_7349319252d8e770);
+            armor::setarmorhealth(var_7349319252d8e770);
             return 0;
         }
     } else {
@@ -8143,11 +8143,11 @@ function function_c5d5909e07c87005(armor) {
             var_a86307ef44894749 = ceil(var_aed59370e8ac080f / var_29f26361d277c4c8);
         }
         if (var_a86307ef44894749 == 1) {
-            armor::setArmorHealth(var_7ab9a8f132665d68);
+            armor::setarmorhealth(var_7ab9a8f132665d68);
             return 1;
         } else {
             var_7349319252d8e770 = min(var_29f26361d277c4c8, var_7ab9a8f132665d68);
-            armor::setArmorHealth(var_7349319252d8e770);
+            armor::setarmorhealth(var_7349319252d8e770);
             return 1;
         }
     }
@@ -8310,7 +8310,7 @@ function function_9cea3e4ea6fbe3d7() {
 // Checksum 0x0, Offset: 0xf978
 // Size: 0x1c
 function function_af3d35751dfd4e79() {
-    if (game_utility::isBRStyleGameType()) {
+    if (game_utility::isbrstylegametype()) {
         return undefined;
     } else {
         return [0:"specialty_expanded_minimap"];
@@ -8536,7 +8536,7 @@ function function_4ca1864c4b501d86() {
 function function_f307e70927a22f9e() {
     self.var_42294cc94c3bf2c3 = &function_4ca1864c4b501d86;
     self.var_cc09658e840807ae = 1;
-    namespace_f8d3520d3483c1::function_cf547d762189deaa(1);
+    namespace_f8d3520d3483c1::setarmoromnvars(1);
 }
 
 // Namespace namespace_30a6d7a07831c1e2/namespace_282db5a41b643e19
@@ -8546,7 +8546,7 @@ function function_f307e70927a22f9e() {
 function function_618d9ea3d5fd1a77() {
     self.var_42294cc94c3bf2c3 = undefined;
     self.var_cc09658e840807ae = undefined;
-    namespace_f8d3520d3483c1::function_cf547d762189deaa(1);
+    namespace_f8d3520d3483c1::setarmoromnvars(1);
 }
 
 // Namespace namespace_30a6d7a07831c1e2/namespace_282db5a41b643e19
@@ -9095,7 +9095,7 @@ function function_2ecdf54199c3435d() {
             }
             var_d0ae85b60ec1f5f7 = namespace_ede58c1e66c2c280::calloutmarkerping_createcallout(6, self.var_c140bf1d7f29d341.origin + (0, 0, 50));
             thread namespace_ede58c1e66c2c280::function_9a7200f5142066ba(self, var_d0ae85b60ec1f5f7, undefined, [0:"unset_perk_taccom", 1:"disconnect"], bundle.var_84d180cfd1b00a40);
-            perks::activatePerk("specialty_taccom_system");
+            perks::activateperk("specialty_taccom_system");
             self.var_d82e94d7c3c73fb = undefined;
             self.var_3a394cc3ef43fb5e.player[num] = var_f5518f46a56b505b;
             self.var_3a394cc3ef43fb5e.cooldown[num] = gettime() + bundle.var_3430721118ed09d0;
@@ -9154,12 +9154,12 @@ function function_f660aecf9c2aeec6(bundle, var_34aba8d62374a55b) {
 // Checksum 0x0, Offset: 0x11012
 // Size: 0xdc
 function function_acd8e1bf3a604aea(player, enemypos, playerpos, var_10e9894dc0eb9765, bundle) {
-    fromPlayer = enemypos - playerpos;
-    dot = vectordot(fromPlayer, var_10e9894dc0eb9765);
+    fromplayer = enemypos - playerpos;
+    dot = vectordot(fromplayer, var_10e9894dc0eb9765);
     if (dot <= 0) {
         return 0;
     }
-    var_a2585110d07faeb8 = length(fromPlayer);
+    var_a2585110d07faeb8 = length(fromplayer);
     var_a4b3b596dcf9790c = bundle.var_50ea6089f0e95fe1;
     var_a4b3b596dcf9790c = var_a4b3b596dcf9790c + bundle.var_90d691af1d7be5e6 * sqrt(var_a2585110d07faeb8);
     var_b6b1cd24e33b485f = math::degrees_to_radians(var_a4b3b596dcf9790c);
@@ -9205,7 +9205,7 @@ function function_5ab8f9c4d813c44a() {
 // Checksum 0x0, Offset: 0x11190
 // Size: 0xf
 function function_5790c8111baf94d3() {
-    namespace_b6a8027f477010e1::activatePerk("specialty_compression_carrier");
+    namespace_b6a8027f477010e1::activateperk("specialty_compression_carrier");
 }
 
 // Namespace namespace_30a6d7a07831c1e2/namespace_282db5a41b643e19
@@ -10039,7 +10039,7 @@ function function_1f47f1ac1c444ef2() {
 // Size: 0x3d
 function function_9ab9afce9ddf23d3() {
     var_5b097bde4417d7ad = "jup_mp_bone_conduction";
-    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isbrstylegametype();
     if (istrue(var_fdd4cb56c3b978a3)) {
         var_5b097bde4417d7ad = "wz_mp_bone_conduction";
     }
@@ -10052,7 +10052,7 @@ function function_9ab9afce9ddf23d3() {
 // Size: 0x3d
 function function_f4981401b60aff4e() {
     var_5b097bde4417d7ad = "jup_mp_bone_conduction";
-    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isbrstylegametype();
     if (istrue(var_fdd4cb56c3b978a3)) {
         var_5b097bde4417d7ad = "wz_mp_bone_conduction";
     }
@@ -10391,7 +10391,7 @@ function private function_2348d57e12fccb7c() {
 // Checksum 0x0, Offset: 0x138bb
 // Size: 0x25
 function setblastshield() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self.var_567daf189be4de79 = getdvarint(@"hash_23a1060a2b94c0ad", 1);
     }
 }
@@ -10401,7 +10401,7 @@ function setblastshield() {
 // Checksum 0x0, Offset: 0x138e7
 // Size: 0x16
 function unsetblastshield() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self.var_567daf189be4de79 = undefined;
     }
 }

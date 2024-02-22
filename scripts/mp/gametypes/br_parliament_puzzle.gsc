@@ -76,7 +76,7 @@ function _codecomputerscriptableused(instance, part, state, player, var_a5b2c541
             wait(3);
             instance setscriptablepartstate("maphint_computer", "on");
         } else {
-            player namespace_99ac021a7547cae3::function_e636e108dffe6ab7();
+            player namespace_99ac021a7547cae3::playerhasmoved();
             instance setscriptablepartstate("maphint_computer", "off");
             playsoundatpos(instance.origin, "stadium_computer_code_start");
             wait(2);

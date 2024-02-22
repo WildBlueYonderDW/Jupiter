@@ -549,7 +549,7 @@ function function_6ed101071f87cd39() {
             yellow = (1, 1, 0);
             green = (0, 1, 0);
             size = 1;
-            var_dcf5e15c58c4152a = "<unknown string>";
+            agenttype = "<unknown string>";
             viewpos = level.players[0] getvieworigin();
             scale = utility::function_5a18f19c457e5d1a(self.origin, viewpos, 1200);
             if (scale < 2) {
@@ -557,10 +557,10 @@ function function_6ed101071f87cd39() {
                 space = space * scale;
             }
             if (isdefined(self.agent_type)) {
-                var_dcf5e15c58c4152a = var_dcf5e15c58c4152a + "<unknown string>" + self.agent_type;
+                agenttype = agenttype + "<unknown string>" + self.agent_type;
             }
-            if (var_dcf5e15c58c4152a.size > 0) {
-                print3d(self.origin - (0, 0, count * space), var_dcf5e15c58c4152a, white, 1, size);
+            if (agenttype.size > 0) {
+                print3d(self.origin - (0, 0, count * space), agenttype, white, 1, size);
                 count++;
             }
             var_ba4f0da211b259e6 = "<unknown string>";

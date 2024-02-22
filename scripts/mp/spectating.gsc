@@ -341,7 +341,7 @@ function setspectatepermissions(gameended) {
             }
         }
     }
-    var_929fd4bdfabd747b = privatematch() && namespace_36f464722d326bbe::function_beff479639e6508();
+    var_929fd4bdfabd747b = privatematch() && namespace_36f464722d326bbe::isbrstylegametype();
     /#
         if (getdvarint(@"hash_f7fccc8ff6925d24", 0) != 0) {
             var_929fd4bdfabd747b = 1;

@@ -12,9 +12,9 @@
 #using script_548072087c9fd504;
 #using scripts\mp\gamelogic.gsc;
 
-#namespace gameStateRestore;
+#namespace gamestaterestore;
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b7
 // Size: 0x9e
@@ -40,7 +40,7 @@ function setupcallbacks() {
     }
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25c
 // Size: 0x43
@@ -56,7 +56,7 @@ function function_e366f768381eb363() {
     }
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0xcf
@@ -79,7 +79,7 @@ function function_c197c8f84a75b476(player) {
     }
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37d
 // Size: 0xba
@@ -101,7 +101,7 @@ function function_a5d40ec6023315a0(playername) {
     }
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43e
 // Size: 0x3e
@@ -116,7 +116,7 @@ function function_3433ff82f51bce6d() {
     game["gameStateRestoreAlreadyUsed"] = 1;
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x483
 // Size: 0xa3
@@ -134,7 +134,7 @@ function function_9505807477b46fa4(playername) {
     return 0;
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52e
 // Size: 0xc4
@@ -161,7 +161,7 @@ function function_bc001c2ebd383fff() {
     level thread namespace_d576b6dc7cef9c62::function_236fb1c819bcd1f();
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f9
 // Size: 0x9c
@@ -174,7 +174,7 @@ function function_cc67f138614157c4(gamestate) {
     setteamscore("axis", gamestate.var_e861f99f136bd454);
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69c
 // Size: 0x93
@@ -189,7 +189,7 @@ function function_9f5611f9df9b6bee(gamestate) {
     game["match_kills"][var_8613c2b22b0116a5] = gamestate.var_c56813d5326a9d1b;
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x736
 // Size: 0xe3
@@ -213,7 +213,7 @@ function function_bc22a4311e741bb3(player, playerdata) {
     function_eb800ab2be810565(player, playerdata);
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x820
 // Size: 0x1f6
@@ -253,7 +253,7 @@ function function_252c1ad767a7a83c(player, playerdata) {
     }
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa1d
 // Size: 0x70
@@ -264,7 +264,7 @@ function function_d0e691079192c053(player, playerdata) {
     return var_57304761143d03ed;
 }
 
-// Namespace gameStateRestore/namespace_78664ff0ec715b75
+// Namespace gamestaterestore/namespace_78664ff0ec715b75
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa95
 // Size: 0x69

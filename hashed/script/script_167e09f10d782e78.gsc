@@ -76,7 +76,7 @@ function function_35671b7b1a04bf58(bot) {
             break;
         } else if (result == "bad_path") {
             /#
-                println("<unknown string>" + self.var_a0185a724941f02f.name + "<unknown string>" + targetpos + "<unknown string>" + bot.origin);
+                println("<unknown string>" + self.decision.name + "<unknown string>" + targetpos + "<unknown string>" + bot.origin);
             #/
             bot namespace_e3ef90d32ac66277::function_6ecf7023ef123ba0(target.entnum);
             return result;

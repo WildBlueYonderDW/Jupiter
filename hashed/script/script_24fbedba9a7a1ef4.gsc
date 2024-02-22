@@ -262,7 +262,7 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
         }
     }
     if (isdefined(sweapon) && !sweapon issilenced()) {
-        function_350cf0db9f5e0cbe(self, "lastNonSilencedDamageTime", gettime());
+        agentpers_setagentpersdata(self, "lastNonSilencedDamageTime", gettime());
     }
     if (isbulletdamage(smeansofdeath) && isalive(evictim)) {
         function_216c67ab6749137a(evictim, undefined, "wounded");
@@ -435,8 +435,8 @@ function function_b8c245105cc37f9e(objweapon) {
     var_b7057b2bc6bb0b4b = getdvarint(@"hash_a5eac9a0f544c3cf", 1);
     if (istrue(var_b7057b2bc6bb0b4b)) {
         if (isdefined(objweapon) && isdefined(objweapon.basename)) {
-            var_c7a4725d05bb7f22 = function_e2292dcf63eccf7a(self, "tier");
-            var_88732a0a3c17be02 = function_e2292dcf63eccf7a(self, "category");
+            var_c7a4725d05bb7f22 = agentpers_getagentpersdata(self, "tier");
+            var_88732a0a3c17be02 = agentpers_getagentpersdata(self, "category");
             if (isdefined(var_88732a0a3c17be02) && var_88732a0a3c17be02 != "bosses" && isdefined(var_c7a4725d05bb7f22)) {
                 switch (objweapon.basename) {
                 case #"hash_91a48ebfd2d03a40":

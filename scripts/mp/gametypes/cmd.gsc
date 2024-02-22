@@ -1164,12 +1164,12 @@ function dompoint_holdtimer(team, var_22282e7d48ca3400) {
             level.inobjectiveot = 0;
         }
     }
-    giveScore = 0;
+    givescore = 0;
     newindex = level.currentobjectiveindex;
     if (team == game["attackers"]) {
         newindex--;
         if (level.currentobjectiveindex <= level.midpointobjectiveindex) {
-            giveScore = 1;
+            givescore = 1;
             if (level.currentobjective.tierindex == 1) {
                 spawnjuggcate(team, "attacker");
                 spawnjuggcate(getotherteam(team)[0], "defender");
@@ -1182,7 +1182,7 @@ function dompoint_holdtimer(team, var_22282e7d48ca3400) {
     } else {
         newindex++;
         if (level.currentobjectiveindex >= level.midpointobjectiveindex) {
-            giveScore = 1;
+            givescore = 1;
             if (level.currentobjective.tierindex == 1) {
                 spawnjuggcate(team, "attacker");
                 spawnjuggcate(getotherteam(team)[0], "defender");
@@ -1193,7 +1193,7 @@ function dompoint_holdtimer(team, var_22282e7d48ca3400) {
             }
         }
     }
-    if (0 && giveScore) {
+    if (0 && givescore) {
         giveteamscoreforobjective(team, 1, 0);
     }
     if (self.tierindex == 0) {
@@ -2928,39 +2928,39 @@ function setupcaptureflares() {
     embassy[embassy.size] = spawnflare((235, -3655, -35), (0, 50, 0));
     embassy[embassy.size] = spawnflare((230, -3575, -35), (0, -40, 0));
     level.objectives["0"].scriptables = embassy;
-    var_c6d814e0881ae02d = [];
-    var_c6d814e0881ae02d[var_c6d814e0881ae02d.size] = spawnflare((-457, -2006, 204), (0, 331, 0), 0);
-    var_c6d814e0881ae02d[var_c6d814e0881ae02d.size] = spawnflare((-31, -1915, 192), (45, 48, 0), 0);
-    var_c6d814e0881ae02d[var_c6d814e0881ae02d.size] = spawnflare((-319, -1706, 209), (0, 130, 0), 0);
-    var_c6d814e0881ae02d[var_c6d814e0881ae02d.size] = spawnflare((-545, -1805, 207), (0, 130, 0), 0);
-    var_c6d814e0881ae02d[var_c6d814e0881ae02d.size] = spawnflare((-302, -2137, 152), (0, 234, 0));
-    level.objectives["1"].scriptables = var_c6d814e0881ae02d;
-    var_795b157300bac466 = [];
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((420, -23, 17), (5, 208, 0));
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((458, 59, 109), (0, 342, 0), 0);
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((380, -267, 17), (0, 186, 0));
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((210, 126, 18), (5, 125, 0));
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((675, 118, 18), (0, 41, 0));
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((638, -180, 18), (5, 356, 0));
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((417, 105, 69), (75, 285, 0), 0);
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((426, -177, 17), (5, 73, 0), 0);
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((509, -116, 69), (55, 82, 0), 0);
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((331, 60, 63), (0, 309, 0), 0);
-    var_795b157300bac466[var_795b157300bac466.size] = spawnflare((578, 65, 62), (40, 197, 0), 0);
-    level.objectives["2"].scriptables = var_795b157300bac466;
-    var_30d3159bb07f7330 = [];
-    var_30d3159bb07f7330[var_30d3159bb07f7330.size] = spawnflare((812, 2074, 222), (35, 326, 0), 0);
-    var_30d3159bb07f7330[var_30d3159bb07f7330.size] = spawnflare((431, 1882, 241), (5, 86, 0), 0);
-    var_30d3159bb07f7330[var_30d3159bb07f7330.size] = spawnflare((762, 2333, 226), (15, 345, 0), 0);
-    var_30d3159bb07f7330[var_30d3159bb07f7330.size] = spawnflare((609, 1861, 223), (65, 339, 0), 0);
-    var_30d3159bb07f7330[var_30d3159bb07f7330.size] = spawnflare((580, 2150, 212), (0, 272, 0), 0);
-    level.objectives["3"].scriptables = var_30d3159bb07f7330;
-    var_4a375f2e6d9448f8 = [];
-    var_4a375f2e6d9448f8[var_4a375f2e6d9448f8.size] = spawnflare((1300, 3335, 12), (0, 40, 0));
-    var_4a375f2e6d9448f8[var_4a375f2e6d9448f8.size] = spawnflare((1305, 3430, -2), (0, -47, 0));
-    var_4a375f2e6d9448f8[var_4a375f2e6d9448f8.size] = spawnflare((1430, 3435, -3), (0, -135, 0));
-    var_4a375f2e6d9448f8[var_4a375f2e6d9448f8.size] = spawnflare((1430, 3350, 3), (0, 140, 0));
-    level.objectives["4"].scriptables = var_4a375f2e6d9448f8;
+    school = [];
+    school[school.size] = spawnflare((-457, -2006, 204), (0, 331, 0), 0);
+    school[school.size] = spawnflare((-31, -1915, 192), (45, 48, 0), 0);
+    school[school.size] = spawnflare((-319, -1706, 209), (0, 130, 0), 0);
+    school[school.size] = spawnflare((-545, -1805, 207), (0, 130, 0), 0);
+    school[school.size] = spawnflare((-302, -2137, 152), (0, 234, 0));
+    level.objectives["1"].scriptables = school;
+    clocktower = [];
+    clocktower[clocktower.size] = spawnflare((420, -23, 17), (5, 208, 0));
+    clocktower[clocktower.size] = spawnflare((458, 59, 109), (0, 342, 0), 0);
+    clocktower[clocktower.size] = spawnflare((380, -267, 17), (0, 186, 0));
+    clocktower[clocktower.size] = spawnflare((210, 126, 18), (5, 125, 0));
+    clocktower[clocktower.size] = spawnflare((675, 118, 18), (0, 41, 0));
+    clocktower[clocktower.size] = spawnflare((638, -180, 18), (5, 356, 0));
+    clocktower[clocktower.size] = spawnflare((417, 105, 69), (75, 285, 0), 0);
+    clocktower[clocktower.size] = spawnflare((426, -177, 17), (5, 73, 0), 0);
+    clocktower[clocktower.size] = spawnflare((509, -116, 69), (55, 82, 0), 0);
+    clocktower[clocktower.size] = spawnflare((331, 60, 63), (0, 309, 0), 0);
+    clocktower[clocktower.size] = spawnflare((578, 65, 62), (40, 197, 0), 0);
+    level.objectives["2"].scriptables = clocktower;
+    warehouse = [];
+    warehouse[warehouse.size] = spawnflare((812, 2074, 222), (35, 326, 0), 0);
+    warehouse[warehouse.size] = spawnflare((431, 1882, 241), (5, 86, 0), 0);
+    warehouse[warehouse.size] = spawnflare((762, 2333, 226), (15, 345, 0), 0);
+    warehouse[warehouse.size] = spawnflare((609, 1861, 223), (65, 339, 0), 0);
+    warehouse[warehouse.size] = spawnflare((580, 2150, 212), (0, 272, 0), 0);
+    level.objectives["3"].scriptables = warehouse;
+    compound = [];
+    compound[compound.size] = spawnflare((1300, 3335, 12), (0, 40, 0));
+    compound[compound.size] = spawnflare((1305, 3430, -2), (0, -47, 0));
+    compound[compound.size] = spawnflare((1430, 3435, -3), (0, -135, 0));
+    compound[compound.size] = spawnflare((1430, 3350, 3), (0, 140, 0));
+    level.objectives["4"].scriptables = compound;
     if (getdvarint(@"hash_424c014a94392d1", 0) == 1) {
         thread debugcaptureflares();
     }
@@ -3161,7 +3161,7 @@ function awardcapturepoints() {
         }
         if (!self.stalemate) {
             foreach (object in self.touchlist[team]) {
-                object.player thread doScoreEvent(#"hash_b70d7c404342b807");
+                object.player thread doscoreevent(#"hash_b70d7c404342b807");
             }
         }
     }

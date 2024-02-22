@@ -69,7 +69,7 @@ function br_ending_init() {
     case #"hash_18208461fac4f35e":
     case #"hash_ce37a6540166b6f7":
         namespace_ab7fb53f62c7ae2e::function_d32f459ab9f5e7af();
-        namespace_75ba454ed5255c2::chopperHQExfil_init();
+        namespace_75ba454ed5255c2::chopperhqexfil_init();
         break;
     case #"hash_8e482dd76314929c":
         namespace_ab7fb53f62c7ae2e::function_d32f459ab9f5e7af();
@@ -334,7 +334,7 @@ function play_ending(winners, var_cbfc3ba10cefc8ce) {
                         light linkto(rig.linkent, var_2b16b22ac076fda4, origin_offset, angles_offset);
                     }
                 }
-                animstruct thread fadeRunner(pack);
+                animstruct thread faderunner(pack);
                 if (isdefined(pack.var_437b6bb41d98df26)) {
                     animstruct.cam dontinterpolate();
                     animstruct thread anim_single_solo(animstruct.cam, pack.anime);
@@ -345,7 +345,7 @@ function play_ending(winners, var_cbfc3ba10cefc8ce) {
                                 goto LOC_00000dca;
                             }
                         #/
-                        player function_33010a90bcf48db4(pack.var_437b6bb41d98df26, 0, animstruct.origin, animstruct.angles, undefined, undefined, level.var_319696a4503e0e48);
+                        player playxcam(pack.var_437b6bb41d98df26, 0, animstruct.origin, animstruct.angles, undefined, undefined, level.var_319696a4503e0e48);
                     LOC_00000dca:
                     }
                     var_8355076d4ed3fc96 = function_4358b309fdcc6d44(pack.var_437b6bb41d98df26);
@@ -441,7 +441,7 @@ function function_9d9d6ecb7d1fd8e3(animstruct) {
         if (isdefined(animstruct.cam)) {
             animstruct.cam delete();
         }
-        animstruct stopFadeRunner();
+        animstruct stopfaderunner();
     }
     function_cf47ab3f9defe35b();
     allplayers_clearphysicaldof();
@@ -484,7 +484,7 @@ function function_9d9d6ecb7d1fd8e3(animstruct) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d09
 // Size: 0x27
-function stopFadeRunner() {
+function stopfaderunner() {
     self notify("stopFadeRunner");
     if (isdefined(self.fadeoverlay)) {
         self.fadeoverlay destroy();
@@ -495,7 +495,7 @@ function stopFadeRunner() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d37
 // Size: 0x275
-function fadeRunner(pack) {
+function faderunner(pack) {
     self notify("fadeRunner");
     self endon("fadeRunner");
     self endon("stopFadeRunner");
@@ -742,7 +742,7 @@ function player_equipment_use_stop() {
         namespace_1fbd40990ee60ede::vehicle_occupancy_ejectalloccupants(self.vehicle);
     }
     if (namespace_1f188a13f7e79610::function_a164fb69837475d5()) {
-        namespace_1f188a13f7e79610::function_c2d52509bd96dc18();
+        namespace_1f188a13f7e79610::exitexternalturret();
     }
     if (self function_9cc921a57ff4deb5()) {
         namespace_80cec6cfc70c4f95::function_fd357ca89e5e29d9();

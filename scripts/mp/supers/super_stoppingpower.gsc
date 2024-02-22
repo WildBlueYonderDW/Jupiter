@@ -100,7 +100,7 @@ function stoppingpower_beginuse() {
                         self setweaponammoclip(weaponobj, clipammo + var_971f8e0abbcafab8);
                     } else {
                         self setweaponammoclip(weaponobj, 0);
-                        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+                        if (namespace_36f464722d326bbe::isbrstylegametype()) {
                             var_e074b618e47255fe = var_5b3f7d686c59ab97 - stockammo;
                             namespace_3bcd40a3005712ec::br_give_weapon_ammo(weaponobj, var_e074b618e47255fe);
                         } else {

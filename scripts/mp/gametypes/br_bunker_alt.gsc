@@ -248,7 +248,7 @@ function _keypadscriptableused_bunkeralt(instance, part, state, player, var_a5b2
         return;
     }
     /#
-        if (!namespace_36f464722d326bbe::isBRStyleGameType() && getdvarint(@"hash_af01339226d5da59", 0)) {
+        if (!namespace_36f464722d326bbe::isbrstylegametype() && getdvarint(@"hash_af01339226d5da59", 0)) {
             iprintlnbold("off");
             openaltbunker(instance);
             return;

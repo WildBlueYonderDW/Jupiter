@@ -9,11 +9,11 @@
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x115
 // Size: 0xfc
-function function_8df651a1b2728b15(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
-    var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", var_2a169c65850e1a47);
+function function_8df651a1b2728b15(blueprintname, var_5dc27a5bf459c504) {
+    var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
     if (!isdefined(var_5a0f9e1af605f0f5)) {
         /#
-            errortext = "<unknown string>" + var_2a169c65850e1a47 + "<unknown string>";
+            errortext = "<unknown string>" + blueprintname + "<unknown string>";
             iprintln(errortext);
         #/
         return undefined;
@@ -28,7 +28,7 @@ function function_8df651a1b2728b15(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
         }
     }
     /#
-        errortext = "<unknown string>" + var_5dc27a5bf459c504 + "<unknown string>" + var_2a169c65850e1a47 + "<unknown string>";
+        errortext = "<unknown string>" + var_5dc27a5bf459c504 + "<unknown string>" + blueprintname + "<unknown string>";
         iprintln(errortext);
     #/
     return undefined;
@@ -38,11 +38,11 @@ function function_8df651a1b2728b15(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x219
 // Size: 0xfc
-function function_b9ff4b6230995332(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
-    var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", var_2a169c65850e1a47);
+function function_b9ff4b6230995332(blueprintname, var_5dc27a5bf459c504) {
+    var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
     if (!isdefined(var_5a0f9e1af605f0f5)) {
         /#
-            errortext = "<unknown string>" + var_2a169c65850e1a47 + "<unknown string>";
+            errortext = "<unknown string>" + blueprintname + "<unknown string>";
             iprintln(errortext);
         #/
         return undefined;
@@ -57,7 +57,7 @@ function function_b9ff4b6230995332(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
         }
     }
     /#
-        errortext = "<unknown string>" + var_5dc27a5bf459c504 + "<unknown string>" + var_2a169c65850e1a47 + "<unknown string>";
+        errortext = "<unknown string>" + var_5dc27a5bf459c504 + "<unknown string>" + blueprintname + "<unknown string>";
         iprintln(errortext);
     #/
     return undefined;
@@ -91,11 +91,11 @@ function getassetlist(bundle, assettype) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c9
 // Size: 0x119
-function function_29e16a88682086b2(var_2a169c65850e1a47, assettype, key) {
-    var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", var_2a169c65850e1a47);
+function function_29e16a88682086b2(blueprintname, assettype, key) {
+    var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
     if (!isdefined(var_5a0f9e1af605f0f5)) {
         /#
-            errortext = "<unknown string>" + var_2a169c65850e1a47 + "<unknown string>";
+            errortext = "<unknown string>" + blueprintname + "<unknown string>";
             iprintln(errortext);
         #/
         return undefined;
@@ -111,7 +111,7 @@ function function_29e16a88682086b2(var_2a169c65850e1a47, assettype, key) {
         }
     }
     /#
-        errortext = "<unknown string>" + assettype + "<unknown string>" + key + "<unknown string>" + var_2a169c65850e1a47 + "<unknown string>";
+        errortext = "<unknown string>" + assettype + "<unknown string>" + key + "<unknown string>" + blueprintname + "<unknown string>";
         iprintln(errortext);
     #/
     return undefined;
@@ -154,9 +154,9 @@ function function_b9bd0a3d37510bfd(weaponname, var_85b2a5343fc91ccb, attachmentn
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x638
 // Size: 0x1ad
-function function_dd2a4fb3522f314(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
-    if (isdefined(var_2a169c65850e1a47) && isdefined(var_5dc27a5bf459c504)) {
-        var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", var_2a169c65850e1a47);
+function function_dd2a4fb3522f314(blueprintname, var_5dc27a5bf459c504) {
+    if (isdefined(blueprintname) && isdefined(var_5dc27a5bf459c504)) {
+        var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
         var_49f9de7947f961eb = undefined;
         foreach (var_8030b649c10983c7 in var_5a0f9e1af605f0f5.weaponlist) {
             if (var_8030b649c10983c7.key == var_5dc27a5bf459c504) {
@@ -165,7 +165,7 @@ function function_dd2a4fb3522f314(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
             }
         }
         if (!isdefined(var_49f9de7947f961eb)) {
-            error("could not find weaponIndex for generic blueprint " + var_2a169c65850e1a47);
+            error("could not find weaponIndex for generic blueprint " + blueprintname);
             return;
         }
         weaponname = ter_op(var_49f9de7947f961eb.weapon != "", var_49f9de7947f961eb.weapon, undefined);
@@ -174,10 +174,10 @@ function function_dd2a4fb3522f314(var_2a169c65850e1a47, var_5dc27a5bf459c504) {
         var_1fe8655c442492dc = ter_op(var_49f9de7947f961eb.var_61a3f233cfd1669f != "", var_49f9de7947f961eb.var_61a3f233cfd1669f, undefined);
         return function_b9bd0a3d37510bfd(weaponname, var_85b2a5343fc91ccb, attachmentname, var_1fe8655c442492dc);
     } else {
-        if (!isdefined(var_2a169c65850e1a47)) {
+        if (!isdefined(blueprintname)) {
             error("blueprintName not specified");
         }
-        if (!isdefined(var_2a169c65850e1a47)) {
+        if (!isdefined(blueprintname)) {
             error("weaponKey not specified");
         }
         return undefined;

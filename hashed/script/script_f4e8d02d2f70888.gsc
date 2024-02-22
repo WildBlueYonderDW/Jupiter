@@ -37,7 +37,7 @@ function addtosystem() {
     self.scriptedtalkingknob = asm_getxanim("knobs", asm_lookupanimfromalias("knobs", "scripted_talking"));
     self.defaulttalk = asm_getxanim("knobs", asm_lookupanimfromalias("knobs", "default_talking"));
     function_f9e1b676055cf38b();
-    thread aiThreadWaiter();
+    thread aithreadwaiter();
     self.chatinitialized = 1;
 }
 
@@ -258,7 +258,7 @@ function evaluateattackevent(weapon) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa7a
 // Size: 0x48
-function aiThreadWaiter() {
+function aithreadwaiter() {
     self endon("death");
     self endon("removed from battleChatter");
     self notify("aiThreadWaiter");

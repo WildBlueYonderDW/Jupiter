@@ -66,7 +66,7 @@ function hb_sensor_used(grenade) {
 // Checksum 0x0, Offset: 0x3fa
 // Size: 0x24
 function function_24b7c11c9ad5e1f8(objweapon) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         function_3f703abc99c1bb80();
     }
     thread function_323286bf3aa11fbb();
@@ -173,7 +173,7 @@ function function_3f703abc99c1bb80() {
 function function_c34b7f440bc57526() {
     if (utility::iscp()) {
         var_721eb48c0deeb426 = getdvarint(@"hash_952c250389735fd7", 1200);
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_721eb48c0deeb426 = getdvarint(@"hash_9566359f0d260f0b", 60);
     } else {
         var_721eb48c0deeb426 = getdvarint(@"hash_3d0928eec520c586", 600);
@@ -263,7 +263,7 @@ function function_83ef0926b5392999() {
             self function_720152d5d95e2d86();
         }
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self [[ utility::getsharedfunc("player", "resetSuper") ]]();
     }
 }

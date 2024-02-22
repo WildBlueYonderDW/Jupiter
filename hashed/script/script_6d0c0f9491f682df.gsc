@@ -623,13 +623,13 @@ function function_17cdeb7626afb432() {
 function function_416220a2493c9ec() {
     /#
         variantid = 0;
-        blueprintName = getdvar(@"hash_588557f97f081a7e");
-        weapon = getweaponrootname(blueprintName);
+        blueprintname = getdvar(@"hash_588557f97f081a7e");
+        weapon = getweaponrootname(blueprintname);
         weaponasset = undefined;
         if (isdefined(level.weaponmapdata[weapon])) {
             weaponasset = level.weaponmapdata[weapon].assetname;
         }
-        weaponblueprint = function_40fd49171fad19d3(blueprintName);
+        weaponblueprint = function_40fd49171fad19d3(blueprintname);
         if (isdefined(weaponasset)) {
             var_66b934a5d11560d7 = function_bb92a5000082832a(weaponasset);
             foreach (variant, id in var_66b934a5d11560d7) {

@@ -18,15 +18,15 @@ function function_93c0f40d62257166() {
     /#
         level thread function_d1d70c73f09a1540();
     #/
-    registersharedfunc("ob_golden_ammo", "set_goldenAmmo", &set_goldenAmmo);
-    registersharedfunc("ob_golden_ammo", "unset_goldenAmmo", &unset_goldenAmmo);
+    registersharedfunc("ob_golden_ammo", "set_goldenAmmo", &set_goldenammo);
+    registersharedfunc("ob_golden_ammo", "unset_goldenAmmo", &unset_goldenammo);
 }
 
 // Namespace ob_golden_ammo/namespace_354cab17d5512c3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0x7f
-function set_goldenAmmo() {
+function set_goldenammo() {
     if (istrue(self.var_8902b4030fc972fc)) {
         if (istrue(self.var_b707cc18f0610df6)) {
             /#
@@ -60,7 +60,7 @@ function function_5b5c4a75d3003a7f() {
         if (function_b3698dc11254f342(newweapon)) {
             function_ea51eda9b53c4482();
         } else {
-            set_goldenAmmo();
+            set_goldenammo();
         }
         waitframe();
     }
@@ -70,7 +70,7 @@ function function_5b5c4a75d3003a7f() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x287
 // Size: 0x48
-function unset_goldenAmmo() {
+function unset_goldenammo() {
     self.var_8902b4030fc972fc = 0;
     self notify("golden_ammo_unset");
     self unsetperk("specialty_ammodrainsfromstockfirst", 1);
@@ -118,7 +118,7 @@ function function_b3698dc11254f342(weapon) {
 function function_7c7d7717c1af82bf(params) {
     /#
         foreach (player in level.players) {
-            player unset_goldenAmmo();
+            player unset_goldenammo();
         }
     #/
 }

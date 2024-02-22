@@ -30,7 +30,7 @@ function setupcallbacks() {
     namespace_7f0bcee5d45a1dea::add("game_ended", &ongameended);
     namespace_7f0bcee5d45a1dea::add("player_disconnect", &onplayerdisconnect);
     namespace_7f0bcee5d45a1dea::add("player_connect", &onplayerconnect);
-    if (isBRStyleGameType()) {
+    if (isbrstylegametype()) {
         level.adddroponplayerdeath = &function_3354140884867d15;
         level.var_d3fb932f0373554c = &function_c8958695acf2e1f1;
     } else {
@@ -48,7 +48,7 @@ function setupcallbacks() {
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("trophy_bank", &function_340f4f4118dcf7c3);
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("brloot_scorpion_trophy", &function_199f02943420e747);
     namespace_17c25f0877bfb620::scriptable_addautousecallback(&function_76c38f4af5d006ea);
-    namespace_76a219af07c28c13::registerTeamAssimilateCallback(&onteamchange);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&onteamchange);
     level thread function_4d7a0b09d5f48c13();
     if (isdefined(data())) {
         return;
@@ -450,7 +450,7 @@ function private function_d5e7a53fa83f629d() {
 // Checksum 0x0, Offset: 0x1707
 // Size: 0x42d
 function private function_cfb0bd180308a4ba(count, from, var_d849e5e65179d50b, origin, entnum, killer, type, dropstruct) {
-    if (!isdefined(dropstruct) && isBRStyleGameType()) {
+    if (!isdefined(dropstruct) && isbrstylegametype()) {
         /#
             assertmsg("Trying to spawn a trophy without a drop struct. This isn't allowed in BR");
         #/
@@ -461,7 +461,7 @@ function private function_cfb0bd180308a4ba(count, from, var_d849e5e65179d50b, or
     if (isdefined(from) && isent(from) && isplayer(from)) {
         mover = from getmovingplatformparent();
     }
-    if (isBRStyleGameType()) {
+    if (isbrstylegametype()) {
         var_50abd2e2174e8f51 = [];
         for (i = 0; i < count; i++) {
             if (isent(from)) {
@@ -528,7 +528,7 @@ function private function_cfb0bd180308a4ba(count, from, var_d849e5e65179d50b, or
 // Params 8, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b3b
 // Size: 0x14b
-function private function_128edf2232d31c50(origin, radius, entnum, trophies, type, var_d849e5e65179d50b, fromPlayer, mover) {
+function private function_128edf2232d31c50(origin, radius, entnum, trophies, type, var_d849e5e65179d50b, fromplayer, mover) {
     if (isdefined(mover)) {
         trigger = spawn("trigger_radius", origin, 0, radius, 35);
         trigger enablelinkto();
@@ -540,7 +540,7 @@ function private function_128edf2232d31c50(origin, radius, entnum, trophies, typ
     trigger.var_182d8860fac4c70b = trophies;
     trigger.entnum = entnum;
     trigger.type = type;
-    trigger.fromPlayer = fromPlayer;
+    trigger.fromplayer = fromplayer;
     trigger.var_d849e5e65179d50b = var_d849e5e65179d50b;
     foreach (trophy in trophies) {
         trophy.trigger = trigger;
@@ -564,12 +564,12 @@ function private watchtrigger() {
         if (isdefined(self.team) && ent.team == self.team) {
             if (self.var_d849e5e65179d50b > 0) {
                 data().var_de335d425ab8c9b0[self.entnum] = function_5bff4e2a3631e3e5(self.entnum, self.var_d849e5e65179d50b);
-                if (isdefined(self.fromPlayer)) {
-                    self.fromPlayer showsplash("scorpion_trophy_recovered");
-                    self.fromPlayer setclientomnvar("ui_scorpion_trophies_collected", data().var_de335d425ab8c9b0[self.entnum]);
+                if (isdefined(self.fromplayer)) {
+                    self.fromplayer showsplash("scorpion_trophy_recovered");
+                    self.fromplayer setclientomnvar("ui_scorpion_trophies_collected", data().var_de335d425ab8c9b0[self.entnum]);
                 }
             }
-            if (!isdefined(self.fromPlayer) || self.fromPlayer != ent) {
+            if (!isdefined(self.fromplayer) || self.fromplayer != ent) {
                 ent showsplash("scorpion_trophy_denied");
             }
             thread cleanup(1);
@@ -619,12 +619,12 @@ function private function_439f0781dbd8a339(num, type) {
     if (after > before) {
         self dlog_recordplayerevent(event, [0:"count", 1:after - before]);
         self setclientomnvar("ui_scorpion_trophies_collected", after);
-        thread namespace_48a08c5037514e04::doScoreEvent(#"hash_ccb945806d13fd43");
+        thread namespace_48a08c5037514e04::doscoreevent(#"hash_ccb945806d13fd43");
         var_9164e8cfb80749ff = function_644b35bc4f205dcb();
         splash = undefined;
         if (var_9164e8cfb80749ff == data().maxcount) {
             self dlog_recordplayerevent("dlog_event_scorpion_limit_reached", [0:"limit", 1:data().maxcount]);
-            if (isBRStyleGameType()) {
+            if (isbrstylegametype()) {
                 if (namespace_cd0b2d039510b38d::getsubgametype() == "plunder") {
                     splash = "scorpion_trophy_collected_plunder_max";
                 } else {
@@ -633,7 +633,7 @@ function private function_439f0781dbd8a339(num, type) {
             } else {
                 splash = "scorpion_trophy_collected_core_max";
             }
-        } else if (isBRStyleGameType()) {
+        } else if (isbrstylegametype()) {
             if (namespace_cd0b2d039510b38d::getsubgametype() == "plunder") {
                 splash = "scorpion_trophy_collected_plunder";
             } else {
@@ -690,7 +690,7 @@ function private function_4c65595e68db285c() {
     if (issharedfuncdefined("challenges", "reportChallengeUserSerializedEventWrapper")) {
         function_f3bb4f4911a1beb2("challenges", "reportChallengeUserSerializedEventWrapper", var_a7a6077754bbc2f8, params);
     }
-    thread namespace_48a08c5037514e04::doScoreEvent(#"hash_d7637699e926cbc6");
+    thread namespace_48a08c5037514e04::doscoreevent(#"hash_d7637699e926cbc6");
     if (!isdefined(data().var_eb3be366abc17855[entnum])) {
         data().var_eb3be366abc17855[entnum] = 0;
     }
@@ -775,7 +775,7 @@ function private showsplash(splash) {
     }
     self.var_d072e417b4cd76a = gettime() + 1000;
     if (namespace_cd0b2d039510b38d::getsubgametype() == "dmz") {
-        namespace_d696adde758cbe79::showDMZSplash(splash, [0:self]);
+        namespace_d696adde758cbe79::showdmzsplash(splash, [0:self]);
     } else {
         thread namespace_44abc05161e2e2cb::showsplash(splash, undefined, undefined, undefined, 1);
     }
@@ -822,7 +822,7 @@ function private isvalidplayer(player) {
 // Checksum 0x0, Offset: 0x2717
 // Size: 0x9
 function private function_f5681f11e80e8dd6() {
-    return isBRStyleGameType();
+    return isbrstylegametype();
 }
 
 // Namespace namespace_d09b27d6534a97c/namespace_d856b08ddfedc495
@@ -830,7 +830,7 @@ function private function_f5681f11e80e8dd6() {
 // Checksum 0x0, Offset: 0x2728
 // Size: 0xa
 function private function_8efd0a6812869ea2() {
-    return !isBRStyleGameType();
+    return !isbrstylegametype();
 }
 
 // Namespace namespace_d09b27d6534a97c/namespace_d856b08ddfedc495
@@ -838,7 +838,7 @@ function private function_8efd0a6812869ea2() {
 // Checksum 0x0, Offset: 0x273a
 // Size: 0x12
 function private function_950cde7e875198d1() {
-    return ter_op(isBRStyleGameType(), 2, 0);
+    return ter_op(isbrstylegametype(), 2, 0);
 }
 
 // Namespace namespace_d09b27d6534a97c/namespace_d856b08ddfedc495

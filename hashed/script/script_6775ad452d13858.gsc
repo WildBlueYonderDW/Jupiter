@@ -403,9 +403,9 @@ function function_396b82c66e727528(operatorref) {
 function function_c0d1f4a038f29b6b(operatorref, var_962ef6817910ec78) {
     function_c1fb26911511dc66();
     if (isdefined(level.var_c1a0b417f098e70c[operatorref])) {
-        skinRefs = level.var_c1a0b417f098e70c[operatorref];
-        if (var_962ef6817910ec78 >= 0 && var_962ef6817910ec78 < skinRefs.size) {
-            return skinRefs[var_962ef6817910ec78];
+        skinrefs = level.var_c1a0b417f098e70c[operatorref];
+        if (var_962ef6817910ec78 >= 0 && var_962ef6817910ec78 < skinrefs.size) {
+            return skinrefs[var_962ef6817910ec78];
         }
     }
     return undefined;

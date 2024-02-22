@@ -143,13 +143,13 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(11, 1);
         } else if (var_9d0123af024e86ac) {
             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
             attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(11, 1);
             thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
         }
     } else if (var_229449cfd54fdc5b) {
         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
         attacker incpersstat("defends", 1);
         attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(11, 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
@@ -175,9 +175,9 @@ function isonobjective() {
 // Checksum 0x0, Offset: 0x1961
 // Size: 0x45
 function function_8974f2acabebbc99() {
-    registersharedfunc("robj", "removeExistingCaptureBot", &removeExistingCaptureBot);
-    registersharedfunc("robj", "setUpNewCaptureBot", &setUpNewCaptureBot);
-    registersharedfunc("robj", "identifyObjTypForCaptureBot", &identifyObjTypForCaptureBot);
+    registersharedfunc("robj", "removeExistingCaptureBot", &removeexistingcapturebot);
+    registersharedfunc("robj", "setUpNewCaptureBot", &setupnewcapturebot);
+    registersharedfunc("robj", "identifyObjTypForCaptureBot", &identifyobjtypforcapturebot);
 }
 
 // Namespace robj/namespace_8312845506590779
@@ -343,16 +343,16 @@ function function_169f34c107ca9253() {
         waitframe();
     }
     level.var_80bce1fe9a035033 function_cfd53c8f6878014f(player);
-    level.var_80bce1fe9a035033 thread questCircle_run_VO_hint_when_close(player);
+    level.var_80bce1fe9a035033 thread questcircle_run_vo_hint_when_close(player);
     namespace_cb9ef225b7a59984::function_e99ea42a85a85757(player);
-    level.var_80bce1fe9a035033 thread namespace_cb9ef225b7a59984::function_ff075be505a94c97(player);
+    level.var_80bce1fe9a035033 thread namespace_cb9ef225b7a59984::detectplayerinsidequestcircle(player);
     namespace_cb9ef225b7a59984::function_2d908d3021b52c73(player);
     while (1) {
         level waittill("new_robj_location");
         level.var_80bce1fe9a035033 function_cfd53c8f6878014f(player);
-        level.var_80bce1fe9a035033 thread questCircle_run_VO_hint_when_close(player);
+        level.var_80bce1fe9a035033 thread questcircle_run_vo_hint_when_close(player);
         namespace_cb9ef225b7a59984::function_e99ea42a85a85757(player);
-        level.var_80bce1fe9a035033 thread namespace_cb9ef225b7a59984::function_ff075be505a94c97(player);
+        level.var_80bce1fe9a035033 thread namespace_cb9ef225b7a59984::detectplayerinsidequestcircle(player);
         namespace_cb9ef225b7a59984::function_6b56d2c2eae0b9af(player);
         namespace_cb9ef225b7a59984::function_2d908d3021b52c73(player);
     }
@@ -362,7 +362,7 @@ function function_169f34c107ca9253() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2253
 // Size: 0xc4
-function questCircle_run_VO_hint_when_close(player) {
+function questcircle_run_vo_hint_when_close(player) {
     player notify("questCircle_run_VO_hint_when_close");
     player endon("questCircle_run_VO_hint_when_close");
     player endon("disconnect");
@@ -887,13 +887,13 @@ function onstartgametype() {
 function script_model_anims() {
     level.scr_animtree["uav_tower"] = %script_model;
     level.scr_anim["uav_tower"]["use_uav_tower_enter"] = script_model%jup_uav_tower_enter;
-    level.scr_eventanim["uav_tower"]["use_uav_tower_enter"] = %"hash_34961e320f3e0d3d";
+    level.scr_eventanim["uav_tower"]["use_uav_tower_enter"] = %"use_jup_uav_tower_enter";
     level.scr_viewmodelanim["uav_tower"]["use_uav_tower_enter"] = "jup_uav_tower_enter";
     level.scr_anim["uav_tower"]["use_uav_tower_idle"] = script_model%jup_uav_tower_idle;
-    level.scr_eventanim["uav_tower"]["use_uav_tower_idle"] = %"hash_57ddb7b9c7e45783";
+    level.scr_eventanim["uav_tower"]["use_uav_tower_idle"] = %"use_jup_uav_tower_idle";
     level.scr_viewmodelanim["uav_tower"]["use_uav_tower_idle"] = "jup_uav_tower_idle";
     level.scr_anim["uav_tower"]["use_uav_tower_exit"] = script_model%jup_uav_tower_exit;
-    level.scr_eventanim["uav_tower"]["use_uav_tower_exit"] = %"hash_ad7c0546f87e015";
+    level.scr_eventanim["uav_tower"]["use_uav_tower_exit"] = %"use_jup_uav_tower_exit";
     level.scr_viewmodelanim["uav_tower"]["use_uav_tower_exit"] = "jup_uav_tower_exit";
     level.scr_animtree["player_rig"] = %script_model;
     level.scr_anim["player_rig"]["interact"] = script_model%wm_eq_fusebox_plr;
@@ -1406,7 +1406,7 @@ function onenduse(team, player, result, var_67a1af11de175bf0, var_930163bad6941f
             }
         #/
         var_acff3f3a57ba37b7 = int(level.bombtimer * 1000 + gettime() - 1000);
-        namespace_cb9ef225b7a59984::function_f967b097b864afbb(team, var_acff3f3a57ba37b7, self.var_ec7886a87e5a6866);
+        namespace_cb9ef225b7a59984::startcapture(team, var_acff3f3a57ba37b7, self.var_ec7886a87e5a6866);
         bombzone function_9897b5b4ecf74ef3("timer", team);
         bombzone thread run_progress_event(team);
     } else {
@@ -1512,7 +1512,7 @@ function give_capture_credit(touchlist, capturetime, capture_team, lastcapturete
     level endon("game_ended");
     foreach (player in touchlist) {
         player thread namespace_62c556437da28f50::scoreeventpopup(#"capture");
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_194ad9a7fdb13341");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_194ad9a7fdb13341");
         player incpersstat("captures", 1);
         player namespace_2685ec368e022695::statsetchild("round", "captures", player.pers["captures"]);
         player setextrascore0(player.pers["captures"]);
@@ -1631,7 +1631,7 @@ function function_bd8563c34b78c85b(player) {
     if (!isdefined(level.var_e3ddcc4b9b3d02d6)) {
         level.var_e3ddcc4b9b3d02d6 = level.var_cb86ca442250ca58 - getanimlength(script_model%jup_uav_tower_enter);
     }
-    typingAnimStart(player);
+    typinganimstart(player);
     namespace_cb9ef225b7a59984::function_196cecf03f13202a(player);
     player thread function_b66f9aef33ae7f2d(level.var_e3ddcc4b9b3d02d6);
     thread function_667fd79f2b5d6436(player);
@@ -1703,7 +1703,7 @@ function function_667fd79f2b5d6436(player, capturetime) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c72
 // Size: 0x2ef
-function typingAnimStart(player) {
+function typinganimstart(player) {
     player endon("death_or_disconnect");
     player notify("typingAnimStart");
     player endon("typingAnimStart");
@@ -1830,14 +1830,14 @@ function setupobjectiveicons() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6134
 // Size: 0x65
-function setUpNewCaptureBot(CaptureBot) {
+function setupnewcapturebot(capturebot) {
     if (!isdefined(self.var_90e6c2c6f0b8bca9)) {
         self.var_90e6c2c6f0b8bca9 = [];
         self.var_3d9bcb6fd43a0b71 = 1;
-        self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = CaptureBot;
+        self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = capturebot;
         thread namespace_8312845506590779::function_e6fb1b719f5866f4();
     } else {
-        self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = CaptureBot;
+        self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = capturebot;
     }
 }
 
@@ -1879,17 +1879,17 @@ function function_e6fb1b719f5866f4() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x638c
 // Size: 0x27d
-function function_5b561a0406f5e84d(CaptureBot) {
+function function_5b561a0406f5e84d(capturebot) {
     self notify("successful_use_occurred");
-    self.var_69a1d34864447c09 = CaptureBot;
+    self.var_69a1d34864447c09 = capturebot;
     self.var_21aaad3fb9690b37 = 1;
-    function_b32fcab47ab8b6fa(CaptureBot.owner.team, self.trigger.script_noteworthy);
-    function_9897b5b4ecf74ef3("interaction", CaptureBot.owner.team);
-    if (!is_equal(self.ownerteam, "neutral") && !is_equal(CaptureBot.owner.team, self.ownerteam)) {
+    function_b32fcab47ab8b6fa(capturebot.owner.team, self.trigger.script_noteworthy);
+    function_9897b5b4ecf74ef3("interaction", capturebot.owner.team);
+    if (!is_equal(self.ownerteam, "neutral") && !is_equal(capturebot.owner.team, self.ownerteam)) {
         self.var_ec7886a87e5a6866 = 1;
         namespace_cb9ef225b7a59984::function_f83e9201f5f2aa6a();
     }
-    CaptureBot.owner setclientomnvar("ui_dmz_uav_tower_screen", 1);
+    capturebot.owner setclientomnvar("ui_dmz_uav_tower_screen", 1);
     self.cancel = 0;
     msg = waittill_any_timeout_2(level.var_2550904ae7eb2a1c * level.var_cb86ca442250ca58, "captureBot_hackCanceled", "captureBot_hackCanceled_playerHack");
     self.cancel = 1;
@@ -1897,10 +1897,10 @@ function function_5b561a0406f5e84d(CaptureBot) {
         self.var_69a1d34864447c09 = undefined;
         self.var_21aaad3fb9690b37 = 0;
     } else {
-        level thread namespace_44abc05161e2e2cb::notifyteam("jup_robj_securing", "jup_robj_securing_enemy", CaptureBot.owner.pers["team"], [0:CaptureBot.owner]);
-        CaptureBot.owner thread namespace_44abc05161e2e2cb::showsplash("jup_robj_securing", namespace_62c556437da28f50::getscoreinfovalue(#"plant"));
+        level thread namespace_44abc05161e2e2cb::notifyteam("jup_robj_securing", "jup_robj_securing_enemy", capturebot.owner.pers["team"], [0:capturebot.owner]);
+        capturebot.owner thread namespace_44abc05161e2e2cb::showsplash("jup_robj_securing", namespace_62c556437da28f50::getscoreinfovalue(#"plant"));
         if (isdefined(self.var_21aaad3fb9690b37) && self.var_21aaad3fb9690b37) {
-            onenduse(CaptureBot.owner.team, CaptureBot.owner, 1, 1, 1);
+            onenduse(capturebot.owner.team, capturebot.owner, 1, 1, 1);
         }
     }
     if (istrue(self.var_ec7886a87e5a6866) && msg != "captureBot_hackCanceled_playerHack") {
@@ -1919,7 +1919,7 @@ function function_5b561a0406f5e84d(CaptureBot) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6610
 // Size: 0xa4
-function removeExistingCaptureBot(CaptureBot) {
+function removeexistingcapturebot(capturebot) {
     if (isdefined(self.var_90e6c2c6f0b8bca9) && self.var_90e6c2c6f0b8bca9.size > 0) {
         if (self.var_90e6c2c6f0b8bca9.size == 1) {
             if (isdefined(self.var_3d9bcb6fd43a0b71)) {
@@ -1928,10 +1928,10 @@ function removeExistingCaptureBot(CaptureBot) {
             self.var_90e6c2c6f0b8bca9 = undefined;
             self.var_56bb845d40871824 = undefined;
         } else {
-            self.var_90e6c2c6f0b8bca9 = array_remove(self.var_90e6c2c6f0b8bca9, CaptureBot);
+            self.var_90e6c2c6f0b8bca9 = array_remove(self.var_90e6c2c6f0b8bca9, capturebot);
         }
     }
-    if (isdefined(self.var_69a1d34864447c09) && self.var_69a1d34864447c09 == CaptureBot) {
+    if (isdefined(self.var_69a1d34864447c09) && self.var_69a1d34864447c09 == capturebot) {
         self notify("captureBot_hackCanceled");
     }
 }
@@ -1957,7 +1957,7 @@ function function_a04638eb5da83e60() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6722
 // Size: 0x83
-function identifyObjTypForCaptureBot(objective) {
+function identifyobjtypforcapturebot(objective) {
     switch (objective.scriptable.model) {
     case #"hash_2829cec0816430af":
         return "tower";

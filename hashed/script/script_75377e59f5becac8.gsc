@@ -543,8 +543,8 @@ function private function_e139474e71a93fb0() {
     player = self;
     waittillframeend();
     var_dc6bf94dbaaa7056 = getmatchrulesdata("commonOption", "infilArmor");
-    infilReservePlates = getmatchrulesdata("commonOption", "infilReservePlates");
-    player namespace_f8d3520d3483c1::givestartingarmor(var_dc6bf94dbaaa7056, undefined, infilReservePlates);
+    infilreserveplates = getmatchrulesdata("commonOption", "infilReservePlates");
+    player namespace_f8d3520d3483c1::givestartingarmor(var_dc6bf94dbaaa7056, undefined, infilreserveplates);
 }
 
 // Namespace namespace_59982bac4da47c6f/namespace_56a3588493afc984
@@ -641,7 +641,7 @@ function function_c1e0d339c6959b81() {
     function_1696e6e3ac4a370a();
     function_7f3ad8fe6df1b8fe(1, level.infilstruct.players, "stateMachine");
     function_6199c35f4cf4524c(&function_6ee3f813b3c2d7af);
-    level.infilstruct.c130.animstruct namespace_ecab45ae367735ef::teleportToMovingPlane();
+    level.infilstruct.c130.animstruct namespace_ecab45ae367735ef::teleporttomovingplane();
     level.br_ac130 setscriptablepartstate("running_lights", "on");
     level.br_ac130 notify("start_moving");
 }
@@ -1758,7 +1758,7 @@ function private function_7e1bbc382ad810f9() {
     self endon("disconnect");
     self.br_isininfil = 0;
     self.br_infilstarted = 1;
-    isUIBot = namespace_d20f8ef223912e12::function_7dbb8165d792b06c();
+    isuibot = namespace_d20f8ef223912e12::function_7dbb8165d792b06c();
     if (!namespace_71073fa38f11492::isfeaturedisabled("squadLeader")) {
         teamplayers = getteamdata(self.team, "players");
         if (!isdefined(teamplayers) || teamplayers.size == 0) {
@@ -1795,11 +1795,11 @@ function private function_7e1bbc382ad810f9() {
     self visionsetnakedforplayer("", 1);
     namespace_d3d40f75bb4e4c32::function_64fa4c213439177f();
     if (!isalive(self)) {
-        if (getdvarint(@"hash_25ad2925d6075c8f", 0) == 2 && isbot(self) && !isUIBot) {
+        if (getdvarint(@"hash_25ad2925d6075c8f", 0) == 2 && isbot(self) && !isuibot) {
             self.jumped = 1;
             namespace_99ac021a7547cae3::addtoalivecount("lateSpawn");
         }
-        if (isUIBot) {
+        if (isuibot) {
             thread namespace_99ac021a7547cae3::spawnplayer(undefined, 0);
         } else {
             thread missedinfilplayerhandler();

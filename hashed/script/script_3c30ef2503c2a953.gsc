@@ -67,8 +67,8 @@ function watch_target_health() {
             continue;
         }
         tracestart = self geteye();
-        if (self GetCameraThirdPerson()) {
-            tracestart = self GetCameraThirdPersonOrigin();
+        if (self getcamerathirdperson()) {
+            tracestart = self getcamerathirdpersonorigin();
         }
         playerangles = self getplayerangles();
         var_898f508242fa99f6 = anglestoforward(playerangles);

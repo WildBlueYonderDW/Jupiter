@@ -670,9 +670,9 @@ function function_19dd797e5d48d987() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x21ce
 // Size: 0x4f
-function function_4f2bd7da634cba24(var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, var_12c0f53a71c9bcc8) {
+function function_4f2bd7da634cba24(var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, blueprintindex) {
     if (utility::issharedfuncdefined("supers", "giveSuper")) {
-        self [[ utility::getsharedfunc("supers", "giveSuper") ]](var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, var_12c0f53a71c9bcc8);
+        self [[ utility::getsharedfunc("supers", "giveSuper") ]](var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, blueprintindex);
     }
 }
 
@@ -773,7 +773,7 @@ function function_2d5a30d6fe54567b(skipsplash) {
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2442
 // Size: 0x5e
-function updateHitMarker_SharedFunc(var_e0ea2c8df06f13eb, var_d7198ceb7d51db5b, headshot, var_c4f1516c772b1c2d, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d) {
+function updatehitmarker_sharedfunc(var_e0ea2c8df06f13eb, var_d7198ceb7d51db5b, headshot, var_c4f1516c772b1c2d, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d) {
     return utility::function_f3bb4f4911a1beb2("hitmarker", "updateHitMarker_SharedFunc", var_e0ea2c8df06f13eb, var_d7198ceb7d51db5b, headshot, var_c4f1516c772b1c2d, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d);
 }
 
@@ -781,7 +781,7 @@ function updateHitMarker_SharedFunc(var_e0ea2c8df06f13eb, var_d7198ceb7d51db5b, 
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24a8
 // Size: 0x1d
-function updateDamageFeedback_SharedFunc(icontype) {
+function updatedamagefeedback_sharedfunc(icontype) {
     return utility::function_f3bb4f4911a1beb2("hitmarker", "updateDamageFeedback_SharedFunc", icontype);
 }
 
@@ -823,9 +823,9 @@ function function_507b98884b41cc8e() {
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x258d
 // Size: 0x89
-function function_e800498086e36c29(event, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, victim, var_51bdae03b05bc75e, var_30e33d4e4669117f, var_f459a13a227b8de6, streakinfo, var_827c276da1cdcf23) {
+function function_e800498086e36c29(event, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, victim, var_51bdae03b05bc75e, var_30e33d4e4669117f, cankillchain, streakinfo, var_827c276da1cdcf23) {
     if (utility::issharedfuncdefined("player", "doScoreEvent")) {
-        return [[ utility::getsharedfunc("player", "doScoreEvent") ]](event, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, victim, var_51bdae03b05bc75e, var_30e33d4e4669117f, var_f459a13a227b8de6, streakinfo, var_827c276da1cdcf23);
+        return [[ utility::getsharedfunc("player", "doScoreEvent") ]](event, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, victim, var_51bdae03b05bc75e, var_30e33d4e4669117f, cankillchain, streakinfo, var_827c276da1cdcf23);
     }
     return undefined;
 }
@@ -1227,9 +1227,9 @@ function function_f5e58b5375381386(var_f7b6cc6c062a7a43, var_f06b5c1ac51df6a6, v
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x3099
 // Size: 0x6b
-function function_f87529d7af4978b(streakname, source, var_352d315fc8a744ce, var_722764086bd2150d, var_e01ecd2f1ff85e28, var_546f4a2e8b131d3f, var_12c0f53a71c9bcc8) {
+function function_f87529d7af4978b(streakname, source, var_352d315fc8a744ce, var_722764086bd2150d, var_e01ecd2f1ff85e28, var_546f4a2e8b131d3f, blueprintindex) {
     if (utility::issharedfuncdefined("killstreak", "awardKillstreak")) {
-        self [[ utility::getsharedfunc("killstreak", "awardKillstreak") ]](streakname, source, var_352d315fc8a744ce, var_722764086bd2150d, var_e01ecd2f1ff85e28, var_546f4a2e8b131d3f, var_12c0f53a71c9bcc8);
+        self [[ utility::getsharedfunc("killstreak", "awardKillstreak") ]](streakname, source, var_352d315fc8a744ce, var_722764086bd2150d, var_e01ecd2f1ff85e28, var_546f4a2e8b131d3f, blueprintindex);
     }
 }
 
@@ -1533,7 +1533,7 @@ function function_1ae8c41da6a042c3(var_d74fc41b6b10ccf5) {
 // Params a, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36e5
 // Size: 0x72
-function onHumanoidAgentKilledCommon_SharedFunc(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, dropweapons) {
+function onhumanoidagentkilledcommon_sharedfunc(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, dropweapons) {
     return utility::function_f3bb4f4911a1beb2("ai", "onHumanoidAgentKilledCommon_SharedFunc", einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, dropweapons);
 }
 
@@ -1541,7 +1541,7 @@ function onHumanoidAgentKilledCommon_SharedFunc(einflictor, eattacker, idamage, 
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x375f
 // Size: 0x4a
-function spawnNewAIType_SharedFunc(aitype, position, angles, team, var_42e5c77b1d7fe6e7, gender) {
+function spawnnewaitype_sharedfunc(aitype, position, angles, team, var_42e5c77b1d7fe6e7, gender) {
     return utility::function_f3bb4f4911a1beb2("ai", "spawnNewAIType_SharedFunc", aitype, position, angles, team, var_42e5c77b1d7fe6e7, gender);
 }
 
@@ -1549,7 +1549,7 @@ function spawnNewAIType_SharedFunc(aitype, position, angles, team, var_42e5c77b1
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37b1
 // Size: 0x41
-function Animscripted_SharedFunc(anime, var_314c4455b996b224, org, var_8c94765ca587f86c, var_77afb968fbcb113) {
+function animscripted_sharedfunc(anime, var_314c4455b996b224, org, var_8c94765ca587f86c, var_77afb968fbcb113) {
     return utility::function_f3bb4f4911a1beb2("ai", "Animscripted_SharedFunc", anime, var_314c4455b996b224, org, var_8c94765ca587f86c, var_77afb968fbcb113);
 }
 
@@ -1557,7 +1557,7 @@ function Animscripted_SharedFunc(anime, var_314c4455b996b224, org, var_8c94765ca
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37fa
 // Size: 0x1d
-function get_aitype_by_subclass_SharedFunc(subclass) {
+function get_aitype_by_subclass_sharedfunc(subclass) {
     return utility::function_f3bb4f4911a1beb2("ai", "get_aitype_by_subclass_SharedFunc", subclass);
 }
 
@@ -1565,7 +1565,7 @@ function get_aitype_by_subclass_SharedFunc(subclass) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x381f
 // Size: 0x13
-function get_aitype_default_spawn_team_SharedFunc() {
+function get_aitype_default_spawn_team_sharedfunc() {
     return utility::function_f3bb4f4911a1beb2("ai", "get_aitype_default_spawn_team_SharedFunc");
 }
 
@@ -1573,7 +1573,7 @@ function get_aitype_default_spawn_team_SharedFunc() {
 // Params b, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x383a
 // Size: 0x7c
-function displayDamageNumber_SharedFunc(eattacker, var_11467c69aa950e0a, shitloc, smeansofdeath, sweapon, idamage, vpoint, var_da71c7321bc0a0f6, var_b1468c561460431e, var_14edc6d1db3695bc, var_feef4b237a6beb07) {
+function displaydamagenumber_sharedfunc(eattacker, var_11467c69aa950e0a, shitloc, smeansofdeath, sweapon, idamage, vpoint, var_da71c7321bc0a0f6, var_b1468c561460431e, var_14edc6d1db3695bc, var_feef4b237a6beb07) {
     return utility::function_f3bb4f4911a1beb2("ai", "displayDamageNumber_SharedFunc", eattacker, var_11467c69aa950e0a, shitloc, smeansofdeath, sweapon, idamage, vpoint, var_da71c7321bc0a0f6, var_b1468c561460431e, var_14edc6d1db3695bc, var_feef4b237a6beb07);
 }
 
@@ -1633,9 +1633,9 @@ function function_990cf49669e49965() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x39a9
 // Size: 0x46
-function function_f4927f5a7aa5c6ab(powerupname, spawnpos, lifetimeOverride) {
+function function_f4927f5a7aa5c6ab(powerupname, spawnpos, lifetimeoverride) {
     if (utility::issharedfuncdefined("powerups", "dropPowerup")) {
-        return self [[ utility::getsharedfunc("powerups", "dropPowerup") ]](powerupname, spawnpos, lifetimeOverride);
+        return self [[ utility::getsharedfunc("powerups", "dropPowerup") ]](powerupname, spawnpos, lifetimeoverride);
     }
 }
 

@@ -13,10 +13,10 @@ function function_69b64f047b0af1db(radius) {
     event.radius = radius;
     event.var_8fa87d2c8780e014 = radius * radius;
     event.result = [];
-    var_3c91684198954c83 = self.Mind.var_3c91684198954c83;
+    var_3c91684198954c83 = self.mind.var_3c91684198954c83;
     var_3c91684198954c83.var_61c0bf2e5d0b72d1 = event;
     var_3c91684198954c83.events[var_3c91684198954c83.events.size] = event;
-    if (!isdefined(level.Mind.events.var_cce0bdb14ad78af5)) {
+    if (!isdefined(level.mind.events.var_cce0bdb14ad78af5)) {
         result = [];
         for (i = 0; i < getlootspawnscriptableindexfirst(); i++) {
             var_db376ee90688810d = getscriptableinstancefromindex(i);
@@ -30,7 +30,7 @@ function function_69b64f047b0af1db(radius) {
                 result[idx].type = "ammo_restock";
             }
         }
-        level.Mind.events.var_cce0bdb14ad78af5 = result;
+        level.mind.events.var_cce0bdb14ad78af5 = result;
     }
 }
 
@@ -39,12 +39,12 @@ function function_69b64f047b0af1db(radius) {
 // Checksum 0x0, Offset: 0x21a
 // Size: 0x12f
 function function_7e7ddfa33eff2c11() {
-    event = self.Mind.var_3c91684198954c83.var_61c0bf2e5d0b72d1;
+    event = self.mind.var_3c91684198954c83.var_61c0bf2e5d0b72d1;
     if (!event.var_d0942e9d2044d6c6) {
         if (event.result.size > 0) {
             event.result = [];
         }
-        foreach (ammorestock in level.Mind.events.var_cce0bdb14ad78af5) {
+        foreach (ammorestock in level.mind.events.var_cce0bdb14ad78af5) {
             if (istrue(ammorestock.var_2a6f82a735950253)) {
                 continue;
             }

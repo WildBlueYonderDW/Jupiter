@@ -588,7 +588,7 @@ function on_ai_killed(params) {
         if (!isdefined(self.var_d37b75616f7c2ee)) {
             return;
         }
-        var_9b9dbc948c253172 = self.var_d37b75616f7c2ee.var_9b9dbc948c253172;
+        num_hits = self.var_d37b75616f7c2ee.num_hits;
         sweapon = self.var_d37b75616f7c2ee.sweapon;
         aicategory = self.aicategory;
         var_aaf0465944b061ed = self.var_aaf0465944b061ed;
@@ -599,7 +599,7 @@ function on_ai_killed(params) {
         if (!isdefined(aicategory) && var_aaf0465944b061ed == "warlord_kia") {
             aicategory = "boss";
         }
-        if (var_9b9dbc948c253172 == 1) {
+        if (num_hits == 1) {
             player.pers["telemetry"].one_shot_kills++;
         }
         if (vehicle_kill) {
@@ -781,7 +781,7 @@ function on_player_death(params) {
         }
         self dlog_recordplayerevent("dlog_event_ob_player_death", [0:"was_knocked", 1:0, 2:"was_killed", 3:1, 4:"was_revived", 5:0, 6:"location_x", 7:self.origin[0], 8:"location_y", 9:self.origin[1], 10:"location_z", 11:self.origin[2], 12:"difficulty", 13:var_73069b4add1e8094, 14:"attacker", 15:var_f17f74f4ddb3fd12]);
     }
-    squadmembers = squad_utility::getSquadMembers();
+    squadmembers = squad_utility::getsquadmembers();
     foreach (player in squadmembers) {
         if (isalive(player)) {
             return;

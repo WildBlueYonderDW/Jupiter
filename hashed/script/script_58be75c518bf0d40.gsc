@@ -19,7 +19,7 @@ function function_c9406922e0267f09() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x58
-function getSquadMembers(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
+function getsquadmembers(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
     if (!isdefined(var_68bb1f110ec06a58) && !(isdefined(self) && isdefined(self.team))) {
         return [];
     }
@@ -51,7 +51,7 @@ function shouldmodesetsquads() {
     if (isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.issquadmode)) {
         return issquadmode();
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (istrue(namespace_3c37cb17ade254d::function_f3bb4f4911a1beb2("teamAssim", "isEnabled"))) {
             var_14babd7bb6a93112 = namespace_3c37cb17ade254d::function_f3bb4f4911a1beb2("teamAssim", "getMaxAssimilationTeamSize");
             return (isdefined(var_14babd7bb6a93112) && var_14babd7bb6a93112 > 1);
@@ -92,7 +92,7 @@ function function_a9cb1bbce9eb3d1b() {
     if (isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.var_597e7a2e7fd129b)) {
         return 1;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "rumble_mgl") {
             return 0;
         } else if (getdvarint(@"hash_80ba0c604a8e46f3", 0) == 1) {
@@ -135,7 +135,7 @@ function function_6b09c63febc4655c(team, index) {
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0x39
 function function_9b1d18c04d310cfc(player1, player2) {
-    var_95cd83fc3f6a06a0 = player1 getSquadMembers(player1.team);
+    var_95cd83fc3f6a06a0 = player1 getsquadmembers(player1.team);
     return array_contains(var_95cd83fc3f6a06a0, player2);
 }
 

@@ -766,7 +766,7 @@ function function_1c6d73d1832aefd6(players, player_rigs) {
                 self.var_437b6bb41d98df26 = pack.var_437b6bb41d98df26;
                 self.var_65c40a3d7dcd8ca3 = gettime();
                 if (var_b5b3f37d2c2ec7ef) {
-                    level.players[0] playXcam(pack.var_437b6bb41d98df26, 0, self.origin, self.angles);
+                    level.players[0] playxcam(pack.var_437b6bb41d98df26, 0, self.origin, self.angles);
                     self.var_1384d8bd817f644 = 1;
                 }
                 wait(var_8355076d4ed3fc96);
@@ -807,7 +807,7 @@ function function_9b6ad484e6bfa268() {
                 if (isdefined(self.var_437b6bb41d98df26) && isdefined(self.var_65c40a3d7dcd8ca3)) {
                     if (!istrue(self.var_1384d8bd817f644)) {
                         timeoffset = (gettime() - self.var_65c40a3d7dcd8ca3) * 0.001;
-                        level.players[0] playXcam(self.var_437b6bb41d98df26, 0, self.origin, self.angles, timeoffset);
+                        level.players[0] playxcam(self.var_437b6bb41d98df26, 0, self.origin, self.angles, timeoffset);
                         self.var_1384d8bd817f644 = 1;
                     }
                 } else if (isdefined(level.players[0].player_rig)) {

@@ -91,18 +91,18 @@ function function_47ef2434c27b063c(victim, attacker, meansofdeath, var_2e81af6d4
         return;
     }
     attackerid = attacker namespace_7e17181d03156026::getuniqueid();
-    var_48b7b944a7a02b2c = victim namespace_7e17181d03156026::getuniqueid();
+    victimid = victim namespace_7e17181d03156026::getuniqueid();
     if (!isdefined(level.var_1384a410983757e1[attackerid])) {
         level.var_1384a410983757e1[attackerid] = spawnstruct();
         level.var_1384a410983757e1[attackerid].victims = [];
         level.var_1384a410983757e1[attackerid].score = 0;
         level.var_1384a410983757e1[attackerid].lastkilltime = 0;
     }
-    if (function_c54f9c19d5062c2d(attackerid, var_48b7b944a7a02b2c) && !isdefined(var_2e81af6d411890c9)) {
+    if (function_c54f9c19d5062c2d(attackerid, victimid) && !isdefined(var_2e81af6d411890c9)) {
         return;
     }
     currenttime = gettime();
-    level.var_1384a410983757e1[attackerid].victims[var_48b7b944a7a02b2c] = currenttime + level.var_66901f8a5a5028d2;
+    level.var_1384a410983757e1[attackerid].victims[victimid] = currenttime + level.var_66901f8a5a5028d2;
     lastscore = function_9d1edaafd9ae1f43(attackerid);
     level.var_1384a410983757e1[attackerid].score = function_49514c83ede61c52(attackerid, attacker, victim);
     level.var_1384a410983757e1[attackerid].lastkilltime = currenttime;
@@ -269,7 +269,7 @@ function private function_5d60f21784f774f4(attacker, victim) {
 // Checksum 0x0, Offset: 0x11aa
 // Size: 0xf3
 function private function_760c732463d67abd(victim, attacker) {
-    var_48b7b944a7a02b2c = victim namespace_7e17181d03156026::getuniqueid();
+    victimid = victim namespace_7e17181d03156026::getuniqueid();
     var_773ad909331cee07 = getteamdata(victim.team, "players");
     foreach (teammate in var_773ad909331cee07) {
         var_a779ea1a22e09530 = teammate namespace_7e17181d03156026::getuniqueid();
@@ -367,11 +367,11 @@ function private function_59d1b7f99d093e0e(overridesettings) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1638
 // Size: 0x81
-function private function_c54f9c19d5062c2d(attackerid, var_48b7b944a7a02b2c) {
-    if (!isdefined(level.var_1384a410983757e1[attackerid].victims) || !isdefined(level.var_1384a410983757e1[attackerid].victims[var_48b7b944a7a02b2c])) {
+function private function_c54f9c19d5062c2d(attackerid, victimid) {
+    if (!isdefined(level.var_1384a410983757e1[attackerid].victims) || !isdefined(level.var_1384a410983757e1[attackerid].victims[victimid])) {
         return 0;
     }
-    cooldowntime = level.var_1384a410983757e1[attackerid].victims[var_48b7b944a7a02b2c];
+    cooldowntime = level.var_1384a410983757e1[attackerid].victims[victimid];
     currenttime = gettime();
     return cooldowntime <= currenttime;
 }
@@ -394,7 +394,7 @@ function private function_49514c83ede61c52(attackerid, attacker, victim) {
         newscore = newscore * var_c5f06dd68c41574;
         var_e9b7eb3fb1bc573a = getteamdata(victim.team, "players");
         var_f873dca25c9dd763 = getteamdata(attacker.team, "players");
-        var_ec3e0c1a53056d7f = 1 + (var_f873dca25c9dd763.size - var_e9b7eb3fb1bc573a.size) / namespace_76a219af07c28c13::getMaxAssimilationTeamSize();
+        var_ec3e0c1a53056d7f = 1 + (var_f873dca25c9dd763.size - var_e9b7eb3fb1bc573a.size) / namespace_76a219af07c28c13::getmaxassimilationteamsize();
         newscore = newscore * var_ec3e0c1a53056d7f;
         var_8c7e696211fe4f37 = level.var_2c5b630622af3240 / (var_86dbd4c78b4b630a + 1);
         newscore = newscore * clamp(var_8c7e696211fe4f37, level.var_c7b897c856840e47, level.var_b404cefc87a66195);

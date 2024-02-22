@@ -33,13 +33,13 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "zombie_base";
-    self.voice = #"hash_97b066d92d35c738";
+    self.voice = #"unitedstates";
     self.bhasthighholster = 0;
     self.animtree = "zombie_base";
     self setmodel("c_jup_zmb_zombie_base_female_dress_blue_gz");
     self attach("c_jup_zmb_zombie_base_female_dress_head_02_blue_gz", "", 1);
     self.headmodel = "c_jup_zmb_zombie_base_female_dress_head_02_blue_gz";
-    self setclothtype(#"hash_d0ef9b6cfe3097be");
+    self setclothtype(#"vestheavy");
     self function_8abe5a968cc3c220(#"none");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {

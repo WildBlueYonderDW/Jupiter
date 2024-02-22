@@ -129,7 +129,7 @@ function function_604ed6f2f8323ea6(grenade) {
         }
     }
     self notify("vehicle_drop_success");
-    thread namespace_d696adde758cbe79::showDMZSplash("truckwar_vehicle_deploying", level.teamdata[self.team]["players"]);
+    thread namespace_d696adde758cbe79::showdmzsplash("truckwar_vehicle_deploying", level.teamdata[self.team]["players"]);
     thread namespace_a4b43c1cf86c6fe5::function_3f45b3c575ec001b(itemdata, spawndata, var_fb932f46ef5ec56);
     return 1;
 }

@@ -239,7 +239,7 @@ function function_e5878a249845a03e() {
         items = getscriptablelootcachecontents(self.var_a161875f61a76bf1);
         self.var_a161875f61a76bf1.var_46a3a8565ac0c17c = 3;
         self.var_a161875f61a76bf1.contents = namespace_1b7e64f50cca9321::function_ec87b214cd429e96(items, undefined);
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef("equip_geigercounter");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
         var_ea156f5f477a8792 = level.var_6d6a6fcd9e67bc58.var_15725dd697a56ab6 ? var_8edc62019d327b86 : 1;
         for (i = 0; i < var_ea156f5f477a8792; i++) {
             self.var_a161875f61a76bf1.contents = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f(self.var_a161875f61a76bf1.contents, 1, lootid);
@@ -335,8 +335,8 @@ function private function_fa5f8f9ae368d2f4(success) {
 function function_bc2a272d0d7e5425() {
     curr = namespace_1a507865f681850e::getcurrentequipment("secondary");
     var_c89f07da007ff0d = namespace_1a507865f681850e::getequipmentslotammo("secondary");
-    lootid = namespace_38b993c4618e76cd::getLootIDFromRef("equip_geigercounter");
-    count = namespace_aead94004cf4c147::getTotalItemCountInBag(lootid);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
+    count = namespace_aead94004cf4c147::gettotalitemcountinbag(lootid);
     return isdefined(curr) && curr == "equip_geigercounter" && var_c89f07da007ff0d || isdefined(count) && count;
 }
 
@@ -377,7 +377,7 @@ function function_12d53123e4d46ebc(instance, player) {
         items = getscriptablelootcachecontents(instance);
         instance.var_46a3a8565ac0c17c = 3;
         instance.contents = namespace_1b7e64f50cca9321::function_ec87b214cd429e96(items, undefined);
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef("equip_geigercounter");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
         instance.contents = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f(instance.contents, 1, lootid);
     }
 }
@@ -569,7 +569,7 @@ function private function_a8fd5e614c159b0f() {
         if (isdefined(player.equipment["secondary"]) && player.equipment["secondary"] == "equip_geigercounter") {
             player namespace_1a507865f681850e::takeequipment("secondary");
         }
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef("equip_geigercounter");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
         while (player namespace_aead94004cf4c147::function_d63a7299c6203bf9(lootid)) {
             player namespace_aead94004cf4c147::function_6f39f9916649ac48(lootid);
         }

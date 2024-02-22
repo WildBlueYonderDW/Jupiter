@@ -564,7 +564,7 @@ function aq_playerremoved(var_a1a07f4bc10bf84c, attacker) {
             rewardtier = getquestrewardtier(self.hunterteam);
             missionid = getquestindex("assassination");
             if (isdefined(attacker) && isdefined(attacker.team) && attacker.team == self.hunterteam) {
-                var_1b4ada49a21b51ca = "br_assassination_complete_hunters_win";
+                splash = "br_assassination_complete_hunters_win";
                 self.rewardmodifier = "_target_killed";
                 function_448f9af17b797c5a("hunter", attacker, 8, getquestindex("assassination"));
                 if (isdefined(level.var_52781be0b4e8a959)) {
@@ -574,12 +574,12 @@ function aq_playerremoved(var_a1a07f4bc10bf84c, attacker) {
                     level notify("assassination_quest_completed", attacker.team);
                 }
             } else {
-                var_1b4ada49a21b51ca = "br_assassination_complete_target_vanished";
+                splash = "br_assassination_complete_target_vanished";
                 self.rewardmodifier = "_target_vanished";
             }
             var_11d65784f0b6afa2 = getquestrewardgroupindex(getquestrewardbuildgroupref("assassination", self.rewardmodifier, self.modifier));
             params.packedbits = packsplashparambits(missionid, rewardtier, var_11d65784f0b6afa2);
-            function_9d1c5280f5963c8c("hunter", var_1b4ada49a21b51ca, params);
+            function_9d1c5280f5963c8c("hunter", splash, params);
             if (!namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
                 function_6f8e4ad4812f9004("mission_ass_success", "hunter", 1);
             }

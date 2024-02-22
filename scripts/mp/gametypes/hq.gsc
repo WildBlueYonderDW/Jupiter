@@ -1083,12 +1083,12 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                 attacker thread function_e3e3e81453fd788b(#"hash_470103fde6a5e1ae");
             } else if (victim istouching(level.zone.trigger)) {
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                 thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
             }
         } else if (attacker istouching(level.zone.trigger)) {
             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
             attacker incpersstat("defends", 1);
             attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
             attacker setextrascore1(attacker.pers["defends"]);
@@ -1148,15 +1148,15 @@ function give_capture_credit(touchlist, capturetime, capture_team, lastcapturete
             namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_game_event", var_7e2c53b0bcf117d9);
             first_player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_cbcb83b1a39c5c8e");
             if (var_eeb573d717f07f64) {
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_36af03684ac64eb8");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_36af03684ac64eb8");
             } else {
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_194ad9a7fdb13341");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_194ad9a7fdb13341");
             }
             if (isdefined(level.zone.lastactivatetime) && gettime() - level.zone.lastactivatetime <= 2100) {
                 if (var_eeb573d717f07f64) {
-                    first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_14ca5d321828d5c5");
+                    first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_14ca5d321828d5c5");
                 } else {
-                    first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_4d98aed9e6ebbf28");
+                    first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_4d98aed9e6ebbf28");
                 }
             }
             if (first_player.lastkilltime + 500 > gettime()) {
@@ -1238,10 +1238,10 @@ function function_11ce247555fb7a20(team) {
                 player namespace_2685ec368e022695::statsetchild("round", "captures", player.pers["captures"]);
                 player setextrascore0(player.pers["captures"]);
                 if (isdefined(var_8a11b26acefd3594)) {
-                    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_70c24ce7e0579e7a");
+                    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_70c24ce7e0579e7a");
                 } else {
                     player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_971a82e17e683215");
-                    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_7a10d07e9cc5745b");
+                    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_7a10d07e9cc5745b");
                 }
                 player namespace_8276d48525f0f398::setcrankedtimerzonecap(player);
             }
@@ -1546,9 +1546,9 @@ function writecurrentrotationteamscore() {
 function function_49d30df50940b9d7(org, size, color) {
     /#
         for (i = 0; i < 10; i++) {
-            var_ce0ee878f55f5e93 = i / 10 * 360;
+            a1 = i / 10 * 360;
             var_ce0ee978f55f60c6 = (i + 1) / 10 * 360;
-            var_b1a981030274aadc = org + (cos(var_ce0ee878f55f5e93), sin(var_ce0ee878f55f5e93), 0) * size;
+            var_b1a981030274aadc = org + (cos(a1), sin(a1), 0) * size;
             var_b1a984030274b175 = org + (cos(var_ce0ee978f55f60c6), sin(var_ce0ee978f55f60c6), 0) * size;
             line(var_b1a981030274aadc, var_b1a984030274b175, color);
         }

@@ -155,7 +155,7 @@ function initializematchrules() {
     level.setbackstreak = getmatchrulesdata("gunData", "setbackStreak");
     level.killsperweapon = getmatchrulesdata("gunData", "killsPerWeapon");
     level.ladderindex = getmatchrulesdata("gunData", "ladderIndex");
-    level.useLadderIndex = getmatchrulesdata("gunData", "useLadderIndex");
+    level.useladderindex = getmatchrulesdata("gunData", "useLadderIndex");
     setdynamicdvar(@"hash_d35ca3409324ec94", 0);
 }
 
@@ -431,10 +431,10 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             }
             if (smeansofdeath == "MOD_MELEE") {
                 if (self.gungameprevgunindex) {
-                    attacker thread doScoreEvent(#"hash_9fedfea2929dc7da");
+                    attacker thread doscoreevent(#"hash_9fedfea2929dc7da");
                 }
                 attacker updateknivesperminute();
-                attacker namespace_48a08c5037514e04::doScoreEvent(#"hash_6943b98a3e7d1a00");
+                attacker namespace_48a08c5037514e04::doscoreevent(#"hash_6943b98a3e7d1a00");
                 attacker incpersstat("stabs", 1);
                 attacker namespace_2685ec368e022695::statsetchild("round", "stabs", attacker.pers["stabs"]);
                 if (isplayer(attacker)) {
@@ -488,7 +488,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                 attacker thread givenextgun(0);
             }
             if (isdefined(attacker.lastgunrankincreasetime) && gettime() - attacker.lastgunrankincreasetime < 5000) {
-                attacker namespace_48a08c5037514e04::doScoreEvent(#"hash_16fa4e4e4a6aaacc");
+                attacker namespace_48a08c5037514e04::doscoreevent(#"hash_16fa4e4e4a6aaacc");
             }
             attacker.lastgunrankincreasetime = gettime();
         }
@@ -740,7 +740,7 @@ function refillsinglecountammo() {
 function setgunladder() {
     level.gun_guns = [];
     level.selectedweapons = [];
-    if (istrue(level.useLadderIndex)) {
+    if (istrue(level.useladderindex)) {
         switch (level.ladderindex) {
         case 1:
         case 4:
@@ -970,7 +970,7 @@ function function_6b7afefdbeeeec0a() {
 // Size: 0x1ab
 function function_102741e35aa549ae() {
     level.weaponcategories = [];
-    foreach (var_5d2032c6e19e24e7 in level.var_29fe567a5ca5271d.weaponsTable) {
+    foreach (var_5d2032c6e19e24e7 in level.var_29fe567a5ca5271d.weaponstable) {
         if (!isdefined(level.weaponcategories[var_5d2032c6e19e24e7.groupname])) {
             level.weaponcategories[var_5d2032c6e19e24e7.groupname] = [];
         }

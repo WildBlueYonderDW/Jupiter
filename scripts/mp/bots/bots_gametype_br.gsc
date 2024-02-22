@@ -90,13 +90,13 @@ function bot_br_think() {
                 continue;
             }
         #/
-        if (namespace_d3d40f75bb4e4c32::isBrPracticeMode() && !namespace_4b0406965e556711::gameflag("graceperiod_done")) {
+        if (namespace_d3d40f75bb4e4c32::isbrpracticemode() && !namespace_4b0406965e556711::gameflag("graceperiod_done")) {
             self.ignoreall = 0;
             wait(0.05);
             continue;
         }
         if (isdefined(self.br_infil_type)) {
-            if (namespace_d3d40f75bb4e4c32::isBrPracticeMode() && !isdefined(self.infil_complete)) {
+            if (namespace_d3d40f75bb4e4c32::isbrpracticemode() && !isdefined(self.infil_complete)) {
                 self.ignoreall = 1;
                 self botclearscriptgoal();
             }
@@ -135,12 +135,12 @@ function bot_br_think() {
                 var_4cbd8ae83804749c = self botgetscriptgoal();
             }
             if (!bot_has_tactical_goal() && !bot_is_remote_or_linked()) {
-                if ((istrue(self isskydiving()) || istrue(self isparachuting())) && istrue(self.jumped) && istrue(namespace_d3d40f75bb4e4c32::isBrPracticeMode())) {
+                if ((istrue(self isskydiving()) || istrue(self isparachuting())) && istrue(self.jumped) && istrue(namespace_d3d40f75bb4e4c32::isbrpracticemode())) {
                     self botsetflag("disable_all_ai", 0);
                     self botclearscriptgoal();
                     bot_parachute_into_map();
                 }
-                if (namespace_d3d40f75bb4e4c32::isBrPracticeMode() && !isdefined(self.infil_complete)) {
+                if (namespace_d3d40f75bb4e4c32::isbrpracticemode() && !isdefined(self.infil_complete)) {
                     self.ignoreall = 1;
                     wait(1);
                     continue;
@@ -408,16 +408,16 @@ function draw_debug_sphere() {
 // Size: 0x1e5
 function bot_br_circle_think() {
     var_7268d1b7d5e3bcdf = level.bot_personality_type[self.personality] == "stationary";
-    IN_GAS = 0;
+    in_gas = 0;
     while (1) {
         var_6b81b7b2626279ec = getrandompointincirclenearby();
-        IN_GAS = bot_is_in_gas() || istrue(level.circleclosing);
-        if (IN_GAS) {
+        in_gas = bot_is_in_gas() || istrue(level.circleclosing);
+        if (in_gas) {
             var_6b81b7b2626279ec = getrandompointinsafecirclenearby();
         }
         if (isdefined(var_6b81b7b2626279ec)) {
             player_enemy = bot_get_player_enemy();
-            if (istrue(level.bots_seek_player) && isdefined(player_enemy) && !IN_GAS) {
+            if (istrue(level.bots_seek_player) && isdefined(player_enemy) && !in_gas) {
                 thread update_player_enemy_on_death();
                 self getenemyinfo(player_enemy);
                 if (self botgetpersonality() != "run_and_gun") {
@@ -434,13 +434,13 @@ function bot_br_circle_think() {
                 if (self bothasscriptgoal()) {
                     self botclearscriptgoal();
                 }
-                if (IN_GAS) {
+                if (in_gas) {
                     self botsetscriptgoal(var_6b81b7b2626279ec, 128, "critical", undefined, undefined, 0);
                 } else {
                     self botsetscriptgoal(var_6b81b7b2626279ec, 400, "guard", undefined, undefined, 0);
                 }
-                if (istrue(IN_GAS)) {
-                    IN_GAS = 0;
+                if (istrue(in_gas)) {
+                    in_gas = 0;
                 }
                 thread path_timeout();
                 result = waittill_any_ents_return(self, "goal", self, "bad_path", level, "br_circle_started", self, "last_stand_start", self, "path_timeout");

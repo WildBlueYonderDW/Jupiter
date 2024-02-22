@@ -338,7 +338,7 @@ function function_923b24178e709fbb(streakname) {
     var_bacc6dd14316758c = &function_3e6225ef4efc799e;
     var_7da88d9c69433487 = &function_e687e809e9570d59;
     deathcallback = &function_1fe4e6fd1f673f2d;
-    killstreak_setupVehicleDamageFunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
+    killstreak_setupvehicledamagefunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
     namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(self, self.owner, self.owner.team);
     function_cfc5e3633ef950fd(1, 1500, &function_6e785f240ca1205e);
     function_cfc5e3633ef950fd(2, 1000, &function_71b13dc22e6c70cb);
@@ -384,7 +384,7 @@ function function_e687e809e9570d59(data) {
     damage = data.damage;
     idflags = data.idflags;
     self.currenthealth = self.currenthealth - damage;
-    killstreak_updateDamageState(self.currenthealth);
+    killstreak_updatedamagestate(self.currenthealth);
     return 1;
 }
 

@@ -199,8 +199,8 @@ function function_e549e7bb5a16c3bc() {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x778
 // Size: 0x34c
-function function_84114acff04cfccb(var_c975fcdffce9c9a6, var_c975fbdffce9c773, vehicleRef, var_57e49972a041777e, var_c4e36a338fa34f19) {
-    if (var_c975fcdffce9c9a6 namespace_1f188a13f7e79610::function_d93ec4635290febd() == vehicleRef) {
+function function_84114acff04cfccb(var_c975fcdffce9c9a6, var_c975fbdffce9c773, vehicleref, var_57e49972a041777e, var_c4e36a338fa34f19) {
+    if (var_c975fcdffce9c9a6 namespace_1f188a13f7e79610::function_d93ec4635290febd() == vehicleref) {
         var_a2731e6d9af15254 = var_c975fcdffce9c9a6;
         vehicle = var_c975fbdffce9c773;
     } else {

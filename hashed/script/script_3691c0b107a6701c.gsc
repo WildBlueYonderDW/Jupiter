@@ -185,7 +185,7 @@ function function_49df6ae49b0cbe54(player, origin) {
     }
     var_4aa32c116c698ff6 = level.var_28c3893738c043fe.var_5572778d2cffe0fd * (teamplayers.size - var_6d038a7052e9467c);
     scores["generic"] = var_7a73315d7ca78155 + var_4aa32c116c698ff6;
-    scores["agents"] = level.var_28c3893738c043fe.var_69873adaf95b11a * ter_op(isdefined(player.agentKills), player.agentKills, 0);
+    scores["agents"] = level.var_28c3893738c043fe.var_69873adaf95b11a * ter_op(isdefined(player.agentkills), player.agentkills, 0);
     scores["operators"] = level.var_28c3893738c043fe.var_e8fa4e2bd0433d43 * ter_op(isdefined(player.pers["kills"]), player.pers["kills"], 0);
     scores["valuables"] = level.var_28c3893738c043fe.var_15b2bbc2239d50e1 * player namespace_301533d2f1378cb9::function_b86115649d705017();
     return scores;

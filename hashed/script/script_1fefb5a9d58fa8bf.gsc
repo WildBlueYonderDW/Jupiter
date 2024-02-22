@@ -41,7 +41,7 @@ function private function_d220ff97de9bb9e9(lootid, var_a06806243448e2c7) {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x584
 // Size: 0x92
-function private setBackpackItem(lootid, pickup) {
+function private setbackpackitem(lootid, pickup) {
     if (function_d220ff97de9bb9e9(lootid, pickup.scriptablename)) {
         var_95ba1f30ea5d8a76 = function_10440574d3361667(lootid);
         var_fec4228317afe4ff = var_95ba1f30ea5d8a76 * pickup.count;
@@ -60,7 +60,7 @@ function private setBackpackItem(lootid, pickup) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x61d
 // Size: 0x56
-function private shouldRevokeBackpackItemOnExfil(var_25978461c6e4f61b) {
+function private shouldrevokebackpackitemonexfil(var_25978461c6e4f61b) {
     return !(namespace_cb965d2f71fefddc::function_82d45592d750d388(var_25978461c6e4f61b) || namespace_cb965d2f71fefddc::function_a38e261031751c09(var_25978461c6e4f61b) || namespace_cb965d2f71fefddc::function_16a5ebe82e3f2286(var_25978461c6e4f61b) || namespace_cb965d2f71fefddc::function_b989edd9af4f42c7(var_25978461c6e4f61b) || namespace_cb965d2f71fefddc::function_d7c5786a0c42ef6c(var_25978461c6e4f61b) || namespace_cb965d2f71fefddc::issuperpickup(var_25978461c6e4f61b) || namespace_cb965d2f71fefddc::iskillstreak(var_25978461c6e4f61b));
 }
 
@@ -68,7 +68,7 @@ function private shouldRevokeBackpackItemOnExfil(var_25978461c6e4f61b) {
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x67b
 // Size: 0x37
-function private canItemFitInBackpack(lootid, var_a06806243448e2c7, quantity, maxcount) {
+function private canitemfitinbackpack(lootid, var_a06806243448e2c7, quantity, maxcount) {
     if (function_d220ff97de9bb9e9(lootid, var_a06806243448e2c7)) {
         return 1;
     } else {
@@ -80,7 +80,7 @@ function private canItemFitInBackpack(lootid, var_a06806243448e2c7, quantity, ma
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x36
-function private getAutoPickupQuantity(lootid, var_a06806243448e2c7, quantity, maxcount) {
+function private getautopickupquantity(lootid, var_a06806243448e2c7, quantity, maxcount) {
     if (function_d220ff97de9bb9e9(lootid, var_a06806243448e2c7)) {
         return 0;
     } else {
@@ -93,10 +93,10 @@ function private getAutoPickupQuantity(lootid, var_a06806243448e2c7, quantity, m
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0x69
 function init() {
-    namespace_71073fa38f11492::registerbrgametypefunc("setBackpackItem", &setBackpackItem);
-    namespace_71073fa38f11492::registerbrgametypefunc("getAutoPickupQuantity", &getAutoPickupQuantity);
-    namespace_71073fa38f11492::registerbrgametypefunc("canItemFitInBackpack", &canItemFitInBackpack);
-    namespace_71073fa38f11492::registerbrgametypefunc("shouldRevokeBackpackItemOnExfil", &shouldRevokeBackpackItemOnExfil);
+    namespace_71073fa38f11492::registerbrgametypefunc("setBackpackItem", &setbackpackitem);
+    namespace_71073fa38f11492::registerbrgametypefunc("getAutoPickupQuantity", &getautopickupquantity);
+    namespace_71073fa38f11492::registerbrgametypefunc("canItemFitInBackpack", &canitemfitinbackpack);
+    namespace_71073fa38f11492::registerbrgametypefunc("shouldRevokeBackpackItemOnExfil", &shouldrevokebackpackitemonexfil);
     if (namespace_a38a2e1fe7519183::function_e0fc1230452cf4e7()) {
         function_d2c13fc95e4e8962(1);
         namespace_a38a2e1fe7519183::init();
@@ -141,7 +141,7 @@ function function_3d69400b651b76da(player) {
     /#
         foreach (var_7e40f334147fa597, itemlist in var_78311d69ed34c252) {
             foreach (item in itemlist) {
-                scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+                scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
                 namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("<unknown string>", player.name, item.quantity, scriptablename, item.lootid, var_7e40f334147fa597);
             }
         }
@@ -168,7 +168,7 @@ function function_8b39e363ca709341() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9fe
 // Size: 0x15d
-function onSuccessfulExtract(player) {
+function onsuccessfulextract(player) {
     namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory (onSuccessfulExtract): player '%s' BEGIN", player.name);
     /#
         if (namespace_a38a2e1fe7519183::function_e0fc1230452cf4e7()) {
@@ -205,7 +205,7 @@ function private function_d4da37abcaec5fca(var_78311d69ed34c252) {
     result.var_c03ff9876291acd3 = [];
     foreach (itemlist in var_78311d69ed34c252) {
         foreach (item in itemlist) {
-            scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+            scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
             if (isdefined(scriptablename)) {
                 result.var_f2d8b23b08f684cb[result.var_f2d8b23b08f684cb.size] = scriptablename;
             } else {
@@ -232,7 +232,7 @@ function private function_dfa39169979c22d8(player, var_78311d69ed34c252) {
     player setplayerdata("jupiter_exgm", "lootedCash", player.plundercount);
     foreach (var_7e40f334147fa597, itemlist in var_78311d69ed34c252) {
         foreach (item in itemlist) {
-            scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+            scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
             var_38aa5958a501629d = isdefined(scriptablename) && (namespace_cb965d2f71fefddc::isvaluable(scriptablename) || namespace_cb965d2f71fefddc::function_eac097ce4c683ab9(scriptablename));
             if (!var_38aa5958a501629d) {
                 itemtype = undefined;
@@ -262,7 +262,7 @@ function private function_dfa39169979c22d8(player, var_78311d69ed34c252) {
 // Checksum 0x0, Offset: 0xf5f
 // Size: 0x4d
 function function_10440574d3361667(lootid) {
-    scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+    scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
     if (!isdefined(scriptablename)) {
         return 0;
     }
@@ -333,10 +333,10 @@ function function_a2415c12f0dccc7b(player, var_2b465f51da1e8fcf, var_2b465e51da1
         for (i = 0; i < 50; i++) {
             lootid = player getplayerdata(level.var_5d69837cf4db0407, "<unknown string>", i, "<unknown string>");
             quantity = player getplayerdata(level.var_5d69837cf4db0407, "<unknown string>", i, "<unknown string>");
-            var_6a2f907d62daf47b = player getplayerdata(level.var_5d69837cf4db0407, "<unknown string>", i, "<unknown string>");
-            scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+            lootedquantity = player getplayerdata(level.var_5d69837cf4db0407, "<unknown string>", i, "<unknown string>");
+            scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
             value = function_10440574d3361667(lootid);
-            var_871bdbc7e5abb341[var_871bdbc7e5abb341.size] = [0:i, 1:lootid, 2:scriptablename, 3:quantity, 4:var_6a2f907d62daf47b, 5:value];
+            var_871bdbc7e5abb341[var_871bdbc7e5abb341.size] = [0:i, 1:lootid, 2:scriptablename, 3:quantity, 4:lootedquantity, 5:value];
         }
         textcolor = (1, 0, 0);
         textscale = 1;
@@ -355,7 +355,7 @@ function function_408da9b4e0f08fb2(player, var_2b465f51da1e8fcf, var_2b465e51da1
         var_871bdbc7e5abb341 = [];
         var_4ff6e95896e65939 = player namespace_aead94004cf4c147::function_254150d1e667dee7();
         foreach (item in var_4ff6e95896e65939) {
-            var_d53771808585d4da = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+            var_d53771808585d4da = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
             itemvalue = function_10440574d3361667(item.lootid);
             var_871bdbc7e5abb341[var_871bdbc7e5abb341.size] = [0:item.index, 1:item.lootid, 2:var_d53771808585d4da, 3:item.quantity, 4:itemvalue];
         }
@@ -376,7 +376,7 @@ function function_3d87fb81fa720ae2(player, var_2b465f51da1e8fcf, var_2b465e51da1
         var_871bdbc7e5abb341 = [];
         var_bf23a60678978c19 = player namespace_512200f0f9e6ebc9::function_9cd290910c24d4d3();
         foreach (item in var_bf23a60678978c19) {
-            var_d53771808585d4da = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+            var_d53771808585d4da = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
             itemvalue = function_10440574d3361667(item.lootid);
             var_871bdbc7e5abb341[var_871bdbc7e5abb341.size] = [0:item.lootid, 1:var_d53771808585d4da, 2:item.quantity, 3:itemvalue];
         }

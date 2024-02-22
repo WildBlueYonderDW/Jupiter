@@ -148,16 +148,16 @@ function init() {
     level.var_2c82c974f7e53094 = getdvarfloat(@"hash_61c9225a3e410ede", 1);
     level.var_86fcb3b210c000b6 = getdvarint(@"hash_e2eeaeee36606ddc", 650);
     level.var_abfb14890546e79b = getdvarint(@"hash_c280c69506f5857d", 5);
-    squadSize = namespace_36f464722d326bbe::function_4fb37368ae3585bb();
+    squadsize = namespace_36f464722d326bbe::function_4fb37368ae3585bb();
     level.var_af6b6798e49e6f50 = getdvarfloat(@"hash_675cda2ce24e3c49", 1.75);
-    if (isdefined(squadSize)) {
-        if (squadSize >= 4) {
+    if (isdefined(squadsize)) {
+        if (squadsize >= 4) {
             level.var_af6b6798e49e6f50 = getdvarfloat(@"hash_657353b7b97e54fc", 2);
-        } else if (squadSize == 3) {
+        } else if (squadsize == 3) {
             level.var_af6b6798e49e6f50 = getdvarfloat(@"hash_675cda2ce24e3c49", 1.75);
-        } else if (squadSize == 2) {
+        } else if (squadsize == 2) {
             level.var_af6b6798e49e6f50 = getdvarfloat(@"hash_52304b9243159d05", 1.75);
-        } else if (squadSize == 1) {
+        } else if (squadsize == 1) {
             level.var_af6b6798e49e6f50 = getdvarfloat(@"hash_34b15491aa693b3c", 1.5);
         }
     }
@@ -188,10 +188,10 @@ function init() {
     }
     function_c67a23fd0b31a4f7();
     if (level.var_392e6097df364a4b) {
-        level thread namespace_cf2b0816e2ab0a06::initBosses();
+        level thread namespace_cf2b0816e2ab0a06::initbosses();
     }
     if (namespace_76a219af07c28c13::function_6934349b7823d888()) {
-        namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_24d72130103d8922);
+        namespace_76a219af07c28c13::registerteamassimilatecallback(&function_24d72130103d8922);
     }
     game["dialog"]["strongholds_active"] = "pblc_grav_strr";
     game["dialog"]["br_mission_bomb_assigned"] = "strn_grav_dvdf";
@@ -251,10 +251,10 @@ function function_401ab3dde070adde() {
             println("airport_hotzone_01" + zoneindex + "observatory_hotzone_03" + zonename + "mtntwn_hotzone_01" + var_b22151eb749eb496.midpoint);
         #/
         fortress = undefined;
-        poiName = undefined;
+        poiname = undefined;
         if (isdefined(zonename)) {
-            poiName = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(var_b22151eb749eb496.midpoint, 1);
-            if (isdefined(level.var_ab20b3a256911579) && array_contains(level.var_ab20b3a256911579, poiName)) {
+            poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(var_b22151eb749eb496.midpoint, 1);
+            if (isdefined(level.var_ab20b3a256911579) && array_contains(level.var_ab20b3a256911579, poiname)) {
                 continue;
             }
             if (!function_fed261f698d76763(zoneindex, "fortress")) {
@@ -268,7 +268,7 @@ function function_401ab3dde070adde() {
             level.var_f1073fbd45b59a06.var_df987907a483df89[level.var_f1073fbd45b59a06.var_df987907a483df89.size] = fortress;
             level.var_f1073fbd45b59a06.var_1d7353058ea3a9f1 = array_remove(level.var_f1073fbd45b59a06.var_1d7353058ea3a9f1, fortress);
             /#
-                namespace_d1a9ca87d78d9813::function_9533653868e59fb6("mtntwn_hotzone_04", fortress.var_6a9a1aeeaa7c25df, undefined, undefined, undefined, undefined, poiName, fortress.origin);
+                namespace_d1a9ca87d78d9813::function_9533653868e59fb6("mtntwn_hotzone_04", fortress.var_6a9a1aeeaa7c25df, undefined, undefined, undefined, undefined, poiname, fortress.origin);
             #/
         }
     }
@@ -595,10 +595,10 @@ function function_f344712dff7facb6(player) {
     if (!istrue(crate.captured)) {
         return;
     }
-    if (!isdefined(crate.trackedTeams)) {
-        crate.trackedTeams = [];
+    if (!isdefined(crate.trackedteams)) {
+        crate.trackedteams = [];
     }
-    foreach (teamdata in crate.trackedTeams) {
+    foreach (teamdata in crate.trackedteams) {
         if (teamdata.teamname == player.team) {
             if (isplayer(player) && !istrue(teamdata.captured) && !function_58931f9d0a83f414(player, crate) && !istrue(level.var_25e8b4afe5e06169)) {
                 player.var_b357c3564f6f7be3 = "ui_map_icon_drop_loadout_locked";
@@ -648,7 +648,7 @@ function function_f344712dff7facb6(player) {
             teamdata.var_5469d4c525994ba2 = 1;
         }
     }
-    crate.trackedTeams = array_add(crate.trackedTeams, teamdata);
+    crate.trackedteams = array_add(crate.trackedteams, teamdata);
 }
 
 // Namespace namespace_c62d39d6e6afb119/namespace_bd614c3c2275579a
@@ -673,10 +673,10 @@ function function_e9183e4cbb12da33(player) {
     }
     fortress = var_aac94ce6a0278a36.fortress;
     crate = fortress.crate;
-    if (!istrue(crate.captured) || !isdefined(crate.trackedTeams)) {
+    if (!istrue(crate.captured) || !isdefined(crate.trackedteams)) {
         return;
     }
-    foreach (teamdata in crate.trackedTeams) {
+    foreach (teamdata in crate.trackedteams) {
         if (istrue(teamdata.captured)) {
             continue;
         }
@@ -828,7 +828,7 @@ function function_faa1ecbc7f0bed85(player, var_52a1028ad3d76b7a, missionfail, va
             kiosk thread function_5c9be3af66670c2a();
         }
         kiosk.captured = 1;
-        kiosk.trackedTeams = [];
+        kiosk.trackedteams = [];
     }
     if (istrue(var_52a1028ad3d76b7a)) {
         kiosk.var_4756733ecc825a2 = player.team;
@@ -862,7 +862,7 @@ function function_1e0c0f3914e139ea(cleanup) {
     kiosk.players = [];
     kiosk.var_4261eb2ab67db6f7 = [];
     kiosk.visible = 0;
-    kiosk.trackedTeams = [];
+    kiosk.trackedteams = [];
     if (istrue(cleanup)) {
         level.var_4e6c65a229188ca9--;
         logstring("BR STRONGHOLD " + array_find(level.var_f1073fbd45b59a06.var_df987907a483df89, kiosk.fortress) + ": Removing Fortress Kiosk for a new map total of " + level.var_4e6c65a229188ca9 + ".");
@@ -935,8 +935,8 @@ function function_b9a38b13c9566550(fortress) {
     fortress.crate thread function_78ca6709ee2d6dd3();
     var_1c24c3460a18eb2f sethintinoperable(0);
     var_1c24c3460a18eb2f makeusable();
-    levelData = namespace_6c578d6ef48f10ef::getleveldata(fortress.crate.cratetype);
-    fortress.crate namespace_6c578d6ef48f10ef::overridecapturestring(levelData.capturestring);
+    leveldata = namespace_6c578d6ef48f10ef::getleveldata(fortress.crate.cratetype);
+    fortress.crate namespace_6c578d6ef48f10ef::overridecapturestring(leveldata.capturestring);
 }
 
 // Namespace namespace_c62d39d6e6afb119/namespace_bd614c3c2275579a
@@ -1861,23 +1861,23 @@ function function_d67f15dc6097606d(fortress) {
     if (isdefined(fortress.tieroverride) && (fortress.tieroverride == 1 || fortress.tieroverride == 1) && !istrue(level.var_4094a9c5b998313d)) {
         fortress.elites = namespace_3c37cb17ade254d::array_combine(fortress.elites, fortress.var_2ef873e30a270bcf);
         fortress.var_2ef873e30a270bcf = [];
-        if (isdefined(fortress.patrolPaths) && isarray(fortress.patrolPaths)) {
-            for (i = 0; i < fortress.patrolPaths.size; i++) {
-                if (isdefined(fortress.patrolPaths[i].path) && isarray(fortress.patrolPaths[i].path)) {
-                    fortress.patrolPaths[i].path[0].agent_type = "elite";
+        if (isdefined(fortress.patrolpaths) && isarray(fortress.patrolpaths)) {
+            for (i = 0; i < fortress.patrolpaths.size; i++) {
+                if (isdefined(fortress.patrolpaths[i].path) && isarray(fortress.patrolpaths[i].path)) {
+                    fortress.patrolpaths[i].path[0].agent_type = "elite";
                 }
             }
         }
     } else if (istrue(fortress.var_933f9685674999fb) && istrue(level.var_4094a9c5b998313d)) {
         fortress.elites = [];
         fortress.var_2ef873e30a270bcf = namespace_3c37cb17ade254d::array_combine(fortress.elites, fortress.var_2ef873e30a270bcf);
-        if (isdefined(fortress.patrolPaths) && isarray(fortress.patrolPaths)) {
-            for (i = 0; i < fortress.patrolPaths.size; i++) {
-                if (isdefined(fortress.patrolPaths[i].path) && isarray(fortress.patrolPaths[i].path)) {
+        if (isdefined(fortress.patrolpaths) && isarray(fortress.patrolpaths)) {
+            for (i = 0; i < fortress.patrolpaths.size; i++) {
+                if (isdefined(fortress.patrolpaths[i].path) && isarray(fortress.patrolpaths[i].path)) {
                     if (mod(i, 2) == 0) {
-                        fortress.patrolPaths[i].path[0].agent_type = "tier1";
+                        fortress.patrolpaths[i].path[0].agent_type = "tier1";
                     } else {
-                        fortress.patrolPaths[i].path[0].agent_type = "tier2";
+                        fortress.patrolpaths[i].path[0].agent_type = "tier2";
                     }
                 }
             }
@@ -1908,7 +1908,7 @@ function function_610d7a61f61e81e5(fortress) {
             var_f29fce4add1ee58c.var_19d2f5d851348e8e = fortress;
             boss = namespace_cf2b0816e2ab0a06::function_7d97c0571433f835(var_47bde44b1acec603, var_f29fce4add1ee58c);
             if (isdefined(boss)) {
-                namespace_14d36171baccf528::agentPers_setAgentPersData(boss, "dropWeapon", istrue(level.var_1f6bf7cc2543812));
+                namespace_14d36171baccf528::agentpers_setagentpersdata(boss, "dropWeapon", istrue(level.var_1f6bf7cc2543812));
                 logstring("BR STRONGHOLD " + array_find(level.var_f1073fbd45b59a06.var_df987907a483df89, fortress) + " :Boss " + var_47bde44b1acec603 + " spawned.");
                 namespace_a011fbf6d93f25e5::function_aaf1156bacf6654e(fortress.origin, var_47bde44b1acec603);
                 boss.var_2d670e4d288c86fb = 1;
@@ -1977,13 +1977,13 @@ function function_3d34980ea9dfd41(door, player) {
         if (isdefined(player)) {
             function_fdd0934f1a32f70d(player.origin, 128, "dmz_stronghold_unlock", player.team, undefined, "dmz_stronghold_unlock_classic");
         }
-        subArea = door.fortress.subArea;
-        if (isdefined(subArea) && isdefined(subArea.var_3ebb6024e3f220ca)) {
-            foreach (agent in subArea.var_3ebb6024e3f220ca) {
+        subarea = door.fortress.subarea;
+        if (isdefined(subarea) && isdefined(subarea.var_3ebb6024e3f220ca)) {
+            foreach (agent in subarea.var_3ebb6024e3f220ca) {
                 if (isagent(agent)) {
                     agent.ignoreall = 0;
                 } else if (isint(agent)) {
-                    namespace_14d36171baccf528::function_97fbd14bbcf19d9c(agent, "fortressAgent_setIgnoreAgentPostSpawn", &namespace_9823ee6035594d67::fortressAgent_setIgnoreAgentPostSpawn);
+                    namespace_14d36171baccf528::function_97fbd14bbcf19d9c(agent, "fortressAgent_setIgnoreAgentPostSpawn", &namespace_9823ee6035594d67::fortressagent_setignoreagentpostspawn);
                 }
             }
         }
@@ -2034,10 +2034,10 @@ function function_7f70094a3538a5fc() {
 function function_b0024e6de3a39a5a() {
     level endon("game_ended");
     fortress = self;
-    if (!isdefined(fortress.subArea) || !isdefined(fortress.subArea.trigger)) {
+    if (!isdefined(fortress.subarea) || !isdefined(fortress.subarea.trigger)) {
         return;
     }
-    trigger = fortress.subArea.trigger;
+    trigger = fortress.subarea.trigger;
     trigger endon("death");
     level endon("game_ended");
     self notify("brStronghold_restock");
@@ -2136,7 +2136,7 @@ function function_2cac20d9f1d15e9f(var_998267caacbeb010) {
                 if (isdefined(level.var_f1073fbd45b59a06.var_ebfd05cb5f552e56)) {
                     level.var_f1073fbd45b59a06.var_ebfd05cb5f552e56--;
                     if (level.var_f1073fbd45b59a06.var_ebfd05cb5f552e56 <= 0) {
-                        lootid = namespace_38b993c4618e76cd::getLootIDFromRef("loot_multi_key_fortress");
+                        lootid = namespace_38b993c4618e76cd::getlootidfromref("loot_multi_key_fortress");
                         foreach (player in level.players) {
                             if (player namespace_aead94004cf4c147::function_d63a7299c6203bf9(lootid)) {
                                 player namespace_aead94004cf4c147::function_6f39f9916649ac48(lootid);
@@ -2164,11 +2164,11 @@ function function_790363161f332f0a() {
     if (!istrue(fortress.var_698ab4f1074b4f37)) {
         return;
     }
-    subArea = fortress.subArea;
-    if (!isdefined(subArea) || !isdefined(subArea.var_3ebb6024e3f220ca)) {
+    subarea = fortress.subarea;
+    if (!isdefined(subarea) || !isdefined(subarea.var_3ebb6024e3f220ca)) {
         return;
     }
-    foreach (agent in subArea.var_3ebb6024e3f220ca) {
+    foreach (agent in subarea.var_3ebb6024e3f220ca) {
         if (!isdefined(agent)) {
             continue;
         }
@@ -2182,7 +2182,7 @@ function function_790363161f332f0a() {
     if (isdefined(fortress.var_fdbe1a2317a6a37d)) {
         fortress.var_fdbe1a2317a6a37d.var_13235d60c661e10b = 0;
     }
-    foreach (patrol in fortress.patrolPaths) {
+    foreach (patrol in fortress.patrolpaths) {
         if (isdefined(patrol)) {
             patrol.claimed = undefined;
         }
@@ -2199,35 +2199,35 @@ function function_790363161f332f0a() {
 function function_feb4d2d9c23e581c() {
     level endon("game_ended");
     foreach (fortress in level.var_f1073fbd45b59a06.var_df987907a483df89) {
-        subArea = fortress.subArea;
-        if (!isdefined(subArea) || !isdefined(subArea.var_3ebb6024e3f220ca)) {
+        subarea = fortress.subarea;
+        if (!isdefined(subarea) || !isdefined(subarea.var_3ebb6024e3f220ca)) {
             continue;
         }
-        foreach (agent in subArea.var_3ebb6024e3f220ca) {
+        foreach (agent in subarea.var_3ebb6024e3f220ca) {
             if (!isdefined(agent)) {
                 continue;
             }
             if (isagent(agent)) {
                 agent.accuracy = 0.4;
             } else if (isint(agent)) {
-                namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "brStronghold_publicEventAgentPostSpawn", &brStronghold_publicEventAgentPostSpawn);
+                namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "brStronghold_publicEventAgentPostSpawn", &brstronghold_publiceventagentpostspawn);
             }
         }
     }
     wait(90);
     foreach (fortress in level.var_f1073fbd45b59a06.var_df987907a483df89) {
-        subArea = fortress.subArea;
-        if (!isdefined(subArea) || !isdefined(subArea.var_3ebb6024e3f220ca)) {
+        subarea = fortress.subarea;
+        if (!isdefined(subarea) || !isdefined(subarea.var_3ebb6024e3f220ca)) {
             continue;
         }
-        foreach (agent in subArea.var_3ebb6024e3f220ca) {
+        foreach (agent in subarea.var_3ebb6024e3f220ca) {
             if (!isdefined(agent)) {
                 continue;
             }
             if (isagent(agent)) {
                 agent.accuracy = agent.baseaccuracy;
             } else if (isint(agent)) {
-                namespace_14d36171baccf528::function_97fbd14bbcf19d9c(agent, "brStronghold_publicEventAgentPostSpawn", &brStronghold_publicEventAgentPostSpawn);
+                namespace_14d36171baccf528::function_97fbd14bbcf19d9c(agent, "brStronghold_publicEventAgentPostSpawn", &brstronghold_publiceventagentpostspawn);
             }
         }
     }
@@ -2237,7 +2237,7 @@ function function_feb4d2d9c23e581c() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9014
 // Size: 0x1d
-function brStronghold_publicEventAgentPostSpawn(agent) {
+function brstronghold_publiceventagentpostspawn(agent) {
     agent.accuracy = 0.4;
 }
 
@@ -2403,7 +2403,7 @@ function function_bc8c42a438ada1fc(duration, fortress, uavtype) {
 function function_f6161fa6a1d6d9b4(player, team, streakinfo) {
     var_274a2749ef16ee1f = streakinfo.streakname;
     var_52a5be2e2f91d710 = undefined;
-    namespace_9abe40d2af041eb2::killstreak_dangerNotifyPlayersInRange(player, team, level.var_216890f92cb91c6e, var_274a2749ef16ee1f);
+    namespace_9abe40d2af041eb2::killstreak_dangernotifyplayersinrange(player, team, level.var_216890f92cb91c6e, var_274a2749ef16ee1f);
 }
 
 // Namespace namespace_c62d39d6e6afb119/namespace_bd614c3c2275579a

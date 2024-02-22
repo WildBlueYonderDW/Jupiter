@@ -61,7 +61,7 @@ function function_84e789c4db729df(params) {
 // Size: 0x24
 function function_4f7909e93cb375f3() {
     function_914e9d5e71cc6efb();
-    function_f339c5c73d11ea20(#"hash_2ff64f9e50cbb371", 1);
+    function_f339c5c73d11ea20(#"open_parachute", 1);
     self notify("currentContextualTipCompleted");
 }
 
@@ -71,7 +71,7 @@ function function_4f7909e93cb375f3() {
 // Size: 0x2c
 function function_4f7908e93cb373c0() {
     function_f339c5c73d11ea20(#"hash_75ee328f5a5405a8", 1);
-    function_9e0151baa208fe9e(#"hash_2ff64f9e50cbb371");
+    function_9e0151baa208fe9e(#"open_parachute");
     function_4f7909e93cb375f3();
 }
 
@@ -106,11 +106,11 @@ function function_cfc8bdc369b56448() {
 // Size: 0x11a
 function function_d42c23c4731aed7() {
     function_9e0151baa208fe9e(#"hash_c7dfcf6eee67c1d7");
-    var_592b90b9adb13198 = self.var_657f5a0d17435bc.var_93bacbf8fe541c21;
+    supplycache = self.var_657f5a0d17435bc.var_93bacbf8fe541c21;
     /#
-        assert(isdefined(var_592b90b9adb13198));
+        assert(isdefined(supplycache));
     #/
-    self.var_657f5a0d17435bc.objectiveid = namespace_2e77b62bcb3c8d4b::function_e5524fb8509827bf(var_592b90b9adb13198.origin + (0, 0, 18), "FTUE_BR/OPEN", "icon_ping_ftue_waypoint", 15, self);
+    self.var_657f5a0d17435bc.objectiveid = namespace_2e77b62bcb3c8d4b::function_e5524fb8509827bf(supplycache.origin + (0, 0, 18), "FTUE_BR/OPEN", "icon_ping_ftue_waypoint", 15, self);
     childthread function_7fdf3cf66304f3c5(self, 60, &function_cfc8bdc369b56448);
     self waittill("ftue_supply_cache_opened");
     function_81771105fc1a47cb(self);
@@ -628,15 +628,15 @@ function function_5ccc391930eff3fe(alive) {
 // Size: 0x99
 function function_5ccc381930eff1cb() {
     function_9e0151baa208fe9e(#"hash_739cf57ee74f95af");
-    var_fe042a8a4b5f075a = undefined;
+    reviveally = undefined;
     foreach (ally in self.var_ffddba74f404a30) {
         if (istrue(ally.inlaststand)) {
-            var_fe042a8a4b5f075a = ally;
+            reviveally = ally;
             break;
         }
     }
     childthread function_7fdf3cf66304f3c5(self, 30);
-    function_79ff3ea7e538a94a(var_fe042a8a4b5f075a, &function_5ccc391930eff3fe);
+    function_79ff3ea7e538a94a(reviveally, &function_5ccc391930eff3fe);
 }
 
 // Namespace namespace_5026cc22a303fab7/namespace_d3289d7a0f087014
@@ -793,7 +793,7 @@ function function_600c2050e11fc551(params) {
 // Checksum 0x0, Offset: 0x12f7
 // Size: 0x13
 function function_57e7ab31b49a7316() {
-    function_607860ac17c15475(#"hash_d4a0158f1a7aa1d7");
+    function_607860ac17c15475(#"controls");
 }
 
 // Namespace namespace_5026cc22a303fab7/namespace_d3289d7a0f087014
@@ -847,16 +847,16 @@ function function_9a20a7c14d389880() {
     while (1) {
         var_a5b2c541413aa895 = quantity = lootid = self waittill("looted_item");
         if (isdefined(lootid)) {
-            scriptablename = loot::getScriptableFromLootID(lootid);
+            scriptablename = loot::getscriptablefromlootid(lootid);
             if (!isdefined(scriptablename)) {
                 continue;
             }
             if (namespace_cb965d2f71fefddc::isgasmask(scriptablename)) {
                 namespace_91fad7208d9cd856::function_28f32fc9e57814f6(#"gasmask");
             } else if (namespace_cb965d2f71fefddc::function_36de08ea672b354c(scriptablename)) {
-                namespace_91fad7208d9cd856::function_28f32fc9e57814f6(#"hash_67b4a0e4770477a8");
+                namespace_91fad7208d9cd856::function_28f32fc9e57814f6(#"perkpack");
             } else if (namespace_a548bd428a566cf3::function_4aa12e0ed3f6b745(scriptablename)) {
-                namespace_91fad7208d9cd856::function_28f32fc9e57814f6(#"hash_f06bff220930473e");
+                namespace_91fad7208d9cd856::function_28f32fc9e57814f6(#"armorvest");
             }
         }
     }
@@ -872,13 +872,13 @@ function function_58583531a63a9abb(player_action, params) {
     }
     switch (player_action) {
     case #"hash_d4132d67eea54c62":
-        function_28f32fc9e57814f6(#"hash_67ceeff853cbbd03");
+        function_28f32fc9e57814f6(#"traincontrols");
         break;
     case #"hash_3c12c1b463a4d046":
-        function_28f32fc9e57814f6(#"hash_aa2010e86bdbccad");
+        function_28f32fc9e57814f6(#"drivinggas");
         break;
     case #"hash_17d62f3c71ab9938":
-        function_28f32fc9e57814f6(#"hash_c16776e7ab43bb8b");
+        function_28f32fc9e57814f6(#"gasavoid");
         break;
     default:
         break;

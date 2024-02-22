@@ -164,12 +164,12 @@ function private function_8263f9488230c012(pathdata, var_e8f728e3350d6b62, vehic
 // Checksum 0x0, Offset: 0x908
 // Size: 0x211
 function private function_3bdd3d9028bada3f(origin, angles, direction, vehicletype, var_e8f728e3350d6b62) {
-    var_171f90b9c4c76d44 = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
-    if (!namespace_37f0fb6355a4618a::function_faa6481e65f14ade(var_171f90b9c4c76d44)) {
+    poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(origin);
+    if (!namespace_37f0fb6355a4618a::poi_ispoiactive(poiname)) {
         return;
     }
     var_b4d3f717373af2bb = namespace_43bf74a2ee9234c0::function_236a093e8a0ec040(vehicletype);
-    spawners = namespace_43bf74a2ee9234c0::function_f260b1cef943f1ab(vehicletype, 5, var_b4d3f717373af2bb, origin, var_171f90b9c4c76d44, "medium");
+    spawners = namespace_43bf74a2ee9234c0::function_f260b1cef943f1ab(vehicletype, 5, var_b4d3f717373af2bb, origin, poiname, "medium");
     riders = namespace_43bf74a2ee9234c0::function_4ad6c25d6754f697(spawners, 5, undefined, "medium", "vehiclePatrol", "patrol_" + var_e8f728e3350d6b62, "team_hundred_ninety_five", undefined, vehicletype);
     if (!isdefined(riders) || riders.size == 0) {
         return;
@@ -232,7 +232,7 @@ function private function_205a864c4dddc0ea(pathdata) {
         if (distancesquared(self.origin, self.var_d833f36f7bb5bf66) > 22500) {
             self.var_84fb7053ab953427 = gettime();
             self.var_d833f36f7bb5bf66 = self.origin;
-        } else if (gettime() - self.var_84fb7053ab953427 > 12000 || isdefined(self.goalpoint) && namespace_7789f919216d38a2::radiation_isInRadiation(self.goalpoint)) {
+        } else if (gettime() - self.var_84fb7053ab953427 > 12000 || isdefined(self.goalpoint) && namespace_7789f919216d38a2::radiation_isinradiation(self.goalpoint)) {
             /#
                 if (0) {
                     print3d(self.origin + (0, 0, 100), "<unknown string>", (1, 1, 1), 1, 4, 100000);

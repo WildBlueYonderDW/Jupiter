@@ -13,10 +13,10 @@
 // Size: 0x6c
 function function_fe852f92145c24a6() {
     function_ac97a4f2ab8c2d53("loot", "tryAssignTask", &function_1a86afc387820604);
-    function_ac97a4f2ab8c2d53("loot", "onPlayerSelectTask", &onPlayerSelectTask);
+    function_ac97a4f2ab8c2d53("loot", "onPlayerSelectTask", &onplayerselecttask);
     function_ac97a4f2ab8c2d53("loot", "onTaskEnd", &function_afaacbffddff4911);
-    function_ac97a4f2ab8c2d53("loot", "tryBindObjective", &tryBindObjective);
-    namespace_71073fa38f11492::registerbrgametypefunc("playerKioskUsed", &playerKioskUsed);
+    function_ac97a4f2ab8c2d53("loot", "tryBindObjective", &trybindobjective);
+    namespace_71073fa38f11492::registerbrgametypefunc("playerKioskUsed", &playerkioskused);
 }
 
 // Namespace namespace_dbc1018dd2e067e/namespace_587d60d37119a29f
@@ -52,7 +52,7 @@ function function_78d7a14c7dfb37c4(var_17953215dd7c5f9b) {
 // Size: 0x70
 function function_afaacbffddff4911(var_17953215dd7c5f9b) {
     foreach (player in getteamdata(var_17953215dd7c5f9b.team, "players")) {
-        player onPlayerSelectTask(var_17953215dd7c5f9b, 0);
+        player onplayerselecttask(var_17953215dd7c5f9b, 0);
     }
 }
 
@@ -60,7 +60,7 @@ function function_afaacbffddff4911(var_17953215dd7c5f9b) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x359
 // Size: 0x3f
-function onPlayerSelectTask(var_17953215dd7c5f9b, selected) {
+function onplayerselecttask(var_17953215dd7c5f9b, selected) {
     if (var_17953215dd7c5f9b.info.subcategory == "buy_station_cash_spent") {
         self setclientomnvar("ui_champion_br_task_buy_station_hint", selected);
     }
@@ -88,7 +88,7 @@ function function_44b2e353a03c56a5(var_17953215dd7c5f9b, var_36b81911e31bb387) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x416
 // Size: 0x7a
-function tryBindObjective(var_17953215dd7c5f9b) {
+function trybindobjective(var_17953215dd7c5f9b) {
     switch (var_17953215dd7c5f9b.info.subcategory) {
     case #"hash_4245429f5ab3bc91":
         function_2e55101ffd0d483c(var_17953215dd7c5f9b, level.br_armory_kiosk.scriptables, &function_8e36f666c0242fe6);
@@ -103,9 +103,9 @@ function tryBindObjective(var_17953215dd7c5f9b) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x497
 // Size: 0x69
-function playerKioskUsed(kiosk) {
+function playerkioskused(kiosk) {
     if (isdefined(self.var_b8abadd2c4d56fd8) && isdefined(self.var_b8abadd2c4d56fd8.item.type) && self.var_b8abadd2c4d56fd8.item.type == "br_plunder_box") {
-        removeObjectiveInfo();
+        removeobjectiveinfo();
     }
 }
 

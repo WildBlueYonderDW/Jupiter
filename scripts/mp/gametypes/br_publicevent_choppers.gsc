@@ -175,21 +175,21 @@ function spawnchoppers(var_7a5dadb6081d4303) {
             var_32b962c704fde3e7 = i % 4 + 1;
             patrolzone = namespace_479f2912131dabfc::lootchopper_findunoccupiedpatrolzone(level.loot_chopper_spawns["quad_" + var_32b962c704fde3e7], var_35039a9883ab69d2);
         }
-        newChopper = namespace_479f2912131dabfc::lootchopper_spawn(patrolzone, ter_op(istrue(level.var_a83a4e71446bfef7), "veh9_mil_air_heli_hind_nophysics_br", "veh_chopper_support_pe_mp"));
-        if (isdefined(newChopper)) {
-            newChopper.lootfunc = &dropcrate;
-            newChopper.flaresreservecount = getdvarint(@"hash_f572acb2a1f29288", 0);
-            newChopper.health = getdvarint(@"hash_51cd58c60b7def3b", 3000);
-            newChopper.maxhealth = getdvarint(@"hash_51cd58c60b7def3b", 3000);
+        newchopper = namespace_479f2912131dabfc::lootchopper_spawn(patrolzone, ter_op(istrue(level.var_a83a4e71446bfef7), "veh9_mil_air_heli_hind_nophysics_br", "veh_chopper_support_pe_mp"));
+        if (isdefined(newchopper)) {
+            newchopper.lootfunc = &dropcrate;
+            newchopper.flaresreservecount = getdvarint(@"hash_f572acb2a1f29288", 0);
+            newchopper.health = getdvarint(@"hash_51cd58c60b7def3b", 3000);
+            newchopper.maxhealth = getdvarint(@"hash_51cd58c60b7def3b", 3000);
             if (self.helilifetime) {
-                newChopper.lifetime = self.helilifetime;
+                newchopper.lifetime = self.helilifetime;
             }
-            namespace_5a22b6f3a56f7e9b::update_objective_icon(newChopper.objectiveiconid, "hud_icon_minimap_vehicle_heli_blima");
-            namespace_5a22b6f3a56f7e9b::function_2946e9eb07acb3f1(newChopper.objectiveiconid, "VEHICLES/LOOT_CHOPPER");
-            namespace_5a22b6f3a56f7e9b::update_objective_setbackground(newChopper.objectiveiconid, 11);
-            newChopper.var_7b5e5c2bbc8f9f79 = newChopper.objectiveiconid;
-            newChopper function_1cd1ee312fd03bb4(1);
-            newChopper setscriptablepartstate("objective", "hidden");
+            namespace_5a22b6f3a56f7e9b::update_objective_icon(newchopper.objectiveiconid, "hud_icon_minimap_vehicle_heli_blima");
+            namespace_5a22b6f3a56f7e9b::function_2946e9eb07acb3f1(newchopper.objectiveiconid, "VEHICLES/LOOT_CHOPPER");
+            namespace_5a22b6f3a56f7e9b::update_objective_setbackground(newchopper.objectiveiconid, 11);
+            newchopper.var_7b5e5c2bbc8f9f79 = newchopper.objectiveiconid;
+            newchopper function_1cd1ee312fd03bb4(1);
+            newchopper setscriptablepartstate("objective", "hidden");
         }
         wait(1);
     }
@@ -245,7 +245,7 @@ function oncrateuse(player) {
     if (namespace_cd0b2d039510b38d::getsubgametype() == "risk" || namespace_cd0b2d039510b38d::getsubgametype() == "plunder") {
         player namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("lootCachesOpened", player.lootcachesopened);
     }
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_70e5de61cfaa916b");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_70e5de61cfaa916b");
 }
 
 // Namespace namespace_7e329a34cbb32892/namespace_26439d17fcdc9007

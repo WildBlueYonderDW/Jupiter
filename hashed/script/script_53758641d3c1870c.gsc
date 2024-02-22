@@ -16,7 +16,7 @@ function function_265288d8625410c7() {
     if (isdefined(level.var_f61e1ea1e07d13d8)) {
         [[ level.var_f61e1ea1e07d13d8 ]]();
     } else {
-        function_900f562c61c6a5d6("armor", &function_8067cc31ddba996f, &function_b100655007bd8ed3, &function_b99cb249f08b5cc6, &function_e5fe40337a9c71c2, &function_67b79a661e83cd28);
+        function_900f562c61c6a5d6("armor", &use_armor_plate, &function_b100655007bd8ed3, &function_b99cb249f08b5cc6, &function_e5fe40337a9c71c2, &function_67b79a661e83cd28);
         function_900f562c61c6a5d6("plate_carrier", &function_6577ad0f744b2f30, &function_d0b93927f805c51c, &function_a58332bc17146739, &function_50e63d77faaae51d, &function_b8451b8a9cd472d7);
     }
     level.var_2136245d5bcae3e6 = 1;
@@ -39,7 +39,7 @@ function on_player_connect(params) {
 function function_6b5fbab01c20751b(params) {
     if (params.bundle.type == "plate_carrier") {
         self.var_57c207fde9b78089 = 1;
-        armor::setArmorHealth(self.var_8790c077c95db752);
+        armor::setarmorhealth(self.var_8790c077c95db752);
     }
 }
 
@@ -47,7 +47,7 @@ function function_6b5fbab01c20751b(params) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27e
 // Size: 0x8e
-function function_8067cc31ddba996f(itembundle, item, var_b2635db617b09abd) {
+function use_armor_plate(itembundle, item, var_b2635db617b09abd) {
     var_4970ac49ea82ab16 = function_600f6cf462e983f();
     var_c916fe6ea244527 = function_47320a25b8ee003();
     var_6b69c1f7a9ceb096 = var_c916fe6ea244527 - var_4970ac49ea82ab16;
@@ -115,7 +115,7 @@ function function_6577ad0f744b2f30(itembundle, item, var_11648d9cb3869a36) {
     var_556946700794bb3 = itembundle.var_bed158a6dfac230d;
     self.var_bed158a6dfac230d = var_556946700794bb3;
     self.var_8790c077c95db752 = self.var_bed158a6dfac230d * level.var_4b78859bacc88808;
-    setArmorHealth(self.armorhealth);
+    setarmorhealth(self.armorhealth);
     var_48c9f909bb0a5c1a = item.count - 1;
     return var_48c9f909bb0a5c1a;
 }
@@ -166,7 +166,7 @@ function function_50e63d77faaae51d() {
 function function_b8451b8a9cd472d7() {
     self.var_bed158a6dfac230d = 1;
     self.var_8790c077c95db752 = self.var_bed158a6dfac230d * level.var_4b78859bacc88808;
-    setArmorHealth(self.armorhealth);
+    setarmorhealth(self.armorhealth);
 }
 
 // Namespace namespace_7a0486ab8e12b1a/namespace_8c21b608fe10749a

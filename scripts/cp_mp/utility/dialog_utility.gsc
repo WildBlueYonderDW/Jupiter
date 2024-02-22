@@ -34,7 +34,7 @@ function function_39dc350193dd4bc4() {
         }
         var_a6461de9055834b5 = spawnstruct();
         var_a6461de9055834b5.var_1f9cca93e19cf99c = var_1f9cca93e19cf99c;
-        var_a6461de9055834b5.var_5b5ee73adfddd952 = tablelookupbyrow("sound/tables/s6/dialog/gamedef_ref_table.csv", rownum, 2);
+        var_a6461de9055834b5.shortname = tablelookupbyrow("sound/tables/s6/dialog/gamedef_ref_table.csv", rownum, 2);
         var_a6461de9055834b5.parent = var_5c1182cb547ca916;
         level.var_c9cb1071ea249e41[var_c8e0895d07762040][level.var_c9cb1071ea249e41[var_c8e0895d07762040].size] = var_a6461de9055834b5;
     }
@@ -61,7 +61,7 @@ function function_39dc350193dd4bc4() {
         }
         var_a6461de9055834b5 = spawnstruct();
         var_a6461de9055834b5.var_1f9cca93e19cf99c = var_1f9cca93e19cf99c;
-        var_a6461de9055834b5.var_5b5ee73adfddd952 = tablelookupbyrow("sound/tables/iw9/dialog/gamedef_ref_table.csv", rownum, 2);
+        var_a6461de9055834b5.shortname = tablelookupbyrow("sound/tables/iw9/dialog/gamedef_ref_table.csv", rownum, 2);
         var_a6461de9055834b5.parent = var_5c1182cb547ca916;
         level.var_bb06a7f803299c8c[var_c8e0895d07762040][level.var_bb06a7f803299c8c[var_c8e0895d07762040].size] = var_a6461de9055834b5;
     }
@@ -220,7 +220,7 @@ function function_309f1876dda94360(typeref, var_f8853606de474ae1, var_5c1182cb54
             jumpiffalse(var_a6461de9055834b5.parent != var_5c1182cb547ca916) LOC_000000ca;
         } else {
         LOC_000000ca:
-            var_b7a853cc2321f34a = var_a6461de9055834b5.var_5b5ee73adfddd952;
+            var_b7a853cc2321f34a = var_a6461de9055834b5.shortname;
             break;
         }
     }
@@ -250,7 +250,7 @@ function function_c23431e49ed43c57(typeref, var_f8853606de474ae1, var_5c1182cb54
             jumpiffalse(var_a6461de9055834b5.parent != var_5c1182cb547ca916) LOC_000000ca;
         } else {
         LOC_000000ca:
-            var_b7a853cc2321f34a = var_a6461de9055834b5.var_5b5ee73adfddd952;
+            var_b7a853cc2321f34a = var_a6461de9055834b5.shortname;
             break;
         }
     }

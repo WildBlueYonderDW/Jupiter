@@ -109,7 +109,7 @@ function incplayerrecord(ref) {
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x439
 // Size: 0x17d
-function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, immediate, victim, canKillChain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
+function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, immediate, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
     if (!istrue(immediate)) {
         self endon("disconnect");
         waitframe();
@@ -136,7 +136,7 @@ function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, i
         var_91185ff4a2e16a72 = function_53c4c53197386572(points, 0);
     }
     if (var_91185ff4a2e16a72 > 0) {
-        giveunifiedpoints(ref, objweapon, var_91185ff4a2e16a72, -1, victim, canKillChain, streakinfo, undefined, var_7ec7671a1e0c788f);
+        giveunifiedpoints(ref, objweapon, var_91185ff4a2e16a72, -1, victim, cankillchain, streakinfo, undefined, var_7ec7671a1e0c788f);
     }
     bufferednotify("earned_award_buffered", ref);
     if (isdefined(self.awardsthislife[ref])) {
@@ -153,7 +153,7 @@ function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, i
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5bd
 // Size: 0x12d
-function queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, canKillChain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
+function queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
     var_6dfac1dd9d7ffae2 = spawnstruct();
     var_6dfac1dd9d7ffae2.ref = [0:ref, 1:gettime()];
     var_6dfac1dd9d7ffae2.objweapon = objweapon;
@@ -162,7 +162,7 @@ function queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16a
     var_6dfac1dd9d7ffae2.var_51bdae03b05bc75e = var_51bdae03b05bc75e;
     var_6dfac1dd9d7ffae2.var_30e33d4e4669117f = var_30e33d4e4669117f;
     var_6dfac1dd9d7ffae2.victim = victim;
-    var_6dfac1dd9d7ffae2.canKillChain = canKillChain;
+    var_6dfac1dd9d7ffae2.cankillchain = cankillchain;
     var_6dfac1dd9d7ffae2.streakinfo = streakinfo;
     var_6dfac1dd9d7ffae2.var_ad8c6c5cc50af10b = var_ad8c6c5cc50af10b;
     var_6dfac1dd9d7ffae2.var_7ec7671a1e0c788f = var_7ec7671a1e0c788f;
@@ -179,7 +179,7 @@ function flushmidmatchawardqueue() {
         assertex(!shouldqueuemidmatchaward(), "Attempting to flush award queue when the awards can't be dispalyed");
     #/
     foreach (award in self.awardqueue) {
-        givemidmatchaward(award.ref, award.objweapon, award.var_91185ff4a2e16a72, award.var_4b5a99c16abfdfb1, award.var_51bdae03b05bc75e, award.var_30e33d4e4669117f, award.victim, award.canKillChain, award.streakinfo, award.var_ad8c6c5cc50af10b, award.var_7ec7671a1e0c788f);
+        givemidmatchaward(award.ref, award.objweapon, award.var_91185ff4a2e16a72, award.var_4b5a99c16abfdfb1, award.var_51bdae03b05bc75e, award.var_30e33d4e4669117f, award.victim, award.cankillchain, award.streakinfo, award.var_ad8c6c5cc50af10b, award.var_7ec7671a1e0c788f);
     }
     self.awardqueue = [];
 }
@@ -236,7 +236,7 @@ function shouldqueuemidmatchaward(var_3cda0e0b6a2d1f97) {
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8de
 // Size: 0x167
-function givemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, canKillChain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
+function givemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
     if (!isplayer(self)) {
         return;
     }
@@ -271,11 +271,11 @@ function givemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16ab
         createnvidiavideo(ref);
     }
     if (shouldqueuemidmatchaward(var_51bdae03b05bc75e)) {
-        queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, canKillChain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f);
+        queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f);
         return;
     }
     namespace_bd0162aedd8c8594::logevent_awardgained(ref);
-    thread giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_30e33d4e4669117f, victim, canKillChain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f);
+    thread giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f);
 }
 
 // Namespace awards/namespace_46006c5769c2ac90
@@ -296,7 +296,7 @@ function createnvidiavideo(ref) {
         var_7861cc7f1384834e = 8;
     }
     if (!isdefined(var_7861cc7f1384834e)) {
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (ref == #"double") {
                 var_7861cc7f1384834e = 17;
             } else if (ref == #"hash_f42b79a30529ba75") {

@@ -24,20 +24,20 @@ function vehomn_init() {
     /#
         assertex(!isdefined(level.vehicle.omnvars), "vehOmn_init() should only be called once.");
     #/
-    levelData = spawnstruct();
-    level.vehicle.omnvars = levelData;
-    levelData.vehicledata = [];
+    leveldata = spawnstruct();
+    level.vehicle.omnvars = leveldata;
+    leveldata.vehicledata = [];
 }
 
 // Namespace namespace_8c2443d2e806600c/namespace_84cff6185e39aa66
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75e
 // Size: 0xde
-function vehomn_setvehicle(vehicleRef, clients) {
-    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef);
+function vehomn_setvehicle(vehicleref, clients) {
+    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref);
     id = var_e2818ad39a3341b4.id;
     /#
-        assertex(isdefined(id), "levelDataForVehicle for " + vehicleRef + " failed to define an ID.");
+        assertex(isdefined(id), "levelDataForVehicle for " + vehicleref + " failed to define an ID.");
     #/
     if (isdefined(clients)) {
         if (isarray(clients)) {
@@ -60,18 +60,18 @@ function vehomn_setcurrentseat(vehicle, var_199b7eb356c9d5a9, client) {
     if (!isdefined(client)) {
         return;
     }
-    vehicleRef = vehicle function_d93ec4635290febd();
+    vehicleref = vehicle function_d93ec4635290febd();
     id = -1;
-    if (isdefined(vehicleRef)) {
-        var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef);
+    if (isdefined(vehicleref)) {
+        var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref);
         if (isdefined(var_199b7eb356c9d5a9)) {
             id = var_e2818ad39a3341b4.seatids[var_199b7eb356c9d5a9];
-            var_ce438350733fad27 = vehicleRef == "veh_jup_orav";
+            var_ce438350733fad27 = vehicleref == "veh_jup_orav";
             if ((var_ce438350733fad27 || istrue(var_e2818ad39a3341b4.var_c0ac99d7d5e195a4) && vehicle namespace_5a0f3ca265d3a4c8::function_b9d5a379eb1aefc7(var_199b7eb356c9d5a9)) && var_199b7eb356c9d5a9 != "gunner") {
                 id = id | 16;
             }
             /#
-                assertex(isdefined(id), "levelDataForVehicle for " + vehicleRef + " failed to define an ID for seat " + var_199b7eb356c9d5a9 + ".");
+                assertex(isdefined(id), "levelDataForVehicle for " + vehicleref + " failed to define an ID for seat " + var_199b7eb356c9d5a9 + ".");
             #/
         }
     }
@@ -82,16 +82,16 @@ function vehomn_setcurrentseat(vehicle, var_199b7eb356c9d5a9, client) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x928
 // Size: 0x82
-function vehomn_setnextseat(vehicleRef, var_199b7eb356c9d5a9, client) {
+function vehomn_setnextseat(vehicleref, var_199b7eb356c9d5a9, client) {
     if (!isdefined(client)) {
         return;
     }
     id = -1;
     if (isdefined(var_199b7eb356c9d5a9)) {
-        var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef);
+        var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref);
         id = var_e2818ad39a3341b4.seatids[var_199b7eb356c9d5a9];
         /#
-            assertex(isdefined(id), "levelDataForVehicle for " + vehicleRef + " failed to define an ID for seat " + var_199b7eb356c9d5a9 + ".");
+            assertex(isdefined(id), "levelDataForVehicle for " + vehicleref + " failed to define an ID for seat " + var_199b7eb356c9d5a9 + ".");
         #/
     }
     client setclientomnvar("ui_veh_next_seat", id);
@@ -101,14 +101,14 @@ function vehomn_setnextseat(vehicleRef, var_199b7eb356c9d5a9, client) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b1
 // Size: 0x1e4
-function vehomn_setseatentity(vehicleRef, var_199b7eb356c9d5a9, var_5b0181bcd140f, clients) {
+function vehomn_setseatentity(vehicleref, var_199b7eb356c9d5a9, var_5b0181bcd140f, clients) {
     id = -1;
-    if (isdefined(vehicleRef)) {
-        var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef);
+    if (isdefined(vehicleref)) {
+        var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref);
         if (isdefined(var_199b7eb356c9d5a9)) {
             id = var_e2818ad39a3341b4.seatids[var_199b7eb356c9d5a9];
             /#
-                assertex(isdefined(id), "levelDataForVehicle for " + vehicleRef + " failed to define an ID for seat " + var_199b7eb356c9d5a9 + ".");
+                assertex(isdefined(id), "levelDataForVehicle for " + vehicleref + " failed to define an ID for seat " + var_199b7eb356c9d5a9 + ".");
             #/
         }
     }
@@ -160,8 +160,8 @@ function vehomn_setseatentity(vehicleRef, var_199b7eb356c9d5a9, var_5b0181bcd140
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb9c
 // Size: 0x27
-function vehomn_clearseatentity(vehicleRef, var_199b7eb356c9d5a9, clients) {
-    vehomn_setseatentity(vehicleRef, var_199b7eb356c9d5a9, undefined, clients);
+function vehomn_clearseatentity(vehicleref, var_199b7eb356c9d5a9, clients) {
+    vehomn_setseatentity(vehicleref, var_199b7eb356c9d5a9, undefined, clients);
 }
 
 // Namespace namespace_8c2443d2e806600c/namespace_84cff6185e39aa66
@@ -424,11 +424,11 @@ function vehomn_clearshowfuel(clients) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12b6
 // Size: 0x187
-function vehomn_setammo(vehicleRef, var_f8c397f70608abc, var_1a947afa7b4c8960, clients) {
-    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef);
+function vehomn_setammo(vehicleref, var_f8c397f70608abc, var_1a947afa7b4c8960, clients) {
+    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref);
     id = var_e2818ad39a3341b4.ammoids[var_f8c397f70608abc];
     /#
-        assertex(isdefined(id), "levelDataForVehicle for " + vehicleRef + " failed to define an ID for ammoRef " + var_f8c397f70608abc + ".");
+        assertex(isdefined(id), "levelDataForVehicle for " + vehicleref + " failed to define an ID for ammoRef " + var_f8c397f70608abc + ".");
     #/
     omnvar = undefined;
     switch (id) {
@@ -467,35 +467,35 @@ function vehomn_setammo(vehicleRef, var_f8c397f70608abc, var_1a947afa7b4c8960, c
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1444
 // Size: 0x27
-function vehomn_clearammo(vehicleRef, var_f8c397f70608abc, clients) {
-    vehomn_setammo(vehicleRef, var_f8c397f70608abc, undefined, clients);
+function vehomn_clearammo(vehicleref, var_f8c397f70608abc, clients) {
+    vehomn_setammo(vehicleref, var_f8c397f70608abc, undefined, clients);
 }
 
 // Namespace namespace_8c2443d2e806600c/namespace_84cff6185e39aa66
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1472
 // Size: 0x54
-function vehomn_showammo(vehicleRef, var_f8c397f70608abc, var_1a947afa7b4c8960, clients) {
+function vehomn_showammo(vehicleref, var_f8c397f70608abc, var_1a947afa7b4c8960, clients) {
     /#
         assertex(isstring(var_1a947afa7b4c8960) || var_1a947afa7b4c8960 != -1, "vehOmn_showAmmo cannot be called with a value of " + -1 + ".");
     #/
-    vehomn_setammo(vehicleRef, var_f8c397f70608abc, var_1a947afa7b4c8960, clients);
+    vehomn_setammo(vehicleref, var_f8c397f70608abc, var_1a947afa7b4c8960, clients);
 }
 
 // Namespace namespace_8c2443d2e806600c/namespace_84cff6185e39aa66
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x14cd
 // Size: 0x28
-function vehomn_hideammo(vehicleRef, var_f8c397f70608abc, clients) {
-    vehomn_setammo(vehicleRef, var_f8c397f70608abc, -1, clients);
+function vehomn_hideammo(vehicleref, var_f8c397f70608abc, clients) {
+    vehomn_setammo(vehicleref, var_f8c397f70608abc, -1, clients);
 }
 
 // Namespace namespace_8c2443d2e806600c/namespace_84cff6185e39aa66
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14fc
 // Size: 0x144
-function vehomn_showwarning(var_fde9da7fdad4045c, clients, vehicleRef) {
-    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef, 1);
+function vehomn_showwarning(var_fde9da7fdad4045c, clients, vehicleref) {
+    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref, 1);
     id = var_e2818ad39a3341b4.warningbits[var_fde9da7fdad4045c];
     /#
         assertex(id < 11, "vehOmn_showWarning called with warningRef index " + id + ". Should be below " + 11 + ".");
@@ -524,8 +524,8 @@ function vehomn_showwarning(var_fde9da7fdad4045c, clients, vehicleRef) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1647
 // Size: 0x142
-function vehomn_hidewarning(var_fde9da7fdad4045c, clients, vehicleRef) {
-    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef, 1);
+function vehomn_hidewarning(var_fde9da7fdad4045c, clients, vehicleref) {
+    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref, 1);
     id = var_e2818ad39a3341b4.warningbits[var_fde9da7fdad4045c];
     /#
         assertex(id < 11, "vehOmn_showWarning called with warningRef index " + id + ". Should be below " + 11 + ".");
@@ -554,11 +554,11 @@ function vehomn_hidewarning(var_fde9da7fdad4045c, clients, vehicleRef) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1790
 // Size: 0x18e
-function vehomn_clearwarnings(clients, vehicleRef) {
+function vehomn_clearwarnings(clients, vehicleref) {
     if (isdefined(clients)) {
         var_e2818ad39a3341b4 = undefined;
-        if (isdefined(vehicleRef)) {
-            var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef, undefined, 1);
+        if (isdefined(vehicleref)) {
+            var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref, undefined, 1);
         }
         if (isarray(clients)) {
             foreach (client in clients) {
@@ -617,11 +617,11 @@ function function_6f848816a946e419(client) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19ce
 // Size: 0x187
-function vehomn_setrotation(vehicleRef, var_bee205645342bf4c, var_accd63d76646ae90, clients) {
-    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef);
+function vehomn_setrotation(vehicleref, var_bee205645342bf4c, var_accd63d76646ae90, clients) {
+    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref);
     id = var_e2818ad39a3341b4.rotationids[var_bee205645342bf4c];
     /#
-        assertex(isdefined(id), "levelDataForVehicle for " + vehicleRef + " failed to define an ID for rotationRef " + var_bee205645342bf4c + ".");
+        assertex(isdefined(id), "levelDataForVehicle for " + vehicleref + " failed to define an ID for rotationRef " + var_bee205645342bf4c + ".");
     #/
     omnvar = undefined;
     switch (id) {
@@ -661,8 +661,8 @@ function vehomn_setrotation(vehicleRef, var_bee205645342bf4c, var_accd63d76646ae
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b5c
 // Size: 0x27
-function vehomn_clearrotation(vehicleRef, var_bee205645342bf4c, clients) {
-    vehomn_setrotation(vehicleRef, var_bee205645342bf4c, undefined, clients);
+function vehomn_clearrotation(vehicleref, var_bee205645342bf4c, clients) {
+    vehomn_setrotation(vehicleref, var_bee205645342bf4c, undefined, clients);
 }
 
 // Namespace namespace_8c2443d2e806600c/namespace_84cff6185e39aa66
@@ -788,11 +788,11 @@ function vehomn_getleveldata() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f93
 // Size: 0x2b9
-function vehomn_getleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c667) {
-    if (istrue(create) && (!function_89dc39dc11f3988c(vehicleRef) || !isdefined(function_29b4292c92443328(vehicleRef).occupancy) || !isdefined(function_29b4292c92443328(vehicleRef).occupancy.seatids))) {
+function vehomn_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667) {
+    if (istrue(create) && (!function_89dc39dc11f3988c(vehicleref) || !isdefined(function_29b4292c92443328(vehicleref).occupancy) || !isdefined(function_29b4292c92443328(vehicleref).occupancy.seatids))) {
         data = undefined;
-        if (function_89dc39dc11f3988c(vehicleRef)) {
-            data = function_29b4292c92443328(vehicleRef);
+        if (function_89dc39dc11f3988c(vehicleref)) {
+            data = function_29b4292c92443328(vehicleref);
         } else {
             data = spawnstruct();
         }
@@ -817,10 +817,10 @@ function vehomn_getleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c667)
         data.occupancy.warningbits["shockStickAttached"] = 8;
         data.occupancy.warningbits["DDoSed"] = 9;
         data.occupancy.warningbits["locked"] = 10;
-        level.var_a0b2c978ca57ffc5[vehicleRef] = data;
+        level.var_a0b2c978ca57ffc5[vehicleref] = data;
     }
-    if (function_89dc39dc11f3988c(vehicleRef)) {
-        return function_29b4292c92443328(vehicleRef).occupancy;
+    if (function_89dc39dc11f3988c(vehicleref)) {
+        return function_29b4292c92443328(vehicleref).occupancy;
     }
 }
 
@@ -828,8 +828,8 @@ function vehomn_getleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c667)
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2253
 // Size: 0x9c
-function vehomn_clearleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c667) {
-    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c667);
+function vehomn_clearleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667) {
+    var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667);
     if (isdefined(var_e2818ad39a3341b4)) {
         var_e2818ad39a3341b4.seatids = [];
         var_e2818ad39a3341b4.ammoids = [];
@@ -847,13 +847,13 @@ function vehomn_clearleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c66
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22f7
 // Size: 0x77
-function vehomn_clearall(clients, vehicleRef) {
+function vehomn_clearall(clients, vehicleref) {
     if (isarray(clients)) {
         foreach (client in clients) {
-            vehomn_clearallinternal(client, vehicleRef);
+            vehomn_clearallinternal(client, vehicleref);
         }
     } else {
-        vehomn_clearallinternal(clients, vehicleRef);
+        vehomn_clearallinternal(clients, vehicleref);
     }
 }
 
@@ -861,7 +861,7 @@ function vehomn_clearall(clients, vehicleRef) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2375
 // Size: 0x145
-function private vehomn_clearallinternal(client, vehicleRef) {
+function private vehomn_clearallinternal(client, vehicleref) {
     if (isdefined(client) && isplayer(client)) {
         client setclientomnvar("ui_veh_vehicle", -1);
         client setclientomnvar("ui_veh_current_seat", -1);
@@ -881,7 +881,7 @@ function private vehomn_clearallinternal(client, vehicleRef) {
         client setclientomnvar("ui_veh_show_fuel", 0);
         client setclientomnvar("ui_veh_ammo_0", -1);
         client setclientomnvar("ui_veh_ammo_1", -1);
-        vehomn_clearwarnings(client, vehicleRef);
+        vehomn_clearwarnings(client, vehicleref);
         client setclientomnvar("ui_veh_degrees_0", 0);
         client setclientomnvar("ui_veh_degrees_1", 0);
         vehomn_clearcontrols(client);
@@ -1141,9 +1141,9 @@ function vehomn_updatenextseatomnvars(vehicle) {
 function vehomn_updaterotationomnvarsperframeforclient(vehicle, client, seatid, data) {
     var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicle.vehiclename);
     if (var_e2818ad39a3341b4.rotationrefsbyseatandweapon.size > 0 && isdefined(var_e2818ad39a3341b4.rotationrefsbyseatandweapon[seatid])) {
-        usingCamera = namespace_1fbd40990ee60ede::vehicle_occupancy_isdriverseat(vehicle, seatid);
+        usingcamera = namespace_1fbd40990ee60ede::vehicle_occupancy_isdriverseat(vehicle, seatid);
         var_c50b485a43752fd = namespace_1fbd40990ee60ede::vehicle_occupancy_getleveldataforseat(vehicle.vehiclename, seatid);
-        if (usingCamera) {
+        if (usingcamera) {
             if (isdefined(vehicle.objweapon)) {
                 var_bee205645342bf4c = var_e2818ad39a3341b4.rotationrefsbyseatandweapon[seatid][vehicle.objweapon.basename];
                 if (isdefined(var_bee205645342bf4c)) {

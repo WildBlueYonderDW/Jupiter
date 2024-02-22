@@ -201,7 +201,7 @@ function init() {
     if (getdvarint(@"hash_eb1e94069d5150f2") == 1) {
         level thread savegraverobberammo();
     }
-    registersharedfunc("weapons", "recommendedStatusBySeason", &recommendedStatusBySeason);
+    registersharedfunc("weapons", "recommendedStatusBySeason", &recommendedstatusbyseason);
     /#
         setdevdvar(@"hash_10368af4dee3ba2c", 0);
         setdevdvarifuninitialized(@"hash_eb7d16d9fa10a208", 625000000);
@@ -485,7 +485,7 @@ function dochangeweapon(objweapon) {
     updateweaponperks();
     updatesniperglint(objweapon);
     namespace_e2785bb1da360f91::function_b939bc4f3a6d4fdc(objweapon);
-    scriptedMountDisable(objweapon);
+    scriptedmountdisable(objweapon);
     namespace_30a6d7a07831c1e2::updatedefaultflinchreduction();
     events::updateweaponchangetime();
     class::riotshieldonweaponchange(objweapon);
@@ -498,7 +498,7 @@ function dochangeweapon(objweapon) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ed2
 // Size: 0x50
-function scriptedMountDisable(objweapon) {
+function scriptedmountdisable(objweapon) {
     if (istrue(level.disablemount)) {
         return;
     }
@@ -1586,7 +1586,7 @@ function watchpickup(droppingplayer) {
         droppeditem = player = self waittill("trigger");
         previousweapon = undefined;
         var_70582da4ff904336 = isdefined(level.cyberemp) && isdefined(level.cyberemp.carrier) && level.cyberemp.carrier == player;
-        var_280079773a9459a5 = getgametype() == "cyber" && (isdefined(droppeditem) || var_70582da4ff904336) && istrue(level.allowEMPWeapon);
+        var_280079773a9459a5 = getgametype() == "cyber" && (isdefined(droppeditem) || var_70582da4ff904336) && istrue(level.allowempweapon);
         if (var_280079773a9459a5) {
             weapons = player namespace_df5cfdbe6e2d3812::getcurrentprimaryweaponsminusalt();
             if (weapons.size > 2) {
@@ -2274,7 +2274,7 @@ function handlescavengerbagpickup(var_2a1c444def60a416) {
     onscavengerbagpickup(player);
     player stats::initpersstat("scavengerPickedUp");
     player stats::incpersstat("scavengerPickedUp", 1);
-    player perks::activatePerk("specialty_scavenger_plus");
+    player perks::activateperk("specialty_scavenger_plus");
     challenges::function_8a0395089290faf6(player);
     if (isdefined(self.useobj)) {
         self.useobj delete();
@@ -2470,7 +2470,7 @@ function scavengerbagusesetup() {
         if (isplayer(player)) {
             player notify("scavenger_pickup");
             onscavengerbagpickup(player);
-            player perks::activatePerk("specialty_scavenger_plus");
+            player perks::activateperk("specialty_scavenger_plus");
             if (isdefined(self.useobj)) {
                 self.useobj delete();
             }
@@ -2757,11 +2757,11 @@ function function_f092173e435bb0f1(objweapon, var_85fa2cdcb19d076c) {
     thread namespace_6b49ddb858f34366::function_298b6dd0b26f13bd();
     thread namespace_6b49ddb858f34366::function_2efd6926efd58b49(0);
     watchformiss(objweapon, var_366b0ecc2f28aead);
-    totalShots = self.var_f0006748b1b1efb0[var_366b0ecc2f28aead];
+    totalshots = self.var_f0006748b1b1efb0[var_366b0ecc2f28aead];
     var_7eb0ccf010359357 = isdefined(self.hits[var_366b0ecc2f28aead]) ? 0 : self.hits[var_366b0ecc2f28aead];
     var_a35ea66201ac92e8 = isdefined(self.var_5ffaa0ceb1f66708[var_366b0ecc2f28aead]) ? 0 : self.var_5ffaa0ceb1f66708[var_366b0ecc2f28aead];
     var_202acce87e9d7f6 = isdefined(self.var_c63a7f2980c7d596[var_366b0ecc2f28aead]) ? 0 : self.var_c63a7f2980c7d596[var_366b0ecc2f28aead];
-    var_1f4904b24e56faf5 = totalShots - var_7eb0ccf010359357;
+    var_1f4904b24e56faf5 = totalshots - var_7eb0ccf010359357;
     if (weaponcanstoreaccuracystats(objweapon)) {
         setweaponstat(objweapon, var_7eb0ccf010359357, "hits");
         setweaponstat(objweapon, var_a35ea66201ac92e8, "ai_hits");
@@ -2769,12 +2769,12 @@ function function_f092173e435bb0f1(objweapon, var_85fa2cdcb19d076c) {
         if (onlinestatsenabled()) {
             var_6d598f3a5a0c87f3 = getplayerstat("combatStats", "totalShots");
             var_914ecbde7394d0ef = getplayerstat("combatStats", "misses");
-            setplayerstatbuffered(var_6d598f3a5a0c87f3 + totalShots, "combatStats", "totalShots");
+            setplayerstatbuffered(var_6d598f3a5a0c87f3 + totalshots, "combatStats", "totalShots");
             setplayerstatbuffered(var_914ecbde7394d0ef + var_1f4904b24e56faf5, "combatStats", "misses");
         }
     }
-    namespace_391de535501b0143::shotmissed(totalShots, var_7eb0ccf010359357);
-    namespace_391de535501b0143::function_cf1cfbbec7d07d44(totalShots, var_1f4904b24e56faf5);
+    namespace_391de535501b0143::shotmissed(totalshots, var_7eb0ccf010359357);
+    namespace_391de535501b0143::function_cf1cfbbec7d07d44(totalshots, var_1f4904b24e56faf5);
     self.var_f0006748b1b1efb0[var_366b0ecc2f28aead] = 0;
     self.hits[var_366b0ecc2f28aead] = 0;
     self.var_5ffaa0ceb1f66708[var_366b0ecc2f28aead] = 0;
@@ -2920,11 +2920,11 @@ function checkhit(objweapon, victim, shitloc, idamage) {
     }
     self.lasthittime[var_366b0ecc2f28aead] = gettime();
     if (onlinestatsenabled()) {
-        totalShots = getplayerstat("combatStats", "totalShots");
+        totalshots = getplayerstat("combatStats", "totalShots");
         hits = getplayerstat("combatStats", "hits") + 1;
-        if (hits <= totalShots) {
+        if (hits <= totalshots) {
             setplayerstatbuffered(hits, "combatStats", "hits");
-            setplayerstatbuffered(int(totalShots - hits), "combatStats", "misses");
+            setplayerstatbuffered(int(totalshots - hits), "combatStats", "misses");
         }
     }
     thread namespace_aad14af462a74d08::onsuccessfulhit(objweapon);
@@ -3080,7 +3080,7 @@ function watchgrenadeusage() {
 // Size: 0x33
 function watchgrenadethrows() {
     grenade = waittill_grenade_throw();
-    grenadeUsed(grenade);
+    grenadeused(grenade);
     if (isdefined(grenade)) {
         grenade function_5226227bce83ebe9(3, self.team);
     }
@@ -3104,7 +3104,7 @@ function function_1bacc798ac81809a(var_3e6c39a65d0cfc00, callback) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x909f
 // Size: 0xb12
-function grenadeUsed(grenade) {
+function grenadeused(grenade) {
     if (!isdefined(grenade)) {
         return;
     }
@@ -3131,7 +3131,7 @@ function grenadeUsed(grenade) {
         namespace_27c74152ccb91331::function_ef6885141252869(self, grenade);
         if (namespace_68e641469fde3fa7::issuperweapon(grenade.weapon_object)) {
             if (!namespace_1cd9f6896754adb0::get("supers") || istrue(self.var_859654e0445a36d9)) {
-                if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+                if (namespace_36f464722d326bbe::isbrstylegametype()) {
                     if (isinlaststand(self)) {
                         var_ebec497ff8b18a45 = namespace_85d036cb78063c4a::getsuperrefforsuperweapon(grenade.weapon_object);
                         self.var_a188fba649ffd953 = var_ebec497ff8b18a45;
@@ -3504,8 +3504,8 @@ function lockonlaunchers_gettargetarray(var_fe608d14719843bc) {
                 }
             }
         }
-        foreach (vehicleRef in namespace_1f188a13f7e79610::function_9005b7fc076293f8()) {
-            vehicles = namespace_f64231d5b7a2c3c4::vehicle_tracking_getgameinstances(vehicleRef);
+        foreach (vehicleref in namespace_1f188a13f7e79610::function_9005b7fc076293f8()) {
+            vehicles = namespace_f64231d5b7a2c3c4::vehicle_tracking_getgameinstances(vehicleref);
             foreach (vehicle in vehicles) {
                 if (isdefined(vehicle) && !istrue(vehicle.var_ec60570ddbb987b1) && (!namespace_1f188a13f7e79610::vehicle_isfriendlytoplayer(vehicle, self) || var_e688b198aa9a4b3f)) {
                     targets[targets.size] = vehicle;
@@ -3544,8 +3544,8 @@ function lockonlaunchers_gettargetarray(var_fe608d14719843bc) {
                 }
             }
         }
-        foreach (vehicleRef in namespace_1f188a13f7e79610::function_9005b7fc076293f8()) {
-            vehicles = namespace_f64231d5b7a2c3c4::vehicle_tracking_getgameinstances(vehicleRef);
+        foreach (vehicleref in namespace_1f188a13f7e79610::function_9005b7fc076293f8()) {
+            vehicles = namespace_f64231d5b7a2c3c4::vehicle_tracking_getgameinstances(vehicleref);
             foreach (vehicle in vehicles) {
                 if (istrue(vehicle.var_ec60570ddbb987b1)) {
                     continue;
@@ -3809,7 +3809,7 @@ function getmaxplantedtacticalequip(player) {
 // Checksum 0x0, Offset: 0xab27
 // Size: 0x1a
 function getmaxplantedsuperequip(equipmentref) {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return 1;
     }
     return 2;
@@ -3962,11 +3962,11 @@ function equipmenthit(owner, attacker, objweapon, meansofdeath) {
         attacker.lasthittime[var_366b0ecc2f28aead] = gettime();
         attacker thread namespace_d576b6dc7cef9c62::threadedsetweaponstatbyname(var_366b0ecc2f28aead, 1, "hits");
         if (onlinestatsenabled()) {
-            totalShots = attacker getplayerstat("combatStats", "totalShots");
+            totalshots = attacker getplayerstat("combatStats", "totalShots");
             hits = attacker getplayerstat("combatStats", "hits") + 1;
-            if (hits <= totalShots) {
+            if (hits <= totalshots) {
                 setplayerstatbuffered(hits, "combatStats", "hits");
-                setplayerstatbuffered(int(totalShots - hits), "combatStats", "misses");
+                setplayerstatbuffered(int(totalshots - hits), "combatStats", "misses");
             }
         }
         if (isdefined(meansofdeath) && isbulletdamage(meansofdeath) || isprojectiledamage(meansofdeath)) {
@@ -4164,14 +4164,14 @@ function makeexplosiveusabletag(tagname, isgrenade) {
             equipmentref = namespace_1a507865f681850e::getequipmentreffromweapon(objweapon);
             if (isdefined(equipmentref)) {
                 if (owner namespace_1a507865f681850e::hasequipment(equipmentref)) {
-                    if (namespace_36f464722d326bbe::isBRStyleGameType() && namespace_aead94004cf4c147::function_7e103028c464ab9a(namespace_38b993c4618e76cd::function_b88cfb4893ceedac(equipmentref)) && owner namespace_1a507865f681850e::getequipmentammo(equipmentref) >= owner namespace_1a507865f681850e::getequipmentmaxammo(equipmentref)) {
-                        lootid = namespace_38b993c4618e76cd::getLootIDFromRef(equipmentref);
+                    if (namespace_36f464722d326bbe::isbrstylegametype() && namespace_aead94004cf4c147::function_7e103028c464ab9a(namespace_38b993c4618e76cd::function_b88cfb4893ceedac(equipmentref)) && owner namespace_1a507865f681850e::getequipmentammo(equipmentref) >= owner namespace_1a507865f681850e::getequipmentmaxammo(equipmentref)) {
+                        lootid = namespace_38b993c4618e76cd::getlootidfromref(equipmentref);
                         result = owner namespace_aead94004cf4c147::function_e01d9736b2d100ac(lootid, 1);
                         if (istrue(result)) {
                             var_60227bff1e9478cc = spawnstruct();
-                            var_60227bff1e9478cc.scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+                            var_60227bff1e9478cc.scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
                             var_60227bff1e9478cc.count = 1;
-                            owner namespace_aead94004cf4c147::addItemToBackpack(lootid, var_60227bff1e9478cc);
+                            owner namespace_aead94004cf4c147::additemtobackpack(lootid, var_60227bff1e9478cc);
                         }
                     } else if (owner namespace_1a507865f681850e::getequipmentammo(equipmentref) < owner namespace_1a507865f681850e::getequipmentmaxammo(equipmentref)) {
                         owner namespace_1a507865f681850e::incrementequipmentammo(equipmentref, 1);
@@ -4841,7 +4841,7 @@ function updatemovespeedscale() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd0da
 // Size: 0x38
-function addExtraMoveSpeed(str_id, value) {
+function addextramovespeed(str_id, value) {
     if (!isdefined(self.var_aa6c008d413b90cb)) {
         self.var_aa6c008d413b90cb = [];
     }
@@ -4852,7 +4852,7 @@ function addExtraMoveSpeed(str_id, value) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd119
 // Size: 0x3d
-function removeExtraMoveSpeed(str_id) {
+function removeextramovespeed(str_id) {
     /#
         assert(isdefined(self.var_aa6c008d413b90cb), "it must have added extra move speed");
     #/
@@ -5401,7 +5401,7 @@ function grenadestucktosplash(var_d658f0b6bc4fd513, stuckto) {
             player hud_message::showsplash(var_d658f0b6bc4fd513, undefined, undefined, undefined, 1, undefined, 1);
         }
     }
-    player thread points::doScoreEvent(#"hash_3b7863dcdff98b13");
+    player thread points::doscoreevent(#"hash_3b7863dcdff98b13");
 }
 
 // Namespace weapons/namespace_3bbb5a98b932c46f
@@ -6637,7 +6637,7 @@ function function_c50caf1f56ecf73(stuckto, position, var_33e2d54d8812e8ce, var_6
 function function_7a91162092cc11ec(lootid) {
     var_93b3002ebef628b = loot::function_793e8a72cedb8ef3(lootid);
     var_7956cc8a3f6e983d = weapon::getweaponrootname(var_93b3002ebef628b);
-    return loot::getLootIDFromRef(var_7956cc8a3f6e983d);
+    return loot::getlootidfromref(var_7956cc8a3f6e983d);
 }
 
 // Namespace weapons/namespace_3bbb5a98b932c46f
@@ -6721,7 +6721,7 @@ function function_e0780928b2591268(objweapon, var_85fa2cdcb19d076c) {
     var_1a1b6c4c33f1b3b8 = trace::create_contents(1, 0, 0, 0, 0, 1);
     var_3f8e37b81bd4d351 = (0, 0, 10);
     var_b83b0fc6a542638 = 0;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_b83b0fc6a542638 = getdvarint(@"hash_31c5e6d57a1104e1", 1);
     }
     var_c8863cdecb0560f4 = [];
@@ -7191,8 +7191,8 @@ function function_aa3939ed0f60d04e(objweapon, var_85fa2cdcb19d076c) {
             }
         }
     }
-    if (isdefined(level.aiSentryTurrets) && isdefined(level.aiSentryTurrets.var_a4cd5b9ae4a509f4)) {
-        foreach (sentry in level.aiSentryTurrets.var_a4cd5b9ae4a509f4) {
+    if (isdefined(level.aisentryturrets) && isdefined(level.aisentryturrets.var_a4cd5b9ae4a509f4)) {
+        foreach (sentry in level.aisentryturrets.var_a4cd5b9ae4a509f4) {
             var_bf6447599b22469f = (sentry.origin[0], sentry.origin[1], sentry.origin[2] + 30);
             if (distancesquared(self.origin, var_bf6447599b22469f) <= 12250000) {
                 if (sighttracepassed(var_9476c342add1a849, var_bf6447599b22469f, 0, sentry, var_85fa2cdcb19d076c, 1)) {
@@ -7428,7 +7428,7 @@ function function_e1e1af51fbad6907() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13dff
 // Size: 0x11e
-function recommendedStatusBySeason(objweapon, inflictor) {
+function recommendedstatusbyseason(objweapon, inflictor) {
     var_55a3d589b1919af0 = [];
     if (isdefined(objweapon)) {
         var_18cfb23a952605a8 = namespace_e0ee43ef2dddadaa::getweaponrootname(objweapon);

@@ -245,7 +245,7 @@ function function_793e8a72cedb8ef3(lootid) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xefb
 // Size: 0x92
-function getLootIDFromRef(ref) {
+function getlootidfromref(ref) {
     if (!isdefined(ref)) {
         return undefined;
     }
@@ -341,7 +341,7 @@ function function_b88cfb4893ceedac(ref) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11e6
 // Size: 0x7f
-function getScriptableFromLootID(lootid) {
+function getscriptablefromlootid(lootid) {
     scriptable = function_e0a57e47b2947bc(lootid);
     if (isdefined(scriptable)) {
         return scriptable;
@@ -372,10 +372,10 @@ function function_fae5e1d3de32d3f7(ref) {
         if (itemtype == #"health") {
             itemtype = #"consumable";
         }
-        return getLootIDFromRef(level.br_pickups.var_14bd11727c4b6629[ref]);
+        return getlootidfromref(level.br_pickups.var_14bd11727c4b6629[ref]);
     }
     if (isdefined(level.br_pickups.br_equipname[ref])) {
-        return getLootIDFromRef(level.br_pickups.br_equipname[ref]);
+        return getlootidfromref(level.br_pickups.br_equipname[ref]);
     }
 }
 
@@ -434,7 +434,7 @@ function function_5d47301f7bb7a6ba(lootid) {
     if (!isdefined(lootid)) {
         return 0;
     }
-    var_25978461c6e4f61b = getScriptableFromLootID(lootid);
+    var_25978461c6e4f61b = getscriptablefromlootid(lootid);
     return function_9ca10c69808b00a5(var_25978461c6e4f61b);
 }
 
@@ -517,7 +517,7 @@ function function_151b82e1257f4cde(ref) {
 // Checksum 0x0, Offset: 0x16de
 // Size: 0x19
 function function_2ce015d8f99a66e0(lootid) {
-    return function_e025bb823276187(getScriptableFromLootID(lootid));
+    return function_e025bb823276187(getscriptablefromlootid(lootid));
 }
 
 // Namespace loot/namespace_38b993c4618e76cd
@@ -553,6 +553,6 @@ function function_8c610908c0e9c6e4(ref) {
     if (!isdefined(level.var_b8122168a1d73b08)) {
         function_f6b6d73054e210b1();
     }
-    return array_contains(level.var_b8122168a1d73b08, getLootIDFromRef(ref));
+    return array_contains(level.var_b8122168a1d73b08, getlootidfromref(ref));
 }
 

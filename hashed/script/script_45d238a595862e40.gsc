@@ -39,17 +39,17 @@ function private function_4142a252055b545a(damage, attacker, direction_vec, poin
     }
     if (self.damageweapon.basename == "iw8_pi_decho") {
         if (partname == "j_head" || partname == "j_neck" || partname == "j_helmet") {
-            var_56f249fd2bf57724 = 70;
+            heal_amount = 70;
         } else {
-            var_56f249fd2bf57724 = 40;
+            heal_amount = 40;
         }
     } else {
-        var_56f249fd2bf57724 = 40;
+        heal_amount = 40;
     }
-    if (damage < var_56f249fd2bf57724) {
-        var_56f249fd2bf57724 = max(0, damage - 5);
+    if (damage < heal_amount) {
+        heal_amount = max(0, damage - 5);
     }
-    self.health = self.health + int(var_56f249fd2bf57724);
+    self.health = self.health + int(heal_amount);
 }
 
 // Namespace namespace_68d062fad885eeb3/namespace_689de5b2bc60d21a

@@ -100,7 +100,7 @@ function function_d55289ceec7cf934() {
 // Checksum 0x0, Offset: 0x4c8
 // Size: 0x9c
 function function_15782eaeb4ab0963() {
-    var_87acbab9a27b0757 = level.Mind.var_87acbab9a27b0757;
+    var_87acbab9a27b0757 = level.mind.var_87acbab9a27b0757;
     targetvalue = randomfloat(1);
     var_47b598f3ff58a345 = 0;
     foreach (name, personality in var_87acbab9a27b0757) {
@@ -394,7 +394,7 @@ function function_ded80385ea7471db(player) {
 // Checksum 0x0, Offset: 0xf27
 // Size: 0x28
 function isvalidplayer(player) {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return namespace_bc2665cbe6cf4e1f::function_36fd4f80d95cd0c4(player);
     } else {
         return namespace_da125b44c190d236::function_36e75380d944a65d(player);
@@ -683,7 +683,7 @@ function function_d3d9d9ce8bb3754d() {
             }
             var_cc5690140005fde = getdvarint(@"hash_d458c30556bf9e8c", 0);
             foreach (bot in level.players) {
-                eliminated = namespace_36f464722d326bbe::isBRStyleGameType() && bot namespace_bc2665cbe6cf4e1f::function_a9cbf557dc66d201();
+                eliminated = namespace_36f464722d326bbe::isbrstylegametype() && bot namespace_bc2665cbe6cf4e1f::iseliminated();
                 if (!isbot(bot) || eliminated) {
                     continue;
                 }
@@ -730,7 +730,7 @@ function function_d3d9d9ce8bb3754d() {
                         var_2586ba7195d68614 = var_2586ba7195d68614 + var_76bf76544f2ff143;
                     }
                 }
-                if (isdefined(bot.Mind)) {
+                if (isdefined(bot.mind)) {
                     var_c7fdf89d998c52f1 = 3;
                     var_577f45571c039a54 = bot namespace_56b9cc3deb6e3f5e::function_e3becfc53745debe(var_c7fdf89d998c52f1);
                     if (var_577f45571c039a54.size > 0) {
@@ -752,9 +752,9 @@ function function_d3d9d9ce8bb3754d() {
                             var_2586ba7195d68614 = var_2586ba7195d68614 + var_76bf76544f2ff143;
                         }
                     }
-                    var_292813f5ff278031 = bot namespace_56b9cc3deb6e3f5e::function_7ec4108a3d7a4091();
-                    if (isdefined(var_292813f5ff278031)) {
-                        var_3b3911dbb789b1d = "<unknown string>" + var_292813f5ff278031;
+                    lasterror = bot namespace_56b9cc3deb6e3f5e::function_7ec4108a3d7a4091();
+                    if (isdefined(lasterror)) {
+                        var_3b3911dbb789b1d = "<unknown string>" + lasterror;
                         print3d(var_170eade86c1cb4fb, var_3b3911dbb789b1d, var_de5a5558ba4d830a, 1, scale, 1);
                         var_170eade86c1cb4fb = var_170eade86c1cb4fb + (0, 0, linespacing);
                         if (var_89bee820769f600d) {

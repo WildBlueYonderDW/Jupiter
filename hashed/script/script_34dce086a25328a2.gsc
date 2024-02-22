@@ -39,8 +39,8 @@ function main() {
     self setmodel("body_c_jup_sp_enemy_pmc_hvytac_03");
     self attach("head_c_jup_sp_enemy_pmc_hvytac_03", "", 1);
     self.headmodel = "head_c_jup_sp_enemy_pmc_hvytac_03";
-    self setclothtype(#"hash_c5ead6e06f06025d");
-    self function_8abe5a968cc3c220(#"hash_1db29aba7a7a7ffd");
+    self setclothtype(#"vestlight");
+    self function_8abe5a968cc3c220(#"millghtgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

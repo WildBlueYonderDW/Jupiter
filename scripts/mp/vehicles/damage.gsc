@@ -348,9 +348,9 @@ LOC_000004ed:
             }
         }
     }
-    vehicleRef = namespace_1f188a13f7e79610::function_d93ec4635290febd();
-    if (isdefined(vehicleRef) && !namespace_dbbb37eb352edf96::function_b7148a3bfc4defb2()) {
-        vehicledata = namespace_5a0f3ca265d3a4c8::vehicle_damage_getleveldataforvehicle(vehicleRef);
+    vehicleref = namespace_1f188a13f7e79610::function_d93ec4635290febd();
+    if (isdefined(vehicleref) && !namespace_dbbb37eb352edf96::function_b7148a3bfc4defb2()) {
+        vehicledata = namespace_5a0f3ca265d3a4c8::vehicle_damage_getleveldataforvehicle(vehicleref);
         if (isdefined(vehicledata) && istrue(vehicledata.var_45c7e4f315c93c29)) {
             namespace_58a74e7d54b56e8d::updatescrapassistdata(data.attacker, data.damage);
         }
@@ -564,8 +564,8 @@ function get_mod_damage_modifier(vehicle, objweapon, attacker) {
     #/
     modifier = 0;
     var_8ad585800c7b3bc6 = 1;
-    vehicleRef = vehicle namespace_1f188a13f7e79610::function_d93ec4635290febd();
-    vehicledata = get_vehicle_mod_damage_data(vehicleRef);
+    vehicleref = vehicle namespace_1f188a13f7e79610::function_d93ec4635290febd();
+    vehicledata = get_vehicle_mod_damage_data(vehicleref);
     if (isdefined(vehicledata)) {
         var_647150a820d29168 = objweapon.classname;
         weaponclassdata = get_weapon_class_mod_damage_data(var_647150a820d29168);
@@ -709,13 +709,13 @@ function set_weapon_class_mod_damage_data(ref, mod, var_21e99fcec7e19345) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27e6
 // Size: 0xa5
-function set_weapon_class_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, vehicleRef) {
+function set_weapon_class_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, vehicleref) {
     if (var_21e99fcec7e19345) {
         /#
             assertex(mod > 0, "mod must be > 0 when modIsMult is true.");
         #/
     }
-    vehicledata = get_vehicle_mod_damage_data(vehicleRef, 1);
+    vehicledata = get_vehicle_mod_damage_data(vehicleref, 1);
     get_weapon_class_mod_damage_data(ref, 1);
     data = vehicledata.weaponclassdata[ref];
     if (!isdefined(data)) {
@@ -745,13 +745,13 @@ function set_perk_mod_damage_data(ref, mod, var_21e99fcec7e19345) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x28f8
 // Size: 0xa5
-function set_perk_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, vehicleRef) {
+function set_perk_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, vehicleref) {
     if (var_21e99fcec7e19345) {
         /#
             assertex(mod > 0, "mod must be > 0 when modIsMult is true.");
         #/
     }
-    vehicledata = get_vehicle_mod_damage_data(vehicleRef, 1);
+    vehicledata = get_vehicle_mod_damage_data(vehicleref, 1);
     get_perk_mod_damage_data(ref, 1);
     data = vehicledata.perkdata[ref];
     if (!isdefined(data)) {
@@ -781,13 +781,13 @@ function set_attachment_mod_damage_data(ref, mod, var_21e99fcec7e19345) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a0a
 // Size: 0xa5
-function set_attachment_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, vehicleRef) {
+function set_attachment_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, vehicleref) {
     if (var_21e99fcec7e19345) {
         /#
             assertex(mod > 0, "mod must be > 0 when modIsMult is true.");
         #/
     }
-    vehicledata = get_vehicle_mod_damage_data(vehicleRef, 1);
+    vehicledata = get_vehicle_mod_damage_data(vehicleref, 1);
     get_attachment_mod_damage_data(ref, 1);
     data = vehicledata.attachmentdata[ref];
     if (!isdefined(data)) {
@@ -845,12 +845,12 @@ function init_hit_damage_data() {
 // Checksum 0x0, Offset: 0x2be8
 // Size: 0x123
 function get_hit_damage(damage, vehicle, objweapon) {
-    vehicleRef = vehicle.vehiclename;
+    vehicleref = vehicle.vehiclename;
     weaponref = objweapon.basename;
-    vehicledata = get_vehicle_hit_damage_data(vehicleRef);
+    vehicledata = get_vehicle_hit_damage_data(vehicleref);
     weapondata = get_weapon_hit_damage_data(weaponref);
     if (isdefined(vehicledata) && isdefined(weapondata)) {
-        hitstokill = weapondata.vehiclehitstokill[vehicleRef];
+        hitstokill = weapondata.vehiclehitstokill[vehicleref];
         if (!isdefined(hitstokill) || hitstokill == 0) {
             hitstokill = vehicledata.hitstokill;
         }
@@ -945,12 +945,12 @@ function set_weapon_hit_damage_data(ref, hitsperattack) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fa0
 // Size: 0x64
-function set_weapon_hit_damage_data_for_vehicle(ref, hitsperattack, vehicleRef) {
+function set_weapon_hit_damage_data_for_vehicle(ref, hitsperattack, vehicleref) {
     /#
         assertex(hitsperattack > 0, "hitsPerAttack cannot be a negative value.");
     #/
     data = get_weapon_hit_damage_data(ref, 1);
-    vehicledata = get_vehicle_hit_damage_data(vehicleRef, 1);
+    vehicledata = get_vehicle_hit_damage_data(vehicleref, 1);
     vehicledata.weaponhitsperattack[ref] = hitsperattack;
 }
 

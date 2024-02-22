@@ -13,8 +13,8 @@
 // Size: 0x5b
 function function_fe852f92145c24a6() {
     function_ac97a4f2ab8c2d53("tablet", "tryAssignTask", &function_8a64133f5d5f7dd);
-    function_ac97a4f2ab8c2d53("tablet", "checkTaskValid", &checkTaskValid);
-    function_ac97a4f2ab8c2d53("tablet", "tryBindObjective", &tryBindObjective);
+    function_ac97a4f2ab8c2d53("tablet", "checkTaskValid", &checktaskvalid);
+    function_ac97a4f2ab8c2d53("tablet", "tryBindObjective", &trybindobjective);
     function_ac97a4f2ab8c2d53("tablet", "removeObjectiveInfo", &function_53053ea95e1148c2);
 }
 
@@ -73,7 +73,7 @@ function oncontractend(var_17953215dd7c5f9b) {
     }
     self.taskinfo = undefined;
     namespace_4bc0ead8d2af3d84::function_8e57889ac5dda0bc(self);
-    function_9aad50cbcb9b942e(var_17953215dd7c5f9b, result);
+    ontaskend(var_17953215dd7c5f9b, result);
 }
 
 // Namespace namespace_8dea0c1922c392c6/namespace_8073b31fb342e7bb
@@ -98,7 +98,7 @@ function function_a24a232718dd45b7(var_17953215dd7c5f9b) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x564
 // Size: 0x58
-function checkTaskValid(var_be80583079ec3e95, team) {
+function checktaskvalid(var_be80583079ec3e95, team) {
     var_2e16d30576073b00 = level.teamdata[team]["players"][0];
     instance = function_e92b6ecc9ab0f07a(var_be80583079ec3e95.ref, var_2e16d30576073b00);
     if (!isdefined(instance)) {
@@ -111,7 +111,7 @@ function checkTaskValid(var_be80583079ec3e95, team) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c4
 // Size: 0x8c
-function tryBindObjective(var_17953215dd7c5f9b) {
+function trybindobjective(var_17953215dd7c5f9b) {
     locale = var_17953215dd7c5f9b.locale;
     if (!isdefined(locale)) {
         return;

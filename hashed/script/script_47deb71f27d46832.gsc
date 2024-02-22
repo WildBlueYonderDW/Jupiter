@@ -536,8 +536,8 @@ function function_5850101116d3e6f7(var_fa11525e6c758d38) {
     player = self;
     playerorigin = undefined;
     if (isdefined(level.vehicle.instances)) {
-        foreach (vehicleRef, var_e5cd5ce5ee8dc6c9 in level.vehicle.instances) {
-            if (vehicleRef == var_fa11525e6c758d38) {
+        foreach (vehicleref, var_e5cd5ce5ee8dc6c9 in level.vehicle.instances) {
+            if (vehicleref == var_fa11525e6c758d38) {
                 playerorigin = function_c26886473593156d(var_e5cd5ce5ee8dc6c9, 90);
                 return playerorigin;
             }
@@ -1098,7 +1098,7 @@ function function_81699aa174dd5a52() {
     }
     eventparams = [];
     var_faf0d2fac3f47583 = "br";
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_faf0d2fac3f47583 = level.brgametype.name;
     }
     eventparams[eventparams.size] = "sub_game_type";

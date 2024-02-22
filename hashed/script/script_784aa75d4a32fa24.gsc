@@ -807,7 +807,7 @@ function function_9c97ce445dfde3af(speed) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2424
 // Size: 0xd7
-function function_67fe145bde788912(var_eb4d81fd840007e2, poiName) {
+function function_67fe145bde788912(var_eb4d81fd840007e2, poiname) {
     if (level.var_eda461803cdadc2c < 0) {
         return;
     }
@@ -821,7 +821,7 @@ function function_67fe145bde788912(var_eb4d81fd840007e2, poiName) {
     } else {
         playerlist = level.players;
     }
-    namespace_d696adde758cbe79::showDMZSplash("dmz_boss_chopper_inbound", playerlist, poiName);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_boss_chopper_inbound", playerlist, poiname);
     namespace_446fc987a980892f::function_d87d5deb069bf8e5("boss_near", playerlist);
 }
 

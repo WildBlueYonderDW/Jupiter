@@ -390,10 +390,10 @@ function function_e43e0f078b1006ce(trigger, var_756408641d217b57) {
         thread function_8ad822e2a2cefa44(trigger, var_756408641d217b57);
         return;
     }
-    poiName = function_6cc445c02b5effac(trigger.origin);
+    poiname = function_6cc445c02b5effac(trigger.origin);
     while (1) {
-        if (isdefined(level.poi[poiName]) && isdefined(level.poi[poiName]["players"])) {
-            foreach (player in level.poi[poiName]["players"]) {
+        if (isdefined(level.poi[poiname]) && isdefined(level.poi[poiname]["players"])) {
+            foreach (player in level.poi[poiname]["players"]) {
                 if (ispointinvolume(player.origin, trigger)) {
                 }
             }

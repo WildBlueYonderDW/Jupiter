@@ -93,10 +93,10 @@ function function_d871ffa09fd34efe(mission, node) {
     task.ref = "dmz_hostage";
     task.var_30e8a65cff941c7a = namespace_1eb3c4e0e28fac71::getquesttableindex(task.ref);
     task.node = node;
-    var_47e9b099c2d0b060 = namespace_9823ee6035594d67::function_bbe42d7091bedfc5(node.origin, "hostage_forts");
-    namespace_9823ee6035594d67::function_4e6dd86684152b17(var_47e9b099c2d0b060, "hostage_door");
-    namespace_9823ee6035594d67::function_5d8264355db47371(var_47e9b099c2d0b060, 0, 1, 0, 0, undefined, undefined, undefined, undefined, 1, 0);
-    task.var_47e9b099c2d0b060 = var_47e9b099c2d0b060;
+    fort = namespace_9823ee6035594d67::function_bbe42d7091bedfc5(node.origin, "hostage_forts");
+    namespace_9823ee6035594d67::function_4e6dd86684152b17(fort, "hostage_door");
+    namespace_9823ee6035594d67::function_5d8264355db47371(fort, 0, 1, 0, 0, undefined, undefined, undefined, undefined, 1, 0);
+    task.fort = fort;
     task.helinode = node.helinode;
     node.helinode.info = namespace_25b25d188ef778c4::function_a4181028915c44fa(node.helinode, 0);
     return task;
@@ -109,7 +109,7 @@ function function_d871ffa09fd34efe(mission, node) {
 function function_c17a05d80baf63a8() {
     self.activity.origin = self.node.origin;
     self.node.inuse = 1;
-    var_79b9c85900392ad6 = function_ab50f62a3a730400(self.var_47e9b099c2d0b060.origin, level.var_af7d80856e5ae6c0.circleradius);
+    var_79b9c85900392ad6 = function_ab50f62a3a730400(self.fort.origin, level.var_af7d80856e5ae6c0.circleradius);
     function_325390edb051cd5d("Hostage_Dmz", [0:var_79b9c85900392ad6], level.var_af7d80856e5ae6c0.circleradius + level.var_af7d80856e5ae6c0.var_e3aa1de9d96e0086);
     self.curorigin = var_79b9c85900392ad6;
     self.offset3d = (0, 0, 750);
@@ -264,7 +264,7 @@ function function_cb2f74520e05756f(teamname) {
 // Checksum 0x0, Offset: 0x1c87
 // Size: 0xeb
 function function_bd0bde6807000dae() {
-    foreach (door in self.var_47e9b099c2d0b060.var_e2cd8aa8b46d18ac) {
+    foreach (door in self.fort.var_e2cd8aa8b46d18ac) {
         door.task = self;
         door scriptabledoorclose();
         door.var_65513ad5397a67ef = self.var_65513ad5397a67ef;
@@ -273,7 +273,7 @@ function function_bd0bde6807000dae() {
             namespace_d1a9ca87d78d9813::function_9533653868e59fb6("+weapnext", self.activity.name, undefined, undefined, undefined, undefined, self.activity.poi, door.origin);
         #/
     }
-    namespace_9823ee6035594d67::function_68a6379d51e7dbc2(self.var_47e9b099c2d0b060, undefined, &function_bf35c0838580cf50);
+    namespace_9823ee6035594d67::function_68a6379d51e7dbc2(self.fort, undefined, &function_bf35c0838580cf50);
 }
 
 // Namespace namespace_ae2d053cbf559cee/namespace_232aeaeb467df5bd
@@ -402,7 +402,7 @@ function function_d0a5788403ac6ddf(timer) {
         self.nearbyplayers = [];
         var_e2b2bbd9e6539f11 = getteamdata(self.teams[0], "players");
         foreach (player in var_e2b2bbd9e6539f11) {
-            if (distance2dsquared(player.origin, self.var_47e9b099c2d0b060.origin) < 1048576) {
+            if (distance2dsquared(player.origin, self.fort.origin) < 1048576) {
                 self.nearbyplayers[self.nearbyplayers.size] = player;
             }
         }
@@ -962,7 +962,7 @@ function function_3b8913dc82881267(player) {
     player thread function_8277f49f79bff530("player_pickup_hostage", player.origin, player.angles);
     player.var_e3bda5be1db297f hide();
     player thread function_a3a4a2cdca554483("player_pickup_hostage", player.origin, player.angles);
-    if (player GetCameraThirdPerson()) {
+    if (player getcamerathirdperson()) {
         player.var_54d7b76a2a71e284 hide();
     } else {
         player.var_54d7b76a2a71e284 showonlytoplayer(player);
@@ -1102,7 +1102,7 @@ function drophostage(var_9768b22610b34d9d) {
             self.var_90758efde9b783b7 linkto(var_7a2d144a06a00b97, "tag_origin", var_a53033c7ec33a23f, localangles);
         }
         self.hostage linkto(self.var_90758efde9b783b7);
-        thread watchForMovingEntDeath(var_7a2d144a06a00b97);
+        thread watchformovingentdeath(var_7a2d144a06a00b97);
     } else {
         self.hostage.origin = droporigin;
         self.hostage.angles = dropangles;
@@ -1345,7 +1345,7 @@ function function_cf6e805ce234f5e(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x560c
 // Size: 0x5b
-function watchForMovingEntDeath(ent) {
+function watchformovingentdeath(ent) {
     self endon("hostage_pickup_finished");
     self.hostage endon("death");
     self notify("watchForMovingEntDeath");
@@ -1512,8 +1512,8 @@ function function_b6b601986dcad85a() {
         if (!isdefined(spawnloc.script_noteworthy) || spawnloc.script_noteworthy != "hostage") {
             continue;
         }
-        var_171f90b9c4c76d44 = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(spawnloc.origin);
-        ai = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef("civilian_mp_dmz_hostage", getclosestpointonnavmesh(spawnloc.origin), spawnloc.angles, "absolute", "mission", undefined, "civs", "civilian", undefined, var_171f90b9c4c76d44, 1, undefined, 0);
+        poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(spawnloc.origin);
+        ai = namespace_bfef6903bca5845d::ai_mp_requestspawnagent("civilian_mp_dmz_hostage", getclosestpointonnavmesh(spawnloc.origin), spawnloc.angles, "absolute", "mission", undefined, "civs", "civilian", undefined, poiname, 1, undefined, 0);
         if (!isdefined(ai)) {
             return;
         }
@@ -1577,7 +1577,7 @@ function private function_5511b411b075d27b() {
 // Checksum 0x0, Offset: 0x6017
 // Size: 0x1da
 function private function_14f7745b0a1250db() {
-    var_b586c70b173dd02b = getstructarray(self.var_47e9b099c2d0b060.target, "targetname");
+    var_b586c70b173dd02b = getstructarray(self.fort.target, "targetname");
     self.var_896452c986f0513b = [];
     if (isdefined(self.hostage) && isdefined(self.hostage.origin)) {
         var_b586c70b173dd02b = sortbydistance(var_b586c70b173dd02b, self.hostage.origin);
@@ -1595,7 +1595,7 @@ function private function_14f7745b0a1250db() {
             var_1439f86640d42e34 = "shotgun";
         }
         aitype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, undefined, undefined, "ar", 3);
-        enemy = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, spawnloc.origin, spawnloc.angles, "high", "mission", "hostageGuard", undefined, undefined, undefined, self.node.poi, 0, undefined, 0);
+        enemy = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, spawnloc.origin, spawnloc.angles, "high", "mission", "hostageGuard", undefined, undefined, undefined, self.node.poi, 0, undefined, 0);
         if (isdefined(enemy)) {
             function_67f905dfb8137021(enemy, 1);
             enemy namespace_2000a83505151e5b::function_304da84d9a815c01(enemy.origin, 16);
@@ -1706,8 +1706,8 @@ function function_df48d309a8bc55a() {
         self.heli = namespace_e8fceb5cf6e8cdf8::function_d05f47d864f18196(var_a3010f9814a40c8d, path.origin, self.helinode.angles);
         thread namespace_e8fceb5cf6e8cdf8::function_a5fc6e8f9df1ccea(self.heli, self.helinode.origin);
         namespace_1fbd40990ee60ede::vehicle_occupancy_setteam(self.heli, team);
-        self.heli.onStartRiding = &function_8ebf38fbb99af797;
-        self.heli.onEndRiding = &function_f6685fad77b7f64d;
+        self.heli.onstartriding = &function_8ebf38fbb99af797;
+        self.heli.onendriding = &function_f6685fad77b7f64d;
         self.heli.task = self;
         self.heli.helinode = self.helinode;
         self.heli.var_6881781e87586753 = 1;

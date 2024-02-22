@@ -190,8 +190,8 @@ function function_6aaed72439e0a22a(quantity) {
 // Checksum 0x0, Offset: 0x59d
 // Size: 0x78
 function function_62fa129f91896347(lootid) {
-    blueprintIndex = function_64ccc54bdbae5cf6(lootid);
-    if (isdefined(blueprintIndex) && blueprintIndex != 0) {
+    blueprintindex = function_64ccc54bdbae5cf6(lootid);
+    if (isdefined(blueprintindex) && blueprintindex != 0) {
         var_93b3002ebef628b = loot::function_793e8a72cedb8ef3(lootid);
         var_fb5397c466f84c61 = equipment::function_f4f687e4e1edb923(var_93b3002ebef628b);
         return level.var_986acb83cc29ed77.var_970a8dd2fe7c510b[var_fb5397c466f84c61];

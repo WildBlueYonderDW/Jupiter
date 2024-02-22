@@ -175,8 +175,8 @@ function setupobjective(trigger, var_8b9949739f4e0f6, var_5ddbc1faed2c56e6) {
         bombzone.bombdefusetrig = bombzone.trigger;
     }
     bombzone.noweapondropallowedtrigger = spawn("trigger_radius", bombzone.trigger.origin, 0, 150, 60);
-    if (isdefined(bombzone.trigger.target) && istrue(level.assignBombZoneChevrons)) {
-        bombzone thread assignBombZoneChevrons();
+    if (isdefined(bombzone.trigger.target) && istrue(level.assignbombzonechevrons)) {
+        bombzone thread assignbombzonechevrons();
     }
     function_2db76423768ca0f5(bombzone);
     return bombzone;
@@ -202,7 +202,7 @@ function function_2db76423768ca0f5(bombzone) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1499
 // Size: 0x1ce
-function assignBombZoneChevrons() {
+function assignbombzonechevrons() {
     bombzone = self;
     wait(1);
     othervisuals = getentitylessscriptablearray(bombzone.trigger.target, "targetname");
@@ -567,7 +567,7 @@ function bombzone_onuseplantobject(player) {
         }
         level thread teamplayercardsplash("callout_bombplanted", player);
         level.bombowner = player;
-        player thread doScoreEvent(#"plant", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:self.objectivekey});
+        player thread doscoreevent(#"plant", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:self.objectivekey});
         player.bombplantedtime = gettime();
         if (isplayer(player)) {
             player namespace_aad14af462a74d08::onplant();
@@ -710,7 +710,7 @@ function bombzone_onbombplanted(destroyedobj, player) {
     }
 LOC_00000664:
     if (getgametype() != "dd" && getgametype() != "cmd" || getgametype() != "btm" && getgametype() != "gwbomb") {
-        if (istrue(level.defendersCanSeePlantedBomb)) {
+        if (istrue(level.defenderscanseeplantedbomb)) {
             destroyedobj namespace_19b4203b51d56488::allowuse("none");
             destroyedobj namespace_19b4203b51d56488::setvisibleteam("none");
         }
@@ -725,7 +725,7 @@ LOC_00000664:
         trigger = destroyedobj.bombdefusetrig;
         trigger.origin = level.sdbombmodel.origin;
         var_3aaa5fb58a6c2eb7 = game["attackers"];
-        if (istrue(level.defendersCanSeePlantedBomb)) {
+        if (istrue(level.defenderscanseeplantedbomb)) {
             destroyedobj namespace_19b4203b51d56488::releaseid(1, 1);
         }
         defuseobject = namespace_19b4203b51d56488::createuseobject(var_3aaa5fb58a6c2eb7, trigger, visuals, (0, 0, 32));
@@ -758,7 +758,7 @@ LOC_00000664:
     defuseobject namespace_19b4203b51d56488::setwaitweaponchangeonuse(0);
     defuseobject namespace_19b4203b51d56488::setusehinttext("MP/HOLD_TO_DEFUSE_EXPLOSIVES");
     defuseobject.trigger setuseholdduration("duration_none");
-    if (istrue(level.defendersCanSeePlantedBomb)) {
+    if (istrue(level.defenderscanseeplantedbomb)) {
         defuseobject namespace_19b4203b51d56488::setvisibleteam("any");
     }
     if (getdvarint(@"hash_9cf963b64e1223e7", 0) == 1) {
@@ -851,7 +851,7 @@ LOC_00000af7:
     setomnvar("ui_victory_condition_completed", 1);
     level notify("bomb_exploded" + destroyedobj.objectivekey);
     player thread namespace_62c556437da28f50::scoreeventpopup(#"detonate");
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_67d7d6463cae5631");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_67d7d6463cae5631");
     if (isdefined(level.sd_onbombtimerend)) {
         level thread [[ level.sd_onbombtimerend ]]();
     }
@@ -1542,17 +1542,17 @@ function bombzone_awardgenericbombzonemedals(attacker, victim) {
             if (getgametype() == "dd" && inovertime()) {
                 if (attacker.team == bombzone.ownerteam) {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(ter_op(planted, #"defend", #"assault"));
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(ter_op(planted, #"hash_2d96ced878338cd2", #"hash_5a3b180273be47b1"));
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(ter_op(planted, #"hash_2d96ced878338cd2", #"hash_5a3b180273be47b1"));
                 } else {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                 }
             } else if (victim.team == game["defenders"]) {
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(ter_op(planted, #"defend", #"assault"));
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(ter_op(planted, #"hash_2d96ced878338cd2", #"hash_5a3b180273be47b1"));
+                attacker thread namespace_48a08c5037514e04::doscoreevent(ter_op(planted, #"hash_2d96ced878338cd2", #"hash_5a3b180273be47b1"));
             } else {
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(ter_op(planted, #"assault", #"defend"));
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(ter_op(planted, #"hash_5a3b180273be47b1", #"hash_2d96ced878338cd2"));
+                attacker thread namespace_48a08c5037514e04::doscoreevent(ter_op(planted, #"hash_5a3b180273be47b1", #"hash_2d96ced878338cd2"));
             }
         }
     }

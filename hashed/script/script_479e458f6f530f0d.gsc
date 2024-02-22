@@ -33,7 +33,7 @@ function function_60cba38635fd35cb(equipmentref, var_cbb2b3d05e48bd27, variantid
     self setclientomnvar("ui_geigercounter_type", var_14edd9c1de4aaf82);
     self notifyonplayercommand("pullout_gc", "+smoke");
     self notify("geigercounter_take");
-    thread geigercounter_watchForDevicePullout();
+    thread geigercounter_watchfordevicepullout();
     function_c8b79f6694c62ee8(-1);
 }
 
@@ -67,7 +67,7 @@ function function_3d5c1674387c936e(grenade) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fe
 // Size: 0x16d
-function geigercounter_watchForDevicePullout() {
+function geigercounter_watchfordevicepullout() {
     self endon("disconnect");
     level endon("game_ended");
     self notify("geigercounter_watchForDevicePullout");
@@ -135,7 +135,7 @@ function function_bcbff1c1b64843b6(dist) {
     if (getweaponbasename(self getheldoffhand()) == "geiger_counter_mp") {
         self.var_bcb3e1f6f7cd3cb7.var_4b47429f8d0d3ee5 = 1;
         self.var_bcb3e1f6f7cd3cb7.var_5b02e3a063eb58b1 = gettime();
-        self.var_bcb3e1f6f7cd3cb7.var_f458338f4188859e = _geigercounter_calculateGeigerCounterPulseRate(dist, self.var_bcb3e1f6f7cd3cb7.var_e91c9347e638750d);
+        self.var_bcb3e1f6f7cd3cb7.var_f458338f4188859e = _geigercounter_calculategeigercounterpulserate(dist, self.var_bcb3e1f6f7cd3cb7.var_e91c9347e638750d);
         if (!isdefined(self.var_bcb3e1f6f7cd3cb7.var_7d4af218f4963c47)) {
             self.var_bcb3e1f6f7cd3cb7.var_7d4af218f4963c47 = 0;
         }
@@ -366,7 +366,7 @@ function function_4385c3a2905eef3b(player, var_1e331291fa3bd60) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcf5
 // Size: 0x2e5
-function _geigercounter_calculateGeigerCounterPulseRate(var_1e331291fa3bd60, object) {
+function _geigercounter_calculategeigercounterpulserate(var_1e331291fa3bd60, object) {
     self notify("_geigercounter_calculateGeigerCounterPulseRate");
     self endon("_geigercounter_calculateGeigerCounterPulseRate");
     self endon("disconnect");

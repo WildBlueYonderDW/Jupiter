@@ -33,7 +33,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "zombie_base";
-    self.voice = #"hash_97b066d92d35c738";
+    self.voice = #"unitedstates";
     self.bhasthighholster = 0;
     self.animtree = "zombie_base";
     self setmodel("c_jup_zmb_zombie_base_female_dress_red_gz");

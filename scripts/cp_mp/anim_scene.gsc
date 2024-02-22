@@ -65,12 +65,12 @@ function anim_scene_set_actor_interruptable(var_9c5feb9c7ef9892d, interrupt_anim
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x411
 // Size: 0xd6
-function anim_scene(actors, anime, var_55856a096d73670c, var_c502534a60e19429, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
+function anim_scene(actors, anime, start_scene, var_c502534a60e19429, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
     foreach (actor in actors) {
         actor.interrupted = 0;
         actor.endscene = 0;
     }
-    result = _anim_scene_internal(actors, anime, 0, tag, var_55856a096d73670c, var_c502534a60e19429, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b);
+    result = _anim_scene_internal(actors, anime, 0, tag, start_scene, var_c502534a60e19429, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b);
     if (isdefined(result) && result) {
         return 1;
     } else {
@@ -82,12 +82,12 @@ function anim_scene(actors, anime, var_55856a096d73670c, var_c502534a60e19429, t
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x11c
-function anim_scene_loop(actors, anime, var_55856a096d73670c, var_c502534a60e19429, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
+function anim_scene_loop(actors, anime, start_scene, var_c502534a60e19429, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
     foreach (actor in actors) {
         actor.interrupted = 0;
         actor.endscene = 0;
     }
-    _anim_scene_internal(actors, anime, 1, tag, var_55856a096d73670c, var_c502534a60e19429, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b);
+    _anim_scene_internal(actors, anime, 1, tag, start_scene, var_c502534a60e19429, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b);
     var_b51b919d4c5e5691 = 1;
     foreach (actor in actors) {
         if (!actor.endscene) {
@@ -122,10 +122,10 @@ function anim_scene_stop_actor(actor) {
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x663
 // Size: 0x2c3
-function _anim_scene_internal(actors, anime, looping, tag, var_55856a096d73670c, var_c502534a60e19429, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
+function _anim_scene_internal(actors, anime, looping, tag, start_scene, var_c502534a60e19429, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
     self endon("anim_scene_interrupted");
-    if (!isdefined(var_55856a096d73670c)) {
-        var_55856a096d73670c = 1;
+    if (!isdefined(start_scene)) {
+        start_scene = 1;
     }
     if (!isdefined(var_c502534a60e19429)) {
         var_c502534a60e19429 = 1;
@@ -153,7 +153,7 @@ function _anim_scene_internal(actors, anime, looping, tag, var_55856a096d73670c,
     thread _anim_scene_force_end_think(actors);
     var_20d060c0d2ee7de0 = 0;
     thread _anim_scene_interrupt_think(actors, tag, var_c502534a60e19429);
-    if (var_55856a096d73670c) {
+    if (start_scene) {
         if (!isdefined(blend_in_time)) {
             blend_in_time = 0.4;
         }
@@ -323,7 +323,7 @@ function _anim_scene_internal_start_anims(actors, anime, looping, tag) {
                     actor.entity playviewmodelanim(level.scr_viewmodelanim[actor.animname][anime]);
                 }
             }
-            if (actor.player_rig_visible && isdefined(actor.player_rig) && !actor.entity GetCameraThirdPerson()) {
+            if (actor.player_rig_visible && isdefined(actor.player_rig) && !actor.entity getcamerathirdperson()) {
                 actor.player_rig showonlytoplayer(actor.entity);
             }
             if (looping) {

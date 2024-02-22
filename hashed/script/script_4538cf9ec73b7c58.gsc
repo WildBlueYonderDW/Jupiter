@@ -12,7 +12,7 @@
 function function_5f1c9b52db389ec4(var_5f2112921f67c9ce, max_health) {
     computer = spawn("script_model", var_5f2112921f67c9ce.origin);
     computer.scriptable = spawnscriptable("jup_zm_merc_defend_computer_scriptable", var_5f2112921f67c9ce.origin + (0, 0, 62));
-    computer function_c65b61b6c47fc0ac("jup_zm_merc_defend_computer_combined");
+    computer model_swap("jup_zm_merc_defend_computer_combined");
     computer.maxhealth = max_health + 1000000;
     computer.health = max_health + 1000000;
     computer.angles = var_5f2112921f67c9ce.angles;
@@ -135,7 +135,7 @@ function private damage_watcher() {
         if (self.health - 1000000 <= 0 && self.var_dff8e9c4d0311380 != "jup_zm_merc_defend_computer_destroyed_combined") {
             self.health = self.health - 1000000;
             thread function_fbfb3bfa5318ab1();
-            function_c65b61b6c47fc0ac("jup_zm_merc_defend_computer_destroyed_combined");
+            model_swap("jup_zm_merc_defend_computer_destroyed_combined");
             self notify("damage_modify");
             self notify("death");
         }
@@ -239,7 +239,7 @@ function private function_f87a5315febf0348() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xf59
 // Size: 0x1e
-function private function_c65b61b6c47fc0ac(newmodel) {
+function private model_swap(newmodel) {
     self.var_dff8e9c4d0311380 = newmodel;
     self setmodel(newmodel);
 }

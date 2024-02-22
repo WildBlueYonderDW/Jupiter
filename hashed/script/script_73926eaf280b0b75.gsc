@@ -11,7 +11,7 @@
 // Checksum 0x0, Offset: 0x12b
 // Size: 0xd2
 function burn(durations, damage_percent, var_8ed41aa732686e5, attacker, unique_id, var_aaf0465944b061ed, inflictor) {
-    if (!istrue(self.aiSettings.var_994ad2292fc29de6)) {
+    if (!istrue(self.aisettings.var_994ad2292fc29de6)) {
         return 0;
     }
     var_f8237675007c4d48 = function_108973a907c11ca7("burn", durations, unique_id, &function_2353dea549961531, &function_534b96f6da57102);

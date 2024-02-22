@@ -451,7 +451,7 @@ function function_e17f7c1d44ee2fe5(var_d6bfa53c531546d6) {
     player = var_d6bfa53c531546d6.player;
     var_a917328b0b1b2a19 = var_d6bfa53c531546d6.var_7f9b2cc8a7bdb61e;
     if (isdefined(player) && istrue(var_a917328b0b1b2a19) && isdefined(self) && function_73bd348a2ec322cf(self) == "ActiveState") {
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
         if (isdefined(squadmembers) && isarray(squadmembers) && squadmembers.size > 0) {
             var_5a6e3a10171c93b = function_9fef405219837367(player.team, player.var_ff97225579de16a);
             if (!var_5a6e3a10171c93b) {
@@ -476,7 +476,7 @@ function function_b66d94a678e363e4(var_d6bfa53c531546d6) {
     var_a917328b0b1b2a19 = var_d6bfa53c531546d6.var_7f9b2cc8a7bdb61e;
     if (isdefined(player) && isdefined(self) && function_73bd348a2ec322cf(self) == "ActiveState") {
         function_b83bd9d74d584449(player, var_a917328b0b1b2a19);
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
         if (isdefined(squadmembers) && isarray(squadmembers) && squadmembers.size > 0) {
             var_6b8fb7dde7d64380 = array_remove(squadmembers, player);
             if (istrue(var_a917328b0b1b2a19)) {
@@ -1386,7 +1386,7 @@ function private function_66d288b89ec18bd2(var_67c2ef0a05674606, player) {
     var_d1c7613187e69022 = namespace_3485b020a23acaae::function_b9c4aa88ad97ee68(var_f702066d9d4dcc23);
     var_f702066d9d4dcc23 function_ecb9170931917bd();
     var_f702066d9d4dcc23 namespace_dc53a27a8db8e6bf::function_d13aa6af7fce67c9(var_f702066d9d4dcc23.var_6c29f2fdb0054bbe);
-    var_ece2647396f544df = loot::getLootIDFromRef(var_f702066d9d4dcc23 function_1404cfa239b8c45a());
+    var_ece2647396f544df = loot::getlootidfromref(var_f702066d9d4dcc23 function_1404cfa239b8c45a());
     if (isdefined(var_ece2647396f544df)) {
         var_65b695f0c0d909ed = player namespace_fe9526a81c458d8f::function_4776284a348ebb6a(var_ece2647396f544df);
     }
@@ -1898,7 +1898,7 @@ function private function_d925580cdefd8594() {
             continue;
         }
         if (namespace_838b439602b3acc7::function_5acc35fc66331385(player, 17078) || getdvarint(@"hash_7b8b09c504a0c9a0", 0)) {
-            squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+            squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
             foreach (squadmember in squadmembers) {
                 var_58e219427c5fe7f0[var_58e219427c5fe7f0.size] = squadmember;
             }
@@ -1978,7 +1978,7 @@ function private function_6ce86afa6684b8eb(var_d6bfa53c531546d6) {
     player = var_d6bfa53c531546d6.player;
     var_a917328b0b1b2a19 = var_d6bfa53c531546d6.var_7f9b2cc8a7bdb61e;
     if (isdefined(player) && istrue(var_a917328b0b1b2a19) && istrue(self.var_24ff739b2eb09591) && isdefined(self.var_d1c7613187e69022) && isdefined(self.var_d1c7613187e69022.var_9a002d7b10d97a7d)) {
-        squad = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+        squad = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
         if (isdefined(squad) && isarray(squad) && squad.size > 0 && !namespace_9718b9a169c3ead0::function_1abf09c903e6c16b(squad, function_1404cfa239b8c45a()) && !namespace_838b439602b3acc7::function_5acc35fc66331385(player, 17078)) {
             namespace_dc53a27a8db8e6bf::function_49a282654ffb7685(squad);
         }
@@ -2097,7 +2097,7 @@ function private function_a7bac03ceca2c973() {
     self.var_bed158a6dfac230d = 3;
     self.var_8790c077c95db752 = self.var_bed158a6dfac230d * level.var_4b78859bacc88808;
     waitframe();
-    namespace_f8d3520d3483c1::setArmorHealth(self.var_8790c077c95db752);
+    namespace_f8d3520d3483c1::setarmorhealth(self.var_8790c077c95db752);
     waitframe();
     namespace_f8d3520d3483c1::function_9c6e9a6643b6c9a6(3);
     waitframe();

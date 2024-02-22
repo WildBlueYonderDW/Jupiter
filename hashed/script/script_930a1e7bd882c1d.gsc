@@ -1138,6 +1138,6 @@ function function_2bbe7f3e487520c6() {
 // Checksum 0x0, Offset: 0x2dd3
 // Size: 0x6a
 function function_59e8b4ed75ca8b92() {
-    return !namespace_36f464722d326bbe::isBRStyleGameType() || istrue(level.skipprematch) || !isdefined(level.infilstruct) || !isdefined(level.infilstruct.var_eb0cd5e47dbbfd6a) || istrue(level.infilstruct.var_1cf4fe3c9d7da8a2) || !getdvarint(@"hash_f49bd659b301fbb0", 1);
+    return !namespace_36f464722d326bbe::isbrstylegametype() || istrue(level.skipprematch) || !isdefined(level.infilstruct) || !isdefined(level.infilstruct.var_eb0cd5e47dbbfd6a) || istrue(level.infilstruct.var_1cf4fe3c9d7da8a2) || !getdvarint(@"hash_f49bd659b301fbb0", 1);
 }
 

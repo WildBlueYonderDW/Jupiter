@@ -72,8 +72,8 @@ function bot_gun_think() {
     self endon("bot_gun_think");
     self endon("death_or_disconnect");
     level endon("game_ended");
-    throwKnifeChance = self botgetdifficultysetting("throwKnifeChance");
-    if (throwKnifeChance < 0.25) {
+    throwknifechance = self botgetdifficultysetting("throwKnifeChance");
+    if (throwknifechance < 0.25) {
         self botsetdifficultysetting("throwKnifeChance", 0.25);
     }
     self botsetdifficultysetting("allowGrenades", 1);

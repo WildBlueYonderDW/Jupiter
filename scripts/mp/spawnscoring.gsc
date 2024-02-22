@@ -250,8 +250,8 @@ function scorebuddyspawn(spawnpoint) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe2d
 // Size: 0x31
-function getbuddyspawnangles(Buddy, spawnlocation) {
-    spawnangles = (0, Buddy.angles[1], 0);
+function getbuddyspawnangles(buddy, spawnlocation) {
+    spawnangles = (0, buddy.angles[1], 0);
     return spawnangles;
 }
 
@@ -353,21 +353,21 @@ function findspawnlocationnearplayer(player) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10da
 // Size: 0x179
-function findbuddypathnode(Buddy, var_41cdd7fc4a85331f, cosangle) {
-    var_5836c6d53a5f99a2 = getnodesinradiussorted(Buddy.origin, 192, 64, var_41cdd7fc4a85331f, "Path", 1);
+function findbuddypathnode(buddy, var_41cdd7fc4a85331f, cosangle) {
+    var_5836c6d53a5f99a2 = getnodesinradiussorted(buddy.origin, 192, 64, var_41cdd7fc4a85331f, "Path", 1);
     bestnode = undefined;
     if (isdefined(var_5836c6d53a5f99a2) && var_5836c6d53a5f99a2.size > 0) {
-        var_cd4d7f06b22cefbe = anglestoforward(Buddy.angles);
+        var_cd4d7f06b22cefbe = anglestoforward(buddy.angles);
         /#
             if (getdvarint(@"hash_9bffca47d2e56b54") != 0) {
-                namespace_e6eafa63d63ab54d::function_55db94df92c1a7c4(Buddy, var_5836c6d53a5f99a2);
+                namespace_e6eafa63d63ab54d::function_55db94df92c1a7c4(buddy, var_5836c6d53a5f99a2);
             }
         #/
         foreach (var_5541f7d00319b6bf in var_5836c6d53a5f99a2) {
             if (isdefined(level.badpathnodes) && array_contains(level.badpathnodes, var_5541f7d00319b6bf)) {
                 continue;
             }
-            var_644ab9fda129b92b = vectornormalize(var_5541f7d00319b6bf.origin - Buddy.origin);
+            var_644ab9fda129b92b = vectornormalize(var_5541f7d00319b6bf.origin - buddy.origin);
             dot = vectordot(var_cd4d7f06b22cefbe, var_644ab9fda129b92b);
             if (dot <= cosangle && !positionwouldtelefrag(var_5541f7d00319b6bf.origin)) {
                 bestnode = var_5541f7d00319b6bf;
@@ -378,7 +378,7 @@ function findbuddypathnode(Buddy, var_41cdd7fc4a85331f, cosangle) {
         }
     }
     /#
-        namespace_e6eafa63d63ab54d::function_c06e014cedb53155(Buddy, bestnode);
+        namespace_e6eafa63d63ab54d::function_c06e014cedb53155(buddy, bestnode);
     #/
     return bestnode;
 }

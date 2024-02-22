@@ -21,11 +21,11 @@ function init() {
     if (getdvarint(@"hash_70d8cba45c5014ec", 1) == 0) {
         return;
     }
-    level.aiSentryTurrets = spawnstruct();
-    level.aiSentryTurrets.var_545db13b94c9e4d = getdvarint(@"hash_e2a4ecaa972fb581", 15);
-    level.aiSentryTurrets.var_a4186f089a36d2f0 = getdvarint(@"hash_6a8c234b065d124c", 3);
-    level.aiSentryTurrets.var_a4cd5b9ae4a509f4 = [];
-    level.aiSentryTurrets.var_325f9f15252b4928 = &function_2d24ee630d6c37e2;
+    level.aisentryturrets = spawnstruct();
+    level.aisentryturrets.var_545db13b94c9e4d = getdvarint(@"hash_e2a4ecaa972fb581", 15);
+    level.aisentryturrets.var_a4186f089a36d2f0 = getdvarint(@"hash_6a8c234b065d124c", 3);
+    level.aisentryturrets.var_a4cd5b9ae4a509f4 = [];
+    level.aisentryturrets.var_325f9f15252b4928 = &function_2d24ee630d6c37e2;
     level.sentrysettings["ai_sentry_turret"] = spawnstruct();
     level.sentrysettings["ai_sentry_turret"].health = 999999;
     level.sentrysettings["ai_sentry_turret"].maxhealth = 650;
@@ -78,19 +78,19 @@ function function_2d24ee630d6c37e2() {
         level thread function_fc46b0f912ca62f();
     #/
     var_76bc16f4e15dec1c = namespace_37f0fb6355a4618a::function_47d356083884f913();
-    poiName = undefined;
-    level.aiSentryTurrets.var_fd5ea9cb37c309d3 = array_randomize(getstructarray("aiSentryTurret", "script_noteworthy"));
-    foreach (spawnloc in level.aiSentryTurrets.var_fd5ea9cb37c309d3) {
+    poiname = undefined;
+    level.aisentryturrets.var_fd5ea9cb37c309d3 = array_randomize(getstructarray("aiSentryTurret", "script_noteworthy"));
+    foreach (spawnloc in level.aisentryturrets.var_fd5ea9cb37c309d3) {
         var_de58ca0235ee107b = 1;
-        if (level.aiSentryTurrets.var_a4cd5b9ae4a509f4.size >= level.aiSentryTurrets.var_545db13b94c9e4d) {
+        if (level.aisentryturrets.var_a4cd5b9ae4a509f4.size >= level.aisentryturrets.var_545db13b94c9e4d) {
             var_de58ca0235ee107b = 0;
         } else if (var_76bc16f4e15dec1c) {
             if (!isdefined(spawnloc.poi)) {
                 spawnloc.poi = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(spawnloc.origin);
             }
-            if (!isdefined(spawnloc.poi) || !namespace_37f0fb6355a4618a::poi_isPOIActive(spawnloc.poi)) {
+            if (!isdefined(spawnloc.poi) || !namespace_37f0fb6355a4618a::poi_ispoiactive(spawnloc.poi)) {
                 var_de58ca0235ee107b = 0;
-            } else if (level.poi[spawnloc.poi]["aiSentryTurrets"].size >= level.aiSentryTurrets.var_a4186f089a36d2f0) {
+            } else if (level.poi[spawnloc.poi]["aiSentryTurrets"].size >= level.aisentryturrets.var_a4186f089a36d2f0) {
                 var_de58ca0235ee107b = 0;
             }
         }
@@ -102,7 +102,7 @@ function function_2d24ee630d6c37e2() {
         if (var_de58ca0235ee107b) {
             spawnloc.var_1b096843a2175f92 = 1;
             turret = function_f33b0afadf9107eb(spawnloc);
-            level.aiSentryTurrets.var_a4cd5b9ae4a509f4[level.aiSentryTurrets.var_a4cd5b9ae4a509f4.size] = turret;
+            level.aisentryturrets.var_a4cd5b9ae4a509f4[level.aisentryturrets.var_a4cd5b9ae4a509f4.size] = turret;
             if (var_76bc16f4e15dec1c && isdefined(spawnloc.poi)) {
                 level.poi[spawnloc.poi]["aiSentryTurrets"][level.poi[spawnloc.poi]["aiSentryTurrets"].size] = turret;
                 namespace_37f0fb6355a4618a::function_d0e7647e5538eb9d(spawnloc.poi, "aiSentryTurrets", turret);
@@ -214,7 +214,7 @@ function function_4424088da3075b69(data) {
         if (isplayer(guy)) {
             var_7ec7671a1e0c788f = spawnstruct();
             var_7ec7671a1e0c788f.var_b421b1d42317ccb2 = 1;
-            guy thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2b5885666af24123", objweapon, undefined, undefined, self, undefined, undefined, 0, var_7ec7671a1e0c788f, 1);
+            guy thread namespace_48a08c5037514e04::doscoreevent(#"hash_2b5885666af24123", objweapon, undefined, undefined, self, undefined, undefined, 0, var_7ec7671a1e0c788f, 1);
         }
     }
     self.var_1e0eb63ecb3f1e2 = 0;
@@ -638,7 +638,7 @@ function function_fc46b0f912ca62f() {
         setdvarifuninitialized(@"hash_46a2f7c9bc7efd38", 0);
         while (1) {
             if (getdvarint(@"hash_46a2f7c9bc7efd38", 0) == 1) {
-                foreach (loc in level.aiSentryTurrets.var_fd5ea9cb37c309d3) {
+                foreach (loc in level.aisentryturrets.var_fd5ea9cb37c309d3) {
                     color = (1, 0, 0);
                     if (istrue(loc.var_1b096843a2175f92)) {
                         color = (0, 1, 0);

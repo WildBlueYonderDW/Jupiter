@@ -116,8 +116,8 @@ function function_d248cfa981edc561() {
 // Size: 0x7e
 function function_b6f48b1b3dcc129b(instance, player) {
     instance setscriptablepartstate("body", "hidden");
-    var_ee29db2c510a0a0a = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc("zombie_mimic_hvt");
-    var_8034a1f2faf000f1 = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(var_ee29db2c510a0a0a[0], instance.origin, instance.angles, "team_two_hundred");
+    var_ee29db2c510a0a0a = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc("zombie_mimic_hvt");
+    var_8034a1f2faf000f1 = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_ee29db2c510a0a0a[0], instance.origin, instance.angles, "team_two_hundred");
     var_8034a1f2faf000f1 waittill("death");
     function_d8e0882d86531309("k");
 }
@@ -171,7 +171,7 @@ function function_145c21969dc1144d(requestid, instance, agent, data) {
         agent.var_f714dcba7a0b7168 = randomfloatrange(200, 250);
         agent namespace_c77c96f1aa8fcce1::function_5213d881f2e26966(agent.origin, 1000);
         attacker = agent waittill("death");
-        var_c9b69aecc5c631ed = attacker namespace_ca7b90256548aa40::getSquadMembers();
+        var_c9b69aecc5c631ed = attacker namespace_ca7b90256548aa40::getsquadmembers();
         self.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe = array_combine_unique(self.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe, var_c9b69aecc5c631ed);
         agent function_3ecabd59662c63e4("b");
         agent thread function_9749f093b0e831ec("ob_jup_item_weapon_pi_decho" + "_blue");
@@ -269,7 +269,7 @@ function function_213b8f238df26b55(requestid, instance, agent, data) {
     agent function_65cdab0fc78aba8f(agent.origin, 5000);
     agent setgoalpos(agent.origin, 126);
     attacker = agent waittill("death");
-    var_c9b69aecc5c631ed = attacker namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = attacker namespace_ca7b90256548aa40::getsquadmembers();
     self.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe = array_combine_unique(self.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe, var_c9b69aecc5c631ed);
     agent function_3ecabd59662c63e4("r");
     agent thread function_9749f093b0e831ec("ob_jup_item_weapon_sn_boscar" + "_blue");
@@ -419,7 +419,7 @@ function function_50eaf1d6526a26c3() {
 // Checksum 0x0, Offset: 0x1aab
 // Size: 0xdf
 function private function_a8e25edd9bd5d91(var_5e789651655404a4, player) {
-    var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getsquadmembers();
     level.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe = array_combine_unique(level.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe, var_c9b69aecc5c631ed);
     s_vault_pawn_encounter = getstruct("s_vault_pawn_encounter", "targetname");
     if (isdefined(s_vault_pawn_encounter)) {
@@ -455,10 +455,10 @@ function function_ed2e505118e05ca4() {
     spawndata.var_f16652e1462a3739 = 1;
     spawndata.var_22aa4aa0cf0aa6bb = 1;
     spawndata.origin = var_80c68f3960aac6c4.origin;
-    vehicleRef = "veh9_techo_rebel_armor";
+    vehicleref = "veh9_techo_rebel_armor";
     var_280ab764114c5fb6 = spawnstruct();
     var_280ab764114c5fb6.var_6093c29675253b36 = "enc_vault_knight";
-    vehicle = vehicle_spawn(vehicleRef, spawndata);
+    vehicle = vehicle_spawn(vehicleref, spawndata);
     vehicle.var_8ee1ce7eccbe27e2 = 0;
     vehicle.var_aa4804cc1bc59e93 = 1;
     vehicle setscriptablepartstate("single", "vehicle_unusable");
@@ -503,7 +503,7 @@ function private function_bed20391ba8dcfce(requestid, instance, agent, data) {
         agent.var_7e4b076a06c6df27 = 1;
         agent.var_534e788bc498be9f.displayname = "JUP_OB_OBJECTIVES/THE_KNIGHT";
         attacker = agent waittill("death");
-        var_c9b69aecc5c631ed = attacker namespace_ca7b90256548aa40::getSquadMembers();
+        var_c9b69aecc5c631ed = attacker namespace_ca7b90256548aa40::getsquadmembers();
         self.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe = array_combine_unique(self.var_5c034827af8b8b9b.var_6c29f2fdb0054bbe, var_c9b69aecc5c631ed);
         agent function_3ecabd59662c63e4("h");
         agent thread function_9749f093b0e831ec("ob_jup_item_weapon_lm_foxtrot" + "_blue");
@@ -743,7 +743,7 @@ function private function_5a285e11881bf4c4() {
     self vehicle_teleport(goalpoint.origin + (0, 0, 100), goalpoint.angles);
     var_bfe90410fad38aaa = mph_to_ips(var_6b962f57738d2659);
     self function_77320e794d35465a("p2p", "manualSpeed", var_bfe90410fad38aaa);
-    thread namespace_3bb9da687f15383d::checkVehicleNavSplineStuck();
+    thread namespace_3bb9da687f15383d::checkvehiclenavsplinestuck();
     while (isdefined(goalpoint)) {
         self function_77320e794d35465a("p2p", "goalPoint", goalpoint.origin);
         self waittill("near_goal");
@@ -753,15 +753,15 @@ function private function_5a285e11881bf4c4() {
             if (isdefined(level.var_984bc6feaab3cad4)) {
                 duration = 5000;
                 var_17129dc345d151cf = ips_to_mph(self function_3dda404001a83ee(function_906e53c2fb9d3f9c("<unknown string>", "<unknown string>")));
-                goalThreshold = self function_3dda404001a83ee(function_906e53c2fb9d3f9c("<unknown string>", "<unknown string>"));
-                sphere(goalpoint.origin, goalThreshold, (1, 1, 0), 0, duration);
+                goalthreshold = self function_3dda404001a83ee(function_906e53c2fb9d3f9c("<unknown string>", "<unknown string>"));
+                sphere(goalpoint.origin, goalthreshold, (1, 1, 0), 0, duration);
                 var_8a36adb66b4b027f = getstruct(goalpoint.target, "<unknown string>");
                 var_efaa9ab3c88c72d8 = anglestoforward(self.angles);
                 var_42b62ae4e3aca4af = goalpoint.origin - self.origin;
                 var_3896fef17cab20be = vectordot(var_42b62ae4e3aca4af, var_efaa9ab3c88c72d8);
                 color = ter_op(var_3896fef17cab20be > 0, (1, 1, 1), (1, 0, 0));
                 line(self.origin, goalpoint.origin, color, 1, 0, duration);
-                line(self.origin, self.origin + var_efaa9ab3c88c72d8 * goalThreshold, (1, 1, 0), 1, 0, duration);
+                line(self.origin, self.origin + var_efaa9ab3c88c72d8 * goalthreshold, (1, 1, 0), 1, 0, duration);
             }
         #/
     }

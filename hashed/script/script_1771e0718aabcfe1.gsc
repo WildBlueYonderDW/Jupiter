@@ -40,11 +40,11 @@ function private function_d68e2fd9a635c0cd() {
     currenttime = systemtime;
     if (level.var_c5f55642efa61b9c) {
         foreach (player in level.players) {
-            timeWarpOffsetSeconds = player getplayerdata(level.var_5d69837cf4db0407, "timeWarpOffsetSeconds");
-            if (!isdefined(timeWarpOffsetSeconds)) {
-                timeWarpOffsetSeconds = 0;
+            timewarpoffsetseconds = player getplayerdata(level.var_5d69837cf4db0407, "timeWarpOffsetSeconds");
+            if (!isdefined(timewarpoffsetseconds)) {
+                timewarpoffsetseconds = 0;
             }
-            var_fe847d14a45f3270 = systemtime + timeWarpOffsetSeconds;
+            var_fe847d14a45f3270 = systemtime + timewarpoffsetseconds;
             if (var_fe847d14a45f3270 > currenttime) {
                 currenttime = var_fe847d14a45f3270;
             }
@@ -79,8 +79,8 @@ function private function_e3f4b08018abdbaf() {
             if (!isdefined(var_a3f7381340cf06d9)) {
                 continue;
             }
-            eventDisabled = getdvarint(function_2c4ebdb018587662("eventDisabled", var_a3f7381340cf06d9.var_310ffc2dc3da6985));
-            if (istrue(eventDisabled)) {
+            eventdisabled = getdvarint(function_2c4ebdb018587662("eventDisabled", var_a3f7381340cf06d9.var_310ffc2dc3da6985));
+            if (istrue(eventdisabled)) {
                 continue;
             }
             starttime = getdvar(function_2c4ebdb018587662("startTime", var_a3f7381340cf06d9.var_310ffc2dc3da6985), var_a3f7381340cf06d9.starttime);
@@ -105,8 +105,8 @@ function private function_e3f4b08018abdbaf() {
             var_66508a1499448043 = 0;
             if (var_a3f7381340cf06d9.template == "POINTS") {
                 var_9301e90474add74a = 1;
-                operatorSkinDisabled = getdvarint(function_2c4ebdb018587662("operatorSkinDisabled", var_a3f7381340cf06d9.var_310ffc2dc3da6985));
-                if (!istrue(operatorSkinDisabled)) {
+                operatorskindisabled = getdvarint(function_2c4ebdb018587662("operatorSkinDisabled", var_a3f7381340cf06d9.var_310ffc2dc3da6985));
+                if (!istrue(operatorskindisabled)) {
                     if (var_56651c25de2e68b5.size >= 1 && var_56651c25de2e68b5[0] != 0) {
                         var_66508a1499448043 = var_56651c25de2e68b5[0];
                     }
@@ -156,8 +156,8 @@ function private function_af3371400730e514() {
 // Size: 0x45
 function autoexec function_b9ac0d0975647ba() {
     registersharedfunc("seasonalevents", "init", &init);
-    registersharedfunc("seasonalevents", "getFieldRepEventActive", &getFieldRepEventActive);
-    registersharedfunc("seasonalevents", "hasFieldRepOperatorSkinEquipped", &hasFieldRepOperatorSkinEquipped);
+    registersharedfunc("seasonalevents", "getFieldRepEventActive", &getfieldrepeventactive);
+    registersharedfunc("seasonalevents", "hasFieldRepOperatorSkinEquipped", &hasfieldrepoperatorskinequipped);
 }
 
 // Namespace seasonalevents/namespace_9ebb57ff3634ecc7
@@ -173,7 +173,7 @@ function private init() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x85a
 // Size: 0xd9
-function private getFieldRepEventActive() {
+function private getfieldrepeventactive() {
     /#
         assert(isdefined(level.var_a6fdfb1454ce258e));
     #/
@@ -198,7 +198,7 @@ function private getFieldRepEventActive() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x93b
 // Size: 0x266
-function private hasFieldRepOperatorSkinEquipped() {
+function private hasfieldrepoperatorskinequipped() {
     /#
         assert(isdefined(level.seasonalevents));
     #/
@@ -212,7 +212,7 @@ function private hasFieldRepOperatorSkinEquipped() {
     if (isdefined(player.operatorcustomization.var_d947b7e87c7243ab)) {
         var_650b47766000d829 = player.operatorcustomization.var_d947b7e87c7243ab;
     }
-    var_fd476bda738b0d05 = namespace_448ccf1ca136fbbe::ismp() && !isBRStyleGameType() && getgametype() != "ob";
+    var_fd476bda738b0d05 = namespace_448ccf1ca136fbbe::ismp() && !isbrstylegametype() && getgametype() != "ob";
     if (var_fd476bda738b0d05) {
         var_f5cf62a90611b64d = player getplayerdata(level.loadoutsgroup, "customizationSetup", "operators", 0);
         if (!string::function_46b9c00bb0535aa3(var_f5cf62a90611b64d) && namespace_465d40bb08a5337a::function_54240a5fc41f6590(var_f5cf62a90611b64d)) {

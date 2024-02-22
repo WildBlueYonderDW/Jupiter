@@ -1175,7 +1175,7 @@ function function_efcf810b1e6f4e71(player, var_a917328b0b1b2a19) {
         if (!array_contains(self.var_189ca75754491759, player)) {
             if (isdefined(var_aec21a5b011527dc) && isarray(var_aec21a5b011527dc) && var_aec21a5b011527dc.size == 1 && isdefined(player.guid) && istrue(var_aec21a5b011527dc[player.guid])) {
                 if (!istrue(self.var_8b79601f5cca1fa9)) {
-                    squad = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+                    squad = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
                     thread function_8e4e1fc9ff81363c(squad);
                     foreach (var_8f7040e569ec9e98 in squad) {
                         self.var_189ca75754491759[self.var_189ca75754491759.size] = var_8f7040e569ec9e98;
@@ -1196,7 +1196,7 @@ function function_efcf810b1e6f4e71(player, var_a917328b0b1b2a19) {
             #/
         }
     } else if (!istrue(self.var_532109d48fb82eba) && istrue(self.var_678dd176861a9025)) {
-        squad = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+        squad = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
         var_3d17c981a8ce7454 = 1;
         if (isdefined(var_aec21a5b011527dc) && isarray(var_aec21a5b011527dc)) {
             foreach (var_8f7040e569ec9e98 in squad) {
@@ -1281,7 +1281,7 @@ function function_c2db087f74636224() {
             params = spawnstruct();
             params.player = player;
             callback::callback("merc_camp_success", params);
-            squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+            squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
             foreach (squadmember in squadmembers) {
                 var_694cf27a7080216[var_694cf27a7080216.size] = squadmember;
             }
@@ -1314,7 +1314,7 @@ function function_6216e8ce2640ec45(var_e501c18e04378d20) {
         params.player = var_e501c18e04378d20;
         callback::callback("merc_camp_looted", params);
     } else {
-        squad = var_e501c18e04378d20 namespace_ca7b90256548aa40::getSquadMembers(var_e501c18e04378d20.team, 1);
+        squad = var_e501c18e04378d20 namespace_ca7b90256548aa40::getsquadmembers(var_e501c18e04378d20.team, 1);
         var_14304961a076b8d = namespace_9718b9a169c3ead0::function_d52f11eff492795d(var_e501c18e04378d20, 1);
         wait(1);
         /#
@@ -1428,7 +1428,7 @@ function private function_e4cb6ba98b816518() {
             thread function_6216e8ce2640ec45(player);
             params = spawnstruct();
             params.var_beeb487603b69a3e = var_36b81911e31bb387;
-            params.var_c347bca0a17c6122 = self.var_626b45032e1892da;
+            params.merc_camp_name = self.var_626b45032e1892da;
             callback::callback("encampment_key_looted", params);
             if (istrue(self.var_bbbbbc7263f1c834) && !istrue(self.var_8b79601f5cca1fa9)) {
                 callback::callback("analytics_proximity_activity_completed", params);

@@ -475,7 +475,7 @@ function private function_f10295a436fc1aa2(scriptable, player) {
     level endon("game_ended");
     scriptable.var_661993877a526435 function_5d929bdf9c67783f();
     scriptable.var_661993877a526435 function_e2797519315ed24a();
-    var_ece2647396f544df = loot::function_a50b607d2500dda5("loot_key_human_stronghold");
+    var_ece2647396f544df = loot::getlootidfromref("loot_key_human_stronghold");
     soundorigin = scriptable.origin;
     wait(1);
     playsoundatpos(soundorigin, "mp_door_key_break");
@@ -789,7 +789,7 @@ function private function_a7fafdf4ccb30418(players) {
         if (!isdefined(player) || array_contains(var_694cf27a7080216, player)) {
             continue;
         }
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
         var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16946, "quest_s0a1t4_mstr_unlockdoor", squadmembers);
         var_d781ff762095c86d = var_8c4ed29f8594fb86;
         if (!var_8c4ed29f8594fb86) {
@@ -836,7 +836,7 @@ function private function_9dbc2d439e39df13(players) {
         if (!isdefined(player) || array_contains(var_694cf27a7080216, player)) {
             continue;
         }
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
         var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16946, "quest_s0a1t4_mstr_lastenemydown", squadmembers);
         var_d781ff762095c86d = var_8c4ed29f8594fb86;
         if (!var_8c4ed29f8594fb86) {
@@ -886,7 +886,7 @@ function private function_dd78c34c770c2497(players) {
             if (!isdefined(player) || array_contains(var_694cf27a7080216, player)) {
                 continue;
             }
-            squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+            squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
             var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16946, "quest_s0a1t4_mstr_reenforce", squadmembers);
             var_d781ff762095c86d = var_8c4ed29f8594fb86;
             if (!var_8c4ed29f8594fb86) {
@@ -988,7 +988,7 @@ function private function_99f612c991e568a0(player) {
         namespace_46b675bc0fc6663b::function_dd0ceeddc603cb3e(player, self, "<unknown string>");
     #/
     function_bbdcd857d0c2a65e(self, player, "PlayerJoinedOther");
-    squadmembers = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+    squadmembers = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
     var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16946, "quest_s0a1t4_mstr_approach", squadmembers);
     var_d781ff762095c86d = var_8c4ed29f8594fb86;
     if (!var_8c4ed29f8594fb86) {
@@ -1035,7 +1035,7 @@ function private function_f390f4ebbe42c73c(var_d6bfa53c531546d6) {
             namespace_46b675bc0fc6663b::function_dd0ceeddc603cb3e(player, self, "<unknown string>");
         #/
         function_bbdcd857d0c2a65e(self, player, "PlayerJoinedOther");
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
         if (isdefined(squadmembers) && isarray(squadmembers) && squadmembers.size > 0 && !namespace_9718b9a169c3ead0::function_1abf09c903e6c16b(squadmembers, "loot_key_human_stronghold")) {
             var_d781ff762095c86d = namespace_838b439602b3acc7::function_5acc35fc66331385(player, 17078) || getdvarint(@"hash_7b8b09c504a0c9a0", 0);
             if (var_d781ff762095c86d) {
@@ -1074,7 +1074,7 @@ function private function_cefa7b514c4aff6d() {
             thread function_3d04c4bc0abbcfa1(namespace_4c2b495b8d79cc2e::function_7ec62d1550b9897e(self, "Awareness_Zone"), var_25978461c6e4f61b);
             params = spawnstruct();
             params.var_beeb487603b69a3e = safe;
-            params.var_54da9eb218d1860b = self.var_626b45032e1892da;
+            params.stronghold_name = self.var_626b45032e1892da;
             callback::callback("stronghold_key_looted", params);
             function_612d18fdbc979c0b(self, 1);
             break;
@@ -1115,7 +1115,7 @@ function private function_3d04c4bc0abbcfa1(players, var_25978461c6e4f61b) {
                 params.player = player;
                 params.warlord = "allforone";
                 callback::callback("merc_warlord_success", params);
-                squadmembers = player namespace_ca7b90256548aa40::getSquadMembers(player.team, 1);
+                squadmembers = player namespace_ca7b90256548aa40::getsquadmembers(player.team, 1);
                 foreach (squadmember in squadmembers) {
                     var_694cf27a7080216[var_694cf27a7080216.size] = squadmember;
                 }

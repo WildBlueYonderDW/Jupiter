@@ -49,7 +49,7 @@ function init() {
         scriptbundlename = level.var_1a2b600a06ec21f4.var_35104c981da61b30;
     } else if (getdvarint(@"hash_a464cb031c16ee87") > 0) {
         scriptbundlename = scriptbundlename + "_t10_mp";
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         scriptbundlename = scriptbundlename + "_wz2_br";
     } else {
         scriptbundlename = scriptbundlename + "_iw9_mp";
@@ -192,7 +192,7 @@ function onplayerspawned() {
         if (istrue(self.wassquadspawned)) {
             level thread trysaylocalsound(self, #"hash_213c1cf2e5154626");
         }
-    } else if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         self.bcdisabled = 1;
     }
 }
@@ -447,7 +447,7 @@ function function_204aeba40a2aa027(var_ebec497ff8b18a45) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20b5
 // Size: 0x17
-function onFieldUpgradeDestroy(var_928bfcd868268253) {
+function onfieldupgradedestroy(var_928bfcd868268253) {
     level thread trysaylocalsound(self, var_928bfcd868268253);
 }
 
@@ -880,7 +880,7 @@ function reloadtracking() {
             }
             var_da66af6058340796 = var_38497ce38042adf7 || var_54a24336cc9a143d;
             if (!var_da66af6058340796) {
-                if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+                if (namespace_36f464722d326bbe::isbrstylegametype()) {
                     switch (var_cf4209c200f8bbf4) {
                     case #"hash_34340d457a63e7f1":
                     case #"hash_ab10f9c080fe4faf":
@@ -1709,7 +1709,7 @@ function updateselfvobonuschance() {
             self.pers["selfVOBonusChance"] = self.pers["selfVOBonusChance"] + 0.1;
             wait(3);
         }
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self.pers["selfVOBonusChance"] = 0.25;
     }
 }

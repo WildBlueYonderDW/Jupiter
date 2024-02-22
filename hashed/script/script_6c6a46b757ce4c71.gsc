@@ -137,8 +137,8 @@ function function_20f21f6a7707e19() {
 // Size: 0xad
 function private function_425f70bba2ca4d6b() {
     level namespace_7f0bcee5d45a1dea::add("on_agent_spawned", &function_7e2e3e062b49f13b);
-    registersharedfunc("ai_mp_controller", "agentPers_getAgentPersData", &namespace_14d36171baccf528::agentPers_getAgentPersData);
-    registersharedfunc("ai_mp_controller", "agentPers_setAgentPersData", &namespace_14d36171baccf528::agentPers_setAgentPersData);
+    registersharedfunc("ai_mp_controller", "agentPers_getAgentPersData", &namespace_14d36171baccf528::agentpers_getagentpersdata);
+    registersharedfunc("ai_mp_controller", "agentPers_setAgentPersData", &namespace_14d36171baccf528::agentpers_setagentpersdata);
     registersharedfunc("ai_mp_controller", "handleDamageFeedback", &namespace_3e725f3cc58bddd3::handledamagefeedback);
     registersharedfunc("vehicle_damage", "modifyVehicleDamage", &function_431dee4c36d7e3ba);
     level.agent_funcs["soldier"]["on_damaged"] = &namespace_daa149ca485fd50a::callbacksoldieragentdamaged;

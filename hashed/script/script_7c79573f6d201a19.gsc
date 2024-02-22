@@ -106,7 +106,7 @@ function function_6a902180ebd8f336(bot, entarray, result) {
         if (!isdefined(var_17bec417681d2af0)) {
             continue;
         }
-        var_7d9a6d00a336393b = namespace_bbc79db4c3949a5c::getTimeTillDangerForPoint(ent.entity.origin);
+        var_7d9a6d00a336393b = namespace_bbc79db4c3949a5c::gettimetilldangerforpoint(ent.entity.origin);
         if (var_7d9a6d00a336393b >= 0) {
             var_40f4b7920a0ca8a0 = function_9d1ab012058221bb(var_7d9a6d00a336393b, self.constants.var_93bcc2b99d24433f, self.constants.var_5107f0b927dad2b);
             var_17bec417681d2af0 = var_17bec417681d2af0 + var_40f4b7920a0ca8a0;

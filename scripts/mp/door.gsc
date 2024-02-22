@@ -88,7 +88,7 @@ function door_dynamic_setup_adapter(var_497a14a8727744f4, lean, var_42ecb50ba6dd
             door namespace_19b4203b51d56488::sethintobject("tag_door_handle", "HINT_BUTTON", undefined, "MP/DOOR_USE_OPEN_DOUBLE", undefined, "duration_none", undefined, 200, 90, 72, 90);
             door.useprompt = door;
             door.useprompt setusewhenhandsoccupied(1);
-            if (!lean && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+            if (!lean && !namespace_36f464722d326bbe::isbrstylegametype()) {
                 door.lockprompt = namespace_19b4203b51d56488::createhintobject(var_70be37a43c5b39d5, "HINT_BUTTON", undefined, "MP/DOOR_USE_LOCK", undefined, undefined, "show", 200, 90, 72, 90);
                 door.lockprompt linkto(door, "tag_door_handle", (3, 0, 15), (0, 0, 0));
                 door.lockprompt setusewhenhandsoccupied(1);

@@ -170,7 +170,7 @@ function function_5e218e270551f5be(asmname) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8a5
 // Size: 0xe4
-function CapCivReact_HandleBulletFired(originator) {
+function capcivreact_handlebulletfired(originator) {
     var_c70400922bccce61 = distance(originator.origin, self.origin);
     var_8911f71726832879 = var_c70400922bccce61 / level.var_f62b6e59c0e00d48.var_ffc29105fd388648 + randomfloat(0, 0.5) * 1000;
     var_9d58e322fdc1e5e9 = var_8911f71726832879 + gettime();
@@ -194,7 +194,7 @@ function function_d338069f6a281787() {
         originator = eventname = self waittill("cap_event");
         switch (eventname) {
         case #"hash_cb9359e30cbc556b":
-            CapCivReact_HandleBulletFired(originator);
+            capcivreact_handlebulletfired(originator);
             break;
         }
     }

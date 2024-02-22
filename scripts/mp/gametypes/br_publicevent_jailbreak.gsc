@@ -104,7 +104,7 @@ function activatefunc() {
     clockobject delete();
     wait(1);
     playerlist = respawnplayers();
-    level thread forceStopWaitForGulagToEmpty();
+    level thread forcestopwaitforgulagtoempty();
     function_33eef80bb2ce6d41(playerlist);
     level notify("waitForGulagToEmptySuccess");
     pauseallgulagfights(0);
@@ -114,7 +114,7 @@ function activatefunc() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6db
 // Size: 0x70
-function forceStopWaitForGulagToEmpty() {
+function forcestopwaitforgulagtoempty() {
     if (!istrue(level.var_acd63ea948a70083)) {
         return;
     }
@@ -287,7 +287,7 @@ function respawnplayers() {
 // Size: 0x264
 function playjailbreakvo(aliasname) {
     activeplayers = [];
-    var_f7a309109c19a8eb = [];
+    gulagplayers = [];
     var_5624bf9a85ce0294 = [];
     var_a11643fdeedee81b = isdefined(level.gulag) && !istrue(level.gulag.shutdown);
     var_827c53020f6f228f = getdvarint(@"hash_c622900a5fa1e2c6", 1);
@@ -302,7 +302,7 @@ function playjailbreakvo(aliasname) {
                 if (!isalive(player) && !var_87fe48f5f9047e82) {
                     var_5624bf9a85ce0294[var_5624bf9a85ce0294.size] = player;
                 } else if (isalive(player) && var_87fe48f5f9047e82) {
-                    var_f7a309109c19a8eb[var_f7a309109c19a8eb.size] = player;
+                    gulagplayers[gulagplayers.size] = player;
                 } else if (isalive(player)) {
                     activeplayers[activeplayers.size] = player;
                 }
@@ -313,9 +313,9 @@ function playjailbreakvo(aliasname) {
         var_45e1df88d472eff6 = ter_op(cointoss(), "_active", "_active_alt");
         namespace_d3d40f75bb4e4c32::brleaderdialog("public_events_jailbreak_" + aliasname + var_45e1df88d472eff6, 0, activeplayers, 1, 1);
     }
-    if (var_f7a309109c19a8eb.size > 0) {
+    if (gulagplayers.size > 0) {
         var_35c7a746aa1c8e9e = "_gulag";
-        namespace_d3d40f75bb4e4c32::brleaderdialog("public_events_jailbreak_" + aliasname + var_35c7a746aa1c8e9e, 0, var_f7a309109c19a8eb, 1, 1);
+        namespace_d3d40f75bb4e4c32::brleaderdialog("public_events_jailbreak_" + aliasname + var_35c7a746aa1c8e9e, 0, gulagplayers, 1, 1);
     }
     if (var_5624bf9a85ce0294.size > 0) {
         var_d3dc73c3aafd6303 = "_spectate";

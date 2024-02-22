@@ -88,10 +88,10 @@ function init() {
     namespace_71073fa38f11492::registerbrgametypefunc("playerShouldRespawn", &playershouldrespawn);
     namespace_71073fa38f11492::registerbrgametypefunc("playerWelcomeSplashes", &playerwelcomesplashes);
     namespace_71073fa38f11492::registerbrgametypefunc("spawnHandled", &spawnhandled);
-    namespace_71073fa38f11492::registerbrgametypefunc("onPickupTakenIntoBackpack", &onPickupTakenIntoBackpack);
+    namespace_71073fa38f11492::registerbrgametypefunc("onPickupTakenIntoBackpack", &onpickuptakenintobackpack);
     namespace_71073fa38f11492::registerbrgametypefunc("markPlayerAsEliminatedOnKilled", &markplayeraseliminatedonkilled);
     if (!namespace_71073fa38f11492::isbrgametypefuncdefined("lootAllowedInBackpack")) {
-        namespace_71073fa38f11492::registerbrgametypefunc("lootAllowedInBackpack", &lootAllowedInBackpack);
+        namespace_71073fa38f11492::registerbrgametypefunc("lootAllowedInBackpack", &lootallowedinbackpack);
     }
     namespace_3c37cb17ade254d::registersharedfunc("plunder", "packClientMatchData", &packclientmatchdata);
     namespace_3c37cb17ade254d::registersharedfunc("plunder", "getPlunderExtractLocations", &_getplunderextractlocations);
@@ -432,7 +432,7 @@ function ononeleftevent(team) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dd5
 // Size: 0x56
-function onPickupTakenIntoBackpack(pickupent) {
+function onpickuptakenintobackpack(pickupent) {
     if (!(isdefined(pickupent.scriptablename) && istrue(level.var_b19067b41fd5cfe8))) {
         return;
     }
@@ -929,11 +929,11 @@ function setupteamplunderhud() {
     var_a7f7937dc17270c2 = 0;
     level.brgametype.leaderplunderstring = createhudelem("MP_BR_INGAME/LEADER_PLUNDER_TEXT", var_a7f7937dc17270c2, "CENTER", "CENTER", 0, var_d1f0e5189f1576d0 + var_a1ca4daa7621c02f, undefined, undefined, 1);
     foreach (team in level.teamnamelist) {
-        hudPlunder = createhudelem("MP_BR_INGAME/EXTRACT_PLUNDER", 0, "RIGHT", "CENTER", 70 + var_b4c134e149b2e70b, var_d1f0e5189f1576d0, undefined, team, 1);
+        hudplunder = createhudelem("MP_BR_INGAME/EXTRACT_PLUNDER", 0, "RIGHT", "CENTER", 70 + var_b4c134e149b2e70b, var_d1f0e5189f1576d0, undefined, team, 1);
         var_a6c3de7cc9ced93d = createhudelem("MP_BR_INGAME/ST_PLACE", undefined, "RIGHT", "CENTER", -65 + var_b4c134e149b2e70b, var_d1f0e5189f1576d0, undefined, team, 1);
         var_a6c3de7cc9ced93d setvalue(1);
-        hudPlunder.placement = var_a6c3de7cc9ced93d;
-        setteamplunderhud(team, hudPlunder);
+        hudplunder.placement = var_a6c3de7cc9ced93d;
+        setteamplunderhud(team, hudplunder);
     }
     namespace_4b0406965e556711::gameflagwait("prematch_done");
     if (!istrue(level.br_infils_disabled)) {
@@ -944,9 +944,9 @@ function setupteamplunderhud() {
     level.brgametype.hudplunderstring.alpha = 1;
     level.brgametype.leaderplunderstring.alpha = 1;
     foreach (team in level.teamnamelist) {
-        hudPlunder = getteamplunderhud(team);
-        hudPlunder.alpha = 1;
-        hudPlunder.placement.alpha = 1;
+        hudplunder = getteamplunderhud(team);
+        hudplunder.alpha = 1;
+        hudplunder.placement.alpha = 1;
     }
 }
 
@@ -1409,11 +1409,11 @@ function triggermatchendtimer(endtime) {
 // Checksum 0x0, Offset: 0x5a19
 // Size: 0xed
 function updateteamplunderhud(team) {
-    hudPlunder = getteamplunderhud(team);
+    hudplunder = getteamplunderhud(team);
     plundercount = namespace_c6ccccd95254983f::getteamplunder(team);
     cost = getcost();
-    if (plundercount >= cost && hudPlunder.color != (0, 1, 0)) {
-        hudPlunder.color = (0, 1, 0);
+    if (plundercount >= cost && hudplunder.color != (0, 1, 0)) {
+        hudplunder.color = (0, 1, 0);
         teammates = level.teamdata[team]["players"];
         foreach (player in teammates) {
             player playlocalsound("br_plunder_atm_deposit_gtr");
@@ -1768,14 +1768,14 @@ function helibankplunder() {
     }
     level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("plunder_extract_success", self.team, 1);
     var_a8eeb94dcc610b78 = 0;
-    var_235f1174e9faa6d2 = 0;
+    contains_enemy_plunder = 0;
     foreach (item in self.plunder) {
         var_a8eeb94dcc610b78 = var_a8eeb94dcc610b78 + item.plundercount;
         if (item.player.team != self.team) {
-            var_235f1174e9faa6d2 = 1;
+            contains_enemy_plunder = 1;
         }
     }
-    namespace_a011fbf6d93f25e5::branalytics_plunder_extraction_success(self.plunder.size, var_a8eeb94dcc610b78, "little_bird", var_235f1174e9faa6d2, self.endpoint);
+    namespace_a011fbf6d93f25e5::branalytics_plunder_extraction_success(self.plunder.size, var_a8eeb94dcc610b78, "little_bird", contains_enemy_plunder, self.endpoint);
     level.br_plunder.extraction_helicoptor_total_plunder = level.br_plunder.extraction_helicoptor_total_plunder + var_a8eeb94dcc610b78;
     level.br_plunder.extraction_helicoptor_num_completed++;
     namespace_c6ccccd95254983f::entityplunderbankalldeposited();
@@ -2800,7 +2800,7 @@ function cashleader_trackdeath() {
 // Checksum 0x0, Offset: 0x93af
 // Size: 0xde
 function packextrascore0(data) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (getsubgametype() == "kingslayer" || getsubgametype() == "resurgence") {
@@ -3710,21 +3710,21 @@ function eomawardplayerxp() {
                 continue;
             }
             player namespace_3c5a4254f2b957ea::incpersstat("cash", int(var_4828ed9b88a47362 / 10000));
-            combatXP = player.pers["combatXP"];
-            if (!isdefined(combatXP)) {
-                combatXP = 0;
+            combatxp = player.pers["combatXP"];
+            if (!isdefined(combatxp)) {
+                combatxp = 0;
             }
-            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 0, combatXP);
-            missionXP = player.pers["missionXP"];
-            if (!isdefined(missionXP)) {
-                missionXP = 0;
+            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 0, combatxp);
+            missionxp = player.pers["missionXP"];
+            if (!isdefined(missionxp)) {
+                missionxp = 0;
             }
-            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 1, missionXP);
-            lootingXP = player.pers["lootingXP"];
-            if (!isdefined(lootingXP)) {
-                lootingXP = 0;
+            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 1, missionxp);
+            lootingxp = player.pers["lootingXP"];
+            if (!isdefined(lootingxp)) {
+                lootingxp = 0;
             }
-            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 2, lootingXP);
+            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 2, lootingxp);
             var_d239a4de12b2338 = 0;
             if (isdefined(player.plundercount)) {
                 var_d239a4de12b2338 = int(player.plundercount * var_7c3103094888139a);
@@ -3738,11 +3738,11 @@ function eomawardplayerxp() {
                 player namespace_62c556437da28f50::giverankxp(#"hash_31a9f06f2a47aeff", score, undefined, 1, 1);
             }
             player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 3, score);
-            reconXP = player.pers["reconXP"];
-            if (!isdefined(reconXP)) {
-                reconXP = 0;
+            reconxp = player.pers["reconXP"];
+            if (!isdefined(reconxp)) {
+                reconxp = 0;
             }
-            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 4, reconXP);
+            player setplayerdata(level.var_5d69837cf4db0407, "aarValue", 4, reconxp);
             matchbonus = 0;
             if (isdefined(player.matchbonus)) {
                 matchbonus = int(player.matchbonus);
@@ -4054,7 +4054,7 @@ function function_af537bbd5b957fa6() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb68
 // Size: 0x27
-function lootAllowedInBackpack(scriptablename) {
+function lootallowedinbackpack(scriptablename) {
     if (istrue(level.var_3bee9b0a6835e07b)) {
         return namespace_cb965d2f71fefddc::isvaluable(scriptablename);
     } else {

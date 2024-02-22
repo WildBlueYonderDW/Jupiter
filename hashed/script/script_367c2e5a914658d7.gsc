@@ -168,7 +168,7 @@ function function_7b7f58778d9d6990(agent) {
 // Checksum 0x0, Offset: 0x9f8
 // Size: 0x199
 function private function_8f1b9042d7fdfcda(aitype, volume, spawnorigin, spawnangles) {
-    agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, spawnorigin, spawnangles, "low", "activeWarzone", undefined, undefined, undefined, undefined, undefined, undefined, 0, 1, undefined, 1);
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, spawnorigin, spawnangles, "low", "activeWarzone", undefined, undefined, undefined, undefined, undefined, undefined, 0, 1, undefined, 1);
     if (isint(agent)) {
         namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "active", &function_7b7f58778d9d6990);
         var_9632417ec6055a75 = undefined;
@@ -201,7 +201,7 @@ function private function_8f1b9042d7fdfcda(aitype, volume, spawnorigin, spawnang
 // Checksum 0x0, Offset: 0xb99
 // Size: 0x18e
 function private function_1dd6dd044fd43e09(aitype, spawnorigin, spawnangles, var_e9e8fca7d95d12a, var_978098481752dc72) {
-    agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, spawnorigin, spawnangles, "low", "activeWarzone", undefined, undefined, undefined, undefined, undefined, undefined, 0, 1, undefined, 1);
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, spawnorigin, spawnangles, "low", "activeWarzone", undefined, undefined, undefined, undefined, undefined, undefined, 0, 1, undefined, 1);
     if (isint(agent)) {
         namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "active", &function_7b7f58778d9d6990);
         var_9632417ec6055a75 = undefined;

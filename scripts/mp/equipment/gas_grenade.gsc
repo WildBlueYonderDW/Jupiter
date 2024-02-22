@@ -106,7 +106,7 @@ function gas_onplayerdamaged(data) {
         }
     }
     if (data.attacker != data.victim) {
-        data.attacker namespace_a850435086c88de3::doOnActionScoreEvent(0, "gasGrenadeHit");
+        data.attacker namespace_a850435086c88de3::doonactionscoreevent(0, "gasGrenadeHit");
     }
     if (function_4cd5239298745de7() && isdefined(self.gasmaskhealth) && self.gasmaskhealth > 0) {
         return 1;
@@ -227,7 +227,7 @@ function function_b3f6ad35b2a40677(location, radius, height, duration) {
 // Checksum 0x0, Offset: 0xd4a
 // Size: 0x1c
 function function_4cd5239298745de7() {
-    return namespace_36f464722d326bbe::isBRStyleGameType() && getdvarint(@"hash_7c4fbf3fce66f376", 0);
+    return namespace_36f464722d326bbe::isbrstylegametype() && getdvarint(@"hash_7c4fbf3fce66f376", 0);
 }
 
 // Namespace gas_grenade/namespace_d39a86483d995ed1
@@ -235,7 +235,7 @@ function function_4cd5239298745de7() {
 // Checksum 0x0, Offset: 0xd6e
 // Size: 0x1d
 function function_97782fcb5ee69702() {
-    return namespace_36f464722d326bbe::isBRStyleGameType() && getdvarint(@"hash_93c3a50d09e1989b", 1);
+    return namespace_36f464722d326bbe::isbrstylegametype() && getdvarint(@"hash_93c3a50d09e1989b", 1);
 }
 
 // Namespace gas_grenade/namespace_d39a86483d995ed1
@@ -279,9 +279,9 @@ function gas_onentertrigger(trigger) {
     entnum = trigger getentitynumber();
     self.gastriggerstouching[entnum] = trigger;
     self.lastgastouchtime = gettime();
-    if (getdvarint(@"hash_9ae216012f64affd") && isdefined(trigger.owner.Chemist)) {
+    if (getdvarint(@"hash_9ae216012f64affd") && isdefined(trigger.owner.chemist)) {
         if (issharedfuncdefined("warlord_chemist", "periodicdamage")) {
-            thread function_f3bb4f4911a1beb2("warlord_chemist", "periodicdamage", trigger.owner.Chemist.var_6611564090223dab, trigger.owner.Chemist.var_2278441f7203ae, trigger.owner);
+            thread function_f3bb4f4911a1beb2("warlord_chemist", "periodicdamage", trigger.owner.chemist.var_6611564090223dab, trigger.owner.chemist.var_2278441f7203ae, trigger.owner);
         }
         if (isdefined(self.gasmaskhealth)) {
             if (self.gasmaskhealth > 0) {
@@ -309,7 +309,7 @@ function gas_onentertrigger(trigger) {
         thread gas_applycough(trigger.owner, 0);
         namespace_e765f0aad2368473::enableloopingcoughaudio(trigger.owner);
     }
-    CodcasterSetPlayerStatusEffect("gas", -1);
+    codcastersetplayerstatuseffect("gas", -1);
     if (getdvarint(@"hash_9ae216012f64affd") && !istrue(self.var_ce8d114cc1b073db) && issharedfuncdefined("warlord_chemist", "removegastriggers")) {
         self.var_ce8d114cc1b073db = 1;
         thread function_f3bb4f4911a1beb2("warlord_chemist", "removegastriggers");
@@ -334,7 +334,7 @@ function gas_onexittrigger(var_b2907a4520674f1a) {
         if (isdefined(level.var_f26b4e7eb9af8155)) {
             self [[ level.var_c57ee1e174e42601 ]]("gas_grenade");
         }
-        CodcasterSetPlayerStatusEffect("gas", 0);
+        codcastersetplayerstatuseffect("gas", 0);
         thread gas_removespeedredux();
         thread gas_removeblur();
         namespace_e765f0aad2368473::disableloopingcoughaudio();
@@ -716,7 +716,7 @@ function gas_applyspeedredux() {
     if (isdefined(self.gasspeedmod)) {
         if (self.gasspeedmod < -0.15) {
             if (namespace_82dcd1d5ae30ff7::_hasperk("specialty_gas_grenade_resist")) {
-                namespace_b6a8027f477010e1::activatePerk("specialty_tac_resist");
+                namespace_b6a8027f477010e1::activateperk("specialty_tac_resist");
                 self.gasspeedmod = -0.15;
                 namespace_3bbb5a98b932c46f::updatemovespeedscale();
                 return;

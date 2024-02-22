@@ -72,7 +72,7 @@ function function_82a88d7e4d54f038(agent, userdata) {
         agent thread function_f8cdf72bdf211373();
     }
     if (agent.armorhealth > 0) {
-        agent.var_a4738c70736d3a61 = &function_664617e48d1298f2;
+        agent.var_a4738c70736d3a61 = &warlord_damaged;
     }
     var_c7a28b3147a5fb77 = function_f159c10d5cf8f0b4("auto_afo_closet", "targetname");
     if (isdefined(var_c7a28b3147a5fb77)) {
@@ -246,7 +246,7 @@ function private function_f6b236a9e4b842ea(var_de05f6641f8085de) {
 // Params 14, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbec
 // Size: 0xf3
-function function_664617e48d1298f2(inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, var_799f234362adb813, partname, eventid) {
+function warlord_damaged(inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, var_799f234362adb813, partname, eventid) {
     damage = namespace_ad1f398af6f48cb1::function_395c3a00db83ba6(damage, meansofdeath, objweapon);
     namespace_daa149ca485fd50a::function_dffac413ed66bcd0(inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, var_799f234362adb813, partname);
     if (self.armorhealth <= 600 && isdefined(self.ob) && !istrue(self.ob.var_698ab4f1074b4f37)) {

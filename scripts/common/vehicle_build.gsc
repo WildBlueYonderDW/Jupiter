@@ -448,8 +448,8 @@ function build_template(class, model, type, classname) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1aa5
 // Size: 0x751
-function function_40778829123b7952(vehicleRef, vehicleclass) {
-    classname = vehicleRef;
+function function_40778829123b7952(vehicleref, vehicleclass) {
+    classname = vehicleref;
     bundlename = classname + "_sp";
     bundle = getscriptbundle("vehiclebundle:" + bundlename);
     if (!isdefined(bundle)) {
@@ -482,7 +482,7 @@ function function_40778829123b7952(vehicleRef, vehicleclass) {
     }
     if (istrue(bundle.ai.var_289df80e1ded586f)) {
         /#
-            assert(isdefined(bundle.ai.vehicleanimalias) && bundle.ai.vehicleanimalias != "", "You must specify a vehicleAnimAlias if this vehicle supports AI: " + vehicleRef);
+            assert(isdefined(bundle.ai.vehicleanimalias) && bundle.ai.vehicleanimalias != "", "You must specify a vehicleAnimAlias if this vehicle supports AI: " + vehicleref);
         #/
         unload_groups = [];
         unload_groups["default"] = [];

@@ -189,7 +189,7 @@ function bountycollect(var_d55dc1ee4d799341, var_11fbc6946af7e858) {
     if (_hasperk("specialty_bounty")) {
         if (var_d55dc1ee4d799341 > 0) {
             for (i = 0; i < var_d55dc1ee4d799341; i++) {
-                thread doScoreEvent(#"bounty");
+                thread doscoreevent(#"bounty");
                 bountyincreasestreak();
                 playfx(getfx("vfx_mo_money_cash_exp"), var_11fbc6946af7e858 + (0, 0, 45));
             }

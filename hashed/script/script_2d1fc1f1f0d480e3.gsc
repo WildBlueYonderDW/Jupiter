@@ -111,7 +111,7 @@ function function_c77b3c46fdc103a6(player) {
     index = 0;
     foreach (var_7e40f334147fa597, itemlist in var_287f5c3b9871265c) {
         foreach (item in itemlist) {
-            var_d53771808585d4da = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+            var_d53771808585d4da = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
             namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory | Lost Gear ( setLostGear ): player '%s' had %s of item '%s' (lootID = %s) in source '%s'", player.name, item.quantity, var_d53771808585d4da, item.lootid, var_7e40f334147fa597);
             player function_34ccfb334ace1f1c(index, item.lootid, item.quantity);
             index++;
@@ -159,8 +159,8 @@ function function_b2addcd483da442f(player) {
 // Size: 0xcd
 function onplayerspawn(player) {
     namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory | Lost Gear (onPlayerSpawn): player '%s' BEGIN", player.name);
-    if (isdefined(level.exgm.lostGear)) {
-        foreach (var_a9250ad62a46a964 in level.exgm.lostGear.var_431febfef965dd95) {
+    if (isdefined(level.exgm.lostgear)) {
+        foreach (var_a9250ad62a46a964 in level.exgm.lostgear.var_431febfef965dd95) {
             function_4f54ffb17a95419b(var_a9250ad62a46a964, player);
         }
     }
@@ -184,8 +184,8 @@ function private function_76e911d798eded43() {
 // Size: 0x29d
 function private function_b4ffabaa2545fb41(player) {
     var_bf23a60678978c19 = [];
-    lostGear = function_19b3d7d43b86499a(player);
-    foreach (index, var_9b013e8acd2e9431 in lostGear) {
+    lostgear = function_19b3d7d43b86499a(player);
+    foreach (index, var_9b013e8acd2e9431 in lostgear) {
         var_bf23a60678978c19[index] = [];
         var_bf23a60678978c19[index]["lootID"] = var_9b013e8acd2e9431.lootid;
         var_bf23a60678978c19[index]["quantity"] = var_9b013e8acd2e9431.quantity;
@@ -195,16 +195,16 @@ function private function_b4ffabaa2545fb41(player) {
         return;
     }
     dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
-    lostGearOrigin = player function_fb1296132a8ade2e();
+    lostgearorigin = player function_fb1296132a8ade2e();
     var_d1c4f239085ab290 = (0, 0, 0);
-    var_cb4fad49263e20c4 = namespace_cb965d2f71fefddc::getitemdroporiginandangles(dropstruct, lostGearOrigin, var_d1c4f239085ab290);
+    var_cb4fad49263e20c4 = namespace_cb965d2f71fefddc::getitemdroporiginandangles(dropstruct, lostgearorigin, var_d1c4f239085ab290);
     var_874b2676837cf5a1 = namespace_cb965d2f71fefddc::spawnpickup("cache_duffel_bag_01", var_cb4fad49263e20c4, 1);
     var_874b2676837cf5a1 setscriptablepartstate("body", "closed_usable");
     if (!isdefined(var_874b2676837cf5a1)) {
         namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory | Lost Gear (spawnLostGearBag): player '%s' failed to spawn pickup, aborting spawn", player.name);
         return;
     }
-    icon = function_9af154ce15854e98(lostGearOrigin);
+    icon = function_9af154ce15854e98(lostgearorigin);
     if (!isdefined(icon)) {
         namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory | Lost Gear (spawnLostGearBag): player '%s' failed to create minimap icon, aborting spawn", player.name);
         return;
@@ -212,15 +212,15 @@ function private function_b4ffabaa2545fb41(player) {
     var_874b2676837cf5a1.contents = var_bf23a60678978c19;
     var_874b2676837cf5a1.var_46a3a8565ac0c17c = 6;
     var_874b2676837cf5a1.owner = player;
-    namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory | Lost Gear (spawnLostGearBag): player '%s' spawning lost gear at '%s'", player.name, lostGearOrigin);
-    if (!isdefined(level.exgm.lostGear)) {
-        level.exgm.lostGear = spawnstruct();
-        level.exgm.lostGear.var_431febfef965dd95 = [];
+    namespace_36be7f9eab6ca7bc::function_e1b1d2af636da618("EXGM Inventory | Lost Gear (spawnLostGearBag): player '%s' spawning lost gear at '%s'", player.name, lostgearorigin);
+    if (!isdefined(level.exgm.lostgear)) {
+        level.exgm.lostgear = spawnstruct();
+        level.exgm.lostgear.var_431febfef965dd95 = [];
     }
     var_a9250ad62a46a964 = spawnstruct();
     var_a9250ad62a46a964.pickup = var_874b2676837cf5a1;
     var_a9250ad62a46a964.icon = icon;
-    level.exgm.lostGear.var_431febfef965dd95[level.exgm.lostGear.var_431febfef965dd95.size] = var_a9250ad62a46a964;
+    level.exgm.lostgear.var_431febfef965dd95[level.exgm.lostgear.var_431febfef965dd95.size] = var_a9250ad62a46a964;
     function_96618ef5de579f7(var_a9250ad62a46a964);
     level thread function_cae44ab552885092(var_a9250ad62a46a964);
 }
@@ -280,7 +280,7 @@ function private function_cae44ab552885092(var_a9250ad62a46a964) {
     level endon("game_ended");
     var_a9250ad62a46a964.pickup waittill("death");
     namespace_5a22b6f3a56f7e9b::returnobjectiveid(var_a9250ad62a46a964.icon.objectiveiconid);
-    level.exgm.lostGear.var_431febfef965dd95 = array_remove(level.exgm.lostGear.var_431febfef965dd95, var_a9250ad62a46a964);
+    level.exgm.lostgear.var_431febfef965dd95 = array_remove(level.exgm.lostgear.var_431febfef965dd95, var_a9250ad62a46a964);
 }
 
 // Namespace namespace_83df3740e3ffc9d0/namespace_354979ae5b15fe8f
@@ -302,7 +302,7 @@ function function_9eaf6bf92f55ed1b(player, var_2b465f51da1e8fcf, var_2b465e51da1
         var_871bdbc7e5abb341 = [];
         var_2a9fa048040c6892 = namespace_354979ae5b15fe8f::function_19b3d7d43b86499a(player);
         foreach (item in var_2a9fa048040c6892) {
-            var_d53771808585d4da = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+            var_d53771808585d4da = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
             itemvalue = namespace_6499f2212dc52bbd::function_10440574d3361667(item.lootid);
             var_871bdbc7e5abb341[var_871bdbc7e5abb341.size] = [0:item.lootid, 1:var_d53771808585d4da, 2:item.quantity, 3:itemvalue];
         }

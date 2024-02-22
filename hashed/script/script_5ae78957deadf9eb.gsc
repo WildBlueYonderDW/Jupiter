@@ -38,7 +38,7 @@ function function_9a5c6e540a2f3340(var_aed74300daf62896) {
 // Checksum 0x0, Offset: 0x1d3
 // Size: 0x5e
 function function_4108074415abc816(node) {
-    boss = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent("enemy_mp_boss_pyro", node.origin, node.angles, "absolute", "elites", "pyroBoss", undefined, undefined, undefined, undefined, 1, 0, 0);
+    boss = namespace_bfef6903bca5845d::ai_mp_requestspawnagent("enemy_mp_boss_pyro", node.origin, node.angles, "absolute", "elites", "pyroBoss", undefined, undefined, undefined, undefined, 1, 0, 0);
     if (!isdefined(boss)) {
         return;
     }

@@ -14,21 +14,21 @@ function init() {
     }
     level.var_6392befa93ae3cc6 = [];
     level.var_91ca776f27d516c0 = [];
-    function_7a2df9055cb22721("RatGetPlayerPosition", &RatGetPlayerPosition, "vector3");
-    function_7a2df9055cb22721("RatGetPlayerAngles", &RatGetPlayerAngles, "vector3");
-    function_7a2df9055cb22721("RatGetPlayerIsSwitchingWeapon", &RatGetPlayerIsSwitchingWeapon, "bool");
-    function_7a2df9055cb22721("RatGetPlayerIsReloading", &RatGetPlayerIsReloading, "bool");
-    function_7a2df9055cb22721("RatGetPlayerIsMeleeing", &RatGetPlayerIsMeleeing, "bool");
-    function_7a2df9055cb22721("RatGetPlayerADS", &RatGetPlayerADS, "float");
-    function_7a2df9055cb22721("RatGetPlayerStance", &RatGetPlayerStance, "string");
-    function_7a2df9055cb22721("RatGetPlayerHealth", &RatGetPlayerHealth, "int64_t");
-    function_7a2df9055cb22721("RatSetPlayerHealth", &RatSetPlayerHealth);
-    function_7a2df9055cb22721("RatDoDamage", &RatDoDamage, "bool");
-    function_7a2df9055cb22721("RatGetClipAmmoCount", &RatGetClipAmmoCount, "int64_t");
-    function_7a2df9055cb22721("RatGetTotalAmmoCount", &RatGetTotalAmmoCount, "int64_t");
-    function_7a2df9055cb22721("RatGetCompleteWeaponName", &RatGetCompleteWeaponName, "string");
-    function_7a2df9055cb22721("RatGetPlayerKills", &RatGetPlayerKills, "int64_t");
-    function_7a2df9055cb22721("RatGetPlayerDeaths", &RatGetPlayerDeaths, "int64_t");
+    function_7a2df9055cb22721("RatGetPlayerPosition", &ratgetplayerposition, "vector3");
+    function_7a2df9055cb22721("RatGetPlayerAngles", &ratgetplayerangles, "vector3");
+    function_7a2df9055cb22721("RatGetPlayerIsSwitchingWeapon", &ratgetplayerisswitchingweapon, "bool");
+    function_7a2df9055cb22721("RatGetPlayerIsReloading", &ratgetplayerisreloading, "bool");
+    function_7a2df9055cb22721("RatGetPlayerIsMeleeing", &ratgetplayerismeleeing, "bool");
+    function_7a2df9055cb22721("RatGetPlayerADS", &ratgetplayerads, "float");
+    function_7a2df9055cb22721("RatGetPlayerStance", &ratgetplayerstance, "string");
+    function_7a2df9055cb22721("RatGetPlayerHealth", &ratgetplayerhealth, "int64_t");
+    function_7a2df9055cb22721("RatSetPlayerHealth", &ratsetplayerhealth);
+    function_7a2df9055cb22721("RatDoDamage", &ratdodamage, "bool");
+    function_7a2df9055cb22721("RatGetClipAmmoCount", &ratgetclipammocount, "int64_t");
+    function_7a2df9055cb22721("RatGetTotalAmmoCount", &ratgettotalammocount, "int64_t");
+    function_7a2df9055cb22721("RatGetCompleteWeaponName", &ratgetcompleteweaponname, "string");
+    function_7a2df9055cb22721("RatGetPlayerKills", &ratgetplayerkills, "int64_t");
+    function_7a2df9055cb22721("RatGetPlayerDeaths", &ratgetplayerdeaths, "int64_t");
 }
 
 // Namespace rat/namespace_bb666c82715fa89d
@@ -98,7 +98,7 @@ function getplayer(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54d
 // Size: 0x37
-function RatGetPlayerPosition(params) {
+function ratgetplayerposition(params) {
     player = getplayer(params);
     return player.origin + (0, 0, 60);
 }
@@ -107,7 +107,7 @@ function RatGetPlayerPosition(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x58c
 // Size: 0x4b
-function RatGetPlayerAngles(params) {
+function ratgetplayerangles(params) {
     player = getplayer(params);
     playerangles = player getplayerangles();
     return ((playerangles[0] + 360) % 360, (playerangles[1] + 360) % 360, playerangles[2]);
@@ -117,7 +117,7 @@ function RatGetPlayerAngles(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5df
 // Size: 0x24
-function RatGetPlayerIsSwitchingWeapon(params) {
+function ratgetplayerisswitchingweapon(params) {
     player = getplayer(params);
     return player isswitchingweapon();
 }
@@ -126,7 +126,7 @@ function RatGetPlayerIsSwitchingWeapon(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60b
 // Size: 0x24
-function RatGetPlayerIsReloading(params) {
+function ratgetplayerisreloading(params) {
     player = getplayer(params);
     return player isreloading();
 }
@@ -135,7 +135,7 @@ function RatGetPlayerIsReloading(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x637
 // Size: 0x24
-function RatGetPlayerIsMeleeing(params) {
+function ratgetplayerismeleeing(params) {
     player = getplayer(params);
     return player ismeleeing();
 }
@@ -144,7 +144,7 @@ function RatGetPlayerIsMeleeing(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x663
 // Size: 0x24
-function RatGetPlayerADS(params) {
+function ratgetplayerads(params) {
     player = getplayer(params);
     return player playerads();
 }
@@ -153,7 +153,7 @@ function RatGetPlayerADS(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68f
 // Size: 0x24
-function RatGetPlayerStance(params) {
+function ratgetplayerstance(params) {
     player = getplayer(params);
     return player getstance();
 }
@@ -162,7 +162,7 @@ function RatGetPlayerStance(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6bb
 // Size: 0x29
-function RatGetPlayerHealth(params) {
+function ratgetplayerhealth(params) {
     player = getplayer(params);
     return player.health;
 }
@@ -171,7 +171,7 @@ function RatGetPlayerHealth(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ec
 // Size: 0x4c
-function RatSetPlayerHealth(params) {
+function ratsetplayerhealth(params) {
     amount = intvalue(params.amount, 1);
     player = getplayer(params);
     player.health = amount;
@@ -181,7 +181,7 @@ function RatSetPlayerHealth(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x73f
 // Size: 0xd0
-function RatDoDamage(params) {
+function ratdodamage(params) {
     amount = function_b4a0db97ee6d9256(params.amount, 1);
     var_26fe25f7f39de3a8 = function_237b5b4dd63c605e(params.var_26fe25f7f39de3a8, 0);
     player = getplayer(params);
@@ -200,7 +200,7 @@ function RatDoDamage(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x817
 // Size: 0x24
-function RatGetClipAmmoCount(params) {
+function ratgetclipammocount(params) {
     player = getplayer(params);
     return player getcurrentweaponclipammo();
 }
@@ -209,7 +209,7 @@ function RatGetClipAmmoCount(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x843
 // Size: 0x36
-function RatGetTotalAmmoCount(params) {
+function ratgettotalammocount(params) {
     player = getplayer(params);
     currentweapon = player getcurrentweapon();
     return player getammocount(currentweapon);
@@ -219,7 +219,7 @@ function RatGetTotalAmmoCount(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x881
 // Size: 0x41
-function RatGetCompleteWeaponName(params) {
+function ratgetcompleteweaponname(params) {
     player = getplayer(params);
     currentweapon = player getcurrentweapon();
     weaponname = getcompleteweaponname(currentweapon);
@@ -230,7 +230,7 @@ function RatGetCompleteWeaponName(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8ca
 // Size: 0x29
-function RatGetPlayerKills(params) {
+function ratgetplayerkills(params) {
     player = getplayer(params);
     return player.kills;
 }
@@ -239,7 +239,7 @@ function RatGetPlayerKills(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8fb
 // Size: 0x29
-function RatGetPlayerDeaths(params) {
+function ratgetplayerdeaths(params) {
     player = getplayer(params);
     return player.deaths;
 }

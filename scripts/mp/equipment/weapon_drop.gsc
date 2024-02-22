@@ -9,9 +9,9 @@
 #using scripts\cp_mp\killstreaks\helper_drone.gsc;
 #using scripts\mp\equipment\ammo_box.gsc;
 
-#namespace namespace_5fdc79d15dd27f2b;
+#namespace weapon_drop;
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x305
 // Size: 0x1d
@@ -19,7 +19,7 @@ function weapondrop_init() {
     level._effect["weapon_drop_impact"] = loadfx("vfx/iw9/killstreaks/smk_signal/vfx_carepkg_landing_dust.vfx");
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x329
 // Size: 0xd
@@ -28,7 +28,7 @@ function weapondrop_beginsuper() {
     return 1;
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33e
 // Size: 0xdd
@@ -51,7 +51,7 @@ function weapondrop_givedropweapon() {
     }
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x422
 // Size: 0x39
@@ -63,7 +63,7 @@ function weapondrop_used(grenade) {
     return 1;
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x463
 // Size: 0xfc
@@ -87,7 +87,7 @@ function weapondrop_deploydrone(owner, pos) {
     }
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x566
 // Size: 0x13
@@ -95,7 +95,7 @@ function weapondrop_dronedelivery() {
     self.deliverybox weapondrop_createdrop();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x580
 // Size: 0x39
@@ -108,7 +108,7 @@ function weapondrop_createdropondeath(deliverybox) {
     deliverybox thread weapondrop_createdrop();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c0
 // Size: 0x88
@@ -126,7 +126,7 @@ function weapondrop_createdrop() {
     thread watchcratesettle();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x11
@@ -135,7 +135,7 @@ function deletecrate() {
     self delete();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x667
 // Size: 0x78
@@ -151,7 +151,7 @@ function cratephysicson() {
     self physics_registerforcollisioncallback();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x4e
@@ -168,7 +168,7 @@ function cratephysicsoff() {
     killstreak_destroydangerzone();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x73b
 // Size: 0x5d
@@ -185,7 +185,7 @@ function watchcratesettle() {
     thread cratephysicsoff();
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x79f
 // Size: 0x5d
@@ -202,7 +202,7 @@ function watchcratesettleinternal() {
     }
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x803
 // Size: 0x122
@@ -233,7 +233,7 @@ function watchcrateimpact(delay) {
     }
 }
 
-// Namespace namespace_5fdc79d15dd27f2b/namespace_7f468c66c778cc41
+// Namespace weapon_drop/namespace_7f468c66c778cc41
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92c
 // Size: 0x7f

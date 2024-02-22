@@ -13,7 +13,7 @@
 // Size: 0xb7
 function init() {
     array = getentarray("turret_mp", "targetname");
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         foreach (ent in array) {
             ent delete();
         }

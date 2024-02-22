@@ -46,7 +46,7 @@ function post_main() {
     if (!getdvarint(@"hash_51d19a3b234da781", 1)) {
         return;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     function_ce60e2da53459a87();
@@ -798,7 +798,7 @@ function function_495982203bfc8d29(eattacker) {
         if (drone.health < var_54a8b2d622f1a1e0 * i) {
             if (drone.var_3e9b7fbc105df68b > i) {
                 drone.var_3e9b7fbc105df68b = i;
-                eattacker namespace_48a08c5037514e04::doScoreEvent(#"hash_6141024a6fca1305");
+                eattacker namespace_48a08c5037514e04::doscoreevent(#"hash_6141024a6fca1305");
                 itemlist = [0:"brloot_plunder_cash_common_1", 1:"brloot_armor_plate"];
                 var_55bedc0453a6c09b = randomint(100);
                 dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
@@ -1002,7 +1002,7 @@ function function_aa19007a48fca6c0(eattacker) {
     }
     if (isdefined(eattacker) && isdefined(drone.buystation) && isdefined(drone.buystation.owner)) {
         if (eattacker.team != drone.buystation.owner.team) {
-            eattacker namespace_48a08c5037514e04::doScoreEvent(#"hash_e87586ea44aa31d9");
+            eattacker namespace_48a08c5037514e04::doscoreevent(#"hash_e87586ea44aa31d9");
         }
     }
     drone stopsounds();

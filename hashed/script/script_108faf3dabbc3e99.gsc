@@ -225,7 +225,7 @@ function function_675aff24f4e37138() {
     if (!isdefined(game["switchedsides"])) {
         game["switchedsides"] = 0;
     }
-    if (level.overtimeDefenders != 0 && game["roundsWon"][var_8613c2b22b0116a5] == level.winlimit - 1 && game["roundsWon"][var_d6fd8be398b20f61] == level.winlimit - 1) {
+    if (level.overtimedefenders != 0 && game["roundsWon"][var_8613c2b22b0116a5] == level.winlimit - 1 && game["roundsWon"][var_d6fd8be398b20f61] == level.winlimit - 1) {
         var_57acadc40b2f0a8 = function_287623bbb15154be();
         reason = var_57acadc40b2f0a8[1];
         var_3b8219d206004dfa = var_57acadc40b2f0a8[0];
@@ -274,14 +274,14 @@ function function_212d9bd663252af4() {
 function function_99b6cf14579e2f2() {
     namespace_310ba947928891df::updatecommongametypedvars();
     level.flagcapturetime = dvarfloatvalue("flagCaptureTime", 60, 0, 120);
-    level.captureExtraTime = dvarfloatvalue("captureExtraTime", 60, 30, 300);
-    level.disableMajorityCapProgress = dvarintvalue("disableMajorityCapProgress", 1, 0, 1);
+    level.captureextratime = dvarfloatvalue("captureExtraTime", 60, 30, 300);
+    level.disablemajoritycapprogress = dvarintvalue("disableMajorityCapProgress", 1, 0, 1);
     level.objectivescaler = dvarfloatvalue("objScalar", 4, 1, 10);
-    level.suicideTeamKillLowersLives = dvarintvalue("suicideTeamKillLowersLives", 0, 0, 1);
+    level.suicideteamkilllowerslives = dvarintvalue("suicideTeamKillLowersLives", 0, 0, 1);
     level.numteamlives = dvarintvalue("numTeamLives", 30, 0, 100);
-    level.overtimeDefenders = dvarintvalue("overtimeDefenders", 2, 0, 2);
+    level.overtimedefenders = dvarintvalue("overtimeDefenders", 2, 0, 2);
     level.pausetimer = dvarintvalue("pauseTime", 1, 0, 1);
-    level.useSegments = dvarintvalue("useSegments", 1, 0, 1);
+    level.usesegments = dvarintvalue("useSegments", 1, 0, 1);
     level.flagsrequiredtoscore = dvarintvalue("flagsRequiredToScore", 2, 1, 3);
     level.pointsperflag = dvarintvalue("pointsPerFlag", 1, 1, 300);
     level.flagneutralization = dvarintvalue("flagNeutralization", 0, 0, 1);
@@ -290,7 +290,7 @@ function function_99b6cf14579e2f2() {
     level.capturetype = dvarintvalue("captureType", 1, 0, 3);
     level.numflagsscoreonkill = dvarintvalue("numFlagsScoreOnKill", 2, 0, 3);
     level.var_da41c55843e26237 = dvarintvalue("numCaptureSegments", 3, 0, 5);
-    level.segmentCaptureExtraTime = dvarfloatvalue("segmentCaptureExtraTime", 10, 0, 60);
+    level.segmentcaptureextratime = dvarfloatvalue("segmentCaptureExtraTime", 10, 0, 60);
     level.var_da41c55843e26237 = 3;
 }
 
@@ -450,7 +450,7 @@ function function_d5ddc77707c5c50e(trigger, team, var_5ddbc1faed2c56e6, var_8b99
         level.flagcapturetime = dvarfloatvalue(@"hash_9d0d95f7eb1e0ac3", 60, 0, 60);
     }
     if (!isdefined(level.var_e42a415ae1c75964)) {
-        level.flagCaptureTimeMin = dvarfloatvalue("flagCaptureTimeMin", 0, 0, 30);
+        level.flagcapturetimemin = dvarfloatvalue("flagCaptureTimeMin", 0, 0, 30);
     }
     if (!isdefined(level.var_fb607d7bf823f6f9)) {
         level.var_fb607d7bf823f6f9 = level.flagcapturetime * 0.5;
@@ -853,7 +853,7 @@ function function_93b1902dc83d81d2(einflictor, attacker, idamage, smeansofdeath,
     if (isdefined(self.joining_team) && self.joining_team != "spectator") {
         currentteam = getotherteam(self.joining_team)[0];
     }
-    if ((var_fe5ee0f83d4109eb || var_e07d55b45fc82ae0) && !level.suicideTeamKillLowersLives && !istrue(self.switching_teams)) {
+    if ((var_fe5ee0f83d4109eb || var_e07d55b45fc82ae0) && !level.suicideteamkilllowerslives && !istrue(self.switching_teams)) {
         if (getteamdata(currentteam, "noRespawns")) {
             thread namespace_99ac021a7547cae3::spawnclient();
         }
@@ -1042,25 +1042,25 @@ function parseflagassignmentstring(stringvalue) {
 // Size: 0x1ca
 function findnearestdompoint(pos) {
     var_73d756724e06734c = [];
-    foreach (var_1183b8d0ee70c22f in level.objectives) {
-        var_1183b8d0ee70c22f.navmeshpos = getclosestpointonnavmesh(var_1183b8d0ee70c22f.trigger.origin);
-        var_73d756724e06734c[var_73d756724e06734c.size] = var_1183b8d0ee70c22f.navmeshpos;
+    foreach (dompoint in level.objectives) {
+        dompoint.navmeshpos = getclosestpointonnavmesh(dompoint.trigger.origin);
+        var_73d756724e06734c[var_73d756724e06734c.size] = dompoint.navmeshpos;
     }
     var_2a1e7872f714f838 = findclosestpointbyapproxpathdist(var_73d756724e06734c, getclosestpointonnavmesh(pos));
     var_ef41e2c126d3ee6b = undefined;
     if (!isdefined(var_2a1e7872f714f838)) {
         nearestdist = undefined;
-        foreach (var_1183b8d0ee70c22f in level.objectives) {
-            dist = distancesquared(var_1183b8d0ee70c22f.trigger.origin, pos);
+        foreach (dompoint in level.objectives) {
+            dist = distancesquared(dompoint.trigger.origin, pos);
             if (!isdefined(var_ef41e2c126d3ee6b) || dist < nearestdist) {
-                var_ef41e2c126d3ee6b = var_1183b8d0ee70c22f;
+                var_ef41e2c126d3ee6b = dompoint;
                 nearestdist = dist;
             }
         }
     } else {
-        foreach (var_1183b8d0ee70c22f in level.objectives) {
-            if (distance2dsquared(var_1183b8d0ee70c22f.navmeshpos, var_2a1e7872f714f838) < 1) {
-                var_ef41e2c126d3ee6b = var_1183b8d0ee70c22f;
+        foreach (dompoint in level.objectives) {
+            if (distance2dsquared(dompoint.navmeshpos, var_2a1e7872f714f838) < 1) {
+                var_ef41e2c126d3ee6b = dompoint;
                 break;
             }
         }
@@ -1251,23 +1251,23 @@ function function_56c428ee980a8464() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50a6
 // Size: 0xe2
-function function_1f5ab97903453ce1(var_a3bf560b25c4a33e, var_41e4d73fabed18df) {
-    alivecount = getteamdata(var_a3bf560b25c4a33e, "aliveCount");
-    livescount = getteamdata(var_a3bf560b25c4a33e, "livesCount");
-    var_c25c5e1c4026b366 = getteamdata(var_a3bf560b25c4a33e, "controlUILivesCount");
+function function_1f5ab97903453ce1(team_name, var_41e4d73fabed18df) {
+    alivecount = getteamdata(team_name, "aliveCount");
+    livescount = getteamdata(team_name, "livesCount");
+    var_c25c5e1c4026b366 = getteamdata(team_name, "controlUILivesCount");
     if (var_41e4d73fabed18df < var_c25c5e1c4026b366 || var_41e4d73fabed18df < alivecount + livescount) {
         /#
-            assertmsg("Attempted to reduce the total lives of for team " + var_a3bf560b25c4a33e);
+            assertmsg("Attempted to reduce the total lives of for team " + team_name);
         #/
         return;
     }
     if (alivecount + livescount < var_41e4d73fabed18df) {
         var_e4c33c2942b6c9cd = var_41e4d73fabed18df - alivecount + livescount;
-        level.teamdata[var_a3bf560b25c4a33e]["livesCount"] = level.teamdata[var_a3bf560b25c4a33e]["livesCount"] + var_e4c33c2942b6c9cd;
-        level.teamdata[var_a3bf560b25c4a33e]["noRespawns"] = 0;
+        level.teamdata[team_name]["livesCount"] = level.teamdata[team_name]["livesCount"] + var_e4c33c2942b6c9cd;
+        level.teamdata[team_name]["noRespawns"] = 0;
     }
     if (var_c25c5e1c4026b366 != var_41e4d73fabed18df) {
-        level.teamdata[var_a3bf560b25c4a33e]["controlUILivesCount"] = var_41e4d73fabed18df;
+        level.teamdata[team_name]["controlUILivesCount"] = var_41e4d73fabed18df;
     }
 }
 
@@ -1374,10 +1374,10 @@ function function_6dc36e4dd3018346(objectivetype, label, var_22282e7d48ca3400, t
         if (!istrue(var_365b87f0954e784b.var_25317b559796e5d1)) {
             namespace_d576b6dc7cef9c62::resumetimer();
         }
-        if (level.segmentCaptureExtraTime > 0) {
-            thread function_fc3c787b555257ac(level.segmentCaptureExtraTime, istrue(var_365b87f0954e784b.var_25317b559796e5d1));
+        if (level.segmentcaptureextratime > 0) {
+            thread function_fc3c787b555257ac(level.segmentcaptureextratime, istrue(var_365b87f0954e784b.var_25317b559796e5d1));
         } else {
-            thread function_fc3c787b555257ac(level.captureExtraTime, istrue(var_365b87f0954e784b.var_25317b559796e5d1));
+            thread function_fc3c787b555257ac(level.captureextratime, istrue(var_365b87f0954e784b.var_25317b559796e5d1));
         }
     }
     var_1d4121d1c73e4374 = namespace_19b4203b51d56488::function_fd1b4a7d915fc9a6(var_579da7b2997dec60.curorigin, var_579da7b2997dec60.offset3d, 1, 0);
@@ -1409,8 +1409,8 @@ function function_90ee8e359d6d3323(team, var_4b22e50e504339fe, segment) {
         thread printandsoundoneveryone(team, otherteam, undefined, undefined, soundalias, var_69dd2b8b93ef2940, var_4b22e50e504339fe);
     }
     pause_timer = segment != level.var_da41c55843e26237;
-    if (level.segmentCaptureExtraTime > 0) {
-        thread function_fc3c787b555257ac(level.segmentCaptureExtraTime, pause_timer);
+    if (level.segmentcaptureextratime > 0) {
+        thread function_fc3c787b555257ac(level.segmentcaptureextratime, pause_timer);
     }
 }
 
@@ -1694,12 +1694,12 @@ function updatetriggerforcodcaster() {
     while (!level.gameended) {
         foreach (player in level.players) {
             mlgpoint = 0;
-            foreach (var_1183b8d0ee70c22f in level.objectives) {
-                if (!isdefined(var_1183b8d0ee70c22f.trigger)) {
+            foreach (dompoint in level.objectives) {
+                if (!isdefined(dompoint.trigger)) {
                     continue;
                 }
-                if (player istouching(var_1183b8d0ee70c22f.trigger) && isalive(player)) {
-                    mlgpoint = namespace_98b55913d2326ac8::getreservedobjid(var_1183b8d0ee70c22f.objectivekey) + 1;
+                if (player istouching(dompoint.trigger) && isalive(player)) {
+                    mlgpoint = namespace_98b55913d2326ac8::getreservedobjid(dompoint.objectivekey) + 1;
                     break;
                 }
             }
@@ -1756,7 +1756,7 @@ function function_539f2c0c7c8e8403(team) {
 function function_287623bbb15154be() {
     var_d6fd8be398b20f61 = game["attackers"];
     var_8613c2b22b0116a5 = game["defenders"];
-    if (level.overtimeDefenders == 2) {
+    if (level.overtimedefenders == 2) {
         if (game["segment_captures"][var_d6fd8be398b20f61] > game["segment_captures"][var_8613c2b22b0116a5]) {
             return [0:var_d6fd8be398b20f61, 1:game["end_reason"]["team_defending_most_segments"]];
         } else if (game["segment_captures"][var_8613c2b22b0116a5] > game["segment_captures"][var_d6fd8be398b20f61]) {

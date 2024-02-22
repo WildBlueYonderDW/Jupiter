@@ -39,7 +39,7 @@ function function_4beb6ea484d2db90() {
 // Checksum 0x0, Offset: 0x1e2
 // Size: 0x23
 function function_52d2de9ad62cae12() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && !namespace_4b0406965e556711::gameflag("prematch_fade_done")) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && !namespace_4b0406965e556711::gameflag("prematch_fade_done")) {
         thread function_5a031333c402a6ce();
     }
 }

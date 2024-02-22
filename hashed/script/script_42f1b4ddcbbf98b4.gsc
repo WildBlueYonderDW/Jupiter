@@ -32,7 +32,7 @@ function function_a7dc4a67100b768c(var_c1a3a9cf7d2963b8) {
                 var_626b45032e1892da = function_a4748b32a824c79c(var_e6013eac45290cab);
                 var_5d23c1ad1f4411ad = getstructarray(var_626b45032e1892da, "script_noteworthy");
                 payload = [0:#"hash_5f9c433bdcfb4e14", 1:player getentitynumber()];
-                var_9b0dd04874627a99 = player namespace_ca7b90256548aa40::getSquadMembers();
+                var_9b0dd04874627a99 = player namespace_ca7b90256548aa40::getsquadmembers();
                 foreach (var_9479a9b75a38cd2b in var_5d23c1ad1f4411ad) {
                     if (var_9479a9b75a38cd2b.targetname == "activity_nexus_instance_joiner") {
                         var_8cb27b6c067f0fe0 = spawnscriptable(var_6d7b56b5a018bf17.var_9a430cc35610a8ae, var_9479a9b75a38cd2b.origin, var_9479a9b75a38cd2b.angles, undefined, payload);
@@ -92,8 +92,8 @@ function function_c37214cf3d029093(var_e6013eac45290cab, params) {
     /#
         assertex(!isdefined(params) || params.size != 0, "This conditional container function was not expecting the params parameter to be defined or have anything inside of it. That data will be ignored in this function.");
     #/
-    var_6552a99327ada555 = params[0];
-    return function_de53ed8e35d0ed7a(var_e6013eac45290cab) != var_6552a99327ada555;
+    activity_type = params[0];
+    return function_de53ed8e35d0ed7a(var_e6013eac45290cab) != activity_type;
 }
 
 // Namespace namespace_8761bd55318677aa/namespace_27def95c6086c32a

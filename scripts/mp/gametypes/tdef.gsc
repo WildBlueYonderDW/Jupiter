@@ -507,7 +507,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
     thread teamplayercardsplash("callout_flagpickup", player);
     player thread namespace_44abc05161e2e2cb::showsplash("flagpickup");
     if (!isdefined(self.previouscarrier) || self.previouscarrier != player) {
-        player thread doScoreEvent(#"flag_grab");
+        player thread doscoreevent(#"flag_grab");
     }
     var_7e2c53b0bcf117d9 = spawnstruct();
     var_7e2c53b0bcf117d9.player = player;
@@ -890,11 +890,11 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
     if (isdefined(attacker) && isplayer(attacker) && attacker.pers["team"] != self.pers["team"]) {
         if (isdefined(attacker.carryflag) && attackerisinflictor) {
             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"hash_ebcc9c019c3b6818");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f735b92839c5a687");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_f735b92839c5a687");
             var_aec2e5e01f424119 = 1;
         }
         if (isdefined(self.carryflag)) {
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5311f153a7fee40c");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5311f153a7fee40c");
             attacker incpersstat("carrierKills", 1);
             attacker thread namespace_44abc05161e2e2cb::showsplash("killed_carrier");
             attacker incpersstat("defends", 1);
@@ -916,12 +916,12 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             }
             if (var_3cd1af2851f12ab5) {
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                 thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
                 attacker incpersstat("assaults", 1);
             } else if (var_c3f9fed5999c974e) {
                 attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                 attacker incpersstat("defends", 1);
                 attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
                 thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "assaulting");
@@ -1037,7 +1037,7 @@ function updatetimers(ownerteam, var_365c174c8c9b9ace, var_229e69d7ca087fcb, var
     }
     setomnvar("ui_hardpoint_timer", level.var_9d87ea6f4e249074);
     if (var_48f1dbf87dd99400 > 0 && (istrue(var_a1b8b95d5e8de27a) || !var_365c174c8c9b9ace && level.var_bc53c4bea6cd9a8f)) {
-        level.defenderflag thread defenderFlagRunTimer(ownerteam, var_38a6b48a5f70c0b8);
+        level.defenderflag thread defenderflagruntimer(ownerteam, var_38a6b48a5f70c0b8);
     }
     if (var_365c174c8c9b9ace) {
         level function_aa07cccbf564c5d1();
@@ -1048,7 +1048,7 @@ function updatetimers(ownerteam, var_365c174c8c9b9ace, var_229e69d7ca087fcb, var
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37b2
 // Size: 0x4b
-function defenderFlagRunTimer(ownerteam, var_38a6b48a5f70c0b8) {
+function defenderflagruntimer(ownerteam, var_38a6b48a5f70c0b8) {
     level endon("game_ended");
     level endon("reset");
     level endon("pause_defenderFlag_timer");

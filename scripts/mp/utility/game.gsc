@@ -981,9 +981,9 @@ function gettimelimit() {
         if (istrue(game["timeToBeat"])) {
             return game["timeToBeat"];
         } else {
-            var_b14cc397ddc59419 = getdvarfloat(@"hash_c7938f963b6cdb73");
-            if (var_b14cc397ddc59419 > 0) {
-                return var_b14cc397ddc59419;
+            overtimelimit = getdvarfloat(@"hash_c7938f963b6cdb73");
+            if (overtimelimit > 0) {
+                return overtimelimit;
             } else {
                 return getwatcheddvar("timelimit");
             }
@@ -1215,7 +1215,7 @@ function denysystemicteamchoice() {
 // Checksum 0x0, Offset: 0x2fac
 // Size: 0x28
 function allowteamassignment() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return level.teambased;
     }
     allowed = doesmodesupportplayerteamchoice();
@@ -1668,15 +1668,15 @@ function getmatchrulesdatawithteamandindex(category, team, index, field, arg1, a
 // Checksum 0x0, Offset: 0x4874
 // Size: 0x51
 function isspawnprotected() {
-    return !function_483cc81bff18273b(self) && isdefined(self.spawntime) && isdefined(level.killstreakspawnshielddelayms) && gettime() < self.spawntime + level.killstreakspawnshielddelayms && !istrue(self.clearSpawnProtection);
+    return !function_483cc81bff18273b(self) && isdefined(self.spawntime) && isdefined(level.killstreakspawnshielddelayms) && gettime() < self.spawntime + level.killstreakspawnshielddelayms && !istrue(self.clearspawnprotection);
 }
 
 // Namespace game_utility/namespace_cd0b2d039510b38d
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48cd
 // Size: 0xe
-function clearSpawnProtection() {
-    self.clearSpawnProtection = 1;
+function clearspawnprotection() {
+    self.clearspawnprotection = 1;
 }
 
 // Namespace game_utility/namespace_cd0b2d039510b38d
@@ -1792,7 +1792,7 @@ function runleanthreadmode() {
     if (getdvarint(@"hash_63b929c96913e1d") == 1) {
         return 1;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() || level.leanthread == 1) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() || level.leanthread == 1) {
         return 1;
     }
     return 0;
@@ -2203,7 +2203,7 @@ function isassaulting(victim) {
 // Checksum 0x0, Offset: 0x5a8b
 // Size: 0xe1
 function gametypesupportsbasejumping() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return 1;
     }
     if (namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e()) {
@@ -2447,7 +2447,7 @@ function function_b7d052e4bf41ee9b() {
 // Checksum 0x0, Offset: 0x6384
 // Size: 0x31
 function function_eb3158a25aee673a() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_faf0d2fac3f47583 = getsubgametype();
         return (var_faf0d2fac3f47583 == "dmz" || var_faf0d2fac3f47583 == "exgm");
     }

@@ -117,7 +117,7 @@ function function_5d5756b4f3ad6727(team) {
         var_fd5ea9cb37c309d3 = array_randomize(var_fd5ea9cb37c309d3);
         for (i = 0; i < var_a678c8eea807690; i++) {
             aitype = function_d5bc07eabf352abb();
-            agent = function_ea94a8bf24d3c5ef(aitype, var_fd5ea9cb37c309d3[i].origin, var_fd5ea9cb37c309d3[i].angles, "medium", var_b5b1784d5a1327c7, undefined, var_b5b1784d5a1327c7, team);
+            agent = ai_mp_requestspawnagent(aitype, var_fd5ea9cb37c309d3[i].origin, var_fd5ea9cb37c309d3[i].angles, "medium", var_b5b1784d5a1327c7, undefined, var_b5b1784d5a1327c7, team);
             if (isdefined(agent)) {
                 agent thread function_8f5702c79710b342(agent, team);
                 var_4a7a3357a053496d = function_b2b5de3c80ebceb4(agent);
@@ -137,7 +137,7 @@ function function_8f5702c79710b342(agent, team) {
     waitframe();
     agent.gameskill = namespace_310bdaa3cf041c47::get_gameskill();
     agent namespace_310bdaa3cf041c47::apply_difficulty_settings(1);
-    namespace_14d36171baccf528::function_350cf0db9f5e0cbe(agent, "team", team);
+    namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "team", team);
     function_2e6f8aa8306432ed(agent);
 }
 
@@ -158,7 +158,7 @@ function function_b2b5de3c80ebceb4(agent) {
             if (objective.var_99669e1e71dbd643[agent.team].size < level.var_3881c7ea72921771 && (objective.ownerteam == agent.team || objective.ownerteam == "neutral")) {
                 agent.var_4a7a3357a053496d = objective;
                 agent.var_b866b4302e49723d = index;
-                namespace_14d36171baccf528::function_350cf0db9f5e0cbe(agent, "assignedObjective", objective);
+                namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "assignedObjective", objective);
                 objective.var_99669e1e71dbd643[agent.team][objective.var_99669e1e71dbd643[agent.team].size] = agent;
                 return objective;
             }
@@ -171,7 +171,7 @@ function function_b2b5de3c80ebceb4(agent) {
         objective = random(var_e31223333f557b21);
         agent.var_4a7a3357a053496d = objective;
         agent.var_b866b4302e49723d = var_ffea19dcb2194908;
-        namespace_14d36171baccf528::function_350cf0db9f5e0cbe(agent, "assignedObjective", objective);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "assignedObjective", objective);
         objective.var_99669e1e71dbd643[agent.team][objective.var_99669e1e71dbd643[agent.team].size] = agent;
         return objective;
     }
@@ -278,7 +278,7 @@ function function_95d5ae2b8159b521(numagents, objectivename, team, var_fd9831032
         agent = undefined;
         if (isdefined(loc) && isdefined(loc.origin) && isdefined(loc.angles) && isdefined(objectivename)) {
             aitype = function_d5bc07eabf352abb();
-            agent = function_ea94a8bf24d3c5ef(aitype, loc.origin, loc.angles, "medium", "everybody", "objective", objectivename);
+            agent = ai_mp_requestspawnagent(aitype, loc.origin, loc.angles, "medium", "everybody", "objective", objectivename);
             /#
                 if (!isdefined(agent) && istrue(level.var_8abd2c3c0748dfdd)) {
                     println("<unknown string>");
@@ -343,7 +343,7 @@ function function_cde31646bdb6a9d1(objectivekey, numagents, team) {
 function function_a23016f4e8d27ad9(var_34ce337e073a0c34, var_93390a6953905fef, team) {
     var_9b3bb378db91cf83 = spawnstruct();
     var_9b3bb378db91cf83.origin = var_34ce337e073a0c34;
-    var_4f922af45d0cac6c = sortbydistance(level.heliReinforceStruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
+    var_4f922af45d0cac6c = sortbydistance(level.helireinforcestruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
     pathnode = namespace_7ae25d9e5d5a28ef::function_321665dcdcbf401e(var_4f922af45d0cac6c, var_34ce337e073a0c34);
     if (isdefined(pathnode)) {
         return pathnode;
@@ -412,7 +412,7 @@ function function_a30a48f0c1a403ec(objectivekey, team, numagents, var_40e875a042
                 if (isdefined(var_924b776d91e77572)) {
                     spawnorigin = var_924b776d91e77572[0].origin;
                 }
-                agent = function_ea94a8bf24d3c5ef(aitype, obj.trigger.origin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, team, undefined, undefined, 1);
+                agent = ai_mp_requestspawnagent(aitype, obj.trigger.origin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, team, undefined, undefined, 1);
                 if (isdefined(agent)) {
                     namespace_310ba947928891df::function_35c195df2ba46725(agent, "team_hundred_ninety_five");
                     if (isdefined(var_924b776d91e77572)) {
@@ -448,7 +448,7 @@ function function_a30a48f0c1a403ec(objectivekey, team, numagents, var_40e875a042
             if (isdefined(var_ef178bb38661ff1b)) {
                 spawnorigin = var_ef178bb38661ff1b.origin;
             }
-            agent = function_ea94a8bf24d3c5ef("actor_enemy_mp_jugg_aq", spawnorigin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1);
+            agent = ai_mp_requestspawnagent("actor_enemy_mp_jugg_aq", spawnorigin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1);
             if (isdefined(agent)) {
                 namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
                 if (isdefined(var_ef178bb38661ff1b)) {
@@ -471,7 +471,7 @@ function function_a30a48f0c1a403ec(objectivekey, team, numagents, var_40e875a042
 function function_3b97b97e14948c02(var_34ce337e073a0c34, var_93390a6953905fef) {
     var_9b3bb378db91cf83 = spawnstruct();
     var_9b3bb378db91cf83.origin = var_34ce337e073a0c34;
-    var_4f922af45d0cac6c = sortbydistance(level.heliReinforceStruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
+    var_4f922af45d0cac6c = sortbydistance(level.helireinforcestruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
     pathnode = namespace_7ae25d9e5d5a28ef::function_321665dcdcbf401e(var_4f922af45d0cac6c, var_34ce337e073a0c34);
     if (isdefined(pathnode)) {
         return pathnode;

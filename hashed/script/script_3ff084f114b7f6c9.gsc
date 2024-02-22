@@ -28,22 +28,22 @@
 // Checksum 0x0, Offset: 0x727
 // Size: 0x184
 function init() {
-    registersharedfunc("teamAssim", "requestLeaveTeam", &requestLeaveTeam);
-    registersharedfunc("teamAssim", "requestNearbyTeamChange", &requestNearbyTeamChange);
-    registersharedfunc("teamAssim", "resolveAssimRequest", &resolveAssimRequest);
-    registersharedfunc("teamAssim", "isWaitingForAssimResponse", &isWaitingForAssimResponse);
+    registersharedfunc("teamAssim", "requestLeaveTeam", &requestleaveteam);
+    registersharedfunc("teamAssim", "requestNearbyTeamChange", &requestnearbyteamchange);
+    registersharedfunc("teamAssim", "resolveAssimRequest", &resolveassimrequest);
+    registersharedfunc("teamAssim", "isWaitingForAssimResponse", &iswaitingforassimresponse);
     registersharedfunc("teamAssim", "isEnabled", &function_6934349b7823d888);
     registersharedfunc("teamAssim", "disablePlayer", &function_bb4125d6847af349);
     registersharedfunc("teamAssim", "enablePlayer", &function_59cf08630dd70540);
-    registersharedfunc("teamAssim", "isPlayersAssimDisabled", &isPlayersAssimDisabled);
-    registersharedfunc("teamAssim", "permanentlyDisableAssim", &permanentlyDisableAssim);
-    registersharedfunc("teamAssim", "registerTeamAssimilateCallback", &registerTeamAssimilateCallback);
-    registersharedfunc("teamAssim", "canAssimilate", &canAssimilate);
-    registersharedfunc("teamAssim", "canTeamAssimilate", &canTeamAssimilate);
-    registersharedfunc("teamAssim", "assimilatePlayer", &assimilatePlayer);
-    registersharedfunc("teamAssim", "shouldAutoAcceptTeamSwitch", &shouldAutoAcceptTeamSwitch);
-    registersharedfunc("teamAssim", "getMaxAssimilationTeamSize", &getMaxAssimilationTeamSize);
-    registersharedfunc("teamAssim", "sendDirectAssimRequest", &sendDirectAssimRequest);
+    registersharedfunc("teamAssim", "isPlayersAssimDisabled", &isplayersassimdisabled);
+    registersharedfunc("teamAssim", "permanentlyDisableAssim", &permanentlydisableassim);
+    registersharedfunc("teamAssim", "registerTeamAssimilateCallback", &registerteamassimilatecallback);
+    registersharedfunc("teamAssim", "canAssimilate", &canassimilate);
+    registersharedfunc("teamAssim", "canTeamAssimilate", &canteamassimilate);
+    registersharedfunc("teamAssim", "assimilatePlayer", &assimilateplayer);
+    registersharedfunc("teamAssim", "shouldAutoAcceptTeamSwitch", &shouldautoacceptteamswitch);
+    registersharedfunc("teamAssim", "getMaxAssimilationTeamSize", &getmaxassimilationteamsize);
+    registersharedfunc("teamAssim", "sendDirectAssimRequest", &senddirectassimrequest);
     if (squad_utility::issquadmode()) {
         namespace_c31609f90efcf2ca::function_a99987c7bf114da4(&function_2a1e4811621fdcde);
     }
@@ -56,7 +56,7 @@ function init() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8b2
 // Size: 0x39
-function registerTeamAssimilateCallback(callback) {
+function registerteamassimilatecallback(callback) {
     if (!isdefined(level.var_6b08d5e6b7943575)) {
         level.var_6b08d5e6b7943575 = [];
     }
@@ -111,7 +111,7 @@ function function_9f3b05f2ea701548() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa99
 // Size: 0x8b
-function getMaxAssimilationTeamSize() {
+function getmaxassimilationteamsize() {
     if (!isdefined(level.var_5f92f1f4d7faf5a0)) {
         if (isdefined(level.var_62f6f7640e4431e3) && isdefined(level.var_62f6f7640e4431e3.var_e4db1f07df5076a0)) {
             level.var_5f92f1f4d7faf5a0 = getdvarint(@"hash_cf23e6b4c2ae4e63", level.var_62f6f7640e4431e3.var_e4db1f07df5076a0);
@@ -181,13 +181,13 @@ function function_f258ca1fd3c63122() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc4f
 // Size: 0x43
-function canTeamAssimilate(team) {
+function canteamassimilate(team) {
     if (!function_6934349b7823d888()) {
         return 0;
     }
     players = namespace_54d20dd0dd79277f::getteamdata(team, "players");
     teamsize = players.size;
-    return teamsize < getMaxAssimilationTeamSize();
+    return teamsize < getmaxassimilationteamsize();
 }
 
 // Namespace namespace_6bf5a85a2b78b77a/namespace_76a219af07c28c13
@@ -201,22 +201,22 @@ function function_2a6e88019515e213(team, squadid) {
     if (!isdefined(level.squaddata[team]) || !isdefined(level.squaddata[team][squadid])) {
         return 0;
     }
-    return level.squaddata[team][squadid].players.size < getMaxAssimilationTeamSize();
+    return level.squaddata[team][squadid].players.size < getmaxassimilationteamsize();
 }
 
 // Namespace namespace_6bf5a85a2b78b77a/namespace_76a219af07c28c13
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd04
 // Size: 0xe7
-function canAssimilate(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_e80f1eb2c1910ad4, var_4ade2291346e1240) {
+function canassimilate(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_e80f1eb2c1910ad4, var_4ade2291346e1240) {
     if (!isdefined(var_3b96d5666000c2e0) || !isdefined(var_784c8ada1184ff89)) {
         return 0;
     }
-    if (isPlayersAssimDisabled(var_e80f1eb2c1910ad4)) {
+    if (isplayersassimdisabled(var_e80f1eb2c1910ad4)) {
         var_e80f1eb2c1910ad4 namespace_44abc05161e2e2cb::showerrormessage("MP_PING_INGAME/ASSIM_FAILED_DISABLED");
         return 0;
     }
-    if (isPlayersAssimDisabled(var_3b96d5666000c2e0) || isPlayersAssimDisabled(var_784c8ada1184ff89)) {
+    if (isplayersassimdisabled(var_3b96d5666000c2e0) || isplayersassimdisabled(var_784c8ada1184ff89)) {
         var_e80f1eb2c1910ad4 namespace_44abc05161e2e2cb::showerrormessage("MP_PING_INGAME/ASSIM_FAILED_DISABLED_ENEMY");
         return 0;
     }
@@ -237,7 +237,7 @@ function canAssimilate(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_e80f1eb2c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf3
 // Size: 0x18
-function isWaitingForAssimResponse(player) {
+function iswaitingforassimresponse(player) {
     return isdefined(player.var_7f1423df13bbb144);
 }
 
@@ -245,7 +245,7 @@ function isWaitingForAssimResponse(player) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xe13
 // Size: 0x31
-function private shouldAutoAcceptTeamSwitch() {
+function private shouldautoacceptteamswitch() {
     if (!isdefined(level.var_9cc2a7f8358ecb3b)) {
         level.var_9cc2a7f8358ecb3b = getdvarint(@"hash_a267ff0e64f57760", 0);
     }
@@ -267,7 +267,7 @@ function private function_4aaeca4295a600d(var_784c8ada1184ff89, var_3b96d5666000
             var_e80f1eb2c1910ad4 namespace_44abc05161e2e2cb::showerrormessage("MP_PING_INGAME/ASSIM_FAILED_TEAM_SIZE");
         }
         return 0;
-    } else if (!isdefined(level.squaddata) && !canTeamAssimilate(var_784c8ada1184ff89.team)) {
+    } else if (!isdefined(level.squaddata) && !canteamassimilate(var_784c8ada1184ff89.team)) {
         if (!istrue(var_72ce9fa792fd31a1)) {
             var_e80f1eb2c1910ad4 namespace_44abc05161e2e2cb::showerrormessage("MP_PING_INGAME/ASSIM_FAILED_TEAM_SIZE");
         }
@@ -289,9 +289,9 @@ function function_bb4125d6847af349(player, request) {
     if (!isdefined(player.var_cd20b5c89ca5f5d0)) {
         player.var_cd20b5c89ca5f5d0 = [];
     }
-    var_5631c1e8de9da238 = isPlayersAssimDisabled(player);
+    var_5631c1e8de9da238 = isplayersassimdisabled(player);
     player.var_cd20b5c89ca5f5d0[request] = 1;
-    var_52f051d04c06af73 = isPlayersAssimDisabled(player);
+    var_52f051d04c06af73 = isplayersassimdisabled(player);
     if (var_52f051d04c06af73 && !var_5631c1e8de9da238) {
         player setclientomnvar("ui_assimilation_disabled", 1);
     }
@@ -305,9 +305,9 @@ function function_59cf08630dd70540(player, request) {
     if (!isdefined(player.var_cd20b5c89ca5f5d0)) {
         player.var_cd20b5c89ca5f5d0 = [];
     }
-    var_5631c1e8de9da238 = isPlayersAssimDisabled(player);
+    var_5631c1e8de9da238 = isplayersassimdisabled(player);
     player.var_cd20b5c89ca5f5d0[request] = undefined;
-    var_52f051d04c06af73 = isPlayersAssimDisabled(player);
+    var_52f051d04c06af73 = isplayersassimdisabled(player);
     if (!var_52f051d04c06af73 && var_5631c1e8de9da238) {
         player setclientomnvar("ui_assimilation_disabled", 0);
     }
@@ -317,7 +317,7 @@ function function_59cf08630dd70540(player, request) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1049
 // Size: 0x36
-function isPlayersAssimDisabled(player) {
+function isplayersassimdisabled(player) {
     return istrue(level.var_ed844db90cb6d370) || isdefined(player.var_cd20b5c89ca5f5d0) && player.var_cd20b5c89ca5f5d0.size;
 }
 
@@ -325,7 +325,7 @@ function isPlayersAssimDisabled(player) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1087
 // Size: 0x76
-function permanentlyDisableAssim() {
+function permanentlydisableassim() {
     if (istrue(level.var_ed844db90cb6d370)) {
         return;
     }
@@ -351,7 +351,7 @@ function function_a84bf6c8ff064511(targetplayer) {
 // Checksum 0x0, Offset: 0x1146
 // Size: 0x50
 function function_e81936c3b6775f2b(player) {
-    if (isPlayersAssimDisabled(player)) {
+    if (isplayersassimdisabled(player)) {
         if (player namespace_10260b963310d30e::function_a2dd7d8143656503(player)) {
             player namespace_44abc05161e2e2cb::showerrormessage("MP_PING_INGAME/BLOCKED_BY_INTERROGATE");
         }
@@ -384,16 +384,16 @@ function function_e5dbb2b054d0cabd(player, var_e9d6e314baedb056) {
     level endon("game_ended");
     player endon("disconnect");
     period = function_75a3d83d6f553a46();
-    player.var_fee2ccc62e5cc50d = var_e9d6e314baedb056;
+    player.damageblockedteam = var_e9d6e314baedb056;
     wait(period);
-    player.var_fee2ccc62e5cc50d = undefined;
+    player.damageblockedteam = undefined;
 }
 
 // Namespace namespace_6bf5a85a2b78b77a/namespace_76a219af07c28c13
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1235
 // Size: 0x26d
-function requestLeaveTeam(player) {
+function requestleaveteam(player) {
     if (!getdvarint(@"hash_df8987540c302b00", 0)) {
         return 0;
     }
@@ -439,12 +439,12 @@ function requestLeaveTeam(player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14a9
 // Size: 0x25a
-function requestNearbyTeamChange(player, var_99bcf6bdf31a0e49) {
+function requestnearbyteamchange(player, var_99bcf6bdf31a0e49) {
     if (!function_e81936c3b6775f2b(player)) {
         return 0;
     }
     var_674c1fec5874253c = isdefined(level.squaddata);
-    if (!var_99bcf6bdf31a0e49 && (!var_674c1fec5874253c && !canTeamAssimilate(player.team) || var_674c1fec5874253c && !function_2a6e88019515e213(player.team, player.var_ff97225579de16a))) {
+    if (!var_99bcf6bdf31a0e49 && (!var_674c1fec5874253c && !canteamassimilate(player.team) || var_674c1fec5874253c && !function_2a6e88019515e213(player.team, player.var_ff97225579de16a))) {
         player namespace_44abc05161e2e2cb::showerrormessage("MP_PING_INGAME/ASSIM_FAILED_TEAM_SIZE");
         return 0;
     }
@@ -460,7 +460,7 @@ function requestNearbyTeamChange(player, var_99bcf6bdf31a0e49) {
     var_3d290d914e1249a0 = [];
     var_e4fc35b9446269cf = function_ef81e6fd30058e1b();
     foreach (targetplayer in var_e965bce0774276b4) {
-        if (targetplayer == player || !isplayer(targetplayer) || isPlayersAssimDisabled(targetplayer)) {
+        if (targetplayer == player || !isplayer(targetplayer) || isplayersassimdisabled(targetplayer)) {
             continue;
         }
         if (var_674c1fec5874253c && self.var_ff97225579de16a == targetplayer.var_ff97225579de16a) {
@@ -468,7 +468,7 @@ function requestNearbyTeamChange(player, var_99bcf6bdf31a0e49) {
         } else if (!var_674c1fec5874253c && targetplayer.team == player.team) {
             continue;
         }
-        success = sendDirectAssimRequest(player, targetplayer, var_99bcf6bdf31a0e49, var_e4fc35b9446269cf);
+        success = senddirectassimrequest(player, targetplayer, var_99bcf6bdf31a0e49, var_e4fc35b9446269cf);
         if (istrue(success)) {
             var_3d290d914e1249a0[var_3d290d914e1249a0.size] = targetplayer;
         }
@@ -486,19 +486,19 @@ function requestNearbyTeamChange(player, var_99bcf6bdf31a0e49) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x170a
 // Size: 0x19a
-function resolveAssimRequest(player, var_e3f7965361b1e757) {
+function resolveassimrequest(player, var_e3f7965361b1e757) {
     /#
         assert(isdefined(player.var_7f1423df13bbb144));
     #/
     var_3b96d5666000c2e0 = ter_op(istrue(player.var_4f8afa3693e318d4), player.var_7f1423df13bbb144, player);
     var_784c8ada1184ff89 = ter_op(istrue(player.var_4f8afa3693e318d4), player, player.var_7f1423df13bbb144);
-    if (!canAssimilate(var_3b96d5666000c2e0, var_784c8ada1184ff89, player, 0)) {
+    if (!canassimilate(var_3b96d5666000c2e0, var_784c8ada1184ff89, player, 0)) {
         player setclientomnvar("ui_assimilation_clientnum", -1);
         return;
     }
     if (var_e3f7965361b1e757) {
-        assimilatePlayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, 0);
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        assimilateplayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, 0);
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             namespace_d20f8ef223912e12::updateplayerandteamcountui();
         }
     } else if (player.var_4f8afa3693e318d4) {
@@ -531,7 +531,7 @@ function function_9ad90f0a744225a8(team) {
                 teammember namespace_14f37777effc564d::function_52bea99a5c38fbe5(var_e28612e69968bb98, 1);
             }
         }
-        teammember thread namespace_f8d3520d3483c1::function_cf547d762189deaa();
+        teammember thread namespace_f8d3520d3483c1::setarmoromnvars();
     }
     if (teammembers.size > 0) {
         teammembers[0] namespace_80cec6cfc70c4f95::updateplayereliminatedomnvar("assimilation");
@@ -542,7 +542,7 @@ function function_9ad90f0a744225a8(team) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19b5
 // Size: 0x517
-function assimilatePlayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_b215274f1a3eb134) {
+function assimilateplayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_b215274f1a3eb134) {
     oldteam = var_3b96d5666000c2e0.team;
     newteam = var_784c8ada1184ff89.team;
     var_e91a6371e99e1350 = var_3b96d5666000c2e0.var_ff97225579de16a;
@@ -573,7 +573,7 @@ function assimilatePlayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_b21527
         var_3b96d5666000c2e0 thread namespace_e5ed2f5a5ee8410e::addtoteam(newteam, undefined, var_67d0631ad9027f83, 1);
     }
     if (squad_utility::issquadmode()) {
-        var_607da387f3617ed1 = var_3b96d5666000c2e0 squad_utility::getSquadMembers();
+        var_607da387f3617ed1 = var_3b96d5666000c2e0 squad_utility::getsquadmembers();
         namespace_ede58c1e66c2c280::function_47990577bda08bb4(var_3b96d5666000c2e0, var_607da387f3617ed1);
         function_810613fb0e83165e(newteam, var_43b043539f9c3ccf, var_3b96d5666000c2e0);
         var_3b96d5666000c2e0 thread namespace_9bb409deb69fb31d::function_8a9305612b73a15(newteam, oldteam, var_43b043539f9c3ccf);
@@ -599,7 +599,7 @@ function assimilatePlayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_b21527
                 teammember namespace_14f37777effc564d::function_52bea99a5c38fbe5(var_e28612e69968bb98, 1);
             }
         }
-        teammember thread namespace_f8d3520d3483c1::function_cf547d762189deaa();
+        teammember thread namespace_f8d3520d3483c1::setarmoromnvars();
     }
     if (var_7db64c868eef61a7 && !isdefined(level.squaddata[oldteam][var_e91a6371e99e1350])) {
         function_80139212a4c66a94(var_3b96d5666000c2e0, oldteam, newteam, var_e91a6371e99e1350, var_43b043539f9c3ccf);
@@ -628,8 +628,8 @@ function assimilatePlayer(var_3b96d5666000c2e0, var_784c8ada1184ff89, var_b21527
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ed3
 // Size: 0x269
-function sendDirectAssimRequest(var_e65d25126ef3331b, targetplayer, var_99bcf6bdf31a0e49, var_e4fc35b9446269cf) {
-    if (targetplayer == var_e65d25126ef3331b || targetplayer.team == var_e65d25126ef3331b.team && !(squad_utility::issquadmode() && !squad_utility::function_9b1d18c04d310cfc(var_e65d25126ef3331b, targetplayer)) || !isplayer(targetplayer) || isPlayersAssimDisabled(targetplayer)) {
+function senddirectassimrequest(var_e65d25126ef3331b, targetplayer, var_99bcf6bdf31a0e49, var_e4fc35b9446269cf) {
+    if (targetplayer == var_e65d25126ef3331b || targetplayer.team == var_e65d25126ef3331b.team && !(squad_utility::issquadmode() && !squad_utility::function_9b1d18c04d310cfc(var_e65d25126ef3331b, targetplayer)) || !isplayer(targetplayer) || isplayersassimdisabled(targetplayer)) {
         return 0;
     }
     var_1672c24528714d7d = ter_op(var_99bcf6bdf31a0e49, targetplayer.team, var_e65d25126ef3331b.team);
@@ -661,8 +661,8 @@ function sendDirectAssimRequest(var_e65d25126ef3331b, targetplayer, var_99bcf6bd
         }
     }
     targetplayer.var_4f8afa3693e318d4 = var_99bcf6bdf31a0e49;
-    if (shouldAutoAcceptTeamSwitch()) {
-        resolveAssimRequest(targetplayer, 1);
+    if (shouldautoacceptteamswitch()) {
+        resolveassimrequest(targetplayer, 1);
     }
     return 1;
 }
@@ -754,7 +754,7 @@ function private function_351ea84f3d394eea(player) {
     level endon("game_ended");
     player endon("disconnect");
     waitframe();
-    var_607da387f3617ed1 = player squad_utility::getSquadMembers();
+    var_607da387f3617ed1 = player squad_utility::getsquadmembers();
     namespace_ede58c1e66c2c280::function_3d92221d673d555c(player, var_607da387f3617ed1);
 }
 
@@ -809,7 +809,7 @@ function private function_10cf654ff5fef6eb() {
                         if (!function_4aaeca4295a600d(var_3f4cc5498664136f, bot, var_3f4cc5498664136f, 1)) {
                             continue;
                         }
-                        assimilatePlayer(bot, var_3f4cc5498664136f, 0);
+                        assimilateplayer(bot, var_3f4cc5498664136f, 0);
                         break;
                     }
                 }
@@ -847,7 +847,7 @@ function private function_10cf654ff5fef6eb() {
                 }
                 foreach (bot in level.players) {
                     if (bot != var_3f4cc5498664136f && bot.var_ff97225579de16a == var_96674628376eaba6) {
-                        bot requestLeaveTeam(bot);
+                        bot requestleaveteam(bot);
                         break;
                     }
                 }

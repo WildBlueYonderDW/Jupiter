@@ -1376,8 +1376,8 @@ function function_d58e9fe01994f55() {
     self.ava_chopper namespace_5a0f3ca265d3a4c8::vehicle_damage_setcandamage(0);
     self.ava_chopper.var_878914b0358bc7b5 = [];
     self.ava_chopper.var_c9164736baf0694a = [];
-    self.ava_chopper.onStartRiding = &function_b28cb16c37f8e7b;
-    self.ava_chopper.onEndRiding = &function_5f4563731f3e286f;
+    self.ava_chopper.onstartriding = &function_b28cb16c37f8e7b;
+    self.ava_chopper.onendriding = &function_5f4563731f3e286f;
     self.ava_chopper.unload_land_offset = 255;
     self.ava_chopper thread function_1b93f9a5bdc20396(s_pos);
 }
@@ -1904,8 +1904,8 @@ function function_1837cd52b8f6cf0f(var_fe068b47c5b8d085, b_start) {
         level.var_cdac4dacd44c17c6 = namespace_1f188a13f7e79610::vehicle_spawn("veh9_palfa", spawndata);
         waitframe();
         level.var_cdac4dacd44c17c6.var_bce129fe17855f74 = 1;
-        level.var_cdac4dacd44c17c6.onStartRiding = &function_3321561d55e07c30;
-        level.var_cdac4dacd44c17c6.onEndRiding = &function_453f831fdfcc5dce;
+        level.var_cdac4dacd44c17c6.onstartriding = &function_3321561d55e07c30;
+        level.var_cdac4dacd44c17c6.onendriding = &function_453f831fdfcc5dce;
         level.var_cdac4dacd44c17c6 namespace_5a0f3ca265d3a4c8::vehicle_damage_setcandamage(0);
         namespace_141c4634b6ea7b27::vehicle_interact_makeunusable(level.var_cdac4dacd44c17c6);
         level.var_cdac4dacd44c17c6 thread function_86b4ca8e83c456e6(var_ba23c084d956aad6);
@@ -2120,7 +2120,7 @@ function function_ce34466b3cece887(player) {
     var_b3ba1ff750ae8edc = [];
     var_b3ba1ff750ae8edc["weapon"] = "iw9_sm_papa90_mp";
     var_b3ba1ff750ae8edc["ob_weapon"] = [0:"ob_jup_item_weapon_sm_papa90", 1:"ob_jup_item_weapon_sm_papa90_green", 2:"ob_jup_item_weapon_sm_papa90_blue", 3:"ob_jup_item_weapon_sm_papa90_purple", 4:"ob_jup_item_weapon_sm_papa90_orange"];
-    player namespace_f8d3520d3483c1::setArmorHealth(self.var_8790c077c95db752);
+    player namespace_f8d3520d3483c1::setarmorhealth(self.var_8790c077c95db752);
     waitframe();
     player namespace_f8d3520d3483c1::function_9c6e9a6643b6c9a6(1);
     waitframe();
@@ -2142,7 +2142,7 @@ function function_ce34466b3cece887(player) {
 // Checksum 0x0, Offset: 0x5fb7
 // Size: 0x26
 function function_d033372dd6129974(player, vehicle) {
-    var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getsquadmembers();
 }
 
 // Namespace namespace_cf011d7d8f1de3ac/namespace_e39de371869cd948
@@ -2150,6 +2150,6 @@ function function_d033372dd6129974(player, vehicle) {
 // Checksum 0x0, Offset: 0x5fe4
 // Size: 0x26
 function function_c8bcbda102291b17(player, vehicle) {
-    var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getsquadmembers();
 }
 

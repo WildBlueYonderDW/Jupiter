@@ -181,7 +181,7 @@ function function_75b53ad947495f9c(player, oldteam, newteam) {
 function function_a2045d8caf0f792f(attacker, victim) {
     if (isdefined(attacker)) {
         if (function_42a0806457ea8039(attacker)) {
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_b39bbfef37b546c7");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_b39bbfef37b546c7");
             thread function_234c4428a084ca58(25);
         }
     }
@@ -239,7 +239,7 @@ function function_319ba124f0ec457c(player) {
 function function_18d88924744a578b(player, type) {
     if (function_42a0806457ea8039(player)) {
         if (type != 2 && type != 6 && !(type >= 7 && type <= 12)) {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_397015fa876e62b2");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_397015fa876e62b2");
             thread function_234c4428a084ca58(10);
         }
     }
@@ -252,10 +252,10 @@ function function_18d88924744a578b(player, type) {
 function function_21a950b07d1782a1(player, agent) {
     if (function_42a0806457ea8039(player) && isdefined(agent)) {
         if (agent.basearchetype == "juggernaut") {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_72b19a656fda2ad3");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_72b19a656fda2ad3");
             thread function_234c4428a084ca58(60);
         } else {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2b7f8b5419ed72e");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_2b7f8b5419ed72e");
             thread function_234c4428a084ca58(10);
         }
     }
@@ -476,7 +476,7 @@ function function_89dd39b233d0a42d(player) {
     } else {
         rewards[rewards.size] = "brloot_killstreak_scramblerdrone";
     }
-    if (namespace_36f464722d326bbe::function_beff479639e6508() && getsubgametype() == "plunder") {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() == "plunder") {
         var_2f360e8a02e0a672 = randomintrange(0, 20);
         if (var_2f360e8a02e0a672 > 14) {
             rewards[rewards.size] = "brloot_plunder_cash_uncommon_2";
@@ -489,9 +489,9 @@ function function_89dd39b233d0a42d(player) {
         }
     }
     rewards[rewards.size] = pickscriptablelootitem("weapon", 4, 4, "mp/loot/br/default/lootset_cache_lege.csv");
-    if (namespace_36f464722d326bbe::function_beff479639e6508() && getsubgametype() == "plunder") {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() == "plunder") {
         var_b1f627237929640e = [0:"brloot_self_revive", 1:"brloot_plunder_extract", 2:"brloot_valuable_goldbar"];
-    } else if (namespace_36f464722d326bbe::function_beff479639e6508() && getsubgametype() == "zxp") {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() == "zxp") {
         var_b1f627237929640e = [0:"brloot_super_reinforcement_flare", 1:"brloot_self_revive"];
     } else {
         var_b1f627237929640e = [0:"brloot_self_revive", 1:"brloot_equip_gasmask", 2:"brloot_equip_gasmask_durable"];
@@ -554,7 +554,7 @@ function function_2410e069c697ba3c(player) {
             }
         }
     }
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f396d39fee1a8054");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_f396d39fee1a8054");
     player playsoundtoplayer("uin_loot_container_open_epic", player);
 }
 

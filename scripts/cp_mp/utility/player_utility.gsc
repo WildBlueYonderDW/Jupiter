@@ -46,7 +46,7 @@ function getstancetop(var_2eea482c1a2f43a9) {
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x33
 function _isalive() {
-    return isalive(self) && !isdefined(self.fauxdead) && !istrue(self.delayedspawnedplayernotify) && !istrue(self.var_c4c8b91e0b16aa5e);
+    return isalive(self) && !isdefined(self.fauxdead) && !istrue(self.delayedspawnedplayernotify) && !istrue(self.liveragdoll);
 }
 
 // Namespace namespace_e47104b48662385b/namespace_f8065cafc523dba5
@@ -566,7 +566,7 @@ function function_c28310e3b33872cb() {
 // Checksum 0x0, Offset: 0x12d7
 // Size: 0x42
 function isreallyalive(player) {
-    return isalive(player) && !isdefined(player.fauxdead) && !istrue(player.delayedspawnedplayernotify) && !istrue(player.var_c4c8b91e0b16aa5e);
+    return isalive(player) && !isdefined(player.fauxdead) && !istrue(player.delayedspawnedplayernotify) && !istrue(player.liveragdoll);
 }
 
 // Namespace namespace_e47104b48662385b/namespace_f8065cafc523dba5
@@ -696,7 +696,7 @@ function function_7a8a04d15ad052d5() {
 function function_fdff38028c016239() {
     self endon("disconnect");
     /#
-        assert(istrue(self.var_c4c8b91e0b16aa5e));
+        assert(istrue(self.liveragdoll));
     #/
     var_a92e3d2ff7af10c9 = function_6d606d81ea9ab50b(0, 0);
     self.var_7c813e50ff75be27 = undefined;
@@ -743,13 +743,13 @@ function function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd) {
     /#
         assert(isdefined(attacker) && isent(attacker));
     #/
-    var_ad4d55fd441c70bd = undefined;
+    deathpos = undefined;
     if (isdefined(victim.origin)) {
-        var_ad4d55fd441c70bd = victim.origin;
+        deathpos = victim.origin;
     } else if (isdefined(victim.lastdeathpos)) {
-        var_ad4d55fd441c70bd = victim.lastdeathpos;
+        deathpos = victim.lastdeathpos;
     }
-    if (!isdefined(var_ad4d55fd441c70bd)) {
+    if (!isdefined(deathpos)) {
         logstring("Undefined deathPos for death ragdoll 3rd person camera.");
         return undefined;
     }
@@ -757,18 +757,18 @@ function function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd) {
         forwardvector = anglestoforward(victim.angles);
         forwardvector = function_767cea82b001f645(forwardvector);
     } else {
-        forwardvector = vectornormalize(var_ad4d55fd441c70bd - attacker.origin);
+        forwardvector = vectornormalize(deathpos - attacker.origin);
     }
     baseangles = generateaxisanglesfromforwardvector(forwardvector, (0, 0, 1));
-    var_12b614f64a9ba025 = var_ad4d55fd441c70bd + (0, 0, 12);
+    var_12b614f64a9ba025 = deathpos + (0, 0, 12);
     var_ac59002aa0721741 = 200;
     var_eff05a57ce34e3ea = 30;
     var_519305604d8e28e4 = 360 / var_eff05a57ce34e3ea;
     var_6095efe86105e553 = [];
     for (i = 0; i < var_519305604d8e28e4; i++) {
         var_58f17fbb36dc3c08 = anglestoforward(baseangles + (0, var_eff05a57ce34e3ea * i, 0));
-        startposition = var_ad4d55fd441c70bd + (0, 0, 12);
-        endposition = var_ad4d55fd441c70bd + var_58f17fbb36dc3c08 * var_ac59002aa0721741 + (0, 0, 150);
+        startposition = deathpos + (0, 0, 12);
+        endposition = deathpos + var_58f17fbb36dc3c08 * var_ac59002aa0721741 + (0, 0, 150);
         trace = namespace_2a184fc4902783dc::sphere_trace(startposition, endposition, 2, [0:victim, 1:attacker]);
         if (isdefined(trace) && trace["fraction"] > 0.99) {
             var_6095efe86105e553[var_6095efe86105e553.size] = trace["position"];
@@ -780,10 +780,10 @@ function function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd) {
     if (var_6095efe86105e553.size > 0) {
         var_12b614f64a9ba025 = var_6095efe86105e553[0];
     }
-    var_50a4e909a80b4aae = vectornormalize(var_ad4d55fd441c70bd - var_12b614f64a9ba025);
+    victimdirection = vectornormalize(deathpos - var_12b614f64a9ba025);
     var_379de5a38f0e582a = spawnstruct();
     var_379de5a38f0e582a.origin = var_12b614f64a9ba025;
-    var_379de5a38f0e582a.angles = vectortoangles(var_50a4e909a80b4aae);
+    var_379de5a38f0e582a.angles = vectortoangles(victimdirection);
     var_379de5a38f0e582a.distance = var_ac59002aa0721741;
     var_379de5a38f0e582a.var_6095efe86105e553 = var_6095efe86105e553;
     return var_379de5a38f0e582a;
@@ -798,7 +798,7 @@ function updatesessionstate(sessionstate, statusicon) {
         assert(sessionstate == "playing" || sessionstate == "dead" || sessionstate == "spectator" || sessionstate == "intermission" || sessionstate == "playing_but_spectating");
     #/
     ui_session_state = sessionstate;
-    if (istrue(self.var_c4c8b91e0b16aa5e)) {
+    if (istrue(self.liveragdoll)) {
         if (self.sessionstate == "playing_but_spectating" && (sessionstate == "dead" || sessionstate == "spectator")) {
             printspawnmessage("player::updateSessionState() didn't not update because we are in liveRagdoll");
             return;
@@ -933,8 +933,8 @@ function function_a104c06453297036(player, ignoreents, contentoverride) {
         contents = contentoverride;
     }
     starttrace = player getvieworigin();
-    if (player GetCameraThirdPerson()) {
-        starttrace = player GetCameraThirdPersonOrigin();
+    if (player getcamerathirdperson()) {
+        starttrace = player getcamerathirdpersonorigin();
     }
     endtrace = starttrace + anglestoforward(player getplayerangles()) * 20000;
     trace = namespace_2a184fc4902783dc::ray_trace(starttrace, endtrace, ignoreents, contentoverride);

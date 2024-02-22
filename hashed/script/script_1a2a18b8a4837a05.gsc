@@ -113,7 +113,7 @@ function function_868bf033439639da(animstruct) {
 // Size: 0x2c6
 function function_8a98c48dee57505(animstruct) {
     if (getdvarint(@"hash_794056489aa0efdd", 0)) {
-        animstruct function_5dba404b985c7d41();
+        animstruct teleporttomovingplane();
         return;
     }
     thread function_b9fcd5a6ea2995a6();
@@ -153,7 +153,7 @@ function function_8a98c48dee57505(animstruct) {
     animstruct notify("infilSceneDone");
     function_c79f9300ee85f805(level.players, "jup_br_infil_igc", 1);
     function_a5a97638ff41cda4();
-    animstruct function_5dba404b985c7d41();
+    animstruct teleporttomovingplane();
     waitframe();
     waitframe();
     animstruct.var_3034fd5e5fdaa1f0 = undefined;
@@ -343,7 +343,7 @@ function function_b9fcd5a6ea2995a6() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14c5
 // Size: 0x12f
-function function_5dba404b985c7d41() {
+function teleporttomovingplane() {
     /#
         assert(isdefined(self.movingc130));
     #/

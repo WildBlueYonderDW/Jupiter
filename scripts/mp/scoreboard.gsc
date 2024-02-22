@@ -36,11 +36,11 @@ function processmatchscoreboardinfo() {
         }
         alliesscore = getteamscore("allies");
         axisscore = getteamscore("axis");
-        team3Score = getteamscore("team_three");
+        team3score = getteamscore("team_three");
         if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
             setclientmatchdata("alliesScore", alliesscore);
             setclientmatchdata("axisScore", axisscore);
-            setclientmatchdata("team3Score", team3Score);
+            setclientmatchdata("team3Score", team3score);
             setclientmatchdata("scoreProgressLimit", getomnvar("ui_scorelimit"));
             setclientmatchdata("alliesKills", -1);
             setclientmatchdata("alliesDeaths", -1);
@@ -162,8 +162,8 @@ function setplayerscoreboardinfo() {
     if (getdvarint(@"hash_1bc373211683e0b6") == 0) {
         return;
     }
-    scoreboardPlayerCount = getclientmatchdata("scoreboardPlayerCount");
-    if (scoreboardPlayerCount < 200) {
+    scoreboardplayercount = getclientmatchdata("scoreboardPlayerCount");
+    if (scoreboardplayercount < 200) {
         if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("score"))) {
             setclientmatchdata("players", self.clientmatchdataid, "score", namespace_3c5a4254f2b957ea::getpersstat("score"));
             /#
@@ -244,7 +244,7 @@ function setplayerscoreboardinfo() {
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + prestige);
             #/
         }
-        if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             var_7746ca3b56c9afd3 = namespace_d20f8ef223912e12::calculateclientmatchdataextrainfopayload(self);
             /#
                 assert(var_7746ca3b56c9afd3.size < 5);
@@ -335,18 +335,18 @@ function setplayerscoreboardinfo() {
             }
         }
         /#
-            println("<unknown string>" + scoreboardPlayerCount);
+            println("<unknown string>" + scoreboardplayercount);
         #/
-        scoreboardPlayerCount++;
-        setclientmatchdata("scoreboardPlayerCount", scoreboardPlayerCount);
+        scoreboardplayercount++;
+        setclientmatchdata("scoreboardPlayerCount", scoreboardplayercount);
         /#
-            println("<unknown string>" + scoreboardPlayerCount);
+            println("<unknown string>" + scoreboardplayercount);
         #/
         maxplayercount = getdvarint(@"hash_818c699a5caaee4f", 0);
         setclientmatchdata("maxPlayerCount", maxplayercount);
     } else {
         /#
-            println("<unknown string>" + scoreboardPlayerCount + "<unknown string>");
+            println("<unknown string>" + scoreboardplayercount + "<unknown string>");
         #/
     }
 }

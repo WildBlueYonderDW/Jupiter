@@ -82,7 +82,7 @@ function init() {
         level.classmap["default" + i] = i - 1;
     }
     level.defaultclass = "CLASS_ASSAULT";
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) && (namespace_36f464722d326bbe::isBRStyleGameType() || level.gametype == "brtdm" || level.gametype == "brtdm_mgl")) {
+    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) && (namespace_36f464722d326bbe::isbrstylegametype() || level.gametype == "brtdm" || level.gametype == "brtdm_mgl")) {
         level.classtablename = "classtable:classtable_br_default_mgl";
     } else if (namespace_cd0b2d039510b38d::getsubgametype() == "dmz") {
         level.classtablename = "classtable:classtable_dmz_default";
@@ -354,7 +354,7 @@ function cac_getextraequipmentprimary(classindex) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bd6
 // Size: 0x31
-function cac_getFlcExtraEquipmentPrimary(classindex) {
+function cac_getflcextraequipmentprimary(classindex) {
     return self getplayerdata(level.loadoutdata, "squadMembers", "loadouts", classindex, "equipmentSetups", 0, "flcExtraEquipment");
 }
 
@@ -386,7 +386,7 @@ function cac_getextraequipmentsecondary(classindex) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cbd
 // Size: 0x32
-function cac_getFlcExtraEquipmentSecondary(classindex) {
+function cac_getflcextraequipmentsecondary(classindex) {
     return self getplayerdata(level.loadoutdata, "squadMembers", "loadouts", classindex, "equipmentSetups", 1, "flcExtraEquipment");
 }
 
@@ -597,7 +597,7 @@ function function_3bb637a8e8d0a7c8() {
     }
     if (istrue(level.var_ec2fb549b15ad827)) {
         bundlename = "ranked_perkpackagelist_iw9";
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
             bundlename = "br_perkpackagelist_mgl";
         } else {
@@ -725,7 +725,7 @@ function function_aacbcd2576b3af83(tablename, classindex, weaponindex) {
         return weaponinfo.secondaryweapon;
         break;
     }
-    return weaponinfo.tertiaryWeapon;
+    return weaponinfo.tertiaryweapon;
 }
 
 // Namespace class/namespace_d19129e4fa5d176
@@ -750,8 +750,8 @@ function table_getweaponattachment(tablename, classindex, weaponindex, attachmen
         classstruct.secondaryweapon.attachments = [0:classstruct.secondaryweapon.attachment1, 1:classstruct.secondaryweapon.attachment2, 2:classstruct.secondaryweapon.attachment3, 3:classstruct.secondaryweapon.attachment4, 4:classstruct.secondaryweapon.attachment5];
     }
     if (istrue(level.var_9e090a159cb48220)) {
-        if (!isdefined(classstruct.tertiaryWeapon.attachments)) {
-            classstruct.tertiaryWeapon.attachments = [0:classstruct.tertiaryWeapon.attachment1, 1:classstruct.tertiaryWeapon.attachment2, 2:classstruct.tertiaryWeapon.attachment3, 3:classstruct.tertiaryWeapon.attachment4, 4:classstruct.tertiaryWeapon.attachment5];
+        if (!isdefined(classstruct.tertiaryweapon.attachments)) {
+            classstruct.tertiaryweapon.attachments = [0:classstruct.tertiaryweapon.attachment1, 1:classstruct.tertiaryweapon.attachment2, 2:classstruct.tertiaryweapon.attachment3, 3:classstruct.tertiaryweapon.attachment4, 4:classstruct.tertiaryweapon.attachment5];
         }
     }
     if (weaponindex == 0) {
@@ -759,7 +759,7 @@ function table_getweaponattachment(tablename, classindex, weaponindex, attachmen
     } else if (weaponindex == 1) {
         tempname = classstruct.secondaryweapon.attachments[attachmentindex];
     } else {
-        tempname = classstruct.tertiaryWeapon.attachments[attachmentindex];
+        tempname = classstruct.tertiaryweapon.attachments[attachmentindex];
     }
     if (!isdefined(tempname) || tempname == "") {
         return "none";
@@ -918,7 +918,7 @@ function function_f8e92e6cd8007d6b(tablename, classindex, perkindex) {
     #/
     classstruct = function_c7a0b640c398497(tablename, classindex);
     if (!isdefined(classstruct.var_d664a7af3b17529e)) {
-        classstruct.var_d664a7af3b17529e = [0:classstruct.flcPerks.perk1, 1:classstruct.flcPerks.perk2, 2:classstruct.flcPerks.perk3, 3:classstruct.flcPerks.var_16680fbd1742cb4f, 4:classstruct.flcPerks.var_16680ebd1742c91c, 5:classstruct.flcPerks.var_166811bd1742cfb5, 6:classstruct.flcPerks.var_166810bd1742cd82];
+        classstruct.var_d664a7af3b17529e = [0:classstruct.flcperks.perk1, 1:classstruct.flcperks.perk2, 2:classstruct.flcperks.perk3, 3:classstruct.flcperks.var_16680fbd1742cb4f, 4:classstruct.flcperks.var_16680ebd1742c91c, 5:classstruct.flcperks.var_166811bd1742cfb5, 6:classstruct.flcperks.var_166810bd1742cd82];
     }
     return classstruct.var_d664a7af3b17529e[perkindex];
 }
@@ -944,8 +944,8 @@ function table_getextraequipmentprimary(tablename, classindex) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x424d
 // Size: 0x45
-function table_getFlcExtraEquipmentPrimary(tablename, classindex) {
-    value = function_c7a0b640c398497(tablename, classindex).flcExtraEquipment.primary;
+function table_getflcextraequipmentprimary(tablename, classindex) {
+    value = function_c7a0b640c398497(tablename, classindex).flcextraequipment.primary;
     return isdefined(value) && value == 1;
 }
 
@@ -970,8 +970,8 @@ function table_getextraequipmentsecondary(tablename, classindex) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x431f
 // Size: 0x45
-function table_getFlcExtraEquipmentSecondary(tablename, classindex) {
-    value = function_c7a0b640c398497(tablename, classindex).flcExtraEquipment.secondary;
+function table_getflcextraequipmentsecondary(tablename, classindex) {
+    value = function_c7a0b640c398497(tablename, classindex).flcextraequipment.secondary;
     return isdefined(value) && value == 1;
 }
 
@@ -981,7 +981,7 @@ function table_getFlcExtraEquipmentSecondary(tablename, classindex) {
 // Size: 0x7b
 function table_getsuper(tablename, classindex, index) {
     classstruct = function_c7a0b640c398497(tablename, classindex);
-    classstruct.var_ed1e9520c9e770ea = [0:classstruct.fieldUpgrades.var_7e397f4ce66bffd0, 1:classstruct.fieldUpgrades.var_7e39824ce66c0669];
+    classstruct.var_ed1e9520c9e770ea = [0:classstruct.fieldupgrades.var_7e397f4ce66bffd0, 1:classstruct.fieldupgrades.var_7e39824ce66c0669];
     return classstruct.var_ed1e9520c9e770ea[index];
 }
 
@@ -1299,17 +1299,17 @@ function loadout_getclassstruct() {
         struct.loadoutsecondarystickers[var_36d2abbdcbcb186c] = "none";
     }
     if (istrue(level.var_9e090a159cb48220)) {
-        struct.loadoutTertiary = "none";
+        struct.loadouttertiary = "none";
         struct.var_494870a5978b5a09 = [];
         struct.var_6bfdc660c23f71ea = [];
         for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
             struct.var_494870a5978b5a09[attachmentindex] = "none";
             struct.var_6bfdc660c23f71ea[attachmentindex] = 0;
         }
-        struct.loadoutTertiaryCamo = "none";
-        struct.loadoutTertiaryReticle = "none";
+        struct.loadouttertiarycamo = "none";
+        struct.loadouttertiaryreticle = "none";
         struct.var_64e57707d385a2f5 = 0;
-        struct.loadoutTertiaryVariantID = -1;
+        struct.loadouttertiaryvariantid = -1;
         struct.var_372f30ef6d6882ab = "none";
         struct.var_afb9de90c523d105 = [];
         for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
@@ -1340,7 +1340,7 @@ function loadout_getclassstruct() {
     struct.var_4c4f03fa00925daf = 0;
     struct.loadoutfieldupgrade2 = "none";
     struct.var_2907f1614fe4e5f2 = 0;
-    struct.loadoutSwimWeapon = "none";
+    struct.loadoutswimweapon = "none";
     struct.var_887f342b4c851024 = "none";
     struct.loadoutstreaksfilled = 0;
     struct.loadoutstreaktype = "streaktype_assault";
@@ -1388,16 +1388,16 @@ function loadout_copyclassstruct(classstruct) {
     var_b1186edca9e8aef1.loadoutsecondarycosmeticattachment = classstruct.loadoutsecondarycosmeticattachment;
     var_b1186edca9e8aef1.loadoutsecondarystickers = classstruct.loadoutsecondarystickers;
     if (istrue(level.var_9e090a159cb48220)) {
-        if (isdefined(classstruct.loadoutTertiaryAddBlueprintAttachments)) {
-            var_b1186edca9e8aef1.loadoutTertiaryAddBlueprintAttachments = classstruct.loadoutTertiaryAddBlueprintAttachments;
+        if (isdefined(classstruct.loadouttertiaryaddblueprintattachments)) {
+            var_b1186edca9e8aef1.loadouttertiaryaddblueprintattachments = classstruct.loadouttertiaryaddblueprintattachments;
         }
-        var_b1186edca9e8aef1.loadoutTertiary = classstruct.loadoutTertiary;
+        var_b1186edca9e8aef1.loadouttertiary = classstruct.loadouttertiary;
         var_b1186edca9e8aef1.var_494870a5978b5a09 = classstruct.var_494870a5978b5a09;
         var_b1186edca9e8aef1.var_6bfdc660c23f71ea = classstruct.var_6bfdc660c23f71ea;
-        var_b1186edca9e8aef1.loadoutTertiaryCamo = classstruct.loadoutTertiaryCamo;
-        var_b1186edca9e8aef1.loadoutTertiaryReticle = classstruct.loadoutTertiaryReticle;
+        var_b1186edca9e8aef1.loadouttertiarycamo = classstruct.loadouttertiarycamo;
+        var_b1186edca9e8aef1.loadouttertiaryreticle = classstruct.loadouttertiaryreticle;
         var_b1186edca9e8aef1.var_64e57707d385a2f5 = classstruct.var_64e57707d385a2f5;
-        var_b1186edca9e8aef1.loadoutTertiaryVariantID = classstruct.loadoutTertiaryVariantID;
+        var_b1186edca9e8aef1.loadouttertiaryvariantid = classstruct.loadouttertiaryvariantid;
         var_b1186edca9e8aef1.var_372f30ef6d6882ab = classstruct.var_372f30ef6d6882ab;
         var_b1186edca9e8aef1.var_afb9de90c523d105 = classstruct.var_afb9de90c523d105;
     }
@@ -1466,15 +1466,15 @@ function loadout_updateclassteam(struct, class, classteam) {
     struct.loadoutsecondarycamo = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "camo");
     struct.loadoutsecondaryreticle = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "reticle");
     if (istrue(level.var_9e090a159cb48220)) {
-        struct.loadoutTertiary = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "weapon");
+        struct.loadouttertiary = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "weapon");
         for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
             struct.var_494870a5978b5a09[attachmentindex] = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "attachmentSetup");
         }
         for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
             struct.var_afb9de90c523d105[var_36d2abbdcbcb186c] = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "sticker");
         }
-        struct.loadoutTertiaryCamo = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "camo");
-        struct.loadoutTertiaryReticle = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "reticle");
+        struct.loadouttertiarycamo = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "camo");
+        struct.loadouttertiaryreticle = getmatchrulesdatawithteamandindex("defaultClasses", classteam, classindex, "class", "weaponSetups", 1, "reticle");
     }
     struct.loadoutmeleeslot = "none";
     struct.loadoutequipmentprimary = "none";
@@ -1543,7 +1543,7 @@ function loadout_updateclasscustom(struct, class, var_6b02e0d0b48f639a) {
         struct.loadoutsecondarystickers[var_36d2abbdcbcb186c] = cac_getweaponsticker(classindex, 1, var_36d2abbdcbcb186c);
     }
     if (istrue(level.var_9e090a159cb48220)) {
-        struct.loadoutTertiary = cac_getweapon(classindex, 2);
+        struct.loadouttertiary = cac_getweapon(classindex, 2);
         for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
             attachmentname = cac_getweaponattachment(classindex, 2, attachmentindex);
             struct.var_494870a5978b5a09[attachmentindex] = attachmentname;
@@ -1553,10 +1553,10 @@ function loadout_updateclasscustom(struct, class, var_6b02e0d0b48f639a) {
                 struct.var_b58a085466758039[attachmentname] = var_c19231fe2990712e;
             }
         }
-        struct.loadoutTertiaryCamo = cac_getweaponcamo(classindex, 2);
-        struct.loadoutTertiaryReticle = cac_getweaponreticle(classindex, 2);
+        struct.loadouttertiarycamo = cac_getweaponcamo(classindex, 2);
+        struct.loadouttertiaryreticle = cac_getweaponreticle(classindex, 2);
         struct.var_64e57707d385a2f5 = cac_getweaponlootitemid(classindex, 2);
-        struct.loadoutTertiaryVariantID = cac_getweaponvariantid(classindex, 2);
+        struct.loadouttertiaryvariantid = cac_getweaponvariantid(classindex, 2);
         struct.var_372f30ef6d6882ab = cac_getweaponcosmeticattachment(classindex, 2);
         for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 4; var_36d2abbdcbcb186c++) {
             struct.var_afb9de90c523d105[var_36d2abbdcbcb186c] = cac_getweaponsticker(classindex, 2, var_36d2abbdcbcb186c);
@@ -1597,136 +1597,136 @@ function loadout_updateclassgamemode(struct, class) {
         return;
     }
     self.class_num = getclassindex(class);
-    gamemodeLoadout = self.pers["gamemodeLoadout"];
-    if (!isdefined(gamemodeLoadout["loadoutArchetype"])) {
+    gamemodeloadout = self.pers["gamemodeLoadout"];
+    if (!isdefined(gamemodeloadout["loadoutArchetype"])) {
         if (isbot(self)) {
             struct.loadoutarchetype = "archetype_assault";
         } else {
             struct.loadoutarchetype = cac_getcharacterarchetype();
         }
     } else {
-        struct.loadoutarchetype = gamemodeLoadout["loadoutArchetype"];
+        struct.loadoutarchetype = gamemodeloadout["loadoutArchetype"];
     }
-    if (isdefined(gamemodeLoadout["loadoutRigTrait"])) {
-        struct.loadoutrigtrait = gamemodeLoadout["loadoutRigTrait"];
+    if (isdefined(gamemodeloadout["loadoutRigTrait"])) {
+        struct.loadoutrigtrait = gamemodeloadout["loadoutRigTrait"];
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimaryAddBlueprintAttachments"])) {
-        struct.loadoutprimaryaddblueprintattachments = gamemodeLoadout["loadoutPrimaryAddBlueprintAttachments"];
+    if (isdefined(gamemodeloadout["loadoutPrimaryAddBlueprintAttachments"])) {
+        struct.loadoutprimaryaddblueprintattachments = gamemodeloadout["loadoutPrimaryAddBlueprintAttachments"];
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimary"])) {
-        struct.loadoutprimary = gamemodeLoadout["loadoutPrimary"];
+    if (isdefined(gamemodeloadout["loadoutPrimary"])) {
+        struct.loadoutprimary = gamemodeloadout["loadoutPrimary"];
     }
     for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
         var_efbdcd88107af5f9 = getattachmentloadoutstring(attachmentindex, #"primary");
-        if (isdefined(gamemodeLoadout[var_efbdcd88107af5f9])) {
-            struct.loadoutprimaryattachments[attachmentindex] = gamemodeLoadout[var_efbdcd88107af5f9];
+        if (isdefined(gamemodeloadout[var_efbdcd88107af5f9])) {
+            struct.loadoutprimaryattachments[attachmentindex] = gamemodeloadout[var_efbdcd88107af5f9];
         }
     }
     for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
         var_5e5774b116a39979 = getstickerloadoutstring(var_36d2abbdcbcb186c, #"primary");
-        if (isdefined(gamemodeLoadout[var_5e5774b116a39979])) {
-            struct.loadoutprimarystickers[var_36d2abbdcbcb186c] = gamemodeLoadout[var_5e5774b116a39979];
+        if (isdefined(gamemodeloadout[var_5e5774b116a39979])) {
+            struct.loadoutprimarystickers[var_36d2abbdcbcb186c] = gamemodeloadout[var_5e5774b116a39979];
         }
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimaryCamo"])) {
-        struct.loadoutprimarycamo = gamemodeLoadout["loadoutPrimaryCamo"];
+    if (isdefined(gamemodeloadout["loadoutPrimaryCamo"])) {
+        struct.loadoutprimarycamo = gamemodeloadout["loadoutPrimaryCamo"];
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimaryCosmeticAttachment"])) {
-        struct.loadoutprimarycosmeticattachment = gamemodeLoadout["loadoutPrimaryCosmeticAttachment"];
+    if (isdefined(gamemodeloadout["loadoutPrimaryCosmeticAttachment"])) {
+        struct.loadoutprimarycosmeticattachment = gamemodeloadout["loadoutPrimaryCosmeticAttachment"];
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimaryReticle"])) {
-        struct.loadoutprimaryreticle = gamemodeLoadout["loadoutPrimaryReticle"];
+    if (isdefined(gamemodeloadout["loadoutPrimaryReticle"])) {
+        struct.loadoutprimaryreticle = gamemodeloadout["loadoutPrimaryReticle"];
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimaryVariantID"])) {
-        struct.loadoutprimaryvariantid = gamemodeLoadout["loadoutPrimaryVariantID"];
+    if (isdefined(gamemodeloadout["loadoutPrimaryVariantID"])) {
+        struct.loadoutprimaryvariantid = gamemodeloadout["loadoutPrimaryVariantID"];
     }
-    if (isdefined(gamemodeLoadout["loadoutPrimaryVariantID"]) && getgametype() == "arena") {
-        if (isdefined(gamemodeLoadout["roundWinStreakPrimaryCamoTeam"]) && isdefined(self.pers["team"]) && gamemodeLoadout["roundWinStreakPrimaryCamoTeam"] == self.pers["team"]) {
-            if (isdefined(gamemodeLoadout["roundWinStreakPrimaryCamo"])) {
-                struct.loadoutprimarycamo = gamemodeLoadout["roundWinStreakPrimaryCamo"];
+    if (isdefined(gamemodeloadout["loadoutPrimaryVariantID"]) && getgametype() == "arena") {
+        if (isdefined(gamemodeloadout["roundWinStreakPrimaryCamoTeam"]) && isdefined(self.pers["team"]) && gamemodeloadout["roundWinStreakPrimaryCamoTeam"] == self.pers["team"]) {
+            if (isdefined(gamemodeloadout["roundWinStreakPrimaryCamo"])) {
+                struct.loadoutprimarycamo = gamemodeloadout["roundWinStreakPrimaryCamo"];
             }
         }
-        if (gamemodeLoadout["loadoutPrimaryVariantID"] != -1) {
-            setomnvar("ui_arena_primaryVariantID", gamemodeLoadout["loadoutPrimaryVariantID"]);
+        if (gamemodeloadout["loadoutPrimaryVariantID"] != -1) {
+            setomnvar("ui_arena_primaryVariantID", gamemodeloadout["loadoutPrimaryVariantID"]);
         }
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondaryAddBlueprintAttachments"])) {
-        struct.loadoutsecondaryaddblueprintattachments = gamemodeLoadout["loadoutSecondaryAddBlueprintAttachments"];
+    if (isdefined(gamemodeloadout["loadoutSecondaryAddBlueprintAttachments"])) {
+        struct.loadoutsecondaryaddblueprintattachments = gamemodeloadout["loadoutSecondaryAddBlueprintAttachments"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondary"])) {
-        struct.loadoutsecondary = gamemodeLoadout["loadoutSecondary"];
+    if (isdefined(gamemodeloadout["loadoutSecondary"])) {
+        struct.loadoutsecondary = gamemodeloadout["loadoutSecondary"];
     }
     for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
         var_efbdcd88107af5f9 = getattachmentloadoutstring(attachmentindex, #"secondary");
-        if (isdefined(gamemodeLoadout[var_efbdcd88107af5f9])) {
-            struct.loadoutsecondaryattachments[attachmentindex] = gamemodeLoadout[var_efbdcd88107af5f9];
+        if (isdefined(gamemodeloadout[var_efbdcd88107af5f9])) {
+            struct.loadoutsecondaryattachments[attachmentindex] = gamemodeloadout[var_efbdcd88107af5f9];
         }
     }
     for (var_36d2abbdcbcb186c = 0; var_36d2abbdcbcb186c < 5; var_36d2abbdcbcb186c++) {
         var_5e5774b116a39979 = getstickerloadoutstring(var_36d2abbdcbcb186c, #"secondary");
-        if (isdefined(gamemodeLoadout[var_5e5774b116a39979])) {
-            struct.loadoutsecondarystickers[var_36d2abbdcbcb186c] = gamemodeLoadout[var_5e5774b116a39979];
+        if (isdefined(gamemodeloadout[var_5e5774b116a39979])) {
+            struct.loadoutsecondarystickers[var_36d2abbdcbcb186c] = gamemodeloadout[var_5e5774b116a39979];
         }
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondaryCamo"])) {
-        struct.loadoutsecondarycamo = gamemodeLoadout["loadoutSecondaryCamo"];
+    if (isdefined(gamemodeloadout["loadoutSecondaryCamo"])) {
+        struct.loadoutsecondarycamo = gamemodeloadout["loadoutSecondaryCamo"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondaryCosmeticAttachment"])) {
-        struct.loadoutsecondarycosmeticattachment = gamemodeLoadout["loadoutSecondaryCosmeticAttachment"];
+    if (isdefined(gamemodeloadout["loadoutSecondaryCosmeticAttachment"])) {
+        struct.loadoutsecondarycosmeticattachment = gamemodeloadout["loadoutSecondaryCosmeticAttachment"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondaryReticle"])) {
-        struct.loadoutsecondaryreticle = gamemodeLoadout["loadoutSecondaryReticle"];
+    if (isdefined(gamemodeloadout["loadoutSecondaryReticle"])) {
+        struct.loadoutsecondaryreticle = gamemodeloadout["loadoutSecondaryReticle"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondaryVariantID"])) {
-        struct.loadoutsecondaryvariantid = gamemodeLoadout["loadoutSecondaryVariantID"];
+    if (isdefined(gamemodeloadout["loadoutSecondaryVariantID"])) {
+        struct.loadoutsecondaryvariantid = gamemodeloadout["loadoutSecondaryVariantID"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSecondaryVariantID"]) && getgametype() == "arena" && gamemodeLoadout["loadoutSecondaryVariantID"] != -1) {
-        if (isdefined(gamemodeLoadout["roundWinStreakecondaryCamoTeam"]) && isdefined(self.pers["team"]) && gamemodeLoadout["roundWinStreakecondaryCamoTeam"] == self.pers["team"]) {
-            if (isdefined(gamemodeLoadout["roundWinStreakSecondaryCamo"])) {
-                struct.loadoutsecondarycamo = gamemodeLoadout["roundWinStreakSecondaryCamo"];
+    if (isdefined(gamemodeloadout["loadoutSecondaryVariantID"]) && getgametype() == "arena" && gamemodeloadout["loadoutSecondaryVariantID"] != -1) {
+        if (isdefined(gamemodeloadout["roundWinStreakecondaryCamoTeam"]) && isdefined(self.pers["team"]) && gamemodeloadout["roundWinStreakecondaryCamoTeam"] == self.pers["team"]) {
+            if (isdefined(gamemodeloadout["roundWinStreakSecondaryCamo"])) {
+                struct.loadoutsecondarycamo = gamemodeloadout["roundWinStreakSecondaryCamo"];
             }
         }
-        if (gamemodeLoadout["loadoutSecondaryVariantID"] != -1) {
-            setomnvar("ui_arena_secondaryVariantID", gamemodeLoadout["loadoutSecondaryVariantID"]);
+        if (gamemodeloadout["loadoutSecondaryVariantID"] != -1) {
+            setomnvar("ui_arena_secondaryVariantID", gamemodeloadout["loadoutSecondaryVariantID"]);
         }
     }
-    if (isdefined(gamemodeLoadout["loadoutMeleeSlot"])) {
-        struct.loadoutmeleeslot = gamemodeLoadout["loadoutMeleeSlot"];
+    if (isdefined(gamemodeloadout["loadoutMeleeSlot"])) {
+        struct.loadoutmeleeslot = gamemodeloadout["loadoutMeleeSlot"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSwimWeapon"])) {
-        struct.loadoutSwimWeapon = gamemodeLoadout["loadoutSwimWeapon"];
+    if (isdefined(gamemodeloadout["loadoutSwimWeapon"])) {
+        struct.loadoutswimweapon = gamemodeloadout["loadoutSwimWeapon"];
     }
-    struct.loadoutperksfromgamemode = isdefined(gamemodeLoadout["loadoutPerks"]);
-    if (isdefined(gamemodeLoadout["loadoutPerks"])) {
-        struct.loadoutperks = gamemodeLoadout["loadoutPerks"];
+    struct.loadoutperksfromgamemode = isdefined(gamemodeloadout["loadoutPerks"]);
+    if (isdefined(gamemodeloadout["loadoutPerks"])) {
+        struct.loadoutperks = gamemodeloadout["loadoutPerks"];
     }
-    struct.loadoutextraperksfromgamemode = isdefined(gamemodeLoadout["loadoutExtraPerks"]);
-    if (isdefined(gamemodeLoadout["loadoutExtraPerks"])) {
-        struct.loadoutextraperks = gamemodeLoadout["loadoutExtraPerks"];
+    struct.loadoutextraperksfromgamemode = isdefined(gamemodeloadout["loadoutExtraPerks"]);
+    if (isdefined(gamemodeloadout["loadoutExtraPerks"])) {
+        struct.loadoutextraperks = gamemodeloadout["loadoutExtraPerks"];
     }
-    if (isdefined(gamemodeLoadout["loadoutEquipmentPrimary"])) {
-        struct.loadoutequipmentprimary = gamemodeLoadout["loadoutEquipmentPrimary"];
+    if (isdefined(gamemodeloadout["loadoutEquipmentPrimary"])) {
+        struct.loadoutequipmentprimary = gamemodeloadout["loadoutEquipmentPrimary"];
     }
-    if (isdefined(gamemodeLoadout["loadoutExtraEquipmentPrimary"])) {
-        struct.loadoutextraequipmentprimary = gamemodeLoadout["loadoutExtraEquipmentPrimary"];
+    if (isdefined(gamemodeloadout["loadoutExtraEquipmentPrimary"])) {
+        struct.loadoutextraequipmentprimary = gamemodeloadout["loadoutExtraEquipmentPrimary"];
     }
-    if (isdefined(gamemodeLoadout["loadoutEquipmentSecondary"])) {
-        struct.loadoutequipmentsecondary = gamemodeLoadout["loadoutEquipmentSecondary"];
+    if (isdefined(gamemodeloadout["loadoutEquipmentSecondary"])) {
+        struct.loadoutequipmentsecondary = gamemodeloadout["loadoutEquipmentSecondary"];
     }
-    if (isdefined(gamemodeLoadout["loadoutExtraEquipmentSecondary"])) {
-        struct.loadoutextraequipmentsecondary = gamemodeLoadout["loadoutExtraEquipmentSecondary"];
+    if (isdefined(gamemodeloadout["loadoutExtraEquipmentSecondary"])) {
+        struct.loadoutextraequipmentsecondary = gamemodeloadout["loadoutExtraEquipmentSecondary"];
     }
-    if (isdefined(gamemodeLoadout["loadoutSuper"])) {
-        struct.loadoutsuper = gamemodeLoadout["loadoutSuper"];
+    if (isdefined(gamemodeloadout["loadoutSuper"])) {
+        struct.loadoutsuper = gamemodeloadout["loadoutSuper"];
     }
-    if (isdefined(gamemodeLoadout["loadoutFieldUpgrade1"])) {
-        struct.loadoutfieldupgrade1 = gamemodeLoadout["loadoutFieldUpgrade1"];
+    if (isdefined(gamemodeloadout["loadoutFieldUpgrade1"])) {
+        struct.loadoutfieldupgrade1 = gamemodeloadout["loadoutFieldUpgrade1"];
     }
-    if (isdefined(gamemodeLoadout["loadoutFieldUpgrade2"])) {
-        struct.loadoutfieldupgrade2 = gamemodeLoadout["loadoutFieldUpgrade2"];
+    if (isdefined(gamemodeloadout["loadoutFieldUpgrade2"])) {
+        struct.loadoutfieldupgrade2 = gamemodeloadout["loadoutFieldUpgrade2"];
     }
-    if (isdefined(gamemodeLoadout["disableBackupPistol"])) {
-        struct.disableBackupPistol = gamemodeLoadout["disableBackupPistol"];
+    if (isdefined(gamemodeloadout["disableBackupPistol"])) {
+        struct.disablebackuppistol = gamemodeloadout["disableBackupPistol"];
     }
     if (isbot(self)) {
         struct.loadoutaccessoryweapon = "none";
@@ -1737,24 +1737,24 @@ function loadout_updateclassgamemode(struct, class) {
         struct.loadoutaccessorydata = cac_getaccessorydata();
         struct.loadoutaccessorylogic = cac_getaccessorylogic();
     }
-    if (isdefined(gamemodeLoadout["loadoutGesture"])) {
-        if (gamemodeLoadout["loadoutGesture"] == "playerData") {
+    if (isdefined(gamemodeloadout["loadoutGesture"])) {
+        if (gamemodeloadout["loadoutGesture"] == "playerData") {
             if (isbot(self)) {
                 struct.loadoutgesture = "none";
             } else {
                 struct.loadoutgesture = cac_getgesture();
             }
         } else {
-            struct.loadoutgesture = gamemodeLoadout["loadoutGesture"];
+            struct.loadoutgesture = gamemodeloadout["loadoutGesture"];
         }
     }
-    if (isdefined(gamemodeLoadout["loadoutKillstreak1"]) && gamemodeLoadout["loadoutKillstreak1"] != "specialty_null" || isdefined(gamemodeLoadout["loadoutKillstreak2"]) && gamemodeLoadout["loadoutKillstreak2"] != "specialty_null" || isdefined(gamemodeLoadout["loadoutKillstreak3"]) && gamemodeLoadout["loadoutKillstreak3"] != "specialty_null") {
+    if (isdefined(gamemodeloadout["loadoutKillstreak1"]) && gamemodeloadout["loadoutKillstreak1"] != "specialty_null" || isdefined(gamemodeloadout["loadoutKillstreak2"]) && gamemodeloadout["loadoutKillstreak2"] != "specialty_null" || isdefined(gamemodeloadout["loadoutKillstreak3"]) && gamemodeloadout["loadoutKillstreak3"] != "specialty_null") {
         struct.loadoutstreaksfilled = 1;
-        struct.loadoutkillstreak1 = gamemodeLoadout["loadoutKillstreak1"];
-        struct.loadoutkillstreak2 = gamemodeLoadout["loadoutKillstreak2"];
-        struct.loadoutkillstreak3 = gamemodeLoadout["loadoutKillstreak3"];
+        struct.loadoutkillstreak1 = gamemodeloadout["loadoutKillstreak1"];
+        struct.loadoutkillstreak2 = gamemodeloadout["loadoutKillstreak2"];
+        struct.loadoutkillstreak3 = gamemodeloadout["loadoutKillstreak3"];
     }
-    if (isdefined(gamemodeLoadout["loadoutUsingSpecialist"])) {
+    if (isdefined(gamemodeloadout["loadoutUsingSpecialist"])) {
         struct.loadoutusingspecialist = 1;
     }
 }
@@ -1826,30 +1826,30 @@ function loadout_updateclasscallback(struct) {
         if (isdefined(var_2d720734d96cd35e.secondaryweapon.reticle)) {
             struct.loadoutsecondaryreticle = var_2d720734d96cd35e.secondaryweapon.reticle;
         }
-        if (isdefined(var_2d720734d96cd35e.tertiaryWeapon)) {
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.weapon)) {
-                struct.loadoutTertiary = var_2d720734d96cd35e.tertiaryWeapon.weapon;
+        if (isdefined(var_2d720734d96cd35e.tertiaryweapon)) {
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.weapon)) {
+                struct.loadouttertiary = var_2d720734d96cd35e.tertiaryweapon.weapon;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.attachment1)) {
-                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryWeapon.attachment1;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.attachment1)) {
+                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryweapon.attachment1;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.attachment2)) {
-                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryWeapon.attachment2;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.attachment2)) {
+                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryweapon.attachment2;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.attachment3)) {
-                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryWeapon.attachment3;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.attachment3)) {
+                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryweapon.attachment3;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.attachment4)) {
-                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryWeapon.attachment4;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.attachment4)) {
+                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryweapon.attachment4;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.attachment5)) {
-                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryWeapon.attachment5;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.attachment5)) {
+                struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = var_2d720734d96cd35e.tertiaryweapon.attachment5;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.camo)) {
-                struct.loadoutTertiaryCamo = var_2d720734d96cd35e.tertiaryWeapon.camo;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.camo)) {
+                struct.loadouttertiarycamo = var_2d720734d96cd35e.tertiaryweapon.camo;
             }
-            if (isdefined(var_2d720734d96cd35e.tertiaryWeapon.reticle)) {
-                struct.loadoutTertiaryReticle = var_2d720734d96cd35e.tertiaryWeapon.reticle;
+            if (isdefined(var_2d720734d96cd35e.tertiaryweapon.reticle)) {
+                struct.loadouttertiaryreticle = var_2d720734d96cd35e.tertiaryweapon.reticle;
             }
         }
         if (isdefined(var_2d720734d96cd35e.equipment.primary)) {
@@ -1936,10 +1936,10 @@ function loadout_updateclasscallback(struct) {
         }
         if (istrue(level.var_9e090a159cb48220)) {
             if (isdefined(var_2d720734d96cd35e["loadoutTertiaryAddBlueprintAttachments"])) {
-                struct.loadoutTertiaryAddBlueprintAttachments = var_2d720734d96cd35e["loadoutTertiaryAddBlueprintAttachments"];
+                struct.loadouttertiaryaddblueprintattachments = var_2d720734d96cd35e["loadoutTertiaryAddBlueprintAttachments"];
             }
             if (isdefined(var_2d720734d96cd35e["loadoutTertiary"])) {
-                struct.loadoutTertiary = var_2d720734d96cd35e["loadoutTertiary"];
+                struct.loadouttertiary = var_2d720734d96cd35e["loadoutTertiary"];
             }
             for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
                 var_efbdcd88107af5f9 = getattachmentloadoutstring(attachmentindex, #"tertiary");
@@ -1948,13 +1948,13 @@ function loadout_updateclasscallback(struct) {
                 }
             }
             if (isdefined(var_2d720734d96cd35e["loadoutTertiaryCamo"])) {
-                struct.loadoutTertiaryCamo = var_2d720734d96cd35e["loadoutTertiaryCamo"];
+                struct.loadouttertiarycamo = var_2d720734d96cd35e["loadoutTertiaryCamo"];
             }
             if (isdefined(var_2d720734d96cd35e["loadoutTertiaryReticle"])) {
-                struct.loadoutTertiaryReticle = var_2d720734d96cd35e["loadoutTertiaryReticle"];
+                struct.loadouttertiaryreticle = var_2d720734d96cd35e["loadoutTertiaryReticle"];
             }
             if (isdefined(var_2d720734d96cd35e["loadoutTertiaryVariantID"])) {
-                struct.loadoutTertiaryVariantID = var_2d720734d96cd35e["loadoutTertiaryVariantID"];
+                struct.loadouttertiaryvariantid = var_2d720734d96cd35e["loadoutTertiaryVariantID"];
             }
         }
         if (isdefined(var_2d720734d96cd35e["loadoutMeleeSlot"])) {
@@ -1992,7 +1992,7 @@ function loadout_updateclasscallback(struct) {
             struct.loadoutkillstreak3 = var_2d720734d96cd35e["loadoutStreak3"];
         }
         if (isdefined(var_2d720734d96cd35e["disableBackupPistol"])) {
-            struct.disableBackupPistol = var_2d720734d96cd35e["disableBackupPistol"];
+            struct.disablebackuppistol = var_2d720734d96cd35e["disableBackupPistol"];
         }
     }
     struct.var_de7fe0f200a1deff = isdefined(struct.loadoutperks) && struct.loadoutperks.size > 0;
@@ -2049,12 +2049,12 @@ function loadout_updateclassdefault_weapons(struct, classindex) {
     struct.loadoutsecondarycamo = table_getweaponcamo(level.classtablename, classindex, 1);
     struct.loadoutsecondaryreticle = table_getweaponreticle(level.classtablename, classindex, 1);
     if (istrue(level.var_9e090a159cb48220)) {
-        struct.loadoutTertiary = table_getweapon(level.classtablename, classindex, 2);
+        struct.loadouttertiary = table_getweapon(level.classtablename, classindex, 2);
         for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
             struct.var_494870a5978b5a09[attachmentindex] = table_getweaponattachment(level.classtablename, classindex, 2, attachmentindex);
         }
-        struct.loadoutTertiaryCamo = table_getweaponcamo(level.classtablename, classindex, 2);
-        struct.loadoutTertiaryReticle = table_getweaponreticle(level.classtablename, classindex, 2);
+        struct.loadouttertiarycamo = table_getweaponcamo(level.classtablename, classindex, 2);
+        struct.loadouttertiaryreticle = table_getweaponreticle(level.classtablename, classindex, 2);
     }
 }
 
@@ -2097,12 +2097,12 @@ function loadout_updateclassdefault_weaponsheadless(struct) {
         var_b11f66fe609e2564 = loadout_updateclassdefault_headlessgetweaponn(self.var_49f7f5b78e79b56c, 0);
         var_cbf04d21c906f2af = var_b11f66fe609e2564[0];
         var_886ab8d288b46b2e = var_b11f66fe609e2564[1];
-        struct.loadoutTertiary = var_cbf04d21c906f2af;
+        struct.loadouttertiary = var_cbf04d21c906f2af;
         foreach (attachment, id in var_886ab8d288b46b2e.attachcustomtoidmap) {
             struct.var_494870a5978b5a09[struct.var_494870a5978b5a09.size] = attachment;
             struct.var_6bfdc660c23f71ea[struct.var_6bfdc660c23f71ea.size] = id;
         }
-        struct.loadoutTertiaryVariantID = var_886ab8d288b46b2e.variantid;
+        struct.loadouttertiaryvariantid = var_886ab8d288b46b2e.variantid;
     }
 }
 
@@ -2416,7 +2416,7 @@ function function_7ef7699b039b00e3() {
     if (isdefined(level.var_127cc78420f659f8)) {
         return [[ level.var_127cc78420f659f8 ]]();
     }
-    return !namespace_36f464722d326bbe::isBRStyleGameType();
+    return !namespace_36f464722d326bbe::isbrstylegametype();
 }
 
 // Namespace class/namespace_d19129e4fa5d176
@@ -2490,7 +2490,7 @@ function function_1d52554d28b51cbc(struct, classindex, table) {
     struct.loadoutprimaryreticle = function_c7a0b640c398497(table, classindex).primaryweapon.reticle;
     struct.loadoutsecondary = function_c7a0b640c398497(table, classindex).secondaryweapon.weapon;
     for (attachmentindex = 0; attachmentindex < namespace_d19129e4fa5d176::getmaxsecondaryattachments(); attachmentindex++) {
-        struct.loadoutSecondaryAttachment[attachmentindex] = table_getweaponattachment(table, classindex, 1, attachmentindex);
+        struct.loadoutsecondaryattachment[attachmentindex] = table_getweaponattachment(table, classindex, 1, attachmentindex);
     }
     struct.loadoutsecondarycamo = function_c7a0b640c398497(table, classindex).secondaryweapon.camo;
     struct.loadoutsecondaryreticle = function_c7a0b640c398497(table, classindex).secondaryweapon.reticle;
@@ -2537,11 +2537,11 @@ function loadout_updateclassfistweapons(struct) {
 // Checksum 0x0, Offset: 0x9075
 // Size: 0x9e
 function function_2dad855d27735128(struct) {
-    if (struct.loadoutSwimWeapon == "none") {
+    if (struct.loadoutswimweapon == "none") {
         if (getsubgametype() == "dmz" || getsubgametype() == "exgm" || getsubgametype() == "mini" || getsubgametype() == "plunder" || getsubgametype() == "br" || namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
-            struct.loadoutSwimWeapon = "iw9_swimfists_mp";
+            struct.loadoutswimweapon = "iw9_swimfists_mp";
         } else {
-            struct.loadoutSwimWeapon = "iw9_me_diveknife_mp";
+            struct.loadoutswimweapon = "iw9_me_diveknife_mp";
         }
     }
 }
@@ -2708,14 +2708,14 @@ function loadout_updateclassfinalweapons(struct) {
         struct.loadoutsecondaryfullname = getcompleteweaponname(struct.loadoutsecondaryobject);
     }
     if (istrue(level.var_9e090a159cb48220)) {
-        if (!isdefined(struct.loadoutTertiary) || struct.loadoutTertiary == "none") {
+        if (!isdefined(struct.loadouttertiary) || struct.loadouttertiary == "none") {
             struct.var_e3f8e7ca9c87781f = "none";
             struct.var_cc881f2bd3565d22 = undefined;
         } else {
-            if (istrue(struct.loadoutTertiaryAddBlueprintAttachments)) {
-                struct.var_cc881f2bd3565d22 = buildweapon_blueprintwithcustomattachments(struct.loadoutTertiary, struct.var_494870a5978b5a09, struct.loadoutTertiaryCamo, struct.loadoutTertiaryReticle, struct.loadoutTertiaryVariantID, struct.var_6bfdc660c23f71ea, struct.var_372f30ef6d6882ab, struct.var_afb9de90c523d105, istrue(struct.loadouthasnvg));
+            if (istrue(struct.loadouttertiaryaddblueprintattachments)) {
+                struct.var_cc881f2bd3565d22 = buildweapon_blueprintwithcustomattachments(struct.loadouttertiary, struct.var_494870a5978b5a09, struct.loadouttertiarycamo, struct.loadouttertiaryreticle, struct.loadouttertiaryvariantid, struct.var_6bfdc660c23f71ea, struct.var_372f30ef6d6882ab, struct.var_afb9de90c523d105, istrue(struct.loadouthasnvg));
             } else {
-                struct.var_cc881f2bd3565d22 = buildweapon(struct.loadoutTertiary, struct.var_494870a5978b5a09, struct.loadoutTertiaryCamo, struct.loadoutTertiaryReticle, struct.loadoutTertiaryVariantID, struct.var_6bfdc660c23f71ea, struct.var_372f30ef6d6882ab, struct.var_afb9de90c523d105, istrue(struct.loadouthasnvg), struct.var_b58a085466758039);
+                struct.var_cc881f2bd3565d22 = buildweapon(struct.loadouttertiary, struct.var_494870a5978b5a09, struct.loadouttertiarycamo, struct.loadouttertiaryreticle, struct.loadouttertiaryvariantid, struct.var_6bfdc660c23f71ea, struct.var_372f30ef6d6882ab, struct.var_afb9de90c523d105, istrue(struct.loadouthasnvg), struct.var_b58a085466758039);
             }
             struct.var_e3f8e7ca9c87781f = getcompleteweaponname(struct.var_cc881f2bd3565d22);
         }
@@ -2852,15 +2852,15 @@ function loadout_givesecondaryweapon(struct, respawnitems, var_b86cf5cef6838543)
 // Checksum 0x0, Offset: 0x9f75
 // Size: 0x136
 function function_6927b3b638f60d97(struct, respawnitems, var_b86cf5cef6838543) {
-    self.loadoutTertiary = struct.loadoutTertiary;
-    self.loadoutTertiaryCamo = struct.loadoutTertiaryCamo;
+    self.loadouttertiary = struct.loadouttertiary;
+    self.loadouttertiarycamo = struct.loadouttertiarycamo;
     self.var_494870a5978b5a09 = struct.var_494870a5978b5a09;
     self.var_6bfdc660c23f71ea = struct.var_6bfdc660c23f71ea;
-    self.loadoutTertiaryReticle = struct.loadoutTertiaryReticle;
+    self.loadouttertiaryreticle = struct.loadouttertiaryreticle;
     self.var_64e57707d385a2f5 = struct.var_64e57707d385a2f5;
-    self.loadoutTertiaryVariantID = struct.loadoutTertiaryVariantID;
+    self.loadouttertiaryvariantid = struct.loadouttertiaryvariantid;
     var_166a71f33928f623 = loadout_giveweaponobj("tertiary", struct.var_cc881f2bd3565d22, respawnitems, var_b86cf5cef6838543);
-    self.tertiaryWeapon = struct.var_e3f8e7ca9c87781f;
+    self.tertiaryweapon = struct.var_e3f8e7ca9c87781f;
     self.var_36940c335e7cc50c = struct.var_cc881f2bd3565d22;
     self.pers["tertiaryWeapon"] = struct.var_e3f8e7ca9c87781f;
     if (!isundefinedweapon(var_166a71f33928f623) && getdvarint(@"hash_547403d0bcc39f5") == 1) {
@@ -2874,7 +2874,7 @@ function function_6927b3b638f60d97(struct, respawnitems, var_b86cf5cef6838543) {
 // Checksum 0x0, Offset: 0xa0b3
 // Size: 0x5b
 function function_4ffce833ce15363c(struct) {
-    if (istrue(struct.disableBackupPistol)) {
+    if (istrue(struct.disablebackuppistol)) {
         return;
     }
     self giveweapon(struct.var_91e10e152b08ec1d, 0, 0, 0, 1, 1);
@@ -2937,11 +2937,11 @@ function function_c6cd33220cce845a(weaponslot, weaponobj, respawnitems, var_b86c
 // Checksum 0x0, Offset: 0xa271
 // Size: 0x58
 function function_9743c56a4d2dc135(struct) {
-    if (struct.loadoutSwimWeapon != "none") {
-        var_6199e5b093c84749 = buildweapon(struct.loadoutSwimWeapon);
+    if (struct.loadoutswimweapon != "none") {
+        var_6199e5b093c84749 = buildweapon(struct.loadoutswimweapon);
         self giveweapon(var_6199e5b093c84749);
     }
-    self.var_350710ea016eac45 = struct.loadoutSwimWeapon;
+    self.var_350710ea016eac45 = struct.loadoutswimweapon;
 }
 
 // Namespace class/namespace_d19129e4fa5d176
@@ -3096,9 +3096,9 @@ function loadout_updateplayerperks(struct, class) {
     loadoutextraperks = namespace_3c5a4254f2b957ea::getpersstat("loadoutExtraPerks");
     loadoutrigtrait = namespace_3c5a4254f2b957ea::getpersstat("loadoutRigTrait");
     loadoutusingspecialist = namespace_3c5a4254f2b957ea::getpersstat("loadoutUsingSpecialist");
-    perkPackageProgress = namespace_3c5a4254f2b957ea::getpersstat("perkPackageProgress");
-    perkPackageTier2Earned = namespace_3c5a4254f2b957ea::getpersstat("perkPackageTier2Earned");
-    perkPackageTier3State = namespace_3c5a4254f2b957ea::getpersstat("perkPackageTier3State");
+    perkpackageprogress = namespace_3c5a4254f2b957ea::getpersstat("perkPackageProgress");
+    perkpackagetier2earned = namespace_3c5a4254f2b957ea::getpersstat("perkPackageTier2Earned");
+    perkpackagetier3state = namespace_3c5a4254f2b957ea::getpersstat("perkPackageTier3State");
     respawnitems = respawnitems_getrespawnitems();
     if (function_b19856925ddabd5a(respawnitems)) {
         loadoutperks = function_40a3148d5514ffa3(respawnitems);
@@ -3108,9 +3108,9 @@ function loadout_updateplayerperks(struct, class) {
         loadoutextraperks = function_dc35cb143c497599(respawnitems);
         loadoutrigtrait = function_7f47875b5fd88f24(respawnitems);
         loadoutusingspecialist = function_eba2981fa45ae3bf(respawnitems);
-        perkPackageProgress = function_33e44385e17eecc1(respawnitems);
-        perkPackageTier2Earned = function_7af26fc564e26a5f(respawnitems);
-        perkPackageTier3State = function_7d2ba1e36afe24b0(respawnitems);
+        perkpackageprogress = function_33e44385e17eecc1(respawnitems);
+        perkpackagetier2earned = function_7af26fc564e26a5f(respawnitems);
+        perkpackagetier3state = function_7d2ba1e36afe24b0(respawnitems);
     } else {
         var_96e16459d5114277 = function_87c3b562f2b366ee(self);
         foreach (perk in var_96e16459d5114277) {
@@ -3144,10 +3144,10 @@ function loadout_updateplayerperks(struct, class) {
             }
         }
         if (istrue(level.var_606eb45e074ff204)) {
-            if (istrue(perkPackageTier2Earned) && isdefined(var_15f3e6df722fb1cf) && (!isdefined(loadoutperks) || !array_contains(loadoutperks, var_15f3e6df722fb1cf))) {
+            if (istrue(perkpackagetier2earned) && isdefined(var_15f3e6df722fb1cf) && (!isdefined(loadoutperks) || !array_contains(loadoutperks, var_15f3e6df722fb1cf))) {
                 namespace_82dcd1d5ae30ff7::giveperk(var_15f3e6df722fb1cf);
             }
-            if (isdefined(perkPackageTier3State) && isdefined(var_15f3e5df722faf9c) && perkPackageTier3State >= 2 && (!isdefined(loadoutperks) || !array_contains(loadoutperks, var_15f3e5df722faf9c))) {
+            if (isdefined(perkpackagetier3state) && isdefined(var_15f3e5df722faf9c) && perkpackagetier3state >= 2 && (!isdefined(loadoutperks) || !array_contains(loadoutperks, var_15f3e5df722faf9c))) {
                 namespace_82dcd1d5ae30ff7::giveperk(var_15f3e5df722faf9c);
             }
         }
@@ -3481,7 +3481,7 @@ function loadout_updateplayeraccessory(struct) {
 function loadout_updateplayerstreaktype(struct) {
     self.streaktype = loadout_getplayerstreaktype(struct.loadoutstreaktype);
     var_7f10159f1efb1ca8 = isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.var_b0455df76d97746a);
-    if (isdefined(level.gametype) && !namespace_36f464722d326bbe::isBRStyleGameType() && !var_7f10159f1efb1ca8) {
+    if (isdefined(level.gametype) && !namespace_36f464722d326bbe::isbrstylegametype() && !var_7f10159f1efb1ca8) {
         var_fa1875dbac819c2f = self getplayerdata(level.loadoutdata, "squadMembers", "scoreStreak");
         /#
             if (!istrue(var_fa1875dbac819c2f)) {
@@ -3650,13 +3650,13 @@ function loadout_updatefieldupgrades(struct, class) {
         }
         thread namespace_85d036cb78063c4a::watchplayersuperdelayweapon();
         thread namespace_727d2aa1d6c72038::perkpackage_initperkpackages();
-        if (!istrue(level.var_4b56eabbc77bfd21) && (namespace_36f464722d326bbe::isBRStyleGameType() || getgametype() == "gwai")) {
+        if (!istrue(level.var_4b56eabbc77bfd21) && (namespace_36f464722d326bbe::isbrstylegametype() || getgametype() == "gwai")) {
             super = fixsuperforbr(self.loadoutfieldupgrade1);
             if (isdefined(level.forcegivesuper)) {
                 self [[ level.forcegivesuper ]](super);
             }
         }
-    } else if (!istrue(level.var_4b56eabbc77bfd21) && namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (!istrue(level.var_4b56eabbc77bfd21) && namespace_36f464722d326bbe::isbrstylegametype()) {
         self.loadoutbrfieldupgrade = fixsuperforbr(self.loadoutfieldupgrade1);
         self.loadoutfieldupgrade1 = "none";
         self.var_4c4f03fa00925daf = 0;
@@ -3722,7 +3722,7 @@ function loadout_updateplayer(globalstruct, struct, class, var_4d71ac90487ba0d7,
     if (!istrue(level.noweaponsonstart)) {
         loadout_updateplayerequipment(struct, class);
     }
-    if (!istrue(game["isLaunchChunk"]) && !namespace_36f464722d326bbe::isBRStyleGameType() && !(isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.var_71b7ca11bb26d366))) {
+    if (!istrue(game["isLaunchChunk"]) && !namespace_36f464722d326bbe::isbrstylegametype() && !(isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.var_71b7ca11bb26d366))) {
         loadout_updateplayerkillstreaks(struct, class);
     }
     loadout_updateplayeractionslots(struct, class);
@@ -3806,8 +3806,8 @@ function setmlgspectatorclientloadoutdata(player, struct) {
             player setclientloadoutinfo(perkindex + 1 + "_extraPerk", var_8852e1da266fea14);
         }
     }
-    rigTrait = struct.loadoutrigtrait;
-    var_cadb7e2a87892576 = namespace_b6a8027f477010e1::getperkid(rigTrait);
+    rigtrait = struct.loadoutrigtrait;
+    var_cadb7e2a87892576 = namespace_b6a8027f477010e1::getperkid(rigtrait);
     player setclientloadoutinfo("rigTrait", var_cadb7e2a87892576);
     var_6d1a148efa806994 = namespace_93ae9c099aee8626::getrigindexfromarchetyperef(struct.loadoutarchetype);
     player setclientloadoutinfo("archetype", var_6d1a148efa806994);
@@ -3852,7 +3852,7 @@ function swaploadout() {
         namespace_3c5a4254f2b957ea::incpersstat("classChanges", 1);
     }
     namespace_d19129e4fa5d176::giveloadout(self.pers["team"], self.pers["class"], undefined, 1);
-    var_2b89ca43cac539d8 = namespace_36f464722d326bbe::isBRStyleGameType() && !namespace_4b0406965e556711::gameflag("prematch_done");
+    var_2b89ca43cac539d8 = namespace_36f464722d326bbe::isbrstylegametype() && !namespace_4b0406965e556711::gameflag("prematch_done");
     if (var_2b89ca43cac539d8 && isdefined(level.var_b89a535236a6f3d8) && !istrue(level.var_8281a47e2cecb257)) {
         self [[ level.var_b89a535236a6f3d8 ]]();
     }
@@ -3954,7 +3954,7 @@ function giveloadout(team, class, var_4d71ac90487ba0d7, var_bea1f8064eda3de9, sk
         thread function_866622357ab7abae();
     }
     if (getdvarint(@"hash_ae93197786d503ec", 0) == 1) {
-        thread monitorStowedRiotshieldSpeed();
+        thread monitorstowedriotshieldspeed();
     }
     if (getdvar(@"hash_138eb261013ca091") != "") {
         thread function_cfb799b827f505af();
@@ -4108,7 +4108,7 @@ function loadout_lognewlygivenloadout(globalstruct, struct, class) {
                 blueprint = level.weaponlootmapdata[var_8ef2c236f415dcd];
                 if (isdefined(blueprint)) {
                     var_d445f727570e7250 = blueprint;
-                    var_d445f727570e7250.blueprintName = var_8ef2c236f415dcd;
+                    var_d445f727570e7250.blueprintname = var_8ef2c236f415dcd;
                 }
             }
         }
@@ -4120,7 +4120,7 @@ function loadout_lognewlygivenloadout(globalstruct, struct, class) {
                 blueprint = level.weaponlootmapdata[var_f5763b2cfaf2080d];
                 if (isdefined(blueprint)) {
                     var_425ddba200712090 = blueprint;
-                    var_425ddba200712090.blueprintName = var_f5763b2cfaf2080d;
+                    var_425ddba200712090.blueprintname = var_f5763b2cfaf2080d;
                 }
             }
         }
@@ -4678,7 +4678,7 @@ function resetfunctionality() {
             namespace_7e17181d03156026::hidehudclear();
         }
         vehicle_allowplayeruse(self, 1);
-        if (level.minimaponbydefault || namespace_36f464722d326bbe::isBRStyleGameType() && istrue(game["inLiveLobby"])) {
+        if (level.minimaponbydefault || namespace_36f464722d326bbe::isbrstylegametype() && istrue(game["inLiveLobby"])) {
             self setclientomnvar("ui_hide_minimap", 0);
         } else {
             self setclientomnvar("ui_hide_minimap", 1);
@@ -4921,7 +4921,7 @@ function updateinstantclassswapallowed() {
     self endon("death");
     level endon("game_ended");
     self.instantclassswapallowed = 1;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_cd83a28652a3f837 = namespace_d576b6dc7cef9c62::function_8f54deec605690d1(getsubgametype());
         if (var_cd83a28652a3f837) {
             namespace_4b0406965e556711::gameflagwait("prematch_fade_done");
@@ -5102,13 +5102,13 @@ function loadout_editglobalclassstruct() {
 // Checksum 0x0, Offset: 0xf243
 // Size: 0x6f
 function loadout_updateglobalclassgamemode(globalstruct, class) {
-    gamemodeLoadout = self.pers["gamemodeLoadout"];
-    if (isdefined(gamemodeLoadout)) {
-        if (isdefined(gamemodeLoadout["loadoutFieldUpgrade1"])) {
-            globalstruct.loadoutfieldupgrade1 = gamemodeLoadout["loadoutFieldUpgrade1"];
+    gamemodeloadout = self.pers["gamemodeLoadout"];
+    if (isdefined(gamemodeloadout)) {
+        if (isdefined(gamemodeloadout["loadoutFieldUpgrade1"])) {
+            globalstruct.loadoutfieldupgrade1 = gamemodeloadout["loadoutFieldUpgrade1"];
         }
-        if (isdefined(gamemodeLoadout["loadoutFieldUpgrade2"])) {
-            globalstruct.loadoutfieldupgrade2 = gamemodeLoadout["loadoutFieldUpgrade2"];
+        if (isdefined(gamemodeloadout["loadoutFieldUpgrade2"])) {
+            globalstruct.loadoutfieldupgrade2 = gamemodeloadout["loadoutFieldUpgrade2"];
         }
     }
 }
@@ -5522,9 +5522,9 @@ function function_1a5ecf82792e6bb8(respawnitems) {
     var_239fb3af0cf6eeb2.loadoutextraperks = self.pers["loadoutExtraPerks"];
     var_239fb3af0cf6eeb2.loadoutrigtrait = self.pers["loadoutRigTrait"];
     var_239fb3af0cf6eeb2.loadoutusingspecialist = self.pers["loadoutUsingSpecialist"];
-    var_239fb3af0cf6eeb2.perkPackageProgress = self.pers["perkPackageProgress"];
-    var_239fb3af0cf6eeb2.perkPackageTier2Earned = self.pers["perkPackageTier2Earned"];
-    var_239fb3af0cf6eeb2.perkPackageTier3State = self.pers["perkPackageTier3State"];
+    var_239fb3af0cf6eeb2.perkpackageprogress = self.pers["perkPackageProgress"];
+    var_239fb3af0cf6eeb2.perkpackagetier2earned = self.pers["perkPackageTier2Earned"];
+    var_239fb3af0cf6eeb2.perkpackagetier3state = self.pers["perkPackageTier3State"];
     /#
         function_f1babd693e0a8c44(respawnitems);
     #/
@@ -5559,13 +5559,13 @@ function function_f1babd693e0a8c44(respawnitems) {
         #/
         if (istrue(level.var_606eb45e074ff204)) {
             /#
-                assert(isdefined(respawnitems.var_239fb3af0cf6eeb2.perkPackageProgress));
+                assert(isdefined(respawnitems.var_239fb3af0cf6eeb2.perkpackageprogress));
             #/
             /#
-                assert(isdefined(respawnitems.var_239fb3af0cf6eeb2.perkPackageTier2Earned));
+                assert(isdefined(respawnitems.var_239fb3af0cf6eeb2.perkpackagetier2earned));
             #/
             /#
-                assert(isdefined(respawnitems.var_239fb3af0cf6eeb2.perkPackageTier3State));
+                assert(isdefined(respawnitems.var_239fb3af0cf6eeb2.perkpackagetier3state));
             #/
         }
     #/
@@ -5795,7 +5795,7 @@ function function_eba2981fa45ae3bf(respawnitems) {
 // Checksum 0x0, Offset: 0x1074d
 // Size: 0x21
 function function_33e44385e17eecc1(respawnitems) {
-    return respawnitems.var_239fb3af0cf6eeb2.perkPackageProgress;
+    return respawnitems.var_239fb3af0cf6eeb2.perkpackageprogress;
 }
 
 // Namespace class/namespace_d19129e4fa5d176
@@ -5803,7 +5803,7 @@ function function_33e44385e17eecc1(respawnitems) {
 // Checksum 0x0, Offset: 0x10776
 // Size: 0x21
 function function_7af26fc564e26a5f(respawnitems) {
-    return respawnitems.var_239fb3af0cf6eeb2.perkPackageTier2Earned;
+    return respawnitems.var_239fb3af0cf6eeb2.perkpackagetier2earned;
 }
 
 // Namespace class/namespace_d19129e4fa5d176
@@ -5811,7 +5811,7 @@ function function_7af26fc564e26a5f(respawnitems) {
 // Checksum 0x0, Offset: 0x1079f
 // Size: 0x21
 function function_7d2ba1e36afe24b0(respawnitems) {
-    return respawnitems.var_239fb3af0cf6eeb2.perkPackageTier3State;
+    return respawnitems.var_239fb3af0cf6eeb2.perkpackagetier3state;
 }
 
 // Namespace class/namespace_d19129e4fa5d176
@@ -5972,16 +5972,16 @@ function compareclassstructs(var_fd10cbc8e506f14e, var_fd10cac8e506ef1b) {
         if (!checkclassstructarray(var_fd10cbc8e506f14e.var_6bfdc660c23f71ea, var_fd10cac8e506ef1b.var_6bfdc660c23f71ea)) {
             return 0;
         }
-        if (var_fd10cbc8e506f14e.loadoutTertiaryCamo != var_fd10cac8e506ef1b.loadoutTertiaryCamo) {
+        if (var_fd10cbc8e506f14e.loadouttertiarycamo != var_fd10cac8e506ef1b.loadouttertiarycamo) {
             return 0;
         }
-        if (var_fd10cbc8e506f14e.loadoutTertiaryReticle != var_fd10cac8e506ef1b.loadoutTertiaryReticle) {
+        if (var_fd10cbc8e506f14e.loadouttertiaryreticle != var_fd10cac8e506ef1b.loadouttertiaryreticle) {
             return 0;
         }
         if (var_fd10cbc8e506f14e.var_64e57707d385a2f5 != var_fd10cac8e506ef1b.var_64e57707d385a2f5) {
             return 0;
         }
-        if (var_fd10cbc8e506f14e.loadoutTertiaryVariantID != var_fd10cac8e506ef1b.loadoutTertiaryVariantID) {
+        if (var_fd10cbc8e506f14e.loadouttertiaryvariantid != var_fd10cac8e506ef1b.loadouttertiaryvariantid) {
             return 0;
         }
         if (var_fd10cbc8e506f14e.var_372f30ef6d6882ab != var_fd10cac8e506ef1b.var_372f30ef6d6882ab) {
@@ -6102,10 +6102,10 @@ function unblockclasschange() {
 function function_c5ce8711741e44b8() {
     if (gameflag("infil_will_run") && !gameflag("prematch_done")) {
         self setcamerathirdperson(0);
-        thread restoreGameplayThirdPerson();
+        thread restoregameplaythirdperson();
     } else if (istrue(self.var_9e3bdda27a519a9f)) {
         self setcamerathirdperson(1);
-    } else if (istrue(self.liveRagdoll)) {
+    } else if (istrue(self.liveragdoll)) {
         self setcamerathirdperson(1);
     } else {
         switch (level.thirdpersonmode) {
@@ -6131,7 +6131,7 @@ function function_c5ce8711741e44b8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x111f3
 // Size: 0x2c
-function restoreGameplayThirdPerson() {
+function restoregameplaythirdperson() {
     self endon("death_or_disconnect");
     self notify("restoreGameplayThirdPerson");
     self endon("restoreGameplayThirdPerson");
@@ -6330,7 +6330,7 @@ function function_866622357ab7abae() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x117b9
 // Size: 0x13d
-function monitorStowedRiotshieldSpeed() {
+function monitorstowedriotshieldspeed() {
     self endon("death_or_disconnect");
     self endon("game_ended");
     self notify("monitorStowedRiotshieldSpeed");
@@ -6448,7 +6448,7 @@ function function_c8d94b3795b095d4(var_d792416e0edaee34) {
     var_a3661cffa8311604 = spawnstruct();
     var_a3661cffa8311604.isunderwater = 0;
     var_a3661cffa8311604.var_5996df3d783693e8 = undefined;
-    var_a3661cffa8311604.backupPistol = var_d792416e0edaee34;
+    var_a3661cffa8311604.backuppistol = var_d792416e0edaee34;
     while (1) {
         if (player function_6f55d55ccff20d14()) {
             if (!var_a3661cffa8311604.isunderwater) {
@@ -6476,9 +6476,9 @@ function function_415e5061f6389e8a(var_a3661cffa8311604) {
     player disableweaponpickup();
     player function_9db12c3737627ac7();
     var_a3661cffa8311604.var_5996df3d783693e8 = player getcurrentprimaryweapon();
-    var_929540bb89d0a925 = var_a3661cffa8311604.backupPistol;
+    var_929540bb89d0a925 = var_a3661cffa8311604.backuppistol;
     foreach (weap in player.primaryweapons) {
-        if (weap != var_a3661cffa8311604.backupPistol && weaponclass(weap) == "pistol") {
+        if (weap != var_a3661cffa8311604.backuppistol && weaponclass(weap) == "pistol") {
             var_929540bb89d0a925 = weap;
             break;
         }
@@ -6492,9 +6492,9 @@ function function_415e5061f6389e8a(var_a3661cffa8311604) {
 // Size: 0xb2
 function function_93d99d806146e8d7(var_a3661cffa8311604) {
     player = self;
-    if (!isdefined(var_a3661cffa8311604.var_5996df3d783693e8) || var_a3661cffa8311604.backupPistol == var_a3661cffa8311604.var_5996df3d783693e8) {
+    if (!isdefined(var_a3661cffa8311604.var_5996df3d783693e8) || var_a3661cffa8311604.backuppistol == var_a3661cffa8311604.var_5996df3d783693e8) {
         foreach (weap in player.primaryweapons) {
-            if (weap != var_a3661cffa8311604.backupPistol) {
+            if (weap != var_a3661cffa8311604.backuppistol) {
                 var_a3661cffa8311604.var_5996df3d783693e8 = weap;
                 break;
             }
@@ -6511,7 +6511,7 @@ function function_7d89af78724b2cb8(var_a3661cffa8311604) {
     var_820724b64fc1515 = player getcurrentprimaryweapon();
     player enableweaponpickup();
     player function_9db12c3737627ac7();
-    if (!isdefined(var_820724b64fc1515) || var_a3661cffa8311604.backupPistol == var_820724b64fc1515) {
+    if (!isdefined(var_820724b64fc1515) || var_a3661cffa8311604.backuppistol == var_820724b64fc1515) {
         player function_93d99d806146e8d7(var_a3661cffa8311604);
         result = 0;
         while (!result) {

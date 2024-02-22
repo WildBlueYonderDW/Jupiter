@@ -15,7 +15,7 @@
 // Size: 0x2f
 function function_fe852f92145c24a6() {
     function_ac97a4f2ab8c2d53("combat", "tryAssignTask", &function_f5539669faf51bc2);
-    function_ac97a4f2ab8c2d53("combat", "tryBindObjective", &tryBindObjective);
+    function_ac97a4f2ab8c2d53("combat", "tryBindObjective", &trybindobjective);
 }
 
 // Namespace namespace_ae731a50428dac3c/namespace_ac1fbb84a83113b9
@@ -183,7 +183,7 @@ function function_59c1dbdc2ad03ad6(var_17953215dd7c5f9b, loot) {
     if (!isdefined(state) || state == "hidden") {
         return 0;
     }
-    scriptablename = namespace_cb965d2f71fefddc::lootGetScriptableName(loot);
+    scriptablename = namespace_cb965d2f71fefddc::lootgetscriptablename(loot);
     if (!isdefined(scriptablename) || !namespace_cb965d2f71fefddc::isweaponpickup(scriptablename)) {
         return 0;
     }
@@ -205,7 +205,7 @@ function function_59c1dbdc2ad03ad6(var_17953215dd7c5f9b, loot) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8ae
 // Size: 0xaa
-function tryBindObjective(var_17953215dd7c5f9b) {
+function trybindobjective(var_17953215dd7c5f9b) {
     subcategory = var_17953215dd7c5f9b.info.subcategory;
     if (subcategory == "kill" || subcategory == "down" || subcategory == "any") {
         function_6ac6c7e169458bc4(var_17953215dd7c5f9b);

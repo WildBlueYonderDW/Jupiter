@@ -335,9 +335,9 @@ function function_41392da51bde3a01(var_ec75cb30b9c76451) {
         assertex(var_a84449a9bd492279 == "ActivationName", "Broadcast definitions can't have Activation Names if their Activity Moment is not set to 'ActivationName'");
     #/
     /#
-        assertex(isdefined(var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.var_a84449a9bd492279[0].var_cf0d4d8cc5ac99a4.ActivationName), "The broadcast's Activation Name property is not defined in the Activity Definition asset");
+        assertex(isdefined(var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.var_a84449a9bd492279[0].var_cf0d4d8cc5ac99a4.activationname), "The broadcast's Activation Name property is not defined in the Activity Definition asset");
     #/
-    return var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.var_a84449a9bd492279[0].var_cf0d4d8cc5ac99a4.ActivationName;
+    return var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.var_a84449a9bd492279[0].var_cf0d4d8cc5ac99a4.activationname;
 }
 
 // Namespace namespace_6ffa16dea1979f22/namespace_c47da9d4c2db4f0d
@@ -449,10 +449,10 @@ function function_709eb291cbeeb02(var_e6013eac45290cab, var_d389f1191e609479) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17a0
 // Size: 0xba
-function function_e38f1d6d5a208fe1(ActivationName, var_90e824cc8b12a39c) {
+function function_e38f1d6d5a208fe1(activationname, var_90e824cc8b12a39c) {
     var_aee1297400a66c99 = [];
     var_f565df3793c12460 = function_42a790b5e4c0dd36(self);
-    var_76f28f9ed47d04b6 = var_f565df3793c12460.var_ce5a4a81ad64ed80[ActivationName];
+    var_76f28f9ed47d04b6 = var_f565df3793c12460.var_ce5a4a81ad64ed80[activationname];
     if (isdefined(var_76f28f9ed47d04b6)) {
         for (var_4acb1935b73e5153 = 0; var_4acb1935b73e5153 < var_76f28f9ed47d04b6.size; var_4acb1935b73e5153++) {
             var_ec75cb30b9c76451 = var_76f28f9ed47d04b6[var_4acb1935b73e5153];
@@ -491,9 +491,9 @@ function function_feb90d1dee0c97d1(var_4ed40899ed266f0f) {
 // Size: 0x45
 function function_2756e9e9dc98a709(var_4ed40899ed266f0f) {
     /#
-        assertex(isdefined(var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.StringReference), "The string reference for this broadcast object is undefined. Check the Script Bundle for more details");
+        assertex(isdefined(var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.stringreference), "The string reference for this broadcast object is undefined. Check the Script Bundle for more details");
     #/
-    return var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.StringReference;
+    return var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.stringreference;
 }
 
 // Namespace namespace_6ffa16dea1979f22/namespace_c47da9d4c2db4f0d
@@ -844,7 +844,7 @@ function private function_ec28f992a3ffd931(var_cd1bcf4d1329635e) {
 function private function_6b83f7908da7ccb7(var_e690c121ea291e3e, var_d88a4b756f4d46c7) {
     foreach (var_440272a7c84e0ab8 in var_d88a4b756f4d46c7.var_cf0d4d8cc5ac99a4.var_440272a7c84e0ab8) {
         var_420b9a9f4293a416 = function_7e7b315fcb2b9159(var_d88a4b756f4d46c7, 1);
-        function_4c3aca27bf7091cb(var_420b9a9f4293a416, var_440272a7c84e0ab8.var_cf0d4d8cc5ac99a4.ActivationName);
+        function_4c3aca27bf7091cb(var_420b9a9f4293a416, var_440272a7c84e0ab8.var_cf0d4d8cc5ac99a4.activationname);
         if (var_440272a7c84e0ab8.variant_type == "Types_ActivityBroadcastData_ActivationName_StringReference") {
             function_fea9146cdc329ceb(var_420b9a9f4293a416, "StringReference");
         } else if (var_440272a7c84e0ab8.variant_type == "Types_ActivityBroadcastData_ActivationName_SplashReference") {
@@ -865,12 +865,12 @@ function private function_6b83f7908da7ccb7(var_e690c121ea291e3e, var_d88a4b756f4
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x255e
 // Size: 0x68
-function private function_4c3aca27bf7091cb(var_ec75cb30b9c76451, ActivationName) {
+function private function_4c3aca27bf7091cb(var_ec75cb30b9c76451, activationname) {
     var_a84449a9bd492279 = function_c24185c47d989c1a(var_ec75cb30b9c76451);
     /#
         assertex(var_a84449a9bd492279 == "ActivationName", "Broadcast definitions can't have Activation Names if their Activity Moment is not set to 'ActivationName'");
     #/
-    var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.var_a84449a9bd492279[0].var_cf0d4d8cc5ac99a4.ActivationName = ActivationName;
+    var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.var_a84449a9bd492279[0].var_cf0d4d8cc5ac99a4.activationname = activationname;
 }
 
 // Namespace namespace_6ffa16dea1979f22/namespace_c47da9d4c2db4f0d

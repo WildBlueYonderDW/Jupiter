@@ -96,23 +96,23 @@ function function_9611765a6973a30a(dvar, config, isprimary) {
 // Checksum 0x0, Offset: 0x6fc
 // Size: 0xeb
 function function_138468dd32aae3fe() {
-    levelData = undefined;
+    leveldata = undefined;
     if (issharedfuncdefined("juggernaut_recon", "levelData")) {
-        levelData = [[ getsharedfunc("juggernaut_recon", "levelData") ]]("juggernaut_recon");
+        leveldata = [[ getsharedfunc("juggernaut_recon", "levelData") ]]("juggernaut_recon");
     }
-    if (isdefined(levelData)) {
-        levelData.capturecallback = &function_c13dca1515447b28;
-        levelData.destroycallback = &function_bbd5edacfcb74661;
-        levelData.activatecallback = &function_546bfb8d4d00c31;
-        levelData.minimapicon = "jup_ui_map_icon_jugg_recon_drop";
-        levelData.headicon = "jup_ui_map_icon_jugg_recon_drop";
+    if (isdefined(leveldata)) {
+        leveldata.capturecallback = &function_c13dca1515447b28;
+        leveldata.destroycallback = &function_bbd5edacfcb74661;
+        leveldata.activatecallback = &function_546bfb8d4d00c31;
+        leveldata.minimapicon = "jup_ui_map_icon_jugg_recon_drop";
+        leveldata.headicon = "jup_ui_map_icon_jugg_recon_drop";
         if (namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e()) {
-            levelData.capturestring = "MP/BR_CRATE_LOADOUT";
+            leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
         } else {
-            levelData.capturestring = "KILLSTREAKS_HINTS/JUGG_RECON_CRATE_PICKUP";
+            leveldata.capturestring = "KILLSTREAKS_HINTS/JUGG_RECON_CRATE_PICKUP";
         }
-        if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
-            levelData.basemodel = self.var_3c9615208f1c09b8.cratemodel;
+        if (!namespace_36f464722d326bbe::isbrstylegametype()) {
+            leveldata.basemodel = self.var_3c9615208f1c09b8.cratemodel;
         }
     }
 }
@@ -151,7 +151,7 @@ function function_2e34ff8caa82d72d(streakinfo, var_76553dc7aaad2909) {
         }
     }
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["juggernaut_recon"];
-    self.var_3c9615208f1c09b8 = function_d5974b5f58f14716(bundle, level.var_e084c71df9ac20f1.config, streakinfo.mpstreaksysteminfo.var_12c0f53a71c9bcc8);
+    self.var_3c9615208f1c09b8 = function_d5974b5f58f14716(bundle, level.var_e084c71df9ac20f1.config, streakinfo.mpstreaksysteminfo.blueprintindex);
     function_138468dd32aae3fe();
     var_97e8248da4371635 = 0;
     /#
@@ -161,7 +161,7 @@ function function_2e34ff8caa82d72d(streakinfo, var_76553dc7aaad2909) {
         thread function_8bac95417054dcbf(streakinfo);
     } else {
         namespace_f64231d5b7a2c3c4::reservevehicle();
-        deployweaponobj = self.var_3c9615208f1c09b8.var_8881166e57766e3a;
+        deployweaponobj = self.var_3c9615208f1c09b8.deployweapon;
         if (isdefined(level.var_27f78817b59dfe32)) {
             streakinfo.var_fb58a31c756db4cc = level.var_27f78817b59dfe32;
         }
@@ -216,7 +216,7 @@ function function_20037b6d61f6913a(streakinfo) {
     if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
         [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
     }
-    if (issharedfuncdefined("juggernaut_recon", "dropCrateFromScriptedHeli") && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (issharedfuncdefined("juggernaut_recon", "dropCrateFromScriptedHeli") && !namespace_36f464722d326bbe::isbrstylegametype()) {
         streakinfo.vehicleisreserved = 1;
         data = streakinfo;
         scenenode = [[ getsharedfunc("juggernaut_recon", "dropCrateFromScriptedHeli") ]](owner, owner.team, "juggernaut_recon", position, var_811f337efd111e98, position, data, streakinfo);
@@ -231,7 +231,7 @@ function function_20037b6d61f6913a(streakinfo) {
         }
     } else {
         namespace_f64231d5b7a2c3c4::clearvehiclereservation();
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             var_e648e96614161011 = 1;
             owner thread namespace_6c578d6ef48f10ef::spawnjuggernautcrateatposition(position, var_e648e96614161011);
         }
@@ -293,7 +293,7 @@ function function_8bac95417054dcbf(streakinfo) {
         var_6d42c4418479180d = var_fc8f7897b5023b48 || !isdefined(self.var_3c9615208f1c09b8);
         if (var_6d42c4418479180d) {
             bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["juggernaut_recon"];
-            self.var_3c9615208f1c09b8 = function_d5974b5f58f14716(bundle, level.var_e084c71df9ac20f1.config, streakinfo.mpstreaksysteminfo.var_12c0f53a71c9bcc8);
+            self.var_3c9615208f1c09b8 = function_d5974b5f58f14716(bundle, level.var_e084c71df9ac20f1.config, streakinfo.mpstreaksysteminfo.blueprintindex);
         }
         if (isdefined(self.var_3c9615208f1c09b8)) {
             result = self [[ getsharedfunc("juggernaut_recon", "makeJuggernaut") ]](self.var_3c9615208f1c09b8, streakinfo);
@@ -478,7 +478,7 @@ function function_a8ed613077c9e07(streakinfo) {
 // Checksum 0x0, Offset: 0x149d
 // Size: 0x53
 function function_d6e3424025c35356(streakinfo, juggcontext) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         level callback::callback("killstreak_finish_use", {streakinfo:streakinfo});
         streakinfo.expiredbydeath = 1;
         namespace_9abe40d2af041eb2::recordkillstreakendstats(streakinfo);
@@ -503,7 +503,7 @@ function function_ca2a1fd81a921292(streakinfo) {
 // Checksum 0x0, Offset: 0x153c
 // Size: 0x16b
 function function_68e45178659d4dfd(var_cbcc20cc563590c7) {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (!isdefined(var_cbcc20cc563590c7)) {
             var_cbcc20cc563590c7 = "playerObjective";
         }
@@ -541,7 +541,7 @@ function function_68e45178659d4dfd(var_cbcc20cc563590c7) {
 // Checksum 0x0, Offset: 0x16ae
 // Size: 0x71
 function function_2bb8ec2d315b7cb1(juggcontext, var_cbcc20cc563590c7) {
-    if (isdefined(self) && namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (isdefined(self) && namespace_36f464722d326bbe::isbrstylegametype()) {
         if (!isdefined(var_cbcc20cc563590c7)) {
             var_cbcc20cc563590c7 = "playerObjective";
         }

@@ -156,7 +156,7 @@ function function_6f9be6b35f3dd478(var_b608af6e8d86fe42) {
         var_489bfe1c59fe7d65 = int(var_489bfe1c59fe7d65 * ter_op(isdefined(level.var_c0fe6cb6face684e) && istrue(var_b608af6e8d86fe42), level.var_c0fe6cb6face684e, 1));
         thread function_10ec22d7a74ce832(var_2ff0b7294cde30f8);
         thread function_e6f69ea82cb18d6();
-        if (isBRStyleGameType()) {
+        if (isbrstylegametype()) {
             namespace_2c99f682179581bf::function_e457560e955be5f5(self.owner.team, self.origin, var_489bfe1c59fe7d65, 2.05);
         }
         var_cfe9a57ce86b8d4 = int(var_2ff0b7294cde30f8 * 1000);
@@ -275,7 +275,7 @@ function function_ce4c686b86693133(data) {
     attacker = data.attacker;
     if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker thread doScoreEvent(#"destroyed_equipment");
+        attacker thread doscoreevent(#"destroyed_equipment");
         attacker thread namespace_25c5a6f43bb97b43::equipmentdestroyed(self);
     }
     function_2564841f84f5470c(data);
@@ -330,7 +330,7 @@ function function_9c91a67e3f179afd(var_4fac8b8ce36e09f1) {
 function function_248b0fbbc5de7e43(attacker) {
     if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker thread doScoreEvent(#"destroyed_equipment");
+        attacker thread doscoreevent(#"destroyed_equipment");
         attacker thread namespace_25c5a6f43bb97b43::equipmentdestroyed(self);
     }
 }
@@ -372,7 +372,7 @@ function function_8cf01d18d90d2c4c(data) {
 // Checksum 0x0, Offset: 0xec0
 // Size: 0x55
 function function_4b1fcc56668622d1() {
-    if (isdefined(self.owner) && istrue(level.tier1ModeEnabled)) {
+    if (isdefined(self.owner) && istrue(level.tier1modeenabled)) {
         if (issharedfuncdefined("player", "showMiniMap")) {
             self.owner [[ getsharedfunc("player", "showMiniMap") ]]();
         }
@@ -385,7 +385,7 @@ function function_4b1fcc56668622d1() {
 // Checksum 0x0, Offset: 0xf1c
 // Size: 0x67
 function function_a8d0b1afb1554b5a() {
-    if (isdefined(self.owner) && istrue(level.tier1ModeEnabled)) {
+    if (isdefined(self.owner) && istrue(level.tier1modeenabled)) {
         if (issharedfuncdefined("player", "hideMiniMap")) {
             self.owner [[ getsharedfunc("player", "hideMiniMap") ]]();
         }

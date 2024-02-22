@@ -257,7 +257,7 @@ function cruisepredator_detachplayerfromintro(streakinfo, enemytargetmarkergroup
         var_4084c95c19c7937a setclientomnvar("ui_predator_missile", 0);
         var_4084c95c19c7937a painvisionon();
         var_4084c95c19c7937a killstreak_restorenvgstate();
-        var_4084c95c19c7937a killstreak_setMainVision("");
+        var_4084c95c19c7937a killstreak_setmainvision("");
         var_4084c95c19c7937a function_8b676f496920e2ab();
         level thread namespace_36f464722d326bbe::fadetoblackforplayer(var_4084c95c19c7937a, 0, 0);
     }
@@ -452,7 +452,7 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
     missile thread cruisepredator_watchownerdisownaction("player_fatal_death");
     if (!istrue(thirdperson)) {
         self visionsetnakedforplayer("", 0);
-        killstreak_setMainVision("");
+        killstreak_setmainvision("");
     }
     namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(0.05);
     if (!istrue(thirdperson)) {
@@ -465,13 +465,13 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
         if (isdefined(level.mapname) && (issubstr(level.mapname, "_shipment") || issubstr(level.mapname, "mp_skerries"))) {
             var_fce69f389fc06869 = "cruise_color_fog_mp";
         }
-        killstreak_setMainVision(var_fce69f389fc06869);
+        killstreak_setmainvision(var_fce69f389fc06869);
         if (isdefined(level.var_638c653eda9d1cd3)) {
             self.currentvisionset = level.var_638c653eda9d1cd3;
         } else {
             self.currentvisionset = "cruise_color_mp";
         }
-        killstreak_setMainVision(self.currentvisionset);
+        killstreak_setmainvision(self.currentvisionset);
         self.soundent = spawn("script_origin", missile.origin);
         self.soundent showonlytoplayer(self);
         self.soundent playloopsound("iw9_cruise_missile_plr");
@@ -483,7 +483,7 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
         self setclientomnvar("ui_predator_missiles_left", -1);
         if (function_ecc973ad47944e1e()) {
             var_e8bedfce1e0c7d2 = function_44e0bd95b98288ab();
-            killstreak_setMainVision(var_e8bedfce1e0c7d2);
+            killstreak_setmainvision(var_e8bedfce1e0c7d2);
             setthermalvision(1, 12, 1500);
             _shellshock("killstreak_veh_camera_flir_mp", "top", missile.lifetime, 0);
         }
@@ -766,7 +766,7 @@ function cruisepredator_returnplayer(streakinfo, exploded) {
         wait(0.5);
     }
     function_8b676f496920e2ab();
-    killstreak_setMainVision("");
+    killstreak_setmainvision("");
     self painvisionon();
     killstreak_restorenvgstate();
     val::function_588f2307a3040610("cruisePredator");
@@ -803,9 +803,9 @@ function cruisepredator_watchownerdisownaction(action) {
 // Checksum 0x0, Offset: 0x27c9
 // Size: 0x21
 function cruisepredator_startexplodecamtransition() {
-    killstreak_setMainVision("killstreak_slamzoom");
+    killstreak_setmainvision("killstreak_slamzoom");
     wait(0.1);
-    killstreak_setMainVision("");
+    killstreak_setmainvision("");
 }
 
 // Namespace cruise_predator/namespace_fd47b78f0802e959
@@ -824,9 +824,9 @@ function cruisepredator_startfadecamtransition(fadeintime, var_6ea9cf1222359e6, 
         fadeouttime = 0.05;
     }
     if (isdefined(var_2007ede6118d6b9f)) {
-        killstreak_setMainVision(var_2007ede6118d6b9f);
+        killstreak_setmainvision(var_2007ede6118d6b9f);
         wait(var_6ea9cf1222359e6);
-        killstreak_setMainVision("");
+        killstreak_setmainvision("");
     } else {
         level thread namespace_36f464722d326bbe::fadetoblackforplayer(self, 1, fadeintime);
         wait(var_6ea9cf1222359e6);
@@ -898,7 +898,7 @@ function cruisepredator_delayplayslamzoom(pod, delaytime, thirdperson) {
     pod endon("disowned");
     namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(delaytime);
     if (!istrue(thirdperson)) {
-        killstreak_setMainVision("killstreak_slamzoom");
+        killstreak_setmainvision("killstreak_slamzoom");
         level thread namespace_36f464722d326bbe::fadetoblackforplayer(self, 1, 0.2);
         wait(0.2);
         level thread namespace_36f464722d326bbe::fadetoblackforplayer(self, 0, 0);

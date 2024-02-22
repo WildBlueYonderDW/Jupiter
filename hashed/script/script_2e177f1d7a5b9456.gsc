@@ -71,7 +71,7 @@ function function_ab08c03a615a0cb4() {
     var_dae9f3f3720e4499 = getstructarray(self.var_626b45032e1892da, "script_noteworthy");
     self.var_bd16f0d97883fd8d = var_dae9f3f3720e4499[0];
     self.var_575022c4aab8bff4 = [];
-    self.ShouldReinforce = 1;
+    self.shouldreinforce = 1;
     function_b6fc2c96b463c007(self);
 }
 
@@ -149,7 +149,7 @@ function function_142dd8b75b609524() {
 // Checksum 0x0, Offset: 0x1009
 // Size: 0x127
 function function_ff106919e26008fe() {
-    self.ShouldReinforce = 0;
+    self.shouldreinforce = 0;
     if (isdefined(self.var_dcb639dfa56e091b)) {
         namespace_614554f86e52695c::function_9950e6e485bf5261(self.var_dcb639dfa56e091b);
     }
@@ -743,7 +743,7 @@ function function_8e5eba83ac0e12e5(var_be8ebaf932e93656, userdata, agent, data) 
 // Checksum 0x0, Offset: 0x2b83
 // Size: 0x36
 function function_ea2e54093d2e1c1b(var_be8ebaf932e93656, userdata, agent, data) {
-    if (userdata.ShouldReinforce) {
+    if (userdata.shouldreinforce) {
         return 1;
     }
     return 0;

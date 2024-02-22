@@ -63,7 +63,7 @@ function function_4a2ecb33b6adeb85(damagedata, var_e913079a5ffda56d) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35b
 // Size: 0x2cd
-function function_c204e7f8a2ab087f(attacker, objweapon, mod, amount, maxhealth, var_27a98b98aa61a370) {
+function getmodifieddamageusingdamagetuning(attacker, objweapon, mod, amount, maxhealth, var_27a98b98aa61a370) {
     var_85dce75bab934da3 = var_27a98b98aa61a370.var_c826d3b6bb850;
     hitstokill = var_27a98b98aa61a370.var_aaf772ef14275e0b;
     if (!isdefined(var_85dce75bab934da3)) {

@@ -53,9 +53,9 @@ function main() {
         self.var_d7f4a1b60f84e53f = self.script_stealthgroup;
     }
     if (getdvarint(@"hash_6109644d57e1122e", 0)) {
-        thread namespace_2ab3cc97bdf86f18::function_22c3dc642b82a544();
+        thread namespace_2ab3cc97bdf86f18::suspicious_door_thread();
     }
-    if (isdefined(level.stealth) && isdefined(level.stealth.var_b164de1a339a2b06) && !(isdefined(self.var_971d11b71ceb4346) && isdefined(self.var_971d11b71ceb4346.var_4975344f645984a6))) {
+    if (isdefined(level.stealth) && isdefined(level.stealth.var_b164de1a339a2b06) && !(isdefined(self.aisettings) && isdefined(self.aisettings.var_4975344f645984a6))) {
         self function_d493e7fe15e5eaf4(level.stealth.var_b164de1a339a2b06);
     }
     if (isdefined(level.var_4fa3c4eb77c24130)) {

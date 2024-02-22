@@ -84,7 +84,7 @@ function function_9a7d934b60433cd9() {
 // Size: 0x1b
 function function_9bcdecc2b1fcc04c() {
     wait(3);
-    namespace_d696adde758cbe79::showDMZSplash("dmz_supply_drop", level.players);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_supply_drop", level.players);
 }
 
 // Namespace namespace_d3cf3492214e1e4f/namespace_8fb3ba83379e798c

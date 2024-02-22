@@ -481,7 +481,7 @@ function targetmarkergroup_markentity(ent, var_4226c12910d867d4, var_262f4b55aa1
         return;
     }
     if (isdefined(ent) && isplayer(ent)) {
-        if (istrue(ent.liveRagdoll)) {
+        if (istrue(ent.liveragdoll)) {
             return;
         }
         if (istrue(var_262f4b55aa151de1)) {

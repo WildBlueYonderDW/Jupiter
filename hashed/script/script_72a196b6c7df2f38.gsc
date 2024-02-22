@@ -173,7 +173,7 @@ function function_6438932e35cbbfb7(var_2b23f2a75a7eb443, var_c38eb8ba73256bfb, d
     }
     state = var_5aaf7c7163c04623 get_state();
     var_568f62a24b19c46d = undefined;
-    var_db52b4a8aba13320 = var_5aaf7c7163c04623 function_6a6ec88abab6a723();
+    scenescriptbundle = var_5aaf7c7163c04623 function_6a6ec88abab6a723();
     var_51d2f645ad8afdaf = [];
     if (!isdefined(var_c38eb8ba73256bfb)) {
         var_c38eb8ba73256bfb = var_5aaf7c7163c04623 function_8a37fe423de2b9db();
@@ -182,7 +182,7 @@ function function_6438932e35cbbfb7(var_2b23f2a75a7eb443, var_c38eb8ba73256bfb, d
         var_c38eb8ba73256bfb = [0:var_c38eb8ba73256bfb];
     }
     foreach (shotname in var_c38eb8ba73256bfb) {
-        var_698da5af57b757e7 = var_db52b4a8aba13320 function_eed2bf36a4defb90(shotname);
+        var_698da5af57b757e7 = scenescriptbundle function_eed2bf36a4defb90(shotname);
         var_51d2f645ad8afdaf[var_698da5af57b757e7] = var_698da5af57b757e7;
     }
     foreach (var_370294f3b91920df in var_84b542bb7490bea7.var_568f62a24b19c46d) {
@@ -286,11 +286,11 @@ function function_6438932e35cbbfb7(var_2b23f2a75a7eb443, var_c38eb8ba73256bfb, d
 // Size: 0x76
 function function_8a37fe423de2b9db() {
     var_5aaf7c7163c04623 = self;
-    var_db52b4a8aba13320 = var_5aaf7c7163c04623 function_6a6ec88abab6a723();
+    scenescriptbundle = var_5aaf7c7163c04623 function_6a6ec88abab6a723();
     var_c38eb8ba73256bfb = [];
-    shotcount = var_db52b4a8aba13320 function_d1338e27a26ecaeb();
+    shotcount = scenescriptbundle function_d1338e27a26ecaeb();
     for (var_698da5af57b757e7 = 0; var_698da5af57b757e7 < shotcount; var_698da5af57b757e7++) {
-        shot = var_db52b4a8aba13320 function_2218afa82a590ea3(var_698da5af57b757e7);
+        shot = scenescriptbundle function_2218afa82a590ea3(var_698da5af57b757e7);
         var_c38eb8ba73256bfb[var_698da5af57b757e7] = shot function_55042076624e1180();
     }
     return var_c38eb8ba73256bfb;
@@ -354,7 +354,7 @@ function get_object(var_8a2a5f9c6428c06c) {
         return undefined;
     }
     var_84b542bb7490bea7 = var_5aaf7c7163c04623.var_84b542bb7490bea7;
-    var_db52b4a8aba13320 = var_5aaf7c7163c04623 function_6a6ec88abab6a723();
+    scenescriptbundle = var_5aaf7c7163c04623 function_6a6ec88abab6a723();
     if (isint(var_8a2a5f9c6428c06c)) {
         var_214d924f4e137244 = var_84b542bb7490bea7.var_214d924f4e137244[var_8a2a5f9c6428c06c];
         if (isdefined(var_214d924f4e137244)) {
@@ -362,7 +362,7 @@ function get_object(var_8a2a5f9c6428c06c) {
         }
     } else {
         for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < var_84b542bb7490bea7.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
-            var_9be58c68789faf5c = var_db52b4a8aba13320 function_bfc4196d3da11705(var_56f4af8746a2d458);
+            var_9be58c68789faf5c = scenescriptbundle function_bfc4196d3da11705(var_56f4af8746a2d458);
             if (var_9be58c68789faf5c function_aeb2b46911a5811d() == var_8a2a5f9c6428c06c) {
                 var_214d924f4e137244 = var_84b542bb7490bea7.var_214d924f4e137244[var_56f4af8746a2d458];
                 return var_214d924f4e137244;
@@ -392,7 +392,7 @@ function function_6cb938788c210309(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, s
     }
     var_698da5af57b757e7 = var_7c76f3de91f4cf3d;
     if (!isint(var_698da5af57b757e7)) {
-        var_698da5af57b757e7 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_924e47d1f90e6366(var_698da5af57b757e7);
+        var_698da5af57b757e7 = var_84b542bb7490bea7.scenescriptbundle function_924e47d1f90e6366(var_698da5af57b757e7);
     }
     if (!isdefined(var_698da5af57b757e7)) {
         return var_5aaf7c7163c04623;
@@ -400,7 +400,7 @@ function function_6cb938788c210309(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, s
     if (var_698da5af57b757e7 < 0 || var_698da5af57b757e7 >= var_214d924f4e137244.var_9be58c68789faf5c.var_cf0d4d8cc5ac99a4.shots.size) {
         return var_5aaf7c7163c04623;
     }
-    var_bae27d121b581202 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_ab3ec43370c405d2(var_5aaf7c7163c04623, var_698da5af57b757e7, var_214d924f4e137244.index);
+    var_bae27d121b581202 = var_84b542bb7490bea7.scenescriptbundle function_ab3ec43370c405d2(var_5aaf7c7163c04623, var_698da5af57b757e7, var_214d924f4e137244.index);
     function_e4fc30ccdca08b9d(var_bae27d121b581202);
     return var_bae27d121b581202;
 }
@@ -425,7 +425,7 @@ function function_10a1cbb13da3a4fe(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, s
     }
     var_698da5af57b757e7 = var_7c76f3de91f4cf3d;
     if (!isint(var_698da5af57b757e7)) {
-        var_698da5af57b757e7 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_924e47d1f90e6366(var_698da5af57b757e7);
+        var_698da5af57b757e7 = var_84b542bb7490bea7.scenescriptbundle function_924e47d1f90e6366(var_698da5af57b757e7);
     }
     if (!isdefined(var_698da5af57b757e7)) {
         return [];
@@ -511,7 +511,7 @@ function function_ddebd5f650117455(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, v
     }
     var_698da5af57b757e7 = var_7c76f3de91f4cf3d;
     if (!isint(var_698da5af57b757e7)) {
-        var_698da5af57b757e7 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_924e47d1f90e6366(var_698da5af57b757e7);
+        var_698da5af57b757e7 = var_84b542bb7490bea7.scenescriptbundle function_924e47d1f90e6366(var_698da5af57b757e7);
     }
     if (!isdefined(var_698da5af57b757e7)) {
         return;
@@ -765,7 +765,7 @@ function function_d9be975d8d1c9db3(var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1) {
     var_84b542bb7490bea7 = var_5aaf7c7163c04623.var_84b542bb7490bea7;
     var_698da5af57b757e7 = var_7c76f3de91f4cf3d;
     if (!isint(var_698da5af57b757e7)) {
-        var_698da5af57b757e7 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_924e47d1f90e6366(var_698da5af57b757e7);
+        var_698da5af57b757e7 = var_84b542bb7490bea7.scenescriptbundle function_924e47d1f90e6366(var_698da5af57b757e7);
     }
     if (!isdefined(var_698da5af57b757e7)) {
         return 0;
@@ -778,9 +778,9 @@ function function_d9be975d8d1c9db3(var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1) {
     for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < var_84b542bb7490bea7.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
         var_214d924f4e137244 = var_84b542bb7490bea7.var_214d924f4e137244[var_56f4af8746a2d458];
         if (var_698da5af57b757e7 < var_214d924f4e137244.var_9be58c68789faf5c.var_cf0d4d8cc5ac99a4.shots.size) {
-            CameraAnimation = var_214d924f4e137244 function_6c3d100538f590b3(var_698da5af57b757e7);
-            if (isdefined(CameraAnimation)) {
-                var_4aade63686d9cdf2 = var_214d924f4e137244 function_9c0d01ef917ee30(CameraAnimation, "CameraAnimation");
+            cameraanimation = var_214d924f4e137244 function_6c3d100538f590b3(var_698da5af57b757e7);
+            if (isdefined(cameraanimation)) {
+                var_4aade63686d9cdf2 = var_214d924f4e137244 function_9c0d01ef917ee30(cameraanimation, "CameraAnimation");
                 if (var_4aade63686d9cdf2 > var_ba7c51f4385e6b48) {
                     var_ba7c51f4385e6b48 = var_4aade63686d9cdf2;
                 }
@@ -900,7 +900,7 @@ function private function_a9fc7e7dfd78e15e(var_2b23f2a75a7eb443, var_c38eb8ba732
                 }
             }
             if (var_d05ef3f217cebd10 && (!var_214d924f4e137244.var_9be58c68789faf5c function_9be5ff9b4bc5843a(var_568f62a24b19c46d.var_49a7f73f0fb5f6cf) || var_fdc8fd88a88422e5 && var_5008c96f8b06a31b)) {
-                var_214d924f4e137244.var_bae27d121b581202 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_ab3ec43370c405d2(var_5aaf7c7163c04623, var_568f62a24b19c46d.var_49a7f73f0fb5f6cf, var_56f4af8746a2d458);
+                var_214d924f4e137244.var_bae27d121b581202 = var_84b542bb7490bea7.scenescriptbundle function_ab3ec43370c405d2(var_5aaf7c7163c04623, var_568f62a24b19c46d.var_49a7f73f0fb5f6cf, var_56f4af8746a2d458);
                 function_e4fc30ccdca08b9d(var_214d924f4e137244.var_bae27d121b581202);
                 if (var_5008c96f8b06a31b) {
                     if (!var_214d924f4e137244 function_7c447098301ac4a3()) {
@@ -1048,13 +1048,13 @@ function private function_7e5354b44c829c9e(var_2b23f2a75a7eb443, var_c38eb8ba732
                 var_568f62a24b19c46d.var_98ccc4289cd8e03c = var_568f62a24b19c46d.var_df5db7bd235f2729[var_568f62a24b19c46d.var_1344e48bc80d0f52 + 1];
             }
             if (var_568f62a24b19c46d.var_df5db7bd235f2729.size > var_568f62a24b19c46d.var_1344e48bc80d0f52 + 1) {
-                var_43799a95aaee8d61 = var_84b542bb7490bea7.var_db52b4a8aba13320 function_e65f46a710591a5();
+                var_43799a95aaee8d61 = var_84b542bb7490bea7.scenescriptbundle function_e65f46a710591a5();
                 var_5361b7714ea1f8e0 = 2;
                 predicttime = var_5361b7714ea1f8e0;
                 var_5b1df6bdb52e24c = [];
                 for (var_7d3411523e9ab92c = var_568f62a24b19c46d.var_1344e48bc80d0f52 + 1; var_7d3411523e9ab92c < var_568f62a24b19c46d.var_df5db7bd235f2729.size; var_7d3411523e9ab92c++) {
                     var_be98a78ee33f18b8 = var_568f62a24b19c46d.var_df5db7bd235f2729[var_7d3411523e9ab92c];
-                    var_98ccc4289cd8e03c = var_84b542bb7490bea7.var_db52b4a8aba13320 function_2218afa82a590ea3(var_be98a78ee33f18b8);
+                    var_98ccc4289cd8e03c = var_84b542bb7490bea7.scenescriptbundle function_2218afa82a590ea3(var_be98a78ee33f18b8);
                     var_5b1df6bdb52e24c[var_5b1df6bdb52e24c.size] = var_98ccc4289cd8e03c function_55042076624e1180();
                     var_43799a95aaee8d61 = var_43799a95aaee8d61 || var_98ccc4289cd8e03c function_dd4368cda4b91e7d();
                     predicttime = predicttime - var_5aaf7c7163c04623 function_d9be975d8d1c9db3(var_be98a78ee33f18b8);
@@ -1074,7 +1074,7 @@ function private function_7e5354b44c829c9e(var_2b23f2a75a7eb443, var_c38eb8ba732
             }
             var_568f62a24b19c46d.var_1344e48bc80d0f52++;
         }
-        if (!isdefined(var_5aaf7c7163c04623.var_84b542bb7490bea7) || !var_5aaf7c7163c04623.var_84b542bb7490bea7.var_db52b4a8aba13320 function_4f93a0dfb8fd6a47()) {
+        if (!isdefined(var_5aaf7c7163c04623.var_84b542bb7490bea7) || !var_5aaf7c7163c04623.var_84b542bb7490bea7.scenescriptbundle function_4f93a0dfb8fd6a47()) {
             break;
         }
         if (gettime() == var_5119eba6031edf54) {

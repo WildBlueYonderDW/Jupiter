@@ -52,11 +52,11 @@ function function_d3befda2a868e1ac() {
         return;
     }
     namespace_70f0bf4af2b789eb::main();
-    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onConvoyActive", &onConvoyActive);
-    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onMercStrongholdActive", &onMercStrongholdActive);
-    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onOutlastActive", &onOutlastActive);
-    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onSabotageExtractorDisabled", &onSabotageExtractorDisabled);
-    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "OnWeaponStashActive", &OnWeaponStashActive);
+    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onConvoyActive", &onconvoyactive);
+    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onMercStrongholdActive", &onmercstrongholdactive);
+    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onOutlastActive", &onoutlastactive);
+    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "onSabotageExtractorDisabled", &onsabotageextractordisabled);
+    namespace_3c37cb17ade254d::registersharedfunc("ob_quest_missions", "OnWeaponStashActive", &onweaponstashactive);
     callback::add("merc_warlord_death", &function_e23b5eafc9d0c7bf);
     level thread function_5233ec7f3a4cfa23();
 }
@@ -65,7 +65,7 @@ function function_d3befda2a868e1ac() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xca3
 // Size: 0xc0
-function onConvoyActive(var_2f5d509d7b71ce9a) {
+function onconvoyactive(var_2f5d509d7b71ce9a) {
     var_2f5d509d7b71ce9a callback::callback("on_convoy_begin");
     var_f905b8919064b561 = undefined;
     foreach (ai in var_2f5d509d7b71ce9a.var_70b5f128bfa2986e) {
@@ -102,7 +102,7 @@ function function_83f49b42abfbeddb(boss) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xedb
 // Size: 0x4b
-function OnWeaponStashActive(var_2f5d509d7b71ce9a, player) {
+function onweaponstashactive(var_2f5d509d7b71ce9a, player) {
     if (namespace_838b439602b3acc7::function_5acc35fc66331385(player, 16140) || getdvarint(@"hash_7b8b09c504a0c9a0", 0)) {
         player.var_d1e277c70c37ea5a = 1;
         var_2f5d509d7b71ce9a thread function_64e8f53ac12ac246();
@@ -122,7 +122,7 @@ function function_64e8f53ac12ac246() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf5a
 // Size: 0x75
-function onMercStrongholdActive(var_2f5d509d7b71ce9a, player) {
+function onmercstrongholdactive(var_2f5d509d7b71ce9a, player) {
     if (namespace_838b439602b3acc7::function_5acc35fc66331385(player, 16946) || namespace_838b439602b3acc7::function_5acc35fc66331385(player, 17078) || getdvarint(@"hash_7b8b09c504a0c9a0", 0) || getdvarint(@"hash_7846a66ee6afec3e", 0)) {
         player.var_d1e277c70c37ea5a = 1;
         var_2f5d509d7b71ce9a thread function_4264199ac384ff4e();
@@ -290,7 +290,7 @@ function function_bdfe768bd3eed7fc() {
 // Size: 0x36
 function function_ed260c1f4a6de9f8(activity_succeeded) {
     self endon("instance_destroyed");
-    namespace_40713433c91dd86c::function_c402ecda1e84ba27(self.var_6c29f2fdb0054bbe, 0, self.var_6d6004078c259261, self.origin);
+    namespace_40713433c91dd86c::function_c402ecda1e84ba27(self.var_6c29f2fdb0054bbe, 0, self.difficulty_region, self.origin);
 }
 
 // Namespace namespace_5c6deef041b03f11/namespace_948fdc1b77d1dc95
@@ -379,7 +379,7 @@ function function_76d84b28702a71fb() {
                 var_94947ef251bf06d8++;
                 function_99b95e1bcf411ecd();
                 if (!istrue(self.var_d062a6468e65034e) && var_94947ef251bf06d8 == 2) {
-                    self.ShouldReinforce = 1;
+                    self.shouldreinforce = 1;
                 }
             } else if (self.nearbyplayers.size == 0 && var_94947ef251bf06d8 > 0) {
                 var_94947ef251bf06d8 = 0;
@@ -452,7 +452,7 @@ function function_81207cdee7c85896() {
     self setscriptablepartstate("safe", "opening");
     function_2169641d6a403864(self.encounterid);
     if (level.var_68fa4b22b3752b02.var_ad82f4cd58962ce1) {
-        namespace_5381a59d140f4df8::function_349b67890a05c376(self.var_b0a2064ae4aebb14);
+        namespace_5381a59d140f4df8::function_349b67890a05c376(self.zombie_attractor);
     }
     self.trigger delete();
     namespace_19b4203b51d56488::releaseid();
@@ -529,7 +529,7 @@ function function_111b3e11bf99b915(requestid, userdata, agent, data) {
 // Size: 0x5c
 function function_6d930ef0e465d1c6(requestid, userdata, var_dcff5961635938a9) {
     safe = userdata[0];
-    if (!istrue(safe.var_d062a6468e65034e) && istrue(safe.ShouldReinforce)) {
+    if (!istrue(safe.var_d062a6468e65034e) && istrue(safe.shouldreinforce)) {
         safe.var_d062a6468e65034e = 1;
         return 1;
     }
@@ -699,7 +699,7 @@ function function_e34b2762fa082dcc(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a62
 // Size: 0x15
-function onOutlastActive(var_2f5d509d7b71ce9a) {
+function onoutlastactive(var_2f5d509d7b71ce9a) {
     var_2f5d509d7b71ce9a thread function_da3f7ddab34651a2();
 }
 
@@ -781,7 +781,7 @@ function function_8361aeffba083290(player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e95
 // Size: 0x162
-function onSabotageExtractorDisabled(var_2f5d509d7b71ce9a, var_c88255f042016cd7) {
+function onsabotageextractordisabled(var_2f5d509d7b71ce9a, var_c88255f042016cd7) {
     if (var_2f5d509d7b71ce9a function_b978f5e2753317a4(16446) || getdvarint(@"hash_37acf332efd205cc", 0) || getdvarint(@"hash_7b8b09c504a0c9a0", 0)) {
         if (!isdefined(var_2f5d509d7b71ce9a.var_da225ff88f5191eb) || !var_2f5d509d7b71ce9a.var_da225ff88f5191eb) {
             var_85929467aad943a9 = undefined;
@@ -969,7 +969,7 @@ function private function_e23b5eafc9d0c7bf(params) {
         if (isdefined(var_982663bc9a80a02f)) {
             itembundle = getscriptbundle("itemspawnentry:" + "ob_jup_item_act3_tier3_strauss_research_tablet");
             lootid = function_6d15e119c2779a93(itembundle);
-            squadmembers = player namespace_ca7b90256548aa40::function_5a009fe17f688c92();
+            squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
             foreach (member in squadmembers) {
                 member namespace_ede58c1e66c2c280::calloutmarkerping_createcallout(14, var_982663bc9a80a02f.origin, var_982663bc9a80a02f.index, lootid);
             }

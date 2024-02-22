@@ -218,22 +218,22 @@ function function_e2674314764bdf3() {
     var_af7939a940e9bfab = function_a74aae7b461714e1(var_ed09715e306a1455);
     var_35039a9883ab69d2 = getdvarint(@"hash_ca56ccb8d0de7869", 8000);
     patrolzone = var_af7939a940e9bfab[randomint(var_af7939a940e9bfab.size)];
-    newChopper = namespace_479f2912131dabfc::lootchopper_spawn(patrolzone, "veh9_mil_air_heli_hind_nophysics_br", "veh9_mil_air_heli_hind_nuke_weapons", "chopper_support_turret_elite");
-    if (isdefined(newChopper)) {
-        newChopper.lootfunc = &function_c944aead940730a7;
-        newChopper.var_58b999784e669170 = &function_915ba9b028110d40;
-        newChopper.health = level.var_a42d57d98410ffa8.var_b728e1ff992a323a;
-        newChopper.maxhealth = level.var_a42d57d98410ffa8.var_b728e1ff992a323a;
-        namespace_5a22b6f3a56f7e9b::update_objective_icon(newChopper.objectiveiconid, "ui_mp_br_mapmenu_icon_elite_chopper");
-        namespace_5a22b6f3a56f7e9b::function_2946e9eb07acb3f1(newChopper.objectiveiconid, "VEHICLES/NUCLEAR_CHOPPER");
-        namespace_5a22b6f3a56f7e9b::update_objective_setbackground(newChopper.objectiveiconid, 1);
-        namespace_5a22b6f3a56f7e9b::function_846c2acd91309cd8(newChopper.objectiveiconid, 246, 192, 72);
-        newChopper.var_7b5e5c2bbc8f9f79 = newChopper.objectiveiconid;
-        newChopper function_1cd1ee312fd03bb4(1);
-        thread function_b012a5a56983477(newChopper);
-        thread function_8b0afc16e14eaa13(newChopper);
-        newChopper.task = self;
-        self.chopper = newChopper;
+    newchopper = namespace_479f2912131dabfc::lootchopper_spawn(patrolzone, "veh9_mil_air_heli_hind_nophysics_br", "veh9_mil_air_heli_hind_nuke_weapons", "chopper_support_turret_elite");
+    if (isdefined(newchopper)) {
+        newchopper.lootfunc = &function_c944aead940730a7;
+        newchopper.var_58b999784e669170 = &function_915ba9b028110d40;
+        newchopper.health = level.var_a42d57d98410ffa8.var_b728e1ff992a323a;
+        newchopper.maxhealth = level.var_a42d57d98410ffa8.var_b728e1ff992a323a;
+        namespace_5a22b6f3a56f7e9b::update_objective_icon(newchopper.objectiveiconid, "ui_mp_br_mapmenu_icon_elite_chopper");
+        namespace_5a22b6f3a56f7e9b::function_2946e9eb07acb3f1(newchopper.objectiveiconid, "VEHICLES/NUCLEAR_CHOPPER");
+        namespace_5a22b6f3a56f7e9b::update_objective_setbackground(newchopper.objectiveiconid, 1);
+        namespace_5a22b6f3a56f7e9b::function_846c2acd91309cd8(newchopper.objectiveiconid, 246, 192, 72);
+        newchopper.var_7b5e5c2bbc8f9f79 = newchopper.objectiveiconid;
+        newchopper function_1cd1ee312fd03bb4(1);
+        thread function_b012a5a56983477(newchopper);
+        thread function_8b0afc16e14eaa13(newchopper);
+        newchopper.task = self;
+        self.chopper = newchopper;
     } else {
         logstring("br_elite_chopper_quest::task_spawnChopper - no chopper was spawned!");
         if (getdvarint(@"hash_3e40b4675d05b5b1", 1)) {
@@ -316,10 +316,10 @@ function function_a1ea17b3a2931b82(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe3b
 // Size: 0x85
-function function_b012a5a56983477(newChopper) {
+function function_b012a5a56983477(newchopper) {
     level endon("game_ended");
     self endon("task_ended");
-    newChopper waittill("death");
+    newchopper waittill("death");
     if (level.var_a42d57d98410ffa8.var_2dcb144daab3c487) {
         displayteamsplash(self.teams[0], "br_elite_chopper_end");
     }
@@ -331,10 +331,10 @@ function function_b012a5a56983477(newChopper) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec7
 // Size: 0x2b
-function function_8b0afc16e14eaa13(newChopper) {
+function function_8b0afc16e14eaa13(newchopper) {
     level endon("game_ended");
     self endon("task_ended");
-    newChopper waittill("leaving");
+    newchopper waittill("leaving");
     thread function_8d032f436b816d9d(0);
 }
 

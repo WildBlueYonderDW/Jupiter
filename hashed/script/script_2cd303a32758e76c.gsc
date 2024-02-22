@@ -548,14 +548,14 @@ function function_8a47414d4d7859df() {
         }
         wait(1);
     }
-    thread function_b49ec1763c49a840();
+    thread redeploy_drone_relocate();
 }
 
 // Namespace namespace_41d841f881f9d22e/namespace_8278a08f2bc341ae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dd5
 // Size: 0x410
-function function_b49ec1763c49a840() {
+function redeploy_drone_relocate() {
     level endon("game_ended");
     level notify("forced_kill_callout_" + self.origin);
     namespace_ede58c1e66c2c280::function_6bc4f6b579285f79();
@@ -1239,9 +1239,9 @@ function function_3b88aadd61acb2f7() {
         var_730312a2d2560914 setscriptablepartstate("<unknown string>", "<unknown string>");
         var_730312a2d2560914 setscriptablepartstate("<unknown string>", "<unknown string>");
         while (1) {
-            var_d10e850ebd58d1ee thread function_b49ec1763c49a840();
+            var_d10e850ebd58d1ee thread redeploy_drone_relocate();
             wait(6);
-            var_730312a2d2560914 function_b49ec1763c49a840();
+            var_730312a2d2560914 redeploy_drone_relocate();
             wait(6);
             var_730312a2d2560914.var_337be55e5dba8832 = var_730315a2d2560fad.var_337be55e5dba8832 + randomintrange(90, 270);
             if (var_730312a2d2560914.var_337be55e5dba8832 >= 360) {
@@ -1250,9 +1250,9 @@ function function_3b88aadd61acb2f7() {
             var_730312a2d2560914.origin = var_d10e850ebd58d1ee.origin + 5500 * anglestoforward((0, var_730312a2d2560914.var_337be55e5dba8832, 0));
             var_730312a2d2560914 function_f5c0566b1aa605fb();
             var_730312a2d2560914 setscriptablepartstate("<unknown string>", "<unknown string>");
-            var_d10e850ebd58d1ee thread function_b49ec1763c49a840();
+            var_d10e850ebd58d1ee thread redeploy_drone_relocate();
             wait(6);
-            var_730315a2d2560fad function_b49ec1763c49a840();
+            var_730315a2d2560fad redeploy_drone_relocate();
             wait(6);
             var_730315a2d2560fad.var_337be55e5dba8832 = var_730312a2d2560914.var_337be55e5dba8832 + randomintrange(90, 270);
             if (var_730315a2d2560fad.var_337be55e5dba8832 >= 360) {

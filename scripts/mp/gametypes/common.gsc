@@ -139,10 +139,10 @@ function updatecommongametypedvars() {
     if (level.dogtagsenabled) {
         namespace_ba880bc821ba2f06::init();
     }
-    level.mtxKillThresholdStage1 = dvarintvalue("mtxKillThresholdStage1", 10, 1, 20);
-    level.mtxKillThresholdStage2 = dvarintvalue("mtxKillThresholdStage2", 20, 1, 20);
+    level.mtxkillthresholdstage1 = dvarintvalue("mtxKillThresholdStage1", 10, 1, 20);
+    level.mtxkillthresholdstage2 = dvarintvalue("mtxKillThresholdStage2", 20, 1, 20);
     /#
-        assertex(level.mtxKillThresholdStage1 < level.mtxKillThresholdStage2, "The mtx kill threshold for stage 1 must be less than stage 2");
+        assertex(level.mtxkillthresholdstage1 < level.mtxkillthresholdstage2, "The mtx kill threshold for stage 1 must be less than stage 2");
     #/
 }
 
@@ -214,14 +214,14 @@ function oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, 
     if (isdefined(level.var_5df506226294aa65)) {
         level thread [[ level.var_5df506226294aa65 ]](victim, attacker);
     }
-    if (istrue(level.dropArmorOnDeath)) {
+    if (istrue(level.droparmorondeath)) {
         dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
         victim namespace_cb965d2f71fefddc::dropbrhealthpack(dropstruct);
     }
     if (namespace_36f464722d326bbe::function_21322da268e71c19() && getdvarint(@"hash_6ce02fdc43b4f5cf", 0) != 0) {
         victim function_7bac8ee72285298e();
     }
-    if (isplayer(attacker) && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (isplayer(attacker) && !namespace_36f464722d326bbe::isbrstylegametype()) {
         var_4da4cb52d0bf5b05 = meansofdeath == "MOD_HEAD_SHOT";
         var_4da4cb52d0bf5b05 = var_4da4cb52d0bf5b05 + (level.scoremod["kill"] << 4);
         attacker function_417749e099f041f(var_4da4cb52d0bf5b05, victim getentitynumber());
@@ -444,13 +444,13 @@ function onplayerconnectcommon() {
         if (isdefined(level.onplayerconnect)) {
             level thread [[ level.onplayerconnect ]](player);
         }
-        if (istrue(level.dropArmorOnDeath)) {
+        if (istrue(level.droparmorondeath)) {
             player.var_d2dbb2fa012e6d9c = [];
         }
         if (namespace_36f464722d326bbe::function_9cdaadfddeda4d7a()) {
             player thread function_9baeafa29fcf15f9();
         }
-        if (namespace_36f464722d326bbe::function_d2d2b803a7b741a4() && !namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+        if (namespace_36f464722d326bbe::function_d2d2b803a7b741a4() && !namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
             player thread nvghintnotify();
         }
         if (function_2009718b681222c2()) {
@@ -576,7 +576,7 @@ function updatealiveomnvars() {
         self [[ level.updatealiveomnvars ]]();
         return;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         totalalivecount = 0;
         totalplayers = 0;
         foreach (entry in level.teamnamelist) {
@@ -817,7 +817,7 @@ function function_8ec1a1ca587a6487(var_cb325ddb4a764623) {
     case #"hash_a7a7446a3194cb49":
         if (isreallyalive(self)) {
             if (isdefined(self.armorhealth) && self.armorhealth < self.var_8790c077c95db752) {
-                namespace_f8d3520d3483c1::setArmorHealth(int(clamp(self.armorhealth + level.var_4b78859bacc88808, 0, self.var_8790c077c95db752)));
+                namespace_f8d3520d3483c1::setarmorhealth(int(clamp(self.armorhealth + level.var_4b78859bacc88808, 0, self.var_8790c077c95db752)));
             }
             goto LOC_0000009a;
         }
@@ -1245,7 +1245,7 @@ function function_7aba1069126eb717() {
     if (!isdefined(level.difficultytype)) {
         level namespace_bfef6903bca5845d::function_c8393014dd7f8ab6();
     }
-    namespace_3c37cb17ade254d::registersharedfunc("ai", "dropLootOnAgentDeath", &dropLootOnAgentDeath);
+    namespace_3c37cb17ade254d::registersharedfunc("ai", "dropLootOnAgentDeath", &droplootonagentdeath);
     while (!isdefined(level.teamnamelist)) {
         waitframe();
     }
@@ -1283,7 +1283,7 @@ function function_5df506226294aa65(victim, attacker) {
             var_40e875a042b82875 = getdvarint(@"hash_4ec508aa0002244", 1);
             if (var_40e875a042b82875 > 0) {
                 for (i = 0; i < var_40e875a042b82875; i++) {
-                    agent = ai_mp_requestSpawnAgent("enemy_mp_jugg_base", spawnpoint.origin, spawnpoint.angles, "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
+                    agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", spawnpoint.origin, spawnpoint.angles, "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
                     if (isdefined(agent)) {
                         agent thread function_35c195df2ba46725(agent, team);
                         namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
@@ -1298,7 +1298,7 @@ function function_5df506226294aa65(victim, attacker) {
             if (numagents > 0) {
                 for (i = 0; i < numagents; i++) {
                     aitype = function_d5bc07eabf352abb();
-                    agent = ai_mp_requestSpawnAgent(aitype, spawnpoint.origin, spawnpoint.angles, "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
+                    agent = ai_mp_requestspawnagent(aitype, spawnpoint.origin, spawnpoint.angles, "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
                     if (isdefined(agent)) {
                         agent thread function_35c195df2ba46725(agent, team);
                         agent thread function_a5117518725da028(agent, goalpos);
@@ -1323,7 +1323,7 @@ function function_35c195df2ba46725(agent, team) {
     waitframe();
     agent.gameskill = namespace_310bdaa3cf041c47::get_gameskill();
     agent namespace_310bdaa3cf041c47::apply_difficulty_settings(1);
-    namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "team", team);
+    namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "team", team);
 }
 
 // Namespace common/namespace_310ba947928891df
@@ -1350,7 +1350,7 @@ function function_df3e6ee36363e610(agent) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42cd
 // Size: 0x78
-function dropLootOnAgentDeath(agent, agenttype, groupname) {
+function droplootonagentdeath(agent, agenttype, groupname) {
     agent notify("endLootDropThread");
     agent endon("endLootDropThread");
     agent waittill("death");
@@ -2188,7 +2188,7 @@ function function_89d441b8cca6251d() {
 // Checksum 0x0, Offset: 0x6fd8
 // Size: 0x326
 function function_52343d5c1b190cf0() {
-    level.tier1ModeEnabled = getdvarint(@"hash_127490a7577f169f", 0);
+    level.tier1modeenabled = getdvarint(@"hash_127490a7577f169f", 0);
     level.var_ee05489a095df4d1 = getdvarint(@"hash_509b01d1370107af", 0) == 1;
     level.var_11d8636343eae20c = getdvarint(@"hash_e05a6970966d8552", 0);
     level.var_accb27010daa82d = getdvarint(@"hash_4a592b7d1efa862d", 0);
@@ -2196,7 +2196,7 @@ function function_52343d5c1b190cf0() {
     level.testrandomrealismclients = getdvarint(@"hash_596700a25033a832", 0) == 1;
     setomnvar("ui_realism_mode", namespace_36f464722d326bbe::function_b2c4b42f9236924());
     if (namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-        if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (!namespace_36f464722d326bbe::isbrstylegametype()) {
             level.modifyplayerdamage = &namespace_3e725f3cc58bddd3::gamemodemodifyplayerdamage;
         }
         setdvar(@"hash_3ab0313f7e723fa1", 1);
@@ -2424,9 +2424,9 @@ function function_417749e099f041f(var_4da4cb52d0bf5b05, victimid) {
         self.var_b35c5ea3127572d8 = function_79c374ab1ca30cc9(32);
     }
     self.var_b35c5ea3127572d8 = function_6cf786a6cf335cb9(self.var_b35c5ea3127572d8, struct);
-    thread processKillEventFeed();
+    thread processkilleventfeed();
     if (getgametype() == "gwtdm") {
-        thread awardBonusAfterTime();
+        thread awardbonusaftertime();
     }
 }
 
@@ -2434,7 +2434,7 @@ function function_417749e099f041f(var_4da4cb52d0bf5b05, victimid) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x79a7
 // Size: 0xb6
-function processKillEventFeed() {
+function processkilleventfeed() {
     self endon("disconnect");
     self notify("processKillEventFeed");
     self endon("processKillEventFeed");
@@ -2453,7 +2453,7 @@ function processKillEventFeed() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a64
 // Size: 0x1a9
-function awardBonusAfterTime() {
+function awardbonusaftertime() {
     self endon("disconnect");
     self notify("awardBonusAfterTime");
     self endon("awardBonusAfterTime");
@@ -2492,6 +2492,6 @@ function awardBonusAfterTime() {
     struct.var_4da4cb52d0bf5b05 = var_4da4cb52d0bf5b05;
     struct.victimid = -1;
     self.var_b35c5ea3127572d8 = function_6cf786a6cf335cb9(self.var_b35c5ea3127572d8, struct);
-    thread processKillEventFeed();
+    thread processkilleventfeed();
 }
 

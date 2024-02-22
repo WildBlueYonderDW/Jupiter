@@ -10,14 +10,14 @@ function init() {
         if (!isdefined(game["telemetry"])) {
             game["telemetry"] = spawnstruct();
         }
-        if (!isdefined(game["telemetry"].var_af0f7bfff116dfe5)) {
-            game["telemetry"].var_af0f7bfff116dfe5 = 0;
+        if (!isdefined(game["telemetry"].total_player_connections)) {
+            game["telemetry"].total_player_connections = 0;
         }
         if (!isdefined(game["telemetry"].life_count)) {
             game["telemetry"].life_count = 0;
         }
-        if (!isdefined(game["telemetry"].var_19eb71d207a4b2b8)) {
-            game["telemetry"].var_19eb71d207a4b2b8 = 0;
+        if (!isdefined(game["telemetry"].game_event_count)) {
+            game["telemetry"].game_event_count = 0;
         }
     } else {
         /#

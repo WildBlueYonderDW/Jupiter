@@ -256,9 +256,9 @@ function throwing_knife_makepickup() {
 // Size: 0x12c
 function throwing_knife_watchpickup() {
     self endon("death");
-    isBackpackInventoryEnabled = 0;
+    isbackpackinventoryenabled = 0;
     if (namespace_3c37cb17ade254d::issharedfuncdefined("inventory", "isBackpackInventoryEnabled")) {
-        isBackpackInventoryEnabled = [[ getsharedfunc("inventory", "isBackpackInventoryEnabled") ]]();
+        isbackpackinventoryenabled = [[ getsharedfunc("inventory", "isBackpackInventoryEnabled") ]]();
     }
     while (1) {
         player = self.knife_trigger waittill("trigger");
@@ -272,10 +272,10 @@ function throwing_knife_watchpickup() {
             continue;
         }
         if (isdefined(self.var_f84a0525bcc7d85)) {
-            if (!player hasweapon(self.var_f84a0525bcc7d85) && !isBackpackInventoryEnabled) {
+            if (!player hasweapon(self.var_f84a0525bcc7d85) && !isbackpackinventoryenabled) {
                 continue;
             }
-        } else if (!player hasweapon(self.weapon_object) && !isBackpackInventoryEnabled) {
+        } else if (!player hasweapon(self.weapon_object) && !isbackpackinventoryenabled) {
             continue;
         }
         variantid = 0;

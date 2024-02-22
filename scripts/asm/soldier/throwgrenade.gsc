@@ -100,8 +100,8 @@ function playanim_throwgrenade_cleanup(asmname, statename, params) {
 // Checksum 0x0, Offset: 0x531
 // Size: 0x3f
 function shouldbounce(var_f9eec358459d9350) {
-    var_195927e09b405481 = var_f9eec358459d9350.basename;
-    return var_195927e09b405481 != "antigrav" && var_195927e09b405481 != "emp" && var_195927e09b405481 != "c8_grenade";
+    grenadetype = var_f9eec358459d9350.basename;
+    return grenadetype != "antigrav" && grenadetype != "emp" && grenadetype != "c8_grenade";
 }
 
 // Namespace throwgrenade/namespace_47c4116b48b7aff1
@@ -394,7 +394,7 @@ function detachgrenadeonscriptchange(statename, model, tag) {
 // Size: 0xd3
 function function_8337cab97d859a28(statename) {
     var_e97dd4a810914db1 = spawnstruct();
-    var_e97dd4a810914db1 thread watchGrenadeTowardsTargetTimeout(5);
+    var_e97dd4a810914db1 thread watchgrenadetowardstargettimeout(5);
     var_e97dd4a810914db1 endon("watchGrenadeTowardsTargetTimeout");
     grenade = getgrenadeithrew(statename);
     if (!isdefined(grenade)) {
@@ -439,7 +439,7 @@ function watchgrenadetowardsplayer(statename, player, var_3251b898a0907271) {
 function watchgrenadetowardsplayerinternal(statename, var_3251b898a0907271) {
     var_cc183df556f63da0 = self.var_cc183df556f63da0;
     var_e97dd4a810914db1 = spawnstruct();
-    var_e97dd4a810914db1 thread watchGrenadeTowardsTargetTimeout(5);
+    var_e97dd4a810914db1 thread watchgrenadetowardstargettimeout(5);
     var_e97dd4a810914db1 endon("watchGrenadeTowardsTargetTimeout");
     type = self.grenadeweapon.basename;
     grenade = getgrenadeithrew(statename);
@@ -545,7 +545,7 @@ function getgrenadeithrew(statename) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13f1
 // Size: 0x16
-function watchGrenadeTowardsTargetTimeout(var_5f6346f9ecd5e22a) {
+function watchgrenadetowardstargettimeout(var_5f6346f9ecd5e22a) {
     wait(var_5f6346f9ecd5e22a);
     self notify("watchGrenadeTowardsTargetTimeout");
 }

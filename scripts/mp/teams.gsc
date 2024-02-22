@@ -783,7 +783,7 @@ function createoperatorcustomization(operatorref, var_5864ea4e21a60cd4) {
         headmodelname = self getcustomizationhead();
         var_e69fcb0bb9e108b = self getcustomizationviewmodel();
         var_41bd2eeda1c033d2 = getplayerviewmodelfrombody(body);
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         bodymodelname = "fullbody_usmc_ar_br_infil";
         headmodelname = undefined;
         var_e69fcb0bb9e108b = "viewhands_mp_base_iw8";
@@ -849,7 +849,7 @@ function function_1800697eba3f6660(operatorcustomization) {
         var_4a654bd9a395c1ff[var_4a654bd9a395c1ff.size] = self.operatorcustomization.var_d947b7e87c7243ab;
     }
     if (var_179dd20bbf6c2f02 == 1) {
-        var_4a654bd9a395c1ff[var_4a654bd9a395c1ff.size] = namespace_38b993c4618e76cd::function_a50b607d2500dda5(self.operatorcustomization.execution);
+        var_4a654bd9a395c1ff[var_4a654bd9a395c1ff.size] = namespace_38b993c4618e76cd::getlootidfromref(self.operatorcustomization.execution);
     }
     self function_616c0ca219597829(var_4a654bd9a395c1ff);
 }
@@ -864,7 +864,7 @@ function lookupotheroperator(team) {
     }
     teamindex = ter_op(team == "allies", 1, 0);
     operatorref = "";
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         if (level.teambased && !isai(self)) {
             operatorref = self getplayerdata(level.loadoutsgroup, "customizationSetup", "operators", teamindex);
         }
@@ -900,14 +900,14 @@ function lookupcurrentoperator(team) {
             }
             team = self.botoperatorteam;
             if (!isdefined(self.pers["operatorIndex"])) {
-                selectedOperatorIndex = randomint(level.var_b113f6fe0e7c93bf[team].size);
-                self.pers["operatorIndex"] = selectedOperatorIndex;
+                selectedoperatorindex = randomint(level.var_b113f6fe0e7c93bf[team].size);
+                self.pers["operatorIndex"] = selectedoperatorindex;
             } else {
-                selectedOperatorIndex = self.pers["operatorIndex"];
+                selectedoperatorindex = self.pers["operatorIndex"];
             }
             currentindex = 0;
             foreach (var_257df77381fccc70, var_eef96dced6dd39f1 in level.var_b113f6fe0e7c93bf[team]) {
-                if (currentindex == selectedOperatorIndex) {
+                if (currentindex == selectedoperatorindex) {
                     self.botoperatorref = var_257df77381fccc70;
                     operatorref = var_257df77381fccc70;
                     break;
@@ -924,8 +924,8 @@ function lookupcurrentoperator(team) {
     } else {
         var_e9a5f25420e74f74 = ter_op(team == "allies", 0, 1);
         if (function_1851de461471fd20()) {
-            selectedOperatorIndex = self getplayerdata(level.loadoutsgroup, "customizationSetup", "selectedOperatorIndex");
-            var_e9a5f25420e74f74 = selectedOperatorIndex;
+            selectedoperatorindex = self getplayerdata(level.loadoutsgroup, "customizationSetup", "selectedOperatorIndex");
+            var_e9a5f25420e74f74 = selectedoperatorindex;
         }
         if (!isdefined(self.defaultoperatorteam)) {
             if (var_e9a5f25420e74f74 == 0) {
@@ -1132,20 +1132,20 @@ function getoperatorcustomization() {
         customization[0] = body;
         customization[1] = head;
     } else {
-        operatorSkinRef = undefined;
+        operatorskinref = undefined;
         if (!isdefined(self.operatorcustomization)) {
             createoperatorcustomization();
         }
-        operatorSkinRef = self.operatorcustomization.skinref;
+        operatorskinref = self.operatorcustomization.skinref;
         if (isdefined(level.modegetforceoperatorcustomization)) {
-            operatorref = namespace_465d40bb08a5337a::function_605079124463a67b(operatorSkinRef);
-            var_c00a30624996364f = [[ level.modegetforceoperatorcustomization ]](self, operatorref, operatorSkinRef);
-            operatorSkinRef = var_c00a30624996364f[1];
-            operatorIndex = var_c00a30624996364f[0];
+            operatorref = namespace_465d40bb08a5337a::function_605079124463a67b(operatorskinref);
+            var_c00a30624996364f = [[ level.modegetforceoperatorcustomization ]](self, operatorref, operatorskinref);
+            operatorskinref = var_c00a30624996364f[1];
+            operatorindex = var_c00a30624996364f[0];
         }
-        if (operatorSkinRef == "274" || operatorSkinRef == "275") {
+        if (operatorskinref == "274" || operatorskinref == "275") {
             initdefaultoperatorskins();
-            var_3060e7b91e020425 = level.teambased && !namespace_36f464722d326bbe::isBRStyleGameType();
+            var_3060e7b91e020425 = level.teambased && !namespace_36f464722d326bbe::isbrstylegametype();
             if (!isdefined(self.defaultoperatorteam) || var_3060e7b91e020425 && self.defaultoperatorteam != self.team && (self.team == "allies" || self.team == "axis")) {
                 self.defaultoperatorteam = self.team;
                 if (self.team != "allies" && self.team != "axis") {
@@ -1161,8 +1161,8 @@ function getoperatorcustomization() {
             }
             head = level.defaultoperatorskins[self.defaultoperatorteam]["head"][self.pers["defaultOperatorSkinIndex"]][self.pers["defaultOperatorHeadIndex"]];
         } else {
-            body = namespace_465d40bb08a5337a::function_8eba78e65f4be793(operatorSkinRef);
-            head = namespace_465d40bb08a5337a::function_223061772e2a61b9(operatorSkinRef);
+            body = namespace_465d40bb08a5337a::function_8eba78e65f4be793(operatorskinref);
+            head = namespace_465d40bb08a5337a::function_223061772e2a61b9(operatorskinref);
         }
         if (body == "" || head == "") {
             /#
@@ -1631,9 +1631,9 @@ function watchafk() {
 // Size: 0xca
 function function_19300abfbb10928b() {
     timeplayed = function_53c4c53197386572(namespace_2685ec368e022695::statgetchildbuffered("round", "timePlayed", 0), 0);
-    timeDead = function_53c4c53197386572(namespace_3c5a4254f2b957ea::getpersstat("timeDead"), 0);
-    timeplayed = int(max(timeplayed - timeDead, 0));
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    timedead = function_53c4c53197386572(namespace_3c5a4254f2b957ea::getpersstat("timeDead"), 0);
+    timeplayed = int(max(timeplayed - timedead, 0));
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         timeplayed = timeplayed - function_53c4c53197386572(self.timeplayed["gulag"], 0);
         timeplayed = timeplayed - function_53c4c53197386572(self.timeplayed["resurgenceRespawn"], 0);
         timeplayed = timeplayed - function_53c4c53197386572(self.timeplayed["infil"], 0);
@@ -1662,7 +1662,7 @@ function function_7b76ffd725358204(time, var_1dec950bbb71cde8, var_1e6c2cb81cc42
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x787a
 // Size: 0xd4
-function dontConsiderAFK() {
+function dontconsiderafk() {
     if (istrue(level.gameended) || !istrue(self.hasspawned)) {
         return 1;
     }
@@ -1672,7 +1672,7 @@ function dontConsiderAFK() {
     if (istrue(self.ffsm_isgulagrespawn)) {
         return 1;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (self.sessionstate == "spectator" || self.sessionstate == "intermission" || self.sessionstate == "playing_but_spectating") {
             return 1;
         }
@@ -1697,7 +1697,7 @@ function checkforafk(var_6d2f7985df18659a, var_55d48eee7e287cda, var_bdbf4608f99
     if (getsubgametype() == "dmz") {
         return;
     }
-    if (dontConsiderAFK()) {
+    if (dontconsiderafk()) {
         function_f66fc78c2cb0c0d3(self, "default", 0, 0);
         return;
     }
@@ -1728,7 +1728,7 @@ function checkforafk(var_6d2f7985df18659a, var_55d48eee7e287cda, var_bdbf4608f99
     var_f6dba1911b90d82c = var_80a323cfc33bd9e2 && var_913292631f9d9e2a > 120;
     var_d7c6b91d300a1023 = function_53c4c53197386572(self.var_3681793bfd7b68e, 0) > gettime();
     var_b79528872f8bdde = istrue(namespace_3c5a4254f2b957ea::getpersstat("distTrackingPassed")) || var_d7c6b91d300a1023;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (istrue(self.brkickedfromplane)) {
             var_9af0bd77617d4e0d = getdvarint(@"hash_613644ac82dead59", 60);
         } else {
@@ -1921,7 +1921,7 @@ function getjointeampermissions(team) {
         return 1;
     } else if (function_d7ec918e29c0b2f4()) {
         return 1;
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType() && (brgametype == "dmz" || brgametype == "exgm" || brgametype == "plunder" || brgametype == "risk")) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype() && (brgametype == "dmz" || brgametype == "exgm" || brgametype == "plunder" || brgametype == "risk")) {
         return 1;
     } else {
         /#
@@ -2124,7 +2124,7 @@ function getoperatorgender(operatorref) {
 // Checksum 0x0, Offset: 0x88e6
 // Size: 0x1f
 function function_29b2af59258d6501(skinref) {
-    var_d947b7e87c7243ab = namespace_38b993c4618e76cd::function_a50b607d2500dda5(skinref);
+    var_d947b7e87c7243ab = namespace_38b993c4618e76cd::getlootidfromref(skinref);
     return var_d947b7e87c7243ab;
 }
 
@@ -2136,7 +2136,7 @@ function getoperatorbrinfilsmokesuffix(skinref) {
     /#
         assert(!isnumber(skinref));
     #/
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         suffix = undefined;
         lootid = self getplayerdata("common", "commonCustomization", "contrail");
         if (isdefined(lootid) && lootid != 0) {
@@ -2237,8 +2237,8 @@ function function_d650608c959c9675() {
         team = ter_op(superfaction == 0, "allies", "axis");
         level.var_b113f6fe0e7c93bf[team][operatorref] = [];
     }
-    skinRefs = namespace_465d40bb08a5337a::function_6ab347c553a20a68();
-    foreach (skinref in skinRefs) {
+    skinrefs = namespace_465d40bb08a5337a::function_6ab347c553a20a68();
+    foreach (skinref in skinrefs) {
         if (!isdefined(skinref) || skinref == "") {
             continue;
         }
@@ -2483,14 +2483,14 @@ function debugprintteams() {
     var_63f43f469b885ec6 = 25;
     while (1) {
         if (isdefined(level.teamdata)) {
-            var_1b11eaa9b42e5081 = 400;
-            var_1b11e9a9b42e4e4e = 200;
+            startx = 400;
+            starty = 200;
             linecount = 1;
             teamcount = 0;
             foreach (team in level.teamnamelist) {
                 linecount = 1;
                 /#
-                    printtoscreen2d(var_1b11eaa9b42e5081, var_1b11e9a9b42e4e4e + var_63f43f469b885ec6 * linecount, "<unknown string>" + team, (1, 1, 1), 1);
+                    printtoscreen2d(startx, starty + var_63f43f469b885ec6 * linecount, "<unknown string>" + team, (1, 1, 1), 1);
                 #/
                 linecount++;
                 foreach (player in level.teamdata[team]["players"]) {
@@ -2499,19 +2499,19 @@ function debugprintteams() {
                         color = (0, 1, 0);
                     }
                     /#
-                        printtoscreen2d(var_1b11eaa9b42e5081 + 25, var_1b11e9a9b42e4e4e + var_63f43f469b885ec6 * linecount, player.name, color, 1);
+                        printtoscreen2d(startx + 25, starty + var_63f43f469b885ec6 * linecount, player.name, color, 1);
                     #/
                     linecount++;
                     /#
                         print3d(player.origin + (0, 0, 60), team, (1, 1, 1), 1, 0.5);
                     #/
                 }
-                var_1b11e9a9b42e4e4e = var_1b11e9a9b42e4e4e + var_63f43f469b885ec6 * linecount + 50;
+                starty = starty + var_63f43f469b885ec6 * linecount + 50;
                 teamcount++;
                 if (teamcount > 6) {
                     teamcount = 0;
-                    var_1b11eaa9b42e5081 = var_1b11eaa9b42e5081 + 200;
-                    var_1b11e9a9b42e4e4e = 200;
+                    startx = startx + 200;
+                    starty = 200;
                 }
             }
         }

@@ -826,7 +826,7 @@ function manualturret_endplayeruse(turret) {
         if (namespace_36f464722d326bbe::function_d2d2b803a7b741a4()) {
             val::function_c9d0b43701bdba00("nightmap_check");
         }
-        if (!namespace_36f464722d326bbe::isBRStyleGameType() || namespace_36f464722d326bbe::isBRStyleGameType() && !istrue(self.inlaststand)) {
+        if (!namespace_36f464722d326bbe::isbrstylegametype() || namespace_36f464722d326bbe::isbrstylegametype() && !istrue(self.inlaststand)) {
             lastweaponobj = namespace_d325722f2754c2c4::restoreweaponstates(self.lastdroppableweaponobj);
             self switchtoweaponimmediate(lastweaponobj);
         }

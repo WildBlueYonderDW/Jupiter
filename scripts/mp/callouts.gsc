@@ -46,7 +46,7 @@ function init() {
         return;
     }
     function_953aac55917212f6();
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && getdvarint(@"hash_e4187d1543c7477e", 0) == 0) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && getdvarint(@"hash_e4187d1543c7477e", 0) == 0) {
         return;
     }
     function_46502299a0d096ef();
@@ -205,7 +205,7 @@ function setplayercalloutarea(var_e90349c02adfb3a0, trigger) {
     if (isdefined(self.calloutarea) && self.calloutarea == var_e90349c02adfb3a0) {
         return;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         if (isdefined(self.calloutarea) && var_e90349c02adfb3a0 != "none" && self.calloutarea != "none") {
             return;
         }

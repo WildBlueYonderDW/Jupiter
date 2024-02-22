@@ -96,8 +96,8 @@ function function_55f2480b4b819aea(movingc130) {
         animstruct.staticc130.var_6a704063a0555c1d = 1;
         animstruct.var_e73ce295ae9d4104 = animstruct spawn_script_model("generic_prop_x30", "camera");
         animstruct.var_e73ce295ae9d4104 linkto(animstruct.staticc130, "tag_body_animate", (0, 0, 0), (0, 0, 0));
-        animstruct.introPlane = animstruct spawn_script_model("black::veh9_mil_air_cargo_plane", "introPlane");
-        animstruct.introPlane linkto(animstruct.var_e73ce295ae9d4104, "j_prop_30");
+        animstruct.introplane = animstruct spawn_script_model("black::veh9_mil_air_cargo_plane", "introPlane");
+        animstruct.introplane linkto(animstruct.var_e73ce295ae9d4104, "j_prop_30");
         skins = [0:"milsim_western_a", 1:"milsim_western_b", 2:"milsim_western_c", 3:"milsim_western_d", 4:"milsim_eastern_a", 5:"milsim_eastern_b", 6:"milsim_eastern_c", 7:"milsim_eastern_d"];
         animstruct.var_b50860e78d9e1e5 = [];
         animstruct.var_b50860e78d9e1e5[0] = animstruct spawn_script_model("tag_player", "playerTag1");
@@ -158,7 +158,7 @@ function function_55f2480b4b819aea(movingc130) {
         animstruct.packs[n] = animstruct create_animpack("scene0.0");
         animstruct.packs[n] add_pack_startfunc([0:var_e92aed86e7dd8b76, 1:var_630e1dfe2a5b41ca, 2:var_92c2f39adf1c2e62], &function_1a124e836e45482c);
         animstruct.packs[n] add_pack_modelanim(animstruct.var_e73ce295ae9d4104, level.var_1a209bd995a7fa83["wz_infil_g_prop_sh000"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.introPlane, level.var_1a209bd995a7fa83["wz_infil_cargoplane_sh000"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.introplane, level.var_1a209bd995a7fa83["wz_infil_cargoplane_sh000"]);
         animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[0], level.var_1a209bd995a7fa83["wz_infil_drone_guy1_idle_sh010"]);
         animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[1], level.var_1a209bd995a7fa83["wz_infil_drone_guy2_idle_sh010"]);
         animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[2], level.var_1a209bd995a7fa83["wz_infil_drone_guy3_idle_sh010"]);
@@ -664,7 +664,7 @@ function function_6913bd6620c40d4c() {
 function function_1a124e836e45482c(array) {
     function_f3ae4b41df047ba0(array);
     function_a0d0e8089bfd149(&function_7f4bbc61ad158330);
-    self.introPlane setscriptablepartstate("running_lights", "on");
+    self.introplane setscriptablepartstate("running_lights", "on");
     function_a0d0e8089bfd149(&function_6c267f4c5a7845ae);
     var_a98a49377dbbb3fb = getdvarint(@"hash_5fd54d13e95394d5", 0);
     if (var_a98a49377dbbb3fb) {
@@ -760,7 +760,7 @@ function function_a4a93d249c2219a7() {
 // Checksum 0x0, Offset: 0x6731
 // Size: 0x23a
 function function_3d33299e71a25af0() {
-    self.introPlane hide();
+    self.introplane hide();
     function_a0d0e8089bfd149(&function_55e8eca046dc86e1);
     sound = ter_op(isdefined(level.var_4294e392c776520), level.var_4294e392c776520, "scn_br_c17_infil_int");
     function_7acde5feb50c98f2(level.infilstruct.players, sound);
@@ -972,9 +972,9 @@ function function_e63ab2e92ddffaa1(array) {
     level thread function_c337548f4b03bdf2();
     delayseconds = getdvarfloat(@"hash_1968fc42f31e7d28", 3.9);
     if (delayseconds > 0) {
-        delaythread(delayseconds, &teleportToMovingPlane);
+        delaythread(delayseconds, &teleporttomovingplane);
     } else {
-        teleportToMovingPlane();
+        teleporttomovingplane();
     }
     level thread function_3724b7df63604071();
     self.movingc130 setscriptablepartstate("running_lights", "on");
@@ -1162,7 +1162,7 @@ function private function_55fb66f4acb3d466() {
     if (getdvarint(@"hash_6eff23c71a0d4b51", 1)) {
         level.infilstruct.var_2a959f4ba13b75da = 1;
         waitframe();
-        var_11f3b4465c8b637b = level.infilstruct.c130.animstruct.introPlane.origin;
+        var_11f3b4465c8b637b = level.infilstruct.c130.animstruct.introplane.origin;
         foreach (player in level.players) {
             if (!isdefined(player)) {
                 continue;
@@ -1503,7 +1503,7 @@ function function_f1462ccad9c4e0be() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8240
 // Size: 0x122
-function teleportToMovingPlane() {
+function teleporttomovingplane() {
     clearplayerwind();
     foreach (player in level.infilstruct.players) {
         if (!isdefined(player)) {

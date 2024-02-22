@@ -230,7 +230,7 @@ function private initplayerjail() {
             continue;
         }
         if (teammate != self) {
-            namespace_d696adde758cbe79::showDMZSplash("exgm_gulag_teammate_captured", [0:teammate], undefined, undefined, self);
+            namespace_d696adde758cbe79::showdmzsplash("exgm_gulag_teammate_captured", [0:teammate], undefined, undefined, self);
         }
     }
     if (isdefined(self.arena)) {
@@ -248,7 +248,7 @@ function private initplayerjail() {
         var_bada25504e8844d7.count = 1;
         var_bada25504e8844d7.maxcount = level.br_pickups.maxcounts[scriptablename];
         var_bada25504e8844d7.stackable = level.br_pickups.stackable[scriptablename];
-        var_57acedc40b2f974 = namespace_d696adde758cbe79::getDefaultWeaponAmmo(level.br_lootiteminfo[scriptablename].fullweaponobj);
+        var_57acedc40b2f974 = namespace_d696adde758cbe79::getdefaultweaponammo(level.br_lootiteminfo[scriptablename].fullweaponobj);
         var_35ead47ed0d7507e = var_57acedc40b2f974[2];
         var_4f04b15053655ba = var_57acedc40b2f974[1];
         ammo = var_57acedc40b2f974[0];
@@ -322,8 +322,8 @@ function private function_178d579cd5f260b9() {
             level.captivity_respawn.var_8c731182d88e8118 = function_93def91a50927481(level.captivity_respawn.var_8c731182d88e8118);
             continue;
         }
-        arenaFound = var_db588938105dc91d function_dd26d64a365cebbd();
-        if (!istrue(arenaFound) && istrue(var_db588938105dc91d.var_30aa967d83703fec)) {
+        arenafound = var_db588938105dc91d function_dd26d64a365cebbd();
+        if (!istrue(arenafound) && istrue(var_db588938105dc91d.var_30aa967d83703fec)) {
             var_2d00675497c92ae7 = var_db588938105dc91d [[ level.getspawnpoint ]]();
             arena = spawnstruct();
             arena.targetname = "gulag";
@@ -473,7 +473,7 @@ function private function_a15f6fecb1e9013f(agent, fortress) {
     agent.health = 150;
     agent.armorhealth = 100;
     agent.var_685390c6753c2cc7 = 1;
-    namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "exgmGulagAgent", 1);
+    namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "exgmGulagAgent", 1);
     agent namespace_14d36171baccf528::function_c37c4f9d687074ff(undefined, undefined, weapon);
 }
 
@@ -607,7 +607,7 @@ function private function_22d44b07ad53078d() {
     while (!isdefined(level.struct_class_names)) {
         waitframe();
     }
-    while (!isdefined(level.patrolPaths) && !istrue(level.var_4fe0c43951f6ce37)) {
+    while (!isdefined(level.patrolpaths) && !istrue(level.var_4fe0c43951f6ce37)) {
         waitframe();
     }
     while (!flag_exist("create_script_initialized")) {
@@ -631,8 +631,8 @@ function private function_22d44b07ad53078d() {
                         assertmsg("captivityRespawn node is missing target value. Location: " + var_5abf856e87d27fbb.origin);
                     #/
                 } else {
-                    if (!isdefined(var_5abf856e87d27fbb.poiName)) {
-                        var_5abf856e87d27fbb.poiName = namespace_37f0fb6355a4618a::function_55cf921efa4cbd09(var_5abf856e87d27fbb.origin, 1);
+                    if (!isdefined(var_5abf856e87d27fbb.poiname)) {
+                        var_5abf856e87d27fbb.poiname = namespace_37f0fb6355a4618a::function_55cf921efa4cbd09(var_5abf856e87d27fbb.origin, 1);
                     }
                     namespace_9823ee6035594d67::function_eecb9fd7f5e8181b(var_5abf856e87d27fbb);
                     setupprops(var_5abf856e87d27fbb);

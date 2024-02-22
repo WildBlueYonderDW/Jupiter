@@ -74,7 +74,7 @@ function onfullhealth(var_4a2ae12522ad9d95, var_823ca369fafd4a36, var_7f86cf029b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b1
 // Size: 0x142
-function getGametypeHealthPerFrame() {
+function getgametypehealthperframe() {
     if (function_244067e915c0eabe()) {
         var_881fb15f4d296741 = level.playermaxhealth / 150;
     } else {

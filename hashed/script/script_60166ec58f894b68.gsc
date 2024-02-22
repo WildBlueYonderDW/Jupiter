@@ -281,9 +281,9 @@ function private function_21c7f1a87f076126() {
             function_ad698ba26068ea05("Warping player (" + player.name + ") to location " + new_origin);
             wait(2);
             for (i = 0; i < 10; i++) {
-                player StartForcedFire();
+                player startforcedfire();
                 wait(2);
-                player StopForcedFire();
+                player stopforcedfire();
                 wait(2);
                 var_73d0c62ee90ef3c3 = player getplayerangles();
                 player setplayerangles(var_73d0c62ee90ef3c3 + (0, 85, 0));

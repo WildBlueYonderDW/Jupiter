@@ -156,7 +156,7 @@ function function_dacc8aa0d16e4487(playerlist, var_94bda1b3c0ae9bab) {
 function function_790e679b0f2d121e(var_9c34764b7d5ac247, var_94bda1b3c0ae9bab) {
     var_23d6245ff51f1599 = namespace_54d20dd0dd79277f::function_5b7802e04b6d946(var_9c34764b7d5ac247);
     if (istrue(var_23d6245ff51f1599)) {
-        squad = getSquadmates(var_9c34764b7d5ac247.team, var_9c34764b7d5ac247.var_ff97225579de16a, 0);
+        squad = getsquadmates(var_9c34764b7d5ac247.team, var_9c34764b7d5ac247.var_ff97225579de16a, 0);
         function_4cd1243025855075(squad, var_94bda1b3c0ae9bab);
     } else if (!function_365e789cf7ee1a2f(var_9c34764b7d5ac247, var_94bda1b3c0ae9bab)) {
         function_9e193f65f09b4ac4(var_9c34764b7d5ac247, var_94bda1b3c0ae9bab);

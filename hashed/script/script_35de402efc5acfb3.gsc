@@ -305,7 +305,7 @@ function function_6c731b5fab9c2494(data) {
     }
     switch (data.category) {
     case #"hash_4c8ad9f2942ea5b":
-        data.entity thread bcs_stateChange(data);
+        data.entity thread bcs_statechange(data);
         break;
     case #"hash_1044d327487d801a":
     case #"hash_184bba7053cc1c15":
@@ -445,7 +445,7 @@ function function_955ca8d297928838(data) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3184
 // Size: 0x12c
-function bcs_stateChange(data) {
+function bcs_statechange(data) {
     previousstate = data.params[0];
     currentstate = data.params[1];
     ai_event = data.params[2];
@@ -632,7 +632,7 @@ function function_f46983dffe232870() {
     self endon("death_or_disconnect");
     self.var_7887f3c24e400953 = 1;
     if (!istrue(self.var_90e5f1f12433908a)) {
-        thread bcs_initPlayer();
+        thread bcs_initplayer();
         self.var_90e5f1f12433908a = 1;
     }
     var_310236dbf257fbb5 = function_fd9e4cb348a5f283(self.origin, level.var_8893859de4351996);
@@ -700,7 +700,7 @@ function function_8f8de1d6f307f960(var_a434cd7944a162af) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39ca
 // Size: 0x31
-function bcs_initPlayer() {
+function bcs_initplayer() {
     self endon("death");
     self notify("bcs_initPlayer");
     self endon("bcs_initPlayer");

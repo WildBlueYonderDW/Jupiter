@@ -44,13 +44,13 @@ function getflightpath(var_6e7c70b904418daa, var_cebe2632e00d0e2d, planehalfdist
     d = length(startpoint - endpoint);
     flytime = d / var_23122e7b902f2ea9;
     d = abs(0.5 * d + var_3d05b2dd8e6fd146);
-    attackTime = d / var_23122e7b902f2ea9;
+    attacktime = d / var_23122e7b902f2ea9;
     /#
-        assert(flytime > attackTime);
+        assert(flytime > attacktime);
     #/
     flightpath["startPoint"] = startpoint;
     flightpath["endPoint"] = endpoint;
-    flightpath["attackTime"] = attackTime;
+    flightpath["attackTime"] = attacktime;
     flightpath["flyTime"] = flytime;
     return flightpath;
 }
@@ -59,12 +59,12 @@ function getflightpath(var_6e7c70b904418daa, var_cebe2632e00d0e2d, planehalfdist
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x3aa
 // Size: 0xb6
-function doflyby(lifeid, owner, requireddeathcount, startpoint, endpoint, attackTime, flytime, var_cebe2632e00d0e2d, streakname) {
+function doflyby(lifeid, owner, requireddeathcount, startpoint, endpoint, attacktime, flytime, var_cebe2632e00d0e2d, streakname) {
     plane = planespawn(lifeid, owner, startpoint, var_cebe2632e00d0e2d, streakname);
     plane endon("death");
     var_b81987c3aca12361 = 150;
     pathend = endpoint + ((randomfloat(2) - 1) * var_b81987c3aca12361, (randomfloat(2) - 1) * var_b81987c3aca12361, 0);
-    plane planemove(pathend, flytime, attackTime, streakname);
+    plane planemove(pathend, flytime, attacktime, streakname);
     plane planecleanup();
 }
 
@@ -106,11 +106,11 @@ function planespawn(lifeid, owner, startpoint, var_cebe2632e00d0e2d, streakname)
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fe
 // Size: 0xf3
-function planemove(destination, flytime, attackTime, streakname) {
+function planemove(destination, flytime, attacktime, streakname) {
     var_6c46b9c8f713361b = level.planeconfigs[streakname];
     self moveto(destination, flytime, 0, 0);
     if (isdefined(var_6c46b9c8f713361b.onattackdelegate)) {
-        self thread [[ var_6c46b9c8f713361b.onattackdelegate ]](destination, flytime, attackTime, self.owner, streakname);
+        self thread [[ var_6c46b9c8f713361b.onattackdelegate ]](destination, flytime, attacktime, self.owner, streakname);
     }
     if (isdefined(var_6c46b9c8f713361b.sonicboomsfx)) {
         thread playsonicboom(var_6c46b9c8f713361b.sonicboomsfx, 0.5 * flytime);

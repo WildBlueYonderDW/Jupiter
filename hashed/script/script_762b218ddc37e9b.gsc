@@ -448,7 +448,7 @@ function function_400f3f1de2faf5e1() {
 function function_1fcd300591a7cf98() {
     player = self;
     var_edf6ad250b4f68b5 = namespace_87e7f6fcf1544253::function_d277ca7e1acc3003();
-    totalflags = level.requiredFlag;
+    totalflags = level.requiredflag;
     var_585990e6fdb983a8 = namespace_16a6643951556450::function_ce0967f06e5921a4();
     var_2fa5191727f3bfe4 = function_fcc3c58a459eb914();
     var_77dddfe21ff9e256 = function_d6e9255e29b5fd5c();

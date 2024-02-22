@@ -37,12 +37,12 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "zombie_base";
-    self.voice = #"hash_97b066d92d35c738";
+    self.voice = #"unitedstates";
     self.bhasthighholster = 0;
     self.animtree = "zombie_base";
     self function_6b0082dec4510b24("c_jup_zmb_zombie_base_male_track_jacket_body_yz", namespace_509d3fc9a7725177::main());
     namespace_ac7e8770abb7eb1::attachhead("c_jup_zmb_zombie_base_track_jacket_head_yz", namespace_72b179595e0d9773::main());
-    self setclothtype(#"hash_d0ef9b6cfe3097be");
+    self setclothtype(#"vestheavy");
     self function_8abe5a968cc3c220(#"none");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {

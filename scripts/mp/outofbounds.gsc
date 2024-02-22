@@ -376,7 +376,7 @@ function onooboutoftime(ent) {
     var_106b10573bdeadf0 = undefined;
     if (isplayer(ent)) {
         var_775c9a68f9c00019 = 1;
-        if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (istrue(level.infilcinematicactive)) {
                 var_775c9a68f9c00019 = 0;
             } else if (isdefined(level.matchcountdowntime) && level.matchcountdowntime < 2) {
@@ -544,7 +544,7 @@ function function_39c5bd55494a224b() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1593
 // Size: 0x64
-function function_2ab9f05dd7033fcf() {
+function checkinvalidoobtriggers() {
     foreach (trigger in self.oobtriggers) {
         if (!function_4badb9b6ac027b93(self, trigger)) {
             onexitoobtrigger(trigger, self);
@@ -611,7 +611,7 @@ function killstreakregisteroobcallbacks() {
 // Checksum 0x0, Offset: 0x17da
 // Size: 0xde
 function watchoobtriggers() {
-    if (namespace_cd0b2d039510b38d::lpcfeaturegated() && !namespace_de5151d68164781a::function_9a2fd0d19774edde() && !namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (namespace_cd0b2d039510b38d::lpcfeaturegated() && !namespace_de5151d68164781a::function_9a2fd0d19774edde() && !namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (isdefined(level.outofboundstriggers)) {
@@ -632,7 +632,7 @@ function watchoobtriggers() {
 // Size: 0x40
 function watchoobtrigger(trigger) {
     trigger.entstouching = [];
-    if (!namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_4b0406965e556711::gameflagwait("prematch_done");
     }
     thread watchoobtriggerexit(trigger);
@@ -937,7 +937,7 @@ function gettriggertype(ent, trigger) {
     if (trigger namespace_1f188a13f7e79610::isvehicle()) {
         return "vehicle";
     }
-    if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return "br";
     }
     if (isdefined(trigger) && isdefined(trigger.script_team)) {

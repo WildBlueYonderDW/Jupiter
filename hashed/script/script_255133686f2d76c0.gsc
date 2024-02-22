@@ -106,7 +106,7 @@ function private function_31f42ad9450cb938(spawndata, var_ee8da5624236dc89) {
     vehicle.borntime = gettime();
     vehicle.flareslive = [];
     vehicle.flareready = 1;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         vehicle.flarecooldown = 35;
     } else {
         vehicle.flarecooldown = 10;
@@ -419,7 +419,7 @@ function private vehicle_handleflarefire(player) {
 // Checksum 0x0, Offset: 0x13a0
 // Size: 0x63
 function private function_dec1987f9ee988c6() {
-    self.forceOOBEnable = 1;
+    self.forceoobenable = 1;
     foreach (player in self.var_8784c427b1af24a6) {
         function_6ff4f91590d55df6(player);
     }
@@ -430,18 +430,18 @@ function private function_dec1987f9ee988c6() {
 // Checksum 0x0, Offset: 0x140a
 // Size: 0x12d
 function private function_153a6accf001dff6(player) {
-    if (isdefined(self.onStartRiding)) {
-        self [[ self.onStartRiding ]](player);
+    if (isdefined(self.onstartriding)) {
+        self [[ self.onstartriding ]](player);
     }
     if (!istrue(self.var_c547488f80d3eb28)) {
         namespace_84cff6185e39aa66::function_d2d9c09551d91164(self, player);
     }
     if (!isdefined(level.var_b531611b8d662db7)) {
-        level.var_b531611b8d662db7 = getdvarint(@"hash_dee18061c0d4dfe", ter_op(namespace_36f464722d326bbe::isBRStyleGameType(), 0, 1)) == 1;
+        level.var_b531611b8d662db7 = getdvarint(@"hash_dee18061c0d4dfe", ter_op(namespace_36f464722d326bbe::isbrstylegametype(), 0, 1)) == 1;
     }
-    if (level.var_b531611b8d662db7 || istrue(self.forceOOBEnable)) {
+    if (level.var_b531611b8d662db7 || istrue(self.forceoobenable)) {
         vehicleteam = vehicle_occupancy_getteamfriendlyto(self);
-        if (istrue(self.forceOOBEnable) && issharedfuncdefined("game", "onEnterOOBTrigger")) {
+        if (istrue(self.forceoobenable) && issharedfuncdefined("game", "onEnterOOBTrigger")) {
             function_6ff4f91590d55df6(player);
         } else if (isdefined(vehicleteam) && isdefined(player.team) && vehicleteam != "neutral" && vehicleteam != player.team && issharedfuncdefined("game", "onEnterOOBTrigger")) {
             function_6ff4f91590d55df6(player);
@@ -466,8 +466,8 @@ function private function_71adb8f84c3df6bb(player) {
         if (var_6d4d929e7c9d3e5c && !var_76e18e906d26a7ec) {
             player function_3bce3ba16965048a();
         }
-        if (isdefined(self.onEndRiding)) {
-            self [[ self.onEndRiding ]](player);
+        if (isdefined(self.onendriding)) {
+            self [[ self.onendriding ]](player);
         }
         if (istrue(player.var_1f34845fdd0a6631) && isdefined(player.oob) && player.oob > 0 && issharedfuncdefined("game", "onExitOOBTrigger")) {
             function_6307ffe7f40fc2d0(player);

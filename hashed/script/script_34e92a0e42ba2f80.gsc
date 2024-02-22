@@ -1313,9 +1313,9 @@ function initvehicles() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6f0e
 // Size: 0x1a0
-function getvehiclespawns(var_7731adef63e19b0c, vehicletype) {
+function getvehiclespawns(vehicleref, vehicletype) {
     spawns = [];
-    dvarstring = function_2ef675c13ca1c4af(@"hash_ad95d7262a11119e", var_7731adef63e19b0c);
+    dvarstring = function_2ef675c13ca1c4af(@"hash_ad95d7262a11119e", vehicleref);
     for (index = 0; 1; index++) {
         var_f826f0378f17ae2f = function_2ef675c13ca1c4af(dvarstring, "_origin_", index);
         var_d9c6c3c1205d844 = function_2ef675c13ca1c4af(dvarstring, "_angles_", index);
@@ -1338,7 +1338,7 @@ function getvehiclespawns(var_7731adef63e19b0c, vehicletype) {
             var_7224bacab3f8ee26 = level.brtdm_config.locale_defaults[var_d9c6c3c1205d844];
         }
         vehicle.angles = getdvarvector(var_d9c6c3c1205d844, var_7224bacab3f8ee26);
-        vehicle.targetname = var_7731adef63e19b0c;
+        vehicle.targetname = vehicleref;
         vehicle.vehicletype = vehicletype;
         spawns[spawns.size] = vehicle;
     }

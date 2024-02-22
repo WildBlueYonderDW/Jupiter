@@ -26,7 +26,7 @@
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x761
 // Size: 0x3fd
-function setupobjective(trigger, index, var_8b9949739f4e0f6, var_5ddbc1faed2c56e6, usingVisualHintString) {
+function setupobjective(trigger, index, var_8b9949739f4e0f6, var_5ddbc1faed2c56e6, usingvisualhintstring) {
     var_ed31f55739afcaf2 = undefined;
     label = undefined;
     if (isdefined(trigger.originalpos)) {
@@ -82,7 +82,7 @@ function setupobjective(trigger, index, var_8b9949739f4e0f6, var_5ddbc1faed2c56e
     var_ed31f55739afcaf2.onenduse = &function_647ca2a49f347576;
     var_ed31f55739afcaf2.onuse = &function_3a285102f73c5a7f;
     var_ed31f55739afcaf2.hacked = 0;
-    var_ed31f55739afcaf2.usingVisualHintString = usingVisualHintString;
+    var_ed31f55739afcaf2.usingvisualhintstring = usingvisualhintstring;
     var_ed31f55739afcaf2.mapname = "_" + getmapname();
     if (isdefined(var_f9c86daa3be29cba)) {
         namespace_5a22b6f3a56f7e9b::update_objective_position(var_ed31f55739afcaf2.objidnum, var_f9c86daa3be29cba.origin);
@@ -124,7 +124,7 @@ function function_c4537fbaab36b51e(player) {
     player namespace_a34451ae3d453e::playsoundonplayers("jup_wm_hack_init_ally", player.team);
     player namespace_a34451ae3d453e::playsoundonplayers("jup_wm_hack_init_enemy", getotherteam(player.team)[0]);
     player lerpfovscalefactor(0, 0);
-    namespace_4d0d143cd3171cd5::function_204ff26efb937261(1, self.curorigin, player.team, 64, 80, self.usingVisualHintString);
+    namespace_4d0d143cd3171cd5::function_204ff26efb937261(1, self.curorigin, player.team, 64, 80, self.usingvisualhintstring);
 }
 
 // Namespace namespace_2776c9448d38a270/namespace_dad3c7903f3cd2f7
@@ -221,10 +221,10 @@ function function_3437d0c8eca62f1c(zone, player) {
     player namespace_a34451ae3d453e::playsoundonplayers("jup_wm_hack_start_enemy", game["defenders"]);
     switch (getmapname()) {
     case #"hash_5f400f0334a4a47b":
-        player namespace_48a08c5037514e04::doScoreEvent(#"hash_690087e1d0c26f49");
+        player namespace_48a08c5037514e04::doscoreevent(#"hash_690087e1d0c26f49");
         break;
     case #"hash_a57f5ebbc35a8c1f":
-        player namespace_48a08c5037514e04::doScoreEvent(#"hash_829f771d70a75937");
+        player namespace_48a08c5037514e04::doscoreevent(#"hash_829f771d70a75937");
         break;
     default:
         break;
@@ -259,10 +259,10 @@ function function_cc4020b25a7774e9(zone, player) {
     player namespace_a34451ae3d453e::playsoundonplayers("jup_wm_hack_recovered_enemy", getotherteam(player.team)[0]);
     switch (getmapname()) {
     case #"hash_5f400f0334a4a47b":
-        player namespace_48a08c5037514e04::doScoreEvent(#"hash_a0e490be654a4fa8");
+        player namespace_48a08c5037514e04::doscoreevent(#"hash_a0e490be654a4fa8");
         break;
     case #"hash_a57f5ebbc35a8c1f":
-        player namespace_48a08c5037514e04::doScoreEvent(#"hash_c4a41d69e7440dc3");
+        player namespace_48a08c5037514e04::doscoreevent(#"hash_c4a41d69e7440dc3");
         break;
     default:
         break;
@@ -360,7 +360,7 @@ function function_e27a6d1eec1c355e() {
 function function_bd8563c34b78c85b(player) {
     player thread function_796d1da742e2a88a();
     player thread function_76367f9c7910b465();
-    thread typingAnimStart(player);
+    thread typinganimstart(player);
 }
 
 // Namespace namespace_2776c9448d38a270/namespace_dad3c7903f3cd2f7
@@ -472,7 +472,7 @@ function function_55c29a7f07974c53(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c83
 // Size: 0x2ee
-function typingAnimStart(player) {
+function typinganimstart(player) {
     level endon("game_ended");
     player endon("death_or_disconnect");
     player endon("interact_interrupt");

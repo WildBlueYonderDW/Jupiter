@@ -155,7 +155,7 @@ function _spawnpois() {
     var_aa43b883cba2c7fd = utility::getstructarray("br_respawn_station", "targetname");
     for (i = 0; i < var_aa43b883cba2c7fd.size; i++) {
         wait(var_4b52cea8cfcf246e);
-        namespace_7642a6bee4cdaaa2::spawnambulance(var_aa43b883cba2c7fd[i]);
+        br_respawn::spawnambulance(var_aa43b883cba2c7fd[i]);
     }
     var_3eaafd9e0db44ba4 = getdvarint(@"hash_3a7e96b56579724d", var_bd889cf87f50abbd);
     var_4486795ea11dc6e9 = utility::getstructarray("br_mobile_armory_location", "targetname");

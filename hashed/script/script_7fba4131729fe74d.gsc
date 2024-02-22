@@ -557,7 +557,7 @@ function private function_6727841e301aff6e(location, numagents, groupname, var_7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2037
 // Size: 0x75
-function dmzTask_setupSecondWaveAgent(agent) {
+function dmztask_setupsecondwaveagent(agent) {
     weapon = namespace_e0ee43ef2dddadaa::buildweapon("iw9_ar_mike4_mp", [0:"laserbox_hip04", 1:"none", 2:"none", 3:"none", 4:"silencer01_ar", 5:"none"], "none", "none");
     agent namespace_14d36171baccf528::function_c37c4f9d687074ff(undefined, undefined, weapon, "smoke_grenade_mp", 5);
 }
@@ -581,9 +581,9 @@ function private function_126dc0519b8a8ef6(location, numagents, groupname, var_7
     }
     self.var_7158f739db4a1d2f = agents;
     foreach (agent in agents) {
-        namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_setupSecondWaveAgent", &dmzTask_setupSecondWaveAgent);
+        namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_setupSecondWaveAgent", &dmztask_setupsecondwaveagent);
         if (isagent(agent)) {
-            dmzTask_setupSecondWaveAgent(agent);
+            dmztask_setupsecondwaveagent(agent);
         }
     }
 }
@@ -592,7 +592,7 @@ function private function_126dc0519b8a8ef6(location, numagents, groupname, var_7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f5
 // Size: 0x75
-function dmzTask_setupThirdWaveAgent(agent) {
+function dmztask_setupthirdwaveagent(agent) {
     weapon = namespace_e0ee43ef2dddadaa::buildweapon("iw9_ar_mike4_mp", [0:"laserbox_hip04", 1:"none", 2:"none", 3:"none", 4:"silencer01_ar", 5:"none"], "none", "none");
     agent namespace_14d36171baccf528::function_c37c4f9d687074ff(undefined, undefined, weapon, "smoke_grenade_mp", 5);
 }
@@ -616,9 +616,9 @@ function private function_3af43b43f5a74cd9(location, numagents, groupname, var_7
     }
     self.var_e4b11d6c6e0cf57c = agents;
     foreach (agent in agents) {
-        namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_setupThirdWaveAgent", &dmzTask_setupThirdWaveAgent);
+        namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_setupThirdWaveAgent", &dmztask_setupthirdwaveagent);
         if (isagent(agent)) {
-            dmzTask_setupThirdWaveAgent(agent);
+            dmztask_setupthirdwaveagent(agent);
         }
     }
 }
@@ -635,15 +635,15 @@ function private function_1939c892064fcc20(agents, location, var_7d97c0571433f83
         }
         if (var_7d97c0571433f835) {
             if (isagent(agent)) {
-                dmzTask_overrideBoss(agent);
+                dmztask_overrideboss(agent);
             }
-            namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_overrideBoss", &dmzTask_overrideBoss);
+            namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_overrideBoss", &dmztask_overrideboss);
             var_7d97c0571433f835 = 0;
         } else {
             if (isagent(agent)) {
-                dmzTask_overrideReinforcementAgent(agent);
+                dmztask_overridereinforcementagent(agent);
             }
-            namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_overrideReinforcementAgent", &dmzTask_overrideReinforcementAgent);
+            namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "dmzTask_overrideReinforcementAgent", &dmztask_overridereinforcementagent);
         }
         thread namespace_2000a83505151e5b::function_a5117518725da028(agent, location);
         self.agents[self.agents.size] = agent;
@@ -691,14 +691,14 @@ function private function_8b3d13f0d1a8607d(fortress) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x264a
 // Size: 0x94
-function dmzTask_overrideReinforcementAgent(agent) {
+function dmztask_overridereinforcementagent(agent) {
     weapon = random([0:"brloot_weapon_sm_uzulu_epic", 1:"brloot_weapon_ar_mike4_rare"]);
     agent namespace_14d36171baccf528::function_c37c4f9d687074ff("body_mp_eastern_nikto_2_1", "head_mp_eastern_nikto_3_1", level.br_lootiteminfo[weapon].fullweaponobj, "smoke_grenade_mp");
     if (randomfloat(1) > 0.3) {
-        namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "dropWeapon", 0);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "dropWeapon", 0);
     }
     if (randomfloat(1) > 0) {
-        namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "dropBackpack", 0);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "dropBackpack", 0);
     }
 }
 
@@ -706,15 +706,15 @@ function dmzTask_overrideReinforcementAgent(agent) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26e5
 // Size: 0x8f
-function dmzTask_overrideBoss(agent) {
+function dmztask_overrideboss(agent) {
     weapon = random([0:"brloot_weapon_sm_uzulu_epic", 1:"brloot_weapon_ar_mike4_rare"]);
     namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
     agent namespace_14d36171baccf528::function_c37c4f9d687074ff(undefined, undefined, level.br_lootiteminfo[weapon].fullweaponobj);
     if (randomfloat(1) > 0.3) {
-        namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "dropWeapon", 0);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "dropWeapon", 0);
     }
     if (randomfloat(1) > 0) {
-        namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "dropBackpack", 0);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "dropBackpack", 0);
     }
 }
 

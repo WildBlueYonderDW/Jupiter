@@ -193,12 +193,12 @@ function private function_fc8dd3d00ebca77b(var_d74fc41b6b10ccf5) {
         return -1;
     }
     var_2264f8b8707077c1 = var_d74fc41b6b10ccf5.idamage * 20;
-    var_ccef760095a8d026 = function_8c1f2f897dfe5982(var_c02b1f6c1721c844, "open");
-    if (var_ccef760095a8d026 <= 0) {
+    head_health = function_8c1f2f897dfe5982(var_c02b1f6c1721c844, "open");
+    if (head_health <= 0) {
         return -1;
     }
     var_188a38cf4c902143 = max(var_2264f8b8707077c1, var_d74fc41b6b10ccf5.idamage);
-    var_188a38cf4c902143 = min(var_188a38cf4c902143, var_ccef760095a8d026);
+    var_188a38cf4c902143 = min(var_188a38cf4c902143, head_health);
     var_d74fc41b6b10ccf5.var_acba301fcf9d68b8 = max(var_d74fc41b6b10ccf5.var_acba301fcf9d68b8, 1);
     var_d74fc41b6b10ccf5.var_14edc6d1db3695bc = 1;
     function_dfd6d030978a7650(var_c02b1f6c1721c844, var_188a38cf4c902143, "open", var_d74fc41b6b10ccf5.eattacker, var_d74fc41b6b10ccf5.einflictor);

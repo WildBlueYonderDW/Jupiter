@@ -460,8 +460,8 @@ function takeplunderpickup(pickupent) {
     }
     if (array_contains(level.br_plunder.names, pickupent.scriptablename)) {
         var_7d329a9bed628571 = isdefined(pickupent.instance) && istrue(pickupent.instance.var_6216e086379def7d);
-        var_9516b1b63f4da10c = isdefined(pickupent.instance) ? pickupent.instance.var_9516b1b63f4da10c : undefined;
-        data = {var_9516b1b63f4da10c:var_9516b1b63f4da10c, var_7d329a9bed628571:var_7d329a9bed628571};
+        drop_team = isdefined(pickupent.instance) ? pickupent.instance.drop_team : undefined;
+        data = {drop_team:drop_team, var_7d329a9bed628571:var_7d329a9bed628571};
         playerplunderpickup(amount, data, undefined, 1);
         level.br_plunder.plunder_items_picked_up = level.br_plunder.plunder_items_picked_up + 1;
         level.br_plunder.plunder_value_picked_up = level.br_plunder.plunder_value_picked_up + amount;
@@ -639,7 +639,7 @@ function playerplunderevent(amount, type, entity, data, var_3108c5d4e33b7014) {
         amount = int(min(self.plundercount, amount));
     }
     if (type == 1 && isdefined(self.var_bc440201cf10cbd4) && isdefined(data) && !istrue(data.var_7d329a9bed628571)) {
-        var_3b039a52d157112 = isdefined(data.var_9516b1b63f4da10c) && self.team == data.var_9516b1b63f4da10c;
+        var_3b039a52d157112 = isdefined(data.drop_team) && self.team == data.drop_team;
         if (!var_3b039a52d157112) {
             amount = int(amount * max(1, self.var_bc440201cf10cbd4));
         }
@@ -685,7 +685,7 @@ function playerplunderevent(amount, type, entity, data, var_3108c5d4e33b7014) {
                 }
             }
             if (isdefined(data.playerscoreeventref) && (!isdefined(data.playerscoreeventvalue) || data.playerscoreeventvalue > 0)) {
-                data.player thread namespace_48a08c5037514e04::doScoreEvent(data.playerscoreeventref, undefined, data.playerscoreeventvalue);
+                data.player thread namespace_48a08c5037514e04::doscoreevent(data.playerscoreeventref, undefined, data.playerscoreeventvalue);
             }
         }
         if (istrue(data.playanimation)) {
@@ -748,7 +748,7 @@ function function_5a2284274d70f7d(var_cb99e7b595819c28, amount) {
 // Checksum 0x0, Offset: 0x3657
 // Size: 0xfe
 function packextrascore0(data) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (getsubgametype() == "kingslayer" || getsubgametype() == "resurgence" || getsubgametype() == "resurgence_mgl" || getsubgametype() == "zonecontrol") {
@@ -1512,7 +1512,7 @@ function dropcondensedplunder(amount, dropstruct, var_1ad2db70c8d01f51) {
     pickupent = namespace_cb965d2f71fefddc::spawnpickup(level.br_plunder.names[var_8e0b722357754d9e], var_cb4fad49263e20c4, amount, 1, undefined, var_307bcadb5a20bd5e);
     namespace_c6ccccd95254983f::modify_plunder_itemsinworld(level.br_plunder.names[var_8e0b722357754d9e], 1);
     if (isdefined(pickupent)) {
-        pickupent.var_9516b1b63f4da10c = dropstruct.var_13ac9eca292f815;
+        pickupent.drop_team = dropstruct.var_13ac9eca292f815;
         var_e05413a53b5d9167[var_e05413a53b5d9167.size] = pickupent;
         if (inplunderlivelobby()) {
             level.br_plunder_ents[level.br_plunder_ents.size] = pickupent;
@@ -2133,7 +2133,7 @@ function calculatehelitimetoarrive(var_625180ce8d2f8f77) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x733f
 // Size: 0xd2
-function heligotoplunderrepository(plunderRepository) {
+function heligotoplunderrepository(plunderrepository) {
     self endon("death");
     self endon("leaving");
     groundz = self.extractgroundpos[2];
@@ -2148,7 +2148,7 @@ function heligotoplunderrepository(plunderRepository) {
         if (!namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
             level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("plunder_extract_chopper_arrive", self.team, 1);
         }
-        thread heliwaitatplunderrepository(plunderRepository);
+        thread heliwaitatplunderrepository(plunderrepository);
         return;
     }
     thread helileave(1);
@@ -2158,42 +2158,42 @@ function heligotoplunderrepository(plunderRepository) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7418
 // Size: 0xf4
-function heliwaitatplunderrepository(plunderRepository) {
+function heliwaitatplunderrepository(plunderrepository) {
     /#
-        assertex(isdefined(plunderRepository), "heliWaitAtPlunderRepository called on a heli without a plunderRepository.");
+        assertex(isdefined(plunderrepository), "heliWaitAtPlunderRepository called on a heli without a plunderRepository.");
     #/
     plunderrepositoryref = undefined;
-    if (plunderRepository.type == "brloot_plunder_extraction_site_01") {
+    if (plunderrepository.type == "brloot_plunder_extraction_site_01") {
         plunderrepositoryref = "plunderHelipad1";
-    } else if (plunderRepository.type == "brloot_plunder_extraction_site_02") {
+    } else if (plunderrepository.type == "brloot_plunder_extraction_site_02") {
         plunderrepositoryref = "plunderHelipad2";
-    } else if (plunderRepository.type == "brloot_quest_extract_site_plunder") {
+    } else if (plunderrepository.type == "brloot_quest_extract_site_plunder") {
         plunderrepositoryref = "extractHelipadPlunder";
-    } else if (plunderRepository.type == "brloot_quest_extract_site_br") {
+    } else if (plunderrepository.type == "brloot_quest_extract_site_br") {
         plunderrepositoryref = "extractHelipadBR";
     } else {
         /#
             assertmsg("heliWaitAtPlunderRepository called on a heli with a plunderRepository of an unregistered type.");
         #/
     }
-    plunder_registerrepositoryinstance(plunderRepository, plunderrepositoryref);
+    plunder_registerrepositoryinstance(plunderrepository, plunderrepositoryref);
     players = undefined;
     if (isdefined(self.team)) {
         players = namespace_54d20dd0dd79277f::getfriendlyplayers(self.team);
     }
-    thread plunder_repositorywatchcountdown(plunderRepository, players);
-    plunder_updateanchoredwidgetforplayers(plunderRepository, players);
+    thread plunder_repositorywatchcountdown(plunderrepository, players);
+    plunder_updateanchoredwidgetforplayers(plunderrepository, players);
 }
 
 // Namespace br_plunder/namespace_c6ccccd95254983f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7513
 // Size: 0xbc
-function helibankplunder(plunderRepository) {
+function helibankplunder(plunderrepository) {
     if (!istrue(level.gameended) && !namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
         level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("plunder_extract_success", self.team, 1);
     }
-    data = plunderRepository namespace_c6ccccd95254983f::entityplunderbankalldeposited();
+    data = plunderrepository namespace_c6ccccd95254983f::entityplunderbankalldeposited();
     if (isdefined(data) && isdefined(data.amounttotal) && data.amounttotal > 0) {
         level.br_plunder.extraction_helicoptor_total_plunder = level.br_plunder.extraction_helicoptor_total_plunder + data.amounttotal;
         level.br_plunder.extraction_helicoptor_num_completed++;
@@ -2428,16 +2428,16 @@ function helileave(var_c76f5ba0ad745444) {
     if (!istrue(level.gameended) && !namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
         level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("plunder_extract_chopper_leave", self.team, 1);
     }
-    plunderRepository = self.site;
-    if (isdefined(plunderRepository)) {
-        plunder_repositoryclearcountdown(plunderRepository);
-        helibankplunder(plunderRepository);
-        if (isdefined(plunderRepository.heli) && plunderRepository.heli == self) {
-            plunderRepository.heli = undefined;
-            plunderRepository.team = undefined;
-            plunderRepository notify("heli_left");
+    plunderrepository = self.site;
+    if (isdefined(plunderrepository)) {
+        plunder_repositoryclearcountdown(plunderrepository);
+        helibankplunder(plunderrepository);
+        if (isdefined(plunderrepository.heli) && plunderrepository.heli == self) {
+            plunderrepository.heli = undefined;
+            plunderrepository.team = undefined;
+            plunderrepository notify("heli_left");
         }
-        plunderRepository thread heli_delayedpadstateupdate(self.site.type);
+        plunderrepository thread heli_delayedpadstateupdate(self.site.type);
         self.site = undefined;
     }
     self.readytoleave = 1;
@@ -2971,15 +2971,15 @@ function plunder_initrepositories() {
 // Checksum 0x0, Offset: 0x94fb
 // Size: 0x1c2
 function plunder_getleveldataforrepository(ref, create, var_6ecb77fd1f27c667) {
-    levelData = level.plunderrepositories;
+    leveldata = level.plunderrepositories;
     /#
-        assertex(isdefined(levelData), "plunder_getLevelDataForRepository() called before plunder_initRepositories().");
+        assertex(isdefined(leveldata), "plunder_getLevelDataForRepository() called before plunder_initRepositories().");
     #/
-    var_464eb48901113eb0 = levelData.data[ref];
+    var_464eb48901113eb0 = leveldata.data[ref];
     if (!isdefined(var_464eb48901113eb0)) {
         if (istrue(create)) {
             var_464eb48901113eb0 = spawnstruct();
-            levelData.data[ref] = var_464eb48901113eb0;
+            leveldata.data[ref] = var_464eb48901113eb0;
             var_464eb48901113eb0.usetime = 0.75;
             var_464eb48901113eb0.useeventtype = 2;
             var_464eb48901113eb0.useeventamount = 250;
@@ -3016,9 +3016,9 @@ function plunder_getleveldataforrepository(ref, create, var_6ecb77fd1f27c667) {
 // Checksum 0x0, Offset: 0x96c5
 // Size: 0x13a
 function plunder_registerrepositoryinstance(entity, ref) {
-    levelData = level.plunderrepositories;
+    leveldata = level.plunderrepositories;
     /#
-        assertex(isdefined(levelData), "plunder_registerRepositoryInstance() called before plunder_initRepositories().");
+        assertex(isdefined(leveldata), "plunder_registerRepositoryInstance() called before plunder_initRepositories().");
     #/
     var_464eb48901113eb0 = plunder_getleveldataforrepository(ref);
     entity.plunderrepositoryref = ref;
@@ -3028,7 +3028,7 @@ function plunder_registerrepositoryinstance(entity, ref) {
     entity.plunderinstanceid = level.plunderrepositories.uniqueinstanceid;
     level.plunderrepositories.uniqueinstanceid++;
     entity.playersusing = [];
-    levelData.instances[entity.plunderinstanceid] = entity;
+    leveldata.instances[entity.plunderinstanceid] = entity;
     /#
         assertex(!isdefined(var_464eb48901113eb0.teamuseonly) || isdefined(entity.team), "team use only repositories must have .team defined");
     #/
@@ -3044,9 +3044,9 @@ function plunder_registerrepositoryinstance(entity, ref) {
 // Checksum 0x0, Offset: 0x9806
 // Size: 0xce
 function plunder_deregisterrepositoryinstance(entity) {
-    levelData = level.plunderrepositories;
+    leveldata = level.plunderrepositories;
     /#
-        assertex(isdefined(levelData), "plunder_deregisterRepositoryInstance() called before plunder_initRepositories().");
+        assertex(isdefined(leveldata), "plunder_deregisterRepositoryInstance() called before plunder_initRepositories().");
     #/
     entity notify("plunder_instance_deregistered");
     plunder_allowrepositoryuse(entity, 0, 1);
@@ -3059,7 +3059,7 @@ function plunder_deregisterrepositoryinstance(entity) {
     plunder_repositoryclearcountdown(entity);
     entity.playersusing = undefined;
     if (isdefined(entity.plunderinstanceid)) {
-        levelData.instances[entity.plunderinstanceid] = undefined;
+        leveldata.instances[entity.plunderinstanceid] = undefined;
     }
     plunder_removeanchoredwidgetfromrepositoryinstance(entity);
     entity namespace_ad136f1d5091df4a::interactive_removeusedcallbackfromentity();
@@ -3070,13 +3070,13 @@ function plunder_deregisterrepositoryinstance(entity) {
 // Checksum 0x0, Offset: 0x98db
 // Size: 0x64
 function plunder_repositoryinstanceisregistered(entity) {
-    levelData = level.plunderrepositories;
-    if (!isdefined(levelData)) {
+    leveldata = level.plunderrepositories;
+    if (!isdefined(leveldata)) {
         return 0;
     }
     instance = undefined;
     if (isdefined(entity.plunderinstanceid)) {
-        instance = levelData.instances[entity.plunderinstanceid];
+        instance = leveldata.instances[entity.plunderinstanceid];
     }
     return isdefined(instance) && instance == entity;
 }
@@ -3164,8 +3164,8 @@ function plunder_allowrepositoryuseforplayer(entity, player, bool, var_6ecb77fd1
 // Checksum 0x0, Offset: 0x9c4d
 // Size: 0x8c
 function plunder_allowallrepositoryuseforplayer(player, bool, var_6ecb77fd1f27c667) {
-    levelData = level.plunderrepositories;
-    foreach (instance in levelData.instances) {
+    leveldata = level.plunderrepositories;
+    foreach (instance in leveldata.instances) {
         plunder_allowrepositoryuseforplayer(instance, player, bool, 1);
     }
 }
@@ -3696,7 +3696,7 @@ function plunder_sendrepositorywidgetomnvar(player) {
 // Checksum 0x0, Offset: 0xb120
 // Size: 0x277
 function plunder_addanchoredwidgettorepositoryinstance(entity) {
-    levelData = level.plunderrepositories;
+    leveldata = level.plunderrepositories;
     var_464eb48901113eb0 = plunder_getleveldataforrepository(entity.plunderrepositoryref);
     if (!istrue(var_464eb48901113eb0.teamanchoredwidget)) {
         return;
@@ -3704,14 +3704,14 @@ function plunder_addanchoredwidgettorepositoryinstance(entity) {
     /#
         assertex(istrue(var_464eb48901113eb0.teamuseonly), "anchored widgets are only supported for team only repositories.");
     #/
-    if (!isdefined(levelData.teamanchoredwidgetinstances[entity.team])) {
-        levelData.teamanchoredwidgetinstances[entity.team] = [];
+    if (!isdefined(leveldata.teamanchoredwidgetinstances[entity.team])) {
+        leveldata.teamanchoredwidgetinstances[entity.team] = [];
     }
     var_bd73cc979462cac0 = [];
     for (i = 1; i <= 4; i++) {
         var_bd73cc979462cac0[i] = i;
     }
-    foreach (instance in levelData.teamanchoredwidgetinstances[entity.team]) {
+    foreach (instance in leveldata.teamanchoredwidgetinstances[entity.team]) {
         var_bd73cc979462cac0[instance.anchoredwidgetid] = undefined;
     }
     foreach (anchoredwidgetid in var_bd73cc979462cac0) {
@@ -3719,8 +3719,8 @@ function plunder_addanchoredwidgettorepositoryinstance(entity) {
         break;
     }
     if (isdefined(entity.anchoredwidgetid)) {
-        levelData.teamanchoredwidgetinstances[entity.team] = array_add(levelData.teamanchoredwidgetinstances[entity.team], entity);
-        var_62aae91e274e22d5 = levelData.teamanchoredentomnvars[entity.anchoredwidgetid];
+        leveldata.teamanchoredwidgetinstances[entity.team] = array_add(leveldata.teamanchoredwidgetinstances[entity.team], entity);
+        var_62aae91e274e22d5 = leveldata.teamanchoredentomnvars[entity.anchoredwidgetid];
         foreach (player in namespace_54d20dd0dd79277f::getfriendlyplayers(entity.team)) {
             player setclientomnvar(var_62aae91e274e22d5, entity getentitynumber());
         }
@@ -3736,18 +3736,18 @@ function plunder_addanchoredwidgettorepositoryinstance(entity) {
 // Checksum 0x0, Offset: 0xb39e
 // Size: 0x14a
 function plunder_removeanchoredwidgetfromrepositoryinstance(entity) {
-    levelData = level.plunderrepositories;
+    leveldata = level.plunderrepositories;
     id = entity.anchoredwidgetid;
     if (!isdefined(id)) {
         return;
     }
     entity.anchoredwidgetid = undefined;
-    levelData.teamanchoredwidgetinstances[entity.team] = array_remove(levelData.teamanchoredwidgetinstances[entity.team], entity);
-    if (levelData.teamanchoredwidgetinstances[entity.team].size == 0) {
-        levelData.teamanchoredwidgetinstances[entity.team] = undefined;
+    leveldata.teamanchoredwidgetinstances[entity.team] = array_remove(leveldata.teamanchoredwidgetinstances[entity.team], entity);
+    if (leveldata.teamanchoredwidgetinstances[entity.team].size == 0) {
+        leveldata.teamanchoredwidgetinstances[entity.team] = undefined;
     }
-    var_62aae91e274e22d5 = levelData.teamanchoredentomnvars[id];
-    var_634e557aa9552052 = levelData.teamanchoredinfoomnvars[id];
+    var_62aae91e274e22d5 = leveldata.teamanchoredentomnvars[id];
+    var_634e557aa9552052 = leveldata.teamanchoredinfoomnvars[id];
     foreach (player in namespace_54d20dd0dd79277f::getfriendlyplayers(entity.team)) {
         player setclientomnvar(var_62aae91e274e22d5, -1);
         player setclientomnvar(var_634e557aa9552052, 0);
@@ -3759,7 +3759,7 @@ function plunder_removeanchoredwidgetfromrepositoryinstance(entity) {
 // Checksum 0x0, Offset: 0xb4ef
 // Size: 0x199
 function plunder_updateanchoredwidgetforplayers(entity, players) {
-    levelData = level.plunderrepositories;
+    leveldata = level.plunderrepositories;
     if (!isdefined(entity.anchoredwidgetid)) {
         return;
     }
@@ -3790,7 +3790,7 @@ function plunder_updateanchoredwidgetforplayers(entity, players) {
         payload = int(min(payload, 1023));
         value = value + (payload << bit);
     }
-    var_634e557aa9552052 = levelData.teamanchoredinfoomnvars[entity.anchoredwidgetid];
+    var_634e557aa9552052 = leveldata.teamanchoredinfoomnvars[entity.anchoredwidgetid];
     foreach (player in players) {
         if (array_contains(entity.playersusing, player)) {
             player setclientomnvar(var_634e557aa9552052, value & -2);

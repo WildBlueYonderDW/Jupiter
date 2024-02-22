@@ -534,26 +534,26 @@ function bot_choose_attack_role() {
             return;
         }
     }
-    var_b7eac42471ac7fae = undefined;
+    new_role = undefined;
     if (is_bomb_planted_on(self.current_bombzone)) {
-        var_b7eac42471ac7fae = "defend_zone";
+        new_role = "defend_zone";
     } else {
         var_6eaa3366ba4607b8 = get_player_planting_zone(self.current_bombzone);
         if (!isdefined(var_6eaa3366ba4607b8) || var_6eaa3366ba4607b8 == self) {
-            var_b7eac42471ac7fae = "atk_bomber";
+            new_role = "atk_bomber";
         } else if (isai(var_6eaa3366ba4607b8)) {
             var_9f0d0574d42d275a = distance(self.origin, self.current_bombzone.curorigin);
             var_c7f0fa34e70e55c9 = distance(var_6eaa3366ba4607b8.origin, self.current_bombzone.curorigin);
             if (var_9f0d0574d42d275a < var_c7f0fa34e70e55c9 * 0.9) {
-                var_b7eac42471ac7fae = "atk_bomber";
+                new_role = "atk_bomber";
                 var_6eaa3366ba4607b8 bot_dd_clear_role();
             }
         }
     }
-    if (!isdefined(var_b7eac42471ac7fae)) {
-        var_b7eac42471ac7fae = "sweep_zone";
+    if (!isdefined(new_role)) {
+        new_role = "sweep_zone";
     }
-    bot_dd_set_role(var_b7eac42471ac7fae);
+    bot_dd_set_role(new_role);
 }
 
 // Namespace namespace_b426151ccd851bd3/namespace_a3847b7bb5fa78db
@@ -569,34 +569,34 @@ function bot_choose_defend_role() {
             return;
         }
     }
-    var_b7eac42471ac7fae = undefined;
+    new_role = undefined;
     if (is_bomb_planted_on(self.current_bombzone)) {
         var_899783611665de35 = get_player_defusing_zone(self.current_bombzone);
         if (!isdefined(var_899783611665de35) || var_899783611665de35 == self) {
-            var_b7eac42471ac7fae = "defuser";
+            new_role = "defuser";
         } else if (isai(var_899783611665de35)) {
             var_9f0d0574d42d275a = distance(self.origin, self.current_bombzone.curorigin);
             var_f226ecae7afafba6 = distance(var_899783611665de35.origin, self.current_bombzone.curorigin);
             if (var_9f0d0574d42d275a < var_f226ecae7afafba6 * 0.9) {
-                var_b7eac42471ac7fae = "defuser";
+                new_role = "defuser";
                 var_899783611665de35 bot_dd_clear_role();
             }
         }
     }
-    if (!isdefined(var_b7eac42471ac7fae)) {
-        var_b7eac42471ac7fae = "defend_zone";
+    if (!isdefined(new_role)) {
+        new_role = "defend_zone";
     }
-    bot_dd_set_role(var_b7eac42471ac7fae);
+    bot_dd_set_role(new_role);
 }
 
 // Namespace namespace_b426151ccd851bd3/namespace_a3847b7bb5fa78db
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ca
 // Size: 0x3a
-function bot_dd_set_role(var_b7eac42471ac7fae) {
-    if (!isdefined(self.role) || self.role != var_b7eac42471ac7fae) {
+function bot_dd_set_role(new_role) {
+    if (!isdefined(self.role) || self.role != new_role) {
         bot_dd_clear_role();
-        self.role = var_b7eac42471ac7fae;
+        self.role = new_role;
     }
 }
 

@@ -13,9 +13,9 @@
 #using script_7c40fa80892a721;
 #using scripts\mp\gametypes\br_circle.gsc;
 
-#namespace namespace_1186371447c87818;
+#namespace iodine_pills;
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x4f
@@ -23,7 +23,7 @@ function function_80b2d6867c192094() {
     val::function_2d6e7e0b80767910("iodineUse", [0:"usability", 1:"killstreaks", 2:"supers", 3:"gesture", 4:"weapon_switch", 5:"melee", 6:"armor"]);
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x27
@@ -33,7 +33,7 @@ function function_43fe8ccc8b4e6146(equipmentref, var_cbb2b3d05e48bd27, variantid
     }
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x278
 // Size: 0x1f
@@ -43,7 +43,7 @@ function function_d41fe283435e26c4(equipmentref, var_cbb2b3d05e48bd27) {
     }
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29e
 // Size: 0x39
@@ -57,7 +57,7 @@ function function_7430b01f931d7e4e(grenade, var_102a3f5a4d33c2db) {
     thread function_9c89631481683dd2(var_e65a457f9ea02ade, var_102a3f5a4d33c2db);
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2de
 // Size: 0xd1
@@ -86,7 +86,7 @@ function function_9c89631481683dd2(var_e65a457f9ea02ade, var_102a3f5a4d33c2db) {
     thread function_bc28931a036b205(var_8a7b4dc1a58fc045);
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b6
 // Size: 0xae
@@ -118,7 +118,7 @@ function function_bef9c19cb3be47ef() {
     return 1;
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46c
 // Size: 0x3e
@@ -129,7 +129,7 @@ function function_bbfe4eae6d4cdb6f() {
     val::function_588f2307a3040610("iodineUse");
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0x18
@@ -139,7 +139,7 @@ function function_7214173379da1591(grenade) {
     }
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d0
 // Size: 0xf8
@@ -176,7 +176,7 @@ function function_bc28931a036b205(var_8a7b4dc1a58fc045) {
     #/
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5cf
 // Size: 0xcc
@@ -203,7 +203,7 @@ function function_ac74ff0686d2886e(damage) {
     }
 }
 
-// Namespace namespace_1186371447c87818/namespace_4033b03dc100de62
+// Namespace iodine_pills/namespace_4033b03dc100de62
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a2
 // Size: 0x18

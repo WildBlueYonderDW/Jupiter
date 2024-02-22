@@ -13,9 +13,9 @@
 // Size: 0x51
 function function_fe852f92145c24a6() {
     function_ac97a4f2ab8c2d53("movement", "tryAssignTask", &function_851152959e7c1c87);
-    function_ac97a4f2ab8c2d53("movement", "tryBindObjective", &tryBindObjective);
-    namespace_71073fa38f11492::registerbrgametypefunc("onInfilJumpCompleted", &onInfilJumpCompleted);
-    namespace_71073fa38f11492::registerbrgametypefunc("onPlayerEnterVehicle", &onPlayerEnterVehicle);
+    function_ac97a4f2ab8c2d53("movement", "tryBindObjective", &trybindobjective);
+    namespace_71073fa38f11492::registerbrgametypefunc("onInfilJumpCompleted", &oninfiljumpcompleted);
+    namespace_71073fa38f11492::registerbrgametypefunc("onPlayerEnterVehicle", &onplayerentervehicle);
 }
 
 // Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
@@ -93,7 +93,7 @@ function function_17aae3fd2c16468(var_17953215dd7c5f9b) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x418
 // Size: 0xe
-function onInfilJumpCompleted() {
+function oninfiljumpcompleted() {
     self.var_da8de99c15dd631e = 1;
 }
 
@@ -101,12 +101,12 @@ function onInfilJumpCompleted() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42d
 // Size: 0x11e
-function onPlayerEnterVehicle(vehicle, target) {
+function onplayerentervehicle(vehicle, target) {
     if (!isdefined(vehicle)) {
         return;
     }
     if (isdefined(target.var_b8abadd2c4d56fd8) && target.var_b8abadd2c4d56fd8.item namespace_dbbb37eb352edf96::isvehicle()) {
-        target function_afe6658cffe7d1a8();
+        target removeobjectiveinfo();
     }
     foreach (player in level.players) {
         var_600955d039b2fd47 = isdefined(player.var_b8abadd2c4d56fd8) && isdefined(player.var_b8abadd2c4d56fd8.item) && player.var_b8abadd2c4d56fd8.item == vehicle;
@@ -135,7 +135,7 @@ function function_59c1dbdc2ad03ad6(var_17953215dd7c5f9b, vehicle) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f2
 // Size: 0x63
-function tryBindObjective(var_17953215dd7c5f9b) {
+function trybindobjective(var_17953215dd7c5f9b) {
     if (var_17953215dd7c5f9b.info.ref != "travelvehicle" || self function_793f941d7dff15ed()) {
         return;
     }

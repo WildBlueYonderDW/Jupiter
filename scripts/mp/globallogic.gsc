@@ -176,7 +176,7 @@ function registerdvars() {
 // Size: 0x1c2
 function registerfalldamagedvars() {
     if (function_e417d8ef1c70cbcb()) {
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (getdvarint(@"hash_12ca000dd2976ebc", 0)) {
                 setdvar(@"hash_de79e5c6b8a17221", 100000000);
                 setdvar(@"hash_18e2dda6aaf07dc3", 100000001);

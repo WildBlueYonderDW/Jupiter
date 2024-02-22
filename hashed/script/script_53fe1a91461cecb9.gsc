@@ -24,7 +24,7 @@ function function_1748039e0a11f61b() {
     level.blackoverlay fadeovertime(0.5);
     level.blackoverlay.alpha = 0;
     level.player setplayerangles((0, 50, 0));
-    level.player function_33010a90bcf48db4("wz_gulag_player_acknowledge_r_xcam", 0, level.player.origin, (0, 55, 0));
+    level.player playxcam("wz_gulag_player_acknowledge_r_xcam", 0, level.player.origin, (0, 55, 0));
     level.player playanimscriptsceneevent("scripted_scene", "wz_gulag_player_acknowledge_r_pistol");
     level.var_3896bf00e9c5ca00 playanimscriptsceneevent("scripted_scene", "wz_gulag_player_acknowledge_l");
     wait(4);
@@ -33,10 +33,10 @@ function function_1748039e0a11f61b() {
     wait(0.5);
     level.player function_8ff8fd7841f6eba2();
     level.player stopanimscriptsceneevent();
-    level.player setplayerangles(level.ftueData.var_9d94e563e4be46b8);
-    level.player setstance(level.ftueData.var_396891c2565891d8);
+    level.player setplayerangles(level.ftuedata.var_9d94e563e4be46b8);
+    level.player setstance(level.ftuedata.var_396891c2565891d8);
     level.var_3896bf00e9c5ca00 stopanimscriptsceneevent();
-    level.var_3896bf00e9c5ca00 setstance(level.ftueData.var_8c5da83724fd450b);
+    level.var_3896bf00e9c5ca00 setstance(level.ftuedata.var_8c5da83724fd450b);
     waitframe();
     level.blackoverlay fadeovertime(0.5);
     level.blackoverlay.alpha = 0;

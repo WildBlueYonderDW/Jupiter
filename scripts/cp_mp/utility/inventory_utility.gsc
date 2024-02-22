@@ -412,8 +412,8 @@ function forcevalidweapon(var_a6a71521caeeb8c8) {
                 var_d5a7e66722df9836 = self [[ getsharedfunc("juggernaut", "getMinigunWeapon") ]]();
             }
             if (issharedfuncdefined("juggernaut", "canUseWeaponPickups")) {
-                canUseWeaponPickups = self [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
-                if (istrue(canUseWeaponPickups)) {
+                canuseweaponpickups = self [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
+                if (istrue(canuseweaponpickups)) {
                     if (isdefined(self.lastdroppableweaponobj) && self hasweapon(self.lastdroppableweaponobj)) {
                         var_d5a7e66722df9836 = self.lastdroppableweaponobj;
                     } else {

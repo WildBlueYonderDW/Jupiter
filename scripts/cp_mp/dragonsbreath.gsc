@@ -62,13 +62,13 @@ function function_9fd9dc9d9d3a0bc4() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x402
 // Size: 0x2a8
-function function_a0888e06aa555932(newBurningParts, attacker, objweapon) {
+function function_a0888e06aa555932(newburningparts, attacker, objweapon) {
     self notify("newBurningParts");
     self endon("disconnect");
     self endon("newBurningParts");
     self endon("stop_dragonsbreathDamage");
-    newBurningParts = array_remove_duplicates(newBurningParts);
-    foreach (part in newBurningParts) {
+    newburningparts = array_remove_duplicates(newburningparts);
+    foreach (part in newburningparts) {
         if (isdefined(self.dragonsbreathdamage.hitslocs[part])) {
             self.dragonsbreathdamage.hitslocs[part] = self.dragonsbreathdamage.hitslocs[part] + 0.5;
             if (function_f30a6d3194f97c09(objweapon, "specialty_ub_flamethrower")) {

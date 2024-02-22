@@ -156,7 +156,7 @@ function private function_49c1da07d69b6895(numagents) {
             origin = node.origin;
             facingangle = node.angles;
         }
-        agent = function_ea94a8bf24d3c5ef(aitype, origin, facingangle, "medium", "mission", "samInitialGuards", undefined, undefined, undefined, self.poi);
+        agent = ai_mp_requestspawnagent(aitype, origin, facingangle, "medium", "mission", "samInitialGuards", undefined, undefined, undefined, self.poi);
         if (isdefined(agent)) {
             self.agents[i] = agent;
             agent thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent);
@@ -164,7 +164,7 @@ function private function_49c1da07d69b6895(numagents) {
     }
     if (isdefined(self.agents)) {
         foreach (agent in self.agents) {
-            thread namespace_14d36171baccf528::function_350cf0db9f5e0cbe(agent, "assignment", self.var_6cd05f946a7917f7);
+            thread namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "assignment", self.var_6cd05f946a7917f7);
         }
     }
     self.numagents = self.agents.size;
@@ -297,7 +297,7 @@ function private function_d67c0c4b6154b087() {
     thread function_f2b5581eaab77646();
     var_7408ed52662703d3 = level.poi[self.poi]["players"];
     var_7408ed52662703d3 = array_remove_array(var_7408ed52662703d3, getteamdata(self.task.teams[0], "players"));
-    namespace_d696adde758cbe79::showDMZSplash("dmz_destroy_sam_invited", var_7408ed52662703d3);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_destroy_sam_invited", var_7408ed52662703d3);
     thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("destroy_sam_invite", var_7408ed52662703d3, 2);
     foreach (var_bcc7fec8b738d541 in self.task.agents) {
         thread namespace_2000a83505151e5b::function_a5117518725da028(var_bcc7fec8b738d541, self.plantedbomb.origin);

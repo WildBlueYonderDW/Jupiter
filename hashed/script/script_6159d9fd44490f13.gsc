@@ -18,7 +18,7 @@
 function equipmentinteract_init() {
     level.useobjs = [];
     flag_init("equipment_interact");
-    namespace_3c37cb17ade254d::registersharedfunc("equipment", "deployHackTablet", &deployHackTablet);
+    namespace_3c37cb17ade254d::registersharedfunc("equipment", "deployHackTablet", &deployhacktablet);
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("hack_usable", &equipmentscriptableused);
     thread _updateuseobjs();
 }
@@ -52,7 +52,7 @@ function equipmentuse(instance, player) {
         player.ishacking = 1;
         streakinfo = player namespace_9abe40d2af041eb2::createstreakinfo("", player);
         streakinfo.interactstate = 0;
-        player thread deployHackTablet(function_be0c3a067da1e72d(equipment), equipment, streakinfo);
+        player thread deployhacktablet(function_be0c3a067da1e72d(equipment), equipment, streakinfo);
     }
 }
 
@@ -217,7 +217,7 @@ function function_be0c3a067da1e72d(equipment) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa51
 // Size: 0x1b9
-function deployHackTablet(index, equipment, streakinfo) {
+function deployhacktablet(index, equipment, streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
     flag_set("equipment_interact");

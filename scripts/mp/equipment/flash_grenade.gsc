@@ -28,7 +28,7 @@
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x42
-function function_37ac1eee9096297c(equipmentref, slot, objweapon) {
+function onfired(equipmentref, slot, objweapon) {
     namespace_aad14af462a74d08::function_b0f754c8a379154e("equip_flash", self, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
 }
 
@@ -76,9 +76,9 @@ function onplayerdamaged(data) {
             data.victim namespace_aad14af462a74d08::resistedstun(data.attacker);
         }
         if (data.victim _hasperk("specialty_tac_mask")) {
-            data.victim namespace_b6a8027f477010e1::activatePerk("specialty_tac_mask");
+            data.victim namespace_b6a8027f477010e1::activateperk("specialty_tac_mask");
         } else {
-            data.victim namespace_b6a8027f477010e1::activatePerk("specialty_tac_resist");
+            data.victim namespace_b6a8027f477010e1::activateperk("specialty_tac_resist");
         }
         var_c284f94b9d9a04ed = 1;
     }
@@ -170,11 +170,11 @@ function applyflash(attacker, duration) {
         return;
     }
     if (attacker != self) {
-        attacker namespace_a850435086c88de3::function_693d12aa2c1c02c5(0, "flashGrenadeHit");
+        attacker namespace_a850435086c88de3::doonactionscoreevent(0, "flashGrenadeHit");
     }
     namespace_27c74152ccb91331::function_55b08d6d71b41402(self, "player_blinded");
     namespace_27c74152ccb91331::function_55b08d6d71b41402(attacker, "enemy_blinded");
-    if (namespace_cd0b2d039510b38d::getgametype() == "arena" || namespace_36f464722d326bbe::isBRStyleGameType() && attacker namespace_d3d40f75bb4e4c32::isplayeringulag()) {
+    if (namespace_cd0b2d039510b38d::getgametype() == "arena" || namespace_36f464722d326bbe::isbrstylegametype() && attacker namespace_d3d40f75bb4e4c32::isplayeringulag()) {
         duration = min(ter_op(level.tacticaltimemod <= 3, level.tacticaltimemod + 1.5, level.tacticaltimemod), duration);
     }
     namespace_5e840d01a2244aea::clearflash();
@@ -186,7 +186,7 @@ function applyflash(attacker, duration) {
         }
     }
     _shellshock("flash_grenade_mp", "flash", duration, 1);
-    function_8b23d28b1d38cb39("flash", duration);
+    codcastersetplayerstatuseffect("flash", duration);
     if (namespace_f8065cafc523dba5::playersareenemies(self, attacker)) {
         namespace_aad14af462a74d08::function_b0f754c8a379154e("equip_flash", attacker, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"hit"));
         thread namespace_e8a49b70d0769b66::trackdebuffassistfortime(attacker, self, "flash_grenade_mp", duration);

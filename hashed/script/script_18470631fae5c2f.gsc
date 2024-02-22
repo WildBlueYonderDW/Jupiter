@@ -33,14 +33,14 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "zombie_mimic";
-    self.voice = #"hash_97b066d92d35c738";
+    self.voice = #"unitedstates";
     self.bhasthighholster = 0;
     self.animtree = "zombie_mimic";
     self setmodel("c_jup_zmb_mimic_body");
     self attach("c_jup_zmb_mimic_head", "", 1);
     self.headmodel = "c_jup_zmb_mimic_head";
-    self setclothtype(#"hash_d0ef9b6cfe3097be");
-    self function_8abe5a968cc3c220(#"hash_1db29aba7a7a7ffd");
+    self setclothtype(#"vestheavy");
+    self function_8abe5a968cc3c220(#"millghtgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_16c36cf98afe63cd");

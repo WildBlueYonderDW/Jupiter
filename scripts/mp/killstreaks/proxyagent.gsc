@@ -50,7 +50,7 @@ function watchplayerkillstreakdeath(var_5f321a57443e1a54, streakname) {
     while (1) {
         sweapon = smeansofdeath = idflags = idamage = eattacker = einflictor = self waittill("player_killstreak_death");
         if (eattacker != self && isplayer(eattacker)) {
-            eattacker thread doScoreEvent(function_2ef675c13ca1c4af(#"destroyed_", streakname));
+            eattacker thread doscoreevent(function_2ef675c13ca1c4af(#"destroyed_", streakname));
             thread teamplayercardsplash("callout_destroyed_" + streakname, eattacker);
             objweapon = makeweaponfromstring(sweapon);
             thread namespace_aad14af462a74d08::killstreakkilled(streakname, self, self, eattacker, idamage, smeansofdeath, objweapon, "destroyed_" + streakname);

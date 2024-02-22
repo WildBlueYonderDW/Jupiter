@@ -329,11 +329,11 @@ function function_ee854fdd1e77efc4(origin, var_427d3b5a8969def8) {
     if (!isdefined(var_427d3b5a8969def8)) {
         var_427d3b5a8969def8 = 0;
     }
-    var_c669c821ee772a3d = function_d987886bb9de9137();
+    multicirclecount = function_d987886bb9de9137();
     if (function_29e8194ff7e13e2e()) {
-        var_c669c821ee772a3d = 1;
+        multicirclecount = 1;
     }
-    for (i = 0; i < var_c669c821ee772a3d; i++) {
+    for (i = 0; i < multicirclecount; i++) {
         var_b7a43cf03194d69a = function_d277283fb9ad5d46(origin, i, var_427d3b5a8969def8);
         if (istrue(var_b7a43cf03194d69a)) {
             return 1;
@@ -370,11 +370,11 @@ function function_27779e30fe4c0d62(origin) {
     if (!istrue(level.var_2df69b8e552238b6)) {
         return 0;
     }
-    var_c669c821ee772a3d = function_d987886bb9de9137();
+    multicirclecount = function_d987886bb9de9137();
     if (function_29e8194ff7e13e2e()) {
-        var_c669c821ee772a3d = 1;
+        multicirclecount = 1;
     }
-    for (i = 0; i < var_c669c821ee772a3d; i++) {
+    for (i = 0; i < multicirclecount; i++) {
         var_1b33a8292e7044 = function_783961b002f33360(origin, i);
         if (istrue(var_1b33a8292e7044)) {
             return 1;
@@ -388,8 +388,8 @@ function function_27779e30fe4c0d62(origin) {
 // Checksum 0x0, Offset: 0xf4a
 // Size: 0x60
 function function_77cec84f05ca9418(point1, point2, var_be8e05f747d3ca77) {
-    var_c669c821ee772a3d = function_d987886bb9de9137();
-    for (i = 0; i < var_c669c821ee772a3d; i++) {
+    multicirclecount = function_d987886bb9de9137();
+    for (i = 0; i < multicirclecount; i++) {
         if (function_d277283fb9ad5d46(point1, i) && function_d277283fb9ad5d46(point2, i)) {
             return 1;
         }
@@ -402,10 +402,10 @@ function function_77cec84f05ca9418(point1, point2, var_be8e05f747d3ca77) {
 // Checksum 0x0, Offset: 0xfb2
 // Size: 0x6b
 function function_de2f1b656ee04ba9() {
-    var_c669c821ee772a3d = function_d987886bb9de9137();
-    if (var_c669c821ee772a3d > 1) {
+    multicirclecount = function_d987886bb9de9137();
+    if (multicirclecount > 1) {
         var_f2c46154d60d119b = [];
-        for (i = 0; i < var_c669c821ee772a3d; i++) {
+        for (i = 0; i < multicirclecount; i++) {
             safeorigin = function_799fe4ee850f911(i);
             var_f2c46154d60d119b[var_f2c46154d60d119b.size] = safeorigin;
         }
@@ -421,10 +421,10 @@ function function_de2f1b656ee04ba9() {
 // Checksum 0x0, Offset: 0x1024
 // Size: 0x6b
 function function_54798383fa7f572b() {
-    var_c669c821ee772a3d = function_d987886bb9de9137();
-    if (var_c669c821ee772a3d > 1) {
+    multicirclecount = function_d987886bb9de9137();
+    if (multicirclecount > 1) {
         var_5960287de2e9eb0d = [];
-        for (i = 0; i < var_c669c821ee772a3d; i++) {
+        for (i = 0; i < multicirclecount; i++) {
             var_f434d604c09196aa = function_8a985543e6853bbd(i);
             var_5960287de2e9eb0d[var_5960287de2e9eb0d.size] = var_f434d604c09196aa;
         }
@@ -440,10 +440,10 @@ function function_54798383fa7f572b() {
 // Checksum 0x0, Offset: 0x1096
 // Size: 0x6b
 function function_7d381171eae99b77() {
-    var_c669c821ee772a3d = function_d987886bb9de9137();
-    if (var_c669c821ee772a3d > 1) {
+    multicirclecount = function_d987886bb9de9137();
+    if (multicirclecount > 1) {
         var_c86bc952d8cc7c15 = [];
-        for (i = 0; i < var_c669c821ee772a3d; i++) {
+        for (i = 0; i < multicirclecount; i++) {
             var_ef8f7e66dc0feb2c = function_755c691f70eafe3b(i);
             var_c86bc952d8cc7c15[var_c86bc952d8cc7c15.size] = var_ef8f7e66dc0feb2c;
         }
@@ -459,10 +459,10 @@ function function_7d381171eae99b77() {
 // Checksum 0x0, Offset: 0x1108
 // Size: 0x6b
 function function_bf15a5aa7e72aee9() {
-    var_c669c821ee772a3d = function_d987886bb9de9137();
-    if (var_c669c821ee772a3d > 1) {
+    multicirclecount = function_d987886bb9de9137();
+    if (multicirclecount > 1) {
         var_18a9373b09ac2fb7 = [];
-        for (i = 0; i < var_c669c821ee772a3d; i++) {
+        for (i = 0; i < multicirclecount; i++) {
             dangerradius = function_a835b5dff878f77(i);
             var_18a9373b09ac2fb7[var_18a9373b09ac2fb7.size] = dangerradius;
         }
@@ -532,9 +532,9 @@ function function_60951b84c58915ab(testpoint, var_ff696ac4914036ee) {
         var_ed09715e306a1455.circles[0] = spawnstruct();
         var_ed09715e306a1455.circles[0].var_8ae269616d09dfc5 = level.br_level.br_circlecenters;
     }
-    for (var_c669c821ee772a3d = 0; var_c669c821ee772a3d < var_ed09715e306a1455.circles.size; var_c669c821ee772a3d++) {
+    for (multicirclecount = 0; multicirclecount < var_ed09715e306a1455.circles.size; multicirclecount++) {
         currenttime = 0;
-        var_8ae269616d09dfc5 = var_ed09715e306a1455.circles[var_c669c821ee772a3d].var_8ae269616d09dfc5;
+        var_8ae269616d09dfc5 = var_ed09715e306a1455.circles[multicirclecount].var_8ae269616d09dfc5;
         for (i = 0; i < var_8ae269616d09dfc5.size - 1; i++) {
             currentorigin = var_8ae269616d09dfc5[i];
             nextorigin = var_8ae269616d09dfc5[i + 1];
@@ -551,8 +551,8 @@ function function_60951b84c58915ab(testpoint, var_ff696ac4914036ee) {
     }
     var_44ae6500062c31b4 = namespace_9c840bb9f2ecbf00::quicksort(times, &function_71b56c961304206d);
     var_cbf0338845c22288 = 0;
-    for (var_c669c821ee772a3d = 0; var_c669c821ee772a3d < var_ed09715e306a1455.circles.size; var_c669c821ee772a3d++) {
-        var_8ae269616d09dfc5 = var_ed09715e306a1455.circles[var_c669c821ee772a3d].var_8ae269616d09dfc5;
+    for (multicirclecount = 0; multicirclecount < var_ed09715e306a1455.circles.size; multicirclecount++) {
+        var_8ae269616d09dfc5 = var_ed09715e306a1455.circles[multicirclecount].var_8ae269616d09dfc5;
         dist = distance2d(testpoint, var_8ae269616d09dfc5[0]);
         if (dist < level.br_level.br_circleradii[0]) {
             var_cbf0338845c22288++;
@@ -591,7 +591,7 @@ function function_60951b84c58915ab(testpoint, var_ff696ac4914036ee) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1640
 // Size: 0x25
-function function_3e0a90b32e551ad(testpoint) {
+function gettimetilldangerforpoint(testpoint) {
     times = function_60951b84c58915ab(testpoint);
     return function_7d8550b9a2c52852(times);
 }
@@ -723,10 +723,10 @@ function function_6ec3b4c4b5a9edd(time) {
         var_ed09715e306a1455.circles[0].var_8ae269616d09dfc5 = level.br_level.br_circlecenters;
     }
     var_dcd431a09a9a211 = [];
-    for (var_c669c821ee772a3d = 0; var_c669c821ee772a3d < var_ed09715e306a1455.circles.size; var_c669c821ee772a3d++) {
+    for (multicirclecount = 0; multicirclecount < var_ed09715e306a1455.circles.size; multicirclecount++) {
         var_e858a946b115578a = (time - starttime) / 1000;
         var_23f4dd5f3cfee9f5 = spawnstruct();
-        var_8ae269616d09dfc5 = var_ed09715e306a1455.circles[var_c669c821ee772a3d].var_8ae269616d09dfc5;
+        var_8ae269616d09dfc5 = var_ed09715e306a1455.circles[multicirclecount].var_8ae269616d09dfc5;
         for (i = 0; i < var_8ae269616d09dfc5.size - 1; i++) {
             currentorigin = var_8ae269616d09dfc5[i];
             currentradius = level.br_level.br_circleradii[i];
@@ -752,7 +752,7 @@ function function_6ec3b4c4b5a9edd(time) {
             var_23f4dd5f3cfee9f5.origin = var_8ae269616d09dfc5[var_8ae269616d09dfc5.size - 1];
             var_23f4dd5f3cfee9f5.radius = level.br_level.br_circleradii[var_8ae269616d09dfc5.size - 1];
         }
-        var_dcd431a09a9a211[var_c669c821ee772a3d] = var_23f4dd5f3cfee9f5;
+        var_dcd431a09a9a211[multicirclecount] = var_23f4dd5f3cfee9f5;
     }
     return var_dcd431a09a9a211;
 }
@@ -916,8 +916,8 @@ function function_9dcc9c74376e3a91() {
             waitframe();
         }
         println("<unknown string>");
-        var_c669c821ee772a3d = function_d987886bb9de9137();
-        for (i = 0; i < var_c669c821ee772a3d; i++) {
+        multicirclecount = function_d987886bb9de9137();
+        for (i = 0; i < multicirclecount; i++) {
             for (j = 0; j < level.br_level.br_circlecenters.size; j++) {
                 origin = level.br_multi_circle.circles[i].var_8ae269616d09dfc5[j];
                 println("<unknown string>" + i + "<unknown string>" + j + "<unknown string>" + origin + "<unknown string>");

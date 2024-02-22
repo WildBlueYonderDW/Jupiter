@@ -273,10 +273,10 @@ function private report(var_889f3d7e1c1ea6b, bot, lastposition, door, var_5394fc
         function_9a0a24de119b078a("Door", header);
         level.var_367c15041e69a2a9.door.var_95c5f763c7b38e9c = 1;
     }
-    unknownPos = "unknownPos";
-    lastposition = ter_op(isdefined(lastposition), lastposition, unknownPos);
-    var_5394fc468396843c = ter_op(isdefined(var_5394fc468396843c), var_5394fc468396843c, unknownPos);
-    var_518a4e9f2d3b108d = ter_op(isdefined(var_518a4e9f2d3b108d), var_518a4e9f2d3b108d, unknownPos);
+    unknownpos = "unknownPos";
+    lastposition = ter_op(isdefined(lastposition), lastposition, unknownpos);
+    var_5394fc468396843c = ter_op(isdefined(var_5394fc468396843c), var_5394fc468396843c, unknownpos);
+    var_518a4e9f2d3b108d = ter_op(isdefined(var_518a4e9f2d3b108d), var_518a4e9f2d3b108d, unknownpos);
     doorindex = -1;
     var_20510600314fe827 = (0, 0, 0);
     if (isdefined(door)) {

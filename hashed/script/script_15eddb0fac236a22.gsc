@@ -34,7 +34,7 @@ function private function_7e3861fd7026453() {
     if (namespace_d576b6dc7cef9c62::function_1147bbc93ea9b83c()) {
         return 0;
     }
-    if (!getdvarint(@"hash_fb8b7d9d75c19daf", 0) && namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!getdvarint(@"hash_fb8b7d9d75c19daf", 0) && namespace_36f464722d326bbe::isbrstylegametype()) {
         return 0;
     }
     if (isdefined(self.var_e557be412f9c91ab)) {
@@ -77,7 +77,7 @@ function function_e6dddb660c52817() {
 // Checksum 0x0, Offset: 0x73f
 // Size: 0xfb
 function function_15f9e82b69d4c27a() {
-    if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self setclientomnvar("ui_gameplay_telemetry_operatorsDown", isdefined(getpersstat("operatorsDown")) ? getpersstat("operatorsDown") : 0);
         self setclientomnvar("ui_gameplay_telemetry_teamRevive", isdefined(getpersstat("teamRevive")) ? getpersstat("teamRevive") : 0);
         self setclientomnvar("ui_gameplay_telemetry_teamWipe", isdefined(getpersstat("teamWipe")) ? getpersstat("teamWipe") : 0);
@@ -97,7 +97,7 @@ function function_15f9e82b69d4c27a() {
 // Size: 0xeb
 function function_69043ccdd6af91e1() {
     if (!isdefined(getpersstat("weapKills"))) {
-        if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             self.pers["weapDowned"] = [];
             self.pers["weapLastKillDistance"] = [];
             self.pers["weapLongestKillDistance"] = [];
@@ -122,7 +122,7 @@ function function_69043ccdd6af91e1() {
 // Size: 0x59
 function function_ac584dc244d416b1() {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     initpersstat("operatorsDown");
@@ -137,7 +137,7 @@ function function_ac584dc244d416b1() {
 // Size: 0x52
 function function_b821fe623180790() {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     initpersstat("teamRevive");
@@ -151,7 +151,7 @@ function function_b821fe623180790() {
 // Size: 0x52
 function function_8c38798d6a558ad0() {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     initpersstat("teamWipe");
@@ -165,13 +165,13 @@ function function_8c38798d6a558ad0() {
 // Size: 0x6f
 function function_298b6dd0b26f13bd() {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
-    var_c1480a81b0387196 = getpersstat("shotsFired");
+    totalshots = getpersstat("shotsFired");
     totalhits = getpersstat("shotsBulletHit");
-    if (isdefined(var_c1480a81b0387196) && isdefined(totalhits)) {
-        self setclientomnvar("ui_gameplay_telemetry_shotAccuracy", totalhits / max(var_c1480a81b0387196, 1) * 100);
+    if (isdefined(totalshots) && isdefined(totalhits)) {
+        self setclientomnvar("ui_gameplay_telemetry_shotAccuracy", totalhits / max(totalshots, 1) * 100);
     }
 }
 
@@ -180,7 +180,7 @@ function function_298b6dd0b26f13bd() {
 // Checksum 0x0, Offset: 0xabb
 // Size: 0x3d
 function function_f1b4726896f5c0c9() {
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_905e29bee1ef88cf = getpersstat("headshots");
@@ -194,7 +194,7 @@ function function_f1b4726896f5c0c9() {
 // Checksum 0x0, Offset: 0xaff
 // Size: 0x45
 function function_d8eb5fb3b35ed1a1() {
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     killstreakcount = getpersstat("cur_kill_streak");
@@ -209,7 +209,7 @@ function function_d8eb5fb3b35ed1a1() {
 // Size: 0x63
 function function_964e22a27383117d(killdistance) {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (!isdefined(killdistance) || !isnumber(killdistance)) {
@@ -229,7 +229,7 @@ function function_7018e21062adbaa() {
     level endon("gameplayTelemetry_finished");
     level endon("game_ended");
     refresh_rate = 1;
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     initpersstat("SPM");
@@ -244,7 +244,7 @@ function function_7018e21062adbaa() {
 // Checksum 0x0, Offset: 0xc14
 // Size: 0x4c
 function private function_4781d3b961760043() {
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     spm = function_18fdff35aee0a387();
@@ -256,12 +256,12 @@ function private function_4781d3b961760043() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc67
 // Size: 0x60
-function function_f9b01f503cdbfd7d(var_588b734c8f3298f5) {
+function function_f9b01f503cdbfd7d(damagevalue) {
     if (!function_7e3861fd7026453()) {
         return;
     }
     namespace_3c5a4254f2b957ea::initpersstat("damageDealt");
-    incpersstat("damageDealt", var_588b734c8f3298f5);
+    incpersstat("damageDealt", damagevalue);
     damagedealt = getpersstat("damageDealt");
     damagedealt = int(clamp(damagedealt, 0, 65535));
     self.damagedealt = damagedealt;
@@ -271,15 +271,15 @@ function function_f9b01f503cdbfd7d(var_588b734c8f3298f5) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcce
 // Size: 0x74
-function function_99b3339dca12abde(var_588b734c8f3298f5) {
+function function_99b3339dca12abde(damagevalue) {
     if (!function_7e3861fd7026453()) {
         return;
     }
-    var_588b734c8f3298f5 = int(clamp(var_588b734c8f3298f5, 0, 65535));
+    damagevalue = int(clamp(damagevalue, 0, 65535));
     namespace_3c5a4254f2b957ea::initpersstat("damageReceived");
-    var_e7ec701163e1b30c = int(clamp(getpersstat("damageReceived") + var_588b734c8f3298f5, 0, 65535));
+    var_e7ec701163e1b30c = int(clamp(getpersstat("damageReceived") + damagevalue, 0, 65535));
     self.pers["damageReceived"] = var_e7ec701163e1b30c;
-    self.damageReceived = var_e7ec701163e1b30c;
+    self.damagereceived = var_e7ec701163e1b30c;
 }
 
 // Namespace namespace_4925be476a433a59/namespace_6b49ddb858f34366
@@ -291,7 +291,7 @@ function function_4552872977024e34(victim) {
     if (!function_7e3861fd7026453()) {
         return;
     }
-    if (isai(victim) && namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (isai(victim) && namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_1afed0877937f203 = self getcurrentweapon();
@@ -324,7 +324,7 @@ function function_4552872977024e34(victim) {
 // Size: 0x107
 function function_221ea9f08eaf2346() {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_1afed0877937f203 = self getcurrentweapon();
@@ -354,7 +354,7 @@ function function_221ea9f08eaf2346() {
 // Checksum 0x0, Offset: 0xfb5
 // Size: 0x11b
 function function_c29690d78b252bb1() {
-    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || !namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_1afed0877937f203 = self getcurrentweapon();
@@ -380,17 +380,17 @@ function function_c29690d78b252bb1() {
 // Checksum 0x0, Offset: 0x10d7
 // Size: 0xd9
 function private function_51b30814ed768ae6(var_3a9e2d5b7c71aec7, isprimary) {
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508() || !isdefined(var_3a9e2d5b7c71aec7) || !isdefined(isprimary)) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype() || !isdefined(var_3a9e2d5b7c71aec7) || !isdefined(isprimary)) {
         return;
     }
     var_d93bdb2b57d8934b = ter_op(isdefined(getpersstat("weapKills")[var_3a9e2d5b7c71aec7]), getpersstat("weapKills")[var_3a9e2d5b7c71aec7], 0);
     var_8607cdd4fc6d9e95 = ter_op(isdefined(getpersstat("weapDeaths")[var_3a9e2d5b7c71aec7]), getpersstat("weapDeaths")[var_3a9e2d5b7c71aec7], 1);
-    weapKDRatio = var_d93bdb2b57d8934b / max(var_8607cdd4fc6d9e95, 1);
-    self.pers["weapKDRatio"][var_3a9e2d5b7c71aec7] = weapKDRatio;
+    weapkdratio = var_d93bdb2b57d8934b / max(var_8607cdd4fc6d9e95, 1);
+    self.pers["weapKDRatio"][var_3a9e2d5b7c71aec7] = weapkdratio;
     if (isprimary) {
-        self setclientomnvar("ui_gameplay_telemetry_weap_pri_kdratio", weapKDRatio);
+        self setclientomnvar("ui_gameplay_telemetry_weap_pri_kdratio", weapkdratio);
     } else {
-        self setclientomnvar("ui_gameplay_telemetry_weap_sec_kdratio", weapKDRatio);
+        self setclientomnvar("ui_gameplay_telemetry_weap_sec_kdratio", weapkdratio);
     }
 }
 
@@ -398,7 +398,7 @@ function private function_51b30814ed768ae6(var_3a9e2d5b7c71aec7, isprimary) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11b7
 // Size: 0x10c
-function function_e08012bdba393c79(var_e30664b838a2bd4f, var_588b734c8f3298f5) {
+function function_e08012bdba393c79(var_e30664b838a2bd4f, damagevalue) {
     self endon("disconnect");
     if (!function_7e3861fd7026453() || isnullweapon(var_e30664b838a2bd4f)) {
         return;
@@ -407,7 +407,7 @@ function function_e08012bdba393c79(var_e30664b838a2bd4f, var_588b734c8f3298f5) {
     if (!isdefined(getpersstat("weapDamageDealt")[var_4d7825b379a8c68c])) {
         self.pers["weapDamageDealt"][var_4d7825b379a8c68c] = 0;
     }
-    self.pers["weapDamageDealt"][var_4d7825b379a8c68c] = getpersstat("weapDamageDealt")[var_4d7825b379a8c68c] + var_588b734c8f3298f5;
+    self.pers["weapDamageDealt"][var_4d7825b379a8c68c] = getpersstat("weapDamageDealt")[var_4d7825b379a8c68c] + damagevalue;
     if (isdefined(self.primaryweaponobj) && self.primaryweaponobj.basename == var_4d7825b379a8c68c) {
         self setclientomnvar("ui_gameplay_telemetry_weap_pri_damagedealt", getpersstat("weapDamageDealt")[var_4d7825b379a8c68c]);
     } else if (isdefined(self.secondaryweaponobj) && self.secondaryweaponobj.basename == var_4d7825b379a8c68c) {
@@ -421,7 +421,7 @@ function function_e08012bdba393c79(var_e30664b838a2bd4f, var_588b734c8f3298f5) {
 // Size: 0x148
 function function_a4bd960925ab1205() {
     self endon("disconnect");
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_1afed0877937f203 = self getcurrentweapon();
@@ -453,12 +453,12 @@ function function_a4bd960925ab1205() {
 // Checksum 0x0, Offset: 0x1419
 // Size: 0xdc
 function private function_3f473cca053bcacb(var_3a9e2d5b7c71aec7, isprimary) {
-    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::function_beff479639e6508() || !isdefined(var_3a9e2d5b7c71aec7) || !isdefined(isprimary)) {
+    if (!function_7e3861fd7026453() || namespace_36f464722d326bbe::isbrstylegametype() || !isdefined(var_3a9e2d5b7c71aec7) || !isdefined(isprimary)) {
         return;
     }
     var_d93bdb2b57d8934b = ter_op(isdefined(getpersstat("weapKills")[var_3a9e2d5b7c71aec7]), getpersstat("weapKills")[var_3a9e2d5b7c71aec7], 1);
-    weapHeadShotCount = ter_op(isdefined(getpersstat("weapHeadShotCount")[var_3a9e2d5b7c71aec7]), getpersstat("weapHeadShotCount")[var_3a9e2d5b7c71aec7], 0);
-    var_e072c62a7caf0b7a = weapHeadShotCount / max(var_d93bdb2b57d8934b, 1) * 100;
+    weapheadshotcount = ter_op(isdefined(getpersstat("weapHeadShotCount")[var_3a9e2d5b7c71aec7]), getpersstat("weapHeadShotCount")[var_3a9e2d5b7c71aec7], 0);
+    var_e072c62a7caf0b7a = weapheadshotcount / max(var_d93bdb2b57d8934b, 1) * 100;
     self.pers["weapHeadShotAccuracy"][var_3a9e2d5b7c71aec7] = var_e072c62a7caf0b7a;
     if (isprimary) {
         self setclientomnvar("ui_gameplay_telemetry_weap_pri_headshot_accuracy", var_e072c62a7caf0b7a);
@@ -506,7 +506,7 @@ function function_822c6ec14dbe6941(var_b1b87c549c612576) {
     if (!function_7e3861fd7026453()) {
         return;
     }
-    if (!namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (!isdefined(var_b1b87c549c612576)) {
@@ -581,7 +581,7 @@ function function_adcb155953291ec7(var_ff9387e409ebe4a2, var_c51f7affa4c0cd0d) {
         weaponname = self.primaryweaponobj.basename;
     }
     if (isdefined(weaponname) && (isprimary || var_2e5f03c228e30968)) {
-        if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             var_e3d273698f311dc2 = isdefined(getpersstat("weapDowned")[weaponname]) ? getpersstat("weapDowned")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_pri_downs", var_e3d273698f311dc2);
             var_c3cce17e819a97e = isdefined(getpersstat("weapLastKillDistance")[weaponname]) ? getpersstat("weapLastKillDistance")[weaponname] : 0;
@@ -611,7 +611,7 @@ function function_adcb155953291ec7(var_ff9387e409ebe4a2, var_c51f7affa4c0cd0d) {
         weaponname = self.var_f96aba3b2bb21958.basename;
     }
     if (isdefined(weaponname) && (!isprimary || var_2e5f03c228e30968)) {
-        if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             var_534e9f229a571002 = isdefined(getpersstat("weapDowned")[weaponname]) ? getpersstat("weapDowned")[weaponname] : 0;
             self setclientomnvar("ui_gameplay_telemetry_weap_sec_downs", var_534e9f229a571002);
             var_1e5848ab03f5bd86 = isdefined(getpersstat("weapLastKillDistance")[weaponname]) ? getpersstat("weapLastKillDistance")[weaponname] : 0;

@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#namespace PLAYTEST_LOGGER;
+#namespace playtest_logger;
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb1
 // Size: 0xcd
@@ -21,7 +21,7 @@ function function_223a972e008c4a09(var_2ea903451e753a5f, var_9dfaf49e38b7b10f, v
     return struct;
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x186
 // Size: 0x1f
@@ -29,7 +29,7 @@ function function_6bdedc239dbdac03(var_a0e2837da8b2a7e6, var_c5dab79fa2079db9) {
     function_275c43d7dd5c74d6(var_a0e2837da8b2a7e6, 3, var_c5dab79fa2079db9);
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ac
 // Size: 0x1e
@@ -37,7 +37,7 @@ function function_805bf704f0d94819(msg, var_c5dab79fa2079db9) {
     function_275c43d7dd5c74d6(msg, 0, var_c5dab79fa2079db9);
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d1
 // Size: 0x1f
@@ -45,7 +45,7 @@ function function_66bc684bfce83dd7(msg, var_c5dab79fa2079db9) {
     function_275c43d7dd5c74d6(msg, 2, var_c5dab79fa2079db9);
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f7
 // Size: 0x1f
@@ -53,7 +53,7 @@ function function_623ec917984a5d9d(msg, var_c5dab79fa2079db9) {
     function_275c43d7dd5c74d6(msg, 1, var_c5dab79fa2079db9);
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x9d
@@ -77,7 +77,7 @@ function function_275c43d7dd5c74d6(msg, var_d3967d9b1bf53375, var_5808a2476b7bce
     #/
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2c1
 // Size: 0xa1
@@ -94,7 +94,7 @@ function private function_5c8554b7d485da82(msg, var_d3967d9b1bf53375, var_5808a2
     return var_5808a2476b7bce9b.var_243ec5b0a130448e + " [unknown log level]: ";
 }
 
-// Namespace PLAYTEST_LOGGER/namespace_71483b158f1361f1
+// Namespace playtest_logger/namespace_71483b158f1361f1
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x36a
 // Size: 0xb6

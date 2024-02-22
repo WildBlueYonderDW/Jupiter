@@ -179,7 +179,7 @@ function giveplayerscore(event, points, victim, var_7ec7671a1e0c788f) {
     }
     if (istrue(level.ignorescoring)) {
         var_587eb1f4e11a34f3 = 1;
-        var_e7a7e20ec68138e3 = game_utility::isBRStyleGameType() && !flags::gameflag("prematch_done");
+        var_e7a7e20ec68138e3 = game_utility::isbrstylegametype() && !flags::gameflag("prematch_done");
         if (var_e7a7e20ec68138e3) {
             var_587eb1f4e11a34f3 = 0;
         }
@@ -442,21 +442,21 @@ function calculatewinningteam(var_6e5149ef941c9008) {
         level.waswinning = "none";
     }
     winning_team = "none";
-    var_81f7c7498314cea = 0;
+    winning_score = 0;
     if (level.waswinning != "none") {
         winning_team = level.waswinning;
-        var_81f7c7498314cea = game["teamScores"][level.waswinning];
+        winning_score = game["teamScores"][level.waswinning];
     }
     var_2ec641b1e117731e = 1;
     foreach (teamname in var_ce7974ff3997ef6e) {
         if (teamname == level.waswinning) {
             continue;
         }
-        if (game["teamScores"][teamname] > var_81f7c7498314cea) {
+        if (game["teamScores"][teamname] > winning_score) {
             winning_team = teamname;
-            var_81f7c7498314cea = game["teamScores"][teamname];
+            winning_score = game["teamScores"][teamname];
             var_2ec641b1e117731e = 1;
-        } else if (game["teamScores"][teamname] == var_81f7c7498314cea) {
+        } else if (game["teamScores"][teamname] == winning_score) {
             var_2ec641b1e117731e = var_2ec641b1e117731e + 1;
             winning_team = "none";
         }
@@ -698,7 +698,7 @@ function processassist_regularmp(killedplayer, objweapon, var_54351d786449ee9e) 
     var_4928d7738ebe2222 = isagent(killedplayer);
     victimteam = undefined;
     if (var_4928d7738ebe2222) {
-        victimteam = namespace_fb05e1623b934e8::function_e2292dcf63eccf7a(killedplayer, "team");
+        victimteam = namespace_fb05e1623b934e8::agentpers_getagentpersdata(killedplayer, "team");
     } else {
         victimteam = killedplayer.pers["team"];
     }
@@ -713,24 +713,24 @@ function processassist_regularmp(killedplayer, objweapon, var_54351d786449ee9e) 
     }
     if (istrue(level.var_1a2b600a06ec21f4.var_198508771f0592a9)) {
         damage::playerincrementscoreboardkills();
-        thread points::doScoreEvent(#"hash_84f67f0bec9e361c", objweapon, undefined, undefined, killedplayer);
+        thread points::doscoreevent(#"hash_84f67f0bec9e361c", objweapon, undefined, undefined, killedplayer);
     } else {
         var_91185ff4a2e16a72 = undefined;
         var_4b5a99c16abfdfb1 = undefined;
         event = #"assist";
         if (!level.teambased) {
-            event = #"hash_fe68dfa78d19874e";
+            event = #"assist_ffa";
         }
         points = rank::getscoreinfovalue(event);
         xp = rank::getscoreinfoxp(event);
         if (!level.teambased) {
             var_4b5a99c16abfdfb1 = xp + xp * var_54351d786449ee9e;
             var_91185ff4a2e16a72 = points + points * var_54351d786449ee9e;
-            thread points::doScoreEvent(#"hash_fe68dfa78d19874e", objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1);
+            thread points::doscoreevent(#"assist_ffa", objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1);
         } else {
             var_4b5a99c16abfdfb1 = xp + xp * var_54351d786449ee9e;
             var_91185ff4a2e16a72 = points + points * var_54351d786449ee9e;
-            thread points::doScoreEvent([0:#"assist", 1:eventtime], objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1);
+            thread points::doscoreevent([0:#"assist", 1:eventtime], objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1);
         }
         if (!var_4928d7738ebe2222) {
             function_5a48de6e3fb64115();
@@ -798,7 +798,7 @@ function processshieldassist_regularmp(killedplayer) {
     if (self.pers["team"] == killedplayer.pers["team"]) {
         return;
     }
-    thread points::doScoreEvent(#"shield_assist");
+    thread points::doscoreevent(#"shield_assist");
     if (!namespace_36f464722d326bbe::function_d04af493b6e718ac()) {
         namespace_26e1361ab951ec6b::addtoplayerstat(1, "combatStats", "assists");
     }

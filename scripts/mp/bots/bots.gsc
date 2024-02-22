@@ -1296,12 +1296,12 @@ function drop_bots(count, team) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x424d
 // Size: 0x49
-function bot_lui_convert_team_to_int(var_a3bf560b25c4a33e) {
-    if (var_a3bf560b25c4a33e == "axis") {
+function bot_lui_convert_team_to_int(team_name) {
+    if (team_name == "axis") {
         return 0;
-    } else if (var_a3bf560b25c4a33e == "allies") {
+    } else if (team_name == "allies") {
         return 1;
-    } else if (var_a3bf560b25c4a33e == "autoassign" || var_a3bf560b25c4a33e == "random") {
+    } else if (team_name == "autoassign" || team_name == "random") {
         return 2;
     } else {
         return 3;
@@ -3543,7 +3543,7 @@ function bot_think_gametype() {
     self endon("death_or_disconnect");
     level endon("game_ended");
     var_5076db025cbed16e = 0;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_5076db025cbed16e = 1;
     }
     if (!var_5076db025cbed16e) {

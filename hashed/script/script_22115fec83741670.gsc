@@ -398,7 +398,7 @@ function function_62a347ed3920d124(var_793f8ee348966508) {
 // Size: 0x40
 function function_c80f2e10e46fac9f(attacker) {
     self endon("death");
-    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_4af2232e0f83610b");
+    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_4af2232e0f83610b");
     self.isdisabled = 1;
     wait(6);
     self.isdisabled = 0;

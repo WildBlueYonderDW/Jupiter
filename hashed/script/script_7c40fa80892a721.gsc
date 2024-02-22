@@ -32,17 +32,17 @@ function init() {
     /#
         level function_a123482f01487930();
     #/
-    level.allowArmor = getdvarint(@"hash_a4d532f42d919827", 1) == 1;
+    level.allowarmor = getdvarint(@"hash_a4d532f42d919827", 1) == 1;
     level.var_1f9a4d8f7e4586bb = getdvarint(@"hash_cce2d04880fe5113", 0);
     level.var_4b78859bacc88808 = getdvarint(@"hash_ea4fd87f53ec4456", 50);
     if (!getdvarint(@"hash_cd66a9bfc03ac479", 0)) {
         level.var_fb2b3c3db6061df5 = getmatchrulesdata("commonOption", "plateCarrierEnabled");
     }
     level.spawnarmor = getdvarint(@"hash_d75d5638785f3b09", 0);
-    level.spawnArmorPlates = getdvarint(@"hash_a6a3fd965485d4bc", 0);
+    level.spawnarmorplates = getdvarint(@"hash_a6a3fd965485d4bc", 0);
     level.var_23500029f84b30d0 = getdvarint(@"hash_a729499d07bcd90a", 1) == 1;
-    level.dropArmorOnDeath = getdvarint(@"hash_8ad1ab9436bccca", 0);
-    level.armorDropAmount = getdvarint(@"hash_28d450f7f28644b7", 0);
+    level.droparmorondeath = getdvarint(@"hash_8ad1ab9436bccca", 0);
+    level.armordropamount = getdvarint(@"hash_28d450f7f28644b7", 0);
     level.var_611672c472b8c9a9 = getdvarint(@"hash_957847f02f2781a8", 0);
     level.var_6835a3d279520dc9 = getdvarint(@"hash_2bcfbe19dac56dd7", 3);
     level.var_699bb1fcae5b2eee = getdvarint(@"hash_be3a8d807c217559", 1);
@@ -50,7 +50,7 @@ function init() {
     level.var_1fe86bfc07eaa587 = getdvarint(@"hash_8b7eed58460969a6", 0);
     level.var_27720c0c325958c1 = getdvarint(@"hash_d2591f329d2ec7d4", 1) > 0;
     function_abfcdee8fda20a4();
-    if (!istrue(level.allowArmor)) {
+    if (!istrue(level.allowarmor)) {
         return;
     }
     level.onhelmetsniped = &onhelmetsniped;
@@ -63,25 +63,25 @@ function init() {
 // Checksum 0x0, Offset: 0x1226
 // Size: 0xf8
 function function_a123482f01487930() {
-    allowArmor = getdvarint(@"hash_4c8ec2fff0818a37", -1);
-    spawnArmorPlates = getdvarint(@"hash_d7b4016f72a67d64", -1);
+    allowarmor = getdvarint(@"hash_4c8ec2fff0818a37", -1);
+    spawnarmorplates = getdvarint(@"hash_d7b4016f72a67d64", -1);
     spawnarmor = getdvarint(@"hash_29060eb62a4bfb99", -1);
-    dropArmorOnDeath = getdvarint(@"hash_839ead624493a662", -1);
-    armorDropAmount = getdvarint(@"hash_b8b95d553dfaa5a7", -1);
-    if (allowArmor >= 0) {
-        setdvar(@"hash_a4d532f42d919827", allowArmor);
+    droparmorondeath = getdvarint(@"hash_839ead624493a662", -1);
+    armordropamount = getdvarint(@"hash_b8b95d553dfaa5a7", -1);
+    if (allowarmor >= 0) {
+        setdvar(@"hash_a4d532f42d919827", allowarmor);
     }
-    if (spawnArmorPlates >= 0) {
-        setdvar(@"hash_a6a3fd965485d4bc", spawnArmorPlates);
+    if (spawnarmorplates >= 0) {
+        setdvar(@"hash_a6a3fd965485d4bc", spawnarmorplates);
     }
     if (spawnarmor >= 0) {
         setdvar(@"hash_d75d5638785f3b09", spawnarmor);
     }
-    if (dropArmorOnDeath >= 0) {
-        setdvar(@"hash_8ad1ab9436bccca", dropArmorOnDeath);
+    if (droparmorondeath >= 0) {
+        setdvar(@"hash_8ad1ab9436bccca", droparmorondeath);
     }
-    if (armorDropAmount >= 0) {
-        setdvar(@"hash_28d450f7f28644b7", armorDropAmount);
+    if (armordropamount >= 0) {
+        setdvar(@"hash_28d450f7f28644b7", armordropamount);
     }
 }
 
@@ -109,7 +109,7 @@ function function_13caa305c839a278(notification, var_e1d097c517c3af5b) {
 // Checksum 0x0, Offset: 0x13c6
 // Size: 0x41b
 function initarmor(var_b5c8bc15f7117b19) {
-    if (!istrue(level.allowArmor) || istrue(self.var_ec90d948cd9fe21e)) {
+    if (!istrue(level.allowarmor) || istrue(self.var_ec90d948cd9fe21e)) {
         return;
     }
     self.var_ec90d948cd9fe21e = 1;
@@ -145,12 +145,12 @@ function initarmor(var_b5c8bc15f7117b19) {
             return;
         }
         function_2be3084f26829eac(0);
-        setArmorHealth(0);
+        setarmorhealth(0);
         return;
     }
     if (istrue(level.var_fb2b3c3db6061df5)) {
         var_2e1d1af8afe39ba8 = getmatchrulesdata("commonOption", "plateCarrierStartLevel");
-        if (isdefined(level.gametype) && namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (isdefined(level.gametype) && namespace_36f464722d326bbe::isbrstylegametype()) {
             if (istrue(level.var_595938569c3fe806)) {
                 if (issharedfuncdefined("instanceInventory", "restorePlateCarrier")) {
                     [[ getsharedfunc("instanceInventory", "restorePlateCarrier") ]](self);
@@ -172,7 +172,7 @@ function initarmor(var_b5c8bc15f7117b19) {
             }
         }
         self.var_bed158a6dfac230d = var_2e1d1af8afe39ba8;
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             var_407c627fc7915153 = 50 * var_2e1d1af8afe39ba8;
             self.spawnarmor = var_407c627fc7915153;
         } else if (istrue(level.var_2136245d5bcae3e6) && isdefined(level.var_4b78859bacc88808)) {
@@ -182,7 +182,7 @@ function initarmor(var_b5c8bc15f7117b19) {
     }
     self.var_8790c077c95db752 = getdvarint(@"hash_9c790ecb6ccef79a", var_407c627fc7915153);
     function_2be3084f26829eac(0);
-    setArmorHealth(0, 1);
+    setarmorhealth(0, 1);
     if (isdefined(self.team)) {
         var_607da387f3617ed1 = level.teamdata[self.team]["players"];
         if (isdefined(level.squaddata) && isdefined(level.squaddata[self.team]) && isdefined(level.squaddata[self.team][self.var_ff97225579de16a])) {
@@ -190,7 +190,7 @@ function initarmor(var_b5c8bc15f7117b19) {
         }
         foreach (player in var_607da387f3617ed1) {
             if (self != player) {
-                player setArmorOmnvars();
+                player setarmoromnvars();
             }
         }
     }
@@ -201,7 +201,7 @@ function initarmor(var_b5c8bc15f7117b19) {
 // Checksum 0x0, Offset: 0x17e8
 // Size: 0x290
 function givestartingarmor(var_d16569f10048fce9, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422e) {
-    if (!istrue(level.allowArmor)) {
+    if (!istrue(level.allowarmor)) {
         return;
     }
     if (istrue(level.var_1f9a4d8f7e4586bb)) {
@@ -228,12 +228,12 @@ function givestartingarmor(var_d16569f10048fce9, var_10fd8ed3fed0e0ae, var_ac1d8
     if (!isdefined(var_d16569f10048fce9)) {
         var_d16569f10048fce9 = level.spawnarmor;
     }
-    setArmorHealth(var_d16569f10048fce9, 1);
+    setarmorhealth(var_d16569f10048fce9, 1);
     if (istrue(self.var_57c207fde9b78089)) {
         self.var_57c207fde9b78089 = undefined;
     }
     if (!isdefined(var_10fd8ed3fed0e0ae)) {
-        var_10fd8ed3fed0e0ae = level.spawnArmorPlates;
+        var_10fd8ed3fed0e0ae = level.spawnarmorplates;
     }
     if (!isdefined(var_ac1d8e40765a422e)) {
         var_ac1d8e40765a422e = var_10fd8ed3fed0e0ae;
@@ -243,7 +243,7 @@ function givestartingarmor(var_d16569f10048fce9, var_10fd8ed3fed0e0ae, var_ac1d8
     if (var_b44e627d6a911f55 && var_da17fcd71681c773 && isdefined(self.equipment)) {
         self.equipment["health"] = "equip_armorplate";
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && !istrue(level.var_595938569c3fe806)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && !istrue(level.var_595938569c3fe806)) {
         self.var_bed158a6dfac230d = getmatchrulesdata("commonOption", "plateCarrierStartLevel");
         if (namespace_3c37cb17ade254d::issharedfuncdefined("player", "isInGulagCheck")) {
             var_1b7f5108008d55b6 = [[ namespace_3c37cb17ade254d::getsharedfunc("player", "isInGulagCheck") ]]();
@@ -251,7 +251,7 @@ function givestartingarmor(var_d16569f10048fce9, var_10fd8ed3fed0e0ae, var_ac1d8
                 var_10fd8ed3fed0e0ae = 0;
             }
         }
-        setArmorHealth(var_d16569f10048fce9);
+        setarmorhealth(var_d16569f10048fce9);
     }
     if (namespace_36f464722d326bbe::function_9cdaadfddeda4d7a()) {
         var_10fd8ed3fed0e0ae = var_10fd8ed3fed0e0ae + self.pers["armor_buy_plates"];
@@ -266,7 +266,7 @@ function givestartingarmor(var_d16569f10048fce9, var_10fd8ed3fed0e0ae, var_ac1d8
         var_10fd8ed3fed0e0ae = [[ getsharedfunc("instanceInventory", "getNumStartUpgradePlates") ]](self);
     }
     var_225cc3a0a507a66a = var_10fd8ed3fed0e0ae;
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && !istrue(level.var_595938569c3fe806)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && !istrue(level.var_595938569c3fe806)) {
         var_225cc3a0a507a66a = var_ac1d8e40765a422e;
     }
     if (var_ac1d8e40765a422e < 0) {
@@ -327,7 +327,7 @@ function function_9bca5c1d23a3e0b3() {
 // Checksum 0x0, Offset: 0x1b96
 // Size: 0x26
 function function_ac266fc218266d08() {
-    if (!istrue(level.allowArmor)) {
+    if (!istrue(level.allowarmor)) {
         return 0;
     }
     if (hasarmor()) {
@@ -345,14 +345,14 @@ function function_11ae05e08cc74847(var_1c07ef7bc0e3723a) {
         var_1c07ef7bc0e3723a = self.armorhealth;
     }
     self.var_8790c077c95db752 = 50 * function_829e435158d419cf();
-    setArmorHealth(var_1c07ef7bc0e3723a, 1);
+    setarmorhealth(var_1c07ef7bc0e3723a, 1);
 }
 
 // Namespace armor/namespace_f8d3520d3483c1
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c03
 // Size: 0x6b
-function setArmorHealth(value, var_5fb98290d356d5dd) {
+function setarmorhealth(value, var_5fb98290d356d5dd) {
     if (!isdefined(value)) {
         return;
     }
@@ -360,7 +360,7 @@ function setArmorHealth(value, var_5fb98290d356d5dd) {
     if (issharedfuncdefined("player", "setArmorOmnvars")) {
         self [[ getsharedfunc("player", "setArmorOmnvars") ]](var_5fb98290d356d5dd);
     } else {
-        setArmorOmnvars(var_5fb98290d356d5dd);
+        setarmoromnvars(var_5fb98290d356d5dd);
     }
 }
 
@@ -450,7 +450,7 @@ function damagearmor(damage, var_3773b3d5cce15dce, attacker, smeansofdeath, var_
     if (isdefined(level.var_49bf61396483bae7)) {
         var_787585d4e82e1e58 = self [[ level.var_49bf61396483bae7 ]](var_787585d4e82e1e58, attacker, smeansofdeath);
     }
-    setArmorHealth(self.armorhealth - var_787585d4e82e1e58, var_5fb98290d356d5dd);
+    setarmorhealth(self.armorhealth - var_787585d4e82e1e58, var_5fb98290d356d5dd);
     params = {attacker:attacker, var_787585d4e82e1e58:var_787585d4e82e1e58, var_1e552ebd80199d84:self.var_8790c077c95db752, armorhealth:self.armorhealth};
     callback::callback("on_armor_damage", params);
     self notify("damage_armor", var_787585d4e82e1e58);
@@ -532,7 +532,7 @@ function function_55811fc89cf705b5() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x216c
 // Size: 0x248
-function setArmorOmnvars(var_5fb98290d356d5dd) {
+function setarmoromnvars(var_5fb98290d356d5dd) {
     if (!isplayer(self)) {
         return;
     }
@@ -777,7 +777,7 @@ function function_ef6d8b8c2ed89e8a(count) {
 // Checksum 0x0, Offset: 0x2a50
 // Size: 0x10f
 function function_9f1608bd570dd94c(var_c84cdf4dbd2b7b98) {
-    if (!istrue(level.allowArmor)) {
+    if (!istrue(level.allowarmor)) {
         return;
     }
     self endon("death_or_disconnect");
@@ -835,7 +835,7 @@ function function_2be3084f26829eac(var_d2a5ddc13d5ced30) {
 // Checksum 0x0, Offset: 0x2c6c
 // Size: 0xd7
 function private function_7cb27dc2ce16cb4f() {
-    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1 || namespace_82dcd1d5ae30ff7::_hasperk("specialty_onehanded_plating") && namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1 || namespace_82dcd1d5ae30ff7::_hasperk("specialty_onehanded_plating") && namespace_36f464722d326bbe::isbrstylegametype()) {
         self.insertingarmorplate = 0;
         self.var_845334559a2fcaca = 0;
         self setclientomnvar("ui_inserting_armor_plate", 0);
@@ -875,7 +875,7 @@ function private function_f2a4a5aed60e552d() {
     if (istrue(self.insertingarmorplate) || self isswitchingweapon()) {
         return;
     }
-    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1 || namespace_82dcd1d5ae30ff7::_hasperk("specialty_onehanded_plating") && namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1 || namespace_82dcd1d5ae30ff7::_hasperk("specialty_onehanded_plating") && namespace_36f464722d326bbe::isbrstylegametype()) {
         if (!isnullweapon(self getheldoffhand())) {
             if (issharedfuncdefined("supers", "getSuperRefForSuperOffhand")) {
                 var_ebec497ff8b18a45 = self [[ getsharedfunc("supers", "getSuperRefForSuperOffhand") ]](self getheldoffhand());
@@ -1037,7 +1037,7 @@ function private usearmorplate() {
     if (isdefined(self.pers["telemetry"]) && isdefined(self.pers["telemetry"].armor_equipped)) {
         self.pers["telemetry"].armor_equipped++;
     }
-    setArmorHealth(var_1c07ef7bc0e3723a);
+    setarmorhealth(var_1c07ef7bc0e3723a);
     currentcount = self getammocount(function_46cd39650beb293f());
     newcount = int(max(0, currentcount - 1));
     function_7293fbe4c07e316f(newcount);
@@ -1045,7 +1045,7 @@ function private usearmorplate() {
         self.pers["armor_buy_plates"] = newcount;
     }
     namespace_aad14af462a74d08::onuseitem("armor_plate");
-    if (namespace_f8065cafc523dba5::function_eba2f2e094684b8f("specialty_reduce_regen_delay_on_plate") && namespace_36f464722d326bbe::isBRStyleGameType() && level.var_1fe86bfc07eaa587) {
+    if (namespace_f8065cafc523dba5::function_eba2f2e094684b8f("specialty_reduce_regen_delay_on_plate") && namespace_36f464722d326bbe::isbrstylegametype() && level.var_1fe86bfc07eaa587) {
         namespace_f8d3520d3483c1::function_7f2cfc2ced509047();
         self notify("force_regeneration");
     }
@@ -1126,7 +1126,7 @@ function private function_1240021a9c87bcdb() {
     self notify("cancel_all_killstreak_deployments");
     self.stoparmorinsert = 1;
     self.var_b846f916af2f7782 = 0;
-    thread insertArmorComplete();
+    thread insertarmorcomplete();
 }
 
 // Namespace armor/namespace_f8d3520d3483c1
@@ -1299,7 +1299,7 @@ function private function_a86a98de3e7986b(streakinfo) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x3d7a
 // Size: 0xd5
-function private insertArmorComplete() {
+function private insertarmorcomplete() {
     self endon("disconnect");
     self notify("insertArmorComplete");
     if (isdefined(self.currentweapon) && isdefined(self.currentweapon.basename) && self.currentweapon.basename == "iw9_armor_plate_deploy_mp") {
@@ -1649,7 +1649,7 @@ function function_4f88731347251184() {
         waitframe();
     }
     waitframe();
-    setArmorHealth(int(clamp(self.armorhealth + self.pers["armor_buy_plates_instant"] * level.var_4b78859bacc88808, 0, self.var_8790c077c95db752)));
+    setarmorhealth(int(clamp(self.armorhealth + self.pers["armor_buy_plates_instant"] * level.var_4b78859bacc88808, 0, self.var_8790c077c95db752)));
     self.pers["armor_buy_plates_instant"] = 0;
 }
 
@@ -2183,7 +2183,7 @@ function function_e47b13babb51a365() {
 // Size: 0x2a
 function function_32bc8e85688648f4(var_5f6546312365b65c) {
     var_1c07ef7bc0e3723a = self.armorhealth + var_5f6546312365b65c;
-    setArmorHealth(var_1c07ef7bc0e3723a);
+    setarmorhealth(var_1c07ef7bc0e3723a);
 }
 
 // Namespace armor/namespace_f8d3520d3483c1
@@ -2295,7 +2295,7 @@ function function_8820428e84e96143() {
         if (self.armorhealth >= self.var_8790c077c95db752) {
             self notify("armor_regen_complete");
         }
-        setArmorHealth(self.armorhealth + regenamount);
+        setarmorhealth(self.armorhealth + regenamount);
         wait(regenrate);
     }
 }
@@ -2328,7 +2328,7 @@ function function_dcc3b1093c9a295e(var_24df708f286b0562, var_49e6ef3edadd524e) {
         modifier = 1;
         break;
     }
-    if (isBRStyleGameType()) {
+    if (isbrstylegametype()) {
         return int(var_24df708f286b0562 * modifier * 1.5);
     } else {
         return int(var_24df708f286b0562 * modifier * function_3768b225bd3bcf44());

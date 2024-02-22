@@ -415,8 +415,8 @@ function ascenderuse(instance, player) {
     player val::set("ascender", "fire", 0);
     if (istrue(player.isjuggernaut)) {
         if (issharedfuncdefined("juggernaut", "canUseWeaponPickups")) {
-            canUseWeaponPickups = player [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
-            if (istrue(canUseWeaponPickups)) {
+            canuseweaponpickups = player [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
+            if (istrue(canuseweaponpickups)) {
                 player val::set("ascender", "weapon_switch", 0);
             }
         }

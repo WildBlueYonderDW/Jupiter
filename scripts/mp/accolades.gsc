@@ -351,7 +351,7 @@ function isreviveenabled() {
 // Checksum 0x0, Offset: 0x26f9
 // Size: 0xa
 function iscorempgametype() {
-    return !namespace_36f464722d326bbe::function_beff479639e6508();
+    return !namespace_36f464722d326bbe::isbrstylegametype();
 }
 
 // Namespace accolades/namespace_801bcc0d4eadf9a1
@@ -375,7 +375,7 @@ function arefieldupgradesallowed() {
 // Checksum 0x0, Offset: 0x2735
 // Size: 0x29
 function isobjectivegametype() {
-    return getgametype() != "war" && getgametype() != "dm" && !namespace_36f464722d326bbe::function_beff479639e6508();
+    return getgametype() != "war" && getgametype() != "dm" && !namespace_36f464722d326bbe::isbrstylegametype();
 }
 
 // Namespace accolades/namespace_801bcc0d4eadf9a1

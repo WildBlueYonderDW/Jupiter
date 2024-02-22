@@ -15,7 +15,7 @@
 // Checksum 0x0, Offset: 0x708
 // Size: 0x382
 function init() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType() || istrue(game["isLaunchChunk"])) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() || istrue(game["isLaunchChunk"])) {
         level.potgenabled = 0;
         return;
     }
@@ -182,8 +182,8 @@ function loadeventtable() {
         var_584994fab4a8712b.eventtable[eventref] = [];
         score = tablelookupbyrow("mp/potg_event_table.csv", rowindex, 1);
         var_584994fab4a8712b.eventtable[eventref]["score"] = float(score);
-        addOn = tablelookupbyrow("mp/potg_event_table.csv", rowindex, 2);
-        var_584994fab4a8712b.eventtable[eventref]["addOn"] = addOn != "";
+        addon = tablelookupbyrow("mp/potg_event_table.csv", rowindex, 2);
+        var_584994fab4a8712b.eventtable[eventref]["addOn"] = addon != "";
     }
 }
 
@@ -959,11 +959,11 @@ function function_4ed25b1ffc14d7a8(player) {
     }
     var_b04380ede90495aa = player getplayerdata(level.var_5d69837cf4db0407, "roundsSinceLastPOTG");
     var_1498673d1311049b = game["potg"].var_2ec58fa823337cd8;
-    if (var_b04380ede90495aa < var_1498673d1311049b[0].roundsSinceLastPOTG) {
+    if (var_b04380ede90495aa < var_1498673d1311049b[0].roundssincelastpotg) {
         return 1;
     }
     for (i = var_1498673d1311049b.size - 1; i >= 0; i--) {
-        if (var_b04380ede90495aa >= var_1498673d1311049b[i].roundsSinceLastPOTG) {
+        if (var_b04380ede90495aa >= var_1498673d1311049b[i].roundssincelastpotg) {
             return var_1498673d1311049b[i].modifier;
         }
     }
@@ -985,8 +985,8 @@ function function_fa47d8c13e83a98c() {
         if (player == var_a16a87f3dde73d18) {
             continue;
         }
-        roundsSinceLastPOTG = player getplayerdata(level.var_5d69837cf4db0407, "roundsSinceLastPOTG");
-        player setplayerdata(level.var_5d69837cf4db0407, "roundsSinceLastPOTG", roundsSinceLastPOTG + 1);
+        roundssincelastpotg = player getplayerdata(level.var_5d69837cf4db0407, "roundsSinceLastPOTG");
+        player setplayerdata(level.var_5d69837cf4db0407, "roundsSinceLastPOTG", roundssincelastpotg + 1);
     }
 }
 
@@ -1255,8 +1255,8 @@ function doesscenefitincurrentarchive(scene) {
     if (var_55ba69b15e012577 < 0) {
         return 0;
     }
-    archiveStartTime = var_55ba69b15e012577 - 13500;
-    return scene.playbackstarttime >= archiveStartTime && scene.playbackendtime <= var_55ba69b15e012577;
+    archivestarttime = var_55ba69b15e012577 - 13500;
+    return scene.playbackstarttime >= archivestarttime && scene.playbackendtime <= var_55ba69b15e012577;
 }
 
 // Namespace potg/namespace_ab70c875589b8f6a
@@ -1363,12 +1363,12 @@ function datalog_newevent(event, id, entity) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x325d
 // Size: 0x105
-function datalog_archivesaved(requesttime, archiveStartTime, archiveDuration, desiredSceneStartTime, desiredSceneEndTime) {
+function datalog_archivesaved(requesttime, archivestarttime, archiveduration, desiredscenestarttime, desiredsceneendtime) {
     if (getdvarint(@"hash_1354f825daa8fdd3", 0) == 0) {
         return;
     }
     version = datalog_getlogversion();
-    dlog_recordevent("mpscript_potg_archive", [0:"requestTime", 1:requesttime, 2:"archiveStartTime", 3:archiveStartTime, 4:"archiveDuration", 5:archiveDuration, 6:"desiredSceneStartTime", 7:desiredSceneStartTime, 8:"desiredSceneEndTime", 9:desiredSceneEndTime, 10:"playerCount", 11:level.players.size, 12:"tickRate", 13:int(1 / level.framedurationseconds), 14:"dedi", 15:ter_op(isdedicatedserver(), 1, 0), 16:"version", 17:0]);
+    dlog_recordevent("mpscript_potg_archive", [0:"requestTime", 1:requesttime, 2:"archiveStartTime", 3:archivestarttime, 4:"archiveDuration", 5:archiveduration, 6:"desiredSceneStartTime", 7:desiredscenestarttime, 8:"desiredSceneEndTime", 9:desiredsceneendtime, 10:"playerCount", 11:level.players.size, 12:"tickRate", 13:int(1 / level.framedurationseconds), 14:"dedi", 15:ter_op(isdedicatedserver(), 1, 0), 16:"version", 17:0]);
 }
 
 // Namespace potg/namespace_ab70c875589b8f6a

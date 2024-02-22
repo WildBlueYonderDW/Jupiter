@@ -363,7 +363,7 @@ function function_8e7c5f27949002c7() {
     if (level.teambased) {
         var_f5d0256e4366d1ff = shouldmodesetsquads();
         if (var_f5d0256e4366d1ff) {
-            return namespace_54d20dd0dd79277f::function_3d0f2343793d709b(self.owner.team, self.owner.squadindex, 0);
+            return namespace_54d20dd0dd79277f::getsquadmates(self.owner.team, self.owner.squadindex, 0);
         } else {
             return getteamdata(self.ownerteam, "players");
         }
@@ -522,7 +522,7 @@ function function_45a7e0edc973d037() {
     self endon("death");
     self.var_49996ebebbbbf375 = -1;
     var_4930cbce302555b1 = function_f0698aee89c18210(self.var_8862825a0618bda).var_315c43d476bb095;
-    if (namespace_36f464722d326bbe::function_beff479639e6508()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     } else {
         while (1) {
@@ -650,8 +650,8 @@ function private function_f91c0feb9232b257(target) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x239f
 // Size: 0x1c8
-function private function_74598558cd270375(var_bb093c5bebc99b6f, var_2f3cf0914d78ac25, target) {
-    weaponicon = var_bb093c5bebc99b6f;
+function private function_74598558cd270375(defaulticon, var_2f3cf0914d78ac25, target) {
+    weaponicon = defaulticon;
     weaponoffset = var_2f3cf0914d78ac25;
     weaponstruct = spawnstruct();
     if (isdefined(target.weapon_name)) {
@@ -696,7 +696,7 @@ function private function_c2c3f444cfeb61ca(var_161e86c260d6864c, player) {
     }
     if (level.teambased) {
         if (shouldmodesetsquads()) {
-            var_1b6ae0f8344f5cea = function_3d0f2343793d709b(var_f447bfdbb1256f69.team, var_f447bfdbb1256f69.var_ff97225579de16a, 0);
+            var_1b6ae0f8344f5cea = getsquadmates(var_f447bfdbb1256f69.team, var_f447bfdbb1256f69.var_ff97225579de16a, 0);
             return array_contains(var_1b6ae0f8344f5cea, player);
         } else {
             return namespace_f8065cafc523dba5::isfriendly(var_f447bfdbb1256f69.team, player);
@@ -921,7 +921,7 @@ function function_8b5781dd2d18a300(player) {
     var_f5d0256e4366d1ff = shouldmodesetsquads();
     if (var_c1a442604b2c5e96 == self) {
         if (var_f5d0256e4366d1ff) {
-            teammates = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(player.team, player.var_ff97225579de16a, 1);
+            teammates = namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 1);
         } else {
             teammates = getteamdata(player.team, "players");
         }
@@ -2593,10 +2593,10 @@ function function_b4e750dbd5734b12(camera, var_7873097f48bd513) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66d2
 // Size: 0xc5
-function function_81704d1224bd6fe0(usingCamera) {
+function function_81704d1224bd6fe0(usingcamera) {
     level endon("game_ended");
     self endon("death_or_disconnect");
-    if (usingCamera) {
+    if (usingcamera) {
         val::set("tactical_camera_actions", "weapon_switch", 0);
         val::set("tactical_camera_actions", "offhand_weapons", 0);
         val::set("tactical_camera_actions", "fire", 0);
@@ -2617,9 +2617,9 @@ function function_81704d1224bd6fe0(usingCamera) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x679e
 // Size: 0xc0
-function private function_7a22ab98be3d0849(usingCamera) {
+function private function_7a22ab98be3d0849(usingcamera) {
     stance = self getstance();
-    if (usingCamera) {
+    if (usingcamera) {
         if (stance == "stand") {
             val::set("tactical_camera_stance", "crouch", 0);
             val::set("tactical_camera_stance", "prone", 0);
@@ -3303,7 +3303,7 @@ function function_652247ce1acb67c2(data) {
     if (isdefined(self.damagetaken) && self.damagetaken >= 100) {
         if (!isdefined(self.owner) || namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker)) {
             attacker notify("destroyed_equipment");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
             attacker namespace_25c5a6f43bb97b43::equipmentdestroyed(self);
         }
     }

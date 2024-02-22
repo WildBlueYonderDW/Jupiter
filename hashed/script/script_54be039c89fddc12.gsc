@@ -337,8 +337,8 @@ function function_8e9b00a1d2b23d72() {
 // Checksum 0x0, Offset: 0xb90
 // Size: 0x59
 function function_b27f0c7dafeadb3(var_b7e583d90618fed3) {
-    backpackSize = function_1b35b10884bd8d67();
-    for (i = 0; i < backpackSize; i++) {
+    backpacksize = function_1b35b10884bd8d67();
+    for (i = 0; i < backpacksize; i++) {
         var_eeeae9defa0c1e95 = function_d870b2c45335bd88(i);
         if (var_eeeae9defa0c1e95 == var_b7e583d90618fed3) {
             function_777092be5abab355(i);

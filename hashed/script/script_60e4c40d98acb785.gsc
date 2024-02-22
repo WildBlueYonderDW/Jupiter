@@ -53,7 +53,7 @@ function function_35671b7b1a04bf58(bot) {
     /#
         assert(isdefined(target));
     #/
-    self.var_a0185a724941f02f.var_b32868a9471d2caa = 1;
+    self.decision.var_b32868a9471d2caa = 1;
     var_c9e915e56c1b6170 = namespace_c5622898120e827f::getrandompointincircle(target.var_ddf4dd8ad690d592, target.radius);
     if (var_c9e915e56c1b6170[2] - target.var_ddf4dd8ad690d592[2] > 70) {
         var_c9e915e56c1b6170 = namespace_c5622898120e827f::getrandompointincircle(target.var_ddf4dd8ad690d592, target.radius, undefined, undefined, 0, 1);
@@ -74,6 +74,6 @@ function function_35671b7b1a04bf58(bot) {
 // Checksum 0x0, Offset: 0x3f0
 // Size: 0x21
 function function_f4caae7e8af9d32c(action) {
-    action.var_a0185a724941f02f.var_b32868a9471d2caa = undefined;
+    action.decision.var_b32868a9471d2caa = undefined;
 }
 

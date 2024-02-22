@@ -185,7 +185,7 @@ function private function_b07326afbb0334d3(killstreakbundle) {
     var_f3ea705a2e523bad = function_1fd889c40c7941b8();
     var_afc2f18cdaa6c9cc = function_2d7fd59d039fa69b(self.origin, maxdist);
     var_9ba81be3ce3691 = function_2c9f694b8b0758e1(var_afc2f18cdaa6c9cc, var_5da234812450b0d7, var_f3ea705a2e523bad);
-    var_6f0350c82fc94c38 = function_107fdcaa299cfa40();
+    var_6f0350c82fc94c38 = empdebuff_get_emp_ents();
     var_82636d311009a1eb = function_8b664d9dfe6f4a7e(var_6f0350c82fc94c38, var_5da234812450b0d7);
     while (var_556b31282abcb132 <= maxdist) {
         var_186931b5967c0e6 = var_556b31282abcb132 * var_556b31282abcb132;
@@ -234,7 +234,7 @@ function function_2c9f694b8b0758e1(var_55c733bb252489e1, var_2c3a1bf3bfd80420, v
         if (player == self) {
             continue;
         }
-        if (!istrue(player namespace_742e7eca5294ecdc::function_13efd74a5091dc42(var_f3ea705a2e523bad, 1))) {
+        if (!istrue(player namespace_742e7eca5294ecdc::shockstick_canbehaywire(var_f3ea705a2e523bad, 1))) {
             continue;
         }
         index = var_67e54dc8917a5918.size;
@@ -331,7 +331,7 @@ function function_55d0db940f81e2e6(victim, weaponobj, var_f3ea705a2e523bad) {
     victim.var_fe74f3f4d5afe567 = gettime();
     thread function_83a614bd6a1f69f0(victim, var_1b50ea388b19171c);
     while (gettime() < shockendtime) {
-        var_f3ea705a2e523bad thread namespace_742e7eca5294ecdc::function_cf4ff41f0ae2047f(victim, var_f3ea705a2e523bad.weapon, 0);
+        var_f3ea705a2e523bad thread namespace_742e7eca5294ecdc::shockstick_applyhaywire(victim, var_f3ea705a2e523bad.weapon, 0);
         damage = ter_op(isplayer(victim), 3, 5);
         if (victim isswimming()) {
             damage = damage * 2;
@@ -379,7 +379,7 @@ function function_822a7fd2e23b8fb6(ent) {
                 damagedata.inflictor = ent;
                 damagedata.objweapon = ent.objweapon;
                 damagedata.meansofdeath = "MOD_EXPLOSIVE";
-                ent namespace_1f188a13f7e79610::function_ab08028468ab68f9(damagedata);
+                ent namespace_1f188a13f7e79610::vehicle_explode(damagedata);
             }
         } else {
             ent dodamage(9999, ent.origin, self, self, "MOD_EXPLOSIVE", var_a688c2446d2d3bba);

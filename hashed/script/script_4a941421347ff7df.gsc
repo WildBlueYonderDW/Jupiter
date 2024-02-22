@@ -50,7 +50,7 @@
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x1d
 function function_86e16eda99117478() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         function_8cda6b3ceb41b954();
     } else {
         function_8cc46f3ceb298eed();
@@ -106,7 +106,7 @@ function function_8cc46f3ceb298eed() {
 // Size: 0x24
 function function_6930ba7fa0669dba() {
     function_572268dda1c23c7();
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return function_d8f79220efc2d24e();
     } else {
         return function_d8f28a20efbc97df();
@@ -163,7 +163,7 @@ function function_d8f28a20efbc97df() {
 // Checksum 0x0, Offset: 0x7f2
 // Size: 0x158
 function function_572268dda1c23c7() {
-    if (isdefined(level.Mind.var_87acbab9a27b0757)) {
+    if (isdefined(level.mind.var_87acbab9a27b0757)) {
         return;
     }
     var_87acbab9a27b0757 = [];
@@ -185,7 +185,7 @@ function function_572268dda1c23c7() {
     foreach (personality in var_87acbab9a27b0757) {
         personality.var_f7a0e9390034c85b = personality.var_f7a0e9390034c85b / var_2b22a39e9c6dc326;
     }
-    level.Mind.var_87acbab9a27b0757 = var_87acbab9a27b0757;
+    level.mind.var_87acbab9a27b0757 = var_87acbab9a27b0757;
 }
 
 // Namespace namespace_908c3afba93448e0/namespace_823e1abd5161abb1
@@ -206,10 +206,10 @@ function function_d34639184a627e9c() {
 // Checksum 0x0, Offset: 0x9c6
 // Size: 0x6a
 function function_3d84d2156c8e641a(var_e2055bf088954e86) {
-    if (isdefined(level.Mind.callbacks.var_b7d58173e645ec4f)) {
-        return [[ level.Mind.callbacks.var_b7d58173e645ec4f ]](var_e2055bf088954e86);
+    if (isdefined(level.mind.callbacks.var_b7d58173e645ec4f)) {
+        return [[ level.mind.callbacks.var_b7d58173e645ec4f ]](var_e2055bf088954e86);
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return function_7820c266fca9bbae(var_e2055bf088954e86);
     } else {
         return function_781cba66fca5b43f(var_e2055bf088954e86);
@@ -320,7 +320,7 @@ function function_bfa5c0c232ced7eb() {
     /#
         assert(isdefined(self.var_e2055bf088954e86));
     #/
-    personality = level.Mind.var_87acbab9a27b0757[self.var_e2055bf088954e86];
+    personality = level.mind.var_87acbab9a27b0757[self.var_e2055bf088954e86];
     /#
         assert(isdefined(personality));
     #/

@@ -149,7 +149,7 @@ function function_6da2bc8030016571(bot, target) {
             if (distancesquared(var_95e0c7f3c4f7d3b6, var_fab2b08dc6826750) > var_404ee9885d942a78) {
                 goto LOC_000001f7;
             }
-            var_7d9a6d00a336393b = namespace_bbc79db4c3949a5c::function_3e0a90b32e551ad(var_95e0c7f3c4f7d3b6);
+            var_7d9a6d00a336393b = namespace_bbc79db4c3949a5c::gettimetilldangerforpoint(var_95e0c7f3c4f7d3b6);
             var_52f22c4c2185736b = 5;
             if (var_7d9a6d00a336393b >= 0 & var_7d9a6d00a336393b < var_52f22c4c2185736b) {
                 goto LOC_000001f7;
@@ -165,7 +165,7 @@ function function_6da2bc8030016571(bot, target) {
             var_73b73a6a4727117e = var_73b73a6a4727117e + var_7fbcf617807a62b4;
         }
     }
-    self.var_a0185a724941f02f function_27d1cc325885f9b9(bot.origin, target.origin);
+    self.decision function_27d1cc325885f9b9(bot.origin, target.origin);
     return undefined;
 }
 

@@ -40,10 +40,10 @@ function private init() {
     if (issharedfuncdefined("emp", "init")) {
         [[ getsharedfunc("emp", "init") ]]();
     }
-    registersharedfunc("emp", "setEMP_Applied_Callback", &setEMP_Applied_Callback);
-    registersharedfunc("emp", "setEMP_Started_Callback", &setEMP_Started_Callback);
-    registersharedfunc("emp", "setEMP_Cleared_Callback", &setEMP_Cleared_Callback);
-    registersharedfunc("emp", "setEMP_Cleared_callback", &watch_checkForLauncherWeapons);
+    registersharedfunc("emp", "setEMP_Applied_Callback", &setemp_applied_callback);
+    registersharedfunc("emp", "setEMP_Started_Callback", &setemp_started_callback);
+    registersharedfunc("emp", "setEMP_Cleared_Callback", &setemp_cleared_callback);
+    registersharedfunc("emp", "setEMP_Cleared_callback", &watch_checkforlauncherweapons);
     function_a4f524ed48312204();
     level.var_2c73f3bef5a3079 = [];
     level._effect["emp_shockwave"] = loadfx("vfx/iw8_mp/perk/vfx_emp_drone_exp_fieldupgrades.vfx");
@@ -704,7 +704,7 @@ function function_a488516398cf6ae3(victimteam, attacker, var_d0bb62c0804a01e1, e
                     }
                     if (isdefined(object.var_5d67315cdcf62026)) {
                         data = packdamagedata(attacker, object, 1, objweapon, "MOD_EXPLOSIVE", attacker, var_d0bb62c0804a01e1);
-                        data.ksEMP = 1;
+                        data.ksemp = 1;
                         object thread [[ object.var_5d67315cdcf62026 ]](data);
                         object notify("emp_applied");
                         if (isdefined(object.empcount)) {
@@ -802,7 +802,7 @@ function function_a3d62c450f8fb932(victimteam, attacker, var_d0bb62c0804a01e1) {
     self notify("emp_started");
     self notify("emp_applied");
     thread function_377c97bfdd963952();
-    thread watch_checkForLauncherWeapons();
+    thread watch_checkforlauncherweapons();
 }
 
 // Namespace emp/namespace_37686d23b558ac76
@@ -843,7 +843,7 @@ function function_8887420281f3ff3f() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2967
 // Size: 0x8c
-function watch_checkForLauncherWeapons() {
+function watch_checkforlauncherweapons() {
     self endon("death_or_disconnect");
     self endon("stopLauncherCheck");
     level endon("game_ended");
@@ -879,7 +879,7 @@ function function_33b7f0d067af5e39() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a54
 // Size: 0x16
-function setEMP_Applied_Callback(var_9b9a9fd5c7f44af0) {
+function setemp_applied_callback(var_9b9a9fd5c7f44af0) {
     self.var_5d67315cdcf62026 = var_9b9a9fd5c7f44af0;
 }
 
@@ -887,7 +887,7 @@ function setEMP_Applied_Callback(var_9b9a9fd5c7f44af0) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a71
 // Size: 0x16
-function setEMP_Cleared_Callback(var_a92c68f274cd0239) {
+function setemp_cleared_callback(var_a92c68f274cd0239) {
     self.var_2ba749157b05bad7 = var_a92c68f274cd0239;
 }
 
@@ -895,7 +895,7 @@ function setEMP_Cleared_Callback(var_a92c68f274cd0239) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a8e
 // Size: 0x16
-function setEMP_Started_Callback(startcallback) {
+function setemp_started_callback(startcallback) {
     self.var_3545410459b16762 = startcallback;
 }
 

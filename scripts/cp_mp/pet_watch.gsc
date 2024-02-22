@@ -115,9 +115,9 @@ function doaction(action) {
 // Checksum 0x0, Offset: 0xa45
 // Size: 0x52
 function growpet() {
-    var_24f8be8b27233505 = level.petconsts[self.petwatch.phase].phasetime;
-    self.petwatch.growthtime = var_24f8be8b27233505;
-    debugsetlasttime(var_24f8be8b27233505);
+    targettime = level.petconsts[self.petwatch.phase].phasetime;
+    self.petwatch.growthtime = targettime;
+    debugsetlasttime(targettime);
 }
 
 // Namespace namespace_883b0db1d686c37e/namespace_74465391b3cf76b
@@ -590,7 +590,7 @@ function addvehicularmanslaughtercharge() {
 // Size: 0x8f
 function addtop3brcharge() {
     subtype = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5();
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && (subtype == "br" || subtype == "aladdin" || subtype == "jugg" || subtype == "mini" || subtype == "mini_mgl")) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && (subtype == "br" || subtype == "aladdin" || subtype == "jugg" || subtype == "mini" || subtype == "mini_mgl")) {
         if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
             self setclientomnvar("ui_pet_watch_bonus_earned_1", 90000);
         }

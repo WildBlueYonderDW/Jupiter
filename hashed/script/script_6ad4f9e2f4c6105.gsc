@@ -58,8 +58,8 @@ function init(var_54dd3d9bc29908a2) {
     flag_init("wztrain_processed_track");
     flag_init("wztrain_spawn_started");
     flag_init("wztrain_anim_playing");
-    registersharedfunc("br_movingtrain", "predictCargoTrainPositions", &predictCargoTrainPositions);
-    registersharedfunc("br_movingtrain", "changeCargoTrainSpeed", &changeCargoTrainSpeed);
+    registersharedfunc("br_movingtrain", "predictCargoTrainPositions", &predictcargotrainpositions);
+    registersharedfunc("br_movingtrain", "changeCargoTrainSpeed", &changecargotrainspeed);
     level.wztrain_info.var_d17ae48dc6e221d3 = &function_a4e20b4dc4ebd306;
     if (!level init_train_arrays(var_54dd3d9bc29908a2)) {
         /#
@@ -242,7 +242,7 @@ function init_train_arrays(var_54dd3d9bc29908a2) {
     level thread function_85a3956c7630ea05();
     level thread train_handle_collide_mines();
     function_a4fa12bce9b083c4();
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         foreach (spawntype, spawndata in level.wztrain_info.spawndata.configs) {
             if (getdvarint(function_2ef675c13ca1c4af(@"hash_82213c16d0a252f0", spawntype), 1)) {
                 level thread function_c1c6070579e999cb(level.wztrain_info.train_array, spawntype);
@@ -1090,10 +1090,10 @@ function private function_dacf28437ad9a90(train, var_1be58aa13ba9f7da) {
 // Size: 0xa7
 function private function_a7ab86374cb78aa9() {
     /#
-        RS = [0:100, 1:5000];
+        rs = [0:100, 1:5000];
         while (1) {
             waitframe();
-            foreach (r in RS) {
+            foreach (r in rs) {
                 draw_capsule(self.origin + (0, 0, r * -1), r, r * 2, (0, 0, 0), (1, 0, 0), 0, 1);
             }
         }
@@ -1236,8 +1236,8 @@ function private function_68b05555719c93ed(var_949475d0823bc895) {
     if (!isdefined(level.wztrain_info.var_164f7d6ed6e374a9)) {
         return;
     }
-    var_48497d676003002b = level.wztrain_info.var_164f7d6ed6e374a9[var_949475d0823bc895];
-    if (!isdefined(var_48497d676003002b)) {
+    controls = level.wztrain_info.var_164f7d6ed6e374a9[var_949475d0823bc895];
+    if (!isdefined(controls)) {
         return;
     }
     var_15777982c0909b37 = level.wztrain_info.var_c3604781a9d33a7a[var_949475d0823bc895];
@@ -1866,7 +1866,7 @@ function function_51da224c93d325f3(einflictor) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7377
 // Size: 0x222
-function predictCargoTrainPositions(delays, var_a959464429d656b7, var_60278bcb8ac1212b, var_6c7f586cdec8f509) {
+function predictcargotrainpositions(delays, var_a959464429d656b7, var_60278bcb8ac1212b, var_6c7f586cdec8f509) {
     if (!isdefined(var_6c7f586cdec8f509)) {
         var_6c7f586cdec8f509 = 0;
     }
@@ -1915,7 +1915,7 @@ function predictCargoTrainPositions(delays, var_a959464429d656b7, var_60278bcb8a
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75a1
 // Size: 0x76
-function changeCargoTrainSpeed(var_b3e01b11d76e1db6, var_60278bcb8ac1212b) {
+function changecargotrainspeed(var_b3e01b11d76e1db6, var_60278bcb8ac1212b) {
     level endon("game_ended");
     level notify("cargo_train_change_speed");
     level endon("cargo_train_change_speed");
@@ -2081,7 +2081,7 @@ function private function_7c5eefd0cbce6520(instance, part, state, player, var_a5
         instance thread namespace_abc7ed0cde8527d4::function_24765a7aabf0093e(player);
         instance.entity namespace_abc7ed0cde8527d4::function_7f10e8e120314f4b(player, part);
         if (istrue(instance.entity.var_b14a331ba425c286)) {
-            namespace_d696adde758cbe79::showDMZSplash("dmz_train_safe_defend_started", level.players);
+            namespace_d696adde758cbe79::showdmzsplash("dmz_train_safe_defend_started", level.players);
             function_6f6ff85c52fab8ff(instance.entity, "drill", player);
             wait(1);
             instance.entity thread function_4b2e6bd87a657b6();
@@ -2265,7 +2265,7 @@ function private function_d0c5bf4c2d924d87() {
             var_bfbd5393ef742e6e = clamp(self.progress + level.framedurationseconds / capturetime, 0, 1);
             if (var_bfbd5393ef742e6e > 0.33 && self.progress < 0.33 || var_bfbd5393ef742e6e > 0.67 && self.progress < 0.67) {
                 self.paused = 1;
-                namespace_d696adde758cbe79::showDMZSplash("dmz_train_safe_paused", self.nearbyplayers);
+                namespace_d696adde758cbe79::showdmzsplash("dmz_train_safe_paused", self.nearbyplayers);
                 self setscriptablepartstate("train_safe", "usable_drilling");
             }
             self.progress = var_bfbd5393ef742e6e;
@@ -2304,7 +2304,7 @@ function private function_7515098c2d459b5() {
     riders = [];
     for (i = 2; i < 8; i++) {
         aitype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, poi, undefined, random([0:"sniper", 1:"ar", 2:"lmg"]), 3);
-        rider = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, origin, (0, 0, 0), "absolute", "reinforcements", "train_safe", undefined, undefined, undefined, "bossArea", 1, undefined, 0);
+        rider = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, (0, 0, 0), "absolute", "reinforcements", "train_safe", undefined, undefined, undefined, "bossArea", 1, undefined, 0);
         if (!isdefined(rider)) {
             continue;
         }
@@ -2423,7 +2423,7 @@ function private function_e188c0417ce5ba50() {
             player.var_35b94c88cc1cea97 = 0;
         }
         player.var_35b94c88cc1cea97++;
-        player namespace_48a08c5037514e04::doScoreEvent(#"hash_c02c8c802f07c908");
+        player namespace_48a08c5037514e04::doscoreevent(#"hash_c02c8c802f07c908");
         if (isdefined(player) && isdefined(player.team) && !isdefined(var_1b8524f934edd790[player.team])) {
             var_1b8524f934edd790[player.team] = 1;
         }
@@ -2431,7 +2431,7 @@ function private function_e188c0417ce5ba50() {
     foreach (team, value in var_1b8524f934edd790) {
         namespace_8361bad7391de074::function_a9f8fa06a358585b(team, "train_safe", 1, undefined, 1);
     }
-    namespace_d696adde758cbe79::showDMZSplash("dmz_train_safe_defend_unlocked", self.nearbyplayers);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_train_safe_defend_unlocked", self.nearbyplayers);
     function_6f6ff85c52fab8ff(self, "open", self.nearbyplayers);
     self.objidnum = self.var_75f558a60d4866ea;
     namespace_19b4203b51d56488::releaseid();

@@ -50,7 +50,7 @@ function adddeathicon(attacker, entity, dyingplayer, team, timeout) {
     if (attacker _hasperk("specialty_operative")) {
         return;
     }
-    var_e005d4b70d6f2611 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_e005d4b70d6f2611 = namespace_36f464722d326bbe::isbrstylegametype();
     var_8f0d5dceeb1ec104 = namespace_cd0b2d039510b38d::getgametype() == "brtdm" || namespace_cd0b2d039510b38d::getgametype() == "brtdm_mgl";
     var_d9622d6cf6275394 = attacker _hasperk("specialty_silentkill");
     if (!var_e005d4b70d6f2611 && var_d9622d6cf6275394) {

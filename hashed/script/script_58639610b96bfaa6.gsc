@@ -427,7 +427,7 @@ function function_3645d8aee174afb3(spawngroup, objname) {
         var_aa2b4adf749ccbee[var_aa2b4adf749ccbee.size] = var_92db85c8dcf21152;
     }
     foreach (var_756a07c77406000b in var_aa2b4adf749ccbee) {
-        agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(var_756a07c77406000b.script_noteworthy, var_756a07c77406000b.origin, var_756a07c77406000b.angles, "high", "mission", "badSituation");
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(var_756a07c77406000b.script_noteworthy, var_756a07c77406000b.origin, var_756a07c77406000b.angles, "high", "mission", "badSituation");
         agent.group = var_756a07c77406000b;
         agent.group.group_name = var_756a07c77406000b.targetname;
         agent.spawnpoint = var_756a07c77406000b;
@@ -1492,7 +1492,7 @@ function function_86fdcc8c2d170e42(var) {
 function function_73a70e82f50954fa() {
     var_8fb1722d1b30262 = getentarray("objective_trigger", "targetname");
     foreach (trigger in var_8fb1722d1b30262) {
-        trigger thread _dmzTask_watchForTriggerEntered();
+        trigger thread _dmztask_watchfortriggerentered();
     }
 }
 
@@ -1500,7 +1500,7 @@ function function_73a70e82f50954fa() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x52b1
 // Size: 0xd9
-function _dmzTask_watchForTriggerEntered() {
+function _dmztask_watchfortriggerentered() {
     self notify("_dmzTask_watchForTriggerEntered");
     self endon("_dmzTask_watchForTriggerEntered");
     self endon("death");

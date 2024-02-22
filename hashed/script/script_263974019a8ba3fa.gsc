@@ -9,7 +9,7 @@
 // Checksum 0x0, Offset: 0x17b
 // Size: 0xd6
 function function_39e1cd8a0fce827a(position, dimensions, rot, shape) {
-    if (isdefined(level.var_b31733f431ed12e0) && level.var_b31733f431ed12e0.var_209967c144016964 > 1) {
+    if (isdefined(level.br_multi_circle) && level.br_multi_circle.var_209967c144016964 > 1) {
         /#
             assertmsg("Exclusion zones are not supported alongside multi circles");
         #/

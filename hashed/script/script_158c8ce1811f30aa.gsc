@@ -15,7 +15,7 @@ function init() {
         return;
     }
     namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("overrideArenas", &function_2197e8b96724beae);
-    namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("getNamedArenaSettings", &getNamedArenaSettings);
+    namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("getNamedArenaSettings", &getnamedarenasettings);
     namespace_47fd1e79a44628cd::function_ed608478232fdeb2("addArenas", &function_fd7fbc8d2bcebbd3);
     namespace_47fd1e79a44628cd::function_ed608478232fdeb2("isArenaEnabled", &function_89644aef61fda016);
     namespace_47fd1e79a44628cd::function_ed608478232fdeb2("beginNewFight", &function_6cf3afc244dd4077);
@@ -81,7 +81,7 @@ function function_fd7fbc8d2bcebbd3() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x638
 // Size: 0x41
-function getNamedArenaSettings(arena) {
+function getnamedarenasettings(arena) {
     if (!function_638e3fc0c10a60ed(arena)) {
         return undefined;
     }

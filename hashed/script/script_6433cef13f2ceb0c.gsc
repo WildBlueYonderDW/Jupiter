@@ -63,7 +63,7 @@ function bot_rescue_think() {
                 continue;
             }
         #/
-        if (self.health <= 0 || istrue(self.liveRagdoll)) {
+        if (self.health <= 0 || istrue(self.liveragdoll)) {
             wait(0.05);
             continue;
         }

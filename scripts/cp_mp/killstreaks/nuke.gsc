@@ -891,11 +891,11 @@ function nuke_death(owner, streakinfo) {
             }
         } else {
             foreach (character in level.characters) {
-                isPlayerInRadZone = 0;
+                isplayerinradzone = 0;
                 if (issharedfuncdefined("nuke", "isPlayerInRadZone")) {
-                    isPlayerInRadZone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](character, level.nukeinfo.goalpoint, 25000000);
+                    isplayerinradzone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](character, level.nukeinfo.goalpoint, 25000000);
                 }
-                if (isPlayerInRadZone) {
+                if (isplayerinradzone) {
                     character.nuked = 1;
                     if ([[ getsharedfunc("player", "isReallyAlive") ]](character)) {
                         if (issharedfuncdefined("nuke", "killPlayer")) {
@@ -1186,11 +1186,11 @@ function nuke_setaftermathvision(transitiontime) {
             return;
         }
     #/
-    shouldNukeEndGame = 1;
+    shouldnukeendgame = 1;
     if (issharedfuncdefined("nuke", "shouldNukeEndGame")) {
-        shouldNukeEndGame = [[ getsharedfunc("nuke", "shouldNukeEndGame") ]]();
+        shouldnukeendgame = [[ getsharedfunc("nuke", "shouldNukeEndGame") ]]();
     }
-    if (!shouldNukeEndGame) {
+    if (!shouldnukeendgame) {
         return;
     }
     function_e6e629829270e1fa();
@@ -1270,8 +1270,8 @@ function nuke_playrollingdeathfx(delaytime) {
     var_65dfd5b2ea1f9b40 = self.origin;
     var_7ceeea837b3cd54a = level.nukeinfo.goalpoint;
     var_74af035d1495d131 = var_65dfd5b2ea1f9b40;
-    bodyFX = "nuke_rolling_death";
-    playfx(getfx(bodyFX), var_65dfd5b2ea1f9b40, var_7ceeea837b3cd54a - var_74af035d1495d131, undefined, self);
+    bodyfx = "nuke_rolling_death";
+    playfx(getfx(bodyfx), var_65dfd5b2ea1f9b40, var_7ceeea837b3cd54a - var_74af035d1495d131, undefined, self);
 }
 
 // Namespace nuke/namespace_670e1516d92a7a2b
@@ -1306,8 +1306,8 @@ function nuke_atomizebody() {
     var_65dfd5b2ea1f9b40 = self.body.origin;
     var_632c8e583fc9aea9 = level.nukeinfo.inflictor.origin * (1, 1, 0);
     var_74af035d1495d131 = var_65dfd5b2ea1f9b40 * (1, 1, 0);
-    bodyFX = "nuke_atomize_body";
-    playfx(getfx(bodyFX), var_65dfd5b2ea1f9b40, var_632c8e583fc9aea9 - var_74af035d1495d131);
+    bodyfx = "nuke_atomize_body";
+    playfx(getfx(bodyfx), var_65dfd5b2ea1f9b40, var_632c8e583fc9aea9 - var_74af035d1495d131);
 }
 
 // Namespace nuke/namespace_670e1516d92a7a2b
@@ -1382,11 +1382,11 @@ function nuke_radzones_think() {
         foreach (player in level.players) {
             player.inradzone = 0;
             foreach (var_456b8f0ea933d0e5 in level.radzones) {
-                isPlayerInRadZone = 0;
+                isplayerinradzone = 0;
                 if (issharedfuncdefined("nuke", "isPlayerInRadZone")) {
-                    isPlayerInRadZone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, var_456b8f0ea933d0e5, 25000000);
+                    isplayerinradzone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, var_456b8f0ea933d0e5, 25000000);
                 }
-                if (isPlayerInRadZone) {
+                if (isplayerinradzone) {
                     if (istrue(player.gasmaskequipped)) {
                         player namespace_9c6cddd872ad75f7::processdamage(damagetick);
                     } else {
@@ -1403,11 +1403,11 @@ function nuke_radzones_think() {
                 continue;
             }
             foreach (var_456b8f0ea933d0e5 in level.radzones) {
-                isPlayerInRadZone = 0;
+                isplayerinradzone = 0;
                 if (issharedfuncdefined("nuke", "isPlayerInRadZone")) {
-                    isPlayerInRadZone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, var_456b8f0ea933d0e5, 36000000);
+                    isplayerinradzone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, var_456b8f0ea933d0e5, 36000000);
                 }
-                if (isPlayerInRadZone) {
+                if (isplayerinradzone) {
                     if (issharedfuncdefined("game", "tutorialPrint")) {
                         player thread [[ getsharedfunc("game", "tutorialPrint") ]]("MP/NUKE_RADIATION_WARNING", 2);
                     }

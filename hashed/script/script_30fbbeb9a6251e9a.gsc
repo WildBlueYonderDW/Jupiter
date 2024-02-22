@@ -101,9 +101,9 @@ function function_aa703fb26bb4f9fe(var_8330be2d492dad2) {
     self endon("death");
     move_time = function_53c4c53197386572(var_8330be2d492dad2, 5);
     move_time = move_time + randomfloatrange(-1, 1);
-    var_fecc6e7f3326e7ca = int(min(3, move_time * 0.5));
-    var_59509577645de971 = int(max(1, move_time - var_fecc6e7f3326e7ca - 1));
-    self.anchor moveto(self.landing_spot, move_time, 0, var_fecc6e7f3326e7ca);
+    decel_time = int(min(3, move_time * 0.5));
+    accel_time = int(max(1, move_time - decel_time - 1));
+    self.anchor moveto(self.landing_spot, move_time, 0, decel_time);
     wait(move_time - 1.5);
     self notify("parachute_prepare_to_land");
     self._blackboard.parachutestate = "landing";

@@ -51,18 +51,18 @@ function init_spawn_factors() {
     registerfactor("scriptOnlyTest", &scriptonlytest, 1, [0:"test"]);
     registerfactor("avoidClosestEnemyByDistance", &avoidclosestenemybydistance, 1, [0:"closestEnemyInfluenceDistSq"]);
     registerfactor("preferNearSinglePoint", &prefernearsinglepoint, 1, [0:"singlePointPos", 1:"minDistToSinglePointSq", 2:"maxDistToSinglePointSq", 3:"distRangeToSinglePointSq"]);
-    registerfactor("avoidCurrentSpawnTraps", &avoidCurrentSpawnTraps, 1, undefined);
+    registerfactor("avoidCurrentSpawnTraps", &avoidcurrentspawntraps, 1, undefined);
     registerfactor("preferDomPoints", &preferdompoints, 1, [0:"preferredDomPoints", 1:"secondaryDomPoints"]);
-    registerfactor("preferShortestDistToZone", &preferShortestDistToZone, 1, [0:#"hash_80b230f7f3b6e958", 1:#"hash_ff12ea926c094dde"]);
-    registerfactor("avoidCloseToZone", &avoidCloseToZone, 1, [0:#"hash_80b230f7f3b6e958", 1:#"hash_ccf425b826e8654b"]);
+    registerfactor("preferShortestDistToZone", &prefershortestdisttozone, 1, [0:#"hash_80b230f7f3b6e958", 1:#"hash_ff12ea926c094dde"]);
+    registerfactor("avoidCloseToZone", &avoidclosetozone, 1, [0:#"hash_80b230f7f3b6e958", 1:#"hash_ccf425b826e8654b"]);
     registerfactor("preferClosePoints", &preferclosepoints, 1, [0:"closestPoints"]);
     registerfactor("avoidRugbyOffsides", &avoidrugbyoffsides, 1, [0:"juggPos", 1:"rugbyFieldDir2D"]);
     registerfactor("oneUseSpawns", &oneusespawns, 1, undefined);
     registerfactor("avoidCloseToDefenderFlag", &avoidclosetodefenderflag, 1, [0:"activeCarrierPosition", 1:"defenderFlagPosition", 2:"avoidDefenderFlagDeadZoneDistSq"]);
     registerfactor("avoidCloseToDefenderFlagSpawn", &avoidclosetodefenderflagspawn, 1, [0:"avoidDefenderFlagDeadZoneDistSq"]);
-    registerfactor("avoidFrontlineOffsides", &avoidFrontlineOffsides, 1, undefined);
-    registerfactor("preferOptimalFrontlineDist", &preferOptimalFrontlineDist, 1, undefined);
-    registerfactor("preferUnoccupiedLanes", &preferUnoccupiedLanes, 1, undefined);
+    registerfactor("avoidFrontlineOffsides", &avoidfrontlineoffsides, 1, undefined);
+    registerfactor("preferOptimalFrontlineDist", &preferoptimalfrontlinedist, 1, undefined);
+    registerfactor("preferUnoccupiedLanes", &preferunoccupiedlanes, 1, undefined);
     initfrontline();
     callback::add("player_spawned", &on_player_spawned);
     callback::add("player_damaged", &on_player_damaged);
@@ -919,7 +919,7 @@ function function_2d8badc9970dc4bf(spawnpoint) {
 // Checksum 0x0, Offset: 0x2d3e
 // Size: 0x133
 function avoidclosestenemybydistance(spawnpoint) {
-    var_da40d465f5d6c5a6 = level.spawnglobals.activespawncontext.factorparams[#"closestEnemyInfluenceDistSq"];
+    var_da40d465f5d6c5a6 = level.spawnglobals.activespawncontext.factorparams[#"closestenemyinfluencedistsq"];
     enemyteam = "all";
     if (level.teambased) {
         enemyteam = getenemyteams(self.team)[0];
@@ -955,13 +955,13 @@ function function_5647d0dca50a2d4d(var_a72a53d107c0b04c, var_1e5e6e5f60f12427) {
 // Checksum 0x0, Offset: 0x2eb4
 // Size: 0xba
 function preferdompoints(spawnpoint) {
-    preferredDomPoints = level.spawnglobals.activespawncontext.factorparams["preferredDomPoints"];
-    secondaryDomPoints = level.spawnglobals.activespawncontext.factorparams["secondaryDomPoints"];
+    preferreddompoints = level.spawnglobals.activespawncontext.factorparams["preferredDomPoints"];
+    secondarydompoints = level.spawnglobals.activespawncontext.factorparams["secondaryDomPoints"];
     scriptdata = spawnpoint.scriptdata;
     if (isdefined(scriptdata.domflagassignments)) {
-        if (scriptdata.domflagassignments & preferredDomPoints) {
+        if (scriptdata.domflagassignments & preferreddompoints) {
             return 100;
-        } else if (scriptdata.domflagassignments & secondaryDomPoints) {
+        } else if (scriptdata.domflagassignments & secondarydompoints) {
             return 50;
         }
     }
@@ -973,8 +973,8 @@ function preferdompoints(spawnpoint) {
 // Checksum 0x0, Offset: 0x2f76
 // Size: 0x89
 function preferclosepoints(spawnpoint) {
-    closestPoints = level.spawnglobals.activespawncontext.factorparams["closestPoints"];
-    foreach (point in closestPoints) {
+    closestpoints = level.spawnglobals.activespawncontext.factorparams["closestPoints"];
+    foreach (point in closestpoints) {
         if (spawnpoint == point) {
             return 100;
         }
@@ -1093,12 +1093,12 @@ function maxplayerspawninfluencedistsquared(spawnpoint) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x333d
 // Size: 0x65
-function function_75c03ed937b75b22(entitynum, var_38331ab92460d731, var_eb31d5343c6abc39, closestEnemyInfluenceDistSq) {
+function function_75c03ed937b75b22(entitynum, var_38331ab92460d731, var_eb31d5343c6abc39, closestenemyinfluencedistsq) {
     var_ba0a9fd614a3f6ee = [];
     var_ba0a9fd614a3f6ee[#"hash_80b230f7f3b6e958"] = entitynum;
     var_ba0a9fd614a3f6ee[#"hash_ff12ea926c094dde"] = var_38331ab92460d731;
     var_ba0a9fd614a3f6ee[#"hash_ccf425b826e8654b"] = var_eb31d5343c6abc39;
-    var_ba0a9fd614a3f6ee[#"closestEnemyInfluenceDistSq"] = closestEnemyInfluenceDistSq;
+    var_ba0a9fd614a3f6ee[#"closestenemyinfluencedistsq"] = closestenemyinfluencedistsq;
     return var_ba0a9fd614a3f6ee;
 }
 
@@ -1106,7 +1106,7 @@ function function_75c03ed937b75b22(entitynum, var_38331ab92460d731, var_eb31d534
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33aa
 // Size: 0xa6
-function preferShortestDistToZone(spawnpoint) {
+function prefershortestdisttozone(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
     var_653a7e504d42846a = var_4db3cfd2ea2d7b8f.factorparams[#"hash_80b230f7f3b6e958"];
     distsq = spawnpoint.scriptdata.var_c7e3d9e2f0dd4e7[var_653a7e504d42846a];
@@ -1119,7 +1119,7 @@ function preferShortestDistToZone(spawnpoint) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3458
 // Size: 0x98
-function avoidCloseToZone(spawnpoint) {
+function avoidclosetozone(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
     var_653a7e504d42846a = var_4db3cfd2ea2d7b8f.factorparams[#"hash_80b230f7f3b6e958"];
     distsq = spawnpoint.scriptdata.var_c7e3d9e2f0dd4e7[var_653a7e504d42846a];
@@ -1272,7 +1272,7 @@ function prefernearsinglepoint(spawnpoint) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a0f
 // Size: 0x61
-function avoidCurrentSpawnTraps(spawnpoint) {
+function avoidcurrentspawntraps(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
     var_8bb6b9b919c2c19d = function_b9e20b2afd68e3c1(spawnpoint, var_4db3cfd2ea2d7b8f.team);
     var_249e56cba357903c = pow(0.25, var_8bb6b9b919c2c19d);
@@ -1386,9 +1386,9 @@ function function_513d4a1188d51465() {
 // Size: 0xa4
 function avoidrugbyoffsides(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    juggPos = var_4db3cfd2ea2d7b8f.factorparams["juggPos"];
+    juggpos = var_4db3cfd2ea2d7b8f.factorparams["juggPos"];
     var_3cb9f8eb3125d3b4 = var_4db3cfd2ea2d7b8f.factorparams["rugbyFieldDir2D"];
-    var_9c6453d1f660c3dc = (spawnpoint.origin - juggPos) * (1, 1, 0);
+    var_9c6453d1f660c3dc = (spawnpoint.origin - juggpos) * (1, 1, 0);
     dot = vectordot(var_9c6453d1f660c3dc, var_3cb9f8eb3125d3b4);
     if (dot >= 0) {
         return 0;
@@ -1445,15 +1445,15 @@ function avoidclosetodefenderflagspawn(spawnpoint, var_b8ad7552ce2e1e5a) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f92
 // Size: 0xbc
-function avoidFrontlineOffsides(spawnpoint) {
+function avoidfrontlineoffsides(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams) || !isdefined(level.var_33809c8a29ca064e)) {
+    if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams) || !isdefined(level.frontlinedata)) {
         return 100;
     }
-    teamForward = var_4db3cfd2ea2d7b8f.factorparams["teamForward"];
+    teamforward = var_4db3cfd2ea2d7b8f.factorparams["teamForward"];
     var_8cc8093272818080 = namespace_fab382c89d62fd63::function_8964b48e4eba5797(spawnpoint.origin);
     var_a620cb0e6444887f = vectornormalize(spawnpoint.origin - var_8cc8093272818080);
-    dot = vectordot(var_a620cb0e6444887f, teamForward);
+    dot = vectordot(var_a620cb0e6444887f, teamforward);
     if (dot >= 0) {
         return 0;
     }
@@ -1464,14 +1464,14 @@ function avoidFrontlineOffsides(spawnpoint) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4056
 // Size: 0xb3
-function preferOptimalFrontlineDist(spawnpoint) {
+function preferoptimalfrontlinedist(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams) || !isdefined(level.var_33809c8a29ca064e)) {
+    if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams) || !isdefined(level.frontlinedata)) {
         return 100;
     }
-    idealDistSq = var_4db3cfd2ea2d7b8f.factorparams["idealDistSq"];
+    idealdistsq = var_4db3cfd2ea2d7b8f.factorparams["idealDistSq"];
     var_f6f8270f02b2b9bf = namespace_fab382c89d62fd63::function_99146672ec896efa(spawnpoint.origin);
-    percent = clamp(1 - abs(var_f6f8270f02b2b9bf - idealDistSq) / idealDistSq, 0, 1);
+    percent = clamp(1 - abs(var_f6f8270f02b2b9bf - idealdistsq) / idealdistsq, 0, 1);
     return 100 * percent + 0;
 }
 
@@ -1479,7 +1479,7 @@ function preferOptimalFrontlineDist(spawnpoint) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4111
 // Size: 0x88
-function preferUnoccupiedLanes(spawnpoint) {
+function preferunoccupiedlanes(spawnpoint) {
     var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
     var_9799f8752d4ae4bf = 67108864;
     var_f6f8270f02b2b9bf = namespace_fab382c89d62fd63::function_7855eb28c2d21061(spawnpoint.origin, self.team);

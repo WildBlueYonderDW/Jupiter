@@ -259,8 +259,8 @@ function get_players_by_role(role, team) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa99
 // Size: 0x24
-function bot_set_role(var_b7eac42471ac7fae) {
-    self.role = var_b7eac42471ac7fae;
+function bot_set_role(new_role) {
+    self.role = new_role;
     self botclearscriptgoal();
     bot_defend_stop();
 }

@@ -12,7 +12,7 @@
 // Size: 0x2f
 function function_fe852f92145c24a6() {
     function_ac97a4f2ab8c2d53("kfe", "tryAssignTask", &function_36f7c6b5bf8ad6f4);
-    function_ac97a4f2ab8c2d53("kfe", "tryBindObjective", &tryBindObjective);
+    function_ac97a4f2ab8c2d53("kfe", "tryBindObjective", &trybindobjective);
 }
 
 // Namespace namespace_90161fde3c96091c/namespace_fd6c84ecada320b
@@ -70,7 +70,7 @@ function function_59c1dbdc2ad03ad6(var_17953215dd7c5f9b, loot) {
     if (isdefined(self.pickupitem) && self.pickupitem == loot) {
         return 0;
     }
-    scriptablename = namespace_cb965d2f71fefddc::lootGetScriptableName(loot);
+    scriptablename = namespace_cb965d2f71fefddc::lootgetscriptablename(loot);
     if (!isdefined(scriptablename)) {
         return 0;
     }
@@ -98,7 +98,7 @@ function function_59c1dbdc2ad03ad6(var_17953215dd7c5f9b, loot) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x38
-function tryBindObjective(var_17953215dd7c5f9b) {
+function trybindobjective(var_17953215dd7c5f9b) {
     items = getlootscriptablearrayinradius(undefined, undefined, self.origin, 20000);
     function_2e55101ffd0d483c(var_17953215dd7c5f9b, items, &function_59c1dbdc2ad03ad6);
 }

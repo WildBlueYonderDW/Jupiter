@@ -103,7 +103,7 @@ function bcs_setup_countryids() {
         bcs_setup_voice(#"hash_56e75d50b07f42a2", "AQF", 1, 0, "", "");
         bcs_setup_voice(#"alqatala", "AQS", 5, 0, "aqsc", "aqss");
         bcs_setup_voice(#"cartel", "CTM", 4, 1, "crcm", "crst");
-        bcs_setup_voice(#"hash_4d0f736f6a07a538", "PMC", 6, 1, "pmcc", "pmcs");
+        bcs_setup_voice(#"shadowcompany", "PMC", 6, 1, "pmcc", "pmcs");
         bcs_setup_voice(#"hash_c29519f09f0f250", "CFS", 6, 1, "crwc", "crws");
         bcs_setup_voice(#"russian", "RU", 9, 0, "rusc", "russ");
     }

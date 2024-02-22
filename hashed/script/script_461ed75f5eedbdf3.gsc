@@ -33,7 +33,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "warlord_maestro_rainmaker";
-    self.voice = #"hash_4d0f736f6a07a538";
+    self.voice = #"shadowcompany";
     self.bhasthighholster = 1;
     self.animtree = "generic_human";
     self setmodel("body_c_jup_ext_maestro");

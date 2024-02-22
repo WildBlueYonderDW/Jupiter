@@ -107,20 +107,20 @@ function function_3e0ab74e4391f51() {
 // Checksum 0x0, Offset: 0x8ea
 // Size: 0xd4
 function function_92d23849fac69b79() {
-    levelData = namespace_6c578d6ef48f10ef::getleveldata("battle_royale_doublexp_crate");
-    levelData.capturestring = "MP/DOUBLEXP_CRATE_CAPTURE";
-    levelData.basemodel = "military_carepackage_03_doublexp";
-    levelData.mountmantlemodel = undefined;
-    levelData.headicon = undefined;
-    levelData.timeout = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.onecaptureperplayer = 1;
-    levelData.destroyoncapture = 1;
-    levelData.var_c23ca3472233553d = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
-    levelData.activatecallback = &function_6a082776d19d52ba;
-    levelData.capturecallback = &function_c1c2f8b04e6586ed;
-    levelData.destroycallback = &function_8e6e4e55266fbd15;
+    leveldata = namespace_6c578d6ef48f10ef::getleveldata("battle_royale_doublexp_crate");
+    leveldata.capturestring = "MP/DOUBLEXP_CRATE_CAPTURE";
+    leveldata.basemodel = "military_carepackage_03_doublexp";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.headicon = undefined;
+    leveldata.timeout = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.onecaptureperplayer = 1;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_c23ca3472233553d = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.activatecallback = &function_6a082776d19d52ba;
+    leveldata.capturecallback = &function_c1c2f8b04e6586ed;
+    leveldata.destroycallback = &function_8e6e4e55266fbd15;
 }
 
 // Namespace namespace_7f96036adeb34fc3/namespace_23cf3e2af85d0dda

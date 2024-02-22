@@ -77,7 +77,7 @@ function function_de40a46baab733f5() {
     level thread init_ai(self);
     function_d9c64c99bd5f47a0();
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("br_pe_dataheist_uplink_useable", &function_533c18ee02139b7e);
-    namespace_62c556437da28f50::registerscoreinfo(#"br_pe_capNode", #"value", 1000);
+    namespace_62c556437da28f50::registerscoreinfo(#"br_pe_capnode", #"value", 1000);
     self.var_5790067a8a484040 = [];
     self.var_5790067a8a484040[0] = "default";
     self.var_5790067a8a484040[1] = "downloading";
@@ -554,10 +554,10 @@ function function_da3599e311b1241a(team) {
     foreach (player in team_players) {
         if (!player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
             if (!var_88846aeef1f75a50) {
-                player thread namespace_48a08c5037514e04::doScoreEvent(#"br_pe_capNode");
+                player thread namespace_48a08c5037514e04::doscoreevent(#"br_pe_capnode");
                 var_88846aeef1f75a50 = 1;
             }
-            player thread namespace_48a08c5037514e04::doScoreEvent(var_c96877a325b94330);
+            player thread namespace_48a08c5037514e04::doscoreevent(var_c96877a325b94330);
         }
     }
 }
@@ -580,7 +580,7 @@ function function_8d72849f49068945(team) {
 // Size: 0xff
 function function_60fdeceea0c7a20e(agent, attacker) {
     self endon("event_deactivated");
-    category = namespace_14d36171baccf528::agentPers_getAgentPersData(agent, "category");
+    category = namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "category");
     if (!is_equal("dataheist", category)) {
         return;
     }
@@ -1310,8 +1310,8 @@ function function_3723563cad2eb687(var_dd4f509b9c56c76f, var_38ec12043600cbe0, p
                 [[ agent.var_4c2e21367dbf09d0 ]](self.origin, 1000);
             }
         }
-        namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "dropWeapon", 0);
-        namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "dropGrenade", 0);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "dropWeapon", 0);
+        namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "dropGrenade", 0);
     }
     self.agents = array_combine(self.agents, agents);
 }

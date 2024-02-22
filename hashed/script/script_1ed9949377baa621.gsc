@@ -108,7 +108,7 @@ function private function_c2a41406b8cd7098(params, var_ffad6ab8078b60b7) {
     var_ae661994e0b11feb = v_start + rotatevector(anglestoforward(v_angles) * randomintrange(4500, 5000), (0, -10, 0)) + (0, 0, 200);
     var_ae661894e0b11db8 = v_start + rotatevector(anglestoforward(v_angles) * randomintrange(4500, 5000), (0, 10, 0)) + (0, 0, 200);
     var_91cc019ad690c815 = [0:var_ae661a94e0b1221e, 1:var_ae661994e0b11feb, 2:var_ae661894e0b11db8];
-    var_9b0dd04874627a99 = player namespace_ca7b90256548aa40::function_5a009fe17f688c92();
+    var_9b0dd04874627a99 = player namespace_ca7b90256548aa40::getsquadmembers();
     foreach (lootid in var_ffad6ab8078b60b7) {
         if (var_91cc019ad690c815.size == 0) {
             break;
@@ -202,7 +202,7 @@ function private function_ba2121dc766a1ac3() {
     foreach (var_74ddc601a0fcaaa2 in var_942a8a17d8a96a46.var_9fdd81c7fdbb8ed2) {
         itembundle = getscriptbundle("itemspawnentry:" + var_74ddc601a0fcaaa2.itemspawnentry);
         if (isdefined(itembundle) && !issubstr(itembundle.ref, "attuned")) {
-            lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(itembundle.ref);
+            lootid = namespace_38b993c4618e76cd::getlootidfromref(itembundle.ref);
             if (isdefined(lootid)) {
                 var_3fa0ceb5fb31d6b = function_6d6af8144a5131f1(var_3fa0ceb5fb31d6b, lootid);
             }
@@ -217,8 +217,8 @@ function private function_ba2121dc766a1ac3() {
 // Size: 0x69
 function function_5f3b67bb1be94acf(var_3fa0ceb5fb31d6b) {
     var_f6898e71aa21712a = [];
-    var_342175a1b9f9067e = namespace_feea61bc660e9e0f::function_1b35b10884bd8d67();
-    for (i = 0; i < var_342175a1b9f9067e; i++) {
+    backpacksize = namespace_feea61bc660e9e0f::function_1b35b10884bd8d67();
+    for (i = 0; i < backpacksize; i++) {
         var_eeeae9defa0c1e95 = namespace_feea61bc660e9e0f::function_d870b2c45335bd88(i);
         if (array_contains(var_3fa0ceb5fb31d6b, var_eeeae9defa0c1e95)) {
             var_f6898e71aa21712a = function_6d6af8144a5131f1(var_f6898e71aa21712a, var_eeeae9defa0c1e95);

@@ -99,8 +99,8 @@ function getplayerweaponrank(rootweapon) {
     /#
         assert(weaponhasranks(rootweapon));
     #/
-    weaponXP = getplayerweaponrankxp(rootweapon);
-    rank = getweaponrankforxp(weaponXP);
+    weaponxp = getplayerweaponrankxp(rootweapon);
+    rank = getweaponrankforxp(weaponxp);
     return rank;
 }
 
@@ -120,12 +120,12 @@ function getplayerweaponrankxp(rootweapon, type) {
         mpxp = self getplayerdata("common", "sharedProgression", "weaponLevel", rootweapon, "mpXP");
         return mpxp;
     case #"hash_fa1ebcf6bd5bece6":
-        cpXP = self getplayerdata("common", "sharedProgression", "weaponLevel", rootweapon, "cpXP");
-        return cpXP;
+        cpxp = self getplayerdata("common", "sharedProgression", "weaponLevel", rootweapon, "cpXP");
+        return cpxp;
     case #"hash_c482c6c109150a4":
         mpxp = self getplayerdata("common", "sharedProgression", "weaponLevel", rootweapon, "mpXP");
-        cpXP = self getplayerdata("common", "sharedProgression", "weaponLevel", rootweapon, "cpXP");
-        return (mpxp + cpXP);
+        cpxp = self getplayerdata("common", "sharedProgression", "weaponLevel", rootweapon, "cpXP");
+        return (mpxp + cpxp);
         break;
     }
 }

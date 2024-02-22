@@ -56,13 +56,13 @@ function function_d63760cb7c36587(var_d805910cf2ef79c7) {
                 switch (var_4516a055a41b717e) {
                 case 1:
                     function_7147a75d24ed663(4, "case 1");
-                    thread SMOKE_LEVEL_1();
+                    thread smoke_level_1();
                     break;
                 case 2:
                     function_7147a75d24ed663(4, "case 2");
                     player = getentarray("player", "classname")[0];
                     if (isdefined(player) && isalive(player)) {
-                        player thread SMOKE_LEVEL_2();
+                        player thread smoke_level_2();
                     }
                     break;
                 default:
@@ -228,7 +228,7 @@ function function_852d53e299c34e9c(stance, wait_time) {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xd09
 // Size: 0x15b
-function private SMOKE_LEVEL_1() {
+function private smoke_level_1() {
     level notify("smoke_singleton");
     level endon("smoke_singleton");
     while (!function_464c7c47f88f997f()) {
@@ -312,7 +312,7 @@ function private function_c7aeb5253e41a015() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x10af
 // Size: 0x110
-function private SMOKE_LEVEL_2() {
+function private smoke_level_2() {
     self endon("disconnect");
     self endon("death");
     level notify("smoke_singleton");
@@ -324,10 +324,10 @@ function private SMOKE_LEVEL_2() {
     playerkills = player function_3c56204f7d2b532b("kills");
     while (!player function_aadecbc412d792b5()) {
         function_7147a75d24ed663(4, "StartForcedFire");
-        player StartForcedFire();
+        player startforcedfire();
         wait(0.5);
         screenshot("StartForcedFire");
-        player StopForcedFire();
+        player stopforcedfire();
         wait(1);
         function_7147a75d24ed663(4, "StopForcedFire");
         screenshot("StopForcedFire");
@@ -413,9 +413,9 @@ function private function_deadcc8fc572657d(duration) {
         wait(0.05);
     }
     for (;;) {
-        self StartForcedFire();
+        self startforcedfire();
         wait(duration);
-        self StopForcedFire();
+        self stopforcedfire();
     }
 }
 

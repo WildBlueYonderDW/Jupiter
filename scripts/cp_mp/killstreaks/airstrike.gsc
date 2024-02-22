@@ -224,7 +224,7 @@ function tryuseairstrikefromstruct(streakinfo) {
     case #"hash_8c766d6477287bb6":
         if (issharedfuncdefined("game", "getGameType")) {
             gametype = [[ getsharedfunc("game", "getGameType") ]]();
-            if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(self.kstargetlocation)) {
+            if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(self.kstargetlocation)) {
                 streakinfo.targetoverride = self.kstargetlocation;
                 self.kstargetlocation = undefined;
             }
@@ -347,7 +347,7 @@ function selectairstrikelocation(streakinfo) {
         self [[ getsharedfunc("killstreak", "logKillstreakEvent") ]](streakinfo.streakname, var_b21e2e887c161b9);
     }
     if (level.var_605eaac73a2853d3 && !istrue(level.var_15d8e56090c743d.var_c3abf3fe46d4ea9b)) {
-        killstreak_dangerNotifyPlayersInRange(self, self.team, level.var_9fc34b4b891723f8, streakinfo.streakname, var_b21e2e887c161b9);
+        killstreak_dangernotifyplayersinrange(self, self.team, level.var_9fc34b4b891723f8, streakinfo.streakname, var_b21e2e887c161b9);
     }
     var_52a5be2e2f91d710 = undefined;
     if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
@@ -904,8 +904,8 @@ function airstrike_watchkills(streakinfo, var_c12c14029cc05aca, airstrikeid) {
     childthread function_9fc9871a8c03a9de(var_48ecd34fc60598fe);
     waittill_any_timeout_no_endon_death_1(var_c12c14029cc05aca, var_48ecd34fc60598fe);
     playerskilled = isdefined(self.airstrikekillcount) && self.airstrikekillcount >= 1;
-    playersDowned = isdefined(self.var_3efdaabc0f66846d) && self.var_3efdaabc0f66846d >= 1;
-    if (playerskilled || playersDowned) {
+    playersdowned = isdefined(self.var_3efdaabc0f66846d) && self.var_3efdaabc0f66846d >= 1;
+    if (playerskilled || playersdowned) {
         playkillstreakoperatordialog(streakinfo.streakname, streakinfo.streakname + "_hit_target", 1);
     } else {
         playkillstreakoperatordialog(streakinfo.streakname, streakinfo.streakname + "_miss_target", 1);
@@ -977,7 +977,7 @@ function callstrike_precisionbulleteffect(plane, launchtime, var_1f57bfcfb8ae443
     var_c6cda7219900396f = [0:damagepos - planedir * 512, 1:damagepos - planedir * 256, 2:damagepos, 3:damagepos + planedir * 256, 4:damagepos + planedir * 512];
     if (level.var_480d0e884a4f8e2a && !istrue(level.var_15d8e56090c743d.var_c3abf3fe46d4ea9b)) {
         foreach (targetpos in var_c6cda7219900396f) {
-            killstreak_dangerNotifyPlayersInRange(owner, owner.team, level.var_9fc34b4b891723f8, streakinfo.streakname, targetpos);
+            killstreak_dangernotifyplayersinrange(owner, owner.team, level.var_9fc34b4b891723f8, streakinfo.streakname, targetpos);
         }
     }
     namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(launchtime);
@@ -1237,18 +1237,18 @@ function delaydeletefxents(var_19e3c5251a5f46fa, var_837d24b1c8e8ef79) {
 // Checksum 0x0, Offset: 0x46bc
 // Size: 0x15a
 function getflightpath(var_6e7c70b904418daa, direction, planehalfdistance, var_5fa1e1697a302583, planeflyheight, var_23122e7b902f2ea9, var_361663d437db22f5, streakname, var_505331ad630bbc6b) {
-    directionAngles = undefined;
+    directionangles = undefined;
     if (istrue(var_505331ad630bbc6b)) {
-        directionAngles = direction;
+        directionangles = direction;
     } else {
-        directionAngles = anglestoforward(direction);
+        directionangles = anglestoforward(direction);
     }
-    startpoint = var_6e7c70b904418daa + directionAngles * -1 * planehalfdistance;
+    startpoint = var_6e7c70b904418daa + directionangles * -1 * planehalfdistance;
     if (isdefined(var_5fa1e1697a302583)) {
         startpoint = startpoint * (1, 1, 0);
     }
     startpoint = startpoint + (0, 0, planeflyheight);
-    endpoint = var_6e7c70b904418daa + directionAngles * planehalfdistance;
+    endpoint = var_6e7c70b904418daa + directionangles * planehalfdistance;
     if (isdefined(var_5fa1e1697a302583)) {
         endpoint = endpoint * (1, 1, 0);
     }
@@ -1264,7 +1264,7 @@ function getflightpath(var_6e7c70b904418daa, direction, planehalfdistance, var_5
     flightpath["endPoint"] = endpoint;
     flightpath["bombTime"] = bombtime;
     flightpath["flyTime"] = flytime;
-    flightpath["directionAngles"] = directionAngles;
+    flightpath["directionAngles"] = directionangles;
     return flightpath;
 }
 
@@ -1656,7 +1656,7 @@ function airstrike_canbeused(var_abd90cc9f0e9501c) {
     if (isdefined(var_abd90cc9f0e9501c)) {
         if (level.activeairstrikes.size > 0) {
             var_28f0d2ad91ee22dc = 1;
-            var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isBRStyleGameType();
+            var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isbrstylegametype();
             if (var_d937d9fbfeed2e24) {
                 var_28f0d2ad91ee22dc = 3;
             }
@@ -1722,7 +1722,7 @@ function function_15d7e8b275b8b57b(hitpos, var_380fcfdae182fa24, var_78836748d34
                 continue;
             }
             targetteam = target.pers["team"];
-            if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+            if (namespace_36f464722d326bbe::isbrstylegametype()) {
                 if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "brGetOperatorTeam")) {
                     targetteam = [[ namespace_3c37cb17ade254d::getsharedfunc("game", "brGetOperatorTeam") ]](target);
                 }
@@ -1734,7 +1734,7 @@ function function_15d7e8b275b8b57b(hitpos, var_380fcfdae182fa24, var_78836748d34
             if (isdefined(target.agent_type) && issubstr(target.agent_type, "civilian")) {
                 continue;
             }
-            targetteam = namespace_14d36171baccf528::agentPers_getAgentPersData(target, "team");
+            targetteam = namespace_14d36171baccf528::agentpers_getagentpersdata(target, "team");
         }
         if (isdefined(var_78836748d345cd08)) {
             jumpiffalse(level.teambased) LOC_00000192;

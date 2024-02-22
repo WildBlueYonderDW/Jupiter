@@ -16,21 +16,21 @@
 // Checksum 0x0, Offset: 0x2ae
 // Size: 0x367
 function register_quest_step(name, step_path, setup_func, cleanup_func, var_6484f2dfb4447680, var_2157e2d0d4c8d28) {
-    self.var_a77a9206da4b0264 = function_53c4c53197386572(self.var_a77a9206da4b0264, []);
-    if (!isdefined(self.var_a77a9206da4b0264[name])) {
-        self.var_a77a9206da4b0264[name] = spawnstruct();
-        self.var_a77a9206da4b0264[name].name = name;
-        self.var_a77a9206da4b0264[name].completed = 0;
-        self.var_a77a9206da4b0264[name].steps = [];
-        self.var_a77a9206da4b0264[name].current_step = 0;
-        self.var_a77a9206da4b0264[name].started = 0;
-        self.var_a77a9206da4b0264[name].owner = self;
-        self.var_a77a9206da4b0264[name].var_368d67245b06a283 = 0;
+    self._quest = function_53c4c53197386572(self._quest, []);
+    if (!isdefined(self._quest[name])) {
+        self._quest[name] = spawnstruct();
+        self._quest[name].name = name;
+        self._quest[name].completed = 0;
+        self._quest[name].steps = [];
+        self._quest[name].current_step = 0;
+        self._quest[name].started = 0;
+        self._quest[name].owner = self;
+        self._quest[name].var_368d67245b06a283 = 0;
         /#
             function_93119194066b1e22(name);
         #/
     }
-    quest = self.var_a77a9206da4b0264[name];
+    quest = self._quest[name];
     step_path = function_e84a5f30606d3a09(step_path, "/");
     var_10b540003aefefbc = strtok(step_path, "/");
     var_48705b83c8177a28 = quest;
@@ -83,10 +83,10 @@ function register_quest_step(name, step_path, setup_func, cleanup_func, var_6484
 // Checksum 0x0, Offset: 0x61c
 // Size: 0x90
 function function_130bebe39cfc66c2(str_flag) {
-    level.var_a77a9206da4b0264 = function_53c4c53197386572(level.var_a77a9206da4b0264, []);
-    level.var_a77a9206da4b0264["busy_flags"] = function_53c4c53197386572(level.var_a77a9206da4b0264["busy_flags"], []);
-    if (isdefined(str_flag) && !array_contains(level.var_a77a9206da4b0264["busy_flags"], str_flag)) {
-        level.var_a77a9206da4b0264["busy_flags"] = function_6d6af8144a5131f1(level.var_a77a9206da4b0264["busy_flags"], str_flag);
+    level._quest = function_53c4c53197386572(level._quest, []);
+    level._quest["busy_flags"] = function_53c4c53197386572(level._quest["busy_flags"], []);
+    if (isdefined(str_flag) && !array_contains(level._quest["busy_flags"], str_flag)) {
+        level._quest["busy_flags"] = function_6d6af8144a5131f1(level._quest["busy_flags"], str_flag);
     }
 }
 
@@ -95,9 +95,9 @@ function function_130bebe39cfc66c2(str_flag) {
 // Checksum 0x0, Offset: 0x6b3
 // Size: 0x77
 function function_428c84c854f1154b(str_flag) {
-    level.var_a77a9206da4b0264["busy_flags"] = function_53c4c53197386572(level.var_a77a9206da4b0264["busy_flags"], []);
-    if (isdefined(str_flag) && array_contains(level.var_a77a9206da4b0264["busy_flags"], str_flag)) {
-        level.var_a77a9206da4b0264["busy_flags"] = array_remove(level.var_a77a9206da4b0264["busy_flags"], str_flag);
+    level._quest["busy_flags"] = function_53c4c53197386572(level._quest["busy_flags"], []);
+    if (isdefined(str_flag) && array_contains(level._quest["busy_flags"], str_flag)) {
+        level._quest["busy_flags"] = array_remove(level._quest["busy_flags"], str_flag);
     }
 }
 
@@ -107,9 +107,9 @@ function function_428c84c854f1154b(str_flag) {
 // Size: 0xa2
 function function_607fa935bb0f4dab(var_ce232ccaa493471) {
     /#
-        assertex(isarray(level.var_a77a9206da4b0264["busy_flags"]), "Do not have any flags in quest system to check");
+        assertex(isarray(level._quest["busy_flags"]), "Do not have any flags in quest system to check");
     #/
-    foreach (s_flag in level.var_a77a9206da4b0264["busy_flags"]) {
+    foreach (s_flag in level._quest["busy_flags"]) {
         if (istrue(var_ce232ccaa493471) && s_flag == "special_round_is_ongoing") {
             continue;
         }
@@ -126,9 +126,9 @@ function function_607fa935bb0f4dab(var_ce232ccaa493471) {
 // Size: 0x80
 function start_quest(name) {
     /#
-        assertex(isdefined(self.var_a77a9206da4b0264) && isdefined(self.var_a77a9206da4b0264[name]), "There is no registered quest with the name: " + name);
+        assertex(isdefined(self._quest) && isdefined(self._quest[name]), "There is no registered quest with the name: " + name);
     #/
-    quest = self.var_a77a9206da4b0264[name];
+    quest = self._quest[name];
     if (quest.started) {
         return;
     }
@@ -142,12 +142,12 @@ function start_quest(name) {
 // Size: 0xa7
 function function_4f35876a73ba3947(name) {
     /#
-        assertex(isdefined(self.var_a77a9206da4b0264) && isdefined(self.var_a77a9206da4b0264[name]), "There is no registered quest with the name: " + name);
+        assertex(isdefined(self._quest) && isdefined(self._quest[name]), "There is no registered quest with the name: " + name);
     #/
-    if (!istrue(self.var_a77a9206da4b0264[name].started) || istrue(self.var_a77a9206da4b0264[name].completed) || istrue(self.var_a77a9206da4b0264[name].var_368d67245b06a283)) {
+    if (!istrue(self._quest[name].started) || istrue(self._quest[name].completed) || istrue(self._quest[name].var_368d67245b06a283)) {
         return;
     }
-    self.var_a77a9206da4b0264[name].var_368d67245b06a283 = 1;
+    self._quest[name].var_368d67245b06a283 = 1;
     self notify(name + "_quitted");
 }
 
@@ -806,7 +806,7 @@ function private function_6e2f110fb0d51295(var_5bf8777b9b155d99, step) {
     /#
         devgui_path = "<unknown string>" + var_5bf8777b9b155d99 + "team_two_hundred";
         var_10b540003aefefbc = strtok(step.path, "team_two_hundred");
-        var_48705b83c8177a28 = level.var_a77a9206da4b0264[var_5bf8777b9b155d99];
+        var_48705b83c8177a28 = level._quest[var_5bf8777b9b155d99];
         for (var_3f0ec6171bd1c57b = 0; var_3f0ec6171bd1c57b < var_10b540003aefefbc.size; var_3f0ec6171bd1c57b++) {
             var_24e01999103ae3d8 = undefined;
             foreach (child in var_48705b83c8177a28.steps) {
@@ -836,7 +836,7 @@ function function_4d1eb7b9a161037f(var_5bf8777b9b155d99, step_path) {
     /#
         devgui_path = "<unknown string>" + var_5bf8777b9b155d99 + "team_two_hundred";
         var_10b540003aefefbc = strtok(step_path, "team_two_hundred");
-        var_48705b83c8177a28 = level.var_a77a9206da4b0264[var_5bf8777b9b155d99];
+        var_48705b83c8177a28 = level._quest[var_5bf8777b9b155d99];
         for (var_3f0ec6171bd1c57b = 0; var_3f0ec6171bd1c57b < var_10b540003aefefbc.size; var_3f0ec6171bd1c57b++) {
             var_24e01999103ae3d8 = undefined;
             foreach (child in var_48705b83c8177a28.steps) {
@@ -892,9 +892,9 @@ function function_acdda71fab4ed5bc(params) {
         var_5bf8777b9b155d99 = params[0];
         step_path = params[1];
         /#
-            assertex(isdefined(level.var_a77a9206da4b0264) && isdefined(level.var_a77a9206da4b0264[var_5bf8777b9b155d99]), "<unknown string>" + var_5bf8777b9b155d99 + "<unknown string>");
+            assertex(isdefined(level._quest) && isdefined(level._quest[var_5bf8777b9b155d99]), "<unknown string>" + var_5bf8777b9b155d99 + "<unknown string>");
         #/
-        quest = level.var_a77a9206da4b0264[var_5bf8777b9b155d99];
+        quest = level._quest[var_5bf8777b9b155d99];
         if (!istrue(quest.started)) {
             iprintlnbold("<unknown string>" + var_5bf8777b9b155d99 + "<unknown string>");
             return;
@@ -954,9 +954,9 @@ function function_962580ef2ed6fd8c(params) {
         var_5bf8777b9b155d99 = params[0];
         step_path = params[1];
         /#
-            assertex(isdefined(level.var_a77a9206da4b0264) && isdefined(level.var_a77a9206da4b0264[var_5bf8777b9b155d99]), "<unknown string>" + var_5bf8777b9b155d99 + "<unknown string>");
+            assertex(isdefined(level._quest) && isdefined(level._quest[var_5bf8777b9b155d99]), "<unknown string>" + var_5bf8777b9b155d99 + "<unknown string>");
         #/
-        quest = level.var_a77a9206da4b0264[var_5bf8777b9b155d99];
+        quest = level._quest[var_5bf8777b9b155d99];
         if (!istrue(quest.started)) {
             iprintlnbold("<unknown string>" + var_5bf8777b9b155d99 + "<unknown string>");
             return;

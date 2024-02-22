@@ -769,8 +769,8 @@ function function_539bfd8d01bf5aa8() {
         var_686500d1b99b0cdb = var_2e69e3f2bffb83c8[0].origin + (0, 0, 50);
         z_offset = (0, 0, 50);
         end = var_686500d1b99b0cdb + z_offset + vectornormalize(self.enemy.origin - var_686500d1b99b0cdb) * 200;
-        var_b29cb9130d8889bc = namespace_2a184fc4902783dc::ray_trace_passed(var_686500d1b99b0cdb + z_offset, end);
-        if (var_b29cb9130d8889bc) {
+        hit_nothing = namespace_2a184fc4902783dc::ray_trace_passed(var_686500d1b99b0cdb + z_offset, end);
+        if (hit_nothing) {
             self.var_686500d1b99b0cdb = var_686500d1b99b0cdb;
             return 1;
         }

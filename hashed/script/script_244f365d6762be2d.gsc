@@ -9,14 +9,14 @@
 #using scripts\aitypes\assets.gsc;
 #using script_6c63dbe7d4c85e19;
 
-#namespace namespace_5446c722b7a2773c;
+#namespace jup_spawner_zombie_deathworm_boss;
 
-// Namespace namespace_5446c722b7a2773c/namespace_3f03323beafc97cf
+// Namespace jup_spawner_zombie_deathworm_boss/namespace_3f03323beafc97cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x173
 // Size: 0x174
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_74cf4d2331c09f55");
+    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"jup_spawner_zombie_deathworm_boss");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_758d18b1d2815c1");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 1000;
@@ -24,7 +24,7 @@ function main() {
     self.behaviortreeasset = "zombie_deathworm";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "zombie_deathworm";
-    self.var_f7f189f0e87db6ac = %"hash_3664c8ba706ec788";
+    self.ai_eventlist = %"hash_3664c8ba706ec788";
     self.var_570908460ede5c13 = "settings_zombie_deathworm_boss";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_zombie_deathworm");
     self.weapon = nullweapon();
@@ -48,7 +48,7 @@ function main() {
     namespace_6205bc7c5e394598::ai_init();
 }
 
-// Namespace namespace_5446c722b7a2773c/namespace_3f03323beafc97cf
+// Namespace jup_spawner_zombie_deathworm_boss/namespace_3f03323beafc97cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ee
 // Size: 0x57
@@ -62,7 +62,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_5446c722b7a2773c/namespace_3f03323beafc97cf
+// Namespace jup_spawner_zombie_deathworm_boss/namespace_3f03323beafc97cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34c
 // Size: 0x9
@@ -70,7 +70,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_6f61c7a07785bf47::main();
 }
 
-// Namespace namespace_5446c722b7a2773c/namespace_3f03323beafc97cf
+// Namespace jup_spawner_zombie_deathworm_boss/namespace_3f03323beafc97cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35d
 // Size: 0x101

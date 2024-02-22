@@ -503,8 +503,8 @@ function function_70785f5ff53b07c9() {
             if (distancesquared(player.origin, self.var_756a07c77406000b.origin) <= squared(self.var_5078a08cc4ec9d12)) {
                 ai_spawned = 1;
                 spawn_point = getclosestpointonnavmesh(self.var_756a07c77406000b.origin);
-                aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc(self.var_db0e660397a76bd8);
-                self.ai_zombie = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(aitype[0], spawn_point, self.var_756a07c77406000b.angles, "team_two_hundred");
+                aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc(self.var_db0e660397a76bd8);
+                self.ai_zombie = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(aitype[0], spawn_point, self.var_756a07c77406000b.angles, "team_two_hundred");
                 waitframe();
                 if (isdefined(self.ai_zombie)) {
                     self.ai_zombie ent_flag_init("big_bounty_target");

@@ -28,13 +28,13 @@ function function_c31b39e6bb1bcd42() {
                     self.var_8784c427b1af24a6[player.guid] = player;
                     function_153a6accf001dff6(player);
                 }
-                isInInterior = function_3d25af3a88ad31c3(player);
-                if (!istrue(player.var_54a215ef59a7a0c3) && isInInterior) {
+                isininterior = function_3d25af3a88ad31c3(player);
+                if (!istrue(player.var_54a215ef59a7a0c3) && isininterior) {
                     function_3ffe455e5ea6d0f5(player);
-                } else if (istrue(player.var_54a215ef59a7a0c3) && !isInInterior) {
+                } else if (istrue(player.var_54a215ef59a7a0c3) && !isininterior) {
                     function_b2cc563ed7324a8d(player);
                 }
-                player.var_54a215ef59a7a0c3 = isInInterior;
+                player.var_54a215ef59a7a0c3 = isininterior;
             }
         }
         foreach (guid, player in self.var_8784c427b1af24a6) {
@@ -82,14 +82,14 @@ function function_153a6accf001dff6(player) {
     if (!function_3a5fc0673be748ae()) {
         player vehicle_occupancy_startmovefeedbackforplayer();
     }
-    if (isdefined(self.onStartRiding)) {
-        self [[ self.onStartRiding ]](player);
+    if (isdefined(self.onstartriding)) {
+        self [[ self.onstartriding ]](player);
     }
     if (!istrue(self.var_9bd69326cfeb9fe9)) {
         namespace_84cff6185e39aa66::function_d2d9c09551d91164(self, player);
     }
     if (!isdefined(level.var_b531611b8d662db7)) {
-        level.var_b531611b8d662db7 = getdvarint(@"hash_dee18061c0d4dfe", ter_op(namespace_36f464722d326bbe::isBRStyleGameType(), 0, 1)) == 1;
+        level.var_b531611b8d662db7 = getdvarint(@"hash_dee18061c0d4dfe", ter_op(namespace_36f464722d326bbe::isbrstylegametype(), 0, 1)) == 1;
     }
     if (!level.var_b531611b8d662db7) {
         return;
@@ -114,8 +114,8 @@ function function_71adb8f84c3df6bb(player) {
         if (!isdefined(player.vehicle)) {
             namespace_84cff6185e39aa66::function_5211953231a09ed5(self, player);
         }
-        if (isdefined(self.onEndRiding)) {
-            self [[ self.onEndRiding ]](player);
+        if (isdefined(self.onendriding)) {
+            self [[ self.onendriding ]](player);
         }
         if (istrue(player.var_1f34845fdd0a6631) && isdefined(player.oob) && player.oob > 0 && issharedfuncdefined("game", "onExitOOBTrigger")) {
             self [[ getsharedfunc("game", "onExitOOBTrigger") ]](self, player);

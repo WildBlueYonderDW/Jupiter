@@ -129,7 +129,7 @@ function function_d58f3859f6db61b9(instance, player) {
 // Checksum 0x0, Offset: 0xa22
 // Size: 0x8c
 function function_9faebc80649d0947(container, player, lootid, quantity, itemtype, itemindex) {
-    noExtract = undefined;
+    noextract = undefined;
     var_dfab44d4d8d10b36 = quantity;
     if (isdefined(itemtype) && itemtype == 10) {
         var_dfab44d4d8d10b36 = namespace_3883e3399f2870b5::function_8e5978971b5dcd16(player, itemindex);
@@ -141,7 +141,7 @@ function function_9faebc80649d0947(container, player, lootid, quantity, itemtype
         itemindex = 0;
     }
     player notify("item_added_to_cache", itemtype);
-    return [0:lootid, 1:noExtract];
+    return [0:lootid, 1:noextract];
 }
 
 // Namespace namespace_84e2a73178a22f53/namespace_f82e883a38a92b9a
@@ -183,7 +183,7 @@ function function_378db8dafafcc467(params) {
                 var_e94b4ab20232f72a++;
                 var_749a37b1dd6ab909 = 0;
             }
-            if (!istrue(container.contents[index].noExtract)) {
+            if (!istrue(container.contents[index].noextract)) {
                 container.contents[index].lootid = 0;
                 container.contents[index].quantity = 0;
             }
@@ -251,8 +251,8 @@ function function_93c37ea2b2745734(player, spawn_struct, var_afe6f9511d9e590b) {
         if (isdefined(player.var_cfcc6e11258851f0)) {
             player.var_cfcc6e11258851f0 kill();
         }
-        aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc("zombie_hellhound_pet")[0];
-        var_4c235cc798ae4421 = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(aitype, spawn_struct.origin, spawn_struct.angles, player.team);
+        aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc("zombie_hellhound_pet")[0];
+        var_4c235cc798ae4421 = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(aitype, spawn_struct.origin, spawn_struct.angles, player.team);
         if (isalive(var_4c235cc798ae4421)) {
             var_4c235cc798ae4421 function_ca27630def7b7aad(player);
             var_4c235cc798ae4421 function_534261879df56014(&namespace_f585f5e438cbdbc8::function_70abe785d3a8636d);
@@ -576,8 +576,8 @@ function function_f4f8643f5705b2d8(player, var_5d27a018f76255ac) {
     wait(1);
     self.var_17555d08c6e179b setscriptablepartstate("body_doghouse", "ended");
     self.var_17555d08c6e179b setmodel("tag_origin");
-    aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc("zombie_hellhound")[0];
-    var_d2dc53d5b262c23a = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(aitype, self.var_2df598e2446326bd.origin, self.var_2df598e2446326bd.angles, "team_two_hundred");
+    aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc("zombie_hellhound")[0];
+    var_d2dc53d5b262c23a = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(aitype, self.var_2df598e2446326bd.origin, self.var_2df598e2446326bd.angles, "team_two_hundred");
     var_d2dc53d5b262c23a namespace_dd16d65e824b8e9::function_a047f71d0256058b(player);
     if (istrue(var_5d27a018f76255ac)) {
         level thread function_fb60235e11c3193a(var_d2dc53d5b262c23a, player);
@@ -595,7 +595,7 @@ function private function_fb60235e11c3193a(var_d2dc53d5b262c23a, player) {
         var_fbe755f0978c0369 = "ob_jup_item_key_rift_gate_season1_fire";
         itembundle = getscriptbundle("itemspawnentry:" + var_fbe755f0978c0369);
         payload = [0:#"hash_5f9c433bdcfb4e14", 1:player getentitynumber()];
-        var_9b0dd04874627a99 = player namespace_ca7b90256548aa40::getSquadMembers();
+        var_9b0dd04874627a99 = player namespace_ca7b90256548aa40::getsquadmembers();
         item = namespace_2abc885019e1956::function_c465d27f3f6066b4(itembundle, var_d2dc53d5b262c23a.origin, undefined, 0, 1, payload);
         if (isdefined(item)) {
             params = spawnstruct();

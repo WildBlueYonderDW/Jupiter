@@ -738,7 +738,7 @@ function function_e75fec4bcc652aa7(prop, var_26199be621b1a0c1, var_6d5decd8aef13
             /#
                 assert(isdefined(level.var_f52f26854571caa1));
             #/
-            var_749df5ee6b70c1f3 = spawnNewAIType_SharedFunc(level.var_f52f26854571caa1, prop.origin, prop.angles, prop.team);
+            var_749df5ee6b70c1f3 = spawnnewaitype_sharedfunc(level.var_f52f26854571caa1, prop.origin, prop.angles, prop.team);
             if (isdefined(var_749df5ee6b70c1f3)) {
                 function_67db44d38891dc3f(var_749df5ee6b70c1f3, prop);
                 function_f1b281379e1bd04a(prop, var_749df5ee6b70c1f3);

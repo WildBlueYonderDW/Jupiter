@@ -40,10 +40,10 @@ function setup_callbacks() {
 // Checksum 0x0, Offset: 0x10c
 // Size: 0xf7
 function setup_bot_brtdm() {
-    var_2780b1a6e44f11a0 = level.brtdm_config.spawnorigin["allies"];
-    var_16f22c33f4d4d6db = level.brtdm_config.spawnorigin["axis"];
-    level.var_24991391ba4dcb18 = function_767cea82b001f645(var_2780b1a6e44f11a0 - var_16f22c33f4d4d6db);
-    level.var_3d6c69ce45dea7d7 = (var_2780b1a6e44f11a0 - var_16f22c33f4d4d6db) * 0.5 + var_16f22c33f4d4d6db;
+    allieshq = level.brtdm_config.spawnorigin["allies"];
+    axishq = level.brtdm_config.spawnorigin["axis"];
+    level.var_24991391ba4dcb18 = function_767cea82b001f645(allieshq - axishq);
+    level.var_3d6c69ce45dea7d7 = (allieshq - axishq) * 0.5 + axishq;
     level.var_32e9fb0b5827e025 = function_767cea82b001f645(level.brtdm_config.circlecenter - level.var_3d6c69ce45dea7d7);
     level.var_8d51410017e80cd1 = (level.brtdm_config.circleradius - distance2d(level.brtdm_config.circlecenter, level.var_3d6c69ce45dea7d7)) * 0.8;
     level.var_3fa58ccdbda67f38 = level.var_8d51410017e80cd1 * 0.2;

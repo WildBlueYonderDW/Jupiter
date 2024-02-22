@@ -52,7 +52,7 @@ function function_9856971a6bda1bea() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f9
 // Size: 0x2d
-function function_a293f22894e2466b() {
+function dropaiaccuracy() {
     if (!namespace_448ccf1ca136fbbe::function_a10967d736dc56e5()) {
         return;
     }
@@ -66,7 +66,7 @@ function function_a293f22894e2466b() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22d
 // Size: 0x2a
-function function_a1d7df5cc0e9c6a0() {
+function revertaiaccuracy() {
     if (!namespace_448ccf1ca136fbbe::function_a10967d736dc56e5()) {
         return;
     }

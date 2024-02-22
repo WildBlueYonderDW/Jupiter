@@ -52,7 +52,7 @@ function function_144097189064ffad() {
     }
     namespace_7db13bdf599e41a6::function_5343ecb486b66bf1("recon_points", &function_d23f4d7bfe21f9da);
     level thread function_2950b8b7b06664d7();
-    level callback::add("on_ai_killed", &onAIKilled);
+    level callback::add("on_ai_killed", &onaikilled);
     level callback::add("on_ob_laststand_player_killed", &onplayerkilled);
     level callback::add("player_connect", &onplayerconnected);
     level callback::add("player_disconnect", &function_7f88b1f3490ef246);
@@ -409,7 +409,7 @@ function private function_5e077dbd13c9817f() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14fb
 // Size: 0x135
-function onAIKilled(params) {
+function onaikilled(params) {
     var_168224244dcb1447 = isdefined(self.subclass) && string_starts_with(self.subclass, "ob_warlord_");
     var_a7d68498d3a48332 = isdefined(self.subclass) && self.subclass == "zombie_abom_mega";
     if (!var_168224244dcb1447 && !var_a7d68498d3a48332) {

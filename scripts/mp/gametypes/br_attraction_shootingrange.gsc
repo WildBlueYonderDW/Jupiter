@@ -267,7 +267,7 @@ function target_show_damage_damage_watch(range, target, var_c1ea0bc07133b32d) {
         }
         has_armor = target.health > health - var_cb05dc87238ca21c;
         is_alive = target.health > health - var_cb05dc87238ca21c - var_40b21467f572e707;
-        var_2cc9f0f9f98029d8 = var_815f66fffb610612 && !has_armor;
+        armor_break = var_815f66fffb610612 && !has_armor;
         killed = var_af794a323d5a8f4 && !is_alive;
         headshot = 0;
         if (isdefined(head)) {
@@ -290,7 +290,7 @@ function target_show_damage_damage_watch(range, target, var_c1ea0bc07133b32d) {
                 if (has_armor) {
                     var_cdcedb142f61b43e = "hitarmorlight";
                     hitsound = "hit_marker_3d_armor";
-                } else if (var_2cc9f0f9f98029d8) {
+                } else if (armor_break) {
                     var_cdcedb142f61b43e = "hithelmetlightbreak";
                     hitsound = "hit_marker_3d_armor_break";
                 }

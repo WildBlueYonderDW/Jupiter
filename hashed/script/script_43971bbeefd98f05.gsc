@@ -30,10 +30,10 @@ function function_41430df99d53560a() {
     namespace_17c25f0877bfb620::scriptable_addusedcallback(&function_ba99ee1ab267e97f);
     namespace_17c25f0877bfb620::scriptable_addautousecallback(&function_ba99ee1ab267e97f);
     namespace_53fc9ddbb516e6e1::function_9bc69c26770d9533(&function_f87690347a82844d);
-    utility::registersharedfunc("container", "isContainerEmpty", &isContainerEmpty);
+    utility::registersharedfunc("container", "isContainerEmpty", &iscontainerempty);
     utility::registersharedfunc("container", "getIndexForLootIDInContainer", &function_d1703475e83c17fb);
     utility::registersharedfunc("container", "getLoadoutDoubleBackpackLootID", undefined);
-    utility::registersharedfunc("container", "getLootIDAtContainerIndex", &getLootIDAtContainerIndex);
+    utility::registersharedfunc("container", "getLootIDAtContainerIndex", &getlootidatcontainerindex);
     /#
         thread setup_devgui();
     #/
@@ -235,7 +235,7 @@ function function_68085c72d7b628ec(container, opener) {
     function_d53393379858d253(opener);
     if (!istrue(container.var_978407de904a5fd1)) {
         partname = container function_ec5f4851431f3382();
-        if (opener isContainerEmpty(container)) {
+        if (opener iscontainerempty(container)) {
             if (container getscriptableparthasstate(partname, "fully_opening_unusable")) {
                 container setscriptablepartstate(partname, "fully_opening_unusable");
             }
@@ -369,7 +369,7 @@ function function_7f6dc80424e55d7b(opener) {
             }
         }
     }
-    if (opener isContainerEmpty(self) && self.var_46a3a8565ac0c17c != 15 && self.var_46a3a8565ac0c17c != 18 && self.var_46a3a8565ac0c17c != 19) {
+    if (opener iscontainerempty(self) && self.var_46a3a8565ac0c17c != 15 && self.var_46a3a8565ac0c17c != 18 && self.var_46a3a8565ac0c17c != 19) {
         container = self;
         function_68085c72d7b628ec(self, opener);
         if (isdefined(container.var_1498604de9cf5016) && !istrue(container.var_1498604de9cf5016)) {
@@ -468,7 +468,7 @@ function function_35a189c66e8d51f0(opener, var_ec64eecddf1178af) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c30
 // Size: 0xe7
-function isContainerEmpty(container) {
+function iscontainerempty(container) {
     if (!isdefined(container.contents)) {
         return 1;
     }
@@ -554,7 +554,7 @@ function function_f87690347a82844d(notification, var_e1d097c517c3af5b) {
             if (!istrue(cache.var_978407de904a5fd1)) {
                 result = function_f4fda26d9ae6dbe0(self, var_e1d097c517c3af5b, "lootcache_obtaintype_equip", undefined, cache);
             } else {
-                if (cache.var_9c44eb334c225d45 == 1 && !namespace_3883e3399f2870b5::isContainerEmpty(cache)) {
+                if (cache.var_9c44eb334c225d45 == 1 && !namespace_3883e3399f2870b5::iscontainerempty(cache)) {
                     lootid = cache.contents[0].lootid;
                     quantity = cache.contents[0].quantity;
                     function_b9d2aee928c46b5f(lootid, quantity, undefined, undefined, 1);
@@ -585,7 +585,7 @@ function function_f87690347a82844d(notification, var_e1d097c517c3af5b) {
             function_56b776a926446950(self, lootid);
             if (istrue(cache.var_978407de904a5fd1)) {
                 function_cc518f9c6e1d9543(cache);
-            } else if (isContainerEmpty(cache)) {
+            } else if (iscontainerempty(cache)) {
                 function_68085c72d7b628ec(cache, self);
             }
             break;
@@ -593,10 +593,10 @@ function function_f87690347a82844d(notification, var_e1d097c517c3af5b) {
             return;
         }
     }
-    if (isdefined(self.var_2fa5b49969def47) && isdefined(self.var_2fa5b49969def47.var_cd89752a4fd40f8a)) {
-        [[ self.var_2fa5b49969def47.var_cd89752a4fd40f8a ]](self.var_2fa5b49969def47, self);
+    if (isdefined(self.var_2fa5b49969def47) && isdefined(self.var_2fa5b49969def47.onitemtaken)) {
+        [[ self.var_2fa5b49969def47.onitemtaken ]](self.var_2fa5b49969def47, self);
     }
-    if (istrue(result) && isdefined(self.var_2fa5b49969def47) && isContainerEmpty(self.var_2fa5b49969def47) && self.var_2fa5b49969def47.var_46a3a8565ac0c17c != 15 && self.var_2fa5b49969def47.var_46a3a8565ac0c17c != 18 && self.var_2fa5b49969def47.var_46a3a8565ac0c17c != 19) {
+    if (istrue(result) && isdefined(self.var_2fa5b49969def47) && iscontainerempty(self.var_2fa5b49969def47) && self.var_2fa5b49969def47.var_46a3a8565ac0c17c != 15 && self.var_2fa5b49969def47.var_46a3a8565ac0c17c != 18 && self.var_2fa5b49969def47.var_46a3a8565ac0c17c != 19) {
         container = self.var_2fa5b49969def47;
         function_68085c72d7b628ec(self.var_2fa5b49969def47, self);
         if (isdefined(container.var_1498604de9cf5016) && !istrue(container.var_1498604de9cf5016)) {
@@ -749,7 +749,7 @@ function function_d1703475e83c17fb(container, lootid, player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x291c
 // Size: 0x49
-function getLootIDAtContainerIndex(player, index) {
+function getlootidatcontainerindex(player, index) {
     var_45b5ac9206ede68c = player getclientomnvar("loot_container_item_" + index);
     var_ff3f30bbaeb02ab8 = function_217ab517f98c6fab(var_45b5ac9206ede68c);
     return var_ff3f30bbaeb02ab8.lootid;

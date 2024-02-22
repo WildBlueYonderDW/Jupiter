@@ -42,7 +42,7 @@ function local() {
     s = var_cdd17378f51bec82;
     s = spawnstruct();
     a0 = [];
-    var_ce0ee878f55f5e93 = a0;
+    a1 = a0;
     a0 = [0:1, 1:2, 2:3];
 }
 

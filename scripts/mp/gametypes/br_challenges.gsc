@@ -15,7 +15,7 @@
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x73
 function init() {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     registerchallenge("br_mastery_fiveContracts", &fivecontracts);

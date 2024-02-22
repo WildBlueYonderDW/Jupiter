@@ -24,7 +24,7 @@ function main() {
     self.behaviortreeasset = "zombie_mangler";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "zombie_mangler";
-    self.var_f7f189f0e87db6ac = %"hash_3664c8ba706ec788";
+    self.ai_eventlist = %"hash_3664c8ba706ec788";
     self.var_570908460ede5c13 = "settings_zombie_mangler_jup";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_zombie_mangler");
     self.weapon = nullweapon();

@@ -205,7 +205,7 @@ function getplayerdataloadoutgroup() {
             return "wzrankedloadouts";
         }
     }
-    var_7377d0f486a012d0 = namespace_36f464722d326bbe::isBRStyleGameType() || getgametype() == "ballmode";
+    var_7377d0f486a012d0 = namespace_36f464722d326bbe::isbrstylegametype() || getgametype() == "ballmode";
     if (level.rankedmatch && (!namespace_cd0b2d039510b38d::isanymlgmatch() || getdvarint(@"hash_6037589ac3376ef3", 0))) {
         if (!getdvarint(@"hash_6dd8fb66d1032ceb", 0)) {
             if (isdefined(level.var_62f6f7640e4431e3) && isdefined(level.var_62f6f7640e4431e3.var_7dfb2f7ad76e0d5)) {
@@ -289,7 +289,7 @@ function canrecordcombatrecordstats() {
     if (namespace_36f464722d326bbe::function_2536e99eb6586f8f()) {
         return 0;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && !namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && !namespace_4b0406965e556711::gameflag("prematch_done")) {
         return 0;
     }
     return level.rankedmatch && !istrue(level.ignorescoring);

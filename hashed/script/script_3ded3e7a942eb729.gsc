@@ -10,14 +10,14 @@
 #using script_38c517e34d7c3efb;
 #using script_503081a86c1539d3;
 
-#namespace namespace_6722d8277eeb7cc0;
+#namespace jup_spawner_zombie_disciple;
 
-// Namespace namespace_6722d8277eeb7cc0/namespace_3f4cbede94ae60c3
+// Namespace jup_spawner_zombie_disciple/namespace_3f4cbede94ae60c3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16d
 // Size: 0x174
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_70aca04005aefed1");
+    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"jup_spawner_zombie_disciple");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_36b5ecf724a77ac5");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 900;
@@ -49,7 +49,7 @@ function main() {
     namespace_6205bc7c5e394598::ai_init();
 }
 
-// Namespace namespace_6722d8277eeb7cc0/namespace_3f4cbede94ae60c3
+// Namespace jup_spawner_zombie_disciple/namespace_3f4cbede94ae60c3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e8
 // Size: 0x57
@@ -63,7 +63,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_6722d8277eeb7cc0/namespace_3f4cbede94ae60c3
+// Namespace jup_spawner_zombie_disciple/namespace_3f4cbede94ae60c3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x346
 // Size: 0x9
@@ -71,7 +71,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_b94c158b7b473ddb::main();
 }
 
-// Namespace namespace_6722d8277eeb7cc0/namespace_3f4cbede94ae60c3
+// Namespace jup_spawner_zombie_disciple/namespace_3f4cbede94ae60c3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x357
 // Size: 0x108

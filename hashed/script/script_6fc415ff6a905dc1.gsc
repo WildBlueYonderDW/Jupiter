@@ -104,12 +104,12 @@ function function_5332e1c0f06b0245(var_3064fa24dbbd5bbf) {
     var_31949ce029b087d1 = [];
     if (isdefined(self.var_9405380a2f34c55d)) {
         foreach (var_784dd6733f8f56a5 in self.var_9405380a2f34c55d) {
-            var_57ac4dc40b2e376 = namespace_85cd45b4fe0d86fb::getDogTagVictimAndKiller(var_784dd6733f8f56a5);
+            var_57ac4dc40b2e376 = namespace_85cd45b4fe0d86fb::getdogtagvictimandkiller(var_784dd6733f8f56a5);
             killerindex = var_57ac4dc40b2e376[1];
             victimindex = var_57ac4dc40b2e376[0];
-            if (isdefined(killerindex) && isdefined(level.dogTagInfo[killerindex]) && isdefined(level.dogTagInfo[killerindex].name)) {
-                var_6be2e3de0644e52[var_6be2e3de0644e52.size] = level.dogTagInfo[victimindex].name;
-                var_31949ce029b087d1[var_6be2e3de0644e52.size] = level.dogTagInfo[killerindex].name;
+            if (isdefined(killerindex) && isdefined(level.dogtaginfo[killerindex]) && isdefined(level.dogtaginfo[killerindex].name)) {
+                var_6be2e3de0644e52[var_6be2e3de0644e52.size] = level.dogtaginfo[victimindex].name;
+                var_31949ce029b087d1[var_6be2e3de0644e52.size] = level.dogtaginfo[killerindex].name;
             }
         }
     }
@@ -172,7 +172,7 @@ function private function_f95e462ad75806a2() {
                 if (var_113572a27a3ac22) {
                     itemtype = namespace_38b993c4618e76cd::function_282cf83c9eeda744(item.lootid);
                     if (itemtype == "weapon") {
-                        scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(item.lootid);
+                        scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(item.lootid);
                     }
                 }
                 function_e249cffd8b8f7a9(index, 0, 0);
@@ -276,11 +276,11 @@ function function_e249cffd8b8f7a9(index, lootid, quantity, cooldown) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf9c
 // Size: 0x39
-function function_7f18210bf7cedd4b(index, lootedQuantity) {
-    if (lootedQuantity <= 0) {
-        lootedQuantity = 0;
+function function_7f18210bf7cedd4b(index, lootedquantity) {
+    if (lootedquantity <= 0) {
+        lootedquantity = 0;
     }
-    self setplayerdata(level.var_5d69837cf4db0407, "dmzInventory", index, "lootedQuantity", lootedQuantity);
+    self setplayerdata(level.var_5d69837cf4db0407, "dmzInventory", index, "lootedQuantity", lootedquantity);
 }
 
 // Namespace namespace_771165fe61010ab2/namespace_512200f0f9e6ebc9
@@ -446,7 +446,7 @@ function function_c1106d5209a8b595() {
             continue;
         }
         item = spawnstruct();
-        item.lootid = namespace_38b993c4618e76cd::getLootIDFromRef(ammotype);
+        item.lootid = namespace_38b993c4618e76cd::getlootidfromref(ammotype);
         item.quantity = count;
         items[items.size] = item;
     }
@@ -488,7 +488,7 @@ function function_9cd290910c24d4d3() {
     ref = namespace_1a507865f681850e::getcurrentequipment("primary");
     if (isdefined(ref)) {
         var_212e6b7d207a0089 = namespace_1a507865f681850e::getequipmentslotammo("primary");
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef(ref);
+        lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
         if (isdefined(lootid) && var_212e6b7d207a0089 > 0) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -499,7 +499,7 @@ function function_9cd290910c24d4d3() {
     ref = namespace_1a507865f681850e::getcurrentequipment("secondary");
     if (isdefined(ref)) {
         var_212e6b7d207a0089 = namespace_1a507865f681850e::getequipmentslotammo("secondary");
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef(ref);
+        lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
         if (isdefined(lootid) && isdefined(var_212e6b7d207a0089) && var_212e6b7d207a0089 > 0) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -510,7 +510,7 @@ function function_9cd290910c24d4d3() {
     ref = namespace_1a507865f681850e::getcurrentequipment("super");
     ref = namespace_38b993c4618e76cd::function_151b82e1257f4cde(ref);
     var_212e6b7d207a0089 = namespace_d20f8ef223912e12::getsuperweapondisabledammobr();
-    lootid = namespace_38b993c4618e76cd::getLootIDFromRef(ref);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
     if (isdefined(lootid) && isdefined(var_212e6b7d207a0089) && var_212e6b7d207a0089 > 0) {
         item = spawnstruct();
         item.lootid = lootid;
@@ -519,7 +519,7 @@ function function_9cd290910c24d4d3() {
     }
     ref = namespace_58a74e7d54b56e8d::getkillstreakinslot(1);
     if (isdefined(ref)) {
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef(ref.streakname);
+        lootid = namespace_38b993c4618e76cd::getlootidfromref(ref.streakname);
         if (isdefined(lootid)) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -528,7 +528,7 @@ function function_9cd290910c24d4d3() {
         }
     }
     if (namespace_d3d40f75bb4e4c32::hasplatepouch()) {
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef("armor_satchel");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("armor_satchel");
         if (isdefined(lootid)) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -537,7 +537,7 @@ function function_9cd290910c24d4d3() {
         }
     }
     if (namespace_9c6cddd872ad75f7::hasgasmask(self)) {
-        lootid = namespace_38b993c4618e76cd::getLootIDFromRef("gas_mask");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("gas_mask");
         if (isdefined(lootid)) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -549,7 +549,7 @@ function function_9cd290910c24d4d3() {
     itemcount = namespace_1a507865f681850e::getequipmentslotammo("health");
     if (isdefined(itemname) && isdefined(itemcount) && itemcount > 0) {
         item = spawnstruct();
-        item.lootid = namespace_38b993c4618e76cd::getLootIDFromRef("armor_plate");
+        item.lootid = namespace_38b993c4618e76cd::getlootidfromref("armor_plate");
         item.quantity = itemcount;
         items[items.size] = item;
     }

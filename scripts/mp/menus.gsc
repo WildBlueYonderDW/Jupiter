@@ -84,7 +84,7 @@ function init() {
 // Checksum 0x0, Offset: 0x9d0
 // Size: 0x68
 function onteamchangecallback(channel, var_8c10bbaef71258b9) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         /#
             println("class_select" + self getentitynumber() + "ui_loadout_changed" + self.name + "spectator" + channel);
         #/
@@ -150,13 +150,13 @@ function executeclasschange(newclass, var_fda7f7e8fc307aba) {
             namespace_d19129e4fa5d176::preloadandqueueclass(var_2d36749fdffc49b4);
         }
         var_cd83a28652a3f837 = 1;
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && !namespace_d576b6dc7cef9c62::function_8f54deec605690d1(getsubgametype())) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && !namespace_d576b6dc7cef9c62::function_8f54deec605690d1(getsubgametype())) {
             var_cd83a28652a3f837 = 0;
         }
         if (namespace_d19129e4fa5d176::shouldallowinstantclassswap() && var_cd83a28652a3f837) {
             thread namespace_d19129e4fa5d176::swaploadout();
         } else {
-            var_5e6a291a22a0d249 = namespace_36f464722d326bbe::isBRStyleGameType() && self getclientomnvar("ui_open_loadout_bag");
+            var_5e6a291a22a0d249 = namespace_36f464722d326bbe::isbrstylegametype() && self getclientomnvar("ui_open_loadout_bag");
             if (isalive(self) && !var_5e6a291a22a0d249) {
                 self iprintlnbold(game["strings"]["change_class"]);
             }
@@ -513,7 +513,7 @@ function setteam(selection, var_7ec298e587eb6719) {
         self.suicideswitched = 1;
     }
     if (allowclasschoice() || showfakeloadout() && !isai(self)) {
-        if (getdvarint(@"hash_206a763969420ce0", 0) == 1 && namespace_36f464722d326bbe::isBRStyleGameType() && getsubgametype() != "dmz" && getsubgametype() != "exgm" && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "sandbox" && getsubgametype() != "rumble_mgl") {
+        if (getdvarint(@"hash_206a763969420ce0", 0) == 1 && namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() != "dmz" && getsubgametype() != "exgm" && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "sandbox" && getsubgametype() != "rumble_mgl") {
             var_891d91911e4c1ade = isdefined(level.allowclasschoicefunc) && istrue(self [[ level.allowclasschoicefunc ]]());
             namespace_9c840bb9f2ecbf00::demoforcesre("setTeam() " + self.name + " ui_options_menu = 2, allowClassChoiceFunc = " + var_891d91911e4c1ade);
         }
@@ -661,10 +661,10 @@ function waitforclassselect() {
         self setclientomnvar("ui_in_spawn_camera", 1);
     }
     for (;;) {
-        var_40645c66e8a85816 = namespace_36f464722d326bbe::isBRStyleGameType() && allowclasschoice() && (!gameflag("prematch_done") || istrue(level.skipprematch));
+        var_40645c66e8a85816 = namespace_36f464722d326bbe::isbrstylegametype() && allowclasschoice() && (!gameflag("prematch_done") || istrue(level.skipprematch));
         var_7e61909352db412d = teamhasinfil(self.team) && !gameflag("infil_started") && !isdefined(level.bypassclasschoicefunc);
         var_9cfda0afbbf50688 = islifelimited() && !isdefined(level.bypassclasschoicefunc) && isgameplayteam(self.team);
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && (getsubgametype() == "dmz" || getsubgametype() == "exgm") && !istrue(level.br_allowloadout)) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm") && !istrue(level.br_allowloadout)) {
             newclass = 0;
         } else if (var_40645c66e8a85816 || var_7e61909352db412d || var_9cfda0afbbf50688) {
             channel = "class_select";
@@ -743,7 +743,7 @@ function beginclasschoice(forcenewchoice) {
         assert(team == "axis" || team == "allies" || issubstr(team, "team_"));
     #/
     if (allowclasschoice() || showfakeloadout() && !isai(self)) {
-        if (getdvarint(@"hash_206a763969420ce0", 0) == 1 && namespace_36f464722d326bbe::isBRStyleGameType() && getsubgametype() != "dmz" && getsubgametype() != "exgm" && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "sandbox" && getsubgametype() != "rumble_mgl") {
+        if (getdvarint(@"hash_206a763969420ce0", 0) == 1 && namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() != "dmz" && getsubgametype() != "exgm" && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "sandbox" && getsubgametype() != "rumble_mgl") {
             var_891d91911e4c1ade = isdefined(level.allowclasschoicefunc) && istrue(self [[ level.allowclasschoicefunc ]]());
             namespace_9c840bb9f2ecbf00::demoforcesre("beginClassChoice() " + self.name + " ui_options_menu = 2, allowClassChoiceFunc = " + var_891d91911e4c1ade);
         }
@@ -913,7 +913,7 @@ function menuclass(response) {
         if (game["state"] == "postgame") {
             return;
         }
-        if (game["state"] == "playing" && !isinkillcam() && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (game["state"] == "playing" && !isinkillcam() && !namespace_36f464722d326bbe::isbrstylegametype()) {
             thread namespace_99ac021a7547cae3::spawnclient();
         }
     }

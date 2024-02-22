@@ -343,7 +343,7 @@ function decoy_debuffenemy(player) {
     if (!isdefined(self.playersdebuffed[player getentitynumber()])) {
         self.playersdebuffed[player getentitynumber()] = player;
         if (player != owner) {
-            namespace_a850435086c88de3::function_693d12aa2c1c02c5(0, "decoyDebuffed");
+            namespace_a850435086c88de3::doonactionscoreevent(0, "decoyDebuffed");
         }
     }
     result = player namespace_3c37cb17ade254d::waittill_notify_or_timeout_return("death", 5);
@@ -351,7 +351,7 @@ function decoy_debuffenemy(player) {
     if (isdefined(player.lastkilledby) && player.lastkilledby != owner) {
         if (result == "death" && istrue(namespace_f8065cafc523dba5::playersareenemies(player, owner))) {
             if (!istrue(self.var_8bf83d28be4c2d4f.bundle.var_b20a3c4b142951e7) || self.decoyassists < (isdefined(self.var_8bf83d28be4c2d4f.bundle.var_dcc444b82ee2ea4a) ? 3 : self.var_8bf83d28be4c2d4f.bundle.var_dcc444b82ee2ea4a)) {
-                owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_ef68378274bc9c41");
+                owner thread namespace_48a08c5037514e04::doscoreevent(#"assist_decoy");
                 self.decoyassists++;
             }
         }

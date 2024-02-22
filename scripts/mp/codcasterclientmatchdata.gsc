@@ -183,11 +183,11 @@ function function_ad829fab97971b4b(var_9138ab59ff517f7b) {
         return;
     }
     if (var_9138ab59ff517f7b == 6) {
-        consecutiveKills = self.var_1a34ed8eb5c6e9c[6];
-        function_7ee466e81b1afc12(6, consecutiveKills);
+        consecutivekills = self.var_1a34ed8eb5c6e9c[6];
+        function_7ee466e81b1afc12(6, consecutivekills);
         var_51538fe8520e4052 = function_815fee43d577e1b6(7);
-        if (consecutiveKills > var_51538fe8520e4052) {
-            function_7ee466e81b1afc12(7, consecutiveKills);
+        if (consecutivekills > var_51538fe8520e4052) {
+            function_7ee466e81b1afc12(7, consecutivekills);
         }
         return;
     }

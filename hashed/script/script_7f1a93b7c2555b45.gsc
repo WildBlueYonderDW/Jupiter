@@ -157,9 +157,9 @@ function private function_c422d0209d63d82c() {
     level waittill("prematch_over");
     level.bounty.hvts = [];
     if (isdefined(level.scoremod) && isdefined(level.scoremod["kill"])) {
-        level.bounty.pointsPerHVTKill = level.bounty.pointsPerHVTKill - level.scoremod["kill"];
-        if (level.bounty.pointsPerHVTKill < 0) {
-            level.bounty.pointsPerHVTKill = 0;
+        level.bounty.pointsperhvtkill = level.bounty.pointsperhvtkill - level.scoremod["kill"];
+        if (level.bounty.pointsperhvtkill < 0) {
+            level.bounty.pointsperhvtkill = 0;
         }
     }
     foreach (teamname in level.teamnamelist) {
@@ -177,13 +177,13 @@ function private function_c422d0209d63d82c() {
 // Size: 0x110
 function updategametypedvars() {
     namespace_310ba947928891df::updatecommongametypedvars();
-    level.bounty.hvtsPerTeam = dvarintvalue("hvtsPerTeam", 1, 1, 6);
-    level.bounty.pointsPerHVTKill = dvarintvalue("pointsPerHVTKill", 5, 1, 25);
-    level.bounty.warnTeamHVTChange = dvarintvalue("warnTeamHVTChange", 0, 0, 1);
-    level.bounty.hvtRefreshInterval = dvarintvalue("hvtRefreshInterval", 30, 0, 120);
-    level.bounty.hvtRefreshWarnTime = dvarintvalue("hvtRefreshWarnTime", 10, 0, 30);
-    level.bounty.hvtMarkerPingEnabled = dvarintvalue("hvtMarkerPingEnabled", 0, 0, 1);
-    level.bounty.hvtMarkerPingInterval = dvarfloatvalue("hvtMarkerPingInterval", 5, 0, 60);
+    level.bounty.hvtsperteam = dvarintvalue("hvtsPerTeam", 1, 1, 6);
+    level.bounty.pointsperhvtkill = dvarintvalue("pointsPerHVTKill", 5, 1, 25);
+    level.bounty.warnteamhvtchange = dvarintvalue("warnTeamHVTChange", 0, 0, 1);
+    level.bounty.hvtrefreshinterval = dvarintvalue("hvtRefreshInterval", 30, 0, 120);
+    level.bounty.hvtrefreshwarntime = dvarintvalue("hvtRefreshWarnTime", 10, 0, 30);
+    level.bounty.hvtmarkerpingenabled = dvarintvalue("hvtMarkerPingEnabled", 0, 0, 1);
+    level.bounty.hvtmarkerpinginterval = dvarfloatvalue("hvtMarkerPingInterval", 5, 0, 60);
 }
 
 // Namespace bounty/namespace_5b8bd7b5f1bbdbad
@@ -338,9 +338,9 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
         attacker namespace_3c5a4254f2b957ea::setextrascore0(attacker.pers["hvtKills"]);
         attacker thread namespace_48a08c5037514e04::function_e3e3e81453fd788b(#"hash_4b89b1d2e95e2012", objweapon, victim);
         attacker playlocalsound("jup_bounty_hvt_killed_positive_player");
-        if (level.bounty.pointsPerHVTKill > 0) {
-            namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.team, level.bounty.pointsPerHVTKill, 0);
-            attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(15, level.bounty.pointsPerHVTKill);
+        if (level.bounty.pointsperhvtkill > 0) {
+            namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.team, level.bounty.pointsperhvtkill, 0);
+            attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(15, level.bounty.pointsperhvtkill);
         }
         victim playsoundtoteam("jup_bounty_hvt_killed_negative", victim.team, undefined, victim);
         victim playsoundtoteam("jup_bounty_hvt_killed_positive", getotherteam(victim.team)[0], attacker, victim);
@@ -557,11 +557,11 @@ function private function_daa7ba85dff31c58() {
         foreach (teamname in level.teamnamelist) {
             function_73f4370f1b27931f(teamname);
         }
-        if (istrue(level.bounty.warnTeamHVTChange)) {
+        if (istrue(level.bounty.warnteamhvtchange)) {
             /#
-                assertex(level.bounty.hvtRefreshInterval > level.bounty.hvtRefreshWarnTime, "runBountyTargetIntervalRefresh: HVT refresh interval must be larger than HVT refresh warning time.");
+                assertex(level.bounty.hvtrefreshinterval > level.bounty.hvtrefreshwarntime, "runBountyTargetIntervalRefresh: HVT refresh interval must be larger than HVT refresh warning time.");
             #/
-            wait(level.bounty.hvtRefreshInterval - level.bounty.hvtRefreshWarnTime);
+            wait(level.bounty.hvtrefreshinterval - level.bounty.hvtrefreshwarntime);
             foreach (teamname in level.teamnamelist) {
                 namespace_944ddf7b8df1b0e3::statusdialog("bounty_new_targets_warning", teamname);
                 foreach (player in getteamdata(teamname, "alivePlayers")) {
@@ -569,9 +569,9 @@ function private function_daa7ba85dff31c58() {
                     player playlocalsound("jup_bounty_hvt_new_target_splash");
                 }
             }
-            wait(level.bounty.hvtRefreshWarnTime);
+            wait(level.bounty.hvtrefreshwarntime);
         } else {
-            wait(level.bounty.hvtRefreshInterval);
+            wait(level.bounty.hvtrefreshinterval);
         }
     }
 }
@@ -584,7 +584,7 @@ function private function_73f4370f1b27931f(teamname, var_404cf37133ab102d) {
     var_fdca194965cd644a = [];
     players = function_4632da5fc05ba940(teamname);
     foreach (player in players) {
-        if (var_fdca194965cd644a.size < level.bounty.hvtsPerTeam) {
+        if (var_fdca194965cd644a.size < level.bounty.hvtsperteam) {
             jumpiftrue(namespace_3c37cb17ade254d::array_contains(level.bounty.hvts[teamname], player)) LOC_000000cf;
             var_fdca194965cd644a[var_fdca194965cd644a.size] = player;
         } else {
@@ -664,9 +664,9 @@ function private function_2c66ae09a0a7c438() {
         trackedobject = namespace_19b4203b51d56488::createtrackedobject(self, (0, 0, 100));
         namespace_5a22b6f3a56f7e9b::objective_set_play_intro(trackedobject.objidnum, 0);
         namespace_5a22b6f3a56f7e9b::objective_set_play_outro(trackedobject.objidnum, 0);
-        trackedobject.objidpingfriendly = level.bounty.hvtMarkerPingEnabled != 0;
+        trackedobject.objidpingfriendly = level.bounty.hvtmarkerpingenabled != 0;
         trackedobject.objidpingenemy = 0;
-        trackedobject.objpingdelay = level.bounty.hvtMarkerPingInterval;
+        trackedobject.objpingdelay = level.bounty.hvtmarkerpinginterval;
         trackedobject namespace_19b4203b51d56488::setobjectivestatusicons("bounty_friendly");
         trackedobject namespace_19b4203b51d56488::setvisibleteam("friendly");
         self.trackedobject = trackedobject;
@@ -745,9 +745,9 @@ function private onplayerspawn() {
 // Size: 0x11c
 function private onplayerdisconnect(player) {
     if (isdefined(level.bounty.var_b9d8abc30e8b40b8) && namespace_3c37cb17ade254d::array_contains(level.bounty.hvts[player.team], player)) {
-        var_29ca520a8694cd41 = level.bounty.hvtRefreshInterval * 1000;
-        hvtRefreshWarnTime = level.bounty.hvtRefreshWarnTime * 1000 * level.bounty.warnTeamHVTChange;
-        var_89e85c0815c992d6 = level.bounty.var_b9d8abc30e8b40b8 + var_29ca520a8694cd41 - hvtRefreshWarnTime - gettime();
+        var_29ca520a8694cd41 = level.bounty.hvtrefreshinterval * 1000;
+        hvtrefreshwarntime = level.bounty.hvtrefreshwarntime * 1000 * level.bounty.warnteamhvtchange;
+        var_89e85c0815c992d6 = level.bounty.var_b9d8abc30e8b40b8 + var_29ca520a8694cd41 - hvtrefreshwarntime - gettime();
         if (var_89e85c0815c992d6 > 5000) {
             function_73f4370f1b27931f(player.team, 1);
         } else {

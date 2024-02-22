@@ -29,28 +29,28 @@ function function_c402ecda1e84ba27(players, var_130df19468a5a1df, difficulty_reg
     switch (var_5ae81c709e07dbf7) {
     case #"hash_7bb2cd766703d463":
         if (istrue(var_130df19468a5a1df)) {
-            var_7b60c91792761e4f = #"hash_9c7d0eb83c2ea520";
+            var_7b60c91792761e4f = #"ob_major_activity_complete_green";
         } else {
             var_7b60c91792761e4f = #"ob_minor_activity_complete_green";
         }
         break;
     case #"hash_af83e47edfa8900a":
         if (istrue(var_130df19468a5a1df)) {
-            var_7b60c91792761e4f = #"hash_5c253ab62278acad";
+            var_7b60c91792761e4f = #"ob_major_activity_complete_yellow";
         } else {
             var_7b60c91792761e4f = #"ob_minor_activity_complete_yellow";
         }
         break;
     case #"hash_5343b465e56ec9a4":
         if (istrue(var_130df19468a5a1df)) {
-            var_7b60c91792761e4f = #"hash_30e7a54caca69f17";
+            var_7b60c91792761e4f = #"ob_major_activity_complete_orange";
         } else {
             var_7b60c91792761e4f = #"ob_minor_activity_complete_orange";
         }
         break;
     case #"hash_651f76c0ad6741ec":
         if (istrue(var_130df19468a5a1df)) {
-            var_7b60c91792761e4f = #"hash_9a499df3f6181660";
+            var_7b60c91792761e4f = #"ob_major_activity_complete_red";
         } else {
             var_7b60c91792761e4f = #"ob_minor_activity_complete_red";
         }

@@ -53,7 +53,7 @@ function function_78ce4bfda3e762b3(equipmentref, slot, variantid) {
     self endon("hb_sensor_take");
     self notify("hb_sensor_end_recharge");
     thread function_323286bf3aa11fbb();
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         self.var_7653bd4be7dd5fdb = 0;
         self.var_3dd6d94c7b926688 = function_db61876aca4e4cd3();
     }

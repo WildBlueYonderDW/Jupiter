@@ -48,7 +48,7 @@ function private autoexec function_683aefb412af1596() {
     function_7855ec4caf5901f9("Types_Player", "objectCleanup", &function_f5c1014e1cfdf615);
     function_7855ec4caf5901f9("Types_Player", "objectStoreAnimRequest", &function_8cd22f505439309f);
     function_7855ec4caf5901f9("Types_Player", "objectClearAnimRequest", &function_3e4cf61872dc003b);
-    function_7855ec4caf5901f9("Types_Actor", "objectSpawn", &function_95c579445e1097ca);
+    function_7855ec4caf5901f9("Types_Actor", "objectSpawn", &agent_spawn);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectPrepare", &function_61be92922a464251);
     function_7855ec4caf5901f9("Types_Actor", "objectMatchEntity", &function_12f50a9b21b4dd9a);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectPlayAnim", &function_43a42c8097aac565);
@@ -173,8 +173,8 @@ function private function_43972bd744497667(var_568f62a24b19c46d, var_698da5af57b
     if (var_214d924f4e137244 function_b4d836fe99f480e(var_698da5af57b757e7)) {
         player val::set("scene_shot", "take_weapons", 1);
     }
-    var_db52b4a8aba13320 = var_214d924f4e137244.var_5aaf7c7163c04623 function_6a6ec88abab6a723();
-    if (var_db52b4a8aba13320 function_cf67ad1bae22e908()) {
+    scenescriptbundle = var_214d924f4e137244.var_5aaf7c7163c04623 function_6a6ec88abab6a723();
+    if (scenescriptbundle function_cf67ad1bae22e908()) {
         player function_e7257014ebaeeaa8(1);
     }
     player val::set("scene_scene", "cinematic_motion", 0);
@@ -270,7 +270,7 @@ function private function_5fd2b7d3c29f131b(var_698da5af57b757e7, animindex, noti
     var_409dc6bbf1421f94 = var_214d924f4e137244 function_5fe020a6db35fab3(var_698da5af57b757e7);
     player val::function_59c053b89257bc95("scene_shot", var_409dc6bbf1421f94, 0);
     if (var_214d924f4e137244.var_41dc93404af773a3 == "CameraAnimation") {
-        var_214d924f4e137244 thread function_1a03f495ca2de598(var_4f3089070d8b1e24, [0:player], "death_or_disconnect", "CameraAnimation", notifystring);
+        var_214d924f4e137244 thread object_play_anim_waittill_end(var_4f3089070d8b1e24, [0:player], "death_or_disconnect", "CameraAnimation", notifystring);
         var_214d924f4e137244.var_e32ce590a15666ec = 1;
         return var_214d924f4e137244 function_bae0f68830d519ad("scene_shot", player, var_4f3089070d8b1e24, var_866b3a3066122e39, notifystring, var_bae27d121b581202, var_698da5af57b757e7);
     }
@@ -336,7 +336,7 @@ function private function_382ab03066aa1207(player, rig) {
     rig endon("death_or_disconnect");
     var_d1259a4ca338a8bd = 1;
     while (isdefined(player)) {
-        var_8c9a37d8546a9e51 = player GetCameraThirdPerson();
+        var_8c9a37d8546a9e51 = player getcamerathirdperson();
         if (var_8c9a37d8546a9e51 && var_d1259a4ca338a8bd) {
             rig hide();
             var_d1259a4ca338a8bd = 0;
@@ -443,8 +443,8 @@ function private function_f5c1014e1cfdf615(var_fa1af9d2277fd747) {
     player = var_214d924f4e137244.entity;
     var_214d924f4e137244 function_2f2327d535ed0bb();
     if (isdefined(player)) {
-        var_db52b4a8aba13320 = var_214d924f4e137244.var_5aaf7c7163c04623 function_6a6ec88abab6a723();
-        if (var_db52b4a8aba13320 function_cf67ad1bae22e908()) {
+        scenescriptbundle = var_214d924f4e137244.var_5aaf7c7163c04623 function_6a6ec88abab6a723();
+        if (scenescriptbundle function_cf67ad1bae22e908()) {
             player function_e7257014ebaeeaa8(0);
         }
     }
@@ -535,7 +535,7 @@ function private function_3e4cf61872dc003b(var_efef5984278284b1, var_698da5af57b
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1c45
 // Size: 0x251
-function private function_95c579445e1097ca(spawnorigin, spawnangles) {
+function private agent_spawn(spawnorigin, spawnangles) {
     var_214d924f4e137244 = self;
     if (isdefined(var_214d924f4e137244.var_9be58c68789faf5c.var_cf0d4d8cc5ac99a4.var_39a06a790caf5608)) {
         var_373a2c3b02b1d81c = "aitype";
@@ -558,15 +558,15 @@ function private function_95c579445e1097ca(spawnorigin, spawnangles) {
     var_e94f24c42205140 = "team_eighty";
     if (var_373a2c3b02b1d81c == "aitype") {
         if (isdefined(var_214d924f4e137244.var_9be58c68789faf5c.var_cf0d4d8cc5ac99a4.var_c8b64adafd8e5711)) {
-            var_e51bc72666444e2d = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc(var_214d924f4e137244.var_9be58c68789faf5c.var_cf0d4d8cc5ac99a4.var_c8b64adafd8e5711);
+            var_e51bc72666444e2d = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc(var_214d924f4e137244.var_9be58c68789faf5c.var_cf0d4d8cc5ac99a4.var_c8b64adafd8e5711);
             var_3a7ad9d5e8329009 = random(var_e51bc72666444e2d);
             var_6fc4d2978cf27bef = function_53c4c53197386572(var_3a7ad9d5e8329009, var_6fc4d2978cf27bef);
         }
         if (namespace_3c37cb17ade254d::issharedfuncdefined("ai", "get_aitype_default_spawn_team_SharedFunc")) {
-            var_e94f24c42205140 = namespace_53fc9ddbb516e6e1::get_aitype_default_spawn_team_SharedFunc();
+            var_e94f24c42205140 = namespace_53fc9ddbb516e6e1::get_aitype_default_spawn_team_sharedfunc();
         }
         if (namespace_3c37cb17ade254d::issharedfuncdefined("ai", "spawnNewAIType_SharedFunc")) {
-            entity = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(var_6fc4d2978cf27bef, spawnorigin, spawnangles, var_e94f24c42205140);
+            entity = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_6fc4d2978cf27bef, spawnorigin, spawnangles, var_e94f24c42205140);
         } else {
             entity = namespace_34f6a6adabfc542d::spawnnewagentaitype(var_6fc4d2978cf27bef, spawnorigin, spawnangles, var_e94f24c42205140);
         }
@@ -864,7 +864,7 @@ function private function_70bd06355933aec9(var_698da5af57b757e7, animindex, noti
         var_214d924f4e137244 childthread function_8e9f8e1fbe2b7ab4(notifystring, var_4f3089070d8b1e24);
     }
     if (var_214d924f4e137244 function_7f90ebd0aa7ad958(var_698da5af57b757e7)) {
-        var_6db82a0c287ea33 = var_214d924f4e137244.var_84b542bb7490bea7.var_db52b4a8aba13320 function_ee55ab255c0be00d();
+        var_6db82a0c287ea33 = var_214d924f4e137244.var_84b542bb7490bea7.scenescriptbundle function_ee55ab255c0be00d();
         if (var_6db82a0c287ea33 == "AnimScripted") {
             entity scriptmodelclearanim();
             entity useanimtree(var_214d924f4e137244.var_9be58c68789faf5c function_c106523f3836b90b());
@@ -1125,8 +1125,8 @@ function private function_d776460a61b689bf(var_698da5af57b757e7) {
 // Size: 0x2b
 function private function_4e15410d3aae945c() {
     var_214d924f4e137244 = self;
-    var_dcf5e15c58c4152a = var_214d924f4e137244 function_a2142af2db8fbb0();
-    return isdefined(var_dcf5e15c58c4152a) && var_dcf5e15c58c4152a.size > 0;
+    agenttype = var_214d924f4e137244 function_a2142af2db8fbb0();
+    return isdefined(agenttype) && agenttype.size > 0;
 }
 
 // Namespace scene/namespace_5952db407689619a

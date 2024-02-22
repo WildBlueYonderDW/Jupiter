@@ -34,8 +34,8 @@ function function_93a03eb03bc2c8ae(var_e2a66792e953b612) {
     if (namespace_37f0fb6355a4618a::function_47d356083884f913()) {
         function_44739fe1cf82e29a("lightZones");
         foreach (trigger in triggers) {
-            poiName = function_6cc445c02b5effac(trigger.origin, 1, 1);
-            function_d0e7647e5538eb9d(poiName, "lightZones", trigger);
+            poiname = function_6cc445c02b5effac(trigger.origin, 1, 1);
+            function_d0e7647e5538eb9d(poiname, "lightZones", trigger);
         }
         foreach (poi in level.poi) {
             level thread function_db690b3317074f2c(poi["name"]);
@@ -51,12 +51,12 @@ function function_93a03eb03bc2c8ae(var_e2a66792e953b612) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d2
 // Size: 0xe1
-function function_db690b3317074f2c(poiName) {
+function function_db690b3317074f2c(poiname) {
     level endon("game_ended");
-    triggers = function_1af8a41e4c1252c7(poiName, "lightZones");
+    triggers = function_1af8a41e4c1252c7(poiname, "lightZones");
     while (1) {
-        if (isdefined(level.poi[poiName]["players"])) {
-            foreach (player in level.poi[poiName]["players"]) {
+        if (isdefined(level.poi[poiname]["players"])) {
+            foreach (player in level.poi[poiname]["players"]) {
                 obscured = !level.var_b66460f12e76861e;
                 var_f5a62ea4f4c7f032 = function_bb16bd2ba27883ca(player, triggers);
                 if (var_f5a62ea4f4c7f032) {
@@ -119,8 +119,8 @@ function function_3d7298d1b868205b(var_4e94c5615c36ab4e) {
     if (namespace_37f0fb6355a4618a::function_47d356083884f913()) {
         function_44739fe1cf82e29a("sandstormZones");
         foreach (trigger in triggers) {
-            poiName = function_6cc445c02b5effac(trigger.origin, 1, 1);
-            function_d0e7647e5538eb9d(poiName, "sandstormZones", trigger);
+            poiname = function_6cc445c02b5effac(trigger.origin, 1, 1);
+            function_d0e7647e5538eb9d(poiname, "sandstormZones", trigger);
         }
         foreach (poi in level.poi) {
             level thread function_89ccee52f247d9a3(poi["name"]);
@@ -136,19 +136,19 @@ function function_3d7298d1b868205b(var_4e94c5615c36ab4e) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x657
 // Size: 0x1bb
-function function_89ccee52f247d9a3(poiName) {
+function function_89ccee52f247d9a3(poiname) {
     level endon("game_ended");
-    triggers = function_1af8a41e4c1252c7(poiName, "sandstormZones");
+    triggers = function_1af8a41e4c1252c7(poiname, "sandstormZones");
     if (!isdefined(triggers) || triggers.size == 0) {
         return;
     }
     while (1) {
-        if (isdefined(level.poi[poiName]["players"])) {
-            foreach (player in level.poi[poiName]["players"]) {
+        if (isdefined(level.poi[poiname]["players"])) {
+            foreach (player in level.poi[poiname]["players"]) {
                 var_f3695fc64154d3ad = function_491d53f82feb781b(player, triggers);
                 function_3b992a66c2e901bb(player, var_f3695fc64154d3ad);
             }
-            foreach (agent in function_7e3f22e620f3f71e(poiName, "everybody")) {
+            foreach (agent in function_7e3f22e620f3f71e(poiname, "everybody")) {
                 if (!isalive(agent) || isint(agent)) {
                     continue;
                 }
@@ -164,7 +164,7 @@ function function_89ccee52f247d9a3(poiName) {
                         if (0) {
                             agent notify("left_sandstorm");
                         }
-                        starlevel = namespace_6a3f8c14894f44be::function_5cc0c507e92f7b47(poiName);
+                        starlevel = namespace_6a3f8c14894f44be::function_5cc0c507e92f7b47(poiname);
                         namespace_6a3f8c14894f44be::function_e04dbe0bd8a25be7(agent, starlevel);
                     }
                 }

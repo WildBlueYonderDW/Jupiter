@@ -200,7 +200,7 @@ function function_ab806e73f41ed0a2() {
 // Size: 0xfe
 function function_235fe34454b16940(player) {
     if (!isdefined(self.var_a161875f61a76bf1.var_556db0b72a96514e) || !isdefined(self.var_a161875f61a76bf1.var_556db0b72a96514e[player.guid])) {
-        lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5("equip_geigercounter");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
         var_5731e7b66522f308 = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f([], 1, lootid);
         namespace_3f0ea7483345a2c0::function_618f897065a12122(player, self.var_a161875f61a76bf1, var_5731e7b66522f308);
         namespace_3f0ea7483345a2c0::function_618f897065a12122(player, self.var_a161875f61a76bf1, self.var_a161875f61a76bf1.contents);
@@ -238,7 +238,7 @@ function function_1ed4e13220736831(teamname) {
     }
     foreach (player in players) {
         if (!isdefined(self.var_a161875f61a76bf1.var_556db0b72a96514e) || !isdefined(self.var_a161875f61a76bf1.var_556db0b72a96514e[player.guid])) {
-            lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5("equip_geigercounter");
+            lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
             var_5731e7b66522f308 = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f([], 1, lootid);
             namespace_3f0ea7483345a2c0::function_618f897065a12122(player, self.var_a161875f61a76bf1, var_5731e7b66522f308);
             namespace_3f0ea7483345a2c0::function_618f897065a12122(player, self.var_a161875f61a76bf1, self.var_a161875f61a76bf1.contents);
@@ -343,8 +343,8 @@ function private function_ca27dbc903d08245(teamname) {
 function function_26e5198328580b5a() {
     curr = namespace_1a507865f681850e::getcurrentequipment("secondary");
     var_c89f07da007ff0d = namespace_1a507865f681850e::getequipmentslotammo("secondary");
-    lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5("equip_geigercounter");
-    count = namespace_aead94004cf4c147::getTotalItemCountInBag(lootid);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
+    count = namespace_aead94004cf4c147::gettotalitemcountinbag(lootid);
     return isdefined(curr) && curr == "equip_geigercounter" && var_c89f07da007ff0d || isdefined(count) && count;
 }
 
@@ -387,7 +387,7 @@ function function_6df202b999c40a49(instance, player) {
         instance.contents = namespace_1b7e64f50cca9321::function_ec87b214cd429e96(items, undefined);
     }
     if (!isdefined(instance.var_556db0b72a96514e) || !isdefined(instance.var_556db0b72a96514e[player.guid])) {
-        lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5("equip_geigercounter");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("equip_geigercounter");
         var_5731e7b66522f308 = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f([], 1, lootid);
         namespace_3f0ea7483345a2c0::function_618f897065a12122(player, instance, var_5731e7b66522f308);
     }
@@ -419,12 +419,12 @@ function private function_18db3205a09f3d50(instance, player) {
             return 34;
         }
         result = undefined;
-        if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+        if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
             return player namespace_cb965d2f71fefddc::function_cbbf9bf3544dc456(instance);
         }
         return 34;
     }
-    if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+    if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
         return player namespace_cb965d2f71fefddc::function_cbbf9bf3544dc456(instance);
     }
     return 34;
@@ -463,7 +463,7 @@ function function_4bc551d2a91831ac(pickup, player) {
             task function_ca27dbc903d08245(player.team);
             function_c1fd3441ccfba6f8(player.team, "dmz_activity_win", 1.5, "dmz_activity_win_classic");
         } else {
-            namespace_d696adde758cbe79::showDMZSplash(splash, getteamdata(player.team, "players"));
+            namespace_d696adde758cbe79::showdmzsplash(splash, getteamdata(player.team, "players"));
             task function_fce203bf90070ff0();
             function_c1fd3441ccfba6f8(player.team, "dmz_geigersearch_pickups", 0, "dmz_geigersearch_pickups_classic");
             function_c1fd3441ccfba6f8(player.team, "", 8);

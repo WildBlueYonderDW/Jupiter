@@ -201,11 +201,11 @@ function function_1629419647b0f862() {
             groundorigin = drop_to_ground(objective.curorigin + anglestoforward(objective.trigger.angles) * 50, 50, -200, undefined, var_fbcabd62b8f66eb8);
             spawnangles = objective.trigger.angles;
         }
-        var_2fa65f34eb9042f5 = spawnscriptable("br_plunder_box", groundorigin, spawnangles);
-        var_2fa65f34eb9042f5.objectivekey = key;
-        level.var_5b25e7620e424cb2[key] = var_2fa65f34eb9042f5;
-        var_2fa65f34eb9042f5 setscriptablepartstate("br_plunder_box", "visible");
-        var_2fa65f34eb9042f5.var_5cfa621ebf61d8aa = 0;
+        buystation = spawnscriptable("br_plunder_box", groundorigin, spawnangles);
+        buystation.objectivekey = key;
+        level.var_5b25e7620e424cb2[key] = buystation;
+        buystation setscriptablepartstate("br_plunder_box", "visible");
+        buystation.var_5cfa621ebf61d8aa = 0;
         var_661af64c95ce055d = spawnstruct();
         var_661af64c95ce055d.tier = 0;
         var_661af64c95ce055d.var_33cfb91c1b214e68 = var_33cfb91c1b214e68;
@@ -293,9 +293,9 @@ function function_c800466f69dfc582() {
     if (istrue(level.var_7f5be0207e7457b1)) {
         return;
     }
-    foreach (key, var_2fa65f34eb9042f5 in level.var_5b25e7620e424cb2) {
+    foreach (key, buystation in level.var_5b25e7620e424cb2) {
         foreach (team in level.teamnamelist) {
-            var_2fa65f34eb9042f5 function_8d03978a31faba3a(key, team);
+            buystation function_8d03978a31faba3a(key, team);
         }
     }
 }
@@ -311,12 +311,12 @@ function function_6ed651811c936a22() {
     if (istrue(level.var_7f5be0207e7457b1)) {
         return;
     }
-    foreach (key, var_2fa65f34eb9042f5 in level.var_5b25e7620e424cb2) {
+    foreach (key, buystation in level.var_5b25e7620e424cb2) {
         ownerteam = level.objectives[key] namespace_19b4203b51d56488::getownerteam();
         if (self.team == ownerteam) {
-            var_2fa65f34eb9042f5 enablescriptableplayeruse(self);
+            buystation enablescriptableplayeruse(self);
         } else {
-            var_2fa65f34eb9042f5 disablescriptableplayeruse(self);
+            buystation disablescriptableplayeruse(self);
         }
     }
 }
@@ -439,7 +439,7 @@ function function_362acc2689bebae8(objectivekey, team, ref) {
         break;
     case #"hash_dda8890cb35ca0bf":
         groupname = function_78759441c259f58a();
-        agent = function_ea94a8bf24d3c5ef("enemy_mp_jugg_base", level.objectives[objectivekey].trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, team);
+        agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", level.objectives[objectivekey].trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, team);
         namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
         agent thread function_b11c1964f528574b(agent);
         break;
@@ -516,7 +516,7 @@ function function_3d186b2b2ee293bb(team, objectivekey, ref) {
         }
         break;
     case #"hash_6235851dae0eeca8":
-        level.objectives[objectivekey] thread disableUAVPing();
+        level.objectives[objectivekey] thread disableuavping();
         break;
     case #"hash_6c0c806bbf705a0c":
     case #"hash_dda8890cb35ca0bf":
@@ -593,7 +593,7 @@ function function_c929fb023d29de5e(team) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f87
 // Size: 0x19
-function disableUAVPing() {
+function disableuavping() {
     if (!istrue(level.var_44334833e57b459b)) {
         return;
     }
@@ -720,7 +720,7 @@ function function_8529632b1fdb55a6(player) {
     if (istrue(level.var_f2afbe97539d175d[player.team]["global"].var_33cfb91c1b214e68["defense_spawn_plate_tier_2"].purchased)) {
         var_10fd8ed3fed0e0ae = namespace_f8d3520d3483c1::function_47320a25b8ee003();
     } else if (istrue(level.var_f2afbe97539d175d[player.team]["global"].var_33cfb91c1b214e68["defense_spawn_plate_tier_1"].purchased)) {
-        var_10fd8ed3fed0e0ae = level.var_bf6c149bc4124962 + 1;
+        var_10fd8ed3fed0e0ae = level.spawnarmorplates + 1;
     }
     return [0:var_d16569f10048fce9, 1:var_10fd8ed3fed0e0ae];
 }

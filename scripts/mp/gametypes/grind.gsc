@@ -361,7 +361,7 @@ function monitortaguse(tag) {
         tag.visuals[1].origin = (0, 0, 1000);
         tag namespace_19b4203b51d56488::allowuse("none");
         player playersettagcount(player.tagscarried + 1);
-        player thread doScoreEvent(#"hash_b89e7559b23a1287");
+        player thread doscoreevent(#"hash_b89e7559b23a1287");
         player playsound("mp_grind_token_pickup");
         if (function_f698bfd3efa33302() || function_e9f3a160bbefe208(player)) {
             if (isdefined(player.cranked) && player.cranked) {
@@ -525,7 +525,7 @@ function processscoring(player, zone) {
             if (!player namespace_82dcd1d5ae30ff7::_hasperk("specialty_killstreak_to_scorestreak")) {
                 player namespace_58a74e7d54b56e8d::givestreakpoints(#"capture", level.megabankbonusks);
             }
-            player thread doScoreEvent(#"hash_32d643f803437aaa", undefined, points + level.megabankbonus);
+            player thread doscoreevent(#"hash_32d643f803437aaa", undefined, points + level.megabankbonus);
             player incpersstat("tagsMegaBanked", 1);
         } else {
             player playsoundtoplayer("mp_grind_token_banked", player);
@@ -535,7 +535,7 @@ function processscoring(player, zone) {
             }
             scoreamount(player, var_1b445873b17eaa71, zone);
             for (i = 0; i < var_1b445873b17eaa71; i++) {
-                player thread doScoreEvent(#"hash_bc82bd9caa5693ce");
+                player thread doscoreevent(#"hash_bc82bd9caa5693ce");
             }
         }
         if ((function_f698bfd3efa33302() || function_e9f3a160bbefe208(player)) && isdefined(player.cranked) && player.cranked) {

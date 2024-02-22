@@ -802,9 +802,9 @@ function function_2591bed1172e3c08(var_74a89e1d9f44a7f) {
     }
     self.var_4b72d5e8f9b39c0a = gettime();
     if (var_74a89e1d9f44a7f) {
-        namespace_48a08c5037514e04::doScoreEvent(#"hash_baec289cfe7055c2");
+        namespace_48a08c5037514e04::doscoreevent(#"hash_baec289cfe7055c2");
     } else {
-        namespace_48a08c5037514e04::doScoreEvent(#"hash_47d77149e0e99a14");
+        namespace_48a08c5037514e04::doscoreevent(#"hash_47d77149e0e99a14");
     }
 }
 

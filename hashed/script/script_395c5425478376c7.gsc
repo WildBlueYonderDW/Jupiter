@@ -69,15 +69,15 @@ function function_8800c8028368dc18(position, owner, team, duration, radius, heig
     trigger.team = team;
     trigger.playersintrigger = [];
     trigger.var_aeeca2bc23f59ea4 = [];
-    if (namespace_77f66abf6de75883::function_4cd5239298745de7()) {
+    if (gas_grenade::function_4cd5239298745de7()) {
         trigger thread namespace_d20f8ef223912e12::function_4b2456ab9e1c7b81(position);
     }
-    trigger thread namespace_77f66abf6de75883::gas_watchtriggerenter();
-    trigger thread namespace_77f66abf6de75883::gas_watchtriggerexit();
+    trigger thread gas_grenade::gas_watchtriggerenter();
+    trigger thread gas_grenade::gas_watchtriggerexit();
     trigger thread function_69a839ba80dc08f0(2, var_70437d3c1365ec0c);
     wait(duration);
     trigger notify("gas_cleared");
-    trigger thread namespace_77f66abf6de75883::gas_destroytrigger();
+    trigger thread gas_grenade::gas_destroytrigger();
 }
 
 // Namespace namespace_f3a6ced925f97d70/namespace_fd412e3fb7716847
@@ -124,7 +124,7 @@ function dialog_warning(friendlies, enemies) {
 function dialog_hits(player, var_70437d3c1365ec0c) {
     dialog = "";
     var_fd614e2f3ed3515b = [];
-    foreach (k, v in var_70437d3c1365ec0c.var_5436b31193065f76) {
+    foreach (k, v in var_70437d3c1365ec0c.explosion_victims) {
         var_fd614e2f3ed3515b[k] = 1;
     }
     foreach (k, v in var_70437d3c1365ec0c.gas_victims) {
@@ -158,7 +158,7 @@ function private devgui_init() {
         devgui::function_b23a59dfb4ca49a1("<unknown string>", "<unknown string>", &function_ac26cf14f95df3f8);
         devgui::function_b23a59dfb4ca49a1("<unknown string>", "<unknown string>", &function_ac26cf14f95df3f8);
         devgui::function_fe953f000498048f();
-        if (game_utility::isBRStyleGameType()) {
+        if (game_utility::isbrstylegametype()) {
             devgui::function_6e7290c8ee4f558b("<unknown string>");
             devgui::function_a2fe753948998c89("<unknown string>", "<unknown string>");
             devgui::function_fe953f000498048f();

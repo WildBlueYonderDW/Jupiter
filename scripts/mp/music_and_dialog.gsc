@@ -130,7 +130,7 @@ function function_a5e3fac0c5201a8() {
 // Checksum 0x0, Offset: 0x4019
 // Size: 0xc20
 function function_79d09d8dff37ff80() {
-    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isbrstylegametype();
     if (!istrue(var_fdd4cb56c3b978a3)) {
         return;
     }
@@ -978,7 +978,7 @@ function onplayerspawned() {
     }
     if (getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || getgametype() == "gwbomb" || getgametype() == "gwtdm" || isgroundwarcoremode()) {
         self setsoundsubmix("iw9_mp_groundwar_focus");
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self setsoundsubmix("wz_br_focus");
     } else if (getgametype() == "ballmode") {
         self setsoundsubmix("iw9_mp_soccer");
@@ -1537,7 +1537,7 @@ function ongameended() {
     if (!isdefined(winner) || isdefined(level.endmusicplayed)) {
         return;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "rumble_mgl") {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "rumble_mgl") {
         return;
     }
     if (!ismusicenabled()) {
@@ -1744,7 +1744,7 @@ function gamewinnerdialog() {
     if (!isdefined(winner)) {
         return;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (getdvar(@"hash_e65e9a96eb2ff62b") == "wm") {

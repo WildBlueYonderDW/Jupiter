@@ -656,7 +656,7 @@ function transfer_damage_to_player(vol) {
     if (!isdefined(dmg_trig)) {
         return;
     }
-    var_17ad3a838dca5866 = 1;
+    first_shot = 1;
     while (isdefined(dmg_trig)) {
         objweapon = dflags = partname = tagname = modelname = type = point = dir = attacker = amt = dmg_trig waittill("damage");
         if (!isalive(attacker)) {
@@ -677,8 +677,8 @@ function transfer_damage_to_player(vol) {
             if (vectordot(forward, normal) < 0.9) {
                 continue;
             }
-            if (var_17ad3a838dca5866) {
-                var_17ad3a838dca5866 = 0;
+            if (first_shot) {
+                first_shot = 0;
                 wait(2);
                 continue;
             }

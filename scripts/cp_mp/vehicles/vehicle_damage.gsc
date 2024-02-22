@@ -46,13 +46,13 @@ function vehicle_damage_setcandamage(bool) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1092
 // Size: 0x14c
-function vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, create, var_6ecb77fd1f27c667) {
-    if (istrue(create) && (!function_89dc39dc11f3988c(var_7731adef63e19b0c) || !isdefined(function_29b4292c92443328(var_7731adef63e19b0c).damage) || !isdefined(function_29b4292c92443328(var_7731adef63e19b0c).damage.class))) {
+function vehicle_damage_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667) {
+    if (istrue(create) && (!function_89dc39dc11f3988c(vehicleref) || !isdefined(function_29b4292c92443328(vehicleref).damage) || !isdefined(function_29b4292c92443328(vehicleref).damage.class))) {
         data = undefined;
-        if (!function_89dc39dc11f3988c(var_7731adef63e19b0c)) {
+        if (!function_89dc39dc11f3988c(vehicleref)) {
             data = spawnstruct();
         } else {
-            data = function_29b4292c92443328(var_7731adef63e19b0c);
+            data = function_29b4292c92443328(vehicleref);
         }
         if (!isdefined(data.damage)) {
             data.damage = spawnstruct();
@@ -62,10 +62,10 @@ function vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, create, var
         data.damage.visualpercents = [];
         data.damage.visualcallbacks = [];
         data.damage.visualclearcallbacks = [];
-        level.var_a0b2c978ca57ffc5[var_7731adef63e19b0c] = data;
+        level.var_a0b2c978ca57ffc5[vehicleref] = data;
     }
-    if (function_89dc39dc11f3988c(var_7731adef63e19b0c)) {
-        return function_29b4292c92443328(var_7731adef63e19b0c).damage;
+    if (function_89dc39dc11f3988c(vehicleref)) {
+        return function_29b4292c92443328(vehicleref).damage;
     }
 }
 
@@ -108,8 +108,8 @@ function vehicle_damage_deregisterinstance(vehicle) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12ca
 // Size: 0xa8
-function vehicle_damage_getleveldatafordamagestate(var_7731adef63e19b0c, var_cb322750051a892b, create, var_6ecb77fd1f27c667) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, create, var_6ecb77fd1f27c667);
+function vehicle_damage_getleveldatafordamagestate(vehicleref, var_cb322750051a892b, create, var_6ecb77fd1f27c667) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667);
     var_d2e455d494f8d46e = var_e2818ad39a3341b4.damagestatedata[var_cb322750051a892b];
     if (!isdefined(var_d2e455d494f8d46e)) {
         if (istrue(create)) {
@@ -324,24 +324,24 @@ function function_a913d098054d5bce() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ce5
 // Size: 0x1d
-function function_870cbf6ca47076b6(var_7731adef63e19b0c) {
-    return vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c).var_9d70f02394c136da;
+function function_870cbf6ca47076b6(vehicleref) {
+    return vehicle_damage_getleveldataforvehicle(vehicleref).var_9d70f02394c136da;
 }
 
 // Namespace vehicle_damage/namespace_5a0f3ca265d3a4c8
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d0a
 // Size: 0x1d
-function function_32b9b5d07bb56c31(var_7731adef63e19b0c) {
-    return vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c).var_ccfde1208ef2964b;
+function function_32b9b5d07bb56c31(vehicleref) {
+    return vehicle_damage_getleveldataforvehicle(vehicleref).var_ccfde1208ef2964b;
 }
 
 // Namespace vehicle_damage/namespace_5a0f3ca265d3a4c8
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d2f
 // Size: 0x72
-function function_bc320cf9a1b27cb5(var_7731adef63e19b0c, tagname, var_b4fccc158c681073, var_1c60586652067d4c) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_bc320cf9a1b27cb5(vehicleref, tagname, var_b4fccc158c681073, var_1c60586652067d4c) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     if (isdefined(var_b4fccc158c681073)) {
         var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_b4fccc158c681073 = var_b4fccc158c681073;
     }
@@ -354,8 +354,8 @@ function function_bc320cf9a1b27cb5(var_7731adef63e19b0c, tagname, var_b4fccc158c
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1da8
 // Size: 0x33
-function function_1f39191797c711b6(var_7731adef63e19b0c, var_8490f7216313a83) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_1f39191797c711b6(vehicleref, var_8490f7216313a83) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     var_e2818ad39a3341b4.var_8490f7216313a83 = var_8490f7216313a83;
 }
 
@@ -1018,14 +1018,14 @@ function vehicle_damage_init() {
     /#
         assertex(!isdefined(level.vehicle.damage), "vehicle_damage_init() should only be called once.");
     #/
-    var_962a30a9bb8c0f09 = spawnstruct();
-    level.vehicle.damage = var_962a30a9bb8c0f09;
+    leveldata = spawnstruct();
+    level.vehicle.damage = leveldata;
     level.var_ec75ca2494d74dab = getdvarint(@"hash_4421544b585f6be5", utility::ismp()) == 1;
     level.var_eca89e600e05e79e = getdvarint(@"hash_6fc86a5e3cedbd94", 0) == 1;
-    var_962a30a9bb8c0f09.vehicledata = [];
-    var_962a30a9bb8c0f09.heavystatehealthadd = getdvarint(@"hash_a3b9b8945213c089", 350);
-    var_962a30a9bb8c0f09.mediumstatehealthratio = getdvarfloat(@"hash_4217d1e671e33953", 0.5);
-    var_962a30a9bb8c0f09.burndowntime = getdvarfloat(@"hash_1021d59d6f0d99a0", 8);
+    leveldata.vehicledata = [];
+    leveldata.heavystatehealthadd = getdvarint(@"hash_a3b9b8945213c089", 350);
+    leveldata.mediumstatehealthratio = getdvarfloat(@"hash_4217d1e671e33953", 0.5);
+    leveldata.burndowntime = getdvarfloat(@"hash_1021d59d6f0d99a0", 8);
     vehicle_damage_loadtable();
     vehicle_damage_initdebug();
     if (issharedfuncdefined("vehicle_damage", "init")) {
@@ -1058,7 +1058,7 @@ function vehicle_damage_init() {
     /#
         issharedfuncdefined("veh_repair_tire_at_station", "<unknown string>", 1);
     #/
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         vehicle_damage_inithitdamage_br();
     } else {
         vehicle_damage_inithitdamage();
@@ -1072,9 +1072,9 @@ function vehicle_damage_init() {
 // Checksum 0x0, Offset: 0x3d0e
 // Size: 0x358
 function vehicle_damage_loadtable() {
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
+    leveldata = vehicle_damage_getleveldata();
     table = spawnstruct();
-    var_962a30a9bb8c0f09.table = table;
+    leveldata.table = table;
     table.modsforclass = [];
     table.modsforvehicle = [];
     table.hitsperattackforclass = [];
@@ -1137,8 +1137,8 @@ function vehicle_damage_loadtable() {
 // Checksum 0x0, Offset: 0x406d
 // Size: 0x208
 function vehicle_damage_loadtablecell(var_f9430c437671aa54, var_929a919f782b1c96, var_e3ceec859e0df323, var_b41f483278c9b1a0, var_206c9737e935cce1) {
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    table = var_962a30a9bb8c0f09.table;
+    leveldata = vehicle_damage_getleveldata();
+    table = leveldata.table;
     if (var_e3ceec859e0df323 == "weaponMod") {
         var_2e70c59b43ca1e56 = float(var_f9430c437671aa54);
         if (var_206c9737e935cce1 == "class") {
@@ -1187,34 +1187,34 @@ function vehicle_damage_loadtablecell(var_f9430c437671aa54, var_929a919f782b1c96
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x427c
 // Size: 0x224
-function vehicle_damage_applytabletovehicle(var_7731adef63e19b0c, var_6ecb77fd1f27c667) {
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    table = var_962a30a9bb8c0f09.table;
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, undefined, var_6ecb77fd1f27c667);
+function vehicle_damage_applytabletovehicle(vehicleref, var_6ecb77fd1f27c667) {
+    leveldata = vehicle_damage_getleveldata();
+    table = leveldata.table;
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, undefined, var_6ecb77fd1f27c667);
     if (!isdefined(var_e2818ad39a3341b4)) {
         return;
     }
     class = var_e2818ad39a3341b4.class;
     if (isdefined(table.modsforclass[class])) {
         foreach (weaponclass, mod in table.modsforclass[class]) {
-            vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, 0, var_7731adef63e19b0c);
+            vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, 0, vehicleref);
         }
     }
-    if (isdefined(table.modsforvehicle[var_7731adef63e19b0c])) {
-        foreach (weaponclass, mod in table.modsforvehicle[var_7731adef63e19b0c]) {
-            vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, 0, var_7731adef63e19b0c);
+    if (isdefined(table.modsforvehicle[vehicleref])) {
+        foreach (weaponclass, mod in table.modsforvehicle[vehicleref]) {
+            vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, 0, vehicleref);
         }
     }
     if (isdefined(table.hitsperattackforclass[class])) {
         foreach (weaponref, hitsperattack in table.hitsperattackforclass[class]) {
-            vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, var_7731adef63e19b0c);
-            vehicle_damage_setvehiclehitdamagedataforweapon(var_7731adef63e19b0c, 100, weaponref);
+            vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, vehicleref);
+            vehicle_damage_setvehiclehitdamagedataforweapon(vehicleref, 100, weaponref);
         }
     }
-    if (isdefined(table.hitsperattackforvehicle[var_7731adef63e19b0c])) {
-        foreach (weaponref, hitsperattack in table.hitsperattackforvehicle[var_7731adef63e19b0c]) {
-            vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, var_7731adef63e19b0c);
-            vehicle_damage_setvehiclehitdamagedataforweapon(var_7731adef63e19b0c, 100, weaponref);
+    if (isdefined(table.hitsperattackforvehicle[vehicleref])) {
+        foreach (weaponref, hitsperattack in table.hitsperattackforvehicle[vehicleref]) {
+            vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, vehicleref);
+            vehicle_damage_setvehiclehitdamagedataforweapon(vehicleref, 100, weaponref);
         }
     }
 }
@@ -1839,18 +1839,18 @@ function vehicle_damage_onexitstateheavy(var_56182e19d2f0094f, data) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a96
 // Size: 0xc7
-function vehicle_damage_registerdefaultstates(var_7731adef63e19b0c) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, 1);
-    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate(var_7731adef63e19b0c, "light", 1);
+function vehicle_damage_registerdefaultstates(vehicleref) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
+    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate(vehicleref, "light", 1);
     var_d2e455d494f8d46e.onentercallback = &vehicle_damage_onenterstatelight;
     var_d2e455d494f8d46e.onexitcallback = &vehicle_damage_onexitstatelight;
-    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate(var_7731adef63e19b0c, "medium", 1);
+    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate(vehicleref, "medium", 1);
     var_d2e455d494f8d46e.onentercallback = &vehicle_damage_onenterstatemedium;
     var_d2e455d494f8d46e.onexitcallback = &vehicle_damage_onexitstatemedium;
-    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate(var_7731adef63e19b0c, "heavy", 1);
+    var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate(vehicleref, "heavy", 1);
     var_d2e455d494f8d46e.onentercallback = &vehicle_damage_onenterstateheavy;
     var_d2e455d494f8d46e.onexitcallback = &vehicle_damage_onexitstateheavy;
-    vehicle_damage_updatestatemaxhealthvalues(var_7731adef63e19b0c);
+    vehicle_damage_updatestatemaxhealthvalues(vehicleref);
 }
 
 // Namespace vehicle_damage/namespace_5a0f3ca265d3a4c8
@@ -1879,12 +1879,12 @@ function function_27ec7be8325efa3c(data) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c2d
 // Size: 0xb9
-function vehicle_damage_getmaxhealth(vehicle, var_7731adef63e19b0c) {
-    if (!isdefined(var_7731adef63e19b0c)) {
-        var_7731adef63e19b0c = vehicle function_d93ec4635290febd();
+function vehicle_damage_getmaxhealth(vehicle, vehicleref) {
+    if (!isdefined(vehicleref)) {
+        vehicleref = vehicle function_d93ec4635290febd();
     }
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, 1);
+    leveldata = vehicle_damage_getleveldata();
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
     if (!isdefined(var_e2818ad39a3341b4)) {
         if (isdefined(vehicle)) {
             return vehicle.maxhealth;
@@ -1898,7 +1898,7 @@ function vehicle_damage_getmaxhealth(vehicle, var_7731adef63e19b0c) {
         return undefined;
     }
     maxhealth = var_e2818ad39a3341b4.health;
-    heavystatehealthadd = vehicle_damage_getheavystatehealthadd(var_7731adef63e19b0c);
+    heavystatehealthadd = vehicle_damage_getheavystatehealthadd(vehicleref);
     if (isdefined(heavystatehealthadd)) {
         maxhealth = maxhealth + heavystatehealthadd;
     }
@@ -1909,12 +1909,12 @@ function vehicle_damage_getmaxhealth(vehicle, var_7731adef63e19b0c) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5cee
 // Size: 0xac
-function vehicle_damage_getpristinestateminhealth(vehicle, var_7731adef63e19b0c) {
-    if (!isdefined(var_7731adef63e19b0c)) {
-        var_7731adef63e19b0c = vehicle function_d93ec4635290febd();
+function vehicle_damage_getpristinestateminhealth(vehicle, vehicleref) {
+    if (!isdefined(vehicleref)) {
+        vehicleref = vehicle function_d93ec4635290febd();
     }
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, 1);
+    leveldata = vehicle_damage_getleveldata();
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
     if (!isdefined(var_e2818ad39a3341b4)) {
         return undefined;
     }
@@ -1922,7 +1922,7 @@ function vehicle_damage_getpristinestateminhealth(vehicle, var_7731adef63e19b0c)
         return undefined;
     }
     var_6ad9ad03dc2fd0a0 = var_e2818ad39a3341b4.health * 0.9;
-    heavystatehealthadd = vehicle_damage_getheavystatehealthadd(var_7731adef63e19b0c);
+    heavystatehealthadd = vehicle_damage_getheavystatehealthadd(vehicleref);
     if (isdefined(heavystatehealthadd)) {
         var_6ad9ad03dc2fd0a0 = var_6ad9ad03dc2fd0a0 + heavystatehealthadd;
     }
@@ -1936,19 +1936,19 @@ function vehicle_damage_getpristinestateminhealth(vehicle, var_7731adef63e19b0c)
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5da2
 // Size: 0x84
-function vehicle_damage_getheavystatemaxhealth(vehicle, var_7731adef63e19b0c) {
-    if (!isdefined(var_7731adef63e19b0c)) {
-        var_7731adef63e19b0c = vehicle function_d93ec4635290febd();
+function vehicle_damage_getheavystatemaxhealth(vehicle, vehicleref) {
+    if (!isdefined(vehicleref)) {
+        vehicleref = vehicle function_d93ec4635290febd();
     }
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+    leveldata = vehicle_damage_getleveldata();
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     if (!isdefined(var_e2818ad39a3341b4)) {
         return undefined;
     }
     if (!isdefined(var_e2818ad39a3341b4.health)) {
         return undefined;
     }
-    heavystatehealthadd = vehicle_damage_getheavystatehealthadd(var_7731adef63e19b0c);
+    heavystatehealthadd = vehicle_damage_getheavystatehealthadd(vehicleref);
     if (!isdefined(heavystatehealthadd) || heavystatehealthadd <= 0) {
         return undefined;
     }
@@ -1959,8 +1959,8 @@ function vehicle_damage_getheavystatemaxhealth(vehicle, var_7731adef63e19b0c) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e2e
 // Size: 0x150
-function vehicle_damage_updatestatemaxhealthvalues(var_7731adef63e19b0c) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function vehicle_damage_updatestatemaxhealthvalues(vehicleref) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     /#
         assertex(isdefined(var_e2818ad39a3341b4.health), "vehicle_damage_updateStateMaxHealthValues called on a vehicle whose level data has not assigned .health.");
     #/
@@ -1968,17 +1968,17 @@ function vehicle_damage_updatestatemaxhealthvalues(var_7731adef63e19b0c) {
     maxhealth = undefined;
     foreach (var_cb322750051a892b, var_47bdb61121b1ec92 in var_e2818ad39a3341b4.damagestatedata) {
         if (var_cb322750051a892b == "light") {
-            var_47bdb61121b1ec92.maxhealth = vehicle_damage_getpristinestateminhealth(undefined, var_7731adef63e19b0c);
+            var_47bdb61121b1ec92.maxhealth = vehicle_damage_getpristinestateminhealth(undefined, vehicleref);
             maxhealth = var_47bdb61121b1ec92.maxhealth;
         } else if (var_cb322750051a892b == "heavy") {
-            var_47bdb61121b1ec92.maxhealth = vehicle_damage_getheavystatemaxhealth(undefined, var_7731adef63e19b0c);
+            var_47bdb61121b1ec92.maxhealth = vehicle_damage_getheavystatemaxhealth(undefined, vehicleref);
             minhealth = var_47bdb61121b1ec92.maxhealth;
         }
     }
     var_47bdb61121b1ec92 = var_e2818ad39a3341b4.damagestatedata["medium"];
     if (isdefined(var_47bdb61121b1ec92)) {
         if (isdefined(minhealth) && isdefined(maxhealth)) {
-            ratio = vehicle_damage_getmediumstatehealthratio(var_7731adef63e19b0c);
+            ratio = vehicle_damage_getmediumstatehealthratio(vehicleref);
             if (isdefined(ratio)) {
                 var_47bdb61121b1ec92.maxhealth = int(math::lerp(minhealth, maxhealth, ratio));
             }
@@ -1990,12 +1990,12 @@ function vehicle_damage_updatestatemaxhealthvalues(var_7731adef63e19b0c) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f85
 // Size: 0x6c
-function vehicle_damage_getheavystatehealthadd(var_7731adef63e19b0c) {
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function vehicle_damage_getheavystatehealthadd(vehicleref) {
+    leveldata = vehicle_damage_getleveldata();
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     heavystatehealthadd = var_e2818ad39a3341b4.heavystatehealthadd;
     if (!isdefined(heavystatehealthadd)) {
-        heavystatehealthadd = var_962a30a9bb8c0f09.heavystatehealthadd;
+        heavystatehealthadd = leveldata.heavystatehealthadd;
     }
     if (!isdefined(heavystatehealthadd) || heavystatehealthadd <= 0) {
         return undefined;
@@ -2007,12 +2007,12 @@ function vehicle_damage_getheavystatehealthadd(var_7731adef63e19b0c) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ff9
 // Size: 0x6f
-function vehicle_damage_getmediumstatehealthratio(var_7731adef63e19b0c) {
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function vehicle_damage_getmediumstatehealthratio(vehicleref) {
+    leveldata = vehicle_damage_getleveldata();
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     mediumstatehealthratio = var_e2818ad39a3341b4.mediumstatehealthratio;
     if (!isdefined(mediumstatehealthratio)) {
-        mediumstatehealthratio = var_962a30a9bb8c0f09.mediumstatehealthratio;
+        mediumstatehealthratio = leveldata.mediumstatehealthratio;
     }
     if (!isdefined(mediumstatehealthratio) || mediumstatehealthratio <= 0 || mediumstatehealthratio > 1) {
         return undefined;
@@ -2140,8 +2140,8 @@ function function_e6ec777562579771(vehicle, seatid) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6653
 // Size: 0x69
-function function_14cc373f72a021a8(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_14cc373f72a021a8(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     var_cabb13caaf7baa1e = var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_cabb13caaf7baa1e;
     if (isdefined(var_cabb13caaf7baa1e)) {
         switch (var_cabb13caaf7baa1e) {
@@ -2157,8 +2157,8 @@ function function_14cc373f72a021a8(var_7731adef63e19b0c, tagname) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66c4
 // Size: 0x29
-function function_2265b277a0dad0f1(var_7731adef63e19b0c) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_2265b277a0dad0f1(vehicleref) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.var_aab9695c92b0ed96;
 }
 
@@ -2166,8 +2166,8 @@ function function_2265b277a0dad0f1(var_7731adef63e19b0c) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66f5
 // Size: 0x3d
-function function_f7df41d3ad15dca8(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_f7df41d3ad15dca8(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_da9f4cd603f44758;
 }
 
@@ -2175,8 +2175,8 @@ function function_f7df41d3ad15dca8(var_7731adef63e19b0c, tagname) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x673a
 // Size: 0x3d
-function function_bad6c0e32ff1e092(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_bad6c0e32ff1e092(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_b4fccc158c681073;
 }
 
@@ -2184,8 +2184,8 @@ function function_bad6c0e32ff1e092(var_7731adef63e19b0c, tagname) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x677f
 // Size: 0x3d
-function function_dde06c2157ec8895(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_dde06c2157ec8895(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_1c60586652067d4c;
 }
 
@@ -2193,8 +2193,8 @@ function function_dde06c2157ec8895(var_7731adef63e19b0c, tagname) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x67c4
 // Size: 0x45
-function function_8a0e1b95abc01e56(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_8a0e1b95abc01e56(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return function_53c4c53197386572(var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_f0b290e6673ef286, 30);
 }
 
@@ -2202,8 +2202,8 @@ function function_8a0e1b95abc01e56(var_7731adef63e19b0c, tagname) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6811
 // Size: 0x3e
-function function_3df56ded0597eb6e(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_3df56ded0597eb6e(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return istrue(var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_9983055e997835be);
 }
 
@@ -2211,8 +2211,8 @@ function function_3df56ded0597eb6e(var_7731adef63e19b0c, tagname) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6857
 // Size: 0x51
-function function_c9f618f05861c2c5(var_7731adef63e19b0c, tagname) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_c9f618f05861c2c5(vehicleref, tagname) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     reduction = var_e2818ad39a3341b4.var_aab9695c92b0ed96[tagname].var_84872288b2e0ce95;
     if (!isdefined(reduction)) {
         reduction = 0;
@@ -2396,8 +2396,8 @@ function function_786c7ec25aad5005(vehicle, damagedata) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7155
 // Size: 0xdf
-function function_7a5070220fc8ce9e(var_7731adef63e19b0c, var_aab9695c92b0ed96) {
-    var_3102ea0dd30bbf11 = function_32b9b5d07bb56c31(var_7731adef63e19b0c);
+function function_7a5070220fc8ce9e(vehicleref, var_aab9695c92b0ed96) {
+    var_3102ea0dd30bbf11 = function_32b9b5d07bb56c31(vehicleref);
     var_dfdbcc779477d31c = [];
     foreach (tag, part in var_3102ea0dd30bbf11) {
         if (istrue(part.inactive)) {
@@ -2419,15 +2419,15 @@ function function_7a5070220fc8ce9e(var_7731adef63e19b0c, var_aab9695c92b0ed96) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x723c
 // Size: 0xa8
-function function_cf63db12f07abf78(var_7731adef63e19b0c, var_aab9695c92b0ed96) {
+function function_cf63db12f07abf78(vehicleref, var_aab9695c92b0ed96) {
     if (!isdefined(var_aab9695c92b0ed96)) {
         return;
     }
     foreach (tagname, var_1c09c3e40955f379 in var_aab9695c92b0ed96) {
-        if (function_600ff5df9dbf294(var_7731adef63e19b0c, tagname, var_1c09c3e40955f379)) {
+        if (function_600ff5df9dbf294(vehicleref, tagname, var_1c09c3e40955f379)) {
             var_1c09c3e40955f379.var_a776f097eb36e500 = 0;
             function_66ac97eba6b35b4a(self, tagname, undefined);
-        } else if (function_e531ad775dcbca22(var_7731adef63e19b0c, tagname, var_1c09c3e40955f379)) {
+        } else if (function_e531ad775dcbca22(vehicleref, tagname, var_1c09c3e40955f379)) {
             var_1c09c3e40955f379.var_a776f097eb36e500 = 0;
             function_77db32aa48a42a76(self, tagname, undefined);
         }
@@ -2438,8 +2438,8 @@ function function_cf63db12f07abf78(var_7731adef63e19b0c, var_aab9695c92b0ed96) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72eb
 // Size: 0x38
-function function_e531ad775dcbca22(var_7731adef63e19b0c, var_151b23f6c7d09cf8, var_8178911a49ba9be9) {
-    var_65e4a4e3e5e2766f = function_8a0e1b95abc01e56(var_7731adef63e19b0c, var_151b23f6c7d09cf8);
+function function_e531ad775dcbca22(vehicleref, var_151b23f6c7d09cf8, var_8178911a49ba9be9) {
+    var_65e4a4e3e5e2766f = function_8a0e1b95abc01e56(vehicleref, var_151b23f6c7d09cf8);
     return randomint(100) < var_65e4a4e3e5e2766f;
 }
 
@@ -2447,8 +2447,8 @@ function function_e531ad775dcbca22(var_7731adef63e19b0c, var_151b23f6c7d09cf8, v
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x732b
 // Size: 0x2f
-function function_600ff5df9dbf294(var_7731adef63e19b0c, var_151b23f6c7d09cf8, var_8178911a49ba9be9) {
-    return function_3df56ded0597eb6e(var_7731adef63e19b0c, var_151b23f6c7d09cf8) || function_853c0063f08b55e1(var_8178911a49ba9be9);
+function function_600ff5df9dbf294(vehicleref, var_151b23f6c7d09cf8, var_8178911a49ba9be9) {
+    return function_3df56ded0597eb6e(vehicleref, var_151b23f6c7d09cf8) || function_853c0063f08b55e1(var_8178911a49ba9be9);
 }
 
 // Namespace vehicle_damage/namespace_5a0f3ca265d3a4c8
@@ -2463,8 +2463,8 @@ function function_853c0063f08b55e1(var_1c09c3e40955f379) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7394
 // Size: 0x29
-function function_90b374d856d14373(var_7731adef63e19b0c) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_90b374d856d14373(vehicleref) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.var_8490f7216313a83;
 }
 
@@ -2522,7 +2522,7 @@ function vehicle_damage_beginburndown(data) {
             wait(burndowntime);
             self.burningdown = undefined;
             namespace_74465391b3cf76b::checkcarpuncherprogressgeneric();
-            thread function_ab08028468ab68f9(data, 0);
+            thread vehicle_explode(data, 0);
             return;
         }
     }
@@ -2577,15 +2577,15 @@ function vehicle_damage_isburningdown() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76d2
 // Size: 0x7e
-function vehicle_damage_getburndowntime(var_7731adef63e19b0c) {
+function vehicle_damage_getburndowntime(vehicleref) {
     if (isdefined(self.burndowntime)) {
         return self.burndowntime;
     }
-    var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c);
+    leveldata = vehicle_damage_getleveldata();
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     burndowntime = var_e2818ad39a3341b4.burndowntime;
     if (!isdefined(burndowntime)) {
-        burndowntime = var_962a30a9bb8c0f09.burndowntime;
+        burndowntime = leveldata.burndowntime;
     }
     if (!isdefined(burndowntime) || burndowntime <= 0) {
         return undefined;
@@ -2619,10 +2619,10 @@ function vehicle_damage_shouldskipburndown(data) {
     if (isdefined(data.objweapon) && !isnullweapon(data.objweapon) && isdefined(function_d93ec4635290febd())) {
         var_d6961ef4ab70843c = undefined;
         weaponname = data.objweapon.basename;
-        var_962a30a9bb8c0f09 = vehicle_damage_getleveldata();
-        table = var_962a30a9bb8c0f09.table;
-        if (isdefined(var_962a30a9bb8c0f09.table.skipburndownforvehicle[vehiclename])) {
-            var_d6961ef4ab70843c = var_962a30a9bb8c0f09.table.skipburndownforvehicle[vehiclename][weaponname];
+        leveldata = vehicle_damage_getleveldata();
+        table = leveldata.table;
+        if (isdefined(leveldata.table.skipburndownforvehicle[vehiclename])) {
+            var_d6961ef4ab70843c = leveldata.table.skipburndownforvehicle[vehiclename][weaponname];
         }
         if (isdefined(var_d6961ef4ab70843c)) {
             return var_d6961ef4ab70843c;
@@ -2632,8 +2632,8 @@ function vehicle_damage_shouldskipburndown(data) {
             if (!isdefined(classname) || classname == "none") {
                 return 1;
             }
-            if (isdefined(var_962a30a9bb8c0f09.table.skipburndownforclass[classname])) {
-                var_d6961ef4ab70843c = var_962a30a9bb8c0f09.table.skipburndownforclass[classname][weaponname];
+            if (isdefined(leveldata.table.skipburndownforclass[classname])) {
+                var_d6961ef4ab70843c = leveldata.table.skipburndownforclass[classname][weaponname];
             }
             if (isdefined(var_d6961ef4ab70843c)) {
                 return var_d6961ef4ab70843c;
@@ -2651,16 +2651,16 @@ function vehicle_damage_shouldskipburndown(data) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7947
 // Size: 0x1d
-function function_7aaa7ae503292f43(var_7731adef63e19b0c) {
-    return vehicle_getleveldataforvehicle(var_7731adef63e19b0c).weapon;
+function function_7aaa7ae503292f43(vehicleref) {
+    return vehicle_getleveldataforvehicle(vehicleref).weapon;
 }
 
 // Namespace vehicle_damage/namespace_5a0f3ca265d3a4c8
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x796c
 // Size: 0x5a
-function function_6c17abf5c5d88ca(var_7731adef63e19b0c) {
-    data = vehicle_getleveldataforvehicle(var_7731adef63e19b0c);
+function function_6c17abf5c5d88ca(vehicleref) {
+    data = vehicle_getleveldataforvehicle(vehicleref);
     return ter_op(isdefined(data.var_fb41d1ca75009bf0.weapon), data.var_fb41d1ca75009bf0.weapon, data.weapon);
 }
 
@@ -2903,9 +2903,9 @@ function vehicle_damage_givescoreandxp(scoreevent, award, data, var_9d9017e622fd
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8451
 // Size: 0x4e
-function vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, var_21e99fcec7e19345, var_7731adef63e19b0c) {
+function vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, var_21e99fcec7e19345, vehicleref) {
     if (issharedfuncdefined("vehicle_damage", "setWeaponClassModDamageForVehicle")) {
-        [[ getsharedfunc("vehicle_damage", "setWeaponClassModDamageForVehicle") ]](weaponclass, mod, var_21e99fcec7e19345, var_7731adef63e19b0c);
+        [[ getsharedfunc("vehicle_damage", "setWeaponClassModDamageForVehicle") ]](weaponclass, mod, var_21e99fcec7e19345, vehicleref);
     }
 }
 
@@ -2933,9 +2933,9 @@ function vehicle_damage_setweaponhitdamagedata(weaponref, hitsperattack) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8535
 // Size: 0x3c
-function vehicle_damage_setvehiclehitdamagedata(var_7731adef63e19b0c, hitstokill) {
+function vehicle_damage_setvehiclehitdamagedata(vehicleref, hitstokill) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
-        [[ getsharedfunc("vehicle_damage", "setVehicleHitDamageData") ]](var_7731adef63e19b0c, hitstokill);
+        [[ getsharedfunc("vehicle_damage", "setVehicleHitDamageData") ]](vehicleref, hitstokill);
     }
 }
 
@@ -2943,9 +2943,9 @@ function vehicle_damage_setvehiclehitdamagedata(var_7731adef63e19b0c, hitstokill
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8578
 // Size: 0x45
-function vehicle_damage_setvehiclehitdamagedataforweapon(var_7731adef63e19b0c, hitstokill, weaponref) {
+function vehicle_damage_setvehiclehitdamagedataforweapon(vehicleref, hitstokill, weaponref) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageDataForWeapon")) {
-        [[ getsharedfunc("vehicle_damage", "setVehicleHitDamageDataForWeapon") ]](var_7731adef63e19b0c, hitstokill, weaponref);
+        [[ getsharedfunc("vehicle_damage", "setVehicleHitDamageDataForWeapon") ]](vehicleref, hitstokill, weaponref);
     }
 }
 
@@ -2953,9 +2953,9 @@ function vehicle_damage_setvehiclehitdamagedataforweapon(var_7731adef63e19b0c, h
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x85c4
 // Size: 0x45
-function vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, var_7731adef63e19b0c) {
+function vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, vehicleref) {
     if (issharedfuncdefined("vehicle_damage", "setWeaponHitDamageDataForVehicle")) {
-        [[ getsharedfunc("vehicle_damage", "setWeaponHitDamageDataForVehicle") ]](weaponref, hitsperattack, var_7731adef63e19b0c);
+        [[ getsharedfunc("vehicle_damage", "setWeaponHitDamageDataForVehicle") ]](weaponref, hitsperattack, vehicleref);
     }
 }
 
@@ -2963,9 +2963,9 @@ function vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattac
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8610
 // Size: 0x3c
-function vehicle_damage_setpremoddamagecallback(var_7731adef63e19b0c, callback) {
+function vehicle_damage_setpremoddamagecallback(vehicleref, callback) {
     if (issharedfuncdefined("vehicle_damage", "setPreModDamageCallback")) {
-        [[ getsharedfunc("vehicle_damage", "setPreModDamageCallback") ]](var_7731adef63e19b0c, callback);
+        [[ getsharedfunc("vehicle_damage", "setPreModDamageCallback") ]](vehicleref, callback);
     }
 }
 
@@ -2973,9 +2973,9 @@ function vehicle_damage_setpremoddamagecallback(var_7731adef63e19b0c, callback) 
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8653
 // Size: 0x3c
-function vehicle_damage_setpostmoddamagecallback(var_7731adef63e19b0c, callback) {
+function vehicle_damage_setpostmoddamagecallback(vehicleref, callback) {
     if (issharedfuncdefined("vehicle_damage", "setPostModDamageCallback")) {
-        [[ getsharedfunc("vehicle_damage", "setPostModDamageCallback") ]](var_7731adef63e19b0c, callback);
+        [[ getsharedfunc("vehicle_damage", "setPostModDamageCallback") ]](vehicleref, callback);
     }
 }
 
@@ -2983,9 +2983,9 @@ function vehicle_damage_setpostmoddamagecallback(var_7731adef63e19b0c, callback)
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8696
 // Size: 0x3c
-function vehicle_damage_setdeathcallback(var_7731adef63e19b0c, callback) {
+function vehicle_damage_setdeathcallback(vehicleref, callback) {
     if (issharedfuncdefined("vehicle_damage", "setDeathCallback")) {
-        [[ getsharedfunc("vehicle_damage", "setDeathCallback") ]](var_7731adef63e19b0c, callback);
+        [[ getsharedfunc("vehicle_damage", "setDeathCallback") ]](vehicleref, callback);
     }
 }
 
@@ -2993,8 +2993,8 @@ function vehicle_damage_setdeathcallback(var_7731adef63e19b0c, callback) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x86d9
 // Size: 0x5b
-function function_e5cde837844c6112(var_7731adef63e19b0c, seatid, damagescale) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, 1);
+function function_e5cde837844c6112(vehicleref, seatid, damagescale) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
     if (!isdefined(var_e2818ad39a3341b4.var_b7b1ddcaaf4bf2db)) {
         var_e2818ad39a3341b4.var_b7b1ddcaaf4bf2db = [];
     }
@@ -3005,8 +3005,8 @@ function function_e5cde837844c6112(var_7731adef63e19b0c, seatid, damagescale) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x873b
 // Size: 0x5b
-function function_42b7542e79da627f(var_7731adef63e19b0c, seatid, var_512d1bc7add3eaa3) {
-    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(var_7731adef63e19b0c, 1);
+function function_42b7542e79da627f(vehicleref, seatid, var_512d1bc7add3eaa3) {
+    var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
     if (!isdefined(var_e2818ad39a3341b4.var_8f793c5830904e92)) {
         var_e2818ad39a3341b4.var_8f793c5830904e92 = [];
     }

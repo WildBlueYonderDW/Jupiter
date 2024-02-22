@@ -288,7 +288,7 @@ function getenemyplayers(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1118
 // Size: 0xcc
-function getSquadmates(var_68bb1f110ec06a58, var_d9aa850e7ee12ca3, var_7102f45d5f0b5834) {
+function getsquadmates(var_68bb1f110ec06a58, var_d9aa850e7ee12ca3, var_7102f45d5f0b5834) {
     if (function_d0e67bb0e7f430f8(var_68bb1f110ec06a58, var_d9aa850e7ee12ca3)) {
         if (istrue(var_7102f45d5f0b5834)) {
             var_607da387f3617ed1 = [];
@@ -371,7 +371,7 @@ function function_dd622cd64f483958(teamref) {
         level.teamdata[teamref]["teamName"] = bundle.name;
     }
     if (!isdefined(level.teamdata[teamref]["shortName"])) {
-        level.teamdata[teamref]["shortName"] = bundle.shortName;
+        level.teamdata[teamref]["shortName"] = bundle.shortname;
     }
     if (!isdefined(level.teamdata[teamref]["teamIcon"])) {
         level.teamdata[teamref]["teamIcon"] = bundle.var_493bf0f1c7cf4ad1;
@@ -383,7 +383,7 @@ function function_dd622cd64f483958(teamref) {
         level.teamdata[teamref]["soundInfix"] = bundle.var_d5fbbcddd0fdfe3b;
     }
     if (!isdefined(level.teamdata[teamref]["customizationInfix"])) {
-        level.teamdata[teamref]["customizationInfix"] = bundle.customizationInfix;
+        level.teamdata[teamref]["customizationInfix"] = bundle.customizationinfix;
     }
     if (!isdefined(level.teamdata[teamref]["superFaction"])) {
         level.teamdata[teamref]["superFaction"] = bundle.var_47eff39aeeb815fb;
@@ -409,7 +409,7 @@ function getteamname(teamref) {
 function getteamshortname(teamref) {
     if (!isdefined(level.teamdata[teamref]["shortName"])) {
         faction = getfaction(teamref);
-        level.teamdata[teamref]["shortName"] = function_716b04a356073ae5(faction).shortName;
+        level.teamdata[teamref]["shortName"] = function_716b04a356073ae5(faction).shortname;
     }
     return level.teamdata[teamref]["shortName"];
 }
@@ -457,7 +457,7 @@ function getteamvoiceinfix(teamref) {
 function getcustomizationprefix(teamref) {
     if (!isdefined(level.teamdata[teamref]["customizationInfix"])) {
         faction = getfaction(teamref);
-        level.teamdata[teamref]["customizationInfix"] = function_716b04a356073ae5(faction).customizationInfix;
+        level.teamdata[teamref]["customizationInfix"] = function_716b04a356073ae5(faction).customizationinfix;
     }
     return level.teamdata[teamref]["customizationInfix"];
 }

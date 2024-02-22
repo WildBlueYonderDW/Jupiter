@@ -113,7 +113,7 @@ function private function_908fc5a1f259c42c(bundlename) {
     foreach (entry in bundle.var_2fb0e88235a5834f) {
         useweapon = namespace_3c37cb17ade254d::function_53c4c53197386572(entry.var_b48a3f44acc6764, "");
         var_a1093166de09e6b8 = namespace_3c37cb17ade254d::function_53c4c53197386572(entry.var_77c4f32bb26a1a85, "");
-        lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(var_a1093166de09e6b8);
+        lootid = namespace_38b993c4618e76cd::getlootidfromref(var_a1093166de09e6b8);
         if (!isdefined(lootid)) {
             function_511041aef993713e("parseToolUseBundles: cannot find loot id for " + var_a1093166de09e6b8);
         } else {
@@ -121,7 +121,7 @@ function private function_908fc5a1f259c42c(bundlename) {
             settings.lootid = lootid;
             settings.var_a1093166de09e6b8 = var_a1093166de09e6b8;
             settings.useweapon = useweapon;
-            settings.var_5730c0aa523383e = function_4d102b9311261fd5(entry.var_5730c0aa523383e);
+            settings.stances = function_4d102b9311261fd5(entry.stances);
             settings.var_1ec33e1708fd3e55 = function_89b3458a046bf612(entry.var_1ec33e1708fd3e55);
             var_2fb0e88235a5834f[var_2fb0e88235a5834f.size] = settings;
         }
@@ -151,13 +151,13 @@ function private function_89b3458a046bf612(data) {
 // Checksum 0x0, Offset: 0xc33
 // Size: 0x57
 function private function_4d102b9311261fd5(data) {
-    var_5730c0aa523383e = [];
+    stances = [];
     if (isdefined(data)) {
-        var_5730c0aa523383e["stand"] = data.var_a14c4538b773d669;
-        var_5730c0aa523383e["crouch"] = data.var_ae3c539e6ade71c5;
-        var_5730c0aa523383e["prone"] = data.var_9787b93301a495d7;
+        stances["stand"] = data.var_a14c4538b773d669;
+        stances["crouch"] = data.var_ae3c539e6ade71c5;
+        stances["prone"] = data.var_9787b93301a495d7;
     }
-    return var_5730c0aa523383e;
+    return stances;
 }
 
 // Namespace namespace_e192b53669adb26d/namespace_8a301a9e06bc923e
@@ -394,7 +394,7 @@ function private function_a3c0c6ebb66b718e(player, instance, useduration, var_28
     #/
     var_a1093166de09e6b8 = var_643cb175c27e8967.var_a1093166de09e6b8;
     var_69f9f1a5d8cf3187 = var_643cb175c27e8967.useweapon;
-    player function_bffd72a3766031d2(1, var_643cb175c27e8967.var_5730c0aa523383e);
+    player function_bffd72a3766031d2(1, var_643cb175c27e8967.stances);
     player thread function_d8106ff3211f102d(instance, var_28fc67990ae8169e);
     useweapon = makeweapon(var_69f9f1a5d8cf3187);
     /#
@@ -469,10 +469,10 @@ function private function_7db3f060257e57ca(useweapon, var_28fc67990ae8169e, var_
         assert(lastweapon != useweapon);
     #/
     self.lastnonuseweapon = lastweapon;
-    var_d21dad9ea4d9cc0d = 0;
+    setammo = 0;
     _giveweapon(useweapon, undefined, undefined, 0);
-    self setweaponammostock(useweapon, var_d21dad9ea4d9cc0d);
-    self setweaponammoclip(useweapon, var_d21dad9ea4d9cc0d);
+    self setweaponammostock(useweapon, setammo);
+    self setweaponammoclip(useweapon, setammo);
     thread namespace_19b4203b51d56488::switchtouseweapon(useweapon, switchimmediate);
     thread function_4b2a64d118730cb7(var_643cb175c27e8967);
     function_1652909a360b82eb(var_28fc67990ae8169e);
@@ -501,9 +501,9 @@ function private function_a1d7b3bec1fdac12(useweapon, var_79710492b71b9e81, var_
     }
     var_c9f07c0481b9634a = 1;
     if (istrue(var_79710492b71b9e81)) {
-        var_d21dad9ea4d9cc0d = ter_op(istrue(var_db3cade94fa044b4), 0, 1);
-        self setweaponammostock(useweapon, var_d21dad9ea4d9cc0d);
-        self setweaponammoclip(useweapon, var_d21dad9ea4d9cc0d);
+        setammo = ter_op(istrue(var_db3cade94fa044b4), 0, 1);
+        self setweaponammostock(useweapon, setammo);
+        self setweaponammoclip(useweapon, setammo);
         var_c9f07c0481b9634a = 0;
     }
     if (namespace_df5cfdbe6e2d3812::isswitchingtoweaponwithmonitoring(useweapon)) {
@@ -653,7 +653,7 @@ function private function_9f662288c13b7217(var_9e788d8828649a5c, player) {
 // Checksum 0x0, Offset: 0x1cd7
 // Size: 0x137
 function private function_bffd72a3766031d2(var_8fda2f947e5c9e14, var_6edcc4c0efa28272) {
-    var_48497d676003002b = [0:"allow_movement", 1:"allow_jump", 2:"melee", 3:"offhand_primary_weapons", 4:"offhand_secondary_weapons", 5:"crouch", 6:"prone", 7:"stand"];
+    controls = [0:"allow_movement", 1:"allow_jump", 2:"melee", 3:"offhand_primary_weapons", 4:"offhand_secondary_weapons", 5:"crouch", 6:"prone", 7:"stand"];
     if (istrue(var_8fda2f947e5c9e14)) {
         var_d4dda39d49fc90d1 = self getstance();
         /#
@@ -662,20 +662,20 @@ function private function_bffd72a3766031d2(var_8fda2f947e5c9e14, var_6edcc4c0efa
         desiredstance = ter_op(isdefined(var_6edcc4c0efa28272) && istrue(var_6edcc4c0efa28272[var_d4dda39d49fc90d1]), var_d4dda39d49fc90d1, "stand");
         switch (desiredstance) {
         case #"hash_c6775c88e38f7803":
-            var_48497d676003002b = array_remove(var_48497d676003002b, "stand");
+            controls = array_remove(controls, "stand");
             break;
         case #"hash_d91940431ed7c605":
-            var_48497d676003002b = array_remove(var_48497d676003002b, "prone");
+            controls = array_remove(controls, "prone");
             break;
         case #"hash_3fed0cbd303639eb":
-            var_48497d676003002b = array_remove(var_48497d676003002b, "crouch");
+            controls = array_remove(controls, "crouch");
             break;
         default:
             break;
         }
-        val::function_59c053b89257bc95("exgm_tool_interaction", var_48497d676003002b, 0);
+        val::function_59c053b89257bc95("exgm_tool_interaction", controls, 0);
     } else {
-        val::function_38f73441260ce622("exgm_tool_interaction", var_48497d676003002b);
+        val::function_38f73441260ce622("exgm_tool_interaction", controls);
     }
 }
 

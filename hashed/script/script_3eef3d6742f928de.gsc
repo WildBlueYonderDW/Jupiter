@@ -264,8 +264,8 @@ function onstartgametype() {
 function updategametypedvars() {
     namespace_310ba947928891df::updatecommongametypedvars();
     level.var_47e0745baff5b43f = dvarintvalue("newObjectiveRoundCount", 2, 0, 10);
-    level.zoneHideTime = dvarfloatvalue("zoneHideTime", 120, 0, 300);
-    level.zoneLockedTime = dvarfloatvalue("zoneLockedTime", 120, 0, 300);
+    level.zonehidetime = dvarfloatvalue("zoneHideTime", 120, 0, 300);
+    level.zonelockedtime = dvarfloatvalue("zoneLockedTime", 120, 0, 300);
     level.zonecapturetime = dvarfloatvalue("zoneCaptureTime", 15, 0, 60);
     level.objectivescaler = dvarfloatvalue("objScalar", 1, 1, 10);
     level.pausemodetimer = 0;
@@ -516,7 +516,7 @@ function runobjectives() {
         level.objectives[fob.trigger.gameobject.objectivekey] = fob.trigger.gameobject;
     }
     setomnvar("ui_num_dom_flags", level.allfobs.size);
-    if (level.zoneHideTime == 0) {
+    if (level.zonehidetime == 0) {
         level thread objective_manageobjectivesintrovisibility();
     }
     level thread function_f73cab6ec2fe1638();
@@ -531,8 +531,8 @@ function runobjectives() {
 function function_f73cab6ec2fe1638() {
     level endon("game_ended");
     namespace_4b0406965e556711::gameflagwait("prematch_done");
-    if (level.zoneHideTime > 0) {
-        wait(level.zoneHideTime);
+    if (level.zonehidetime > 0) {
+        wait(level.zonehidetime);
     }
     foreach (fob in level.allfobs) {
         fob.trigger.gameobject namespace_19b4203b51d56488::setvisibleteam("any");
@@ -549,14 +549,14 @@ function function_f73cab6ec2fe1638() {
 function allowobjectiveuseaftermatchstart() {
     level endon("game_ended");
     namespace_4b0406965e556711::gameflagwait("prematch_done");
-    if (level.zoneLockedTime > 0) {
+    if (level.zonelockedtime > 0) {
         foreach (fob in level.allfobs) {
         }
-        var_8c0f071f480a9d9a = int(gettime() + level.zoneLockedTime * 1000);
+        var_8c0f071f480a9d9a = int(gettime() + level.zonelockedtime * 1000);
         setomnvar("ui_hardpoint_timer", var_8c0f071f480a9d9a);
         setomnvar("ui_hq_status", 1);
         setomnvar("ui_hq_ownerteam", -1);
-        wait(level.zoneLockedTime);
+        wait(level.zonelockedtime);
     }
     setomnvar("ui_hardpoint_timer", 0);
     setomnvar("ui_hq_status", -1);
@@ -1001,7 +1001,7 @@ function onplayerconnect() {
     thread namespace_3bcd40a3005712ec::br_ammo_player_init();
     namespace_d19129e4fa5d176::function_a16868d4dcd81a4b();
     if (!isdefined(self.pers["gamemodeLoadout"])) {
-        self.pers["gamemodeLoadout"] = level.gamemodeLoadout;
+        self.pers["gamemodeLoadout"] = level.gamemodeloadout;
     }
 }
 
@@ -1064,29 +1064,29 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
 // Checksum 0x0, Offset: 0x45eb
 // Size: 0x1da
 function function_8731c366897e87d8() {
-    level.gamemodeLoadout["loadoutArchetype"] = "archetype_assault";
-    level.gamemodeLoadout["loadoutPrimary"] = "iw9_pi_golf17";
-    level.gamemodeLoadout["loadoutPrimaryAttachment"] = "none";
-    level.gamemodeLoadout["loadoutPrimaryAttachment2"] = "none";
-    level.gamemodeLoadout["loadoutPrimaryCamo"] = "none";
-    level.gamemodeLoadout["loadoutPrimaryReticle"] = "none";
-    level.gamemodeLoadout["loadoutPrimaryVariantID"] = 0;
-    level.gamemodeLoadout["loadoutSecondary"] = "none";
-    level.gamemodeLoadout["loadoutSecondaryAttachment"] = "none";
-    level.gamemodeLoadout["loadoutSecondaryAttachment2"] = "none";
-    level.gamemodeLoadout["loadoutSecondaryCamo"] = "none";
-    level.gamemodeLoadout["loadoutSecondaryReticle"] = "none";
-    level.gamemodeLoadout["loadoutSecondaryVariantID"] = 0;
-    level.gamemodeLoadout["loadoutEquipmentPrimary"] = "none";
-    level.gamemodeLoadout["loadoutEquipmentSecondary"] = "none";
-    level.gamemodeLoadout["loadoutFieldUpgrade1"] = "none";
-    level.gamemodeLoadout["loadoutFieldUpgrade2"] = "none";
-    level.gamemodeLoadout["loadoutStreakType"] = "assault";
-    level.gamemodeLoadout["loadoutKillstreak1"] = "none";
-    level.gamemodeLoadout["loadoutKillstreak2"] = "none";
-    level.gamemodeLoadout["loadoutKillstreak3"] = "none";
-    level.gamemodeLoadout["loadoutPerks"] = [];
-    level.gamemodeLoadout["loadoutGesture"] = "playerData";
+    level.gamemodeloadout["loadoutArchetype"] = "archetype_assault";
+    level.gamemodeloadout["loadoutPrimary"] = "iw9_pi_golf17";
+    level.gamemodeloadout["loadoutPrimaryAttachment"] = "none";
+    level.gamemodeloadout["loadoutPrimaryAttachment2"] = "none";
+    level.gamemodeloadout["loadoutPrimaryCamo"] = "none";
+    level.gamemodeloadout["loadoutPrimaryReticle"] = "none";
+    level.gamemodeloadout["loadoutPrimaryVariantID"] = 0;
+    level.gamemodeloadout["loadoutSecondary"] = "none";
+    level.gamemodeloadout["loadoutSecondaryAttachment"] = "none";
+    level.gamemodeloadout["loadoutSecondaryAttachment2"] = "none";
+    level.gamemodeloadout["loadoutSecondaryCamo"] = "none";
+    level.gamemodeloadout["loadoutSecondaryReticle"] = "none";
+    level.gamemodeloadout["loadoutSecondaryVariantID"] = 0;
+    level.gamemodeloadout["loadoutEquipmentPrimary"] = "none";
+    level.gamemodeloadout["loadoutEquipmentSecondary"] = "none";
+    level.gamemodeloadout["loadoutFieldUpgrade1"] = "none";
+    level.gamemodeloadout["loadoutFieldUpgrade2"] = "none";
+    level.gamemodeloadout["loadoutStreakType"] = "assault";
+    level.gamemodeloadout["loadoutKillstreak1"] = "none";
+    level.gamemodeloadout["loadoutKillstreak2"] = "none";
+    level.gamemodeloadout["loadoutKillstreak3"] = "none";
+    level.gamemodeloadout["loadoutPerks"] = [];
+    level.gamemodeloadout["loadoutGesture"] = "playerData";
 }
 
 // Namespace gwai/namespace_61438684387591a2
@@ -1314,7 +1314,7 @@ function function_8f1b9042d7fdfcda() {
                 if (isdefined(var_ef178bb38661ff1b)) {
                     spawnorigin = var_ef178bb38661ff1b.origin;
                 }
-                agent = ai_mp_requestSpawnAgent(aitype, spawnorigin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, undefined, undefined, undefined, 1, 1);
+                agent = ai_mp_requestspawnagent(aitype, spawnorigin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, undefined, undefined, undefined, 1, 1);
                 if (isdefined(agent)) {
                     namespace_310ba947928891df::function_35c195df2ba46725(agent, "team_hundred_ninety_five");
                     if (isdefined(var_ef178bb38661ff1b)) {
@@ -1343,7 +1343,7 @@ function function_8f1b9042d7fdfcda() {
                 if (isdefined(var_ef178bb38661ff1b)) {
                     spawnorigin = var_ef178bb38661ff1b.origin;
                 }
-                agent = ai_mp_requestSpawnAgent("actor_enemy_mp_jugg_aq", spawnorigin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1, 1);
+                agent = ai_mp_requestspawnagent("actor_enemy_mp_jugg_aq", spawnorigin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1, 1);
                 if (isdefined(agent)) {
                     namespace_310ba947928891df::function_35c195df2ba46725(agent, "team_hundred_ninety_five");
                     namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
@@ -1390,7 +1390,7 @@ function function_d4ed75580b9194a4() {
             spawnorigin = var_5836c6d53a5f99a2[0].origin;
             groupname = function_78759441c259f58a(spawnorigin);
             aitype = function_d5bc07eabf352abb();
-            agent = ai_mp_requestSpawnAgent(aitype, spawnorigin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, undefined, undefined, undefined, 1, 1);
+            agent = ai_mp_requestspawnagent(aitype, spawnorigin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, undefined, undefined, undefined, 1, 1);
             if (isdefined(agent)) {
                 namespace_310ba947928891df::function_35c195df2ba46725(agent, "team_hundred_ninety_five");
                 agent thread namespace_2000a83505151e5b::function_9bbf1713a14fa580(agent, 1024, 512);
@@ -1418,7 +1418,7 @@ function function_a30a48f0c1a403ec(objectivekey, team, numagents, var_40e875a042
     if (numagents > 0) {
         for (i = 0; i < numagents; i++) {
             aitype = function_d5bc07eabf352abb();
-            agent = ai_mp_requestSpawnAgent(aitype, obj.trigger.origin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, team, undefined, undefined, 1, 1);
+            agent = ai_mp_requestspawnagent(aitype, obj.trigger.origin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, team, undefined, undefined, 1, 1);
             if (isdefined(agent)) {
                 namespace_310ba947928891df::function_35c195df2ba46725(agent, "team_hundred_ninety_five");
                 if (var_f1548c57038e1b7a.size > 0) {
@@ -1444,7 +1444,7 @@ function function_a30a48f0c1a403ec(objectivekey, team, numagents, var_40e875a042
     }
     if (var_40e875a042b82875 > 0) {
         for (i = 0; i < var_40e875a042b82875; i++) {
-            agent = ai_mp_requestSpawnAgent("actor_enemy_mp_jugg_aq", obj.trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1, 1);
+            agent = ai_mp_requestspawnagent("actor_enemy_mp_jugg_aq", obj.trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, undefined, undefined, undefined, 1, 1);
             if (isdefined(agent)) {
                 namespace_310ba947928891df::function_35c195df2ba46725(agent, "team_hundred_ninety_five");
                 namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
@@ -1473,7 +1473,7 @@ function function_a30a48f0c1a403ec(objectivekey, team, numagents, var_40e875a042
 function function_3b97b97e14948c02(var_34ce337e073a0c34, var_93390a6953905fef) {
     var_9b3bb378db91cf83 = spawnstruct();
     var_9b3bb378db91cf83.origin = var_34ce337e073a0c34;
-    var_4f922af45d0cac6c = sortbydistance(level.heliReinforceStruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
+    var_4f922af45d0cac6c = sortbydistance(level.helireinforcestruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
     pathnode = namespace_7ae25d9e5d5a28ef::function_321665dcdcbf401e(var_4f922af45d0cac6c, var_34ce337e073a0c34);
     if (isdefined(pathnode)) {
         return pathnode;
@@ -1571,7 +1571,7 @@ function function_9cd290910c24d4d3() {
     self.pers["br_ammo"] = self.br_ammo;
     ref = namespace_1a507865f681850e::getcurrentequipment("primary");
     var_212e6b7d207a0089 = namespace_1a507865f681850e::getequipmentslotammo("primary");
-    lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(ref);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
     if (isdefined(lootid) && var_212e6b7d207a0089 > 0) {
         item = spawnstruct();
         item.lootid = lootid;
@@ -1581,7 +1581,7 @@ function function_9cd290910c24d4d3() {
     }
     ref = namespace_1a507865f681850e::getcurrentequipment("secondary");
     var_212e6b7d207a0089 = namespace_1a507865f681850e::getequipmentslotammo("secondary");
-    lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(ref);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
     if (isdefined(lootid) && var_212e6b7d207a0089 > 0) {
         item = spawnstruct();
         item.lootid = lootid;
@@ -1592,7 +1592,7 @@ function function_9cd290910c24d4d3() {
     ref = namespace_1a507865f681850e::getcurrentequipment("super");
     ref = namespace_38b993c4618e76cd::function_151b82e1257f4cde(ref);
     var_212e6b7d207a0089 = namespace_d20f8ef223912e12::getsuperweapondisabledammobr();
-    lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(ref);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
     if (isdefined(lootid) && var_212e6b7d207a0089 > 0) {
         item = spawnstruct();
         item.lootid = lootid;
@@ -1602,7 +1602,7 @@ function function_9cd290910c24d4d3() {
     }
     ref = namespace_58a74e7d54b56e8d::getkillstreakinslot(1);
     if (isdefined(ref)) {
-        lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(ref.streakname);
+        lootid = namespace_38b993c4618e76cd::getlootidfromref(ref.streakname);
         if (isdefined(lootid)) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -1612,7 +1612,7 @@ function function_9cd290910c24d4d3() {
         }
     }
     if (namespace_d3d40f75bb4e4c32::hasplatepouch()) {
-        lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5("armor_satchel");
+        lootid = namespace_38b993c4618e76cd::getlootidfromref("armor_satchel");
         if (isdefined(lootid)) {
             item = spawnstruct();
             item.lootid = lootid;
@@ -1624,7 +1624,7 @@ function function_9cd290910c24d4d3() {
     itemcount = namespace_1a507865f681850e::getequipmentslotammo("health");
     if (isdefined(itemname) && isdefined(itemcount) && itemcount > 0) {
         item = spawnstruct();
-        item.lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5("armor_plate");
+        item.lootid = namespace_38b993c4618e76cd::getlootidfromref("armor_plate");
         item.quantity = itemcount;
         items["armorPlates"] = item;
     }
@@ -1640,7 +1640,7 @@ function function_a17ce79209ceccfc() {
         return;
     }
     foreach (player in level.players) {
-        player.pers["gamemodeLoadout"] = level.gamemodeLoadout;
+        player.pers["gamemodeLoadout"] = level.gamemodeloadout;
         if (isreallyalive(player)) {
             inventory = player function_9cd290910c24d4d3();
             if (isdefined(inventory["loadoutPrimary"])) {

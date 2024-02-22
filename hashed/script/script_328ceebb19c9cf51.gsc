@@ -95,7 +95,7 @@ function private function_2b8f6cdb729062b4(killstreakbundle) {
             return 0;
         }
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self setclientomnvar("ui_br_inventory_disabled", 1);
     }
     currentstance = self getstance();
@@ -118,8 +118,8 @@ function private function_2b8f6cdb729062b4(killstreakbundle) {
         self setclientomnvar("ui_field_upgrade_use", 0);
     }
     giveperk("specialty_super_protection");
-    var_8881166e57766e3a = isdefined(killstreakbundle) && isdefined(killstreakbundle.var_69539d680440246) ? killstreakbundle.var_69539d680440246 : "super_laser_charge_mp";
-    objweapon = makeweapon(var_8881166e57766e3a, [0:"lasercustom_super_laser"]);
+    deployweapon = isdefined(killstreakbundle) && isdefined(killstreakbundle.var_69539d680440246) ? killstreakbundle.var_69539d680440246 : "super_laser_charge_mp";
+    objweapon = makeweapon(deployweapon, [0:"lasercustom_super_laser"]);
     _giveweapon(objweapon);
     thread function_f9c583614e43d70b();
     self setscriptablepartstate("superpowers", "laser_charge", 0);
@@ -129,7 +129,7 @@ function private function_2b8f6cdb729062b4(killstreakbundle) {
         removeperk("specialty_super_protection");
         namespace_1cd9f6896754adb0::function_588f2307a3040610("laserRaise");
         thread getridofweapon(objweapon, 1);
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             self setclientomnvar("ui_br_inventory_disabled", 0);
         }
         return 0;
@@ -162,7 +162,7 @@ function private function_57e6c0e97f405130(var_76ce32a62b846a64, killstreakbundl
     }
     giveperk("specialty_third_person");
     function_3a9f59811a994a17();
-    thread superLaserCharge_watchForGameEnded(killstreakbundle);
+    thread superlasercharge_watchforgameended(killstreakbundle);
     var_3ae043bbb7b2fdf0 = spawn("script_model", self gettagorigin("tag_eye"));
     var_3ae043bbb7b2fdf0 setmodel("super_laser_charge_impact");
     var_3ae043bbb7b2fdf0 dontinterpolate();
@@ -221,7 +221,7 @@ function private function_d962bef837cc0b26(var_76ce32a62b846a64, var_3ae043bbb7b
         removeperk("specialty_super_protection");
         if (istrue(self.var_2dd3e994a0214ad1)) {
             self.var_2dd3e994a0214ad1 = undefined;
-            self function_5c5c9cbae3114b0();
+            self stopforcedfire();
         }
     } else {
         namespace_1cd9f6896754adb0::function_588f2307a3040610("laserFire");
@@ -233,7 +233,7 @@ function private function_d962bef837cc0b26(var_76ce32a62b846a64, var_3ae043bbb7b
         removeperk("specialty_super_protection");
         namespace_1cd9f6896754adb0::function_588f2307a3040610("laserDrop");
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         self setclientomnvar("ui_br_inventory_disabled", 0);
     }
     namespace_416e533f6ed17708::function_269b97f3d86eb172(var_eb3aa4092c07d861, 0, undefined, isdefined(killstreakbundle));
@@ -310,12 +310,12 @@ function private function_2fd73aeab5c5946d(var_3ae043bbb7b2fdf0, killstreakbundl
     /#
         thread function_faa526904671fdb4();
     #/
-    self function_9e7f47b1711dca62();
+    self startforcedfire();
     self playsoundtoplayer("weap_lasereyes_levitate", self);
     self playsound("weap_lasereyes_levitate_npc", self, self);
     var_5e8542114221e306 = waittill_any_timeout_1(1.5, "superLaserCharge_stop_fire");
     if (!isdefined(var_5e8542114221e306) || var_5e8542114221e306 != "timeout") {
-        self function_5c5c9cbae3114b0();
+        self stopforcedfire();
         return;
     }
     if (!isdefined(killstreakbundle)) {
@@ -326,7 +326,7 @@ function private function_2fd73aeab5c5946d(var_3ae043bbb7b2fdf0, killstreakbundl
     self waittill("superLaserCharge_stop_fire");
     self playsoundtoplayer("weap_laser_fire_stop", self);
     self playsound("weap_laser_fire_stop_npc", self, self);
-    self function_5c5c9cbae3114b0();
+    self stopforcedfire();
     if (isdefined(var_3ae043bbb7b2fdf0)) {
         var_3ae043bbb7b2fdf0 delete();
     }
@@ -380,7 +380,7 @@ function function_be41fd9988f890d9() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x12a0
 // Size: 0x48
-function private superLaserCharge_watchForGameEnded(killstreakbundle) {
+function private superlasercharge_watchforgameended(killstreakbundle) {
     self endon("death_or_disconnect");
     self endon("super_use_finished");
     self notify("superLaserCharge_watchForGameEnded");
@@ -398,7 +398,7 @@ function private superLaserCharge_watchForGameEnded(killstreakbundle) {
 function private function_76ac6722cb845c98(killstreakbundle) {
     if (isdefined(killstreakbundle)) {
         self notify("superLaserCharge_refund");
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_cb965d2f71fefddc::_givebrsuper("equip_laser_charge", "super_laser_charge", 1);
     } else {
         namespace_727d2aa1d6c72038::perkpackage_giveimmediate("super_laser_charge");

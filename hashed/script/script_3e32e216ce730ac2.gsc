@@ -300,7 +300,7 @@ function private function_6aa807e90ef0afad() {
         angles = var_d067ded4779db731[i].angles;
         origin = var_d067ded4779db731[i].origin;
         aitype = namespace_bfef6903bca5845d::function_7f1a2e2ebe0c1693("ar");
-        agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, origin, angles, "high", "mission", "vehicleDriveGuards", undefined, undefined, undefined, self.node.poi);
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, angles, "high", "mission", "vehicleDriveGuards", undefined, undefined, undefined, self.node.poi);
         if (isdefined(agent)) {
             agents[i] = agent;
             thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent);
@@ -314,7 +314,7 @@ function private function_6aa807e90ef0afad() {
 // Checksum 0x0, Offset: 0x11f7
 // Size: 0x49
 function private function_6259c52471af01f2(agent, killer) {
-    assignment = namespace_14d36171baccf528::function_e2292dcf63eccf7a(agent, "assignment");
+    assignment = namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "assignment");
     if (isdefined(assignment) && assignment == self.var_6cd05f946a7917f7) {
         self.numagents--;
     }

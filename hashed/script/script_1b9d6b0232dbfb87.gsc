@@ -36,10 +36,10 @@ function private init() {
         [[ getsharedfunc("killstreak", "registerKillstreak") ]]("ims", &function_81c2d38662659380);
     }
     namespace_3c37cb17ade254d::registersharedfunc("ims", "tryUseKillstreak", &function_81c2d38662659380);
-    namespace_3c37cb17ade254d::registersharedfunc("ims", "ims_onHacked", &ims_onHacked);
+    namespace_3c37cb17ade254d::registersharedfunc("ims", "ims_onHacked", &ims_onhacked);
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["ims"];
     if (isdefined(bundle) && isdefined(bundle.var_b081bae2811785e4)) {
-        function_a41e3a211a9e37a4("ims", bundle.var_8881166e57766e3a, #"hash_b76b2215370d2700");
+        function_a41e3a211a9e37a4("ims", bundle.deployweapon, #"hash_b76b2215370d2700");
         function_a41e3a211a9e37a4("ims", bundle.spawnweapon, #"hash_b76b2215370d2700");
         function_a41e3a211a9e37a4("ims", bundle.var_b081bae2811785e4, #"hash_b76b2215370d2700");
         function_a41e3a211a9e37a4("ims", bundle.var_d5103347b49b5137, #"large");
@@ -94,8 +94,8 @@ function function_81c2d38662659380(streakinfo) {
 function function_656b1df2883cb84a(streakinfo, bundle) {
     self endon("death");
     self endon("disconnect");
-    var_8881166e57766e3a = makeweapon(bundle.var_8881166e57766e3a);
-    var_9b1deb5e9d32bbe3 = streakdeploy_doweaponswitchdeploy(streakinfo, var_8881166e57766e3a, 1, undefined, undefined, &function_ef9490796efaf574);
+    deployweapon = makeweapon(bundle.deployweapon);
+    var_9b1deb5e9d32bbe3 = streakdeploy_doweaponswitchdeploy(streakinfo, deployweapon, 1, undefined, undefined, &function_ef9490796efaf574);
     if (!istrue(var_9b1deb5e9d32bbe3)) {
         return undefined;
     }
@@ -124,7 +124,7 @@ function function_971c6cea76ead114(var_5c911c4e7ce59792) {
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x95
 function function_37013dca02aed010(streakinfo, bundle) {
-    marker = function_6aa895b8483b9b10(streakinfo, bundle.var_8881166e57766e3a, 0, 1, 0.25, 0.8, &function_77e8d3375efabf15);
+    marker = function_6aa895b8483b9b10(streakinfo, bundle.deployweapon, 0, 1, 0.25, 0.8, &function_77e8d3375efabf15);
     var_fe3042915624291a = undefined;
     if (isdefined(marker)) {
         var_fe3042915624291a = function_e5d40d48c1ebae3e(marker, bundle);
@@ -202,10 +202,10 @@ function function_d63b6e34009bc400(var_b21b330507802512, streakinfo) {
     var_b21b330507802512.var_7b74576b3641cd0e = 0;
     var_b21b330507802512 notify("picked_up");
     saveweaponstates();
-    _giveweapon(var_b21b330507802512.bundle.var_8881166e57766e3a);
-    _switchtoweapon(var_b21b330507802512.bundle.var_8881166e57766e3a);
+    _giveweapon(var_b21b330507802512.bundle.deployweapon);
+    _switchtoweapon(var_b21b330507802512.bundle.deployweapon);
     function_971c6cea76ead114(1);
-    marker = function_6aa895b8483b9b10(streakinfo, var_b21b330507802512.bundle.var_8881166e57766e3a, 1, 1, 0.25, 0.8, &function_77e8d3375efabf15);
+    marker = function_6aa895b8483b9b10(streakinfo, var_b21b330507802512.bundle.deployweapon, 1, 1, 0.25, 0.8, &function_77e8d3375efabf15);
     function_971c6cea76ead114(0);
     if (!isdefined(marker)) {
         return 0;
@@ -593,7 +593,7 @@ function function_5911b997c2c053cf(data) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ae1
 // Size: 0x72
-function ims_onHacked(newowner, var_c0f9139ffd72e62d) {
+function ims_onhacked(newowner, var_c0f9139ffd72e62d) {
     function_36c90c54c1002132(newowner, "tag_fx", "KILLSTREAKS_HINTS/IMS_USE");
     function_2eff4cd94c3243e8();
     if (issharedfuncdefined("game", "createObjective")) {

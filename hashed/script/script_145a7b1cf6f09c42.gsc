@@ -103,7 +103,7 @@ function function_28d3a4d017b4d4a5(dropzone) {
         }
         if (dropzone.moneypile.ownerteam == player.team && player.var_d412ecbe461759fe > 0) {
             for (i = 0; i < player.var_d412ecbe461759fe; i++) {
-                player thread doScoreEvent(#"gold_secure");
+                player thread doscoreevent(#"gold_secure");
             }
             player incpersstat("gold_secure", player.var_d412ecbe461759fe);
             player setextrascore0(player.pers["gold_secure"]);
@@ -152,12 +152,12 @@ function function_cc1facd3f297a76c(player) {
     player playsound("br_pickup_cash_lrg_01");
     if (self.ownerteam != "neutral") {
         function_f01b3311ea2144e(self);
-        player thread doScoreEvent(#"gold_steal");
+        player thread doscoreevent(#"gold_steal");
         player incpersstat("gold_steal", 1);
         player setextrascore1(player.pers["gold_steal"]);
         function_d626b8e88755fe64(player);
     } else {
-        player thread doScoreEvent(#"hash_e23c154d554b16a6");
+        player thread doscoreevent(#"hash_e23c154d554b16a6");
         if (getdvarint(@"hash_4e4da58f88e22860", 0) && self.var_d412ecbe461759fe <= 0) {
             function_896249bc3c12863d();
             function_9030f4d114a157df(level.var_ecec7a4115b35c9[level.var_9916fff305749068]);

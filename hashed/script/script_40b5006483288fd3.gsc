@@ -396,8 +396,8 @@ function private function_21ea168d74224bc0() {
     function_2166e0fab7a3263("gasmask", dropstruct);
     function_2166e0fab7a3263("revive", dropstruct);
     function_2166e0fab7a3263("plate_carrier", dropstruct);
-    backpackSize = function_1b35b10884bd8d67();
-    for (i = 0; i < backpackSize; i++) {
+    backpacksize = function_1b35b10884bd8d67();
+    for (i = 0; i < backpacksize; i++) {
         if (istrue(function_7192774bb894cced(i))) {
             continue;
         }
@@ -475,8 +475,8 @@ function private function_7192774bb894cced(itemindex) {
 // Checksum 0x0, Offset: 0x154e
 // Size: 0x70
 function respawnplayer() {
-    if (istrue(self.liveRagdoll)) {
-        self.liveRagdoll = 0;
+    if (istrue(self.liveragdoll)) {
+        self.liveragdoll = 0;
         self setsolid(1);
         self function_6b4c8718bc36d1ef(0);
         self function_e4ccd01fb7ec7a6f(0);
@@ -610,7 +610,7 @@ function private function_50c0ea10b250b9e() {
 function function_ee84b0a72897ee98() {
     level endon("game_ended");
     namespace_4b0406965e556711::function_1240434f4201ac9d("prematch_done");
-    level.spawnArmorPlates = getdvarint(@"hash_67a1e86099edda21", 1);
+    level.spawnarmorplates = getdvarint(@"hash_67a1e86099edda21", 1);
 }
 
 // Namespace ob_pvpve/namespace_dc38f0ea48cd4743

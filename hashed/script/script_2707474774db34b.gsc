@@ -330,16 +330,16 @@ function function_bc33f8483c604d9b(player, params) {
     if (var_a84449a9bd492279 != "PlayerJoin") {
         return 1;
     }
-    lastAssimedPlayer = undefined;
+    lastassimedplayer = undefined;
     if (namespace_ca7b90256548aa40::issquadmode() && namespace_9bb409deb69fb31d::function_be6ce63a202791c5(player.team, player.var_ff97225579de16a, "lastAssimedPlayer")) {
-        lastAssimedPlayer = namespace_9bb409deb69fb31d::function_2026e82470c5c89f(player.team, player.var_ff97225579de16a, "lastAssimedPlayer");
+        lastassimedplayer = namespace_9bb409deb69fb31d::function_2026e82470c5c89f(player.team, player.var_ff97225579de16a, "lastAssimedPlayer");
     } else if (namespace_54d20dd0dd79277f::function_ef7cf07ba921200e(player.team, "lastAssimedPlayer")) {
-        lastAssimedPlayer = namespace_54d20dd0dd79277f::getteamdata(player.team, "lastAssimedPlayer");
+        lastassimedplayer = namespace_54d20dd0dd79277f::getteamdata(player.team, "lastAssimedPlayer");
     }
-    if (!isdefined(lastAssimedPlayer)) {
+    if (!isdefined(lastassimedplayer)) {
         return 1;
     }
-    return player == lastAssimedPlayer;
+    return player == lastassimedplayer;
 }
 
 // Namespace namespace_553c3c813ee2de54/namespace_cde84ab88f41f1a5

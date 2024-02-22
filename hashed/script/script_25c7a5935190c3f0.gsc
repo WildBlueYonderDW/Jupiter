@@ -135,7 +135,7 @@ function function_3ddb1de0c470a2b2(var_9ca5b7427ae3d1f2, var_77a5f517fa4dab82, v
 // Checksum 0x0, Offset: 0xab1
 // Size: 0x49
 function function_8ae9611b3c0afe3(player) {
-    var_607da387f3617ed1 = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(player.team);
+    var_607da387f3617ed1 = namespace_54d20dd0dd79277f::getsquadmates(player.team);
     if (!isdefined(var_607da387f3617ed1)) {
         if (isplayer(player)) {
             return player;

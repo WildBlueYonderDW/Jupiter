@@ -272,7 +272,7 @@ function _codephonescriptableused(instance, part, state, player, var_a5b2c541413
             wait(3);
             instance setscriptablepartstate("maphint_phone_code", "on");
         } else {
-            player namespace_99ac021a7547cae3::function_e636e108dffe6ab7();
+            player namespace_99ac021a7547cae3::playerhasmoved();
             instance setscriptablepartstate("maphint_phone_code", "off");
             while (istrue(instance.ringing)) {
                 waitframe();
@@ -390,7 +390,7 @@ function _phonemorsesinglescriptableused(instance, part, state, player, var_a5b2
             wait(3);
             instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "on");
         } else {
-            player namespace_99ac021a7547cae3::function_e636e108dffe6ab7();
+            player namespace_99ac021a7547cae3::playerhasmoved();
             instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "off");
             while (istrue(instance.ringing)) {
                 waitframe();
@@ -617,11 +617,11 @@ function computerrebootsequence_init() {
     level.warroomtvs = getstructarray("bunker11_warroomTV", "targetname");
     var_15e3f6188a142829 = getstructarray("bunker11_serverroom_computer", "targetname");
     spawnscriptable("maphint_computer_reboot", var_15e3f6188a142829[0].origin);
-    foreach (index, var_cdde3f78f5298eab in level.serverroomtvs) {
-        level.serverroomtvs[index].scriptable = spawnscriptable("bunker11_serverroom_monitor", var_cdde3f78f5298eab.origin, var_cdde3f78f5298eab.angles);
+    foreach (index, tv in level.serverroomtvs) {
+        level.serverroomtvs[index].scriptable = spawnscriptable("bunker11_serverroom_monitor", tv.origin, tv.angles);
     }
-    foreach (index, var_cdde3f78f5298eab in level.warroomtvs) {
-        level.warroomtvs[index].scriptable = spawnscriptable("bunker11_warroom_monitor", var_cdde3f78f5298eab.origin, var_cdde3f78f5298eab.angles);
+    foreach (index, tv in level.warroomtvs) {
+        level.warroomtvs[index].scriptable = spawnscriptable("bunker11_warroom_monitor", tv.origin, tv.angles);
     }
 }
 
@@ -642,20 +642,20 @@ function _computerrebootsequence_start(instance, player) {
     playsoundatpos(instance.origin, "emt_bunk_pc_keyboard_typing");
     wait(3);
     playsoundatpos(instance.origin, "emt_bunk_pc_reboot");
-    foreach (var_cdde3f78f5298eab in level.serverroomtvs) {
-        var_cdde3f78f5298eab.scriptable setscriptablepartstate("bunker11_serverroom_monitor", "rebooting");
+    foreach (tv in level.serverroomtvs) {
+        tv.scriptable setscriptablepartstate("bunker11_serverroom_monitor", "rebooting");
     }
-    foreach (var_cdde3f78f5298eab in level.warroomtvs) {
-        var_cdde3f78f5298eab.scriptable setscriptablepartstate("bunker11_warroom_monitor", "rebooting");
+    foreach (tv in level.warroomtvs) {
+        tv.scriptable setscriptablepartstate("bunker11_warroom_monitor", "rebooting");
         wait(randomfloatrange(0.3, 0.6));
     }
     wait(3);
-    foreach (var_cdde3f78f5298eab in level.serverroomtvs) {
-        var_cdde3f78f5298eab.scriptable setscriptablepartstate("bunker11_serverroom_monitor", "ready");
+    foreach (tv in level.serverroomtvs) {
+        tv.scriptable setscriptablepartstate("bunker11_serverroom_monitor", "ready");
         wait(randomfloatrange(0.3, 0.6));
     }
-    foreach (var_cdde3f78f5298eab in level.warroomtvs) {
-        var_cdde3f78f5298eab.scriptable setscriptablepartstate("bunker11_warroom_monitor", "countdown");
+    foreach (tv in level.warroomtvs) {
+        tv.scriptable setscriptablepartstate("bunker11_warroom_monitor", "countdown");
     }
     instance setscriptablepartstate("maphint_computer_reboot", "on");
 }

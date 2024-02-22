@@ -57,9 +57,9 @@ function function_e8b0e602ea21de7b() {
 // Size: 0xd3
 function function_eb034db4994911d1(destination) {
     foreach (location in destination.locations) {
-        var_b45a823d9b08eca9 = location.instances["essence_large"];
-        if (isdefined(var_b45a823d9b08eca9)) {
-            foreach (instance in var_b45a823d9b08eca9.var_67b2b78e28eaa758) {
+        essence_container = location.instances["essence_large"];
+        if (isdefined(essence_container)) {
+            foreach (instance in essence_container.var_67b2b78e28eaa758) {
                 namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
             }
         }

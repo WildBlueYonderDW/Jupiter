@@ -19,12 +19,12 @@ function calloutmarkerping_init() {
     calloutmarkerping_initcommon();
     namespace_f1d40c362677777e::registerondisconnecteventcallback(&calloutmarkerping_onplayerdisconnect);
     namespace_3c37cb17ade254d::registersharedfunc("ping", "calloutMarkerPing_squadLeaderBeaconKillForPlayer", &calloutmarkerping_squadleaderbeaconkillforplayer);
-    namespace_3c37cb17ade254d::registersharedfunc("ping", "calloutMarkerPing_watchItemTakenFromContainer", &calloutMarkerPing_watchItemTakenFromContainer);
-    namespace_3c37cb17ade254d::registersharedfunc("container", "isContainerEmpty", &namespace_3f0ea7483345a2c0::isContainerEmpty);
-    namespace_3c37cb17ade254d::registersharedfunc("container", "getIndexForLootIDInContainer", &namespace_3f0ea7483345a2c0::getIndexForLootIDInContainer);
-    namespace_3c37cb17ade254d::registersharedfunc("container", "getLoadoutDoubleBackpackLootID", &namespace_3f0ea7483345a2c0::getLoadoutDoubleBackpackLootID);
-    namespace_3c37cb17ade254d::registersharedfunc("container", "getLootIDAtContainerIndex", &namespace_3f0ea7483345a2c0::getLootIDAtContainerIndex);
-    namespace_3c37cb17ade254d::registersharedfunc("loot", "lootGetScriptableName", &namespace_cb965d2f71fefddc::lootGetScriptableName);
+    namespace_3c37cb17ade254d::registersharedfunc("ping", "calloutMarkerPing_watchItemTakenFromContainer", &calloutmarkerping_watchitemtakenfromcontainer);
+    namespace_3c37cb17ade254d::registersharedfunc("container", "isContainerEmpty", &namespace_3f0ea7483345a2c0::iscontainerempty);
+    namespace_3c37cb17ade254d::registersharedfunc("container", "getIndexForLootIDInContainer", &namespace_3f0ea7483345a2c0::getindexforlootidincontainer);
+    namespace_3c37cb17ade254d::registersharedfunc("container", "getLoadoutDoubleBackpackLootID", &namespace_3f0ea7483345a2c0::getloadoutdoublebackpacklootid);
+    namespace_3c37cb17ade254d::registersharedfunc("container", "getLootIDAtContainerIndex", &namespace_3f0ea7483345a2c0::getlootidatcontainerindex);
+    namespace_3c37cb17ade254d::registersharedfunc("loot", "lootGetScriptableName", &namespace_cb965d2f71fefddc::lootgetscriptablename);
 }
 
 // Namespace namespace_3f742ff4cbe345af/namespace_65c7485efe2b8314
@@ -102,7 +102,7 @@ function calloutmarkerping_squadleaderbeaconkillforplayer(player) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cb
 // Size: 0x1c4
-function calloutMarkerPing_watchItemTakenFromContainer(player, container, lootid) {
+function calloutmarkerping_watchitemtakenfromcontainer(player, container, lootid) {
     if (!isdefined(player) || !isdefined(container) || !isdefined(lootid)) {
         return;
     }
@@ -247,7 +247,7 @@ function function_4864c58ab9b1f07e(scriptable, var_f0456519eaae430) {
         var_1b715fd06c46c7c2 = namespace_d3d40f75bb4e4c32::isarmorplate(scriptablename);
         break;
     case 16267:
-        var_1b715fd06c46c7c2 = namespace_cb965d2f71fefddc::function_9e3428357e5df2e3(scriptablename);
+        var_1b715fd06c46c7c2 = namespace_cb965d2f71fefddc::isdogtag(scriptablename);
         break;
     case 16268:
         var_1b715fd06c46c7c2 = namespace_cb965d2f71fefddc::isplunder(scriptablename);

@@ -1024,8 +1024,8 @@ function private function_f0496b6c16117c3f(ref, params) {
 // Size: 0x53
 function private function_6381c928faf6229f(ref, params) {
     var_272fbf55066e6ea0 = [];
-    if (isdefined(self.timesDowned)) {
-        var_272fbf55066e6ea0["timesDowned"] = self.timesDowned;
+    if (isdefined(self.timesdowned)) {
+        var_272fbf55066e6ea0["timesDowned"] = self.timesdowned;
     } else {
         var_272fbf55066e6ea0["timesDowned"] = 0;
     }
@@ -1663,10 +1663,10 @@ function private function_5ec9e0597a47f590(ref, params) {
         /#
             assert(isdefined(namespace_3c5a4254f2b957ea::getpersstat("binocularMarks")));
         #/
-        timesDowned = ter_op(isdefined(self.timesDowned), self.timesDowned, 0);
+        timesdowned = ter_op(isdefined(self.timesdowned), self.timesdowned, 0);
         var_cb865f93adb30293["binocularMarks"] = namespace_3c5a4254f2b957ea::getpersstat("binocularMarks");
-        var_cb865f93adb30293["jup_wz_acc_supplier_scene"] = timesDowned;
-        var_2d25f333132cb770 = timesDowned + namespace_3c5a4254f2b957ea::getpersstat("binocularMarks") * 3;
+        var_cb865f93adb30293["jup_wz_acc_supplier_scene"] = timesdowned;
+        var_2d25f333132cb770 = timesdowned + namespace_3c5a4254f2b957ea::getpersstat("binocularMarks") * 3;
         var_cb865f93adb30293["strongholdsCaptured"] = var_2d25f333132cb770;
         var_cb865f93adb30293["trapper"] = max(0, function_9bbbefe6a0debd2b(ref, var_2d25f333132cb770));
         function_7a384e4d0599485c(ref, var_cb865f93adb30293);

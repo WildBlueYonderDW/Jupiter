@@ -11,22 +11,22 @@
 // Checksum 0x0, Offset: 0x503
 // Size: 0x137
 function init() {
-    if (!isdefined(level.var_74a171505d979cbc)) {
-        level.var_74a171505d979cbc = spawnstruct();
+    if (!isdefined(level.scripted_melee)) {
+        level.scripted_melee = spawnstruct();
     }
-    if (istrue(level.var_74a171505d979cbc.disabled)) {
+    if (istrue(level.scripted_melee.disabled)) {
         return;
     }
-    level.var_74a171505d979cbc.var_1fc4fd3ef975e8c8 = &function_78748799de25da5f;
-    level.var_74a171505d979cbc.var_2ec260ca66f2378 = &function_65bbb083561fa648;
-    level.var_74a171505d979cbc.var_efaa5d51e08521eb = &function_6c512ed7af23eb04;
-    level.var_74a171505d979cbc.var_3522908002cc5af = &function_b3cab4bbbd2f27bf;
-    level.var_74a171505d979cbc.var_16a2ad3bccc62bb5 = &function_53bc249de0d47b05;
-    level.var_74a171505d979cbc.var_2eda72772d041081 = &function_63cac0421acbe53c;
-    level.var_74a171505d979cbc.var_fbd8726770c4c39 = &function_d8f48ab0dfd5ef51;
-    level.var_74a171505d979cbc.var_8a66fb76621b9c84 = &function_91c24157247ef2fc;
-    level.var_74a171505d979cbc.var_5415e799cae1bac7 = &function_497a27b31d43d6af;
-    level.var_74a171505d979cbc.playerlinkeduselinkedvelocity = &function_5e2b19fd9204a302;
+    level.scripted_melee.var_1fc4fd3ef975e8c8 = &function_78748799de25da5f;
+    level.scripted_melee.var_2ec260ca66f2378 = &function_65bbb083561fa648;
+    level.scripted_melee.var_efaa5d51e08521eb = &function_6c512ed7af23eb04;
+    level.scripted_melee.var_3522908002cc5af = &function_b3cab4bbbd2f27bf;
+    level.scripted_melee.var_16a2ad3bccc62bb5 = &function_53bc249de0d47b05;
+    level.scripted_melee.var_2eda72772d041081 = &function_63cac0421acbe53c;
+    level.scripted_melee.var_fbd8726770c4c39 = &function_d8f48ab0dfd5ef51;
+    level.scripted_melee.var_8a66fb76621b9c84 = &function_91c24157247ef2fc;
+    level.scripted_melee.var_5415e799cae1bac7 = &function_497a27b31d43d6af;
+    level.scripted_melee.playerlinkeduselinkedvelocity = &function_5e2b19fd9204a302;
     namespace_db6d5eb4a31b23a::main();
 }
 

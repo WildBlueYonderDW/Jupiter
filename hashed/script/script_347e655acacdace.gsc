@@ -9,12 +9,12 @@
 // Checksum 0x0, Offset: 0xf6
 // Size: 0x83
 function function_b58813f6489727f2(var_cc3e7fbaface5a17, var_b76b3aee05993635) {
-    ProgressTracker = spawnstruct();
-    ProgressTracker.var_84ceb983b1ef5f11 = 0;
-    ProgressTracker.callbacks = [];
-    ProgressTracker.var_cc3e7fbaface5a17 = var_cc3e7fbaface5a17;
-    ProgressTracker.var_621cb2c0d9b1cdae = var_cc3e7fbaface5a17;
-    ProgressTracker.var_b76b3aee05993635 = var_b76b3aee05993635;
+    progresstracker = spawnstruct();
+    progresstracker.var_84ceb983b1ef5f11 = 0;
+    progresstracker.callbacks = [];
+    progresstracker.var_cc3e7fbaface5a17 = var_cc3e7fbaface5a17;
+    progresstracker.var_621cb2c0d9b1cdae = var_cc3e7fbaface5a17;
+    progresstracker.var_b76b3aee05993635 = var_b76b3aee05993635;
     /#
         if (isdefined(var_b76b3aee05993635) && var_cc3e7fbaface5a17 == var_b76b3aee05993635) {
             /#
@@ -22,7 +22,7 @@ function function_b58813f6489727f2(var_cc3e7fbaface5a17, var_b76b3aee05993635) {
             #/
         }
     #/
-    return ProgressTracker;
+    return progresstracker;
 }
 
 // Namespace namespace_347adb0dcffb8479/namespace_96552c234e66ebee

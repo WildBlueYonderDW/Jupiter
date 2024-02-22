@@ -97,7 +97,7 @@ function function_123f8da350e72770() {
                     if (var_9df9b10a1d4123ba.starttimes.size == 0) {
                         level.var_1a92f34363247d37[teamname][i] = undefined;
                         var_8506ba4041fbe9bb = 1;
-                    } else if (!(isalive(var_9df9b10a1d4123ba.owner) && !isdefined(var_9df9b10a1d4123ba.owner.fauxdead) && !istrue(var_9df9b10a1d4123ba.owner.delayedspawnedplayernotify) && !istrue(var_9df9b10a1d4123ba.owner.liveRagdoll))) {
+                    } else if (!(isalive(var_9df9b10a1d4123ba.owner) && !isdefined(var_9df9b10a1d4123ba.owner.fauxdead) && !istrue(var_9df9b10a1d4123ba.owner.delayedspawnedplayernotify) && !istrue(var_9df9b10a1d4123ba.owner.liveragdoll))) {
                         level.var_1a92f34363247d37[teamname][i] = undefined;
                         var_8506ba4041fbe9bb = 1;
                         continue;
@@ -125,7 +125,7 @@ function function_123f8da350e72770() {
 // Checksum 0x0, Offset: 0x74c
 // Size: 0xbc
 function function_e457560e955be5f5(ownerteam, pinglocation, var_9f47268324f609b3, var_b6b08a6a6f96b5c4) {
-    if (istrue(level.var_627afd3a97c2d347) || !isBRStyleGameType()) {
+    if (istrue(level.var_627afd3a97c2d347) || !isbrstylegametype()) {
         return;
     }
     var_a0e0ace3a15f1029 = getplayersinradius(pinglocation, var_9f47268324f609b3);
@@ -239,7 +239,7 @@ function function_e24c416c5028bccc(owner, streakinfo) {
     }
     var_e005d4b70d6f2611 = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
     if (var_e005d4b70d6f2611) {
-        killstreak_dangerNotifyPlayersInRange(owner, owner.team, 15000, var_274a2749ef16ee1f);
+        killstreak_dangernotifyplayersinrange(owner, owner.team, 15000, var_274a2749ef16ee1f);
     } else {
         owner thread playkillstreakoperatordialog("uav", var_274a2749ef16ee1f + "_use", 1, var_52a5be2e2f91d710);
     }
@@ -304,7 +304,7 @@ function function_3713808120900a4(owner) {
             return 0;
         }
     }
-    return owner namespace_f1fe279354a7da2::function_d64c0d6be4dbbaaf(streakinfo.streakname, streakinfo);
+    return owner namespace_f1fe279354a7da2::uav_use(streakinfo.streakname, streakinfo);
 }
 
 // Namespace uav_bigmap/namespace_2c99f682179581bf
@@ -333,7 +333,7 @@ function function_b26df19671891830(owner, streakinfo) {
     var_5888fe9dac2d7d8e = getdvarfloat(@"hash_8caa0944a27274aa", 2);
     var_a2a010ca62b6691e = getdvarfloat(@"hash_baea8656875e8f33", 4);
     radius = getdvarint(@"hash_b0336da463c5b9a4", 12000);
-    if (owner namespace_f8065cafc523dba5::function_eba2f2e094684b8f("specialty_overwatch") && !isBRStyleGameType()) {
+    if (owner namespace_f8065cafc523dba5::function_eba2f2e094684b8f("specialty_overwatch") && !isbrstylegametype()) {
         var_5888fe9dac2d7d8e = var_5888fe9dac2d7d8e * 0.5;
         var_a2a010ca62b6691e = var_a2a010ca62b6691e * 0.5;
     }

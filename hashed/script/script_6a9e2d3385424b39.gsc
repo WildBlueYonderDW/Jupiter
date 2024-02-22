@@ -68,7 +68,7 @@ function function_80d68c9701e1aea5(data) {
         }
     }
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("dmz_flare_site_use", &function_e63f55869e4d74ed);
-    level.var_ef63e063e320acfc["dmz_supply_drop"].onOpenFunc = &function_d8352a33e10df5a8;
+    level.var_ef63e063e320acfc["dmz_supply_drop"].onopenfunc = &function_d8352a33e10df5a8;
     function_b713f2d39b34540f(data, &function_f641a4efd6f76f39, level.var_51f143645abc8911);
 }
 

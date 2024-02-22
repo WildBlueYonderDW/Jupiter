@@ -689,7 +689,7 @@ function function_da38be107ae836ff(teammates, cash) {
 // Checksum 0x0, Offset: 0x1bbf
 // Size: 0x47
 function function_8c5476a01afab741(player, cash) {
-    var_13d34a5606594fab = function_53c4c53197386572(namespace_a38a2e1fe7519183::getUpgradeCount(player, 19), 0);
+    var_13d34a5606594fab = function_53c4c53197386572(namespace_a38a2e1fe7519183::getupgradecount(player, 19), 0);
     var_5e2bb202ae259b31 = 1 + 0.05 * var_13d34a5606594fab;
     return cash * var_5e2bb202ae259b31;
 }
@@ -791,7 +791,7 @@ function function_65a2513d3692ea1a(teamname) {
 function function_a1738a95d7aa8094(splash, var_1bbeb265ef74bc60, var_723b8f7cb71ceb11, teamname) {
     var_d4fc3b4e84704775 = level.var_1b7407dffe81e6e8.var_b2f15037287a033a[var_1bbeb265ef74bc60].index;
     params = namespace_1eb3c4e0e28fac71::packsplashparambits(var_d4fc3b4e84704775, var_723b8f7cb71ceb11);
-    namespace_d696adde758cbe79::showDMZSplash(splash, getteamdata(teamname, "players"), undefined, params);
+    namespace_d696adde758cbe79::showdmzsplash(splash, getteamdata(teamname, "players"), undefined, params);
 }
 
 // Namespace namespace_922b76892b73e7c6/namespace_f2c68794a1018c9d
@@ -799,7 +799,7 @@ function function_a1738a95d7aa8094(splash, var_1bbeb265ef74bc60, var_723b8f7cb71
 // Checksum 0x0, Offset: 0x204d
 // Size: 0x3b
 function function_1759acfd39bb5edf(splash, teamname) {
-    namespace_d696adde758cbe79::showDMZSplash(splash, getteamdata(teamname, "players"), self.node.poi);
+    namespace_d696adde758cbe79::showdmzsplash(splash, getteamdata(teamname, "players"), self.node.poi);
 }
 
 // Namespace namespace_922b76892b73e7c6/namespace_f2c68794a1018c9d
@@ -807,7 +807,7 @@ function function_1759acfd39bb5edf(splash, teamname) {
 // Checksum 0x0, Offset: 0x208f
 // Size: 0x1d
 function function_3a1b792c4eab210f(splash) {
-    namespace_d696adde758cbe79::showDMZSplash(splash, level.players);
+    namespace_d696adde758cbe79::showdmzsplash(splash, level.players);
 }
 
 // Namespace namespace_922b76892b73e7c6/namespace_f2c68794a1018c9d
@@ -815,7 +815,7 @@ function function_3a1b792c4eab210f(splash) {
 // Checksum 0x0, Offset: 0x20b3
 // Size: 0x4a
 function function_c9f97baa0d7f59bf(splash, teamname) {
-    namespace_d696adde758cbe79::showDMZSplash(splash, array_remove_array(level.players, getteamdata(teamname, "players")), self.node.poi);
+    namespace_d696adde758cbe79::showdmzsplash(splash, array_remove_array(level.players, getteamdata(teamname, "players")), self.node.poi);
 }
 
 // Namespace namespace_922b76892b73e7c6/namespace_f2c68794a1018c9d
@@ -826,7 +826,7 @@ function function_137d718c82ac0947(teamname) {
     if (!isdefined(level.radiation) || !istrue(level.radiation.var_9badbb469626f6)) {
         wait(5);
         if (!istrue(level.var_644a33d86d8514bf)) {
-            namespace_d696adde758cbe79::showDMZSplash("dmz_contract_reminder", getteamdata(teamname, "players"));
+            namespace_d696adde758cbe79::showdmzsplash("dmz_contract_reminder", getteamdata(teamname, "players"));
         }
     }
 }

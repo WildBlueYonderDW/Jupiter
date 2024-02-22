@@ -8,9 +8,9 @@
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using script_2669878cf5a1b6bc;
 
-#namespace superDeploy;
+#namespace superdeploy;
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x571
 // Size: 0x20a
@@ -60,7 +60,7 @@ function function_cfec51cac79ca4e6(var_19163e14365d9264, var_bdffc63c4171c131, v
     return istrue(var_eabf81b5be8ddb5);
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x783
 // Size: 0x19b
@@ -99,7 +99,7 @@ function function_f3a5a94b1d50ed38(var_19163e14365d9264, weaponobj, firednotify,
     return istrue(var_9cf1d5b97d062b8a);
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x926
 // Size: 0xda
@@ -119,7 +119,7 @@ function function_8300ec48c43363d6(var_19163e14365d9264, weaponobj, keepweapon, 
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xa07
 // Size: 0x1de
@@ -161,7 +161,7 @@ function private function_342f97880f848caa(var_19163e14365d9264, animlength, var
     return 1;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xbed
 // Size: 0x34
@@ -174,7 +174,7 @@ function private function_b351e53752cdb017(var_19163e14365d9264) {
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xc28
 // Size: 0x47
@@ -192,7 +192,7 @@ function private function_1a0d50cc1357bdae() {
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xc76
 // Size: 0xa1
@@ -213,7 +213,7 @@ function private function_a74d2cee7557d7b1(timedelay) {
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xd1e
 // Size: 0x25
@@ -222,7 +222,7 @@ function private function_7cc79842967d7ae0(var_19163e14365d9264) {
     val::function_c9d0b43701bdba00("deployStart");
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xd4a
 // Size: 0x27
@@ -233,7 +233,7 @@ function private function_c46ce93718743bf6() {
     _freezecontrols(0, undefined, "superDeploy");
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd78
 // Size: 0x150
@@ -244,7 +244,7 @@ function function_323489241ce4764a(deployweaponobj, var_19163e14365d9264, var_81
     if (self hasweapon(deployweaponobj)) {
         return 0;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         if (getcompleteweaponname(self getcurrentweapon()) == "iw8_lm_dblmg_mp") {
             self notify("switched_from_minigun");
             while (getcompleteweaponname(self getcurrentweapon()) == "iw8_lm_dblmg_mp") {
@@ -279,7 +279,7 @@ function function_323489241ce4764a(deployweaponobj, var_19163e14365d9264, var_81
     return var_41bf9bf4918115ac;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 6, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xed0
 // Size: 0x147
@@ -318,7 +318,7 @@ function private function_e65b31e6948c503(var_41bf9bf4918115ac, var_19163e14365d
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x101e
 // Size: 0x54
@@ -331,7 +331,7 @@ function private function_b22d2e6d02d50b21(deployweaponobj) {
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1079
 // Size: 0x4a
@@ -346,7 +346,7 @@ function private function_12bd106b0dd9b11d(var_19163e14365d9264, deployweaponobj
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10ca
 // Size: 0x35
@@ -360,7 +360,7 @@ function function_b04cbd5db8951229(weaponname) {
     return var_cd5c5ac9105ab0d7;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1107
 // Size: 0x66
@@ -378,7 +378,7 @@ function private function_6ce6b67d4d0ff91b(var_19163e14365d9264, deployweaponobj
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1174
 // Size: 0x75
@@ -391,7 +391,7 @@ function private function_4f203f286301b4ae(var_19163e14365d9264) {
     val::set("deployStart", "ascender_use", 0);
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x11f0
 // Size: 0x3d
@@ -406,7 +406,7 @@ function private function_dfc98a2de8e662a6(var_19163e14365d9264, var_bdffc63c417
     return 1;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1235
 // Size: 0x7e
@@ -427,7 +427,7 @@ function private function_f3e423ce0923187e(var_19163e14365d9264) {
     }
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x12ba
 // Size: 0x28
@@ -437,7 +437,7 @@ function private function_afb1be43e272a00a(ent, var_f36c0162774a45fa) {
     self notify("super_finished_with_deploy_weapon", var_f36c0162774a45fa);
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12e9
 // Size: 0x8f
@@ -469,7 +469,7 @@ function function_fceaa660b4da1c2b(weapon) {
     return var_1880d2298e9e948a;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1380
 // Size: 0x29
@@ -483,7 +483,7 @@ function issuperweapon(weapon) {
     return isdefined(getsuperrefforsuperweapon(weapon));
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13b1
 // Size: 0xa1
@@ -516,7 +516,7 @@ function getsuperrefforsuperweapon(weapon) {
     return undefined;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x145a
 // Size: 0x83
@@ -530,7 +530,7 @@ function getsuperrefforsuperuseweapon(weapon) {
     return level.superglobals.superweapons[weapon].ref;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14e5
 // Size: 0x5c
@@ -544,7 +544,7 @@ function getsuperrefforsuperoffhand(weapon) {
     return level.superglobals.supersbyoffhand[weapon].ref;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1549
 // Size: 0x75
@@ -558,7 +558,7 @@ function getsuperrefforsuperextraweapon(weapon) {
     return level.superglobals.supersbyextraweapon[weapon].ref;
 }
 
-// Namespace superDeploy/namespace_49492dacb8708592
+// Namespace superdeploy/namespace_49492dacb8708592
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15c6
 // Size: 0x13e

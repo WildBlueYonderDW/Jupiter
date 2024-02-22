@@ -74,7 +74,7 @@ function onconnect() {
     level endon("game_ended");
     while (1) {
         player = level waittill("connected");
-        if (istrue(level.leaguePlayMatchCancelled)) {
+        if (istrue(level.leagueplaymatchcancelled)) {
             return;
         }
         if (!isplayer(player) || isbot(player)) {
@@ -98,7 +98,7 @@ function onconnect() {
 // Checksum 0x0, Offset: 0x1502
 // Size: 0x37d
 function function_adcdfd1b1a3efa51(player) {
-    if (istrue(level.leaguePlayMatchCancelled)) {
+    if (istrue(level.leagueplaymatchcancelled)) {
         return;
     }
     if (!isplayer(player) || isbot(player)) {
@@ -158,7 +158,7 @@ function ondisconnect(player, var_7c6183ce9e04512e) {
         logstring("LeaguePlay: Skipping disconnect penalty due to not being a player, or a bot, xuid " + xuid);
         return;
     }
-    if (istrue(player.pers["leaguePlayMatchCompleted"]) || istrue(level.leaguePlayMatchCancelled) || istrue(level.gameended)) {
+    if (istrue(player.pers["leaguePlayMatchCompleted"]) || istrue(level.leagueplaymatchcancelled) || istrue(level.gameended)) {
         logstring("LeaguePlay: Skipping disconnect penalty due to game already ended, xuid " + xuid);
         return;
     }
@@ -277,7 +277,7 @@ function function_3e87ebe7f88f1249(player, var_c4f3e9732aa81389) {
 function function_3f15b5152ef99080() {
     level endon("game_ended");
     level waittill("br_prematchEnded");
-    if (istrue(level.leaguePlayMatchCancelled)) {
+    if (istrue(level.leagueplaymatchcancelled)) {
         return;
     }
     if (getdvarint(@"hash_3438d68f1f0e7c0a", 1) && istrue(level.var_77907d733abe8b63)) {
@@ -614,7 +614,7 @@ function function_dc56b195bbf80d31() {
         thread namespace_d576b6dc7cef9c62::function_46eb417b582d5179(var_1e6c2cb81cc42e5a * 1000, "match_cancelling_in_squads");
     }
     setomnvar("ui_prematch_period", 0);
-    level.leaguePlayMatchCancelled = 1;
+    level.leagueplaymatchcancelled = 1;
     level.var_7ebde40af908fcf8 = 0;
     level.brdisablefinalkillcam = 1;
     wait(var_1e6c2cb81cc42e5a);
@@ -623,7 +623,7 @@ function function_dc56b195bbf80d31() {
             if (!isdefined(player.clientmatchdataid)) {
                 namespace_d576b6dc7cef9c62::assignclientmatchdataid(player);
             }
-            setclientmatchdata("players", player.clientmatchdataid, "leaguePlayMatchCancelled", level.leaguePlayMatchCancelled);
+            setclientmatchdata("players", player.clientmatchdataid, "leaguePlayMatchCancelled", level.leagueplaymatchcancelled);
         }
     }
     namespace_e8a49b70d0769b66::updateplacement();
@@ -723,7 +723,7 @@ function match_end(placement, var_bedbe1ce13e22104, var_bba9f88228a1053c) {
         return;
     }
     player.pers["leaguePlayMatchCompleted"] = 1;
-    var_9536b5b9bff06ded = istrue(level.leaguePlayMatchCancelled);
+    var_9536b5b9bff06ded = istrue(level.leagueplaymatchcancelled);
     var_bca6691d9622c899 = function_78fcc96be9d69371();
     gamemode = namespace_aad14af462a74d08::getchallengegamemode(self);
     lobbyid = function_4f9373a1227db35c();
@@ -774,8 +774,8 @@ function function_43230c03c0098996(var_5c285ceb07f57b85) {
 // Size: 0x357
 function function_e6da5914f27071a0() {
     level.gameended = 1;
-    level.leaguePlayMatchCompleted = 1;
-    var_9536b5b9bff06ded = istrue(level.leaguePlayMatchCancelled);
+    level.leagueplaymatchcompleted = 1;
+    var_9536b5b9bff06ded = istrue(level.leagueplaymatchcancelled);
     var_bca6691d9622c899 = function_78fcc96be9d69371();
     gamemode = namespace_aad14af462a74d08::getchallengegamemode(self);
     lobbyid = function_4f9373a1227db35c();

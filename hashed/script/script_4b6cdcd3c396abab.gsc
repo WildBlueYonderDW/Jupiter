@@ -172,7 +172,7 @@ function smokegrenademonitorblindeyerecipients(struct, position, owner, bundle) 
         if (!scoregiven) {
             if (isdefined(players) && players.size > 0) {
                 if (isdefined(owner) && !array_contains(players, owner)) {
-                    owner namespace_a850435086c88de3::function_693d12aa2c1c02c5(0, "smokeGrenadeBlinded");
+                    owner namespace_a850435086c88de3::doonactionscoreevent(0, "smokeGrenadeBlinded");
                     scoregiven = 1;
                 }
             }

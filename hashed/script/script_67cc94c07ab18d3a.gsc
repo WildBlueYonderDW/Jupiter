@@ -132,7 +132,7 @@ function function_ad115d1d75ad46f8(channel, value) {
             }
         }
     } else if (channel == "upgrade_weapon") {
-        upgradeWeapon(player, value);
+        upgradeweapon(player, value);
     }
 }
 
@@ -239,7 +239,7 @@ function function_bd931ea5f74143d9(player, newweapon) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbe3
 // Size: 0x414
-function upgradeWeapon(player, value) {
+function upgradeweapon(player, value) {
     if (isdefined(player.pers["telemetry"])) {
         player.pers["telemetry"].var_dea1aa89475b4d0f = 1;
     }
@@ -264,20 +264,20 @@ function upgradeWeapon(player, value) {
         player namespace_c6ccccd95254983f::playerplunderkioskpurchase(var_fdf92a09c2352059);
     }
     weaponindex = function_eab89bc3b0709d85(value);
-    upgradeWeapon = namespace_aead94004cf4c147::function_f2849dae62f7444e(player, level.loadoutsgroup, "upgradeWeapon");
-    if (namespace_dbfbff3eb10fab94::function_bd931ea5f74143d9(player, upgradeWeapon)) {
+    upgradeweapon = namespace_aead94004cf4c147::function_f2849dae62f7444e(player, level.loadoutsgroup, "upgradeWeapon");
+    if (namespace_dbfbff3eb10fab94::function_bd931ea5f74143d9(player, upgradeweapon)) {
         return;
     }
     var_a7efdaacbd89567 = namespace_a38a2e1fe7519183::function_74031e3249a6f69e(player, weaponindex);
     var_b6f7d841700be1ad = namespace_a38a2e1fe7519183::function_540c2b6342f4e28c(player, weaponindex);
     var_e1147886ccf51970 = namespace_3bcd40a3005712ec::function_9db6a7e1567bb1f9(player, weaponindex);
-    itemtype = function_15b07f33eb2e0625(upgradeWeapon, var_effb4ae1788a8b10);
-    var_8cf1618bc3d277e0 = upgradeWeapon issilenced();
+    itemtype = function_15b07f33eb2e0625(upgradeweapon, var_effb4ae1788a8b10);
+    var_8cf1618bc3d277e0 = upgradeweapon issilenced();
     var_288adcbb974853fd = 0;
     if (isdefined(player.pers["telemetry"])) {
-        if (isdefined(upgradeWeapon)) {
-            var_fd464247e82127cb = getweaponvariantindex(upgradeWeapon);
-            var_49e6ef3edadd524e = namespace_e0ee43ef2dddadaa::getweaponrootname(upgradeWeapon);
+        if (isdefined(upgradeweapon)) {
+            var_fd464247e82127cb = getweaponvariantindex(upgradeweapon);
+            var_49e6ef3edadd524e = namespace_e0ee43ef2dddadaa::getweaponrootname(upgradeweapon);
             if (isdefined(var_49e6ef3edadd524e)) {
                 player.pers["telemetry"].var_f6814a1944aa6f42 = var_49e6ef3edadd524e;
                 if (isdefined(var_fd464247e82127cb)) {
@@ -287,15 +287,15 @@ function upgradeWeapon(player, value) {
         }
     }
     if (weaponindex == 2) {
-        namespace_aead94004cf4c147::function_e35a7cb7e7c8c17e(player, upgradeWeapon, 1, var_a7efdaacbd89567);
+        namespace_aead94004cf4c147::function_e35a7cb7e7c8c17e(player, upgradeweapon, 1, var_a7efdaacbd89567);
     } else {
         var_b10efa89df98704c = namespace_cb965d2f71fefddc::function_13ecf3644442a3e7(player, weaponindex);
         namespace_df5cfdbe6e2d3812::_takeweapon(var_b10efa89df98704c);
         namespace_a38a2e1fe7519183::function_bfedeb20f8b77f3f(player, weaponindex);
-        namespace_cb965d2f71fefddc::function_e5845ff9b61ac5d7(upgradeWeapon, weaponclipsize(upgradeWeapon), weaponindex, undefined, undefined, undefined, var_a7efdaacbd89567, undefined, undefined, undefined, weaponclipsize(upgradeWeapon));
+        namespace_cb965d2f71fefddc::function_e5845ff9b61ac5d7(upgradeweapon, weaponclipsize(upgradeweapon), weaponindex, undefined, undefined, undefined, var_a7efdaacbd89567, undefined, undefined, undefined, weaponclipsize(upgradeweapon));
         var_288adcbb974853fd = var_b10efa89df98704c issilenced();
         if (var_9fce40cc0126e16c == 15) {
-            function_cb50685ebdaf0908(player, var_b10efa89df98704c, upgradeWeapon);
+            function_cb50685ebdaf0908(player, var_b10efa89df98704c, upgradeweapon);
         }
     }
     var_5b4a7bc1af4766a6 = namespace_a38a2e1fe7519183::function_540c2b6342f4e28c(player, weaponindex);
@@ -315,7 +315,7 @@ function upgradeWeapon(player, value) {
         if (var_8cf1618bc3d277e0 && !var_288adcbb974853fd) {
             itemtype = "silencer_attached";
         }
-        lootid = namespace_e0ee43ef2dddadaa::function_693e108cb61ceeb5(namespace_e0ee43ef2dddadaa::getweaponrootname(upgradeWeapon), var_effb4ae1788a8b10);
+        lootid = namespace_e0ee43ef2dddadaa::function_693e108cb61ceeb5(namespace_e0ee43ef2dddadaa::getweaponrootname(upgradeweapon), var_effb4ae1788a8b10);
         namespace_aad14af462a74d08::function_c2c80007aff49924("attachment", itemtype, lootid, 1, var_fdf92a09c2352059);
     } else {
         namespace_aad14af462a74d08::function_3d8a8b0878f9f129(itemtype, undefined, undefined, 1, 0);
@@ -326,10 +326,10 @@ function upgradeWeapon(player, value) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x12d
-function function_cb50685ebdaf0908(player, var_b10efa89df98704c, upgradeWeapon) {
+function function_cb50685ebdaf0908(player, var_b10efa89df98704c, upgradeweapon) {
     var_a25a6d782eb4bbda = undefined;
     foreach (attachment in var_b10efa89df98704c.attachments) {
-        if (!array_contains(upgradeWeapon.attachments, attachment)) {
+        if (!array_contains(upgradeweapon.attachments, attachment)) {
             var_a25a6d782eb4bbda = attachment;
         }
     }
@@ -416,9 +416,9 @@ function function_82b0b33a03dfe81b(player) {
     if (istrue(player.pers["telemetry"].var_b04abd5d84312acb)) {
         var_c8fcb229a279d5cc = 1;
     }
-    timeSpent = 0;
+    timespent = 0;
     if (isdefined(player.pers["telemetry"].var_d3209b1da38d435)) {
-        timeSpent = player.pers["telemetry"].var_d3209b1da38d435;
+        timespent = player.pers["telemetry"].var_d3209b1da38d435;
     }
     xpos = 0;
     if (isdefined(player.origin[0])) {
@@ -444,7 +444,7 @@ function function_82b0b33a03dfe81b(player) {
     if (isdefined(player.angles[2])) {
         roll = player.angles[2];
     }
-    player dlog_recordplayerevent("dlog_event_dmz_workbench", [0:"player_position_x", 1:xpos, 2:"player_position_y", 3:ypos, 4:"player_position_z", 5:var_689a1188271a0be5, 6:"player_rotation_pitch", 7:pitch, 8:"player_rotation_yaw", 9:yaw, 10:"player_rotation_roll", 11:roll, 12:"workbench_open_count", 13:var_68f5a925ffc5a5e1, 14:"workbench_was_weapon_edited", 15:var_a18fe6baf21ac773, 16:"workbench_weapon_edited_ref", 17:weaponref, 18:"workbench_weapon_slot_edited", 19:weaponindex, 20:"workbench_was_weapon_insured", 21:var_aa3672fddefee7a8, 22:"workbench_attachments_removed", 23:var_7a00b1279c13426b, 24:"workbench_attachments_added", 25:var_54cb5be3478a9e82, 26:"workbench_cash_spent", 27:var_1cb2654b9d2b112a, 28:"workbench_time_spent", 29:timeSpent, 30:"workbench_session_ended_by_combat", 31:var_c8fcb229a279d5cc]);
+    player dlog_recordplayerevent("dlog_event_dmz_workbench", [0:"player_position_x", 1:xpos, 2:"player_position_y", 3:ypos, 4:"player_position_z", 5:var_689a1188271a0be5, 6:"player_rotation_pitch", 7:pitch, 8:"player_rotation_yaw", 9:yaw, 10:"player_rotation_roll", 11:roll, 12:"workbench_open_count", 13:var_68f5a925ffc5a5e1, 14:"workbench_was_weapon_edited", 15:var_a18fe6baf21ac773, 16:"workbench_weapon_edited_ref", 17:weaponref, 18:"workbench_weapon_slot_edited", 19:weaponindex, 20:"workbench_was_weapon_insured", 21:var_aa3672fddefee7a8, 22:"workbench_attachments_removed", 23:var_7a00b1279c13426b, 24:"workbench_attachments_added", 25:var_54cb5be3478a9e82, 26:"workbench_cash_spent", 27:var_1cb2654b9d2b112a, 28:"workbench_time_spent", 29:timespent, 30:"workbench_session_ended_by_combat", 31:var_c8fcb229a279d5cc]);
     if (isdefined(player.pers["telemetry"].var_eb1574f222631c93)) {
         player.pers["telemetry"].var_eb1574f222631c93 = 0;
     }

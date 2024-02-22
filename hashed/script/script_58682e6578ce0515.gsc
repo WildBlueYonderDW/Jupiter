@@ -21,7 +21,7 @@ function slow(var_3f84102752151e7c, var_561c4006f65fb505, var_4de2d203c7e8298b, 
         assertex(isnumber(var_4de2d203c7e8298b), "Number required for n_durationS");
     #/
     if (!istrue(var_9142743ed938c8bb)) {
-        if (!isdefined(self.var_971d11b71ceb4346) || !istrue(self.var_971d11b71ceb4346.var_c9cbc4a3332e44c6)) {
+        if (!isdefined(self.aisettings) || !istrue(self.aisettings.var_c9cbc4a3332e44c6)) {
             return 0;
         }
     }

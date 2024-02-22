@@ -625,7 +625,7 @@ function script_mover_agent_spawn_watch() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b7d
 // Size: 0x1b7
-function player_update_unresolved_collision(mover, var_1ee51b0a59b58d1e) {
+function player_update_unresolved_collision(mover, penetration) {
     self.unresolved_collision_count++;
     thread clear_unresolved_collision_count_next_frame();
     unresolved_collision_notify_min = 3;
@@ -635,7 +635,7 @@ function player_update_unresolved_collision(mover, var_1ee51b0a59b58d1e) {
     if (self.unresolved_collision_count >= unresolved_collision_notify_min) {
         if (isdefined(mover)) {
             if (isdefined(mover.unresolved_collision_func)) {
-                mover [[ mover.unresolved_collision_func ]](self, var_1ee51b0a59b58d1e);
+                mover [[ mover.unresolved_collision_func ]](self, penetration);
             } else if (isdefined(mover.unresolved_collision_kill) && mover.unresolved_collision_kill) {
                 mover unresolved_collision_owner_damage(self);
             } else {
@@ -687,11 +687,11 @@ function player_unresolved_collision_watch() {
     }
     self.unresolved_collision_count = 0;
     while (1) {
-        var_1ee51b0a59b58d1e = mover = self waittill("unresolved_collision");
+        penetration = mover = self waittill("unresolved_collision");
         if (player_ignore_mover(mover)) {
             continue;
         }
-        player_update_unresolved_collision(mover, var_1ee51b0a59b58d1e);
+        player_update_unresolved_collision(mover, penetration);
     }
 }
 
@@ -897,7 +897,7 @@ function get_mover_ents(mover) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2490
 // Size: 0x14
-function unresolved_collision_void(player, var_1ee51b0a59b58d1e) {
+function unresolved_collision_void(player, penetration) {
     
 }
 

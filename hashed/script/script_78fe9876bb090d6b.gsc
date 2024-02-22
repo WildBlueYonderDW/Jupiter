@@ -228,7 +228,7 @@ function private function_d8352a33e10df5a8(instance, player) {
         var_8bd50c7e994c7434 = int(ceil(instance.task.var_8bd50c7e994c7434 / level.var_cf05afb32024800a.var_b04566c546a49c20));
         instance.contents = namespace_1b7e64f50cca9321::function_163d360c111caa16(instance.contents, var_8bd50c7e994c7434, 500);
         var_72bdd1d2dfbcaa5e = task.var_7d3fb1cd4b3104a2[task.var_f42170ad6524cdc2];
-        itemid = namespace_38b993c4618e76cd::getLootIDFromRef(var_72bdd1d2dfbcaa5e);
+        itemid = namespace_38b993c4618e76cd::getlootidfromref(var_72bdd1d2dfbcaa5e);
         instance.contents = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f(instance.contents, 1, itemid);
         var_5332cda4054641da = namespace_a38a2e1fe7519183::function_e860c1be7ff11f5b(player.team, 24);
         if (var_5332cda4054641da) {
@@ -236,7 +236,7 @@ function private function_d8352a33e10df5a8(instance, player) {
             chance = var_fd3a3a7662a333a[var_5332cda4054641da - 1];
             if (randomfloat(1) < chance) {
                 var_cb2e5f9c72c8939c = task.var_ba9295056b43d556[task.var_f42170ad6524cdc2];
-                var_94947bb1861c9e61 = namespace_38b993c4618e76cd::getLootIDFromRef(var_cb2e5f9c72c8939c);
+                var_94947bb1861c9e61 = namespace_38b993c4618e76cd::getlootidfromref(var_cb2e5f9c72c8939c);
                 instance.contents = namespace_1b7e64f50cca9321::function_848e20cf1d6cab8f(instance.contents, 1, var_94947bb1861c9e61);
             }
         }

@@ -482,7 +482,7 @@ function function_c42fe306277ca4fe() {
     self endon("end_ob_infil_monitor_third_person");
     self.var_8789029d90c5e2de = self getplayerdata("common", "mpProgression", "thirdPerson");
     while (1) {
-        if (self GetCameraThirdPerson()) {
+        if (self getcamerathirdperson()) {
             self setcamerathirdperson(0);
         }
         waitframe();
@@ -749,7 +749,7 @@ function function_926714d6eed28ff3() {
 // Size: 0x1ae
 function function_35ab01589cc4f6c6(params) {
     /#
-        var_eb5a9091076e21e8 = level.players[0] squad_utility::getSquadMembers(undefined, 1);
+        var_eb5a9091076e21e8 = level.players[0] squad_utility::getsquadmembers(undefined, 1);
         if (params[0] == "<unknown string>") {
             var_9091c4080e2751f2 = spawnlogic::getspawnpointarray("<unknown string>");
             n_spawn = int(params[1]);
@@ -766,7 +766,7 @@ function function_35ab01589cc4f6c6(params) {
         }
         var_44934ca35515c2c6 = int(params[0]);
         n_spawn = int(params[1]);
-        var_eb5a9091076e21e8 = level.players[0] squad_utility::getSquadMembers(undefined, 1);
+        var_eb5a9091076e21e8 = level.players[0] squad_utility::getsquadmembers(undefined, 1);
         foreach (player in var_eb5a9091076e21e8) {
             spawnpoint = level.var_7a8e039103b51e0f[var_44934ca35515c2c6][n_spawn];
             player setorigin(spawnpoint.origin);

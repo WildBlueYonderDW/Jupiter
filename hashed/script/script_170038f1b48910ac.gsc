@@ -10,14 +10,14 @@
 #using script_38c517e34d7c3efb;
 #using script_503081a86c1539d3;
 
-#namespace namespace_6e3976bfd17d44cd;
+#namespace jup_spawner_zombie_disciple_hvt;
 
-// Namespace namespace_6e3976bfd17d44cd/namespace_c2db6ced309838d6
+// Namespace jup_spawner_zombie_disciple_hvt/namespace_c2db6ced309838d6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x179
 // Size: 0x186
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_7505739d5df5b4ec");
+    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"jup_spawner_zombie_disciple_hvt");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_6f87d935349aba8");
     self.subclass = self.var_534e788bc498be9f.name;
     self.nameindex = randomintrange(1, 26);
@@ -26,7 +26,7 @@ function main() {
     self.behaviortreeasset = "zombie_disciple";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "zombie_disciple";
-    self.var_f7f189f0e87db6ac = %"hash_3664c8ba706ec788";
+    self.ai_eventlist = %"hash_3664c8ba706ec788";
     self.var_570908460ede5c13 = "settings_zombie_disciple_hvt";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_zombie_disciple_hvt");
     self.weapon = nullweapon();
@@ -50,7 +50,7 @@ function main() {
     namespace_6205bc7c5e394598::ai_init();
 }
 
-// Namespace namespace_6e3976bfd17d44cd/namespace_c2db6ced309838d6
+// Namespace jup_spawner_zombie_disciple_hvt/namespace_c2db6ced309838d6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x306
 // Size: 0x57
@@ -64,7 +64,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_6e3976bfd17d44cd/namespace_c2db6ced309838d6
+// Namespace jup_spawner_zombie_disciple_hvt/namespace_c2db6ced309838d6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x364
 // Size: 0x9
@@ -72,7 +72,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_4671825c45957bae::main();
 }
 
-// Namespace namespace_6e3976bfd17d44cd/namespace_c2db6ced309838d6
+// Namespace jup_spawner_zombie_disciple_hvt/namespace_c2db6ced309838d6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x375
 // Size: 0x108

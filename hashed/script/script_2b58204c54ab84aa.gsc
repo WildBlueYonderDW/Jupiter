@@ -25,7 +25,7 @@ function main() {
     self.behaviortreeasset = "zombie_base";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "zombie_base";
-    self.var_f7f189f0e87db6ac = %"hash_3664c8ba706ec788";
+    self.ai_eventlist = %"hash_3664c8ba706ec788";
     self.var_570908460ede5c13 = "settings_zombie_base_armored_heavy";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_zombie_base_armored_heavy_jup");
     var_fea750d6814b803d = "jup_me_zombie_melee, [ none, none, none, none, none, none ], none, none";

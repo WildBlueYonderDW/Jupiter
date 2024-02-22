@@ -216,16 +216,16 @@ function private function_8b51245f6bbe5bbd(var_56ac4b49cc795bc0) {
     #/
     var_fcdc7f62624c71ff = "guard";
     groupname = namespace_bfef6903bca5845d::function_78759441c259f58a();
-    var_171f90b9c4c76d44 = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(var_59ba6be73235750f[0]);
+    poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(var_59ba6be73235750f[0]);
     self.agents = [];
     self.groupname = groupname;
     for (i = 0; i < var_59ba6be73235750f.size; i++) {
         tier = 1 + (istrue(var_56ac4b49cc795bc0) && i + 1 == var_59ba6be73235750f.size);
-        var_dcf5e15c58c4152a = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, var_171f90b9c4c76d44, var_fcdc7f62624c71ff, undefined, tier, undefined);
-        agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(var_dcf5e15c58c4152a, var_59ba6be73235750f[i], (0, randomint(360), 0), "high", "searchseizure", "searchTask", groupname, undefined, undefined, var_171f90b9c4c76d44, 0, 0, 0, undefined, 0);
+        agenttype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, poiname, var_fcdc7f62624c71ff, undefined, tier, undefined);
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(agenttype, var_59ba6be73235750f[i], (0, randomint(360), 0), "high", "searchseizure", "searchTask", groupname, undefined, undefined, poiname, 0, 0, 0, undefined, 0);
         if (isdefined(agent)) {
             if (isagent(agent)) {
-                namespace_14d36171baccf528::function_350cf0db9f5e0cbe(agent, "groupName", groupname);
+                namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "groupName", groupname);
                 agent thread namespace_2000a83505151e5b::function_9bbf1713a14fa580(agent, 256, 256, var_59ba6be73235750f[i]);
                 self.agents = array_add(self.agents, agent);
             } else {
@@ -499,9 +499,9 @@ function function_ac069e47f0ef3b9e(task, vehicle) {
         if (vehicle namespace_5a0f3ca265d3a4c8::vehicle_damage_isburningdown()) {
             return;
         }
-        if (isdefined(task.keysForVehicle)) {
+        if (isdefined(task.keysforvehicle)) {
             task function_545f0df81e095369(vehicle);
-            namespace_cb965d2f71fefddc::loothide(task.keysForVehicle);
+            namespace_cb965d2f71fefddc::loothide(task.keysforvehicle);
         }
         vehicle thread function_cca3d2bc5739c2a6(task, 0);
         self delete();
@@ -645,13 +645,13 @@ function function_26a3b8aadf24c800(task) {
 // Size: 0x12b
 function function_cca3d2bc5739c2a6(task, var_20e9f4f3f1f66219) {
     self.islocked = 0;
-    task.keysForVehicle = undefined;
+    task.keysforvehicle = undefined;
     namespace_448ccf1ca136fbbe::function_3677f2be30fdd581("single", "vehicle_use");
     if (istrue(var_20e9f4f3f1f66219)) {
         return;
     }
     foreach (player in namespace_54d20dd0dd79277f::getteamdata(task.teams[0], "players")) {
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_6b31daeaad06caa5");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_6b31daeaad06caa5");
     }
     utility::function_3677f2be30fdd581("single", "vehicle_use");
     if (self getscriptablehaspart("lights")) {
@@ -679,7 +679,7 @@ function function_dd9ec28de865596e(origin, angles, ignoreent) {
     item = namespace_cb965d2f71fefddc::spawnpickup("brloot_vehiclekeys_contract", var_cb4fad49263e20c4, 1, 1, undefined, 1);
     item.var_bbc200bc77c5db2b = 1;
     item.task = self;
-    self.keysForVehicle = item;
+    self.keysforvehicle = item;
     while (item getscriptablepartstate("brloot_vehiclekeys_contract") != "visible") {
         waitframe();
     }
@@ -862,14 +862,14 @@ function function_51ca04c003f5020(type, searchpos, mindistsq, maxdistsq, var_8a0
 // Checksum 0x0, Offset: 0x2f83
 // Size: 0x20c
 function private function_a60307adcc0aded1(agent, attacker) {
-    subcategory = namespace_14d36171baccf528::function_e2292dcf63eccf7a(agent, "subcategory");
+    subcategory = namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "subcategory");
     if (!is_equal("searchTask", subcategory)) {
         return;
     }
-    groupname = namespace_14d36171baccf528::function_e2292dcf63eccf7a(agent, "groupName");
+    groupname = namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "groupName");
     if (is_equal(self.startnode.groupname, groupname)) {
         if (level.var_4e85625f13c359ab.var_3b2141e078017f8c) {
-            vehicle = namespace_14d36171baccf528::function_e2292dcf63eccf7a(agent, "keysForVehicle");
+            vehicle = namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "keysForVehicle");
             if (isdefined(vehicle) && vehicle isvehicle() && !vehicle namespace_5a0f3ca265d3a4c8::vehicle_damage_isburningdown() && istrue(vehicle.islocked)) {
                 if (is_equal(attacker.team, self.teams[0])) {
                     /#
@@ -1117,7 +1117,7 @@ function function_b76f3380abd30d8e() {
         }
         if (isdefined(self.startnode.agents) && self.startnode.agents.size > 0) {
             agent = self.startnode.agents[self.startnode.agents.size - 1];
-            namespace_14d36171baccf528::function_350cf0db9f5e0cbe(agent, "keysForVehicle", vehicle);
+            namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "keysForVehicle", vehicle);
             array_thread(self.startnode.agents, &function_c99b96671f305d48, 0.01, 5);
         }
     }
@@ -1138,8 +1138,8 @@ function function_8af2a0d1c41847e3() {
         self.vehicle.useobject delete();
     }
     if (level.var_4e85625f13c359ab.var_3b2141e078017f8c) {
-        if (isdefined(self.keysForVehicle)) {
-            namespace_cb965d2f71fefddc::loothide(self.keysForVehicle);
+        if (isdefined(self.keysforvehicle)) {
+            namespace_cb965d2f71fefddc::loothide(self.keysforvehicle);
         }
         if (self.vehicle.islocked) {
             self.vehicle thread function_cca3d2bc5739c2a6(self, 1);
@@ -1664,7 +1664,7 @@ function function_8f4bec208d29321a() {
         var_e8db9359bd731029 = anglestoforward(host.angles);
         var_3c3e840099ff521e = anglestoright(host.angles);
         aitype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb();
-        agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, (0, 0, 0), (0, 0, 0), "<unknown string>", "<unknown string>", "<unknown string>");
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, (0, 0, 0), (0, 0, 0), "<unknown string>", "<unknown string>", "<unknown string>");
         /#
             assert(isdefined(agent) && isagent(agent));
         #/

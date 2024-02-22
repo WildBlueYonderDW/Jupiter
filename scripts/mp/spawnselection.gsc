@@ -426,8 +426,8 @@ function getspawnpoint() {
             }
             teammate = level.squaddata[self.team][self.var_ff97225579de16a].players[index];
             spawnpoint = namespace_90f75d3fdf89a43e::findteammatebuddyspawn(teammate);
-            teammate thread namespace_48a08c5037514e04::doScoreEvent(#"squad_spawn");
-            thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5fe4192c1fd1be4c");
+            teammate thread namespace_48a08c5037514e04::doscoreevent(#"squad_spawn");
+            thread namespace_48a08c5037514e04::doscoreevent(#"hash_5fe4192c1fd1be4c");
             self.wassquadspawned = 1;
             if (isdefined(teammate.vehicle)) {
                 self.spawningintovehicle = 1;
@@ -478,10 +478,10 @@ function getspawnpoint() {
                 }
             }
             driver = vehicle_occupancy_getdriver(var_a5d118f040f60db0);
-            vehicleRef = var_a5d118f040f60db0 namespace_1f188a13f7e79610::function_d93ec4635290febd();
-            var_4ac41c9583912b8f = namespace_dace9d390bc4a290::vehicle_spawn_getleveldataforvehicle(vehicleRef).var_51b047bd40d984fe;
+            vehicleref = var_a5d118f040f60db0 namespace_1f188a13f7e79610::function_d93ec4635290febd();
+            var_4ac41c9583912b8f = namespace_dace9d390bc4a290::vehicle_spawn_getleveldataforvehicle(vehicleref).var_51b047bd40d984fe;
             if (isdefined(driver) && isdefined(var_4ac41c9583912b8f) && var_4ac41c9583912b8f != "") {
-                driver thread namespace_48a08c5037514e04::doScoreEvent(function_1823ff50bb28148d(var_4ac41c9583912b8f));
+                driver thread namespace_48a08c5037514e04::doscoreevent(function_1823ff50bb28148d(var_4ac41c9583912b8f));
             }
             self.spawningintovehicle = 1;
             namespace_3c5a4254f2b957ea::incpersstat("spawnSelectVehicle", 1);
@@ -1767,18 +1767,18 @@ function evaluatesquadspawn() {
 function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
     level endon("game_ended");
     self endon("disconnect");
-    var_114d19d4f6606873 = undefined;
-    if (!isdefined(var_114d19d4f6606873)) {
+    respawntype = undefined;
+    if (!isdefined(respawntype)) {
         if (istrue(level.usec130spawnfirstonly) && istrue(level.usec130spawn) && !istrue(self.spawnedusingc130) && isdefined(level.spawnc130[self.team])) {
-            var_114d19d4f6606873 = 1;
+            respawntype = 1;
         } else if (istrue(level.usesquadspawn)) {
-            var_114d19d4f6606873 = 0;
+            respawntype = 0;
         } else if (istrue(level.usespawnselection)) {
-            var_114d19d4f6606873 = 2;
+            respawntype = 2;
         } else if (istrue(level.usec130spawn)) {
-            var_114d19d4f6606873 = 1;
+            respawntype = 1;
         } else {
-            var_114d19d4f6606873 = 3;
+            respawntype = 3;
         }
     }
     var_33c2a141ebc8f7ae = gettime();
@@ -1786,7 +1786,7 @@ function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
     while (!selectionmade) {
         currenttime = gettime();
         spawndelay = (var_33c2a141ebc8f7ae + timeuntilspawn * 1000 - currenttime) / 1000;
-        switch (var_114d19d4f6606873) {
+        switch (respawntype) {
         case 0:
             self.squadspawnconfirmed = 0;
             self.squadspawnaborted = 0;
@@ -1820,11 +1820,11 @@ function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
             if (self.squadspawnaborted) {
                 self.forcespectatorclient = -1;
                 if (istrue(level.usec130spawn)) {
-                    var_114d19d4f6606873 = 1;
+                    respawntype = 1;
                 } else if (istrue(level.usespawnselection)) {
-                    var_114d19d4f6606873 = 2;
+                    respawntype = 2;
                 } else {
-                    var_114d19d4f6606873 = 3;
+                    respawntype = 3;
                 }
             } else {
                 selectionmade = 1;

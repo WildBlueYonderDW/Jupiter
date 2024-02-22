@@ -118,9 +118,9 @@ function function_7f20e60880a9bfdd(cache) {
 // Checksum 0x0, Offset: 0x780
 // Size: 0x23f
 function function_96b8ab6bf1035b06() {
-    poiName = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(self.node.origin, 0, 1);
+    poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(self.node.origin, 0, 1);
     var_b4d3f717373af2bb = namespace_43bf74a2ee9234c0::function_236a093e8a0ec040("veh9_mil_cargo_truck");
-    spawners = namespace_43bf74a2ee9234c0::function_f260b1cef943f1ab("veh9_mil_cargo_truck", 7, var_b4d3f717373af2bb, self.node.origin, poiName, "absolute");
+    spawners = namespace_43bf74a2ee9234c0::function_f260b1cef943f1ab("veh9_mil_cargo_truck", 7, var_b4d3f717373af2bb, self.node.origin, poiname, "absolute");
     riders = namespace_43bf74a2ee9234c0::function_4ad6c25d6754f697(spawners, 7, undefined, "high", "convoy_attack", "convoy_attack", "team_hundred_ninety_five", undefined, "veh9_mil_cargo_truck_convoy_attack");
     if (riders.size > 0) {
         foreach (rider in riders) {

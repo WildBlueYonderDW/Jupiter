@@ -287,7 +287,7 @@ function function_7f534465d312ec86(data) {
 // Size: 0x64
 function function_3a37c0c72490b13a(attacker) {
     self endon("death");
-    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_c45cd96bcaaf28d9");
+    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_c45cd96bcaaf28d9");
     self.isdisabled = 1;
     self setscriptablepartstate("emp", "on", 0);
     wait(6);

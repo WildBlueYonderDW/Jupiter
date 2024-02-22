@@ -418,17 +418,17 @@ function give_armor(var_bed158a6dfac230d) {
     case 1:
         self.var_bed158a6dfac230d = 1;
         self.var_8790c077c95db752 = var_5c6e0121240cb514;
-        armor::setArmorHealth(var_5c6e0121240cb514);
+        armor::setarmorhealth(var_5c6e0121240cb514);
         break;
     case 2:
         self.var_bed158a6dfac230d = 2;
         self.var_8790c077c95db752 = var_5c6e0421240cbbad;
-        armor::setArmorHealth(var_5c6e0421240cbbad);
+        armor::setarmorhealth(var_5c6e0421240cbbad);
         break;
     case 3:
         self.var_bed158a6dfac230d = 3;
         self.var_8790c077c95db752 = var_5c6e0321240cb97a;
-        armor::setArmorHealth(var_5c6e0321240cb97a);
+        armor::setarmorhealth(var_5c6e0321240cb97a);
         break;
     }
     self setclientomnvar("ui_armor_current_level", var_bed158a6dfac230d);

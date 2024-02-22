@@ -13,7 +13,7 @@ function function_69b64f047b0af1db(radius, duration) {
     event.var_8fa87d2c8780e014 = radius * radius;
     event.duration = duration;
     event.result = [];
-    var_3c91684198954c83 = self.var_3c59090ee220ab3d.var_3c91684198954c83;
+    var_3c91684198954c83 = self.mind.var_3c91684198954c83;
     var_3c91684198954c83.var_b726268175e85134 = event;
     var_3c91684198954c83.events[var_3c91684198954c83.events.size] = event;
 }
@@ -23,7 +23,7 @@ function function_69b64f047b0af1db(radius, duration) {
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x2ab
 function function_7e7ddfa33eff2c11() {
-    event = self.var_3c59090ee220ab3d.var_3c91684198954c83.var_b726268175e85134;
+    event = self.mind.var_3c91684198954c83.var_b726268175e85134;
     if (!event.var_d0942e9d2044d6c6) {
         if (event.result.size > 0) {
             foreach (entnum, var_855eb1686e661658 in event.result) {
@@ -74,7 +74,7 @@ function function_7e7ddfa33eff2c11() {
 // Checksum 0x0, Offset: 0x3e1
 // Size: 0x36
 function function_fbb2d5e09e58db7() {
-    event = self.var_3c59090ee220ab3d.var_3c91684198954c83.var_b726268175e85134;
+    event = self.mind.var_3c91684198954c83.var_b726268175e85134;
     return event.duration;
 }
 
@@ -83,7 +83,7 @@ function function_fbb2d5e09e58db7() {
 // Checksum 0x0, Offset: 0x41f
 // Size: 0x5e
 function function_6ecf7023ef123ba0(entitynumber) {
-    event = self.var_3c59090ee220ab3d.var_3c91684198954c83.var_b726268175e85134;
+    event = self.mind.var_3c91684198954c83.var_b726268175e85134;
     entry = event.result[entitynumber];
     if (isdefined(entry)) {
         entry.valid = 0;
@@ -95,7 +95,7 @@ function function_6ecf7023ef123ba0(entitynumber) {
 // Checksum 0x0, Offset: 0x484
 // Size: 0x72
 function function_3eeaf0541f4883fe(time, position) {
-    event = self.var_3c59090ee220ab3d.var_3c91684198954c83.var_b726268175e85134;
+    event = self.mind.var_3c91684198954c83.var_b726268175e85134;
     return (gettime() - time) / 1000 > event.duration || distancesquared(self.origin, position) > event.var_8fa87d2c8780e014;
 }
 

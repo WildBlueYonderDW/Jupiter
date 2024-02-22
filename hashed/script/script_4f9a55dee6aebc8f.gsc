@@ -178,12 +178,12 @@ function function_90087f601daf9fa1(trigger, team, var_5ddbc1faed2c56e6, var_8b99
     domflag.claimgracetime = level.var_dac66bb7e0b0f8a5.capturetime * 1000;
     domflag.firstcapture = 1;
     domflag.var_823c5a7bf6a0e64a = 0;
-    domflag.var_fb60f3aec3a62f06 = level.flagModelHidden;
+    domflag.var_fb60f3aec3a62f06 = level.flagmodelhidden;
     if (istrue(domflag.var_823c5a7bf6a0e64a)) {
         domflag.var_9abe4ab71ae5d548 = domflag.usetime - 1;
-        domflag.reinforcementStompScalar = level.reinforcementStompScalar;
-        if (isdefined(level.flagDecayTime) && level.flagDecayTime > 0) {
-            domflag.decayrate = domflag.usetime * level.framedurationseconds / level.flagDecayTime;
+        domflag.reinforcementstompscalar = level.reinforcementstompscalar;
+        if (isdefined(level.flagdecaytime) && level.flagdecaytime > 0) {
+            domflag.decayrate = domflag.usetime * level.framedurationseconds / level.flagdecaytime;
         }
     }
     domflag.baseeffectpos = trigger.origin;
@@ -285,7 +285,7 @@ function function_37011fa9cb797322(lastclaimteam) {
 function function_423f3fa547719245(player) {
     if (isdefined(self.stronghold.var_4756733ecc825a2) && isdefined(self.claimteam)) {
         if (self.claimteam == self.stronghold.var_4756733ecc825a2) {
-            self.task brTask_holdSetVisible(0);
+            self.task brtask_holdsetvisible(0);
         } else {
             self.task notify("stronghold_enemy_capture_start");
         }
@@ -349,7 +349,7 @@ function function_581b3c43aba983c5(team, player, success) {
         player setclientomnvar("ui_objective_pinned_text_param", 0);
         player.ui_dom_securing = undefined;
     }
-    self.task brTask_holdSetVisible(0);
+    self.task brtask_holdsetvisible(0);
     self.task function_68b9ba1de74cb130();
     self.didstatusnotify = 0;
     if (isdefined(team) && team == "none" || player.team != team) {
@@ -431,7 +431,7 @@ function function_29c7e65e828011cf(enable) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e26
 // Size: 0x68
-function brTask_holdSetVisible(enable, preview, var_ddf49b0f7bd17a0c) {
+function brtask_holdsetvisible(enable, preview, var_ddf49b0f7bd17a0c) {
     task = self;
     task.var_54f5e15c58954932 notify("brTask_holdSetVisible");
     if (enable) {
@@ -571,7 +571,7 @@ function function_b380232fafd74325(player, var_554291b6257ea5d0) {
     if (!istrue(task.var_54f5e15c58954932.var_cd46901b33d5fd1b)) {
         task.var_54f5e15c58954932 function_29c7e65e828011cf(1);
     }
-    task brTask_holdSetVisible(1);
+    task brtask_holdsetvisible(1);
     player.initialized_gameobject_vars = 1;
     if (!isdefined(player.touchtriggers)) {
         player.touchtriggers = [];
@@ -899,7 +899,7 @@ function function_11245b6b51ac26b7(dropstruct, player, crate) {
     var_75ea56ac509fed3b = getscriptcachecontents("bomb_defuse_reward", 0);
     var_df2f68507645906f = [0:"brloot_super_munitionsbox", 1:"brloot_super_armorbox"];
     teammatecount = undefined;
-    teammates = namespace_54d20dd0dd79277f::getSquadmates(player.team, player.var_ff97225579de16a, 0);
+    teammates = namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 0);
     if (isdefined(teammates)) {
         teammatecount = teammates.size;
     }
@@ -1077,21 +1077,21 @@ function function_68b9ba1de74cb130() {
 function function_271a1d82062c2492(data) {
     task = self.task;
     task function_3b3b119a92986947(data.attacker, 1, "EMP_" + data.reason);
-    thread brTask_holdDisableForTime(data);
+    thread brtask_holddisablefortime(data);
 }
 
 // Namespace namespace_1ab3ae0ffed87c04/namespace_b8f885001f04bb5
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b96
 // Size: 0x169
-function brTask_holdDisableForTime(data) {
+function brtask_holddisablefortime(data) {
     self notify("brTask_holdDisableForTime");
     self endon("brTask_holdDisableForTime");
     self.task.var_54f5e15c58954932 function_29c7e65e828011cf(0);
     self.task.var_54f5e15c58954932.var_cd46901b33d5fd1b = 1;
     if (!isdefined(self.var_bc40e6506a04d555)) {
         self.var_bc40e6506a04d555 = spawn("trigger_radius", self.origin, 0, level.var_dac66bb7e0b0f8a5.circleradius, 62);
-        namespace_f1565a2788ab1e89::makeenterexittrigger(self.var_bc40e6506a04d555, &function_2725487ad0b3391b, &playerExitHoldPointDisabled);
+        namespace_f1565a2788ab1e89::makeenterexittrigger(self.var_bc40e6506a04d555, &function_2725487ad0b3391b, &playerexitholdpointdisabled);
     }
     self.var_bc40e6506a04d555.endtime = int(gettime() + function_a5b14435e3229bed(data.time));
     wait(data.time);
@@ -1113,14 +1113,14 @@ function function_2725487ad0b3391b(player, trigger) {
     timeleft = function_c89ed1840c8d0f0f(trigger.endtime - gettime());
     wait(timeleft);
     waitframe();
-    thread playerExitHoldPointDisabled(player, trigger);
+    thread playerexitholdpointdisabled(player, trigger);
 }
 
 // Namespace namespace_1ab3ae0ffed87c04/namespace_b8f885001f04bb5
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d6e
 // Size: 0x28
-function playerExitHoldPointDisabled(player, trigger) {
+function playerexitholdpointdisabled(player, trigger) {
     namespace_58fb4f2e73fd41a0::setlowermessageomnvar("clear_lower_msg");
     self notify("playerExitHoldPointDisabled");
 }

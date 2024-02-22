@@ -66,15 +66,15 @@ function function_2afd04eb035f975() {
         }
         switch (notification) {
         case #"hash_bf30d88fa3f51a24":
-            pingType = self.leader calloutmarkerping_gettype(var_394466c2ddb208cb);
+            pingtype = self.leader calloutmarkerping_gettype(var_394466c2ddb208cb);
             var_8512c523dca1fd8f = self.leader calloutmarkerping_getorigin(var_394466c2ddb208cb);
-            if (namespace_ede58c1e66c2c280::function_c648f0fd527e089a(pingType)) {
+            if (namespace_ede58c1e66c2c280::function_c648f0fd527e089a(pingtype)) {
                 var_d16c481bae2b1cd3 = self.leader calloutmarkerping_getent(var_394466c2ddb208cb);
                 if (isdefined(var_d16c481bae2b1cd3)) {
                     self.var_1f7d056b16649f4 = var_394466c2ddb208cb;
                     self setgoalpos(getclosestpointonnavmesh(var_d16c481bae2b1cd3.origin));
                 }
-            } else if (namespace_ede58c1e66c2c280::function_5dacc89a40a58737(pingType)) {
+            } else if (namespace_ede58c1e66c2c280::function_5dacc89a40a58737(pingtype)) {
                 var_c0e3b7c8c7c23791 = self.leader calloutmarkerping_getent(var_394466c2ddb208cb);
                 if (isdefined(var_c0e3b7c8c7c23791) && isdefined(var_c0e3b7c8c7c23791.entity)) {
                     var_c0e3b7c8c7c23791 = var_c0e3b7c8c7c23791.entity;
@@ -82,7 +82,7 @@ function function_2afd04eb035f975() {
                 self.favoriteenemy = var_c0e3b7c8c7c23791;
                 self notify("target_switch");
                 thread function_675553db448c2741(var_c0e3b7c8c7c23791);
-            } else if (namespace_ede58c1e66c2c280::function_d3789a9a4be5df2e(pingType)) {
+            } else if (namespace_ede58c1e66c2c280::function_d3789a9a4be5df2e(pingtype)) {
                 var_c0e3b7c8c7c23791 = self.leader calloutmarkerping_getent(var_394466c2ddb208cb);
                 if (isdefined(var_c0e3b7c8c7c23791) && isdefined(var_c0e3b7c8c7c23791.entity)) {
                     var_c0e3b7c8c7c23791 = var_c0e3b7c8c7c23791.entity;
@@ -90,10 +90,10 @@ function function_2afd04eb035f975() {
                 self.var_1f7d056b16649f4 = var_394466c2ddb208cb;
                 self setgoalpos(getclosestpointonnavmesh(var_c0e3b7c8c7c23791.origin));
             } else {
-                if (namespace_ede58c1e66c2c280::function_87df78670540e9b2(pingType)) {
+                if (namespace_ede58c1e66c2c280::function_87df78670540e9b2(pingtype)) {
                     goto LOC_00000277;
                 }
-                switch (pingType) {
+                switch (pingtype) {
                 case 3:
                     break;
                 case 2:
@@ -309,18 +309,18 @@ function function_92cfd582ab09b167(pickup) {
         }
         return 1;
     }
-    if (isDogTag(pickup.scriptablename)) {
+    if (isdogtag(pickup.scriptablename)) {
         namespace_85cd45b4fe0d86fb::function_b5d4fcc3fab92696(pickup);
         if (namespace_aead94004cf4c147::function_7e103028c464ab9a(pickup.scriptablename)) {
             if (namespace_85cd45b4fe0d86fb::function_d9f5c5090de1241b(self, pickup.count)) {
-                var_57acadc40b2f0a8 = namespace_85cd45b4fe0d86fb::getDogTagVictimAndKiller(pickup.count);
+                var_57acadc40b2f0a8 = namespace_85cd45b4fe0d86fb::getdogtagvictimandkiller(pickup.count);
                 _ = var_57acadc40b2f0a8[1];
                 victimindex = var_57acadc40b2f0a8[0];
-                if (isdefined(level.dogTagInfo[victimindex].player)) {
-                    namespace_85cd45b4fe0d86fb::function_8e643d6706defeea(level.dogTagInfo[victimindex].player, pickup.count);
+                if (isdefined(level.dogtaginfo[victimindex].player)) {
+                    namespace_85cd45b4fe0d86fb::function_8e643d6706defeea(level.dogtaginfo[victimindex].player, pickup.count);
                 }
-                if (level.dogTagInfo[victimindex].player != self) {
-                    namespace_d696adde758cbe79::showDMZSplash("dmz_recover_dog_tag", [0:self], undefined);
+                if (level.dogtaginfo[victimindex].player != self) {
+                    namespace_d696adde758cbe79::showdmzsplash("dmz_recover_dog_tag", [0:self], undefined);
                 }
                 return 1;
             }
@@ -401,7 +401,7 @@ function function_b95656bc9f3d0896(var_d16c481bae2b1cd3) {
             }
             pickup.isweaponfromcrate = var_d16c481bae2b1cd3.isweaponfromcrate;
             pickup.isautouse = 0;
-            if (!isdefined(var_d16c481bae2b1cd3) || var_d16c481bae2b1cd3 getscriptableisloot() && !function_b6b71c738c7f7ca4(var_d16c481bae2b1cd3)) {
+            if (!isdefined(var_d16c481bae2b1cd3) || var_d16c481bae2b1cd3 getscriptableisloot() && !lootusedignore(var_d16c481bae2b1cd3)) {
                 results = function_92cfd582ab09b167(pickup);
                 if (results == 1) {
                     return function_60234aa487445085(pickup, self, 0, var_d16c481bae2b1cd3);

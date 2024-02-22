@@ -9,7 +9,7 @@
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb
 // Size: 0x141
-function doOnActionScoreEvent(eventtype, eventname, cooldown) {
+function doonactionscoreevent(eventtype, eventname, cooldown) {
     if (getdvarint(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", namespace_cd0b2d039510b38d::getsubgametype(), "_disable_onactionscoreevents"), 0) == 1) {
         return;
     }
@@ -79,7 +79,7 @@ function function_d25feb1da4499bae(eventname) {
 function function_558e5516ee7925aa(var_c7cba7d0db108110) {
     points = namespace_62c556437da28f50::getscoreinfovalue(var_c7cba7d0db108110);
     if (isdefined(points)) {
-        thread namespace_48a08c5037514e04::doScoreEvent(var_c7cba7d0db108110, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+        thread namespace_48a08c5037514e04::doscoreevent(var_c7cba7d0db108110, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
     }
 }
 

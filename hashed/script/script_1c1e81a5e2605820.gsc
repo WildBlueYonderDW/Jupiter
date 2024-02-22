@@ -33,11 +33,11 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "capture_bot";
-    self.voice = #"hash_969c0f396e338ba2";
+    self.voice = #"unitednations";
     self.bhasthighholster = 0;
     self.animtree = "capture_bot";
     self setmodel("tag_origin");
-    self setclothtype(#"hash_c5ead6e06f06025d");
+    self setclothtype(#"vestlight");
     self function_8abe5a968cc3c220(#"none");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {

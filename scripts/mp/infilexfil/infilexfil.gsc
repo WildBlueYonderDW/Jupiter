@@ -92,7 +92,7 @@ function infil_init() {
         gameflagset("infil_setup_complete");
         return;
     }
-    if (game["roundsPlayed"] > 0 && !namespace_36f464722d326bbe::function_8b6131109e66d962() || getdvarint(@"hash_7194076ab4888f2b", 0) == 1 || namespace_36f464722d326bbe::isBRStyleGameType() || getdvarint(@"hash_704afe6f6c582ee0") < 15 || getgametype() == "war" && namespace_36f464722d326bbe::isdonetskmap()) {
+    if (game["roundsPlayed"] > 0 && !namespace_36f464722d326bbe::function_8b6131109e66d962() || getdvarint(@"hash_7194076ab4888f2b", 0) == 1 || namespace_36f464722d326bbe::isbrstylegametype() || getdvarint(@"hash_704afe6f6c582ee0") < 15 || getgametype() == "war" && namespace_36f464722d326bbe::isdonetskmap()) {
         game["infil"] = undefined;
         level.requiredplayercount["allies"] = 0;
         level.requiredplayercount["axis"] = 0;

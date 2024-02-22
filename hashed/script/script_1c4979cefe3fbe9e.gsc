@@ -39,8 +39,8 @@ function main() {
     self setmodel("body_c_jup_sp_enemy_pmc_grunt_red");
     self attach("head_c_jup_sp_enemy_pmc_grunt_05_02", "", 1);
     self.headmodel = "head_c_jup_sp_enemy_pmc_grunt_05_02";
-    self setclothtype(#"hash_46f0f4be27456e65");
-    self function_8abe5a968cc3c220(#"hash_1db29aba7a7a7ffd");
+    self setclothtype(#"nylon");
+    self function_8abe5a968cc3c220(#"millghtgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

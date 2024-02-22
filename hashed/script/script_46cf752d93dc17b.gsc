@@ -38,7 +38,7 @@ function init() {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x510
 // Size: 0x239
-function function_69b2e5235bfb7998(name, cratemodel, var_b55272982c57a2ce, onOpenFunc) {
+function function_69b2e5235bfb7998(name, cratemodel, var_b55272982c57a2ce, onopenfunc) {
     if (!isdefined(level.var_ef63e063e320acfc)) {
         level.var_ef63e063e320acfc = [];
     }
@@ -60,7 +60,7 @@ function function_69b2e5235bfb7998(name, cratemodel, var_b55272982c57a2ce, onOpe
         level.var_ef63e063e320acfc[name].funcs["supplyDropFall"] = &function_7dec3b199d2e73b8;
         level.var_ef63e063e320acfc[name].funcs["planeDropRun"] = &function_8862805d448b58d4;
         level.var_ef63e063e320acfc[name].funcs["spawnDropCrate"] = &function_52f17e5fbec318a6;
-        level.var_ef63e063e320acfc[name].funcs["onOpenFunc"] = onOpenFunc;
+        level.var_ef63e063e320acfc[name].funcs["onOpenFunc"] = onopenfunc;
     }
     return level.var_ef63e063e320acfc[name];
 }
@@ -84,7 +84,7 @@ function function_80e49e34fc8d70b8(name, funcname, func) {
 // Checksum 0x0, Offset: 0x7c5
 // Size: 0x60
 function function_4b941a30db41d07e(container, opener) {
-    if (isdefined(container.entity.smokesignal) && namespace_3f0ea7483345a2c0::isContainerEmpty(container, opener)) {
+    if (isdefined(container.entity.smokesignal) && namespace_3f0ea7483345a2c0::iscontainerempty(container, opener)) {
         container.entity.smokesignal setscriptablepartstate("smoke_signal", "off", 1);
     }
 }
@@ -347,7 +347,7 @@ function function_52f17e5fbec318a6(var_8ee83e2cbd3d747d, dropstruct, var_d4858c7
     crate.userate = dropstruct.userate;
     crate.curprogress = 0;
     crate.usetime = dropstruct.usetime;
-    crate.onOpenFunc = dropstruct.onOpenFunc;
+    crate.onopenfunc = dropstruct.onopenfunc;
     crate.supportsreroll = 0;
     crate.cratetype = "br_supply_drops_common";
     return crate;
@@ -521,8 +521,8 @@ function function_94ff06d2db58e807(instance, part, state, player, var_a5b2c54141
         instance.var_ceb543956c7203e7 = &function_4b941a30db41d07e;
     }
     instance setscriptablepartstate("dmz_supply_drop", "partially_open_in_use_unusable");
-    if (isdefined(instance.entity.onOpenFunc)) {
-        [[ instance.entity.onOpenFunc ]](instance, player);
+    if (isdefined(instance.entity.onopenfunc)) {
+        [[ instance.entity.onopenfunc ]](instance, player);
     }
     if (isdefined(level.var_2ff67632074bc957)) {
         instance [[ level.var_2ff67632074bc957 ]](player);

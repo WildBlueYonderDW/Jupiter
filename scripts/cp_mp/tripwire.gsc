@@ -738,11 +738,11 @@ function delete_trapfunc() {
 // Size: 0x10b
 function triggerfuncsemtex(who) {
     if (isdefined(self.grenadeweaponoverride)) {
-        grenadeType = self.grenadeweaponoverride;
+        grenadetype = self.grenadeweaponoverride;
     } else {
-        grenadeType = "semtex_tripwire";
+        grenadetype = "semtex_tripwire";
     }
-    semtex = magicgrenademanual(grenadeType, self.origin, (0, 0, 0), 0.25);
+    semtex = magicgrenademanual(grenadetype, self.origin, (0, 0, 0), 0.25);
     semtex.angles = self.angles;
     semtex.origin = self.origin;
     semtex linkto(self);
@@ -762,11 +762,11 @@ function triggerfuncsemtex(who) {
 // Size: 0x144
 function triggerfuncfrag(who) {
     if (isdefined(self.grenadeweaponoverride)) {
-        grenadeType = self.grenadeweaponoverride;
+        grenadetype = self.grenadeweaponoverride;
     } else {
-        grenadeType = "frag_tripwire";
+        grenadetype = "frag_tripwire";
     }
-    frag = magicgrenademanual(grenadeType, self.origin, (0, 0, 0), 0.25);
+    frag = magicgrenademanual(grenadetype, self.origin, (0, 0, 0), 0.25);
     frag.angles = self.angles;
     frag.origin = self.origin;
     frag linkto(self);
@@ -791,11 +791,11 @@ function triggerfuncfrag(who) {
 // Size: 0x16d
 function triggerfuncc4(who) {
     if (isdefined(self.grenadeweaponoverride)) {
-        grenadeType = self.grenadeweaponoverride;
+        grenadetype = self.grenadeweaponoverride;
     } else {
-        grenadeType = "c4_mp";
+        grenadetype = "c4_mp";
     }
-    c4 = magicgrenademanual(grenadeType, self.origin, (0, 0, 0), 0.25);
+    c4 = magicgrenademanual(grenadetype, self.origin, (0, 0, 0), 0.25);
     c4.angles = self.angles;
     c4.origin = self.origin;
     c4 linkto(self);
@@ -819,7 +819,7 @@ function triggerfuncc4(who) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29ee
 // Size: 0x258
-function damagetrapfuncthink(damageFunc, struct) {
+function damagetrapfuncthink(damagefunc, struct) {
     self endon("trap_trigger");
     self setcandamage(1);
     self.health = 99999;
@@ -1227,7 +1227,7 @@ function function_b96a88fafd4943c5() {
                 }
             } else if (getdvarint(@"hash_c6241d315c0f6bcf", 0) == 3) {
                 foreach (tripwire in tripwires) {
-                    if (istrue(tripwire.triggered) || istrue(tripwire.var_71dd48e6c8570392)) {
+                    if (istrue(tripwire.triggered) || istrue(tripwire.disarmed)) {
                         thread namespace_f2ffc0540883e1ad::drawsphere(tripwire.origin, 32, 1, var_7b32db7c7f51bac5);
                     } else if (istrue(tripwire.enabled)) {
                         thread namespace_f2ffc0540883e1ad::drawsphere(tripwire.origin, 32, 1, var_49a4b116c64a17ed);
@@ -1237,7 +1237,7 @@ function function_b96a88fafd4943c5() {
                 }
             } else if (getdvarint(@"hash_c6241d315c0f6bcf", 0) == 4) {
                 foreach (tripwire in tripwires) {
-                    if (istrue(tripwire.triggered) || istrue(tripwire.var_71dd48e6c8570392)) {
+                    if (istrue(tripwire.triggered) || istrue(tripwire.disarmed)) {
                         thread namespace_f2ffc0540883e1ad::drawsphere(tripwire.origin, 32, 1, var_7b32db7c7f51bac5);
                     }
                 }

@@ -516,7 +516,7 @@ function function_6127318053465edf(var_751df20fceaee5) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f4
 // Size: 0x24
-function function_485875d2f219985b(var_751df20fceaee5) {
+function on_exfil_board_vehicle(var_751df20fceaee5) {
     player = self;
     player setplayermusicstate("");
 }

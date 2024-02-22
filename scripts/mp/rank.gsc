@@ -546,7 +546,7 @@ function waitandapplyxp(type, var_a40a13bc564139bf, var_e07cc288c1153c7f, bonusx
     bonusxp = function_78802b8c6de6eeba(bonusxp, var_b01aca3236595958);
     var_a40a13bc564139bf = function_736110bfd2a3a5ea(var_a40a13bc564139bf, var_b01aca3236595958);
     weapon_xp = function_199d881c43179c3f(weapon_xp, var_b01aca3236595958);
-    battlepassXP = function_744c50f3c54a2ed8(var_a40a13bc564139bf, var_7ec7671a1e0c788f);
+    battlepassxp = function_744c50f3c54a2ed8(var_a40a13bc564139bf, var_7ec7671a1e0c788f);
     if (level.var_cc985bc5548342e8 || level.var_9ca8191d077daebe) {
         var_57ad0dc40b2fdda = function_8ed5ea54bb5c5194(var_e07cc288c1153c7f, weapon_xp);
         weapon_xp = var_57ad0dc40b2fdda[1];
@@ -573,7 +573,7 @@ function waitandapplyxp(type, var_a40a13bc564139bf, var_e07cc288c1153c7f, bonusx
             displayscoreeventpoints(function_c465f9a27979c865(var_e07cc288c1153c7f, var_b01aca3236595958), type);
         }
     }
-    incrankxp(var_e07cc288c1153c7f, objweapon, weapon_xp, type, battlepassXP, var_b01aca3236595958, var_8197b2ce199b9025);
+    incrankxp(var_e07cc288c1153c7f, objweapon, weapon_xp, type, battlepassxp, var_b01aca3236595958, var_8197b2ce199b9025);
     if (level.playerxpenabled && !isai(self)) {
         if (isdefined(objweapon) && (namespace_68e641469fde3fa7::iscacprimaryweapon(objweapon) || namespace_68e641469fde3fa7::iscacsecondaryweapon(objweapon))) {
             var_7e2c53b0bcf117d9 = spawnstruct();
@@ -592,7 +592,7 @@ function waitandapplyxp(type, var_a40a13bc564139bf, var_e07cc288c1153c7f, bonusx
             function_76ed21eb2a456e77(type, var_a40a13bc564139bf, bonusxp, var_7ec7671a1e0c788f);
         }
     }
-    var_814960839ff2dc12 = getprestigelevel();
+    current_prestige = getprestigelevel();
     var_ebfebb497c5f0c29 = getrank();
 }
 
@@ -600,9 +600,9 @@ function waitandapplyxp(type, var_a40a13bc564139bf, var_e07cc288c1153c7f, bonusx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2143
 // Size: 0x13d
-function function_8ed5ea54bb5c5194(rankxp, weaponXP) {
+function function_8ed5ea54bb5c5194(rankxp, weaponxp) {
     var_2ab33f3feca6daa9 = rankxp;
-    var_a272dd31f410ca93 = weaponXP;
+    var_a272dd31f410ca93 = weaponxp;
     var_9e57d571f220152f = function_53c4c53197386572(self.pers["xpEarnedThisMatch"], 0) / level.var_6677795065862d93;
     if (var_9e57d571f220152f > level.var_fe4db4ab7ad9d95e) {
         if (level.var_cc985bc5548342e8) {
@@ -637,20 +637,20 @@ function function_b560222a9aa3c942() {
         if (var_d44fd609866efce4 > 0) {
             level.var_d81e28e42da9de5e = [];
             scaling = spawnstruct();
-            scaling.var_d69db7dfbc818978 = level.var_7b8d4c36ba6edcec;
+            scaling.benchmark = level.var_7b8d4c36ba6edcec;
             scaling.scalar = 1;
             level.var_d81e28e42da9de5e[level.var_d81e28e42da9de5e.size] = scaling;
             var_547db0c3239f2322 = 1;
             while (var_547db0c3239f2322 <= var_d44fd609866efce4) {
                 scaling = spawnstruct();
-                scaling.var_d69db7dfbc818978 = getdvarfloat(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_rank_xp_rs_benchmark", var_547db0c3239f2322), -1);
-                if (scaling.var_d69db7dfbc818978 >= 0) {
+                scaling.benchmark = getdvarfloat(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_rank_xp_rs_benchmark", var_547db0c3239f2322), -1);
+                if (scaling.benchmark >= 0) {
                     scaling.scalar = getdvarfloat(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_rank_xp_rs_scalar", var_547db0c3239f2322), 0);
                     var_33f2badfc9a93359 = level.var_d81e28e42da9de5e[level.var_d81e28e42da9de5e.size - 1];
-                    var_33f2badfc9a93359.var_8d91cd3e5ba96b9c = scaling.var_d69db7dfbc818978 - var_33f2badfc9a93359.var_d69db7dfbc818978;
+                    var_33f2badfc9a93359.var_8d91cd3e5ba96b9c = scaling.benchmark - var_33f2badfc9a93359.benchmark;
                     var_33f2badfc9a93359.var_2b53305b09e9ca11 = var_33f2badfc9a93359.scalar - scaling.scalar;
                     /#
-                        assertex(scaling.var_d69db7dfbc818978 >= var_33f2badfc9a93359.var_d69db7dfbc818978, "A benchmark's XP per hour should be greater than or equal to the previous benchmark's XP per hour.");
+                        assertex(scaling.benchmark >= var_33f2badfc9a93359.benchmark, "A benchmark's XP per hour should be greater than or equal to the previous benchmark's XP per hour.");
                     #/
                     level.var_d81e28e42da9de5e[level.var_d81e28e42da9de5e.size] = scaling;
                 }
@@ -667,20 +667,20 @@ function function_b560222a9aa3c942() {
         if (var_de4ef628cc84d98e > 0) {
             level.var_2b6ac783e47905d8 = [];
             scaling = spawnstruct();
-            scaling.var_d69db7dfbc818978 = level.var_7382e860a71d2ec6;
+            scaling.benchmark = level.var_7382e860a71d2ec6;
             scaling.scalar = 1;
             level.var_2b6ac783e47905d8[level.var_2b6ac783e47905d8.size] = scaling;
             var_547db0c3239f2322 = 1;
             while (var_547db0c3239f2322 <= var_de4ef628cc84d98e) {
                 scaling = spawnstruct();
-                scaling.var_d69db7dfbc818978 = getdvarfloat(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_weapon_xp_rs_benchmark", var_547db0c3239f2322), -1);
-                if (scaling.var_d69db7dfbc818978 >= 0) {
+                scaling.benchmark = getdvarfloat(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_weapon_xp_rs_benchmark", var_547db0c3239f2322), -1);
+                if (scaling.benchmark >= 0) {
                     scaling.scalar = getdvarfloat(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_weapon_xp_rs_scalar", var_547db0c3239f2322), 0);
                     var_33f2badfc9a93359 = level.var_2b6ac783e47905d8[level.var_2b6ac783e47905d8.size - 1];
-                    var_33f2badfc9a93359.var_8d91cd3e5ba96b9c = scaling.var_d69db7dfbc818978 - var_33f2badfc9a93359.var_d69db7dfbc818978;
+                    var_33f2badfc9a93359.var_8d91cd3e5ba96b9c = scaling.benchmark - var_33f2badfc9a93359.benchmark;
                     var_33f2badfc9a93359.var_2b53305b09e9ca11 = scaling.scalar - var_33f2badfc9a93359.scalar;
                     /#
-                        assertex(scaling.var_d69db7dfbc818978 >= var_33f2badfc9a93359.var_d69db7dfbc818978, "A benchmark's XP per hour should be greater than the previous benchmark's XP per hour.");
+                        assertex(scaling.benchmark >= var_33f2badfc9a93359.benchmark, "A benchmark's XP per hour should be greater than the previous benchmark's XP per hour.");
                     #/
                     level.var_2b6ac783e47905d8[level.var_2b6ac783e47905d8.size] = scaling;
                 }
@@ -712,7 +712,7 @@ function function_e9d048bc036717fa(var_a40a13bc564139bf, var_608a3c74535ba63a, o
         var_547db0c3239f2322 = 0;
         var_18667df3ced7535b = 0;
         while (var_547db0c3239f2322 < level.var_d81e28e42da9de5e.size) {
-            var_ea41d0306ce04c06 = var_f38005d4b8f0ab05 - level.var_d81e28e42da9de5e[var_547db0c3239f2322].var_d69db7dfbc818978;
+            var_ea41d0306ce04c06 = var_f38005d4b8f0ab05 - level.var_d81e28e42da9de5e[var_547db0c3239f2322].benchmark;
             if (var_ea41d0306ce04c06 < 0) {
                 break;
             }
@@ -730,7 +730,7 @@ function function_e9d048bc036717fa(var_a40a13bc564139bf, var_608a3c74535ba63a, o
         var_547db0c3239f2322 = 0;
         var_18667df3ced7535b = 0;
         while (var_547db0c3239f2322 < level.var_2b6ac783e47905d8.size) {
-            var_ea41d0306ce04c06 = var_f38005d4b8f0ab05 - level.var_2b6ac783e47905d8[var_547db0c3239f2322].var_d69db7dfbc818978;
+            var_ea41d0306ce04c06 = var_f38005d4b8f0ab05 - level.var_2b6ac783e47905d8[var_547db0c3239f2322].benchmark;
             if (var_ea41d0306ce04c06 < 0) {
                 break;
             }
@@ -1362,9 +1362,9 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         var_f7a4049e7169c7fc = namespace_465d40bb08a5337a::function_396b82c66e727528(self.operatorcustomization.operatorref);
     }
     var_f078590f66174e29 = function_6352822c84cb9722();
-    operatorXP = amount * var_f078590f66174e29;
-    operatorXP = int(operatorXP);
-    clanXP = int(amount);
+    operatorxp = amount * var_f078590f66174e29;
+    operatorxp = int(operatorxp);
+    clanxp = int(amount);
     var_edfaf8a1ee65e5b1 = [];
     if (amount > 0) {
         /#
@@ -1436,7 +1436,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
             #/
         }
     }
-    if (operatorXP > 0) {
+    if (operatorxp > 0) {
         var_f7a4049e7169c7fc = namespace_aad14af462a74d08::function_aff35122a61a900b(self.team);
         /#
             assertex(var_f7a4049e7169c7fc != 0, "Trying to add operatorXP to an invalid operator");
@@ -1450,10 +1450,10 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"operator_xp");
         if (isdefined(var_cf27bc26b98940ab)) {
             var_edfaf8a1ee65e5b1[var_edfaf8a1ee65e5b1.size] = var_cf27bc26b98940ab;
-            var_edfaf8a1ee65e5b1[var_edfaf8a1ee65e5b1.size] = int(operatorXP);
+            var_edfaf8a1ee65e5b1[var_edfaf8a1ee65e5b1.size] = int(operatorxp);
         } else {
             /#
-                println("<unknown string>" + function_3c8848a3a11b2553(#"operator_xp") + "<unknown string>" + operatorXP + "<unknown string>" + function_3c8848a3a11b2553(eventname));
+                println("<unknown string>" + function_3c8848a3a11b2553(#"operator_xp") + "<unknown string>" + operatorxp + "<unknown string>" + function_3c8848a3a11b2553(eventname));
             #/
         }
         /#
@@ -1472,7 +1472,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
             #/
         }
     }
-    if (clanXP > 0) {
+    if (clanxp > 0) {
         /#
             assert(function_d03495fe6418377b(eventname));
         #/
@@ -1482,10 +1482,10 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"clan_xp");
         if (isdefined(var_cf27bc26b98940ab)) {
             var_edfaf8a1ee65e5b1[var_edfaf8a1ee65e5b1.size] = var_cf27bc26b98940ab;
-            var_edfaf8a1ee65e5b1[var_edfaf8a1ee65e5b1.size] = int(clanXP);
+            var_edfaf8a1ee65e5b1[var_edfaf8a1ee65e5b1.size] = int(clanxp);
         } else {
             /#
-                println("<unknown string>" + function_3c8848a3a11b2553(#"clan_xp") + "<unknown string>" + clanXP + "<unknown string>" + function_3c8848a3a11b2553(eventname));
+                println("<unknown string>" + function_3c8848a3a11b2553(#"clan_xp") + "<unknown string>" + clanxp + "<unknown string>" + function_3c8848a3a11b2553(eventname));
             #/
         }
     }
@@ -1521,8 +1521,8 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         #/
     }
     self.pers["summary"]["weaponXP"] = self.pers["summary"]["weaponXP"] + weapon_xp;
-    self.pers["summary"]["operatorXP"] = self.pers["summary"]["operatorXP"] + operatorXP;
-    self.pers["summary"]["clanXP"] = self.pers["summary"]["clanXP"] + clanXP;
+    self.pers["summary"]["operatorXP"] = self.pers["summary"]["operatorXP"] + operatorxp;
+    self.pers["summary"]["clanXP"] = self.pers["summary"]["clanXP"] + clanxp;
     self.pers["summary"]["battlepassXP"] = self.pers["summary"]["battlepassXP"] + var_158745de00c72d3e;
     if (issharedfuncdefined("challenges", "reportChallengeUserSerializedEventWrapper")) {
         function_f3bb4f4911a1beb2("challenges", "reportChallengeUserSerializedEventWrapper", eventid, var_edfaf8a1ee65e5b1);
@@ -1549,7 +1549,7 @@ function syncxpstat() {
 // Size: 0x27
 function delayplayerscorepopup(delaytime, event, victim) {
     wait(delaytime);
-    thread doScoreEvent(event);
+    thread doscoreevent(event);
 }
 
 // Namespace rank/namespace_62c556437da28f50
@@ -1976,8 +1976,8 @@ function function_736110bfd2a3a5ea(value, var_b01aca3236595958) {
 // Checksum 0x0, Offset: 0x57b7
 // Size: 0x36
 function function_199d881c43179c3f(value, var_b01aca3236595958) {
-    if (isdefined(var_b01aca3236595958) && isdefined(var_b01aca3236595958.weaponXP)) {
-        return var_b01aca3236595958.weaponXP;
+    if (isdefined(var_b01aca3236595958) && isdefined(var_b01aca3236595958.weaponxp)) {
+        return var_b01aca3236595958.weaponxp;
     }
     return value;
 }

@@ -19,7 +19,7 @@ function function_8086d05fcf37c41e() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x17b
-function function_652cedde3e252c9d(spawn_struct, var_cd74e8066ff626a6, var_c974765ba1e28e93) {
+function spawn_refractor(spawn_struct, var_cd74e8066ff626a6, var_c974765ba1e28e93) {
     if (!isdefined(var_cd74e8066ff626a6)) {
         var_cd74e8066ff626a6 = "ob_seismic_refractor";
     }
@@ -32,16 +32,16 @@ function function_652cedde3e252c9d(spawn_struct, var_cd74e8066ff626a6, var_c9747
     if (!isdefined(level.scriptable_notify_callback_funcs["refractor_hammer"]) || !array_contains(level.scriptable_notify_callback_funcs["refractor_hammer"], &function_81edae2f148e254e)) {
         namespace_17c25f0877bfb620::scriptable_addnotifycallback("refractor_hammer", &function_81edae2f148e254e);
     }
-    var_6be553c36b35cc65 = spawnscriptable(var_cd74e8066ff626a6, spawn_struct.origin, spawn_struct.angles);
-    var_6be553c36b35cc65.hammer = spawnscriptable("ob_seismic_refractor_hammer", spawn_struct.origin, spawn_struct.angles);
-    var_6be553c36b35cc65 setscriptablepartstate("model", "unusable", 0);
-    var_6be553c36b35cc65.var_aa599c358ec2ad3e = [];
-    var_6be553c36b35cc65.var_19cb4df4192822ca = [];
-    var_6be553c36b35cc65.var_fb285d0793a4040c = [];
-    var_6be553c36b35cc65.var_8b222c47a4c5bc24 = [];
-    var_6be553c36b35cc65.var_f9b8a1126400b110 = [];
-    namespace_29b5250e9959ea::function_3cec1b2981075936(var_c974765ba1e28e93, var_6be553c36b35cc65, &function_7192fa51a97ee5e9, &function_cbbab99365ff243f, &function_d62d4fe8da417ddd);
-    return var_6be553c36b35cc65;
+    refractor = spawnscriptable(var_cd74e8066ff626a6, spawn_struct.origin, spawn_struct.angles);
+    refractor.hammer = spawnscriptable("ob_seismic_refractor_hammer", spawn_struct.origin, spawn_struct.angles);
+    refractor setscriptablepartstate("model", "unusable", 0);
+    refractor.var_aa599c358ec2ad3e = [];
+    refractor.var_19cb4df4192822ca = [];
+    refractor.var_fb285d0793a4040c = [];
+    refractor.var_8b222c47a4c5bc24 = [];
+    refractor.var_f9b8a1126400b110 = [];
+    namespace_29b5250e9959ea::function_3cec1b2981075936(var_c974765ba1e28e93, refractor, &function_7192fa51a97ee5e9, &function_cbbab99365ff243f, &function_d62d4fe8da417ddd);
+    return refractor;
 }
 
 // Namespace ob_seismic_refractor/namespace_75f95b427df8560e

@@ -38,7 +38,7 @@ function main() {
     if (isdefined(level.createfx_enabled) && level.createfx_enabled) {
         return;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (!istrue(level.var_62f6f7640e4431e3.var_e77038812bc72875) && !istrue(level.brenableagents)) {
             return;
         }

@@ -10,7 +10,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x29
-function onTripwireCreate(tripwire) {
+function ontripwirecreate(tripwire) {
     tripwire.poi = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(tripwire.origin);
 }
 
@@ -18,7 +18,7 @@ function onTripwireCreate(tripwire) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xb8
 // Size: 0x1d
-function onTripwireTriggered(player, tripwire) {
+function ontripwiretriggered(player, tripwire) {
     namespace_8361bad7391de074::function_800f75fe5e5c7462(player, tripwire);
 }
 
@@ -26,7 +26,7 @@ function onTripwireTriggered(player, tripwire) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x26
-function onTripwireDefused(player, tripwire) {
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_8ebedeb366a503f7");
+function ontripwiredefused(player, tripwire) {
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_8ebedeb366a503f7");
 }
 

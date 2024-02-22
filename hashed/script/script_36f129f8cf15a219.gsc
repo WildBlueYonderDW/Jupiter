@@ -205,7 +205,7 @@ function function_7a93b7f959eff093(arena) {
         player namespace_ad49798629176e96::function_1167994a7ce49346();
         player function_6cd1f6f8fbabf600(0);
         player setthreatbiasgroup(var_1ce1b071385a88f0);
-        player thread gulagLarge_trackPlayerBullets();
+        player thread gulaglarge_trackplayerbullets();
     }
     if (isdefined(arena.var_62d1855d36cff5d2) && arena.var_62d1855d36cff5d2.size > 0) {
         foreach (loot in arena.var_62d1855d36cff5d2) {
@@ -258,7 +258,7 @@ function function_74624e51971e5186(arena) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x109d
 // Size: 0x84
-function gulagLarge_trackPlayerBullets() {
+function gulaglarge_trackplayerbullets() {
     player = self;
     level endon("game_ended");
     player endon("disconnect");
@@ -720,7 +720,7 @@ function function_e326a28e02c95fc7(arena, var_55e69fb0ce97f15e) {
     if (!getdvarint(@"hash_b3d7a9483362813e", 0)) {
         spawnlocation = getclosestpointonnavmesh(var_55e69fb0ce97f15e.origin);
     }
-    agent = function_ea94a8bf24d3c5ef(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
+    agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
     if (isagent(agent)) {
         agent thread function_cc61194eccd91ab1(arena);
         if (getdvarint(@"hash_b3d7a9483362813e", 0)) {

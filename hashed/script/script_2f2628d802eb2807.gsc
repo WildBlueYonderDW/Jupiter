@@ -91,7 +91,7 @@ function private function_b232793fe47c01b9() {
 function private function_7512e3d88c4083fa(heli, var_cdbb4a9588abef59) {
     origin = ter_op(isdefined(level.var_f0872e42daf6d4d5), level.var_f0872e42daf6d4d5, heli.origin);
     aitype = namespace_bfef6903bca5845d::function_7f1a2e2ebe0c1693("ar");
-    agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, origin, heli.angles, "absolute", "mission", "vehicleDriveHeliDriver", undefined, undefined, undefined, self.node.poi, 1, undefined, 0);
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, heli.angles, "absolute", "mission", "vehicleDriveHeliDriver", undefined, undefined, undefined, self.node.poi, 1, undefined, 0);
     if (!isdefined(agent)) {
         /#
             println("task_ended");

@@ -333,7 +333,7 @@ function updategametypedvars() {
     level.capturetype = dvarintvalue("captureType", 1, 0, 3);
     level.numflagsscoreonkill = dvarintvalue("numFlagsScoreOnKill", 0, 0, 3);
     level.objectivescaler = dvarfloatvalue("objScalar", 4, 1, 10);
-    level.scoresPerFob = dvarintvalue("scoresPerFob", 100, 1, 500);
+    level.scoresperfob = dvarintvalue("scoresPerFob", 100, 1, 500);
 }
 
 // Namespace conflict/namespace_643555c3ebd0124
@@ -575,7 +575,7 @@ function runobjectives(var_aa030029a5b16ae5) {
             fob.trigger.gameobject.var_1f2f362e189bf9c0 = var_1f2f362e189bf9c0;
             level.allfobs[var_1f2f362e189bf9c0] = fob;
             fob.trigger.gameobject dompoint_ondisableobjective();
-            namespace_e8a49b70d0769b66::giveteamscoreforobjective("axis", level.scoresPerFob, 1, undefined, 1);
+            namespace_e8a49b70d0769b66::giveteamscoreforobjective("axis", level.scoresperfob, 1, undefined, 1);
             level.var_a5ce88ce789c9a3e["axis"] = fob.trigger.gameobject;
             level.spawnareas["axis"][level.spawnareas["axis"].size] = fob.name;
             level.var_694388259afb589b["axis"][level.var_694388259afb589b["axis"].size] = fob.name;
@@ -590,7 +590,7 @@ function runobjectives(var_aa030029a5b16ae5) {
             fob.trigger.gameobject.var_1f2f362e189bf9c0 = var_1f2f362e189bf9c0;
             level.allfobs[var_1f2f362e189bf9c0] = fob;
             fob.trigger.gameobject dompoint_ondisableobjective();
-            namespace_e8a49b70d0769b66::giveteamscoreforobjective("allies", level.scoresPerFob, 1, undefined, 1);
+            namespace_e8a49b70d0769b66::giveteamscoreforobjective("allies", level.scoresperfob, 1, undefined, 1);
             level.var_a5ce88ce789c9a3e["allies"] = fob.trigger.gameobject;
             level.spawnareas["allies"][level.spawnareas["allies"].size] = fob.name;
             level.var_694388259afb589b["allies"][level.var_694388259afb589b["allies"].size] = fob.name;
@@ -886,8 +886,8 @@ function objective_onuse(var_82236c155ecbedc9) {
     function_8d03978a31faba3a(self.objectivekey, otherteam);
     function_e8a6e840ef663c81(self.objectivekey, self.ownerteam);
     function_3db3be47d7a24a7();
-    namespace_e8a49b70d0769b66::giveteamscoreforobjective(self.ownerteam, level.scoresPerFob, 1, undefined, 1);
-    namespace_e8a49b70d0769b66::giveteamscoreforobjective(self.oldteam, -1 * level.scoresPerFob, 1, undefined, 1);
+    namespace_e8a49b70d0769b66::giveteamscoreforobjective(self.ownerteam, level.scoresperfob, 1, undefined, 1);
+    namespace_e8a49b70d0769b66::giveteamscoreforobjective(self.oldteam, -1 * level.scoresperfob, 1, undefined, 1);
 }
 
 // Namespace conflict/namespace_643555c3ebd0124

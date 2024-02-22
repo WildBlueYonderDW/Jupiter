@@ -9,7 +9,7 @@
 // Checksum 0x0, Offset: 0x7e
 // Size: 0xc9
 function charm(durations, attacker, var_21081d0182cdd254) {
-    if (!istrue(self.var_971d11b71ceb4346.var_d9f86989ad15047e)) {
+    if (!istrue(self.aisettings.var_d9f86989ad15047e)) {
         return 0;
     }
     if (function_8ce7894f1a52fb77("charm")) {

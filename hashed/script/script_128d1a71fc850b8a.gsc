@@ -160,7 +160,7 @@ function function_e7ef87a1bf538dbc(racket, var_7d5acb0650804b86, tier) {
     var_1439f86640d42e34 = namespace_bfef6903bca5845d::function_6d1e55c48e2c12f();
     aitype = namespace_bfef6903bca5845d::function_7f1a2e2ebe0c1693(var_1439f86640d42e34, tier);
     spawnlocation = getclosestpointonnavmesh(var_7d5acb0650804b86.origin + (0, 0, 30));
-    agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, spawnlocation, undefined, "absolute", "racket");
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, spawnlocation, undefined, "absolute", "racket");
     if (isagent(agent)) {
         agent.health = level.brgametype.var_cc07ca7d5aeb1f87;
         agent.maxhealth = level.brgametype.var_cc07ca7d5aeb1f87;

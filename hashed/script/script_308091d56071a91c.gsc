@@ -180,9 +180,9 @@ function private function_b0f35d29939ca41d() {
                 roots[roots.size] = spawnstruct();
                 roots[roots.size - 1].var_5aaf7c7163c04623 = walk.var_5aaf7c7163c04623;
             }
-            var_db52b4a8aba13320 = walk.var_5aaf7c7163c04623 function_6a6ec88abab6a723();
-            var_3e8e5769a9b84c64 = var_db52b4a8aba13320 function_d1338e27a26ecaeb();
-            var_7982f8c1472e445d = var_db52b4a8aba13320 function_291cd2f1089d3a94();
+            scenescriptbundle = walk.var_5aaf7c7163c04623 function_6a6ec88abab6a723();
+            var_3e8e5769a9b84c64 = scenescriptbundle function_d1338e27a26ecaeb();
+            var_7982f8c1472e445d = scenescriptbundle function_291cd2f1089d3a94();
             if (getdvarint(@"hash_7dda2ca8e979b1b2", 0)) {
                 roots[roots.size - 1].var_3e8e5769a9b84c64 = var_3e8e5769a9b84c64;
                 roots[roots.size - 1].var_7982f8c1472e445d = var_7982f8c1472e445d;
@@ -1069,7 +1069,7 @@ function function_d4cfde3fa9af7e5a(var_698da5af57b757e7) {
             player.var_43996b501c46de7f[0] = newhudelem();
             player.var_43996b501c46de7f[1] = newhudelem();
             str_scene_name = function_53c4c53197386572(var_5aaf7c7163c04623.var_8ac77218f7a34e3e, "<unknown string>");
-            str_shot_name = function_53c4c53197386572(var_5aaf7c7163c04623.var_84b542bb7490bea7.var_db52b4a8aba13320.shots[var_698da5af57b757e7].var_cf0d4d8cc5ac99a4.name, "<unknown string>");
+            str_shot_name = function_53c4c53197386572(var_5aaf7c7163c04623.var_84b542bb7490bea7.scenescriptbundle.shots[var_698da5af57b757e7].var_cf0d4d8cc5ac99a4.name, "<unknown string>");
             player.var_43996b501c46de7f[0].alignx = "<unknown string>";
             player.var_43996b501c46de7f[0].aligny = "<unknown string>";
             player.var_43996b501c46de7f[0].vertalign = "<unknown string>";
@@ -1149,7 +1149,7 @@ function function_ffae6ec92028ce08(var_51d2f645ad8afdaf, duration, cameras) {
             str_scene_name = function_53c4c53197386572(var_5aaf7c7163c04623.var_8ac77218f7a34e3e, "<unknown string>");
             foreach (var_109ebf347b2f2ece, var_698da5af57b757e7 in var_51d2f645ad8afdaf) {
                 hudelem = newhudelem();
-                str_shot_name = function_53c4c53197386572(var_5aaf7c7163c04623.var_84b542bb7490bea7.var_db52b4a8aba13320.shots[var_698da5af57b757e7].var_cf0d4d8cc5ac99a4.name, "<unknown string>");
+                str_shot_name = function_53c4c53197386572(var_5aaf7c7163c04623.var_84b542bb7490bea7.scenescriptbundle.shots[var_698da5af57b757e7].var_cf0d4d8cc5ac99a4.name, "<unknown string>");
                 hudelem.alignx = "<unknown string>";
                 hudelem.aligny = "<unknown string>";
                 hudelem.vertalign = "<unknown string>";

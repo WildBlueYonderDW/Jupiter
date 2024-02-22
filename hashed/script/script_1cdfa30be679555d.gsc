@@ -78,7 +78,7 @@ function bot_wm_think() {
                 continue;
             }
         #/
-        if (self.health <= 0 || istrue(self.var_c4c8b91e0b16aa5e)) {
+        if (self.health <= 0 || istrue(self.liveragdoll)) {
             wait(0.05);
             continue;
         }
@@ -573,8 +573,8 @@ function function_47f50aa0634c3b02() {
         }
         return 0;
     }
-    if (!istrue(self.var_3a9ae1fe9210a5b7) && isdefined(self.var_73b8be18bf6eb00d.var_62eaad2f12fc0827)) {
-        var_3613882be77daf1d = self.var_73b8be18bf6eb00d.var_62eaad2f12fc0827;
+    if (!istrue(self.var_3a9ae1fe9210a5b7) && isdefined(self.var_73b8be18bf6eb00d.tanknearbyrange)) {
+        var_3613882be77daf1d = self.var_73b8be18bf6eb00d.tanknearbyrange;
     }
     var_4baf4f8316b6450a = undefined;
     if (istrue(self.var_73b8be18bf6eb00d.var_65ab8f532ca7195)) {

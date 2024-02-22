@@ -183,25 +183,25 @@ function getspawnpoint() {
 // Size: 0x19a
 function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon) {
     oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
-    var_a7f928303da7cdd2 = 0;
+    givescore = 0;
     if (victim.infriendlybase || attacker.inenemybase) {
         attacker thread function_e3e3e81453fd788b(#"hash_32c83db6a9b8dd6", objweapon);
-        var_a7f928303da7cdd2 = level.enemybasescore;
+        givescore = level.enemybasescore;
     } else if (attacker.infriendlybase || victim.inenemybase) {
         attacker thread function_e3e3e81453fd788b(#"hash_537f763990ad6bf3", objweapon);
-        var_a7f928303da7cdd2 = level.friendlybasescore;
+        givescore = level.friendlybasescore;
     } else {
         attacker thread function_e3e3e81453fd788b(#"hash_4c4afed94af7fd08", objweapon);
-        var_a7f928303da7cdd2 = level.midfieldscore;
+        givescore = level.midfieldscore;
     }
-    var_882b7ad682ff97ce = game["teamScores"][attacker.pers["team"]] + var_a7f928303da7cdd2;
+    var_882b7ad682ff97ce = game["teamScores"][attacker.pers["team"]] + givescore;
     hitscorelimit = var_882b7ad682ff97ce >= level.roundscorelimit;
     if (hitscorelimit && level.roundscorelimit != 0) {
-        var_a7f928303da7cdd2 = level.roundscorelimit - game["teamScores"][attacker.pers["team"]];
+        givescore = level.roundscorelimit - game["teamScores"][attacker.pers["team"]];
     }
-    if (var_a7f928303da7cdd2 > 0) {
-        namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.pers["team"], var_a7f928303da7cdd2, 0);
-        attacker thread namespace_62c556437da28f50::scoreeventpopup(function_2ef675c13ca1c4af(#"hash_2c8bcbb02ec7ff9b", var_a7f928303da7cdd2));
+    if (givescore > 0) {
+        namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.pers["team"], givescore, 0);
+        attacker thread namespace_62c556437da28f50::scoreeventpopup(function_2ef675c13ca1c4af(#"hash_2c8bcbb02ec7ff9b", givescore));
     }
 }
 

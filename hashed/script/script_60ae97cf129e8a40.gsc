@@ -23,7 +23,7 @@ function function_733b23bb49feb5c3() {
     /#
         println("<unknown string>");
     #/
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         function_a94c90dc6c858da4();
         if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
             spawnorigin = (603, 2705, 1306);
@@ -54,7 +54,7 @@ function function_a94c90dc6c858da4() {
     var_45accff1681e0276 = 6000;
     if (getgametype() == "arm" || getgametype() == "conflict") {
         var_45accff1681e0276 = 8000;
-    } else if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_b83c1c9cb27cc9d7 = -1;
         brgametype = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5();
         if (brgametype == "dmz" || brgametype == "plunder") {

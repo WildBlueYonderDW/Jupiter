@@ -835,7 +835,7 @@ function function_693e108cb61ceeb5(weaponname, var_251fc0ce44d0b66d) {
     if (isdefined(level.weaponattachments[var_251fc0ce44d0b66d])) {
         return level.weaponattachments[var_251fc0ce44d0b66d];
     }
-    return namespace_38b993c4618e76cd::function_a50b607d2500dda5(var_251fc0ce44d0b66d);
+    return namespace_38b993c4618e76cd::getlootidfromref(var_251fc0ce44d0b66d);
 }
 
 // Namespace weapon/namespace_e0ee43ef2dddadaa
@@ -1858,30 +1858,30 @@ function function_c7901c1f857aa1a0(weapon) {
     variantindex = getweaponvariantindex(getcompleteweaponname(weapon));
     if (!isdefined(variantindex)) {
         itemname = getweaponbasename(weapon);
-        var_c0a741614135915d = namespace_e0ee43ef2dddadaa::function_9c331f88be5a1478(weapon);
+        weapon_lootid = namespace_e0ee43ef2dddadaa::function_9c331f88be5a1478(weapon);
         /#
             println("<unknown string>" + itemname);
         #/
-        if (var_c0a741614135915d > 0) {
+        if (weapon_lootid > 0) {
             /#
-                println("<unknown string>" + var_c0a741614135915d + "<unknown string>");
+                println("<unknown string>" + weapon_lootid + "<unknown string>");
             #/
         }
-        return [0:itemname, 1:var_c0a741614135915d];
+        return [0:itemname, 1:weapon_lootid];
     }
     /#
         println("<unknown string>" + variantindex);
     #/
     var_255e0df33fae6d5a = function_33ce6e3c89e6975f(getweaponbasename(weapon), variantindex);
-    var_c0a741614135915d = var_255e0df33fae6d5a.lootid;
-    var_2a169c65850e1a47 = namespace_38b993c4618e76cd::function_793e8a72cedb8ef3(var_255e0df33fae6d5a.lootid);
+    weapon_lootid = var_255e0df33fae6d5a.lootid;
+    blueprintname = namespace_38b993c4618e76cd::function_793e8a72cedb8ef3(var_255e0df33fae6d5a.lootid);
     /#
-        println("<unknown string>" + var_2a169c65850e1a47);
+        println("<unknown string>" + blueprintname);
     #/
     /#
-        println("<unknown string>" + var_c0a741614135915d + "<unknown string>");
+        println("<unknown string>" + weapon_lootid + "<unknown string>");
     #/
-    return [0:var_2a169c65850e1a47, 1:var_c0a741614135915d];
+    return [0:blueprintname, 1:weapon_lootid];
 }
 
 // Namespace weapon/namespace_e0ee43ef2dddadaa
@@ -2033,7 +2033,7 @@ function function_9c331f88be5a1478(weapon) {
 function function_b0d37b9be0027733(customweaponname) {
     rootname = namespace_e0ee43ef2dddadaa::getweaponrootname(customweaponname);
     ref = rootname;
-    return namespace_38b993c4618e76cd::function_a50b607d2500dda5(ref);
+    return namespace_38b993c4618e76cd::getlootidfromref(ref);
 }
 
 // Namespace weapon/namespace_e0ee43ef2dddadaa

@@ -141,7 +141,7 @@ function revive_player(reviver) {
     } else {
         self notify("last_stand_heal_success");
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() || istrue(level.var_6d63cbd43e47315e)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() || istrue(level.var_6d63cbd43e47315e)) {
         namespace_d3d40f75bb4e4c32::setplayerbeingrevivedextrainfo(0);
     }
     self setclientomnvar("ui_securing", 0);

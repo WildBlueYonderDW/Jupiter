@@ -56,7 +56,7 @@ function ammobox_init() {
     ammobox_addrandomweapon("weapon_dmr", var_11a1fa68aeb971c0);
     ammobox_addrandomweapon("weapon_shotgun", var_11a1fa68aeb971c0);
     ammobox_addrandomweapon("weapon_pistol", var_11a1fa68aeb971c0);
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         ammobox_addboxweapon(makeweapon("iw8_lm_dblmg_mp"), 3);
     }
     totalprobability = 0;
@@ -798,7 +798,7 @@ function ammobox_removeheadicon() {
 function ammobox_givepointsfordeath(attacker) {
     if (!isdefined(self.owner) || namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker)) {
         attacker notify("destroyed_equipment");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
         attacker namespace_25c5a6f43bb97b43::equipmentdestroyed(self);
     }
 }
@@ -810,7 +810,7 @@ function ammobox_givepointsfordeath(attacker) {
 function ammobox_givexpforuse(player) {
     if (isdefined(self.owner) && !namespace_f8065cafc523dba5::playersareenemies(self.owner, player)) {
         if (self.owner != player) {
-            self.owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_1854b1ca8856f504");
+            self.owner thread namespace_48a08c5037514e04::doscoreevent(#"hash_1854b1ca8856f504");
         }
     }
 }

@@ -23,17 +23,17 @@ function autoexec main() {
         return;
     }
     namespace_47fd1e79a44628cd::function_ed608478232fdeb2("beginNewFight", &function_d671283750fee8fb);
-    namespace_47fd1e79a44628cd::function_ed608478232fdeb2("shouldGiveMaxAmmoPrimary", &shouldGiveMaxAmmoPrimary);
-    namespace_47fd1e79a44628cd::function_ed608478232fdeb2("shouldGiveMaxAmmoSecondary", &shouldGiveMaxAmmoSecondary);
-    namespace_47fd1e79a44628cd::function_ed608478232fdeb2("preLootSpawn", &preLootSpawn);
+    namespace_47fd1e79a44628cd::function_ed608478232fdeb2("shouldGiveMaxAmmoPrimary", &shouldgivemaxammoprimary);
+    namespace_47fd1e79a44628cd::function_ed608478232fdeb2("shouldGiveMaxAmmoSecondary", &shouldgivemaxammosecondary);
+    namespace_47fd1e79a44628cd::function_ed608478232fdeb2("preLootSpawn", &prelootspawn);
     namespace_47fd1e79a44628cd::function_ed608478232fdeb2("setupArena", &function_292e8f35198ed780);
     namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("getArenaLoadout", &function_c28154179ba75e54);
     namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("setArmorHealth", &function_62fed662c974c355);
-    namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("showStartSplash", &showStartSplash);
+    namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("showStartSplash", &showstartsplash);
     namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("playerLost", &gulagplayerlost);
     namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("overrideRespawnArmor", &function_7ef30310d689330f);
     namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("getEventSettings", &function_6ff97369fec9e915);
-    namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("toggleLadderEscape", &toggleLadderEscape);
+    namespace_47fd1e79a44628cd::function_c797c1f0977d41d1("toggleLadderEscape", &toggleladderescape);
     var_486fdb6e1f4a1910 = getmatchrulesdata("brData", "gulagEventList");
     if (var_486fdb6e1f4a1910 == "") {
         return;
@@ -202,7 +202,7 @@ function function_6ff97369fec9e915(arena) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc57
 // Size: 0xfc
-function showStartSplash(arena) {
+function showstartsplash(arena) {
     settings = function_9edca95997ab5b26(arena.var_5380d19f084b018f);
     if (!isdefined(settings)) {
         return 0;
@@ -239,8 +239,8 @@ function function_c28154179ba75e54(arena) {
         return 0;
     }
     tablename = "classtable:" + settings.loadouts;
-    gamemodeLoadout = namespace_d20f8ef223912e12::initstandardloadout(tablename, arena.var_d6721f44f0896029.loadoutindex);
-    self.pers["gamemodeLoadout"] = gamemodeLoadout;
+    gamemodeloadout = namespace_d20f8ef223912e12::initstandardloadout(tablename, arena.var_d6721f44f0896029.loadoutindex);
+    self.pers["gamemodeLoadout"] = gamemodeloadout;
     return 1;
 }
 
@@ -256,7 +256,7 @@ function function_62fed662c974c355(arena) {
     if (!istrue(settings.var_b5e048f7b36d48de)) {
         return 0;
     }
-    namespace_f8d3520d3483c1::setArmorHealth(settings.armorhealth);
+    namespace_f8d3520d3483c1::setarmorhealth(settings.armorhealth);
     return 1;
 }
 
@@ -272,7 +272,7 @@ function function_7ef30310d689330f(arena) {
     if (!istrue(settings.var_b5e048f7b36d48de)) {
         return 0;
     }
-    self.overrideRespawnArmor = settings.armorhealth;
+    self.overriderespawnarmor = settings.armorhealth;
     return 1;
 }
 
@@ -280,7 +280,7 @@ function function_7ef30310d689330f(arena) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef5
 // Size: 0x74
-function preLootSpawn(arena) {
+function prelootspawn(arena) {
     settings = function_9edca95997ab5b26(arena.var_5380d19f084b018f);
     if (!isdefined(settings)) {
         return;
@@ -297,7 +297,7 @@ function preLootSpawn(arena) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf70
 // Size: 0x3b
-function shouldGiveMaxAmmoPrimary(arena) {
+function shouldgivemaxammoprimary(arena) {
     settings = function_9edca95997ab5b26(arena.var_5380d19f084b018f);
     if (!isdefined(settings)) {
         return 0;
@@ -309,7 +309,7 @@ function shouldGiveMaxAmmoPrimary(arena) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfb3
 // Size: 0x3b
-function shouldGiveMaxAmmoSecondary(arena) {
+function shouldgivemaxammosecondary(arena) {
     settings = function_9edca95997ab5b26(arena.var_5380d19f084b018f);
     if (!isdefined(settings)) {
         return 0;
@@ -374,7 +374,7 @@ function function_292e8f35198ed780(arena) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1139
 // Size: 0x3e
-function toggleLadderEscape(arena, activate) {
+function toggleladderescape(arena, activate) {
     if (arena.var_7818db04cabeec42.size < 1) {
         return 0;
     }

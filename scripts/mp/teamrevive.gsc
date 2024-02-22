@@ -56,9 +56,9 @@
 #using scripts\mp\loot.gsc;
 #using scripts\mp\gametypes\br_gametypes.gsc;
 
-#namespace teamRevive;
+#namespace teamrevive;
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xae7
 // Size: 0x2b4
@@ -68,7 +68,7 @@ function init() {
     if (!isteamreviveenabled()) {
         return;
     }
-    level.liveRagdollRevive = getmatchrulesdata("commonOption", "liveRagdollRevive");
+    level.liveragdollrevive = getmatchrulesdata("commonOption", "liveRagdollRevive");
     level.var_76f92a587185677c = getdvarint(@"hash_aa7dbb144027705f", 0) == 1;
     level.onteamchangedeath = &onteamchangedeath;
     level.revivetriggers = [];
@@ -87,14 +87,14 @@ function init() {
         function_2597b9cd72447cb6(0);
     }
     if (namespace_76a219af07c28c13::function_6934349b7823d888()) {
-        namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_df4a3cff3137d441);
+        namespace_76a219af07c28c13::registerteamassimilatecallback(&function_df4a3cff3137d441);
     }
-    level.teamReviveHealth = getoverridedvarintexceptmatchrulesvalues(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_teamReviveHealth"), @"hash_a8543004b97470b5");
-    if (level.teamReviveHealth > namespace_775507ba36294dfb::gettweakablevalue("player", "maxhealth")) {
-        level.teamReviveHealth = namespace_775507ba36294dfb::gettweakablevalue("player", "maxhealth");
+    level.teamrevivehealth = getoverridedvarintexceptmatchrulesvalues(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_teamReviveHealth"), @"hash_a8543004b97470b5");
+    if (level.teamrevivehealth > namespace_775507ba36294dfb::gettweakablevalue("player", "maxhealth")) {
+        level.teamrevivehealth = namespace_775507ba36294dfb::gettweakablevalue("player", "maxhealth");
     }
-    level.teamReviveTime = getoverridedvarfloatexceptmatchrulesvalues(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_teamReviveTime"), @"hash_af65c14c83826cfa");
-    level.teamReviveTimeout = getoverridedvarfloatexceptmatchrulesvalues(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_teamReviveTimeout"), @"hash_e47f7f1502e4292e");
+    level.teamrevivetime = getoverridedvarfloatexceptmatchrulesvalues(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_teamReviveTime"), @"hash_af65c14c83826cfa");
+    level.teamrevivetimeout = getoverridedvarfloatexceptmatchrulesvalues(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_teamReviveTimeout"), @"hash_e47f7f1502e4292e");
     if (function_68ac13d2d66b844a()) {
         level.var_c7d5cde0cea88517 = 0;
         level.var_36a249f46f4464a8 = 0;
@@ -108,7 +108,7 @@ function init() {
     #/
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xda2
 // Size: 0x25
@@ -116,7 +116,7 @@ function function_df4a3cff3137d441(player, oldteam, newteam) {
     player thread function_3dbfc03b90783f06();
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xdce
 // Size: 0x1f
@@ -129,7 +129,7 @@ function private function_3dbfc03b90783f06() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xdf4
 // Size: 0xc0
@@ -137,12 +137,12 @@ function function_66e35a0b8bd5c2a7(var_f9be23871287353a, revivetime, var_b7db26d
     setdynamicdvar(@"hash_a8543004b97470b5", function_53c4c53197386572(var_f9be23871287353a, getmatchrulesdata("commonOption", "teamReviveHealth")));
     setdynamicdvar(@"hash_af65c14c83826cfa", function_53c4c53197386572(revivetime, getmatchrulesdata("commonOption", "teamReviveTime")));
     setdynamicdvar(@"hash_e47f7f1502e4292e", function_53c4c53197386572(var_b7db26dee502ccb7, getmatchrulesdata("commonOption", "teamReviveTimeout")));
-    level.teamReviveHealth = function_53c4c53197386572(var_f9be23871287353a, 40);
-    level.teamReviveTime = function_53c4c53197386572(revivetime, 3);
-    level.teamReviveTimeout = function_53c4c53197386572(var_b7db26dee502ccb7, 0);
+    level.teamrevivehealth = function_53c4c53197386572(var_f9be23871287353a, 40);
+    level.teamrevivetime = function_53c4c53197386572(revivetime, 3);
+    level.teamrevivetimeout = function_53c4c53197386572(var_b7db26dee502ccb7, 0);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xebb
 // Size: 0x8
@@ -150,7 +150,7 @@ function function_692cdf5f87a8667b() {
     return "cyber_revive_icon";
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xecb
 // Size: 0x3a
@@ -162,7 +162,7 @@ function onplayerconnect() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf0c
 // Size: 0xc
@@ -170,7 +170,7 @@ function onteamchangedeath(player) {
     
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf1f
 // Size: 0x58
@@ -186,7 +186,7 @@ function function_5343ecb486b66bf1(ref, var_ce174178f5680dfc) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf7e
 // Size: 0x3f
@@ -199,7 +199,7 @@ function function_34727d1cdc47572e(ref) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfc4
 // Size: 0xe7
@@ -220,7 +220,7 @@ function updaterevivetriggerspawnposition() {
             level waittill_any_3("prematch_done", "start_mode_setup", "match_start_real_countdown");
         }
     }
-    while (isreallyalive(self) || istrue(self.liveRagdoll)) {
+    while (isreallyalive(self) || istrue(self.liveragdoll)) {
         if (!istrue(self.var_908f8ac4bbcdb65e) && isvalidrevivetriggerspawnposition()) {
             setvalidreviveposition();
         }
@@ -228,7 +228,7 @@ function updaterevivetriggerspawnposition() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10b2
 // Size: 0x12d
@@ -271,13 +271,13 @@ function setvalidreviveposition() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11e6
 // Size: 0x105
 function isvalidrevivetriggerspawnposition() {
     spawnpos = self.origin + (0, 0, 3);
-    if (istrue(self.liveRagdoll) || istrue(level.var_b961dd6c88e9a008)) {
+    if (istrue(self.liveragdoll) || istrue(level.var_b961dd6c88e9a008)) {
         return 1;
     }
     if (istrue(level.var_faec6e12b831873d)) {
@@ -302,7 +302,7 @@ function isvalidrevivetriggerspawnposition() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12f2
 // Size: 0x857
@@ -317,7 +317,7 @@ function spawnrevivetrigger(victim, attacker, var_1202c39784b176e2, meansofdeath
     if (istrue(victim.var_908f8ac4bbcdb65e)) {
         return;
     }
-    if (victim GetCameraThirdPerson()) {
+    if (victim getcamerathirdperson()) {
         victim.var_436ac476c6cc0d0d = 1;
     } else {
         victim.var_436ac476c6cc0d0d = undefined;
@@ -336,7 +336,7 @@ function spawnrevivetrigger(victim, attacker, var_1202c39784b176e2, meansofdeath
             var_94ec982aecf9a63c = var_94ec982aecf9a63c && !victim namespace_99ac021a7547cae3::mayspawn();
         }
     }
-    timeleft = level.teamReviveTimeout;
+    timeleft = level.teamrevivetimeout;
     /#
         if (!isusingmatchrulesdata()) {
             timeleft = namespace_296c793a004e81b3::getwatcheddvar("disconnect");
@@ -346,7 +346,7 @@ function spawnrevivetrigger(victim, attacker, var_1202c39784b176e2, meansofdeath
         }
     #/
     if (isdefined(timeleft) && timeleft != 0) {
-        victim.teamReviveTimeout = timeleft;
+        victim.teamrevivetimeout = timeleft;
     }
     if (victim isusingremote()) {
         victim.revivetriggerblockedinremote = 1;
@@ -356,10 +356,10 @@ function spawnrevivetrigger(victim, attacker, var_1202c39784b176e2, meansofdeath
         victim.revivetriggeravailable = 1;
         wait(3);
     }
-    if (istrue(victim.teamReviveTimeout)) {
+    if (istrue(victim.teamrevivetimeout)) {
         victim thread revivetimeoutthink(timeleft);
     }
-    var_f2d86b895bbe2c87 = isdefined(level.pleaForHelp) && !istrue(level.pleaForHelp.var_ab651cb230f0d65);
+    var_f2d86b895bbe2c87 = isdefined(level.pleaforhelp) && !istrue(level.pleaforhelp.var_ab651cb230f0d65);
     var_94ec982aecf9a63c = var_94ec982aecf9a63c && !(var_f2d86b895bbe2c87 && function_957a13a14cdab289(victim));
     if (!var_94ec982aecf9a63c) {
         return;
@@ -377,7 +377,7 @@ function spawnrevivetrigger(victim, attacker, var_1202c39784b176e2, meansofdeath
     if (isdefined(attacker) && isagent(attacker)) {
         attacker = attacker.owner;
     }
-    usetime = level.teamReviveTime;
+    usetime = level.teamrevivetime;
     /#
         if (!isusingmatchrulesdata()) {
             usetime = namespace_296c793a004e81b3::getwatcheddvar("ui_securing_progress");
@@ -464,11 +464,11 @@ function spawnrevivetrigger(victim, attacker, var_1202c39784b176e2, meansofdeath
         }
     }
     /#
-        victim thread function_631c1846bd7412e2();
+        victim thread selfrevive();
     #/
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b50
 // Size: 0x1e
@@ -476,7 +476,7 @@ function makereviveteamusable(team, var_e4e6fa072697205d) {
     thread function_9cdce27af3d1224c(team, var_e4e6fa072697205d);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b75
 // Size: 0x186
@@ -516,7 +516,7 @@ function private function_9cdce27af3d1224c(team, var_e4e6fa072697205d, var_6b827
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d02
 // Size: 0x83
@@ -535,7 +535,7 @@ function function_3679ae96cc4f6706(player) {
     self enablescriptableplayeruse(player);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d8c
 // Size: 0x2a6
@@ -549,7 +549,7 @@ function revivetimeoutthink(timeleft) {
     if (timeleft == 0) {
         return;
     }
-    namespace_446fc987a980892f::function_d87d5deb069bf8e5("squad_revive", namespace_54d20dd0dd79277f::getSquadmates(self.team, self.var_ff97225579de16a, 1));
+    namespace_446fc987a980892f::function_d87d5deb069bf8e5("squad_revive", namespace_54d20dd0dd79277f::getsquadmates(self.team, self.var_ff97225579de16a, 1));
     waitcondition = "";
     if (isdefined(level.revivetriggers)) {
         waitcondition = level.revivetriggers[self.guid];
@@ -579,7 +579,7 @@ function revivetimeoutthink(timeleft) {
         if (timeleft <= level.framedurationseconds) {
             self notify("last_stand_bleedout");
             thread removetrigger(self.guid, 1, 1);
-            if (getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || namespace_36f464722d326bbe::isBRStyleGameType() && istrue(level.var_faec6e12b831873d)) {
+            if (getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || namespace_36f464722d326bbe::isbrstylegametype() && istrue(level.var_faec6e12b831873d)) {
                 setlowermessageomnvar("player_eliminated");
                 thread namespace_99ac021a7547cae3::removespawnmessageshortly(3);
             } else {
@@ -595,10 +595,10 @@ function revivetimeoutthink(timeleft) {
             break;
         }
     }
-    namespace_446fc987a980892f::function_d87d5deb069bf8e5("squad_mate_eliminated", namespace_54d20dd0dd79277f::getSquadmates(self.team, self.var_ff97225579de16a, 1));
+    namespace_446fc987a980892f::function_d87d5deb069bf8e5("squad_mate_eliminated", namespace_54d20dd0dd79277f::getsquadmates(self.team, self.var_ff97225579de16a, 1));
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2039
 // Size: 0xbd
@@ -610,7 +610,7 @@ function function_fd4841a123583725(player, team, time, squadmemberindex) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20fd
 // Size: 0x135
@@ -643,7 +643,7 @@ function removetrigger(guid, var_3737240cefe2c793, var_efc3f7a85cdedb9b, team, s
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2239
 // Size: 0x75
@@ -656,7 +656,7 @@ function relocatetrigger(pos) {
     self.forcespawnorigin = org;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22b5
 // Size: 0x5c
@@ -673,7 +673,7 @@ function function_4a3b25b6b877fe73(player, revivetrigger) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2318
 // Size: 0x8a
@@ -689,7 +689,7 @@ function function_ffc734bc64e389b(team) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23a9
 // Size: 0x85
@@ -706,7 +706,7 @@ function revivetriggerteamupdater(revivetrigger) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2435
 // Size: 0x58
@@ -722,7 +722,7 @@ function revivetriggerspectateteamupdater(revivetrigger) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2494
 // Size: 0x86
@@ -737,11 +737,11 @@ function onrevivepickupevent(event, victim) {
         points = 0;
     }
     if (isdefined(victim) && self.team == victim.team) {
-        thread doScoreEvent(event, undefined, points);
+        thread doscoreevent(event, undefined, points);
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2521
 // Size: 0x24f
@@ -789,7 +789,7 @@ function lifelimitedallyonuse(player) {
     self.victim namespace_58a74e7d54b56e8d::function_b7492842aad6fe82();
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2777
 // Size: 0x60
@@ -805,7 +805,7 @@ function function_e95e29f24bf04c1b(player) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27de
 // Size: 0x144
@@ -832,7 +832,7 @@ function lifelimitedenemyonuse(player) {
     player namespace_944ddf7b8df1b0e3::leaderdialogonplayer("kill_confirmed");
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2929
 // Size: 0x5d
@@ -842,14 +842,14 @@ function respawn() {
     } else {
         self.alreadyaddedtoalivecount = 1;
         namespace_99ac021a7547cae3::incrementalivecount(self.team, 1, "teamrevive");
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             namespace_80cec6cfc70c4f95::unmarkplayeraseliminated(self);
         }
         thread namespace_99ac021a7547cae3::waittillcanspawnclient(1);
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x298d
 // Size: 0x1a5
@@ -858,10 +858,10 @@ function revivetriggerholdonuse(player) {
         player = player.owner;
     }
     if (player.pers["team"] == self.ownerteam || istrue(self.var_c0ee3288dbec12c6)) {
-        if (isdefined(self.victim) && isdefined(self.victim.body) && !istrue(self.victim.liveRagdoll)) {
+        if (isdefined(self.victim) && isdefined(self.victim.body) && !istrue(self.victim.liveragdoll)) {
             self.victim.body delete();
         }
-        if (function_1823ff50bb28148d(getgametype()) == #"hash_8be3907b5626c1f") {
+        if (function_1823ff50bb28148d(getgametype()) == #"ko") {
             self.victim playsoundtoteam("jup_shared_team_revived", player.team);
         }
         player incpersstat("denied", 1);
@@ -881,7 +881,7 @@ function revivetriggerholdonuse(player) {
     self.victim thread removetrigger(self.victim.guid);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b39
 // Size: 0xf1
@@ -905,7 +905,7 @@ function function_301c4ec489f9bd39(instance, part, state, player, var_a5b2c54141
     instance thread namespace_19b4203b51d56488::useholdloop(player);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c31
 // Size: 0x21e
@@ -951,7 +951,7 @@ function revivetriggerholdonusebegin(player, var_f5a0530ce8d587b1) {
     thread function_c164fed51c204630(var_f99d56bcb582a8ba, player);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2e56
 // Size: 0xef
@@ -976,7 +976,7 @@ function private function_c164fed51c204630(var_f99d56bcb582a8ba, reviver) {
     var_f99d56bcb582a8ba thread runslamzoomonspawn();
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f4c
 // Size: 0x1fe
@@ -1025,7 +1025,7 @@ function function_c86cf00d5859ce10(target) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3151
 // Size: 0xfa
@@ -1054,7 +1054,7 @@ function function_34fd10b9791b7bb2(mover) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3252
 // Size: 0x62
@@ -1070,7 +1070,7 @@ function function_d75bbd43c2e29f0c() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32bb
 // Size: 0x124
@@ -1097,7 +1097,7 @@ function function_1012e32b79f1e975(target) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33e6
 // Size: 0x27
@@ -1109,7 +1109,7 @@ function function_7f0aebb7ad935939(player) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3414
 // Size: 0x7f
@@ -1131,7 +1131,7 @@ function function_a3ffe1d08888c2() {
     namespace_1fbd40990ee60ede::function_69f266af27c2689(self, mover);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x349a
 // Size: 0x20
@@ -1143,7 +1143,7 @@ function function_849e441cb5be1bda() {
     self notify("revivedAlive");
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34c1
 // Size: 0xba
@@ -1159,7 +1159,7 @@ function function_877aee1f2cdae81c(player) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3582
 // Size: 0x542
@@ -1206,7 +1206,7 @@ function revivetriggerholdonuseend(team, player, success, var_f5a0530ce8d587b1) 
             }
             var_a776f097eb36e500 = namespace_296c793a004e81b3::getwatcheddvar("teamReviveHealth");
             namespace_bd0162aedd8c8594::logevent_playerhealed(var_f99d56bcb582a8ba, var_a776f097eb36e500, player);
-            if (isdefined(level.var_36827f5d10328424) && namespace_36f464722d326bbe::isBRStyleGameType()) {
+            if (isdefined(level.var_36827f5d10328424) && namespace_36f464722d326bbe::isbrstylegametype()) {
                 var_f99d56bcb582a8ba thread function_849e441cb5be1bda();
                 var_f99d56bcb582a8ba thread [[ level.var_36827f5d10328424 ]]();
             }
@@ -1265,7 +1265,7 @@ function revivetriggerholdonuseend(team, player, success, var_f5a0530ce8d587b1) 
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3acb
 // Size: 0x19
@@ -1273,7 +1273,7 @@ function revivetriggeroncantuse(player) {
     player namespace_44abc05161e2e2cb::showerrormessage("MP/PLAYER_ALREADY_BEING_REVIVED");
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3aeb
 // Size: 0x2d5
@@ -1334,7 +1334,7 @@ function getrevivecameradata(var_f99d56bcb582a8ba, reviver) {
     return var_379de5a38f0e582a;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3dc8
 // Size: 0xf0
@@ -1346,7 +1346,7 @@ function revivecamerapullin(cameraent) {
     self.revivecameraent moveto(var_beaf249485a20bb7, duration, duration * 0.3, duration * 0.3);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ebf
 // Size: 0x1e
@@ -1357,7 +1357,7 @@ function applynvgforrevive() {
     self nightvisionviewon(1);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ee4
 // Size: 0x29
@@ -1368,7 +1368,7 @@ function deleteonspawn(cameraent) {
     cameraent delete();
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f14
 // Size: 0x79
@@ -1384,7 +1384,7 @@ function allowedwhilereviving(isallowed) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f94
 // Size: 0x81
@@ -1396,7 +1396,7 @@ function movecameratorevivepos(var_9813182985677b23, finalangles, player) {
     self rotateto(finalangles, 1, 0.5, 0.5);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x401c
 // Size: 0x64
@@ -1411,7 +1411,7 @@ function function_7dce7a3af5b0ce26() {
     self enableplayerbreathsystem(1);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4087
 // Size: 0x1b7
@@ -1443,7 +1443,7 @@ function addtriggerdeathicon(icon, dyingplayer, team) {
     namespace_5a22b6f3a56f7e9b::update_objective_state(objid, "current");
     namespace_5a22b6f3a56f7e9b::objective_playermask_hidefromall(objid);
     if (namespace_ca7b90256548aa40::issquadmode()) {
-        squadmembers = dyingplayer namespace_ca7b90256548aa40::getSquadMembers();
+        squadmembers = dyingplayer namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squadmembers) {
             namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(objid, player);
         }
@@ -1463,7 +1463,7 @@ function addtriggerdeathicon(icon, dyingplayer, team) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4245
 // Size: 0x13b
@@ -1498,7 +1498,7 @@ function runslamzoomonspawn() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4387
 // Size: 0xd8
@@ -1520,7 +1520,7 @@ function playslamzoomflash() {
     overlay destroy();
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4466
 // Size: 0x4d
@@ -1531,7 +1531,7 @@ function function_7127253a02af37c6(player) {
     return 0;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x44bb
 // Size: 0x7b
@@ -1547,7 +1547,7 @@ function cleanuprevivetriggericons() {
     level.revivetriggers = undefined;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x453d
 // Size: 0x3
@@ -1555,7 +1555,7 @@ function updatetimerwaitforjoined() {
     
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4547
 // Size: 0x6b
@@ -1566,7 +1566,7 @@ function assigntimervisibleteam(teams) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45b9
 // Size: 0x4b
@@ -1578,7 +1578,7 @@ function applytimervisibleteam(player) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x460b
 // Size: 0x79
@@ -1605,7 +1605,7 @@ function waitrespawnbutton() {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x468b
 // Size: 0x6b
@@ -1625,7 +1625,7 @@ function function_68ac13d2d66b844a() {
     return 0;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x46fe
 // Size: 0x115
@@ -1660,7 +1660,7 @@ function function_855b084a3f053964(pos, var_7136191b4291791a) {
     return closest;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x481b
 // Size: 0x97
@@ -1679,7 +1679,7 @@ function function_15933e1583288208() {
     return undefined;
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48ba
 // Size: 0x14
@@ -1687,7 +1687,7 @@ function function_bb57ed6218a82d1c() {
     return self getscriptablepartstate("cyber_revive_icon") == "usable";
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 17, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48d6
 // Size: 0x2fc
@@ -1706,7 +1706,7 @@ function function_9341574d596e9d36(player, contents, var_46a3a8565ac0c17c, var_8
     corpse.metadata = var_fd8a9b46f4a1e27c;
     corpse.var_86b32aff94b5714e = var_86b32aff94b5714e;
     corpse.var_ad7897ecdbcb63 = var_ad7897ecdbcb63;
-    corpse.backpackSize = namespace_aead94004cf4c147::function_b13e35608b336d65(player);
+    corpse.backpacksize = namespace_aead94004cf4c147::function_b13e35608b336d65(player);
     corpse.var_bf23a60678978c19 = var_bf23a60678978c19;
     if (isdefined(var_c299c08e4b8a8e56) && isdefined(var_a0e9fef038504bd0)) {
         corpse.var_a06e7128c001851d = var_c299c08e4b8a8e56;
@@ -1728,14 +1728,14 @@ function function_9341574d596e9d36(player, contents, var_46a3a8565ac0c17c, var_8
     level thread function_d5c44af2144b00b3(player, player.attached_bag, corpse);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4bd9
 // Size: 0x20a
 function function_d5c44af2144b00b3(var_f99d56bcb582a8ba, model, corpse) {
     var_f99d56bcb582a8ba endon("revivedAlive");
     corpse endon("death");
-    if (isdefined(level.teamReviveTimeout) && level.teamReviveTimeout > 0) {
+    if (isdefined(level.teamrevivetimeout) && level.teamrevivetimeout > 0) {
         var_f99d56bcb582a8ba waittill_any_2("disconnect", "trigger_removed");
         if (isdefined(var_f99d56bcb582a8ba) && !istrue(var_f99d56bcb582a8ba.isdisconnecting) && isdefined(var_f99d56bcb582a8ba.timelefttospawnaction) && var_f99d56bcb582a8ba.timelefttospawnaction > 0) {
             return;
@@ -1767,7 +1767,7 @@ function function_d5c44af2144b00b3(var_f99d56bcb582a8ba, model, corpse) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dea
 // Size: 0x238
@@ -1783,7 +1783,7 @@ function function_85b5becfebdc7b62(corpse, backpack) {
     backpack.var_275f4441ab7920c8 = corpse.var_275f4441ab7920c8;
     backpack.metadata = corpse.var_fd8a9b46f4a1e27c;
     backpack.var_86b32aff94b5714e = corpse.var_86b32aff94b5714e;
-    backpack.backpackSize = corpse.backpackSize;
+    backpack.backpacksize = corpse.backpacksize;
     backpack.var_bf23a60678978c19 = corpse.var_bf23a60678978c19;
     if (isdefined(corpse.var_a06e7128c001851d) && isdefined(corpse.var_a0e9fef038504bd0)) {
         backpack.var_a06e7128c001851d = corpse.var_a06e7128c001851d;
@@ -1799,7 +1799,7 @@ function function_85b5becfebdc7b62(corpse, backpack) {
     }
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5029
 // Size: 0x33
@@ -1807,7 +1807,7 @@ function function_5b55070c02328ea7(corpse) {
     return isdefined(corpse) && isdefined(corpse.type) && corpse.type == "cyber_revive_pillage";
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5064
 // Size: 0x2e
@@ -1815,11 +1815,11 @@ function function_957a13a14cdab289(player) {
     return namespace_71073fa38f11492::isfeatureenabled("pleaForHelp") && [[ namespace_3c37cb17ade254d::getsharedfunc("pleaForHelp", "isPleading") ]](player);
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x509a
 // Size: 0x357
-function function_631c1846bd7412e2() {
+function selfrevive() {
     /#
         level endon("abort_killcam");
         self notify("revivedAlive");
@@ -1874,7 +1874,7 @@ function function_631c1846bd7412e2() {
     #/
 }
 
-// Namespace teamRevive/namespace_7db13bdf599e41a6
+// Namespace teamrevive/namespace_7db13bdf599e41a6
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x53f8
 // Size: 0x226

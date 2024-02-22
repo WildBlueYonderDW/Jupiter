@@ -103,7 +103,7 @@ function sentryturret_modifydamage(data) {
     idflags = data.idflags;
     modifieddamage = damage;
     if (istrue(level.var_be6a42242be00b66)) {
-        modifieddamage = getModifiedDamageUsingDamageTuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
+        modifieddamage = getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else {
         modifieddamage = getmodifiedantikillstreakdamage(attacker, objweapon, type, modifieddamage, self.maxhealth, 2, 3, 4, 12, 400);
     }

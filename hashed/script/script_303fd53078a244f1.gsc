@@ -15,7 +15,7 @@
 // Size: 0xb8
 function init() {
     level.var_55e0b414e3671f70 = spawnstruct();
-    level.var_55e0b414e3671f70.overtimeScore = getdvarint(@"hash_18cbdeaaf429cff", 10000);
+    level.var_55e0b414e3671f70.overtimescore = getdvarint(@"hash_18cbdeaaf429cff", 10000);
     level.var_55e0b414e3671f70.var_bcc631242a5514cb = getdvarint(@"hash_f1341f4aa15134f6", 100000);
     level.var_55e0b414e3671f70.var_c2ac96535e5213ea = getdvarint(@"hash_547eea684b2142d7", 2);
     level.var_55e0b414e3671f70.var_a5b0c4131fba9805 = getdvarint(@"hash_edc7e18f90773acc", 0);
@@ -115,7 +115,7 @@ function _setteamscore(team, score) {
     foreach (teammate in getteamdata(team, "players")) {
         teammate setclientomnvar("ui_champion_br_team_score", score);
     }
-    if (!istrue(level.var_9db23a91b81905c3) && level.var_51b3a6e65caff0b8[team] >= level.var_55e0b414e3671f70.overtimeScore) {
+    if (!istrue(level.var_9db23a91b81905c3) && level.var_51b3a6e65caff0b8[team] >= level.var_55e0b414e3671f70.overtimescore) {
         namespace_2d0a106261b9b151::function_9a61575de4f3d1ec();
     }
     if (level.var_51b3a6e65caff0b8[team] >= level.var_55e0b414e3671f70.var_bcc631242a5514cb && !istrue(self.var_964721ca906c5421)) {
@@ -231,8 +231,8 @@ function function_adb2f998089074a2(event, score) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbd4
 // Size: 0x1ec
-function doScoreEvent(event) {
-    var_e7a7e20ec68138e3 = namespace_36f464722d326bbe::isBRStyleGameType() && !namespace_4b0406965e556711::gameflag("prematch_done");
+function doscoreevent(event) {
+    var_e7a7e20ec68138e3 = namespace_36f464722d326bbe::isbrstylegametype() && !namespace_4b0406965e556711::gameflag("prematch_done");
     if (istrue(level.gameended) || !isdefined(event) || var_e7a7e20ec68138e3) {
         return;
     }

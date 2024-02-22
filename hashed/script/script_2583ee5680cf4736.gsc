@@ -190,18 +190,18 @@ function private function_25c9189dc624f33() {
         player = self waittill("trigger");
         if (function_33d615753cbbb49c(player)) {
             var_73069b4add1e8094 = "none";
-            var_171f90b9c4c76d44 = "none";
+            poiname = "none";
             usetype = "none";
             if (isfunction(level.var_8241e0d86017df29)) {
                 var_73069b4add1e8094 = [[ level.var_8241e0d86017df29 ]](self.origin);
             }
             if (issharedfuncdefined("poi", "get_poi_name_from_origin")) {
-                var_171f90b9c4c76d44 = function_f3bb4f4911a1beb2("poi", "get_poi_name_from_origin", self.origin);
+                poiname = function_f3bb4f4911a1beb2("poi", "get_poi_name_from_origin", self.origin);
             }
             if (isdefined(self.model)) {
                 usetype = self.model;
             }
-            player dlog_recordplayerevent("dlog_event_player_interaction", [0:"interaction_x", 1:self.origin[0], 2:"interaction_y", 3:self.origin[1], 4:"interaction_z", 5:self.origin[2], 6:"interaction_poi", 7:var_171f90b9c4c76d44, 8:"threat_level", 9:var_73069b4add1e8094, 10:"type", 11:usetype]);
+            player dlog_recordplayerevent("dlog_event_player_interaction", [0:"interaction_x", 1:self.origin[0], 2:"interaction_y", 3:self.origin[1], 4:"interaction_z", 5:self.origin[2], 6:"interaction_poi", 7:poiname, 8:"threat_level", 9:var_73069b4add1e8094, 10:"type", 11:usetype]);
             foreach (callback in self.var_a4f3ccfb11edb890) {
                 if (isfunction(callback)) {
                     self [[ callback ]](player);
@@ -228,14 +228,14 @@ function private function_cb6e7c567d06f936(instance, part, state, player, var_a5
     }
     if (e_container function_33d615753cbbb49c(player)) {
         var_73069b4add1e8094 = "none";
-        var_171f90b9c4c76d44 = "none";
+        poiname = "none";
         if (isfunction(level.var_8241e0d86017df29)) {
             var_73069b4add1e8094 = [[ level.var_8241e0d86017df29 ]](e_container.origin);
         }
         if (issharedfuncdefined("poi", "get_poi_name_from_origin")) {
-            var_171f90b9c4c76d44 = function_f3bb4f4911a1beb2("poi", "get_poi_name_from_origin", e_container.origin);
+            poiname = function_f3bb4f4911a1beb2("poi", "get_poi_name_from_origin", e_container.origin);
         }
-        player dlog_recordplayerevent("dlog_event_player_interaction", [0:"interaction_x", 1:e_container.origin[0], 2:"interaction_y", 3:e_container.origin[1], 4:"interaction_z", 5:e_container.origin[2], 6:"interaction_poi", 7:var_171f90b9c4c76d44, 8:"threat_level", 9:var_73069b4add1e8094, 10:"type", 11:var_cc38472e36be1b61]);
+        player dlog_recordplayerevent("dlog_event_player_interaction", [0:"interaction_x", 1:e_container.origin[0], 2:"interaction_y", 3:e_container.origin[1], 4:"interaction_z", 5:e_container.origin[2], 6:"interaction_poi", 7:poiname, 8:"threat_level", 9:var_73069b4add1e8094, 10:"type", 11:var_cc38472e36be1b61]);
         foreach (callback in e_container.var_a4f3ccfb11edb890) {
             if (isfunction(callback)) {
                 e_container [[ callback ]](player);

@@ -26,13 +26,13 @@ function monitoradd(tank, timeout) {
 function spawntanks(var_a85ce59e9fcd4439, team) {
     level endon("game_ended");
     wait(0.05);
-    foreach (tankSpawn in var_a85ce59e9fcd4439) {
-        if (!isdefined(tankSpawn.angles)) {
-            tankSpawn.angles = (0, 0, 0);
+    foreach (tankspawn in var_a85ce59e9fcd4439) {
+        if (!isdefined(tankspawn.angles)) {
+            tankspawn.angles = (0, 0, 0);
         }
-        refill = ter_op(isdefined(tankSpawn.script_force_count), tankSpawn.script_force_count, 0);
-        timeout = ter_op(isdefined(tankSpawn.script_timeout), tankSpawn.script_timeout, 0);
-        level thread spawntankandmonitor(tankSpawn.origin, tankSpawn.angles, team, refill, timeout);
+        refill = ter_op(isdefined(tankspawn.script_force_count), tankspawn.script_force_count, 0);
+        timeout = ter_op(isdefined(tankspawn.script_timeout), tankspawn.script_timeout, 0);
+        level thread spawntankandmonitor(tankspawn.origin, tankspawn.angles, team, refill, timeout);
     }
 }
 
@@ -222,16 +222,16 @@ function spawnstartingbradleyscmd() {
 function kickoffneutralbradleyspawnstdm() {
     level endon("game_ended");
     wait(12);
-    tankSpawn = random(level.tankstartspawnneutral);
+    tankspawn = random(level.tankstartspawnneutral);
     angles = (0, 0, 0);
-    if (isdefined(tankSpawn.angles)) {
-        angles = tankSpawn.angles;
+    if (isdefined(tankspawn.angles)) {
+        angles = tankspawn.angles;
     }
     /#
-        println("<unknown string>" + tankSpawn.origin);
+        println("<unknown string>" + tankspawn.origin);
         println("<unknown string>" + angles);
     #/
-    thread spawnbradleynoduration(tankSpawn.origin, angles);
+    thread spawnbradleynoduration(tankspawn.origin, angles);
     timelimit = gettimelimit();
     timelimitmin = timelimit / 3;
     spawntime = max(timelimitmin, 180);
@@ -239,8 +239,8 @@ function kickoffneutralbradleyspawnstdm() {
     while (1) {
         wait(spawntime);
         if (vehicle_tracking_getgameinstances("light_tank").size < 2) {
-            tankSpawn = selectneutralspawn();
-            thread spawnbradleynoduration(tankSpawn.origin, tankSpawn.angles);
+            tankspawn = selectneutralspawn();
+            thread spawnbradleynoduration(tankspawn.origin, tankspawn.angles);
         }
     }
 }
@@ -274,18 +274,18 @@ function kickoffneutralbradleyspawnsdom() {
 // Size: 0xc3
 function spawndombradley(var_892859fb1ae1e343) {
     if (var_892859fb1ae1e343.objectivekey == "_a") {
-        tankSpawn = random(level.tankspawndom_a);
+        tankspawn = random(level.tankspawndom_a);
     } else if (var_892859fb1ae1e343.objectivekey == "_b") {
-        tankSpawn = random(level.tankspawndom_b);
+        tankspawn = random(level.tankspawndom_b);
     } else {
-        tankSpawn = random(level.tankspawndom_c);
+        tankspawn = random(level.tankspawndom_c);
     }
-    if (isdefined(tankSpawn)) {
+    if (isdefined(tankspawn)) {
         angles = (0, 0, 0);
-        if (isdefined(tankSpawn.angles)) {
-            angles = tankSpawn.angles;
+        if (isdefined(tankspawn.angles)) {
+            angles = tankspawn.angles;
         }
-        thread spawnbradleynoduration(tankSpawn.origin, angles);
+        thread spawnbradleynoduration(tankspawn.origin, angles);
     }
 }
 
@@ -298,29 +298,29 @@ function tryspawnneutralbradleycmd(point) {
         if (point == 1) {
             if (level.tankspawncmd_1.size != 0) {
                 angles = (0, 0, 0);
-                tankSpawn = random(level.tankspawncmd_1);
-                if (isdefined(tankSpawn.angles)) {
-                    angles = tankSpawn.angles;
+                tankspawn = random(level.tankspawncmd_1);
+                if (isdefined(tankspawn.angles)) {
+                    angles = tankspawn.angles;
                 }
-                thread spawnbradleynoduration(tankSpawn.origin, angles, "allies");
+                thread spawnbradleynoduration(tankspawn.origin, angles, "allies");
             }
         } else if (point == 2) {
             if (level.tankspawncmd_2.size != 0) {
                 angles = (0, 0, 0);
-                tankSpawn = random(level.tankspawncmd_2);
-                if (isdefined(tankSpawn.angles)) {
-                    angles = tankSpawn.angles;
+                tankspawn = random(level.tankspawncmd_2);
+                if (isdefined(tankspawn.angles)) {
+                    angles = tankspawn.angles;
                 }
-                thread spawnbradleynoduration(tankSpawn.origin, angles, "allies");
+                thread spawnbradleynoduration(tankspawn.origin, angles, "allies");
             }
         } else if (point == 3) {
             if (level.tankspawncmd_3.size != 0) {
                 angles = (0, 0, 0);
-                tankSpawn = random(level.tankspawncmd_3);
-                if (isdefined(tankSpawn.angles)) {
-                    angles = tankSpawn.angles;
+                tankspawn = random(level.tankspawncmd_3);
+                if (isdefined(tankspawn.angles)) {
+                    angles = tankspawn.angles;
                 }
-                thread spawnbradleynoduration(tankSpawn.origin, angles, "allies");
+                thread spawnbradleynoduration(tankspawn.origin, angles, "allies");
             }
         }
     }
@@ -346,8 +346,8 @@ function delayspawnuntilpointcap() {
 // Checksum 0x0, Offset: 0x1118
 // Size: 0x1e
 function selectneutralspawn() {
-    tankSpawn = random(level.tankstartspawnneutral);
-    return tankSpawn;
+    tankspawn = random(level.tankstartspawnneutral);
+    return tankspawn;
 }
 
 // Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94

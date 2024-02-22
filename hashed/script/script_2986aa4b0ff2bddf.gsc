@@ -479,7 +479,7 @@ function private function_2cd5adf6cf3179e5() {
 // Checksum 0x0, Offset: 0x17ab
 // Size: 0x238
 function function_3ec57983d173d1e3() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         minx = min(level.br_level.br_mapbounds[0][0], level.br_level.br_mapbounds[1][0]);
         maxx = max(level.br_level.br_mapbounds[0][0], level.br_level.br_mapbounds[1][0]);
         miny = min(level.br_level.br_mapbounds[1][1], level.br_level.br_mapbounds[0][1]);

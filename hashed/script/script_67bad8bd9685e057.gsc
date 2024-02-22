@@ -69,7 +69,7 @@ function function_35671b7b1a04bf58(bot) {
         assert(isdefined(self.var_ec02147fee952ce2));
     #/
     domflag = self.var_ec02147fee952ce2;
-    self.var_a0185a724941f02f.var_13b45daa3e1c211a = domflag;
+    self.decision.var_13b45daa3e1c211a = domflag;
     var_9920c1b439193f77 = 16;
     while (bot.team != domflag namespace_19b4203b51d56488::getownerteam()) {
         randompoint = function_6f7d8428f06122a7(domflag.curorigin, domflag.trigger.radius, domflag.trigger.height, var_9920c1b439193f77);

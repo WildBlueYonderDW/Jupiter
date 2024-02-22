@@ -99,7 +99,7 @@ function exceededmaxremoteuavs(team) {
 // Size: 0x16b
 function tryuseremoteuav(lifeid, streakname) {
     val::set("remote_uav", "usability", 0);
-    if (isusingremote() || self isusingturret() || isdefined(level.nukeinfo.var_9dccaba98b643cad)) {
+    if (isusingremote() || self isusingturret() || isdefined(level.nukeinfo.incoming)) {
         val::function_c9d0b43701bdba00("remote_uav");
         return 0;
     }
@@ -812,7 +812,7 @@ LOC_000000af:
     remoteuav_dialog("tag");
     if (getgametype() != "dm") {
         if (isplayer(targetplayer)) {
-            thread doScoreEvent(#"kill");
+            thread doscoreevent(#"kill");
         }
     }
     if (isplayer(targetplayer)) {
@@ -871,7 +871,7 @@ function remoteuav_processtaggedassist(victim) {
         if (isdefined(victim)) {
             thread namespace_e8a49b70d0769b66::processassist(victim);
         } else {
-            thread doScoreEvent(#"assist");
+            thread doscoreevent(#"assist");
         }
     }
 }

@@ -168,12 +168,12 @@ function private function_dcc83e7e97a52bf4(weapon) {
 // Checksum 0x0, Offset: 0xe8d
 // Size: 0xd1
 function function_f4e4fc18f92ec23b(lootid) {
-    var_12c0f53a71c9bcc8 = function_64ccc54bdbae5cf6(lootid);
-    if (isdefined(var_12c0f53a71c9bcc8) && var_12c0f53a71c9bcc8 != 0) {
+    blueprintindex = function_64ccc54bdbae5cf6(lootid);
+    if (isdefined(blueprintindex) && blueprintindex != 0) {
         baseweapon = function_1cc3fd00b6ccc3ba(lootid);
         if (isdefined(baseweapon)) {
-            if (isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[baseweapon]) && isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[baseweapon].bundles[var_12c0f53a71c9bcc8])) {
-                return level.var_986acb83cc29ed77.var_37d10554e6936847[baseweapon].bundles[var_12c0f53a71c9bcc8][0];
+            if (isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[baseweapon]) && isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[baseweapon].bundles[blueprintindex])) {
+                return level.var_986acb83cc29ed77.var_37d10554e6936847[baseweapon].bundles[blueprintindex][0];
             } else if (weaponinventorytype(baseweapon) == "offhand") {
                 return namespace_f808ba0ae0debcf5::function_62fa129f91896347(lootid);
             }
@@ -194,12 +194,12 @@ function function_b5be5fff64626153(var_fbe755f0978c0369) {
     if (!isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon])) {
         level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon] = {bundles:[]};
     }
-    var_12c0f53a71c9bcc8 = 0;
+    blueprintindex = 0;
     if (isdefined(itembundle.weaponblueprint) && isdefined(itembundle.ref)) {
         var_2715b66d7222159b = namespace_49e179ec476603d6::function_6d15e119c2779a93(itembundle);
         if (isdefined(var_2715b66d7222159b)) {
-            var_12c0f53a71c9bcc8 = function_64ccc54bdbae5cf6(var_2715b66d7222159b);
-            if (!isdefined(var_12c0f53a71c9bcc8)) {
+            blueprintindex = function_64ccc54bdbae5cf6(var_2715b66d7222159b);
+            if (!isdefined(blueprintindex)) {
                 /#
                     assertmsg("CommonItemWeaponERROR: The item def [" + var_fbe755f0978c0369 + "] specifies blueprint weapon [" + function_f28fd66285fa2c9(itembundle.weaponblueprint) + "] which is not a blueprint weapon on the specified base weapon [" + itembundle.baseweapon + "].");
                 #/
@@ -208,14 +208,14 @@ function function_b5be5fff64626153(var_fbe755f0978c0369) {
         }
     }
     rarity = isdefined(itembundle.rarity) ? 0 : itembundle.rarity;
-    if (!isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8])) {
-        level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8] = [];
+    if (!isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[blueprintindex])) {
+        level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[blueprintindex] = [];
     }
-    if (!isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8][rarity])) {
-        level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8][rarity] = var_fbe755f0978c0369;
+    if (!isdefined(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[blueprintindex][rarity])) {
+        level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[blueprintindex][rarity] = var_fbe755f0978c0369;
     } else {
         /#
-            print("CommonItemERROR: Custom weapon scriptable could not be spawned by SpawnCustomWeaponScriptable()." + function_3c8848a3a11b2553(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[var_12c0f53a71c9bcc8][rarity]) + "<unknown string>" + var_fbe755f0978c0369 + "<unknown string>" + function_3c8848a3a11b2553(itembundle.baseweapon) + "<unknown string>" + rarity + "<unknown string>");
+            print("CommonItemERROR: Custom weapon scriptable could not be spawned by SpawnCustomWeaponScriptable()." + function_3c8848a3a11b2553(level.var_986acb83cc29ed77.var_37d10554e6936847[itembundle.baseweapon].bundles[blueprintindex][rarity]) + "<unknown string>" + var_fbe755f0978c0369 + "<unknown string>" + function_3c8848a3a11b2553(itembundle.baseweapon) + "<unknown string>" + rarity + "<unknown string>");
         #/
     }
     if (!istrue(itembundle.var_5a5e50bc261c907a)) {
@@ -622,7 +622,7 @@ function function_6cf4b48de9a4bc39(weaponobj, var_2b7331baea302df8, origin, angl
         }
     }
     var_2f44e3b98c77c7cc = weapon::function_6faaa2882e3d2e4e(weaponobj) ? %"hash_730e20a5158e3a0d" : %"hash_15004fe9e3a7c88a";
-    var_81411b434bf45184 = [0:#"hash_371d996051b67a4a", 1:isdefined(var_2b7331baea302df8.rarity) ? 0 : var_2b7331baea302df8.rarity, 2:0, 3:0, 4:0];
+    var_81411b434bf45184 = [0:#"customperkpackage", 1:isdefined(var_2b7331baea302df8.rarity) ? 0 : var_2b7331baea302df8.rarity, 2:0, 3:0, 4:0];
     item = spawncustomweaponscriptable(var_2f44e3b98c77c7cc, origin, angles, undefined, weaponobj, var_81411b434bf45184, var_d397bc63bc6b67b0, var_d397bf63bc6b6e49);
     if (isdefined(item)) {
         item.customweaponname = getcompleteweaponname(weaponobj);
@@ -1232,7 +1232,7 @@ function function_5898445f4e50bcdb(baseweapon) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x40f5
 // Size: 0xac
-function function_46423e80a0fa8f2(baseweapon, rarity, var_12c0f53a71c9bcc8) {
+function function_46423e80a0fa8f2(baseweapon, rarity, blueprintindex) {
     if (!isdefined(baseweapon)) {
         /#
             assertmsg("CommonItemERROR: An undefined baseWeapon name was specified when trying to retrieve an item bundle name.");
@@ -1244,11 +1244,11 @@ function function_46423e80a0fa8f2(baseweapon, rarity, var_12c0f53a71c9bcc8) {
         if (!isdefined(rarity)) {
             rarity = 0;
         }
-        if (!isdefined(var_12c0f53a71c9bcc8)) {
-            var_12c0f53a71c9bcc8 = 0;
+        if (!isdefined(blueprintindex)) {
+            blueprintindex = 0;
         }
-        if (isdefined(var_37d10554e6936847.bundles[var_12c0f53a71c9bcc8])) {
-            return var_37d10554e6936847.bundles[var_12c0f53a71c9bcc8][rarity];
+        if (isdefined(var_37d10554e6936847.bundles[blueprintindex])) {
+            return var_37d10554e6936847.bundles[blueprintindex][rarity];
         } else if (isdefined(var_37d10554e6936847.bundles[0])) {
             return var_37d10554e6936847.bundles[0][rarity];
         }
@@ -1264,8 +1264,8 @@ function function_ce5e32676f572482(itembundle) {
     if (isdefined(itembundle.ref)) {
         var_2715b66d7222159b = namespace_49e179ec476603d6::function_6d15e119c2779a93(itembundle);
         if (isdefined(var_2715b66d7222159b)) {
-            var_12c0f53a71c9bcc8 = function_64ccc54bdbae5cf6(var_2715b66d7222159b);
-            return (isdefined(var_12c0f53a71c9bcc8) ? 0 : var_12c0f53a71c9bcc8);
+            blueprintindex = function_64ccc54bdbae5cf6(var_2715b66d7222159b);
+            return (isdefined(blueprintindex) ? 0 : blueprintindex);
         }
     }
     return 0;

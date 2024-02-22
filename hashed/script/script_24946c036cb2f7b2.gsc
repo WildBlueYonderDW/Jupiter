@@ -23,11 +23,11 @@ function function_cb146e445d78e9ee() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x7d
-function function_a7679b1e7a48f91(ActivationName, players, var_c3b480c3f8207bab) {
+function function_a7679b1e7a48f91(activationname, players, var_c3b480c3f8207bab) {
     if (!isdefined(players) || !isarray(players) || players.size == 0) {
         return 0;
     }
-    var_d4464743d0edff8c = function_a6dfaa6e79adbc09(ActivationName);
+    var_d4464743d0edff8c = function_a6dfaa6e79adbc09(activationname);
     if (!isdefined(var_d4464743d0edff8c)) {
         return;
     }
@@ -41,11 +41,11 @@ function function_a7679b1e7a48f91(ActivationName, players, var_c3b480c3f8207bab)
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22b
 // Size: 0xa9
-function function_43007b614b2eb884(ActivationName, players, var_c90d7e9a9fa9a981) {
+function function_43007b614b2eb884(activationname, players, var_c90d7e9a9fa9a981) {
     if (!isdefined(players) || !isarray(players) || players.size == 0) {
         return 0;
     }
-    var_d4464743d0edff8c = function_a6dfaa6e79adbc09(ActivationName);
+    var_d4464743d0edff8c = function_a6dfaa6e79adbc09(activationname);
     if (!isdefined(var_d4464743d0edff8c)) {
         return;
     }
@@ -106,17 +106,17 @@ function function_7175613cab6db0dc(var_1d1eecf1ed7cbdb0, eventref, players, var_
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x40d
 // Size: 0xd4
-function private function_a6dfaa6e79adbc09(ActivationName) {
-    if (!isdefined(ActivationName)) {
+function private function_a6dfaa6e79adbc09(activationname) {
+    if (!isdefined(activationname)) {
         return undefined;
     }
-    var_4fb0bb8290e39fb3 = function_e38f1d6d5a208fe1(ActivationName);
+    var_4fb0bb8290e39fb3 = function_e38f1d6d5a208fe1(activationname);
     /#
-        assertex(var_4fb0bb8290e39fb3.size == 1, "get_overlord_event_info_from_activiation_name: Multiple VO definition found for " + ActivationName + ". Check data.");
+        assertex(var_4fb0bb8290e39fb3.size == 1, "get_overlord_event_info_from_activiation_name: Multiple VO definition found for " + activationname + ". Check data.");
     #/
     var_440272a7c84e0ab8 = var_4fb0bb8290e39fb3[0] function_7437a8d48556e45e();
     /#
-        assertex(var_440272a7c84e0ab8.size == 1, "get_overlord_event_info_from_activiation_name: Incorrect number of broadcast data for " + ActivationName + ". Check data.");
+        assertex(var_440272a7c84e0ab8.size == 1, "get_overlord_event_info_from_activiation_name: Incorrect number of broadcast data for " + activationname + ". Check data.");
     #/
     var_a0df226025d98d74 = spawnstruct();
     var_a0df226025d98d74.ref = function_84ac089886facee5(var_440272a7c84e0ab8[0]);
@@ -181,7 +181,7 @@ function function_1abf09c903e6c16b(players, var_a0ce8000d303764c) {
     if (!isdefined(var_a0ce8000d303764c)) {
         return 0;
     }
-    lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(var_a0ce8000d303764c);
+    lootid = namespace_38b993c4618e76cd::getlootidfromref(var_a0ce8000d303764c);
     if (!isdefined(lootid)) {
         return 0;
     }

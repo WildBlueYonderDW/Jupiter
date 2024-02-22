@@ -872,7 +872,7 @@ function function_9190a53712ac6557(data) {
     }
     modifieddamage = function_7bdb3610d602438d(data);
     self.currenthealth = self.currenthealth - modifieddamage;
-    killstreak_updateDamageState(self.currenthealth);
+    killstreak_updatedamagestate(self.currenthealth);
     return modifieddamage;
 }
 

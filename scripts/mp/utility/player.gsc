@@ -55,7 +55,7 @@ function getstancetop(var_2eea482c1a2f43a9) {
 // Checksum 0x0, Offset: 0x918
 // Size: 0x42
 function isreallyalive(player) {
-    return isalive(player) && !isdefined(player.fauxdead) && !istrue(player.delayedspawnedplayernotify) && !istrue(player.liveRagdoll);
+    return isalive(player) && !isdefined(player.fauxdead) && !istrue(player.delayedspawnedplayernotify) && !istrue(player.liveragdoll);
 }
 
 // Namespace player/namespace_7e17181d03156026
@@ -294,8 +294,8 @@ function restorebasevisionset(fadetime) {
 // Size: 0x3a
 function init_visionsetnight() {
     if (isusingmatchrulesdata()) {
-        nvgVisionSet = getmatchrulesdata("commonOption", "nvgVisionSet");
-        visionsetnight(nvgVisionSet);
+        nvgvisionset = getmatchrulesdata("commonOption", "nvgVisionSet");
+        visionsetnight(nvgvisionset);
     } else {
         visionsetnight("iw9_mp_nvg_base_color");
     }
@@ -482,13 +482,13 @@ function private function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd
     /#
         assert(isdefined(victim) && isent(victim));
     #/
-    deathPos = undefined;
+    deathpos = undefined;
     if (isdefined(victim.origin)) {
-        deathPos = victim.origin;
+        deathpos = victim.origin;
     } else if (isdefined(victim.lastdeathpos)) {
-        deathPos = victim.lastdeathpos;
+        deathpos = victim.lastdeathpos;
     }
-    if (!isdefined(deathPos)) {
+    if (!isdefined(deathpos)) {
         logstring("Undefined deathPos for death ragdoll 3rd person camera.");
         return undefined;
     }
@@ -498,7 +498,7 @@ function private function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd
         forwardvector = function_767cea82b001f645(forwardvector);
         var_9f18d28ad3fbb53d = [0:victim];
     } else {
-        forwardvector = vectornormalize(deathPos - attacker.origin);
+        forwardvector = vectornormalize(deathpos - attacker.origin);
         var_9f18d28ad3fbb53d = [0:victim, 1:attacker];
     }
     baseangles = generateaxisanglesfromforwardvector(forwardvector, (0, 0, 1));
@@ -508,8 +508,8 @@ function private function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd
     var_6095efe86105e553 = [];
     for (i = 0; i < var_519305604d8e28e4; i++) {
         var_58f17fbb36dc3c08 = anglestoforward(baseangles + (0, var_eff05a57ce34e3ea * i, 0));
-        startposition = deathPos + (0, 0, 12);
-        endposition = deathPos + var_58f17fbb36dc3c08 * var_ac59002aa0721741 + (0, 0, 150);
+        startposition = deathpos + (0, 0, 12);
+        endposition = deathpos + var_58f17fbb36dc3c08 * var_ac59002aa0721741 + (0, 0, 150);
         trace = namespace_2a184fc4902783dc::sphere_trace(startposition, endposition, 2, var_9f18d28ad3fbb53d, contentoverride);
         if (isdefined(trace) && trace["fraction"] > 0.99) {
             var_6095efe86105e553[var_6095efe86105e553.size] = trace["position"];
@@ -522,12 +522,12 @@ function private function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd
     if (var_6095efe86105e553.size > 0) {
         var_12b614f64a9ba025 = var_6095efe86105e553[0];
     } else {
-        var_12b614f64a9ba025 = deathPos + anglestoforward(baseangles) * 50 + (0, 0, 80);
+        var_12b614f64a9ba025 = deathpos + anglestoforward(baseangles) * 50 + (0, 0, 80);
     }
-    var_50a4e909a80b4aae = vectornormalize(deathPos - var_12b614f64a9ba025);
+    victimdirection = vectornormalize(deathpos - var_12b614f64a9ba025);
     var_379de5a38f0e582a = spawnstruct();
     var_379de5a38f0e582a.origin = var_12b614f64a9ba025;
-    var_379de5a38f0e582a.angles = vectortoangles(var_50a4e909a80b4aae);
+    var_379de5a38f0e582a.angles = vectortoangles(victimdirection);
     var_379de5a38f0e582a.distance = var_ac59002aa0721741;
     var_379de5a38f0e582a.var_6095efe86105e553 = var_6095efe86105e553;
     return var_379de5a38f0e582a;
@@ -1434,7 +1434,7 @@ function printspawnmessage(message) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x343d
 // Size: 0xfd
-function CodcasterSetPlayerStatusEffect(category, duration) {
+function codcastersetplayerstatuseffect(category, duration) {
     if (!isplayer(self)) {
         return;
     }

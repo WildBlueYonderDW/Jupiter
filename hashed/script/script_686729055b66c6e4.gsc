@@ -30,7 +30,7 @@ function function_fd5292c44cbcbebe(taskid, params) {
 // Checksum 0x0, Offset: 0x117
 // Size: 0xe0
 function function_2e4d3c67e63f83ac(duration) {
-    if (isdefined(self.var_971d11b71ceb4346) && !istrue(self.var_971d11b71ceb4346.var_836834377fb9b633)) {
+    if (isdefined(self.aisettings) && !istrue(self.aisettings.var_836834377fb9b633)) {
         return;
     }
     if (istrue(self.disallow_stun)) {

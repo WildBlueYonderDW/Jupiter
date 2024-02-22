@@ -11,32 +11,32 @@
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x133
 // Size: 0x3c
-function function_61cd287166c3f695(StringReference) {
+function function_61cd287166c3f695(stringreference) {
     var_e6013eac45290cab = self;
     /#
         assertex(namespace_68dc261109a9503f::function_1c67ae607a61c6bb(var_e6013eac45290cab));
     #/
-    var_e6013eac45290cab function_eefe3b65a6590ed2(StringReference, var_e6013eac45290cab.var_6c29f2fdb0054bbe);
+    var_e6013eac45290cab function_eefe3b65a6590ed2(stringreference, var_e6013eac45290cab.var_6c29f2fdb0054bbe);
 }
 
 // Namespace namespace_cfbb837b74e21e93/namespace_262d6474998a2356
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x176
 // Size: 0x3a
-function function_eefe3b65a6590ed2(StringReference, players) {
+function function_eefe3b65a6590ed2(stringreference, players) {
     var_e6013eac45290cab = self;
     /#
         assertex(namespace_68dc261109a9503f::function_1c67ae607a61c6bb(var_e6013eac45290cab));
     #/
-    function_686af2a965066763(var_e6013eac45290cab, StringReference, players);
+    function_686af2a965066763(var_e6013eac45290cab, stringreference, players);
 }
 
 // Namespace namespace_cfbb837b74e21e93/namespace_262d6474998a2356
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b7
 // Size: 0x1e
-function function_641bc1548cff8210(StringReference, players) {
-    function_686af2a965066763(undefined, StringReference, players);
+function function_641bc1548cff8210(stringreference, players) {
+    function_686af2a965066763(undefined, stringreference, players);
 }
 
 // Namespace namespace_cfbb837b74e21e93/namespace_262d6474998a2356
@@ -200,8 +200,8 @@ function function_24d7e633e4a9c5c8(var_e953cfb99ec0d4ac, var_dea46a181189fa4b, p
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x6e4
 // Size: 0x115
-function private function_686af2a965066763(var_e6013eac45290cab, StringReference, players) {
-    var_5ce85f49892885d8 = tablelookuprownum("ob/ob_missions.csv", 1, StringReference);
+function private function_686af2a965066763(var_e6013eac45290cab, stringreference, players) {
+    var_5ce85f49892885d8 = tablelookuprownum("ob/ob_missions.csv", 1, stringreference);
     var_f1a21b880815d306 = var_5ce85f49892885d8 != -1;
     if (var_f1a21b880815d306) {
         var_6b32e6036a57e48 = tablelookupbyrow("ob/ob_missions.csv", var_5ce85f49892885d8, 0);
@@ -216,7 +216,7 @@ function private function_686af2a965066763(var_e6013eac45290cab, StringReference
     } else {
         /#
             /#
-                assertmsg("<unknown string>" + StringReference + "<unknown string>" + "<unknown string>" + "<unknown string>");
+                assertmsg("<unknown string>" + stringreference + "<unknown string>" + "<unknown string>" + "<unknown string>");
             #/
         #/
     }

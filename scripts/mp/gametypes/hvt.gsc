@@ -113,9 +113,9 @@ function initializematchrules() {
 // Size: 0x56
 function updategametypedvars() {
     updatecommongametypedvars();
-    level.hvtNumHVTPerTeam = dvarintvalue("hvtNumHVTPerTeam", 1, 1, 7);
-    level.hvtPointsPerHVTKilled = dvarintvalue("hvtPointsPerHVTKilled", 5, 0, 15);
-    level.hvtPointsPerKillAsHVT = dvarintvalue("hvtPointsPerKillAsHVT", 2, 0, 15);
+    level.hvtnumhvtperteam = dvarintvalue("hvtNumHVTPerTeam", 1, 1, 7);
+    level.hvtpointsperhvtkilled = dvarintvalue("hvtPointsPerHVTKilled", 5, 0, 15);
+    level.hvtpointsperkillashvt = dvarintvalue("hvtPointsPerKillAsHVT", 2, 0, 15);
 }
 
 // Namespace hvt/namespace_33fcda83fa46d258
@@ -248,15 +248,15 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
     if (ishvt()) {
         function_a2ec131d150b20c8(attacker);
     } else if (attacker ishvt()) {
-        attacker namespace_48a08c5037514e04::doScoreEvent(#"hash_c848dfdd9f079443");
+        attacker namespace_48a08c5037514e04::doscoreevent(#"hash_c848dfdd9f079443");
         attacker thread namespace_44abc05161e2e2cb::showsplash("hvt_kill_splash");
-        namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.team, level.hvtPointsPerKillAsHVT);
+        namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.team, level.hvtpointsperkillashvt);
         if (isdefined(self.attackers)) {
             foreach (player in self.attackers) {
                 if (player == attacker) {
                     continue;
                 }
-                player namespace_48a08c5037514e04::doScoreEvent(#"hash_fd3eb0cb2e45667e");
+                player namespace_48a08c5037514e04::doscoreevent(#"hash_fd3eb0cb2e45667e");
             }
         }
     } else {
@@ -279,17 +279,17 @@ function function_a2ec131d150b20c8(attacker) {
         player playlocalsound("uin_hvt_enemy_killed");
     }
     if (isdefined(attacker)) {
-        attacker namespace_48a08c5037514e04::doScoreEvent(#"hash_4b89b1d2e95e2012");
+        attacker namespace_48a08c5037514e04::doscoreevent(#"hash_4b89b1d2e95e2012");
         attacker thread namespace_44abc05161e2e2cb::showsplash("hvt_killed_splash");
         if (isdefined(self.attackers)) {
             foreach (player in self.attackers) {
                 if (player == attacker) {
                     continue;
                 }
-                player namespace_48a08c5037514e04::doScoreEvent(#"hash_e7321c2c761418a4");
+                player namespace_48a08c5037514e04::doscoreevent(#"hash_e7321c2c761418a4");
             }
         }
-        namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.team, level.hvtPointsPerHVTKilled);
+        namespace_e8a49b70d0769b66::giveteamscoreforobjective(attacker.team, level.hvtpointsperhvtkilled);
     }
     function_f7e228a53add5c40();
     self.var_1c65528773f3bdb3 = 1;
@@ -370,7 +370,7 @@ function function_8e02eb5056d9e4d2() {
 function function_930d45cca276d8e2(revived) {
     if (ishvt()) {
         if (istrue(revived)) {
-            self.var_63b104851a574f2a namespace_48a08c5037514e04::doScoreEvent(#"hash_a8cd2254f8c02a4b");
+            self.var_63b104851a574f2a namespace_48a08c5037514e04::doscoreevent(#"hash_a8cd2254f8c02a4b");
         }
     }
 }
@@ -413,7 +413,7 @@ function function_a0f16653bd8c0125(team) {
     if (level.var_43cd475109571dae[team]) {
         return 0;
     }
-    return function_aa6ad03630bbc953(team) < level.hvtNumHVTPerTeam;
+    return function_aa6ad03630bbc953(team) < level.hvtnumhvtperteam;
 }
 
 // Namespace hvt/namespace_33fcda83fa46d258
@@ -531,7 +531,7 @@ function function_1d5e82320be9da1d() {
     while (isdefined(self.ishvt)) {
         if (self.var_38ab0933f7a5e698 >= var_393b16e2805d9e10) {
             self.var_38ab0933f7a5e698 = 0;
-            namespace_48a08c5037514e04::doScoreEvent(#"hash_d132f951cbf73638");
+            namespace_48a08c5037514e04::doscoreevent(#"hash_d132f951cbf73638");
         } else {
             self.var_38ab0933f7a5e698++;
         }

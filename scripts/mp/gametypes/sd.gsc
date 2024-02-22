@@ -460,7 +460,7 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "planting");
         attacker incpersstat("defends", 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_abe3cc5116e269c2");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_abe3cc5116e269c2");
         var_aec2e5e01f424119 = 1;
     } else if (victim.isbombcarrier) {
         logannouncement(victim, attacker, "Bomb Carrier Killed", victim.origin);
@@ -471,7 +471,7 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "defusing");
         attacker incpersstat("defends", 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_dfcd9b1f5926cb85");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_dfcd9b1f5926cb85");
         var_aec2e5e01f424119 = 1;
     }
     if (isdefined(level.sdbomb.carrier)) {
@@ -480,7 +480,7 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
                 var_db36f135f40e7940 = distancesquared(level.sdbomb.carrier.origin, attacker.origin);
                 if (var_db36f135f40e7940 < 105625) {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                     attacker incpersstat("defends", 1);
                     attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
                     thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "defending");
@@ -540,9 +540,9 @@ function updategametypedvars() {
     level.multibomb = dvarintvalue("multibomb", 0, 0, 1);
     level.silentplant = dvarintvalue("silentPlant", 0, 0, 1);
     level.resetprogress = dvarintvalue("resetProgress", 0, 0, 1);
-    level.defendersCanSeeDroppedBomb = dvarintvalue("defendersCanSeeDroppedBomb", 0, 0, 1);
-    level.defendersCanSeePlantedBomb = dvarintvalue("defendersCanSeePlantedBomb", 0, 0, 1);
-    level.assignBombZoneChevrons = dvarintvalue("assignBombZoneChevrons", 0, 0, 1);
+    level.defenderscanseedroppedbomb = dvarintvalue("defendersCanSeeDroppedBomb", 0, 0, 1);
+    level.defenderscanseeplantedbomb = dvarintvalue("defendersCanSeePlantedBomb", 0, 0, 1);
+    level.assignbombzonechevrons = dvarintvalue("assignBombZoneChevrons", 0, 0, 1);
 }
 
 // Namespace sd/namespace_d1cd9ef22348b7a9
@@ -655,7 +655,7 @@ function bombs() {
     }
     level.sdbomb namespace_19b4203b51d56488::requestid(1, 1, 2);
     level.sdbomb namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_bomb");
-    if (level.defendersCanSeeDroppedBomb) {
+    if (level.defenderscanseedroppedbomb) {
         level.sdbomb namespace_19b4203b51d56488::setvisibleteam("any");
     } else {
         level.sdbomb namespace_19b4203b51d56488::setvisibleteam("friendly");

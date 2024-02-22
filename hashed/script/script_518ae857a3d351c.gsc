@@ -20,7 +20,7 @@ function init() {
         level.var_cbe618f35b332990 = spawn("script_origin", (0, 0, 0));
     }
     load_laser_fx();
-    initSentrySettings();
+    initsentrysettings();
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("trap_defuse_object", &function_836cdac4b1d38941);
     /#
         level thread function_6e8b6dce68b1c1ea();
@@ -52,7 +52,7 @@ function load_laser_fx() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9cb
 // Size: 0x5a8
-function initSentrySettings() {
+function initsentrysettings() {
     level.sentrysettings["bs_laser"] = spawnstruct();
     level.sentrysettings["bs_laser"].health = 999999;
     level.sentrysettings["bs_laser"].maxhealth = 350;

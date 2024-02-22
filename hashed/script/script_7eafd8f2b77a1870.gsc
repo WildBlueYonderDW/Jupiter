@@ -61,9 +61,9 @@ function function_5675a69bbcea259() {
         foreach (var_bdf25d8a73ff7dad in var_bb81957d1ae1cf3a) {
             if (var_bdf25d8a73ff7dad.script_noteworthy == "gulag_twotwo_catwalk_ai_spawn") {
                 if (isdefined(var_bdf25d8a73ff7dad.target)) {
-                    var_bdf25d8a73ff7dad.patrolStart = getstruct(var_bdf25d8a73ff7dad.target, "targetname");
-                    if (isdefined(var_bdf25d8a73ff7dad.patrolStart)) {
-                        var_bdf25d8a73ff7dad.patrolpath = function_9edcf99159abb0b(var_bdf25d8a73ff7dad.patrolStart);
+                    var_bdf25d8a73ff7dad.patrolstart = getstruct(var_bdf25d8a73ff7dad.target, "targetname");
+                    if (isdefined(var_bdf25d8a73ff7dad.patrolstart)) {
+                        var_bdf25d8a73ff7dad.patrolpath = function_9edcf99159abb0b(var_bdf25d8a73ff7dad.patrolstart);
                     }
                 }
                 arena.var_e33e5f2072a1db86[arena.var_e33e5f2072a1db86.size] = var_bdf25d8a73ff7dad;
@@ -126,7 +126,7 @@ function function_8a7784fe4a8d91b2(arena, var_55e69fb0ce97f15e, var_1439f86640d4
     if (!getdvarint(@"hash_b3d7a9483362813e", 0)) {
         spawnlocation = getclosestpointonnavmesh(var_55e69fb0ce97f15e.origin + (0, 0, 30));
     }
-    agent = ai_mp_requestSpawnAgent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag_catwalk", undefined, undefined, undefined, undefined, undefined, 1, undefined, 0);
+    agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag_catwalk", undefined, undefined, undefined, undefined, undefined, 1, undefined, 0);
     if (isagent(agent)) {
         agent function_7c45ebd8f87cbec2(arena);
         agent.arena = arena;
@@ -238,12 +238,12 @@ function function_6b2a6e0fc1611a0b(instance, part, state, player, var_a5b2c54141
         player thread namespace_cb965d2f71fefddc::playerplaypickupanim();
     }
     if (isdefined(player)) {
-        player namespace_48a08c5037514e04::doScoreEvent(#"hash_7f475510f9f5698d");
+        player namespace_48a08c5037514e04::doscoreevent(#"hash_7f475510f9f5698d");
     }
     wait(1.17);
     foreach (var_d7836ab41dca3e4a in arena.var_31839e5dd0b28150) {
         if (isdefined(var_d7836ab41dca3e4a)) {
-            var_d7836ab41dca3e4a namespace_48a08c5037514e04::doScoreEvent(#"hash_dd106359bca2b84");
+            var_d7836ab41dca3e4a namespace_48a08c5037514e04::doscoreevent(#"hash_dd106359bca2b84");
         }
     }
     var_b215274f1a3eb134 = array_combine(arena.jailedplayers, arena.arenaplayers);
@@ -277,7 +277,7 @@ function function_3391003fe051704() {
             player notifyonplayercommandremove("lethal_attempt_gulag", "+frag");
             player notifyonplayercommandremove("lethal_attempt_gulag", "+smoke");
         }
-        player thread gulagbreak_playerRespawn(1);
+        player thread gulagbreak_playerrespawn(1);
     }
 }
 
@@ -291,7 +291,7 @@ function function_4a9dbce4369f1bba() {
             if (player namespace_8bfdb6eb5a3df67a::playeriscinematiclayeron()) {
                 player stopcinematicforplayer(1, 1);
             }
-            player thread gulagbreak_playerRespawn(0);
+            player thread gulagbreak_playerrespawn(0);
         }
     }
 }
@@ -300,7 +300,7 @@ function function_4a9dbce4369f1bba() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1281
 // Size: 0xba
-function gulagbreak_playerRespawn(var_15a419e19e435f2b) {
+function gulagbreak_playerrespawn(var_15a419e19e435f2b) {
     if (!isdefined(self)) {
         return;
     }

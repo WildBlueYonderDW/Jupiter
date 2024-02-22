@@ -51,9 +51,9 @@ function vehicle_collision_updateinstance(vehicle) {
     if (!isdefined(data)) {
         return;
     }
-    handleWorldCollision = undefined;
+    handleworldcollision = undefined;
     if (issharedfuncdefined(vehicle function_d93ec4635290febd(), "handleWorldCollision")) {
-        handleWorldCollision = getsharedfunc(vehicle function_d93ec4635290febd(), "handleWorldCollision");
+        handleworldcollision = getsharedfunc(vehicle function_d93ec4635290febd(), "handleWorldCollision");
     }
     vehicle notify("vehicle_collision_updateInstance");
     vehicle endon("vehicle_collision_updateInstance");
@@ -70,8 +70,8 @@ function vehicle_collision_updateinstance(vehicle) {
         if (isdefined(vehicle.var_4b75a4ee07200d3b) && !ent isvehicle() && isdefined(ent.classname) && ent.classname != "worldspawn") {
             [[ vehicle.var_4b75a4ee07200d3b ]](vehicle, ent);
         }
-        if (isdefined(handleWorldCollision) && (!isdefined(ent) || !isdefined(ent.classname) || ent.classname == "worldspawn" || ent == vehicle)) {
-            vehicle thread [[ handleWorldCollision ]](position);
+        if (isdefined(handleworldcollision) && (!isdefined(ent) || !isdefined(ent.classname) || ent.classname == "worldspawn" || ent == vehicle)) {
+            vehicle thread [[ handleworldcollision ]](position);
         }
         if (istrue(vehicle.var_9882cd795c6bfaa)) {
             continue;
@@ -553,23 +553,23 @@ function private function_53c04cefb8acf030(var_50cc34c7ad693624) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1895
 // Size: 0x107
-function vehicle_collision_getleveldataforvehicle(vehicleRef, create, var_6ecb77fd1f27c667) {
-    if (istrue(create) && (!function_89dc39dc11f3988c(vehicleRef) || !isdefined(function_29b4292c92443328(vehicleRef).damage) || !isdefined(function_29b4292c92443328(vehicleRef).damage.class))) {
+function vehicle_collision_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667) {
+    if (istrue(create) && (!function_89dc39dc11f3988c(vehicleref) || !isdefined(function_29b4292c92443328(vehicleref).damage) || !isdefined(function_29b4292c92443328(vehicleref).damage.class))) {
         data = undefined;
-        if (!function_89dc39dc11f3988c(vehicleRef)) {
+        if (!function_89dc39dc11f3988c(vehicleref)) {
             data = spawnstruct();
         } else {
-            data = function_29b4292c92443328(vehicleRef);
+            data = function_29b4292c92443328(vehicleref);
         }
         if (!isdefined(data.damage)) {
             data.damage = spawnstruct();
         }
-        data.damage.ref = vehicleRef;
+        data.damage.ref = vehicleref;
         data.damage.class = "medium";
-        level.var_a0b2c978ca57ffc5[vehicleRef] = data;
+        level.var_a0b2c978ca57ffc5[vehicleref] = data;
     }
-    if (function_89dc39dc11f3988c(vehicleRef)) {
-        return function_29b4292c92443328(vehicleRef).damage;
+    if (function_89dc39dc11f3988c(vehicleref)) {
+        return function_29b4292c92443328(vehicleref).damage;
     }
 }
 

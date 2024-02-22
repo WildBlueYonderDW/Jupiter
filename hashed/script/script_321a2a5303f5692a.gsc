@@ -10,14 +10,14 @@
 #using script_11ef10bf1824d82b;
 #using scripts\mp\class.gsc;
 
-#namespace namespace_5b5ae6213b004bf3;
+#namespace jup_spawner_zombie_base_abom_crawler;
 
-// Namespace namespace_5b5ae6213b004bf3/namespace_b530313bdd800aca
+// Namespace jup_spawner_zombie_base_abom_crawler/namespace_b530313bdd800aca
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x201
 // Size: 0x1e7
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_4bbf18d2db996ae4");
+    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"jup_spawner_zombie_base_abom_crawler");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_381e616fa5316108");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 100;
@@ -25,7 +25,7 @@ function main() {
     self.behaviortreeasset = "zombie_base";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "zombie_base";
-    self.var_f7f189f0e87db6ac = %"hash_3664c8ba706ec788";
+    self.ai_eventlist = %"hash_3664c8ba706ec788";
     self.var_570908460ede5c13 = "settings_zombie_base_abom_crawler";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_zombie_base_abom_crawler");
     var_fea750d6814b803d = "jup_me_zombie_melee, [ none, none, none, none, none, none ], none, none";
@@ -55,7 +55,7 @@ function main() {
     namespace_6205bc7c5e394598::ai_init();
 }
 
-// Namespace namespace_5b5ae6213b004bf3/namespace_b530313bdd800aca
+// Namespace jup_spawner_zombie_base_abom_crawler/namespace_b530313bdd800aca
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0x57
@@ -69,7 +69,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_5b5ae6213b004bf3/namespace_b530313bdd800aca
+// Namespace jup_spawner_zombie_base_abom_crawler/namespace_b530313bdd800aca
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x9
@@ -77,7 +77,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_11a06c0697939b92::main();
 }
 
-// Namespace namespace_5b5ae6213b004bf3/namespace_b530313bdd800aca
+// Namespace jup_spawner_zombie_base_abom_crawler/namespace_b530313bdd800aca
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45e
 // Size: 0xd6
@@ -101,7 +101,7 @@ function precache() {
     thread function_e8cf870298e36bdc();
 }
 
-// Namespace namespace_5b5ae6213b004bf3/namespace_b530313bdd800aca
+// Namespace jup_spawner_zombie_base_abom_crawler/namespace_b530313bdd800aca
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53b
 // Size: 0xd7

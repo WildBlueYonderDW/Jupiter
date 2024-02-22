@@ -12,9 +12,9 @@
 #using script_405d05c89e998922;
 #using script_686729055b66c6e4;
 
-#namespace namespace_b33bbc2484de3752;
+#namespace zombie_base_abom_crawler;
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x343
 // Size: 0x85
@@ -30,7 +30,7 @@ function init_zombie_base_abom_crawler() {
     level._effect["zombie_base_abom_crawler_aoe"] = loadfx("vfx/jup/ob/gameplay/zm_ai/vfx_megabomb_crawler_aoe.vfx");
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x3cf
 // Size: 0x5b
@@ -43,7 +43,7 @@ function private on_zombie_base_abom_crawler_spawned(params) {
     thread function_692d3f57a32b93d9();
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x431
 // Size: 0x76
@@ -53,7 +53,7 @@ function private function_13da6f593406ec4d(var_d74fc41b6b10ccf5) {
     }
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x2d
@@ -63,7 +63,7 @@ function private function_322d8cb834021eb0() {
     utility::function_3ab9164ef76940fd("audio_explode", "rise");
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x8a
@@ -78,7 +78,7 @@ function private function_ec481db6f0a4e653() {
     self kill();
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x573
 // Size: 0x1a8
@@ -116,7 +116,7 @@ function private function_5b62af1eb5b04cc9(position, friendly_team) {
     var_6106559c907390e4 delete();
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x722
 // Size: 0x47
@@ -130,7 +130,7 @@ function private function_692d3f57a32b93d9() {
     }
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x770
 // Size: 0x9d
@@ -149,7 +149,7 @@ function private function_3ef8c54a29b98522() {
     }
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x814
 // Size: 0xc1
@@ -180,7 +180,7 @@ function private function_6e789d7df8701ad3() {
     }
 }
 
-// Namespace namespace_b33bbc2484de3752/namespace_757f0fc2fc31608f
+// Namespace zombie_base_abom_crawler/namespace_757f0fc2fc31608f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x8dc
 // Size: 0x18

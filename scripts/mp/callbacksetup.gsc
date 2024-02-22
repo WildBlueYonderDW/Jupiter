@@ -138,7 +138,7 @@ function codecallback_vehicledamage(inflictor, attacker, damage, dflags, meansof
         objweapon = [[ level.weaponmapfunc ]](objweapon, inflictor);
     }
     if (isdefined(self.var_e913079a5ffda56d)) {
-        damage = function_c204e7f8a2ab087f(attacker, objweapon, meansofdeath, damage, self.maxhealth, self.var_e913079a5ffda56d);
+        damage = getmodifieddamageusingdamagetuning(attacker, objweapon, meansofdeath, damage, self.maxhealth, self.var_e913079a5ffda56d);
     }
     if (isdefined(self.damagecallback)) {
         self [[ self.damagecallback ]](inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, var_799f234362adb813, partname, eventid);

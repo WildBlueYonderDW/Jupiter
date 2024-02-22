@@ -9,9 +9,9 @@
 #using scripts\engine\utility.gsc;
 #using script_5def7af2a9f04234;
 
-#namespace namespace_10be2cb8cdd3999;
+#namespace dead_drop;
 
-// Namespace namespace_10be2cb8cdd3999/namespace_a3da42c0149be2d4
+// Namespace dead_drop/namespace_a3da42c0149be2d4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x184
 // Size: 0x110
@@ -34,12 +34,12 @@ function function_476ba78d85b349ea() {
     namespace_3c37cb17ade254d::flag_set("dead_drops_init");
 }
 
-// Namespace namespace_10be2cb8cdd3999/namespace_a3da42c0149be2d4
+// Namespace dead_drop/namespace_a3da42c0149be2d4
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x8c
 function function_2463f61a8c4d7772(container, player, lootid, quantity, itemtype, itemindex) {
-    var_338e098f5cbfda5b = undefined;
+    noextract = undefined;
     var_dfab44d4d8d10b36 = quantity;
     if (isdefined(itemtype) && itemtype == 10) {
         var_dfab44d4d8d10b36 = function_8e5978971b5dcd16(player, itemindex);
@@ -51,10 +51,10 @@ function function_2463f61a8c4d7772(container, player, lootid, quantity, itemtype
         itemindex = 0;
     }
     player notify("item_added_to_cache", itemtype);
-    return [0:lootid, 1:var_338e098f5cbfda5b];
+    return [0:lootid, 1:noextract];
 }
 
-// Namespace namespace_10be2cb8cdd3999/namespace_a3da42c0149be2d4
+// Namespace dead_drop/namespace_a3da42c0149be2d4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x32f
 // Size: 0x32d
@@ -73,7 +73,7 @@ function function_a1cbb02f01a33768(params) {
             itembundle = getscriptbundle("itemspawnentry:" + bundlename);
             scriptablename = itembundle.scriptable;
             itemtype = itembundle.type;
-            if (isdefined(itemtype) && !istrue(item.var_338e098f5cbfda5b)) {
+            if (isdefined(itemtype) && !istrue(item.noextract)) {
                 if (itemtype == "plunder") {
                     var_bbac576aade31a1e = var_bbac576aade31a1e + item.quantity;
                 }
@@ -98,7 +98,7 @@ function function_a1cbb02f01a33768(params) {
             itembundle = getscriptbundle("itemspawnentry:" + bundlename);
             scriptablename = itembundle.scriptable;
             itemtype = itembundle.type;
-            if (!istrue(container.contents[index].var_338e098f5cbfda5b)) {
+            if (!istrue(container.contents[index].noextract)) {
                 container.contents[index].lootid = 0;
                 container.contents[index].quantity = 0;
             }
@@ -107,7 +107,7 @@ function function_a1cbb02f01a33768(params) {
     }
 }
 
-// Namespace namespace_10be2cb8cdd3999/namespace_a3da42c0149be2d4
+// Namespace dead_drop/namespace_a3da42c0149be2d4
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x663
 // Size: 0x1c
@@ -115,7 +115,7 @@ function function_160a29300ce1e14(var_bbac576aade31a1e, player, var_95338f9d8305
     
 }
 
-// Namespace namespace_10be2cb8cdd3999/namespace_a3da42c0149be2d4
+// Namespace dead_drop/namespace_a3da42c0149be2d4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x686
 // Size: 0xf2
@@ -139,7 +139,7 @@ function function_dd5b2fd6714dfcc5() {
     #/
 }
 
-// Namespace namespace_10be2cb8cdd3999/namespace_a3da42c0149be2d4
+// Namespace dead_drop/namespace_a3da42c0149be2d4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x77f
 // Size: 0x136

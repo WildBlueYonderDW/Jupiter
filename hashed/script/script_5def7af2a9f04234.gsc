@@ -60,12 +60,12 @@ function function_c08668fe290fc31a() {
     if (istrue(level.var_b0eae20487331106)) {
         var_f880f9dff6a5425 = 0;
     }
-    foreach (poiName in level.var_dbb3dd5ab77ccd48) {
-        var_eb5f2cffbf051614 = function_2ef675c13ca1c4af(@"hash_8a42e4da731a0a67", poiName);
+    foreach (poiname in level.var_dbb3dd5ab77ccd48) {
+        var_eb5f2cffbf051614 = function_2ef675c13ca1c4af(@"hash_8a42e4da731a0a67", poiname);
         if (getdvarint(var_eb5f2cffbf051614, var_f880f9dff6a5425) == 0) {
-            level.var_ab20b3a256911579[level.var_ab20b3a256911579.size] = poiName;
+            level.var_ab20b3a256911579[level.var_ab20b3a256911579.size] = poiname;
         }
-        function_3d397c9451f80077(poiName);
+        function_3d397c9451f80077(poiname);
     }
     if (level.var_9f0a2752e6e5371a) {
         function_b5c7469e80b1e8bd();
@@ -75,7 +75,7 @@ function function_c08668fe290fc31a() {
         function_f1894e1c6faff01();
     }
     level thread function_52cb931e1834f98b();
-    namespace_3c37cb17ade254d::registersharedfunc("poi", "poi_isPOIActive", &poi_isPOIActive);
+    namespace_3c37cb17ade254d::registersharedfunc("poi", "poi_isPOIActive", &poi_ispoiactive);
     namespace_f1d40c362677777e::registerondisconnecteventcallback(&function_fc5d5824570e8c21);
     function_68f5d2342ad95772();
     function_683e582efd2a8233();
@@ -108,20 +108,20 @@ function private function_c916e503ca7fd810() {
     }
     if (isdefined(var_349bb06748e578c6) && var_349bb06748e578c6.size > 0) {
         foreach (volume in var_349bb06748e578c6) {
-            poiName = tolower(getsubstr(volume.targetname, 12));
+            poiname = tolower(getsubstr(volume.targetname, 12));
             if (!isdefined(level.var_dbb3dd5ab77ccd48)) {
                 level.var_dbb3dd5ab77ccd48 = [];
             }
-            volume.poi = poiName;
-            if (!array_contains(level.var_dbb3dd5ab77ccd48, poiName)) {
-                level.var_dbb3dd5ab77ccd48[level.var_dbb3dd5ab77ccd48.size] = poiName;
-                level.var_da9edb0c15be1c3b[poiName] = volume;
+            volume.poi = poiname;
+            if (!array_contains(level.var_dbb3dd5ab77ccd48, poiname)) {
+                level.var_dbb3dd5ab77ccd48[level.var_dbb3dd5ab77ccd48.size] = poiname;
+                level.var_da9edb0c15be1c3b[poiname] = volume;
             } else {
                 if (!isdefined(level.var_ff89a1714af44c4e)) {
                     level.var_ff89a1714af44c4e = [];
                 }
-                level.var_ff89a1714af44c4e[poiName] = level.var_da9edb0c15be1c3b[poiName];
-                level.var_da9edb0c15be1c3b[poiName] = volume;
+                level.var_ff89a1714af44c4e[poiname] = level.var_da9edb0c15be1c3b[poiname];
+                level.var_da9edb0c15be1c3b[poiname] = volume;
             }
         }
     }
@@ -134,8 +134,8 @@ function private function_c916e503ca7fd810() {
 function private function_86cc972493600938() {
     level.var_acf99124377543bb = [];
     if (isdefined(level.var_da9edb0c15be1c3b) && level.var_da9edb0c15be1c3b.size > 0) {
-        foreach (poiName, volume in level.var_da9edb0c15be1c3b) {
-            level.var_acf99124377543bb[poiName] = volume.origin;
+        foreach (poiname, volume in level.var_da9edb0c15be1c3b) {
+            level.var_acf99124377543bb[poiname] = volume.origin;
         }
     } else {
         var_c46a79729cba49de = [];
@@ -143,9 +143,9 @@ function private function_86cc972493600938() {
         var_c46a79729cba49de["saba_oilfield"] = (-23684, 21737, 436);
         var_c46a79729cba49de["saba_fort"] = (18357, -54628, 2270);
         var_c46a79729cba49de["saba_exhume"] = (-49193, 14284, 1674);
-        foreach (poiName in level.var_dbb3dd5ab77ccd48) {
-            if (isdefined(var_c46a79729cba49de[poiName])) {
-                level.var_acf99124377543bb[poiName] = var_c46a79729cba49de[poiName];
+        foreach (poiname in level.var_dbb3dd5ab77ccd48) {
+            if (isdefined(var_c46a79729cba49de[poiname])) {
+                level.var_acf99124377543bb[poiname] = var_c46a79729cba49de[poiname];
             }
         }
     }
@@ -156,11 +156,11 @@ function private function_86cc972493600938() {
 // Checksum 0x0, Offset: 0xad7
 // Size: 0x97
 function private function_84291fc4abf2c2d() {
-    foreach (poiName, poi in level.poi) {
+    foreach (poiname, poi in level.poi) {
         var_29260d0089df816 = spawnstruct();
-        var_29260d0089df816.poiName = poiName;
+        var_29260d0089df816.poiname = poiname;
         var_29260d0089df816.var_71ad22c5d093d90b = "orphan";
-        function_d0e7647e5538eb9d(poiName, "subAreas", var_29260d0089df816, var_29260d0089df816.var_71ad22c5d093d90b);
+        function_d0e7647e5538eb9d(poiname, "subAreas", var_29260d0089df816, var_29260d0089df816.var_71ad22c5d093d90b);
     }
 }
 
@@ -173,11 +173,11 @@ function private function_28bfdfbf2b7b36c2() {
         if (!isdefined(poi["subAreas"])) {
             continue;
         }
-        foreach (subArea in poi["subAreas"]) {
-            subArea.var_3ebb6024e3f220ca = [];
-            subArea.var_25087194b5e05d51 = 0;
-            subArea.var_d276b08c96430bfc = [];
-            subArea.var_24a2cd19eed8f75d = [];
+        foreach (subarea in poi["subAreas"]) {
+            subarea.var_3ebb6024e3f220ca = [];
+            subarea.var_25087194b5e05d51 = 0;
+            subarea.var_d276b08c96430bfc = [];
+            subarea.var_24a2cd19eed8f75d = [];
         }
     }
 }
@@ -199,15 +199,15 @@ function private function_1698577d68385123() {
                 var_84a8c10c861d7ce0 = level.var_4d8386eca283e9c4;
             }
             tokens = strtok(ent.script_noteworthy, "_");
-            poiName = var_84a8c10c861d7ce0 + tolower(function_996b01cd49d0128d(array_slice(tokens, 1, tokens.size - 1), "_"));
+            poiname = var_84a8c10c861d7ce0 + tolower(function_996b01cd49d0128d(array_slice(tokens, 1, tokens.size - 1), "_"));
             var_6a01ff17267a7f86 = tokens[0].size + tokens[1].size + 2;
             if (issubstr(ent.script_noteworthy, "suburb_") || issubstr(ent.script_noteworthy, "suburbs_")) {
                 var_6a01ff17267a7f86 = tokens[0].size + tokens[1].size + tokens[2].size + 3;
             }
             struct.var_71ad22c5d093d90b = tolower(getsubstr(ent.script_noteworthy, var_6a01ff17267a7f86));
-            struct.poi = poiName;
+            struct.poi = poiname;
             foreach (var_a0b37d5f4a050123, poi in level.poi) {
-                if (issubstr(var_a0b37d5f4a050123, poiName)) {
+                if (issubstr(var_a0b37d5f4a050123, poiname)) {
                     function_d0e7647e5538eb9d(var_a0b37d5f4a050123, "subAreas", struct, struct.var_71ad22c5d093d90b);
                 }
             }
@@ -221,16 +221,16 @@ function private function_1698577d68385123() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec5
 // Size: 0x82
-function function_985798a13250c99a(poiName) {
+function function_985798a13250c99a(poiname) {
     var_e995bb533046188d = undefined;
     if (level.var_9f0a2752e6e5371a) {
-        var_e995bb533046188d = level.var_a8bf194418e9a8dd[poiName];
+        var_e995bb533046188d = level.var_a8bf194418e9a8dd[poiname];
     } else {
-        var_e995bb533046188d = tablelookup("mp/map_callouts/" + level.mapname + "_callouts.csv", 1, poiName, 0);
+        var_e995bb533046188d = tablelookup("mp/map_callouts/" + level.mapname + "_callouts.csv", 1, poiname, 0);
         if (isdefined(var_e995bb533046188d) && var_e995bb533046188d != "") {
             var_e995bb533046188d = int(var_e995bb533046188d);
         } else {
-            var_e995bb533046188d = array_find(level.var_dbb3dd5ab77ccd48, poiName);
+            var_e995bb533046188d = array_find(level.var_dbb3dd5ab77ccd48, poiname);
         }
     }
     return var_e995bb533046188d;
@@ -248,10 +248,10 @@ function function_f9340f4b7f231bc1(var_d26bcec5b7ac16f1) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf6c
 // Size: 0x38
-function function_80cdaea4bd3ecf70(poiName) {
+function function_80cdaea4bd3ecf70(poiname) {
     var_d455648308e34f3f = 0;
-    if (isdefined(poiName)) {
-        var_c70bfaffc89d58af = function_985798a13250c99a(poiName);
+    if (isdefined(poiname)) {
+        var_c70bfaffc89d58af = function_985798a13250c99a(poiname);
         if (isdefined(var_c70bfaffc89d58af)) {
             var_d455648308e34f3f = var_c70bfaffc89d58af;
         }
@@ -289,20 +289,20 @@ function private function_f1894e1c6faff01() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x110b
 // Size: 0x85
-function function_3d397c9451f80077(poiName) {
+function function_3d397c9451f80077(poiname) {
     if (!function_47d356083884f913()) {
         return;
     }
-    if (isdefined(level.poi[poiName])) {
-        return level.poi[poiName];
+    if (isdefined(level.poi[poiname])) {
+        return level.poi[poiname];
     }
-    if (!poi_isPOIActive(poiName)) {
+    if (!poi_ispoiactive(poiname)) {
         return;
     }
-    level.poi[poiName] = function_183a2f183e4a605b();
-    level.poi[poiName]["name"] = poiName;
-    level.poi[poiName]["calloutIndex"] = function_985798a13250c99a(poiName);
-    return level.poi[poiName];
+    level.poi[poiname] = function_183a2f183e4a605b();
+    level.poi[poiname]["name"] = poiname;
+    level.poi[poiname]["calloutIndex"] = function_985798a13250c99a(poiname);
+    return level.poi[poiname];
 }
 
 // Namespace poi/namespace_37f0fb6355a4618a
@@ -341,45 +341,45 @@ function function_44739fe1cf82e29a(var_3f44c731fdddd082) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12b4
 // Size: 0x4c
-function function_1af8a41e4c1252c7(poiName, var_3f44c731fdddd082) {
+function function_1af8a41e4c1252c7(poiname, var_3f44c731fdddd082) {
     if (!function_47d356083884f913()) {
         return;
     }
-    if (!isdefined(poiName) || !isdefined(var_3f44c731fdddd082)) {
+    if (!isdefined(poiname) || !isdefined(var_3f44c731fdddd082)) {
         return;
     }
     if (!array_contains(level.var_a09459a429deb934, var_3f44c731fdddd082)) {
         return;
     }
-    return level.poi[poiName][var_3f44c731fdddd082];
+    return level.poi[poiname][var_3f44c731fdddd082];
 }
 
 // Namespace poi/namespace_37f0fb6355a4618a
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1308
 // Size: 0xde
-function function_d0e7647e5538eb9d(poiName, var_3f44c731fdddd082, var_f8ff5670b74761d2, var_ec51fe53d55f33a1) {
+function function_d0e7647e5538eb9d(poiname, var_3f44c731fdddd082, var_f8ff5670b74761d2, var_ec51fe53d55f33a1) {
     if (!function_47d356083884f913()) {
         return;
     }
-    if (!isdefined(poiName)) {
+    if (!isdefined(poiname)) {
         return;
     }
-    if (!poi_isPOIActive(poiName)) {
+    if (!poi_ispoiactive(poiname)) {
         return;
     }
-    if (!isdefined(level.poi[poiName])) {
+    if (!isdefined(level.poi[poiname])) {
         return;
     }
     if (isdefined(var_ec51fe53d55f33a1)) {
-        level.poi[poiName][var_3f44c731fdddd082][var_ec51fe53d55f33a1] = var_f8ff5670b74761d2;
+        level.poi[poiname][var_3f44c731fdddd082][var_ec51fe53d55f33a1] = var_f8ff5670b74761d2;
     } else {
-        level.poi[poiName][var_3f44c731fdddd082][level.poi[poiName][var_3f44c731fdddd082].size] = var_f8ff5670b74761d2;
+        level.poi[poiname][var_3f44c731fdddd082][level.poi[poiname][var_3f44c731fdddd082].size] = var_f8ff5670b74761d2;
     }
     if (isdefined(var_f8ff5670b74761d2.origin)) {
-        subArea = function_a44e168e8cced18(var_f8ff5670b74761d2.origin, poiName);
-        if (isdefined(subArea) && isdefined(subArea.var_71ad22c5d093d90b)) {
-            var_f8ff5670b74761d2.var_71ad22c5d093d90b = subArea.var_71ad22c5d093d90b;
+        subarea = function_a44e168e8cced18(var_f8ff5670b74761d2.origin, poiname);
+        if (isdefined(subarea) && isdefined(subarea.var_71ad22c5d093d90b)) {
+            var_f8ff5670b74761d2.var_71ad22c5d093d90b = subarea.var_71ad22c5d093d90b;
         }
     }
 }
@@ -388,9 +388,9 @@ function function_d0e7647e5538eb9d(poiName, var_3f44c731fdddd082, var_f8ff5670b7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13ed
 // Size: 0x2c
-function function_d2ed76e2bedd339e(poiName) {
-    if (isdefined(poiName) && isdefined(level.var_acf99124377543bb)) {
-        return level.var_acf99124377543bb[poiName];
+function function_d2ed76e2bedd339e(poiname) {
+    if (isdefined(poiname) && isdefined(level.var_acf99124377543bb)) {
+        return level.var_acf99124377543bb[poiname];
     }
     return undefined;
 }
@@ -399,15 +399,15 @@ function function_d2ed76e2bedd339e(poiName) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1421
 // Size: 0x6f
-function function_ab3b7f9663bc2e89(subArea) {
+function function_ab3b7f9663bc2e89(subarea) {
     origin = undefined;
-    if (isdefined(subArea)) {
+    if (isdefined(subarea)) {
         if (level.var_9f0a2752e6e5371a) {
-            if (isdefined(subArea.origin)) {
-                origin = subArea.origin;
+            if (isdefined(subarea.origin)) {
+                origin = subarea.origin;
             }
-        } else if (isdefined(subArea.trigger)) {
-            origin = subArea.trigger.origin;
+        } else if (isdefined(subarea.trigger)) {
+            origin = subarea.trigger.origin;
         }
     }
     return origin;
@@ -427,40 +427,40 @@ function function_9c93e67f90980177(origin) {
 // Checksum 0x0, Offset: 0x14e5
 // Size: 0x8c
 function function_6cc445c02b5effac(origin, var_b0068b35c79ea7fa, var_9d9d80abb79138bb, var_db259b7e9331b0a0) {
-    poiName = undefined;
+    poiname = undefined;
     if (!function_47d356083884f913()) {
-        return poiName;
+        return poiname;
     }
     if (level.var_9f0a2752e6e5371a) {
         var_303ce5a5cea462cd = function_3db4b97c31efed0b(1, origin);
         if (isdefined(var_303ce5a5cea462cd)) {
-            poiName = level.var_e124a5f0a9bfc600[var_303ce5a5cea462cd];
+            poiname = level.var_e124a5f0a9bfc600[var_303ce5a5cea462cd];
         }
     } else {
-        poiName = function_1cbc1b619b924e7a(origin, var_b0068b35c79ea7fa, var_db259b7e9331b0a0);
+        poiname = function_1cbc1b619b924e7a(origin, var_b0068b35c79ea7fa, var_db259b7e9331b0a0);
     }
-    if (!isdefined(poiName)) {
-        poiName = function_55cf921efa4cbd09(origin, var_b0068b35c79ea7fa, var_9d9d80abb79138bb, var_db259b7e9331b0a0);
+    if (!isdefined(poiname)) {
+        poiname = function_55cf921efa4cbd09(origin, var_b0068b35c79ea7fa, var_9d9d80abb79138bb, var_db259b7e9331b0a0);
     }
-    return poiName;
+    return poiname;
 }
 
 // Namespace poi/namespace_37f0fb6355a4618a
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1579
 // Size: 0x12a
-function function_d795b532bedd6431(poiName, origin) {
+function function_d795b532bedd6431(poiname, origin) {
     if (level.var_9f0a2752e6e5371a) {
         var_9dc07c2ea03a5012 = function_3db4b97c31efed0b(2, origin);
-        foreach (subArea in level.poi[poiName]["subAreas"]) {
-            if (isdefined(subArea.site) && isdefined(var_9dc07c2ea03a5012) && var_9dc07c2ea03a5012 == subArea.site) {
-                return subArea;
+        foreach (subarea in level.poi[poiname]["subAreas"]) {
+            if (isdefined(subarea.site) && isdefined(var_9dc07c2ea03a5012) && var_9dc07c2ea03a5012 == subarea.site) {
+                return subarea;
             }
         }
     } else {
-        foreach (subArea in level.poi[poiName]["subAreas"]) {
-            if (isdefined(subArea.trigger) && ispointinvolume(origin, subArea.trigger)) {
-                return subArea;
+        foreach (subarea in level.poi[poiname]["subAreas"]) {
+            if (isdefined(subarea.trigger) && ispointinvolume(origin, subarea.trigger)) {
+                return subarea;
             }
         }
     }
@@ -471,18 +471,18 @@ function function_d795b532bedd6431(poiName, origin) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16ab
 // Size: 0x66
-function function_150af7f3a2874667(poiName) {
+function function_150af7f3a2874667(poiname) {
     if (level.var_9f0a2752e6e5371a) {
         /#
             assert(isdefined(level.var_a8bf194418e9a8dd));
         #/
-        var_9690281e1623b6ae = level.var_a8bf194418e9a8dd[poiName];
+        var_9690281e1623b6ae = level.var_a8bf194418e9a8dd[poiname];
         if (isdefined(var_9690281e1623b6ae)) {
             var_319cf60cfbcd082f = function_7fdd7f9d54666e5f(1, var_9690281e1623b6ae);
             return var_319cf60cfbcd082f.name;
         }
     }
-    return poiName;
+    return poiname;
 }
 
 // Namespace poi/namespace_37f0fb6355a4618a
@@ -503,16 +503,16 @@ function private function_1cbc1b619b924e7a(origin, var_b0068b35c79ea7fa, var_9d9
         var_db259b7e9331b0a0 = 0;
     }
     var_5d0bb59f45d65c1c = ter_op(var_b0068b35c79ea7fa, level.var_dbb3dd5ab77ccd48, getarraykeys(level.poi));
-    foreach (poiName in var_5d0bb59f45d65c1c) {
-        if (!var_9d9d80abb79138bb && issubstr(poiName, "suburb")) {
+    foreach (poiname in var_5d0bb59f45d65c1c) {
+        if (!var_9d9d80abb79138bb && issubstr(poiname, "suburb")) {
             continue;
         }
-        if (var_db259b7e9331b0a0 && !isdefined(level.poi[poiName]["calloutIndex"])) {
+        if (var_db259b7e9331b0a0 && !isdefined(level.poi[poiname]["calloutIndex"])) {
             continue;
         }
-        if (isdefined(level.var_da9edb0c15be1c3b[poiName])) {
-            if (function_7e8fc13f3d0d5c87(origin, poiName)) {
-                return poiName;
+        if (isdefined(level.var_da9edb0c15be1c3b[poiname])) {
+            if (function_7e8fc13f3d0d5c87(origin, poiname)) {
+                return poiname;
             }
         }
     }
@@ -522,10 +522,10 @@ function private function_1cbc1b619b924e7a(origin, var_b0068b35c79ea7fa, var_9d9
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1829
 // Size: 0x8b
-function private function_7e8fc13f3d0d5c87(origin, poiName) {
+function private function_7e8fc13f3d0d5c87(origin, poiname) {
     if (function_47d356083884f913()) {
-        var_6e80031ce7163196 = isdefined(level.var_da9edb0c15be1c3b[poiName]) && ispointinvolume(origin, level.var_da9edb0c15be1c3b[poiName]);
-        var_dd4dff0b187cb059 = isdefined(level.var_ff89a1714af44c4e) && isdefined(level.var_ff89a1714af44c4e[poiName]) && ispointinvolume(origin, level.var_ff89a1714af44c4e[poiName]);
+        var_6e80031ce7163196 = isdefined(level.var_da9edb0c15be1c3b[poiname]) && ispointinvolume(origin, level.var_da9edb0c15be1c3b[poiname]);
+        var_dd4dff0b187cb059 = isdefined(level.var_ff89a1714af44c4e) && isdefined(level.var_ff89a1714af44c4e[poiname]) && ispointinvolume(origin, level.var_ff89a1714af44c4e[poiname]);
         return (var_6e80031ce7163196 || var_dd4dff0b187cb059);
     }
     return undefined;
@@ -552,19 +552,19 @@ function function_55cf921efa4cbd09(origin, var_b0068b35c79ea7fa, var_9d9d80abb79
             var_db259b7e9331b0a0 = 0;
         }
         var_5d0bb59f45d65c1c = ter_op(var_b0068b35c79ea7fa, level.var_dbb3dd5ab77ccd48, getarraykeys(level.poi));
-        foreach (poiName in var_5d0bb59f45d65c1c) {
-            if (!var_9d9d80abb79138bb && issubstr(poiName, "suburb")) {
+        foreach (poiname in var_5d0bb59f45d65c1c) {
+            if (!var_9d9d80abb79138bb && issubstr(poiname, "suburb")) {
                 continue;
             }
-            if (!isdefined(level.var_acf99124377543bb[poiName])) {
+            if (!isdefined(level.var_acf99124377543bb[poiname])) {
                 continue;
             }
-            if (var_db259b7e9331b0a0 && !isdefined(level.poi[poiName]["calloutIndex"])) {
+            if (var_db259b7e9331b0a0 && !isdefined(level.poi[poiname]["calloutIndex"])) {
                 continue;
             }
-            dist = distance2dsquared(level.var_acf99124377543bb[poiName], origin);
+            dist = distance2dsquared(level.var_acf99124377543bb[poiname], origin);
             if (!isdefined(var_ea5672010d764ebc) || dist < var_ea5672010d764ebc) {
-                var_574b367a589e1f37 = poiName;
+                var_574b367a589e1f37 = poiname;
                 var_ea5672010d764ebc = dist;
             }
         }
@@ -576,30 +576,30 @@ function function_55cf921efa4cbd09(origin, var_b0068b35c79ea7fa, var_9d9d80abb79
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a15
 // Size: 0x6d
-function function_80dd9d6a6bf6bbc1(agent, poiName, origin) {
-    if (!isdefined(poiName)) {
-        poiName = undefined;
+function function_80dd9d6a6bf6bbc1(agent, poiname, origin) {
+    if (!isdefined(poiname)) {
+        poiname = undefined;
         var_3a6b42ab825a103e = agent.origin;
         if (isdefined(origin)) {
             var_3a6b42ab825a103e = origin;
         }
-        poiName = function_6cc445c02b5effac(var_3a6b42ab825a103e);
+        poiname = function_6cc445c02b5effac(var_3a6b42ab825a103e);
     }
-    agent.poi = poiName;
-    if (isdefined(poiName)) {
-        agent namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "poiName", poiName);
+    agent.poi = poiname;
+    if (isdefined(poiname)) {
+        agent namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "poiName", poiname);
     }
-    return poiName;
+    return poiname;
 }
 
 // Namespace poi/namespace_37f0fb6355a4618a
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a8a
 // Size: 0x8c
-function function_9656b61cc8a37cba(array, poiName) {
+function function_9656b61cc8a37cba(array, poiname) {
     var_50f783a5617f8940 = [];
     foreach (item in array) {
-        if (isdefined(item.poi) && item.poi == poiName) {
+        if (isdefined(item.poi) && item.poi == poiname) {
             var_50f783a5617f8940[var_50f783a5617f8940.size] = item;
         }
     }
@@ -626,8 +626,8 @@ function function_53c14fe145417e51(array) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b50
 // Size: 0x40
-function poi_isPOIActive(poiName) {
-    return isdefined(poiName) && function_47d356083884f913() && array_contains(level.var_dbb3dd5ab77ccd48, poiName) && !array_contains(level.var_ab20b3a256911579, poiName);
+function poi_ispoiactive(poiname) {
+    return isdefined(poiname) && function_47d356083884f913() && array_contains(level.var_dbb3dd5ab77ccd48, poiname) && !array_contains(level.var_ab20b3a256911579, poiname);
 }
 
 // Namespace poi/namespace_37f0fb6355a4618a
@@ -655,18 +655,18 @@ function private function_52cb931e1834f98b() {
     var_ff85928e34f7eb79 = floor(var_a015167b01a60f17 / frameduration);
     if (var_3a1b9192a1f0b3c4 && var_a45bd8f911724ada) {
         foreach (player in level.players) {
-            poiName = function_1cbc1b619b924e7a(player.origin);
-            if (isdefined(poiName)) {
-                difficulty = function_6c8458742f557952(poiName);
-                if (namespace_d696adde758cbe79::function_7a7aa3b5455f0412(poiName)) {
+            poiname = function_1cbc1b619b924e7a(player.origin);
+            if (isdefined(poiname)) {
+                difficulty = function_6c8458742f557952(poiname);
+                if (namespace_d696adde758cbe79::function_7a7aa3b5455f0412(poiname)) {
                     difficulty = 4;
                 }
                 player setclientomnvar("ui_dmz_poi_difficulty_rating", difficulty);
             }
         }
     }
-    foreach (poiName, poi in level.poi) {
-        level.poi[poiName]["players"] = [];
+    foreach (poiname, poi in level.poi) {
+        level.poi[poiname]["players"] = [];
     }
     while (1) {
         players = level.players;
@@ -692,18 +692,18 @@ function private function_52cb931e1834f98b() {
                 player.var_26c06c4a02fd70e7 = var_4642e4e356a13e50;
                 level.poi[var_4642e4e356a13e50]["players"] = array_remove(level.poi[var_4642e4e356a13e50]["players"], player);
             }
-            poiName = function_6cc445c02b5effac(player.origin);
-            player.var_da28916e7827af7c = poiName;
-            if (!isdefined(poiName)) {
+            poiname = function_6cc445c02b5effac(player.origin);
+            player.var_da28916e7827af7c = poiname;
+            if (!isdefined(poiname)) {
                 continue;
             }
-            level.poi[poiName]["players"][level.poi[poiName]["players"].size] = player;
-            var_1e8a1d9f5d0a3c9e = poiName;
+            level.poi[poiname]["players"][level.poi[poiname]["players"].size] = player;
+            var_1e8a1d9f5d0a3c9e = poiname;
             if (var_6370de220eb9ec35) {
-                var_1e8a1d9f5d0a3c9e = function_150af7f3a2874667(poiName);
+                var_1e8a1d9f5d0a3c9e = function_150af7f3a2874667(poiname);
             }
             var_132c9f8d05cfd = !isdefined(var_4642e4e356a13e50) || var_4642e4e356a13e50 != player.var_da28916e7827af7c;
-            player thread function_db35c17120dbfb4a(poiName, var_1e8a1d9f5d0a3c9e, var_132c9f8d05cfd, var_3a1b9192a1f0b3c4, var_a45bd8f911724ada);
+            player thread function_db35c17120dbfb4a(poiname, var_1e8a1d9f5d0a3c9e, var_132c9f8d05cfd, var_3a1b9192a1f0b3c4, var_a45bd8f911724ada);
             var_9f35e6303fc62b58++;
             if (var_9f35e6303fc62b58 >= var_e0e025c067d6a3aa) {
                 var_9f35e6303fc62b58 = 0;
@@ -720,7 +720,7 @@ function private function_52cb931e1834f98b() {
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1fba
 // Size: 0x2ae
-function private function_db35c17120dbfb4a(poiName, var_1e8a1d9f5d0a3c9e, var_132c9f8d05cfd, var_3a1b9192a1f0b3c4, var_a45bd8f911724ada) {
+function private function_db35c17120dbfb4a(poiname, var_1e8a1d9f5d0a3c9e, var_132c9f8d05cfd, var_3a1b9192a1f0b3c4, var_a45bd8f911724ada) {
     player = self;
     if (var_132c9f8d05cfd) {
         vehicle = player namespace_f8065cafc523dba5::getvehicle();
@@ -737,7 +737,7 @@ function private function_db35c17120dbfb4a(poiName, var_1e8a1d9f5d0a3c9e, var_13
             }
         }
         var_d455648308e34f3f = -1;
-        var_c70bfaffc89d58af = level.poi[poiName]["calloutIndex"];
+        var_c70bfaffc89d58af = level.poi[poiname]["calloutIndex"];
         if (isdefined(var_c70bfaffc89d58af)) {
             var_d455648308e34f3f = var_c70bfaffc89d58af;
         }
@@ -761,12 +761,12 @@ function private function_db35c17120dbfb4a(poiName, var_1e8a1d9f5d0a3c9e, var_13
         }
         if (var_132c9f8d05cfd) {
             if (var_a45bd8f911724ada) {
-                difficulty = function_6c8458742f557952(poiName);
-                if (namespace_d696adde758cbe79::function_7a7aa3b5455f0412(poiName)) {
+                difficulty = function_6c8458742f557952(poiname);
+                if (namespace_d696adde758cbe79::function_7a7aa3b5455f0412(poiname)) {
                     difficulty = 4;
                 }
                 player setclientomnvar("ui_dmz_poi_difficulty_rating", difficulty);
-                player function_2c353ba60e43ecda(poiName);
+                player function_2c353ba60e43ecda(poiname);
             }
             namespace_8361bad7391de074::function_d10645afed0f00fe(player, var_1e8a1d9f5d0a3c9e);
             waitframe();
@@ -781,19 +781,19 @@ function private function_db35c17120dbfb4a(poiName, var_1e8a1d9f5d0a3c9e, var_13
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x226f
 // Size: 0x7c
-function private function_6c8458742f557952(poiName) {
-    starlevel = namespace_6a3f8c14894f44be::function_5cc0c507e92f7b47(poiName);
-    relativeDifficulty = 0;
-    if (isdefined(level.poi[poiName]["relativeDifficulty"])) {
-        relativeDifficulty = level.poi[poiName]["relativeDifficulty"];
+function private function_6c8458742f557952(poiname) {
+    starlevel = namespace_6a3f8c14894f44be::function_5cc0c507e92f7b47(poiname);
+    relativedifficulty = 0;
+    if (isdefined(level.poi[poiname]["relativeDifficulty"])) {
+        relativedifficulty = level.poi[poiname]["relativeDifficulty"];
     }
-    if (relativeDifficulty == 3) {
+    if (relativedifficulty == 3) {
         return 3;
     }
     if (starlevel > 3) {
         return 3;
     }
-    if (relativeDifficulty == 2) {
+    if (relativedifficulty == 2) {
         return 2;
     }
     if (starlevel >= 2) {
@@ -816,15 +816,15 @@ function private function_fc5d5824570e8c21(player) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2353
 // Size: 0xc2
-function private function_2c353ba60e43ecda(poiName) {
-    if (!isdefined(poiName)) {
-        poiName = self.var_da28916e7827af7c;
+function private function_2c353ba60e43ecda(poiname) {
+    if (!isdefined(poiname)) {
+        poiname = self.var_da28916e7827af7c;
     }
     if (istrue(level.var_b76e1acdf15010d2)) {
         return;
     }
-    difficulty = function_6c8458742f557952(poiName);
-    if (namespace_d696adde758cbe79::function_7a7aa3b5455f0412(poiName)) {
+    difficulty = function_6c8458742f557952(poiname);
+    if (namespace_d696adde758cbe79::function_7a7aa3b5455f0412(poiname)) {
         difficulty = 4;
     }
     switch (difficulty) {
@@ -851,16 +851,16 @@ function private function_6e049f322172e1d5() {
     for (var_303ce5a5cea462cd = 0; var_303ce5a5cea462cd < var_96e38bcf1337d181; var_303ce5a5cea462cd++) {
         site = function_d0ed84c86e823a7c(1, var_303ce5a5cea462cd);
         region = function_7fdd7f9d54666e5f(1, site.region);
-        poiName = region.name + " site_" + var_303ce5a5cea462cd;
+        poiname = region.name + " site_" + var_303ce5a5cea462cd;
         var_c720431da1c3945e = function_95c6391212a25f7c(tolower(region.name), " ");
         if (!isdefined(level.var_dbb3dd5ab77ccd48)) {
             level.var_dbb3dd5ab77ccd48 = [];
         }
         /#
-            assert(!array_contains(level.var_dbb3dd5ab77ccd48, poiName));
+            assert(!array_contains(level.var_dbb3dd5ab77ccd48, poiname));
         #/
-        level.var_dbb3dd5ab77ccd48[level.var_dbb3dd5ab77ccd48.size] = poiName;
-        level.var_acf99124377543bb[poiName] = site.origin;
+        level.var_dbb3dd5ab77ccd48[level.var_dbb3dd5ab77ccd48.size] = poiname;
+        level.var_acf99124377543bb[poiname] = site.origin;
         var_5a676af18f596e5 = "";
         if (isdefined(level.mapname)) {
             switch (level.mapname) {
@@ -875,9 +875,9 @@ function private function_6e049f322172e1d5() {
                 break;
             }
         }
-        level.var_93d766d265995ec6[poiName] = var_5a676af18f596e5 + var_c720431da1c3945e;
-        level.var_e124a5f0a9bfc600[var_303ce5a5cea462cd] = poiName;
-        level.var_a8bf194418e9a8dd[poiName] = site.region;
+        level.var_93d766d265995ec6[poiname] = var_5a676af18f596e5 + var_c720431da1c3945e;
+        level.var_e124a5f0a9bfc600[var_303ce5a5cea462cd] = poiname;
+        level.var_a8bf194418e9a8dd[poiname] = site.region;
     }
 }
 
@@ -892,16 +892,16 @@ function private function_9a051b4df049e90b() {
     if (istrue(level.var_f257b1e13dcc1bad)) {
         return;
     }
-    foreach (poiName in level.var_dbb3dd5ab77ccd48) {
-        if (!isdefined(level.poi[poiName])) {
+    foreach (poiname in level.var_dbb3dd5ab77ccd48) {
+        if (!isdefined(level.poi[poiname])) {
             continue;
         }
-        level.poi[poiName]["otherPoiByDist"] = [];
-        curorigin = level.var_acf99124377543bb[poiName];
+        level.poi[poiname]["otherPoiByDist"] = [];
+        curorigin = level.var_acf99124377543bb[poiname];
         var_b08c6727f8fd4cfa = function_215f81b58e38d670(1, curorigin);
         foreach (site in var_b08c6727f8fd4cfa) {
             if (array_contains_key(level.poi, level.var_e124a5f0a9bfc600[site])) {
-                level.poi[poiName]["otherPoiByDist"][level.poi[poiName]["otherPoiByDist"].size] = level.var_e124a5f0a9bfc600[site];
+                level.poi[poiname]["otherPoiByDist"][level.poi[poiname]["otherPoiByDist"].size] = level.var_e124a5f0a9bfc600[site];
             }
         }
     }
@@ -923,13 +923,13 @@ function private function_b5c7469e80b1e8bd() {
             var_3851e646d941dcbb = function_3db4b97c31efed0b(1, var_849898b69efd7593.origin);
             if (isdefined(var_3851e646d941dcbb)) {
                 var_bcf8a8aaf3e931fc = function_7fdd7f9d54666e5f(2, var_849898b69efd7593.region);
-                subArea = spawnstruct();
-                subArea.site = var_303ce5a5cea462cd;
-                subArea.origin = var_849898b69efd7593.origin;
-                subArea.var_71ad22c5d093d90b = var_bcf8a8aaf3e931fc.name + " site_" + var_303ce5a5cea462cd;
-                subArea.poiName = var_bcf8a8aaf3e931fc.name;
-                poiName = level.var_e124a5f0a9bfc600[var_3851e646d941dcbb];
-                function_d0e7647e5538eb9d(poiName, "subAreas", subArea, subArea.var_71ad22c5d093d90b);
+                subarea = spawnstruct();
+                subarea.site = var_303ce5a5cea462cd;
+                subarea.origin = var_849898b69efd7593.origin;
+                subarea.var_71ad22c5d093d90b = var_bcf8a8aaf3e931fc.name + " site_" + var_303ce5a5cea462cd;
+                subarea.poiname = var_bcf8a8aaf3e931fc.name;
+                poiname = level.var_e124a5f0a9bfc600[var_3851e646d941dcbb];
+                function_d0e7647e5538eb9d(poiname, "subAreas", subarea, subarea.var_71ad22c5d093d90b);
             }
         }
     }
@@ -949,17 +949,17 @@ function function_68f5d2342ad95772() {
     numrows = tablelookupgetnumrows(table);
     var_bfd57d442dee737f = undefined;
     for (i = 0; i < numrows; i++) {
-        poiName = tablelookupbyrow(table, i, 0);
-        if (!array_contains(level.var_dbb3dd5ab77ccd48, poiName)) {
+        poiname = tablelookupbyrow(table, i, 0);
+        if (!array_contains(level.var_dbb3dd5ab77ccd48, poiname)) {
             continue;
         }
-        if (isdefined(var_bfd57d442dee737f) && isdefined(level.poi[poiName]) && isdefined(level.poi[poiName]["relativeDifficulty"]) && poiName == var_bfd57d442dee737f) {
+        if (isdefined(var_bfd57d442dee737f) && isdefined(level.poi[poiname]) && isdefined(level.poi[poiname]["relativeDifficulty"]) && poiname == var_bfd57d442dee737f) {
             continue;
         }
-        relativeDifficulty = int(tablelookupbyrow(table, i, 10));
-        if (relativeDifficulty > 0 && relativeDifficulty <= 3) {
-            level.poi[poiName]["relativeDifficulty"] = relativeDifficulty;
-            var_bfd57d442dee737f = poiName;
+        relativedifficulty = int(tablelookupbyrow(table, i, 10));
+        if (relativedifficulty > 0 && relativedifficulty <= 3) {
+            level.poi[poiname]["relativeDifficulty"] = relativedifficulty;
+            var_bfd57d442dee737f = poiname;
         }
     }
 }
@@ -976,37 +976,37 @@ function function_683e582efd2a8233() {
     numrows = tablelookupgetnumrows(table);
     var_bfd57d442dee737f = undefined;
     for (i = 0; i < numrows; i++) {
-        poiName = tablelookupbyrow(table, i, 0);
-        if (!array_contains(level.var_dbb3dd5ab77ccd48, poiName)) {
+        poiname = tablelookupbyrow(table, i, 0);
+        if (!array_contains(level.var_dbb3dd5ab77ccd48, poiname)) {
             continue;
         }
-        if (isdefined(var_bfd57d442dee737f) && isdefined(level.poi[poiName]) && isdefined(level.poi[poiName]["minExtraBuyStations"]) && poiName == var_bfd57d442dee737f) {
+        if (isdefined(var_bfd57d442dee737f) && isdefined(level.poi[poiname]) && isdefined(level.poi[poiname]["minExtraBuyStations"]) && poiname == var_bfd57d442dee737f) {
             continue;
         }
         var_139fc69cc262b8e9 = tablelookupbyrow(table, i, 11);
         if (var_139fc69cc262b8e9 == "") {
             continue;
         }
-        minExtraBuyStations = int(var_139fc69cc262b8e9);
-        level.poi[poiName]["minExtraBuyStations"] = minExtraBuyStations;
-        var_bfd57d442dee737f = poiName;
+        minextrabuystations = int(var_139fc69cc262b8e9);
+        level.poi[poiname]["minExtraBuyStations"] = minextrabuystations;
+        var_bfd57d442dee737f = poiname;
     }
     var_bfd57d442dee737f = undefined;
     for (i = 0; i < numrows; i++) {
-        poiName = tablelookupbyrow(table, i, 0);
-        if (!array_contains(level.var_dbb3dd5ab77ccd48, poiName)) {
+        poiname = tablelookupbyrow(table, i, 0);
+        if (!array_contains(level.var_dbb3dd5ab77ccd48, poiname)) {
             continue;
         }
-        if (isdefined(var_bfd57d442dee737f) && isdefined(level.poi[poiName]) && isdefined(level.poi[poiName]["maxExtraBuyStations"]) && poiName == var_bfd57d442dee737f) {
+        if (isdefined(var_bfd57d442dee737f) && isdefined(level.poi[poiname]) && isdefined(level.poi[poiname]["maxExtraBuyStations"]) && poiname == var_bfd57d442dee737f) {
             continue;
         }
         var_139fc69cc262b8e9 = tablelookupbyrow(table, i, 12);
         if (var_139fc69cc262b8e9 == "") {
             continue;
         }
-        maxExtraBuyStations = int(var_139fc69cc262b8e9);
-        level.poi[poiName]["maxExtraBuyStations"] = maxExtraBuyStations;
-        var_bfd57d442dee737f = poiName;
+        maxextrabuystations = int(var_139fc69cc262b8e9);
+        level.poi[poiname]["maxExtraBuyStations"] = maxextrabuystations;
+        var_bfd57d442dee737f = poiname;
     }
 }
 

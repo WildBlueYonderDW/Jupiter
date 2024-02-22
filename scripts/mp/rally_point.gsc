@@ -12,9 +12,9 @@
 #using scripts\cp_mp\vehicles\vehicle.gsc;
 #using scripts\mp\gameobjects.gsc;
 
-#namespace namespace_63b1d4028d6de982;
+#namespace rally_point;
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x398
 // Size: 0x3
@@ -22,7 +22,7 @@ function init() {
     
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a2
 // Size: 0x90
@@ -41,7 +41,7 @@ function makerallypoint(object) {
     thread watchforrallypointdeath(object);
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x439
 // Size: 0x88
@@ -56,7 +56,7 @@ function registerplayerwithrallypoint(player, rallypoint) {
     rallypoint.registeredrallypointplayers[rallypoint.registeredrallypointplayers.size] = player;
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c8
 // Size: 0xc2
@@ -73,7 +73,7 @@ function watchforplayerdeath(rallypoint) {
     }
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x591
 // Size: 0x1d7
@@ -112,7 +112,7 @@ function prepareplayerforrespawn(player, rallypoint) {
     player.beingrallyrespawned = 0;
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x77
@@ -124,7 +124,7 @@ function watchforrallypointdeath(rallypoint) {
     }
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0x1b
@@ -136,7 +136,7 @@ function debugprint(text) {
     #/
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x80f
 // Size: 0x109
@@ -160,7 +160,7 @@ function rallypointvehicle_activate(vehicle) {
     thread rallypoint_wathcforenemydiscovery(vehicle);
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x91f
 // Size: 0xc
@@ -168,7 +168,7 @@ function rallypointvehicle_deactivate(vehicle) {
     
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x932
 // Size: 0xec
@@ -187,7 +187,7 @@ function rallypoint_showafterprematch(vehicle) {
     }
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa25
 // Size: 0xde
@@ -203,7 +203,7 @@ function rallypoint_watchforvehicledeath(vehicle) {
     namespace_8e28f8b325a83325::removespawnlocation(vehicle.ref, vehicle.team);
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb0a
 // Size: 0x2dc
@@ -256,7 +256,7 @@ function rallypoint_activatevehiclemarker(vehicle) {
     vehicle.marker = marker;
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xded
 // Size: 0x50
@@ -266,7 +266,7 @@ function rallypoint_deacivatevehiclemarker(vehicle) {
     vehicle.marker.visibleteam = "none";
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe44
 // Size: 0x73
@@ -281,7 +281,7 @@ function rallypoint_wathcforenemydiscovery(vehicle) {
     var_a25ca362bcc21c2d delete();
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xebe
 // Size: 0xeb
@@ -308,7 +308,7 @@ function watchrallytriggeruse(vehicle) {
     }
 }
 
-// Namespace namespace_63b1d4028d6de982/namespace_fdd1a79841ab3fe7
+// Namespace rally_point/namespace_fdd1a79841ab3fe7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfb0
 // Size: 0xe7

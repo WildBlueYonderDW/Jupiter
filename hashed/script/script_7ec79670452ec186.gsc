@@ -15,7 +15,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26e
 // Size: 0xb
-function blindingTurret_unset() {
+function blindingturret_unset() {
     self notify("blindingTurret_unset");
 }
 

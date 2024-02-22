@@ -92,8 +92,8 @@ function main() {
     level.var_ee1c5b2643a1c2f9 = &namespace_dbbbcd68be00451d::function_2ea2aacc5d66ae03;
     level.endgame = &function_b716a714d4b09481;
     level.var_567ac33c91cda90a = function_29227adb79acc568("respawnType", 0);
-    level.attackersRespawnDelay = function_ef4d323f56385843("attackersRespawnDelay", 0);
-    level.defendersRespawnDelay = function_ef4d323f56385843("defendersRespawnDelay", 0);
+    level.attackersrespawndelay = function_ef4d323f56385843("attackersRespawnDelay", 0);
+    level.defendersrespawndelay = function_ef4d323f56385843("defendersRespawnDelay", 0);
     level.ontimelimitgraceperiod = 5;
     level.currenttimelimitdelay = 0;
     level.canprocessot = 1;
@@ -104,9 +104,9 @@ function main() {
     level.bombexploded = 0;
     level.multibomb = 1;
     level.var_5c9a3961728ac52f = 1;
-    level.flagReinforcement = 0;
+    level.flagreinforcement = 0;
     level.pausemodetimer = 0;
-    level.disableMajorityCapProgress = 1;
+    level.disablemajoritycapprogress = 1;
     level.var_320406591b4dc0fc = [0:"zone_1", 1:"zone_2", 2:"zone_3"];
     level.ignorekdrstats = 1;
     level.var_c99eed54a2e150c7 = "war_mode_oob";
@@ -158,8 +158,8 @@ function function_378462c9ade9c522() {
         }
         level.zone.index = i;
         if (var_4c175651e89543cf && game["switchedsides"]) {
-            timeToBeat = game["wm_objective_complete_time_round_" + 1][level.zone.name];
-            if (timeToBeat == 0) {
+            timetobeat = game["wm_objective_complete_time_round_" + 1][level.zone.name];
+            if (timetobeat == 0) {
                 break;
             }
         }
@@ -270,8 +270,8 @@ function function_14cfba68197a456e(zone) {
         timelimit = zone.objective.params["timelimit"];
     }
     if (function_29227adb79acc568("stopWatchEnabled", 0) && game["switchedsides"]) {
-        timeToBeat = game["wm_objective_complete_time_round_" + 1][zone.name];
-        timelimit = timeToBeat + level.var_bf720fce8107e20;
+        timetobeat = game["wm_objective_complete_time_round_" + 1][zone.name];
+        timelimit = timetobeat + level.var_bf720fce8107e20;
     }
     if (timelimit != getwatcheddvar("timelimit")) {
         setdvar(@"hash_1466f43b92459194", timelimit);
@@ -296,12 +296,12 @@ function function_3d2dfad8246b76f9(zone) {
                 var_2aace29af53f5ab9 = var_8bf1b28d795cca2a;
             }
         } else {
-            timeToBeat = game["wm_objective_complete_time_round_" + 1][zone.name];
-            if (var_2aace29af53f5ab9 < timeToBeat) {
-                level.var_bf720fce8107e20 = timeToBeat - var_2aace29af53f5ab9;
+            timetobeat = game["wm_objective_complete_time_round_" + 1][zone.name];
+            if (var_2aace29af53f5ab9 < timetobeat) {
+                level.var_bf720fce8107e20 = timetobeat - var_2aace29af53f5ab9;
             } else {
                 level.var_bf720fce8107e20 = 0;
-                var_2aace29af53f5ab9 = timeToBeat;
+                var_2aace29af53f5ab9 = timetobeat;
             }
         }
     }
@@ -554,9 +554,9 @@ function function_9fb7ca43ba3b6784(prefix, var_1fcc46cd747288e3) {
 function getrespawndelay() {
     if (level.var_567ac33c91cda90a == 0) {
         if (self.team == game["defenders"]) {
-            return level.defendersRespawnDelay;
+            return level.defendersrespawndelay;
         } else {
-            return level.attackersRespawnDelay;
+            return level.attackersrespawndelay;
         }
     } else {
         return 0;
@@ -911,7 +911,7 @@ function function_8f1133ded9c88a9c(zone) {
     while (!player istouching(trigger) || isdefined(zone.var_b1896ddca0a71358["attackers"]) && player istouching(zone.var_b1896ddca0a71358["attackers"])) {
         waitframe();
     }
-    player namespace_48a08c5037514e04::doScoreEvent(#"hash_3a01ed4e57a4faa2");
+    player namespace_48a08c5037514e04::doscoreevent(#"hash_3a01ed4e57a4faa2");
 }
 
 // Namespace wm/namespace_d1bc85f223367652
@@ -1239,9 +1239,9 @@ function updategametypedvars() {
     level.multibomb = dvarintvalue("multibomb", 1, 0, 1);
     level.silentplant = dvarintvalue("silentPlant", 0, 0, 1);
     level.resetprogress = dvarintvalue("resetProgress", 0, 0, 1);
-    level.defendersCanSeeDroppedBomb = dvarintvalue("defendersCanSeeDroppedBomb", 0, 0, 1);
-    level.defendersCanSeePlantedBomb = dvarintvalue("defendersCanSeePlantedBomb", 0, 0, 1);
-    level.assignBombZoneChevrons = dvarintvalue("assignBombZoneChevrons", 0, 0, 1);
+    level.defenderscanseedroppedbomb = dvarintvalue("defendersCanSeeDroppedBomb", 0, 0, 1);
+    level.defenderscanseeplantedbomb = dvarintvalue("defendersCanSeePlantedBomb", 0, 0, 1);
+    level.assignbombzonechevrons = dvarintvalue("assignBombZoneChevrons", 0, 0, 1);
 }
 
 // Namespace wm/namespace_d1bc85f223367652
@@ -1417,10 +1417,10 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
         }
         ownerteam = game["defenders"];
         foreach (vehicle in level.var_e718773786ad42e8) {
-            if (!isdefined(vehicle.tankNearbyRange)) {
+            if (!isdefined(vehicle.tanknearbyrange)) {
                 continue;
             }
-            rangesq = squared(vehicle.tankNearbyRange);
+            rangesq = squared(vehicle.tanknearbyrange);
             var_31e1574aabdefeab = distancesquared(attacker.origin, vehicle.origin) <= rangesq;
             var_fd534baa79dd395c = distancesquared(victim.origin, vehicle.origin) <= rangesq;
             if (var_31e1574aabdefeab || var_fd534baa79dd395c) {
@@ -1438,8 +1438,8 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             var_fd534baa79dd395c = victim istouching(capture_zone.trigger);
         } else {
             vehicle = level.var_e718773786ad42e8[0];
-            if (isdefined(vehicle.tankNearbyRange)) {
-                rangesq = squared(vehicle.tankNearbyRange);
+            if (isdefined(vehicle.tanknearbyrange)) {
+                rangesq = squared(vehicle.tanknearbyrange);
                 var_31e1574aabdefeab = distancesquared(attacker.origin, vehicle.origin) <= rangesq;
                 var_fd534baa79dd395c = distancesquared(victim.origin, vehicle.origin) <= rangesq;
             }
@@ -1466,12 +1466,12 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             attacker thread namespace_48a08c5037514e04::function_e3e3e81453fd788b(#"hash_470103fde6a5e1ae");
         } else if (var_fd534baa79dd395c) {
             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
             thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
         }
     } else {
         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
         attacker namespace_3c5a4254f2b957ea::incpersstat("defends", 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
         attacker namespace_3c5a4254f2b957ea::setextrascore1(attacker.pers["defends"]);
@@ -1724,7 +1724,7 @@ player guid:" + player.guid);
 // Checksum 0x0, Offset: 0x5a9c
 // Size: 0x27
 function function_f7018ce6639fcb28(player) {
-    player namespace_99ac021a7547cae3::playerHasMoved();
+    player namespace_99ac021a7547cae3::playerhasmoved();
     player.pers["distTrackingPassed"] = 0;
 }
 

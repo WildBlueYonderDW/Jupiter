@@ -98,11 +98,11 @@ function runkillstreakreward(location, creditplayer, streakname) {
         object.useobj = spawn("script_model", object.origin);
         object.useobj.disallowheadiconid = 1;
         object.useobj.cratetype = "arm_no_owner";
-        levelData = namespace_6c578d6ef48f10ef::getleveldata(object.useobj.cratetype);
-        object.useobj.minimapicon = levelData.minimapicon;
-        object.useobj.capturestring = levelData.capturestring;
-        object.useobj.rerollstring = levelData.rerollstring;
-        object.useobj.supportsreroll = levelData.supportsreroll;
+        leveldata = namespace_6c578d6ef48f10ef::getleveldata(object.useobj.cratetype);
+        object.useobj.minimapicon = leveldata.minimapicon;
+        object.useobj.capturestring = leveldata.capturestring;
+        object.useobj.rerollstring = leveldata.rerollstring;
+        object.useobj.supportsreroll = leveldata.supportsreroll;
         object.useobj.isdummyarmcrate = 1;
         object.useobj.isarmcrate = 1;
         object.useobj.data = namespace_6c578d6ef48f10ef::getarmcratedatabystreakname(streakname);
@@ -123,7 +123,7 @@ function runkillstreakreward(location, creditplayer, streakname) {
         namespace_5a22b6f3a56f7e9b::update_objective_setzoffset(object.objidnum, 72);
     } else {
         object.useobj namespace_6c578d6ef48f10ef::makecrateusable();
-        levelData = namespace_6c578d6ef48f10ef::getleveldata(object.useobj.cratetype);
+        leveldata = namespace_6c578d6ef48f10ef::getleveldata(object.useobj.cratetype);
         namespace_5a22b6f3a56f7e9b::update_objective_setzoffset(object.objidnum, 40);
     }
     object.iconname = "";
@@ -597,7 +597,7 @@ function spawndropbagatposition(pos, var_add790a95b329400) {
     if (!namespace_d3d40f75bb4e4c32::istutorial()) {
         namespace_d3d40f75bb4e4c32::brleaderdialogteam("dropbag_incoming", self.team, 1, 2, undefined);
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         /#
             assert(isnumber(var_add790a95b329400));
         #/

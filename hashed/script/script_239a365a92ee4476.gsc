@@ -112,7 +112,7 @@ function function_fa1f5f6731df7fea(var_89e0e799d834a022) {
     level.var_305547d6de59eba4.var_da1e4ded7db0b78 = [];
     function_effec5e680d95771();
     level function_8a4307513b99d156(var_89e0e799d834a022);
-    level.ftueData = spawnstruct();
+    level.ftuedata = spawnstruct();
 }
 
 // Namespace namespace_aa716418c1d2615b/namespace_91fad7208d9cd856
@@ -595,7 +595,7 @@ function function_f3942ee6819263f5(var_b5da46e95abfcd0d) {
             #/
         }
     } else {
-        function_6fba31415caeee6e(0, level.ftueData.var_f09f2ffd8a67fe03);
+        function_6fba31415caeee6e(0, level.ftuedata.var_f09f2ffd8a67fe03);
         /#
             childthread function_f59685a8f8990601("<unknown string>" + function_3c8848a3a11b2553(var_b5da46e95abfcd0d));
         #/
@@ -708,7 +708,7 @@ function function_51547e875b8ddff4(var_c0e68595c1877b35) {
 // Checksum 0x0, Offset: 0x1b18
 // Size: 0x19
 function function_e1cef1bbd6b7e910() {
-    level.ftueData.var_5281a0a27d22f26e = 1;
+    level.ftuedata.var_5281a0a27d22f26e = 1;
 }
 
 // Namespace namespace_aa716418c1d2615b/namespace_91fad7208d9cd856
@@ -716,7 +716,7 @@ function function_e1cef1bbd6b7e910() {
 // Checksum 0x0, Offset: 0x1b38
 // Size: 0x19
 function function_c300fc28576f45a1() {
-    level.ftueData.var_433df7cda1ff344c = 1;
+    level.ftuedata.var_433df7cda1ff344c = 1;
 }
 
 // Namespace namespace_aa716418c1d2615b/namespace_91fad7208d9cd856
@@ -724,7 +724,7 @@ function function_c300fc28576f45a1() {
 // Checksum 0x0, Offset: 0x1b58
 // Size: 0x18
 function function_8ec9c50f12bec86a() {
-    level.ftueData.var_433df7cda1ff344c = 0;
+    level.ftuedata.var_433df7cda1ff344c = 0;
 }
 
 // Namespace namespace_aa716418c1d2615b/namespace_91fad7208d9cd856
@@ -732,14 +732,14 @@ function function_8ec9c50f12bec86a() {
 // Checksum 0x0, Offset: 0x1b77
 // Size: 0x108
 function private function_fffc772291ad2500(var_c0e68595c1877b35) {
-    if (!istrue(level.ftueData.var_5281a0a27d22f26e)) {
+    if (!istrue(level.ftuedata.var_5281a0a27d22f26e)) {
         return;
     }
     var_ff0f9c5ebef8424e = level.var_305547d6de59eba4.var_988ed2b0fc9199b8[var_c0e68595c1877b35];
     self endon("currentContextualTipCompleted");
     self endon("currentContextualTipAborted");
     while (1) {
-        if (!istrue(level.ftueData.var_433df7cda1ff344c)) {
+        if (!istrue(level.ftuedata.var_433df7cda1ff344c)) {
             foreach (var_a92cebd0e55a612a in level.var_305547d6de59eba4.var_6d061cc60360cf78) {
                 if (var_a92cebd0e55a612a == var_c0e68595c1877b35) {
                     continue;

@@ -118,9 +118,9 @@ function function_2641b2abaa5b142e() {
         }
         spawn_point = array_get_first_item(self.var_32a7d2c687b58510);
         spawn_angles = vectortoangles(self.origin - spawn_point);
-        var_397b09064658bb4c = spawnNewAIType_SharedFunc(self.var_ec9d44662c92bb5c, spawn_point, spawn_angles, self.team);
+        var_397b09064658bb4c = spawnnewaitype_sharedfunc(self.var_ec9d44662c92bb5c, spawn_point, spawn_angles, self.team);
         if (isdefined(var_397b09064658bb4c)) {
-            var_397b09064658bb4c thread Animscripted_SharedFunc("spawn", "spawn_end", undefined, undefined, "spawn_animating");
+            var_397b09064658bb4c thread animscripted_sharedfunc("spawn", "spawn_end", undefined, undefined, "spawn_animating");
             function_1fca749b9ae92b76(var_397b09064658bb4c);
             self.var_52c29781bd641d26++;
             self.var_32a7d2c687b58510 = array_remove(self.var_32a7d2c687b58510, spawn_point);

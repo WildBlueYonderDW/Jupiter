@@ -580,7 +580,7 @@ function claymore_modifieddamage(victim, objweapon, inflictor, meansofdeath, dam
     } else {
         return damage;
     }
-    if (isdefined(level.gametype) && namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (isdefined(level.gametype) && namespace_36f464722d326bbe::isbrstylegametype()) {
         return damage;
     }
     if (!isexplosivedamagemod(meansofdeath)) {
@@ -661,7 +661,7 @@ function claymore_stunned(attacker, duration) {
     }
     self notify("claymore_stunned");
     self endon("claymore_stunned");
-    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_812fd700eeef3c6e");
+    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_812fd700eeef3c6e");
     self setscriptablepartstate("arm", "neutral", 0);
     self.stunned = 1;
     wait(duration);
@@ -680,7 +680,7 @@ function function_3120a2693959efa1(attacker) {
     }
     self notify("claymore_stunned");
     self endon("claymore_stunned");
-    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_812fd700eeef3c6e");
+    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_812fd700eeef3c6e");
     self setscriptablepartstate("arm", "neutral", 0);
     self.stunned = 1;
 }

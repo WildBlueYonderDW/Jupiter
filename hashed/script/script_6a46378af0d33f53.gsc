@@ -51,7 +51,7 @@ function function_94dcdd399513b2ce(equipmentref) {
     if (namespace_1a507865f681850e::hasequipment(equipmentref) && namespace_1a507865f681850e::getequipmentammo(equipmentref) < namespace_1a507865f681850e::getequipmentmaxammo(equipmentref)) {
         namespace_1a507865f681850e::incrementequipmentammo(equipmentref);
     } else if (namespace_aead94004cf4c147::function_7e103028c464ab9a(namespace_38b993c4618e76cd::function_b88cfb4893ceedac(equipmentref)) && namespace_aead94004cf4c147::function_8a160d9935d47f5e(equipmentref, "equipment", 1)) {
-        namespace_aead94004cf4c147::addItemToBackpackByRef(equipmentref, "equipment", 1);
+        namespace_aead94004cf4c147::additemtobackpackbyref(equipmentref, "equipment", 1);
     } else {
         return 0;
     }

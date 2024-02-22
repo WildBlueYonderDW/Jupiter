@@ -771,7 +771,7 @@ function tryreenablescriptablevfx() {
 // Checksum 0x0, Offset: 0x2146
 // Size: 0x206
 function watchradialgestureactivation(var_d608d01a055671c9, gestureindex) {
-    if ((namespace_36f464722d326bbe::isBRStyleGameType() || level.gametype == "dmz" || level.gametype == "exgm" || level.gametype == "plunder") && self hasweapon("iw9_armor_plate_deploy_mp")) {
+    if ((namespace_36f464722d326bbe::isbrstylegametype() || level.gametype == "dmz" || level.gametype == "exgm" || level.gametype == "plunder") && self hasweapon("iw9_armor_plate_deploy_mp")) {
         return;
     }
     if (var_d608d01a055671c9 == "radial_menu_selection_gesture") {

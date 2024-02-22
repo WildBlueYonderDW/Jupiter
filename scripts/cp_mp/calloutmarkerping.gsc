@@ -71,102 +71,102 @@ function _calloutmarkerping_predicted_log(message) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27c8
 // Size: 0x18
-function function_c648f0fd527e089a(pingType) {
-    return pingType >= 19 && pingType <= 28;
+function function_c648f0fd527e089a(pingtype) {
+    return pingtype >= 19 && pingtype <= 28;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27e8
 // Size: 0x10
-function function_810652bcec49286c(pingType) {
-    return pingType == 1;
+function function_810652bcec49286c(pingtype) {
+    return pingtype == 1;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2800
 // Size: 0x10
-function function_5dacc89a40a58737(pingType) {
-    return pingType == 9;
+function function_5dacc89a40a58737(pingtype) {
+    return pingtype == 9;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2818
 // Size: 0x18
-function function_476d89b12dfe07a1(pingType) {
-    return pingType == 13 || pingType == 14;
+function function_476d89b12dfe07a1(pingtype) {
+    return pingtype == 13 || pingtype == 14;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2838
 // Size: 0x10
-function function_caef0e7e004e5475(pingType) {
-    return pingType == 15;
+function function_caef0e7e004e5475(pingtype) {
+    return pingtype == 15;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2850
 // Size: 0x18
-function function_d3789a9a4be5df2e(pingType) {
-    return pingType >= 6 && pingType <= 18;
+function function_d3789a9a4be5df2e(pingtype) {
+    return pingtype >= 6 && pingtype <= 18;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2870
 // Size: 0x10
-function function_74ec310d8f99b6e2(pingType) {
-    return pingType == 3;
+function function_74ec310d8f99b6e2(pingtype) {
+    return pingtype == 3;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2888
 // Size: 0x10
-function function_2a301a38103bd61e(pingType) {
-    return pingType == 36;
+function function_2a301a38103bd61e(pingtype) {
+    return pingtype == 36;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x28a0
 // Size: 0x18
-function function_666d78f715b8321f(pingType) {
-    return pingType == 29 || pingType == 30;
+function function_666d78f715b8321f(pingtype) {
+    return pingtype == 29 || pingtype == 30;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28c0
 // Size: 0x18
-function function_87df78670540e9b2(pingType) {
-    return pingType >= 29 && pingType <= 36;
+function function_87df78670540e9b2(pingtype) {
+    return pingtype >= 29 && pingtype <= 36;
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28e0
 // Size: 0x326
-function function_d0006d07465a279c(var_394466c2ddb208cb, pingType, scriptable) {
+function function_d0006d07465a279c(var_394466c2ddb208cb, pingtype, scriptable) {
     player = self;
     var_4e4c314136883c22 = getdvarint(@"hash_e6f7c3f8a50a6fd7", 1);
     if (var_4e4c314136883c22) {
         var_bb224cee75d433a2 = player function_a7e757d42b550a6(var_394466c2ddb208cb);
         waittime = function_e7ff763fd8f43bc4(var_bb224cee75d433a2);
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
-        return function_ce5c3314571d6a29(var_394466c2ddb208cb, pingType, scriptable);
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        return function_ce5c3314571d6a29(var_394466c2ddb208cb, pingtype, scriptable);
     }
     if (!isdefined(waittime) || istrue(getdvarint(@"hash_8fa862672ae1781b", 0))) {
-        if (pingType == 21) {
+        if (pingtype == 21) {
             var_d78856cb402135f0 = @"hash_817bed798637d38e";
             var_783c6aee0e4019d6 = 120;
-        } else if (function_c648f0fd527e089a(pingType)) {
-            if (pingType == 23) {
+        } else if (function_c648f0fd527e089a(pingtype)) {
+            if (pingtype == 23) {
                 var_d78856cb402135f0 = @"hash_8bd5e52ad7441f43";
                 var_783c6aee0e4019d6 = 120;
             } else {
@@ -177,16 +177,16 @@ function function_d0006d07465a279c(var_394466c2ddb208cb, pingType, scriptable) {
                 var_d78856cb402135f0 = @"hash_cce27a6c00a3b750";
                 var_783c6aee0e4019d6 = 120;
             }
-        } else if (function_5dacc89a40a58737(pingType)) {
+        } else if (function_5dacc89a40a58737(pingtype)) {
             var_783c6aee0e4019d6 = 3;
-        } else if (function_d3789a9a4be5df2e(pingType)) {
+        } else if (function_d3789a9a4be5df2e(pingtype)) {
             var_d78856cb402135f0 = @"hash_f1ed16d72234a0cc";
             var_783c6aee0e4019d6 = 60;
-        } else if (function_87df78670540e9b2(pingType)) {
+        } else if (function_87df78670540e9b2(pingtype)) {
             var_d78856cb402135f0 = @"hash_c368219ba5712e18";
             var_783c6aee0e4019d6 = 120;
         } else {
-            switch (pingType) {
+            switch (pingtype) {
             case 3:
                 var_d78856cb402135f0 = @"hash_abe00a149eb51fc0";
                 var_783c6aee0e4019d6 = 15;
@@ -214,7 +214,7 @@ function function_d0006d07465a279c(var_394466c2ddb208cb, pingType, scriptable) {
                 break;
             default:
                 /#
-                    assertmsg("CalloutMarkerPing: " + "need a proper type for death timeouts! Can't use: " + pingType);
+                    assertmsg("CalloutMarkerPing: " + "need a proper type for death timeouts! Can't use: " + pingtype);
                 #/
                 var_783c6aee0e4019d6 = 2;
                 break;
@@ -235,12 +235,12 @@ function function_d0006d07465a279c(var_394466c2ddb208cb, pingType, scriptable) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c0e
 // Size: 0x5c
-function function_76ecf74c7d722b52(pingType) {
+function function_76ecf74c7d722b52(pingtype) {
     player = self;
     if (isdefined(player)) {
         for (var_394466c2ddb208cb = 0; var_394466c2ddb208cb < 10; var_394466c2ddb208cb++) {
             isowner = player function_1e008bf9d31b2b01(var_394466c2ddb208cb);
-            if (isowner && pingType == player calloutmarkerping_gettype(var_394466c2ddb208cb)) {
+            if (isowner && pingtype == player calloutmarkerping_gettype(var_394466c2ddb208cb)) {
                 return var_394466c2ddb208cb;
             }
         }
@@ -273,7 +273,7 @@ function _calloutmarkerping_predicted_timeout(var_394466c2ddb208cb) {
         assert(player function_1e008bf9d31b2b01(var_394466c2ddb208cb));
     #/
     player notify("predictiveCalloutResetTimeout_" + var_394466c2ddb208cb);
-    pingType = player calloutmarkerping_gettype(var_394466c2ddb208cb);
+    pingtype = player calloutmarkerping_gettype(var_394466c2ddb208cb);
     level endon("game_ended");
     player endon("disconnect");
     player endon("predictiveCalloutResetTimeout_" + var_394466c2ddb208cb);
@@ -281,7 +281,7 @@ function _calloutmarkerping_predicted_timeout(var_394466c2ddb208cb) {
     waittime = 2;
     var_93b12c2dce7c2aa8 = undefined;
     var_19cc31e0fdf2a990 = 0;
-    if (function_d3789a9a4be5df2e(pingType)) {
+    if (function_d3789a9a4be5df2e(pingtype)) {
         ent = player calloutmarkerping_getent(var_394466c2ddb208cb);
         if (isdefined(ent)) {
             var_19cc31e0fdf2a990 = getdvarint(@"hash_c022bd4a1215cd2c", 1);
@@ -299,24 +299,24 @@ function _calloutmarkerping_predicted_timeout(var_394466c2ddb208cb) {
                 waittime = getdvarfloat(@"hash_dcab804f9c532b7f", 9);
                 var_93b12c2dce7c2aa8 = ent;
             }
-            if (pingType == 6) {
+            if (pingtype == 6) {
                 player thread calloutmarkerping_removevehiclecalloutonspecialconditions(var_394466c2ddb208cb, ent);
             }
             player thread function_632cc7f8cbf11ae1(var_394466c2ddb208cb, ent);
         }
-    } else if (function_c648f0fd527e089a(pingType)) {
+    } else if (function_c648f0fd527e089a(pingtype)) {
         var_d9d7f39e028cee38 = player calloutmarkerping_getent(var_394466c2ddb208cb);
         player thread calloutmarkerping_watchscriptabledeath(var_394466c2ddb208cb, var_d9d7f39e028cee38);
-        if (pingType == 20) {
+        if (pingtype == 20) {
             if (!player isspectatingplayer()) {
                 player thread function_1efe712c746d3ca1(var_394466c2ddb208cb);
             }
         }
-    } else if (pingType == 2) {
+    } else if (pingtype == 2) {
         if (getdvarint(@"hash_a20128c96ee00a7", 0)) {
             player thread calloutmarkerping_navigationcancelproximity(var_394466c2ddb208cb);
         }
-    } else if (pingType == 4) {
+    } else if (pingtype == 4) {
         var_93bc7962739fd49e = self calloutmarkerping_getgscobjectiveindex(var_394466c2ddb208cb);
         /#
             assert(isint(var_93bc7962739fd49e));
@@ -330,7 +330,7 @@ function _calloutmarkerping_predicted_timeout(var_394466c2ddb208cb) {
             player thread calloutmarkerping_watchwhenobjectivestartsprogress(var_394466c2ddb208cb, var_93bc7962739fd49e);
             player thread calloutmarkerping_watchwhenobjectivedeleted(var_394466c2ddb208cb, var_93bc7962739fd49e);
         }
-    } else if (pingType == 5) {
+    } else if (pingtype == 5) {
         player thread calloutmarkerping_watchplayerdeathordisconnect(var_394466c2ddb208cb);
         var_f4ce1797c79492d1 = player function_dbea4c5599dd67de(var_394466c2ddb208cb);
         if (var_f4ce1797c79492d1 == 5) {
@@ -340,7 +340,7 @@ function _calloutmarkerping_predicted_timeout(var_394466c2ddb208cb) {
     }
     if (!isdefined(var_93b12c2dce7c2aa8)) {
         var_d9d7f39e028cee38 = player calloutmarkerping_getent(var_394466c2ddb208cb);
-        waittime = player function_d0006d07465a279c(var_394466c2ddb208cb, pingType, var_d9d7f39e028cee38);
+        waittime = player function_d0006d07465a279c(var_394466c2ddb208cb, pingtype, var_d9d7f39e028cee38);
         if (getdvarint(@"hash_94055f5243eb5fa0", 1)) {
             if (isdefined(var_d9d7f39e028cee38) && isdefined(var_d9d7f39e028cee38.type)) {
                 if (issubstr(var_d9d7f39e028cee38.type, "ob_loot_cache")) {
@@ -378,12 +378,12 @@ function _calloutmarkerping_predicted_timeout(var_394466c2ddb208cb) {
             return;
         }
     }
-    _calloutmarkerping_predicted_log("Setup Timeout | wait: " + waittime + " | pingIndex: " + var_394466c2ddb208cb + " | Type: " + pingType);
+    _calloutmarkerping_predicted_log("Setup Timeout | wait: " + waittime + " | pingIndex: " + var_394466c2ddb208cb + " | Type: " + pingtype);
     wait(waittime);
-    if (isdefined(var_93b12c2dce7c2aa8) && isdefined(player) && isalive(var_93b12c2dce7c2aa8) && pingType == 9 && var_19cc31e0fdf2a990) {
+    if (isdefined(var_93b12c2dce7c2aa8) && isdefined(player) && isalive(var_93b12c2dce7c2aa8) && pingtype == 9 && var_19cc31e0fdf2a990) {
         player thread calloutmarkerping_enemytodangerdecaycreate(var_394466c2ddb208cb, var_93b12c2dce7c2aa8);
     } else {
-        _calloutmarkerping_predicted_log("Ping Timeout | pingIndex: " + var_394466c2ddb208cb + " | Type: " + pingType);
+        _calloutmarkerping_predicted_log("Ping Timeout | pingIndex: " + var_394466c2ddb208cb + " | Type: " + pingtype);
         var_d9d7f39e028cee38 = player calloutmarkerping_getent(var_394466c2ddb208cb);
         if (isdefined(var_d9d7f39e028cee38) && isdefined(var_d9d7f39e028cee38.var_139629996ea22b5) && isdefined(var_d9d7f39e028cee38.var_139629996ea22b5[player getentitynumber()])) {
             var_d9d7f39e028cee38.var_139629996ea22b5[player getentitynumber()] = undefined;
@@ -873,7 +873,7 @@ function function_40a8426c1f049004(lootid) {
         case #"plunder":
             return #"hash_ad67c90bd02e70b4";
         default:
-            scriptablename = function_53c4c53197386572(namespace_38b993c4618e76cd::getScriptableFromLootID(lootid), "");
+            scriptablename = function_53c4c53197386572(namespace_38b993c4618e76cd::getscriptablefromlootid(lootid), "");
             switch (scriptablename) {
             case #"hash_1cd9ffa488237604":
                 return #"hash_dfbada2220a5a84a";
@@ -953,7 +953,7 @@ function function_f4293e5a97e51d76(lootid) {
         case #"gasmask":
             return #"hash_b3e904aa1e989d76";
         default:
-            scriptablename = function_53c4c53197386572(namespace_38b993c4618e76cd::getScriptableFromLootID(lootid), "");
+            scriptablename = function_53c4c53197386572(namespace_38b993c4618e76cd::getscriptablefromlootid(lootid), "");
             switch (scriptablename) {
             case #"hash_55798564991651ac":
                 return #"hash_8f0da2f929b5e678";
@@ -1261,8 +1261,8 @@ function _calloutmarkerping_checkforbuybackrequest(var_394466c2ddb208cb) {
     if (isalive(player)) {
         return;
     }
-    pingType = player calloutmarkerping_gettype(var_394466c2ddb208cb);
-    if (!function_c648f0fd527e089a(pingType)) {
+    pingtype = player calloutmarkerping_gettype(var_394466c2ddb208cb);
+    if (!function_c648f0fd527e089a(pingtype)) {
         return;
     }
     instance = player calloutmarkerping_getent(var_394466c2ddb208cb);
@@ -1276,9 +1276,9 @@ function _calloutmarkerping_checkforbuybackrequest(var_394466c2ddb208cb) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x500d
 // Size: 0x5d
-function function_2ecdd6eb53bbd808(pingType, var_394466c2ddb208cb) {
+function function_2ecdd6eb53bbd808(pingtype, var_394466c2ddb208cb) {
     player = self;
-    if (function_87df78670540e9b2(pingType)) {
+    if (function_87df78670540e9b2(pingtype)) {
         var_7a183ae28b9c66f5 = player function_a7e757d42b550a6(var_394466c2ddb208cb);
         return player function_31f315111c6a03c2(var_7a183ae28b9c66f5);
     } else {
@@ -1303,39 +1303,39 @@ function calloutmarkerpingvo_createcalloutbattlechatter(var_394466c2ddb208cb) {
     player = self;
     var_c1074ab6cac2169f = player calloutmarkerping_getent(var_394466c2ddb208cb);
     var_3ef0fdcee94cadff = undefined;
-    pingType = player calloutmarkerping_gettype(var_394466c2ddb208cb);
-    if (function_810652bcec49286c(pingType)) {
+    pingtype = player calloutmarkerping_gettype(var_394466c2ddb208cb);
+    if (function_810652bcec49286c(pingtype)) {
         /#
             println("uin_ping_item" + "equip_armorbox");
         #/
         return;
     }
     if (isdefined(level.var_5f9eb8185e287adc)) {
-        var_3ef0fdcee94cadff = player [[ level.var_5f9eb8185e287adc ]](var_c1074ab6cac2169f, pingType, var_394466c2ddb208cb);
+        var_3ef0fdcee94cadff = player [[ level.var_5f9eb8185e287adc ]](var_c1074ab6cac2169f, pingtype, var_394466c2ddb208cb);
     }
     if (!isdefined(var_3ef0fdcee94cadff)) {
-        if (function_c648f0fd527e089a(pingType)) {
+        if (function_c648f0fd527e089a(pingtype)) {
             var_3ef0fdcee94cadff = player function_f9aa0f44521459d7(var_394466c2ddb208cb, var_c1074ab6cac2169f);
             if (!isdefined(var_3ef0fdcee94cadff)) {
                 return;
             }
-        } else if (pingType == 23) {
+        } else if (pingtype == 23) {
             var_3ef0fdcee94cadff = player calloutmarkerpingvo_getcalloutaliasstringworld(var_394466c2ddb208cb);
-        } else if (function_d3789a9a4be5df2e(pingType) && (pingType != 6 || function_cb9269a1545ad6e4(var_c1074ab6cac2169f)) && pingType != 18 && pingType != 17) {
+        } else if (function_d3789a9a4be5df2e(pingtype) && (pingtype != 6 || function_cb9269a1545ad6e4(var_c1074ab6cac2169f)) && pingtype != 18 && pingtype != 17) {
             /#
                 assert(isent(var_c1074ab6cac2169f));
             #/
             var_3ef0fdcee94cadff = player calloutmarkerpingvo_getcalloutaliasstringentity(var_c1074ab6cac2169f);
-        } else if (function_74ec310d8f99b6e2(pingType)) {
+        } else if (function_74ec310d8f99b6e2(pingtype)) {
             var_3ef0fdcee94cadff = #"hash_e3b4682201d84039";
-        } else if (function_87df78670540e9b2(pingType)) {
-            var_3ef0fdcee94cadff = function_2ecdd6eb53bbd808(pingType, var_394466c2ddb208cb);
+        } else if (function_87df78670540e9b2(pingtype)) {
+            var_3ef0fdcee94cadff = function_2ecdd6eb53bbd808(pingtype, var_394466c2ddb208cb);
         } else {
-            switch (pingType) {
+            switch (pingtype) {
             case 2:
             case 17:
             case 18:
-                if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(player.br_infil_type)) {
+                if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(player.br_infil_type)) {
                     var_3ef0fdcee94cadff = #"hash_92ddd951ec0801d5";
                 } else {
                     var_3ef0fdcee94cadff = #"hash_950a284047c4c938";
@@ -1355,9 +1355,9 @@ function calloutmarkerpingvo_createcalloutbattlechatter(var_394466c2ddb208cb) {
             }
         }
     }
-    player calloutmarkerpingvo_play(var_3ef0fdcee94cadff, pingType, var_c1074ab6cac2169f);
+    player calloutmarkerpingvo_play(var_3ef0fdcee94cadff, pingtype, var_c1074ab6cac2169f);
     if (issharedfuncdefined("vo", "onPing")) {
-        player [[ getsharedfunc("vo", "onPing") ]](var_394466c2ddb208cb, pingType, var_3ef0fdcee94cadff, var_c1074ab6cac2169f);
+        player [[ getsharedfunc("vo", "onPing") ]](var_394466c2ddb208cb, pingtype, var_3ef0fdcee94cadff, var_c1074ab6cac2169f);
     }
 }
 
@@ -1367,14 +1367,14 @@ function calloutmarkerpingvo_createcalloutbattlechatter(var_394466c2ddb208cb) {
 // Size: 0x163
 function _calloutmarkerping_onpingchallenge(var_394466c2ddb208cb) {
     player = self;
-    pingType = player calloutmarkerping_gettype(var_394466c2ddb208cb);
-    player function_f3bb4f4911a1beb2("pmc_missions", "onPing", var_394466c2ddb208cb, pingType);
+    pingtype = player calloutmarkerping_gettype(var_394466c2ddb208cb);
+    player function_f3bb4f4911a1beb2("pmc_missions", "onPing", var_394466c2ddb208cb, pingtype);
     if (!issharedfuncdefined("challenges", "onPing")) {
         return;
     }
-    if (function_c648f0fd527e089a(pingType)) {
+    if (function_c648f0fd527e089a(pingtype)) {
         self [[ getsharedfunc("challenges", "onPing") ]]("object");
-    } else if (function_d3789a9a4be5df2e(pingType)) {
+    } else if (function_d3789a9a4be5df2e(pingtype)) {
         ent = self calloutmarkerping_getent(var_394466c2ddb208cb);
         if (isdefined(ent)) {
             if (_calloutmarkerping_isenemy(ent, self)) {
@@ -1383,10 +1383,10 @@ function _calloutmarkerping_onpingchallenge(var_394466c2ddb208cb) {
                 self [[ getsharedfunc("challenges", "onPing") ]]("object");
             }
         }
-    } else if (function_74ec310d8f99b6e2(pingType)) {
+    } else if (function_74ec310d8f99b6e2(pingtype)) {
         self [[ getsharedfunc("challenges", "onPing") ]]("danger");
     } else {
-        switch (pingType) {
+        switch (pingtype) {
         case 5:
         case 6:
             self [[ getsharedfunc("challenges", "onPing") ]]("object");
@@ -1482,9 +1482,9 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
             airdroptype = "loadoutdrop";
             break;
         }
-        pingType = "killstreak";
+        pingtype = "killstreak";
         if (airdroptype == "loadoutdrop") {
-            pingType = "fieldupgrade";
+            pingtype = "fieldupgrade";
         }
         var_9d38ff79b3a86204 = undefined;
         if (level.teambased) {
@@ -1494,7 +1494,7 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
         } else if (isdefined(ent.owner) && self != ent.owner) {
             var_9d38ff79b3a86204 = "hostile";
         }
-        var_51134e8308c78a49 = "ping_" + pingType + "_" + airdroptype;
+        var_51134e8308c78a49 = "ping_" + pingtype + "_" + airdroptype;
         if (isdefined(var_9d38ff79b3a86204)) {
             var_51134e8308c78a49 = var_51134e8308c78a49 + "_" + var_9d38ff79b3a86204;
         }
@@ -1623,7 +1623,7 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
         }
         if (function_6641a5b759148e1b() && isdefined(level.var_d7b3bd9ad64c74b) && isdefined(level.var_d7b3bd9ad64c74b[ent getentitynumber()]) && isdefined(level.var_d7b3bd9ad64c74b[ent getentitynumber()]["tier"])) {
             tier = level.var_d7b3bd9ad64c74b[ent getentitynumber()]["tier"];
-            var_3b28a86af95d6cea = namespace_14d36171baccf528::function_e2292dcf63eccf7a(ent, "elite");
+            var_3b28a86af95d6cea = namespace_14d36171baccf528::agentpers_getagentpersdata(ent, "elite");
             switch (tier) {
             case 1:
                 return ter_op(istrue(var_3b28a86af95d6cea), #"hash_766ad1c8b387e329", #"hash_6d3407b8a9e701d6");
@@ -1731,7 +1731,7 @@ function function_f9aa0f44521459d7(var_394466c2ddb208cb, var_c1074ab6cac2169f) {
     } else if (issharedfuncdefined("pickups", "isDogTag") && isdefined(var_db376ee90688810d.type) && [[ getsharedfunc("pickups", "isDogTag") ]](var_db376ee90688810d.type)) {
         if (issharedfuncdefined("dogtag", "getDogTagVictimAndKiller")) {
             var_e9a68e6d68d81012 = [[ getsharedfunc("dogtag", "getDogTagVictimAndKiller") ]](var_db376ee90688810d.count)[0];
-            if (isdefined(level.dogTagInfo) && isdefined(level.dogTagInfo[var_e9a68e6d68d81012]) && isdefined(level.dogTagInfo[var_e9a68e6d68d81012].team) && self.team == level.dogTagInfo[var_e9a68e6d68d81012].team) {
+            if (isdefined(level.dogtaginfo) && isdefined(level.dogtaginfo[var_e9a68e6d68d81012]) && isdefined(level.dogtaginfo[var_e9a68e6d68d81012].team) && self.team == level.dogtaginfo[var_e9a68e6d68d81012].team) {
                 var_3ef0fdcee94cadff = #"hash_97e406a910aacd64";
             } else {
                 var_3ef0fdcee94cadff = player calloutmarkerpingvo_getcalloutaliasstringloot(var_394466c2ddb208cb, var_c1074ab6cac2169f);
@@ -1791,11 +1791,11 @@ function calloutmarkerpingvo_getcalloutaliasstringvehicle(var_7a5b847ea66815f) {
         #/
         return #"hash_dbe73992c2a084d2";
     }
-    vehicleRef = var_f5013bae6266622f function_d93ec4635290febd();
+    vehicleref = var_f5013bae6266622f function_d93ec4635290febd();
     var_ee8ef5ba92ab121d = undefined;
     var_5011b777abe6b90e = undefined;
-    if (isdefined(vehicleRef)) {
-        var_5011b777abe6b90e = namespace_141c4634b6ea7b27::vehicle_interact_getleveldataforvehicle(vehicleRef);
+    if (isdefined(vehicleref)) {
+        var_5011b777abe6b90e = namespace_141c4634b6ea7b27::vehicle_interact_getleveldataforvehicle(vehicleref);
     }
     if (isdefined(var_5011b777abe6b90e)) {
         var_ee8ef5ba92ab121d = var_5011b777abe6b90e.var_ee8ef5ba92ab121d;
@@ -1809,14 +1809,14 @@ function calloutmarkerpingvo_getcalloutaliasstringvehicle(var_7a5b847ea66815f) {
     if (istrue(var_f5013bae6266622f namespace_1f188a13f7e79610::function_b7148a3bfc4defb2())) {
         return function_2ef675c13ca1c4af(#"hash_3cdaf22ea7689e07", var_ee8ef5ba92ab121d);
     }
-    if (function_6641a5b759148e1b() && isdefined(vehicleRef)) {
-        if (vehicleRef == "veh9_palfa") {
+    if (function_6641a5b759148e1b() && isdefined(vehicleref)) {
+        if (vehicleref == "veh9_palfa") {
             return #"hash_ab3839c038df043";
-        } else if (vehicleRef == "veh9_blima") {
+        } else if (vehicleref == "veh9_blima") {
             return #"hash_50e215208a82d207";
         }
     }
-    var_44502c6387ec229 = _calloutmarkerping_isvehicleoccupiedbyenemy(var_f5013bae6266622f, player.team) || isdefined(vehicleRef) && vehicleRef == "dmz_boss_chopper";
+    var_44502c6387ec229 = _calloutmarkerping_isvehicleoccupiedbyenemy(var_f5013bae6266622f, player.team) || isdefined(vehicleref) && vehicleref == "dmz_boss_chopper";
     if (istrue(var_44502c6387ec229)) {
         return function_2ef675c13ca1c4af(#"hash_f2ffb8c48b7ba213", var_ee8ef5ba92ab121d, "_hostile");
     } else {
@@ -2013,7 +2013,7 @@ function function_e57c4849c7935da(ent, player) {
 // Size: 0x5bf
 function calloutmarkerpingvo_getcalloutaliasstringworld(var_394466c2ddb208cb) {
     player = self;
-    if (!namespace_36f464722d326bbe::isBRStyleGameType() && getgametype() != "ob") {
+    if (!namespace_36f464722d326bbe::isbrstylegametype() && getgametype() != "ob") {
         return #"hash_950a284047c4c938";
     }
     var_6d7cff43e352d995 = player calloutmarkerping_getgscobjectiveindex(var_394466c2ddb208cb);
@@ -2031,8 +2031,8 @@ function calloutmarkerpingvo_getcalloutaliasstringworld(var_394466c2ddb208cb) {
             }
         }
     }
-    if (isdefined(level.pleaForHelp) && isdefined(level.pleaForHelp.var_807ffb67240349f5)) {
-        foreach (request in level.pleaForHelp.var_807ffb67240349f5) {
+    if (isdefined(level.pleaforhelp) && isdefined(level.pleaforhelp.var_807ffb67240349f5)) {
+        foreach (request in level.pleaforhelp.var_807ffb67240349f5) {
             if (!isdefined(request.objid) || request.objid != var_6d7cff43e352d995) {
                 continue;
             }
@@ -2198,7 +2198,7 @@ function calloutmarkerpingvo_getcalloutaliasstringloot(var_394466c2ddb208cb, var
     if (type == #"weapon") {
         return function_8d17e607a79fd65f(var_869d699197f920a2);
     }
-    if (type == #"hash_49f2c8b380d62270" && isdefined(var_394382528911801d.var_65f2e31ba81e1b45) && isdefined(var_394382528911801d.task) && var_394382528911801d.task.teams[0] != player.team) {
+    if (type == #"questsafe" && isdefined(var_394382528911801d.var_65f2e31ba81e1b45) && isdefined(var_394382528911801d.task) && var_394382528911801d.task.teams[0] != player.team) {
         return #"hash_950a284047c4c938";
     }
     if (istrue(level.var_a9350d89a2e4d752)) {
@@ -2334,12 +2334,12 @@ function function_9bb1120b45cfa775(var_394466c2ddb208cb) {
     if (!isent(var_c1074ab6cac2169f)) {
         return #"hash_be4cc85a249d4af5";
     }
-    vehicleRef = var_c1074ab6cac2169f function_d93ec4635290febd();
-    if (!isdefined(vehicleRef)) {
+    vehicleref = var_c1074ab6cac2169f function_d93ec4635290febd();
+    if (!isdefined(vehicleref)) {
         return #"hash_be4cc85a249d4af5";
     }
     if (function_6641a5b759148e1b()) {
-        if (vehicleRef == "veh9_palfa") {
+        if (vehicleref == "veh9_palfa") {
             return #"hash_28e8ccedd7fd880c";
         }
     }
@@ -2396,9 +2396,9 @@ function calloutmarkerpingvo_getaffirmaliasstringloot(var_394466c2ddb208cb, var_
     if (isdefined(var_394382528911801d) && isdefined(var_394382528911801d.type)) {
         var_869d699197f920a2 = var_394382528911801d.type;
     } else {
-        pingType = player calloutmarkerping_gettype(var_394466c2ddb208cb);
+        pingtype = player calloutmarkerping_gettype(var_394466c2ddb208cb);
         /#
-            assertmsg("CalloutMarkerPing: " + "entity or entity type not defined for scriptable for ping type: " + pingType);
+            assertmsg("CalloutMarkerPing: " + "entity or entity type not defined for scriptable for ping type: " + pingtype);
         #/
         return "";
     }
@@ -2470,18 +2470,18 @@ function calloutmarkerpingvo_getaffirmaliasstringloot(var_394466c2ddb208cb, var_
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8348
 // Size: 0xdc
-function calloutmarkerping_createcallout(pingType, var_8512c523dca1fd8f, objectid, lootid) {
+function calloutmarkerping_createcallout(pingtype, var_8512c523dca1fd8f, objectid, lootid) {
     player = self;
     var_60693f12aa0f707d = undefined;
     if (isdefined(lootid)) {
         /#
             assert(isdefined(objectid));
         #/
-        var_60693f12aa0f707d = player function_c013e9dddee96e76(pingType, var_8512c523dca1fd8f, objectid, lootid);
+        var_60693f12aa0f707d = player function_c013e9dddee96e76(pingtype, var_8512c523dca1fd8f, objectid, lootid);
     } else if (isdefined(objectid)) {
-        var_60693f12aa0f707d = player function_c013e9dddee96e76(pingType, var_8512c523dca1fd8f, objectid);
+        var_60693f12aa0f707d = player function_c013e9dddee96e76(pingtype, var_8512c523dca1fd8f, objectid);
     } else {
-        var_60693f12aa0f707d = player function_c013e9dddee96e76(pingType, var_8512c523dca1fd8f);
+        var_60693f12aa0f707d = player function_c013e9dddee96e76(pingtype, var_8512c523dca1fd8f);
     }
     if (isdefined(var_60693f12aa0f707d)) {
         var_c0f9139ffd72e62d = getentbynum(var_60693f12aa0f707d.var_51b8d478055e5509);
@@ -2506,15 +2506,15 @@ function calloutmarkerping_removecallout(var_394466c2ddb208cb) {
         _calloutmarkerping_predicted_log("Remove Callout ( failed due to owner mismatch ) | pingIndex: " + var_394466c2ddb208cb);
     } else {
         _calloutmarkerping_predicted_log("Remove Callout | pingIndex: " + var_394466c2ddb208cb);
-        pingType = player calloutmarkerping_gettype(var_394466c2ddb208cb);
-        if (isdefined(pingType) && pingType >= 2 && pingType < 37) {
-            if (pingType == 2) {
+        pingtype = player calloutmarkerping_gettype(var_394466c2ddb208cb);
+        if (isdefined(pingtype) && pingtype >= 2 && pingtype < 37) {
+            if (pingtype == 2) {
                 if (issharedfuncdefined("ping", "calloutMarkerPing_squadLeaderBeaconKillForPlayer")) {
                     [[ getsharedfunc("ping", "calloutMarkerPing_squadLeaderBeaconKillForPlayer") ]](player);
                 }
             }
             player function_4a7d51f2dfc2fa5d(var_394466c2ddb208cb);
-            if (pingType == 5) {
+            if (pingtype == 5) {
                 player function_6c9b8f9429b7fdca(player.team);
             }
         }
@@ -2684,7 +2684,7 @@ function calloutmarkerping_watchplayerdeathordisconnect(var_394466c2ddb208cb) {
         lootid = player function_c4e0716fbd549e2d(var_394466c2ddb208cb);
         var_c08eeee95b85512a = isdefined(lootid) && function_3bc031ab2f635f8c(lootid) != "calloutmarkerpingitem";
         if (var_c08eeee95b85512a) {
-            scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+            scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
             if (function_73e183e02834309d(scriptablename)) {
                 utility::function_ee012c2dd711a8ce("self_pickedupitem", scriptablename, "death_or_disconnect");
             } else if (isdefined(scriptablename)) {
@@ -2814,17 +2814,17 @@ function calloutmarkerping_removeallcalloutsforallplayers(var_884a98392ce1109b) 
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8efc
 // Size: 0xd7
-function calloutmarkerpingvo_calculatesounddebouncelength(pingType, var_e64b7437e7151a62) {
-    if (function_c648f0fd527e089a(pingType)) {
+function calloutmarkerpingvo_calculatesounddebouncelength(pingtype, var_e64b7437e7151a62) {
+    if (function_c648f0fd527e089a(pingtype)) {
         return (var_e64b7437e7151a62 + 500);
-    } else if (function_d3789a9a4be5df2e(pingType)) {
+    } else if (function_d3789a9a4be5df2e(pingtype)) {
         return (var_e64b7437e7151a62 + 500);
-    } else if (function_74ec310d8f99b6e2(pingType)) {
+    } else if (function_74ec310d8f99b6e2(pingtype)) {
         return (var_e64b7437e7151a62 + 500);
-    } else if (function_87df78670540e9b2(pingType)) {
+    } else if (function_87df78670540e9b2(pingtype)) {
         return (var_e64b7437e7151a62 + 500);
     } else {
-        switch (pingType) {
+        switch (pingtype) {
         case 2:
             return (var_e64b7437e7151a62 + 500);
         case 6:
@@ -2865,13 +2865,13 @@ function function_bb7fe8982d035c10(var_9090af2a5c319a58) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9033
 // Size: 0x10f
-function calloutmarkerpingvo_handleraddnewelement(pingType, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62) {
+function calloutmarkerpingvo_handleraddnewelement(pingtype, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62) {
     player = self;
     /#
         assert(isdefined(player.calloutmarkerpingvohandlerpool));
     #/
     /#
-        assert(isdefined(pingType));
+        assert(isdefined(pingtype));
     #/
     /#
         assert(isdefined(currtime));
@@ -2886,7 +2886,7 @@ function calloutmarkerpingvo_handleraddnewelement(pingType, currtime, var_9090af
     if (var_37f40cb76aeadd2a > 10) {
         return 0;
     }
-    var_e42bea5e21788553 = calloutmarkerpingvo_calculatesounddebouncelength(pingType, var_e64b7437e7151a62);
+    var_e42bea5e21788553 = calloutmarkerpingvo_calculatesounddebouncelength(pingtype, var_e64b7437e7151a62);
     /#
         assert(isdefined(var_e42bea5e21788553));
     #/
@@ -2905,7 +2905,7 @@ function calloutmarkerpingvo_handleraddnewelement(pingType, currtime, var_9090af
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x914a
 // Size: 0x178
-function calloutmarkerpingvo_canplaywithspamavoidance(pingType, var_5ab0dc648937d4ea, var_e64b7437e7151a62) {
+function calloutmarkerpingvo_canplaywithspamavoidance(pingtype, var_5ab0dc648937d4ea, var_e64b7437e7151a62) {
     player = self;
     if (!isdefined(player) || !isplayer(player)) {
         return 0;
@@ -2917,7 +2917,7 @@ function calloutmarkerpingvo_canplaywithspamavoidance(pingType, var_5ab0dc648937
         return 0;
     }
     currtime = gettime();
-    var_9090af2a5c319a58 = "pingType" + pingType;
+    var_9090af2a5c319a58 = "pingType" + pingtype;
     /#
         assert(isstring(var_9090af2a5c319a58));
     #/
@@ -2928,7 +2928,7 @@ function calloutmarkerpingvo_canplaywithspamavoidance(pingType, var_5ab0dc648937
             assert(isdefined(sounddebouncetimestamp));
         #/
         if (currtime >= sounddebouncetimestamp) {
-            var_964d2b3a97d9acda = player calloutmarkerpingvo_handleraddnewelement(pingType, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62);
+            var_964d2b3a97d9acda = player calloutmarkerpingvo_handleraddnewelement(pingtype, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62);
             return istrue(var_964d2b3a97d9acda);
         }
         if (var_5ab0dc648937d4ea == #"hash_6d43a076a8b18354" && player.calloutmarkerpingvohandlerpool[var_9090af2a5c319a58].cancelled == 0) {
@@ -2939,7 +2939,7 @@ function calloutmarkerpingvo_canplaywithspamavoidance(pingType, var_5ab0dc648937
     } else if (var_5ab0dc648937d4ea == #"hash_6d43a076a8b18354") {
         return 0;
     } else {
-        var_964d2b3a97d9acda = player calloutmarkerpingvo_handleraddnewelement(pingType, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62);
+        var_964d2b3a97d9acda = player calloutmarkerpingvo_handleraddnewelement(pingtype, currtime, var_9090af2a5c319a58, var_e64b7437e7151a62);
         return istrue(var_964d2b3a97d9acda);
     }
 }
@@ -3088,23 +3088,23 @@ function calloutmarkerpingvo_getfulloperatorvoaliasfromsimplealias3d(var_5bb5861
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9792
 // Size: 0x190
-function calloutmarkerpingvo_play(var_5ab0dc648937d4ea, pingType, targetent) {
+function calloutmarkerpingvo_play(var_5ab0dc648937d4ea, pingtype, targetent) {
     var_7a7f371d8726fb41 = self;
     if (!isdefined(var_7a7f371d8726fb41) || !isplayer(var_7a7f371d8726fb41)) {
         return;
     }
-    if (!isdefined(pingType)) {
+    if (!isdefined(pingtype)) {
         return;
     }
     if (!isdefined(var_5ab0dc648937d4ea) || var_5ab0dc648937d4ea == "" || var_5ab0dc648937d4ea == #"") {
         /#
-            assertmsg("CalloutMarkerPing: " + "VO - soundType passed in was invalid for ping type: " + pingType);
+            assertmsg("CalloutMarkerPing: " + "VO - soundType passed in was invalid for ping type: " + pingtype);
         #/
         return;
     }
     var_4f632c1568af9fc0 = level.bcinfo["asset"][function_1823ff50bb28148d(var_5ab0dc648937d4ea)];
     var_196ffc81c8206c2a = 2000;
-    var_57d0946b275fea34 = var_7a7f371d8726fb41 calloutmarkerpingvo_canplaywithspamavoidance(pingType, var_5ab0dc648937d4ea, var_196ffc81c8206c2a);
+    var_57d0946b275fea34 = var_7a7f371d8726fb41 calloutmarkerpingvo_canplaywithspamavoidance(pingtype, var_5ab0dc648937d4ea, var_196ffc81c8206c2a);
     if (istrue(var_57d0946b275fea34)) {
         logprint("calloutmarkerping::calloutMarkerPingVO_play - PlaySoundEvent()");
         logprint("self         = " + var_7a7f371d8726fb41.name);
@@ -3181,7 +3181,7 @@ function calloutmarkerping_navigationcancelproximity(var_394466c2ddb208cb) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b40
 // Size: 0x8e
-function calloutmarkerpingvo_playpredictivepingcleared(var_394466c2ddb208cb, pingType, var_dfb9f3c233e2b8f3) {
+function calloutmarkerpingvo_playpredictivepingcleared(var_394466c2ddb208cb, pingtype, var_dfb9f3c233e2b8f3) {
     player = self;
     player notify("calloutMarkerPingVO_playPredictivePingCleared");
     player endon("calloutMarkerPingVO_playPredictivePingCleared");
@@ -3189,9 +3189,9 @@ function calloutmarkerpingvo_playpredictivepingcleared(var_394466c2ddb208cb, pin
     wait(getdvarfloat(@"hash_7206cb95b7dfb4f0", 0.5));
     if (isdefined(player)) {
         if (isplayer(var_dfb9f3c233e2b8f3)) {
-            var_dfb9f3c233e2b8f3 calloutmarkerpingvo_play(#"hash_6d43a076a8b18354", pingType);
+            var_dfb9f3c233e2b8f3 calloutmarkerpingvo_play(#"hash_6d43a076a8b18354", pingtype);
         } else {
-            player calloutmarkerpingvo_play(#"hash_6d43a076a8b18354", pingType);
+            player calloutmarkerpingvo_play(#"hash_6d43a076a8b18354", pingtype);
         }
     }
 }
@@ -3202,8 +3202,8 @@ function calloutmarkerpingvo_playpredictivepingcleared(var_394466c2ddb208cb, pin
 // Size: 0x3d
 function calloutmarkerpingvo_playpredictivepingacknowledgedcancel(var_394466c2ddb208cb, var_dfb9f3c233e2b8f3) {
     var_93a0836a10e99c34 = self;
-    pingType = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
-    var_93a0836a10e99c34 calloutmarkerpingvo_playpredictivepingcleared(var_394466c2ddb208cb, pingType, var_dfb9f3c233e2b8f3);
+    pingtype = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
+    var_93a0836a10e99c34 calloutmarkerpingvo_playpredictivepingcleared(var_394466c2ddb208cb, pingtype, var_dfb9f3c233e2b8f3);
 }
 
 // Namespace namespace_a655003e419fc731/namespace_ede58c1e66c2c280
@@ -3214,11 +3214,11 @@ function calloutmarkerpingvo_playpredictivepingacknowledged(var_394466c2ddb208cb
     var_93a0836a10e99c34 = self;
     var_93a0836a10e99c34 notify("calloutMarkerPingVO_playPredictivePingAcknowledged");
     var_93a0836a10e99c34 endon("calloutMarkerPingVO_playPredictivePingAcknowledged");
-    pingType = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
-    if (function_c648f0fd527e089a(pingType)) {
+    pingtype = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
+    if (function_c648f0fd527e089a(pingtype)) {
         var_c1074ab6cac2169f = var_93a0836a10e99c34 calloutmarkerping_getent(var_394466c2ddb208cb);
         var_5ab0dc648937d4ea = var_93a0836a10e99c34 calloutmarkerpingvo_getaffirmaliasstringloot(var_394466c2ddb208cb, var_c1074ab6cac2169f, var_dfb9f3c233e2b8f3);
-    } else if (function_d3789a9a4be5df2e(pingType)) {
+    } else if (function_d3789a9a4be5df2e(pingtype)) {
         ent = var_93a0836a10e99c34 calloutmarkerping_getent(var_394466c2ddb208cb);
         if (isdefined(ent) && isent(ent)) {
             if (isdefined(ent.subcategory) && ent.subcategory == "elimTarget") {
@@ -3231,21 +3231,21 @@ function calloutmarkerpingvo_playpredictivepingacknowledged(var_394466c2ddb208cb
                 var_5ab0dc648937d4ea = #"hash_3370e531d64ff8e2";
             } else if (istrue(ent.var_4a4265af0a6f92e9)) {
                 var_5ab0dc648937d4ea = #"hash_28e8ccedd7fd880c";
-            } else if (pingType == 6) {
+            } else if (pingtype == 6) {
                 var_5ab0dc648937d4ea = var_93a0836a10e99c34 function_9bb1120b45cfa775(var_394466c2ddb208cb);
             }
         }
         if (!isdefined(var_5ab0dc648937d4ea)) {
             var_5ab0dc648937d4ea = #"hash_11fa7946ddf751cd";
         }
-    } else if (function_74ec310d8f99b6e2(pingType)) {
+    } else if (function_74ec310d8f99b6e2(pingtype)) {
         var_5ab0dc648937d4ea = #"hash_bca5e472447f8c73";
-    } else if (function_87df78670540e9b2(pingType)) {
+    } else if (function_87df78670540e9b2(pingtype)) {
         var_5ab0dc648937d4ea = #"hash_11fa7946ddf751cd";
     } else {
-        switch (pingType) {
+        switch (pingtype) {
         case 2:
-            if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(var_93a0836a10e99c34.br_infil_type)) {
+            if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(var_93a0836a10e99c34.br_infil_type)) {
                 var_5ab0dc648937d4ea = #"hash_f26b98445fbb71ae";
             } else {
                 var_5ab0dc648937d4ea = #"hash_11fa7946ddf751cd";
@@ -3270,9 +3270,9 @@ function calloutmarkerpingvo_playpredictivepingacknowledged(var_394466c2ddb208cb
     }
     wait(getdvarfloat(@"hash_1d83539430a13314", 0.5));
     if (isplayer(var_dfb9f3c233e2b8f3)) {
-        var_dfb9f3c233e2b8f3 calloutmarkerpingvo_play(var_5ab0dc648937d4ea, pingType);
+        var_dfb9f3c233e2b8f3 calloutmarkerpingvo_play(var_5ab0dc648937d4ea, pingtype);
     } else if (isdefined(var_93a0836a10e99c34)) {
-        var_93a0836a10e99c34 calloutmarkerpingvo_play(var_5ab0dc648937d4ea, pingType);
+        var_93a0836a10e99c34 calloutmarkerpingvo_play(var_5ab0dc648937d4ea, pingtype);
     }
 }
 
@@ -3405,14 +3405,14 @@ function function_6a9d273f570c2d97(var_394466c2ddb208cb, var_3fbb10d80249baac, v
         return;
     }
     var_8c75532deab80ef2 = var_93a0836a10e99c34.var_7ab947f079adf78a[var_394466c2ddb208cb];
-    if (!isdefined(var_8c75532deab80ef2) || !isdefined(var_8c75532deab80ef2.pingType)) {
+    if (!isdefined(var_8c75532deab80ef2) || !isdefined(var_8c75532deab80ef2.pingtype)) {
         return;
     }
-    pingType = var_8c75532deab80ef2.pingType;
-    if (!isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9) || !isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9[pingType])) {
+    pingtype = var_8c75532deab80ef2.pingtype;
+    if (!isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9) || !isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9[pingtype])) {
         return;
     }
-    var_e42370a2eda517e9 = var_93a0836a10e99c34.var_e42370a2eda517e9[pingType];
+    var_e42370a2eda517e9 = var_93a0836a10e99c34.var_e42370a2eda517e9[pingtype];
     if (var_f713679ecb32c725) {
         var_8c75532deab80ef2.var_f20158543e075304++;
     }
@@ -3420,7 +3420,7 @@ function function_6a9d273f570c2d97(var_394466c2ddb208cb, var_3fbb10d80249baac, v
     eventparams[eventparams.size] = "ping_id";
     eventparams[eventparams.size] = var_e42370a2eda517e9;
     eventparams[eventparams.size] = "ping_type";
-    eventparams[eventparams.size] = pingType;
+    eventparams[eventparams.size] = pingtype;
     eventparams[eventparams.size] = "tac_map_active";
     eventparams[eventparams.size] = istrue(var_93a0836a10e99c34 istacmapactive());
     eventparams[eventparams.size] = "canceled";
@@ -3470,17 +3470,17 @@ function function_a74e2d6a089bd337(var_394466c2ddb208cb) {
         var_93a0836a10e99c34.var_7ab947f079adf78a[var_394466c2ddb208cb] = spawnstruct();
         var_8c75532deab80ef2 = var_93a0836a10e99c34.var_7ab947f079adf78a[var_394466c2ddb208cb];
         var_8c75532deab80ef2.var_f20158543e075304 = 0;
-        var_8c75532deab80ef2.pingType = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
+        var_8c75532deab80ef2.pingtype = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
         var_8c75532deab80ef2.var_8512c523dca1fd8f = var_93a0836a10e99c34 calloutmarkerping_getorigin(var_394466c2ddb208cb);
     }
     if (!isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9)) {
         var_93a0836a10e99c34.var_e42370a2eda517e9 = [];
     }
-    pingType = var_8c75532deab80ef2.pingType;
-    if (!isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9[pingType])) {
-        var_93a0836a10e99c34.var_e42370a2eda517e9[pingType] = 1;
+    pingtype = var_8c75532deab80ef2.pingtype;
+    if (!isdefined(var_93a0836a10e99c34.var_e42370a2eda517e9[pingtype])) {
+        var_93a0836a10e99c34.var_e42370a2eda517e9[pingtype] = 1;
     } else {
-        var_93a0836a10e99c34.var_e42370a2eda517e9[pingType]++;
+        var_93a0836a10e99c34.var_e42370a2eda517e9[pingtype]++;
     }
     var_93a0836a10e99c34 function_6a9d273f570c2d97(var_394466c2ddb208cb, 0, "", 0);
 }
@@ -3505,13 +3505,13 @@ function function_a366e9660606bff8() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa693
 // Size: 0x12e
-function function_317d089ea4ed0a21(pingType, reason) {
+function function_317d089ea4ed0a21(pingtype, reason) {
     var_93a0836a10e99c34 = self;
     eventparams = [];
     eventparams[eventparams.size] = "ping_id";
-    eventparams[eventparams.size] = var_93a0836a10e99c34.var_3a9aaf3e5a5c0b5[pingType];
+    eventparams[eventparams.size] = var_93a0836a10e99c34.var_3a9aaf3e5a5c0b5[pingtype];
     eventparams[eventparams.size] = "ping_type";
-    eventparams[eventparams.size] = pingType;
+    eventparams[eventparams.size] = pingtype;
     eventparams[eventparams.size] = "tac_map_active";
     eventparams[eventparams.size] = istrue(var_93a0836a10e99c34 istacmapactive());
     eventparams[eventparams.size] = "canceled";
@@ -3551,19 +3551,19 @@ function function_1e008bf9d31b2b01(var_394466c2ddb208cb) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xa815
 // Size: 0x73
-function private function_49dc8767adf81886(var_394466c2ddb208cb, pingType, var_e5975945af891990) {
+function private function_49dc8767adf81886(var_394466c2ddb208cb, pingtype, var_e5975945af891990) {
     /#
         assert(var_394466c2ddb208cb < 10);
     #/
     /#
-        assert(isdefined(pingType));
+        assert(isdefined(pingtype));
     #/
     var_93a0836a10e99c34 = self;
     var_93a0836a10e99c34 function_6a9d273f570c2d97(var_394466c2ddb208cb, 1, "clear_single", 0);
     function_ec3fedcb7195cfd7(var_93a0836a10e99c34, var_394466c2ddb208cb);
     var_93a0836a10e99c34 notify("predictiveCalloutClear_" + var_394466c2ddb208cb);
     if (!var_e5975945af891990) {
-        var_93a0836a10e99c34 thread calloutmarkerpingvo_playpredictivepingcleared(undefined, pingType);
+        var_93a0836a10e99c34 thread calloutmarkerpingvo_playpredictivepingcleared(undefined, pingtype);
     }
 }
 
@@ -3673,17 +3673,17 @@ function function_5991bc039b1244ec(player) {
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xab18
 // Size: 0xbb
-function private function_f9a23942c0cd9461(var_93a0836a10e99c34, pingType) {
+function private function_f9a23942c0cd9461(var_93a0836a10e99c34, pingtype) {
     if (!issharedfuncdefined("teamAssim", "isEnabled") || !issharedfuncdefined("teamAssim", "resolveAssimRequest") || !issharedfuncdefined("teamAssim", "requestNearbyTeamChange") || !issharedfuncdefined("teamAssim", "isWaitingForAssimResponse")) {
         return;
     }
     if (![[ getsharedfunc("teamAssim", "isEnabled") ]]()) {
         return;
     }
-    if (function_476d89b12dfe07a1(pingType)) {
-        [[ getsharedfunc("teamAssim", "requestNearbyTeamChange") ]](var_93a0836a10e99c34, pingType == 13);
+    if (function_476d89b12dfe07a1(pingtype)) {
+        [[ getsharedfunc("teamAssim", "requestNearbyTeamChange") ]](var_93a0836a10e99c34, pingtype == 13);
     }
-    if (function_caef0e7e004e5475(pingType)) {
+    if (function_caef0e7e004e5475(pingtype)) {
         [[ getsharedfunc("teamAssim", "requestLeaveTeam") ]](var_93a0836a10e99c34);
     }
 }
@@ -4097,9 +4097,9 @@ function private function_ec3fedcb7195cfd7(var_93a0836a10e99c34, var_394466c2ddb
 // Checksum 0x0, Offset: 0xba82
 // Size: 0x9e
 function private function_b6cb97b6f81f0fd2(var_93a0836a10e99c34, var_394466c2ddb208cb) {
-    pingType = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
+    pingtype = var_93a0836a10e99c34 calloutmarkerping_gettype(var_394466c2ddb208cb);
     target = undefined;
-    if (function_c648f0fd527e089a(pingType) || function_d3789a9a4be5df2e(pingType)) {
+    if (function_c648f0fd527e089a(pingtype) || function_d3789a9a4be5df2e(pingtype)) {
         target = var_93a0836a10e99c34 calloutmarkerping_getent(var_394466c2ddb208cb);
     }
     if (isdefined(target) && isdefined(target.entity)) {
@@ -4159,12 +4159,12 @@ function private function_6641a5b759148e1b() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbcd1
 // Size: 0x290
-function function_ce5c3314571d6a29(var_394466c2ddb208cb, pingType, scriptable) {
+function function_ce5c3314571d6a29(var_394466c2ddb208cb, pingtype, scriptable) {
     player = self;
-    if (pingType == 21) {
+    if (pingtype == 21) {
         waittime = getdvarfloat(@"hash_95248e22b4b46e33", 120);
-    } else if (function_c648f0fd527e089a(pingType)) {
-        if (pingType == 23) {
+    } else if (function_c648f0fd527e089a(pingtype)) {
+        if (pingtype == 23) {
             waittime = getdvarfloat(@"hash_cce27a6c00a3b750", 120);
         } else {
             waittime = getdvarfloat(@"hash_e6261a609ec4112a", 30);
@@ -4172,14 +4172,14 @@ function function_ce5c3314571d6a29(var_394466c2ddb208cb, pingType, scriptable) {
         if (isdefined(scriptable) && isdefined(scriptable.type) && scriptable.type == "br_plunder_box" || scriptable.type == "dmz_supply_drop" || scriptable.type == "dmz_supply_drop_boss" || scriptable.type == "dmz_supply_drop_samsite" || scriptable.type == "dmz_supply_drop_supply") {
             waittime = getdvarfloat(@"hash_cce27a6c00a3b750", 120);
         }
-    } else if (function_5dacc89a40a58737(pingType)) {
+    } else if (function_5dacc89a40a58737(pingtype)) {
         waittime = 3;
-    } else if (function_d3789a9a4be5df2e(pingType)) {
+    } else if (function_d3789a9a4be5df2e(pingtype)) {
         waittime = getdvarfloat(@"hash_be114e61e75d4839", 60);
-    } else if (function_87df78670540e9b2(pingType)) {
+    } else if (function_87df78670540e9b2(pingtype)) {
         waittime = getdvarfloat(@"hash_9cdd2e8a0a819ed2", 120);
     } else {
-        switch (pingType) {
+        switch (pingtype) {
         case 3:
             waittime = getdvarfloat(@"hash_5f52828b2ccf6cbd", 15);
             break;
@@ -4201,7 +4201,7 @@ function function_ce5c3314571d6a29(var_394466c2ddb208cb, pingType, scriptable) {
             break;
         default:
             /#
-                assertmsg("CalloutMarkerPing: " + "need a proper type for death timeouts! Can't use: " + pingType);
+                assertmsg("CalloutMarkerPing: " + "need a proper type for death timeouts! Can't use: " + pingtype);
             #/
             waittime = 2;
             break;

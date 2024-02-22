@@ -238,8 +238,8 @@ function function_d05f47d864f18196(owner, pos, angles, var_4fffc035c8679b98, var
         heli.var_1e897ae1c018b2c2 = owner.team;
     }
     heli.var_878914b0358bc7b5 = [];
-    heli.onStartRiding = &function_1e04f8a9053512a4;
-    heli.onEndRiding = &function_6519494290b58824;
+    heli.onstartriding = &function_1e04f8a9053512a4;
+    heli.onendriding = &function_6519494290b58824;
     heli.var_c547488f80d3eb28 = 1;
     heli.unload_land_offset = 255;
     heli.script_disconnectpaths = 1;
@@ -625,7 +625,7 @@ function function_d1478474b036b87f(ent, part, state, player, waittime, var_4fffc
         if (!isdefined(player)) {
             continue;
         }
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             player namespace_d3d40f75bb4e4c32::function_c2afa687bc871d71(1);
         }
         heli.var_9ab1b62a59f15de7[heli.var_9ab1b62a59f15de7.size] = player;

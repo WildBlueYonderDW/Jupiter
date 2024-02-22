@@ -90,11 +90,11 @@ function initheli() {
 // Checksum 0x0, Offset: 0x2174
 // Size: 0x324
 function initcratedata() {
-    levelData = spawnstruct();
-    levelData.configs = [];
-    levelData.crates = [];
-    levelData.usablecrates = [];
-    level.cratedata = levelData;
+    leveldata = spawnstruct();
+    leveldata.configs = [];
+    leveldata.crates = [];
+    leveldata.usablecrates = [];
+    level.cratedata = leveldata;
     level.cratedata.unresolvedcollisiontolerancesqr = pow(getdvarfloat(@"hash_a0cbf9e8d23fb12c", 2), 2);
     /#
         var_8f3ab761a14ddcdb = getentarray("airdrop_use", "entity");
@@ -193,12 +193,12 @@ function getleveldata(cratetype) {
     /#
         assertex(isdefined(level.cratedata), "getLevelData() called before initCrateData().");
     #/
-    levelData = level.cratedata.configs[cratetype];
-    if (!isdefined(levelData)) {
-        levelData = getemptyleveldata();
-        level.cratedata.configs[cratetype] = levelData;
+    leveldata = level.cratedata.configs[cratetype];
+    if (!isdefined(leveldata)) {
+        leveldata = getemptyleveldata();
+        level.cratedata.configs[cratetype] = leveldata;
     }
-    return levelData;
+    return leveldata;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -206,50 +206,50 @@ function getleveldata(cratetype) {
 // Checksum 0x0, Offset: 0x2589
 // Size: 0x27a
 function getemptyleveldata() {
-    levelData = spawnstruct();
-    levelData.basemodel = "military_carepackage_03_mp";
-    levelData.halfheight = 27.5;
-    levelData.mountmantlemodel = getdefaultmountmantlemodel();
-    levelData.objweapon = nullweapon();
-    levelData.timeout = 90;
-    levelData.headiconoffset = 0;
-    levelData.headicondrawrange = 10000;
-    levelData.headiconnaturalrange = 400;
-    levelData.minimapicon = "hud_icon_minimap_killstreak_carepackage";
-    levelData.usetag = "tag_use";
+    leveldata = spawnstruct();
+    leveldata.basemodel = "military_carepackage_03_mp";
+    leveldata.halfheight = 27.5;
+    leveldata.mountmantlemodel = getdefaultmountmantlemodel();
+    leveldata.objweapon = nullweapon();
+    leveldata.timeout = 90;
+    leveldata.headiconoffset = 0;
+    leveldata.headicondrawrange = 10000;
+    leveldata.headiconnaturalrange = 400;
+    leveldata.minimapicon = "hud_icon_minimap_killstreak_carepackage";
+    leveldata.usetag = "tag_use";
     if (iscp()) {
-        levelData.usetag = "j_military_loot_crate_ui_01_lid";
+        leveldata.usetag = "j_military_loot_crate_ui_01_lid";
     }
-    levelData.userange = 128;
-    levelData.breakuserangesqr = 30625;
-    levelData.usefov = 360;
-    levelData.usepriority = 0;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 3;
-    levelData.friendlyuseonly = 0;
-    levelData.navobstaclebounds = (30, 10, 64);
-    levelData.navobstacleupdatedistsqr = 64;
-    levelData.dangerzoneheight = 1000;
-    levelData.dangerzoneradius = 128;
-    levelData.activatecallback = undefined;
-    levelData.deactivatecallback = undefined;
-    levelData.capturecallback = undefined;
-    levelData.rerollcallback = undefined;
-    levelData.destroycallback = undefined;
-    levelData.destroyoncapture = 1;
-    levelData.onecaptureperplayer = 0;
-    levelData.hasnointeraction = 0;
-    levelData.destroyvisualscallback = getdefaultdestroyvisualscallback();
-    levelData.destroyvisualsdeletiondelay = getdefaultdestroyvisualsdeletiondelay();
-    levelData.capturevisualscallback = getdefaultcapturevisualscallback();
-    levelData.capturevisualsdeletiondelay = getdefaultcapturevisualsdeletiondelay();
-    levelData.capturestring = "KILLSTREAKS_HINTS/CRATE_PICKUP";
-    levelData.rerollstring = "KILLSTREAKS_HINTS/UAV_REROLL";
-    levelData.headicon = "hud_icon_minimap_killstreak_carepackage";
-    levelData.supportsreroll = 0;
-    levelData.supportsownercapture = 1;
-    levelData.supportsothercapture = 1;
-    return levelData;
+    leveldata.userange = 128;
+    leveldata.breakuserangesqr = 30625;
+    leveldata.usefov = 360;
+    leveldata.usepriority = 0;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 3;
+    leveldata.friendlyuseonly = 0;
+    leveldata.navobstaclebounds = (30, 10, 64);
+    leveldata.navobstacleupdatedistsqr = 64;
+    leveldata.dangerzoneheight = 1000;
+    leveldata.dangerzoneradius = 128;
+    leveldata.activatecallback = undefined;
+    leveldata.deactivatecallback = undefined;
+    leveldata.capturecallback = undefined;
+    leveldata.rerollcallback = undefined;
+    leveldata.destroycallback = undefined;
+    leveldata.destroyoncapture = 1;
+    leveldata.onecaptureperplayer = 0;
+    leveldata.hasnointeraction = 0;
+    leveldata.destroyvisualscallback = getdefaultdestroyvisualscallback();
+    leveldata.destroyvisualsdeletiondelay = getdefaultdestroyvisualsdeletiondelay();
+    leveldata.capturevisualscallback = getdefaultcapturevisualscallback();
+    leveldata.capturevisualsdeletiondelay = getdefaultcapturevisualsdeletiondelay();
+    leveldata.capturestring = "KILLSTREAKS_HINTS/CRATE_PICKUP";
+    leveldata.rerollstring = "KILLSTREAKS_HINTS/UAV_REROLL";
+    leveldata.headicon = "hud_icon_minimap_killstreak_carepackage";
+    leveldata.supportsreroll = 0;
+    leveldata.supportsownercapture = 1;
+    leveldata.supportsothercapture = 1;
+    return leveldata;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -268,13 +268,13 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
     /#
         assertex(hasleveldata(cratetype), "createCrate() called with an invalid crateType.");
     #/
-    levelData = getleveldata(cratetype);
-    if (levelData.supportsownercapture) {
+    leveldata = getleveldata(cratetype);
+    if (leveldata.supportsownercapture) {
         /#
             assertex(isdefined(owner), "createCrate() specifies ownerCapture but has no owner.");
         #/
     }
-    if (levelData.supportsreroll) {
+    if (leveldata.supportsreroll) {
         /#
             assertex(isdefined(owner), "createCrate() specifies supportsReroll but has no owner (only owners can reroll).");
         #/
@@ -297,7 +297,7 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
     }
     crate.owner = owner;
     crate.team = team;
-    crate.objweapon = levelData.objweapon;
+    crate.objweapon = leveldata.objweapon;
     crate.cratetype = cratetype;
     crate.useobject = undefined;
     crate.navobstacle = undefined;
@@ -315,15 +315,15 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
     crate.data = data;
     crate.skipminimapicon = skipminimapicon;
     crate.inwater = 0;
-    crate.var_28eb33ffd1aa3e63 = levelData.var_28eb33ffd1aa3e63;
-    crate.headicon = levelData.headicon;
-    crate.minimapicon = levelData.minimapicon;
-    crate.capturestring = levelData.capturestring;
-    crate.rerollstring = levelData.rerollstring;
-    crate.supportsreroll = levelData.supportsreroll;
-    crate.isteamonlycrate = levelData.isteamonlycrate;
-    crate.var_c23ca3472233553d = levelData.var_c23ca3472233553d;
-    crate.basemodel = levelData.basemodel;
+    crate.var_28eb33ffd1aa3e63 = leveldata.var_28eb33ffd1aa3e63;
+    crate.headicon = leveldata.headicon;
+    crate.minimapicon = leveldata.minimapicon;
+    crate.capturestring = leveldata.capturestring;
+    crate.rerollstring = leveldata.rerollstring;
+    crate.supportsreroll = leveldata.supportsreroll;
+    crate.isteamonlycrate = leveldata.isteamonlycrate;
+    crate.var_c23ca3472233553d = leveldata.var_c23ca3472233553d;
+    crate.basemodel = leveldata.basemodel;
     if (isdefined(data) && isdefined(data.var_4191ace1612a5376)) {
         crate.basemodel = data.var_4191ace1612a5376;
     }
@@ -403,9 +403,9 @@ function activatecrate(isfirstactivation) {
     }
     _createheadicon();
     makecrateusable();
-    levelData = getleveldata(self.cratetype);
-    if (isdefined(levelData.activatecallback)) {
-        self thread [[ levelData.activatecallback ]](isfirstactivation);
+    leveldata = getleveldata(self.cratetype);
+    if (isdefined(leveldata.activatecallback)) {
+        self thread [[ leveldata.activatecallback ]](isfirstactivation);
     }
 }
 
@@ -419,9 +419,9 @@ function deactivatecrate(var_4f1920bd33a0dba9) {
     }
     _destroyheadicon();
     makecrateunusable();
-    levelData = getleveldata(self.cratetype);
-    if (isdefined(levelData.deactivatecallback)) {
-        self thread [[ levelData.deactivatecallback ]](var_4f1920bd33a0dba9);
+    leveldata = getleveldata(self.cratetype);
+    if (isdefined(leveldata.deactivatecallback)) {
+        self thread [[ leveldata.deactivatecallback ]](var_4f1920bd33a0dba9);
     }
 }
 
@@ -430,13 +430,13 @@ function deactivatecrate(var_4f1920bd33a0dba9) {
 // Checksum 0x0, Offset: 0x2ed7
 // Size: 0x1a5
 function capturecrate(player) {
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     var_45c6df348e1551b3 = isdefined(self.owner);
     if (var_45c6df348e1551b3 && istrue(self.owner.isffprotectedaction)) {
         self.owner.isffprotectedaction = 0;
     }
-    if (isdefined(levelData.capturecallback)) {
-        self thread [[ levelData.capturecallback ]](player);
+    if (isdefined(leveldata.capturecallback)) {
+        self thread [[ leveldata.capturecallback ]](player);
     }
     if (!istrue(self.var_b6a2fe13fb4e746a) && istrue(player.var_9ee2c87e0747c021)) {
         var_ee3ccf749502a23 = level.sharedfuncs[#"perk"][#"hash_5e75be22dd250b68"];
@@ -450,11 +450,11 @@ function capturecrate(player) {
             self thread [[ detonatefunc ]]();
         }
         thread deletecrate(isdefined(self.var_278a47ee942fd1b0) ? 2.5 : self.var_278a47ee942fd1b0);
-    } else if (levelData.destroyoncapture) {
+    } else if (leveldata.destroyoncapture) {
         var_cbf7be4f62a0ddb2 = 0;
-        if (isdefined(levelData.capturevisualscallback)) {
-            self thread [[ levelData.capturevisualscallback ]](self);
-            var_cbf7be4f62a0ddb2 = levelData.capturevisualsdeletiondelay;
+        if (isdefined(leveldata.capturevisualscallback)) {
+            self thread [[ leveldata.capturevisualscallback ]](self);
+            var_cbf7be4f62a0ddb2 = leveldata.capturevisualsdeletiondelay;
         }
         thread deletecrate(var_cbf7be4f62a0ddb2);
     }
@@ -491,26 +491,26 @@ function destroycrate(immediate) {
         }
     }
     self.destroyonactivate = undefined;
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     if (isdefined(level.br_pickups) && isdefined(level.br_pickups.crates) && array_contains(level.br_pickups.crates, self)) {
         level.br_pickups.crates = array_remove(level.br_pickups.crates, self);
     }
     if (isdefined(self.owner) && istrue(self.owner.isffprotectedaction)) {
         self.owner.isffprotectedaction = 0;
     }
-    if (isdefined(levelData.destroycallback)) {
-        self thread [[ levelData.destroycallback ]](immediate);
+    if (isdefined(leveldata.destroycallback)) {
+        self thread [[ leveldata.destroycallback ]](immediate);
     }
     if (!istrue(immediate)) {
         var_cbf7be4f62a0ddb2 = undefined;
         if (!istrue(self.physicsactivated) || !istrue(self.physicssettled)) {
-            if (isdefined(levelData.destroyvisualscallback)) {
-                self thread [[ levelData.destroyvisualscallback ]](self);
-                var_cbf7be4f62a0ddb2 = levelData.destroyvisualsdeletiondelay;
+            if (isdefined(leveldata.destroyvisualscallback)) {
+                self thread [[ leveldata.destroyvisualscallback ]](self);
+                var_cbf7be4f62a0ddb2 = leveldata.destroyvisualsdeletiondelay;
             }
-        } else if (isdefined(levelData.capturevisualscallback)) {
-            self thread [[ levelData.capturevisualscallback ]](self);
-            var_cbf7be4f62a0ddb2 = levelData.capturevisualsdeletiondelay;
+        } else if (isdefined(leveldata.capturevisualscallback)) {
+            self thread [[ leveldata.capturevisualscallback ]](self);
+            var_cbf7be4f62a0ddb2 = leveldata.capturevisualsdeletiondelay;
         }
         thread deletecrate(var_cbf7be4f62a0ddb2);
     } else {
@@ -578,19 +578,19 @@ function deletecrateimmediate() {
 // Size: 0xa2
 function watchcratedestroyearly() {
     self endon("death");
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     /#
         var_27c432c46e32be45 = getdvarint(@"hash_2c01d701bac5d9d3", 0);
         if (var_27c432c46e32be45) {
-            levelData.timeout = undefined;
+            leveldata.timeout = undefined;
         }
     #/
-    if (isdefined(levelData.timeout)) {
+    if (isdefined(leveldata.timeout)) {
         /#
-            assert(levelData.timeout > 0, "watchCrateDestroyEarly called with a timeOut value of 0.");
+            assert(leveldata.timeout > 0, "watchCrateDestroyEarly called with a timeOut value of 0.");
         #/
     }
-    watchcratedestroyearlyinternal(levelData.timeout);
+    watchcratedestroyearlyinternal(leveldata.timeout);
     if (istrue(self.nevertimeout)) {
         return;
     }
@@ -670,16 +670,16 @@ function destroycrateinbadtrigger() {
 // Checksum 0x0, Offset: 0x385d
 // Size: 0xfb
 function initcratedropdata() {
-    levelData = spawnstruct();
-    levelData.helis = [];
+    leveldata = spawnstruct();
+    leveldata.helis = [];
     var_d8d1344707480943 = namespace_9abe40d2af041eb2::getkillstreakairstrikeheightent();
     if (isdefined(var_d8d1344707480943)) {
-        levelData.heliheight = var_d8d1344707480943.origin[2] - 750;
+        leveldata.heliheight = var_d8d1344707480943.origin[2] - 750;
     } else {
-        levelData.heliheight = 2000;
+        leveldata.heliheight = 2000;
     }
-    levelData.heliheightoffset = 128;
-    level.cratedropdata = levelData;
+    leveldata.heliheightoffset = 128;
+    level.cratedropdata = leveldata;
     initscriptedhelidropdata();
     if (isdefined(level.var_fc8ea831d44aeff6) && !getdvarint(@"hash_d400e64d176da3a4", 0)) {
         foreach (var_9590b22e3d9c08a3 in level.var_fc8ea831d44aeff6) {
@@ -1083,16 +1083,16 @@ function watchdropcratefromscriptedheliinternal() {
             }
             firstframe = 0;
         } else {
-            var_3a8cac6c1d60003c = istrue(self.ownerdisconnected) || istrue(self.ownerjoinedteam);
+            disowned = istrue(self.ownerdisconnected) || istrue(self.ownerjoinedteam);
             if (isdefined(self.heli)) {
-                if (var_3a8cac6c1d60003c || gettime() > self.heliendtime) {
+                if (disowned || gettime() > self.heliendtime) {
                     self.heli destroyheli();
                 }
             }
             foreach (crate in self.crates) {
                 if (isdefined(crate)) {
                     if (gettime() > crate.animendtime || isdefined(self.owner) && istrue(self.owner.var_65219c911f198c95)) {
-                        if (var_3a8cac6c1d60003c) {
+                        if (disowned) {
                             crate thread destroycrate();
                         }
                         thread docratedropfromscripted(crate);
@@ -1102,10 +1102,10 @@ function watchdropcratefromscriptedheliinternal() {
                         } else {
                             crate setscriptablepartstate(#"trail", #"active", 1);
                         }
-                        if (var_3a8cac6c1d60003c) {
+                        if (disowned) {
                             crate thread destroycrate();
                         }
-                    } else if (var_3a8cac6c1d60003c) {
+                    } else if (disowned) {
                         crate thread destroycrate();
                     } else if (!isdefined(self.heli) || istrue(self.heli.isdestroyed)) {
                         thread docratedropfromscripted(crate);
@@ -1328,7 +1328,7 @@ function private function_763c331f22e7499e(data) {
     modifieddamage = data.damage;
     if (istrue(level.var_be6a42242be00b66)) {
         bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["airdrop"];
-        modifieddamage = function_c204e7f8a2ab087f(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
+        modifieddamage = getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
         modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, meansofdeath, modifieddamage, self.maxhealth, 1, 1, 1);
     }
@@ -1439,23 +1439,23 @@ function removehelidroppingcratefromlist(entnum) {
 // Checksum 0x0, Offset: 0x5b70
 // Size: 0x17e
 function makecrateusable() {
-    levelData = getleveldata(self.cratetype);
-    if (istrue(levelData.hasnointeraction)) {
+    leveldata = getleveldata(self.cratetype);
+    if (istrue(leveldata.hasnointeraction)) {
         return;
     }
     level.cratedata.usablecrates[self getentitynumber()] = self;
     self.isusable = 1;
     /#
-        assertex(levelData.supportsownercapture || levelData.supportsothercapture, "makeCrateUsable called on a crate that does not support owner capture OR other capture.");
+        assertex(leveldata.supportsownercapture || leveldata.supportsothercapture, "makeCrateUsable called on a crate that does not support owner capture OR other capture.");
     #/
-    if (levelData.supportsownercapture && levelData.supportsothercapture) {
+    if (leveldata.supportsownercapture && leveldata.supportsothercapture) {
         thread watchcrateuse(1);
         useobject = self.useobject;
         if (!isdefined(useobject)) {
             if (isdefined(self.model)) {
-                usetag = function_fed3925eb5331836(self.model, levelData.usetag) ? levelData.usetag : "tag_origin";
+                usetag = function_fed3925eb5331836(self.model, leveldata.usetag) ? leveldata.usetag : "tag_origin";
             } else {
-                usetag = levelData.usetag;
+                usetag = leveldata.usetag;
             }
             useobject = spawn("script_model", self gettagorigin(usetag));
             useobject setmodel("tag_origin");
@@ -1464,7 +1464,7 @@ function makecrateusable() {
             self.useobject = useobject;
         }
         thread watchcrateuse(2, useobject);
-    } else if (levelData.supportsownercapture) {
+    } else if (leveldata.supportsownercapture) {
         thread watchcrateuse(1);
     } else {
         thread watchcrateuse(2);
@@ -1487,7 +1487,7 @@ function watchcrateuse(usetype, useobject) {
         self.owner endon("joined_spectators");
         self.owner.isffprotectedaction = 1;
     }
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     var_ef5d5141fdb51174 = gettriggerobject(useobject);
     var_ef5d5141fdb51174.usetype = usetype;
     var_ef5d5141fdb51174.userate = 1;
@@ -1495,7 +1495,7 @@ function watchcrateuse(usetype, useobject) {
     if (isdefined(var_ef5d5141fdb51174.usetimeoverride)) {
         var_ef5d5141fdb51174.usetime = var_ef5d5141fdb51174.usetimeoverride;
     } else {
-        var_ef5d5141fdb51174.usetime = ter_op(usetype == 1, levelData.ownerusetime, levelData.otherusetime);
+        var_ef5d5141fdb51174.usetime = ter_op(usetype == 1, leveldata.ownerusetime, leveldata.otherusetime);
     }
     var_ef5d5141fdb51174.inuse = 0;
     var_ef5d5141fdb51174.playerusing = undefined;
@@ -1544,7 +1544,7 @@ function watchcrateuse(usetype, useobject) {
                 if (isdefined(player)) {
                     player.isffprotectedaction = 0;
                 }
-                if (levelData.onecaptureperplayer && self.cratetype != "battle_royale_loadout") {
+                if (leveldata.onecaptureperplayer && self.cratetype != "battle_royale_loadout") {
                     if (getdvarint(@"hash_618b9c003b5b3883") == 0) {
                         if (!isdefined(self.playerscaptured)) {
                             self.playerscaptured = [];
@@ -1653,7 +1653,7 @@ function startusingcrate(player, useobject) {
         self.playersusing = array_add(self.playersusing, player);
     }
     var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     if (istrue(player.isjuggernaut)) {
         if (issharedfuncdefined("airdrop", "allowActionSet")) {
             player [[ getsharedfunc("airdrop", "allowActionSet") ]]("juggCrateUse", 0);
@@ -1715,7 +1715,7 @@ function stopusingcrate(player, useobject) {
         self.playersusing = array_remove(self.playersusing, player);
     }
     var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     if (istrue(player.isjuggernaut)) {
         if (issharedfuncdefined("airdrop", "allowActionSet")) {
             player [[ getsharedfunc("airdrop", "allowActionSet") ]]("juggCrateUse", 1);
@@ -1779,7 +1779,7 @@ function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
     if (var_c83f8b96968afe72) {
         return canstartusingcratetriggerobject(player, useobject);
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && player isskydiving()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && player isskydiving()) {
         return 0;
     }
     if (istrue(player.inlaststand)) {
@@ -1804,8 +1804,8 @@ function canstartusingcratetriggerobject(player, useobject) {
         return 0;
     }
     if (level.teambased && isdefined(self.team) && self.team != "neutral") {
-        levelData = getleveldata(self.cratetype);
-        if (levelData.friendlyuseonly && player.team != self.team) {
+        leveldata = getleveldata(self.cratetype);
+        if (leveldata.friendlyuseonly && player.team != self.team) {
             return 0;
         }
     }
@@ -1832,8 +1832,8 @@ function cankeepusingcrate(player, useobject) {
     if (istrue(player.inlaststand)) {
         return 0;
     }
-    levelData = getleveldata(self.cratetype);
-    if (isdefined(levelData.breakuserangesqr) && distancesquared(player.origin, gettriggerobject(useobject).origin) >= levelData.breakuserangesqr) {
+    leveldata = getleveldata(self.cratetype);
+    if (isdefined(leveldata.breakuserangesqr) && distancesquared(player.origin, gettriggerobject(useobject).origin) >= leveldata.breakuserangesqr) {
         return 0;
     }
     if (!self.isusable) {
@@ -1884,7 +1884,7 @@ function makecrateusableforplayer(crate, player) {
 // Checksum 0x0, Offset: 0x6c09
 // Size: 0x12b
 function function_b21dea8dc3360508(var_ef5d5141fdb51174, crate) {
-    levelData = getleveldata(crate.cratetype);
+    leveldata = getleveldata(crate.cratetype);
     if (!iscp()) {
         var_ef5d5141fdb51174 setcursorhint("HINT_NOICON");
         var_ef5d5141fdb51174 sethintonobstruction("show");
@@ -1892,12 +1892,12 @@ function function_b21dea8dc3360508(var_ef5d5141fdb51174, crate) {
         var_ef5d5141fdb51174 setcursorhint("HINT_BUTTON");
         var_ef5d5141fdb51174 sethintonobstruction("hide");
     }
-    var_ef5d5141fdb51174 sethinttag(levelData.usetag);
-    var_ef5d5141fdb51174 sethintdisplayrange(levelData.userange);
-    var_ef5d5141fdb51174 sethintdisplayfov(levelData.usefov);
-    var_ef5d5141fdb51174 setuserange(levelData.userange);
-    var_ef5d5141fdb51174 setusefov(levelData.usefov);
-    var_ef5d5141fdb51174 setusepriority(levelData.usepriority);
+    var_ef5d5141fdb51174 sethinttag(leveldata.usetag);
+    var_ef5d5141fdb51174 sethintdisplayrange(leveldata.userange);
+    var_ef5d5141fdb51174 sethintdisplayfov(leveldata.usefov);
+    var_ef5d5141fdb51174 setuserange(leveldata.userange);
+    var_ef5d5141fdb51174 setusefov(leveldata.usefov);
+    var_ef5d5141fdb51174 setusepriority(leveldata.usepriority);
     var_ef5d5141fdb51174 setuseholdduration("duration_none");
     if (var_ef5d5141fdb51174.usetype == 1 && crate.supportsreroll) {
         var_ef5d5141fdb51174 sethintstring(crate.rerollstring);
@@ -1933,8 +1933,8 @@ function watchallcrateusability() {
             playerlist = level.players;
             if (istrue(var_36afca263bbc6fbc)) {
                 if (level.teambased && isdefined(crate.team) && crate.team != "neutral") {
-                    levelData = getleveldata(crate.cratetype);
-                    if (levelData.friendlyuseonly) {
+                    leveldata = getleveldata(crate.cratetype);
+                    if (leveldata.friendlyuseonly) {
                         playerlist = level.teamdata[crate.team]["alivePlayers"];
                     }
                 }
@@ -1998,9 +1998,9 @@ function gettriggerobject(useobject) {
 // Checksum 0x0, Offset: 0x7051
 // Size: 0x181
 function cratephysicson(contactpoint, force) {
-    levelData = getleveldata(self.cratetype);
-    if (isdefined(levelData.cratephysicsoncallback)) {
-        self thread [[ levelData.cratephysicsoncallback ]]();
+    leveldata = getleveldata(self.cratetype);
+    if (isdefined(leveldata.cratephysicsoncallback)) {
+        self thread [[ leveldata.cratephysicsoncallback ]]();
     }
     if (!isdefined(contactpoint)) {
         contactpoint = (0, 0, 0);
@@ -2295,7 +2295,7 @@ function monitorimpactinternal(delay) {
                         var_62ccfb7ea15a4520 = ent namespace_1f188a13f7e79610::function_62ccfb7ea15a4520();
                         if (!var_62ccfb7ea15a4520 && !istrue(ent.var_a2ba7043631b3392)) {
                             ent.var_a8f4bb03b366aa80 = 1;
-                            ent namespace_1f188a13f7e79610::function_ab08028468ab68f9();
+                            ent namespace_1f188a13f7e79610::vehicle_explode();
                         }
                     }
                 } else if (ent.classname == "scriptable_iw8_chicken_01") {
@@ -2358,7 +2358,7 @@ function checklinktotraininternal(ent) {
     self endon("death");
     self endon("cancel_link_to_train");
     ent endon("death");
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     contents = create_contents(0, 1, 0, 0, 0, 1, 1, 0, 0);
     ignorelist = [0:self];
     foreach (linkedent in self getlinkedchildren(1)) {
@@ -2367,7 +2367,7 @@ function checklinktotraininternal(ent) {
     self.traintracefails = 0;
     self.traintracesuccesses = 0;
     while (self.traintracefails < 20) {
-        caststart = self.origin + anglestoup(self.angles) * levelData.halfheight;
+        caststart = self.origin + anglestoup(self.angles) * leveldata.halfheight;
         castend = caststart + (0, 0, -200);
         traceresult = namespace_2a184fc4902783dc::ray_trace(caststart, castend, ignorelist, contents);
         if (traceresult.size > 0 && isdefined(traceresult["entity"]) && namespace_9db09f982acd35b4::is_train_ent(traceresult["entity"])) {
@@ -2484,8 +2484,8 @@ function monitorplayerimpact() {
             playerposition = undefined;
             if (player tagexists("j_mainroot")) {
                 playerposition = player gettagorigin("j_mainroot");
-                levelData = getleveldata(self.cratetype);
-                midpoint = self.origin + anglestoup(self.angles) * levelData.halfheight;
+                leveldata = getleveldata(self.cratetype);
+                midpoint = self.origin + anglestoup(self.angles) * leveldata.halfheight;
                 var_2da284613791696f = playerposition[2] <= midpoint[2];
             }
             if (var_c421c5c1222e83f4 && var_2da284613791696f) {
@@ -2540,15 +2540,15 @@ function createdangerzone() {
         return;
     }
     destroydangerzone();
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     dangerzoneid = undefined;
     if (isdefined(self.markerposition)) {
         if (isdefined(self.owner) && isdefined(self.team)) {
-            dangerzoneid = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](self.markerposition, levelData.dangerzoneradius, levelData.dangerzoneheight, self.team, 30, self.owner, 1);
+            dangerzoneid = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](self.markerposition, leveldata.dangerzoneradius, leveldata.dangerzoneheight, self.team, 30, self.owner, 1);
         } else if (isdefined(self.team)) {
-            dangerzoneid = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](self.markerposition, levelData.dangerzoneradius, levelData.dangerzoneheight, self.team, 30);
+            dangerzoneid = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](self.markerposition, leveldata.dangerzoneradius, leveldata.dangerzoneheight, self.team, 30);
         } else {
-            dangerzoneid = spawnuniversaldangerzone(self.markerposition, levelData.dangerzoneradius, levelData.dangerzoneheight, 30);
+            dangerzoneid = spawnuniversaldangerzone(self.markerposition, leveldata.dangerzoneradius, leveldata.dangerzoneheight, 30);
         }
         /#
             thread namespace_f2ffc0540883e1ad::drawsphere(self.markerposition, 128, 30, (1, 0, 0));
@@ -2594,10 +2594,10 @@ function _createnavobstacle() {
     if (isdefined(self.navobstacleid)) {
         destroynavobstacle(self.navobstacleid);
     }
-    levelData = getleveldata(self.cratetype);
-    navobstacleid = createnavobstaclebybounds(self.origin, levelData.navobstaclebounds, self.angles);
+    leveldata = getleveldata(self.cratetype);
+    navobstacleid = createnavobstaclebybounds(self.origin, leveldata.navobstaclebounds, self.angles);
     self.navobstacleid = navobstacleid;
-    childthread _watchnavobstacle(navobstacleid, self.origin, levelData.navobstacleupdatedistsqr);
+    childthread _watchnavobstacle(navobstacleid, self.origin, leveldata.navobstacleupdatedistsqr);
     return navobstacleid;
 }
 
@@ -2630,8 +2630,8 @@ function _destroynavobstacle() {
 // Checksum 0x0, Offset: 0x8698
 // Size: 0x124
 function createmountmantlemodel() {
-    levelData = getleveldata(self.cratetype);
-    if (isdefined(levelData.mountmantlemodel)) {
+    leveldata = getleveldata(self.cratetype);
+    if (isdefined(leveldata.mountmantlemodel)) {
         if (isdefined(self.mountmantlemodel)) {
             self.mountmantlemodel delete();
         }
@@ -2668,12 +2668,12 @@ function destroymountmantlemodel() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87f4
 // Size: 0x108
-function crateunresolvedcollisioncallback(hitent, var_1ee51b0a59b58d1e) {
+function crateunresolvedcollisioncallback(hitent, penetration) {
     /#
         assertex(isdefined(level.cratedata), "crateUnresolvedCollisionCallback() called before initCrateData().");
     #/
     if (level.cratedata.unresolvedcollisiontolerancesqr > 0) {
-        if (lengthsquared(var_1ee51b0a59b58d1e) <= level.cratedata.unresolvedcollisiontolerancesqr) {
+        if (lengthsquared(penetration) <= level.cratedata.unresolvedcollisiontolerancesqr) {
             return;
         }
     }
@@ -2700,13 +2700,13 @@ function _createheadicon() {
         return;
     }
     namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.headiconid);
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     headiconid = undefined;
     if (isdefined(self.headicon)) {
         headiconoffset = function_c857ac89588adf6f();
         if (level.teambased && isdefined(self.team)) {
             if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-                headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(self.team, self.headicon, headiconoffset, 1, levelData.headicondrawrange, levelData.headiconnaturalrange, undefined, 1);
+                headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(self.team, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange, undefined, 1);
             }
             if (isdefined(headiconid)) {
                 if (issharedfuncdefined("game", "isMLGMatch")) {
@@ -2717,7 +2717,7 @@ function _createheadicon() {
             }
         } else if (isdefined(self.owner)) {
             if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-                headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(self.owner, self.headicon, headiconoffset, 1, levelData.headicondrawrange, levelData.headiconnaturalrange, undefined, 1);
+                headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(self.owner, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange, undefined, 1);
             }
             if (isdefined(headiconid)) {
                 if (issharedfuncdefined("game", "isMLGMatch")) {
@@ -2727,7 +2727,7 @@ function _createheadicon() {
                 }
             }
         } else if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-            headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(level.teamnamelist, self.headicon, headiconoffset, 1, levelData.headicondrawrange, levelData.headiconnaturalrange);
+            headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(level.teamnamelist, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange);
         }
     }
     self.headiconid = headiconid;
@@ -2767,7 +2767,7 @@ function function_3a065ce769b6ce3d() {
 // Size: 0x109
 function createminimapicon() {
     destroyminimapicon();
-    levelData = getleveldata(self.cratetype);
+    leveldata = getleveldata(self.cratetype);
     minimapid = undefined;
     if (isdefined(self.minimapicon) && !istrue(self.visibilitymanuallycontrolled)) {
         createfunc = undefined;
@@ -3218,16 +3218,16 @@ function initkillstreakcratedata() {
     level.cratedata.ksrerollstrings = [];
     activatecallback = &killstreakcrateactivatecallback;
     capturecallback = &killstreakcratecapturecallback;
-    levelData = getleveldata("killstreak");
-    levelData.activatecallback = activatecallback;
-    levelData.capturecallback = capturecallback;
+    leveldata = getleveldata("killstreak");
+    leveldata.activatecallback = activatecallback;
+    leveldata.capturecallback = capturecallback;
     if (namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e()) {
-        levelData.capturestring = "MP/BR_CRATE_LOADOUT";
+        leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     }
-    levelData = getleveldata("killstreak_no_owner");
-    levelData.activatecallback = activatecallback;
-    levelData.capturecallback = capturecallback;
-    levelData.supportsownercapture = 0;
+    leveldata = getleveldata("killstreak_no_owner");
+    leveldata.activatecallback = activatecallback;
+    leveldata.capturecallback = capturecallback;
+    leveldata.supportsownercapture = 0;
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["airdrop"];
     if (!isdefined(bundle) || !istrue(bundle.var_819ed648a31d2d61)) {
         addkillstreakcratedata("assault_drone", undefined, undefined, 300);
@@ -3269,13 +3269,13 @@ function initdropzonekillstreakcratedata() {
     level.cratedata.ksrerollstrings = [];
     activatecallback = &killstreakcrateactivatecallback;
     capturecallback = &killstreakcratecapturecallback;
-    levelData = getleveldata("killstreak");
-    levelData.activatecallback = activatecallback;
-    levelData.capturecallback = capturecallback;
-    levelData = getleveldata("killstreak_no_owner");
-    levelData.activatecallback = activatecallback;
-    levelData.capturecallback = capturecallback;
-    levelData.supportsownercapture = 0;
+    leveldata = getleveldata("killstreak");
+    leveldata.activatecallback = activatecallback;
+    leveldata.capturecallback = capturecallback;
+    leveldata = getleveldata("killstreak_no_owner");
+    leveldata.activatecallback = activatecallback;
+    leveldata.capturecallback = capturecallback;
+    leveldata.supportsownercapture = 0;
     addkillstreakcratedata("assault_drone", undefined, undefined, 300);
     addkillstreakcratedata("uav", undefined, undefined, 300);
     addkillstreakcratedata("cluster_spike", undefined, undefined, 300);
@@ -3297,7 +3297,7 @@ function initdropzonekillstreakcratedata() {
     addkillstreakcratedata("gunship", undefined, undefined, 25);
     addkillstreakcratedata("juggernaut", undefined, undefined, 10);
     if (namespace_36f464722d326bbe::function_2536e99eb6586f8f()) {
-        levelData.isteamonlycrate = 1;
+        leveldata.isteamonlycrate = 1;
     } else {
         addkillstreakcratedata("scrambler_drone_guard", undefined, undefined, 300);
     }
@@ -3908,15 +3908,15 @@ function airdropmarkertaken(streakinfo) {
 // Checksum 0x0, Offset: 0xb5ec
 // Size: 0x8b
 function initbattleroyalecratedata() {
-    levelData = getleveldata("battle_royale");
-    levelData.capturestring = "MP/BR_CRATE";
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = undefined;
-    levelData.activatecallback = &brcrateactivatecallback;
-    levelData.capturecallback = &brcratecapturecallback;
+    leveldata = getleveldata("battle_royale");
+    leveldata.capturestring = "MP/BR_CRATE";
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = undefined;
+    leveldata.activatecallback = &brcrateactivatecallback;
+    leveldata.capturecallback = &brcratecapturecallback;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -3986,25 +3986,25 @@ function dropbrcratefrommanualheli(position) {
 // Checksum 0x0, Offset: 0xb855
 // Size: 0x11f
 function initbattleroyaleloadoutcratedata() {
-    levelData = getleveldata("battle_royale_loadout");
-    levelData.capturestring = "MP/BR_CRATE_LOADOUT";
-    levelData.basemodel = "military_carepackage_01_br";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = undefined;
-    levelData.friendlyuseonly = 1;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.activatecallback = &brloadoutcrateactivatecallback;
-    levelData.capturecallback = &brloadoutcratecapturecallback;
-    levelData.destroycallback = &brloadoutcratedestroycallback;
-    levelData.destroyoncapture = 0;
-    levelData.onecaptureperplayer = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
-    levelData.var_c23ca3472233553d = 1;
+    leveldata = getleveldata("battle_royale_loadout");
+    leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
+    leveldata.basemodel = "military_carepackage_01_br";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = undefined;
+    leveldata.friendlyuseonly = 1;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.activatecallback = &brloadoutcrateactivatecallback;
+    leveldata.capturecallback = &brloadoutcratecapturecallback;
+    leveldata.destroycallback = &brloadoutcratedestroycallback;
+    leveldata.destroyoncapture = 0;
+    leveldata.onecaptureperplayer = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.var_c23ca3472233553d = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4136,24 +4136,24 @@ function dropbrloadoutcrate(team, position, destination) {
 // Checksum 0x0, Offset: 0xbe74
 // Size: 0x11f
 function function_c5c61b985836f974() {
-    levelData = getleveldata("loadout_drop");
-    levelData.capturestring = "MP/BR_CRATE_LOADOUT";
-    levelData.basemodel = "military_carepackage_01_loadout_mp";
-    levelData.supportsownercapture = 1;
-    levelData.headicon = "hud_icon_minimap_fieldupgrade_loadout_drop";
-    levelData.minimapicon = "hud_icon_minimap_fieldupgrade_loadout_drop";
-    levelData.usepriority = -1;
-    levelData.usefov = 360;
-    levelData.timeout = 60;
-    levelData.friendlyuseonly = 1;
-    levelData.var_c75f6dfe8df28b58 = 5;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.activatecallback = &function_22501284ac235158;
-    levelData.capturecallback = &function_a5d8804d96fe6a17;
-    levelData.destroyoncapture = 0;
-    levelData.onecaptureperplayer = 1;
-    levelData.isteamonlycrate = 1;
+    leveldata = getleveldata("loadout_drop");
+    leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
+    leveldata.basemodel = "military_carepackage_01_loadout_mp";
+    leveldata.supportsownercapture = 1;
+    leveldata.headicon = "hud_icon_minimap_fieldupgrade_loadout_drop";
+    leveldata.minimapicon = "hud_icon_minimap_fieldupgrade_loadout_drop";
+    leveldata.usepriority = -1;
+    leveldata.usefov = 360;
+    leveldata.timeout = 60;
+    leveldata.friendlyuseonly = 1;
+    leveldata.var_c75f6dfe8df28b58 = 5;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.activatecallback = &function_22501284ac235158;
+    leveldata.capturecallback = &function_a5d8804d96fe6a17;
+    leveldata.destroyoncapture = 0;
+    leveldata.onecaptureperplayer = 1;
+    leveldata.isteamonlycrate = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4187,8 +4187,8 @@ function function_d854bf5a8cd7daf2(player) {
         self.numuses = 0;
     }
     self.numuses++;
-    levelData = getleveldata(self.cratetype);
-    if (self.numuses >= levelData.var_c75f6dfe8df28b58) {
+    leveldata = getleveldata(self.cratetype);
+    if (self.numuses >= leveldata.var_c75f6dfe8df28b58) {
         thread destroycrate();
     }
 }
@@ -4218,29 +4218,29 @@ function function_63e71231fbc15aa9(owner, team, streakname, position, angles, de
 // Checksum 0x0, Offset: 0xc15e
 // Size: 0x14a
 function initbattleroyalec130airdropcratedata() {
-    levelData = getleveldata("battle_royale_c130_loot");
+    leveldata = getleveldata("battle_royale_c130_loot");
     if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "plunder") {
-        levelData.capturestring = "MP/DMZ_LOOT_CRATE_CAPTURE";
+        leveldata.capturestring = "MP/DMZ_LOOT_CRATE_CAPTURE";
     } else {
-        levelData.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
+        leveldata.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
     }
-    levelData.basemodel = "military_carepackage_03_br";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = 600;
-    levelData.friendlyuseonly = 1;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.activatecallback = &brc130airdropcrateactivatecallback;
-    levelData.capturecallback = &brc130airdropcratecapturecallback;
-    levelData.destroycallback = &brc130airdropcratedestroycallback;
-    levelData.cratephysicsoncallback = &brc130airdropcratephysicsoncallback;
-    levelData.destroyoncapture = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
-    levelData.var_c23ca3472233553d = 1;
+    leveldata.basemodel = "military_carepackage_03_br";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = 600;
+    leveldata.friendlyuseonly = 1;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.activatecallback = &brc130airdropcrateactivatecallback;
+    leveldata.capturecallback = &brc130airdropcratecapturecallback;
+    leveldata.destroycallback = &brc130airdropcratedestroycallback;
+    leveldata.cratephysicsoncallback = &brc130airdropcratephysicsoncallback;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.var_c23ca3472233553d = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4413,28 +4413,28 @@ function watchbrc130airdropchuteanimend(scenenode) {
 // Checksum 0x0, Offset: 0xc8c1
 // Size: 0x133
 function initbattleroyalelootchoppercratedata() {
-    levelData = getleveldata("battle_royale_chopper_loot");
+    leveldata = getleveldata("battle_royale_chopper_loot");
     if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
-        levelData.capturestring = "MP/BR_CRATE_LOADOUT";
+        leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     } else {
-        levelData.capturestring = "MP/DMZ_PLUNDER_CRATE_CAPTURE";
+        leveldata.capturestring = "MP/DMZ_PLUNDER_CRATE_CAPTURE";
     }
-    levelData.basemodel = "military_carepackage_03_br";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = 600;
-    levelData.friendlyuseonly = 1;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.var_c23ca3472233553d = 1;
-    levelData.activatecallback = &brlootchoppercrateactivatecallback;
-    levelData.capturecallback = &brlootchoppercratecapturecallback;
-    levelData.destroycallback = &brlootchoppercratedestroycallback;
-    levelData.destroyoncapture = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
+    leveldata.basemodel = "military_carepackage_03_br";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = 600;
+    leveldata.friendlyuseonly = 1;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.var_c23ca3472233553d = 1;
+    leveldata.activatecallback = &brlootchoppercrateactivatecallback;
+    leveldata.capturecallback = &brlootchoppercratecapturecallback;
+    leveldata.destroycallback = &brlootchoppercratedestroycallback;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4504,7 +4504,7 @@ function dropbrlootchoppercrateforpublicevent(position, destination) {
     crate = dropcrate(undefined, undefined, "battle_royale_chopper_loot", position, (0, randomfloat(360), 0), destination);
     if (isdefined(crate)) {
         crate.skipminimapicon = 1;
-        crate setscriptablepartstate(#"objective_map", #"hash_59b6189532f48cb2", 0);
+        crate setscriptablepartstate(#"objective_map", #"pe_chopper_crate", 0);
         crate.smokesignal = spawn("script_model", destination);
         crate.smokesignal setmodel("ks_airdrop_crate_br");
         crate.smokesignal setscriptablepartstate(#"smoke_signal", #"hash_681713bdddb46d8e", 0);
@@ -4517,23 +4517,23 @@ function dropbrlootchoppercrateforpublicevent(position, destination) {
 // Checksum 0x0, Offset: 0xccea
 // Size: 0x108
 function function_ddd270c88107faf9() {
-    levelData = getleveldata("battle_royale_elite_chopper");
-    levelData.capturestring = "MP/BR_CRATE_ELITE";
-    levelData.basemodel = "military_carepackage_01_elite_chopper";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = 600;
-    levelData.friendlyuseonly = 1;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.activatecallback = &function_bcae3fa5db092dd4;
-    levelData.capturecallback = &function_60b85568611b92f3;
-    levelData.destroycallback = &function_1ecb1fecb6f56ecf;
-    levelData.destroyoncapture = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
+    leveldata = getleveldata("battle_royale_elite_chopper");
+    leveldata.capturestring = "MP/BR_CRATE_ELITE";
+    leveldata.basemodel = "military_carepackage_01_elite_chopper";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = 600;
+    leveldata.friendlyuseonly = 1;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.activatecallback = &function_bcae3fa5db092dd4;
+    leveldata.capturecallback = &function_60b85568611b92f3;
+    leveldata.destroycallback = &function_1ecb1fecb6f56ecf;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4592,25 +4592,25 @@ function function_4671cbee65d1615d(position, destination) {
 // Checksum 0x0, Offset: 0xcfca
 // Size: 0x124
 function function_53a94fee5954af57() {
-    levelData = getleveldata("battle_royale_cash_crate");
-    levelData.capturestring = "MP/DMZ_PLUNDER_CRATE_CAPTURE";
-    levelData.basemodel = "military_carepackage_03_br";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = 600;
-    levelData.friendlyuseonly = 1;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.var_9ea9e33fa2a90171 = 1;
-    levelData.var_c23ca3472233553d = 1;
-    levelData.activatecallback = &function_bf892d4093c5f9d3;
-    levelData.capturecallback = &function_93bbdfaba40c778a;
-    levelData.destroycallback = &function_66ee09b2e374fb6e;
-    levelData.destroyoncapture = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
+    leveldata = getleveldata("battle_royale_cash_crate");
+    leveldata.capturestring = "MP/DMZ_PLUNDER_CRATE_CAPTURE";
+    leveldata.basemodel = "military_carepackage_03_br";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = 600;
+    leveldata.friendlyuseonly = 1;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.var_9ea9e33fa2a90171 = 1;
+    leveldata.var_c23ca3472233553d = 1;
+    leveldata.activatecallback = &function_bf892d4093c5f9d3;
+    leveldata.capturecallback = &function_93bbdfaba40c778a;
+    leveldata.destroycallback = &function_66ee09b2e374fb6e;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4678,27 +4678,27 @@ function function_9feb10c0096cc4d6(position, destination) {
 // Checksum 0x0, Offset: 0xd313
 // Size: 0x128
 function initplundercratedata() {
-    levelData = getleveldata("esc_cache");
-    levelData.capturestring = "MP/ESC_CACHE_USE_HINT";
-    levelData.usetag = "tag_origin";
-    levelData.userange = 200;
-    levelData.usefov = 160;
-    levelData.usepriority = 0;
-    levelData.basemodel = "military_crate_large_stackable_01";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -10000;
-    levelData.headicon = undefined;
-    levelData.minimapicon = undefined;
+    leveldata = getleveldata("esc_cache");
+    leveldata.capturestring = "MP/ESC_CACHE_USE_HINT";
+    leveldata.usetag = "tag_origin";
+    leveldata.userange = 200;
+    leveldata.usefov = 160;
+    leveldata.usepriority = 0;
+    leveldata.basemodel = "military_crate_large_stackable_01";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -10000;
+    leveldata.headicon = undefined;
+    leveldata.minimapicon = undefined;
     if (issharedfuncdefined("airdrop", "captureLootCacheCallback")) {
-        levelData.capturecallback = getsharedfunc("airdrop", "captureLootCacheCallback");
+        leveldata.capturecallback = getsharedfunc("airdrop", "captureLootCacheCallback");
     }
-    levelData.destroyoncapture = 0;
-    levelData.onecaptureperplayer = 1;
-    levelData.capturevisualscallback = undefined;
-    levelData.destroyvisualscallback = undefined;
-    levelData.timeout = undefined;
+    leveldata.destroyoncapture = 0;
+    leveldata.onecaptureperplayer = 1;
+    leveldata.capturevisualscallback = undefined;
+    leveldata.destroyvisualscallback = undefined;
+    leveldata.timeout = undefined;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -4727,12 +4727,12 @@ function placeplcrate(contents, position, angles) {
 function initarmcratedata() {
     level.cratedata.armweights = [];
     level.cratedata.armcapturestrings = [];
-    levelData = getleveldata("arm_no_owner");
-    levelData.activatecallback = &armcrateactivatecallback;
-    levelData.capturecallback = &armcratecapturecallback;
-    levelData.supportsownercapture = 0;
-    levelData.headicondrawrange = 5000;
-    levelData.timeout = 180;
+    leveldata = getleveldata("arm_no_owner");
+    leveldata.activatecallback = &armcrateactivatecallback;
+    leveldata.capturecallback = &armcratecapturecallback;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicondrawrange = 5000;
+    leveldata.timeout = 180;
     addarmcratedata("uav", undefined, 5, 10);
     addarmcratedata("manual_turret", undefined, 5, 5);
     addarmcratedata("cruise_predator", undefined, 4, 40);
@@ -4853,13 +4853,13 @@ function droparmcratefromscriptedheli(team, streakname, position, angles, destin
 function function_a3299432ddb721e3() {
     level.cratedata.var_332809acea23b57 = [];
     level.cratedata.var_7480157ed64deda2 = [];
-    levelData = getleveldata("gwtdm_no_owner");
-    levelData.activatecallback = &function_d8a8e185cfa2de1b;
-    levelData.capturecallback = &armcratecapturecallback;
-    levelData.supportsownercapture = 0;
-    levelData.enemymodel = undefined;
-    levelData.headicondrawrange = 5000;
-    levelData.timeout = 180;
+    leveldata = getleveldata("gwtdm_no_owner");
+    leveldata.activatecallback = &function_d8a8e185cfa2de1b;
+    leveldata.capturecallback = &armcratecapturecallback;
+    leveldata.supportsownercapture = 0;
+    leveldata.enemymodel = undefined;
+    leveldata.headicondrawrange = 5000;
+    leveldata.timeout = 180;
     function_c035e11237e84114("cruise_predator", 40);
     function_c035e11237e84114("precision_airstrike", 40);
     function_c035e11237e84114("toma_strike", 40);
@@ -4943,29 +4943,29 @@ function function_99cc30ea8be5b2a6(team, streakname, position, angles, destinati
 // Checksum 0x0, Offset: 0xdd23
 // Size: 0x140
 function initbattleroyalejuggernautcratedata() {
-    levelData = getleveldata("battle_royale_juggernaut");
+    leveldata = getleveldata("battle_royale_juggernaut");
     if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
-        levelData.capturestring = "MP/BR_CRATE_LOADOUT";
+        leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     } else {
-        levelData.capturestring = "KILLSTREAKS_HINTS/JUGG_CRATE_PICKUP";
+        leveldata.capturestring = "KILLSTREAKS_HINTS/JUGG_CRATE_PICKUP";
     }
-    levelData.basemodel = "military_carepackage_03_jugg_br";
-    levelData.mountmantlemodel = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.headicon = undefined;
-    levelData.usepriority = -1;
-    levelData.usefov = 180;
-    levelData.timeout = undefined;
-    levelData.friendlyuseonly = 1;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.capturecallback = &brjuggernautcratecapturecallback;
-    levelData.destroycallback = &brjuggernautcratedestroycallback;
-    levelData.activatecallback = &brjuggernautcrateactivatecallback;
-    levelData.cratephysicsoncallback = &brjuggernautcratephysicsoncallback;
-    levelData.destroyoncapture = 1;
-    levelData.var_28eb33ffd1aa3e63 = 1;
-    levelData.var_c23ca3472233553d = 1;
+    leveldata.basemodel = "military_carepackage_03_jugg_br";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.headicon = undefined;
+    leveldata.usepriority = -1;
+    leveldata.usefov = 180;
+    leveldata.timeout = undefined;
+    leveldata.friendlyuseonly = 1;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.capturecallback = &brjuggernautcratecapturecallback;
+    leveldata.destroycallback = &brjuggernautcratedestroycallback;
+    leveldata.activatecallback = &brjuggernautcrateactivatecallback;
+    leveldata.cratephysicsoncallback = &brjuggernautcratephysicsoncallback;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.var_c23ca3472233553d = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -5059,7 +5059,7 @@ function enablejuggernautcrateobjective(crate) {
 // Size: 0x2d
 function choosejuggernautcratemodel(crate) {
     crate setotherent(self);
-    crate setscriptablepartstate(#"model", #"hash_da46358c7e912020");
+    crate setscriptablepartstate(#"model", #"choose");
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -5075,8 +5075,8 @@ function juggcanusecrate(cratetype) {
         break;
     case #"hash_d87004954b36d6e1":
         if (issharedfuncdefined("juggernaut", "canUseWeaponPickups")) {
-            canUseWeaponPickups = self [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
-            if (!istrue(canUseWeaponPickups)) {
+            canuseweaponpickups = self [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
+            if (!istrue(canuseweaponpickups)) {
                 var_4418a5e6f9d1e943 = 0;
             }
         }
@@ -5114,8 +5114,8 @@ function function_d4833b6c916db9c6() {
 // Checksum 0x0, Offset: 0xe2a2
 // Size: 0x3a
 function private function_c857ac89588adf6f() {
-    levelData = getleveldata(self.cratetype);
-    return ter_op(istrue(self.inwater), 5, levelData.headiconoffset);
+    leveldata = getleveldata(self.cratetype);
+    return ter_op(istrue(self.inwater), 5, leveldata.headiconoffset);
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -5123,14 +5123,14 @@ function private function_c857ac89588adf6f() {
 // Checksum 0x0, Offset: 0xe2e4
 // Size: 0x7a
 function function_19dc247eaaf9da8f() {
-    levelData = getleveldata("elite_arrow_bombsite");
-    levelData.basemodel = "military_carepackage_01_cq";
-    levelData.var_9ae260c6bfb4c98d = 1;
-    levelData.minimapicon = undefined;
-    levelData.headicon = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.hasnointeraction = 1;
-    levelData.timeout = 0.1;
+    leveldata = getleveldata("elite_arrow_bombsite");
+    leveldata.basemodel = "military_carepackage_01_cq";
+    leveldata.var_9ae260c6bfb4c98d = 1;
+    leveldata.minimapicon = undefined;
+    leveldata.headicon = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.hasnointeraction = 1;
+    leveldata.timeout = 0.1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef
@@ -5138,20 +5138,20 @@ function function_19dc247eaaf9da8f() {
 // Checksum 0x0, Offset: 0xe365
 // Size: 0xd4
 function function_56e93fd2282a71ce() {
-    levelData = getleveldata("legendary_supply_drop");
-    levelData.basemodel = "military_carepackage_03_br";
-    levelData.mountmantlemodel = undefined;
-    levelData.usepriority = -1;
-    levelData.minimapicon = undefined;
-    levelData.headicon = undefined;
-    levelData.supportsownercapture = 0;
-    levelData.timeout = 180;
-    levelData.ownerusetime = 0.5;
-    levelData.otherusetime = 0.5;
-    levelData.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
-    levelData.capturecallback = &function_e7051a617b94015;
-    levelData.destroyoncapture = 1;
-    levelData.var_c23ca3472233553d = 1;
+    leveldata = getleveldata("legendary_supply_drop");
+    leveldata.basemodel = "military_carepackage_03_br";
+    leveldata.mountmantlemodel = undefined;
+    leveldata.usepriority = -1;
+    leveldata.minimapicon = undefined;
+    leveldata.headicon = undefined;
+    leveldata.supportsownercapture = 0;
+    leveldata.timeout = 180;
+    leveldata.ownerusetime = 0.5;
+    leveldata.otherusetime = 0.5;
+    leveldata.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
+    leveldata.capturecallback = &function_e7051a617b94015;
+    leveldata.destroyoncapture = 1;
+    leveldata.var_c23ca3472233553d = 1;
 }
 
 // Namespace airdrop/namespace_6c578d6ef48f10ef

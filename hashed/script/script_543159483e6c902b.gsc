@@ -69,7 +69,7 @@ function private function_bf0dace86671499b(params) {
 // Checksum 0x0, Offset: 0x30b
 // Size: 0xaf
 function private function_c23cf1e91ae6319f() {
-    var_60f89df29738f118 = namespace_ca7b90256548aa40::getSquadMembers(self.team, 1);
+    var_60f89df29738f118 = namespace_ca7b90256548aa40::getsquadmembers(self.team, 1);
     if (isarray(var_60f89df29738f118) && var_60f89df29738f118.size > 0) {
         return var_60f89df29738f118;
     }

@@ -10,8 +10,8 @@
 // Checksum 0x0, Offset: 0x220
 // Size: 0x39
 function vehicle_compass_registerinstance(vehicle) {
-    levelData = vehicle_compass_getleveldata();
-    levelData.instances[vehicle getentitynumber()] = vehicle;
+    leveldata = vehicle_compass_getleveldata();
+    leveldata.instances[vehicle getentitynumber()] = vehicle;
     vehicle_compass_show(vehicle);
 }
 
@@ -20,8 +20,8 @@ function vehicle_compass_registerinstance(vehicle) {
 // Checksum 0x0, Offset: 0x260
 // Size: 0x2f
 function vehicle_compass_deregisterinstance(vehicle) {
-    levelData = vehicle_compass_getleveldata();
-    levelData.instances[vehicle getentitynumber()] = undefined;
+    leveldata = vehicle_compass_getleveldata();
+    leveldata.instances[vehicle getentitynumber()] = undefined;
 }
 
 // Namespace vehicle_compass/namespace_2a495135d56d95b7
@@ -29,8 +29,8 @@ function vehicle_compass_deregisterinstance(vehicle) {
 // Checksum 0x0, Offset: 0x296
 // Size: 0x48
 function vehicle_compass_instanceisregistered(vehicle) {
-    levelData = vehicle_compass_getleveldata();
-    return isdefined(levelData.instances[vehicle getentitynumber()]) && levelData.instances[vehicle getentitynumber()] == vehicle;
+    leveldata = vehicle_compass_getleveldata();
+    return isdefined(leveldata.instances[vehicle getentitynumber()]) && leveldata.instances[vehicle getentitynumber()] == vehicle;
 }
 
 // Namespace vehicle_compass/namespace_2a495135d56d95b7
@@ -38,8 +38,8 @@ function vehicle_compass_instanceisregistered(vehicle) {
 // Checksum 0x0, Offset: 0x2e6
 // Size: 0x81
 function vehicle_compass_updatevisibilityforplayer(vehicle, player, var_6ecb77fd1f27c667) {
-    levelData = vehicle_compass_getleveldata();
-    if (!levelData.visibilityisscriptcontrolled) {
+    leveldata = vehicle_compass_getleveldata();
+    if (!leveldata.visibilityisscriptcontrolled) {
         return;
     }
     if (!isdefined(vehicle)) {
@@ -65,8 +65,8 @@ function vehicle_compass_updatevisibilityforplayer(vehicle, player, var_6ecb77fd
 // Checksum 0x0, Offset: 0x36e
 // Size: 0xa8
 function vehicle_compass_updatevisibilityforallplayers(vehicle, var_6ecb77fd1f27c667) {
-    levelData = vehicle_compass_getleveldata();
-    if (!levelData.visibilityisscriptcontrolled) {
+    leveldata = vehicle_compass_getleveldata();
+    if (!leveldata.visibilityisscriptcontrolled) {
         return;
     }
     if (!vehicle_compass_instanceisregistered(vehicle)) {
@@ -87,11 +87,11 @@ function vehicle_compass_updatevisibilityforallplayers(vehicle, var_6ecb77fd1f27
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x85
 function vehicle_compass_updateallvisibilityforplayer(player) {
-    levelData = vehicle_compass_getleveldata();
-    if (!istrue(levelData.visibilityisscriptcontrolled)) {
+    leveldata = vehicle_compass_getleveldata();
+    if (!istrue(leveldata.visibilityisscriptcontrolled)) {
         return;
     }
-    foreach (instance in levelData.instances) {
+    foreach (instance in leveldata.instances) {
         vehicle_compass_updatevisibilityforplayer(instance, player);
     }
 }
@@ -102,9 +102,9 @@ function vehicle_compass_updateallvisibilityforplayer(player) {
 // Size: 0x4f
 function vehicle_compass_shouldbevisibletoplayer(vehicle, player) {
     if (issharedfuncdefined("vehicle_compass", "shouldBeVisibleToPlayer")) {
-        shouldBeVisibleToPlayer = [[ getsharedfunc("vehicle_compass", "shouldBeVisibleToPlayer") ]](vehicle, player);
-        if (isdefined(shouldBeVisibleToPlayer)) {
-            return shouldBeVisibleToPlayer;
+        shouldbevisibletoplayer = [[ getsharedfunc("vehicle_compass", "shouldBeVisibleToPlayer") ]](vehicle, player);
+        if (isdefined(shouldbevisibletoplayer)) {
+            return shouldbevisibletoplayer;
         }
     }
     return 1;
@@ -115,11 +115,11 @@ function vehicle_compass_shouldbevisibletoplayer(vehicle, player) {
 // Checksum 0x0, Offset: 0x500
 // Size: 0x81
 function vehicle_compass_show(vehicle) {
-    levelData = vehicle_compass_getleveldata();
-    if (levelData.visibilityisscriptcontrolled) {
+    leveldata = vehicle_compass_getleveldata();
+    if (leveldata.visibilityisscriptcontrolled) {
         vehicle vehicleshowonminimap(1);
     }
-    if (isdefined(levelData.instances[vehicle getentitynumber()])) {
+    if (isdefined(leveldata.instances[vehicle getentitynumber()])) {
         if (level.teambased) {
             vehicle_compass_setteamfriendlyto(vehicle, namespace_1fbd40990ee60ede::vehicle_occupancy_getteamfriendlyto(vehicle));
         } else {
@@ -134,9 +134,9 @@ function vehicle_compass_show(vehicle) {
 // Checksum 0x0, Offset: 0x588
 // Size: 0x45
 function vehicle_compass_hide(vehicle) {
-    levelData = vehicle_compass_getleveldata();
-    levelData.instances[vehicle getentitynumber()] = undefined;
-    if (levelData.visibilityisscriptcontrolled) {
+    leveldata = vehicle_compass_getleveldata();
+    leveldata.instances[vehicle getentitynumber()] = undefined;
+    if (leveldata.visibilityisscriptcontrolled) {
         vehicle vehicleshowonminimap(0);
     }
 }
@@ -176,14 +176,14 @@ function vehicle_compass_init() {
     /#
         assertex(!isdefined(level.vehicle.compass), "vehicle_compass_init() should only be called once.");
     #/
-    levelData = spawnstruct();
-    level.vehicle.compass = levelData;
-    levelData.instances = [];
+    leveldata = spawnstruct();
+    level.vehicle.compass = leveldata;
+    leveldata.instances = [];
     runleanthreadmode = 0;
     if (issharedfuncdefined("game", "runLeanThreadMode")) {
         runleanthreadmode = [[ getsharedfunc("game", "runLeanThreadMode") ]]();
     }
-    levelData.visibilityisscriptcontrolled = !runleanthreadmode || getdvarint(@"hash_61d6ab22f59b15a6", 0) > 0;
+    leveldata.visibilityisscriptcontrolled = !runleanthreadmode || getdvarint(@"hash_61d6ab22f59b15a6", 0) > 0;
     if (issharedfuncdefined("vehicle_compass", "init")) {
         [[ getsharedfunc("vehicle_compass", "init") ]]();
     }
@@ -205,8 +205,8 @@ function vehicle_compass_getleveldata() {
 // Checksum 0x0, Offset: 0x7e9
 // Size: 0x91
 function vehicle_compass_friendlystatuschangedcallback(vehicle, var_965ea26e6eb230b9, var_52312180ef1940be) {
-    levelData = vehicle_compass_getleveldata();
-    isregistered = isdefined(levelData.instances[vehicle getentitynumber()]) && levelData.instances[vehicle getentitynumber()] == vehicle;
+    leveldata = vehicle_compass_getleveldata();
+    isregistered = isdefined(leveldata.instances[vehicle getentitynumber()]) && leveldata.instances[vehicle getentitynumber()] == vehicle;
     if (!isregistered) {
         return;
     }

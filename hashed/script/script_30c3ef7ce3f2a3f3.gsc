@@ -12,9 +12,9 @@
 // Size: 0x4f0
 function function_9fcc9920ba3dbe3() {
     var_988ed2b0fc9199b8 = [];
-    var_988ed2b0fc9199b8[#"hash_a7bc27b9490e3ed6"] = function_47fd484462dfbcca();
+    var_988ed2b0fc9199b8[#"parachutecontrols"] = function_47fd484462dfbcca();
     var_988ed2b0fc9199b8[#"hash_a5def436a677d0dc"] = function_a7bc977f967e7c60();
-    var_988ed2b0fc9199b8[#"EnemiesInMinimap"] = function_15f86a8f15251eab();
+    var_988ed2b0fc9199b8[#"enemiesinminimap"] = function_15f86a8f15251eab();
     var_988ed2b0fc9199b8[#"hash_afda59042d47fdb5"] = function_8c0acc8f8efc6329();
     var_988ed2b0fc9199b8[#"gulag"] = function_8634e67dd83515bb();
     var_988ed2b0fc9199b8[#"hash_d51594326a8f926b"] = function_276714c3127904a7();
@@ -62,7 +62,7 @@ function function_9fcc9920ba3dbe3() {
     level.var_6edc807b8a61c73[#"hash_14b58257ca92e7ec"] = &namespace_88945a6f395620be::function_91f8e694098031e8;
     level.var_6edc807b8a61c73[#"hash_b7b127d31eee37f3"] = &namespace_88945a6f395620be::function_6440647b22203967;
     level.var_6edc807b8a61c73[#"hash_b7b128d31eee39a6"] = &namespace_88945a6f395620be::function_6440657b22203b9a;
-    level.var_6edc807b8a61c73[#"endLootEnemyByCond1"] = &namespace_88945a6f395620be::endLootEnemyByCond1;
+    level.var_6edc807b8a61c73[#"endlootenemybycond1"] = &namespace_88945a6f395620be::endlootenemybycond1;
     level.var_6edc807b8a61c73[#"hash_58e4fcf39c740b0d"] = &namespace_88945a6f395620be::function_b340dd5a8c093af1;
     level.var_6edc807b8a61c73[#"hash_f08d55c2afd0332f"] = &namespace_88945a6f395620be::function_4a531c5ba156e6b;
     level.var_6edc807b8a61c73[#"hash_f08d56c2afd034e2"] = &namespace_88945a6f395620be::function_4a532c5ba15709e;
@@ -78,9 +78,9 @@ function function_9fcc9920ba3dbe3() {
 // Checksum 0x0, Offset: 0x5c6
 // Size: 0x111
 function function_d421d0a2a75e7895() {
-    var_13036c7f57466667[0] = #"hash_a7bc27b9490e3ed6";
+    var_13036c7f57466667[0] = #"parachutecontrols";
     var_13036c7f57466667[1] = #"hash_a5def436a677d0dc";
-    var_13036c7f57466667[2] = #"EnemiesInMinimap";
+    var_13036c7f57466667[2] = #"enemiesinminimap";
     var_13036c7f57466667[3] = #"hash_afda59042d47fdb5";
     var_13036c7f57466667[4] = #"gulag";
     var_13036c7f57466667[5] = #"hash_d51594326a8f926b";
@@ -104,9 +104,9 @@ function function_d421d0a2a75e7895() {
 // Checksum 0x0, Offset: 0x6de
 // Size: 0x12d
 function function_a5559a1ea030676a() {
-    var_8205621341adedc4[#"hash_a7bc27b9490e3ed6"] = 0;
+    var_8205621341adedc4[#"parachutecontrols"] = 0;
     var_8205621341adedc4[#"hash_a5def436a677d0dc"] = 1;
-    var_8205621341adedc4[#"EnemiesInMinimap"] = 2;
+    var_8205621341adedc4[#"enemiesinminimap"] = 2;
     var_8205621341adedc4[#"hash_afda59042d47fdb5"] = 3;
     var_8205621341adedc4[#"gulag"] = 4;
     var_8205621341adedc4[#"hash_d51594326a8f926b"] = 5;
@@ -132,10 +132,10 @@ function function_a5559a1ea030676a() {
 // Checksum 0x0, Offset: 0x812
 // Size: 0x75
 function function_318ab477e532009e() {
-    level.ftueData.var_744254a0a817ff39 = spawnstruct();
-    level.ftueData.var_744254a0a817ff39.sound = 1;
-    level.ftueData.var_f09f2ffd8a67fe03 = spawnstruct();
-    level.ftueData.var_f09f2ffd8a67fe03.sound = 1;
+    level.ftuedata.var_744254a0a817ff39 = spawnstruct();
+    level.ftuedata.var_744254a0a817ff39.sound = 1;
+    level.ftuedata.var_f09f2ffd8a67fe03 = spawnstruct();
+    level.ftuedata.var_f09f2ffd8a67fe03.sound = 1;
 }
 
 // Namespace namespace_b2de5662c522b9fa/namespace_be856862625a33f5

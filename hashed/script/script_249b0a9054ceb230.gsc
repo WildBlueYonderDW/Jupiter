@@ -152,7 +152,7 @@ function function_ace73c6f69026c0b(scriptablename) {
 // Checksum 0x0, Offset: 0xb21
 // Size: 0x90
 function function_245e4c4f2c8f50df(container, player, lootid, quantity, itemtype, itemindex) {
-    var_338e098f5cbfda5b = undefined;
+    noextract = undefined;
     var_dfab44d4d8d10b36 = quantity;
     if (isdefined(itemtype) && itemtype == 10) {
         var_dfab44d4d8d10b36 = namespace_3883e3399f2870b5::function_8e5978971b5dcd16(player, itemindex);
@@ -165,7 +165,7 @@ function function_245e4c4f2c8f50df(container, player, lootid, quantity, itemtype
         itemindex = 0;
     }
     player notify("item_added_to_cache", itemtype);
-    return [0:lootid, 1:var_338e098f5cbfda5b];
+    return [0:lootid, 1:noextract];
 }
 
 // Namespace namespace_a5c2977d842bbf87/namespace_47d96238dd467828
@@ -364,11 +364,11 @@ function function_9a183acf062c5062() {
 // Checksum 0x0, Offset: 0x133d
 // Size: 0xa4
 function function_c160909504e47884(spawn_struct) {
-    var_6d6004078c259261 = "";
+    difficulty_region = "";
     if (isdefined(level.var_fac39a693f085779)) {
-        var_6d6004078c259261 = [[ level.var_fac39a693f085779 ]](spawn_struct.origin);
+        difficulty_region = [[ level.var_fac39a693f085779 ]](spawn_struct.origin);
     }
-    switch (var_6d6004078c259261) {
+    switch (difficulty_region) {
     case #"hash_7bb2cd766703d463":
         return "defend_turret_green";
     case #"hash_af83e47edfa8900a":

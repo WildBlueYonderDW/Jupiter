@@ -32,7 +32,7 @@ function function_2ee478f031f97735(equipmentref, var_cbb2b3d05e48bd27) {
     function_af629bfd2cc31d67();
     self notifyonplayercommand("pullout_gc", "+smoke");
     self notify("aethercounter_take");
-    thread aethercounter_watchForDevicePullout();
+    thread aethercounter_watchfordevicepullout();
     function_b725c6b75eac64a(-1);
 }
 
@@ -66,7 +66,7 @@ function function_88108e9a7fefa45c(grenade) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ad
 // Size: 0x18a
-function aethercounter_watchForDevicePullout() {
+function aethercounter_watchfordevicepullout() {
     self endon("disconnect");
     level endon("game_ended");
     self notify("aethercounter_watchForDevicePullout");
@@ -133,7 +133,7 @@ function function_92d0e5b2f76e0fe5() {
 function function_8031a35aa804e254(dist) {
     if (getweaponbasename(self getheldoffhand()) == "aether_counter_mp") {
         self.var_b38bd8b30b329ecd.var_4b47429f8d0d3ee5 = 1;
-        self.var_b38bd8b30b329ecd.var_f458338f4188859e = _aethercounter_calculateaetherCounterPulseRate(dist, self.var_b38bd8b30b329ecd.var_e91c9347e638750d);
+        self.var_b38bd8b30b329ecd.var_f458338f4188859e = _aethercounter_calculateaethercounterpulserate(dist, self.var_b38bd8b30b329ecd.var_e91c9347e638750d);
         if (!isdefined(self.var_b38bd8b30b329ecd.var_7d4af218f4963c47)) {
             self.var_b38bd8b30b329ecd.var_7d4af218f4963c47 = 0;
         }
@@ -325,7 +325,7 @@ function function_2d56da6c95356759(player, var_1e331291fa3bd60, var_98a5e3761875
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa8e
 // Size: 0x2b4
-function _aethercounter_calculateaetherCounterPulseRate(var_1e331291fa3bd60, object) {
+function _aethercounter_calculateaethercounterpulserate(var_1e331291fa3bd60, object) {
     self notify("_aethercounter_calculateaetherCounterPulseRate");
     self endon("_aethercounter_calculateaetherCounterPulseRate");
     self endon("disconnect");

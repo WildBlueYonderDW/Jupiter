@@ -495,7 +495,7 @@ function function_afca3201208900fb(item_count) {
     if (!isdefined(item_count)) {
         item_count = 1;
     }
-    thread Animscripted_SharedFunc("dig", "hellhound_dig_complete", undefined, undefined, undefined);
+    thread animscripted_sharedfunc("dig", "hellhound_dig_complete", undefined, undefined, undefined);
     utility::function_3ab9164ef76940fd("digging", "digging_on");
     self waittill("hellhound_dig_complete");
     utility::function_3ab9164ef76940fd("digging", "digging_off");

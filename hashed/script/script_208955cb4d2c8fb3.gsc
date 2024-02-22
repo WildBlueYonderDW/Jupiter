@@ -276,11 +276,11 @@ function function_6d423bc682d6dc86(agent) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11de
 // Size: 0x3a
-function function_7161f6d8c69ce57(var_dcf5e15c58c4152a) {
+function function_7161f6d8c69ce57(agenttype) {
     if (!isdefined(level.ob.var_ebde11a65d618ef6)) {
         return undefined;
     }
-    return level.ob.var_ebde11a65d618ef6[var_dcf5e15c58c4152a];
+    return level.ob.var_ebde11a65d618ef6[agenttype];
 }
 
 // Namespace namespace_87d75ea764a6d2fd/namespace_ad1f398af6f48cb1

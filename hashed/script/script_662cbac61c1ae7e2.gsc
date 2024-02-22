@@ -67,7 +67,7 @@ function function_3e18070e9c4c07db() {
     validlocations = [];
     foreach (var_2a438b0332b8a143 in var_ab2be8088c0a7c90) {
         fortress = namespace_9823ee6035594d67::function_c0a211a69f5f8f2f(var_2a438b0332b8a143.origin);
-        if (!isdefined(fortress) && namespace_37f0fb6355a4618a::poi_isPOIActive(var_2a438b0332b8a143.poi) && !namespace_7789f919216d38a2::radiation_isInRadiation(var_2a438b0332b8a143.origin)) {
+        if (!isdefined(fortress) && namespace_37f0fb6355a4618a::poi_ispoiactive(var_2a438b0332b8a143.poi) && !namespace_7789f919216d38a2::radiation_isinradiation(var_2a438b0332b8a143.origin)) {
             if (!isdefined(validlocations[var_2a438b0332b8a143.poi])) {
                 validlocations[var_2a438b0332b8a143.poi] = [];
             }
@@ -206,7 +206,7 @@ function function_7c5eefd0cbce6520(instance, part, state, player, var_a5b2c54141
             namespace_5a22b6f3a56f7e9b::objective_teammask_addtomask(instance.objidnum, player.team);
             instance thread function_a765843f381ad171();
             wait(1);
-            namespace_d696adde758cbe79::showDMZSplash("dmz_safe_defend_started", getteamdata(player.team, "players"), instance.node.poi);
+            namespace_d696adde758cbe79::showdmzsplash("dmz_safe_defend_started", getteamdata(player.team, "players"), instance.node.poi);
         } else {
             instance setscriptablepartstate(part, "usable_not_open");
         }
@@ -247,7 +247,7 @@ function function_a17b754d1372f83e(var_6e6ee0d9f73a2999) {
     aitype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, undefined, "short_range", undefined, 2);
     forwarddist = anglestoforward(self.angles) * 80;
     origin = getclosestpointonnavmesh(self.origin + forwarddist);
-    agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, origin, self.angles, "high", "mission", "safeInitialGuards", undefined, undefined, undefined, self.node.poi, 0, undefined, 1);
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, self.angles, "high", "mission", "safeInitialGuards", undefined, undefined, undefined, self.node.poi, 0, undefined, 1);
     if (isdefined(agent)) {
         self.agents[0] = agent;
         thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent, 0);
@@ -261,7 +261,7 @@ function function_a17b754d1372f83e(var_6e6ee0d9f73a2999) {
         var_88b83b0d7a43ea72 = i / var_6e6ee0d9f73a2999 * 360 + randomfloatrange(-30, 30) % 360;
         offset = rotatepointaroundvector((0, 0, 1), forward, var_88b83b0d7a43ea72);
         origin = getclosestpointonnavmesh(self.origin + offset);
-        agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, origin, facingangle, "high", "mission", "safe", undefined, undefined, undefined, self.node.poi, 0, undefined, 0);
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, facingangle, "high", "mission", "safe", undefined, undefined, undefined, self.node.poi, 0, undefined, 0);
         if (isdefined(agent)) {
             self.agents[self.agents.size] = agent;
             thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent);
@@ -371,9 +371,9 @@ function function_67abfc6a70af2ccc() {
                 player.var_35b94c88cc1cea97 = 0;
             }
             player.var_35b94c88cc1cea97++;
-            player namespace_48a08c5037514e04::doScoreEvent(#"hash_c02c8c802f07c908");
+            player namespace_48a08c5037514e04::doscoreevent(#"hash_c02c8c802f07c908");
         }
-        namespace_d696adde758cbe79::showDMZSplash("dmz_safe_defend_unlocked", getteamdata(team, "players"));
+        namespace_d696adde758cbe79::showdmzsplash("dmz_safe_defend_unlocked", getteamdata(team, "players"));
         namespace_25b25d188ef778c4::function_1c2bd1696d29935b(team, "dmz_mission_safe_unlocked");
         namespace_8361bad7391de074::function_a9f8fa06a358585b(team, "safe", 1, self.node.poi, 1);
         function_c1fd3441ccfba6f8(team, "", 1.5);
@@ -549,7 +549,7 @@ function function_24765a7aabf0093e(player) {
 function function_9967799221f8dd5e(team, origin) {
     wait(4);
     poi = namespace_37f0fb6355a4618a::function_55cf921efa4cbd09(origin, 0, 0, 1);
-    namespace_d696adde758cbe79::showDMZSplash("dmz_safes_revealed", getteamdata(team, "players"), poi);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_safes_revealed", getteamdata(team, "players"), poi);
     sorted = sortbydistance(level.safes, origin);
     var_26f0c58cf64ab613 = 0;
     var_d4266812b99539b6 = namespace_a38a2e1fe7519183::function_e860c1be7ff11f5b(team, 21);

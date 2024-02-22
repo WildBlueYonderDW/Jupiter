@@ -459,7 +459,7 @@ function function_a46548c342e333f7() {
     self endon("instance_destroyed");
     self.var_1ff927c3faaf9638 endon("rocket_launched");
     self.var_1ff927c3faaf9638 waittill("death");
-    self.var_1ff927c3faaf9638.var_62d3e41a9d24b2e2 = 1;
+    self.var_1ff927c3faaf9638.was_killed = 1;
     thread function_cb078cbf493f2b94();
     if (isdefined(self.var_1ff927c3faaf9638.payload)) {
         self.payload = self.var_1ff927c3faaf9638.payload;
@@ -1090,7 +1090,7 @@ function private function_5a233915821c0ea6(var_2f5d509d7b71ce9a) {
             dot = vectordot(var_1e5c3e3065486ea9, anglestoforward(player.angles));
             if (dot >= 0.6) {
                 fov = cos(20);
-                if (player GetCameraThirdPerson()) {
+                if (player getcamerathirdperson()) {
                     fov = cos(75);
                 }
                 if (within_fov(player geteye(), player.angles, self.var_364b797a8b03169b.origin, fov)) {
@@ -1254,7 +1254,7 @@ function private function_dde0f987d9eb62a6() {
         var_ae7ca531f6c86ee4 = vehicle gettagorigin("tag_attach_rocket");
         thread function_7122f1d1f05e191c(var_ae7ca531f6c86ee4, self.var_1ff927c3faaf9638.angles);
     }
-    if (!istrue(vehicle.var_62d3e41a9d24b2e2)) {
+    if (!istrue(vehicle.was_killed)) {
         thread function_5969f20c2a27e510(vehicle);
     }
 }
@@ -1365,11 +1365,11 @@ function private function_3ef2924f5cc4e9af(xmodel, var_ae7ca531f6c86ee4, v_offse
     v_right = anglestoright(var_dbf0bb72d60f10c4);
     v_up = anglestoup(var_dbf0bb72d60f10c4);
     var_7cfe5c57d5ac67e1 = var_ae7ca531f6c86ee4 + v_forward * v_offset[0] + v_right * v_offset[1] + v_up * v_offset[2];
-    var_7d1202bf8ca7396 = spawn("script_model", var_7cfe5c57d5ac67e1);
-    var_7d1202bf8ca7396 setmodel(xmodel);
-    var_7d1202bf8ca7396.angles = (randomfloatrange(0, 360), randomfloatrange(0, 360), randomfloatrange(0, 360));
-    var_7d1202bf8ca7396 physicslaunchserver(var_7d1202bf8ca7396.origin, v_force);
-    return var_7d1202bf8ca7396;
+    debris = spawn("script_model", var_7cfe5c57d5ac67e1);
+    debris setmodel(xmodel);
+    debris.angles = (randomfloatrange(0, 360), randomfloatrange(0, 360), randomfloatrange(0, 360));
+    debris physicslaunchserver(debris.origin, v_force);
+    return debris;
 }
 
 // Namespace namespace_d197b40cdbf4a1ea/namespace_d38a1af3e02dea2f

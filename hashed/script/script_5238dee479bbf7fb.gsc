@@ -54,13 +54,13 @@ function function_587a4ae46d3a9611(circleindex) {
     level.circlepeeks[circleindex] = spawnstruct();
     level.circlepeeks[circleindex].var_b0f4bf8621b96c0a = [];
     circleradius = level.br_level.br_circleradii[circleindex];
-    var_c669c821ee772a3d = namespace_bbc79db4c3949a5c::function_d987886bb9de9137();
-    if (var_c669c821ee772a3d > 1) {
+    multicirclecount = namespace_bbc79db4c3949a5c::function_d987886bb9de9137();
+    if (multicirclecount > 1) {
         var_ed09715e306a1455 = level.br_multi_circle;
         if (circleindex < level.br_multi_circle.var_8a10c39962f6d9fd || circleindex >= level.br_multi_circle.var_c22567ed8cfe3761) {
-            var_c669c821ee772a3d = 1;
+            multicirclecount = 1;
         }
-        for (i = 0; i < var_c669c821ee772a3d; i++) {
+        for (i = 0; i < multicirclecount; i++) {
             circleorigin = var_ed09715e306a1455.circles[i].var_8ae269616d09dfc5[circleindex];
             function_ec0ff24840e615d5(circleindex, circleorigin, circleradius);
         }

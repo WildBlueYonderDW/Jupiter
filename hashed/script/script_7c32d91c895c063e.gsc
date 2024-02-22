@@ -54,7 +54,7 @@ function function_e92d8183093a8f29() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x330
 // Size: 0x70
-function startCapture(team, var_754110404c0d574f, paused) {
+function startcapture(team, var_754110404c0d574f, paused) {
     setomnvar("ui_bomb_timer_endtime", var_754110404c0d574f);
     if (istrue(paused)) {
         setomnvar("ui_objective_timer_stopped", 1);
@@ -137,7 +137,7 @@ function function_6b56d2c2eae0b9af(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4eb
 // Size: 0xac
-function detectPlayerInsideQuestCircle(player) {
+function detectplayerinsidequestcircle(player) {
     player notify("detectPlayerInsideQuestCircle");
     player endon("detectPlayerInsideQuestCircle");
     player endon("disconnect");

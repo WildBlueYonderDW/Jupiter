@@ -62,7 +62,7 @@ function function_35671b7b1a04bf58(bot) {
 // Checksum 0x0, Offset: 0x297
 // Size: 0x3b
 function function_fc5d9d6dc490ce2e() {
-    return istrue(level.allowArmor) && !istrue(self.insertingarmorplate) && namespace_f8d3520d3483c1::function_600f6cf462e983f() > 0 && namespace_f8d3520d3483c1::function_cf37789d18fbcc1b() && !self isswitchingweapon();
+    return istrue(level.allowarmor) && !istrue(self.insertingarmorplate) && namespace_f8d3520d3483c1::function_600f6cf462e983f() > 0 && namespace_f8d3520d3483c1::function_cf37789d18fbcc1b() && !self isswitchingweapon();
 }
 
 // Namespace equip_armor/namespace_44e61c324d97fb99

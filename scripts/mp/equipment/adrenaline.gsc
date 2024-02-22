@@ -58,8 +58,8 @@ function useadrenaline() {
                 break;
             }
         }
-        if (var_ffe0d0bdd9bd7d44 && (!namespace_36f464722d326bbe::isBRStyleGameType() || !namespace_7789f919216d38a2::function_76ef3c8b8171d2d(self.origin))) {
-            namespace_a850435086c88de3::doOnActionScoreEvent(0, "adrenalineHeal", 15);
+        if (var_ffe0d0bdd9bd7d44 && (!namespace_36f464722d326bbe::isbrstylegametype() || !namespace_7789f919216d38a2::function_76ef3c8b8171d2d(self.origin))) {
+            namespace_a850435086c88de3::doonactionscoreevent(0, "adrenalineHeal", 15);
         }
     }
     self notify("force_regeneration");
@@ -69,7 +69,7 @@ function useadrenaline() {
     if (self.health > 0 && self.health < self.maxhealth * 0.5) {
         namespace_aad14af462a74d08::function_b0f754c8a379154e("equip_adrenaline", self, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         thread function_46920ff2cd83de61();
     }
     self refreshsprinttime();
@@ -138,7 +138,7 @@ function adrenaline_removeonplayernotifies() {
 function adrenaline_removeondamage() {
     while (1) {
         objweapon = idflags = var_920ff4456ce9a2fc = var_1d3f20a69ced2dd5 = var_9e834fe6754a9c98 = smeansofdeath = vpoint = vdir = eattacker = idamage = self waittill("damage");
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && (smeansofdeath == "MOD_TRIGGER_HURT" || smeansofdeath == "MOD_UNKNOWN")) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && (smeansofdeath == "MOD_TRIGGER_HURT" || smeansofdeath == "MOD_UNKNOWN")) {
             continue;
         }
         thread removeadrenaline();
@@ -153,8 +153,8 @@ function adrenaline_removeondamage() {
 function adrenaline_removeongameend() {
     level waittill("game_ended");
     thread removeadrenaline();
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
-        thread removeAdrenalineSpeed();
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        thread removeadrenalinespeed();
     }
 }
 
@@ -186,7 +186,7 @@ function adrenaline_missionondeaththink() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69a
 // Size: 0x22
-function removeAdrenalineSpeed() {
+function removeadrenalinespeed() {
     if (istrue(self.var_9aa499f0db2dcb35)) {
         self notify("removeAdrenalineSpeed");
         self.var_9aa499f0db2dcb35 = undefined;
@@ -199,7 +199,7 @@ function removeAdrenalineSpeed() {
 // Size: 0x13
 function function_72775122d66e19f4() {
     self waittill("death");
-    thread removeAdrenalineSpeed();
+    thread removeadrenalinespeed();
 }
 
 // Namespace adrenaline/namespace_82a12c9c6cef3538

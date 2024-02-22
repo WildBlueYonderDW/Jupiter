@@ -149,9 +149,9 @@ function function_5b87e83d21054cb(var_7ff959e229d749c3) {
     parent = function_348abcb1eafd2676(var_7ff959e229d749c3);
     if (isdefined(parent)) {
         if (isdefined(parent.var_cf0d4d8cc5ac99a4)) {
-            return parent.var_cf0d4d8cc5ac99a4.var_88be4a24bd1b4cfa;
+            return parent.var_cf0d4d8cc5ac99a4.activationname;
         } else {
-            return parent.var_88be4a24bd1b4cfa;
+            return parent.activationname;
         }
     }
     return undefined;

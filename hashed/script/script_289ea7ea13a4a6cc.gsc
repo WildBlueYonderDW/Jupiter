@@ -769,7 +769,7 @@ function function_9701a6ee79db05cd() {
     wait(var_71c61f76b6381d1c);
     function_ea856ec0b3c4cfc6(0.9, level.infilstruct.players, "hq_transition");
     wait(var_d57cae2c24552936);
-    teleportToMovingPlane();
+    teleporttomovingplane();
     thread function_1362f28ff2863ca();
     wait(var_d5a7b6bed377d4ce);
     function_7f3ad8fe6df1b8fe(1, level.infilstruct.players, "hq_transition");
@@ -849,7 +849,7 @@ function function_8f7e8b26075a5371() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8607
 // Size: 0x150
-function teleportToMovingPlane() {
+function teleporttomovingplane() {
     self.movingc130 setscriptablepartstate("running_lights", "on");
     namespace_81156089ff1fe819::function_2bbe7f3e487520c6();
     setomnvar("ui_hide_player_icons", 0);

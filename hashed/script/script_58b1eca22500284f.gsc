@@ -59,8 +59,8 @@ function function_c17cfc74e781a94a() {
     var_919026833c44ed10 = 0;
     while (1) {
         var_2c12590f73a533c9 = 0;
-        CombatAround = function_a8501c6fe24440eb();
-        if (istrue(CombatAround)) {
+        combataround = function_a8501c6fe24440eb();
+        if (istrue(combataround)) {
             var_2c12590f73a533c9 = function_d6c06e62befcf33f("CombatAround", 3);
             if (istrue(var_2c12590f73a533c9)) {
                 var_919026833c44ed10 = 0;

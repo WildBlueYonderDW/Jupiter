@@ -22,7 +22,7 @@
 // Checksum 0x0, Offset: 0xad1
 // Size: 0xba
 function function_84ac3d5c82b5ba3c() {
-    namespace_76a219af07c28c13::function_f3d757808130bac4(&function_b128e76919aac9f6);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_b128e76919aac9f6);
     var_3ee819ca72435cc3 = getdvarfloat(@"hash_e19c52a408e0765d", 2.3);
     var_1eea19fb9ba75d8b = getdvarfloat(@"hash_fad3c5e3b27f4e7e", 2);
     var_8d7e3a68cd4badb5 = getdvarfloat(@"hash_9c8124fab915f0eb", 16);
@@ -703,7 +703,7 @@ function private function_b128e76919aac9f6(var_bd11f2561cb089ec, var_229340472f2
     if (function_71d38726159c3f12(11)) {
         function_f541e4e4edaa8e99(11, [0:var_bd11f2561cb089ec], 1);
     } else {
-        squad = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(var_bd11f2561cb089ec.team, var_bd11f2561cb089ec.var_ff97225579de16a, 0);
+        squad = namespace_54d20dd0dd79277f::getsquadmates(var_bd11f2561cb089ec.team, var_bd11f2561cb089ec.var_ff97225579de16a, 0);
         if (squad.size >= 2) {
             var_1acd4938f955faa5 = squad[0];
             if (var_1acd4938f955faa5 == var_bd11f2561cb089ec) {
@@ -838,7 +838,7 @@ function private function_2ee23050ad97fd79(var_4b1c35b918f9d256, var_e6013eac452
             var_23d6245ff51f1599 = namespace_54d20dd0dd79277f::function_5b7802e04b6d946(player);
             var_63aa2177c0bac532 = function_9edc3a4b955d5a6c(var_7669bfa60fd97d51);
             if (var_23d6245ff51f1599 && var_63aa2177c0bac532) {
-                squad = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(player.team, player.var_ff97225579de16a, 0);
+                squad = namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 0);
                 foreach (squadmember in squad) {
                     if (player != squadmember && !function_4ab1cdfd84bbd3f2(var_e6013eac45290cab, squadmember)) {
                         function_2ee23050ad97fd79(var_4b1c35b918f9d256, var_e6013eac45290cab, squadmember, "PlayerJoinedSquad", 0);
@@ -902,7 +902,7 @@ function function_d306509ca7ea3ac3(var_e6013eac45290cab, player, var_a8839f00f87
 // Checksum 0x0, Offset: 0x2a98
 // Size: 0x53
 function function_cfc0a56c1b2b3bd8(var_e6013eac45290cab, player) {
-    squadmembers = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(player.team, player.var_ff97225579de16a, 0);
+    squadmembers = namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 0);
     var_c626e727c242968c = 0;
     function_ad54e18b503363a0(var_e6013eac45290cab, squadmembers, undefined, var_c626e727c242968c);
 }

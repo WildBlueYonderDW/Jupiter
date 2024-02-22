@@ -403,8 +403,8 @@ function setupkillcamui(attacker, victim, objweapon, var_9e78f0ac35b8615a, var_5
     }
     function_b07f44c04a1ab4d2(attacker);
     function_64266f65b359ad7(attacker);
-    forceRespawn = getdvarint(@"hash_5d64cd3b24cf883a");
-    if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forceRespawn == 0 && !level.gameended) {
+    forcerespawn = getdvarint(@"hash_5d64cd3b24cf883a");
+    if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forcerespawn == 0 && !level.gameended) {
         self setclientomnvar("ui_killcam_text", "skip");
     } else if (!level.gameended) {
         self setclientomnvar("ui_killcam_text", "respawn");
@@ -421,7 +421,7 @@ function setupkillcamui(attacker, victim, objweapon, var_9e78f0ac35b8615a, var_5
 function queueforkillcam() {
     level.numplayerswaitingtoenterkillcam++;
     var_c40a8900810543a2 = 1;
-    if (istrue(level.showingfinalkillcam) && namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (istrue(level.showingfinalkillcam) && namespace_36f464722d326bbe::isbrstylegametype()) {
         var_c40a8900810543a2 = 5;
     }
     var_5c539133a8240074 = level.framedurationseconds * int(floor((level.numplayerswaitingtoenterkillcam - 1) / var_c40a8900810543a2));

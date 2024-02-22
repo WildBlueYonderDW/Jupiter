@@ -826,15 +826,15 @@ function perkpackagemenu_disableoffhanduse(duration) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ec1
 // Size: 0x1f
-function perkpackage_givedebug(var_ebec497ff8b18a45, var_12c0f53a71c9bcc8) {
-    perkpackage_giveimmediate(var_ebec497ff8b18a45, undefined, undefined, var_12c0f53a71c9bcc8);
+function perkpackage_givedebug(var_ebec497ff8b18a45, blueprintindex) {
+    perkpackage_giveimmediate(var_ebec497ff8b18a45, undefined, undefined, blueprintindex);
 }
 
 // Namespace perkpackage/namespace_727d2aa1d6c72038
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ee7
 // Size: 0xde
-function perkpackage_giveimmediate(var_ebec497ff8b18a45, var_804a4a862146eb04, var_deb9b17bae00526e, var_12c0f53a71c9bcc8, immediate) {
+function perkpackage_giveimmediate(var_ebec497ff8b18a45, var_804a4a862146eb04, var_deb9b17bae00526e, blueprintindex, immediate) {
     if (!isdefined(immediate)) {
         immediate = 1;
     }
@@ -854,7 +854,7 @@ function perkpackage_giveimmediate(var_ebec497ff8b18a45, var_804a4a862146eb04, v
         perkpackage_giveoverridefieldupgrades(var_804a4a862146eb04, var_deb9b17bae00526e);
     } else {
         perkpackage_giveoverridefieldupgrades(var_ebec497ff8b18a45);
-        givesuper(self.perkpackagedata.super, 0, immediate, var_12c0f53a71c9bcc8);
+        givesuper(self.perkpackagedata.super, 0, immediate, blueprintindex);
     }
 }
 

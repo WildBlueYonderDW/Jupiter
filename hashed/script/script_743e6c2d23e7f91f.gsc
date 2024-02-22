@@ -39,48 +39,48 @@ function function_906e0becc84c065b(pos, var_e0c08758eb0006be, vehicle, model, pa
     spawndata.cancapture = 0;
     spawndata.cancaptureimmediately = 0;
     spawndata.activateimmediately = 1;
-    remoteTank = namespace_f64231d5b7a2c3c4::_spawnvehicle(spawndata);
+    remotetank = namespace_f64231d5b7a2c3c4::_spawnvehicle(spawndata);
     if (isdefined(var_26ebc4ab45d7e908)) {
-        remoteTank.owner = var_26ebc4ab45d7e908;
-        remoteTank setentityowner(var_26ebc4ab45d7e908);
+        remotetank.owner = var_26ebc4ab45d7e908;
+        remotetank setentityowner(var_26ebc4ab45d7e908);
     } else {
         var_2884adc8d320f897 = namespace_bfef6903bca5845d::function_af3034a7c69d7edb(namespace_14d36171baccf528::function_30a0d7ca3fae40cc("merc"));
-        remoteTank.owner = var_2884adc8d320f897;
-        remoteTank namespace_6d9917c3dc05dbe9::registersentient("Killstreak_Ground", spawndata.team);
+        remotetank.owner = var_2884adc8d320f897;
+        remotetank namespace_6d9917c3dc05dbe9::registersentient("Killstreak_Ground", spawndata.team);
     }
-    remoteTank.team = "team_hundred_ninety_five";
-    remoteTank.tanktype = "remote_tank";
-    remoteTank.maxhealth = 6000;
-    remoteTank.health = 6000;
-    remoteTank.currenthealth = 6000;
-    remoteTank.pathstruct = var_e0c08758eb0006be;
-    remoteTank.var_e0c08758eb0006be = var_e0c08758eb0006be;
-    remoteTank.vehiclename = "pac_sentry";
-    remoteTank.spinuptime = 1;
-    remoteTank laseron();
-    remoteTank function_d2e41c7603ba7697("p2p");
-    remoteTank function_77320e794d35465a("p2p", "reverseGasNormal", 1.5);
-    remoteTank function_77320e794d35465a("p2p", "steeringMultiplier", 15);
-    remoteTank function_77320e794d35465a("p2p", "manualSpeed", 10);
-    remoteTank function_77320e794d35465a("p2p", "reverseForBehindGoal", 1);
-    remoteTank function_77320e794d35465a("p2p", "stuckTime", 4);
-    remoteTank function_77320e794d35465a("p2p", "goalThreshold", 10);
-    remoteTank namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&empStarted);
-    remoteTank namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&empCleared);
-    remoteTank.var_8ffa366ec68f0c8b = 10000;
-    remoteTank namespace_6ca1587edcca0018::function_89445073f3e86e5c(remoteTank.vehiclename);
-    function_45c8ebe59275b96e(remoteTank.vehiclename);
-    playfxontag(getfx("vfx_dmz_Wheelson_flashlight"), remoteTank, "tag_flash");
-    remoteTank.currentstate = "patrol";
-    remoteTank vehicleshowonminimap(0);
-    remoteTank.damagecallback = &function_96b758d589365ef6;
-    remoteTank thread function_a51eaffdb54130b2(var_e0c08758eb0006be);
-    remoteTank thread function_42bc36af24a342e();
-    remoteTank thread function_93dccf3096384da0();
-    remoteTank.damagestate = 0;
-    remoteTank.var_1329597b4278afe9 = [];
-    namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(remoteTank, remoteTank.owner, remoteTank.owner.team);
-    return remoteTank;
+    remotetank.team = "team_hundred_ninety_five";
+    remotetank.tanktype = "remote_tank";
+    remotetank.maxhealth = 6000;
+    remotetank.health = 6000;
+    remotetank.currenthealth = 6000;
+    remotetank.pathstruct = var_e0c08758eb0006be;
+    remotetank.var_e0c08758eb0006be = var_e0c08758eb0006be;
+    remotetank.vehiclename = "pac_sentry";
+    remotetank.spinuptime = 1;
+    remotetank laseron();
+    remotetank function_d2e41c7603ba7697("p2p");
+    remotetank function_77320e794d35465a("p2p", "reverseGasNormal", 1.5);
+    remotetank function_77320e794d35465a("p2p", "steeringMultiplier", 15);
+    remotetank function_77320e794d35465a("p2p", "manualSpeed", 10);
+    remotetank function_77320e794d35465a("p2p", "reverseForBehindGoal", 1);
+    remotetank function_77320e794d35465a("p2p", "stuckTime", 4);
+    remotetank function_77320e794d35465a("p2p", "goalThreshold", 10);
+    remotetank namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&empstarted);
+    remotetank namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&empcleared);
+    remotetank.var_8ffa366ec68f0c8b = 10000;
+    remotetank namespace_6ca1587edcca0018::function_89445073f3e86e5c(remotetank.vehiclename);
+    function_45c8ebe59275b96e(remotetank.vehiclename);
+    playfxontag(getfx("vfx_dmz_Wheelson_flashlight"), remotetank, "tag_flash");
+    remotetank.currentstate = "patrol";
+    remotetank vehicleshowonminimap(0);
+    remotetank.damagecallback = &function_96b758d589365ef6;
+    remotetank thread function_a51eaffdb54130b2(var_e0c08758eb0006be);
+    remotetank thread function_42bc36af24a342e();
+    remotetank thread function_93dccf3096384da0();
+    remotetank.damagestate = 0;
+    remotetank.var_1329597b4278afe9 = [];
+    namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(remotetank, remotetank.owner, remotetank.owner.team);
+    return remotetank;
 }
 
 // Namespace namespace_d952f9ac311401b4/namespace_adc82618e9ef9897
@@ -145,15 +145,15 @@ function function_45d2e44c40437351(startnode, var_10592ac32d1e5a3d, var_cffdaa45
     pathstruct.index = 0;
     var_c80eaeac6487d3b9 = startnode;
     while (isdefined(var_c80eaeac6487d3b9.target)) {
-        curIndex = pathstruct.path.size - 1;
-        pathstruct.var_7d8884f5400e2fca[curIndex] = [];
+        curindex = pathstruct.path.size - 1;
+        pathstruct.var_7d8884f5400e2fca[curindex] = [];
         var_a942ae9112cd6bde = getstructarray(var_c80eaeac6487d3b9.target, "targetname");
         foreach (node in var_a942ae9112cd6bde) {
             if (node.script_noteworthy == var_10592ac32d1e5a3d) {
                 var_c80eaeac6487d3b9 = node;
                 pathstruct.path[pathstruct.path.size] = node;
             } else if (node.script_noteworthy == var_cffdaa458d12ab7d) {
-                pathstruct.var_7d8884f5400e2fca[curIndex][pathstruct.var_7d8884f5400e2fca[curIndex].size] = function_49b628ec7b6247bd(node, var_cffdaa458d12ab7d);
+                pathstruct.var_7d8884f5400e2fca[curindex][pathstruct.var_7d8884f5400e2fca[curindex].size] = function_49b628ec7b6247bd(node, var_cffdaa458d12ab7d);
             }
         }
     }
@@ -660,17 +660,17 @@ function function_b4908dc2cbec66a6(index, forward, var_4a72697044d23367, var_ad1
     pathstruct.path = function_bb51d7fa820f19ae(0, self.var_46496c542d347ba8, self.var_13ccb567671deb18);
     pathstruct.speed = 10;
     pathstruct.index = 0;
-    curIndex = self.var_e0c08758eb0006be.index;
+    curindex = self.var_e0c08758eb0006be.index;
     if (istrue(forward)) {
-        while (index >= curIndex) {
-            pathstruct.path[pathstruct.path.size] = self.var_e0c08758eb0006be.path[curIndex].origin;
-            curIndex = curIndex + 1;
+        while (index >= curindex) {
+            pathstruct.path[pathstruct.path.size] = self.var_e0c08758eb0006be.path[curindex].origin;
+            curindex = curindex + 1;
         }
     } else {
-        curIndex = curIndex - 1;
-        while (curIndex >= index) {
-            pathstruct.path[pathstruct.path.size] = self.var_e0c08758eb0006be.path[curIndex].origin;
-            curIndex = curIndex - 1;
+        curindex = curindex - 1;
+        while (curindex >= index) {
+            pathstruct.path[pathstruct.path.size] = self.var_e0c08758eb0006be.path[curindex].origin;
+            curindex = curindex - 1;
         }
     }
     if (isdefined(var_ad1e1e856375b447)) {
@@ -785,7 +785,7 @@ function function_1457a29ddb8b55dc(target, cfg) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2377
 // Size: 0x49
-function empStarted(data) {
+function empstarted(data) {
     namespace_6ca1587edcca0018::function_db443c859c55e450(1);
     function_55f73871378d7cea();
     self.emp = 1;
@@ -799,7 +799,7 @@ function empStarted(data) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23c7
 // Size: 0x3f
-function empCleared(isdeath) {
+function empcleared(isdeath) {
     namespace_6ca1587edcca0018::function_db443c859c55e450(0);
     self.emp = 0;
     function_b0bcd78019fa3f75();

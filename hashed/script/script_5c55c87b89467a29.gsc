@@ -508,7 +508,7 @@ function function_1e328368618d72da(team) {
     }
     wait(15);
     if (!istrue(level.var_644a33d86d8514bf)) {
-        namespace_d696adde758cbe79::showDMZSplash("dmz_contract_reminder", getteamdata(team, "players"));
+        namespace_d696adde758cbe79::showdmzsplash("dmz_contract_reminder", getteamdata(team, "players"));
     }
 }
 

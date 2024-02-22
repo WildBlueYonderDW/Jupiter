@@ -183,8 +183,8 @@ function bot_infect_retrieve_knife() {
         self.melee_enemy_new_node_time = 0;
         self.melee_self_node = undefined;
         self.melee_self_new_node_time = 0;
-        throwKnifeChance = self botgetdifficultysetting("throwKnifeChance");
-        if (throwKnifeChance < 0.25) {
+        throwknifechance = self botgetdifficultysetting("throwKnifeChance");
+        if (throwknifechance < 0.25) {
             self botsetdifficultysetting("throwKnifeChance", 0.25);
         }
         self botsetdifficultysetting("allowGrenades", 1);

@@ -928,7 +928,7 @@ function function_e4f1c5e85e0d69a() {
     a_players = function_143526130b12b2b6(self.origin, 500);
     foreach (player in a_players) {
         if (isplayer(player)) {
-            player utility::function_b110406ad4afce14(var_db217c24c350bd55, self.var_bf292331654f1556, n_cycle_time);
+            player utility::player_prestream_entities(var_db217c24c350bd55, self.var_bf292331654f1556, n_cycle_time);
         }
     }
     var_55f85f037cf37814 = gettime() + function_a5b14435e3229bed(n_cycle_time);

@@ -29,7 +29,7 @@ function function_e0844a2b7f904b14(bot) {
     }
     var_a0f36ff3eae203ae = level.br_circle.circleindex + 1 >= level.br_level.br_circlecenters.size - level.br_level.br_movingcirclecount;
     if (!var_a0f36ff3eae203ae) {
-        var_7d9a6d00a336393b = namespace_bbc79db4c3949a5c::function_3e0a90b32e551ad(bot.origin);
+        var_7d9a6d00a336393b = namespace_bbc79db4c3949a5c::gettimetilldangerforpoint(bot.origin);
         if (var_7d9a6d00a336393b >= 0) {
             var_72bb89e60d3674df = function_9d1ab012058221bb(var_7d9a6d00a336393b, self.constants.var_3dd54452af7d2b91, self.constants.var_49e2976ca0c853ef);
             var_72bb89e60d3674df = var_72bb89e60d3674df + function_4e58bf49977d1bfd();

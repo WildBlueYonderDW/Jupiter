@@ -25,7 +25,7 @@
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x194
 // Size: 0x42
-function function_37ac1eee9096297c(equipmentref, slot, objweapon) {
+function onfired(equipmentref, slot, objweapon) {
     namespace_aad14af462a74d08::function_b0f754c8a379154e("equip_concussion", self, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
 }
 
@@ -103,7 +103,7 @@ function applyconcussion(einflictor, eattacker) {
     if (!val::get("stunned")) {
         return;
     }
-    if (namespace_cd0b2d039510b38d::getgametype() == "arena" || namespace_36f464722d326bbe::isBRStyleGameType() && eattacker namespace_d3d40f75bb4e4c32::isplayeringulag()) {
+    if (namespace_cd0b2d039510b38d::getgametype() == "arena" || namespace_36f464722d326bbe::isbrstylegametype() && eattacker namespace_d3d40f75bb4e4c32::isplayeringulag()) {
         var_73dc87c72d7f6c03 = level.tacticaltimemod;
         var_636c8be8a25f3a8 = level.tacticaltimemod;
     } else {
@@ -117,7 +117,7 @@ function applyconcussion(einflictor, eattacker) {
         }
     #/
     if (var_8907f741f3a7b3f7) {
-        if (namespace_cd0b2d039510b38d::getgametype() == "arena" || namespace_36f464722d326bbe::isBRStyleGameType() && eattacker namespace_d3d40f75bb4e4c32::isplayeringulag()) {
+        if (namespace_cd0b2d039510b38d::getgametype() == "arena" || namespace_36f464722d326bbe::isbrstylegametype() && eattacker namespace_d3d40f75bb4e4c32::isplayeringulag()) {
             var_73dc87c72d7f6c03 = max(level.tacticaltimemod - 1, 0.5);
             var_636c8be8a25f3a8 = max(level.tacticaltimemod - 1, 0.5);
         } else {
@@ -142,9 +142,9 @@ function applyconcussion(einflictor, eattacker) {
     utility::setplayerstunned();
     thread namespace_d325722f2754c2c4::cleanupconcussionstun(time);
     _shellshock("concussion_grenade_mp", "stun", time, 1);
-    CodcasterSetPlayerStatusEffect("stun", time);
+    codcastersetplayerstatuseffect("stun", time);
     if (!var_8907f741f3a7b3f7) {
-        eattacker namespace_a850435086c88de3::doOnActionScoreEvent(0, "concussionGrenadeHit");
+        eattacker namespace_a850435086c88de3::doonactionscoreevent(0, "concussionGrenadeHit");
     }
 }
 

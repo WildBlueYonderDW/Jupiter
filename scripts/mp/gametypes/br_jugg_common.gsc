@@ -454,9 +454,9 @@ function mangagedeathsdoor(juggconfig) {
     var_37329a37ef4dd878 = 5;
     while (1) {
         result = waittill_any_return_2("deaths_door_enter", "jugg_health_regen");
-        var_6dcfce39980a28b6 = 1;
+        healed = 1;
         if (result == "deaths_door_enter") {
-            var_6dcfce39980a28b6 = 0;
+            healed = 0;
             self.ignoredeathsdoor = 1;
             wait(var_37329a37ef4dd878);
         } else if (result == "jugg_health_regen") {
@@ -467,7 +467,7 @@ function mangagedeathsdoor(juggconfig) {
                 }
             }
         }
-        namespace_4887422e77f3514e::onexitdeathsdoor(var_6dcfce39980a28b6);
+        namespace_4887422e77f3514e::onexitdeathsdoor(healed);
     }
 }
 

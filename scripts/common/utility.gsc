@@ -1678,32 +1678,32 @@ function function_2d7fd59d039fa69b(point, radius, var_9dc460b17444614f) {
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d4e
 // Size: 0x147
-function trycall(var_303a0b57f1f9351a, param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807) {
-    if (!isdefined(var_303a0b57f1f9351a)) {
+function trycall(functionpointer, param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807) {
+    if (!isdefined(functionpointer)) {
         return;
     }
     if (isdefined(var_5a6a8afa11882807)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807);
+        return [[ functionpointer ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807);
     } else if (isdefined(var_f3cb1651d632a555)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555);
+        return [[ functionpointer ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555);
     } else if (isdefined(param8)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4, param5, param6, param7, param8);
+        return [[ functionpointer ]](param1, param2, param3, param4, param5, param6, param7, param8);
     } else if (isdefined(param7)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4, param5, param6, param7);
+        return [[ functionpointer ]](param1, param2, param3, param4, param5, param6, param7);
     } else if (isdefined(param6)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4, param5, param6);
+        return [[ functionpointer ]](param1, param2, param3, param4, param5, param6);
     } else if (isdefined(param5)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4, param5);
+        return [[ functionpointer ]](param1, param2, param3, param4, param5);
     } else if (isdefined(param4)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3, param4);
+        return [[ functionpointer ]](param1, param2, param3, param4);
     } else if (isdefined(param3)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2, param3);
+        return [[ functionpointer ]](param1, param2, param3);
     } else if (isdefined(param2)) {
-        return [[ var_303a0b57f1f9351a ]](param1, param2);
+        return [[ functionpointer ]](param1, param2);
     } else if (isdefined(param1)) {
-        return [[ var_303a0b57f1f9351a ]](param1);
+        return [[ functionpointer ]](param1);
     } else {
-        return [[ var_303a0b57f1f9351a ]]();
+        return [[ functionpointer ]]();
     }
 }
 
@@ -1980,16 +1980,16 @@ function function_ea3248e9abe4700a() {
 // Params a, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5554
 // Size: 0x1f9
-function function_7a5a6498179656fc(animScene, direction, rules, victimLives, startStance, endStance, override, marina_hack, usePistol, boneOverride) {
+function function_7a5a6498179656fc(animscene, direction, rules, victimlives, startstance, endstance, override, marina_hack, usepistol, boneoverride) {
     /#
-        assertex(isdefined(animScene), "Must define an animScene!");
+        assertex(isdefined(animscene), "Must define an animScene!");
     #/
     /#
         assertex(isdefined(direction), "Must define a direction!");
     #/
     direction = tolower(direction);
     array = [];
-    array[direction]["animScene"] = animScene;
+    array[direction]["animScene"] = animscene;
     if (isdefined(rules)) {
         if (isarray(rules)) {
             array[direction]["rules"] = rules;
@@ -1999,18 +1999,18 @@ function function_7a5a6498179656fc(animScene, direction, rules, victimLives, sta
     } else {
         array[direction]["rules"] = [[ level.scripted_melee.var_2eda72772d041081 ]]();
     }
-    if (isdefined(victimLives)) {
-        array[direction]["victimLives"] = victimLives;
+    if (isdefined(victimlives)) {
+        array[direction]["victimLives"] = victimlives;
     } else {
         array[direction]["victimLives"] = 0;
     }
-    if (isdefined(startStance)) {
-        array[direction]["startStance"] = endStance;
+    if (isdefined(startstance)) {
+        array[direction]["startStance"] = endstance;
     } else {
         array[direction]["startStance"] = undefined;
     }
-    if (isdefined(endStance)) {
-        array[direction]["endStance"] = endStance;
+    if (isdefined(endstance)) {
+        array[direction]["endStance"] = endstance;
     } else {
         array[direction]["endStance"] = undefined;
     }
@@ -2019,23 +2019,23 @@ function function_7a5a6498179656fc(animScene, direction, rules, victimLives, sta
     } else {
         array[direction]["marina_hack"] = undefined;
     }
-    if (isdefined(usePistol)) {
-        array[direction]["usePistol"] = usePistol;
+    if (isdefined(usepistol)) {
+        array[direction]["usePistol"] = usepistol;
     } else {
         array[direction]["usePistol"] = undefined;
     }
-    if (isdefined(boneOverride)) {
-        array[direction]["boneOverride"] = boneOverride;
+    if (isdefined(boneoverride)) {
+        array[direction]["boneOverride"] = boneoverride;
     } else {
         array[direction]["boneOverride"] = "TAG_ACCESSORY_RIGHT";
     }
     if (level == self) {
-        function_5e7bde4c30450810(level.scripted_melee, animScene, direction, override, array);
+        function_5e7bde4c30450810(level.scripted_melee, animscene, direction, override, array);
     } else {
         if (!isdefined(self.scripted_melee)) {
             self.scripted_melee = spawnstruct();
         }
-        function_5e7bde4c30450810(self.scripted_melee, animScene, direction, override, array);
+        function_5e7bde4c30450810(self.scripted_melee, animscene, direction, override, array);
     }
 }
 
@@ -2043,7 +2043,7 @@ function function_7a5a6498179656fc(animScene, direction, rules, victimLives, sta
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5754
 // Size: 0x1c3
-function private function_5e7bde4c30450810(struct, animScene, direction, override, array) {
+function private function_5e7bde4c30450810(struct, animscene, direction, override, array) {
     if (istrue(override)) {
         if (!isdefined(struct.var_5e0a4f882198a116)) {
             struct.var_5e0a4f882198a116 = [];
@@ -2053,9 +2053,9 @@ function private function_5e7bde4c30450810(struct, animScene, direction, overrid
         }
         if (struct.var_5e0a4f882198a116[direction].size > 0) {
             for (i = 0; i < struct.var_5e0a4f882198a116[direction].size; i++) {
-                if (isdefined(struct.var_5e0a4f882198a116[direction][i]["animScene"]) && struct.var_5e0a4f882198a116[direction][i]["animScene"] == animScene) {
+                if (isdefined(struct.var_5e0a4f882198a116[direction][i]["animScene"]) && struct.var_5e0a4f882198a116[direction][i]["animScene"] == animscene) {
                     /#
-                        println("<unknown string>" + animScene + "<unknown string>" + direction + "<unknown string>");
+                        println("<unknown string>" + animscene + "<unknown string>" + direction + "<unknown string>");
                     #/
                     struct.var_5e0a4f882198a116[direction] = array_remove_index(struct.var_5e0a4f882198a116[direction], i);
                 }
@@ -2080,19 +2080,19 @@ function private function_5e7bde4c30450810(struct, animScene, direction, overrid
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x591e
 // Size: 0xbe
-function function_41cb362e1d3b89b1(animScene, override) {
+function function_41cb362e1d3b89b1(animscene, override) {
     if (istrue(override)) {
         if (isdefined(self.var_f145d382dca7f7ee) && isdefined(self.scripted_melee) && isdefined(self.scripted_melee.var_5e0a4f882198a116)) {
-            function_2bb6f41ffcbd4bea(self.scripted_melee, animScene, override);
+            function_2bb6f41ffcbd4bea(self.scripted_melee, animscene, override);
         } else if (isdefined(level.scripted_melee.var_5e0a4f882198a116) && isdefined(self.var_f145d382dca7f7ee)) {
-            function_2bb6f41ffcbd4bea(level.scripted_melee, animScene, override);
+            function_2bb6f41ffcbd4bea(level.scripted_melee, animscene, override);
         } else {
             /#
                 iprintln("<unknown string>");
             #/
         }
     } else {
-        function_2bb6f41ffcbd4bea(level.scripted_melee, animScene, override);
+        function_2bb6f41ffcbd4bea(level.scripted_melee, animscene, override);
     }
 }
 
@@ -2100,13 +2100,13 @@ function function_41cb362e1d3b89b1(animScene, override) {
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x59e3
 // Size: 0x253
-function private function_2bb6f41ffcbd4bea(struct, animScene, override) {
+function private function_2bb6f41ffcbd4bea(struct, animscene, override) {
     if (istrue(override)) {
         directions = getarraykeys(struct.var_5e0a4f882198a116);
         foreach (direction in directions) {
             found = undefined;
             for (i = 0; i < struct.var_5e0a4f882198a116[direction].size; i++) {
-                if (struct.var_5e0a4f882198a116[direction][i]["animScene"] == animScene) {
+                if (struct.var_5e0a4f882198a116[direction][i]["animScene"] == animscene) {
                     found = 1;
                 }
                 if (istrue(found) && struct.var_5e0a4f882198a116[direction].size > 1) {
@@ -2123,7 +2123,7 @@ function private function_2bb6f41ffcbd4bea(struct, animScene, override) {
         foreach (direction in directions) {
             found = undefined;
             for (i = 0; i < struct.anims[direction].size; i++) {
-                if (struct.anims[direction][i]["animScene"] == animScene) {
+                if (struct.anims[direction][i]["animScene"] == animscene) {
                     found = 1;
                 }
                 if (istrue(found) && struct.anims[direction].size > 1) {
@@ -2141,7 +2141,7 @@ function private function_2bb6f41ffcbd4bea(struct, animScene, override) {
 // Params 12, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c3d
 // Size: 0x36c
-function function_299b43ee3353dacc(animScene, direction, rules, victimLives, var_28fed3da1df154fb, startStance, endStance, funcs, launch, marina_hack, usePistol, boneOverride) {
+function function_299b43ee3353dacc(animscene, direction, rules, victimlives, var_28fed3da1df154fb, startstance, endstance, funcs, launch, marina_hack, usepistol, boneoverride) {
     if (!isdefined(direction)) {
         direction = "all";
     }
@@ -2150,13 +2150,13 @@ function function_299b43ee3353dacc(animScene, direction, rules, victimLives, var
         var_28fed3da1df154fb = 1;
     }
     /#
-        assertex(isdefined(animScene), "Must pass the animScene name!");
+        assertex(isdefined(animscene), "Must pass the animScene name!");
     #/
     /#
-        assertex(isdefined(level.scr_anim[function_ea3248e9abe4700a()][animScene]), "No animation setup for the scripted melee player rig with name, " + animScene);
+        assertex(isdefined(level.scr_anim[function_ea3248e9abe4700a()][animscene]), "No animation setup for the scripted melee player rig with name, " + animscene);
     #/
     /#
-        assertex(isdefined(level.scr_anim["generic"][animScene]), "No animation setup for the victim with name, " + animScene);
+        assertex(isdefined(level.scr_anim["generic"][animscene]), "No animation setup for the victim with name, " + animscene);
     #/
     if (istrue(var_28fed3da1df154fb)) {
         function_a072535b3f7182fe(direction);
@@ -2172,27 +2172,27 @@ function function_299b43ee3353dacc(animScene, direction, rules, victimLives, var
         rules = array_remove_index(rules, index);
         rules = function_33bea9fcd7e7d254(rules);
     }
-    function_7a5a6498179656fc(animScene, direction, rules, victimLives, startStance, endStance, 1, marina_hack, usePistol, boneOverride);
+    function_7a5a6498179656fc(animscene, direction, rules, victimlives, startstance, endstance, 1, marina_hack, usepistol, boneoverride);
     notetracks = [0:"cm_death", 1:"cm_ragdoll"];
     functions[0] = &function_26e31291e7d65683;
     functions[1] = &function_6812bf6f8500b33a;
     foreach (n, notetrack in notetracks) {
-        if (isdefined(level.scr_notetrack["generic"]) && isdefined(level.scr_notetrack["generic"][animScene]) && isdefined(level.scr_notetrack["generic"][animScene][notetrack]) && level.scr_notetrack["generic"][animScene][notetrack].size > 0) {
-            for (i = 0; i < level.scr_notetrack["generic"][animScene][notetrack].size; i++) {
-                if (isdefined(level.scr_notetrack["generic"][animScene][notetrack][i]["function"])) {
-                    if (level.scr_notetrack["generic"][animScene][notetrack][i]["function"] == functions[n]) {
+        if (isdefined(level.scr_notetrack["generic"]) && isdefined(level.scr_notetrack["generic"][animscene]) && isdefined(level.scr_notetrack["generic"][animscene][notetrack]) && level.scr_notetrack["generic"][animscene][notetrack].size > 0) {
+            for (i = 0; i < level.scr_notetrack["generic"][animscene][notetrack].size; i++) {
+                if (isdefined(level.scr_notetrack["generic"][animscene][notetrack][i]["function"])) {
+                    if (level.scr_notetrack["generic"][animscene][notetrack][i]["function"] == functions[n]) {
                         /#
-                            println("<unknown string>" + notetrack + "<unknown string>" + animScene + "<unknown string>");
+                            println("<unknown string>" + notetrack + "<unknown string>" + animscene + "<unknown string>");
                         #/
-                        level.scr_notetrack["generic"][animScene][notetrack][i]["function"] = undefined;
+                        level.scr_notetrack["generic"][animscene][notetrack][i]["function"] = undefined;
                     }
                 }
             }
         }
     }
-    namespace_bc4a4b9456315863::addnotetrack_customfunction("generic", "cm_death", &function_26e31291e7d65683, animScene);
-    namespace_bc4a4b9456315863::addnotetrack_customfunction("generic", "cm_ragdoll", &function_6812bf6f8500b33a, animScene);
-    namespace_bc4a4b9456315863::addnotetrack_customfunction("generic", "cm_fx", &function_e24378166154fc99, animScene);
+    namespace_bc4a4b9456315863::addnotetrack_customfunction("generic", "cm_death", &function_26e31291e7d65683, animscene);
+    namespace_bc4a4b9456315863::addnotetrack_customfunction("generic", "cm_ragdoll", &function_6812bf6f8500b33a, animscene);
+    namespace_bc4a4b9456315863::addnotetrack_customfunction("generic", "cm_fx", &function_e24378166154fc99, animscene);
 }
 
 // Namespace utility/namespace_448ccf1ca136fbbe
@@ -2223,11 +2223,11 @@ function private function_e24378166154fc99(guy) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x602e
 // Size: 0x26
-function function_df3c0eba274a0121(animScene) {
+function function_df3c0eba274a0121(animscene) {
     /#
-        assertex(isdefined(animScene), "Must pass the animScene to remove!");
+        assertex(isdefined(animscene), "Must pass the animScene to remove!");
     #/
-    function_41cb362e1d3b89b1(animScene, 1);
+    function_41cb362e1d3b89b1(animscene, 1);
 }
 
 // Namespace utility/namespace_448ccf1ca136fbbe
@@ -2893,9 +2893,9 @@ function use_turret(turret, pose) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x7479
 // Size: 0x31
-function function_5a18f19c457e5d1a(origin, viewpos, Baseline) {
+function function_5a18f19c457e5d1a(origin, viewpos, baseline) {
     dist = distance(viewpos, origin);
-    return dist / Baseline;
+    return dist / baseline;
 }
 
 // Namespace utility/namespace_448ccf1ca136fbbe

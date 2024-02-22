@@ -268,16 +268,16 @@ function airdrop_multiple_watchdropcratesinternal() {
             }
             firstframe = 0;
         } else {
-            var_3a8cac6c1d60003c = istrue(self.ownerdisconnected) || istrue(self.ownerjoinedteam);
+            disowned = istrue(self.ownerdisconnected) || istrue(self.ownerjoinedteam);
             if (isdefined(self.ac130)) {
-                if (var_3a8cac6c1d60003c || gettime() > self.ac130.animendtime) {
+                if (disowned || gettime() > self.ac130.animendtime) {
                     self.ac130 airdrop_multiple_destroyac130();
                 }
             }
             foreach (crate in self.crates) {
                 if (isdefined(crate)) {
                     if (gettime() > crate.animendtime) {
-                        if (var_3a8cac6c1d60003c) {
+                        if (disowned) {
                             crate thread destroycrate();
                         }
                         thread docratedropfromscripted(crate);
@@ -287,10 +287,10 @@ function airdrop_multiple_watchdropcratesinternal() {
                         } else {
                             crate setscriptablepartstate("trail", "active", 1);
                         }
-                        if (var_3a8cac6c1d60003c) {
+                        if (disowned) {
                             crate thread destroycrate();
                         }
-                    } else if (var_3a8cac6c1d60003c) {
+                    } else if (disowned) {
                         crate thread destroycrate();
                     } else if (!isdefined(self.ac130) || istrue(self.ac130.isdestroyed)) {
                         thread docratedropfromscripted(crate);
@@ -525,7 +525,7 @@ function function_3856d0dd250dd766(streakname) {
     var_bacc6dd14316758c = &function_cc5032d2f9d08d1a;
     var_7da88d9c69433487 = &function_f1e65202514970c5;
     deathcallback = &function_71d81f98f8638b99;
-    killstreak_setupVehicleDamageFunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
+    killstreak_setupvehicledamagefunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
     if (isdefined(self.owner)) {
         namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(self, self.owner, self.owner.team);
     }
@@ -573,7 +573,7 @@ function function_f1e65202514970c5(data) {
     damage = data.damage;
     idflags = data.idflags;
     self.currenthealth = self.currenthealth - damage;
-    killstreak_updateDamageState(self.currenthealth);
+    killstreak_updatedamagestate(self.currenthealth);
     return 1;
 }
 

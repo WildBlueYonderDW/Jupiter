@@ -157,21 +157,21 @@ function function_ff4065536bad7017(start_node, var_e6013eac45290cab) {
     self endon("crashing");
     self endon("new_orders");
     self.var_b3ad7bc0c890232c = start_node;
-    var_2c8c204e0a499ebc = 0;
-    while (!var_2c8c204e0a499ebc) {
+    path_end = 0;
+    while (!path_end) {
         if (!isdefined(self.var_b3ad7bc0c890232c.target)) {
-            var_2c8c204e0a499ebc = 1;
+            path_end = 1;
             self notify("ai_spawn_director_heli_reached_end_path");
         }
-        function_3c2a39b0d7da4e01(self.var_b3ad7bc0c890232c, var_2c8c204e0a499ebc);
-        if (!var_2c8c204e0a499ebc) {
+        function_3c2a39b0d7da4e01(self.var_b3ad7bc0c890232c, path_end);
+        if (!path_end) {
             var_6ba7370057392ca1 = self.var_b3ad7bc0c890232c.target;
             self.var_b3ad7bc0c890232c = getvehiclenode(var_6ba7370057392ca1, "targetname");
             if (!isdefined(self.var_b3ad7bc0c890232c)) {
                 /#
                     assertmsg("A vehicle path has a bad next node. Unable to find vehicle node with targetname: " + var_6ba7370057392ca1 + ".");
                 #/
-                var_2c8c204e0a499ebc = 1;
+                path_end = 1;
             }
         }
         waitframe();

@@ -282,9 +282,9 @@ function dropshield() {
         var_f7761d0f4cce4b51 thread deleteaftertime(3);
     }
     if (isdefined(self.thermitestucktoshield)) {
-        foreach (var_65ab49ac224010e3 in self.thermitestucktoshield) {
-            if (isdefined(var_65ab49ac224010e3)) {
-                var_65ab49ac224010e3 delete();
+        foreach (thermite in self.thermitestucktoshield) {
+            if (isdefined(thermite)) {
+                thermite delete();
             }
         }
     }

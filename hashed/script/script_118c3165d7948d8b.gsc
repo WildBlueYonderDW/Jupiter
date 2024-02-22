@@ -155,12 +155,12 @@ function function_b58f7554faa406e7(trigger) {
 // Checksum 0x0, Offset: 0xd86
 // Size: 0x3e
 function function_44c6c04fa367baea(point) {
-    var_6d6004078c259261 = undefined;
-    var_6d6004078c259261 = namespace_4df2ab39b0e96ec7::function_4d8bb2d866771a10(point);
-    if (!isdefined(var_6d6004078c259261) || is_equal(var_6d6004078c259261, "difficulty_undefined")) {
+    difficulty_region = undefined;
+    difficulty_region = namespace_4df2ab39b0e96ec7::function_4d8bb2d866771a10(point);
+    if (!isdefined(difficulty_region) || is_equal(difficulty_region, "difficulty_undefined")) {
         return "difficulty_easy";
     }
-    return var_6d6004078c259261;
+    return difficulty_region;
 }
 
 // Namespace namespace_6babc541ac0484f4/namespace_5d8c3870222947b5
@@ -168,14 +168,14 @@ function function_44c6c04fa367baea(point) {
 // Checksum 0x0, Offset: 0xdcc
 // Size: 0x4d
 function function_415547ee4122c2ca() {
-    var_6d6004078c259261 = undefined;
+    difficulty_region = undefined;
     if (isdefined(level.var_fac39a693f085779)) {
-        var_6d6004078c259261 = [[ level.var_fac39a693f085779 ]](namespace_68dc261109a9503f::function_8988a4c89289d7f4(self));
+        difficulty_region = [[ level.var_fac39a693f085779 ]](namespace_68dc261109a9503f::function_8988a4c89289d7f4(self));
     }
-    if (!isdefined(var_6d6004078c259261) || is_equal(var_6d6004078c259261, "difficulty_undefined")) {
+    if (!isdefined(difficulty_region) || is_equal(difficulty_region, "difficulty_undefined")) {
         return "difficulty_easy";
     }
-    return var_6d6004078c259261;
+    return difficulty_region;
 }
 
 // Namespace namespace_6babc541ac0484f4/namespace_5d8c3870222947b5
@@ -578,7 +578,7 @@ function function_f0ec7d956c4a712e() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dd6
 // Size: 0x1f
-function function_5b80d2c2874ae1ab(var_1214e71694c2f23a) {
+function function_5b80d2c2874ae1ab(activity_succeeded) {
     var_2f5d509d7b71ce9a = self;
     var_2f5d509d7b71ce9a endon("instance_destroyed");
 }

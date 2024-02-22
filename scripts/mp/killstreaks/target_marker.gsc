@@ -59,7 +59,7 @@ function gettargetmarker(streakinfo, var_281c85042194c88f, var_99514d9b932ce768)
             }
         }
     }
-    if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+    if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
         self setclientomnvar("ui_br_inventory_disabled", 1);
     }
     while (1) {
@@ -124,7 +124,7 @@ function gettargetmarker(streakinfo, var_281c85042194c88f, var_99514d9b932ce768)
             }
         }
     }
-    if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+    if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
         self setclientomnvar("ui_br_inventory_disabled", 0);
     }
     if (isreallyalive(self)) {
@@ -294,12 +294,12 @@ function function_a3234162c515654f(streakinfo) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xda6
 // Size: 0xe2
-function watchForPlacementFireState(streakinfo, endonnotify, weaponobj) {
+function watchforplacementfirestate(streakinfo, endonnotify, weaponobj) {
     self endon(endonnotify);
     self endon("death_or_disconnect");
     streakinfo endon("killstreak_finished_with_deploy_weapon");
     level endon("game_ended");
-    if (isdefined(weaponobj) && !namespace_ff4d906e30e82f8::candeploykillstreak(streakinfo, weaponobj)) {
+    if (isdefined(weaponobj) && !killstreakdeploy::candeploykillstreak(streakinfo, weaponobj)) {
         return;
     }
     var_d5efe0dc4421b041 = 0;

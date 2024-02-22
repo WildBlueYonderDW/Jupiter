@@ -269,7 +269,7 @@ function function_64dd96614abf2d2(animstruct) {
     function_b1d1e7e3b23e0dfe([0:"reinforcements"]);
     namespace_7ae25d9e5d5a28ef::function_d0ffcd08e0870cf2();
     var_b78d4edd3c77906f = getstructarray("attacker_reinforcements_goal", "targetname")[0];
-    var_dcf5e15c58c4152a = "enemy_mp_firebug_tier2_pmc";
+    agenttype = "enemy_mp_firebug_tier2_pmc";
     level.var_1a2b600a06ec21f4.var_d49e76efde35f3e0 = 1;
     level.var_75041b516b3785c6 = "pmc";
     var_b58631347b6ab04 = namespace_7ae25d9e5d5a28ef::function_3779deb97b61a65(6, var_b78d4edd3c77906f.origin, "high", "reinforcements", "debug", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "veh9_blima");

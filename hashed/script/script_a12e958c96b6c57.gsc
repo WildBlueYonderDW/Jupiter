@@ -88,10 +88,10 @@ function private function_8e6ae0f9fd3a8de2(params) {
             [[ var_e1f6564425e3da6d ]](params.body, var_12f08b5cb2718d76);
         }
     }
-    aitypes = get_aitype_by_subclass_SharedFunc(var_12f08b5cb2718d76);
+    aitypes = get_aitype_by_subclass_sharedfunc(var_12f08b5cb2718d76);
     spawnangles = params.body gettagangles(tag);
-    zombie = spawnNewAIType_SharedFunc(aitypes[0], params.body.origin, spawnangles, params.body.team);
-    zombie thread Animscripted_SharedFunc(alias, alias, params.body.origin, spawnangles);
+    zombie = spawnnewaitype_sharedfunc(aitypes[0], params.body.origin, spawnangles, params.body.team);
+    zombie thread animscripted_sharedfunc(alias, alias, params.body.origin, spawnangles);
     zombie linkto(params.body, "tag_origin");
     zombie waittill("unlink_spawned_ai");
     zombie unlink();

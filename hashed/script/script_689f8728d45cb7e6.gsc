@@ -25,7 +25,7 @@ function function_c56624984c6cfe44(var_c1a3a9cf7d2963b8) {
         assertex(isarray(var_c1a3a9cf7d2963b8) && var_c1a3a9cf7d2963b8.size == 1 && isplayer(var_c1a3a9cf7d2963b8[0]), "The Relevant Parameters array passed into the 'OnPlayerJoinNewSquad' Nexus Override was improperly formatted. It must be an array of size 1 with a player entity.");
     #/
     var_bd11f2561cb089ec = var_c1a3a9cf7d2963b8[0];
-    squad = namespace_54d20dd0dd79277f::getSquadmates(var_bd11f2561cb089ec.team, var_bd11f2561cb089ec.var_ff97225579de16a, 0);
+    squad = namespace_54d20dd0dd79277f::getsquadmates(var_bd11f2561cb089ec.team, var_bd11f2561cb089ec.var_ff97225579de16a, 0);
     var_861695cd06824d43 = function_553a690e1064cf0b(var_bd11f2561cb089ec);
     foreach (var_d13c18af4084bdfd in var_861695cd06824d43) {
         var_e6013eac45290cab = function_1f3e343912ae15c5(var_d13c18af4084bdfd.var_fb5fdfafc29f4513);

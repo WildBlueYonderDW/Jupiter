@@ -681,7 +681,7 @@ function function_8247afd76f1b33e0(command, args) {
         case #"hash_75c29bbe1edeb517":
             var_3df399f484f486b6 = "<unknown string>";
             level.player function_bfd3ae5074922ca4(var_3df399f484f486b6);
-            var_607da387f3617ed1 = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(level.player.team, level.player.var_ff97225579de16a, 1);
+            var_607da387f3617ed1 = namespace_54d20dd0dd79277f::getsquadmates(level.player.team, level.player.var_ff97225579de16a, 1);
             foreach (player in var_607da387f3617ed1) {
                 if (player != level.player) {
                     level.player function_1976438a8865ac27(var_3df399f484f486b6, player);

@@ -159,7 +159,7 @@ function private function_363dbe4e6642291(mobile_spawner, var_69e3e4c4a13b7d1) {
     }
     mobile_spawner utility::function_3ab9164ef76940fd("mobile_spawner", "mobile_spawner_impact");
     var_46d416fa1e8b773e = utility::random(var_69e3e4c4a13b7d1 ? self.var_e62a57499d165e15 : self.var_d230d829f6d05081);
-    aitypes = namespace_2b1145f62aa835b8::get_aitype_by_subclass_SharedFunc(var_46d416fa1e8b773e);
+    aitypes = namespace_2b1145f62aa835b8::get_aitype_by_subclass_sharedfunc(var_46d416fa1e8b773e);
     var_9f578d49d039394b = undefined;
     foreach (aitype in aitypes) {
         var_90906ae7ffd6dee3 = aitype.size;
@@ -174,7 +174,7 @@ function private function_363dbe4e6642291(mobile_spawner, var_69e3e4c4a13b7d1) {
         if (isdefined(self.enemy)) {
             angles = (0, vectortoyaw(self.enemy.origin - var_28c911f563f84e4), 0);
         }
-        var_2b1c25f7ca164d0f = namespace_2b1145f62aa835b8::spawnNewAIType_SharedFunc(var_931e0bfccfc26fa5, var_28c911f563f84e4, angles, self.team);
+        var_2b1c25f7ca164d0f = namespace_2b1145f62aa835b8::spawnnewaitype_sharedfunc(var_931e0bfccfc26fa5, var_28c911f563f84e4, angles, self.team);
         if (isdefined(var_2b1c25f7ca164d0f)) {
             var_2b1c25f7ca164d0f.var_33a6ac144efb85a6 = self;
             self.var_1b51c793abb7dbe6++;

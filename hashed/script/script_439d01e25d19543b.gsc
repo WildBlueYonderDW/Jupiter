@@ -50,8 +50,8 @@ function function_e456f5964ba54d64() {
     level.var_84b057f4f76a152a = var_b389b85c70dc3c9b;
     if (namespace_cd0b2d039510b38d::getsubgametype() == "dmz") {
         namespace_d9c77dc2a6fe29c6::enableoobimmunity(var_b389b85c70dc3c9b);
-        var_b389b85c70dc3c9b.onStartRiding = &function_436c572e13c3c87f;
-        var_b389b85c70dc3c9b.onEndRiding = &function_fce5e8b79cac65b4;
+        var_b389b85c70dc3c9b.onstartriding = &function_436c572e13c3c87f;
+        var_b389b85c70dc3c9b.onendriding = &function_fce5e8b79cac65b4;
         var_b389b85c70dc3c9b.var_76b2c48898593e9 = &function_4edcaac915edcd2e;
     }
     /#

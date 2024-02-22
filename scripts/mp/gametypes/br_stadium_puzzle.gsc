@@ -98,7 +98,7 @@ function _codecomputerscriptableused(instance, part, state, player, var_a5b2c541
             wait(3);
             instance setscriptablepartstate("maphint_stadium_code_computer", "on");
         } else {
-            player namespace_99ac021a7547cae3::function_e636e108dffe6ab7();
+            player namespace_99ac021a7547cae3::playerhasmoved();
             var_259704388e91fe40 = namespace_ff69a74765774dfd::getcodecomputerdisplaycode(level.stadium_puzzle, instance.displaycodeindex);
             instance setscriptablepartstate("maphint_stadium_code_computer", "off");
             while (istrue(instance.computermakingnose)) {

@@ -368,14 +368,14 @@ function ondeadevent(team) {
                 }
             }
         }
-        remainingTeams = [];
+        remainingteams = [];
         foreach (entry in var_b0c33d224b825287) {
             if (getteamdata(entry, "aliveCount") || livescount[entry]) {
-                remainingTeams[remainingTeams.size] = entry;
+                remainingteams[remainingteams.size] = entry;
             }
         }
-        if (remainingTeams.size == 1) {
-            setremainingteams(remainingTeams[0]);
+        if (remainingteams.size == 1) {
+            setremainingteams(remainingteams[0]);
         }
     }
 }

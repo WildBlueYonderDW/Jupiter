@@ -49,11 +49,11 @@ function getbestspectatecandidate(victim, attacker, var_e65af3dbf45178e6) {
         if (isdefined(playertospectate)) {
             logstring("Get best spectator with id: " + playertospectate getentitynumber() + " name: " + playertospectate.name + " origin: " + playertospectate.origin);
         } else {
-            UIBotCount = 0;
+            uibotcount = 0;
             if (isdefined(level.var_7b37b2193f163b9b)) {
-                UIBotCount = level.var_7b37b2193f163b9b.var_156f390a5362bc55.size;
+                uibotcount = level.var_7b37b2193f163b9b.var_156f390a5362bc55.size;
             }
-            logstring("Fail to find suitable player to spectate, total players: " + level.players.size + " UIBots: " + UIBotCount);
+            logstring("Fail to find suitable player to spectate, total players: " + level.players.size + " UIBots: " + uibotcount);
         }
     }
     return playertospectate;
@@ -155,7 +155,7 @@ function function_5c0a370334d590e(player) {
     if (!isdefined(player)) {
         return 0;
     }
-    if (player namespace_95d8d8ec67e3e074::function_6ecc7cd453466014()) {
+    if (player namespace_95d8d8ec67e3e074::isuibot()) {
         return 0;
     }
     if (!namespace_41f4dfb71dd08362::function_ded80385ea7471db(player)) {
@@ -290,7 +290,7 @@ function spawnintermissionatplayer(player) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x10fd
 // Size: 0x80
-function private deleteCamOnLeave(camera) {
+function private deletecamonleave(camera) {
     self notify("deleteCamOnLeave");
     self endon("deleteCamOnLeave");
     team = self.team;
@@ -331,14 +331,14 @@ function function_3c5421c26d253eb0(var_13669d61d3d44913) {
     if (isdefined(players) && players.size > 0) {
         foreach (player in players) {
             if (isdefined(player)) {
-                if (istrue(var_13669d61d3d44913) && (!namespace_7e17181d03156026::isreallyalive(player) || isdefined(player) && istrue(player.extracted)) && !istrue(namespace_51790b5acb47a506::isPleading(player))) {
+                if (istrue(var_13669d61d3d44913) && (!namespace_7e17181d03156026::isreallyalive(player) || isdefined(player) && istrue(player.extracted)) && !istrue(namespace_51790b5acb47a506::ispleading(player))) {
                     player cameralinkto(var_5940f376a254619d, "tag_origin");
                 }
-                player thread deleteCamOnLeave(var_5940f376a254619d);
+                player thread deletecamonleave(var_5940f376a254619d);
             }
         }
     } else {
-        thread deleteCamOnLeave(var_5940f376a254619d);
+        thread deletecamonleave(var_5940f376a254619d);
     }
 }
 
@@ -390,11 +390,11 @@ function spawnspectator(var_642470e1abc1bbf9, var_8b3f6477dbed24d7, var_899beb1f
 // Size: 0x81
 function function_a7f4ed43a56864ad() {
     player = self;
-    canPlayerSpectateGulag = undefined;
+    canplayerspectategulag = undefined;
     if (namespace_eb17b46cdcb98eea::function_cfe304859f30e747("canPlayerSpectateGulag")) {
-        canPlayerSpectateGulag = namespace_eb17b46cdcb98eea::function_3cceb052d780fef1("canPlayerSpectateGulag");
+        canplayerspectategulag = namespace_eb17b46cdcb98eea::function_3cceb052d780fef1("canPlayerSpectateGulag");
     }
-    if (istrue(canPlayerSpectateGulag)) {
+    if (istrue(canplayerspectategulag)) {
         var_229e3676e299b693 = undefined;
         if (namespace_eb17b46cdcb98eea::function_cfe304859f30e747("shouldPlayerSpectateGulag")) {
             var_229e3676e299b693 = namespace_eb17b46cdcb98eea::function_3cceb052d780fef1("shouldPlayerSpectateGulag");

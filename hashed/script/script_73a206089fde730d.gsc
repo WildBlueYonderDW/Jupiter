@@ -189,7 +189,7 @@ function function_111b3e11bf99b915(requestid, userdata, agent, data) {
 // Size: 0x5c
 function function_6d930ef0e465d1c6(requestid, userdata, var_dcff5961635938a9) {
     safe = userdata[0];
-    if (!istrue(safe.var_d062a6468e65034e) && istrue(safe.ShouldReinforce)) {
+    if (!istrue(safe.var_d062a6468e65034e) && istrue(safe.shouldreinforce)) {
         safe.var_d062a6468e65034e = 1;
         return 1;
     }

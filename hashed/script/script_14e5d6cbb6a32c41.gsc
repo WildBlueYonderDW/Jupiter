@@ -23,7 +23,7 @@ function function_631b0586e908a3b5(var_c1c3ecdd33dec5b7, item, var_11648d9cb3869
             assert(isdefined(var_c1c3ecdd33dec5b7) && var_c1c3ecdd33dec5b7.type == "<unknown string>");
         #/
     #/
-    function_32c79be2384f10fb(var_c1c3ecdd33dec5b7.var_342175a1b9f9067e, var_c1c3ecdd33dec5b7);
+    function_32c79be2384f10fb(var_c1c3ecdd33dec5b7.backpacksize, var_c1c3ecdd33dec5b7);
     self.var_766fdf296110fa0b = item.type;
     self setclientomnvar("backpack_lootid", function_6d15e119c2779a93(var_c1c3ecdd33dec5b7));
     return item.count - 1;
@@ -53,7 +53,7 @@ function function_fe2f7ae6de16c38(var_c1c3ecdd33dec5b7, item, var_11648d9cb3869a
         #/
     #/
     var_7448836fc0de92a7 = function_1b35b10884bd8d67();
-    var_e581c3a8c1025c69 = function_53c4c53197386572(var_c1c3ecdd33dec5b7.var_342175a1b9f9067e, function_286713f0349afb22());
+    var_e581c3a8c1025c69 = function_53c4c53197386572(var_c1c3ecdd33dec5b7.backpacksize, function_286713f0349afb22());
     return var_7448836fc0de92a7 < var_e581c3a8c1025c69;
 }
 

@@ -201,8 +201,8 @@ function updategametypedvars() {
     level.zonecapturetime = dvarfloatvalue("zoneCaptureTime", 0, 0, 30);
     level.firstzoneactivationdelay = dvarfloatvalue("firstZoneActivationDelay", 30, 0, 60);
     level.zoneactivationdelay = dvarfloatvalue("zoneActivationDelay", 0, 0, 60);
-    level.nextZoneRevealTime = dvarfloatvalue("nextZoneRevealTime", 12, 0, 300);
-    level.zoneMajorityCapture = dvarintvalue("zoneMajorityCapture", 0, 0, 1);
+    level.nextzonerevealtime = dvarfloatvalue("nextZoneRevealTime", 12, 0, 300);
+    level.zonemajoritycapture = dvarintvalue("zoneMajorityCapture", 0, 0, 1);
     level.zonerandomlocationorder = dvarintvalue("randomLocationOrder", 0, 0, 1);
     level.zoneadditivescoring = dvarintvalue("additiveScoring", 0, 0, 1);
     level.pausemodetimer = dvarintvalue("pauseTime", 1, 0, 1);
@@ -211,10 +211,10 @@ function updategametypedvars() {
         level.zoneactivationdelay = adjustzoneactivationdelayforlargemaps();
     }
     /#
-        assertex(level.zoneduration >= level.nextZoneRevealTime, "The reveal time of a zone must not be greater than the lifetime of the zone.");
+        assertex(level.zoneduration >= level.nextzonerevealtime, "The reveal time of a zone must not be greater than the lifetime of the zone.");
     #/
-    if (level.zoneduration < level.nextZoneRevealTime) {
-        level.nextZoneRevealTime = level.zoneduration;
+    if (level.zoneduration < level.nextzonerevealtime) {
+        level.nextzonerevealtime = level.zoneduration;
     }
 }
 
@@ -909,7 +909,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(11, 1);
         } else if (var_9d0123af024e86ac) {
             attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
             attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(11, 1);
             thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
         }
@@ -920,7 +920,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             value = var_f6ddbb71b889a0be[int(value)];
         }
         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend", value);
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:level.zone.objectivekey});
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {var_715403f4ba13470a:level.zone.objectivekey});
         attacker incpersstat("defends", 1);
         attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(11, 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
@@ -956,32 +956,32 @@ function give_capture_credit(touchlist, capturetime, capture_team, lastcapturete
         }
         if (var_59666e71a5a0a42e < 2100 && gettime() - first_player.lastkilltime > 2100) {
             if (var_2307a154949bbf43 != first_player) {
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_527aee59bf6f0079");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_527aee59bf6f0079");
             } else {
                 first_player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_e53f3d793abcebd3");
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_cb3820dc7d57584");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_cb3820dc7d57584");
             }
         } else if (!isscoreboosting(first_player)) {
             if (var_2307a154949bbf43 != first_player) {
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_36af03684ac64eb8");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_36af03684ac64eb8");
             } else {
                 first_player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_e53f3d793abcebd3");
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_194ad9a7fdb13341");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_194ad9a7fdb13341");
             }
         } else if (var_2307a154949bbf43 != first_player) {
-            first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_527aee59bf6f0079");
+            first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_527aee59bf6f0079");
         } else {
             first_player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_e53f3d793abcebd3");
-            first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2fe2061528d49f0c");
+            first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_2fe2061528d49f0c");
         LOC_000002a1:
         }
     LOC_000002a1:
         if (isdefined(level.zone.lastactivatetime) && gettime() - level.zone.lastactivatetime <= 2100) {
             if (var_2307a154949bbf43 != first_player) {
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_14ca5d321828d5c5");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_14ca5d321828d5c5");
             } else {
                 first_player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_2e7df47fe2d0ba3a");
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_4d98aed9e6ebbf28");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_4d98aed9e6ebbf28");
             }
         }
         if (first_player.lastkilltime + 500 > gettime()) {
@@ -1007,10 +1007,10 @@ LOC_00000343:
         }
         if (first_player != player) {
             if (var_64656a8b87eaae16 != player) {
-                player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_70c24ce7e0579e7a");
+                player thread namespace_48a08c5037514e04::doscoreevent(#"hash_70c24ce7e0579e7a");
             } else {
                 player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_971a82e17e683215");
-                player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_7a10d07e9cc5745b");
+                player thread namespace_48a08c5037514e04::doscoreevent(#"hash_7a10d07e9cc5745b");
             }
             player namespace_8276d48525f0f398::setcrankedtimerzonecap(player);
         }
@@ -1057,10 +1057,10 @@ function function_9c5c0e02b3615275(team) {
                 player incpersstat("captures", 1);
                 player namespace_2685ec368e022695::statsetchild("round", "captures", player.pers["captures"]);
                 if (var_8a11b26acefd3594) {
-                    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_70c24ce7e0579e7a");
+                    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_70c24ce7e0579e7a");
                 } else {
                     player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_971a82e17e683215");
-                    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_7a10d07e9cc5745b");
+                    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_7a10d07e9cc5745b");
                 }
                 player namespace_8276d48525f0f398::setcrankedtimerzonecap(player);
             }
@@ -1125,12 +1125,12 @@ function awardcapturepoints() {
                     var_4245ed6808ee4864.var_bd0feb635eed5b60 = 0;
                     if (function_60bf8d82001fc22c() == "koth") {
                         if (var_64656a8b87eaae16 != var_4245ed6808ee4864) {
-                            var_4245ed6808ee4864 thread doScoreEvent(#"hash_fa8cc32ce86849b6");
+                            var_4245ed6808ee4864 thread doscoreevent(#"hash_fa8cc32ce86849b6");
                         } else {
-                            var_4245ed6808ee4864 thread doScoreEvent(#"hash_61e7451e5d97d089");
+                            var_4245ed6808ee4864 thread doscoreevent(#"hash_61e7451e5d97d089");
                         }
                     } else if (getgametype() == "grnd") {
-                        var_4245ed6808ee4864 thread doScoreEvent(#"hash_7e236756fb6f7c1a", undefined, 15);
+                        var_4245ed6808ee4864 thread doscoreevent(#"hash_7e236756fb6f7c1a", undefined, 15);
                     }
                 } else {
                     if (!isdefined(var_4245ed6808ee4864.var_bd0feb635eed5b60)) {
@@ -1435,9 +1435,9 @@ function function_1134d3068749d68e() {
 function function_49d30df50940b9d7(org, size, color) {
     /#
         for (i = 0; i < 10; i++) {
-            var_ce0ee878f55f5e93 = i / 10 * 360;
+            a1 = i / 10 * 360;
             var_ce0ee978f55f60c6 = (i + 1) / 10 * 360;
-            var_b1a981030274aadc = org + (cos(var_ce0ee878f55f5e93), sin(var_ce0ee878f55f5e93), 0) * size;
+            var_b1a981030274aadc = org + (cos(a1), sin(a1), 0) * size;
             var_b1a984030274b175 = org + (cos(var_ce0ee978f55f60c6), sin(var_ce0ee978f55f60c6), 0) * size;
             line(var_b1a981030274aadc, var_b1a984030274b175, color);
         }

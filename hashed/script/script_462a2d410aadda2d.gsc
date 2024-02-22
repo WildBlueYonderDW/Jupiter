@@ -9,14 +9,14 @@
 #using scripts\aitypes\assets.gsc;
 #using script_3faa502f011f4c6f;
 
-#namespace namespace_2e7ade5f22dd4454;
+#namespace jup_spawner_zombie_mangler_hvt;
 
-// Namespace namespace_2e7ade5f22dd4454/namespace_78c9ce8d8892706d
+// Namespace jup_spawner_zombie_mangler_hvt/namespace_78c9ce8d8892706d
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x171
 // Size: 0x186
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_487de6e4deaad3db");
+    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"jup_spawner_zombie_mangler_hvt");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_432dbc8af7544bff");
     self.subclass = self.var_534e788bc498be9f.name;
     self.nameindex = randomintrange(1, 26);
@@ -49,7 +49,7 @@ function main() {
     namespace_6205bc7c5e394598::ai_init();
 }
 
-// Namespace namespace_2e7ade5f22dd4454/namespace_78c9ce8d8892706d
+// Namespace jup_spawner_zombie_mangler_hvt/namespace_78c9ce8d8892706d
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fe
 // Size: 0x57
@@ -63,7 +63,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_2e7ade5f22dd4454/namespace_78c9ce8d8892706d
+// Namespace jup_spawner_zombie_mangler_hvt/namespace_78c9ce8d8892706d
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35c
 // Size: 0x9
@@ -71,7 +71,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_cb4c872ebc72f1b5::main();
 }
 
-// Namespace namespace_2e7ade5f22dd4454/namespace_78c9ce8d8892706d
+// Namespace jup_spawner_zombie_mangler_hvt/namespace_78c9ce8d8892706d
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36d
 // Size: 0x101

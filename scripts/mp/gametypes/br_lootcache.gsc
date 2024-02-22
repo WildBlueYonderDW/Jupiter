@@ -205,14 +205,14 @@ function function_ec87b214cd429e96(items, var_3d7259162c4253ea) {
             }
             if (!isdefined(lootid)) {
                 if (item == "brloot_armor_plate") {
-                    lootid = function_a50b607d2500dda5("armor_plate");
+                    lootid = getlootidfromref("armor_plate");
                 } else if (namespace_cb965d2f71fefddc::function_4294e9b331377c31(item)) {
-                    lootid = function_a50b607d2500dda5("armor_satchel");
+                    lootid = getlootidfromref("armor_satchel");
                 } else if (namespace_cb965d2f71fefddc::isplunder(item)) {
-                    lootid = function_a50b607d2500dda5("cash");
+                    lootid = getlootidfromref("cash");
                     quantity = level.br_pickups.counts[item];
                 } else if (namespace_d3d40f75bb4e4c32::isammo(item) || item == "brloot_self_revive") {
-                    lootid = function_a50b607d2500dda5(item);
+                    lootid = getlootidfromref(item);
                     quantity = level.br_pickups.counts[item];
                 }
             }
@@ -272,7 +272,7 @@ function lootspawnitemlist(dropstruct, items, var_a6293f3144240b99, player, var_
         newitems = [];
         foreach (item in items) {
             if (isdefined(item["lootID"])) {
-                scriptable = namespace_38b993c4618e76cd::getScriptableFromLootID(item["lootID"]);
+                scriptable = namespace_38b993c4618e76cd::getscriptablefromlootid(item["lootID"]);
                 newitems[newitems.size] = scriptable;
             }
         }
@@ -356,7 +356,7 @@ function lootspawnitemlist(dropstruct, items, var_a6293f3144240b99, player, var_
         plunder.count = var_1a51b8dd1e3a0296;
         plunder.scriptablename = function_b88cfb4893ceedac("cash");
         if (isdefined(plunder.scriptablename)) {
-            player namespace_cb965d2f71fefddc::function_efdddf60c5db058c(plunder, 0);
+            player namespace_cb965d2f71fefddc::playpickupfeedback(plunder, 0);
         }
     }
     if (namespace_1b7e64f50cca9321::function_8c57777a730ca632(self) && isdefined(self.owner)) {
@@ -379,17 +379,17 @@ function lootspawnitemlist(dropstruct, items, var_a6293f3144240b99, player, var_
     }
     if (istrue(var_a6293f3144240b99) && isdefined(player)) {
         if (var_4472b62c1fa150e5) {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f396d39fee1a8054");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_f396d39fee1a8054");
             player playsoundtoplayer("uin_loot_container_open_epic", player);
         } else if (var_7defd476665a5c0) {
             foreach (teammember in namespace_54d20dd0dd79277f::getteamdata(player.team, "players")) {
                 if (isalive(teammember) && distance2d(teammember.origin, player.origin) <= 1000) {
-                    teammember thread namespace_48a08c5037514e04::doScoreEvent(#"hash_c01d7d8b6119d321");
+                    teammember thread namespace_48a08c5037514e04::doscoreevent(#"hash_c01d7d8b6119d321");
                 }
             }
             player playsoundtoplayer("uin_loot_container_open_epic", player);
         } else {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"br_cacheOpen");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"br_cacheopen");
             player playsoundtoplayer("uin_loot_container_open_common", player);
         }
     }
@@ -538,9 +538,9 @@ function lootcacheused(instance, part, state, player, var_a5b2c541413aa895, var_
         if (!isdefined(instance.var_46a3a8565ac0c17c)) {
             instance.var_46a3a8565ac0c17c = 3;
         }
-        activeSupplySweeps = level.teamdata[player.team]["activeSupplySweeps"];
-        if (isdefined(activeSupplySweeps)) {
-            foreach (streakinfo in activeSupplySweeps) {
+        activesupplysweeps = level.teamdata[player.team]["activeSupplySweeps"];
+        if (isdefined(activesupplysweeps)) {
+            foreach (streakinfo in activesupplysweeps) {
                 if (isdefined(streakinfo) && streakinfo.owner != player) {
                     streakinfo.owner thread namespace_48a08c5037514e04::giveunifiedpoints("br_supply_sweep_assist", undefined, undefined, undefined, undefined, undefined, streakinfo);
                 }
@@ -605,7 +605,7 @@ function lootcacheused(instance, part, state, player, var_a5b2c541413aa895, var_
             level notify("lootcache_opened_kill_callout" + instance.origin);
             level notify("open_loot_box_" + player.team, player);
         }
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(level.var_41f4bc9ee8c7c9c6)) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(level.var_41f4bc9ee8c7c9c6)) {
             foreach (contract in level.var_41f4bc9ee8c7c9c6.var_7ba7458b5fc820f7) {
                 if (isdefined(contract.funcs["onCacheLooted"])) {
                     foreach (task in level.var_41f4bc9ee8c7c9c6.var_8e0f287a7b13da80) {

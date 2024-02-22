@@ -24,7 +24,7 @@ function init() {
     level.var_d4e0758bcddaa616 = getdvarint(@"hash_42c837f8d33c4cd5", 10);
     level.var_c18a1304b5bac209 = getdvarint(@"hash_b3270a4d9d7c32d1", 0);
     if (namespace_76a219af07c28c13::function_6934349b7823d888()) {
-        namespace_76a219af07c28c13::function_f3d757808130bac4(&function_3cd64058b039543d);
+        namespace_76a219af07c28c13::registerteamassimilatecallback(&function_3cd64058b039543d);
     }
     /#
         level thread function_85816e9363c64afc();

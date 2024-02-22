@@ -62,7 +62,7 @@ function main() {
     initvehicles();
     namespace_3ee2bb4833156856::main();
     namespace_a0229183a28ffd3::initialize_create_script();
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_eb1b5a598c9a5b07::init();
         level.outofboundstriggersplanetrace = getentarray("OutOfBounds", "targetname");
         level thread namespace_47431acb1419bed7::main();
@@ -140,10 +140,10 @@ function main() {
     } else if (getgametype() == "ob") {
         function_eb7f544259415a09("mp_jup_bigmap_ob");
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         brinit();
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_4557a9f6c57d2fbd = getdvar(@"hash_7a9791e29aa436af", "");
         if (var_4557a9f6c57d2fbd != "" && getdvarint(@"hash_2d0860b4e6eefba5", 0)) {
             level thread function_6eda5db03e992d7b(var_4557a9f6c57d2fbd);

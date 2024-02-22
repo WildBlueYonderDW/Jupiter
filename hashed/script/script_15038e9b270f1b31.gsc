@@ -58,9 +58,9 @@ function function_806ad317de2af4f3(aliveplayercount, var_a4c3a5afe5b8da9b) {
             }
         }
     }
-    foreach (var_b4adde4c68bb0f24 in namespace_d20f8ef223912e12::function_749723c2a45a0233()) {
+    foreach (uibot in namespace_d20f8ef223912e12::function_749723c2a45a0233()) {
         aliveplayercount++;
-        var_a4c3a5afe5b8da9b[var_b4adde4c68bb0f24.team] = 1;
+        var_a4c3a5afe5b8da9b[uibot.team] = 1;
     }
     if (namespace_4b0406965e556711::gameflag("prematch_done")) {
         activeteamcount = int(var_a4c3a5afe5b8da9b.size + level.var_8ed22c88753f7445 / namespace_36f464722d326bbe::function_4fb37368ae3585bb());

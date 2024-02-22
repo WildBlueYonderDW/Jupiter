@@ -33,11 +33,11 @@ function init() {
 // Checksum 0x0, Offset: 0x163
 // Size: 0x39
 function function_3be4188976ad0fe9() {
-    var_28e9b4a5687f5912 = 1;
+    should_drop = 1;
     if (utility::issharedfuncdefined("game", "isPublicEventOfTypeActive")) {
-        var_28e9b4a5687f5912 = !utility::function_f3bb4f4911a1beb2("game", "isPublicEventOfTypeActive", 2);
+        should_drop = !utility::function_f3bb4f4911a1beb2("game", "isPublicEventOfTypeActive", 2);
     }
-    return var_28e9b4a5687f5912;
+    return should_drop;
 }
 
 // Namespace namespace_bc54067d6ff4359f/namespace_a8ba85f06b284610

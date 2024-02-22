@@ -32,7 +32,7 @@ function function_3efecef2c469dfca(var_8a127de2ec4f8b49) {
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0x15
 function function_7407394ba40e686b() {
-    namespace_d696adde758cbe79::showDMZSplash("dmz_disguise_destroyed", [0:self]);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_disguise_destroyed", [0:self]);
 }
 
 // Namespace namespace_5011b59e71c1167f/namespace_e0526929a9f43046

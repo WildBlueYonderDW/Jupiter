@@ -54,7 +54,7 @@ function function_7f6818be5068dd4e(node, category) {
     } else {
         aitype = namespace_bfef6903bca5845d::function_7f1a2e2ebe0c1693("jugg");
     }
-    jugg = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, node.origin, node.angles, "absolute", category, "jugg", undefined, undefined, undefined, node.poi, 1, 0, 0);
+    jugg = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, node.origin, node.angles, "absolute", category, "jugg", undefined, undefined, undefined, node.poi, 1, 0, 0);
     weapon = undefined;
     namespace_14d36171baccf528::function_e43f4000cac35ba2(jugg, weapon);
     jugg namespace_14d36171baccf528::function_1c3709e864d4e8d5(1);

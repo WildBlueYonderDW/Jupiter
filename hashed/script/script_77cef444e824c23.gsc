@@ -296,7 +296,7 @@ function function_16755d49f5cc3b3(attacker, duration) {
     if (duration <= 0.1) {
         return;
     }
-    if (isdefined(self.aiSettings) && istrue(self.aiSettings.var_c9cbc4a3332e44c6)) {
+    if (isdefined(self.aisettings) && istrue(self.aisettings.var_c9cbc4a3332e44c6)) {
         var_83f668dad03f9b9 = function_b2f0a842c1cbcb2b("frost_blast_ai_slow_percentage");
         slow("frost_blast", var_83f668dad03f9b9, duration, attacker, &function_4f2ca6985698e967);
         if (self isscriptable() && self getscriptablehaspart("cryofreeze")) {

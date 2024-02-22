@@ -585,9 +585,9 @@ function function_947b37d99674b59c() {
             var_dac0cb34ad4db25f = getdvarint(@"hash_f394eba720226431", 3700);
             radius = radius + var_dac0cb34ad4db25f;
         }
-        bot = DeployOneBotOnGround(var_89a675c5bde8848f, self.origin, self.angles, radius, self.name);
+        bot = deployonebotonground(var_89a675c5bde8848f, self.origin, self.angles, radius, self.name);
     } else {
-        bot = DeployOneBotInAir(var_89a675c5bde8848f, self.origin, self.angles, radius, self.name);
+        bot = deployonebotinair(var_89a675c5bde8848f, self.origin, self.angles, radius, self.name);
     }
     if (isdefined(bot)) {
         if (!bot.var_ab5f5270cb22e3c8 && var_e2270f384295faba) {
@@ -626,13 +626,13 @@ function function_38b0bf785f0d3321(type, origin, bot, name) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fc1
 // Size: 0x293
-function DeployOneBotOnGround(var_89a675c5bde8848f, origin, angles, radius, name) {
+function deployonebotonground(var_89a675c5bde8848f, origin, angles, radius, name) {
     level endon("game_ended");
     bot = var_89a675c5bde8848f activate("Combat", "DeployOneBotOnGround");
     if (!isvalidplayer(bot)) {
         return undefined;
     }
-    bot.uibot.var_6ecc7cd453466014 = 1;
+    bot.uibot.isuibot = 1;
     bot function_a593971d75d82113();
     bot function_379bb555405c16bb("ui_bot::DeployOneBotOnGround()");
     bot botsetflag("suspended", 1);
@@ -657,7 +657,7 @@ function DeployOneBotOnGround(var_89a675c5bde8848f, origin, angles, radius, name
         trycount++;
         var_25854db1807f021a = function_f24f661dc7782ebc(origin, humanplayers, radius);
         if (isdefined(var_25854db1807f021a)) {
-            namespace_92443376a63aa4bd::function_6b1ca7faeb9fd14a(bot, bot.origin, var_25854db1807f021a, "DeployOneBotOnGround");
+            namespace_92443376a63aa4bd::onplayerteleport(bot, bot.origin, var_25854db1807f021a, "DeployOneBotOnGround");
             bot setorigin(var_25854db1807f021a, 1);
             if (!bot function_b74cf5eb822312cb()) {
                 var_f1f1bc7727ca599b = var_25854db1807f021a;
@@ -670,7 +670,7 @@ function DeployOneBotOnGround(var_89a675c5bde8848f, origin, angles, radius, name
             }
         #/
     }
-    bot.uibot.var_6ecc7cd453466014 = 0;
+    bot.uibot.isuibot = 0;
     if (isdefined(var_f1f1bc7727ca599b)) {
         bot botsetflag("suspended", 0);
         bot setorigin(var_f1f1bc7727ca599b, 1);
@@ -697,7 +697,7 @@ function DeployOneBotOnGround(var_89a675c5bde8848f, origin, angles, radius, name
 function function_5d2aae3a7d90df56() {
     var_4f304a8f807b9777 = 0;
     foreach (player in level.players) {
-        if (isbot(player) && !player function_a9cbf557dc66d201() && !player function_6ecc7cd453466014()) {
+        if (isbot(player) && !player iseliminated() && !player isuibot()) {
             var_4f304a8f807b9777++;
         }
     }
@@ -712,7 +712,7 @@ function function_f24f661dc7782ebc(origin, humanplayers, radius) {
     var_938ed9c898b8c83 = getdvarfloat(@"hash_74d198f9030a4630", 0.8);
     var_25854db1807f021a = namespace_c5622898120e827f::getrandompointincircle(origin, radius, var_938ed9c898b8c83, 1, 1, 0);
     var_5da2a4fc5e5b9c9d = 45;
-    if (namespace_bbc79db4c3949a5c::function_3e0a90b32e551ad(var_25854db1807f021a) < var_5da2a4fc5e5b9c9d) {
+    if (namespace_bbc79db4c3949a5c::gettimetilldangerforpoint(var_25854db1807f021a) < var_5da2a4fc5e5b9c9d) {
         return undefined;
     }
     var_2bc127f950ad927c = radius * var_938ed9c898b8c83;
@@ -728,7 +728,7 @@ function function_f24f661dc7782ebc(origin, humanplayers, radius) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0x220
-function DeployOneBotInAir(var_89a675c5bde8848f, origin, angles, radius, name) {
+function deployonebotinair(var_89a675c5bde8848f, origin, angles, radius, name) {
     spawnorigin = namespace_8bfdb6eb5a3df67a::getsafeoriginaroundpoint(origin, radius);
     if (isdefined(spawnorigin)) {
         bot = var_89a675c5bde8848f activate("Skydive", "DeployOneBotInAir");
@@ -757,7 +757,7 @@ function DeployOneBotInAir(var_89a675c5bde8848f, origin, angles, radius, name) {
                 spawnorigin = origin;
             }
         #/
-        namespace_92443376a63aa4bd::function_6b1ca7faeb9fd14a(bot, bot.origin, spawnorigin, "DeployOneBotInAir");
+        namespace_92443376a63aa4bd::onplayerteleport(bot, bot.origin, spawnorigin, "DeployOneBotInAir");
         bot setorigin(spawnorigin);
         bot setplayerangles(spawnangles);
         falltime = 0;
@@ -788,7 +788,7 @@ function function_b9c4a50390b0b5eb(bot, var_89a675c5bde8848f) {
     var_344e415f40e9796b = getdvarint(@"hash_b7f8b4b89ea6ced1", 0);
     if (var_344e415f40e9796b > 0) {
         bot.var_76b390d02672ecea = 1;
-        bot thread namespace_c50b30148766aa59::ClearPlotArmorThread(var_344e415f40e9796b);
+        bot thread namespace_c50b30148766aa59::clearplotarmorthread(var_344e415f40e9796b);
     }
 }
 
@@ -796,7 +796,7 @@ function function_b9c4a50390b0b5eb(bot, var_89a675c5bde8848f) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x268b
 // Size: 0xea
-function ClearPlotArmorThread(var_344e415f40e9796b) {
+function clearplotarmorthread(var_344e415f40e9796b) {
     self endon("ClearPlotArmorThread");
     name = self.name;
     id = self getentitynumber();

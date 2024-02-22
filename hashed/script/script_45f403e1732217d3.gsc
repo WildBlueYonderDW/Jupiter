@@ -94,7 +94,7 @@ function function_393baf20db478c0d() {
     dlog_recordevent("dlog_event_mp_server_match_start", [0:"utc_start_time_s", 1:utc_start_time_s, 2:"map", 3:level.script, 4:"game_type", 5:game_type, 6:"is_playtest", 7:getdvarint(@"hash_2e58447fa1ca4f20") && getdvarint(@"hash_51f11c2e135abc7"), 8:"experiment_name", 9:getdvar(@"hash_409a139e3e0eb905"), 10:"dedi_server_guid", 11:getdediserverguid(), 12:"sub_game_type", 13:sub_game_type, 14:"playlist_id", 15:playlist_id, 16:"playlist_name", 17:playlist_name, 18:"is_offline", 19:!level.onlinegame, 20:"max_players_allowed", 21:max_players_allowed, 22:"frame_duration", 23:frame_duration, 24:"is_ranked", 25:is_ranked]);
     var_37aab353fe84a505 = "{"game_type":"" + game_type + "","sub_game_type":"" + sub_game_type + "","map":"" + level.script + ""}";
     function_7bcd667fc073fc12("server_match_start", var_37aab353fe84a505);
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         utility::trycall(level.matchdata_br_onmatchstart);
     }
     onmatchbegin();
@@ -509,10 +509,10 @@ function function_6447f24addc0137e(data) {
             distance_traveled = float(player.pers["totalDistTraveled"]);
         }
         weapon_accuracy = 0;
-        totalShots = player namespace_a9b836227bcbf6e6::getplayerstat("combatStats", "totalShots");
+        totalshots = player namespace_a9b836227bcbf6e6::getplayerstat("combatStats", "totalShots");
         totalhits = player namespace_a9b836227bcbf6e6::getplayerstat("combatStats", "hits");
-        if (isdefined(totalShots) && isdefined(totalhits) && totalShots > 0) {
-            weapon_accuracy = float(totalhits / totalShots * 100);
+        if (isdefined(totalshots) && isdefined(totalhits) && totalshots > 0) {
+            weapon_accuracy = float(totalhits / totalshots * 100);
         }
         suicides = 0;
         if (isdefined(player.pers["suicides"])) {
@@ -1030,7 +1030,7 @@ function function_60912f12edbae676(data) {
     var_85598e67455e57c4 = function_b4ed203552f83bca(primaryweaponobj);
     var_79dd046c94822604 = function_b4ed203552f83bca(secondaryweaponobj);
     if (isdefined(data.var_d445f727570e7250)) {
-        primary_blueprint = data.var_d445f727570e7250.blueprintName;
+        primary_blueprint = data.var_d445f727570e7250.blueprintname;
         var_2ad1ad717553a993 = primary_blueprint;
         var_e2d36e4ccdafb38d = data.var_d445f727570e7250.lootid;
         var_7a6106e50e8ed5e7 = 1;
@@ -1041,7 +1041,7 @@ function function_60912f12edbae676(data) {
         var_7a6106e50e8ed5e7 = 0;
     }
     if (isdefined(data.var_425ddba200712090)) {
-        secondary_blueprint = data.var_425ddba200712090.blueprintName;
+        secondary_blueprint = data.var_425ddba200712090.blueprintname;
         var_e334663a75cc67d3 = secondary_blueprint;
         var_1c313515279349cd = data.var_425ddba200712090.lootid;
         var_35bc7057db6ba727 = 1;
@@ -1064,7 +1064,7 @@ function function_60912f12edbae676(data) {
                 var_8a4ffee432ca8d5e = 1;
             }
         }
-        if (isdefined(primaryweaponobj.var_1a7d88bf68585caa)) {
+        if (isdefined(primaryweaponobj.blueprinttuned)) {
             var_6dfa4cce4ce056b6 = 1;
         }
     }
@@ -1076,7 +1076,7 @@ function function_60912f12edbae676(data) {
                 var_dc067331d5eee29e = 1;
             }
         }
-        if (isdefined(secondaryweaponobj.var_1a7d88bf68585caa)) {
+        if (isdefined(secondaryweaponobj.blueprinttuned)) {
             var_d5539868aaef02f6 = 1;
         }
     }
@@ -1244,7 +1244,7 @@ function function_8076b5556f48a6cd(player) {
         var_904c82687ddfeb02 = function_ccb453b7ef932cea(var_5842e592ddcef384.weaponobj);
         var_e96a2497012e529b = 0;
         var_6cec5443c5a603c1 = 0;
-        blueprintName = "";
+        blueprintname = "";
         var_c0c48db16bab2fca = 0;
         var_23f43530281513a2 = 0;
         var_67e0508f0cc1e07d = "none";
@@ -1257,7 +1257,7 @@ function function_8076b5556f48a6cd(player) {
                     var_c0c48db16bab2fca = 1;
                 }
             }
-            var_23f43530281513a2 = istrue(var_5842e592ddcef384.weaponobj.var_1a7d88bf68585caa);
+            var_23f43530281513a2 = istrue(var_5842e592ddcef384.weaponobj.blueprinttuned);
             var_fedb77aad2340743 = getweaponvariantindex(var_5842e592ddcef384.weaponobj);
             if (isdefined(var_fedb77aad2340743)) {
                 var_a6ed1602a5107749 = getweaponrootname(var_5842e592ddcef384.weaponobj) + "|" + var_fedb77aad2340743;
@@ -1266,7 +1266,7 @@ function function_8076b5556f48a6cd(player) {
                     if (isdefined(blueprint)) {
                         var_e96a2497012e529b = 1;
                         var_6cec5443c5a603c1 = blueprint.lootid;
-                        blueprintName = var_a6ed1602a5107749;
+                        blueprintname = var_a6ed1602a5107749;
                     }
                 }
             }
@@ -1303,7 +1303,7 @@ function function_8076b5556f48a6cd(player) {
                 var_bb5da1da48de6259 = function_deef6a4f7fbec3b8(self.primaryweapons[1]);
             }
         }
-        var_d3cf11436c80a43e = player dlog_recordplayerevent("dlog_event_mp_player_weapon_stats", [0:"weapon", 1:var_5842e592ddcef384.weapon, 2:"variant_id", 3:var_5842e592ddcef384.variantid, 4:"attachments", 5:var_5842e592ddcef384.weaponattachments, 6:"loadout_index", 7:var_5842e592ddcef384.loadoutindex, 8:"is_picked_up", 9:var_5842e592ddcef384.var_61022cd5389d83d0, 10:"starting_weapon_xp", 11:var_21812d5f48574e1, 12:"xp_earned", 13:var_a02c59f5f82efeca, 14:"deaths", 15:deaths, 16:"ai_deaths", 17:ai_deaths, 18:"player_deaths", 19:player_deaths, 20:"headshots", 21:headshots, 22:"ai_headshots", 23:ai_headshots, 24:"player_headshots", 25:player_headshots, 26:"hits", 27:hits, 28:"ai_hits", 29:ai_hits, 30:"player_hits", 31:player_hits, 32:"kills", 33:kills, 34:"ai_agent_kills", 35:ai_agent_kills, 36:"ads_kills", 37:ads_kills, 38:"ai_ads_kills", 39:ai_ads_kills, 40:"player_ads_kills", 41:player_ads_kills, 42:"shots", 43:shots, 44:"time_used_s", 45:float(timeused), 46:"damage", 47:damage, 48:"ai_damage", 49:ai_damage, 50:"player_damage", 51:player_damage, 52:"weapon_receiver", 53:var_160345544d655de0.weapon_receiver, 54:"weapon_front_piece", 55:var_160345544d655de0.weapon_front_piece, 56:"weapon_back_piece", 57:var_160345544d655de0.weapon_back_piece, 58:"weapon_magazine", 59:var_160345544d655de0.weapon_magazine, 60:"weapon_optic", 61:var_160345544d655de0.weapon_optic, 62:"weapon_underbarrel", 63:var_160345544d655de0.weapon_underbarrel, 64:"weapon_modifier", 65:var_160345544d655de0.weapon_modifier, 66:"weapon_muzzle", 67:var_160345544d655de0.weapon_muzzle, 68:"weapon_rear_grip", 69:var_160345544d655de0.weapon_rear_grip, 70:"weapon_trigger", 71:var_160345544d655de0.weapon_trigger, 72:"weapon_extra", 73:var_160345544d655de0.weapon_extra, 74:"lid_receiver", 75:var_160345544d655de0.lid_receiver, 76:"lid_front_piece", 77:var_160345544d655de0.lid_front_piece, 78:"lid_back_piece", 79:var_160345544d655de0.lid_back_piece, 80:"lid_magazine", 81:var_160345544d655de0.lid_magazine, 82:"lid_optic", 83:var_160345544d655de0.lid_optic, 84:"lid_underbarrel", 85:var_160345544d655de0.lid_underbarrel, 86:"lid_modifier", 87:var_160345544d655de0.lid_modifier, 88:"lid_muzzle", 89:var_160345544d655de0.lid_muzzle, 90:"lid_rear_grip", 91:var_160345544d655de0.lid_rear_grip, 92:"lid_trigger", 93:var_160345544d655de0.lid_trigger, 94:"lid_extra", 95:var_160345544d655de0.lid_extra, 96:"tv_receiver", 97:var_160345544d655de0.tv_receiver, 98:"tv_front_piece", 99:var_160345544d655de0.tv_front_piece, 100:"tv_back_piece", 101:var_160345544d655de0.tv_back_piece, 102:"tv_magazine", 103:var_160345544d655de0.tv_magazine, 104:"tv_optic", 105:var_160345544d655de0.tv_optic, 106:"tv_underbarrel", 107:var_160345544d655de0.tv_underbarrel, 108:"tv_modifier", 109:var_160345544d655de0.tv_modifier, 110:"tv_muzzle", 111:var_160345544d655de0.tv_muzzle, 112:"tv_rear_grip", 113:var_160345544d655de0.tv_rear_grip, 114:"tv_trigger", 115:var_160345544d655de0.tv_trigger, 116:"tv_extra", 117:var_160345544d655de0.tv_extra, 118:"is_bp_tuned", 119:var_160345544d655de0.var_f58b539a89b0bc91, 120:"weapon_lootid", 121:var_904c82687ddfeb02, 122:"is_a_blueprint_weapon", 123:var_e96a2497012e529b, 124:"blueprint_id", 125:var_6cec5443c5a603c1, 126:"blueprint_name", 127:blueprintName, 128:"is_player_tuned", 129:var_c0c48db16bab2fca, 130:"is_pro_tuned", 131:var_23f43530281513a2, 132:"camo_equipped_id", 133:var_67e0508f0cc1e07d, 134:"weapon_setup_attachment_0", 135:var_b67ddc26c0a0609d[0], 136:"weapon_setup_attachment_1", 137:var_b67ddc26c0a0609d[1], 138:"weapon_setup_attachment_2", 139:var_b67ddc26c0a0609d[2], 140:"weapon_setup_attachment_3", 141:var_b67ddc26c0a0609d[3], 142:"weapon_setup_attachment_4", 143:var_b67ddc26c0a0609d[4], 144:"weapon_rank_start", 145:var_9eefff5886bccdb9, 146:"weapon_rank_end", 147:var_b96152cb873a0080, 148:"weapon_unique_session_event_id", 149:var_7249f84dc6294efa, 150:"primary_amp_data", 151:var_7b50c54dfbdce819, 152:"secondary_amp_data", 153:var_bb5da1da48de6259, 154:"wall_bangs", 155:player getpersstat("wallbangs")]);
+        var_d3cf11436c80a43e = player dlog_recordplayerevent("dlog_event_mp_player_weapon_stats", [0:"weapon", 1:var_5842e592ddcef384.weapon, 2:"variant_id", 3:var_5842e592ddcef384.variantid, 4:"attachments", 5:var_5842e592ddcef384.weaponattachments, 6:"loadout_index", 7:var_5842e592ddcef384.loadoutindex, 8:"is_picked_up", 9:var_5842e592ddcef384.var_61022cd5389d83d0, 10:"starting_weapon_xp", 11:var_21812d5f48574e1, 12:"xp_earned", 13:var_a02c59f5f82efeca, 14:"deaths", 15:deaths, 16:"ai_deaths", 17:ai_deaths, 18:"player_deaths", 19:player_deaths, 20:"headshots", 21:headshots, 22:"ai_headshots", 23:ai_headshots, 24:"player_headshots", 25:player_headshots, 26:"hits", 27:hits, 28:"ai_hits", 29:ai_hits, 30:"player_hits", 31:player_hits, 32:"kills", 33:kills, 34:"ai_agent_kills", 35:ai_agent_kills, 36:"ads_kills", 37:ads_kills, 38:"ai_ads_kills", 39:ai_ads_kills, 40:"player_ads_kills", 41:player_ads_kills, 42:"shots", 43:shots, 44:"time_used_s", 45:float(timeused), 46:"damage", 47:damage, 48:"ai_damage", 49:ai_damage, 50:"player_damage", 51:player_damage, 52:"weapon_receiver", 53:var_160345544d655de0.weapon_receiver, 54:"weapon_front_piece", 55:var_160345544d655de0.weapon_front_piece, 56:"weapon_back_piece", 57:var_160345544d655de0.weapon_back_piece, 58:"weapon_magazine", 59:var_160345544d655de0.weapon_magazine, 60:"weapon_optic", 61:var_160345544d655de0.weapon_optic, 62:"weapon_underbarrel", 63:var_160345544d655de0.weapon_underbarrel, 64:"weapon_modifier", 65:var_160345544d655de0.weapon_modifier, 66:"weapon_muzzle", 67:var_160345544d655de0.weapon_muzzle, 68:"weapon_rear_grip", 69:var_160345544d655de0.weapon_rear_grip, 70:"weapon_trigger", 71:var_160345544d655de0.weapon_trigger, 72:"weapon_extra", 73:var_160345544d655de0.weapon_extra, 74:"lid_receiver", 75:var_160345544d655de0.lid_receiver, 76:"lid_front_piece", 77:var_160345544d655de0.lid_front_piece, 78:"lid_back_piece", 79:var_160345544d655de0.lid_back_piece, 80:"lid_magazine", 81:var_160345544d655de0.lid_magazine, 82:"lid_optic", 83:var_160345544d655de0.lid_optic, 84:"lid_underbarrel", 85:var_160345544d655de0.lid_underbarrel, 86:"lid_modifier", 87:var_160345544d655de0.lid_modifier, 88:"lid_muzzle", 89:var_160345544d655de0.lid_muzzle, 90:"lid_rear_grip", 91:var_160345544d655de0.lid_rear_grip, 92:"lid_trigger", 93:var_160345544d655de0.lid_trigger, 94:"lid_extra", 95:var_160345544d655de0.lid_extra, 96:"tv_receiver", 97:var_160345544d655de0.tv_receiver, 98:"tv_front_piece", 99:var_160345544d655de0.tv_front_piece, 100:"tv_back_piece", 101:var_160345544d655de0.tv_back_piece, 102:"tv_magazine", 103:var_160345544d655de0.tv_magazine, 104:"tv_optic", 105:var_160345544d655de0.tv_optic, 106:"tv_underbarrel", 107:var_160345544d655de0.tv_underbarrel, 108:"tv_modifier", 109:var_160345544d655de0.tv_modifier, 110:"tv_muzzle", 111:var_160345544d655de0.tv_muzzle, 112:"tv_rear_grip", 113:var_160345544d655de0.tv_rear_grip, 114:"tv_trigger", 115:var_160345544d655de0.tv_trigger, 116:"tv_extra", 117:var_160345544d655de0.tv_extra, 118:"is_bp_tuned", 119:var_160345544d655de0.var_f58b539a89b0bc91, 120:"weapon_lootid", 121:var_904c82687ddfeb02, 122:"is_a_blueprint_weapon", 123:var_e96a2497012e529b, 124:"blueprint_id", 125:var_6cec5443c5a603c1, 126:"blueprint_name", 127:blueprintname, 128:"is_player_tuned", 129:var_c0c48db16bab2fca, 130:"is_pro_tuned", 131:var_23f43530281513a2, 132:"camo_equipped_id", 133:var_67e0508f0cc1e07d, 134:"weapon_setup_attachment_0", 135:var_b67ddc26c0a0609d[0], 136:"weapon_setup_attachment_1", 137:var_b67ddc26c0a0609d[1], 138:"weapon_setup_attachment_2", 139:var_b67ddc26c0a0609d[2], 140:"weapon_setup_attachment_3", 141:var_b67ddc26c0a0609d[3], 142:"weapon_setup_attachment_4", 143:var_b67ddc26c0a0609d[4], 144:"weapon_rank_start", 145:var_9eefff5886bccdb9, 146:"weapon_rank_end", 147:var_b96152cb873a0080, 148:"weapon_unique_session_event_id", 149:var_7249f84dc6294efa, 150:"primary_amp_data", 151:var_7b50c54dfbdce819, 152:"secondary_amp_data", 153:var_bb5da1da48de6259, 154:"wall_bangs", 155:player getpersstat("wallbangs")]);
         if (getgametype() == "ob" || getgametype() == "ob_rift_run") {
             player dlog_recordplayerevent("dlog_event_ob_player_weapon_stats", [0:"weapon", 1:var_5842e592ddcef384.weapon, 2:"weapon_normal_zombie_kills", 3:weapon_normal_zombie_kills, 4:"weapon_special_zombie_kills", 5:weapon_special_zombie_kills, 6:"weapon_elite_zombie_kills", 7:weapon_elite_zombie_kills, 8:"weapon_boss_zombie_kills", 9:weapon_boss_zombie_kills, 10:"weapon_pack_a_punch_kills", 11:weapon_pack_a_punch_kills, 12:"weapon_critical_kills", 13:weapon_critical_kills, 14:"weapon_soldier_kills", 15:weapon_soldier_kills, 16:"weapon_white_rarity_kills", 17:weapon_white_rarity_kills, 18:"weapon_green_rarity_kills", 19:weapon_green_rarity_kills, 20:"weapon_blue_rarity_kills", 21:weapon_blue_rarity_kills, 22:"weapon_purple_rarity_kills", 23:weapon_purple_rarity_kills, 24:"weapon_orange_rarity_kills", 25:weapon_orange_rarity_kills, 26:"weapon_unique_session_event_id", 27:var_7249f84dc6294efa]);
         }
@@ -1359,8 +1359,8 @@ function function_b4ed203552f83bca(weapon) {
     if (!isdefined(weapon)) {
         return data;
     }
-    if (isdefined(weapon.var_1a7d88bf68585caa)) {
-        data.var_f58b539a89b0bc91 = weapon.var_1a7d88bf68585caa;
+    if (isdefined(weapon.blueprinttuned)) {
+        data.var_f58b539a89b0bc91 = weapon.blueprinttuned;
     }
     basename = weapon.basename;
     var_75a7008e426d90db = weapon.var_75a7008e426d90db;
@@ -1976,28 +1976,28 @@ function function_ccb453b7ef932cea(weaponobj) {
         return utility::string(weaponobj.weaponblueprint.lootid);
     }
     weaponref = weapon::function_23defc57f8da7fbc(weaponobj.basename);
-    lootid = loot::function_a50b607d2500dda5(weaponref);
+    lootid = loot::getlootidfromref(weaponref);
     if (isdefined(lootid) && lootid != 0) {
         return utility::string(lootid);
     }
     if (isdefined(level.killstreakweaponmap) && isdefined(level.killstreakweaponmap[weaponobj.basename])) {
-        lootid = loot::function_a50b607d2500dda5(level.killstreakweaponmap[weaponobj.basename]);
+        lootid = loot::getlootidfromref(level.killstreakweaponmap[weaponobj.basename]);
         if (isdefined(lootid) && lootid != 0) {
             return utility::string(lootid);
         }
     }
     var_ebec497ff8b18a45 = supers::getsuperrefforsuperweapon(weaponobj);
-    lootid = loot::function_a50b607d2500dda5(var_ebec497ff8b18a45);
+    lootid = loot::getlootidfromref(var_ebec497ff8b18a45);
     if (isdefined(lootid) && lootid != 0) {
         return utility::string(lootid);
     }
     equipmentref = equipment::getequipmentreffromweapon(weaponobj);
-    lootid = loot::function_a50b607d2500dda5(equipmentref);
+    lootid = loot::getlootidfromref(equipmentref);
     if (isdefined(lootid) && lootid != 0) {
         return utility::string(lootid);
     }
     weaponref = weapon::getweaponrootname(weaponobj);
-    lootid = loot::function_a50b607d2500dda5(weaponref);
+    lootid = loot::getlootidfromref(weaponref);
     if (isdefined(lootid) && lootid != 0) {
         return utility::string(lootid);
     }

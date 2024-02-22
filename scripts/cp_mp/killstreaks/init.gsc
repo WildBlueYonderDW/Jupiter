@@ -63,7 +63,7 @@ function init() {
     level thread namespace_8a82a4967e25efd4::init();
     level thread namespace_c5e4bf96a5150e88::init();
     level thread namespace_2c99f682179581bf::init();
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         level thread namespace_e70862d8d2eb291c::init();
         level thread namespace_fd47b78f0802e959::init();
         level thread namespace_e765f0aad2368473::init();

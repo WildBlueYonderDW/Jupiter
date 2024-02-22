@@ -421,7 +421,7 @@ function awardcapturepoints() {
         }
         if (!self.stalemate) {
             foreach (object in self.touchlist[team]) {
-                object.player thread doScoreEvent(#"hash_b70d7c404342b807");
+                object.player thread doscoreevent(#"hash_b70d7c404342b807");
             }
         }
     }

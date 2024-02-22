@@ -98,7 +98,7 @@ function function_c606ca98a77e09ca() {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f1
 // Size: 0x35
-function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, animname, dialogue) {
+function do_facial_anim(dofacialanim, var_9ac73a1996d2dae, doanimation, anime, animname, dialogue) {
     return 0;
 }
 
@@ -254,7 +254,7 @@ function function_a871831543fd27ef(var_437b6bb41d98df26, origin, angles) {
     var_f25cb776566aa658 = undefined;
     var_f25cb776566aa658 = function_53c4c53197386572(var_f25cb776566aa658, 0);
     foreach (player in level.players) {
-        player playXcam(var_437b6bb41d98df26, var_f25cb776566aa658, origin, angles);
+        player playxcam(var_437b6bb41d98df26, var_f25cb776566aa658, origin, angles);
     }
     wait(function_4358b309fdcc6d44(var_437b6bb41d98df26));
 }

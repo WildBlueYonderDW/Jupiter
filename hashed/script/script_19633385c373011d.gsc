@@ -109,14 +109,14 @@ function function_7b49b147e0d292e5() {
     namespace_71073fa38f11492::registerbrgametypefunc("mayConsiderPlayerDead", &brmayconsiderplayerdead);
     namespace_71073fa38f11492::registerbrgametypefunc("triggerRespawnOverlay", &triggerrespawnoverlay);
     namespace_71073fa38f11492::registerbrgametypefunc("playerNakedDropLoadout", &playernakeddroploadout);
-    namespace_71073fa38f11492::registerbrgametypefunc("getDefaultLoadout", &getDefaultLoadout);
+    namespace_71073fa38f11492::registerbrgametypefunc("getDefaultLoadout", &getdefaultloadout);
     namespace_71073fa38f11492::registerbrgametypefunc("kioskRevivePlayer", &kioskreviveplayer);
     namespace_71073fa38f11492::registerbrgametypefunc("dropOnPlayerDeath", &droponplayerdeath);
-    namespace_71073fa38f11492::registerbrgametypefunc("onMarkPlayerAsEliminated", &onMarkPlayerAsEliminated);
-    namespace_71073fa38f11492::registerbrgametypefunc("onCloseCircleCompleted", &onCloseCircleCompleted);
+    namespace_71073fa38f11492::registerbrgametypefunc("onMarkPlayerAsEliminated", &onmarkplayeraseliminated);
+    namespace_71073fa38f11492::registerbrgametypefunc("onCloseCircleCompleted", &onclosecirclecompleted);
     namespace_71073fa38f11492::registerbrgametypefunc("onPlayerKilled", &function_735fe9ec0c4dd312);
     namespace_71073fa38f11492::registerbrgametypefunc("onDeadEvent", &ondeadevent);
-    namespace_71073fa38f11492::registerbrgametypefunc("playerGetRespawnPoint", &playerGetRespawnPoint);
+    namespace_71073fa38f11492::registerbrgametypefunc("playerGetRespawnPoint", &playergetrespawnpoint);
     waittillframeend();
     if (level.brgametype.var_3dd997e45e444b3d) {
         level.var_5dfd73c97bf5d03d = &function_5dfd73c97bf5d03d;
@@ -336,7 +336,7 @@ function function_8369d5301de43452() {
         namespace_4b0406965e556711::gameflagwait("prematch_done");
         namespace_4b0406965e556711::gameflagwait("prematch_fade_done");
         foreach (player in level.players) {
-            player.trackedTeams = [];
+            player.trackedteams = [];
         }
     }
 }
@@ -464,7 +464,7 @@ function droponplayerdeath(attacker) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2160
 // Size: 0x14
-function onMarkPlayerAsEliminated(player) {
+function onmarkplayeraseliminated(player) {
     namespace_bd131dfa920d03b9::function_305f60799dc60d7c(player);
 }
 
@@ -502,7 +502,7 @@ function function_ff9954eb6fa229a8(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98) {
     if (!level.brgametype.var_6420b42c7add53cc) {
         return;
     }
-    trackTeam(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98);
+    trackteam(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98);
 }
 
 // Namespace namespace_304d296a920c310e/namespace_2d0a106261b9b151
@@ -585,7 +585,7 @@ function function_9d794b8a2ad15cd5(var_92a674d94df29e77) {
     if (istrue(level.brgametype.var_7b3746fd57041fb7)) {
         var_92a674d94df29e77.respawndelay = var_92a674d94df29e77.respawndelay - getmatchrulesdata("brData", "resurgenceVengeanceDecreaseRespawnDelay");
     } else {
-        var_92a674d94df29e77 thread doingRespawn(1, level.teamdata[var_92a674d94df29e77.team]["alivePlayers"]);
+        var_92a674d94df29e77 thread doingrespawn(1, level.teamdata[var_92a674d94df29e77.team]["alivePlayers"]);
     }
 }
 
@@ -593,10 +593,10 @@ function function_9d794b8a2ad15cd5(var_92a674d94df29e77) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25e9
 // Size: 0x87
-function function_6f0f4e7b3ff7b57c(trackedTeams) {
+function function_6f0f4e7b3ff7b57c(trackedteams) {
     oldestindex = -1;
     var_3071102f98cbed33 = 2147483647;
-    foreach (var_109ebf347b2f2ece, var_cf7d42708e58bb98 in trackedTeams) {
+    foreach (var_109ebf347b2f2ece, var_cf7d42708e58bb98 in trackedteams) {
         if (var_cf7d42708e58bb98["startTime"] < var_3071102f98cbed33) {
             oldestindex = var_109ebf347b2f2ece;
             var_3071102f98cbed33 = var_cf7d42708e58bb98["startTime"];
@@ -668,31 +668,31 @@ function function_d6d795db2cae2c1b(var_29412b34af141c29, var_3e00d2d6fb1bd934, v
 // Size: 0x6a
 function function_f6686365221e78cb() {
     var_840b848760f488a4 = getdvarint(@"hash_96c8e4682ff85b5f", 0);
-    trackedTeams = [];
+    trackedteams = [];
     if (istrue(var_840b848760f488a4)) {
-        trackedTeams = getteamdata(self.team, "trackedTeams");
+        trackedteams = getteamdata(self.team, "trackedTeams");
     } else {
-        if (!isdefined(self.trackedTeams)) {
-            self.trackedTeams = [];
+        if (!isdefined(self.trackedteams)) {
+            self.trackedteams = [];
         }
-        trackedTeams = self.trackedTeams;
+        trackedteams = self.trackedteams;
     }
-    return trackedTeams;
+    return trackedteams;
 }
 
 // Namespace namespace_304d296a920c310e/namespace_2d0a106261b9b151
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2919
 // Size: 0x74
-function trackTeam(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98) {
+function trackteam(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98) {
     var_bb58bcc7b0654344 = -1;
-    trackedTeams = function_f6686365221e78cb();
-    var_bb58bcc7b0654344 = function_85fee305e2d829c1(trackedTeams, var_cf7d42708e58bb98);
+    trackedteams = function_f6686365221e78cb();
+    var_bb58bcc7b0654344 = function_85fee305e2d829c1(trackedteams, var_cf7d42708e58bb98);
     if (var_bb58bcc7b0654344 < 0) {
-        if (trackedTeams.size == 4) {
-            var_bb58bcc7b0654344 = function_6f0f4e7b3ff7b57c(trackedTeams);
+        if (trackedteams.size == 4) {
+            var_bb58bcc7b0654344 = function_6f0f4e7b3ff7b57c(trackedteams);
         } else {
-            var_bb58bcc7b0654344 = trackedTeams.size;
+            var_bb58bcc7b0654344 = trackedteams.size;
         }
     }
     if (var_bb58bcc7b0654344 < 0 || var_bb58bcc7b0654344 >= 4) {
@@ -723,7 +723,7 @@ function function_7ca4d46dfe174e90(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98, v
     } else {
         self notify(notifyname);
         self endon(notifyname);
-        self.trackedTeams[var_bb58bcc7b0654344] = var_5b1596320df748c;
+        self.trackedteams[var_bb58bcc7b0654344] = var_5b1596320df748c;
         var_29412b34af141c29 = [0:self];
     }
     var_3e00d2d6fb1bd934 = getteamindex(var_cf7d42708e58bb98);
@@ -969,8 +969,8 @@ function function_5dfd73c97bf5d03d(player, evictim, event, points, var_645b1a1d2
     }
     if (isdefined(event) && isdefined(var_645b1a1d2a1ddfb7) && event == "br_kioskBuy" && var_645b1a1d2a1ddfb7 == "br_team_revive") {
         var_780d8a24242378d5 = namespace_54d20dd0dd79277f::getteamdata(player.team, "aliveCount");
-        var_cd51ab4357f76c8c = namespace_54d20dd0dd79277f::getteamdata(player.team, "teamCount");
-        var_de1f625722d92973 = var_cd51ab4357f76c8c - var_780d8a24242378d5;
+        squadsize = namespace_54d20dd0dd79277f::getteamdata(player.team, "teamCount");
+        var_de1f625722d92973 = squadsize - var_780d8a24242378d5;
         if (var_de1f625722d92973 == 1) {
             return;
         }
@@ -1125,7 +1125,7 @@ function function_3c88ec256b493bd0() {
                 }
             }
         }
-        player thread doingRespawn(0, level.teamdata[player.team]["alivePlayers"]);
+        player thread doingrespawn(0, level.teamdata[player.team]["alivePlayers"]);
     }
 }
 
@@ -1206,7 +1206,7 @@ function function_1f8da2719751fc5f() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e66
 // Size: 0x1c8
-function doingRespawn(var_cb5ba4c3282c39c1, var_54ebfc906d9a55e7) {
+function doingrespawn(var_cb5ba4c3282c39c1, var_54ebfc906d9a55e7) {
     /#
         assertex(isdefined(self), "Trying to respawn an invalid player");
     #/
@@ -1236,7 +1236,7 @@ function doingRespawn(var_cb5ba4c3282c39c1, var_54ebfc906d9a55e7) {
         var_1476e0f78320a501 = player namespace_8bfdb6eb5a3df67a::playerwaitforprestreaming();
     }
     streamtimeout = namespace_d3d40f75bb4e4c32::getdefaultstreamhinttimeoutms() / 1000;
-    spawnpoint = namespace_8bfdb6eb5a3df67a::playerGetRespawnPoint(0, streamtimeout);
+    spawnpoint = namespace_8bfdb6eb5a3df67a::playergetrespawnpoint(0, streamtimeout);
     var_11f3b4465c8b637b = namespace_8bfdb6eb5a3df67a::playerprestreamrespawnorigin(spawnpoint);
     self.forcespawnorigin = var_11f3b4465c8b637b;
     if (var_1476e0f78320a501) {
@@ -1281,7 +1281,7 @@ function respawn(spawnpoint, var_11f3b4465c8b637b) {
     namespace_d20f8ef223912e12::givelaststandifneeded(self);
     function_c04b5edf3f9ea340();
     if (!isdefined(spawnpoint)) {
-        spawnpoint = namespace_8bfdb6eb5a3df67a::playerGetRespawnPoint();
+        spawnpoint = namespace_8bfdb6eb5a3df67a::playergetrespawnpoint();
     }
     spawnorigin = spawnpoint.origin;
     spawnangles = spawnpoint.angles;
@@ -1314,7 +1314,7 @@ function respawn(spawnpoint, var_11f3b4465c8b637b) {
     wait(1.5);
     self unlink();
     namespace_4887422e77f3514e::function_a2b4e6088394bade();
-    if (namespace_d3d40f75bb4e4c32::isBrPracticeMode()) {
+    if (namespace_d3d40f75bb4e4c32::isbrpracticemode()) {
         self clearsoundsubmix("iw8_br_gulag_tutorial", 2);
     } else {
         self clearsoundsubmix("solo_cin_igc_music", 2);
@@ -1347,7 +1347,7 @@ function respawn(spawnpoint, var_11f3b4465c8b637b) {
     if (istrue(level.var_3ff7c73209fcf59d)) {
         namespace_250014dec221561c::function_fa674fb6e8372620();
     }
-    if (namespace_d3d40f75bb4e4c32::isBrPracticeMode()) {
+    if (namespace_d3d40f75bb4e4c32::isbrpracticemode()) {
         self notify("respawn_from_gulag");
     }
     self notify("can_show_splashes");
@@ -1396,7 +1396,7 @@ function playersetcontrols(enable) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43cf
 // Size: 0xaa
-function getDefaultLoadout() {
+function getdefaultloadout() {
     loadout = level.br_standard_loadout;
     if (isdefined(level.var_c04b5edf3f9ea340)) {
         circleindex = 0;
@@ -1440,7 +1440,7 @@ function playernakeddroploadout() {
             level.br_standard_loadout = namespace_d20f8ef223912e12::initstandardloadout(var_dab2d2efde751b62, 0);
             self.var_ab5f5270cb22e3c8 = 1;
         } else {
-            level.br_standard_loadout = getDefaultLoadout();
+            level.br_standard_loadout = getdefaultloadout();
         }
         var_c179e44bd14d2d12 = function_b8d1b2b54ad5f08d();
         namespace_d20f8ef223912e12::givestandardtableloadout(0, 1, var_c179e44bd14d2d12);
@@ -1643,7 +1643,7 @@ function setdropbagdelay() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e08
 // Size: 0xcc
-function onCloseCircleCompleted(var_6b890e6be7982efb) {
+function onclosecirclecompleted(var_6b890e6be7982efb) {
     timeremaining = namespace_d576b6dc7cef9c62::gettimeremaining() / 1000;
     timeremaining = timeremaining + getdvarint(@"hash_b1dc99c22b12bd63", 0);
     level.br_circle.safecircleui.origin = level.br_circle.safecircleent.origin;
@@ -1655,7 +1655,7 @@ function onCloseCircleCompleted(var_6b890e6be7982efb) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4edb
 // Size: 0x7a
-function playerGetRespawnPoint(var_447913206d1f7916, timeuntilspawn, var_f9a785628f97eec6) {
+function playergetrespawnpoint(var_447913206d1f7916, timeuntilspawn, var_f9a785628f97eec6) {
     var_8108b284f99b128a = getdvarfloat(@"hash_d9e0311bd167f06b", 0);
     var_812bbc84f9c17040 = getdvarfloat(@"hash_d9bc471bd13fa615", 1);
     spawnorigin = namespace_c5622898120e827f::getrandompointinsafecircle(var_8108b284f99b128a, var_812bbc84f9c17040);
@@ -1671,7 +1671,7 @@ function playerGetRespawnPoint(var_447913206d1f7916, timeuntilspawn, var_f9a7856
 // Size: 0x44
 function function_a2131d000491ae2c(eattacker, victim) {
     if (victim.agent_type == "actor_enemy_mp_jugg_mgl" && isplayer(eattacker)) {
-        eattacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_17ab30c9bc1e4c7c");
+        eattacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_17ab30c9bc1e4c7c");
     }
 }
 

@@ -38,7 +38,7 @@ function function_fb7271d5ee18b98d(data) {
     data.funcs["onCancel"] = &function_afd4bf63773cd7ad;
     data.funcs["onPlayerTearDown"] = &function_83d3732a571f142a;
     data.funcs["onPlayerAssimilated"] = &function_75b53ad947495f9c;
-    namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_3d221e16860007d5);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_3d221e16860007d5);
 }
 
 // Namespace namespace_46a48466a348d5e2/namespace_735f8af4d2aa34fb
@@ -97,7 +97,7 @@ function function_921a0be9ec330c6a() {
     teamname = self.teams[0];
     self.var_9f274e85b7bbd87f = 0;
     self.var_cc4cd023f0195d5f = level.var_5dddedbf2bda5311.var_be8a6484aed40352;
-    self.payoutValue = function_7fa77e2dbbd62db5(teamname);
+    self.payoutvalue = function_7fa77e2dbbd62db5(teamname);
     self.var_2655f1229ea3cb33 = [];
     function_8280acd4058f343b(teamname);
     var_e2b2bbd9e6539f11 = namespace_54d20dd0dd79277f::getteamdata(teamname, "players");
@@ -323,7 +323,7 @@ function function_302cb8661b3c7afa(pickupent, var_fba0376e0036de8d) {
     task.var_552c9e74f497621f = 0;
     var_e2b2bbd9e6539f11 = namespace_54d20dd0dd79277f::getteamdata(var_fba0376e0036de8d.team, "players");
     foreach (player in var_e2b2bbd9e6539f11) {
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f085eaf302a7e140");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_f085eaf302a7e140");
     }
     if (istrue(task function_1c6066d91ae79a56())) {
         task function_aa30a0b07502a038(1, "Win");
@@ -562,18 +562,18 @@ function function_bdcfa4ac81dc3472(teamname, lootid) {
     if (level.teamdata[teamname]["hackerPhonePaymentsRemaining"] > 0) {
         level.teamdata[teamname]["hackerPhonePaymentsRemaining"]--;
     }
-    payoutValue = function_97ff781643ef7daf(teamname);
+    payoutvalue = function_97ff781643ef7daf(teamname);
     var_ec2736524e4a7410 = namespace_54d20dd0dd79277f::getteamdata(teamname, "alivePlayers");
     foreach (player in var_ec2736524e4a7410) {
-        if (isdefined(player) && payoutValue > 0 && istrue(player.var_6c8912ea30b21003) && !player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
-            player namespace_c6ccccd95254983f::playerplunderpickup(payoutValue);
+        if (isdefined(player) && payoutvalue > 0 && istrue(player.var_6c8912ea30b21003) && !player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
+            player namespace_c6ccccd95254983f::playerplunderpickup(payoutvalue);
             if (isdefined(lootid)) {
                 view_origin = player getvieworigin();
                 player setclientomnvar("ui_br_hacker_phone_remaining_payments", level.teamdata[teamname]["hackerPhonePaymentsRemaining"]);
-                player namespace_cb965d2f71fefddc::function_37be6e543436f3b3(lootid, view_origin, 1, payoutValue);
+                player namespace_cb965d2f71fefddc::function_37be6e543436f3b3(lootid, view_origin, 1, payoutvalue);
             }
             if (isdefined(player.var_a4dd02e65175e1e7)) {
-                player.var_a4dd02e65175e1e7["totalPayout"] = player.var_a4dd02e65175e1e7["totalPayout"] + payoutValue * 10;
+                player.var_a4dd02e65175e1e7["totalPayout"] = player.var_a4dd02e65175e1e7["totalPayout"] + payoutvalue * 10;
             }
         }
     }
@@ -616,7 +616,7 @@ function function_ac7aaafed966dcff(teamname) {
 // Checksum 0x0, Offset: 0x1d19
 // Size: 0x27
 function function_97ff781643ef7daf(teamname) {
-    return level.teamdata[teamname]["hackerPhonePaymentCountActive"] * self.payoutValue;
+    return level.teamdata[teamname]["hackerPhonePaymentCountActive"] * self.payoutvalue;
 }
 
 // Namespace namespace_46a48466a348d5e2/namespace_735f8af4d2aa34fb
@@ -679,7 +679,7 @@ function function_196e12780ecc8e3b(teamname) {
             player.var_a4dd02e65175e1e7 = [];
             player.var_a4dd02e65175e1e7["tabletIndex"] = self.tablet.index;
             player.var_a4dd02e65175e1e7["totalPayout"] = 0;
-            player.var_a4dd02e65175e1e7["payoutValue"] = self.payoutValue * 10;
+            player.var_a4dd02e65175e1e7["payoutValue"] = self.payoutvalue * 10;
             namespace_f1d40c362677777e::registerondisconnecteventcallback(&function_a3a8454199eae9cb);
         }
     }

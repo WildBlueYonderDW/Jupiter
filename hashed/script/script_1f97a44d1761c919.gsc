@@ -632,9 +632,9 @@ function function_b0c21eabffce3fd4() {
     var_deb4634ff3cff859 = getdvarint(@"hash_57797986a6d60476", 4096);
     var_deb4634ff3cff859 = var_deb4634ff3cff859 * var_deb4634ff3cff859;
     var_5cc086a792b04fce = getdvarfloat(@"hash_32244d6acf101808", 60);
-    trackedTeams = [];
+    trackedteams = [];
     foreach (team in level.teamnamelist) {
-        trackedTeams[team] = [];
+        trackedteams[team] = [];
     }
     while (1) {
         validplayers = [];
@@ -656,7 +656,7 @@ function function_b0c21eabffce3fd4() {
                     if (player.team == var_f7632b4589b2bed4.team || distancesquared(player.origin, var_f7632b4589b2bed4.origin) > var_deb4634ff3cff859) {
                         continue;
                     }
-                    var_ba24b605d8b9c100 = function_f240c299b9341e8f(player, var_f7632b4589b2bed4, trackedTeams, var_5cc086a792b04fce);
+                    var_ba24b605d8b9c100 = function_f240c299b9341e8f(player, var_f7632b4589b2bed4, trackedteams, var_5cc086a792b04fce);
                     if (var_ba24b605d8b9c100) {
                         var_c1d6d0edd4194945 = namespace_2b1145f62aa835b8::function_9563f2d4e690856d(var_f7632b4589b2bed4.team, "players");
                         var_83f8bfe8c7a7ee0b = namespace_2b1145f62aa835b8::function_9563f2d4e690856d(player.team, "players");
@@ -668,7 +668,7 @@ function function_b0c21eabffce3fd4() {
                             var_571aeaf27dbb7e22[var_571aeaf27dbb7e22.size] = player;
                         }
                         function_d87d5deb069bf8e5(ter_op(var_c1d6d0edd4194945.size > level.overlord.var_f122d73bb796754c, "nearby_big_team", "player_enemy_player_nearby"), var_571aeaf27dbb7e22);
-                        trackedTeams[player.team][var_f7632b4589b2bed4.team] = gettime();
+                        trackedteams[player.team][var_f7632b4589b2bed4.team] = gettime();
                     }
                 }
             }
@@ -691,9 +691,9 @@ function function_aea00c3815b226da(player) {
     var_deb4634ff3cff859 = getdvarint(@"hash_57797986a6d60476", 4096);
     var_deb4634ff3cff859 = var_deb4634ff3cff859 * var_deb4634ff3cff859;
     var_5cc086a792b04fce = getdvarfloat(@"hash_32244d6acf101808", 60);
-    trackedTeams = [];
+    trackedteams = [];
     foreach (team in level.teamnamelist) {
-        trackedTeams[team] = [];
+        trackedteams[team] = [];
     }
     while (1) {
         validplayers = [];
@@ -711,7 +711,7 @@ function function_aea00c3815b226da(player) {
                 if (player.team == var_f7632b4589b2bed4.team || distancesquared(player.origin, var_f7632b4589b2bed4.origin) > var_deb4634ff3cff859) {
                     continue;
                 }
-                var_ba24b605d8b9c100 = !isdefined(trackedTeams[player.team][var_f7632b4589b2bed4.team]) || (gettime() - trackedTeams[player.team][var_f7632b4589b2bed4.team]) / 1000 > var_5cc086a792b04fce;
+                var_ba24b605d8b9c100 = !isdefined(trackedteams[player.team][var_f7632b4589b2bed4.team]) || (gettime() - trackedteams[player.team][var_f7632b4589b2bed4.team]) / 1000 > var_5cc086a792b04fce;
                 if (var_ba24b605d8b9c100) {
                     if (isdefined(level.var_38ae0db9542b127c)) {
                         [[ level.var_38ae0db9542b127c ]](player, var_f7632b4589b2bed4);
@@ -719,7 +719,7 @@ function function_aea00c3815b226da(player) {
                         var_c1d6d0edd4194945 = namespace_53fc9ddbb516e6e1::function_9563f2d4e690856d(var_f7632b4589b2bed4.team, "players");
                         function_d87d5deb069bf8e5(ter_op(var_c1d6d0edd4194945.size > level.overlord.var_f122d73bb796754c, "nearby_big_team", "player_enemy_player_nearby"), [0:player]);
                     }
-                    trackedTeams[player.team][var_f7632b4589b2bed4.team] = gettime();
+                    trackedteams[player.team][var_f7632b4589b2bed4.team] = gettime();
                 }
             }
         }
@@ -759,8 +759,8 @@ function function_70979c1eabf04180(players, tag) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2631
 // Size: 0xc3
-function function_f240c299b9341e8f(player, var_f7632b4589b2bed4, trackedTeams, var_5cc086a792b04fce) {
-    var_ba24b605d8b9c100 = !isdefined(trackedTeams[player.team][var_f7632b4589b2bed4.team]) || (gettime() - trackedTeams[player.team][var_f7632b4589b2bed4.team]) / 1000 > var_5cc086a792b04fce;
+function function_f240c299b9341e8f(player, var_f7632b4589b2bed4, trackedteams, var_5cc086a792b04fce) {
+    var_ba24b605d8b9c100 = !isdefined(trackedteams[player.team][var_f7632b4589b2bed4.team]) || (gettime() - trackedteams[player.team][var_f7632b4589b2bed4.team]) / 1000 > var_5cc086a792b04fce;
     if (getdvarint(@"hash_c53afaea3f55391a", 0)) {
         var_c1d6d0edd4194945 = namespace_2b1145f62aa835b8::function_9563f2d4e690856d(var_f7632b4589b2bed4.team, "players");
         return (var_ba24b605d8b9c100 && var_c1d6d0edd4194945.size > level.overlord.var_f122d73bb796754c);

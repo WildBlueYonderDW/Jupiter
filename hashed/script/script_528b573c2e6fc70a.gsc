@@ -48,7 +48,7 @@ function function_4a6f3ce45560d2a4() {
     self setnodeploy(1);
     thread weapons::minedamagemonitor();
     thread claymore::claymore_explodeonnotify();
-    namespace_595aac1b2bf891fc::set_apply_emp_callback(&claymore::claymore_empapplied);
+    emp_debuff::set_apply_emp_callback(&claymore::claymore_empapplied);
     haywire::function_172d848d58051fdf(&claymore::function_4373872960a2d51a);
     claymore::function_49197cd063a740ea(&claymore::claymore_destroy);
     if (isdefined(level.elevators)) {

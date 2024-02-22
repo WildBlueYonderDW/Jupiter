@@ -40,7 +40,7 @@ function function_7415ae9399ba8e75(var_f76baeb1c3556fab) {
     self.on_zombie_agent_killed_common = &on_ai_killed;
     if (!isdefined(level.var_6cd2f7cb729c844d) || !isdefined(level.var_6cd2f7cb729c844d[var_f76baeb1c3556fab])) {
         level.var_6cd2f7cb729c844d = function_53c4c53197386572(level.var_6cd2f7cb729c844d, []);
-        level.var_6cd2f7cb729c844d[var_f76baeb1c3556fab] = getscriptbundle(function_2ef675c13ca1c4af(%"hash_4f17114f894920fb", var_f76baeb1c3556fab));
+        level.var_6cd2f7cb729c844d[var_f76baeb1c3556fab] = getscriptbundle(function_2ef675c13ca1c4af(%"zombieaisettings:", var_f76baeb1c3556fab));
     }
     settings = level.var_6cd2f7cb729c844d[var_f76baeb1c3556fab];
     self.var_47399212b3052720 = settings;
@@ -265,7 +265,7 @@ function private on_ai_killed(einflictor, eattacker, idamage, smeansofdeath, obj
         }
         self.var_7e4b076a06c6df27 = 1;
     }
-    onHumanoidAgentKilledCommon_SharedFunc(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, 0);
+    onhumanoidagentkilledcommon_sharedfunc(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, 0);
     deathcleanup();
 }
 

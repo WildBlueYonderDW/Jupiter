@@ -541,7 +541,7 @@ function givesurvivortimescore() {
         wait(level.survivorscoretime);
         foreach (player in level.players) {
             if (player.team == "allies") {
-                player thread doScoreEvent(#"survivor", undefined, level.survivorscorepertick);
+                player thread doscoreevent(#"survivor", undefined, level.survivorscorepertick);
             }
         }
     }
@@ -898,7 +898,7 @@ function setinfectedmsg() {
         self.changingtoregularinfected = undefined;
         if (isdefined(self.changingtoregularinfectedbykill)) {
             self.changingtoregularinfectedbykill = undefined;
-            thread doScoreEvent(#"first_infected");
+            thread doscoreevent(#"first_infected");
         }
     } else if (!isdefined(self.showninfected) || !self.showninfected) {
         thread namespace_62c556437da28f50::scoreeventpopup(#"hash_907bbe9cd1a3124e");
@@ -1179,9 +1179,9 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             } else {
                 attacker.infectedkillsthislife++;
             }
-            attacker thread doScoreEvent(#"infected_survivor", undefined, level.infectstreakbonus * attacker.infectedkillsthislife);
+            attacker thread doscoreevent(#"infected_survivor", undefined, level.infectstreakbonus * attacker.infectedkillsthislife);
         } else {
-            attacker thread doScoreEvent(#"infected_survivor");
+            attacker thread doscoreevent(#"infected_survivor");
         }
         if (getwatcheddvar("timelimit") != 0) {
             var_a3aaa6a031ab1d3f = 1;
@@ -1261,10 +1261,10 @@ function delayedprocesskill(attacker, wassuicide) {
                     continue;
                 }
                 if (player.team == "allies" && player != self && distance(player.infect_spawnpos, player.origin) > 32) {
-                    player thread doScoreEvent(#"survivor", undefined, level.survivorscoreevent);
+                    player thread doscoreevent(#"survivor", undefined, level.survivorscoreevent);
                 }
                 if (player.team == "axis" && player != attacker && player != self) {
-                    player thread doScoreEvent(#"assist", undefined, level.infectbonusscore);
+                    player thread doscoreevent(#"assist", undefined, level.infectbonusscore);
                 }
             }
         }
@@ -1315,7 +1315,7 @@ function onfinalsurvivor() {
         }
         if (player.team == "allies") {
             player namespace_944ddf7b8df1b0e3::leaderdialogonplayer("infected_lastalive");
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"final_survivor");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"final_survivor");
             player playlocalsound("jup_infected_player_last_stand", "allies");
             player incpersstat("lastSurvivor", 1);
             player thread function_9f1649ee39d3bd26(6, 500);

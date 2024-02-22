@@ -11,9 +11,9 @@
 #using script_2669878cf5a1b6bc;
 #using script_2aabac61f2ae422;
 
-#namespace killstreakDeploy;
+#namespace killstreakdeploy;
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9e3
 // Size: 0x269
@@ -21,7 +21,7 @@ function candeploykillstreak(streakinfo, deployweaponobj, var_818a18147626dfbf) 
     if (!isdefined(var_818a18147626dfbf)) {
         var_818a18147626dfbf = 1;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (isdefined(level.killstreakrounddelay) && level.killstreakrounddelay > 0) {
             if (isdefined(level.var_5fbdcf40b68612a5)) {
                 timepassed = (gettime() - level.var_5fbdcf40b68612a5) / 1000;
@@ -67,7 +67,7 @@ function candeploykillstreak(streakinfo, deployweaponobj, var_818a18147626dfbf) 
     return 1;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc54
 // Size: 0x106
@@ -89,7 +89,7 @@ function ondeploystart(streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd61
 // Size: 0x10a
@@ -116,7 +116,7 @@ function ondeployfinished(streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe72
 // Size: 0xb
@@ -124,7 +124,7 @@ function streakdeploy_cancelalldeployments() {
     self notify("cancel_all_killstreak_deployments");
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe84
 // Size: 0xea
@@ -152,7 +152,7 @@ function streakdeploy_dogesturedeploy(streakinfo, var_18f6cdab37de78a9) {
     return result;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf76
 // Size: 0x40
@@ -165,7 +165,7 @@ function watchforcancelduringgesture(streakinfo, var_18f6cdab37de78a9) {
     self takeweapon(var_18f6cdab37de78a9);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfbd
 // Size: 0x2a
@@ -176,7 +176,7 @@ function function_ccc14a44e1811cb1(var_18f6cdab37de78a9) {
     self takeweapon(var_18f6cdab37de78a9);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfee
 // Size: 0x3b
@@ -190,7 +190,7 @@ function function_44d17dbe4db72ea9(streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1030
 // Size: 0xdb
@@ -212,7 +212,7 @@ function streakdeploy_doweaponswitchdeploy(streakinfo, weaponobj, keepweapon, va
     return 1;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1113
 // Size: 0x166
@@ -245,7 +245,7 @@ function streakdeploy_doweaponfireddeploy(streakinfo, weaponobj, firednotify, va
     return istrue(var_9cf1d5b97d062b8a);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1281
 // Size: 0x248
@@ -304,7 +304,7 @@ function streakdeploy_doweapontabletdeploy(streakinfo, var_bdffc63c4171c131, var
     return istrue(var_eabf81b5be8ddb5);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14d1
 // Size: 0x58
@@ -317,7 +317,7 @@ function streakdeploy_playtabletdeploydialog(streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1530
 // Size: 0x136
@@ -348,7 +348,7 @@ function streakdeploy_dothrowbackmarkerdeploy(streakinfo, weaponoverride, var_bd
     return istrue(var_9cf1d5b97d062b8a);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x166e
 // Size: 0x177
@@ -359,7 +359,7 @@ function switchtodeployweapon(deployweaponobj, streakinfo, var_819c14e9dc86b8c8,
     if (self hasweapon(deployweaponobj)) {
         return 0;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         if (getcompleteweaponname(self getcurrentweapon()) == "iw8_lm_dblmg_mp") {
             self notify("switched_from_minigun");
             while (getcompleteweaponname(self getcurrentweapon()) == "iw8_lm_dblmg_mp") {
@@ -395,7 +395,7 @@ function switchtodeployweapon(deployweaponobj, streakinfo, var_819c14e9dc86b8c8,
     return var_41bf9bf4918115ac;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17ed
 // Size: 0x3d
@@ -410,7 +410,7 @@ function callweapongivencallback(streakinfo, var_bdffc63c4171c131) {
     return 1;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1832
 // Size: 0x4a
@@ -425,7 +425,7 @@ function watchforcancelduringweaponswitch(streakinfo, deployweaponobj) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1883
 // Size: 0x94
@@ -447,7 +447,7 @@ function function_7605a5b4c0a6e117(streakinfo, deployweaponobj) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x191e
 // Size: 0x157
@@ -504,7 +504,7 @@ function watchdeployweaponfired(streakinfo, firednotify, var_4ef1099365450bae, v
     return 0;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a7d
 // Size: 0x1ea
@@ -549,7 +549,7 @@ function watchdeployweaponanimtransition(streakinfo, animlength, var_67a06b4ea26
     return 1;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c6f
 // Size: 0x27
@@ -560,7 +560,7 @@ function unfreezecontrolsonroundend() {
     _freezecontrols(0, undefined, "killstreakDeploy");
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1c9d
 // Size: 0xc3
@@ -583,7 +583,7 @@ function private startweapontabletfadetransition(timedelay, streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d67
 // Size: 0xa5
@@ -609,7 +609,7 @@ function watchweapontabletstop(streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e13
 // Size: 0xce
@@ -642,7 +642,7 @@ function watchweapontabletcallinpos(streakinfo) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ee8
 // Size: 0x14
@@ -650,7 +650,7 @@ function function_67f13db1409ec06d(streakinfo) {
     waituntilfinishedwithdeployweapon(streakinfo);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1f03
 // Size: 0x86
@@ -672,7 +672,7 @@ function private waituntilfinishedwithdeployweapon(streakinfo) {
     self notify("killstreak_really_finished_with_deploy_weapon");
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1f90
 // Size: 0x28
@@ -682,7 +682,7 @@ function private function_2bff7042844c915b(ent, var_f36c0162774a45fa) {
     self notify("potential_killstreak_deployment_finish", var_f36c0162774a45fa);
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 6, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1fbf
 // Size: 0x1b0
@@ -724,7 +724,7 @@ function private cleanupdeployweapon(var_41bf9bf4918115ac, streakinfo, weaponobj
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2176
 // Size: 0x54
@@ -737,7 +737,7 @@ function getridofkillstreakdeployweapon(weaponobj) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x21d1
 // Size: 0x62
@@ -750,7 +750,7 @@ function private function_1a815b06ac8daec6(objweapon) {
     return 0;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x223b
 // Size: 0x49
@@ -766,7 +766,7 @@ function function_b752eaae4d806c4c(currentweapon) {
     return 0;
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x228c
 // Size: 0x2bf
@@ -774,7 +774,7 @@ function candeploykillstreakweapon(streakinfo, objweapon) {
     if (self getcurrentweapon().basename == "none") {
         waitframe();
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType() && istrue(level.gameended)) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype() && istrue(level.gameended)) {
         return function_9c92daea59d1e8cf();
     }
     if (isdefined(objweapon) && self hasweapon(objweapon)) {
@@ -835,7 +835,7 @@ function candeploykillstreakweapon(streakinfo, objweapon) {
     }
 }
 
-// Namespace killstreakDeploy/namespace_b3d24e921998a8b
+// Namespace killstreakdeploy/namespace_b3d24e921998a8b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2553
 // Size: 0x77

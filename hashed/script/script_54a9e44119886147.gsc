@@ -68,7 +68,7 @@ function function_35671b7b1a04bf58(bot) {
                 return msg;
             }
         }
-        if (istrue(self.var_a0185a724941f02f.constants.var_c1f6d75f14545b1f)) {
+        if (istrue(self.decision.constants.var_c1f6d75f14545b1f)) {
             bot function_cf1a9e98122e3931(target);
         }
     }
@@ -79,7 +79,7 @@ function function_35671b7b1a04bf58(bot) {
 // Checksum 0x0, Offset: 0x3bf
 // Size: 0x89
 function function_bdf249b5a9979371(bot) {
-    var_3b00f93932aa61c4 = self.var_a0185a724941f02f.constants.var_386520f2d17685d5;
+    var_3b00f93932aa61c4 = self.decision.constants.var_386520f2d17685d5;
     if (isdefined(var_3b00f93932aa61c4) && var_3b00f93932aa61c4 != 0 && !isbot(self.var_ec02147fee952ce2)) {
         self.var_98a8d73ff5329a01 = bot botgetdifficultysetting("hitInaccuracyScale");
         var_5fc09d1bc4492fc6 = self.var_98a8d73ff5329a01 * var_3b00f93932aa61c4;

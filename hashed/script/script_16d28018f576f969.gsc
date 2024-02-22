@@ -38,6 +38,6 @@ function function_b831ccf10a32a4b1() {
 // Checksum 0x0, Offset: 0x13c
 // Size: 0x1c
 function function_b24a36667938b8d4() {
-    level.var_dbf4d97004e64bd5.var_1176926a4b469eac = "iw9_me_fists_mp";
+    level.ftuedata.var_1176926a4b469eac = "iw9_me_fists_mp";
 }
 

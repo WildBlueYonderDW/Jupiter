@@ -102,7 +102,7 @@ function function_18b8c4c4fa0f6d1c(weaponname, weaponcamo) {
         if (isdefined(level.var_305637ed4e3e8513[weaponname]) && isdefined(level.var_305637ed4e3e8513[weaponname][weaponcamo])) {
             return level.var_305637ed4e3e8513[weaponname][weaponcamo];
         } else {
-            lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(weaponcamo);
+            lootid = namespace_38b993c4618e76cd::getlootidfromref(weaponcamo);
             if (lootid == 0) {
                 namespace_9c840bb9f2ecbf00::demoforcesre("getCamoLootID: weaponName/weaponCamo [" + weaponname + "/" + weaponcamo + "] not in level.weaponMappedCamos");
             }
@@ -117,14 +117,14 @@ function function_18b8c4c4fa0f6d1c(weaponname, weaponcamo) {
         if (weaponclass != "" && isdefined(level.var_305637ed4e3e8513[weaponclass]) && isdefined(level.var_305637ed4e3e8513[weaponclass][weaponcamo])) {
             return level.var_305637ed4e3e8513[weaponclass][weaponcamo];
         } else {
-            lootid = namespace_38b993c4618e76cd::function_a50b607d2500dda5(weaponcamo);
+            lootid = namespace_38b993c4618e76cd::getlootidfromref(weaponcamo);
             if (lootid == 0) {
                 namespace_9c840bb9f2ecbf00::demoforcesre("getCamoLootID: weaponName/weaponCamo [" + weaponname + "/" + weaponcamo + "] not in level.weaponMappedCamos");
             }
             return lootid;
         }
     } else {
-        return namespace_38b993c4618e76cd::function_a50b607d2500dda5(weaponcamo);
+        return namespace_38b993c4618e76cd::getlootidfromref(weaponcamo);
     }
 }
 
@@ -138,7 +138,7 @@ function function_2c4d04305e3c9601(var_904c82687ddfeb02) {
     }
     var_e7a7288f46dee8e7 = [0:11354, 1:11344, 2:11338, 3:11352, 4:11318, 5:11337, 6:11340, 7:11323, 8:11331, 9:11307, 10:11317, 11:11324, 12:11328, 13:11351, 14:11357, 15:11355, 16:11315, 17:11367, 18:11320, 19:11353];
     var_4b40391f47f1d3ea = [0:11354, 1:11356, 2:11374, 3:11344, 4:11317, 5:11352];
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         foreach (var_8c996f399d5e3282 in var_e7a7288f46dee8e7) {
             if (var_8c996f399d5e3282 == var_904c82687ddfeb02) {
                 return 1;
@@ -223,11 +223,11 @@ function function_503f87754be2d15c(weaponname, var_fedb77aad2340743, var_2f36f15
     }
     var_fefad7765ef87400 = function_18b8c4c4fa0f6d1c(weaponname, camoname);
     var_4a654bd9a395c1ff[var_4a654bd9a395c1ff.size] = var_fefad7765ef87400;
-    var_8b245507630a7ba1 = namespace_38b993c4618e76cd::function_a50b607d2500dda5(var_bd1db6dd9710a427);
+    var_8b245507630a7ba1 = namespace_38b993c4618e76cd::getlootidfromref(var_bd1db6dd9710a427);
     var_4a654bd9a395c1ff[var_4a654bd9a395c1ff.size] = var_8b245507630a7ba1;
     foreach (sticker in stickers) {
         if (sticker != "none") {
-            var_c3c5d884c6b46717 = namespace_38b993c4618e76cd::function_a50b607d2500dda5(sticker);
+            var_c3c5d884c6b46717 = namespace_38b993c4618e76cd::getlootidfromref(sticker);
             var_4a654bd9a395c1ff[var_4a654bd9a395c1ff.size] = var_c3c5d884c6b46717;
         }
     }
@@ -243,7 +243,7 @@ function function_5a92673db4ece37f(classstruct) {
     if (var_cfbd5dfab1e96cb1 == 0) {
         return;
     }
-    if (utility::iscp() || namespace_36f464722d326bbe::isBRStyleGameType() || level.var_ec2fb549b15ad827 || !level.rankedmatch || !level.matchmakingmatch || !level.onlinestatsenabled) {
+    if (utility::iscp() || namespace_36f464722d326bbe::isbrstylegametype() || level.var_ec2fb549b15ad827 || !level.rankedmatch || !level.matchmakingmatch || !level.onlinestatsenabled) {
         return;
     }
     function_503f87754be2d15c(classstruct.loadoutprimary, classstruct.loadoutprimaryvariantid, classstruct.loadoutprimarylootitemid, classstruct.loadoutprimaryattachments, classstruct.loadoutprimaryattachmentids, classstruct.loadoutprimarycamo, classstruct.loadoutprimarycosmeticattachment, classstruct.loadoutprimarystickers);
@@ -258,7 +258,7 @@ function validateloadout(loadout) {
     if (getdvarint(@"hash_955ca650f9a9bdef", 0) == 1) {
         return loadout;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && (getsubgametype() == "dmz" || getsubgametype() == "exgm") && getdvarint(@"hash_65f0ea4ff58c3fa0", 0) == 1) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm") && getdvarint(@"hash_65f0ea4ff58c3fa0", 0) == 1) {
         return loadout;
     }
     var_8b3060936146ce59 = isdefined(level.var_1a2b600a06ec21f4) && istrue(level.var_1a2b600a06ec21f4.var_e12ed09bf2e43167);
@@ -330,7 +330,7 @@ function validateloadout(loadout) {
     if (var_de6cf437be756ee1 && namespace_38b993c4618e76cd::function_8c610908c0e9c6e4(loadout.loadoutsecondary)) {
         replaceweapon = 1;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType() && !var_8b3060936146ce59) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype() && !var_8b3060936146ce59) {
         var_e825245f4893a9a0 = "specialty_munitions_2";
         var_df3d6a2ffc2e83c1 = !perkisrestricted(var_e825245f4893a9a0) && array_contains(loadout.loadoutperks, var_e825245f4893a9a0);
         if (iscacprimaryweapon(loadout.loadoutsecondary) && !var_df3d6a2ffc2e83c1) {
@@ -579,7 +579,7 @@ function validateloadout(loadout) {
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x2492
 // Size: 0x2e4
-function validateweapon(var_7bd653180204fca6, weapon, attachments, camo, reticle, lootItemID, variantid, var_681ba90ff25200c5) {
+function validateweapon(var_7bd653180204fca6, weapon, attachments, camo, reticle, lootitemid, variantid, var_681ba90ff25200c5) {
     rootweaponname = getweaponrootname(weapon);
     var_99c561069f2eb71 = iscacsecondaryweapon(weapon);
     weaponslot = ter_op(var_681ba90ff25200c5, "secondary", "primary");
@@ -606,7 +606,7 @@ function validateweapon(var_7bd653180204fca6, weapon, attachments, camo, reticle
             validationerror("lockedWeapon", weaponslot, weapon);
             var_7bd653180204fca6.invaliditems[itemslot] = 1;
         }
-        if (lootItemID == 0) {
+        if (lootitemid == 0) {
             if (variantid != -1) {
                 validationerror("emptyItemIDMismatch", weaponslot, weapon);
                 var_7bd653180204fca6.invaliditems[itemslot] = 1;
@@ -615,11 +615,11 @@ function validateweapon(var_7bd653180204fca6, weapon, attachments, camo, reticle
             validationerror("emptyVariantIDMismatch", weaponslot, weapon);
             var_7bd653180204fca6.invaliditems[itemslot] = 1;
         } else {
-            if (!namespace_3f0ea7483345a2c0::isweaponitem(lootItemID)) {
+            if (!namespace_3f0ea7483345a2c0::isweaponitem(lootitemid)) {
                 validationerror("nonWeaponLootItemID", weaponslot, weapon);
                 var_7bd653180204fca6.invaliditems[itemslot] = 1;
             }
-            var_157c94951634cbc9 = namespace_3f0ea7483345a2c0::getlootweaponref(lootItemID);
+            var_157c94951634cbc9 = namespace_3f0ea7483345a2c0::getlootweaponref(lootitemid);
             if (!isdefined(var_157c94951634cbc9)) {
                 validationerror("badLootItemID", weaponslot, weapon);
                 var_7bd653180204fca6.invaliditems[itemslot] = 1;
@@ -886,11 +886,11 @@ function fixweapon(loadout, weaponslot) {
             loadout.loadoutsecondaryattachments[var_40e4b9c48b36c9ec] = "none";
         }
     } else {
-        loadout.loadoutTertiary = "none";
-        loadout.var_3e736d45cb66f421 = "none";
-        loadout.var_447fa1cd172712ef = "none";
+        loadout.loadouttertiary = "none";
+        loadout.loadouttertiarycamo = "none";
+        loadout.loadouttertiaryreticle = "none";
         loadout.var_64e57707d385a2f5 = 0;
-        loadout.var_86f93e739d85e483 = -1;
+        loadout.loadouttertiaryvariantid = -1;
         for (var_40e4b9c48b36c9ec = 0; var_40e4b9c48b36c9ec < namespace_d19129e4fa5d176::function_4073b3f145413cd(); var_40e4b9c48b36c9ec++) {
             loadout.var_494870a5978b5a09[var_40e4b9c48b36c9ec] = "none";
         }

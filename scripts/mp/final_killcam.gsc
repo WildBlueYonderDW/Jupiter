@@ -29,7 +29,7 @@ function initfinalkillcam() {
     level.finalkillcams["none"] = undefined;
     level.finalkillcam_winner = undefined;
     level.recordfinalkillcam = 1;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         level.finalkillcamenabled = 1;
         return;
     }

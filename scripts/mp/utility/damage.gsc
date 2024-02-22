@@ -346,7 +346,7 @@ function damage_should_ignore_blast_shield(attacker, victim, objweapon, smeansof
     if (weaponignoresblastshield(objweapon, hitloc)) {
         return 1;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(victim) && istrue(victim.isjuggernaut) && isdefined(inflictor) && isdefined(inflictor.vehiclename)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(victim) && istrue(victim.isjuggernaut) && isdefined(inflictor) && isdefined(inflictor.vehiclename)) {
         return 1;
     }
     return 0;

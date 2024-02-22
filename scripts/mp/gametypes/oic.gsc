@@ -410,7 +410,7 @@ function onplayerscore(event, player, originalpoints, victim, var_7ec7671a1e0c78
             assertex(isdefined(var_cc7886247a15dfdf), "No score info value for event "score_increment"");
         #/
         return var_cc7886247a15dfdf;
-    } else if (event == #"hash_fe68dfa78d19874e") {
+    } else if (event == #"assist_ffa") {
         player namespace_9c840bb9f2ecbf00::bufferednotify("earned_score_buffered", originalpoints);
     } else if (event == #"survivor") {
         return originalpoints;
@@ -493,7 +493,7 @@ function eliminateplayer(attacker) {
     foreach (player in level.players) {
         if (player.pers["deaths"] < getgametypenumlives() && player.oic_hasspawned) {
             remainingplayers[remainingplayers.size] = player;
-            player namespace_48a08c5037514e04::doScoreEvent(#"survivor");
+            player namespace_48a08c5037514e04::doscoreevent(#"survivor");
         }
     }
     if (remainingplayers.size > 2) {

@@ -33,7 +33,7 @@ function function_99877ccd9f1a6857() {
 function function_c91188ff5b13a34b(attacker) {
     callback::remove("player_disconnect", &onplayerdisconnect);
     if (isdefined(attacker)) {
-        attacker thread doScoreEvent(#"hash_31f908e35922e19d");
+        attacker thread doscoreevent(#"hash_31f908e35922e19d");
     }
     function_68972bb1dc676870();
     self setclientomnvar("ui_player_using_honeypot", 0);
@@ -59,7 +59,7 @@ function private function_b26e128f86f6c616() {
     self endon("death");
     var_661d5ce8e9d7fe6f = getcurrentsuper();
     wait(var_661d5ce8e9d7fe6f.staticdata.usetime);
-    thread doScoreEvent(#"hash_75aa6e3148836dbe");
+    thread doscoreevent(#"hash_75aa6e3148836dbe");
 }
 
 // Namespace namespace_d9beee85529e850b/namespace_a958914ab5b08b6d

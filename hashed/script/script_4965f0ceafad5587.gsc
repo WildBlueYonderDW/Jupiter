@@ -144,7 +144,7 @@ function private function_a08380cd8b1316e5(var_45191fa57864b212) {
 // Size: 0x4e
 function private ob_act3_completed(params) {
     function_82b80153d3189adc("jup_ob_theend");
-    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getsquadmembers();
     if (var_c9b69aecc5c631ed.size >= 6 || level.players.size >= 6) {
         function_82b80153d3189adc("jup_ob_oneagainstall");
     }
@@ -225,7 +225,7 @@ function private on_hellhound_petted(params) {
 function private on_player_revived(params) {
     reviver = params.reviver;
     if (isplayer(reviver)) {
-        var_9b0dd04874627a99 = reviver namespace_ca7b90256548aa40::getSquadMembers();
+        var_9b0dd04874627a99 = reviver namespace_ca7b90256548aa40::getsquadmembers();
         if (!function_fc64178f71375137(var_9b0dd04874627a99, self) && self != reviver || istrue(params.var_26ac2a3a59347b9e)) {
             reviver function_82b80153d3189adc("jup_ob_helpfulstranger");
         }
@@ -287,7 +287,7 @@ function private on_ai_killed(params) {
                 if (isarray(self.var_21a8839dd03e31cd)) {
                     foreach (player in self.var_21a8839dd03e31cd) {
                         if (isplayer(player)) {
-                            var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getSquadMembers();
+                            var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getsquadmembers();
                             if (var_c9b69aecc5c631ed.size >= 6 || var_c9b69aecc5c631ed.size >= getdvarint(@"hash_340b01b20673c44e", 6)) {
                                 player function_82b80153d3189adc("jup_ob_oneagainstall");
                             }

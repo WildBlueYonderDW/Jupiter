@@ -82,7 +82,7 @@ function function_754c5fbcd73cf12d(loadout) {
 // Size: 0x45
 function function_625a1bdd25647c6b(loadout) {
     loadout.loadoutequipmentprimary = namespace_d19129e4fa5d176::table_getequipmentprimary(level.classtablename, 0);
-    loadout.loadoutextraequipmentprimary = namespace_d19129e4fa5d176::table_getFlcExtraEquipmentPrimary(level.classtablename, 0);
+    loadout.loadoutextraequipmentprimary = namespace_d19129e4fa5d176::table_getflcextraequipmentprimary(level.classtablename, 0);
     return loadout;
 }
 
@@ -92,7 +92,7 @@ function function_625a1bdd25647c6b(loadout) {
 // Size: 0x45
 function function_1ccfa7dccda7da0f(loadout) {
     loadout.loadoutequipmentsecondary = namespace_d19129e4fa5d176::table_getequipmentsecondary(level.classtablename, 0);
-    loadout.loadoutextraequipmentsecondary = namespace_d19129e4fa5d176::table_getFlcExtraEquipmentSecondary(level.classtablename, 0);
+    loadout.loadoutextraequipmentsecondary = namespace_d19129e4fa5d176::table_getflcextraequipmentsecondary(level.classtablename, 0);
     return loadout;
 }
 

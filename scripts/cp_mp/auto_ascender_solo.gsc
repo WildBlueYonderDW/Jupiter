@@ -189,7 +189,7 @@ function startascenderanim(player, dir, ascendermodelview, ascendermodelworld, v
     player.player_rig linkto(self, "tag_origin", (0, 0, 0), (0, 0, 0));
     ascendermodelview linkto(player.player_rig, var_9150bc085d41f530, (0, 0, 0), (0, 0, 0));
     ascendermodelworld linkto(self, "tag_origin", (0, 0, 0), (0, 0, 0));
-    isthirdperson = player GetCameraThirdPerson();
+    isthirdperson = player getcamerathirdperson();
     if (!isthirdperson) {
         player.player_rig showonlytoplayer(player);
     }
@@ -255,8 +255,8 @@ function ascenderuse(instance, player) {
     player val::set("ascender", "fire", 0);
     if (istrue(player.isjuggernaut)) {
         if (issharedfuncdefined("juggernaut", "canUseWeaponPickups")) {
-            canUseWeaponPickups = player [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
-            if (istrue(canUseWeaponPickups)) {
+            canuseweaponpickups = player [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
+            if (istrue(canuseweaponpickups)) {
                 player val::set("ascender", "weapon_switch", 0);
             }
         }

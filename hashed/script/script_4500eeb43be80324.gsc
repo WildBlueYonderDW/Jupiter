@@ -173,7 +173,7 @@ function function_f3ae4b41df047ba0(array) {
 // Size: 0x1b
 function function_6f33464b9145231b(array) {
     function_f3ae4b41df047ba0(array);
-    teleportToMovingPlane();
+    teleporttomovingplane();
 }
 
 // Namespace namespace_f8ca021ce77f892f/namespace_d8d4c267054a30a2
@@ -190,7 +190,7 @@ function function_8f7e8b26075a5371() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15dd
 // Size: 0xf5
-function teleportToMovingPlane() {
+function teleporttomovingplane() {
     self.movingc130 setscriptablepartstate("running_lights", "on");
     setomnvar("ui_hide_player_icons", 0);
     foreach (player in level.infilstruct.players) {

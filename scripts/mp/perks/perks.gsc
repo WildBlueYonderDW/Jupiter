@@ -741,7 +741,7 @@ function onspecialistbonusavailable(var_16efcf27e6efcbe8) {
 // Checksum 0x0, Offset: 0x5b8f
 // Size: 0x9a
 function addspecialistbonus() {
-    var_e005d4b70d6f2611 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_e005d4b70d6f2611 = namespace_36f464722d326bbe::isbrstylegametype();
     foreach (perk, bundle in level.var_a1ad2758fcbd2f5e) {
         var_e72ddc0fdefe52ec = ter_op(var_e005d4b70d6f2611, istrue(bundle.specialistbr), istrue(bundle.specialist));
         if (!var_e72ddc0fdefe52ec) {
@@ -756,7 +756,7 @@ function addspecialistbonus() {
 // Checksum 0x0, Offset: 0x5c30
 // Size: 0x9a
 function removespecialistbonus() {
-    var_e005d4b70d6f2611 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_e005d4b70d6f2611 = namespace_36f464722d326bbe::isbrstylegametype();
     foreach (perk, bundle in level.var_a1ad2758fcbd2f5e) {
         var_e72ddc0fdefe52ec = ter_op(var_e005d4b70d6f2611, istrue(bundle.specialistbr), istrue(bundle.specialist));
         if (!var_e72ddc0fdefe52ec) {
@@ -867,7 +867,7 @@ function initperkdvars() {
         level.blastshieldmod = dvarfloatvalue("blastShieldMod", 0.65, 0, 1);
         level.blastshieldclamp = dvarfloatvalue("blastShieldClamp", 0.8, 0, 1) * maxhealth;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         level.blastshieldmod = getfloatproperty(@"hash_eea6d50ea045fdf", 0.8);
         level.blastshieldclamp = getfloatproperty(@"hash_60e279f4f47f7b8e", 0.8) * maxhealth;
     }
@@ -1241,7 +1241,7 @@ function getperkid(perkref) {
 // Size: 0x103
 function function_ccdbd1f6da822d2c() {
     level endon("game_ended");
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_4b0406965e556711::gameflagwait("prematch_done");
     }
     starttime = gettime();
@@ -1305,8 +1305,8 @@ function function_f2dbab6f947771f2() {
         }
         self dlog_recordplayerevent("dlog_event_mp_perk_tier2_earn", [0:"match_time", 1:namespace_36f464722d326bbe::gettimepassed(), 2:"t2_cost", 3:var_ff54a98a1569a09d]);
     }
-    perkPackageProgress = self.pers["perkPackageProgress"] + game["perk_package_progress_global"];
-    var_76d0e2dfc8bb69e = perkPackageProgress > var_1601c1f95d06209a && self.pers["perkPackageTier3State"] < 1;
+    perkpackageprogress = self.pers["perkPackageProgress"] + game["perk_package_progress_global"];
+    var_76d0e2dfc8bb69e = perkpackageprogress > var_1601c1f95d06209a && self.pers["perkPackageTier3State"] < 1;
     if ((var_76d0e2dfc8bb69e || level.var_f3d4353da6d28e7f == 1) && self.var_15f3e5df722faf9c != "specialty_null") {
         self.pers["perkPackageTier3State"] = 1;
         if (istrue(self.var_a7befb30cd4958cb)) {
@@ -1367,9 +1367,9 @@ function function_2cb1405f41491297(amount) {
 // Checksum 0x0, Offset: 0x7328
 // Size: 0x7f
 function function_ff3e705ec08c840() {
-    perkPackageProgress = self.pers["perkPackageProgress"] + game["perk_package_progress_global"];
-    var_4d0d085ee780c083 = perkPackageProgress / level.var_5a3318627fb4465d;
-    var_e3df6497b9e052ad = (perkPackageProgress - level.var_5a3318627fb4465d) / (level.var_5cdaa841f503d45a - level.var_5a3318627fb4465d);
+    perkpackageprogress = self.pers["perkPackageProgress"] + game["perk_package_progress_global"];
+    var_4d0d085ee780c083 = perkpackageprogress / level.var_5a3318627fb4465d;
+    var_e3df6497b9e052ad = (perkpackageprogress - level.var_5a3318627fb4465d) / (level.var_5cdaa841f503d45a - level.var_5a3318627fb4465d);
     self setclientomnvar("ui_perk_bonus_progress", var_4d0d085ee780c083);
     self setclientomnvar("ui_perk_ultimate_progress", var_e3df6497b9e052ad);
 }
@@ -1463,7 +1463,7 @@ function function_667ec8f124fe1ab3() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76b2
 // Size: 0x2a
-function activatePerk(perkref) {
+function activateperk(perkref) {
     self setclientomnvar("ui_perk_activation", perkref);
     self setclientomnvar("ui_perk_activation_notify", gettime());
 }

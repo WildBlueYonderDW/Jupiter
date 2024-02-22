@@ -101,7 +101,7 @@ function function_385451540bf346eb(params) {
         if (isdefined(prop.var_a295306038aa1d4e)) {
             [[ prop.var_a295306038aa1d4e ]]();
         }
-        level thread function_e453324661beb282(prop);
+        level thread clean_up_prop(prop);
     }
 }
 

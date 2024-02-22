@@ -132,16 +132,16 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     jugghealth = getmatchrulesdata("rugbyData", "juggHealth");
     setdynamicdvar(@"hash_916482a23f7db002", jugghealth);
-    juggSpeed = getmatchrulesdata("rugbyData", "juggSpeed");
-    setdynamicdvar(@"hash_fca821906f4a663f", juggSpeed);
-    juggTeamSpeed = getmatchrulesdata("rugbyData", "juggTeamSpeed");
-    setdynamicdvar(@"hash_64d4d28dc063bff0", juggTeamSpeed);
-    juggTimeout = getmatchrulesdata("rugbyData", "juggTimeout");
-    setdynamicdvar(@"hash_364db51c6de274cf", juggTimeout);
-    helperMax = getmatchrulesdata("rugbyData", "helperMax");
-    setdynamicdvar(@"hash_f3f419ef3e285de3", helperMax);
-    juggCaptureTime = getmatchrulesdata("rugbyData", "juggCaptureTime");
-    setdynamicdvar(@"hash_f96f8ff371da9f0f", juggCaptureTime);
+    juggspeed = getmatchrulesdata("rugbyData", "juggSpeed");
+    setdynamicdvar(@"hash_fca821906f4a663f", juggspeed);
+    juggteamspeed = getmatchrulesdata("rugbyData", "juggTeamSpeed");
+    setdynamicdvar(@"hash_64d4d28dc063bff0", juggteamspeed);
+    juggtimeout = getmatchrulesdata("rugbyData", "juggTimeout");
+    setdynamicdvar(@"hash_364db51c6de274cf", juggtimeout);
+    helpermax = getmatchrulesdata("rugbyData", "helperMax");
+    setdynamicdvar(@"hash_f3f419ef3e285de3", helpermax);
+    juggcapturetime = getmatchrulesdata("rugbyData", "juggCaptureTime");
+    setdynamicdvar(@"hash_f96f8ff371da9f0f", juggcapturetime);
 }
 
 // Namespace rugby/namespace_1775668e99dafe49
@@ -443,13 +443,13 @@ function getspawnpoint() {
         spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray(var_584994fab4a8712b.startspawnclassname + "_" + var_21af6c045d6ddf93 + "_start");
         spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
     } else {
-        juggPos = getjuggorcratepos();
+        juggpos = getjuggorcratepos();
         var_629e5fe2f6b337fa = [];
-        var_629e5fe2f6b337fa["singlePointPos"] = juggPos;
+        var_629e5fe2f6b337fa["singlePointPos"] = juggpos;
         var_629e5fe2f6b337fa["minDistToSinglePointSq"] = 562500;
         var_629e5fe2f6b337fa["maxDistToSinglePointSq"] = 36000000;
         var_629e5fe2f6b337fa["distRangeToSinglePointSq"] = 36000000 - 562500;
-        var_629e5fe2f6b337fa["juggPos"] = juggPos;
+        var_629e5fe2f6b337fa["juggPos"] = juggpos;
         var_629e5fe2f6b337fa["rugbyFieldDir2D"] = var_584994fab4a8712b.goals[var_dcabafc0cc1b60ed].origin - var_584994fab4a8712b.goals[var_21af6c045d6ddf93].origin;
         spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, self.team, var_584994fab4a8712b.spawnsets[var_21af6c045d6ddf93], var_584994fab4a8712b.fallbackspawnsets[var_21af6c045d6ddf93], undefined, var_629e5fe2f6b337fa);
     }
@@ -552,7 +552,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
                 var_9b65eac5ec48eb9b = distancesquared(level.var_9a453437a59c7a57.origin, var_86c1c8628b1d55f8);
                 if (var_9b65eac5ec48eb9b < 105625) {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                     attacker incpersstat("defends", 1);
                     attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
                     attacker setextrascore1(attacker.pers["defends"]);
@@ -562,7 +562,7 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
                 var_9b65eac5ec48eb9b = distancesquared(level.var_9a453437a59c7a57.origin, var_f7ded1fdb02a123d);
                 if (var_9b65eac5ec48eb9b < 105625) {
                     attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                     thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
                 }
             }
@@ -1187,7 +1187,7 @@ function watchjuggprogress() {
             }
             if (progress > var_d4bc622ee7721caa + 0.1) {
                 var_d4bc622ee7721caa = progress;
-                level.var_9a453437a59c7a57 thread doScoreEvent(#"hash_9fdad7cba5ab8ddf");
+                level.var_9a453437a59c7a57 thread doscoreevent(#"hash_9fdad7cba5ab8ddf");
             }
         }
         level.lastjuggpositions[self.rugbyjugginfo.id] = self.origin;
@@ -1692,10 +1692,10 @@ function updateoverheadcamerapos(var_723c1c68caf21fd9) {
     campos = undefined;
     looktargetpos = undefined;
     if (doesteamhaveactivejugg(team)) {
-        juggPos = getjuggorcratepos();
-        campos = juggPos + var_1f621b6115d4567 * -3000 / var_5d88d0ca4a5ce25;
+        juggpos = getjuggorcratepos();
+        campos = juggpos + var_1f621b6115d4567 * -3000 / var_5d88d0ca4a5ce25;
         campos = (campos[0], campos[1], var_9261f47cf5bdfef3);
-        looktargetpos = juggPos + (var_1d743581d71e8a20 - juggPos) * 0.5;
+        looktargetpos = juggpos + (var_1d743581d71e8a20 - juggpos) * 0.5;
     } else {
         campos = var_974c1a9e4fc7b421 + var_1f621b6115d4567 * -2000 / var_5d88d0ca4a5ce25;
         campos = (campos[0], campos[1], var_9261f47cf5bdfef3);

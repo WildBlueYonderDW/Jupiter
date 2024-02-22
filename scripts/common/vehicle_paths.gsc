@@ -1198,7 +1198,7 @@ function unload_node(node) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d50
 // Size: 0x124
-function checkVehicleNavSplineStuck() {
+function checkvehiclenavsplinestuck() {
     self notify("checkVehicleNavSplineStuck");
     self endon("checkVehicleNavSplineStuck");
     self endon("death");
@@ -1237,7 +1237,7 @@ function checkVehicleNavSplineStuck() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e7b
 // Size: 0x6c
-function checkVehicleNavSplineInterrupted() {
+function checkvehiclenavsplineinterrupted() {
     self notify("checkVehicleNavSplineInterrupted");
     self endon("checkVehicleNavSplineInterrupted");
     self endon("death");
@@ -1268,15 +1268,15 @@ function function_b5e5b1755c705053(var_2804c4cc3533f9b9, var_88125f10d2b34aa3, v
             thread function_2a708e9755fc798b(var_56c51d0b8c3270ca, var_88125f10d2b34aa3);
         }
     #/
-    thread checkVehicleNavSplineStuck();
-    thread checkVehicleNavSplineInterrupted();
+    thread checkvehiclenavsplinestuck();
+    thread checkvehiclenavsplineinterrupted();
 }
 
 // Namespace vehicle_paths/namespace_3bb9da687f15383d
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ff6
 // Size: 0x2e8
-function vehicleNavSplineSimpleFollowBehavior(var_88125f10d2b34aa3, var_56c51d0b8c3270ca, debugdraw) {
+function vehiclenavsplinesimplefollowbehavior(var_88125f10d2b34aa3, var_56c51d0b8c3270ca, debugdraw) {
     self notify("vehicleNavSplineSimpleFollowBehavior");
     self endon("vehicleNavSplineSimpleFollowBehavior");
     self endon("death");

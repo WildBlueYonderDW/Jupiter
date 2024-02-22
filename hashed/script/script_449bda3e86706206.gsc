@@ -58,16 +58,16 @@ function function_ccacfdcc7aa6b6d7() {
     if (!isdefined(level.arrow.props.elements)) {
         level.arrow.props.elements = [];
     }
-    level.eliteChain = spawnstruct();
-    level.eliteChain.var_60c7e4332d6e6faa = getdvarfloat(@"hash_70ef135fc04c3389", 10);
-    level.eliteChain.var_496b8acd2c121c7b = getdvarfloat(@"hash_ac014bb205a8be1b", 4);
-    level.eliteChain.var_1af44a4462b37a27 = getdvarint(@"hash_bd9d409f92df1acb", 0);
-    level.eliteChain.var_857ad197f58d4fe0 = getdvarfloat(@"hash_c925212317237c46", 5);
-    level.eliteChain.var_fc6add02cc658030 = getdvarint(@"hash_874611dd811f8821", 1);
-    level.eliteChain.var_260b7b6b4cd0cf49 = getdvarint(@"hash_a5e032420010e148", 1);
-    level.eliteChain.var_70aafcc7a8564bd9 = getdvarint(@"hash_23744d43aae71c76", 1);
-    level.eliteChain.var_e64d3f0018062c87 = getdvarint(@"hash_946e55d2825f379c", 0);
-    level.arrow.var_9a8c945fe45c8e5.var_85ee4754325bc510 = level.arrow.var_9a8c945fe45c8e5.var_91b307624076699a * (level.eliteChain.var_e64d3f0018062c87 + 1);
+    level.elitechain = spawnstruct();
+    level.elitechain.var_60c7e4332d6e6faa = getdvarfloat(@"hash_70ef135fc04c3389", 10);
+    level.elitechain.var_496b8acd2c121c7b = getdvarfloat(@"hash_ac014bb205a8be1b", 4);
+    level.elitechain.var_1af44a4462b37a27 = getdvarint(@"hash_bd9d409f92df1acb", 0);
+    level.elitechain.var_857ad197f58d4fe0 = getdvarfloat(@"hash_c925212317237c46", 5);
+    level.elitechain.var_fc6add02cc658030 = getdvarint(@"hash_874611dd811f8821", 1);
+    level.elitechain.var_260b7b6b4cd0cf49 = getdvarint(@"hash_a5e032420010e148", 1);
+    level.elitechain.var_70aafcc7a8564bd9 = getdvarint(@"hash_23744d43aae71c76", 1);
+    level.elitechain.var_e64d3f0018062c87 = getdvarint(@"hash_946e55d2825f379c", 0);
+    level.arrow.var_9a8c945fe45c8e5.var_85ee4754325bc510 = level.arrow.var_9a8c945fe45c8e5.var_91b307624076699a * (level.elitechain.var_e64d3f0018062c87 + 1);
 }
 
 // Namespace namespace_8559d2200e7e7e86/namespace_2c0e84fc96f7dc98
@@ -75,7 +75,7 @@ function function_ccacfdcc7aa6b6d7() {
 // Checksum 0x0, Offset: 0x7aa
 // Size: 0xa8
 function setupcallbacks() {
-    namespace_3c37cb17ade254d::registersharedfunc("eliteChain", "addEliteQuestChain", &addEliteQuestChain);
+    namespace_3c37cb17ade254d::registersharedfunc("eliteChain", "addEliteQuestChain", &addelitequestchain);
     namespace_71073fa38f11492::registerbrgametypefunc("eliteWatchTeamWipe", &function_7b7833feb6645dee);
     foreach (element in level.arrow.var_d43e1b169e506f3b) {
         scriptablename = element.var_f391bf01090b356c;
@@ -103,7 +103,7 @@ function inittablets() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x916
 // Size: 0x14
-function addEliteQuestChain(tablet) {
+function addelitequestchain(tablet) {
     tablet function_742e94df649bd24();
 }
 
@@ -278,10 +278,10 @@ function function_cdcf6d5075e1b64b(teaminfo) {
 // Checksum 0x0, Offset: 0xdee
 // Size: 0x5d
 function function_cafda4ae3a3fef17(team) {
-    if (istrue(level.eliteChain.var_260b7b6b4cd0cf49)) {
+    if (istrue(level.elitechain.var_260b7b6b4cd0cf49)) {
         function_c4516dcf97c05302();
     }
-    if (istrue(level.eliteChain.var_70aafcc7a8564bd9)) {
+    if (istrue(level.elitechain.var_70aafcc7a8564bd9)) {
         level thread function_9635bbd80a84f4de();
     }
     level thread function_8d2d39fe82922d67(team);
@@ -308,10 +308,10 @@ function function_637768bc790b225a() {
 // Checksum 0x0, Offset: 0xec3
 // Size: 0x43
 function function_4cdb704e5b9db9a3() {
-    if (istrue(level.eliteChain.var_1af44a4462b37a27)) {
+    if (istrue(level.elitechain.var_1af44a4462b37a27)) {
         level thread function_3968164f6abf1a5d();
     }
-    if (istrue(level.eliteChain.var_fc6add02cc658030)) {
+    if (istrue(level.elitechain.var_fc6add02cc658030)) {
         level thread function_8a5ac39dc68fccd1();
     }
 }
@@ -344,7 +344,7 @@ function function_2bc410bebeaf0563(teaminfo) {
     }
     var_e6729ba173f5634a = function_c6ec58a3c19cd74d(teaminfo.targetteam);
     dropcount = var_e6729ba173f5634a.dropcount;
-    if (dropcount >= level.eliteChain.var_e64d3f0018062c87) {
+    if (dropcount >= level.elitechain.var_e64d3f0018062c87) {
         logstring("elite_chain::handleEliteTabletDrop - drop count limit reached, not dropping a new CQ tablet!");
         return;
     }
@@ -369,8 +369,8 @@ function function_2bc410bebeaf0563(teaminfo) {
 // Size: 0x36
 function function_8a5ac39dc68fccd1() {
     level endon("game_ended");
-    if (level.eliteChain.var_857ad197f58d4fe0 > 0) {
-        wait(level.eliteChain.var_857ad197f58d4fe0);
+    if (level.elitechain.var_857ad197f58d4fe0 > 0) {
+        wait(level.elitechain.var_857ad197f58d4fe0);
     }
 }
 
@@ -380,8 +380,8 @@ function function_8a5ac39dc68fccd1() {
 // Size: 0xdb
 function function_3968164f6abf1a5d() {
     level endon("game_ended");
-    if (level.eliteChain.var_496b8acd2c121c7b > 0) {
-        wait(level.eliteChain.var_496b8acd2c121c7b);
+    if (level.elitechain.var_496b8acd2c121c7b > 0) {
+        wait(level.elitechain.var_496b8acd2c121c7b);
     }
     namespace_71073fa38f11492::function_ec416fa15d5fa6af("circleTimer");
     namespace_71073fa38f11492::function_ec416fa15d5fa6af("mayConsiderPlayerDead");
@@ -414,8 +414,8 @@ function function_9635bbd80a84f4de() {
 // Size: 0xb5
 function function_8d2d39fe82922d67(team) {
     level endon("game_ended");
-    if (level.eliteChain.var_60c7e4332d6e6faa > 0) {
-        wait(level.eliteChain.var_60c7e4332d6e6faa);
+    if (level.elitechain.var_60c7e4332d6e6faa > 0) {
+        wait(level.elitechain.var_60c7e4332d6e6faa);
     }
     teaminfo = level.arrow.teaminfo[team];
     if (isdefined(teaminfo) && isdefined(level.arrow.props.bombsite)) {

@@ -93,7 +93,7 @@ function function_a68431a04c04726a(player) {
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x1f
 function function_f586b8896b2759b3(player) {
-    player function_9e0151baa208fe9e(#"walkTip", 5);
+    player function_9e0151baa208fe9e(#"walktip", 5);
 }
 
 // Namespace namespace_fbc22dc6f2271b4/namespace_edbfe2ac1e82e56f

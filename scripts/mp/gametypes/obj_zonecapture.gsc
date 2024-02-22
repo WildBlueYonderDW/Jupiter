@@ -40,7 +40,7 @@ function setupobjective(trigger, visuals, var_5ddbc1faed2c56e6, var_8b9949739f4e
     zone = namespace_19b4203b51d56488::createuseobject("neutral", zone, visuals, (0, 0, 0), var_3c2389ba69e5822b, var_8b9949739f4e0f6);
     zone namespace_19b4203b51d56488::disableobject();
     var_c8f4c582625f492d = function_1823ff50bb28148d(function_60bf8d82001fc22c());
-    if (var_c8f4c582625f492d == #"hash_e16c1f723535febd" || var_c8f4c582625f492d == #"wm") {
+    if (var_c8f4c582625f492d == #"gwai" || var_c8f4c582625f492d == #"wm") {
         goto LOC_0000011f;
     }
     if (var_c8f4c582625f492d == #"koth" || var_c8f4c582625f492d == #"hash_6a87626330d9d40e") {
@@ -60,7 +60,7 @@ LOC_0000011f:
     } else {
         zone.objectivekey = zone namespace_19b4203b51d56488::getlabel();
     }
-    if (var_c8f4c582625f492d == #"hq" || var_c8f4c582625f492d == #"hash_e16c1f723535febd" || var_c8f4c582625f492d == #"hash_6a87626330d9d40e") {
+    if (var_c8f4c582625f492d == #"hq" || var_c8f4c582625f492d == #"gwai" || var_c8f4c582625f492d == #"hash_6a87626330d9d40e") {
         zone namespace_19b4203b51d56488::mustmaintainclaim(0);
     } else {
         zone namespace_19b4203b51d56488::mustmaintainclaim(1);
@@ -193,7 +193,7 @@ function activatezone(objid, var_8b9949739f4e0f6) {
     if (var_c8f4c582625f492d == #"koth" || var_c8f4c582625f492d == #"grnd") {
         zone.ignorestomp = 1;
         zone.alwaysstalemate = 1;
-        if (istrue(level.var_64c1863a9e80414e)) {
+        if (istrue(level.zonemajoritycapture)) {
             zone.alwaysstalemate = 0;
             zone.var_88806e65c3197677 = 1;
         }
@@ -270,8 +270,8 @@ function hp_move_soon(timer) {
     if (var_c8f4c582625f492d == #"hq") {
         level endon("zone_destroyed");
     }
-    if (isdefined(level.var_88ea071f9abf23e)) {
-        timer = max(timer - level.var_88ea071f9abf23e, 0);
+    if (isdefined(level.nextzonerevealtime)) {
+        timer = max(timer - level.nextzonerevealtime, 0);
     }
     namespace_e323c8674b44c8f4::waitlongdurationwithhostmigrationpause(timer);
     if (isdefined(level.var_fbb04ff4ffa6d364)) {
@@ -787,7 +787,7 @@ function zone_stompeenemyprogressupdate(team) {
 function zone_stompprogressreward(player) {
     zone = self;
     player thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
     zone namespace_19b4203b51d56488::setobjectivestatusicons(level.icondefending, level.iconcapture);
 }
 

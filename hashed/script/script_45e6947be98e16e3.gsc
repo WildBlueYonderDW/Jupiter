@@ -678,7 +678,7 @@ function function_7683071fc5964c33(params) {
 // Checksum 0x0, Offset: 0x134c
 // Size: 0x38
 function function_d022875f2be5b645(params) {
-    if (istrue(level.allowArmor)) {
+    if (istrue(level.allowarmor)) {
         var_364d691b501cd27f = namespace_f8d3520d3483c1::function_600f6cf462e983f();
         if (var_364d691b501cd27f > 0) {
             return namespace_f8d3520d3483c1::function_cf37789d18fbcc1b();

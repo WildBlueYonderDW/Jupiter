@@ -141,7 +141,7 @@ function function_3b59b4d385a202e6() {
     function_308f735a299221e3(#"hash_6985a8d2de65a0ac", &function_436125459cf039e);
     function_308f735a299221e3(#"spider", &function_103d412a4079b9a);
     function_308f735a299221e3(#"hash_7f02ad5bac60414e", &function_731555c8bf961fae);
-    function_308f735a299221e3(#"electricAnime", &function_f3274abe8bbcac04);
+    function_308f735a299221e3(#"electricanime", &function_f3274abe8bbcac04);
     function_308f735a299221e3(#"hash_73c962b7031cbd0b", &function_f98648e1dc6e63cf);
     function_308f735a299221e3(#"hash_aefd11fbdd846243", &function_52506c3cfde54aa7);
     function_308f735a299221e3(#"hash_dc67fff967f34603", &function_38f459f70ea411a7);
@@ -151,7 +151,7 @@ function function_3b59b4d385a202e6() {
     function_308f735a299221e3(#"thor", &function_3e92a8e47dbf91aa);
     function_308f735a299221e3(#"kd", &function_bdcfc88e185572c8);
     function_308f735a299221e3(#"cdl", &function_1ebe98051052c08);
-    function_308f735a299221e3(#"soulEater", &function_362790d530cb554f);
+    function_308f735a299221e3(#"souleater", &function_362790d530cb554f);
     function_308f735a299221e3(#"crash", &function_ff45d70ef7fd700a);
     function_308f735a299221e3(#"hash_8991a44e3e8f293", &function_a93d4e4d31895d77);
     function_308f735a299221e3(#"hash_338f01a53d66642e", &function_836e832ef348cb0c);
@@ -179,7 +179,7 @@ function function_3b59b4d385a202e6() {
     function_308f735a299221e3(#"hash_b49f8e352f111d2d", &function_362790d530cb554f);
     function_308f735a299221e3(#"hash_73646dc8663362f4", &function_e6385720c367c132);
     function_308f735a299221e3(#"hash_fe21a05dbebb62de", &function_89a27655bbfbea5c);
-    function_308f735a299221e3(#"bikeMelee", &function_a8091d16050e65c6);
+    function_308f735a299221e3(#"bikemelee", &function_a8091d16050e65c6);
     function_503e263494654df9("ufoSm", &function_e4f3eb6b0541db27, &function_487ad6a4de40bcf5);
     function_503e263494654df9("ufoLg", &function_2d38adc3714f681e, &function_487ad6a4de40bcf5);
     function_503e263494654df9("goldengun", &function_8dcf23df7efcf5f8, &function_ce2c35cf68d5b3fc);
@@ -422,9 +422,9 @@ function function_2947be89ddf09115() {
 // Checksum 0x0, Offset: 0x4cd9
 // Size: 0x64
 function function_b7c399cd6018f474() {
-    if (isdefined(level.var_249cdfc0f19c1b42) && level.var_249cdfc0f19c1b42 > 0) {
-        if (isdefined(level.var_249cdec0f19c190f) && level.var_249cdec0f19c190f > 0) {
-            return [0:level.var_249cdfc0f19c1b42, 1:level.var_249cdec0f19c190f];
+    if (isdefined(level.mtxkillthresholdstage1) && level.mtxkillthresholdstage1 > 0) {
+        if (isdefined(level.mtxkillthresholdstage2) && level.mtxkillthresholdstage2 > 0) {
+            return [0:level.mtxkillthresholdstage1, 1:level.mtxkillthresholdstage2];
         }
     }
     return [0:10, 1:20];
@@ -1689,7 +1689,7 @@ function private function_ad8d1b9c1ea44000(part, stage1, stage1_dec, stage2, sta
             }
         }
     #/
-    thread mtx_monitorReactiveKillstreak3StageDecay();
+    thread mtx_monitorreactivekillstreak3stagedecay();
     return state;
 }
 
@@ -1697,7 +1697,7 @@ function private function_ad8d1b9c1ea44000(part, stage1, stage1_dec, stage2, sta
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x6fcd
 // Size: 0xb3
-function private mtx_monitorReactiveKillstreak3StageDecay() {
+function private mtx_monitorreactivekillstreak3stagedecay() {
     self notify("mtx_monitorReactiveKillstreak3StageDecay");
     self endon("death_or_disconnect");
     self endon("mtx_monitorReactiveKillstreak3StageDecay");
@@ -3075,7 +3075,7 @@ function private function_c30cfdffd08468e1() {
     level endon("game_ended");
     while (1) {
         weapon = self waittill("weapon_switch_started");
-        if (function_c8f576b523885369(weapon) != #"soulEater") {
+        if (function_c8f576b523885369(weapon) != #"souleater") {
             self notify("stop_soul_suck");
         }
     }

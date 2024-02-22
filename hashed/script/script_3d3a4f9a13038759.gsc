@@ -69,7 +69,7 @@ function function_bc9bc92f91fb076d(var_7b6d5db8cb3c5782) {
 // Checksum 0x0, Offset: 0x418
 // Size: 0xa1
 function private function_a3db364a0ccc4fd8() {
-    level.isBrPracticeMode = 1;
+    level.isbrpracticemode = 1;
     level.disableannouncer = 1;
     level.br_infils_disabled = 0;
     setdvar(@"hash_47d8674c992e098", 1);

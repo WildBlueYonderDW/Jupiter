@@ -12,8 +12,8 @@
 // Checksum 0x0, Offset: 0x1f2
 // Size: 0x34
 function vehicle_oob_mp_registeroutoftimecallback(vehiclename, callback) {
-    levelData = vehicle_oob_mp_getleveldata();
-    levelData.outoftimecallbacks[vehiclename] = callback;
+    leveldata = vehicle_oob_mp_getleveldata();
+    leveldata.outoftimecallbacks[vehiclename] = callback;
 }
 
 // Namespace namespace_a892509dac574128/namespace_1cad239ed01de62d
@@ -27,9 +27,9 @@ function vehicle_oob_mp_init() {
     /#
         assertex(!isdefined(level.vehicle.oob), "vehicle_oob_mp_init() should only be called once.");
     #/
-    levelData = spawnstruct();
-    levelData.outoftimecallbacks = [];
-    level.vehicle.oob = levelData;
+    leveldata = spawnstruct();
+    leveldata.outoftimecallbacks = [];
+    level.vehicle.oob = leveldata;
     registerooboutoftimecallback("vehicle", &vehicle_oob_mp_outoftimecallback);
     registeroobclearcallback("vehicle", &vehicle_oob_mp_clearcallback);
 }
@@ -53,8 +53,8 @@ function vehicle_oob_mp_getleveldata() {
 // Checksum 0x0, Offset: 0x31e
 // Size: 0x65
 function vehicle_oob_mp_outoftimecallback(var_2f57cfae824ca728, var_93f5db7e81311353) {
-    levelData = vehicle_oob_mp_getleveldata();
-    callback = levelData.outoftimecallbacks[self.vehiclename];
+    leveldata = vehicle_oob_mp_getleveldata();
+    callback = leveldata.outoftimecallbacks[self.vehiclename];
     /#
         assertex(isdefined(callback), "vehicle_oob_mp_outOfTimeCallback() called on a vehicle without a valid outOfTimeCallback.");
     #/

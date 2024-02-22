@@ -3,9 +3,9 @@
 #using scripts\asm\asm_bb.gsc;
 #using script_4e1d4dd23699a8a4;
 
-#namespace namespace_1d3d95664c242762;
+#namespace cap_use_armor_plate_solo;
 
-// Namespace namespace_1d3d95664c242762/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x157
 // Size: 0x10a
@@ -39,7 +39,7 @@ function function_6c3d4156dec73e1d(asmname, statename, params) {
     return var_18e57011e29f452d;
 }
 
-// Namespace namespace_1d3d95664c242762/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x269
 // Size: 0x43
@@ -50,7 +50,7 @@ function function_45dc5e082d9a020f(asmname, statename, params) {
     utility::function_f3bb4f4911a1beb2("ai", "onUsedArmorPlate");
 }
 
-// Namespace namespace_1d3d95664c242762/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0x40
@@ -63,7 +63,7 @@ function private function_d74c84ce78cdd2b4(note) {
     return res;
 }
 
-// Namespace namespace_1d3d95664c242762/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2fb
 // Size: 0x87
@@ -82,7 +82,7 @@ function private function_45dc0311bb854741(note, statename) {
     }
 }
 
-// Namespace namespace_1d3d95664c242762/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x389
 // Size: 0x5b

@@ -149,7 +149,7 @@ function function_4a18dd73a966821e(count) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x528
 // Size: 0x2b
-function modegetforceoperatorcustomization(player, operatorref, operatorSkinRef) {
+function modegetforceoperatorcustomization(player, operatorref, operatorskinref) {
     return [0:"jup_mp_delta", 1:0];
 }
 

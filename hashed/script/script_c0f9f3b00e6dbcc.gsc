@@ -155,7 +155,7 @@ function function_5207653d43bf2fbf(player, duration) {
     result = player namespace_3c37cb17ade254d::waittill_notify_or_timeout_return("death", duration);
     player.var_ef86566cf4a91181 = 0;
     if (result == "death" && namespace_f8065cafc523dba5::playersareenemies(player, self)) {
-        thread namespace_48a08c5037514e04::doScoreEvent(#"hash_7fe7bc6a888a48ba");
+        thread namespace_48a08c5037514e04::doscoreevent(#"hash_7fe7bc6a888a48ba");
     }
 }
 
@@ -165,7 +165,7 @@ function function_5207653d43bf2fbf(player, duration) {
 // Size: 0x40
 function function_c1b308dde4295460(attacker, objweapon) {
     if (isdefined(attacker) && istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_b3b5a302d30dfd18");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_b3b5a302d30dfd18");
     }
 }
 

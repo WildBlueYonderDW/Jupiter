@@ -338,7 +338,7 @@ function onplayerscore(event, player, originalpoints, victim, var_7ec7671a1e0c78
             assert(isdefined(var_cc7886247a15dfdf));
         #/
         return var_cc7886247a15dfdf;
-    } else if (event == #"hash_fe68dfa78d19874e") {
+    } else if (event == #"assist_ffa") {
         player bufferednotify("earned_score_buffered", originalpoints);
     }
     return 0;

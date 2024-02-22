@@ -516,7 +516,7 @@ function extractzone_setcaptured(team, var_22282e7d48ca3400) {
 // Checksum 0x0, Offset: 0x1c96
 // Size: 0x1e
 function extractzone_stompprogressreward(player) {
-    player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
 }
 
 // Namespace vip/namespace_67528e8363ae5629
@@ -564,7 +564,7 @@ function giveflagcapturexp(touchlist, var_22282e7d48ca3400) {
         player incpersstat("captures", 1);
         player namespace_2685ec368e022695::statsetchild("round", "captures", player.pers["captures"]);
         player setextrascore0(player.pers["captures"]);
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a7b15a24e10a93b");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a7b15a24e10a93b");
         wait(0.05);
     }
 }
@@ -990,9 +990,9 @@ function drophostage(player, hostage, position, var_7006c5c506086629, waittime) 
     if (isdefined(player)) {
         player.carryobject = undefined;
         team = player.team;
-        foreach (var_a188b7ca32400499 in level.hostages) {
-            if (var_a188b7ca32400499 != hostage) {
-                var_a188b7ca32400499 enableplayeruse(player);
+        foreach (hstg in level.hostages) {
+            if (hstg != hostage) {
+                hstg enableplayeruse(player);
             }
         }
     }

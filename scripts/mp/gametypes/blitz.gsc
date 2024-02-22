@@ -693,10 +693,10 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
     }
     if (team != namespace_19b4203b51d56488::getownerteam()) {
         if (isdefined(level.closecapturekiller[player.team]) && level.closecapturekiller[player.team] == player) {
-            player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_fe8ba8ad4e2e427b");
+            player thread namespace_48a08c5037514e04::doscoreevent(#"hash_fe8ba8ad4e2e427b");
         }
         level.closecapturekiller[player.team] = undefined;
-        player thread doScoreEvent(#"flag_return");
+        player thread doscoreevent(#"flag_return");
         thread returnflag(team);
         var_7e2c53b0bcf117d9 = spawnstruct();
         var_7e2c53b0bcf117d9.player = player;
@@ -747,7 +747,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
         namespace_944ddf7b8df1b0e3::leaderdialog("ourblitzflag_taken", team);
         thread teamplayercardsplash("callout_flagpickup", player);
         if (!isdefined(self.previouscarrier) || self.previouscarrier != player) {
-            player thread doScoreEvent(#"flag_grab");
+            player thread doscoreevent(#"flag_grab");
         }
         var_7e2c53b0bcf117d9 = spawnstruct();
         var_7e2c53b0bcf117d9.player = player;
@@ -901,7 +901,7 @@ function onuse(player) {
         namespace_944ddf7b8df1b0e3::leaderdialog("ourblitzflag_capt", team, "status");
         namespace_944ddf7b8df1b0e3::leaderdialog("enemyblitzflag_capt", otherteam, "status");
         thread teamplayercardsplash("callout_flagcapture", player);
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_7b8c8a78ac292c0d");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_7b8c8a78ac292c0d");
         player notify("objective", "captured");
         var_7e2c53b0bcf117d9 = spawnstruct();
         var_7e2c53b0bcf117d9.player = player;
@@ -1045,7 +1045,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
     }
     if (isdefined(attacker) && isplayer(attacker) && attacker.pers["team"] != self.pers["team"]) {
         if (isdefined(attacker.carryflag) && attackerisinflictor) {
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f735b92839c5a687");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_f735b92839c5a687");
             var_aec2e5e01f424119 = 1;
         }
         if (isdefined(self.carryflag)) {
@@ -1055,7 +1055,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
             } else {
                 level.closecapturekiller[attacker.team] = undefined;
             }
-            attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5311f153a7fee40c");
+            attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5311f153a7fee40c");
             attacker incpersstat("defends", 1);
             attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
             thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "carrying");
@@ -1075,10 +1075,10 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
                 }
             }
             if (var_3cd1af2851f12ab5) {
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_5a3b180273be47b1");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
                 thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
             } else if (var_c3f9fed5999c974e) {
-                attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                 attacker incpersstat("defends", 1);
                 attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
                 thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "assaulting");

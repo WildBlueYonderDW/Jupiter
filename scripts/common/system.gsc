@@ -1,4 +1,14 @@
 // mwiii decomp prototype
+// scripts\common\system.gsc (./mwiii-gsc/3f51a039c4a1a113.gscbin) (size: 3139 Bytes / 0xc43)
+// magic .... 0xa0d4353478a vm: Call of Duty Modern Warfare III
+// size ...... 3139 (0xc43)
+// includes .. 1   (offset: 0x79)
+// strings ... 1   (offset: 0xbbb)
+// exports ... 10  (offset: 0x7e3)
+// imports ... 17  (offset: 0x973)
+// animtree1 . 0   (offset: 0xc43)
+// animtree2 . 0   (offset: 0xc43)
+// cseg ..... 0x81 + 0x762
 #using scripts\engine\utility.gsc;
 
 #namespace system;

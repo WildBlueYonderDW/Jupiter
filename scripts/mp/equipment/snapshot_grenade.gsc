@@ -280,7 +280,7 @@ function snapshot_grenade_applysnapshot(victim, attacker, var_7aa1ff687cfc30d1, 
     }
     if (victim namespace_82dcd1d5ae30ff7::_hasperk("specialty_snapshot_immunity")) {
         attacker updatedamagefeedback("hittacresist");
-        victim namespace_b6a8027f477010e1::activatePerk("specialty_tac_resist");
+        victim namespace_b6a8027f477010e1::activateperk("specialty_tac_resist");
         return;
     }
     if (victim ent_flag("snapshot_immunity")) {
@@ -313,7 +313,7 @@ function snapshot_grenade_applysnapshot(victim, attacker, var_7aa1ff687cfc30d1, 
         }
         var_7aa1ff687cfc30d1 thread snapshot_grenade_update_outlines(attacker);
         if (!istrue(var_e92f3941bb8721d5)) {
-            attacker namespace_a850435086c88de3::function_693d12aa2c1c02c5(0, "snapshotTag");
+            attacker namespace_a850435086c88de3::doonactionscoreevent(0, "snapshotTag");
         }
     }
     if (istrue(bundle.var_5c67331050596608)) {

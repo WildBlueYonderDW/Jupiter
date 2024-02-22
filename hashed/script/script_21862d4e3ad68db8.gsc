@@ -127,11 +127,11 @@ function function_d88acf085f34a24f(einflictor, eattacker, idamage, idflags, smea
     }
     var_d74fc41b6b10ccf5 = function_34e78cbd2dfff6df(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon);
     if (isdefined(self.var_d37b75616f7c2ee)) {
-        var_d74fc41b6b10ccf5.var_9b9dbc948c253172 = self.var_d37b75616f7c2ee.var_9b9dbc948c253172;
+        var_d74fc41b6b10ccf5.num_hits = self.var_d37b75616f7c2ee.num_hits;
     } else {
-        var_d74fc41b6b10ccf5.var_9b9dbc948c253172 = 0;
+        var_d74fc41b6b10ccf5.num_hits = 0;
     }
-    var_d74fc41b6b10ccf5.var_9b9dbc948c253172++;
+    var_d74fc41b6b10ccf5.num_hits++;
     var_d74fc41b6b10ccf5.var_2bd7283211fa61e7 = function_6a3d1a2884883a23(var_d74fc41b6b10ccf5);
     /#
         assert(isdefined(var_d74fc41b6b10ccf5.idamage));
@@ -166,11 +166,11 @@ function function_d88acf085f34a24f(einflictor, eattacker, idamage, idflags, smea
             var_d74fc41b6b10ccf5.idamage = var_d74fc41b6b10ccf5.idamage + [[ getsharedfunc("thermobaric_grenade", "thermobaric_additional_explosive_damage") ]](self, eattacker, var_d74fc41b6b10ccf5.idamage);
         }
     }
-    namespace_36c516b387249c45::function_6b8e5b333b2b3e43(var_d74fc41b6b10ccf5);
+    zombie_damage::function_6b8e5b333b2b3e43(var_d74fc41b6b10ccf5);
     thread namespace_28253c2ed4569abd::function_5c8a92a87ae9751b(var_d74fc41b6b10ccf5.eattacker, var_d74fc41b6b10ccf5.var_feef4b237a6beb07, var_d74fc41b6b10ccf5.var_2eb474020f9d509, "hitarmorlight");
-    namespace_36c516b387249c45::function_63e1cb89f73d0ad8(var_d74fc41b6b10ccf5);
-    namespace_36c516b387249c45::function_71a411d4b5466318(var_d74fc41b6b10ccf5);
-    namespace_36c516b387249c45::function_10a52a9d2dcaf262(var_d74fc41b6b10ccf5);
+    zombie_damage::function_63e1cb89f73d0ad8(var_d74fc41b6b10ccf5);
+    zombie_damage::function_71a411d4b5466318(var_d74fc41b6b10ccf5);
+    zombie_damage::function_10a52a9d2dcaf262(var_d74fc41b6b10ccf5);
     if (istrue(self.var_cbee08d81e41) && (!isdefined(self.aicategory) || self.aicategory != "boss")) {
         var_d74fc41b6b10ccf5.idamage = self.health;
     }
@@ -360,11 +360,11 @@ function function_863ec3e354fbfe1f(einflictor, eattacker, idamage, idflags, smea
     var_d74fc41b6b10ccf5.var_14edc6d1db3695bc = 0;
     var_d74fc41b6b10ccf5.var_feef4b237a6beb07 = 0;
     if (isdefined(self.var_d37b75616f7c2ee)) {
-        var_d74fc41b6b10ccf5.var_9b9dbc948c253172 = self.var_d37b75616f7c2ee.var_9b9dbc948c253172;
+        var_d74fc41b6b10ccf5.num_hits = self.var_d37b75616f7c2ee.num_hits;
     } else {
-        var_d74fc41b6b10ccf5.var_9b9dbc948c253172 = 0;
+        var_d74fc41b6b10ccf5.num_hits = 0;
     }
-    var_d74fc41b6b10ccf5.var_9b9dbc948c253172++;
+    var_d74fc41b6b10ccf5.num_hits++;
     var_29a8ba8c9dd43fd2 = 0;
     if (issharedfuncdefined("zombie", "get_pap_level") && isplayer(var_d74fc41b6b10ccf5.eattacker)) {
         var_29a8ba8c9dd43fd2 = var_d74fc41b6b10ccf5.eattacker function_f3bb4f4911a1beb2("zombie", "get_pap_level", var_d74fc41b6b10ccf5.objweapon);
@@ -456,7 +456,7 @@ function private on_zombie_ai_killed(params) {
         var_3b5afcfeed8fb9cf = var_3b5afcfeed8fb9cf.owner;
     }
     if (isplayer(var_3b5afcfeed8fb9cf)) {
-        var_3b5afcfeed8fb9cf thread namespace_ac0edc67c1149926::function_e6d4cd6d0ebc07e1(self, params.einflictor, params.objweapon);
+        var_3b5afcfeed8fb9cf thread namespace_ac0edc67c1149926::updaterecentagentkills(self, params.einflictor, params.objweapon);
         function_56869e118720ca3b(var_3b5afcfeed8fb9cf);
     }
 }
@@ -470,10 +470,10 @@ function function_56869e118720ca3b(killer) {
         killer = namespace_1fbd40990ee60ede::vehicle_occupancy_getdriver(killer);
     }
     if (isdefined(killer) && isplayer(killer)) {
-        if (!isdefined(killer.agentKills)) {
-            killer.agentKills = 1;
+        if (!isdefined(killer.agentkills)) {
+            killer.agentkills = 1;
         } else {
-            killer.agentKills = killer.agentKills + 1;
+            killer.agentkills = killer.agentkills + 1;
         }
     }
 }

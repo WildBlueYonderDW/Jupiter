@@ -57,7 +57,7 @@ function function_ce976ee0200475a2(data) {
         }
         place = -1;
         survival_time = 0;
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (isdefined(player.pers["br_place"])) {
                 place = player.pers["br_place"];
             }
@@ -200,8 +200,8 @@ function function_6b12cc412aa6ea91(data) {
             return;
         }
         var_fdf9b22d16276454 = 0;
-        if (isdefined(player.pers["telemetry"].var_72ac055b0a1c5d26)) {
-            var_fdf9b22d16276454 = player.pers["telemetry"].var_72ac055b0a1c5d26;
+        if (isdefined(player.pers["telemetry"].utc_connect_time_s)) {
+            var_fdf9b22d16276454 = player.pers["telemetry"].utc_connect_time_s;
         }
         spawns = function_53c4c53197386572(prematch.spawns, 0);
         hits = player.trackingweaponhits;
@@ -216,14 +216,14 @@ function function_6b12cc412aa6ea91(data) {
         if (isdefined(prematch.kills)) {
             kills = kills + prematch.kills;
         }
-        distanceTotal = function_53c4c53197386572(player.pers["distanceTotal"], 0);
+        distancetotal = function_53c4c53197386572(player.pers["distanceTotal"], 0);
         var_b92c01f350d85fe3 = 0;
         if (isdefined(player.pers["movementUpdateCount"]) && player.pers["movementUpdateCount"] >= 30) {
             var_b92c01f350d85fe3 = player.pers["distanceTotal"] / player.pers["movementUpdateCount"];
         }
         currentweapon = player getcurrentweapon();
         weaponname = currentweapon.basename;
-        player dlog_recordplayerevent("dlog_event_mobile_prematch_end", [0:"spawns", 1:spawns, 2:"kills", 3:kills, 4:"distance_moved", 5:distanceTotal, 6:"speed", 7:var_b92c01f350d85fe3, 8:"shots", 9:shots, 10:"hits", 11:hits, 12:"last_weapon_at_hand", 13:weaponname, 14:"connect_time", 15:var_fdf9b22d16276454, 16:"disconnect_time", 17:getsystemtime()]);
+        player dlog_recordplayerevent("dlog_event_mobile_prematch_end", [0:"spawns", 1:spawns, 2:"kills", 3:kills, 4:"distance_moved", 5:distancetotal, 6:"speed", 7:var_b92c01f350d85fe3, 8:"shots", 9:shots, 10:"hits", 11:hits, 12:"last_weapon_at_hand", 13:weaponname, 14:"connect_time", 15:var_fdf9b22d16276454, 16:"disconnect_time", 17:getsystemtime()]);
         player.pers["telemetry"].var_c0e398db99db74ed = 1;
     }
 }

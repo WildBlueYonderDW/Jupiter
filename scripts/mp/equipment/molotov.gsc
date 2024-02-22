@@ -24,18 +24,18 @@ function molotov_init() {
     /#
         assertex(!isdefined(level.molotov), "molotov_init() was called more than once.");
     #/
-    levelData = spawnstruct();
-    level.molotov = levelData;
-    level.molotovDamageThrottle = function_e4c99b0f178ffb98("molotovDamageThrottle", 4, 0.05);
-    levelData.maxpools = getdvarint(@"hash_541e147e1379b35e", 100);
-    levelData.maxcastsperframe = getdvarint(@"hash_3b54ad814e59b401", 8);
-    levelData.immediatecleanup = getdvarint(@"hash_ec13dc5b3ae7d79c", 1) > 0;
-    levelData.uniquepoolid = 0;
-    levelData.poolids = [];
-    levelData.scriptables = [];
-    levelData.triggers = [];
-    levelData.frametimestamp = 0;
-    levelData.caststhisframe = 0;
+    leveldata = spawnstruct();
+    level.molotov = leveldata;
+    level.molotovdamagethrottle = function_e4c99b0f178ffb98("molotovDamageThrottle", 4, 0.05);
+    leveldata.maxpools = getdvarint(@"hash_541e147e1379b35e", 100);
+    leveldata.maxcastsperframe = getdvarint(@"hash_3b54ad814e59b401", 8);
+    leveldata.immediatecleanup = getdvarint(@"hash_ec13dc5b3ae7d79c", 1) > 0;
+    leveldata.uniquepoolid = 0;
+    leveldata.poolids = [];
+    leveldata.scriptables = [];
+    leveldata.triggers = [];
+    leveldata.frametimestamp = 0;
+    leveldata.caststhisframe = 0;
     level.g_effect["vfx_burn_med_low"] = loadfx("vfx/iw8/weap/_fire/molotov/vfx_mtov_ontag_med_low.vfx");
     level.g_effect["vfx_burn_sml_low"] = loadfx("vfx/iw8/weap/_fire/molotov/vfx_mtov_ontag_sml_low.vfx");
     level.g_effect["vfx_burn_sml_head_low"] = loadfx("vfx/iw8/weap/_fire/molotov/vfx_mtov_ontag_head_low.vfx");
@@ -49,11 +49,11 @@ function molotov_init() {
 // Checksum 0x0, Offset: 0x7af
 // Size: 0x22e
 function molotov_init_cast_data() {
-    levelData = molotov_get_level_data();
-    castdata = levelData.castdata;
+    leveldata = molotov_get_level_data();
+    castdata = leveldata.castdata;
     if (!isdefined(castdata)) {
         castdata = spawnstruct();
-        levelData.castdata = castdata;
+        leveldata.castdata = castdata;
     }
     castdata.distforward = [];
     castdata.distdown = [];
@@ -97,11 +97,11 @@ function molotov_init_cast_data() {
 // Checksum 0x0, Offset: 0x9e4
 // Size: 0x152
 function molotov_init_pool_data() {
-    levelData = molotov_get_level_data();
-    pooldata = levelData.pooldata;
+    leveldata = molotov_get_level_data();
+    pooldata = leveldata.pooldata;
     if (!isdefined(pooldata)) {
         pooldata = spawnstruct();
-        levelData.pooldata = pooldata;
+        leveldata.pooldata = pooldata;
     }
     pooldata.triggerradius = [];
     pooldata.triggerheight = [];
@@ -489,8 +489,8 @@ function molotov_register_cast(shareddata) {
     shareddata.caststotal++;
     shareddata.caststhisframe++;
     shareddata.frametimestamp = gettime();
-    levelData = molotov_get_level_data();
-    levelData.caststhisframe++;
+    leveldata = molotov_get_level_data();
+    leveldata.caststhisframe++;
 }
 
 // Namespace molotov/namespace_df478cc572a311d3
@@ -502,12 +502,12 @@ function molotov_register_scriptable(shareddata) {
         assertex(isdefined(self.id), "pool.ID must be set to a unique id before it is registered.  See molotov_get_unique_pool_id().");
     #/
     shareddata.scriptablecount++;
-    levelData = molotov_get_level_data();
-    levelData.scriptables[self.id] = self;
+    leveldata = molotov_get_level_data();
+    leveldata.scriptables[self.id] = self;
     /#
-        println("entity" + levelData.scriptables.size);
+        println("entity" + leveldata.scriptables.size);
     #/
-    if (levelData.scriptables.size > levelData.maxpools) {
+    if (leveldata.scriptables.size > leveldata.maxpools) {
         molotov_delete_oldest_scriptable();
     }
 }
@@ -517,12 +517,12 @@ function molotov_register_scriptable(shareddata) {
 // Checksum 0x0, Offset: 0x1c42
 // Size: 0x7e
 function molotov_register_trigger(trigger) {
-    levelData = molotov_get_level_data();
-    levelData.triggers[self.id] = self;
+    leveldata = molotov_get_level_data();
+    leveldata.triggers[self.id] = self;
     /#
-        println("<unknown string>" + self getentitynumber() + "<unknown string>" + levelData.triggers.size);
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + leveldata.triggers.size);
     #/
-    if (levelData.triggers.size > levelData.maxpools) {
+    if (leveldata.triggers.size > leveldata.maxpools) {
         molotov_delete_oldest_trigger();
     }
 }
@@ -532,11 +532,11 @@ function molotov_register_trigger(trigger) {
 // Checksum 0x0, Offset: 0x1cc7
 // Size: 0x83
 function molotov_delete_scriptable() {
-    levelData = molotov_get_level_data();
-    levelData.scriptables[self.id] = undefined;
-    trigger = levelData.triggers[self.id];
+    leveldata = molotov_get_level_data();
+    leveldata.scriptables[self.id] = undefined;
+    trigger = leveldata.triggers[self.id];
     if (!isdefined(trigger)) {
-        levelData.poolids = array_remove(levelData.poolids, self.id);
+        leveldata.poolids = array_remove(leveldata.poolids, self.id);
     }
     self notify("death");
     self freescriptable();
@@ -547,14 +547,14 @@ function molotov_delete_scriptable() {
 // Checksum 0x0, Offset: 0x1d51
 // Size: 0xa3
 function molotov_delete_trigger() {
-    levelData = molotov_get_level_data();
-    levelData.triggers[self.id] = undefined;
-    scriptable = levelData.scriptables[self.id];
+    leveldata = molotov_get_level_data();
+    leveldata.triggers[self.id] = undefined;
+    scriptable = leveldata.scriptables[self.id];
     if (!isdefined(scriptable)) {
-        levelData.poolids = array_remove(levelData.poolids, self.id);
+        leveldata.poolids = array_remove(leveldata.poolids, self.id);
     }
     /#
-        println("<unknown string>" + self getentitynumber() + "<unknown string>" + levelData.triggers.size);
+        println("<unknown string>" + self getentitynumber() + "<unknown string>" + leveldata.triggers.size);
     #/
     self delete();
 }
@@ -564,16 +564,16 @@ function molotov_delete_trigger() {
 // Checksum 0x0, Offset: 0x1dfb
 // Size: 0xda
 function molotov_delete_oldest_scriptable(immediate) {
-    levelData = molotov_get_level_data();
+    leveldata = molotov_get_level_data();
     scriptable = undefined;
     id = undefined;
-    foreach (id in levelData.poolids) {
-        scriptable = levelData.scriptables[id];
+    foreach (id in leveldata.poolids) {
+        scriptable = leveldata.scriptables[id];
         if (isdefined(scriptable)) {
             break;
         }
     }
-    immediate = istrue(immediate) || levelData.immediatecleanup;
+    immediate = istrue(immediate) || leveldata.immediatecleanup;
     if (getdvarint(@"hash_7dfd0d2d59762b9e", 1) == 1) {
         if (isdefined(scriptable)) {
             molotov_delete_pool_by_id(id, immediate);
@@ -588,16 +588,16 @@ function molotov_delete_oldest_scriptable(immediate) {
 // Checksum 0x0, Offset: 0x1edc
 // Size: 0xb3
 function molotov_delete_oldest_trigger(immediate) {
-    levelData = molotov_get_level_data();
+    leveldata = molotov_get_level_data();
     trigger = undefined;
     id = undefined;
-    foreach (id in levelData.poolids) {
-        trigger = levelData.triggers[id];
+    foreach (id in leveldata.poolids) {
+        trigger = leveldata.triggers[id];
         if (isdefined(trigger)) {
             break;
         }
     }
-    immediate = istrue(immediate) || levelData.immediatecleanup;
+    immediate = istrue(immediate) || leveldata.immediatecleanup;
     if (isdefined(trigger)) {
         molotov_delete_pool_by_id(id, immediate);
     }
@@ -608,25 +608,25 @@ function molotov_delete_oldest_trigger(immediate) {
 // Checksum 0x0, Offset: 0x1f96
 // Size: 0xee
 function molotov_delete_pool_by_id(id, immediate) {
-    levelData = molotov_get_level_data();
-    scriptable = levelData.scriptables[id];
+    leveldata = molotov_get_level_data();
+    scriptable = leveldata.scriptables[id];
     if (isdefined(scriptable)) {
         if (!istrue(immediate)) {
-            levelData.scriptables[id] = undefined;
-            levelData.triggers[id] = undefined;
-            levelData.poolids = array_remove(levelData.poolids, id);
+            leveldata.scriptables[id] = undefined;
+            leveldata.triggers[id] = undefined;
+            leveldata.poolids = array_remove(leveldata.poolids, id);
             scriptable thread molotov_pool_end();
             /#
-                println("<unknown string>" + levelData.scriptables.size);
+                println("<unknown string>" + leveldata.scriptables.size);
             #/
             return;
         }
         scriptable thread molotov_delete_scriptable();
         /#
-            println("<unknown string>" + levelData.scriptables.size);
+            println("<unknown string>" + leveldata.scriptables.size);
         #/
     }
-    trigger = levelData.triggers[id];
+    trigger = leveldata.triggers[id];
     if (isdefined(trigger)) {
         trigger thread molotov_delete_trigger();
     }
@@ -644,12 +644,12 @@ function molotov_can_cast_this_frame(shareddata) {
     if (shareddata.caststhisframe >= 3) {
         return 0;
     }
-    levelData = molotov_get_level_data();
-    if (levelData.frametimestamp < gettime()) {
-        levelData.frametimestamp = gettime();
-        levelData.caststhisframe = 0;
+    leveldata = molotov_get_level_data();
+    if (leveldata.frametimestamp < gettime()) {
+        leveldata.frametimestamp = gettime();
+        leveldata.caststhisframe = 0;
     }
-    if (levelData.caststhisframe >= levelData.maxcastsperframe) {
+    if (leveldata.caststhisframe >= leveldata.maxcastsperframe) {
         return 0;
     }
     return 1;
@@ -739,7 +739,7 @@ function molotov_create_branch(shareddata, castdata, pooldata, parent, startingo
 function molotov_start_branch(var_54c186a6b8a2ae1) {
     self endon("cleanup_branch");
     /#
-        thread function_f2f705e501627e08();
+        thread molotov_branch_draw_hits();
     #/
     if (!isdefined(self.preventstarttime)) {
         self.preventstarttime = gettime();
@@ -1424,8 +1424,8 @@ function molotov_get_level_data() {
 // Checksum 0x0, Offset: 0x3f5a
 // Size: 0x3b
 function molotov_get_pool_level_data() {
-    levelData = molotov_get_level_data();
-    var_dcf9401f976e906f = levelData.pooldata;
+    leveldata = molotov_get_level_data();
+    var_dcf9401f976e906f = leveldata.pooldata;
     /#
         assertex(isdefined(var_dcf9401f976e906f), "molotov_get_pool_level_data() called before molotov_init_pool_data().");
     #/
@@ -1437,8 +1437,8 @@ function molotov_get_pool_level_data() {
 // Checksum 0x0, Offset: 0x3f9d
 // Size: 0x3b
 function molotov_get_cast_level_data() {
-    levelData = molotov_get_level_data();
-    var_ab59026cfe871548 = levelData.castdata;
+    leveldata = molotov_get_level_data();
+    var_ab59026cfe871548 = leveldata.castdata;
     /#
         assertex(isdefined(var_ab59026cfe871548), "molotov_get_cast_level_data() called before molotov_init_pool_data().");
     #/
@@ -1450,10 +1450,10 @@ function molotov_get_cast_level_data() {
 // Checksum 0x0, Offset: 0x3fe0
 // Size: 0x55
 function molotov_get_unique_pool_id() {
-    levelData = molotov_get_level_data();
-    uniquepoolid = levelData.uniquepoolid;
-    levelData.uniquepoolid++;
-    levelData.poolids = array_add(levelData.poolids, uniquepoolid);
+    leveldata = molotov_get_level_data();
+    uniquepoolid = leveldata.uniquepoolid;
+    leveldata.uniquepoolid++;
+    leveldata.poolids = array_add(leveldata.poolids, uniquepoolid);
     return uniquepoolid;
 }
 
@@ -1615,7 +1615,7 @@ function molotov_start_burning(attacker, inflictor, killcament, id) {
     if (isplayer(self) && isdefined(inflictor.var_e569b726ededed94)) {
         source.bundle = inflictor.var_e569b726ededed94;
     }
-    function_8b23d28b1d38cb39("fire", -1);
+    codcastersetplayerstatuseffect("fire", -1);
     var_20ab5a5656202253 = 0;
     if (source.count <= 0) {
         var_20ab5a5656202253 = 1;
@@ -1674,7 +1674,7 @@ function molotov_clear_burning(immediate) {
             self.burninginfo.sources[source.id] = undefined;
         }
     }
-    function_8b23d28b1d38cb39("fire", 0);
+    codcastersetplayerstatuseffect("fire", 0);
     self.burninginfo = undefined;
 }
 
@@ -1734,7 +1734,7 @@ function molotov_update_burning(var_7295d69f42136921) {
             }
             meansofdeath = function_53c4c53197386572(var_3a472c52fa6ced24.means_of_death, "MOD_EXPLOSIVE");
             if (istrue(var_3a472c52fa6ced24.var_ff298245b12a34fa) && damage >= self.health) {
-                function_f632348cbb773537(level.molotovDamageThrottle, self);
+                function_f632348cbb773537(level.molotovdamagethrottle, self);
             }
             if (info.timetodamage <= 0) {
                 self.var_604d21c5b1326910 = gettime();
@@ -1842,12 +1842,12 @@ function molotov_burning_source_is_valid() {
 // Checksum 0x0, Offset: 0x4e94
 // Size: 0x53
 function molotov_get_next_burning_id() {
-    levelData = molotov_get_level_data();
-    if (!isdefined(levelData.burningid)) {
-        levelData.burningid = 0;
+    leveldata = molotov_get_level_data();
+    if (!isdefined(leveldata.burningid)) {
+        leveldata.burningid = 0;
     }
-    id = levelData.burningid;
-    levelData.burningid++;
+    id = leveldata.burningid;
+    leveldata.burningid++;
     return id;
 }
 
@@ -2023,7 +2023,7 @@ function function_49197cd063a740ea(callbackfunction) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5399
 // Size: 0x167
-function function_f2f705e501627e08() {
+function molotov_branch_draw_hits() {
     /#
         while (1) {
             if (istrue(self.shareddata.iscomplete)) {

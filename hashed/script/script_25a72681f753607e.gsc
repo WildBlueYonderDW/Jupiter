@@ -21,10 +21,10 @@ function function_eda57308516bfc5f() {
 // Checksum 0x0, Offset: 0xfd
 // Size: 0x242
 function function_e0844a2b7f904b14(bot) {
-    var_d9f03ce835ee985b = "toma_strike";
-    if (!bot function_81b00a2ba10c143a(var_d9f03ce835ee985b)) {
-        var_d9f03ce835ee985b = "precision_airstrike";
-        if (!bot function_81b00a2ba10c143a(var_d9f03ce835ee985b)) {
+    strike = "toma_strike";
+    if (!bot function_81b00a2ba10c143a(strike)) {
+        strike = "precision_airstrike";
+        if (!bot function_81b00a2ba10c143a(strike)) {
             return 0;
         }
     }
@@ -66,7 +66,7 @@ function function_e0844a2b7f904b14(bot) {
         /#
             line(bot.origin, target.origin, (1, 0, 0), 1, 0, 600);
         #/
-        self.var_df9d35d9b4bee654 = createaction(target.origin, var_d9f03ce835ee985b);
+        self.var_df9d35d9b4bee654 = createaction(target.origin, strike);
         return (self.constants.basescore + maxscore);
     }
     return 0;

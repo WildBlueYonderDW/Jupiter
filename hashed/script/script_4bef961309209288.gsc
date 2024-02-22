@@ -141,7 +141,7 @@ function function_ed3c1a651b014773(var_f4e6d9afe1e11685) {
                         self setweaponammoclip(weaponobj, clipammo + var_fb3893b4cbddc190);
                     } else {
                         self setweaponammoclip(weaponobj, 0);
-                        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+                        if (namespace_36f464722d326bbe::isbrstylegametype()) {
                             var_e074b618e47255fe = var_5b3f7d686c59ab97 - stockammo;
                             namespace_3bcd40a3005712ec::br_give_weapon_ammo(weaponobj, var_e074b618e47255fe);
                         } else {
@@ -253,7 +253,7 @@ function function_404622faff469ef4(player, var_2468893fc27de6f6) {
     id = getcompleteweaponnamenoalt(var_2468893fc27de6f6.objweapon);
     var_42d837d1bf3797d3 = player.var_2468893fc27de6f6[id];
     if (isdefined(var_42d837d1bf3797d3)) {
-        var_42d837d1bf3797d3 thread suppressionRounds_removeAPR();
+        var_42d837d1bf3797d3 thread suppressionrounds_removeapr();
     }
     player.var_2468893fc27de6f6[id] = var_2468893fc27de6f6;
     var_2468893fc27de6f6 thread function_ff064ef6be86cafd();
@@ -334,7 +334,7 @@ function function_6831e37d3d71c426() {
         }
         self.player waittill("weapon_change");
     }
-    thread suppressionRounds_removeAPR();
+    thread suppressionrounds_removeapr();
 }
 
 // Namespace super_suppression_rounds/namespace_ed60dc1153ae1c06
@@ -354,7 +354,7 @@ function function_f12640f75796066() {
         }
     }
     self.player thread function_15338821a605345d(self.objweapon);
-    thread suppressionRounds_removeAPR();
+    thread suppressionrounds_removeapr();
 }
 
 // Namespace super_suppression_rounds/namespace_ed60dc1153ae1c06
@@ -379,7 +379,7 @@ function function_15338821a605345d(objweapon) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe31
 // Size: 0x3b
-function suppressionRounds_removeAPR() {
+function suppressionrounds_removeapr() {
     self notify("suppressionRounds_removeAPR");
     if (isdefined(self.player)) {
         if (self.var_6d8006af92216f09) {
@@ -454,7 +454,7 @@ function function_ff064ef6be86cafd() {
     self.player endon("disconnect");
     self endon("suppressionRounds_removeAPR");
     self.player waittill("death");
-    thread suppressionRounds_removeAPR();
+    thread suppressionrounds_removeapr();
 }
 
 // Namespace super_suppression_rounds/namespace_ed60dc1153ae1c06
@@ -465,7 +465,7 @@ function function_b62388feecc84e15() {
     self.player endon("disconnect");
     self endon("suppressionRounds_removeAPR");
     level waittill("game_ended");
-    thread suppressionRounds_removeAPR();
+    thread suppressionrounds_removeapr();
 }
 
 // Namespace super_suppression_rounds/namespace_ed60dc1153ae1c06

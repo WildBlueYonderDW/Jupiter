@@ -234,7 +234,7 @@ function function_7d8f81a94dc08a15(var_de361e39117ae3d1, exittype) {
         }
         targetorigin = rider function_a66d296b49cf74bf(self, xanim, rider._blackboard.var_1745d2b69c72c627, self.origin, self.angles, 1);
         if (distance2dsquared(targetorigin, getclosestpointonnavmesh(targetorigin)) > 6400) {
-            namespace_14d36171baccf528::function_350cf0db9f5e0cbe(rider, "skipDeathCount", 1);
+            namespace_14d36171baccf528::agentpers_setagentpersdata(rider, "skipDeathCount", 1);
             rider kill();
         }
     }

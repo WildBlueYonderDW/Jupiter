@@ -111,10 +111,10 @@ function function_4981209c2c509828(key, body, head, var_5b10cef5f2960853, cloth,
 // Checksum 0x0, Offset: 0x857
 // Size: 0x57
 function function_310843b56a04e24c() {
-    subArea = namespace_bfef6903bca5845d::function_a44e168e8cced18(self.origin);
+    subarea = namespace_bfef6903bca5845d::function_a44e168e8cced18(self.origin);
     nationality = namespace_bfef6903bca5845d::function_f851a2f41cffa860();
-    if (isdefined(subArea.var_a42c3e0e1b2dc645)) {
-        nationality = subArea.var_a42c3e0e1b2dc645;
+    if (isdefined(subarea.var_a42c3e0e1b2dc645)) {
+        nationality = subarea.var_a42c3e0e1b2dc645;
     }
     return function_eb1fe3a0083b03df(function_466e5ad92c500882(nationality));
 }

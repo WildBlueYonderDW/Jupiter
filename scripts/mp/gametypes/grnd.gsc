@@ -900,9 +900,9 @@ function give_capture_credit(touchlist, capturetime, capture_team, lastcapturete
             var_7e2c53b0bcf117d9.eventname = "capture";
             var_7e2c53b0bcf117d9.position = first_player.origin;
             namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_game_event", var_7e2c53b0bcf117d9);
-            first_player thread doScoreEvent(#"dz_capture");
+            first_player thread doscoreevent(#"dz_capture");
             if (isdefined(level.zone.lastactivatetime) && gettime() - level.zone.lastactivatetime <= 2100) {
-                first_player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_4d98aed9e6ebbf28");
+                first_player thread namespace_48a08c5037514e04::doscoreevent(#"hash_4d98aed9e6ebbf28");
             }
             if (first_player.lastkilltime + 500 > gettime()) {
                 goto LOC_00000167;

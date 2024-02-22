@@ -194,7 +194,7 @@ function spawnchopper(owner, streakinfo) {
         }
     } else {
         /#
-            if (level.gametype != "reduceReserves" && level.gametype != "missile_pairedWithFlare" && !namespace_36f464722d326bbe::isBRStyleGameType() && !istrue(level.leanthread)) {
+            if (level.gametype != "reduceReserves" && level.gametype != "missile_pairedWithFlare" && !namespace_36f464722d326bbe::isbrstylegametype() && !istrue(level.leanthread)) {
                 owner iprintlnbold("death_or_disconnect");
             }
         #/
@@ -352,7 +352,7 @@ function choppersupport_neargoalsettings() {
     self waittill("near_goal");
     self vehicle_setspeed(int(self.speed / 2), int(self.accel / 3));
     thread choppersupport_watchlifetime();
-    thread chopperSupport_watchDestroyed();
+    thread choppersupport_watchdestroyed();
     thread choppersupport_watchgameendleave();
     thread choppersupport_watchleash();
     thread choppersupport_patrolfield(1);
@@ -1140,7 +1140,7 @@ function choppersupport_gettargets(turret, var_f0885a4b1f9cc49e, var_f8c5d9ba90c
         }
         if (isdefined(self.var_58b999784e669170)) {
             players = self [[ self.var_58b999784e669170 ]]();
-        } else if (isBRStyleGameType()) {
+        } else if (isbrstylegametype()) {
             players = utility::function_2d7fd59d039fa69b(self.origin, var_397eb484dfddd2da, undefined);
         } else {
             players = utility::function_2d7fd59d039fa69b(self.origin, var_397eb484dfddd2da, 0);
@@ -1345,7 +1345,7 @@ function getcorrectheight(x, y, var_83694bf9778d85ee, var_1d3a4b020ae79012) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d9a
 // Size: 0x83
-function chopperSupport_watchDestroyed() {
+function choppersupport_watchdestroyed() {
     level endon("game_ended");
     self endon("chopperSupport_gone");
     self notify("chopperSupport_watchDestroyed");
@@ -1371,7 +1371,7 @@ function choppersupport_explode() {
     self notify("explode");
     self radiusdamage(self.origin, 1000, 200, 200, self.owner, "MOD_EXPLOSIVE", "chopper_support_turret_mp");
     self setscriptablepartstate("explode", "on", 0);
-    if (isBRStyleGameType()) {
+    if (isbrstylegametype()) {
         self notsolid();
     }
     if (isdefined(self.lootfunc)) {
@@ -1571,7 +1571,7 @@ function function_f60fc20e14bd9b6f(streakname) {
     var_bacc6dd14316758c = &function_cb514462a6399faa;
     var_7da88d9c69433487 = &function_400022dabdb64055;
     deathcallback = &choppersupport_handledeathdamage;
-    killstreak_setupVehicleDamageFunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
+    killstreak_setupvehicledamagefunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
     namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(self, self.owner, self.owner.team);
     function_cfc5e3633ef950fd(1, 1500, &function_7d38d0927292ed9a);
     function_cfc5e3633ef950fd(2, 1000, &function_29d9f6678d3dd0cf);
@@ -1640,7 +1640,7 @@ function function_400022dabdb64055(data) {
     damage = data.damage;
     idflags = data.idflags;
     self.currenthealth = self.currenthealth - damage;
-    killstreak_updateDamageState(self.currenthealth);
+    killstreak_updatedamagestate(self.currenthealth);
     return 1;
 }
 

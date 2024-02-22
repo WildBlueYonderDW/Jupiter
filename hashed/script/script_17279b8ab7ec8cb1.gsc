@@ -104,10 +104,10 @@ function private function_c805554fd02a8515(var_2f5d509d7b71ce9a) {
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x34
 function private function_9ab88fc150ee805b() {
-    var_ef617416e2772901 = self waittill("husk_spawn");
+    vehicle_husk = self waittill("husk_spawn");
     wait(30);
-    if (isdefined(var_ef617416e2772901) && var_ef617416e2772901 function_b7148a3bfc4defb2()) {
-        var_ef617416e2772901 function_e3ff0a92ad2bf58d();
+    if (isdefined(vehicle_husk) && vehicle_husk function_b7148a3bfc4defb2()) {
+        vehicle_husk function_e3ff0a92ad2bf58d();
     }
 }
 

@@ -88,7 +88,7 @@ function nvg_monitor() {
             continue;
         }
         if (result == "death") {
-            if (namespace_36f464722d326bbe::isBRStyleGameType() && namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "dmz") {
+            if (namespace_36f464722d326bbe::isbrstylegametype() && namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "dmz") {
                 self nightvisionviewoff(1);
                 function_4ca8e54d359cf04a(0);
             }
@@ -280,7 +280,7 @@ function nvg_get3rdpersonupmodel() {
     if (isdefined(var_3474b4e818850c46) && var_3474b4e818850c46 != "") {
         var_2626c56ce4ecc11b = var_3474b4e818850c46;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_2626c56ce4ecc11b = undefined;
     } else if (!isdefined(var_2626c56ce4ecc11b)) {
         var_2626c56ce4ecc11b = "offhand_wm_nvgquad_mp_1_up";
@@ -365,6 +365,6 @@ function nvg_update3rdperson(enabled) {
 // Checksum 0x0, Offset: 0xd21
 // Size: 0x21
 function function_258c5e445c8b7f80() {
-    return namespace_36f464722d326bbe::function_d2d2b803a7b741a4() && !namespace_aead94004cf4c147::isBackpackInventoryEnabled() && !istrue(self.gulag);
+    return namespace_36f464722d326bbe::function_d2d2b803a7b741a4() && !namespace_aead94004cf4c147::isbackpackinventoryenabled() && !istrue(self.gulag);
 }
 

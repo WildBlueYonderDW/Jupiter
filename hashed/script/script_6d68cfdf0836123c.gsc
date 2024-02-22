@@ -186,8 +186,8 @@ function function_ab931b44a2efddf7(streakinfo) {
     }
     startpos = namespace_bba8bc8532aa4913::function_34280b807c23a453(helperdronetype);
     startangles = self.angles;
-    reconDrone = function_d8b72ba55b4292cf(startpos, startangles, helperdronetype, streakinfo);
-    if (!isdefined(reconDrone)) {
+    recondrone = function_d8b72ba55b4292cf(startpos, startangles, helperdronetype, streakinfo);
+    if (!isdefined(recondrone)) {
         return 0;
     }
     thread namespace_bba8bc8532aa4913::helperdrone_giveplayerfauxremote(streakinfo);
@@ -196,16 +196,16 @@ function function_ab931b44a2efddf7(streakinfo) {
     }
     if (issharedfuncdefined("game", "isBRStyleGameType")) {
         if ([[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
-            reconDrone vehicleshowonminimap(0);
+            recondrone vehicleshowonminimap(0);
             namespace_9abe40d2af041eb2::playkillstreakusedialog(helperdronetype);
-            reconDrone namespace_bba8bc8532aa4913::helperdrone_notifyenemyplayersinrange(helperdronetype);
+            recondrone namespace_bba8bc8532aa4913::helperdrone_notifyenemyplayersinrange(helperdronetype);
         }
     }
     namespace_bba8bc8532aa4913::function_c3786c4fba09c2f2(streakinfo);
     if (iscp()) {
-        thread namespace_bba8bc8532aa4913::starthelperdrone(reconDrone, 1);
+        thread namespace_bba8bc8532aa4913::starthelperdrone(recondrone, 1);
     } else {
-        thread namespace_bba8bc8532aa4913::starthelperdrone(reconDrone);
+        thread namespace_bba8bc8532aa4913::starthelperdrone(recondrone);
     }
     return 1;
 }
@@ -215,8 +215,8 @@ function function_ab931b44a2efddf7(streakinfo) {
 // Checksum 0x0, Offset: 0x1664
 // Size: 0xaf
 function function_d8b72ba55b4292cf(startpos, startang, helperdronetype, streakinfo) {
-    reconDrone = namespace_bba8bc8532aa4913::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
-    if (!isdefined(reconDrone)) {
+    recondrone = namespace_bba8bc8532aa4913::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
+    if (!isdefined(recondrone)) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NOT_ENOUGH_SPACE");
         }
@@ -228,7 +228,7 @@ function function_d8b72ba55b4292cf(startpos, startang, helperdronetype, streakin
         namespace_bba8bc8532aa4913::function_c3786c4fba09c2f2(streakinfo);
         return undefined;
     }
-    return reconDrone;
+    return recondrone;
 }
 
 // Namespace recon_drone/namespace_893ac0cf28c5af44
@@ -1157,8 +1157,8 @@ function function_a867654273504370() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x391f
 // Size: 0x1c8
-function function_c938e22803fb2efc(defaultIcon, var_2f3cf0914d78ac25, target) {
-    weaponicon = defaultIcon;
+function function_c938e22803fb2efc(defaulticon, var_2f3cf0914d78ac25, target) {
+    weaponicon = defaulticon;
     weaponoffset = var_2f3cf0914d78ac25;
     weaponstruct = spawnstruct();
     if (isdefined(target.weapon_name)) {
@@ -1379,7 +1379,7 @@ function function_8321764da9dead70(player) {
     player thread recondrone_takedeployweapon(1, var_a57879325a8e0669);
     player namespace_bba8bc8532aa4913::helperdrone_takeplayerfauxremote(self.streakinfo);
     player painvisionon();
-    player killstreak_setMainVision("");
+    player killstreak_setmainvision("");
     if (istrue(self.isthermalenabled)) {
         player setthermalvision(0);
     }
@@ -1519,22 +1519,22 @@ function recondrone_watchsuperinternal(streakinfo) {
     if (isdefined(self.recondronesafespawn) && !isinlaststand) {
         self.reconvehiclereserved = undefined;
         thread recondrone_watchcleanupreserved(streakinfo, 0);
-        reconDrone = function_d8b72ba55b4292cf(self.recondronesafespawn, self.angles, streakinfo.streakname, streakinfo);
+        recondrone = function_d8b72ba55b4292cf(self.recondronesafespawn, self.angles, streakinfo.streakname, streakinfo);
         self.recondronesafespawn = undefined;
-        if (isdefined(reconDrone)) {
+        if (isdefined(recondrone)) {
             thread namespace_bba8bc8532aa4913::helperdrone_giveplayerfauxremote(streakinfo);
-            reconDrone recondrone_addtolists(reconDrone, self);
+            recondrone recondrone_addtolists(recondrone, self);
             namespace_bba8bc8532aa4913::function_c3786c4fba09c2f2(streakinfo);
-            thread namespace_bba8bc8532aa4913::starthelperdrone(reconDrone);
+            thread namespace_bba8bc8532aa4913::starthelperdrone(recondrone);
             if (issharedfuncdefined("sound", "trySayLocalSound")) {
                 level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](self, #"hash_c836f1cdb2da4224");
             }
             var_e005d4b70d6f2611 = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
             if (var_e005d4b70d6f2611) {
-                reconDrone vehicleshowonminimap(0);
+                recondrone vehicleshowonminimap(0);
             }
             namespace_9abe40d2af041eb2::playkillstreakusedialog(streakinfo.streakname);
-            reconDrone namespace_bba8bc8532aa4913::helperdrone_notifyenemyplayersinrange(streakinfo.streakname);
+            recondrone namespace_bba8bc8532aa4913::helperdrone_notifyenemyplayersinrange(streakinfo.streakname);
             self notify("successful_recon_deployment");
             return 1;
         } else {
@@ -1577,10 +1577,10 @@ function recondrone_watchsuperendfromswitch() {
 function recondrone_unsetsuper(var_fcef8d217a441961) {
     self notify("reconDroneUnset");
     if (1) {
-        reconDrone = self.recondronesuper;
-        if (isdefined(reconDrone)) {
-            if (!istrue(reconDrone.isdestroyed)) {
-                reconDrone namespace_bba8bc8532aa4913::function_ba1c5496f8fc5f67();
+        recondrone = self.recondronesuper;
+        if (isdefined(recondrone)) {
+            if (!istrue(recondrone.isdestroyed)) {
+                recondrone namespace_bba8bc8532aa4913::function_ba1c5496f8fc5f67();
             }
         }
     }
@@ -1616,14 +1616,14 @@ function recondrone_givedeployweapon(deployweaponname, var_d037fce5b7051c4a) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4be4
 // Size: 0x4e
-function function_7c3dc10c6270b3c8(var_bf4a0adf8e2321fe, var_8881166e57766e3a) {
+function function_7c3dc10c6270b3c8(var_bf4a0adf8e2321fe, deployweapon) {
     self endon("death_or_disconnect");
     self endon("recon_drone_cancel");
     self endon("droneStart");
     level endon("game_ended");
     self waittill(var_bf4a0adf8e2321fe);
-    if (isswitchingtoweaponwithmonitoring(var_8881166e57766e3a)) {
-        abortmonitoredweaponswitch(var_8881166e57766e3a);
+    if (isswitchingtoweaponwithmonitoring(deployweapon)) {
+        abortmonitoredweaponswitch(deployweapon);
     }
     self notify("recon_drone_cancel");
 }
@@ -1632,14 +1632,14 @@ function function_7c3dc10c6270b3c8(var_bf4a0adf8e2321fe, var_8881166e57766e3a) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c39
 // Size: 0x72
-function function_31cc8545b41badca(drone, var_8881166e57766e3a) {
+function function_31cc8545b41badca(drone, deployweapon) {
     self endon("death_or_disconnect");
     self endon("recon_drone_cancel");
     self endon("droneStart");
     level endon("game_ended");
     drone waittill_any_2("death", "explode");
-    if (isswitchingtoweaponwithmonitoring(var_8881166e57766e3a)) {
-        abortmonitoredweaponswitch(var_8881166e57766e3a);
+    if (isswitchingtoweaponwithmonitoring(deployweapon)) {
+        abortmonitoredweaponswitch(deployweapon);
     }
     _freezelookcontrols(0, 1);
     val::function_588f2307a3040610("reconDrone_switch");
@@ -1984,8 +1984,8 @@ function function_7d0db4b7f46e7dc0() {
 // Checksum 0x0, Offset: 0x56ac
 // Size: 0x29
 function function_157c2bcd50ca6207() {
-    reconDrone = self.recondronesuper;
-    return isdefined(reconDrone) && !istrue(reconDrone.isdestroyed);
+    recondrone = self.recondronesuper;
+    return isdefined(recondrone) && !istrue(recondrone.isdestroyed);
 }
 
 // Namespace recon_drone/namespace_893ac0cf28c5af44

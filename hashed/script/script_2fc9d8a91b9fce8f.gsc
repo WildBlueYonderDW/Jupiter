@@ -44,7 +44,7 @@ function function_40e8a5a7f496a5e1() {
     }
     level._effect["vfx/iw9/fieldupgrades/ammobox/vfx_ammobox_timeout.vfx"] = loadfx("vfx/iw9/fieldupgrades/ammobox/vfx_ammobox_timeout.vfx");
     level._effect["vfx/jup/equipment/vfx_equip_medcrate_vignette.vfx"] = loadfx("vfx/jup/equipment/vfx_equip_medcrate_vignette.vfx");
-    registersharedfunc("super_med_box", "medBox_used", &medBox_used);
+    registersharedfunc("super_med_box", "medBox_used", &medbox_used);
 }
 
 // Namespace namespace_bd133e11ee7b392b/namespace_360f523a8fbe8545
@@ -175,7 +175,7 @@ function is_train_ent(hitent) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcab
 // Size: 0x114
-function medBox_used(grenade) {
+function medbox_used(grenade) {
     grenade endon("death");
     var_1d40e40dab99437e = "vfx/iw9/fieldupgrades/ammobox/vfx_ammobox_timeout.vfx";
     var_6fb6e09c0716e21e = "vfx/jup/equipment/vfx_equip_medcrate_vignette.vfx";
@@ -289,7 +289,7 @@ function function_b349fbedc61f01e4(var_cbf7be4f62a0ddb2, var_4fac8b8ce36e09f1) {
         }
     }
     function_8463e9c51dc49f4c();
-    medBox_makeUnusable();
+    medbox_makeunusable();
     var_5237a188ccda4d7b = "super_med_box";
     if (var_5237a188ccda4d7b == "super_med_box") {
         self.owner namespace_aad14af462a74d08::function_d997435895422ecc(var_5237a188ccda4d7b, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"end"), self.usedcount);
@@ -325,7 +325,7 @@ function function_67340ce4394d6a9(equipmentname, hintstring) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1236
 // Size: 0x7d
-function medBox_makeUnusable() {
+function medbox_makeunusable() {
     self notify("medBox_makeUnusable");
     namespace_ad136f1d5091df4a::interactive_removeusedcallbackfromentity();
     self makeunusable();
@@ -743,7 +743,7 @@ function function_4868d9728ebf387a() {
 // Checksum 0x0, Offset: 0x1e13
 // Size: 0x151
 function function_3122c424cb613711(entity, player) {
-    if (istrue(player.isjuggernaut) && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (istrue(player.isjuggernaut) && !namespace_36f464722d326bbe::isbrstylegametype()) {
         if (namespace_3c37cb17ade254d::issharedfuncdefined("hud", "showErrorMessage")) {
             player [[ namespace_3c37cb17ade254d::getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/JUGG_CANNOT_BE_USED");
         }

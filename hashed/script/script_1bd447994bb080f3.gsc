@@ -15,16 +15,16 @@ function init() {
     level.var_6392befa93ae3cc6 = undefined;
     level.var_91ca776f27d516c0 = undefined;
     namespace_bb666c82715fa89d::init();
-    namespace_bb666c82715fa89d::function_7a2df9055cb22721("RatGetPlayerTeam", &RatGetPlayerTeam, "string");
-    namespace_bb666c82715fa89d::function_7a2df9055cb22721("RatGetTeamCount", &RatGetTeamCount, "int64_t");
-    namespace_bb666c82715fa89d::function_7a2df9055cb22721("RatGetPlayerEquipment", &RatGetPlayerEquipment, "string");
+    namespace_bb666c82715fa89d::function_7a2df9055cb22721("RatGetPlayerTeam", &ratgetplayerteam, "string");
+    namespace_bb666c82715fa89d::function_7a2df9055cb22721("RatGetTeamCount", &ratgetteamcount, "int64_t");
+    namespace_bb666c82715fa89d::function_7a2df9055cb22721("RatGetPlayerEquipment", &ratgetplayerequipment, "string");
 }
 
 // Namespace namespace_d3075a6edbc6938c/namespace_d7b9ee5af496e5e7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x166
 // Size: 0x29
-function RatGetPlayerTeam(params) {
+function ratgetplayerteam(params) {
     player = namespace_bb666c82715fa89d::getplayer(params);
     return player.team;
 }
@@ -33,9 +33,9 @@ function RatGetPlayerTeam(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x197
 // Size: 0x7e
-function RatGetTeamCount(params) {
+function ratgetteamcount(params) {
     var_b32a6e22b9cc2580 = function_53c4c53197386572(params.team, "player");
-    player_team = RatGetPlayerTeam(params);
+    player_team = ratgetplayerteam(params);
     if (var_b32a6e22b9cc2580 == "player") {
         var_b32a6e22b9cc2580 = player_team;
     }
@@ -53,7 +53,7 @@ function RatGetTeamCount(params) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x53
-function RatGetPlayerEquipment(params) {
+function ratgetplayerequipment(params) {
     var_313729df937cbe05 = function_53c4c53197386572(params.slot, "primary");
     player = namespace_bb666c82715fa89d::getplayer(params);
     equip = player namespace_4fb9dddfb8c1a67a::getcurrentequipment(var_313729df937cbe05);

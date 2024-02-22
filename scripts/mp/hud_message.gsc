@@ -406,7 +406,7 @@ function handlesplashqueue() {
     self endon("death_or_disconnect");
     self endon("clearSplashQueue");
     while (isdefined(self.splashqueuehead)) {
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && (getsubgametype() == "dmz" || getsubgametype() == "exgm" || getsubgametype() == "plunder" || getsubgametype() == "risk" || getsubgametype() == "rumble_mgl")) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm" || getsubgametype() == "plunder" || getsubgametype() == "risk" || getsubgametype() == "rumble_mgl")) {
             waittill_any_2("splash_list_cleared", "can_show_splashes");
         } else {
             waittill_any_2("splash_list_cleared", "spawned_player");
@@ -652,7 +652,7 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
     if (!self iscodcaster()) {
         winner = var_f15e96279c3bc254;
     }
-    if (getgametype() == "arena" || namespace_36f464722d326bbe::isBRStyleGameType() || getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "siege" || function_60bf8d82001fc22c() == "control") {
+    if (getgametype() == "arena" || namespace_36f464722d326bbe::isbrstylegametype() || getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "siege" || function_60bf8d82001fc22c() == "control") {
         if (isdefined(var_656b99fc50e799ae)) {
             if (isdefined(self.pers["team"]) && winner == team) {
                 endreasontext = endreasontext;

@@ -275,7 +275,7 @@ function function_49c1da07d69b6895(numagents) {
     aitype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, undefined, "short_range", undefined, var_fee76566edc91600 + 1);
     forwarddist = anglestoforward(self.angles) * 80;
     origin = getclosestpointonnavmesh(self.origin + forwarddist);
-    agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, origin, self.angles, "high", "mission", "safeInitialGuards", undefined, undefined, undefined, self.poi, 0, undefined, 1);
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, self.angles, "high", "mission", "safeInitialGuards", undefined, undefined, undefined, self.poi, 0, undefined, 1);
     if (isdefined(agent)) {
         thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent, 0);
     }
@@ -288,7 +288,7 @@ function function_49c1da07d69b6895(numagents) {
         var_88b83b0d7a43ea72 = i / numagents * 360 + randomfloatrange(-30, 30) % 360;
         offset = rotatepointaroundvector((0, 0, 1), forward, var_88b83b0d7a43ea72);
         origin = getclosestpointonnavmesh(self.origin + offset);
-        agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(aitype, origin, facingangle, "high", "mission", "demo", undefined, undefined, undefined, self.poi, 0, undefined, 0);
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, origin, facingangle, "high", "mission", "demo", undefined, undefined, undefined, self.poi, 0, undefined, 0);
         if (isdefined(agent)) {
             thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent);
         }

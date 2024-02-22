@@ -71,7 +71,7 @@ function throwing_knife_mp_trytopickup(equipmentref, variantid) {
         namespace_1a507865f681850e::incrementequipmentammo(equipmentref, 1, undefined, 1);
         throwing_knife_mp_ongive(equipmentref, undefined, variantid);
     } else if (namespace_aead94004cf4c147::function_7e103028c464ab9a(namespace_38b993c4618e76cd::function_b88cfb4893ceedac(equipmentref)) && namespace_aead94004cf4c147::function_8a160d9935d47f5e(equipmentref, "equipment", 1)) {
-        namespace_aead94004cf4c147::addItemToBackpackByRef(equipmentref, "equipment", 1);
+        namespace_aead94004cf4c147::additemtobackpackbyref(equipmentref, "equipment", 1);
     } else {
         return 0;
     }

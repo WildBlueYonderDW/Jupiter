@@ -25,7 +25,7 @@ function getmapname() {
 // Size: 0x66
 function getgametype() {
     if (!isdefined(level.gametype)) {
-        if (isBRStyleGameType()) {
+        if (isbrstylegametype()) {
             level.gametype = "br";
         } else {
             level.gametype = tolower(getdvar(@"hash_8fe3271cd74f65a2"));
@@ -91,9 +91,9 @@ function function_b276be88d495440b() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf31
 // Size: 0x49
-function isBRStyleGameType() {
+function isbrstylegametype() {
     if (isdefined(level.var_62f6f7640e4431e3)) {
-        return function_53c4c53197386572(level.var_62f6f7640e4431e3.isBRStyleGameType, 0);
+        return function_53c4c53197386572(level.var_62f6f7640e4431e3.isbrstylegametype, 0);
     }
     if (!isdefined(level.gametype)) {
         return 0;
@@ -106,7 +106,7 @@ function isBRStyleGameType() {
 // Checksum 0x0, Offset: 0xf82
 // Size: 0x29
 function function_42e2dcfd4571b89b() {
-    return isBRStyleGameType() && (function_6c1fce6f6b8779d5() == "dmz" || function_6c1fce6f6b8779d5() == "exgm");
+    return isbrstylegametype() && (function_6c1fce6f6b8779d5() == "dmz" || function_6c1fce6f6b8779d5() == "exgm");
 }
 
 // Namespace game_utility/namespace_36f464722d326bbe
@@ -171,7 +171,7 @@ function function_ba5574c7f287c587() {
 // Checksum 0x0, Offset: 0x10af
 // Size: 0x13
 function function_fa7bfcc1d68b7b73() {
-    return function_ba5574c7f287c587() && isBRStyleGameType();
+    return function_ba5574c7f287c587() && isbrstylegametype();
 }
 
 // Namespace game_utility/namespace_36f464722d326bbe
@@ -179,7 +179,7 @@ function function_fa7bfcc1d68b7b73() {
 // Checksum 0x0, Offset: 0x10ca
 // Size: 0x13
 function function_2d79a7a3b91c4c3e() {
-    return function_ba5574c7f287c587() && !isBRStyleGameType();
+    return function_ba5574c7f287c587() && !isbrstylegametype();
 }
 
 // Namespace game_utility/namespace_36f464722d326bbe
@@ -243,7 +243,7 @@ function islargemap() {
 // Checksum 0x0, Offset: 0x1188
 // Size: 0x13
 function islargebrmap() {
-    return isBRStyleGameType() && islargemap();
+    return isbrstylegametype() && islargemap();
 }
 
 // Namespace game_utility/namespace_36f464722d326bbe
@@ -656,8 +656,8 @@ function function_9cdaadfddeda4d7a() {
 // Checksum 0x0, Offset: 0x16fc
 // Size: 0x48
 function function_6c1fce6f6b8779d5() {
-    if (isBRStyleGameType()) {
-        var_faf0d2fac3f47583 = level.var_62f6f7640e4431e3.brSubGameType;
+    if (isbrstylegametype()) {
+        var_faf0d2fac3f47583 = level.var_62f6f7640e4431e3.brsubgametype;
         if (!isdefined(var_faf0d2fac3f47583)) {
             var_faf0d2fac3f47583 = "";
         }
@@ -688,7 +688,7 @@ function function_1e9ff68a8f2562bd(var_f991f7356fb3ee15) {
         assertex(isdefined(var_f991f7356fb3ee15), "Array of map info overrides is missing or invalid!");
     #/
     gametype = getgametype();
-    var_faf0d2fac3f47583 = ter_op(isBRStyleGameType(), function_6c1fce6f6b8779d5(), "");
+    var_faf0d2fac3f47583 = ter_op(isbrstylegametype(), function_6c1fce6f6b8779d5(), "");
     bestmatch = undefined;
     foreach (row in var_f991f7356fb3ee15) {
         var_e372edac926cde62 = function_53c4c53197386572(row.gametype, "");
@@ -872,7 +872,7 @@ function getlocalestructarray(var_cab957adc8d7710f, var_8a8a9680c8ad47a2) {
 // Checksum 0x0, Offset: 0x1e47
 // Size: 0xd
 function function_b2c4b42f9236924() {
-    return istrue(level.tier1ModeEnabled);
+    return istrue(level.tier1modeenabled);
 }
 
 // Namespace game_utility/namespace_36f464722d326bbe

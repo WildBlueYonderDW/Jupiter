@@ -143,7 +143,7 @@ function leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, loca
         self.playerlastdialogstatus["dialog"] = dialog;
     }
     team = self.pers["team"];
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         team = namespace_d3d40f75bb4e4c32::brgetoperatorteam(self);
     }
     if (isdefined(team) && isgameplayteam(team)) {
@@ -175,7 +175,7 @@ function leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, loca
             var_cb3339ece72dbdeb = dialog;
         } else {
             prefix = "dx_mpa_";
-            if (namespace_36f464722d326bbe::isBRStyleGameType() && function_6b1af1c789523d89(dialog)) {
+            if (namespace_36f464722d326bbe::isbrstylegametype() && function_6b1af1c789523d89(dialog)) {
                 prefix = "dx_bra_";
             }
             if (announcer > 0) {

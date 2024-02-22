@@ -58,7 +58,7 @@ function auraquickswap_bestowaura(player) {
     self endon("giveLoadout_start");
     level endon("game_ended");
     if (self != player) {
-        player thread doScoreEvent(#"hash_aa59ced8c6dda32d");
+        player thread doscoreevent(#"hash_aa59ced8c6dda32d");
     }
     self setclientomnvar("ui_aura_quickswap", 1);
     giveperk("specialty_fastreload");

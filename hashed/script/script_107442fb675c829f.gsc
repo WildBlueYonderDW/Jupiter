@@ -43,12 +43,12 @@ function function_67dd16c63e4dfc65() {
         level.var_92b4162e3c890dc0 = utility::function_53c4c53197386572(level.var_92b4162e3c890dc0, []);
         level.var_92b4162e3c890dc0["capture_bot"] = &function_c66d85003c294dcf;
     }
-    utility::registersharedfunc("super_capture_bot", "captureBot_used", &captureBot_used);
-    utility::registersharedfunc("super_capture_bot", "captureBot_setClaimants", &captureBot_setClaimants);
-    utility::registersharedfunc("super_capture_bot", "captureBot_getTeamIndex", &captureBot_getTeamIndex);
-    utility::registersharedfunc("super_capture_bot", "captureBot_getBotOwner", &captureBot_getTeamIndex);
-    utility::registersharedfunc("super_capture_bot", "captureBot_shouldCaptureObjective", &captureBot_shouldCaptureObjective);
-    utility::registersharedfunc("super_capture_bot", "captureBot_isGrenadeEntity", &captureBot_isGrenadeEntity);
+    utility::registersharedfunc("super_capture_bot", "captureBot_used", &capturebot_used);
+    utility::registersharedfunc("super_capture_bot", "captureBot_setClaimants", &capturebot_setclaimants);
+    utility::registersharedfunc("super_capture_bot", "captureBot_getTeamIndex", &capturebot_getteamindex);
+    utility::registersharedfunc("super_capture_bot", "captureBot_getBotOwner", &capturebot_getteamindex);
+    utility::registersharedfunc("super_capture_bot", "captureBot_shouldCaptureObjective", &capturebot_shouldcaptureobjective);
+    utility::registersharedfunc("super_capture_bot", "captureBot_isGrenadeEntity", &capturebot_isgrenadeentity);
 }
 
 // Namespace capture_bot/namespace_6623714b7e306bd1
@@ -65,9 +65,9 @@ function function_b2f29740cb52f391() {
 // Checksum 0x0, Offset: 0xb37
 // Size: 0x67
 function function_287c3582fae35289(player) {
-    foreach (CaptureBot in level.var_e0f77360ddb0ba30) {
-        if (isdefined(CaptureBot)) {
-            CaptureBot function_136158ea18135f55(player);
+    foreach (capturebot in level.var_e0f77360ddb0ba30) {
+        if (isdefined(capturebot)) {
+            capturebot function_136158ea18135f55(player);
         }
     }
 }
@@ -76,7 +76,7 @@ function function_287c3582fae35289(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba5
 // Size: 0x2c7
-function captureBot_used(grenade) {
+function capturebot_used(grenade) {
     grenade endon("death");
     self endon("death_or_disconnect");
     level endon("game_ended");
@@ -103,7 +103,7 @@ function captureBot_used(grenade) {
     if (issharedfuncdefined("emp", "setEMP_Cleared_Callback")) {
         grenade [[ getsharedfunc("emp", "setEMP_Cleared_Callback") ]](&function_3d80d4d22659ee31);
     }
-    grenade namespace_595aac1b2bf891fc::set_apply_emp_callback(&function_e9230259bf4617b2);
+    grenade emp_debuff::set_apply_emp_callback(&function_e9230259bf4617b2);
     grenade haywire::function_172d848d58051fdf(&function_a5cef44666db8c3f);
     if (!istrue(grenade.madedamageable)) {
         grenade function_1b3ec96c8e90d21c();
@@ -260,7 +260,7 @@ function function_58dfa4afe1169c68(var_cbf7be4f62a0ddb2, var_4fac8b8ce36e09f1) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13a0
 // Size: 0x77
-function captureBot_getTeamIndex(team) {
+function capturebot_getteamindex(team) {
     /#
         assertex(isdefined(team), "getTeamIndex: team is undefined!");
     #/
@@ -285,7 +285,7 @@ function captureBot_getTeamIndex(team) {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x141f
 // Size: 0x7e
-function captureBot_setClaimants(team, var_51f08547fa39ce14, objidnum) {
+function capturebot_setclaimants(team, var_51f08547fa39ce14, objidnum) {
     if (function_8b221111ad9228b8()) {
         var_e600d3d36fcd2556 = function_4daa2b488e4b8604(objidnum);
         var_70c4b747be58b854 = "ui_objective_" + var_e600d3d36fcd2556 + "_capture_bot_team_count";
@@ -736,7 +736,7 @@ function function_1fa1324f0208e72d(obj) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2657
 // Size: 0x3b
-function captureBot_shouldCaptureObjective(obj) {
+function capturebot_shouldcaptureobjective(obj) {
     return !istrue(self.var_ca026d0b161c5997) && istrue(self.var_b8d1c74d660fef2d) && !function_38946e56052cc38d(obj) && function_1fa1324f0208e72d(obj);
 }
 
@@ -788,7 +788,7 @@ function function_e23fba4163e12de6(obj, aitype) {
 function function_3bd485992b40ae54(obj) {
     self endon("death");
     self endon("disable_capturing");
-    while (captureBot_shouldCaptureObjective(obj)) {
+    while (capturebot_shouldcaptureobjective(obj)) {
         if (utility::issharedfuncdefined("game", "processTouchEnt")) {
             obj utility::function_f3bb4f4911a1beb2("game", "processTouchEnt", self, obj.entnum);
         }
@@ -957,7 +957,7 @@ function function_cc6cf839252877ac(data) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e19
 // Size: 0x27
-function captureBot_isGrenadeEntity() {
+function capturebot_isgrenadeentity() {
     if (isdefined(self.equipmentref) && self.equipmentref == "equip_capture_bot") {
         return 1;
     }
@@ -1225,7 +1225,7 @@ function function_fabe2e590fd0eeea() {
             var_f5c99cb09dc5c654 = self.owner getclientomnvar("ui_owned_capture_bot_index");
             if (var_f5c99cb09dc5c654 > 0) {
                 var_d861f893072a477e = function_4daa2b488e4b8604(var_f5c99cb09dc5c654);
-                teamindex = captureBot_getTeamIndex(self.owner.team);
+                teamindex = capturebot_getteamindex(self.owner.team);
                 if (teamindex > 0) {
                     omnvar = "ui_objective_" + var_d861f893072a477e + "_capture_bot_team_count";
                     oldval = namespace_ef5ace8ba0e01c9d::function_610e0cca26bba2f(omnvar, (var_d861f893072a477e - 1) * 8, 8);
@@ -1336,7 +1336,7 @@ function function_c66d85003c294dcf() {
     if (utility::issharedfuncdefined("player", "initPlayerGameobjects")) {
         self [[ utility::getsharedfunc("player", "initPlayerGameobjects") ]]();
     }
-    namespace_587e5812d2dfd34c::addtoparticipantsarray();
+    game_utility::addtoparticipantsarray();
     self setsolid(0);
     self hide();
     self.candamage = 0;

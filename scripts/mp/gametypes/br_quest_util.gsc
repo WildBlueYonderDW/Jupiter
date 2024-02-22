@@ -2129,7 +2129,7 @@ function displaysquadmessagetoteam(team, var_939b8e8818bfd5ae, state, missionid)
 // Checksum 0x0, Offset: 0x61ea
 // Size: 0x1e
 function giveplayerpoints(player, ref) {
-    player thread namespace_48a08c5037514e04::doScoreEvent(ref);
+    player thread namespace_48a08c5037514e04::doscoreevent(ref);
 }
 
 // Namespace namespace_bd5b51637804dbad/namespace_4bc0ead8d2af3d84
@@ -2141,7 +2141,7 @@ function giveteampoints(team, ref) {
         return;
     }
     foreach (player in getteamdata(team, "players")) {
-        player thread namespace_48a08c5037514e04::doScoreEvent(ref);
+        player thread namespace_48a08c5037514e04::doscoreevent(ref);
     }
 }
 
@@ -2755,7 +2755,7 @@ function givequestreward(type, value, team, rewardorigin, rewardangles, rewardsc
             if (brgametype != "plunder" && brgametype != "risk" && !participantplunder) {
                 giveteamplunderflat(team, value);
             } else if (players.size > 0) {
-                if (!namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e() && namespace_36f464722d326bbe::isBRStyleGameType()) {
+                if (!namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e() && namespace_36f464722d326bbe::isbrstylegametype()) {
                     giveteamplunderflat(team, value, 1);
                 } else {
                     giveteamplunderdistributive(players, value);
@@ -2774,10 +2774,10 @@ function givequestreward(type, value, team, rewardorigin, rewardangles, rewardsc
             var_2329e2336d8412bc = getteamdata(team, "players");
         }
         foreach (player in var_2329e2336d8412bc) {
-            player thread points::doScoreEvent(#"hash_607cd099425b81c7", undefined, undefined, value, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
-            var_cc603e175abfef2d = int(value * 0.2);
+            player thread points::doscoreevent(#"hash_607cd099425b81c7", undefined, undefined, value, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+            weaponxp = int(value * 0.2);
             lastweaponobj = player.lastnormalweaponobj;
-            player namespace_d20f8ef223912e12::givebrweaponxp(#"", var_cc603e175abfef2d, lastweaponobj, 0, 0);
+            player namespace_d20f8ef223912e12::givebrweaponxp(#"", weaponxp, lastweaponobj, 0, 0);
             player.br_contractxpearned = get_int_or_0(player.br_contractxpearned) + value;
         }
         break;
@@ -2819,10 +2819,10 @@ function givequestreward(type, value, team, rewardorigin, rewardangles, rewardsc
         break;
     case #"hash_4938974347fbe589":
         if (!namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
-            var_21d8d4c91a02f62d = namespace_8e13c187e2eade0c::blueprintextract_trygetreward(rewardorigin);
-            if (isdefined(var_21d8d4c91a02f62d)) {
+            blueprintextract = namespace_8e13c187e2eade0c::blueprintextract_trygetreward(rewardorigin);
+            if (isdefined(blueprintextract)) {
                 namespace_8e13c187e2eade0c::blueprintextract_beforepickupspawned(team);
-                items = [0:var_21d8d4c91a02f62d];
+                items = [0:blueprintextract];
                 questrewarddropitems(team, items, rewardorigin, rewardangles, 0);
                 displayteamsplash(team, "br_blueprint_extract_quest_spawned");
             }

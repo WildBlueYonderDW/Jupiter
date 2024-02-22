@@ -784,7 +784,7 @@ function function_84348b61e96b6c3c(dropstruct, player, crate) {
     var_75ea56ac509fed3b = getscriptcachecontents("bomb_defuse_reward", 0);
     var_df2f68507645906f = [0:"brloot_super_munitionsbox", 1:"brloot_super_armorbox"];
     teammatecount = undefined;
-    teammates = namespace_54d20dd0dd79277f::function_3d0f2343793d709b(player.team, player.var_ff97225579de16a, 0);
+    teammates = namespace_54d20dd0dd79277f::getsquadmates(player.team, player.var_ff97225579de16a, 0);
     if (isdefined(teammates)) {
         teammatecount = teammates.size;
     }

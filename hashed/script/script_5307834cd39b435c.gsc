@@ -119,7 +119,7 @@ function function_36f1bd0f5d72054a() {
     /#
         level thread function_d92380bfc792a6a9();
     #/
-    namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_a857c0cb4fcb1819);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_a857c0cb4fcb1819);
     namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("dmz_exfil_site", &function_c5f291acf1b44b69);
     namespace_e8fceb5cf6e8cdf8::function_7d47bded29ed7882(level.var_9405abd1db7cf2cf, level.var_bbf4a84349d0fdeb, level.var_745bebf82b7d49f8, level.var_a276cd366472b025, level.var_6fc3398b5a13400, getdvarint(@"hash_a3c1d41c94507f92", 279), level.var_c7825757649c018e, level.var_df3a6e8886416b36);
     function_43516e81ba78395d();
@@ -434,7 +434,7 @@ function function_a9f268abd153b713() {
 // Size: 0x2f
 function private function_b9730bfe1e8b9f81() {
     level waittill("dmz_radiation_started");
-    if (!namespace_7789f919216d38a2::radiation_isInit()) {
+    if (!namespace_7789f919216d38a2::radiation_isinit()) {
         /#
             assertmsg("watchRadiationStart: Radiation spread started without being init somehow");
         #/
@@ -455,7 +455,7 @@ function private function_48272de6dc9130f7() {
     while (1) {
         if (level.var_fe2e551da0962c3c.size > 0) {
             foreach (exfil in level.var_fe2e551da0962c3c) {
-                if (namespace_7789f919216d38a2::radiation_isInRadiation(exfil.origin)) {
+                if (namespace_7789f919216d38a2::radiation_isinradiation(exfil.origin)) {
                     function_dda47641682585d9(exfil);
                     level.var_fe2e551da0962c3c = array_remove(level.var_fe2e551da0962c3c, exfil);
                 }
@@ -654,7 +654,7 @@ function function_6613aeb065e36928(loc) {
     priority = "high";
     category = "reinforcements";
     subcategory = "exfil";
-    poiName = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(var_c5e7fce963586ec0);
+    poiname = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(var_c5e7fce963586ec0);
     var_19b18e5335b6e88a = 256;
     var_2898710bec2562dc = 3500;
     var_8b2f5b7caa9b211c = getdvarint(@"hash_63d7f015b040d9c6", 5000);
@@ -675,7 +675,7 @@ function function_6613aeb065e36928(loc) {
         return;
     }
     if (var_8e39da7681bbcc4b > 2) {
-        var_b58631347b6ab04 = namespace_7ae25d9e5d5a28ef::function_3779deb97b61a65(min(var_8e39da7681bbcc4b, var_51fb808f0ad7b056), var_c5e7fce963586ec0, priority, category, subcategory, undefined, team, 1, poiName);
+        var_b58631347b6ab04 = namespace_7ae25d9e5d5a28ef::function_3779deb97b61a65(min(var_8e39da7681bbcc4b, var_51fb808f0ad7b056), var_c5e7fce963586ec0, priority, category, subcategory, undefined, team, 1, poiname);
         if (isarray(var_b58631347b6ab04)) {
             var_8e39da7681bbcc4b = var_8e39da7681bbcc4b - var_b58631347b6ab04.size - 2;
             if (var_8e39da7681bbcc4b <= 0) {
@@ -942,8 +942,8 @@ function function_ac298c756f30aea6(var_3064fa24dbbd5bbf) {
         if (namespace_85cd45b4fe0d86fb::function_c07675f2ce32fcb5(self)) {
             var_33e0291812d90fc1 = var_33e0291812d90fc1 + getdvarint(@"hash_2b3cb1f1b979a35b", 500);
         }
-        namespace_48a08c5037514e04::doScoreEvent(#"hash_a664e407eb3e39d4", undefined, undefined, var_33e0291812d90fc1 + var_689a927d39ba7262, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
-        level thread handlePlayerExfilDone(self);
+        namespace_48a08c5037514e04::doscoreevent(#"hash_a664e407eb3e39d4", undefined, undefined, var_33e0291812d90fc1 + var_689a927d39ba7262, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+        level thread handleplayerexfildone(self);
         wait(1);
         namespace_d696adde758cbe79::function_865b1a5a62c49d7();
     }
@@ -958,7 +958,7 @@ function function_df3bfe2c77975120() {
     if (namespace_85cd45b4fe0d86fb::function_c07675f2ce32fcb5(self)) {
         var_33e0291812d90fc1 = var_33e0291812d90fc1 + getdvarint(@"hash_2b3cb1f1b979a35b", 500);
     }
-    namespace_48a08c5037514e04::doScoreEvent(#"hash_a664e407eb3e39d4", undefined, undefined, var_33e0291812d90fc1, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+    namespace_48a08c5037514e04::doscoreevent(#"hash_a664e407eb3e39d4", undefined, undefined, var_33e0291812d90fc1, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
     namespace_d696adde758cbe79::function_865b1a5a62c49d7(1);
     namespace_a38a2e1fe7519183::function_2ab8227b96ab5d5f(self);
 }
@@ -1037,7 +1037,7 @@ function function_46f56bf948599140(player) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ec3
 // Size: 0x1e8
-function handlePlayerExfilDone(player) {
+function handleplayerexfildone(player) {
     namespace_d20f8ef223912e12::updateclientmatchdata(player);
     var_9c60d720a2bc0f37 = 5;
     player.var_e7af56a2df18030d = 1;
@@ -1350,10 +1350,10 @@ function function_9a7567a2d46b857a() {
                 mindist = getdvarint(@"hash_5d9984a8fa843de9", 20000);
                 mindist = mindist * mindist;
                 midpoint = level.radiation.origin + (level.var_c5074bf13ffb95ef.origin - level.radiation.origin) * targetdist;
-                closestPoints = sortbydistance(var_f5aa0aac262fbf0b, midpoint);
-                var_8438f4a482da474a = [0:closestPoints[randomint(var_dee7a3b516180a52)]];
+                closestpoints = sortbydistance(var_f5aa0aac262fbf0b, midpoint);
+                var_8438f4a482da474a = [0:closestpoints[randomint(var_dee7a3b516180a52)]];
                 failed = 0;
-                curIndex = 0;
+                curindex = 0;
                 for (i = 0; i < level.var_858dba9da8dc5419 - 1; i++) {
                     index = i;
                     attempts = 0;
@@ -1600,7 +1600,7 @@ function function_f9ddc1898e570753(exfil, team) {
     exfil.var_d81e4008d63c5e96[team] = team;
     function_ac66b79a73b21444(team, exfil);
     players = namespace_54d20dd0dd79277f::getfriendlyplayers(team, 1);
-    namespace_d696adde758cbe79::showDMZSplash("dmz_exfil_ready", players, exfil.poi);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_exfil_ready", players, exfil.poi);
     if (getdvarint(@"hash_f0fc10ceb2d6142c", 0) == 0) {
         if (isdefined(exfil.var_d81e4008d63c5e96) && exfil.var_d81e4008d63c5e96.size > 0) {
             function_b513aaf6e49f184a(exfil);
@@ -1620,7 +1620,7 @@ function function_ed7bc1aaeb97b0ef(team) {
     exfil.var_d81e4008d63c5e96[team] = team;
     function_ac66b79a73b21444(team, exfil);
     players = namespace_54d20dd0dd79277f::getfriendlyplayers(team, 1);
-    namespace_d696adde758cbe79::showDMZSplash("dmz_exfil_ready", players, exfil.poi);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_exfil_ready", players, exfil.poi);
     namespace_944ddf7b8df1b0e3::leaderdialog("dmz_contract_complete_2", team);
     if (getdvarint(@"hash_f0fc10ceb2d6142c", 0) == 0) {
         if (isdefined(exfil.var_d81e4008d63c5e96) && exfil.var_d81e4008d63c5e96.size > 0) {
@@ -1665,9 +1665,9 @@ function function_40d3fb596096ac55(player) {
 // Size: 0x40
 function function_595eede45a673b1f(players, poi, var_27144879b0c7beed) {
     if (istrue(var_27144879b0c7beed)) {
-        namespace_d696adde758cbe79::showDMZSplash("dmz_exfil_inbound_final", players, poi);
+        namespace_d696adde758cbe79::showdmzsplash("dmz_exfil_inbound_final", players, poi);
     } else {
-        namespace_d696adde758cbe79::showDMZSplash("dmz_exfil_inbound", players, poi);
+        namespace_d696adde758cbe79::showdmzsplash("dmz_exfil_inbound", players, poi);
     }
 }
 

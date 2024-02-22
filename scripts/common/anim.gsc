@@ -232,10 +232,10 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, var_8e3b87
         if (!isdefined(guy)) {
             continue;
         }
-        DoFacialAnim = 0;
+        dofacialanim = 0;
         var_ae4f6e4d11bb5adb = 0;
         var_9ac73a1996d2dae = 0;
-        DoAnimation = 0;
+        doanimation = 0;
         var_b6efd5e31167b2f7 = 0;
         dialogue = undefined;
         facialanim = undefined;
@@ -257,7 +257,7 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, var_8e3b87
             dialogue = level.scr_sound[animname][anime];
         }
         if (isdefined(level.scr_face[animname]) && isdefined(level.scr_face[animname][anime])) {
-            DoFacialAnim = 1;
+            dofacialanim = 1;
             facialanim = level.scr_face[animname][anime];
             var_2a44bd45833fc3ef = facialanim;
             if (var_9ac73a1996d2dae) {
@@ -273,7 +273,7 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, var_8e3b87
             var_910e49245fadfc70 = var_6abad61ca454f906;
         }
         if (isdefined(level.scr_anim[animname]) && isdefined(level.scr_anim[animname][anime]) && self [[ anim.callbacks["ShouldDoAnim"] ]]()) {
-            DoAnimation = 1;
+            doanimation = 1;
         }
         if (isdefined(level.scr_animsound[animname]) && isdefined(level.scr_animsound[animname][anime])) {
             guy playsound(level.scr_animsound[animname][anime]);
@@ -283,7 +283,7 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, var_8e3b87
                 var_b6efd5e31167b2f7 = 1;
             }
         #/
-        if (DoAnimation) {
+        if (doanimation) {
             var_43e50904d011917e = undefined;
             if (function_6bc36c81fc28a22e()) {
                 var_43e50904d011917e = self;
@@ -300,19 +300,19 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, var_8e3b87
                 var_c89cf41205d8055d = i;
             }
         }
-        if (DoFacialAnim || var_9ac73a1996d2dae) {
-            if (guy [[ anim.callbacks["DoFacialAnim"] ]](DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, animname, dialogue, 0)) {
+        if (dofacialanim || var_9ac73a1996d2dae) {
+            if (guy [[ anim.callbacks["DoFacialAnim"] ]](dofacialanim, var_9ac73a1996d2dae, doanimation, anime, animname, dialogue, 0)) {
                 var_a3d52619ed30853a = i;
             }
             var_7d006c3a8c8ff60a = i;
         }
         if (isai(guy)) {
             /#
-                assertex(!(DoAnimation && guy doinglongdeath()), "AI is doing a long death, you cannot call animscripted on ai in long death");
+                assertex(!(doanimation && guy doinglongdeath()), "AI is doing a long death, you cannot call animscripted on ai in long death");
             #/
         }
         /#
-            assertex(DoAnimation || DoFacialAnim || var_9ac73a1996d2dae || var_b6efd5e31167b2f7, "Tried to do anim scene " + anime + " on guy with animname " + animname + ", but he didn't have that anim scene.");
+            assertex(doanimation || dofacialanim || var_9ac73a1996d2dae || var_b6efd5e31167b2f7, "Tried to do anim scene " + anime + " on guy with animname " + animname + ", but he didn't have that anim scene.");
         #/
         if (var_ae4f6e4d11bb5adb) {
             guy thread play_addtive_head_anim(guy, var_910e49245fadfc70);
@@ -591,9 +591,9 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, var_8e3b87acaad3de
                 guy.remove_from_animloop = undefined;
                 var_3d308e5cd595225d[i] = undefined;
             } else {
-                DoFacialAnim = 0;
+                dofacialanim = 0;
                 var_9ac73a1996d2dae = 0;
-                DoAnimation = 0;
+                doanimation = 0;
                 var_b6efd5e31167b2f7 = 0;
                 facialanim = undefined;
                 dialogue = undefined;
@@ -604,7 +604,7 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, var_8e3b87acaad3de
                     animname = guy.animname;
                 }
                 if (isdefined(level.scr_face[animname]) && isdefined(level.scr_face[animname][anime]) && isdefined(level.scr_face[animname][anime][idleanim])) {
-                    DoFacialAnim = 1;
+                    dofacialanim = 1;
                     facialanim = level.scr_face[animname][anime][idleanim];
                 }
                 if (isdefined(level.scr_sound[animname]) && isdefined(level.scr_sound[animname][anime]) && isdefined(level.scr_sound[animname][anime][idleanim])) {
@@ -615,15 +615,15 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, var_8e3b87acaad3de
                     guy playsound(level.scr_animsound[animname][idleanim + anime]);
                 }
                 if (isdefined(level.scr_anim[animname]) && isdefined(level.scr_anim[animname][anime]) && self [[ anim.callbacks["ShouldDoAnim"] ]]()) {
-                    DoAnimation = 1;
+                    doanimation = 1;
                 } else if (isagent(guy) && self [[ anim.callbacks["ShouldDoAnim"] ]]()) {
-                    DoAnimation = 1;
+                    doanimation = 1;
                 }
                 /#
                     if (isdefined(level.scr_text[animname]) && isdefined(level.scr_text[animname][anime])) {
                         var_b6efd5e31167b2f7 = 1;
                     }
-                    if (!DoFacialAnim && !var_9ac73a1996d2dae && !DoAnimation && !var_b6efd5e31167b2f7) {
+                    if (!dofacialanim && !var_9ac73a1996d2dae && !doanimation && !var_b6efd5e31167b2f7) {
                         /#
                             assertmsg("<unknown string>" + guy getentitynumber() + "<unknown string>" + anime + "<unknown string>");
                         #/
@@ -631,7 +631,7 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, var_8e3b87acaad3de
                         goto LOC_00000842;
                     }
                 #/
-                if (DoAnimation) {
+                if (doanimation) {
                     guy namespace_c5f7e08ad7ea4280::function_d5f76e611c78509a();
                     animtime = guy [[ anim.callbacks["DoAnimation"] ]](org, angles, animname, anime, var_314c4455b996b224, idleanim, undefined);
                     if (animtime < var_2afd32f7cad8af86) {
@@ -644,8 +644,8 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, var_8e3b87acaad3de
                         guy self_func("scriptModelPlayAnim", level.scr_anim[animname][anime][idleanim], undefined, undefined, undefined, function_4a2dd4b9088bd637(animname, anime));
                     }
                 }
-                if (DoFacialAnim || var_9ac73a1996d2dae) {
-                    guy [[ anim.callbacks["DoFacialAnim"] ]](DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, animname, dialogue, 1);
+                if (dofacialanim || var_9ac73a1996d2dae) {
+                    guy [[ anim.callbacks["DoFacialAnim"] ]](dofacialanim, var_9ac73a1996d2dae, doanimation, anime, animname, dialogue, 1);
                     var_7d006c3a8c8ff60a = i;
                 }
                 /#
@@ -1131,7 +1131,7 @@ function addnotetrack_customfunction(animname, notetrack, function, anime) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x364a
 // Size: 0xa5
-function addnotetrack_startfxontag(animname, notetrack, anime, effect_name, tagname, moreThanThreeHack) {
+function addnotetrack_startfxontag(animname, notetrack, anime, effect_name, tagname, morethanthreehack) {
     getfx(effect_name);
     notetrack = tolower(notetrack);
     anime = get_generic_anime(anime);
@@ -1139,8 +1139,8 @@ function addnotetrack_startfxontag(animname, notetrack, anime, effect_name, tagn
     array = [];
     array["effect"] = effect_name;
     array["selftag"] = tagname;
-    if (isdefined(moreThanThreeHack)) {
-        array["moreThanThreeHack"] = moreThanThreeHack;
+    if (isdefined(morethanthreehack)) {
+        array["moreThanThreeHack"] = morethanthreehack;
     }
     level.scr_notetrack[animname][anime][notetrack][index] = array;
 }
@@ -2060,7 +2060,7 @@ function function_48af09f152896047(animation) {
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5588
 // Size: 0x206
-function function_d0fafbacba98a40f(playerpos, var_bcf9684c0529009a, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570) {
+function function_d0fafbacba98a40f(playerpos, var_bcf9684c0529009a, blendspeed, blendintotime, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570) {
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
     var_e123fee5ae019570 = ter_op(isdefined(var_e123fee5ae019570), var_e123fee5ae019570, 0);
@@ -2068,33 +2068,33 @@ function function_d0fafbacba98a40f(playerpos, var_bcf9684c0529009a, blendspeed, 
         assertex(!(var_ec165a067af34f8f && var_8831fc7320076829), "dropWeaponWithGesture and dropWeaponWithAnim can not both be true.");
     #/
     if (istrue(var_ec165a067af34f8f)) {
-        weaponDropTime = level.player getgestureanimlength("proto_vm_gesture_gun_drop");
+        weapondroptime = level.player getgestureanimlength("proto_vm_gesture_gun_drop");
     } else if (istrue(var_8831fc7320076829)) {
-        weaponDropTime = 0.5;
+        weapondroptime = 0.5;
     } else {
-        weaponDropTime = 0;
+        weapondroptime = 0;
     }
-    weaponDropQuick = 0;
+    weapondropquick = 0;
     if (istrue(var_e123fee5ae019570)) {
-        weaponDropQuick = 1;
-        weaponDropTime = 0;
+        weapondropquick = 1;
+        weapondroptime = 0;
     } else if (level.player getdemeanorviewmodel() == "relaxed") {
-        weaponDropQuick = 1;
-        weaponDropTime = 0.2;
+        weapondropquick = 1;
+        weapondroptime = 0.2;
     }
     var_60163a10465b892c = distance2d(playerpos, var_bcf9684c0529009a) / blendspeed;
-    var_a46cdf78d1cd46dc = blendIntoTime + weaponDropTime;
+    var_a46cdf78d1cd46dc = blendintotime + weapondroptime;
     /#
         if (getdvarint(@"hash_398da46238160a6", 0)) {
             iprintln("<unknown string>" + var_60163a10465b892c);
         }
     #/
-    if (blendIntoTime > 0) {
+    if (blendintotime > 0) {
         frac = var_60163a10465b892c / var_a46cdf78d1cd46dc;
         if (frac < 1.4 && frac > 0.4) {
             blendtime = var_a46cdf78d1cd46dc;
-        } else if (var_60163a10465b892c < blendIntoTime) {
-            blendtime = ter_op(blendIntoTime < 1, blendIntoTime + weaponDropTime, 1 + weaponDropTime);
+        } else if (var_60163a10465b892c < blendintotime) {
+            blendtime = ter_op(blendintotime < 1, blendintotime + weapondroptime, 1 + weapondroptime);
         } else if (var_60163a10465b892c > 0.5) {
             blendtime = var_60163a10465b892c;
         } else {
@@ -2109,10 +2109,10 @@ function function_d0fafbacba98a40f(playerpos, var_bcf9684c0529009a, blendspeed, 
                 iprintln("<unknown string>");
             }
         #/
-        weaponDropTime = blendtime - blendIntoTime;
+        weapondroptime = blendtime - blendintotime;
     }
-    level.var_64fee87637de3b30["weaponDropQuick"] = weaponDropQuick;
-    level.var_64fee87637de3b30["weaponDropTime"] = weaponDropTime;
+    level.var_64fee87637de3b30["weaponDropQuick"] = weapondropquick;
+    level.var_64fee87637de3b30["weaponDropTime"] = weapondroptime;
     return blendtime;
 }
 
@@ -2120,7 +2120,7 @@ function function_d0fafbacba98a40f(playerpos, var_bcf9684c0529009a, blendspeed, 
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x5796
 // Size: 0x228
-function function_309bb9de5db13227(playerpos, var_bcf9684c0529009a, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570) {
+function function_309bb9de5db13227(playerpos, var_bcf9684c0529009a, blendspeed, blendintotime, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570) {
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
     var_e123fee5ae019570 = ter_op(isdefined(var_e123fee5ae019570), var_e123fee5ae019570, 0);
@@ -2141,13 +2141,13 @@ function function_309bb9de5db13227(playerpos, var_bcf9684c0529009a, blendspeed, 
             iprintln("<unknown string>" + blendtime);
         }
     #/
-    var_a46cdf78d1cd46dc = blendIntoTime + var_be4234afa13ba43a;
+    var_a46cdf78d1cd46dc = blendintotime + var_be4234afa13ba43a;
     if (var_a46cdf78d1cd46dc > 0) {
         frac = blendtime / var_a46cdf78d1cd46dc;
         if (frac < 1.4 && frac > 0.4) {
             blendtime = var_a46cdf78d1cd46dc;
-        } else if (blendtime < blendIntoTime) {
-            blendtime = ter_op(blendIntoTime <= 1, blendIntoTime, 1);
+        } else if (blendtime < blendintotime) {
+            blendtime = ter_op(blendintotime <= 1, blendintotime, 1);
         }
     }
     if (istrue(var_ec165a067af34f8f) && istrue(var_8831fc7320076829)) {
@@ -2157,25 +2157,25 @@ function function_309bb9de5db13227(playerpos, var_bcf9684c0529009a, blendspeed, 
     } else {
         blendtime = ter_op(blendtime < quickdroptime, quickdroptime, blendtime);
     }
-    weaponDropQuick = 0;
-    weaponDropTime = var_be4234afa13ba43a;
+    weapondropquick = 0;
+    weapondroptime = var_be4234afa13ba43a;
     if (blendtime < var_be4234afa13ba43a || level.player getdemeanorviewmodel() == "relaxed") {
-        weaponDropQuick = 1;
-        weaponDropTime = quickdroptime;
+        weapondropquick = 1;
+        weapondroptime = quickdroptime;
     } else if (blendtime > var_a46cdf78d1cd46dc) {
         /#
             if (getdvarint(@"hash_398da46238160a6", 0)) {
                 iprintln("<unknown string>");
             }
         #/
-        weaponDropTime = blendtime - blendIntoTime;
+        weapondroptime = blendtime - blendintotime;
     }
     if (istrue(var_e123fee5ae019570)) {
-        weaponDropQuick = 1;
-        weaponDropTime = 0;
+        weapondropquick = 1;
+        weapondroptime = 0;
     }
-    level.var_64fee87637de3b30["weaponDropQuick"] = weaponDropQuick;
-    level.var_64fee87637de3b30["weaponDropTime"] = weaponDropTime;
+    level.var_64fee87637de3b30["weaponDropQuick"] = weapondropquick;
+    level.var_64fee87637de3b30["weaponDropTime"] = weapondroptime;
     return blendtime;
 }
 
@@ -2199,12 +2199,12 @@ function function_dba8ec1939d3f1a(anime, animname, var_ec165a067af34f8f, var_883
 function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570) {
     var_c458edac96d58b16 = getstartorigin(self.origin, self.angles, animation);
     level.var_64fee87637de3b30 = [];
-    blendIntoTime = function_2c88f6e05af61090(animation);
+    blendintotime = function_2c88f6e05af61090(animation);
     blendouttime = function_f92de130e8613662(animation);
     blendspeed = function_70b77e26541e095(animation);
-    blendtime = function_d0fafbacba98a40f(level.player.origin, var_c458edac96d58b16, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570);
+    blendtime = function_d0fafbacba98a40f(level.player.origin, var_c458edac96d58b16, blendspeed, blendintotime, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570);
     stances = function_48af09f152896047(animation);
-    level.var_64fee87637de3b30["blendIntoTime"] = blendIntoTime;
+    level.var_64fee87637de3b30["blendIntoTime"] = blendintotime;
     level.var_64fee87637de3b30["blendOutTime"] = blendouttime;
     level.var_64fee87637de3b30["blendSpeed"] = blendspeed;
     level.var_64fee87637de3b30["blendTime"] = blendtime;
@@ -2212,7 +2212,7 @@ function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc73
     /#
         if (getdvarint(@"hash_398da46238160a6", 0)) {
             iprintln("<unknown string>" + blendtime);
-            iprintln("<unknown string>" + blendIntoTime);
+            iprintln("<unknown string>" + blendintotime);
             if (isdefined(blendouttime)) {
                 iprintln("<unknown string>" + blendouttime);
             }

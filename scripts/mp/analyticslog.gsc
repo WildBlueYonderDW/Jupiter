@@ -213,7 +213,7 @@ function recordbreadcrumbdata() {
     if (getdvar(@"hash_35bfb8187f185ae7") == "0") {
         return;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_2fe6a798e49f4de6 = getdvarfloat(@"hash_7c8bee10dba43fe7", 4);
     } else {
         var_2fe6a798e49f4de6 = getdvarfloat(@"hash_246c8305339e703e", 2);
@@ -506,11 +506,11 @@ function logevent_spawnpointupdate() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x256b
 // Size: 0xda
-function logevent_frontlineupdate(startpos, endpos, alliesCenter, axisCenter, ison) {
+function logevent_frontlineupdate(startpos, endpos, alliescenter, axiscenter, ison) {
     if (!analyticslogenabled()) {
         return;
     }
-    dlog_recordevent("gamemp_" + "front_line", [0:"startx", 1:startpos[0], 2:"starty", 3:startpos[1], 4:"endx", 5:endpos[0], 6:"endy", 7:endpos[1], 8:"axis_centerx", 9:axisCenter[0], 10:"axis_centery", 11:axisCenter[1], 12:"allies_centerx", 13:alliesCenter[0], 14:"allies_centery", 15:alliesCenter[1], 16:"state", 17:ison]);
+    dlog_recordevent("gamemp_" + "front_line", [0:"startx", 1:startpos[0], 2:"starty", 3:startpos[1], 4:"endx", 5:endpos[0], 6:"endy", 7:endpos[1], 8:"axis_centerx", 9:axiscenter[0], 10:"axis_centery", 11:axiscenter[1], 12:"allies_centerx", 13:alliescenter[0], 14:"allies_centery", 15:alliescenter[1], 16:"state", 17:ison]);
 }
 
 // Namespace analyticslog/namespace_bd0162aedd8c8594
@@ -1140,13 +1140,13 @@ function logevent_killstreakexpired(player, lifeid, killstreakname, pickedup, va
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4728
 // Size: 0x10b
-function logevent_xpearned(player, var_5746d9f038b58234, weaponname, weaponXP, type) {
+function logevent_xpearned(player, var_5746d9f038b58234, weaponname, weaponxp, type) {
     life_index = -1;
     if (isdefined(player namespace_3c5a4254f2b957ea::getpersstat("telemetry")) && isdefined(player namespace_3c5a4254f2b957ea::getpersstat("telemetry").life) && isdefined(player namespace_3c5a4254f2b957ea::getpersstat("telemetry").life.life_index)) {
         life_index = player namespace_3c5a4254f2b957ea::getpersstat("telemetry").life.life_index;
     }
-    player dlog_recordplayerevent("dlog_event_player_xp_earned", [0:"player_life_index", 1:life_index, 2:"player_xp_earned", 3:var_5746d9f038b58234, 4:"weapon_s", 5:weaponname, 6:"weapon_xp_earned", 7:weaponXP, 8:"xp_event", 9:type]);
-    namespace_a011fbf6d93f25e5::function_cb3b3cbf2d1ac3f3(var_5746d9f038b58234, weaponXP, life_index, weaponname, player, type);
+    player dlog_recordplayerevent("dlog_event_player_xp_earned", [0:"player_life_index", 1:life_index, 2:"player_xp_earned", 3:var_5746d9f038b58234, 4:"weapon_s", 5:weaponname, 6:"weapon_xp_earned", 7:weaponxp, 8:"xp_event", 9:type]);
+    namespace_a011fbf6d93f25e5::function_cb3b3cbf2d1ac3f3(var_5746d9f038b58234, weaponxp, life_index, weaponname, player, type);
 }
 
 // Namespace analyticslog/namespace_bd0162aedd8c8594

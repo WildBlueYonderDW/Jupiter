@@ -307,7 +307,7 @@ function function_a1e1b35a0bd2f57c(player, eventname) {
 function function_e4d7e0e2fa1fe358() {
     if (issharedfuncdefined("game", "gameFlag")) {
         var_dfd52ef074fb36af = [[ getsharedfunc("game", "gameFlag") ]]("prematch_done");
-        if (namespace_36f464722d326bbe::isBRStyleGameType() && !istrue(level.skipprematch) && !var_dfd52ef074fb36af) {
+        if (namespace_36f464722d326bbe::isbrstylegametype() && !istrue(level.skipprematch) && !var_dfd52ef074fb36af) {
             return 1;
         }
         return var_dfd52ef074fb36af;
@@ -393,7 +393,7 @@ function function_55b08d6d71b41402(player, eventname) {
 function function_c5f05871ba7c3aa3() {
     var_dd2decf8db7e69b8 = self getweaponammostock(self.currentweapon);
     var_ab0ee360900bcb85 = weaponmaxammo(self.currentweapon);
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && issharedfuncdefined("br_weapons", "br_ammo_type_for_weapon")) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && issharedfuncdefined("br_weapons", "br_ammo_type_for_weapon")) {
         ammotype = [[ getsharedfunc("br_weapons", "br_ammo_type_for_weapon") ]](self.currentweapon);
         if (isdefined(ammotype)) {
             var_ab0ee360900bcb85 = level.var_e6ea72fc5e3fcd00[ammotype];
@@ -982,7 +982,7 @@ function function_2cc0d17b7e641e00(player, var_de1fd66f1b22f6a9) {
         level thread function_3addbb064480340();
         level thread function_7fd5a6abcd15e5ba();
         level thread function_7143e9d45cff1d4c();
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             namespace_d9d9691c846bdad7::function_3a363ae38f309166(&function_c5f05871ba7c3aa3);
             level thread function_572b61079927196b();
         }

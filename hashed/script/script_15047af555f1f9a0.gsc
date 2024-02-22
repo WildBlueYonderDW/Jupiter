@@ -21,7 +21,7 @@ function function_94461e6fd9196c6a(var_230b60ef0852dcb8) {
 function function_a9c6f7587066ce13() {
     self.heartbeat = spawnstruct();
     self.heartbeat.pulsetime = 0;
-    thread heartBeatTimer();
+    thread heartbeattimer();
 }
 
 // Namespace heartbeat/namespace_a81abcc503139256
@@ -44,7 +44,7 @@ function function_fa062c79f577073c() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x383
 // Size: 0xc4
-function heartBeatTimer() {
+function heartbeattimer() {
     self notify("heartBeatTimer");
     self endon("heartBeatTimer");
     self endon("death_or_disconnect");

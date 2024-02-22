@@ -244,28 +244,28 @@ function private function_3fbc85b13c2e3772() {
     self endon("death");
     self endon("bull_charge_loop_end");
     while (1) {
-        var_5c0efef7a4d33535 = function_f30eecf314f3f1e0() + (0, 0, self.height * 0.5);
+        damage_point = function_f30eecf314f3f1e0() + (0, 0, self.height * 0.5);
         damage_radius = self.var_47399212b3052720.var_e58a65b7a8f5973c.var_ff6f00af7e3c1d57;
         rumble_radius = self.var_47399212b3052720.var_e58a65b7a8f5973c.var_309b2924da876f4b;
         /#
             if (function_34e269129d109e9d()) {
-                sphere(var_5c0efef7a4d33535, damage_radius, (1, 0, 0));
-                sphere(var_5c0efef7a4d33535, rumble_radius, (1, 1, 0));
+                sphere(damage_point, damage_radius, (1, 0, 0));
+                sphere(damage_point, rumble_radius, (1, 1, 0));
             }
         #/
-        players = function_883458a342af3041(var_5c0efef7a4d33535, rumble_radius);
+        players = function_883458a342af3041(damage_point, rumble_radius);
         if (players.size > 0) {
             foreach (player in players) {
                 if (isalive(player) && player.team != self.team && !player ent_flag("abom_bull_charge_hit")) {
-                    var_a6c8c869db736da1 = var_5c0efef7a4d33535 - player.origin;
+                    var_a6c8c869db736da1 = damage_point - player.origin;
                     var_d6ed44e5a8551291 = lengthsquared(var_a6c8c869db736da1);
                     var_7895e5c029da0b75 = var_d6ed44e5a8551291 <= squared(damage_radius);
                     if (var_7895e5c029da0b75) {
                         trace_point = player namespace_7e17181d03156026::getstancetop("prone");
-                        var_353db945c9974015 = namespace_2a184fc4902783dc::ray_trace_passed(var_5c0efef7a4d33535, trace_point, self);
+                        var_353db945c9974015 = namespace_2a184fc4902783dc::ray_trace_passed(damage_point, trace_point, self);
                         /#
                             if (function_34e269129d109e9d()) {
-                                line(var_5c0efef7a4d33535, player.origin, (1, 0, 0));
+                                line(damage_point, player.origin, (1, 0, 0));
                             }
                         #/
                         if (var_353db945c9974015) {
@@ -282,8 +282,8 @@ function private function_3fbc85b13c2e3772() {
                                 function_c700d7df70191092("<unknown string>", player.origin);
                             }
                         #/
-                        player function_2861d9b80e013196(player.origin - var_5c0efef7a4d33535, 1200);
-                        player earthquakeforplayer(0.8, 0.8, var_5c0efef7a4d33535, max(damage_radius, 300));
+                        player function_2861d9b80e013196(player.origin - damage_point, 1200);
+                        player earthquakeforplayer(0.8, 0.8, damage_point, max(damage_radius, 300));
                         player playrumbleonentity("heavy_1s");
                         player thread namespace_1ce798d596a27341::bloodmeleeeffect();
                         player namespace_1ce798d596a27341::_shellshock("bomb_stun_mp", "stun", 2);
@@ -291,18 +291,18 @@ function private function_3fbc85b13c2e3772() {
                         round_number = function_2201d3f3d7ab07a7();
                         var_9ed33f942da168b8 = clamp(math::remap(round_number, 20, 50, 0, 50), 0, 50);
                         player_damage = player_damage + var_9ed33f942da168b8;
-                        player dodamage(player_damage, var_5c0efef7a4d33535, self, self, "MOD_IMPACT");
+                        player dodamage(player_damage, damage_point, self, self, "MOD_IMPACT");
                         /#
-                            function_c700d7df70191092("<unknown string>", var_5c0efef7a4d33535);
+                            function_c700d7df70191092("<unknown string>", damage_point);
                         #/
                     } else if (!player ent_flag("abom_bull_charge_rumble")) {
                         player ent_flag_set("abom_bull_charge_rumble");
                         player thread ent_flag_clear_delayed("abom_bull_charge_rumble", 2);
                         player playrumbleonentity("light_1s");
-                        player earthquakeforplayer(0.4, 0.8, var_5c0efef7a4d33535, max(rumble_radius, 300));
+                        player earthquakeforplayer(0.4, 0.8, damage_point, max(rumble_radius, 300));
                         /#
                             if (function_34e269129d109e9d()) {
-                                line(var_5c0efef7a4d33535, player.origin, (1, 1, 0));
+                                line(damage_point, player.origin, (1, 1, 0));
                                 sphere(player.origin, 5, (1, 1, 0));
                                 function_c700d7df70191092("<unknown string>", player.origin);
                             }
@@ -312,18 +312,18 @@ function private function_3fbc85b13c2e3772() {
             }
         }
         var_3737e625f17f73c6 = damage_radius * 1.5;
-        var_7bc0c3236a85a96a = getaiarrayinradius(var_5c0efef7a4d33535, damage_radius);
+        var_7bc0c3236a85a96a = getaiarrayinradius(damage_point, damage_radius);
         foreach (ai in var_7bc0c3236a85a96a) {
             if (!isalive(ai) || ai == self) {
                 continue;
             }
             if (ai.type == "zombie") {
                 if (!istrue(ai._blackboard.var_3a5dd6684caabe58)) {
-                    ai namespace_db1ce2c035564e2c::function_e96aac065abbec4e(var_5c0efef7a4d33535);
+                    ai namespace_db1ce2c035564e2c::function_e96aac065abbec4e(damage_point);
                 }
                 /#
                     if (function_34e269129d109e9d()) {
-                        line(var_5c0efef7a4d33535, ai.origin, (1, 0, 0));
+                        line(damage_point, ai.origin, (1, 0, 0));
                     }
                 #/
             }
@@ -331,7 +331,7 @@ function private function_3fbc85b13c2e3772() {
                 ai ent_flag_set("abom_bull_charge_hit");
                 ai thread ent_flag_clear_delayed("abom_bull_charge_hit", 2);
                 ai_damage = max(ai.maxhealth * 0.1, 100);
-                ai dodamage(ai_damage, var_5c0efef7a4d33535);
+                ai dodamage(ai_damage, damage_point);
             }
         }
         waitframe();

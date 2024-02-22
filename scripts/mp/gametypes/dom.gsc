@@ -46,8 +46,8 @@ function main() {
     }
     namespace_77cb23aada5edffd::init();
     namespace_77cb23aada5edffd::setupcallbacks();
-    level.useStrongholdHills = dvarintvalue("useStrongholdHills", 0, 0, 1);
-    if (level.useStrongholdHills) {
+    level.usestrongholdhills = dvarintvalue("useStrongholdHills", 0, 0, 1);
+    if (level.usestrongholdhills) {
         allowed[0] = "hardpoint";
     } else if (namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e()) {
         allowed = namespace_afbc0aa1b551667a::function_4248416fffb4c5b3();
@@ -278,21 +278,21 @@ function private function_952bd6e10104d8a() {
 function updategametypedvars() {
     updatecommongametypedvars();
     level.flagcapturetime = dvarfloatvalue("flagCaptureTime", 10, 0, 30);
-    level.flagDecayTime = dvarfloatvalue("flagDecayTime", 0, 0, 30);
-    level.flagModelHidden = dvarintvalue("flagModelHidden", 0, 0, 1);
+    level.flagdecaytime = dvarfloatvalue("flagDecayTime", 0, 0, 30);
+    level.flagmodelhidden = dvarintvalue("flagModelHidden", 0, 0, 1);
     level.flagneutralization = dvarintvalue("flagNeutralization", 0, 0, 1);
-    level.flagReinforcement = dvarintvalue("flagReinforcement", 0, 0, 1);
+    level.flagreinforcement = dvarintvalue("flagReinforcement", 0, 0, 1);
     level.flagsrequiredtoscore = dvarintvalue("flagsRequiredToScore", 1, 1, 3);
     level.numflagsscoreonkill = dvarintvalue("numFlagsScoreOnKill", 0, 0, 3);
     level.objectivescaler = dvarfloatvalue("objScalar", 4, 1, 10);
     level.pointsperflag = dvarintvalue("pointsPerFlag", 1, 1, 300);
-    level.pointsPerReinforcedFlag = dvarintvalue("pointsPerReinforcedFlag", 0, 0, 300);
-    level.reinforcementStompScalar = dvarfloatvalue("reinforcementStompScalar", 1, 1, 10);
-    level.shuffleHillRoundCount = dvarintvalue("shuffleHillRoundCount", 2, 0, 10);
-    level.strongholdScoreAllCapIncrement = dvarintvalue("strongholdScoreAllCapIncrement", 2, 2, 10);
-    level.strongholdScoreIncrement = dvarintvalue("strongholdScoreIncrement", 1, 1, 5);
-    level.strongholdScoreInterval = dvarfloatvalue("strongholdScoreInterval", 1, 1, 10);
-    level.useStrongholdScoring = dvarintvalue("useStrongholdScoring", 0, 0, 1);
+    level.pointsperreinforcedflag = dvarintvalue("pointsPerReinforcedFlag", 0, 0, 300);
+    level.reinforcementstompscalar = dvarfloatvalue("reinforcementStompScalar", 1, 1, 10);
+    level.shufflehillroundcount = dvarintvalue("shuffleHillRoundCount", 2, 0, 10);
+    level.strongholdscoreallcapincrement = dvarintvalue("strongholdScoreAllCapIncrement", 2, 2, 10);
+    level.strongholdscoreincrement = dvarintvalue("strongholdScoreIncrement", 1, 1, 5);
+    level.strongholdscoreinterval = dvarfloatvalue("strongholdScoreInterval", 1, 1, 10);
+    level.usestrongholdscoring = dvarintvalue("useStrongholdScoring", 0, 0, 1);
     level.precappoints = dvarintvalue("preCapPoints", 0, 0, 1);
     level.capturetype = dvarintvalue("captureType", 1, 0, 3);
     level.capturedecay = dvarintvalue("captureDecay", 1, 0, 1);
@@ -398,27 +398,27 @@ function getpreferreddompoints(var_e02688745e0052c3, var_db44ac0d1491f876, team,
         }
         var_eca8ba29df25a989[var_eca8ba29df25a989.size] = var_e4b0a18c08e01fc9;
     }
-    var_255ba911692a2561 = 0;
-    var_d4affdbf750d5880 = 0;
+    preferreddompoints = 0;
+    secondarydompoints = 0;
     foreach (flag in var_eca8ba29df25a989) {
         if (flag namespace_19b4203b51d56488::getclaimteam() == "none") {
-            var_255ba911692a2561 = var_255ba911692a2561 | flag.spawnflagid;
+            preferreddompoints = preferreddompoints | flag.spawnflagid;
         } else {
-            var_d4affdbf750d5880 = var_d4affdbf750d5880 | flag.spawnflagid;
+            secondarydompoints = secondarydompoints | flag.spawnflagid;
         }
     }
-    if (var_255ba911692a2561 & 1 && var_255ba911692a2561 & 2) {
-        var_255ba911692a2561 = var_255ba911692a2561 | 32;
+    if (preferreddompoints & 1 && preferreddompoints & 2) {
+        preferreddompoints = preferreddompoints | 32;
     }
-    if (var_255ba911692a2561 & 4 && var_255ba911692a2561 & 2) {
-        var_255ba911692a2561 = var_255ba911692a2561 | 64;
+    if (preferreddompoints & 4 && preferreddompoints & 2) {
+        preferreddompoints = preferreddompoints | 64;
     }
-    if (var_255ba911692a2561 & 1 && var_255ba911692a2561 & 4) {
-        var_255ba911692a2561 = var_255ba911692a2561 | 128;
+    if (preferreddompoints & 1 && preferreddompoints & 4) {
+        preferreddompoints = preferreddompoints | 128;
     }
     var_a57270e5ba6e59a3 = [];
-    var_a57270e5ba6e59a3["preferred"] = var_255ba911692a2561;
-    var_a57270e5ba6e59a3["secondary"] = var_d4affdbf750d5880;
+    var_a57270e5ba6e59a3["preferred"] = preferreddompoints;
+    var_a57270e5ba6e59a3["secondary"] = secondarydompoints;
     return var_a57270e5ba6e59a3;
 }
 
@@ -430,9 +430,9 @@ function domflags() {
     primaryflags = [];
     var_528742b1628eb47c = [];
     level.changenumdomflags = 0;
-    if (level.useStrongholdHills) {
+    if (level.usestrongholdhills) {
         var_c49b98f4adb52d7b = namespace_f1b0a92156c7301c::getzonearray("hardpoint_zone");
-        if (!isdefined(game["strongholdFlagKeys"]) || level.shuffleHillRoundCount > 0 && game["roundsPlayed"] % level.shuffleHillRoundCount == 0) {
+        if (!isdefined(game["strongholdFlagKeys"]) || level.shufflehillroundcount > 0 && game["roundsPlayed"] % level.shufflehillroundcount == 0) {
             var_3dabce211c987a42 = var_c49b98f4adb52d7b;
             if (isdefined(game["strongholdFlagKeys"])) {
                 var_e1e302c0235f5998 = randomintrange(0, var_3dabce211c987a42.size - game["strongholdFlagKeys"].size);
@@ -515,7 +515,7 @@ function domflags() {
         }
     }
     foreach (trigger in triggers) {
-        if (!level.useStrongholdHills && level.changenumdomflags == 3) {
+        if (!level.usestrongholdhills && level.changenumdomflags == 3) {
             jumpiffalse(trigger.script_label == "_d" || trigger.script_label == "_e") LOC_000005d3;
         } else {
         LOC_000005d3:
@@ -757,8 +757,8 @@ function updatedomscores() {
     }
     while (!level.gameended) {
         waittime = 5;
-        if (level.useStrongholdScoring) {
-            waittime = level.strongholdScoreInterval;
+        if (level.usestrongholdscoring) {
+            waittime = level.strongholdscoreinterval;
         }
         timeleft = namespace_d576b6dc7cef9c62::gettimeremaining();
         if (timeleft < 5000 && timeleft > 0) {
@@ -779,13 +779,13 @@ function updatedomscores() {
                 }
                 domflags[j + 1] = domflag;
             }
-            if (level.useStrongholdScoring) {
+            if (level.usestrongholdscoring) {
                 foreach (team in level.teamnamelist) {
-                    var_fee716687dd29378 = namespace_98b55913d2326ac8::getteamflagcount(team, level.useStrongholdScoring);
+                    var_fee716687dd29378 = namespace_98b55913d2326ac8::getteamflagcount(team, level.usestrongholdscoring);
                     if (var_fee716687dd29378 == level.objectives.size) {
-                        level.scoretick[team] = level.strongholdScoreAllCapIncrement;
+                        level.scoretick[team] = level.strongholdscoreallcapincrement;
                     } else if (var_fee716687dd29378 >= level.flagsrequiredtoscore) {
-                        level.scoretick[team] = level.strongholdScoreIncrement;
+                        level.scoretick[team] = level.strongholdscoreincrement;
                     }
                 }
             } else {
@@ -798,8 +798,8 @@ function updatedomscores() {
                     var_fee716687dd29378 = namespace_98b55913d2326ac8::getteamflagcount(team);
                     if (var_fee716687dd29378 >= level.flagsrequiredtoscore) {
                         level.scoretick[team] = level.scoretick[team] + level.pointsperflag;
-                        if (istrue(domflag.var_11d80259a066ab76) && isdefined(level.pointsPerReinforcedFlag)) {
-                            level.scoretick[team] = level.scoretick[team] + level.pointsPerReinforcedFlag;
+                        if (istrue(domflag.var_11d80259a066ab76) && isdefined(level.pointsperreinforcedflag)) {
+                            level.scoretick[team] = level.scoretick[team] + level.pointsperreinforcedflag;
                         }
                     }
                 }
@@ -1444,7 +1444,7 @@ function function_d0d511ba6517842a(team) {
         for (i = 0; i < numagents; i++) {
             type = function_6d1e55c48e2c12f();
             aitype = function_d5bc07eabf352abb();
-            agent = function_ea94a8bf24d3c5ef(aitype, self.trigger.origin + function_8271f5b7ac2c25da(i), (0, 0, 0), "medium", var_b5b1784d5a1327c7, "domAgents", var_b5b1784d5a1327c7, team);
+            agent = ai_mp_requestspawnagent(aitype, self.trigger.origin + function_8271f5b7ac2c25da(i), (0, 0, 0), "medium", var_b5b1784d5a1327c7, "domAgents", var_b5b1784d5a1327c7, team);
             if (isdefined(agent)) {
                 agent thread function_35c195df2ba46725(agent, team);
                 agent thread function_a5117518725da028(agent, self.trigger.origin);
@@ -1461,7 +1461,7 @@ function function_d0d511ba6517842a(team) {
             var_40e875a042b82875 = getdvarint(@"hash_2c76d4f86fd341de", 1);
             if (var_40e875a042b82875 > 0) {
                 for (i = 0; i < var_40e875a042b82875; i++) {
-                    agent = function_ea94a8bf24d3c5ef("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
+                    agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
                     if (isdefined(agent)) {
                         agent thread function_35c195df2ba46725(agent, team);
                         namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
@@ -1474,7 +1474,7 @@ function function_d0d511ba6517842a(team) {
         var_40e875a042b82875 = getdvarint(@"hash_2c76d4f86fd341de", 0);
         if (var_40e875a042b82875 > 0) {
             for (i = 0; i < var_40e875a042b82875; i++) {
-                agent = function_ea94a8bf24d3c5ef("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
+                agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
                 if (isdefined(agent)) {
                     agent thread function_35c195df2ba46725(agent, team);
                     namespace_14d36171baccf528::function_1828f1e20e52b418(agent);

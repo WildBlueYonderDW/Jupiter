@@ -146,7 +146,7 @@ function function_2a1ce8d7b1f21db9(player) {
             continue;
         }
         angles = flat_angle(vectortoangles(safeorigin - level.player.origin));
-        ai = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent("jup_enemy_mp_arcade_alien_01", safeorigin, (0, randomint(360), 0), "high", "everybody", undefined, undefined, var_152b8f126af5871d);
+        ai = namespace_bfef6903bca5845d::ai_mp_requestspawnagent("jup_enemy_mp_arcade_alien_01", safeorigin, (0, randomint(360), 0), "high", "everybody", undefined, undefined, var_152b8f126af5871d);
         if (isagent(ai)) {
             ai thread function_2f3dda44b5f52742();
         }
@@ -169,7 +169,7 @@ function function_2f3dda44b5f52742() {
         ai.pathenemyfightdist = 0;
         ai.noragdoll = 1;
         ai.script_noragdoll = 1;
-        ai.liveRagdoll = 0;
+        ai.liveragdoll = 0;
         if (distance(ai.origin, level.player.origin) < 140) {
             ai kill();
         }

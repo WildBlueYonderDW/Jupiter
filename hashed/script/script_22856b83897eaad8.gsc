@@ -28,7 +28,7 @@ function function_876c219bf2b0fbd7() {
 function set_golden_armor() {
     self.var_28c033c3c5b37f1f = 1;
     thread function_fdb99149ef6e3583();
-    namespace_f8d3520d3483c1::function_cf547d762189deaa();
+    namespace_f8d3520d3483c1::setarmoromnvars();
 }
 
 // Namespace ob_armor/namespace_c7a286c0a621f184
@@ -37,7 +37,7 @@ function set_golden_armor() {
 // Size: 0x14
 function function_ed2a0bbe317941f6() {
     self.var_28c033c3c5b37f1f = undefined;
-    namespace_f8d3520d3483c1::function_cf547d762189deaa();
+    namespace_f8d3520d3483c1::setarmoromnvars();
 }
 
 // Namespace ob_armor/namespace_c7a286c0a621f184
@@ -57,7 +57,7 @@ function function_fdb99149ef6e3583() {
             if (self.armorhealth < self.var_8790c077c95db752) {
                 var_1df09d4f31ef52f1 = function_ac266fc218266d08();
                 var_1df09d4f31ef52f1 = var_1df09d4f31ef52f1 + int(self.var_8790c077c95db752 / 3);
-                setArmorHealth(var_1df09d4f31ef52f1);
+                setarmorhealth(var_1df09d4f31ef52f1);
                 self function_c664a2459d6f3eaa("sndevent_golden_armor_restore");
             }
         }
@@ -150,7 +150,7 @@ function function_f9dabaa1b39d496c(var_bed158a6dfac230d) {
     /#
         self.var_bed158a6dfac230d = var_bed158a6dfac230d;
         self.var_8790c077c95db752 = var_bed158a6dfac230d * level.var_4b78859bacc88808;
-        setArmorHealth(var_bed158a6dfac230d * level.var_4b78859bacc88808);
+        setarmorhealth(var_bed158a6dfac230d * level.var_4b78859bacc88808);
     #/
 }
 

@@ -13,9 +13,9 @@
 #using script_51003dec974513a9;
 #using script_15efdb5808058ab7;
 
-#namespace namespace_dc76b323a42dffcd;
+#namespace zombie_deathworm;
 
-// Namespace namespace_dc76b323a42dffcd/namespace_c1cca3f9c437f745
+// Namespace zombie_deathworm/namespace_c1cca3f9c437f745
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef
 // Size: 0x24
@@ -25,7 +25,7 @@ function function_a53f4a78a75cbd41(params) {
     function_72d358d261f676a3(params);
 }
 
-// Namespace namespace_dc76b323a42dffcd/namespace_c1cca3f9c437f745
+// Namespace zombie_deathworm/namespace_c1cca3f9c437f745
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x11a
 // Size: 0x22
@@ -33,7 +33,7 @@ function private function_b0fc1ad0235df745() {
     level.scr_anim[self.animname]["spawn"] = "spawn";
 }
 
-// Namespace namespace_dc76b323a42dffcd/namespace_c1cca3f9c437f745
+// Namespace zombie_deathworm/namespace_c1cca3f9c437f745
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x5e

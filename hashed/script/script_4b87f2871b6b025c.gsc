@@ -9,7 +9,7 @@
 // Params 12, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x917
 // Size: 0x1a5
-function function_e05aeec06b7b52aa(var_dc6dc154664cf0aa, var_575e6f276810675e, var_a1e7fb7b162a7323, var_dd47832cd570074b, var_be3314f77fef5d6b, surfaceFunc, var_71106dd668c1bcab, var_230b60ef0852dcb8, var_a699c74ce724a801, var_e1b16133a0146153, var_bb67e91ffc4e7632, var_cc3e168e41362ff2) {
+function function_e05aeec06b7b52aa(var_dc6dc154664cf0aa, var_575e6f276810675e, var_a1e7fb7b162a7323, var_dd47832cd570074b, var_be3314f77fef5d6b, surfacefunc, var_71106dd668c1bcab, var_230b60ef0852dcb8, var_a699c74ce724a801, var_e1b16133a0146153, var_bb67e91ffc4e7632, var_cc3e168e41362ff2) {
     setdvarifuninitialized(@"hash_2a4f08bc79265550", 0);
     level.swim = spawnstruct();
     level.swim.var_dc6dc154664cf0aa = var_dc6dc154664cf0aa;
@@ -17,7 +17,7 @@ function function_e05aeec06b7b52aa(var_dc6dc154664cf0aa, var_575e6f276810675e, v
     level.swim.var_a1e7fb7b162a7323 = var_a1e7fb7b162a7323;
     level.swim.var_dd47832cd570074b = var_dd47832cd570074b;
     level.swim.var_be3314f77fef5d6b = var_be3314f77fef5d6b;
-    level.swim.surfaceFunc = surfaceFunc;
+    level.swim.surfacefunc = surfacefunc;
     level.swim.var_71106dd668c1bcab = var_71106dd668c1bcab;
     level.swim.var_230b60ef0852dcb8 = var_230b60ef0852dcb8;
     level.swim.var_a699c74ce724a801 = var_a699c74ce724a801;
@@ -327,7 +327,7 @@ function function_8173a7a676c2aa00() {
     childthread function_da4d3d2e5560fe3a();
     function_aa183ca1083d279();
     function_542add828c78e976();
-    self childthread [[ level.swim.surfaceFunc ]]();
+    self childthread [[ level.swim.surfacefunc ]]();
 }
 
 // Namespace namespace_42897ee7f159629b/namespace_8ade6bdb04213c12
@@ -633,7 +633,7 @@ function function_3b40f73c6038a3b0() {
     while (1) {
         waittillframeend();
         if (function_c2be12529b0f0ad2()) {
-            updateSwimOverlayColor();
+            updateswimoverlaycolor();
             function_66cd16083cc71a78();
         }
         wait(0.05);
@@ -916,7 +916,7 @@ function function_21dafdba97771de8() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d42
 // Size: 0x16e
-function updateSwimOverlayColor() {
+function updateswimoverlaycolor() {
     var_21c40030c467a5f6 = function_d4a3e79cc1808058();
     if (isdefined(level.var_19d38dec02a818ce) && [[ level.var_19d38dec02a818ce ]]("player", "updateSwimOverlayColor")) {
         var_83f38cc857568f42 = [[ level.var_49b393a31d0b0b95 ]]("player", "updateSwimOverlayColor");

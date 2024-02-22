@@ -14,9 +14,9 @@ function vehicle_mines_init() {
     /#
         assertex(isdefined(level.vehicle), "vehicle_mines_init() called before vehicle_init().");
     #/
-    levelData = spawnstruct();
-    levelData.minedata = [];
-    level.vehicle.minetriggerdata = levelData;
+    leveldata = spawnstruct();
+    leveldata.minedata = [];
+    level.vehicle.minetriggerdata = leveldata;
     if (issharedfuncdefined("vehicle_mines", "init")) {
         [[ getsharedfunc("vehicle_mines", "init") ]]();
     }
@@ -37,8 +37,8 @@ function vehicle_mines_getleveldata() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x244
 // Size: 0xd0
-function vehicle_mines_getleveldataforvehicle(vehicleRef, create) {
-    var_e2818ad39a3341b4 = namespace_5a0f3ca265d3a4c8::vehicle_damage_getleveldataforvehicle(vehicleRef, create);
+function vehicle_mines_getleveldataforvehicle(vehicleref, create) {
+    var_e2818ad39a3341b4 = namespace_5a0f3ca265d3a4c8::vehicle_damage_getleveldataforvehicle(vehicleref, create);
     if ((!isdefined(var_e2818ad39a3341b4) || !isdefined(var_e2818ad39a3341b4.frontextents)) && istrue(create)) {
         if (!isdefined(var_e2818ad39a3341b4)) {
             var_e2818ad39a3341b4 = spawnstruct();
@@ -50,7 +50,7 @@ function vehicle_mines_getleveldataforvehicle(vehicleRef, create) {
         var_e2818ad39a3341b4.bottomextents = 20;
         var_e2818ad39a3341b4.distancetobottom = 35;
         var_e2818ad39a3341b4.loscheckoffset = (0, 0, 37);
-        namespace_1f188a13f7e79610::function_29b4292c92443328(vehicleRef).damage = var_e2818ad39a3341b4;
+        namespace_1f188a13f7e79610::function_29b4292c92443328(vehicleref).damage = var_e2818ad39a3341b4;
     }
     return var_e2818ad39a3341b4;
 }
@@ -60,13 +60,13 @@ function vehicle_mines_getleveldataforvehicle(vehicleRef, create) {
 // Checksum 0x0, Offset: 0x31c
 // Size: 0x79
 function vehicle_mines_getleveldataformine(var_1189bd7fbe2861f8, create) {
-    levelData = vehicle_mines_getleveldata();
-    var_574564c86203493f = levelData.minedata[var_1189bd7fbe2861f8];
+    leveldata = vehicle_mines_getleveldata();
+    var_574564c86203493f = leveldata.minedata[var_1189bd7fbe2861f8];
     if (!isdefined(var_574564c86203493f) && istrue(create)) {
         var_574564c86203493f = spawnstruct();
         var_574564c86203493f.radius = 10;
         var_574564c86203493f.triggercallback = undefined;
-        levelData.minedata[var_1189bd7fbe2861f8] = var_574564c86203493f;
+        leveldata.minedata[var_1189bd7fbe2861f8] = var_574564c86203493f;
     }
     return var_574564c86203493f;
 }
@@ -106,13 +106,13 @@ function vehicle_mines_shouldvehicletriggermine(vehicle, mine) {
     var_3cd550b17ae64a43 = anglestoright(vehicle.angles) * -1 * var_e2818ad39a3341b4.leftextents;
     var_eb1154e05304e3d4 = anglestoright(vehicle.angles) * var_e2818ad39a3341b4.rightextents;
     var_6f3a90a6b2b8799d = vehicle.origin + var_e2818ad39a3341b4.loscheckoffset;
-    var_f5ab4afaccad6abd = var_6f3a90a6b2b8799d + var_582ea6264b9bea73 + var_3cd550b17ae64a43;
-    var_b54061a455c5d876 = var_6f3a90a6b2b8799d + var_582ea6264b9bea73 + var_eb1154e05304e3d4;
-    var_768679bea3a3d2b = var_6f3a90a6b2b8799d + var_9a6186f76e294501 + var_3cd550b17ae64a43;
-    var_8374082768ca2834 = var_6f3a90a6b2b8799d + var_9a6186f76e294501 + var_eb1154e05304e3d4;
-    var_6bd8d3846ab52bf3 = (var_b54061a455c5d876 - var_f5ab4afaccad6abd) * (1, 1, 0);
-    var_29c1906132100543 = (var_f5ab4afaccad6abd - var_768679bea3a3d2b) * (1, 1, 0);
-    var_8423818ecf85a883 = var_f5ab4afaccad6abd - mine.origin;
+    frontleft = var_6f3a90a6b2b8799d + var_582ea6264b9bea73 + var_3cd550b17ae64a43;
+    frontright = var_6f3a90a6b2b8799d + var_582ea6264b9bea73 + var_eb1154e05304e3d4;
+    backleft = var_6f3a90a6b2b8799d + var_9a6186f76e294501 + var_3cd550b17ae64a43;
+    backright = var_6f3a90a6b2b8799d + var_9a6186f76e294501 + var_eb1154e05304e3d4;
+    var_6bd8d3846ab52bf3 = (frontright - frontleft) * (1, 1, 0);
+    var_29c1906132100543 = (frontleft - backleft) * (1, 1, 0);
+    var_8423818ecf85a883 = frontleft - mine.origin;
     var_572b697257cde81e = vectordot(vectornormalize(vehicle_mines_getnormal2d(var_6bd8d3846ab52bf3)), var_8423818ecf85a883);
     if (var_572b697257cde81e > var_574564c86203493f.radius) {
         return 0;
@@ -121,9 +121,9 @@ function vehicle_mines_shouldvehicletriggermine(vehicle, mine) {
     if (var_572b697257cde81e > var_574564c86203493f.radius) {
         return 0;
     }
-    var_15701247fdeed7f1 = (var_768679bea3a3d2b - var_8374082768ca2834) * (1, 1, 0);
-    var_430a35006e71a02c = (var_8374082768ca2834 - var_b54061a455c5d876) * (1, 1, 0);
-    var_8423818ecf85a883 = var_8374082768ca2834 - mine.origin;
+    var_15701247fdeed7f1 = (backleft - backright) * (1, 1, 0);
+    var_430a35006e71a02c = (backright - frontright) * (1, 1, 0);
+    var_8423818ecf85a883 = backright - mine.origin;
     var_572b697257cde81e = vectordot(vectornormalize(vehicle_mines_getnormal2d(var_15701247fdeed7f1)), var_8423818ecf85a883);
     if (var_572b697257cde81e > var_574564c86203493f.radius) {
         return 0;

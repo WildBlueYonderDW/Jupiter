@@ -208,7 +208,7 @@ function private function_b54d1f4a457190bd() {
                     self [[ self.activity.var_999c4a8370c90a74 ]]();
                 }
                 if (!istrue(self.var_d062a6468e65034e) && var_94947ef251bf06d8 == 2) {
-                    self.var_ed9a173473282eab = 1;
+                    self.shouldreinforce = 1;
                 }
             } else if (self.nearbyplayers.size == 0 && var_94947ef251bf06d8 > 0) {
                 var_94947ef251bf06d8 = 0;

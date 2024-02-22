@@ -417,7 +417,7 @@ function tryusehelperdronefromstruct(streakinfo) {
         startang = self.angles;
         if (isdefined(mappointinfo)) {
             if (helperdronetype == "scrambler_drone_guard") {
-                killstreak_dangerNotifyPlayersInRange(self, self.team, 15000, helperdronetype, mappointinfo[0].location);
+                killstreak_dangernotifyplayersinrange(self, self.team, 15000, helperdronetype, mappointinfo[0].location);
                 var_f4ba81ddfb51eebf = mappointinfo[0].location + (0, 0, 3000);
                 helperdrone = createhelperdrone(var_f4ba81ddfb51eebf, startang, helperdronetype, streakinfo, nonvehicle, !nonvehicle);
                 if (!isdefined(helperdrone)) {
@@ -894,7 +894,7 @@ function function_cc4dd1078cf1b365(streakname) {
         var_bacc6dd14316758c = config.premoddamagefunc;
         var_7da88d9c69433487 = config.postmoddamagefunc;
         deathcallback = config.deathfunc;
-        killstreak_setupVehicleDamageFunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
+        killstreak_setupvehicledamagefunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
         namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(self, self.owner, self.owner.team);
     }
     function_cfc5e3633ef950fd(1, self.maxhealth * 0.75, &function_f6914d06b20aee20);
@@ -1357,7 +1357,7 @@ function starthelperdrone(helperdrone, var_72c27359aaac97f4) {
         helperdrone thread function_1d24e8f818e18244();
         if (issharedfuncdefined("game", "getGameType")) {
             gametype = [[ getsharedfunc("game", "getGameType") ]]();
-            if (namespace_36f464722d326bbe::isBRStyleGameType() || iscp()) {
+            if (namespace_36f464722d326bbe::isbrstylegametype() || iscp()) {
                 helperdrone thread helperdrone_watchaltitude(self);
             }
         }
@@ -1952,7 +1952,7 @@ function helperdrone_handlethermalswitchinternal() {
     var_93b54405fda960c = function_44e0bd95b98288ab();
     if (isnightmap()) {
         self.isthermalenabled = 1;
-        var_6d5a295ae3c46554 killstreak_setMainVision(var_93b54405fda960c);
+        var_6d5a295ae3c46554 killstreak_setmainvision(var_93b54405fda960c);
         var_6d5a295ae3c46554 setthermalvision(1, 12, 1000);
     }
     while (1) {
@@ -1967,7 +1967,7 @@ function helperdrone_handlethermalswitchinternal() {
             var_6d5a295ae3c46554 playlocalsound("weap_thermal_toggle_click");
         } else {
             self.isthermalenabled = 1;
-            var_6d5a295ae3c46554 killstreak_setMainVision(var_93b54405fda960c);
+            var_6d5a295ae3c46554 killstreak_setmainvision(var_93b54405fda960c);
             var_6d5a295ae3c46554 setthermalvision(1, 12, 1000);
             var_6d5a295ae3c46554 playlocalsound("weap_thermal_toggle_click");
         }
@@ -1981,12 +1981,12 @@ function helperdrone_handlethermalswitchinternal() {
 function function_6a275656141ac8d6(drone) {
     var_143ba8c547269a07 = level.helperdronesettings[drone.helperdronetype];
     if (level.mapname == "mp_hideout") {
-        killstreak_setMainVision(var_143ba8c547269a07.var_2215fa459d8250c0);
+        killstreak_setmainvision(var_143ba8c547269a07.var_2215fa459d8250c0);
     }
     if (isdefined(level.var_6d129920246627ba)) {
-        killstreak_setMainVision(level.var_6d129920246627ba);
+        killstreak_setmainvision(level.var_6d129920246627ba);
     } else {
-        killstreak_setMainVision(var_143ba8c547269a07.var_a117852275e49e64);
+        killstreak_setmainvision(var_143ba8c547269a07.var_a117852275e49e64);
     }
 }
 
@@ -2119,7 +2119,7 @@ function helperdrone_watchdamage(var_292694740d43f466) {
         }
     LOC_00000203:
         self.currenthealth = self.currenthealth - amount;
-        killstreak_updateDamageState(self.currenthealth);
+        killstreak_updatedamagestate(self.currenthealth);
         if (isplayer(attacker)) {
             if (issharedfuncdefined("damage", "updateDamageFeedback")) {
                 attacker [[ getsharedfunc("damage", "updateDamageFeedback") ]]("");
@@ -2356,7 +2356,7 @@ function function_caf721cb23374e2b(data) {
         }
     }
     self.currenthealth = self.currenthealth - damage;
-    killstreak_updateDamageState(self.currenthealth);
+    killstreak_updatedamagestate(self.currenthealth);
     return 1;
 }
 
@@ -2689,7 +2689,7 @@ function function_6edfda4764129e3(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, va
         wait(0.2);
     }
     function_608250000fbfc89a(self.helperdronetype, level.helperdronesettings[self.helperdronetype], var_4fac8b8ce36e09f1);
-    if (!namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(owner) && issharedfuncdefined("br", "superSlotCleanUp")) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype() && isdefined(owner) && issharedfuncdefined("br", "superSlotCleanUp")) {
         [[ getsharedfunc("br", "superSlotCleanUp") ]](owner);
     }
 }

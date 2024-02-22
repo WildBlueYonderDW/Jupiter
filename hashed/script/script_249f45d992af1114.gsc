@@ -86,7 +86,7 @@ function function_308ec7da3cb5926a() {
     level.helperdronesettings["assault_drone"].var_dd47aede4ad7e18a = 1;
     level.helperdronesettings["assault_drone"].var_52858f12c0ef4c03 = 1;
     level.helperdronesettings["assault_drone"].var_5c6a7212bf9fcbea = 0;
-    if (isBRStyleGameType()) {
+    if (isbrstylegametype()) {
         level.helperdronesettings["assault_drone"].diewithowner = 1;
     }
 }
@@ -205,21 +205,21 @@ function function_2445adf5d64eef6f(streakinfo) {
     }
     startpos = namespace_bba8bc8532aa4913::function_34280b807c23a453(helperdronetype);
     startangles = self.angles;
-    assaultDrone = function_37873a0b82dad887(startpos, startangles, helperdronetype, streakinfo);
-    if (!isdefined(assaultDrone)) {
+    assaultdrone = function_37873a0b82dad887(startpos, startangles, helperdronetype, streakinfo);
+    if (!isdefined(assaultdrone)) {
         _freezecontrols(0, 1, "assaultDrone");
         val::function_588f2307a3040610("assaultDrone_switch");
         val::function_588f2307a3040610("assaultDrone_deploy");
         return 0;
     }
     if (issharedfuncdefined("weapons", "_launchGrenade")) {
-        if (isBRStyleGameType()) {
-            dangericonent = self [[ getsharedfunc("weapons", "_launchGrenade") ]]("assault_drone_danger_br", assaultDrone.origin, (0, 0, 0), 100, 1);
+        if (isbrstylegametype()) {
+            dangericonent = self [[ getsharedfunc("weapons", "_launchGrenade") ]]("assault_drone_danger_br", assaultdrone.origin, (0, 0, 0), 100, 1);
         } else {
-            dangericonent = self [[ getsharedfunc("weapons", "_launchGrenade") ]]("assault_drone_danger_mp", assaultDrone.origin, (0, 0, 0), 100, 1);
+            dangericonent = self [[ getsharedfunc("weapons", "_launchGrenade") ]]("assault_drone_danger_mp", assaultdrone.origin, (0, 0, 0), 100, 1);
         }
-        dangericonent linkto(assaultDrone);
-        assaultDrone.dangericonent = dangericonent;
+        dangericonent linkto(assaultdrone);
+        assaultdrone.dangericonent = dangericonent;
     }
     thread namespace_bba8bc8532aa4913::helperdrone_giveplayerfauxremote(streakinfo);
     if (issharedfuncdefined("killstreak", "killstreakUse")) {
@@ -227,19 +227,19 @@ function function_2445adf5d64eef6f(streakinfo) {
     }
     if (issharedfuncdefined("game", "isBRStyleGameType")) {
         if ([[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
-            assaultDrone vehicleshowonminimap(0);
+            assaultdrone vehicleshowonminimap(0);
         }
     }
     namespace_9abe40d2af041eb2::playkillstreakusedialog(streakinfo.streakname);
-    assaultDrone namespace_bba8bc8532aa4913::helperdrone_notifyenemyplayersinrange(streakinfo.streakname);
+    assaultdrone namespace_bba8bc8532aa4913::helperdrone_notifyenemyplayersinrange(streakinfo.streakname);
     _freezecontrols(0, 1, "assaultDrone");
     namespace_bba8bc8532aa4913::function_c3786c4fba09c2f2(streakinfo);
     var_4c4c52e5183669b3 = getdvarint(@"hash_fdc42aba096a2344", 3);
-    thread namespace_bba8bc8532aa4913::starthelperdrone(assaultDrone, var_4c4c52e5183669b3);
+    thread namespace_bba8bc8532aa4913::starthelperdrone(assaultdrone, var_4c4c52e5183669b3);
     self notify("assault_drone_deployed");
     thread playkillstreakoperatordialog(streakinfo.streakname, streakinfo.streakname + "_use", 1, var_52a5be2e2f91d710);
     if (issharedfuncdefined("killstreak", "enableDroneTracking")) {
-        self thread [[ getsharedfunc("killstreak", "enableDroneTracking") ]](assaultDrone);
+        self thread [[ getsharedfunc("killstreak", "enableDroneTracking") ]](assaultdrone);
     }
     return 1;
 }
@@ -249,8 +249,8 @@ function function_2445adf5d64eef6f(streakinfo) {
 // Checksum 0x0, Offset: 0x1313
 // Size: 0xe1
 function function_37873a0b82dad887(startpos, startang, helperdronetype, streakinfo) {
-    assaultDrone = namespace_bba8bc8532aa4913::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
-    if (!isdefined(assaultDrone)) {
+    assaultdrone = namespace_bba8bc8532aa4913::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
+    if (!isdefined(assaultdrone)) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NOT_ENOUGH_SPACE");
         }
@@ -262,11 +262,11 @@ function function_37873a0b82dad887(startpos, startang, helperdronetype, streakin
         namespace_bba8bc8532aa4913::function_c3786c4fba09c2f2(streakinfo);
         return undefined;
     }
-    assaultDrone.owner.var_3efdaabc0f66846d = 0;
+    assaultdrone.owner.var_3efdaabc0f66846d = 0;
     if (isdefined(level.var_b67b5f9dfe488c2f)) {
         thread [[ level.var_b67b5f9dfe488c2f ]](streakinfo);
     }
-    return assaultDrone;
+    return assaultdrone;
 }
 
 // Namespace assault_drone/namespace_8a82a4967e25efd4
@@ -511,7 +511,7 @@ function function_a4cfbe3f567af798(player, var_ffb805976f3f5f9a) {
     if (isdefined(level.var_f56a88761038798b)) {
         thread [[ level.var_f56a88761038798b ]](self.streakinfo);
     }
-    player killstreak_setMainVision("");
+    player killstreak_setmainvision("");
     if (istrue(self.isthermalenabled)) {
         player setthermalvision(0);
     }

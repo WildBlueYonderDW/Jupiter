@@ -141,7 +141,7 @@ function private function_bda88f27a0337eaa(animstruct, player, var_e45f1cd8436c9
     if (function_ff03e352a5746185()) {
         if (!istrue(var_e45f1cd8436c9aa9)) {
             player cameraunlink();
-            player function_33010a90bcf48db4(self.var_2336099a20080602.var_437b6bb41d98df26, 0, animstruct.var_11bfcab16008015e, animstruct.var_f7c301a9de8d90f4);
+            player playxcam(self.var_2336099a20080602.var_437b6bb41d98df26, 0, animstruct.var_11bfcab16008015e, animstruct.var_f7c301a9de8d90f4);
         }
     } else {
         player function_8ff8fd7841f6eba2();

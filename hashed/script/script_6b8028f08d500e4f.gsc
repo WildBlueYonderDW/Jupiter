@@ -167,26 +167,26 @@ function function_a8beffa3938460d1(eventtype) {
         }
     }
     level.var_7576c890644a91ad.var_adad42d080519e95 = var_adad42d080519e95;
-    var_8b21f0adb95d7a61 = "";
+    event_ref = "";
     switch (eventtype) {
     case 1:
-        var_8b21f0adb95d7a61 = "plunder";
+        event_ref = "plunder";
         level callback::add("plunder_pickup", &function_1db6f2da4e798b82);
         break;
     case 3:
-        var_8b21f0adb95d7a61 = "damage";
+        event_ref = "damage";
         level callback::add("player_damaged", &on_player_damaged);
         break;
     case 2:
-        var_8b21f0adb95d7a61 = "kills";
+        event_ref = "kills";
         level callback::add("player_death", &on_player_killed);
         break;
     case 4:
-        var_8b21f0adb95d7a61 = "loot";
+        event_ref = "loot";
         level callback::add("cache_opened", &function_82dd024933a0589b);
         break;
     case 5:
-        var_8b21f0adb95d7a61 = "powerups";
+        event_ref = "powerups";
         level callback::add(#"hash_1ec8b300d7a86b43", &function_2d1d43c029c51bbf);
         break;
     }
@@ -205,7 +205,7 @@ function function_a8beffa3938460d1(eventtype) {
     }
     function_f6f98d0b64ac42b4();
     setomnvarforallclients("ui_br_roguesignal_active", eventtype);
-    namespace_882ad5502d1eedd6::showsplashtoall("br_pe_roguesignal_start_" + var_8b21f0adb95d7a61, "splash_list_br_pe_roguesignal");
+    namespace_882ad5502d1eedd6::showsplashtoall("br_pe_roguesignal_start_" + event_ref, "splash_list_br_pe_roguesignal");
     timer = gettime() + level.var_7576c890644a91ad.var_ac3cb3756c750e63 * 1000;
     setomnvar("ui_minimap_pulse", 1);
     setomnvar("ui_publicevent_timer_type", 14);
@@ -294,7 +294,7 @@ function function_c32ed6d14f08bd09() {
     }
     foreach (idx, team in winners) {
         foreach (player in teams::getteamdata(team, "players")) {
-            player points::doScoreEvent(#"br_pe_roguesignal_success");
+            player points::doscoreevent(#"br_pe_roguesignal_success");
             player br_plunder::playerplunderpickup(level.var_7576c890644a91ad.var_920fe5b859fcf7ac * (3 - idx), undefined, undefined, 1);
         }
     }

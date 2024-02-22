@@ -48,7 +48,7 @@ function function_7b988e1bb56ca747(grenade) {
     grenade setscriptablepartstate("visibility", "show", 0);
     stuckto = grenade waittill("missile_stuck");
     if (isdefined(stuckto) && stuckto vehicle::isvehicle()) {
-        grenade.var_37a6165d55074798 = 1;
+        grenade.vehicle_stuck = 1;
     }
     if (isdefined(level.var_ca4e08767cbdae12)) {
         var_425925a45729deae = grenade [[ level.var_ca4e08767cbdae12 ]]();

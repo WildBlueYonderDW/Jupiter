@@ -795,7 +795,7 @@ function function_d037c4085e209ab2(var_b381b0883bcd4847) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dc9
 // Size: 0x1ae
-function function_fdbb9c9eed1c0159(StringReference, var_d3eca865f6bf6555, var_7a9374539cd2a477, priority) {
+function function_fdbb9c9eed1c0159(stringreference, var_d3eca865f6bf6555, var_7a9374539cd2a477, priority) {
     var_d3eca865f6bf6555 = function_53c4c53197386572(var_d3eca865f6bf6555, "StringMessagingUtil_Splash");
     var_7a9374539cd2a477 = function_53c4c53197386572(var_7a9374539cd2a477, "Title");
     priority = function_53c4c53197386572(priority, "Medium");
@@ -805,7 +805,7 @@ function function_fdbb9c9eed1c0159(StringReference, var_d3eca865f6bf6555, var_7a
     broadcast.var_ec75cb30b9c76451.var_cf0d4d8cc5ac99a4.priority = priority;
     var_4ed40899ed266f0f = spawnstruct();
     var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4 = spawnstruct();
-    var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.StringReference = StringReference;
+    var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.stringreference = stringreference;
     var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.var_ac904ebee2e01117 = [];
     var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.var_ac904ebee2e01117[0] = spawnstruct();
     var_4ed40899ed266f0f.var_cf0d4d8cc5ac99a4.var_ac904ebee2e01117[0].var_cf0d4d8cc5ac99a4 = spawnstruct();

@@ -66,7 +66,7 @@ function function_31afe9d7b373900f() {
     self endon("death_or_disconnect");
     var_19163e14365d9264 = namespace_85d036cb78063c4a::getcurrentsuper();
     namespace_85d036cb78063c4a::setsuperisinuse(1);
-    namespace_85d036cb78063c4a::setSuperIsActive(1);
+    namespace_85d036cb78063c4a::setsuperisactive(1);
     namespace_85d036cb78063c4a::function_a4496878854ae85b(var_19163e14365d9264.staticdata.useweapon, undefined, 100);
     namespace_cb965d2f71fefddc::resetsuper();
 }
@@ -107,7 +107,7 @@ function function_a35fff2ff233592a() {
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x426
 // Size: 0xa9
-function private super_stimPistol_watchHits() {
+function private super_stimpistol_watchhits() {
     self notify("super_stimPistol_watchHits");
     self endon("super_stimPistol_watchHits");
     self endon("death_or_disconnect");
@@ -139,7 +139,7 @@ function private function_40bcb765cc81e05f(var_de6d964ca3fb3603) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x522
 // Size: 0x9a
-function private super_stimPistol_tagEntAsHit(var_df0969d1fc3f7545) {
+function private super_stimpistol_tagentashit(var_df0969d1fc3f7545) {
     self endon("death_or_disconnect");
     level endon("game_ended");
     self notify("super_stimPistol_tagEntAsHit");
@@ -168,7 +168,7 @@ function private function_b66f1712709e29e1(var_9e2ce04b5ad662f7, var_bd37b214227
     if (!isplayer(var_9e2ce04b5ad662f7) || !isbot(var_9e2ce04b5ad662f7)) {
         return;
     }
-    if (!istrue(var_9e2ce04b5ad662f7.inlaststand) && !istrue(var_9e2ce04b5ad662f7.liveRagdoll)) {
+    if (!istrue(var_9e2ce04b5ad662f7.inlaststand) && !istrue(var_9e2ce04b5ad662f7.liveragdoll)) {
         return;
     }
     if (var_bd37b214227476ca == 1) {
@@ -238,7 +238,7 @@ function private function_8a99cebbc265563e(hitent, impactpos, weapon) {
             return 0;
         }
     }
-    hitent thread super_stimPistol_tagEntAsHit(self);
+    hitent thread super_stimpistol_tagentashit(self);
     var_de6d964ca3fb3603 = function_4bdcd177675c91ba(hitent);
     if (istrue(level.var_d6a1a4d7b320f72b)) {
         if (isdefined(var_de6d964ca3fb3603.revivee) && function_40bcb765cc81e05f(var_de6d964ca3fb3603) && isinlaststand(var_de6d964ca3fb3603.revivee)) {
@@ -257,7 +257,7 @@ function private function_8a99cebbc265563e(hitent, impactpos, weapon) {
             namespace_aad14af462a74d08::function_d997435895422ecc("super_stimpistol", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"hit"));
             function_b66f1712709e29e1(hitent, 2);
         }
-        thread super_stimPistol_startCyberRevive_retryThread(hitent);
+        thread super_stimpistol_startcyberrevive_retrythread(hitent);
     }
 }
 
@@ -274,7 +274,7 @@ function function_466eb9801a8f5a59(var_de6d964ca3fb3603) {
     var_de6d964ca3fb3603.reviver.var_383e041e3e341315 = 1;
     var_de6d964ca3fb3603.var_516a933930eb2c27 notify("trigger", var_de6d964ca3fb3603.reviver);
     if (isdefined(var_de6d964ca3fb3603.revivee) && var_de6d964ca3fb3603.revivee.team == var_de6d964ca3fb3603.reviver.team) {
-        namespace_a850435086c88de3::doOnActionScoreEvent(1, "superStimHeal");
+        namespace_a850435086c88de3::doonactionscoreevent(1, "superStimHeal");
     }
     namespace_8361bad7391de074::function_c0a3853f9497fad3(var_de6d964ca3fb3603);
 }
@@ -294,7 +294,7 @@ function function_ada94a4d4deecf34(var_de6d964ca3fb3603) {
     }
     namespace_7db13bdf599e41a6::function_301c4ec489f9bd39(var_de6d964ca3fb3603.var_ff06b80996e03e04, namespace_7db13bdf599e41a6::function_692cdf5f87a8667b(), undefined, var_de6d964ca3fb3603.reviver, undefined, undefined);
     if (isdefined(var_de6d964ca3fb3603.revivee) && var_de6d964ca3fb3603.revivee.team == var_de6d964ca3fb3603.reviver.team) {
-        namespace_a850435086c88de3::doOnActionScoreEvent(1, "superStimHeal");
+        namespace_a850435086c88de3::doonactionscoreevent(1, "superStimHeal");
     }
 }
 
@@ -302,17 +302,17 @@ function function_ada94a4d4deecf34(var_de6d964ca3fb3603) {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb4f
 // Size: 0xc1
-function private super_stimPistol_startCyberRevive_retryThread(hitent) {
+function private super_stimpistol_startcyberrevive_retrythread(hitent) {
     hitent notify("super_stimPistol_startCyberRevive_retryThread");
     hitent endon("super_stimPistol_startCyberRevive_retryThread");
     hitent endon("last_stand_start");
     hitent endon("death_or_disconnect");
     var_de6d964ca3fb3603 = function_4bdcd177675c91ba(hitent);
     retrycount = 0;
-    while (!function_ce78face7e6da5de(var_de6d964ca3fb3603) && istrue(hitent.liveRagdoll) && namespace_cd0b2d039510b38d::isteamreviveenabled()) {
+    while (!function_ce78face7e6da5de(var_de6d964ca3fb3603) && istrue(hitent.liveragdoll) && namespace_cd0b2d039510b38d::isteamreviveenabled()) {
         retrycount++;
         wait(1);
-        hitent namespace_833bd5cc623ca701::super_stimPistol_tagEntAsHit(self);
+        hitent namespace_833bd5cc623ca701::super_stimpistol_tagentashit(self);
         if (function_ce78face7e6da5de(var_de6d964ca3fb3603)) {
             namespace_833bd5cc623ca701::function_ada94a4d4deecf34(var_de6d964ca3fb3603);
             namespace_aad14af462a74d08::function_d997435895422ecc("super_stimpistol", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"hit"));
@@ -329,7 +329,7 @@ function private super_stimPistol_startCyberRevive_retryThread(hitent) {
 // Checksum 0x0, Offset: 0xc17
 // Size: 0x33
 function private function_fa06085052105f5c() {
-    out = ter_op(isdefined(level.teamReviveTime), level.teamReviveTime, 5);
+    out = ter_op(isdefined(level.teamrevivetime), level.teamrevivetime, 5);
     return ter_op(isdefined(out), out, undefined);
 }
 
@@ -347,7 +347,7 @@ function private function_44c1a12f54ec6a4f() {
 // Checksum 0x0, Offset: 0xc78
 // Size: 0x39
 function function_321c7891711e583f() {
-    thread super_stimPistol_watchHits();
+    thread super_stimpistol_watchhits();
     function_ad32396bd89936bb(0);
     namespace_aad14af462a74d08::function_d997435895422ecc("super_stimpistol", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
     return 1;

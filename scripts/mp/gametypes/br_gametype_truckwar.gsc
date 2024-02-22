@@ -342,7 +342,7 @@ function brtruck_playerwelcomesplashes(data) {
     }
     thread function_9f5606e3bd1c508d("match_start", [0:self]);
     thread function_9f5606e3bd1c508d("primary_objective", [0:self], var_1499e7c2d69e0074);
-    namespace_d696adde758cbe79::showDMZSplash("truckwar_welcome", [0:self]);
+    namespace_d696adde758cbe79::showdmzsplash("truckwar_welcome", [0:self]);
     while (!self isonground()) {
         waitframe();
     }
@@ -855,7 +855,7 @@ function function_3e5a0635a240ede5(vehicle, team) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x42a0
 // Size: 0x67
-function blockHealing(team) {
+function blockhealing(team) {
     self endon("death");
     self notify("blockHealing");
     self endon("blockHealing");
@@ -981,9 +981,9 @@ function function_bc2cb59695039e19(team) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4799
 // Size: 0x241
-function gettruckspawns(vehicleRef) {
+function gettruckspawns(vehicleref) {
     if (level.mapname != "mp_br_mechanics" && getdvarint(@"hash_692b4b274d3b7bdc", 0) == 0) {
-        spawns = getpresettruckspawns(vehicleRef);
+        spawns = getpresettruckspawns(vehicleref);
         if (isdefined(spawns) && spawns.size > 0) {
             return spawns;
         }
@@ -1017,7 +1017,7 @@ function gettruckspawns(vehicleRef) {
         vehicle.origin = origin;
         var_7224bacab3f8ee26 = (0, 0, 0);
         vehicle.angles = vectortoangles(forward * -1);
-        vehicle.targetname = vehicleRef;
+        vehicle.targetname = vehicleref;
         spawns[spawns.size] = vehicle;
     }
     return spawns;
@@ -1027,7 +1027,7 @@ function gettruckspawns(vehicleRef) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49e2
 // Size: 0x1a4
-function getpresettruckspawns(vehicleRef) {
+function getpresettruckspawns(vehicleref) {
     var_a36aa7ae98da9c1f = [];
     var_a36aa7ae98da9c1f = getstructarray("mp_truckwar_team_start_spawn", "targetname");
     if (var_a36aa7ae98da9c1f.size == 0) {
@@ -1052,7 +1052,7 @@ function getpresettruckspawns(vehicleRef) {
         vehicle = spawnstruct();
         vehicle.origin = var_a36aa7ae98da9c1f[i].origin;
         vehicle.angles = var_a36aa7ae98da9c1f[i].angles;
-        vehicle.targetname = vehicleRef;
+        vehicle.targetname = vehicleref;
         spawns[spawns.size] = vehicle;
     }
     return spawns;
@@ -1062,7 +1062,7 @@ function getpresettruckspawns(vehicleRef) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b8e
 // Size: 0x10b
-function gethelispawns(vehicleRef) {
+function gethelispawns(vehicleref) {
     spawns = [];
     var_eb62fad9344bda2 = 3;
     var_c0fd4e75a105deae = 360 / var_eb62fad9344bda2;
@@ -1076,7 +1076,7 @@ function gethelispawns(vehicleRef) {
         vehicle.origin = origin;
         var_7224bacab3f8ee26 = (0, 0, 0);
         vehicle.angles = vectortoangles(forward * -1);
-        vehicle.targetname = vehicleRef;
+        vehicle.targetname = vehicleref;
         spawns[spawns.size] = vehicle;
     }
     return spawns;
@@ -1862,7 +1862,7 @@ function parachute_detach_sfx(parachute) {
 // Checksum 0x0, Offset: 0x704f
 // Size: 0x2d
 function showsplashtoteam(team, splashname) {
-    namespace_d696adde758cbe79::showDMZSplash(splashname, level.teamdata[team]["players"]);
+    namespace_d696adde758cbe79::showdmzsplash(splashname, level.teamdata[team]["players"]);
 }
 
 // Namespace namespace_7164d2949dc2f2a/namespace_ea497db8cab34561
@@ -2312,7 +2312,7 @@ function function_8d947898c35b8068() {
     while (1) {
         level waittill("br_circle_set");
         if (level.br_circle.circleindex == var_5cb3866995416341) {
-            namespace_d696adde758cbe79::showDMZSplash("truckwar_spawn_disabled", level.players);
+            namespace_d696adde758cbe79::showdmzsplash("truckwar_spawn_disabled", level.players);
             thread function_9f5606e3bd1c508d("vehicle_spawn_over", level.players);
             level.var_24380db31e302a78 = 1;
             setomnvar("ui_gulag_timer", 0);

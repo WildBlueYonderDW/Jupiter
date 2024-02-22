@@ -40,7 +40,7 @@ function function_e0844a2b7f904b14(bot) {
                 goto LOC_00000325;
             }
         #/
-        if (event.owner namespace_95d8d8ec67e3e074::function_6ecc7cd453466014()) {
+        if (event.owner namespace_95d8d8ec67e3e074::isuibot()) {
             continue;
         }
         if (bot botcanseeentity(event.owner)) {
@@ -111,7 +111,7 @@ function function_35671b7b1a04bf58(bot) {
         return;
     } else if (result == "bad_path") {
         /#
-            println("<unknown string>" + self.var_a0185a724941f02f.name + "<unknown string>" + targetpos + "<unknown string>" + bot.origin);
+            println("<unknown string>" + self.decision.name + "<unknown string>" + targetpos + "<unknown string>" + bot.origin);
         #/
         return result;
     }

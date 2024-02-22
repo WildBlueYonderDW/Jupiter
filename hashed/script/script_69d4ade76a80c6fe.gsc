@@ -163,10 +163,10 @@ function function_a71f7b8d9c21d2ae(targets) {
         target.ent.var_28057245507f5b4e = 1;
         target.outlineid = namespace_cbd3754a0c69cc63::outlineenableforteam(target.ent, self.team, "spycam", "equipment");
         if (target.var_74cdc35ffa60e7f5) {
-            self.owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_dc7164f56f09735");
+            self.owner thread namespace_48a08c5037514e04::doscoreevent(#"hash_dc7164f56f09735");
             target.ent thread function_2eb2d3583b7c4407(var_f7f98e87323ea94f, self.owner);
         } else {
-            self.owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_1c18ff436ea31cd5");
+            self.owner thread namespace_48a08c5037514e04::doscoreevent(#"hash_1c18ff436ea31cd5");
             target.ent thread function_2a37dbf39464630c(var_f7f98e87323ea94f, self.owner);
         }
         target.ent thread function_9d4d2d7da0db21f3(var_f7f98e87323ea94f);
@@ -212,7 +212,7 @@ function function_2eb2d3583b7c4407(duration, owner) {
     thread function_ecb52768dc9c454();
     self waittill("death");
     if (namespace_f8065cafc523dba5::playersareenemies(self, owner)) {
-        owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_cbe9f73b6b0cfe11");
+        owner thread namespace_48a08c5037514e04::doscoreevent(#"hash_cbe9f73b6b0cfe11");
     }
     self notify("spycam_debuff_killed");
 }
@@ -241,7 +241,7 @@ function function_2a37dbf39464630c(duration, owner) {
     self endon("spycam_debuff_expired");
     attacker = self waittill("enemy_destroyed_equipment");
     if (isdefined(attacker) && isdefined(attacker.team) && attacker.team == owner.team) {
-        owner thread namespace_48a08c5037514e04::doScoreEvent(#"hash_f0b95bafe4e2d9f0");
+        owner thread namespace_48a08c5037514e04::doscoreevent(#"hash_f0b95bafe4e2d9f0");
     }
     self notify("spycam_debuff_killed");
 }

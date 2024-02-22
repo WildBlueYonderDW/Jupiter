@@ -200,14 +200,14 @@ function function_c523b31dd9dc82d0() {
     if (isdefined(level.br_level) && isdefined(level.br_level.br_circlecenters)) {
         time = var_4df1e1a017254690;
         var_209967c144016964 = level.br_level.br_circleradii.size;
-        multiCircleCount = namespace_bbc79db4c3949a5c::function_d987886bb9de9137();
-        _branalytics_addevent("multiCircleCount", (0, 0, 0), multiCircleCount);
+        multicirclecount = namespace_bbc79db4c3949a5c::function_d987886bb9de9137();
+        _branalytics_addevent("multiCircleCount", (0, 0, 0), multicirclecount);
         for (circleindex = 0; circleindex < var_209967c144016964 - 1; circleindex++) {
             radius = level.br_level.br_circleradii[circleindex];
             timedelay = level.br_level.br_circledelaytimes[circleindex] * 1000;
             var_3d8565e2775a243c = level.br_level.br_circleclosetimes[circleindex] * 1000;
-            if (multiCircleCount > 0) {
-                for (i = 0; i < multiCircleCount; i++) {
+            if (multicirclecount > 0) {
+                for (i = 0; i < multicirclecount; i++) {
                     var_dfa00ce7873df6dd = time;
                     origin = level.br_multi_circle.circles[i].var_8ae269616d09dfc5[circleindex];
                     function_bb96ecd805545b2e("circle" + string(i), origin, int(radius), int(var_dfa00ce7873df6dd), "start", var_dfee9dad130c9312 - i);
@@ -418,7 +418,7 @@ function branalytics_seteventdelayedstate(type, ent, state) {
 // Checksum 0x0, Offset: 0x30ca
 // Size: 0x10
 function branalytics_validation() {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return 0;
     }
     return 1;
@@ -1505,7 +1505,7 @@ function branalytics_bonusxp_debugdata(xp, reason) {
 // Checksum 0x0, Offset: 0x587e
 // Size: 0x58
 function branalytics_vehiclespawned(vehicle, refname) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     if (!branalytics_validation()) {
@@ -1925,7 +1925,7 @@ function branalytics_teameliminated(team, teamplacement) {
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x67b6
 // Size: 0x71
-function function_cb3b3cbf2d1ac3f3(var_5746d9f038b58234, weaponXP, lifeindex, weaponname, player, type) {
+function function_cb3b3cbf2d1ac3f3(var_5746d9f038b58234, weaponxp, lifeindex, weaponname, player, type) {
     if (!branalytics_validation()) {
         return;
     }
@@ -1933,7 +1933,7 @@ function function_cb3b3cbf2d1ac3f3(var_5746d9f038b58234, weaponXP, lifeindex, we
     /#
         var_b4de36cb26159194 = var_b4de36cb26159194 + "end_reason" + function_3c8848a3a11b2553(type);
     #/
-    _branalytics_addevent(var_b4de36cb26159194, (var_5746d9f038b58234, weaponXP, 0), lifeindex, weaponname, player);
+    _branalytics_addevent(var_b4de36cb26159194, (var_5746d9f038b58234, weaponxp, 0), lifeindex, weaponname, player);
 }
 
 // Namespace namespace_9cb8bb5897c3d5b2/namespace_a011fbf6d93f25e5
@@ -2438,7 +2438,7 @@ function function_97ec7995c587bf25() {
     level.var_d127a6a056d31d74 = &function_16a3f35cbab3325a;
     level.var_18889818bace4953 = &function_99571774beb8163b;
     if (namespace_76a219af07c28c13::function_6934349b7823d888()) {
-        namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_d584faafa7c6c60c);
+        namespace_76a219af07c28c13::registerteamassimilatecallback(&function_d584faafa7c6c60c);
     }
     thread function_c116ff94ef26d3b0();
 }
@@ -2688,9 +2688,9 @@ function function_179b94929cc4c682(ent, attacker) {
     if (!isdefined(ent)) {
         return;
     }
-    agentStruct = namespace_14d36171baccf528::agentPers_getAgentPersData(ent, "agentStruct");
-    if (isdefined(agentStruct)) {
-        fortress = agentStruct.fortress;
+    agentstruct = namespace_14d36171baccf528::agentpers_getagentpersdata(ent, "agentStruct");
+    if (isdefined(agentstruct)) {
+        fortress = agentstruct.fortress;
         if (isdefined(fortress)) {
             if (!isdefined(fortress.agentskilled)) {
                 fortress.agentskilled = 0;
@@ -3021,8 +3021,8 @@ function function_df74213f854433f9() {
     var_ab822267aa74c573 = 0;
     var_ea7accbb6edc9b55 = istrue(self.var_ea7accbb6edc9b55);
     unlocked = istrue(self.var_933f9685674999fb) && istrue(self.unlocked);
-    if (isdefined(self.poiName)) {
-        poi = self.poiName;
+    if (isdefined(self.poiname)) {
+        poi = self.poiname;
     }
     if (isdefined(self.name)) {
         var_4cc263f13d4416b1 = string(self.name);

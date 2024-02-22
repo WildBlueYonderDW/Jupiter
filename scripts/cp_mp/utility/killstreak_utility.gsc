@@ -86,7 +86,7 @@ function function_cfc5e3633ef950fd(damagestate, damageamount, var_d3cbdf6df967d5
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1127
 // Size: 0x14b
-function killstreak_updateDamageState(currenthealth) {
+function killstreak_updatedamagestate(currenthealth) {
     damagestate = undefined;
     var_9ae1415763bd6518 = undefined;
     var_149dfe048badbf65 = undefined;
@@ -165,7 +165,7 @@ function getkillstreaklifeid(streakname) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13aa
 // Size: 0x98
-function killstreak_setMainVision(visionsetname) {
+function killstreak_setmainvision(visionsetname) {
     if (visionsetname == "") {
         self visionsetthermalforplayer("");
         self visionsetkillstreakforplayer("");
@@ -187,7 +187,7 @@ function killstreak_setMainVision(visionsetname) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1449
 // Size: 0xbb
-function killstreak_setSubVision(var_91aaff4f33c3af2f) {
+function killstreak_setsubvision(var_91aaff4f33c3af2f) {
     self endon("disconnect");
     self notify("playing_killstreak_subvision");
     self endon("playing_killstreak_subvision");
@@ -390,7 +390,7 @@ function function_708853c5d755f72() {
     if (isdefined(level.var_1a2b600a06ec21f4)) {
         bundlename = level.var_1a2b600a06ec21f4.var_386a08793af08e6c;
         if (isstring(bundlename)) {
-            bundle = function_2ef675c13ca1c4af(%"hash_1cd2b51855988c32", bundlename);
+            bundle = function_2ef675c13ca1c4af(%"killstreaklist:", bundlename);
         }
     }
     if (!isdefined(bundle)) {
@@ -591,7 +591,7 @@ function function_c914f562171b9817() {
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e82
 // Size: 0x11a
-function killstreak_setupVehicleDamageFunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback) {
+function killstreak_setupvehicledamagefunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback) {
     if (isdefined(var_8dfc256103cce53e)) {
         [[ var_8dfc256103cce53e ]](streakname);
     }
@@ -675,7 +675,7 @@ function function_5a9772411551e56e(streakname, var_be776ca84bc2eb95) {
     }
     if (isplayer(ent)) {
         var_da8cec9bce12f9cb = ent.pers["team"];
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "brGetOperatorTeam")) {
                 var_da8cec9bce12f9cb = [[ namespace_3c37cb17ade254d::getsharedfunc("game", "brGetOperatorTeam") ]](ent);
             }
@@ -736,7 +736,7 @@ function playkillstreakoperatordialog(streakname, dialog, var_db68eeda63af9504, 
         }
         if (!isdefined(var_8e40f8e8dcc635a6.currentkillstreakopvo) || istrue(var_db68eeda63af9504)) {
             var_da8cec9bce12f9cb = var_8e40f8e8dcc635a6.pers["team"];
-            if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+            if (namespace_36f464722d326bbe::isbrstylegametype()) {
                 if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "brGetOperatorTeam")) {
                     var_da8cec9bce12f9cb = [[ namespace_3c37cb17ade254d::getsharedfunc("game", "brGetOperatorTeam") ]](var_8e40f8e8dcc635a6);
                 }
@@ -893,7 +893,7 @@ function function_8959c1606f65e65(streakname, dialog) {
             return;
         }
         var_da8cec9bce12f9cb = var_33bd3e1da831f24b.pers["team"];
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "brGetOperatorTeam")) {
                 var_da8cec9bce12f9cb = [[ namespace_3c37cb17ade254d::getsharedfunc("game", "brGetOperatorTeam") ]](var_33bd3e1da831f24b);
             }
@@ -1001,7 +1001,7 @@ function playkillstreakusedialog(streakname) {
         var_53934037d8efc459 = canplaykillstreakdialog(streakname);
         if (istrue(var_cd8547bf474ab0c4)) {
             if (istrue(level.var_e1e56c150c2dbc72)) {
-                var_fb21d338e5d7b128 = var_8e40f8e8dcc635a6 namespace_ca7b90256548aa40::function_5a009fe17f688c92(undefined, 1);
+                var_fb21d338e5d7b128 = var_8e40f8e8dcc635a6 namespace_ca7b90256548aa40::getsquadmembers(undefined, 1);
             } else if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "getTeamData")) {
                 var_fb21d338e5d7b128 = [[ namespace_3c37cb17ade254d::getsharedfunc("game", "getTeamData") ]](var_18f54c6ea626767c, "players");
             }
@@ -1046,7 +1046,7 @@ function playkillstreakusedialog(streakname) {
 // Size: 0x1c1
 function canplaykillstreakdialog(streakname, friendly) {
     var_bff1e3c9ba212857 = 1;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (istrue(friendly)) {
             switch (streakname) {
             case #"hash_4d35eb58f9d545f0":
@@ -1129,7 +1129,7 @@ function function_ac7849e6c5020da0(streakname) {
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x305e
 // Size: 0x323
-function killstreak_dangerNotifyPlayersInRange(owner, ownerteam, range, streakname, location) {
+function killstreak_dangernotifyplayersinrange(owner, ownerteam, range, streakname, location) {
     if (!isdefined(streakname)) {
         return;
     }
@@ -1148,7 +1148,7 @@ function killstreak_dangerNotifyPlayersInRange(owner, ownerteam, range, streakna
     if (streakname == "uav" || streakname == "directional_uav") {
         var_6e7b34fc3e0f199 = 1;
     }
-    var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isbrstylegametype();
     if (var_d937d9fbfeed2e24 && (streakname == "uav" || streakname == "directional_uav")) {
         var_494960b847d2b593 = [];
         if (!isdefined(location)) {
@@ -1204,7 +1204,7 @@ function function_266521b0b26cc543(owner, player, streakname) {
 // Size: 0x10e
 function private function_7813d0917a42fb04(streakname) {
     var_817c84503edead03 = 0;
-    var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isbrstylegametype();
     var_490dc70d342b04a2 = namespace_36f464722d326bbe::function_22cd3d64fdb05892();
     if (var_d937d9fbfeed2e24) {
         switch (streakname) {
@@ -1240,7 +1240,7 @@ function private function_7813d0917a42fb04(streakname) {
 // Checksum 0x0, Offset: 0x34f9
 // Size: 0x68
 function private function_7abec5ff1c445e2b(player, streakname) {
-    var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isBRStyleGameType();
+    var_d937d9fbfeed2e24 = namespace_36f464722d326bbe::isbrstylegametype();
     if (var_d937d9fbfeed2e24 || function_ac7849e6c5020da0(streakname)) {
         if (issharedfuncdefined("killstreak", "dangerNotifyPlayer")) {
             [[ getsharedfunc("killstreak", "dangerNotifyPlayer") ]](player, streakname);
@@ -2239,39 +2239,39 @@ function isuavactiveforteam(team) {
 // Checksum 0x0, Offset: 0x56ca
 // Size: 0x213
 function getkillstreakdeployweapon(streakname) {
-    var_8881166e57766e3a = undefined;
+    deployweapon = undefined;
     switch (streakname) {
     case #"hash_2289ec11d77bce8f":
     case #"hash_56979e0566996b2e":
     case #"hash_887ad77192b9c4fb":
-        var_8881166e57766e3a = "deploy_airdrop_mp";
+        deployweapon = "deploy_airdrop_mp";
         break;
     case #"hash_4ad475e6e15635bd":
     case #"hash_e65b15f734e5ab84":
-        var_8881166e57766e3a = "deploy_juggernaut_mp";
+        deployweapon = "deploy_juggernaut_mp";
         break;
     case #"hash_9e36e3bd3a9dd00d":
         if (utility::iscp()) {
-            var_8881166e57766e3a = "ks_assault_drone_cp";
+            deployweapon = "ks_assault_drone_cp";
             break;
         }
-        var_8881166e57766e3a = "ks_assault_drone_mp";
+        deployweapon = "ks_assault_drone_mp";
         break;
     case #"hash_691f39dddd9116b8":
     case #"hash_e477c24ee18bb2f6":
     case #"hash_f64c697bfb4c6b54":
-        var_8881166e57766e3a = "ks_gesture_generic_mp";
+        deployweapon = "ks_gesture_generic_mp";
         break;
     case #"hash_27002778019fb447":
     case #"hash_634b246c3da5c56f":
     case #"hash_e171e5b86ef0a4cc":
-        var_8881166e57766e3a = "ks_gesture_phone_mp";
+        deployweapon = "ks_gesture_phone_mp";
         break;
     case #"hash_b4ac3581c343a029":
-        var_8881166e57766e3a = "iw9_laser_large_ir_mp";
+        deployweapon = "iw9_laser_large_ir_mp";
         break;
     case #"hash_8c766d6477287bb6":
-        var_8881166e57766e3a = "iw9_spotter_scope_mp";
+        deployweapon = "iw9_spotter_scope_mp";
         break;
     case #"hash_28d0236400e33fd0":
     case #"hash_349713b5ad494dda":
@@ -2279,29 +2279,29 @@ function getkillstreakdeployweapon(streakname) {
     case #"hash_6362d6aae3e5a62e":
     case #"hash_cf0ef5bef19a311b":
     case #"hash_ed469a6bfff6b265":
-        var_8881166e57766e3a = "ks_remote_device_mp";
+        deployweapon = "ks_remote_device_mp";
         break;
     case #"hash_bf2f9adbd2b41d5":
     case #"hash_4220be38a5f150b8":
     case #"hash_a1031216158c7882":
     case #"hash_b161e185f1b8e117":
     case #"hash_e6bea339d3cbd3e8":
-        var_8881166e57766e3a = "ks_remote_map_mp";
+        deployweapon = "ks_remote_map_mp";
         break;
     case #"hash_52d9b7ed584bec3e":
-        var_8881166e57766e3a = "deploy_manual_turret_mp";
+        deployweapon = "deploy_manual_turret_mp";
         break;
     case #"hash_4d5aa76e8707f47b":
-        var_8881166e57766e3a = "deploy_sentry_mp";
+        deployweapon = "deploy_sentry_mp";
         break;
     case #"hash_ab5712e297cd430e":
-        var_8881166e57766e3a = "deploy_remote_turret_mp";
+        deployweapon = "deploy_remote_turret_mp";
         break;
     case #"hash_195360490caa3220":
-        var_8881166e57766e3a = "ks_remote_nuke_mp";
+        deployweapon = "ks_remote_nuke_mp";
         break;
     }
-    return var_8881166e57766e3a;
+    return deployweapon;
 }
 
 // Namespace namespace_8319cdbe938cd234/namespace_9abe40d2af041eb2
@@ -2669,7 +2669,7 @@ function function_2c70bfb1b580e8e0(callback) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x62ec
 // Size: 0x9c
-function killstreak_registerMinimapInfo(bundle, killstreak) {
+function killstreak_registerminimapinfo(bundle, killstreak) {
     if (isdefined(bundle) && isdefined(bundle.minimapicon)) {
         createfunc = undefined;
         enemyobjid = undefined;
@@ -2758,7 +2758,7 @@ function function_ef9490796efaf574(streakinfo, var_41bf9bf4918115ac, weaponobj) 
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x65ec
 // Size: 0xdd
-function function_6aa895b8483b9b10(streakinfo, var_8881166e57766e3a, var_6152d24062d26039, var_2f3d13488b96f966, var_4575958c3645cb9f, var_7735163648f2b6da, var_99514d9b932ce768) {
+function function_6aa895b8483b9b10(streakinfo, deployweapon, var_6152d24062d26039, var_2f3d13488b96f966, var_4575958c3645cb9f, var_7735163648f2b6da, var_99514d9b932ce768) {
     wait(var_4575958c3645cb9f);
     marker = undefined;
     if (issharedfuncdefined("killstreak", "getTargetMarker")) {
@@ -2768,14 +2768,14 @@ function function_6aa895b8483b9b10(streakinfo, var_8881166e57766e3a, var_6152d24
         return undefined;
     }
     if (!isdefined(marker) || !isdefined(marker.location)) {
-        function_8608f39517786dab(var_8881166e57766e3a);
+        function_8608f39517786dab(deployweapon);
         return undefined;
     }
     if (var_2f3d13488b96f966) {
         self freezecontrols(1);
     }
-    if (self hasweapon(var_8881166e57766e3a)) {
-        thread function_8608f39517786dab(var_8881166e57766e3a, 1, 1);
+    if (self hasweapon(deployweapon)) {
+        thread function_8608f39517786dab(deployweapon, 1, 1);
     }
     wait(var_7735163648f2b6da);
     if (var_2f3d13488b96f966) {
@@ -2788,7 +2788,7 @@ function function_6aa895b8483b9b10(streakinfo, var_8881166e57766e3a, var_6152d24
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66d1
 // Size: 0xb0
-function function_8608f39517786dab(var_8881166e57766e3a, var_eaf9953fb1b05ac6, var_829a6cb8a7de0cab) {
+function function_8608f39517786dab(deployweapon, var_eaf9953fb1b05ac6, var_829a6cb8a7de0cab) {
     if (isdefined(var_829a6cb8a7de0cab) && var_829a6cb8a7de0cab > 0) {
         self endon("death_or_disconnect");
         level endon("game_ended");
@@ -2807,7 +2807,7 @@ function function_8608f39517786dab(var_8881166e57766e3a, var_eaf9953fb1b05ac6, v
     } else {
         _switchtoweapon(lastweaponobj);
     }
-    _takeweapon(var_8881166e57766e3a);
+    _takeweapon(deployweapon);
 }
 
 // Namespace namespace_8319cdbe938cd234/namespace_9abe40d2af041eb2

@@ -539,7 +539,7 @@ function function_24c5a8d31ae262f(origin, var_819edacdacb810e4, var_e86632d645c1
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f0
 // Size: 0xb7
-function function_d449927f9683e871(origin) {
+function ispointwithininitialdangercircle(origin) {
     if (!isdefined(level.br_level) || !isdefined(level.br_level.br_circlecenters) || !isdefined(level.br_level.br_circleradii)) {
         return 1;
     }
@@ -628,7 +628,7 @@ function circledamagetick() {
                                 } else {
                                     player function_81652bad17cd28bd(var_36e462d047634362);
                                 }
-                                if (namespace_aead94004cf4c147::isBackpackInventoryEnabled()) {
+                                if (namespace_aead94004cf4c147::isbackpackinventoryenabled()) {
                                     player namespace_aead94004cf4c147::function_5323bef1ad6244b9(var_973f8e42fb3c591b);
                                 }
                             } else {
@@ -658,7 +658,7 @@ function circledamagetick() {
                                 }
                             }
                         }
-                        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+                        if (namespace_36f464722d326bbe::isbrstylegametype()) {
                             player updateindangercirclestate(var_acfa1a113ba7d7c7);
                         }
                         if (var_acfa1a113ba7d7c7) {
@@ -929,7 +929,7 @@ function islastcircle() {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31d0
 // Size: 0x91
-function function_e55c19338f6e9e0c(circleindex, timeoffset) {
+function gettimetillcircleclosing(circleindex, timeoffset) {
     /#
         assert(isdefined(circleindex) && circleindex >= 0);
     #/
@@ -1006,7 +1006,7 @@ function function_bf5f4d7a498988a8(player, var_498e4e279fb8ed85, timeoffset) {
     }
     point = var_8dd50db647861d68.origin;
     var_46ba883294abd43 = level.br_circle.circleindex;
-    var_c0fc062071351cda = function_e55c19338f6e9e0c(var_46ba883294abd43, var_498e4e279fb8ed85 + timeoffset);
+    var_c0fc062071351cda = gettimetillcircleclosing(var_46ba883294abd43, var_498e4e279fb8ed85 + timeoffset);
     var_71e46ead9308542c = int(min(var_46ba883294abd43 + 1, level.br_level.br_circlecenters.size - level.br_level.br_movingcirclecount - 1));
     var_6f469351639732e2 = level.br_level.br_circleclosetimes[var_46ba883294abd43];
     var_6b1bef6d15c8772c = level.br_level.br_circlecenters[var_46ba883294abd43];
@@ -1585,8 +1585,8 @@ function function_84e5ef30b000ef20() {
         return;
     }
     var_e60bfc21d3dced49 = getdvarint(@"hash_d87502944afeee16", 0);
-    if (isdefined(level.var_b31733f431ed12e0) && isdefined(level.var_b31733f431ed12e0.var_e60bfc21d3dced49)) {
-        var_e60bfc21d3dced49 = level.var_b31733f431ed12e0.var_e60bfc21d3dced49;
+    if (isdefined(level.br_multi_circle) && isdefined(level.br_multi_circle.var_e60bfc21d3dced49)) {
+        var_e60bfc21d3dced49 = level.br_multi_circle.var_e60bfc21d3dced49;
     }
     if (!isdefined(level.var_da89dff7e3009777)) {
         function_72cbdb2550894694();
@@ -2057,7 +2057,7 @@ function stopcirclesatgameend() {
     level notify("stopCirclesAtGameEnd");
     level endon("stopCirclesAtGameEnd");
     level waittill_any_2("game_ended", "br_ending_start");
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         setomnvar("ui_hardpoint_timer", 0);
     }
 }
@@ -2195,7 +2195,7 @@ function function_3fa958de973c98c6(point, startorigin, endorigin, startradius, v
     b = startorigin[0];
     var_df4d16c922bdbe0e = a - b;
     c = (endorigin[0] - startorigin[0]) / timeremaining;
-    var_ce173278f567ecff = c * c;
+    cs = c * c;
     d = point[1];
     e = startorigin[1];
     var_7738731431557520 = d - e;
@@ -2205,10 +2205,10 @@ function function_3fa958de973c98c6(point, startorigin, endorigin, startradius, v
     gs = g * g;
     h = (var_15b8ff04c24c09f4 - startradius) / timeremaining;
     hs = h * h;
-    var_b079c3030126650f = pow(2 * c * var_df4d16c922bdbe0e + 2 * f * var_7738731431557520 + 2 * g * h, 2) - 4 * (-1 * var_ce173278f567ecff - var_ce2d3278f5802032 + hs) * (-1 * pow(var_df4d16c922bdbe0e, 2) - pow(var_7738731431557520, 2) + gs);
+    var_b079c3030126650f = pow(2 * c * var_df4d16c922bdbe0e + 2 * f * var_7738731431557520 + 2 * g * h, 2) - 4 * (-1 * cs - var_ce2d3278f5802032 + hs) * (-1 * pow(var_df4d16c922bdbe0e, 2) - pow(var_7738731431557520, 2) + gs);
     p1 = sqrt(max(0, var_b079c3030126650f));
     p2 = -2 * c * var_df4d16c922bdbe0e - 2 * f * var_7738731431557520 - 2 * g * h;
-    p3 = 2 * (-1 * var_ce173278f567ecff - var_ce2d3278f5802032 + hs);
+    p3 = 2 * (-1 * cs - var_ce2d3278f5802032 + hs);
     if (p3 == 0) {
         return 0;
     }
@@ -2916,7 +2916,7 @@ function function_64757fdc2b889d2c() {
 function applycirclesetdvars() {
     br = level.br_level;
     var_6756bd882736e8bc = br.br_circleclosetimes.size;
-    finalRadius = br.br_circleradii[var_6756bd882736e8bc];
+    finalradius = br.br_circleradii[var_6756bd882736e8bc];
     for (i = 0; i < var_6756bd882736e8bc + 1; i++) {
         name_hash = function_2ef675c13ca1c4af(@"hash_cedf59e742e58084", i);
         var_1641afe84817865a = "scr_br_circle_set_" + i;
@@ -2933,7 +2933,7 @@ function applycirclesetdvars() {
                 br.br_circleshowdelaydanger[j] = undefined;
                 br.br_circleshowdelaysafe[j] = undefined;
             }
-            br.br_circleradii[i] = finalRadius;
+            br.br_circleradii[i] = finalradius;
             br.br_circleradii[j] = undefined;
             break;
         }
@@ -2986,7 +2986,7 @@ function applycirclesetdvars() {
             }
         }
         if (i >= var_6756bd882736e8bc) {
-            br.br_circleradii[i + 1] = finalRadius;
+            br.br_circleradii[i + 1] = finalradius;
             var_6756bd882736e8bc++;
         }
     }
@@ -3350,26 +3350,26 @@ function function_e5958529715b6395() {
             return;
         }
         player = level.player;
-        var_1b11eaa9b42e5081 = 40;
-        var_1b11e9a9b42e4e4e = -32;
+        startx = 40;
+        starty = -32;
         var_ca02086954972024 = 16;
         header = player namespace_52f6938dd902c7d0::createfontstring("dmz", 1.2);
         header.alpha = 1;
         header.color = (1, 1, 0);
-        header namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, var_1b11eaa9b42e5081, var_1b11e9a9b42e4e4e);
+        header namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, startx, starty);
         header setdevtext("<unknown string>");
         circleorigin = player namespace_52f6938dd902c7d0::createfontstring("dmz", 1.2);
         circleorigin.alpha = 1;
         circleorigin.color = (1, 1, 0);
-        circleorigin namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, var_1b11eaa9b42e5081, var_1b11e9a9b42e4e4e + var_ca02086954972024);
+        circleorigin namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, startx, starty + var_ca02086954972024);
         circleradius = player namespace_52f6938dd902c7d0::createfontstring("dmz", 1.2);
         circleradius.alpha = 1;
         circleradius.color = (1, 1, 0);
-        circleradius namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, var_1b11eaa9b42e5081, var_1b11e9a9b42e4e4e + var_ca02086954972024 * 2);
+        circleradius namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, startx, starty + var_ca02086954972024 * 2);
         var_975b4be3f9205374 = player namespace_52f6938dd902c7d0::createfontstring("dmz", 1.2);
         var_975b4be3f9205374.alpha = 1;
         var_975b4be3f9205374.color = (1, 1, 0);
-        var_975b4be3f9205374 namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, var_1b11eaa9b42e5081, var_1b11e9a9b42e4e4e + var_ca02086954972024 * 3);
+        var_975b4be3f9205374 namespace_52f6938dd902c7d0::setpoint("<unknown string>", undefined, startx, starty + var_ca02086954972024 * 3);
         function_7f31d213264baf4d(header, circleorigin, circleradius, var_975b4be3f9205374);
         header destroy();
         circleorigin destroy();

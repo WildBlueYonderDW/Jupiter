@@ -696,12 +696,12 @@ function supportbox_removeheadicon() {
 function supportbox_givepointsfordeath(attacker) {
     if (!isdefined(self.owner) || istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
         if (isdefined(self.weapon_name)) {
             if (self.weapon_name == "ammo_box_mp") {
-                attacker thread namespace_25c5a6f43bb97b43::onFieldUpgradeDestroy(#"hash_457fd36b5024c8f8");
+                attacker thread namespace_25c5a6f43bb97b43::onfieldupgradedestroy(#"hash_457fd36b5024c8f8");
             } else {
-                attacker thread namespace_25c5a6f43bb97b43::onFieldUpgradeDestroy(#"hash_de589684778b50e5");
+                attacker thread namespace_25c5a6f43bb97b43::onfieldupgradedestroy(#"hash_de589684778b50e5");
             }
         }
     }
@@ -714,7 +714,7 @@ function supportbox_givepointsfordeath(attacker) {
 function supportbox_givexpforuse(player, eventname, var_bf9f4947494d46bb, var_5237a188ccda4d7b) {
     if (isdefined(self.owner) && !namespace_f8065cafc523dba5::playersareenemies(self.owner, player)) {
         if (self.owner != player) {
-            self.owner thread namespace_48a08c5037514e04::doScoreEvent(eventname);
+            self.owner thread namespace_48a08c5037514e04::doscoreevent(eventname);
         }
         self.owner namespace_3c5a4254f2b957ea::incpersstat(var_bf9f4947494d46bb, 1);
         self.owner namespace_85d036cb78063c4a::combatrecordsupermisc(var_5237a188ccda4d7b);
@@ -919,7 +919,7 @@ function supportbox_getcloseanimduration() {
 // Checksum 0x0, Offset: 0x25fe
 // Size: 0x36b
 function supportbox_usedcallback(entity, player) {
-    if (istrue(player.isjuggernaut) && !namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (istrue(player.isjuggernaut) && !namespace_36f464722d326bbe::isbrstylegametype()) {
         if (namespace_3c37cb17ade254d::issharedfuncdefined("hud", "showErrorMessage")) {
             player [[ namespace_3c37cb17ade254d::getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/JUGG_CANNOT_BE_USED");
         }

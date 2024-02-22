@@ -105,7 +105,7 @@ function function_72e6923833378e5d(var_c1a3a9cf7d2963b8) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd1d
 // Size: 0x62
-function function_612d18fdbc979c0b(var_e6013eac45290cab, ActivitySuccess) {
+function function_612d18fdbc979c0b(var_e6013eac45290cab, activitysuccess) {
     var_ef64095e6090cac4 = function_73bd348a2ec322cf(var_e6013eac45290cab);
     if (var_ef64095e6090cac4 != "ActiveState") {
         /#
@@ -113,7 +113,7 @@ function function_612d18fdbc979c0b(var_e6013eac45290cab, ActivitySuccess) {
         #/
         return;
     }
-    if (ActivitySuccess) {
+    if (activitysuccess) {
         function_e56283e3cbfa05ad(var_e6013eac45290cab);
     } else {
         function_27251a5a24d92d28(var_e6013eac45290cab);

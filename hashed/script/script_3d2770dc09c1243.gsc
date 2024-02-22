@@ -75,7 +75,7 @@ function private function_fcd6214d8dd46123() {
     level.var_367c15041e69a2a9.var_513a313408516dc2 = getdvarint(@"hash_a7c59e9830aa5637", 0);
     level.var_367c15041e69a2a9.var_204746694f255ae3 = 1;
     level.var_b017944f02bb5e97 = 1;
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_ad389306d44fc6b4::setc130heightoverrides();
     }
     level.var_367c15041e69a2a9.var_e9ecd11f1d00d574 = getdvarint(@"hash_27572078d01a0677", 50);
@@ -114,7 +114,7 @@ function initialize() {
     #/
     level.bot_funcs["player_spawned_gamemode"] = &function_84122b879d20eac8;
     level.bot_funcs["gametype_think"] = &function_43ab8f184738915a;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_71073fa38f11492::function_ec416fa15d5fa6af("onPlayerKilled");
         namespace_71073fa38f11492::registerbrgametypefunc("onPlayerKilled", &function_9745aa457ffc1b37);
         namespace_71073fa38f11492::function_ec416fa15d5fa6af("playerShouldRespawn");
@@ -197,7 +197,7 @@ function private function_9745aa457ffc1b37(var_642470e1abc1bbf9) {
     }
     self.hasrespawntoken = 1;
     self.pers["lives"]++;
-    self.liveRagdoll = 0;
+    self.liveragdoll = 0;
 }
 
 // Namespace namespace_367c15041e69a2a9/namespace_ef54497d29a56093

@@ -69,7 +69,7 @@ function private function_2649cdb548d89c04() {
         self.var_2cf78151a82050fb = gettime();
     }
     self playlocalsound("deadsilence_start");
-    namespace_a850435086c88de3::function_693d12aa2c1c02c5(1, "deadSilenceUsed");
+    namespace_a850435086c88de3::doonactionscoreevent(1, "deadSilenceUsed");
     superdeadsilence_updateuistate(0);
     namespace_27c74152ccb91331::function_55b08d6d71b41402(self, "equipment_deployed");
     thread applyfovpresentation();

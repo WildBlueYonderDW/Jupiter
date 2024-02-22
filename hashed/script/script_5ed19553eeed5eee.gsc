@@ -20,10 +20,10 @@ function function_f47c0d9f38df3006(asmname, statename) {
 function function_c28d901dcf1366a5() {
     self endon("death");
     level endon("game_ended");
-    if (!isdefined(level.despawnThrottle)) {
-        level.despawnThrottle = function_e4c99b0f178ffb98("despawnThrottle", getdvarint(@"hash_31df6612d8150a09", 3), level.framedurationseconds);
+    if (!isdefined(level.despawnthrottle)) {
+        level.despawnthrottle = function_e4c99b0f178ffb98("despawnThrottle", getdvarint(@"hash_31df6612d8150a09", 3), level.framedurationseconds);
     }
-    function_f632348cbb773537(level.despawnThrottle, self);
+    function_f632348cbb773537(level.despawnthrottle, self);
     self.nocorpse = 1;
     self kill();
 }

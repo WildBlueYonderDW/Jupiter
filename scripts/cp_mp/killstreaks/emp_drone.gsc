@@ -392,7 +392,7 @@ function empdrone_givepointsfordeath(attacker) {
 function empdrone_explodeemp() {
     var_adb14ff6edfb13e3 = makeweapon("emp_drone_non_player_mp");
     var_6a96cebaf12d3691 = makeweapon("emp_drone_non_player_direct_mp");
-    ents = function_107fdcaa299cfa40(self.origin, 768);
+    ents = empdebuff_get_emp_ents(self.origin, 768);
     foreach (ent in ents) {
         if (ent == self) {
             continue;

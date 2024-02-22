@@ -27,7 +27,7 @@ function vehicle_compass_mp_init() {
 function vehicle_compass_mp_shouldbevisibletoplayer(vehicle, player) {
     if (player entitymarkfilteredin(vehicle)) {
         return 1;
-    } else if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         if (!namespace_1f188a13f7e79610::vehicle_isenemytoplayer(vehicle, player)) {
             return 1;
         }

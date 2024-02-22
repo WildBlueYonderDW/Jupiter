@@ -20,7 +20,7 @@ function function_7b25d1c42e7f75be(var_f76baeb1c3556fab) {
     if (!isdefined(settings)) {
         return;
     }
-    self.aiSettings = settings;
+    self.aisettings = settings;
     if (istrue(settings.var_90936cd2d6771517)) {
         self.radius = settings.radius;
         self.height = settings.height;

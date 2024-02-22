@@ -627,17 +627,17 @@ function function_bc77383cc0c4d3b9(start_node, var_7403e5e436347d6b, var_cddc894
         return;
     }
     self.var_b3ad7bc0c890232c = start_node;
-    var_2c8c204e0a499ebc = 0;
+    path_end = 0;
     self setturningability(self.var_27b3267d1a2697dd);
     self setneargoalnotifydist(self.var_b7653ed508479202);
-    while (!var_2c8c204e0a499ebc) {
+    while (!path_end) {
         var_6c814cee8d2bd65e = 0;
         if (!isdefined(self.var_b3ad7bc0c890232c.target)) {
             var_6c814cee8d2bd65e = 1;
-            var_2c8c204e0a499ebc = 1;
+            path_end = 1;
         }
-        function_d6eba8149fb949e9(self.var_b3ad7bc0c890232c, var_2c8c204e0a499ebc, var_7403e5e436347d6b, 1, undefined, undefined, var_cddc894ccdf6de54, undefined, undefined, isdrone, 0);
-        if (!var_2c8c204e0a499ebc) {
+        function_d6eba8149fb949e9(self.var_b3ad7bc0c890232c, path_end, var_7403e5e436347d6b, 1, undefined, undefined, var_cddc894ccdf6de54, undefined, undefined, isdrone, 0);
+        if (!path_end) {
             if (issharedfuncdefined("activity_chopper_util", "CustomPathNextTarget")) {
                 self.var_b3ad7bc0c890232c = function_f3bb4f4911a1beb2("activity_chopper_util", "CustomPathNextTarget", self, self.var_b3ad7bc0c890232c.target);
             } else if (isstruct(self.var_b3ad7bc0c890232c)) {
@@ -867,7 +867,7 @@ function private function_17f3a8e08dd28e75(var_ce5c8b45f5bf97e8, var_31759f0a103
             var_36f900747ad147e6 = self.var_36f900747ad147e6;
         }
         function_d6eba8149fb949e9(var_6e281dbd69fc980e, var_25b8738ccc2f5e33, self.var_99a6191cb152b5d2, 1, undefined, undefined, var_36f900747ad147e6, undefined, undefined, isdrone);
-        while (istrue(self.var_e3d1cf2991b7e714)) {
+        while (istrue(self.circle_paused)) {
             self notify("circling_paused");
             var_b45ac00208241af6 = 1;
             waitframe();
@@ -904,7 +904,7 @@ function function_b91a289ed9de4db7(pause_time, var_3756c44715a73d25) {
     self endon("crashing");
     self endon("stop_circling");
     self endon("pause_circling");
-    self.var_e3d1cf2991b7e714 = 1;
+    self.circle_paused = 1;
     if (istrue(var_3756c44715a73d25)) {
         self sethoverparams(100, 10, 5);
         self waittill("resume_circling");
@@ -914,7 +914,7 @@ function function_b91a289ed9de4db7(pause_time, var_3756c44715a73d25) {
         wait(pause_time);
         self sethoverparams(self.hover_radius, self.hover_speed, self.hover_accel);
     }
-    self.var_e3d1cf2991b7e714 = 0;
+    self.circle_paused = 0;
 }
 
 // Namespace namespace_c908de38bcdbd93d/namespace_49e272e116f37d0

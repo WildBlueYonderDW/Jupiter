@@ -61,7 +61,7 @@ function create(origin, radius, var_29e95cf0babf9c87, var_9ebad3637bcb64d, var_2
     instance.active = 1;
     instance.radius = radius;
     instance.radiussq = squared(radius);
-    instance.tickRate = var_29e95cf0babf9c87;
+    instance.tickrate = var_29e95cf0babf9c87;
     instance.var_e0c4123baae7b409 = 0;
     if (istrue(var_29de4b245273b366)) {
         instance.var_c075862f37971025 = spawnbrcircle(origin[0], origin[1], radius);
@@ -155,7 +155,7 @@ function function_c7d1bf4975ea9e7c(var_a37a6bddb2dc6057) {
     /#
         assert(var_a37a6bddb2dc6057 > 0);
     #/
-    self.tickRate = var_a37a6bddb2dc6057;
+    self.tickrate = var_a37a6bddb2dc6057;
 }
 
 // Namespace radiation/namespace_6d781a0248843409
@@ -328,7 +328,7 @@ function private function_242555e5ab28a44c() {
     self.var_16b2e5a6752ec4e0 = [];
     self.var_8b468934c883d916 = [];
     while (self.active) {
-        wait(self.tickRate);
+        wait(self.tickrate);
         foreach (player in level.players) {
             var_223ed137a7efba62 = player getentitynumber();
             var_c5fff5b131a6ec21 = function_1b4f63fa623de69a(player.origin);

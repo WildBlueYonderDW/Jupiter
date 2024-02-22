@@ -417,7 +417,7 @@ function watchrapidtagpickup() {
     } else {
         self.recenttagcount++;
         if (self.recenttagcount == 3) {
-            thread namespace_48a08c5037514e04::doScoreEvent(#"hash_538a87430e9cf381");
+            thread namespace_48a08c5037514e04::doscoreevent(#"hash_538a87430e9cf381");
         }
     }
     wait(3);
@@ -462,7 +462,7 @@ function ontagpickupevent(event) {
     while (!isdefined(self.pers)) {
         waitframe();
     }
-    thread doScoreEvent(event);
+    thread doscoreevent(event);
 }
 
 // Namespace namespace_b74c5605ac9bd7b1/namespace_ba880bc821ba2f06
@@ -540,7 +540,7 @@ function respawn() {
 function allyonuse(player) {
     if (self.victim == player) {
         player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_8567ca81f8c59d3c");
-        player thread namespace_48a08c5037514e04::doScoreEvent(#"hash_e4042d7ef2cd089e");
+        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_e4042d7ef2cd089e");
     } else if (level.gametype == "conf") {
         player ontagpickupevent(#"kill_denied");
     } else if (level.gametype == "conf_v") {

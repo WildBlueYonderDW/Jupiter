@@ -20,7 +20,7 @@
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcb6
 // Size: 0x85
-function function_24b53e17e6927cd0() {
+function chopperhqexfil_init() {
     /#
         setdevdvarifuninitialized(@"hash_70809e88d9881104", 0);
     #/

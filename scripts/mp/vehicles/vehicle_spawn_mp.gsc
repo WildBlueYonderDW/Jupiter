@@ -17,11 +17,11 @@ function vehicle_spawn_mp_init() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd9
 // Size: 0x4f
-function vehicle_spawn_mp_canspawnvehicle(var_7731adef63e19b0c, owner, team) {
+function vehicle_spawn_mp_canspawnvehicle(vehicleref, owner, team) {
     if (!getmatchrulesdata("commonOption", "allowVehicles")) {
         return 0;
     }
-    if (getdvarint(function_2ef675c13ca1c4af(@"hash_e4fa5e1677f011e4", var_7731adef63e19b0c), 1) == 0) {
+    if (getdvarint(function_2ef675c13ca1c4af(@"hash_e4fa5e1677f011e4", vehicleref), 1) == 0) {
         return 0;
     }
     return 1;

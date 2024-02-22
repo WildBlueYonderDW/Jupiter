@@ -63,7 +63,7 @@ function function_231a038d18c51203(grenade) {
         }
         grenade delete();
         return;
-    } else if (1 && isdefined(self.var_3f4415b5819ab778)) {
+    } else if (1 && isdefined(self.balloon)) {
         self playlocalsound("br_pickup_deny");
         namespace_44abc05161e2e2cb::showerrormessage("MP/EXTRACT_BALLOON_TOO_MANY");
         if (isdefined(self.super)) {
@@ -86,17 +86,17 @@ function function_231a038d18c51203(grenade) {
 // Checksum 0x0, Offset: 0x650
 // Size: 0xc0
 function function_91bcbeaba08b3c76(grenade) {
-    var_3f4415b5819ab778 = spawn("script_model", grenade.origin);
-    var_3f4415b5819ab778 setautoboxcalculationusingdobj(1);
-    var_3f4415b5819ab778 setmodel("military_skyhook_far_mp_ballon_extract");
-    var_3f4415b5819ab778.angles = grenade.angles * (0, 1, 0);
-    var_3f4415b5819ab778.owner = self;
-    var_3f4415b5819ab778.team = self.team;
+    balloon = spawn("script_model", grenade.origin);
+    balloon setautoboxcalculationusingdobj(1);
+    balloon setmodel("military_skyhook_far_mp_ballon_extract");
+    balloon.angles = grenade.angles * (0, 1, 0);
+    balloon.owner = self;
+    balloon.team = self.team;
     if (isdefined(grenade.moving_platform)) {
-        var_3f4415b5819ab778.moving_platform = grenade.moving_platform;
+        balloon.moving_platform = grenade.moving_platform;
     }
-    self.var_3f4415b5819ab778 = var_3f4415b5819ab778;
-    var_3f4415b5819ab778 function_5b3519ad8f058a26();
+    self.balloon = balloon;
+    balloon function_5b3519ad8f058a26();
 }
 
 // Namespace namespace_2ece5c141ed0581e/namespace_eaf4e9860fe32d68
@@ -177,7 +177,7 @@ function function_8e5aab643e51aaf9() {
             if (isdefined(var_25978461c6e4f61b)) {
                 itemtype = level.br_pickups.br_itemtype[var_25978461c6e4f61b];
             }
-            if (isdefined(itemtype) && (itemtype == #"hash_c583d0faabb7fa37" || itemtype == #"dogtag")) {
+            if (isdefined(itemtype) && (itemtype == #"valuable" || itemtype == #"dogtag")) {
                 continue;
             }
             player namespace_512200f0f9e6ebc9::function_c324d060cde743e3(item["lootID"], item["quantity"]);
@@ -391,7 +391,7 @@ function function_6de1128240216723(itemtype, lootid) {
     if (itemtype == 1) {
         return 1;
     }
-    scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
+    scriptablename = namespace_38b993c4618e76cd::getscriptablefromlootid(lootid);
     if (scriptablename == "brloot_durable_loot" || isdefined(level.var_a98214b4bdc952cd) && array_contains(level.var_a98214b4bdc952cd, scriptablename)) {
         return 1;
     }
@@ -421,7 +421,7 @@ function function_f71f8470e2fb527c(player) {
         }
     }
     if (var_bb778d2be7708cfc) {
-        player namespace_a850435086c88de3::function_693d12aa2c1c02c5(1, "extractionBalloonDeposit");
+        player namespace_a850435086c88de3::doonactionscoreevent(1, "extractionBalloonDeposit");
     }
 }
 

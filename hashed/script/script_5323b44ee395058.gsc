@@ -430,7 +430,7 @@ function private function_10f997ed68f4fcef(turret, potentialtarget, var_8826c6bc
         if (isdefined(potentialtarget.agent_type) && issubstr(potentialtarget.agent_type, "civilian")) {
             return 0;
         }
-        var_da8cec9bce12f9cb = namespace_14d36171baccf528::agentPers_getAgentPersData(potentialtarget, "team");
+        var_da8cec9bce12f9cb = namespace_14d36171baccf528::agentpers_getagentpersdata(potentialtarget, "team");
         if (isdefined(var_39fea08436a97e8a) && !istrue(var_a4bf19053a661fc5)) {
             if (isdefined(var_da8cec9bce12f9cb) && var_da8cec9bce12f9cb == var_39fea08436a97e8a) {
                 return 0;

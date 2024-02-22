@@ -1148,7 +1148,7 @@ function objective_onuse(var_82236c155ecbedc9, team) {
         if (numagents > 0) {
             for (i = 0; i < numagents; i++) {
                 aitype = function_d5bc07eabf352abb();
-                agent = function_ea94a8bf24d3c5ef(aitype, self.trigger.origin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, team);
+                agent = ai_mp_requestspawnagent(aitype, self.trigger.origin, (0, 0, 0), "medium", "everybody", "captureAgents", groupname, team);
                 if (isdefined(agent)) {
                     agent namespace_6db9b2dcda758664::bt_set_stealth_state("combat", undefined);
                     agent function_304da84d9a815c01(self.trigger.origin, 1024);
@@ -1159,7 +1159,7 @@ function objective_onuse(var_82236c155ecbedc9, team) {
         var_40e875a042b82875 = getdvarint(@"hash_2c76d4f86fd341de", 1);
         if (var_40e875a042b82875 > 0) {
             for (i = 0; i < var_40e875a042b82875; i++) {
-                agent = function_ea94a8bf24d3c5ef("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, team);
+                agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, team);
                 if (isdefined(agent)) {
                     namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
                     agent namespace_6db9b2dcda758664::bt_set_stealth_state("combat", undefined);
@@ -2374,9 +2374,9 @@ function c130_fightpathmove() {
         if (var_6d48eb54c3a800fc == 0 || var_9297d08353baf063 == 0) {
             return;
         }
-        var_fabe25d5659f05a9 = var_d320310339164aac / var_6d48eb54c3a800fc;
-        var_c43d9ec2e9a839c6 = var_ee6d8b534c2ddd2d / var_9297d08353baf063;
-        var_be2c550023fb372 = vectorlerp(var_fabe25d5659f05a9, var_c43d9ec2e9a839c6, 0.5);
+        axiscenter = var_d320310339164aac / var_6d48eb54c3a800fc;
+        alliescenter = var_ee6d8b534c2ddd2d / var_9297d08353baf063;
+        var_be2c550023fb372 = vectorlerp(axiscenter, alliescenter, 0.5);
         level.c130minpathmovementinterval = vectorlerp(level.battlecenter, var_be2c550023fb372, 0.5);
         level.c130minpathmovementinterval = level.c130minpathmovementinterval - level.battlecenter;
         var_37dfb4f272c7016d = distance2d(level.battlecenter, var_be2c550023fb372);
@@ -2906,7 +2906,7 @@ function function_4c69bcdd9f13c968(numagents, objectivename, team, var_fd9831032
         agent = undefined;
         if (isdefined(loc) && isdefined(loc.origin) && isdefined(loc.angles) && isdefined(objectivename)) {
             aitype = function_d5bc07eabf352abb();
-            agent = function_ea94a8bf24d3c5ef(aitype, loc.origin, loc.angles, "medium", "everybody", undefined, objectivename);
+            agent = ai_mp_requestspawnagent(aitype, loc.origin, loc.angles, "medium", "everybody", undefined, objectivename);
             /#
                 if (!isdefined(agent) && istrue(level.var_6af5ceb6eec10fea)) {
                     println("losing_h");
@@ -2971,7 +2971,7 @@ function function_eb051cd1ea2a236e(objectivekey, numagents, team) {
 function function_87b809f69028ff14(var_34ce337e073a0c34, var_93390a6953905fef, team) {
     var_9b3bb378db91cf83 = spawnstruct();
     var_9b3bb378db91cf83.origin = var_34ce337e073a0c34;
-    var_4f922af45d0cac6c = sortbydistance(level.heliReinforceStruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
+    var_4f922af45d0cac6c = sortbydistance(level.helireinforcestruct.var_4f922af45d0cac6c, var_9b3bb378db91cf83.origin);
     pathnode = namespace_7ae25d9e5d5a28ef::function_321665dcdcbf401e(var_4f922af45d0cac6c, var_34ce337e073a0c34);
     if (isdefined(pathnode)) {
         return pathnode;
@@ -3435,10 +3435,10 @@ function createdefaultcameras() {
     if (0) {
         thread drawline(camerapos, level.var_f59a46460cc3cab5, 600, (1, 0, 1));
     }
-    var_796860f89dec057d = level.var_4b80e3b89ad4842b;
+    teamforward = level.var_4b80e3b89ad4842b;
     level.spawnselectionteamforward = [];
     foreach (entry in level.teamnamelist) {
-        level.spawnselectionteamforward[entry] = var_796860f89dec057d;
+        level.spawnselectionteamforward[entry] = teamforward;
     }
 }
 
@@ -3693,17 +3693,17 @@ function function_1629419647b0f862() {
     var_fbcabd62b8f66eb8 = namespace_2a184fc4902783dc::create_default_contents(1);
     foreach (key, objective in level.objectives) {
         groundorigin = drop_to_ground(objective.curorigin + anglestoforward(objective.trigger.angles) * 50, 50, -200, undefined, var_fbcabd62b8f66eb8);
-        var_2fa65f34eb9042f5 = spawnscriptable("br_plunder_box", groundorigin, objective.trigger.angles);
-        var_2fa65f34eb9042f5.objectivekey = key;
-        level.var_5b25e7620e424cb2[key] = var_2fa65f34eb9042f5;
-        var_2fa65f34eb9042f5 setscriptablepartstate("br_plunder_box", "visible");
-        var_2fa65f34eb9042f5.var_5cfa621ebf61d8aa = 0;
+        buystation = spawnscriptable("br_plunder_box", groundorigin, objective.trigger.angles);
+        buystation.objectivekey = key;
+        level.var_5b25e7620e424cb2[key] = buystation;
+        buystation setscriptablepartstate("br_plunder_box", "visible");
+        buystation.var_5cfa621ebf61d8aa = 0;
         var_9316a571d5756b1b = spawnstruct();
         var_9316a571d5756b1b.origin = drop_to_ground(objective.curorigin + anglestoforward(objective.trigger.angles) * -50, 50, -200, undefined, var_fbcabd62b8f66eb8);
         var_9316a571d5756b1b.angles = objective.trigger.angles;
-        var_d7043241caeea644 = namespace_8d949790b9957051::spawnlocation(var_9316a571d5756b1b);
-        var_d7043241caeea644 hide();
-        level.var_b8d2b366ac757da6[key] = var_d7043241caeea644;
+        ammorestock = namespace_8d949790b9957051::spawnlocation(var_9316a571d5756b1b);
+        ammorestock hide();
+        level.var_b8d2b366ac757da6[key] = ammorestock;
         foreach (ref in var_16858eac88e8c825) {
             level.var_1b37b352ec399488[key][ref] = 0;
         }
@@ -3755,9 +3755,9 @@ function function_c800466f69dfc582() {
     if (istrue(level.var_7f5be0207e7457b1)) {
         return;
     }
-    foreach (key, var_2fa65f34eb9042f5 in level.var_5b25e7620e424cb2) {
+    foreach (key, buystation in level.var_5b25e7620e424cb2) {
         foreach (team in level.teamnamelist) {
-            var_2fa65f34eb9042f5 function_8d03978a31faba3a(key, team);
+            buystation function_8d03978a31faba3a(key, team);
         }
     }
 }
@@ -3773,20 +3773,20 @@ function function_6ed651811c936a22() {
     if (istrue(level.var_7f5be0207e7457b1)) {
         return;
     }
-    foreach (key, var_2fa65f34eb9042f5 in level.var_5b25e7620e424cb2) {
+    foreach (key, buystation in level.var_5b25e7620e424cb2) {
         ownerteam = level.objectives[key] namespace_19b4203b51d56488::getownerteam();
         if (self.team == ownerteam) {
-            var_2fa65f34eb9042f5 enablescriptableplayeruse(self);
+            buystation enablescriptableplayeruse(self);
         } else {
-            var_2fa65f34eb9042f5 disablescriptableplayeruse(self);
+            buystation disablescriptableplayeruse(self);
         }
     }
-    foreach (key, var_d7043241caeea644 in level.var_b8d2b366ac757da6) {
+    foreach (key, ammorestock in level.var_b8d2b366ac757da6) {
         ownerteam = level.objectives[key] namespace_19b4203b51d56488::getownerteam();
         if (self.team == ownerteam && istrue(level.var_1b37b352ec399488[key]["ammo_depot"])) {
-            var_d7043241caeea644 enablescriptableplayeruse(self);
+            ammorestock enablescriptableplayeruse(self);
         } else {
-            var_d7043241caeea644 disablescriptableplayeruse(self);
+            ammorestock disablescriptableplayeruse(self);
         }
     }
 }
@@ -3888,7 +3888,7 @@ function function_e154e439d3c5fcb5(objectivekey, ref) {
         break;
     case #"hash_dda8890cb35ca0bf":
         groupname = function_78759441c259f58a();
-        agent = function_ea94a8bf24d3c5ef("enemy_mp_jugg_base", level.objectives[objectivekey].trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, ownerteam);
+        agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", level.objectives[objectivekey].trigger.origin, (0, 0, 0), "absolute", "everybody", "jugg", groupname, ownerteam);
         namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
         agent thread function_b11c1964f528574b(agent);
         break;
@@ -3917,7 +3917,7 @@ function function_3d186b2b2ee293bb(objectivekey, ref) {
         }
         break;
     case #"hash_6235851dae0eeca8":
-        level.objectives[objectivekey] thread disableUAVPing();
+        level.objectives[objectivekey] thread disableuavping();
         break;
     case #"hash_6c0c806bbf705a0c":
     case #"hash_dda8890cb35ca0bf":
@@ -3999,7 +3999,7 @@ function function_c929fb023d29de5e(team) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe3f7
 // Size: 0x19
-function disableUAVPing() {
+function disableuavping() {
     if (!istrue(level.var_57734b23ed1998d6)) {
         return;
     }

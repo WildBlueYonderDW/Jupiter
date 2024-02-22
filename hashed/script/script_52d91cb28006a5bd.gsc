@@ -93,9 +93,9 @@ function function_1f6c16ac84ef5c16() {
 // Size: 0xce
 function private function_f54c5164b830fffb() {
     self endon("death");
-    isBackpackInventoryEnabled = 0;
+    isbackpackinventoryenabled = 0;
     if (namespace_3c37cb17ade254d::issharedfuncdefined("inventory", "isBackpackInventoryEnabled")) {
-        isBackpackInventoryEnabled = [[ getsharedfunc("inventory", "isBackpackInventoryEnabled") ]]();
+        isbackpackinventoryenabled = [[ getsharedfunc("inventory", "isBackpackInventoryEnabled") ]]();
     }
     while (1) {
         player = self.var_6f09a59aee157204 waittill("trigger");
@@ -108,7 +108,7 @@ function private function_f54c5164b830fffb() {
         if (isdefined(self.owner) && self.owner != player) {
             continue;
         }
-        if (!player hasweapon(self.weapon_object) && !isBackpackInventoryEnabled) {
+        if (!player hasweapon(self.weapon_object) && !isbackpackinventoryenabled) {
             continue;
         }
         if (player function_10769923b31f128c(self.equipmentref)) {

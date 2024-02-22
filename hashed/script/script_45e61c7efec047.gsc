@@ -276,10 +276,10 @@ function function_ea489c9a3e230419(params) {
         var_96c503c9e2fe99c4 = i;
     }
     var_7a83ce8a86de986 = self.var_614607f42dca0826;
-    var_17bfab818caf8234 = isdefined(var_7a83ce8a86de986) ? var_7a83ce8a86de986 : currency::function_15975e20bbd2c824("essence");
-    var_17bfab818caf8234 = int(var_17bfab818caf8234 * getdvarfloat(@"hash_6d31f61a8b813a5a"));
-    self setplayerdata(level.var_5d69837cf4db0407, "tombstoneEssence", var_17bfab818caf8234);
-    if (var_17bfab818caf8234 > 0) {
+    essence_total = isdefined(var_7a83ce8a86de986) ? var_7a83ce8a86de986 : currency::function_15975e20bbd2c824("essence");
+    essence_total = int(essence_total * getdvarfloat(@"hash_6d31f61a8b813a5a"));
+    self setplayerdata(level.var_5d69837cf4db0407, "tombstoneEssence", essence_total);
+    if (essence_total > 0) {
         lootid = function_6d15e119c2779a93(getscriptbundle("itemspawnentry:ob_jup_item_essence_tombstone"));
         self.var_9b55e3337571adb4.var_96fe349cc1405483 = array_add(self.var_9b55e3337571adb4.var_96fe349cc1405483, lootid);
         index = isdefined(var_96c503c9e2fe99c4) ? var_96c503c9e2fe99c4 + 1 : 0;
@@ -385,7 +385,7 @@ function function_99de0ed107698b92(player, var_dac8ca004908667b) {
     }
     self notify("cleanup_tombstone_cache");
     self endon("cleanup_tombstone_cache");
-    if (!var_dac8ca004908667b && !player isContainerEmpty(self)) {
+    if (!var_dac8ca004908667b && !player iscontainerempty(self)) {
         return;
     }
     if (isdefined(self.icon)) {

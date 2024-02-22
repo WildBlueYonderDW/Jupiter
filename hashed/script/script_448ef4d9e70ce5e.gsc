@@ -12,7 +12,7 @@
 // Checksum 0x0, Offset: 0x20f
 // Size: 0x83
 function main() {
-    function_e05aeec06b7b52aa(&function_4da231b2893604c, &function_de1545c98ed439f8, &function_a62d0f50f690359, &function_dd47832cd570074b, &function_be3314f77fef5d6b, &surfaceFunc, &function_71106dd668c1bcab, &function_230b60ef0852dcb8, &function_a699c74ce724a801, &function_e1b16133a0146153, &function_6fed0ef13f84a258, &function_673ece83b6eb66c4);
+    function_e05aeec06b7b52aa(&function_4da231b2893604c, &function_de1545c98ed439f8, &function_a62d0f50f690359, &function_dd47832cd570074b, &function_be3314f77fef5d6b, &surfacefunc, &function_71106dd668c1bcab, &function_230b60ef0852dcb8, &function_a699c74ce724a801, &function_e1b16133a0146153, &function_6fed0ef13f84a258, &function_673ece83b6eb66c4);
     function_a76b0a124a6a8f46();
     function_3e689374a8c8c3a2();
     while (!issharedfuncdefined("aggregator", "registerOnPlayerSpawnCallback")) {
@@ -96,7 +96,7 @@ function function_a62d0f50f690359() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46f
 // Size: 0xc0
-function surfaceFunc() {
+function surfacefunc() {
     if (issharedfuncdefined("perk", "hasPerk")) {
         if (self [[ getsharedfunc("perk", "hasPerk") ]]("specialty_swimming")) {
             self [[ getsharedfunc("perk", "removePerk") ]]("specialty_swimming");

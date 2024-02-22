@@ -243,10 +243,10 @@ function function_515820c869914cdd(mission_name) {
 // Size: 0xb7
 function function_6a3d3280a1913f27(player) {
     level.var_9ec4962076db301b["general_info"].var_f6e64573c4a3a4be = array_removedead(level.var_9ec4962076db301b["general_info"].var_f6e64573c4a3a4be);
-    foreach (var_767a93cd0ac57ef6 in level.var_9ec4962076db301b["general_info"].var_f6e64573c4a3a4be) {
-        if (isdefined(var_767a93cd0ac57ef6)) {
-            var_767a93cd0ac57ef6 enablescriptableplayeruse(player);
-            var_767a93cd0ac57ef6 showtoplayer(player);
+    foreach (quest_exfil in level.var_9ec4962076db301b["general_info"].var_f6e64573c4a3a4be) {
+        if (isdefined(quest_exfil)) {
+            quest_exfil enablescriptableplayeruse(player);
+            quest_exfil showtoplayer(player);
         }
     }
 }
@@ -347,7 +347,7 @@ function map_transition(var_684092929dab076f, var_576f57af0204c38c, var_e115a5d7
         if (!isdefined(player)) {
             return;
         }
-        var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getSquadMembers(undefined, 1);
+        var_c9b69aecc5c631ed = player namespace_ca7b90256548aa40::getsquadmembers(undefined, 1);
         var_de42222cf42400aa = [];
         foreach (var_9191cfe9f04a69a8 in var_c9b69aecc5c631ed) {
             if (var_576f57af0204c38c function_c80b9a252474413b(var_9191cfe9f04a69a8)) {

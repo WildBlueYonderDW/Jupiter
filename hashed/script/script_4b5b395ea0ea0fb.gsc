@@ -857,7 +857,7 @@ function function_b924ba876ae5b152() {
             var_2b5a1e993bb88c21.angles = generateaxisanglesfromforwardvector(baseeffectforward, var_2b5a1e993bb88c21.angles);
         }
         exfilgoaltrigger.objectivekey = var_dec7f03ee8e5150[objectivecount];
-        level.flagModelHidden = 1;
+        level.flagmodelhidden = 1;
         extractzone = namespace_98b55913d2326ac8::setupobjective(exfilgoaltrigger, var_c8a41ae10dd3b1d2, 1, 1, 1);
         extractzone namespace_19b4203b51d56488::requestid(1, 1);
         extractzone namespace_19b4203b51d56488::setownerteam(game["defenders"]);
@@ -1110,7 +1110,7 @@ function function_3b8913dc82881267(player) {
     player thread function_8277f49f79bff530("player_pickup_hostage", player.origin, player.angles);
     player.var_e3bda5be1db297f hide();
     player thread function_a3a4a2cdca554483("player_pickup_hostage", player.origin, player.angles);
-    if (player GetCameraThirdPerson()) {
+    if (player getcamerathirdperson()) {
         player.var_54d7b76a2a71e284 hide();
     } else {
         player.var_54d7b76a2a71e284 showonlytoplayer(player);
@@ -1891,7 +1891,7 @@ function extractzone_onuse(var_22282e7d48ca3400, team) {
     var_22282e7d48ca3400 namespace_b919c4be206d3c80::function_48544e365f4f5648(15, 1);
     thread namespace_52f6938dd902c7d0::function_7b2653a588f28e29(var_22282e7d48ca3400, "rescue_cap_hostage", "rescue_cap_hostage", "rescue_enemy_cap_hostage");
     var_22282e7d48ca3400 thread namespace_62c556437da28f50::scoreeventpopup(#"hash_32c5f215f3ec3b3");
-    var_22282e7d48ca3400 thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d6568e59815732d");
+    var_22282e7d48ca3400 thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d6568e59815732d");
     if (level.hostages.size <= 0) {
         level.var_4817bac75a8b9eff = "all_hostage_extracted";
     }
@@ -2344,7 +2344,7 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
         attacker namespace_b919c4be206d3c80::function_48544e365f4f5648(15, 1);
         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
     }
     if (isdefined(level.var_7fcc5417218ad4c8) && level.var_7fcc5417218ad4c8.size > 0) {
         if (isdefined(attacker) && isplayer(attacker) && attacker.pers["team"] != victim.pers["team"]) {
@@ -2353,7 +2353,7 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
                     var_db36f135f40e7940 = distancesquared(hostage.carrier.origin, attacker.origin);
                     if (var_db36f135f40e7940 < 105625) {
                         attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2d96ced878338cd2");
+                        attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
                         attacker incpersstat("defends", 1);
                         attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
                         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "defending");

@@ -887,8 +887,8 @@ function spring_make_over_damped(var_6f3b0221662dbf46, var_f7ddbaaf878e7b63, sta
     var_cba816031466d80f = 1 / var_ce254378f57859e7;
     e1 = exp(var_cdd57878f51fed58 * 0.05);
     e2 = exp(var_cdd57b78f51ff3f1 * 0.05);
-    DE = e2 - e1;
-    level.springs[var_d8a4196afba8742b].c1 = DE * var_cba816031466d80f;
+    de = e2 - e1;
+    level.springs[var_d8a4196afba8742b].c1 = de * var_cba816031466d80f;
     level.springs[var_d8a4196afba8742b].c0 = e1 - var_cdd57878f51fed58 * level.springs[var_d8a4196afba8742b].c1;
     level.springs[var_d8a4196afba8742b].c3 = (var_cdd57b78f51ff3f1 * e2 - var_cdd57878f51fed58 * e1) * var_cba816031466d80f;
     level.springs[var_d8a4196afba8742b].c2 = var_cdd57878f51fed58 * (e1 - level.springs[var_d8a4196afba8742b].c3);

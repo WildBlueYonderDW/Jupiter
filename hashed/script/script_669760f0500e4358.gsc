@@ -94,7 +94,7 @@ function init(var_7b60fa5a9f22356) {
             tower.poi = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(tower.origin);
         }
     }
-    namespace_76a219af07c28c13::registerTeamAssimilateCallback(&function_6bdc6f56944dc3aa);
+    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_6bdc6f56944dc3aa);
     if (level.var_9f740c9281d0c7f4) {
         /#
             assert(isdefined(game["dialog"]));
@@ -256,8 +256,8 @@ function function_858af52a8e277a68(var_73bdebbc7da468a3, identifier, var_73aa468
         var_73bdebbc7da468a3.var_107d6e8fc82a82a8 namespace_5a51aa78ea0b1b9f::set_apply_emp_callback(&function_dc9f963b97f73b1a);
         var_73bdebbc7da468a3.var_107d6e8fc82a82a8.var_3545410459b16762 = &function_dc9f963b97f73b1a;
     }
-    if (!isdefined(var_73bdebbc7da468a3.poi) && isdefined(var_73bdebbc7da468a3.fortress) && isdefined(var_73bdebbc7da468a3.fortress.poiName)) {
-        var_73bdebbc7da468a3.poi = var_73bdebbc7da468a3.fortress.poiName;
+    if (!isdefined(var_73bdebbc7da468a3.poi) && isdefined(var_73bdebbc7da468a3.fortress) && isdefined(var_73bdebbc7da468a3.fortress.poiname)) {
+        var_73bdebbc7da468a3.poi = var_73bdebbc7da468a3.fortress.poiname;
     }
     level.var_a1141d47ab94d2a1[level.var_a1141d47ab94d2a1.size] = var_73bdebbc7da468a3;
     if (istrue(level.var_815479da1dafbdb0)) {
@@ -579,7 +579,7 @@ function function_678ea4319b42dfed(player) {
     player playlocalsound("uav_tower_foley");
     player playsound("uav_tower_foley_npc", player, player);
     thread function_796d1da742e2a88a(player);
-    typingAnimStart(player);
+    typinganimstart(player);
     player setclientomnvar("ui_dmz_uav_tower_screen", 1);
     thread function_667fd79f2b5d6436(player);
     function_e71d6089ebd93181(player);
@@ -627,7 +627,7 @@ function function_6a7cbe567872ae7f() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2359
 // Size: 0x32b
-function typingAnimStart(player) {
+function typinganimstart(player) {
     player endon("death_or_disconnect");
     player endon("enter_live_ragdoll");
     player function_3c288bbdd4016fd4(0);
@@ -825,7 +825,7 @@ function function_a301051f63fbbff9(instance, part, state, player, var_a5b2c54141
     if (cost > 0) {
         player function_1dd4b75d0a512fcc(cost, instance);
     }
-    instance.uavUsed = 1;
+    instance.uavused = 1;
     instance setscriptablepartstate("dmz_uav_tower_antenna", "active_start");
     instance setscriptablepartstate("objective", "active");
     player thread function_550deeac761ab7b9(instance);
@@ -926,13 +926,13 @@ function function_2a905da0882c958() {
             if (isdefined(level.var_a1141d47ab94d2a1[i]) && isdefined(level.var_a1141d47ab94d2a1[i].var_107d6e8fc82a82a8)) {
                 instance = level.var_a1141d47ab94d2a1[i].var_107d6e8fc82a82a8;
                 state = instance getscriptablepartstate("dmz_uav_tower_laptop");
-                if (!istrue(instance.uavUsed) || state == "laptop_closed") {
+                if (!istrue(instance.uavused) || state == "laptop_closed") {
                     players = playersnear(instance.origin, 400);
                     if (isdefined(players) && players.size > 0) {
                         if (state == "laptop_closed" && !istrue(instance.var_1dbfb72730034336)) {
                             instance setscriptablepartstate("dmz_uav_tower_laptop", "laptop_opened");
                         }
-                    } else if (state == "laptop_opened" && !istrue(instance.uavUsed)) {
+                    } else if (state == "laptop_opened" && !istrue(instance.uavused)) {
                         instance setscriptablepartstate("dmz_uav_tower_laptop", "laptop_closed");
                     }
                 }
@@ -1277,20 +1277,20 @@ function function_1d71dc9529bef550(var_351a92897da4ba3a) {
 // Size: 0x2e
 function function_dc9f963b97f73b1a(data) {
     tower_disable(self, "EMP_" + data.reason);
-    thread UAVTowerDisableForTime(data);
+    thread uavtowerdisablefortime(data);
 }
 
 // Namespace uav_tower/namespace_872204d77e9872c0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41dd
 // Size: 0xd7
-function UAVTowerDisableForTime(data) {
+function uavtowerdisablefortime(data) {
     self notify("UAVTowerDisableForTime");
     self endon("UAVTowerDisableForTime");
     self setscriptablepartstate("dmz_uav_tower", "unusable");
     if (!isdefined(self.var_bc40e6506a04d555)) {
         self.var_bc40e6506a04d555 = spawn("trigger_radius", self.origin, 0, level.var_7916385e2124e7a7, 62);
-        namespace_f1565a2788ab1e89::makeenterexittrigger(self.var_bc40e6506a04d555, &function_2a4470bcf739b0e3, &playerExitUAVTowerDisabled);
+        namespace_f1565a2788ab1e89::makeenterexittrigger(self.var_bc40e6506a04d555, &function_2a4470bcf739b0e3, &playerexituavtowerdisabled);
     }
     self.var_bc40e6506a04d555.endtime = int(gettime() + function_a5b14435e3229bed(data.time));
     wait(data.time);
@@ -1308,14 +1308,14 @@ function function_2a4470bcf739b0e3(player, trigger) {
     timeleft = function_c89ed1840c8d0f0f(trigger.endtime - gettime());
     wait(timeleft);
     waitframe();
-    thread playerExitUAVTowerDisabled(player, trigger);
+    thread playerexituavtowerdisabled(player, trigger);
 }
 
 // Namespace uav_tower/namespace_872204d77e9872c0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4323
 // Size: 0x28
-function playerExitUAVTowerDisabled(player, trigger) {
+function playerexituavtowerdisabled(player, trigger) {
     namespace_58fb4f2e73fd41a0::setlowermessageomnvar("clear_lower_msg");
     self notify("playerExitUAVTowerDisabled");
 }

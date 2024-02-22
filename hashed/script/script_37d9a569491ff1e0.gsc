@@ -22,7 +22,7 @@ function function_69b64f047b0af1db(radius) {
     } else {
         event.var_5a7fa93735ceec62 = 1 | 2;
     }
-    var_3c91684198954c83 = self.Mind.var_3c91684198954c83;
+    var_3c91684198954c83 = self.mind.var_3c91684198954c83;
     var_3c91684198954c83.var_bc19a29ed084d79c = event;
     var_3c91684198954c83.events[var_3c91684198954c83.events.size] = event;
 }
@@ -32,7 +32,7 @@ function function_69b64f047b0af1db(radius) {
 // Checksum 0x0, Offset: 0x18c
 // Size: 0x2a0
 function function_7e7ddfa33eff2c11(var_5a7fa93735ceec62) {
-    event = self.Mind.var_3c91684198954c83.var_bc19a29ed084d79c;
+    event = self.mind.var_3c91684198954c83.var_bc19a29ed084d79c;
     if (!event.var_d0942e9d2044d6c6) {
         if (event.result.size > 0) {
             event.result = [];
@@ -40,7 +40,7 @@ function function_7e7ddfa33eff2c11(var_5a7fa93735ceec62) {
         var_5a7fa93735ceec62 = function_53c4c53197386572(var_5a7fa93735ceec62, event.var_5a7fa93735ceec62);
         if (var_5a7fa93735ceec62 & (1 | 2)) {
             foreach (player in level.players) {
-                if (self == player || !isdefined(player) || distancesquared(self.origin, player.origin) > event.var_8fa87d2c8780e014 || !function_ded80385ea7471db(player) || player namespace_95d8d8ec67e3e074::function_6ecc7cd453466014() || player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
+                if (self == player || !isdefined(player) || distancesquared(self.origin, player.origin) > event.var_8fa87d2c8780e014 || !function_ded80385ea7471db(player) || player namespace_95d8d8ec67e3e074::isuibot() || player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
                     continue;
                 }
                 var_5ee7711499bf12c4 = ter_op(isbot(player), 2, 1);
@@ -126,7 +126,7 @@ function function_3e53d600c1f31122(target) {
 // Checksum 0x0, Offset: 0x5b3
 // Size: 0x36
 function getradius() {
-    event = self.Mind.var_3c91684198954c83.var_bc19a29ed084d79c;
+    event = self.mind.var_3c91684198954c83.var_bc19a29ed084d79c;
     return event.radius;
 }
 

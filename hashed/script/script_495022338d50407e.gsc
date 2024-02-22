@@ -218,7 +218,7 @@ function private function_a17b754d1372f83e(var_6e6ee0d9f73a2999) {
     self.agents = [];
     forwarddist = anglestoforward(self.safe.angles) * 80;
     origin = getclosestpointonnavmesh(self.safe.origin + forwarddist);
-    agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, undefined, "short_range", undefined, 2), origin, self.safe.angles, "high", "mission", "safeInitialGuards", undefined, undefined, undefined, self.poi, 1);
+    agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, undefined, "short_range", undefined, 2), origin, self.safe.angles, "high", "mission", "safeInitialGuards", undefined, undefined, undefined, self.poi, 1);
     if (isdefined(agent)) {
         self.agents[0] = agent;
         agent thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent, 0);
@@ -236,7 +236,7 @@ function private function_a17b754d1372f83e(var_6e6ee0d9f73a2999) {
         var_88b83b0d7a43ea72 = i / var_6e6ee0d9f73a2999 * 360 + randomfloatrange(-30, 30) % 360;
         offset = rotatepointaroundvector((0, 0, 1), forward, var_88b83b0d7a43ea72);
         origin = getclosestpointonnavmesh(self.safe.origin + offset);
-        agent = namespace_bfef6903bca5845d::ai_mp_requestSpawnAgent(agenttype, origin, facingangle, "high", "mission", "safe", undefined, undefined, undefined, self.poi);
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(agenttype, origin, facingangle, "high", "mission", "safe", undefined, undefined, undefined, self.poi);
         if (isdefined(agent)) {
             self.agents[self.agents.size] = agent;
             agent thread namespace_2000a83505151e5b::function_b11c1964f528574b(agent);
@@ -245,7 +245,7 @@ function private function_a17b754d1372f83e(var_6e6ee0d9f73a2999) {
     if (isdefined(self.agents)) {
         foreach (agent in self.agents) {
             if (isagent(agent)) {
-                thread namespace_14d36171baccf528::agentPers_setAgentPersData(agent, "assignment", self.var_6cd05f946a7917f7);
+                thread namespace_14d36171baccf528::agentpers_setagentpersdata(agent, "assignment", self.var_6cd05f946a7917f7);
             }
         }
     }

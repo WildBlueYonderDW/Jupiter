@@ -8174,13 +8174,13 @@ function ismountconfigenabled() {
 // Size: 0x45
 function function_4319aef954ddbee5() {
     var_f9ac1524e38018a2 = 1;
-    toggleTacticalADSConfig = 0;
+    toggletacticaladsconfig = 0;
     if (is_player_gamepad_enabled()) {
-        toggleTacticalADSConfig = requestgamerprofile("toggleTacticalADSConfig");
+        toggletacticaladsconfig = requestgamerprofile("toggleTacticalADSConfig");
     } else {
-        toggleTacticalADSConfig = requestgamerprofile("toggleTacticalADSConfigKBM");
+        toggletacticaladsconfig = requestgamerprofile("toggleTacticalADSConfigKBM");
     }
-    return toggleTacticalADSConfig != var_f9ac1524e38018a2;
+    return toggletacticaladsconfig != var_f9ac1524e38018a2;
 }
 
 // Namespace utility/namespace_3c37cb17ade254d

@@ -83,8 +83,8 @@ function brmini_initpostmain() {
     namespace_71073fa38f11492::registerbrgametypefunc("createC130PathStruct", &brmini_createc130pathstruct);
     namespace_71073fa38f11492::registerbrgametypefunc("addToC130Infil", &brmini_addtoc130infil);
     namespace_71073fa38f11492::registerbrgametypefunc("playerWelcomeSplashes", &brmini_playerwelcomesplashes);
-    dropPlaneDelay = getdvarint(@"hash_96c9be1f54511dfc", 375);
-    namespace_71073fa38f11492::registerbrgametypedata("dropPlaneDelay", dropPlaneDelay);
+    dropplanedelay = getdvarint(@"hash_96c9be1f54511dfc", 375);
+    namespace_71073fa38f11492::registerbrgametypedata("dropPlaneDelay", dropplanedelay);
     namespace_71073fa38f11492::registerbrgametypedata("dropBagDelay", 100);
     waittillframeend();
     level.ontimelimit = &brmini_ontimelimit;

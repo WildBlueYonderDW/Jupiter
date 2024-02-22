@@ -232,15 +232,15 @@ function deletetrackedobject() {
 // Checksum 0x0, Offset: 0x15c6
 // Size: 0x9c
 function function_fd1b4a7d915fc9a6(origin, offset, showonminimap, var_182036c56e421297) {
-    codcasterWaypoint = spawnstruct();
-    codcasterWaypoint.type = "codcasterWaypoint";
-    codcasterWaypoint.curorigin = origin;
-    codcasterWaypoint.offset3d = offset;
-    codcasterWaypoint.ownerteam = "neutral";
-    codcasterWaypoint.compassicons = [];
-    codcasterWaypoint.visibleteam = "codcaster";
-    codcasterWaypoint requestid(showonminimap, var_182036c56e421297, undefined, 0, 0);
-    return codcasterWaypoint;
+    codcasterwaypoint = spawnstruct();
+    codcasterwaypoint.type = "codcasterWaypoint";
+    codcasterwaypoint.curorigin = origin;
+    codcasterwaypoint.offset3d = offset;
+    codcasterwaypoint.ownerteam = "neutral";
+    codcasterwaypoint.compassicons = [];
+    codcasterwaypoint.visibleteam = "codcaster";
+    codcasterwaypoint requestid(showonminimap, var_182036c56e421297, undefined, 0, 0);
+    return codcasterwaypoint;
 }
 
 // Namespace gameobjects/namespace_19b4203b51d56488
@@ -251,13 +251,13 @@ function function_e3c8fb6519162627() {
     if (!isdefined(self) || !isdefined(self.type) || self.type != "codcasterWaypoint") {
         return;
     }
-    codcasterWaypoint = self;
-    codcasterWaypoint.type = undefined;
-    codcasterWaypoint.curorigin = undefined;
-    codcasterWaypoint.offset3d = undefined;
-    codcasterWaypoint.ownerteam = undefined;
-    codcasterWaypoint.compassicons = undefined;
-    codcasterWaypoint.visibleteam = undefined;
+    codcasterwaypoint = self;
+    codcasterwaypoint.type = undefined;
+    codcasterwaypoint.curorigin = undefined;
+    codcasterwaypoint.offset3d = undefined;
+    codcasterwaypoint.ownerteam = undefined;
+    codcasterwaypoint.compassicons = undefined;
+    codcasterwaypoint.visibleteam = undefined;
     releaseid();
 }
 
@@ -2490,8 +2490,8 @@ function stompenemyteamprogress(team) {
     }
     delta = level.frameduration * self.userate;
     if (istrue(self.var_823c5a7bf6a0e64a) && self.ownerteam != "neutral" && team != self.ownerteam) {
-        if (isdefined(self.reinforcementStompScalar) && self.reinforcementStompScalar > 0) {
-            delta = delta * self.reinforcementStompScalar;
+        if (isdefined(self.reinforcementstompscalar) && self.reinforcementstompscalar > 0) {
+            delta = delta * self.reinforcementstompscalar;
         }
     }
     numtouching = getnumtouchingforteam(self.claimteam);
@@ -2665,7 +2665,7 @@ function canclaim(player) {
             numother = getnumtouchingexceptteam(playerteam);
         }
         if (numtouching && !numother || numtouching && numother && numtouching != numother) {
-            if (numother && istrue(level.disableMajorityCapProgress)) {
+            if (numother && istrue(level.disablemajoritycapprogress)) {
                 self.stalemate = 1;
                 self.majoritycapprogress = 0;
                 self.wasmajoritycapprogress = 1;
@@ -2712,12 +2712,12 @@ function proxtriggerthink() {
             occupants = namespace_1fbd40990ee60ede::vehicle_occupancy_getalloccupants(ent);
             foreach (occupant in occupants) {
                 if (function_42430bcb47389f23(occupant, 1)) {
-                    processTouchEnt(occupant, entitynumber);
+                    processtouchent(occupant, entitynumber);
                 }
             }
         }
         if (function_42430bcb47389f23(ent)) {
-            processTouchEnt(ent, entitynumber);
+            processtouchent(ent, entitynumber);
         }
     }
 }
@@ -2767,7 +2767,7 @@ function function_42430bcb47389f23(player, var_372a5049b4c8b20a) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8283
 // Size: 0x557
-function processTouchEnt(player, entitynumber) {
+function processtouchent(player, entitynumber) {
     if (isreallyalive(player) && !isdefined(player.touchtriggers[entitynumber]) && player namespace_9ba985cbac6de93c::function_10de2964abd64e1f()) {
         if (isdefined(self.var_e2f9cb96d8a5c8d1)) {
             self [[ self.var_e2f9cb96d8a5c8d1 ]](player);
@@ -2798,7 +2798,7 @@ function processTouchEnt(player, entitynumber) {
         numtouching = getnumtouchingforteam(playerteam);
         numother = getnumtouchingexceptteam(playerteam);
         if (numtouching && !numother || numtouching && numother && numtouching != numother) {
-            if (!(getgametype() == "wm" && istrue(level.disableMajorityCapProgress))) {
+            if (!(getgametype() == "wm" && istrue(level.disablemajoritycapprogress))) {
                 self.majoritycapprogress = 1;
                 self.isunoccupied = 0;
             }
@@ -3677,7 +3677,7 @@ function showspecificteamprogress(object) {
 // Checksum 0x0, Offset: 0xaeb2
 // Size: 0x1f3
 function hasdomflags() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (getsubgametype() == "zonecontrol") {
             return 0;
         }
@@ -3769,10 +3769,10 @@ function updateuisecuring(progress, securing, idx, object, usetime, var_3aba92eb
             if (isdefined(revivee) && isdefined(reviver) && reviver == revivee) {
                 self setclientomnvar("ui_securing", 16);
             }
-            if (namespace_36f464722d326bbe::isBRStyleGameType() || istrue(level.var_6d63cbd43e47315e)) {
+            if (namespace_36f464722d326bbe::isbrstylegametype() || istrue(level.var_6d63cbd43e47315e)) {
                 namespace_d20f8ef223912e12::updatesquadmemberlaststandreviveprogress(revivee, self, progress);
             }
-        } else if (namespace_36f464722d326bbe::isBRStyleGameType() && object.id == "laststand_interrogator") {
+        } else if (namespace_36f464722d326bbe::isbrstylegametype() && object.id == "laststand_interrogator") {
             var_5bebd2013b0f01ec = undefined;
             if (isdefined(object) && object function_ab8d64fe065bf6f7()) {
                 var_5bebd2013b0f01ec = object.owner;
@@ -4046,15 +4046,15 @@ function useholdthink(player) {
             assert(lastweapon != useweapon);
         #/
         player.lastnonuseweapon = lastweapon;
-        setAmmo = 0;
+        setammo = 0;
         var_2e5c1e9548e8884f = 0;
         if (getgametype() == "cyber" || isrevivetrigger) {
-            setAmmo = 1;
+            setammo = 1;
             var_2e5c1e9548e8884f = 0;
         }
         player _giveweapon(useweapon, undefined, undefined, 0);
-        player setweaponammostock(useweapon, setAmmo);
-        player setweaponammoclip(useweapon, setAmmo);
+        player setweaponammostock(useweapon, setammo);
+        player setweaponammoclip(useweapon, setammo);
         player thread switchtouseweapon(useweapon, switchimmediate);
     } else if (!var_d9842c97badaba31 && !istrue(self.var_70814aa80e0d3d1)) {
         if (isdefined(self) && isrevivetrigger || isdefined(self.id) && self.id == "rugby_jugg") {
@@ -4494,8 +4494,8 @@ function getmlgteamcolor(team) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd2a2
 // Size: 0x150
-function setobjpointteamcolor(var_b74984f8b12cf978, updateTeam, relativeteam) {
-    if (updateTeam == "mlg_allies") {
+function setobjpointteamcolor(var_b74984f8b12cf978, updateteam, relativeteam) {
+    if (updateteam == "mlg_allies") {
         var_b74984f8b12cf978 setmlgdraw(1, 0);
         var_2c5085251c6170dc = self.objiconscolor[relativeteam];
         if (var_2c5085251c6170dc == "friendly") {
@@ -4505,7 +4505,7 @@ function setobjpointteamcolor(var_b74984f8b12cf978, updateTeam, relativeteam) {
         } else {
             var_b74984f8b12cf978.color = game["colors"][var_2c5085251c6170dc];
         }
-    } else if (updateTeam == "mlg_axis") {
+    } else if (updateteam == "mlg_axis") {
         var_b74984f8b12cf978 setmlgdraw(1, 0);
         var_2c5085251c6170dc = self.objiconscolor[relativeteam];
         if (var_2c5085251c6170dc == "friendly") {
@@ -4667,16 +4667,16 @@ function updatecompassicon(relativeteam, objid, ownerteam) {
     }
     var_1341915118cc82b = 0;
     for (index = 0; index < updateteams.size; index++) {
-        updateTeam = updateteams[index];
+        updateteam = updateteams[index];
         if (var_dca4604f39117a || var_c0d426fb0da57cf2) {
-            var_5c5d470bd64763f8 = updateTeam;
+            var_5c5d470bd64763f8 = updateteam;
         } else {
-            var_5c5d470bd64763f8 = updateTeam.team;
+            var_5c5d470bd64763f8 = updateteam.team;
         }
         if (!var_c0d426fb0da57cf2 && !var_dca4604f39117a && !var_aa4f261ba2f9905a && !isgameplayteam(var_5c5d470bd64763f8)) {
             continue;
         }
-        var_58498fc5d5879ba1 = !var_c0d426fb0da57cf2 && (var_dca4604f39117a || updateTeam.showtoteam);
+        var_58498fc5d5879ba1 = !var_c0d426fb0da57cf2 && (var_dca4604f39117a || updateteam.showtoteam);
         if (!var_58498fc5d5879ba1 && shouldshowcompassduetoradar(var_5c5d470bd64763f8)) {
             var_58498fc5d5879ba1 = 1;
         }

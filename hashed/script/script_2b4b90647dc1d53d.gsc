@@ -84,7 +84,7 @@ function function_a67b8af5f3b9e6c8(var_45e51f698992d648, var_b55fd7d854233d03, v
         var_b55fd7d854233d03 thread function_6b0b609cf632580c();
         level waittill("security_deactivated");
         var_45e51f698992d648 function_95e1d0440e05beae("rebooting");
-        var_b55fd7d854233d03 function_21d50632bcafad7d();
+        var_b55fd7d854233d03 remove_waypoint();
         var_b55fd7d854233d03 function_95e1d0440e05beae("rebooting");
         function_b56c65359567813a(a_e_lights, 0);
         function_15e73138168942f(var_6a4f1cc271876221);
@@ -198,7 +198,7 @@ function function_4f22646b4fb36daa() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x837
 // Size: 0x27
-function function_21d50632bcafad7d() {
+function remove_waypoint() {
     objective_state(self.var_e61c947dd774e8f, "done");
     namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.var_e61c947dd774e8f);
 }

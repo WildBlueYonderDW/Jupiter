@@ -296,7 +296,7 @@ function c4_empapplied(data) {
     if (isplayer(attacker)) {
         attacker updatedamagefeedback(damagefeedback);
     }
-    if (isdefined(data.var_a6868aec402b3e73)) {
+    if (isdefined(data.ksemp)) {
         thread function_156475610be70ced(attacker);
     } else {
         thread c4_destroy(attacker);
@@ -329,7 +329,7 @@ function function_3f54618ac84aa89f(data) {
 // Size: 0x7b
 function function_156475610be70ced(attacker) {
     self endon("death");
-    attacker thread namespace_48a08c5037514e04::doScoreEvent(#"hash_c45cd96bcaaf28d9");
+    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_c45cd96bcaaf28d9");
     self.isdisabled = 1;
     self setscriptablepartstate("emp", "on", 0);
     if (!istrue(self.owner.var_65219c911f198c95)) {

@@ -14,14 +14,14 @@
 // Size: 0x2f
 function function_fe852f92145c24a6() {
     function_ac97a4f2ab8c2d53("misc", "tryAssignTask", &function_1a86afc387820604);
-    function_ac97a4f2ab8c2d53("misc", "checkTaskValid", &checkTaskValid);
+    function_ac97a4f2ab8c2d53("misc", "checkTaskValid", &checktaskvalid);
 }
 
 // Namespace namespace_947f137e8c5c3d4/namespace_f8aa7c160140e21
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x167
 // Size: 0x198
-function checkTaskValid(var_be80583079ec3e95, team) {
+function checktaskvalid(var_be80583079ec3e95, team) {
     if (var_be80583079ec3e95.subcategory == "equiped_full_armor") {
         foreach (player in level.teamdata[team]["players"]) {
             if (isdefined(player) && player namespace_f8d3520d3483c1::function_ac266fc218266d08() < player.var_8790c077c95db752) {

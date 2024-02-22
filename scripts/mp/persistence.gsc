@@ -312,12 +312,12 @@ function writekdhistorystats() {
         foreach (player in level.players) {
             accuracy = 0;
             if (isdefined(player.pers["shotsFired"]) && player.pers["shotsFired"] > 0) {
-                totalShots = player.pers["shotsFired"];
+                totalshots = player.pers["shotsFired"];
                 hits = 0;
                 if (isdefined(player.pers["shotsHit"])) {
                     hits = player.pers["shotsHit"];
                 }
-                accuracy = int(100 * hits / totalShots);
+                accuracy = int(100 * hits / totalshots);
             }
             player incrementrankedreservedhistory(player.kills, player.deaths, player.pers["headshots"], accuracy, player.pers["damage"]);
         }

@@ -158,7 +158,7 @@ function sentryturret_watchplacement(turret, streakinfo, var_6152d24062d26039, v
     self playsound("sentry_gun_plant_foley");
     namespace_1cd9f6896754adb0::set("sentry", "armor", 1);
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["sentry_gun"];
-    deployweaponname = function_53c4c53197386572(bundle.var_8881166e57766e3a, "deploy_sentry_mp");
+    deployweaponname = function_53c4c53197386572(bundle.deployweapon, "deploy_sentry_mp");
     if (!isdefined(marker) || !isdefined(marker.location)) {
         if (namespace_f8065cafc523dba5::_isalive()) {
             function_8608f39517786dab(deployweaponname);
@@ -347,7 +347,7 @@ function sentryturret_setplaced(turret, marker) {
         if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
             [[ getsharedfunc("sound", "playKillstreakDeployDialog") ]](self, turret.streakinfo.streakname);
         }
-        killstreak_dangerNotifyPlayersInRange(self, self.team, 2000, turret.streakinfo.streakname);
+        killstreak_dangernotifyplayersinrange(self, self.team, 2000, turret.streakinfo.streakname);
         splashname = config.teamsplash;
         if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
             level thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]](splashname, self);
@@ -527,7 +527,7 @@ function sentryturret_switchbacklastweapon(var_eaf9953fb1b05ac6) {
         _switchtoweapon(self.lastdroppableweaponobj);
     }
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["sentry_gun"];
-    deployweaponname = function_53c4c53197386572(bundle.var_8881166e57766e3a, "deploy_sentry_mp");
+    deployweaponname = function_53c4c53197386572(bundle.deployweapon, "deploy_sentry_mp");
     _takeweapon(deployweaponname);
 }
 
@@ -931,7 +931,7 @@ function function_6633c7714fc94777(streakinfo, var_3389369df8bf82d2) {
         self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](streakinfo, endonnotify);
     }
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["sentry_gun"];
-    deployweaponname = function_53c4c53197386572(bundle.var_8881166e57766e3a, "deploy_sentry_mp");
+    deployweaponname = function_53c4c53197386572(bundle.deployweapon, "deploy_sentry_mp");
     var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponswitchdeploy(streakinfo, makeweapon(deployweaponname), 1, undefined, undefined, &weaponcleanupsentryturret);
     if (!istrue(var_9b1deb5e9d32bbe3)) {
         self notify(endonnotify);
@@ -1313,7 +1313,7 @@ function function_ffbb592bde7cbca8(newowner, var_c0f9139ffd72e62d) {
         if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
             [[ getsharedfunc("sound", "playKillstreakDeployDialog") ]](newowner, self.streakinfo.streakname);
         }
-        killstreak_dangerNotifyPlayersInRange(newowner, newowner.team, 2000, self.streakinfo.streakname);
+        killstreak_dangernotifyplayersinrange(newowner, newowner.team, 2000, self.streakinfo.streakname);
         newowner function_5c49802fcf1a63ed(self);
         newowner thread sentryturret_watchpickup(self);
         namespace_37987c2865e1a627::function_2eff4cd94c3243e8();

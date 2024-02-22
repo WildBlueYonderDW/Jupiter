@@ -260,31 +260,31 @@ function flashpoint_endingsoon(var_703f8388035ace89) {
 // Size: 0x27f
 function flashpoint_checkforownerupdate(var_703f8388035ace89) {
     var_f46de3669e2acd79 = 0;
-    alliesKills = 0;
+    allieskills = 0;
     var_2dc841aff232fb90 = "No Change";
     var_ab2d6f4cba464964 = var_703f8388035ace89.team;
     foreach (event in var_703f8388035ace89.events) {
         if (event == "kill_by_axis") {
             var_f46de3669e2acd79++;
         } else if (event == "kill_by_allies") {
-            alliesKills++;
+            allieskills++;
         }
     }
-    if ((var_f46de3669e2acd79 - 1 > alliesKills || alliesKills == 0) && var_703f8388035ace89.team != "axis" && var_f46de3669e2acd79 != 0) {
+    if ((var_f46de3669e2acd79 - 1 > allieskills || allieskills == 0) && var_703f8388035ace89.team != "axis" && var_f46de3669e2acd79 != 0) {
         if (level.flashpoint_objectives) {
             namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(var_703f8388035ace89.objidnum, "axis");
             namespace_5a22b6f3a56f7e9b::update_objective_sethot(var_703f8388035ace89.objidnum, 0);
         }
         var_703f8388035ace89.team = "axis";
         var_2dc841aff232fb90 = "Switch To Axis Owner";
-    } else if ((alliesKills - 1 > var_f46de3669e2acd79 || var_f46de3669e2acd79 == 0) && var_703f8388035ace89.team != "allies" && alliesKills != 0) {
+    } else if ((allieskills - 1 > var_f46de3669e2acd79 || var_f46de3669e2acd79 == 0) && var_703f8388035ace89.team != "allies" && allieskills != 0) {
         if (level.flashpoint_objectives) {
             namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(var_703f8388035ace89.objidnum, "allies");
             namespace_5a22b6f3a56f7e9b::update_objective_sethot(var_703f8388035ace89.objidnum, 0);
         }
         var_703f8388035ace89.team = "allies";
         var_2dc841aff232fb90 = "Switch To Allies Owner";
-    } else if (var_703f8388035ace89.team != "neutral" && alliesKills != 0 && var_f46de3669e2acd79 != 0) {
+    } else if (var_703f8388035ace89.team != "neutral" && allieskills != 0 && var_f46de3669e2acd79 != 0) {
         if (level.flashpoint_objectives) {
             namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(var_703f8388035ace89.objidnum, undefined);
             namespace_5a22b6f3a56f7e9b::update_objective_sethot(var_703f8388035ace89.objidnum, 1);
@@ -299,7 +299,7 @@ function flashpoint_checkforownerupdate(var_703f8388035ace89) {
             println("<unknown string>" + var_ab2d6f4cba464964);
             println("<unknown string>" + var_2dc841aff232fb90);
             println("<unknown string>" + var_f46de3669e2acd79);
-            println("<unknown string>" + alliesKills);
+            println("<unknown string>" + allieskills);
             println("Switch To Allies Owner");
         }
     #/

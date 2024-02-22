@@ -840,7 +840,7 @@ function targetstart_icon(var_cd73bc5a9cbda8cd) {
 // Checksum 0x0, Offset: 0x24bd
 // Size: 0x1a3
 function targetstart_reward(var_c058970a10d37d8b) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_fe593ba7d0935bb5 = success = self waittill("encounter_end");
@@ -886,7 +886,7 @@ function targetstart_reward(var_c058970a10d37d8b) {
 // Checksum 0x0, Offset: 0x2667
 // Size: 0xa5
 function targetstart_reward_prespawn(var_c058970a10d37d8b) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     var_de19f33cb691869d = rewardspawn(var_c058970a10d37d8b);
@@ -2241,7 +2241,7 @@ function extraction_encounterstart() {
 // Checksum 0x0, Offset: 0x537d
 // Size: 0x67
 function targetstart_extractiongoal(goalstruct) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return;
     }
     goal = spawn("script_model", goalstruct.origin + (0, 0, 20));

@@ -18,9 +18,9 @@
 #using scripts\mp\killstreaks\mapselect.gsc;
 #using scripts\mp\spawnlogic.gsc;
 
-#namespace namespace_ef9f74bf67cdeb3f;
+#namespace airstrike_mp;
 
-// Namespace namespace_ef9f74bf67cdeb3f/namespace_863bda310707c7c4
+// Namespace airstrike_mp/namespace_863bda310707c7c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x203
 // Size: 0x8e
@@ -34,7 +34,7 @@ function init() {
     namespace_3c37cb17ade254d::registersharedfunc("airstrike", "addSpawnDangerZone", &airstrike_addspawndangerzone);
 }
 
-// Namespace namespace_ef9f74bf67cdeb3f/namespace_863bda310707c7c4
+// Namespace airstrike_mp/namespace_863bda310707c7c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x298
 // Size: 0x1d2
@@ -57,7 +57,7 @@ function init_airstrike_params() {
     level.airstrikesettings["fuel_airstrike"].deployweaponobj = makeweapon(namespace_bc3bdbac7cebdc14::function_5d9830f341fbd83a());
 }
 
-// Namespace namespace_ef9f74bf67cdeb3f/namespace_863bda310707c7c4
+// Namespace airstrike_mp/namespace_863bda310707c7c4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x471
 // Size: 0x31
@@ -66,7 +66,7 @@ function airstrike_getmapselectpoint(streakinfo, var_cdce0f8be900c487, var_edc5b
     return namespace_bc3bdbac7cebdc14::function_a5839924b6723eac(streakinfo, var_cdce0f8be900c487, var_edc5bb5a4b3dd2ff);
 }
 
-// Namespace namespace_ef9f74bf67cdeb3f/namespace_863bda310707c7c4
+// Namespace airstrike_mp/namespace_863bda310707c7c4
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0x38
@@ -74,7 +74,7 @@ function airstrike_startmapselectsequence(navmesh, var_edc5bb5a4b3dd2ff, var_742
     namespace_bc3bdbac7cebdc14::function_90f093ca8576232f(navmesh, var_edc5bb5a4b3dd2ff, var_7426e996c9eb34d3, var_3922786267ccc2a8, streakinfo);
 }
 
-// Namespace namespace_ef9f74bf67cdeb3f/namespace_863bda310707c7c4
+// Namespace airstrike_mp/namespace_863bda310707c7c4
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0x5f

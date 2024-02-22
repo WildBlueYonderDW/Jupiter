@@ -107,7 +107,7 @@ function init() {
     if (getdvarint(@"hash_350b9a835c1f30b8", 0) > 0) {
         thread watchsuperlottery();
     }
-    if (level.allowsupers || namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (level.allowsupers || namespace_36f464722d326bbe::isbrstylegametype()) {
         level thread handlesuperearnovertime();
     }
     level notify("init_supers");
@@ -337,9 +337,9 @@ function function_53110a12409d01da(ref, setfunc, unsetfunc, beginusefunc, enduse
 // Checksum 0x0, Offset: 0x21fd
 // Size: 0x5b
 function function_b11714522b76c040() {
-    namespace_3c37cb17ade254d::registersharedfunc("supers", "setSuperIsActive", &setSuperIsActive);
-    namespace_3c37cb17ade254d::registersharedfunc("supers", "isUsingSuperWeapon", &isUsingSuperWeapon);
-    namespace_3c37cb17ade254d::registersharedfunc("supers", "superHasTimedUsage", &superHasTimedUsage);
+    namespace_3c37cb17ade254d::registersharedfunc("supers", "setSuperIsActive", &setsuperisactive);
+    namespace_3c37cb17ade254d::registersharedfunc("supers", "isUsingSuperWeapon", &isusingsuperweapon);
+    namespace_3c37cb17ade254d::registersharedfunc("supers", "superHasTimedUsage", &superhastimedusage);
     namespace_3c37cb17ade254d::registersharedfunc("supers", "superHasAmmoUsage", &superHasAmmoUsage);
 }
 
@@ -406,7 +406,7 @@ function function_9d0de1f8996c57f8(var_ebec497ff8b18a45) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23ca
 // Size: 0x42d
-function givesuper(var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, var_12c0f53a71c9bcc8) {
+function givesuper(var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, blueprintindex) {
     if (getdvarint(@"hash_64156ad0392158e4") != 0) {
         return;
     }
@@ -440,28 +440,28 @@ function givesuper(var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, var_12
     var_19163e14365d9264.var_2d439ede1c8ec8b9 = 0;
     var_19163e14365d9264.var_b0104dddec932264 = 0;
     var_19163e14365d9264.var_7da7aeb063e429ee = 1;
-    var_19163e14365d9264.weaponobj = namespace_4a3033eafa6fd07::function_62e8acc4f0862692(staticdata.weapon, var_12c0f53a71c9bcc8);
-    var_19163e14365d9264.var_12c0f53a71c9bcc8 = var_12c0f53a71c9bcc8;
+    var_19163e14365d9264.weaponobj = namespace_4a3033eafa6fd07::function_62e8acc4f0862692(staticdata.weapon, blueprintindex);
+    var_19163e14365d9264.blueprintindex = blueprintindex;
     function_1029081898b028c(0);
     setsuperisinuse(0);
-    setSuperIsActive(0);
+    setsuperisactive(0);
     if (isdefined(var_19163e14365d9264.staticdata.useweapon)) {
         function_9aa5fdb675559e34();
     }
     superonset(var_ebec497ff8b18a45);
     thread function_9d0de1f8996c57f8(var_ebec497ff8b18a45);
-    superBasePoints = self.pers["superBasePoints"];
-    if (!isdefined(superBasePoints)) {
-        superBasePoints = 0;
+    superbasepoints = self.pers["superBasePoints"];
+    if (!isdefined(superbasepoints)) {
+        superbasepoints = 0;
     }
     self.pers["superBasePoints"] = undefined;
-    setsuperbasepoints(superBasePoints);
-    superExtraPoints = self.pers["superExtraPoints"];
-    if (!isdefined(superExtraPoints)) {
-        superExtraPoints = 0;
+    setsuperbasepoints(superbasepoints);
+    superextrapoints = self.pers["superExtraPoints"];
+    if (!isdefined(superextrapoints)) {
+        superextrapoints = 0;
     }
     self.pers["superExtraPoints"] = undefined;
-    setsuperextrapoints(superExtraPoints);
+    setsuperextrapoints(superextrapoints);
     if (!isdefined(self.pers["superExpended"])) {
         setsuperexpended(0);
     }
@@ -490,7 +490,7 @@ function givesuper(var_ebec497ff8b18a45, var_6c70bf5ad211f464, immediate, var_12
     callback::callback("equipped_super", params);
     thread watchforsuperusebegin();
     thread handlespectating();
-    if (!namespace_36f464722d326bbe::isBRStyleGameType() || level.allowsupers) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype() || level.allowsupers) {
         thread watchforrespawn();
         thread storesupercooldownforroundchange();
         thread handleteamchange();
@@ -506,7 +506,7 @@ function handlesuperearnovertime() {
     if (level.superglobals.var_a33f6855d9867dbf) {
         return;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_4b0406965e556711::gameflagwait("prematch_done");
     }
     starttime = gettime();
@@ -568,7 +568,7 @@ function function_50f445936b3ddd9e(var_d220971ffe40c601) {
     if (var_d220971ffe40c601 == "super_select") {
         return 0;
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (self.perkpackagedata.firstupgrade == var_d220971ffe40c601) {
             return 0;
         } else {
@@ -658,7 +658,7 @@ function function_d8f9e4158e12de6b() {
 function clearsuper(var_6c70bf5ad211f464, var_d220971ffe40c601, playerkilled) {
     var_19163e14365d9264 = getcurrentsuper();
     var_fa91721e4a69c230 = namespace_282db5a41b643e19::function_66f0cbd5ff8458fe();
-    if (issuperinuse() && (istrue(var_19163e14365d9264.staticdata.var_80b52426e4d315e0) || superHasTimedUsage() || isUsingSuperWeapon())) {
+    if (issuperinuse() && (istrue(var_19163e14365d9264.staticdata.var_80b52426e4d315e0) || superhastimedusage() || isusingsuperweapon())) {
         superusefinished(0, istrue(playerkilled), 0, 0, 0, 1);
     }
     if (isdefined(var_19163e14365d9264) && isdefined(var_19163e14365d9264.staticdata)) {
@@ -678,7 +678,7 @@ function clearsuper(var_6c70bf5ad211f464, var_d220971ffe40c601, playerkilled) {
     }
     self notify("remove_super");
     self.super = undefined;
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && !var_fa91721e4a69c230) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && !var_fa91721e4a69c230) {
         self.var_1066fbd86c88a6df = 0;
     }
     thread function_bdcbe42d37001209(0);
@@ -878,7 +878,7 @@ function givesuperpoints(points, scoreevent, var_b4b593facaa83af7, var_53e3af3b2
     }
     if (!istrue(var_7601733fb3a9ae73)) {
         if (!isdefined(var_19163e14365d9264) || var_5a5d366a4a27c6a2 || var_19163e14365d9264.isinuse) {
-            var_89e09a97cd14a32a = !namespace_36f464722d326bbe::isBRStyleGameType() || istrue(self.var_514192f8282796c);
+            var_89e09a97cd14a32a = !namespace_36f464722d326bbe::isbrstylegametype() || istrue(self.var_514192f8282796c);
             if (isdefined(var_19163e14365d9264) && isdefined(self.var_a68b289a82138067) && namespace_82dcd1d5ae30ff7::_hasperk("specialty_overcharge_field_upgrade") && var_89e09a97cd14a32a) {
                 function_8c7b1312cf5986b(self.var_a68b289a82138067 + var_2bc440c7d6a315d9);
             }
@@ -1132,15 +1132,15 @@ function handlepointdecay() {
 // Size: 0x225
 function superearned() {
     var_19163e14365d9264 = getcurrentsuper();
-    if (var_19163e14365d9264.var_12c0f53a71c9bcc8 > 0 && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints) && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.var_12c0f53a71c9bcc8 - 1])) {
-        var_9b32d1936831f5aa = var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.var_12c0f53a71c9bcc8 - 1].genericblueprint;
+    if (var_19163e14365d9264.blueprintindex > 0 && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints) && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.blueprintindex - 1])) {
+        var_9b32d1936831f5aa = var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.blueprintindex - 1].genericblueprint;
         self function_53c61cc39f6a3b11(var_9b32d1936831f5aa);
     }
     self setweaponammoclip(var_19163e14365d9264.weaponobj, 1);
     var_8ef825fbc5430d59 = !var_19163e14365d9264.wasrefunded && !istrue(var_19163e14365d9264.var_7d00742b258a5aad);
     var_19163e14365d9264.var_7d00742b258a5aad = undefined;
     self notify("super_ready", var_8ef825fbc5430d59);
-    thread watchForSuperHold();
+    thread watchforsuperhold();
     if (isdefined(var_19163e14365d9264.staticdata.useweapon)) {
         function_9aa5fdb675559e34();
     }
@@ -1191,7 +1191,7 @@ function watchforsuperusebegin() {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c2c
 // Size: 0x13f
-function watchForSuperHold() {
+function watchforsuperhold() {
     self endon("disconnect");
     self endon("remove_super");
     self endon("super_use_finished");
@@ -1433,8 +1433,8 @@ function beginsuperuse() {
                 setsuperbasepoints(0);
                 setsuperextrapoints(0);
                 setsuperisinuse(1);
-                setSuperIsActive(1);
-                if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+                setsuperisactive(1);
+                if (namespace_36f464722d326bbe::isbrstylegametype()) {
                     self.var_1066fbd86c88a6df = 0;
                 }
                 var_19163e14365d9264.allowrefund = ter_op(var_19163e14365d9264.staticdata.graceperiod > 0, 1, 0);
@@ -1822,7 +1822,7 @@ function function_60e9ab8c0ad6a01c(ammo, type) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5239
 // Size: 0xae
-function isUsingSuperWeapon() {
+function isusingsuperweapon() {
     if (!isdefined(self.super)) {
         return 0;
     }
@@ -2038,7 +2038,7 @@ function superusefinished(var_3179afaa208defa2, var_fcef8d217a441961, var_e68637
             var_f5af0b5d26948d94 = shouldrefundsuper();
         }
         setsuperisinuse(0);
-        setSuperIsActive(0);
+        setsuperisactive(0);
         var_19163e14365d9264.canstow = 0;
         var_e2c5bb15593b4812 = undefined;
         if (isdefined(var_19163e14365d9264.staticdata.endusefunc)) {
@@ -2067,7 +2067,7 @@ function superusefinished(var_3179afaa208defa2, var_fcef8d217a441961, var_e68637
             var_19163e14365d9264.wasrefunded = 0;
         }
         thread switchandtakesuperuseweapon(1, 1);
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (!level.allowsupers && !isdefined(self.var_678855513f5076ca)) {
                 if (!istrue(var_3179afaa208defa2)) {
                     self setclientomnvar("ui_perk_package_state", 0);
@@ -2084,8 +2084,8 @@ function superusefinished(var_3179afaa208defa2, var_fcef8d217a441961, var_e68637
                 thread function_bdcbe42d37001209(0);
             }
         }
-        if (isdefined(var_19163e14365d9264.var_12c0f53a71c9bcc8) && var_19163e14365d9264.var_12c0f53a71c9bcc8 > 0 && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints) && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.var_12c0f53a71c9bcc8 - 1])) {
-            var_9b32d1936831f5aa = var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.var_12c0f53a71c9bcc8 - 1].genericblueprint;
+        if (isdefined(var_19163e14365d9264.blueprintindex) && var_19163e14365d9264.blueprintindex > 0 && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints) && isdefined(var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.blueprintindex - 1])) {
+            var_9b32d1936831f5aa = var_19163e14365d9264.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[var_19163e14365d9264.blueprintindex - 1].genericblueprint;
             self function_9bc014e7042e8339(var_9b32d1936831f5aa);
         }
         if (isdefined(var_19163e14365d9264.usestarttime) && isdefined(var_19163e14365d9264.madeavailabletime)) {
@@ -2119,7 +2119,7 @@ function function_e648b6fc93bbc0e0() {
 // Checksum 0x0, Offset: 0x5cf6
 // Size: 0xd5
 function refundsuper() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (isdefined(self.equipment["super"])) {
             namespace_cb965d2f71fefddc::function_1615eaec0c470f4f(self.equipment["super"], self.super.staticdata.ref);
         }
@@ -2277,7 +2277,7 @@ function switchandtakesuperuseweapon(var_a7ff1c3453c52053, var_bd73a31917f54451)
     }
     getridofweapon(useweapon);
     if (!istrue(var_bd73a31917f54451)) {
-        setSuperIsActive(0);
+        setsuperisactive(0);
     }
 }
 
@@ -2363,7 +2363,7 @@ function getsuperpointsneeded() {
 // Checksum 0x0, Offset: 0x63b4
 // Size: 0x4f
 function issuperready() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         return self.var_1066fbd86c88a6df;
     } else {
         var_19163e14365d9264 = getcurrentsuper();
@@ -2444,7 +2444,7 @@ function setsuperisinuse(isinuse) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6553
 // Size: 0x57
-function setSuperIsActive(isactive) {
+function setsuperisactive(isactive) {
     var_19163e14365d9264 = getcurrentsuper();
     var_19163e14365d9264.isactive = isactive;
     if (!isactive && issuperinuse()) {
@@ -2481,7 +2481,7 @@ function function_f95bcca44e8cba53(var_ebec497ff8b18a45) {
     if (!isdefined(level.var_3e969a1cc0ad79cc)) {
         return 0;
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return 0;
     }
     return array_contains(level.var_3e969a1cc0ad79cc, var_ebec497ff8b18a45);
@@ -2969,7 +2969,7 @@ function watchsuperdelay() {
     } else {
         level.superdelay = getdvarfloat(@"hash_2748b78a2910ca11", 0);
     }
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         namespace_4b0406965e556711::gameflagwait("prematch_done");
     }
     if (level.superdelay == 0) {
@@ -3293,7 +3293,7 @@ function function_3bc4f06f06e9c62() {
 // Checksum 0x0, Offset: 0x7b97
 // Size: 0x9
 function function_d1bd30be0c5ec282() {
-    return namespace_ec12f2e19aa34cc8::tacticalCamera_set();
+    return namespace_ec12f2e19aa34cc8::tacticalcamera_set();
 }
 
 // Namespace supers/namespace_85d036cb78063c4a
@@ -3301,7 +3301,7 @@ function function_d1bd30be0c5ec282() {
 // Checksum 0x0, Offset: 0x7ba8
 // Size: 0x9
 function function_2ef8268013bdbe57() {
-    return namespace_ec12f2e19aa34cc8::tacticalCamera_unset();
+    return namespace_ec12f2e19aa34cc8::tacticalcamera_unset();
 }
 
 // Namespace supers/namespace_85d036cb78063c4a
@@ -3325,7 +3325,7 @@ function function_dfc3421815005e62() {
 // Checksum 0x0, Offset: 0x7be5
 // Size: 0x9
 function function_cf92670cce45e726() {
-    return namespace_861236fa8235a2ba::deployedDecoy_unset();
+    return namespace_861236fa8235a2ba::deployeddecoy_unset();
 }
 
 // Namespace supers/namespace_85d036cb78063c4a
@@ -3549,7 +3549,7 @@ function function_d93f331b74c647f2() {
 // Checksum 0x0, Offset: 0x7e8e
 // Size: 0x9
 function function_e050bb329310407() {
-    return namespace_15f48ac5c4673765::function_d2a07d3acdd4b448();
+    return namespace_15f48ac5c4673765::emppulse_unset();
 }
 
 // Namespace supers/namespace_85d036cb78063c4a
@@ -3589,7 +3589,7 @@ function function_2e14b99891ecbbf4() {
 // Checksum 0x0, Offset: 0x7ef4
 // Size: 0x9
 function function_9380db5262bed3e7() {
-    return namespace_2db0b5db4c5dfc98::function_e10d519bbf856e68();
+    return namespace_2db0b5db4c5dfc98::blindingturret_unset();
 }
 
 // Namespace supers/namespace_85d036cb78063c4a
@@ -3708,7 +3708,7 @@ function function_19b0130d94d96b0b() {
 // Checksum 0x0, Offset: 0x80b0
 // Size: 0x1a
 function function_34956da8dd3afd1f(var_fcef8d217a441961, attacker) {
-    return namespace_416e533f6ed17708::tempV_end();
+    return namespace_416e533f6ed17708::tempv_end();
 }
 
 // Namespace supers/namespace_85d036cb78063c4a
@@ -4095,7 +4095,7 @@ function watchsuperlottery() {
     }
     wait(var_69f8c933a9416fd4);
     var_650c8acdffcc5af7 = undefined;
-    superLotteryEnabled = undefined;
+    superlotteryenabled = undefined;
     var_6b769601e87e9c1e = [];
     var_2f915c7e43a8c53c = [];
     foreach (entry in level.teamnamelist) {
@@ -4103,10 +4103,10 @@ function watchsuperlottery() {
         var_2f915c7e43a8c53c[entry] = [];
     }
     while (1) {
-        var_650c8acdffcc5af7 = superLotteryEnabled;
-        superLotteryEnabled = getdvarint(@"hash_350b9a835c1f30b8", 0) > 0;
-        if (!isdefined(var_650c8acdffcc5af7) || var_650c8acdffcc5af7 != superLotteryEnabled) {
-            if (superLotteryEnabled) {
+        var_650c8acdffcc5af7 = superlotteryenabled;
+        superlotteryenabled = getdvarint(@"hash_350b9a835c1f30b8", 0) > 0;
+        if (!isdefined(var_650c8acdffcc5af7) || var_650c8acdffcc5af7 != superlotteryenabled) {
+            if (superlotteryenabled) {
                 level notify("superLotteryEnabled");
             } else {
                 level notify("superLotteryDisabled");
@@ -4138,7 +4138,7 @@ function watchsuperlottery() {
                             bestplayer = players[0];
                         }
                     }
-                    if (superLotteryEnabled) {
+                    if (superlotteryenabled) {
                         childthread awardsuperlottery(bestplayer);
                     }
                     var_2f915c7e43a8c53c[var_2f915c7e43a8c53c.size] = bestplayer;
@@ -4419,7 +4419,7 @@ function function_bedc88d54e2c0015(player, objweapon) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x93a2
 // Size: 0x6b
-function superHasTimedUsage(var_19163e14365d9264) {
+function superhastimedusage(var_19163e14365d9264) {
     if (!isdefined(var_19163e14365d9264)) {
         var_19163e14365d9264 = getcurrentsuper();
     }
@@ -4456,7 +4456,7 @@ function superHasAmmoUsage(var_19163e14365d9264) {
 // Checksum 0x0, Offset: 0x9488
 // Size: 0xdc
 function function_97eecce0124a7b50() {
-    setSuperIsActive(1);
+    setsuperisactive(1);
     var_19163e14365d9264 = getcurrentsuper();
     clipammo = var_19163e14365d9264.staticdata.useweaponclipammo;
     stockammo = var_19163e14365d9264.staticdata.useweaponstockammo;
@@ -4466,9 +4466,9 @@ function function_97eecce0124a7b50() {
     }
     result = trygiveuseweapon(var_19163e14365d9264.staticdata.useweapon, clipammo, stockammo);
     if (istrue(result)) {
-        setSuperIsActive(1);
+        setsuperisactive(1);
     } else {
-        setSuperIsActive(0);
+        setsuperisactive(0);
     }
     return result;
 }

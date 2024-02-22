@@ -238,7 +238,7 @@ function function_ca641bb5167e4a5b(arena, var_55e69fb0ce97f15e, var_1439f86640d4
     if (!getdvarint(@"hash_b3d7a9483362813e", 0)) {
         spawnlocation = getclosestpointonnavmesh(var_55e69fb0ce97f15e.origin);
     }
-    agent = ai_mp_requestSpawnAgent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
+    agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
     if (isagent(agent)) {
         agent thread function_c31f3a6ef58a2928(arena);
         if (getdvarint(@"hash_b3d7a9483362813e", 0)) {
@@ -324,7 +324,7 @@ function function_55efd2583d54df2a(arena, var_55e69fb0ce97f15e, var_1439f86640d4
     }
     aitype = function_7f1a2e2ebe0c1693(var_1439f86640d42e34, var_7ca24826046f8ee3, nationality);
     spawnlocation = getclosestpointonnavmesh(var_55e69fb0ce97f15e.origin);
-    agent = ai_mp_requestSpawnAgent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
+    agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
     if (isagent(agent)) {
         agent thread function_c31f3a6ef58a2928(arena);
         arena waittill("ai_gulag_matchStarted");
@@ -412,7 +412,7 @@ function function_287401a3027db2bf(arena, var_55e69fb0ce97f15e, var_1439f86640d4
         agent namespace_14d36171baccf528::function_c37c4f9d687074ff(undefined, undefined, weapon);
     } else {
         aitype = function_7f1a2e2ebe0c1693(var_1439f86640d42e34, var_7ca24826046f8ee3, nationality);
-        agent = ai_mp_requestSpawnAgent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
+        agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
     }
     if (!isdefined(agent)) {
         function_24601896fe5fa52("Agent failed to spawn in arena: " + arena.gulagindex);
@@ -514,7 +514,7 @@ function function_5038458e3ceeb5bd(arena, var_55e69fb0ce97f15e) {
     } else {
         var_1439f86640d42e34 = "shotgun";
         aitype = function_7f1a2e2ebe0c1693(var_1439f86640d42e34, var_7ca24826046f8ee3);
-        agent = ai_mp_requestSpawnAgent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
+        agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
     }
     if (!isdefined(agent)) {
         function_24601896fe5fa52("Agent failed to spawn in arena: " + arena.gulagindex);
@@ -591,7 +591,7 @@ function function_5038458e3ceeb5bd(arena, var_55e69fb0ce97f15e) {
         arena notify("Jailer_Spawned");
         agent.ignoreall = 1;
         agent playloopsound("mus_jugg_01_hp");
-        agent setclothtype(#"hash_46f0f4be27456e65");
+        agent setclothtype(#"nylon");
         agent function_8abe5a968cc3c220(#"hash_134cc49a1cabaeda");
         agent function_3f32b2ac35f3ea96(arena);
         level thread function_dabf898f5f2a99e5(agent, arena);

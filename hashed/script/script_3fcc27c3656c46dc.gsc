@@ -50,7 +50,7 @@ function function_35671b7b1a04bf58(bot) {
             break;
         } else if (result == "bad_path") {
             /#
-                println("<unknown string>" + self.var_a0185a724941f02f.name + "<unknown string>" + target.buystation.origin + "<unknown string>" + bot.origin);
+                println("<unknown string>" + self.decision.name + "<unknown string>" + target.buystation.origin + "<unknown string>" + bot.origin);
             #/
             return result;
         }

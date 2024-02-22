@@ -36,12 +36,12 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "zombie_base";
-    self.voice = #"hash_97b066d92d35c738";
+    self.voice = #"unitedstates";
     self.bhasthighholster = 0;
     self.animtree = "zombie_base";
     self setmodel("c_jup_zmb_zombie_base_male_merc_body");
     namespace_ac7e8770abb7eb1::attachhead("c_jup_zmb_zombie_base_male_merc_head", namespace_12df6c254f1d634c::main());
-    self setclothtype(#"hash_d0ef9b6cfe3097be");
+    self setclothtype(#"vestheavy");
     self function_8abe5a968cc3c220(#"none");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {

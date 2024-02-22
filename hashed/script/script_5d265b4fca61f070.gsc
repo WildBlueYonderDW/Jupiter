@@ -2047,9 +2047,9 @@ function function_407745805f870(nags, var_4b0c85beee0df862, initial_delay, var_2
         #/
         nags = create_deck(nags, 1, 0);
     }
-    function_305eddcdfb20b45d(nags, initial_delay);
+    do_nag(nags, initial_delay);
     for (nag_count = 1; !isdefined(var_206ca980a28e3343) || nag_count / nags.items.size < var_206ca980a28e3343; nag_count++) {
-        function_305eddcdfb20b45d(nags, var_4b0c85beee0df862);
+        do_nag(nags, var_4b0c85beee0df862);
         waitframe();
     }
     self notify("finished_nag_loop");
@@ -2059,7 +2059,7 @@ function function_407745805f870(nags, var_4b0c85beee0df862, initial_delay, var_2
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56d3
 // Size: 0x262
-function function_305eddcdfb20b45d(nags, delay) {
+function do_nag(nags, delay) {
     speaker = self;
     var_3089d38b926beb3b = 0;
     current = undefined;

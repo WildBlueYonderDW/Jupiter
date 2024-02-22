@@ -62,7 +62,7 @@ function private function_c12e5fda7dc648ce() {
                 }
             }
         #/
-        thread naturalHealthRegen(smeansofdeath);
+        thread naturalhealthregen(smeansofdeath);
     }
 }
 
@@ -70,7 +70,7 @@ function private function_c12e5fda7dc648ce() {
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x3cb
 // Size: 0xe6
-function private naturalHealthRegen(smeansofdeath) {
+function private naturalhealthregen(smeansofdeath) {
     /#
         var_4552ad49778498ee = getdvarint(@"hash_9e41eb34980a2301", 0);
         if (var_4552ad49778498ee) {

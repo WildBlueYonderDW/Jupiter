@@ -9,9 +9,9 @@
 #using script_2669878cf5a1b6bc;
 #using script_3214e6fcdce468a7;
 
-#namespace namespace_6f5afea353b0d311;
+#namespace loot_drop;
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x4b
@@ -24,7 +24,7 @@ function function_251cd47c5242ae4f() {
     #/
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c1
 // Size: 0x23a
@@ -74,7 +74,7 @@ function on_zombie_ai_killed(params) {
     namespace_2abc885019e1956::function_cd45408bd44fab07(var_cde3aa266f27c24d, var_4bcef7981f5439fe, spawn_pos);
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x802
 // Size: 0x83
@@ -92,7 +92,7 @@ function on_ai_killed(params) {
     }
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88c
 // Size: 0x1b8
@@ -136,7 +136,7 @@ function function_1ebeccaabab5d730(params) {
     }
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa4b
 // Size: 0xb6
@@ -150,7 +150,7 @@ function function_97ed4e4e49d3e1b() {
     }
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb08
 // Size: 0x18f
@@ -173,7 +173,7 @@ function function_1415d77bc67b91fc(weapon, origin) {
     item.var_4f74f0aef2b2a8bf.variantid = weapon.variantid;
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc9e
 // Size: 0x4a
@@ -190,7 +190,7 @@ function function_97263a41a3e0f9d7() {
     return "ob_jup_items_enemy_droplist_solider";
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcf0
 // Size: 0xd4
@@ -219,7 +219,7 @@ function function_ecfc5eec680d2b6() {
     return "ob_jup_items_enemy_droplist_solider";
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdcc
 // Size: 0xba
@@ -246,7 +246,7 @@ function function_25c1bfac5c9b6573() {
     return 2;
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe8e
 // Size: 0x3d
@@ -260,7 +260,7 @@ function function_f22dd81df2150b04() {
     return "ob_jup_items_enemy_droplist_solider";
 }
 
-// Namespace namespace_6f5afea353b0d311/namespace_4fc51f3f2cc55291
+// Namespace loot_drop/namespace_4fc51f3f2cc55291
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed3
 // Size: 0x34

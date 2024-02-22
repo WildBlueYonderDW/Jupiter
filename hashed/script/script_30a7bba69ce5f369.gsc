@@ -321,7 +321,7 @@ function function_bdcc0a0ca6396e2a() {
     var_a39a25ddb1825426 = self.var_a39a25ddb1825426;
     var_20fe7f5e3d45448e = !isdefined(var_a39a25ddb1825426);
     if (isdefined(var_a39a25ddb1825426) && isdefined(var_a39a25ddb1825426.lure_prop_type)) {
-        level thread function_e453324661beb282(var_a39a25ddb1825426);
+        level thread clean_up_prop(var_a39a25ddb1825426);
         props = array_remove(props, var_a39a25ddb1825426);
         var_a39a25ddb1825426 = undefined;
         var_20fe7f5e3d45448e = props.size == 0;
@@ -410,7 +410,7 @@ function private function_88950ad5e3ce8e13(params) {
                 }
             }
         }
-        thread Animscripted_SharedFunc(animname, animname, origin, angles);
+        thread animscripted_sharedfunc(animname, animname, origin, angles);
     }
     function_6bdfe7a8ca9c56ba();
 }
@@ -555,13 +555,13 @@ function function_479960c6dfffd9c6(origin, angles) {
 function mimic_emerge_grab(player) {
     self endon("death");
     level endon("game_ended");
-    thread Animscripted_SharedFunc("emerge_attack", "emerge_attack", self.origin, self.angles, "mimic_emerge_grab");
+    thread animscripted_sharedfunc("emerge_attack", "emerge_attack", self.origin, self.angles, "mimic_emerge_grab");
     ent_flag_waitopen("mimic_emerge_grab");
     if (isalive(player) && distancesquared(self.origin, player.origin) < self.var_51adc6933a819c35 && absangleclamp180(vectortoyaw(player.origin - self.origin) - self.angles[1]) < 30) {
-        thread Animscripted_SharedFunc("emerge_attack_hit", "emerge_attack_hit", self.origin, self.angles, "grab_end");
+        thread animscripted_sharedfunc("emerge_attack_hit", "emerge_attack_hit", self.origin, self.angles, "grab_end");
         player thread function_4744995ac583c880("ai_jup_zm_mimic_com_emerge_prop_atk_bite_f_01_hit_player", self, self.origin, self.angles);
     } else {
-        thread Animscripted_SharedFunc("emerge_attack_miss", "emerge_attack_miss", self.origin, self.angles);
+        thread animscripted_sharedfunc("emerge_attack_miss", "emerge_attack_miss", self.origin, self.angles);
     }
     self.var_b0c83727eacd1810 = gettime() + self.var_7286eb804434f596;
 }
@@ -589,7 +589,7 @@ function function_4744995ac583c880(var_14c286864e132244, mimic, origin, angles) 
     if (!self islinked()) {
         self playerlinktoblend(e_model, "tag_origin", 0.3, 0.1, 0.05);
     }
-    if (!self GetCameraThirdPerson()) {
+    if (!self getcamerathirdperson()) {
         playfxontagforclients(getfx("player_grabbed_by_mimic_fx"), self, "j_head", self);
     }
     if (isnullweapon(self gethighpriorityweapon())) {

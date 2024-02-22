@@ -44,16 +44,16 @@ function private init() {
         [[ getsharedfunc("killstreak", "registerKillstreak") ]]("lrad", &function_5dae574697e78d96);
     }
     namespace_3c37cb17ade254d::registersharedfunc("lrad", "tryUseKillstreak", &function_5dae574697e78d96);
-    namespace_3c37cb17ade254d::registersharedfunc("lrad", "LRAD_Hack", &LRAD_Hack);
+    namespace_3c37cb17ade254d::registersharedfunc("lrad", "LRAD_Hack", &lrad_hack);
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["lrad"];
-    function_a41e3a211a9e37a4("lrad", bundle.var_8881166e57766e3a, #"hash_b76b2215370d2700");
+    function_a41e3a211a9e37a4("lrad", bundle.deployweapon, #"hash_b76b2215370d2700");
     function_1212a209876bcd8d();
     function_795e8013831a046a();
     level.var_2d9a7cb2b0831e1e = 0;
     level.var_23bb4defc5121d06 = [];
     level.var_f22117519609ef3b = [];
     /#
-        if (game_utility::isBRStyleGameType()) {
+        if (game_utility::isbrstylegametype()) {
             devgui::function_6e7290c8ee4f558b("setEMP_Applied_Callback");
             devgui::function_a2fe753948998c89("idle", "createObjective");
             devgui::function_fe953f000498048f();
@@ -245,7 +245,7 @@ function function_52132724b2c18dc4(streakinfo) {
     self endon("death");
     self endon("disconnect");
     endonnotify = "sentry_placement_failed";
-    weaponobj = makeweapon(streakinfo.bundle.var_8881166e57766e3a);
+    weaponobj = makeweapon(streakinfo.bundle.deployweapon);
     if (issharedfuncdefined("weapons", "watchForPlacementFireState")) {
         self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](streakinfo, endonnotify, weaponobj);
     }
@@ -288,7 +288,7 @@ function function_ba1ca808d7bb053e(streakinfo) {
         var_6bec98cb2dcc2450 setscriptablepartstate("beam", "active", 0);
         var_6bec98cb2dcc2450 thread function_481e1d72fdaac162();
         var_6bec98cb2dcc2450.vodestroyed = "lrad_teamleader_destroyed";
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             if (issharedfuncdefined("audio", "brLeaderDialogTeam")) {
                 level thread [[ getsharedfunc("audio", "brLeaderDialogTeam") ]]("lrad_friendly_online", var_6bec98cb2dcc2450.owner.team, 1, undefined, undefined, "dx_br_jpbm_");
             }
@@ -419,7 +419,7 @@ function function_3c44a60f10088e51(streakinfo, var_6152d24062d26039, delaytime) 
     }
     if (!isdefined(marker) || !isdefined(marker.location)) {
         if (_isalive()) {
-            function_9f6045ef775e961c(streakinfo.bundle.var_8881166e57766e3a, undefined, undefined, 1);
+            function_9f6045ef775e961c(streakinfo.bundle.deployweapon, undefined, undefined, 1);
         }
         return undefined;
     }
@@ -428,8 +428,8 @@ function function_3c44a60f10088e51(streakinfo, var_6152d24062d26039, delaytime) 
     } else {
         return undefined;
     }
-    if (self hasweapon(streakinfo.bundle.var_8881166e57766e3a)) {
-        thread function_9f6045ef775e961c(streakinfo.bundle.var_8881166e57766e3a, 1, 1);
+    if (self hasweapon(streakinfo.bundle.deployweapon)) {
+        thread function_9f6045ef775e961c(streakinfo.bundle.deployweapon, 1, 1);
     }
     var_85cda42514dc11d2 = getdvarfloat(@"hash_d7fd0b0d5f62285c");
     wait(var_85cda42514dc11d2);
@@ -522,7 +522,7 @@ function function_405ae182beea4b1c(data) {
 // Checksum 0x0, Offset: 0x1ca8
 // Size: 0x7b
 function function_792dfdb8f059fd22(params) {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (issharedfuncdefined("audio", "brLeaderDialogTeam")) {
             level thread [[ getsharedfunc("audio", "brLeaderDialogTeam") ]]("lrad_friendly_timeout", self.owner.team, 1, undefined, undefined, "dx_br_jpbm_");
         }
@@ -535,7 +535,7 @@ function function_792dfdb8f059fd22(params) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d2a
 // Size: 0xa5
-function function_9f6045ef775e961c(var_8881166e57766e3a, var_eaf9953fb1b05ac6, var_829a6cb8a7de0cab, var_f1f211606ccd1b6e) {
+function function_9f6045ef775e961c(deployweapon, var_eaf9953fb1b05ac6, var_829a6cb8a7de0cab, var_f1f211606ccd1b6e) {
     if (isdefined(var_829a6cb8a7de0cab) && var_829a6cb8a7de0cab > 0) {
         self endon("death_or_disconnect");
         level endon("game_ended");
@@ -549,7 +549,7 @@ function function_9f6045ef775e961c(var_8881166e57766e3a, var_eaf9953fb1b05ac6, v
     } else {
         _switchtoweapon(lastweaponobj);
     }
-    _takeweapon(var_8881166e57766e3a);
+    _takeweapon(deployweapon);
     if (istrue(var_f1f211606ccd1b6e)) {
         self notify("lrad_put_away");
     }
@@ -678,8 +678,8 @@ function function_43adb6908f665a51(var_6bec98cb2dcc2450, streakinfo) {
     if (issharedfuncdefined("weapons", "watchForPlacementFireState")) {
         self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](streakinfo, endonnotify);
     }
-    _giveweapon(streakinfo.bundle.var_8881166e57766e3a);
-    _switchtoweapon(streakinfo.bundle.var_8881166e57766e3a);
+    _giveweapon(streakinfo.bundle.deployweapon);
+    _switchtoweapon(streakinfo.bundle.deployweapon);
     function_8703bc55951530be(1);
     thread function_f2b4b6d178b092d9(var_6bec98cb2dcc2450);
     marker = function_3c44a60f10088e51(streakinfo, 1, 0.25);
@@ -759,7 +759,7 @@ function function_c87fe068955bfe05(var_6bec98cb2dcc2450) {
 // Size: 0x4e
 function function_4444ec0cb29ca814(weaponref) {
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["lrad"];
-    return weaponref == bundle.spawnweapon || weaponref == bundle.var_8881166e57766e3a;
+    return weaponref == bundle.spawnweapon || weaponref == bundle.deployweapon;
 }
 
 // Namespace lrad/namespace_876fdba3df4aad3
@@ -1027,7 +1027,7 @@ function function_bb2a979de475a65(stuntime, var_ef9733a4a88c2f67) {
             var_ef9733a4a88c2f67.var_8ca2aec32c2b0356 = currenttime;
         }
         if (istrue(namespace_e47104b48662385b::playersareenemies(var_c52ffaed35e604dd, var_f2ae11d4d6442540))) {
-            perks::activatePerk("specialty_tac_resist");
+            perks::activateperk("specialty_tac_resist");
         }
     }
     /#
@@ -1077,7 +1077,7 @@ function function_56da58bd9ea3d08d() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31ad
 // Size: 0x12f
-function LRAD_Hack(newowner) {
+function lrad_hack(newowner) {
     self notify("lrad_hacked");
     self.owner = newowner;
     self.team = newowner.team;
@@ -1116,7 +1116,7 @@ function function_5733afc81f25372c(data) {
     modifieddamage = damage;
     if (istrue(level.var_be6a42242be00b66)) {
         bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["lrad"];
-        modifieddamage = getModifiedDamageUsingDamageTuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
+        modifieddamage = getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
         modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, type, modifieddamage, self.maxhealth, 2, 3, 3, 4, 400);
     }

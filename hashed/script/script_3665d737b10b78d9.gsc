@@ -74,7 +74,7 @@ function function_3c906415e5828995(activity, node) {
     task.ref = "dmz_elimination";
     task.var_30e8a65cff941c7a = namespace_1eb3c4e0e28fac71::getquesttableindex(task.ref);
     task.node = node;
-    task.SpawnReinforcements = 1;
+    task.spawnreinforcements = 1;
     return task;
 }
 
@@ -90,29 +90,29 @@ function function_4eead3091a075f56() {
     var_30b708220bb23467 = [];
     targetorigin = getclosestpointonnavmesh(self.node.origin);
     aitype = namespace_bfef6903bca5845d::function_7f1a2e2ebe0c1693("ar");
-    elimTarget = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, targetorigin, self.node.angles, "absolute", "mission", "elimTarget", undefined, undefined, undefined, self.node.poi, 0, undefined, 0);
-    if (!isdefined(elimTarget)) {
+    elimtarget = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, targetorigin, self.node.angles, "absolute", "mission", "elimTarget", undefined, undefined, undefined, self.node.poi, 0, undefined, 0);
+    if (!isdefined(elimtarget)) {
         function_565a5ca9eef7c50();
         return;
     }
-    elimTarget.var_b582b10663b5b2a9 = 0;
+    elimtarget.var_b582b10663b5b2a9 = 0;
     var_7e1ff9afa225e8a1 = [0:"thermite_mp", 1:"semtex_mp", 2:"frag_grenade_mp", 3:"smoke_grenade_mp", 4:"concussion_grenade_mp", 5:"flash_grenade_mp", 6:"snapshot_grenade_mp", 7:"gas_mp", 8:"decoy_grenade_mp"];
     var_a664aad02ee98bd2 = random(var_7e1ff9afa225e8a1);
     armor = 500;
     helmet = 3;
     body = random([0:"body_dmz_opforce_cartel_1_1", 1:"body_dmz_opforce_cartel_1_2", 2:"body_dmz_opforce_cartel_1_3", 3:"body_dmz_opforce_cartel_2_1", 4:"body_dmz_opforce_cartel_2_2", 5:"body_dmz_opforce_cartel_2_3", 6:"body_dmz_opforce_cartel_3_1", 7:"body_dmz_opforce_cartel_3_2", 8:"body_dmz_opforce_cartel_3_3"]);
     head = random([0:"head_sp_opforce_cartel_tier_2_2_1", 1:"head_sp_opforce_cartel_tier_2_5_1", 2:"head_sp_opforce_cartel_tier_2_6_1"]);
-    elimTarget namespace_14d36171baccf528::function_c37c4f9d687074ff(body, head, function_3fa9aa825ada06dd(), var_a664aad02ee98bd2, 4, armor, helmet);
+    elimtarget namespace_14d36171baccf528::function_c37c4f9d687074ff(body, head, function_3fa9aa825ada06dd(), var_a664aad02ee98bd2, 4, armor, helmet);
     if (getdvarint(@"hash_49b37fc622a4d585", 0) == 1) {
-        elimTarget function_3de79443c911d4a5(1, 4, "MP_DMZ_MISSIONS/BOSS_NAME_YEGOR");
+        elimtarget function_3de79443c911d4a5(1, 4, "MP_DMZ_MISSIONS/BOSS_NAME_YEGOR");
     }
-    var_30b708220bb23467[0] = elimTarget;
-    self.enemy = elimTarget;
+    var_30b708220bb23467[0] = elimtarget;
+    self.enemy = elimtarget;
     thread function_47ef6b3f2a53e9c1();
     /#
         thread function_8eff76549b46f53a();
     #/
-    thread namespace_2000a83505151e5b::function_b11c1964f528574b(elimTarget, undefined, self.node.origin);
+    thread namespace_2000a83505151e5b::function_b11c1964f528574b(elimtarget, undefined, self.node.origin);
     var_f78a17463eebcb84 = [];
     if (isdefined(self.node.target)) {
         var_f78a17463eebcb84 = function_e9591df01126977(self.node.target, self.enemy.origin);
@@ -205,8 +205,8 @@ function private function_bcad41ab1c2f02b4(task) {
     task endon("task_ended");
     level endon("game_ended");
     killer = self waittill("death");
-    if (isdefined(task.activity.var_5ea1be154aeb609b)) {
-        task.activity.var_5ea1be154aeb609b function_66da9365bbfea8b7();
+    if (isdefined(task.activity.activitystarter)) {
+        task.activity.activitystarter function_66da9365bbfea8b7();
     }
     var_25fa090d20d9d23f = undefined;
     var_34521c3f3a06b3b4 = 0;
@@ -463,7 +463,7 @@ function private function_e9591df01126977(target, var_6c8ee20b233ca1aa) {
         }
     LOC_000001b3:
         aitype = namespace_bfef6903bca5845d::function_d5bc07eabf352abb(undefined, undefined, spawnset, var_1439f86640d42e34, tier);
-        agent = namespace_bfef6903bca5845d::function_ea94a8bf24d3c5ef(aitype, node.origin, node.angles, "high", "mission", "elimGuards", undefined, undefined, undefined, undefined, 0);
+        agent = namespace_bfef6903bca5845d::ai_mp_requestspawnagent(aitype, node.origin, node.angles, "high", "mission", "elimGuards", undefined, undefined, undefined, undefined, 0);
         if (isdefined(agent)) {
             var_f78a17463eebcb84[var_f78a17463eebcb84.size] = agent;
         }

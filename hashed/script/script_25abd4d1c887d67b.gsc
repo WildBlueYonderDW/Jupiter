@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#namespace namespace_cc6565d542c4c211;
+#namespace c_jup_zmb_zombie_base_male_shortsleeve_head_yz;
 
-// Namespace namespace_cc6565d542c4c211/namespace_fe012875aeb2d791
+// Namespace c_jup_zmb_zombie_base_male_shortsleeve_head_yz/namespace_fe012875aeb2d791
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb2
 // Size: 0x20

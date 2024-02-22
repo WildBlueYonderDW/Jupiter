@@ -152,7 +152,7 @@ function latespawnplayer() {
         var_92a929921d302e13 = getdvarint(@"hash_25ad2925d6075c8f", 0) == 2;
         var_afe7b88ab44f0601 = !istrue(level.br_c130spawndone) || !isdefined(level.latejoinersanimstruct);
         if (!var_92a929921d302e13 && var_afe7b88ab44f0601) {
-            var_a2e7df444a8aafa9 = isbot(player) && namespace_d3d40f75bb4e4c32::isBrPracticeMode();
+            var_a2e7df444a8aafa9 = isbot(player) && namespace_d3d40f75bb4e4c32::isbrpracticemode();
             while (!istrue(level.br_latejoininfilready) && !var_a2e7df444a8aafa9) {
                 if (!var_a2e7df444a8aafa9) {
                     player namespace_d20f8ef223912e12::function_258c4f40dee8189a();
@@ -164,8 +164,8 @@ function latespawnplayer() {
         } else {
             player.br_isininfil = 0;
             player.br_infilstarted = 1;
-            isUIBot = player namespace_d20f8ef223912e12::function_7dbb8165d792b06c();
-            if (var_92a929921d302e13 && isbot(player) && !isUIBot) {
+            isuibot = player namespace_d20f8ef223912e12::function_7dbb8165d792b06c();
+            if (var_92a929921d302e13 && isbot(player) && !isuibot) {
                 player.jumped = 1;
                 player namespace_99ac021a7547cae3::addtoalivecount();
             }
@@ -176,7 +176,7 @@ function latespawnplayer() {
                 }
                 setupbrsquadleader(teamplayers);
             }
-            if (isUIBot) {
+            if (isuibot) {
                 player thread namespace_99ac021a7547cae3::spawnplayer(undefined, 0);
             } else {
                 player thread missedinfilplayerhandler();
@@ -601,7 +601,7 @@ function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, pla
     level.br_ac130 thread gunship_updateplayercount();
     var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
     transitionplayerstoac130cinematic(var_fa371b137df55a75, infil_anim_type, animstruct.staticc130);
-    if (namespace_d3d40f75bb4e4c32::isBrPracticeMode() || namespace_d3d40f75bb4e4c32::isdmzbotpracticematch()) {
+    if (namespace_d3d40f75bb4e4c32::isbrpracticemode() || namespace_d3d40f75bb4e4c32::isdmzbotpracticematch()) {
         var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
         foreach (player in var_fa371b137df55a75) {
             if (isdefined(player) && isplayer(player)) {

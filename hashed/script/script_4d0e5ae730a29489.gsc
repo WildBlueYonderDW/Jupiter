@@ -146,7 +146,7 @@ function function_7b0acdb995efbcd0(streakinfo) {
     }
     namespace_d325722f2754c2c4::saveweaponstates();
     endonnotify = "sentry_placement_failed";
-    weaponobj = makeweapon(bundle.var_8881166e57766e3a);
+    weaponobj = makeweapon(bundle.deployweapon);
     if (issharedfuncdefined("weapons", "watchForPlacementFireState")) {
         self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](streakinfo, endonnotify, weaponobj);
     }
@@ -253,13 +253,13 @@ function function_159a8e5fa750161c(turret, streakinfo, var_6152d24062d26039, var
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["missile_turret"];
     if (!isdefined(marker) || !isdefined(marker.location)) {
         if (namespace_f8065cafc523dba5::_isalive()) {
-            function_8608f39517786dab(bundle.var_8881166e57766e3a);
+            function_8608f39517786dab(bundle.deployweapon);
         }
         return undefined;
     }
     turret thread namespace_ac45d22648d4adff::manualturret_disablefire(self, 1, 1);
-    if (self hasweapon(bundle.var_8881166e57766e3a)) {
-        thread function_8608f39517786dab(bundle.var_8881166e57766e3a, 1, 1);
+    if (self hasweapon(bundle.deployweapon)) {
+        thread function_8608f39517786dab(bundle.deployweapon, 1, 1);
     }
     var_85cda42514dc11d2 = 0.85;
     namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(var_85cda42514dc11d2);
@@ -735,7 +735,7 @@ function function_ad3bcd8ec77ba7a0(turret) {
         self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](turret.streakinfo, endonnotify);
     }
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["missile_turret"];
-    var_41bf9bf4918115ac = namespace_b3d24e921998a8b::streakdeploy_doweaponswitchdeploy(turret.streakinfo, makeweapon(bundle.var_8881166e57766e3a), 1, undefined, undefined, &function_b750543c3bf3d80f);
+    var_41bf9bf4918115ac = namespace_b3d24e921998a8b::streakdeploy_doweaponswitchdeploy(turret.streakinfo, makeweapon(bundle.deployweapon), 1, undefined, undefined, &function_b750543c3bf3d80f);
     if (!istrue(var_41bf9bf4918115ac)) {
         self notify(endonnotify);
         level.var_43d1ee57c2ccbcde = array_remove(level.var_43d1ee57c2ccbcde, turret);
@@ -771,7 +771,7 @@ function function_6b113bca399df0c9(var_eaf9953fb1b05ac6) {
         _switchtoweapon(self.lastdroppableweaponobj);
     }
     bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["missile_turret"];
-    _takeweapon(bundle.var_8881166e57766e3a);
+    _takeweapon(bundle.deployweapon);
 }
 
 // Namespace missile_turret/namespace_6420d3dce7f35553
@@ -1034,7 +1034,7 @@ function function_ae352bb92f889863(newowner, var_c0f9139ffd72e62d) {
         if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
             [[ getsharedfunc("sound", "playKillstreakDeployDialog") ]](newowner, self.streakinfo.streakname);
         }
-        killstreak_dangerNotifyPlayersInRange(newowner, newowner.team, 2000, self.streakinfo.streakname);
+        killstreak_dangernotifyplayersinrange(newowner, newowner.team, 2000, self.streakinfo.streakname);
         var_5e8eb3c31f9c265c = "bi_base";
         config = level.var_7d48025ea3734fa2[self.turrettype];
         var_803338ee7c91a3e6 = anglestoup(self gettagangles(var_5e8eb3c31f9c265c)) * 20;
@@ -1594,7 +1594,7 @@ function function_6886c78f9664c089(data) {
     modifieddamage = damage;
     if (istrue(level.var_be6a42242be00b66)) {
         bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["missile_turret"];
-        modifieddamage = function_c204e7f8a2ab087f(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
+        modifieddamage = getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
         modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, type, modifieddamage, self.maxhealth, 2, 3, 4, 3, 400);
     }

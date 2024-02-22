@@ -60,7 +60,7 @@ function onconnect() {
     level endon("game_ended");
     while (1) {
         player = level waittill("connected");
-        if (istrue(level.leaguePlayMatchCancelled)) {
+        if (istrue(level.leagueplaymatchcancelled)) {
             return;
         }
         if (!isplayer(player) || isbot(player)) {
@@ -80,7 +80,7 @@ function onconnect() {
 // Checksum 0x0, Offset: 0x505
 // Size: 0x29f
 function function_adcdfd1b1a3efa51(player) {
-    if (istrue(level.leaguePlayMatchCancelled)) {
+    if (istrue(level.leagueplaymatchcancelled)) {
         return;
     }
     if (!isplayer(player) || isbot(player)) {
@@ -114,7 +114,7 @@ function function_adcdfd1b1a3efa51(player) {
 // Checksum 0x0, Offset: 0x7ab
 // Size: 0x59b
 function ondisconnect(player, var_7c6183ce9e04512e) {
-    if (istrue(level.var_f25335848c8ea5a0) || istrue(level.leaguePlayMatchCancelled)) {
+    if (istrue(level.leagueplaymatchcompleted) || istrue(level.leagueplaymatchcancelled)) {
         return;
     }
     if (!isplayer(player) || isbot(player)) {
@@ -145,7 +145,7 @@ function ondisconnect(player, var_7c6183ce9e04512e) {
     }
     var_dda705f2e8ff8269 = 0;
     var_2214a26986673ad6 = 0;
-    ladderPointsLoss = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsLoss", 1));
+    ladderpointsloss = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsLoss", 1));
     var_934dc135aaf6f953 = 0;
     playercounts = namespace_6d8da2b47f878104::countplayers();
     xuid = player getxuid();
@@ -173,9 +173,9 @@ function ondisconnect(player, var_7c6183ce9e04512e) {
     var_bca6691d9622c899 = function_78fcc96be9d69371();
     gamemode = namespace_aad14af462a74d08::getchallengegamemode(self);
     if (var_bca6691d9622c899 > -1) {
-        return [0:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_d708505d31d66ef6"), 1:1, 2:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_c9361150947eb728"), 3:function_94c7ae7049488358(), 4:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e03f5709c8cd8a03"), 5:function_4f9373a1227db35c(), 6:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"disconnect_reason"), 7:var_934dc135aaf6f953, 8:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_cd5d35cc3d1850e5"), 9:-1 * (ladderPointsLoss + var_2214a26986673ad6), 10:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e643e8a9919c09d8"), 11:var_dda705f2e8ff8269, 12:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_23d400c5be24f34b"), 13:var_bca6691d9622c899, 14:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_ab984d923d5f2c96"), 15:function_fb67b62bbd718b34(), 16:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_5fba2f25f07000f5"), 17:level.var_cbbf84a8e78caeee, 18:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"gamemode"), 19:gamemode, 20:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e8d0ec1cb1f306c4"), 21:function_e3bd94413509bc25()];
+        return [0:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_d708505d31d66ef6"), 1:1, 2:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_c9361150947eb728"), 3:function_94c7ae7049488358(), 4:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e03f5709c8cd8a03"), 5:function_4f9373a1227db35c(), 6:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"disconnect_reason"), 7:var_934dc135aaf6f953, 8:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_cd5d35cc3d1850e5"), 9:-1 * (ladderpointsloss + var_2214a26986673ad6), 10:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e643e8a9919c09d8"), 11:var_dda705f2e8ff8269, 12:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_23d400c5be24f34b"), 13:var_bca6691d9622c899, 14:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_ab984d923d5f2c96"), 15:function_fb67b62bbd718b34(), 16:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_5fba2f25f07000f5"), 17:level.var_cbbf84a8e78caeee, 18:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"gamemode"), 19:gamemode, 20:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e8d0ec1cb1f306c4"), 21:function_e3bd94413509bc25()];
     } else {
-        return [0:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_d708505d31d66ef6"), 1:1, 2:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_c9361150947eb728"), 3:function_94c7ae7049488358(), 4:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e03f5709c8cd8a03"), 5:function_4f9373a1227db35c(), 6:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"disconnect_reason"), 7:var_934dc135aaf6f953, 8:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_cd5d35cc3d1850e5"), 9:-1 * (ladderPointsLoss + var_2214a26986673ad6), 10:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e643e8a9919c09d8"), 11:var_dda705f2e8ff8269, 12:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_ab984d923d5f2c96"), 13:function_fb67b62bbd718b34(), 14:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_5fba2f25f07000f5"), 15:level.var_cbbf84a8e78caeee, 16:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"gamemode"), 17:gamemode, 18:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e8d0ec1cb1f306c4"), 19:function_e3bd94413509bc25()];
+        return [0:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_d708505d31d66ef6"), 1:1, 2:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_c9361150947eb728"), 3:function_94c7ae7049488358(), 4:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e03f5709c8cd8a03"), 5:function_4f9373a1227db35c(), 6:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"disconnect_reason"), 7:var_934dc135aaf6f953, 8:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_cd5d35cc3d1850e5"), 9:-1 * (ladderpointsloss + var_2214a26986673ad6), 10:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e643e8a9919c09d8"), 11:var_dda705f2e8ff8269, 12:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_ab984d923d5f2c96"), 13:function_fb67b62bbd718b34(), 14:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_5fba2f25f07000f5"), 15:level.var_cbbf84a8e78caeee, 16:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"gamemode"), 17:gamemode, 18:function_d6f771aedba70ce7(var_7c6183ce9e04512e, #"hash_e8d0ec1cb1f306c4"), 19:function_e3bd94413509bc25()];
     }
 }
 
@@ -226,7 +226,7 @@ function function_ba4da6a667e97e19() {
 // Checksum 0x0, Offset: 0xe98
 // Size: 0x22
 function function_ecb13c8e7b38facd() {
-    if (istrue(level.var_60f7d8bd0181980f) && !istrue(level.leaguePlayMatchCancelled)) {
+    if (istrue(level.var_60f7d8bd0181980f) && !istrue(level.leagueplaymatchcancelled)) {
         return 1;
     }
     return 0;
@@ -303,14 +303,14 @@ function function_7b16e8257c0259a2(var_cfff0d450fbbb7ae) {
 // Checksum 0x0, Offset: 0x1154
 // Size: 0xf5
 function function_dc56b195bbf80d31() {
-    level.leaguePlayMatchCancelled = 1;
+    level.leagueplaymatchcancelled = 1;
     level.var_7ebde40af908fcf8 = 0;
     if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
         foreach (player in level.players) {
             if (!isdefined(player.clientmatchdataid)) {
                 namespace_d576b6dc7cef9c62::assignclientmatchdataid(player);
             }
-            setclientmatchdata("players", player.clientmatchdataid, "leaguePlayMatchCancelled", level.leaguePlayMatchCancelled);
+            setclientmatchdata("players", player.clientmatchdataid, "leaguePlayMatchCancelled", level.leagueplaymatchcancelled);
         }
     }
     namespace_e8a49b70d0769b66::updateplacement();
@@ -365,13 +365,13 @@ function function_883f3d0fdef74fbf(winner) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1304
 // Size: 0x80
-function function_5231a8b9bc35b470(ladderPointsBonusPoolStep) {
+function function_5231a8b9bc35b470(ladderpointsbonuspoolstep) {
     player = self;
     bonuspool = player getplayerdata(level.var_5d69837cf4db0407, "leaguePlayData", level.var_bbcb5f6b1b0a78ae, "bonuspool");
-    var_282f09c3ac1a1052 = bonuspool - ladderPointsBonusPoolStep;
+    var_282f09c3ac1a1052 = bonuspool - ladderpointsbonuspoolstep;
     if (var_282f09c3ac1a1052 >= 0) {
         player getplayerdata(level.var_5d69837cf4db0407, "leaguePlayData", level.var_bbcb5f6b1b0a78ae, "bonuspool", var_282f09c3ac1a1052);
-        return ladderPointsBonusPoolStep;
+        return ladderpointsbonuspoolstep;
     }
     return 0;
 }
@@ -382,11 +382,11 @@ function function_5231a8b9bc35b470(ladderPointsBonusPoolStep) {
 // Size: 0x7cf
 function match_end(winner) {
     level.gameended = 1;
-    level.var_f25335848c8ea5a0 = 1;
-    var_9536b5b9bff06ded = istrue(level.leaguePlayMatchCancelled);
-    ladderPointsWin = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsWin", 1));
-    ladderPointsLoss = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsLoss", 1));
-    ladderPointsBonusPoolStep = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsBonusPoolStep", 1));
+    level.leagueplaymatchcompleted = 1;
+    var_9536b5b9bff06ded = istrue(level.leagueplaymatchcancelled);
+    ladderpointswin = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsWin", 1));
+    ladderpointsloss = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsLoss", 1));
+    ladderpointsbonuspoolstep = int(tablelookup("mp/leagueplay_config.csv", 0, "ladderPointsBonusPoolStep", 1));
     var_bca6691d9622c899 = function_78fcc96be9d69371();
     gamemode = namespace_aad14af462a74d08::getchallengegamemode(self);
     lobbyid = function_4f9373a1227db35c();
@@ -418,11 +418,11 @@ function match_end(winner) {
             if (matchresult == 3) {
                 var_453735e83c192121 = 0;
                 if (onladder) {
-                    var_453735e83c192121 = player function_5231a8b9bc35b470(ladderPointsBonusPoolStep);
+                    var_453735e83c192121 = player function_5231a8b9bc35b470(ladderpointsbonuspoolstep);
                 }
-                function_f65a948bff3a538(xuid, ladderPointsWin + var_453735e83c192121);
+                function_f65a948bff3a538(xuid, ladderpointswin + var_453735e83c192121);
             } else if (matchresult == 1) {
-                function_f65a948bff3a538(xuid, ladderPointsLoss);
+                function_f65a948bff3a538(xuid, ladderpointsloss);
                 goto LOC_0000030d;
             }
         LOC_0000030d:

@@ -38,12 +38,12 @@ function init() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbf5
 // Size: 0x1415
-function function_55f2480b4b819aea(movingChopper) {
+function function_55f2480b4b819aea(movingchopper) {
     animstruct = spawnstruct();
-    movingChopper.animstruct = animstruct;
+    movingchopper.animstruct = animstruct;
     animstruct.origin = getdvarvector(@"hash_223915c6339dbc10", (4319, 0, -28644));
     animstruct.angles = (0, 0, 0);
-    animstruct.movingChopper = movingChopper;
+    animstruct.movingchopper = movingchopper;
     animstruct.cleanupfunc = &function_a5668882499fb369;
     animstruct.chopper = getent("infil_chopper", "script_noteworthy");
     if (isdefined(animstruct.chopper)) {
@@ -63,23 +63,23 @@ function function_55f2480b4b819aea(movingChopper) {
     }
     animstruct.var_c1bf2a7fd5e40dad = animstruct.chopper spawn_script_model("veh8_mil_air_mindia8_interior_infil_netting", "movingChopper");
     animstruct.var_c1bf2a7fd5e40dad linkto(animstruct.chopper, "tag_origin", (0, 0, 0), (0, 0, 0));
-    animstruct.chopperDoor = animstruct.chopper spawn_script_model("veh8_mil_air_mindia8_interior_infil_cabin_door", "chopperDoor");
-    animstruct.chopperDoor linkto(animstruct.chopper, "tag_origin", (0, 0, 0), (0, 0, 0));
-    if (isdefined(animstruct.movingChopper)) {
-        animstruct.movingChopper.animname = "movingChopper";
-        animstruct.movingChopper.innards.animname = "movingChopper";
+    animstruct.chopperdoor = animstruct.chopper spawn_script_model("veh8_mil_air_mindia8_interior_infil_cabin_door", "chopperDoor");
+    animstruct.chopperdoor linkto(animstruct.chopper, "tag_origin", (0, 0, 0), (0, 0, 0));
+    if (isdefined(animstruct.movingchopper)) {
+        animstruct.movingchopper.animname = "movingChopper";
+        animstruct.movingchopper.innards.animname = "movingChopper";
     }
     animstruct.var_d60e3315aba032e0 = animstruct.chopper spawn_script_model("generic_prop_x3", "camera");
     animstruct.var_d60e3315aba032e0 linkto(animstruct.chopper, "tag_origin", (0, 0, 0), (0, 0, 0));
     animstruct.var_2f73a403f1e61903 = animstruct.chopper spawn_script_model("generic_prop_x3", "cameraSquad");
     animstruct.var_2f73a403f1e61903 linkto(animstruct.chopper, "tag_origin", (0, 0, 0), (0, 0, 0));
-    if (isdefined(movingChopper)) {
-        movingChopper forcenetfieldhighlod(1);
-        animstruct.var_7bbc3350e7793cc6 = movingChopper spawn_script_model("generic_prop_x3", "cameramoving");
-        animstruct.var_7bbc3350e7793cc6 linkto(movingChopper, "tag_origin", (0, 0, 0), (0, 0, 0));
+    if (isdefined(movingchopper)) {
+        movingchopper forcenetfieldhighlod(1);
+        animstruct.var_7bbc3350e7793cc6 = movingchopper spawn_script_model("generic_prop_x3", "cameramoving");
+        animstruct.var_7bbc3350e7793cc6 linkto(movingchopper, "tag_origin", (0, 0, 0), (0, 0, 0));
         animstruct.var_7bbc3350e7793cc6 forcenetfieldhighlod(1);
-        animstruct.var_a9a5dab973b28fad = movingChopper spawn_script_model("generic_prop_x3", "cameraSquadmoving");
-        animstruct.var_a9a5dab973b28fad linkto(movingChopper, "tag_origin", (0, 0, 0), (0, 0, 0));
+        animstruct.var_a9a5dab973b28fad = movingchopper spawn_script_model("generic_prop_x3", "cameraSquadmoving");
+        animstruct.var_a9a5dab973b28fad linkto(movingchopper, "tag_origin", (0, 0, 0), (0, 0, 0));
         animstruct.var_a9a5dab973b28fad forcenetfieldhighlod(1);
     }
     animstruct.playerpositionents["parent_solo"] = animstruct.chopper spawn_script_model("generic_prop_x3", "propsolo");
@@ -108,28 +108,28 @@ function function_55f2480b4b819aea(movingChopper) {
     animstruct.var_a552ec61e51ece6e[2] linkto(animstruct.var_b50860e78d9e1e5[1], "tag_player", (0, 0, 0), (0, 0, 0));
     animstruct.var_a552ec61e51ece6e[3] linkto(animstruct.var_b50860e78d9e1e5[2], "tag_player", (0, 0, 0), (0, 0, 0));
     animstruct.var_a552ec61e51ece6e[4] linkto(animstruct.var_b50860e78d9e1e5[3], "tag_player", (0, 0, 0), (0, 0, 0));
-    animstruct.aiPilot = animstruct.chopper spawn_script_model("body_mp_western_otter_3_1_lod1", "aiPilot");
-    animstruct.aiPilotHead = spawn("script_model", animstruct.aiPilot gettagorigin("j_neck"));
-    animstruct.aiPilotHead setmodel("head_mp_eastern_metalghost_1_1");
-    animstruct.aiPilotHead.animname = "aiPilotHead";
-    animstruct.aiPilotHead linkto(animstruct.aiPilot, "j_neck", (-9, 1, 0), (0, 0, 0));
-    animstruct.aiPilot linkto(animstruct.playerpositionents["parent_solo"], "j_prop_2", (0, 0, 0), (0, 0, 0));
-    animstruct.aiCopilot = animstruct.chopper spawn_script_model("body_mp_western_otter_3_1_lod1", "aiCopilot");
-    var_8b31bc2c19776c6f = spawn("script_model", animstruct.aiCopilot gettagorigin("j_neck"));
+    animstruct.aipilot = animstruct.chopper spawn_script_model("body_mp_western_otter_3_1_lod1", "aiPilot");
+    animstruct.aipilothead = spawn("script_model", animstruct.aipilot gettagorigin("j_neck"));
+    animstruct.aipilothead setmodel("head_mp_eastern_metalghost_1_1");
+    animstruct.aipilothead.animname = "aiPilotHead";
+    animstruct.aipilothead linkto(animstruct.aipilot, "j_neck", (-9, 1, 0), (0, 0, 0));
+    animstruct.aipilot linkto(animstruct.playerpositionents["parent_solo"], "j_prop_2", (0, 0, 0), (0, 0, 0));
+    animstruct.aicopilot = animstruct.chopper spawn_script_model("body_mp_western_otter_3_1_lod1", "aiCopilot");
+    var_8b31bc2c19776c6f = spawn("script_model", animstruct.aicopilot gettagorigin("j_neck"));
     var_8b31bc2c19776c6f setmodel("head_mp_eastern_metalghost_1_1");
-    var_8b31bc2c19776c6f linkto(animstruct.aiCopilot, "j_neck", (-9, 1, 0), (0, 0, 0));
-    animstruct.aiCopilot linkto(animstruct.playerpositionents["parent_solo"], "j_prop_3", (0, 0, 0), (0, 0, 0));
-    animstruct.armadaRig = animstruct.chopper spawn_script_model("generic_prop_x10", "armadaRig");
-    animstruct.armadaRig linkto(animstruct.chopper, "", (0, 0, 0), (0, 0, 0));
-    animstruct.armadaRig forcenetfieldhighlod(1);
+    var_8b31bc2c19776c6f linkto(animstruct.aicopilot, "j_neck", (-9, 1, 0), (0, 0, 0));
+    animstruct.aicopilot linkto(animstruct.playerpositionents["parent_solo"], "j_prop_3", (0, 0, 0), (0, 0, 0));
+    animstruct.armadarig = animstruct.chopper spawn_script_model("generic_prop_x10", "armadaRig");
+    animstruct.armadarig linkto(animstruct.chopper, "", (0, 0, 0), (0, 0, 0));
+    animstruct.armadarig forcenetfieldhighlod(1);
     var_d4e512c7842a8a5d = 9;
     animstruct.var_8a5c28116079c26b = [];
     for (i = 0; i < var_d4e512c7842a8a5d; i++) {
-        newChopper = animstruct.chopper spawn_script_model("veh8_mil_air_mindia8_infil_flight", "newChopper" + i);
-        newChopper linkto(animstruct.armadaRig, "j_prop_" + i + 2, (0, 0, 0), (0, 0, 0));
-        newChopper forcenetfieldhighlod(1);
-        newChopper playloopsound("br_heli_infil_fleet_lp");
-        animstruct.var_8a5c28116079c26b[animstruct.var_8a5c28116079c26b.size] = newChopper;
+        newchopper = animstruct.chopper spawn_script_model("veh8_mil_air_mindia8_infil_flight", "newChopper" + i);
+        newchopper linkto(animstruct.armadarig, "j_prop_" + i + 2, (0, 0, 0), (0, 0, 0));
+        newchopper forcenetfieldhighlod(1);
+        newchopper playloopsound("br_heli_infil_fleet_lp");
+        animstruct.var_8a5c28116079c26b[animstruct.var_8a5c28116079c26b.size] = newchopper;
     }
     animstruct.packs = [];
     n = 0;
@@ -157,10 +157,10 @@ function function_55f2480b4b819aea(movingChopper) {
         animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[2], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player2"]);
         animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[3], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player3"]);
         animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[4], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player4"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.aiPilot, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_pilot"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.aiPilotHead, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_pilot"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.aiCopilot, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_copilot"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.armadaRig, level.var_1a209bd995a7fa83["wz_infil_mindia8_armada"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.aipilot, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_pilot"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.aipilothead, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_pilot"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.aicopilot, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_copilot"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.armadarig, level.var_1a209bd995a7fa83["wz_infil_mindia8_armada"]);
         animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.var_2f73a403f1e61903, "j_prop_1", level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_player"]);
         if (!isdefined(level.scr_notetrack["camera"])) {
             namespace_bc4a4b9456315863::addnotetrack_customfunction("camera", "transition", &function_88ba30853f3d01f0);
@@ -226,29 +226,29 @@ function function_f3ae4b41df047ba0() {
 // Size: 0x1a7
 function function_1d609f282b615eb7(array) {
     function_f3ae4b41df047ba0();
-    if (isdefined(self.movingChopper)) {
-        self.movingChopper stoploopsound();
+    if (isdefined(self.movingchopper)) {
+        self.movingchopper stoploopsound();
     }
-    self.aiPilot hide();
-    self.aiCopilot hide();
-    self.movingChopper show();
+    self.aipilot hide();
+    self.aicopilot hide();
+    self.movingchopper show();
     self.var_c1bf2a7fd5e40dad show();
     thread clearsoundsubmixmpbrinfilanim();
-    if (isdefined(self.movingChopper)) {
-        self.movingChopper setscriptablepartstate("infil_fx_hero", "on");
-        self.movingChopper setscriptablepartstate("infil_fx_mindia8", "moving");
+    if (isdefined(self.movingchopper)) {
+        self.movingchopper setscriptablepartstate("infil_fx_hero", "on");
+        self.movingchopper setscriptablepartstate("infil_fx_mindia8", "moving");
     }
     function_fd00edc34074bb24();
     thread function_69d240b44d66f525();
     thread infil_light_dvars();
     thread delaystreamtomovingplane();
-    foreach (armadaChopper in self.var_8a5c28116079c26b) {
+    foreach (armadachopper in self.var_8a5c28116079c26b) {
         var_52d8b7e47fb268fc = getanimlength(level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_veh"]);
         var_23a79fd929b2ba3d = randomfloatrange(0.5, var_52d8b7e47fb268fc - 0.5);
-        armadaChopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopper", var_23a79fd929b2ba3d);
-        armadaChopper setscriptablepartstate("infil_fx_armada", "on");
-        if (isdefined(armadaChopper.innards)) {
-            armadaChopper.innards scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopperInnards", var_23a79fd929b2ba3d);
+        armadachopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopper", var_23a79fd929b2ba3d);
+        armadachopper setscriptablepartstate("infil_fx_armada", "on");
+        if (isdefined(armadachopper.innards)) {
+            armadachopper.innards scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopperInnards", var_23a79fd929b2ba3d);
         }
     }
 }
@@ -275,8 +275,8 @@ function function_447159ec37003898(player, array) {
     player setclientdvar(@"hash_71c6c0b8428e44a7", 1);
     player enablephysicaldepthoffieldscripting();
     player setphysicaldepthoffield(var_d1c04ff6328d20d6, var_95288242e2d19a2, var_8a3ce4d151659d21, var_9b5197cc4bb4356a);
-    self.aiPilot showtoplayer(player);
-    self.aiCopilot showtoplayer(player);
+    self.aipilot showtoplayer(player);
+    self.aicopilot showtoplayer(player);
     if (!isdefined(player.infilcoveroverlay)) {
         player.infilcoveroverlay = newclienthudelem(player);
         function_347d499c7fd9af39(player.infilcoveroverlay);
@@ -307,27 +307,27 @@ function function_347d499c7fd9af39(hudelem) {
 // Size: 0x1bb
 function function_5ff576fc264728a6(array) {
     if (istrue(level.var_f84366b8fdd80cf2)) {
-        if (isdefined(self.movingChopper)) {
-            self.movingChopper setscriptablepartstate("infil_fx_hero", "on");
-            self.movingChopper setscriptablepartstate("infil_fx_mindia8", "moving");
+        if (isdefined(self.movingchopper)) {
+            self.movingchopper setscriptablepartstate("infil_fx_hero", "on");
+            self.movingchopper setscriptablepartstate("infil_fx_mindia8", "moving");
         }
-        foreach (armadaChopper in self.var_8a5c28116079c26b) {
+        foreach (armadachopper in self.var_8a5c28116079c26b) {
             var_52d8b7e47fb268fc = getanimlength(level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_veh"]);
             var_23a79fd929b2ba3d = randomfloatrange(0.5, var_52d8b7e47fb268fc - 0.5);
-            armadaChopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopper", var_23a79fd929b2ba3d);
-            armadaChopper setscriptablepartstate("infil_fx_armada", "on");
-            if (isdefined(armadaChopper.innards)) {
-                armadaChopper.innards scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopperInnards", var_23a79fd929b2ba3d);
+            armadachopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopper", var_23a79fd929b2ba3d);
+            armadachopper setscriptablepartstate("infil_fx_armada", "on");
+            if (isdefined(armadachopper.innards)) {
+                armadachopper.innards scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopperInnards", var_23a79fd929b2ba3d);
             }
         }
         self.var_7bbc3350e7793cc6 scriptmodelplayanim("wz_infil_mindia8_solo_cam", "cameramoving", 10, 6);
         self.var_a9a5dab973b28fad scriptmodelplayanim("wz_infil_mindia8_squad_cam", "cameraSquadmoving", 10, 6);
-        self.armadaRig scriptmodelplayanim("wz_infil_mindia8_armada", "armadaRig", 0, 3);
+        self.armadarig scriptmodelplayanim("wz_infil_mindia8_armada", "armadaRig", 0, 3);
         function_88ba30853f3d01f0();
     }
     self.chopper stoploopsound();
-    if (isdefined(self.movingChopper)) {
-        self.movingChopper playloopsound("br_heli_infil_hero_lp");
+    if (isdefined(self.movingchopper)) {
+        self.movingchopper playloopsound("br_heli_infil_hero_lp");
     }
 }
 
@@ -402,12 +402,12 @@ function private function_fd00edc34074bb24(c130) {
 // Size: 0x61
 function function_69d240b44d66f525() {
     level endon("cleanupInfil");
-    if (isdefined(self.chopperDoor)) {
-        self.chopperDoor hide();
+    if (isdefined(self.chopperdoor)) {
+        self.chopperdoor hide();
     }
     self.var_d60e3315aba032e0 waittill_match_or_timeout("camera", "showdoor", 30);
-    if (isdefined(self.chopperDoor)) {
-        self.chopperDoor show();
+    if (isdefined(self.chopperdoor)) {
+        self.chopperdoor show();
     }
 }
 
@@ -492,7 +492,7 @@ function private function_88ba30853f3d01f0(c130) {
         player setallstreamloaddist(0);
         player setclienttriggeraudiozone("mp_br_infil_ext", 2);
     }
-    if (isdefined(level.infilstruct.animstruct.movingChopper)) {
+    if (isdefined(level.infilstruct.animstruct.movingchopper)) {
         foreach (player in level.infilstruct.players) {
             if (!isdefined(player)) {
                 continue;
@@ -509,24 +509,24 @@ function private function_88ba30853f3d01f0(c130) {
         level thread clearsoundsubmixfadetoblackamb();
         level.infilstruct.animstruct.playerpositionents["parent_solo"] unlink();
         level.infilstruct.animstruct.playerpositionents["parent_squad"] unlink();
-        level.infilstruct.animstruct.playerpositionents["parent_solo"] linkto(level.infilstruct.animstruct.movingChopper, "", (0, 0, 0), (0, 0, 0));
-        level.infilstruct.animstruct.playerpositionents["parent_squad"] linkto(level.infilstruct.animstruct.movingChopper, "", (0, 0, 0), (0, 0, 0));
-        level.infilstruct.animstruct.armadaRig unlink();
-        level.infilstruct.animstruct.armadaRig linkto(level.infilstruct.animstruct.movingChopper, "", (0, 0, 0), (0, 0, 0));
-        level.infilstruct.animstruct.movingChopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "movingChopper");
-        level.infilstruct.animstruct.movingChopper.innards scriptmodelplayanim("wz_infil_mindia8_loop_veh", "movingChopperInnards");
+        level.infilstruct.animstruct.playerpositionents["parent_solo"] linkto(level.infilstruct.animstruct.movingchopper, "", (0, 0, 0), (0, 0, 0));
+        level.infilstruct.animstruct.playerpositionents["parent_squad"] linkto(level.infilstruct.animstruct.movingchopper, "", (0, 0, 0), (0, 0, 0));
+        level.infilstruct.animstruct.armadarig unlink();
+        level.infilstruct.animstruct.armadarig linkto(level.infilstruct.animstruct.movingchopper, "", (0, 0, 0), (0, 0, 0));
+        level.infilstruct.animstruct.movingchopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "movingChopper");
+        level.infilstruct.animstruct.movingchopper.innards scriptmodelplayanim("wz_infil_mindia8_loop_veh", "movingChopperInnards");
         level.infilstruct.animstruct.playerpositionents["parent_solo"] scriptmodelplayanim("wz_infil_mindia8_loop_genpropx10", "prop");
         level.infilstruct.animstruct.playerpositionents["parent_squad"] scriptmodelplayanim("wz_infil_mindia8_loop_genpropx10", "prop");
         if (istrue(level.var_f84366b8fdd80cf2)) {
             level waittill("play_video_complete");
         }
-        level.infilstruct.animstruct.movingChopper notify("start_moving");
+        level.infilstruct.animstruct.movingchopper notify("start_moving");
         if (istrue(level.var_f84366b8fdd80cf2)) {
             wait(3.5);
         }
     }
-    level.infilstruct.animstruct.aiPilot hide();
-    level.infilstruct.animstruct.aiCopilot hide();
+    level.infilstruct.animstruct.aipilot hide();
+    level.infilstruct.animstruct.aicopilot hide();
     setomnvar("ui_hide_player_icons", 0);
     level thread function_c6cedf68afe4e839();
 }
@@ -573,17 +573,17 @@ function private infil_light_dvars() {
 function private delaystreamtomovingplane() {
     self endon("stopScene");
     level endon("cleanupInfil");
-    if (isdefined(self.movingChopper)) {
+    if (isdefined(self.movingchopper)) {
         delaytime = getdvarint(@"hash_d01d0472d843d39e", 8);
         wait(delaytime);
-        if (!isdefined(self.movingChopper)) {
+        if (!isdefined(self.movingchopper)) {
             return;
         }
-        var_11f3b4465c8b637b = self.movingChopper.origin;
+        var_11f3b4465c8b637b = self.movingchopper.origin;
         forward = getdvarint(@"hash_7abcda2d7aabbe4c", 0);
         if (forward > 0) {
-            dir = anglestoforward(self.movingChopper.angles);
-            var_11f3b4465c8b637b = self.movingChopper.origin + dir * forward;
+            dir = anglestoforward(self.movingchopper.angles);
+            var_11f3b4465c8b637b = self.movingchopper.origin + dir * forward;
         }
         foreach (player in level.infilstruct.players) {
             if (!isdefined(player)) {
@@ -600,7 +600,7 @@ function private delaystreamtomovingplane() {
 // Checksum 0x0, Offset: 0x349f
 // Size: 0xac
 function private stopstreamtomovingplane() {
-    if (isdefined(self.movingChopper) && getdvarint(@"hash_eb8a05afa7735e5f", 1) == 1) {
+    if (isdefined(self.movingchopper) && getdvarint(@"hash_eb8a05afa7735e5f", 1) == 1) {
         delaytime = getdvarint(@"hash_b7c6d487b0f5506b", 5);
         wait(delaytime);
         foreach (player in level.infilstruct.players) {

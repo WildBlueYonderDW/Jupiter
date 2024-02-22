@@ -208,7 +208,7 @@ function function_55caa7ecdad1659c(requestid) {
         assertex(isdefined(var_43c9ee7ec9270b3b), "Encounter request ID: " + requestid + " was not found on this activity instance.");
     #/
     /#
-        assertex(var_43c9ee7ec9270b3b.ReadyToSpawn == 1, "Never recieved a 'ready to spawn' notice from the AI Director. Can't start spawning until we are 'ready to spawn'");
+        assertex(var_43c9ee7ec9270b3b.readytospawn == 1, "Never recieved a 'ready to spawn' notice from the AI Director. Can't start spawning until we are 'ready to spawn'");
     #/
     function_a39e9894083f4513(requestid);
 }
@@ -308,7 +308,7 @@ function function_b4d20e1455c1aa71() {
 function private function_c08376872165ee81(requestid, var_e6013eac45290cab) {
     var_43c9ee7ec9270b3b = var_e6013eac45290cab.var_21f1863c6d44d936[requestid];
     if (isdefined(var_43c9ee7ec9270b3b)) {
-        var_43c9ee7ec9270b3b.ReadyToSpawn = 1;
+        var_43c9ee7ec9270b3b.readytospawn = 1;
         if (var_43c9ee7ec9270b3b.spawntype == 0) {
             function_2dd0a973cd99e9d(var_e6013eac45290cab, requestid);
         } else if (var_43c9ee7ec9270b3b.spawntype == 1) {
@@ -372,7 +372,7 @@ function private function_fcd53573cbf1d194(var_e6013eac45290cab, requestid, spaw
         var_e6013eac45290cab.var_21f1863c6d44d936[requestid].spawntype = spawntype;
         var_e6013eac45290cab.var_21f1863c6d44d936[requestid].var_9ff725630851828f = var_9ff725630851828f;
         var_e6013eac45290cab.var_21f1863c6d44d936[requestid].var_67d592cc829bbba7 = istrue(var_139ffb100e4fb6c4);
-        var_e6013eac45290cab.var_21f1863c6d44d936[requestid].ReadyToSpawn = 0;
+        var_e6013eac45290cab.var_21f1863c6d44d936[requestid].readytospawn = 0;
         if (spawntype == 0) {
             function_dca86aca511288f4(var_e6013eac45290cab, "ActiveState", "Waiting for AI Director spawn approval for encounter: " + requestid);
             var_e6013eac45290cab.var_21f1863c6d44d936[requestid].var_23d95fc81d77d990 = 1;

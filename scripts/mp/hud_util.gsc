@@ -953,7 +953,7 @@ function canshowsplash(splash) {
         return 0;
     }
     var_2b6edac9af839814 = 1;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (iseventcalloutsplash(splash)) {
             var_4544740304048f3 = getbaseeventcalloutsplash(splash);
             switch (var_4544740304048f3) {

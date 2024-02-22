@@ -34,15 +34,15 @@ function function_902e316237968d37() {
     if (issharedfuncdefined("team_utility", "joinrTeamAggregator")) {
         [[ getsharedfunc("team_utility", "joinTeamAggregator") ]](&function_5bb22bae2eafed7);
     }
-    registersharedfunc("super_comm_scrambler", "commScrambler_used", &commScrambler_used);
-    registersharedfunc("super_comm_scrambler", "commScrambler_onHacked", &commScrambler_onHacked);
+    registersharedfunc("super_comm_scrambler", "commScrambler_used", &commscrambler_used);
+    registersharedfunc("super_comm_scrambler", "commScrambler_onHacked", &commscrambler_onhacked);
 }
 
 // Namespace namespace_4eb3d972f35e69d5/namespace_e551c0aff94f6c9f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x692
 // Size: 0x32c
-function commScrambler_used(grenade) {
+function commscrambler_used(grenade) {
     grenade endon("death");
     level endon("game_ended");
     grenade.owner = self;
@@ -703,7 +703,7 @@ function function_7b2d108a7fefb17(player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x213a
 // Size: 0x10e
-function commScrambler_onHacked(newowner, var_c0f9139ffd72e62d) {
+function commscrambler_onhacked(newowner, var_c0f9139ffd72e62d) {
     function_2eff4cd94c3243e8();
     if (issharedfuncdefined("game", "createObjective")) {
         self.minimapid = self [[ getsharedfunc("game", "createObjective") ]]("jup_hud_icon_minimap_fieldupgrade_commscrambler", self.team, 0, 1, 1);

@@ -1137,9 +1137,9 @@ function function_8e397e15e0fbd01a() {
 // Checksum 0x0, Offset: 0x4841
 // Size: 0x86
 function get_vehicle_classname() {
-    var_85d0fa0353be9c53 = self.var_ca4a4dd2f8495667;
-    if (isdefined(var_85d0fa0353be9c53) && isdefined(var_85d0fa0353be9c53.ref) && isdefined(level.vehicle.templates.model[var_85d0fa0353be9c53.ref])) {
-        return var_85d0fa0353be9c53.ref;
+    vehiclebundle = self.var_ca4a4dd2f8495667;
+    if (isdefined(vehiclebundle) && isdefined(vehiclebundle.ref) && isdefined(level.vehicle.templates.model[vehiclebundle.ref])) {
+        return vehiclebundle.ref;
     }
     if (isdefined(self.classname_mp)) {
         return self.classname_mp;
@@ -1637,7 +1637,7 @@ function kill_fx_thread(model, struct, type, attacker) {
     if (isdefined(struct.notifystring)) {
         self notify(struct.notifystring);
     }
-    var_f86cb346559301f7 = vectornormalize(self.origin - attacker.origin);
+    attackerdirection = vectornormalize(self.origin - attacker.origin);
     if (isdefined(struct.selfdeletedelay)) {
         delaycall(struct.selfdeletedelay, &delete);
     }
@@ -1654,7 +1654,7 @@ function kill_fx_thread(model, struct, type, attacker) {
                 playfx(struct.effect, self.origin, forward);
             }
         } else if (isdefined(struct.tag)) {
-            forward = _kill_fx_play_direction(var_f86cb346559301f7, struct.attacker_velocity_lerp);
+            forward = _kill_fx_play_direction(attackerdirection, struct.attacker_velocity_lerp);
             if (isdefined(forward)) {
                 var_f0e63dfcba14733e = deathfx_ent();
                 playfx(struct.effect, var_f0e63dfcba14733e gettagorigin(struct.tag), forward);
@@ -1670,7 +1670,7 @@ function kill_fx_thread(model, struct, type, attacker) {
                 }
             }
         } else {
-            forward = _kill_fx_play_direction(var_f86cb346559301f7, struct.attacker_velocity_lerp);
+            forward = _kill_fx_play_direction(attackerdirection, struct.attacker_velocity_lerp);
             if (isdefined(forward)) {
                 playfx(struct.effect, self.origin, forward);
             } else {
@@ -4266,7 +4266,7 @@ function function_5d04267dd0768069(quiet) {
         var_fb41d1ca75009bf0 thread function_b43ab7b2056ecb9a();
     }
     if (!istrue(quiet) && !istrue(self.var_3dadd352fe1d0b39)) {
-        var_fb41d1ca75009bf0 thread vehicle_huskLaunch(self, undefined, undefined);
+        var_fb41d1ca75009bf0 thread vehicle_husklaunch(self, undefined, undefined);
     }
     /#
         var_fb41d1ca75009bf0 thread function_835a3820d2ab0b74();
@@ -4319,7 +4319,7 @@ function function_b43ab7b2056ecb9a(state) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbdc8
 // Size: 0x3c5
-function vehicle_huskLaunch(parent, vehicleRef, spawndata, var_9f889d0177ed067) {
+function vehicle_husklaunch(parent, vehicleref, spawndata, var_9f889d0177ed067) {
     if (!self vehicle_isphysveh()) {
         return;
     }
@@ -4365,8 +4365,8 @@ function vehicle_huskLaunch(parent, vehicleRef, spawndata, var_9f889d0177ed067) 
     if (isdefined(var_9f889d0177ed067)) {
         var_55befc5188ea09b = var_55befc5188ea09b * var_9f889d0177ed067;
     }
-    if (isdefined(vehicleRef) && isdefined(level.sharedfuncs) && isdefined(level.sharedfuncs[vehicleRef])) {
-        var_fd0de3143acb9a42 = level.sharedfuncs[vehicleRef]["vehicle_huskLaunch"];
+    if (isdefined(vehicleref) && isdefined(level.sharedfuncs) && isdefined(level.sharedfuncs[vehicleref])) {
+        var_fd0de3143acb9a42 = level.sharedfuncs[vehicleref]["vehicle_huskLaunch"];
         if (isdefined(var_fd0de3143acb9a42)) {
             self [[ var_fd0de3143acb9a42 ]](spawndata.initialvelocity);
             if (isdefined(self.damagedir)) {
@@ -4634,7 +4634,7 @@ function function_fd3542824f9c1bd2() {
             if (!function_9e9dfc6f77569f4d() && !function_b7148a3bfc4defb2() && !ent function_b7148a3bfc4defb2()) {
                 var_aa8369f87b6b7363 = function_ab048fa9b5ad972(ent, position, impulse, var_9ffa610f23463c71);
                 if (var_aa8369f87b6b7363 == 1) {
-                    vehicle_headOnDeath(ent);
+                    vehicle_headondeath(ent);
                 } else if (var_aa8369f87b6b7363 != 2) {
                     vehicle_damage(var_94a9fd97af4a0676, undefined, "MOD_IMPACT");
                 }
@@ -4712,7 +4712,7 @@ function function_5ae2b449b60714ca(point) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd35a
 // Size: 0x86
-function vehicle_headOnDeath(ent) {
+function vehicle_headondeath(ent) {
     if (getdvarint(@"hash_cfd8073837710cef")) {
         classname = get_vehicle_classname();
         /#

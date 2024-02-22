@@ -644,7 +644,7 @@ function function_5c8a92a87ae9751b(eattacker, var_feef4b237a6beb07, var_2eb47402
         return;
     }
     if (isplayer(eattacker) && istrue(var_feef4b237a6beb07) && isdefined(var_2eb474020f9d509)) {
-        eattacker updateDamageFeedback_SharedFunc(var_620a78a003c02280);
+        eattacker updatedamagefeedback_sharedfunc(var_620a78a003c02280);
     }
 }
 
@@ -662,7 +662,7 @@ function function_45500125495e46a6(eattacker, var_feef4b237a6beb07, var_2eb47402
         return;
     }
     if (isplayer(eattacker) && istrue(var_feef4b237a6beb07) && isdefined(var_2eb474020f9d509)) {
-        eattacker updateDamageFeedback_SharedFunc(var_e629a8e925c6d0af);
+        eattacker updatedamagefeedback_sharedfunc(var_e629a8e925c6d0af);
     }
 }
 

@@ -743,25 +743,25 @@ function monitor_flag_status(flag) {
     var_9a86288b6e984514 = get_flag_capture_radius() * 3 * get_flag_capture_radius() * 3;
     var_278595174c3b888b = 1;
     while (var_278595174c3b888b) {
-        var_6e24445ac4c031bf = 0;
+        needs_new_goal = 0;
         var_a78b2b0ebf2f977f = flag namespace_6b4b8b8421d203ba::getflagteam();
         var_877f0c734271995 = get_num_ally_flags(self.team);
         var_eb9bb8aceeda2da3 = get_enemy_flags(self.team);
         if (bot_is_capturing()) {
             if (var_a78b2b0ebf2f977f == self.team && flag.claimteam == "none") {
                 if (!bot_dom_debug_should_capture_all()) {
-                    var_6e24445ac4c031bf = 1;
+                    needs_new_goal = 1;
                 }
             }
             if (var_877f0c734271995 == 2 && var_a78b2b0ebf2f977f != self.team && !bot_allowed_to_3_cap()) {
                 if (isdefined(flag.trigger) && distancesquared(self.origin, flag.trigger.origin) > var_82fe1c44f0e59dd5) {
-                    var_6e24445ac4c031bf = 1;
+                    needs_new_goal = 1;
                 }
             }
             foreach (var_5607f7513eb816a2 in var_eb9bb8aceeda2da3) {
                 if (isdefined(var_5607f7513eb816a2.trigger) && var_5607f7513eb816a2 != flag && bot_allow_to_capture_flag(var_5607f7513eb816a2)) {
                     if (distancesquared(self.origin, var_5607f7513eb816a2.trigger.origin) < var_9a86288b6e984514) {
-                        var_6e24445ac4c031bf = 1;
+                        needs_new_goal = 1;
                     }
                 }
             }
@@ -791,14 +791,14 @@ function monitor_flag_status(flag) {
         if (bot_is_protecting()) {
             if (var_a78b2b0ebf2f977f != self.team) {
                 if (!bot_dom_debug_should_protect_all()) {
-                    var_6e24445ac4c031bf = 1;
+                    needs_new_goal = 1;
                 }
             } else if (var_877f0c734271995 == 1 && var_f2b47e412166c272 > 1) {
-                var_6e24445ac4c031bf = 1;
+                needs_new_goal = 1;
             }
         }
         var_f2b47e412166c272 = var_877f0c734271995;
-        if (var_6e24445ac4c031bf) {
+        if (needs_new_goal) {
             self.force_new_goal = 1;
             var_278595174c3b888b = 0;
             self notify("needs_new_flag_goal");

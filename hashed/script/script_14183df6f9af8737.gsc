@@ -489,7 +489,7 @@ function function_aa202a5e20886406() {
         namespace_4b0406965e556711::gameflagwait("prematch_done");
         namespace_4b0406965e556711::gameflagwait("prematch_fade_done");
         foreach (player in level.players) {
-            player.trackedTeams = [];
+            player.trackedteams = [];
         }
     }
 }
@@ -816,7 +816,7 @@ function function_5a5bb23fc0b48595() {
             self.var_71359c6a4ceab6d1 = squared(self.var_42bd6dc51ab8c2b0);
         }
         if (distance2dsquared(self.var_3a570a6d7cea7826, self.origin) > self.var_71359c6a4ceab6d1) {
-            namespace_48a08c5037514e04::doScoreEvent(#"resurgence_on_the_move");
+            namespace_48a08c5037514e04::doscoreevent(#"resurgence_on_the_move");
             self.var_3a570a6d7cea7826 = self.origin;
         }
         wait(1);
@@ -917,7 +917,7 @@ function function_2d3b9a726feb5dc2(team, weaponused) {
 // Size: 0x63
 function function_a045bcdb0d1bebf9(victim, attacker) {
     if (isdefined(attacker) && (!isdefined(victim) || victim != attacker || isdefined(victim.team) && victim.team != attacker.team)) {
-        attacker namespace_48a08c5037514e04::doScoreEvent(#"resurgence_armor_break");
+        attacker namespace_48a08c5037514e04::doscoreevent(#"resurgence_armor_break");
     }
 }
 
@@ -933,12 +933,12 @@ function function_266b9fb5e9453ef1(victim) {
         self.var_f968dc3adf6c967e = [];
         return;
     }
-    trackedTeams = function_f6686365221e78cb();
-    var_3e00d2d6fb1bd934 = function_85fee305e2d829c1(trackedTeams, victim.team);
+    trackedteams = function_f6686365221e78cb();
+    var_3e00d2d6fb1bd934 = function_85fee305e2d829c1(trackedteams, victim.team);
     if (var_3e00d2d6fb1bd934 < 0 || var_3e00d2d6fb1bd934 >= 4) {
         return;
     }
-    var_cf7d42708e58bb98 = trackedTeams[var_3e00d2d6fb1bd934];
+    var_cf7d42708e58bb98 = trackedteams[var_3e00d2d6fb1bd934];
     nowtime = gettime();
     elapsedtime = nowtime - var_cf7d42708e58bb98["startTime"];
     if (elapsedtime < level.brgametype.var_a11c00bd12593a72 * 1000) {
@@ -960,11 +960,11 @@ function function_266b9fb5e9453ef1(victim) {
 function function_4e3aa4dbe97c98c4(victim) {
     var_ab149e767ffaaea = self.var_f968dc3adf6c967e[victim.team];
     if (var_ab149e767ffaaea == 1) {
-        namespace_48a08c5037514e04::doScoreEvent(#"resurgence_hunter");
+        namespace_48a08c5037514e04::doscoreevent(#"resurgence_hunter");
     } else if (var_ab149e767ffaaea == 2) {
-        namespace_48a08c5037514e04::doScoreEvent(#"resurgence_hunter_double");
+        namespace_48a08c5037514e04::doscoreevent(#"resurgence_hunter_double");
     } else {
-        namespace_48a08c5037514e04::doScoreEvent(#"resurgence_hunter_spree");
+        namespace_48a08c5037514e04::doscoreevent(#"resurgence_hunter_spree");
     }
 }
 
@@ -978,7 +978,7 @@ function function_2a897cd68a200cb2() {
     }
     alivecount = getteamcount(self.team, 1);
     if (alivecount == 1) {
-        namespace_48a08c5037514e04::doScoreEvent(#"resurgence_fearless_kill");
+        namespace_48a08c5037514e04::doscoreevent(#"resurgence_fearless_kill");
     }
 }
 
@@ -1223,10 +1223,10 @@ function function_c86eefdaf13d0d81(victim) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5154
 // Size: 0x87
-function function_6f0f4e7b3ff7b57c(trackedTeams) {
+function function_6f0f4e7b3ff7b57c(trackedteams) {
     oldestindex = -1;
     var_3071102f98cbed33 = 2147483647;
-    foreach (var_109ebf347b2f2ece, var_cf7d42708e58bb98 in trackedTeams) {
+    foreach (var_109ebf347b2f2ece, var_cf7d42708e58bb98 in trackedteams) {
         if (var_cf7d42708e58bb98["startTime"] < var_3071102f98cbed33) {
             oldestindex = var_109ebf347b2f2ece;
             var_3071102f98cbed33 = var_cf7d42708e58bb98["startTime"];
@@ -1311,16 +1311,16 @@ function function_d6d795db2cae2c1b(var_29412b34af141c29, var_38678fa9bdc12fdf, v
 // Checksum 0x0, Offset: 0x5500
 // Size: 0x62
 function function_f6686365221e78cb() {
-    trackedTeams = [];
+    trackedteams = [];
     if (istrue(level.brgametype.var_840b848760f488a4)) {
-        trackedTeams = getteamdata(self.team, "trackedTeams");
+        trackedteams = getteamdata(self.team, "trackedTeams");
     } else {
-        if (!isdefined(self.trackedTeams)) {
-            self.trackedTeams = [];
+        if (!isdefined(self.trackedteams)) {
+            self.trackedteams = [];
         }
-        trackedTeams = self.trackedTeams;
+        trackedteams = self.trackedteams;
     }
-    return trackedTeams;
+    return trackedteams;
 }
 
 // Namespace namespace_bbb7af4f07fb391c/namespace_6176022cc9d5b3f
@@ -1332,13 +1332,13 @@ function function_63c057f27dc906b5(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98, v
         return;
     }
     var_bb58bcc7b0654344 = -1;
-    trackedTeams = function_f6686365221e78cb();
-    var_bb58bcc7b0654344 = function_85fee305e2d829c1(trackedTeams, var_cf7d42708e58bb98);
+    trackedteams = function_f6686365221e78cb();
+    var_bb58bcc7b0654344 = function_85fee305e2d829c1(trackedteams, var_cf7d42708e58bb98);
     if (var_bb58bcc7b0654344 < 0) {
-        if (trackedTeams.size == 4) {
-            var_bb58bcc7b0654344 = function_6f0f4e7b3ff7b57c(trackedTeams);
+        if (trackedteams.size == 4) {
+            var_bb58bcc7b0654344 = function_6f0f4e7b3ff7b57c(trackedteams);
         } else {
-            var_bb58bcc7b0654344 = trackedTeams.size;
+            var_bb58bcc7b0654344 = trackedteams.size;
         }
     }
     if (var_bb58bcc7b0654344 < 0 || var_bb58bcc7b0654344 >= 4) {
@@ -1371,7 +1371,7 @@ function function_7278f9076c781224(var_a1b4fab5a3b4fa5e, var_cf7d42708e58bb98, v
     } else {
         self notify(notifyname);
         self endon(notifyname);
-        self.trackedTeams[var_bb58bcc7b0654344] = var_5b1596320df748c;
+        self.trackedteams[var_bb58bcc7b0654344] = var_5b1596320df748c;
         var_29412b34af141c29 = [0:self];
     }
     var_3e00d2d6fb1bd934 = namespace_f8065cafc523dba5::getteamindex(var_cf7d42708e58bb98);
@@ -1705,8 +1705,8 @@ function function_3709903d7ad3f711(player, evictim, event, points, var_645b1a1d2
     }
     if (is_equal(event, "br_kioskBuy") && is_equal(var_645b1a1d2a1ddfb7, "br_team_revive")) {
         var_780d8a24242378d5 = namespace_54d20dd0dd79277f::getteamdata(player.team, "aliveCount");
-        var_cd51ab4357f76c8c = namespace_54d20dd0dd79277f::getteamdata(player.team, "teamCount");
-        var_de1f625722d92973 = var_cd51ab4357f76c8c - var_780d8a24242378d5;
+        squadsize = namespace_54d20dd0dd79277f::getteamdata(player.team, "teamCount");
+        var_de1f625722d92973 = squadsize - var_780d8a24242378d5;
         if (var_de1f625722d92973 == 1) {
             return;
         }
@@ -2348,14 +2348,14 @@ function function_8a747fed5fdc31ed(spawnpoint, streamtimeout) {
 // Checksum 0x0, Offset: 0x7fb9
 // Size: 0xa8
 function function_2d7ef4d534930df4(var_cb5ba4c3282c39c1, var_54ebfc906d9a55e7) {
-    var_cdd53a78f51f64fe = namespace_8bfdb6eb5a3df67a::function_ade48af7c782e202(&function_179991a5f6040f91, "br_ac130_flyby", undefined);
-    var_cdd53a78f51f64fe namespace_8bfdb6eb5a3df67a::function_9fd565bcd654ed48(&function_47f3ced79ed3a338);
-    var_cdd53a78f51f64fe namespace_8bfdb6eb5a3df67a::function_b4c313df5d7fb216(&function_777d7ef570638306, 20);
-    var_cdd53a78f51f64fe namespace_8bfdb6eb5a3df67a::function_8cb232cdf47da79c(&function_ff75bbd246d432ec, 20);
-    var_cdd53a78f51f64fe namespace_8bfdb6eb5a3df67a::function_2556973693d6315(&function_e762446073ac085, "br_resurgence_redeploy_improvement", 20, "splash_list_iw9_br_resurgence_mp", "resurgence_redeploy");
-    var_cdd53a78f51f64fe.var_9fdc1f9e4fc628e4.var_cb5ba4c3282c39c1 = var_cb5ba4c3282c39c1;
-    var_cdd53a78f51f64fe.var_9fdc1f9e4fc628e4.var_54ebfc906d9a55e7 = var_54ebfc906d9a55e7;
-    return var_cdd53a78f51f64fe;
+    rs = namespace_8bfdb6eb5a3df67a::function_ade48af7c782e202(&function_179991a5f6040f91, "br_ac130_flyby", undefined);
+    rs namespace_8bfdb6eb5a3df67a::function_9fd565bcd654ed48(&function_47f3ced79ed3a338);
+    rs namespace_8bfdb6eb5a3df67a::function_b4c313df5d7fb216(&function_777d7ef570638306, 20);
+    rs namespace_8bfdb6eb5a3df67a::function_8cb232cdf47da79c(&function_ff75bbd246d432ec, 20);
+    rs namespace_8bfdb6eb5a3df67a::function_2556973693d6315(&function_e762446073ac085, "br_resurgence_redeploy_improvement", 20, "splash_list_iw9_br_resurgence_mp", "resurgence_redeploy");
+    rs.var_9fdc1f9e4fc628e4.var_cb5ba4c3282c39c1 = var_cb5ba4c3282c39c1;
+    rs.var_9fdc1f9e4fc628e4.var_54ebfc906d9a55e7 = var_54ebfc906d9a55e7;
+    return rs;
 }
 
 // Namespace namespace_bbb7af4f07fb391c/namespace_6176022cc9d5b3f
@@ -2878,7 +2878,7 @@ function function_81baad6d96ff2130() {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9213
 // Size: 0x114
-function function_797b21b78b5e0a26(var_114d19d4f6606873) {
+function function_797b21b78b5e0a26(respawntype) {
     level endon("game_ended");
     namespace_4b0406965e556711::gameflagwait("prematch_done");
     namespace_4b0406965e556711::gameflagwait("prematch_fade_done");
@@ -3148,7 +3148,7 @@ function function_927f6139e79412c1(event) {
     /#
         aliveplayers = getteamdata(self.team, "ui_br_resurgence_respawn_type");
         event = function_1823ff50bb28148d(event);
-        aliveplayers[0] namespace_48a08c5037514e04::doScoreEvent(event);
+        aliveplayers[0] namespace_48a08c5037514e04::doscoreevent(event);
     #/
 }
 

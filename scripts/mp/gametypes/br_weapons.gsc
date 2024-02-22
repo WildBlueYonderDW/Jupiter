@@ -269,7 +269,7 @@ function function_88d62a65ff69eac(player, ammotype) {
     var_23c054f415636c51 = player.br_ammo[ammotype];
     if (namespace_a548bd428a566cf3::function_6b531c76815d77f3(ammotype)) {
         lootid = loot::function_fae5e1d3de32d3f7(ammotype);
-        var_23c054f415636c51 = var_23c054f415636c51 + namespace_e50e624d9af51c8c::getTotalItemCountInBag(lootid);
+        var_23c054f415636c51 = var_23c054f415636c51 + namespace_e50e624d9af51c8c::gettotalitemcountinbag(lootid);
     }
     return var_23c054f415636c51;
 }
@@ -594,7 +594,7 @@ function takeweaponpickup(pickupent, var_db943473454f6ea6, var_5756aa71087f3439,
         namespace_e50e624d9af51c8c::function_e900e7e66383ad97(self, var_db943473454f6ea6, 0);
     }
     self giveweapon(newweapon);
-    namespace_aad14af462a74d08::onPickupWeapon(newweapon);
+    namespace_aad14af462a74d08::onpickupweapon(newweapon);
     var_feba93fdf765e2a4 = function_a41d365900f73302(self, newweapon);
     if (isdefined(var_feba93fdf765e2a4)) {
         self assignweaponprimaryslot(weaponname);
@@ -692,7 +692,7 @@ function takeweaponpickup(pickupent, var_db943473454f6ea6, var_5756aa71087f3439,
         namespace_9c840bb9f2ecbf00::demoforcesre(message);
         return;
     }
-    thread namespace_7642a6bee4cdaaa2::giveweaponpickup(weaponname);
+    thread br_respawn::giveweaponpickup(weaponname);
     if (isdefined(pickupent.instance)) {
         level.onweapondroppickedup namespace_e23d6eb3062a75be::callback_trigger(pickupent.instance, self, newweapon);
     }
@@ -1263,7 +1263,7 @@ function br_ammo_type_player_full(player, ammotype) {
     }
     if (namespace_e50e624d9af51c8c::function_7e103028c464ab9a(ammotype)) {
         lootid = loot::function_fae5e1d3de32d3f7(ammotype);
-        if (isdefined(lootid) && player namespace_e50e624d9af51c8c::canItemFitInBackpack(lootid, 1)) {
+        if (isdefined(lootid) && player namespace_e50e624d9af51c8c::canitemfitinbackpack(lootid, 1)) {
             return 0;
         }
     }
@@ -1308,7 +1308,7 @@ function br_ammo_give_type(player, ammotype, amount, var_8bb770d6eeda5198, var_e
             var_bada25504e8844d7.scriptablename = ammotype;
             var_bada25504e8844d7.count = var_be740b7d6b79253a;
             lootid = loot::function_fae5e1d3de32d3f7(ammotype);
-            player namespace_e50e624d9af51c8c::addItemToBackpack(lootid, var_bada25504e8844d7, !var_8bb770d6eeda5198);
+            player namespace_e50e624d9af51c8c::additemtobackpack(lootid, var_bada25504e8844d7, !var_8bb770d6eeda5198);
             var_2c86af91e7e20602 = var_2c86af91e7e20602 - var_be740b7d6b79253a;
         } else if (!var_8bb770d6eeda5198 && var_2c86af91e7e20602 < level.br_ammo_clipsize[ammotype]) {
             var_2c86af91e7e20602 = 0;
@@ -1433,7 +1433,7 @@ function function_5143c54fb8c3c4fd(player, ammotype) {
             var_5b3f7d686c59ab97 = self.br_ammo[ammotype];
             if (namespace_a548bd428a566cf3::function_6b531c76815d77f3(ammotype)) {
                 lootid = loot::function_fae5e1d3de32d3f7(ammotype);
-                var_5b3f7d686c59ab97 = var_5b3f7d686c59ab97 + namespace_e50e624d9af51c8c::getTotalItemCountInBag(lootid);
+                var_5b3f7d686c59ab97 = var_5b3f7d686c59ab97 + namespace_e50e624d9af51c8c::gettotalitemcountinbag(lootid);
             }
             var_5b3f7d686c59ab97 = utility::get_int_or_0(var_5b3f7d686c59ab97);
             player setweaponammostock(weap, var_5b3f7d686c59ab97);
@@ -1652,7 +1652,7 @@ function function_c668c8660ab99773(objweapon, player, dropstruct) {
                     var_7b207409ae007577.scriptablename = ammotype;
                     var_7b207409ae007577.count = var_ede16a605f45a41d;
                     lootid = namespace_38b993c4618e76cd::function_fae5e1d3de32d3f7(ammotype);
-                    player namespace_aead94004cf4c147::addItemToBackpack(lootid, var_7b207409ae007577);
+                    player namespace_aead94004cf4c147::additemtobackpack(lootid, var_7b207409ae007577);
                 }
             }
         }
@@ -1675,7 +1675,7 @@ function br_give_weapon_clip(objweapon, var_b153a3f2c4662b5e) {
         var_237f7e1ca590e053 = level.var_e6ea72fc5e3fcd00[ammotype];
         if (namespace_a548bd428a566cf3::function_6b531c76815d77f3(ammotype)) {
             lootid = loot::function_fae5e1d3de32d3f7(ammotype);
-            var_237f7e1ca590e053 = var_237f7e1ca590e053 + namespace_e50e624d9af51c8c::getTotalItemCountInBag(lootid);
+            var_237f7e1ca590e053 = var_237f7e1ca590e053 + namespace_e50e624d9af51c8c::gettotalitemcountinbag(lootid);
         }
         var_7ff630bfbca7b961 = int(clamp(player.br_ammo[ammotype] + var_c1192c297bbf292f, 0, var_237f7e1ca590e053));
         br_ammo_update_ammotype_weapons(player, ammotype, var_7ff630bfbca7b961);
@@ -1693,7 +1693,7 @@ function br_give_weapon_ammo(objweapon, ammo) {
         var_237f7e1ca590e053 = level.var_e6ea72fc5e3fcd00[ammotype];
         if (namespace_a548bd428a566cf3::function_6b531c76815d77f3(ammotype)) {
             lootid = loot::function_fae5e1d3de32d3f7(ammotype);
-            var_237f7e1ca590e053 = var_237f7e1ca590e053 + namespace_e50e624d9af51c8c::getTotalItemCountInBag(lootid);
+            var_237f7e1ca590e053 = var_237f7e1ca590e053 + namespace_e50e624d9af51c8c::gettotalitemcountinbag(lootid);
         }
         var_7ff630bfbca7b961 = int(clamp(player.br_ammo[ammotype] + ammo, 0, var_237f7e1ca590e053));
         br_ammo_update_ammotype_weapons(player, ammotype, var_7ff630bfbca7b961);
@@ -1984,12 +1984,12 @@ function function_8e7e1da48d7746e5(player, weaponpickup) {
     if (!isdefined(var_712a14f78c75a0c2)) {
         var_712a14f78c75a0c2 = spawnstruct();
         var_712a14f78c75a0c2.array = [];
-        var_712a14f78c75a0c2.curIndex = 0;
+        var_712a14f78c75a0c2.curindex = 0;
         var_712a14f78c75a0c2.var_52fcfe909c72db5b = 0;
         level.br_pickups.var_c9015f26f73062a0[player.guid] = var_712a14f78c75a0c2;
     }
-    var_712a14f78c75a0c2.array[var_712a14f78c75a0c2.curIndex] = weaponpickup.index;
-    var_712a14f78c75a0c2.curIndex = math::wrap(0, 4, var_712a14f78c75a0c2.curIndex + 1);
+    var_712a14f78c75a0c2.array[var_712a14f78c75a0c2.curindex] = weaponpickup.index;
+    var_712a14f78c75a0c2.curindex = math::wrap(0, 4, var_712a14f78c75a0c2.curindex + 1);
     var_712a14f78c75a0c2.var_52fcfe909c72db5b = gettime();
 }
 

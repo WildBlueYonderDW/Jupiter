@@ -33,14 +33,14 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "soldier";
-    self.voice = #"hash_969c0f396e338ba2";
+    self.voice = #"unitednations";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self setmodel("body_c_jup_ext_director");
     self attach("head_c_jup_ext_director", "", 1);
     self.headmodel = "head_c_jup_ext_director";
-    self setclothtype(#"hash_c5ead6e06f06025d");
-    self function_8abe5a968cc3c220(#"hash_1db29aba7a7a7ffd");
+    self setclothtype(#"vestlight");
+    self function_8abe5a968cc3c220(#"millghtgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

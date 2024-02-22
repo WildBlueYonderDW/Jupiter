@@ -65,7 +65,7 @@ function function_ac005e67449bfdf8() {
             level.activecounteruavs[level.teamnamelist[i]] = 0;
             level.activeadvanceduavs[level.teamnamelist[i]] = 0;
             level.uavmodels[level.teamnamelist[i]] = [];
-            if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+            if (namespace_36f464722d326bbe::isbrstylegametype()) {
                 level.var_48c4edf71e075321[level.teamnamelist[i]] = 0;
             }
         }
@@ -75,7 +75,7 @@ function function_ac005e67449bfdf8() {
         level.activecounteruavs = [];
         level.activeadvanceduavs = [];
         level.uavmodels = [];
-        if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+        if (namespace_36f464722d326bbe::isbrstylegametype()) {
             level.var_48c4edf71e075321 = [];
         }
     }
@@ -168,7 +168,7 @@ function tryuseuav(streakname) {
 function tryuseuavfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
-    if (streakinfo.streakname == "uav" && isBRStyleGameType() && getdvarint(@"hash_970be8db72985238", 0)) {
+    if (streakinfo.streakname == "uav" && isbrstylegametype() && getdvarint(@"hash_970be8db72985238", 0)) {
         return namespace_2c99f682179581bf::function_e5931b9f76ed6cda(streakinfo);
     }
     if (isdefined(level.killstreaktriggeredfunc)) {
@@ -178,8 +178,8 @@ function tryuseuavfromstruct(streakinfo) {
     }
     var_300a4922baa10548 = 0;
     if (level.teambased && isdefined(level.teamdata) && isdefined(level.teamdata[self.team]) && isdefined(level.teamdata[self.team]["activeSupplySweeps"])) {
-        activeSupplySweeps = level.teamdata[self.team]["activeSupplySweeps"].size;
-        var_300a4922baa10548 = activeSupplySweeps > 0;
+        activesupplysweeps = level.teamdata[self.team]["activeSupplySweeps"].size;
+        var_300a4922baa10548 = activesupplysweeps > 0;
     }
     if (var_300a4922baa10548) {
         var_79710492b71b9e81 = "KILLSTREAKS/SUPPLY_SWEEP_IN_PROGRESS";
@@ -229,7 +229,7 @@ function uav_use(uavtype, streakinfo) {
     team = self.pers["team"];
     usetime = level.uavsettings[uavtype].timeout;
     var_da662696203dc431 = 0;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_da662696203dc431 = 1;
     }
     var_cd35c837eb616223 = function_277684f0f74ac8cf(self, uavtype, streakinfo, var_da662696203dc431);
@@ -275,7 +275,7 @@ function uav_use(uavtype, streakinfo) {
 // Checksum 0x0, Offset: 0x121c
 // Size: 0xe2
 function function_8e9a430c17ddcd55(uavtype) {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return 0;
     }
     if (uavtype != "uav") {
@@ -341,7 +341,7 @@ function function_277684f0f74ac8cf(owner, uavtype, streakinfo, var_da662696203dc
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1471
 // Size: 0x868
-function function_36f7c24094d12c70(var_51c1b45046e1647c, owner, uavtype, streakinfo, var_da662696203dc431, lifetimeOverride) {
+function function_36f7c24094d12c70(var_51c1b45046e1647c, owner, uavtype, streakinfo, var_da662696203dc431, lifetimeoverride) {
     var_a561e2b774105ad0 = undefined;
     var_88d3d00bf003f331 = undefined;
     if (istrue(var_da662696203dc431)) {
@@ -381,7 +381,7 @@ function function_36f7c24094d12c70(var_51c1b45046e1647c, owner, uavtype, streaki
     var_a561e2b774105ad0 thread function_c926982ff07fdea5();
     var_a561e2b774105ad0 thread function_d45f5cf5bfce96df();
     var_a561e2b774105ad0 thread function_e58c525d5d3a7482();
-    var_a561e2b774105ad0 thread function_225e3594843d2ac(uavtype, lifetimeOverride, owner);
+    var_a561e2b774105ad0 thread function_225e3594843d2ac(uavtype, lifetimeoverride, owner);
     if (isent(var_a561e2b774105ad0)) {
         var_a561e2b774105ad0 setotherent(owner);
         var_a561e2b774105ad0 scriptmoveroutline();
@@ -396,7 +396,7 @@ function function_36f7c24094d12c70(var_51c1b45046e1647c, owner, uavtype, streaki
         var_a561e2b774105ad0 thread function_f53de0e99cb013e8();
         var_a561e2b774105ad0 thread function_4e53ba93ec09b58c();
         bundle = level.var_b23156d776b1d85.var_38f2a11237246ac[var_a561e2b774105ad0.uavtype];
-        var_a561e2b774105ad0 thread namespace_9abe40d2af041eb2::killstreak_registerMinimapInfo(bundle, function_1823ff50bb28148d(var_a561e2b774105ad0.uavtype));
+        var_a561e2b774105ad0 thread namespace_9abe40d2af041eb2::killstreak_registerminimapinfo(bundle, function_1823ff50bb28148d(var_a561e2b774105ad0.uavtype));
         var_a561e2b774105ad0 setscriptablepartstate("lights", "on", 0);
         if (var_a561e2b774105ad0.uavtype == "counter_uav") {
             var_a561e2b774105ad0 setscriptablepartstate("rotors", "on", 0);
@@ -471,7 +471,7 @@ function function_36f7c24094d12c70(var_51c1b45046e1647c, owner, uavtype, streaki
     }
     var_e005d4b70d6f2611 = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
     if (var_e005d4b70d6f2611) {
-        killstreak_dangerNotifyPlayersInRange(owner, var_a561e2b774105ad0.team, 15000, var_274a2749ef16ee1f);
+        killstreak_dangernotifyplayersinrange(owner, var_a561e2b774105ad0.team, 15000, var_274a2749ef16ee1f);
     } else {
         owner thread playkillstreakoperatordialog(var_274a2749ef16ee1f, var_274a2749ef16ee1f + "_use", 1, var_52a5be2e2f91d710);
     }
@@ -567,7 +567,7 @@ function function_fd8473db50408aa8(var_d0bdca2f09736813) {
         [[ getsharedfunc("player", "printGameAction") ]]("killstreak ended - " + uavtype, var_cdc9bee1ecfe4526);
     }
     level notify("uav_update");
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         level notify("uav_finished", var_cdc9bee1ecfe4526);
     }
 }
@@ -591,7 +591,7 @@ function function_e2fce5a833321770() {
 function function_c926982ff07fdea5() {
     self endon("death");
     self endon("explode");
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(self.uavtype) && self.uavtype != "directional_uav") {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(self.uavtype) && self.uavtype != "directional_uav") {
         self.owner waittill_any_2("death_or_disconnect", "joined_team");
     } else {
         self.owner waittill_any_2("disconnect", "joined_team");
@@ -734,7 +734,7 @@ function function_2129b5ee9273a536() {
             }
         #/
         self.currenthealth = self.currenthealth - modifieddamage;
-        killstreak_updateDamageState(self.currenthealth);
+        killstreak_updatedamagestate(self.currenthealth);
         if (self.damagetaken >= self.maxhealth) {
             if (isplayer(attacker) && (!isdefined(self.owner) || attacker != self.owner)) {
                 var_75b67453a730bb0d = level.uavsettings[self.uavtype].calloutdestroyed;
@@ -869,7 +869,7 @@ function function_933df49e9a291165(activeuavs, var_6f923ce59f2dba50, activecount
     if (var_6f923ce59f2dba50) {
         activeuavs = var_4ffbea084ea84782 - getuavstrengthlevelneutral();
     }
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73() && activecounteruavs > 0) {
             radarstrength = var_4fd7f4084e7fe2c8;
         } else {
@@ -927,7 +927,7 @@ function function_ddcbf96c5ef69597(team, override) {
     } else {
         radarstrength = function_5ec24d236512fd7a(team);
     }
-    var_70d48b6b51ff2964 = namespace_36f464722d326bbe::isBRStyleGameType() && level.var_48c4edf71e075321[team];
+    var_70d48b6b51ff2964 = namespace_36f464722d326bbe::isbrstylegametype() && level.var_48c4edf71e075321[team];
     var_51759585c898d7f = function_8abf717874ce81d4(radarstrength, var_70d48b6b51ff2964);
     return var_51759585c898d7f;
 }
@@ -949,7 +949,7 @@ function function_13b8682b55619852(player, var_51759585c898d7f) {
     player.radarshowenemydirection = var_51759585c898d7f.radarshowenemydirection;
     player.radarmode = var_51759585c898d7f.radarmode;
     player setclientomnvar("ui_radar_blocked", !istrue(player.hasradar));
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         if (var_51759585c898d7f.var_70d48b6b51ff2964 || player function_eba2f2e094684b8f("specialty_pc_comms")) {
             player.radarshowenemydirection = 1;
         }
@@ -1132,7 +1132,7 @@ function function_e58c525d5d3a7482() {
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37fb
 // Size: 0xb9
-function function_225e3594843d2ac(uavtype, lifetimeOverride, owner) {
+function function_225e3594843d2ac(uavtype, lifetimeoverride, owner) {
     duration = level.uavsettings[uavtype].timeout;
     /#
         var_2a98d1683cf44153 = getdvarint(@"hash_2c01d701bac5d9d3", 0);
@@ -1140,8 +1140,8 @@ function function_225e3594843d2ac(uavtype, lifetimeOverride, owner) {
             duration = 9999;
         }
     #/
-    if (isdefined(lifetimeOverride)) {
-        duration = lifetimeOverride;
+    if (isdefined(lifetimeoverride)) {
+        duration = lifetimeoverride;
     } else if (isdefined(owner) && owner namespace_53fc9ddbb516e6e1::function_87072b42853a9c58("specialty_uav_buff")) {
         duration = duration * ter_op(isdefined(level.var_1408c77a4f773854), level.var_1408c77a4f773854, 1);
     }
@@ -1286,7 +1286,7 @@ function function_e02b5390559e651a() {
 // Checksum 0x0, Offset: 0x3e53
 // Size: 0x66
 function function_456cd43a5602eaab() {
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && isdefined(self.owner) && isplayer(self.owner)) {
+    if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(self.owner) && isplayer(self.owner)) {
         if (issharedfuncdefined("perk", "hasPerk")) {
             if (self.owner [[ getsharedfunc("perk", "hasPerk") ]]("specialty_overwatch")) {
                 return 1;

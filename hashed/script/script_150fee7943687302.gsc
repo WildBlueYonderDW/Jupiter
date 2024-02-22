@@ -82,7 +82,7 @@ function function_5b0291aeab99561b(bot) {
     var_79eef5a8e34ac410 = circle.radius - distance(var_ff4b6d39036010b.target.origin, circle.origin);
     var_e2d41d6be5320861 = function_9d1ab012058221bb(var_79eef5a8e34ac410, self.constants.var_79eef5a8e34ac410, self.constants.var_ca580a719e470379);
     var_ff4b6d39036010b.score = var_ff4b6d39036010b.score + var_e2d41d6be5320861;
-    target.var_2fa65f34eb9042f5 = var_ff4b6d39036010b.target;
+    target.buystation = var_ff4b6d39036010b.target;
     result = spawnstruct();
     result.target = target;
     result.score = var_ad2f80c3d8d4e44e + var_ff4b6d39036010b.score;
@@ -106,14 +106,14 @@ function function_400a728b86054272(bot, var_bf09a57af008acd6) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x538
 // Size: 0x83
-function function_f7df7edcfce4b1f2(var_2fa65f34eb9042f5, bot) {
-    if (!isdefined(var_2fa65f34eb9042f5.var_19c6f51451310013)) {
+function function_f7df7edcfce4b1f2(buystation, bot) {
+    if (!isdefined(buystation.var_19c6f51451310013)) {
         return 0;
     }
     var_3f6f0f4c8e8d9b4c = 15000;
-    var_ecc808e906f27f3 = var_2fa65f34eb9042f5.var_19c6f51451310013[bot.entity_number];
+    var_ecc808e906f27f3 = buystation.var_19c6f51451310013[bot.entity_number];
     if (!isdefined(var_ecc808e906f27f3) || gettime() > var_ecc808e906f27f3 + var_3f6f0f4c8e8d9b4c) {
-        var_2fa65f34eb9042f5.var_19c6f51451310013[bot.entity_number] = undefined;
+        buystation.var_19c6f51451310013[bot.entity_number] = undefined;
         return 0;
     }
     return 1;

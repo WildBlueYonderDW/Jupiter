@@ -691,7 +691,7 @@ function tac_cover_spawn(position, angles, stuckto, issuper, contents, door, var
         var_19c643069b108770 = var_19163e14365d9264.staticdata.bundle;
     }
     if (isdefined(var_19c643069b108770) && level.allowsupers) {
-        model_name = function_9bd2d235e27d5068(var_19c643069b108770, var_19163e14365d9264.blueprintIndex);
+        model_name = function_9bd2d235e27d5068(var_19c643069b108770, var_19163e14365d9264.blueprintindex);
     }
     if (!isdefined(model_name)) {
         model_name = "projectile_deployable_cover_opened_v0";
@@ -951,7 +951,7 @@ function tac_cover_handle_damage(data) {
         var_2c06f76b1150ee6c = istrue(level.var_f3be3f9bad33bf87) && istrue(self.var_135e1c9614ac0dd0);
         if (data.attacker != self.owner && data.attacker.team != self.owner.team && !var_2c06f76b1150ee6c) {
             self.var_135e1c9614ac0dd0 = 1;
-            self.owner namespace_a850435086c88de3::doOnActionScoreEvent(1, "tacCoverShot");
+            self.owner namespace_a850435086c88de3::doonactionscoreevent(1, "tacCoverShot");
         }
     }
     return damage;
@@ -1028,8 +1028,8 @@ function tac_cover_handle_fatal_damage(data) {
     }
     if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker thread namespace_48a08c5037514e04::doScoreEvent(#"destroyed_equipment");
-        attacker thread namespace_25c5a6f43bb97b43::onFieldUpgradeDestroy(#"hash_1dadef4eb4500029");
+        attacker thread namespace_48a08c5037514e04::doscoreevent(#"destroyed_equipment");
+        attacker thread namespace_25c5a6f43bb97b43::onfieldupgradedestroy(#"hash_1dadef4eb4500029");
     }
     thread tac_cover_destroy(undefined, 1, var_70f6e994a59a36a8);
 }
@@ -1375,11 +1375,11 @@ function function_d147e0986e29dd8d(org, rad, height) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c91
 // Size: 0xe8
-function function_9bd2d235e27d5068(bundle, blueprintIndex) {
+function function_9bd2d235e27d5068(bundle, blueprintindex) {
     var_9b32d1936831f5aa = undefined;
     model_name = undefined;
-    if (isdefined(bundle.var_d96d3e6ceed581fd.blueprints) && bundle.var_d96d3e6ceed581fd.blueprints.size > 0 && blueprintIndex > 0) {
-        var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.blueprints[blueprintIndex - 1].genericblueprint;
+    if (isdefined(bundle.var_d96d3e6ceed581fd.blueprints) && bundle.var_d96d3e6ceed581fd.blueprints.size > 0 && blueprintindex > 0) {
+        var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.blueprints[blueprintindex - 1].genericblueprint;
         model_name = function_29e16a88682086b2(var_9b32d1936831f5aa, "xmodel", "worldModel");
     } else if (isdefined(bundle.var_d96d3e6ceed581fd.var_85ec36a3c387a93a)) {
         var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.var_85ec36a3c387a93a;

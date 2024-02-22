@@ -35,8 +35,8 @@ function autoexec function_f67abbf91bd2f54d() {
     level._effect["mimic_emp_blast"] = loadfx("vfx/iw9/fieldupgrades/vfx_electric_discharge_blast.vfx");
     callback::add("on_zombie_mimic_emp_spawned", &function_b9405466354e742f);
     callback::add("on_zombie_mimic_hvt_emp_spawned", &function_b9405466354e742f);
-    utility::registersharedfunc("game", "shockStick_applyHaywire", &namespace_742e7eca5294ecdc::shockStick_applyHaywire);
-    utility::registersharedfunc("game", "shockstick_canBeHaywire", &namespace_742e7eca5294ecdc::shockstick_canBeHaywire);
+    utility::registersharedfunc("game", "shockStick_applyHaywire", &namespace_742e7eca5294ecdc::shockstick_applyhaywire);
+    utility::registersharedfunc("game", "shockstick_canBeHaywire", &namespace_742e7eca5294ecdc::shockstick_canbehaywire);
     utility::registersharedfunc("game", "empdebuff_get_emp_ents", &namespace_5a51aa78ea0b1b9f::empdebuff_get_emp_ents);
     utility::registersharedfunc("game", "play_emp_scramble", &namespace_5a51aa78ea0b1b9f::play_emp_scramble);
     utility::registersharedfunc("game", "stop_emp_scramble", &namespace_5a51aa78ea0b1b9f::stop_emp_scramble);

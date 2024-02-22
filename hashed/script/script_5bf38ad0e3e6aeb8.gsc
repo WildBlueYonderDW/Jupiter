@@ -220,9 +220,9 @@ function onstartgametype() {
 // Size: 0xba
 function updategametypedvars() {
     namespace_310ba947928891df::updatecommongametypedvars();
-    level.overtimeFlag = dvarfloatvalue("overtimeFlag", 10, 0, 30);
-    if (level.overtimeFlag > 0) {
-        level.ontimelimitgraceperiod = level.overtimeFlag;
+    level.overtimeflag = dvarfloatvalue("overtimeFlag", 10, 0, 30);
+    if (level.overtimeflag > 0) {
+        level.ontimelimitgraceperiod = level.overtimeflag;
         level.currenttimelimitdelay = 0;
         level.canprocessot = 1;
     }
@@ -473,7 +473,7 @@ function onspawnfinished() {
     self.hasarenaspawned = 1;
     wait(0.15);
     if (!namespace_4b0406965e556711::gameflag("prematch_done") && game["roundsPlayed"] == 0) {
-        if (level.overtimeFlag > 0 && isdefined(level.matchcountdowntime) && level.matchcountdowntime > 5) {
+        if (level.overtimeflag > 0 && isdefined(level.matchcountdowntime) && level.matchcountdowntime > 5) {
             if (!self issplitscreenplayer() || self issplitscreenplayerprimary()) {
                 namespace_944ddf7b8df1b0e3::leaderdialogonplayer("obj_indepth", "introboost");
             }
@@ -763,7 +763,7 @@ function function_cf32b8de85ca585a(victim, var_9c14ae6e04bbd667) {
                     var_ffcddbab91473037 = level.teamdata[attacker.team]["alivePlayers"];
                     foreach (var_78d4262a23453d9e in var_ffcddbab91473037) {
                         var_78d4262a23453d9e thread namespace_391de535501b0143::killeventtextpopup(#"team_wiped", 0);
-                        var_78d4262a23453d9e thread namespace_48a08c5037514e04::doScoreEvent(#"team_wiped", var_78d4262a23453d9e.wipeweapon);
+                        var_78d4262a23453d9e thread namespace_48a08c5037514e04::doscoreevent(#"team_wiped", var_78d4262a23453d9e.wipeweapon);
                     }
                     wipeweapon = self.laststandweaponobj;
                     if (!isdefined(wipeweapon)) {

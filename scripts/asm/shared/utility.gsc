@@ -1630,10 +1630,10 @@ function gethighestallowedstance() {
 function determinerequestedstance() {
     higheststance = gethighestallowedstance();
     var_55372344a55a6d53 = bb_getrequestedstance();
-    var_5730c0aa523383e = [];
-    var_5730c0aa523383e["prone"] = 0;
-    var_5730c0aa523383e["crouch"] = 1;
-    var_5730c0aa523383e["stand"] = 2;
+    stances = [];
+    stances["prone"] = 0;
+    stances["crouch"] = 1;
+    stances["stand"] = 2;
     demeanor = self function_869f129f31d72088();
     if (isdefined(self.pathgoalpos) && distance2dsquared(self.pathgoalpos, self.origin) > 1) {
         var_55372344a55a6d53 = "stand";
@@ -1648,11 +1648,11 @@ function determinerequestedstance() {
         var_55372344a55a6d53 = "stand";
     } else if (higheststance == "prone" && self.unittype == "c6") {
         var_55372344a55a6d53 = "crouch";
-    } else if (var_5730c0aa523383e[higheststance] < var_5730c0aa523383e[var_55372344a55a6d53]) {
+    } else if (stances[higheststance] < stances[var_55372344a55a6d53]) {
         var_55372344a55a6d53 = higheststance;
     } else if (var_55372344a55a6d53 == "prone" && higheststance != var_55372344a55a6d53) {
         var_55372344a55a6d53 = higheststance;
-    } else if (var_55372344a55a6d53 == "crouch" && var_5730c0aa523383e[higheststance] > var_5730c0aa523383e["crouch"]) {
+    } else if (var_55372344a55a6d53 == "crouch" && stances[higheststance] > stances["crouch"]) {
         if (bb_isinbadcrouchspot()) {
             var_55372344a55a6d53 = "stand";
         }

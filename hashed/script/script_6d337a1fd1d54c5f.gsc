@@ -170,7 +170,7 @@ function function_dc92e2d675b5c228(var_36aab17d28116d3f) {
         player setclientomnvar("ui_br_assassination_target", 0);
     }
     var_36aab17d28116d3f.task.var_7ef0fa7a21303ccc = 1;
-    namespace_d696adde758cbe79::showDMZSplash("dmz_hunt_target_survived", players);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_hunt_target_survived", players);
     function_c1fd3441ccfba6f8(var_36aab17d28116d3f.var_6d915ef0d70da0f8, "dmz_activity_win", 1);
 }
 
@@ -208,8 +208,8 @@ function function_5ce5c9510bd3966f(var_c7a173d080d099ee) {
     }
     foreach (agent in agents) {
         if (isdefined(agent) && !isint(agent) && isalive(agent)) {
-            agent thread hSquad_overrideAgent(agent);
-            namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "hSquad_overrideAgent", &hSquad_overrideAgent);
+            agent thread hsquad_overrideagent(agent);
+            namespace_14d36171baccf528::function_58aab2edaec2599f(agent, "hSquad_overrideAgent", &hsquad_overrideagent);
         }
     }
     return [0:agents, 1:var_9b71757c091ff3a8];
@@ -284,7 +284,7 @@ function function_e5eb00bff9a93501(var_36aab17d28116d3f) {
         namespace_14d36171baccf528::function_ab491b16f8423c8e(player, "hs", 0);
         group = namespace_14d36171baccf528::function_ed5140c225d4f337(player);
         namespace_14d36171baccf528::function_ca2adce5c7865c20(player, group);
-        namespace_d696adde758cbe79::showDMZSplash("dmz_hunt_assigned_others", [0:player]);
+        namespace_d696adde758cbe79::showdmzsplash("dmz_hunt_assigned_others", [0:player]);
         function_bcc9e506d1dbad57(player, var_36aab17d28116d3f);
         player.var_783a508c7b030e91 = 1;
     }
@@ -460,7 +460,7 @@ function function_17fa0b0f3fced1c5(agent) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1896
 // Size: 0x157
-function hSquad_overrideAgent(agent) {
+function hsquad_overrideagent(agent) {
     agent thread namespace_14d36171baccf528::function_9ca698cdffe22968(agent, 1);
     wait(1);
     helmet = level.var_6855c201495094b6["tier3"];
@@ -494,7 +494,7 @@ function hSquad_overrideAgent(agent) {
 // Size: 0x8d
 function function_747765fe20e9955f(var_36aab17d28116d3f) {
     players = level.teamdata[var_36aab17d28116d3f.var_6d915ef0d70da0f8]["players"];
-    namespace_d696adde758cbe79::showDMZSplash("dmz_hunt_assigned_others", players);
+    namespace_d696adde758cbe79::showdmzsplash("dmz_hunt_assigned_others", players);
     foreach (player in players) {
         function_bcc9e506d1dbad57(player, var_36aab17d28116d3f);
     }

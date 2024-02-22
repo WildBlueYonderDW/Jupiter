@@ -585,7 +585,7 @@ function getequipmentmaxammo(ref, class) {
             return namespace_f8d3520d3483c1::function_47320a25b8ee003();
         }
         maxammo = weaponmaxammo(var_8bf83d28be4c2d4f.objweapon);
-    } else if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    } else if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         slot = findequipmentslot(ref);
         maxammo = undefined;
         if (isdefined(level.var_7ea1a9db4c78be14) && isdefined(slot) && (slot == "primary" || slot == "secondary")) {
@@ -1393,12 +1393,12 @@ function hackequipment(hacker) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c1e
 // Size: 0x3e
-function function_24fce6c89fd2bee3(CaptureBot) {
-    if (isdefined(CaptureBot)) {
+function function_24fce6c89fd2bee3(capturebot) {
+    if (isdefined(capturebot)) {
         if (!isdefined(self.var_134d6db4538498ee)) {
             self.var_134d6db4538498ee = [];
         }
-        self.var_134d6db4538498ee[self.var_134d6db4538498ee.size] = CaptureBot;
+        self.var_134d6db4538498ee[self.var_134d6db4538498ee.size] = capturebot;
     }
 }
 
@@ -1435,13 +1435,13 @@ function changeowner(newowner) {
     if (issharedfuncdefined("equipment", "updatePlantedArray")) {
         self.owner [[ getsharedfunc("equipment", "updatePlantedArray") ]](self);
     }
-    onOwnerChanged = undefined;
+    onownerchanged = undefined;
     if (isdefined(self.equipmentref)) {
-        onOwnerChanged = getcallback(self.equipmentref, "onOwnerChanged");
+        onownerchanged = getcallback(self.equipmentref, "onOwnerChanged");
     }
     self notify("ownerChanged");
-    if (isdefined(onOwnerChanged)) {
-        self [[ onOwnerChanged ]](var_c0f9139ffd72e62d);
+    if (isdefined(onownerchanged)) {
+        self [[ onownerchanged ]](var_c0f9139ffd72e62d);
     }
 }
 

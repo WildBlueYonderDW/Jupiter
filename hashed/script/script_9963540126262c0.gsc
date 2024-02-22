@@ -14,10 +14,10 @@ function function_69b64f047b0af1db(radius) {
     event.radius = radius;
     event.var_8fa87d2c8780e014 = radius * radius;
     event.result = [];
-    var_3c91684198954c83 = self.Mind.var_3c91684198954c83;
+    var_3c91684198954c83 = self.mind.var_3c91684198954c83;
     var_3c91684198954c83.var_c821041ce9f4100b = event;
     var_3c91684198954c83.events[var_3c91684198954c83.events.size] = event;
-    if (!isdefined(level.Mind.events.var_5b25e7620e424cb2)) {
+    if (!isdefined(level.mind.events.var_5b25e7620e424cb2)) {
         level thread function_f1f01b106bb7bd95();
     }
 }
@@ -28,8 +28,8 @@ function function_69b64f047b0af1db(radius) {
 // Size: 0xe6
 function function_f1f01b106bb7bd95() {
     level endon("game_ended");
-    level.Mind.events.var_5b25e7620e424cb2 = [];
-    if (namespace_36f464722d326bbe::isBRStyleGameType() && !istrue(level.skipprematch)) {
+    level.mind.events.var_5b25e7620e424cb2 = [];
+    if (namespace_36f464722d326bbe::isbrstylegametype() && !istrue(level.skipprematch)) {
         level waittill("prematch_cleanup");
     }
     result = [];
@@ -39,7 +39,7 @@ function function_f1f01b106bb7bd95() {
             result[result.size] = station;
         }
     }
-    level.Mind.events.var_5b25e7620e424cb2 = result;
+    level.mind.events.var_5b25e7620e424cb2 = result;
 }
 
 // Namespace namespace_4cfb97b54bb76867/namespace_bfa2898056f8354
@@ -47,12 +47,12 @@ function function_f1f01b106bb7bd95() {
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x113
 function function_7e7ddfa33eff2c11() {
-    event = self.Mind.var_3c91684198954c83.var_c821041ce9f4100b;
+    event = self.mind.var_3c91684198954c83.var_c821041ce9f4100b;
     if (!event.var_d0942e9d2044d6c6) {
         if (event.result.size > 0) {
             event.result = [];
         }
-        foreach (station in level.Mind.events.var_5b25e7620e424cb2) {
+        foreach (station in level.mind.events.var_5b25e7620e424cb2) {
             if (distancesquared(station.origin, self.origin) <= event.var_8fa87d2c8780e014) {
                 event.result[event.result.size] = station;
             }

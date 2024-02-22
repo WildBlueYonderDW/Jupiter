@@ -2313,47 +2313,47 @@ function wheelson_spawn(pos, var_e0c08758eb0006be, vehicle, model, patrolradius,
     spawndata.cancapture = 0;
     spawndata.cancaptureimmediately = 0;
     spawndata.activateimmediately = 1;
-    remoteTank = namespace_f64231d5b7a2c3c4::_spawnvehicle(spawndata);
-    remoteTank.owner = var_26ebc4ab45d7e908;
-    remoteTank setentityowner(var_26ebc4ab45d7e908);
-    remoteTank namespace_6d9917c3dc05dbe9::registersentient("Killstreak_Ground", var_26ebc4ab45d7e908.team);
-    remoteTank.team = var_26ebc4ab45d7e908.team;
-    remoteTank.tanktype = "remote_tank";
-    remoteTank.maxhealth = 6000;
-    remoteTank.health = 6000;
-    remoteTank.currenthealth = 6000;
-    remoteTank.pathstruct = var_e0c08758eb0006be;
-    remoteTank.var_e0c08758eb0006be = var_e0c08758eb0006be;
-    remoteTank.vehiclename = "pac_sentry";
-    remoteTank.var_1d52051e15c4b0c5 = 10;
-    remoteTank.var_240dc8d5c31629d2 = 150;
-    remoteTank.spinuptime = 1;
-    remoteTank laseron();
-    remoteTank function_d2e41c7603ba7697("p2p");
-    remoteTank function_77320e794d35465a("p2p", "reverseGasNormal", 1.5);
-    remoteTank function_77320e794d35465a("p2p", "steeringMultiplier", 20);
-    remoteTank function_77320e794d35465a("p2p", "manualSpeed", 10);
-    remoteTank function_77320e794d35465a("p2p", "reverseForBehindGoal", 1);
-    remoteTank function_77320e794d35465a("p2p", "stuckTime", 4);
-    remoteTank function_77320e794d35465a("p2p", "goalThreshold", 50);
-    remoteTank namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&empStarted);
-    remoteTank namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&empCleared);
-    remoteTank namespace_b6b4a3ac458ab6e2::function_172d848d58051fdf(&function_f149e9383f183cf0);
-    remoteTank namespace_b6b4a3ac458ab6e2::function_aa823a31304ed981(&function_5c67fa91fe5b79);
-    remoteTank.var_8ffa366ec68f0c8b = 3600;
-    remoteTank namespace_6ca1587edcca0018::function_89445073f3e86e5c(remoteTank.vehiclename);
-    function_45c8ebe59275b96e(remoteTank.vehiclename);
-    playfxontag(getfx("vfx_dmz_Wheelson_flashlight"), remoteTank, "tag_flash");
-    remoteTank.currentstate = 0;
-    remoteTank vehicleshowonminimap(0);
-    remoteTank.damagecallback = &namespace_adc82618e9ef9897::function_96b758d589365ef6;
-    remoteTank.var_1329597b4278afe9 = [];
-    remoteTank thread function_a51eaffdb54130b2(var_e0c08758eb0006be);
-    remoteTank thread function_42bc36af24a342e();
-    remoteTank thread function_93dccf3096384da0();
-    remoteTank.damagestate = 0;
-    namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(remoteTank, remoteTank.owner, remoteTank.owner.team);
-    return remoteTank;
+    remotetank = namespace_f64231d5b7a2c3c4::_spawnvehicle(spawndata);
+    remotetank.owner = var_26ebc4ab45d7e908;
+    remotetank setentityowner(var_26ebc4ab45d7e908);
+    remotetank namespace_6d9917c3dc05dbe9::registersentient("Killstreak_Ground", var_26ebc4ab45d7e908.team);
+    remotetank.team = var_26ebc4ab45d7e908.team;
+    remotetank.tanktype = "remote_tank";
+    remotetank.maxhealth = 6000;
+    remotetank.health = 6000;
+    remotetank.currenthealth = 6000;
+    remotetank.pathstruct = var_e0c08758eb0006be;
+    remotetank.var_e0c08758eb0006be = var_e0c08758eb0006be;
+    remotetank.vehiclename = "pac_sentry";
+    remotetank.var_1d52051e15c4b0c5 = 10;
+    remotetank.var_240dc8d5c31629d2 = 150;
+    remotetank.spinuptime = 1;
+    remotetank laseron();
+    remotetank function_d2e41c7603ba7697("p2p");
+    remotetank function_77320e794d35465a("p2p", "reverseGasNormal", 1.5);
+    remotetank function_77320e794d35465a("p2p", "steeringMultiplier", 20);
+    remotetank function_77320e794d35465a("p2p", "manualSpeed", 10);
+    remotetank function_77320e794d35465a("p2p", "reverseForBehindGoal", 1);
+    remotetank function_77320e794d35465a("p2p", "stuckTime", 4);
+    remotetank function_77320e794d35465a("p2p", "goalThreshold", 50);
+    remotetank namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&empstarted);
+    remotetank namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&empcleared);
+    remotetank namespace_b6b4a3ac458ab6e2::function_172d848d58051fdf(&function_f149e9383f183cf0);
+    remotetank namespace_b6b4a3ac458ab6e2::function_aa823a31304ed981(&function_5c67fa91fe5b79);
+    remotetank.var_8ffa366ec68f0c8b = 3600;
+    remotetank namespace_6ca1587edcca0018::function_89445073f3e86e5c(remotetank.vehiclename);
+    function_45c8ebe59275b96e(remotetank.vehiclename);
+    playfxontag(getfx("vfx_dmz_Wheelson_flashlight"), remotetank, "tag_flash");
+    remotetank.currentstate = 0;
+    remotetank vehicleshowonminimap(0);
+    remotetank.damagecallback = &namespace_adc82618e9ef9897::function_96b758d589365ef6;
+    remotetank.var_1329597b4278afe9 = [];
+    remotetank thread function_a51eaffdb54130b2(var_e0c08758eb0006be);
+    remotetank thread function_42bc36af24a342e();
+    remotetank thread function_93dccf3096384da0();
+    remotetank.damagestate = 0;
+    namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(remotetank, remotetank.owner, remotetank.owner.team);
+    return remotetank;
 }
 
 // Namespace namespace_28488a8b5ddf6dbc/namespace_1f95f5cd850f6060
@@ -2408,7 +2408,7 @@ function function_120b1e4e62e7695c(inflictor, attacker, damage, idflags, meansof
         if (isplayer(var_75778a2941f7b2c0)) {
             var_7ec7671a1e0c788f = spawnstruct();
             var_7ec7671a1e0c788f.var_b421b1d42317ccb2 = 1;
-            var_75778a2941f7b2c0 thread namespace_48a08c5037514e04::doScoreEvent(#"hash_2b5885666af24123", objweapon, undefined, undefined, self, undefined, undefined, 0, var_7ec7671a1e0c788f, 1);
+            var_75778a2941f7b2c0 thread namespace_48a08c5037514e04::doscoreevent(#"hash_2b5885666af24123", objweapon, undefined, undefined, self, undefined, undefined, 0, var_7ec7671a1e0c788f, 1);
         }
     }
     if (isdefined(self)) {

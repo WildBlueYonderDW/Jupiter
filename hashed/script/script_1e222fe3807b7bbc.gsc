@@ -25,7 +25,7 @@ function function_eda57308516bfc5f() {
 // Size: 0x102
 function function_e0844a2b7f904b14(bot) {
     var_72bb89e60d3674df = self.constants.basescore;
-    if (isdefined(level.var_3c59090ee220ab3d.callbacks.var_bca4b4bdab5b2718)) {
+    if (isdefined(level.mind.callbacks.var_bca4b4bdab5b2718)) {
         return var_72bb89e60d3674df;
     }
     master = bot function_2810b62e37a684f9();
@@ -61,11 +61,11 @@ function function_f51749cef5c1eec(var_de5ad618378dca3) {
 // Checksum 0x0, Offset: 0x28f
 // Size: 0x163
 function function_35671b7b1a04bf58(bot) {
-    pointonnavmesh = bot function_188de758cb607fa3(self.var_a0185a724941f02f, self.var_ec02147fee952ce2);
+    pointonnavmesh = bot function_188de758cb607fa3(self.decision, self.var_ec02147fee952ce2);
     if (!isdefined(pointonnavmesh)) {
         return "No destination";
     }
-    bot function_9e400058ef021b03(pointonnavmesh, self.var_a0185a724941f02f.constants.var_a135e495fbf4cf96);
+    bot function_9e400058ef021b03(pointonnavmesh, self.decision.constants.var_a135e495fbf4cf96);
     result = bot waittill_any_in_array_or_timeout([0:"goal", 1:"bad_path", 2:"long_path"], 15);
     if (result == "goal") {
         if (namespace_cd0b2d039510b38d::getsubgametype() != "rumble_mgl") {
@@ -75,10 +75,10 @@ function function_35671b7b1a04bf58(bot) {
             var_5f50d68561839648 = randomfloatrange(1, 3);
             wait(var_5f50d68561839648);
         }
-    } else if (result == "bad_path" && isdefined(self.var_a0185a724941f02f.var_288ca57e94982f37)) {
-        var_8c9d8551140041f7 = bot.var_3c59090ee220ab3d.var_f0a8822dcc782c9d.var_577f45571c039a54["Pickup"];
+    } else if (result == "bad_path" && isdefined(self.decision.var_288ca57e94982f37)) {
+        var_8c9d8551140041f7 = bot.mind.var_f0a8822dcc782c9d.var_577f45571c039a54["Pickup"];
         if (isdefined(var_8c9d8551140041f7)) {
-            var_8c9d8551140041f7 namespace_351e75b9d115392f::function_2d9fcd6970321ba(self.var_a0185a724941f02f.var_288ca57e94982f37);
+            var_8c9d8551140041f7 namespace_351e75b9d115392f::function_2d9fcd6970321ba(self.decision.var_288ca57e94982f37);
         }
     }
     bot notify("dormant_bot_suspending_chance");
@@ -91,16 +91,16 @@ function function_35671b7b1a04bf58(bot) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f9
 // Size: 0xa4
-function function_188de758cb607fa3(var_a0185a724941f02f, var_de5ad618378dca3) {
-    if (isdefined(level.var_3c59090ee220ab3d.callbacks.var_bca4b4bdab5b2718)) {
-        return self [[ level.var_3c59090ee220ab3d.callbacks.var_bca4b4bdab5b2718 ]]();
+function function_188de758cb607fa3(decision, var_de5ad618378dca3) {
+    if (isdefined(level.mind.callbacks.var_bca4b4bdab5b2718)) {
+        return self [[ level.mind.callbacks.var_bca4b4bdab5b2718 ]]();
     }
-    var_288ca57e94982f37 = var_a0185a724941f02f.var_288ca57e94982f37;
-    var_a0185a724941f02f.var_288ca57e94982f37 = undefined;
+    var_288ca57e94982f37 = decision.var_288ca57e94982f37;
+    decision.var_288ca57e94982f37 = undefined;
     if (isdefined(var_de5ad618378dca3)) {
-        return function_75328d9af88f8b4e(var_de5ad618378dca3, var_a0185a724941f02f);
+        return function_75328d9af88f8b4e(var_de5ad618378dca3, decision);
     } else if (namespace_95d8d8ec67e3e074::function_d012729eac1e7053()) {
-        return function_9e2f5dc882037389(var_a0185a724941f02f, var_288ca57e94982f37);
+        return function_9e2f5dc882037389(decision, var_288ca57e94982f37);
     } else {
         return function_d635a657fa4ebf17();
     }
@@ -110,28 +110,28 @@ function function_188de758cb607fa3(var_a0185a724941f02f, var_de5ad618378dca3) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a4
 // Size: 0x7c
-function function_75328d9af88f8b4e(master, var_a0185a724941f02f) {
+function function_75328d9af88f8b4e(master, decision) {
     center = undefined;
     if (isbot(master) && master bothasscriptgoal()) {
         center = master botgetscriptgoal();
     } else {
         center = master.origin;
     }
-    return function_94df2aa132008fcc(center, var_a0185a724941f02f.constants.var_cc9b7ef91fc151b, var_a0185a724941f02f.constants.var_3145d7adafc61293);
+    return function_94df2aa132008fcc(center, decision.constants.var_cc9b7ef91fc151b, decision.constants.var_3145d7adafc61293);
 }
 
 // Namespace wander/namespace_ea0055094e5fd26a
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x528
 // Size: 0xad
-function function_9e2f5dc882037389(var_a0185a724941f02f, var_288ca57e94982f37) {
+function function_9e2f5dc882037389(decision, var_288ca57e94982f37) {
     var_8f60e685e9ada1d8 = 0.5;
     if (randomfloat(1) < var_8f60e685e9ada1d8) {
-        var_8c9d8551140041f7 = self.var_3c59090ee220ab3d.var_f0a8822dcc782c9d.var_577f45571c039a54["Pickup"];
+        var_8c9d8551140041f7 = self.mind.var_f0a8822dcc782c9d.var_577f45571c039a54["Pickup"];
         if (isdefined(var_8c9d8551140041f7)) {
-            var_a0185a724941f02f.var_288ca57e94982f37 = var_8c9d8551140041f7 namespace_351e75b9d115392f::function_54f633f649764ea9(self, var_288ca57e94982f37);
-            if (isdefined(var_a0185a724941f02f.var_288ca57e94982f37)) {
-                return var_a0185a724941f02f.var_288ca57e94982f37.entity.origin;
+            decision.var_288ca57e94982f37 = var_8c9d8551140041f7 namespace_351e75b9d115392f::function_54f633f649764ea9(self, var_288ca57e94982f37);
+            if (isdefined(decision.var_288ca57e94982f37)) {
+                return decision.var_288ca57e94982f37.entity.origin;
             }
         }
     }
@@ -217,6 +217,6 @@ function function_94df2aa132008fcc(center, distance, seconds) {
 // Checksum 0x0, Offset: 0x81a
 // Size: 0x2b
 function function_e08ee6939ebfdb4d(func) {
-    level.var_3c59090ee220ab3d.callbacks.var_bca4b4bdab5b2718 = func;
+    level.mind.callbacks.var_bca4b4bdab5b2718 = func;
 }
 

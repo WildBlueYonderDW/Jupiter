@@ -139,9 +139,9 @@ function chopperexfil_pack(var_cbfc3ba10cefc8ce) {
     npc = spawn_script_model("fullbody_mp_ally_helicopter_crew_chief_exfil");
     npc hide(1);
     self.npc = npc;
-    var_26693a5d52d6ce1a = spawn_script_model("fullbody_usmc_ar_br_infil");
-    var_26693a5d52d6ce1a hide(1);
-    self.var_26693a5d52d6ce1a = var_26693a5d52d6ce1a;
+    npc2 = spawn_script_model("fullbody_usmc_ar_br_infil");
+    npc2 hide(1);
+    self.npc2 = npc2;
     self.cam = create_cam();
     if (namespace_3c37cb17ade254d::issharedfuncdefined("br_ending_chopper2", "getAnimPack")) {
         self.pack = self [[ namespace_3c37cb17ade254d::getsharedfunc("br_ending_chopper2", "getAnimPack") ]](chopper, var_32cdbd0f9da13261, npc, 0.25);
@@ -908,8 +908,8 @@ function function_fb788d97921f7d15(array) {
     self.pistol show();
     self.ar show();
     self.var_666ccc93f2a77080 show();
-    self.var_96480725b7d62aa7 show();
-    self.var_26693a5d52d6ce1a show();
+    self.vest show();
+    self.npc2 show();
 }
 
 // Namespace br_ending_chopper2/namespace_1cf0585e9841d60a
@@ -922,8 +922,8 @@ function function_ced95b76ae5616e4(array) {
     self.pistol hide(1);
     self.ar hide(1);
     self.var_666ccc93f2a77080 hide(1);
-    self.var_96480725b7d62aa7 hide(1);
-    self.var_26693a5d52d6ce1a hide(1);
+    self.vest hide(1);
+    self.npc2 hide(1);
 }
 
 // Namespace br_ending_chopper2/namespace_1cf0585e9841d60a
@@ -933,7 +933,7 @@ function function_ced95b76ae5616e4(array) {
 function function_88eefe51538f221d(array) {
     function_7acde5feb50c98f2(level.players, "scn_br_palfa_exfil_accolade_medic");
     function_acf4f08cf7755a04(array);
-    self.var_d112f8b17645f340 show();
+    self.stim show();
 }
 
 // Namespace br_ending_chopper2/namespace_1cf0585e9841d60a
@@ -941,7 +941,7 @@ function function_88eefe51538f221d(array) {
 // Checksum 0x0, Offset: 0x7e07
 // Size: 0x1d
 function function_d76ec37713e7e07c(array) {
-    self.var_d112f8b17645f340 hide(1);
+    self.stim hide(1);
 }
 
 // Namespace br_ending_chopper2/namespace_1cf0585e9841d60a
@@ -1902,7 +1902,7 @@ function function_ae31b668b8588403(n, player) {
 // Size: 0x5ec
 function function_e95e12d39f4b87d9(n, player) {
     /#
-        assert(isdefined(self.var_26693a5d52d6ce1a));
+        assert(isdefined(self.npc2));
     #/
     if (!isdefined(self.sniper)) {
         self.sniper = spawn_script_model("weapon_wm_sn_alpha50_exfil");
@@ -1924,9 +1924,9 @@ function function_e95e12d39f4b87d9(n, player) {
         self.var_666ccc93f2a77080 = spawn_script_model("accessory_money_bag_large_exfil");
         self.var_666ccc93f2a77080 hide(1);
     }
-    if (!isdefined(self.var_96480725b7d62aa7)) {
-        self.var_96480725b7d62aa7 = spawn_script_model("props_armor_pickup_light_exfil");
-        self.var_96480725b7d62aa7 hide(1);
+    if (!isdefined(self.vest)) {
+        self.vest = spawn_script_model("props_armor_pickup_light_exfil");
+        self.vest hide(1);
     }
     n++;
     self.packs[n] = create_animpack("supplierA");
@@ -1943,8 +1943,8 @@ function function_e95e12d39f4b87d9(n, player) {
     self.packs[n] add_pack_modelanim(self.pistol, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_papa220_sh010"]);
     self.packs[n] add_pack_modelanim(self.ar, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_mike4_sh010"]);
     self.packs[n] add_pack_modelanim(self.var_666ccc93f2a77080, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_money_bag_large_sh010"]);
-    self.packs[n] add_pack_modelanim(self.var_96480725b7d62aa7, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_vest_sh010"]);
-    self.packs[n] add_pack_modelanim(self.var_26693a5d52d6ce1a, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_operator02_sh010"]);
+    self.packs[n] add_pack_modelanim(self.vest, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_vest_sh010"]);
+    self.packs[n] add_pack_modelanim(self.npc2, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_operator02_sh010"]);
     self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_camera_sh010"], "wz_iw9_exfil_acc_supplier_xcam_sh010");
     n++;
     self.packs[n] = create_animpack("supplierB");
@@ -1960,8 +1960,8 @@ function function_e95e12d39f4b87d9(n, player) {
     self.packs[n] add_pack_modelanim(self.pistol, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_papa220_sh020"]);
     self.packs[n] add_pack_modelanim(self.ar, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_mike4_sh020"]);
     self.packs[n] add_pack_modelanim(self.var_666ccc93f2a77080, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_money_bag_large_sh020"]);
-    self.packs[n] add_pack_modelanim(self.var_96480725b7d62aa7, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_vest_sh020"]);
-    self.packs[n] add_pack_modelanim(self.var_26693a5d52d6ce1a, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_operator02_sh020"]);
+    self.packs[n] add_pack_modelanim(self.vest, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_vest_sh020"]);
+    self.packs[n] add_pack_modelanim(self.npc2, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_operator02_sh020"]);
     self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_supplier_camera_sh020"], "wz_iw9_exfil_acc_supplier_xcam_sh020");
     return n;
 }
@@ -1971,9 +1971,9 @@ function function_e95e12d39f4b87d9(n, player) {
 // Checksum 0x0, Offset: 0xca86
 // Size: 0x2e7
 function function_3ac76bb4e8c880e1(n, player) {
-    if (!isdefined(self.var_d112f8b17645f340)) {
-        self.var_d112f8b17645f340 = spawn_script_model("weapon_wm_stim_exfil");
-        self.var_d112f8b17645f340 hide(1);
+    if (!isdefined(self.stim)) {
+        self.stim = spawn_script_model("weapon_wm_stim_exfil");
+        self.stim hide(1);
     }
     n++;
     self.packs[n] = create_animpack("medicA");
@@ -1985,7 +1985,7 @@ function function_3ac76bb4e8c880e1(n, player) {
     self.packs[n] add_pack_modelanim(self.exfilchopper, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_helicopter_sh010"]);
     self.packs[n] function_707983b9fdb53c55(self.var_32cdbd0f9da13261);
     self.packs[n] add_pack_playeranim(player, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_operator01_sh010"], level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_operator01_fem_sh010"]);
-    self.packs[n] add_pack_modelanim(self.var_d112f8b17645f340, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_stim_sh010"]);
+    self.packs[n] add_pack_modelanim(self.stim, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_stim_sh010"]);
     self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_camera_sh010"], "wz_iw9_exfil_acc_medic_xcam_sh010");
     n++;
     self.packs[n] = create_animpack("medicB");
@@ -1996,7 +1996,7 @@ function function_3ac76bb4e8c880e1(n, player) {
     self.packs[n] add_pack_modelanim(self.exfilchopper, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_helicopter_sh020"]);
     self.packs[n] function_707983b9fdb53c55(self.var_32cdbd0f9da13261);
     self.packs[n] add_pack_playeranim(player, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_operator01_sh020"], level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_operator01_fem_sh020"]);
-    self.packs[n] add_pack_modelanim(self.var_d112f8b17645f340, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_stim_sh020"]);
+    self.packs[n] add_pack_modelanim(self.stim, level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_stim_sh020"]);
     self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["wz_IW9_exfil_acc_medic_camera_sh020"], "wz_iw9_exfil_acc_medic_xcam_sh020");
     return n;
 }

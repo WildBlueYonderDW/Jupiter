@@ -173,7 +173,7 @@ function private function_2d8bac720c7f42bb() {
         var_46b845634a24856c = player function_8cb6f3856a8745af();
     }
     values.var_904c82687ddfeb02 = var_904c82687ddfeb02;
-    values.weaponXP = var_46b845634a24856c;
+    values.weaponxp = var_46b845634a24856c;
     return values;
 }
 

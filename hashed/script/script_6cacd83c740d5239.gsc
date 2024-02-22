@@ -237,7 +237,7 @@ function function_2252397bd811c3b1(player) {
     thread function_bf7e8c05c1eb9c09(player);
     if (!player ent_flag("used_console_a")) {
         function_74fa5abeabd57c27(player);
-        squad = player namespace_ca7b90256548aa40::getSquadMembers();
+        squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_a");
         }
@@ -271,7 +271,7 @@ function function_2252367bd811bd18(player) {
     thread function_5eb2076c0952dd6a(player);
     if (!player ent_flag("used_console_b")) {
         function_74fa5abeabd57c27(player);
-        squad = player namespace_ca7b90256548aa40::getSquadMembers();
+        squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_b");
         }
@@ -305,7 +305,7 @@ function function_2252377bd811bf4b(player) {
     thread function_8eba9838d1d843f(player);
     if (!player ent_flag("used_console_c")) {
         function_74fa5abeabd57c27(player);
-        squad = player namespace_ca7b90256548aa40::getSquadMembers();
+        squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_c");
         }
@@ -340,7 +340,7 @@ function function_22523c7bd811ca4a(player) {
     thread function_66dee4959045fe18(player);
     if (!player ent_flag("used_console_d")) {
         function_74fa5abeabd57c27(player);
-        squad = player namespace_ca7b90256548aa40::getSquadMembers();
+        squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_d");
         }
@@ -747,7 +747,7 @@ function function_7780e0ebf9db40b1(interact) {
 // Size: 0xa7
 function function_16aecf732fc7c90e(player) {
     if (namespace_6776e8e74ed64842::function_1f1b9a49f43638d0() == 1 && self.refractor.isinside == 1) {
-        itemid = loot::getLootIDFromRef(self.refractor.var_6af53690bed297a6);
+        itemid = loot::getlootidfromref(self.refractor.var_6af53690bed297a6);
         var_65b695f0c0d909ed = player namespace_feea61bc660e9e0f::function_4776284a348ebb6a(itemid);
         if (var_65b695f0c0d909ed == -1) {
             /#
@@ -766,7 +766,7 @@ function function_16aecf732fc7c90e(player) {
 // Checksum 0x0, Offset: 0x3b43
 // Size: 0xdd
 function function_61f59a9cc42c932(player) {
-    itemid = loot::getLootIDFromRef(self.var_6af53690bed297a6);
+    itemid = loot::getlootidfromref(self.var_6af53690bed297a6);
     var_65b695f0c0d909ed = player namespace_feea61bc660e9e0f::function_4776284a348ebb6a(itemid);
     if (var_65b695f0c0d909ed == -1) {
         /#
@@ -799,7 +799,7 @@ function function_61f59a9cc42c932(player) {
 function function_8a0d4a3244c98aac(interact, player) {
     interact.refractor.isinside = level.var_24b61da48c7bdf06.radiation radiation::function_1b4f63fa623de69a(interact.refractor.origin);
     if (namespace_6776e8e74ed64842::function_1f1b9a49f43638d0() == 1 && interact.refractor.isinside == 1) {
-        itemid = loot::getLootIDFromRef(interact.refractor.var_6af53690bed297a6);
+        itemid = loot::getlootidfromref(interact.refractor.var_6af53690bed297a6);
         var_65b695f0c0d909ed = player namespace_feea61bc660e9e0f::function_4776284a348ebb6a(itemid);
         if (var_65b695f0c0d909ed == -1) {
             return {string:interact.refractor.var_8c2f2d93ef1b5a63, type:"HINT_NOBUTTON"};
@@ -832,7 +832,7 @@ function function_cc65145199d2c7d9(interact) {
     while (interact.refractor.activated == 0) {
         foreach (player in level.players) {
             if (isdefined(interact)) {
-                itemid = loot::getLootIDFromRef(interact.refractor.var_6af53690bed297a6);
+                itemid = loot::getlootidfromref(interact.refractor.var_6af53690bed297a6);
                 var_65b695f0c0d909ed = player namespace_feea61bc660e9e0f::function_4776284a348ebb6a(itemid);
                 if (var_65b695f0c0d909ed == -1) {
                     if (isalive(player) && player ent_flag(interact.refractor.var_6af53690bed297a6)) {
@@ -1016,7 +1016,7 @@ function private function_8fcaa5c0d74f44c7(a_players) {
 // Checksum 0x0, Offset: 0x47cf
 // Size: 0x5aa
 function private function_5399dc44467acdae(player) {
-    squad = player namespace_ca7b90256548aa40::getSquadMembers();
+    squad = player namespace_ca7b90256548aa40::getsquadmembers();
     if (level.var_ef7d03b5335531d2 == 1) {
         if (level.var_24b61da48c7bdf06.var_aa29def91aae98bd == 0) {
             thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("activity_summon_jan_first_refractor_active", squad);
@@ -1197,7 +1197,7 @@ function function_303658e9b41d2015(s_spot, n_radius) {
     while (1) {
         players = getplayersinradius(level.var_d9fe0f9ad95b793b.origin, 2000);
         foreach (player in players) {
-            squad = player namespace_ca7b90256548aa40::getSquadMembers();
+            squad = player namespace_ca7b90256548aa40::getsquadmembers();
             if (distance2dsquared(s_spot.origin, player.origin) < n_dist) {
                 if (namespace_6776e8e74ed64842::function_1f1b9a49f43638d0() == 1) {
                     if ((player ent_flag("heard_console_data_nomap") || player ent_flag("heard_saw_map_tile_vo")) && !player ent_flag("heard_refractor_vo_storm_started") && player ent_flag("heard_rav_storm_start_alldata")) {
@@ -1234,7 +1234,7 @@ function function_303658e9b41d2015(s_spot, n_radius) {
 function function_858202bc2560195b(player) {
     utility::flag_wait("aether_storm_expansion_started");
     wait(15);
-    squad = player namespace_ca7b90256548aa40::getSquadMembers();
+    squad = player namespace_ca7b90256548aa40::getsquadmembers();
     if (player ent_flag("heard_console_finaldata") && !player ent_flag("heard_rav_storm_start_alldata")) {
         thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("activity_summon_rav_all_four_refractor_collected_storm", squad);
         foreach (player in squad) {
@@ -1258,7 +1258,7 @@ function function_16b9f31835245160() {
                         eyepos = player geteye();
                         if (sighttracepassed(eyepos, var_c77a2a5426e71568.origin, 1, player)) {
                             if (utility::within_fov(player geteye(), player getplayerangles(), var_c77a2a5426e71568.origin, cos(35))) {
-                                squad = player namespace_ca7b90256548aa40::getSquadMembers();
+                                squad = player namespace_ca7b90256548aa40::getsquadmembers();
                                 thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("activity_summon_mapdataalreadyfound_map", squad);
                                 foreach (player in squad) {
                                     player ent_flag_set("heard_console_datafirst_mapsecond");
@@ -1272,7 +1272,7 @@ function function_16b9f31835245160() {
                         eyepos = player geteye();
                         if (sighttracepassed(eyepos, var_c77a2a5426e71568.origin, 1, player)) {
                             if (utility::within_fov(player geteye(), player getplayerangles(), var_c77a2a5426e71568.origin, cos(35))) {
-                                squad = player namespace_ca7b90256548aa40::getSquadMembers();
+                                squad = player namespace_ca7b90256548aa40::getsquadmembers();
                                 thread namespace_446fc987a980892f::function_c1c677ed7a1b1128("activity_summon_nomap_conv", squad);
                                 foreach (player in squad) {
                                     player ent_flag_set("heard_saw_map_tile_vo");
@@ -1292,7 +1292,7 @@ function function_16b9f31835245160() {
 // Checksum 0x0, Offset: 0x567d
 // Size: 0x2bf
 function function_74fa5abeabd57c27(player) {
-    squad = player namespace_ca7b90256548aa40::getSquadMembers();
+    squad = player namespace_ca7b90256548aa40::getsquadmembers();
     if (player ent_flag("heard_saw_map_tile_vo") && !player ent_flag("heard_console_firstdata_mapfound") && !player ent_flag("heard_console_data_nomap")) {
         thread namespace_446fc987a980892f::function_d87d5deb069bf8e5("activity_summon_firstdata_map", squad);
         foreach (player in squad) {

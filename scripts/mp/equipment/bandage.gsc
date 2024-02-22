@@ -41,7 +41,7 @@ function getfirstaidhealtimebr() {
 // Checksum 0x0, Offset: 0x163
 // Size: 0x5c
 function getbandagetime(itemname) {
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         var_7607f8111cfe5ff7 = 1;
         if (isdefined(self.br_armorlevel) && self.br_armorlevel == 3) {
             var_7607f8111cfe5ff7 = 0.75;
@@ -66,7 +66,7 @@ function usebandage(itemname, var_1156b7a3b9b6aa08) {
         return;
     }
     weaponobj = "bandage_mp";
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         weaponobj = "bandage_br_fake";
     }
     self disableweaponswitch();

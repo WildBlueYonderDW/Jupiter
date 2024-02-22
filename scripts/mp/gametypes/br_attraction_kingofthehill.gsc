@@ -280,7 +280,7 @@ function awardcapturepoints(location, trigger) {
                 if (!isplayer(player)) {
                     continue;
                 }
-                player namespace_48a08c5037514e04::doScoreEvent(#"hash_32eed765ef0d59f6");
+                player namespace_48a08c5037514e04::doscoreevent(#"hash_32eed765ef0d59f6");
             }
         }
     }

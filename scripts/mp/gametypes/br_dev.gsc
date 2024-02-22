@@ -969,7 +969,7 @@ function function_c96d7535862e245c(command, args) {
                 }
                 player.avoidkillstreakonspawntimer = undefined;
                 player function_d8cd9c1941a88194(lootid, 1);
-                player namespace_f8d3520d3483c1::setArmorHealth(player.var_8790c077c95db752);
+                player namespace_f8d3520d3483c1::setarmorhealth(player.var_8790c077c95db752);
             }
             break;
         case #"hash_ad34b62d6259eff9":
@@ -1055,27 +1055,27 @@ function function_c96d7535862e245c(command, args) {
             if (!isdefined(level.var_ec572828f01f1c6d)) {
                 break;
             }
-            var_1faf51a7dc279a8b = undefined;
+            blacksite = undefined;
             if (isdefined(firstplayer.var_d62b8c292b19cf68) && firstplayer.var_d62b8c292b19cf68.size > 0) {
-                var_1faf51a7dc279a8b = firstplayer.var_1faf51a7dc279a8b[0];
+                blacksite = firstplayer.blacksite[0];
             } else if (isdefined(level.var_f1073fbd45b59a06.var_d62b8c292b19cf68)) {
                 var_e880c9b9e22eb6c1 = randomint(level.var_f1073fbd45b59a06.var_d62b8c292b19cf68.size);
-                var_1faf51a7dc279a8b = level.var_f1073fbd45b59a06.var_d62b8c292b19cf68[var_e880c9b9e22eb6c1];
+                blacksite = level.var_f1073fbd45b59a06.var_d62b8c292b19cf68[var_e880c9b9e22eb6c1];
             }
-            firstplayer [[ level.var_ec572828f01f1c6d ]](var_1faf51a7dc279a8b);
+            firstplayer [[ level.var_ec572828f01f1c6d ]](blacksite);
             break;
         case #"hash_5bfe76ac355e2867":
             if (!isdefined(level.var_91044985cdb24c8b)) {
                 break;
             }
-            var_1faf51a7dc279a8b = undefined;
+            blacksite = undefined;
             if (isdefined(firstplayer.var_d62b8c292b19cf68) && firstplayer.var_d62b8c292b19cf68.size > 0) {
-                var_1faf51a7dc279a8b = firstplayer.var_1faf51a7dc279a8b[0];
+                blacksite = firstplayer.blacksite[0];
             } else if (isdefined(level.var_f1073fbd45b59a06.var_d62b8c292b19cf68)) {
                 var_e880c9b9e22eb6c1 = randomint(level.var_f1073fbd45b59a06.var_d62b8c292b19cf68.size);
-                var_1faf51a7dc279a8b = level.var_f1073fbd45b59a06.var_d62b8c292b19cf68[var_e880c9b9e22eb6c1];
+                blacksite = level.var_f1073fbd45b59a06.var_d62b8c292b19cf68[var_e880c9b9e22eb6c1];
             }
-            firstplayer [[ level.var_91044985cdb24c8b ]](var_1faf51a7dc279a8b);
+            firstplayer [[ level.var_91044985cdb24c8b ]](blacksite);
             break;
         case #"hash_70f3163baf120876":
             var_477bd548940c3a78 = args[0];
@@ -1097,16 +1097,16 @@ function function_c96d7535862e245c(command, args) {
             player = firstplayer;
             dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
             player namespace_bd614c3c2275579a::function_9d216f4cd30f141d(dropstruct, getteamarray(player.team, 0), player.team);
-            var_1faf51a7dc279a8b = level.var_f1073fbd45b59a06.var_9a3603fc71c8c69d[0];
-            var_1faf51a7dc279a8b notify("<unknown string>");
+            blacksite = level.var_f1073fbd45b59a06.var_9a3603fc71c8c69d[0];
+            blacksite notify("<unknown string>");
             waitframe();
-            boss = var_1faf51a7dc279a8b.var_837c4b569aa8a376[0];
+            boss = blacksite.var_837c4b569aa8a376[0];
             var_896452c986f0513b = function_7eb04ca16d045775("<unknown string>");
             var_6a26c26c2fce3a4e = var_896452c986f0513b[0];
             namespace_86b52005c685dfb9::killagent(var_6a26c26c2fce3a4e);
             wait(1);
-            aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_SharedFunc("<unknown string>")[0];
-            namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(aitype, boss.origin, (0, 0, 0), boss.team);
+            aitype = namespace_53fc9ddbb516e6e1::get_aitype_by_subclass_sharedfunc("<unknown string>")[0];
+            namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(aitype, boss.origin, (0, 0, 0), boss.team);
             break;
         case #"hash_259e6db48da06ba7":
             if (args.size > 1) {
@@ -1483,7 +1483,7 @@ function function_c96d7535862e245c(command, args) {
                     }
                 } else {
                     grenade = attacker _launchgrenade(var_dc10fffeca656a2, spawnpos + (0, 0, 5), (0, 0, 0), undefined, 0);
-                    attacker namespace_3bbb5a98b932c46f::function_3fce58c2642ebecc(grenade);
+                    attacker namespace_3bbb5a98b932c46f::grenadeused(grenade);
                 }
             }
             break;
@@ -1764,8 +1764,8 @@ function function_5d92949cc218ebdd(playername) {
 function function_b2dcd958dd436171(name) {
     /#
         foreach (player in level.players) {
-            var_5b5ee73adfddd952 = function_5d92949cc218ebdd(player.name);
-            if (tolower(var_5b5ee73adfddd952) == name) {
+            shortname = function_5d92949cc218ebdd(player.name);
+            if (tolower(shortname) == name) {
                 return player;
             }
         }
@@ -1785,8 +1785,8 @@ function function_5b5ab8ab53c49d4d(victimname, attackername) {
         if (isdefined(attackername)) {
             attackername = tolower(attackername);
             foreach (player in level.players) {
-                var_5b5ee73adfddd952 = function_5d92949cc218ebdd(player.name);
-                if (tolower(var_5b5ee73adfddd952) == attackername) {
+                shortname = function_5d92949cc218ebdd(player.name);
+                if (tolower(shortname) == attackername) {
                     attacker = player;
                     break;
                 }
@@ -1818,8 +1818,8 @@ function function_53a0f5e4d6bbc7a4(victimname, attackername, damage) {
         victimname = tolower(victimname);
         attackerweapon = undefined;
         foreach (player in level.players) {
-            var_5b5ee73adfddd952 = function_5d92949cc218ebdd(player.name);
-            if (tolower(var_5b5ee73adfddd952) == victimname) {
+            shortname = function_5d92949cc218ebdd(player.name);
+            if (tolower(shortname) == victimname) {
                 victim = player;
                 break;
             }
@@ -1827,8 +1827,8 @@ function function_53a0f5e4d6bbc7a4(victimname, attackername, damage) {
         if (isdefined(attackername)) {
             attackername = tolower(attackername);
             foreach (player in level.players) {
-                var_5b5ee73adfddd952 = function_5d92949cc218ebdd(player.name);
-                if (tolower(var_5b5ee73adfddd952) == attackername) {
+                shortname = function_5d92949cc218ebdd(player.name);
+                if (tolower(shortname) == attackername) {
                     attacker = player;
                     attackerweapon = attacker.primaryweapon;
                     break;
@@ -1856,8 +1856,8 @@ function function_72c1806e62a9bd10(playername, var_6be1bd68cd41dbbd) {
     /#
         playername = tolower(playername);
         foreach (player in level.players) {
-            var_5b5ee73adfddd952 = function_5d92949cc218ebdd(player.name);
-            if (tolower(var_5b5ee73adfddd952) == playername) {
+            shortname = function_5d92949cc218ebdd(player.name);
+            if (tolower(shortname) == playername) {
                 clientnum = player getentitynumber();
                 if (istrue(var_6be1bd68cd41dbbd)) {
                     kick(clientnum, "<unknown string>", 1);
@@ -2204,8 +2204,8 @@ function function_b32113236442c6ab(playername) {
     /#
         playername = tolower(playername);
         foreach (player in level.players) {
-            var_5b5ee73adfddd952 = function_5d92949cc218ebdd(player.name);
-            if (tolower(var_5b5ee73adfddd952) == playername) {
+            shortname = function_5d92949cc218ebdd(player.name);
+            if (tolower(shortname) == playername) {
                 return player;
             }
         }

@@ -79,9 +79,9 @@ function vehicle_dlog_init() {
     /#
         assertex(!isdefined(level.vehicle.dlogdata), "vehicle_dlog_init() should only be called once.");
     #/
-    levelData = spawnstruct();
-    levelData.uniqueid = 0;
-    level.vehicle.dlogdata = levelData;
+    leveldata = spawnstruct();
+    leveldata.uniqueid = 0;
+    level.vehicle.dlogdata = leveldata;
 }
 
 // Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
@@ -100,13 +100,13 @@ function vehicle_dlog_getleveldata() {
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x7f
 function vehicle_dlog_getinstancedata(vehicle, create) {
-    levelData = vehicle_dlog_getleveldata();
+    leveldata = vehicle_dlog_getleveldata();
     instancedata = vehicle.dlogdata;
     if (!isdefined(instancedata) && istrue(create)) {
         instancedata = spawnstruct();
         vehicle.dlogdata = instancedata;
-        instancedata.id = levelData.uniqueid;
-        levelData.uniqueid++;
+        instancedata.id = leveldata.uniqueid;
+        leveldata.uniqueid++;
     }
     return instancedata;
 }

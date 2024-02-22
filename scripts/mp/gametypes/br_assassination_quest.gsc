@@ -126,7 +126,7 @@ function function_6e27ee56573d1441() {
 function function_a7284c22710ed3dc() {
     self.var_7d42b5952d47067c = "master";
     self.category = self.var_7d42b5952d47067c + "_" + "assassination";
-    var_86a80a97f4672fc8 = !level.br_circle_disabled && istrue(level.var_2df69b8e552238b6) && istrue(level.var_b31733f431ed12e0.var_ce4d234d77082447);
+    var_86a80a97f4672fc8 = !level.br_circle_disabled && istrue(level.var_2df69b8e552238b6) && istrue(level.br_multi_circle.var_ce4d234d77082447);
     if (namespace_71073fa38f11492::isbrgametypefuncdefined("master_aq_determineTargetTeam")) {
         self.targetteam = namespace_71073fa38f11492::runbrgametypefunc("master_aq_determineTargetTeam", self.var_d154ac2657c5f44, var_86a80a97f4672fc8);
     } else {
@@ -192,7 +192,7 @@ function function_a7284c22710ed3dc() {
 function function_b946c0db13d4d90e() {
     self.var_7d42b5952d47067c = "";
     self.category = "assassination";
-    var_86a80a97f4672fc8 = !level.br_circle_disabled && istrue(level.var_2df69b8e552238b6) && istrue(level.var_b31733f431ed12e0.var_ce4d234d77082447);
+    var_86a80a97f4672fc8 = !level.br_circle_disabled && istrue(level.var_2df69b8e552238b6) && istrue(level.br_multi_circle.var_ce4d234d77082447);
     if (namespace_71073fa38f11492::isbrgametypefuncdefined("aq_determineTargetTeam")) {
         self.targetteam = namespace_71073fa38f11492::runbrgametypefunc("aq_determineTargetTeam", self.var_d154ac2657c5f44, var_86a80a97f4672fc8);
     } else {

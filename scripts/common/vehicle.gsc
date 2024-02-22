@@ -988,8 +988,8 @@ function function_8ed0ffa3f8be7c75(var_9427d76bd72bc70b) {
 // Checksum 0x0, Offset: 0x1bcd
 // Size: 0x3f
 function codecallback_vehiclespawned() {
-    if (isdefined(level.vehicle) && isdefined(level.vehicle.onVehicleSpawned)) {
-        self [[ level.vehicle.onVehicleSpawned ]]();
+    if (isdefined(level.vehicle) && isdefined(level.vehicle.onvehiclespawned)) {
+        self [[ level.vehicle.onvehiclespawned ]]();
     }
 }
 

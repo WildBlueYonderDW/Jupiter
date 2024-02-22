@@ -29,10 +29,10 @@ function function_729f6e368df801f4() {
     registersharedfunc("armored_convoy_activity", "GetRiderEncounterFromIndex", &function_4c8727d4f35931a1);
     registersharedfunc("armored_convoy_activity", "GetVehicleRefFromIndex", &function_c45e80be17065ee9);
     registersharedfunc("armored_convoy_activity", "SpawnLootCache", &function_7c279c038503812f);
-    registersharedfunc("armored_convoy_activity", "PlayApproachConvoyVO", &PlayApproachConvoyVO);
-    registersharedfunc("armored_convoy_activity", "PlayEngageVO", &PlayEngageVO);
-    registersharedfunc("armored_convoy_activity", "PlayVehDestroyedVO", &PlayVehDestroyedVO);
-    registersharedfunc("armored_convoy_activity", "OnPlayerLeftActivity", &OnPlayerLeftActivity);
+    registersharedfunc("armored_convoy_activity", "PlayApproachConvoyVO", &playapproachconvoyvo);
+    registersharedfunc("armored_convoy_activity", "PlayEngageVO", &playengagevo);
+    registersharedfunc("armored_convoy_activity", "PlayVehDestroyedVO", &playvehdestroyedvo);
+    registersharedfunc("armored_convoy_activity", "OnPlayerLeftActivity", &onplayerleftactivity);
 }
 
 // Namespace namespace_57a329915670ffdc/namespace_acf59d30b1f3eca5
@@ -121,9 +121,9 @@ function function_7c279c038503812f(vehicle) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x826
 // Size: 0xab
-function PlayApproachConvoyVO(var_2f5d509d7b71ce9a, var_2a29b237dcc66fe5) {
+function playapproachconvoyvo(var_2f5d509d7b71ce9a, var_2a29b237dcc66fe5) {
     foreach (player in var_2a29b237dcc66fe5) {
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
         var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16095, "quest_s0a1t2_cnvy_approach", squadmembers);
         if (!var_8c4ed29f8594fb86) {
             var_2f5d509d7b71ce9a thread namespace_277c27ef297ef569::function_1281c7fff9456e18("activity_armored_convoy_approach_broadcast", [0:player]);
@@ -136,9 +136,9 @@ function PlayApproachConvoyVO(var_2f5d509d7b71ce9a, var_2a29b237dcc66fe5) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d8
 // Size: 0xd8
-function PlayEngageVO(var_2f5d509d7b71ce9a, var_2a7b538f984af574) {
+function playengagevo(var_2f5d509d7b71ce9a, var_2a7b538f984af574) {
     foreach (player in var_2f5d509d7b71ce9a.var_6c29f2fdb0054bbe) {
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
         var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16095, "quest_s0a1t2_cnvy_engage", squadmembers);
         if (!var_8c4ed29f8594fb86 && istrue(var_2a7b538f984af574)) {
             var_2f5d509d7b71ce9a thread namespace_277c27ef297ef569::function_1281c7fff9456e18("activity_armored_convoy_engage_enemy_broadcast", [0:player]);
@@ -153,9 +153,9 @@ function PlayEngageVO(var_2f5d509d7b71ce9a, var_2a7b538f984af574) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b7
 // Size: 0xd8
-function PlayVehDestroyedVO(var_2f5d509d7b71ce9a, var_7a4fd332f67e105e) {
+function playvehdestroyedvo(var_2f5d509d7b71ce9a, var_7a4fd332f67e105e) {
     foreach (player in var_2f5d509d7b71ce9a.var_6c29f2fdb0054bbe) {
-        squadmembers = player namespace_ca7b90256548aa40::getSquadMembers();
+        squadmembers = player namespace_ca7b90256548aa40::getsquadmembers();
         var_8c4ed29f8594fb86 = namespace_9dcaa84266dc73e2::function_f578373042c34e16(16095, "quest_s0a1t2_cnvy_vehicledestroyed", squadmembers);
         if (!var_8c4ed29f8594fb86 && istrue(var_7a4fd332f67e105e)) {
             var_2f5d509d7b71ce9a thread namespace_277c27ef297ef569::function_1281c7fff9456e18("activity_armored_convoy_vehicles_remain_broadcast", [0:player]);
@@ -170,7 +170,7 @@ function PlayVehDestroyedVO(var_2f5d509d7b71ce9a, var_7a4fd332f67e105e) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa96
 // Size: 0x86
-function OnPlayerLeftActivity(var_2f5d509d7b71ce9a, var_b381b0883bcd4847) {
+function onplayerleftactivity(var_2f5d509d7b71ce9a, var_b381b0883bcd4847) {
     if (isdefined(var_2f5d509d7b71ce9a) && var_2f5d509d7b71ce9a.state != "EndedState") {
         foreach (player in var_b381b0883bcd4847.playerlist) {
             player thread function_4a508fcbbea05afd();

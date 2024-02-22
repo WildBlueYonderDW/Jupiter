@@ -135,11 +135,11 @@ function private function_5be6f854fd9386d8() {
             var_1a4d93eb2cf29ffa = [];
         }
         waitframe();
-        var_f06afd7746575927 = getdvarint(@"hash_2ae4ec9bce607d9f", -1);
-        if (var_f06afd7746575927 != -1) {
+        cash_amount = getdvarint(@"hash_2ae4ec9bce607d9f", -1);
+        if (cash_amount != -1) {
             setdvar(@"hash_2ae4ec9bce607d9f", -1);
             foreach (player in level.players) {
-                function_bb25bcf1cd97e7e6(player, var_f06afd7746575927);
+                function_bb25bcf1cd97e7e6(player, cash_amount);
             }
         }
         give_weapon = getdvar(@"hash_7a55852a2a48bec8", "");
@@ -296,7 +296,7 @@ function private function_321aa1e84b5fd453(player, lvl) {
     player endon("death_or_disconnect");
     player.var_bed158a6dfac230d = lvl;
     player.var_8790c077c95db752 = player.var_bed158a6dfac230d * level.var_4b78859bacc88808;
-    player setArmorHealth(player.var_8790c077c95db752, 1);
+    player setarmorhealth(player.var_8790c077c95db752, 1);
 }
 
 // Namespace namespace_71b655df1f1b6d7d/namespace_946ba58a8d1e7bfd
@@ -465,7 +465,7 @@ function private function_e52113d9e4cd99f5(player, ai_type) {
     if (array_contains(var_c68454d783b47ef5, ai_type)) {
         location = player.origin + anglestoforward(player.angles) * 300;
         location = getclosestpointonnavmesh(location);
-        special_ai = namespace_53fc9ddbb516e6e1::spawnNewAIType_SharedFunc(ai_type, location, (0, 0, 0), "team_two_hundred");
+        special_ai = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(ai_type, location, (0, 0, 0), "team_two_hundred");
     }
 }
 

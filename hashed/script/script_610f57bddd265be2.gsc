@@ -440,7 +440,7 @@ function function_7fa5478ed150d979() {
 // Checksum 0x0, Offset: 0x1dc0
 // Size: 0x1e
 function function_e745a94784401dfb() {
-    if (!namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
         return 0;
     }
     return !namespace_bbc79db4c3949a5c::function_778a4c3d053ed0a9(self.origin);
@@ -566,7 +566,7 @@ function redeploy_drone_destroyed(eattacker, modelname, var_aae73b7b727db0c4) {
     }
     drone.owner = eattacker;
     drone function_e47fae0ab5c70a88(self);
-    var_9a6c1b85896a116e = {var_3213bd18697af72f:0, circle_index:isdefined(level.br_circle) ? utility::getintorzero(level.br_circle.circleindex) : -1, pos:self.origin};
+    var_9a6c1b85896a116e = {was_relocating:0, circle_index:isdefined(level.br_circle) ? utility::getintorzero(level.br_circle.circleindex) : -1, pos:self.origin};
     level thread namespace_a011fbf6d93f25e5::function_bfc305f32a65dee5(var_9a6c1b85896a116e);
 }
 
@@ -940,7 +940,7 @@ function function_7f00c76550370a80() {
     if (!isdefined(self) || !isdefined(self.origin)) {
         return;
     }
-    var_b88f8ecd6f2078c3 = namespace_bbc79db4c3949a5c::function_3e0a90b32e551ad(self.origin);
+    var_b88f8ecd6f2078c3 = namespace_bbc79db4c3949a5c::gettimetilldangerforpoint(self.origin);
     if (var_b88f8ecd6f2078c3 > 0) {
         wait(var_b88f8ecd6f2078c3);
         if (self getscriptablepartstate("redeploy_drone") == "unavailable") {
@@ -1155,7 +1155,7 @@ function function_d0250169e6dfa8e4(eattacker, modelname) {
     }
     self.owner = eattacker;
     function_e47fae0ab5c70a88();
-    var_9a6c1b85896a116e = {var_3213bd18697af72f:1, circle_index:isdefined(level.br_circle) ? utility::getintorzero(level.br_circle.circleindex) : -1, pos:self.origin};
+    var_9a6c1b85896a116e = {was_relocating:1, circle_index:isdefined(level.br_circle) ? utility::getintorzero(level.br_circle.circleindex) : -1, pos:self.origin};
     level thread namespace_a011fbf6d93f25e5::function_bfc305f32a65dee5(var_9a6c1b85896a116e);
 }
 

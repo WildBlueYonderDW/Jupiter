@@ -124,9 +124,9 @@ function private function_604e6c056c7de43d() {
     level endon("game_ended");
     self endon("disconnect");
     while (1) {
-        self StartForcedFire();
+        self startforcedfire();
         wait(0.2);
-        self StopForcedFire();
+        self stopforcedfire();
         wait(0.2);
     }
 }

@@ -127,14 +127,14 @@ function killstreak_init() {
     registersharedfunc("killstreak", "setVisibiilityOmnvarForKillstreak", &namespace_9abe40d2af041eb2::_setvisibiilityomnvarforkillstreak);
     registersharedfunc("killstreak", "restoreKillstreakPlayerAngles", &namespace_9abe40d2af041eb2::restorekillstreakplayerangles);
     registersharedfunc("killstreak", "recordKillstreakEndStats", &namespace_9abe40d2af041eb2::recordkillstreakendstats);
-    registersharedfunc("killstreak", "killstreak_setMainVision", &namespace_9abe40d2af041eb2::killstreak_setMainVision);
-    registersharedfunc("killstreak", "killstreak_setSubVision", &namespace_9abe40d2af041eb2::killstreak_setSubVision);
+    registersharedfunc("killstreak", "killstreak_setMainVision", &namespace_9abe40d2af041eb2::killstreak_setmainvision);
+    registersharedfunc("killstreak", "killstreak_setSubVision", &namespace_9abe40d2af041eb2::killstreak_setsubvision);
     registersharedfunc("killstreak", "isKillstreakWeapon", &namespace_e0ee43ef2dddadaa::iskillstreakweapon);
-    registersharedfunc("killstreak", "killstreak_registerMinimapInfo", &namespace_9abe40d2af041eb2::killstreak_registerMinimapInfo);
-    registersharedfunc("killstreak", "killstreak_setupVehicleDamageFunctionality", &namespace_9abe40d2af041eb2::killstreak_setupVehicleDamageFunctionality);
-    registersharedfunc("killstreak", "killstreak_updateDamageState", &namespace_9abe40d2af041eb2::killstreak_updateDamageState);
+    registersharedfunc("killstreak", "killstreak_registerMinimapInfo", &namespace_9abe40d2af041eb2::killstreak_registerminimapinfo);
+    registersharedfunc("killstreak", "killstreak_setupVehicleDamageFunctionality", &namespace_9abe40d2af041eb2::killstreak_setupvehicledamagefunctionality);
+    registersharedfunc("killstreak", "killstreak_updateDamageState", &namespace_9abe40d2af041eb2::killstreak_updatedamagestate);
     registersharedfunc("killstreak", "playerKillstreakGetOwnerLookAtIgnoreEnts", &namespace_9abe40d2af041eb2::playerkillstreakgetownerlookatignoreents);
-    registersharedfunc("killstreak", "killstreak_dangerNotifyPlayersInRange", &namespace_9abe40d2af041eb2::killstreak_dangerNotifyPlayersInRange);
+    registersharedfunc("killstreak", "killstreak_dangerNotifyPlayersInRange", &namespace_9abe40d2af041eb2::killstreak_dangernotifyplayersinrange);
     registersharedfunc("killstreak", "streakDeploy_doWeaponFiredDeploy", &namespace_b3d24e921998a8b::streakdeploy_doweaponfireddeploy);
     registersharedfunc("player", "isEnemy", &namespace_f8065cafc523dba5::isenemy);
     registersharedfunc("challenges", "onHack", &namespace_aad14af462a74d08::onhack);
@@ -202,8 +202,8 @@ function vehicle_init() {
 // Size: 0x57
 function game_init() {
     registersharedfunc("game", "ForceNetfieldHighLoD", &function_c7a3d9af98179e8e);
-    registersharedfunc("game", "getProgressionData", &getProgressionData);
-    registersharedfunc("game", "setProgressionData", &setProgressionData);
+    registersharedfunc("game", "getProgressionData", &getprogressiondata);
+    registersharedfunc("game", "setProgressionData", &setprogressiondata);
     registersharedfunc("game", "getTimePassed", &namespace_36f464722d326bbe::gettimepassed);
 }
 
@@ -494,7 +494,7 @@ function private function_cee516993ce8a5f4(set) {
 // Checksum 0x0, Offset: 0xea5
 // Size: 0x9
 function private function_d08336d8c0380c5e() {
-    return self GetCameraThirdPerson();
+    return self getcamerathirdperson();
 }
 
 // Namespace namespace_657dc7e018dcfce9/namespace_c3fdc5febda99c60
@@ -502,6 +502,6 @@ function private function_d08336d8c0380c5e() {
 // Checksum 0x0, Offset: 0xeb6
 // Size: 0x9
 function private function_85c5056c9011e1bc() {
-    return self GetCameraThirdPersonOrigin();
+    return self getcamerathirdpersonorigin();
 }
 

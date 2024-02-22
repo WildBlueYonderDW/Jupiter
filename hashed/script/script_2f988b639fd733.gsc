@@ -51,7 +51,7 @@ function on_ai_killed(params) {
     if (isplayer(params.eattacker) && params.eattacker ent_flag("frenzied_guard_active")) {
         var_950a4c0355e0ab64 = function_53c4c53197386572(level.var_f04301db8ca5ecfa["super_frenzied_guard"].var_950a4c0355e0ab64, 0.25);
         var_6eb34aa70f42c2f2 = function_53c4c53197386572(level.var_f04301db8ca5ecfa["super_frenzied_guard"].var_6eb34aa70f42c2f2, 50);
-        params.eattacker namespace_f8d3520d3483c1::setArmorHealth(params.eattacker.armorhealth + var_6eb34aa70f42c2f2 * var_950a4c0355e0ab64);
+        params.eattacker namespace_f8d3520d3483c1::setarmorhealth(params.eattacker.armorhealth + var_6eb34aa70f42c2f2 * var_950a4c0355e0ab64);
     }
 }
 
@@ -140,7 +140,7 @@ function frenzied_guard_active(n_duration) {
 // Checksum 0x0, Offset: 0x837
 // Size: 0x13
 function function_fbb31130e1db8a38() {
-    namespace_f8d3520d3483c1::setArmorHealth(self.var_8790c077c95db752);
+    namespace_f8d3520d3483c1::setarmorhealth(self.var_8790c077c95db752);
 }
 
 // Namespace namespace_458c9ac11f854403/namespace_1eba3ff32243c3bd

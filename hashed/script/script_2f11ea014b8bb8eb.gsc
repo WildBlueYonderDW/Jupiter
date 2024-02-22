@@ -124,7 +124,7 @@ function function_dbc4f2e956dc67dd() {
     self.var_60a26e89bc2c7157 = level.var_62f6f7640e4431e3.var_26cb68d514ad2106;
     thread function_cb489d4689da2da2();
     self waittill("spawned_player");
-    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getsquadmembers();
     if (var_c9b69aecc5c631ed.size == 1) {
         namespace_1d863a7bbc05fc52::function_188085b8b8d431f2(self.var_dddc97480e104865);
         if (namespace_1d863a7bbc05fc52::function_546201bb34cf36ce() > 0) {
@@ -142,7 +142,7 @@ function function_dbc4f2e956dc67dd() {
 function function_cb489d4689da2da2(params) {
     level notify("notify_check_self_revive_for_hotjoin");
     level endon("notify_check_self_revive_for_hotjoin");
-    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getsquadmembers();
     var_3f3e4fdf36764c05 = 0;
     var_466b7f820541a117 = 0;
     waitframe();
@@ -222,7 +222,7 @@ function function_133892d59b149cce() {
     self endon("disconnect");
     self sethidenameplate(0);
     self.healthregendisabled = 0;
-    self.liveRagdoll = 0;
+    self.liveragdoll = 0;
     stopspectateplayer(self getentitynumber(), 1, 0);
     updatesessionstate("playing");
     self setsolid(1);
@@ -259,7 +259,7 @@ function on_player_bleedout(params) {
     _freezecontrols(1, undefined, "liveRagdoll");
     self sethidenameplate(1);
     self.healthregendisabled = 1;
-    self.liveRagdoll = 1;
+    self.liveragdoll = 1;
     self setsolid(0);
     self function_6b4c8718bc36d1ef(1);
     self function_e4ccd01fb7ec7a6f(1);
@@ -301,7 +301,7 @@ function function_21773d54ce6837b2(corpse, animduration) {
 // Size: 0xb9
 function function_be83ba972fd71c80(var_642470e1abc1bbf9, var_8b3f6477dbed24d7) {
     var_642470e1abc1bbf9.victim val::set("ob_death", "ignoreme", 1);
-    if (!istrue(level.gameended) && !istrue(var_642470e1abc1bbf9.victim.liveRagdoll)) {
+    if (!istrue(level.gameended) && !istrue(var_642470e1abc1bbf9.victim.liveragdoll)) {
         var_642470e1abc1bbf9.victim namespace_7177e11e3871c8f4::function_1b6b6e760a1bdd78();
         var_642470e1abc1bbf9.victim delaythread(0.1, &namespace_99ac021a7547cae3::spawnspectator);
         var_642470e1abc1bbf9.victim namespace_58fb4f2e73fd41a0::setlowermessageomnvar("br_standby_for_respawn");
@@ -344,7 +344,7 @@ function on_player_spawn(params) {
     }
     self.br_iseliminated = undefined;
     self.healthregendisabled = undefined;
-    self.liveRagdoll = 0;
+    self.liveragdoll = 0;
     self.squadwiped = undefined;
     namespace_80cec6cfc70c4f95::updateplayereliminatedomnvar();
     namespace_d3d40f75bb4e4c32::setplayerdownedextrainfo(0);
@@ -375,7 +375,7 @@ function on_player_laststand(params) {
     if (isdefined(self.var_b43e8623c0dd6a67) && !weapon::iscacprimaryorsecondary(self.var_b43e8623c0dd6a67) && !weapon::isfistsonly(self.var_b43e8623c0dd6a67)) {
         self.var_b43e8623c0dd6a67 = undefined;
     }
-    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getSquadMembers();
+    var_c9b69aecc5c631ed = namespace_ca7b90256548aa40::getsquadmembers();
     foreach (var_9191cfe9f04a69a8 in var_c9b69aecc5c631ed) {
         if (!isdefined(var_9191cfe9f04a69a8) || var_9191cfe9f04a69a8 == self) {
             continue;
@@ -502,12 +502,12 @@ function private function_f53fd25b8ff38632(revived) {
     self notify("endon_ob_laststand_alive_check");
     self endon("endon_ob_laststand_alive_check");
     self endon("disconnect");
-    if (issharedfuncdefined(#"hash_9d5dd2411ca8683c", #"hash_f383e3bc7a6b4400")) {
-        if (!istrue(function_f3bb4f4911a1beb2(#"hash_9d5dd2411ca8683c", #"hash_f383e3bc7a6b4400"))) {
+    if (issharedfuncdefined(#"ob_pvpve", #"hash_f383e3bc7a6b4400")) {
+        if (!istrue(function_f3bb4f4911a1beb2(#"ob_pvpve", #"hash_f383e3bc7a6b4400"))) {
             return;
         }
     }
-    var_eb5a9091076e21e8 = namespace_ca7b90256548aa40::getSquadMembers();
+    var_eb5a9091076e21e8 = namespace_ca7b90256548aa40::getsquadmembers();
     if (istrue(revived)) {
         self.var_64a7c6d08000be36 = undefined;
         self.var_b43e8623c0dd6a67 = undefined;
@@ -592,7 +592,7 @@ function function_493ca4f5db3e7909(var_1657e74c9190d2a2) {
     cost = namespace_f6aa44081e6af0a8::_getactualcost(self, itemdata);
     cost = cost * 100;
     var_70961c170a38d303 = undefined;
-    squad = namespace_ca7b90256548aa40::getSquadMembers();
+    squad = namespace_ca7b90256548aa40::getsquadmembers();
     foreach (var_8f7040e569ec9e98 in squad) {
         if (!isdefined(var_8f7040e569ec9e98) || var_8f7040e569ec9e98 == self) {
             continue;
@@ -645,8 +645,8 @@ function function_ef6adc9492d03ef(v_start) {
             namespace_99ac021a7547cae3::spawnclient();
         }
     }
-    if (issharedfuncdefined(#"hash_9d5dd2411ca8683c", #"hash_c69889de57e82c49")) {
-        function_f3bb4f4911a1beb2(#"hash_9d5dd2411ca8683c", #"hash_c69889de57e82c49");
+    if (issharedfuncdefined(#"ob_pvpve", #"hash_c69889de57e82c49")) {
+        function_f3bb4f4911a1beb2(#"ob_pvpve", #"hash_c69889de57e82c49");
     }
     self setorigin(spawnorigin);
     self setplayerangles(spawnangles);

@@ -31,9 +31,9 @@ function autoexec init() {
     #/
     level.var_9d7ea50921b67d31 = getdvarint(@"hash_2f0f26d4707f8853", 0) == 1;
     level.var_654f718e0c7ead7c = getdvarint(@"hash_501cfc58fbef89a2", 0) == 1;
-    registersharedfunc("br_puzzle_drone_repair", "setDronePartFound", &setDronePartFound);
-    registersharedfunc("br_puzzle_drone_repair", "onDronePartDropped", &onDronePartDropped);
-    registersharedfunc("br_puzzle_drone_repair", "devSetupBrokenDrone", &devSetupBrokenDrone);
+    registersharedfunc("br_puzzle_drone_repair", "setDronePartFound", &setdronepartfound);
+    registersharedfunc("br_puzzle_drone_repair", "onDronePartDropped", &ondronepartdropped);
+    registersharedfunc("br_puzzle_drone_repair", "devSetupBrokenDrone", &devsetupbrokendrone);
     thread function_28d7437a275a45c7();
     thread function_b52c99c6cf1c18af();
     thread function_d9c64c99bd5f47a0();
@@ -219,7 +219,7 @@ function function_ec3e14f05c136a35(var_cab957adc8d7710f) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9c9
 // Size: 0x122
-function setDronePartFound(pickup, player) {
+function setdronepartfound(pickup, player) {
     scriptablename = pickup.scriptablename;
     if (!isdefined(player.var_fa7a636775e34c25)) {
         player.var_fa7a636775e34c25 = [];
@@ -245,7 +245,7 @@ function setDronePartFound(pickup, player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf2
 // Size: 0x53
-function onDronePartDropped(scriptablename, player) {
+function ondronepartdropped(scriptablename, player) {
     player.var_fa7a636775e34c25 = array_remove(player.var_fa7a636775e34c25, scriptablename);
     if (player.var_fa7a636775e34c25.size == 0) {
         level.var_5c5b88ce7ae1228e disableplayeruse(player);
@@ -256,7 +256,7 @@ function onDronePartDropped(scriptablename, player) {
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb4c
 // Size: 0x44
-function devSetupBrokenDrone(origin, angles) {
+function devsetupbrokendrone(origin, angles) {
     var_5c5b88ce7ae1228e = spawnscriptable("brloot_drone_part_all_jup", origin, angles);
     var_5c5b88ce7ae1228e setscriptablepartstate("brloot_drone_part_all_jup", "visible");
     function_f1d36faeb630ecea(var_5c5b88ce7ae1228e);
@@ -427,7 +427,7 @@ function function_78033a976b978c7(player, team, streakinfo) {
     var_274a2749ef16ee1f = streakinfo.streakname;
     var_52a5be2e2f91d710 = undefined;
     player thread namespace_9abe40d2af041eb2::playkillstreakoperatordialog(var_274a2749ef16ee1f, var_274a2749ef16ee1f + "_use", 1, var_52a5be2e2f91d710);
-    namespace_9abe40d2af041eb2::killstreak_dangerNotifyPlayersInRange(player, team, 5000, var_274a2749ef16ee1f);
+    namespace_9abe40d2af041eb2::killstreak_dangernotifyplayersinrange(player, team, 5000, var_274a2749ef16ee1f);
 }
 
 // Namespace namespace_dde877bf562c7c83/namespace_5aac65b2f8ef206e

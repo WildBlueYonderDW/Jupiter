@@ -128,7 +128,7 @@ function function_202939344423679c() {
         level thread function_f534043debef1e2a(arena);
         if (level.var_5b530d6e84ac2128.var_ab48b8f9eb30c8fc && arena.var_ab7aa90965bbffae.size >= 1) {
             var_6efc840eed64c9fa = function_a4f7aa7494769dcc(arena, arena.var_ab7aa90965bbffae[0]);
-            var_6efc840eed64c9fa gulagDom_arenaFlagSetVisible(arena, 0);
+            var_6efc840eed64c9fa gulagdom_arenaflagsetvisible(arena, 0);
             arena.domflag[arena.domflag.size] = var_6efc840eed64c9fa;
             if (isdefined(arena.var_ab7aa90965bbffae) && arena.var_ab7aa90965bbffae.size > 1) {
                 arena.var_ab7aa90965bbffae = array_randomize(arena.var_ab7aa90965bbffae);
@@ -163,7 +163,7 @@ function function_c68da8e2dde4dfa3(arena) {
     }
     foreach (domflag in arena.domflag) {
         domflag function_22d8a6225e699c6e(1);
-        domflag gulagDom_arenaFlagSetVisible(arena, 1);
+        domflag gulagdom_arenaflagsetvisible(arena, 1);
     }
     player.var_4af73ce40a5d8572 = undefined;
     player.var_c6e39e2728d28253 = player.plundercount;
@@ -183,7 +183,7 @@ function function_c68da8e2dde4dfa3(arena) {
         }
     }
     player setthreatbiasgroup(var_1ce1b071385a88f0);
-    player thread gulagDom_trackPlayerBullets();
+    player thread gulagdom_trackplayerbullets();
     if (level.var_43307855f189eb31.var_732a414f682801cc && isdefined(arena.var_62d1855d36cff5d2) && arena.var_62d1855d36cff5d2.size > 0) {
         foreach (loot in arena.var_62d1855d36cff5d2) {
             if (!isdefined(loot)) {
@@ -341,7 +341,7 @@ function function_8b208c4ca074aaeb(arena) {
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b14
 // Size: 0x84
-function gulagDom_trackPlayerBullets() {
+function gulagdom_trackplayerbullets() {
     player = self;
     level endon("game_ended");
     player endon("disconnect");
@@ -371,7 +371,7 @@ function function_8de238b2a0070a51(arena) {
                 if (istrue(player.var_43b2a82936a5e974)) {
                     level thread namespace_1eb3c4e0e28fac71::utilflare_shootflare(player.origin, "revive", 1);
                     var_6f2d5ac61454ff66.dooropen = 1;
-                    var_6f2d5ac61454ff66 thread gulagDom_DoorOpened(arena);
+                    var_6f2d5ac61454ff66 thread gulagdom_dooropened(arena);
                     player function_ba3f4c627dcf8f8b(arena);
                     player.var_43b2a82936a5e974 = undefined;
                 } else if (istrue(var_6f2d5ac61454ff66.dooropen) && !istrue(player.var_43b2a82936a5e974)) {
@@ -386,7 +386,7 @@ function function_8de238b2a0070a51(arena) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cbc
 // Size: 0xcc
-function gulagDom_DoorOpened(arena) {
+function gulagdom_dooropened(arena) {
     var_6f2d5ac61454ff66 = self;
     var_6f2d5ac61454ff66 notify("gulagDom_DoorOpened");
     var_6f2d5ac61454ff66 endon("gulagDom_DoorOpened");
@@ -775,7 +775,7 @@ function function_6ec844085b807d62(agent, killer) {
             var_c229d93c0bb4f8e8 = agent.var_c229d93c0bb4f8e8;
         }
         var_1439f86640d42e34 = undefined;
-        if (namespace_14d36171baccf528::agentPers_getAgentPersData(agent, "subcategory") == "jugg") {
+        if (namespace_14d36171baccf528::agentpers_getagentpersdata(agent, "subcategory") == "jugg") {
             var_1439f86640d42e34 = "jugg";
         }
         agent thread function_62729cb2f806997a(arena, var_c229d93c0bb4f8e8, var_1439f86640d42e34);
@@ -981,7 +981,7 @@ function function_7b5f223f3ea0fd5a(arena, var_55e69fb0ce97f15e) {
     if (!getdvarint(@"hash_b3d7a9483362813e", 0)) {
         spawnlocation = getclosestpointonnavmesh(var_55e69fb0ce97f15e.origin);
     }
-    agent = ai_mp_requestSpawnAgent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
+    agent = ai_mp_requestspawnagent(aitype, spawnlocation, var_55e69fb0ce97f15e.angles, "absolute", "gulag", undefined, undefined, undefined, undefined, undefined, 1);
     if (isagent(agent)) {
         agent thread function_65b46c19509929fe(arena);
         if (getdvarint(@"hash_b3d7a9483362813e", 0)) {
@@ -1097,7 +1097,7 @@ function function_a4f7aa7494769dcc(arena, var_37e3a1eaa43ea82c) {
     arenaflag namespace_19b4203b51d56488::requestid(0, 1, undefined, 0, 0);
     arenaflag.visibilitymanuallycontrolled = 1;
     arenaflag function_22d8a6225e699c6e(1);
-    arenaflag gulagDom_arenaFlagSetVisible(arena, 1);
+    arenaflag gulagdom_arenaflagsetvisible(arena, 1);
     arenaflag.arena = arena;
     return arenaflag;
 }
@@ -1111,7 +1111,7 @@ function function_ac9e0da4d9b4494d(var_5ab435632b934364) {
     arena = namespace_ad49798629176e96::function_2f4344abdc200e43(var_5ab435632b934364);
     var_2b24aedf3a828b22 = self.touchlist;
     function_22d8a6225e699c6e(0);
-    thread gulagDom_arenaFlagRestartDom(arena);
+    thread gulagdom_arenaflagrestartdom(arena);
     if (!isdefined(arena)) {
         return;
     }
@@ -1135,15 +1135,15 @@ function function_ac9e0da4d9b4494d(var_5ab435632b934364) {
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3adc
 // Size: 0x140
-function gulagDom_arenaFlagRestartDom(arena) {
+function gulagdom_arenaflagrestartdom(arena) {
     arenaflag = self;
     level endon("game_ended");
     arenaflag notify("gulagDom_arenaFlagRestartDom");
     arenaflag endon("gulagDom_arenaFlagRestartDom");
-    arenaflag gulagDom_arenaFlagSetVisible(arena, 0);
+    arenaflag gulagdom_arenaflagsetvisible(arena, 0);
     wait(3);
     arenaflag function_22d8a6225e699c6e(1);
-    arenaflag gulagDom_arenaFlagSetVisible(arena, 1);
+    arenaflag gulagdom_arenaflagsetvisible(arena, 1);
     arenaflag.flagmodel playsoundonmovingent("flag_spawned");
     if (isdefined(arena.var_ab7aa90965bbffae) && arena.var_ab7aa90965bbffae.size > 1) {
         arena.var_ab7aa90965bbffae = array_randomize(arena.var_ab7aa90965bbffae);
@@ -1210,7 +1210,7 @@ function function_22d8a6225e699c6e(enable) {
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3da6
 // Size: 0xb9
-function gulagDom_arenaFlagSetVisible(arena, enable, preview, var_ddf49b0f7bd17a0c) {
+function gulagdom_arenaflagsetvisible(arena, enable, preview, var_ddf49b0f7bd17a0c) {
     self notify("gulagDom_arenaFlagSetVisible");
     if (enable) {
         icon = "waypoint_captureneutral";

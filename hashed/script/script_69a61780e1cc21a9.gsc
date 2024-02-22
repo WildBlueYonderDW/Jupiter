@@ -90,7 +90,7 @@ function private little_bird_create(spawndata, var_ee8da5624236dc89) {
     vehicle.borntime = gettime();
     vehicle.flareslive = [];
     vehicle.flareready = 1;
-    if (namespace_36f464722d326bbe::isBRStyleGameType()) {
+    if (namespace_36f464722d326bbe::isbrstylegametype()) {
         vehicle.flarecooldown = 35;
     } else {
         vehicle.flarecooldown = 10;

@@ -3,7 +3,7 @@
 #using scripts\engine\utility.gsc;
 #using scripts\engine\math.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\mp\utility\debug.gsc;
 #using scripts\mp\utility\player.gsc;
@@ -27,11 +27,11 @@
 
 #namespace door;
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd23
 // Size: 0x96
-function door_dynamic_setup(var_42ecb50ba6ddae43) {
+function door_dynamic_setup(starthidden) {
     if (isdefined(level.doors)) {
         return;
     }
@@ -43,20 +43,20 @@ function door_dynamic_setup(var_42ecb50ba6ddae43) {
     level.doors = [];
     level.doorsetupstarted = 0;
     thread door_dynamic_setup_adapter("dynamic_door", 0);
-    thread door_dynamic_setup_adapter("lean_dynamic_door", 1, var_42ecb50ba6ddae43);
+    thread door_dynamic_setup_adapter("lean_dynamic_door", 1, starthidden);
     script_model_anims();
-    namespace_71eef510d7f364cf::registeronplayerspawncallback(&onplayerspawned);
+    scripts/mp/utility/spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdc0
 // Size: 0x73a
-function door_dynamic_setup_adapter(var_497a14a8727744f4, lean, var_42ecb50ba6ddae43) {
-    doors = getentarray(var_497a14a8727744f4, "targetname");
+function door_dynamic_setup_adapter(enttargetname, lean, starthidden) {
+    doors = getentarray(enttargetname, "targetname");
     level.doorsetupstarted++;
     level.doorsetupfinished = 0;
-    content = [0:"physicscontents_clipshot", 1:"physicscontents_missileclip", 2:"physicscontents_vehicle", 3:"physicscontents_characterproxy", 4:"physicscontents_glass", 5:"physicscontents_itemclip", 6:"physicscontents_item"];
+    content = ["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle", "physicscontents_characterproxy", "physicscontents_glass", "physicscontents_itemclip", "physicscontents_item"];
     contentoverride = physics_createcontents(content);
     level.doorcontentoverride = contentoverride;
     foreach (door in doors) {
@@ -72,8 +72,8 @@ function door_dynamic_setup_adapter(var_497a14a8727744f4, lean, var_42ecb50ba6dd
         }
         door.state = 0;
         doortarget = door.target;
-        var_95a8d8addb57380e = isdefined(door.script_noteworthy) && door.script_noteworthy == "OPEN" || getdvarint(@"hash_a35456ddcb0a6051", 0) != 0;
-        var_74fb145ec8b5103d = isdefined(door.script_noteworthy) && door.script_noteworthy == "LOCKED";
+        startopened = isdefined(door.script_noteworthy) && door.script_noteworthy == "OPEN" || getdvarint(@"hash_a35456ddcb0a6051", 0) != 0;
+        startlocked = isdefined(door.script_noteworthy) && door.script_noteworthy == "LOCKED";
         door.length = 52;
         door.height = 96;
         door.leftplantorg = door.origin + anglestoforward(door.angles) * door.length * 0.5 + anglestoright(door.angles) * -24.5;
@@ -83,23 +83,23 @@ function door_dynamic_setup_adapter(var_497a14a8727744f4, lean, var_42ecb50ba6dd
         door.doorcenter = door.origin + anglestoforward(door.angles) * door.length * 0.5 + anglestoup(door.angles) * door.height * 0.5;
         door.max_yaw_left = 90;
         door.max_yaw_right = 90;
-        var_70be37a43c5b39d5 = door gettagorigin("tag_door_handle", 1);
-        if (isdefined(var_70be37a43c5b39d5)) {
-            door namespace_19b4203b51d56488::sethintobject("tag_door_handle", "HINT_BUTTON", undefined, "MP/DOOR_USE_OPEN_DOUBLE", undefined, "duration_none", undefined, 200, 90, 72, 90);
+        handletag = door gettagorigin("tag_door_handle", 1);
+        if (isdefined(handletag)) {
+            door scripts/mp/gameobjects::sethintobject("tag_door_handle", "HINT_BUTTON", undefined, "MP/DOOR_USE_OPEN_DOUBLE", undefined, "duration_none", undefined, 200, 90, 72, 90);
             door.useprompt = door;
             door.useprompt setusewhenhandsoccupied(1);
-            if (!lean && !namespace_36f464722d326bbe::isbrstylegametype()) {
-                door.lockprompt = namespace_19b4203b51d56488::createhintobject(var_70be37a43c5b39d5, "HINT_BUTTON", undefined, "MP/DOOR_USE_LOCK", undefined, undefined, "show", 200, 90, 72, 90);
+            if (!lean && !scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+                door.lockprompt = scripts/mp/gameobjects::createhintobject(handletag, "HINT_BUTTON", undefined, "MP/DOOR_USE_LOCK", undefined, undefined, "show", 200, 90, 72, 90);
                 door.lockprompt linkto(door, "tag_door_handle", (3, 0, 15), (0, 0, 0));
                 door.lockprompt setusewhenhandsoccupied(1);
                 door.alarmprompts = [];
-                var_32fac41ab88d1e04 = [0:(4, 0, 4), 1:(4, 0, 90)];
+                var_32fac41ab88d1e04 = [(4, 0, 4), (4, 0, 90)];
                 foreach (offset in var_32fac41ab88d1e04) {
-                    var_ae098e74b36ddbc4 = namespace_19b4203b51d56488::createhintobject(var_70be37a43c5b39d5, "HINT_BUTTON", undefined, "MP/DOOR_USE_ALARM", undefined, undefined, "show", 100, 90, 80, 20);
-                    var_ae098e74b36ddbc4 linkto(door, "tag_origin", offset, (0, 0, 0));
-                    var_ae098e74b36ddbc4 setusewhenhandsoccupied(0);
-                    var_3fa8302c3eb6f7b6 = var_ae098e74b36ddbc4 getentitynumber();
-                    door.alarmprompts[var_3fa8302c3eb6f7b6] = var_ae098e74b36ddbc4;
+                    alarmprompt = scripts/mp/gameobjects::createhintobject(handletag, "HINT_BUTTON", undefined, "MP/DOOR_USE_ALARM", undefined, undefined, "show", 100, 90, 80, 20);
+                    alarmprompt linkto(door, "tag_origin", offset, (0, 0, 0));
+                    alarmprompt setusewhenhandsoccupied(0);
+                    alarmnum = alarmprompt getentitynumber();
+                    door.alarmprompts[alarmnum] = alarmprompt;
                 }
                 clip = undefined;
                 if (isdefined(doortarget)) {
@@ -108,18 +108,18 @@ function door_dynamic_setup_adapter(var_497a14a8727744f4, lean, var_42ecb50ba6dd
                 if (isdefined(clip)) {
                     door.clipent = clip;
                     door.clipent linkto(door);
-                    door.clipent.unresolved_collision_func = &namespace_d7b023c7eb3949d0::unresolved_collision_void;
+                    door.clipent.unresolved_collision_func = &scripts/mp/movers::unresolved_collision_void;
                     door.clipent connectpaths();
                     if (isdefined(clip.target)) {
-                        var_71e2fad940312adb = getent(clip.target, "targetname");
-                        door.audioportalent = var_71e2fad940312adb;
+                        audioportal = getent(clip.target, "targetname");
+                        door.audioportalent = audioportal;
                     }
                 }
             }
-            if (var_95a8d8addb57380e) {
+            if (startopened) {
                 door thread changestate(2);
                 door.angles = (door.angles[0], door.angles[1] + 90, door.angles[2]);
-            } else if (var_74fb145ec8b5103d) {
+            } else if (startlocked) {
                 door thread changestate(7);
             } else {
                 door thread changestate(0);
@@ -139,7 +139,7 @@ function door_dynamic_setup_adapter(var_497a14a8727744f4, lean, var_42ecb50ba6dd
     level.doorsetupfinished = level.doorsetupstarted == 0;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1501
 // Size: 0x94
@@ -153,7 +153,7 @@ function door_dynamic_setup_post_init() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x159c
 // Size: 0x221
@@ -164,30 +164,30 @@ function triggerlisten(door) {
     if (!door.islean && door.statecurr == 0) {
         door thread bashmonitor();
     }
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         self makeunusable();
-        var_b53a2d724c54182 = door.doortarget;
+        targetrotation = door.doortarget;
         if (isdefined(door.doortargetccw)) {
-            var_ac46b1d56b50f400 = anglestoforward(door.angles);
-            var_f85f26257033c0f2 = vectorcross((0, 0, 1), var_ac46b1d56b50f400);
-            var_e227374d9d756c2d = anglestoforward((0, player.angles[1], 0));
-            if (vectordot(var_e227374d9d756c2d, var_f85f26257033c0f2) < 0) {
-                var_b53a2d724c54182 = door.doortargetccw;
+            doorangle = anglestoforward(door.angles);
+            doorfwd = vectorcross((0, 0, 1), doorangle);
+            playerfwd = anglestoforward((0, player.angles[1], 0));
+            if (vectordot(playerfwd, doorfwd) < 0) {
+                targetrotation = door.doortargetccw;
             }
         }
         transitiontime = 0.666;
         if (door.statecurr == 0) {
             self notify("stop_bash_monitor");
             door.statecurr = 3;
-            door rotateto(var_b53a2d724c54182.angles, transitiontime, 0, 0.333);
+            door rotateto(targetrotation.angles, transitiontime, 0, 0.333);
             hintstring = "MP/DOOR_USE_CLOSE";
         } else {
             door.statecurr = 1;
             door rotateto(door.baseangles, transitiontime, 0, 0.333);
             hintstring = "MP/DOOR_USE_OPEN";
         }
-        door namespace_391de535501b0143::doorused(player, door.statecurr == 3);
+        door scripts/mp/events::doorused(player, door.statecurr == 3);
         wait(0.1);
         door childthread door_state_update_sound();
         wait(transitiontime);
@@ -204,7 +204,7 @@ function triggerlisten(door) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17c4
 // Size: 0x1a5
@@ -222,32 +222,32 @@ function door_dynamic_parse_parameters(parameters) {
         }
         if (toks[1] == "undefined" || toks[1] == "default") {
             door.params[toks[0]] = undefined;
-        } else {
-            switch (toks[0]) {
-            case #"hash_5c3e74aaa13bc78d":
-                door.stop_sound = toks[1];
-                break;
-            case #"hash_9e73d538861d053c":
-                door.interrupt_sound = toks[1];
-                break;
-            case #"hash_78225775c0698cc3":
-                door.loop_sound = toks[1];
-                break;
-            case #"hash_1e106e4c46349825":
-                door.open_interrupt = string_to_bool(toks[1]);
-                break;
-            case #"hash_4d982a4c5ddaeacf":
-                door.start_sound = toks[1];
-                break;
-            case #"hash_edda8e2907d42dc0":
-                door.material = toks[1];
-                break;
-            }
+            continue;
+        }
+        switch (toks[0]) {
+        case #"hash_5c3e74aaa13bc78d":
+            door.stop_sound = toks[1];
+            break;
+        case #"hash_9e73d538861d053c":
+            door.interrupt_sound = toks[1];
+            break;
+        case #"hash_78225775c0698cc3":
+            door.loop_sound = toks[1];
+            break;
+        case #"hash_1e106e4c46349825":
+            door.open_interrupt = string_to_bool(toks[1]);
+            break;
+        case #"hash_4d982a4c5ddaeacf":
+            door.start_sound = toks[1];
+            break;
+        case #"hash_edda8e2907d42dc0":
+            door.material = toks[1];
+            break;
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1970
 // Size: 0xd7
@@ -264,7 +264,7 @@ function door_system_init(triggername) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a4e
 // Size: 0x4c5
@@ -278,8 +278,8 @@ function door_setup() {
     if (isdefined(button.script_index)) {
         button.doormovetime = max(0.1, float(button.script_index) / 1000);
     }
-    var_fd5ef62c4bde358e = getentarray(button.target, "targetname");
-    foreach (ent in var_fd5ef62c4bde358e) {
+    targetents = getentarray(button.target, "targetname");
+    foreach (ent in targetents) {
         if (issubstr(ent.classname, "trigger")) {
             if (!isdefined(button.trigblock)) {
                 button.trigblock = [];
@@ -288,12 +288,14 @@ function door_setup() {
                 ent trigger_parse_parameters(ent.script_parameters);
             }
             if (isdefined(ent.script_linkto)) {
-                var_651359b7e3625955 = getent(ent.script_linkto, "script_linkname");
+                linked_door = getent(ent.script_linkto, "script_linkname");
                 ent enablelinkto();
-                ent linkto(var_651359b7e3625955);
+                ent linkto(linked_door);
             }
             button.trigblock[button.trigblock.size] = ent;
-        } else if (ent.classname == "script_brushmodel" || ent.classname == "script_model") {
+            continue;
+        }
+        if (ent.classname == "script_brushmodel" || ent.classname == "script_model") {
             if (isdefined(ent.script_noteworthy) && issubstr(ent.script_noteworthy, "light")) {
                 if (issubstr(ent.script_noteworthy, "light_on")) {
                     if (!isdefined(button.lights_on)) {
@@ -322,7 +324,9 @@ function door_setup() {
             } else {
                 button.doors[button.doors.size] = ent;
             }
-        } else if (ent.classname == "script_origin") {
+            continue;
+        }
+        if (ent.classname == "script_origin") {
             button.entsound = ent;
         }
     }
@@ -346,60 +350,62 @@ function door_setup() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f1a
 // Size: 0xec
 function door_think() {
     button = self;
-    var_f4db5b4567f88914 = ter_op(istrue(button.start_closed), 0, 2);
-    button door_state_change(var_f4db5b4567f88914, 1);
-    while (1) {
+    startstate = ter_op(istrue(button.start_closed), 0, 2);
+    button door_state_change(startstate, 1);
+    while (true) {
         button.statedone = undefined;
         button.stateinterrupted = undefined;
         button waittill_any_2("door_state_done", "door_state_interrupted");
         if (isdefined(button.statedone) && button.statedone) {
-            var_16eb9f9803646fdf = button door_state_next(button.statecurr);
-            button door_state_change(var_16eb9f9803646fdf, 0);
-        } else if (isdefined(button.stateinterrupted) && button.stateinterrupted) {
-            button door_state_change(4, 0);
-        } else {
-            /#
-                assertmsg("state finished without being flagged as done or interrupted.");
-            #/
+            statenext = button door_state_next(button.statecurr);
+            button door_state_change(statenext, 0);
+            continue;
         }
+        if (isdefined(button.stateinterrupted) && button.stateinterrupted) {
+            button door_state_change(4, 0);
+            continue;
+        }
+        /#
+            assertmsg("state finished without being flagged as done or interrupted.");
+        #/
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x200d
 // Size: 0x9c
 function door_state_next(state) {
     button = self;
-    var_16eb9f9803646fdf = undefined;
+    statenext = undefined;
     if (state == 0) {
-        var_16eb9f9803646fdf = 3;
+        statenext = 3;
     } else if (state == 2) {
-        var_16eb9f9803646fdf = 1;
+        statenext = 1;
     } else if (state == 1) {
-        var_16eb9f9803646fdf = 0;
+        statenext = 0;
     } else if (state == 3) {
-        var_16eb9f9803646fdf = 2;
+        statenext = 2;
     } else if (state == 4) {
         /#
             assertex(isdefined(button.stateprev), "door_state_next() was passed STATE_DOOR_PAUSED without a previous state to go to.");
         #/
-        var_16eb9f9803646fdf = button.stateprev;
+        statenext = button.stateprev;
     } else {
         /#
             assertmsg("Unhandled state value of: " + state);
         #/
     }
-    return var_16eb9f9803646fdf;
+    return statenext;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20b1
 // Size: 0xb5c
@@ -438,13 +444,9 @@ function door_state_update(nosound) {
                 }
                 if (door.spawnflags & 1) {
                     if (isdefined(door.script_noteworthy) && door.script_noteworthy == "always_disconnect") {
-                        goto LOC_00000363;
                     }
-                LOC_00000363:
                 }
-            LOC_00000363:
             }
-        LOC_00000363:
             if (isdefined(door.script_noteworthy)) {
                 if (door.script_noteworthy == "clockwise_wheel" || door.script_noteworthy == "counterclockwise_wheel") {
                     door rotatevelocity((0, 0, 0), 0.1);
@@ -458,7 +460,7 @@ function door_state_update(nosound) {
         if (isusable) {
             hintstring = ter_op(button.statecurr == 0, "MP/DOOR_USE_OPEN", "MP/DOOR_USE_CLOSE");
             button makeusable();
-            if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+            if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
                 button sethintstring(hintstring);
             }
             button waittill("trigger");
@@ -480,16 +482,18 @@ function door_state_update(nosound) {
             button thread door_state_on_interrupt();
             foreach (door in button.doors) {
                 if (isdefined(door.script_noteworthy)) {
-                    var_cad92bffbde8f755 = ter_op(isdefined(button.doormovetime), button.doormovetime, 3);
-                    var_7f02cda7a3b89bb6 = ter_op(button.statecurr == 1, door.posclosed, door.posopen);
-                    var_78e602ab4a4ed223 = distance(door.origin, var_7f02cda7a3b89bb6);
-                    time = max(0.1, var_78e602ab4a4ed223 / door.distmove * var_cad92bffbde8f755);
-                    var_5669bab8cf462e92 = max(time * 0.25, 0.05);
-                    var_a14444a704bd237a = 360 * var_78e602ab4a4ed223 / 94.2;
+                    timemove = ter_op(isdefined(button.doormovetime), button.doormovetime, 3);
+                    posgoal = ter_op(button.statecurr == 1, door.posclosed, door.posopen);
+                    distremaining = distance(door.origin, posgoal);
+                    time = max(0.1, distremaining / door.distmove * timemove);
+                    timeease = max(time * 0.25, 0.05);
+                    angulardistance = 360 * distremaining / 94.2;
                     if (door.script_noteworthy == "clockwise_wheel") {
-                        door rotatevelocity((0, 0, -1 * var_a14444a704bd237a / time), time, var_5669bab8cf462e92, var_5669bab8cf462e92);
-                    } else if (door.script_noteworthy == "counterclockwise_wheel") {
-                        door rotatevelocity((0, 0, var_a14444a704bd237a / time), time, var_5669bab8cf462e92, var_5669bab8cf462e92);
+                        door rotatevelocity((0, 0, -1 * angulardistance / time), time, timeease, timeease);
+                        continue;
+                    }
+                    if (door.script_noteworthy == "counterclockwise_wheel") {
+                        door rotatevelocity((0, 0, angulardistance / time), time, timeease, timeease);
                     }
                 }
             }
@@ -499,46 +503,48 @@ function door_state_update(nosound) {
             }
             foreach (door in button.doors) {
                 if (isdefined(door.script_noteworthy)) {
-                    var_cad92bffbde8f755 = ter_op(isdefined(button.doormovetime), button.doormovetime, 3);
-                    var_7f02cda7a3b89bb6 = ter_op(button.statecurr == 1, door.posclosed, door.posopen);
-                    var_78e602ab4a4ed223 = distance(door.origin, var_7f02cda7a3b89bb6);
-                    time = max(0.1, var_78e602ab4a4ed223 / door.distmove * var_cad92bffbde8f755);
-                    var_5669bab8cf462e92 = max(time * 0.25, 0.05);
-                    var_a14444a704bd237a = 360 * var_78e602ab4a4ed223 / 94.2;
+                    timemove = ter_op(isdefined(button.doormovetime), button.doormovetime, 3);
+                    posgoal = ter_op(button.statecurr == 1, door.posclosed, door.posopen);
+                    distremaining = distance(door.origin, posgoal);
+                    time = max(0.1, distremaining / door.distmove * timemove);
+                    timeease = max(time * 0.25, 0.05);
+                    angulardistance = 360 * distremaining / 94.2;
                     if (door.script_noteworthy == "clockwise_wheel") {
-                        door rotatevelocity((0, 0, var_a14444a704bd237a / time), time, var_5669bab8cf462e92, var_5669bab8cf462e92);
-                    } else if (door.script_noteworthy == "counterclockwise_wheel") {
-                        door rotatevelocity((0, 0, -1 * var_a14444a704bd237a / time), time, var_5669bab8cf462e92, var_5669bab8cf462e92);
+                        door rotatevelocity((0, 0, angulardistance / time), time, timeease, timeease);
+                        continue;
+                    }
+                    if (door.script_noteworthy == "counterclockwise_wheel") {
+                        door rotatevelocity((0, 0, -1 * angulardistance / time), time, timeease, timeease);
                     }
                 }
             }
         }
         wait(0.1);
         button childthread door_state_update_sound();
-        var_cad92bffbde8f755 = ter_op(isdefined(button.doormovetime), button.doormovetime, 3);
-        var_416dbda00eb39926 = undefined;
+        timemove = ter_op(isdefined(button.doormovetime), button.doormovetime, 3);
+        timemax = undefined;
         foreach (door in button.doors) {
-            var_7f02cda7a3b89bb6 = ter_op(button.statecurr == 1, door.posclosed, door.posopen);
-            if (door.origin != var_7f02cda7a3b89bb6) {
-                time = max(0.1, distance(door.origin, var_7f02cda7a3b89bb6) / door.distmove * var_cad92bffbde8f755);
-                var_5669bab8cf462e92 = max(time * 0.25, 0.05);
-                door moveto(var_7f02cda7a3b89bb6, time, var_5669bab8cf462e92, var_5669bab8cf462e92);
-                door namespace_d7b023c7eb3949d0::notify_moving_platform_invalid();
+            posgoal = ter_op(button.statecurr == 1, door.posclosed, door.posopen);
+            if (door.origin != posgoal) {
+                time = max(0.1, distance(door.origin, posgoal) / door.distmove * timemove);
+                timeease = max(time * 0.25, 0.05);
+                door moveto(posgoal, time, timeease, timeease);
+                door scripts/mp/movers::notify_moving_platform_invalid();
                 if (door.no_moving_unresolved_collisions) {
-                    door.unresolved_collision_func = &namespace_d7b023c7eb3949d0::unresolved_collision_void;
+                    door.unresolved_collision_func = &scripts/mp/movers::unresolved_collision_void;
                 }
-                if (!isdefined(var_416dbda00eb39926) || time > var_416dbda00eb39926) {
-                    var_416dbda00eb39926 = time;
+                if (!isdefined(timemax) || time > timemax) {
+                    timemax = time;
                 }
             }
         }
-        if (isdefined(var_416dbda00eb39926)) {
-            wait(var_416dbda00eb39926);
+        if (isdefined(timemax)) {
+            wait(timemax);
         }
     } else if (button.statecurr == 4) {
         foreach (door in button.doors) {
             door moveto(door.origin, 0.05, 0, 0);
-            door namespace_d7b023c7eb3949d0::notify_moving_platform_invalid();
+            door scripts/mp/movers::notify_moving_platform_invalid();
             if (door.no_moving_unresolved_collisions) {
                 door.unresolved_collision_func = undefined;
             }
@@ -575,7 +581,7 @@ function door_state_update(nosound) {
     button notify("door_state_done");
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c14
 // Size: 0x273
@@ -583,12 +589,12 @@ function door_state_update_sound() {
     button = self;
     var_b11324d10bc5b631 = 1;
     var_d1eab7ec60299bd1 = 1;
-    var_40cdbacda5cca105 = 0;
+    sound_length = 0;
     if (button.statecurr == 3 || button.statecurr == 1) {
         foreach (door in button.doors) {
             if (isdefined(door.start_sound)) {
                 door playsoundonmovingent(door.start_sound);
-                var_40cdbacda5cca105 = lookupsoundlength(door.start_sound) / 1000;
+                sound_length = lookupsoundlength(door.start_sound) / 1000;
                 var_b11324d10bc5b631 = 0;
             }
         }
@@ -598,18 +604,18 @@ function door_state_update_sound() {
             }
             if (button.statecurr == 3) {
                 if (soundexists("scrpt_door_wood_double_open")) {
-                    var_40cdbacda5cca105 = lookupsoundlength("scrpt_door_wood_double_open") / 1000;
+                    sound_length = lookupsoundlength("scrpt_door_wood_double_open") / 1000;
                     playsoundatpos(button.entsound.origin, "scrpt_door_wood_double_open");
                 }
             } else if (button.statecurr == 1) {
                 if (soundexists("scrpt_door_wood_double_close")) {
-                    var_40cdbacda5cca105 = lookupsoundlength("scrpt_door_wood_double_close") / 1000;
+                    sound_length = lookupsoundlength("scrpt_door_wood_double_close") / 1000;
                     playsoundatpos(button.entsound.origin, "scrpt_door_wood_double_close");
                 }
             }
         }
     }
-    wait(var_40cdbacda5cca105 * 0.3);
+    wait(sound_length * 0.3);
     if (button.statecurr == 3 || button.statecurr == 1) {
         foreach (door in button.doors) {
             if (isdefined(door.loop_sound)) {
@@ -627,7 +633,7 @@ function door_state_update_sound() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e8e
 // Size: 0x6f
@@ -641,7 +647,7 @@ function door_state_change(state, nosound) {
     button thread door_state_update(nosound);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f04
 // Size: 0x194
@@ -653,7 +659,9 @@ function door_state_exit(state) {
                 light hide();
             }
         }
-    } else if (state == 1 || state == 3) {
+        return;
+    }
+    if (state == 1 || state == 3) {
         if (isdefined(button.lights_off)) {
             foreach (light in button.lights_off) {
                 light hide();
@@ -665,20 +673,17 @@ function door_state_exit(state) {
                 door stoploopsound();
             }
         }
-    } else {
-        if (state == 4) {
-            goto LOC_00000192;
-        }
-        /#
-            assertmsg("Unhandled state value of: " + state);
-        LOC_00000192:
-        #/
-    LOC_00000192:
+        return;
     }
-LOC_00000192:
+    if (state == 4) {
+        return;
+    }
+    /#
+        assertmsg("Unhandled state value of: " + state);
+    #/
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x309f
 // Size: 0x145
@@ -688,7 +693,7 @@ function door_state_on_interrupt() {
     if (!isdefined(button.trigblock)) {
         return;
     }
-    var_ff46604c829cbb2e = [];
+    filtered_triggers = [];
     foreach (trigger in button.trigblock) {
         if (button.statecurr == 1) {
             if (isdefined(trigger.not_closing) && trigger.not_closing == 1) {
@@ -699,10 +704,10 @@ function door_state_on_interrupt() {
                 continue;
             }
         }
-        var_ff46604c829cbb2e[var_ff46604c829cbb2e.size] = trigger;
+        filtered_triggers[filtered_triggers.size] = trigger;
     }
-    if (var_ff46604c829cbb2e.size > 0) {
-        interrupter = button waittill_any_triggered_return_triggerer(var_ff46604c829cbb2e);
+    if (filtered_triggers.size > 0) {
+        interrupter = button waittill_any_triggered_return_triggerer(filtered_triggers);
         if (!isdefined(interrupter.fauxdead) || interrupter.fauxdead == 0) {
             button.stateinterrupted = 1;
             button notify("door_state_interrupted");
@@ -710,7 +715,7 @@ function door_state_on_interrupt() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31eb
 // Size: 0x7a
@@ -723,7 +728,7 @@ function waittill_any_triggered_return_triggerer(triggers) {
     return button.interrupter;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x326d
 // Size: 0x107
@@ -731,7 +736,7 @@ function return_triggerer(trigger) {
     button = self;
     button endon("door_state_done");
     button endon("interrupted");
-    while (1) {
+    while (true) {
         ent = trigger waittill("trigger");
         if (isdefined(trigger.prone_only) && trigger.prone_only == 1) {
             if (isplayer(ent)) {
@@ -754,7 +759,7 @@ function return_triggerer(trigger) {
     button notify("interrupted");
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x337b
 // Size: 0x182
@@ -772,28 +777,28 @@ function button_parse_parameters(parameters) {
         }
         if (toks[1] == "undefined" || toks[1] == "default") {
             button.params[toks[0]] = undefined;
-        } else {
-            switch (toks[0]) {
-            case #"hash_1e106e4c46349825":
-                button.open_interrupt = string_to_bool(toks[1]);
-                break;
-            case #"hash_6b61f3acb03c8ba1":
-                button.button_sound = toks[1];
-                break;
-            case #"hash_4f3615defbb56240":
-                button.start_closed = string_to_bool(toks[1]);
-                break;
-            case #"hash_cf9b0fd30cea035":
-                button.one_time_use = string_to_bool(toks[1]);
-                break;
-            default:
-                break;
-            }
+            continue;
+        }
+        switch (toks[0]) {
+        case #"hash_1e106e4c46349825":
+            button.open_interrupt = string_to_bool(toks[1]);
+            break;
+        case #"hash_6b61f3acb03c8ba1":
+            button.button_sound = toks[1];
+            break;
+        case #"hash_4f3615defbb56240":
+            button.start_closed = string_to_bool(toks[1]);
+            break;
+        case #"hash_cf9b0fd30cea035":
+            button.one_time_use = string_to_bool(toks[1]);
+            break;
+        default:
+            break;
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3504
 // Size: 0x223
@@ -814,40 +819,40 @@ function door_parse_parameters(parameters) {
         }
         if (toks[1] == "undefined" || toks[1] == "default") {
             door.params[toks[0]] = undefined;
-        } else {
-            switch (toks[0]) {
-            case #"hash_5c3e74aaa13bc78d":
-                door.stop_sound = toks[1];
-                break;
-            case #"hash_9e73d538861d053c":
-                door.interrupt_sound = toks[1];
-                break;
-            case #"hash_78225775c0698cc3":
-                door.loop_sound = toks[1];
-                break;
-            case #"hash_1e106e4c46349825":
-                door.open_interrupt = string_to_bool(toks[1]);
-                break;
-            case #"hash_4d982a4c5ddaeacf":
-                door.start_sound = toks[1];
-                break;
-            case #"hash_82406ab59ce5c4df":
-                door.unresolved_collision_nodes = getnodearray(toks[1], "targetname");
-                break;
-            case #"hash_16b31759aeac5f43":
-                door.no_moving_unresolved_collisions = string_to_bool(toks[1]);
-                break;
-            case #"hash_edda8e2907d42dc0":
-                door.material = toks[1];
-                break;
-            default:
-                break;
-            }
+            continue;
+        }
+        switch (toks[0]) {
+        case #"hash_5c3e74aaa13bc78d":
+            door.stop_sound = toks[1];
+            break;
+        case #"hash_9e73d538861d053c":
+            door.interrupt_sound = toks[1];
+            break;
+        case #"hash_78225775c0698cc3":
+            door.loop_sound = toks[1];
+            break;
+        case #"hash_1e106e4c46349825":
+            door.open_interrupt = string_to_bool(toks[1]);
+            break;
+        case #"hash_4d982a4c5ddaeacf":
+            door.start_sound = toks[1];
+            break;
+        case #"hash_82406ab59ce5c4df":
+            door.unresolved_collision_nodes = getnodearray(toks[1], "targetname");
+            break;
+        case #"hash_16b31759aeac5f43":
+            door.no_moving_unresolved_collisions = string_to_bool(toks[1]);
+            break;
+        case #"hash_edda8e2907d42dc0":
+            door.material = toks[1];
+            break;
+        default:
+            break;
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x372e
 // Size: 0x158
@@ -864,37 +869,37 @@ function trigger_parse_parameters(parameters) {
         }
         if (toks[1] == "undefined" || toks[1] == "default") {
             trigger.params[toks[0]] = undefined;
-        } else {
-            switch (toks[0]) {
-            case #"hash_9d83eef6d488a45":
-                trigger.not_opening = string_to_bool(toks[1]);
-                break;
-            case #"hash_5f7e7fdb9440ae8e":
-                trigger.not_closing = string_to_bool(toks[1]);
-                break;
-            case #"hash_74a33663cf817e18":
-                trigger.prone_only = string_to_bool(toks[1]);
-                break;
-            default:
-                break;
-            }
+            continue;
+        }
+        switch (toks[0]) {
+        case #"hash_9d83eef6d488a45":
+            trigger.not_opening = string_to_bool(toks[1]);
+            break;
+        case #"hash_5f7e7fdb9440ae8e":
+            trigger.not_closing = string_to_bool(toks[1]);
+            break;
+        case #"hash_74a33663cf817e18":
+            trigger.prone_only = string_to_bool(toks[1]);
+            break;
+        default:
+            break;
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x388d
 // Size: 0x12a
 function bashmonitor() {
-    if (self.islean || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (self.islean || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     self endon("stateChanged");
     self notify("bashMonitor");
     self endon("bashMonitor");
     thread monitordamage();
-    while (1) {
+    while (true) {
         self.doorcenter = self.origin + anglestoforward(self.angles) * self.length * 0.5 + anglestoup(self.angles) * self.height * 0.5;
         players = getplayersinradius(self.origin, 250);
         if (players.size > 0) {
@@ -904,13 +909,13 @@ function bashmonitor() {
                 }
             }
             waitframe();
-        } else {
-            wait(0.1);
+            continue;
         }
+        wait(0.1);
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39be
 // Size: 0x41
@@ -920,38 +925,38 @@ function bashproxcheck(player) {
     return d < range;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a07
 // Size: 0x1b7
 function shouldbashopen(player) {
     if (!isreallyalive(player)) {
-        return 0;
+        return false;
     }
-    var_e227374d9d756c2d = anglestoforward(player.angles);
-    if (within_fov(player.origin + var_e227374d9d756c2d * -45, player.angles, self.doorcenter, cos(43))) {
-        var_7bf201849ae293cd = anglestoright(self.angles);
+    playerfwd = anglestoforward(player.angles);
+    if (within_fov(player.origin + playerfwd * -45, player.angles, self.doorcenter, cos(43))) {
+        doorright = anglestoright(self.angles);
         var_d3310de4c428a779 = vectornormalize(self.doorcenter - player geteye());
-        var_88516b40c2f83b3c = vectordot(var_e227374d9d756c2d, var_d3310de4c428a779);
-        var_f77a6113861d6cfd = vectordot(var_e227374d9d756c2d, var_7bf201849ae293cd);
-        var_1d0dfdfee6cacb97 = player getvelocity();
-        var_9b69954f476c76fe = vectordot(vectornormalize(var_1d0dfdfee6cacb97), (0, 0, 1));
-        if ((length(var_1d0dfdfee6cacb97) >= 200 || player namespace_a2f809133c566621::isjuggernaut() && length(var_1d0dfdfee6cacb97) >= 140) && abs(var_9b69954f476c76fe) < 0.75 && abs(var_f77a6113861d6cfd) > 0.75 && var_88516b40c2f83b3c > 0.75) {
-            var_70be37a43c5b39d5 = self gettagorigin("tag_door_handle", 1);
-            if (isdefined(var_70be37a43c5b39d5)) {
-                trace = namespace_2a184fc4902783dc::ray_trace(player geteye(), var_70be37a43c5b39d5, player, level.doorcontentoverride, 0);
+        var_88516b40c2f83b3c = vectordot(playerfwd, var_d3310de4c428a779);
+        var_f77a6113861d6cfd = vectordot(playerfwd, doorright);
+        playervelocity = player getvelocity();
+        var_9b69954f476c76fe = vectordot(vectornormalize(playervelocity), (0, 0, 1));
+        if ((length(playervelocity) >= 200 || player scripts/mp/utility/killstreak::isjuggernaut() && length(playervelocity) >= 140) && abs(var_9b69954f476c76fe) < 0.75 && abs(var_f77a6113861d6cfd) > 0.75 && var_88516b40c2f83b3c > 0.75) {
+            handletag = self gettagorigin("tag_door_handle", 1);
+            if (isdefined(handletag)) {
+                trace = scripts/engine/trace::ray_trace(player geteye(), handletag, player, level.doorcontentoverride, 0);
                 if (isdefined(trace["entity"]) && trace["entity"] == self) {
-                    return 1;
+                    return true;
                 }
             } else {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3bc6
 // Size: 0x410
@@ -969,8 +974,8 @@ function bashopen(player, pos) {
     right = anglestoright(angles);
     normal = vectornormalize(pos - self.origin);
     dot = vectordot(right, normal);
-    var_4fbd3851a4b84b8 = dot > 0;
-    var_62ed0570f5e80a07 = undefined;
+    openleft = dot > 0;
+    bash_yaw = undefined;
     if (isdefined(player) && isplayer(player)) {
         if (!isai(player)) {
             thread bashpresentation(player);
@@ -987,67 +992,67 @@ function bashopen(player, pos) {
     } else {
         playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_wood_double_bash");
     }
-    if (var_4fbd3851a4b84b8) {
-        var_62ed0570f5e80a07 = self.baseangles[1] + self.max_yaw_left;
+    if (openleft) {
+        bash_yaw = self.baseangles[1] + self.max_yaw_left;
     } else {
-        var_62ed0570f5e80a07 = self.baseangles[1] - self.max_yaw_right;
+        bash_yaw = self.baseangles[1] - self.max_yaw_right;
     }
-    if (var_62ed0570f5e80a07 > 360) {
-        var_62ed0570f5e80a07 = var_62ed0570f5e80a07 - 360;
-    } else if (var_62ed0570f5e80a07 < 0) {
-        var_62ed0570f5e80a07 = var_62ed0570f5e80a07 + 360;
+    if (bash_yaw > 360) {
+        bash_yaw = bash_yaw - 360;
+    } else if (bash_yaw < 0) {
+        bash_yaw = bash_yaw + 360;
     }
     var_5e7a100369fafe1e = 0.35;
     var_11b200101076bc6c = 0.15;
-    timefactor = math::normalize_value(0, 170, var_62ed0570f5e80a07);
+    timefactor = math::normalize_value(0, 170, bash_yaw);
     bashtime = math::factor_value(var_5e7a100369fafe1e, var_11b200101076bc6c, timefactor);
-    var_73d0c62ee90ef3c3 = self.angles;
-    var_bba965ddeffb21fe = var_73d0c62ee90ef3c3[1];
-    if (var_bba965ddeffb21fe > 360) {
-        var_bba965ddeffb21fe = var_bba965ddeffb21fe - 360;
-    } else if (var_bba965ddeffb21fe < 0) {
-        var_bba965ddeffb21fe = var_bba965ddeffb21fe + 360;
+    current_angles = self.angles;
+    current_yaw = current_angles[1];
+    if (current_yaw > 360) {
+        current_yaw = current_yaw - 360;
+    } else if (current_yaw < 0) {
+        current_yaw = current_yaw + 360;
     }
-    var_55a531282afd5f1d = angle_diff(var_bba965ddeffb21fe, self.baseangles[1]);
-    var_5e0f89cf0c167e08 = angle_diff(var_62ed0570f5e80a07, self.baseangles[1]);
-    var_c3f370dcf88fb5bb = anglestoforward(var_73d0c62ee90ef3c3);
-    var_59ee6658d03630a6 = anglestoright(self.baseangles);
-    var_397e59a9937b07db = vectordot(var_c3f370dcf88fb5bb, var_59ee6658d03630a6) < 0;
-    if (var_4fbd3851a4b84b8) {
+    currentdiff = angle_diff(current_yaw, self.baseangles[1]);
+    bashdiff = angle_diff(bash_yaw, self.baseangles[1]);
+    currentfwd = anglestoforward(current_angles);
+    baseright = anglestoright(self.baseangles);
+    var_397e59a9937b07db = vectordot(currentfwd, baseright) < 0;
+    if (openleft) {
         if (!var_397e59a9937b07db) {
-            var_5e0f89cf0c167e08 = var_5e0f89cf0c167e08 + var_55a531282afd5f1d;
+            bashdiff = bashdiff + currentdiff;
         } else {
-            var_5e0f89cf0c167e08 = var_5e0f89cf0c167e08 - var_55a531282afd5f1d;
+            bashdiff = bashdiff - currentdiff;
         }
     } else {
         if (var_397e59a9937b07db) {
-            var_5e0f89cf0c167e08 = var_5e0f89cf0c167e08 + var_55a531282afd5f1d;
+            bashdiff = bashdiff + currentdiff;
         } else {
-            var_5e0f89cf0c167e08 = var_5e0f89cf0c167e08 - var_55a531282afd5f1d;
+            bashdiff = bashdiff - currentdiff;
         }
-        var_5e0f89cf0c167e08 = var_5e0f89cf0c167e08 * -1;
+        bashdiff = bashdiff * -1;
     }
-    var_41e917596d6bf09f = (0, var_5e0f89cf0c167e08, 0);
+    var_41e917596d6bf09f = (0, bashdiff, 0);
     self rotateby(var_41e917596d6bf09f, bashtime);
     wait(bashtime);
     self.lastpushtime = gettime();
     thread changestate(6);
     if (!isdefined(self.useprompt)) {
         self.statecurr = 2;
-        if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+        if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
             self.trigger sethintstring("MP/DOOR_USE_CLOSE");
         }
     }
     self.bashed = 0;
     var_b492b99eb62e16f2 = randomfloatrange(3, 5);
     var_6e09cabeb82b5356 = randomfloatrange(0.25, 2.5);
-    if (var_4fbd3851a4b84b8) {
+    if (openleft) {
         var_6e09cabeb82b5356 = var_6e09cabeb82b5356 * -1;
     }
     self rotateyaw(var_6e09cabeb82b5356, var_b492b99eb62e16f2, 0.5, var_b492b99eb62e16f2 - 0.5);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fdd
 // Size: 0x36
@@ -1056,7 +1061,7 @@ function bashpresentation(player) {
     player earthquakeforplayer(0.35, 0.5, player.origin, 200);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x401a
 // Size: 0x23f
@@ -1078,44 +1083,48 @@ function monitordamage() {
     angles = undefined;
     normal = undefined;
     inflictor = undefined;
-    while (1) {
-        inflictor = normal = angles = origin = objweapon = idflags = partname = tagname = modelname = meansofdeath = point = direction_vec = attacker = damage = self waittill("damage");
+    while (true) {
+        damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, origin, angles, normal, inflictor = self waittill("damage");
         if (isdefined(meansofdeath)) {
             if (meansofdeath == "MOD_MELEE") {
                 if (istrue(self.issaloonstyle)) {
                     self.otherdoor thread bashopen(attacker, attacker.origin);
                 }
                 thread bashopen(attacker, attacker.origin);
-            } else if (meansofdeath == "MOD_EXPLOSIVE" || meansofdeath == "MOD_GRENADE" || meansofdeath == "MOD_GRENADE_SPLASH" || meansofdeath == "MOD_PROJECTILE") {
-                var_c81a61ae7e6e7025 = isdefined(objweapon) && isdefined(objweapon.basename) && (objweapon.basename == "molotov_mp" || objweapon.basename == "thermite_mp" || objweapon.basename == "thermite_ap_mp" || objweapon.basename == "thermite_av_mp");
-                if (damage > 10 && !var_c81a61ae7e6e7025) {
+                continue;
+            }
+            if (meansofdeath == "MOD_EXPLOSIVE" || meansofdeath == "MOD_GRENADE" || meansofdeath == "MOD_GRENADE_SPLASH" || meansofdeath == "MOD_PROJECTILE") {
+                ismolotov = isdefined(objweapon) && isdefined(objweapon.basename) && (objweapon.basename == "molotov_mp" || objweapon.basename == "thermite_mp" || objweapon.basename == "thermite_ap_mp" || objweapon.basename == "thermite_av_mp");
+                if (damage > 10 && !ismolotov) {
                     thread bashopen(inflictor, point);
                 }
-            } else if (isdefined(objweapon) && objweapon.basename == "pac_sentry_turret_mp" && (meansofdeath == "MOD_PROJECTILE" || meansofdeath == "MOD_PROJECTILE_SPLASH")) {
+                continue;
+            }
+            if (isdefined(objweapon) && objweapon.basename == "pac_sentry_turret_mp" && (meansofdeath == "MOD_PROJECTILE" || meansofdeath == "MOD_PROJECTILE_SPLASH")) {
                 thread bashopen(inflictor, point);
             }
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4260
 // Size: 0x196
 function openmonitor() {
     self endon("stateChanged");
-    if (self.state == 7 || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (self.state == 7 || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
-    if (self.islean || 0 || -1) {
-        if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (self.islean || false || true) {
+        if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
             self.useprompt sethintstring("MP/DOOR_USE_OPEN");
         }
-    } else if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    } else if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         self.useprompt sethintstring("MP/DOOR_USE_OPEN_DOUBLE");
     }
     self.useprompt sethintdisplayrange(200);
-    while (1) {
+    while (true) {
         player = self.useprompt waittill("trigger_progress");
         if (player meleebuttonpressed()) {
             continue;
@@ -1132,9 +1141,9 @@ function openmonitor() {
             waitframe();
         }
         if (self.state == 7) {
-            var_70be37a43c5b39d5 = self gettagorigin("tag_door_handle", 1);
-            if (isdefined(var_70be37a43c5b39d5)) {
-                playsoundatpos(var_70be37a43c5b39d5, "door_locked");
+            handletag = self gettagorigin("tag_door_handle", 1);
+            if (isdefined(handletag)) {
+                playsoundatpos(handletag, "door_locked");
             } else {
                 playsoundatpos(self.origin + (0, 0, 42), "door_locked");
             }
@@ -1152,7 +1161,7 @@ function openmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43fd
 // Size: 0x2b3
@@ -1163,7 +1172,7 @@ function cheapopen(player) {
     right = anglestoright(angles);
     normal = vectornormalize(player.origin - origin);
     dot = vectordot(right, normal);
-    var_4fbd3851a4b84b8 = dot > 0;
+    openleft = dot > 0;
     if (isdefined(self.material)) {
         if (self.material == "metal") {
             playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_heavy_metal_single_open");
@@ -1174,11 +1183,11 @@ function cheapopen(player) {
         playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_wood_double_open");
     }
     thread changestate(3);
-    targetyaw = ter_op(var_4fbd3851a4b84b8, self.max_yaw_left, self.max_yaw_right * -1);
+    targetyaw = ter_op(openleft, self.max_yaw_left, self.max_yaw_right * -1);
     openangles = (self.baseangles[0], self.baseangles[1] + targetyaw, self.baseangles[2]);
     self rotateto(openangles, 0.666, 0, 0.333);
     if (isdefined(self.otherdoor) && istrue(self.issaloonstyle)) {
-        targetyaw = ter_op(!var_4fbd3851a4b84b8, self.otherdoor.max_yaw_left, self.otherdoor.max_yaw_right * -1);
+        targetyaw = ter_op(!openleft, self.otherdoor.max_yaw_left, self.otherdoor.max_yaw_right * -1);
         openangles = (self.otherdoor.baseangles[0], self.otherdoor.baseangles[1] + targetyaw, self.otherdoor.baseangles[2]);
         self.otherdoor rotateto(openangles, 0.666, 0, 0.333);
     }
@@ -1190,7 +1199,7 @@ function cheapopen(player) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46b7
 // Size: 0x1f2
@@ -1202,9 +1211,9 @@ function ajar(player) {
     right = anglestoright(angles);
     normal = vectornormalize(player.origin - origin);
     dot = vectordot(right, normal);
-    var_4fbd3851a4b84b8 = dot > 0;
+    openleft = dot > 0;
     time = 0.5;
-    var_96cc1618573ad3cc = ter_op(var_4fbd3851a4b84b8, 15, -15);
+    yaw_angle = ter_op(openleft, 15, -15);
     player playrumbleonentity("damage_heavy");
     if (isdefined(self.material)) {
         if (self.material == "metal") {
@@ -1215,16 +1224,16 @@ function ajar(player) {
     } else {
         playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_wood_double_start_peek");
     }
-    self rotateyaw(var_96cc1618573ad3cc, time, time * 0.25, time * 0.75);
+    self rotateyaw(yaw_angle, time, time * 0.25, time * 0.75);
     if (isdefined(self.otherdoor) && istrue(self.issaloonstyle)) {
         self.otherdoor thread changestate(6);
-        var_96cc1618573ad3cc = ter_op(!var_4fbd3851a4b84b8, 15, -15);
-        self.otherdoor rotateyaw(var_96cc1618573ad3cc, time, time * 0.25, time * 0.75);
+        yaw_angle = ter_op(!openleft, 15, -15);
+        self.otherdoor rotateyaw(yaw_angle, time, time * 0.25, time * 0.75);
     }
     self.lastpushtime = gettime();
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48b0
 // Size: 0xee
@@ -1236,7 +1245,7 @@ function pushmonitor() {
     self notify("pushMonitor");
     self endon("pushMonitor");
     wait(0.5);
-    while (1) {
+    while (true) {
         players = getplayersinradius(self.origin, 250);
         if (players.size > 0) {
             foreach (player in players) {
@@ -1254,32 +1263,32 @@ function pushmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49a5
 // Size: 0xdd
 function pushproxcheck(player) {
     self.doorcenter = self.origin + anglestoforward(self.angles) * self.length * 0.5 + anglestoup(self.angles) * self.height * 0.5;
     if (player.origin[2] > self.origin[2] + self.height || player.origin[2] + 70 < self.origin[2]) {
-        return 0;
+        return false;
     }
     d = distance2dsquared(player.origin, self.doorcenter);
     range = 900;
     return d < range;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a8a
 // Size: 0x282
 function push(player) {
     max_dist = 26;
     min_dist = 0;
-    var_8928780331ce6436 = 25;
+    max_push = 25;
     endpoint = self.origin + anglestoforward(self.angles) * 28;
     dist = distance2d(player.origin, endpoint);
     percent = math::normalize_value(min_dist, max_dist, dist);
-    amount = var_8928780331ce6436 * (1 - percent);
+    amount = max_push * (1 - percent);
     if (amount == 0) {
         return;
     }
@@ -1288,12 +1297,12 @@ function push(player) {
     right = anglestoright(angles);
     normal = vectornormalize(player.origin - origin);
     dot = vectordot(right, normal);
-    var_4fbd3851a4b84b8 = dot > 0;
+    openleft = dot > 0;
     currentyaw = self.angles[1];
-    isright = ter_op(var_4fbd3851a4b84b8 == 1, 1, -1);
+    isright = ter_op(openleft == 1, 1, -1);
     target_yaw = currentyaw + amount * isright;
     angle_diff = angle_diff(target_yaw, self.baseangles[1]);
-    if (var_4fbd3851a4b84b8) {
+    if (openleft) {
         if (angle_diff > self.max_yaw_left) {
             self.debug_activity = "Pushed to max left yaw of " + self.max_yaw_left;
             self.angles = (self.angles[0], self.baseangles[1] + self.max_yaw_left, self.angles[2]);
@@ -1310,7 +1319,7 @@ function push(player) {
     self.angles = (self.angles[0], target_yaw, self.angles[2]);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d13
 // Size: 0xa9
@@ -1322,7 +1331,7 @@ function autoclosemonitor() {
     self notify("autoCloseMonitor");
     self endon("autoCloseMonitor");
     wait(0.5);
-    while (1) {
+    while (true) {
         if (angle_diff(self.angles[1], self.baseangles[1]) < 40) {
             if (isdefined(self.lastpushtime) && gettime() > self.lastpushtime + 3000) {
                 players = getplayersinradius(self.origin, 250);
@@ -1335,7 +1344,7 @@ function autoclosemonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dc3
 // Size: 0x2aa
@@ -1425,7 +1434,7 @@ function changestate(newstate) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5074
 // Size: 0x9b
@@ -1452,24 +1461,24 @@ function updatestate() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5116
 // Size: 0xfb
 function closemonitor() {
     self endon("stateChanged");
-    if (namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     self.useprompt makeusable();
-    if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         self.useprompt sethintstring("MP/DOOR_USE_CLOSE");
     }
     self.useprompt sethintdisplayrange(200);
     self.useprompt sethintdisplayfov(120);
     self.useprompt setuserange(125);
     self.useprompt setusefov(120);
-    while (1) {
+    while (true) {
         player = self.useprompt waittill("trigger_progress");
         if (player meleebuttonpressed()) {
             continue;
@@ -1489,7 +1498,7 @@ function closemonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5218
 // Size: 0x1e9
@@ -1504,15 +1513,15 @@ function closedoor(var_c81f097ebbbed511) {
         playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_wood_double_close");
     }
     thread changestate(1);
-    var_b9f754ef90aff45b = 0.666;
+    closeduration = 0.666;
     if (istrue(var_c81f097ebbbed511)) {
-        var_b9f754ef90aff45b = var_b9f754ef90aff45b * 3;
+        closeduration = closeduration * 3;
     }
-    self rotateto(self.baseangles, var_b9f754ef90aff45b, 0, 0.333);
+    self rotateto(self.baseangles, closeduration, 0, 0.333);
     if (isdefined(self.otherdoor) && istrue(self.issaloonstyle)) {
-        self.otherdoor rotateto(self.otherdoor.baseangles, var_b9f754ef90aff45b, 0, 0.333);
+        self.otherdoor rotateto(self.otherdoor.baseangles, closeduration, 0, 0.333);
     }
-    wait(var_b9f754ef90aff45b);
+    wait(closeduration);
     waitframe();
     if (angle_diff(self.angles[1], self.baseangles[1]) < 1) {
         thread changestate(0);
@@ -1522,13 +1531,13 @@ function closedoor(var_c81f097ebbbed511) {
     if (isdefined(self.otherdoor) && istrue(self.issaloonstyle)) {
         if (angle_diff(self.otherdoor.angles[1], self.otherdoor.baseangles[1]) < 1) {
             self.otherdoor thread changestate(0);
-        } else {
-            self.otherdoor thread changestate(6);
+            return;
         }
+        self.otherdoor thread changestate(6);
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5408
 // Size: 0x27
@@ -1536,7 +1545,7 @@ function angle_diff(value1, value2) {
     return 180 - abs(abs(value1 - value2) - 180);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5437
 // Size: 0x25f
@@ -1557,7 +1566,7 @@ function amortizeyawtraces() {
     waitframe();
     level.doortracemetrics.totaltime = gettime();
     var_438903624c7ec6c9[0] = level.doortracemetrics.totaltime;
-    while (1) {
+    while (true) {
         if (level.doortracequeue == 0) {
             currenttime = gettime();
             var_438903624c7ec6c9[level.doorphase] = currenttime - var_438903624c7ec6c9[level.doorphase];
@@ -1581,7 +1590,7 @@ function amortizeyawtraces() {
     level.doortracemetrics.tracetimebyphase = var_438903624c7ec6c9;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x569d
 // Size: 0x16
@@ -1590,7 +1599,7 @@ function get_max_yaws() {
     thread get_max_yaw(0);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56ba
 // Size: 0xfa
@@ -1604,48 +1613,48 @@ function get_max_yaw(left) {
         self.max_yaw_right = self.script_max_right_angle;
         return;
     }
-    var_fd30805dc79751c = 90;
-    var_7654c3f9d638aaea = 10;
-    var_57e78339c006d1ef = 0;
+    testyaw = 90;
+    testincrement = 10;
+    safeyaw = 0;
     while (level.doorphase < 3) {
-        var_57e78339c006d1ef = get_max_yaw_internal(var_fd30805dc79751c, var_7654c3f9d638aaea, left);
+        safeyaw = get_max_yaw_internal(testyaw, testincrement, left);
         if (left) {
-            self.max_yaw_left = var_57e78339c006d1ef;
+            self.max_yaw_left = safeyaw;
         } else {
-            self.max_yaw_right = var_57e78339c006d1ef;
+            self.max_yaw_right = safeyaw;
         }
-        if (var_57e78339c006d1ef == 100) {
+        if (safeyaw == 100) {
             break;
         }
-        var_7654c3f9d638aaea = var_7654c3f9d638aaea * 0.5;
-        var_fd30805dc79751c = var_57e78339c006d1ef + var_7654c3f9d638aaea;
+        testincrement = testincrement * 0.5;
+        testyaw = safeyaw + testincrement;
         level waittill("advance_door_trace");
     }
-    var_57e78339c006d1ef = max(var_57e78339c006d1ef, 90);
+    safeyaw = max(safeyaw, 90);
     if (left) {
-        self.max_yaw_left = var_57e78339c006d1ef;
-    } else {
-        self.max_yaw_right = var_57e78339c006d1ef;
+        self.max_yaw_left = safeyaw;
+        return;
     }
+    self.max_yaw_right = safeyaw;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57bb
 // Size: 0x1ab
-function get_max_yaw_internal(var_86e2597cacc185b5, increment, left) {
+function get_max_yaw_internal(test_yaw, increment, left) {
     if (!isdefined(self.traces)) {
         self.traces = 0;
     }
     if (!isdefined(level.doortraces)) {
         level.doortraces = 0;
     }
-    var_fc50f7f1ec656b5c = 0;
+    failed_once = 0;
     finished = 0;
     level.doortracequeue++;
     waitframe();
     while (!finished) {
-        if (var_86e2597cacc185b5 > 100) {
+        if (test_yaw > 100) {
             level.currentdoor = undefined;
             level.doortracequeue--;
             return 100;
@@ -1656,17 +1665,17 @@ function get_max_yaw_internal(var_86e2597cacc185b5, increment, left) {
         if (!isdefined(level.currentdoor)) {
             level.currentdoor = self;
         }
-        var_e79f8e052557004 = yaw_collision_check(var_86e2597cacc185b5, increment, left);
-        if (var_e79f8e052557004) {
-            if (var_fc50f7f1ec656b5c) {
+        safe_yaw = yaw_collision_check(test_yaw, increment, left);
+        if (safe_yaw) {
+            if (failed_once) {
                 finish = 1;
             }
-            var_86e2597cacc185b5 = var_86e2597cacc185b5 + increment;
+            test_yaw = test_yaw + increment;
         } else {
-            if (!var_fc50f7f1ec656b5c) {
-                var_fc50f7f1ec656b5c = 1;
+            if (!failed_once) {
+                failed_once = 1;
             }
-            var_86e2597cacc185b5 = var_86e2597cacc185b5 - increment;
+            test_yaw = test_yaw - increment;
             finished = 1;
         }
         self.traces++;
@@ -1685,10 +1694,10 @@ function get_max_yaw_internal(var_86e2597cacc185b5, increment, left) {
     }
     level.currentdoor = undefined;
     level.doortracequeue--;
-    return var_86e2597cacc185b5;
+    return test_yaw;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x596e
 // Size: 0x1f7
@@ -1697,16 +1706,16 @@ function yaw_collision_check(yaw, increment, left) {
         yaw = yaw * -1;
     }
     trace_angles = self.baseangles + (0, yaw, 0);
-    var_29afc51db09e2830 = self.origin + (0, 0, 8);
-    var_13b5e69a1d26edde = self.height - 8 * 2;
-    var_f85f26257033c0f2 = anglestoforward(trace_angles);
-    var_7bf201849ae293cd = anglestoright(trace_angles);
+    basestart = self.origin + (0, 0, 8);
+    testheight = self.height - 8 * 2;
+    doorfwd = anglestoforward(trace_angles);
+    doorright = anglestoright(trace_angles);
     if (left) {
-        var_7bf201849ae293cd = var_7bf201849ae293cd * -1;
+        doorright = doorright * -1;
     }
-    start = var_29afc51db09e2830 + var_f85f26257033c0f2 * self.length * 0.2;
-    end = var_29afc51db09e2830 + var_f85f26257033c0f2 * (self.length - 2);
-    trace = namespace_2a184fc4902783dc::capsule_trace(start, end, 2, var_13b5e69a1d26edde, trace_angles, ter_op(isdefined(self.clip), [0:self, 1:self.clip], [0:self]), level.doorcontentoverride, 0);
+    start = basestart + doorfwd * self.length * 0.2;
+    end = basestart + doorfwd * (self.length - 2);
+    trace = scripts/engine/trace::capsule_trace(start, end, 2, testheight, trace_angles, ter_op(isdefined(self.clip), [self, self.clip], [self]), level.doorcontentoverride, 0);
     if (getdvarint(@"hash_6985e82f27803483")) {
         color = (1, 1, 1);
         if (trace["fraction"] == 1) {
@@ -1715,20 +1724,20 @@ function yaw_collision_check(yaw, increment, left) {
             color = (1, 0, 0);
         }
         thread drawline(start, end, 600, color);
-        thread drawline(start + (0, 0, var_13b5e69a1d26edde), end + (0, 0, var_13b5e69a1d26edde), 600, color);
-        thread drawline(start, start + (0, 0, var_13b5e69a1d26edde), 600, color);
-        thread drawline(end, end + (0, 0, var_13b5e69a1d26edde), 600, color);
+        thread drawline(start + (0, 0, testheight), end + (0, 0, testheight), 600, color);
+        thread drawline(start, start + (0, 0, testheight), 600, color);
+        thread drawline(end, end + (0, 0, testheight), 600, color);
     }
     return trace["fraction"] == 1;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b6d
 // Size: 0x11d
 function perk_doorsensethink() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         foreach (door in level.doors) {
             if (door.state != 0) {
                 continue;
@@ -1750,7 +1759,7 @@ function perk_doorsensethink() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c91
 // Size: 0x117
@@ -1766,13 +1775,13 @@ function perk_doorsense_outlinedoor(var_dadbe427bdd6c4d, var_b0aeb7fba823276f, d
     }
     foreach (enemy in enemies) {
         if (perk_doorsense_othersideofdoorcheck(var_dadbe427bdd6c4d, enemy, door)) {
-            outlineid = namespace_cbd3754a0c69cc63::outlineenableforplayer(door, var_dadbe427bdd6c4d, "outline_nodepth_orange", "equipment");
+            outlineid = scripts/mp/utility/outline::outlineenableforplayer(door, var_dadbe427bdd6c4d, "outline_nodepth_orange", "equipment");
             thread perk_doorsense_trackoutlinedisable(outlineid, door);
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5daf
 // Size: 0x115
@@ -1788,13 +1797,13 @@ function perk_doorsense_outlineenemies(var_dadbe427bdd6c4d, var_b0aeb7fba823276f
     }
     foreach (enemy in enemies) {
         if (perk_doorsense_othersideofdoorcheck(var_dadbe427bdd6c4d, enemy, door)) {
-            outlineid = namespace_cbd3754a0c69cc63::outlineenableforplayer(enemy, var_dadbe427bdd6c4d, "outline_nodepth_orange", "equipment");
+            outlineid = scripts/mp/utility/outline::outlineenableforplayer(enemy, var_dadbe427bdd6c4d, "outline_nodepth_orange", "equipment");
             thread perk_doorsense_trackoutlinedisable(outlineid, enemy);
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ecb
 // Size: 0xcd
@@ -1802,40 +1811,40 @@ function perk_doorsense_othersideofdoorcheck(player1, player2, door) {
     var_6555b4d96764d0bb = vectornormalize(anglestoright(door.angles));
     var_8711ec2c9d549d05 = vectornormalize(player1.origin - door.origin);
     var_a663fe911064ac1c = vectornormalize(player2.origin - door.origin);
-    var_7f2dacbcad6f9180 = vectordot(var_6555b4d96764d0bb, var_8711ec2c9d549d05);
-    var_7f2dafbcad6f9819 = vectordot(var_6555b4d96764d0bb, var_a663fe911064ac1c);
-    if (var_7f2dacbcad6f9180 > 0 && var_7f2dafbcad6f9819 < 0 || var_7f2dacbcad6f9180 < 0 && var_7f2dafbcad6f9819 > 0) {
-        return 1;
+    dotplayer1 = vectordot(var_6555b4d96764d0bb, var_8711ec2c9d549d05);
+    dotplayer2 = vectordot(var_6555b4d96764d0bb, var_a663fe911064ac1c);
+    if (dotplayer1 > 0 && dotplayer2 < 0 || dotplayer1 < 0 && dotplayer2 > 0) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5fa0
 // Size: 0x23
 function perk_doorsense_trackoutlinedisable(outlineid, player) {
     wait(0.2);
-    namespace_cbd3754a0c69cc63::outlinedisable(outlineid, player);
+    scripts/mp/utility/outline::outlinedisable(outlineid, player);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5fca
 // Size: 0x57
 function onplayerspawned() {
     var_66ee62bfcef7c9e5 = _hasperk("specialty_door_breach") || getdvarint(@"hash_b75e6afff090e790", 0) == 1;
-    namespace_66efdc90612cfc0a::updatealldoorslockvisibilityforplayer(self, var_66ee62bfcef7c9e5);
+    scripts/mp/door::updatealldoorslockvisibilityforplayer(self, var_66ee62bfcef7c9e5);
     var_1e635a556969499b = _hasperk("specialty_door_alarm");
-    namespace_66efdc90612cfc0a::updatealldoorsalarmvisibilityforplayer(self, var_1e635a556969499b);
+    scripts/mp/door::updatealldoorsalarmvisibilityforplayer(self, var_1e635a556969499b);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6028
 // Size: 0xa1
 function updatelockpromptvisibility() {
-    if (namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     while (!isdefined(level.players)) {
@@ -1847,7 +1856,7 @@ function updatelockpromptvisibility() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60d0
 // Size: 0x6b
@@ -1857,7 +1866,7 @@ function updatealldoorslockvisibilityforplayer(player, var_66ee62bfcef7c9e5) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6142
 // Size: 0x108
@@ -1865,11 +1874,11 @@ function updatelockpromptvisibilityforplayer(player, visibility) {
     if (!isdefined(self.lockprompt)) {
         return;
     }
-    var_37914a1eabcaebe2 = self.state == 0 || self.state == 7;
-    if (var_37914a1eabcaebe2 && isdefined(self.otherdoor)) {
-        var_37914a1eabcaebe2 = self.otherdoor.state == 0 || self.otherdoor.state == 7;
+    statecheck = self.state == 0 || self.state == 7;
+    if (statecheck && isdefined(self.otherdoor)) {
+        statecheck = self.otherdoor.state == 0 || self.otherdoor.state == 7;
     }
-    if (!istrue(self.breaching) && var_37914a1eabcaebe2) {
+    if (!istrue(self.breaching) && statecheck) {
         if (visibility) {
             self.lockprompt showtoplayer(player);
             self.lockprompt enableplayeruse(player);
@@ -1877,18 +1886,18 @@ function updatelockpromptvisibilityforplayer(player, visibility) {
             self.lockprompt hidefromplayer(player);
             self.lockprompt disableplayeruse(player);
         }
-    } else {
-        self.lockprompt hidefromplayer(player);
-        self.lockprompt disableplayeruse(player);
+        return;
     }
+    self.lockprompt hidefromplayer(player);
+    self.lockprompt disableplayeruse(player);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6251
 // Size: 0xd9
 function lockmonitor() {
-    if (!isdefined(self.lockprompt) || self.islean || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (!isdefined(self.lockprompt) || self.islean || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     self endon("stateChanged");
@@ -1900,7 +1909,7 @@ function lockmonitor() {
     self.lockprompt sethintstring("MP/DOOR_USE_LOCK");
     self.lockprompt setuseholdduration("duration_medium");
     updatelockpromptvisibility();
-    while (1) {
+    while (true) {
         player = self.lockprompt waittill("trigger");
         if (!isreallyalive(player)) {
             continue;
@@ -1915,7 +1924,7 @@ function lockmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6331
 // Size: 0x2d
@@ -1926,12 +1935,12 @@ function lockdoor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6365
 // Size: 0x8b
 function updatealarmpromptvisibility() {
-    if (namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     while (!isdefined(level.players)) {
@@ -1943,7 +1952,7 @@ function updatealarmpromptvisibility() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63f7
 // Size: 0x6b
@@ -1953,35 +1962,35 @@ function updatealldoorsalarmvisibilityforplayer(player, var_1e635a556969499b) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6469
 // Size: 0x12b
-function updatealarmpromptsvisibilityforplayer(player, var_647ad2e497e12892) {
+function updatealarmpromptsvisibilityforplayer(player, canseeprompt) {
     if (!isdefined(self.alarmprompts)) {
         return;
     }
-    foreach (var_ae098e74b36ddbc4 in self.alarmprompts) {
-        var_4e57934d9471dd9e = var_647ad2e497e12892 && self.state == 0 || self.state == 8 && isdefined(self.dooralarmprompt) && var_ae098e74b36ddbc4 == self.dooralarmprompt;
-        if (var_4e57934d9471dd9e && isdefined(self.otherdoor)) {
-            var_4e57934d9471dd9e = var_647ad2e497e12892 && self.otherdoor.state == 0 || self.state == 8 && var_ae098e74b36ddbc4 == self.dooralarmprompt;
+    foreach (alarmprompt in self.alarmprompts) {
+        visiblestate = canseeprompt && self.state == 0 || self.state == 8 && isdefined(self.dooralarmprompt) && alarmprompt == self.dooralarmprompt;
+        if (visiblestate && isdefined(self.otherdoor)) {
+            visiblestate = canseeprompt && self.otherdoor.state == 0 || self.state == 8 && alarmprompt == self.dooralarmprompt;
         }
-        if (var_4e57934d9471dd9e) {
-            var_ae098e74b36ddbc4 showtoplayer(player);
-            var_ae098e74b36ddbc4 enableplayeruse(player);
-        } else {
-            var_ae098e74b36ddbc4 hidefromplayer(player);
-            var_ae098e74b36ddbc4 disableplayeruse(player);
+        if (visiblestate) {
+            alarmprompt showtoplayer(player);
+            alarmprompt enableplayeruse(player);
+            continue;
         }
+        alarmprompt hidefromplayer(player);
+        alarmprompt disableplayeruse(player);
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x659b
 // Size: 0x103
 function alarmmonitor() {
-    if (self.islean || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (self.islean || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     self endon("stateChanged");
@@ -1990,24 +1999,24 @@ function alarmmonitor() {
             waitframe();
         }
     }
-    foreach (var_ae098e74b36ddbc4 in self.alarmprompts) {
-        var_ae098e74b36ddbc4 sethintstring("MP/DOOR_USE_ALARM");
-        var_ae098e74b36ddbc4 setuseholdduration("duration_medium");
+    foreach (alarmprompt in self.alarmprompts) {
+        alarmprompt sethintstring("MP/DOOR_USE_ALARM");
+        alarmprompt setuseholdduration("duration_medium");
     }
     updatealarmpromptvisibility();
-    foreach (var_ae098e74b36ddbc4 in self.alarmprompts) {
-        thread _alarmmonitorinternal(var_ae098e74b36ddbc4);
+    foreach (alarmprompt in self.alarmprompts) {
+        thread _alarmmonitorinternal(alarmprompt);
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66a5
 // Size: 0x6f
-function _alarmmonitorinternal(var_ae098e74b36ddbc4) {
+function _alarmmonitorinternal(alarmprompt) {
     self endon("stateChanged");
-    while (1) {
-        player = var_ae098e74b36ddbc4 waittill("trigger");
+    while (true) {
+        player = alarmprompt waittill("trigger");
         if (self.state != 0) {
             continue;
         }
@@ -2020,26 +2029,26 @@ function _alarmmonitorinternal(var_ae098e74b36ddbc4) {
         if (player isusingremote()) {
             continue;
         }
-        thread alarmdoor(player, var_ae098e74b36ddbc4);
+        thread alarmdoor(player, alarmprompt);
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x671b
 // Size: 0x18b
-function alarmdoor(var_c1e072a8515cd2c1, var_ae098e74b36ddbc4) {
+function alarmdoor(alarmowner, alarmprompt) {
     doorpos = self gettagorigin("tag_door_handle");
-    playsoundatpos(var_ae098e74b36ddbc4.origin, "mp_door_alarm_on");
-    self.dooralarment = spawn("script_model", var_ae098e74b36ddbc4.origin);
+    playsoundatpos(alarmprompt.origin, "mp_door_alarm_on");
+    self.dooralarment = spawn("script_model", alarmprompt.origin);
     self.dooralarment setmodel("shardball_wm");
     self.dooralarment.angles = self.angles;
     self.dooralarment linkto(self);
-    self.dooralarment setentityowner(var_c1e072a8515cd2c1);
-    self.dooralarment setotherent(var_c1e072a8515cd2c1);
+    self.dooralarment setentityowner(alarmowner);
+    self.dooralarment setotherent(alarmowner);
     self.dooralarment setscriptablepartstate("effects", "planted", 0);
-    self.dooralarmowner = var_c1e072a8515cd2c1;
-    self.dooralarmprompt = var_ae098e74b36ddbc4;
+    self.dooralarmowner = alarmowner;
+    self.dooralarmprompt = alarmprompt;
     self.dooralarmowner.alarmeddoors = array_add(self.dooralarmowner.alarmeddoors, self);
     while (self.dooralarmowner.alarmeddoors.size > 3) {
         var_3ac146be30c82b22 = self.dooralarmowner.alarmeddoors[0];
@@ -2051,12 +2060,12 @@ function alarmdoor(var_c1e072a8515cd2c1, var_ae098e74b36ddbc4) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68ad
 // Size: 0x132
 function removealarmmonitor() {
-    if (!isdefined(self.dooralarmprompt) || self.islean || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (!isdefined(self.dooralarmprompt) || self.islean || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     self endon("stateChanged");
@@ -2070,7 +2079,7 @@ function removealarmmonitor() {
     self.dooralarmprompt.owner = self.dooralarmowner;
     self.dooralarmprompt.team = self.dooralarmowner.team;
     updatealarmpromptvisibility();
-    while (1) {
+    while (true) {
         player = self.dooralarmprompt waittill("trigger");
         if (self.state != 8) {
             continue;
@@ -2088,12 +2097,12 @@ function removealarmmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69e6
 // Size: 0x9a
 function disownalarmmonitor() {
-    if (!isdefined(self.dooralarmprompt) || self.islean || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (!isdefined(self.dooralarmprompt) || self.islean || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     self endon("stateChanged");
@@ -2102,7 +2111,7 @@ function disownalarmmonitor() {
             waitframe();
         }
     }
-    while (1) {
+    while (true) {
         self.dooralarmowner waittill_any_3("joined_team", "joined_spectators", "disconnect");
         if (self.state != 8) {
             return;
@@ -2111,7 +2120,7 @@ function disownalarmmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a87
 // Size: 0xb4
@@ -2131,7 +2140,7 @@ function removealarmdoor(playsound) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b42
 // Size: 0x18f
@@ -2139,43 +2148,43 @@ function checktriggeralarm(victim) {
     if (self.state != 8) {
         return;
     }
-    var_49a4ee9cdb34af57 = self;
+    alarmeddoor = self;
     if (!isdefined(self.dooralarment) && isdefined(self.otherdoor)) {
-        var_49a4ee9cdb34af57 = self.otherdoor;
+        alarmeddoor = self.otherdoor;
     }
-    if (!isdefined(var_49a4ee9cdb34af57.dooralarmowner)) {
+    if (!isdefined(alarmeddoor.dooralarmowner)) {
         return;
     }
-    var_dd7de82cb1c47a2b = var_49a4ee9cdb34af57.dooralarment;
-    var_c1e072a8515cd2c1 = var_49a4ee9cdb34af57.dooralarmowner;
-    var_49a4ee9cdb34af57.dooralarmowner.alarmeddoors = array_remove(var_49a4ee9cdb34af57.dooralarmowner.alarmeddoors, var_49a4ee9cdb34af57);
-    var_49a4ee9cdb34af57.dooralarment = undefined;
-    var_49a4ee9cdb34af57.dooralarmowner = undefined;
-    var_49a4ee9cdb34af57.dooralarmprompt = undefined;
-    var_c1e072a8515cd2c1 namespace_58a74e7d54b56e8d::givescorefortriggeredalarmeddoor();
+    alarment = alarmeddoor.dooralarment;
+    alarmowner = alarmeddoor.dooralarmowner;
+    alarmeddoor.dooralarmowner.alarmeddoors = array_remove(alarmeddoor.dooralarmowner.alarmeddoors, alarmeddoor);
+    alarmeddoor.dooralarment = undefined;
+    alarmeddoor.dooralarmowner = undefined;
+    alarmeddoor.dooralarmprompt = undefined;
+    alarmowner scripts/mp/killstreaks/killstreaks::givescorefortriggeredalarmeddoor();
     if (isdefined(self.otherdoor)) {
         self.otherdoor thread changestate(0);
     }
-    if (istrue(namespace_f8065cafc523dba5::playersareenemies(victim, var_c1e072a8515cd2c1))) {
-        var_dd7de82cb1c47a2b playloopsound("mp_door_alarm_lp");
+    if (istrue(scripts/cp_mp/utility/player_utility::playersareenemies(victim, alarmowner))) {
+        alarment playloopsound("mp_door_alarm_lp");
         pinglocationenemyteams(self.origin, victim.team);
-        var_dd7de82cb1c47a2b setscriptablepartstate("effects", "triggered", 0);
+        alarment setscriptablepartstate("effects", "triggered", 0);
         wait(4);
-        var_dd7de82cb1c47a2b stoploopsound();
-        var_dd7de82cb1c47a2b delete();
-    } else {
-        playsoundatpos(var_dd7de82cb1c47a2b.origin, "mp_door_alarm_off");
-        var_dd7de82cb1c47a2b setscriptablepartstate("effects", "neutral", 0);
-        var_dd7de82cb1c47a2b delete();
+        alarment stoploopsound();
+        alarment delete();
+        return;
     }
+    playsoundatpos(alarment.origin, "mp_door_alarm_off");
+    alarment setscriptablepartstate("effects", "neutral", 0);
+    alarment delete();
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6cd8
 // Size: 0x6a
 function ajarmonitor() {
-    if (self.islean || namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (self.islean || scripts/mp/utility/game::runleanthreadmode()) {
         return;
     }
     if (!istrue(self.issaloonstyle)) {
@@ -2184,7 +2193,7 @@ function ajarmonitor() {
     self endon("stateChanged");
     self notify("ajarMonitor");
     self endon("ajarMonitor");
-    while (1) {
+    while (true) {
         waitframe();
         waittillframeend();
         if (self.otherdoor.state != 0) {
@@ -2193,7 +2202,7 @@ function ajarmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6d49
 // Size: 0x122
@@ -2207,7 +2216,7 @@ function breachmonitor() {
         self.doorcenter = self.origin + anglestoforward(self.angles) * self.length * 0.5 + anglestoup(self.angles) * self.height * 0.5;
     }
     thread updatelocklight("lockedDoor");
-    while (1) {
+    while (true) {
         player = self.lockprompt waittill("trigger");
         if (player meleebuttonpressed()) {
             continue;
@@ -2228,7 +2237,7 @@ function breachmonitor() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e72
 // Size: 0x15
@@ -2236,7 +2245,7 @@ function breachdoor(player) {
     thread plantbreach(player);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e8e
 // Size: 0x2b7
@@ -2259,12 +2268,12 @@ function monitorbreachmelee() {
     angles = undefined;
     normal = undefined;
     inflictor = undefined;
-    while (1) {
-        inflictor = normal = angles = origin = objweapon = idflags = partname = tagname = modelname = meansofdeath = point = direction_vec = attacker = damage = self waittill("damage");
+    while (true) {
+        damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, origin, angles, normal, inflictor = self waittill("damage");
         if (isdefined(meansofdeath) && !istrue(self.breaching)) {
             if (meansofdeath == "MOD_MELEE" || meansofdeath == "MOD_EXPLOSIVE" || meansofdeath == "MOD_GRENADE" || meansofdeath == "MOD_GRENADE_SPLASH" || meansofdeath == "MOD_PROJECTILE") {
-                var_c81a61ae7e6e7025 = isdefined(objweapon) && isdefined(objweapon.basename) && (objweapon.basename == "molotov_mp" || objweapon.basename == "thermite_mp" || objweapon.basename == "thermite_ap_mp" || objweapon.basename == "thermite_av_mp");
-                if (var_c81a61ae7e6e7025) {
+                ismolotov = isdefined(objweapon) && isdefined(objweapon.basename) && (objweapon.basename == "molotov_mp" || objweapon.basename == "thermite_mp" || objweapon.basename == "thermite_ap_mp" || objweapon.basename == "thermite_av_mp");
+                if (ismolotov) {
                     continue;
                 }
                 self.lockedmeleehealth = self.lockedmeleehealth - damage;
@@ -2278,15 +2287,15 @@ function monitorbreachmelee() {
                     }
                     thread updatelocklight("off");
                     thread bashopen(attacker, attacker.origin);
-                } else {
-                    playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_wood_double_bash");
+                    continue;
                 }
+                playsoundatpos(self.origin + (0, 0, 42), "scrpt_door_wood_double_bash");
             }
         }
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x714c
 // Size: 0x3df
@@ -2302,8 +2311,8 @@ function plantbreach(player) {
     right = anglestoright(angles);
     normal = vectornormalize(player.origin - self.origin);
     dot = vectordot(right, normal);
-    var_4fbd3851a4b84b8 = dot > 0;
-    if (var_4fbd3851a4b84b8) {
+    openleft = dot > 0;
+    if (openleft) {
         var_c5b5db793ca45dd3 = self.rightplantorg;
         var_8ec84979cf48b441 = self.rightplantang;
     } else {
@@ -2340,24 +2349,24 @@ function plantbreach(player) {
     }
     player queuedialogforplayer("dx_mpp_" + faction + "_breach_plant", "cop_breach_plant", 2);
     thread create_player_rig(player, "planter");
-    scenenode thread namespace_4e680905778c0f0f::anim_player_solo(player, player.player_rig, "plant");
-    var_f9faefd9721cae01 = spawn("script_model", var_c5b5db793ca45dd3);
-    var_f9faefd9721cae01 setmodel("offhand_wm_c4");
-    var_f9faefd9721cae01.animname = "c4";
-    var_f9faefd9721cae01 useanimtree(%script_model);
-    self.plantedbomb = var_f9faefd9721cae01;
-    scenenode thread anim_single_solo(var_f9faefd9721cae01, "plant");
+    scenenode thread scripts/mp/anim::anim_player_solo(player, player.player_rig, "plant");
+    wm_c4 = spawn("script_model", var_c5b5db793ca45dd3);
+    wm_c4 setmodel("offhand_wm_c4");
+    wm_c4.animname = "c4";
+    wm_c4 useanimtree(%script_model);
+    self.plantedbomb = wm_c4;
+    scenenode thread anim_single_solo(wm_c4, "plant");
     animlength = getanimlength(level.scr_anim["planter"]["plant"]);
-    var_84d825d7e4a24fde = 0.5;
-    wait(animlength - var_84d825d7e4a24fde);
+    armedtimeoffset = 0.5;
+    wait(animlength - armedtimeoffset);
     if (istrue(self.cancelplant)) {
         self.breaching = 0;
         thread updatelockpromptvisibility();
         return 0;
     }
-    thread bomb_planted_think(player, var_4fbd3851a4b84b8);
+    thread bomb_planted_think(player, openleft);
     givebreachscore(player);
-    wait(var_84d825d7e4a24fde);
+    wait(armedtimeoffset);
     if (player isviewmodelanimplaying()) {
         player stopviewmodelanim();
     }
@@ -2366,12 +2375,12 @@ function plantbreach(player) {
     return 1;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7533
 // Size: 0x34d
-function bomb_planted_think(player, var_4fbd3851a4b84b8) {
-    var_9d423f29a3f3ffe = player.team;
+function bomb_planted_think(player, openleft) {
+    plantedteam = player.team;
     self.defused = 0;
     if (!isdefined(self.breachindex)) {
         if (!isdefined(level.breachindex)) {
@@ -2381,22 +2390,22 @@ function bomb_planted_think(player, var_4fbd3851a4b84b8) {
         }
         self.breachindex = level.breachindex;
     }
-    bomb_fuse_think(var_9d423f29a3f3ffe);
+    bomb_fuse_think(plantedteam);
     if (!self.defused) {
         self.doorcenter = self.origin + anglestoforward(self.angles) * self.length * 0.5 + anglestoup(self.angles) * self.height * 0.5;
         explosionorigin = self.doorcenter;
-        if (var_4fbd3851a4b84b8) {
-            var_383cfb84041052a4 = self.rightplantang;
+        if (openleft) {
+            explosionang = self.rightplantang;
         } else {
-            var_383cfb84041052a4 = self.leftplantang;
+            explosionang = self.leftplantang;
         }
-        explosioneffect = spawnfx(level._effect["breach_explode"], explosionorigin, anglestoforward(var_383cfb84041052a4) * -1, (0, 0, 1));
+        explosioneffect = spawnfx(level._effect["breach_explode"], explosionorigin, anglestoforward(explosionang) * -1, (0, 0, 1));
         triggerfx(explosioneffect);
         physicsexplosionsphere(explosionorigin, 200, 100, 3);
         playrumbleonposition("grenade_rumble", explosionorigin);
         earthquake(0.5, 1, explosionorigin, 1500);
-        player _launchgrenade("flash_grenade_mp", self.plantedbomb.origin + anglestoforward(var_383cfb84041052a4) * 100, (0, 0, 0), 0.05, 1);
-        player _launchgrenade("concussion_grenade_mp", self.plantedbomb.origin + anglestoforward(var_383cfb84041052a4) * 100, (0, 0, 0), 0.05, 1);
+        player _launchgrenade("flash_grenade_mp", self.plantedbomb.origin + anglestoforward(explosionang) * 100, (0, 0, 0), 0.05, 1);
+        player _launchgrenade("concussion_grenade_mp", self.plantedbomb.origin + anglestoforward(explosionang) * 100, (0, 0, 0), 0.05, 1);
         wait(0.1);
         if (isdefined(player)) {
             self.plantedbomb radiusdamage(self.plantedbomb.origin, 50, 10, 5, player, "MOD_EXPLOSIVE", "bomb_site_mp");
@@ -2420,7 +2429,7 @@ function bomb_planted_think(player, var_4fbd3851a4b84b8) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7887
 // Size: 0x18f
@@ -2428,13 +2437,13 @@ function bomb_fuse_think(team) {
     self notify("breach_planted");
     self.timerobject = spawn("script_model", self.plantedbomb.origin);
     currenttime = gettime();
-    var_f28399727742eb23 = int(currenttime + 1000);
-    setomnvar("ui_ingame_timer_" + self.breachindex, var_f28399727742eb23);
+    bombendtime = int(currenttime + 1000);
+    setomnvar("ui_ingame_timer_" + self.breachindex, bombendtime);
     setomnvar("ui_ingame_timer_ent_" + self.breachindex, self.timerobject);
-    var_c301d652d9a73075 = var_f28399727742eb23 - currenttime;
+    var_c301d652d9a73075 = bombendtime - currenttime;
     while (!self.defused && var_c301d652d9a73075 > 0) {
         currenttime = gettime();
-        var_c301d652d9a73075 = var_f28399727742eb23 - currenttime;
+        var_c301d652d9a73075 = bombendtime - currenttime;
         if (var_c301d652d9a73075 < 1500) {
             if (var_c301d652d9a73075 <= 250) {
                 self.plantedbomb playsound("breach_warning_beep_05");
@@ -2459,14 +2468,14 @@ function bomb_fuse_think(team) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a1d
 // Size: 0x75
 function watchplayerdeath(player) {
     self endon("breach_planted");
     self.cancelplant = 0;
-    while (1) {
+    while (true) {
         if (!isdefined(player) || !isreallyalive(player)) {
             if (isdefined(self.plantedbomb)) {
                 self.plantedbomb delete();
@@ -2480,7 +2489,7 @@ function watchplayerdeath(player) {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a99
 // Size: 0x3
@@ -2488,7 +2497,7 @@ function script_model_anims() {
     
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7aa3
 // Size: 0xe9
@@ -2510,7 +2519,7 @@ function create_player_rig(player, animname, var_486db5fa512a3b6b) {
     remove_player_rig(player);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7b93
 // Size: 0x92
@@ -2529,7 +2538,7 @@ function remove_player_rig(player) {
     player.player_rig = undefined;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c2c
 // Size: 0x1d
@@ -2537,18 +2546,18 @@ function watch_remove_rig(struct) {
     waittill_any_2("remove_rig", "death_or_disconnect");
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c50
 // Size: 0x47
 function givebreachscore(player) {
     event = #"breach";
-    points = namespace_62c556437da28f50::getscoreinfovalue(event);
-    player thread namespace_62c556437da28f50::giverankxp(event, points);
-    player thread namespace_62c556437da28f50::scoreeventpopup(event);
+    points = scripts/mp/rank::getscoreinfovalue(event);
+    player thread scripts/mp/rank::giverankxp(event, points);
+    player thread scripts/mp/rank::scoreeventpopup(event);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c9e
 // Size: 0x95
@@ -2569,7 +2578,7 @@ function givegunless() {
     return success;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d3b
 // Size: 0xa9
@@ -2590,10 +2599,10 @@ function takegunless() {
     }
     self.takinggunless = 0;
     self.gunnlessweapon = undefined;
-    val::function_c9d0b43701bdba00("gunless");
+    val::reset_all("gunless");
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7deb
 // Size: 0x58
@@ -2603,13 +2612,13 @@ function updatelocklight(state) {
     }
     self notify("updateLockLight");
     self endon("updateLockLight");
-    if (!namespace_4b0406965e556711::levelflag("scriptables_ready")) {
-        namespace_4b0406965e556711::levelflagwait("scriptables_ready");
+    if (!scripts/mp/flags::levelflag("scriptables_ready")) {
+        scripts/mp/flags::levelflagwait("scriptables_ready");
     }
     self.locklight setscriptablepartstate("marker", state);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7e4a
 // Size: 0x37e
@@ -2622,12 +2631,12 @@ function linkdoubledoors() {
             if (otherdoor == door) {
                 continue;
             }
-            var_349fa0ac676f930 = door gettagorigin("tag_door_handle", 1);
-            var_349fd0ac676ffc9 = otherdoor gettagorigin("tag_door_handle", 1);
-            if (!isdefined(var_349fa0ac676f930) || !isdefined(var_349fd0ac676ffc9)) {
+            doorpos1 = door gettagorigin("tag_door_handle", 1);
+            doorpos2 = otherdoor gettagorigin("tag_door_handle", 1);
+            if (!isdefined(doorpos1) || !isdefined(doorpos2)) {
                 continue;
             }
-            distsq = distancesquared(var_349fa0ac676f930, var_349fd0ac676ffc9);
+            distsq = distancesquared(doorpos1, doorpos2);
             if (distsq < 225) {
                 if (distsq < 100) {
                     door.issaloonstyle = 1;
@@ -2638,18 +2647,18 @@ function linkdoubledoors() {
                 if (isdefined(door.lockprompt) && isdefined(otherdoor.lockprompt)) {
                     otherdoor.lockprompt delete();
                     otherdoor.lockprompt = door.lockprompt;
-                    var_f95feb63c772e28f = (var_349fa0ac676f930 + var_349fd0ac676ffc9) * 0.5 + (0, 0, 15);
+                    avgpos = (doorpos1 + doorpos2) * 0.5 + (0, 0, 15);
                     door.lockprompt unlink();
-                    door.lockprompt.origin = var_f95feb63c772e28f;
+                    door.lockprompt.origin = avgpos;
                     door thread changestate(door.state);
                     otherdoor thread changestate(otherdoor.state);
-                    door.leftplantorg = (var_f95feb63c772e28f[0], var_f95feb63c772e28f[1], door.origin[2]) + anglestoright(door.baseangles) * -24.5;
+                    door.leftplantorg = (avgpos[0], avgpos[1], door.origin[2]) + anglestoright(door.baseangles) * -24.5;
                     door.leftplantang = (0, door.baseangles[1] - 90, 0);
-                    door.rightplantorg = (var_f95feb63c772e28f[0], var_f95feb63c772e28f[1], door.origin[2]) + anglestoright(door.baseangles) * 24.5;
+                    door.rightplantorg = (avgpos[0], avgpos[1], door.origin[2]) + anglestoright(door.baseangles) * 24.5;
                     door.rightplantang = (0, door.baseangles[1] + 90, 0);
-                    otherdoor.leftplantorg = (var_f95feb63c772e28f[0], var_f95feb63c772e28f[1], otherdoor.origin[2]) + anglestoright(otherdoor.baseangles) * -24.5;
+                    otherdoor.leftplantorg = (avgpos[0], avgpos[1], otherdoor.origin[2]) + anglestoright(otherdoor.baseangles) * -24.5;
                     otherdoor.leftplantang = (0, otherdoor.baseangles[1] - 90, 0);
-                    otherdoor.rightplantorg = (var_f95feb63c772e28f[0], var_f95feb63c772e28f[1], otherdoor.origin[2]) + anglestoright(otherdoor.baseangles) * 24.5;
+                    otherdoor.rightplantorg = (avgpos[0], avgpos[1], otherdoor.origin[2]) + anglestoright(otherdoor.baseangles) * 24.5;
                     otherdoor.rightplantang = (0, otherdoor.baseangles[1] + 90, 0);
                 }
             }
@@ -2657,7 +2666,7 @@ function linkdoubledoors() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x81cf
 // Size: 0x36
@@ -2671,7 +2680,7 @@ function door_createnavobstacle() {
     self.doornavobstacle = createnavobstaclebyent(self.clipent);
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x820c
 // Size: 0x2a
@@ -2683,7 +2692,7 @@ function door_destroynavobstacle() {
     self.doornavobstacle = undefined;
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x823d
 // Size: 0x21
@@ -2693,7 +2702,7 @@ function door_enableaudioportal() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8265
 // Size: 0x7b
@@ -2706,7 +2715,7 @@ function door_disableaudioportal() {
     }
 }
 
-// Namespace door/namespace_66efdc90612cfc0a
+// Namespace door / scripts/mp/door
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x82e7
 // Size: 0x1e

@@ -2,7 +2,7 @@
 #using scripts\mp\hud_util.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\callback_group.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_2669878cf5a1b6bc;
@@ -28,7 +28,7 @@
 
 #namespace namespace_51822ef7d5f04daa;
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a9
 // Size: 0x2f
@@ -37,28 +37,28 @@ function stoppingpower_init() {
     level.onweapondroppickedup callback_subscribe(&stoppingpower_onweaponpickedup, level);
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2df
 // Size: 0x34e
 function stoppingpower_beginuse() {
-    var_f4e6d9afe1e11685 = self.lastnormalweaponobj;
+    playerweaponobj = self.lastnormalweaponobj;
     var_8de014639f689574 = nullweapon();
-    if (namespace_68e641469fde3fa7::ismeleeonly(var_f4e6d9afe1e11685) || namespace_68e641469fde3fa7::issuperweapon(var_f4e6d9afe1e11685) || namespace_e0ee43ef2dddadaa::iskillstreakweapon(var_f4e6d9afe1e11685) || namespace_68e641469fde3fa7::isgamemodeweapon(var_f4e6d9afe1e11685) || namespace_68e641469fde3fa7::issinglehitweapon(var_f4e6d9afe1e11685.basename) || !stoppingpower_isvalidprimaryoralt(var_f4e6d9afe1e11685) || var_f4e6d9afe1e11685.basename == "iw8_lm_dblmg_mp" || var_f4e6d9afe1e11685.basename == "iw9_me_fists_mp") {
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("hud", "showErrorMessage")) {
-            self [[ namespace_3c37cb17ade254d::getsharedfunc("hud", "showErrorMessage") ]]("MP/SUPPORT_BOX_INCOMPAT");
+    if (scripts/mp/utility/weapon::ismeleeonly(playerweaponobj) || scripts/mp/utility/weapon::issuperweapon(playerweaponobj) || namespace_e0ee43ef2dddadaa::iskillstreakweapon(playerweaponobj) || scripts/mp/utility/weapon::isgamemodeweapon(playerweaponobj) || scripts/mp/utility/weapon::issinglehitweapon(playerweaponobj.basename) || !stoppingpower_isvalidprimaryoralt(playerweaponobj) || playerweaponobj.basename == "iw8_lm_dblmg_mp" || playerweaponobj.basename == "iw9_me_fists_mp") {
+        if (scripts/engine/utility::issharedfuncdefined("hud", "showErrorMessage")) {
+            self [[ scripts/engine/utility::getsharedfunc("hud", "showErrorMessage") ]]("MP/SUPPORT_BOX_INCOMPAT");
         }
-        return 0;
+        return false;
     }
     result = stoppingpower_cancelreload();
     if (!istrue(result)) {
-        return 0;
+        return false;
     }
-    if (self isalternatemode(var_f4e6d9afe1e11685)) {
-        var_8de014639f689574 = var_f4e6d9afe1e11685;
-        var_f4e6d9afe1e11685 = var_f4e6d9afe1e11685 getnoaltweapon();
+    if (self isalternatemode(playerweaponobj)) {
+        var_8de014639f689574 = playerweaponobj;
+        playerweaponobj = playerweaponobj getnoaltweapon();
     } else {
-        var_8de014639f689574 = var_f4e6d9afe1e11685 getaltweapon();
+        var_8de014639f689574 = playerweaponobj getaltweapon();
     }
     var_12a372e8caa042bb = [];
     stockammo = 0;
@@ -66,20 +66,20 @@ function stoppingpower_beginuse() {
     if (!isnullweapon(var_8de014639f689574)) {
         var_12a372e8caa042bb[var_12a372e8caa042bb.size] = var_8de014639f689574;
     }
-    var_12a372e8caa042bb[var_12a372e8caa042bb.size] = var_f4e6d9afe1e11685;
+    var_12a372e8caa042bb[var_12a372e8caa042bb.size] = playerweaponobj;
     foreach (weaponobj in var_12a372e8caa042bb) {
         isakimbo = 0;
         if (weaponobj.isdualwield) {
             isakimbo = 1;
         }
-        if (issameweapon(weaponobj, var_f4e6d9afe1e11685, 0)) {
-            clipammo = namespace_3bbb5a98b932c46f::getammooverride(weaponobj);
+        if (issameweapon(weaponobj, playerweaponobj, 0)) {
+            clipammo = scripts/mp/weapons::getammooverride(weaponobj);
             var_971f8e0abbcafab8 = clipammo * 1;
             if (isakimbo) {
                 var_971f8e0abbcafab8 = var_971f8e0abbcafab8 * 2;
             }
             thread stoppingpower_givehcr(self, weaponobj, var_971f8e0abbcafab8);
-            if (1) {
+            if (true) {
                 if (isakimbo) {
                     clipammo = self getweaponammoclip(weaponobj, "left") + self getweaponammoclip(weaponobj, "right");
                     stockammo = self getweaponammostock(weaponobj);
@@ -88,34 +88,34 @@ function stoppingpower_beginuse() {
                     self setweaponammostock(weaponobj, newammo);
                     self setweaponammoclip(weaponobj, 0, "left");
                     self setweaponammoclip(weaponobj, 0, "right");
-                } else {
-                    clipammo = self getweaponammoclip(weaponobj);
-                    stockammo = self getweaponammostock(weaponobj);
-                    oldammo = clipammo + stockammo;
-                    maxammo = weaponmaxammo(weaponobj);
-                    totalammo = oldammo + var_971f8e0abbcafab8;
-                    var_c88113bfedd68cf0 = int(totalammo - maxammo);
-                    var_5b3f7d686c59ab97 = int(min(maxammo, totalammo));
-                    if (weaponobj.basename == "iw8_lm_dblmg_mp") {
-                        self setweaponammoclip(weaponobj, clipammo + var_971f8e0abbcafab8);
-                    } else {
-                        self setweaponammoclip(weaponobj, 0);
-                        if (namespace_36f464722d326bbe::isbrstylegametype()) {
-                            var_e074b618e47255fe = var_5b3f7d686c59ab97 - stockammo;
-                            namespace_3bcd40a3005712ec::br_give_weapon_ammo(weaponobj, var_e074b618e47255fe);
-                        } else {
-                            self setweaponammostock(weaponobj, var_5b3f7d686c59ab97);
-                        }
-                    }
+                    continue;
                 }
+                clipammo = self getweaponammoclip(weaponobj);
+                stockammo = self getweaponammostock(weaponobj);
+                oldammo = clipammo + stockammo;
+                maxammo = weaponmaxammo(weaponobj);
+                totalammo = oldammo + var_971f8e0abbcafab8;
+                var_c88113bfedd68cf0 = int(totalammo - maxammo);
+                newstockammo = int(min(maxammo, totalammo));
+                if (weaponobj.basename == "iw8_lm_dblmg_mp") {
+                    self setweaponammoclip(weaponobj, clipammo + var_971f8e0abbcafab8);
+                    continue;
+                }
+                self setweaponammoclip(weaponobj, 0);
+                if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+                    stockdifference = newstockammo - stockammo;
+                    scripts/mp/gametypes/br_weapons::br_give_weapon_ammo(weaponobj, stockdifference);
+                    continue;
+                }
+                self setweaponammostock(weaponobj, newstockammo);
             }
         }
     }
-    thread stoppingpower_waitforreload(var_f4e6d9afe1e11685, stockammo, var_c88113bfedd68cf0);
-    return 1;
+    thread stoppingpower_waitforreload(playerweaponobj, stockammo, var_c88113bfedd68cf0);
+    return true;
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x635
 // Size: 0x37
@@ -124,23 +124,23 @@ function stoppingpower_isvalidprimaryoralt(objweapon) {
         return 1;
     }
     underbarrel = objweapon.underbarrel;
-    return namespace_3bbb5a98b932c46f::isattachmentselectfire(objweapon, underbarrel);
+    return scripts/mp/weapons::isattachmentselectfire(objweapon, underbarrel);
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x674
 // Size: 0xa0
 function stoppingpower_waitforreload(weaponobj, stockammo, var_c88113bfedd68cf0) {
     level endon("game_ended");
     self endon("death_or_disconnect");
-    while (1) {
+    while (true) {
         if (self getcurrentprimaryweapon() != weaponobj) {
             break;
         }
         currentammo = self getweaponammoclip(weaponobj);
         if (currentammo > 0) {
-            thread namespace_44abc05161e2e2cb::showsplash("stopping_power_loaded");
+            thread scripts/mp/hud_message::showsplash("stopping_power_loaded");
             if (var_c88113bfedd68cf0 > 0) {
                 self setweaponammostock(weaponobj, stockammo + var_c88113bfedd68cf0);
             }
@@ -148,26 +148,26 @@ function stoppingpower_waitforreload(weaponobj, stockammo, var_c88113bfedd68cf0)
         }
         waitframe();
     }
-    if (namespace_3c37cb17ade254d::issharedfuncdefined("supers", "superUseFinished")) {
-        [[ namespace_3c37cb17ade254d::getsharedfunc("supers", "superUseFinished") ]]();
+    if (scripts/engine/utility::issharedfuncdefined("supers", "superUseFinished")) {
+        [[ scripts/engine/utility::getsharedfunc("supers", "superUseFinished") ]]();
     }
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x71b
 // Size: 0x76
-function stoppingpower_givehcr(player, objweapon, var_45acd1d2458698a) {
+function stoppingpower_givehcr(player, objweapon, numrounds) {
     hcrdata = spawnstruct();
     hcrdata.player = player;
     hcrdata.objweapon = objweapon;
-    hcrdata.rounds = var_45acd1d2458698a;
+    hcrdata.rounds = numrounds;
     hcrdata.gavehcr = 0;
     hcrdata.kills = 0;
     stoppingpower_givehcrdata(player, hcrdata);
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x798
 // Size: 0xc0
@@ -190,34 +190,34 @@ function stoppingpower_givehcrdata(player, hcrdata) {
     hcrdata thread stoppingpower_watchhcrweaponfire();
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x85f
 // Size: 0x49
-function stoppingpower_onweaponcreated(var_614411b9142bd852, droppingplayer, weaponobj) {
-    if (!isdefined(var_614411b9142bd852) || !isdefined(droppingplayer)) {
+function stoppingpower_onweaponcreated(weaponentity, droppingplayer, weaponobj) {
+    if (!isdefined(weaponentity) || !isdefined(droppingplayer)) {
         return;
     }
-    hcrdata = droppingplayer namespace_15e7fb65c4c78514::stoppingpower_getweaponhcrdata(weaponobj);
-    var_614411b9142bd852.hcrdata = hcrdata;
+    hcrdata = droppingplayer scripts/mp/supers/super_stoppingpower::stoppingpower_getweaponhcrdata(weaponobj);
+    weaponentity.hcrdata = hcrdata;
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8af
 // Size: 0x72
-function stoppingpower_onweaponpickedup(var_614411b9142bd852, var_480f8576be141bb4, weaponobj) {
-    if (!isdefined(var_614411b9142bd852.hcrdata)) {
+function stoppingpower_onweaponpickedup(weaponentity, var_480f8576be141bb4, weaponobj) {
+    if (!isdefined(weaponentity.hcrdata)) {
         return;
     }
-    hcrdata = var_614411b9142bd852.hcrdata;
+    hcrdata = weaponentity.hcrdata;
     hcrdata.player = var_480f8576be141bb4;
     hcrdata.gavehcr = 0;
     hcrdata.kills = 0;
     stoppingpower_givehcrdata(var_480f8576be141bb4, hcrdata);
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x928
 // Size: 0x3f
@@ -232,7 +232,7 @@ function stoppingpower_getweaponhcrdata(objweapon) {
     return self.hcrdata[id];
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x96f
 // Size: 0x19
@@ -240,10 +240,10 @@ function stoppingpower_cancelreload() {
     self endon("death_or_disconnect");
     self cancelreload();
     wait(0.05);
-    return 1;
+    return true;
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x990
 // Size: 0xbf
@@ -253,11 +253,11 @@ function stoppingpower_watchhcrweaponchange() {
     while (self.player hasweapon(self.objweapon)) {
         if (stoppingpower_ishcrweapon(self.player getcurrentweapon())) {
             if (!self.gavehcr) {
-                self.player namespace_82dcd1d5ae30ff7::giveperk("specialty_bulletdamage");
+                self.player scripts/mp/utility/perk::giveperk("specialty_bulletdamage");
                 self.gavehcr = 1;
             }
         } else if (self.gavehcr) {
-            self.player namespace_82dcd1d5ae30ff7::removeperk("specialty_bulletdamage");
+            self.player scripts/mp/utility/perk::removeperk("specialty_bulletdamage");
             self.gavehcr = 0;
         }
         self.player waittill("weapon_change");
@@ -265,7 +265,7 @@ function stoppingpower_watchhcrweaponchange() {
     thread stoppingpower_removehcr();
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa56
 // Size: 0x98
@@ -285,7 +285,7 @@ function stoppingpower_watchhcrweaponfire() {
     thread stoppingpower_removehcr();
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf5
 // Size: 0x5e
@@ -303,7 +303,7 @@ function stoppingpower_tracklastcrossbowshot(objweapon) {
     self.lastcrossbowhadstoppingpower = undefined;
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb5a
 // Size: 0x40
@@ -311,13 +311,13 @@ function stoppingpower_removehcr() {
     self notify("stoppingPower_removeHCR");
     if (isdefined(self.player)) {
         if (self.gavehcr) {
-            self.player namespace_82dcd1d5ae30ff7::removeperk("specialty_bulletdamage");
+            self.player scripts/mp/utility/perk::removeperk("specialty_bulletdamage");
         }
         stoppingpower_clearhcrdata();
     }
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba1
 // Size: 0x1f
@@ -328,7 +328,7 @@ function stoppingpower_loadoutchangeremovehcr() {
     }
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc7
 // Size: 0xac
@@ -339,11 +339,11 @@ function stoppingpower_clearhcrdata() {
         if (hcrdata == self) {
             self.player.hcrdata[id] = undefined;
         }
-        namespace_bd0162aedd8c8594::logevent_fieldupgradeexpired(self.player, level.superglobals.staticsuperdata["super_support_box"].id, self.kills, 0);
+        scripts/mp/analyticslog::logevent_fieldupgradeexpired(self.player, level.superglobals.staticsuperdata["super_support_box"].id, self.kills, 0);
     }
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc7a
 // Size: 0x64
@@ -352,25 +352,25 @@ function stoppingpower_onkill(weaponobj) {
         id = getcompleteweaponnamenoalt(weaponobj);
         hcrdata = self.hcrdata[id];
         if (isdefined(hcrdata)) {
-            namespace_3c5a4254f2b957ea::incpersstat("stoppingPowerKills", 1);
-            namespace_85d036cb78063c4a::combatrecordsuperkill("super_support_box");
+            scripts/mp/utility/stats::incpersstat("stoppingPowerKills", 1);
+            scripts/mp/supers::combatrecordsuperkill("super_support_box");
             hcrdata.kills++;
         }
     }
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xce5
 // Size: 0x6c
 function stoppingpower_ishcrweapon(objweapon) {
     var_4de6bc49eaa87870 = self.player getammotype(self.objweapon);
-    var_49a4190715712f10 = self.player getammotype(objweapon);
-    var_9438d6b1d63250f7 = var_4de6bc49eaa87870 == var_49a4190715712f10;
+    currentammotype = self.player getammotype(objweapon);
+    var_9438d6b1d63250f7 = var_4de6bc49eaa87870 == currentammotype;
     return issameweapon(objweapon, self.objweapon, 1) && var_9438d6b1d63250f7;
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd59
 // Size: 0x31
@@ -381,7 +381,7 @@ function stoppingpower_clearhcrondeath() {
     thread stoppingpower_removehcr();
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd91
 // Size: 0x29
@@ -392,7 +392,7 @@ function stoppingpower_clearhcrongameended() {
     thread stoppingpower_removehcr();
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdc1
 // Size: 0x31
@@ -403,18 +403,18 @@ function stoppingpower_clearhcronperkscleared() {
     thread stoppingpower_loadoutchangeremovehcr();
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf9
 // Size: 0x5b
 function stoppingpower_givefastreload() {
     self.player endon("death_or_disconnect");
-    self.player namespace_82dcd1d5ae30ff7::giveperk("specialty_fastreload");
+    self.player scripts/mp/utility/perk::giveperk("specialty_fastreload");
     self.player waittill_any_3("weapon_fired", "weapon_change", "stoppingPower_removeHCR");
-    self.player namespace_82dcd1d5ae30ff7::removeperk("specialty_fastreload");
+    self.player scripts/mp/utility/perk::removeperk("specialty_fastreload");
 }
 
-// Namespace namespace_51822ef7d5f04daa/namespace_15e7fb65c4c78514
+// Namespace namespace_51822ef7d5f04daa / scripts/mp/supers/super_stoppingpower
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe5b
 // Size: 0x2e
@@ -422,6 +422,6 @@ function stoppingpower_breaksprint() {
     self endon("death_or_disconnect");
     val::set("stoppingPower", "sprint", 0);
     wait(0.4);
-    val::function_c9d0b43701bdba00("stoppingPower");
+    val::reset_all("stoppingPower");
 }
 

@@ -5,9 +5,9 @@
 #using scripts\mp\gameobjects.gsc;
 #using scripts\mp\objidpoolmanager.gsc;
 
-#namespace namespace_703f8388035ace89;
+#namespace flashpoint;
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e8
 // Size: 0x1b7
@@ -50,12 +50,12 @@ function init() {
     #/
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a6
 // Size: 0x129
 function flashpoint_systemtoggle() {
-    while (1) {
+    while (true) {
         if (getdvar(@"hash_67b0bcf9de3df0b0", 0) != "0") {
             if (level.flashpoint_objectives) {
                 thread flashpoint_systemthink();
@@ -70,8 +70,8 @@ function flashpoint_systemtoggle() {
             level notify("disable_flashpoint");
             level.flashpointactive = 0;
             if (level.flashpoint_objectives) {
-                foreach (var_703f8388035ace89 in level.flashpoint_struct.flashpoints) {
-                    flashpoint_shutdown(var_703f8388035ace89);
+                foreach (flashpoint in level.flashpoint_struct.flashpoints) {
+                    flashpoint_shutdown(flashpoint);
                 }
             }
         }
@@ -79,26 +79,26 @@ function flashpoint_systemtoggle() {
     }
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d6
 // Size: 0x1ca
 function flashpoint_systemthink() {
     level endon("disable_flashpoint");
-    while (1) {
-        foreach (var_703f8388035ace89 in level.flashpoint_struct.flashpoints) {
-            var_4df1e1a017254690 = gettime();
-            if (var_4df1e1a017254690 - var_703f8388035ace89.lasteventtime > 12500) {
-                flashpoint_shutdown(var_703f8388035ace89);
-            } else {
-                if (isdefined(var_703f8388035ace89.objective) && var_4df1e1a017254690 - var_703f8388035ace89.lasteventtime >= 7500 && !istrue(var_703f8388035ace89.endingsoon)) {
-                    flashpoint_endingsoon(var_703f8388035ace89);
-                }
-                keys = getarraykeys(var_703f8388035ace89.events);
-                foreach (key in keys) {
-                    if (var_4df1e1a017254690 - key > 12500) {
-                        var_703f8388035ace89.events = array_remove_key(var_703f8388035ace89.events, key);
-                    }
+    while (true) {
+        foreach (flashpoint in level.flashpoint_struct.flashpoints) {
+            timenow = gettime();
+            if (timenow - flashpoint.lasteventtime > 12500) {
+                flashpoint_shutdown(flashpoint);
+                continue;
+            }
+            if (isdefined(flashpoint.objective) && timenow - flashpoint.lasteventtime >= 7500 && !istrue(flashpoint.endingsoon)) {
+                flashpoint_endingsoon(flashpoint);
+            }
+            keys = getarraykeys(flashpoint.events);
+            foreach (key in keys) {
+                if (timenow - key > 12500) {
+                    flashpoint.events = array_remove_key(flashpoint.events, key);
                 }
             }
         }
@@ -111,7 +111,7 @@ function flashpoint_systemthink() {
     }
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a7
 // Size: 0x231
@@ -120,229 +120,233 @@ function flashpoint_processnewevent(attacker, victim, time, eventtype) {
         return;
     }
     var_5856c0b118701a9f = (0, 0, 0);
-    if (0) {
+    if (false) {
         var_5856c0b118701a9f = (randomfloatrange(-1000, 1000), randomfloatrange(-1000, 1000), 0);
     }
     if (eventtype == "gunfire") {
         origin = attacker.origin + (0, 0, 32);
-        if (0) {
+        if (false) {
             origin = origin + var_5856c0b118701a9f;
         }
         thread playvfx(origin, "flashpoint_kill_s2");
-    } else {
-        origin = (0, 0, 0);
-        if (level.flashpoint_objectives) {
-            origin = vectorlerp(attacker.origin + (0, 0, 48), victim.origin + (0, 0, 48), 0.25);
-        } else {
-            origin = victim.origin + (0, 0, 48);
-        }
-        if (0) {
-            origin = origin + var_5856c0b118701a9f;
-        }
-        if (level.flashpoint_objectives) {
-            ent = spawn("script_model", origin);
-            var_a618a20a42198fa1 = ent array_sort_with_func(level.flashpoint_struct.flashpoints, &sortlocationsbydistance);
-            ent delete();
-            foreach (var_703f8388035ace89 in var_a618a20a42198fa1) {
-                if (distancesquared(var_703f8388035ace89.curorigin, origin) < level.flashpointmindist) {
-                    flashpoint_updatepoint(var_703f8388035ace89, origin, time, eventtype);
-                    return;
-                }
-            }
-            if (level.flashpoint_struct.flashpoints.size >= 2) {
-                flashpoint_clearoldestpoint();
-            }
-            flashpoint_createnew(origin, time, eventtype);
-        }
-        thread playvfx(origin, "flashpoint_kill_s2");
+        return;
     }
+    origin = (0, 0, 0);
+    if (level.flashpoint_objectives) {
+        origin = vectorlerp(attacker.origin + (0, 0, 48), victim.origin + (0, 0, 48), 0.25);
+    } else {
+        origin = victim.origin + (0, 0, 48);
+    }
+    if (false) {
+        origin = origin + var_5856c0b118701a9f;
+    }
+    if (level.flashpoint_objectives) {
+        ent = spawn("script_model", origin);
+        var_a618a20a42198fa1 = ent array_sort_with_func(level.flashpoint_struct.flashpoints, &sortlocationsbydistance);
+        ent delete();
+        foreach (flashpoint in var_a618a20a42198fa1) {
+            if (distancesquared(flashpoint.curorigin, origin) < level.flashpointmindist) {
+                flashpoint_updatepoint(flashpoint, origin, time, eventtype);
+                return;
+            }
+        }
+        if (level.flashpoint_struct.flashpoints.size >= 2) {
+            flashpoint_clearoldestpoint();
+        }
+        flashpoint_createnew(origin, time, eventtype);
+    }
+    thread playvfx(origin, "flashpoint_kill_s2");
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9df
 // Size: 0x8b
 function flashpoint_createnew(origin, time, eventtype) {
-    var_703f8388035ace89 = spawnstruct();
-    var_703f8388035ace89.curorigin = origin;
-    var_703f8388035ace89.lasteventtime = time;
-    var_703f8388035ace89.team = "";
-    flashpoint_addeventtoqueue(var_703f8388035ace89, time, eventtype);
-    level.flashpoint_struct.flashpoints[level.flashpoint_struct.flashpoints.size] = var_703f8388035ace89;
+    flashpoint = spawnstruct();
+    flashpoint.curorigin = origin;
+    flashpoint.lasteventtime = time;
+    flashpoint.team = "";
+    flashpoint_addeventtoqueue(flashpoint, time, eventtype);
+    level.flashpoint_struct.flashpoints[level.flashpoint_struct.flashpoints.size] = flashpoint;
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa71
 // Size: 0xd0
-function flashpoint_createmarker(var_703f8388035ace89) {
-    var_703f8388035ace89.objective = namespace_19b4203b51d56488::createobjidobject(var_703f8388035ace89.curorigin, "neutral", (0, 0, 0), undefined, "any");
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(var_703f8388035ace89.objective.objidnum, 0);
-    var_703f8388035ace89.objective.lockupdatingicons = 0;
-    namespace_5a22b6f3a56f7e9b::update_objective_icon(var_703f8388035ace89.objective.objidnum, level.iconflashpointneutral);
-    namespace_5a22b6f3a56f7e9b::update_objective_setbackground(var_703f8388035ace89.objective.objidnum, 2);
-    var_703f8388035ace89.objective.lockupdatingicons = 1;
+function flashpoint_createmarker(flashpoint) {
+    flashpoint.objective = scripts/mp/gameobjects::createobjidobject(flashpoint.curorigin, "neutral", (0, 0, 0), undefined, "any");
+    scripts/mp/objidpoolmanager::objective_set_play_intro(flashpoint.objective.objidnum, 0);
+    flashpoint.objective.lockupdatingicons = 0;
+    scripts/mp/objidpoolmanager::update_objective_icon(flashpoint.objective.objidnum, level.iconflashpointneutral);
+    scripts/mp/objidpoolmanager::update_objective_setbackground(flashpoint.objective.objidnum, 2);
+    flashpoint.objective.lockupdatingicons = 1;
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb48
 // Size: 0xf9
-function flashpoint_updatepoint(var_703f8388035ace89, var_6fc81b511db04699, time, eventtype) {
-    var_703f8388035ace89 notify("end_update");
-    var_703f8388035ace89 endon("end_update");
+function flashpoint_updatepoint(flashpoint, var_6fc81b511db04699, time, eventtype) {
+    flashpoint notify("end_update");
+    flashpoint endon("end_update");
     level endon("disable_flashpoint");
-    if (!isdefined(var_703f8388035ace89.objective) && var_703f8388035ace89.events.size >= 5) {
-        flashpoint_createmarker(var_703f8388035ace89);
+    if (!isdefined(flashpoint.objective) && flashpoint.events.size >= 5) {
+        flashpoint_createmarker(flashpoint);
     }
-    var_703f8388035ace89.endingsoon = 0;
-    var_703f8388035ace89.lasteventtime = gettime();
-    if (isdefined(var_703f8388035ace89.objective) && level.flashpoint_objectives) {
-        namespace_5a22b6f3a56f7e9b::objective_set_pulsate(var_703f8388035ace89.objective.objidnum, 0);
+    flashpoint.endingsoon = 0;
+    flashpoint.lasteventtime = gettime();
+    if (isdefined(flashpoint.objective) && level.flashpoint_objectives) {
+        scripts/mp/objidpoolmanager::objective_set_pulsate(flashpoint.objective.objidnum, 0);
     } else {
-        var_703f8388035ace89.curorigin = vectorlerp(var_703f8388035ace89.curorigin, var_6fc81b511db04699, 0.75);
+        flashpoint.curorigin = vectorlerp(flashpoint.curorigin, var_6fc81b511db04699, 0.75);
     }
     thread playvfx(var_6fc81b511db04699, "flashpoint_kill_s2");
-    flashpoint_addeventtoqueue(var_703f8388035ace89, time, eventtype);
+    flashpoint_addeventtoqueue(flashpoint, time, eventtype);
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc48
 // Size: 0xea
-function flashpoint_addeventtoqueue(var_703f8388035ace89, time, eventtype) {
-    if (!isdefined(var_703f8388035ace89.events)) {
-        var_703f8388035ace89.events = [];
+function flashpoint_addeventtoqueue(flashpoint, time, eventtype) {
+    if (!isdefined(flashpoint.events)) {
+        flashpoint.events = [];
     }
-    var_703f8388035ace89.events[time] = eventtype;
-    if (var_703f8388035ace89.events.size > 8) {
+    flashpoint.events[time] = eventtype;
+    if (flashpoint.events.size > 8) {
         var_8054fa0b4941d3ff = [];
         i = 0;
-        foreach (index, event in var_703f8388035ace89.events) {
-            if (i > var_703f8388035ace89.events.size - 8) {
+        foreach (index, event in flashpoint.events) {
+            if (i > flashpoint.events.size - 8) {
                 var_8054fa0b4941d3ff[index] = event;
             }
             i++;
         }
-        var_703f8388035ace89.events = var_8054fa0b4941d3ff;
+        flashpoint.events = var_8054fa0b4941d3ff;
     }
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd39
 // Size: 0xad
-function flashpoint_shutdown(var_703f8388035ace89) {
-    var_703f8388035ace89 notify("end_update");
-    if (isdefined(var_703f8388035ace89.objective) && level.flashpoint_objectives) {
-        var_703f8388035ace89.objective namespace_19b4203b51d56488::setvisibleteam("none");
-        var_703f8388035ace89.objective namespace_19b4203b51d56488::releaseid();
-        var_703f8388035ace89.objective.visibleteam = "none";
-        var_703f8388035ace89.objective = undefined;
+function flashpoint_shutdown(flashpoint) {
+    flashpoint notify("end_update");
+    if (isdefined(flashpoint.objective) && level.flashpoint_objectives) {
+        flashpoint.objective scripts/mp/gameobjects::setvisibleteam("none");
+        flashpoint.objective scripts/mp/gameobjects::releaseid();
+        flashpoint.objective.visibleteam = "none";
+        flashpoint.objective = undefined;
     }
-    level.flashpoint_struct.flashpoints = array_remove(level.flashpoint_struct.flashpoints, var_703f8388035ace89);
+    level.flashpoint_struct.flashpoints = array_remove(level.flashpoint_struct.flashpoints, flashpoint);
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xded
 // Size: 0x44
-function flashpoint_endingsoon(var_703f8388035ace89) {
-    var_703f8388035ace89.endingsoon = 1;
+function flashpoint_endingsoon(flashpoint) {
+    flashpoint.endingsoon = 1;
     if (level.flashpoint_objectives) {
-        namespace_5a22b6f3a56f7e9b::objective_set_pulsate(var_703f8388035ace89.objective.objidnum, 1);
+        scripts/mp/objidpoolmanager::objective_set_pulsate(flashpoint.objective.objidnum, 1);
     }
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe38
 // Size: 0x27f
-function flashpoint_checkforownerupdate(var_703f8388035ace89) {
-    var_f46de3669e2acd79 = 0;
-    allieskills = 0;
-    var_2dc841aff232fb90 = "No Change";
-    var_ab2d6f4cba464964 = var_703f8388035ace89.team;
-    foreach (event in var_703f8388035ace89.events) {
+function flashpoint_checkforownerupdate(flashpoint) {
+    axiskills = 0;
+    alliesKills = 0;
+    switchstring = "No Change";
+    startingowner = flashpoint.team;
+    foreach (event in flashpoint.events) {
         if (event == "kill_by_axis") {
-            var_f46de3669e2acd79++;
-        } else if (event == "kill_by_allies") {
-            allieskills++;
+            axiskills++;
+            continue;
+        }
+        if (event == "kill_by_allies") {
+            alliesKills++;
         }
     }
-    if ((var_f46de3669e2acd79 - 1 > allieskills || allieskills == 0) && var_703f8388035ace89.team != "axis" && var_f46de3669e2acd79 != 0) {
+    if ((axiskills - 1 > alliesKills || alliesKills == 0) && flashpoint.team != "axis" && axiskills != 0) {
         if (level.flashpoint_objectives) {
-            namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(var_703f8388035ace89.objidnum, "axis");
-            namespace_5a22b6f3a56f7e9b::update_objective_sethot(var_703f8388035ace89.objidnum, 0);
+            scripts/mp/objidpoolmanager::update_objective_ownerteam(flashpoint.objidnum, "axis");
+            scripts/mp/objidpoolmanager::update_objective_sethot(flashpoint.objidnum, 0);
         }
-        var_703f8388035ace89.team = "axis";
-        var_2dc841aff232fb90 = "Switch To Axis Owner";
-    } else if ((allieskills - 1 > var_f46de3669e2acd79 || var_f46de3669e2acd79 == 0) && var_703f8388035ace89.team != "allies" && allieskills != 0) {
+        flashpoint.team = "axis";
+        switchstring = "Switch To Axis Owner";
+    } else if ((alliesKills - 1 > axiskills || axiskills == 0) && flashpoint.team != "allies" && alliesKills != 0) {
         if (level.flashpoint_objectives) {
-            namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(var_703f8388035ace89.objidnum, "allies");
-            namespace_5a22b6f3a56f7e9b::update_objective_sethot(var_703f8388035ace89.objidnum, 0);
+            scripts/mp/objidpoolmanager::update_objective_ownerteam(flashpoint.objidnum, "allies");
+            scripts/mp/objidpoolmanager::update_objective_sethot(flashpoint.objidnum, 0);
         }
-        var_703f8388035ace89.team = "allies";
-        var_2dc841aff232fb90 = "Switch To Allies Owner";
-    } else if (var_703f8388035ace89.team != "neutral" && allieskills != 0 && var_f46de3669e2acd79 != 0) {
+        flashpoint.team = "allies";
+        switchstring = "Switch To Allies Owner";
+    } else if (flashpoint.team != "neutral" && alliesKills != 0 && axiskills != 0) {
         if (level.flashpoint_objectives) {
-            namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(var_703f8388035ace89.objidnum, undefined);
-            namespace_5a22b6f3a56f7e9b::update_objective_sethot(var_703f8388035ace89.objidnum, 1);
+            scripts/mp/objidpoolmanager::update_objective_ownerteam(flashpoint.objidnum, undefined);
+            scripts/mp/objidpoolmanager::update_objective_sethot(flashpoint.objidnum, 1);
         }
-        var_703f8388035ace89.team = "neutral";
-        var_2dc841aff232fb90 = "Switch To Contested";
+        flashpoint.team = "neutral";
+        switchstring = "Switch To Contested";
     }
     /#
-        if (0) {
+        if (false) {
             println("Switch To Allies Owner");
             println("<unknown string>");
-            println("<unknown string>" + var_ab2d6f4cba464964);
-            println("<unknown string>" + var_2dc841aff232fb90);
-            println("<unknown string>" + var_f46de3669e2acd79);
-            println("<unknown string>" + allieskills);
+            println("<unknown string>" + startingowner);
+            println("<unknown string>" + switchstring);
+            println("<unknown string>" + axiskills);
+            println("<unknown string>" + alliesKills);
             println("Switch To Allies Owner");
         }
     #/
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10be
 // Size: 0x47
-function sortlocationsbydistance(var_fcf7e6e6d8c4861, var_fcf7b6e6d8c41c8) {
-    return distancesquared(var_fcf7e6e6d8c4861.curorigin, self.origin) < distancesquared(var_fcf7b6e6d8c41c8.curorigin, self.origin);
+function sortlocationsbydistance(location1, location2) {
+    return distancesquared(location1.curorigin, self.origin) < distancesquared(location2.curorigin, self.origin);
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x110d
 // Size: 0xbe
 function flashpoint_clearoldestpoint() {
-    var_fcdee31281119324 = undefined;
-    foreach (var_703f8388035ace89 in level.flashpoint_struct.flashpoints) {
-        if (!isdefined(var_fcdee31281119324)) {
-            var_fcdee31281119324 = var_703f8388035ace89;
-        } else if (var_703f8388035ace89.lasteventtime > var_fcdee31281119324.lasteventtime) {
-            var_fcdee31281119324 = var_703f8388035ace89;
+    oldestpoint = undefined;
+    foreach (flashpoint in level.flashpoint_struct.flashpoints) {
+        if (!isdefined(oldestpoint)) {
+            oldestpoint = flashpoint;
+            continue;
+        }
+        if (flashpoint.lasteventtime > oldestpoint.lasteventtime) {
+            oldestpoint = flashpoint;
         }
     }
     /#
-        if (0) {
+        if (false) {
             println("<unknown string>");
             println("<unknown string>");
             println("<unknown string>");
         }
     #/
-    flashpoint_shutdown(var_fcdee31281119324);
+    flashpoint_shutdown(oldestpoint);
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11d2
 // Size: 0x15d
 function function_34b4ca8a02efb2cc() {
     /#
-        while (1) {
+        while (true) {
             if (level.flashpointdebugactive == 1) {
                 origin = (randomfloatrange(0, 7000), randomfloatrange(0, 7000), randomfloatrange(100, 500));
                 thread playvfx(origin, "<unknown string>");
@@ -364,7 +368,7 @@ function function_34b4ca8a02efb2cc() {
     #/
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1336
 // Size: 0x22
@@ -372,7 +376,7 @@ function playvfx(origin, effect) {
     playfx(getfx(effect), origin);
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x135f
 // Size: 0x57
@@ -380,7 +384,7 @@ function flashpoint_trackplayerevents(player) {
     player endon("disconnect");
     level endon("disable_flashpoint");
     player.flashpoint_trackingevents = 1;
-    while (1) {
+    while (true) {
         player waittill("begin_firing");
         wait(1);
         flashpoint_processnewevent(player, undefined, gettime(), "gunfire");
@@ -388,7 +392,7 @@ function flashpoint_trackplayerevents(player) {
     }
 }
 
-// Namespace namespace_703f8388035ace89/namespace_8af839578a30040a
+// Namespace flashpoint / scripts/mp/flashpoint
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13bd
 // Size: 0x12b
@@ -405,12 +409,14 @@ function flashpoint_spawnselectionvfx() {
                 if (istrue(level.spawnselectionshowenemy)) {
                     playfxontagforclients(level._effect["flashpoint_pulse_enemy"], player, "tag_eye", self);
                 }
-            } else if (istrue(level.spawnselectionshowfriendly)) {
-                if (self.var_ff97225579de16a == player.var_ff97225579de16a) {
+                continue;
+            }
+            if (istrue(level.spawnselectionshowfriendly)) {
+                if (self.sessionsquadid == player.sessionsquadid) {
                     playfxontagforclients(level._effect["flashpoint_pulse_squad"], player, "tag_eye", self);
-                } else {
-                    playfxontagforclients(level._effect["flashpoint_pulse_friendly"], player, "tag_eye", self);
+                    continue;
                 }
+                playfxontagforclients(level._effect["flashpoint_pulse_friendly"], player, "tag_eye", self);
             }
         }
         wait(1.1);

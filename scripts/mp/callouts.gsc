@@ -3,12 +3,12 @@
 #using scripts\common\utility.gsc;
 #using scripts\mp\utility\player.gsc;
 #using scripts\mp\utility\game.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 
 #namespace callouts;
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f6
 // Size: 0x2a9
@@ -24,78 +24,82 @@ function init() {
     level.calloutglobals.var_41e0068712e63739 = var_9a187ca43f4254c1 && function_afcbc7a4eac55f9e(1);
     if (!level.calloutglobals.var_41e0068712e63739) {
         if (getdvarint(@"hash_aa26c2e5021f3cfc") && getdvarint(@"hash_aa26c2e5021f3cfc")) {
-            var_aba6558851409d7d = function_79404c2fcca1c184();
-            if (isdefined(var_aba6558851409d7d)) {
-                level.calloutglobals.var_a01735389a5d70d7 = [];
-                for (idx = 0; idx < var_aba6558851409d7d.var_a01735389a5d70d7.size; idx++) {
-                    level.calloutglobals.var_a01735389a5d70d7 = array_add(level.calloutglobals.var_a01735389a5d70d7, var_aba6558851409d7d.var_a01735389a5d70d7[idx].var_cf0d4d8cc5ac99a4);
+            mapinfo = function_79404c2fcca1c184();
+            if (isdefined(mapinfo)) {
+                level.calloutglobals.calloutlist = [];
+                for (idx = 0; idx < mapinfo.calloutlist.size; idx++) {
+                    level.calloutglobals.calloutlist = array_add(level.calloutglobals.calloutlist, mapinfo.calloutlist[idx].variant_object);
                 }
             } else {
                 /#
                     println("<unknown string>");
                 #/
             }
-        } else if (isdefined(level.var_1a2b600a06ec21f4) && isdefined(level.var_1a2b600a06ec21f4.var_4cf37c2e28b33e1f)) {
-            level.calloutglobals.callouttable = level.var_1a2b600a06ec21f4.var_4cf37c2e28b33e1f + level.mapname + "_callouts.csv";
+        } else if (isdefined(level.gamemodebundle) && isdefined(level.gamemodebundle.var_4cf37c2e28b33e1f)) {
+            level.calloutglobals.callouttable = level.gamemodebundle.var_4cf37c2e28b33e1f + level.mapname + "_callouts.csv";
         } else {
             level.calloutglobals.callouttable = "mp/map_callouts/" + level.mapname + "_callouts.csv";
         }
     }
     function_2249b7a6c9367c61();
-    if (!level.calloutglobals.var_41e0068712e63739 && !isdefined(level.calloutglobals.var_a01735389a5d70d7) && !isdefined(level.calloutglobals.callouttable)) {
+    if (!level.calloutglobals.var_41e0068712e63739 && !isdefined(level.calloutglobals.calloutlist) && !isdefined(level.calloutglobals.callouttable)) {
         return;
     }
     function_953aac55917212f6();
-    if (namespace_36f464722d326bbe::isbrstylegametype() && getdvarint(@"hash_e4187d1543c7477e", 0) == 0) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype() && getdvarint(@"hash_e4187d1543c7477e", 0) == 0) {
         return;
     }
     function_46502299a0d096ef();
     thread monitorplayers();
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4a6
 // Size: 0x45
 function private function_2249b7a6c9367c61() {
-    var_584994fab4a8712b = level.calloutglobals;
-    var_584994fab4a8712b.var_715bd89e6082150f = [];
-    var_584994fab4a8712b.areaidmap = [];
-    var_584994fab4a8712b.areaidmap["none"] = -1;
+    globals = level.calloutglobals;
+    globals.var_715bd89e6082150f = [];
+    globals.areaidmap = [];
+    globals.areaidmap["none"] = -1;
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4f2
 // Size: 0x2f1
 function private function_953aac55917212f6() {
-    var_584994fab4a8712b = level.calloutglobals;
-    if (var_584994fab4a8712b.var_41e0068712e63739) {
-        var_96e38bcf1337d181 = function_c3d63e6778e39f83(1);
-        for (var_303ce5a5cea462cd = 0; var_303ce5a5cea462cd < var_96e38bcf1337d181; var_303ce5a5cea462cd++) {
-            site = function_d0ed84c86e823a7c(1, var_303ce5a5cea462cd);
+    globals = level.calloutglobals;
+    if (globals.var_41e0068712e63739) {
+        sitecount = function_c3d63e6778e39f83(1);
+        for (siteidx = 0; siteidx < sitecount; siteidx++) {
+            site = function_d0ed84c86e823a7c(1, siteidx);
             region = function_7fdd7f9d54666e5f(1, site.region);
-            ref = region.name + " site_" + var_303ce5a5cea462cd;
+            ref = region.name + " site_" + siteidx;
             /#
-                assertex(!isdefined(var_584994fab4a8712b.areaidmap[ref]), "Callout Ref "" + ref + "" exists twice for map " + level.mapname);
+                assertex(!isdefined(globals.areaidmap[ref]), "Callout Ref "" + ref + "" exists twice for map " + level.mapname);
             #/
-            var_584994fab4a8712b.areaidmap[ref] = site.region;
-            var_584994fab4a8712b.var_715bd89e6082150f[var_303ce5a5cea462cd] = ref;
+            globals.areaidmap[ref] = site.region;
+            globals.var_715bd89e6082150f[siteidx] = ref;
         }
-    } else if (isdefined(level.calloutglobals.var_a01735389a5d70d7)) {
-        for (idx = 0; idx < level.calloutglobals.var_a01735389a5d70d7.size; idx++) {
-            type = level.calloutglobals.var_a01735389a5d70d7[idx].type;
+        return;
+    }
+    if (isdefined(level.calloutglobals.calloutlist)) {
+        for (idx = 0; idx < level.calloutglobals.calloutlist.size; idx++) {
+            type = level.calloutglobals.calloutlist[idx].type;
             if (type != "area") {
                 continue;
             }
-            ref = level.calloutglobals.var_a01735389a5d70d7[idx].var_e90349c02adfb3a0;
+            ref = level.calloutglobals.calloutlist[idx].calloutref;
             /#
-                assertex(!isdefined(var_584994fab4a8712b.areaidmap[ref]), "Callout Ref "" + ref + "" exists twice for map " + level.mapname);
+                assertex(!isdefined(globals.areaidmap[ref]), "Callout Ref "" + ref + "" exists twice for map " + level.mapname);
             #/
-            var_584994fab4a8712b.areaidmap[ref] = idx;
+            globals.areaidmap[ref] = idx;
         }
-    } else if (isdefined(level.calloutglobals.callouttable) && tableexists(level.calloutglobals.callouttable)) {
-        for (row = 0; 1; row++) {
+        return;
+    }
+    if (isdefined(level.calloutglobals.callouttable) && tableexists(level.calloutglobals.callouttable)) {
+        for (row = 0; true; row++) {
             id = tablelookupbyrow(level.calloutglobals.callouttable, row, 0);
             if (!isdefined(id) || id == "") {
                 break;
@@ -107,33 +111,33 @@ function private function_953aac55917212f6() {
             }
             ref = tablelookupbyrow(level.calloutglobals.callouttable, row, 1);
             /#
-                assertex(!isdefined(var_584994fab4a8712b.areaidmap[ref]), "Callout Ref "" + ref + "" exists twice in " + level.calloutglobals.callouttable);
+                assertex(!isdefined(globals.areaidmap[ref]), "Callout Ref "" + ref + "" exists twice in " + level.calloutglobals.callouttable);
             #/
-            var_584994fab4a8712b.areaidmap[ref] = id;
+            globals.areaidmap[ref] = id;
         }
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x7ea
 // Size: 0x9c
 function private function_46502299a0d096ef() {
     if (!level.calloutglobals.var_41e0068712e63739) {
         level.calloutglobals.areatriggers = getentarray("callout_area", "targetname");
-        foreach (var_c1e5e178d5d956e4 in level.calloutglobals.areatriggers) {
-            var_c1e5e178d5d956e4 thread function_b9da575102b3cd82();
+        foreach (areatrigger in level.calloutglobals.areatriggers) {
+            areatrigger thread function_b9da575102b3cd82();
         }
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x88d
 // Size: 0x7e
 function private monitorplayers() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         player = level waittill("connected");
         player thread clearcalloutareaondeath();
         player setplayercalloutarea("none");
@@ -146,13 +150,13 @@ function private monitorplayers() {
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x912
 // Size: 0x73
 function private function_b9da575102b3cd82() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         if (isdefined(player.owner) && isplayer(player.owner)) {
             player = player.owner;
@@ -164,7 +168,7 @@ function private function_b9da575102b3cd82() {
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x98c
 // Size: 0x120
@@ -175,80 +179,82 @@ function private function_fe13722061e1576d() {
     level endon("game_ended");
     self endon("death_or_disconnect");
     player = self;
-    var_584994fab4a8712b = level.calloutglobals;
+    globals = level.calloutglobals;
     clientnum = player getentitynumber();
     while (gettime() / level.frameduration % 5 != clientnum % 5) {
         waitframe();
     }
-    while (1) {
-        var_303ce5a5cea462cd = function_3db4b97c31efed0b(1, player.origin);
+    while (true) {
+        siteidx = function_3db4b97c31efed0b(1, player.origin);
         ref = "none";
-        if (isdefined(var_303ce5a5cea462cd)) {
-            ref = var_584994fab4a8712b.var_715bd89e6082150f[var_303ce5a5cea462cd];
+        if (isdefined(siteidx)) {
+            ref = globals.var_715bd89e6082150f[siteidx];
         }
-        var_49996ebebbbbf375 = var_584994fab4a8712b.areaidmap[ref];
-        if (!isdefined(player.calloutarea) || var_49996ebebbbbf375 != var_584994fab4a8712b.areaidmap[player.calloutarea]) {
+        areaid = globals.areaidmap[ref];
+        if (!isdefined(player.calloutarea) || areaid != globals.areaidmap[player.calloutarea]) {
             player setplayercalloutarea(ref);
         }
         wait(level.framedurationseconds * 5);
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab3
 // Size: 0x1c7
-function setplayercalloutarea(var_e90349c02adfb3a0, trigger) {
-    if (!isdefined(var_e90349c02adfb3a0)) {
+function setplayercalloutarea(calloutref, trigger) {
+    if (!isdefined(calloutref)) {
         return;
     }
-    if (isdefined(self.calloutarea) && self.calloutarea == var_e90349c02adfb3a0) {
+    if (isdefined(self.calloutarea) && self.calloutarea == calloutref) {
         return;
     }
-    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
-        if (isdefined(self.calloutarea) && var_e90349c02adfb3a0 != "none" && self.calloutarea != "none") {
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+        if (isdefined(self.calloutarea) && calloutref != "none" && self.calloutarea != "none") {
             return;
         }
     }
-    self.calloutarea = var_e90349c02adfb3a0;
+    self.calloutarea = calloutref;
     if (isdefined(trigger)) {
         thread watchplayerleavingcalloutarea(trigger, trigger.script_noteworthy);
     }
-    var_49996ebebbbbf375 = level.calloutglobals.areaidmap[var_e90349c02adfb3a0];
-    if (isdefined(var_49996ebebbbbf375)) {
-        self setclientomnvar("ui_callout_area_id", var_49996ebebbbbf375);
+    areaid = level.calloutglobals.areaidmap[calloutref];
+    if (isdefined(areaid)) {
+        self setclientomnvar("ui_callout_area_id", areaid);
         if (istrue(level.codcasterenabled)) {
-            var_721982228624d657 = get_players_watching(1, 0);
-            foreach (spectator in var_721982228624d657) {
+            spectators = get_players_watching(1, 0);
+            foreach (spectator in spectators) {
                 if (spectator iscodcaster()) {
-                    spectator setclientomnvar("ui_callout_area_id", var_49996ebebbbbf375);
+                    spectator setclientomnvar("ui_callout_area_id", areaid);
                 }
             }
         }
-    } else if (var_e90349c02adfb3a0 != "none") {
+        return;
+    }
+    if (calloutref != "none") {
         if (level.calloutglobals.var_41e0068712e63739 || getdvarint(@"hash_aa26c2e5021f3cfc")) {
             /#
-                assertmsg("Callout Area "" + var_e90349c02adfb3a0 + "" has no entry in for map " + level.mapname);
+                assertmsg("Callout Area "" + calloutref + "" has no entry in for map " + level.mapname);
             #/
-        } else {
-            /#
-                assertmsg("Callout Area "" + var_e90349c02adfb3a0 + "" has no entry in " + level.calloutglobals.callouttable);
-            #/
+            return;
         }
+        /#
+            assertmsg("Callout Area "" + calloutref + "" has no entry in " + level.calloutglobals.callouttable);
+        #/
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xc81
 // Size: 0x4f
-function private watchplayerleavingcalloutarea(var_c1e5e178d5d956e4, var_e90349c02adfb3a0) {
+function private watchplayerleavingcalloutarea(areatrigger, calloutref) {
     self endon("death_or_disconnect");
-    while (1) {
-        if (self.calloutarea != var_e90349c02adfb3a0) {
+    while (true) {
+        if (self.calloutarea != calloutref) {
             return;
         }
-        if (!self istouching(var_c1e5e178d5d956e4)) {
+        if (!self istouching(areatrigger)) {
             setplayercalloutarea("none");
             return;
         }
@@ -256,30 +262,30 @@ function private watchplayerleavingcalloutarea(var_c1e5e178d5d956e4, var_e90349c
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xcd7
 // Size: 0x26
 function private clearcalloutareaondeath() {
     self endon("disconnect");
-    while (1) {
+    while (true) {
         self waittill("death");
         setplayercalloutarea("none");
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd04
 // Size: 0x5d
 function function_f9b1f6b7aa093270(params) {
-    if (isdefined(params.var_5bfc552f3ce3c73d) && isdefined(params.var_5bfc552f3ce3c73d.display_name)) {
+    if (isdefined(params.zone_struct) && isdefined(params.zone_struct.display_name)) {
         setplayercalloutarea("none");
-        setplayercalloutarea(params.var_5bfc552f3ce3c73d.display_name);
+        setplayercalloutarea(params.zone_struct.display_name);
     }
 }
 
-// Namespace callouts/namespace_8554064ba5e7d07
+// Namespace callouts / scripts/mp/callouts
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd68
 // Size: 0x11d
@@ -287,21 +293,21 @@ function function_45d5ee5f369ad604(object) {
     /#
         assert(isdefined(object.origin));
     #/
-    var_584994fab4a8712b = level.calloutglobals;
+    globals = level.calloutglobals;
     ref = "none";
-    if (var_584994fab4a8712b.var_41e0068712e63739) {
-        var_303ce5a5cea462cd = function_3db4b97c31efed0b(1, object.origin);
-        if (isdefined(var_303ce5a5cea462cd)) {
-            ref = var_584994fab4a8712b.var_715bd89e6082150f[var_303ce5a5cea462cd];
+    if (globals.var_41e0068712e63739) {
+        siteidx = function_3db4b97c31efed0b(1, object.origin);
+        if (isdefined(siteidx)) {
+            ref = globals.var_715bd89e6082150f[siteidx];
         }
     } else if (isdefined(level.calloutglobals.areatriggers)) {
-        foreach (var_c1e5e178d5d956e4 in level.calloutglobals.areatriggers) {
-            if (object istouching(var_c1e5e178d5d956e4)) {
-                ref = var_c1e5e178d5d956e4.script_noteworthy;
+        foreach (areatrigger in level.calloutglobals.areatriggers) {
+            if (object istouching(areatrigger)) {
+                ref = areatrigger.script_noteworthy;
                 break;
             }
         }
     }
-    return var_584994fab4a8712b.areaidmap[ref];
+    return globals.areaidmap[ref];
 }
 

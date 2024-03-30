@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\devgui.gsc;
 #using script_371b4c2ab5861e62;
 #using script_60dd6e3992c1f29;
 #using script_22f1701e151b9d12;
@@ -9,7 +9,7 @@
 
 #namespace namespace_c4032dde62b27b45;
 
-// Namespace namespace_c4032dde62b27b45/namespace_d7b9f3d899c5a909
+// Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15c
 // Size: 0xa9
@@ -30,7 +30,7 @@ function function_6c78c4cdcb9d493() {
     namespace_614554f86e52695c::function_e4a440552e4cf1f4(&function_746a157a8ec25790);
 }
 
-// Namespace namespace_c4032dde62b27b45/namespace_d7b9f3d899c5a909
+// Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20c
 // Size: 0x2b
@@ -38,21 +38,21 @@ function function_8159c23277f3afe0(params) {
     namespace_e0ee43ef2dddadaa::function_f30b8f5ee8f3e7f8("zombie_mimic", self.grenadeweapon.basename);
 }
 
-// Namespace namespace_c4032dde62b27b45/namespace_d7b9f3d899c5a909
+// Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x98
 function function_6a4f7e54f18ede06(var_5af4453d13e66d3b) {
-    if (var_5af4453d13e66d3b.interact function_df0afb02491cd0ef() || !var_5af4453d13e66d3b.interact function_b5e968d09e516046() || !var_5af4453d13e66d3b.interact isusable()) {
-        return 0;
+    if (var_5af4453d13e66d3b.interact function_df0afb02491cd0ef() || !var_5af4453d13e66d3b.interact isusableenabled() || !var_5af4453d13e66d3b.interact isusable()) {
+        return false;
     }
     if (var_5af4453d13e66d3b.interact isscriptable() && var_5af4453d13e66d3b.interact getscriptablehaspart("base") && var_5af4453d13e66d3b.interact getscriptablepartstate("base") == "power_off") {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_c4032dde62b27b45/namespace_d7b9f3d899c5a909
+// Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x158
@@ -60,25 +60,25 @@ function function_746a157a8ec25790(zombie, requestid, data) {
     if (issubstr(zombie.subclass, "zombie_mimic")) {
         if (!istrue(data.alert) && istrue(data.ambient)) {
             var_96fbee94955db089 = function_3f1e49f4d09e7020(zombie.origin, 3000, 1, 1);
-            var_651a5674b0c8a1e6 = [];
-            var_fa7cb42c2a36a7c5 = undefined;
+            valid_spawnpoints = [];
+            prop_point = undefined;
             foreach (point in var_96fbee94955db089) {
                 if (isdefined(point.script_noteworthy) && point.script_noteworthy == "ambient_mimic_spawn") {
-                    var_651a5674b0c8a1e6 = array_add(var_651a5674b0c8a1e6, point);
+                    valid_spawnpoints = array_add(valid_spawnpoints, point);
                 }
             }
-            if (isdefined(var_651a5674b0c8a1e6.size) && var_651a5674b0c8a1e6.size > 0) {
-                random_index = randomint(var_651a5674b0c8a1e6.size);
-                var_fa7cb42c2a36a7c5 = var_651a5674b0c8a1e6[random_index];
+            if (isdefined(valid_spawnpoints.size) && valid_spawnpoints.size > 0) {
+                random_index = randomint(valid_spawnpoints.size);
+                prop_point = valid_spawnpoints[random_index];
             }
-            if (isdefined(var_fa7cb42c2a36a7c5) && isdefined(var_fa7cb42c2a36a7c5.proplist)) {
-                namespace_f35b248fe3d46dfb::function_7f3bb3916bbd189d([0:var_fa7cb42c2a36a7c5], zombie, undefined, var_fa7cb42c2a36a7c5.proplist);
+            if (isdefined(prop_point) && isdefined(prop_point.proplist)) {
+                namespace_f35b248fe3d46dfb::function_7f3bb3916bbd189d([prop_point], zombie, undefined, prop_point.proplist);
             }
         }
     }
 }
 
-// Namespace namespace_c4032dde62b27b45/namespace_d7b9f3d899c5a909
+// Namespace namespace_c4032dde62b27b45 / namespace_d7b9f3d899c5a909
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43d
 // Size: 0xe4
@@ -87,7 +87,7 @@ function function_385451540bf346eb(params) {
     self notify("despawn_clean_props_singleton");
     self endon("despawn_clean_props_singleton");
     var_86ca8e1c112dc232 = self.var_86ca8e1c112dc232;
-    meansofdeath = killer = self waittill("death");
+    killer, meansofdeath = self waittill("death");
     if (!isdefined(meansofdeath) || meansofdeath != "MOD_DESPAWN") {
         return;
     }

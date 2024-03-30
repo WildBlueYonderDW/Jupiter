@@ -1,10 +1,10 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
-#using script_3214e6fcdce468a7;
+#using scripts\engine\throttle.gsc;
 #using scripts\common\utility.gsc;
-#using script_4c770a9a4ad7659c;
-#using script_3b64eb40368c1450;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\callbacks.gsc;
+#using scripts\common\values.gsc;
+#using scripts\common\devgui.gsc;
 #using script_41387eecc35b88bf;
 #using script_3e2f8cc477d57433;
 #using script_1f97a44d1761c919;
@@ -12,7 +12,7 @@
 
 #namespace namespace_fdfa10f30c513cd7;
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x327
 // Size: 0x95
@@ -29,7 +29,7 @@ function init() {
     level callback::add("on_armor_break", &on_armor_break);
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x22
@@ -39,7 +39,7 @@ function on_armor_break(params) {
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ec
 // Size: 0x25
@@ -48,7 +48,7 @@ function function_c5444b570959132e(params) {
     thread function_dc000c302e305ce0("ravenov_tutorial_ready_for_higher_zone");
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x418
 // Size: 0x6e
@@ -62,7 +62,7 @@ function function_8cd3ce612122fbab(params) {
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48d
 // Size: 0x120
@@ -97,7 +97,7 @@ function on_item_pickup(params) {
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0xf0
@@ -125,7 +125,7 @@ function function_94545a9bb0878e0e(params) {
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ab
 // Size: 0x37
@@ -135,7 +135,7 @@ function on_ammo_pouch_drop(params) {
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e9
 // Size: 0x42
@@ -143,42 +143,42 @@ function function_9e622ced1b338442(params) {
     if (ent_flag("pap_weapon")) {
         return;
     }
-    var_473e4d7cccb6d00a = namespace_e8a49b70d0769b66::_getplayerscore(self);
+    var_473e4d7cccb6d00a = scripts/mp/gamescore::_getplayerscore(self);
     if (var_473e4d7cccb6d00a >= 5000) {
         thread function_dc000c302e305ce0("ravenov_tutorial_pap");
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x732
 // Size: 0x82
-function function_dc000c302e305ce0(var_ef20a23f2303fb02) {
+function function_dc000c302e305ce0(str_conversation) {
     if (!isplayer(self)) {
         return;
     }
     if (!isdefined(self.var_6860664202c177f4)) {
         self.var_6860664202c177f4 = [];
     }
-    if (!function_74fec185b50d1b4a(var_ef20a23f2303fb02) || getdvarint(@"hash_ac3a05ba7d5a924c", 0)) {
-        self.var_6860664202c177f4[var_ef20a23f2303fb02] = 1;
-        self setplayerdata(level.var_5d69837cf4db0407, "conversation_" + var_ef20a23f2303fb02, 1);
-        overlord::function_c1c677ed7a1b1128(var_ef20a23f2303fb02, [0:self], undefined, 0);
+    if (!function_74fec185b50d1b4a(str_conversation) || getdvarint(@"hash_ac3a05ba7d5a924c", 0)) {
+        self.var_6860664202c177f4[str_conversation] = 1;
+        self setplayerdata(level.var_5d69837cf4db0407, "conversation_" + str_conversation, 1);
+        overlord::playconversation(str_conversation, [self], undefined, 0);
     }
 }
 
-// Namespace namespace_fdfa10f30c513cd7/namespace_20af609e7a544b57
+// Namespace namespace_fdfa10f30c513cd7 / namespace_20af609e7a544b57
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x61
-function function_74fec185b50d1b4a(var_ef20a23f2303fb02) {
+function function_74fec185b50d1b4a(str_conversation) {
     if (!isplayer(self)) {
         return 1;
     }
     if (!isdefined(self.var_6860664202c177f4)) {
         self.var_6860664202c177f4 = [];
     }
-    b_played_vo = self getplayerdata(level.var_5d69837cf4db0407, "conversation_" + var_ef20a23f2303fb02) || istrue(self.var_6860664202c177f4[var_ef20a23f2303fb02]);
+    b_played_vo = self getplayerdata(level.var_5d69837cf4db0407, "conversation_" + str_conversation) || istrue(self.var_6860664202c177f4[str_conversation]);
     return b_played_vo;
 }
 

@@ -12,43 +12,42 @@
 #using scripts\unittest\error.gsc;
 #using script_13645532f846e433;
 
-#namespace namespace_e31568b14241c4bf;
+#namespace unittest;
 
-// Namespace namespace_e31568b14241c4bf/namespace_b27e75add3801331
+// Namespace unittest / scripts/unittest/unittest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc8
 // Size: 0x4d
 function test() {
-    namespace_e0ae03ff9fc1812c::main();
-    namespace_8b4e29119994c020::main();
-    namespace_4a4aaf00b68b13a9::main();
-    namespace_6d6ccf11835bebe0::main();
-    namespace_898dcfe71d46487e::main();
-    namespace_89c902463f02748c::main();
-    namespace_9b6cb473c89e4499::main();
-    namespace_bdcbcfceab56aa1e::main();
+    unittest_ops::main();
+    unittest_call::main();
+    unittest_variables::main();
+    unittest_cond::main();
+    unittest_loop::main();
+    unittest_switch::main();
+    unittest_threads::main();
+    unittest_patch::main();
     namespace_106f587ebebd0cab::main();
     thread namespace_eb31a7ea746bf7d0::main();
     /#
     #/
 }
 
-// Namespace namespace_e31568b14241c4bf/namespace_b27e75add3801331
+// Namespace unittest / scripts/unittest/unittest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11c
 // Size: 0xa
 function error() {
-    namespace_9a8cc0e0b9d06106::main();
+    unittest_error::main();
 }
 
-// Namespace namespace_e31568b14241c4bf/namespace_b27e75add3801331
+// Namespace unittest / scripts/unittest/unittest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d
 // Size: 0x8c
 function main() {
     setdvarifuninitialized(@"hash_3b4e5f0e69f46421", 0);
-LOC_0000001a:
-    while (1) {
+    while (true) {
         wait(1);
         var_c990b60e12f60d87 = getdvarint(@"hash_3b4e5f0e69f46421", 0);
         switch (var_c990b60e12f60d87) {

@@ -12,28 +12,28 @@
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using script_4948cdf739393d2d;
 #using script_6c4e8cea70bf4b6d;
-#using script_3314add7998ab13;
+#using scripts\mp\gametypes\activity_manager.gsc;
 #using script_64acb6ce534155b7;
 #using script_1f97a44d1761c919;
 #using script_48814951e916af89;
 #using scripts\mp\music_and_dialog.gsc;
-#using script_120270bd0a747a35;
+#using scripts\mp\ai_behavior.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 
 #namespace namespace_9f2415cf2465a66d;
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0x77
 function function_80d68c9701e1aea5(data) {
-    level.var_2df078757bf07a9c = spawnstruct();
-    level.var_2df078757bf07a9c.circleradius = getdvarint(@"hash_fe6626ef02d8f40c", 300);
-    level.var_2df078757bf07a9c.var_e3aa1de9d96e0086 = getdvarint(@"hash_336efda7c2d0eef", 700);
+    level.clearprops = spawnstruct();
+    level.clearprops.circleradius = getdvarint(@"hash_fe6626ef02d8f40c", 300);
+    level.clearprops.var_e3aa1de9d96e0086 = getdvarint(@"hash_336efda7c2d0eef", 700);
     function_b713f2d39b34540f(data, &function_66ffddabd1acf94d, function_cd188bf0eca0b685());
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x27c
 // Size: 0x17
@@ -43,32 +43,32 @@ function function_a07f7c4c0c4ef8e3() {
     #/
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29a
 // Size: 0xb4
 function function_66ffddabd1acf94d(activity, fortress) {
-    task = function_5f6d9fd82bdd2d05(activity);
+    task = task_create(activity);
     task.funcs["onInit"] = &function_973ed02a7ff4858e;
     task.funcs["onTeamStart"] = &function_9b000e63c2c98e77;
     task.funcs["onTeamAssigned"] = &function_8eaae8654221fdc5;
     task.fortress = fortress;
     task.node = fortress;
     task.ref = "dmz_clear_fortress";
-    task.var_30e8a65cff941c7a = namespace_1eb3c4e0e28fac71::getquesttableindex(task.ref);
+    task.refindex = namespace_1eb3c4e0e28fac71::getquesttableindex(task.ref);
     return task;
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x356
 // Size: 0x16e
 function function_973ed02a7ff4858e() {
     self.killed = 0;
-    var_79b9c85900392ad6 = function_ab50f62a3a730400(self.fortress.origin, level.var_2df078757bf07a9c.circleradius);
+    circlelocation = function_ab50f62a3a730400(self.fortress.origin, level.clearprops.circleradius);
     function_c847bfd52c064289(self.fortress.origin + (0, 0, 750));
-    function_325390edb051cd5d("Hostage_Dmz", [0:var_79b9c85900392ad6], level.var_2df078757bf07a9c.circleradius + level.var_2df078757bf07a9c.var_e3aa1de9d96e0086);
-    if (!isdefined(self.fortress.var_698ab4f1074b4f37) || !self.fortress.var_698ab4f1074b4f37) {
+    function_325390edb051cd5d("Hostage_Dmz", [circlelocation], level.clearprops.circleradius + level.clearprops.var_e3aa1de9d96e0086);
+    if (!isdefined(self.fortress.spawnedagents) || !self.fortress.spawnedagents) {
         self.fortress waittill("spawned_agents");
     }
     self.var_ffb8dd38bb2fcb3a = function_c084840561571609();
@@ -83,7 +83,7 @@ function function_973ed02a7ff4858e() {
     self notify("task_initialized");
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cb
 // Size: 0x43
@@ -95,7 +95,7 @@ function function_9b000e63c2c98e77(teamname) {
     namespace_446fc987a980892f::function_9793a81bc3bc19e9("clear_fort_approach", teamname);
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x515
 // Size: 0x6a
@@ -111,7 +111,7 @@ function function_8eaae8654221fdc5(teamname) {
     thread function_9e357e07833a0d1a(teamname);
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x586
 // Size: 0x70
@@ -125,13 +125,13 @@ function function_2134f4b01729bb9e(agent, killer) {
     }
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5fd
 // Size: 0x116
 function function_9935990849fe88dd() {
-    while (1) {
-        ai = utility::function_a92d0739b2373df(self.fortress.origin, 3000, 0);
+    while (true) {
+        ai = utility::charactersnear(self.fortress.origin, 3000, 0);
         var_c65a4ca6f567404a = [];
         foreach (guy in ai) {
             foreach (volume in self.fortress.var_aa7c37b8b3ec1f46) {
@@ -148,7 +148,7 @@ function function_9935990849fe88dd() {
     }
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x71a
 // Size: 0x8a
@@ -159,22 +159,22 @@ function function_1432b702120e6711(teamname) {
     function_2476daefa3384c5e();
     if (isdefined(teamname)) {
         namespace_446fc987a980892f::function_9793a81bc3bc19e9("clear_fort_success", teamname);
-        function_a1738a95d7aa8094("dmz_clear_fort_complete", "clear", self.activity.var_723b8f7cb71ceb11, teamname);
+        function_a1738a95d7aa8094("dmz_clear_fort_complete", "clear", self.activity.cashreward, teamname);
         function_cd4f277cf0d6a560(teamname);
-        thread namespace_3bde6869e44a2770::dmz_activity_win(getteamdata(teamname, "players"));
+        thread scripts/mp/music_and_dialog::dmz_activity_win(getteamdata(teamname, "players"));
     }
     waitframe();
     task_ended(teamname);
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x7ab
 // Size: 0x153
 function private function_12f03b76f27611e3(teamname) {
     self endon("end_task");
     wait(15);
-    while (1) {
+    while (true) {
         players = getteamdata(teamname, "players");
         foreach (ai in self.var_ffb8dd38bb2fcb3a) {
             var_35d198c823443318 = undefined;
@@ -190,24 +190,24 @@ function private function_12f03b76f27611e3(teamname) {
                 continue;
             }
             if (!ai cansee(var_35d198c823443318) && mindist > 50 && mindist < 500) {
-                namespace_2000a83505151e5b::function_a5117518725da028(ai, var_35d198c823443318.origin);
+                scripts/mp/ai_behavior::function_a5117518725da028(ai, var_35d198c823443318.origin);
             }
         }
         wait(1);
     }
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x905
 // Size: 0x8d
 function private function_cd188bf0eca0b685() {
-    var_f49c655db37da764 = function_afa1f5bf0de4e4d1();
+    possiblefortresses = function_afa1f5bf0de4e4d1();
     nodes = [];
-    if (!isdefined(var_f49c655db37da764)) {
+    if (!isdefined(possiblefortresses)) {
         return nodes;
     }
-    foreach (fort in var_f49c655db37da764) {
+    foreach (fort in possiblefortresses) {
         if (function_4ec4f39a2e1745f2(fort)) {
             continue;
         }
@@ -217,7 +217,7 @@ function private function_cd188bf0eca0b685() {
     return nodes;
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x99a
 // Size: 0x126
@@ -225,15 +225,15 @@ function private function_c084840561571609() {
     if (!isdefined(self.fortress)) {
         return undefined;
     }
-    var_cd207438e3e764e6 = level.agentarray;
-    if (!isdefined(var_cd207438e3e764e6) || var_cd207438e3e764e6.size == 0) {
+    allai = level.agentarray;
+    if (!isdefined(allai) || allai.size == 0) {
         return undefined;
     }
     var_dc7f77838b035b27 = [];
     if (self.fortress.var_aa7c37b8b3ec1f46.size == 0) {
         return var_dc7f77838b035b27;
     }
-    foreach (guy in var_cd207438e3e764e6) {
+    foreach (guy in allai) {
         if (!isalive(guy)) {
             continue;
         }
@@ -246,26 +246,26 @@ function private function_c084840561571609() {
     return var_dc7f77838b035b27;
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xac8
 // Size: 0xe4
 function private function_872ad260cef5cb9a() {
-    var_7a896b25af9482c9 = 0;
+    numdead = 0;
     var_9e249e6fe9f695d5 = [];
     foreach (ai in self.var_ffb8dd38bb2fcb3a) {
         if (!isalive(ai)) {
             var_9e249e6fe9f695d5[var_9e249e6fe9f695d5.size] = ai;
-            var_7a896b25af9482c9++;
+            numdead++;
         }
     }
     foreach (ai in var_9e249e6fe9f695d5) {
         self.var_ffb8dd38bb2fcb3a = array_remove(self.var_ffb8dd38bb2fcb3a, ai);
     }
-    self.killed = self.killed + var_7a896b25af9482c9;
+    self.killed = self.killed + numdead;
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xbb3
 // Size: 0xed
@@ -277,34 +277,34 @@ function private function_b275bda155c24c12(killer, agent) {
         }
         if (isdefined(killer) && isdefined(killer.team) && isdefined(function_73fd6fe2488e3ebf(self.activity, killer.team)) && function_73fd6fe2488e3ebf(self.activity, killer.team) == self) {
             function_1432b702120e6711(killer.team);
-        } else {
-            function_1432b702120e6711();
+            return;
         }
+        function_1432b702120e6711();
     }
 }
 
-// Namespace namespace_9f2415cf2465a66d/namespace_fa9fd40f68ab8478
+// Namespace namespace_9f2415cf2465a66d / namespace_fa9fd40f68ab8478
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xca7
 // Size: 0x16b
 function private function_c373f127dafc389a(team) {
     self endon("end_task");
-    while (1) {
+    while (true) {
         players = getteamdata(team, "players");
         mindistsq = 100000;
-        var_fa73c7e2d99fa15 = (0, 0, 0);
+        minorigin = (0, 0, 0);
         foreach (player in players) {
-            if (!player namespace_f8065cafc523dba5::_isalive()) {
+            if (!player scripts/cp_mp/utility/player_utility::_isalive()) {
                 continue;
             }
             distsq = distance2dsquared(self.fortress.origin, player.origin);
             if (mindistsq > distsq) {
                 mindistsq = distsq;
-                var_fa73c7e2d99fa15 = player.origin;
+                minorigin = player.origin;
             }
         }
         foreach (volume in self.fortress.var_aa7c37b8b3ec1f46) {
-            if (ispointinvolume(var_fa73c7e2d99fa15, volume)) {
+            if (ispointinvolume(minorigin, volume)) {
                 namespace_446fc987a980892f::function_9793a81bc3bc19e9("clear_fort_entered", team);
                 return;
             }

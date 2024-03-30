@@ -4,13 +4,13 @@
 
 #namespace turret;
 
-// Namespace turret/namespace_f9b483201b8dd924
+// Namespace turret / scripts/common/turret
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x90
 // Size: 0xb1
 function turret_vm_playeranims_think() {
     self endon("death");
-    while (1) {
+    while (true) {
         self waittill("turretownerchange");
         player = self getturretowner();
         weap = undefined;

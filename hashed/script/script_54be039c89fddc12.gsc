@@ -2,7 +2,7 @@
 #using script_7b2517368c79e5bc;
 #using script_3e2f8cc477d57433;
 #using scripts\engine\utility.gsc;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\devgui.gsc;
 #using scripts\cp_mp\gasmask.gsc;
 #using scripts\mp\utility\player.gsc;
 #using scripts\mp\gametypes\br_public.gsc;
@@ -10,7 +10,7 @@
 
 #namespace namespace_6236231ba2ba2d74;
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0xcc
@@ -22,53 +22,53 @@ function function_db1254dca5eaf211() {
     level.var_28231449ea8976a1 = getdvarint(@"hash_e04e2774c39ed0d1", 1);
     level.var_1515562147f27975 = function_2c836ad05e5f634c("gas_mask");
     level.var_479d8ef7f76a4df6 = function_2c836ad05e5f634c("gas_mask_durable");
-    level.var_534e97d34ef9fa29 = [0:level.var_1515562147f27975, 1:level.var_479d8ef7f76a4df6];
+    level.var_534e97d34ef9fa29 = [level.var_1515562147f27975, level.var_479d8ef7f76a4df6];
     function_900f562c61c6a5d6("gasmask", &function_9726a41ef12198aa, &function_921a9118b4577d3e, undefined, &function_95271caae9eaad97, &function_22065872fdfd2315);
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x379
 // Size: 0x45
-function function_9726a41ef12198aa(itembundle, item, var_b2635db617b09abd) {
-    namespace_9c6cddd872ad75f7::init(item.count, itembundle.ref, itembundle.maxcount);
-    return 0;
+function function_9726a41ef12198aa(itembundle, item, autouse) {
+    scripts/cp_mp/gasmask::init(item.count, itembundle.ref, itembundle.maxcount);
+    return false;
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c6
 // Size: 0x35
-function function_921a9118b4577d3e(itembundle, item, var_b2635db617b09abd, var_8bd8fa2792aa0511) {
+function function_921a9118b4577d3e(itembundle, item, autouse, allowswap) {
     if (isdefined(self.gasmaskhealth)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x403
 // Size: 0x91
 function function_95271caae9eaad97() {
     itembundle = undefined;
     quantity = 0;
-    if (!namespace_9c6cddd872ad75f7::hasgasmask(self)) {
-        return [0:itembundle, 1:quantity];
+    if (!scripts/cp_mp/gasmask::hasgasmask(self)) {
+        return [itembundle, quantity];
     }
     var_acdff55c23d1f9f = self.gasmasktype;
     if (!isdefined(var_acdff55c23d1f9f)) {
-        return [0:itembundle, 1:quantity];
+        return [itembundle, quantity];
     }
     var_6864ed104531914d = function_61d960957fcf3ca0(var_acdff55c23d1f9f);
     if (isdefined(var_6864ed104531914d)) {
         itembundle = getscriptbundle("itemspawnentry:" + var_6864ed104531914d);
         quantity = self.gasmaskhealth;
     }
-    return [0:itembundle, 1:quantity];
+    return [itembundle, quantity];
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49c
 // Size: 0xa
@@ -76,19 +76,19 @@ function function_22065872fdfd2315() {
     function_febe5318d593116();
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ad
 // Size: 0x28
 function function_febe5318d593116() {
     if (istrue(self.gasmaskequipped)) {
-        namespace_9c6cddd872ad75f7::removegasmask();
+        scripts/cp_mp/gasmask::removegasmask();
     }
     self.gasmaskswapinprogress = 0;
-    namespace_9c6cddd872ad75f7::function_58687e8e71126788();
+    scripts/cp_mp/gasmask::function_58687e8e71126788();
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x49
@@ -103,7 +103,7 @@ function function_cdf7f2f6bd3207(request) {
     thread function_2202e74632488bac();
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52c
 // Size: 0x46
@@ -118,7 +118,7 @@ function function_8206bc54a1ed73cb(request) {
     thread function_2202e74632488bac();
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x579
 // Size: 0xb9
@@ -137,43 +137,45 @@ function function_2202e74632488bac() {
     waittillframeend();
     if (istrue(self.gasmaskequipped) && (!isdefined(self.var_fe63300b318b76b0) || !self.var_fe63300b318b76b0.size)) {
         thread removegasmask();
-    } else if (!istrue(self.gasmaskequipped) && isdefined(self.var_fe63300b318b76b0) && self.var_fe63300b318b76b0.size) {
+        return;
+    }
+    if (!istrue(self.gasmaskequipped) && isdefined(self.var_fe63300b318b76b0) && self.var_fe63300b318b76b0.size) {
         thread equipgasmask();
     }
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x639
 // Size: 0x4f
 function function_aeffe7dc479451ad() {
     player = self;
-    var_6b878da7b46a930f = 0;
-    var_6b878da7b46a930f = var_6b878da7b46a930f | player isreloading();
-    var_6b878da7b46a930f = var_6b878da7b46a930f | player isthrowinggrenade();
-    var_6b878da7b46a930f = var_6b878da7b46a930f | player function_e5bf22923d0004bc();
-    var_6b878da7b46a930f = var_6b878da7b46a930f | player issprintsliding();
-    var_6b878da7b46a930f = var_6b878da7b46a930f | player namespace_7e17181d03156026::isplayerads();
-    return var_6b878da7b46a930f;
+    delaygesture = 0;
+    delaygesture = delaygesture | player isreloading();
+    delaygesture = delaygesture | player isthrowinggrenade();
+    delaygesture = delaygesture | player function_e5bf22923d0004bc();
+    delaygesture = delaygesture | player issprintsliding();
+    delaygesture = delaygesture | player scripts/mp/utility/player::isplayerads();
+    return delaygesture;
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x690
 // Size: 0x53
 function function_28b827d98b0cc603() {
     player = self;
-    var_c6c1e3e2091f7050 = 0;
-    var_c6c1e3e2091f7050 = var_c6c1e3e2091f7050 | player isinfreefall();
-    var_c6c1e3e2091f7050 = var_c6c1e3e2091f7050 | player isparachuting();
-    var_c6c1e3e2091f7050 = var_c6c1e3e2091f7050 | player isbasejumpavailable();
+    preventgesture = 0;
+    preventgesture = preventgesture | player isinfreefall();
+    preventgesture = preventgesture | player isparachuting();
+    preventgesture = preventgesture | player isbasejumpavailable();
     if (level.var_28231449ea8976a1 != 0) {
-        var_c6c1e3e2091f7050 = var_c6c1e3e2091f7050 | player isjumping();
+        preventgesture = preventgesture | player isjumping();
     }
-    return !var_c6c1e3e2091f7050;
+    return !preventgesture;
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6eb
 // Size: 0x119
@@ -188,14 +190,14 @@ function equipgasmask() {
         assert(0.2 < var_9f955950f47f8532);
     #/
     if (function_28b827d98b0cc603()) {
-        thread namespace_d3d40f75bb4e4c32::playerplaygestureweaponanim("iw8_ges_plyr_gasmask_on", var_9f955950f47f8532);
+        thread scripts/mp/gametypes/br_public::playerplaygestureweaponanim("iw8_ges_plyr_gasmask_on", var_9f955950f47f8532);
     }
     self setclientomnvar("ui_gas_mask", 2);
     wait(var_9f955950f47f8532);
     self.gasmaskswapinprogress = 0;
     self notify("gas_mask_swap_complete");
     self.gasmaskequipped = 1;
-    namespace_e765f0aad2368473::enableloopingcoughaudiosupression();
+    scripts/cp_mp/killstreaks/white_phosphorus::enableloopingcoughaudiosupression();
     if (isdefined(self.operatorcustomization.gender) && self.operatorcustomization.gender == "female") {
         self function_555e2d32e2756625("gasmask_female");
     } else {
@@ -206,7 +208,7 @@ function equipgasmask() {
     }
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x80b
 // Size: 0x10c
@@ -220,14 +222,14 @@ function removegasmask() {
     fadeouttime = self getgestureanimlength("iw9_vm_ges_gasmask_off");
     thread delayeddetach(1.3);
     if (function_28b827d98b0cc603()) {
-        thread namespace_d3d40f75bb4e4c32::playerplaygestureweaponanim("iw8_ges_plyr_gasmask_off", fadeouttime);
+        thread scripts/mp/gametypes/br_public::playerplaygestureweaponanim("iw8_ges_plyr_gasmask_off", fadeouttime);
     }
     self.gasmaskswapinprogress = 1;
     self setclientomnvar("ui_gas_mask", 1);
     wait(fadeouttime);
     self.gasmaskswapinprogress = 0;
     self notify("gas_mask_swap_complete");
-    namespace_e765f0aad2368473::disableloopingcoughaudiosupression();
+    scripts/cp_mp/killstreaks/white_phosphorus::disableloopingcoughaudiosupression();
     if (isdefined(self.operatorcustomization.gender) && self.operatorcustomization.gender == "female") {
         self function_555e2d32e2756625("female");
     } else {
@@ -238,7 +240,7 @@ function removegasmask() {
     }
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x91e
 // Size: 0xf2
@@ -256,7 +258,7 @@ function breakgasmask() {
     self playsoundtoplayer("br_gas_mask_depleted_plr", self);
     function_58687e8e71126788();
     fadeouttime = self getgestureanimlength("iw9_vm_ges_gasmask_break");
-    thread namespace_d3d40f75bb4e4c32::playerplaygestureweaponanim("iw8_ges_plyr_gasmask_break", fadeouttime);
+    thread scripts/mp/gametypes/br_public::playerplaygestureweaponanim("iw8_ges_plyr_gasmask_break", fadeouttime);
     self forceplaygestureviewmodel("ges_magma_gas_mask_on");
     self.gasmaskswapinprogress = 1;
     self setclientomnvar("ui_gas_mask", 3);
@@ -266,7 +268,7 @@ function breakgasmask() {
     function_8e9b00a1d2b23d72();
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa17
 // Size: 0x4a
@@ -278,10 +280,10 @@ function delayedattach(delaytime) {
     }
     self attach("hat_child_hadir_gas_mask_wm_br", "j_head");
     wait(0.5);
-    namespace_9c6cddd872ad75f7::createoverlay();
+    scripts/cp_mp/gasmask::createoverlay();
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa68
 // Size: 0x66
@@ -289,7 +291,7 @@ function delayeddetach(delaytime) {
     self endon("game_end");
     self endon("death_or_disconnect");
     wait(0.35);
-    namespace_9c6cddd872ad75f7::destroyoverlay();
+    scripts/cp_mp/gasmask::destroyoverlay();
     if (isdefined(delaytime) && delaytime > 0.35) {
         wait(delaytime - 0.35);
     }
@@ -299,14 +301,14 @@ function delayeddetach(delaytime) {
     }
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xad5
 // Size: 0x66
 function delayeddetachbreak(delaytime) {
     self endon("game_end");
     self endon("death_or_disconnect");
-    namespace_9c6cddd872ad75f7::destroyoverlay();
+    scripts/cp_mp/gasmask::destroyoverlay();
     if (isdefined(delaytime) && delaytime > 0.1) {
         wait(delaytime - 0.1);
     }
@@ -317,13 +319,13 @@ function delayeddetachbreak(delaytime) {
     }
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb42
 // Size: 0x47
 function function_8e9b00a1d2b23d72() {
     player = self;
-    if (!function_a50a7be98d81e4fd()) {
+    if (!inventory_isenabled()) {
         return;
     }
     var_d035435a9237f3d = function_b27f0c7dafeadb3(level.var_479d8ef7f76a4df6);
@@ -332,23 +334,23 @@ function function_8e9b00a1d2b23d72() {
     }
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb90
 // Size: 0x59
-function function_b27f0c7dafeadb3(var_b7e583d90618fed3) {
+function function_b27f0c7dafeadb3(targetlootid) {
     backpacksize = function_1b35b10884bd8d67();
     for (i = 0; i < backpacksize; i++) {
-        var_eeeae9defa0c1e95 = function_d870b2c45335bd88(i);
-        if (var_eeeae9defa0c1e95 == var_b7e583d90618fed3) {
+        currentlootid = function_d870b2c45335bd88(i);
+        if (currentlootid == targetlootid) {
             function_777092be5abab355(i);
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_6236231ba2ba2d74/namespace_8055140764bdf2f4
+// Namespace namespace_6236231ba2ba2d74 / namespace_8055140764bdf2f4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbf1
 // Size: 0x48

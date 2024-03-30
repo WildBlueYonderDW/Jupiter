@@ -3,14 +3,14 @@
 
 #namespace namespace_801ddae6bef5eece;
 
-// Namespace namespace_801ddae6bef5eece/namespace_4671825c45957bae
+// Namespace namespace_801ddae6bef5eece / namespace_4671825c45957bae
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0x9c
 // Size: 0x9b
 function private autoexec init() {
     character = #"hash_b25ac90634cc5192";
-    if (!isdefined(level.var_586887bc5dc30f34)) {
-        level.var_586887bc5dc30f34 = [];
+    if (!isdefined(level.fncharacter)) {
+        level.fncharacter = [];
     }
     if (!isdefined(level.var_7d97144daa7995cd)) {
         level.var_7d97144daa7995cd = [];
@@ -18,15 +18,15 @@ function private autoexec init() {
     if (!isdefined(level.var_44bf7e31237b3073)) {
         level.var_44bf7e31237b3073 = [];
     }
-    level.var_586887bc5dc30f34[character] = &main;
+    level.fncharacter[character] = &main;
     if (issp()) {
-        level.var_7d97144daa7995cd[character] = &function_430419022a9c3ffe;
-    } else {
-        level.var_7d97144daa7995cd[character] = &function_8168fbf6282d398b;
+        level.var_7d97144daa7995cd[character] = &precache_sp;
+        return;
     }
+    level.var_7d97144daa7995cd[character] = &function_8168fbf6282d398b;
 }
 
-// Namespace namespace_801ddae6bef5eece/namespace_4671825c45957bae
+// Namespace namespace_801ddae6bef5eece / namespace_4671825c45957bae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13e
 // Size: 0x9a
@@ -45,7 +45,7 @@ function main() {
     }
 }
 
-// Namespace namespace_801ddae6bef5eece/namespace_4671825c45957bae
+// Namespace namespace_801ddae6bef5eece / namespace_4671825c45957bae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1df
 // Size: 0x3
@@ -53,16 +53,16 @@ function precache() {
     
 }
 
-// Namespace namespace_801ddae6bef5eece/namespace_4671825c45957bae
+// Namespace namespace_801ddae6bef5eece / namespace_4671825c45957bae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0x15
-function function_430419022a9c3ffe() {
+function precache_sp() {
     precache();
     precachemodel("c_jup_zmb_disciple_body_hvt");
 }
 
-// Namespace namespace_801ddae6bef5eece/namespace_4671825c45957bae
+// Namespace namespace_801ddae6bef5eece / namespace_4671825c45957bae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x205
 // Size: 0xa

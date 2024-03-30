@@ -6,7 +6,7 @@
 
 #namespace namespace_95b439a53a665583;
 
-// Namespace namespace_95b439a53a665583/namespace_a8b2611e1c2c0f9c
+// Namespace namespace_95b439a53a665583 / namespace_a8b2611e1c2c0f9c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92
 // Size: 0x14
@@ -14,7 +14,7 @@ function main() {
     function_c0b3ddc9a6bdcc46("veh9_jltv", &function_20d96b1495a37dbc);
 }
 
-// Namespace namespace_95b439a53a665583/namespace_a8b2611e1c2c0f9c
+// Namespace namespace_95b439a53a665583 / namespace_a8b2611e1c2c0f9c
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xad
 // Size: 0x1e

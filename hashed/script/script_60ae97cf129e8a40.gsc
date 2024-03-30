@@ -13,26 +13,26 @@
 
 #namespace namespace_79e590f683734378;
 
-// Namespace namespace_79e590f683734378/namespace_33063826a342704e
+// Namespace namespace_79e590f683734378 / namespace_33063826a342704e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x102
 // Size: 0xf3
 function function_733b23bb49feb5c3() {
-    level thread namespace_33ca1c63d4300adc::init();
-    level thread namespace_ebc037f6b65487ff::init();
+    level thread scripts/mp/gametypes/br_ai_encounters::init();
+    level thread scripts/mp/gametypes/br_maphints::init();
     /#
         println("<unknown string>");
     #/
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         function_a94c90dc6c858da4();
-        if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             spawnorigin = (603, 2705, 1306);
-            if (isdefined(level.var_5b908ce3cca6a715.var_f1ad02bc8d519e7b)) {
-                spawnorigin = level.var_5b908ce3cca6a715.var_f1ad02bc8d519e7b;
+            if (isdefined(level.circletest.playerspawnpoint)) {
+                spawnorigin = level.circletest.playerspawnpoint;
             }
             var_9f4a3632d9f75d32 = (-15604, 6617, -1000);
-            if (isdefined(level.var_5b908ce3cca6a715.var_c51425c87647226b)) {
-                var_9f4a3632d9f75d32 = level.var_5b908ce3cca6a715.var_c51425c87647226b;
+            if (isdefined(level.circletest.botspawnorigin)) {
+                var_9f4a3632d9f75d32 = level.circletest.botspawnorigin;
             }
             spawnangle = (0, 60, 0);
             namespace_bd131dfa920d03b9::function_7e904ff184e6794c(var_9f4a3632d9f75d32, undefined, undefined, spawnorigin, spawnangle);
@@ -41,7 +41,7 @@ function function_733b23bb49feb5c3() {
     }
 }
 
-// Namespace namespace_79e590f683734378/namespace_33063826a342704e
+// Namespace namespace_79e590f683734378 / namespace_33063826a342704e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0xfa8
@@ -51,22 +51,22 @@ function function_a94c90dc6c858da4() {
     level.br_level.br_corners = [];
     level.br_level.br_corners[0] = (5800, -12000, 200);
     level.br_level.br_corners[1] = (-7000, 14000, 200);
-    var_45accff1681e0276 = 6000;
+    heightoverride = 6000;
     if (getgametype() == "arm" || getgametype() == "conflict") {
-        var_45accff1681e0276 = 8000;
-    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        heightoverride = 8000;
+    } else if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         var_b83c1c9cb27cc9d7 = -1;
-        brgametype = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5();
+        brgametype = scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5();
         if (brgametype == "dmz" || brgametype == "plunder") {
             var_b83c1c9cb27cc9d7 = getdvarint(@"hash_e432209cc5fbc970", 18000);
         } else {
             var_b83c1c9cb27cc9d7 = getdvarint(@"hash_e432209cc5fbc970", -1);
         }
         if (var_b83c1c9cb27cc9d7 != -1) {
-            var_45accff1681e0276 = var_b83c1c9cb27cc9d7;
+            heightoverride = var_b83c1c9cb27cc9d7;
         }
     }
-    namespace_ad389306d44fc6b4::setc130heightoverrides(var_45accff1681e0276, 65);
+    scripts/mp/gametypes/br_c130::setc130heightoverrides(heightoverride, 65);
     level.br_level.c130_speedoverride = 2000;
     minx = min(level.br_level.br_corners[0][0], level.br_level.br_corners[1][0]);
     maxx = max(level.br_level.br_corners[0][0], level.br_level.br_corners[1][0]);
@@ -85,58 +85,58 @@ function function_a94c90dc6c858da4() {
     level.br_level.br_mapcenter = ((minx + maxx) / 2, (miny + maxy) / 2, 0);
     level.br_level.br_mapsize = (abs(maxx - minx), abs(maxy - miny), abs(level.br_level.c130_heightoverride - level.br_level.c130_sealeveloverride));
     if (getdvarint(@"hash_ffce528e382df177", 0)) {
-        level.br_level.br_circleclosetimes = [0:360, 1:270, 2:225, 3:135, 4:90, 5:60, 6:45, 7:90];
-        level.br_level.br_circledelaytimes = [0:60, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
-        level.br_level.br_circleshowdelaydanger = [0:60, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
+        level.br_level.br_circleclosetimes = [360, 270, 225, 135, 90, 60, 45, 90];
+        level.br_level.br_circledelaytimes = [60, 0, 0, 0, 0, 0, 0, 0];
+        level.br_level.br_circleshowdelaydanger = [60, 0, 0, 0, 0, 0, 0, 0];
     } else if (getdvarint(@"hash_cf84a5d55b19b30e", 0)) {
-        level.br_level.br_circleclosetimes = [0:270, 1:150, 2:120, 3:90, 4:60, 5:45, 6:45, 7:90];
-        level.br_level.br_circledelaytimes = [0:60, 1:10, 2:10, 3:10, 4:10, 5:10, 6:10, 7:0];
-        level.br_level.br_circleshowdelaydanger = [0:60, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
+        level.br_level.br_circleclosetimes = [270, 150, 120, 90, 60, 45, 45, 90];
+        level.br_level.br_circledelaytimes = [60, 10, 10, 10, 10, 10, 10, 0];
+        level.br_level.br_circleshowdelaydanger = [60, 0, 0, 0, 0, 0, 0, 0];
     } else if (getsubgametype() == "mini" || getsubgametype() == "mini_mgl") {
-        level.br_level.br_circleclosetimes = [0:1, 1:200, 2:130, 3:90, 4:50, 5:100];
-        level.br_level.br_circledelaytimes = [0:1, 1:120, 2:75, 3:60, 4:45, 5:0];
-        level.br_level.br_circleshowdelaydanger = [0:1, 1:0, 2:0, 3:0, 4:0, 5:0];
+        level.br_level.br_circleclosetimes = [1, 200, 130, 90, 50, 100];
+        level.br_level.br_circledelaytimes = [1, 120, 75, 60, 45, 0];
+        level.br_level.br_circleshowdelaydanger = [1, 0, 0, 0, 0, 0];
     } else if (getsubgametype() == "rebirth") {
-        level.br_level.br_circleclosetimes = [0:90, 1:45, 2:45, 3:45, 4:105];
-        level.br_level.br_circledelaytimes = [0:120, 1:90, 2:60, 3:60, 4:0];
-        level.br_level.br_circleshowdelaydanger = [0:120, 1:0, 2:0, 3:0, 4:0];
+        level.br_level.br_circleclosetimes = [90, 45, 45, 45, 105];
+        level.br_level.br_circledelaytimes = [120, 90, 60, 60, 0];
+        level.br_level.br_circleshowdelaydanger = [120, 0, 0, 0, 0];
     } else if (getsubgametype() == "vanilla") {
-        level.br_level.br_circleclosetimes = [0:90, 1:60, 2:60, 3:30, 4:100];
-        level.br_level.br_circledelaytimes = [0:75, 1:60, 2:60, 3:60, 4:30];
-        level.br_level.br_circleshowdelaydanger = [0:75, 1:0, 2:0, 3:0, 4:0];
+        level.br_level.br_circleclosetimes = [90, 60, 60, 30, 100];
+        level.br_level.br_circledelaytimes = [75, 60, 60, 60, 30];
+        level.br_level.br_circleshowdelaydanger = [75, 0, 0, 0, 0];
     } else {
-        level.br_level.br_circleclosetimes = [0:135, 1:110, 2:85, 3:55, 4:35, 5:25, 6:25, 7:50];
-        level.br_level.br_circledelaytimes = [0:110, 1:45, 2:37, 3:30, 4:30, 5:22, 6:15, 7:0];
-        level.br_level.br_circleshowdelaydanger = [0:20, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
+        level.br_level.br_circleclosetimes = [135, 110, 85, 55, 35, 25, 25, 50];
+        level.br_level.br_circledelaytimes = [110, 45, 37, 30, 30, 22, 15, 0];
+        level.br_level.br_circleshowdelaydanger = [20, 0, 0, 0, 0, 0, 0, 0];
     }
     if (getsubgametype() == "mini" || getsubgametype() == "mini_mgl") {
-        level.br_level.br_circleshowdelaysafe = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0];
-        level.br_level.br_circleminimapradii = [0:10500, 1:10500, 2:10500, 3:9000, 4:8000, 5:5500];
-        var_5068e43680808e5b = getdvarint(@"hash_e84ce12f7a01a55a", 0);
-        if (var_5068e43680808e5b == 1) {
-            level.br_level.br_circleradii = [0:75000, 1:45000, 2:20000, 3:7000, 4:3500, 5:1500, 6:0];
+        level.br_level.br_circleshowdelaysafe = [0, 0, 0, 0, 0, 0];
+        level.br_level.br_circleminimapradii = [10500, 10500, 10500, 9000, 8000, 5500];
+        circlesetting = getdvarint(@"hash_e84ce12f7a01a55a", 0);
+        if (circlesetting == 1) {
+            level.br_level.br_circleradii = [75000, 45000, 20000, 7000, 3500, 1500, 0];
         } else {
-            level.br_level.br_circleradii = [0:60000, 1:30000, 2:15000, 3:7000, 4:3500, 5:1500, 6:0];
+            level.br_level.br_circleradii = [60000, 30000, 15000, 7000, 3500, 1500, 0];
         }
     } else if (getsubgametype() == "rebirth") {
-        level.br_level.br_circleshowdelaysafe = [0:0, 1:0, 2:0, 3:0, 4:0];
-        level.br_level.br_circleminimapradii = [0:10500, 1:10500, 2:10500, 3:9000, 4:5500];
-        level.br_level.br_circleradii = [0:12000, 1:10000, 2:8000, 3:5000, 4:1500, 5:0];
+        level.br_level.br_circleshowdelaysafe = [0, 0, 0, 0, 0];
+        level.br_level.br_circleminimapradii = [10500, 10500, 10500, 9000, 5500];
+        level.br_level.br_circleradii = [12000, 10000, 8000, 5000, 1500, 0];
     } else if (getsubgametype() == "vanilla") {
-        level.br_level.br_circleshowdelaysafe = [0:0, 1:0, 2:0, 3:0, 4:0];
-        level.br_level.br_circleminimapradii = [0:7500, 1:6500, 2:5500, 3:5000, 4:4500];
-        level.br_level.br_circleradii = [0:16000, 1:11000, 2:7500, 3:4000, 4:1500, 5:0];
+        level.br_level.br_circleshowdelaysafe = [0, 0, 0, 0, 0];
+        level.br_level.br_circleminimapradii = [7500, 6500, 5500, 5000, 4500];
+        level.br_level.br_circleradii = [16000, 11000, 7500, 4000, 1500, 0];
     } else {
-        level.br_level.br_circleshowdelaysafe = [0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0];
-        level.br_level.br_circleminimapradii = [0:10500, 1:10500, 2:10500, 3:10500, 4:10500, 5:9000, 6:8000, 7:5500];
-        level.br_level.br_circleradii = [0:9600, 1:5300, 2:2500, 3:1200, 4:800, 5:500, 6:200, 7:50, 8:0];
+        level.br_level.br_circleshowdelaysafe = [0, 0, 0, 0, 0, 0, 0, 0];
+        level.br_level.br_circleminimapradii = [10500, 10500, 10500, 10500, 10500, 9000, 8000, 5500];
+        level.br_level.br_circleradii = [9600, 5300, 2500, 1200, 800, 500, 200, 50, 0];
     }
     if (isdefined(level.br_circle_init_func)) {
         [[ level.br_circle_init_func ]]();
     }
-    namespace_c5622898120e827f::applycirclesettings();
-    level.br_prematchspawnlocations = [0:namespace_d20f8ef223912e12::createspawnlocation((-1261, -10218.5, 519.66), 0, 500), 1:namespace_d20f8ef223912e12::createspawnlocation((301.573, -6134.04, 692.001), 0, 500), 2:namespace_d20f8ef223912e12::createspawnlocation((-3932.99, -2860.85, 622.534), 0, 500), 3:namespace_d20f8ef223912e12::createspawnlocation((3565.82, -6494.82, 497.727), 0, 500), 4:namespace_d20f8ef223912e12::createspawnlocation((2784.2, -1387.21, 839.998), 0, 500)];
-    level.br_badcircleareas = [0:namespace_c5622898120e827f::createinvalidcirclearea((-18691, 12376, 200), 15000), 1:namespace_c5622898120e827f::createinvalidcirclearea((-19459, -12712, 200), 15000), 2:namespace_c5622898120e827f::createinvalidcirclearea((19261, -12712, 200), 15000), 3:namespace_c5622898120e827f::createinvalidcirclearea((18493, 12376, 200), 15000), 4:namespace_c5622898120e827f::createinvalidcirclearea((-707, 20888, 200), 8000), 5:namespace_c5622898120e827f::createinvalidcirclearea((-707, -22632, 200), 8000), 6:namespace_c5622898120e827f::createinvalidcirclearea((5255, -15805, 200), 4500), 7:namespace_c5622898120e827f::createinvalidcirclearea((8323, -9836, 200), 4500), 8:namespace_c5622898120e827f::createinvalidcirclearea((8642, 3052, 200), 4500), 9:namespace_c5622898120e827f::createinvalidcirclearea((7015, 9413, 200), 4500), 10:namespace_c5622898120e827f::createinvalidcirclearea((4349, 13144, 200), 4500), 11:namespace_c5622898120e827f::createinvalidcirclearea((-7087, 13998, 200), 4500), 12:namespace_c5622898120e827f::createinvalidcirclearea((-8292, 8684, 200), 4500), 13:namespace_c5622898120e827f::createinvalidcirclearea((-9920, 2816, 200), 4500), 14:namespace_c5622898120e827f::createinvalidcirclearea((-8292, 8684, 200), 4500), 15:namespace_c5622898120e827f::createinvalidcirclearea((-9088, -5312, 200), 4500), 16:namespace_c5622898120e827f::createinvalidcirclearea((-7424, -12800, 200), 4500), 17:namespace_c5622898120e827f::createinvalidcirclearea((-1600, -17344, 200), 4500), 18:namespace_c5622898120e827f::createinvalidcirclearea((9923, -2860, 200), 4500), 19:namespace_c5622898120e827f::createinvalidcirclearea((-1859, 16600, 200), 4500), 20:namespace_c5622898120e827f::createinvalidcirclearea((2388, -11256, 200), 2400), 21:namespace_c5622898120e827f::createinvalidcirclearea((-4140, -8184, 200), 2000), 22:namespace_c5622898120e827f::createinvalidcirclearea((-6085, 2857, 200), 1100), 23:namespace_c5622898120e827f::createinvalidcirclearea((-92, 12848, 200), 1100), 24:namespace_c5622898120e827f::createinvalidcirclearea((-4582, 10069, 200), 1100), 25:namespace_c5622898120e827f::createinvalidcirclearea((4957, 4374, 200), 1100), 26:namespace_c5622898120e827f::createinvalidcirclearea((4579, 6143, 200), 1100), 27:namespace_c5622898120e827f::createinvalidcirclearea((-6700, -824, 200), 1100), 28:namespace_c5622898120e827f::createinvalidcirclearea((-3820, -9656, 200), 1100), 29:namespace_c5622898120e827f::createinvalidcirclearea((1556, -13880, 200), 1100)];
+    scripts/mp/gametypes/br_circle::applycirclesettings();
+    level.br_prematchspawnlocations = [scripts/mp/gametypes/br::createspawnlocation((-1261, -10218.5, 519.66), 0, 500), scripts/mp/gametypes/br::createspawnlocation((301.573, -6134.04, 692.001), 0, 500), scripts/mp/gametypes/br::createspawnlocation((-3932.99, -2860.85, 622.534), 0, 500), scripts/mp/gametypes/br::createspawnlocation((3565.82, -6494.82, 497.727), 0, 500), scripts/mp/gametypes/br::createspawnlocation((2784.2, -1387.21, 839.998), 0, 500)];
+    level.br_badcircleareas = [scripts/mp/gametypes/br_circle::createinvalidcirclearea((-18691, 12376, 200), 15000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-19459, -12712, 200), 15000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((19261, -12712, 200), 15000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((18493, 12376, 200), 15000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-707, 20888, 200), 8000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-707, -22632, 200), 8000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((5255, -15805, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((8323, -9836, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((8642, 3052, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((7015, 9413, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((4349, 13144, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-7087, 13998, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-8292, 8684, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-9920, 2816, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-8292, 8684, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-9088, -5312, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-7424, -12800, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-1600, -17344, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((9923, -2860, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-1859, 16600, 200), 4500), scripts/mp/gametypes/br_circle::createinvalidcirclearea((2388, -11256, 200), 2400), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-4140, -8184, 200), 2000), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-6085, 2857, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-92, 12848, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-4582, 10069, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((4957, 4374, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((4579, 6143, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-6700, -824, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((-3820, -9656, 200), 1100), scripts/mp/gametypes/br_circle::createinvalidcirclearea((1556, -13880, 200), 1100)];
     setdvar(@"hash_4aea002979a25696", 10);
 }
 

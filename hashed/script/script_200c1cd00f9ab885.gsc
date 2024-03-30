@@ -2,7 +2,7 @@
 #using scripts\asm\asm.gsc;
 #using scripts\asm\asm_bb.gsc;
 #using script_7ff3a914e6c698c5;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_3badb8914eb5ac16;
 #using script_7edf952f8921aa6b;
@@ -15,7 +15,7 @@
 
 #namespace zombie_deathworm;
 
-// Namespace zombie_deathworm/namespace_c1cca3f9c437f745
+// Namespace zombie_deathworm / namespace_c1cca3f9c437f745
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef
 // Size: 0x24
@@ -25,7 +25,7 @@ function function_a53f4a78a75cbd41(params) {
     function_72d358d261f676a3(params);
 }
 
-// Namespace zombie_deathworm/namespace_c1cca3f9c437f745
+// Namespace zombie_deathworm / namespace_c1cca3f9c437f745
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x11a
 // Size: 0x22
@@ -33,7 +33,7 @@ function private function_b0fc1ad0235df745() {
     level.scr_anim[self.animname]["spawn"] = "spawn";
 }
 
-// Namespace zombie_deathworm/namespace_c1cca3f9c437f745
+// Namespace zombie_deathworm / namespace_c1cca3f9c437f745
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x5e

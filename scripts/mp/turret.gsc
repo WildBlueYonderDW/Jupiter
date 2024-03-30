@@ -7,13 +7,13 @@
 
 #namespace turret;
 
-// Namespace turret/namespace_5b5a9f15cf585890
+// Namespace turret / scripts/mp/turret
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13f
 // Size: 0xb7
 function init() {
     array = getentarray("turret_mp", "targetname");
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         foreach (ent in array) {
             ent delete();
         }
@@ -24,7 +24,7 @@ function init() {
     }
 }
 
-// Namespace turret/namespace_5b5a9f15cf585890
+// Namespace turret / scripts/mp/turret
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fd
 // Size: 0x261
@@ -56,22 +56,22 @@ function add_turret(turret) {
             }
         }
     }
-    var_861cb51e11728417 = turret gettagorigin("tag_turret_pitch");
-    useobj = namespace_19b4203b51d56488::createhintobject(var_861cb51e11728417, "HINT_BUTTON", "hud_icon_turret", "KILLSTREAKS_HINTS/SENTRY_USE_GL");
+    useobjorigin = turret gettagorigin("tag_turret_pitch");
+    useobj = scripts/mp/gameobjects::createhintobject(useobjorigin, "HINT_BUTTON", "hud_icon_turret", "KILLSTREAKS_HINTS/SENTRY_USE_GL");
     useobj linkto(turret, "tag_turret_pitch", (0, 0, 5), (0, 0, 0));
     turret.useobj = useobj;
     useobj thread turretthink(turret);
-    var_8cb8b3af44bd2dd6 = turret gettagorigin("tag_player");
-    turret.killcament = spawn("script_model", var_8cb8b3af44bd2dd6);
+    killcamorigin = turret gettagorigin("tag_player");
+    turret.killcament = spawn("script_model", killcamorigin);
     turret.killcament linkto(turret, "tag_player", (-60, 0, 20), (0, 0, 0));
 }
 
-// Namespace turret/namespace_5b5a9f15cf585890
+// Namespace turret / scripts/mp/turret
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x465
 // Size: 0xec
 function turretthink(turret) {
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         self makeunusable();
         thread endturretonplayer(player);
@@ -93,7 +93,7 @@ function turretthink(turret) {
     }
 }
 
-// Namespace turret/namespace_5b5a9f15cf585890
+// Namespace turret / scripts/mp/turret
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x558
 // Size: 0x3e
@@ -101,7 +101,7 @@ function endturretusewatch(player, turret) {
     while (player usebuttonpressed()) {
         waitframe();
     }
-    while (1) {
+    while (true) {
         if (player usebuttonpressed()) {
             self notify("end_turret_use");
             break;
@@ -110,7 +110,7 @@ function endturretusewatch(player, turret) {
     }
 }
 
-// Namespace turret/namespace_5b5a9f15cf585890
+// Namespace turret / scripts/mp/turret
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59d
 // Size: 0x1c

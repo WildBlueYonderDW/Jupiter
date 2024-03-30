@@ -19,72 +19,72 @@
 #using scripts\mp\flags.gsc;
 #using scripts\engine\trace.gsc;
 
-#namespace namespace_20260f65229aa888;
+#namespace battlechatter_mp;
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf6a
 // Size: 0x4a7
 function init() {
     level.battlechatterenabled = getdvarint(@"hash_7bdf6d033065ef17", 1) == 1;
-    var_6b2b70199c346e46 = getdvarint(@"hash_fc4b1a7d66dbeb32", 1800);
-    level.var_98014172ce4b4e67 = var_6b2b70199c346e46 * var_6b2b70199c346e46;
+    friendlydist = getdvarint(@"hash_fc4b1a7d66dbeb32", 1800);
+    level.var_98014172ce4b4e67 = friendlydist * friendlydist;
     level.speakers = [];
     level.bcinfo = [];
     level.bcinfo["max_wait_time"] = 1000;
     level.bcinfo["soundEventHistory"] = [];
-    content = [0:"physicscontents_clipshot", 1:"physicscontents_missileclip", 2:"physicscontents_vehicle", 3:"physicscontents_characterproxy", 4:"physicscontents_glass", 5:"physicscontents_itemclip"];
+    content = ["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle", "physicscontents_characterproxy", "physicscontents_glass", "physicscontents_itemclip"];
     level.var_c49bb6749e2ce50c = physics_createcontents(content);
     foreach (teamname in level.teamnamelist) {
         level.isteamspeaking[teamname] = 0;
         level.speakers[teamname] = [];
         level.bcinfo["queued"][teamname] = "none";
     }
-    thread function_56c7d84ce1258f23();
+    thread monitorspeakers();
     setupselfvo();
     function_9cd008247ba86bcd();
-    registerbcsoundtype(#"hash_40d708eb58419c23", undefined, 1, 1, 10, 10, 0);
+    registerbcsoundtype(#"callout_location", undefined, 1, 1, 10, 10, 0);
     scriptbundlename = "battlechatter_list";
-    if (isdefined(level.var_1a2b600a06ec21f4) && isdefined(level.var_1a2b600a06ec21f4.var_35104c981da61b30)) {
-        scriptbundlename = level.var_1a2b600a06ec21f4.var_35104c981da61b30;
+    if (isdefined(level.gamemodebundle) && isdefined(level.gamemodebundle.battlechatterlist)) {
+        scriptbundlename = level.gamemodebundle.battlechatterlist;
     } else if (getdvarint(@"hash_a464cb031c16ee87") > 0) {
         scriptbundlename = scriptbundlename + "_t10_mp";
-    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    } else if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         scriptbundlename = scriptbundlename + "_wz2_br";
     } else {
         scriptbundlename = scriptbundlename + "_iw9_mp";
     }
     bundle = getscriptbundle("battlechatterlist:" + scriptbundlename);
     if (isdefined(bundle)) {
-        foreach (event in bundle.var_2b444e3956d2a059) {
+        foreach (event in bundle.battlechatterevents) {
             eventname = event.eventname;
             var_4f632c1568af9fc0 = event.soundevent;
             priority = event.priority;
             chance = event.chance;
-            var_5451dca91a942c16 = event.var_5451dca91a942c16;
-            var_c3924093b71ec9dd = event.var_c3924093b71ec9dd;
+            timeoutpos = event.timeoutpos;
+            timeoutspeaker = event.timeoutspeaker;
             var_3910458d599e5e01 = event.var_3910458d599e5e01;
-            registerbcsoundtype(eventname, var_4f632c1568af9fc0, priority, chance, var_5451dca91a942c16, var_c3924093b71ec9dd, var_3910458d599e5e01);
+            registerbcsoundtype(eventname, var_4f632c1568af9fc0, priority, chance, timeoutpos, timeoutspeaker, var_3910458d599e5e01);
         }
-        foreach (event in bundle.var_ce140add99a4d5c4) {
+        foreach (event in bundle.pingevents) {
             eventname = event.eventname;
             var_4f632c1568af9fc0 = event.soundevent;
             priority = event.priority;
             chance = event.chance;
-            var_5451dca91a942c16 = event.var_5451dca91a942c16;
-            var_c3924093b71ec9dd = event.var_c3924093b71ec9dd;
+            timeoutpos = event.timeoutpos;
+            timeoutspeaker = event.timeoutspeaker;
             var_3910458d599e5e01 = event.var_3910458d599e5e01;
-            registerbcsoundtype(eventname, var_4f632c1568af9fc0, priority, chance, var_5451dca91a942c16, var_c3924093b71ec9dd, var_3910458d599e5e01);
+            registerbcsoundtype(eventname, var_4f632c1568af9fc0, priority, chance, timeoutpos, timeoutspeaker, var_3910458d599e5e01);
         }
     }
-    level.func_bcs_location_trigs = &namespace_35dd51b19c926c71::extra_location_trigger_mapping;
-    namespace_bea06470f299ab84::bcs_location_trigs_init();
-    gametype = namespace_36f464722d326bbe::getgametype();
+    level.func_bcs_location_trigs = &scripts/mp/battlechatter_trigs::extra_location_trigger_mapping;
+    scripts/common/bcs_location_trigs::bcs_location_trigs_init();
+    gametype = scripts/cp_mp/utility/game_utility::getgametype();
     level.istacticalbc = 0;
-    if (namespace_cd0b2d039510b38d::function_60bf8d82001fc22c() == "sd" || gametype == "cyber" || gametype == "arena") {
+    if (scripts/mp/utility/game::getbasegametype() == "sd" || gametype == "cyber" || gametype == "arena") {
         level.istacticalbc = 1;
     }
-    namespace_71eef510d7f364cf::registeronplayerspawncallback(&onplayerspawned);
+    scripts/mp/utility/spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
     /#
         setdevdvarifuninitialized(@"hash_611f04c407c3f644", "death_or_disconnect");
         setdevdvarifuninitialized(@"hash_9627c73338f91622", "death_or_disconnect");
@@ -95,7 +95,7 @@ function init() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x3
@@ -103,7 +103,7 @@ function private function_9cd008247ba86bcd() {
     
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x1422
 // Size: 0x57
@@ -111,13 +111,13 @@ function private function_4c2643be02acc9d2(eventname) {
     /#
         assertex(isstring(eventname), "Expects 'eventName' to hold an string value.");
     #/
-    if (!isdefined(level.var_5a42555b2750c3a)) {
-        level.var_5a42555b2750c3a = [];
+    if (!isdefined(level.battlechatterfilter)) {
+        level.battlechatterfilter = [];
     }
-    level.var_5a42555b2750c3a[function_1823ff50bb28148d(eventname)] = function_2ef675c13ca1c4af(@"hash_ee1ba8e906086c3c", eventname);
+    level.battlechatterfilter[function_1823ff50bb28148d(eventname)] = hashcat(@"hash_ee1ba8e906086c3c", eventname);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1480
 // Size: 0x67
@@ -125,17 +125,17 @@ function private function_bc76cf7adda53de3(eventname) {
     /#
         assertex(function_d03495fe6418377b(eventname), "Expects 'eventName' to hold an xhash value.");
     #/
-    if (isdefined(level.var_5a42555b2750c3a) && isdefined(level.var_5a42555b2750c3a[eventname])) {
-        return (getdvarint(@"hash_a48e01ab7c276ef4", 0) != 0 || getdvarint(level.var_5a42555b2750c3a[eventname], 0) != 0);
+    if (isdefined(level.battlechatterfilter) && isdefined(level.battlechatterfilter[eventname])) {
+        return (getdvarint(@"hash_a48e01ab7c276ef4", 0) != 0 || getdvarint(level.battlechatterfilter[eventname], 0) != 0);
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14ef
 // Size: 0x146
-function registerbcsoundtype(soundtype, var_4f632c1568af9fc0, priority, chance, var_5451dca91a942c16, var_c3924093b71ec9dd, var_3910458d599e5e01) {
+function registerbcsoundtype(soundtype, var_4f632c1568af9fc0, priority, chance, timeoutpos, timeoutspeaker, var_3910458d599e5e01) {
     if (!isdefined(soundtype)) {
         /#
             assertmsg("registerBCSoundType(): undefined soundType");
@@ -148,15 +148,15 @@ function registerbcsoundtype(soundtype, var_4f632c1568af9fc0, priority, chance, 
     if (!isdefined(chance) || chance == 0 || function_bc76cf7adda53de3(soundtype)) {
         chance = undefined;
     }
-    if (!isdefined(var_5451dca91a942c16) || var_5451dca91a942c16 == 1) {
-        var_5451dca91a942c16 = undefined;
+    if (!isdefined(timeoutpos) || timeoutpos == 1) {
+        timeoutpos = undefined;
     } else {
-        var_5451dca91a942c16 = var_5451dca91a942c16 * 1000;
+        timeoutpos = timeoutpos * 1000;
     }
-    if (!isdefined(var_c3924093b71ec9dd) || var_c3924093b71ec9dd == 1) {
-        var_c3924093b71ec9dd = undefined;
+    if (!isdefined(timeoutspeaker) || timeoutspeaker == 1) {
+        timeoutspeaker = undefined;
     } else {
-        var_c3924093b71ec9dd = var_c3924093b71ec9dd * 1000;
+        timeoutspeaker = timeoutspeaker * 1000;
     }
     if (!isdefined(var_3910458d599e5e01) || var_3910458d599e5e01 == 0) {
         var_3910458d599e5e01 = undefined;
@@ -164,12 +164,12 @@ function registerbcsoundtype(soundtype, var_4f632c1568af9fc0, priority, chance, 
     level.bcinfo["asset"][soundtype] = var_4f632c1568af9fc0;
     level.bcinfo["priority"][soundtype] = priority;
     level.bcinfo["chance"][soundtype] = chance;
-    level.bcinfo["timeout_pos"][soundtype] = var_5451dca91a942c16;
-    level.bcinfo["timeout_player"][soundtype] = var_c3924093b71ec9dd;
+    level.bcinfo["timeout_pos"][soundtype] = timeoutpos;
+    level.bcinfo["timeout_player"][soundtype] = timeoutspeaker;
     level.bcinfo["req_friendly"][soundtype] = var_3910458d599e5e01;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x163c
 // Size: 0xe1
@@ -185,19 +185,21 @@ function onplayerspawned() {
         self.bcdisabled = 1;
         return;
     }
-    if (!namespace_cd0b2d039510b38d::runleanthreadmode() || istrue(level.br_practice_match)) {
+    if (!scripts/mp/utility/game::runleanthreadmode() || istrue(level.br_practice_match)) {
         thread reloadtracking();
         thread threatcallouttracking();
         thread onsixfriendlytracking();
         if (istrue(self.wassquadspawned)) {
             level thread trysaylocalsound(self, #"hash_213c1cf2e5154626");
         }
-    } else if (!namespace_36f464722d326bbe::isbrstylegametype()) {
+        return;
+    }
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         self.bcdisabled = 1;
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1724
 // Size: 0x31
@@ -209,7 +211,7 @@ function hurtbadlywait() {
     level thread trysaylocalsound(self, #"hash_c9f3c24df8902b3d");
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x175c
 // Size: 0xa4
@@ -228,7 +230,7 @@ function validaterecentattackers() {
     self.recentattackers = var_9225a7e3e5cc65ff;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1807
 // Size: 0x120
@@ -236,16 +238,16 @@ function addrecentattacker(attacker) {
     if (!isdefined(self.recentattackers)) {
         self.recentattackers = [];
     }
-    var_161ee527aa374cca = 0;
+    attackerexists = 0;
     foreach (event in self.recentattackers) {
         if (event.attacker == attacker) {
-            var_161ee527aa374cca = 1;
+            attackerexists = 1;
             event.time = gettime();
             event.ignoreaftertime = event.time + 2000;
             break;
         }
     }
-    if (!var_161ee527aa374cca) {
+    if (!attackerexists) {
         event = spawnstruct();
         event.time = gettime();
         event.attacker = attacker;
@@ -255,19 +257,19 @@ function addrecentattacker(attacker) {
     validaterecentattackers();
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x192e
 // Size: 0xd0
 function launcherfired(missile) {
     missile endon("death");
-    while (1) {
-        var_ef269077a28646eb = utility::playersinsphere(missile.origin, 500);
-        foreach (player in var_ef269077a28646eb) {
-            if (!isdefined(player) || !player namespace_f8065cafc523dba5::_isalive()) {
+    while (true) {
+        nearplayers = utility::playersinsphere(missile.origin, 500);
+        foreach (player in nearplayers) {
+            if (!isdefined(player) || !player scripts/cp_mp/utility/player_utility::_isalive()) {
                 continue;
             }
-            if (isdefined(missile.owner) && !missile.owner namespace_f8065cafc523dba5::isenemy(player)) {
+            if (isdefined(missile.owner) && !missile.owner scripts/cp_mp/utility/player_utility::isenemy(player)) {
                 continue;
             }
             level thread trysaylocalsound(player, #"hash_818e8617acc1d296");
@@ -277,7 +279,7 @@ function launcherfired(missile) {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a05
 // Size: 0x88
@@ -289,13 +291,12 @@ function javelinfired(team, target) {
     var_6022f416c78a2d65 = getplayersinradius(target, 360000, undefined, undefined, enemyteam);
     if (var_6022f416c78a2d65.size == 0) {
         return;
-    } else {
-        player = random(var_6022f416c78a2d65);
-        level thread trysaylocalsound(player, #"hash_818e8617acc1d296", undefined, 0.5);
     }
+    player = random(var_6022f416c78a2d65);
+    level thread trysaylocalsound(player, #"hash_818e8617acc1d296", undefined, 0.5);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a94
 // Size: 0x3b0
@@ -384,12 +385,12 @@ function ongrenadeuse(grenade) {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e4b
 // Size: 0x263
-function function_204aeba40a2aa027(var_ebec497ff8b18a45) {
-    switch (var_ebec497ff8b18a45) {
+function function_204aeba40a2aa027(superref) {
+    switch (superref) {
     case #"hash_ac2ab6307a9fe4ec":
         level thread trysaylocalsound(self, #"hash_792d7ce252e00d97");
         break;
@@ -439,19 +440,19 @@ function function_204aeba40a2aa027(var_ebec497ff8b18a45) {
         break;
     }
     if (isdefined(self.team)) {
-        level notify("fieldUpgrade_used_" + self.team, var_ebec497ff8b18a45);
+        level notify("fieldUpgrade_used_" + self.team, superref);
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20b5
 // Size: 0x17
-function onfieldupgradedestroy(var_928bfcd868268253) {
-    level thread trysaylocalsound(self, var_928bfcd868268253);
+function onfieldupgradedestroy(chatterref) {
+    level thread trysaylocalsound(self, chatterref);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20d3
 // Size: 0x54b
@@ -490,20 +491,20 @@ function grenadeproximitytracking() {
     if (!isdefined(owner)) {
         return;
     }
-    var_12ea6e98355ecb10 = self.origin;
-    nearbyplayers = utility::playersnear(var_12ea6e98355ecb10, 960);
+    querylocation = self.origin;
+    nearbyplayers = utility::playersnear(querylocation, 960);
     self endon("death");
     while (isdefined(self.origin)) {
-        if (distancesquared(var_12ea6e98355ecb10, self.origin) > 768 * 768) {
-            var_12ea6e98355ecb10 = self.origin;
-            nearbyplayers = utility::playersnear(var_12ea6e98355ecb10, 960);
+        if (distancesquared(querylocation, self.origin) > 768 * 768) {
+            querylocation = self.origin;
+            nearbyplayers = utility::playersnear(querylocation, 960);
         }
         foreach (player in nearbyplayers) {
-            if (!isdefined(player) || player namespace_f8065cafc523dba5::_isalive() == 0 || isdefined(self.owner) && isalive(self.owner) && self.owner namespace_f8065cafc523dba5::isenemy(player) == 0) {
+            if (!isdefined(player) || player scripts/cp_mp/utility/player_utility::_isalive() == 0 || isdefined(self.owner) && isalive(self.owner) && self.owner scripts/cp_mp/utility/player_utility::isenemy(player) == 0) {
                 continue;
             }
-            var_db99b2cae470ae03 = distancesquared(self.origin, player.origin);
-            if (isdefined(var_db99b2cae470ae03) && var_db99b2cae470ae03 < 147456) {
+            grenadedistancesquared = distancesquared(self.origin, player.origin);
+            if (isdefined(grenadedistancesquared) && grenadedistancesquared < 147456) {
                 if (!sighttracepassed(player geteye(), self.origin, 0, player)) {
                     continue;
                 }
@@ -573,7 +574,7 @@ function grenadeproximitytracking() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2625
 // Size: 0x122
@@ -615,7 +616,7 @@ function equipmentdestroyed(ent) {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x274e
 // Size: 0x373
@@ -701,7 +702,7 @@ function playkillstreakdeploydialog(owner, streakname) {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ac8
 // Size: 0x7c
@@ -715,7 +716,7 @@ function getplayersinteam(team) {
     return playerlist;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b4c
 // Size: 0x2e9
@@ -790,7 +791,7 @@ function killstreakdestroyed(streakname) {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e3c
 // Size: 0x4a
@@ -809,7 +810,7 @@ function suppressingfiretracking() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e8d
 // Size: 0x28
@@ -821,7 +822,7 @@ function suppresstimeout() {
     self notify("stoppedFiring");
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ebc
 // Size: 0x1a
@@ -831,7 +832,7 @@ function waitsuppresstimeout() {
     thread suppresstimeout();
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2edd
 // Size: 0x23
@@ -843,7 +844,7 @@ function suppresswaiter() {
     wait(1);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f07
 // Size: 0x30f
@@ -853,22 +854,22 @@ function reloadtracking() {
     if (isprophuntgametype()) {
         return;
     }
-    while (1) {
+    while (true) {
         self waittill("reload_start");
         objweapon = self getcurrentweapon();
         if (!isdefined(objweapon)) {
             continue;
         }
-        var_ef3be25d24d4f062 = weaponhasattachment(objweapon, "akimbo");
-        if (var_ef3be25d24d4f062) {
+        hasakimbo = weaponhasattachment(objweapon, "akimbo");
+        if (hasakimbo) {
             var_3483795b0a68eb95 = self getweaponammoclip(objweapon, "right") + self getweaponammoclip(objweapon, "left") + self getweaponammostock(objweapon);
         } else {
             var_3483795b0a68eb95 = self getweaponammoclip(objweapon) + self getweaponammostock(objweapon);
         }
         var_54a24336cc9a143d = istrue(objweapon.isalternate) && (weaponclass(objweapon) == "grenade" || weaponclass(objweapon) == "spread");
         var_bc6925748f6b3a6 = function_8a4f25fb9d4c43c8(objweapon);
-        if (var_3483795b0a68eb95 <= weaponclipsize(objweapon) || var_ef3be25d24d4f062 && var_3483795b0a68eb95 <= weaponclipsize(objweapon) * 2) {
-            var_cf4209c200f8bbf4 = getweapongroup(objweapon);
+        if (var_3483795b0a68eb95 <= weaponclipsize(objweapon) || hasakimbo && var_3483795b0a68eb95 <= weaponclipsize(objweapon) * 2) {
+            weapongroup = getweapongroup(objweapon);
             var_38497ce38042adf7 = 0;
             switch (getweaponrootname(objweapon)) {
             case #"hash_607145e68712971c":
@@ -880,8 +881,8 @@ function reloadtracking() {
             }
             var_da66af6058340796 = var_38497ce38042adf7 || var_54a24336cc9a143d;
             if (!var_da66af6058340796) {
-                if (namespace_36f464722d326bbe::isbrstylegametype()) {
-                    switch (var_cf4209c200f8bbf4) {
+                if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+                    switch (weapongroup) {
                     case #"hash_34340d457a63e7f1":
                     case #"hash_ab10f9c080fe4faf":
                         level thread trysaylocalsound(self, #"hash_33802c943482a5d8");
@@ -908,33 +909,35 @@ function reloadtracking() {
                     level thread trysaylocalsound(self, #"hash_442329caf50f7c25");
                 }
             }
-        } else {
-            validaterecentattackers();
-            var_4291fa32c3861d68 = namespace_27c74152ccb91331::function_7b50742a287d3ca1(self) && cointoss();
-            if (var_4291fa32c3861d68) {
-                namespace_27c74152ccb91331::function_c5f05871ba7c3aa3();
-            } else if (var_bc6925748f6b3a6) {
-                level thread trysaylocalsound(self, #"hash_7a11af8950a9a3fa");
-            } else {
-                level thread trysaylocalsound(self, #"hash_562601e3a4173f34");
-            }
+            continue;
         }
+        validaterecentattackers();
+        var_4291fa32c3861d68 = namespace_27c74152ccb91331::function_7b50742a287d3ca1(self) && cointoss();
+        if (var_4291fa32c3861d68) {
+            namespace_27c74152ccb91331::function_c5f05871ba7c3aa3();
+            continue;
+        }
+        if (var_bc6925748f6b3a6) {
+            level thread trysaylocalsound(self, #"hash_7a11af8950a9a3fa");
+            continue;
+        }
+        level thread trysaylocalsound(self, #"hash_562601e3a4173f34");
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x321d
 // Size: 0x21
 function sprinttracking() {
     self endon("death_or_disconnect");
     self endon("faux_spawn");
-    while (1) {
+    while (true) {
         self waittill("sprint_begin");
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3245
 // Size: 0x35b
@@ -944,7 +947,7 @@ function threatcallouttracking() {
     if (isprophuntgametype()) {
         return;
     }
-    while (1) {
+    while (true) {
         self waittill("enemy_sighted");
         if (getomnvar("ui_prematch_period")) {
             level waittill("prematch_over");
@@ -957,33 +960,33 @@ function threatcallouttracking() {
         if (!isdefined(enemies)) {
             continue;
         }
-        var_be2203d59ee928b6 = 0;
+        enemycount = 0;
         dist = 4000000;
         isads = self playerads() > 0.7;
         if (isads) {
             dist = 9000000;
         }
         var_5486190c6b06a3c9 = get_last_callout_time(self.team);
-        cancalloutlocation = !isdefined(var_5486190c6b06a3c9) || var_5486190c6b06a3c9 + function_ffd3470f08fcf7a7(#"hash_40d708eb58419c23") < gettime();
-        var_40711b9fd17f058d = 0;
+        cancalloutlocation = !isdefined(var_5486190c6b06a3c9) || var_5486190c6b06a3c9 + function_ffd3470f08fcf7a7(#"callout_location") < gettime();
+        playedlocation = 0;
         forward = anglestoforward(self.angles);
         foreach (enemy in enemies) {
             toenemy = vectornormalize(enemy.origin - self.origin);
             if (isdefined(enemy) && isreallyalive(enemy) && !enemy _hasperk("specialty_coldblooded") && distancesquared(self.origin, enemy.origin) < dist && vectordot(forward, toenemy) > ter_op(isads, 0.984808, 0.939692)) {
                 location = enemy getvalidlocation(self);
-                var_be2203d59ee928b6++;
+                enemycount++;
                 if (isdefined(location) && cancalloutlocation) {
                     alias = "dx_mpo_" + ter_op(self.team == "allies", "usop", "ruop") + "_loc_enemy_" + location.locationaliases[0];
                     location_add_last_callout_time(location.locationaliases[0], self.team);
                     if (soundexists(alias)) {
                         self playsoundtoteam(alias, self.team);
-                        var_40711b9fd17f058d = 1;
+                        playedlocation = 1;
                     }
                     break;
                 }
             }
         }
-        if (var_be2203d59ee928b6 > 0) {
+        if (enemycount > 0) {
             alias = undefined;
             if (!saidtoorecently(#"hash_52b2adecc602d95c")) {
                 alias = #"hash_52b2adecc602d95c";
@@ -997,7 +1000,7 @@ function threatcallouttracking() {
                     alias = #"hash_cd1d2547e61fb1e";
                 }
             }
-            if (var_be2203d59ee928b6 > 1 && !saidtoorecently(#"hash_14f86af7d651b93f")) {
+            if (enemycount > 1 && !saidtoorecently(#"hash_14f86af7d651b93f")) {
                 if (isdefined(alias)) {
                     if (cointoss()) {
                         alias = #"hash_14f86af7d651b93f";
@@ -1011,7 +1014,7 @@ function threatcallouttracking() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35a7
 // Size: 0x1ec
@@ -1022,9 +1025,9 @@ function dosound(soundtype, targetent, location) {
     if (!isreallyalive(self)) {
         return;
     }
-    var_e7922a94fbd03691 = soundtype;
+    soundaliasbase = soundtype;
     if (isdefined(location)) {
-        var_e7922a94fbd03691 = "loc_callout_" + location;
+        soundaliasbase = "loc_callout_" + location;
     }
     if (soundtype == #"hash_197b54b4d0e467b7") {
         if (self.operatorcustomization.executionquip == "none") {
@@ -1044,25 +1047,25 @@ function dosound(soundtype, targetent, location) {
         }
     }
     if (isdefined(targetent) && isent(targetent)) {
-        self function_c664a2459d6f3eaa(var_4f632c1568af9fc0, targetent);
+        self playsoundevent(var_4f632c1568af9fc0, targetent);
     } else {
-        self function_c664a2459d6f3eaa(var_4f632c1568af9fc0);
+        self playsoundevent(var_4f632c1568af9fc0);
     }
     if (isdefined(location)) {
         location_add_last_callout_time(location, self.team);
     }
     priority = function_336e1f89ae06dfd4(soundtype);
-    var_c6eaa1967a9b87ff = self.team;
-    level addspeaker(self, var_c6eaa1967a9b87ff, soundtype, priority);
+    speakerteam = self.team;
+    level addspeaker(self, speakerteam, soundtype, priority);
     updatechatter(soundtype);
     duration = 1.5;
     thread timehack(function_f28fd66285fa2c9(soundtype), duration);
     waittill_any_2(function_f28fd66285fa2c9(soundtype), "death_or_disconnect");
-    level removespeaker(self, var_c6eaa1967a9b87ff);
+    level removespeaker(self, speakerteam);
     return 1;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x379b
 // Size: 0x21
@@ -1072,7 +1075,7 @@ function timehack(soundalias, duration) {
     self notify(soundalias);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37c3
 // Size: 0xe0
@@ -1085,20 +1088,20 @@ function isspeakerinrange(player, max_dist) {
         for (index = 0; index < level.speakers[player.team].size; index++) {
             teammate = level.speakers[player.team][index]["player"];
             if (teammate == player) {
-                return 1;
+                return true;
             }
             if (!isdefined(teammate)) {
                 continue;
             }
             if (distancesquared(teammate.origin, player.origin) < distsq) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38ab
 // Size: 0xfa
@@ -1116,30 +1119,30 @@ function addspeaker(player, team, soundtype, priority) {
     level removespeaker(player, team);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39ac
 // Size: 0x9b
 function removespeaker(player, team) {
-    var_73c8139198918d8b = [];
+    newspeakers = [];
     for (index = 0; index < level.speakers[team].size; index++) {
         if (isdefined(player) && isdefined(level.speakers[team][index]["player"]) && level.speakers[team][index]["player"] == player) {
             continue;
         }
-        var_73c8139198918d8b[var_73c8139198918d8b.size] = level.speakers[team][index];
+        newspeakers[newspeakers.size] = level.speakers[team][index];
     }
-    level.speakers[team] = var_73c8139198918d8b;
+    level.speakers[team] = newspeakers;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a4e
 // Size: 0xde
-function function_56c7d84ce1258f23() {
+function monitorspeakers() {
     level endon("game_ended");
-    while (1) {
-        foreach (team, var_ebe49acd0b3e3b22 in level.speakers) {
-            foreach (speaker in var_ebe49acd0b3e3b22) {
+    while (true) {
+        foreach (team, speakerlist in level.speakers) {
+            foreach (speaker in speakerlist) {
                 if (speaker["endTime"] <= gettime()) {
                     removespeaker(speaker["player"], team);
                     speaker["player"] notify(function_f28fd66285fa2c9(speaker["sound_type"]));
@@ -1150,7 +1153,7 @@ function function_56c7d84ce1258f23() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b33
 // Size: 0x1a
@@ -1158,7 +1161,7 @@ function disablebattlechatter(player) {
     player.bcdisabled = 1;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b54
 // Size: 0x17
@@ -1166,7 +1169,7 @@ function enablebattlechatter(player) {
     player.bcdisabled = undefined;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b72
 // Size: 0xb2
@@ -1183,42 +1186,42 @@ function updatechatter(soundtype) {
     level.bcinfo["soundEventHistory"][soundtype][level.bcinfo["soundEventHistory"][soundtype].size] = data;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c2b
 // Size: 0x129
 function cleanuplastsaytimes(soundtype, time) {
-    var_50f783a5617f8940 = [];
+    temparray = [];
     foreach (var_743aedab468adbb, timestamp in self.bcinfolastsaytimes) {
         timeout = function_a71193e9db14c926(var_743aedab468adbb) + timestamp;
         if (time < timeout) {
-            var_50f783a5617f8940[var_743aedab468adbb] = timestamp;
+            temparray[var_743aedab468adbb] = timestamp;
         }
     }
-    self.bcinfolastsaytimes = var_50f783a5617f8940;
-    var_50f783a5617f8940 = [];
+    self.bcinfolastsaytimes = temparray;
+    temparray = [];
     foreach (event in level.bcinfo["soundEventHistory"][soundtype]) {
         if (time < event.time + function_ffd3470f08fcf7a7(soundtype)) {
-            var_50f783a5617f8940[var_50f783a5617f8940.size] = event;
+            temparray[temparray.size] = event;
         }
     }
-    level.bcinfo["soundEventHistory"][soundtype] = var_50f783a5617f8940;
+    level.bcinfo["soundEventHistory"][soundtype] = temparray;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d5b
 // Size: 0xe1
 function getvalidlocation(speaker) {
-    var_6b3d0504a6d07429 = get_all_my_locations();
-    var_6b3d0504a6d07429 = array_randomize(var_6b3d0504a6d07429);
-    if (var_6b3d0504a6d07429.size) {
-        foreach (location in var_6b3d0504a6d07429) {
+    mylocations = get_all_my_locations();
+    mylocations = array_randomize(mylocations);
+    if (mylocations.size) {
+        foreach (location in mylocations) {
             if (!location_called_out_ever(location) && speaker cancalloutlocation(location)) {
                 return location;
             }
         }
-        foreach (location in var_6b3d0504a6d07429) {
+        foreach (location in mylocations) {
             if (!location_called_out_recently(location) && speaker cancalloutlocation(location)) {
                 return location;
             }
@@ -1227,51 +1230,51 @@ function getvalidlocation(speaker) {
     return undefined;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e44
 // Size: 0x90
 function get_all_my_locations() {
     alllocations = anim.bcs_locations;
-    var_d2c570326a55a520 = self getistouchingentities(alllocations);
-    var_6b3d0504a6d07429 = [];
-    foreach (location in var_d2c570326a55a520) {
+    touchinglocations = self getistouchingentities(alllocations);
+    mylocations = [];
+    foreach (location in touchinglocations) {
         if (isdefined(location.locationaliases)) {
-            var_6b3d0504a6d07429[var_6b3d0504a6d07429.size] = location;
+            mylocations[mylocations.size] = location;
         }
     }
-    return var_6b3d0504a6d07429;
+    return mylocations;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3edc
 // Size: 0x33
 function location_called_out_ever(location) {
     lastcallouttime = location_get_last_callout_time(location.locationaliases[0]);
     if (!isdefined(lastcallouttime)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f17
 // Size: 0x4f
 function location_called_out_recently(location) {
     lastcallouttime = location_get_last_callout_time(location.locationaliases[0]);
     if (!isdefined(lastcallouttime)) {
-        return 0;
+        return false;
     }
     var_c5e4b26dbee9eb39 = lastcallouttime + 25000;
     if (gettime() < var_c5e4b26dbee9eb39) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f6e
 // Size: 0x55
@@ -1284,7 +1287,7 @@ function location_add_last_callout_time(location, team) {
     level.lastlocationcallouttime[team] = currenttime;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fca
 // Size: 0x28
@@ -1295,7 +1298,7 @@ function location_get_last_callout_time(location) {
     return undefined;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ffa
 // Size: 0x36
@@ -1306,14 +1309,14 @@ function get_last_callout_time(team) {
     return undefined;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4038
 // Size: 0x85
 function cancalloutlocation(location) {
     foreach (alias in location.locationaliases) {
-        var_7d3601132c141c9c = getloccalloutalias(alias);
-        valid = soundexists(var_7d3601132c141c9c);
+        aliasnormal = getloccalloutalias(alias);
+        valid = soundexists(aliasnormal);
         if (valid) {
             return valid;
         }
@@ -1321,7 +1324,7 @@ function cancalloutlocation(location) {
     return 0;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x40c5
 // Size: 0x76
@@ -1329,13 +1332,13 @@ function canconcat(location) {
     aliases = location.locationaliases;
     foreach (alias in aliases) {
         if (iscallouttypeconcat(alias, self)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4143
 // Size: 0x9e
@@ -1354,7 +1357,7 @@ function getcannedresponse(speaker) {
     return var_d909d2311d8709d;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41e9
 // Size: 0x17
@@ -1362,79 +1365,79 @@ function iscallouttypereport(alias) {
     return issubstr(alias, "_report");
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4208
 // Size: 0x3a
 function iscallouttypeconcat(alias, speaker) {
     var_3f4cc9de41415260 = speaker getloccalloutalias("concat_loc_" + alias);
     if (soundexists(var_3f4cc9de41415260)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x424a
 // Size: 0x50
 function iscallouttypeqa(alias, speaker) {
     if (issubstr(alias, "_qa") && soundexists(alias)) {
-        return 1;
+        return true;
     }
     var_3f4cc9de41415260 = speaker getqacalloutalias(alias, 0);
     if (soundexists(var_3f4cc9de41415260)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42a2
 // Size: 0x45
-function getloccalloutalias(var_9a1612bf33a317b1) {
-    alias = "dx_mpo_" + ter_op(self.team == "allies", "usop", "ruop") + "_loc_enemy_" + var_9a1612bf33a317b1;
+function getloccalloutalias(locationname) {
+    alias = "dx_mpo_" + ter_op(self.team == "allies", "usop", "ruop") + "_loc_enemy_" + locationname;
     return alias;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42ef
 // Size: 0x32
-function getqacalloutalias(basealias, var_71981ae9b87a6d81) {
+function getqacalloutalias(basealias, lineindex) {
     alias = getloccalloutalias(basealias);
-    alias = alias + "_qa" + var_71981ae9b87a6d81;
+    alias = alias + "_qa" + lineindex;
     return alias;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4329
 // Size: 0x47
 function battlechatter_canprint() {
     /#
         if (getdvar(@"hash_611f04c407c3f644", "stoppedFiring") == self.team || getdvar(@"hash_611f04c407c3f644", "stoppedFiring") == "end_firing") {
-            return 1;
+            return true;
         }
     #/
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4378
 // Size: 0x47
 function battlechatter_canprintdump() {
     /#
         if (getdvar(@"hash_9627c73338f91622", "stoppedFiring") == self.team || getdvar(@"hash_9627c73338f91622", "stoppedFiring") == "end_firing") {
-            return 1;
+            return true;
         }
     #/
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x43c7
 // Size: 0xb1
@@ -1446,23 +1449,23 @@ function battlechatter_print(alias, color) {
         if (!isdefined(color)) {
             color = "right";
         }
-        var_3684c173eee24513 = "right";
+        colorkey = "right";
         switch (color) {
         case #"hash_97430f6c58e61cbc":
-            var_3684c173eee24513 = "ruop";
+            colorkey = "ruop";
             break;
         case #"hash_2ac407c1cd5943a9":
-            var_3684c173eee24513 = "tEntOrigin    = ";
+            colorkey = "tEntOrigin    = ";
             break;
         case #"hash_6686d129776d649a":
-            var_3684c173eee24513 = "concat_loc_";
+            colorkey = "concat_loc_";
             break;
         }
-        println(var_3684c173eee24513 + self.origin + "plr_killfirm_c6" + self.name + "plr_killfirm_merc" + alias);
+        println(colorkey + self.origin + "plr_killfirm_c6" + self.name + "plr_killfirm_merc" + alias);
     #/
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x447f
 // Size: 0x224
@@ -1471,8 +1474,8 @@ function battlechatter_printdump(alias) {
         if (!battlechatter_canprintdump()) {
             return;
         }
-        var_487c6f7b26da9c53 = getdvar(@"hash_3cb0b3f110a54cf2", "fieldUpgrade_used_");
-        if (var_487c6f7b26da9c53 != "fieldUpgrade_used_" && var_487c6f7b26da9c53 != "kill_amf") {
+        dumptype = getdvar(@"hash_3cb0b3f110a54cf2", "fieldUpgrade_used_");
+        if (dumptype != "fieldUpgrade_used_" && dumptype != "kill_amf") {
             return;
         }
         var_47f4bea7f4c50ad9 = -1;
@@ -1480,36 +1483,38 @@ function battlechatter_printdump(alias) {
             var_47f4bea7f4c50ad9 = (gettime() - level.var_529a83d403b4416) / 1000;
         }
         level.var_529a83d403b4416 = gettime();
-        if (var_487c6f7b26da9c53 == "fieldUpgrade_used_") {
+        if (dumptype == "fieldUpgrade_used_") {
             if (!flag_exist("kill_grenade")) {
                 flag_init("kill_grenade");
             }
             if (!isdefined(level.var_b363a2868472ded1)) {
-                var_89bb38b8c97a2660 = "dmg_emp" + level.script + "selfVOBonusChance";
-                level.var_b363a2868472ded1 = openfile(var_89bb38b8c97a2660, "silencer");
+                filepath = "dmg_emp" + level.script + "selfVOBonusChance";
+                level.var_b363a2868472ded1 = openfile(filepath, "silencer");
             }
-            var_803610ff4054c7eb = getaliastypefromsoundalias(alias);
+            aliastype = getaliastypefromsoundalias(alias);
             suffix = getintensitysuffix(self);
-            var_b1e8dbf62810c903 = getteamvoiceinfix(self.team) + "fraction";
-            var_b1e8dbf62810c903 = getsubstr(var_b1e8dbf62810c903, 0, var_b1e8dbf62810c903.size - 1);
-            var_931fd726c971384e = level.script + "specialty_no_battle_chatter" + var_b1e8dbf62810c903 + "specialty_no_battle_chatter" + self.operatorcustomization.voice + "specialty_no_battle_chatter" + var_803610ff4054c7eb;
-            battlechatter_printdumpline(level.var_b363a2868472ded1, var_931fd726c971384e, "kill_grenade");
-        } else if (var_487c6f7b26da9c53 == "kill_amf") {
+            factionprefix = getteamvoiceinfix(self.team) + "fraction";
+            factionprefix = getsubstr(factionprefix, 0, factionprefix.size - 1);
+            dumpstring = level.script + "specialty_no_battle_chatter" + factionprefix + "specialty_no_battle_chatter" + self.operatorcustomization.voice + "specialty_no_battle_chatter" + aliastype;
+            battlechatter_printdumpline(level.var_b363a2868472ded1, dumpstring, "kill_grenade");
+            return;
+        }
+        if (dumptype == "kill_amf") {
             if (!flag_exist("higher")) {
                 flag_init("higher");
             }
             if (!isdefined(level.var_97ef0a827c8a39d1)) {
-                var_89bb38b8c97a2660 = "dmg_emp" + level.script + "<unknown string>";
-                level.var_97ef0a827c8a39d1 = openfile(var_89bb38b8c97a2660, "silencer");
+                filepath = "dmg_emp" + level.script + "<unknown string>";
+                level.var_97ef0a827c8a39d1 = openfile(filepath, "silencer");
             }
-            var_931fd726c971384e = "<unknown string>" + var_47f4bea7f4c50ad9 + "<unknown string>";
-            var_931fd726c971384e = var_931fd726c971384e + alias;
-            battlechatter_printdumpline(level.var_97ef0a827c8a39d1, var_931fd726c971384e, "higher");
+            dumpstring = "<unknown string>" + var_47f4bea7f4c50ad9 + "<unknown string>";
+            dumpstring = dumpstring + alias;
+            battlechatter_printdumpline(level.var_97ef0a827c8a39d1, dumpstring, "higher");
         }
     #/
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x46aa
 // Size: 0x29
@@ -1520,34 +1525,34 @@ function battlechatter_debugprint(alias, color) {
     #/
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46da
 // Size: 0x4a
 function getaliastypefromsoundalias(alias) {
     /#
         prefix = "<unknown string>" + self.operatorcustomization.voice;
-        var_803610ff4054c7eb = getsubstr(alias, prefix.size, alias.size);
-        return var_803610ff4054c7eb;
+        aliastype = getsubstr(alias, prefix.size, alias.size);
+        return aliastype;
     #/
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x472b
 // Size: 0x49
-function battlechatter_printdumpline(file, str, var_ed4fb4807f13f624) {
+function battlechatter_printdumpline(file, str, controlflag) {
     /#
-        if (flag(var_ed4fb4807f13f624)) {
-            flag_wait(var_ed4fb4807f13f624);
+        if (flag(controlflag)) {
+            flag_wait(controlflag);
         }
-        flag_set(var_ed4fb4807f13f624);
+        flag_set(controlflag);
         fprintln(file, str);
-        flag_clear(var_ed4fb4807f13f624);
+        flag_clear(controlflag);
     #/
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x477b
 // Size: 0xa2
@@ -1558,13 +1563,13 @@ function friendly_nearby(max_dist) {
     players = getfriendlyplayers(self.team, 1);
     foreach (player in players) {
         if (player != self && distancesquared(player.origin, self.origin) <= max_dist) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4825
 // Size: 0x5d8
@@ -1640,7 +1645,7 @@ function setupselfvo() {
     setselfvoinfo("super_kill", 10, 0.9, 0.66);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e04
 // Size: 0x5d
@@ -1650,12 +1655,12 @@ function setselfvoinfo(var_83fca5a43f291a90, timeout, priority, chance) {
     level.selfvoinfo[var_83fca5a43f291a90]["chance"] = chance;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e68
 // Size: 0x1e4
-function saytoself(player, aliasname, var_717d5fad1f38887c, delay) {
-    if (1) {
+function saytoself(player, aliasname, fallbackname, delay) {
+    if (true) {
         return;
     }
     if (isagent(player) || !isplayer(player)) {
@@ -1670,10 +1675,10 @@ function saytoself(player, aliasname, var_717d5fad1f38887c, delay) {
         fullname = "dx_mpb_" + player.operatorcustomization.voice + "_" + aliasname;
     }
     if (!isdefined(aliasname) || !soundexists(fullname)) {
-        if (!isdefined(var_717d5fad1f38887c)) {
+        if (!isdefined(fallbackname)) {
             return;
         }
-        aliasname = var_717d5fad1f38887c;
+        aliasname = fallbackname;
         fullname = "dx_mpb_" + player.operatorcustomization.voice + "_" + aliasname;
         if (!soundexists(fullname)) {
             return;
@@ -1696,7 +1701,7 @@ function saytoself(player, aliasname, var_717d5fad1f38887c, delay) {
     player thread trysetqueuedselfvo(aliasname, delay);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5053
 // Size: 0x7f
@@ -1705,16 +1710,18 @@ function updateselfvobonuschance() {
     level endon("game_ended");
     self.pers["selfVOBonusChance"] = 0;
     if (!runleanthreadmode()) {
-        while (1) {
+        while (true) {
             self.pers["selfVOBonusChance"] = self.pers["selfVOBonusChance"] + 0.1;
             wait(3);
         }
-    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        return;
+    }
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         self.pers["selfVOBonusChance"] = 0.25;
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50d9
 // Size: 0x178
@@ -1735,9 +1742,9 @@ function trysetqueuedselfvo(aliasname, delay) {
         thread selfvodelay(delay);
     }
     waittime = getprioritywaittime(aliasname);
-    var_33c2a141ebc8f7ae = gettime();
+    initialtime = gettime();
     while (self.playingselfvo || !self.selfvodelaycomplete || waittime > gettime()) {
-        if (gettime() > var_33c2a141ebc8f7ae + 2000) {
+        if (gettime() > initialtime + 2000) {
             self.queuedvo = "none";
             return;
         }
@@ -1747,7 +1754,7 @@ function trysetqueuedselfvo(aliasname, delay) {
     thread playselfvo(aliasname);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5258
 // Size: 0x56
@@ -1758,7 +1765,7 @@ function getprioritywaittime(aliasname) {
     return self.lastselfvotime + 2000 + 10000 * (1 - level.selfvoinfo[level.selfvomap[aliasname]]["priority"]);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52b6
 // Size: 0x31
@@ -1770,7 +1777,7 @@ function selfvodelay(delay) {
     self.selfvodelaycomplete = 1;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52ee
 // Size: 0xae
@@ -1787,7 +1794,7 @@ function playselfvo(aliasname) {
     self playsoundtoplayer(fullname, self);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53a3
 // Size: 0x2a
@@ -1798,7 +1805,7 @@ function playingselfvotracking(duration) {
     self.playingselfvo = 0;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53d4
 // Size: 0x61
@@ -1809,32 +1816,31 @@ function updateselfvohistory(aliasname) {
     self.selfvohistory[level.selfvomap[aliasname]] = 0;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x543c
 // Size: 0xa3
 function getintensitysuffix(player) {
     /#
-        var_a2654f09ffd36e10 = getdvar(@"hash_68874851dce750fe", "<unknown string>");
-        if (var_a2654f09ffd36e10 != "<unknown string>") {
-            if (var_a2654f09ffd36e10 == "<unknown string>") {
+        bc_intensity = getdvar(@"hash_68874851dce750fe", "<unknown string>");
+        if (bc_intensity != "<unknown string>") {
+            if (bc_intensity == "<unknown string>") {
                 return "<unknown string>";
             }
-            if (var_a2654f09ffd36e10 == "<unknown string>") {
+            if (bc_intensity == "<unknown string>") {
                 return "<unknown string>";
             }
         }
     #/
-    var_cc603a1672682874 = gettimepassedpercentage();
+    roundpercent = gettimepassedpercentage();
     intensity = player getbcintensity();
-    if (intensity > 5000 || var_cc603a1672682874 >= 80 || inovertime()) {
+    if (intensity > 5000 || roundpercent >= 80 || inovertime()) {
         return "high";
-    } else {
-        return "mid";
     }
+    return "mid";
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54e6
 // Size: 0x94
@@ -1849,7 +1855,7 @@ function addtointensitybuffer(type, intensity, ignoreaftertime) {
     self.battlechatterintensitybuffer[self.battlechatterintensitybuffer.size] = event;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5581
 // Size: 0xc1
@@ -1857,21 +1863,21 @@ function getbcintensity() {
     if (!isdefined(self.battlechatterintensitybuffer)) {
         return 0;
     }
-    var_bf0609730feba76c = [];
+    validevents = [];
     intensity = 0;
     currenttime = gettime();
     foreach (event in self.battlechatterintensitybuffer) {
         if (currenttime < event.ignoreaftertime) {
             intensity = intensity + event.value;
-            var_bf0609730feba76c[var_bf0609730feba76c.size] = event;
+            validevents[validevents.size] = event;
         }
     }
-    self.battlechatterintensitybuffer = var_bf0609730feba76c;
+    self.battlechatterintensitybuffer = validevents;
     self.intensity = intensity;
     return intensity;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x564a
 // Size: 0x2ae
@@ -1884,8 +1890,8 @@ function testweaponfiredtolisteners(attacker, objweapon) {
         distsq = max(distance_2d_squared(attacker.origin, player.origin), 1);
         if (iscacprimaryweapon(objweapon.basename) || iscacsecondaryweapon(objweapon.basename)) {
             intensity = 0;
-            var_cf4209c200f8bbf4 = namespace_68e641469fde3fa7::getweapongroup(objweapon.basename);
-            switch (var_cf4209c200f8bbf4) {
+            weapongroup = scripts/mp/utility/weapon::getweapongroup(objweapon.basename);
+            switch (weapongroup) {
             case #"hash_ab10f9c080fe4faf":
                 intensity = 50;
                 break;
@@ -1926,27 +1932,27 @@ function testweaponfiredtolisteners(attacker, objweapon) {
                 intensity = intensity * 0.25;
             }
             if (distsq < 10000) {
-                var_808b4caff75e3e3d = 5;
+                distscalar = 5;
             } else if (distsq < 250000) {
-                var_808b4caff75e3e3d = 3;
+                distscalar = 3;
             } else if (distsq < 1000000) {
-                var_808b4caff75e3e3d = 2;
+                distscalar = 2;
             } else if (distsq < 4000000) {
-                var_808b4caff75e3e3d = 0.5;
+                distscalar = 0.5;
             } else if (distsq < 9000000) {
-                var_808b4caff75e3e3d = 0.25;
+                distscalar = 0.25;
             } else {
-                var_808b4caff75e3e3d = 0.1;
+                distscalar = 0.1;
             }
-            var_3042a94e9a4ad389 = 1 - distsq / 16000000;
-            var_808b4caff75e3e3d = var_808b4caff75e3e3d * var_3042a94e9a4ad389;
-            intensity = intensity * var_808b4caff75e3e3d;
+            distfrac = 1 - distsq / 16000000;
+            distscalar = distscalar * distfrac;
+            intensity = intensity * distscalar;
             player addtointensitybuffer("weaponFired", int(intensity), 3);
         }
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x58ff
 // Size: 0xc3
@@ -1956,8 +1962,8 @@ function adddamagetaken(attacker, objweapon, idamage) {
     }
     var_35722c9340d87e9f = 0;
     if (isdefined(objweapon) && isdefined(attacker)) {
-        var_cf4209c200f8bbf4 = getweapongroup(objweapon);
-        if (var_cf4209c200f8bbf4 == "weapon_sniper" || var_cf4209c200f8bbf4 == "weapon_dmr") {
+        weapongroup = getweapongroup(objweapon);
+        if (weapongroup == "weapon_sniper" || weapongroup == "weapon_dmr") {
             if (distance2d(self.origin, attacker.origin) > 2250000) {
                 var_35722c9340d87e9f = 1;
             }
@@ -1965,12 +1971,12 @@ function adddamagetaken(attacker, objweapon, idamage) {
     }
     if (var_35722c9340d87e9f) {
         level thread trysaylocalsound(self, #"hash_ffa7904a61fa07be", undefined, 0.75);
-    } else {
-        level thread trysaylocalsound(self, #"hash_cf3cf044a0dfdabf", undefined, 0.75);
+        return;
     }
+    level thread trysaylocalsound(self, #"hash_cf3cf044a0dfdabf", undefined, 0.75);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59c9
 // Size: 0x1c9
@@ -1980,31 +1986,31 @@ function onsixfriendlytracking() {
     if (lpcfeaturegated()) {
         return;
     }
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     wait(5);
     var_e1aaad75f4b04d37 = 0;
-    if (isdefined(level.squaddata) && istrue(level.var_1a2b600a06ec21f4.var_2e55d316ba8b231)) {
+    if (isdefined(level.squaddata) && istrue(level.gamemodebundle.var_2e55d316ba8b231)) {
         var_e1aaad75f4b04d37 = 1;
     }
-    var_6b386cb1a44b4663 = isdefined(level.var_1a2b600a06ec21f4.var_98986a08f69f4a0b) ? 0.15 : level.var_1a2b600a06ec21f4.var_98986a08f69f4a0b;
-    while (1) {
+    var_6b386cb1a44b4663 = isdefined(level.gamemodebundle.var_98986a08f69f4a0b) ? level.gamemodebundle.var_98986a08f69f4a0b : 0.15;
+    while (true) {
         if (isreallyalive(self) && !saidtoorecently(#"hash_213c1cf2e5154626")) {
             var_d1a3029ed3bcffd8 = [];
             if (var_e1aaad75f4b04d37) {
-                if (isdefined(self.var_ff97225579de16a) && isdefined(level.squaddata[self.team][self.var_ff97225579de16a])) {
-                    var_d1a3029ed3bcffd8 = level.squaddata[self.team][self.var_ff97225579de16a].players;
+                if (isdefined(self.sessionsquadid) && isdefined(level.squaddata[self.team][self.sessionsquadid])) {
+                    var_d1a3029ed3bcffd8 = level.squaddata[self.team][self.sessionsquadid].players;
                 }
             } else {
                 var_d1a3029ed3bcffd8 = getfriendlyplayers(self.team, 1);
             }
-            foreach (var_6727329a89208345 in var_d1a3029ed3bcffd8) {
-                if (var_6727329a89208345 == self) {
+            foreach (listener in var_d1a3029ed3bcffd8) {
+                if (listener == self) {
                     continue;
                 }
-                if (!isreallyalive(var_6727329a89208345)) {
+                if (!isreallyalive(listener)) {
                     continue;
                 }
-                if (validatelistener(self, var_6727329a89208345)) {
+                if (validatelistener(self, listener)) {
                     level thread trysaylocalsound(self, #"hash_213c1cf2e5154626");
                     break;
                 }
@@ -2016,31 +2022,31 @@ function onsixfriendlytracking() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b99
 // Size: 0xfc
-function validatelistener(speaker, var_6727329a89208345) {
-    var_7e08cba3ad354379 = var_6727329a89208345 geteye();
-    var_2b35b8bfbe7695c4 = speaker geteye();
-    distsq = distancesquared(var_7e08cba3ad354379, var_2b35b8bfbe7695c4);
+function validatelistener(speaker, listener) {
+    listenerorg = listener geteye();
+    speakerorg = speaker geteye();
+    distsq = distancesquared(listenerorg, speakerorg);
     if (distsq > 90000) {
-        return 0;
+        return false;
     }
-    var_fe137da3505e8574 = anglestoforward(var_6727329a89208345 getplayerangles());
-    var_c1123c1da640a028 = vectornormalize(var_7e08cba3ad354379 - var_2b35b8bfbe7695c4);
-    dot = vectordot(var_fe137da3505e8574, var_c1123c1da640a028);
-    var_5895ff7bd007dc69 = 0.05;
-    if (dot > var_5895ff7bd007dc69) {
-        trace = namespace_2a184fc4902783dc::ray_trace(var_2b35b8bfbe7695c4, var_7e08cba3ad354379, speaker, level.var_c49bb6749e2ce50c);
+    listenerdir = anglestoforward(listener getplayerangles());
+    tolistener = vectornormalize(listenerorg - speakerorg);
+    dot = vectordot(listenerdir, tolistener);
+    test_dot = 0.05;
+    if (dot > test_dot) {
+        trace = scripts/engine/trace::ray_trace(speakerorg, listenerorg, speaker, level.var_c49bb6749e2ce50c);
         if (isdefined(trace["entity"]) && isplayer(trace["entity"]) || trace["fraction"] > 0.8) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c9d
 // Size: 0xe
@@ -2048,15 +2054,15 @@ function getlistenerdirection() {
     return anglestoforward(self getplayerangles());
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5cb3
 // Size: 0x54
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d0e
 // Size: 0xe9
@@ -2067,9 +2073,9 @@ function checkcasualty() {
             continue;
         }
         if (distancesquared(self.origin, player.origin) <= 262144) {
-            var_ed24af7cf5cdc3dd = anglestoforward(player getplayerangles());
+            playerfacingdir = anglestoforward(player getplayerangles());
             if (length(player.origin - self.origin) > 0) {
-                if (math::anglebetweenvectors(var_ed24af7cf5cdc3dd, player.origin - self.origin) < 80) {
+                if (math::anglebetweenvectors(playerfacingdir, player.origin - self.origin) < 80) {
                     break;
                 }
             }
@@ -2077,7 +2083,7 @@ function checkcasualty() {
     }
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5dfe
 // Size: 0x3
@@ -2085,11 +2091,11 @@ function getsoundlength() {
     
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e08
 // Size: 0x336
-function trysaylocalsound(player, soundtype, targetent, delay, location, var_6bcc6405c250ecb4) {
+function trysaylocalsound(player, soundtype, targetent, delay, location, triggerent) {
     if (!istrue(level.battlechatterenabled)) {
         return;
     }
@@ -2126,7 +2132,7 @@ function trysaylocalsound(player, soundtype, targetent, delay, location, var_6bc
     if (isdefined(player.swim) && istrue(player.swim.underwater)) {
         return;
     }
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73() && 0 != getdvarint(@"hash_25ad2925d6075c8f", 0) && !isdefined(player.bcinfolastsaytimes)) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73() && 0 != getdvarint(@"hash_25ad2925d6075c8f", 0) && !isdefined(player.bcinfolastsaytimes)) {
         return;
     }
     /#
@@ -2145,9 +2151,9 @@ function trysaylocalsound(player, soundtype, targetent, delay, location, var_6bc
         #/
         return;
     }
-    var_6294b4374dacfad4 = randomfloat(1);
-    var_86d4994958e57fb1 = function_c02b6ba215c2dca8(soundtype);
-    if (var_6294b4374dacfad4 > var_86d4994958e57fb1) {
+    play_chance = randomfloat(1);
+    sound_chance = function_c02b6ba215c2dca8(soundtype);
+    if (play_chance > sound_chance) {
         /#
             player battlechatter_debugprint("<unknown string>" + function_3c8848a3a11b2553(soundtype), "_loc_enemy_");
         #/
@@ -2177,14 +2183,14 @@ function trysaylocalsound(player, soundtype, targetent, delay, location, var_6bc
         return;
     }
     level notify("kill_queued_bc_sound_" + player.name);
-    return player saylocalsound(waittime, soundtype, targetent, delay, location, var_6bcc6405c250ecb4);
+    return player saylocalsound(waittime, soundtype, targetent, delay, location, triggerent);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6146
 // Size: 0x29c
-function saylocalsound(waittime, soundtype, targetent, delay, location, var_6bcc6405c250ecb4) {
+function saylocalsound(waittime, soundtype, targetent, delay, location, triggerent) {
     level endon("kill_queued_bc_sound_" + self.name);
     self endon("death_or_disconnect");
     wait(waittime / 1000);
@@ -2195,24 +2201,24 @@ function saylocalsound(waittime, soundtype, targetent, delay, location, var_6bcc
         return;
     }
     while (waittime <= level.bcinfo["max_wait_time"] + delay * 1000) {
-        var_7ac6c541e01dae06 = getspeakerinfo(self, function_336e1f89ae06dfd4(soundtype));
-        if (isdefined(var_7ac6c541e01dae06["higher"])) {
+        speakerinfo = getspeakerinfo(self, function_336e1f89ae06dfd4(soundtype));
+        if (isdefined(speakerinfo["higher"])) {
             time = gettime();
-            var_7ac6c541e01dae06["higher"]["player"] waittill_any_3(function_f28fd66285fa2c9(var_7ac6c541e01dae06["higher"]["sound_alias"]), "death", "disconnect");
+            speakerinfo["higher"]["player"] waittill_any_3(function_f28fd66285fa2c9(speakerinfo["higher"]["sound_alias"]), "death", "disconnect");
             waitframe();
             waittime = waittime + gettime() - time;
-        } else {
-            info = var_7ac6c541e01dae06["lower"];
-            for (i = 0; i < info.size; i++) {
-                if (isdefined(info[i]["player"])) {
-                    info[i]["player"] notify(function_f28fd66285fa2c9(info[i]["sound_alias"]) + "_interrupt");
-                    if (soundexists(info[i]["sound_alias"])) {
-                        info[i]["player"] stoplocalsound(info[i]["sound_alias"]);
-                    }
+            continue;
+        }
+        info = speakerinfo["lower"];
+        for (i = 0; i < info.size; i++) {
+            if (isdefined(info[i]["player"])) {
+                info[i]["player"] notify(function_f28fd66285fa2c9(info[i]["sound_alias"]) + "_interrupt");
+                if (soundexists(info[i]["sound_alias"])) {
+                    info[i]["player"] stoplocalsound(info[i]["sound_alias"]);
                 }
             }
-            break;
         }
+        break;
     }
     if (waittime > level.bcinfo["max_wait_time"] + delay * 1000) {
         /#
@@ -2220,32 +2226,31 @@ function saylocalsound(waittime, soundtype, targetent, delay, location, var_6bcc
         #/
         self.bcinfoqueued = "none";
         return;
-    } else {
-        entid = undefined;
-        if (!isdefined(self.var_797974906694b0b6)) {
-            self.var_797974906694b0b6 = [];
-        }
-        if (isdefined(var_6bcc6405c250ecb4)) {
-            entid = var_6bcc6405c250ecb4 getentitynumber();
-        }
-        if (saidtoorecently(soundtype)) {
-            /#
-                battlechatter_debugprint("<unknown string>" + function_3c8848a3a11b2553(soundtype), "_loc_enemy_");
-            #/
-            return;
-        } else if (isdefined(entid) && isdefined(self.var_797974906694b0b6[entid])) {
-            return;
-        } else if (isdefined(entid)) {
-            self.var_797974906694b0b6[entid] = gettime();
-            thread function_eaf6dc9588364f83(entid);
-        }
-        self.bcinfoqueued = "none";
-        self.bcinfolastsaytimes[soundtype] = gettime();
-        return dosound(soundtype, targetent, location);
     }
+    entid = undefined;
+    if (!isdefined(self.var_797974906694b0b6)) {
+        self.var_797974906694b0b6 = [];
+    }
+    if (isdefined(triggerent)) {
+        entid = triggerent getentitynumber();
+    }
+    if (saidtoorecently(soundtype)) {
+        /#
+            battlechatter_debugprint("<unknown string>" + function_3c8848a3a11b2553(soundtype), "_loc_enemy_");
+        #/
+        return;
+    } else if (isdefined(entid) && isdefined(self.var_797974906694b0b6[entid])) {
+        return;
+    } else if (isdefined(entid)) {
+        self.var_797974906694b0b6[entid] = gettime();
+        thread function_eaf6dc9588364f83(entid);
+    }
+    self.bcinfoqueued = "none";
+    self.bcinfolastsaytimes[soundtype] = gettime();
+    return dosound(soundtype, targetent, location);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63e9
 // Size: 0x35
@@ -2258,7 +2263,7 @@ function function_eaf6dc9588364f83(entid) {
     self.var_797974906694b0b6 = array_remove(self.var_797974906694b0b6, entid);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6425
 // Size: 0x392
@@ -2266,8 +2271,8 @@ function getbcwaittime(soundtype, delay) {
     if (!isdefined(delay)) {
         delay = 0;
     }
-    var_8f6bc8056e2628fc = 0;
-    var_6327aa8854038ff3 = 0;
+    timeoutteamtime = 0;
+    positionrelevant = 0;
     if (isdefined(level.bcinfo["soundEventHistory"][soundtype])) {
         if (soundtype == #"hash_52b2adecc602d95c" || soundtype == #"hash_cd1d2547e61fb1e" || soundtype == #"hash_14f86af7d651b93f") {
             var_b53830ff2a079e80 = [];
@@ -2281,13 +2286,13 @@ function getbcwaittime(soundtype, delay) {
                 foreach (event in level.bcinfo["soundEventHistory"][entry]) {
                     if (distancesquared(event.origin, self.origin) < 4000000) {
                         var_c4ac6795e14927d0 = event.time + function_ffd3470f08fcf7a7(entry);
-                        if (var_c4ac6795e14927d0 > var_8f6bc8056e2628fc) {
-                            var_8f6bc8056e2628fc = var_c4ac6795e14927d0;
-                            var_6327aa8854038ff3 = 1;
+                        if (var_c4ac6795e14927d0 > timeoutteamtime) {
+                            timeoutteamtime = var_c4ac6795e14927d0;
+                            positionrelevant = 1;
                         }
                     }
                 }
-                if (var_6327aa8854038ff3) {
+                if (positionrelevant) {
                     break;
                 }
             }
@@ -2295,9 +2300,9 @@ function getbcwaittime(soundtype, delay) {
             foreach (event in level.bcinfo["soundEventHistory"][soundtype]) {
                 if (distancesquared(event.origin, self.origin) < 2250000) {
                     var_c4ac6795e14927d0 = event.time + function_ffd3470f08fcf7a7(soundtype);
-                    if (var_c4ac6795e14927d0 > var_8f6bc8056e2628fc) {
-                        var_8f6bc8056e2628fc = var_c4ac6795e14927d0;
-                        var_6327aa8854038ff3 = 1;
+                    if (var_c4ac6795e14927d0 > timeoutteamtime) {
+                        timeoutteamtime = var_c4ac6795e14927d0;
+                        positionrelevant = 1;
                     }
                 }
             }
@@ -2305,9 +2310,9 @@ function getbcwaittime(soundtype, delay) {
             foreach (event in level.bcinfo["soundEventHistory"][soundtype]) {
                 if (distancesquared(event.origin, self.origin) < 1048576) {
                     var_c4ac6795e14927d0 = event.time + function_ffd3470f08fcf7a7(soundtype);
-                    if (var_c4ac6795e14927d0 > var_8f6bc8056e2628fc) {
-                        var_8f6bc8056e2628fc = var_c4ac6795e14927d0;
-                        var_6327aa8854038ff3 = 1;
+                    if (var_c4ac6795e14927d0 > timeoutteamtime) {
+                        timeoutteamtime = var_c4ac6795e14927d0;
+                        positionrelevant = 1;
                     }
                 }
             }
@@ -2317,17 +2322,17 @@ function getbcwaittime(soundtype, delay) {
         self.bcinfolastsaytimes[soundtype] = 0;
     }
     var_dcbb8c92238f7098 = self.bcinfolastsaytimes[soundtype] + function_a71193e9db14c926(soundtype);
-    var_ef22548e76b6eb82 = gettime() + delay * 1000;
-    if (var_6327aa8854038ff3) {
-        timeouttime = max(var_dcbb8c92238f7098, max(var_8f6bc8056e2628fc, var_ef22548e76b6eb82));
+    timeoutdelaytime = gettime() + delay * 1000;
+    if (positionrelevant) {
+        timeouttime = max(var_dcbb8c92238f7098, max(timeoutteamtime, timeoutdelaytime));
     } else {
-        timeouttime = max(var_dcbb8c92238f7098, var_ef22548e76b6eb82);
+        timeouttime = max(var_dcbb8c92238f7098, timeoutdelaytime);
     }
     waittime = timeouttime - gettime();
     return waittime;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x67bf
 // Size: 0x151
@@ -2340,20 +2345,19 @@ function getspeakerinfo(player, priority, range) {
     var_139b1d1bf64d28f0["lower"] = [];
     if (isdefined(player) && isdefined(player.team) && player.team != "spectator") {
         for (index = 0; index < level.speakers[player.team].size; index++) {
-            var_7ac6c541e01dae06 = level.speakers[player.team][index];
-            teammate = var_7ac6c541e01dae06["player"];
-            var_1f109c1fb8f2d15a = var_7ac6c541e01dae06["priority"];
+            speakerinfo = level.speakers[player.team][index];
+            teammate = speakerinfo["player"];
+            speakerpriority = speakerinfo["priority"];
             if (!isdefined(teammate)) {
                 continue;
             }
             if (distancesquared(teammate.origin, player.origin) < distsq) {
-                if (isdefined(var_1f109c1fb8f2d15a)) {
-                    if (var_1f109c1fb8f2d15a > priority || var_1f109c1fb8f2d15a == priority && cointoss()) {
-                        var_139b1d1bf64d28f0["higher"] = var_7ac6c541e01dae06;
+                if (isdefined(speakerpriority)) {
+                    if (speakerpriority > priority || speakerpriority == priority && cointoss()) {
+                        var_139b1d1bf64d28f0["higher"] = speakerinfo;
                         return var_139b1d1bf64d28f0;
-                    } else {
-                        var_139b1d1bf64d28f0["lower"][var_139b1d1bf64d28f0["lower"].size] = var_7ac6c541e01dae06;
                     }
+                    var_139b1d1bf64d28f0["lower"][var_139b1d1bf64d28f0["lower"].size] = speakerinfo;
                 }
             }
         }
@@ -2361,7 +2365,7 @@ function getspeakerinfo(player, priority, range) {
     return var_139b1d1bf64d28f0;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6918
 // Size: 0x78
@@ -2373,12 +2377,12 @@ function comparesoundpriorities(s1, s2) {
     if (s1 == s2) {
         return 0;
     }
-    var_d2bfc86b6d21e9de = function_336e1f89ae06dfd4(s2) < function_336e1f89ae06dfd4(s1);
+    higherpriority = function_336e1f89ae06dfd4(s2) < function_336e1f89ae06dfd4(s1);
     var_35470d4859f3e586 = function_336e1f89ae06dfd4(s2) == function_336e1f89ae06dfd4(s1) && cointoss();
-    return var_d2bfc86b6d21e9de || var_35470d4859f3e586;
+    return higherpriority || var_35470d4859f3e586;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6998
 // Size: 0x6d
@@ -2392,12 +2396,11 @@ function saidtoorecently(soundtype, delay) {
     waittime = getbcwaittime(soundtype, delay);
     if (waittime > level.bcinfo["max_wait_time"] + delay * 1000) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a0c
 // Size: 0x37
@@ -2405,7 +2408,7 @@ function function_336e1f89ae06dfd4(soundtype) {
     return ter_op(isdefined(level.bcinfo["priority"][soundtype]), level.bcinfo["priority"][soundtype], 1);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a4b
 // Size: 0x3a
@@ -2413,7 +2416,7 @@ function function_c02b6ba215c2dca8(soundtype) {
     return ter_op(isdefined(level.bcinfo["chance"][soundtype]), level.bcinfo["chance"][soundtype], 0);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a8d
 // Size: 0x3a
@@ -2421,7 +2424,7 @@ function function_ffd3470f08fcf7a7(soundtype) {
     return ter_op(isdefined(level.bcinfo["timeout_pos"][soundtype]), level.bcinfo["timeout_pos"][soundtype], 1000);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6acf
 // Size: 0x3a
@@ -2429,7 +2432,7 @@ function function_a71193e9db14c926(soundtype) {
     return ter_op(isdefined(level.bcinfo["timeout_player"][soundtype]), level.bcinfo["timeout_player"][soundtype], 1000);
 }
 
-// Namespace namespace_20260f65229aa888/namespace_25c5a6f43bb97b43
+// Namespace battlechatter_mp / scripts/mp/battlechatter_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b11
 // Size: 0x36

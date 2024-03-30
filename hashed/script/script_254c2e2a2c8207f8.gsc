@@ -9,7 +9,7 @@
 
 #namespace namespace_50d72387c573652d;
 
-// Namespace namespace_50d72387c573652d/namespace_6894b8a1efafd980
+// Namespace namespace_50d72387c573652d / namespace_6894b8a1efafd980
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0
 // Size: 0x56c

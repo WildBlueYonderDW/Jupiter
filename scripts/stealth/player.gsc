@@ -3,13 +3,13 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\stealth\debug.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\stealth\utility.gsc;
 #using scripts\stealth\manager.gsc;
 
 #namespace player;
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31e
 // Size: 0xeb
@@ -20,20 +20,20 @@ function main() {
     self endon("death");
     self endon("stealth_disabled");
     self.stealth = spawnstruct();
-    namespace_e124d8b75dab4be0::group_flag_init("stealth_spotted");
+    scripts/stealth/utility::group_flag_init("stealth_spotted");
     ent_flag_init("stealth_enabled");
     function_e403865f115834a8("stealth_enabled");
     ent_flag_init("stealth_in_shadow");
     ent_flag_init("stealth_use_real_lighting");
     ent_flag_init("stealth_use_player_camera_movement");
-    namespace_e124d8b75dab4be0::group_add();
+    scripts/stealth/utility::group_add();
     if (utility::issp()) {
         thread stealthhints_thread();
-        if (isdefined(level.stealth.var_84cc26fcabcafce7)) {
-            [[ level.stealth.var_84cc26fcabcafce7 ]]();
+        if (isdefined(level.stealth.fnsixthsense)) {
+            [[ level.stealth.fnsixthsense ]]();
         }
     } else {
-        thread namespace_833595e973766257::player_grenade_check();
+        thread scripts/stealth/manager::player_grenade_check();
         if (isdefined(level.var_6ccee8e6c00f06e6)) {
             self thread [[ level.var_6ccee8e6c00f06e6 ]]();
         }
@@ -43,7 +43,7 @@ function main() {
     #/
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x410
 // Size: 0x1e
@@ -52,7 +52,7 @@ function function_e403865f115834a8(message) {
     ent_flag_set(message);
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x435
 // Size: 0x1d
@@ -61,7 +61,7 @@ function function_3718fc282393305(message) {
     ent_flag_clear(message);
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x459
 // Size: 0x4ef
@@ -88,14 +88,14 @@ function combatstate_thread(enabled) {
     self.stealth.combatstate.updatefuncs = [];
     var_c6edce1b02951aa2 = [];
     var_20bb85d7bcd0392d = [];
-    while (1) {
+    while (true) {
         ent_flag_wait("stealth_enabled");
         var_c6edce1b02951aa2 = array_removeundefined(var_c6edce1b02951aa2);
         var_c6edce1b02951aa2 = array_removedead(var_c6edce1b02951aa2);
         var_20bb85d7bcd0392d = array_removeundefined(var_20bb85d7bcd0392d);
         var_20bb85d7bcd0392d = array_removedead(var_20bb85d7bcd0392d);
-        var_ff7786b6619eb7eb = [];
-        var_67ced9344e835690 = [];
+        combatenemies = [];
+        huntenemies = [];
         var_d357c65b8336aab = 0;
         if (isdefined(self.lastattackedtime) && !time_has_passed(self.lastattackedtime, 10)) {
             var_d357c65b8336aab = 1;
@@ -109,93 +109,93 @@ function combatstate_thread(enabled) {
                 if (enemy doinglongdeath()) {
                     continue;
                 }
-                jumpiffalse(is_equal(enemy.script, "pain")) LOC_0000024e;
-            } else {
-            LOC_0000024e:
-                if (enemy [[ enemy.fnisinstealthcombat ]]()) {
-                    if (isdefined(self.stealth.combatstate.maxcombatdist)) {
-                        dist = self.stealth.combatstate.maxcombatdist;
-                        if (distancesquared(self.origin, enemy.origin) > squared(dist)) {
-                            var_67ced9344e835690[var_67ced9344e835690.size] = enemy;
-                            continue;
-                        }
-                    }
-                    var_ff7786b6619eb7eb[var_ff7786b6619eb7eb.size] = enemy;
-                    if (var_d357c65b8336aab) {
+                if (is_equal(enemy.script, "pain")) {
+                    continue;
+                }
+            }
+            if (enemy [[ enemy.fnisinstealthcombat ]]()) {
+                if (isdefined(self.stealth.combatstate.maxcombatdist)) {
+                    dist = self.stealth.combatstate.maxcombatdist;
+                    if (distancesquared(self.origin, enemy.origin) > squared(dist)) {
+                        huntenemies[huntenemies.size] = enemy;
                         continue;
                     }
-                    if (!is_equal(enemy.enemy, self)) {
-                        continue;
-                    }
-                    if (enemy cansee(self)) {
-                        var_d357c65b8336aab = 1;
-                    }
-                } else if (enemy [[ enemy.fnisinstealthhunt ]]()) {
-                    var_67ced9344e835690[var_67ced9344e835690.size] = enemy;
                 }
-                if (enemy [[ enemy.fnisinstealthinvestigate ]]()) {
-                    investigating = 1;
+                combatenemies[combatenemies.size] = enemy;
+                if (var_d357c65b8336aab) {
+                    continue;
                 }
+                if (!is_equal(enemy.enemy, self)) {
+                    continue;
+                }
+                if (enemy cansee(self)) {
+                    var_d357c65b8336aab = 1;
+                }
+            } else if (enemy [[ enemy.fnisinstealthhunt ]]()) {
+                huntenemies[huntenemies.size] = enemy;
+            }
+            if (enemy [[ enemy.fnisinstealthinvestigate ]]()) {
+                investigating = 1;
             }
         }
         lastname = self.stealth.combatstate.name;
-        var_9b2af7384eeeaf2d = self.stealth.combatstate.type;
+        lasttype = self.stealth.combatstate.type;
         name = lastname;
         type = undefined;
         if (name == "stealth" && investigating) {
             type = "investigate";
         }
         if (lastname == "combat") {
-            if (var_ff7786b6619eb7eb.size == 0) {
+            if (combatenemies.size == 0) {
                 name = "stealth";
-                if (array_intersection(var_c6edce1b02951aa2, var_67ced9344e835690).size > 0) {
+                if (array_intersection(var_c6edce1b02951aa2, huntenemies).size > 0) {
                     type = "hunt";
-                } else if (var_67ced9344e835690.size == 0) {
+                } else if (huntenemies.size == 0) {
                     type = "all_clear";
                 } else {
                     type = "combat_clear";
                 }
-            } else if (is_equal(var_9b2af7384eeeaf2d, "unaware") && var_d357c65b8336aab) {
+            } else if (is_equal(lasttype, "unaware") && var_d357c65b8336aab) {
                 type = "aware";
             }
-        } else if (var_ff7786b6619eb7eb.size > 0) {
+        } else if (combatenemies.size > 0) {
             name = "combat";
             if (var_d357c65b8336aab) {
                 type = "aware";
             } else {
                 type = "unaware";
             }
-        } else if (is_equal(var_9b2af7384eeeaf2d, "hunt") && var_67ced9344e835690.size == 0) {
+        } else if (is_equal(lasttype, "hunt") && huntenemies.size == 0) {
             type = "all_clear";
         }
-        if (name == "stealth" && !isdefined(type) && is_equal(var_9b2af7384eeeaf2d, "investigate")) {
+        if (name == "stealth" && !isdefined(type) && is_equal(lasttype, "investigate")) {
             type = "idle";
         }
-        if (name != lastname || isdefined(type) && !is_equal(type, var_9b2af7384eeeaf2d)) {
+        if (name != lastname || isdefined(type) && !is_equal(type, lasttype)) {
             self.stealth.combatstate.name = name;
             self.stealth.combatstate.type = type;
             self notify("player_combat_state_updated", name);
         }
-        var_c6edce1b02951aa2 = var_ff7786b6619eb7eb;
-        var_20bb85d7bcd0392d = var_67ced9344e835690;
+        var_c6edce1b02951aa2 = combatenemies;
+        var_20bb85d7bcd0392d = huntenemies;
         waitframe();
     }
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x94f
 // Size: 0x92
 function combatstate_updatethread() {
-    while (1) {
-        type = name = self waittill("player_combat_state_updated");
+    while (true) {
+        name, type = self waittill("player_combat_state_updated");
         foreach (func in self.stealth.combatstate.updatefuncs) {
             self thread [[ func ]](name, type);
         }
     }
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e8
 // Size: 0xbf
@@ -218,7 +218,7 @@ function combatstate_addupdatefunc(key, func) {
     self.stealth.combatstate.updatefuncs[key] = func;
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xaae
 // Size: 0xd7
@@ -241,18 +241,18 @@ function combatstate_removeupdatefunc(key) {
     self.stealth.combatstate.updatefuncs = array_remove_key(self.stealth.combatstate.updatefuncs, key);
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb8c
 // Size: 0x2b
 function playerattackedmonitor() {
-    while (1) {
+    while (true) {
         level waittill_any_2("an_enemy_shot", "enemy_grenade_fire");
         self.lastattackedtime = gettime();
     }
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbbe
 // Size: 0x15b
@@ -272,7 +272,7 @@ function stealthhints_thread() {
     childthread stealthhints_combatmonitor();
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd20
 // Size: 0x26c
@@ -280,7 +280,7 @@ function stealthhints_eventmonitor() {
     self endon("death");
     while (isalive(self)) {
         ent_flag_wait("stealth_enabled");
-        receiver = event = level waittill("stealth_event");
+        event, receiver = level waittill("stealth_event");
         if (!isalive(receiver)) {
             continue;
         }
@@ -292,7 +292,7 @@ function stealthhints_eventmonitor() {
             self.stealth.hints.investigators = [];
             continue;
         }
-        if (namespace_e124d8b75dab4be0::any_groups_in_combat()) {
+        if (scripts/stealth/utility::any_groups_in_combat()) {
             if (event.type != "combat") {
                 continue;
             }
@@ -330,7 +330,7 @@ function stealthhints_eventmonitor() {
     }
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf93
 // Size: 0x16c
@@ -353,7 +353,7 @@ function stealthhints_aimonitor(ai, eventtype) {
     self notify("combat_started");
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1106
 // Size: 0xa1
@@ -374,14 +374,14 @@ function stealthhints_deathmonitor() {
     level.custom_death_quote = self.stealth.hints.deathhints[self.stealth.hints.causeofdeath];
 }
 
-// Namespace player/namespace_975f381a5813b0fd
+// Namespace player / scripts/stealth/player
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11ae
 // Size: 0x85
 function stealthhints_combatmonitor() {
     self endon("death");
-    while (1) {
-        if (istrue(level.var_5a1e175009ecec56)) {
+    while (true) {
+        if (istrue(level.laststandentered)) {
             self waittill("last_stand_finished");
         } else {
             ent_flag_wait("stealth_enabled");
@@ -389,7 +389,7 @@ function stealthhints_combatmonitor() {
         while (!isdefined(self.stealth.hints.causeofdeath)) {
             waitframe();
         }
-        while (namespace_e124d8b75dab4be0::any_groups_in_combat()) {
+        while (scripts/stealth/utility::any_groups_in_combat()) {
             waitframe();
         }
         self.stealth.hints.causeofdeath = undefined;

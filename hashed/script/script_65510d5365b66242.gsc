@@ -1,13 +1,13 @@
 // mwiii decomp prototype
 #using scripts\asm\asm_bb.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\math.gsc;
 #using scripts\engine\utility.gsc;
 #using script_595089f78ef8e11b;
 
 #namespace namespace_b556fcabc41ef8fa;
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x30e
 // Size: 0x126
@@ -29,17 +29,17 @@ function function_4880ef9ac634c6e5() {
     level thread function_1dc3dbebbb45158a();
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43b
 // Size: 0x28
 function function_64bb14058709dfa1() {
     thread function_ff4bd4c9a8c14004();
     function_3b76e1d247d2f5a(&function_cd12e4b6f6fa089c);
-    callback::add("killed_body_cloned", &function_c9071c313b8c83dc);
+    callback::add("killed_body_cloned", &play_death_vo);
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x46a
 // Size: 0xa0
@@ -58,14 +58,14 @@ function private function_cd12e4b6f6fa089c(event, zombie, var_c2aec59361d95878, 
     default:
         break;
     }
-    function_d01c8da69fe6ad5(zombie, var_c2aec59361d95878, alias, priority);
+    play_vox(zombie, var_c2aec59361d95878, alias, priority);
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x511
 // Size: 0x9e
-function private function_c9071c313b8c83dc(params) {
+function private play_death_vo(params) {
     /#
         assert(isdefined(params.body));
     #/
@@ -74,50 +74,50 @@ function private function_c9071c313b8c83dc(params) {
     }
     if (issubstr(self.subclass, "mega")) {
         level thread function_cd12e4b6f6fa089c("death", params.body, "death", "vox_ai_abom_mega_death", 4);
-    } else {
-        level thread function_cd12e4b6f6fa089c("death", params.body, "death", "vox_ai_abom_death", 4);
+        return;
     }
+    level thread function_cd12e4b6f6fa089c("death", params.body, "death", "vox_ai_abom_death", 4);
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b6
 // Size: 0x2c
 function function_ff4bd4c9a8c14004() {
     if (issubstr(self.subclass, "mega")) {
         thread function_b22414d725f85412();
-    } else {
-        thread function_78c6b4fdf8524643();
+        return;
     }
+    thread function_78c6b4fdf8524643();
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e9
 // Size: 0xf3
 function function_78c6b4fdf8524643() {
-    var_fc3f1cd5f74c5908 = 3;
+    ambient_cap = 3;
     self notify("ambientvox_singleton");
     self endon("ambientvox_singleton");
     self endon("ambientvox_shutdown");
     self endon("death");
-    var_b038488e06f13dd0 = 0;
+    played_vox = 0;
     var_fa42533f2450f37a = 0;
-    var_b4ee4904cd7d9269 = undefined;
-    while (1) {
+    ambient_notify = undefined;
+    while (true) {
         params = function_4e5d15fb46a1875f();
-        if (function_51d76700600cebe3(params.var_76897e90bbff1185) || var_fa42533f2450f37a >= 5) {
+        if (percent_chance(params.var_76897e90bbff1185) || var_fa42533f2450f37a >= 5) {
             var_fa42533f2450f37a = 0;
-            var_b4ee4904cd7d9269 = params.var_b1b1f6668aecbbe5;
+            ambient_notify = params.var_b1b1f6668aecbbe5;
         } else {
             var_fa42533f2450f37a++;
-            var_b4ee4904cd7d9269 = undefined;
+            ambient_notify = undefined;
         }
-        if (isdefined(level.var_3c408363d81b00e0) && isdefined(var_b4ee4904cd7d9269)) {
+        if (isdefined(level.var_3c408363d81b00e0) && isdefined(ambient_notify)) {
             level.var_3c408363d81b00e0++;
-            if (level.var_3c408363d81b00e0 < var_fc3f1cd5f74c5908) {
-                var_b038488e06f13dd0 = 1;
-                function_f707c26d8f269f94(var_b4ee4904cd7d9269);
+            if (level.var_3c408363d81b00e0 < ambient_cap) {
+                played_vox = 1;
+                function_f707c26d8f269f94(ambient_notify);
                 waitframe();
                 ent_flag_waitopen("playing_vo");
             }
@@ -126,44 +126,44 @@ function function_78c6b4fdf8524643() {
     }
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e3
 // Size: 0x119
 function function_b22414d725f85412() {
-    var_fc3f1cd5f74c5908 = 3;
+    ambient_cap = 3;
     self notify("ambientvox_singleton");
     self endon("ambientvox_singleton");
     self endon("ambientvox_shutdown");
     self endon("death");
-    var_b038488e06f13dd0 = 0;
+    played_vox = 0;
     var_fa42533f2450f37a = 0;
-    var_b4ee4904cd7d9269 = undefined;
+    ambient_notify = undefined;
     var_36ac830085c37706 = 1;
-    while (1) {
+    while (true) {
         params = function_56f857cb70c424b6();
         if (params.var_b1b1f6668aecbbe5 == "ambient_aware") {
             wait(1);
             continue;
         }
         if (!istrue(var_36ac830085c37706)) {
-            if (function_51d76700600cebe3(params.var_76897e90bbff1185) || var_fa42533f2450f37a >= 5) {
+            if (percent_chance(params.var_76897e90bbff1185) || var_fa42533f2450f37a >= 5) {
                 var_fa42533f2450f37a = 0;
-                var_b4ee4904cd7d9269 = "mega_breath_exhale";
+                ambient_notify = "mega_breath_exhale";
             } else {
                 var_fa42533f2450f37a++;
-                var_b4ee4904cd7d9269 = "mega_breath_exhale";
+                ambient_notify = "mega_breath_exhale";
             }
             var_36ac830085c37706 = 1;
         } else {
-            var_b4ee4904cd7d9269 = "mega_breath_inhale";
+            ambient_notify = "mega_breath_inhale";
             var_36ac830085c37706 = 0;
         }
         if (isdefined(level.var_3c408363d81b00e0)) {
             level.var_3c408363d81b00e0++;
-            if (level.var_3c408363d81b00e0 < var_fc3f1cd5f74c5908) {
-                var_b038488e06f13dd0 = 1;
-                function_f707c26d8f269f94(var_b4ee4904cd7d9269);
+            if (level.var_3c408363d81b00e0 < ambient_cap) {
+                played_vox = 1;
+                function_f707c26d8f269f94(ambient_notify);
                 waitframe();
                 ent_flag_waitopen("playing_vo");
             }
@@ -172,7 +172,7 @@ function function_b22414d725f85412() {
     }
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x803
 // Size: 0xcf
@@ -194,7 +194,7 @@ function private function_4e5d15fb46a1875f() {
     return params;
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8da
 // Size: 0xbe
@@ -215,20 +215,20 @@ function private function_56f857cb70c424b6() {
     return params;
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9a0
 // Size: 0x2c
 function private function_1dc3dbebbb45158a() {
     level endon("game_ended");
     level.var_3c408363d81b00e0 = 0;
-    while (1) {
+    while (true) {
         level.var_3c408363d81b00e0 = 0;
         wait(0.1);
     }
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9d3
 // Size: 0xb
@@ -236,15 +236,15 @@ function private function_e1458b9c46007db6() {
     self notify("ambientvox_shutdown");
 }
 
-// Namespace namespace_b556fcabc41ef8fa/namespace_af5b26a9896fd01e
+// Namespace namespace_b556fcabc41ef8fa / namespace_af5b26a9896fd01e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9e5
 // Size: 0x2c
 function private function_b08db677617ccc93() {
     if (issubstr(self.subclass, "mega")) {
         thread function_b22414d725f85412();
-    } else {
-        thread function_78c6b4fdf8524643();
+        return;
     }
+    thread function_78c6b4fdf8524643();
 }
 

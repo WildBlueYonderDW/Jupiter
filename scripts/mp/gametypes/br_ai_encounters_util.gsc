@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 
-#namespace namespace_2de1d79c93ff4d00;
+#namespace br_ai_encounters_util;
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20e
 // Size: 0x1fb
@@ -37,7 +37,7 @@ function get_ai_team() {
     return self.encounter.info.team;
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x411
 // Size: 0x161
@@ -60,7 +60,7 @@ function get_targets() {
     return targets;
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x11d
@@ -99,7 +99,7 @@ function getvartype(var) {
     return str;
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69f
 // Size: 0xce
@@ -119,11 +119,10 @@ function vartostring(var) {
         return ("$e" + var getentitynumber());
     default:
         return ("<" + type + ">");
-        break;
     }
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x774
 // Size: 0x96
@@ -142,37 +141,37 @@ function _arraytostring(var) {
     return str;
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x812
 // Size: 0x1d
-function encounterremovenavobstacle(var_9794cf618646a8bd) {
-    destroynavobstacle(var_9794cf618646a8bd);
-    self notify("nav_obstacle_destroy_" + var_9794cf618646a8bd);
+function encounterremovenavobstacle(obstacleid) {
+    destroynavobstacle(obstacleid);
+    self notify("nav_obstacle_destroy_" + obstacleid);
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x836
 // Size: 0x25
-function encounterremovenavobstacleonencounterend(var_9794cf618646a8bd) {
-    self endon("nav_obstacle_destroy_" + var_9794cf618646a8bd);
+function encounterremovenavobstacleonencounterend(obstacleid) {
+    self endon("nav_obstacle_destroy_" + obstacleid);
     self waittill("encounter_end");
-    encounterremovenavobstacle(var_9794cf618646a8bd);
+    encounterremovenavobstacle(obstacleid);
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x862
 // Size: 0x2e
-function encounterremovenavobstacledelay(var_9794cf618646a8bd, delaysec) {
-    self endon("nav_obstacle_destroy_" + var_9794cf618646a8bd);
+function encounterremovenavobstacledelay(obstacleid, delaysec) {
+    self endon("nav_obstacle_destroy_" + obstacleid);
     self endon("encounter_end");
     wait(delaysec);
-    encounterremovenavobstacle(var_9794cf618646a8bd);
+    encounterremovenavobstacle(obstacleid);
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x897
 // Size: 0x22
@@ -182,27 +181,27 @@ function encounterdeleteentonend(ent) {
     ent delete();
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8c0
 // Size: 0x61
-function disablescriptableplayeruseall(var_de19f33cb691869d) {
+function disablescriptableplayeruseall(rewardobject) {
     foreach (player in level.players) {
-        var_de19f33cb691869d disablescriptableplayeruse(player);
+        rewardobject disablescriptableplayeruse(player);
     }
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x928
 // Size: 0x61
-function enablescriptableplayeruseall(var_de19f33cb691869d) {
+function enablescriptableplayeruseall(rewardobject) {
     foreach (player in level.players) {
-        var_de19f33cb691869d enablescriptableplayeruse(player);
+        rewardobject enablescriptableplayeruse(player);
     }
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x990
 // Size: 0x17e
@@ -244,7 +243,7 @@ function waittill_dead(guys, num, timeoutlength) {
     }
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb15
 // Size: 0x114
@@ -271,7 +270,7 @@ function waittill_dead_or_dying(guys, num, timeoutlength) {
     }
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc30
 // Size: 0x25
@@ -281,7 +280,7 @@ function waittill_notetrack_or_damage(notetrack) {
     self waittillmatch("single anim", notetrack);
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc5c
 // Size: 0x52
@@ -296,7 +295,7 @@ function get_living_ai(name, type) {
     return array[0];
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcb6
 // Size: 0x137
@@ -328,7 +327,7 @@ function get_living_ai_array(name, type) {
     return array;
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf5
 // Size: 0x28
@@ -338,7 +337,7 @@ function waittill_dead_thread(ent) {
     ent notify("waittill_dead guy died");
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe24
 // Size: 0x31
@@ -348,7 +347,7 @@ function waittill_dead_or_dying_thread(ent) {
     ent notify("waittill_dead_guy_dead_or_dying");
 }
 
-// Namespace namespace_2de1d79c93ff4d00/namespace_43eba84a1e94a875
+// Namespace br_ai_encounters_util / scripts/mp/gametypes/br_ai_encounters_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe5c
 // Size: 0x16

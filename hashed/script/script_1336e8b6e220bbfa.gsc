@@ -1,12 +1,12 @@
 // mwiii decomp prototype
 #using script_7ff3a914e6c698c5;
 #using scripts\engine\utility.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\trace.gsc;
 
 #namespace namespace_b17ec7b025ea4a4c;
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x134
 // Size: 0xdb
@@ -22,18 +22,18 @@ function function_29b5fb70d7ea841() {
     function_3f5173a731bdfe2f("melee", function_28d26d7ead912662(0, undefined, undefined));
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x216
 // Size: 0x42
-function function_be2d0b11a3aaba0c() {
+function init_melee() {
     callback::add("on_is_melee_started", &function_5e13f692ca3ad048);
     callback::add("on_move_speed_changed", &function_b06e7f5eb1e44850);
     callback::add("on_is_moving_melee_changed", &function_830afe26e7e7e559);
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x20
@@ -42,7 +42,7 @@ function private function_5e13f692ca3ad048(params) {
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x286
 // Size: 0x18
@@ -50,7 +50,7 @@ function private function_b06e7f5eb1e44850(params) {
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0x18
@@ -58,19 +58,19 @@ function private function_830afe26e7e7e559(params) {
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2c4
 // Size: 0x54
-function private function_28d26d7ead912662(var_f261c2f31d7de033, var_5096c84907869455, var_7b2cfb8921480a0a) {
+function private function_28d26d7ead912662(var_f261c2f31d7de033, move_type, var_7b2cfb8921480a0a) {
     struct = spawnstruct();
     struct.var_f261c2f31d7de033 = var_f261c2f31d7de033;
-    struct.var_5096c84907869455 = var_5096c84907869455;
+    struct.move_type = move_type;
     struct.var_7b2cfb8921480a0a = var_7b2cfb8921480a0a;
     return struct;
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x320
 // Size: 0x27b
@@ -95,15 +95,15 @@ function private function_79d559d24ce75889(struct) {
             height_diff = var_eb9973984c6db0df[2] - self.origin[2];
         }
         low_enough = 30;
-        var_b69ebc069634250 = undefined;
+        target_pose = undefined;
         if (isent(var_eb9973984c6db0df)) {
             if (isplayer(var_eb9973984c6db0df)) {
-                var_b69ebc069634250 = var_eb9973984c6db0df getstance();
+                target_pose = var_eb9973984c6db0df getstance();
             } else if (isdefined(var_eb9973984c6db0df.currentpose)) {
-                var_b69ebc069634250 = var_eb9973984c6db0df.currentpose;
+                target_pose = var_eb9973984c6db0df.currentpose;
             }
         }
-        if (height_diff < low_enough && is_equal(var_b69ebc069634250, "prone")) {
+        if (height_diff < low_enough && is_equal(target_pose, "prone")) {
             return "melee_low";
         }
         return undefined;
@@ -115,7 +115,7 @@ function private function_79d559d24ce75889(struct) {
         if (isent(var_eb9973984c6db0df)) {
             melee_origin = (self.origin[0], self.origin[1], self.origin[2] + 65);
             enemy_origin = (var_eb9973984c6db0df.origin[0], var_eb9973984c6db0df.origin[1], var_eb9973984c6db0df.origin[2] + 32);
-            if (!namespace_2a184fc4902783dc::_bullet_trace_passed(melee_origin, enemy_origin, 0, self)) {
+            if (!scripts/engine/trace::_bullet_trace_passed(melee_origin, enemy_origin, 0, self)) {
                 return "melee_low";
             }
         }
@@ -129,16 +129,16 @@ function private function_79d559d24ce75889(struct) {
             return undefined;
         }
     }
-    if (isdefined(struct.var_5096c84907869455)) {
-        alias = alias + "_" + struct.var_5096c84907869455;
-        if (self._blackboard.movetype != struct.var_5096c84907869455) {
+    if (isdefined(struct.move_type)) {
+        alias = alias + "_" + struct.move_type;
+        if (self._blackboard.movetype != struct.move_type) {
             return undefined;
         }
     }
     return alias;
 }
 
-// Namespace namespace_b17ec7b025ea4a4c/namespace_2c146dc5d41aa016
+// Namespace namespace_b17ec7b025ea4a4c / namespace_2c146dc5d41aa016
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5a3
 // Size: 0x19

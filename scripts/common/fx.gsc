@@ -6,7 +6,7 @@
 
 #namespace fx;
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29c
 // Size: 0x50
@@ -23,7 +23,7 @@ function initfx() {
     script_struct_fx_init();
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x360
@@ -33,10 +33,10 @@ function init_fx_thread() {
     }
     create_lock("createfx_looper", 20);
     level._fx.fireloopmod = 1;
-    level._fx.exploderfunction = &namespace_ed6d37a42f9fd2e7::exploder_before_load;
+    level._fx.exploderfunction = &scripts/common/exploder::exploder_before_load;
     waittillframeend();
     waittillframeend();
-    level._fx.exploderfunction = &namespace_ed6d37a42f9fd2e7::exploder_after_load;
+    level._fx.exploderfunction = &scripts/common/exploder::exploder_after_load;
     level._fx.server_culled_sounds = 0;
     if (getdvarint(@"hash_7ebee7a942eed3c8") == 1) {
         level._fx.server_culled_sounds = 1;
@@ -93,12 +93,12 @@ function init_fx_thread() {
         }
     }
     foreach (msg, var_e2a3f554e65a5ced in var_4c5056380ab96e2d) {
-        thread namespace_ed6d37a42f9fd2e7::exploder_flag_wait(msg, var_e2a3f554e65a5ced);
+        thread scripts/common/exploder::exploder_flag_wait(msg, var_e2a3f554e65a5ced);
     }
     check_createfx_limit();
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x65a
 // Size: 0x13c
@@ -107,28 +107,28 @@ function remove_dupes() {
         if (getdvarint(@"hash_66ba26fa32261de") == 0) {
             return;
         }
-        var_32b5c59468d24da0 = [];
+        new_ents = [];
         for (i = 0; i < level.createfxent.size; i++) {
-            var_aa81bb1456b3860a = 1;
-            var_41b91213c9cceca = level.createfxent[i];
+            add_ent = 1;
+            i_ent = level.createfxent[i];
             for (j = i + 1; j < level.createfxent.size; j++) {
-                var_9d2b06074809da77 = level.createfxent[j];
-                if (var_9d2b06074809da77.v["on"] == var_41b91213c9cceca.v["on"]) {
-                    if (var_9d2b06074809da77.v["sounddone"] == var_41b91213c9cceca.v["sounddone"]) {
-                        println("<unknown string>" + var_9d2b06074809da77.v["on"] + "<unknown string>" + var_9d2b06074809da77.v["sounddone"]);
-                        var_aa81bb1456b3860a = 0;
+                j_ent = level.createfxent[j];
+                if (j_ent.v["on"] == i_ent.v["on"]) {
+                    if (j_ent.v["sounddone"] == i_ent.v["sounddone"]) {
+                        println("<unknown string>" + j_ent.v["on"] + "<unknown string>" + j_ent.v["sounddone"]);
+                        add_ent = 0;
                     }
                 }
             }
-            if (var_aa81bb1456b3860a) {
-                var_32b5c59468d24da0[var_32b5c59468d24da0.size] = var_41b91213c9cceca;
+            if (add_ent) {
+                new_ents[new_ents.size] = i_ent;
             }
         }
-        level.createfxent = var_32b5c59468d24da0;
+        level.createfxent = new_ents;
     #/
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x79d
 // Size: 0x11a
@@ -143,7 +143,7 @@ function offset_fix() {
             return;
         }
         offset = (int(toks[0]), int(toks[1]), int(toks[2]));
-        var_32b5c59468d24da0 = [];
+        new_ents = [];
         foreach (ent in level.createfxent) {
             ent.v["sounddone"] = ent.v["sounddone"] + offset;
         }
@@ -152,7 +152,7 @@ function offset_fix() {
     #/
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8be
 // Size: 0xd0
@@ -161,23 +161,25 @@ function check_createfx_limit() {
         if (!issp()) {
             return;
         }
-        var_2f497d0462841db7 = 0;
-        var_d86c627c77f35784 = 0;
+        fx_count = 0;
+        sound_count = 0;
         foreach (ent in level.createfxent) {
             if (is_createfx_type(ent, "<unknown string>")) {
-                var_2f497d0462841db7++;
-            } else if (is_createfx_type(ent, "<unknown string>")) {
-                var_d86c627c77f35784++;
+                fx_count++;
+                continue;
+            }
+            if (is_createfx_type(ent, "<unknown string>")) {
+                sound_count++;
             }
         }
-        println("<unknown string>" + var_2f497d0462841db7);
-        println("<unknown string>" + var_d86c627c77f35784);
-        check_limit_type("<unknown string>", var_2f497d0462841db7);
-        check_limit_type("<unknown string>", var_d86c627c77f35784);
+        println("<unknown string>" + fx_count);
+        println("<unknown string>" + sound_count);
+        check_limit_type("<unknown string>", fx_count);
+        check_limit_type("<unknown string>", sound_count);
     #/
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x995
 // Size: 0x6a
@@ -197,7 +199,7 @@ function check_limit_type(type, count) {
     #/
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xa06
 // Size: 0xce
@@ -216,7 +218,7 @@ function print_org(fxcommand, fxid, fxpos, waittime) {
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xadb
 // Size: 0xc3
@@ -233,7 +235,7 @@ function loopfx(fxid, fxpos, waittime, fxpos2, fxstart, fxstop, timeout) {
     ent.v["delay"] = waittime;
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba5
 // Size: 0x6e
@@ -242,7 +244,7 @@ function create_looper() {
     create_loopsound();
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc1a
 // Size: 0x164
@@ -281,7 +283,7 @@ function create_loopsound() {
     ent loop_fx_sound_with_angles(self.v["soundalias"], self.v["origin"], self.v["angles"], culled, end_on, createfx_ent);
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd85
 // Size: 0x11d
@@ -311,7 +313,7 @@ function create_interval_sound() {
     runner thread loop_fx_sound_interval_with_angles(self.v["soundalias"], self.v["origin"], self.v["angles"], ender, undefined, self.v["delay_min"], self.v["delay_max"]);
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xea9
 // Size: 0xb2
@@ -320,7 +322,7 @@ function loopfxthread() {
     if (isdefined(self.fxstart)) {
         level waittill("start fx" + self.fxstart);
     }
-    while (1) {
+    while (true) {
         create_looper();
         if (isdefined(self.timeout)) {
             thread loopfxstop(self.timeout);
@@ -335,13 +337,13 @@ function loopfxthread() {
         }
         if (isdefined(self.fxstart)) {
             level waittill("start fx" + self.fxstart);
-        } else {
-            return;
+            continue;
         }
+        return;
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf62
 // Size: 0x24
@@ -351,7 +353,7 @@ function loopfxstop(timeout) {
     self.looper delete();
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0xf8d
 // Size: 0x56
@@ -359,7 +361,7 @@ function gunfireloopfx(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaym
     thread gunfireloopfxthread(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaymax, betweensetsmin, betweensetsmax);
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfea
 // Size: 0x163
@@ -401,7 +403,7 @@ function gunfireloopfxthread(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shot
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1154
 // Size: 0xb0
@@ -417,23 +419,23 @@ function create_triggerfx() {
     create_loopsound();
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x120b
 // Size: 0x59
 function verify_effects_assignment(effectid) {
     if (isdefined(level._effect[effectid])) {
-        return 1;
+        return true;
     }
     if (!isdefined(level._missing_fx)) {
         level._missing_fx = [];
     }
     level._missing_fx[self.v["fxid"]] = effectid;
     verify_effects_assignment_print(effectid);
-    return 0;
+    return false;
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x126c
 // Size: 0xb9
@@ -455,7 +457,7 @@ function verify_effects_assignment_print(effectid) {
     #/
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x132c
 // Size: 0x3a
@@ -467,7 +469,7 @@ function oneshotfxthread() {
     [[ level.func["create_triggerfx"] ]]();
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x136d
 // Size: 0xbe
@@ -486,7 +488,7 @@ function add_reactive_fx() {
     self.next_reactive_time = 3000;
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1432
 // Size: 0xf5
@@ -498,8 +500,8 @@ function reactive_fx_thread() {
     }
     level._fx.reactive_sound_ents = [];
     explosion_radius = 256;
-    while (1) {
-        delay = objweapon = point = explosion_radius = attacker = level waittill("code_damageradius");
+    while (true) {
+        attacker, explosion_radius, point, objweapon, delay = level waittill("code_damageradius");
         ents = sort_reactive_ents(point, explosion_radius);
         foreach (i, ent in ents) {
             ent thread play_reactive_fx(i, delay);
@@ -507,7 +509,7 @@ function reactive_fx_thread() {
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x152e
 // Size: 0x15
@@ -515,7 +517,7 @@ function vector2d(vec) {
     return (vec[0], vec[1], 0);
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x154b
 // Size: 0x296
@@ -534,9 +536,9 @@ function sort_reactive_ents(point, explosion_radius) {
     }
     foreach (ent in closest) {
         var_af1392a218a7888a = vector2d(ent.v["origin"] - level.player.origin);
-        var_c2da92f3a0a86861 = vector2d(point - level.player.origin);
+        playertopoint = vector2d(point - level.player.origin);
         vec1 = vectornormalize(var_af1392a218a7888a);
-        vec2 = vectornormalize(var_c2da92f3a0a86861);
+        vec2 = vectornormalize(playertopoint);
         ent.dot = vectordot(vec1, vec2);
     }
     for (i = 0; i < closest.size - 1; i++) {
@@ -558,7 +560,7 @@ function sort_reactive_ents(point, explosion_radius) {
     return closest;
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17e9
 // Size: 0x1ce
@@ -602,7 +604,7 @@ function play_reactive_fx(num, delay) {
     #/
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19be
 // Size: 0xd7
@@ -621,7 +623,7 @@ function get_reactive_sound_ent() {
     return undefined;
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a9d
 // Size: 0x2e
@@ -629,7 +631,7 @@ function playfxnophase(fx, location, forwarddir, updir) {
     playfx(fx, location, forwarddir, updir);
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ad2
 // Size: 0x8b
@@ -642,7 +644,7 @@ function script_struct_fx_init() {
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b64
 // Size: 0x21e
@@ -668,13 +670,13 @@ function play_struct_fx(struct) {
         struct.sfx.angles = struct.angles;
         if (soundislooping(struct.script_soundalias)) {
             struct.sfx playloopsound(struct.script_soundalias);
-        } else {
-            struct.sfx playsound(struct.script_soundalias);
+            return;
         }
+        struct.sfx playsound(struct.script_soundalias);
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d89
 // Size: 0x3d
@@ -685,7 +687,7 @@ function stop_struct_fx(struct) {
     }
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dcd
 // Size: 0x18
@@ -693,7 +695,7 @@ function struct_fx_active(struct) {
     return isdefined(struct.fx);
 }
 
-// Namespace fx/namespace_620ad37c5e3fa104
+// Namespace fx / scripts/common/fx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ded
 // Size: 0x19

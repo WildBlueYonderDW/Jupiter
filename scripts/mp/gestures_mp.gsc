@@ -6,14 +6,14 @@
 #using scripts\mp\utility\lui_game_event_aggregator.gsc;
 #using scripts\common\notetrack.gsc;
 
-#namespace namespace_e94cba3cb760c2f7;
+#namespace gestures_mp;
 
-// Namespace namespace_e94cba3cb760c2f7/namespace_e44030e132d2f79e
+// Namespace gestures_mp / scripts/mp/gestures_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x98
 // Size: 0x16
 function init_mp() {
-    namespace_3846cfb60b2ef12f::registeronluieventcallback(&watchradialgestureactivation);
-    namespace_b5a115f53b441ef5::function_11f8c6d6f5ba948();
+    scripts/mp/utility/lui_game_event_aggregator::registeronluieventcallback(&watchradialgestureactivation);
+    scripts/common/notetrack::function_11f8c6d6f5ba948();
 }
 

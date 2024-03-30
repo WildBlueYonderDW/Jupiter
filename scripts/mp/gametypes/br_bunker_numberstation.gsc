@@ -13,21 +13,21 @@
 #using scripts\mp\playerlogic.gsc;
 #using scripts\mp\utility\debug.gsc;
 
-#namespace namespace_d9f38e6b6f406a1f;
+#namespace br_bunker_numberstation;
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3b
 // Size: 0x25d
 function init() {
     level.bunker11puzzleactive = getdvarint(@"hash_2b4e25fd276456be", 1);
-    namespace_4b0406965e556711::gameflaginit("stop_phone_code_ringing", 0);
+    scripts/mp/flags::gameflaginit("stop_phone_code_ringing", 0);
     level.bunker_numberstation = spawnstruct();
     doors = getentarray("bunker_door_11", "targetname");
     level.bunker_numberstation.door = doors[0];
     level.bunker_numberstation.hints["keypad"] = [];
     initbunker11keypad();
-    namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_keypad_bunker_11", &keypadscriptableused);
+    scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_keypad_bunker_11", &keypadscriptableused);
     if (level.bunker11puzzleactive) {
         level.bunker_numberstation.hints = [];
         level.bunker_numberstation.hints["phones_code"] = [];
@@ -39,30 +39,30 @@ function init() {
         level.bunker_numberstation.teamcodeprogress = [];
         level.bunker_numberstation.codecorrectlyenteredbyanyone = 0;
         level.bunker_numberstation.bunkeropened = 0;
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_0", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_1", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_2", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_3", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_4", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_5", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_6", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_7", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_8", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_morse_9", &phonemorsesinglescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_phone_code", &codephonescriptableused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_computer_reboot", &computerrebootused);
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_red_button", &redbuttonused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_0", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_1", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_2", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_3", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_4", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_5", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_6", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_7", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_8", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_morse_9", &phonemorsesinglescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_phone_code", &codephonescriptableused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_computer_reboot", &computerrebootused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_red_button", &redbuttonused);
     }
     level thread initpostmain();
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc9f
 // Size: 0xf4
 function initpostmain() {
     waittillframeend();
-    level thread namespace_ff69a74765774dfd::initbunkerdoor(level.bunker_numberstation.door, 0);
+    level thread scripts/mp/gametypes/br_bunker_utility::initbunkerdoor(level.bunker_numberstation.door, 0);
     if (!level.bunker11puzzleactive) {
         return;
     }
@@ -72,7 +72,7 @@ function initpostmain() {
         initlocs_donetsk();
     }
     /#
-        if (0) {
+        if (false) {
             level thread debug_hintadjustmentthink();
         }
         if (getdvarint(@"hash_664ec58759f1617", 0)) {
@@ -80,21 +80,21 @@ function initpostmain() {
         }
         level thread function_138da425d10b4a04();
     #/
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
-    var_885780d268327ba4 = getdvarint(@"hash_4bb3dd5af7368f36", 3);
-    generatenumbercode(var_885780d268327ba4, level.bunker_numberstation);
+    scripts/mp/flags::gameflagwait("prematch_done");
+    codelength = getdvarint(@"hash_4bb3dd5af7368f36", 3);
+    generatenumbercode(codelength, level.bunker_numberstation);
     level thread phonesringing_singlemorse();
     level thread phonesringing_code();
-    level thread namespace_cb965d2f71fefddc::registeruniquelootcallback(1, &awardbunker11blueprint);
+    level thread scripts/mp/gametypes/br_pickups::registeruniquelootcallback(1, &awardbunker11blueprint);
     /#
-        if (0) {
+        if (false) {
             computerrebootsequence_init();
             redbutton_init();
         }
     #/
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd9a
 // Size: 0x19c
@@ -121,7 +121,7 @@ function initvo() {
     level.bunker11vo["VO_WILL_COMPLY"] = "dx_bra_rubc_bunker_code_incorrect_20";
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf3d
 // Size: 0xac
@@ -129,11 +129,11 @@ function initbunker11keypad() {
     door = level.bunker_numberstation.door;
     forward = anglestoforward(door.angles);
     left = anglestoleft(door.angles);
-    var_a10ae505a570d67e = door.origin + (0, 0, 45) + forward * 37 + left * 80;
-    level.bunker_numberstation.hints["keypad"][0] = spawnscriptable("maphint_keypad_bunker_11", var_a10ae505a570d67e);
+    hintorigin = door.origin + (0, 0, 45) + forward * 37 + left * 80;
+    level.bunker_numberstation.hints["keypad"][0] = spawnscriptable("maphint_keypad_bunker_11", hintorigin);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xff0
 // Size: 0x11
@@ -142,7 +142,7 @@ function initlocs_donetsk() {
     initlocs_codeprovidingphones();
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1008
 // Size: 0x4c3
@@ -180,7 +180,7 @@ function initlocs_morsephones() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14d2
 // Size: 0x6c3
@@ -230,7 +230,7 @@ function initlocs_codeprovidingphones() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b9c
 // Size: 0xb4
@@ -239,101 +239,101 @@ function awardbunker11blueprint(player) {
         if (!isdefined(teammate)) {
             continue;
         }
-        teammate namespace_aad14af462a74d08::onunlockitem("blueprint_unlock_584");
-        teammate namespace_bd0162aedd8c8594::logevent_challengeitemunlocked(teammate, "blueprint_unlock_584", "blueprint", 584);
+        teammate scripts/cp_mp/challenges::onunlockitem("blueprint_unlock_584");
+        teammate scripts/mp/analyticslog::logevent_challengeitemunlocked(teammate, "blueprint_unlock_584", "blueprint", 584);
         optionalnumber = 0;
         if (optionalnumber > 0) {
-            teammate thread namespace_44abc05161e2e2cb::showsplash("br_unlockable_weapon_splash", optionalnumber);
+            teammate thread scripts/mp/hud_message::showsplash("br_unlockable_weapon_splash", optionalnumber);
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c58
 // Size: 0x52
-function codephonescriptableused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function codephonescriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     /#
         assert(part == "maphint_phone_code");
     #/
     level thread _codephonescriptableused(instance, part, state, player, var_a5b2c541413aa895);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cb1
 // Size: 0x42f
 function _codephonescriptableused(instance, part, state, player, var_a5b2c541413aa895) {
     if (state == "on") {
-        if ((!namespace_4b0406965e556711::gameflag("prematch_done") || !istrue(instance.startingcodephone)) && level.bunker_numberstation.successfulteams.size == 0) {
+        if ((!scripts/mp/flags::gameflag("prematch_done") || !istrue(instance.startingcodephone)) && level.bunker_numberstation.successfulteams.size == 0) {
             playsoundatpos(instance.origin, "br_phone_deny");
             instance setscriptablepartstate("maphint_phone_code", "off");
             wait(3);
             instance setscriptablepartstate("maphint_phone_code", "on");
-        } else {
-            player namespace_99ac021a7547cae3::playerhasmoved();
-            instance setscriptablepartstate("maphint_phone_code", "off");
-            while (istrue(instance.ringing)) {
-                waitframe();
-            }
-            instance notify("phone_picked_up");
-            if (level.bunker_numberstation.successfulteams.size > 0) {
-                playsoundatpos(instance.origin, "br_phone_code_correct");
-                wait(1);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
-                level thread debug_show2dvotext("North Secure", 1.24);
-                wait(1.24);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
-                level thread debug_show2dvotext("North Secure", 2);
-                wait(2);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_OK_THATS_GOOD"]);
-                level thread debug_show2dvotext("Ok. That's good.", 2);
-                wait(2);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_BURN_TEAM_INBOUND"]);
-                level thread debug_show2dvotext("Copy. Burn team inbound.", 2);
-                wait(2);
-                playsoundatpos(instance.origin, "br_phone_code_correct");
-                wait(1);
-                foreach (number in level.bunker_numberstation.code) {
-                    playsoundatpos(instance.origin, level.bunker11vo["VO_MORSE_" + number]);
-                    wait(1.5);
-                }
-                playsoundatpos(instance.origin, "br_phone_code_correct");
-            } else {
-                wait(1);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_BASE_OVERRUN"]);
-                level thread debug_show2dvotext("All teams. Base has been overun. Switch to cryptography.", 3);
-                wait(3);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_STAND_BY"]);
-                level thread debug_show2dvotext("Stand By", 2);
-                wait(2);
-                playsoundatpos(instance.origin, "br_phone_code_correct");
-                wait(1);
-                foreach (number in level.bunker_numberstation.code) {
-                    playsoundatpos(instance.origin, level.bunker11vo["VO_MORSE_" + number]);
-                    wait(1.5);
-                }
-                playsoundatpos(instance.origin, "br_phone_code_correct");
-                wait(1);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_HEAR_THAT"]);
-                level thread debug_show2dvotext("You hear that?", 2);
-                wait(2);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_LOCK_DOOR"]);
-                level thread debug_show2dvotext("Lock the door! They're coming!", 2);
-            }
-            wait(3);
-            instance setscriptablepartstate("maphint_phone_code", "on");
-            instance thread ringphoneoccasionally();
+            return;
         }
+        player scripts/mp/playerlogic::playerhasmoved();
+        instance setscriptablepartstate("maphint_phone_code", "off");
+        while (istrue(instance.ringing)) {
+            waitframe();
+        }
+        instance notify("phone_picked_up");
+        if (level.bunker_numberstation.successfulteams.size > 0) {
+            playsoundatpos(instance.origin, "br_phone_code_correct");
+            wait(1);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
+            level thread debug_show2dvotext("North Secure", 1.24);
+            wait(1.24);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
+            level thread debug_show2dvotext("North Secure", 2);
+            wait(2);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_OK_THATS_GOOD"]);
+            level thread debug_show2dvotext("Ok. That's good.", 2);
+            wait(2);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_BURN_TEAM_INBOUND"]);
+            level thread debug_show2dvotext("Copy. Burn team inbound.", 2);
+            wait(2);
+            playsoundatpos(instance.origin, "br_phone_code_correct");
+            wait(1);
+            foreach (number in level.bunker_numberstation.code) {
+                playsoundatpos(instance.origin, level.bunker11vo["VO_MORSE_" + number]);
+                wait(1.5);
+            }
+            playsoundatpos(instance.origin, "br_phone_code_correct");
+        } else {
+            wait(1);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_BASE_OVERRUN"]);
+            level thread debug_show2dvotext("All teams. Base has been overun. Switch to cryptography.", 3);
+            wait(3);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_STAND_BY"]);
+            level thread debug_show2dvotext("Stand By", 2);
+            wait(2);
+            playsoundatpos(instance.origin, "br_phone_code_correct");
+            wait(1);
+            foreach (number in level.bunker_numberstation.code) {
+                playsoundatpos(instance.origin, level.bunker11vo["VO_MORSE_" + number]);
+                wait(1.5);
+            }
+            playsoundatpos(instance.origin, "br_phone_code_correct");
+            wait(1);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_HEAR_THAT"]);
+            level thread debug_show2dvotext("You hear that?", 2);
+            wait(2);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_LOCK_DOOR"]);
+            level thread debug_show2dvotext("Lock the door! They're coming!", 2);
+        }
+        wait(3);
+        instance setscriptablepartstate("maphint_phone_code", "on");
+        instance thread ringphoneoccasionally();
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x20e7
 // Size: 0x1f9
-function phonemorsesinglescriptableused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function phonemorsesinglescriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     /#
         assert(part == "maphint_phone_morse_0" || part == "maphint_phone_morse_1" || part == "maphint_phone_morse_2" || part == "maphint_phone_morse_3" || part == "maphint_phone_morse_4" || part == "maphint_phone_morse_5" || part == "maphint_phone_morse_6" || part == "maphint_phone_morse_7" || part == "maphint_phone_morse_8" || part == "maphint_phone_morse_9");
     #/
@@ -377,67 +377,67 @@ function phonemorsesinglescriptableused(instance, part, state, player, var_a5b2c
     level thread _phonemorsesinglescriptableused(instance, part, state, player, var_a5b2c541413aa895);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x22e7
 // Size: 0x2cc
 function _phonemorsesinglescriptableused(instance, part, state, player, var_a5b2c541413aa895) {
     if (state == "on") {
         team = player.team;
-        if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+        if (!scripts/mp/flags::gameflag("prematch_done")) {
             playsoundatpos(instance.origin, "br_morse_" + instance.morsenumber);
             instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "off");
             wait(3);
             instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "on");
-        } else {
-            player namespace_99ac021a7547cae3::playerhasmoved();
-            instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "off");
-            while (istrue(instance.ringing)) {
-                waitframe();
-            }
-            instance notify("phone_picked_up");
-            if (level.bunker_numberstation.successfulteams.size > 0) {
-                playsoundatpos(instance.origin, "br_phone_code_correct");
-                wait(1);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
-                level thread debug_show2dvotext("North Secure", 1.24);
-                wait(1.24);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
-                level thread debug_show2dvotext("North Secure", 2);
-                wait(2);
-                playsoundatpos(instance.origin, level.bunker11vo["VO_BURN_TEAM_INBOUND"]);
-                level thread debug_show2dvotext("Copy. Burn team inbound.", 2);
-                wait(2);
-            }
+            return;
+        }
+        player scripts/mp/playerlogic::playerhasmoved();
+        instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "off");
+        while (istrue(instance.ringing)) {
+            waitframe();
+        }
+        instance notify("phone_picked_up");
+        if (level.bunker_numberstation.successfulteams.size > 0) {
+            playsoundatpos(instance.origin, "br_phone_code_correct");
+            wait(1);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
+            level thread debug_show2dvotext("North Secure", 1.24);
+            wait(1.24);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_NORTH_SECURE"]);
+            level thread debug_show2dvotext("North Secure", 2);
+            wait(2);
+            playsoundatpos(instance.origin, level.bunker11vo["VO_BURN_TEAM_INBOUND"]);
+            level thread debug_show2dvotext("Copy. Burn team inbound.", 2);
+            wait(2);
+        }
+        if (!array_contains(level.bunker_numberstation.successfulteams, team)) {
+            playsoundatpos(instance.origin, "br_morse_" + instance.morsenumber);
+            wait(2);
             if (!array_contains(level.bunker_numberstation.successfulteams, team)) {
-                playsoundatpos(instance.origin, "br_morse_" + instance.morsenumber);
-                wait(2);
-                if (!array_contains(level.bunker_numberstation.successfulteams, team)) {
-                    entercodenumber(level.bunker_numberstation, instance.morsenumber, team);
-                    var_b50f7cb6d7639b3a = checkcodeentered(level.bunker_numberstation, team);
-                    if (var_b50f7cb6d7639b3a == 1) {
-                        level thread correctcodeentered(instance, level.bunker_numberstation, team);
-                    } else if (var_b50f7cb6d7639b3a == 0) {
-                        level thread incorrectcodeentered(instance, level.bunker_numberstation, team);
-                    }
+                entercodenumber(level.bunker_numberstation, instance.morsenumber, team);
+                codestatus = checkcodeentered(level.bunker_numberstation, team);
+                if (codestatus == 1) {
+                    level thread correctcodeentered(instance, level.bunker_numberstation, team);
+                } else if (codestatus == 0) {
+                    level thread incorrectcodeentered(instance, level.bunker_numberstation, team);
                 }
             }
-            wait(3);
-            instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "on");
-            instance thread ringphoneoccasionally();
         }
+        wait(3);
+        instance setscriptablepartstate("maphint_phone_morse_" + instance.morsenumber, "on");
+        instance thread ringphoneoccasionally();
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x25ba
 // Size: 0x42
-function keypadscriptableused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function keypadscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     level thread _keypadscriptableused(instance, part, state, player, var_a5b2c541413aa895);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2603
 // Size: 0x14b
@@ -449,22 +449,22 @@ function _keypadscriptableused(instance, part, state, player, var_a5b2c541413aa8
         playsoundatpos(instance.origin, "br_keypad_confirm");
         instance setscriptablepartstate("maphint_keypad_bunker_11", "off");
         wait(2.5);
-        level thread namespace_ff69a74765774dfd::openbunkerdoor(level.bunker_numberstation.door, 1, "bunker_loot_11", "door_open_puzzle");
+        level thread scripts/mp/gametypes/br_bunker_utility::openbunkerdoor(level.bunker_numberstation.door, 1, "bunker_loot_11", "door_open_puzzle");
         level.bunker_numberstation.bunkeropened = 1;
         level thread activatemusictrigger();
-        if (1) {
+        if (true) {
             computerrebootsequence_init();
             redbutton_init();
         }
-    } else {
-        playsoundatpos(instance.origin, "br_keypad_deny");
-        instance setscriptablepartstate("maphint_keypad_bunker_11", "off");
-        wait(3);
-        instance setscriptablepartstate("maphint_keypad_bunker_11", "on");
+        return;
     }
+    playsoundatpos(instance.origin, "br_keypad_deny");
+    instance setscriptablepartstate("maphint_keypad_bunker_11", "off");
+    wait(3);
+    instance setscriptablepartstate("maphint_keypad_bunker_11", "on");
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2755
 // Size: 0x88
@@ -477,13 +477,13 @@ function activatemusictrigger() {
     trigger delete();
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x27e4
 // Size: 0x7b
 function musictriggerthink(trigger) {
     trigger endon("endMusicTrigger");
-    while (1) {
+    while (true) {
         player = trigger waittill("trigger");
         waitframe();
         if (!isdefined(player)) {
@@ -503,7 +503,7 @@ function musictriggerthink(trigger) {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2866
 // Size: 0x178
@@ -515,39 +515,39 @@ function phonesringing_code() {
     for (i = 0; i < int(var_e40f74266c39d166); i++) {
         var_f557519e38cbe212[var_f557519e38cbe212.size] = level.bunker_numberstation.hints["phones_code"][i];
     }
-    foreach (var_ca8ba7c130852fcc in var_f557519e38cbe212) {
-        var_ca8ba7c130852fcc.scriptable.startingcodephone = 1;
-        var_ca8ba7c130852fcc.scriptable thread ringcodephoneconstantly();
-        var_ca8ba7c130852fcc.scriptable setscriptablepartstate("maphint_phone_code", "on");
+    foreach (phonelocation in var_f557519e38cbe212) {
+        phonelocation.scriptable.startingcodephone = 1;
+        phonelocation.scriptable thread ringcodephoneconstantly();
+        phonelocation.scriptable setscriptablepartstate("maphint_phone_code", "on");
     }
     level.bunker_numberstation.chosencodephones = var_f557519e38cbe212;
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x29e5
 // Size: 0x73
 function phonesringing_singlemorse() {
-    foreach (var_ca8ba7c130852fcc in level.bunker_numberstation.hints["phones_morse"]) {
-        var_ca8ba7c130852fcc.scriptable thread ringphoneoccasionally();
+    foreach (phonelocation in level.bunker_numberstation.hints["phones_morse"]) {
+        phonelocation.scriptable thread ringphoneoccasionally();
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a5f
 // Size: 0xb0
 function codephonescodeenteredringingfrenzy() {
     level thread tracktimeringingfrenzy();
-    foreach (var_ca8ba7c130852fcc in level.bunker_numberstation.hints["phones_code"]) {
-        if (!istrue(var_ca8ba7c130852fcc.scriptable.startingcodephone)) {
-            var_ca8ba7c130852fcc.scriptable thread ringcodephoneconstantly();
-            var_ca8ba7c130852fcc.scriptable setscriptablepartstate("maphint_phone_code", "on");
+    foreach (phonelocation in level.bunker_numberstation.hints["phones_code"]) {
+        if (!istrue(phonelocation.scriptable.startingcodephone)) {
+            phonelocation.scriptable thread ringcodephoneconstantly();
+            phonelocation.scriptable setscriptablepartstate("maphint_phone_code", "on");
         }
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b16
 // Size: 0xd3
@@ -557,15 +557,15 @@ function ringphoneoccasionally() {
     while (!istrue(level.bunker_numberstation.bunkeropened)) {
         for (i = 0; i < 4; i++) {
             self.ringing = 1;
-            if (1) {
+            if (true) {
                 if (isdefined(self.sound)) {
                     playsoundatpos(self.origin, self.sound);
                 } else {
                     playsoundatpos(self.origin, "br_phone_ring");
                 }
             }
-            if (0) {
-                thread namespace_d028276791d9cff6::drawsphere(self.origin, 32, 3, (0, 1, 0));
+            if (false) {
+                thread scripts/mp/utility/debug::drawsphere(self.origin, 32, 3, (0, 1, 0));
             }
             wait(3);
             self.ringing = 0;
@@ -575,23 +575,23 @@ function ringphoneoccasionally() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bf0
 // Size: 0x9d
 function ringcodephoneconstantly() {
     self endon("phone_picked_up");
-    while (!namespace_4b0406965e556711::gameflag("stop_phone_code_ringing")) {
+    while (!scripts/mp/flags::gameflag("stop_phone_code_ringing")) {
         self.ringing = 1;
-        if (1) {
+        if (true) {
             if (isdefined(self.sound)) {
                 playsoundatpos(self.origin, self.sound);
             } else {
                 playsoundatpos(self.origin, "br_phone_ring");
             }
         }
-        if (0) {
-            thread namespace_d028276791d9cff6::drawsphere(self.origin, 32, 3, (1, 0, 0));
+        if (false) {
+            thread scripts/mp/utility/debug::drawsphere(self.origin, 32, 3, (1, 0, 0));
         }
         wait(3);
         self.ringing = 0;
@@ -599,16 +599,16 @@ function ringcodephoneconstantly() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c94
 // Size: 0x12
 function tracktimeringingfrenzy() {
     wait(120);
-    namespace_4b0406965e556711::gameflagset("stop_phone_code_ringing");
+    scripts/mp/flags::gameflagset("stop_phone_code_ringing");
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cad
 // Size: 0x15c
@@ -625,15 +625,15 @@ function computerrebootsequence_init() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e10
 // Size: 0x3f
-function computerrebootused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function computerrebootused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     level thread _computerrebootsequence_start(instance, player);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e56
 // Size: 0x20f
@@ -660,15 +660,15 @@ function _computerrebootsequence_start(instance, player) {
     instance setscriptablepartstate("maphint_computer_reboot", "on");
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x306c
 // Size: 0x1b0
 function redbutton_init() {
-    var_7538c6a3c6d4044 = getstructarray("bunker11_red_button", "targetname");
+    redbutton = getstructarray("bunker11_red_button", "targetname");
     level.bunker11_mistswindow = getstructarray("bunker11_cleanroom_window", "targetname");
     level.bunker11_mistsdoors = getstructarray("bunker11_cleanroom_door", "targetname");
-    spawnscriptable("maphint_red_button", var_7538c6a3c6d4044[0].origin);
+    spawnscriptable("maphint_red_button", redbutton[0].origin);
     foreach (index, window in level.bunker11_mistswindow) {
         angles = (0, 0, 0);
         if (isdefined(window.angles)) {
@@ -685,15 +685,15 @@ function redbutton_init() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x3223
 // Size: 0x3f
-function redbuttonused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function redbuttonused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     level thread _redbuttonused_internal(instance, player);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3269
 // Size: 0x121
@@ -710,57 +710,57 @@ function _redbuttonused_internal(instance, player) {
     instance setscriptablepartstate("maphint_red_button", "on");
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3391
 // Size: 0x35
-function generatenumbercode(var_885780d268327ba4, var_48b11326257052f1) {
-    namespace_ff69a74765774dfd::generatenumbercode_array(var_885780d268327ba4, var_48b11326257052f1);
-    if (0) {
-        level thread printcodechosen(var_48b11326257052f1);
-        level thread printcodeentered(var_48b11326257052f1);
+function generatenumbercode(codelength, codestruct) {
+    scripts/mp/gametypes/br_bunker_utility::generatenumbercode_array(codelength, codestruct);
+    if (false) {
+        level thread printcodechosen(codestruct);
+        level thread printcodeentered(codestruct);
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x33cd
 // Size: 0x5a
-function entercodenumber(var_48b11326257052f1, number, team) {
-    if (!isdefined(var_48b11326257052f1.codeentered[team])) {
-        var_48b11326257052f1.codeentered[team] = [];
+function entercodenumber(codestruct, number, team) {
+    if (!isdefined(codestruct.codeentered[team])) {
+        codestruct.codeentered[team] = [];
     }
-    var_48b11326257052f1.codeentered[team][var_48b11326257052f1.codeentered[team].size] = number;
+    codestruct.codeentered[team][codestruct.codeentered[team].size] = number;
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x342e
 // Size: 0x7c
-function checkcodeentered(var_48b11326257052f1, team) {
-    if (var_48b11326257052f1.codeentered[team].size < var_48b11326257052f1.code.size) {
+function checkcodeentered(codestruct, team) {
+    if (codestruct.codeentered[team].size < codestruct.code.size) {
         return -1;
     }
-    for (i = 0; i < var_48b11326257052f1.code.size; i++) {
-        if (var_48b11326257052f1.code[i] != var_48b11326257052f1.codeentered[team][i]) {
+    for (i = 0; i < codestruct.code.size; i++) {
+        if (codestruct.code[i] != codestruct.codeentered[team][i]) {
             return 0;
         }
     }
     return 1;
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x34b2
 // Size: 0x1c0
-function correctcodeentered(instance, var_48b11326257052f1, team) {
-    if (0) {
+function correctcodeentered(instance, codestruct, team) {
+    if (false) {
         level thread showdebugresult("Correct Code Entered!");
     }
-    if (var_48b11326257052f1.successfulteams.size == 0) {
+    if (codestruct.successfulteams.size == 0) {
         level.bunker_numberstation.door.lightscriptable setscriptablepartstate("bunker_active_indicator_light", "active");
     }
-    var_48b11326257052f1.successfulteams[var_48b11326257052f1.successfulteams.size] = team;
+    codestruct.successfulteams[codestruct.successfulteams.size] = team;
     playsoundatpos(instance.origin, "br_phone_code_correct");
     wait(1);
     playsoundatpos(instance.origin, level.bunker11vo["VO_OK_THATS_GOOD"]);
@@ -779,18 +779,18 @@ function correctcodeentered(instance, var_48b11326257052f1, team) {
     wait(2);
     if (!level.bunker_numberstation.codecorrectlyenteredbyanyone) {
         codephonescodeenteredringingfrenzy();
-    } else {
-        level.bunker_numberstation.codecorrectlyenteredbyanyone = 1;
+        return;
     }
+    level.bunker_numberstation.codecorrectlyenteredbyanyone = 1;
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3679
 // Size: 0xf6
-function incorrectcodeentered(instance, var_48b11326257052f1, team) {
-    var_48b11326257052f1.codeentered[team] = undefined;
-    if (0) {
+function incorrectcodeentered(instance, codestruct, team) {
+    codestruct.codeentered[team] = undefined;
+    if (false) {
         level thread showdebugresult("ERROR: Wrong Code Entered!");
     }
     playsoundatpos(instance.origin, "br_phone_code_incorrect");
@@ -805,41 +805,39 @@ function incorrectcodeentered(instance, var_48b11326257052f1, team) {
     level thread debug_show2dvotext("Copy. Will comply.", 2);
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3776
 // Size: 0x4b
-function showdebugresult(var_1b0d855f76756d57) {
-    var_18da35a53f30ffd = 0;
-    while (var_18da35a53f30ffd < 5) {
+function showdebugresult(resulttext) {
+    for (timeshown = 0; timeshown < 5; timeshown = timeshown + 0.05) {
         /#
-            printtoscreen2d(500, 500, var_1b0d855f76756d57, (1, 1, 1), 1);
+            printtoscreen2d(500, 500, resulttext, (1, 1, 1), 1);
         #/
         waitframe();
-        var_18da35a53f30ffd = var_18da35a53f30ffd + 0.05;
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37c8
 // Size: 0x106
-function printcodechosen(var_48b11326257052f1) {
+function printcodechosen(codestruct) {
     level notify("endChosenCodeDebugPrint");
     level endon("endChosenCodeDebugPrint");
-    var_dd1003ea8b91bb85 = 10;
-    while (1) {
+    numberspacing = 10;
+    while (true) {
         /#
             printtoscreen2d(500, 400, "dx_bra_rubc_bunker_keypad_3_10", (1, 1, 1), 1);
         #/
-        if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+        if (!scripts/mp/flags::gameflag("prematch_done")) {
             /#
                 printtoscreen2d(600, 400, "dx_bra_rubc_bunker_code_correct_10", (1, 1, 1), 1);
             #/
         } else {
-            foreach (i, number in var_48b11326257052f1.code) {
+            foreach (i, number in codestruct.code) {
                 /#
-                    printtoscreen2d(600 + var_dd1003ea8b91bb85 * i, 400, var_48b11326257052f1.code[i], (1, 1, 1), 1);
+                    printtoscreen2d(600 + numberspacing * i, 400, codestruct.code[i], (1, 1, 1), 1);
                 #/
             }
         }
@@ -847,30 +845,30 @@ function printcodechosen(var_48b11326257052f1) {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38d5
 // Size: 0x191
-function printcodeentered(var_48b11326257052f1) {
+function printcodeentered(codestruct) {
     level notify("endEnterdCodeDebugPrint");
     level endon("endEnterdCodeDebugPrint");
-    var_dd1003ea8b91bb85 = 10;
-    var_270767e7723efd31 = 30;
-    while (1) {
+    numberspacing = 10;
+    teamspacing = 30;
+    while (true) {
         teamindex = 0;
-        foreach (team, var_b62477949575453b in var_48b11326257052f1.codeentered) {
+        foreach (team, codegroup in codestruct.codeentered) {
             /#
-                printtoscreen2d(500, 430 + teamindex * var_270767e7723efd31, team + "on", (1, 1, 1), 1);
+                printtoscreen2d(500, 430 + teamindex * teamspacing, team + "on", (1, 1, 1), 1);
             #/
-            if (!array_contains(var_48b11326257052f1.successfulteams, team)) {
-                foreach (i, number in var_48b11326257052f1.codeentered[team]) {
+            if (!array_contains(codestruct.successfulteams, team)) {
+                foreach (i, number in codestruct.codeentered[team]) {
                     /#
-                        printtoscreen2d(700 + var_dd1003ea8b91bb85 * i, 430 + teamindex * var_270767e7723efd31, var_48b11326257052f1.codeentered[team][i], (1, 1, 1), 1);
+                        printtoscreen2d(700 + numberspacing * i, 430 + teamindex * teamspacing, codestruct.codeentered[team][i], (1, 1, 1), 1);
                     #/
                 }
             } else {
                 /#
-                    printtoscreen2d(700, 430 + teamindex * var_270767e7723efd31, "ERROR: Wrong Code Entered!", (1, 1, 1), 1);
+                    printtoscreen2d(700, 430 + teamindex * teamspacing, "ERROR: Wrong Code Entered!", (1, 1, 1), 1);
                 #/
             }
             teamindex++;
@@ -879,7 +877,7 @@ function printcodeentered(var_48b11326257052f1) {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a6d
 // Size: 0x563
@@ -921,12 +919,12 @@ function initlocs_bunkertest() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fd7
 // Size: 0x104
 function debug_hintadjustmentthink() {
-    while (1) {
+    while (true) {
         foreach (hint in level.bunker_numberstation.hints["phones_code"]) {
             hint.scriptable freescriptable();
         }
@@ -942,53 +940,51 @@ function debug_hintadjustmentthink() {
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x40e2
 // Size: 0x1b7
 function debug_bunkerpuzzledebugdraw() {
     level endon("endBunkerPhoneLocDraw");
-    while (1) {
+    while (true) {
         foreach (hint in level.bunker_numberstation.hints["phones_code"]) {
-            thread namespace_d028276791d9cff6::drawsphere(hint.scriptable.origin, 256, 1, (0, 1, 0));
+            thread scripts/mp/utility/debug::drawsphere(hint.scriptable.origin, 256, 1, (0, 1, 0));
         }
         foreach (hint in level.bunker_numberstation.hints["phones_morse"]) {
-            thread namespace_d028276791d9cff6::drawsphere(hint.scriptable.origin, 256, 1, (1, 0, 0));
+            thread scripts/mp/utility/debug::drawsphere(hint.scriptable.origin, 256, 1, (1, 0, 0));
         }
         if (isdefined(level.bunker_numberstation.chosencodephones)) {
             foreach (hint in level.bunker_numberstation.chosencodephones) {
-                thread namespace_d028276791d9cff6::drawsphere(hint.scriptable.origin, 128, 1, (0, 0, 1));
+                thread scripts/mp/utility/debug::drawsphere(hint.scriptable.origin, 128, 1, (0, 0, 1));
             }
         }
         wait(1);
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x42a0
 // Size: 0x61
 function debug_show2dvotext(text, time) {
-    if (1) {
+    if (true) {
         return;
     }
-    curtime = 0;
-    while (curtime < time) {
+    for (curtime = 0; curtime < time; curtime = curtime + 0.05) {
         /#
             printtoscreen2d(500, 350, "<unknown string>" + text, (1, 1, 1), 1.5);
         #/
         waitframe();
-        curtime = curtime + 0.05;
     }
 }
 
-// Namespace namespace_d9f38e6b6f406a1f/namespace_18de1d3c518da272
+// Namespace br_bunker_numberstation / scripts/mp/gametypes/br_bunker_numberstation
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4308
 // Size: 0x86
 function function_138da425d10b4a04() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_664ec58759f1617", 0) == 1) {
                 level thread debug_bunkerpuzzledebugdraw();
             } else {

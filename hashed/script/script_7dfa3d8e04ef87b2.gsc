@@ -12,12 +12,12 @@
 
 #namespace namespace_f42b1eec3df11c63;
 
-// Namespace namespace_f42b1eec3df11c63/namespace_b45b2629889680ea
+// Namespace namespace_f42b1eec3df11c63 / namespace_b45b2629889680ea
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b5
 // Size: 0x220
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_691d0de47875b8dc");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_691d0de47875b8dc");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_76c13a964f5f670");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 600;
@@ -26,14 +26,14 @@ function main() {
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "soldier";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_soldier_base_ob");
-    switch (namespace_ac7e8770abb7eb1::get_random_weapon(2)) {
+    switch (scripts/code/character::get_random_weapon(2)) {
     case 0:
-        var_fea750d6814b803d = "iw9_sn_mromeo, [ stock_sn_tactical_p21, laserbox_hip01 ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_sn_mromeo, [ stock_sn_tactical_p21, laserbox_hip01 ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 1:
-        var_fea750d6814b803d = "iw9_dm_xmike2010, [ bar_sn_heavy_p20_xmike2010, laserbox_hip03 ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_dm_xmike2010, [ bar_sn_heavy_p20_xmike2010, laserbox_hip03 ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     }
     self giveweapon(self.weapon);
@@ -56,13 +56,13 @@ function main() {
     #/
     self.var_a942dd31d55102c9 = self.asmasset;
     self.a = spawnstruct();
-    namespace_bf5a1761a8d1bb07::asm_init_blackboard();
-    namespace_f08e04b63067d27f::bt_init();
-    namespace_28d7bb9fcf17949d::asm_init(self.asmasset, self.animationarchetype);
-    namespace_6205bc7c5e394598::ai_init();
+    scripts/asm/asm::asm_init_blackboard();
+    scripts/aitypes/bt_util::bt_init();
+    scripts/asm/asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts/common/ai::ai_init();
 }
 
-// Namespace namespace_f42b1eec3df11c63/namespace_b45b2629889680ea
+// Namespace namespace_f42b1eec3df11c63 / namespace_b45b2629889680ea
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x57
@@ -76,7 +76,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_f42b1eec3df11c63/namespace_b45b2629889680ea
+// Namespace namespace_f42b1eec3df11c63 / namespace_b45b2629889680ea
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53a
 // Size: 0x9
@@ -84,7 +84,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_f327d0081e3ab180::main();
 }
 
-// Namespace namespace_f42b1eec3df11c63/namespace_b45b2629889680ea
+// Namespace namespace_f42b1eec3df11c63 / namespace_b45b2629889680ea
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54b
 // Size: 0xcf
@@ -101,17 +101,17 @@ function precache() {
         level.agent_definition[agent_type]["subclass"] = getscriptbundle(%"hash_76c13a964f5f670");
         namespace_f327d0081e3ab180::function_8168fbf6282d398b();
     }
-    namespace_e8f3f30f2d3e4a89::agent_init();
-    namespace_f08e04b63067d27f::init();
-    namespace_8bef0f00d6d36a69::soldier();
-    thread function_e8cf870298e36bdc();
+    scripts/cp_mp/agents/agent_init::agent_init();
+    scripts/aitypes/bt_util::init();
+    scripts/aitypes/assets::soldier();
+    thread setup_weapons();
 }
 
-// Namespace namespace_f42b1eec3df11c63/namespace_b45b2629889680ea
+// Namespace namespace_f42b1eec3df11c63 / namespace_b45b2629889680ea
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x621
 // Size: 0x148
-function function_e8cf870298e36bdc() {
+function setup_weapons() {
     while (!isdefined(level.weaponmapdata)) {
         waitframe();
     }
@@ -120,15 +120,15 @@ function function_e8cf870298e36bdc() {
     }
     var_5576d3be590a9a64 = "iw9_sn_mromeo, [ stock_sn_tactical_p21, laserbox_hip01 ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d3be590a9a64])) {
-        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_sn_mromeo", [0:"stock_sn_tactical_p21", 1:"laserbox_hip01"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = scripts/mp/class::function_e83615f8a92e4378("iw9_sn_mromeo", ["stock_sn_tactical_p21", "laserbox_hip01"], "none", "none");
     }
     var_5576d6be590aa0fd = "iw9_dm_xmike2010, [ bar_sn_heavy_p20_xmike2010, laserbox_hip03 ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d6be590aa0fd])) {
-        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_dm_xmike2010", [0:"bar_sn_heavy_p20_xmike2010", 1:"laserbox_hip03"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = scripts/mp/class::function_e83615f8a92e4378("iw9_dm_xmike2010", ["bar_sn_heavy_p20_xmike2010", "laserbox_hip03"], "none", "none");
     }
     var_4f04b9c326eb7400 = "iw9_pi_swhiskey, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_4f04b9c326eb7400])) {
-        level.var_67b54180a55f70e1[var_4f04b9c326eb7400] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_pi_swhiskey", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_4f04b9c326eb7400] = scripts/mp/class::function_e83615f8a92e4378("iw9_pi_swhiskey", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
 }
 

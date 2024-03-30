@@ -28,11 +28,11 @@
 #using scripts\mp\sentientpoolmanager.gsc;
 #using scripts\mp\damage.gsc;
 #using script_736dec95a49487a6;
-#using script_5f903436642211af;
+#using scripts\common\elevators.gsc;
 
 #namespace namespace_59b4686a745dd963;
 
-// Namespace namespace_59b4686a745dd963/namespace_ade096b4b575e46c
+// Namespace namespace_59b4686a745dd963 / namespace_ade096b4b575e46c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x259
@@ -44,15 +44,15 @@ function function_7b988e1bb56ca747(grenade) {
     if (!isdefined(level.var_4405e76242d7cb8e)) {
         level.var_4405e76242d7cb8e = 0;
     }
-    grenade namespace_cd074ac917dcd87a::registerspawn(1, &sound_veil::function_558d562eb33ea61d);
+    grenade ent_manager::registerspawn(1, &sound_veil::function_558d562eb33ea61d);
     grenade setscriptablepartstate("visibility", "show", 0);
     stuckto = grenade waittill("missile_stuck");
     if (isdefined(stuckto) && stuckto vehicle::isvehicle()) {
         grenade.vehicle_stuck = 1;
     }
     if (isdefined(level.var_ca4e08767cbdae12)) {
-        var_425925a45729deae = grenade [[ level.var_ca4e08767cbdae12 ]]();
-        if (!var_425925a45729deae) {
+        canplant = grenade [[ level.var_ca4e08767cbdae12 ]]();
+        if (!canplant) {
             grenade delete();
             return;
         }
@@ -63,7 +63,7 @@ function function_7b988e1bb56ca747(grenade) {
     grenade setnonstick(1);
     grenade.usedcount = 0;
     grenade.deployingplayer = self;
-    grenade.var_89ee7eba7b1862cf = [];
+    grenade.activetargets = [];
     trigger = spawn("trigger_rotatable_radius", grenade.origin, 0, 80, 300);
     trigger.angles = grenade.angles;
     grenade.trigger = trigger;

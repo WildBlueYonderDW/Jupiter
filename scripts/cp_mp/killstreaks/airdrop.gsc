@@ -2,8 +2,8 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using script_247745a526421ba7;
-#using script_3b64eb40368c1450;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\values.gsc;
+#using scripts\common\callbacks.gsc;
 #using script_439fa02b5251fa5b;
 #using scripts\engine\trace.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
@@ -30,7 +30,7 @@
 
 #namespace airdrop;
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f84
 // Size: 0xf4
@@ -55,7 +55,7 @@ function init() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x207f
 // Size: 0xb4
@@ -74,7 +74,7 @@ function initkillstreak() {
     #/
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x213a
 // Size: 0x33
@@ -85,7 +85,7 @@ function initheli() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2174
 // Size: 0x324
@@ -120,11 +120,11 @@ function initcratedata() {
     case #"hash_c4f97a56da3b7cde":
     case #"hash_c636c850b4f608fd":
     case #"hash_dcb9324af7bb9f35":
-        jumpiffalse(issharedfuncdefined("airdrop", "getGameModeSpecificCrateData")) LOC_0000015f;
-        [[ getsharedfunc("airdrop", "getGameModeSpecificCrateData") ]]();
+        if (issharedfuncdefined("airdrop", "getGameModeSpecificCrateData")) {
+            [[ getsharedfunc("airdrop", "getGameModeSpecificCrateData") ]]();
+        }
     case #"hash_bfabc434c59611fa":
     case #"hash_fa21c4f6bd5e3815":
-    LOC_0000015f:
         initbattleroyalecratedata();
         initbattleroyaleloadoutcratedata();
         initbattleroyalec130airdropcratedata();
@@ -168,16 +168,16 @@ function initcratedata() {
     thread watchallcrateusability();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x249f
 // Size: 0x4f
 function function_93512c08385359e1() {
     level.var_27f78817b59dfe32 = "airdrop_placement";
-    val::function_2d6e7e0b80767910(level.var_27f78817b59dfe32, [0:"offhand_weapons", 1:"melee", 2:"execution_attack", 3:"weapon_pickup", 4:"cp_munitions_pickup"]);
+    val::group_register(level.var_27f78817b59dfe32, ["offhand_weapons", "melee", "execution_attack", "weapon_pickup", "cp_munitions_pickup"]);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24f5
 // Size: 0x1c
@@ -185,7 +185,7 @@ function function_27994695f48962e1() {
     game["dialog"]["airdrop_use"] = "killstreak_remote_operator" + "_request_response";
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2518
 // Size: 0x69
@@ -201,7 +201,7 @@ function getleveldata(cratetype) {
     return leveldata;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2589
 // Size: 0x27a
@@ -252,7 +252,7 @@ function getemptyleveldata() {
     return leveldata;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x280b
 // Size: 0x22
@@ -260,7 +260,7 @@ function hasleveldata(cratetype) {
     return isdefined(level.cratedata.configs[cratetype]);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params b, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2835
 // Size: 0x546
@@ -315,7 +315,7 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
     crate.data = data;
     crate.skipminimapicon = skipminimapicon;
     crate.inwater = 0;
-    crate.var_28eb33ffd1aa3e63 = leveldata.var_28eb33ffd1aa3e63;
+    crate.isdropcrate = leveldata.isdropcrate;
     crate.headicon = leveldata.headicon;
     crate.minimapicon = leveldata.minimapicon;
     crate.capturestring = leveldata.capturestring;
@@ -374,7 +374,7 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d83
 // Size: 0xc
@@ -382,7 +382,7 @@ function activatecratefirsttime() {
     activatecrate(1);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d96
 // Size: 0xd3
@@ -409,23 +409,23 @@ function activatecrate(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e70
 // Size: 0x60
-function deactivatecrate(var_4f1920bd33a0dba9) {
-    if (istrue(var_4f1920bd33a0dba9)) {
+function deactivatecrate(ispermanent) {
+    if (istrue(ispermanent)) {
         destroyminimapicon();
     }
     _destroyheadicon();
     makecrateunusable();
     leveldata = getleveldata(self.cratetype);
     if (isdefined(leveldata.deactivatecallback)) {
-        self thread [[ leveldata.deactivatecallback ]](var_4f1920bd33a0dba9);
+        self thread [[ leveldata.deactivatecallback ]](ispermanent);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ed7
 // Size: 0x1a5
@@ -438,19 +438,23 @@ function capturecrate(player) {
     if (isdefined(leveldata.capturecallback)) {
         self thread [[ leveldata.capturecallback ]](player);
     }
-    if (!istrue(self.var_b6a2fe13fb4e746a) && istrue(player.var_9ee2c87e0747c021)) {
+    if (!istrue(self.boobytrapped) && istrue(player.var_9ee2c87e0747c021)) {
         var_ee3ccf749502a23 = level.sharedfuncs[#"perk"][#"hash_5e75be22dd250b68"];
         if (isdefined(var_ee3ccf749502a23)) {
             self thread [[ var_ee3ccf749502a23 ]](player);
         }
-        self.var_b6a2fe13fb4e746a = 1;
-    } else if (istrue(self.var_b6a2fe13fb4e746a)) {
+        self.boobytrapped = 1;
+        return;
+    }
+    if (istrue(self.boobytrapped)) {
         detonatefunc = level.sharedfuncs[#"perk"][#"hash_3b864e571f199211"];
         if (isdefined(detonatefunc)) {
             self thread [[ detonatefunc ]]();
         }
-        thread deletecrate(isdefined(self.var_278a47ee942fd1b0) ? 2.5 : self.var_278a47ee942fd1b0);
-    } else if (leveldata.destroyoncapture) {
+        thread deletecrate(isdefined(self.var_278a47ee942fd1b0) ? self.var_278a47ee942fd1b0 : 2.5);
+        return;
+    }
+    if (leveldata.destroyoncapture) {
         var_cbf7be4f62a0ddb2 = 0;
         if (isdefined(leveldata.capturevisualscallback)) {
             self thread [[ leveldata.capturevisualscallback ]](self);
@@ -460,7 +464,7 @@ function capturecrate(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3083
 // Size: 0x2cc
@@ -487,7 +491,7 @@ function destroycrate(immediate) {
     }
     if (isdefined(self.numuses) && self.numuses > 0 && isdefined(self.owner) && isplayer(self.owner)) {
         if (isdefined(self.streakinfo) && isdefined(self.streakinfo.airdroptype) & self.streakinfo.airdroptype == "loadout_drop") {
-            self.owner namespace_aad14af462a74d08::function_d997435895422ecc("super_loadout_drop", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"end"), self.numuses);
+            self.owner scripts/cp_mp/challenges::function_d997435895422ecc("super_loadout_drop", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"end"), self.numuses);
         }
     }
     self.destroyonactivate = undefined;
@@ -513,12 +517,12 @@ function destroycrate(immediate) {
             var_cbf7be4f62a0ddb2 = leveldata.capturevisualsdeletiondelay;
         }
         thread deletecrate(var_cbf7be4f62a0ddb2);
-    } else {
-        thread deletecrateimmediate();
+        return;
     }
+    thread deletecrateimmediate();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3356
 // Size: 0x149
@@ -560,7 +564,7 @@ function deletecrate(delay) {
     self delete();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34a6
 // Size: 0x53
@@ -572,7 +576,7 @@ function deletecrateimmediate() {
     deletecrate(var_cbf7be4f62a0ddb2);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3500
 // Size: 0xa2
@@ -580,8 +584,8 @@ function watchcratedestroyearly() {
     self endon("death");
     leveldata = getleveldata(self.cratetype);
     /#
-        var_27c432c46e32be45 = getdvarint(@"hash_2c01d701bac5d9d3", 0);
-        if (var_27c432c46e32be45) {
+        nolifetime = getdvarint(@"hash_2c01d701bac5d9d3", 0);
+        if (nolifetime) {
             leveldata.timeout = undefined;
         }
     #/
@@ -597,7 +601,7 @@ function watchcratedestroyearly() {
     thread destroycrate();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35a9
 // Size: 0xf3
@@ -609,26 +613,26 @@ function watchcratedestroyearlyinternal(timeout) {
     }
     level endon("game_ended");
     if (isdefined(timeout)) {
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(timeout);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(timeout);
         while (isdefined(self.playersusing) && self.playersusing.size > 0) {
-            var_52fd907ebd6a9a6a = 0;
+            validuser = 0;
             foreach (player in self.playersusing) {
                 if (isdefined(player)) {
-                    var_52fd907ebd6a9a6a = 1;
+                    validuser = 1;
                     break;
                 }
             }
-            if (!istrue(var_52fd907ebd6a9a6a)) {
+            if (!istrue(validuser)) {
                 break;
             }
             waitframe();
         }
-    } else {
-        level waittill("forever");
+        return;
     }
+    level waittill("forever");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36a3
 // Size: 0x1b3
@@ -639,8 +643,8 @@ function destroycrateinbadtrigger() {
         }
     }
     if (isdefined(level.var_ca4e08767cbdae12)) {
-        var_425925a45729deae = self [[ level.var_ca4e08767cbdae12 ]](self.origin);
-        if (!var_425925a45729deae) {
+        canplant = self [[ level.var_ca4e08767cbdae12 ]](self.origin);
+        if (!canplant) {
             if (issharedfuncdefined("player", "isReallyAlive")) {
                 var_6bc61919b35c1a79 = isdefined(self.owner) && [[ getsharedfunc("player", "isReallyAlive") ]](self.owner);
                 if (!var_6bc61919b35c1a79) {
@@ -665,14 +669,14 @@ function destroycrateinbadtrigger() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x385d
 // Size: 0xfb
 function initcratedropdata() {
     leveldata = spawnstruct();
     leveldata.helis = [];
-    var_d8d1344707480943 = namespace_9abe40d2af041eb2::getkillstreakairstrikeheightent();
+    var_d8d1344707480943 = scripts/cp_mp/utility/killstreak_utility::getkillstreakairstrikeheightent();
     if (isdefined(var_d8d1344707480943)) {
         leveldata.heliheight = var_d8d1344707480943.origin[2] - 750;
     } else {
@@ -682,13 +686,13 @@ function initcratedropdata() {
     level.cratedropdata = leveldata;
     initscriptedhelidropdata();
     if (isdefined(level.var_fc8ea831d44aeff6) && !getdvarint(@"hash_d400e64d176da3a4", 0)) {
-        foreach (var_9590b22e3d9c08a3 in level.var_fc8ea831d44aeff6) {
-            overridekillstreakcrateweight(var_9590b22e3d9c08a3, 0);
+        foreach (excludestreak in level.var_fc8ea831d44aeff6) {
+            overridekillstreakcrateweight(excludestreak, 0);
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x395f
 // Size: 0xa
@@ -696,7 +700,7 @@ function initscriptedhelidropdata() {
     initscriptedhelidropanims();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3970
 // Size: 0x92
@@ -710,7 +714,7 @@ function initscriptedhelidropanims() {
     initbrc130airdropdropanims();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a09
 // Size: 0x34
@@ -719,7 +723,7 @@ function initscriptedhelidropvehicleanims() {
     level.scr_anim["care_package_heli"]["care_package_drop"] = mp_vehicles_always_loaded%mp_carepackage_lbravo_flyin;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a44
 // Size: 0xbd
@@ -732,7 +736,7 @@ function initbrc130airdropdropanims() {
     level.scr_anim["care_package_chute"]["brc130_drop_low"] = script_model%mp_carepackage_parachute_flyin_3000;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b08
 // Size: 0x4f
@@ -740,7 +744,7 @@ function placecrate(owner, team, cratetype, position, angles, data, skipminimapi
     return createcrate(owner, team, cratetype, position, angles, undefined, 0, 1, data, skipminimapicon, position);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b5f
 // Size: 0x82
@@ -752,11 +756,11 @@ function dropcrate(owner, team, cratetype, position, angles, destination, data, 
     return createcrate(owner, team, cratetype, position, angles, destination, undefined, 1, data, skipminimapicon, position);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3be9
 // Size: 0x248
-function dropcratefrommanualheli(owner, team, cratetype, position, angles, var_9abeb4585af3bd0e, var_7862c7c7ade2b42e, destination, data) {
+function dropcratefrommanualheli(owner, team, cratetype, position, angles, enteroffset, exitoffset, destination, data) {
     position = getcratedropcaststart(position, 1);
     height = position[2];
     if (!isdefined(destination)) {
@@ -770,14 +774,14 @@ function dropcratefrommanualheli(owner, team, cratetype, position, angles, var_9
     dropstruct.team = team;
     dropstruct.hasowner = isdefined(owner);
     angles = angles * (0, 1, 0);
-    var_16cedb94faf4d596 = position + -1 * anglestoforward(angles) * var_9abeb4585af3bd0e;
+    enterposition = position + -1 * anglestoforward(angles) * enteroffset;
     dropstruct.dropposition = position;
-    dropstruct.exitposition = position + anglestoforward(angles) * var_7862c7c7ade2b42e;
+    dropstruct.exitposition = position + anglestoforward(angles) * exitoffset;
     vehicleisreserved = undefined;
     if (isdefined(data)) {
         vehicleisreserved = data.vehicleisreserved;
     }
-    heli = createheli(owner, team, var_16cedb94faf4d596, angles, vehicleisreserved);
+    heli = createheli(owner, team, enterposition, angles, vehicleisreserved);
     heli.dropstruct = dropstruct;
     if (issharedfuncdefined("game", "isBRStyleGameType")) {
         if ([[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
@@ -789,7 +793,7 @@ function dropcratefrommanualheli(owner, team, cratetype, position, angles, var_9
     heli setmaxpitchroll(15, 15);
     heli setscriptablepartstate(#"lights", #"active", 1);
     dropstruct.heli = heli;
-    crate = createcrate(owner, team, cratetype, var_16cedb94faf4d596, heli.angles, destination, undefined, 0, data, undefined, position);
+    crate = createcrate(owner, team, cratetype, enterposition, heli.angles, destination, undefined, 0, data, undefined, position);
     crate.dropstruct = dropstruct;
     crate linkto(heli, "tag_origin", (16, 0, -156), (0, 0, 0));
     dropstruct.crate = crate;
@@ -797,7 +801,7 @@ function dropcratefrommanualheli(owner, team, cratetype, position, angles, var_9
     return dropstruct;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e39
 // Size: 0x4d
@@ -812,7 +816,7 @@ function watchdropcratefrommanualheli() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e8d
 // Size: 0x28a
@@ -861,7 +865,7 @@ function watchdropcratefrommanualheliinternal() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x411e
 // Size: 0x3c
@@ -872,18 +876,18 @@ function docratedropfrommanualheli() {
     crate cratephysicson();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 13, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4161
 // Size: 0x28c
-function createcrateforscripteddrop(owner, team, cratetype, destination, hasnophysics, var_6244a1d5b282bb6c, data, streakinfo, scenenode, animname, var_3f70f46831db1173, var_8d8a84acc6efadff, markerposition) {
+function createcrateforscripteddrop(owner, team, cratetype, destination, hasnophysics, var_6244a1d5b282bb6c, data, streakinfo, scenenode, animname, _anim, clearanimdroptime, markerposition) {
     if (isdefined(streakinfo) && isdefined(streakinfo.streakname) && isstruct(data)) {
-        var_cbab602e6919aad7 = undefined;
-        if (isdefined(level.var_b23156d776b1d85)) {
-            var_cbab602e6919aad7 = level.var_b23156d776b1d85.var_38f2a11237246ac[streakinfo.streakname];
+        streakbundle = undefined;
+        if (isdefined(level.streakglobals)) {
+            streakbundle = level.streakglobals.streakbundles[streakinfo.streakname];
         }
-        if (isdefined(var_cbab602e6919aad7) && isdefined(var_cbab602e6919aad7.var_46525b458090d681)) {
-            data.var_4191ace1612a5376 = var_cbab602e6919aad7.var_46525b458090d681;
+        if (isdefined(streakbundle) && isdefined(streakbundle.var_46525b458090d681)) {
+            data.var_4191ace1612a5376 = streakbundle.var_46525b458090d681;
         }
     }
     crate = createcrate(owner, team, cratetype, scenenode.origin, scenenode.angles, destination, hasnophysics, var_6244a1d5b282bb6c, data, undefined, markerposition);
@@ -898,25 +902,25 @@ function createcrateforscripteddrop(owner, team, cratetype, destination, hasnoph
     scenenode.crates[crate getentitynumber()] = crate;
     crate setscriptablepartstate(#"visibility", #"hide", 0);
     crate.animname = animname;
-    crate namespace_bc4a4b9456315863::setanimtree();
-    var_55a416c7a58bea99 = level.scr_anim[animname][var_3f70f46831db1173];
-    var_feb55c68b4b9610 = getanimlength(var_55a416c7a58bea99) * 1000;
+    crate scripts/common/anim::setanimtree();
+    crateanim = level.scr_anim[animname][_anim];
+    var_feb55c68b4b9610 = getanimlength(crateanim) * 1000;
     crate.animdroptime = undefined;
     crate.animstoptrailtime = undefined;
     crate.animendtime = gettime() + var_feb55c68b4b9610;
-    if (!istrue(var_8d8a84acc6efadff)) {
-        crate.animdroptime = gettime() + getnotetracktimes(var_55a416c7a58bea99, "carepackage_drop")[0] * var_feb55c68b4b9610;
-        crate.animstoptrailtime = gettime() + getnotetracktimes(var_55a416c7a58bea99, "carepackage_trail_end")[0] * var_feb55c68b4b9610;
+    if (!istrue(clearanimdroptime)) {
+        crate.animdroptime = gettime() + getnotetracktimes(crateanim, "carepackage_drop")[0] * var_feb55c68b4b9610;
+        crate.animstoptrailtime = gettime() + getnotetracktimes(crateanim, "carepackage_trail_end")[0] * var_feb55c68b4b9610;
     }
     scenenode.latestanimendtime = ter_op(crate.animendtime > scenenode.latestanimendtime, crate.animendtime, scenenode.latestanimendtime);
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43f5
 // Size: 0x1c1
-function createchuteforscripteddrop(scenenode, crate, animname, var_3f70f46831db1173) {
+function createchuteforscripteddrop(scenenode, crate, animname, _anim) {
     if (!isdefined(scenenode.chutes)) {
         scenenode.chutes = [];
     }
@@ -929,17 +933,17 @@ function createchuteforscripteddrop(scenenode, crate, animname, var_3f70f46831db
     chute setmodel("veh9_mil_lnd_parachute_carepackage_mp");
     chute setscriptablepartstate(#"visibility", #"hide", 0);
     chute.animname = animname;
-    chute namespace_bc4a4b9456315863::setanimtree();
-    var_4adba587d6befdd3 = level.scr_anim[animname][var_3f70f46831db1173];
+    chute scripts/common/anim::setanimtree();
+    var_4adba587d6befdd3 = level.scr_anim[animname][_anim];
     var_d211250db97a000a = getanimlength(var_4adba587d6befdd3) * 1000;
-    chute.animendtime = gettime() + getanimlength(level.scr_anim[animname][var_3f70f46831db1173]) * 1000;
+    chute.animendtime = gettime() + getanimlength(level.scr_anim[animname][_anim]) * 1000;
     chute.animunhidetime = gettime() + getnotetracktimes(var_4adba587d6befdd3, "chute_unhide")[0] * var_d211250db97a000a;
     chute.animendtime = gettime() + var_d211250db97a000a;
     scenenode.latestanimendtime = ter_op(chute.animendtime > scenenode.latestanimendtime, chute.animendtime, scenenode.latestanimendtime);
     return chute;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45be
 // Size: 0x31
@@ -950,7 +954,7 @@ function destroychute() {
     self delete();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45f6
 // Size: 0x34f
@@ -997,7 +1001,7 @@ function dropcratefromscriptedheli(owner, team, cratetype, position, angles, des
     scenenode.heliendtime = gettime() + getanimlength(level.scr_anim["care_package_heli"]["care_package_drop"]) * 1000;
     scenenode.latestanimendtime = scenenode.heliendtime;
     crate = createcrateforscripteddrop(owner, team, cratetype, destination, undefined, 0, data, streakinfo, scenenode, "care_package", "care_package_drop", undefined, position);
-    if (!isdefined(crate) || isdefined(owner) && istrue(owner.var_65219c911f198c95)) {
+    if (!isdefined(crate) || isdefined(owner) && istrue(owner.ksempd)) {
         return undefined;
     }
     chute = createchuteforscripteddrop(scenenode, crate, "care_package_chute", "care_package_drop");
@@ -1009,18 +1013,18 @@ function dropcratefromscriptedheli(owner, team, cratetype, position, angles, des
     return scenenode;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x494d
 // Size: 0x1a9
 function watchdropcratefromscriptedheli() {
     self endon("death");
-    namespace_bc4a4b9456315863::anim_first_frame_solo(self.heli, "care_package_drop");
+    scripts/common/anim::anim_first_frame_solo(self.heli, "care_package_drop");
     foreach (crate in self.crates) {
-        namespace_bc4a4b9456315863::anim_first_frame_solo(crate, "care_package_drop");
+        scripts/common/anim::anim_first_frame_solo(crate, "care_package_drop");
     }
     foreach (chute in self.chutes) {
-        namespace_bc4a4b9456315863::anim_first_frame_solo(chute, "care_package_drop");
+        scripts/common/anim::anim_first_frame_solo(chute, "care_package_drop");
     }
     watchdropcratefromscriptedheliinternal();
     if (isdefined(self.heli)) {
@@ -1039,7 +1043,7 @@ function watchdropcratefromscriptedheli() {
     self delete();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4afd
 // Size: 0x4d3
@@ -1067,17 +1071,17 @@ function watchdropcratefromscriptedheliinternal() {
                 if (self.heli getscriptablehaspart(#"lights")) {
                     self.heli setscriptablepartstate(#"lights", #"active", 1);
                 }
-                thread namespace_bc4a4b9456315863::anim_single_solo(self.heli, "care_package_drop");
+                thread scripts/common/anim::anim_single_solo(self.heli, "care_package_drop");
             }
             foreach (crate in self.crates) {
                 if (isdefined(crate)) {
                     crate setscriptablepartstate(#"visibility", #"show", 0);
-                    thread namespace_bc4a4b9456315863::anim_single_solo(crate, "care_package_drop");
+                    thread scripts/common/anim::anim_single_solo(crate, "care_package_drop");
                 }
             }
             foreach (chute in self.chutes) {
                 if (isdefined(chute)) {
-                    thread namespace_bc4a4b9456315863::anim_single_solo(chute, "care_package_drop");
+                    thread scripts/common/anim::anim_single_solo(chute, "care_package_drop");
                     chute playsoundonmovingent("iw9_carepackage_parachute_drop");
                 }
             }
@@ -1091,12 +1095,14 @@ function watchdropcratefromscriptedheliinternal() {
             }
             foreach (crate in self.crates) {
                 if (isdefined(crate)) {
-                    if (gettime() > crate.animendtime || isdefined(self.owner) && istrue(self.owner.var_65219c911f198c95)) {
+                    if (gettime() > crate.animendtime || isdefined(self.owner) && istrue(self.owner.ksempd)) {
                         if (disowned) {
                             crate thread destroycrate();
                         }
                         thread docratedropfromscripted(crate);
-                    } else if (gettime() > crate.animdroptime) {
+                        continue;
+                    }
+                    if (gettime() > crate.animdroptime) {
                         if (gettime() > crate.animstoptrailtime) {
                             crate setscriptablepartstate(#"trail", #"neutral", 1);
                         } else {
@@ -1105,20 +1111,28 @@ function watchdropcratefromscriptedheliinternal() {
                         if (disowned) {
                             crate thread destroycrate();
                         }
-                    } else if (disowned) {
+                        continue;
+                    }
+                    if (disowned) {
                         crate thread destroycrate();
-                    } else if (!isdefined(self.heli) || istrue(self.heli.isdestroyed)) {
+                        continue;
+                    }
+                    if (!isdefined(self.heli) || istrue(self.heli.isdestroyed)) {
                         thread docratedropfromscripted(crate);
                     }
                 }
             }
             foreach (chute in self.chutes) {
                 if (isdefined(chute)) {
-                    if (gettime() > chute.animendtime || isdefined(self.owner) && istrue(self.owner.var_65219c911f198c95)) {
+                    if (gettime() > chute.animendtime || isdefined(self.owner) && istrue(self.owner.ksempd)) {
                         chute thread destroychute();
-                    } else if (gettime() <= chute.crateanimdroptime && (!isdefined(chute.crate) || !isdefined(self.crates[chute.crate getentitynumber()]))) {
+                        continue;
+                    }
+                    if (gettime() <= chute.crateanimdroptime && (!isdefined(chute.crate) || !isdefined(self.crates[chute.crate getentitynumber()]))) {
                         chute thread destroychute();
-                    } else if (gettime() > chute.animunhidetime) {
+                        continue;
+                    }
+                    if (gettime() > chute.animunhidetime) {
                         chute setscriptablepartstate(#"visibility", #"show", 0);
                     }
                 }
@@ -1128,7 +1142,7 @@ function watchdropcratefromscriptedheliinternal() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4fd7
 // Size: 0x6a
@@ -1144,13 +1158,13 @@ function docratedropfromscripted(crate) {
     crate cratephysicson();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5048
 // Size: 0x5e
-function getcratedropcaststart(position, var_5e43d97dfc3d0419, droptype) {
+function getcratedropcaststart(position, fromheli, droptype) {
     caststart = undefined;
-    if (istrue(var_5e43d97dfc3d0419)) {
+    if (istrue(fromheli)) {
         caststart = position * (1, 1, 0) + (0, 0, getscriptedhelidropheight(droptype));
     } else {
         caststart = position + (0, 0, 25);
@@ -1158,82 +1172,81 @@ function getcratedropcaststart(position, var_5e43d97dfc3d0419, droptype) {
     return caststart;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50ae
 // Size: 0x2a
-function getcratedropcastend(caststart, var_5e43d97dfc3d0419) {
-    return caststart + (0, 0, -1 * ter_op(istrue(var_5e43d97dfc3d0419), 25000, 25000));
+function getcratedropcastend(caststart, fromheli) {
+    return caststart + (0, 0, -1 * ter_op(istrue(fromheli), 25000, 25000));
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50e0
 // Size: 0xf0
 function getcratedropdestination(caststart, castend, destination) {
     ignorelist = getcratedropignorelist();
-    contentoverride = namespace_2a184fc4902783dc::create_contents(0, 1, 1, 1, 0, 0);
-    var_c59c5c63bf590651 = namespace_2a184fc4902783dc::sphere_trace(caststart, castend, 100, ignorelist, contentoverride);
-    if (var_c59c5c63bf590651["hittype"] != "hittype_none" && isdefined(var_c59c5c63bf590651["position"])) {
+    contentoverride = scripts/engine/trace::create_contents(0, 1, 1, 1, 0, 0);
+    droptrace = scripts/engine/trace::sphere_trace(caststart, castend, 100, ignorelist, contentoverride);
+    if (droptrace["hittype"] != "hittype_none" && isdefined(droptrace["position"])) {
         if (isdefined(destination)) {
-            destination = (destination[0], destination[1], var_c59c5c63bf590651["position"][2]);
+            destination = (destination[0], destination[1], droptrace["position"][2]);
         } else {
-            destination = var_c59c5c63bf590651["position"];
+            destination = droptrace["position"];
         }
     }
     /#
-        thread namespace_f2ffc0540883e1ad::drawsphere(destination, 20, 30, (0, 1, 0));
-        thread namespace_f2ffc0540883e1ad::drawline(destination, caststart, 30, (0, 1, 0));
-        thread namespace_f2ffc0540883e1ad::drawsphere(caststart, 20, 30, (0, 1, 0));
+        thread scripts/cp_mp/utility/debug_utility::drawsphere(destination, 20, 30, (0, 1, 0));
+        thread scripts/cp_mp/utility/debug_utility::drawline(destination, caststart, 30, (0, 1, 0));
+        thread scripts/cp_mp/utility/debug_utility::drawsphere(caststart, 20, 30, (0, 1, 0));
     #/
     return destination;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51d8
 // Size: 0xb8
 function getcratedropignorelist() {
     if (isdefined(level.cratedata.helis) && isdefined(level.cratedata.ac130s)) {
-        return array_combine_multiple([0:level.cratedropdata.helis, 1:level.cratedropdata.ac130s, 2:level.cratedata.crates]);
-    } else {
-        return array_combine_multiple([0:level.cratedropdata.helis, 1:level.cratedata.crates]);
+        return array_combine_multiple([level.cratedropdata.helis, level.cratedropdata.ac130s, level.cratedata.crates]);
     }
+    return array_combine_multiple([level.cratedropdata.helis, level.cratedata.crates]);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5297
 // Size: 0x4c2
 function createheli(owner, team, position, angles, vehicleisreserved, streakinfo) {
     heli = undefined;
     var_50cea258b08e022b = #"heli";
-    var_cbab602e6919aad7 = undefined;
-    if (isdefined(streakinfo) && isdefined(streakinfo.streakname) && isdefined(level.var_b23156d776b1d85)) {
-        var_cbab602e6919aad7 = level.var_b23156d776b1d85.var_38f2a11237246ac[streakinfo.streakname];
+    streakbundle = undefined;
+    if (isdefined(streakinfo) && isdefined(streakinfo.streakname) && isdefined(level.streakglobals)) {
+        streakbundle = level.streakglobals.streakbundles[streakinfo.streakname];
     }
-    var_b514d5120067a18a = "veh_airdrop_mp_phys";
-    var_f98416d816ceec66 = "veh9_mil_air_heli_medium_airdrop_mp";
-    if (isdefined(var_cbab602e6919aad7)) {
-        if (isdefined(var_cbab602e6919aad7.var_4380bc0aa8fb8e3f)) {
-            var_50cea258b08e022b = var_cbab602e6919aad7.var_4380bc0aa8fb8e3f;
+    heliname = "veh_airdrop_mp_phys";
+    helimodel = "veh9_mil_air_heli_medium_airdrop_mp";
+    if (isdefined(streakbundle)) {
+        if (isdefined(streakbundle.var_4380bc0aa8fb8e3f)) {
+            var_50cea258b08e022b = streakbundle.var_4380bc0aa8fb8e3f;
         }
-        if (isdefined(var_cbab602e6919aad7.var_73528a5c4334c98e)) {
-            var_b514d5120067a18a = var_cbab602e6919aad7.var_73528a5c4334c98e;
+        if (isdefined(streakbundle.airdropvehicle)) {
+            heliname = streakbundle.airdropvehicle;
         }
-        if (isdefined(var_cbab602e6919aad7.var_e26d3ad734784c1b)) {
-            var_f98416d816ceec66 = var_cbab602e6919aad7.var_e26d3ad734784c1b;
+        if (isdefined(streakbundle.var_e26d3ad734784c1b)) {
+            helimodel = streakbundle.var_e26d3ad734784c1b;
         }
     }
     if (istrue(vehicleisreserved)) {
-        namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+        scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
     }
-    if (var_50cea258b08e022b == #"hash_d6a48bc6dc44eb34") {
-        spawndata = {var_5bfcdcb0bf0678c6:1, targetname:"airdrop", modelname:var_f98416d816ceec66, vehicletype:var_b514d5120067a18a, angles:angles, origin:position};
-        var_ee8da5624236dc89 = spawnstruct();
-        heli = namespace_f64231d5b7a2c3c4::_spawnvehicle(spawndata, var_ee8da5624236dc89);
+    if (var_50cea258b08e022b == #"nonheli") {
+        spawndata = {var_5bfcdcb0bf0678c6:1, targetname:"airdrop", modelname:helimodel, vehicletype:heliname, angles:angles, origin:position};
+        faildata = spawnstruct();
+        heli = scripts/cp_mp/vehicles/vehicle_tracking::_spawnvehicle(spawndata, faildata);
     } else {
-        heli = namespace_f64231d5b7a2c3c4::_spawnhelicopter(undefined, position, angles, var_b514d5120067a18a, var_f98416d816ceec66);
+        heli = scripts/cp_mp/vehicles/vehicle_tracking::_spawnhelicopter(undefined, position, angles, heliname, helimodel);
     }
     if (!isdefined(heli)) {
         return undefined;
@@ -1253,7 +1266,7 @@ function createheli(owner, team, position, angles, vehicleisreserved, streakinfo
         config = level.heliconfigs["airdrop"];
         heli.health = config.maxhealth;
         heli.maxhealth = config.maxhealth;
-        var_5a127424b8df87b6 = config.callout;
+        vocallout = config.callout;
         vodestroyed = config.vodestroyed;
         scorepopup = config.scorepopup;
     } else {
@@ -1269,23 +1282,23 @@ function createheli(owner, team, position, angles, vehicleisreserved, streakinfo
             heli [[ getsharedfunc("killstreak", "addToActiveKillstreakList") ]]("airdrop", "Killstreak_Air", owner, 0, 0);
         }
         if (team != "neutral") {
-            heli namespace_6d9917c3dc05dbe9::registersentient("Killstreak_Air", owner);
+            heli scripts/mp/sentientpoolmanager::registersentient("Killstreak_Air", owner);
         }
     }
     if (issharedfuncdefined("killstreak", "killstreakMakeVehicle")) {
-        heli [[ getsharedfunc("killstreak", "killstreakMakeVehicle") ]](var_b514d5120067a18a, scorepopup, vodestroyed, destroyedsplash);
+        heli [[ getsharedfunc("killstreak", "killstreakMakeVehicle") ]](heliname, scorepopup, vodestroyed, destroyedsplash);
     }
     if (issharedfuncdefined("killstreak", "killstreakSetPreModDamageCallback")) {
-        heli [[ getsharedfunc("killstreak", "killstreakSetPreModDamageCallback") ]](var_b514d5120067a18a);
+        heli [[ getsharedfunc("killstreak", "killstreakSetPreModDamageCallback") ]](heliname);
     }
     if (issharedfuncdefined("killstreak", "killstreakSetPostModDamageCallback")) {
-        heli [[ getsharedfunc("killstreak", "killstreakSetPostModDamageCallback") ]](var_b514d5120067a18a);
+        heli [[ getsharedfunc("killstreak", "killstreakSetPostModDamageCallback") ]](heliname);
     }
     if (issharedfuncdefined("killstreak", "killstreakSetDeathCallback")) {
-        heli [[ getsharedfunc("killstreak", "killstreakSetDeathCallback") ]](var_b514d5120067a18a, &destroyhelicallback);
+        heli [[ getsharedfunc("killstreak", "killstreakSetDeathCallback") ]](heliname, &destroyhelicallback);
     }
-    bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["airdrop"];
-    if (!isdefined(var_cbab602e6919aad7) || !istrue(var_cbab602e6919aad7.candamage)) {
+    bundle = level.streakglobals.streakbundles["airdrop"];
+    if (!isdefined(streakbundle) || !istrue(streakbundle.candamage)) {
         heli setcandamage(0);
     } else if (issharedfuncdefined("damage", "monitorDamage")) {
         heli thread [[ getsharedfunc("damage", "monitorDamage") ]](heli.maxhealth, "hitequip", &function_5be12c382c72de75, &function_763c331f22e7499e, 1, 1);
@@ -1294,7 +1307,7 @@ function createheli(owner, team, position, angles, vehicleisreserved, streakinfo
     return heli;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5761
 // Size: 0x36
@@ -1304,7 +1317,7 @@ function private function_5be12c382c72de75(data) {
     return data.damage;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x579f
 // Size: 0x3d
@@ -1316,7 +1329,7 @@ function private function_5df678b586cdb293(veh) {
     level callback::callback("killstreak_finish_use", {streakinfo:veh.streakinfo});
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x57e3
 // Size: 0x179
@@ -1327,18 +1340,18 @@ function private function_763c331f22e7499e(data) {
     type = data.meansofdeath;
     modifieddamage = data.damage;
     if (istrue(level.var_be6a42242be00b66)) {
-        bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["airdrop"];
+        bundle = level.streakglobals.streakbundles["airdrop"];
         modifieddamage = getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
         modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, meansofdeath, modifieddamage, self.maxhealth, 1, 1, 1);
     }
     data.damage = modifieddamage;
     damagetaken = data.victim.damagetaken + data.damage;
-    var_559a0810819cf4f0 = 100 - 100 * damagetaken / data.victim.maxhealth;
+    healthpercent = 100 - 100 * damagetaken / data.victim.maxhealth;
     return data.damage;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5964
 // Size: 0x19
@@ -1348,7 +1361,7 @@ function watchhelidestroyearly() {
     thread destroyheli();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5984
 // Size: 0x53
@@ -1363,7 +1376,7 @@ function watchhelidestroyearlyinternal() {
     level waittill("forever");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59de
 // Size: 0xc
@@ -1371,7 +1384,7 @@ function destroyheli() {
     thread deleteheli(0);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59f1
 // Size: 0x60
@@ -1384,10 +1397,10 @@ function deleteheli(delay) {
     }
     removehelidroppingcratefromlist(self getentitynumber());
     wait(delay);
-    namespace_f64231d5b7a2c3c4::_deletevehicle(self);
+    scripts/cp_mp/vehicles/vehicle_tracking::_deletevehicle(self);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a58
 // Size: 0x13
@@ -1395,7 +1408,7 @@ function destroyhelicallback(data) {
     destroyheli();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a72
 // Size: 0x37
@@ -1406,7 +1419,7 @@ function getscriptedhelidropheightbase(droptype) {
     return level.cratedropdata.heliheight;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ab1
 // Size: 0x3c
@@ -1414,7 +1427,7 @@ function getscriptedhelidropheight(droptype) {
     return getscriptedhelidropheightbase(droptype) + level.cratedropdata.helis.size * level.cratedropdata.heliheightoffset;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5af5
 // Size: 0x4c
@@ -1426,7 +1439,7 @@ function addhelidroppingcratetolist(heli) {
     level.cratedropdata.helis[entnum] = heli;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b48
 // Size: 0x21
@@ -1434,7 +1447,7 @@ function removehelidroppingcratefromlist(entnum) {
     level.cratedropdata.helis[entnum] = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b70
 // Size: 0x17e
@@ -1464,14 +1477,16 @@ function makecrateusable() {
             self.useobject = useobject;
         }
         thread watchcrateuse(2, useobject);
-    } else if (leveldata.supportsownercapture) {
-        thread watchcrateuse(1);
-    } else {
-        thread watchcrateuse(2);
+        return;
     }
+    if (leveldata.supportsownercapture) {
+        thread watchcrateuse(1);
+        return;
+    }
+    thread watchcrateuse(2);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5cf5
 // Size: 0x40f
@@ -1488,28 +1503,28 @@ function watchcrateuse(usetype, useobject) {
         self.owner.isffprotectedaction = 1;
     }
     leveldata = getleveldata(self.cratetype);
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    var_ef5d5141fdb51174.usetype = usetype;
-    var_ef5d5141fdb51174.userate = 1;
-    var_ef5d5141fdb51174.curprogress = 0;
-    if (isdefined(var_ef5d5141fdb51174.usetimeoverride)) {
-        var_ef5d5141fdb51174.usetime = var_ef5d5141fdb51174.usetimeoverride;
+    triggerobject = gettriggerobject(useobject);
+    triggerobject.usetype = usetype;
+    triggerobject.userate = 1;
+    triggerobject.curprogress = 0;
+    if (isdefined(triggerobject.usetimeoverride)) {
+        triggerobject.usetime = triggerobject.usetimeoverride;
     } else {
-        var_ef5d5141fdb51174.usetime = ter_op(usetype == 1, leveldata.ownerusetime, leveldata.otherusetime);
+        triggerobject.usetime = ter_op(usetype == 1, leveldata.ownerusetime, leveldata.otherusetime);
     }
-    var_ef5d5141fdb51174.inuse = 0;
-    var_ef5d5141fdb51174.playerusing = undefined;
+    triggerobject.inuse = 0;
+    triggerobject.playerusing = undefined;
     if (!isdefined(self.playeroutlines)) {
         self.playeroutlines = [];
     }
     if (issharedfuncdefined("outline", "outlineEnableForTeam") && isdefined(self.team)) {
         self.playeroutlines[self.playeroutlines.size] = [[ getsharedfunc("outline", "outlineEnableForTeam") ]](self, self.team, "outline_depth_cyan", "level_script");
     }
-    while (1) {
-        player = var_ef5d5141fdb51174 waittill("trigger");
+    while (true) {
+        player = triggerobject waittill("trigger");
         if (getdvarint(@"hash_618b9c003b5b3883", 0) == 0) {
             if (isdefined(self.disabled_use_for) && istrue(self.disabled_use_for[player getentitynumber()])) {
-                player namespace_3c37cb17ade254d::function_f3bb4f4911a1beb2("airdrop", "airdrop_cannotUseLoadoutCrateHint");
+                player scripts/engine/utility::function_f3bb4f4911a1beb2("airdrop", "airdrop_cannotUseLoadoutCrateHint");
                 continue;
             }
         }
@@ -1534,12 +1549,12 @@ function watchcrateuse(usetype, useobject) {
             }
             startusingcrate(player, useobject);
             player.isffprotectedaction = 1;
-            var_ef5d5141fdb51174.playerusing = player;
+            triggerobject.playerusing = player;
             result = watchcrateuseinternal(player, useobject);
             if (isdefined(player)) {
                 stopusingcrate(player, useobject);
             }
-            var_ef5d5141fdb51174.playerusing = undefined;
+            triggerobject.playerusing = undefined;
             if (istrue(result)) {
                 if (isdefined(player)) {
                     player.isffprotectedaction = 0;
@@ -1560,50 +1575,47 @@ function watchcrateuse(usetype, useobject) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x610b
 // Size: 0x1e4
 function watchcrateuseinternal(player, useobject) {
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    if (var_ef5d5141fdb51174.usetype != 1) {
+    triggerobject = gettriggerobject(useobject);
+    if (triggerobject.usetype != 1) {
         player endon("disconnect");
         player endon("joined_team");
         player endon("joined_spectators");
     }
-    var_ef5d5141fdb51174.id = function_7972a1043e6facab();
-    var_ef5d5141fdb51174.userate = ter_op(isdefined(player.objectivescaler), player.objectivescaler, 1);
+    triggerobject.id = function_7972a1043e6facab();
+    triggerobject.userate = ter_op(isdefined(player.objectivescaler), player.objectivescaler, 1);
     /#
         var_544e47b30f4f8fc3 = getdvarint(@"hash_7acaaf8f4063ab02", 0);
-        if (isdefined(var_ef5d5141fdb51174.usetimeoverride)) {
-            var_ef5d5141fdb51174.usetime = var_ef5d5141fdb51174.usetimeoverride;
+        if (isdefined(triggerobject.usetimeoverride)) {
+            triggerobject.usetime = triggerobject.usetimeoverride;
         } else if (issharedfuncdefined("switchblade_drone", "lrad")) {
             if ([[ getsharedfunc("switchblade_drone", "lrad") ]]() == "overrideKillstreakCrateWeight() called before initKillstreakCrateData().") {
-                goto LOC_00000118;
+            } else {
+                triggerobject.usetime = ter_op(var_544e47b30f4f8fc3, 3, 0.5);
             }
-            var_ef5d5141fdb51174.usetime = ter_op(var_544e47b30f4f8fc3, 3, 0.5);
-        LOC_00000118:
         }
-    LOC_00000118:
     #/
-LOC_00000118:
     playusesound(player, useobject);
-    while (isdefined(player) && player namespace_f8065cafc523dba5::_isalive() && cankeepusingcrate(player, useobject) && player usebuttonpressed()) {
-        var_ef5d5141fdb51174.curprogress = var_ef5d5141fdb51174.curprogress + level.framedurationseconds * var_ef5d5141fdb51174.userate;
-        if (var_ef5d5141fdb51174.curprogress >= var_ef5d5141fdb51174.usetime) {
-            var_ef5d5141fdb51174.curprogress = 0;
-            return 1;
+    while (isdefined(player) && player scripts/cp_mp/utility/player_utility::_isalive() && cankeepusingcrate(player, useobject) && player usebuttonpressed()) {
+        triggerobject.curprogress = triggerobject.curprogress + level.framedurationseconds * triggerobject.userate;
+        if (triggerobject.curprogress >= triggerobject.usetime) {
+            triggerobject.curprogress = 0;
+            return true;
         }
         if (issharedfuncdefined("airdrop", "updateUIProgress")) {
-            player [[ getsharedfunc("airdrop", "updateUIProgress") ]](var_ef5d5141fdb51174, 1);
+            player [[ getsharedfunc("airdrop", "updateUIProgress") ]](triggerobject, 1);
         }
         waitframe();
     }
-    var_ef5d5141fdb51174.curprogress = 0;
-    return 0;
+    triggerobject.curprogress = 0;
+    return false;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x62f7
 // Size: 0x26
@@ -1611,13 +1623,13 @@ function function_7972a1043e6facab() {
     if (utility::iscp()) {
         return "use";
     }
-    if (namespace_36f464722d326bbe::function_d04af493b6e718ac()) {
+    if (scripts/cp_mp/utility/game_utility::function_d04af493b6e718ac()) {
         return "open";
     }
     return "care_package";
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6325
 // Size: 0xcb
@@ -1641,7 +1653,7 @@ function makecrateunusable() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63f7
 // Size: 0x140
@@ -1652,7 +1664,7 @@ function startusingcrate(player, useobject) {
     if (!array_contains(self.playersusing, player)) {
         self.playersusing = array_add(self.playersusing, player);
     }
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
+    triggerobject = gettriggerobject(useobject);
     leveldata = getleveldata(self.cratetype);
     if (istrue(player.isjuggernaut)) {
         if (issharedfuncdefined("airdrop", "allowActionSet")) {
@@ -1668,45 +1680,45 @@ function startusingcrate(player, useobject) {
         }
     }
     if (issharedfuncdefined("airdrop", "updateUIProgress")) {
-        player [[ getsharedfunc("airdrop", "updateUIProgress") ]](var_ef5d5141fdb51174, 0);
+        player [[ getsharedfunc("airdrop", "updateUIProgress") ]](triggerobject, 0);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x653e
 // Size: 0x46
 function airdrop_givecrateuseweapon() {
     self endon("disconnect");
     level endon("game_ended");
-    namespace_d325722f2754c2c4::saveweaponstates();
-    var_ff937324b8d5708d = makeweapon("ks_use_crate_mp");
-    namespace_df5cfdbe6e2d3812::_giveweapon(var_ff937324b8d5708d);
-    thread airdrop_watchforcrateuseend(var_ff937324b8d5708d);
-    self switchtoweapon(var_ff937324b8d5708d);
+    scripts/cp_mp/utility/weapon_utility::saveweaponstates();
+    crateweaponobj = makeweapon("ks_use_crate_mp");
+    scripts/cp_mp/utility/inventory_utility::_giveweapon(crateweaponobj);
+    thread airdrop_watchforcrateuseend(crateweaponobj);
+    self switchtoweapon(crateweaponobj);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x658b
 // Size: 0x77
-function airdrop_watchforcrateuseend(var_ff937324b8d5708d) {
+function airdrop_watchforcrateuseend(crateweaponobj) {
     self endon("disconnect");
     level endon("game_ended");
     self waittill("crate_use_end");
-    if (namespace_df5cfdbe6e2d3812::isswitchingtoweaponwithmonitoring(var_ff937324b8d5708d)) {
-        namespace_df5cfdbe6e2d3812::abortmonitoredweaponswitch(var_ff937324b8d5708d);
-    } else {
-        namespace_df5cfdbe6e2d3812::_takeweapon(var_ff937324b8d5708d);
-        if (isdefined(self.lastdroppableweaponobj)) {
-            lastweaponobj = namespace_d325722f2754c2c4::restoreweaponstates(self.lastdroppableweaponobj);
-            self switchtoweapon(lastweaponobj);
-            thread namespace_df5cfdbe6e2d3812::forcevalidweapon(lastweaponobj);
-        }
+    if (scripts/cp_mp/utility/inventory_utility::isswitchingtoweaponwithmonitoring(crateweaponobj)) {
+        scripts/cp_mp/utility/inventory_utility::abortmonitoredweaponswitch(crateweaponobj);
+        return;
+    }
+    scripts/cp_mp/utility/inventory_utility::_takeweapon(crateweaponobj);
+    if (isdefined(self.lastdroppableweaponobj)) {
+        lastweaponobj = scripts/cp_mp/utility/weapon_utility::restoreweaponstates(self.lastdroppableweaponobj);
+        self switchtoweapon(lastweaponobj);
+        thread scripts/cp_mp/utility/inventory_utility::forcevalidweapon(lastweaponobj);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6609
 // Size: 0x114
@@ -1714,7 +1726,7 @@ function stopusingcrate(player, useobject) {
     if (array_contains(self.playersusing, player)) {
         self.playersusing = array_remove(self.playersusing, player);
     }
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
+    triggerobject = gettriggerobject(useobject);
     leveldata = getleveldata(self.cratetype);
     if (istrue(player.isjuggernaut)) {
         if (issharedfuncdefined("airdrop", "allowActionSet")) {
@@ -1724,13 +1736,13 @@ function stopusingcrate(player, useobject) {
         player [[ getsharedfunc("airdrop", "allowActionSet") ]]("crateUse", 1);
     }
     if (issharedfuncdefined("airdrop", "updateUIProgress")) {
-        player [[ getsharedfunc("airdrop", "updateUIProgress") ]](var_ef5d5141fdb51174, 0);
+        player [[ getsharedfunc("airdrop", "updateUIProgress") ]](triggerobject, 0);
     }
     stopusesound(player, useobject);
     player notify("crate_use_end");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6724
 // Size: 0x1a0
@@ -1743,7 +1755,7 @@ function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
     if (!player val::get("crate_use")) {
         return 0;
     }
-    if (!player namespace_f8065cafc523dba5::_isalive()) {
+    if (!player scripts/cp_mp/utility/player_utility::_isalive()) {
         return 0;
     }
     if (player isonladder()) {
@@ -1755,15 +1767,15 @@ function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
         }
     }
     if (istrue(self.issquadonlycrate)) {
-        if (isdefined(self.playersused) && namespace_3c37cb17ade254d::array_contains(self.playersused, player)) {
+        if (isdefined(self.playersused) && scripts/engine/utility::array_contains(self.playersused, player)) {
             return 0;
         }
-        if (player.var_ff97225579de16a != self.var_ff97225579de16a || player.team != self.team) {
+        if (player.sessionsquadid != self.sessionsquadid || player.team != self.team) {
             return 0;
         }
     }
     if (istrue(self.isteamonlycrate)) {
-        if (isdefined(self.playersused) && namespace_3c37cb17ade254d::array_contains(self.playersused, player)) {
+        if (isdefined(self.playersused) && scripts/engine/utility::array_contains(self.playersused, player)) {
             return 0;
         }
         if (player.team != self.team) {
@@ -1779,7 +1791,7 @@ function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
     if (var_c83f8b96968afe72) {
         return canstartusingcratetriggerobject(player, useobject);
     }
-    if (namespace_36f464722d326bbe::isbrstylegametype() && player isskydiving()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype() && player isskydiving()) {
         return 0;
     }
     if (istrue(player.inlaststand)) {
@@ -1788,75 +1800,75 @@ function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
     return 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68cc
 // Size: 0x11b
 function canstartusingcratetriggerobject(player, useobject) {
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    if (isdefined(var_ef5d5141fdb51174.playerusing) && var_ef5d5141fdb51174.playerusing != player) {
-        return 0;
+    triggerobject = gettriggerobject(useobject);
+    if (isdefined(triggerobject.playerusing) && triggerobject.playerusing != player) {
+        return false;
     }
-    if (var_ef5d5141fdb51174.usetype == 1 && (!isdefined(self.owner) || player != self.owner)) {
-        return 0;
+    if (triggerobject.usetype == 1 && (!isdefined(self.owner) || player != self.owner)) {
+        return false;
     }
-    if (var_ef5d5141fdb51174.usetype == 2 && isdefined(self.owner) && player == self.owner) {
-        return 0;
+    if (triggerobject.usetype == 2 && isdefined(self.owner) && player == self.owner) {
+        return false;
     }
     if (level.teambased && isdefined(self.team) && self.team != "neutral") {
         leveldata = getleveldata(self.cratetype);
         if (leveldata.friendlyuseonly && player.team != self.team) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69ef
 // Size: 0xf9
 function cankeepusingcrate(player, useobject) {
     if (!val::get("crate_use")) {
-        return 0;
+        return false;
     }
-    if (!player namespace_f8065cafc523dba5::_isalive()) {
-        return 0;
+    if (!player scripts/cp_mp/utility/player_utility::_isalive()) {
+        return false;
     }
     if (player meleebuttonpressed()) {
-        return 0;
+        return false;
     }
     if (player isinexecutionvictim()) {
-        return 0;
+        return false;
     }
     if (istrue(player.inlaststand)) {
-        return 0;
+        return false;
     }
     leveldata = getleveldata(self.cratetype);
     if (isdefined(leveldata.breakuserangesqr) && distancesquared(player.origin, gettriggerobject(useobject).origin) >= leveldata.breakuserangesqr) {
-        return 0;
+        return false;
     }
     if (!self.isusable) {
-        return 0;
+        return false;
     }
     if (isdefined(self.cratetype) && self.cratetype == "loadout_drop") {
         if (!player isonground() && !player isswimming()) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6af0
 // Size: 0x112
 function makecrateusableforplayer(crate, player) {
-    var_ef5d5141fdb51174 = crate gettriggerobject();
-    function_b21dea8dc3360508(var_ef5d5141fdb51174, crate);
+    triggerobject = crate gettriggerobject();
+    function_b21dea8dc3360508(triggerobject, crate);
     if (isdefined(crate.useobject)) {
-        var_ef5d5141fdb51174 = crate gettriggerobject(crate.useobject);
-        function_b21dea8dc3360508(var_ef5d5141fdb51174, crate);
+        triggerobject = crate gettriggerobject(crate.useobject);
+        function_b21dea8dc3360508(triggerobject, crate);
     }
     crate enableplayeruse(player);
     if (isdefined(crate.useobject)) {
@@ -1867,46 +1879,46 @@ function makecrateusableforplayer(crate, player) {
         if (isdefined(crate.useobject)) {
             crate.useobject disableplayeruse(player);
         }
-    } else {
-        if (!crate canstartusingcratetriggerobject(player, undefined)) {
-            crate disableplayeruse(player);
-        }
-        if (isdefined(crate.useobject)) {
-            if (!crate canstartusingcratetriggerobject(player, crate.useobject)) {
-                crate.useobject disableplayeruse(player);
-            }
+        return;
+    }
+    if (!crate canstartusingcratetriggerobject(player, undefined)) {
+        crate disableplayeruse(player);
+    }
+    if (isdefined(crate.useobject)) {
+        if (!crate canstartusingcratetriggerobject(player, crate.useobject)) {
+            crate.useobject disableplayeruse(player);
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6c09
 // Size: 0x12b
-function function_b21dea8dc3360508(var_ef5d5141fdb51174, crate) {
+function function_b21dea8dc3360508(triggerobject, crate) {
     leveldata = getleveldata(crate.cratetype);
     if (!iscp()) {
-        var_ef5d5141fdb51174 setcursorhint("HINT_NOICON");
-        var_ef5d5141fdb51174 sethintonobstruction("show");
+        triggerobject setcursorhint("HINT_NOICON");
+        triggerobject sethintonobstruction("show");
     } else {
-        var_ef5d5141fdb51174 setcursorhint("HINT_BUTTON");
-        var_ef5d5141fdb51174 sethintonobstruction("hide");
+        triggerobject setcursorhint("HINT_BUTTON");
+        triggerobject sethintonobstruction("hide");
     }
-    var_ef5d5141fdb51174 sethinttag(leveldata.usetag);
-    var_ef5d5141fdb51174 sethintdisplayrange(leveldata.userange);
-    var_ef5d5141fdb51174 sethintdisplayfov(leveldata.usefov);
-    var_ef5d5141fdb51174 setuserange(leveldata.userange);
-    var_ef5d5141fdb51174 setusefov(leveldata.usefov);
-    var_ef5d5141fdb51174 setusepriority(leveldata.usepriority);
-    var_ef5d5141fdb51174 setuseholdduration("duration_none");
-    if (var_ef5d5141fdb51174.usetype == 1 && crate.supportsreroll) {
-        var_ef5d5141fdb51174 sethintstring(crate.rerollstring);
-    } else {
-        var_ef5d5141fdb51174 sethintstring(crate.capturestring);
+    triggerobject sethinttag(leveldata.usetag);
+    triggerobject sethintdisplayrange(leveldata.userange);
+    triggerobject sethintdisplayfov(leveldata.usefov);
+    triggerobject setuserange(leveldata.userange);
+    triggerobject setusefov(leveldata.usefov);
+    triggerobject setusepriority(leveldata.usepriority);
+    triggerobject setuseholdduration("duration_none");
+    if (triggerobject.usetype == 1 && crate.supportsreroll) {
+        triggerobject sethintstring(crate.rerollstring);
+        return;
     }
+    triggerobject sethintstring(crate.capturestring);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6d3b
 // Size: 0x229
@@ -1915,7 +1927,7 @@ function watchallcrateusability() {
     if (getdvarint(@"hash_8a7e8eb2a9a7101", 0)) {
         var_36afca263bbc6fbc = 1;
     }
-    while (1) {
+    while (true) {
         foreach (crate in level.cratedata.usablecrates) {
             if (!isdefined(crate)) {
                 continue;
@@ -1941,59 +1953,62 @@ function watchallcrateusability() {
             }
             foreach (player in playerlist) {
                 if (isdefined(crate.var_83cf634784b3a96b)) {
-                    jumpiftrue(crate [[ crate.var_83cf634784b3a96b ]](player)) LOC_000001b6;
-                } else if (istrue(var_36afca263bbc6fbc)) {
+                    if (!crate [[ crate.var_83cf634784b3a96b ]](player)) {
+                        continue;
+                    }
+                }
+                if (istrue(var_36afca263bbc6fbc)) {
                     inrange = distancesquared(crate.origin, player.origin) < 57600;
                     if (inrange) {
                         makecrateusableforplayer(crate, player);
                     }
-                } else {
-                    makecrateusableforplayer(crate, player);
+                    continue;
                 }
+                makecrateusableforplayer(crate, player);
             }
         }
         wait(0.1);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f6b
 // Size: 0x52
 function playusesound(player, useobject) {
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    if (var_ef5d5141fdb51174.usetype == 1) {
+    triggerobject = gettriggerobject(useobject);
+    if (triggerobject.usetype == 1) {
         player playloopsound("mp_care_package_owner_cap");
-    } else {
-        player playloopsound("mp_care_package_non_owner_cap");
+        return;
     }
+    player playloopsound("mp_care_package_non_owner_cap");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6fc4
 // Size: 0x68
 function stopusesound(player, useobject) {
-    var_ef5d5141fdb51174 = gettriggerobject(useobject);
-    if (var_ef5d5141fdb51174.usetype == 1) {
+    triggerobject = gettriggerobject(useobject);
+    if (triggerobject.usetype == 1) {
         player stoploopsound("mp_care_package_owner_cap");
     } else {
         player stoploopsound("mp_care_package_non_owner_cap");
     }
-    if (player namespace_f8065cafc523dba5::_isalive()) {
+    if (player scripts/cp_mp/utility/player_utility::_isalive()) {
         player playsoundonmovingent("mp_care_package_cap_tail");
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7033
 // Size: 0x16
 function gettriggerobject(useobject) {
-    return isdefined(useobject) ? self : useobject;
+    return isdefined(useobject) ? useobject : self;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7051
 // Size: 0x181
@@ -2013,8 +2028,8 @@ function cratephysicson(contactpoint, force) {
     if (isdefined(self.killcament) && !istrue(self.killcament.linked)) {
         self.killcament linkto(self, "tag_origin", (0, 0, 300), (0, 0, 0));
     }
-    var_212a44a5393c3b34 = self physics_getbodyid(0);
-    physics_setbodycenterofmassnormal(var_212a44a5393c3b34, (0, 0, -0.75));
+    bodyid = self physics_getbodyid(0);
+    physics_setbodycenterofmassnormal(bodyid, (0, 0, -0.75));
     self.physicsactivated = 1;
     createdangerzone();
     thread monitoraveragevelocityandupdate();
@@ -2027,12 +2042,12 @@ function cratephysicson(contactpoint, force) {
     thread monitorimpact();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x71d9
 // Size: 0x11b
 function function_a4d56f106b5ad5f9(data) {
-    engine = namespace_9db09f982acd35b4::function_d6b0a591ac99bd();
+    engine = scripts/cp_mp/utility/train_utility::function_d6b0a591ac99bd();
     /#
         assert(isdefined(engine));
     #/
@@ -2047,7 +2062,7 @@ function function_a4d56f106b5ad5f9(data) {
             self physicslaunchserver(contactpoint, force);
             self.hitbytrain = 1;
         } else {
-            namespace_6c578d6ef48f10ef::destroycrate();
+            scripts/cp_mp/killstreaks/airdrop::destroycrate();
             return;
         }
     }
@@ -2057,7 +2072,7 @@ function function_a4d56f106b5ad5f9(data) {
     self thread [[ getsharedfunc("game", "handlemovingplatforms") ]](data);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72fb
 // Size: 0x48
@@ -2074,7 +2089,7 @@ function cratephysicsoff() {
     cancelchecklinktotrain();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x734a
 // Size: 0x1c1
@@ -2084,7 +2099,7 @@ function monitoraveragevelocityandupdate() {
     self endon("monitorAverageVelocityAndUpdate");
     var_fea57fa0e78c63db = 0.1;
     thread monitoraveragevelocities(var_fea57fa0e78c63db, 8);
-    var_717e0cfd076f91d = 0;
+    settlecount = 0;
     var_4080d353839c6230 = 0;
     self.isfirstactivation = 1;
     var_1684a0b0fb3502c6 = undefined;
@@ -2092,14 +2107,14 @@ function monitoraveragevelocityandupdate() {
     if (issharedfuncdefined("game", "lpcFeatureGated")) {
         var_42d273fe9538af56 = getsharedfunc("game", "lpcFeatureGated");
     }
-    while (1) {
+    while (true) {
         avlinvel = getaveragelinearvelocity();
         avangvel = getaverageangularvelocity();
         if (isdefined(avlinvel) && isdefined(avangvel)) {
             if (avlinvel <= function_3c4492046080faa9() && avangvel <= function_f7e3f128296ac3b6()) {
-                var_717e0cfd076f91d++;
+                settlecount++;
                 var_4080d353839c6230 = 0;
-                if (var_717e0cfd076f91d == function_d4833b6c916db9c6()) {
+                if (settlecount == function_d4833b6c916db9c6()) {
                     self.physicssettled = 1;
                     var_1684a0b0fb3502c6 = self.origin;
                     thread activatecrate(self.isfirstactivation);
@@ -2121,7 +2136,7 @@ function monitoraveragevelocityandupdate() {
                     }
                 }
                 var_4080d353839c6230++;
-                var_717e0cfd076f91d = 0;
+                settlecount = 0;
                 if (var_4080d353839c6230 == 1) {
                     self.physicssettled = undefined;
                     thread deactivatecrate();
@@ -2130,17 +2145,17 @@ function monitoraveragevelocityandupdate() {
                 }
             }
             wait(var_fea57fa0e78c63db);
-        } else {
-            waitframe();
+            continue;
         }
+        waitframe();
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7512
 // Size: 0x1e0
-function monitoraveragevelocities(var_fea57fa0e78c63db, var_6fb2f8a2df503284, var_2b14322307dd13aa) {
+function monitoraveragevelocities(var_fea57fa0e78c63db, numdatapoints, var_2b14322307dd13aa) {
     clearaveragevelocities();
     self endon("death");
     self endon("clear_average_velocities");
@@ -2148,9 +2163,9 @@ function monitoraveragevelocities(var_fea57fa0e78c63db, var_6fb2f8a2df503284, va
     self.angvels = [];
     self.velstartid = 0;
     self.velendid = 0;
-    self.velnumdatapoints = var_6fb2f8a2df503284;
+    self.velnumdatapoints = numdatapoints;
     if (isdefined(var_2b14322307dd13aa)) {
-        var_2b14322307dd13aa = int(clamp(var_2b14322307dd13aa, 0, var_6fb2f8a2df503284));
+        var_2b14322307dd13aa = int(clamp(var_2b14322307dd13aa, 0, numdatapoints));
         if (var_2b14322307dd13aa > 0) {
             for (i = 0; i < var_2b14322307dd13aa; i++) {
                 self.linvels[self.velstartid + i] = 0;
@@ -2158,16 +2173,16 @@ function monitoraveragevelocities(var_fea57fa0e78c63db, var_6fb2f8a2df503284, va
             }
         }
     }
-    while (1) {
-        var_212a44a5393c3b34 = self physics_getbodyid(0);
-        var_4da28b63de5ae3c7 = physics_getbodylinvel(var_212a44a5393c3b34);
-        var_7ca7f0bb1a73c93a = physics_getbodyangvel(var_212a44a5393c3b34);
-        self.linvels[self.velendid] = length(var_4da28b63de5ae3c7);
-        self.angvels[self.velendid] = length(var_7ca7f0bb1a73c93a);
+    while (true) {
+        bodyid = self physics_getbodyid(0);
+        linvel = physics_getbodylinvel(bodyid);
+        angvel = physics_getbodyangvel(bodyid);
+        self.linvels[self.velendid] = length(linvel);
+        self.angvels[self.velendid] = length(angvel);
         self.velendid++;
         var_e8d39b65d6180c15 = self.velendid - self.velstartid;
-        if (var_e8d39b65d6180c15 > var_6fb2f8a2df503284) {
-            shift = mod(var_e8d39b65d6180c15, var_6fb2f8a2df503284);
+        if (var_e8d39b65d6180c15 > numdatapoints) {
+            shift = mod(var_e8d39b65d6180c15, numdatapoints);
             for (i = 0; i < shift; i++) {
                 self.linvels[self.velstartid + i] = undefined;
                 self.angvels[self.velstartid + i] = undefined;
@@ -2180,7 +2195,7 @@ function monitoraveragevelocities(var_fea57fa0e78c63db, var_6fb2f8a2df503284, va
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76f9
 // Size: 0x5b
@@ -2198,7 +2213,7 @@ function getaveragelinearvelocity() {
     return self.avlinvel;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x775c
 // Size: 0x5b
@@ -2216,7 +2231,7 @@ function getaverageangularvelocity() {
     return self.avangvel;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77bf
 // Size: 0x89
@@ -2231,7 +2246,7 @@ function calculateaveragevelocities() {
     self.avangvel = var_3386dde146fd60b4 / self.velnumdatapoints;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x784f
 // Size: 0x51
@@ -2246,7 +2261,7 @@ function clearaveragevelocities() {
     self.avangvel = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78a7
 // Size: 0x4d
@@ -2262,7 +2277,7 @@ function monitorimpact(delay) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78fb
 // Size: 0x30e
@@ -2272,15 +2287,15 @@ function monitorimpactinternal(delay) {
         wait(delay);
     }
     var_260ef1536027d0e1 = 0;
-    var_20be7f8f0dc3db57 = 0;
-    while (1) {
-        ent = impulse = normal = position = flag1 = flag0 = body1 = body0 = self waittill("collision");
-        if (!istrue(var_20be7f8f0dc3db57)) {
+    firstimpact = 0;
+    while (true) {
+        body0, body1, flag0, flag1, position, normal, impulse, ent = self waittill("collision");
+        if (!istrue(firstimpact)) {
             if (isdefined(self.killcament)) {
                 self.killcament unlink();
                 self.killcament.linked = 0;
             }
-            var_20be7f8f0dc3db57 = 1;
+            firstimpact = 1;
         }
         if (isdefined(ent)) {
             if (impactshoulddestroyent(ent)) {
@@ -2288,14 +2303,14 @@ function monitorimpactinternal(delay) {
                     if (isdefined(ent.streakinfo)) {
                         if (isdefined(ent.var_3098bbcd22d0e052) && isdefined(ent.var_3098bbcd22d0e052.cleanupfunc)) {
                             ent thread [[ ent.var_3098bbcd22d0e052.cleanupfunc ]]();
-                        } else if (ent namespace_bba8bc8532aa4913::ishelperdrone()) {
-                            ent thread namespace_bba8bc8532aa4913::function_ba1c5496f8fc5f67();
+                        } else if (ent scripts/cp_mp/killstreaks/helper_drone::ishelperdrone()) {
+                            ent thread scripts/cp_mp/killstreaks/helper_drone::function_ba1c5496f8fc5f67();
                         }
                     } else if (getdvarint(@"hash_35d73d70c6843ce8", 1)) {
-                        var_62ccfb7ea15a4520 = ent namespace_1f188a13f7e79610::function_62ccfb7ea15a4520();
-                        if (!var_62ccfb7ea15a4520 && !istrue(ent.var_a2ba7043631b3392)) {
+                        var_62ccfb7ea15a4520 = ent scripts/cp_mp/vehicles/vehicle::function_62ccfb7ea15a4520();
+                        if (!var_62ccfb7ea15a4520 && !istrue(ent.exfilhelicopter)) {
                             ent.var_a8f4bb03b366aa80 = 1;
-                            ent namespace_1f188a13f7e79610::vehicle_explode();
+                            ent scripts/cp_mp/vehicles/vehicle::vehicle_explode();
                         }
                     }
                 } else if (ent.classname == "scriptable_iw8_chicken_01") {
@@ -2331,7 +2346,7 @@ function monitorimpactinternal(delay) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c10
 // Size: 0x89
@@ -2350,7 +2365,7 @@ function checklinktotrain(ent) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ca0
 // Size: 0x232
@@ -2360,7 +2375,7 @@ function checklinktotraininternal(ent) {
     ent endon("death");
     leveldata = getleveldata(self.cratetype);
     contents = create_contents(0, 1, 0, 0, 0, 1, 1, 0, 0);
-    ignorelist = [0:self];
+    ignorelist = [self];
     foreach (linkedent in self getlinkedchildren(1)) {
         ignorelist[ignorelist.size] = linkedent;
     }
@@ -2369,13 +2384,11 @@ function checklinktotraininternal(ent) {
     while (self.traintracefails < 20) {
         caststart = self.origin + anglestoup(self.angles) * leveldata.halfheight;
         castend = caststart + (0, 0, -200);
-        traceresult = namespace_2a184fc4902783dc::ray_trace(caststart, castend, ignorelist, contents);
-        if (traceresult.size > 0 && isdefined(traceresult["entity"]) && namespace_9db09f982acd35b4::is_train_ent(traceresult["entity"])) {
+        traceresult = scripts/engine/trace::ray_trace(caststart, castend, ignorelist, contents);
+        if (traceresult.size > 0 && isdefined(traceresult["entity"]) && scripts/cp_mp/utility/train_utility::is_train_ent(traceresult["entity"])) {
             traintracerelpos = combineangles(invertangles(ent.angles), ent.origin - traceresult["position"]);
             if (!isdefined(self.traintracerelpos)) {
-                goto LOC_0000020f;
-            }
-            if (distancesquared(traintracerelpos, self.traintracerelpos) > 10) {
+            } else if (distancesquared(traintracerelpos, self.traintracerelpos) > 10) {
                 self.traintracefails++;
                 self.traintracesuccesses = 0;
             } else {
@@ -2386,9 +2399,7 @@ function checklinktotraininternal(ent) {
                     thread cratephysicsoff();
                     break;
                 }
-            LOC_0000020f:
             }
-        LOC_0000020f:
             self.traintracerelpos = traintracerelpos;
         } else {
             break;
@@ -2398,7 +2409,7 @@ function checklinktotraininternal(ent) {
     thread cancelchecklinktotrain();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ed9
 // Size: 0x33
@@ -2410,20 +2421,20 @@ function cancelchecklinktotrain() {
     self.traintracesuccesses = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f13
 // Size: 0x55
 function airdrop_crushchicken(chicken) {
     self endon("death");
-    var_5aabd8cbb69fe289 = gettime();
-    while (gettime() - var_5aabd8cbb69fe289 < 3000) {
+    crushtime = gettime();
+    while (gettime() - crushtime < 3000) {
         chicken dodamage(100, chicken.origin, self, self, "MOD_CRUSH");
         wait(0.5);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f6f
 // Size: 0x36
@@ -2437,7 +2448,7 @@ function monitorimpactend() {
     self physics_unregisterforcollisioncallback();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7fac
 // Size: 0xc0
@@ -2445,22 +2456,22 @@ function impactshoulddestroyent(entity) {
     if (!istrue(self.physicssettled)) {
         if (isdefined(entity.classname)) {
             if (entity.classname == "worldSpawn") {
-                return 0;
+                return false;
             } else if (entity.classname == "script_vehicle" && entity.targetname != "veh_jup_nuclear_locomotive") {
-                return 1;
+                return true;
             } else if (entity.classname == "misc_turret") {
-                return 1;
+                return true;
             } else if (issubstr(entity.classname, "scriptable_")) {
-                return 1;
+                return true;
             } else if (entity.classname == "script_model") {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8074
 // Size: 0x16a
@@ -2468,18 +2479,18 @@ function monitorplayerimpact() {
     monitorplayerimpactend();
     self endon("death");
     self endon("monitorPlayerImpactEnd");
-    var_1b7ae3ffb4d76416 = self;
+    pushent = self;
     if (isdefined(self.mountmantlemodel)) {
-        var_1b7ae3ffb4d76416 = self.mountmantlemodel;
+        pushent = self.mountmantlemodel;
     }
     damageent = undefined;
     if (isdefined(self.owner)) {
         damageent = self.owner;
     }
-    while (isdefined(var_1b7ae3ffb4d76416)) {
-        linearvelocity = player = var_1b7ae3ffb4d76416 waittill("player_pushed");
-        if (isdefined(player) && (isplayer(player) || isagent(player)) && player namespace_f8065cafc523dba5::_isalive()) {
-            var_c421c5c1222e83f4 = linearvelocity[2] <= -8;
+    while (isdefined(pushent)) {
+        player, linearvelocity = pushent waittill("player_pushed");
+        if (isdefined(player) && (isplayer(player) || isagent(player)) && player scripts/cp_mp/utility/player_utility::_isalive()) {
+            isfalling = linearvelocity[2] <= -8;
             var_2da284613791696f = 0;
             playerposition = undefined;
             if (player tagexists("j_mainroot")) {
@@ -2488,7 +2499,7 @@ function monitorplayerimpact() {
                 midpoint = self.origin + anglestoup(self.angles) * leveldata.halfheight;
                 var_2da284613791696f = playerposition[2] <= midpoint[2];
             }
-            if (var_c421c5c1222e83f4 && var_2da284613791696f) {
+            if (isfalling && var_2da284613791696f) {
                 eattacker = damageent;
                 if (!isdefined(eattacker)) {
                     eattacker = player;
@@ -2498,7 +2509,7 @@ function monitorplayerimpact() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x81e5
 // Size: 0xb
@@ -2506,7 +2517,7 @@ function monitorplayerimpactend() {
     self notify("monitorPlayerImpactEnd");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x81f7
 // Size: 0xce
@@ -2528,7 +2539,7 @@ function playimpactfx(position, normal, impulse, surfacetype) {
     self stoploopsound("mp_care_package_drop_lp");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x82cc
 // Size: 0x192
@@ -2551,14 +2562,14 @@ function createdangerzone() {
             dangerzoneid = spawnuniversaldangerzone(self.markerposition, leveldata.dangerzoneradius, leveldata.dangerzoneheight, 30);
         }
         /#
-            thread namespace_f2ffc0540883e1ad::drawsphere(self.markerposition, 128, 30, (1, 0, 0));
+            thread scripts/cp_mp/utility/debug_utility::drawsphere(self.markerposition, 128, 30, (1, 0, 0));
         #/
     }
     self.dangerzoneid = dangerzoneid;
     return dangerzoneid;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8466
 // Size: 0x80
@@ -2570,7 +2581,7 @@ function spawnuniversaldangerzone(position, radius, height, timeout) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84ed
 // Size: 0x78
@@ -2584,7 +2595,7 @@ function destroydangerzone() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x856c
 // Size: 0x9d
@@ -2601,19 +2612,19 @@ function _createnavobstacle() {
     return navobstacleid;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8611
 // Size: 0x48
-function _watchnavobstacle(id, origin, var_ecfeaf96c94abe6e) {
+function _watchnavobstacle(id, origin, updatedistsqr) {
     self endon("death");
-    while (distancesquared(origin, self.origin) < var_ecfeaf96c94abe6e) {
+    while (distancesquared(origin, self.origin) < updatedistsqr) {
         wait(0.5);
     }
     thread _createnavobstacle();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8660
 // Size: 0x31
@@ -2625,7 +2636,7 @@ function _destroynavobstacle() {
     self.navobstacleid = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8698
 // Size: 0x124
@@ -2648,12 +2659,12 @@ function createmountmantlemodel() {
         mountmantlemodel linkto(self);
         self.mountmantlemodel = mountmantlemodel;
         mountmantlemodel.crate = self;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87c4
 // Size: 0x29
@@ -2664,7 +2675,7 @@ function destroymountmantlemodel() {
     self.mountmantlemodel = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87f4
 // Size: 0x108
@@ -2684,14 +2695,14 @@ function crateunresolvedcollisioncallback(hitent, penetration) {
     hitent dodamage(1000, hitent.origin, self.owner, self, "MOD_CRUSH", objweapon);
     self endon("death");
     hitent endon("death_or_disconnect");
-    if (isplayer(hitent) && hitent namespace_f8065cafc523dba5::_isalive()) {
+    if (isplayer(hitent) && hitent scripts/cp_mp/utility/player_utility::_isalive()) {
         if (issharedfuncdefined("airdrop", "unresolvedCollisionNearestNode")) {
             [[ getsharedfunc("airdrop", "unresolvedCollisionNearestNode") ]](hitent, undefined, self);
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8903
 // Size: 0x1d4
@@ -2699,14 +2710,14 @@ function _createheadicon() {
     if (istrue(self.disallowheadiconid)) {
         return;
     }
-    namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.headiconid);
+    scripts/cp_mp/entityheadicons::setheadicon_deleteicon(self.headiconid);
     leveldata = getleveldata(self.cratetype);
     headiconid = undefined;
     if (isdefined(self.headicon)) {
         headiconoffset = function_c857ac89588adf6f();
         if (level.teambased && isdefined(self.team)) {
-            if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-                headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(self.team, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange, undefined, 1);
+            if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
+                headiconid = scripts/cp_mp/entityheadicons::setheadicon_singleimage(self.team, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange, undefined, 1);
             }
             if (isdefined(headiconid)) {
                 if (issharedfuncdefined("game", "isMLGMatch")) {
@@ -2716,8 +2727,8 @@ function _createheadicon() {
                 }
             }
         } else if (isdefined(self.owner)) {
-            if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-                headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(self.owner, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange, undefined, 1);
+            if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
+                headiconid = scripts/cp_mp/entityheadicons::setheadicon_singleimage(self.owner, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange, undefined, 1);
             }
             if (isdefined(headiconid)) {
                 if (issharedfuncdefined("game", "isMLGMatch")) {
@@ -2726,8 +2737,8 @@ function _createheadicon() {
                     }
                 }
             }
-        } else if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-            headiconid = namespace_7bdde15c3500a23f::setheadicon_singleimage(level.teamnamelist, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange);
+        } else if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
+            headiconid = scripts/cp_mp/entityheadicons::setheadicon_singleimage(level.teamnamelist, self.headicon, headiconoffset, 1, leveldata.headicondrawrange, leveldata.headiconnaturalrange);
         }
     }
     self.headiconid = headiconid;
@@ -2735,33 +2746,35 @@ function _createheadicon() {
     return headiconid;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8adf
 // Size: 0x28
 function _destroyheadicon() {
-    namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.headiconid);
+    scripts/cp_mp/entityheadicons::setheadicon_deleteicon(self.headiconid);
     self.headiconid = undefined;
     self.headiconactive = 0;
     waitframe();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8b0e
 // Size: 0x6f
 function function_3a065ce769b6ce3d() {
-    if (isdefined(self.var_7b5e5c2bbc8f9f79)) {
-        objective_delete(self.var_7b5e5c2bbc8f9f79);
-        namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.var_7b5e5c2bbc8f9f79);
-        self.var_7b5e5c2bbc8f9f79 = undefined;
-    } else if (self isscriptable() && self getscriptablehaspart("objective")) {
+    if (isdefined(self.scriptedobjid)) {
+        objective_delete(self.scriptedobjid);
+        scripts/mp/objidpoolmanager::returnobjectiveid(self.scriptedobjid);
+        self.scriptedobjid = undefined;
+        return;
+    }
+    if (self isscriptable() && self getscriptablehaspart("objective")) {
         self setscriptablepartstate("objective", "inactive");
-        self.var_83746f6469687186 = undefined;
+        self.objectivevisible = undefined;
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8b84
 // Size: 0x109
@@ -2771,8 +2784,8 @@ function createminimapicon() {
     minimapid = undefined;
     if (isdefined(self.minimapicon) && !istrue(self.visibilitymanuallycontrolled)) {
         createfunc = undefined;
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "createObjective")) {
-            createfunc = namespace_3c37cb17ade254d::getsharedfunc("game", "createObjective");
+        if (scripts/engine/utility::issharedfuncdefined("game", "createObjective")) {
+            createfunc = scripts/engine/utility::getsharedfunc("game", "createObjective");
         }
         if (isdefined(createfunc)) {
             if (level.teambased && isdefined(self.team)) {
@@ -2784,27 +2797,27 @@ function createminimapicon() {
             }
         }
     }
-    namespace_5a22b6f3a56f7e9b::function_79a1a16de6b22b2d(minimapid, 24);
+    scripts/mp/objidpoolmanager::function_79a1a16de6b22b2d(minimapid, 24);
     self.minimapid = minimapid;
     self.minimapiconactive = 1;
     return minimapid;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8c95
 // Size: 0x53
 function destroyminimapicon() {
     if (isdefined(self.minimapid)) {
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "returnObjectiveID")) {
-            [[ namespace_3c37cb17ade254d::getsharedfunc("game", "returnObjectiveID") ]](self.minimapid);
+        if (scripts/engine/utility::issharedfuncdefined("game", "returnObjectiveID")) {
+            [[ scripts/engine/utility::getsharedfunc("game", "returnObjectiveID") ]](self.minimapid);
         }
     }
     self.minimapid = undefined;
     self.minimapiconactive = 0;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x8cef
 // Size: 0x68
@@ -2820,7 +2833,7 @@ function looselinkto(parent, offset, instancedata) {
     self linkto(parent);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d5e
 // Size: 0x37
@@ -2831,7 +2844,7 @@ function addtolists() {
     level.cratedata.crates[self getentitynumber()] = self;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d9c
 // Size: 0x2f
@@ -2842,55 +2855,55 @@ function removefromlists(id) {
     level.cratedata.crates[id] = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8dd2
 // Size: 0x176
-function getrandomkeyfromweightsarray(arr, var_cd71448fd6b9eb3f) {
-    if (isdefined(var_cd71448fd6b9eb3f)) {
-        if (!isarray(var_cd71448fd6b9eb3f)) {
-            var_cd71448fd6b9eb3f = [0:var_cd71448fd6b9eb3f];
+function getrandomkeyfromweightsarray(arr, exclusionlist) {
+    if (isdefined(exclusionlist)) {
+        if (!isarray(exclusionlist)) {
+            exclusionlist = [exclusionlist];
         }
     }
-    var_4094287ff08e6d28 = [];
+    arrkeys = [];
     var_6fb7daf6138d07d0 = [];
     maxval = 0;
     foreach (key, weight in arr) {
         if (weight > 0) {
             isexcluded = 0;
-            if (isdefined(var_cd71448fd6b9eb3f)) {
-                if (var_cd71448fd6b9eb3f.size > 0) {
-                    foreach (id, var_8dd561da22c5839a in var_cd71448fd6b9eb3f) {
-                        if (var_8dd561da22c5839a == key) {
-                            var_cd71448fd6b9eb3f[id] = undefined;
+            if (isdefined(exclusionlist)) {
+                if (exclusionlist.size > 0) {
+                    foreach (id, excludedkey in exclusionlist) {
+                        if (excludedkey == key) {
+                            exclusionlist[id] = undefined;
                             isexcluded = 1;
                             break;
                         }
                     }
                 } else {
-                    var_cd71448fd6b9eb3f = undefined;
+                    exclusionlist = undefined;
                 }
             }
             if (!isexcluded) {
                 maxval = maxval + weight;
-                var_4094287ff08e6d28[var_4094287ff08e6d28.size] = key;
+                arrkeys[arrkeys.size] = key;
                 var_6fb7daf6138d07d0[var_6fb7daf6138d07d0.size] = maxval;
             }
         }
     }
     randint = randomint(maxval);
     key = undefined;
-    for (i = 0; i < var_4094287ff08e6d28.size; i++) {
+    for (i = 0; i < arrkeys.size; i++) {
         maxval = var_6fb7daf6138d07d0[i];
         if (randint < maxval) {
-            key = var_4094287ff08e6d28[i];
+            key = arrkeys[i];
             break;
         }
     }
     return key;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f50
 // Size: 0x8
@@ -2898,7 +2911,7 @@ function getdefaultcapturevisualscallback() {
     return &defaultcapturevisualscallback;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f60
 // Size: 0x14
@@ -2906,7 +2919,7 @@ function getdefaultcapturevisualsdeletiondelay() {
     return getanimlength(script_model%mp_military_carepackage_straps_falling) + 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f7c
 // Size: 0x10a
@@ -2925,30 +2938,30 @@ function defaultcapturevisualscallback(model) {
         animtime = max(0, animtime);
     }
     model.animname = "care_package";
-    model namespace_bc4a4b9456315863::setanimtree();
-    model thread namespace_bc4a4b9456315863::anim_single_solo(model, "care_package_capture");
+    model scripts/common/anim::setanimtree();
+    model thread scripts/common/anim::anim_single_solo(model, "care_package_capture");
     model setscriptablepartstate(#"capture", #"start", 0);
     if (isdefined(animtime)) {
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(animtime);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(animtime);
     }
     cratetype = model.cratetype;
-    var_cd0883c0dcdd304e = #"fade";
+    capturestate = #"fade";
     if (istrue(self.inwater)) {
-        var_cd0883c0dcdd304e = #"hash_de840e2572f006d3";
+        capturestate = #"fade_water";
     }
-    model setscriptablepartstate(#"capture", var_cd0883c0dcdd304e, 0);
+    model setscriptablepartstate(#"capture", capturestate, 0);
     model setscriptablepartstate(#"visibility", #"hide", 0);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x908d
 // Size: 0x4
 function getdefaultdestroyvisualsdeletiondelay() {
-    return 0;
+    return false;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9099
 // Size: 0x8
@@ -2956,7 +2969,7 @@ function getdefaultdestroyvisualscallback() {
     return &defaultdestroyvisualscallback;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90a9
 // Size: 0xc
@@ -2964,7 +2977,7 @@ function defaultdestroyvisualscallback(model) {
     
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90bc
 // Size: 0x16
@@ -2972,7 +2985,7 @@ function getdefaultmountmantlemodel() {
     return level.cratedata.mountmantlemodel;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90da
 // Size: 0x26
@@ -2983,19 +2996,19 @@ function getnumdroppedcrates() {
     return level.cratedata.crates.size;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9108
 // Size: 0x35
 function function_58f652f9f3a0775() {
     if (issharedfuncdefined("damage", "_suicide")) {
         self thread [[ getsharedfunc("damage", "_suicide") ]]();
-    } else {
-        self suicide();
+        return;
     }
+    self suicide();
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9144
 // Size: 0x225
@@ -3009,27 +3022,20 @@ function trackcratemantlingexploit() {
             }
             self.entmantlingendtime = gettime() + 1000;
         }
-    } else if (gettime() >= self.entmantlingendtime) {
+        return;
+    }
+    if (gettime() >= self.entmantlingendtime) {
         self.entmantling = undefined;
         self.entmantlingcrate = undefined;
         self.entmantlingendtime = undefined;
-    } else {
-        foreach (crate in level.cratedata.crates) {
-            if (isdefined(crate) && istrue(crate.physicsactivated) && !istrue(crate.physicssettled)) {
-                if (isdefined(self.entmantling)) {
-                    if (isdefined(crate.mountmantlemodel)) {
-                        if (self.entmantling != crate.mountmantlemodel) {
-                            if (self istouching(crate.mountmantlemodel)) {
-                                self.entmantling = undefined;
-                                self.entmantlingcrate = undefined;
-                                self.entmantlingendtime = undefined;
-                                function_58f652f9f3a0775();
-                                return;
-                            }
-                        }
-                    }
-                    if (self.entmantlingcrate != crate) {
-                        if (self istouching(crate)) {
+        return;
+    }
+    foreach (crate in level.cratedata.crates) {
+        if (isdefined(crate) && istrue(crate.physicsactivated) && !istrue(crate.physicssettled)) {
+            if (isdefined(self.entmantling)) {
+                if (isdefined(crate.mountmantlemodel)) {
+                    if (self.entmantling != crate.mountmantlemodel) {
+                        if (self istouching(crate.mountmantlemodel)) {
                             self.entmantling = undefined;
                             self.entmantlingcrate = undefined;
                             self.entmantlingendtime = undefined;
@@ -3037,32 +3043,43 @@ function trackcratemantlingexploit() {
                             return;
                         }
                     }
-                } else if (self istouching(crate) || isdefined(crate.mountmantlemodel) && self istouching(crate.mountmantlemodel)) {
-                    self.entmantling = undefined;
-                    self.entmantlingcrate = undefined;
-                    self.entmantlingendtime = undefined;
-                    function_58f652f9f3a0775();
-                    return;
                 }
+                if (self.entmantlingcrate != crate) {
+                    if (self istouching(crate)) {
+                        self.entmantling = undefined;
+                        self.entmantlingcrate = undefined;
+                        self.entmantlingendtime = undefined;
+                        function_58f652f9f3a0775();
+                        return;
+                    }
+                }
+                continue;
+            }
+            if (self istouching(crate) || isdefined(crate.mountmantlemodel) && self istouching(crate.mountmantlemodel)) {
+                self.entmantling = undefined;
+                self.entmantlingcrate = undefined;
+                self.entmantlingendtime = undefined;
+                function_58f652f9f3a0775();
+                return;
             }
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9370
 // Size: 0x1f3
 function function_b6469ac2ab6f3dc6() {
-    var_4f35a480b277acb6 = function_869ccb4e3451b8c6([0:"etype_player"]);
+    entmask = function_869ccb4e3451b8c6(["etype_player"]);
     radius = getdvarint(@"hash_e9b16488fdec1843", 100);
-    while (1) {
+    while (true) {
         foreach (crate in level.cratedata.crates) {
             if (!isdefined(crate) || !istrue(crate.physicsactivated) || istrue(crate.physicssettled)) {
                 continue;
             }
-            var_ef269077a28646eb = function_b1eef70090b5b7b5(crate.origin, radius, var_4f35a480b277acb6);
-            foreach (p in var_ef269077a28646eb) {
+            nearplayers = function_b1eef70090b5b7b5(crate.origin, radius, entmask);
+            foreach (p in nearplayers) {
                 if (p ismantling()) {
                     entmantling = p getmovingplatformparent();
                     if (isdefined(entmantling) && isdefined(entmantling.crate)) {
@@ -3075,7 +3092,9 @@ function function_b6469ac2ab6f3dc6() {
                                 p function_58f652f9f3a0775();
                             }
                         }
-                    } else if (p istouching(crate) || isdefined(crate.mountmantlemodel) && p istouching(crate.mountmantlemodel)) {
+                        continue;
+                    }
+                    if (p istouching(crate) || isdefined(crate.mountmantlemodel) && p istouching(crate.mountmantlemodel)) {
                         p function_58f652f9f3a0775();
                     }
                 }
@@ -3085,130 +3104,130 @@ function function_b6469ac2ab6f3dc6() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x956a
 // Size: 0xe3
-function overridecapturestring(var_4c918b514697b434) {
+function overridecapturestring(stringoverride) {
     /#
-        assertex(isdefined(var_4c918b514697b434), "overrideCrateCaptureString() requires a stringOverride.");
+        assertex(isdefined(stringoverride), "overrideCrateCaptureString() requires a stringOverride.");
     #/
-    if (isdefined(self.capturestring) && self.capturestring == var_4c918b514697b434) {
+    if (isdefined(self.capturestring) && self.capturestring == stringoverride) {
         return;
     }
-    self.capturestring = var_4c918b514697b434;
-    var_1f4abb20f5347265 = [0:self];
+    self.capturestring = stringoverride;
+    triggerobjects = [self];
     if (isdefined(self.useobject)) {
-        var_1f4abb20f5347265[var_1f4abb20f5347265.size] = self.useobject;
+        triggerobjects[triggerobjects.size] = self.useobject;
     }
-    foreach (var_ef5d5141fdb51174 in var_1f4abb20f5347265) {
-        if (!self.supportsreroll || var_ef5d5141fdb51174.usetype == 2) {
-            var_ef5d5141fdb51174 sethintstring(self.capturestring);
+    foreach (triggerobject in triggerobjects) {
+        if (!self.supportsreroll || triggerobject.usetype == 2) {
+            triggerobject sethintstring(self.capturestring);
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9654
 // Size: 0xe2
-function overridererollstring(var_4c918b514697b434) {
+function overridererollstring(stringoverride) {
     /#
-        assertex(isdefined(var_4c918b514697b434), "overrideCrateRerollString() requires a stringOverride.");
+        assertex(isdefined(stringoverride), "overrideCrateRerollString() requires a stringOverride.");
     #/
-    if (isdefined(self.rerollstring) && self.rerollstring == var_4c918b514697b434) {
+    if (isdefined(self.rerollstring) && self.rerollstring == stringoverride) {
         return;
     }
-    self.rerollstring = var_4c918b514697b434;
-    var_1f4abb20f5347265 = [0:self];
+    self.rerollstring = stringoverride;
+    triggerobjects = [self];
     if (isdefined(self.useobject)) {
-        var_1f4abb20f5347265[var_1f4abb20f5347265.size] = self.useobject;
+        triggerobjects[triggerobjects.size] = self.useobject;
     }
-    foreach (var_ef5d5141fdb51174 in var_1f4abb20f5347265) {
-        if (self.supportsreroll && var_ef5d5141fdb51174.usetype == 1) {
-            var_ef5d5141fdb51174 sethintstring(self.rerollstring);
+    foreach (triggerobject in triggerobjects) {
+        if (self.supportsreroll && triggerobject.usetype == 1) {
+            triggerobject sethintstring(self.rerollstring);
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x973d
 // Size: 0x9a
-function overrideheadicon(var_a6b4dbdd89bbbb24) {
-    if (!isdefined(self.headicon) && !isdefined(var_a6b4dbdd89bbbb24)) {
+function overrideheadicon(iconoverride) {
+    if (!isdefined(self.headicon) && !isdefined(iconoverride)) {
         return;
     }
-    if (isdefined(self.headicon) && isdefined(var_a6b4dbdd89bbbb24) && self.headicon == var_a6b4dbdd89bbbb24) {
+    if (isdefined(self.headicon) && isdefined(iconoverride) && self.headicon == iconoverride) {
         return;
     }
-    if (!isdefined(var_a6b4dbdd89bbbb24)) {
+    if (!isdefined(iconoverride)) {
         self.headicon = undefined;
         _destroyheadicon();
-    } else {
-        self.headicon = var_a6b4dbdd89bbbb24;
-        if (self.headiconactive) {
-            if (isdefined(self.headiconid)) {
-                setheadiconimage(self.headiconid, var_a6b4dbdd89bbbb24);
-            } else {
-                _createheadicon();
-            }
+        return;
+    }
+    self.headicon = iconoverride;
+    if (self.headiconactive) {
+        if (isdefined(self.headiconid)) {
+            setheadiconimage(self.headiconid, iconoverride);
+            return;
         }
+        _createheadicon();
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x97de
 // Size: 0x9b
-function overrideminimapicon(var_a6b4dbdd89bbbb24) {
-    if (!isdefined(self.minimapicon) && !isdefined(var_a6b4dbdd89bbbb24)) {
+function overrideminimapicon(iconoverride) {
+    if (!isdefined(self.minimapicon) && !isdefined(iconoverride)) {
         return;
     }
-    if (isdefined(self.minimapicon) && isdefined(var_a6b4dbdd89bbbb24) && self.minimapicon == var_a6b4dbdd89bbbb24) {
+    if (isdefined(self.minimapicon) && isdefined(iconoverride) && self.minimapicon == iconoverride) {
         return;
     }
-    if (!isdefined(var_a6b4dbdd89bbbb24)) {
+    if (!isdefined(iconoverride)) {
         self.minimapicon = undefined;
         destroyminimapicon();
-    } else {
-        self.minimapicon = var_a6b4dbdd89bbbb24;
-        if (self.minimapiconactive) {
-            if (isdefined(self.minimapid)) {
-                namespace_5a22b6f3a56f7e9b::update_objective_icon(self.minimapid, var_a6b4dbdd89bbbb24);
-            } else {
-                createminimapicon();
-            }
+        return;
+    }
+    self.minimapicon = iconoverride;
+    if (self.minimapiconactive) {
+        if (isdefined(self.minimapid)) {
+            scripts/mp/objidpoolmanager::update_objective_icon(self.minimapid, iconoverride);
+            return;
         }
+        createminimapicon();
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9880
 // Size: 0xd3
-function overridesupportsreroll(var_916435788623ac01) {
+function overridesupportsreroll(booloverride) {
     /#
-        assertex(isdefined(var_916435788623ac01), "overrideSupportsReroll() requires a boolOverride.");
+        assertex(isdefined(booloverride), "overrideSupportsReroll() requires a boolOverride.");
     #/
-    if (self.supportsreroll == var_916435788623ac01) {
+    if (self.supportsreroll == booloverride) {
         return;
     }
-    self.supportsreroll = var_916435788623ac01;
+    self.supportsreroll = booloverride;
     if (self.supportsreroll) {
-        var_1f4abb20f5347265 = [0:self];
+        triggerobjects = [self];
         if (isdefined(self.useobject)) {
-            var_1f4abb20f5347265[var_1f4abb20f5347265.size] = self.useobject;
+            triggerobjects[triggerobjects.size] = self.useobject;
         }
-        foreach (var_ef5d5141fdb51174 in var_1f4abb20f5347265) {
-            if (var_ef5d5141fdb51174.usetype == 1) {
-                var_ef5d5141fdb51174 sethintstring(self.rerollstring);
+        foreach (triggerobject in triggerobjects) {
+            if (triggerobject.usetype == 1) {
+                triggerobject sethintstring(self.rerollstring);
             }
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x995a
 // Size: 0x2f1
@@ -3221,14 +3240,14 @@ function initkillstreakcratedata() {
     leveldata = getleveldata("killstreak");
     leveldata.activatecallback = activatecallback;
     leveldata.capturecallback = capturecallback;
-    if (namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e()) {
+    if (scripts/cp_mp/utility/game_utility::function_2d79a7a3b91c4c3e()) {
         leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     }
     leveldata = getleveldata("killstreak_no_owner");
     leveldata.activatecallback = activatecallback;
     leveldata.capturecallback = capturecallback;
     leveldata.supportsownercapture = 0;
-    bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["airdrop"];
+    bundle = level.streakglobals.streakbundles["airdrop"];
     if (!isdefined(bundle) || !istrue(bundle.var_819ed648a31d2d61)) {
         addkillstreakcratedata("assault_drone", undefined, undefined, 300);
         addkillstreakcratedata("uav", undefined, undefined, 300);
@@ -3250,16 +3269,16 @@ function initkillstreakcratedata() {
         addkillstreakcratedata("directional_uav", undefined, undefined, 25);
         addkillstreakcratedata("gunship", undefined, undefined, 25);
         addkillstreakcratedata("juggernaut", undefined, undefined, 10);
-    } else {
-        foreach (var_6cbea295f44add8 in bundle.var_33949e570ecac50c) {
-            if (isdefined(var_6cbea295f44add8.name) && isdefined(var_6cbea295f44add8.weight)) {
-                addkillstreakcratedata(var_6cbea295f44add8.name, undefined, undefined, var_6cbea295f44add8.weight);
-            }
+        return;
+    }
+    foreach (crateentry in bundle.crateentries) {
+        if (isdefined(crateentry.name) && isdefined(crateentry.weight)) {
+            addkillstreakcratedata(crateentry.name, undefined, undefined, crateentry.weight);
         }
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9c52
 // Size: 0x236
@@ -3296,19 +3315,19 @@ function initdropzonekillstreakcratedata() {
     addkillstreakcratedata("directional_uav", undefined, undefined, 25);
     addkillstreakcratedata("gunship", undefined, undefined, 25);
     addkillstreakcratedata("juggernaut", undefined, undefined, 10);
-    if (namespace_36f464722d326bbe::function_2536e99eb6586f8f()) {
+    if (scripts/cp_mp/utility/game_utility::isinfectedgametype()) {
         leveldata.isteamonlycrate = 1;
-    } else {
-        addkillstreakcratedata("scrambler_drone_guard", undefined, undefined, 300);
+        return;
     }
+    addkillstreakcratedata("scrambler_drone_guard", undefined, undefined, 300);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9e8f
 // Size: 0x83
 function addkillstreakcratedata(streakname, capturestring, rerollstring, weight) {
-    if (!isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac[streakname])) {
+    if (!isdefined(level.streakglobals.streakbundles[streakname])) {
         return;
     }
     level.cratedata.kscapturestrings[streakname] = capturestring;
@@ -3316,7 +3335,7 @@ function addkillstreakcratedata(streakname, capturestring, rerollstring, weight)
     level.cratedata.ksweights[streakname] = weight;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f19
 // Size: 0x3f
@@ -3327,11 +3346,11 @@ function getkillstreakcratedatabystreakname(streakname, supportsreroll) {
     return data;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f60
 // Size: 0x87
-function overridekillstreakcrateweight(streakname, var_3f9b0ba92698a35d) {
+function overridekillstreakcrateweight(streakname, weightoverride) {
     /#
         assertex(isdefined(level.cratedata), "overrideKillstreakCrateWeight() called before initCrateData().");
     #/
@@ -3341,10 +3360,10 @@ function overridekillstreakcrateweight(streakname, var_3f9b0ba92698a35d) {
     /#
         assertex(isdefined(level.cratedata.ksweights), "overrideKillstreakCrateWeight() called with an invalid streakName.");
     #/
-    level.cratedata.ksweights[streakname] = var_3f9b0ba92698a35d;
+    level.cratedata.ksweights[streakname] = weightoverride;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9fee
 // Size: 0xb1
@@ -3364,31 +3383,31 @@ function killstreakcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0a6
 // Size: 0x1dc
 function killstreakcratecapturecallback(player) {
     streakname = self.data.streakname;
-    var_44632ff01df0aadd = 0;
+    useimmediate = 0;
     var_63bb25760a7f230d = 0;
     switch (streakname) {
     case #"hash_cd0a0403551fc411":
         var_63bb25760a7f230d = 1;
     case #"hash_4ad475e6e15635bd":
         if (!istrue(player.isjuggernaut)) {
-            var_44632ff01df0aadd = 1;
+            useimmediate = 1;
             if (issharedfuncdefined("airdrop", "applyImmediateJuggernaut")) {
-                player [[ getsharedfunc("airdrop", "applyImmediateJuggernaut") ]](var_44632ff01df0aadd, var_63bb25760a7f230d);
+                player [[ getsharedfunc("airdrop", "applyImmediateJuggernaut") ]](useimmediate, var_63bb25760a7f230d);
             } else if (istrue(var_63bb25760a7f230d)) {
-                player namespace_f65b8b60ef677e44::function_b960491329678b4(var_44632ff01df0aadd);
+                player namespace_f65b8b60ef677e44::function_b960491329678b4(useimmediate);
             } else {
-                player namespace_3fad206953a935fe::tryusejuggernaut(var_44632ff01df0aadd);
+                player scripts/cp_mp/killstreaks/juggernaut::tryusejuggernaut(useimmediate);
             }
         }
         break;
     }
-    if (!istrue(var_44632ff01df0aadd)) {
+    if (!istrue(useimmediate)) {
         if (issharedfuncdefined("airdrop", "awardKillstreak")) {
             player thread [[ getsharedfunc("airdrop", "awardKillstreak") ]](streakname, self.owner, self);
         }
@@ -3397,7 +3416,7 @@ function killstreakcratecapturecallback(player) {
         }
     }
     if (isdefined(self.owner) && player == self.owner) {
-        goto LOC_000001da;
+        return;
     }
     if (isdefined(self.team)) {
         if (player.team != self.team) {
@@ -3409,14 +3428,11 @@ function killstreakcratecapturecallback(player) {
                     self.owner [[ getsharedfunc("hud", "showSplash") ]]("hijacked_airdrop", undefined, player);
                 }
             }
-            goto LOC_000001da;
         }
-    LOC_000001da:
     }
-LOC_000001da:
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa289
 // Size: 0x6c
@@ -3431,7 +3447,7 @@ function getrandomkillstreak(var_52a8c1bddbf44d11) {
     return streakname;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xa2fd
 // Size: 0xcc
@@ -3453,7 +3469,7 @@ function placekillstreakcrate(owner, team, streakname, position, angles) {
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3d1
 // Size: 0xd8
@@ -3475,7 +3491,7 @@ function dropkillstreakcrate(owner, team, streakname, position, angles, destinat
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa4b1
 // Size: 0x12e
@@ -3501,27 +3517,27 @@ function dropkillstreakcratefromscriptedheli(owner, team, streakname, position, 
     return scenenode;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa5e7
 // Size: 0xbb
 function airdrop_playdeploydialog(streakinfo) {
     self endon("death_or_disconnect");
     level endon("game_ended");
-    if (level.gametype == "grnd" || namespace_36f464722d326bbe::function_2536e99eb6586f8f()) {
+    if (level.gametype == "grnd" || scripts/cp_mp/utility/game_utility::isinfectedgametype()) {
         return;
     }
     var_52a5be2e2f91d710 = undefined;
     if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(0.5);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(0.5);
         [[ getsharedfunc("sound", "playKillstreakDeployDialog") ]](self, streakinfo.streakname);
         var_52a5be2e2f91d710 = 3;
     }
-    var_3707ac9ba459fb6d = streakinfo.streakname + "_use";
-    thread playkillstreakoperatordialog(streakinfo.streakname, var_3707ac9ba459fb6d, 1, var_52a5be2e2f91d710);
+    operatordialog = streakinfo.streakname + "_use";
+    thread playkillstreakoperatordialog(streakinfo.streakname, operatordialog, 1, var_52a5be2e2f91d710);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0xa6a9
 // Size: 0x112
@@ -3546,7 +3562,7 @@ function dropkillstreakcratefrommanualheli(owner, team, streakname, position, an
     return dropstruct.crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa7c3
 // Size: 0x198
@@ -3563,7 +3579,7 @@ function tryairdroptriggered(streakinfo) {
         maxvehiclecount = 10;
     }
     if (streakname == "airdrop_escort") {
-        var_f7d941fb76fd8044 = level.cratedropdata.var_4950bb412d4e1d5.size;
+        var_f7d941fb76fd8044 = level.cratedropdata.escortchoppers.size;
         maxvehiclecount = 1;
     }
     var_4440147083abaf0a = 1;
@@ -3571,29 +3587,29 @@ function tryairdroptriggered(streakinfo) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/MAX_AIRDROPS");
         }
-        return 0;
+        return false;
     } else if (issharedfuncdefined("killstreak", "currentActiveVehicleCount") && issharedfuncdefined("killstreak", "maxVehiclesAllowed")) {
         if ([[ getsharedfunc("killstreak", "currentActiveVehicleCount") ]]() >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]() || level.fauxvehiclecount + var_4440147083abaf0a >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]()) {
             if (issharedfuncdefined("hud", "showErrorMessage")) {
                 self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/TOO_MANY_VEHICLES");
             }
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa963
 // Size: 0x22
-function airdropmarkerswitchended(streakinfo, var_41bf9bf4918115ac) {
-    if (istrue(var_41bf9bf4918115ac)) {
+function airdropmarkerswitchended(streakinfo, switchresult) {
+    if (istrue(switchresult)) {
         thread airdrop_watchplayerweapon(streakinfo);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa98c
 // Size: 0x89
@@ -3612,7 +3628,7 @@ function airdrop_watchplayerweapon(streakinfo) {
     streakinfo notify("killstreak_finished_with_deploy_weapon");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xaa1c
 // Size: 0x106
@@ -3629,26 +3645,26 @@ function airdropvisualmarkerfired(streakinfo) {
         if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
             [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
         }
-        return 0;
+        return false;
     }
     if (issharedfuncdefined("killstreak", "logKillstreakEvent")) {
         self [[ getsharedfunc("killstreak", "logKillstreakEvent") ]](streakinfo.airdroptype, self.origin);
     }
     airdropvisualmarkeractivate(marker, streakinfo.airdroptype, streakinfo);
-    return 1;
+    return true;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab2a
 // Size: 0xff
 function airdropvisualmarkeractivate(marker, droptype, streakinfo) {
-    var_f0f1e7230edecb24 = drop_to_ground(marker.location, 50, -200, (0, 0, 1));
-    var_f0f1e7230edecb24 = var_f0f1e7230edecb24 + (0, 0, 1);
-    canister = spawn("script_model", var_f0f1e7230edecb24);
+    fxposition = drop_to_ground(marker.location, 50, -200, (0, 0, 1));
+    fxposition = fxposition + (0, 0, 1);
+    canister = spawn("script_model", fxposition);
     canister setmodel("offhand_wm_grenade_smoke");
     canister.angles = (0, 90, 90);
-    fxent = spawn("script_model", var_f0f1e7230edecb24);
+    fxent = spawn("script_model", fxposition);
     fxent setmodel("ks_crate_marker_mp");
     fxent setscriptablepartstate(#"smoke", #"on", 0);
     if (isdefined(marker.visual)) {
@@ -3659,7 +3675,7 @@ function airdropvisualmarkeractivate(marker, droptype, streakinfo) {
     #/
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xac30
 // Size: 0x21
@@ -3668,7 +3684,7 @@ function tryuseairdropmarker() {
     return tryuseairdropmarkerfromstruct(streakinfo);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xac59
 // Size: 0x1ed
@@ -3676,8 +3692,8 @@ function tryuseairdropmarkerfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
     streakinfo.deployweaponobj = makeweapon("deploy_airdrop_mp");
-    var_b340c162ce19ad5e = getdvarint(@"hash_b2e9bf0017ceeeae", 0);
-    if (var_b340c162ce19ad5e) {
+    sticky = getdvarint(@"hash_b2e9bf0017ceeeae", 0);
+    if (sticky) {
         streakinfo.deployweaponobj = makeweapon("deploy_airdrop_sticky_mp");
     }
     var_2472cbe64ade0c46 = undefined;
@@ -3692,49 +3708,49 @@ function tryuseairdropmarkerfromstruct(streakinfo) {
         break;
     }
     if (var_2472cbe64ade0c46) {
-        if (!namespace_f64231d5b7a2c3c4::reservevehicle()) {
+        if (!scripts/cp_mp/vehicles/vehicle_tracking::reservevehicle()) {
             if (issharedfuncdefined("hud", "showErrorMessage")) {
                 self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
             }
-            return 0;
+            return false;
         }
     }
     if (!tryairdroptriggered(streakinfo)) {
         if (var_2472cbe64ade0c46) {
-            namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+            scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
         }
-        return 0;
+        return false;
     }
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
             if (var_2472cbe64ade0c46) {
-                namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
             }
             if (issharedfuncdefined("hud", "showErrorMessage")) {
                 self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
             }
-            return 0;
+            return false;
         }
     }
     if (isdefined(level.var_27f78817b59dfe32)) {
         streakinfo.var_fb58a31c756db4cc = level.var_27f78817b59dfe32;
     }
-    var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponfireddeploy(streakinfo, streakinfo.deployweaponobj, "grenade_fire", undefined, &airdropmarkerswitchended, &airdropmarkerfired, undefined, &airdropmarkertaken);
-    if (!istrue(var_9b1deb5e9d32bbe3)) {
+    deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, streakinfo.deployweaponobj, "grenade_fire", undefined, &airdropmarkerswitchended, &airdropmarkerfired, undefined, &airdropmarkertaken);
+    if (!istrue(deployresult)) {
         if (var_2472cbe64ade0c46) {
-            namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+            scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
         }
-        return 0;
+        return false;
     }
     if (isdefined(level.killstreakbeginusefunc)) {
         if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xae4e
 // Size: 0xaf
@@ -3743,21 +3759,20 @@ function function_f66b707d0894b6de(streakinfo) {
     self endon("giveAndFireOffhandReliableFailed");
     level endon("game_ended");
     deployweaponobj = streakinfo.deployweaponobj;
-    while (1) {
+    while (true) {
         grenade = self waittill("grenade_thrown");
         if (isdefined(deployweaponobj.basename) && isdefined(grenade.weapon_name) && deployweaponobj.basename == grenade.weapon_name) {
             airdropmarkerfired(streakinfo, deployweaponobj, grenade, 1);
             break;
-        } else {
-            /#
-                iprintln("doScoreEvent");
-            #/
-            break;
         }
+        /#
+            iprintln("doScoreEvent");
+        #/
+        break;
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf04
 // Size: 0xfa
@@ -3781,7 +3796,7 @@ function airdropmarkerfired(streakinfo, weaponobj, projectile, var_4b0c1a8c50d15
     return "success";
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb006
 // Size: 0x49b
@@ -3797,40 +3812,40 @@ function airdropmarkeractivate(droptype, lifeid, streakinfo, var_4b0c1a8c50d1534
         if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
             [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
         }
-        namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+        scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
         return;
     }
     waitframe();
     var_fda870b32ab92c1f = var_811f337efd111e98 + (0, 180, 0);
     targetpos = position;
-    var_359711dd322783ec = getscriptedhelidropheight(droptype);
+    targetheightoffset = getscriptedhelidropheight(droptype);
     ownerforward = anglestoforward(owner.angles);
-    var_3c5a1b26c6973c2a = anglestoright(owner.angles);
-    contents = namespace_2a184fc4902783dc::create_default_contents(1);
-    var_f74f18c717b149e2 = [0:targetpos - ownerforward * 100, 1:targetpos + ownerforward * 100, 2:targetpos + var_3c5a1b26c6973c2a * 100, 3:targetpos - var_3c5a1b26c6973c2a * 100, 4:targetpos + (ownerforward + var_3c5a1b26c6973c2a) * 100, 5:targetpos + (ownerforward - var_3c5a1b26c6973c2a) * 100, 6:targetpos + (var_3c5a1b26c6973c2a - ownerforward) * 100, 7:targetpos + (-1 * ownerforward - var_3c5a1b26c6973c2a) * 100];
-    foreach (var_f9567f37db523f7a in var_f74f18c717b149e2) {
-        var_7a7426e42e674e40 = vectornormalize(var_f9567f37db523f7a - targetpos);
-        var_c45bbeb56df09b5d = targetpos * (1, 1, 0) + (0, 0, var_359711dd322783ec);
+    ownerright = anglestoright(owner.angles);
+    contents = scripts/engine/trace::create_default_contents(1);
+    var_f74f18c717b149e2 = [targetpos - ownerforward * 100, targetpos + ownerforward * 100, targetpos + ownerright * 100, targetpos - ownerright * 100, targetpos + (ownerforward + ownerright) * 100, targetpos + (ownerforward - ownerright) * 100, targetpos + (ownerright - ownerforward) * 100, targetpos + (-1 * ownerforward - ownerright) * 100];
+    foreach (dirpos in var_f74f18c717b149e2) {
+        var_7a7426e42e674e40 = vectornormalize(dirpos - targetpos);
+        var_c45bbeb56df09b5d = targetpos * (1, 1, 0) + (0, 0, targetheightoffset);
         var_32a961dac02545b0 = var_c45bbeb56df09b5d - var_7a7426e42e674e40 * 25000;
         var_19189fd85d8a2c19 = var_c45bbeb56df09b5d + var_7a7426e42e674e40 * 25000;
-        traceresult = namespace_2a184fc4902783dc::ray_trace_passed(var_32a961dac02545b0, var_19189fd85d8a2c19, undefined, contents);
+        traceresult = scripts/engine/trace::ray_trace_passed(var_32a961dac02545b0, var_19189fd85d8a2c19, undefined, contents);
         if (!istrue(traceresult)) {
             continue;
         }
         var_fda870b32ab92c1f = vectortoangles(var_7a7426e42e674e40);
         /#
-            level thread namespace_f2ffc0540883e1ad::drawline(var_32a961dac02545b0, var_19189fd85d8a2c19, 30, (1, 1, 0));
+            level thread scripts/cp_mp/utility/debug_utility::drawline(var_32a961dac02545b0, var_19189fd85d8a2c19, 30, (1, 1, 0));
         #/
         break;
     }
     /#
         if (droptype == "active") {
-            var_8d87362079c3519c = getdvar(@"hash_c247993ede3808ca");
-            if (var_8d87362079c3519c != "_request_response") {
+            crateoverride = getdvar(@"hash_c247993ede3808ca");
+            if (crateoverride != "_request_response") {
                 if (issharedfuncdefined("weapon", "players")) {
                     [[ getsharedfunc("weapon", "players") ]]();
                 }
-                dropkillstreakcratefromscriptedheli(owner, owner.team, var_8d87362079c3519c, position, var_fda870b32ab92c1f, position, 1, streakinfo);
+                dropkillstreakcratefromscriptedheli(owner, owner.team, crateoverride, position, var_fda870b32ab92c1f, position, 1, streakinfo);
                 return;
             }
         }
@@ -3838,26 +3853,19 @@ function airdropmarkeractivate(droptype, lifeid, streakinfo, var_4b0c1a8c50d1534
     if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
         [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
     }
-    var_806f4f8c9ecef0a1 = undefined;
+    dropresult = undefined;
     if (droptype == "airdrop") {
-        var_806f4f8c9ecef0a1 = dropkillstreakcratefromscriptedheli(owner, owner.team, undefined, position, var_fda870b32ab92c1f, position, 1, streakinfo);
+        dropresult = dropkillstreakcratefromscriptedheli(owner, owner.team, undefined, position, var_fda870b32ab92c1f, position, 1, streakinfo);
     } else if (droptype == "airdrop_multiple") {
         if (issharedfuncdefined("airdrop", "airdropMultipleDropCrates")) {
-            var_806f4f8c9ecef0a1 = [[ getsharedfunc("airdrop", "airdropMultipleDropCrates") ]](owner, owner.team, position, var_fda870b32ab92c1f, position, 1, streakinfo);
+            dropresult = [[ getsharedfunc("airdrop", "airdropMultipleDropCrates") ]](owner, owner.team, position, var_fda870b32ab92c1f, position, 1, streakinfo);
         }
-    } else {
-        if (droptype == "airdrop_escort") {
-            goto LOC_00000407;
-        }
-        if (droptype == "loadout_drop") {
-            var_806f4f8c9ecef0a1 = function_63e71231fbc15aa9(owner, owner.team, droptype, position, var_fda870b32ab92c1f, position, 1, streakinfo);
-        LOC_00000407:
-        }
-    LOC_00000407:
+    } else if (droptype == "airdrop_escort") {
+    } else if (droptype == "loadout_drop") {
+        dropresult = function_63e71231fbc15aa9(owner, owner.team, droptype, position, var_fda870b32ab92c1f, position, 1, streakinfo);
     }
-LOC_00000407:
     if (isdefined(owner)) {
-        if (!isdefined(var_806f4f8c9ecef0a1)) {
+        if (!isdefined(dropresult)) {
             if (issharedfuncdefined("hud", "showErrorMessage")) {
                 owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/VEHICLE_REFUND_KILLSTREAK");
             }
@@ -3868,11 +3876,11 @@ LOC_00000407:
             }
             return;
         }
-        owner namespace_9abe40d2af041eb2::recordkillstreakendstats(streakinfo);
+        owner scripts/cp_mp/utility/killstreak_utility::recordkillstreakendstats(streakinfo);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xb4a8
 // Size: 0xbe
@@ -3881,14 +3889,14 @@ function function_206d83d7637be6a7(position, owner) {
         var_13ba232eee7e6069 = spawnscriptable("airdrop_marker", position, (0, 0, 1));
         var_13ba232eee7e6069 setscriptablepartstate("smokeSignal", "active");
         var_13ba232eee7e6069 function_fca5bdbe24070d20("smokeSignal", owner.team);
-    } else {
-        payload = [0:#"hash_5f9c433bdcfb4e14", 1:owner getentitynumber()];
-        var_13ba232eee7e6069 = spawnscriptable("airdrop_marker", position, (0, 0, 1), undefined, payload);
-        var_13ba232eee7e6069 setscriptablepartstate("smokeSignal", "activeFFA");
+        return;
     }
+    payload = [#"teamselect", owner getentitynumber()];
+    var_13ba232eee7e6069 = spawnscriptable("airdrop_marker", position, (0, 0, 1), undefined, payload);
+    var_13ba232eee7e6069 setscriptablepartstate("smokeSignal", "activeFFA");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb56d
 // Size: 0x78
@@ -3903,7 +3911,7 @@ function airdropmarkertaken(streakinfo) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb5ec
 // Size: 0x8b
@@ -3919,7 +3927,7 @@ function initbattleroyalecratedata() {
     leveldata.capturecallback = &brcratecapturecallback;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb67e
 // Size: 0x2a
@@ -3929,7 +3937,7 @@ function getbrcratedatabytype(type) {
     return data;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb6b0
 // Size: 0x38
@@ -3941,7 +3949,7 @@ function brcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb6ef
 // Size: 0x34
@@ -3951,7 +3959,7 @@ function brcratecapturecallback(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb72a
 // Size: 0x96
@@ -3966,7 +3974,7 @@ function dropbrcratefromscriptedheli(position) {
     return scenenode.crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb7c8
 // Size: 0x85
@@ -3981,7 +3989,7 @@ function dropbrcratefrommanualheli(position) {
     return dropstruct.crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb855
 // Size: 0x11f
@@ -4003,11 +4011,11 @@ function initbattleroyaleloadoutcratedata() {
     leveldata.destroycallback = &brloadoutcratedestroycallback;
     leveldata.destroyoncapture = 0;
     leveldata.onecaptureperplayer = 1;
-    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.isdropcrate = 1;
     leveldata.var_c23ca3472233553d = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb97b
 // Size: 0x5f
@@ -4022,7 +4030,7 @@ function brloadoutcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb9e1
 // Size: 0x1d
@@ -4031,7 +4039,7 @@ function brloadoutcratecapturecallback(player) {
     self notify("brLoadoutCapture", player);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba05
 // Size: 0x1e5
@@ -4056,7 +4064,7 @@ function brloadoutcratepostcapture(player) {
         function_86f1096305a8c8f9(player);
     }
     self notify("brLoadoutPostCapture", player);
-    if (istrue(self.var_93a4478d44f7941e) || istrue(self.var_4cd5b8f62d173211)) {
+    if (istrue(self.strongholdcrate) || istrue(self.var_4cd5b8f62d173211)) {
         return;
     }
     if (self.numuses >= level.teamdata[player.team]["teamCount"]) {
@@ -4072,10 +4080,10 @@ function brloadoutcratepostcapture(player) {
         }
         thread destroycrate();
     }
-    namespace_aad14af462a74d08::function_8359cadd253f9604(player, "pickup_airdrop_crate", 1);
+    scripts/cp_mp/challenges::function_8359cadd253f9604(player, "pickup_airdrop_crate", 1);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbbf1
 // Size: 0x1ca
@@ -4086,9 +4094,9 @@ function function_86f1096305a8c8f9(player) {
                 [[ getsharedfunc("outline", "outlineDisable") ]](outlineid, self);
             }
             self.playeroutlines = array_remove(self.playeroutlines, outlineid);
-            var_557d59ebff7d41b2 = level.teamdata[player.team]["players"];
-            var_7e9c8818d60b887a = var_557d59ebff7d41b2;
-            foreach (teammate in var_557d59ebff7d41b2) {
+            totalteamplayers = level.teamdata[player.team]["players"];
+            var_7e9c8818d60b887a = totalteamplayers;
+            foreach (teammate in totalteamplayers) {
                 if (array_contains(self.var_b3447241cb747d0b, teammate)) {
                     var_7e9c8818d60b887a = array_remove(var_7e9c8818d60b887a, teammate);
                 }
@@ -4103,7 +4111,7 @@ function function_86f1096305a8c8f9(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbdc2
 // Size: 0x33
@@ -4113,7 +4121,7 @@ function brloadoutcratedestroycallback(immediate) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbdfc
 // Size: 0x33
@@ -4123,7 +4131,7 @@ function giveweaponsfromdropbag(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbe36
 // Size: 0x36
@@ -4131,7 +4139,7 @@ function dropbrloadoutcrate(team, position, destination) {
     return dropcrate(undefined, team, "battle_royale_loadout", position, (0, randomfloat(360), 0), destination);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbe74
 // Size: 0x11f
@@ -4146,7 +4154,7 @@ function function_c5c61b985836f974() {
     leveldata.usefov = 360;
     leveldata.timeout = 60;
     leveldata.friendlyuseonly = 1;
-    leveldata.var_c75f6dfe8df28b58 = 5;
+    leveldata.maxusage = 5;
     leveldata.ownerusetime = 0.5;
     leveldata.otherusetime = 0.5;
     leveldata.activatecallback = &function_22501284ac235158;
@@ -4156,7 +4164,7 @@ function function_c5c61b985836f974() {
     leveldata.isteamonlycrate = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbf9a
 // Size: 0x38
@@ -4168,7 +4176,7 @@ function function_22501284ac235158(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbfd9
 // Size: 0x35
@@ -4178,7 +4186,7 @@ function function_a5d8804d96fe6a17(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc015
 // Size: 0x67
@@ -4188,12 +4196,12 @@ function function_d854bf5a8cd7daf2(player) {
     }
     self.numuses++;
     leveldata = getleveldata(self.cratetype);
-    if (self.numuses >= leveldata.var_c75f6dfe8df28b58) {
+    if (self.numuses >= leveldata.maxusage) {
         thread destroycrate();
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc083
 // Size: 0xd3
@@ -4213,13 +4221,13 @@ function function_63e71231fbc15aa9(owner, team, streakname, position, angles, de
     return scenenode;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc15e
 // Size: 0x14a
 function initbattleroyalec130airdropcratedata() {
     leveldata = getleveldata("battle_royale_c130_loot");
-    if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "plunder") {
+    if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "plunder") {
         leveldata.capturestring = "MP/DMZ_LOOT_CRATE_CAPTURE";
     } else {
         leveldata.capturestring = "MP/GENERIC_LOOT_CRATE_CAPTURE";
@@ -4239,11 +4247,11 @@ function initbattleroyalec130airdropcratedata() {
     leveldata.destroycallback = &brc130airdropcratedestroycallback;
     leveldata.cratephysicsoncallback = &brc130airdropcratephysicsoncallback;
     leveldata.destroyoncapture = 1;
-    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.isdropcrate = 1;
     leveldata.var_c23ca3472233553d = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc2af
 // Size: 0xc
@@ -4251,7 +4259,7 @@ function brc130airdropcrateactivatecallback(isfirstactivation) {
     
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc2c2
 // Size: 0xda
@@ -4272,7 +4280,7 @@ function brc130airdropcratecapturecallback(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc3a3
 // Size: 0x8a
@@ -4287,7 +4295,7 @@ function brc130airdropcratedestroycallback(immediate) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc434
 // Size: 0x1d
@@ -4295,59 +4303,59 @@ function brc130airdropcratephysicsoncallback() {
     self setscriptablepartstate(#"crate_audio", #"detach", 0);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc458
 // Size: 0x3e5
-function dropbrc130airdropcrate(dropposition, var_7afb56851b06f678, dropangles, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, nodropanim, team, var_cf11cd8c8b813faf) {
+function dropbrc130airdropcrate(dropposition, dropdestination, dropangles, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, nodropanim, team, var_cf11cd8c8b813faf) {
     var_dd3f2e9ec30744d5 = 250;
     var_c8ec5569be94e5c8 = level.c130airdrop_heightoverride;
-    var_edf964e253d1f375 = 1000;
+    releaseoffset = 1000;
     var_55917b74a3b88b89 = 10500;
     var_843ccd48992e3408 = 7500;
     var_e0570c6b08e54443 = 3000;
-    var_195f5093227fe5b6 = var_7afb56851b06f678 + (0, 0, var_edf964e253d1f375);
-    var_16068a91a735db9f = "battle_royale_c130_loot";
+    releasedestination = dropdestination + (0, 0, releaseoffset);
+    droplootid = "battle_royale_c130_loot";
     if (isdefined(var_958bbdfed6f2e9ef)) {
-        var_16068a91a735db9f = var_958bbdfed6f2e9ef;
+        droplootid = var_958bbdfed6f2e9ef;
     }
     if (!isdefined(nodropanim)) {
         nodropanim = 0;
     }
-    crate = createcrate(undefined, team, var_16068a91a735db9f, dropposition, (0, 0, 0), var_7afb56851b06f678, undefined, 0);
+    crate = createcrate(undefined, team, droplootid, dropposition, (0, 0, 0), dropdestination, undefined, 0);
     if (isdefined(crate)) {
         crate.skipminimapicon = 1;
-        if (!nodropanim && var_195f5093227fe5b6[2] < dropposition[2]) {
-            var_2c8936d08f85c5c1 = undefined;
-            var_ff42e8ba492b161a = distance(dropposition, var_195f5093227fe5b6);
+        if (!nodropanim && releasedestination[2] < dropposition[2]) {
+            animid = undefined;
+            var_ff42e8ba492b161a = distance(dropposition, releasedestination);
             if (var_ff42e8ba492b161a >= var_55917b74a3b88b89) {
-                var_2c8936d08f85c5c1 = "brc130_drop_high";
+                animid = "brc130_drop_high";
             } else if (var_ff42e8ba492b161a >= var_843ccd48992e3408) {
-                var_2c8936d08f85c5c1 = "brc130_drop_med";
+                animid = "brc130_drop_med";
             } else if (var_ff42e8ba492b161a >= var_e0570c6b08e54443) {
-                var_2c8936d08f85c5c1 = "brc130_drop_low";
+                animid = "brc130_drop_low";
             }
-            if (isdefined(var_2c8936d08f85c5c1)) {
-                var_7ac104d5971b61a5 = 1000;
-                scenenode = spawn("script_model", var_195f5093227fe5b6 + (0, 0, var_7ac104d5971b61a5));
+            if (isdefined(animid)) {
+                animzoffset = 1000;
+                scenenode = spawn("script_model", releasedestination + (0, 0, animzoffset));
                 scenenode.angles = dropangles;
                 scenenode setmodel("tag_origin");
                 crate.animname = "care_package";
-                crate.dropanim = level.scr_anim[crate.animname][var_2c8936d08f85c5c1];
+                crate.dropanim = level.scr_anim[crate.animname][animid];
                 crate.animlength = getanimlength(crate.dropanim);
-                crate namespace_bc4a4b9456315863::setanimtree();
+                crate scripts/common/anim::setanimtree();
                 if (isdefined(team)) {
                     namespace_c5f7e08ad7ea4280::function_8ba05ef17e2b7d10(crate, team);
                 }
                 chute = spawn("script_model", crate.origin);
                 chute.angles = crate.angles;
                 chute.animname = "care_package_chute";
-                chute.dropanim = level.scr_anim[chute.animname][var_2c8936d08f85c5c1];
+                chute.dropanim = level.scr_anim[chute.animname][animid];
                 chute.animlength = getanimlength(chute.dropanim);
                 chute setmodel("veh9_mil_lnd_parachute_carepackage_br");
-                chute namespace_bc4a4b9456315863::setanimtree();
-                scenenode thread namespace_bc4a4b9456315863::anim_single_solo(crate, var_2c8936d08f85c5c1);
-                scenenode thread namespace_bc4a4b9456315863::anim_single_solo(chute, var_2c8936d08f85c5c1);
+                chute scripts/common/anim::setanimtree();
+                scenenode thread scripts/common/anim::anim_single_solo(crate, animid);
+                scenenode thread scripts/common/anim::anim_single_solo(chute, animid);
                 crate thread watchbrc130aidropcrateanimend();
                 chute thread watchbrc130airdropchuteanimend(scenenode);
             } else {
@@ -4372,14 +4380,14 @@ function dropbrc130airdropcrate(dropposition, var_7afb56851b06f678, dropangles, 
         if (isdefined(var_cf11cd8c8b813faf)) {
             var_946146964fc4025f = var_cf11cd8c8b813faf;
         }
-        crate.smokesignal = spawn("script_model", var_7afb56851b06f678);
+        crate.smokesignal = spawn("script_model", dropdestination);
         crate.smokesignal setmodel(var_946146964fc4025f);
         crate.smokesignal setscriptablepartstate(#"smoke_signal", #"on", 0);
     }
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc845
 // Size: 0x39
@@ -4393,7 +4401,7 @@ function watchbrc130aidropcrateanimend() {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc885
 // Size: 0x35
@@ -4408,13 +4416,13 @@ function watchbrc130airdropchuteanimend(scenenode) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc8c1
 // Size: 0x133
 function initbattleroyalelootchoppercratedata() {
     leveldata = getleveldata("battle_royale_chopper_loot");
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     } else {
         leveldata.capturestring = "MP/DMZ_PLUNDER_CRATE_CAPTURE";
@@ -4434,10 +4442,10 @@ function initbattleroyalelootchoppercratedata() {
     leveldata.capturecallback = &brlootchoppercratecapturecallback;
     leveldata.destroycallback = &brlootchoppercratedestroycallback;
     leveldata.destroyoncapture = 1;
-    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.isdropcrate = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc9fb
 // Size: 0xc
@@ -4445,7 +4453,7 @@ function brlootchoppercrateactivatecallback(isfirstactivation) {
     
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xca0e
 // Size: 0xb4
@@ -4463,7 +4471,7 @@ function brlootchoppercratecapturecallback(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcac9
 // Size: 0x64
@@ -4475,7 +4483,7 @@ function brlootchoppercratedestroycallback(immediate) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcb34
 // Size: 0xee
@@ -4496,7 +4504,7 @@ function dropbrlootchoppercrate(position, destination) {
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcc2a
 // Size: 0xb8
@@ -4512,7 +4520,7 @@ function dropbrlootchoppercrateforpublicevent(position, destination) {
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xccea
 // Size: 0x108
@@ -4533,10 +4541,10 @@ function function_ddd270c88107faf9() {
     leveldata.capturecallback = &function_60b85568611b92f3;
     leveldata.destroycallback = &function_1ecb1fecb6f56ecf;
     leveldata.destroyoncapture = 1;
-    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.isdropcrate = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcdf9
 // Size: 0xc
@@ -4544,7 +4552,7 @@ function function_bcae3fa5db092dd4(isfirstactivation) {
     
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xce0c
 // Size: 0x8c
@@ -4559,7 +4567,7 @@ function function_60b85568611b92f3(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xce9f
 // Size: 0x64
@@ -4571,7 +4579,7 @@ function function_1ecb1fecb6f56ecf(immediate) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcf0a
 // Size: 0xb8
@@ -4587,7 +4595,7 @@ function function_4671cbee65d1615d(position, destination) {
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcfca
 // Size: 0x124
@@ -4610,10 +4618,10 @@ function function_53a94fee5954af57() {
     leveldata.capturecallback = &function_93bbdfaba40c778a;
     leveldata.destroycallback = &function_66ee09b2e374fb6e;
     leveldata.destroyoncapture = 1;
-    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.isdropcrate = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd0f5
 // Size: 0x33
@@ -4623,7 +4631,7 @@ function function_bf892d4093c5f9d3(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd12f
 // Size: 0x8e
@@ -4639,7 +4647,7 @@ function function_93bbdfaba40c778a(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd1c4
 // Size: 0x66
@@ -4652,7 +4660,7 @@ function function_66ee09b2e374fb6e(immediate) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd231
 // Size: 0xda
@@ -4673,7 +4681,7 @@ function function_9feb10c0096cc4d6(position, destination) {
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd313
 // Size: 0x128
@@ -4701,7 +4709,7 @@ function initplundercratedata() {
     leveldata.timeout = undefined;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd442
 // Size: 0x2a
@@ -4711,7 +4719,7 @@ function getplcratedata(contents) {
     return data;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd474
 // Size: 0x3e
@@ -4720,7 +4728,7 @@ function placeplcrate(contents, position, angles) {
     return crate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd4ba
 // Size: 0x128
@@ -4744,7 +4752,7 @@ function initarmcratedata() {
     addarmcratedata("gunship", undefined, 2, 30);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd5e9
 // Size: 0x69
@@ -4754,7 +4762,7 @@ function addarmcratedata(streakname, capturestring, defconlevel, weight) {
     level.cratedata.armcapturestrings[streakname] = capturestring;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd659
 // Size: 0x2a
@@ -4764,7 +4772,7 @@ function getarmcratedatabystreakname(streakname) {
     return data;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd68b
 // Size: 0x57
@@ -4776,7 +4784,7 @@ function armcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd6e9
 // Size: 0x57
@@ -4786,7 +4794,7 @@ function armcratecapturecallback(player) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd747
 // Size: 0x7e
@@ -4802,7 +4810,7 @@ function getrandomarmkillstreak(team) {
     return streakname;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd7cd
 // Size: 0xd4
@@ -4826,7 +4834,7 @@ function getarmkillsteakstoexcludebyteamdefconlevel(team) {
     return var_59f9b4ec41bab131;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd8a9
 // Size: 0xfe
@@ -4846,7 +4854,7 @@ function droparmcratefromscriptedheli(team, streakname, position, angles, destin
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd9ae
 // Size: 0x134
@@ -4873,7 +4881,7 @@ function function_a3299432ddb721e3() {
     function_c035e11237e84114("juggernaut", 10);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdae9
 // Size: 0x2b
@@ -4881,7 +4889,7 @@ function function_c035e11237e84114(streakname, weight) {
     level.cratedata.var_332809acea23b57[streakname] = weight;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb1b
 // Size: 0x57
@@ -4893,7 +4901,7 @@ function function_d8a8e185cfa2de1b(isfirstactivation) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb79
 // Size: 0x6b
@@ -4908,7 +4916,7 @@ function function_5d1369bfc4efd8b7(team) {
     return streakname;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdbec
 // Size: 0x2a
@@ -4918,7 +4926,7 @@ function function_506b410ce5a55cb3(streakname) {
     return data;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdc1e
 // Size: 0xfe
@@ -4938,13 +4946,13 @@ function function_99cc30ea8be5b2a6(team, streakname, position, angles, destinati
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdd23
 // Size: 0x140
 function initbattleroyalejuggernautcratedata() {
     leveldata = getleveldata("battle_royale_juggernaut");
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     } else {
         leveldata.capturestring = "KILLSTREAKS_HINTS/JUGG_CRATE_PICKUP";
@@ -4964,22 +4972,22 @@ function initbattleroyalejuggernautcratedata() {
     leveldata.activatecallback = &brjuggernautcrateactivatecallback;
     leveldata.cratephysicsoncallback = &brjuggernautcratephysicsoncallback;
     leveldata.destroyoncapture = 1;
-    leveldata.var_28eb33ffd1aa3e63 = 1;
+    leveldata.isdropcrate = 1;
     leveldata.var_c23ca3472233553d = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xde6a
 // Size: 0x3c
 function brjuggernautcrateactivatecallback(isfirstactivation) {
-    namespace_3fad206953a935fe::oncrateactivated(isfirstactivation);
+    scripts/cp_mp/killstreaks/juggernaut::oncrateactivated(isfirstactivation);
     if (issharedfuncdefined("br_juggernaut", "onCrateActivate")) {
         self [[ getsharedfunc("br_juggernaut", "onCrateActivate") ]](isfirstactivation);
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdead
 // Size: 0x94
@@ -4992,10 +5000,10 @@ function brjuggernautcratecapturecallback(player) {
     if (issharedfuncdefined("br_juggernaut", "onCrateUse")) {
         self [[ getsharedfunc("br_juggernaut", "onCrateUse") ]](player);
     }
-    namespace_3fad206953a935fe::oncratecaptured(player);
+    scripts/cp_mp/killstreaks/juggernaut::oncratecaptured(player);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf48
 // Size: 0x84
@@ -5010,7 +5018,7 @@ function brjuggernautcratedestroycallback(immediate) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdfd3
 // Size: 0x2e
@@ -5018,7 +5026,7 @@ function brjuggernautcratephysicsoncallback(position, destination) {
     self setscriptablepartstate(#"crate_audio", #"detach", 0);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe008
 // Size: 0x50
@@ -5027,24 +5035,24 @@ function dropjuggernautcrate(team, position, destination) {
     return dropcrate(undefined, team, "battle_royale_juggernaut", position, (0, randomfloat(360), 0), destination, streakinfo, 1);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe060
 // Size: 0xd9
 function spawnjuggernautcrateatposition(pos, var_e648e96614161011) {
-    crate = namespace_6c578d6ef48f10ef::dropjuggernautcrate(self.team, pos + (0, 0, 4096), pos + (0, 0, 512));
+    crate = scripts/cp_mp/killstreaks/airdrop::dropjuggernautcrate(self.team, pos + (0, 0, 4096), pos + (0, 0, 512));
     /#
         assert(isdefined(crate));
     #/
     crate endon("death");
     enablejuggernautcrateobjective(crate);
     choosejuggernautcratemodel(crate);
-    var_3be0d54d30a3593c = [];
+    voplayers = [];
     foreach (teammate in level.teamdata[self.team]["alivePlayers"]) {
     }
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe140
 // Size: 0x2d
@@ -5053,7 +5061,7 @@ function enablejuggernautcrateobjective(crate) {
     crate setscriptablepartstate(#"objective_map", #"jugg_world");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe174
 // Size: 0x2d
@@ -5062,30 +5070,30 @@ function choosejuggernautcratemodel(crate) {
     crate setscriptablepartstate(#"model", #"choose");
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe1a8
 // Size: 0x89
 function juggcanusecrate(cratetype) {
-    var_4418a5e6f9d1e943 = 1;
+    canusecrate = 1;
     switch (cratetype) {
     case #"hash_b597e9a707180461":
     case #"hash_d8d9a61afc7a655b":
-        var_4418a5e6f9d1e943 = 0;
+        canusecrate = 0;
         break;
     case #"hash_d87004954b36d6e1":
         if (issharedfuncdefined("juggernaut", "canUseWeaponPickups")) {
-            canuseweaponpickups = self [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
-            if (!istrue(canuseweaponpickups)) {
-                var_4418a5e6f9d1e943 = 0;
+            canUseWeaponPickups = self [[ getsharedfunc("juggernaut", "canUseWeaponPickups") ]]();
+            if (!istrue(canUseWeaponPickups)) {
+                canusecrate = 0;
             }
         }
         break;
     }
-    return var_4418a5e6f9d1e943;
+    return canusecrate;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe239
 // Size: 0x1d
@@ -5093,7 +5101,7 @@ function function_3c4492046080faa9() {
     return ter_op(istrue(self.inwater), 50, 5);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe25e
 // Size: 0x1d
@@ -5101,7 +5109,7 @@ function function_f7e3f128296ac3b6() {
     return ter_op(istrue(self.inwater), 5, 1);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe283
 // Size: 0x17
@@ -5109,7 +5117,7 @@ function function_d4833b6c916db9c6() {
     return ter_op(istrue(self.inwater), 3, 6);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xe2a2
 // Size: 0x3a
@@ -5118,7 +5126,7 @@ function private function_c857ac89588adf6f() {
     return ter_op(istrue(self.inwater), 5, leveldata.headiconoffset);
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe2e4
 // Size: 0x7a
@@ -5133,7 +5141,7 @@ function function_19dc247eaaf9da8f() {
     leveldata.timeout = 0.1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe365
 // Size: 0xd4
@@ -5154,7 +5162,7 @@ function function_56e93fd2282a71ce() {
     leveldata.var_c23ca3472233553d = 1;
 }
 
-// Namespace airdrop/namespace_6c578d6ef48f10ef
+// Namespace airdrop / scripts/cp_mp/killstreaks/airdrop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe440
 // Size: 0x34

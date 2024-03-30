@@ -14,7 +14,7 @@
 
 #namespace rally_point;
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x398
 // Size: 0x3
@@ -22,7 +22,7 @@ function init() {
     
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a2
 // Size: 0x90
@@ -41,7 +41,7 @@ function makerallypoint(object) {
     thread watchforrallypointdeath(object);
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x439
 // Size: 0x88
@@ -56,7 +56,7 @@ function registerplayerwithrallypoint(player, rallypoint) {
     rallypoint.registeredrallypointplayers[rallypoint.registeredrallypointplayers.size] = player;
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c8
 // Size: 0xc2
@@ -65,7 +65,9 @@ function watchforplayerdeath(rallypoint) {
         foreach (player in rallypoint.registeredrallypointplayers) {
             if (!isdefined(player)) {
                 rallypoint.registeredrallypointplayers = array_remove(rallypoint.registeredrallypointplayers, player);
-            } else if (!isreallyalive(player) && isdefined(player.rallypoint) && !player.beingrallyrespawned) {
+                continue;
+            }
+            if (!isreallyalive(player) && isdefined(player.rallypoint) && !player.beingrallyrespawned) {
                 prepareplayerforrespawn(player, rallypoint);
             }
         }
@@ -73,22 +75,22 @@ function watchforplayerdeath(rallypoint) {
     }
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x591
 // Size: 0x1d7
 function prepareplayerforrespawn(player, rallypoint) {
     level endon("game_ended");
     player endon("team_eliminated");
-    var_eea4fd6eee3beb45 = [0:"rally_point_respawn", 1:"rally_point_destroyed"];
-    msg = player waittill_any_in_array_or_timeout(var_eea4fd6eee3beb45, rallypoint.autorespawntime);
+    messagearray = ["rally_point_respawn", "rally_point_destroyed"];
+    msg = player waittill_any_in_array_or_timeout(messagearray, rallypoint.autorespawntime);
     if (msg == "rally_point_destroyed") {
         if (isdefined(player) || !isreallyalive(player)) {
             return;
         }
-        message = player namespace_58fb4f2e73fd41a0::getlowermessage();
+        message = player scripts/mp/utility/lower_message::getlowermessage();
         timeremaining = message.time;
-        player namespace_58fb4f2e73fd41a0::setlowermessageomnvar("rally_wait_revive", int(gettime() + self.timeuntilbleedout * 1000));
+        player scripts/mp/utility/lower_message::setlowermessageomnvar("rally_wait_revive", int(gettime() + self.timeuntilbleedout * 1000));
         waitframe();
         player.lowertimer settimer(player.timelefttospawnaction);
         return;
@@ -102,7 +104,7 @@ function prepareplayerforrespawn(player, rallypoint) {
     player.forcespawnangles = (0, 90, 0);
     player notify("last_stand_revived");
     player _freezecontrols(0);
-    player thread namespace_7db13bdf599e41a6::respawn();
+    player thread scripts/mp/teamrevive::respawn();
     player setclientomnvar("ui_securing", 0);
     player setclientomnvar("ui_securing_progress", 0.01);
     player.ui_securing = undefined;
@@ -112,7 +114,7 @@ function prepareplayerforrespawn(player, rallypoint) {
     player.beingrallyrespawned = 0;
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76f
 // Size: 0x77
@@ -124,35 +126,35 @@ function watchforrallypointdeath(rallypoint) {
     }
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0x1b
 function debugprint(text) {
     /#
-        if (1) {
+        if (true) {
             println(text);
         }
     #/
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x80f
 // Size: 0x109
 function rallypointvehicle_activate(vehicle) {
-    spawndata = namespace_f64231d5b7a2c3c4::getvehiclespawndata(vehicle);
+    spawndata = scripts/cp_mp/vehicles/vehicle_tracking::getvehiclespawndata(vehicle);
     team = vehicle.team;
     ref = spawndata.ref;
     vehicle.israllypointvehicle = 1;
-    thread namespace_8e28f8b325a83325::vehicleindangertracking(vehicle);
-    namespace_8e28f8b325a83325::adddynamicspawnarea(team, vehicle, ref, (0, 0, 128));
+    thread scripts/mp/spawnselection::vehicleindangertracking(vehicle);
+    scripts/mp/spawnselection::adddynamicspawnarea(team, vehicle, ref, (0, 0, 128));
     if (istrue(level.var_b307135dbcef5a38)) {
         level.var_694388259afb589b[team][level.var_694388259afb589b[team].size] = ref;
-        namespace_8e28f8b325a83325::setspawnlocations(level.var_694388259afb589b[team], team);
+        scripts/mp/spawnselection::setspawnlocations(level.var_694388259afb589b[team], team);
     } else {
         level.spawnareas[team][level.spawnareas[team].size] = ref;
-        namespace_8e28f8b325a83325::setspawnlocations(level.spawnareas[team], team);
+        scripts/mp/spawnselection::setspawnlocations(level.spawnareas[team], team);
     }
     vehicle.ref = ref;
     rallypoint_activatevehiclemarker(vehicle);
@@ -160,7 +162,7 @@ function rallypointvehicle_activate(vehicle) {
     thread rallypoint_wathcforenemydiscovery(vehicle);
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x91f
 // Size: 0xc
@@ -168,26 +170,26 @@ function rallypointvehicle_deactivate(vehicle) {
     
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x932
 // Size: 0xec
 function rallypoint_showafterprematch(vehicle) {
     vehicle endon("death");
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     foreach (player in level.players) {
         if (player.team == vehicle.team) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
-            var_328c7313a47e3c6b = namespace_dace9d390bc4a290::vehicle_spawn_getleveldataforvehicle(vehicle namespace_1f188a13f7e79610::function_d93ec4635290febd()).var_328c7313a47e3c6b;
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
+            var_328c7313a47e3c6b = scripts/cp_mp/vehicles/vehicle_spawn::vehicle_spawn_getleveldataforvehicle(vehicle scripts/cp_mp/vehicles/vehicle::function_d93ec4635290febd()).var_328c7313a47e3c6b;
             /#
                 assert(isdefined(var_328c7313a47e3c6b) && var_328c7313a47e3c6b != "", "rallySpawnReference was not set for a rally vehicle. Set it in the vehicle bundle - see the MP Spawn Info section");
             #/
-            player namespace_58fb4f2e73fd41a0::setlowermessageomnvar(var_328c7313a47e3c6b, undefined, 5);
+            player scripts/mp/utility/lower_message::setlowermessageomnvar(var_328c7313a47e3c6b, undefined, 5);
         }
     }
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa25
 // Size: 0xde
@@ -199,38 +201,38 @@ function rallypoint_watchforvehicledeath(vehicle) {
         level.spawnareas[vehicle.team] = array_remove(level.spawnareas[vehicle.team], vehicle.ref);
     }
     rallypoint_deacivatevehiclemarker(vehicle);
-    namespace_8e28f8b325a83325::removedynamicspawnarea(vehicle.team, vehicle.ref);
-    namespace_8e28f8b325a83325::removespawnlocation(vehicle.ref, vehicle.team);
+    scripts/mp/spawnselection::removedynamicspawnarea(vehicle.team, vehicle.ref);
+    scripts/mp/spawnselection::removespawnlocation(vehicle.ref, vehicle.team);
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb0a
 // Size: 0x2dc
 function rallypoint_activatevehiclemarker(vehicle) {
     visibility = "friendly";
     origin = vehicle.origin + (0, 0, 128);
-    marker = namespace_19b4203b51d56488::createobjidobject(origin, "neutral", (0, 0, 0), undefined, visibility, 0);
-    namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(marker.objidnum, vehicle.team);
+    marker = scripts/mp/gameobjects::createobjidobject(origin, "neutral", (0, 0, 0), undefined, visibility, 0);
+    scripts/mp/objidpoolmanager::update_objective_ownerteam(marker.objidnum, vehicle.team);
     vehicle.marker = marker;
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (scripts/mp/flags::gameflag("prematch_done")) {
         foreach (player in level.players) {
             if (player.team == vehicle.team) {
-                namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
-                var_328c7313a47e3c6b = vehicle_spawn_getleveldataforvehicle(vehicle namespace_1f188a13f7e79610::function_d93ec4635290febd()).var_328c7313a47e3c6b;
+                scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
+                var_328c7313a47e3c6b = vehicle_spawn_getleveldataforvehicle(vehicle scripts/cp_mp/vehicles/vehicle::function_d93ec4635290febd()).var_328c7313a47e3c6b;
                 /#
                     assert(isdefined(var_328c7313a47e3c6b) && var_328c7313a47e3c6b != "", "rallySpawnReference was not set for a rally vehicle. Set it in the vehicle bundle - see the MP Spawn Info section");
                 #/
-                player namespace_58fb4f2e73fd41a0::setlowermessageomnvar(var_328c7313a47e3c6b, undefined, 5);
+                player scripts/mp/utility/lower_message::setlowermessageomnvar(var_328c7313a47e3c6b, undefined, 5);
             }
         }
     } else {
-        namespace_5a22b6f3a56f7e9b::objective_playermask_hidefromall(marker.objidnum);
+        scripts/mp/objidpoolmanager::objective_playermask_hidefromall(marker.objidnum);
         thread rallypoint_showafterprematch(vehicle);
     }
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(marker.objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_intro(marker.objidnum, 0);
     marker.lockupdatingicons = 0;
-    namespace_5a22b6f3a56f7e9b::objective_pin_global(marker.objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_pin_global(marker.objidnum, 0);
     icon = "hud_icon_minimap_vehicle_apc";
     switch (vehicle.vehiclename) {
     case #"hash_41afa3eacdeba917":
@@ -247,32 +249,32 @@ function rallypoint_activatevehiclemarker(vehicle) {
         icon = "hud_icon_minimap_vehicle_apc";
         break;
     }
-    namespace_5a22b6f3a56f7e9b::update_objective_icon(marker.objidnum, icon);
-    namespace_5a22b6f3a56f7e9b::update_objective_setbackground(marker.objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::update_objective_onentity(marker.objidnum, vehicle);
-    namespace_5a22b6f3a56f7e9b::update_objective_setzoffset(vehicle.marker.objidnum, 128);
-    namespace_5a22b6f3a56f7e9b::update_objective_state(vehicle.marker.objidnum, "invisible");
+    scripts/mp/objidpoolmanager::update_objective_icon(marker.objidnum, icon);
+    scripts/mp/objidpoolmanager::update_objective_setbackground(marker.objidnum, 0);
+    scripts/mp/objidpoolmanager::update_objective_onentity(marker.objidnum, vehicle);
+    scripts/mp/objidpoolmanager::update_objective_setzoffset(vehicle.marker.objidnum, 128);
+    scripts/mp/objidpoolmanager::update_objective_state(vehicle.marker.objidnum, "invisible");
     marker.lockupdatingicons = 1;
     vehicle.marker = marker;
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xded
 // Size: 0x50
 function rallypoint_deacivatevehiclemarker(vehicle) {
-    vehicle.marker namespace_19b4203b51d56488::setvisibleteam("none");
-    vehicle.marker namespace_19b4203b51d56488::releaseid();
+    vehicle.marker scripts/mp/gameobjects::setvisibleteam("none");
+    vehicle.marker scripts/mp/gameobjects::releaseid();
     vehicle.marker.visibleteam = "none";
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe44
 // Size: 0x73
 function rallypoint_wathcforenemydiscovery(vehicle) {
     vehicle endon("death");
-    while (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    while (!scripts/mp/flags::gameflag("prematch_done")) {
         waitframe();
     }
     var_a25ca362bcc21c2d = spawn("trigger_radius", vehicle.origin - (0, 0, 512), 0, 1024, 1536);
@@ -281,14 +283,14 @@ function rallypoint_wathcforenemydiscovery(vehicle) {
     var_a25ca362bcc21c2d delete();
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xebe
 // Size: 0xeb
 function watchrallytriggeruse(vehicle) {
     self endon("rallyPoint_revealed");
     vehicle endon("death");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         waitframe();
         if (!isplayer(player)) {
@@ -302,19 +304,19 @@ function watchrallytriggeruse(vehicle) {
         }
         vehicle.revealed = 1;
         foreach (plr in level.players) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(vehicle.marker.objidnum, plr);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(vehicle.marker.objidnum, plr);
         }
         self notify("rallyPoint_revealed");
     }
 }
 
-// Namespace rally_point/namespace_fdd1a79841ab3fe7
+// Namespace rally_point / scripts/mp/rally_point
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfb0
 // Size: 0xe7
 function rallypoint_showtoplayer(player) {
     player endon("death_or_disconnect");
-    while (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    while (!scripts/mp/flags::gameflag("prematch_done")) {
         waitframe();
     }
     while (!isdefined(player.team) || player.team == "spectator") {
@@ -326,7 +328,7 @@ function rallypoint_showtoplayer(player) {
                 continue;
             }
             if (player.team == vehicle.team) {
-                namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
+                scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
             }
         }
     }

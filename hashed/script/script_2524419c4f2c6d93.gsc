@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_60a2d1d0ec8353a7;
 
-// Namespace namespace_60a2d1d0ec8353a7/namespace_fd55f844ee62daaf
+// Namespace namespace_60a2d1d0ec8353a7 / namespace_fd55f844ee62daaf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x68
 // Size: 0x45

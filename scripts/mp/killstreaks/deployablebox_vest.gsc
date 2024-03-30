@@ -8,7 +8,7 @@
 
 #namespace namespace_3f74497c7fa61c36;
 
-// Namespace namespace_3f74497c7fa61c36/namespace_2bbc98fc98b81309
+// Namespace namespace_3f74497c7fa61c36 / scripts/mp/killstreaks/deployablebox_vest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x273
 // Size: 0x1fa
@@ -48,36 +48,36 @@ function init() {
     level.deployable_box["deployable_vest"] = [];
 }
 
-// Namespace namespace_3f74497c7fa61c36/namespace_2bbc98fc98b81309
+// Namespace namespace_3f74497c7fa61c36 / scripts/mp/killstreaks/deployablebox_vest
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x474
 // Size: 0x58
 function tryusedeployablevest(lifeid, streakname) {
-    result = namespace_ba66181036094c7e::begindeployableviamarker(lifeid, "deployable_vest");
+    result = scripts/mp/killstreaks/deployablebox::begindeployableviamarker(lifeid, "deployable_vest");
     if (!isdefined(result) || !result) {
-        return 0;
+        return false;
     }
     utility::trycall(level.matchdata_logkillstreakevent, "deployable_vest", self.origin);
-    return 1;
+    return true;
 }
 
-// Namespace namespace_3f74497c7fa61c36/namespace_2bbc98fc98b81309
+// Namespace namespace_3f74497c7fa61c36 / scripts/mp/killstreaks/deployablebox_vest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d4
 // Size: 0x14
-function canusedeployable(var_fbbab18b5a41c7cb) {
-    return !namespace_41cb45263e591751::haslightarmor(self);
+function canusedeployable(boxent) {
+    return !scripts/mp/lightarmor::haslightarmor(self);
 }
 
-// Namespace namespace_3f74497c7fa61c36/namespace_2bbc98fc98b81309
+// Namespace namespace_3f74497c7fa61c36 / scripts/mp/killstreaks/deployablebox_vest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f0
 // Size: 0x13
-function onusedeployable(var_fbbab18b5a41c7cb) {
-    namespace_282db5a41b643e19::setlightarmor();
+function onusedeployable(boxent) {
+    scripts/mp/perks/perkfunctions::setlightarmor();
 }
 
-// Namespace namespace_3f74497c7fa61c36/namespace_2bbc98fc98b81309
+// Namespace namespace_3f74497c7fa61c36 / scripts/mp/killstreaks/deployablebox_vest
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x50a
 // Size: 0x45

@@ -9,7 +9,7 @@
 
 #namespace teams;
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x504
 // Size: 0x69
@@ -23,7 +23,7 @@ function getteamdata(team, property) {
     return level.teamdata[team][property];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x575
 // Size: 0x83
@@ -40,7 +40,7 @@ function setteamdata(team, property, value) {
     level.teamdata[team][property] = value;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ff
 // Size: 0x91
@@ -57,7 +57,7 @@ function modifyteamdata(team, property, value) {
     level.teamdata[team][property] = level.teamdata[team][property] + value;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x697
 // Size: 0x44
@@ -68,7 +68,7 @@ function function_ef7cf07ba921200e(team, property) {
     return isdefined(level.teamdata[team][property]);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e3
 // Size: 0xca
@@ -90,7 +90,7 @@ function addplayertoteam(player, team, var_cf5d3f8f0d10e600) {
     }
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7b4
 // Size: 0xae
@@ -109,7 +109,7 @@ function removeplayerfromteam(player, team) {
     #/
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x869
 // Size: 0x185
@@ -137,7 +137,7 @@ function addtoteamlives(player, team, var_28335de6505d7e0c, context) {
     }
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f5
 // Size: 0x1a5
@@ -167,20 +167,20 @@ function removefromteamlives(player, team, var_28335de6505d7e0c, context) {
     }
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba1
 // Size: 0x281
 function validatealivecount(eventtype, team, player, context) {
-    var_8129a2cbd6a585d4 = getdvarint(@"hash_2bfdcc415ed38338", 1);
-    context = function_53c4c53197386572(context, "?");
+    runfixup = getdvarint(@"hash_2bfdcc415ed38338", 1);
+    context = default_to(context, "?");
     var_a6b269d3a73b87f9 = 0;
     var_1124b7ac7d344fed = 0;
     if (isdefined(eventtype)) {
         if (eventtype == "disconnect" || eventtype == "extract") {
             var_a6b269d3a73b87f9 = array_contains(level.teamdata[team]["alivePlayers"], player);
-            if (var_a6b269d3a73b87f9 && var_8129a2cbd6a585d4) {
-                player namespace_99ac021a7547cae3::removefromalivecount(1, "validateAliveCount");
+            if (var_a6b269d3a73b87f9 && runfixup) {
+                player scripts/mp/playerlogic::removefromalivecount(1, "validateAliveCount");
             }
         } else if (eventtype == "add") {
             var_fd5e7a241044b880 = array_remove_duplicates(level.teamdata[team]["alivePlayers"]);
@@ -206,9 +206,9 @@ function validatealivecount(eventtype, team, player, context) {
                 assertmsg(message);
             #/
         #/
-        dlog_recordevent("dlog_event_alive_count_mismatch", [0:"alive_players", 1:aliveplayers, 2:"alive_count", 3:alivecount, 4:"event", 5:eventtype, 6:"team", 7:team, 8:"player_xuid", 9:player getxuid(), 10:"player_name", 11:player.name]);
-        namespace_9c840bb9f2ecbf00::demoforcesre(message);
-        if (var_8129a2cbd6a585d4) {
+        dlog_recordevent("dlog_event_alive_count_mismatch", ["alive_players", aliveplayers, "alive_count", alivecount, "event", eventtype, "team", team, "player_xuid", player getxuid(), "player_name", player.name]);
+        scripts/mp/utility/script::demoforcesre(message);
+        if (runfixup) {
             level.teamdata[team]["alivePlayers"] = array_remove_duplicates(level.teamdata[team]["alivePlayers"]);
             level.teamdata[team]["aliveCount"] = level.teamdata[team]["alivePlayers"].size;
             [[ level.updategameevents ]]();
@@ -216,104 +216,103 @@ function validatealivecount(eventtype, team, player, context) {
     }
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe29
 // Size: 0x42
-function getteamcount(team, var_7102f45d5f0b5834) {
-    if (istrue(var_7102f45d5f0b5834)) {
+function getteamcount(team, aliveonly) {
+    if (istrue(aliveonly)) {
         return level.teamdata[team]["alivePlayers"].size;
-    } else {
-        return level.teamdata[team]["players"].size;
     }
+    return level.teamdata[team]["players"].size;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe72
 // Size: 0x42
-function getenemyteams(var_68bb1f110ec06a58) {
+function getenemyteams(testteam) {
     /#
-        assertex(isgameplayteam(var_68bb1f110ec06a58), "Not a valid gameplay team: " + var_68bb1f110ec06a58);
+        assertex(isgameplayteam(testteam), "Not a valid gameplay team: " + testteam);
     #/
     teams = level.teamnamelist;
-    teams = array_remove(teams, var_68bb1f110ec06a58);
+    teams = array_remove(teams, testteam);
     return teams;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xebc
 // Size: 0xf8
-function getfriendlyplayers(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
+function getfriendlyplayers(testteam, aliveonly) {
     friends = [];
-    if (istrue(var_7102f45d5f0b5834)) {
-        foreach (player in level.teamdata[var_68bb1f110ec06a58]["alivePlayers"]) {
+    if (istrue(aliveonly)) {
+        foreach (player in level.teamdata[testteam]["alivePlayers"]) {
             if (isdefined(player) && isalive(player) && !isdefined(player.fauxdead)) {
                 friends[friends.size] = player;
             }
         }
     } else {
-        foreach (player in level.teamdata[var_68bb1f110ec06a58]["players"]) {
+        foreach (player in level.teamdata[testteam]["players"]) {
             friends[friends.size] = player;
         }
     }
     return friends;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfbc
 // Size: 0x154
-function getenemyplayers(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
+function getenemyplayers(testteam, aliveonly) {
     enemies = [];
-    var_b0c33d224b825287 = getenemyteams(var_68bb1f110ec06a58);
-    foreach (team in var_b0c33d224b825287) {
-        if (istrue(var_7102f45d5f0b5834)) {
+    enemyteams = getenemyteams(testteam);
+    foreach (team in enemyteams) {
+        if (istrue(aliveonly)) {
             foreach (player in level.teamdata[team]["alivePlayers"]) {
                 if (isdefined(player) && isalive(player) && !isdefined(player.fauxdead)) {
                     enemies[enemies.size] = player;
                 }
             }
-        } else {
-            foreach (player in level.teamdata[team]["players"]) {
-                enemies[enemies.size] = player;
-            }
+            continue;
+        }
+        foreach (player in level.teamdata[team]["players"]) {
+            enemies[enemies.size] = player;
         }
     }
     return enemies;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1118
 // Size: 0xcc
-function getsquadmates(var_68bb1f110ec06a58, var_d9aa850e7ee12ca3, var_7102f45d5f0b5834) {
-    if (function_d0e67bb0e7f430f8(var_68bb1f110ec06a58, var_d9aa850e7ee12ca3)) {
-        if (istrue(var_7102f45d5f0b5834)) {
-            var_607da387f3617ed1 = [];
-            foreach (player in level.squaddata[var_68bb1f110ec06a58][var_d9aa850e7ee12ca3].players) {
-                if (namespace_7e17181d03156026::isreallyalive(player)) {
-                    var_607da387f3617ed1[var_607da387f3617ed1.size] = player;
+function getsquadmates(testteam, testsquadindex, aliveonly) {
+    if (function_d0e67bb0e7f430f8(testteam, testsquadindex)) {
+        if (istrue(aliveonly)) {
+            squadmates = [];
+            foreach (player in level.squaddata[testteam][testsquadindex].players) {
+                if (scripts/mp/utility/player::isreallyalive(player)) {
+                    squadmates[squadmates.size] = player;
                 }
             }
-            return var_607da387f3617ed1;
+            return squadmates;
         } else {
-            return level.squaddata[var_68bb1f110ec06a58][var_d9aa850e7ee12ca3].players;
+            return level.squaddata[testteam][testsquadindex].players;
         }
     }
-    return getfriendlyplayers(var_68bb1f110ec06a58, var_7102f45d5f0b5834);
+    return getfriendlyplayers(testteam, aliveonly);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11ec
 // Size: 0x28
 function function_5b7802e04b6d946(player) {
-    return function_d0e67bb0e7f430f8(player.team, player.var_ff97225579de16a);
+    return function_d0e67bb0e7f430f8(player.team, player.sessionsquadid);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x121c
 // Size: 0x4c
@@ -321,20 +320,20 @@ function function_d0e67bb0e7f430f8(team, squadindex) {
     return isdefined(team) && isdefined(squadindex) && isdefined(level.squaddata) && isdefined(level.squaddata[team]) && isdefined(level.squaddata[team][squadindex]);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1270
 // Size: 0x86
-function getenemycount(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
+function getenemycount(testteam, aliveonly) {
     count = 0;
-    var_b0c33d224b825287 = getenemyteams(var_68bb1f110ec06a58);
-    foreach (team in var_b0c33d224b825287) {
-        count = count + getteamcount(team, istrue(var_7102f45d5f0b5834));
+    enemyteams = getenemyteams(testteam);
+    foreach (team in enemyteams) {
+        count = count + getteamcount(team, istrue(aliveonly));
     }
     return count;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12fe
 // Size: 0x98
@@ -344,15 +343,15 @@ function function_44a6f98cc3c0f5f4(team) {
     return var_7d247415a9640d07 && var_65c32dd267d39ddb;
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x139e
 // Size: 0x21
 function isgameplayteam(team) {
-    return isdefined(team) && function_fc64178f71375137(level.teamnamelist, team);
+    return isdefined(team) && arraycontains(level.teamnamelist, team);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13c7
 // Size: 0xf
@@ -360,7 +359,7 @@ function getfaction(team) {
     return game[team];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13de
 // Size: 0x19b
@@ -383,14 +382,14 @@ function function_dd622cd64f483958(teamref) {
         level.teamdata[teamref]["soundInfix"] = bundle.var_d5fbbcddd0fdfe3b;
     }
     if (!isdefined(level.teamdata[teamref]["customizationInfix"])) {
-        level.teamdata[teamref]["customizationInfix"] = bundle.customizationinfix;
+        level.teamdata[teamref]["customizationInfix"] = bundle.customizationInfix;
     }
     if (!isdefined(level.teamdata[teamref]["superFaction"])) {
         level.teamdata[teamref]["superFaction"] = bundle.var_47eff39aeeb815fb;
     }
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1580
 // Size: 0x67
@@ -402,7 +401,7 @@ function getteamname(teamref) {
     return level.teamdata[teamref]["teamName"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15ef
 // Size: 0x67
@@ -414,7 +413,7 @@ function getteamshortname(teamref) {
     return level.teamdata[teamref]["shortName"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x165e
 // Size: 0x67
@@ -426,7 +425,7 @@ function getteamicon(teamref) {
     return level.teamdata[teamref]["teamIcon"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16cd
 // Size: 0x67
@@ -438,7 +437,7 @@ function getteamheadicon(teamref) {
     return level.teamdata[teamref]["headIcon"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x173c
 // Size: 0x67
@@ -450,19 +449,19 @@ function getteamvoiceinfix(teamref) {
     return level.teamdata[teamref]["soundInfix"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17ab
 // Size: 0x67
 function getcustomizationprefix(teamref) {
     if (!isdefined(level.teamdata[teamref]["customizationInfix"])) {
         faction = getfaction(teamref);
-        level.teamdata[teamref]["customizationInfix"] = function_716b04a356073ae5(faction).customizationinfix;
+        level.teamdata[teamref]["customizationInfix"] = function_716b04a356073ae5(faction).customizationInfix;
     }
     return level.teamdata[teamref]["customizationInfix"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x181a
 // Size: 0x67
@@ -474,46 +473,46 @@ function function_f5f92738a88b4577(teamref) {
     return level.teamdata[teamref]["superFaction"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1889
 // Size: 0x1a9
 function getteamfactionsfrommap(teamref) {
-    var_55f7ec9f66f3468d = function_79404c2fcca1c184();
-    var_1e4ad72b4e8b7383 = undefined;
+    mapbundle = function_79404c2fcca1c184();
+    mapfaction = undefined;
     var_b051af13cb960b7a = %"hash_6a3e9234e0d7e26d";
     if (!isdefined(level.teamdata[teamref]["teamFaction"])) {
-        if (isdefined(var_55f7ec9f66f3468d)) {
+        if (isdefined(mapbundle)) {
             switch (teamref) {
             case #"hash_7c2d091e6337bf54":
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_43e060f09bf639b5;
+                mapfaction = mapbundle.team1faction;
                 break;
             case #"hash_5f54b9bf7583687f":
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_dd123f8d490e1eda;
+                mapfaction = mapbundle.team2faction;
                 break;
             case #"hash_11f9d28d306ceab7":
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_8141b672d3a01417;
+                mapfaction = mapbundle.team3faction;
                 break;
             case #"hash_de35e9ca17933bf1":
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_55a6b82843503e54;
+                mapfaction = mapbundle.team4faction;
                 break;
             case #"hash_ec4dd0ca1ec42f41":
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_7d9fcf9bd0c2a739;
+                mapfaction = mapbundle.team5faction;
                 break;
             case #"hash_cb45d282427f65a7":
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_8112676ea3c4f98e;
+                mapfaction = mapbundle.team6faction;
                 break;
             default:
-                var_1e4ad72b4e8b7383 = var_55f7ec9f66f3468d.var_dd123f8d490e1eda;
+                mapfaction = mapbundle.team2faction;
                 break;
             }
-            if (!isdefined(var_1e4ad72b4e8b7383) || var_1e4ad72b4e8b7383 == "") {
+            if (!isdefined(mapfaction) || mapfaction == "") {
                 /#
                     println("<unknown string>" + teamref + "<unknown string>" + level.mapname);
                 #/
-                var_1e4ad72b4e8b7383 = var_b051af13cb960b7a;
+                mapfaction = var_b051af13cb960b7a;
             }
-            level.teamdata[teamref]["teamFaction"] = var_1e4ad72b4e8b7383;
+            level.teamdata[teamref]["teamFaction"] = mapfaction;
         } else {
             /#
                 println("<unknown string>" + level.mapname);
@@ -524,16 +523,16 @@ function getteamfactionsfrommap(teamref) {
     return level.teamdata[teamref]["teamFaction"];
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a3a
 // Size: 0x2f
 function getcustomgametypeteammax() {
     gametype = getgametype();
-    return getdvarint(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "_teamcount"), -1);
+    return getdvarint(hashcat(@"hash_d98c82b5a26dc973", gametype, "_teamcount"), -1);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a71
 // Size: 0x2f
@@ -542,7 +541,7 @@ function function_f6728366ba30005c() {
     registersharedfunc("team_utility", "getEnemyPlayers", &getenemyplayers);
 }
 
-// Namespace teams/namespace_54d20dd0dd79277f
+// Namespace teams / scripts/mp/utility/teams
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aa7
 // Size: 0x76

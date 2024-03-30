@@ -8,7 +8,7 @@
 
 #namespace hostmigration;
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x1d4
@@ -34,7 +34,7 @@ function callback_hostmigration() {
     setdvar(@"hash_a8ee1540ced18a88", 1);
     level.hostmigration = 1;
     level notify("host_migration_begin");
-    namespace_d576b6dc7cef9c62::updatetimerpausedness();
+    scripts/mp/gamelogic::updatetimerpausedness();
     foreach (character in level.characters) {
         if (!isdefined(character)) {
             continue;
@@ -54,11 +54,11 @@ function callback_hostmigration() {
     visionsetthermal(game["thermal_vision"]);
     level.hostmigration = 0;
     level notify("host_migration_end");
-    namespace_d576b6dc7cef9c62::updatetimerpausedness();
+    scripts/mp/gamelogic::updatetimerpausedness();
     level thread [[ level.updategameevents ]]();
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x4d
@@ -72,17 +72,17 @@ function hostmigrationconnectwatcher() {
     }
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48e
 // Size: 0xeb
 function hostmigrationwait() {
     level endon("game_ended");
     level.ingraceperiod = 25;
-    thread namespace_d576b6dc7cef9c62::matchstarttimer("waiting_for_players", 20);
+    thread scripts/mp/gamelogic::matchstarttimer("waiting_for_players", 20);
     hostmigrationwaitforplayers();
     level.ingraceperiod = 10;
-    thread namespace_d576b6dc7cef9c62::matchstarttimer("match_resuming_in", 5);
+    thread scripts/mp/gamelogic::matchstarttimer("match_resuming_in", 5);
     wait(5);
     level.ingraceperiod = 0;
     foreach (p in level.players) {
@@ -94,7 +94,7 @@ function hostmigrationwait() {
     }
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x580
 // Size: 0xd
@@ -103,7 +103,7 @@ function hostmigrationwaitforplayers() {
     wait(15);
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x594
 // Size: 0xd3
@@ -122,7 +122,7 @@ function hostmigrationname(ent) {
     if (isplayer(ent)) {
         return ("player <" + entname + ">");
     }
-    if (isagent(ent) && namespace_36f464722d326bbe::isgameparticipant(ent)) {
+    if (isagent(ent) && scripts/cp_mp/utility/game_utility::isgameparticipant(ent)) {
         return ("participant agent <" + entnum + ">");
     }
     if (isagent(ent)) {
@@ -131,7 +131,7 @@ function hostmigrationname(ent) {
     return "unknown entity <" + entnum + ">";
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66f
 // Size: 0x8e
@@ -152,7 +152,7 @@ function hostmigrationtimerthink_internal() {
     level waittill("host_migration_end");
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x704
 // Size: 0x9b
@@ -174,7 +174,7 @@ function hostmigrationtimerthink() {
     }
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a6
 // Size: 0x31
@@ -187,7 +187,7 @@ function waittillhostmigrationdone() {
     return gettime() - starttime;
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7df
 // Size: 0x23
@@ -199,7 +199,7 @@ function waittillhostmigrationstarts(duration) {
     wait(duration);
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x809
 // Size: 0x9c
@@ -211,19 +211,17 @@ function waitlongdurationwithhostmigrationpause(duration) {
         assert(duration > 0);
     #/
     starttime = gettime();
-    endtime = gettime() + duration * 1000;
-    while (gettime() < endtime) {
+    for (endtime = gettime() + duration * 1000; gettime() < endtime; endtime = endtime + timepassed) {
         waittillhostmigrationstarts((endtime - gettime()) / 1000);
         if (isdefined(level.hostmigrationtimer)) {
             timepassed = waittillhostmigrationdone();
-            endtime = endtime + timepassed;
         }
     }
     waittillhostmigrationdone();
     return gettime() - starttime;
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8ad
 // Size: 0xa0
@@ -236,19 +234,17 @@ function waittill_notify_or_timeout_hostmigration_pause(msg, duration) {
         assert(duration > 0);
     #/
     starttime = gettime();
-    endtime = gettime() + duration * 1000;
-    while (gettime() < endtime) {
+    for (endtime = gettime() + duration * 1000; gettime() < endtime; endtime = endtime + timepassed) {
         waittillhostmigrationstarts((endtime - gettime()) / 1000);
         if (isdefined(level.hostmigrationtimer)) {
             timepassed = waittillhostmigrationdone();
-            endtime = endtime + timepassed;
         }
     }
     waittillhostmigrationdone();
     return gettime() - starttime;
 }
 
-// Namespace hostmigration/namespace_e323c8674b44c8f4
+// Namespace hostmigration / scripts/mp/hostmigration
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x955
 // Size: 0xb7

@@ -2,20 +2,20 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 
-#namespace namespace_cfae3bfa0fa8d1dd;
+#namespace vehicle_tracking;
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x710
 // Size: 0x15a
-function _spawnvehicle(spawndata, var_ee8da5624236dc89) {
+function _spawnvehicle(spawndata, faildata) {
     /#
         function_3a040ff591c32b5c(spawndata);
     #/
     if (!istrue(spawndata.startsuspended)) {
         if (!canspawnvehicle()) {
-            if (isdefined(var_ee8da5624236dc89)) {
-                var_ee8da5624236dc89.fail = "total_limit_exceeded";
+            if (isdefined(faildata)) {
+                faildata.fail = "total_limit_exceeded";
             }
             /#
                 if (istrue(level.var_4e89ea3291f12198)) {
@@ -27,8 +27,8 @@ function _spawnvehicle(spawndata, var_ee8da5624236dc89) {
     }
     vehicle = spawnvehicle(spawndata.modelname, spawndata.targetname, spawndata.vehicletype, spawndata.origin, spawndata.angles, spawndata.owner, spawndata.initialvelocity, spawndata.var_131ea86b569e731);
     if (!isdefined(vehicle)) {
-        if (isdefined(var_ee8da5624236dc89)) {
-            var_ee8da5624236dc89.fail = "code";
+        if (isdefined(faildata)) {
+            faildata.fail = "code";
         }
         /#
             if (istrue(level.var_4e89ea3291f12198)) {
@@ -42,12 +42,12 @@ function _spawnvehicle(spawndata, var_ee8da5624236dc89) {
     return vehicle;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x872
 // Size: 0x11f
 function _spawnhelicopter(owner, origin, angles, type, modelname) {
-    var_ee8da5624236dc89 = spawnstruct();
+    faildata = spawnstruct();
     spawndata = spawnstruct();
     spawndata.modelname = modelname;
     spawndata.vehicletype = type;
@@ -55,15 +55,15 @@ function _spawnhelicopter(owner, origin, angles, type, modelname) {
     spawndata.angles = angles;
     spawndata.owner = owner;
     if (!canspawnvehicle()) {
-        if (isdefined(var_ee8da5624236dc89)) {
-            var_ee8da5624236dc89.fail = "total_limit_exceeded";
+        if (isdefined(faildata)) {
+            faildata.fail = "total_limit_exceeded";
         }
         return undefined;
     }
     vehicle = spawnhelicopter(spawndata.owner, spawndata.origin, spawndata.angles, spawndata.vehicletype, spawndata.modelname);
     if (!isdefined(vehicle)) {
-        if (isdefined(var_ee8da5624236dc89)) {
-            var_ee8da5624236dc89.fail = "code";
+        if (isdefined(faildata)) {
+            faildata.fail = "code";
         }
         return undefined;
     }
@@ -71,7 +71,7 @@ function _spawnhelicopter(owner, origin, angles, type, modelname) {
     return vehicle;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x999
 // Size: 0xa3
@@ -89,35 +89,35 @@ function _deletevehicle(vehicle) {
     return 1;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa44
 // Size: 0x111
 function function_d21abb198361e610(vehicle) {
-    if (!isdefined(vehicle.var_e478ac91af0e92cb)) {
+    if (!isdefined(vehicle.linkedchildren)) {
         return;
     }
-    foreach (scriptable in vehicle.var_e478ac91af0e92cb) {
+    foreach (scriptable in vehicle.linkedchildren) {
         if (!isdefined(scriptable)) {
             continue;
         }
-        if (isdefined(scriptable.type) && namespace_3c37cb17ade254d::issharedfuncdefined(scriptable.type, "delete") && scriptable [[ namespace_3c37cb17ade254d::getsharedfunc(scriptable.type, "delete") ]]()) {
+        if (isdefined(scriptable.type) && scripts/engine/utility::issharedfuncdefined(scriptable.type, "delete") && scriptable [[ scripts/engine/utility::getsharedfunc(scriptable.type, "delete") ]]()) {
             continue;
         }
         scriptable notify("death");
         scriptable script_func("deregisterScriptable");
         if (scriptable getscriptableisreserved()) {
             scriptable freescriptable();
-        } else {
-            part = scriptable function_ec5f4851431f3382();
-            if (scriptable getscriptableparthasstate(part, "hidden")) {
-                scriptable setscriptablepartstate(part, "hidden");
-            }
+            continue;
+        }
+        part = scriptable function_ec5f4851431f3382();
+        if (scriptable getscriptableparthasstate(part, "hidden")) {
+            scriptable setscriptablepartstate(part, "hidden");
         }
     }
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb5c
 // Size: 0x16
@@ -125,7 +125,7 @@ function canspawnvehicle() {
     return level.vehiclecount < level.maxvehiclecount;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb7a
 // Size: 0xc
@@ -133,7 +133,7 @@ function getvehiclecount() {
     return level.vehiclecount;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb8e
 // Size: 0x63
@@ -141,18 +141,18 @@ function reservevehicle(count) {
     if (canspawnvehicle()) {
         if (!isdefined(count)) {
             level.vehiclecount++;
-            return 1;
+            return true;
         }
-        var_2505ba0eb2a7b5d5 = level.maxvehiclecount - level.vehiclecount;
-        if (count <= var_2505ba0eb2a7b5d5) {
+        availablevehicles = level.maxvehiclecount - level.vehiclecount;
+        if (count <= availablevehicles) {
             level.vehiclecount = level.vehiclecount + count;
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbf9
 // Size: 0x63
@@ -163,13 +163,13 @@ function clearvehiclereservation(count) {
     level.vehiclecount = level.vehiclecount - count;
     /#
         if (level.vehiclecount < 0) {
-            namespace_3c37cb17ade254d::error("<unknown string>");
+            scripts/engine/utility::error("<unknown string>");
         }
     #/
     level.vehiclecount = int(max(0, level.vehiclecount));
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc63
 // Size: 0x17
@@ -177,7 +177,7 @@ function getvehiclespawndata(vehicle) {
     return vehicle.spawndata;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc82
 // Size: 0x16d
@@ -199,7 +199,7 @@ function copyvehiclespawndata(from, to) {
     to.ref = from.ref;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf6
 // Size: 0xba
@@ -219,7 +219,7 @@ function vehicle_tracking_registerinstance(vehicle, owner, team) {
     vehicle.vehicleteam = team;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb7
 // Size: 0xf0
@@ -244,7 +244,7 @@ function vehicle_tracking_deregisterinstance(vehicle) {
     vehicle.vehicleteam = undefined;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfae
 // Size: 0x84
@@ -259,7 +259,7 @@ function vehicle_tracking_limitgameinstances(vehiclename, limit, message) {
     level.vehicle.instancelimitmessages[vehiclename] = message;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1039
 // Size: 0x9f
@@ -276,7 +276,7 @@ function function_5c8408cb68649308(vehiclename, spawntype, limit) {
     level.vehicle.var_eb26b962268635b[vehiclename][spawntype] = limit;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x10df
 // Size: 0x84
@@ -291,7 +291,7 @@ function vehicle_tracking_limitownerinstances(vehiclename, limit, message) {
     level.vehicle.ownerinstancelimitmessages[vehiclename] = message;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x116a
 // Size: 0x84
@@ -306,11 +306,11 @@ function vehicle_tracking_limitteaminstances(vehiclename, limit, message) {
     level.vehicle.teaminstancelimitmessages[vehiclename] = message;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f5
 // Size: 0x316
-function vehicle_tracking_atinstancelimit(vehiclename, owner, team, spawntype, var_5ba9af6abae862ca) {
+function vehicle_tracking_atinstancelimit(vehiclename, owner, team, spawntype, sendmessage) {
     /#
         assertex(isdefined(level.vehicle), "vehicle_tracking_atInstanceLimit() called before vehicle_init().");
     #/
@@ -318,12 +318,12 @@ function vehicle_tracking_atinstancelimit(vehiclename, owner, team, spawntype, v
         assertex(isdefined(level.vehicle.instances), "vehicle_tracking_atInstanceLimit() called before vehicle_tracking_init().");
     #/
     if (!isdefined(level.vehicle.instances[vehiclename])) {
-        return 0;
+        return false;
     }
     gamelimit = level.vehicle.instancelimits[vehiclename];
     if (isdefined(gamelimit)) {
         if (isdefined(level.vehicle.instances[vehiclename]) && level.vehicle.instances[vehiclename].size >= gamelimit) {
-            return 1;
+            return true;
         }
     }
     var_8fe403544e073db7 = undefined;
@@ -332,45 +332,45 @@ function vehicle_tracking_atinstancelimit(vehiclename, owner, team, spawntype, v
         var_8fe403544e073db7 = level.vehicle.var_eb26b962268635b[vehiclename][spawntype];
         var_6536066694c661fb = 0;
     }
-    var_7493f9697366d2b = undefined;
-    var_a79d78866ac25c77 = undefined;
+    ownerlimit = undefined;
+    ownercount = undefined;
     if (isdefined(owner)) {
-        var_7493f9697366d2b = level.vehicle.ownerinstancelimits[vehiclename];
-        var_a79d78866ac25c77 = 0;
+        ownerlimit = level.vehicle.ownerinstancelimits[vehiclename];
+        ownercount = 0;
     }
-    var_3287dcccc68557b3 = undefined;
+    teamlimit = undefined;
     teamcount = undefined;
     if (isdefined(team)) {
-        var_3287dcccc68557b3 = level.vehicle.teaminstancelimits[vehiclename];
+        teamlimit = level.vehicle.teaminstancelimits[vehiclename];
         teamcount = 0;
     }
-    if (!isdefined(var_7493f9697366d2b) && !isdefined(var_3287dcccc68557b3) && !isdefined(var_8fe403544e073db7)) {
-        return 0;
+    if (!isdefined(ownerlimit) && !isdefined(teamlimit) && !isdefined(var_8fe403544e073db7)) {
+        return false;
     }
     foreach (instance in level.vehicle.instances[vehiclename]) {
-        if (isdefined(var_7493f9697366d2b) && isdefined(instance.vehicleowner) && instance.vehicleowner == owner) {
-            var_a79d78866ac25c77++;
-            if (var_a79d78866ac25c77 >= var_7493f9697366d2b) {
-                return 1;
+        if (isdefined(ownerlimit) && isdefined(instance.vehicleowner) && instance.vehicleowner == owner) {
+            ownercount++;
+            if (ownercount >= ownerlimit) {
+                return true;
             }
         }
-        if (isdefined(var_3287dcccc68557b3) && isdefined(instance.vehicleteam) && instance.vehicleteam == team) {
+        if (isdefined(teamlimit) && isdefined(instance.vehicleteam) && instance.vehicleteam == team) {
             teamcount++;
-            if (teamcount >= var_3287dcccc68557b3) {
-                return 1;
+            if (teamcount >= teamlimit) {
+                return true;
             }
         }
         if (isdefined(var_8fe403544e073db7) && isdefined(instance.spawndata) && isdefined(instance.spawndata.spawntype) && instance.spawndata.spawntype == spawntype) {
             var_6536066694c661fb++;
             if (var_6536066694c661fb >= var_8fe403544e073db7) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1513
 // Size: 0x76
@@ -387,7 +387,7 @@ function vehicle_tracking_getgameinstances(vehiclename) {
     return level.vehicle.instances[vehiclename];
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1591
 // Size: 0xf5
@@ -410,7 +410,7 @@ function vehicle_tracking_getownerinstances(vehiclename, owner) {
     return instances;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x168e
 // Size: 0xf5
@@ -433,7 +433,7 @@ function vehicle_tracking_getteaminstances(vehiclename, team) {
     return instances;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x178b
 // Size: 0xe5
@@ -453,7 +453,7 @@ function vehicle_tracking_getgameinstancesforall() {
     return instances;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1878
 // Size: 0xb7
@@ -465,21 +465,21 @@ function vehicle_tracking_instancesarelimited(vehiclename) {
         assertex(isdefined(level.vehicle.instances), "vehicle_tracking_instancesAreLimited() called before vehicle_tracking_init().");
     #/
     if (isdefined(level.vehicle.instancelimits[vehiclename])) {
-        return 1;
+        return true;
     }
     if (isdefined(level.vehicle.ownerinstancelimits[vehiclename])) {
-        return 1;
+        return true;
     }
     if (isdefined(level.vehicle.teaminstancelimits[vehiclename])) {
-        return 1;
+        return true;
     }
     if (isdefined(level.vehicle.var_eb26b962268635b[vehiclename])) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1937
 // Size: 0x109
@@ -502,11 +502,11 @@ function vehicle_tracking_init() {
     level.maxvehiclecount = getdvarint(@"hash_a473574b4e4333d0", 128);
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a47
 // Size: 0x62
-function function_756a8f3f002a11aa(spawndata) {
+function validatespawndata(spawndata) {
     /#
         if (!isdefined(spawndata)) {
             thread error("<unknown string>");
@@ -524,13 +524,13 @@ function function_756a8f3f002a11aa(spawndata) {
     #/
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ab0
 // Size: 0x5a
 function function_3a040ff591c32b5c(spawndata) {
     /#
-        if (!function_756a8f3f002a11aa(spawndata)) {
+        if (!validatespawndata(spawndata)) {
             return 0;
         }
         if (!isdefined(spawndata.vehicletype)) {
@@ -545,13 +545,13 @@ function function_3a040ff591c32b5c(spawndata) {
     #/
 }
 
-// Namespace namespace_cfae3bfa0fa8d1dd/namespace_f64231d5b7a2c3c4
+// Namespace vehicle_tracking / scripts/cp_mp/vehicles/vehicle_tracking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b11
 // Size: 0x78
 function function_298430b99bada795(spawndata) {
     /#
-        if (!function_756a8f3f002a11aa(spawndata)) {
+        if (!validatespawndata(spawndata)) {
             return 0;
         }
         if (!isdefined(spawndata.owner)) {

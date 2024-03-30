@@ -2,7 +2,7 @@
 #using scripts\mp\hud_util.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\mp\utility\killstreak.gsc;
 #using scripts\engine\trace.gsc;
@@ -28,9 +28,9 @@
 #using scripts\mp\battlechatter_mp.gsc;
 #using scripts\mp\supers.gsc;
 
-#namespace namespace_df66bd377221e9b5;
+#namespace autosentry;
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe11
 // Size: 0x718
@@ -106,7 +106,7 @@ function init() {
     #/
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1530
 // Size: 0x61
@@ -118,7 +118,7 @@ function tryuseautosentry(lifeid, streakname) {
     return result;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1599
 // Size: 0x61
@@ -130,7 +130,7 @@ function tryusesam(lifeid, streakname) {
     return result;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1602
 // Size: 0x51
@@ -144,7 +144,7 @@ function tryuseshocksentry(streakinfo) {
     return result;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x165b
 // Size: 0x51
@@ -158,11 +158,11 @@ function tryusemanualturret(streakinfo) {
     return result;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x16b4
 // Size: 0xe4
-function givesentry(sentrytype, var_7ff7ef0188f9b7ef, streakinfo) {
+function givesentry(sentrytype, pickuptriggeroverride, streakinfo) {
     self.last_sentry = sentrytype;
     if (!isdefined(self.placedsentries)) {
         self.placedsentries = [];
@@ -170,37 +170,36 @@ function givesentry(sentrytype, var_7ff7ef0188f9b7ef, streakinfo) {
     if (!isdefined(self.placedsentries[sentrytype])) {
         self.placedsentries[sentrytype] = [];
     }
-    var_508482f603c6293e = 1;
-    if (isdefined(var_7ff7ef0188f9b7ef)) {
-        var_508482f603c6293e = var_7ff7ef0188f9b7ef;
+    enablepickup = 1;
+    if (isdefined(pickuptriggeroverride)) {
+        enablepickup = pickuptriggeroverride;
     }
-    sentrygun = createsentryforplayer(sentrytype, self, var_508482f603c6293e, streakinfo);
+    sentrygun = createsentryforplayer(sentrytype, self, enablepickup, streakinfo);
     if (isdefined(streakinfo)) {
         streakinfo.sentrygun = sentrygun;
     }
     removeperks();
     self.carriedsentry = sentrygun;
-    result = setcarryingsentry(sentrygun, 1, var_508482f603c6293e);
+    result = setcarryingsentry(sentrygun, 1, enablepickup);
     self.carriedsentry = undefined;
     thread waitrestoreperks();
     self.iscarrying = 0;
     if (isdefined(sentrygun)) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x179f
 // Size: 0x1a7
-function setcarryingsentry(sentrygun, var_3a565847d875f3ec, var_508482f603c6293e, var_593f001fd97e03b8) {
+function setcarryingsentry(sentrygun, allowcancel, enablepickup, cancelondeath) {
     self endon("death_or_disconnect");
     /#
         assert(isreallyalive(self));
     #/
-    sentrygun sentry_setcarried(self, var_508482f603c6293e, var_593f001fd97e03b8);
+    sentrygun sentry_setcarried(self, enablepickup, cancelondeath);
     val::set("sentry", "usability", 0);
     val::set("sentry", "melee", 0);
     allowweaponsforsentry(0);
@@ -222,7 +221,7 @@ function setcarryingsentry(sentrygun, var_3a565847d875f3ec, var_508482f603c6293e
             return 1;
         }
         if (result == "cancel_sentry" || result == "force_cancel_placement" || result == "emp_applied") {
-            if (!var_3a565847d875f3ec && (result == "cancel_sentry" || result == "emp_applied")) {
+            if (!allowcancel && (result == "cancel_sentry" || result == "emp_applied")) {
                 continue;
             }
             sentrygun sentry_setcancelled(result == "force_cancel_placement" && !isdefined(sentrygun.firstplacement));
@@ -231,22 +230,22 @@ function setcarryingsentry(sentrygun, var_3a565847d875f3ec, var_508482f603c6293e
         if (!sentrygun.canbeplaced) {
             continue;
         }
-        sentrygun sentry_setplaced(var_508482f603c6293e);
+        sentrygun sentry_setplaced(enablepickup);
         return 1;
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x194d
 // Size: 0x1c
 function enablemeleeforsentry() {
     self endon("death_or_disconnect");
     wait(0.25);
-    val::function_c9d0b43701bdba00("sentry");
+    val::reset_all("sentry");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1970
 // Size: 0x2b
@@ -257,7 +256,7 @@ function removeweapons() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19a2
 // Size: 0x2b
@@ -268,7 +267,7 @@ function removeperks() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19d4
 // Size: 0x2a
@@ -279,7 +278,7 @@ function restoreweapons() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a05
 // Size: 0x2a
@@ -290,7 +289,7 @@ function restoreperks() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a36
 // Size: 0x19
@@ -301,31 +300,31 @@ function waitrestoreperks() {
     restoreperks();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a56
 // Size: 0xd1
-function createsentryforplayer(sentrytype, owner, var_508482f603c6293e, streakinfo) {
+function createsentryforplayer(sentrytype, owner, enablepickup, streakinfo) {
     /#
         assertex(isdefined(owner), "createSentryForPlayer() called without owner specified");
     #/
-    var_a74853f29ed4eeae = level.sentrysettings[sentrytype].weaponinfo;
-    sentrygun = spawnturret("misc_turret", owner.origin, var_a74853f29ed4eeae);
+    sentryweapon = level.sentrysettings[sentrytype].weaponinfo;
+    sentrygun = spawnturret("misc_turret", owner.origin, sentryweapon);
     sentrygun.angles = owner.angles;
     sentrygun.streakinfo = streakinfo;
-    sentrygun sentry_initsentry(sentrytype, owner, var_508482f603c6293e);
+    sentrygun sentry_initsentry(sentrytype, owner, enablepickup);
     sentrygun thread sentry_destroyongameend();
-    sentrygun namespace_5a51aa78ea0b1b9f::allow_emp(0);
-    sentrygun namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&sentry_empstarted);
-    sentrygun namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&sentry_empcleared);
+    sentrygun scripts/cp_mp/emp_debuff::allow_emp(0);
+    sentrygun scripts/cp_mp/emp_debuff::set_start_emp_callback(&sentry_empstarted);
+    sentrygun scripts/cp_mp/emp_debuff::set_clear_emp_callback(&sentry_empcleared);
     return sentrygun;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2f
 // Size: 0x4b8
-function sentry_initsentry(sentrytype, owner, var_508482f603c6293e, timeout) {
+function sentry_initsentry(sentrytype, owner, enablepickup, timeout) {
     if (!isdefined(timeout)) {
         timeout = 1;
     }
@@ -372,18 +371,18 @@ function sentry_initsentry(sentrytype, owner, var_508482f603c6293e, timeout) {
         break;
     case #"hash_576b868dbf9eab17":
         self maketurretinoperable();
-        var_d3dc97c59992d51 = anglestoforward(self.angles);
-        var_a8ae5e047a5b6cb6 = self gettagorigin("tag_laser") + (0, 0, 10);
-        var_a8ae5e047a5b6cb6 = var_a8ae5e047a5b6cb6 - var_d3dc97c59992d51 * 20;
-        killcament = spawn("script_model", var_a8ae5e047a5b6cb6);
+        killcamforward = anglestoforward(self.angles);
+        killcampos = self gettagorigin("tag_laser") + (0, 0, 10);
+        killcampos = killcampos - killcamforward * 20;
+        killcament = spawn("script_model", killcampos);
         killcament linkto(self);
         self.killcament = killcament;
         break;
     case #"hash_52d9b7ed584bec3e":
-        var_d3dc97c59992d51 = anglestoforward(self.angles);
-        var_a8ae5e047a5b6cb6 = self gettagorigin("tag_laser") + (0, 0, 10);
-        var_a8ae5e047a5b6cb6 = var_a8ae5e047a5b6cb6 - var_d3dc97c59992d51 * 20;
-        killcament = spawn("script_model", var_a8ae5e047a5b6cb6);
+        killcamforward = anglestoforward(self.angles);
+        killcampos = self gettagorigin("tag_laser") + (0, 0, 10);
+        killcampos = killcampos - killcamforward * 20;
+        killcament = spawn("script_model", killcampos);
         killcament linkto(self);
         self.killcament = killcament;
         break;
@@ -425,27 +424,27 @@ function sentry_initsentry(sentrytype, owner, var_508482f603c6293e, timeout) {
     case #"hash_721f6bf62b0eb1bd":
     case #"hash_c72f9e2dc5fac20b":
         self.momentum = 0;
-        thread sentry_handleuse(var_508482f603c6293e);
+        thread sentry_handleuse(enablepickup);
         thread sentry_beepsounds();
         break;
     case #"hash_52d9b7ed584bec3e":
         self.momentum = 0;
         thread sentry_handlemanualuse();
-        thread sentry_handlealteratepickup(var_508482f603c6293e);
+        thread sentry_handlealteratepickup(enablepickup);
         break;
     case #"hash_b17ed5514d85b71b":
         thread sentry_handleuse(0);
         thread sentry_beepsounds();
         break;
     default:
-        thread sentry_handleuse(var_508482f603c6293e);
+        thread sentry_handleuse(enablepickup);
         thread sentry_attacktargets();
         thread sentry_beepsounds();
         break;
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fee
 // Size: 0x81
@@ -459,10 +458,10 @@ function sentry_setteamheadicon() {
     }
     owner = self.owner;
     team = owner.team;
-    self.headiconid = thread namespace_7bdde15c3500a23f::setheadicon_factionimage(0, headiconoffset, undefined, undefined, undefined, undefined, 1);
+    self.headiconid = thread scripts/cp_mp/entityheadicons::setheadicon_factionimage(0, headiconoffset, undefined, undefined, undefined, undefined, 1);
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2076
 // Size: 0x41
@@ -471,10 +470,10 @@ function sentry_clearteamheadicon() {
     if (!isdefined(headiconoffset)) {
         return;
     }
-    namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.headiconid);
+    scripts/cp_mp/entityheadicons::setheadicon_deleteicon(self.headiconid);
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20be
 // Size: 0x24
@@ -484,7 +483,7 @@ function sentry_destroyongameend() {
     self notify("death");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20e9
 // Size: 0x91
@@ -498,10 +497,10 @@ function sentry_handledamage() {
         }
     }
     maxhealth = maxhealth + int(var_4b9cd0374a51877c);
-    namespace_3e725f3cc58bddd3::monitordamage(maxhealth, "sentry", &sentryhandledeathdamage, &sentrymodifydamage, 1);
+    scripts/mp/damage::monitordamage(maxhealth, "sentry", &sentryhandledeathdamage, &sentrymodifydamage, 1);
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2181
 // Size: 0xbd
@@ -519,7 +518,7 @@ function sentrymodifydamage(data) {
     return modifieddamage;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2246
 // Size: 0x193
@@ -531,30 +530,30 @@ function sentryhandledeathdamage(data) {
     idflags = data.idflags;
     config = level.sentrysettings[self.sentrytype];
     if (config.iskillstreak) {
-        var_3737240cefe2c793 = namespace_3e725f3cc58bddd3::onkillstreakkilled(config.streakname, attacker, objweapon, type, damage, config.scorepopup, config.vodestroyed, config.destroyedsplash);
+        var_3737240cefe2c793 = scripts/mp/damage::onkillstreakkilled(config.streakname, attacker, objweapon, type, damage, config.scorepopup, config.vodestroyed, config.destroyedsplash);
         if (var_3737240cefe2c793) {
             attacker notify("destroyed_equipment");
         }
-    } else {
-        var_2d113e958c753976 = undefined;
-        var_43dbeb17e356bbb0 = attacker;
-        if (isdefined(var_43dbeb17e356bbb0) && isdefined(self.owner)) {
-            if (isdefined(attacker.owner) && isplayer(attacker.owner)) {
-                var_43dbeb17e356bbb0 = attacker.owner;
-            }
-            if (self.owner namespace_f8065cafc523dba5::isenemy(var_43dbeb17e356bbb0)) {
-                var_2d113e958c753976 = var_43dbeb17e356bbb0;
-            }
-        }
-        if (isdefined(var_2d113e958c753976)) {
-            var_2d113e958c753976 thread namespace_391de535501b0143::supershutdown(self.owner);
-            var_2d113e958c753976 notify("destroyed_equipment");
-        }
-        self notify("death");
+        return;
     }
+    var_2d113e958c753976 = undefined;
+    var_43dbeb17e356bbb0 = attacker;
+    if (isdefined(var_43dbeb17e356bbb0) && isdefined(self.owner)) {
+        if (isdefined(attacker.owner) && isplayer(attacker.owner)) {
+            var_43dbeb17e356bbb0 = attacker.owner;
+        }
+        if (self.owner scripts/cp_mp/utility/player_utility::isenemy(var_43dbeb17e356bbb0)) {
+            var_2d113e958c753976 = var_43dbeb17e356bbb0;
+        }
+    }
+    if (isdefined(var_2d113e958c753976)) {
+        var_2d113e958c753976 thread scripts/mp/events::supershutdown(self.owner);
+        var_2d113e958c753976 notify("destroyed_equipment");
+    }
+    self notify("death");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23e0
 // Size: 0x6e
@@ -567,7 +566,7 @@ function sentry_empstarted(data) {
     self setscriptablepartstate("stunned", "active");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2455
 // Size: 0x5c
@@ -581,7 +580,7 @@ function sentry_empcleared(isdeath) {
     self.disabled = undefined;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24b8
 // Size: 0x346
@@ -642,7 +641,7 @@ function sentry_handledeath() {
         playfx(getfx("sentry_explode_mp"), self.origin + (0, 0, 10));
         self notify("deleting");
     }
-    namespace_3bbb5a98b932c46f::equipmentdeletevfx();
+    scripts/mp/weapons::equipmentdeletevfx();
     if (isdefined(self.killcament)) {
         self.killcament delete();
     }
@@ -656,11 +655,11 @@ function sentry_handledeath() {
     self delete();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2805
 // Size: 0xeb
-function sentry_handleuse(var_508482f603c6293e) {
+function sentry_handleuse(enablepickup) {
     self endon("death");
     level endon("game_ended");
     for (;;) {
@@ -678,11 +677,11 @@ function sentry_handleuse(var_508482f603c6293e) {
             self setmode(level.sentrysettings[self.sentrytype].sentrymodeoff);
         }
         player.placedsentries[self.sentrytype] = array_remove(player.placedsentries[self.sentrytype], self);
-        player setcarryingsentry(self, 0, var_508482f603c6293e);
+        player setcarryingsentry(self, 0, enablepickup);
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x28f7
 // Size: 0x161
@@ -695,45 +694,44 @@ function turret_handlepickup(turret) {
     }
     buttontime = 0;
     for (;;) {
-        for (;;) {
-            if (isalive(self) && self istouching(turret.ownertrigger) && !isdefined(turret.inuseby) && !isdefined(turret.carriedby) && self isonground()) {
-                if (self usebuttonpressed()) {
-                    buttontime = 0;
-                    while (self usebuttonpressed()) {
-                        buttontime = buttontime + level.framedurationseconds;
-                        waitframe();
-                    }
-                    /#
-                        println("sentry_sparks_mp" + buttontime);
-                    #/
-                    if (buttontime >= 0.5) {
-                        continue;
-                    }
-                    buttontime = 0;
-                    while (!self usebuttonpressed() && buttontime < 0.5) {
-                        buttontime = buttontime + level.framedurationseconds;
-                        waitframe();
-                    }
-                    /#
-                        println("vfx/iw7/_requests/mp/vfx_sentry_shock_proj_trail.vfx" + buttontime);
-                    #/
-                    if (buttontime >= 0.5) {
-                        continue;
-                    }
-                    if (!isreallyalive(self)) {
-                        continue;
-                    }
-                    turret setmode(level.sentrysettings[turret.sentrytype].sentrymodeoff);
-                    thread setcarryingsentry(turret, 0);
-                    turret.ownertrigger delete();
-                    return;
+        if (isalive(self) && self istouching(turret.ownertrigger) && !isdefined(turret.inuseby) && !isdefined(turret.carriedby) && self isonground()) {
+            if (self usebuttonpressed()) {
+                buttontime = 0;
+                while (self usebuttonpressed()) {
+                    buttontime = buttontime + level.framedurationseconds;
+                    waitframe();
                 }
+                /#
+                    println("sentry_sparks_mp" + buttontime);
+                #/
+                if (buttontime >= 0.5) {
+                    continue;
+                }
+                buttontime = 0;
+                while (!self usebuttonpressed() && buttontime < 0.5) {
+                    buttontime = buttontime + level.framedurationseconds;
+                    waitframe();
+                }
+                /#
+                    println("vfx/iw7/_requests/mp/vfx_sentry_shock_proj_trail.vfx" + buttontime);
+                #/
+                if (buttontime >= 0.5) {
+                    continue;
+                }
+                if (!isreallyalive(self)) {
+                    continue;
+                }
+                turret setmode(level.sentrysettings[turret.sentrytype].sentrymodeoff);
+                thread setcarryingsentry(turret, 0);
+                turret.ownertrigger delete();
+                return;
             }
         }
+        waitframe();
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a5f
 // Size: 0x45a
@@ -743,9 +741,9 @@ function turret_handleuse() {
     self endon("deleting");
     level endon("game_ended");
     self.forcedisable = 0;
-    var_b1dfdf129250e6ff = (1, 0.9, 0.7);
-    var_541da7cf90e97010 = (1, 0.65, 0);
-    var_e96ec83c82048ee1 = (1, 0.25, 0);
+    colorstable = (1, 0.9, 0.7);
+    colorunstable = (1, 0.65, 0);
+    coloroverheated = (1, 0.25, 0);
     for (;;) {
         player = self waittill("trigger");
         if (isdefined(self.carriedby)) {
@@ -764,67 +762,66 @@ function turret_handleuse() {
         sentry_setowner(player);
         self setmode(level.sentrysettings[self.sentrytype].sentrymodeon);
         player thread turret_shotmonitor(self);
-        player.turret_overheat_bar = player createbar(var_b1dfdf129250e6ff, 100, 6);
+        player.turret_overheat_bar = player createbar(colorstable, 100, 6);
         player.turret_overheat_bar setpoint("CENTER", "BOTTOM", 0, -70);
         player.turret_overheat_bar.alpha = 0.65;
         player.turret_overheat_bar.bar.alpha = 0.65;
-        var_5fb0c5a6344c28a9 = 0;
+        playingheatfx = 0;
         for (;;) {
-            for (;;) {
-                if (!isreallyalive(player)) {
-                    self.inuseby = undefined;
-                    player.turret_overheat_bar destroyelem();
-                    break;
-                }
-                if (!player isusingturret()) {
-                    self notify("player_dismount");
-                    self.inuseby = undefined;
-                    player.turret_overheat_bar destroyelem();
-                    player restoreperks();
-                    player restoreweapons();
-                    self sethintstring(level.sentrysettings[self.sentrytype].hintstring);
-                    self setmode(level.sentrysettings[self.sentrytype].sentrymodeoff);
-                    sentry_setowner(self.originalowner);
-                    self setmode(level.sentrysettings[self.sentrytype].sentrymodeon);
-                    break;
-                }
-                if (self.heatlevel >= level.sentrysettings[self.sentrytype].overheattime) {
-                    barfrac = 1;
-                } else {
-                    barfrac = self.heatlevel / level.sentrysettings[self.sentrytype].overheattime;
-                }
-                player.turret_overheat_bar updatebar(barfrac);
-                if (string_starts_with(self.sentrytype, "minigun_turret")) {
-                    minigun_turret = "minigun_turret";
-                }
-                if (self.forcedisable || self.overheated) {
-                    self turretfiredisable();
-                    player.turret_overheat_bar.bar.color = var_e96ec83c82048ee1;
-                    var_5fb0c5a6344c28a9 = 0;
-                } else if (self.heatlevel > level.sentrysettings[self.sentrytype].overheattime * 0.75 && string_starts_with(self.sentrytype, "minigun_turret")) {
-                    player.turret_overheat_bar.bar.color = var_541da7cf90e97010;
-                    if (randomintrange(0, 10) < 6) {
-                        self turretfireenable();
-                    } else {
-                        self turretfiredisable();
-                    }
-                    if (!var_5fb0c5a6344c28a9) {
-                        var_5fb0c5a6344c28a9 = 1;
-                        thread playheatfx();
-                    }
-                } else {
-                    player.turret_overheat_bar.bar.color = var_b1dfdf129250e6ff;
-                    self turretfireenable();
-                    var_5fb0c5a6344c28a9 = 0;
-                    self notify("not_overheated");
-                }
+            if (!isreallyalive(player)) {
+                self.inuseby = undefined;
+                player.turret_overheat_bar destroyelem();
+                break;
             }
+            if (!player isusingturret()) {
+                self notify("player_dismount");
+                self.inuseby = undefined;
+                player.turret_overheat_bar destroyelem();
+                player restoreperks();
+                player restoreweapons();
+                self sethintstring(level.sentrysettings[self.sentrytype].hintstring);
+                self setmode(level.sentrysettings[self.sentrytype].sentrymodeoff);
+                sentry_setowner(self.originalowner);
+                self setmode(level.sentrysettings[self.sentrytype].sentrymodeon);
+                break;
+            }
+            if (self.heatlevel >= level.sentrysettings[self.sentrytype].overheattime) {
+                barfrac = 1;
+            } else {
+                barfrac = self.heatlevel / level.sentrysettings[self.sentrytype].overheattime;
+            }
+            player.turret_overheat_bar updatebar(barfrac);
+            if (string_starts_with(self.sentrytype, "minigun_turret")) {
+                minigun_turret = "minigun_turret";
+            }
+            if (self.forcedisable || self.overheated) {
+                self turretfiredisable();
+                player.turret_overheat_bar.bar.color = coloroverheated;
+                playingheatfx = 0;
+            } else if (self.heatlevel > level.sentrysettings[self.sentrytype].overheattime * 0.75 && string_starts_with(self.sentrytype, "minigun_turret")) {
+                player.turret_overheat_bar.bar.color = colorunstable;
+                if (randomintrange(0, 10) < 6) {
+                    self turretfireenable();
+                } else {
+                    self turretfiredisable();
+                }
+                if (!playingheatfx) {
+                    playingheatfx = 1;
+                    thread playheatfx();
+                }
+            } else {
+                player.turret_overheat_bar.bar.color = colorstable;
+                self turretfireenable();
+                playingheatfx = 0;
+                self notify("not_overheated");
+            }
+            wait(0.05);
         }
         self setdefaultdroppitch(0);
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ec0
 // Size: 0x47
@@ -838,16 +835,16 @@ function sentry_handleownerdisconnect() {
     childthread sentry_watchownerstatus("joined_spectators");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f0e
 // Size: 0x20
-function sentry_watchownerstatus(var_70687e0cc558a009) {
-    self.owner waittill(var_70687e0cc558a009);
+function sentry_watchownerstatus(notifymsg) {
+    self.owner waittill(notifymsg);
     self notify("death");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f35
 // Size: 0xa8
@@ -868,7 +865,7 @@ function sentry_setowner(owner) {
     thread sentry_handleownerdisconnect();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fe4
 // Size: 0x14
@@ -876,15 +873,15 @@ function sentry_moving_platform_death(data) {
     self notify("death");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fff
 // Size: 0x3fd
-function sentry_setplaced(var_508482f603c6293e) {
+function sentry_setplaced(enablepickup) {
     if (isdefined(self.owner)) {
-        var_be6e776392e3983d = self.owner.placedsentries[self.sentrytype].size;
-        self.owner.placedsentries[self.sentrytype][var_be6e776392e3983d] = self;
-        if (var_be6e776392e3983d + 1 > 2) {
+        sentrycount = self.owner.placedsentries[self.sentrytype].size;
+        self.owner.placedsentries[self.sentrytype][sentrycount] = self;
+        if (sentrycount + 1 > 2) {
             self.owner.placedsentries[self.sentrytype][0] notify("death");
         }
         self.owner allowweaponsforsentry(1);
@@ -912,10 +909,10 @@ function sentry_setplaced(var_508482f603c6293e) {
     case #"hash_9cc14b005b018b8f":
     case #"hash_9cc14d005b018eb5":
     case #"hash_ce05fbb198b1f5dd":
-        if (var_508482f603c6293e) {
+        if (enablepickup) {
             self.angles = self.carriedby.angles;
             if (isalive(self.originalowner)) {
-                self.originalowner namespace_58fb4f2e73fd41a0::setlowermessage("pickup_hint", level.sentrysettings[self.sentrytype].ownerhintstring, 3, undefined, undefined, undefined, undefined, undefined, 1);
+                self.originalowner scripts/mp/utility/lower_message::setlowermessage("pickup_hint", level.sentrysettings[self.sentrytype].ownerhintstring, 3, undefined, undefined, undefined, undefined, undefined, 1);
             }
             self.ownertrigger = spawn("trigger_radius", self.origin + (0, 0, 1), 0, 105, 64);
             self.ownertrigger enablelinkto();
@@ -945,21 +942,21 @@ function sentry_setplaced(var_508482f603c6293e) {
         self.owner.iscarrying = 0;
         self.owner notify("new_sentry", self);
     }
-    sentry_setactive(var_508482f603c6293e);
+    sentry_setactive(enablepickup);
     data = spawnstruct();
     if (isdefined(self.moving_platform)) {
         data.linkparent = self.moving_platform;
     }
     data.endonstring = "carried";
     data.deathoverridecallback = &sentry_moving_platform_death;
-    thread namespace_d7b023c7eb3949d0::handle_moving_platforms(data);
+    thread scripts/mp/movers::handle_moving_platforms(data);
     if (self.sentrytype != "multiturret") {
         self playsound("sentry_gun_plant");
     }
     self notify("placed");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3403
 // Size: 0x9a
@@ -977,16 +974,16 @@ function sentry_setcancelled(var_ddd5b75d0cd367c5) {
         }
     }
     if (isdefined(var_ddd5b75d0cd367c5) && var_ddd5b75d0cd367c5) {
-        namespace_3bbb5a98b932c46f::equipmentdeletevfx();
+        scripts/mp/weapons::equipmentdeletevfx();
     }
     self delete();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x34a4
 // Size: 0x174
-function sentry_setcarried(carrier, var_508482f603c6293e, var_593f001fd97e03b8) {
+function sentry_setcarried(carrier, enablepickup, cancelondeath) {
     /#
         assert(isplayer(carrier));
     #/
@@ -1009,13 +1006,13 @@ function sentry_setcarried(carrier, var_508482f603c6293e, var_593f001fd97e03b8) 
     carrier enableworldup(0);
     self.carriedby = carrier;
     carrier.iscarrying = 1;
-    self.pickupenabled = var_508482f603c6293e;
-    thread sentry_oncarrierdeathoremp(carrier, var_593f001fd97e03b8);
+    self.pickupenabled = enablepickup;
+    thread sentry_oncarrierdeathoremp(carrier, cancelondeath);
     carrier thread updatesentryplacement(self);
     thread sentry_oncarrierdisconnect(carrier);
     thread sentry_oncarrierchangedteam(carrier);
     thread sentry_ongameended();
-    namespace_5a51aa78ea0b1b9f::allow_emp(0);
+    scripts/cp_mp/emp_debuff::allow_emp(0);
     self setdefaultdroppitch(-89);
     sentry_setinactive();
     if (isdefined(self getlinkedparent())) {
@@ -1027,7 +1024,7 @@ function sentry_setcarried(carrier, var_508482f603c6293e, var_593f001fd97e03b8) 
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x361f
 // Size: 0x1e5
@@ -1043,8 +1040,8 @@ function updatesentryplacement(sentrygun) {
         sentrygun.origin = placement["origin"];
         sentrygun.angles = placement["angles"];
         var_8509066f54f7c75a = array_combine(level.turrets, level.microturrets, level.supertrophy.trophies, level.mines);
-        var_3b23c52ff5bbd6c7 = sentrygun getistouchingentities(var_8509066f54f7c75a);
-        sentrygun.canbeplaced = self isonground() && placement["result"] && abs(sentrygun.origin[2] - self.origin[2]) < 30 && !istouchingboundstrigger(self) && var_3b23c52ff5bbd6c7.size == 0;
+        touchingturrets = sentrygun getistouchingentities(var_8509066f54f7c75a);
+        sentrygun.canbeplaced = self isonground() && placement["result"] && abs(sentrygun.origin[2] - self.origin[2]) < 30 && !istouchingboundstrigger(self) && touchingturrets.size == 0;
         if (isdefined(placement["entity"])) {
             sentrygun.moving_platform = placement["entity"];
         } else {
@@ -1064,23 +1061,23 @@ function updatesentryplacement(sentrygun) {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x380b
 // Size: 0x68
-function sentry_oncarrierdeathoremp(carrier, var_593f001fd97e03b8) {
+function sentry_oncarrierdeathoremp(carrier, cancelondeath) {
     self endon("placed");
     self endon("death");
     carrier endon("disconnect");
     carrier waittill_any_2("death", "emp_applied");
-    if (self.canbeplaced && !istrue(var_593f001fd97e03b8)) {
+    if (self.canbeplaced && !istrue(cancelondeath)) {
         sentry_setplaced(self.pickupenabled);
-    } else {
-        sentry_setcancelled(0);
+        return;
     }
+    sentry_setcancelled(0);
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x387a
 // Size: 0x29
@@ -1091,7 +1088,7 @@ function sentry_oncarrierdisconnect(carrier) {
     self delete();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38aa
 // Size: 0x33
@@ -1102,7 +1099,7 @@ function sentry_oncarrierchangedteam(carrier) {
     self delete();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38e4
 // Size: 0x29
@@ -1113,13 +1110,13 @@ function sentry_ongameended(carrier) {
     self delete();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3914
 // Size: 0x255
-function sentry_setactive(var_508482f603c6293e) {
+function sentry_setactive(enablepickup) {
     self setmode(level.sentrysettings[self.sentrytype].sentrymodeon);
-    if (var_508482f603c6293e) {
+    if (enablepickup) {
         self setcursorhint("HINT_NOICON");
         self sethintstring(level.sentrysettings[self.sentrytype].hintstring);
         self makeusable();
@@ -1136,13 +1133,13 @@ function sentry_setactive(var_508482f603c6293e) {
         case #"hash_9cc14b005b018b8f":
         case #"hash_9cc14d005b018eb5":
         case #"hash_ce05fbb198b1f5dd":
-            if (var_508482f603c6293e) {
+            if (enablepickup) {
                 self enableplayeruse(player);
             }
             break;
         default:
             addtoactivekillstreaklist(self.sentrytype, "Killstreak_Ground", self.owner, 0, 1, 70, "carried");
-            if (player == self.owner && var_508482f603c6293e) {
+            if (player == self.owner && enablepickup) {
                 self enableplayeruse(player);
             } else {
                 self disableplayeruse(player);
@@ -1164,10 +1161,10 @@ function sentry_setactive(var_508482f603c6293e) {
     if (self.sentrytype == "sentry_shock") {
         thread sentryshocktargets();
     }
-    namespace_5a51aa78ea0b1b9f::allow_emp(1);
+    scripts/cp_mp/emp_debuff::allow_emp(1);
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b70
 // Size: 0x53
@@ -1180,7 +1177,7 @@ function sentry_setinactive() {
     self makeunusable();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bca
 // Size: 0xa
@@ -1188,7 +1185,7 @@ function sentry_makesolid() {
     self solid();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bdb
 // Size: 0xa
@@ -1196,18 +1193,18 @@ function sentry_makenotsolid() {
     self notsolid();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bec
 // Size: 0x35
 function isfriendlytosentry(sentrygun) {
     if (level.teambased && self.team == sentrygun.team) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c29
 // Size: 0x6e
@@ -1222,14 +1219,14 @@ function sentry_attacktargets() {
         waittill_either("turretstatechange", "cooled");
         if (self isfiringturret()) {
             thread sentry_burstfirestart();
-        } else {
-            sentry_spindown();
-            thread sentry_burstfirestop();
+            continue;
         }
+        sentry_spindown();
+        thread sentry_burstfirestop();
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c9e
 // Size: 0x104
@@ -1247,20 +1244,20 @@ function sentry_timeout() {
     }
     while (lifespan) {
         wait(1);
-        namespace_e323c8674b44c8f4::waittillhostmigrationdone();
+        scripts/mp/hostmigration::waittillhostmigrationdone();
         if (!isdefined(self.carriedby)) {
             lifespan = max(0, lifespan - 1);
         }
     }
     if (isdefined(self.owner)) {
         if (isdefined(level.sentrysettings[self.sentrytype].votimeout)) {
-            self.owner namespace_9abe40d2af041eb2::function_8959c1606f65e65(self.streakinfo.streakname, level.sentrysettings[self.sentrytype].votimeout);
+            self.owner scripts/cp_mp/utility/killstreak_utility::function_8959c1606f65e65(self.streakinfo.streakname, level.sentrysettings[self.sentrytype].votimeout);
         }
     }
     self notify("death");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3da9
 // Size: 0x3a
@@ -1273,7 +1270,7 @@ function sentry_targetlocksound() {
     self playsound("sentry_gun_beep");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3dea
 // Size: 0x56
@@ -1285,7 +1282,7 @@ function sentry_spinup() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e47
 // Size: 0xd
@@ -1293,7 +1290,7 @@ function sentry_spindown() {
     self.momentum = 0;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e5b
 // Size: 0x130
@@ -1303,14 +1300,14 @@ function sentry_laser_burstfirestart() {
     level endon("game_ended");
     sentry_spinup();
     firetime = weaponfiretime(level.sentrysettings[self.sentrytype].weaponinfo);
-    var_3746ec1befd86ae8 = level.sentrysettings[self.sentrytype].burstmin;
-    var_3e92cd336a99ce02 = level.sentrysettings[self.sentrytype].burstmax;
+    minshots = level.sentrysettings[self.sentrytype].burstmin;
+    maxshots = level.sentrysettings[self.sentrytype].burstmax;
     if (isdefined(self.supportturret) && self.supportturret) {
         firetime = 0.05;
         numshots = 50;
     } else {
         firetime = 0.5 / (self.listoffoundturrets.size + 1);
-        numshots = var_3746ec1befd86ae8;
+        numshots = minshots;
     }
     for (i = 0; i < numshots; i++) {
         turrettarget = self getturrettarget(1);
@@ -1324,7 +1321,7 @@ function sentry_laser_burstfirestart() {
     self cleartargetentity();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f92
 // Size: 0x158
@@ -1334,23 +1331,23 @@ function sentry_burstfirestart() {
     level endon("game_ended");
     sentry_spinup();
     firetime = weaponfiretime(level.sentrysettings[self.sentrytype].weaponinfo);
-    var_3746ec1befd86ae8 = level.sentrysettings[self.sentrytype].burstmin;
-    var_3e92cd336a99ce02 = level.sentrysettings[self.sentrytype].burstmax;
-    var_5f622c39d6661b23 = level.sentrysettings[self.sentrytype].pausemin;
-    var_42ae243cd994c3bd = level.sentrysettings[self.sentrytype].pausemax;
+    minshots = level.sentrysettings[self.sentrytype].burstmin;
+    maxshots = level.sentrysettings[self.sentrytype].burstmax;
+    minpause = level.sentrysettings[self.sentrytype].pausemin;
+    maxpause = level.sentrysettings[self.sentrytype].pausemax;
     for (;;) {
-        numshots = randomintrange(var_3746ec1befd86ae8, var_3e92cd336a99ce02 + 1);
+        numshots = randomintrange(minshots, maxshots + 1);
         for (i = 0; i < numshots && !self.overheated; i++) {
             self shootturret();
             self notify("bullet_fired");
             self.heatlevel = self.heatlevel + firetime;
             wait(firetime);
         }
-        wait(randomfloatrange(var_5f622c39d6661b23, var_42ae243cd994c3bd));
+        wait(randomfloatrange(minpause, maxpause));
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x40f1
 // Size: 0xb
@@ -1358,7 +1355,7 @@ function sentry_burstfirestop() {
     self notify("stop_shooting");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4103
 // Size: 0x88
@@ -1375,7 +1372,7 @@ function turret_shotmonitor(turret) {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4192
 // Size: 0x1bc
@@ -1387,46 +1384,45 @@ function sentry_heatmonitor() {
     overheattime = level.sentrysettings[self.sentrytype].overheattime;
     overheatcooldown = level.sentrysettings[self.sentrytype].cooldowntime;
     for (;;) {
-        for (;;) {
-            if (self.heatlevel != var_c81d1ae9575cd803) {
-                wait(firetime);
-            } else {
-                self.heatlevel = max(0, self.heatlevel - 0.05);
-            }
-            if (self.heatlevel > overheattime) {
-                self.overheated = 1;
-                thread playheatfx();
-                switch (self.sentrytype) {
-                case #"hash_8a144557bd5ac067":
-                case #"hash_8f3bfcef6a436f5b":
-                case #"hash_8f3bfdef6a4370ee":
-                case #"hash_8f3bfeef6a437281":
-                case #"hash_8f3bffef6a437414":
-                    playfxontag(getfx("sentry_smoke_mp"), self, "tag_aim");
-                    break;
-                default:
-                    break;
-                }
-                while (self.heatlevel) {
-                    self.heatlevel = max(0, self.heatlevel - overheatcooldown);
-                    wait(0.1);
-                }
-                self.overheated = 0;
-                self notify("not_overheated");
-            }
-            var_c81d1ae9575cd803 = self.heatlevel;
+        if (self.heatlevel != var_c81d1ae9575cd803) {
+            wait(firetime);
+        } else {
+            self.heatlevel = max(0, self.heatlevel - 0.05);
         }
+        if (self.heatlevel > overheattime) {
+            self.overheated = 1;
+            thread playheatfx();
+            switch (self.sentrytype) {
+            case #"hash_8a144557bd5ac067":
+            case #"hash_8f3bfcef6a436f5b":
+            case #"hash_8f3bfdef6a4370ee":
+            case #"hash_8f3bfeef6a437281":
+            case #"hash_8f3bffef6a437414":
+                playfxontag(getfx("sentry_smoke_mp"), self, "tag_aim");
+                break;
+            default:
+                break;
+            }
+            while (self.heatlevel) {
+                self.heatlevel = max(0, self.heatlevel - overheatcooldown);
+                wait(0.1);
+            }
+            self.overheated = 0;
+            self notify("not_overheated");
+        }
+        var_c81d1ae9575cd803 = self.heatlevel;
+        wait(0.05);
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4355
 // Size: 0xce
 function turret_heatmonitor() {
     self endon("death");
     overheattime = level.sentrysettings[self.sentrytype].overheattime;
-    while (1) {
+    while (true) {
         if (self.heatlevel > overheattime) {
             self.overheated = 1;
             thread playheatfx();
@@ -1447,13 +1443,13 @@ function turret_heatmonitor() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x442a
 // Size: 0x73
 function turret_coolmonitor() {
     self endon("death");
-    while (1) {
+    while (true) {
         if (self.heatlevel > 0) {
             if (self.cooldownwaittime <= 0) {
                 self.heatlevel = max(0, self.heatlevel - 0.05);
@@ -1465,7 +1461,7 @@ function turret_coolmonitor() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x44a4
 // Size: 0x5f
@@ -1481,7 +1477,7 @@ function playheatfx() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x450a
 // Size: 0x38
@@ -1495,7 +1491,7 @@ function playsmokefx() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4549
 // Size: 0x33
@@ -1510,7 +1506,7 @@ function sentry_beepsounds() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4583
 // Size: 0x50
@@ -1520,24 +1516,24 @@ function sam_attacktargets() {
     level endon("game_ended");
     self.samtargetent = undefined;
     self.sammissilegroups = [];
-    while (1) {
+    while (true) {
         self.samtargetent = sam_acquiretarget();
         sam_fireontarget();
         wait(0.05);
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x45da
 // Size: 0x5ef
 function sam_acquiretarget() {
-    var_446576956fc59f64 = self gettagorigin("tag_laser");
+    eyeline = self gettagorigin("tag_laser");
     if (!isdefined(self.samtargetent)) {
         if (level.teambased) {
             entitylist = [];
-            var_b0c33d224b825287 = getenemyteams(self.team);
-            foreach (entry in var_b0c33d224b825287) {
+            enemyteams = getenemyteams(self.team);
+            foreach (entry in enemyteams) {
                 foreach (uav in level.uavmodels[entry]) {
                     entitylist[entitylist.size] = uav;
                 }
@@ -1546,7 +1542,7 @@ function sam_acquiretarget() {
                 if (isdefined(uav.isleaving) && uav.isleaving) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, uav.origin, 0, self)) {
+                if (sighttracepassed(eyeline, uav.origin, 0, self)) {
                     return uav;
                 }
             }
@@ -1554,7 +1550,7 @@ function sam_acquiretarget() {
                 if (isdefined(lb.team) && lb.team == self.team) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, lb.origin, 0, self)) {
+                if (sighttracepassed(eyeline, lb.origin, 0, self)) {
                     return lb;
                 }
             }
@@ -1562,7 +1558,7 @@ function sam_acquiretarget() {
                 if (isdefined(heli.team) && heli.team == self.team) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, heli.origin, 0, self)) {
+                if (sighttracepassed(eyeline, heli.origin, 0, self)) {
                     return heli;
                 }
             }
@@ -1573,7 +1569,7 @@ function sam_acquiretarget() {
                 if (isdefined(uav.team) && uav.team == self.team) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, uav.origin, 0, self, uav)) {
+                if (sighttracepassed(eyeline, uav.origin, 0, self, uav)) {
                     return uav;
                 }
             }
@@ -1585,7 +1581,7 @@ function sam_acquiretarget() {
                 if (isdefined(uav.owner) && isdefined(self.owner) && uav.owner == self.owner) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, uav.origin, 0, self)) {
+                if (sighttracepassed(eyeline, uav.origin, 0, self)) {
                     return uav;
                 }
             }
@@ -1593,7 +1589,7 @@ function sam_acquiretarget() {
                 if (isdefined(lb.owner) && isdefined(self.owner) && lb.owner == self.owner) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, lb.origin, 0, self)) {
+                if (sighttracepassed(eyeline, lb.origin, 0, self)) {
                     return lb;
                 }
             }
@@ -1601,7 +1597,7 @@ function sam_acquiretarget() {
                 if (isdefined(heli.owner) && isdefined(self.owner) && heli.owner == self.owner) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, heli.origin, 0, self)) {
+                if (sighttracepassed(eyeline, heli.origin, 0, self)) {
                     return heli;
                 }
             }
@@ -1612,23 +1608,22 @@ function sam_acquiretarget() {
                 if (isdefined(uav.owner) && isdefined(self.owner) && uav.owner == self.owner) {
                     continue;
                 }
-                if (sighttracepassed(var_446576956fc59f64, uav.origin, 0, self, uav)) {
+                if (sighttracepassed(eyeline, uav.origin, 0, self, uav)) {
                     return uav;
                 }
             }
         }
         self cleartargetentity();
         return undefined;
-    } else {
-        if (!sighttracepassed(var_446576956fc59f64, self.samtargetent.origin, 0, self)) {
-            self cleartargetentity();
-            return undefined;
-        }
-        return self.samtargetent;
     }
+    if (!sighttracepassed(eyeline, self.samtargetent.origin, 0, self)) {
+        self cleartargetentity();
+        return undefined;
+    }
+    return self.samtargetent;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bd0
 // Size: 0x262
@@ -1659,12 +1654,12 @@ function sam_fireontarget() {
             self cleartargetentity();
             return;
         }
-        var_b3cd0252c480a4af = [];
-        var_b3cd0252c480a4af[0] = self gettagorigin("tag_le_missile1");
-        var_b3cd0252c480a4af[1] = self gettagorigin("tag_le_missile2");
-        var_b3cd0252c480a4af[2] = self gettagorigin("tag_ri_missile1");
-        var_b3cd0252c480a4af[3] = self gettagorigin("tag_ri_missile2");
-        var_a512aa80ea6bf396 = self.sammissilegroups.size;
+        rocketoffsets = [];
+        rocketoffsets[0] = self gettagorigin("tag_le_missile1");
+        rocketoffsets[1] = self gettagorigin("tag_le_missile2");
+        rocketoffsets[2] = self gettagorigin("tag_ri_missile1");
+        rocketoffsets[3] = self gettagorigin("tag_ri_missile2");
+        missilegroup = self.sammissilegroups.size;
         for (i = 0; i < 4; i++) {
             if (!isdefined(self.samtargetent)) {
                 return;
@@ -1673,12 +1668,12 @@ function sam_fireontarget() {
                 return;
             }
             self shootturret();
-            rocket = _magicbullet(makeweapon("sam_projectile_mp"), var_b3cd0252c480a4af[i], self.samtargetent.origin, self.owner);
+            rocket = _magicbullet(makeweapon("sam_projectile_mp"), rocketoffsets[i], self.samtargetent.origin, self.owner);
             rocket missile_settargetent(self.samtargetent);
             rocket missile_setflightmodedirect();
             rocket.samturret = self;
-            rocket.sammissilegroup = var_a512aa80ea6bf396;
-            self.sammissilegroups[var_a512aa80ea6bf396][i] = rocket;
+            rocket.sammissilegroup = missilegroup;
+            self.sammissilegroups[missilegroup][i] = rocket;
             level notify("sam_missile_fired", self.owner);
             wait(0.25);
         }
@@ -1688,7 +1683,7 @@ function sam_fireontarget() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e39
 // Size: 0x9b
@@ -1696,8 +1691,8 @@ function sam_watchlineofsight() {
     level endon("game_ended");
     self endon("death");
     while (isdefined(self.samtargetent) && isdefined(self getturrettarget(1)) && self getturrettarget(1) == self.samtargetent) {
-        var_446576956fc59f64 = self gettagorigin("tag_laser");
-        if (!sighttracepassed(var_446576956fc59f64, self.samtargetent.origin, 0, self, self.samtargetent)) {
+        eyeline = self gettagorigin("tag_laser");
+        if (!sighttracepassed(eyeline, self.samtargetent.origin, 0, self, self.samtargetent)) {
             self cleartargetentity();
             self.samtargetent = undefined;
             break;
@@ -1706,7 +1701,7 @@ function sam_watchlineofsight() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4edb
 // Size: 0x61
@@ -1721,7 +1716,7 @@ function sam_watchlaser() {
     self.laser_on = 0;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f43
 // Size: 0x52
@@ -1736,7 +1731,7 @@ function sam_watchcrashing() {
     self.samtargetent = undefined;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f9c
 // Size: 0x6e
@@ -1753,7 +1748,7 @@ function sam_watchleaving() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5011
 // Size: 0x82
@@ -1762,7 +1757,7 @@ function scrambleturretattacktargets() {
     self endon("death");
     level endon("game_ended");
     self.scrambletargetent = undefined;
-    while (1) {
+    while (true) {
         self.scrambletargetent = scramble_acquiretarget();
         if (isdefined(self.scrambletargetent) && isdefined(self.scrambletargetent.scrambled) && !self.scrambletargetent.scrambled) {
             scrambletarget();
@@ -1771,7 +1766,7 @@ function scrambleturretattacktargets() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x509a
 // Size: 0x9
@@ -1779,7 +1774,7 @@ function scramble_acquiretarget() {
     return sam_acquiretarget();
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x50ab
 // Size: 0x129
@@ -1822,28 +1817,28 @@ function scrambletarget() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x51db
 // Size: 0x93
 function setscrambled() {
-    var_45b8a1e894f0e1f3 = self.scrambletargetent;
-    var_45b8a1e894f0e1f3 notify("scramble_fired", self.owner);
-    var_45b8a1e894f0e1f3 endon("scramble_fired");
-    var_45b8a1e894f0e1f3 endon("death");
-    var_45b8a1e894f0e1f3 thread namespace_f88f890445eec227::heli_targeting();
-    var_45b8a1e894f0e1f3.scrambled = 1;
-    var_45b8a1e894f0e1f3.secondowner = self.owner;
-    var_45b8a1e894f0e1f3 notify("findNewTarget");
+    scrambledtarget = self.scrambletargetent;
+    scrambledtarget notify("scramble_fired", self.owner);
+    scrambledtarget endon("scramble_fired");
+    scrambledtarget endon("death");
+    scrambledtarget thread scripts/mp/killstreaks/helicopter::heli_targeting();
+    scrambledtarget.scrambled = 1;
+    scrambledtarget.secondowner = self.owner;
+    scrambledtarget notify("findNewTarget");
     wait(30);
-    if (isdefined(var_45b8a1e894f0e1f3)) {
-        var_45b8a1e894f0e1f3.scrambled = 0;
-        var_45b8a1e894f0e1f3.secondowner = undefined;
-        var_45b8a1e894f0e1f3 thread namespace_f88f890445eec227::heli_targeting();
+    if (isdefined(scrambledtarget)) {
+        scrambledtarget.scrambled = 0;
+        scrambledtarget.secondowner = undefined;
+        scrambledtarget thread scripts/mp/killstreaks/helicopter::heli_targeting();
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5275
 // Size: 0x9b
@@ -1851,8 +1846,8 @@ function scramble_watchlineofsight() {
     level endon("game_ended");
     self endon("death");
     while (isdefined(self.scrambletargetent) && isdefined(self getturrettarget(1)) && self getturrettarget(1) == self.scrambletargetent) {
-        var_446576956fc59f64 = self gettagorigin("tag_laser");
-        if (!sighttracepassed(var_446576956fc59f64, self.scrambletargetent.origin, 0, self, self.scrambletargetent)) {
+        eyeline = self gettagorigin("tag_laser");
+        if (!sighttracepassed(eyeline, self.scrambletargetent.origin, 0, self, self.scrambletargetent)) {
             self cleartargetentity();
             self.scrambletargetent = undefined;
             break;
@@ -1861,7 +1856,7 @@ function scramble_watchlineofsight() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5317
 // Size: 0x66
@@ -1876,7 +1871,7 @@ function scramble_watchlaser() {
     self.laser_on = 0;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5384
 // Size: 0x52
@@ -1891,7 +1886,7 @@ function scramble_watchcrashing() {
     self.scrambletargetent = undefined;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x53dd
 // Size: 0x6e
@@ -1908,7 +1903,7 @@ function scramble_watchleaving() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5452
 // Size: 0xcd
@@ -1919,7 +1914,7 @@ function sentryshocktargets() {
     thread watchsentryshockpickup();
     self.airlookatent = spawn_tag_origin(self.origin, self.angles);
     self.airlookatent linkto(self, "tag_flash");
-    while (1) {
+    while (true) {
         result = waittill_any_timeout_1(1, "turret_on_target");
         if (result == "timeout") {
             continue;
@@ -1932,15 +1927,15 @@ function sentryshocktargets() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5526
 // Size: 0x22c
 function searchforshocksentryairtarget() {
     if (isdefined(level.uavmodels)) {
         if (level.teambased) {
-            var_b0c33d224b825287 = getenemyteams(self.owner.team);
-            foreach (entry in var_b0c33d224b825287) {
+            enemyteams = getenemyteams(self.owner.team);
+            foreach (entry in enemyteams) {
                 foreach (uav in level.uavmodels[entry]) {
                     if (targetvisibleinfront(uav)) {
                         return uav;
@@ -1976,7 +1971,7 @@ function searchforshocksentryairtarget() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5759
 // Size: 0x10d
@@ -1989,15 +1984,15 @@ function targetvisibleinfront(target) {
     targetpos = target.origin;
     var_11b27b4cc48cd1f4 = vectornormalize(targetpos - var_27653c8c1efd30b7);
     attackerforward = anglestoforward(self.angles);
-    ignorelist = [0:self, 1:self.owner, 2:target];
-    contents = physics_createcontents([0:"physicscontents_clipshot", 1:"physicscontents_glass", 2:"physicscontents_water", 3:"physicscontents_vehicle", 4:"physicscontents_item"]);
+    ignorelist = [self, self.owner, target];
+    contents = physics_createcontents(["physicscontents_clipshot", "physicscontents_glass", "physicscontents_water", "physicscontents_vehicle", "physicscontents_item"]);
     if (ray_trace_passed(var_27653c8c1efd30b7, targetpos, ignorelist, contents) && vectordot(attackerforward, var_11b27b4cc48cd1f4) > 0.25 && distance2dsquared(var_27653c8c1efd30b7, targetpos) > 10000) {
         infront = 1;
     }
     return infront;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x586e
 // Size: 0x20f
@@ -2017,19 +2012,19 @@ function shootshocksentrysamtarget(target, var_bea243c252114a9c) {
     self notify("start_firing");
     self setscriptablepartstate("coil", "active");
     firedelay = 2;
-    var_89c026c489ddc1e3 = 1;
+    firenum = 1;
     while (isdefined(target) && targetvisibleinfront(target)) {
         var_27653c8c1efd30b7 = self gettagorigin("tag_flash");
-        var_bcfeef729656e635 = _magicbullet(makeweapon("sentry_shock_missile_mp"), var_27653c8c1efd30b7, target.origin, self.owner);
-        var_bcfeef729656e635 missile_settargetent(target);
-        var_bcfeef729656e635 missile_setflightmodedirect();
-        var_bcfeef729656e635.killcament = self.killcament;
-        var_bcfeef729656e635.streakinfo = self.streakinfo;
-        self setscriptablepartstate("muzzle", "fire" + var_89c026c489ddc1e3, 0);
+        seekingmissile = _magicbullet(makeweapon("sentry_shock_missile_mp"), var_27653c8c1efd30b7, target.origin, self.owner);
+        seekingmissile missile_settargetent(target);
+        seekingmissile missile_setflightmodedirect();
+        seekingmissile.killcament = self.killcament;
+        seekingmissile.streakinfo = self.streakinfo;
+        self setscriptablepartstate("muzzle", "fire" + firenum, 0);
         level notify("laserGuidedMissiles_incoming", self.owner);
-        var_89c026c489ddc1e3++;
-        if (var_89c026c489ddc1e3 > 2) {
-            var_89c026c489ddc1e3 = 1;
+        firenum++;
+        if (firenum > 2) {
+            firenum = 1;
         }
         wait(firedelay);
     }
@@ -2045,14 +2040,14 @@ function shootshocksentrysamtarget(target, var_bea243c252114a9c) {
     self notify("done_firing");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a84
 // Size: 0x4a
 function sentry_handlemanualuse() {
     self endon("death");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         while (player isusingturret()) {
             if (player attackbuttonpressed()) {
@@ -2064,11 +2059,11 @@ function sentry_handlemanualuse() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ad5
 // Size: 0x155
-function sentry_handlealteratepickup(var_508482f603c6293e) {
+function sentry_handlealteratepickup(enablepickup) {
     self endon("death");
     self.owner endon("disconnect");
     level endon("game_ended");
@@ -2076,7 +2071,7 @@ function sentry_handlealteratepickup(var_508482f603c6293e) {
     self.manualpickuptrigger = spawn("trigger_radius", self.origin, 0, 128, 128);
     self.manualpickuptrigger enablelinkto();
     self.manualpickuptrigger linkto(self, "tag_origin");
-    while (1) {
+    while (true) {
         if (isdefined(self.carriedby)) {
             waitframe();
         }
@@ -2089,25 +2084,25 @@ function sentry_handlealteratepickup(var_508482f603c6293e) {
         #/
         self setmode(level.sentrysettings[self.sentrytype].sentrymodeoff);
         self.owner.placedsentries[self.sentrytype] = array_remove(self.owner.placedsentries[self.sentrytype], self);
-        self.owner setcarryingsentry(self, 0, var_508482f603c6293e);
+        self.owner setcarryingsentry(self, 0, enablepickup);
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c31
 // Size: 0x37
 function function_edb5f98849f3a4d6() {
     /#
         self endon("+actionslot 4");
-        while (1) {
+        while (true) {
             sphere(self.origin, 50, (0, 1, 0), 0, 20);
             waitframe();
         }
     #/
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c6f
 // Size: 0xb5
@@ -2117,11 +2112,11 @@ function setshocksamtargetent(target, var_bea243c252114a9c) {
     self endon("sentry_lost_target");
     target endon("death");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         startpoint = self gettagorigin("tag_aim");
         endpoint = target.origin;
-        var_734a884df1a36225 = vectornormalize(endpoint - startpoint);
-        var_180854261168edda = startpoint + var_734a884df1a36225 * 500;
+        targetdirection = vectornormalize(endpoint - startpoint);
+        var_180854261168edda = startpoint + targetdirection * 500;
         var_bea243c252114a9c unlink();
         var_bea243c252114a9c.origin = var_180854261168edda;
         var_bea243c252114a9c linkto(self);
@@ -2130,13 +2125,13 @@ function setshocksamtargetent(target, var_bea243c252114a9c) {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d2b
 // Size: 0x4f
 function watchsentryshockpickup() {
     self endon("death");
-    while (1) {
+    while (true) {
         self waittill("carried");
         if (isdefined(self.sentryshocktargetent)) {
             self.sentryshocktargetent = undefined;
@@ -2148,7 +2143,7 @@ function watchsentryshockpickup() {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d81
 // Size: 0xf2
@@ -2162,7 +2157,7 @@ function shocktarget(target) {
     self playsound("shock_sentry_charge_up");
     sentry_spinup();
     self notify("start_firing");
-    level thread namespace_25c5a6f43bb97b43::saytoself(target, "plr_killstreak_target");
+    level thread scripts/mp/battlechatter_mp::saytoself(target, "plr_killstreak_target");
     firetime = weaponfiretime(level.sentrysettings[self.sentrytype].weaponinfo);
     while (isdefined(target) && isreallyalive(target) && isdefined(self getturrettarget(1)) && self getturrettarget(1) == target && !outlineoccluded(self gettagorigin("tag_flash"), target geteye())) {
         self shootturret();
@@ -2174,45 +2169,45 @@ function shocktarget(target) {
     self notify("done_firing");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e7a
 // Size: 0xf9
 function missileburstfire(target) {
     self endon("death");
     self endon("carried");
-    var_c8cc9e14cbc6c616 = 3;
-    var_89c026c489ddc1e3 = 1;
-    while (var_c8cc9e14cbc6c616 > 0) {
+    missilecount = 3;
+    firenum = 1;
+    while (missilecount > 0) {
         if (!isdefined(target)) {
             return;
         }
         if (!isdefined(self.owner)) {
             return;
         }
-        var_261af406ee6924ea = _magicbullet(makeweapon("sentry_shock_grenade_mp"), self gettagorigin("tag_flash"), target.origin, self.owner);
-        var_261af406ee6924ea missile_settargetent(target, gettargetoffset(target));
-        var_261af406ee6924ea.killcament = self.killcament;
-        var_261af406ee6924ea.streakinfo = self.streakinfo;
-        self setscriptablepartstate("muzzle", "fire" + var_89c026c489ddc1e3, 0);
-        var_89c026c489ddc1e3++;
-        if (var_89c026c489ddc1e3 > 2) {
-            var_89c026c489ddc1e3 = 1;
+        sentrymissile = _magicbullet(makeweapon("sentry_shock_grenade_mp"), self gettagorigin("tag_flash"), target.origin, self.owner);
+        sentrymissile missile_settargetent(target, gettargetoffset(target));
+        sentrymissile.killcament = self.killcament;
+        sentrymissile.streakinfo = self.streakinfo;
+        self setscriptablepartstate("muzzle", "fire" + firenum, 0);
+        firenum++;
+        if (firenum > 2) {
+            firenum = 1;
         }
-        var_261af406ee6924ea thread watchtargetchange(target);
-        var_c8cc9e14cbc6c616--;
+        sentrymissile thread watchtargetchange(target);
+        missilecount--;
         wait(0.2);
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f7a
 // Size: 0x99
 function gettargetoffset(target) {
     heightoffset = (0, 0, 40);
-    var_e8be66aec958de65 = target getstance();
-    switch (var_e8be66aec958de65) {
+    owner_stance = target getstance();
+    switch (owner_stance) {
     case #"hash_c6775c88e38f7803":
         heightoffset = (0, 0, 40);
         break;
@@ -2226,14 +2221,14 @@ function gettargetoffset(target) {
     return heightoffset;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x601b
 // Size: 0x3d
 function watchtargetchange(target) {
     self endon("death");
     target endon("disconnect");
-    while (1) {
+    while (true) {
         if (!isreallyalive(target)) {
             self missile_settargetent(target getcorpseentity());
             break;
@@ -2242,7 +2237,7 @@ function watchtargetchange(target) {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x605f
 // Size: 0x47
@@ -2255,7 +2250,7 @@ function marktargetlaser(target) {
     self.laser_on = 0;
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x60ad
 // Size: 0x1f0
@@ -2263,8 +2258,8 @@ function watchshockdamage(target) {
     self endon("death");
     self endon("done_firing");
     triggerradius = undefined;
-    while (1) {
-        psoffsettime = shitloc = vdir = vpoint = objweapon = smeansofdeath = idflags = idamage = einflictor = victim = self waittill("victim_damaged");
+    while (true) {
+        victim, einflictor, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime = self waittill("victim_damaged");
         if (victim == target) {
             damageradius = 100;
             var_b959b266290f9e13 = getplayersinradiusview(vpoint, damageradius, victim.team, self.owner);
@@ -2289,21 +2284,21 @@ function watchshockdamage(target) {
     }
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x62a4
 // Size: 0x41
 function allowweaponsforsentry(allow) {
     if (allow) {
-        val::function_c9d0b43701bdba00("sentry_weapons");
-        thread namespace_85d036cb78063c4a::unstowsuperweapon();
-    } else {
-        thread namespace_85d036cb78063c4a::allowsuperweaponstow();
-        val::set("sentry_weapons", "weapon", 0);
+        val::reset_all("sentry_weapons");
+        thread scripts/mp/supers::unstowsuperweapon();
+        return;
     }
+    thread scripts/mp/supers::allowsuperweaponstow();
+    val::set("sentry_weapons", "weapon", 0);
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x62ec
 // Size: 0x4d
@@ -2312,12 +2307,11 @@ function placehinton() {
     if (sentrytype == "super_trophy") {
         self.owner forceusehinton("LUA_MENU_MP/PLACE_SUPER_TROPHY");
         return;
-    } else {
-        self.owner forceusehinton("SENTRY/PLACE");
     }
+    self.owner forceusehinton("SENTRY/PLACE");
 }
 
-// Namespace namespace_df66bd377221e9b5/namespace_d3164761cc58a612
+// Namespace autosentry / scripts/mp/killstreaks/autosentry
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6340
 // Size: 0x4d
@@ -2326,8 +2320,7 @@ function cannotplacehinton() {
     if (sentrytype == "super_trophy") {
         self.owner forceusehinton("LUA_MENU_MP/CANNOT_PLACE_SUPER_TROPHY");
         return;
-    } else {
-        self.owner forceusehinton("SENTRY/CANNOT_PLACE");
     }
+    self.owner forceusehinton("SENTRY/CANNOT_PLACE");
 }
 

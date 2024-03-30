@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace flags;
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x129
 // Size: 0x17
@@ -11,7 +11,7 @@ function initgameflags() {
     }
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x147
 // Size: 0x30
@@ -22,7 +22,7 @@ function gameflaginit(flagname, isenabled) {
     game["flags"][flagname] = isenabled;
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17e
 // Size: 0x22
@@ -30,7 +30,7 @@ function gameflagexists(flagname) {
     return isdefined(game["flags"]) && isdefined(game["flags"][flagname]);
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0x35
@@ -41,7 +41,7 @@ function gameflag(flagname) {
     return game["flags"][flagname];
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e5
 // Size: 0x3c
@@ -53,7 +53,7 @@ function gameflagset(flagname) {
     level notify(flagname);
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x228
 // Size: 0x37
@@ -64,7 +64,7 @@ function gameflagclear(flagname) {
     game["flags"][flagname] = 0;
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x266
 // Size: 0x3d
@@ -77,7 +77,7 @@ function gameflagwait(flagname) {
     }
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2aa
 // Size: 0x22
@@ -88,7 +88,7 @@ function function_1240434f4201ac9d(flagname) {
     gameflagwait(flagname);
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x1a
@@ -98,7 +98,7 @@ function initlevelflags() {
     }
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f4
 // Size: 0x34
@@ -109,7 +109,7 @@ function levelflaginit(flagname, isenabled) {
     level.levelflags[flagname] = isenabled;
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32f
 // Size: 0x39
@@ -120,7 +120,7 @@ function levelflag(flagname) {
     return level.levelflags[flagname];
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x370
 // Size: 0x40
@@ -132,7 +132,7 @@ function levelflagset(flagname) {
     level notify(flagname);
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b7
 // Size: 0x3f
@@ -144,7 +144,7 @@ function levelflagclear(flagname) {
     level notify(flagname);
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fd
 // Size: 0x3f
@@ -157,7 +157,7 @@ function levelflagwait(flagname) {
     }
 }
 
-// Namespace flags/namespace_4b0406965e556711
+// Namespace flags / scripts/mp/flags
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x443
 // Size: 0x3f

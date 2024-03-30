@@ -11,9 +11,9 @@
 #using scripts\mp\weapons.gsc;
 #using scripts\cp_mp\vehicles\vehicle.gsc;
 
-#namespace namespace_25f632c5311f7107;
+#namespace missilelauncher;
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f5
 // Size: 0xa
@@ -21,7 +21,7 @@ function initmissilelauncherusage() {
     resetmissilelaunchertargets();
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x306
 // Size: 0x2b
@@ -32,7 +32,7 @@ function resetmissilelaunchertargets() {
     self.missilelauncherlostsightlinetime = undefined;
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x338
 // Size: 0x77
@@ -53,7 +53,7 @@ function resetmissilelauncherlocking() {
     resetmissilelaunchertargets();
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b6
 // Size: 0x32
@@ -68,7 +68,7 @@ function resetmissilelauncherlockingondeath() {
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0xea
@@ -76,20 +76,19 @@ function loopmissilelauncherlockingfeedback() {
     self endon("death_or_disconnect");
     self endon("stop_javelin_locking_feedback");
     for (;;) {
-        for (;;) {
-            if (isdefined(level.chopper) && isdefined(level.chopper.gunner) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.chopper.gunner) {
-                level.gunshipplayer playlocalsound("maaws_incoming_lp");
-            }
-            if (isdefined(level.gunshipplayer) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.gunship.planemodel) {
-                level.gunshipplayer playlocalsound("maaws_incoming_lp");
-            }
-            self playlocalsound("maaws_reticle_tracking");
-            self playrumbleonentity("ac130_25mm_fire");
+        if (isdefined(level.chopper) && isdefined(level.chopper.gunner) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.chopper.gunner) {
+            level.gunshipplayer playlocalsound("maaws_incoming_lp");
         }
+        if (isdefined(level.gunshipplayer) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.gunship.planemodel) {
+            level.gunshipplayer playlocalsound("maaws_incoming_lp");
+        }
+        self playlocalsound("maaws_reticle_tracking");
+        self playrumbleonentity("ac130_25mm_fire");
+        wait(0.6);
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0xea
@@ -98,19 +97,18 @@ function loopmissilelauncherlockedfeedback() {
     self endon("stop_javelin_locked_feedback");
     self playlocalsound("maaws_reticle_locked");
     for (;;) {
-        for (;;) {
-            if (isdefined(level.chopper) && isdefined(level.chopper.gunner) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.chopper.gunner) {
-                level.gunshipplayer playlocalsound("maaws_incoming_lp");
-            }
-            if (isdefined(level.gunshipplayer) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.gunship.planemodel) {
-                level.gunshipplayer playlocalsound("maaws_incoming_lp");
-            }
-            self playrumbleonentity("ac130_25mm_fire");
+        if (isdefined(level.chopper) && isdefined(level.chopper.gunner) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.chopper.gunner) {
+            level.gunshipplayer playlocalsound("maaws_incoming_lp");
         }
+        if (isdefined(level.gunshipplayer) && isdefined(self.missilelaunchertarget) && self.missilelaunchertarget == level.gunship.planemodel) {
+            level.gunshipplayer playlocalsound("maaws_incoming_lp");
+        }
+        self playrumbleonentity("ac130_25mm_fire");
+        wait(0.25);
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d1
 // Size: 0x78
@@ -118,7 +116,7 @@ function softsighttest(var_1fe8eeb95943f79f) {
     lost_sight_limit = 500;
     if (var_1fe8eeb95943f79f stingtargstruct_isinlos()) {
         self.missilelauncherlostsightlinetime = 0;
-        return 1;
+        return true;
     }
     if (self.missilelauncherlostsightlinetime == 0) {
         self.missilelauncherlostsightlinetime = gettime();
@@ -126,12 +124,12 @@ function softsighttest(var_1fe8eeb95943f79f) {
     timepassed = gettime() - self.missilelauncherlostsightlinetime;
     if (timepassed >= lost_sight_limit) {
         resetmissilelauncherlocking();
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x651
 // Size: 0x3df
@@ -141,7 +139,7 @@ function missilelauncherusage() {
     /#
         var_e688b198aa9a4b3f = getdvarint(@"hash_10368af4dee3ba2c", 0);
     #/
-    if (!namespace_d325722f2754c2c4::function_acc627f597d5b2cf()) {
+    if (!scripts/cp_mp/utility/weapon_utility::function_acc627f597d5b2cf()) {
         return;
     }
     if (self playerads() < 0.95) {
@@ -156,7 +154,7 @@ function missilelauncherusage() {
         function_5875284c0e0f1e40(self.missilelaunchertarget);
     #/
     if (self.missilelauncherstage == 0) {
-        targets = namespace_3bbb5a98b932c46f::lockonlaunchers_gettargetarray(0);
+        targets = scripts/mp/weapons::lockonlaunchers_gettargetarray(0);
         if (targets.size == 0) {
             return;
         }
@@ -200,7 +198,7 @@ function missilelauncherusage() {
             resetmissilelauncherlocking();
             return;
         }
-        if (!var_e688b198aa9a4b3f && self.missilelaunchertarget namespace_1f188a13f7e79610::isvehicle() && namespace_1f188a13f7e79610::vehicle_isfriendlytoplayer(self.missilelaunchertarget, self)) {
+        if (!var_e688b198aa9a4b3f && self.missilelaunchertarget scripts/cp_mp/vehicles/vehicle::isvehicle() && scripts/cp_mp/vehicles/vehicle::vehicle_isfriendlytoplayer(self.missilelaunchertarget, self)) {
             resetmissilelauncherlocking();
             return;
         }
@@ -235,7 +233,7 @@ function missilelauncherusage() {
             resetmissilelauncherlocking();
             return;
         }
-        if (!var_e688b198aa9a4b3f && self.missilelaunchertarget namespace_1f188a13f7e79610::isvehicle() && namespace_1f188a13f7e79610::vehicle_isfriendlytoplayer(self.missilelaunchertarget, self)) {
+        if (!var_e688b198aa9a4b3f && self.missilelaunchertarget scripts/cp_mp/vehicles/vehicle::isvehicle() && scripts/cp_mp/vehicles/vehicle::vehicle_isfriendlytoplayer(self.missilelaunchertarget, self)) {
             resetmissilelauncherlocking();
             return;
         }
@@ -256,7 +254,7 @@ function missilelauncherusage() {
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa37
 // Size: 0x3a
@@ -274,7 +272,7 @@ function missilelauncherusageloop() {
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa78
 // Size: 0xfb
@@ -295,7 +293,7 @@ function missilelauncher_finalizelock(var_1fe8eeb95943f79f) {
     self weaponlockfinalize(self.missilelaunchertarget, offset);
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7a
 // Size: 0x8c
@@ -312,7 +310,7 @@ function stingtargstruct_create(player, target) {
     return struct;
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc0e
 // Size: 0x689
@@ -321,64 +319,98 @@ function stingtargstruct_getoffsets() {
     if (ischoppergunner(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, -50);
         self.useoldlosverification = 0;
-    } else if (issupporthelo(self.target)) {
+        return;
+    }
+    if (issupporthelo(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, -100);
         self.useoldlosverification = 0;
-    } else if (isgunship(self.target)) {
+        return;
+    }
+    if (isgunship(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, 50);
         self.useoldlosverification = 0;
-    } else if (isclusterstrike(self.target)) {
+        return;
+    }
+    if (isclusterstrike(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, 40);
         self.useoldlosverification = 0;
-    } else if (isturret(self.target)) {
+        return;
+    }
+    if (isturret(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, 42);
         self.offsets[self.offsets.size] = (0, 0, 5);
         self.useoldlosverification = 0;
-    } else if (isradardrone(self.target)) {
+        return;
+    }
+    if (isradardrone(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, 10);
         self.useoldlosverification = 0;
-    } else if (isassaultdrone(self.target)) {
+        return;
+    }
+    if (isassaultdrone(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, 10);
         self.useoldlosverification = 0;
-    } else if (isscramblerdrone(self.target)) {
+        return;
+    }
+    if (isscramblerdrone(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, 15);
         self.useoldlosverification = 0;
-    } else if (isradarhelicopter(self.target)) {
+        return;
+    }
+    if (isradarhelicopter(self.target)) {
         self.offsets[self.offsets.size] = (0, 0, -30);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && self.target.vehiclename == "light_tank") {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && self.target.vehiclename == "light_tank") {
         self.offsets[self.offsets.size] = (0, 0, 72);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && self.target.vehiclename == "apc_russian") {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && self.target.vehiclename == "apc_russian") {
         self.offsets[self.offsets.size] = (0, 0, 60);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "cargo_truck" || self.target.vehiclename == "cargo_truck_mg")) {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "cargo_truck" || self.target.vehiclename == "cargo_truck_mg")) {
         self.offsets[self.offsets.size] = (0, 0, 60);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && self.target.vehiclename == "large_transport") {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && self.target.vehiclename == "large_transport") {
         self.offsets[self.offsets.size] = (0, 0, 65);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && self.target.vehiclename == "medium_transport") {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && self.target.vehiclename == "medium_transport") {
         self.offsets[self.offsets.size] = (0, 0, 60);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "pickup_truck" || self.target.vehiclename == "technical")) {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "pickup_truck" || self.target.vehiclename == "technical")) {
         self.offsets[self.offsets.size] = (0, 0, 55);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "jeep" || self.target.vehiclename == "tac_rover")) {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "jeep" || self.target.vehiclename == "tac_rover")) {
         self.offsets[self.offsets.size] = (0, 0, 50);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "veh9_rhib" || self.target.vehiclename == "veh9_rhib_hsk")) {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && (self.target.vehiclename == "veh9_rhib" || self.target.vehiclename == "veh9_rhib_hsk")) {
         self.offsets[self.offsets.size] = (0, 0, 20);
         self.useoldlosverification = 0;
-    } else if (isdefined(self.target.vehiclename) && self.target.vehiclename == "loot_chopper") {
+        return;
+    }
+    if (isdefined(self.target.vehiclename) && self.target.vehiclename == "loot_chopper") {
         self.offsets[self.offsets.size] = (0, 0, -100);
         self.useoldlosverification = 0;
-    } else {
-        self.offsets[self.offsets.size] = (0, 0, 0);
+        return;
     }
+    self.offsets[self.offsets.size] = (0, 0, 0);
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x129e
 // Size: 0xcb
@@ -394,7 +426,7 @@ function stingtargstruct_getorigins() {
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1370
 // Size: 0x1b4
@@ -414,13 +446,13 @@ function stingtargstruct_getinreticle() {
     if (self.inreticlesortedids.size > 1) {
         for (i = 0; i < self.inreticlesortedids.size; i++) {
             for (j = i + 1; j < self.inreticlesortedids.size; j++) {
-                var_766150b8375aff90 = self.inreticlesortedids[i];
-                var_a1a802f9a569b2f7 = self.inreticlesortedids[j];
-                var_8eba9ec305d4a611 = self.inreticledistssqr[var_766150b8375aff90];
-                var_cf5f902786383f74 = self.inreticledistssqr[var_a1a802f9a569b2f7];
+                i_id = self.inreticlesortedids[i];
+                j_id = self.inreticlesortedids[j];
+                var_8eba9ec305d4a611 = self.inreticledistssqr[i_id];
+                var_cf5f902786383f74 = self.inreticledistssqr[j_id];
                 if (var_cf5f902786383f74 < var_8eba9ec305d4a611) {
-                    tempid = var_766150b8375aff90;
-                    self.inreticlesortedids[i] = var_a1a802f9a569b2f7;
+                    tempid = i_id;
+                    self.inreticlesortedids[i] = j_id;
                     self.inreticlesortedids[j] = tempid;
                 }
             }
@@ -428,27 +460,27 @@ function stingtargstruct_getinreticle() {
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x152b
 // Size: 0x457
 function stingtargstruct_getinlos() {
     caststart = self.player geteye();
-    contents = physics_createcontents([0:"physicscontents_glass", 1:"physicscontents_water", 2:"physicscontents_item", 3:"physicscontents_playernosight"]);
+    contents = physics_createcontents(["physicscontents_glass", "physicscontents_water", "physicscontents_item", "physicscontents_playernosight"]);
     if (!isent(self.target)) {
-        var_7c44f2c83cc7cf1e = [0:self.player];
+        var_7c44f2c83cc7cf1e = [self.player];
         for (i = 0; i < self.inreticlesortedids.size; i++) {
             id = self.inreticlesortedids[i];
             castend = self.origins[id];
-            var_e021c2744cc7ed68 = physics_raycast(caststart, castend, contents, var_7c44f2c83cc7cf1e, 0, "physicsquery_closest", 1);
-            if (!isdefined(var_e021c2744cc7ed68) || var_e021c2744cc7ed68.size == 0) {
+            castresults = physics_raycast(caststart, castend, contents, var_7c44f2c83cc7cf1e, 0, "physicsquery_closest", 1);
+            if (!isdefined(castresults) || castresults.size == 0) {
                 self.inlosid = id;
                 return;
             }
         }
         return;
     }
-    var_7c44f2c83cc7cf1e = [0:self.player, 1:self.target];
+    var_7c44f2c83cc7cf1e = [self.player, self.target];
     var_d4a24e02d124ac38 = self.target getlinkedchildren();
     if (isdefined(var_d4a24e02d124ac38) && var_d4a24e02d124ac38.size > 0) {
         var_7c44f2c83cc7cf1e = array_combine(var_7c44f2c83cc7cf1e, var_d4a24e02d124ac38);
@@ -457,56 +489,56 @@ function stingtargstruct_getinlos() {
         for (i = 0; i < self.inreticlesortedids.size; i++) {
             id = self.inreticlesortedids[i];
             castend = self.origins[id];
-            var_e021c2744cc7ed68 = physics_raycast(caststart, castend, contents, var_7c44f2c83cc7cf1e, 0, "physicsquery_closest", 1);
-            if (!isdefined(var_e021c2744cc7ed68) || var_e021c2744cc7ed68.size == 0) {
+            castresults = physics_raycast(caststart, castend, contents, var_7c44f2c83cc7cf1e, 0, "physicsquery_closest", 1);
+            if (!isdefined(castresults) || castresults.size == 0) {
                 self.inlosid = id;
                 return;
             }
         }
-    } else {
-        top = self.target getpointinbounds(0, 0, 1);
-        trace = ray_trace(caststart, top, var_7c44f2c83cc7cf1e, contents, 0);
-        /#
-            if (getdvar(@"hash_b56d344ee60e317f") == "physicscontents_water") {
-                playerangles = self.player getplayerangles();
-                forward = anglestoforward(playerangles);
-                left = anglestoleft(playerangles);
-                hitpos = trace["physicscontents_playernosight"];
-                sphere(hitpos, 10, (1, 0, 0), 0, 1);
-                sphere(hitpos, 10, (0, 1, 0), 1, 1);
-                var_29f55613421c5159 = distance(caststart, hitpos);
-                print3d(hitpos + left * -20, "<unknown string>" + var_29f55613421c5159, (1, 1, 1), 1, 1, 1);
-                var_ad791987651b3ba3 = self.player.origin;
-                var_633eaa5f21008b6f = var_ad791987651b3ba3 + left * 50;
-                line(var_633eaa5f21008b6f, hitpos, (0, 1, 0), 1, 1, 1);
-                var_3eacd3938ccd4b6c = var_ad791987651b3ba3 + left * -50;
-                line(var_3eacd3938ccd4b6c, hitpos, (0, 1, 0), 1, 1, 1);
-                var_633eaa5f21008b6f = var_633eaa5f21008b6f + (0, 0, 100);
-                line(var_633eaa5f21008b6f, hitpos, (0, 1, 0), 1, 1, 1);
-                var_3eacd3938ccd4b6c = var_3eacd3938ccd4b6c + (0, 0, 100);
-                line(var_3eacd3938ccd4b6c, hitpos, (0, 1, 0), 1, 1, 1);
-            }
-        #/
-        if (trace["fraction"] == 1) {
-            self.inlosid = 0;
-            return;
+        return;
+    }
+    top = self.target getpointinbounds(0, 0, 1);
+    trace = ray_trace(caststart, top, var_7c44f2c83cc7cf1e, contents, 0);
+    /#
+        if (getdvar(@"hash_b56d344ee60e317f") == "physicscontents_water") {
+            playerangles = self.player getplayerangles();
+            forward = anglestoforward(playerangles);
+            left = anglestoleft(playerangles);
+            hitpos = trace["physicscontents_playernosight"];
+            sphere(hitpos, 10, (1, 0, 0), 0, 1);
+            sphere(hitpos, 10, (0, 1, 0), 1, 1);
+            var_29f55613421c5159 = distance(caststart, hitpos);
+            print3d(hitpos + left * -20, "<unknown string>" + var_29f55613421c5159, (1, 1, 1), 1, 1, 1);
+            var_ad791987651b3ba3 = self.player.origin;
+            var_633eaa5f21008b6f = var_ad791987651b3ba3 + left * 50;
+            line(var_633eaa5f21008b6f, hitpos, (0, 1, 0), 1, 1, 1);
+            var_3eacd3938ccd4b6c = var_ad791987651b3ba3 + left * -50;
+            line(var_3eacd3938ccd4b6c, hitpos, (0, 1, 0), 1, 1, 1);
+            var_633eaa5f21008b6f = var_633eaa5f21008b6f + (0, 0, 100);
+            line(var_633eaa5f21008b6f, hitpos, (0, 1, 0), 1, 1, 1);
+            var_3eacd3938ccd4b6c = var_3eacd3938ccd4b6c + (0, 0, 100);
+            line(var_3eacd3938ccd4b6c, hitpos, (0, 1, 0), 1, 1, 1);
         }
-        front = self.target getpointinbounds(1, 0, 0);
-        trace = ray_trace(caststart, front, var_7c44f2c83cc7cf1e, contents, 0);
-        if (trace["fraction"] == 1) {
-            self.inlosid = 0;
-            return;
-        }
-        back = self.target getpointinbounds(-1, 0, 0);
-        trace = ray_trace(caststart, back, var_7c44f2c83cc7cf1e, contents, 0);
-        if (trace["fraction"] == 1) {
-            self.inlosid = 0;
-            return;
-        }
+    #/
+    if (trace["fraction"] == 1) {
+        self.inlosid = 0;
+        return;
+    }
+    front = self.target getpointinbounds(1, 0, 0);
+    trace = ray_trace(caststart, front, var_7c44f2c83cc7cf1e, contents, 0);
+    if (trace["fraction"] == 1) {
+        self.inlosid = 0;
+        return;
+    }
+    back = self.target getpointinbounds(-1, 0, 0);
+    trace = ray_trace(caststart, back, var_7c44f2c83cc7cf1e, contents, 0);
+    if (trace["fraction"] == 1) {
+        self.inlosid = 0;
+        return;
     }
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1989
 // Size: 0xf
@@ -514,7 +546,7 @@ function stingtargstruct_isinreticle() {
     return self.inreticlesortedids.size > 0;
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19a0
 // Size: 0xd
@@ -522,7 +554,7 @@ function stingtargstruct_isinlos() {
     return isdefined(self.inlosid);
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19b5
 // Size: 0xe4
@@ -544,109 +576,109 @@ function debug_init() {
     #/
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1aa0
 // Size: 0x269
 function function_b787474070c5281b(jackal) {
     /#
         jackal endon("<unknown string>");
-        var_558f2ec8e231df5d = 50;
-        while (1) {
+        spheresize = 50;
+        while (true) {
             forward = anglestoforward(jackal.angles);
             right = anglestoright(jackal.angles);
             up = anglestoup(jackal.angles);
             origin = jackal.origin;
             centerpos = jackal.origin;
             centerpos = centerpos + up * getdvarfloat(@"hash_ad918199a0825d3a", 0);
-            var_4d866ea464e2c2d6 = origin;
-            var_4d866ea464e2c2d6 = var_4d866ea464e2c2d6 + forward * getdvarfloat(@"hash_84a8019a3bb27871", 0);
-            var_4d866ea464e2c2d6 = var_4d866ea464e2c2d6 + up * getdvarfloat(@"hash_ffbdbf4d8f631e47", 0);
-            var_1c3718b75def5ea4 = origin;
-            var_1c3718b75def5ea4 = var_1c3718b75def5ea4 + -1 * forward * getdvarfloat(@"hash_84a8059a3bb2813d", 0);
-            var_1c3718b75def5ea4 = var_1c3718b75def5ea4 + up * getdvarfloat(@"hash_1578b7af746ab2fb", 0);
-            var_1a8097f1a065c786 = origin;
-            var_1a8097f1a065c786 = var_1a8097f1a065c786 + -1 * right * getdvarfloat(@"hash_6fc78931494d8833", 0);
-            var_1a8097f1a065c786 = var_1a8097f1a065c786 + -1 * forward * getdvarfloat(@"hash_fead31902c16c7ef", 0);
-            var_1a8097f1a065c786 = var_1a8097f1a065c786 + up * getdvarfloat(@"hash_60e1bbd430b85fe9", 0);
-            var_1a2a7c570678a79d = origin;
-            var_1a2a7c570678a79d = var_1a2a7c570678a79d + right * getdvarfloat(@"hash_6fc78931494d8833", 0);
-            var_1a2a7c570678a79d = var_1a2a7c570678a79d + -1 * forward * getdvarfloat(@"hash_fead31902c16c7ef", 0);
-            var_1a2a7c570678a79d = var_1a2a7c570678a79d + up * getdvarfloat(@"hash_60e1bbd430b85fe9", 0);
-            thread drawsphere(centerpos, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
-            thread drawsphere(var_4d866ea464e2c2d6, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
-            thread drawsphere(var_1c3718b75def5ea4, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
-            thread drawsphere(var_1a8097f1a065c786, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
-            thread drawsphere(var_1a2a7c570678a79d, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
+            frontpos = origin;
+            frontpos = frontpos + forward * getdvarfloat(@"hash_84a8019a3bb27871", 0);
+            frontpos = frontpos + up * getdvarfloat(@"hash_ffbdbf4d8f631e47", 0);
+            backpos = origin;
+            backpos = backpos + -1 * forward * getdvarfloat(@"hash_84a8059a3bb2813d", 0);
+            backpos = backpos + up * getdvarfloat(@"hash_1578b7af746ab2fb", 0);
+            leftpos = origin;
+            leftpos = leftpos + -1 * right * getdvarfloat(@"hash_6fc78931494d8833", 0);
+            leftpos = leftpos + -1 * forward * getdvarfloat(@"hash_fead31902c16c7ef", 0);
+            leftpos = leftpos + up * getdvarfloat(@"hash_60e1bbd430b85fe9", 0);
+            rightpos = origin;
+            rightpos = rightpos + right * getdvarfloat(@"hash_6fc78931494d8833", 0);
+            rightpos = rightpos + -1 * forward * getdvarfloat(@"hash_fead31902c16c7ef", 0);
+            rightpos = rightpos + up * getdvarfloat(@"hash_60e1bbd430b85fe9", 0);
+            thread drawsphere(centerpos, spheresize, 0.05, (1, 0, 0));
+            thread drawsphere(frontpos, spheresize, 0.05, (1, 0, 0));
+            thread drawsphere(backpos, spheresize, 0.05, (1, 0, 0));
+            thread drawsphere(leftpos, spheresize, 0.05, (1, 0, 0));
+            thread drawsphere(rightpos, spheresize, 0.05, (1, 0, 0));
             waitframe();
         }
     #/
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d10
 // Size: 0xd7
 function function_86fc943ed3331734(supertrophy) {
     /#
         supertrophy endon("<unknown string>");
-        var_558f2ec8e231df5d = 4;
-        while (1) {
+        spheresize = 4;
+        while (true) {
             up = anglestoup(supertrophy.angles);
             origin = supertrophy.origin;
             toppos = origin;
             toppos = toppos + up * getdvarfloat(@"hash_9b2345c5373f7e68", 0);
             botpos = origin;
             botpos = botpos + up * getdvarfloat(@"hash_a6d283ccfd72e0d2", 0);
-            thread drawsphere(toppos, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
-            thread drawsphere(botpos, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
+            thread drawsphere(toppos, spheresize, 0.05, (1, 0, 0));
+            thread drawsphere(botpos, spheresize, 0.05, (1, 0, 0));
             waitframe();
         }
     #/
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dee
 // Size: 0x9a
-function function_5942767696e14755(var_c05d10a6ec10de79) {
+function function_5942767696e14755(microturret) {
     /#
-        var_c05d10a6ec10de79 endon("<unknown string>");
-        var_558f2ec8e231df5d = 4;
-        while (1) {
-            up = anglestoup(var_c05d10a6ec10de79.angles);
-            origin = var_c05d10a6ec10de79.origin;
+        microturret endon("<unknown string>");
+        spheresize = 4;
+        while (true) {
+            up = anglestoup(microturret.angles);
+            origin = microturret.origin;
             centerpos = origin;
             centerpos = centerpos + up * getdvarfloat(@"hash_c3840a33843aa1f2", 0);
-            thread drawsphere(centerpos, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
+            thread drawsphere(centerpos, spheresize, 0.05, (1, 0, 0));
             waitframe();
         }
     #/
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e8f
 // Size: 0xd7
-function function_7ea2aeeed11a82c8(var_9ca80e18adcba052) {
+function function_7ea2aeeed11a82c8(shocksentry) {
     /#
-        var_9ca80e18adcba052 endon("<unknown string>");
-        var_558f2ec8e231df5d = 4;
-        while (1) {
-            up = anglestoup(var_9ca80e18adcba052.angles);
-            origin = var_9ca80e18adcba052.origin;
+        shocksentry endon("<unknown string>");
+        spheresize = 4;
+        while (true) {
+            up = anglestoup(shocksentry.angles);
+            origin = shocksentry.origin;
             toppos = origin;
             toppos = toppos + up * getdvarfloat(@"hash_5a2bc3bd648b860c", 0);
             botpos = origin;
             botpos = botpos + up * getdvarfloat(@"hash_9bb2d0feba0e1fde", 0);
-            thread drawsphere(toppos, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
-            thread drawsphere(botpos, var_558f2ec8e231df5d, 0.05, (1, 0, 0));
+            thread drawsphere(toppos, spheresize, 0.05, (1, 0, 0));
+            thread drawsphere(botpos, spheresize, 0.05, (1, 0, 0));
             waitframe();
         }
     #/
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f6d
 // Size: 0x73
@@ -659,19 +691,19 @@ function function_5875284c0e0f1e40(target) {
             return;
         }
         org = target.origin;
-        function_5c89b31e55a970e3(org);
+        drawstar(org);
         org = target getpointinbounds(1, 0, 0);
-        function_5c89b31e55a970e3(org);
+        drawstar(org);
         org = target getpointinbounds(-1, 0, 0);
-        function_5c89b31e55a970e3(org);
+        drawstar(org);
     #/
 }
 
-// Namespace namespace_25f632c5311f7107/namespace_64f4de5bc294e756
+// Namespace missilelauncher / scripts/mp/missilelauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fe7
 // Size: 0x7b
-function function_5c89b31e55a970e3(point) {
+function drawstar(point) {
     /#
         line(point + (10, 0, 0), point - (10, 0, 0));
         line(point + (0, 10, 0), point - (0, 10, 0));

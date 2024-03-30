@@ -5,7 +5,7 @@
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\mp\agents\agent_utility.gsc;
 #using scripts\mp\class.gsc;
 #using scripts\mp\codcasterclientmatchdata.gsc;
@@ -20,7 +20,7 @@
 #using script_5bc60484d17fa95c;
 #using script_930a1e7bd882c1d;
 #using script_2d9d24f7c63ac143;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\mp\gametypes\br_gametypes.gsc;
 #using scripts\mp\gametypes\br_dom_quest.gsc;
 #using script_7b5ad7b49edf8d6b;
@@ -42,7 +42,7 @@
 #using scripts\mp\equipment.gsc;
 #using scripts\mp\gamelogic.gsc;
 #using scripts\mp\gametypes\br_gulag.gsc;
-#using script_a34750d17473c49;
+#using scripts\mp\gametypes\br_utility.gsc;
 #using scripts\mp\gametypes\br.gsc;
 #using script_3583ff375ab3a91e;
 #using scripts\mp\deathicons.gsc;
@@ -79,7 +79,7 @@
 
 #namespace br_gulag;
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ca7
 // Size: 0x73a
@@ -88,7 +88,7 @@ function initgulag() {
     if (!istrue(level.usegulag)) {
         return;
     }
-    if (namespace_71073fa38f11492::isfeaturedisabled("gulag")) {
+    if (scripts/mp/gametypes/br_gametypes::isfeaturedisabled("gulag")) {
         level.usegulag = 0;
         return;
     }
@@ -104,7 +104,7 @@ function initgulag() {
     level.gulag.multiarena = getdvarint(@"hash_29b4dd2fcb154cc9", 1);
     level.gulag.planerespawn = getdvarint(@"hash_86ce8bb55042030d", 0);
     level.gulag.introcinematic = getdvarint(@"hash_1acebad8080ce298", 1);
-    level.gulag.var_3fdedda393e951f9 = getdvarint(@"hash_adea9f7a92ca117d", 0);
+    level.gulag.outrocinematic = getdvarint(@"hash_adea9f7a92ca117d", 0);
     level.gulag.var_d373eba3425dcc77 = getdvarint(@"hash_7ea3ac91f30ce5a5", 17000);
     level.gulag.usecellspawns = getdvarint(@"hash_9fa493a57b8993fb", 1);
     level.gulag.usefloorrocks = getdvarint(@"hash_b962f2b08f7dafc7", 0);
@@ -112,7 +112,7 @@ function initgulag() {
     level.gulag.lethaldelay = getdvarint(@"hash_133cbace5a3c90bd", 3);
     level.gulag.streamtimeout = getdvarint(@"hash_901c31aaa4eee907", 9);
     level.gulag.numarmorhealth = getdvarint(@"hash_abe2e86213098021", 100);
-    level.gulag.var_28f8483ea37164f3 = getdvarint(@"hash_2ebff4c1f3d778e0", 2);
+    level.gulag.matchsize = getdvarint(@"hash_2ebff4c1f3d778e0", 2);
     level.gulag.var_5ebd7968d809fbac = getdvarint(@"hash_ed69eaadbd3c2a", 0);
     level.gulag.var_c489bd0446d6b041 = getdvarint(@"hash_e7819166ffa65760", 0);
     level.gulag.var_652312821a44b886 = getdvarfloat(@"hash_81b659c0585a8952", 7);
@@ -121,8 +121,8 @@ function initgulag() {
     level.gulag.var_a3f8d04220deba43 = getdvarint(@"hash_ea64fff27301195a", 200);
     level.gulag.var_218b40bcf0f79b1f = getdvarint(@"hash_590ae68d2c03b69b", 5);
     level.gulag.var_eaba0d28010b979b = getdvarint(@"hash_21d1ffccfa1e0436", 0);
-    level.gulag.var_3b466222a6fc9233 = getmatchrulesdata("brData", "gulagCircleDisable");
-    level.gulag.var_86f0de18e07f0b7f = getdvarint(@"hash_9086d17110b3195b", 1);
+    level.gulag.circledisable = getmatchrulesdata("brData", "gulagCircleDisable");
+    level.gulag.preloadcinematic = getdvarint(@"hash_9086d17110b3195b", 1);
     level.gulag.var_1dc4b5e63b8d0243 = getdvarint(@"hash_39b3dfa0d177879d", 10);
     if (function_cfe304859f30e747("gulagGetMatchDuration")) {
         level.gulag.timelimit = function_3cceb052d780fef1("gulagGetMatchDuration");
@@ -138,7 +138,7 @@ function initgulag() {
     _setdomflagiconinfo("waypoint_losing", "enemy", "MP_INGAME_ONLY/OBJ_LOSING_CAPS", 1);
     level.gulag.laststandplayers = [];
     if (istrue(level.gulag.arenaflag)) {
-        namespace_564346a19fee25e0::setupdom();
+        scripts/mp/gametypes/br_dom_quest::setupdom();
     }
     namespace_21b1a5889fd8d167::function_1125faa6bc85e080();
     namespace_f8d983d04dd7f098::init();
@@ -146,10 +146,10 @@ function initgulag() {
     gulaggesturesinit();
     gulaginitloadouts();
     if (level.gulag.introcinematic) {
-        namespace_3846cfb60b2ef12f::registeronluieventcallback(&playercinematiccompletecallback);
+        scripts/mp/utility/lui_game_event_aggregator::registeronluieventcallback(&playercinematiccompletecallback);
     }
     if (level.gulag.usefloorrocks) {
-        namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("brloot_rock", &rockused);
+        scripts/engine/scriptable::scriptable_addusedcallbackbypart("brloot_rock", &rockused);
     }
     level.gulag.betting = getdvarint(@"hash_3fb4b54c096217", 0);
     if (level.gulag.betting) {
@@ -169,11 +169,11 @@ function initgulag() {
     level thread function_728a4949ace743bd();
     level notify("initialized_gulag");
     /#
-        namespace_3c37cb17ade254d::registersharedfunc("ui_gulag", "ui_mp_br_mapmenu_icon_gulag_overtime_objective", &function_e6c82ddc6a58c02f);
+        scripts/engine/utility::registersharedfunc("ui_gulag", "ui_mp_br_mapmenu_icon_gulag_overtime_objective", &runcommand);
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33e8
 // Size: 0xfe
@@ -183,7 +183,7 @@ function function_7959e2df2cc7c5b4() {
     }
     level endon("game_ended");
     self endon("disconnect");
-    while (1) {
+    while (true) {
         if (isdefined(level.gulag.arenas) && level.gulag.arenas.size > 0) {
             bestdistance = 2000;
             arena = undefined;
@@ -200,7 +200,7 @@ function function_7959e2df2cc7c5b4() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34ed
 // Size: 0x286
@@ -208,65 +208,64 @@ function function_662aaf2f16ed4e1e(arena) {
     if (!isdefined(arena) || arena.jailedplayers.size == 0 && arena.arenaplayers.size == 0) {
         self setclientomnvar("ui_gulag", 0);
         return;
-    } else {
-        if (arena.arenaplayers.size == 0) {
-            if (arena.jailedplayers.size == 1) {
-                self setclientomnvar("ui_br_gulag_match_state", 0);
-                self setclientomnvar("ui_br_gulag_match_end_time", arena.jailedplayers[0].jailtimeoutend);
-            }
-        } else {
-            if (isdefined(arena.fightover) && !arena.fightover && isdefined(arena.time) && arena.time > 0) {
-                time = arena.time;
-                if (!istrue(arena.overtime)) {
-                    var_55c0e7e44829e72e = getovertimelength();
-                    time = time - var_55c0e7e44829e72e;
-                }
-                self setclientomnvar("ui_br_gulag_match_end_time", gettime() + int(time * 1000));
-            } else {
-                self setclientomnvar("ui_br_gulag_match_end_time", 0);
-            }
-            var_b62f45ede37a2e21 = arena.arenaplayers[0] getclientomnvar("ui_br_gulag_match_state");
-            if (var_b62f45ede37a2e21) {
-                self setclientomnvar("ui_br_gulag_match_state", var_b62f45ede37a2e21);
-            }
-            var_c8a5261a0fca66d4 = 0;
-            var_4c096c17e2c382e1 = 0;
-            var_77fa43fc5f58845d = 4;
-            for (i = 0; i < var_77fa43fc5f58845d; i++) {
-                p = arena.arenaplayers[i];
-                if (!isdefined(p) || !p namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
-                    playerentnum = 0;
-                } else {
-                    playerentnum = p getentitynumber() + 1;
-                }
-                var_c99096116afd1827 = 256 - 1;
-                /#
-                    assert(playerentnum >= 0 && playerentnum <= var_c99096116afd1827);
-                #/
-                var_c8a5261a0fca66d4 = var_c8a5261a0fca66d4 + ((int(playerentnum) & var_c99096116afd1827) << var_4c096c17e2c382e1);
-                var_4c096c17e2c382e1 = var_4c096c17e2c382e1 + 8;
-            }
-            self setclientomnvar("ui_br_twotwo_gulag_players", var_c8a5261a0fca66d4);
-        }
-        self setclientomnvar("ui_gulag", 1);
-        self setclientomnvar("ui_br_gulag_data", arena.omnvardata["ui_br_gulag_data"]);
-        self setclientomnvar("ui_overtime_timer_show", istrue(arena.overtime));
     }
+    if (arena.arenaplayers.size == 0) {
+        if (arena.jailedplayers.size == 1) {
+            self setclientomnvar("ui_br_gulag_match_state", 0);
+            self setclientomnvar("ui_br_gulag_match_end_time", arena.jailedplayers[0].jailtimeoutend);
+        }
+    } else {
+        if (isdefined(arena.fightover) && !arena.fightover && isdefined(arena.time) && arena.time > 0) {
+            time = arena.time;
+            if (!istrue(arena.overtime)) {
+                overtimelength = getovertimelength();
+                time = time - overtimelength;
+            }
+            self setclientomnvar("ui_br_gulag_match_end_time", gettime() + int(time * 1000));
+        } else {
+            self setclientomnvar("ui_br_gulag_match_end_time", 0);
+        }
+        arenastate = arena.arenaplayers[0] getclientomnvar("ui_br_gulag_match_state");
+        if (arenastate) {
+            self setclientomnvar("ui_br_gulag_match_state", arenastate);
+        }
+        packedval = 0;
+        var_4c096c17e2c382e1 = 0;
+        var_77fa43fc5f58845d = 4;
+        for (i = 0; i < var_77fa43fc5f58845d; i++) {
+            p = arena.arenaplayers[i];
+            if (!isdefined(p) || !p scripts/mp/gametypes/br_public::isplayerinorgoingtogulag()) {
+                playerentnum = 0;
+            } else {
+                playerentnum = p getentitynumber() + 1;
+            }
+            playerentnummax = 256 - 1;
+            /#
+                assert(playerentnum >= 0 && playerentnum <= playerentnummax);
+            #/
+            packedval = packedval + ((int(playerentnum) & playerentnummax) << var_4c096c17e2c382e1);
+            var_4c096c17e2c382e1 = var_4c096c17e2c382e1 + 8;
+        }
+        self setclientomnvar("ui_br_twotwo_gulag_players", packedval);
+    }
+    self setclientomnvar("ui_gulag", 1);
+    self setclientomnvar("ui_br_gulag_data", arena.omnvardata["ui_br_gulag_data"]);
+    self setclientomnvar("ui_overtime_timer_show", istrue(arena.overtime));
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x377a
 // Size: 0x6a
-function _setdomflagiconinfo(name, colors, string, var_b50e35d9c370899b) {
+function _setdomflagiconinfo(name, colors, string, pulses) {
     level.waypointcolors[name] = colors;
     level.waypointbgtype[name] = 1;
     level.waypointstring[name] = string;
     level.waypointshader[name] = "ui_mp_br_mapmenu_icon_gulag_overtime_objective";
-    level.waypointpulses[name] = var_b50e35d9c370899b;
+    level.waypointpulses[name] = pulses;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37eb
 // Size: 0x157
@@ -293,7 +292,7 @@ function initvo() {
     game["dialog"]["gulag_obj_wait"] = "gulag_obj_wait";
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3949
 // Size: 0x1e1
@@ -321,8 +320,8 @@ function gulaggetarenas() {
             arena.sortvalue = randomfloat(1);
         }
     }
-    arenas = namespace_9c840bb9f2ecbf00::quicksort(arenas, &function_fd632cf80052c66b);
-    if (namespace_d3d40f75bb4e4c32::isbrpracticemode()) {
+    arenas = scripts/mp/utility/script::quicksort(arenas, &arenacompare);
+    if (scripts/mp/gametypes/br_public::isBrPracticeMode()) {
         arenas = getstructarray("gulag_tutorial", "targetname");
     }
     /#
@@ -339,15 +338,15 @@ function gulaggetarenas() {
     return arenas;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b32
 // Size: 0x2b
-function function_fd632cf80052c66b(left, right) {
+function arenacompare(left, right) {
     return left.sortvalue <= right.sortvalue;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b65
 // Size: 0x564
@@ -360,7 +359,7 @@ function setuparena(arena) {
     arena.floor = [];
     arena.weapons = [];
     arena.molotovs = [];
-    arena.var_7818db04cabeec42 = [];
+    arena.ladders = [];
     arena.jailedplayers = [];
     arena.arenaplayers = [];
     arena.matches = [];
@@ -369,40 +368,66 @@ function setuparena(arena) {
     arena.omnvardata = [];
     arena.omnvardata["ui_br_gulag_players_1"] = 0;
     arena.omnvardata["ui_br_gulag_data"] = 0;
-    var_3c7899636cba8ab = [];
+    lootstructs = [];
     targets = getstructarray(arena.target, "targetname");
     foreach (target in targets) {
         if (target.script_noteworthy == "prison_spawn") {
             arena.jailspawns[arena.jailspawns.size] = target;
-        } else if (target.script_noteworthy == "gulag_twotwo_spectator_spawn") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_twotwo_spectator_spawn") {
             if (isdefined(level.var_48e6357833f85b3b) && array_contains(level.var_48e6357833f85b3b, target)) {
                 continue;
             }
             arena.jailspawns[arena.jailspawns.size] = target;
-        } else if (target.script_noteworthy == "fight_spawn") {
+            continue;
+        }
+        if (target.script_noteworthy == "fight_spawn") {
             arena.fightspawns[arena.fightspawns.size] = target;
-        } else if (target.script_noteworthy == "gulag_twotwo_spawn_fight") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_twotwo_spawn_fight") {
             arena.fightspawns[arena.fightspawns.size] = target;
-        } else if (target.script_noteworthy == "gulag_twotwo_spawn_fight_alt1") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_twotwo_spawn_fight_alt1") {
             arena.var_ef9a0b82ce1a505a[arena.var_ef9a0b82ce1a505a.size] = target;
-        } else if (target.script_noteworthy == "gulag_dom_player_spawn") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_dom_player_spawn") {
             arena.fightspawns[arena.fightspawns.size] = target;
-        } else if (target.script_noteworthy == "cell_spawn") {
+            continue;
+        }
+        if (target.script_noteworthy == "cell_spawn") {
             arena.cellspawns[arena.cellspawns.size] = target;
-        } else if (target.script_noteworthy == "gulag_center") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_center") {
             arena.center = target.origin;
-        } else if (target.script_noteworthy == "spectator") {
+            continue;
+        }
+        if (target.script_noteworthy == "spectator") {
             arena.spectatepoint = target;
-        } else if (target.script_noteworthy == "gulag_twotwo_spectator") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_twotwo_spectator") {
             arena.spectatepoint = target;
-        } else if (target.script_noteworthy == "gulag_dom_prematch_spawn") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_dom_prematch_spawn") {
             arena.var_c379148a901939ac = target;
-        } else if (target.script_noteworthy == "gulag_twotwo_center") {
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_twotwo_center") {
             arena.var_1df1acee38dcca72 = target.origin;
-        } else if (target.script_noteworthy == "gulag_ladder") {
-            arena.var_7818db04cabeec42[arena.var_7818db04cabeec42.size] = target;
-        } else if (isdefined(target.script_parameters) && target.script_parameters == "gulag_loot") {
-            var_3c7899636cba8ab[var_3c7899636cba8ab.size] = target;
+            continue;
+        }
+        if (target.script_noteworthy == "gulag_ladder") {
+            arena.ladders[arena.ladders.size] = target;
+            continue;
+        }
+        if (isdefined(target.script_parameters) && target.script_parameters == "gulag_loot") {
+            lootstructs[lootstructs.size] = target;
         }
     }
     if (!isdefined(arena.center)) {
@@ -413,12 +438,12 @@ function setuparena(arena) {
     } else {
         arena.fightspawns = array_sort_with_func(arena.fightspawns, &comparescriptindexsmalltolarge);
     }
-    foreach (var_4cd366ef5a786ae4 in arena.cellspawns) {
-        setupcellspawn(arena, var_4cd366ef5a786ae4);
+    foreach (cellspawn in arena.cellspawns) {
+        setupcellspawn(arena, cellspawn);
     }
     arena.cellspawns = array_sort_with_func(arena.cellspawns, &comparescriptindexsmalltolarge);
     if (istrue(level.gulag.spawnloot)) {
-        arena.weapons = spawnlootweapons(var_3c7899636cba8ab);
+        arena.weapons = spawnlootweapons(lootstructs);
     }
     spawnrocks(arena);
     if (istrue(level.gulag.arenaflag)) {
@@ -427,7 +452,7 @@ function setuparena(arena) {
     function_c724f178c2df7240("setupArena", arena);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x40d0
 // Size: 0x13d
@@ -437,13 +462,13 @@ function gulaggesturesinit() {
         return;
     }
     level.gulag.gestures = [];
-    level.gulag.gestures["fc_gesture_neg"] = [0:"iw8_ges_plyr_gesture_crush", 1:"iw8_ges_plyr_gesture_rally", 2:"iw8_ges_plyr_gesture_revive"];
-    level.gulag.gestures["fc_gesture_pos"] = [0:"iw8_ges_plyr_gesture_doubletime", 1:"iw8_ges_plyr_gesture_hold", 2:"iw8_ges_plyr_gesture_ok", 3:"iw8_ges_plyr_gesture_thumbs_up"];
-    level.gulag.gesturesounds["fc_gesture_neg"] = [0:"tmp_gulag_gesture_neg_crush", 1:"tmp_gulag_gesture_neg_rally", 2:"tmp_gulag_gesture_neg_revive"];
-    level.gulag.gesturesounds["fc_gesture_pos"] = [0:"tmp_gulag_gesture_pos_doubletime", 1:"tmp_gulag_gesture_pos_hold", 2:"tmp_gulag_gesture_pos_ok", 3:"tmp_gulag_gesture_pos_thumbs_up"];
+    level.gulag.gestures["fc_gesture_neg"] = ["iw8_ges_plyr_gesture_crush", "iw8_ges_plyr_gesture_rally", "iw8_ges_plyr_gesture_revive"];
+    level.gulag.gestures["fc_gesture_pos"] = ["iw8_ges_plyr_gesture_doubletime", "iw8_ges_plyr_gesture_hold", "iw8_ges_plyr_gesture_ok", "iw8_ges_plyr_gesture_thumbs_up"];
+    level.gulag.gesturesounds["fc_gesture_neg"] = ["tmp_gulag_gesture_neg_crush", "tmp_gulag_gesture_neg_rally", "tmp_gulag_gesture_neg_revive"];
+    level.gulag.gesturesounds["fc_gesture_pos"] = ["tmp_gulag_gesture_pos_doubletime", "tmp_gulag_gesture_pos_hold", "tmp_gulag_gesture_pos_ok", "tmp_gulag_gesture_pos_thumbs_up"];
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4214
 // Size: 0x57
@@ -458,7 +483,7 @@ function getmaxplayers() {
     return maxplayers;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4273
 // Size: 0x2b
@@ -466,7 +491,7 @@ function comparescriptindexsmalltolarge(left, right) {
     return left.script_index < right.script_index;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42a6
 // Size: 0x73
@@ -483,7 +508,7 @@ function comparescriptindexobscuredspawns(left, right) {
     return comparescriptindexsmalltolarge(left, right);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4321
 // Size: 0x6a
@@ -495,41 +520,41 @@ function copystructwithoffset(struct, offset, script_index) {
     return next;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4393
 // Size: 0xba
 function getgulagcenter(arena) {
-    var_2f432d8c975decc6 = (0, 0, 0);
+    averagepos = (0, 0, 0);
     if (isdefined(arena) && isdefined(arena.fightspawns) && arena.fightspawns.size > 0) {
         foreach (struct in arena.fightspawns) {
-            var_2f432d8c975decc6 = var_2f432d8c975decc6 + struct.origin;
+            averagepos = averagepos + struct.origin;
         }
-        var_2f432d8c975decc6 = var_2f432d8c975decc6 / arena.fightspawns.size;
+        averagepos = averagepos / arena.fightspawns.size;
     }
-    return var_2f432d8c975decc6;
+    return averagepos;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4455
 // Size: 0x72
-function spawnweapon(loc, gun, var_27c0612cfd76ee91) {
-    weapon = namespace_3bcd40a3005712ec::createspawnweaponatpos(getgroundposition(loc.origin + (0, 0, 12), 12), loc.angles + (0, 0, 90), gun);
-    weapon thread outlinewatchplayerprox(var_27c0612cfd76ee91);
+function spawnweapon(loc, gun, outlinecolorcode) {
+    weapon = scripts/mp/gametypes/br_weapons::createspawnweaponatpos(getgroundposition(loc.origin + (0, 0, 12), 12), loc.angles + (0, 0, 90), gun);
+    weapon thread outlinewatchplayerprox(outlinecolorcode);
     return weapon;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x44cf
 // Size: 0x392
-function spawnlootweapons(var_3c7899636cba8ab) {
+function spawnlootweapons(lootstructs) {
     var_68490a59162353a8 = [];
     var_2e7c6ea3e6ea14cf = [];
-    var_2e7c6ea3e6ea14cf["none"] = [0:"none"];
-    var_2e7c6ea3e6ea14cf["tactical"] = namespace_cb965d2f71fefddc::getgulagpickupsforclass("tactical");
-    var_2e7c6ea3e6ea14cf["lethal"] = namespace_cb965d2f71fefddc::getgulagpickupsforclass("lethal");
+    var_2e7c6ea3e6ea14cf["none"] = ["none"];
+    var_2e7c6ea3e6ea14cf["tactical"] = scripts/mp/gametypes/br_pickups::getgulagpickupsforclass("tactical");
+    var_2e7c6ea3e6ea14cf["lethal"] = scripts/mp/gametypes/br_pickups::getgulagpickupsforclass("lethal");
     var_31351647880100c7 = [];
     foreach (var_659afabdb2de8ece in var_2e7c6ea3e6ea14cf) {
         foreach (scriptable in var_659afabdb2de8ece) {
@@ -545,7 +570,7 @@ function spawnlootweapons(var_3c7899636cba8ab) {
             var_31351647880100c7[scriptable] = startammo;
         }
     }
-    var_a87e40016e3d9f3a = [0:"tactical", 1:"tactical", 2:"lethal", 3:"lethal", 4:"lethal"];
+    var_a87e40016e3d9f3a = ["tactical", "tactical", "lethal", "lethal", "lethal"];
     var_a87e40016e3d9f3a = array_randomize(var_a87e40016e3d9f3a);
     var_719e1cd141dbcf8c = [];
     var_719e1cd141dbcf8c["floor_center_01"] = random(var_2e7c6ea3e6ea14cf[var_a87e40016e3d9f3a[0]]);
@@ -556,81 +581,82 @@ function spawnlootweapons(var_3c7899636cba8ab) {
     if (getdvarint(@"hash_f76a1354fc64e33a", 1) > 0) {
         var_719e1cd141dbcf8c["floor_left_01"] = var_719e1cd141dbcf8c["floor_right_01"];
     }
-    foreach (struct in var_3c7899636cba8ab) {
+    foreach (struct in lootstructs) {
         if (!isdefined(struct.script_noteworthy)) {
             /#
                 println("gulag_lose");
             #/
-        } else {
-            scriptablename = var_719e1cd141dbcf8c[struct.script_noteworthy];
-            if (!isdefined(scriptablename)) {
-                /#
-                    println("_mp" + struct.script_noteworthy + "circle_index");
-                #/
-            } else {
-                if (scriptablename == "none") {
-                    continue;
-                }
-                origin = struct.origin;
-                angles = struct.angles;
-                if (!isdefined(angles)) {
-                    angles = (0, 0, 0);
-                } else {
-                    angles = (0, angles[1], 0);
-                }
-                scriptable = spawnscriptable(scriptablename, origin, angles);
-                if (isdefined(scriptable)) {
-                    scriptable.part = scriptablename;
-                    namespace_cb965d2f71fefddc::loot_setitemcount(scriptable, var_31351647880100c7[scriptablename]);
-                    scriptable.keepinmap = 1;
-                    var_68490a59162353a8[var_68490a59162353a8.size] = scriptable;
-                } else {
-                    /#
-                        println("fight_over_early" + scriptablename + "MP/LETHALS_UNAVAILABLE_FOR_N");
-                    #/
-                }
-            }
+            continue;
         }
+        scriptablename = var_719e1cd141dbcf8c[struct.script_noteworthy];
+        if (!isdefined(scriptablename)) {
+            /#
+                println("_mp" + struct.script_noteworthy + "circle_index");
+            #/
+            continue;
+        }
+        if (scriptablename == "none") {
+            continue;
+        }
+        origin = struct.origin;
+        angles = struct.angles;
+        if (!isdefined(angles)) {
+            angles = (0, 0, 0);
+        } else {
+            angles = (0, angles[1], 0);
+        }
+        scriptable = spawnscriptable(scriptablename, origin, angles);
+        if (isdefined(scriptable)) {
+            scriptable.part = scriptablename;
+            scripts/mp/gametypes/br_pickups::loot_setitemcount(scriptable, var_31351647880100c7[scriptablename]);
+            scriptable.keepinmap = 1;
+            var_68490a59162353a8[var_68490a59162353a8.size] = scriptable;
+            continue;
+        }
+        /#
+            println("fight_over_early" + scriptablename + "MP/LETHALS_UNAVAILABLE_FOR_N");
+        #/
     }
     return var_68490a59162353a8;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4869
 // Size: 0x90
 function playerismatchedplayerready(arena) {
     if (playerismatchpending(arena)) {
-        var_607899d4420fe1a5 = arena.matches[0];
-        foreach (player in var_607899d4420fe1a5) {
+        nextmatch = arena.matches[0];
+        foreach (player in nextmatch) {
             if (player == self) {
                 continue;
-            } else if (isplayerloading(player, arena)) {
-                return 0;
+            }
+            if (isplayerloading(player, arena)) {
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4901
 // Size: 0x7d
 function playerismatchpending(arena) {
     if (ismatchpending(arena)) {
-        var_607899d4420fe1a5 = arena.matches[0];
-        foreach (player in var_607899d4420fe1a5) {
+        nextmatch = arena.matches[0];
+        foreach (player in nextmatch) {
             if (player == self) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4986
 // Size: 0x62
@@ -638,39 +664,39 @@ function ismatchpending(arena) {
     if (arena.matches.size == 0) {
         return 0;
     }
-    var_607899d4420fe1a5 = arena.matches[0];
+    nextmatch = arena.matches[0];
     if (function_cfe304859f30e747("gulagIsMatchPending")) {
-        return function_3cceb052d780fef1("gulagIsMatchPending", var_607899d4420fe1a5, arena);
-    } else if (var_607899d4420fe1a5.size < 2) {
+        return function_3cceb052d780fef1("gulagIsMatchPending", nextmatch, arena);
+    } else if (nextmatch.size < 2) {
         return 0;
     }
     return 1;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49f0
 // Size: 0x134
 function isfightready(arena) {
     if (!ismatchpending(arena)) {
-        return 0;
+        return false;
     }
-    var_607899d4420fe1a5 = arena.matches[0];
-    foreach (player in var_607899d4420fe1a5) {
+    nextmatch = arena.matches[0];
+    foreach (player in nextmatch) {
         if (level.gulag.var_c489bd0446d6b041) {
             logstring("[GULAG DEBUG] : Player " + player.clientid + " is being checked for isFightReady step 1. Time : " + gettime() + ". Player enterGulagWait : " + istrue(player.entergulagwait) + " Player jailed : " + istrue(player.jailed) + " . Player waiting area timer : " + istrue(player.var_d95581fdfc29ec7a) + " . Number of players in the queue for gulag are : " + arena.matches.size + " .");
         }
         if (istrue(player.entergulagwait) || !istrue(player.jailed)) {
-            return 0;
+            return false;
         }
         if (isdefined(player.var_d95581fdfc29ec7a)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b2c
 // Size: 0xe6
@@ -688,7 +714,7 @@ function function_8af4800d9dd40258(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c19
 // Size: 0x162
@@ -714,7 +740,7 @@ function gulagfixuparena(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d82
 // Size: 0x46
@@ -723,13 +749,13 @@ function function_127c772f981aefc1(arena) {
     arena.arenaplayers = array_removeundefined(arena.arenaplayers);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dcf
 // Size: 0x2c5
 function monitorgulag(arena) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         gulagfixuparena(arena);
         if (istrue(level.br_prematchstarted)) {
             if (istrue(level.gulag.shutdown)) {
@@ -775,7 +801,7 @@ function monitorgulag(arena) {
             }
             if (isfightready(arena)) {
                 if (function_9005af34e01bf8fe()) {
-                    level thread beginnewindividualfight(arena);
+                    level thread beginNewIndividualFight(arena);
                 } else {
                     beginnewfight(arena);
                 }
@@ -787,7 +813,7 @@ function monitorgulag(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x509b
 // Size: 0x2f
@@ -798,7 +824,7 @@ function pausegulag(bpaused) {
     level.gulag.paused = bpaused;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50d1
 // Size: 0x25
@@ -806,27 +832,29 @@ function isgulagpaused() {
     return istrue(level.usegulag) && istrue(level.gulag.paused);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50fe
 // Size: 0x9b
 function areanygulagfightsactive() {
     if (!istrue(level.usegulag)) {
-        return 0;
+        return false;
     }
     foreach (arena in level.gulag.arenas) {
         if (function_1980065ce4dc067b()) {
             if (arena.arenaplayers.size > 0) {
-                return 1;
+                return true;
             }
-        } else if (!arena.fightover) {
-            return 1;
+            continue;
+        }
+        if (!arena.fightover) {
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51a1
 // Size: 0x2c
@@ -836,7 +864,7 @@ function jailbreakeventplayer() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51d4
 // Size: 0x55
@@ -849,98 +877,98 @@ function circletimer(circleindex) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5230
 // Size: 0x1b7
-function shutdowngulag(reason, reason_count, var_dedcc523db8309b1) {
+function shutdowngulag(reason, reason_count, skipsplashes) {
     if (!istrue(level.usegulag) || istrue(level.gulag.shutdown)) {
         return;
     }
     setomnvar("ui_gulag_state", 0);
     setomnvar("ui_gulag_show_closing_state", 2);
     level.gulag.shutdown = 1;
-    namespace_a011fbf6d93f25e5::function_afd45555767f3079();
+    scripts/mp/gametypes/br_analytics::function_afd45555767f3079();
     if (isdefined(level.var_ed844db90cb6d370) && issharedfuncdefined("teamAssim", "permanentlyDisableAssim")) {
         [[ getsharedfunc("teamAssim", "permanentlyDisableAssim") ]]();
     }
     thread makeac130flyaway();
-    if (!istrue(var_dedcc523db8309b1)) {
+    if (!istrue(skipsplashes)) {
         foreach (player in level.players) {
             player function_5e9a06395ffa9c82();
             if (istrue(player.inlaststand)) {
                 level.gulag.laststandplayers[level.gulag.laststandplayers.size] = player;
-            } else {
-                if (!isdefined(player) || !isalive(player) || isdefined(player.gulag)) {
-                    continue;
-                }
-                player playergulagdonesplash();
-                player function_dd93503cf95b6277();
+                continue;
             }
+            if (!isdefined(player) || !isalive(player) || isdefined(player.gulag)) {
+                continue;
+            }
+            player playergulagdonesplash();
+            player function_dd93503cf95b6277();
         }
     }
     namespace_f5675568ccc8acc6::function_7d42d3f8dd68280c(1);
     level notify("gulag_closed");
-    dlog_recordevent("dlog_event_br_gulag_shutdown", [0:"reason", 1:reason, 2:"reason_count", 3:reason_count]);
+    dlog_recordevent("dlog_event_br_gulag_shutdown", ["reason", reason, "reason_count", reason_count]);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53ee
 // Size: 0x1e2
 function function_5e9a06395ffa9c82() {
     var_fc3c57822786291a = 0;
     var_be4684f53e4f5566 = 0;
-    if (istrue(level.br_pickups.respawntokenclosewithgulag) && namespace_d3d40f75bb4e4c32::hasrespawntoken() && level.gulag.var_3fc59bce0c73b8cf > 0) {
+    if (istrue(level.br_pickups.respawntokenclosewithgulag) && scripts/mp/gametypes/br_public::hasrespawntoken() && level.gulag.var_3fc59bce0c73b8cf > 0) {
         var_fc3c57822786291a = 1;
-        namespace_cb965d2f71fefddc::removerespawntoken();
-        namespace_c6ccccd95254983f::playerplunderpickup(level.gulag.var_3fc59bce0c73b8cf);
+        scripts/mp/gametypes/br_pickups::removerespawntoken();
+        scripts/mp/gametypes/br_plunder::playerplunderpickup(level.gulag.var_3fc59bce0c73b8cf);
     }
     if (istrue(level.br_pickups.var_5609de5240e42e84) && level.gulag.var_a3f8d04220deba43 > 0) {
         var_291cd3b5c7d9d564 = 0;
-        if (namespace_d3d40f75bb4e4c32::function_15da77dc195bd80a()) {
+        if (scripts/mp/gametypes/br_public::function_15da77dc195bd80a()) {
             var_291cd3b5c7d9d564++;
-            namespace_cb965d2f71fefddc::function_17e127f2e3771058();
+            scripts/mp/gametypes/br_pickups::function_17e127f2e3771058();
         }
         if (namespace_e50e624d9af51c8c::function_7e103028c464ab9a("brloot_gulag_token")) {
             var_291cd3b5c7d9d564 = var_291cd3b5c7d9d564 + namespace_e50e624d9af51c8c::function_43f9da47b5084ce0("brloot_gulag_token");
         }
         if (var_291cd3b5c7d9d564 > 0) {
             var_be4684f53e4f5566 = 1;
-            namespace_c6ccccd95254983f::playerplunderpickup(var_291cd3b5c7d9d564 * level.gulag.var_a3f8d04220deba43);
+            scripts/mp/gametypes/br_plunder::playerplunderpickup(var_291cd3b5c7d9d564 * level.gulag.var_a3f8d04220deba43);
         }
     }
     if (istrue(level.br_pickups.var_5609de5240e42e84) && checkgulagusecount() && level.gulag.var_a3f8d04220deba43 > 0) {
         var_be4684f53e4f5566 = 1;
-        namespace_c6ccccd95254983f::playerplunderpickup(level.gulag.var_a3f8d04220deba43);
+        scripts/mp/gametypes/br_plunder::playerplunderpickup(level.gulag.var_a3f8d04220deba43);
     }
     if (var_fc3c57822786291a && var_be4684f53e4f5566) {
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("br_redeployGulag_conversion", undefined, level.gulag.var_218b40bcf0f79b1f);
+        scripts/mp/utility/lower_message::setlowermessageomnvar("br_redeployGulag_conversion", undefined, level.gulag.var_218b40bcf0f79b1f);
     } else if (var_fc3c57822786291a) {
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("br_redeploy_conversion", undefined, level.gulag.var_218b40bcf0f79b1f);
+        scripts/mp/utility/lower_message::setlowermessageomnvar("br_redeploy_conversion", undefined, level.gulag.var_218b40bcf0f79b1f);
     } else if (var_be4684f53e4f5566) {
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("br_gulag_conversion", undefined, level.gulag.var_218b40bcf0f79b1f);
+        scripts/mp/utility/lower_message::setlowermessageomnvar("br_gulag_conversion", undefined, level.gulag.var_218b40bcf0f79b1f);
     }
     function_6a39684e5bf90a2f();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x55d7
 // Size: 0xd7
 function function_6a39684e5bf90a2f() {
     var_2621d983f664e79a = getlootscriptablearray("brloot_redeploy_token", undefined);
     var_fdbb7e6149e0fcf6 = getlootscriptablearray("brloot_gulag_token", undefined);
-    foreach (var_d8cd9c1941a88194 in var_2621d983f664e79a) {
-        namespace_cb965d2f71fefddc::loothide(var_d8cd9c1941a88194);
+    foreach (lootitem in var_2621d983f664e79a) {
+        scripts/mp/gametypes/br_pickups::loothide(lootitem);
     }
-    foreach (var_d8cd9c1941a88194 in var_fdbb7e6149e0fcf6) {
-        namespace_cb965d2f71fefddc::loothide(var_d8cd9c1941a88194);
+    foreach (lootitem in var_fdbb7e6149e0fcf6) {
+        scripts/mp/gametypes/br_pickups::loothide(lootitem);
     }
-    level.br_pickups.var_ec8acc2cb92ceaf7 = 1;
+    level.br_pickups.hidetokens = 1;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56b5
 // Size: 0x19
@@ -948,7 +976,7 @@ function anyplayersinlaststandhold() {
     return level.gulag.laststandplayers.size > 0;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56d6
 // Size: 0x45
@@ -959,7 +987,7 @@ function playerinlaststandhold() {
     return array_contains(level.gulag.laststandplayers, self);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5723
 // Size: 0x9f
@@ -967,15 +995,15 @@ function gulaglaststandholdremove(player) {
     if (istrue(level.gulag.shutdown) && anyplayersinlaststandhold()) {
         if (isdefined(player) && player playerinlaststandhold()) {
             level.gulag.laststandplayers = array_remove(level.gulag.laststandplayers, player);
-            return 1;
+            return true;
         } else {
             level.gulag.laststandplayers = array_removeundefined(level.gulag.laststandplayers);
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57ca
 // Size: 0x3d
@@ -989,7 +1017,7 @@ function onplayerdisconnect(player) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x580e
 // Size: 0x30
@@ -1004,7 +1032,7 @@ function playerexitlaststand(revived) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5845
 // Size: 0xba
@@ -1021,23 +1049,22 @@ function getgulagclosedcircleindex() {
     }
     if (function_cfe304859f30e747("gulagGetClosedCircleIndex")) {
         return function_3cceb052d780fef1("gulagGetClosedCircleIndex", offset);
-    } else {
-        return (level.br_level.br_circledelaytimes.size - 1 - getdvarint(@"hash_1141fea0c6ef428f", level.gulag.var_3b466222a6fc9233) - offset);
     }
+    return level.br_level.br_circledelaytimes.size - 1 - getdvarint(@"hash_1141fea0c6ef428f", level.gulag.circledisable) - offset;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5906
 // Size: 0x3f
 function setupgulagtimer() {
     var_2948ca54731de34f = gettimetogulagclosed();
-    var_754110404c0d574f = gettime() + var_2948ca54731de34f * 1000;
-    setomnvar("ui_gulag_timer", var_754110404c0d574f);
+    endtimems = gettime() + var_2948ca54731de34f * 1000;
+    setomnvar("ui_gulag_timer", endtimems);
     thread showclosingmessage(var_2948ca54731de34f);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x594c
 // Size: 0x58
@@ -1052,7 +1079,7 @@ function showclosingmessage(var_2948ca54731de34f) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59ab
 // Size: 0xaa
@@ -1062,14 +1089,14 @@ function gettimetogulagclosed() {
         var_db3353ae94adec9d = getgulagclosedcircleindex();
         for (circleindex = 0; circleindex < var_db3353ae94adec9d; circleindex++) {
             timedelay = level.br_level.br_circledelaytimes[circleindex];
-            var_3d8565e2775a243c = level.br_level.br_circleclosetimes[circleindex];
-            time = time + timedelay + var_3d8565e2775a243c;
+            timeclose = level.br_level.br_circleclosetimes[circleindex];
+            time = time + timedelay + timeclose;
         }
     }
     return int(time);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a5d
 // Size: 0x40
@@ -1078,11 +1105,11 @@ function playergulagdonesplash() {
         return;
     }
     self.gulagdone = 1;
-    namespace_7015c4c971547a66::dangernotifyplayer(self, "gulag_closed", 3);
-    thread namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_gulag_close", self, undefined, undefined, 2);
+    scripts/mp/gametypes/br_killstreaks::dangernotifyplayer(self, "gulag_closed", 3);
+    thread scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_gulag_close", self, undefined, undefined, 2);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5aa4
 // Size: 0x265
@@ -1128,7 +1155,7 @@ function dojailbreak(arena) {
     arena.shutdown = 1;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d10
 // Size: 0x1a1
@@ -1137,7 +1164,7 @@ function jailbreaktimerwait(arena) {
         if (!isdefined(player)) {
             continue;
         }
-        player thread namespace_44abc05161e2e2cb::showsplash("br_gulag_jail_break");
+        player thread scripts/mp/hud_message::showsplash("br_gulag_jail_break");
         if (getdvarint(@"hash_3ceaf2c0c66c3dc2", 0) > 0) {
             player hudoutlineenableforclients(arena.arenaplayers, "outline_nodepth_red");
         }
@@ -1162,17 +1189,17 @@ function jailbreaktimerwait(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5eb8
 // Size: 0x4f
 function playeraddjailbreaktimer() {
-    self.gulagjailbreakhud = namespace_52f6938dd902c7d0::createfontstring("default", 2);
-    self.gulagjailbreakhud namespace_52f6938dd902c7d0::setpoint("CENTER", "CENTER", 0, -150);
+    self.gulagjailbreakhud = scripts/mp/hud_util::createfontstring("default", 2);
+    self.gulagjailbreakhud scripts/mp/hud_util::setpoint("CENTER", "CENTER", 0, -150);
     self.gulagjailbreakhud.label = "MP/BR_GULAG_JAILBREAK_IN";
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f0e
 // Size: 0x76
@@ -1186,19 +1213,18 @@ function resetequipment(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f8b
 // Size: 0x38
 function validateplayers(arena) {
     if (function_d58396c1483bfbdb()) {
         return (arena.arenaplayers.size >= 1);
-    } else {
-        return (arena.arenaplayers.size >= 2);
     }
+    return arena.arenaplayers.size >= 2;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5fca
 // Size: 0x7f
@@ -1217,11 +1243,11 @@ function function_cecbd3aa752b9087(players) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6050
 // Size: 0x343
-function beginnewindividualfight(arena) {
+function beginNewIndividualFight(arena) {
     level endon("game_ended");
     arena endon("fight_over_early");
     arena.fightover = 0;
@@ -1250,12 +1276,12 @@ function beginnewindividualfight(arena) {
         p thread playershowarenastartobjectivetext();
         p thread function_c68da8e2dde4dfa3(arena);
         p thread function_b0fda2bbb0c12ac2(function_59d019f0169c03be());
-        p thread individualwaittillgulagmatchend(arena, level.gulag.timelimit);
+        p thread individualWaittillGulagMatchEnd(arena, level.gulag.timelimit);
         if (level.gulag.var_c489bd0446d6b041) {
             logstring("[GULAG DEBUG] : Player " + p.clientid + " is starting new individual fight step 3. Time : " + gettime() + ". Number of players in the queue for gulag are : " + arena.matches.size + " .");
         }
     }
-    namespace_d3d40f75bb4e4c32::brleaderdialog("gulag_objective", 0, var_3c02e542fa952687);
+    scripts/mp/gametypes/br_public::brleaderdialog("gulag_objective", 0, var_3c02e542fa952687);
     _updatematchtimerhudinternal(var_3c02e542fa952687, level.gulag.timelimit);
     foreach (p in arena.jailedplayers) {
         if (!isdefined(p)) {
@@ -1268,7 +1294,7 @@ function beginnewindividualfight(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x639a
 // Size: 0x83d
@@ -1281,8 +1307,8 @@ function beginnewfight(arena) {
     /#
         println("gulagGetCountdownLength");
     #/
-    var_607899d4420fe1a5 = arena.matches[0];
-    if (function_c9861a6c6b4085d8(var_607899d4420fe1a5, arena)) {
+    nextmatch = arena.matches[0];
+    if (function_c9861a6c6b4085d8(nextmatch, arena)) {
         arena.arenaplayers = function_e604f37bc584077d(arena);
         arena.var_654c981854394718 = array_remove_array(arena.var_654c981854394718, arena.arenaplayers);
         if (function_cfe304859f30e747("setGulagJailTimeoutVariation")) {
@@ -1319,25 +1345,27 @@ function beginnewfight(arena) {
         }
         if (!isdefined(p)) {
             var_6ae446bba4624713 = 1;
-        } else if (p.gulag == 0 || p.jailed == 0 || p.gulagarena == 1) {
-            namespace_9c840bb9f2ecbf00::demoforcesre("Player: " + p.name + " - invalid for gulag - p.gulag = " + p.gulag + ", p.jailed = " + p.jailed + ", p.gulagArena = " + p.gulagarena);
+            continue;
+        }
+        if (p.gulag == 0 || p.jailed == 0 || p.gulagarena == 1) {
+            scripts/mp/utility/script::demoforcesre("Player: " + p.name + " - invalid for gulag - p.gulag = " + p.gulag + ", p.jailed = " + p.jailed + ", p.gulagArena = " + p.gulagarena);
             var_6ae446bba4624713 = 1;
-        } else {
-            /#
-                println("outline_depth_orange" + p.name);
-            #/
-            p.fighterindex = i;
-            p notify("beginNewFight");
-            if (istrue(p.var_4bb14f07087a5da)) {
-                if (istrue(level.var_37e52c7fb7267efc.var_2713a9cf5318d984)) {
-                    foreach (enemyai in function_b4b9401715cf98ea("gulag")) {
-                        enemyai hudoutlinedisableforclient(p);
-                    }
+            continue;
+        }
+        /#
+            println("outline_depth_orange" + p.name);
+        #/
+        p.fighterindex = i;
+        p notify("beginNewFight");
+        if (istrue(p.var_4bb14f07087a5da)) {
+            if (istrue(level.var_37e52c7fb7267efc.var_2713a9cf5318d984)) {
+                foreach (enemyai in function_b4b9401715cf98ea("gulag")) {
+                    enemyai hudoutlinedisableforclient(p);
                 }
-                p.var_4bb14f07087a5da = undefined;
-                p setclientomnvar("ui_rcd_controls", 0);
-                p cameraunlink();
             }
+            p.var_4bb14f07087a5da = undefined;
+            p setclientomnvar("ui_rcd_controls", 0);
+            p cameraunlink();
         }
     }
     if (function_cfe304859f30e747("setGulagVariationTeams")) {
@@ -1351,10 +1379,10 @@ function beginnewfight(arena) {
         if (level.gulag.var_eaba0d28010b979b) {
             if (!function_7effa8a355ddc886() || istrue(function_79fdf5cd036ff575())) {
                 if (function_6e3541fd8fab45bc()) {
-                    player namespace_1a507865f681850e::giveequipment("equip_rock", "primary");
-                } else {
-                    player setweaponammoclip("rock_mp", 5);
+                    player scripts/mp/equipment::giveequipment("equip_rock", "primary");
+                    continue;
                 }
+                player setweaponammoclip("rock_mp", 5);
             }
         }
     }
@@ -1410,7 +1438,7 @@ function beginnewfight(arena) {
         updatearenaomnvardata(arena);
     }
     function_d4b0eef0a0924094("showStartSplash", arena);
-    function_d4b0eef0a0924094("toggleLadderEscape", [0:arena, 1:1]);
+    function_d4b0eef0a0924094("toggleLadderEscape", [arena, 1]);
     result = gulagcountdowntimer(arena, 1, var_4b434533d3624bec);
     if (!result) {
         return;
@@ -1430,8 +1458,8 @@ function beginnewfight(arena) {
     wait(getdvarfloat(@"hash_61f7016b7e176b11", 0.8));
     arena.time = level.gulag.timelimit;
     updatematchtimerhud(arena, arena.time);
-    if (namespace_71073fa38f11492::isbrgametypefuncdefined("accelerateBotsGulagMatch")) {
-        namespace_71073fa38f11492::runbrgametypefunc("accelerateBotsGulagMatch", arena);
+    if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("accelerateBotsGulagMatch")) {
+        scripts/mp/gametypes/br_gametypes::runbrgametypefunc("accelerateBotsGulagMatch", arena);
     }
     waittillgulagmatchend(arena, 1);
     handleendarena(arena, var_4b434533d3624bec);
@@ -1440,7 +1468,7 @@ function beginnewfight(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6bde
 // Size: 0xf6
@@ -1454,25 +1482,24 @@ function function_e604f37bc584077d(arena) {
             if (player.team == p.team) {
                 continue;
             }
-            var_453624b0cae6ad9e = [0:teammate, 1:p];
-            return var_453624b0cae6ad9e;
+            validmatch = [teammate, p];
+            return validmatch;
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6cdb
 // Size: 0x73
-function function_c9861a6c6b4085d8(var_607899d4420fe1a5, arena) {
-    if (level.var_43307855f189eb31.var_10c30e8082648b35 && var_607899d4420fe1a5.size < getmaxplayers() && isdefined(arena.var_654c981854394718) && arena.var_654c981854394718.size >= level.var_43307855f189eb31.var_bd9294679812b88) {
+function function_c9861a6c6b4085d8(nextmatch, arena) {
+    if (level.var_43307855f189eb31.var_10c30e8082648b35 && nextmatch.size < getmaxplayers() && isdefined(arena.var_654c981854394718) && arena.var_654c981854394718.size >= level.var_43307855f189eb31.var_bd9294679812b88) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6d55
 // Size: 0xa9
@@ -1491,7 +1518,7 @@ function watchlethaldelay(arena) {
     arena notify("lethal_delay_end");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e05
 // Size: 0xf7
@@ -1510,7 +1537,7 @@ function watchlethaldelayplayer(arena) {
     self setclientomnvar("ui_br_gulag_lethal_delay", 1);
     watchlethaldelayfeedbackplayer(arena, self);
     self setclientomnvar("ui_br_gulag_lethal_delay", 0);
-    val::function_c9d0b43701bdba00("watchLethalDelayPlayer");
+    val::reset_all("watchLethalDelayPlayer");
     self playlocalsound("ui_restock_lethals");
     self setclientomnvar("ui_recharge_notify", 2);
     if (!isai(self)) {
@@ -1519,7 +1546,7 @@ function watchlethaldelayplayer(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f03
 // Size: 0x89
@@ -1527,17 +1554,17 @@ function watchlethaldelayfeedbackplayer(arena, player) {
     level endon("game_ended");
     arena endon("matchEnded");
     arena endon("lethal_delay_end");
-    while (1) {
+    while (true) {
         self waittill("lethal_attempt_gulag");
         if (isdefined(arena.lethaldelayendtime)) {
             n = (arena.lethaldelayendtime - gettime()) / 1000;
             n = int(max(0, ceil(n)));
-            player namespace_44abc05161e2e2cb::showerrormessage("MP/LETHALS_UNAVAILABLE_FOR_N", n);
+            player scripts/mp/hud_message::showerrormessage("MP/LETHALS_UNAVAILABLE_FOR_N", n);
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f93
 // Size: 0xdf
@@ -1545,18 +1572,20 @@ function startfightvo(arena) {
     arena endon("matchEnded");
     playsoundatpos(arena.center, "evt_br_gulag_round_start_buzzer");
     wait(2);
-    namespace_d3d40f75bb4e4c32::brleaderdialog("gulag_gulag_active", 0, arena.jailedplayers);
+    scripts/mp/gametypes/br_public::brleaderdialog("gulag_gulag_active", 0, arena.jailedplayers);
     foreach (player in arena.jailedplayers) {
         if (player.gulagposition <= 1) {
-            namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_next", player, 0, undefined, undefined, undefined, "dx_br_jpbm_");
-        } else if (player.gulagposition == 2) {
-            namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_taunt", player, 0);
+            scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_next", player, 0, undefined, undefined, undefined, "dx_br_jpbm_");
+            continue;
+        }
+        if (player.gulagposition == 2) {
+            scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_taunt", player, 0);
         }
     }
     wait(3);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7079
 // Size: 0x28
@@ -1567,7 +1596,7 @@ function playershowarenastartobjectivetext() {
     self setclientomnvar("ui_objective_text", -1);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70a8
 // Size: 0x80
@@ -1579,7 +1608,7 @@ function handleonekillwin(arena, victim, attacker, var_4b434533d3624bec) {
     payoutbet(var_4b434533d3624bec, victim, 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x712f
 // Size: 0x47
@@ -1591,45 +1620,45 @@ function manageoutlines(arena, fighters, var_4b434533d3624bec) {
     manageoutlinecleanup(arena, fighters);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x717d
 // Size: 0x2b
 function manageoutlineswatchplayersaddedtojail(arena) {
     arena endon("fight_over");
-    while (1) {
+    while (true) {
         arena waittill("player_added_to_jail");
         updateoutlines(arena);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x71af
 // Size: 0x19c
 function manageoutlineactive(arena, fighters, var_4b434533d3624bec) {
     arena endon("fight_over");
     thread manageoutlineswatchplayersaddedtojail(arena);
-    while (1) {
+    while (true) {
         if (arena.jailedplayers.size) {
-            var_be4e32b47ad61c7d = array_removeundefined(arena.jailedplayers);
-            foreach (var_4570788876702376 in fighters) {
-                if (!isdefined(var_4570788876702376)) {
+            showtoplayers = array_removeundefined(arena.jailedplayers);
+            foreach (fighter in fighters) {
+                if (!isdefined(fighter)) {
                     continue;
                 }
-                var_4570788876702376 hudoutlineenableforclients(var_be4e32b47ad61c7d, "outline_nodepth_white");
+                fighter hudoutlineenableforclients(showtoplayers, "outline_nodepth_white");
             }
         }
         if (isdefined(var_4b434533d3624bec)) {
-            foreach (var_b5fe9e03c0fd6170 in var_4b434533d3624bec.bets) {
-                if (!isdefined(var_b5fe9e03c0fd6170.owner)) {
+            foreach (bet in var_4b434533d3624bec.bets) {
+                if (!isdefined(bet.owner)) {
                     continue;
                 }
-                var_a9a8cb34a49caaaa = ter_op(var_4b434533d3624bec.bettingopen, var_b5fe9e03c0fd6170.playerfocus, var_b5fe9e03c0fd6170.playerbeton);
+                var_a9a8cb34a49caaaa = ter_op(var_4b434533d3624bec.bettingopen, bet.playerfocus, bet.playerbeton);
                 if (var_a9a8cb34a49caaaa != -1) {
-                    var_ba2cb2090f002d2c = var_4b434533d3624bec.fighters[var_a9a8cb34a49caaaa];
-                    if (isdefined(var_ba2cb2090f002d2c)) {
-                        var_ba2cb2090f002d2c hudoutlineenableforclient(var_b5fe9e03c0fd6170.owner, "outline_nodepth_green");
+                    focusent = var_4b434533d3624bec.fighters[var_a9a8cb34a49caaaa];
+                    if (isdefined(focusent)) {
+                        focusent hudoutlineenableforclient(bet.owner, "outline_nodepth_green");
                     }
                 }
             }
@@ -1638,7 +1667,7 @@ function manageoutlineactive(arena, fighters, var_4b434533d3624bec) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7352
 // Size: 0x8b
@@ -1647,15 +1676,15 @@ function manageoutlinecleanup(arena, fighters) {
     if (!players.size) {
         return;
     }
-    foreach (var_4570788876702376 in fighters) {
-        if (!isdefined(var_4570788876702376)) {
+    foreach (fighter in fighters) {
+        if (!isdefined(fighter)) {
             continue;
         }
-        var_4570788876702376 hudoutlinedisableforclients(players);
+        fighter hudoutlinedisableforclients(players);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x73e4
 // Size: 0x14
@@ -1663,7 +1692,7 @@ function updateoutlines(arena) {
     arena notify("update_outlines");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x73ff
 // Size: 0x62
@@ -1677,26 +1706,26 @@ function playergulagarenaready() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7468
 // Size: 0x7b
-function function_b0fda2bbb0c12ac2(var_6958d396e4ad3b95) {
+function function_b0fda2bbb0c12ac2(countdowntime) {
     player = self;
     player endon("disconnect");
     level endon("game_ended");
-    while (var_6958d396e4ad3b95 > 0) {
+    while (countdowntime > 0) {
         player setclientomnvar("ui_match_in_progress", 0);
-        player setclientomnvar("ui_match_start_countdown", var_6958d396e4ad3b95);
-        var_6958d396e4ad3b95 = var_6958d396e4ad3b95 - 1;
+        player setclientomnvar("ui_match_start_countdown", countdowntime);
+        countdowntime = countdowntime - 1;
         wait(1);
     }
     player setclientomnvar("ui_match_in_progress", 1);
-    player setclientomnvar("ui_match_start_countdown", var_6958d396e4ad3b95);
+    player setclientomnvar("ui_match_start_countdown", countdowntime);
     player setclientomnvar("ui_br_gulag_match_state", 2);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x74ea
 // Size: 0x1a3
@@ -1722,7 +1751,7 @@ function gulagcountdowntimer(arena, var_57a9df666229ceab, var_4b434533d3624bec) 
                 function_9135ada02e07bf10(arena, "br_twotwo_gulag_win", 0);
             }
             handleendarena(arena, var_4b434533d3624bec, 1);
-            return 0;
+            return false;
         }
     }
     foreach (player in arena.arenaplayers) {
@@ -1733,10 +1762,10 @@ function gulagcountdowntimer(arena, var_57a9df666229ceab, var_4b434533d3624bec) 
             waitframe();
         }
     #/
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7695
 // Size: 0x73
@@ -1749,22 +1778,22 @@ function function_fa7156b785ecf3eb(timeleft) {
     player endon("death_or_disconnect");
     wait(timeleft);
     timeleft = 10;
-    var_14ccd6e81fce3bd4 = namespace_d576b6dc7cef9c62::getclocksoundaliasfortimeleft(timeleft);
+    clocksoundalias = scripts/mp/gamelogic::getclocksoundaliasfortimeleft(timeleft);
     while (timeleft > 0) {
         if (!isdefined(player)) {
             return;
         }
-        player playlocalsound(var_14ccd6e81fce3bd4);
+        player playlocalsound(clocksoundalias);
         timeleft = timeleft - 1;
         wait(1);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x770f
 // Size: 0xa6
-function gulagmatchclocksounds(arena, timeleft, var_55c0e7e44829e72e) {
+function gulagmatchclocksounds(arena, timeleft, overtimelength) {
     arena endon("matchEnded");
     while (timeleft > 0) {
         /#
@@ -1776,13 +1805,13 @@ function gulagmatchclocksounds(arena, timeleft, var_55c0e7e44829e72e) {
         if (level.gameended) {
             return;
         }
-        var_526074c408160449 = timeleft;
+        timeleftclock = timeleft;
         if (!istrue(arena.overtime)) {
-            var_526074c408160449 = var_526074c408160449 - var_55c0e7e44829e72e;
+            timeleftclock = timeleftclock - overtimelength;
         }
-        if (var_526074c408160449 <= 10) {
-            var_14ccd6e81fce3bd4 = namespace_d576b6dc7cef9c62::getclocksoundaliasfortimeleft(var_526074c408160449);
-            doclocksound(arena, var_14ccd6e81fce3bd4);
+        if (timeleftclock <= 10) {
+            clocksoundalias = scripts/mp/gamelogic::getclocksoundaliasfortimeleft(timeleftclock);
+            doclocksound(arena, clocksoundalias);
         }
         if (timeleft > 1) {
             timeleft = timeleft - 1;
@@ -1791,24 +1820,24 @@ function gulagmatchclocksounds(arena, timeleft, var_55c0e7e44829e72e) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77bc
 // Size: 0xc3
-function doclocksound(arena, var_14ccd6e81fce3bd4) {
+function doclocksound(arena, clocksoundalias) {
     foreach (player in arena.jailedplayers) {
         if (isdefined(player)) {
-            player playlocalsound(var_14ccd6e81fce3bd4);
+            player playlocalsound(clocksoundalias);
         }
     }
     foreach (player in arena.arenaplayers) {
         if (isdefined(player)) {
-            player playlocalsound(var_14ccd6e81fce3bd4);
+            player playlocalsound(clocksoundalias);
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7886
 // Size: 0x44
@@ -1818,28 +1847,26 @@ function getovertimelength() {
     }
     if (function_cfe304859f30e747("gulagGetOvertimeLength")) {
         return function_3cceb052d780fef1("gulagGetOvertimeLength");
-    } else {
-        return getdvarint(@"hash_1ff83f4f24656c5b", 15);
     }
+    return getdvarint(@"hash_1ff83f4f24656c5b", 15);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78d1
 // Size: 0x31
 function function_59d019f0169c03be() {
     if (function_cfe304859f30e747("gulagGetCountdownLength")) {
         return function_3cceb052d780fef1("gulagGetCountdownLength");
-    } else {
-        return getdvarint(@"hash_fb05c5f6825931d", 3);
     }
+    return getdvarint(@"hash_fb05c5f6825931d", 3);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7909
 // Size: 0x7c
-function individualwaittillgulagmatchend(arena, waittime) {
+function individualWaittillGulagMatchEnd(arena, waittime) {
     player = self;
     player endon("game_ended");
     player notify("individualWaittillGulagMatchEnd");
@@ -1855,15 +1882,15 @@ function individualwaittillgulagmatchend(arena, waittime) {
     player thread gulagplayerlost(arena);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x798c
 // Size: 0x4ad
-function waittillgulagmatchend(arena, var_1a93cf0ba17e0dc0) {
-    var_55c0e7e44829e72e = getovertimelength();
-    arena.time = arena.time + var_55c0e7e44829e72e;
-    thread gulagmatchclocksounds(arena, arena.time, var_55c0e7e44829e72e);
-    while (1) {
+function waittillgulagmatchend(arena, dokill) {
+    overtimelength = getovertimelength();
+    arena.time = arena.time + overtimelength;
+    thread gulagmatchclocksounds(arena, arena.time, overtimelength);
+    while (true) {
         /#
             if (getdvarint(@"hash_8c0da1f3585f4602", 0) > 0) {
                 print3d(level.gulag.arenas[0].center, "ui_objective_text");
@@ -1875,11 +1902,11 @@ function waittillgulagmatchend(arena, var_1a93cf0ba17e0dc0) {
             break;
         }
         arena.time = arena.time - level.framedurationseconds;
-        function_c724f178c2df7240("gulagWaittillOvertime", [0:arena, 1:var_55c0e7e44829e72e]);
-        var_e74cdbc9111d53c7 = !function_2c600e5e9a2cf916("gulagOvertime");
+        function_c724f178c2df7240("gulagWaittillOvertime", [arena, overtimelength]);
+        overtimeenabled = !function_2c600e5e9a2cf916("gulagOvertime");
         var_cfb635535ec1ff70 = function_1980065ce4dc067b();
-        var_727c25d029b3b5af = var_cfb635535ec1ff70 && var_e74cdbc9111d53c7;
-        if ((var_727c25d029b3b5af || !var_cfb635535ec1ff70) && !istrue(arena.overtime) && arena.time <= var_55c0e7e44829e72e) {
+        var_727c25d029b3b5af = var_cfb635535ec1ff70 && overtimeenabled;
+        if ((var_727c25d029b3b5af || !var_cfb635535ec1ff70) && !istrue(arena.overtime) && arena.time <= overtimelength) {
             arena.overtime = 1;
             if (function_cfe304859f30e747("gulagOvertimeStart")) {
                 arena thread function_3cceb052d780fef1("gulagOvertimeStart");
@@ -1900,14 +1927,14 @@ function waittillgulagmatchend(arena, var_1a93cf0ba17e0dc0) {
             }
         }
         if (istrue(arena.overtime)) {
-            progress = clamp(arena.time / var_55c0e7e44829e72e, 0, 1);
+            progress = clamp(arena.time / overtimelength, 0, 1);
             setovertimeomnvarprogress(arena, progress);
         }
         if (arena.time <= 0) {
             if (!function_d4b0eef0a0924094("overtimeWait", arena)) {
                 waittillarenaplayersnotcapturing(arena);
             }
-            if (istrue(var_1a93cf0ba17e0dc0)) {
+            if (istrue(dokill)) {
                 foreach (player in arena.arenaplayers) {
                     if (!isdefined(player)) {
                         continue;
@@ -1922,7 +1949,7 @@ function waittillgulagmatchend(arena, var_1a93cf0ba17e0dc0) {
                     player thread gulagplayerlost(arena, undefined, 1);
                     br_gulag_lose = function_17ee301cf0b5ba85("br_gulag_lose");
                     br_gulag_lose_classic = function_17ee301cf0b5ba85("br_gulag_lose_classic");
-                    if (isdefined(player.var_acfbb9caed7125f9) && player.var_acfbb9caed7125f9 == 1) {
+                    if (isdefined(player.musicpack) && player.musicpack == 1) {
                         player setplayermusicstate(br_gulag_lose_classic);
                     } else {
                         player setplayermusicstate(br_gulag_lose);
@@ -1943,7 +1970,7 @@ function waittillgulagmatchend(arena, var_1a93cf0ba17e0dc0) {
     arena notify("matchEnded");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7e40
 // Size: 0xa2
@@ -1956,20 +1983,20 @@ function waittillarenaplayersnotcapturing(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ee9
 // Size: 0x68
 function isanyonealive(arena) {
     foreach (player in arena.arenaplayers) {
         if (isalive(player)) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f59
 // Size: 0xb3
@@ -1977,12 +2004,14 @@ function isoneteamleft(arena) {
     if (function_cfe304859f30e747("gulagIsOneTeamLeft")) {
         return function_3cceb052d780fef1("gulagIsOneTeamLeft");
     }
-    var_6f4191369a7f931 = undefined;
+    teamleft = undefined;
     foreach (player in arena.arenaplayers) {
         if (isalive(player)) {
-            if (!isdefined(var_6f4191369a7f931)) {
-                var_6f4191369a7f931 = player.team;
-            } else if (var_6f4191369a7f931 != player.team) {
+            if (!isdefined(teamleft)) {
+                teamleft = player.team;
+                continue;
+            }
+            if (teamleft != player.team) {
                 return 0;
             }
         }
@@ -1990,11 +2019,11 @@ function isoneteamleft(arena) {
     return 1;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8014
 // Size: 0x205
-function handleendarena(arena, var_4b434533d3624bec, endedearly, var_bf7470006675932e, var_df2fbb13c226be75, var_4ac881e2a39322a5) {
+function handleendarena(arena, var_4b434533d3624bec, endedearly, var_bf7470006675932e, var_df2fbb13c226be75, sponsor) {
     arena notify("fight_over");
     arena.fightover = 1;
     if (!isdefined(var_df2fbb13c226be75)) {
@@ -2013,11 +2042,11 @@ function handleendarena(arena, var_4b434533d3624bec, endedearly, var_bf747000667
                 winner playergulagarenaready();
             }
             if (!function_1980065ce4dc067b()) {
-                if (isdefined(var_4ac881e2a39322a5) && player.team == var_4ac881e2a39322a5.team) {
-                    thread gulagvictory(arena, player, 0, 0, var_df2fbb13c226be75, 0, var_4ac881e2a39322a5, var_bf7470006675932e);
-                } else {
-                    thread gulagvictory(arena, player, 0, 0, "winner");
+                if (isdefined(sponsor) && player.team == sponsor.team) {
+                    thread gulagvictory(arena, player, 0, 0, var_df2fbb13c226be75, 0, sponsor, var_bf7470006675932e);
+                    continue;
                 }
+                thread gulagvictory(arena, player, 0, 0, "winner");
             }
         }
     }
@@ -2034,15 +2063,15 @@ function handleendarena(arena, var_4b434533d3624bec, endedearly, var_bf747000667
         arena.dom.arenaflag arenaflag_setvisible(arena, 0);
     }
     cleanuparenamolotovs(arena);
-    function_d4b0eef0a0924094("toggleLadderEscape", [0:arena, 1:0]);
+    function_d4b0eef0a0924094("toggleLadderEscape", [arena, 0]);
     wait(function_4bb92764539fff5d());
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8220
 // Size: 0x160
-function playerpulloutofgulagwin(var_4ac881e2a39322a5, var_df2fbb13c226be75) {
+function playerpulloutofgulagwin(sponsor, var_df2fbb13c226be75) {
     level endon("game_ended");
     self endon("disconnect");
     if (!isdefined(self.arena)) {
@@ -2052,11 +2081,11 @@ function playerpulloutofgulagwin(var_4ac881e2a39322a5, var_df2fbb13c226be75) {
     if (istrue(self.wasingulag)) {
         self notify("pull_out_of_gulag");
         if (!isalive(self)) {
-            thread namespace_47fd1e79a44628cd::playergulagautowin("playerPullOutOfGulagWin", var_4ac881e2a39322a5);
+            thread scripts/mp/gametypes/br_gulag::playergulagautowin("playerPullOutOfGulagWin", sponsor);
             return;
         } else if (istrue(self.br_iseliminated)) {
-            namespace_80cec6cfc70c4f95::unmarkplayeraseliminated(self, "playerPullOutOfGulagWin");
-            level thread namespace_d20f8ef223912e12::updateplayerandteamcountui();
+            scripts/mp/gametypes/br_utility::unmarkplayeraseliminated(self, "playerPullOutOfGulagWin");
+            level thread scripts/mp/gametypes/br::updateplayerandteamcountui();
         }
     } else if (istrue(self.gulagarena)) {
         if (!arena.fightover) {
@@ -2065,7 +2094,7 @@ function playerpulloutofgulagwin(var_4ac881e2a39322a5, var_df2fbb13c226be75) {
             }
             arena notify("matchEnded");
             arena notify("fight_over_early");
-            thread handleendarena(arena, undefined, 1, 1, var_df2fbb13c226be75, var_4ac881e2a39322a5);
+            thread handleendarena(arena, undefined, 1, 1, var_df2fbb13c226be75, sponsor);
         }
         return;
     } else {
@@ -2077,10 +2106,10 @@ function playerpulloutofgulagwin(var_4ac881e2a39322a5, var_df2fbb13c226be75) {
             self waittill("gulag_start");
         }
     }
-    thread gulagvictory(arena, self, 1, 0, var_df2fbb13c226be75, 0, var_4ac881e2a39322a5, 1);
+    thread gulagvictory(arena, self, 1, 0, var_df2fbb13c226be75, 0, sponsor, 1);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8387
 // Size: 0x93
@@ -2098,15 +2127,15 @@ function getnextjailspawn(arena) {
     return spawnpt;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8422
 // Size: 0x20d
-function outlinewatchplayerprox(var_27c0612cfd76ee91) {
+function outlinewatchplayerprox(outlinecolorcode) {
     self endon("death");
     self endon("trigger");
     self.outlinedplayers = [];
-    switch (var_27c0612cfd76ee91) {
+    switch (outlinecolorcode) {
     case 0:
     default:
         var_4430b08d5a2d47bf = "outline_depth_white";
@@ -2124,7 +2153,7 @@ function outlinewatchplayerprox(var_27c0612cfd76ee91) {
         var_4430b08d5a2d47bf = "outline_depth_orange";
         break;
     }
-    while (1) {
+    while (true) {
         players = utility::playersinsphere(self.origin, 2000);
         var_7fd6d4b3d9f7cad3 = array_difference(level.players, players);
         foreach (player in players) {
@@ -2145,40 +2174,40 @@ function outlinewatchplayerprox(var_27c0612cfd76ee91) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8636
 // Size: 0x52
 function function_aa3a537ec349120d() {
     if (!istrue(level.usegulag)) {
-        return 1;
+        return true;
     }
-    if (!namespace_ad49798629176e96::function_1082d39cdba869d9() && (namespace_d3d40f75bb4e4c32::isplayeringulag() || namespace_d3d40f75bb4e4c32::function_f1918f2fce663b2c())) {
-        return 0;
+    if (!namespace_ad49798629176e96::function_1082d39cdba869d9() && (scripts/mp/gametypes/br_public::isplayeringulag() || scripts/mp/gametypes/br_public::function_f1918f2fce663b2c())) {
+        return false;
     }
     if (istrue(self.gulag) && !istrue(self.gulagloading)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8690
 // Size: 0x59
-function gulagstreamlocationstart(var_11f3b4465c8b637b) {
+function gulagstreamlocationstart(streamorigin) {
     if ((isbot(self) || self isplayerheadless()) && !istrue(self.longgulagstream)) {
-        return 0;
+        return false;
     }
     if (getdvarint(@"hash_723a4b3ac39bc3e2", 0)) {
-        return 0;
+        return false;
     }
     self setallstreamloaddist(10000);
-    self function_670863fc4008c3d8(var_11f3b4465c8b637b);
-    return 1;
+    self function_670863fc4008c3d8(streamorigin);
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x86f1
 // Size: 0x5e
@@ -2190,12 +2219,12 @@ function gulagstreamlocationwait() {
             waitframe();
         }
         self notify("gulagStreamLocationComplete");
-    } else {
-        wait(level.gulag.streamtimeout);
+        return;
     }
+    wait(level.gulag.streamtimeout);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8756
 // Size: 0x24
@@ -2206,7 +2235,7 @@ function gulagstreamlocationwaittimeout(timelimit) {
     self notify("gulagStreamLocationComplete");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8781
 // Size: 0x12
@@ -2215,7 +2244,7 @@ function gulagstreamlocationend() {
     self notify("gulagStreamLocationComplete");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x879a
 // Size: 0x46
@@ -2225,7 +2254,7 @@ function addloadingplayer(arena, player) {
     thread addloadingplayerdisconnectwatch(arena, player);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87e7
 // Size: 0x2d
@@ -2235,7 +2264,7 @@ function addloadingplayerdisconnectwatch(arena, player) {
     thread removeloadingplayer(arena, player);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x881b
 // Size: 0x78
@@ -2251,7 +2280,7 @@ function removeloadingplayer(arena, player) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x889a
 // Size: 0x26
@@ -2259,17 +2288,17 @@ function isplayerloading(player, arena) {
     return array_contains(arena.loadingplayers, player);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88c8
 // Size: 0x29
 function entergulag(player) {
     player notify("enter_gulag");
     player.entergulagwait = 0;
-    namespace_b984803e2ef247a2::hidedeathicon(player);
+    scripts/mp/deathicons::hidedeathicon(player);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88f8
 // Size: 0x22
@@ -2279,18 +2308,18 @@ function entergulagwait(player) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8921
 // Size: 0x405
-function playergetnextarena(overridearenas) {
-    arenas = ter_op(isdefined(overridearenas), overridearenas, level.gulag.arenas);
+function playergetnextarena(overrideArenas) {
+    arenas = ter_op(isdefined(overrideArenas), overrideArenas, level.gulag.arenas);
     var_94afb7d602135955 = getdvarint(@"hash_8bdee07fa09e810a", -1);
     if (var_94afb7d602135955 > -1) {
         return level.gulag.arenas[var_94afb7d602135955];
     }
     if (!istrue(level.gulag.multiarena)) {
-        return function_bee59f29dedc0fd6(overridearenas);
+        return function_bee59f29dedc0fd6(overrideArenas);
     }
     if (isdefined(self.var_94afb7d602135955)) {
         arena = level.gulag.arenas[self.var_94afb7d602135955];
@@ -2302,7 +2331,7 @@ function playergetnextarena(overridearenas) {
     var_5dd209c141f918fa = undefined;
     besttime = undefined;
     foreach (arena in arenas) {
-        if (!isarenaenabled(arena, self)) {
+        if (!isArenaEnabled(arena, self)) {
             continue;
         }
         foreach (match in arena.matches) {
@@ -2318,7 +2347,7 @@ function playergetnextarena(overridearenas) {
     var_f46e3d7b18fb28a4 = [];
     for (i = 0; i < arenas.size; i++) {
         arena = level.gulag.arenas[i];
-        if (!isarenaenabled(arena, self)) {
+        if (!isArenaEnabled(arena, self)) {
             continue;
         }
         if (arena.matches.size > 0 && arena.matches.size < level.gulag.maxqueue) {
@@ -2339,39 +2368,40 @@ function playergetnextarena(overridearenas) {
         return arena;
     }
     var_5dd209c141f918fa = undefined;
-    var_93d79749948ae532 = undefined;
+    bestqueue = undefined;
     for (i = 0; i < arenas.size; i++) {
         arena = level.gulag.arenas[i];
-        if (!isarenaenabled(arena, self)) {
+        if (!isArenaEnabled(arena, self)) {
             continue;
         }
         if (arena.matches.size == 0) {
             return arena;
-        } else if (!isdefined(var_93d79749948ae532) || arena.matches.size < var_93d79749948ae532) {
+        }
+        if (!isdefined(bestqueue) || arena.matches.size < bestqueue) {
             var_5dd209c141f918fa = arena;
-            var_93d79749948ae532 = arena.matches.size;
+            bestqueue = arena.matches.size;
         }
     }
     return var_5dd209c141f918fa;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d2e
 // Size: 0x2a
-function isarenaenabled(arena, player) {
-    return function_4dce98c81d58a751("isArenaEnabled", [0:arena, 1:player]);
+function isArenaEnabled(arena, player) {
+    return function_4dce98c81d58a751("isArenaEnabled", [arena, player]);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d60
 // Size: 0x79
-function function_bee59f29dedc0fd6(overridearenas) {
-    arenas = ter_op(isdefined(overridearenas), overridearenas, level.gulag.arenas);
+function function_bee59f29dedc0fd6(overrideArenas) {
+    arenas = ter_op(isdefined(overrideArenas), overrideArenas, level.gulag.arenas);
     for (i = 0; i < arenas.size; i++) {
         arena = arenas[i];
-        if (!isarenaenabled(arena, self)) {
+        if (!isArenaEnabled(arena, self)) {
             continue;
         }
         return arena;
@@ -2382,15 +2412,15 @@ function function_bee59f29dedc0fd6(overridearenas) {
     return undefined;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8de1
 // Size: 0x83
-function function_ba2be3e8cd3fb169(overridearenas) {
-    arenas = ter_op(isdefined(overridearenas), overridearenas, level.gulag.arenas);
+function function_ba2be3e8cd3fb169(overrideArenas) {
+    arenas = ter_op(isdefined(overrideArenas), overrideArenas, level.gulag.arenas);
     for (i = 0; i < arenas.size; i++) {
         arena = arenas[i];
-        if (!isarenaenabled(arena, self)) {
+        if (!isArenaEnabled(arena, self)) {
             continue;
         }
         if (!istrue(arena.fightover)) {
@@ -2398,50 +2428,50 @@ function function_ba2be3e8cd3fb169(overridearenas) {
         }
         return arena;
     }
-    return function_bee59f29dedc0fd6(overridearenas);
+    return function_bee59f29dedc0fd6(overrideArenas);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8e6c
 // Size: 0x87
 function function_6a7526f387d26776(match) {
     player = self;
-    var_b239b59420d81775 = 0;
-    foreach (var_d7836ab41dca3e4a in match) {
-        if (var_d7836ab41dca3e4a.team == player.team) {
-            var_b239b59420d81775++;
+    allycounter = 0;
+    foreach (participant in match) {
+        if (participant.team == player.team) {
+            allycounter++;
         }
     }
-    return var_b239b59420d81775;
+    return allycounter;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8efb
 // Size: 0xf8
 function isplayermatched(arena, player) {
     if (isdefined(player.gulagposition) && player.gulagposition == 0) {
-        return 1;
+        return true;
     }
     if (!ismatchpending(arena)) {
         if (level.gulag.var_c489bd0446d6b041) {
             logstring("[GULAG DEBUG] : Player " + player.clientid + " did not have a match pending. Time : " + gettime() + ". Number of players in the queue for gulag are : " + arena.matches.size + " .");
         }
-        return 0;
+        return false;
     }
-    var_b94827c01cb82f1e = player.gulagposition - 1;
+    matchindex = player.gulagposition - 1;
     var_4462160dc5261e62 = 1;
     if (function_1980065ce4dc067b()) {
         var_4462160dc5261e62 = 3;
     }
-    if (var_b94827c01cb82f1e >= 0 && isdefined(arena.matches[var_b94827c01cb82f1e]) && arena.matches[var_b94827c01cb82f1e].size > var_4462160dc5261e62) {
-        return 1;
+    if (matchindex >= 0 && isdefined(arena.matches[matchindex]) && arena.matches[matchindex].size > var_4462160dc5261e62) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8ffb
 // Size: 0xac
@@ -2454,7 +2484,7 @@ function setjailtimeouthud(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90ae
 // Size: 0x2d
@@ -2464,7 +2494,7 @@ function playerclearjailtimeouthud(arena) {
     self setclientomnvar("ui_br_gulag_match_end_time", 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90e2
 // Size: 0x1bb
@@ -2473,7 +2503,7 @@ function playerjailtimeout(arena) {
     self endon("disconnect");
     self endon("initPlayerArena");
     self endon("gulag_end");
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         self endon("jailbreak_respawn");
     }
     if (function_cfe304859f30e747("gulagJailTimeout")) {
@@ -2482,23 +2512,23 @@ function playerjailtimeout(arena) {
         delaytime = getdvarint(@"hash_e5f703a38f6e8043", 95);
     }
     if (function_cfe304859f30e747("gulagLeftoverJailTimeout")) {
-        var_28a6af230364b2b7 = function_3cceb052d780fef1("gulagLeftoverJailTimeout");
+        leftovertime = function_3cceb052d780fef1("gulagLeftoverJailTimeout");
     } else {
-        var_28a6af230364b2b7 = 0;
+        leftovertime = 0;
     }
     if (delaytime <= 0) {
         return;
     }
-    var_677cee91234c35a7 = delaytime + var_28a6af230364b2b7;
-    self.jailtimeoutend = int(gettime() + var_677cee91234c35a7 * 1000);
+    timertime = delaytime + leftovertime;
+    self.jailtimeoutend = int(gettime() + timertime * 1000);
     wait(delaytime);
     if (function_cfe304859f30e747("onGulagJailTimeout")) {
         thread function_3cceb052d780fef1("onGulagJailTimeout", arena, self);
     }
-    wait(var_28a6af230364b2b7);
+    wait(leftovertime);
     if (isplayermatched(arena, self)) {
-        var_f0b41805aa72794b = self.gulagposition * (level.gulag.timelimit + getovertimelength() + function_59d019f0169c03be() + 2 + function_86ee3121d91c59c3() + function_4bb92764539fff5d() + 1);
-        timeout = gettime() + var_f0b41805aa72794b * 1000;
+        matchtimetowait = self.gulagposition * (level.gulag.timelimit + getovertimelength() + function_59d019f0169c03be() + 2 + function_86ee3121d91c59c3() + function_4bb92764539fff5d() + 1);
+        timeout = gettime() + matchtimetowait * 1000;
         while (timeout > gettime() && isplayermatched(arena, self)) {
             waitframe();
         }
@@ -2516,7 +2546,7 @@ function playerjailtimeout(arena) {
     thread gulagvictory(arena, self, 1, 0, var_df2fbb13c226be75);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92a4
 // Size: 0x43
@@ -2526,14 +2556,14 @@ function function_dd93503cf95b6277() {
         self.gulaguses = 0;
     }
     var_5a1dc05dc32c2300 = player function_4a25d64251fab1b7();
-    player namespace_d3d40f75bb4e4c32::function_e58801acf7adcdc8(var_5a1dc05dc32c2300);
+    player scripts/mp/gametypes/br_public::function_e58801acf7adcdc8(var_5a1dc05dc32c2300);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92ee
 // Size: 0xb16
-function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
+function initplayerjail(var_5643932de03d949d, skipcinematic) {
     level endon("game_ended");
     self endon("disconnect");
     self endon("gulag_end");
@@ -2543,36 +2573,36 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
     if (function_7effa8a355ddc886()) {
         self.var_d95581fdfc29ec7a = gettime();
     }
-    namespace_a011fbf6d93f25e5::branalytics_gulagstart(self, ter_op(istrue(var_5643932de03d949d), "default", "debug"));
+    scripts/mp/gametypes/br_analytics::branalytics_gulagstart(self, ter_op(istrue(var_5643932de03d949d), "default", "debug"));
     if (level.gulag.var_c489bd0446d6b041) {
         logstring("[GULAG DEBUG] : Player " + self.clientid + " passes jail entrance step 01. Time : " + gettime() + " .");
     }
-    if (!istrue(var_e5fe2365bab5b0ab)) {
-        if (level.gulag.var_86f0de18e07f0b7f) {
+    if (!istrue(skipcinematic)) {
+        if (level.gulag.preloadcinematic) {
             playerpreloadintrocinematic();
         }
     } else {
         namespace_8bfdb6eb5a3df67a::function_334a8fe67e88bbe7();
     }
-    overridearenas = undefined;
+    overrideArenas = undefined;
     var_f4453b4383378d4a = undefined;
-    var_66287f24ebdf0100 = undefined;
+    forceoverride = undefined;
     if (function_175e22055ae274a3("overrideArenas")) {
-        overridearenas = function_d4b0eef0a0924094("overrideArenas");
-        if (isdefined(overridearenas)) {
-            var_f4453b4383378d4a = overridearenas[0];
-            var_66287f24ebdf0100 = overridearenas[1];
+        overrideArenas = function_d4b0eef0a0924094("overrideArenas");
+        if (isdefined(overrideArenas)) {
+            var_f4453b4383378d4a = overrideArenas[0];
+            forceoverride = overrideArenas[1];
         }
     }
     if (function_1980065ce4dc067b()) {
-        arena = namespace_ad49798629176e96::function_d095c23873d8efed(var_f4453b4383378d4a, var_66287f24ebdf0100);
+        arena = namespace_ad49798629176e96::function_d095c23873d8efed(var_f4453b4383378d4a, forceoverride);
     } else {
-        arena = playergetnextarena(overridearenas);
+        arena = playergetnextarena(overrideArenas);
     }
     self.arena = arena;
     if (isdefined(arena.gulagindex)) {
         var_fcc20b643699a386 = arena.gulagindex + 1;
-        namespace_b919c4be206d3c80::function_f8b808cd6473e6cc(23, var_fcc20b643699a386);
+        scripts/mp/codcasterclientmatchdata::function_f8b808cd6473e6cc(23, var_fcc20b643699a386);
     }
     if (!array_contains(arena.jailedplayers, self)) {
         arena notify("player_added_to_jail", self);
@@ -2598,7 +2628,7 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
     self.gulaguses++;
     function_dd93503cf95b6277();
     if (function_6e3541fd8fab45bc()) {
-        if (namespace_ad49798629176e96::function_d8f18f1d691c0ef8(arena) && level.var_43307855f189eb31.var_cb1a9a6651a906df < 4) {
+        if (namespace_ad49798629176e96::function_d8f18f1d691c0ef8(arena) && level.var_43307855f189eb31.patroltier < 4) {
             var_5c7f3cea21f3b966 = "gulagspectators" + arena.gulagindex;
             if (!threatbiasgroupexists(var_5c7f3cea21f3b966)) {
                 createthreatbiasgroup(var_5c7f3cea21f3b966);
@@ -2621,7 +2651,7 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
     if (isdefined(spawnpt.angles)) {
         spawnangles = spawnpt.angles;
     }
-    var_3f39a8b789073e7b = gulagstreamlocationstart(spawnorigin);
+    waitforstream = gulagstreamlocationstart(spawnorigin);
     self.gulagloading = 1;
     self.streampoint = spawnstruct();
     self.streampoint.origin = spawnorigin;
@@ -2634,32 +2664,32 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
     if (level.gulag.var_c489bd0446d6b041) {
         logstring("[GULAG DEBUG] : Player " + self.clientid + " enters jail entrance step 03. Time : " + gettime() + ". Player passed enterGulagWait. Number of players in the queue for gulag are : " + arena.matches.size + " .");
     }
-    namespace_d9c77dc2a6fe29c6::enableoobimmunity(self);
+    scripts/mp/outofbounds::enableoobimmunity(self);
     namespace_1eb3c4e0e28fac71::onplayerentergulag();
     namespace_fd99f400a596934b::function_d545b198b75385f6();
     level callback::callback(#"hash_c15c682d6a5dcae0", {player:self});
     self.ignoreafkcheck = 1;
     starttime = gettime();
-    if (namespace_d3d40f75bb4e4c32::isbrpracticemode()) {
+    if (scripts/mp/gametypes/br_public::isBrPracticeMode()) {
         self notify("play_gulag_vo");
     }
-    if (!istrue(var_e5fe2365bab5b0ab)) {
+    if (!istrue(skipcinematic)) {
         playerplayintrocinematic();
     }
-    var_721982228624d657 = namespace_a9c534dc7832aba4::function_6d5206bdba79e8c3();
-    if (var_721982228624d657.size > 0) {
-        foreach (client in var_721982228624d657) {
-            client thread namespace_a9c534dc7832aba4::function_4a8746c1aa6bb002(5, "gulagSceneFin");
+    spectators = scripts/mp/gametypes/br_spectate::function_6d5206bdba79e8c3();
+    if (spectators.size > 0) {
+        foreach (client in spectators) {
+            client thread scripts/mp/gametypes/br_spectate::function_4a8746c1aa6bb002(5, "gulagSceneFin");
         }
     }
-    if (var_3f39a8b789073e7b) {
-        namespace_d20f8ef223912e12::spawnintermission(spawnorigin + (0, 0, 100), self.angles);
-        namespace_5aeecefc462876::setdisabled();
+    if (waitforstream) {
+        scripts/mp/gametypes/br::spawnintermission(spawnorigin + (0, 0, 100), self.angles);
+        scripts/mp/spectating::setdisabled();
         gulagstreamlocationstart(spawnorigin);
         gulagstreamlocationwait();
     }
-    if (namespace_71073fa38f11492::isbrgametypefuncdefined("playerPreSpawnGulagJail")) {
-        namespace_71073fa38f11492::runbrgametypefunc("playerPreSpawnGulagJail");
+    if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("playerPreSpawnGulagJail")) {
+        scripts/mp/gametypes/br_gametypes::runbrgametypefunc("playerPreSpawnGulagJail");
     }
     /#
         while (getdvarint(@"hash_98b297a8680cbdc2", 0) == 2) {
@@ -2670,15 +2700,15 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
     if (level.gulag.var_c489bd0446d6b041) {
         logstring("[GULAG DEBUG] : Player " + self.clientid + " enters jail entrance step 04. Time : " + gettime() + ". Player passed gulag stream location. Number of players in the queue for gulag are : " + arena.matches.size + " .");
     }
-    namespace_d19129e4fa5d176::loadout_emptycacheofloadout("gamemode");
+    scripts/mp/class::loadout_emptycacheofloadout("gamemode");
     self.pers["gamemodeLoadout"] = level.gulag.jailloadout;
     self.class = "gamemode";
     self.forcespawnangles = spawnangles;
     self.forcespawnorigin = spawnorigin;
     self.reviver = undefined;
-    namespace_99ac021a7547cae3::spawnplayer(undefined, 0);
-    namespace_f446f6030ca8cff8::_clearexecution();
-    namespace_aead94004cf4c147::function_5c5e6619f0b24f90();
+    scripts/mp/playerlogic::spawnplayer(undefined, 0);
+    scripts/cp_mp/execution::_clearexecution();
+    namespace_aead94004cf4c147::clearbackpack();
     self setclientomnvar("ui_gulag", 1);
     self.streampoint = undefined;
     self.gulagloading = 0;
@@ -2687,15 +2717,15 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
         self.var_22f8f8d138d3c02f = 0;
         function_f071db381e990d80();
     }
-    if (var_3f39a8b789073e7b) {
+    if (waitforstream) {
         gulagstreamlocationend();
     }
-    if (var_721982228624d657.size > 0) {
-        foreach (client in var_721982228624d657) {
+    if (spectators.size > 0) {
+        foreach (client in spectators) {
             client notify("gulagSceneFin");
         }
     }
-    if (!istrue(var_e5fe2365bab5b0ab)) {
+    if (!istrue(skipcinematic)) {
         playershowskippromptcinematic();
         playerwaittillcinematiccomplete(starttime);
     }
@@ -2705,7 +2735,7 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
             waitframe();
         }
     #/
-    if (namespace_d3d40f75bb4e4c32::isbrpracticemode()) {
+    if (scripts/mp/gametypes/br_public::isBrPracticeMode()) {
         self clearsoundsubmix("iw8_br_gulag_tutorial", 2);
     } else {
         self clearsoundsubmix("solo_cin_igc_music", 2);
@@ -2725,18 +2755,18 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
         if (isdefined(self.plundercountondeath)) {
             var_d5f9260e2c6a3b63 = int(max(var_d5f9260e2c6a3b63, int(self.plundercountondeath / 2)));
         }
-        namespace_c6ccccd95254983f::playersetplundercount(var_d5f9260e2c6a3b63);
+        scripts/mp/gametypes/br_plunder::playersetplundercount(var_d5f9260e2c6a3b63);
     }
-    if (!var_c497fb6aa47dda29 && !istrue(var_e5fe2365bab5b0ab)) {
-        namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_spawn", self, 0, undefined, undefined, undefined, "dx_br_jpbm_");
+    if (!var_c497fb6aa47dda29 && !istrue(skipcinematic)) {
+        scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_spawn", self, 0, undefined, undefined, undefined, "dx_br_jpbm_");
     }
     foreach (teammate in level.teamdata[self.team]["players"]) {
         if (!isdefined(teammate) || !isalive(teammate)) {
             continue;
         }
         if (teammate != self) {
-            teammate thread namespace_44abc05161e2e2cb::showsplash("br_gulag_teammate_in", undefined, self);
-            thread namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_teammate_gulag", teammate, undefined, undefined, 2);
+            teammate thread scripts/mp/hud_message::showsplash("br_gulag_teammate_in", undefined, self);
+            thread scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_teammate_gulag", teammate, undefined, undefined, 2);
         }
     }
     if (!istrue(self.jailed)) {
@@ -2744,11 +2774,11 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
             println("gulagHandleLossInfiniteLate" + self.name + "gulagOrderArenaPlayers" + self.class);
         #/
         setplayervargulagjail(1);
-        namespace_82dcd1d5ae30ff7::blockperkfunction("specialty_scavenger");
+        scripts/mp/utility/perk::blockperkfunction("specialty_scavenger");
     }
     namespace_f8d3520d3483c1::givestartingarmor(0, 0, 0);
     removeloadingplayer(arena, self);
-    namespace_cb965d2f71fefddc::initplayer(1);
+    scripts/mp/gametypes/br_pickups::initplayer(1);
     if (istrue(level.gulag.gestures_enabled) && !isbot(self)) {
         thread playergulaggestures();
     }
@@ -2768,7 +2798,7 @@ function initplayerjail(var_5643932de03d949d, var_e5fe2365bab5b0ab) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9e0b
 // Size: 0x44
@@ -2781,22 +2811,22 @@ function playerjailwaitvo(arena) {
     if (ismatchpending(arena)) {
         return;
     }
-    namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_obj_wait", self, 0);
+    scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_obj_wait", self, 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9e56
 // Size: 0x21
 function playerstartjailsetcontrols(enable) {
     if (enable) {
         self enableoffhandthrowback();
-    } else {
-        self disableoffhandthrowback();
+        return;
     }
+    self disableoffhandthrowback();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9e7e
 // Size: 0x1da
@@ -2811,34 +2841,34 @@ function playergulaggestures() {
     self notifyonplayercommand("fc_gesture_neg", "+attack");
     self notifyonplayercommand("fc_gesture_pos", "+speed_throw");
     gestureindex = 0;
-    while (1) {
-        var_a8ab9599524f3865 = waittill_any_return_2("fc_gesture_neg", "fc_gesture_pos");
+    while (true) {
+        gesture_type = waittill_any_return_2("fc_gesture_neg", "fc_gesture_pos");
         if (self isgestureplaying() || self isswitchingweapon() || self isreloading() || self ismantling() || self isthrowinggrenade() || self israisingweapon() || self ismeleeing()) {
             continue;
         }
         if (getdvarint(@"hash_f66218d4c610a345", 0) > 0) {
-            if (gestureindex >= level.gulag.gestures[var_a8ab9599524f3865].size) {
+            if (gestureindex >= level.gulag.gestures[gesture_type].size) {
                 gestureindex = 0;
             }
-            var_7c64add76ada24c9 = level.gulag.gesturesounds[var_a8ab9599524f3865][gestureindex];
-            var_e8562c6f1c5aa36f = level.gulag.gestures[var_a8ab9599524f3865][gestureindex];
+            gesturesoundalias = level.gulag.gesturesounds[gesture_type][gestureindex];
+            gestureweaponname = level.gulag.gestures[gesture_type][gestureindex];
             gestureindex++;
         } else {
-            gestureindex = randomint(level.gulag.gestures[var_a8ab9599524f3865].size);
-            var_7c64add76ada24c9 = level.gulag.gesturesounds[var_a8ab9599524f3865][gestureindex];
-            var_e8562c6f1c5aa36f = level.gulag.gestures[var_a8ab9599524f3865][gestureindex];
+            gestureindex = randomint(level.gulag.gestures[gesture_type].size);
+            gesturesoundalias = level.gulag.gesturesounds[gesture_type][gestureindex];
+            gestureweaponname = level.gulag.gestures[gesture_type][gestureindex];
         }
-        if (isdefined(var_7c64add76ada24c9) && var_7c64add76ada24c9 != "") {
-            self playsound(var_7c64add76ada24c9);
+        if (isdefined(gesturesoundalias) && gesturesoundalias != "") {
+            self playsound(gesturesoundalias);
         }
-        gestureweapon = makeweapon(var_e8562c6f1c5aa36f);
+        gestureweapon = makeweapon(gestureweaponname);
         if (isdefined(gestureweapon) && !isnullweapon(gestureweapon)) {
-            namespace_46e9069d8502773a::watchradialgesture(gestureweapon);
+            scripts/cp_mp/gestures::watchradialgesture(gestureweapon);
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa05f
 // Size: 0x3f
@@ -2850,18 +2880,18 @@ function playergulaggesturesdisable() {
     self allowads(1);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0a5
 // Size: 0x4e
 function gulagloadingtext() {
-    text = namespace_52f6938dd902c7d0::createfontstring("default", 1.5);
-    text namespace_52f6938dd902c7d0::setpoint("CENTER", "CENTER", 0, -100);
+    text = scripts/mp/hud_util::createfontstring("default", 1.5);
+    text scripts/mp/hud_util::setpoint("CENTER", "CENTER", 0, -100);
     text.label = "MP/BR_GULAG_TRAVEL";
     self.gulagloadingtext = text;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0fa
 // Size: 0x1f
@@ -2871,18 +2901,18 @@ function gulagloadingtextclear() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa120
 // Size: 0x715
-function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8e2cd330) {
+function initplayerarena(arena, skipspawn, loadoutindex, debugreason) {
     if (level.gulag.var_c489bd0446d6b041) {
         logstring("[GULAG DEBUG] : Player " + self.clientid + " passed arena entrance step 00.5. Time : " + gettime() + ". Screen fade to black. Number of players in the queue for gulag are : " + arena.matches.size + " .");
     }
     level endon("game_ended");
     self endon("disconnect");
     self notify("initPlayerArena");
-    if (namespace_7e17181d03156026::isinlaststand(self)) {
+    if (scripts/mp/utility/player::isinlaststand(self)) {
         self notify("last_stand_revived");
     }
     /#
@@ -2891,7 +2921,7 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
     /#
         println("end_betting" + self.name);
     #/
-    namespace_cb965d2f71fefddc::initplayer();
+    scripts/mp/gametypes/br_pickups::initplayer();
     if (function_7effa8a355ddc886()) {
         self.var_22f8f8d138d3c02f = 1;
         function_f071db381e990d80();
@@ -2900,7 +2930,7 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
     self allowprone(0);
     self allowcrouch(0);
     playerstartjailsetcontrols(1);
-    playerstartarenasetcontrols(0, "initPlayerArena_" + function_53c4c53197386572(var_228a5de8e2cd330, ""));
+    playerstartarenasetcontrols(0, "initPlayerArena_" + default_to(debugreason, ""));
     playertakeawayrock(arena);
     playerclearjailtimeouthud(arena);
     val::set("PlayerArena", "equipment_primary", 0);
@@ -2908,7 +2938,7 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
     if (!function_1980065ce4dc067b()) {
         thread playerhealthomnvarwatcher(arena);
     }
-    if (istrue(var_c3e0e015de4435fd)) {
+    if (istrue(skipspawn)) {
         setplayervargulagjail(0);
         setplayervargulagarena(1);
         playergivearenaloadout(arena, loadoutindex);
@@ -2918,10 +2948,10 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
         return;
     }
     if (!function_1980065ce4dc067b()) {
-        namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_spawn_rules", self, 0, undefined, undefined, undefined, "dx_br_jpbm_");
+        scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_spawn_rules", self, 0, undefined, undefined, undefined, "dx_br_jpbm_");
     }
-    var_13e3fc231bb8d6b9 = namespace_8bfdb6eb5a3df67a::playeriscinematiclayeron();
-    if (!var_13e3fc231bb8d6b9) {
+    blackscreenup = namespace_8bfdb6eb5a3df67a::playeriscinematiclayeron();
+    if (!blackscreenup) {
         thread namespace_8bfdb6eb5a3df67a::fadeoutin();
     }
     thread namespace_8bfdb6eb5a3df67a::fadeoutinspectatorsofplayer();
@@ -2933,9 +2963,9 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
         logstring("[GULAG DEBUG] : Player " + self.clientid + " passed arena entrance step 02. Time : " + gettime() + ". Passed wait 1 after screen fade to black. Number of players in the queue for gulag are : " + arena.matches.size + " .");
     }
     playergivearenaloadout(arena, loadoutindex);
-    playerstartarenasetcontrols(0, "initPlayerArena_postloadout_" + function_53c4c53197386572(var_228a5de8e2cd330, ""));
+    playerstartarenasetcontrols(0, "initPlayerArena_postloadout_" + default_to(debugreason, ""));
     if (function_1980065ce4dc067b()) {
-        namespace_d20f8ef223912e12::playerexecutionsdisable();
+        scripts/mp/gametypes/br::playerexecutionsdisable();
     }
     thread playertimedinvunerable(3);
     if (getdvarint(@"hash_4e5ffa31f07112ca", 0) == 1) {
@@ -2950,13 +2980,13 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
     }
     if (!function_1980065ce4dc067b() || function_9005af34e01bf8fe()) {
         if (function_9005af34e01bf8fe()) {
-            var_33f8e2f409d6f930 = function_81a985371d489374(arena);
+            arenaspawner = function_81a985371d489374(arena);
         } else {
-            var_33f8e2f409d6f930 = getnextarenaspawn(arena);
+            arenaspawner = getnextarenaspawn(arena);
         }
-        spawnorigin = getgroundposition(var_33f8e2f409d6f930.origin, 1);
-        spawnangles = var_33f8e2f409d6f930.angles;
-        if (!isdefined(var_33f8e2f409d6f930.angles)) {
+        spawnorigin = getgroundposition(arenaspawner.origin, 1);
+        spawnangles = arenaspawner.angles;
+        if (!isdefined(arenaspawner.angles)) {
             spawnangles = (0, 0, 0);
         }
         namespace_8bfdb6eb5a3df67a::function_ab31cf673d70f72d(spawnorigin, spawnangles);
@@ -2971,13 +3001,13 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
         /#
             assert(isdefined(level.gulag.numarmorhealth));
         #/
-        namespace_f8d3520d3483c1::setarmorhealth(level.gulag.numarmorhealth);
+        namespace_f8d3520d3483c1::setArmorHealth(level.gulag.numarmorhealth);
     }
     if (getdvarint(@"hash_3ceaf2c0c66c3dc2", 0) > 0) {
         self hudoutlineenableforclients(arena.arenaplayers, "outline_nodepth_red");
     }
-    var_13e3fc231bb8d6b9 = namespace_8bfdb6eb5a3df67a::playeriscinematiclayeron();
-    if (var_13e3fc231bb8d6b9) {
+    blackscreenup = namespace_8bfdb6eb5a3df67a::playeriscinematiclayeron();
+    if (blackscreenup) {
         namespace_8bfdb6eb5a3df67a::function_e68e4bb4f65f5fe4();
     }
     if (function_9005af34e01bf8fe()) {
@@ -2993,10 +3023,10 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
     self allowprone(1);
     self allowcrouch(1);
     wait(function_59d019f0169c03be() - 1);
-    self.var_38841d8e75a06ab3 = undefined;
+    self.skydive_spawnprotection = undefined;
     self notify("skydive_remove_spawn_protection");
     if (function_1980065ce4dc067b()) {
-        namespace_d20f8ef223912e12::playerexecutionsenable();
+        scripts/mp/gametypes/br::playerexecutionsenable();
     }
     if (function_1980065ce4dc067b() && istrue(level.var_43307855f189eb31.var_41ba817a6aa8ea0a)) {
         thread namespace_ad49798629176e96::function_696f54da8fcb6bbe("gulag_jailer_match_start", arena);
@@ -3013,48 +3043,50 @@ function initplayerarena(arena, var_c3e0e015de4435fd, loadoutindex, var_228a5de8
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa83c
 // Size: 0x1b4
 function function_737f63f33471e8b5() {
     arena = self;
     arena waittill("gulag_about_to_start_camera_sequence");
-    var_ff6a5af3136746ab = arena.fightspawns[0];
-    var_665773f35f5ad3a5 = arena.fightspawns[1];
-    var_f3fd198bf503976f = arena.fightspawns[2];
-    var_cdfbf5f85e67aaf9 = arena.fightspawns[3];
-    if (distance2d(var_ff6a5af3136746ab.origin, var_f3fd198bf503976f.origin) > 150) {
+    spawnplayerone = arena.fightspawns[0];
+    spawnplayertwo = arena.fightspawns[1];
+    spawnplayerthree = arena.fightspawns[2];
+    spawnplayerfour = arena.fightspawns[3];
+    if (distance2d(spawnplayerone.origin, spawnplayerthree.origin) > 150) {
         logstring("[GULAG] Bad gulag spawns for spawns : 1 & 3");
-        var_f3fd198bf503976f = arena function_837e317cc5ca039b(var_ff6a5af3136746ab);
+        spawnplayerthree = arena function_837e317cc5ca039b(spawnplayerone);
     }
-    if (distance2d(var_665773f35f5ad3a5.origin, var_cdfbf5f85e67aaf9.origin) > 150) {
+    if (distance2d(spawnplayertwo.origin, spawnplayerfour.origin) > 150) {
         logstring("[GULAG] Bad gulag spawns for spawns : 2 & 4");
-        var_cdfbf5f85e67aaf9 = arena function_837e317cc5ca039b(var_665773f35f5ad3a5);
+        spawnplayerfour = arena function_837e317cc5ca039b(spawnplayertwo);
     }
     var_fffa32233dbce940 = 0;
     var_c9a7f236cdb526a2 = 0;
     foreach (p in arena.arenaplayers) {
-        if (p.var_6d34bf5491ad7588 == 1) {
+        if (p.twotwoteam == 1) {
             if (var_fffa32233dbce940 == 0) {
-                p function_b6ded705410954f1(var_ff6a5af3136746ab);
+                p function_b6ded705410954f1(spawnplayerone);
                 var_fffa32233dbce940++;
             } else {
-                p function_b6ded705410954f1(var_f3fd198bf503976f);
+                p function_b6ded705410954f1(spawnplayerthree);
                 var_fffa32233dbce940++;
             }
-        } else if (var_c9a7f236cdb526a2 == 0) {
-            p function_b6ded705410954f1(var_665773f35f5ad3a5);
-            var_c9a7f236cdb526a2++;
-        } else {
-            p function_b6ded705410954f1(var_cdfbf5f85e67aaf9);
-            var_c9a7f236cdb526a2++;
+            continue;
         }
+        if (var_c9a7f236cdb526a2 == 0) {
+            p function_b6ded705410954f1(spawnplayertwo);
+            var_c9a7f236cdb526a2++;
+            continue;
+        }
+        p function_b6ded705410954f1(spawnplayerfour);
+        var_c9a7f236cdb526a2++;
     }
     arena notify("gulag_players_in_place_for_match_sequence");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa9f7
 // Size: 0x80
@@ -3069,29 +3101,29 @@ function function_b6ded705410954f1(var_6ec590da2678d88d) {
     player.var_600419d0dbb63af7 = spawnorigin;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaa7e
 // Size: 0xa1
-function function_837e317cc5ca039b(var_c8d5bf0174223a73) {
+function function_837e317cc5ca039b(usedspawnpoint) {
     arena = self;
-    var_f551fca9926c54c6 = undefined;
+    newspawnpoint = undefined;
     foreach (spawnpoint in arena.fightspawns) {
-        if (spawnpoint == var_c8d5bf0174223a73) {
+        if (spawnpoint == usedspawnpoint) {
             continue;
         }
-        if (distance2d(var_c8d5bf0174223a73.origin, spawnpoint.origin) < 150) {
-            var_f551fca9926c54c6 = spawnpoint;
+        if (distance2d(usedspawnpoint.origin, spawnpoint.origin) < 150) {
+            newspawnpoint = spawnpoint;
         }
     }
-    return var_f551fca9926c54c6;
+    return newspawnpoint;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab27
 // Size: 0xa6
-function playerstartarenasetcontrols(enable, var_228a5de8e2cd330) {
+function playerstartarenasetcontrols(enable, debugreason) {
     if (enable) {
         self notify("gulag_end_lock_movement");
         self allowmelee(1);
@@ -3109,10 +3141,10 @@ function playerstartarenasetcontrols(enable, var_228a5de8e2cd330) {
         self allowads(0);
         self allowfire(0);
     }
-    function_2e096d17b6286e29(self, "playerStartArenaSetControls_" + function_53c4c53197386572(var_228a5de8e2cd330, ""), enable);
+    function_2e096d17b6286e29(self, "playerStartArenaSetControls_" + default_to(debugreason, ""), enable);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xabd4
 // Size: 0x51
@@ -3131,7 +3163,7 @@ function function_c194c7f63e64d501() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xac2c
 // Size: 0xc1
@@ -3140,20 +3172,20 @@ function getnextarenaspawn(arena) {
         arena.arenaspawncounter = 0;
     }
     spawnpt = undefined;
-    var_aaf901dc990498c5 = 0;
+    spawnsize = 0;
     if (usecellspawns(arena)) {
         spawnpt = arena.cellspawns[arena.arenaspawncounter];
-        var_aaf901dc990498c5 = arena.cellspawns.size;
+        spawnsize = arena.cellspawns.size;
     } else {
         spawnpt = arena.fightspawns[arena.arenaspawncounter];
-        var_aaf901dc990498c5 = arena.fightspawns.size;
+        spawnsize = arena.fightspawns.size;
     }
     arena.arenaspawncounter++;
-    arena.arenaspawncounter = arena.arenaspawncounter % var_aaf901dc990498c5;
+    arena.arenaspawncounter = arena.arenaspawncounter % spawnsize;
     return spawnpt;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xacf5
 // Size: 0x29
@@ -3163,7 +3195,7 @@ function function_81a985371d489374(arena) {
     return spawnpt;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xad26
 // Size: 0x2e8
@@ -3214,7 +3246,7 @@ function function_7a41a8c3404be54c(arena) {
     return var_7e5caf04b39f50c6;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb016
 // Size: 0x75
@@ -3229,7 +3261,7 @@ function function_be68bba79d94e189(var_9b90d8ba4db5be81) {
     arena.var_be68bba79d94e189 = array_remove(arena.var_be68bba79d94e189, var_9b90d8ba4db5be81);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb092
 // Size: 0x41
@@ -3241,14 +3273,14 @@ function playertimedinvunerable(timeout) {
     self.plotarmor = undefined;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb0da
 // Size: 0x93
 function function_34cebfca4fdfb4f3() {
     level endon("game_ended");
     self endon("disconnect");
-    playerclientnum = self function_d85aa3c6cfd398cf();
+    playerclientnum = self getplayerclientnum();
     if (isdefined(playerclientnum) && isdefined(level.var_c5877dbe60fddbf6)) {
         foreach (codcaster in level.var_c5877dbe60fddbf6) {
             if (codcaster function_afdedf3c8beb5ebc(playerclientnum)) {
@@ -3258,21 +3290,21 @@ function function_34cebfca4fdfb4f3() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb174
 // Size: 0x6e2
-function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543, var_df2fbb13c226be75, var_fb551788da0fc531, var_4ac881e2a39322a5, var_bf7470006675932e, var_7b73d3f227cbd0f1, var_565c98bdccd583fb) {
+function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543, var_df2fbb13c226be75, var_fb551788da0fc531, sponsor, var_bf7470006675932e, freezeplayercontrols, var_565c98bdccd583fb) {
     level endon("game_ended");
     winner endon("death_or_disconnect");
     winner notify("gulag_end");
     if (!isdefined(var_fb551788da0fc531)) {
         var_fb551788da0fc531 = 0;
     }
-    if (!isdefined(var_7b73d3f227cbd0f1)) {
-        var_7b73d3f227cbd0f1 = 0;
+    if (!isdefined(freezeplayercontrols)) {
+        freezeplayercontrols = 0;
     }
-    if (istrue(var_7b73d3f227cbd0f1) && istrue(level.gulag.var_5ebd7968d809fbac)) {
+    if (istrue(freezeplayercontrols) && istrue(level.gulag.var_5ebd7968d809fbac)) {
         if (istrue(winner.insertingarmorplate)) {
             winner notify("try_armor_cancel");
             while (istrue(winner.insertingarmorplate)) {
@@ -3281,16 +3313,16 @@ function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543,
         }
         winner _freezecontrols(1, undefined, "gulagVictory");
     }
-    var_eb5ca989a43ff3f = var_df2fbb13c226be75 == "br_twotwo_gulag_win_flag";
-    winner function_13ad2ef144d94c4f(var_eb5ca989a43ff3f);
-    winner namespace_b919c4be206d3c80::function_f8b808cd6473e6cc(23, 0);
+    freezemovement = var_df2fbb13c226be75 == "br_twotwo_gulag_win_flag";
+    winner function_13ad2ef144d94c4f(freezemovement);
+    winner scripts/mp/codcasterclientmatchdata::function_f8b808cd6473e6cc(23, 0);
     foreach (player in arena.arenaplayers) {
-        player namespace_b919c4be206d3c80::function_f8b808cd6473e6cc(23, 0);
+        player scripts/mp/codcasterclientmatchdata::function_f8b808cd6473e6cc(23, 0);
         if (arena.arenaplayers[0] == winner) {
             player setclientomnvar("ui_br_gulag_match_state", 4);
-        } else {
-            player setclientomnvar("ui_br_gulag_match_state", 5);
+            continue;
         }
+        player setclientomnvar("ui_br_gulag_match_state", 5);
     }
     winner playerclearjailtimeouthud();
     winner thread playertimedinvunerable(5);
@@ -3316,8 +3348,8 @@ function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543,
             continue;
         }
         if (teammate != winner) {
-            teammate thread namespace_44abc05161e2e2cb::showsplash("br_gulag_teammate_out", undefined, winner);
-            thread namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_teammate_win", teammate, undefined, undefined, 2);
+            teammate thread scripts/mp/hud_message::showsplash("br_gulag_teammate_out", undefined, winner);
+            thread scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_teammate_win", teammate, undefined, undefined, 2);
         }
     }
     reason = "";
@@ -3333,16 +3365,16 @@ function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543,
     if (var_5b9a9b8346074883) {
         if (!istrue(var_5a5a690371917543) && !istrue(var_565c98bdccd583fb)) {
             if (isdefined(var_df2fbb13c226be75) && var_df2fbb13c226be75 == "timeout") {
-                namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_timeout", winner, 0);
+                scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_timeout", winner, 0);
             } else {
-                namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_noenemy", winner, 0);
+                scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_noenemy", winner, 0);
             }
         }
         arena.jailedplayers = array_remove(arena.jailedplayers, winner);
         function_94eb48dd1cd7f972(winner, "Kicked Out", 0);
         updatematchqueuepositions(arena);
     } else {
-        namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_win", winner, 0, undefined, undefined, undefined, "dx_br_jpbm_");
+        scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_win", winner, 0, undefined, undefined, undefined, "dx_br_jpbm_");
     }
     if (getdvarint(@"hash_61e9133b2e499a6c")) {
         br_gulag_win = function_17ee301cf0b5ba85("br_gulag_win_classic");
@@ -3358,12 +3390,12 @@ function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543,
         winner function_a593971d75d82113();
         winner function_379bb555405c16bb("br_gulag::gulagVictory()");
     }
-    winner namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("isRespawning", 1);
-    winner namespace_3bbb5a98b932c46f::deleteplacedequipment();
-    streamtimeout = namespace_d3d40f75bb4e4c32::getdefaultstreamhinttimeoutms() / 1000;
-    spawnpoint = winner namespace_8bfdb6eb5a3df67a::playergetrespawnpoint(0, streamtimeout);
+    winner scripts/mp/gametypes/br_public::updatebrscoreboardstat("isRespawning", 1);
+    winner scripts/mp/weapons::deleteplacedequipment();
+    streamtimeout = scripts/mp/gametypes/br_public::getdefaultstreamhinttimeoutms() / 1000;
+    spawnpoint = winner namespace_8bfdb6eb5a3df67a::playerGetRespawnPoint(0, streamtimeout);
     winner.var_f9792c4242dc4625 = spawnpoint.origin;
-    var_11f3b4465c8b637b = winner namespace_8bfdb6eb5a3df67a::playerprestreamrespawnorigin(spawnpoint);
+    streamorigin = winner namespace_8bfdb6eb5a3df67a::playerprestreamrespawnorigin(spawnpoint);
     if (function_7effa8a355ddc886()) {
         winner.var_b807b84e723c5cea = undefined;
         winner.var_d95581fdfc29ec7a = undefined;
@@ -3380,7 +3412,7 @@ function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543,
     winner playerstartarenasetcontrols(1, "gulagVictory");
     winner namespace_8bfdb6eb5a3df67a::function_d669022f6cd65402(0);
     winner setstance("stand");
-    if (var_5b9a9b8346074883 && namespace_7e17181d03156026::isinlaststand(winner)) {
+    if (var_5b9a9b8346074883 && scripts/mp/utility/player::isinlaststand(winner)) {
         winner notify("last_stand_revived");
     }
     winner function_ca008cc22b07ba4e();
@@ -3391,12 +3423,12 @@ function gulagvictory(arena, winner, var_5b9a9b8346074883, var_5a5a690371917543,
         winner _freezecontrols(0, 0, "gulagVictory");
     }
     winner thread function_8cd7d5a73921bd93(10);
-    winner gulagwinnerrespawn(var_fb551788da0fc531, var_df2fbb13c226be75, spawnpoint, 1, var_11f3b4465c8b637b, undefined, var_4ac881e2a39322a5, var_5a5a690371917543, var_bf7470006675932e, undefined, var_565c98bdccd583fb, undefined, arena);
+    winner gulagwinnerrespawn(var_fb551788da0fc531, var_df2fbb13c226be75, spawnpoint, 1, streamorigin, undefined, sponsor, var_5a5a690371917543, var_bf7470006675932e, undefined, var_565c98bdccd583fb, undefined, arena);
     winner.var_f9792c4242dc4625 = undefined;
-    namespace_a9c534dc7832aba4::function_f83bf537661ec58c(winner);
+    scripts/mp/gametypes/br_spectate::function_f83bf537661ec58c(winner);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb85d
 // Size: 0x32
@@ -3409,20 +3441,20 @@ function function_86ee3121d91c59c3() {
     return waittime;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb897
 // Size: 0x32
 function function_4bb92764539fff5d() {
     if (function_cfe304859f30e747("gulagGetPostVictoryWait")) {
-        var_684405e0da1732fb = function_3cceb052d780fef1("gulagGetPostVictoryWait");
+        postwaittime = function_3cceb052d780fef1("gulagGetPostVictoryWait");
     } else {
-        var_684405e0da1732fb = 1;
+        postwaittime = 1;
     }
-    return var_684405e0da1732fb;
+    return postwaittime;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb8d1
 // Size: 0x75
@@ -3439,7 +3471,7 @@ function gulagplayerwatchfordeath(arena, var_4b434533d3624bec) {
     thread gulagplayerlost(arena);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb94d
 // Size: 0x550
@@ -3462,7 +3494,7 @@ function gulagplayerlost(arena, var_40d8983fc5e5c7a5, var_93592d4a5fd91ed1) {
     if (function_cfe304859f30e747("gulagLostOverlay")) {
         function_3cceb052d780fef1("gulagLostOverlay", self, var_40d8983fc5e5c7a5);
     } else {
-        thread namespace_a9c534dc7832aba4::triggereliminatedoverlay();
+        thread scripts/mp/gametypes/br_spectate::triggereliminatedoverlay();
     }
     if (!isdefined(self)) {
         return;
@@ -3495,12 +3527,12 @@ function gulagplayerlost(arena, var_40d8983fc5e5c7a5, var_93592d4a5fd91ed1) {
     }
     arena.arenaplayers = array_remove(arena.arenaplayers, self);
     if (isdefined(self)) {
-        var_5da640380ad84d71 = self.name;
+        losername = self.name;
     } else {
-        var_5da640380ad84d71 = "<undefined>";
+        losername = "<undefined>";
     }
     /#
-        println("classtable:classtable_br_gulag" + var_5da640380ad84d71);
+        println("classtable:classtable_br_gulag" + losername);
     #/
     br_gulag_lose = function_17ee301cf0b5ba85("br_gulag_lose");
     br_gulag_lose_classic = function_17ee301cf0b5ba85("br_gulag_lose_classic");
@@ -3512,11 +3544,11 @@ function gulagplayerlost(arena, var_40d8983fc5e5c7a5, var_93592d4a5fd91ed1) {
     if (isstring("") && "" != "" && soundexists("")) {
         self playsoundtoplayer("", self);
     }
-    namespace_3bbb5a98b932c46f::deleteplacedequipment();
-    namespace_80cec6cfc70c4f95::markplayeraseliminated(self, "gulagPlayerLost");
-    level thread namespace_d20f8ef223912e12::updateplayerandteamcountui();
-    namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_lose", self, 0, 1);
-    namespace_d3d40f75bb4e4c32::brleaderdialogteamexcludeplayer("gulag_teammate_lose", self.team, self, 0, 0);
+    scripts/mp/weapons::deleteplacedequipment();
+    scripts/mp/gametypes/br_utility::markplayeraseliminated(self, "gulagPlayerLost");
+    level thread scripts/mp/gametypes/br::updateplayerandteamcountui();
+    scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_lose", self, 0, 1);
+    scripts/mp/gametypes/br_public::brleaderdialogteamexcludeplayer("gulag_teammate_lose", self.team, self, 0, 0);
     if (function_cfe304859f30e747("gulagLoseSequence")) {
         function_3cceb052d780fef1("gulagLoseSequence", arena, var_40d8983fc5e5c7a5);
     }
@@ -3525,41 +3557,41 @@ function gulagplayerlost(arena, var_40d8983fc5e5c7a5, var_93592d4a5fd91ed1) {
     if (istrue(level.gulag.arenaflag)) {
         arena.dom.arenaflag thread arenaflag_setvisibleplayer(0, self);
     }
-    namespace_aad14af462a74d08::function_b2306d0693ba65c1(0);
-    namespace_a011fbf6d93f25e5::branalytics_gulagend(self, "loser", arena);
-    namespace_ede58c1e66c2c280::calloutmarkerping_removeallcalloutsforplayer();
+    scripts/cp_mp/challenges::function_b2306d0693ba65c1(0);
+    scripts/mp/gametypes/br_analytics::branalytics_gulagend(self, "loser", arena);
+    scripts/cp_mp/calloutmarkerping::calloutmarkerping_removeallcalloutsforplayer();
     playerdestroyhud(arena);
     if (isalive(self)) {
-        if (!namespace_71073fa38f11492::isfeaturedisabled("teamSpectate")) {
-            namespace_a9c534dc7832aba4::migratespectators(self, undefined, 1);
+        if (!scripts/mp/gametypes/br_gametypes::isfeaturedisabled("teamSpectate")) {
+            scripts/mp/gametypes/br_spectate::migratespectators(self, undefined, 1);
         }
         namespace_8bfdb6eb5a3df67a::function_334a8fe67e88bbe7();
         wait(1);
         function_d1977a031be07de6();
-        if (!namespace_71073fa38f11492::isfeaturedisabled("teamSpectate")) {
-            namespace_a9c534dc7832aba4::migratespectators(self, undefined, 1);
+        if (!scripts/mp/gametypes/br_gametypes::isfeaturedisabled("teamSpectate")) {
+            scripts/mp/gametypes/br_spectate::migratespectators(self, undefined, 1);
         }
         if (isalive(self)) {
-            var_642470e1abc1bbf9 = spawnstruct();
-            var_642470e1abc1bbf9.origin = self.origin;
-            var_642470e1abc1bbf9.angles = self.angles;
-            var_642470e1abc1bbf9.attacker = self.lastattacker;
+            deathdata = spawnstruct();
+            deathdata.origin = self.origin;
+            deathdata.angles = self.angles;
+            deathdata.attacker = self.lastattacker;
             self.health = 0;
             self notify("death");
             self notify("death_or_disconnect");
-            namespace_b919c4be206d3c80::function_f8b808cd6473e6cc(23, 0);
-            if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
-                var_16c2d930984f2fef = self isreloading();
-                if (var_16c2d930984f2fef) {
+            scripts/mp/codcasterclientmatchdata::function_f8b808cd6473e6cc(23, 0);
+            if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
+                isplayerreloading = self isreloading();
+                if (isplayerreloading) {
                     var_5814d27874b48e54 = spawnstruct();
                     var_5814d27874b48e54.player = self;
-                    var_5814d27874b48e54.var_c739ba1eb6635b73 = getsystemtimeinmicroseconds();
-                    var_5814d27874b48e54.var_c198f7ca473378fb = "DISCONNECT";
+                    var_5814d27874b48e54.reloadcanceltime = getsystemtimeinmicroseconds();
+                    var_5814d27874b48e54.cancelreason = "DISCONNECT";
                     namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_reload_cancel", var_5814d27874b48e54);
                 }
             }
-            namespace_a9c534dc7832aba4::spawnspectator(var_642470e1abc1bbf9, 1, 1);
-            namespace_99ac021a7547cae3::removefromalivecount(0, "gulagPlayerLost");
+            scripts/mp/gametypes/br_spectate::spawnspectator(deathdata, 1, 1);
+            scripts/mp/playerlogic::removefromalivecount(0, "gulagPlayerLost");
         }
         namespace_8bfdb6eb5a3df67a::function_e68e4bb4f65f5fe4();
     }
@@ -3577,24 +3609,24 @@ function gulagplayerlost(arena, var_40d8983fc5e5c7a5, var_93592d4a5fd91ed1) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbea4
 // Size: 0x49
-function function_13ad2ef144d94c4f(var_eb5ca989a43ff3f) {
-    if (!isdefined(var_eb5ca989a43ff3f)) {
-        var_eb5ca989a43ff3f = 0;
+function function_13ad2ef144d94c4f(freezemovement) {
+    if (!isdefined(freezemovement)) {
+        freezemovement = 0;
     }
     if (getdvarint(@"hash_4c5741468fcb94c1", 0)) {
-        var_eb5ca989a43ff3f = 1;
+        freezemovement = 1;
     }
-    function_f2c3ee9fded6a3df(var_eb5ca989a43ff3f);
+    function_f2c3ee9fded6a3df(freezemovement);
     self allowfire(0);
     self allowads(0);
     self disableoffhandweapons();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbef4
 // Size: 0x24
@@ -3605,7 +3637,7 @@ function function_d1977a031be07de6() {
     self enableoffhandweapons();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbf1f
 // Size: 0x92
@@ -3625,7 +3657,7 @@ function function_1c9f130087cdf290() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbfb8
 // Size: 0x56
@@ -3642,17 +3674,17 @@ function playersetwasingulag(value) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc015
 // Size: 0x57
 function playerspawningasspectator() {
     if (istrue(level.usegulag) && istrue(self.wasingulag) && level.teamdata[self.team]["aliveCount"] > 0 && !function_1980065ce4dc067b()) {
-        namespace_d3d40f75bb4e4c32::brleaderdialogplayer("gulag_buyback", self, 0, 1);
+        scripts/mp/gametypes/br_public::brleaderdialogplayer("gulag_buyback", self, 0, 1);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc073
 // Size: 0x53
@@ -3663,79 +3695,79 @@ function recordmolotov(grenade, player) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc0cd
 // Size: 0x76
 function cleanuparenamolotovs(arena) {
     foreach (molotov in arena.molotovs) {
         if (isdefined(molotov)) {
-            thread namespace_df478cc572a311d3::molotov_cleanup_pool(molotov);
+            thread scripts/mp/equipment/molotov::molotov_cleanup_pool(molotov);
         }
     }
     arena.molotovs = [];
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params d, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc14a
 // Size: 0xb1
-function gulagwinnerrespawn(var_fb551788da0fc531, var_df2fbb13c226be75, spawnpoint, skipsplash, var_11f3b4465c8b637b, var_3bd8653773757c7, var_4ac881e2a39322a5, var_74af5908127b6729, var_bf7470006675932e, var_491d9866301a91d1, var_df631fdd92a76bb1, var_ae82e43c0d208739, arena) {
+function gulagwinnerrespawn(var_fb551788da0fc531, var_df2fbb13c226be75, spawnpoint, skipsplash, streamorigin, var_3bd8653773757c7, sponsor, var_74af5908127b6729, var_bf7470006675932e, dontsplash, var_df631fdd92a76bb1, var_ae82e43c0d208739, arena) {
     var_104e34b87a973660 = undefined;
     if (!istrue(skipsplash)) {
         var_104e34b87a973660 = 7;
     }
-    var_30a91e1938cfd1b2 = function_6f4fa9b79a3c7dce(var_fb551788da0fc531, var_df2fbb13c226be75, var_3bd8653773757c7, var_4ac881e2a39322a5, var_74af5908127b6729, var_bf7470006675932e, var_491d9866301a91d1, undefined, var_104e34b87a973660, var_df631fdd92a76bb1, var_ae82e43c0d208739, arena);
-    namespace_8bfdb6eb5a3df67a::br_respawn(spawnpoint, var_11f3b4465c8b637b, var_30a91e1938cfd1b2);
+    respawnstruct = function_6f4fa9b79a3c7dce(var_fb551788da0fc531, var_df2fbb13c226be75, var_3bd8653773757c7, sponsor, var_74af5908127b6729, var_bf7470006675932e, dontsplash, undefined, var_104e34b87a973660, var_df631fdd92a76bb1, var_ae82e43c0d208739, arena);
+    namespace_8bfdb6eb5a3df67a::br_respawn(spawnpoint, streamorigin, respawnstruct);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 12, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc202
 // Size: 0x189
-function function_6f4fa9b79a3c7dce(var_fb551788da0fc531, var_df2fbb13c226be75, var_3bd8653773757c7, var_4ac881e2a39322a5, var_74af5908127b6729, var_bf7470006675932e, var_491d9866301a91d1, var_46ff3a000308206a, var_104e34b87a973660, var_df631fdd92a76bb1, var_ae82e43c0d208739, arena) {
+function function_6f4fa9b79a3c7dce(var_fb551788da0fc531, var_df2fbb13c226be75, var_3bd8653773757c7, sponsor, var_74af5908127b6729, var_bf7470006675932e, dontsplash, var_46ff3a000308206a, var_104e34b87a973660, var_df631fdd92a76bb1, var_ae82e43c0d208739, arena) {
     rs = namespace_8bfdb6eb5a3df67a::function_ade48af7c782e202(&playerrespawngulagcleanup, "veh_br_gulag_redeploy_flyby", var_3bd8653773757c7);
     rs namespace_8bfdb6eb5a3df67a::function_9fd565bcd654ed48(&function_f85939bec8ddd156);
     rs namespace_8bfdb6eb5a3df67a::function_b4c313df5d7fb216(&function_6414fdc0080486d8, var_46ff3a000308206a);
     rs namespace_8bfdb6eb5a3df67a::function_8cb232cdf47da79c(undefined, var_104e34b87a973660);
-    rs namespace_8bfdb6eb5a3df67a::function_2556973693d6315(&gulagpostrespawn);
-    rs.var_9fdc1f9e4fc628e4.var_fb551788da0fc531 = var_fb551788da0fc531;
-    rs.var_9fdc1f9e4fc628e4.var_df2fbb13c226be75 = var_df2fbb13c226be75;
-    rs.var_9fdc1f9e4fc628e4.var_4ac881e2a39322a5 = var_4ac881e2a39322a5;
-    rs.var_9fdc1f9e4fc628e4.var_74af5908127b6729 = var_74af5908127b6729;
-    rs.var_9fdc1f9e4fc628e4.var_bf7470006675932e = var_bf7470006675932e;
-    rs.var_9fdc1f9e4fc628e4.var_491d9866301a91d1 = var_491d9866301a91d1;
-    rs.var_9fdc1f9e4fc628e4.var_df631fdd92a76bb1 = var_df631fdd92a76bb1;
-    rs.var_9fdc1f9e4fc628e4.var_ae82e43c0d208739 = var_ae82e43c0d208739;
-    rs.var_9fdc1f9e4fc628e4.arena = arena;
+    rs namespace_8bfdb6eb5a3df67a::function_2556973693d6315(&gulagPostRespawn);
+    rs.optparams.var_fb551788da0fc531 = var_fb551788da0fc531;
+    rs.optparams.var_df2fbb13c226be75 = var_df2fbb13c226be75;
+    rs.optparams.sponsor = sponsor;
+    rs.optparams.var_74af5908127b6729 = var_74af5908127b6729;
+    rs.optparams.var_bf7470006675932e = var_bf7470006675932e;
+    rs.optparams.dontsplash = dontsplash;
+    rs.optparams.var_df631fdd92a76bb1 = var_df631fdd92a76bb1;
+    rs.optparams.var_ae82e43c0d208739 = var_ae82e43c0d208739;
+    rs.optparams.arena = arena;
     return rs;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc393
 // Size: 0x1dd
-function function_6414fdc0080486d8(var_9fdc1f9e4fc628e4) {
+function function_6414fdc0080486d8(optparams) {
     /#
         println("ui_objective_pinned_text_param" + self.name);
     #/
-    var_9fdc1f9e4fc628e4.var_550f09808fb6a6b5 = self.var_bed158a6dfac230d;
-    var_768dca2a6910f9c4 = !istrue(var_9fdc1f9e4fc628e4.var_fb551788da0fc531);
-    if (!istrue(var_9fdc1f9e4fc628e4.var_fb551788da0fc531) && !istrue(var_9fdc1f9e4fc628e4.var_bf7470006675932e)) {
-        if (!istrue(var_9fdc1f9e4fc628e4.var_74af5908127b6729)) {
-            namespace_aad14af462a74d08::function_b2306d0693ba65c1(1);
-            namespace_3c5a4254f2b957ea::incpersstat("gulagWins", 1);
+    optparams.var_550f09808fb6a6b5 = self.var_bed158a6dfac230d;
+    var_768dca2a6910f9c4 = !istrue(optparams.var_fb551788da0fc531);
+    if (!istrue(optparams.var_fb551788da0fc531) && !istrue(optparams.var_bf7470006675932e)) {
+        if (!istrue(optparams.var_74af5908127b6729)) {
+            scripts/cp_mp/challenges::function_b2306d0693ba65c1(1);
+            scripts/mp/utility/stats::incpersstat("gulagWins", 1);
         }
     }
-    if (isdefined(var_9fdc1f9e4fc628e4.var_df2fbb13c226be75)) {
-        namespace_a011fbf6d93f25e5::branalytics_gulagend(self, var_9fdc1f9e4fc628e4.var_df2fbb13c226be75, var_9fdc1f9e4fc628e4.arena);
+    if (isdefined(optparams.var_df2fbb13c226be75)) {
+        scripts/mp/gametypes/br_analytics::branalytics_gulagend(self, optparams.var_df2fbb13c226be75, optparams.arena);
     }
-    namespace_ede58c1e66c2c280::calloutmarkerping_removeallcalloutsforplayer();
+    scripts/cp_mp/calloutmarkerping::calloutmarkerping_removeallcalloutsforplayer();
     playersetwasingulag(0);
     setplayervargulag(0);
     setplayervargulagarena(0);
     level callback::callback(#"hash_438552ad6e5b08a0", {player:self});
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         playerdestroyhud(self.arena);
     }
     setplayervargulagjail(0);
@@ -3744,53 +3776,53 @@ function function_6414fdc0080486d8(var_9fdc1f9e4fc628e4) {
         self.arena.arenaplayers = array_remove(self.arena.arenaplayers, self);
     }
     playertakeawayrock(self.arena);
-    gulagwinnerloadout(var_9fdc1f9e4fc628e4.var_fb551788da0fc531);
-    var_d4066589fef0017 = 0;
+    gulagwinnerloadout(optparams.var_fb551788da0fc531);
+    respawndone = 0;
     if (isdefined(level.gulag) && istrue(level.gulag.planerespawn)) {
-        playerrespawngulagcleanup(var_9fdc1f9e4fc628e4.var_fb551788da0fc531);
+        playerrespawngulagcleanup(optparams.var_fb551788da0fc531);
         namespace_8bfdb6eb5a3df67a::function_961b4afc4c695b94();
         playersetupac130();
-        var_d4066589fef0017 = 1;
+        respawndone = 1;
     }
-    return var_d4066589fef0017;
+    return respawndone;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc578
 // Size: 0x4b
-function function_f85939bec8ddd156(var_9fdc1f9e4fc628e4) {
+function function_f85939bec8ddd156(optparams) {
     if (istrue(self.var_36386f3f03c2ab4b)) {
         self.var_36386f3f03c2ab4b = undefined;
         self setclientdvar(@"hash_b21f1157c582ff15", 1);
     }
     self.plotarmor = undefined;
     self.c130 = undefined;
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc5cb
 // Size: 0x1fc
-function gulagpostrespawn(var_9fdc1f9e4fc628e4) {
-    brgametype = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5();
-    if (istrue(brgametype == "truckwar") && !istrue(var_9fdc1f9e4fc628e4.var_bf7470006675932e)) {
+function gulagPostRespawn(optparams) {
+    brgametype = scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5();
+    if (istrue(brgametype == "truckwar") && !istrue(optparams.var_bf7470006675932e)) {
         var_9d45f503ae900a7d = "br_gulag_winner_redeploy_mogulag";
         var_1f0a356715870574 = undefined;
     }
     if (brgametype == "dmz" || brgametype == "exgm" || brgametype == "plunder" || brgametype == "kingslayer" || brgametype == "risk" || brgametype == "rumble_mgl") {
         var_9d45f503ae900a7d = "br_gulag_winner_redeploy_mogulag";
         var_1f0a356715870574 = undefined;
-    } else if (istrue(var_9fdc1f9e4fc628e4.var_74af5908127b6729)) {
+    } else if (istrue(optparams.var_74af5908127b6729)) {
         var_9d45f503ae900a7d = "br_gulag_jailbreak_redeploy";
         var_1f0a356715870574 = undefined;
-    } else if (istrue(var_9fdc1f9e4fc628e4.var_df631fdd92a76bb1)) {
+    } else if (istrue(optparams.var_df631fdd92a76bb1)) {
         var_9d45f503ae900a7d = "br_gulag_winner_redeploy";
         var_1f0a356715870574 = undefined;
-    } else if ((istrue(var_9fdc1f9e4fc628e4.var_fb551788da0fc531) || istrue(var_9fdc1f9e4fc628e4.var_bf7470006675932e)) && !istrue(var_9fdc1f9e4fc628e4.var_ae82e43c0d208739)) {
+    } else if ((istrue(optparams.var_fb551788da0fc531) || istrue(optparams.var_bf7470006675932e)) && !istrue(optparams.var_ae82e43c0d208739)) {
         var_9d45f503ae900a7d = "br_gulag_kiosk_redeploy";
-        var_1f0a356715870574 = var_9fdc1f9e4fc628e4.var_4ac881e2a39322a5;
+        var_1f0a356715870574 = optparams.sponsor;
     } else {
         if (istrue(isdefined(level.gulag) && !istrue(level.gulag.shutdown)) && checkgulagusecount()) {
             if (function_1980065ce4dc067b()) {
@@ -3803,8 +3835,8 @@ function gulagpostrespawn(var_9fdc1f9e4fc628e4) {
         }
         var_1f0a356715870574 = undefined;
     }
-    if (!istrue(var_9fdc1f9e4fc628e4.var_491d9866301a91d1)) {
-        thread namespace_44abc05161e2e2cb::showsplash(var_9d45f503ae900a7d, undefined, var_1f0a356715870574);
+    if (!istrue(optparams.dontsplash)) {
+        thread scripts/mp/hud_message::showsplash(var_9d45f503ae900a7d, undefined, var_1f0a356715870574);
     }
     if (isdefined(level.gulag) && istrue(level.gulag.shutdown) && !istrue(self.gulagdone)) {
         wait(2);
@@ -3813,29 +3845,29 @@ function gulagpostrespawn(var_9fdc1f9e4fc628e4) {
         }
         playergulagdonesplash();
     }
-    if (istrue(var_9fdc1f9e4fc628e4.var_ae82e43c0d208739)) {
-        namespace_80cec6cfc70c4f95::unmarkplayeraseliminated(self, "gulagPostRespawn");
-        level thread namespace_d20f8ef223912e12::updateplayerandteamcountui();
+    if (istrue(optparams.var_ae82e43c0d208739)) {
+        scripts/mp/gametypes/br_utility::unmarkplayeraseliminated(self, "gulagPostRespawn");
+        level thread scripts/mp/gametypes/br::updateplayerandteamcountui();
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc7ce
 // Size: 0xc4
-function playerrespawngulagcleanup(var_9fdc1f9e4fc628e4) {
+function playerrespawngulagcleanup(optparams) {
     self notify("gulagRespawn");
-    namespace_df478cc572a311d3::molotov_clear_burning();
+    scripts/mp/equipment/molotov::molotov_clear_burning();
     if (getdvarint(@"hash_3e7ee8bdf6ce5f54", 0) == 0) {
         self.hasspawnweapons = 0;
     }
     function_c724f178c2df7240("respawnCleanup", self);
     self.health = self.maxhealth;
     namespace_4887422e77f3514e::onexitdeathsdoor(1);
-    if (!istrue(var_9fdc1f9e4fc628e4.var_fb551788da0fc531)) {
+    if (!istrue(optparams.var_fb551788da0fc531)) {
         val::set("isRespawning", "player_for_spawn_logic", 0);
         self setclientomnvar("ui_gulag", 0);
-        namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("isRespawning", 0);
+        scripts/mp/gametypes/br_public::updatebrscoreboardstat("isRespawning", 0);
         if (isdefined(self.arena)) {
             removeloadingplayer(self.arena, self);
         }
@@ -3843,7 +3875,7 @@ function playerrespawngulagcleanup(var_9fdc1f9e4fc628e4) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc899
 // Size: 0x14d
@@ -3862,17 +3894,19 @@ function gulagwinnerloadout(var_fb551788da0fc531) {
     self.gulagtableloadout = 0;
     if (function_1980065ce4dc067b() || getdvarint(@"hash_7ad0617cfa893a28", 0) != 0 || istrue(self.var_ad99a0c87d805aee)) {
         gulagwinnerremembergunandammo();
-    } else if (isdefined(level.br_standard_loadout) || getdvarint(@"hash_f97d261e2f377ad9", 1) != 0 && getdvarint(@"hash_943f7c30bd8b86e8", -1) > -1) {
+        return;
+    }
+    if (isdefined(level.br_standard_loadout) || getdvarint(@"hash_f97d261e2f377ad9", 1) != 0 && getdvarint(@"hash_943f7c30bd8b86e8", -1) > -1) {
         self.gulagtableloadout = 1;
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc9ed
 // Size: 0xd6
 function gulagwinnerrestoreloadout() {
-    if (!istrue(level.usegulag) && !namespace_71073fa38f11492::isfeaturedisabled("gulagWinnerRestoreLoadoutUseGulag")) {
+    if (!istrue(level.usegulag) && !scripts/mp/gametypes/br_gametypes::isfeaturedisabled("gulagWinnerRestoreLoadoutUseGulag")) {
         return 0;
     }
     if (isdefined(self.var_61c274a3bd736bed)) {
@@ -3891,36 +3925,36 @@ function gulagwinnerrestoreloadout() {
     return 0;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcacb
 // Size: 0x81
-function function_89a541b00b17d8a5(var_34ca738e6f3870de, var_9e41235ac60933d8) {
-    var_b60d88867d0b5460 = [];
-    foreach (primary in var_34ca738e6f3870de) {
+function function_89a541b00b17d8a5(allprimaries, var_9e41235ac60933d8) {
+    filteredprimaries = [];
+    foreach (primary in allprimaries) {
         if (!array_contains(var_9e41235ac60933d8, primary.basename)) {
-            var_b60d88867d0b5460[var_b60d88867d0b5460.size] = primary;
+            filteredprimaries[filteredprimaries.size] = primary;
         }
     }
-    return var_b60d88867d0b5460;
+    return filteredprimaries;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcb54
 // Size: 0x22f
 function gulagwinnerremembergunandammo() {
     self.br_gulagguncurrent = self getcurrentprimaryweapon();
-    var_34ca738e6f3870de = self getweaponslistprimaries();
-    var_34ca738e6f3870de = function_89a541b00b17d8a5(var_34ca738e6f3870de, [0:"iw9_knifestab_mp", 1:"iw8_throwingknife_fire_melee_mp", 2:"iw8_throwingknife_electric_melee_mp", 3:"iw9_me_fists_mp", 4:"iw9_me_climbfists", 5:"iw9_swimfists_mp", 6:"iw9_me_diveknife_mp", 7:"iw9_gunless_mp", 8:"iw8_gunless"]);
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
-        var_34ca738e6f3870de = array_remove(var_34ca738e6f3870de, makeweapon("iw9_swimfists_mp"));
+    allprimaries = self getweaponslistprimaries();
+    allprimaries = function_89a541b00b17d8a5(allprimaries, ["iw9_knifestab_mp", "iw8_throwingknife_fire_melee_mp", "iw8_throwingknife_electric_melee_mp", "iw9_me_fists_mp", "iw9_me_climbfists", "iw9_swimfists_mp", "iw9_me_diveknife_mp", "iw9_gunless_mp", "iw8_gunless"]);
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
+        allprimaries = array_remove(allprimaries, makeweapon("iw9_swimfists_mp"));
     }
     self.br_gulagguns = [];
     self.br_gulagammo = [];
-    foreach (weaponobj in var_34ca738e6f3870de) {
+    foreach (weaponobj in allprimaries) {
         weaponname = getcompleteweaponname(weaponobj);
-        if (getsubstr(weaponname, 0, 4) == "alt_" || namespace_d19129e4fa5d176::function_da27e3343b019fde() && namespace_68e641469fde3fa7::function_72ce982d9fc26f1c(weaponobj)) {
+        if (getsubstr(weaponname, 0, 4) == "alt_" || scripts/mp/class::function_da27e3343b019fde() && scripts/mp/utility/weapon::function_72ce982d9fc26f1c(weaponobj)) {
             continue;
         }
         self.br_gulagguns[self.br_gulagguns.size] = weaponobj;
@@ -3928,22 +3962,22 @@ function gulagwinnerremembergunandammo() {
     }
     var_a8b87696ab744141 = self getweaponslistoffhands();
     self.br_gulagoffhands = [];
-    foreach (var_32d16745c91dbe50 in var_a8b87696ab744141) {
-        var_26d3ccffc7bebec9 = self getweaponammoclip(var_32d16745c91dbe50);
+    foreach (offhandobj in var_a8b87696ab744141) {
+        var_26d3ccffc7bebec9 = self getweaponammoclip(offhandobj);
         if (var_26d3ccffc7bebec9 <= 0) {
             continue;
         }
-        self.br_gulagoffhands[self.br_gulagoffhands.size] = var_32d16745c91dbe50;
-        var_fe758e8b3e5f9ec0 = getcompleteweaponname(var_32d16745c91dbe50);
+        self.br_gulagoffhands[self.br_gulagoffhands.size] = offhandobj;
+        offhandname = getcompleteweaponname(offhandobj);
         if (function_1980065ce4dc067b()) {
-            self.br_gulagammo[var_fe758e8b3e5f9ec0] = var_26d3ccffc7bebec9;
-        } else {
-            self.br_gulagammo[var_fe758e8b3e5f9ec0] = weaponstartammo(var_32d16745c91dbe50);
+            self.br_gulagammo[offhandname] = var_26d3ccffc7bebec9;
+            continue;
         }
+        self.br_gulagammo[offhandname] = weaponstartammo(offhandobj);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcd8a
 // Size: 0x3c7
@@ -3953,10 +3987,10 @@ function gulagwinnerrestoregunandammo() {
         if (var_7e8b31664d502e4a && self.br_gulagguns.size < 1) {
             self.gulagtableloadout = 1;
             gulagwinnertableloadout();
-            return 0;
+            return false;
         }
         self takeallweapons();
-        namespace_3bcd40a3005712ec::br_ammo_player_clear();
+        scripts/mp/gametypes/br_weapons::br_ammo_player_clear();
         self.equipment["primary"] = undefined;
         self.equipment["secondary"] = undefined;
         self.equipment["health"] = undefined;
@@ -3964,15 +3998,15 @@ function gulagwinnerrestoregunandammo() {
         var_cf6837e74d470965 = 0;
         foreach (weaponobj in self.br_gulagguns) {
             weaponname = getcompleteweaponname(weaponobj);
-            namespace_df5cfdbe6e2d3812::_giveweapon(weaponobj);
+            scripts/cp_mp/utility/inventory_utility::_giveweapon(weaponobj);
             self setweaponammostock(weaponobj, 0);
             if (!var_cf6837e74d470965) {
                 self assignweaponprimaryslot(weaponname);
-                namespace_df5cfdbe6e2d3812::_switchtoweapon(weaponobj);
+                scripts/cp_mp/utility/inventory_utility::_switchtoweapon(weaponobj);
                 var_cf6837e74d470965 = 1;
             }
             namespace_e0ee43ef2dddadaa::fixupplayerweapons(self, weaponname);
-            thread namespace_4f9f94245708410d::giveweaponpickup(weaponname);
+            thread scripts/mp/gametypes/br_respawn::giveweaponpickup(weaponname);
             clipsize = weaponclipsize(weaponobj);
             ammo = int(min(clipsize, 25));
             if (isdefined(self.br_gulagammo[weaponname])) {
@@ -3985,30 +4019,30 @@ function gulagwinnerrestoregunandammo() {
             }
             self setweaponammoclip(weaponobj, ammo);
             if (var_31b36738ff4eacd > 0) {
-                ammotype = namespace_3bcd40a3005712ec::br_ammo_type_for_weapon(weaponobj);
+                ammotype = scripts/mp/gametypes/br_weapons::br_ammo_type_for_weapon(weaponobj);
                 if (isdefined(ammotype)) {
-                    namespace_3bcd40a3005712ec::br_ammo_give_type(self, ammotype, var_31b36738ff4eacd);
+                    scripts/mp/gametypes/br_weapons::br_ammo_give_type(self, ammotype, var_31b36738ff4eacd);
                 }
             }
         }
-        namespace_3bcd40a3005712ec::br_ammo_update_weapons(self);
+        scripts/mp/gametypes/br_weapons::br_ammo_update_weapons(self);
         if (self.br_gulagguns.size < 2) {
             self giveweapon(makeweapon("iw9_me_fists_mp"));
         }
         self giveweapon(makeweapon("iw9_me_climbfists"));
-        if (!namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (!scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             self giveweapon(makeweapon("iw9_swimfists_mp"));
         }
-        namespace_d19129e4fa5d176::function_4ffce833ce15363c(self.classstruct);
-        foreach (var_32d16745c91dbe50 in self.br_gulagoffhands) {
-            var_1189bd7fbe2861f8 = namespace_1a507865f681850e::getequipmentreffromweapon(var_32d16745c91dbe50);
-            if (isdefined(var_1189bd7fbe2861f8) && isdefined(level.br_pickups.br_equipnametoscriptable[var_1189bd7fbe2861f8])) {
-                scriptablename = level.br_pickups.br_equipnametoscriptable[var_1189bd7fbe2861f8];
-                namespace_cb965d2f71fefddc::br_forcegivecustompickupitem(self, scriptablename, 1);
-                weaponname = getcompleteweaponname(var_32d16745c91dbe50);
+        scripts/mp/class::function_4ffce833ce15363c(self.classstruct);
+        foreach (offhandobj in self.br_gulagoffhands) {
+            equipref = scripts/mp/equipment::getequipmentreffromweapon(offhandobj);
+            if (isdefined(equipref) && isdefined(level.br_pickups.br_equipnametoscriptable[equipref])) {
+                scriptablename = level.br_pickups.br_equipnametoscriptable[equipref];
+                scripts/mp/gametypes/br_pickups::br_forcegivecustompickupitem(self, scriptablename, 1);
+                weaponname = getcompleteweaponname(offhandobj);
                 if (isdefined(self.br_gulagammo[weaponname])) {
                     var_26d3ccffc7bebec9 = self.br_gulagammo[weaponname];
-                    self setweaponammoclip(var_32d16745c91dbe50, var_26d3ccffc7bebec9);
+                    self setweaponammoclip(offhandobj, var_26d3ccffc7bebec9);
                 }
             }
         }
@@ -4016,24 +4050,24 @@ function gulagwinnerrestoregunandammo() {
             self switchtoweaponimmediate(self.br_gulagguncurrent);
         }
         if (isdefined(self.executionref)) {
-            namespace_f446f6030ca8cff8::_giveexecution(self.executionref);
+            scripts/cp_mp/execution::_giveexecution(self.executionref);
         }
         self.br_gulaggun = undefined;
         self.br_gulagammo = undefined;
         self.br_gulagoffhands = undefined;
         self.br_gulagguncurrent = undefined;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd159
 // Size: 0x13a
 function gulagwinnertableloadout() {
     if (istrue(self.gulagtableloadout)) {
-        if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             loadoutindex = getloadoutindex();
         } else {
             loadoutindex = getdvarint(@"hash_943f7c30bd8b86e8", -1);
@@ -4045,55 +4079,55 @@ function gulagwinnertableloadout() {
         }
         self.class = "gamemode";
         self.prevweaponobj = undefined;
-        struct = namespace_d19129e4fa5d176::loadout_getclassstruct();
-        struct = namespace_d19129e4fa5d176::loadout_updateclass(struct, "gamemode");
-        namespace_d19129e4fa5d176::preloadandqueueclassstruct(struct, 1, 1);
-        namespace_d19129e4fa5d176::giveloadout(self.team, "gamemode", 0, 0, undefined, 1);
+        struct = scripts/mp/class::loadout_getclassstruct();
+        struct = scripts/mp/class::loadout_updateclass(struct, "gamemode");
+        scripts/mp/class::preloadandqueueclassstruct(struct, 1, 1);
+        scripts/mp/class::giveloadout(self.team, "gamemode", 0, 0, undefined, 1);
         self givestartammo(struct.loadoutprimaryobject);
         self givestartammo(struct.loadoutsecondaryobject);
-        namespace_d20f8ef223912e12::givelaststandifneeded(self);
-        namespace_3bcd40a3005712ec::br_ammo_player_clear();
-        namespace_3bcd40a3005712ec::br_give_starting_ammo();
-        namespace_3bcd40a3005712ec::br_ammo_update_weapons(self);
+        scripts/mp/gametypes/br::givelaststandifneeded(self);
+        scripts/mp/gametypes/br_weapons::br_ammo_player_clear();
+        scripts/mp/gametypes/br_weapons::br_give_starting_ammo();
+        scripts/mp/gametypes/br_weapons::br_ammo_update_weapons(self);
         self notify("ammo_update");
-        thread namespace_d20f8ef223912e12::br_displayperkinfo();
+        thread scripts/mp/gametypes/br::br_displayperkinfo();
         self.gulagtableloadout = undefined;
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd29b
 // Size: 0x5f
 function popnextmatch(arena) {
-    var_607899d4420fe1a5 = arena.matches[0];
+    nextmatch = arena.matches[0];
     arena.matches = array_remove_index(arena.matches, 0);
     if (function_cfe304859f30e747("gulagOrderArenaPlayers")) {
-        var_607899d4420fe1a5 = function_3cceb052d780fef1("gulagOrderArenaPlayers", var_607899d4420fe1a5);
+        nextmatch = function_3cceb052d780fef1("gulagOrderArenaPlayers", nextmatch);
     }
-    return var_607899d4420fe1a5;
+    return nextmatch;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd302
 // Size: 0x53
 function checkgulagusecount() {
     if (level.gulag.maxuses >= 0) {
-        var_22fbe5d036ebb50e = self.gulaguses;
-        if (!isdefined(var_22fbe5d036ebb50e)) {
-            var_22fbe5d036ebb50e = 0;
+        playerusecount = self.gulaguses;
+        if (!isdefined(playerusecount)) {
+            playerusecount = 0;
         }
-        if (var_22fbe5d036ebb50e >= level.gulag.maxuses) {
-            return 0;
+        if (playerusecount >= level.gulag.maxuses) {
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd35d
 // Size: 0x12e
@@ -4102,7 +4136,7 @@ function function_c3014b9015a55715() {
     self endon("disconnect");
     self endon("gulag_end");
     self endon("jailbreak_respawn");
-    playerclientnum = self function_d85aa3c6cfd398cf();
+    playerclientnum = self getplayerclientnum();
     if (isdefined(playerclientnum) && isdefined(level.var_c5877dbe60fddbf6)) {
         foreach (codcaster in level.var_c5877dbe60fddbf6) {
             if (codcaster function_afdedf3c8beb5ebc(playerclientnum)) {
@@ -4123,7 +4157,7 @@ function function_c3014b9015a55715() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd492
 // Size: 0x132
@@ -4131,69 +4165,69 @@ function trygulagspawn() {
     /#
         println("kioskRevivePlayer" + self.name + "gulagOrderArenaPlayers" + self.class);
     #/
-    if (!istrue(self.br_infilstarted) || !namespace_4b0406965e556711::gameflag("prematch_done")) {
-        return 0;
+    if (!istrue(self.br_infilstarted) || !scripts/mp/flags::gameflag("prematch_done")) {
+        return false;
     }
-    if (isdefined(self.arena) && istrue(self.arena.var_26df1613c111c9c5)) {
-        return 1;
+    if (isdefined(self.arena) && istrue(self.arena.goagain)) {
+        return true;
     }
     if (istrue(self.gulag)) {
-        return 0;
+        return false;
     }
-    if (namespace_d3d40f75bb4e4c32::hasrespawntoken() && !namespace_cb965d2f71fefddc::respawntokendisabled()) {
+    if (scripts/mp/gametypes/br_public::hasrespawntoken() && !scripts/mp/gametypes/br_pickups::respawntokendisabled()) {
         thread playergulagautowin("tryGulagSpawn", undefined, 1, 1);
-        return 1;
+        return true;
     }
     if (!function_4a25d64251fab1b7()) {
-        return 0;
+        return false;
     }
     if (istrue(level.gulag.shutdown) && !playerinlaststandhold()) {
-        return 0;
+        return false;
     }
     if (getdvarint(@"hash_4d250e4873e1753e", 0)) {
-        return 0;
+        return false;
     }
-    if (istrue(self.gulagloser) && !namespace_d3d40f75bb4e4c32::function_15da77dc195bd80a()) {
-        return 0;
+    if (istrue(self.gulagloser) && !scripts/mp/gametypes/br_public::function_15da77dc195bd80a()) {
+        return false;
     }
-    if (namespace_d3d40f75bb4e4c32::function_15da77dc195bd80a() && !namespace_d3d40f75bb4e4c32::function_8b2396647673be50()) {
-        namespace_cb965d2f71fefddc::function_17e127f2e3771058();
+    if (scripts/mp/gametypes/br_public::function_15da77dc195bd80a() && !scripts/mp/gametypes/br_public::function_8b2396647673be50()) {
+        scripts/mp/gametypes/br_pickups::function_17e127f2e3771058();
     }
     thread function_c3014b9015a55715();
     thread initplayerjail(1);
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd5cc
 // Size: 0x9e
 function function_4a25d64251fab1b7() {
-    if (!istrue(self.br_infilstarted) || !namespace_4b0406965e556711::gameflag("prematch_done")) {
-        return 0;
+    if (!istrue(self.br_infilstarted) || !scripts/mp/flags::gameflag("prematch_done")) {
+        return false;
     }
     if (istrue(self.gulag)) {
-        return 0;
+        return false;
     }
     if (!istrue(level.usegulag)) {
-        return 0;
+        return false;
     }
     if (istrue(level.gulag.shutdown) && !playerinlaststandhold()) {
-        return 0;
+        return false;
     }
     if (getdvarint(@"hash_4d250e4873e1753e", 0)) {
-        return 0;
+        return false;
     }
-    if (!checkgulagusecount() && !namespace_d3d40f75bb4e4c32::function_15da77dc195bd80a()) {
-        return 0;
+    if (!checkgulagusecount() && !scripts/mp/gametypes/br_public::function_15da77dc195bd80a()) {
+        return false;
     }
     if (istrue(self.extracted)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd672
 // Size: 0xf2
@@ -4206,16 +4240,16 @@ function playergulaghud(arena) {
     if (isdefined(arena.fightover) && !arena.fightover && isdefined(arena.time) && arena.time > 0) {
         time = arena.time;
         if (!istrue(arena.overtime)) {
-            var_55c0e7e44829e72e = getovertimelength();
-            time = time - var_55c0e7e44829e72e;
+            overtimelength = getovertimelength();
+            time = time - overtimelength;
         }
         self setclientomnvar("ui_br_gulag_match_end_time", gettime() + int(time * 1000));
-    } else {
-        self setclientomnvar("ui_br_gulag_match_end_time", 0);
+        return;
     }
+    self setclientomnvar("ui_br_gulag_match_end_time", 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd76b
 // Size: 0x3a
@@ -4224,7 +4258,7 @@ function updatematchtimerhud(arena, time) {
     _updatematchtimerhudinternal(arena.jailedplayers, time);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd7ac
 // Size: 0xab
@@ -4238,27 +4272,26 @@ function _updatematchtimerhudinternal(players, time) {
         }
         if (time > 0) {
             player setclientomnvar("ui_br_gulag_match_end_time", gettime() + int(time * 1000));
-        } else {
-            player setclientomnvar("ui_br_gulag_match_end_time", 0);
+            continue;
         }
+        player setclientomnvar("ui_br_gulag_match_end_time", 0);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd85e
 // Size: 0x310
 function updatematchqueuepositions(arena) {
-    var_28f8483ea37164f3 = level.gulag.var_28f8483ea37164f3;
-    while (var_28f8483ea37164f3 <= level.gulag.maxplayers) {
+    for (matchsize = level.gulag.matchsize; matchsize <= level.gulag.maxplayers; matchsize = matchsize + level.gulag.matchsize) {
         matches = [];
         foreach (player in arena.jailedplayers) {
             if (!isdefined(player)) {
                 continue;
             }
             var_b9d2d2843310014e = 0;
-            foreach (var_b94827c01cb82f1e, match in matches) {
-                if (match.size >= var_28f8483ea37164f3) {
+            foreach (matchindex, match in matches) {
+                if (match.size >= matchsize) {
                     continue;
                 }
                 var_7fe3b3676d522c19 = 0;
@@ -4268,8 +4301,8 @@ function updatematchqueuepositions(arena) {
                         var_7fe3b3676d522c19 = 1;
                     }
                 } else {
-                    foreach (var_4494cac530e83f63 in match) {
-                        if (var_4494cac530e83f63.team == player.team) {
+                    foreach (matchplayer in match) {
+                        if (matchplayer.team == player.team) {
                             var_7fe3b3676d522c19 = 1;
                             break;
                         }
@@ -4277,32 +4310,31 @@ function updatematchqueuepositions(arena) {
                 }
                 if (!var_7fe3b3676d522c19) {
                     var_b9d2d2843310014e = 1;
-                    player.gulagposition = var_b94827c01cb82f1e + 1;
-                    matches[var_b94827c01cb82f1e][matches[var_b94827c01cb82f1e].size] = player;
+                    player.gulagposition = matchindex + 1;
+                    matches[matchindex][matches[matchindex].size] = player;
                     break;
                 }
             }
             if (!var_b9d2d2843310014e) {
                 player.gulagposition = matches.size + 1;
-                matches[matches.size] = [0:player];
+                matches[matches.size] = [player];
             }
         }
         arena.matches = matches;
         if (matches.size <= level.gulag.maxqueue) {
             break;
         }
-        var_28f8483ea37164f3 = var_28f8483ea37164f3 + level.gulag.var_28f8483ea37164f3;
     }
     if (arena.matches.size > 0 && issharedfuncdefined("teamAssim", "isEnabled") && [[ getsharedfunc("teamAssim", "isEnabled") ]]() && issharedfuncdefined("teamAssim", "disablePlayer")) {
-        var_607899d4420fe1a5 = arena.matches[0];
-        foreach (player in var_607899d4420fe1a5) {
+        nextmatch = arena.matches[0];
+        foreach (player in nextmatch) {
             [[ getsharedfunc("teamAssim", "disablePlayer") ]](player, "br_gulag");
         }
     }
     updatearenaomnvarplayers(arena);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb75
 // Size: 0x110
@@ -4335,7 +4367,7 @@ function playerwatchdisconnect(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdc8c
 // Size: 0x4c
@@ -4350,7 +4382,7 @@ function playerdestroyhud(arena) {
     self.gulagloadoutindex = undefined;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdcdf
 // Size: 0x3b
@@ -4362,7 +4394,7 @@ function setplayervargulag(value) {
     level notify("update_circle_hide");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdd21
 // Size: 0x43
@@ -4375,19 +4407,19 @@ function setplayervargulagarena(value) {
     level notify("update_circle_hide");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdd6b
 // Size: 0x41
 function setplayeringulagarenaextrainfo(value) {
     if (istrue(value)) {
         self.game_extrainfo = self.game_extrainfo | 1024;
-    } else {
-        self.game_extrainfo = self.game_extrainfo & ~1024;
+        return;
     }
+    self.game_extrainfo = self.game_extrainfo & ~1024;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xddb3
 // Size: 0x43
@@ -4400,19 +4432,19 @@ function setplayervargulagjail(value) {
     level notify("update_circle_hide");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xddfd
 // Size: 0x40
 function setplayeringulagjailextrainfo(value) {
     if (value) {
         self.game_extrainfo = self.game_extrainfo | 512;
-    } else {
-        self.game_extrainfo = self.game_extrainfo & ~512;
+        return;
     }
+    self.game_extrainfo = self.game_extrainfo & ~512;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xde44
 // Size: 0xbc
@@ -4420,18 +4452,18 @@ function setplayergulagindex(arena) {
     if (arena.gulagindex > 8 - 1) {
         return;
     }
-    var_8534515023afc188 = 3;
-    var_64571e3aeccd1a07 = 3;
-    mask = int(pow(2, var_8534515023afc188)) - 1;
-    var_a463992091f1d483 = (arena.gulagindex & mask) << var_64571e3aeccd1a07;
-    var_f8f977081d3da8b4 = ~(mask << var_64571e3aeccd1a07);
-    var_ee27f3f198276535 = self.game_extrainfo;
-    var_ed711aeaf5e8cb76 = var_ee27f3f198276535 & var_f8f977081d3da8b4;
-    var_82a90e56e416fa55 = var_ed711aeaf5e8cb76 + var_a463992091f1d483;
+    bitwidth = 3;
+    bitoffset = 3;
+    mask = int(pow(2, bitwidth)) - 1;
+    var_a463992091f1d483 = (arena.gulagindex & mask) << bitoffset;
+    var_f8f977081d3da8b4 = ~(mask << bitoffset);
+    prevvalue = self.game_extrainfo;
+    cleanedbase = prevvalue & var_f8f977081d3da8b4;
+    var_82a90e56e416fa55 = cleanedbase + var_a463992091f1d483;
     self.game_extrainfo = var_82a90e56e416fa55;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf07
 // Size: 0x6f
@@ -4447,13 +4479,13 @@ function startbetting(arena, fighters) {
     return var_4b434533d3624bec;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf7e
 // Size: 0xad
 function show_betting_to_players(arena) {
     self endon("end_betting");
-    while (1) {
+    while (true) {
         var_2804a2011e172ab6 = getbettingplayers(arena, self);
         foreach (player in var_2804a2011e172ab6) {
             if (isbot(player)) {
@@ -4468,130 +4500,130 @@ function show_betting_to_players(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe032
 // Size: 0x252
 function showbettinghud(arena, player) {
     self endon("end_betting");
-    var_b5fe9e03c0fd6170 = spawnstruct();
-    var_b5fe9e03c0fd6170.owner = player;
-    self.bets[player.guid] = var_b5fe9e03c0fd6170;
-    var_2f415ecbf5ec8bda = 10;
-    var_3ae4f76cd196d765 = 0;
-    var_b5fe9e03c0fd6170.hudfocusname = player namespace_52f6938dd902c7d0::createfontstring("default", 1.2);
-    var_b5fe9e03c0fd6170.hudfocusname namespace_52f6938dd902c7d0::setpoint("LEFT", "CENTER", var_2f415ecbf5ec8bda, var_3ae4f76cd196d765);
-    var_b5fe9e03c0fd6170.hudfocusname.label = "";
-    var_b5fe9e03c0fd6170.hudfocusname.alpha = 0;
+    bet = spawnstruct();
+    bet.owner = player;
+    self.bets[player.guid] = bet;
+    focusxoffset = 10;
+    focusyoffset = 0;
+    bet.hudfocusname = player scripts/mp/hud_util::createfontstring("default", 1.2);
+    bet.hudfocusname scripts/mp/hud_util::setpoint("LEFT", "CENTER", focusxoffset, focusyoffset);
+    bet.hudfocusname.label = "";
+    bet.hudfocusname.alpha = 0;
     var_c218c54dfc19219c = 5;
     var_58d5fef2b1d991cf = -50;
-    var_b5fe9e03c0fd6170.hudavailable = player namespace_52f6938dd902c7d0::createfontstring("default", 1.2);
-    var_b5fe9e03c0fd6170.hudavailable namespace_52f6938dd902c7d0::setpoint("LEFT", "LEFT", var_c218c54dfc19219c, var_58d5fef2b1d991cf);
-    var_b5fe9e03c0fd6170.hudavailable.label = "MP/BR_GULAG_BET_AVAILABLE";
-    var_b5fe9e03c0fd6170.hudavailable namespace_95fef46456ed271b::fontpulseinit();
-    var_b5fe9e03c0fd6170.hudbetonplayer = player namespace_52f6938dd902c7d0::createfontstring("default", 1.5);
-    var_b5fe9e03c0fd6170.hudbetonplayer namespace_52f6938dd902c7d0::setpoint("LEFT", "LEFT", var_c218c54dfc19219c, var_58d5fef2b1d991cf + 25);
-    var_b5fe9e03c0fd6170.hudbetonplayer.label = "";
-    var_b5fe9e03c0fd6170.hudammount = player namespace_52f6938dd902c7d0::createfontstring("default", 1.5);
-    var_b5fe9e03c0fd6170.hudammount namespace_52f6938dd902c7d0::setpoint("LEFT", "LEFT", var_c218c54dfc19219c, var_58d5fef2b1d991cf + 40);
-    var_b5fe9e03c0fd6170.hudammount.label = "MP/BR_GULAG_BET_AMMOUNT";
-    var_b5fe9e03c0fd6170.playerbeton = -1;
-    var_b5fe9e03c0fd6170.playerfocus = -1;
-    var_b5fe9e03c0fd6170.ammount = 0;
-    updatebethud(var_b5fe9e03c0fd6170);
-    thread updatebetplayerfocus(arena, var_b5fe9e03c0fd6170);
-    thread watchbetplaced(var_b5fe9e03c0fd6170);
+    bet.hudavailable = player scripts/mp/hud_util::createfontstring("default", 1.2);
+    bet.hudavailable scripts/mp/hud_util::setpoint("LEFT", "LEFT", var_c218c54dfc19219c, var_58d5fef2b1d991cf);
+    bet.hudavailable.label = "MP/BR_GULAG_BET_AVAILABLE";
+    bet.hudavailable scripts/mp/hud::fontpulseinit();
+    bet.hudbetonplayer = player scripts/mp/hud_util::createfontstring("default", 1.5);
+    bet.hudbetonplayer scripts/mp/hud_util::setpoint("LEFT", "LEFT", var_c218c54dfc19219c, var_58d5fef2b1d991cf + 25);
+    bet.hudbetonplayer.label = "";
+    bet.hudammount = player scripts/mp/hud_util::createfontstring("default", 1.5);
+    bet.hudammount scripts/mp/hud_util::setpoint("LEFT", "LEFT", var_c218c54dfc19219c, var_58d5fef2b1d991cf + 40);
+    bet.hudammount.label = "MP/BR_GULAG_BET_AMMOUNT";
+    bet.playerbeton = -1;
+    bet.playerfocus = -1;
+    bet.ammount = 0;
+    updatebethud(bet);
+    thread updatebetplayerfocus(arena, bet);
+    thread watchbetplaced(bet);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe28b
 // Size: 0x18b
-function updatebetplayerfocus(arena, var_b5fe9e03c0fd6170) {
+function updatebetplayerfocus(arena, bet) {
     self endon("end_betting");
-    var_b5fe9e03c0fd6170.owner endon("disconnect");
+    bet.owner endon("disconnect");
     mindot = 0.9;
-    while (1) {
+    while (true) {
         playerfocus = -1;
         bestdot = -1;
-        var_cb1a928757e7d0ad = var_b5fe9e03c0fd6170.owner geteye();
-        var_be8e4c874f6deccf = anglestoforward(var_b5fe9e03c0fd6170.owner getplayerangles());
-        foreach (i, var_4570788876702376 in self.fighters) {
-            if (!isdefined(var_4570788876702376)) {
+        ownereye = bet.owner geteye();
+        ownerdir = anglestoforward(bet.owner getplayerangles());
+        foreach (i, fighter in self.fighters) {
+            if (!isdefined(fighter)) {
                 continue;
             }
-            var_499a4b568077f460 = var_4570788876702376.origin + (0, 0, 30);
-            var_ecaf2c0500e55585 = vectornormalize(var_499a4b568077f460 - var_cb1a928757e7d0ad);
-            var_a93753d72e9f269d = vectordot(var_be8e4c874f6deccf, var_ecaf2c0500e55585);
-            if (var_a93753d72e9f269d < mindot || var_a93753d72e9f269d < bestdot) {
+            fighterorigin = fighter.origin + (0, 0, 30);
+            var_ecaf2c0500e55585 = vectornormalize(fighterorigin - ownereye);
+            fighterdot = vectordot(ownerdir, var_ecaf2c0500e55585);
+            if (fighterdot < mindot || fighterdot < bestdot) {
                 continue;
             }
             playerfocus = i;
-            bestdot = var_a93753d72e9f269d;
+            bestdot = fighterdot;
         }
-        if (playerfocus != var_b5fe9e03c0fd6170.playerfocus) {
-            var_b5fe9e03c0fd6170.playerfocus = playerfocus;
+        if (playerfocus != bet.playerfocus) {
+            bet.playerfocus = playerfocus;
             updateoutlines(arena);
-            updatebethud(var_b5fe9e03c0fd6170);
+            updatebethud(bet);
         }
         wait(0.05);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe41d
 // Size: 0x9a
-function watchbetclear(var_b5fe9e03c0fd6170) {
+function watchbetclear(bet) {
     self endon("end_betting");
-    var_b5fe9e03c0fd6170.owner endon("disconnect");
+    bet.owner endon("disconnect");
     notifystring = "betClear";
-    thread notifyonplayercommandbetting(var_b5fe9e03c0fd6170.owner, notifystring, "+weapnext");
-    while (1) {
-        var_b5fe9e03c0fd6170.owner waittill(notifystring);
-        if (var_b5fe9e03c0fd6170.playerbeton == -1) {
+    thread notifyonplayercommandbetting(bet.owner, notifystring, "+weapnext");
+    while (true) {
+        bet.owner waittill(notifystring);
+        if (bet.playerbeton == -1) {
             continue;
         }
-        var_b5fe9e03c0fd6170.ammount = 0;
-        var_b5fe9e03c0fd6170.playerbeton = -1;
-        updatebethud(var_b5fe9e03c0fd6170);
+        bet.ammount = 0;
+        bet.playerbeton = -1;
+        updatebethud(bet);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe4be
 // Size: 0x131
-function watchbetplaced(var_b5fe9e03c0fd6170) {
+function watchbetplaced(bet) {
     self endon("end_betting");
-    var_b5fe9e03c0fd6170.owner endon("disconnect");
+    bet.owner endon("disconnect");
     notifystring = "betPlaced";
-    thread notifyonplayercommandbetting(var_b5fe9e03c0fd6170.owner, notifystring, "+usereload");
-    while (1) {
-        var_b5fe9e03c0fd6170.owner waittill(notifystring);
-        if (var_b5fe9e03c0fd6170.playerfocus == -1) {
-            if (var_b5fe9e03c0fd6170.playerbeton == -1) {
+    thread notifyonplayercommandbetting(bet.owner, notifystring, "+usereload");
+    while (true) {
+        bet.owner waittill(notifystring);
+        if (bet.playerfocus == -1) {
+            if (bet.playerbeton == -1) {
                 continue;
             }
             var_b69761e52eeaba08 = 0;
-        } else if (var_b5fe9e03c0fd6170.playerbeton == -1) {
+        } else if (bet.playerbeton == -1) {
             var_b69761e52eeaba08 = 1;
-        } else if (var_b5fe9e03c0fd6170.playerbeton == var_b5fe9e03c0fd6170.playerfocus) {
-            var_b69761e52eeaba08 = var_b5fe9e03c0fd6170.ammount + 1;
+        } else if (bet.playerbeton == bet.playerfocus) {
+            var_b69761e52eeaba08 = bet.ammount + 1;
         } else {
             var_b69761e52eeaba08 = 1;
         }
-        if (var_b69761e52eeaba08 > var_b5fe9e03c0fd6170.owner.plundercount) {
-            betchangefail(var_b5fe9e03c0fd6170);
+        if (var_b69761e52eeaba08 > bet.owner.plundercount) {
+            betchangefail(bet);
             continue;
         }
-        var_b5fe9e03c0fd6170.ammount = var_b69761e52eeaba08;
-        var_b5fe9e03c0fd6170.playerbeton = var_b5fe9e03c0fd6170.playerfocus;
-        updatebethud(var_b5fe9e03c0fd6170);
+        bet.ammount = var_b69761e52eeaba08;
+        bet.playerbeton = bet.playerfocus;
+        updatebethud(bet);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe5f6
 // Size: 0x3b
@@ -4603,86 +4635,88 @@ function notifyonplayercommandbetting(player, notifystr, cmdstr) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe638
 // Size: 0x40
-function betchangefail(var_b5fe9e03c0fd6170) {
-    var_b5fe9e03c0fd6170.owner playlocalsound("br_pickup_deny");
-    var_b5fe9e03c0fd6170.hudavailable thread namespace_95fef46456ed271b::fontpulse(var_b5fe9e03c0fd6170.owner);
+function betchangefail(bet) {
+    bet.owner playlocalsound("br_pickup_deny");
+    bet.hudavailable thread scripts/mp/hud::fontpulse(bet.owner);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe67f
 // Size: 0x371
-function updatebethud(var_b5fe9e03c0fd6170) {
+function updatebethud(bet) {
     var_e40839434e2834ad = 1000;
-    var_b5fe9e03c0fd6170.hudavailable setvalue((var_b5fe9e03c0fd6170.owner.plundercount - var_b5fe9e03c0fd6170.ammount) * var_e40839434e2834ad);
-    if (var_b5fe9e03c0fd6170.playerbeton != -1) {
-        var_b57068d736bdfac3 = self.fighters[var_b5fe9e03c0fd6170.playerbeton];
-        if (isdefined(var_b57068d736bdfac3)) {
-            var_b5fe9e03c0fd6170.hudbetonplayer setplayernamestring(var_b57068d736bdfac3);
-            var_b5fe9e03c0fd6170.hudbetonplayer.alpha = 1;
+    bet.hudavailable setvalue((bet.owner.plundercount - bet.ammount) * var_e40839434e2834ad);
+    if (bet.playerbeton != -1) {
+        fighterent = self.fighters[bet.playerbeton];
+        if (isdefined(fighterent)) {
+            bet.hudbetonplayer setplayernamestring(fighterent);
+            bet.hudbetonplayer.alpha = 1;
         } else {
-            var_b5fe9e03c0fd6170.hudbetonplayer.alpha = 0;
+            bet.hudbetonplayer.alpha = 0;
         }
     } else {
-        var_b5fe9e03c0fd6170.hudbetonplayer.alpha = 0;
+        bet.hudbetonplayer.alpha = 0;
     }
-    if (var_b5fe9e03c0fd6170.ammount > 0) {
-        var_b5fe9e03c0fd6170.hudammount setvalue(var_b5fe9e03c0fd6170.ammount * var_e40839434e2834ad);
-        var_b5fe9e03c0fd6170.hudammount.alpha = 1;
+    if (bet.ammount > 0) {
+        bet.hudammount setvalue(bet.ammount * var_e40839434e2834ad);
+        bet.hudammount.alpha = 1;
     } else {
-        var_b5fe9e03c0fd6170.hudammount.alpha = 0;
+        bet.hudammount.alpha = 0;
     }
-    if (var_b5fe9e03c0fd6170.playerbeton != -1) {
-        if (var_b5fe9e03c0fd6170.playerfocus == var_b5fe9e03c0fd6170.playerbeton) {
-            var_b5fe9e03c0fd6170.hudfocusname.alpha = 1;
-            var_b5fe9e03c0fd6170.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET_INCREASE";
-            var_b5fe9e03c0fd6170.hudfocusname settext("");
-        } else if (var_b5fe9e03c0fd6170.playerfocus != -1) {
-            var_b5fe9e03c0fd6170.hudfocusname.alpha = 1;
-            var_b5fe9e03c0fd6170.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET_CHANGE";
-            var_b57068d736bdfac3 = self.fighters[var_b5fe9e03c0fd6170.playerfocus];
-            if (isdefined(var_b57068d736bdfac3)) {
-                var_b5fe9e03c0fd6170.hudfocusname setplayernamestring(var_b57068d736bdfac3);
+    if (bet.playerbeton != -1) {
+        if (bet.playerfocus == bet.playerbeton) {
+            bet.hudfocusname.alpha = 1;
+            bet.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET_INCREASE";
+            bet.hudfocusname settext("");
+        } else if (bet.playerfocus != -1) {
+            bet.hudfocusname.alpha = 1;
+            bet.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET_CHANGE";
+            fighterent = self.fighters[bet.playerfocus];
+            if (isdefined(fighterent)) {
+                bet.hudfocusname setplayernamestring(fighterent);
             }
         } else {
             /#
-                assert(var_b5fe9e03c0fd6170.playerfocus == -1);
+                assert(bet.playerfocus == -1);
             #/
-            var_b5fe9e03c0fd6170.hudfocusname.alpha = 1;
-            var_b5fe9e03c0fd6170.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET_CLEAR";
-            var_b5fe9e03c0fd6170.hudfocusname settext("");
+            bet.hudfocusname.alpha = 1;
+            bet.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET_CLEAR";
+            bet.hudfocusname settext("");
         }
-    } else if (var_b5fe9e03c0fd6170.playerfocus != -1) {
-        var_b5fe9e03c0fd6170.hudfocusname.alpha = 1;
-        var_b5fe9e03c0fd6170.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET";
-        var_b57068d736bdfac3 = self.fighters[var_b5fe9e03c0fd6170.playerfocus];
-        if (isdefined(var_b57068d736bdfac3)) {
-            var_b5fe9e03c0fd6170.hudfocusname setplayernamestring(var_b57068d736bdfac3);
-        }
-    } else {
-        /#
-            assert(var_b5fe9e03c0fd6170.playerfocus == -1);
-        #/
-        var_b5fe9e03c0fd6170.hudfocusname.alpha = 0;
-        var_b5fe9e03c0fd6170.hudfocusname.label = "";
+        return;
     }
+    if (bet.playerfocus != -1) {
+        bet.hudfocusname.alpha = 1;
+        bet.hudfocusname.label = "MP/BR_GULAG_FOCUS_BET";
+        fighterent = self.fighters[bet.playerfocus];
+        if (isdefined(fighterent)) {
+            bet.hudfocusname setplayernamestring(fighterent);
+        }
+        return;
+    }
+    /#
+        assert(bet.playerfocus == -1);
+    #/
+    bet.hudfocusname.alpha = 0;
+    bet.hudfocusname.label = "";
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe9f7
 // Size: 0xc3
-function cleanupbethud(var_b5fe9e03c0fd6170, delaytime) {
-    var_b5fe9e03c0fd6170 notify("cleanUpBetHud");
+function cleanupbethud(bet, delaytime) {
+    bet notify("cleanUpBetHud");
     if (isdefined(delaytime)) {
-        var_b5fe9e03c0fd6170 endon("cleanUpBetHud");
+        bet endon("cleanUpBetHud");
         wait(delaytime);
     }
-    huds = [0:var_b5fe9e03c0fd6170.hudbetonplayer, 1:var_b5fe9e03c0fd6170.hudammount, 2:var_b5fe9e03c0fd6170.hudavailable, 3:var_b5fe9e03c0fd6170.hudfocusname];
+    huds = [bet.hudbetonplayer, bet.hudammount, bet.hudavailable, bet.hudfocusname];
     foreach (hud in huds) {
         if (isdefined(hud)) {
             hud destroy();
@@ -4690,19 +4724,19 @@ function cleanupbethud(var_b5fe9e03c0fd6170, delaytime) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xeac1
 // Size: 0x40
-function watchbetbutton(var_b5fe9e03c0fd6170, player, notifystr, index) {
+function watchbetbutton(bet, player, notifystr, index) {
     self endon("end_betting");
-    while (1) {
+    while (true) {
         player waittill(notifystr);
-        var_b5fe9e03c0fd6170 notify("betPlaced", index);
+        bet notify("betPlaced", index);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb08
 // Size: 0x146
@@ -4712,11 +4746,11 @@ function endbetting(arena, var_4b434533d3624bec) {
     }
     var_4b434533d3624bec notify("end_betting");
     var_4b434533d3624bec.bettingopen = 0;
-    foreach (var_b5fe9e03c0fd6170 in var_4b434533d3624bec.bets) {
-        huds = [0:var_b5fe9e03c0fd6170.hudavailable, 1:var_b5fe9e03c0fd6170.hudfocusname];
-        if (var_b5fe9e03c0fd6170.playerbeton == -1) {
-            huds[huds.size] = var_b5fe9e03c0fd6170.hudbetonplayer;
-            huds[huds.size] = var_b5fe9e03c0fd6170.hudammount;
+    foreach (bet in var_4b434533d3624bec.bets) {
+        huds = [bet.hudavailable, bet.hudfocusname];
+        if (bet.playerbeton == -1) {
+            huds[huds.size] = bet.hudbetonplayer;
+            huds[huds.size] = bet.hudammount;
         }
         foreach (hud in huds) {
             if (isdefined(hud)) {
@@ -4727,7 +4761,7 @@ function endbetting(arena, var_4b434533d3624bec) {
     updateoutlines(arena);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec55
 // Size: 0xea
@@ -4735,70 +4769,70 @@ function payoutremainingbets(winner, var_4b434533d3624bec) {
     if (!isdefined(var_4b434533d3624bec)) {
         return;
     }
-    var_1a76078d68ffcf56 = -1;
+    winnerindex = -1;
     if (isdefined(winner)) {
-        var_1a76078d68ffcf56 = winner.fighterindex;
+        winnerindex = winner.fighterindex;
     }
-    foreach (var_b5fe9e03c0fd6170 in var_4b434533d3624bec.bets) {
-        if (var_b5fe9e03c0fd6170.playerbeton != -1 && isdefined(var_b5fe9e03c0fd6170.owner) && !istrue(var_b5fe9e03c0fd6170.paidout)) {
-            iswinner = var_b5fe9e03c0fd6170.playerbeton == var_1a76078d68ffcf56;
-            _completebet(var_4b434533d3624bec, var_b5fe9e03c0fd6170, iswinner);
+    foreach (bet in var_4b434533d3624bec.bets) {
+        if (bet.playerbeton != -1 && isdefined(bet.owner) && !istrue(bet.paidout)) {
+            iswinner = bet.playerbeton == winnerindex;
+            _completebet(var_4b434533d3624bec, bet, iswinner);
         }
-        thread cleanupbethud(var_b5fe9e03c0fd6170, 2.5);
+        thread cleanupbethud(bet, 2.5);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed46
 // Size: 0x204
-function _completebet(var_4b434533d3624bec, var_b5fe9e03c0fd6170, iswinner) {
-    var_40b237cd9ea72e30 = (0, 1, 0);
-    var_2b25db2c6e526cc3 = (1, 0, 0);
-    var_b5fe9e03c0fd6170.paidout = 1;
+function _completebet(var_4b434533d3624bec, bet, iswinner) {
+    wincolor = (0, 1, 0);
+    losecolor = (1, 0, 0);
+    bet.paidout = 1;
     if (iswinner) {
-        var_b5fe9e03c0fd6170.owner namespace_c6ccccd95254983f::playersetplundercount(var_b5fe9e03c0fd6170.owner.plundercount + var_b5fe9e03c0fd6170.ammount);
-        var_b5fe9e03c0fd6170.hudbetonplayer.color = var_40b237cd9ea72e30;
-        var_b5fe9e03c0fd6170.hudbetonplayer.label = "MP/BR_GULAG_BET_FIGHTER_NAME_WINNER";
-        var_b5fe9e03c0fd6170.hudammount.color = var_40b237cd9ea72e30;
-        var_b5fe9e03c0fd6170.hudammount.label = "MP/BR_GULAG_BET_AMMOUNT_WON";
+        bet.owner scripts/mp/gametypes/br_plunder::playersetplundercount(bet.owner.plundercount + bet.ammount);
+        bet.hudbetonplayer.color = wincolor;
+        bet.hudbetonplayer.label = "MP/BR_GULAG_BET_FIGHTER_NAME_WINNER";
+        bet.hudammount.color = wincolor;
+        bet.hudammount.label = "MP/BR_GULAG_BET_AMMOUNT_WON";
     } else {
-        var_b5fe9e03c0fd6170.hudbetonplayer.color = var_2b25db2c6e526cc3;
-        var_b5fe9e03c0fd6170.hudbetonplayer.label = "MP/BR_GULAG_BET_FIGHTER_NAME_LOSER";
-        var_b5fe9e03c0fd6170.hudammount.color = var_2b25db2c6e526cc3;
-        var_b5fe9e03c0fd6170.hudammount.label = "MP/BR_GULAG_BET_AMMOUNT_LOST";
-        if (isalive(var_b5fe9e03c0fd6170.owner)) {
-            var_43e1b640eec49671 = var_b5fe9e03c0fd6170.owner.plundercount - var_b5fe9e03c0fd6170.ammount;
+        bet.hudbetonplayer.color = losecolor;
+        bet.hudbetonplayer.label = "MP/BR_GULAG_BET_FIGHTER_NAME_LOSER";
+        bet.hudammount.color = losecolor;
+        bet.hudammount.label = "MP/BR_GULAG_BET_AMMOUNT_LOST";
+        if (isalive(bet.owner)) {
+            var_43e1b640eec49671 = bet.owner.plundercount - bet.ammount;
             /#
                 /#
                     assert(var_43e1b640eec49671 >= 0);
                 #/
             #/
             var_43e1b640eec49671 = int(max(0, var_43e1b640eec49671));
-            var_b5fe9e03c0fd6170.owner namespace_c6ccccd95254983f::playersetplundercount(var_43e1b640eec49671);
+            bet.owner scripts/mp/gametypes/br_plunder::playersetplundercount(var_43e1b640eec49671);
         }
     }
-    var_b57068d736bdfac3 = var_4b434533d3624bec.fighters[var_b5fe9e03c0fd6170.playerfocus];
-    if (isdefined(var_b57068d736bdfac3)) {
-        var_b57068d736bdfac3 hudoutlinedisableforclient(var_b5fe9e03c0fd6170.owner);
+    fighterent = var_4b434533d3624bec.fighters[bet.playerfocus];
+    if (isdefined(fighterent)) {
+        fighterent hudoutlinedisableforclient(bet.owner);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef51
 // Size: 0x99
 function getbettingplayers(arena, var_4b434533d3624bec) {
     var_2804a2011e172ab6 = arena.jailedplayers;
     if (level.gulag.betting > 1) {
-        foreach (var_4570788876702376 in var_4b434533d3624bec.fighters) {
-            var_2804a2011e172ab6[var_2804a2011e172ab6.size] = var_4570788876702376;
+        foreach (fighter in var_4b434533d3624bec.fighters) {
+            var_2804a2011e172ab6[var_2804a2011e172ab6.size] = fighter;
         }
     }
     return var_2804a2011e172ab6;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeff2
 // Size: 0xc3
@@ -4806,15 +4840,15 @@ function payoutbet(var_4b434533d3624bec, player, iswinner) {
     if (!isdefined(var_4b434533d3624bec)) {
         return;
     }
-    foreach (var_b5fe9e03c0fd6170 in var_4b434533d3624bec.bets) {
-        if (var_b5fe9e03c0fd6170.playerbeton == player.fighterindex && isdefined(var_b5fe9e03c0fd6170.owner) && !istrue(var_b5fe9e03c0fd6170.paidout)) {
-            _completebet(var_4b434533d3624bec, var_b5fe9e03c0fd6170, iswinner);
-            thread cleanupbethud(var_b5fe9e03c0fd6170, 2.5);
+    foreach (bet in var_4b434533d3624bec.bets) {
+        if (bet.playerbeton == player.fighterindex && isdefined(bet.owner) && !istrue(bet.paidout)) {
+            _completebet(var_4b434533d3624bec, bet, iswinner);
+            thread cleanupbethud(bet, 2.5);
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf0bc
 // Size: 0x6a
@@ -4830,7 +4864,7 @@ function rock_used(grenade) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf12d
 // Size: 0x20e
@@ -4857,38 +4891,38 @@ function spawnrocks(arena) {
     }
     arena.rocks = array_randomize(arena.rocks);
     arena.rockcounter = var_630781c4f7e18225;
-    var_9cf140dc95fe44d7 = getdvarint(@"hash_983b34df705745ce", 1) == 0;
+    disablerocks = getdvarint(@"hash_983b34df705745ce", 1) == 0;
     for (i = 0; i < arena.rocks.size; i++) {
         rock = arena.rocks[i];
         rock.arena = arena;
-        if (i >= var_630781c4f7e18225 || var_9cf140dc95fe44d7) {
+        if (i >= var_630781c4f7e18225 || disablerocks) {
             rock setscriptablepartstate("brloot_rock", "hidden");
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf342
 // Size: 0xb8
-function rockused(rock, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function rockused(rock, part, state, player, var_a5b2c541413aa895, usestring) {
     if (!isdefined(rock) || !isdefined(player)) {
         return;
     }
     /#
         assert(part == "brloot_rock");
     #/
-    var_2a333167cfc47ab1 = makeweapon("rock_mp");
-    if (player hasweapon(var_2a333167cfc47ab1) && player getammocount(var_2a333167cfc47ab1) > 0) {
+    rockweap = makeweapon("rock_mp");
+    if (player hasweapon(rockweap) && player getammocount(rockweap) > 0) {
         return;
     }
     rock setscriptablepartstate("brloot_rock", "hidden");
-    player thread namespace_cb965d2f71fefddc::playerplaypickupanim();
-    player namespace_1a507865f681850e::giveequipment("equip_rock", "primary");
+    player thread scripts/mp/gametypes/br_pickups::playerplaypickupanim();
+    player scripts/mp/equipment::giveequipment("equip_rock", "primary");
     player playlocalsound("br_rock_pickup");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf401
 // Size: 0x9a
@@ -4906,14 +4940,14 @@ function spawnrock(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf4a2
 // Size: 0x58
 function playertakeawayrock(arena) {
-    var_2a333167cfc47ab1 = makeweapon("rock_mp");
-    if (self hasweapon(var_2a333167cfc47ab1)) {
-        self takeweapon(var_2a333167cfc47ab1);
+    rockweap = makeweapon("rock_mp");
+    if (self hasweapon(rockweap)) {
+        self takeweapon(rockweap);
         self clearaccessory();
         if (level.gulag.usefloorrocks) {
             spawnrock(arena);
@@ -4921,34 +4955,34 @@ function playertakeawayrock(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf501
 // Size: 0x160
 function gettangentoncirclefrompoint(circlecenter, circleradius, point) {
     xp = point[0] - circlecenter[0];
-    var_cdeb3778f5379198 = point[1] - circlecenter[1];
+    yp = point[1] - circlecenter[1];
     r = circleradius;
-    var_251ec40356dde849 = xp * xp;
-    var_13dca903493558de = var_cdeb3778f5379198 * var_cdeb3778f5379198;
-    var_cdd57b78f51ff3f1 = r * r;
-    c = var_251ec40356dde849 + var_13dca903493558de - var_cdd57b78f51ff3f1;
-    var_1939553953102a08 = undefined;
+    xp2 = xp * xp;
+    yp2 = yp * yp;
+    r2 = r * r;
+    c = xp2 + yp2 - r2;
+    tangentpoint = undefined;
     var_5371d63ef1da1802 = 1;
     if (c > 0) {
-        x = (var_cdd57b78f51ff3f1 * xp - r * var_cdeb3778f5379198 * sqrt(var_251ec40356dde849 + var_13dca903493558de - var_cdd57b78f51ff3f1)) / (var_251ec40356dde849 + var_13dca903493558de);
-        y = (var_cdd57b78f51ff3f1 * var_cdeb3778f5379198 + r * xp * sqrt(var_251ec40356dde849 + var_13dca903493558de - var_cdd57b78f51ff3f1)) / (var_251ec40356dde849 + var_13dca903493558de);
-        var_1939553953102a08 = (x, y, point[2]) + (circlecenter[0], circlecenter[1], 0);
+        x = (r2 * xp - r * yp * sqrt(xp2 + yp2 - r2)) / (xp2 + yp2);
+        y = (r2 * yp + r * xp * sqrt(xp2 + yp2 - r2)) / (xp2 + yp2);
+        tangentpoint = (x, y, point[2]) + (circlecenter[0], circlecenter[1], 0);
     } else {
-        var_bf3b7724dea266fe = vectornormalize((xp, var_cdeb3778f5379198, 0));
+        var_bf3b7724dea266fe = vectornormalize((xp, yp, 0));
         p = circlecenter + var_bf3b7724dea266fe * circleradius;
-        var_1939553953102a08 = (p[0], p[1], point[2]);
+        tangentpoint = (p[0], p[1], point[2]);
         var_5371d63ef1da1802 = 0;
     }
-    return [0:var_1939553953102a08, 1:var_5371d63ef1da1802];
+    return [tangentpoint, var_5371d63ef1da1802];
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf669
 // Size: 0x332
@@ -4965,7 +4999,7 @@ function spawnac130() {
     if (isdefined(level.br_ac130)) {
         startpt = level.br_ac130.startpt;
     } else {
-        c130pathstruct = namespace_ad389306d44fc6b4::createtestc130path();
+        c130pathstruct = scripts/mp/gametypes/br_c130::createtestc130path();
         startpt = c130pathstruct.startpt;
     }
     if (isdefined(level.br_circle) && isdefined(level.br_circle.safecircleent)) {
@@ -4981,19 +5015,19 @@ function spawnac130() {
     time = 0;
     if (var_5371d63ef1da1802) {
         dist = distance(startpt, endpt);
-        time = dist / namespace_ad389306d44fc6b4::getc130speed();
+        time = dist / scripts/mp/gametypes/br_c130::getc130speed();
     }
     var_91ad7677313c6b84 = (level.br_level.br_mapcenter[0], level.br_level.br_mapcenter[1], startpt[2]);
     level.gulag.ac130linker = spawn("script_model", var_91ad7677313c6b84);
     level.gulag.ac130linker setmodel("tag_origin");
     level.gulag.ac130linker.radius = circleradius;
-    level.gulag.ac130 = namespace_ad389306d44fc6b4::gunship_spawn(startpt, endpt, time, 0, &ac130handlemovement);
+    level.gulag.ac130 = scripts/mp/gametypes/br_c130::gunship_spawn(startpt, endpt, time, 0, &ac130handlemovement);
     level.gulag.ac130 thread ac130setupanim();
     level.gulag.ac130.riders = [];
     if (time <= 0) {
         var_e31d6fe7007e7eab = endpt - level.br_level.br_mapcenter;
-        var_d146bea510112c2e = vectornormalize((var_e31d6fe7007e7eab[0], var_e31d6fe7007e7eab[1], 0));
-        angles = vectortoangles(var_d146bea510112c2e);
+        dirnorm = vectornormalize((var_e31d6fe7007e7eab[0], var_e31d6fe7007e7eab[1], 0));
+        angles = vectortoangles(dirnorm);
         level.gulag.ac130 unlink();
         level.gulag.ac130.angles = (0, angles[1] + 90, 0);
         level.gulag.ac130.origin = endpt;
@@ -5001,7 +5035,7 @@ function spawnac130() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf9a2
 // Size: 0x48
@@ -5014,22 +5048,22 @@ function ac130setupanim() {
     namespace_973962356ce55fee::playac130infilloopanims(animstruct);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf9f1
 // Size: 0x49
-function ac130handlemovement(var_c7f46ef27d351cd0, movetime) {
+function ac130handlemovement(movedestination, movetime) {
     level endon("game_ended");
     self endon("death");
     self playloopsound("br_ac130_lp");
     if (movetime > 0) {
-        self moveto(var_c7f46ef27d351cd0, movetime, 0, 0);
+        self moveto(movedestination, movetime, 0, 0);
         wait(movetime);
     }
     thread ac130linkandspin();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfa41
 // Size: 0xcc
@@ -5038,9 +5072,9 @@ function ac130linkandspin() {
     self endon("ac130LinkAndSpin");
     level.gulag.ac130linker endon("death");
     var_40f8c8ee714ef7ca = 6.28318;
-    var_29ba0fb266411d2f = namespace_ad389306d44fc6b4::getc130speed();
+    linearspeed = scripts/mp/gametypes/br_c130::getc130speed();
     circleradius = level.gulag.ac130linker.radius;
-    time = var_40f8c8ee714ef7ca * circleradius / var_29ba0fb266411d2f;
+    time = var_40f8c8ee714ef7ca * circleradius / linearspeed;
     self linkto(level.gulag.ac130linker, "tag_origin");
     if (time <= 0) {
         return;
@@ -5051,7 +5085,7 @@ function ac130linkandspin() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfb14
 // Size: 0xa0
@@ -5076,7 +5110,7 @@ function waittillallarenasshutdown() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfbbb
 // Size: 0x28b
@@ -5100,16 +5134,16 @@ function makeac130flyaway() {
     }
     startpt = level.gulag.ac130.origin;
     pathdir = anglestoforward(level.gulag.ac130.angles);
-    var_5619b7bbc3745888 = level.br_level.br_circleradii[0] * 2;
-    endpt = startpt + pathdir * var_5619b7bbc3745888;
-    endpt = endpt + pathdir * namespace_ad389306d44fc6b4::getc130speed();
+    pathradius = level.br_level.br_circleradii[0] * 2;
+    endpt = startpt + pathdir * pathradius;
+    endpt = endpt + pathdir * scripts/mp/gametypes/br_c130::getc130speed();
     dist = distance(startpt, endpt);
-    time = dist / namespace_ad389306d44fc6b4::getc130speed();
+    time = dist / scripts/mp/gametypes/br_c130::getc130speed();
     level.gulag.ac130 notify("ac130LinkAndSpin");
     level.gulag.ac130 unlink();
     level.gulag.ac130 moveto(endpt, time, 0, 0);
     wait(time);
-    namespace_d3d40f75bb4e4c32::cleanac130struct(level.gulag.ac130.animstruct);
+    scripts/mp/gametypes/br_public::cleanac130struct(level.gulag.ac130.animstruct);
     if (isdefined(level.gulag.ac130)) {
         level.gulag.ac130 delete();
     }
@@ -5118,7 +5152,7 @@ function makeac130flyaway() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfe4d
 // Size: 0x20f
@@ -5133,9 +5167,9 @@ function transitioncircle(newradius, waittime) {
     newradius = newradius - 100;
     if (level.gulag.ac130linker.radius != newradius) {
         dirtocenter = vectornormalize(level.gulag.ac130linker.origin - level.gulag.ac130.origin);
-        var_7c472ec4204b05dc = level.gulag.ac130.origin + dirtocenter * newradius;
+        centerstart = level.gulag.ac130.origin + dirtocenter * newradius;
         level.gulag.ac130 unlink();
-        level.gulag.ac130linker.origin = var_7c472ec4204b05dc;
+        level.gulag.ac130linker.origin = centerstart;
         level.gulag.ac130linker.radius = newradius;
         level.gulag.ac130linker dontinterpolate();
         level.gulag.ac130 thread ac130linkandspin();
@@ -5144,7 +5178,7 @@ function transitioncircle(newradius, waittime) {
     wait(waittime);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10063
 // Size: 0xdb
@@ -5161,20 +5195,20 @@ function playersetupac130() {
     level.gulag.ac130.riders[level.gulag.ac130.riders.size] = self;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10145
 // Size: 0x66
 function playerputinc130(c130) {
     self.angles = c130.angles;
     thread listenjump(c130);
-    thread namespace_ad389306d44fc6b4::listenkick(c130, 0);
+    thread scripts/mp/gametypes/br_c130::listenkick(c130, 0);
     self.c130 = level.gulag.ac130;
     self.br_infil_type = "c130";
-    thread namespace_ad389306d44fc6b4::orbitcam(c130);
+    thread scripts/mp/gametypes/br_c130::orbitcam(c130);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x101b2
 // Size: 0x62
@@ -5186,23 +5220,23 @@ function listenjump(c130) {
     self.redeployenabled = 0;
     waittill_either("halo_jump_c130", "halo_jump_solo_c130");
     self.jumptype = "solo";
-    thread namespace_ad389306d44fc6b4::leaveplane(c130, 0, self getplayerangles(), 0);
+    thread scripts/mp/gametypes/br_c130::leaveplane(c130, 0, self getplayerangles(), 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1021b
 // Size: 0x38
 function playerspawnprotectionac130() {
     self endon("death_or_disconnect");
     self.plotarmor = 1;
-    namespace_ad389306d44fc6b4::setplayervarinrespawnc130(1);
+    scripts/mp/gametypes/br_c130::setplayervarinrespawnc130(1);
     waittillplayerdoneskydivingac130(self);
     self.plotarmor = undefined;
-    namespace_ad389306d44fc6b4::setplayervarinrespawnc130(0);
+    scripts/mp/gametypes/br_c130::setplayervarinrespawnc130(0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1025a
 // Size: 0x3c
@@ -5215,7 +5249,7 @@ function waittillplayerdoneskydivingac130(player) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1029d
 // Size: 0x40
@@ -5226,7 +5260,7 @@ function _waittillplayerdoneskydivingac130timeout(player) {
     player notify("timeout_gulag_ac130");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x102e4
 // Size: 0x4d
@@ -5241,7 +5275,7 @@ function playerautodeployaftertime() {
     self notify("halo_kick_c130");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10338
 // Size: 0xd2
@@ -5253,16 +5287,16 @@ function playerac130cleanup() {
     }
     if (isdefined(self)) {
         level.gulag.ac130.riders = array_remove(level.gulag.ac130.riders, self);
-    } else {
-        level.gulag.ac130.riders = array_removeundefined(level.gulag.ac130.riders);
+        return;
     }
+    level.gulag.ac130.riders = array_removeundefined(level.gulag.ac130.riders);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10411
 // Size: 0x211
-function playergulagautowin(context, var_4ac881e2a39322a5, var_57d71760971f748f, var_5806c4765695a2f4, var_74af5908127b6729, var_36f3c4e4a602e257, var_df631fdd92a76bb1, var_b6acf0c07c4311e6) {
+function playergulagautowin(context, sponsor, tokenused, var_5806c4765695a2f4, var_74af5908127b6729, var_36f3c4e4a602e257, var_df631fdd92a76bb1, var_b6acf0c07c4311e6) {
     player = self;
     level endon("game_ended");
     player endon("disconnect");
@@ -5276,23 +5310,23 @@ function playergulagautowin(context, var_4ac881e2a39322a5, var_57d71760971f748f,
         }
         player function_3cceb052d780fef1("gulagWinSequence", self.arena, var_b6acf0c07c4311e6);
     }
-    var_ecb05f27d56ceb91 = player namespace_8bfdb6eb5a3df67a::playerhandlesponsor(var_4ac881e2a39322a5, var_57d71760971f748f, var_74af5908127b6729, var_5806c4765695a2f4, var_36f3c4e4a602e257, context);
+    var_ecb05f27d56ceb91 = player namespace_8bfdb6eb5a3df67a::playerhandlesponsor(sponsor, tokenused, var_74af5908127b6729, var_5806c4765695a2f4, var_36f3c4e4a602e257, context);
     var_df2fbb13c226be75 = var_ecb05f27d56ceb91[1];
     var_84e2123aaca9a965 = var_ecb05f27d56ceb91[0];
     player.respawningfromtoken = 1;
-    var_dbc5e63a72f2678a = namespace_71073fa38f11492::runbrgametypefunc("playerGulagAutoWinWait", var_4ac881e2a39322a5, var_57d71760971f748f);
+    gametyperesult = scripts/mp/gametypes/br_gametypes::runbrgametypefunc("playerGulagAutoWinWait", sponsor, tokenused);
     var_80365e25f6e3befd = undefined;
-    if (!istrue(var_dbc5e63a72f2678a)) {
+    if (!istrue(gametyperesult)) {
         var_80365e25f6e3befd = 1;
     }
     var_46ff3a000308206a = undefined;
-    if (!isdefined(var_4ac881e2a39322a5) && !istrue(var_5806c4765695a2f4)) {
+    if (!isdefined(sponsor) && !istrue(var_5806c4765695a2f4)) {
         var_46ff3a000308206a = 4;
     }
     var_fb551788da0fc531 = 1;
     var_3bd8653773757c7 = 1;
-    var_30a91e1938cfd1b2 = function_6f4fa9b79a3c7dce(var_fb551788da0fc531, var_df2fbb13c226be75, var_3bd8653773757c7, var_84e2123aaca9a965, var_74af5908127b6729, undefined, undefined, var_46ff3a000308206a, undefined, var_df631fdd92a76bb1, var_57d71760971f748f);
-    namespace_8bfdb6eb5a3df67a::function_d5ee3d3fad992d43(var_80365e25f6e3befd, var_30a91e1938cfd1b2);
+    respawnstruct = function_6f4fa9b79a3c7dce(var_fb551788da0fc531, var_df2fbb13c226be75, var_3bd8653773757c7, var_84e2123aaca9a965, var_74af5908127b6729, undefined, undefined, var_46ff3a000308206a, undefined, var_df631fdd92a76bb1, tokenused);
+    namespace_8bfdb6eb5a3df67a::function_d5ee3d3fad992d43(var_80365e25f6e3befd, respawnstruct);
     if (context == "jailbreak" || context == "phoenix") {
         player.placementstatsset = undefined;
         player.processlobbydataforclient = undefined;
@@ -5305,7 +5339,7 @@ function playergulagautowin(context, var_4ac881e2a39322a5, var_57d71760971f748f,
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10629
 // Size: 0x24
@@ -5314,7 +5348,7 @@ function gulaginitloadouts() {
     function_4bcedfe145ee674e();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10654
 // Size: 0x185
@@ -5333,11 +5367,11 @@ function creategulagjailloadout() {
     loadout["loadoutSecondaryReticle"] = "none";
     loadout["loadoutMeleeSlot"] = "none";
     if (!function_7effa8a355ddc886() || function_79fdf5cd036ff575()) {
-        var_bb7a7034f796af47 = "equip_rock";
+        primaryequipment = "equip_rock";
         if (isdefined(level.var_2c1d68af7f11cf7d)) {
-            var_bb7a7034f796af47 = level.var_2c1d68af7f11cf7d;
+            primaryequipment = level.var_2c1d68af7f11cf7d;
         }
-        loadout["loadoutEquipmentPrimary"] = var_bb7a7034f796af47;
+        loadout["loadoutEquipmentPrimary"] = primaryequipment;
     } else {
         loadout["loadoutEquipmentPrimary"] = "none";
     }
@@ -5347,14 +5381,14 @@ function creategulagjailloadout() {
     loadout["loadoutKillstreak2"] = "none";
     loadout["loadoutKillstreak3"] = "none";
     loadout["loadoutSuper"] = "super_br_extract";
-    loadout["loadoutPerks"] = [0:"specialty_null"];
+    loadout["loadoutPerks"] = ["specialty_null"];
     loadout["loadoutGesture"] = "playerData";
     loadout["loadoutExecution"] = "none";
     loadout["disableBackupPistol"] = 1;
     return loadout;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x107e1
 // Size: 0x155
@@ -5362,30 +5396,30 @@ function function_4bcedfe145ee674e() {
     level.gulagloadouts = [];
     level.gulagloadouttable = choosegulagloadouttable();
     if (getdvar(@"hash_6ef30f04f9851a88") != "") {
-        var_d61ea355b2c5b7d5 = strtok(getdvar(@"hash_6ef30f04f9851a88"), " ");
-        var_4d4aa257c98f2157 = [];
-        for (var_2613246720524878 = 0; var_2613246720524878 < var_d61ea355b2c5b7d5.size; var_2613246720524878++) {
-            var_4d4aa257c98f2157[var_4d4aa257c98f2157.size] = int(var_d61ea355b2c5b7d5[var_4d4aa257c98f2157.size]);
+        debugloadouts = strtok(getdvar(@"hash_6ef30f04f9851a88"), " ");
+        intloadouts = [];
+        for (debugindex = 0; debugindex < debugloadouts.size; debugindex++) {
+            intloadouts[intloadouts.size] = int(debugloadouts[intloadouts.size]);
         }
-        var_7d958726e11b327 = var_4d4aa257c98f2157.size;
+        var_7d958726e11b327 = intloadouts.size;
         for (classindex = 0; classindex < var_7d958726e11b327; classindex++) {
-            level.gulagloadouts[level.gulagloadouts.size] = creategulagarenaloadout(var_4d4aa257c98f2157[classindex]);
+            level.gulagloadouts[level.gulagloadouts.size] = creategulagarenaloadout(intloadouts[classindex]);
             /#
                 assertex(level.gulagloadouts[level.gulagloadouts.size]["loadoutPrimary"] != "", "Gulag loadout missing primary! Check dvar: scr_br_gulag_loadout_override");
             #/
         }
     } else {
-        var_7d958726e11b327 = namespace_d19129e4fa5d176::function_df2933f96d726d71(level.gulagloadouttable) - 1;
+        var_7d958726e11b327 = scripts/mp/class::function_df2933f96d726d71(level.gulagloadouttable) - 1;
         for (classindex = 0; classindex < var_7d958726e11b327; classindex++) {
             level.gulagloadouts[level.gulagloadouts.size] = creategulagarenaloadout(classindex);
         }
     }
     if (getdvarint(@"hash_249a73868c9cd7d8", 0)) {
-        namespace_cb965d2f71fefddc::function_23a8498a6613de14();
+        scripts/mp/gametypes/br_pickups::function_23a8498a6613de14();
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1093d
 // Size: 0xb0
@@ -5397,59 +5431,59 @@ function choosegulagloadouttable() {
     } else {
         tablenum = getdvarint(@"hash_a828e8ac5187f4d4", 0);
         if (tablenum == 0) {
-            var_7dad96e1e2e75b1d = randomint(100) + 1;
-            if (var_7dad96e1e2e75b1d > 90) {
+            tablecheck = randomint(100) + 1;
+            if (tablecheck > 90) {
                 tablenum = 4;
-            } else if (var_7dad96e1e2e75b1d > 65) {
+            } else if (tablecheck > 65) {
                 tablenum = 2;
-            } else if (var_7dad96e1e2e75b1d > 40) {
+            } else if (tablecheck > 40) {
                 tablenum = 3;
             } else {
                 tablenum = 1;
             }
         }
     }
-    var_3624cc967d35dc5f = getdvar(@"hash_49bbf2da466dcc1b", "classtable:classtable_br_gulag");
-    return var_3624cc967d35dc5f + tablenum;
+    tableprefix = getdvar(@"hash_49bbf2da466dcc1b", "classtable:classtable_br_gulag");
+    return tableprefix + tablenum;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x109f5
 // Size: 0x498
 function creategulagarenaloadout(classindex) {
     loadout["loadoutArchetype"] = "archetype_assault";
-    loadout["loadoutPrimary"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.weapon;
-    loadout["loadoutPrimaryAttachment"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment1;
-    loadout["loadoutPrimaryAttachment2"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment2;
-    loadout["loadoutPrimaryAttachment3"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment3;
-    loadout["loadoutPrimaryAttachment4"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment4;
-    loadout["loadoutPrimaryAttachment5"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment5;
-    loadout["loadoutPrimaryCamo"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.camo;
-    loadout["loadoutPrimaryReticle"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.reticle;
-    loadout["loadoutSecondary"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.weapon;
-    loadout["loadoutSecondaryAttachment"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment1;
-    loadout["loadoutSecondaryAttachment2"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment2;
-    loadout["loadoutSecondaryAttachment3"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment3;
-    loadout["loadoutSecondaryAttachment4"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment4;
-    loadout["loadoutSecondaryAttachment5"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment5;
-    loadout["loadoutSecondaryCamo"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.camo;
-    loadout["loadoutSecondaryReticle"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.reticle;
+    loadout["loadoutPrimary"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.weapon;
+    loadout["loadoutPrimaryAttachment"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment1;
+    loadout["loadoutPrimaryAttachment2"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment2;
+    loadout["loadoutPrimaryAttachment3"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment3;
+    loadout["loadoutPrimaryAttachment4"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment4;
+    loadout["loadoutPrimaryAttachment5"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.attachment5;
+    loadout["loadoutPrimaryCamo"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.camo;
+    loadout["loadoutPrimaryReticle"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).primaryweapon.reticle;
+    loadout["loadoutSecondary"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.weapon;
+    loadout["loadoutSecondaryAttachment"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment1;
+    loadout["loadoutSecondaryAttachment2"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment2;
+    loadout["loadoutSecondaryAttachment3"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment3;
+    loadout["loadoutSecondaryAttachment4"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment4;
+    loadout["loadoutSecondaryAttachment5"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.attachment5;
+    loadout["loadoutSecondaryCamo"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.camo;
+    loadout["loadoutSecondaryReticle"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).secondaryweapon.reticle;
     loadout["loadoutMeleeSlot"] = "none";
-    loadout["loadoutEquipmentPrimary"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).equipment.primary;
-    loadout["loadoutEquipmentSecondary"] = namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).equipment.secondary;
+    loadout["loadoutEquipmentPrimary"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).equipment.primary;
+    loadout["loadoutEquipmentSecondary"] = scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).equipment.secondary;
     loadout["loadoutStreakType"] = "assault";
     loadout["loadoutKillstreak1"] = "none";
     loadout["loadoutKillstreak2"] = "none";
     loadout["loadoutKillstreak3"] = "none";
     loadout["loadoutSuper"] = "super_br_extract";
-    loadout["loadoutPerks"] = [0:namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).perks.perk1, 1:namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).perks.perk2, 2:namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).perks.perk3, 3:namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).extraperks.perk1, 4:namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).extraperks.perk2, 5:namespace_d19129e4fa5d176::function_c7a0b640c398497(level.gulagloadouttable, classindex).extraperks.perk3];
+    loadout["loadoutPerks"] = [scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).perks.perk1, scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).perks.perk2, scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).perks.perk3, scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).extraperks.perk1, scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).extraperks.perk2, scripts/mp/class::function_c7a0b640c398497(level.gulagloadouttable, classindex).extraperks.perk3];
     loadout["loadoutGesture"] = "playerData";
     loadout["tableColumn"] = classindex;
     return loadout;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10e95
 // Size: 0x274
@@ -5458,24 +5492,20 @@ function playergivearenaloadout(arena, loadoutindex) {
         return;
     }
     if (function_d4b0eef0a0924094("getArenaLoadout", arena)) {
-        goto LOC_000000b9;
-    }
-    if (function_cfe304859f30e747("getArenaLoadout")) {
+    } else if (function_cfe304859f30e747("getArenaLoadout")) {
         self.pers["gamemodeLoadout"] = function_3cceb052d780fef1("getArenaLoadout", arena);
     } else {
         self.pers["gamemodeLoadout"] = level.gulagloadouts[loadoutindex];
         checkforarenaloadoutoverride(loadoutindex);
-    LOC_000000b9:
     }
-LOC_000000b9:
     self.class = "gamemode";
     self.prevweaponobj = undefined;
     /#
         if (getdvarint(@"hash_9144df4be848d0b7", 1)) {
             if (isdefined(self.values)) {
-                var_f0cc30cf70bb0a1d = self.values["<unknown string>"];
-                if (isdefined(var_f0cc30cf70bb0a1d)) {
-                    foreach (value in var_f0cc30cf70bb0a1d) {
+                allowmovementvalues = self.values["<unknown string>"];
+                if (isdefined(allowmovementvalues)) {
+                    foreach (value in allowmovementvalues) {
                         if (isdefined(value) && isdefined(value.value) && isdefined(value.str_id)) {
                             function_2e096d17b6286e29(self, "<unknown string>" + value.str_id, value.value);
                         }
@@ -5484,10 +5514,10 @@ LOC_000000b9:
             }
         }
     #/
-    struct = namespace_d19129e4fa5d176::loadout_getclassstruct();
-    struct = namespace_d19129e4fa5d176::loadout_updateclass(struct, "gamemode");
-    namespace_d19129e4fa5d176::preloadandqueueclassstruct(struct, 1, 1);
-    namespace_d19129e4fa5d176::giveloadout(self.team, "gamemode", 0, 0);
+    struct = scripts/mp/class::loadout_getclassstruct();
+    struct = scripts/mp/class::loadout_updateclass(struct, "gamemode");
+    scripts/mp/class::preloadandqueueclassstruct(struct, 1, 1);
+    scripts/mp/class::giveloadout(self.team, "gamemode", 0, 0);
     if (function_ea01c1e7a2cff70d("shouldGiveMaxAmmoPrimary", arena)) {
         self givemaxammo(struct.loadoutprimaryobject);
     } else {
@@ -5506,7 +5536,7 @@ LOC_000000b9:
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11110
 // Size: 0x275
@@ -5557,11 +5587,11 @@ function checkforarenaloadoutoverride(loadoutindex) {
         self.pers["gamemodeLoadout"]["loadoutSecondaryAttachment3"] = "none";
         self.pers["gamemodeLoadout"]["loadoutSecondaryAttachment4"] = "none";
         self.pers["gamemodeLoadout"]["loadoutSecondaryAttachment5"] = "none";
-        self.pers["gamemodeLoadout"]["loadoutPerks"] = [0:"specialty_null"];
+        self.pers["gamemodeLoadout"]["loadoutPerks"] = ["specialty_null"];
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1138c
 // Size: 0xd2
@@ -5569,9 +5599,9 @@ function getloadoutindex() {
     if (getdvarint(@"hash_f97d261e2f377ad9", 1) == 0) {
         return;
     }
-    var_7940dcde72827af7 = getdvarint(@"hash_4f38b76441d4b900", -1);
-    if (var_7940dcde72827af7 > -1 && var_7940dcde72827af7 < level.gulagloadouts.size) {
-        return var_7940dcde72827af7;
+    overrideindex = getdvarint(@"hash_4f38b76441d4b900", -1);
+    if (overrideindex > -1 && overrideindex < level.gulagloadouts.size) {
+        return overrideindex;
     }
     if (getdvar(@"hash_6ef30f04f9851a88") != "") {
         if (!isdefined(level.gulagloadoutindex) || level.gulagloadoutindex >= level.gulagloadouts.size) {
@@ -5585,7 +5615,7 @@ function getloadoutindex() {
     return index;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11466
 // Size: 0xf4
@@ -5594,66 +5624,66 @@ function function_aa0549e91dad2fb9(arena) {
     arena endon("matchEnded");
     level endon("game_ended");
     self endon("death_or_disconnect");
-    var_9587b4bb609d006e = level.gulag.timelimit;
+    oldtimelimit = level.gulag.timelimit;
     level.gulag.timelimit = 180;
     iprintln("Loadout verification starting in 3 seconds.");
     wait(3);
     iprintln("Verification start!");
-    for (var_465df4a45cdb81bf = 0; var_465df4a45cdb81bf < level.gulagloadouts.size; var_465df4a45cdb81bf++) {
-        iprintln("Loadout: " + var_465df4a45cdb81bf);
-        playergivearenaloadout(arena, var_465df4a45cdb81bf);
+    for (testindex = 0; testindex < level.gulagloadouts.size; testindex++) {
+        iprintln("Loadout: " + testindex);
+        playergivearenaloadout(arena, testindex);
         wait(5);
         _switchtoweapon(self.secondaryweapon);
         wait(4);
     }
     playergivearenaloadout(arena, 0);
-    level.gulag.timelimit = var_9587b4bb609d006e;
+    level.gulag.timelimit = oldtimelimit;
     iprintln("Verification done!");
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11561
 // Size: 0x2ba
 function setupdomendflag(arena) {
     if (function_7effa8a355ddc886()) {
-        var_37e3a1eaa43ea82c = getgroundposition(arena.center + (0, 530, 0), 1);
+        flaglocation = getgroundposition(arena.center + (0, 530, 0), 1);
         if (isdefined(arena.var_1df1acee38dcca72)) {
-            var_37e3a1eaa43ea82c = getgroundposition(arena.var_1df1acee38dcca72, 1);
+            flaglocation = getgroundposition(arena.var_1df1acee38dcca72, 1);
         }
-        var_d0ead7e588a015c5 = getdvarint(@"hash_177d32d81bd6bc15", 450);
-        var_1230ea36a300368 = var_37e3a1eaa43ea82c;
+        domradius = getdvarint(@"hash_177d32d81bd6bc15", 450);
+        groundorg = flaglocation;
     } else if (function_6e3541fd8fab45bc()) {
-        var_37e3a1eaa43ea82c = getgroundposition(arena.center, 1);
+        flaglocation = getgroundposition(arena.center, 1);
         if (isdefined(arena.var_1df1acee38dcca72)) {
-            var_37e3a1eaa43ea82c = getgroundposition(arena.var_1df1acee38dcca72, 1);
+            flaglocation = getgroundposition(arena.var_1df1acee38dcca72, 1);
         }
-        var_d0ead7e588a015c5 = getdvarint(@"hash_177d32d81bd6bc15", 100);
-        var_1230ea36a300368 = var_37e3a1eaa43ea82c;
+        domradius = getdvarint(@"hash_177d32d81bd6bc15", 100);
+        groundorg = flaglocation;
     } else {
-        var_d0ead7e588a015c5 = getdvarint(@"hash_177d32d81bd6bc15", 50);
-        var_1230ea36a300368 = getgroundposition(arena.center, 1);
+        domradius = getdvarint(@"hash_177d32d81bd6bc15", 50);
+        groundorg = getgroundposition(arena.center, 1);
     }
     arena.dom = spawnstruct();
-    arena.dom.trigger = spawn("trigger_radius", var_1230ea36a300368, 0, int(var_d0ead7e588a015c5), int(level.br_domheight));
+    arena.dom.trigger = spawn("trigger_radius", groundorg, 0, int(domradius), int(level.br_domheight));
     arena.dom.trigger.objectivekey = "_a";
-    arenaflag = namespace_98b55913d2326ac8::setupobjective(arena.dom.trigger, "neutral", undefined, 1);
+    arenaflag = scripts/mp/gametypes/obj_dom::setupobjective(arena.dom.trigger, "neutral", undefined, 1);
     arenaflag.onuse = &arenaflag_onuse;
     arenaflag.onbeginuse = &arenaflag_onusebegin;
     arenaflag.onenduse = &arenaflag_onuseend;
     arenaflag.onuseupdate = &arenaflag_onuseupdate;
     arenaflag.oncontested = &arenaflag_oncontested;
     arenaflag.isarena = 1;
-    arenaflag namespace_19b4203b51d56488::pinobjiconontriggertouch();
+    arenaflag scripts/mp/gameobjects::pinobjiconontriggertouch();
     arenaflag.id = "domFlag";
     if (function_7effa8a355ddc886()) {
-        arenaflag namespace_19b4203b51d56488::setcapturebehavior("all_teams_dom_together");
+        arenaflag scripts/mp/gameobjects::setcapturebehavior("all_teams_dom_together");
     } else {
-        arenaflag namespace_19b4203b51d56488::setcapturebehavior("persistent");
+        arenaflag scripts/mp/gameobjects::setcapturebehavior("persistent");
     }
     arenaflag.scriptable delete();
     arenaflag.ignorestomp = 1;
-    arenaflag namespace_19b4203b51d56488::requestid(0, 1, undefined, 0, 0);
+    arenaflag scripts/mp/gameobjects::requestid(0, 1, undefined, 0, 0);
     arenaflag.visibilitymanuallycontrolled = 1;
     arenaflag arenaflag_setenabled(0);
     arenaflag arenaflag_setvisible(arena, 0);
@@ -5661,7 +5691,7 @@ function setupdomendflag(arena) {
     arena.dom.arenaflag = arenaflag;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11822
 // Size: 0xb9
@@ -5674,22 +5704,22 @@ function domgulagsounds(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x118e2
 // Size: 0x52
 function arenaflag_setenabled(enable) {
     if (enable) {
-        namespace_19b4203b51d56488::allowuse("any");
-        self.trigger namespace_3c37cb17ade254d::trigger_on();
-    } else {
-        namespace_19b4203b51d56488::allowuse("none");
-        self.trigger namespace_3c37cb17ade254d::trigger_off();
-        namespace_19b4203b51d56488::resetcaptureprogress();
+        scripts/mp/gameobjects::allowuse("any");
+        self.trigger scripts/engine/utility::trigger_on();
+        return;
     }
+    scripts/mp/gameobjects::allowuse("none");
+    self.trigger scripts/engine/utility::trigger_off();
+    scripts/mp/gameobjects::resetcaptureprogress();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1193b
 // Size: 0xb9
@@ -5701,20 +5731,20 @@ function arenaflag_setvisible(arena, enable, preview, var_ddf49b0f7bd17a0c) {
             icon = level.iconovertime;
         }
         thread arenaflag_objectiveshow(arena);
-        thread namespace_19b4203b51d56488::setobjectivestatusicons(icon);
-        thread namespace_19b4203b51d56488::setownerteam("neutral");
-        thread namespace_98b55913d2326ac8::updateflagstate("idle", 0, "none");
+        thread scripts/mp/gameobjects::setobjectivestatusicons(icon);
+        thread scripts/mp/gameobjects::setownerteam("neutral");
+        thread scripts/mp/gametypes/obj_dom::updateflagstate("idle", 0, "none");
         self.flagmodel show();
         thread arenaflag_showflagoutline(arena, 1);
         if (!istrue(preview)) {
             setovertimeomnvarenabled(arena, 1);
         }
-    } else {
-        thread arenaflag_setvisibledisableinternal(arena, preview, var_ddf49b0f7bd17a0c);
+        return;
     }
+    thread arenaflag_setvisibledisableinternal(arena, preview, var_ddf49b0f7bd17a0c);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x119fb
 // Size: 0x91
@@ -5727,7 +5757,7 @@ function arenaflag_setvisibledisableinternal(arena, preview, var_ddf49b0f7bd17a0
     function_127c772f981aefc1(arena);
     thread arenaflag_showflagoutline(arena, 0);
     thread arenaflag_objectivehide(var_ddf49b0f7bd17a0c);
-    thread namespace_98b55913d2326ac8::updateflagstate("off", 0, "none");
+    thread scripts/mp/gametypes/obj_dom::updateflagstate("off", 0, "none");
     self.flagmodel hide(1);
     if (!istrue(preview)) {
         setovertimeomnvarenabled(arena, 0);
@@ -5735,7 +5765,7 @@ function arenaflag_setvisibledisableinternal(arena, preview, var_ddf49b0f7bd17a0
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11a93
 // Size: 0x7a
@@ -5753,7 +5783,7 @@ function arenaflag_setvisibleplayer(enable, player) {
     thread arenaflag_showflagoutlineplayer(enable, player);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x11b14
 // Size: 0x31
@@ -5763,7 +5793,7 @@ function arenaflag_previewflag(arena, time) {
     thread arenaflag_setvisible(arena, 0, 1, 1);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11b4c
 // Size: 0xdf
@@ -5778,7 +5808,7 @@ function arenaflag_objectiveshow(arena) {
     objective_showtoplayersinmask(self.objidnum);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11c32
 // Size: 0x3a
@@ -5788,7 +5818,7 @@ function arenaflag_objectivehide(var_ddf49b0f7bd17a0c) {
     objective_showtoplayersinmask(self.objidnum);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11c73
 // Size: 0xe7
@@ -5801,29 +5831,29 @@ function arenaflag_showflagoutline(arena, enable) {
             self.flagmodel hudoutlineenableforclients(arena.arenaplayers, "outline_nodepth_orange");
             self.flagmodel function_5226227bce83ebe9(1, "team_hundred_fifty_one");
         }
-    } else {
-        if (arena.jailedplayers.size > 0) {
-            self.flagmodel hudoutlinedisableforclients(arena.jailedplayers);
-        }
-        if (arena.arenaplayers.size > 0) {
-            self.flagmodel hudoutlinedisableforclients(arena.arenaplayers);
-        }
+        return;
+    }
+    if (arena.jailedplayers.size > 0) {
+        self.flagmodel hudoutlinedisableforclients(arena.jailedplayers);
+    }
+    if (arena.arenaplayers.size > 0) {
+        self.flagmodel hudoutlinedisableforclients(arena.arenaplayers);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11d61
 // Size: 0x40
 function arenaflag_showflagoutlineplayer(enable, player) {
     if (enable) {
         self.flagmodel hudoutlineenableforclient(player, "outline_nodepth_orange");
-    } else {
-        self.flagmodel hudoutlinedisableforclient(player);
+        return;
     }
+    self.flagmodel hudoutlinedisableforclient(player);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11da8
 // Size: 0x1c6
@@ -5836,7 +5866,7 @@ function arenaflag_onusebegin(player) {
         var_ec49c5fcbd1dfb1a = getdvarint(@"hash_d74aaf9013c8609", 3);
     }
     player.iscapturing = 1;
-    ownerteam = namespace_19b4203b51d56488::getownerteam();
+    ownerteam = scripts/mp/gameobjects::getownerteam();
     if (ownerteam == "neutral") {
         player setclientomnvar("ui_objective_pinned_text_param", 1);
     }
@@ -5845,247 +5875,247 @@ function arenaflag_onusebegin(player) {
         self.didstatusnotify = 0;
     }
     usetime = var_ec49c5fcbd1dfb1a;
-    namespace_19b4203b51d56488::setusetime(usetime);
+    scripts/mp/gameobjects::setusetime(usetime);
     if (istrue(level.capturedecay)) {
-        thread namespace_19b4203b51d56488::useobjectdecay(player.team);
+        thread scripts/mp/gameobjects::useobjectdecay(player.team);
     }
     if (usetime > 0) {
-        foreach (var_31210ce93279d451 in self.arena.arenaplayers) {
-            if (var_31210ce93279d451 != player && var_31210ce93279d451.team != player.team) {
-                self.prevownerteam = var_31210ce93279d451.team;
+        foreach (arenaplayer in self.arena.arenaplayers) {
+            if (arenaplayer != player && arenaplayer.team != player.team) {
+                self.prevownerteam = arenaplayer.team;
                 break;
             }
         }
-        namespace_98b55913d2326ac8::updateflagcapturestate(player.team);
-        namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_taking", "waypoint_losing");
+        scripts/mp/gametypes/obj_dom::updateflagcapturestate(player.team);
+        scripts/mp/gameobjects::setobjectivestatusicons("waypoint_taking", "waypoint_losing");
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f75
 // Size: 0x5c
-function arenaflag_onuseupdate(team, progress, change, var_4b22e50e504339fe) {
-    ownerteam = namespace_19b4203b51d56488::getownerteam();
+function arenaflag_onuseupdate(team, progress, change, capplayer) {
+    ownerteam = scripts/mp/gameobjects::getownerteam();
     if (progress > 0.05 && change && !self.didstatusnotify) {
         self.didstatusnotify = 1;
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11fd8
 // Size: 0xec
 function arenaflag_onuseend(team, player, success) {
     if (function_7effa8a355ddc886() && isdefined(player) && success) {
-        player thread namespace_44abc05161e2e2cb::showsplash("br_ai_gulag_overtime_end");
+        player thread scripts/mp/hud_message::showsplash("br_ai_gulag_overtime_end");
     }
     self.didstatusnotify = 0;
     if (success) {
-        namespace_5a22b6f3a56f7e9b::objective_show_progress(self.objidnum, 0);
+        scripts/mp/objidpoolmanager::objective_show_progress(self.objidnum, 0);
     }
     if (isplayer(player)) {
         player.iscapturing = 0;
         player setclientomnvar("ui_objective_pinned_text_param", 0);
         player.ui_dom_securing = undefined;
     }
-    ownerteam = namespace_19b4203b51d56488::getownerteam();
+    ownerteam = scripts/mp/gameobjects::getownerteam();
     if (ownerteam == "neutral") {
-        namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_captureneutral");
-        thread namespace_98b55913d2326ac8::updateflagstate("idle", 0);
+        scripts/mp/gameobjects::setobjectivestatusicons("waypoint_captureneutral");
+        thread scripts/mp/gametypes/obj_dom::updateflagstate("idle", 0);
     } else {
-        namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_defend", "waypoint_capture");
-        thread namespace_98b55913d2326ac8::updateflagstate(ownerteam, 0);
+        scripts/mp/gameobjects::setobjectivestatusicons("waypoint_defend", "waypoint_capture");
+        thread scripts/mp/gametypes/obj_dom::updateflagstate(ownerteam, 0);
     }
     if (!success) {
         self.neutralized = 0;
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x120cb
 // Size: 0x127
-function arenaflag_setcaptured(team, var_22282e7d48ca3400) {
-    namespace_19b4203b51d56488::setownerteam(team);
-    self notify("capture", var_22282e7d48ca3400);
-    self notify("assault", var_22282e7d48ca3400);
-    namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_defending", "waypoint_capture");
+function arenaflag_setcaptured(team, credit_player) {
+    scripts/mp/gameobjects::setownerteam(team);
+    self notify("capture", credit_player);
+    self notify("assault", credit_player);
+    scripts/mp/gameobjects::setobjectivestatusicons("waypoint_defending", "waypoint_capture");
     self.neutralized = 0;
-    thread namespace_98b55913d2326ac8::updateflagstate(team, 0, team);
+    thread scripts/mp/gametypes/obj_dom::updateflagstate(team, 0, team);
     if (self.touchlist[team].size == 0 && isdefined(self.oldtouchlist)) {
         self.touchlist = self.oldtouchlist;
     }
-    foreach (var_31210ce93279d451 in self.arena.arenaplayers) {
-        if (var_31210ce93279d451 != var_22282e7d48ca3400 && var_31210ce93279d451.team != team && isdefined(self.assisttouchlist[var_31210ce93279d451.team])) {
-            self.assisttouchlist[var_31210ce93279d451.team] = [];
+    foreach (arenaplayer in self.arena.arenaplayers) {
+        if (arenaplayer != credit_player && arenaplayer.team != team && isdefined(self.assisttouchlist[arenaplayer.team])) {
+            self.assisttouchlist[arenaplayer.team] = [];
             break;
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x121f9
 // Size: 0x13c
-function arenaflag_onuse(var_22282e7d48ca3400) {
-    team = var_22282e7d48ca3400.team;
+function arenaflag_onuse(credit_player) {
+    team = credit_player.team;
     self.capturetime = gettime();
     self.neutralized = 0;
-    arenaflag_setcaptured(team, var_22282e7d48ca3400);
+    arenaflag_setcaptured(team, credit_player);
     if (!self.neutralized && !function_7effa8a355ddc886()) {
         foreach (player in self.arena.arenaplayers) {
             if (isalive(player) && player.team != team) {
                 if (function_1980065ce4dc067b()) {
                     player thread gulagplayerlost(self.arena, "br_twotwo_gulag_lost_flag", 1);
-                } else {
-                    player thread gulagplayerlost(self.arena);
+                    continue;
                 }
+                player thread gulagplayerlost(self.arena);
             }
         }
         thread handleendarena(self.arena);
         if (function_1980065ce4dc067b()) {
-            var_22282e7d48ca3400 namespace_6ea7652ec407cc80::function_dc0a56e258889cb(self.arena, "br_twotwo_gulag_win_flag");
+            credit_player namespace_6ea7652ec407cc80::function_dc0a56e258889cb(self.arena, "br_twotwo_gulag_win_flag");
         }
         self.firstcapture = 0;
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1233c
 // Size: 0x2e
 function arenaflag_oncontested() {
-    namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_contested");
-    namespace_5a22b6f3a56f7e9b::objective_set_progress_team(self.objidnum, undefined);
-    thread namespace_98b55913d2326ac8::updateflagstate("contested", 0);
+    scripts/mp/gameobjects::setobjectivestatusicons("waypoint_contested");
+    scripts/mp/objidpoolmanager::objective_set_progress_team(self.objidnum, undefined);
+    thread scripts/mp/gametypes/obj_dom::updateflagstate("contested", 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12371
 // Size: 0x27d
-function getarenaomnvarbitpackinginfo(var_ac85b79dfc4e45c6, value) {
-    var_64571e3aeccd1a07 = 0;
-    var_8534515023afc188 = 0;
+function getarenaomnvarbitpackinginfo(dataref, value) {
+    bitoffset = 0;
+    bitwidth = 0;
     var_8e90fa6d5789ad63 = "";
-    switch (var_ac85b79dfc4e45c6) {
+    switch (dataref) {
     case #"hash_f5d0ab7e55587e1d":
-        var_ecabdc27d567d5a1 = [0:0, 1:8, 2:"ui_br_gulag_players_1"];
+        var_ecabdc27d567d5a1 = [0, 8, "ui_br_gulag_players_1"];
         var_8e90fa6d5789ad63 = var_ecabdc27d567d5a1[2];
-        var_8534515023afc188 = var_ecabdc27d567d5a1[1];
-        var_64571e3aeccd1a07 = var_ecabdc27d567d5a1[0];
+        bitwidth = var_ecabdc27d567d5a1[1];
+        bitoffset = var_ecabdc27d567d5a1[0];
         value = value + 1;
         break;
     case #"hash_f5d0aa7e55587c8a":
-        var_ecabdd27d567d7d4 = [0:8, 1:8, 2:"ui_br_gulag_players_1"];
+        var_ecabdd27d567d7d4 = [8, 8, "ui_br_gulag_players_1"];
         var_8e90fa6d5789ad63 = var_ecabdd27d567d7d4[2];
-        var_8534515023afc188 = var_ecabdd27d567d7d4[1];
-        var_64571e3aeccd1a07 = var_ecabdd27d567d7d4[0];
+        bitwidth = var_ecabdd27d567d7d4[1];
+        bitoffset = var_ecabdd27d567d7d4[0];
         value = value + 1;
         break;
     case #"hash_622ca631d10c4370":
-        var_ecabde27d567da07 = [0:16, 1:8, 2:"ui_br_gulag_players_1"];
+        var_ecabde27d567da07 = [16, 8, "ui_br_gulag_players_1"];
         var_8e90fa6d5789ad63 = var_ecabde27d567da07[2];
-        var_8534515023afc188 = var_ecabde27d567da07[1];
-        var_64571e3aeccd1a07 = var_ecabde27d567da07[0];
+        bitwidth = var_ecabde27d567da07[1];
+        bitoffset = var_ecabde27d567da07[0];
         value = value + 1;
         break;
     case #"hash_622ca731d10c4503":
-        var_ecabdf27d567dc3a = [0:24, 1:8, 2:"ui_br_gulag_players_1"];
+        var_ecabdf27d567dc3a = [24, 8, "ui_br_gulag_players_1"];
         var_8e90fa6d5789ad63 = var_ecabdf27d567dc3a[2];
-        var_8534515023afc188 = var_ecabdf27d567dc3a[1];
-        var_64571e3aeccd1a07 = var_ecabdf27d567dc3a[0];
+        bitwidth = var_ecabdf27d567dc3a[1];
+        bitoffset = var_ecabdf27d567dc3a[0];
         value = value + 1;
         break;
     case #"hash_e89fe3aac33c10c9":
-        var_ecabe027d567de6d = [0:0, 1:8, 2:"ui_br_gulag_data"];
+        var_ecabe027d567de6d = [0, 8, "ui_br_gulag_data"];
         var_8e90fa6d5789ad63 = var_ecabe027d567de6d[2];
-        var_8534515023afc188 = var_ecabe027d567de6d[1];
-        var_64571e3aeccd1a07 = var_ecabe027d567de6d[0];
+        bitwidth = var_ecabe027d567de6d[1];
+        bitoffset = var_ecabe027d567de6d[0];
         value = value + 1;
         break;
     case #"hash_848cf681a543f242":
-        var_ecabd127d567bd70 = [0:8, 1:8, 2:"ui_br_gulag_data"];
+        var_ecabd127d567bd70 = [8, 8, "ui_br_gulag_data"];
         var_8e90fa6d5789ad63 = var_ecabd127d567bd70[2];
-        var_8534515023afc188 = var_ecabd127d567bd70[1];
-        var_64571e3aeccd1a07 = var_ecabd127d567bd70[0];
+        bitwidth = var_ecabd127d567bd70[1];
+        bitoffset = var_ecabd127d567bd70[0];
         break;
     case #"hash_848cf781a543f3d5":
-        var_ecabd227d567bfa3 = [0:16, 1:8, 2:"ui_br_gulag_data"];
+        var_ecabd227d567bfa3 = [16, 8, "ui_br_gulag_data"];
         var_8e90fa6d5789ad63 = var_ecabd227d567bfa3[2];
-        var_8534515023afc188 = var_ecabd227d567bfa3[1];
-        var_64571e3aeccd1a07 = var_ecabd227d567bfa3[0];
+        bitwidth = var_ecabd227d567bfa3[1];
+        bitoffset = var_ecabd227d567bfa3[0];
         break;
     default:
         if (!function_1980065ce4dc067b()) {
             /#
-                assertmsg("Unknown player info '" + var_ac85b79dfc4e45c6 + "' requested for packing into gulag omnvar!");
+                assertmsg("Unknown player info '" + dataref + "' requested for packing into gulag omnvar!");
             #/
         }
         break;
     }
-    return [0:var_64571e3aeccd1a07, 1:var_8534515023afc188, 2:var_8e90fa6d5789ad63, 3:value];
+    return [bitoffset, bitwidth, var_8e90fa6d5789ad63, value];
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x125f6
 // Size: 0xaf
-function packarenaomnvardata(arena, var_8e90fa6d5789ad63, value, var_64571e3aeccd1a07, var_8534515023afc188) {
-    mask = int(pow(2, var_8534515023afc188)) - 1;
-    var_a463992091f1d483 = (value & mask) << var_64571e3aeccd1a07;
-    var_f8f977081d3da8b4 = ~(mask << var_64571e3aeccd1a07);
-    var_ee27f3f198276535 = arena.omnvardata[var_8e90fa6d5789ad63];
-    var_ed711aeaf5e8cb76 = var_ee27f3f198276535 & var_f8f977081d3da8b4;
-    var_82a90e56e416fa55 = var_ed711aeaf5e8cb76 + var_a463992091f1d483;
+function packarenaomnvardata(arena, var_8e90fa6d5789ad63, value, bitoffset, bitwidth) {
+    mask = int(pow(2, bitwidth)) - 1;
+    var_a463992091f1d483 = (value & mask) << bitoffset;
+    var_f8f977081d3da8b4 = ~(mask << bitoffset);
+    prevvalue = arena.omnvardata[var_8e90fa6d5789ad63];
+    cleanedbase = prevvalue & var_f8f977081d3da8b4;
+    var_82a90e56e416fa55 = cleanedbase + var_a463992091f1d483;
     arena.omnvardata[var_8e90fa6d5789ad63] = var_82a90e56e416fa55;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x126ac
 // Size: 0x8f
-function setarenaomnvar(arena, var_ac85b79dfc4e45c6, value) {
+function setarenaomnvar(arena, dataref, value) {
     /#
-        assert(isdefined(var_ac85b79dfc4e45c6) && isstring(var_ac85b79dfc4e45c6));
+        assert(isdefined(dataref) && isstring(dataref));
     #/
-    var_bfec5e27b42801e8 = getarenaomnvarbitpackinginfo(var_ac85b79dfc4e45c6, value);
+    var_bfec5e27b42801e8 = getarenaomnvarbitpackinginfo(dataref, value);
     value = var_bfec5e27b42801e8[3];
     var_8e90fa6d5789ad63 = var_bfec5e27b42801e8[2];
-    var_8534515023afc188 = var_bfec5e27b42801e8[1];
-    var_64571e3aeccd1a07 = var_bfec5e27b42801e8[0];
+    bitwidth = var_bfec5e27b42801e8[1];
+    bitoffset = var_bfec5e27b42801e8[0];
     if (var_8e90fa6d5789ad63 == "") {
         return;
     }
-    packarenaomnvardata(arena, var_8e90fa6d5789ad63, value, var_64571e3aeccd1a07, var_8534515023afc188);
+    packarenaomnvardata(arena, var_8e90fa6d5789ad63, value, bitoffset, bitwidth);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12742
 // Size: 0x40
-function setarenaomnvarplayertype(arena, var_ac85b79dfc4e45c6, player) {
+function setarenaomnvarplayertype(arena, dataref, player) {
     entnum = -1;
     if (isdefined(player)) {
         entnum = player getentitynumber();
     }
-    setarenaomnvar(arena, var_ac85b79dfc4e45c6, entnum);
+    setarenaomnvar(arena, dataref, entnum);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12789
 // Size: 0x44
-function setarenaomnvarhealthtype(arena, var_ac85b79dfc4e45c6, player) {
+function setarenaomnvarhealthtype(arena, dataref, player) {
     health = 0;
     if (isdefined(player)) {
         health = player.health;
     }
-    setarenaomnvar(arena, var_ac85b79dfc4e45c6, health);
+    setarenaomnvar(arena, dataref, health);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x127d4
 // Size: 0x1e3
@@ -6100,29 +6130,29 @@ function updatearenaomnvarplayers(arena) {
         player = arena.arenaplayers[i];
         setarenaomnvarplayertype(arena, "playerArena" + i, player);
     }
-    var_607899d4420fe1a5 = arena.matches[0];
-    if (!isdefined(var_607899d4420fe1a5)) {
-        var_607899d4420fe1a5 = [];
+    nextmatch = arena.matches[0];
+    if (!isdefined(nextmatch)) {
+        nextmatch = [];
     }
-    setarenaomnvarplayertype(arena, "playerJail0", var_607899d4420fe1a5[0]);
-    setarenaomnvarplayertype(arena, "playerJail1", var_607899d4420fe1a5[1]);
+    setarenaomnvarplayertype(arena, "playerJail0", nextmatch[0]);
+    setarenaomnvarplayertype(arena, "playerJail1", nextmatch[1]);
     var_87b2be9fef844de = array_combine(arena.jailedplayers, arena.arenaplayers);
     foreach (player in var_87b2be9fef844de) {
         if (!isdefined(player)) {
             continue;
         }
         player setclientomnvar("ui_br_gulag_players_1", arena.omnvardata["ui_br_gulag_players_1"]);
-        var_a55ab0ddab9125ff = ter_op(isdefined(player.gulagposition), player.gulagposition, 0);
-        var_793c4e46c0425bd2 = !isplayermatched(arena, player) && var_a55ab0ddab9125ff != 0;
+        queueposition = ter_op(isdefined(player.gulagposition), player.gulagposition, 0);
+        var_793c4e46c0425bd2 = !isplayermatched(arena, player) && queueposition != 0;
         if (var_793c4e46c0425bd2) {
             player setclientomnvar("ui_br_gulag_match_state", 0);
         }
-        var_82a90e56e416fa55 = var_793c4e46c0425bd2 | var_a55ab0ddab9125ff << 1;
+        var_82a90e56e416fa55 = var_793c4e46c0425bd2 | queueposition << 1;
         player setclientomnvar("ui_br_gulag_queue_position", var_82a90e56e416fa55);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x129be
 // Size: 0x29
@@ -6130,7 +6160,7 @@ function playersetgulagdataomnvar(arena) {
     self setclientomnvar("ui_br_gulag_data", arena.omnvardata["ui_br_gulag_data"]);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x129ee
 // Size: 0x145
@@ -6161,7 +6191,7 @@ function updatearenaomnvardata(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12b3a
 // Size: 0x1f
@@ -6169,55 +6199,55 @@ function resetarenaomnvardata(arena) {
     arena.omnvardata["ui_br_gulag_data"] = 0;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12b60
 // Size: 0x4f
 function playersetarenaomnvarwithloadout(arena) {
     if (!isdefined(self.gulagloadoutindex)) {
         self setclientomnvar("ui_br_gulag_data", arena.omnvardata["ui_br_gulag_data"]);
-    } else {
-        playersetomnvargulag(arena, "loadoutRow", self.gulagloadoutindex);
+        return;
     }
+    playersetomnvargulag(arena, "loadoutRow", self.gulagloadoutindex);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12bb6
 // Size: 0x9e
-function playersetomnvargulag(arena, var_ac85b79dfc4e45c6, value) {
+function playersetomnvargulag(arena, dataref, value) {
     /#
         assert(isplayer(self));
     #/
     /#
-        assert(isdefined(var_ac85b79dfc4e45c6) && isstring(var_ac85b79dfc4e45c6));
+        assert(isdefined(dataref) && isstring(dataref));
     #/
-    var_bfec6527b428114d = getarenaomnvarbitpackinginfo(var_ac85b79dfc4e45c6, value);
+    var_bfec6527b428114d = getarenaomnvarbitpackinginfo(dataref, value);
     value = var_bfec6527b428114d[3];
     var_8e90fa6d5789ad63 = var_bfec6527b428114d[2];
-    var_8534515023afc188 = var_bfec6527b428114d[1];
-    var_64571e3aeccd1a07 = var_bfec6527b428114d[0];
+    bitwidth = var_bfec6527b428114d[1];
+    bitoffset = var_bfec6527b428114d[0];
     if (var_8e90fa6d5789ad63 == "") {
         return;
     }
-    playerpackdataintogulagomnvar(arena, var_8e90fa6d5789ad63, value, var_64571e3aeccd1a07, var_8534515023afc188);
+    playerpackdataintogulagomnvar(arena, var_8e90fa6d5789ad63, value, bitoffset, bitwidth);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12c5b
 // Size: 0xa9
-function playerpackdataintogulagomnvar(arena, var_8e90fa6d5789ad63, value, var_64571e3aeccd1a07, var_8534515023afc188) {
-    mask = int(pow(2, var_8534515023afc188)) - 1;
-    var_a463992091f1d483 = (value & mask) << var_64571e3aeccd1a07;
-    var_f8f977081d3da8b4 = ~(mask << var_64571e3aeccd1a07);
-    var_ee27f3f198276535 = arena.omnvardata[var_8e90fa6d5789ad63];
-    var_ed711aeaf5e8cb76 = var_ee27f3f198276535 & var_f8f977081d3da8b4;
-    var_82a90e56e416fa55 = var_ed711aeaf5e8cb76 + var_a463992091f1d483;
+function playerpackdataintogulagomnvar(arena, var_8e90fa6d5789ad63, value, bitoffset, bitwidth) {
+    mask = int(pow(2, bitwidth)) - 1;
+    var_a463992091f1d483 = (value & mask) << bitoffset;
+    var_f8f977081d3da8b4 = ~(mask << bitoffset);
+    prevvalue = arena.omnvardata[var_8e90fa6d5789ad63];
+    cleanedbase = prevvalue & var_f8f977081d3da8b4;
+    var_82a90e56e416fa55 = cleanedbase + var_a463992091f1d483;
     self setclientomnvar(var_8e90fa6d5789ad63, var_82a90e56e416fa55);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12d0b
 // Size: 0x1c
@@ -6226,7 +6256,7 @@ function updateplayeromnvarsallmatches(arena) {
     updatearenaomnvardata(arena);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12d2e
 // Size: 0xaa
@@ -6241,7 +6271,7 @@ function playercleargulagomnvars(arena) {
     self setclientomnvar("ui_match_in_progress", 1);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12ddf
 // Size: 0xd3
@@ -6260,7 +6290,7 @@ function setovertimeomnvarprogress(arena, progress) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12eb9
 // Size: 0xf1
@@ -6283,7 +6313,7 @@ function setovertimeomnvarenabled(arena, enabled) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12fb1
 // Size: 0xc3
@@ -6296,9 +6326,9 @@ function playerhealthomnvarwatcher(arena) {
             assert(arena.arenaplayers[0] == self || arena.arenaplayers[1] == self);
         #/
     }
-    var_ac85b79dfc4e45c6 = "playerHealth0";
+    dataref = "playerHealth0";
     if (arena.arenaplayers[0] != self) {
-        var_ac85b79dfc4e45c6 = "playerHealth1";
+        dataref = "playerHealth1";
     }
     for (;;) {
         updatearenaomnvardata(arena);
@@ -6309,27 +6339,27 @@ function playerhealthomnvarwatcher(arena) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1307b
 // Size: 0x7a
 function function_b2307e71d93b96e7() {
-    var_77398c562251db39 = "";
+    cinematicname = "";
     if (level.var_43307855f189eb31.name == "gulag_twotwo") {
         if (function_5e0e3a24dbb1fae1()) {
-            var_77398c562251db39 = "gulag_enter_delta";
+            cinematicname = "gulag_enter_delta";
         } else if (function_eb4bce9b222e36ac() || level.mapname == "mp_jup_br_mechanics") {
-            var_77398c562251db39 = "jup_wz_gulag_enter";
+            cinematicname = "jup_wz_gulag_enter";
         } else {
-            var_77398c562251db39 = "gulag_enter";
+            cinematicname = "gulag_enter";
         }
     } else {
-        var_77398c562251db39 = "mp_donetsk_gulag_intro";
+        cinematicname = "mp_donetsk_gulag_intro";
     }
-    return var_77398c562251db39;
+    return cinematicname;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x130fd
 // Size: 0x71
@@ -6338,8 +6368,8 @@ function playerpreloadintrocinematic(var_df728022f7b5d8ac) {
         if (isdefined(var_df728022f7b5d8ac)) {
             self preloadcinematicforplayer(var_df728022f7b5d8ac);
         } else {
-            var_77398c562251db39 = function_b2307e71d93b96e7();
-            self preloadcinematicforplayer(var_77398c562251db39);
+            cinematicname = function_b2307e71d93b96e7();
+            self preloadcinematicforplayer(cinematicname);
         }
     }
     /#
@@ -6349,7 +6379,7 @@ function playerpreloadintrocinematic(var_df728022f7b5d8ac) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13175
 // Size: 0xd4
@@ -6358,30 +6388,30 @@ function playerplayintrocinematic() {
         self setclientomnvar("ui_br_bink_overlay_state", 1);
         br_gulag_intro = function_17ee301cf0b5ba85("br_gulag_intro");
         self setplayermusicstate(br_gulag_intro);
-        if (namespace_d3d40f75bb4e4c32::isbrpracticemode()) {
+        if (scripts/mp/gametypes/br_public::isBrPracticeMode()) {
             self setsoundsubmix("iw8_br_gulag_tutorial", 0.5);
         } else {
             self setsoundsubmix("solo_cin_igc_music", 0.5);
         }
-        if (level.gulag.var_86f0de18e07f0b7f) {
+        if (level.gulag.preloadcinematic) {
             self function_786fee88b4749dff(0);
         } else {
-            var_77398c562251db39 = function_b2307e71d93b96e7();
-            self playcinematicforplayer(var_77398c562251db39);
+            cinematicname = function_b2307e71d93b96e7();
+            self playcinematicforplayer(cinematicname);
         }
         self.playinggulagbink = 1;
         level notify("update_circle_hide");
-    } else {
-        gulagloadingtext();
+        return;
     }
+    gulagloadingtext();
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13250
 // Size: 0x94
 function function_ca008cc22b07ba4e() {
-    if (level.gulag.var_3fdedda393e951f9 && !isbot(self)) {
+    if (level.gulag.outrocinematic && !isbot(self)) {
         if (level.var_43307855f189eb31.name == "gulag_twotwo") {
             self setclientomnvar("ui_br_bink_overlay_state", 10);
             br_gulag_outro = function_17ee301cf0b5ba85("br_gulag_outro");
@@ -6393,7 +6423,7 @@ function function_ca008cc22b07ba4e() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x132eb
 // Size: 0x11
@@ -6401,26 +6431,26 @@ function playershowskippromptcinematic() {
     self setclientomnvar("ui_br_bink_overlay_state", 2);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13303
 // Size: 0x96
 function playerwaittillcinematiccomplete(starttime) {
     if (istrue(level.gulag.introcinematic) && !isbot(self) && !self isplayerheadless()) {
         _freezecontrols(1, undefined, "gulagCinematic");
-        var_fdef1592ffda3a4a = _playerwaittillcinematiccompleteinternal(starttime);
-        if (!isdefined(var_fdef1592ffda3a4a)) {
-            var_fdef1592ffda3a4a = 1;
+        cinematicskipped = _playerwaittillcinematiccompleteinternal(starttime);
+        if (!isdefined(cinematicskipped)) {
+            cinematicskipped = 1;
         }
         _freezecontrols(0, 0, "gulagCinematic");
         self setclientomnvar("ui_br_bink_overlay_state", 5);
-        self stopcinematicforplayer(var_fdef1592ffda3a4a);
+        self stopcinematicforplayer(cinematicskipped);
         self.playinggulagbink = undefined;
         namespace_8bfdb6eb5a3df67a::function_e68e4bb4f65f5fe4();
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x133a0
 // Size: 0x56
@@ -6428,14 +6458,14 @@ function _playerwaittillcinematiccompleteinternal(starttime) {
     self endon("bink_complete");
     while (gettime() - starttime < level.gulag.var_d373eba3425dcc77) {
         if (self crouchbuttonpressed() || self usebuttonpressed() || self jumpbuttonpressed()) {
-            return 1;
+            return true;
         }
         waitframe();
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x133fe
 // Size: 0x26
@@ -6445,36 +6475,36 @@ function playercinematiccompletecallback(channel, val) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1342b
 // Size: 0x188
-function setupcellspawn(arena, var_8ff292386a0993f5) {
+function setupcellspawn(arena, cellspawnstruct) {
     if (!level.gulag.usecellspawns) {
         return;
     }
-    if (!isdefined(var_8ff292386a0993f5.target)) {
+    if (!isdefined(cellspawnstruct.target)) {
         level.gulag.usecellspawns = 0;
         return;
     }
-    doors = getentarray(var_8ff292386a0993f5.target, "targetname");
+    doors = getentarray(cellspawnstruct.target, "targetname");
     if (doors.size > 1) {
         level.gulag.usecellspawns = 0;
         return;
     }
-    var_8ff292386a0993f5.door = getent(var_8ff292386a0993f5.target, "targetname");
-    if (isdefined(var_8ff292386a0993f5.door)) {
-        var_8ff292386a0993f5.door.closed = 1;
-        clip = getent(var_8ff292386a0993f5.door.target, "targetname");
+    cellspawnstruct.door = getent(cellspawnstruct.target, "targetname");
+    if (isdefined(cellspawnstruct.door)) {
+        cellspawnstruct.door.closed = 1;
+        clip = getent(cellspawnstruct.door.target, "targetname");
         clip delete();
-        var_5db7e7538d068035 = anglestoforward(var_8ff292386a0993f5.door.angles);
-        var_8ff292386a0993f5.door.closepos = var_8ff292386a0993f5.door.origin;
-        var_8ff292386a0993f5.door.openpos = var_8ff292386a0993f5.door.origin + var_5db7e7538d068035 * 60;
+        dirslide = anglestoforward(cellspawnstruct.door.angles);
+        cellspawnstruct.door.closepos = cellspawnstruct.door.origin;
+        cellspawnstruct.door.openpos = cellspawnstruct.door.origin + dirslide * 60;
     }
-    return var_8ff292386a0993f5;
+    return cellspawnstruct;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x135bb
 // Size: 0xf4
@@ -6501,15 +6531,15 @@ function function_8cd7d5a73921bd93(waittime) {
             var_54b9737d53438793 = "";
         }
         if (isdefined(player.gulag)) {
-            var_39b32cc7f5d22bcc = player.gulag;
+            playergulag = player.gulag;
         } else {
-            var_39b32cc7f5d22bcc = "";
+            playergulag = "";
         }
-        logstring("[gulag_getPlayerStateWait] Player " + playername + " has .gulagArena : " + var_54b9737d53438793 + " and .gulag : " + var_39b32cc7f5d22bcc);
+        logstring("[gulag_getPlayerStateWait] Player " + playername + " has .gulagArena : " + var_54b9737d53438793 + " and .gulag : " + playergulag);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x136b6
 // Size: 0x31
@@ -6517,7 +6547,7 @@ function usecellspawns(arena) {
     return level.gulag.usecellspawns && arena.cellspawns.size > 0;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x136ef
 // Size: 0x4e
@@ -6531,7 +6561,7 @@ function function_c797c1f0977d41d1(name, func) {
     level.var_3b627d8f1e31c880[name] = func;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13744
 // Size: 0x48
@@ -6546,22 +6576,22 @@ function function_d4b0eef0a0924094(name, args) {
     return function_f9bad90f93aa6cc5(func, args);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13794
 // Size: 0x3a
 function function_175e22055ae274a3(name) {
     if (!isdefined(level.var_3b627d8f1e31c880)) {
-        return 0;
+        return false;
     }
     func = level.var_3b627d8f1e31c880[name];
     if (!isdefined(func)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x137d6
 // Size: 0x6d
@@ -6576,7 +6606,7 @@ function function_ed608478232fdeb2(name, func) {
     level.var_c201dcd7429584bc[name][count] = func;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1384a
 // Size: 0x75
@@ -6587,7 +6617,7 @@ function function_c724f178c2df7240(name, args) {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x138c6
 // Size: 0xda
@@ -6596,7 +6626,7 @@ function function_f9bad90f93aa6cc5(func, args, var_5f77deffb7fb41ed) {
         args = [];
     }
     if (!isarray(args)) {
-        args = [0:args];
+        args = [args];
     }
     /#
         assert(args.size <= 4);
@@ -6622,7 +6652,7 @@ function function_f9bad90f93aa6cc5(func, args, var_5f77deffb7fb41ed) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x139a7
 // Size: 0xab
@@ -6633,14 +6663,14 @@ function function_43acb991ce957f46(name, args) {
         result = function_f9bad90f93aa6cc5(func, args, 1);
         if (isarray(result)) {
             results = array_combine(results, result);
-        } else {
-            results[results.size] = result;
+            continue;
         }
+        results[results.size] = result;
     }
     return results;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13a5a
 // Size: 0x1e
@@ -6648,7 +6678,7 @@ function function_ea01c1e7a2cff70d(name, args) {
     return function_36f536ef06da0ce3(name, args, 1);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13a80
 // Size: 0x1d
@@ -6656,22 +6686,22 @@ function function_4dce98c81d58a751(name, args) {
     return function_36f536ef06da0ce3(name, args, 0);
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13aa5
 // Size: 0x94
-function function_36f536ef06da0ce3(name, args, var_3899386f6822b979) {
+function function_36f536ef06da0ce3(name, args, testbool) {
     funcs = function_b55d1a467d39cd3(name);
     foreach (func in funcs) {
         result = function_f9bad90f93aa6cc5(func, args, 1);
-        if (result == var_3899386f6822b979) {
-            return var_3899386f6822b979;
+        if (result == testbool) {
+            return testbool;
         }
     }
-    return !var_3899386f6822b979;
+    return !testbool;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13b41
 // Size: 0x39
@@ -6686,7 +6716,7 @@ function function_b55d1a467d39cd3(name) {
     return funcs;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13b82
 // Size: 0x160
@@ -6700,10 +6730,10 @@ function function_728a4949ace743bd() {
     level.br_infils_disabled = 1;
     level.prematchperiodend = 0;
     level.br_circle_disabled = 1;
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
-    namespace_4b0406965e556711::gameflagset("br_ready_to_jump");
+    scripts/mp/flags::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagset("br_ready_to_jump");
     wait(2);
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             if (!istrue(player.br_infilstarted)) {
                 continue;
@@ -6714,13 +6744,15 @@ function function_728a4949ace743bd() {
             if (istrue(player.var_b66f9ef48a944881)) {
                 continue;
             }
-            if (player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
+            if (player scripts/mp/gametypes/br_public::isplayerinorgoingtogulag()) {
                 continue;
             }
-            if (player namespace_d3d40f75bb4e4c32::iseligibleforteamrevive()) {
+            if (player scripts/mp/gametypes/br_public::iseligibleforteamrevive()) {
                 level thread function_45170abc166b9d37(player);
-            } else if (isalive(player)) {
-                player namespace_a12dc1d0c8a64946::_suicide(0);
+                continue;
+            }
+            if (isalive(player)) {
+                player scripts/mp/utility/damage::_suicide(0);
                 wait(0.5);
                 break;
             }
@@ -6729,45 +6761,45 @@ function function_728a4949ace743bd() {
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13ce9
 // Size: 0x64
 function function_45170abc166b9d37(player) {
     player.var_b66f9ef48a944881 = 1;
     player.gulagloser = 0;
-    if (namespace_71073fa38f11492::isbrgametypefuncdefined("kioskRevivePlayer")) {
-        player namespace_71073fa38f11492::runbrgametypefunc("kioskRevivePlayer", player, 0);
+    if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("kioskRevivePlayer")) {
+        player scripts/mp/gametypes/br_gametypes::runbrgametypefunc("kioskRevivePlayer", player, 0);
     } else {
-        player namespace_47fd1e79a44628cd::playergulagautowin("kioskRevivePlayer", player, 0);
+        player scripts/mp/gametypes/br_gulag::playergulagautowin("kioskRevivePlayer", player, 0);
     }
     wait(1);
     player.var_b66f9ef48a944881 = undefined;
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13d54
 // Size: 0x76
-function function_2e096d17b6286e29(player, var_228a5de8e2cd330, var_90e74e77d08d5afc) {
+function function_2e096d17b6286e29(player, debugreason, var_90e74e77d08d5afc) {
     /#
         if (getdvarint(@"hash_9144df4be848d0b7", 1)) {
-            logstring("<unknown string>" + function_53c4c53197386572(player.name, "<unknown string>") + "<unknown string>" + player.clientid + "<unknown string>" + var_228a5de8e2cd330 + "<unknown string>" + var_90e74e77d08d5afc);
+            logstring("<unknown string>" + default_to(player.name, "<unknown string>") + "<unknown string>" + player.clientid + "<unknown string>" + debugreason + "<unknown string>" + var_90e74e77d08d5afc);
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13dd1
 // Size: 0x82
 function function_94eb48dd1cd7f972(player, reason, entering) {
     if (getdvarint(@"hash_62b35c4bae3c1f16", 0)) {
-        logstring("[GULAG DEBUG] : Jailed player " + ter_op(entering, "entering", "exitting") + " - player: " + function_53c4c53197386572(player.name, "") + ", id: " + player.clientid + ", reason: " + reason);
+        logstring("[GULAG DEBUG] : Jailed player " + ter_op(entering, "entering", "exitting") + " - player: " + default_to(player.name, "") + ", id: " + player.clientid + ", reason: " + reason);
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13e5a
 // Size: 0x190
@@ -6778,7 +6810,7 @@ function function_bfff708b15cd22d0() {
     level notify("validate_gulag_shutdown");
     level endon("validate_gulag_shutdown");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         wait(1);
         var_ce22c32e1c0d1ae3 = 1;
         foreach (arena in level.gulag.arenas) {
@@ -6795,21 +6827,21 @@ function function_bfff708b15cd22d0() {
         if (!isalive(player)) {
             continue;
         }
-        if (player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
-            var_cd5428d556223258 = -1;
+        if (player scripts/mp/gametypes/br_public::isplayerinorgoingtogulag()) {
+            arenaindex = -1;
             if (isdefined(player.arena)) {
-                var_cd5428d556223258 = array_find(level.gulag.arenas, arena);
+                arenaindex = array_find(level.gulag.arenas, arena);
             }
-            namespace_9c840bb9f2ecbf00::demoforcesre("Player " + function_53c4c53197386572(player.name, "???") + " in gulag after shutdown. Arena index " + var_cd5428d556223258);
+            scripts/mp/utility/script::demoforcesre("Player " + default_to(player.name, "???") + " in gulag after shutdown. Arena index " + arenaindex);
         }
     }
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13ff1
 // Size: 0x339
-function function_e6c82ddc6a58c02f(args) {
+function runcommand(args) {
     /#
         if (args.size == 0) {
             return;
@@ -6824,48 +6856,74 @@ function function_e6c82ddc6a58c02f(args) {
         }
         if (command == "<unknown string>") {
             debugwarptojail();
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             debugwarptojailsingle();
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             debugresetguns();
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             debugfakeduel();
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             debugfakewinner();
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             debugshutdown();
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             function_389315f9f33826c3();
             setdevdvar(@"hash_57dfa3352864c15b", 0);
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             foreach (arena in level.gulag.arenas) {
                 updateplayeromnvarsallmatches(arena);
             }
             setdevdvar(@"hash_2f29e85b9ff6eddc", 0);
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             thread function_e15c373c57d02f90(args);
-        } else if (command == "<unknown string>") {
-            thread function_9d6440635bf1f49(args);
-        } else if (command == "<unknown string>") {
-            host = namespace_d576b6dc7cef9c62::gethostplayer();
+            return;
+        }
+        if (command == "<unknown string>") {
+            thread debugmatches(args);
+            return;
+        }
+        if (command == "<unknown string>") {
+            host = scripts/mp/gamelogic::gethostplayer();
             host setclientomnvar("<unknown string>", 1);
             host playcinematicforplayer("<unknown string>");
             setdvar(@"hash_da200314926d462c", 0);
-        } else if (command == "<unknown string>") {
-            host = namespace_d576b6dc7cef9c62::gethostplayer();
+            return;
+        }
+        if (command == "<unknown string>") {
+            host = scripts/mp/gamelogic::gethostplayer();
             host setclientomnvar("<unknown string>", 0);
             host stopcinematicforplayer();
             setdvar(@"hash_76bb2f96ffd637c8", 0);
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             level.gulag.maxuses = 1;
             foreach (player in level.players) {
                 player.gulaguses = 1;
-                if (player namespace_d3d40f75bb4e4c32::function_15da77dc195bd80a() && !player namespace_d3d40f75bb4e4c32::function_8b2396647673be50()) {
-                    player namespace_cb965d2f71fefddc::function_17e127f2e3771058();
+                if (player scripts/mp/gametypes/br_public::function_15da77dc195bd80a() && !player scripts/mp/gametypes/br_public::function_8b2396647673be50()) {
+                    player scripts/mp/gametypes/br_pickups::function_17e127f2e3771058();
                 }
                 player function_dd93503cf95b6277();
             }
-        } else if (command == "<unknown string>") {
+            return;
+        }
+        if (command == "<unknown string>") {
             level.gulag.maxuses = 1;
             foreach (player in level.players) {
                 player.gulaguses = 0;
@@ -6875,44 +6933,44 @@ function function_e6c82ddc6a58c02f(args) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14331
 // Size: 0x270
-function function_70deb58a1637a9d(var_c74a7dd2a424671c) {
+function function_70deb58a1637a9d(arenanum) {
     /#
         function_8641137c3dcf6c96();
-        if (var_c74a7dd2a424671c >= level.gulag.arenas.size) {
+        if (arenanum >= level.gulag.arenas.size) {
             return;
         }
-        arena = level.gulag.arenas[var_c74a7dd2a424671c];
-        var_7bb30e94033bc91d = level.gulag.var_7bb30e94033bc91d;
+        arena = level.gulag.arenas[arenanum];
+        matchdebug = level.gulag.matchdebug;
         if (!istrue(arena.isjailbreak)) {
-            var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d setdevtext("<unknown string>" + var_c74a7dd2a424671c + "<unknown string>");
+            matchdebug.arenastring setdevtext("<unknown string>" + arenanum + "<unknown string>");
         } else {
-            var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d setdevtext("<unknown string>" + var_c74a7dd2a424671c + "<unknown string>");
+            matchdebug.arenastring setdevtext("<unknown string>" + arenanum + "<unknown string>");
         }
         if (!istrue(arena.isjailbreak)) {
             if (arena.arenaplayers.size > 0) {
-                var_7bb30e94033bc91d.currentstring.alpha = 1;
-                for (playerindex = 0; playerindex < var_7bb30e94033bc91d.var_df1a8324a4e896ea.size; playerindex++) {
+                matchdebug.currentstring.alpha = 1;
+                for (playerindex = 0; playerindex < matchdebug.playerstrings.size; playerindex++) {
                     if (isdefined(arena.arenaplayers[playerindex])) {
-                        var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex] setplayernamestring(arena.arenaplayers[playerindex]);
-                        var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex].alpha = 1;
+                        matchdebug.playerstrings[playerindex] setplayernamestring(arena.arenaplayers[playerindex]);
+                        matchdebug.playerstrings[playerindex].alpha = 1;
                     }
                 }
             }
         } else {
-            var_7bb30e94033bc91d.currentstring.alpha = 1;
+            matchdebug.currentstring.alpha = 1;
         }
-        for (var_b94827c01cb82f1e = 0; var_b94827c01cb82f1e < var_7bb30e94033bc91d.matches.size; var_b94827c01cb82f1e++) {
-            match = var_7bb30e94033bc91d.matches[var_b94827c01cb82f1e];
-            if (var_b94827c01cb82f1e < arena.matches.size) {
+        for (matchindex = 0; matchindex < matchdebug.matches.size; matchindex++) {
+            match = matchdebug.matches[matchindex];
+            if (matchindex < arena.matches.size) {
                 match.debugstring.alpha = 1;
-                for (playerindex = 0; playerindex < match.var_df1a8324a4e896ea.size; playerindex++) {
-                    if (playerindex < arena.matches[var_b94827c01cb82f1e].size) {
-                        match.var_df1a8324a4e896ea[playerindex] setplayernamestring(arena.matches[var_b94827c01cb82f1e][playerindex]);
-                        match.var_df1a8324a4e896ea[playerindex].alpha = 1;
+                for (playerindex = 0; playerindex < match.playerstrings.size; playerindex++) {
+                    if (playerindex < arena.matches[matchindex].size) {
+                        match.playerstrings[playerindex] setplayernamestring(arena.matches[matchindex][playerindex]);
+                        match.playerstrings[playerindex].alpha = 1;
                         if (istrue(arena.isjailbreak)) {
                             match.debugstring.alpha = 0;
                         }
@@ -6923,7 +6981,7 @@ function function_70deb58a1637a9d(var_c74a7dd2a424671c) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x145a8
 // Size: 0x3af
@@ -6934,95 +6992,95 @@ function function_b9192ebe3ccbd06e() {
         var_ecdabfb8180b91b5 = 40;
         var_a7d9b923f6845a7a = 15;
         var_a6fe8f42e76395c = 0.75;
-        var_a07826a263e0c062 = 0;
-        level.gulag.var_7bb30e94033bc91d = spawnstruct();
-        var_7bb30e94033bc91d = level.gulag.var_7bb30e94033bc91d;
-        var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
-        var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d namespace_52f6938dd902c7d0::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + var_a07826a263e0c062 * var_a7d9b923f6845a7a);
-        var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d setdevtext("<unknown string>");
-        var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d.color = (1, 1, 0);
-        var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d.alpha = 1;
-        var_a07826a263e0c062++;
-        var_7bb30e94033bc91d.currentstring = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
-        var_7bb30e94033bc91d.currentstring namespace_52f6938dd902c7d0::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + var_a07826a263e0c062 * var_a7d9b923f6845a7a);
-        var_7bb30e94033bc91d.currentstring setdevtext("<unknown string>");
-        var_7bb30e94033bc91d.currentstring.color = (0, 1, 0);
-        var_7bb30e94033bc91d.currentstring.alpha = 1;
-        var_a07826a263e0c062++;
-        var_7bb30e94033bc91d.var_df1a8324a4e896ea = [];
+        yline = 0;
+        level.gulag.matchdebug = spawnstruct();
+        matchdebug = level.gulag.matchdebug;
+        matchdebug.arenastring = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
+        matchdebug.arenastring scripts/mp/hud_util::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + yline * var_a7d9b923f6845a7a);
+        matchdebug.arenastring setdevtext("<unknown string>");
+        matchdebug.arenastring.color = (1, 1, 0);
+        matchdebug.arenastring.alpha = 1;
+        yline++;
+        matchdebug.currentstring = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
+        matchdebug.currentstring scripts/mp/hud_util::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + yline * var_a7d9b923f6845a7a);
+        matchdebug.currentstring setdevtext("<unknown string>");
+        matchdebug.currentstring.color = (0, 1, 0);
+        matchdebug.currentstring.alpha = 1;
+        yline++;
+        matchdebug.playerstrings = [];
         for (playerindex = 0; playerindex < 2; playerindex++) {
-            var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex] = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
-            var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex] namespace_52f6938dd902c7d0::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + var_a07826a263e0c062 * var_a7d9b923f6845a7a);
-            var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex] setdevtext("<unknown string>" + playerindex);
-            var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex].alpha = 1;
-            var_a07826a263e0c062++;
+            matchdebug.playerstrings[playerindex] = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
+            matchdebug.playerstrings[playerindex] scripts/mp/hud_util::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + yline * var_a7d9b923f6845a7a);
+            matchdebug.playerstrings[playerindex] setdevtext("<unknown string>" + playerindex);
+            matchdebug.playerstrings[playerindex].alpha = 1;
+            yline++;
         }
-        var_7bb30e94033bc91d.matches = [];
-        for (var_b94827c01cb82f1e = 0; var_b94827c01cb82f1e < var_896781a8a9b653bf; var_b94827c01cb82f1e++) {
-            var_7bb30e94033bc91d.matches[var_b94827c01cb82f1e] = spawnstruct();
-            match = var_7bb30e94033bc91d.matches[var_b94827c01cb82f1e];
+        matchdebug.matches = [];
+        for (matchindex = 0; matchindex < var_896781a8a9b653bf; matchindex++) {
+            matchdebug.matches[matchindex] = spawnstruct();
+            match = matchdebug.matches[matchindex];
             match.debugstring = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
-            match.debugstring namespace_52f6938dd902c7d0::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + var_a07826a263e0c062 * var_a7d9b923f6845a7a);
-            match.debugstring setdevtext("<unknown string>" + var_b94827c01cb82f1e + 1);
+            match.debugstring scripts/mp/hud_util::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + yline * var_a7d9b923f6845a7a);
+            match.debugstring setdevtext("<unknown string>" + matchindex + 1);
             match.debugstring.color = (0, 1, 0);
             match.debugstring.alpha = 1;
-            var_a07826a263e0c062++;
-            match.var_df1a8324a4e896ea = [];
+            yline++;
+            match.playerstrings = [];
             for (playerindex = 0; playerindex < 2; playerindex++) {
-                match.var_df1a8324a4e896ea[playerindex] = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
-                match.var_df1a8324a4e896ea[playerindex] namespace_52f6938dd902c7d0::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + var_a07826a263e0c062 * var_a7d9b923f6845a7a);
-                match.var_df1a8324a4e896ea[playerindex].alpha = 1;
-                var_a07826a263e0c062++;
+                match.playerstrings[playerindex] = createserverfontstring("<unknown string>", var_a6fe8f42e76395c);
+                match.playerstrings[playerindex] scripts/mp/hud_util::setpoint("<unknown string>", "<unknown string>", var_a384829c3b11db56, var_ecdabfb8180b91b5 + yline * var_a7d9b923f6845a7a);
+                match.playerstrings[playerindex].alpha = 1;
+                yline++;
             }
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1495e
 // Size: 0x108
 function function_a2580c32e5169826() {
     /#
-        var_7bb30e94033bc91d = level.gulag.var_7bb30e94033bc91d;
-        var_7bb30e94033bc91d.var_f5d6ee8a9c2fd93d destroy();
-        var_7bb30e94033bc91d.currentstring destroy();
-        for (playerindex = 0; playerindex < var_7bb30e94033bc91d.var_df1a8324a4e896ea.size; playerindex++) {
-            var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex] destroy();
+        matchdebug = level.gulag.matchdebug;
+        matchdebug.arenastring destroy();
+        matchdebug.currentstring destroy();
+        for (playerindex = 0; playerindex < matchdebug.playerstrings.size; playerindex++) {
+            matchdebug.playerstrings[playerindex] destroy();
         }
-        for (var_b94827c01cb82f1e = 0; var_b94827c01cb82f1e < var_7bb30e94033bc91d.matches.size; var_b94827c01cb82f1e++) {
-            match = var_7bb30e94033bc91d.matches[var_b94827c01cb82f1e];
+        for (matchindex = 0; matchindex < matchdebug.matches.size; matchindex++) {
+            match = matchdebug.matches[matchindex];
             match.debugstring destroy();
-            for (playerindex = 0; playerindex < match.var_df1a8324a4e896ea.size; playerindex++) {
-                match.var_df1a8324a4e896ea[playerindex] destroy();
+            for (playerindex = 0; playerindex < match.playerstrings.size; playerindex++) {
+                match.playerstrings[playerindex] destroy();
             }
         }
-        level.gulag.var_7bb30e94033bc91d = undefined;
+        level.gulag.matchdebug = undefined;
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14a6d
 // Size: 0xfc
 function function_8641137c3dcf6c96() {
     /#
-        var_7bb30e94033bc91d = level.gulag.var_7bb30e94033bc91d;
-        var_7bb30e94033bc91d.currentstring.alpha = 0;
-        for (playerindex = 0; playerindex < var_7bb30e94033bc91d.var_df1a8324a4e896ea.size; playerindex++) {
-            var_7bb30e94033bc91d.var_df1a8324a4e896ea[playerindex].alpha = 0;
+        matchdebug = level.gulag.matchdebug;
+        matchdebug.currentstring.alpha = 0;
+        for (playerindex = 0; playerindex < matchdebug.playerstrings.size; playerindex++) {
+            matchdebug.playerstrings[playerindex].alpha = 0;
         }
-        for (var_b94827c01cb82f1e = 0; var_b94827c01cb82f1e < var_7bb30e94033bc91d.matches.size; var_b94827c01cb82f1e++) {
-            match = var_7bb30e94033bc91d.matches[var_b94827c01cb82f1e];
+        for (matchindex = 0; matchindex < matchdebug.matches.size; matchindex++) {
+            match = matchdebug.matches[matchindex];
             match.debugstring.alpha = 0;
-            for (playerindex = 0; playerindex < match.var_df1a8324a4e896ea.size; playerindex++) {
-                match.var_df1a8324a4e896ea[playerindex].alpha = 0;
+            for (playerindex = 0; playerindex < match.playerstrings.size; playerindex++) {
+                match.playerstrings[playerindex].alpha = 0;
             }
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b70
 // Size: 0xf6
@@ -7040,32 +7098,32 @@ function createserverfontstring(font, fontscale) {
         fontelem.xoffset = 0;
         fontelem.yoffset = 0;
         fontelem.children = [];
-        fontelem namespace_52f6938dd902c7d0::setparent(level.uiparent);
+        fontelem scripts/mp/hud_util::setparent(level.uiparent);
         fontelem.hidden = 0;
         fontelem.archived = 0;
         return fontelem;
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14c6d
 // Size: 0x65
 function function_389315f9f33826c3() {
     /#
         foreach (player in level.players) {
-            player namespace_1a507865f681850e::giveequipment("<unknown string>", "<unknown string>");
+            player scripts/mp/equipment::giveequipment("<unknown string>", "<unknown string>");
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14cd9
 // Size: 0x95
 function debugfakewinner() {
     /#
-        host = namespace_d576b6dc7cef9c62::gethostplayer();
+        host = scripts/mp/gamelogic::gethostplayer();
         if (isdefined(host)) {
             if (!isdefined(host.arena)) {
                 if (function_1980065ce4dc067b()) {
@@ -7075,40 +7133,40 @@ function debugfakewinner() {
                 }
                 host.arena = arena;
             }
-            if (isalive(host) && !host namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
-                host thread namespace_47fd1e79a44628cd::playerpulloutofgulagwin(host, "<unknown string>");
-            } else {
-                host thread namespace_b5b2280a66414fff::vip_respawnplayer(host, host, "<unknown string>");
+            if (isalive(host) && !host scripts/mp/gametypes/br_public::isplayerinorgoingtogulag()) {
+                host thread scripts/mp/gametypes/br_gulag::playerpulloutofgulagwin(host, "<unknown string>");
+                return;
             }
+            host thread scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(host, host, "<unknown string>");
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14d75
 // Size: 0x7d
 function function_e6bd56ae6d7e0e84() {
     /#
-        host = namespace_d576b6dc7cef9c62::gethostplayer();
+        host = scripts/mp/gamelogic::gethostplayer();
         if (isdefined(host) && !isalive(host)) {
             teammates = level.teamdata[host.team]["<unknown string>"];
             if (teammates.size > 0) {
                 teammate = teammates[0];
-                teammate namespace_cb965d2f71fefddc::addrespawntoken(1);
+                teammate scripts/mp/gametypes/br_pickups::addrespawntoken(1);
                 host playergulagautowin("<unknown string>", teammate, 1, 1);
             }
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14df9
 // Size: 0x14d
 function debugfakeduel() {
     /#
-        host = namespace_d576b6dc7cef9c62::gethostplayer();
+        host = scripts/mp/gamelogic::gethostplayer();
         if (isdefined(host)) {
             host setplayervargulagjail(0);
             enemy = getbot(host, 1);
@@ -7122,9 +7180,9 @@ function debugfakeduel() {
         players = [];
         counter = 0;
         foreach (entry in level.teamnamelist) {
-            foreach (var_736d8d9188ccbd45 in getteamdata(entry, "<unknown string>")) {
-                players[counter] = var_736d8d9188ccbd45;
-                var_736d8d9188ccbd45 setplayervargulagjail(0);
+            foreach (teamplayer in getteamdata(entry, "<unknown string>")) {
+                players[counter] = teamplayer;
+                teamplayer setplayervargulagjail(0);
                 counter++;
                 break;
             }
@@ -7137,18 +7195,18 @@ function debugfakeduel() {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f4d
 // Size: 0xc7
-function getbot(host, var_d35f07e55bff5855) {
+function getbot(host, oppositeteam) {
     /#
         foreach (player in level.players) {
             if (!isalive(player)) {
                 continue;
             }
             if (isbot(player) || istestclient(player)) {
-                if (!istrue(var_d35f07e55bff5855) && player.team == host.team || istrue(var_d35f07e55bff5855) && player.team != host.team) {
+                if (!istrue(oppositeteam) && player.team == host.team || istrue(oppositeteam) && player.team != host.team) {
                     return player;
                 }
             }
@@ -7156,7 +7214,7 @@ function getbot(host, var_d35f07e55bff5855) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1501b
 // Size: 0x65
@@ -7168,7 +7226,7 @@ function debugresetguns() {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15087
 // Size: 0x1c
@@ -7178,13 +7236,13 @@ function debugshutdown(type) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x150aa
 // Size: 0xee
 function debugwarptojail(single) {
     /#
-        host = namespace_d576b6dc7cef9c62::gethostplayer();
+        host = scripts/mp/gamelogic::gethostplayer();
         foreach (player in level.players) {
             if (isdefined(host) && player == host) {
                 continue;
@@ -7205,13 +7263,13 @@ function debugwarptojail(single) {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1519f
 // Size: 0xbb
 function debugwarptojailsingle() {
     /#
-        host = namespace_d576b6dc7cef9c62::gethostplayer();
+        host = scripts/mp/gamelogic::gethostplayer();
         if (!isdefined(host)) {
             debugwarptojail(1);
             return;
@@ -7219,7 +7277,7 @@ function debugwarptojailsingle() {
         start = host geteye();
         dir = anglestoforward(host getplayerangles());
         end = start + 8000 * dir;
-        trace = namespace_2a184fc4902783dc::_bullet_trace(start, end, 1, host);
+        trace = scripts/engine/trace::_bullet_trace(start, end, 1, host);
         if (isdefined(trace["<unknown string>"]) && isplayer(trace["<unknown string>"]) && isreallyalive(trace["<unknown string>"])) {
             player = trace["<unknown string>"];
             player initplayerjail();
@@ -7227,7 +7285,7 @@ function debugwarptojailsingle() {
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15261
 // Size: 0xaa
@@ -7238,18 +7296,20 @@ function function_e15c373c57d02f90(args) {
         }
         level.gulag.var_8e8b9f52b43a60b1 = int(args[1]);
         if (level.gulag.var_8e8b9f52b43a60b1 > -1 && !istrue(level.gulag.var_e15c373c57d02f90)) {
-            function_9d6440635bf1f49(args);
-        } else if (level.gulag.var_8e8b9f52b43a60b1 == -1 && istrue(level.gulag.var_e15c373c57d02f90)) {
-            function_9d6440635bf1f49(args);
+            debugmatches(args);
+            return;
+        }
+        if (level.gulag.var_8e8b9f52b43a60b1 == -1 && istrue(level.gulag.var_e15c373c57d02f90)) {
+            debugmatches(args);
         }
     #/
 }
 
-// Namespace br_gulag/namespace_47fd1e79a44628cd
+// Namespace br_gulag / scripts/mp/gametypes/br_gulag
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15312
 // Size: 0x48d
-function function_9d6440635bf1f49(args) {
+function debugmatches(args) {
     /#
         if (!isdefined(level.gulag.arenas)) {
             return;
@@ -7262,23 +7322,23 @@ function function_9d6440635bf1f49(args) {
             return;
         }
         level endon("<unknown string>");
-        while (1) {
-            foreach (var_cd5428d556223258, arena in level.gulag.arenas) {
+        while (true) {
+            foreach (arenaindex, arena in level.gulag.arenas) {
                 foreach (index, player in arena.arenaplayers) {
                     print3d(player.origin + (0, 0, 50), "<unknown string>" + index, (0, 1, 0));
                 }
                 foreach (index, player in arena.jailedplayers) {
                     print3d(player.origin + (0, 0, 50), "<unknown string>" + index);
                 }
-                print3d(arena.center, "<unknown string>" + var_cd5428d556223258, (1, 1, 0), 1, 2);
+                print3d(arena.center, "<unknown string>" + arenaindex, (1, 1, 0), 1, 2);
             }
             if (isdefined(level.gulag.var_8e8b9f52b43a60b1) && level.gulag.var_8e8b9f52b43a60b1 > -1) {
-                if (!isdefined(level.gulag.var_7bb30e94033bc91d)) {
+                if (!isdefined(level.gulag.matchdebug)) {
                     function_b9192ebe3ccbd06e();
                 } else {
                     function_70deb58a1637a9d(level.gulag.var_8e8b9f52b43a60b1);
                 }
-            } else if (isdefined(level.gulag.var_7bb30e94033bc91d)) {
+            } else if (isdefined(level.gulag.matchdebug)) {
                 function_a2580c32e5169826();
             }
             finish = getdvarvector(@"hash_fc389672a33645f", (0, -1, -1));

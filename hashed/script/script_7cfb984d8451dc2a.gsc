@@ -10,7 +10,7 @@
 
 #namespace namespace_82162455806f6229;
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83e
 // Size: 0x119
@@ -22,7 +22,7 @@ function init() {
     level.infilstruct.var_ae9e4023110acc6e = &function_ad4a7a73c7d7d9e0;
     level.infilstruct.var_477bd548940c3a78 = "mp_donetsk_c130_intro";
     level.infilstruct.var_10d27b439af13a2a = 3.2;
-    var_1809e16510055e87 = [0:"cam_orbit_br_ac130_player1", 1:"cam_orbit_br_ac130_player2", 2:"cam_orbit_br_ac130_player3", 3:"cam_orbit_br_ac130_player4"];
+    var_1809e16510055e87 = ["cam_orbit_br_ac130_player1", "cam_orbit_br_ac130_player2", "cam_orbit_br_ac130_player3", "cam_orbit_br_ac130_player4"];
     function_226e337633a44059(var_1809e16510055e87);
     function_ad12d29d41483e8a("prematch", &function_cd7e1a37d5e2ca2b);
     function_ad12d29d41483e8a("cinematic", &function_5901cd0be722f86a);
@@ -31,7 +31,7 @@ function init() {
     level._effect["vfx_br_infil_cloud_anim"] = loadfx("vfx/iw8_br/gameplay/infil/vfx_br_infil_cloud_anim");
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x95e
 // Size: 0xd15
@@ -57,29 +57,29 @@ function function_55f2480b4b819aea(movingc130) {
     animstruct.camera = animstruct spawn_script_model("generic_prop_x5", "camera");
     animstruct.camera linkto(animstruct.staticc130, "", (0, 0, 0), (0, 0, 0));
     if (isdefined(animstruct.movingc130)) {
-        animstruct.var_96fe3313d1bab862 = animstruct spawn_script_model("generic_prop_x5", "cameramoving");
-        animstruct.var_96fe3313d1bab862 linkto(animstruct.movingc130, "", (0, 0, 0), (0, 0, 0));
+        animstruct.movingcam = animstruct spawn_script_model("generic_prop_x5", "cameramoving");
+        animstruct.movingcam linkto(animstruct.movingc130, "", (0, 0, 0), (0, 0, 0));
     }
     animstruct.var_16cfd3cbf327feef = animstruct spawn_script_model("generic_prop_x5", "parent");
     animstruct.var_16cfd3cbf327feef linkto(animstruct.staticc130, "", (0, 0, 0), (0, 0, 0));
-    animstruct.var_b50860e78d9e1e5 = [];
-    animstruct.var_b50860e78d9e1e5[0] = animstruct spawn_script_model("tag_player", "playerTag1");
-    animstruct.var_b50860e78d9e1e5[1] = animstruct spawn_script_model("tag_player", "playerTag2");
-    animstruct.var_b50860e78d9e1e5[2] = animstruct spawn_script_model("tag_player", "playerTag3");
-    animstruct.var_b50860e78d9e1e5[3] = animstruct spawn_script_model("tag_player", "playerTag4");
-    animstruct.var_b50860e78d9e1e5[0] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_1", (0, 0, 0), (0, 0, 0));
-    animstruct.var_b50860e78d9e1e5[1] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_2", (0, 0, 0), (0, 0, 0));
-    animstruct.var_b50860e78d9e1e5[2] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_3", (0, 0, 0), (0, 0, 0));
-    animstruct.var_b50860e78d9e1e5[3] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_4", (0, 0, 0), (0, 0, 0));
-    animstruct.var_a552ec61e51ece6e = [];
-    animstruct.var_a552ec61e51ece6e[0] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player1");
-    animstruct.var_a552ec61e51ece6e[1] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player2");
-    animstruct.var_a552ec61e51ece6e[2] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player3");
-    animstruct.var_a552ec61e51ece6e[3] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player4");
-    animstruct.var_a552ec61e51ece6e[0] linkto(animstruct.var_b50860e78d9e1e5[0], "tag_player", (0, 0, 0), (0, 0, 0));
-    animstruct.var_a552ec61e51ece6e[1] linkto(animstruct.var_b50860e78d9e1e5[1], "tag_player", (0, 0, 0), (0, 0, 0));
-    animstruct.var_a552ec61e51ece6e[2] linkto(animstruct.var_b50860e78d9e1e5[2], "tag_player", (0, 0, 0), (0, 0, 0));
-    animstruct.var_a552ec61e51ece6e[3] linkto(animstruct.var_b50860e78d9e1e5[3], "tag_player", (0, 0, 0), (0, 0, 0));
+    animstruct.playertags = [];
+    animstruct.playertags[0] = animstruct spawn_script_model("tag_player", "playerTag1");
+    animstruct.playertags[1] = animstruct spawn_script_model("tag_player", "playerTag2");
+    animstruct.playertags[2] = animstruct spawn_script_model("tag_player", "playerTag3");
+    animstruct.playertags[3] = animstruct spawn_script_model("tag_player", "playerTag4");
+    animstruct.playertags[0] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_1", (0, 0, 0), (0, 0, 0));
+    animstruct.playertags[1] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_2", (0, 0, 0), (0, 0, 0));
+    animstruct.playertags[2] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_3", (0, 0, 0), (0, 0, 0));
+    animstruct.playertags[3] linkto(animstruct.var_16cfd3cbf327feef, "j_prop_4", (0, 0, 0), (0, 0, 0));
+    animstruct.playermodels = [];
+    animstruct.playermodels[0] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player1");
+    animstruct.playermodels[1] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player2");
+    animstruct.playermodels[2] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player3");
+    animstruct.playermodels[3] = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "player4");
+    animstruct.playermodels[0] linkto(animstruct.playertags[0], "tag_player", (0, 0, 0), (0, 0, 0));
+    animstruct.playermodels[1] linkto(animstruct.playertags[1], "tag_player", (0, 0, 0), (0, 0, 0));
+    animstruct.playermodels[2] linkto(animstruct.playertags[2], "tag_player", (0, 0, 0), (0, 0, 0));
+    animstruct.playermodels[3] linkto(animstruct.playertags[3], "tag_player", (0, 0, 0), (0, 0, 0));
     animstruct.doorchief = animstruct spawn_script_model("fullbody_usmc_ar_br_infil", "doorChief");
     animstruct.doorchief linkto(animstruct.var_16cfd3cbf327feef, "j_prop_5", (0, 0, 0), (0, 0, 0));
     animstruct.cloudanimfx = spawnfx(level._effect["vfx_br_infil_cloud_anim"], animstruct.staticc130.origin);
@@ -93,26 +93,26 @@ function function_55f2480b4b819aea(movingc130) {
         animstruct.packs[n] add_pack_modelanim(animstruct.movingc130, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_ac130"]);
     }
     animstruct.packs[n] add_pack_modelanim(animstruct.camera, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_cam"]);
-    if (isdefined(animstruct.var_96fe3313d1bab862)) {
-        animstruct.packs[n] add_pack_modelanim(animstruct.var_96fe3313d1bab862, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_cam"]);
+    if (isdefined(animstruct.movingcam)) {
+        animstruct.packs[n] add_pack_modelanim(animstruct.movingcam, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_cam"]);
     }
     animstruct.packs[n] add_pack_modelanim(animstruct.var_16cfd3cbf327feef, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_character_link"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player2"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player3"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player4"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player2"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player3"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player4"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player2"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player3"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player4"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player2"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player3"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player4"]);
     animstruct.packs[n] add_pack_modelanim(animstruct.doorchief, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_doorchief"]);
-    animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, [0:"j_prop_1", 1:"j_prop_2", 2:"j_prop_3", 3:"j_prop_4"], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_ac130"]);
+    animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, ["j_prop_1", "j_prop_2", "j_prop_3", "j_prop_4"], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_ac130"]);
     if (!isdefined(level.scr_notetrack["c130"]) || !isdefined(level.scr_notetrack["c130"]["any"]["gored"])) {
-        namespace_bc4a4b9456315863::addnotetrack_customfunction("c130", "gored", &function_4e1db4886edfa5b2);
-        namespace_bc4a4b9456315863::addnotetrack_customfunction("c130", "gogreen", &function_ecc93c094efc9af2);
-        namespace_bc4a4b9456315863::addnotetrack_customfunction("c130", "opendoor", &function_fd00edc34074bb24);
-        namespace_bc4a4b9456315863::addnotetrack_customfunction("c130", "transitionstart", &function_97b59eb002f8ddeb);
-        namespace_bc4a4b9456315863::addnotetrack_customfunction("camera", "transition", &function_88ba30853f3d01f0);
+        scripts/common/anim::addnotetrack_customfunction("c130", "gored", &function_4e1db4886edfa5b2);
+        scripts/common/anim::addnotetrack_customfunction("c130", "gogreen", &function_ecc93c094efc9af2);
+        scripts/common/anim::addnotetrack_customfunction("c130", "opendoor", &function_fd00edc34074bb24);
+        scripts/common/anim::addnotetrack_customfunction("c130", "transitionstart", &function_97b59eb002f8ddeb);
+        scripts/common/anim::addnotetrack_customfunction("camera", "transition", &transitionfunc);
     }
     n++;
     animstruct.packs[n] = animstruct create_animpack("looping", 1);
@@ -123,20 +123,20 @@ function function_55f2480b4b819aea(movingc130) {
         animstruct.packs[n] add_pack_modelanim(animstruct.movingc130.innards, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop2_plane"]);
     }
     animstruct.packs[n] add_pack_modelanim(animstruct.var_16cfd3cbf327feef, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_genpropx10"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl01"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl02"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl03"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.var_b50860e78d9e1e5[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl04"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl01"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl02"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl03"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.var_a552ec61e51ece6e[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl04"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl01"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl02"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl03"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl04"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl01"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl02"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl03"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl04"]);
     animstruct.packs[n] add_pack_modelanim(animstruct.doorchief, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_doorchief"]);
-    animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, [0:"j_prop_1", 1:"j_prop_2", 2:"j_prop_3", 3:"j_prop_4"]);
+    animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, ["j_prop_1", "j_prop_2", "j_prop_3", "j_prop_4"]);
     return animstruct;
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x167b
 // Size: 0x7a
@@ -152,7 +152,7 @@ function function_21ea09462d07ca25(array) {
     thread delaystreamtomovingplane();
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16fc
 // Size: 0xe9
@@ -175,7 +175,7 @@ function function_b33e50ed017d5ace(player, array) {
     self.doorchief showtoplayer(player);
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17ec
 // Size: 0x5f
@@ -187,7 +187,7 @@ function function_f90e2db4b34d7f57(array) {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1852
 // Size: 0x14
@@ -195,7 +195,7 @@ function function_60240beede5e1ab8(player, array) {
     
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x186d
 // Size: 0x11
@@ -204,7 +204,7 @@ function function_72145194f4f38714() {
     namespace_56a3588493afc984::cleanupents();
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1885
 // Size: 0x7f
@@ -218,7 +218,7 @@ function private clearsoundsubmixmpbrinfilanim() {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x190b
 // Size: 0x7f
@@ -232,7 +232,7 @@ function private clearsoundsubmixfadetoblackamb() {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1991
 // Size: 0x7f
@@ -246,40 +246,40 @@ function private clearsoundsubmixmpbrinfilac130() {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1a17
 // Size: 0x75
 function private offlight() {
     var_620d0024527f448c = getentitylessscriptablearray("infil_blinking_light", "script_noteworthy");
-    foreach (var_4d81cddc98ed9537 in var_620d0024527f448c) {
-        var_4d81cddc98ed9537 setscriptablepartstate("light_blinking_slow", "light_off_hold", 1);
+    foreach (lightcontroller in var_620d0024527f448c) {
+        lightcontroller setscriptablepartstate("light_blinking_slow", "light_off_hold", 1);
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1a93
 // Size: 0x7e
 function private function_4e1db4886edfa5b2(c130) {
     var_620d0024527f448c = getentitylessscriptablearray("infil_blinking_light", "script_noteworthy");
-    foreach (var_4d81cddc98ed9537 in var_620d0024527f448c) {
-        var_4d81cddc98ed9537 setscriptablepartstate("light_blinking_slow", "light_on", 1);
+    foreach (lightcontroller in var_620d0024527f448c) {
+        lightcontroller setscriptablepartstate("light_blinking_slow", "light_on", 1);
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b18
 // Size: 0x7e
 function private function_ecc93c094efc9af2(c130) {
     var_620d0024527f448c = getentitylessscriptablearray("infil_blinking_light", "script_noteworthy");
-    foreach (var_4d81cddc98ed9537 in var_620d0024527f448c) {
-        var_4d81cddc98ed9537 setscriptablepartstate("light_blinking_slow", "light_jump", 1);
+    foreach (lightcontroller in var_620d0024527f448c) {
+        lightcontroller setscriptablepartstate("light_blinking_slow", "light_jump", 1);
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b9d
 // Size: 0xae
@@ -293,7 +293,7 @@ function private function_fd00edc34074bb24(c130) {
     level.infilstruct.animstruct.doorchief setwind("100");
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1c52
 // Size: 0x8f
@@ -308,7 +308,7 @@ function private clearplayerwind() {
     self.doorchief setwind("0");
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1ce8
 // Size: 0x2f
@@ -316,11 +316,11 @@ function private function_97b59eb002f8ddeb(c130) {
     triggerfx(level.infilstruct.animstruct.cloudanimfx);
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1d1e
 // Size: 0x447
-function private function_88ba30853f3d01f0(c130) {
+function private transitionfunc(c130) {
     level.infilstruct.animstruct notify("infil_reset_light_dvars");
     level.infilstruct.animstruct clearplayerwind();
     var_1992f143059ac1d5 = 65;
@@ -340,15 +340,15 @@ function private function_88ba30853f3d01f0(c130) {
             if (!isdefined(player)) {
                 continue;
             }
-            cameraent = level.infilstruct.animstruct.var_96fe3313d1bab862;
+            cameraent = level.infilstruct.animstruct.movingcam;
             cameratag = undefined;
-            if (isarray(level.infilstruct.animstruct.var_2739b8c6b038ba5e.var_2336099a20080602.var_e6783d526b4a7212)) {
+            if (isarray(level.infilstruct.animstruct.activepack.camerainfo.var_e6783d526b4a7212)) {
                 /#
-                    assert(isdefined(player.infilanimindex) && player.infilanimindex <= level.infilstruct.animstruct.var_2739b8c6b038ba5e.var_2336099a20080602.var_e6783d526b4a7212.size);
+                    assert(isdefined(player.infilanimindex) && player.infilanimindex <= level.infilstruct.animstruct.activepack.camerainfo.var_e6783d526b4a7212.size);
                 #/
-                cameratag = level.infilstruct.animstruct.var_2739b8c6b038ba5e.var_2336099a20080602.var_e6783d526b4a7212[player.infilanimindex - 1];
+                cameratag = level.infilstruct.animstruct.activepack.camerainfo.var_e6783d526b4a7212[player.infilanimindex - 1];
             } else {
-                cameratag = level.infilstruct.animstruct.var_2739b8c6b038ba5e.var_2336099a20080602.var_e6783d526b4a7212;
+                cameratag = level.infilstruct.animstruct.activepack.camerainfo.var_e6783d526b4a7212;
             }
             player cameraunlink();
             player cameralinkto(cameraent, cameratag, 1, 1);
@@ -368,7 +368,7 @@ function private function_88ba30853f3d01f0(c130) {
     level thread clearsoundsubmixmpbrinfilac130();
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x216c
 // Size: 0x102
@@ -388,7 +388,7 @@ function private infil_light_dvars() {
     setdvar(@"hash_9ab6a766fc4e0c06", var_488f9b9fe1ead0a6);
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2275
 // Size: 0x131
@@ -400,23 +400,23 @@ function private delaystreamtomovingplane() {
         if (!isdefined(self.movingc130)) {
             return;
         }
-        var_11f3b4465c8b637b = self.movingc130.origin;
+        streamorigin = self.movingc130.origin;
         forward = getdvarint(@"hash_7abcda2d7aabbe4c", 0);
         if (forward > 0) {
             dir = anglestoforward(self.movingc130.angles);
-            var_11f3b4465c8b637b = self.movingc130.origin + dir * forward;
+            streamorigin = self.movingc130.origin + dir * forward;
         }
         foreach (player in level.infilstruct.players) {
             if (!isdefined(player)) {
                 continue;
             }
             player setpredictedstreamloaddist(0);
-            player namespace_d3d40f75bb4e4c32::playerstreamhintlocation(var_11f3b4465c8b637b);
+            player scripts/mp/gametypes/br_public::playerstreamhintlocation(streamorigin);
         }
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x23ad
 // Size: 0xac
@@ -428,12 +428,12 @@ function private stopstreamtomovingplane() {
             if (!isdefined(player)) {
                 continue;
             }
-            player thread namespace_d3d40f75bb4e4c32::playerclearstreamhintorigin();
+            player thread scripts/mp/gametypes/br_public::playerclearstreamhintorigin();
         }
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2460
 // Size: 0x29
@@ -444,7 +444,7 @@ function function_cd7e1a37d5e2ca2b() {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2490
 // Size: 0xc1
@@ -462,7 +462,7 @@ function function_5901cd0be722f86a() {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2558
 // Size: 0xc
@@ -470,7 +470,7 @@ function function_39c2cf6576478d41() {
     level thread setsoundsubmixfadetoblackamb();
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x256b
 // Size: 0x99
@@ -485,45 +485,46 @@ function private setsoundsubmixfadetoblackamb(players) {
     }
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x260b
 // Size: 0x1ff
 function function_ad4a7a73c7d7d9e0() {
     var_522a77434d41564a = self getplayerangles(1);
     playerforward = anglestoforward(var_522a77434d41564a);
-    var_4b52f031a2cbef8e = anglestoforward(level.infilstruct.c130.angles);
-    var_d8bb89f41ae3d919 = anglestoright(level.infilstruct.c130.angles);
-    var_172d42d175e16c61 = vectordot(playerforward, var_4b52f031a2cbef8e);
-    var_ed451f0ea36c48c6 = vectordot(playerforward, var_d8bb89f41ae3d919);
+    planeforward = anglestoforward(level.infilstruct.c130.angles);
+    planeright = anglestoright(level.infilstruct.c130.angles);
+    dotforward = vectordot(playerforward, planeforward);
+    dotright = vectordot(playerforward, planeright);
     if (!isdefined(self.infilanimindex)) {
         self.infilanimindex = 1;
     }
     var_8e3afd40d3c95b46 = "j_prop_" + self.infilanimindex + 2;
     cos45 = cos(45);
-    if (var_172d42d175e16c61 < -1 * cos45) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10"], 2:"sdr_mp_infil_ac130_jump", 3:var_8e3afd40d3c95b46];
+    if (dotforward < -1 * cos45) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10"], "sdr_mp_infil_ac130_jump", var_8e3afd40d3c95b46];
     }
-    if (var_ed451f0ea36c48c6 > cos45) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_90_l", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_l"], 2:"sdr_mp_infil_ac130_jump_90_l", 3:var_8e3afd40d3c95b46];
-    } else if (var_ed451f0ea36c48c6 < -1 * cos45) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_90_r", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_r"], 2:"sdr_mp_infil_ac130_jump_90_r", 3:var_8e3afd40d3c95b46];
-    } else if (var_ed451f0ea36c48c6 > 0) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_180_l", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_l"], 2:"sdr_mp_infil_ac130_jump_180_l", 3:var_8e3afd40d3c95b46];
-    } else {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_180_r", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_r"], 2:"sdr_mp_infil_ac130_jump_180_r", 3:var_8e3afd40d3c95b46];
+    if (dotright > cos45) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_l"], "sdr_mp_infil_ac130_jump_90_l", var_8e3afd40d3c95b46];
     }
+    if (dotright < -1 * cos45) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_r"], "sdr_mp_infil_ac130_jump_90_r", var_8e3afd40d3c95b46];
+    }
+    if (dotright > 0) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10_180_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_l"], "sdr_mp_infil_ac130_jump_180_l", var_8e3afd40d3c95b46];
+    }
+    return ["sdr_mp_infil_ac130_jump_genpropx10_180_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_r"], "sdr_mp_infil_ac130_jump_180_r", var_8e3afd40d3c95b46];
 }
 
-// Namespace namespace_82162455806f6229/namespace_6b61356959df5986
+// Namespace namespace_82162455806f6229 / namespace_6b61356959df5986
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2811
 // Size: 0x5b
 function function_52bedae2ced8e191() {
-    var_a910600eadf5e31c = level._effect["vfx_br_ac130_clouds"];
+    cloudfx = level._effect["vfx_br_ac130_clouds"];
     var_8b26de022a9f35f = level._effect["vfx_br_ac130_oneshot"];
-    if (isdefined(var_a910600eadf5e31c)) {
-        stopfxontag(var_a910600eadf5e31c, self, "tag_body");
+    if (isdefined(cloudfx)) {
+        stopfxontag(cloudfx, self, "tag_body");
     }
     if (isdefined(var_8b26de022a9f35f)) {
         stopfxontag(var_8b26de022a9f35f, self, "tag_body");

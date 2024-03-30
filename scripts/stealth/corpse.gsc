@@ -7,7 +7,7 @@
 
 #namespace corpse;
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10d
 // Size: 0x2f
@@ -18,7 +18,7 @@ function corpse_init_entity() {
     self.stealth.corpse = spawnstruct();
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x143
 // Size: 0x8d
@@ -28,12 +28,12 @@ function corpse_init_level() {
     }
     level.stealth.corpse = spawnstruct();
     level.stealth.corpse.reset_time = 30;
-    level namespace_e124d8b75dab4be0::set_stealth_func("saw_corpse", &corpse_seen);
-    level namespace_e124d8b75dab4be0::set_stealth_func("found_corpse", &corpse_found);
+    level scripts/stealth/utility::set_stealth_func("saw_corpse", &corpse_seen);
+    level scripts/stealth/utility::set_stealth_func("found_corpse", &corpse_found);
     set_corpse_ranges_default();
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d7
 // Size: 0x34
@@ -44,7 +44,7 @@ function set_corpse_ranges_default() {
     set_corpse_ranges(array);
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x212
 // Size: 0x2d
@@ -55,7 +55,7 @@ function set_corpse_ranges(array) {
     function_76b92db94020c5ce(array);
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x246
 // Size: 0x1b
@@ -66,7 +66,7 @@ function set_corpse_ignore() {
     function_aa940a5b82d4d6a3(self, 1);
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x268
 // Size: 0xc9
@@ -86,7 +86,7 @@ function corpse_check_shadow(origin) {
     return istrue(self.in_shadow);
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x339
 // Size: 0xfc
@@ -98,7 +98,7 @@ function corpse_found(event) {
         function_216c67ab6749137a(self, undefined, "corpse_found");
     }
     corpse = event.entity;
-    var_a4f5fb62ba3a113b = getcorpseorigin(corpse);
+    corpseorigin = getcorpseorigin(corpse);
     if (isdefined(self.var_2836afe73a94b60b) && self.var_2836afe73a94b60b != corpse) {
         function_bc97202ba2db4cf4(self.var_2836afe73a94b60b, 0);
     }
@@ -111,7 +111,7 @@ function corpse_found(event) {
     }
 }
 
-// Namespace corpse/namespace_70203d71cdb728fc
+// Namespace corpse / scripts/stealth/corpse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43c
 // Size: 0xdf
@@ -120,8 +120,8 @@ function corpse_seen(event) {
         function_216c67ab6749137a(self, undefined, "corpse_seen");
     }
     corpse = event.entity;
-    var_a4f5fb62ba3a113b = getcorpseorigin(corpse);
-    self.stealth.corpse.origin = var_a4f5fb62ba3a113b;
+    corpseorigin = getcorpseorigin(corpse);
+    self.stealth.corpse.origin = corpseorigin;
     if (!isdefined(self.var_a9abd657131af071) || self.var_a9abd657131af071 == "small") {
         self.bexaminerequested = 1;
     }

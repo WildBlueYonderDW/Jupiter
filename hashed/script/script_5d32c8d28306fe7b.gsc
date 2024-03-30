@@ -1,10 +1,10 @@
 // mwiii decomp prototype
-#using script_3214e6fcdce468a7;
+#using scripts\engine\throttle.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using script_639bf783929acf9b;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\devgui.gsc;
 #using script_398835140857d740;
 #using scripts\mp\utility\dvars.gsc;
 #using scripts\mp\damage.gsc;
@@ -13,20 +13,20 @@
 
 #namespace perk_phd_flopper;
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x9e
-function function_ae33e22bc25c3920(var_1df6de077e30f8c2, var_fe59c44529c721a0) {
-    level thread function_f3a23df892bf82f6("specialty_phd_flopper", var_1df6de077e30f8c2, var_fe59c44529c721a0, &function_2d7074feba565a05, &function_9d625cc1b172d8a3);
+function function_ae33e22bc25c3920(str_currency, var_fe59c44529c721a0) {
+    level thread function_f3a23df892bf82f6("specialty_phd_flopper", str_currency, var_fe59c44529c721a0, &function_2d7074feba565a05, &function_9d625cc1b172d8a3);
     level._effect["perk_phd_explode_sm"] = loadfx("vfx/jup/ob/gameplay/zm_weapons/vfx_perk_pdh_exp.vfx");
     level._effect["perk_phd_explode_md"] = loadfx("vfx/jup/ob/gameplay/zm_weapons/vfx_perk_pdh_exp_med.vfx");
     level._effect["perk_phd_explode_lg"] = loadfx("vfx/jup/ob/gameplay/zm_weapons/vfx_perk_pdh_exp_lg.vfx");
-    namespace_3e725f3cc58bddd3::function_3e0f845008bbd48d(&function_c575026994a655b1);
-    level.var_bfe218a06bcd98de = function_e4c99b0f178ffb98("perk_phd_flopper", 2);
+    scripts/mp/damage::function_3e0f845008bbd48d(&function_c575026994a655b1);
+    level.var_bfe218a06bcd98de = throttle_initialize("perk_phd_flopper", 2);
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x340
 // Size: 0x17
@@ -35,7 +35,7 @@ function function_2d7074feba565a05() {
     thread function_1300f241370e8f6e();
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35e
 // Size: 0x2b
@@ -43,7 +43,7 @@ function function_9d625cc1b172d8a3(b_pause, str_perk, str_result, n_slot) {
     function_3320652f06c48dae();
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x390
 // Size: 0x17
@@ -52,7 +52,7 @@ function function_3320652f06c48dae() {
     function_fe0d28e6f0008329("specialty_phd_flopper");
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ae
 // Size: 0xa3
@@ -68,45 +68,45 @@ function function_c575026994a655b1(einflictor, eattacker, idamage, idflags, smea
     return undefined;
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x459
 // Size: 0x1b6
 function function_6928d17346bd05f1(attacker, n_height) {
-    bundle = level.var_a1ad2758fcbd2f5e["specialty_phd_flopper"];
-    var_e9520430205239af = function_53c4c53197386572(bundle.var_ba47e4feaa48b320, 96);
-    var_dc910819a8dc7c52 = function_53c4c53197386572(bundle.var_e76b605905032f5d, 300);
-    var_467d029427417a38 = function_53c4c53197386572(bundle.var_a2a9a67545749a14, 150);
-    var_e0b61a5b5bf83df2 = function_53c4c53197386572(bundle.var_1277e5b099b3fd62, 32);
-    var_d1f3779556d081a4 = function_53c4c53197386572(bundle.var_60e612d2ef6a503c, 50);
+    bundle = level.perkbundles["specialty_phd_flopper"];
+    var_e9520430205239af = default_to(bundle.var_ba47e4feaa48b320, 96);
+    var_dc910819a8dc7c52 = default_to(bundle.var_e76b605905032f5d, 300);
+    var_467d029427417a38 = default_to(bundle.var_a2a9a67545749a14, 150);
+    var_e0b61a5b5bf83df2 = default_to(bundle.var_1277e5b099b3fd62, 32);
+    var_d1f3779556d081a4 = default_to(bundle.var_60e612d2ef6a503c, 50);
     if (n_height < var_e9520430205239af) {
         n_radius = var_dc910819a8dc7c52;
         n_min_damage = var_467d029427417a38;
-        var_298133bd72d470a5 = 5000;
+        n_boost = 5000;
         fx = getfx("perk_phd_explode_sm");
     } else if (n_height >= var_e9520430205239af && n_height < var_e9520430205239af * 3) {
         n_radius = var_dc910819a8dc7c52 * 2;
         n_min_damage = var_467d029427417a38 + var_d1f3779556d081a4;
-        var_298133bd72d470a5 = 8000;
+        n_boost = 8000;
         fx = getfx("perk_phd_explode_md");
     } else {
         n_radius = var_dc910819a8dc7c52 * 4;
         n_min_damage = var_467d029427417a38 + var_d1f3779556d081a4 * 2;
-        var_298133bd72d470a5 = 15000;
+        n_boost = 15000;
         fx = getfx("perk_phd_explode_lg");
     }
     /#
         println("<unknown string>" + n_height + "<unknown string>" + n_radius + "<unknown string>");
     #/
-    attacker thread function_a111e72b1d2f5d8e(attacker.origin, n_radius, n_min_damage, "MOD_EXPLOSIVE", var_298133bd72d470a5, bundle);
+    attacker thread function_a111e72b1d2f5d8e(attacker.origin, n_radius, n_min_damage, "MOD_EXPLOSIVE", n_boost, bundle);
     playfx(fx, attacker.origin);
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x616
 // Size: 0x35a
-function function_a111e72b1d2f5d8e(origin, radius, min_damage, damage_mod, var_298133bd72d470a5, bundle) {
+function function_a111e72b1d2f5d8e(origin, radius, min_damage, damage_mod, n_boost, bundle) {
     self endon("disconnect");
     a_ai = getaiarrayinradius(origin, radius);
     a_enemies = [];
@@ -156,7 +156,7 @@ function function_a111e72b1d2f5d8e(origin, radius, min_damage, damage_mod, var_2
             e_enemy callback::callback("phd_flopper_killed", params);
         }
         if (isdefined(e_corpse) && var_5f6af5afd72c0ac2 > 5) {
-            v_launch = v_dir * var_298133bd72d470a5 + (0, 0, 150);
+            v_launch = v_dir * n_boost + (0, 0, 150);
             e_corpse startragdollfromimpact("torso_upper", v_launch);
             var_5f6af5afd72c0ac2++;
         }
@@ -164,7 +164,7 @@ function function_a111e72b1d2f5d8e(origin, radius, min_damage, damage_mod, var_2
     }
 }
 
-// Namespace perk_phd_flopper/namespace_146054d2393fb6ab
+// Namespace perk_phd_flopper / namespace_146054d2393fb6ab
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x977
 // Size: 0xe0
@@ -173,7 +173,7 @@ function function_1300f241370e8f6e() {
     self endon("stop_dtp_fall_watcher");
     var_4376bdd48580556a = 0;
     var_53280e126ee4cdf5 = undefined;
-    while (1) {
+    while (true) {
         var_e57af20a66773aa7 = undefined;
         if (self function_c36cfe1c6acaef46()) {
             if (!var_4376bdd48580556a) {

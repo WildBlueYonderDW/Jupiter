@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace lower_message;
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x174
 // Size: 0xac
@@ -25,7 +25,7 @@ function setlowermessageomnvar(ref, timer, var_c84f97acad5b2088) {
     }
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x227
 // Size: 0x6a
@@ -40,7 +40,7 @@ function clearomnvarsaftertime(var_c84f97acad5b2088) {
     }
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x298
 // Size: 0xa0
@@ -49,18 +49,18 @@ function function_5a98c45a6252b4a() {
     numrows = tablelookupgetnumrows("mp/hints.csv");
     for (index = 0; index < numrows; index++) {
         var_c71a87c9229a2e91 = int(tablelookupbyrow("mp/hints.csv", index, 0));
-        var_9c3353f4c1204bfe = tablelookupbyrow("mp/hints.csv", index, 1);
-        if (var_9c3353f4c1204bfe == "") {
+        indexstr = tablelookupbyrow("mp/hints.csv", index, 1);
+        if (indexstr == "") {
             continue;
         }
         /#
-            assertex(!isdefined(game["lowerMessageIndex"][var_9c3353f4c1204bfe]), var_9c3353f4c1204bfe + " is already defined in game[ lowerMessageIndex ]");
+            assertex(!isdefined(game["lowerMessageIndex"][indexstr]), indexstr + " is already defined in game[ lowerMessageIndex ]");
         #/
-        game["lowerMessageIndex"][var_9c3353f4c1204bfe] = var_c71a87c9229a2e91;
+        game["lowerMessageIndex"][indexstr] = var_c71a87c9229a2e91;
     }
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x33f
 // Size: 0xbc
@@ -93,7 +93,7 @@ function setlowermessage(name, text, time, priority, showtimer, shouldfade, fade
     updatelowermessage();
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x402
 // Size: 0x1b
@@ -102,7 +102,7 @@ function clearlowermessage(name) {
     updatelowermessage();
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x424
 // Size: 0x59
@@ -116,7 +116,7 @@ function clearlowermessages() {
     updatelowermessage();
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x484
 // Size: 0xb1
@@ -131,40 +131,40 @@ function sortlowermessages() {
     }
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53c
 // Size: 0x1ac
 function addlowermessage(name, text, time, priority, showtimer, shouldfade, fadetoalpha, fadetoalphatime, hidewhenindemo, hidewheninmenu) {
-    var_28b0f661494fa67c = undefined;
+    newmessage = undefined;
     foreach (message in self.lowermessages) {
         if (message.name == name) {
             if (message.text == text && message.priority == priority) {
                 return;
             }
-            var_28b0f661494fa67c = message;
+            newmessage = message;
             break;
         }
     }
-    if (!isdefined(var_28b0f661494fa67c)) {
-        var_28b0f661494fa67c = spawnstruct();
-        self.lowermessages[self.lowermessages.size] = var_28b0f661494fa67c;
+    if (!isdefined(newmessage)) {
+        newmessage = spawnstruct();
+        self.lowermessages[self.lowermessages.size] = newmessage;
     }
-    var_28b0f661494fa67c.name = name;
-    var_28b0f661494fa67c.text = text;
-    var_28b0f661494fa67c.time = time;
-    var_28b0f661494fa67c.addtime = gettime();
-    var_28b0f661494fa67c.priority = priority;
-    var_28b0f661494fa67c.showtimer = showtimer;
-    var_28b0f661494fa67c.shouldfade = shouldfade;
-    var_28b0f661494fa67c.fadetoalpha = fadetoalpha;
-    var_28b0f661494fa67c.fadetoalphatime = fadetoalphatime;
-    var_28b0f661494fa67c.hidewhenindemo = hidewhenindemo;
-    var_28b0f661494fa67c.hidewheninmenu = hidewheninmenu;
+    newmessage.name = name;
+    newmessage.text = text;
+    newmessage.time = time;
+    newmessage.addtime = gettime();
+    newmessage.priority = priority;
+    newmessage.showtimer = showtimer;
+    newmessage.shouldfade = shouldfade;
+    newmessage.fadetoalpha = fadetoalpha;
+    newmessage.fadetoalphatime = fadetoalphatime;
+    newmessage.hidewhenindemo = hidewhenindemo;
+    newmessage.hidewheninmenu = hidewheninmenu;
     sortlowermessages();
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ef
 // Size: 0xdb
@@ -186,7 +186,7 @@ function removelowermessage(name) {
     }
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d1
 // Size: 0x1d
@@ -197,7 +197,7 @@ function getlowermessage() {
     return self.lowermessages[0];
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f6
 // Size: 0x228
@@ -224,18 +224,20 @@ function updatelowermessage() {
     }
     if (message.time > 0 && message.showtimer) {
         self.lowertimer settimer(max(message.time - (gettime() - message.addtime) / 1000, 0.1));
-    } else if (message.time > 0 && !message.showtimer) {
+        return;
+    }
+    if (message.time > 0 && !message.showtimer) {
         self.lowertimer settext("");
         self.lowermessage fadeovertime(min(message.time, 60));
         self.lowermessage.alpha = 0;
         thread clearondeath(message);
         thread clearafterfade(message);
-    } else {
-        self.lowertimer settext("");
+        return;
     }
+    self.lowertimer settext("");
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa25
 // Size: 0x43
@@ -248,7 +250,7 @@ function clearondeath(message) {
     clearlowermessage(message.name);
 }
 
-// Namespace lower_message/namespace_58fb4f2e73fd41a0
+// Namespace lower_message / scripts/mp/utility/lower_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa6f
 // Size: 0x32

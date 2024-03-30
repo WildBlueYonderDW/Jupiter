@@ -6,7 +6,7 @@
 
 #namespace namespace_6c8a837ec98fe0b8;
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x176
 // Size: 0x6c
@@ -21,7 +21,7 @@ function init() {
     level.var_9977f6e10514d7ce = [];
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0xed
@@ -49,7 +49,7 @@ function requestreservedid(objid) {
     return objid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2de
 // Size: 0x82
@@ -66,7 +66,7 @@ function requestobjectiveid(priority) {
     return objid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x368
 // Size: 0x40
@@ -80,7 +80,7 @@ function function_92a696fa5918eca5(objid) {
     return level.var_9977f6e10514d7ce[objid].objid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x56
@@ -93,7 +93,7 @@ function function_b29f91f1fb14e113(var_5c3b190b45db5f37) {
     }
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x40d
 // Size: 0xc5
@@ -111,25 +111,24 @@ function removebestobjectiveid(prioritymax) {
     return returnobjectiveid(query[0].objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4da
 // Size: 0x61
 function comparepriorityandtime(a, b) {
     if (a.priority == b.priority) {
         return (a.requesttime < b.requesttime);
-    } else {
-        return (a.priority < b.priority);
     }
+    return a.priority < b.priority;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x542
 // Size: 0x16c
 function getnextobjectiveid(priority) {
     if (function_7f15ad998050dd8c()) {
-        return function_618c44b4ba0bfe51();
+        return objective_create();
     }
     if (level.objectiveidpool.reclaimed.size == 0) {
         if (level.objectiveidpool.index >= level.objectiveidpool.limit) {
@@ -151,36 +150,36 @@ function getnextobjectiveid(priority) {
     return nextid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0xdb
 function returnobjectiveid(objid) {
     if (!isdefined(objid) || objid == -1) {
-        return 0;
+        return false;
     }
     for (i = 0; i < level.objectiveidpool.reclaimed.size; i++) {
         if (objid == level.objectiveidpool.reclaimed[i]) {
             /#
                 assertmsg("ObjID has already been returned!");
             #/
-            return 0;
+            return false;
         }
     }
     level.objectiveidpool.active = array_remove_key(level.objectiveidpool.active, objid);
     level notify("Objective_Delete", objid);
     objective_delete(objid);
     level.objectiveidpool.reclaimed[level.objectiveidpool.reclaimed.size] = objid;
-    return 1;
+    return true;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x799
 // Size: 0x8f
 function returnreservedobjectiveid(objid, var_301ec764dd09b364) {
     if (!isdefined(objid) || objid == -1) {
-        return 0;
+        return false;
     }
     if (istrue(var_301ec764dd09b364)) {
         level.objectiveidpool.active[objid] = undefined;
@@ -188,30 +187,30 @@ function returnreservedobjectiveid(objid, var_301ec764dd09b364) {
     level notify("Objective_Delete", objid);
     if (function_7f15ad998050dd8c()) {
         if (isdefined(level.var_9977f6e10514d7ce[objid])) {
-            function_617ae8637cd8092c(level.var_9977f6e10514d7ce[objid].objid);
+            objective_reset(level.var_9977f6e10514d7ce[objid].objid);
         } else {
-            function_617ae8637cd8092c(objid);
+            objective_reset(objid);
         }
     } else {
         objective_delete(objid);
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x830
 // Size: 0x4c
 function private function_7e41a40db70e23b9() {
-    var_11e4597ee4d18d17 = function_618c44b4ba0bfe51();
+    ecsid = objective_create();
     entry = spawnstruct();
     entry.priority = 100;
     entry.requesttime = 0;
-    entry.objid = var_11e4597ee4d18d17;
+    entry.objid = ecsid;
     return entry;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x884
 // Size: 0x9c
@@ -227,41 +226,41 @@ function private function_be6060bf8a6e12c2(objid) {
     return entry.objid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x928
 // Size: 0x78
-function objective_add(var_780627589b4bb0b5, state, position, iconname, iconsize) {
+function objective_add(objectivenumber, state, position, iconname, iconsize) {
     if (!function_7f15ad998050dd8c()) {
-        level notify("Objective_Delete", var_780627589b4bb0b5);
-        objective_delete(var_780627589b4bb0b5);
+        level notify("Objective_Delete", objectivenumber);
+        objective_delete(objectivenumber);
     }
     if (isdefined(state)) {
-        objective_state(var_780627589b4bb0b5, state);
+        objective_state(objectivenumber, state);
     }
     if (isdefined(position)) {
-        objective_position(var_780627589b4bb0b5, position);
+        objective_position(objectivenumber, position);
     }
     if (isdefined(iconname)) {
-        objective_icon(var_780627589b4bb0b5, iconname);
+        objective_icon(objectivenumber, iconname);
     }
     if (isdefined(iconsize)) {
-        objective_setminimapiconsize(var_780627589b4bb0b5, iconsize);
+        objective_setminimapiconsize(objectivenumber, iconsize);
     }
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9a7
 // Size: 0x40
-function objective_add_objective(objid, state, position, var_2eaf3f31852684fd, iconsize) {
+function objective_add_objective(objid, state, position, iconshader, iconsize) {
     if (objid == -1) {
         return;
     }
-    objective_add(objid, state, position, var_2eaf3f31852684fd, iconsize);
+    objective_add(objid, state, position, iconshader, iconsize);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9ee
 // Size: 0x24
@@ -272,7 +271,7 @@ function update_objective_ownerteam(objid, ownerteam) {
     objective_setownerteam(objid, ownerteam);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa19
 // Size: 0x24
@@ -283,7 +282,7 @@ function update_objective_ownerclient(objid, owner) {
     objective_setownerclient(objid, owner);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa44
 // Size: 0x24
@@ -294,7 +293,7 @@ function update_objective_sethot(objid, ownerteam) {
     objective_sethot(objid, ownerteam);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa6f
 // Size: 0x24
@@ -305,7 +304,7 @@ function update_objective_setfriendlylabel(objid, stringref) {
     objective_setfriendlylabel(objid, stringref);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa9a
 // Size: 0x24
@@ -316,7 +315,7 @@ function update_objective_setenemylabel(objid, stringref) {
     objective_setenemylabel(objid, stringref);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xac5
 // Size: 0x24
@@ -327,7 +326,7 @@ function update_objective_setneutrallabel(objid, stringref) {
     objective_setneutrallabel(objid, stringref);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0x24
@@ -338,7 +337,7 @@ function update_objective_state(objid, state) {
     objective_state(objid, state);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb1b
 // Size: 0x24
@@ -349,18 +348,18 @@ function update_objective_position(objid, position) {
     objective_position(objid, position);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb46
 // Size: 0x24
-function update_objective_icon(objid, var_2eaf3f31852684fd) {
+function update_objective_icon(objid, iconshader) {
     if (objid == -1) {
         return;
     }
-    objective_icon(objid, var_2eaf3f31852684fd);
+    objective_icon(objid, iconshader);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb71
 // Size: 0x24
@@ -371,7 +370,7 @@ function function_2946e9eb07acb3f1(objid, description) {
     objective_setdescription(objid, description);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb9c
 // Size: 0x29
@@ -384,18 +383,18 @@ function function_c3c6bff089dfdd34(objid, iconsize) {
     }
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbcc
 // Size: 0x24
-function function_79a1a16de6b22b2d(objid, var_2eaf3f31852684fd) {
+function function_79a1a16de6b22b2d(objid, iconshader) {
     if (objid == -1) {
         return;
     }
-    function_18b16cd8def5e879(objid, var_2eaf3f31852684fd);
+    objective_objectiveid(objid, iconshader);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbf7
 // Size: 0x1b
@@ -406,7 +405,7 @@ function function_56fc9b5845892619(objid) {
     function_cdab88ba2ce79251(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc19
 // Size: 0x24
@@ -417,7 +416,7 @@ function update_objective_setbackground(objid, type) {
     objective_setbackground(objid, type);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc44
 // Size: 0x24
@@ -428,7 +427,7 @@ function update_objective_onentity(objid, ent) {
     objective_onentity(objid, ent);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc6f
 // Size: 0x2d
@@ -440,7 +439,7 @@ function update_objective_onentitywithrotation(objid, ent) {
     objective_setrotateonminimap(objid, 1);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xca3
 // Size: 0x24
@@ -451,7 +450,7 @@ function function_fa3c420e27b5d08b(objid, var_cff8e6dc09cfee61) {
     function_f32fc70fb7087551(objid, var_cff8e6dc09cfee61);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcce
 // Size: 0x24
@@ -462,7 +461,7 @@ function update_objective_setzoffset(objid, offset) {
     objective_setzoffset(objid, offset);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcf9
 // Size: 0x1b
@@ -473,7 +472,7 @@ function function_9cad42ac02eff950(objid) {
     objective_removeallfrommask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd1b
 // Size: 0x1b
@@ -484,7 +483,7 @@ function function_a28e8535e00d34f3(objid) {
     objective_addalltomask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd3d
 // Size: 0x1b
@@ -495,7 +494,7 @@ function function_6ae37618bb04ea60(objid) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd5f
 // Size: 0x1b
@@ -506,7 +505,7 @@ function function_17db39bd195cc5b1(objid) {
     objective_hidefromplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd81
 // Size: 0x32
@@ -519,7 +518,7 @@ function objective_playermask_single(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdba
 // Size: 0x32
@@ -532,7 +531,7 @@ function objective_teammask_single(objid, team) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf3
 // Size: 0x22
@@ -544,7 +543,7 @@ function function_f5862ad1ad967602(objid) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe1c
 // Size: 0x22
@@ -556,7 +555,7 @@ function objective_playermask_hidefromall(objid) {
     objective_hidefromplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe45
 // Size: 0x2b
@@ -568,7 +567,7 @@ function objective_playermask_hidefrom(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe77
 // Size: 0x2b
@@ -580,7 +579,7 @@ function objective_playermask_addshowplayer(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xea9
 // Size: 0x22
@@ -592,7 +591,7 @@ function function_df6a3e032fa07d22(objid) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed2
 // Size: 0x22
@@ -604,7 +603,7 @@ function objective_playermask_showtoall(objid) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xefb
 // Size: 0x3c
@@ -617,7 +616,7 @@ function objective_mask_showtoplayerteam(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf3e
 // Size: 0x4c
@@ -633,7 +632,7 @@ function function_39f2dc4e92db5fb9(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf91
 // Size: 0x53
@@ -650,7 +649,7 @@ function objective_mask_showtoenemyteam(objid, ent) {
     objective_hidefromplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfeb
 // Size: 0x2b
@@ -662,7 +661,7 @@ function objective_teammask_addtomask(objid, team) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x101d
 // Size: 0x2b
@@ -674,7 +673,7 @@ function objective_teammask_removefrommask(objid, team) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x104f
 // Size: 0x24
@@ -685,7 +684,7 @@ function objective_pin_global(objid, pin) {
     objective_setpinned(objid, pin);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x107a
 // Size: 0x24
@@ -696,7 +695,7 @@ function objective_pin_team(objid, team) {
     objective_pinforteam(objid, team);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x10a5
 // Size: 0x24
@@ -707,7 +706,7 @@ function objective_unpin_team(objid, team) {
     objective_unpinforteam(objid, team);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x10d0
 // Size: 0x28
@@ -718,7 +717,7 @@ function private function_781844c0c05b5ac7() {
     return 0;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1100
 // Size: 0x2f
@@ -729,7 +728,7 @@ function objective_pin_player(objid, player) {
     objective_pinforclient(objid, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1136
 // Size: 0x37
@@ -740,21 +739,21 @@ function objective_unpin_player(objid, player, showoncompass) {
     objective_unpinforclient(objid, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1174
 // Size: 0x3f
-function objective_show_progress(objid, show, var_800ee8521aa9cf8b) {
+function objective_show_progress(objid, show, unfill) {
     if (objid == -1) {
         return;
     }
-    if (show && !istrue(var_800ee8521aa9cf8b)) {
+    if (show && !istrue(unfill)) {
         level notify("Objective_SetShowProgress", objid);
     }
     objective_setshowprogress(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11ba
 // Size: 0x27
@@ -765,7 +764,7 @@ function function_7299a742781a5030(state, player) {
     function_d1b64c3d055ceeb0(state, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11e8
 // Size: 0x27
@@ -776,7 +775,7 @@ function function_8f7a55bda12ebb21(text, player) {
     function_8b71eb96e1636edc(text, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1216
 // Size: 0x24
@@ -787,7 +786,7 @@ function objective_show_team_progress(objid, team) {
     objective_showprogressforteam(objid, team);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1241
 // Size: 0x24
@@ -798,7 +797,7 @@ function objective_hide_team_progress(objid, team) {
     objective_hideprogressforteam(objid, team);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x126c
 // Size: 0x2f
@@ -809,7 +808,7 @@ function objective_show_player_progress(objid, player) {
     objective_showprogressforclient(objid, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12a2
 // Size: 0x2f
@@ -820,18 +819,18 @@ function objective_hide_player_progress(objid, player) {
     objective_hideprogressforclient(objid, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12d8
 // Size: 0x2b
-function objective_set_show_progress(objid, var_5f0af647d1f3ba6b) {
+function objective_set_show_progress(objid, showprogress) {
     if (!isdefined(objid) || objid == -1) {
         return;
     }
-    objective_setshowprogress(objid, var_5f0af647d1f3ba6b);
+    objective_setshowprogress(objid, showprogress);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x130a
 // Size: 0x24
@@ -842,7 +841,7 @@ function objective_set_progress(objid, progress) {
     objective_setprogress(objid, progress);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1335
 // Size: 0x24
@@ -853,7 +852,7 @@ function objective_set_progress_team(objid, team) {
     objective_setprogressteam(objid, team);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1360
 // Size: 0x24
@@ -864,7 +863,7 @@ function function_9b1a086f348520b0(objid, team) {
     function_97b31127037043b6(objid, team);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x138b
 // Size: 0x2f
@@ -875,7 +874,7 @@ function objective_set_progress_client(objid, player) {
     objective_setprogressclient(objid, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13c1
 // Size: 0x24
@@ -886,7 +885,7 @@ function objective_set_play_intro(objid, show) {
     objective_setplayintro(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13ec
 // Size: 0x24
@@ -897,7 +896,7 @@ function objective_set_play_outro(objid, show) {
     objective_setplayoutro(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1417
 // Size: 0x24
@@ -908,7 +907,7 @@ function objective_set_pulsate(objid, pulse) {
     objective_setpulsate(objid, pulse);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1442
 // Size: 0x24
@@ -919,7 +918,7 @@ function objective_hide_for_mlg_spectator(objid, show) {
     objective_sethideformlgspectator(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x146d
 // Size: 0x24
@@ -930,7 +929,7 @@ function objective_show_for_mlg_spectator(objid, show) {
     objective_setshowformlgspectator(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1498
 // Size: 0x24
@@ -941,7 +940,7 @@ function function_d7e3c4a08682c1b9(objid, show) {
     function_865f9c5d005f9a08(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14c3
 // Size: 0x24
@@ -952,7 +951,7 @@ function function_ee37484ca9bdc744(objid, show) {
     function_9427cb5974c925d9(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14ee
 // Size: 0x24
@@ -963,7 +962,7 @@ function function_994c8917a78b024(objid, show) {
     function_2b46ef80dca002f9(objid, show);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1519
 // Size: 0x24
@@ -974,7 +973,7 @@ function function_1513b8ac9570e6c7(objid, var_99d6809da5559c23) {
     function_9929f54e3253dbb4(objid, var_99d6809da5559c23);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1544
 // Size: 0x24
@@ -985,7 +984,7 @@ function function_559a49e0dab1f8fc(objid, var_99d6809da5559c23) {
     function_6468f83ab1b52315(objid, var_99d6809da5559c23);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x156f
 // Size: 0x24
@@ -996,7 +995,7 @@ function function_bf66c6833e867284(objid, type) {
     function_a13e72e0427ecad2(objid, type);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x159a
 // Size: 0x24
@@ -1007,7 +1006,7 @@ function function_a73941bc42a6e8d3(objid, var_40c8c22e3af690c1) {
     function_8ff22d292de16d27(objid, var_40c8c22e3af690c1);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x15c5
 // Size: 0x44
@@ -1020,11 +1019,11 @@ function function_e6b9c68b99e455ba(objid, var_d3810e59fa78746e, var_a4ce6d25578e
     function_4b1c68b732904e7a(objid, var_9184ccd844da4630);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1610
 // Size: 0xcc
-function createobjective(shadername, team, var_7a8af4bfba6333a4, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize) {
+function createobjective(shadername, team, friendlyonly, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize) {
     curobjid = function_c1a18d4076f420a5(shadername, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize);
     if (level.teambased) {
         if (isdefined(team)) {
@@ -1033,7 +1032,7 @@ function createobjective(shadername, team, var_7a8af4bfba6333a4, var_2231e5a0f94
     } else if (isdefined(self.owner)) {
         update_objective_ownerclient(curobjid, self.owner);
     }
-    if (istrue(var_7a8af4bfba6333a4)) {
+    if (istrue(friendlyonly)) {
         if (level.teambased) {
             objective_mask_showtoplayerteam(curobjid, self);
         } else {
@@ -1048,7 +1047,7 @@ function createobjective(shadername, team, var_7a8af4bfba6333a4, var_2231e5a0f94
     return curobjid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16e4
 // Size: 0x42
@@ -1058,25 +1057,25 @@ function function_c1a18d4076f420a5(shadername, var_2231e5a0f940caae, var_dbe22cd
     return curobjid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x172e
 // Size: 0xa1
 function createobjective_engineer(shadername, var_2231e5a0f940caae, var_dbe22cd5d2a797af, iconsize) {
     curobjid = undefined;
     createfunc = undefined;
-    if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "createObjectiveHidden")) {
-        createfunc = namespace_3c37cb17ade254d::getsharedfunc("game", "createObjectiveHidden");
+    if (scripts/engine/utility::issharedfuncdefined("game", "createObjectiveHidden")) {
+        createfunc = scripts/engine/utility::getsharedfunc("game", "createObjectiveHidden");
     }
     if (isdefined(createfunc) && isdefined(level.var_5b12006b920a1b6c)) {
         curobjid = [[ createfunc ]](level.var_5b12006b920a1b6c, 1, 1, "icon_regular");
         update_objective_ownerteam(curobjid, self.team);
-    } else {
-        return curobjid;
+        return;
     }
+    return curobjid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17d6
 // Size: 0xd4
@@ -1100,29 +1099,29 @@ function function_4625d98c8f5bdc94(shadername, var_2231e5a0f940caae, var_dbe22cd
     return curobjid;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18b2
 // Size: 0x78
-function function_160f522b63c32d76(var_9341b600731439c, text, var_5c9ddcf56d36f133) {
+function function_160f522b63c32d76(progressbarstate, text, var_5c9ddcf56d36f133) {
     if (function_781844c0c05b5ac7()) {
         return;
     }
     if (getdvarint(@"hash_141de4492226006e", 1) == 1) {
         if (isdefined(var_5c9ddcf56d36f133)) {
         }
-        function_7299a742781a5030(var_9341b600731439c, self);
+        function_7299a742781a5030(progressbarstate, self);
         if (isdefined(text)) {
             function_8f7a55bda12ebb21(text, self);
         } else {
             function_8f7a55bda12ebb21("", self);
         }
-    } else {
-        self setclientomnvar("ui_objective_pinned_text_param", var_5c9ddcf56d36f133);
+        return;
     }
+    self setclientomnvar("ui_objective_pinned_text_param", var_5c9ddcf56d36f133);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1931
 // Size: 0x9b
@@ -1130,21 +1129,20 @@ function function_ce702e5925e31fc9(objid, player, priority, state, text) {
     if (objid == -1 || player function_781844c0c05b5ac7()) {
         return;
     }
-    if (!isdefined(player.var_9d9b6c132375d54c)) {
-        player.var_9d9b6c132375d54c = 0;
+    if (!isdefined(player.objectivepriority)) {
+        player.objectivepriority = 0;
     }
-    if (player.var_9d9b6c132375d54c < priority) {
-        player.var_9d9b6c132375d54c = priority;
-        namespace_5a22b6f3a56f7e9b::objective_show_player_progress(objid, player);
-        namespace_5a22b6f3a56f7e9b::function_8f7a55bda12ebb21(text, player);
-        namespace_5a22b6f3a56f7e9b::function_7299a742781a5030(state, player);
+    if (player.objectivepriority < priority) {
+        player.objectivepriority = priority;
+        scripts/mp/objidpoolmanager::objective_show_player_progress(objid, player);
+        scripts/mp/objidpoolmanager::function_8f7a55bda12ebb21(text, player);
+        scripts/mp/objidpoolmanager::function_7299a742781a5030(state, player);
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19d3
 // Size: 0x4c
@@ -1152,12 +1150,12 @@ function function_26259bd38697b5ad(objid, player) {
     if (objid == -1 || !isdefined(player) || player function_781844c0c05b5ac7()) {
         return;
     }
-    player.var_9d9b6c132375d54c = 0;
-    namespace_5a22b6f3a56f7e9b::objective_hide_player_progress(objid, player);
-    namespace_5a22b6f3a56f7e9b::function_7299a742781a5030(0, player);
+    player.objectivepriority = 0;
+    scripts/mp/objidpoolmanager::objective_hide_player_progress(objid, player);
+    scripts/mp/objidpoolmanager::function_7299a742781a5030(0, player);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a26
 // Size: 0x24
@@ -1168,7 +1166,7 @@ function function_98ba077848896a3(objid, shouldshow) {
     objective_setshowdistance(objid, shouldshow);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a51
 // Size: 0x2d
@@ -1179,7 +1177,7 @@ function function_f21e9b2e78de984b(objid, var_a7c6c5d6c3d369aa, var_467f4d9b8d90
     function_c047d7ffe7a83501(objid, var_a7c6c5d6c3d369aa, var_467f4d9b8d9063b);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a85
 // Size: 0x24
@@ -1190,7 +1188,7 @@ function function_41f90376ab869b9f(objid, shouldhide) {
     objective_sethideelevation(objid, shouldhide);
 }
 
-// Namespace namespace_6c8a837ec98fe0b8/namespace_5a22b6f3a56f7e9b
+// Namespace namespace_6c8a837ec98fe0b8 / scripts/mp/objidpoolmanager
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ab0
 // Size: 0x3f

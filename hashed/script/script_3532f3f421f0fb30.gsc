@@ -2,13 +2,13 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using script_5d813d45c6b1b1be;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\common\vehicle.gsc;
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 
 #namespace namespace_a58b72ccaa110b13;
 
-// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Namespace namespace_a58b72ccaa110b13 / namespace_bc4759f7a32ebd96
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11a
 // Size: 0x59
@@ -19,7 +19,7 @@ function init(var_5179c48492d1d2c2) {
     thread function_7de3883507acf30d(trigger_box, var_5179c48492d1d2c2);
 }
 
-// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Namespace namespace_a58b72ccaa110b13 / namespace_bc4759f7a32ebd96
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x17a
 // Size: 0x7b
@@ -27,9 +27,9 @@ function private function_7de3883507acf30d(trigger_box, var_5179c48492d1d2c2) {
     var_5179c48492d1d2c2 endon("MRP_FREEBIRD_NOTIFY_SUCCESS");
     while (isdefined(trigger_box)) {
         data = trigger_box waittill("trigger");
-        if (data namespace_dbbb37eb352edf96::isvehicle()) {
+        if (data scripts/common/vehicle::isvehicle()) {
             if (istrue(data vehicle_isphysveh()) && !data vehicle_isonground()) {
-                driver = namespace_1fbd40990ee60ede::vehicle_occupancy_getdriver(data);
+                driver = scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_getdriver(data);
                 if (isplayer(driver)) {
                     childthread function_d9710cca01e9c3a8(driver, data, var_5179c48492d1d2c2, trigger_box);
                 }
@@ -38,7 +38,7 @@ function private function_7de3883507acf30d(trigger_box, var_5179c48492d1d2c2) {
     }
 }
 
-// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Namespace namespace_a58b72ccaa110b13 / namespace_bc4759f7a32ebd96
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0xa3
@@ -51,7 +51,7 @@ function private function_d9710cca01e9c3a8(player, vehicle, var_5179c48492d1d2c2
     while (isdefined(vehicle) && !vehicle vehicle_isonground()) {
         wait(0.1);
     }
-    driver = namespace_1fbd40990ee60ede::vehicle_occupancy_getdriver(vehicle);
+    driver = scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_getdriver(vehicle);
     if (isplayer(driver) && driver == player) {
         /#
             iprintlnbold("<unknown string>");
@@ -62,7 +62,7 @@ function private function_d9710cca01e9c3a8(player, vehicle, var_5179c48492d1d2c2
     }
 }
 
-// Namespace namespace_a58b72ccaa110b13/namespace_bc4759f7a32ebd96
+// Namespace namespace_a58b72ccaa110b13 / namespace_bc4759f7a32ebd96
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0x37

@@ -3,13 +3,13 @@
 #using scripts\common\utility.gsc;
 #using scripts\common\notetrack.gsc;
 #using scripts\anim\utility_common.gsc;
-#using script_77c18cdedec620b3;
+#using scripts\common\debug.gsc;
 #using scripts\anim\notetracks.gsc;
 #using scripts\asm\asm_bb.gsc;
 
-#namespace namespace_67c957f3e2881af7;
+#namespace notetracks_mp;
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x153
 // Size: 0x22
@@ -21,14 +21,14 @@ function registernotetracksifnot() {
     registernotetracks();
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17c
 // Size: 0x8f
 function registernotetracks() {
     level._defaultnotetrackhandler = &handlenotetrack;
     level.fnnotetrackprefixhandler = &function_6d9ff7d18e45dc9c;
-    namespace_a4081f3d58d76916::registernotetracks();
+    scripts/anim/notetracks::registernotetracks();
     anim.notetracks["anim_pose = stand"] = &notetrackposestand;
     anim.notetracks["anim_pose = crouch"] = &notetrackposecrouch;
     anim.notetracks["anim_pose = prone"] = &notetrackposeprone;
@@ -36,15 +36,15 @@ function registernotetracks() {
     anim.notetracks["dropgun"] = &notetrackgundrop;
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x212
 // Size: 0xbf
-function handlenotetrack(note, flagname, customfunction, var_35ce7799b701c978) {
-    if (namespace_a4081f3d58d76916::hascustomnotetrackhandler(note)) {
-        return namespace_a4081f3d58d76916::handlecustomnotetrackhandler(note, flagname, customfunction, var_35ce7799b701c978);
+function handlenotetrack(note, flagname, customfunction, customparams) {
+    if (scripts/anim/notetracks::hascustomnotetrackhandler(note)) {
+        return scripts/anim/notetracks::handlecustomnotetrackhandler(note, flagname, customfunction, customparams);
     }
-    retval = namespace_a4081f3d58d76916::handlecommonnotetrack(note, flagname, customfunction, var_35ce7799b701c978);
+    retval = scripts/anim/notetracks::handlecommonnotetrack(note, flagname, customfunction, customparams);
     if (isdefined(retval) && retval == "__unhandled") {
         retval = undefined;
         switch (note) {
@@ -55,8 +55,8 @@ function handlenotetrack(note, flagname, customfunction, var_35ce7799b701c978) {
             break;
         default:
             if (isdefined(customfunction)) {
-                if (isdefined(var_35ce7799b701c978)) {
-                    return [[ customfunction ]](note, var_35ce7799b701c978);
+                if (isdefined(customparams)) {
+                    return [[ customfunction ]](note, customparams);
                 } else {
                     return [[ customfunction ]](note);
                 }
@@ -67,7 +67,7 @@ function handlenotetrack(note, flagname, customfunction, var_35ce7799b701c978) {
     return retval;
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d9
 // Size: 0x15a
@@ -102,16 +102,16 @@ function function_6d9ff7d18e45dc9c(notetrack) {
         return 1;
     }
     if (prefix == "df_") {
-        var_2c300a0c859aa22 = getsubstr(notetrack, 3);
+        doftype = getsubstr(notetrack, 3);
         if (isdefined(self.dof_func)) {
-            self thread [[ self.dof_func ]](var_2c300a0c859aa22);
+            self thread [[ self.dof_func ]](doftype);
         }
         return 1;
     }
-    return namespace_a4081f3d58d76916::notetrack_prefix_handler_common(notetrack);
+    return scripts/anim/notetracks::notetrack_prefix_handler_common(notetrack);
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43b
 // Size: 0x3c
@@ -130,7 +130,7 @@ function notetrackrocketlauncherammoattach() {
     }
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x47e
 // Size: 0x5c
@@ -146,17 +146,17 @@ function notetrackgundrop(note, flagname) {
     }
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e1
 // Size: 0x28
 function setpose(pose) {
     self.currentpose = pose;
-    namespace_28edc79fcf2fe234::bb_requeststance(pose);
+    scripts/asm/asm_bb::bb_requeststance(pose);
     self notify("entered_pose" + pose);
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x510
 // Size: 0x20
@@ -164,7 +164,7 @@ function notetrackposestand(note, flagname) {
     setpose("stand");
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x537
 // Size: 0x20
@@ -172,7 +172,7 @@ function notetrackposecrouch(note, flagname) {
     setpose("crouch");
 }
 
-// Namespace namespace_67c957f3e2881af7/namespace_aca06a2f73bc4246
+// Namespace notetracks_mp / scripts/anim/notetracks_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x55e
 // Size: 0x20

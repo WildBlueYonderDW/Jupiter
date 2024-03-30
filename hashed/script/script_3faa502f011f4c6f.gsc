@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\aitypes\bt_util.gsc;
 #using script_38c251115537f16e;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\asm\asm.gsc;
@@ -12,7 +12,7 @@
 #using script_5ebf1c5fd7739a16;
 #using script_3badb8914eb5ac16;
 #using script_7edf952f8921aa6b;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using script_2b848668600efa30;
 #using script_5f3926616512ec0;
 #using script_35ccbf5e9962bcaa;
@@ -21,7 +21,7 @@
 
 #namespace zombie_mangler;
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e0
 // Size: 0x3a
@@ -32,7 +32,7 @@ function precache(params) {
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x321
 // Size: 0x187
@@ -42,29 +42,29 @@ function private function_f49a30f92555b827(params) {
     function_8e401d26d58bc32d();
     function_3ff40056b91b6e90();
     function_303a0a4b0a91563();
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_turned", &function_e809d2e0583ea302);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("shocked", &function_c8bbb80c04cd9a37);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("shocked_end", &function_deadba29b36b687d);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("burned", &function_bf0fe7b30fa14180);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("burned_end", &function_788a3fa28ef17f52);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("napalm_burned", &function_dbb5710ec418627e);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("napalm_burned_end", &function_afa5ec2deb3f62a0);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("pre_killed_body_cloned", &function_299ef5b8dcedc53f);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("killed_body_cloned", &function_c8c10b313b3fcf09);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_zombie_ai_damaged", &function_c3fded253ea1fc75);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_turned", &function_e809d2e0583ea302);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("shocked", &function_c8bbb80c04cd9a37);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("shocked_end", &function_deadba29b36b687d);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("burned", &function_bf0fe7b30fa14180);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("burned_end", &function_788a3fa28ef17f52);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("napalm_burned", &function_dbb5710ec418627e);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("napalm_burned_end", &function_afa5ec2deb3f62a0);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("pre_killed_body_cloned", &function_299ef5b8dcedc53f);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("killed_body_cloned", &function_c8c10b313b3fcf09);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_zombie_ai_damaged", &function_c3fded253ea1fc75);
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4af
 // Size: 0xa6
 function function_e3e1894798c371bf(taskid) {
     /#
-        assert(isdefined(self.var_570908460ede5c13));
+        assert(isdefined(self.zombieaisetting));
     #/
-    function_7415ae9399ba8e75(self.var_570908460ede5c13);
+    function_7415ae9399ba8e75(self.zombieaisetting);
     /#
-        assert(isdefined(self.var_47399212b3052720.var_e58a65b7a8f5973c));
+        assert(isdefined(self.zombieaisettings.var_e58a65b7a8f5973c));
     #/
     callback::add("on_first_ai_init", &function_f49a30f92555b827);
     function_265e0e58c950559();
@@ -77,37 +77,37 @@ function function_e3e1894798c371bf(taskid) {
     return anim.success;
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x55d
 // Size: 0x31
 function initscriptable() {
     self endon("death");
-    namespace_3c37cb17ade254d::flag_wait("scriptables_ready");
+    scripts/engine/utility::flag_wait("scriptables_ready");
     waitframe();
     if (self isscriptable()) {
         utility::function_3ab9164ef76940fd("base", "base_on");
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x595
 // Size: 0x4c
 function function_c3fded253ea1fc75(params) {
-    if (isdefined(params.var_2eb474020f9d509) && !function_cec565632b7fc419(params.var_2eb474020f9d509)) {
+    if (isdefined(params.metabonename) && !function_cec565632b7fc419(params.metabonename)) {
         playfx(getfx("mangler_weakpoint_impact_fx"), params.vpoint);
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5e8
 // Size: 0x16f
 function private function_299ef5b8dcedc53f(params) {
     self.var_c5d25d8048e64092 = [];
     utility::function_3ab9164ef76940fd("base", "base_off");
-    if (self.var_f719fcdc90b79bb8 && self.var_47399212b3052720.var_e58a65b7a8f5973c.var_c7869dfe1aa33f55) {
+    if (self.var_f719fcdc90b79bb8 && self.zombieaisettings.var_e58a65b7a8f5973c.var_c7869dfe1aa33f55) {
         if (utility::function_3ab9164ef76940fd("j_weapon_spin", "destroyed_loot")) {
             self.var_c5d25d8048e64092["j_weapon_spin"] = "destroyed_loot";
         }
@@ -131,7 +131,7 @@ function private function_299ef5b8dcedc53f(params) {
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x75e
 // Size: 0x13b
@@ -147,7 +147,9 @@ function private function_c8c10b313b3fcf09(params) {
             params.body utility::function_3ab9164ef76940fd("burned", "burned_on");
             params.body thread function_d13d798c34386976();
         }
-    } else if (istrue(ent_flag("napalm_burned"))) {
+        return;
+    }
+    if (istrue(ent_flag("napalm_burned"))) {
         if (isdefined(params.body)) {
             params.body utility::function_3ab9164ef76940fd("napalm_burned", "napalm_burned_on");
             params.body thread function_c14610f0b3bdffe6();
@@ -155,7 +157,7 @@ function private function_c8c10b313b3fcf09(params) {
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8a0
 // Size: 0x1f
@@ -166,7 +168,7 @@ function private function_33bbf5c8cadc9958() {
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8c6
 // Size: 0x1f
@@ -177,7 +179,7 @@ function private function_d13d798c34386976() {
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8ec
 // Size: 0x1f
@@ -188,7 +190,7 @@ function private function_c14610f0b3bdffe6() {
     }
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x912
 // Size: 0x1d
@@ -196,7 +198,7 @@ function private function_c8bbb80c04cd9a37(var_a21093610d4de2ed) {
     utility::function_3ab9164ef76940fd("shocked", "shocked_on");
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x936
 // Size: 0x1d
@@ -204,7 +206,7 @@ function private function_deadba29b36b687d(var_a21093610d4de2ed) {
     utility::function_3677f2be30fdd581("shocked", "shocked_off");
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x95a
 // Size: 0x1d
@@ -212,7 +214,7 @@ function private function_bf0fe7b30fa14180(var_12c084a213d7ad2) {
     utility::function_3ab9164ef76940fd("burned", "burned_on");
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x97e
 // Size: 0x1d
@@ -220,7 +222,7 @@ function private function_788a3fa28ef17f52(var_12c084a213d7ad2) {
     utility::function_3677f2be30fdd581("burned", "burned_off");
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9a2
 // Size: 0x1d
@@ -228,7 +230,7 @@ function private function_dbb5710ec418627e(var_12c084a213d7ad2) {
     utility::function_3ab9164ef76940fd("napalm_burned", "napalm_burned_on");
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9c6
 // Size: 0x1d
@@ -236,7 +238,7 @@ function private function_afa5ec2deb3f62a0(var_12c084a213d7ad2) {
     utility::function_3677f2be30fdd581("napalm_burned", "napalm_burned_off");
 }
 
-// Namespace zombie_mangler/namespace_5fc703c24777cbb7
+// Namespace zombie_mangler / namespace_5fc703c24777cbb7
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9ea
 // Size: 0x3d

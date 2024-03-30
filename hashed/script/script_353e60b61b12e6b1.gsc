@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_c_ob_interactions_turret_trap_cs;
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x313
 // Size: 0x6d
@@ -23,33 +23,33 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x387
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_c_ob_interactions_turret_trap_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_c_ob_interactions_turret_trap_cs");
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x40
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43d
 // Size: 0x3
@@ -57,7 +57,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x447
 // Size: 0xf
@@ -65,7 +65,7 @@ function cleanup() {
     function_71a564b3bc009618("mp_jup_st_c_ob_interactions_turret_trap_cs");
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45d
 // Size: 0x69
@@ -73,240 +73,240 @@ function function_fd69cf02ba4d90a2() {
     var_d13c18af4084bdfd = spawnstruct();
     var_d13c18af4084bdfd.name = "REV_OB_TURRET_TRAP";
     var_d13c18af4084bdfd.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_d13c18af4084bdfd.var_dc10941a425d283c = &main;
+    var_d13c18af4084bdfd.mainfunction = &main;
     var_d13c18af4084bdfd.var_6e7eb28b2997b5b4 = &function_82613e20fba2deb9;
     var_d13c18af4084bdfd.var_ad1dcd56d202e9ac = &function_6da2952367672ac0;
     return var_d13c18af4084bdfd;
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ce
 // Size: 0xe8
-function function_82613e20fba2deb9(var_44fe95ae31b81c6d, var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
-    if (!isdefined(var_ce173d78f5680530)) {
-        var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+function function_82613e20fba2deb9(instancename, fe, us, cf) {
+    if (!isdefined(cf)) {
+        cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
     }
-    switch (var_44fe95ae31b81c6d) {
+    switch (instancename) {
     case #"hash_88adecc946ab2ab0":
-        function_c1256cbc610539e9(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_c1256cbc610539e9(fe, us, cf);
         break;
     case #"hash_a7713c66c40b2d59":
-        function_53a603014d4fcb68(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_53a603014d4fcb68(fe, us, cf);
         break;
     case #"hash_d70217109acf5dec":
-        function_de4ef1a3378fa481(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_de4ef1a3378fa481(fe, us, cf);
         break;
     case #"hash_7697dcbf72a23a47":
-        function_a06217ab83a8e72c(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_a06217ab83a8e72c(fe, us, cf);
         break;
     case #"hash_a27de9772d9acf6f":
-        function_5c087e1e2f11b8fa(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_5c087e1e2f11b8fa(fe, us, cf);
         break;
     case #"hash_ef15e060906886e9":
-        function_ebe07ebb4cbfcf20(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_ebe07ebb4cbfcf20(fe, us, cf);
         break;
     case #"hash_1855007112a17d9b":
-        function_29fe2f32d51e16ea(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_29fe2f32d51e16ea(fe, us, cf);
         break;
     }
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5bd
 // Size: 0x163
-function function_c1256cbc610539e9(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_c1256cbc610539e9(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (42482, 30100.8, 2082.5), (0, 270, 0), "turret_trap_spawn", "s_turret_trap_c_tunnel", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (42482, 30100.8, 2082.5), (0, 270, 0), "turret_trap_spawn", "s_turret_trap_c_tunnel", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (42483.1, 30101.9, 2167), (0, 180, 0), "s_turret_trap_c_tunnel", undefined, "activity_turret_trap_c_tunnel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (42483.1, 30101.9, 2167), (0, 180, 0), "s_turret_trap_c_tunnel", undefined, "activity_turret_trap_c_tunnel", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (42480.9, 30072.9, 2132.5), (0, 180, 0), "turret_trap_panel", "s_turret_trap_c_tunnel", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (42480.9, 30072.9, 2132.5), (0, 180, 0), "turret_trap_panel", "s_turret_trap_c_tunnel", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x727
 // Size: 0x163
-function function_53a603014d4fcb68(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_53a603014d4fcb68(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27735.2, 37317.1, 1175.5), (0, 179.44, 0), "turret_trap_spawn", "s_turret_trap_c_dock", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27735.2, 37317.1, 1175.5), (0, 179.44, 0), "turret_trap_spawn", "s_turret_trap_c_dock", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27736.3, 37315.9, 1260), (0, 89.44, 0), "s_turret_trap_c_dock", undefined, "activity_turret_trap_c_dock", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27736.3, 37315.9, 1260), (0, 89.44, 0), "s_turret_trap_c_dock", undefined, "activity_turret_trap_c_dock", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27707.4, 37318.4, 1225.5), (0, 89.44, 0), "turret_trap_panel", "s_turret_trap_c_dock", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27707.4, 37318.4, 1225.5), (0, 89.44, 0), "turret_trap_panel", "s_turret_trap_c_dock", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x891
 // Size: 0x163
-function function_de4ef1a3378fa481(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_de4ef1a3378fa481(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (33097.5, 34959.8, 1309.25), (0, 60, 0), "turret_trap_spawn", "s_turret_trap_c_roof", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (33097.5, 34959.8, 1309.25), (0, 60, 0), "turret_trap_spawn", "s_turret_trap_c_roof", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (33096, 34959.4, 1393.75), (0, 330, 0), "s_turret_trap_c_roof", undefined, "activity_turret_trap_c_roof", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (33096, 34959.4, 1393.75), (0, 330, 0), "s_turret_trap_c_roof", undefined, "activity_turret_trap_c_roof", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (33112.4, 34983.4, 1359.25), (0, 330, 0), "turret_trap_panel", "s_turret_trap_c_roof", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (33112.4, 34983.4, 1359.25), (0, 330, 0), "turret_trap_panel", "s_turret_trap_c_roof", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9fb
 // Size: 0x163
-function function_a06217ab83a8e72c(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_a06217ab83a8e72c(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (43598.7, 32896.1, 2843.5), (0, 285, 0), "turret_trap_spawn", "s_turret_trap_c_satellite", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (43598.7, 32896.1, 2843.5), (0, 285, 0), "turret_trap_spawn", "s_turret_trap_c_satellite", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (43599.5, 32897.4, 2928), (0, 195, 0), "s_turret_trap_c_satellite", undefined, "activity_turret_trap_c_satellite", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (43599.5, 32897.4, 2928), (0, 195, 0), "s_turret_trap_c_satellite", undefined, "activity_turret_trap_c_satellite", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (43604.9, 32868.8, 2893.5), (0, 195, 0), "turret_trap_panel", "s_turret_trap_c_satellite", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (43604.9, 32868.8, 2893.5), (0, 195, 0), "turret_trap_panel", "s_turret_trap_c_satellite", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb65
 // Size: 0x163
-function function_5c087e1e2f11b8fa(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_5c087e1e2f11b8fa(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27963.6, 24546.5, 1595.5), (0, 180, 0), "turret_trap_spawn", "s_turret_trap_c_camp", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27963.6, 24546.5, 1595.5), (0, 180, 0), "turret_trap_spawn", "s_turret_trap_c_camp", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27964.7, 24545.4, 1680), (0, 90, 0), "s_turret_trap_c_camp", undefined, "activity_turret_trap_c_camp", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27964.7, 24545.4, 1680), (0, 90, 0), "s_turret_trap_c_camp", undefined, "activity_turret_trap_c_camp", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27935.7, 24547.6, 1645.5), (0, 90, 0), "turret_trap_panel", "s_turret_trap_c_camp", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27935.7, 24547.6, 1645.5), (0, 90, 0), "turret_trap_panel", "s_turret_trap_c_camp", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xccf
 // Size: 0x163
-function function_ebe07ebb4cbfcf20(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_ebe07ebb4cbfcf20(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23653.6, 21522.5, 1743.5), (0, 180, 0), "turret_trap_spawn", "s_turret_trap_c_gate", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23653.6, 21522.5, 1743.5), (0, 180, 0), "turret_trap_spawn", "s_turret_trap_c_gate", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23654.7, 21521.4, 1828), (0, 90, 0), "s_turret_trap_c_gate", undefined, "activity_turret_trap_c_gate", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23654.7, 21521.4, 1828), (0, 90, 0), "s_turret_trap_c_gate", undefined, "activity_turret_trap_c_gate", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23625.7, 21523.6, 1793.5), (0, 90, 0), "turret_trap_panel", "s_turret_trap_c_gate", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23625.7, 21523.6, 1793.5), (0, 90, 0), "turret_trap_panel", "s_turret_trap_c_gate", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe39
 // Size: 0x163
-function function_29fe2f32d51e16ea(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_29fe2f32d51e16ea(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (35541.9, 31200.8, 1922.5), (0, 149.9, 0), "turret_trap_spawn", "s_turret_trap_c_base", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (35541.9, 31200.8, 1922.5), (0, 149.9, 0), "turret_trap_spawn", "s_turret_trap_c_base", "turret_trap_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (35542.3, 31199.3, 2007), (0, 59.9, 0), "s_turret_trap_c_base", undefined, "activity_turret_trap_c_base", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (35542.3, 31199.3, 2007), (0, 59.9, 0), "s_turret_trap_c_base", undefined, "activity_turret_trap_c_base", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (35518.3, 31215.7, 1972.5), (0, 59.9, 0), "turret_trap_panel", "s_turret_trap_c_base", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (35518.3, 31215.7, 1972.5), (0, 59.9, 0), "turret_trap_panel", "s_turret_trap_c_base", "turret_trap_panel", undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs/namespace_5c50c4d3342bf7bf
+// Namespace mp_jup_st_c_ob_interactions_turret_trap_cs / namespace_5c50c4d3342bf7bf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfa3
 // Size: 0x5d0
 function function_6da2952367672ac0() {
-    var_fdc9acdc19473f08 = [];
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (42484.1, 30100.1, 2185);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(42486, 30096.7, 2215)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_TUNNEL"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (27734.5, 37314.9, 1278);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(27731.1, 37313.1, 1308)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_DOCK"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (33096, 34961.5, 1411.75);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(33096.1, 34965.4, 1441.75)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_ROOF"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (43601, 32895.9, 2946);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(43603.7, 32893.1, 2976)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_SATELLITE"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (27962.8, 24544.4, 1698);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(27959.4, 24542.5, 1728)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_CAMP"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (23652.8, 21520.4, 1846);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(23649.4, 21518.5, 1876)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_GATE"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_turret_trap";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_interactions_turret_trap_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (35540.1, 31199.4, 2025);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(35536.3, 31199.4, 2055)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:100];
-    var_fdc9acdc19473f08["TURRET_TRAP_C_BASE"] = var_5f614235e4cbbd5b;
-    return var_fdc9acdc19473f08;
+    activityinstances = [];
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (42484.1, 30100.1, 2185);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(42486, 30096.7, 2215)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_TUNNEL"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (27734.5, 37314.9, 1278);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(27731.1, 37313.1, 1308)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_DOCK"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (33096, 34961.5, 1411.75);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(33096.1, 34965.4, 1441.75)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_ROOF"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (43601, 32895.9, 2946);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(43603.7, 32893.1, 2976)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_SATELLITE"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (27962.8, 24544.4, 1698);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(27959.4, 24542.5, 1728)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_CAMP"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (23652.8, 21520.4, 1846);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(23649.4, 21518.5, 1876)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_GATE"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_turret_trap";
+    instancestruct.cf = "mp_jup_st_c_ob_interactions_turret_trap_cs";
+    instancestruct.scriptstructorigin = (35540.1, 31199.4, 2025);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(35536.3, 31199.4, 2055)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [100];
+    activityinstances["TURRET_TRAP_C_BASE"] = instancestruct;
+    return activityinstances;
 }
 

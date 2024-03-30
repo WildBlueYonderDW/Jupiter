@@ -7,9 +7,9 @@
 #using scripts\mp\hud_message.gsc;
 #using scripts\mp\utility\game.gsc;
 
-#namespace namespace_26a75045c9dd4bcb;
+#namespace hud_util;
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26c
 // Size: 0xa9
@@ -24,12 +24,12 @@ function setparent(element) {
     self.parent addchild(self);
     if (isdefined(self.point)) {
         setpoint(self.point, self.relativepoint, self.xoffset, self.yoffset);
-    } else {
-        setpoint("TOPLEFT");
+        return;
     }
+    setpoint("TOPLEFT");
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31c
 // Size: 0xc
@@ -37,7 +37,7 @@ function getparent() {
     return self.parent;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x330
 // Size: 0xb1
@@ -46,18 +46,18 @@ function removedestroyedchildren() {
         return;
     }
     self.childchecktime = gettime();
-    var_3ddcdb8c8d35246a = [];
+    newchildren = [];
     foreach (child in self.children) {
         if (!isdefined(child)) {
             continue;
         }
-        child.index = var_3ddcdb8c8d35246a.size;
-        var_3ddcdb8c8d35246a[var_3ddcdb8c8d35246a.size] = child;
+        child.index = newchildren.size;
+        newchildren[newchildren.size] = child;
     }
-    self.children = var_3ddcdb8c8d35246a;
+    self.children = newchildren;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e8
 // Size: 0x3f
@@ -67,7 +67,7 @@ function addchild(element) {
     removedestroyedchildren();
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42e
 // Size: 0xad
@@ -81,7 +81,7 @@ function removechild(element) {
     element.index = undefined;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x402
@@ -189,7 +189,7 @@ function setpoint(point, relativepoint, xoffset, yoffset, movetime) {
     updatechildren();
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8eb
 // Size: 0x1c9
@@ -214,7 +214,7 @@ function setpointbar(point, relativepoint, xoffset, yoffset) {
     updatebar(self.bar.frac);
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xabb
 // Size: 0x2f
@@ -224,7 +224,7 @@ function updatebar(barfrac, rateofchange) {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf1
 // Size: 0x189
@@ -255,7 +255,7 @@ function updatebarscale(barfrac, rateofchange) {
     self.bar.lastupdatetime = gettime();
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc81
 // Size: 0x1a7
@@ -297,7 +297,7 @@ function createhudelem(label, value, point, relativepoint, xoffset, yoffset, col
     return fontelem;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe30
 // Size: 0xe6
@@ -319,80 +319,80 @@ function createfontstring(font, fontscale) {
     return fontelem;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf1e
 // Size: 0xfd
 function createservertimer(font, fontscale, team) {
     if (isdefined(team)) {
-        var_4908ca330bdc48d1 = newteamhudelem(team);
+        timerelem = newteamhudelem(team);
     } else {
-        var_4908ca330bdc48d1 = newhudelem();
+        timerelem = newhudelem();
     }
-    var_4908ca330bdc48d1.elemtype = "timer";
-    var_4908ca330bdc48d1.font = font;
-    var_4908ca330bdc48d1.fontscale = fontscale;
-    var_4908ca330bdc48d1.basefontscale = fontscale;
-    var_4908ca330bdc48d1.x = 0;
-    var_4908ca330bdc48d1.y = 0;
-    var_4908ca330bdc48d1.width = 0;
-    var_4908ca330bdc48d1.height = int(level.fontheight * fontscale);
-    var_4908ca330bdc48d1.xoffset = 0;
-    var_4908ca330bdc48d1.yoffset = 0;
-    var_4908ca330bdc48d1.children = [];
-    var_4908ca330bdc48d1 setparent(level.uiparent);
-    var_4908ca330bdc48d1.hidden = 0;
-    return var_4908ca330bdc48d1;
+    timerelem.elemtype = "timer";
+    timerelem.font = font;
+    timerelem.fontscale = fontscale;
+    timerelem.basefontscale = fontscale;
+    timerelem.x = 0;
+    timerelem.y = 0;
+    timerelem.width = 0;
+    timerelem.height = int(level.fontheight * fontscale);
+    timerelem.xoffset = 0;
+    timerelem.yoffset = 0;
+    timerelem.children = [];
+    timerelem setparent(level.uiparent);
+    timerelem.hidden = 0;
+    return timerelem;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1023
 // Size: 0xe6
 function createtimer(font, fontscale) {
-    var_4908ca330bdc48d1 = newclienthudelem(self);
-    var_4908ca330bdc48d1.elemtype = "timer";
-    var_4908ca330bdc48d1.font = font;
-    var_4908ca330bdc48d1.fontscale = fontscale;
-    var_4908ca330bdc48d1.basefontscale = fontscale;
-    var_4908ca330bdc48d1.x = 0;
-    var_4908ca330bdc48d1.y = 0;
-    var_4908ca330bdc48d1.width = 0;
-    var_4908ca330bdc48d1.height = int(level.fontheight * fontscale);
-    var_4908ca330bdc48d1.xoffset = 0;
-    var_4908ca330bdc48d1.yoffset = 0;
-    var_4908ca330bdc48d1.children = [];
-    var_4908ca330bdc48d1 setparent(level.uiparent);
-    var_4908ca330bdc48d1.hidden = 0;
-    return var_4908ca330bdc48d1;
+    timerelem = newclienthudelem(self);
+    timerelem.elemtype = "timer";
+    timerelem.font = font;
+    timerelem.fontscale = fontscale;
+    timerelem.basefontscale = fontscale;
+    timerelem.x = 0;
+    timerelem.y = 0;
+    timerelem.width = 0;
+    timerelem.height = int(level.fontheight * fontscale);
+    timerelem.xoffset = 0;
+    timerelem.yoffset = 0;
+    timerelem.children = [];
+    timerelem setparent(level.uiparent);
+    timerelem.hidden = 0;
+    return timerelem;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1111
 // Size: 0x102
 function createicon(shader, width, height) {
-    var_5b6a2597d526bd27 = newclienthudelem(self);
-    var_5b6a2597d526bd27.elemtype = "icon";
-    var_5b6a2597d526bd27.x = 0;
-    var_5b6a2597d526bd27.y = 0;
-    var_5b6a2597d526bd27.width = width;
-    var_5b6a2597d526bd27.height = height;
-    var_5b6a2597d526bd27.basewidth = var_5b6a2597d526bd27.width;
-    var_5b6a2597d526bd27.baseheight = var_5b6a2597d526bd27.height;
-    var_5b6a2597d526bd27.xoffset = 0;
-    var_5b6a2597d526bd27.yoffset = 0;
-    var_5b6a2597d526bd27.children = [];
-    var_5b6a2597d526bd27 setparent(level.uiparent);
-    var_5b6a2597d526bd27.hidden = 0;
+    iconelem = newclienthudelem(self);
+    iconelem.elemtype = "icon";
+    iconelem.x = 0;
+    iconelem.y = 0;
+    iconelem.width = width;
+    iconelem.height = height;
+    iconelem.basewidth = iconelem.width;
+    iconelem.baseheight = iconelem.height;
+    iconelem.xoffset = 0;
+    iconelem.yoffset = 0;
+    iconelem.children = [];
+    iconelem setparent(level.uiparent);
+    iconelem.hidden = 0;
     if (isdefined(shader)) {
-        var_5b6a2597d526bd27 setshader(shader, width, height);
-        var_5b6a2597d526bd27.shader = shader;
+        iconelem setshader(shader, width, height);
+        iconelem.shader = shader;
     }
-    return var_5b6a2597d526bd27;
+    return iconelem;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x121b
 // Size: 0x190
@@ -426,7 +426,7 @@ function createbar(color, width, height, flashfrac) {
     return barelembg;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13b3
 // Size: 0x7e
@@ -444,7 +444,7 @@ function getcurrentfraction() {
     return frac;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1439
 // Size: 0x94
@@ -466,7 +466,7 @@ function createprimaryprogressbar(xoffset, yoffset) {
     return bar;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14d5
 // Size: 0x94
@@ -488,11 +488,11 @@ function function_c6071a6e72a4f025(xoffset, yoffset, var_43e267f4c4a6df1, var_60
     return bar;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1571
 // Size: 0xcb
-function createprimaryprogressbartext(xoffset, yoffset, var_780737a0c9ec4ab5, var_76ac8a084f06ea85) {
+function createprimaryprogressbartext(xoffset, yoffset, fontsize, usefont) {
     if (isagent(self)) {
         return undefined;
     }
@@ -505,21 +505,21 @@ function createprimaryprogressbartext(xoffset, yoffset, var_780737a0c9ec4ab5, va
     if (self issplitscreenplayer()) {
         yoffset = yoffset + 20;
     }
-    var_f0778934c2c7e788 = level.primaryprogressbarfontsize;
+    font_size = level.primaryprogressbarfontsize;
     font = "default";
-    if (isdefined(var_780737a0c9ec4ab5)) {
-        var_f0778934c2c7e788 = var_780737a0c9ec4ab5;
+    if (isdefined(fontsize)) {
+        font_size = fontsize;
     }
-    if (isdefined(var_76ac8a084f06ea85)) {
-        font = var_76ac8a084f06ea85;
+    if (isdefined(usefont)) {
+        font = usefont;
     }
-    text = createfontstring(font, var_f0778934c2c7e788);
+    text = createfontstring(font, font_size);
     text setpoint("CENTER", undefined, level.primaryprogressbartextx + xoffset, level.primaryprogressbartexty + yoffset);
     text.sort = -1;
     return text;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1644
 // Size: 0x21
@@ -527,7 +527,7 @@ function setflashfrac(flashfrac) {
     self.bar.flashfrac = flashfrac;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x166c
 // Size: 0xc0
@@ -550,7 +550,7 @@ function hideelem() {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1733
 // Size: 0xce
@@ -567,12 +567,14 @@ function showelem() {
         if (self.bar.alpha != 1) {
             self.bar.alpha = 1;
         }
-    } else if (self.alpha != 1) {
+        return;
+    }
+    if (self.alpha != 1) {
         self.alpha = 1;
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1808
 // Size: 0xb9
@@ -581,7 +583,7 @@ function flashthread() {
     if (!self.hidden) {
         self.alpha = 1;
     }
-    while (1) {
+    while (true) {
         if (self.frac >= self.flashfrac) {
             if (!self.hidden) {
                 self fadeovertime(0.3);
@@ -591,16 +593,16 @@ function flashthread() {
                 self.alpha = 1;
             }
             wait(0.7);
-        } else {
-            if (!self.hidden && self.alpha != 1) {
-                self.alpha = 1;
-            }
-            wait(0.05);
+            continue;
         }
+        if (!self.hidden && self.alpha != 1) {
+            self.alpha = 1;
+        }
+        wait(0.05);
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18c8
 // Size: 0xaa
@@ -620,7 +622,7 @@ function destroyelem() {
     self destroy();
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1979
 // Size: 0x30
@@ -629,7 +631,7 @@ function seticonshader(shader) {
     self.shader = shader;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19b0
 // Size: 0x15
@@ -637,7 +639,7 @@ function geticonshader(shader) {
     return self.shader;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x19cd
 // Size: 0x39
@@ -648,7 +650,7 @@ function seticonsize(width, height) {
     self setshader(self.shader, width, height);
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a0d
 // Size: 0x16
@@ -656,7 +658,7 @@ function setwidth(width) {
     self.width = width;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a2a
 // Size: 0x16
@@ -664,7 +666,7 @@ function setheight(height) {
     self.height = height;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a47
 // Size: 0x28
@@ -673,7 +675,7 @@ function setsize(width, height) {
     self.height = height;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a76
 // Size: 0x6e
@@ -684,7 +686,7 @@ function updatechildren() {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1aeb
 // Size: 0x9a
@@ -700,7 +702,7 @@ function transitionreset() {
     self.alpha = 0;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b8c
 // Size: 0xb1
@@ -719,12 +721,12 @@ function transitionzoomin(duration) {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c44
 // Size: 0x8b
-function transitionpulsefxin(var_187ef7fae5a4f6f3, duration) {
-    transtime = int(var_187ef7fae5a4f6f3) * 1000;
+function transitionpulsefxin(intime, duration) {
+    transtime = int(intime) * 1000;
     showtime = int(duration) * 1000;
     switch (self.elemtype) {
     case #"hash_7d97db7c4e68ac02":
@@ -736,7 +738,7 @@ function transitionpulsefxin(var_187ef7fae5a4f6f3, duration) {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cd6
 // Size: 0xe9
@@ -763,7 +765,7 @@ function transitionslidein(duration, direction) {
     self.y = self.yoffset;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dc6
 // Size: 0xd0
@@ -771,29 +773,29 @@ function transitionslideout(duration, direction) {
     if (!isdefined(direction)) {
         direction = "left";
     }
-    var_dc7e30144bc463ce = self.xoffset;
-    var_dc7e31144bc46601 = self.yoffset;
+    gotox = self.xoffset;
+    gotoy = self.yoffset;
     switch (direction) {
     case #"hash_c9b3133a17a3b2d0":
-        var_dc7e30144bc463ce = var_dc7e30144bc463ce + 1000;
+        gotox = gotox + 1000;
         break;
     case #"hash_96815ce4f2a3dbc5":
-        var_dc7e30144bc463ce = var_dc7e30144bc463ce - 1000;
+        gotox = gotox - 1000;
         break;
     case #"hash_fa3db8f6bd73eb80":
-        var_dc7e31144bc46601 = var_dc7e31144bc46601 - 1000;
+        gotoy = gotoy - 1000;
         break;
     case #"hash_f91b350a054b6175":
-        var_dc7e31144bc46601 = var_dc7e31144bc46601 + 1000;
+        gotoy = gotoy + 1000;
         break;
     }
     self.alpha = 1;
     self moveovertime(duration);
-    self.x = var_dc7e30144bc463ce;
-    self.y = var_dc7e31144bc46601;
+    self.x = gotox;
+    self.y = gotoy;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e9d
 // Size: 0x7a
@@ -809,7 +811,7 @@ function transitionzoomout(duration) {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f1e
 // Size: 0x41
@@ -817,12 +819,12 @@ function transitionfadein(duration) {
     self fadeovertime(duration);
     if (isdefined(self.maxalpha)) {
         self.alpha = self.maxalpha;
-    } else {
-        self.alpha = 1;
+        return;
     }
+    self.alpha = 1;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f66
 // Size: 0x22
@@ -831,7 +833,7 @@ function transitionfadeout(duration) {
     self.alpha = 0;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f8f
 // Size: 0x1d2
@@ -840,59 +842,59 @@ function teamplayercardsplash(splash, owner, team, optionalnumber, var_b7abc0284
         return;
     }
     var_b7abc0284e13ca7a = istrue(var_b7abc0284e13ca7a);
-    if (namespace_36f464722d326bbe::islargebrmap()) {
-        friendlyplayers = namespace_54d20dd0dd79277f::getteamdata(owner.team, "players");
+    if (scripts/cp_mp/utility/game_utility::islargebrmap()) {
+        friendlyplayers = scripts/mp/utility/teams::getteamdata(owner.team, "players");
         if (isdefined(friendlyplayers)) {
             foreach (player in friendlyplayers) {
-                if (!isdefined(player) || !namespace_7e17181d03156026::isreallyalive(player) || player namespace_d3d40f75bb4e4c32::isplayeringulag()) {
+                if (!isdefined(player) || !scripts/mp/utility/player::isreallyalive(player) || player scripts/mp/gametypes/br_public::isplayeringulag()) {
                     continue;
                 }
                 if (var_b7abc0284e13ca7a && isplayer(owner) && player == owner) {
                     continue;
                 }
-                player thread namespace_44abc05161e2e2cb::showsplash(splash, optionalnumber, owner);
+                player thread scripts/mp/hud_message::showsplash(splash, optionalnumber, owner);
             }
         }
-    } else {
-        foreach (player in level.players) {
-            if (player iscodcaster()) {
-                var_13c5603d4beea2fc = player getspectatingplayer();
-                if (isdefined(var_13c5603d4beea2fc) && isdefined(team) && var_13c5603d4beea2fc.team != team) {
-                    continue;
-                }
-            } else {
-                if (!isplayer(player)) {
-                    continue;
-                }
-                if (isdefined(team) && player.team != team) {
-                    continue;
-                }
-                if (var_b7abc0284e13ca7a && isplayer(owner) && player == owner) {
-                    continue;
-                }
+        return;
+    }
+    foreach (player in level.players) {
+        if (player iscodcaster()) {
+            spectatingplayer = player getspectatingplayer();
+            if (isdefined(spectatingplayer) && isdefined(team) && spectatingplayer.team != team) {
+                continue;
             }
-            player thread namespace_44abc05161e2e2cb::showsplash(splash, optionalnumber, owner);
+        } else {
+            if (!isplayer(player)) {
+                continue;
+            }
+            if (isdefined(team) && player.team != team) {
+                continue;
+            }
+            if (var_b7abc0284e13ca7a && isplayer(owner) && player == owner) {
+                continue;
+            }
         }
+        player thread scripts/mp/hud_message::showsplash(splash, optionalnumber, owner);
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2168
 // Size: 0x85
-function function_7b2653a588f28e29(owner, var_34c19b030fb21cc7, var_274d4f09b844d959, var_b94346d9018fe098, var_b7abc0284e13ca7a, var_f5c11d099500e94e, var_6acc43fa4db03a7f, var_6ad135fa4db6448c) {
-    if (canshowsplash(var_34c19b030fb21cc7) && !istrue(var_b7abc0284e13ca7a)) {
-        owner thread namespace_44abc05161e2e2cb::showsplash(var_34c19b030fb21cc7, var_f5c11d099500e94e, owner);
+function function_7b2653a588f28e29(owner, ownersplash, friendlysplash, enemysplash, var_b7abc0284e13ca7a, var_f5c11d099500e94e, var_6acc43fa4db03a7f, var_6ad135fa4db6448c) {
+    if (canshowsplash(ownersplash) && !istrue(var_b7abc0284e13ca7a)) {
+        owner thread scripts/mp/hud_message::showsplash(ownersplash, var_f5c11d099500e94e, owner);
     }
-    level thread namespace_44abc05161e2e2cb::notifyteam(var_274d4f09b844d959, var_b94346d9018fe098, owner.team, [0:owner], var_6acc43fa4db03a7f, var_6ad135fa4db6448c, owner);
+    level thread scripts/mp/hud_message::notifyteam(friendlysplash, enemysplash, owner.team, [owner], var_6acc43fa4db03a7f, var_6ad135fa4db6448c, owner);
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f4
 // Size: 0xd6
 function iskillstreakcalloutsplash(splash) {
-    var_ef41235a89500ad8 = 0;
+    calloutsplash = 0;
     if (issubstr(splash, "used_")) {
         var_475639ea36ea224b = strtok(splash, "_");
         killstreakref = undefined;
@@ -902,18 +904,18 @@ function iskillstreakcalloutsplash(splash) {
             }
             if (!isdefined(killstreakref)) {
                 killstreakref = tok;
-            } else {
-                killstreakref = killstreakref + "_" + tok;
+                continue;
             }
+            killstreakref = killstreakref + "_" + tok;
         }
-        if (isdefined(killstreakref) && isdefined(level.var_b23156d776b1d85.var_38f2a11237246ac[killstreakref])) {
-            var_ef41235a89500ad8 = 1;
+        if (isdefined(killstreakref) && isdefined(level.streakglobals.streakbundles[killstreakref])) {
+            calloutsplash = 1;
         }
     }
-    return var_ef41235a89500ad8;
+    return calloutsplash;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22d2
 // Size: 0x17
@@ -921,42 +923,42 @@ function iseventcalloutsplash(splash) {
     return issubstr(splash, "callout_");
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22f1
 // Size: 0x97
 function getbaseeventcalloutsplash(splash) {
-    var_4544740304048f3 = undefined;
+    basesplash = undefined;
     var_64e9e0e7c5b091ab = strtok(splash, "_");
     foreach (tok in var_64e9e0e7c5b091ab) {
         if (tok == "callout") {
             continue;
         }
-        if (!isdefined(var_4544740304048f3)) {
-            var_4544740304048f3 = tok;
-        } else {
-            var_4544740304048f3 = var_4544740304048f3 + "_" + tok;
+        if (!isdefined(basesplash)) {
+            basesplash = tok;
+            continue;
         }
+        basesplash = basesplash + "_" + tok;
     }
-    return var_4544740304048f3;
+    return basesplash;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2390
 // Size: 0x1bc
 function canshowsplash(splash) {
-    if (istrue(level.var_e028ca551ecc95a3) || namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (istrue(level.var_e028ca551ecc95a3) || scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         return 0;
     }
     if (!isdefined(splash) || splash == "") {
         return 0;
     }
     var_2b6edac9af839814 = 1;
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         if (iseventcalloutsplash(splash)) {
-            var_4544740304048f3 = getbaseeventcalloutsplash(splash);
-            switch (var_4544740304048f3) {
+            basesplash = getbaseeventcalloutsplash(splash);
+            switch (basesplash) {
             case #"hash_37c71ce8ac0e2195":
             case #"hash_44f3835e85deb518":
             case #"hash_55016d1c29bc8e41":
@@ -970,7 +972,7 @@ function canshowsplash(splash) {
             }
         }
     } else {
-        switch (namespace_cd0b2d039510b38d::getgametype()) {
+        switch (scripts/mp/utility/game::getgametype()) {
         case #"hash_ca6516c10db2c95":
         case #"hash_5e78ea9021845d4a":
         case #"hash_7f9c384a34cc392f":
@@ -979,8 +981,8 @@ function canshowsplash(splash) {
             if (iskillstreakcalloutsplash(splash)) {
                 var_2b6edac9af839814 = 0;
             } else if (iseventcalloutsplash(splash)) {
-                var_4544740304048f3 = getbaseeventcalloutsplash(splash);
-                switch (var_4544740304048f3) {
+                basesplash = getbaseeventcalloutsplash(splash);
+                switch (basesplash) {
                 case #"hash_37c71ce8ac0e2195":
                 case #"hash_44f3835e85deb518":
                 case #"hash_55016d1c29bc8e41":
@@ -999,34 +1001,34 @@ function canshowsplash(splash) {
     return var_2b6edac9af839814;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2554
 // Size: 0x92
 function showsplashtoall(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6) {
     foreach (player in level.players) {
-        player namespace_44abc05161e2e2cb::showsplash(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6);
+        player scripts/mp/hud_message::showsplash(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6);
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25ed
 // Size: 0xa3
 function showsplashtoteam(team, splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6) {
     foreach (player in level.teamdata[team]["players"]) {
-        player namespace_44abc05161e2e2cb::showsplash(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6);
+        player scripts/mp/hud_message::showsplash(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6);
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_52f6938dd902c7d0
+// Namespace hud_util / scripts/mp/hud_util
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2697
 // Size: 0xb1
 function showsplashtoallexceptteam(team, splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6) {
     foreach (player in level.players) {
         if (isdefined(player) && player.team != team) {
-            player namespace_44abc05161e2e2cb::showsplash(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6);
+            player scripts/mp/hud_message::showsplash(splashname, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6);
         }
     }
 }

@@ -9,16 +9,16 @@
 
 #namespace namespace_6d86fa067dd1151d;
 
-// Namespace namespace_6d86fa067dd1151d/namespace_cf330d307304e7fc
+// Namespace namespace_6d86fa067dd1151d / namespace_cf330d307304e7fc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbb
 // Size: 0x2a
 function function_f383491974a17b9a() {
-    namespace_58a74e7d54b56e8d::registerkillstreak("airdrop_escort", &namespace_33ee5ceeb5f1d380::function_45378f51950e7d1f);
-    namespace_3c37cb17ade254d::registersharedfunc("airdrop_escort", "attachXRays", &function_1f3181d1053887e6);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("airdrop_escort", &namespace_33ee5ceeb5f1d380::function_45378f51950e7d1f);
+    scripts/engine/utility::registersharedfunc("airdrop_escort", "attachXRays", &function_1f3181d1053887e6);
 }
 
-// Namespace namespace_6d86fa067dd1151d/namespace_cf330d307304e7fc
+// Namespace namespace_6d86fa067dd1151d / namespace_cf330d307304e7fc
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec
 // Size: 0x21

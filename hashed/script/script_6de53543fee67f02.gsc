@@ -2,9 +2,9 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 
-#namespace namespace_fb6830621d8a6636;
+#namespace render_utility;
 
-// Namespace namespace_fb6830621d8a6636/namespace_ff14d1780afedf10
+// Namespace render_utility / namespace_ff14d1780afedf10
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10b
 // Size: 0x86
@@ -29,7 +29,7 @@ function function_4f2c4138dacca16a(aberration, radius, strength, distortion) {
     }
 }
 
-// Namespace namespace_fb6830621d8a6636/namespace_ff14d1780afedf10
+// Namespace render_utility / namespace_ff14d1780afedf10
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x198
 // Size: 0x61

@@ -4,7 +4,7 @@
 
 #namespace art;
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78
 // Size: 0x4e
@@ -19,11 +19,11 @@ function main() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd
 // Size: 0x4a
-function function_2d331c364a179082() {
+function inittweaks() {
     /#
         setdevdvar(@"hash_4296464306ab31a8", 1);
         if (!isdefined(level.buttons)) {
@@ -35,7 +35,7 @@ function function_2d331c364a179082() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11e
 // Size: 0x8d
@@ -48,21 +48,20 @@ function tweakart() {
         setdevdvar(@"hash_eadbba3bd00553b7", "<unknown string>");
         printed = 0;
         for (;;) {
-            for (;;) {
-                while (getdvarint(@"hash_41ecbb9b60af8bcf", 0) == 0) {
-                    wait(0.05);
-                }
-                if (!printed) {
-                    printed = 1;
-                    function_2d331c364a179082();
-                }
-                dumpsettings();
+            while (getdvarint(@"hash_41ecbb9b60af8bcf", 0) == 0) {
+                wait(0.05);
             }
+            if (!printed) {
+                printed = 1;
+                inittweaks();
+            }
+            dumpsettings();
+            wait(0.05);
         }
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x11d
@@ -84,33 +83,33 @@ function tess_init() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x5e
-function tess_set_goal(var_92ad28aede5bf05e, var_61a97df702385989, blend_time) {
+function tess_set_goal(var_92ad28aede5bf05e, cutoff_falloff, blend_time) {
     /#
         level.tess.cutoff_distance_goal = var_92ad28aede5bf05e;
-        level.tess.cutoff_falloff_goal = var_61a97df702385989;
+        level.tess.cutoff_falloff_goal = cutoff_falloff;
         level.tess.time_remaining = blend_time;
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x33b
 // Size: 0x238
 function tess_update() {
     /#
-        while (1) {
+        while (true) {
             var_8e82e2ee78f6c824 = level.tess.cutoff_distance_current;
             var_7d417327139f9f5f = level.tess.cutoff_falloff_current;
             waitframe();
             if (level.tess.time_remaining > 0) {
                 frames = level.tess.time_remaining * 20;
-                var_d92da7b10c97cc90 = (level.tess.cutoff_distance_goal - level.tess.cutoff_distance_current) / frames;
+                distance_increment = (level.tess.cutoff_distance_goal - level.tess.cutoff_distance_current) / frames;
                 var_f18ef0f6f6349b6b = (level.tess.cutoff_falloff_goal - level.tess.cutoff_falloff_current) / frames;
-                level.tess.cutoff_distance_current = level.tess.cutoff_distance_current + var_d92da7b10c97cc90;
+                level.tess.cutoff_distance_current = level.tess.cutoff_distance_current + distance_increment;
                 level.tess.cutoff_falloff_current = level.tess.cutoff_falloff_current + var_f18ef0f6f6349b6b;
                 level.tess.time_remaining = level.tess.time_remaining - level.framedurationseconds;
             } else {
@@ -127,7 +126,7 @@ function tess_update() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57a
 // Size: 0xa9
@@ -151,41 +150,41 @@ function dumpsettings() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x62a
 // Size: 0x93
-function button_down(var_b6499a03c15010eb, var_33ee8f4223150d3b) {
+function button_down(btn, btn2) {
     /#
-        pressed = level.players[0] buttonpressed(var_b6499a03c15010eb);
+        pressed = level.players[0] buttonpressed(btn);
         if (!pressed) {
-            pressed = level.players[0] buttonpressed(var_33ee8f4223150d3b);
+            pressed = level.players[0] buttonpressed(btn2);
         }
-        if (!isdefined(level.buttons[var_b6499a03c15010eb])) {
-            level.buttons[var_b6499a03c15010eb] = 0;
+        if (!isdefined(level.buttons[btn])) {
+            level.buttons[btn] = 0;
         }
-        if (gettime() < level.buttons[var_b6499a03c15010eb]) {
+        if (gettime() < level.buttons[btn]) {
             return 0;
         }
-        level.buttons[var_b6499a03c15010eb] = gettime() + 400;
+        level.buttons[btn] = gettime() + 400;
         return pressed;
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c4
 // Size: 0x16f
 function hud_init() {
     /#
-        var_a7d721b0683f82d4 = 7;
+        listsize = 7;
         hudelems = [];
         spacer = 15;
-        div = int(var_a7d721b0683f82d4 / 2);
+        div = int(listsize / 2);
         org = 240 - div * spacer;
-        var_f1545dc81f7014d = 0.5 / div;
-        alpha = var_f1545dc81f7014d;
-        for (i = 0; i < var_a7d721b0683f82d4; i++) {
+        alphainc = 0.5 / div;
+        alpha = alphainc;
+        for (i = 0; i < listsize; i++) {
             hudelems[i] = _newhudelem();
             hudelems[i].location = 0;
             hudelems[i].alignx = "<unknown string>";
@@ -202,16 +201,16 @@ function hud_init() {
             hudelems[i].y = org;
             hudelems[i] _settext("<unknown string>");
             if (i == div) {
-                var_f1545dc81f7014d = var_f1545dc81f7014d * -1;
+                alphainc = alphainc * -1;
             }
-            alpha = alpha + var_f1545dc81f7014d;
+            alpha = alpha + alphainc;
             org = org + spacer;
         }
         level.spam_group_hudelems = hudelems;
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x83a
 // Size: 0x45
@@ -226,7 +225,7 @@ function _newhudelem() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x886
 // Size: 0xc4
@@ -246,7 +245,7 @@ function _settext(text) {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x951
 // Size: 0x35
@@ -262,7 +261,7 @@ function _clearalltextafterhudelem() {
     #/
 }
 
-// Namespace art/namespace_2f46b5640b33cba3
+// Namespace art / scripts/mp/art
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x98d
 // Size: 0x26

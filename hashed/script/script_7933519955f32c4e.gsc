@@ -22,21 +22,21 @@
 #using script_6a5d3bf7a5b7064a;
 #using scripts\mp\deathicons.gsc;
 #using scripts\mp\gametypes\br_vehicles.gsc;
-#using script_a34750d17473c49;
+#using scripts\mp\gametypes\br_utility.gsc;
 
 #namespace namespace_147cc21b507a21ed;
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdcc
 // Size: 0x44
 function init() {
-    var_1f065571b3854f0 = namespace_71073fa38f11492::isbrgametypefuncdefined("infilSequence");
+    var_1f065571b3854f0 = scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("infilSequence");
     level.var_b4e9d46918f067bb = getdvarint(@"hash_c4a4576c5ca4960", 0) || var_1f065571b3854f0;
     level.var_a696a93807abb2fd = spawnstruct();
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe17
 // Size: 0xc
@@ -44,7 +44,7 @@ function function_b4e9d46918f067bb() {
     return level.var_b4e9d46918f067bb;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe2b
 // Size: 0xe7
@@ -61,15 +61,15 @@ function main() {
     setdvarifuninitialized(@"hash_8be4acc5eebb19ca", 1);
     setdvarifuninitialized(@"hash_e65dc975d6fcfca0", 0);
     level._effect["vfx_br_ac130_clouds"] = loadfx("vfx/iw8_br/gameplay/infil/vfx_br_ac130_clouds");
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         level._effect["vfx_br_infil_cloud_anim"] = loadfx("vfx/mgl/iw8_br/gameplay/infil/vfx_br_infil_cloud_anim");
         level._effect["vfx_br_infil_cloud_anim_moving"] = loadfx("vfx/mgl/iw8_br/gameplay/infil/vfx_br_infil_cloud_anim");
-    } else {
-        level._effect["vfx_br_infil_cloud_anim"] = loadfx("vfx/iw8_br/gameplay/infil/vfx_br_infil_cloud_anim");
+        return;
     }
+    level._effect["vfx_br_infil_cloud_anim"] = loadfx("vfx/iw8_br/gameplay/infil/vfx_br_infil_cloud_anim");
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf19
 // Size: 0x70
@@ -79,20 +79,20 @@ function function_5df8c6abd0b861cd() {
     }
     c130pathstruct = undefined;
     if (!istrue(level.br_infils_disabled) && !istrue(level.var_59ff09549058dda2)) {
-        if (namespace_71073fa38f11492::isbrgametypefuncdefined("createC130PathStruct")) {
-            c130pathstruct = namespace_71073fa38f11492::runbrgametypefunc("createC130PathStruct");
+        if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("createC130PathStruct")) {
+            c130pathstruct = scripts/mp/gametypes/br_gametypes::runbrgametypefunc("createC130PathStruct");
         } else {
-            c130pathstruct = namespace_ad389306d44fc6b4::createtestc130path();
+            c130pathstruct = scripts/mp/gametypes/br_c130::createtestc130path();
         }
     }
     level.var_a696a93807abb2fd.c130pathstruct = c130pathstruct;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf90
 // Size: 0x1ae
-function function_f5c1889669d23a75() {
+function postprematch() {
     if (!function_b4e9d46918f067bb()) {
         return;
     }
@@ -100,12 +100,12 @@ function function_f5c1889669d23a75() {
     level.br_latejoininfilready = 0;
     if (!istrue(level.br_infils_disabled)) {
         setdvarifuninitialized(@"hash_fc6ebbeb3426b854", 0);
-        if (namespace_71073fa38f11492::isbrgametypefuncdefined("infilSequence")) {
-            namespace_71073fa38f11492::runbrgametypefunc("infilSequence");
+        if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("infilSequence")) {
+            scripts/mp/gametypes/br_gametypes::runbrgametypefunc("infilSequence");
         } else {
             players = undefined;
-            if (namespace_71073fa38f11492::isbrgametypefuncdefined("getInfilPlayers")) {
-                players = namespace_71073fa38f11492::runbrgametypefunc("getInfilPlayers");
+            if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("getInfilPlayers")) {
+                players = scripts/mp/gametypes/br_gametypes::runbrgametypefunc("getInfilPlayers");
             }
             /#
                 assert(isdefined(level.var_a696a93807abb2fd.c130pathstruct));
@@ -115,27 +115,27 @@ function function_f5c1889669d23a75() {
             } else {
                 beginbrc130playeraniminfilsequence(level.var_a696a93807abb2fd.c130pathstruct, "script_model");
             }
-            level thread namespace_ad389306d44fc6b4::waittoplayinfildialog();
+            level thread scripts/mp/gametypes/br_c130::waittoplayinfildialog();
         }
-    } else {
-        namespace_4b0406965e556711::gameflagset("prematch_fade_done");
-        waitframe();
-        level.allowprematchdamage = 0;
-        players = undefined;
-        if (namespace_71073fa38f11492::isbrgametypefuncdefined("getInfilPlayers")) {
-            players = namespace_71073fa38f11492::runbrgametypefunc("getInfilPlayers");
-        }
-        if (!isdefined(players) || players.size > 0) {
-            waitforc130andforcespawnallplayers(players);
-        }
-        foreach (player in level.players) {
-            player.plotarmor = undefined;
-        }
-        gameflagset("br_ready_to_jump");
+        return;
     }
+    scripts/mp/flags::gameflagset("prematch_fade_done");
+    waitframe();
+    level.allowprematchdamage = 0;
+    players = undefined;
+    if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("getInfilPlayers")) {
+        players = scripts/mp/gametypes/br_gametypes::runbrgametypefunc("getInfilPlayers");
+    }
+    if (!isdefined(players) || players.size > 0) {
+        waitforc130andforcespawnallplayers(players);
+    }
+    foreach (player in level.players) {
+        player.plotarmor = undefined;
+    }
+    gameflagset("br_ready_to_jump");
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1145
 // Size: 0x207
@@ -145,17 +145,17 @@ function latespawnplayer() {
         return;
     }
     player = self;
-    istutorial = namespace_d3d40f75bb4e4c32::istutorial() || namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf();
+    istutorial = scripts/mp/gametypes/br_public::istutorial() || scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf();
     if (getdvar(@"hash_215446c7a0657e95") != "" || istutorial) {
         oldlatespawnplayer();
     } else if (!isalive(player)) {
-        var_92a929921d302e13 = getdvarint(@"hash_25ad2925d6075c8f", 0) == 2;
-        var_afe7b88ab44f0601 = !istrue(level.br_c130spawndone) || !isdefined(level.latejoinersanimstruct);
-        if (!var_92a929921d302e13 && var_afe7b88ab44f0601) {
-            var_a2e7df444a8aafa9 = isbot(player) && namespace_d3d40f75bb4e4c32::isbrpracticemode();
+        infilskipped = getdvarint(@"hash_25ad2925d6075c8f", 0) == 2;
+        latejoininfil = !istrue(level.br_c130spawndone) || !isdefined(level.latejoinersanimstruct);
+        if (!infilskipped && latejoininfil) {
+            var_a2e7df444a8aafa9 = isbot(player) && scripts/mp/gametypes/br_public::isBrPracticeMode();
             while (!istrue(level.br_latejoininfilready) && !var_a2e7df444a8aafa9) {
                 if (!var_a2e7df444a8aafa9) {
-                    player namespace_d20f8ef223912e12::function_258c4f40dee8189a();
+                    player scripts/mp/gametypes/br::function_258c4f40dee8189a();
                     player setclientomnvar("ui_br_transition_type", 4);
                 }
                 wait(0.3);
@@ -164,20 +164,20 @@ function latespawnplayer() {
         } else {
             player.br_isininfil = 0;
             player.br_infilstarted = 1;
-            isuibot = player namespace_d20f8ef223912e12::function_7dbb8165d792b06c();
-            if (var_92a929921d302e13 && isbot(player) && !isuibot) {
+            isuibot = player scripts/mp/gametypes/br::function_7dbb8165d792b06c();
+            if (infilskipped && isbot(player) && !isuibot) {
                 player.jumped = 1;
-                player namespace_99ac021a7547cae3::addtoalivecount();
+                player scripts/mp/playerlogic::addtoalivecount();
             }
-            if (!namespace_71073fa38f11492::isfeaturedisabled("squadLeader")) {
+            if (!scripts/mp/gametypes/br_gametypes::isfeaturedisabled("squadLeader")) {
                 teamplayers = getteamdata(player.team, "players");
                 if (!isdefined(teamplayers) || teamplayers.size == 0) {
-                    teamplayers = [0:self];
+                    teamplayers = [self];
                 }
                 setupbrsquadleader(teamplayers);
             }
             if (isuibot) {
-                player thread namespace_99ac021a7547cae3::spawnplayer(undefined, 0);
+                player thread scripts/mp/playerlogic::spawnplayer(undefined, 0);
             } else {
                 player thread missedinfilplayerhandler();
             }
@@ -191,7 +191,7 @@ function latespawnplayer() {
     player setclientomnvar("ui_br_extended_load_screen", 0);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1353
 // Size: 0xf7
@@ -205,34 +205,34 @@ function oldlatespawnplayer() {
         println("scripted_scene");
     #/
     if (!isalive(player)) {
-        player namespace_99ac021a7547cae3::spawnplayer(0);
+        player scripts/mp/playerlogic::spawnplayer(0);
     }
-    if (!namespace_71073fa38f11492::isfeaturedisabled("squadLeader")) {
+    if (!scripts/mp/gametypes/br_gametypes::isfeaturedisabled("squadLeader")) {
         if (level.teambased) {
             teamplayers = getteamdata(player.team, "players");
             if (!isdefined(teamplayers) || teamplayers.size == 0) {
-                teamplayers = [0:self];
+                teamplayers = [self];
             }
-            var_fc8439660d24b9c4 = setupbrsquadleader(teamplayers);
-            if (isdefined(var_fc8439660d24b9c4)) {
+            brsquadleader = setupbrsquadleader(teamplayers);
+            if (isdefined(brsquadleader)) {
                 /#
                     println("+gostand");
                 #/
-                registerbrsquadleaderjumpcommands(var_fc8439660d24b9c4);
+                registerbrsquadleaderjumpcommands(brsquadleader);
             } else {
                 /#
                     println("br_infils_legacy::transitionPlayersOutOfAC130Cinematic()");
                 #/
             }
         } else {
-            player namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("jumpMasterState", 2);
+            player scripts/mp/gametypes/br_public::updatebrscoreboardstat("jumpMasterState", 2);
             registerbrsquadleaderjumpcommands(player);
         }
     }
     player.br_infilstarted = 1;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1451
 // Size: 0x2f7
@@ -241,34 +241,34 @@ function latespawnsnatchtoc130() {
     player endon("disconnect");
     if (!isalive(player)) {
         player.latetoinfil = 1;
-        player namespace_99ac021a7547cae3::spawnplayer(0);
+        player scripts/mp/playerlogic::spawnplayer(0);
     }
-    player namespace_f8065cafc523dba5::function_a593971d75d82113();
-    player namespace_f8065cafc523dba5::function_379bb555405c16bb("br_infils_legacy::lateSpawnSnatchToC130()");
+    player scripts/cp_mp/utility/player_utility::function_a593971d75d82113();
+    player scripts/cp_mp/utility/player_utility::function_379bb555405c16bb("br_infils_legacy::lateSpawnSnatchToC130()");
     player.latetoinfil = undefined;
     player freezecontrols(1);
-    if (player namespace_d3d40f75bb4e4c32::isplayerbrsquadleader()) {
+    if (player scripts/mp/gametypes/br_public::isplayerbrsquadleader()) {
         player.infilanimindex = 1;
     }
     if (!isdefined(player.infilanimindex) && level.teambased) {
         teamplayers = getteamdata(player.team, "players");
-        var_f5b09a636e6e3153 = [];
+        possibleindices = [];
         for (i = 0; i < teamplayers.size - 1; i++) {
-            var_f5b09a636e6e3153[i] = i + 2;
+            possibleindices[i] = i + 2;
         }
-        for (i = 0; i < var_f5b09a636e6e3153.size; i++) {
+        for (i = 0; i < possibleindices.size; i++) {
             used = 0;
-            foreach (var_736d8d9188ccbd45 in teamplayers) {
-                if (var_736d8d9188ccbd45 != player && var_736d8d9188ccbd45 namespace_d3d40f75bb4e4c32::isplayerbrsquadleader()) {
+            foreach (teamplayer in teamplayers) {
+                if (teamplayer != player && teamplayer scripts/mp/gametypes/br_public::isplayerbrsquadleader()) {
                     continue;
                 }
-                if (isdefined(var_736d8d9188ccbd45.infilanimindex) && isdefined(var_f5b09a636e6e3153[i]) && var_736d8d9188ccbd45.infilanimindex == var_f5b09a636e6e3153[i]) {
+                if (isdefined(teamplayer.infilanimindex) && isdefined(possibleindices[i]) && teamplayer.infilanimindex == possibleindices[i]) {
                     used = 1;
                     break;
                 }
             }
             if (!used) {
-                player.infilanimindex = var_f5b09a636e6e3153[i];
+                player.infilanimindex = possibleindices[i];
                 break;
             }
         }
@@ -287,7 +287,7 @@ function latespawnsnatchtoc130() {
         }
     }
     if (!isbot(player)) {
-        namespace_ad389306d44fc6b4::orbitcam(level.br_ac130);
+        scripts/mp/gametypes/br_c130::orbitcam(level.br_ac130);
     }
     wait(0.5);
     player freezecontrols(0);
@@ -295,7 +295,7 @@ function latespawnsnatchtoc130() {
     player.br_infilstarted = 1;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x174f
 // Size: 0x84
@@ -312,7 +312,7 @@ function playerlinktopositionent(animstruct) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17da
 // Size: 0x12
@@ -320,7 +320,7 @@ function function_35be50043c0855ae() {
     return getdvarint(@"hash_9cea5b03e26fe23", 0);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f4
 // Size: 0x183
@@ -329,13 +329,13 @@ function playinfilplayeranims(animstruct, players) {
     if (function_35be50043c0855ae()) {
         var_e4c30d4c191baae = 0;
     }
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
         player thread [[ level.parachutetakeweaponscb ]]();
-        player namespace_d20f8ef223912e12::playerexecutionsdisable();
+        player scripts/mp/gametypes/br::playerexecutionsdisable();
         player.c130 = animstruct.movingc130;
         player.plotarmor = 1;
         player playerlinktopositionent(animstruct);
@@ -343,8 +343,8 @@ function playinfilplayeranims(animstruct, players) {
         player playanimscriptsceneevent("scripted_scene", var_a1483d10035e2a59);
     }
     wait(var_e4c30d4c191baae);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -352,7 +352,7 @@ function playinfilplayeranims(animstruct, players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x197e
 // Size: 0x54
@@ -365,7 +365,7 @@ function playerplayinfilloopanim(animstruct) {
     thread watchinfiljumpanim(animstruct);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19d9
 // Size: 0x616
@@ -377,25 +377,25 @@ function watchinfiljumpanim(animstruct) {
     self.hasspawnweapons = 0;
     self waittill("br_jump");
     teamplayers = getteamdata(self.team, "players");
-    var_ef848feb5c017e25 = [];
+    jumpplayers = [];
     if (self.jumptype == "leader") {
         foreach (player in teamplayers) {
             if (isdefined(player.infilanimindex)) {
-                var_ef848feb5c017e25[var_ef848feb5c017e25.size] = player;
+                jumpplayers[jumpplayers.size] = player;
             }
         }
     } else if (self.jumptype == "solo" || self.jumptype == "outOfBounds") {
-        var_ef848feb5c017e25 = [0:self];
+        jumpplayers = [self];
     }
-    var_bee01cb211c7e185 = var_ef848feb5c017e25.size > 0;
+    var_bee01cb211c7e185 = jumpplayers.size > 0;
     if (var_bee01cb211c7e185) {
         var_a2117ea816a8b7f1 = getdvarint(@"hash_8be4acc5eebb19ca", 1) != 0;
         if (level.infiljumpentsspawned >= 100) {
             var_a2117ea816a8b7f1 = 0;
         }
-        var_77b785278f139079 = undefined;
+        shouldteleport = undefined;
         if (var_a2117ea816a8b7f1) {
-            var_77b785278f139079 = 0;
+            shouldteleport = 0;
             var_c00a2e62499631e9 = getanimsforplanefacing(animstruct);
             var_66809387054fc02a = var_c00a2e62499631e9[2];
             var_4d261ef98868b4e6 = var_c00a2e62499631e9[1];
@@ -404,7 +404,7 @@ function watchinfiljumpanim(animstruct) {
             level.infiljumpentsspawned++;
             var_9b145eb55513dbb5["parent"] setmodel("generic_prop_x10");
             var_9b145eb55513dbb5["parent"] linkto(animstruct.movingc130, "tag_body", (0, 0, 0), (0, 0, 0));
-            foreach (player in var_ef848feb5c017e25) {
+            foreach (player in jumpplayers) {
                 if (!isdefined(player.infilanimindex)) {
                     player.infilanimindex = 1;
                 }
@@ -414,7 +414,7 @@ function watchinfiljumpanim(animstruct) {
                 var_9b145eb55513dbb5[var_8e3afd40d3c95b46] setmodel("tag_player");
                 var_9b145eb55513dbb5[var_8e3afd40d3c95b46] linkto(var_9b145eb55513dbb5["parent"], var_8e3afd40d3c95b46, (0, 0, 0), (0, 0, 0));
                 player playerlinkto(var_9b145eb55513dbb5[var_8e3afd40d3c95b46], "tag_player");
-                player namespace_f8065cafc523dba5::function_6fb380927695ee76(1);
+                player scripts/cp_mp/utility/player_utility::function_6fb380927695ee76(1);
                 player playanimscriptsceneevent("scripted_scene", var_66809387054fc02a);
                 player.infilanimindex = undefined;
                 player.var_db122a8941dfee14 = undefined;
@@ -426,7 +426,7 @@ function watchinfiljumpanim(animstruct) {
             var_886f7978500acb10 = 1;
             var_7a79e5c326955318 = max(var_7a79e5c326955318, var_886f7978500acb10 + 0.1);
             wait(var_7a79e5c326955318 - var_886f7978500acb10);
-            foreach (player in var_ef848feb5c017e25) {
+            foreach (player in jumpplayers) {
                 player cameradefault();
             }
             wait(var_886f7978500acb10);
@@ -435,29 +435,29 @@ function watchinfiljumpanim(animstruct) {
                 level.infiljumpentsspawned--;
             }
         } else {
-            var_77b785278f139079 = 1;
+            shouldteleport = 1;
             waittillframeend();
         }
-        foreach (player in var_ef848feb5c017e25) {
+        foreach (player in jumpplayers) {
             player.infilanimindex = undefined;
             player.var_db122a8941dfee14 = undefined;
             player stopanimscriptsceneevent();
             player notify("infil_jump_done");
-            player namespace_d20f8ef223912e12::playerexecutionsenable();
-            player namespace_71073fa38f11492::runbrgametypefunc("onInfilJumpCompleted");
+            player scripts/mp/gametypes/br::playerexecutionsenable();
+            player scripts/mp/gametypes/br_gametypes::runbrgametypefunc("onInfilJumpCompleted");
         }
-        if (var_77b785278f139079) {
+        if (shouldteleport) {
             waitframe();
             if (isdefined(animstruct.movingc130)) {
                 if (isdefined(animstruct.movingc130.playeroffsets) && isdefined(animstruct.movingc130.currentplayeroffset)) {
-                    foreach (player in var_ef848feb5c017e25) {
+                    foreach (player in jumpplayers) {
                         offset = animstruct.movingc130.playeroffsets[animstruct.movingc130.currentplayeroffset];
                         player setorigin(animstruct.movingc130.origin + offset, 1, 1);
                         animstruct.movingc130.currentplayeroffset++;
                         if (animstruct.movingc130.currentplayeroffset == animstruct.movingc130.playeroffsets.size) {
                             animstruct.movingc130.currentplayeroffset = 0;
                         }
-                        player namespace_f8065cafc523dba5::function_6fb380927695ee76(1);
+                        player scripts/cp_mp/utility/player_utility::function_6fb380927695ee76(1);
                         level thread playjumpsoundtosquad(player);
                     }
                 }
@@ -466,56 +466,57 @@ function watchinfiljumpanim(animstruct) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ff6
 // Size: 0x1a8
 function getanimsforplanefacing(animstruct) {
     var_522a77434d41564a = self getplayerangles(1);
     playerforward = anglestoforward(var_522a77434d41564a);
-    var_4b52f031a2cbef8e = anglestoforward(animstruct.movingc130.angles);
-    var_d8bb89f41ae3d919 = anglestoright(animstruct.movingc130.angles);
-    var_172d42d175e16c61 = vectordot(playerforward, var_4b52f031a2cbef8e);
-    var_ed451f0ea36c48c6 = vectordot(playerforward, var_d8bb89f41ae3d919);
+    planeforward = anglestoforward(animstruct.movingc130.angles);
+    planeright = anglestoright(animstruct.movingc130.angles);
+    dotforward = vectordot(playerforward, planeforward);
+    dotright = vectordot(playerforward, planeright);
     cos45 = cos(45);
-    if (var_172d42d175e16c61 < -1 * cos45) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10"], 2:"sdr_mp_infil_ac130_jump"];
+    if (dotforward < -1 * cos45) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10"], "sdr_mp_infil_ac130_jump"];
     }
-    if (var_ed451f0ea36c48c6 > cos45) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_90_l", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_l"], 2:"sdr_mp_infil_ac130_jump_90_l"];
-    } else if (var_ed451f0ea36c48c6 < -1 * cos45) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_90_r", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_r"], 2:"sdr_mp_infil_ac130_jump_90_r"];
-    } else if (var_ed451f0ea36c48c6 > 0) {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_180_l", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_l"], 2:"sdr_mp_infil_ac130_jump_180_l"];
-    } else {
-        return [0:"sdr_mp_infil_ac130_jump_genpropx10_180_r", 1:level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_r"], 2:"sdr_mp_infil_ac130_jump_180_r"];
+    if (dotright > cos45) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_l"], "sdr_mp_infil_ac130_jump_90_l"];
     }
+    if (dotright < -1 * cos45) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_r"], "sdr_mp_infil_ac130_jump_90_r"];
+    }
+    if (dotright > 0) {
+        return ["sdr_mp_infil_ac130_jump_genpropx10_180_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_l"], "sdr_mp_infil_ac130_jump_180_l"];
+    }
+    return ["sdr_mp_infil_ac130_jump_genpropx10_180_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_r"], "sdr_mp_infil_ac130_jump_180_r"];
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21a5
 // Size: 0x41
 function playjumpsoundtosquad(player) {
     aliasname = "evt_br_infil_squadmate_jump";
-    if (player namespace_d3d40f75bb4e4c32::isplayerbrsquadleader()) {
+    if (player scripts/mp/gametypes/br_public::isplayerbrsquadleader()) {
         aliasname = "evt_br_infil_squad_leader_jump";
     }
     player playsoundtoteam(aliasname, player.team, player);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21ed
 // Size: 0x38
 function missedinfilplayerhandler() {
     player = self;
     player.br_infilstarted = 1;
-    player namespace_cb965d2f71fefddc::addrespawntoken(1);
-    player namespace_47fd1e79a44628cd::playergulagautowin("missedInfil", undefined, undefined, 1);
+    player scripts/mp/gametypes/br_pickups::addrespawntoken(1);
+    player scripts/mp/gametypes/br_gulag::playergulagautowin("missedInfil", undefined, undefined, 1);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x222c
 // Size: 0xa9
@@ -529,25 +530,25 @@ function playerjoininfil() {
         self setclientomnvar("ui_hide_minimap", 1);
     }
     player.health = player.maxhealth;
-    player namespace_ad389306d44fc6b4::spawnplayertoc130();
+    player scripts/mp/gametypes/br_c130::spawnplayertoc130();
     player playersetupcontrolsforinfil();
-    player namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("isInInfilPlane", 1);
+    player scripts/mp/gametypes/br_public::updatebrscoreboardstat("isInInfilPlane", 1);
     level.infilstruct.playersinc130++;
-    player namespace_d3d40f75bb4e4c32::function_64fa4c213439177f();
+    player scripts/mp/gametypes/br_public::function_64fa4c213439177f();
     player thread playercleanupinfilondisconnect();
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22dc
 // Size: 0x7a
-function playersetupcontrolsforinfil(var_a19e18e7cc768828) {
-    if (!isdefined(var_a19e18e7cc768828)) {
-        var_a19e18e7cc768828 = 0;
+function playersetupcontrolsforinfil(soloonly) {
+    if (!isdefined(soloonly)) {
+        soloonly = 0;
     }
     self setclientomnvar("ui_br_infil_started", 1);
     self setclientomnvar("ui_br_infiled", 0);
-    if (!var_a19e18e7cc768828) {
+    if (!soloonly) {
         self notifyonplayercommand("halo_jump_c130", "+gostand");
     } else {
         self notifyonplayercommand("halo_jump_solo_c130", "+gostand");
@@ -556,7 +557,7 @@ function playersetupcontrolsforinfil(var_a19e18e7cc768828) {
     self notifyonplayercommand("br_pass_squad_leader", "+activate");
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x235d
 // Size: 0x79
@@ -571,13 +572,13 @@ function playercleanupinfilondisconnect() {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23dd
 // Size: 0x3b7
 function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, players) {
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -586,10 +587,10 @@ function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, pla
     level.infilstruct = spawnstruct();
     level.infilstruct.playersinc130 = 0;
     if (!isdefined(c130pathstruct)) {
-        c130pathstruct = namespace_ad389306d44fc6b4::createtestc130path();
+        c130pathstruct = scripts/mp/gametypes/br_c130::createtestc130path();
     }
     level.infilstruct.c130pathstruct = c130pathstruct;
-    namespace_ad389306d44fc6b4::spawnc130(undefined, undefined, undefined, level.infilstruct.c130pathstruct);
+    scripts/mp/gametypes/br_c130::spawnc130(undefined, undefined, undefined, level.infilstruct.c130pathstruct);
     animstruct = buildac130infilanimstruct(level.br_ac130, infil_anim_type);
     level.latejoinersanimstruct = animstruct;
     infilvideopreload(players);
@@ -599,11 +600,11 @@ function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, pla
     level.infilcinematicactive = 1;
     level.allowprematchdamage = 0;
     level.br_ac130 thread gunship_updateplayercount();
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    transitionplayerstoac130cinematic(var_fa371b137df55a75, infil_anim_type, animstruct.staticc130);
-    if (namespace_d3d40f75bb4e4c32::isbrpracticemode() || namespace_d3d40f75bb4e4c32::isdmzbotpracticematch()) {
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    transitionplayerstoac130cinematic(infilplayers, infil_anim_type, animstruct.staticc130);
+    if (scripts/mp/gametypes/br_public::isBrPracticeMode() || scripts/mp/gametypes/br_public::isdmzbotpracticematch()) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (isdefined(player) && isplayer(player)) {
                 player notify("play_intro");
             }
@@ -613,17 +614,17 @@ function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, pla
     infilvideowaituntilcomplete(players);
     level thread infilallfadetoblack(0, 3.45, 0.6, undefined, players);
     playac130infilanim(animstruct, players);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    transitionplayersoutofac130cinematic(var_fa371b137df55a75, infil_anim_type);
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    transitionplayersoutofac130cinematic(infilplayers, infil_anim_type);
     level.infilcinematicactive = 0;
     level.infilstruct.infil_anim_type = infil_anim_type;
-    thread namespace_71073fa38f11492::runbrgametypefunc("onInfilSequenceEnd", players);
-    namespace_d3d40f75bb4e4c32::brleaderdialog("match_start", 0, players);
-    istutorial = namespace_d3d40f75bb4e4c32::istutorial() || namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf();
+    thread scripts/mp/gametypes/br_gametypes::runbrgametypefunc("onInfilSequenceEnd", players);
+    scripts/mp/gametypes/br_public::brleaderdialog("match_start", 0, players);
+    istutorial = scripts/mp/gametypes/br_public::istutorial() || scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf();
     if (!istutorial) {
         var_cb130a107612fddf = getdvar(@"hash_215446c7a0657e95") == "";
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
@@ -635,8 +636,8 @@ function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, pla
                 registerheadlessinfil(player);
             }
         }
-        if (namespace_71073fa38f11492::isbrgametypefuncdefined("addToC130Infil")) {
-            level.br_ac130 namespace_71073fa38f11492::runbrgametypefunc("addToC130Infil");
+        if (scripts/mp/gametypes/br_gametypes::isbrgametypefuncdefined("addToC130Infil")) {
+            level.br_ac130 scripts/mp/gametypes/br_gametypes::runbrgametypefunc("addToC130Infil");
         }
     }
     if (isdefined(level.headlessinfilplayers)) {
@@ -644,24 +645,24 @@ function beginbrc130playeraniminfilsequence(c130pathstruct, infil_anim_type, pla
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x279b
 // Size: 0x7d
 function infilvideopreload(players) {
-    var_4f105563ca74cf73 = "mp_donetsk_c130_intro";
+    videoname = "mp_donetsk_c130_intro";
     if (!isdefined(players)) {
-        preloadcinematicforall(var_4f105563ca74cf73);
-    } else {
-        foreach (player in players) {
-            if (isdefined(player)) {
-                player preloadcinematicforplayer(var_4f105563ca74cf73);
-            }
+        preloadcinematicforall(videoname);
+        return;
+    }
+    foreach (player in players) {
+        if (isdefined(player)) {
+            player preloadcinematicforplayer(videoname);
         }
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x281f
 // Size: 0x15
@@ -670,18 +671,18 @@ function function_f94830ac89cbe22c(waittime) {
     self stopsounds();
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x283b
 // Size: 0x202
 function infilvideoplay(players) {
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    allplayers = level.players.size == var_fa371b137df55a75.size;
-    thread namespace_3bde6869e44a2770::stopsuspensemusic();
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    allplayers = level.players.size == infilplayers.size;
+    thread scripts/mp/music_and_dialog::stopsuspensemusic();
     if (allplayers) {
         setglobalsoundcontext("lobby_fade", "", 2);
     }
-    foreach (player in var_fa371b137df55a75) {
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -697,18 +698,18 @@ function infilvideoplay(players) {
         br_infil_intro = function_17ee301cf0b5ba85("br_infil_intro");
         player setplayermusicstate(br_infil_intro);
     }
-    var_4f105563ca74cf73 = "mp_donetsk_c130_intro";
+    videoname = "mp_donetsk_c130_intro";
     if (allplayers) {
-        playcinematicforall(var_4f105563ca74cf73);
+        playcinematicforall(videoname);
     } else {
-        foreach (player in var_fa371b137df55a75) {
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
-            player playcinematicforplayer(var_4f105563ca74cf73);
+            player playcinematicforplayer(videoname);
         }
     }
-    foreach (player in var_fa371b137df55a75) {
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -718,7 +719,7 @@ function infilvideoplay(players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a44
 // Size: 0x32
@@ -729,19 +730,19 @@ function infilvideocompletecallback(channel, val) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a7d
 // Size: 0x11f
 function infilvideowaituntilcomplete(players) {
-    namespace_3846cfb60b2ef12f::registeronluieventcallback(&infilvideocompletecallback);
+    scripts/mp/utility/lui_game_event_aggregator::registeronluieventcallback(&infilvideocompletecallback);
     time = 3.2;
     wait(time);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
+    infilplayers = ter_op(isdefined(players), players, level.players);
     if (isdefined(level.var_9d615a366ec2fb6f)) {
         level.var_9d615a366ec2fb6f = undefined;
     }
-    foreach (player in var_fa371b137df55a75) {
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -750,13 +751,13 @@ function infilvideowaituntilcomplete(players) {
     if (isdefined(level.throwingknives)) {
         foreach (throwingknife in level.throwingknives) {
             if (isdefined(throwingknife)) {
-                throwingknife thread namespace_eb0feb5c721a9f11::throwing_knife_deletepickup();
+                throwingknife thread scripts/cp_mp/equipment/throwing_knife::throwing_knife_deletepickup();
             }
         }
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ba3
 // Size: 0x10f
@@ -767,11 +768,11 @@ function gunship_updateplayercount() {
     var_512e1c239c8f0640 = getdvarint(@"hash_57377f405b99ecd2", 0);
     if (var_512e1c239c8f0640) {
         level.infilstruct.var_129d4a6c887fcfa5 = level.players.size;
-        if (isdefined(level.var_7b37b2193f163b9b) && isdefined(level.var_7b37b2193f163b9b.var_156f390a5362bc55)) {
-            level.infilstruct.var_129d4a6c887fcfa5 = level.infilstruct.var_129d4a6c887fcfa5 + level.var_7b37b2193f163b9b.var_156f390a5362bc55.size;
+        if (isdefined(level.var_7b37b2193f163b9b) && isdefined(level.var_7b37b2193f163b9b.uibots)) {
+            level.infilstruct.var_129d4a6c887fcfa5 = level.infilstruct.var_129d4a6c887fcfa5 + level.var_7b37b2193f163b9b.uibots.size;
         }
     }
-    while (1) {
+    while (true) {
         if (var_512e1c239c8f0640) {
             setomnvar("ui_br_players_left_in_plane", level.infilstruct.var_129d4a6c887fcfa5);
         } else {
@@ -784,7 +785,7 @@ function gunship_updateplayercount() {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cb9
 // Size: 0x8e
@@ -794,17 +795,17 @@ function spawnplayerpositionparentent(animstruct, ac130) {
     animstruct.playerpositionents["parent"] linkto(ac130, "", (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d4e
 // Size: 0x9a
-function spawnplayerpositionent(animstruct, var_3e904658641f342f) {
-    animstruct.playerpositionents[var_3e904658641f342f] = spawn("script_model", animstruct.playerpositionents["parent"] gettagorigin(var_3e904658641f342f));
-    animstruct.playerpositionents[var_3e904658641f342f] setmodel("tag_player");
-    animstruct.playerpositionents[var_3e904658641f342f] linkto(animstruct.playerpositionents["parent"], var_3e904658641f342f, (0, 0, 0), (0, 0, 0));
+function spawnplayerpositionent(animstruct, prop_tag) {
+    animstruct.playerpositionents[prop_tag] = spawn("script_model", animstruct.playerpositionents["parent"] gettagorigin(prop_tag));
+    animstruct.playerpositionents[prop_tag] setmodel("tag_player");
+    animstruct.playerpositionents[prop_tag] linkto(animstruct.playerpositionents["parent"], prop_tag, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2def
 // Size: 0x6bf
@@ -846,13 +847,13 @@ function buildac130infilanimstruct(movingc130, infil_anim_type) {
         animstruct.playerslot4 linkto(animstruct.playerpositionents["parent"], "j_prop_4", (0, 0, 0), (0, 0, 0));
         animstruct.infil_anim_type = "script_model";
     } else {
-        var_589033938efc0461 = [0:"j_prop_1", 1:"j_prop_2", 2:"j_prop_3", 3:"j_prop_4"];
-        foreach (var_3e904658641f342f in var_589033938efc0461) {
-            spawnplayerpositionent(animstruct, var_3e904658641f342f);
+        var_589033938efc0461 = ["j_prop_1", "j_prop_2", "j_prop_3", "j_prop_4"];
+        foreach (prop_tag in var_589033938efc0461) {
+            spawnplayerpositionent(animstruct, prop_tag);
         }
         animstruct.infil_anim_type = "player";
     }
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         animstruct.aidoorchief = spawn("script_model", animstruct.staticc130.origin);
         animstruct.aidoorchief setmodel("body_mp_western_otter_3_1_lod1");
         head = spawn("script_model", animstruct.aidoorchief gettagorigin("j_neck"));
@@ -868,13 +869,13 @@ function buildac130infilanimstruct(movingc130, infil_anim_type) {
     animstruct.aidoorchief linkto(animstruct.playerpositionents["parent"], "j_prop_5", (0, 0, 0), (0, 0, 0));
     animstruct.cameraent linkto(animstruct.staticc130, "", (0, 0, 0), (0, 0, 0));
     animstruct.cloudanimfx = spawnfx(level._effect["vfx_br_infil_cloud_anim"], animstruct.staticc130.origin);
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         animstruct.var_352d21900a2aa86f = spawnfx(level._effect["vfx_br_infil_cloud_anim_moving"], animstruct.movingc130.origin + (-500, 0, 0));
     }
     return animstruct;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34b6
 // Size: 0x93
@@ -890,21 +891,21 @@ function setuphudelemninfilblack(hudelem) {
     hudelem setshowinrealism(1);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3550
 // Size: 0x4e7
-function infilallfadetoblack(fadeintime, var_e4ab5ef161c5ffcb, fadeouttime, var_bfd3cec846e4fbf7, players, var_69618eb692fc8288) {
+function infilallfadetoblack(fadeintime, timeblack, fadeouttime, var_bfd3cec846e4fbf7, players, var_69618eb692fc8288) {
     if (!isdefined(var_69618eb692fc8288)) {
         var_69618eb692fc8288 = 0;
     }
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    allplayers = level.players.size == var_fa371b137df55a75.size;
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    allplayers = level.players.size == infilplayers.size;
     if (allplayers && !isdefined(level.infilblackoverlay)) {
         level.infilblackoverlay = newhudelem();
         setuphudelemninfilblack(level.infilblackoverlay);
     } else if (!allplayers) {
-        foreach (player in var_fa371b137df55a75) {
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
@@ -913,8 +914,8 @@ function infilallfadetoblack(fadeintime, var_e4ab5ef161c5ffcb, fadeouttime, var_
         }
     }
     if (isdefined(fadeintime) && fadeintime > 0) {
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
@@ -938,8 +939,8 @@ function infilallfadetoblack(fadeintime, var_e4ab5ef161c5ffcb, fadeouttime, var_
     if (allplayers) {
         level.infilblackoverlay.alpha = 1;
     }
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -954,8 +955,8 @@ function infilallfadetoblack(fadeintime, var_e4ab5ef161c5ffcb, fadeouttime, var_
     if (isdefined(var_bfd3cec846e4fbf7)) {
         level waittill(var_bfd3cec846e4fbf7);
     }
-    if (isdefined(var_e4ab5ef161c5ffcb) && var_e4ab5ef161c5ffcb > 0) {
-        wait(var_e4ab5ef161c5ffcb);
+    if (isdefined(timeblack) && timeblack > 0) {
+        wait(timeblack);
     }
     if (isdefined(fadeouttime) && fadeouttime > 0) {
         if (allplayers) {
@@ -963,8 +964,8 @@ function infilallfadetoblack(fadeintime, var_e4ab5ef161c5ffcb, fadeouttime, var_
             level.infilblackoverlay fadeovertime(fadeouttime);
             level.infilblackoverlay.alpha = 0;
         }
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
@@ -984,21 +985,21 @@ function infilallfadetoblack(fadeintime, var_e4ab5ef161c5ffcb, fadeouttime, var_
     }
     if (allplayers) {
         level.infilblackoverlay.alpha = 0;
-    } else {
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
-            if (!isdefined(player)) {
-                continue;
-            }
-            if (isdefined(player.infilblackoverlay)) {
-                player.infilblackoverlay destroy();
-            }
-            player.infilblackoverlay = undefined;
+        return;
+    }
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
+        if (!isdefined(player)) {
+            continue;
         }
+        if (isdefined(player.infilblackoverlay)) {
+            player.infilblackoverlay destroy();
+        }
+        player.infilblackoverlay = undefined;
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a3e
 // Size: 0x33c
@@ -1010,7 +1011,7 @@ function transitionplayerstoac130cinematic(players, infil_anim_type, c130) {
         if (isdefined(c130)) {
             player.c130 = level.br_ac130;
         }
-        if (!namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (!scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             player utility::hidehudenable();
         }
         /#
@@ -1022,7 +1023,7 @@ function transitionplayerstoac130cinematic(players, infil_anim_type, c130) {
             }
         #/
     }
-    namespace_b984803e2ef247a2::removealldeathicons();
+    scripts/mp/deathicons::removealldeathicons();
     setomnvar("ui_hide_player_icons", 1);
     thread infilallfadetoblack(1, 1.5, 1, "prematch_respawn_finished", players);
     foreach (player in players) {
@@ -1034,9 +1035,9 @@ function transitionplayerstoac130cinematic(players, infil_anim_type, c130) {
     level.infiltransistioning = 1;
     waitandpause(1);
     waitframe();
-    namespace_15d3019056d1bcea::emptyallvehicles();
+    scripts/mp/gametypes/br_vehicles::emptyallvehicles();
     setomnvar("ui_in_infil", 1);
-    namespace_4b0406965e556711::gameflagset("prematch_fade_done");
+    scripts/mp/flags::gameflagset("prematch_fade_done");
     waitforc130andforcespawnallplayers(players);
     level notify("prematch_respawn_finished");
     foreach (player in players) {
@@ -1046,9 +1047,9 @@ function transitionplayerstoac130cinematic(players, infil_anim_type, c130) {
         if (!isdefined(player.sessionstate) || player.sessionstate == "spectator") {
             continue;
         }
-        namespace_71073fa38f11492::function_d72afaccedfc946e("onPlayerTeleport", player, player.origin, c130.origin, "c130");
+        scripts/mp/gametypes/br_gametypes::function_d72afaccedfc946e("onPlayerTeleport", player, player.origin, c130.origin, "c130");
         player setorigin(c130.origin);
-        if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             player setclientomnvar("ui_options_menu", 0);
         }
     }
@@ -1060,7 +1061,7 @@ function transitionplayerstoac130cinematic(players, infil_anim_type, c130) {
         player clearpredictedstreampos();
         player endprematchskydiving();
         player.br_isininfil = 1;
-        if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             player setclientomnvar("ui_options_menu", -1);
         }
     }
@@ -1069,13 +1070,13 @@ function transitionplayerstoac130cinematic(players, infil_anim_type, c130) {
             if (!isdefined(player)) {
                 continue;
             }
-            player namespace_f8065cafc523dba5::function_a593971d75d82113();
-            player namespace_f8065cafc523dba5::function_379bb555405c16bb("br_infils_legacy::transitionPlayersToAC130Cinematic()");
+            player scripts/cp_mp/utility/player_utility::function_a593971d75d82113();
+            player scripts/cp_mp/utility/player_utility::function_379bb555405c16bb("br_infils_legacy::transitionPlayersToAC130Cinematic()");
         }
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d81
 // Size: 0x23b
@@ -1083,8 +1084,8 @@ function waitforc130andforcespawnallplayers(players) {
     /#
         println("<unknown string>");
     #/
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1098,38 +1099,38 @@ function waitforc130andforcespawnallplayers(players) {
             continue;
         }
         if (istrue(player.br_iseliminated)) {
-            namespace_80cec6cfc70c4f95::unmarkplayeraseliminated(player);
+            scripts/mp/gametypes/br_utility::unmarkplayeraseliminated(player);
         }
         player notify("beginC130");
     }
-    if (!namespace_71073fa38f11492::isfeaturedisabled("squadLeader")) {
+    if (!scripts/mp/gametypes/br_gametypes::isfeaturedisabled("squadLeader")) {
         if (level.teambased) {
             foreach (team in level.teamnamelist) {
                 teamplayers = getteamdata(team, "players");
-                var_fc8439660d24b9c4 = setupbrsquadleader(teamplayers);
-                if (isdefined(var_fc8439660d24b9c4)) {
-                    registerbrsquadleaderjumpcommands(var_fc8439660d24b9c4);
-                    var_fc8439660d24b9c4 thread watchbrsquadleaderdisconnect(team);
+                brsquadleader = setupbrsquadleader(teamplayers);
+                if (isdefined(brsquadleader)) {
+                    registerbrsquadleaderjumpcommands(brsquadleader);
+                    brsquadleader thread watchbrsquadleaderdisconnect(team);
                 }
-                namespace_d20f8ef223912e12::updatesquadleaderpassstateforteam(team);
+                scripts/mp/gametypes/br::updatesquadleaderpassstateforteam(team);
             }
         } else {
-            var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-            foreach (player in var_fa371b137df55a75) {
+            infilplayers = ter_op(isdefined(players), players, level.players);
+            foreach (player in infilplayers) {
                 if (isdefined(player)) {
                     registerbrsquadleaderjumpcommands(player);
                 }
             }
         }
     }
-    if (!namespace_71073fa38f11492::isfeaturedisabled("oneLife")) {
+    if (!scripts/mp/gametypes/br_gametypes::isfeaturedisabled("oneLife")) {
         level.disablespawning = 1;
-        setdynamicdvar(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_numLives"), 1);
+        setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_numLives"), 1);
     }
     level.snatchspawnalltoc130done = 1;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fc3
 // Size: 0x95
@@ -1145,19 +1146,19 @@ function c130forcespawnplayer() {
     /#
         println("<unknown string>");
     #/
-    namespace_99ac021a7547cae3::spawnplayer(0);
+    scripts/mp/playerlogic::spawnplayer(0);
     self.br_infilstarted = 1;
     self notify("brWaitAndSpawnClientComplete");
     self setclientomnvar("ui_br_transition_type", 0);
     self setclientomnvar("ui_br_extended_load_screen", 0);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x405f
 // Size: 0xe0
 function transitionplayersoutofac130cinematic(players, infil_anim_type) {
-    var_505a6d9b4eb5d4f3 = infil_anim_type == "script_model";
+    scriptmodeltype = infil_anim_type == "script_model";
     foreach (player in players) {
         if (!isdefined(player)) {
             continue;
@@ -1167,23 +1168,23 @@ function transitionplayersoutofac130cinematic(players, infil_anim_type) {
             player utility::hidehuddisable();
         }
         player visionsetfadetoblackforplayer("", 1);
-        if (var_505a6d9b4eb5d4f3) {
-            player namespace_f8065cafc523dba5::function_6fb380927695ee76();
-            player namespace_f8065cafc523dba5::function_985b0973f29da4f8("br_infils_legacy::transitionPlayersOutOfAC130Cinematic()");
+        if (scriptmodeltype) {
+            player scripts/cp_mp/utility/player_utility::function_6fb380927695ee76();
+            player scripts/cp_mp/utility/player_utility::function_985b0973f29da4f8("br_infils_legacy::transitionPlayersOutOfAC130Cinematic()");
         }
     }
     setomnvar("ui_in_infil", -1);
     level.infiltransistioning = undefined;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4146
 // Size: 0x93
 function clearsoundsubmixmpbrinfilac130(players) {
     waitandpause(7.7);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1191,14 +1192,14 @@ function clearsoundsubmixmpbrinfilac130(players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41e0
 // Size: 0x93
 function clearsoundsubmixmpbrinfilanim(players) {
     waitandpause(0.65);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1206,14 +1207,14 @@ function clearsoundsubmixmpbrinfilanim(players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x427a
 // Size: 0x93
 function clearsoundsubmixfadetoblackamb(players) {
     waitandpause(0.5);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1221,14 +1222,14 @@ function clearsoundsubmixfadetoblackamb(players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4314
 // Size: 0xa4
 function setsoundsubmixfadetoblackamb(players) {
     waitandpause(2);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1237,7 +1238,7 @@ function setsoundsubmixfadetoblackamb(players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43bf
 // Size: 0x38
@@ -1248,28 +1249,28 @@ function playac130infilanim(animstruct, players) {
     endac130infilanimsinternal(animstruct, players);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43fe
 // Size: 0x78f
 function playac130animinternal(animstruct, players) {
     animstruct endon("stopScene");
-    var_384446a35f40358c = undefined;
+    forceindex = undefined;
     /#
-        var_384446a35f40358c = getdvarint(@"hash_441165c7b355dd1b", -1);
+        forceindex = getdvarint(@"hash_441165c7b355dd1b", -1);
     #/
     if (animstruct.infil_anim_type == "player") {
         if (!isdefined(players)) {
             foreach (team in level.teamnamelist) {
                 teamplayers = getteamdata(team, "players");
-                var_f5b09a636e6e3153 = [0:1, 1:2, 2:3, 3:4];
+                possibleindices = [1, 2, 3, 4];
                 foreach (index, player in teamplayers) {
-                    player namespace_f8065cafc523dba5::function_a593971d75d82113();
-                    player namespace_f8065cafc523dba5::function_379bb555405c16bb("br_infils_legacy::playAC130AnimInternal() - if");
-                    player.infilanimindex = var_f5b09a636e6e3153[index % var_f5b09a636e6e3153.size];
+                    player scripts/cp_mp/utility/player_utility::function_a593971d75d82113();
+                    player scripts/cp_mp/utility/player_utility::function_379bb555405c16bb("br_infils_legacy::playAC130AnimInternal() - if");
+                    player.infilanimindex = possibleindices[index % possibleindices.size];
                     /#
-                        if (var_384446a35f40358c != -1) {
-                            player.infilanimindex = var_384446a35f40358c;
+                        if (forceindex != -1) {
+                            player.infilanimindex = forceindex;
                         }
                     #/
                     foreach (otherplayer in teamplayers) {
@@ -1282,20 +1283,20 @@ function playac130animinternal(animstruct, players) {
                 if (!isdefined(player)) {
                     continue;
                 }
-                player namespace_f8065cafc523dba5::function_a593971d75d82113();
-                player namespace_f8065cafc523dba5::function_379bb555405c16bb("br_infils_legacy::playAC130AnimInternal() - else");
+                player scripts/cp_mp/utility/player_utility::function_a593971d75d82113();
+                player scripts/cp_mp/utility/player_utility::function_379bb555405c16bb("br_infils_legacy::playAC130AnimInternal() - else");
                 player showtoplayer(player);
                 player.infilanimindex = 1;
             }
         }
     } else {
         /#
-            animindex = var_384446a35f40358c;
+            animindex = forceindex;
             if (animindex < 0) {
                 animindex = 1;
             }
-            var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-            foreach (player in var_fa371b137df55a75) {
+            infilplayers = ter_op(isdefined(players), players, level.players);
+            foreach (player in infilplayers) {
                 if (!isdefined(player)) {
                     continue;
                 }
@@ -1324,8 +1325,8 @@ function playac130animinternal(animstruct, players) {
         animstruct.movingc130 stoploopsound();
     }
     animstruct.aidoorchief hide();
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1374,12 +1375,12 @@ function playac130animinternal(animstruct, players) {
     }
     animstruct notify("infil_reset_light_dvars");
     level clearplayerwind(animstruct, players);
-    var_31524ff7e103fe42 = 0.1;
+    whitefadeintime = 0.1;
     var_6dbf75f07032be02 = 0;
-    var_965e07b090747071 = 0.2;
+    whitefadeouttime = 0.2;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b94
 // Size: 0x51b
@@ -1397,8 +1398,8 @@ function transitionac130tomovinganim(animstruct, players) {
         var_5e0f870c68f3cfab = getdvarfloat(@"hash_78941d68c2877ae6", var_5e0f870c68f3cfab);
     #/
     if (isdefined(animstruct.cameraentmoving)) {
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
@@ -1415,8 +1416,8 @@ function transitionac130tomovinganim(animstruct, players) {
         }
         thread clearsoundsubmixfadetoblackamb(players);
     } else {
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
@@ -1428,7 +1429,7 @@ function transitionac130tomovinganim(animstruct, players) {
             animstruct.cloudanimfx.origin = animstruct.movingc130.origin;
         }
     }
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         if (isdefined(animstruct.var_352d21900a2aa86f) && isdefined(animstruct.movingc130)) {
             animstruct.var_352d21900a2aa86f.origin = animstruct.movingc130.origin;
         }
@@ -1442,8 +1443,8 @@ function transitionac130tomovinganim(animstruct, players) {
         animstruct.movingc130 notify("start_moving");
     }
     setomnvar("ui_hide_player_icons", 0);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1466,14 +1467,14 @@ function transitionac130tomovinganim(animstruct, players) {
     thread unfreezeplayercontrols(1.2, players);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50b6
 // Size: 0x89
 function unfreezeplayercontrols(delaytime, players) {
     wait(delaytime);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1481,7 +1482,7 @@ function unfreezeplayercontrols(delaytime, players) {
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5146
 // Size: 0x120
@@ -1492,8 +1493,8 @@ function endac130infilanimsinternal(animstruct, players) {
     if (isdefined(animstruct.movingc130)) {
         animstruct.movingc130 playloopsound("br_ac130_lp");
     }
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1506,7 +1507,7 @@ function endac130infilanimsinternal(animstruct, players) {
     level thread stopstreamtomovingplane(animstruct, players);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x526d
 // Size: 0x7c
@@ -1518,18 +1519,18 @@ function playac130infilloopanims(animstruct) {
     animstruct.playerpositionents["parent"] scriptmodelplayanim("sdr_mp_infil_ac130_loop_genpropx10", "prop");
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52f0
 // Size: 0x7e
 function offlight(animstruct) {
     var_620d0024527f448c = getentitylessscriptablearray("infil_blinking_light", "script_noteworthy");
-    foreach (var_4d81cddc98ed9537 in var_620d0024527f448c) {
-        var_4d81cddc98ed9537 setscriptablepartstate("light_blinking_slow", "light_off_hold", 1);
+    foreach (lightcontroller in var_620d0024527f448c) {
+        lightcontroller setscriptablepartstate("light_blinking_slow", "light_off_hold", 1);
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5375
 // Size: 0x9e
@@ -1537,12 +1538,12 @@ function redlight(animstruct) {
     animstruct endon("stopScene");
     animstruct.staticc130 waittillmatch("plane", "gored");
     var_620d0024527f448c = getentitylessscriptablearray("infil_blinking_light", "script_noteworthy");
-    foreach (var_4d81cddc98ed9537 in var_620d0024527f448c) {
-        var_4d81cddc98ed9537 setscriptablepartstate("light_blinking_slow", "light_on", 1);
+    foreach (lightcontroller in var_620d0024527f448c) {
+        lightcontroller setscriptablepartstate("light_blinking_slow", "light_on", 1);
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x541a
 // Size: 0x9e
@@ -1550,12 +1551,12 @@ function greenlight(animstruct) {
     animstruct endon("stopScene");
     animstruct.staticc130 waittillmatch("plane", "gogreen");
     var_620d0024527f448c = getentitylessscriptablearray("infil_blinking_light", "script_noteworthy");
-    foreach (var_4d81cddc98ed9537 in var_620d0024527f448c) {
-        var_4d81cddc98ed9537 setscriptablepartstate("light_blinking_slow", "light_jump", 1);
+    foreach (lightcontroller in var_620d0024527f448c) {
+        lightcontroller setscriptablepartstate("light_blinking_slow", "light_jump", 1);
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54bf
 // Size: 0xe1
@@ -1565,8 +1566,8 @@ function playerwind(animstruct, players) {
     }
     animstruct endon("stopScene");
     animstruct.staticc130 waittill_match_or_timeout("plane", "opendoor", 30);
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player) || isbot(player)) {
             continue;
         }
@@ -1575,13 +1576,13 @@ function playerwind(animstruct, players) {
     animstruct.aidoorchief setwind("100");
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x55a7
 // Size: 0xad
 function clearplayerwind(animstruct, players) {
-    var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-    foreach (player in var_fa371b137df55a75) {
+    infilplayers = ter_op(isdefined(players), players, level.players);
+    foreach (player in infilplayers) {
         if (!isdefined(player)) {
             continue;
         }
@@ -1591,7 +1592,7 @@ function clearplayerwind(animstruct, players) {
     animstruct.aidoorchief setwind("0");
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x565b
 // Size: 0x57
@@ -1599,12 +1600,12 @@ function cloud_cover(animstruct) {
     animstruct endon("stopScene");
     animstruct.staticc130 waittillmatch("plane", "transitionstart");
     triggerfx(animstruct.cloudanimfx);
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
         triggerfx(animstruct.var_352d21900a2aa86f);
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56b9
 // Size: 0x149
@@ -1627,7 +1628,7 @@ function infil_light_dvars(animstruct) {
     setdvar(@"hash_a589d43a51d526df", var_99598b81ba0f7519);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5809
 // Size: 0x15a
@@ -1635,24 +1636,24 @@ function delaystreamtomovingplane(animstruct, players) {
     if (isdefined(animstruct.movingc130) && getdvarint(@"hash_eb8a05afa7735e5f", 1) == 1) {
         delaytime = getdvarint(@"hash_d01d0472d843d39e", 8);
         wait(delaytime);
-        var_11f3b4465c8b637b = animstruct.movingc130.origin;
+        streamorigin = animstruct.movingc130.origin;
         forward = getdvarint(@"hash_7abcda2d7aabbe4c", 0);
         if (forward > 0) {
             dir = anglestoforward(animstruct.movingc130.angles);
-            var_11f3b4465c8b637b = animstruct.movingc130.origin + dir * forward;
+            streamorigin = animstruct.movingc130.origin + dir * forward;
         }
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
             player setpredictedstreamloaddist(0);
-            player namespace_d3d40f75bb4e4c32::playerstreamhintlocation(var_11f3b4465c8b637b);
+            player scripts/mp/gametypes/br_public::playerstreamhintlocation(streamorigin);
         }
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x596a
 // Size: 0xca
@@ -1660,17 +1661,17 @@ function stopstreamtomovingplane(animstruct, players) {
     if (isdefined(animstruct.movingc130) && getdvarint(@"hash_eb8a05afa7735e5f", 1) == 1) {
         delaytime = getdvarint(@"hash_b7c6d487b0f5506b", 5);
         wait(delaytime);
-        var_fa371b137df55a75 = ter_op(isdefined(players), players, level.players);
-        foreach (player in var_fa371b137df55a75) {
+        infilplayers = ter_op(isdefined(players), players, level.players);
+        foreach (player in infilplayers) {
             if (!isdefined(player)) {
                 continue;
             }
-            player thread namespace_d3d40f75bb4e4c32::playerclearstreamhintorigin();
+            player thread scripts/mp/gametypes/br_public::playerclearstreamhintorigin();
         }
     }
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a3b
 // Size: 0x3
@@ -1678,7 +1679,7 @@ function getlightingvalues() {
     
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a45
 // Size: 0x3
@@ -1686,7 +1687,7 @@ function lightsreset() {
     
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a4f
 // Size: 0x121
@@ -1700,51 +1701,51 @@ function function_36ebdcea4a9d96ce(infil_anim_type) {
         var_b37140bfa8ba2461.innards setmodel("<unknown string>");
         var_b37140bfa8ba2461.innards linkto(var_b37140bfa8ba2461, "<unknown string>");
         var_b37140bfa8ba2461.innards.cleanme = 1;
-        var_2c43414ff4583b64 = buildac130infilanimstruct(var_b37140bfa8ba2461, infil_anim_type);
+        planestruct = buildac130infilanimstruct(var_b37140bfa8ba2461, infil_anim_type);
         transitionplayerstoac130cinematic(level.players, infil_anim_type, var_b37140bfa8ba2461);
-        playac130infilanim(var_2c43414ff4583b64);
+        playac130infilanim(planestruct);
         transitionplayersoutofac130cinematic(level.players, infil_anim_type);
-        namespace_d3d40f75bb4e4c32::cleanac130struct(var_2c43414ff4583b64);
-        return var_2c43414ff4583b64;
+        scripts/mp/gametypes/br_public::cleanac130struct(planestruct);
+        return planestruct;
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b77
 // Size: 0x48
 function movetowithpause(point, time, accel, decel) {
     /#
         if (function_136f4218b1d719b9()) {
-            thread function_7451d3cc68574219(point, time, accel, decel);
+            thread movetopause(point, time, accel, decel);
             return;
         }
     #/
     self moveto(point, time, accel, decel);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bc6
 // Size: 0x48
 function rotatetowithpause(angles, time, accel, decel) {
     /#
         if (function_136f4218b1d719b9()) {
-            thread function_de3c7a095bbfa623(angles, time, accel, decel);
+            thread rotatetopause(angles, time, accel, decel);
             return;
         }
     #/
     self rotateto(angles, time, accel, decel);
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c15
 // Size: 0x1a0
 function function_ec887b61b1baeba8(host) {
     /#
         animstruct = buildac130infilanimstruct(undefined, "<unknown string>");
-        models = [0:animstruct.cameraent, 1:animstruct.staticc130, 2:animstruct.playerpositionents["<unknown string>"], 3:animstruct.playerslot1, 4:animstruct.playerslot2, 5:animstruct.playerslot3, 6:animstruct.playerslot4, 7:animstruct.aidoorchief];
+        models = [animstruct.cameraent, animstruct.staticc130, animstruct.playerpositionents["<unknown string>"], animstruct.playerslot1, animstruct.playerslot2, animstruct.playerslot3, animstruct.playerslot4, animstruct.aidoorchief];
         models = array_removeundefined(models);
         while (function_136f4218b1d719b9()) {
             function_9384c9ed097bf7b9(host, "<unknown string>");
@@ -1756,21 +1757,21 @@ function function_ec887b61b1baeba8(host) {
             animstruct.staticc130 show();
             animstruct.cameraentlinktag = undefined;
             function_3a001a7d1d9a2ca3(host, animstruct, models);
-            transitionplayerstoac130cinematic([0:host], "<unknown string>", animstruct.staticc130);
+            transitionplayerstoac130cinematic([host], "<unknown string>", animstruct.staticc130);
             thread playac130animinternal(animstruct);
             function_9384c9ed097bf7b9(host, "<unknown string>");
-            function_3c95f70d7b40e916(host, animstruct, models);
+            endanimsequence(host, animstruct, models);
             endac130infilanimsinternal(animstruct);
-            transitionplayersoutofac130cinematic([0:host], "<unknown string>");
+            transitionplayersoutofac130cinematic([host], "<unknown string>");
             host setorigin(startorigin);
             host setplayerangles(startangles);
             wait(0.5);
         }
-        namespace_d3d40f75bb4e4c32::cleanac130struct(animstruct);
+        scripts/mp/gametypes/br_public::cleanac130struct(animstruct);
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5dbc
 // Size: 0x3e
@@ -1782,11 +1783,11 @@ function function_3a001a7d1d9a2ca3(player, animstruct, models) {
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e01
 // Size: 0x7d
-function function_3c95f70d7b40e916(player, animstruct, models) {
+function endanimsequence(player, animstruct, models) {
     /#
         level.var_ca629cf434263639 = undefined;
         animstruct notify("<unknown string>");
@@ -1796,29 +1797,29 @@ function function_3c95f70d7b40e916(player, animstruct, models) {
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e85
 // Size: 0x48
-function function_9384c9ed097bf7b9(player, var_1131de9c9b830e78) {
+function function_9384c9ed097bf7b9(player, buttonstring) {
     /#
-        while (player buttonpressed(var_1131de9c9b830e78) && function_136f4218b1d719b9()) {
+        while (player buttonpressed(buttonstring) && function_136f4218b1d719b9()) {
             waitframe();
         }
-        while (!player buttonpressed(var_1131de9c9b830e78) && function_136f4218b1d719b9()) {
+        while (!player buttonpressed(buttonstring) && function_136f4218b1d719b9()) {
             waitframe();
         }
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ed4
 // Size: 0x123
 function function_710d2b779609907d(player, models, animstruct) {
     /#
         animstruct endon("<unknown string>");
-        while (1) {
+        while (true) {
             level.var_ca629cf434263639 = 0;
             while (player buttonpressed("<unknown string>")) {
                 waitframe();
@@ -1843,7 +1844,7 @@ function function_710d2b779609907d(player, models, animstruct) {
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ffe
 // Size: 0x187
@@ -1853,12 +1854,12 @@ function function_b51365f787d44355(player, animstruct) {
         /#
             assert(isdefined(animstruct.cameraent));
         #/
-        while (1) {
+        while (true) {
             while (!player buttonpressed("<unknown string>") || !isdefined(animstruct.cameraentlinktag)) {
                 waitframe();
             }
-            player namespace_f8065cafc523dba5::function_6fb380927695ee76();
-            player namespace_f8065cafc523dba5::function_985b0973f29da4f8("<unknown string>");
+            player scripts/cp_mp/utility/player_utility::function_6fb380927695ee76();
+            player scripts/cp_mp/utility/player_utility::function_985b0973f29da4f8("<unknown string>");
             player cameraunlink();
             player disablephysicaldepthoffieldscripting();
             player _freezelookcontrols(0);
@@ -1879,8 +1880,8 @@ function function_b51365f787d44355(player, animstruct) {
                 player ufo();
             }
             player cameralinkto(animstruct.cameraent, animstruct.cameraentlinktag, 1, 1);
-            player namespace_f8065cafc523dba5::function_a593971d75d82113();
-            player namespace_f8065cafc523dba5::function_379bb555405c16bb("<unknown string>");
+            player scripts/cp_mp/utility/player_utility::function_a593971d75d82113();
+            player scripts/cp_mp/utility/player_utility::function_379bb555405c16bb("<unknown string>");
             player enablephysicaldepthoffieldscripting();
             while (player buttonpressed("<unknown string>")) {
                 waitframe();
@@ -1889,60 +1890,82 @@ function function_b51365f787d44355(player, animstruct) {
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 14, eflags: 0x0
 // Checksum 0x0, Offset: 0x618c
 // Size: 0xa2
-function function_77108c1c4c1defef(func, timer, param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807, var_5a6a89fa118825d4, var_5a6a8cfa11882c6d) {
+function function_77108c1c4c1defef(func, timer, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12) {
     /#
         self endon("<unknown string>");
         self endon("<unknown string>");
-        function_3fc888ca7a09b8d(func, timer, param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807, var_5a6a89fa118825d4, var_5a6a8cfa11882c6d);
+        function_3fc888ca7a09b8d(func, timer, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 14, eflags: 0x0
 // Checksum 0x0, Offset: 0x6235
 // Size: 0x1c8
-function function_3fc888ca7a09b8d(func, timer, param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807, var_5a6a89fa118825d4, var_5a6a8cfa11882c6d) {
+function function_3fc888ca7a09b8d(func, timer, param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12) {
     /#
         waitandpause(timer);
-        if (isdefined(var_5a6a8cfa11882c6d)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807, var_5a6a89fa118825d4, var_5a6a8cfa11882c6d);
-        } else if (isdefined(var_5a6a89fa118825d4)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807, var_5a6a89fa118825d4);
-        } else if (isdefined(var_5a6a8afa11882807)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555, var_5a6a8afa11882807);
-        } else if (isdefined(var_f3cb1651d632a555)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, var_f3cb1651d632a555);
-        } else if (isdefined(param8)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8);
-        } else if (isdefined(param7)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7);
-        } else if (isdefined(param6)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5, param6);
-        } else if (isdefined(param5)) {
-            self builtin [[ func ]](param1, param2, param3, param4, param5);
-        } else if (isdefined(param4)) {
-            self builtin [[ func ]](param1, param2, param3, param4);
-        } else if (isdefined(param3)) {
-            self builtin [[ func ]](param1, param2, param3);
-        } else if (isdefined(param2)) {
-            self builtin [[ func ]](param1, param2);
-        } else if (isdefined(param1)) {
-            self builtin [[ func ]](param1);
-        } else {
-            self builtin [[ func ]]();
+        if (isdefined(param12)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11, param12);
+            return;
         }
+        if (isdefined(param11)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, param9, param10, param11);
+            return;
+        }
+        if (isdefined(param10)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, param9, param10);
+            return;
+        }
+        if (isdefined(param9)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8, param9);
+            return;
+        }
+        if (isdefined(param8)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7, param8);
+            return;
+        }
+        if (isdefined(param7)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6, param7);
+            return;
+        }
+        if (isdefined(param6)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5, param6);
+            return;
+        }
+        if (isdefined(param5)) {
+            self builtin [[ func ]](param1, param2, param3, param4, param5);
+            return;
+        }
+        if (isdefined(param4)) {
+            self builtin [[ func ]](param1, param2, param3, param4);
+            return;
+        }
+        if (isdefined(param3)) {
+            self builtin [[ func ]](param1, param2, param3);
+            return;
+        }
+        if (isdefined(param2)) {
+            self builtin [[ func ]](param1, param2);
+            return;
+        }
+        if (isdefined(param1)) {
+            self builtin [[ func ]](param1);
+            return;
+        }
+        self builtin [[ func ]]();
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6404
 // Size: 0x85
-function function_7451d3cc68574219(point, timesec, accel, decel) {
+function movetopause(point, timesec, accel, decel) {
     /#
         self moveto(point, timesec, accel, decel);
         while (timesec > 0) {
@@ -1959,11 +1982,11 @@ function function_7451d3cc68574219(point, timesec, accel, decel) {
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6490
 // Size: 0x85
-function function_de3c7a095bbfa623(angles, timesec, accel, decel) {
+function rotatetopause(angles, timesec, accel, decel) {
     /#
         self rotateto(angles, timesec, accel, decel);
         while (timesec > 0) {
@@ -1980,52 +2003,52 @@ function function_de3c7a095bbfa623(angles, timesec, accel, decel) {
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x651c
 // Size: 0x2e4
 function function_b0f7742c6d38dbd1(animstruct) {
     /#
-        var_4a64c51edab7d63b = anglestoaxis(animstruct.movingc130.angles);
-        var_ca8604d07949e4ec = -1 * var_4a64c51edab7d63b["<unknown string>"];
-        var_f8ff5945440f4cdb = var_4a64c51edab7d63b["<unknown string>"];
+        entaxis = anglestoaxis(animstruct.movingc130.angles);
+        entright = -1 * entaxis["<unknown string>"];
+        entup = entaxis["<unknown string>"];
         foreach (player in level.players) {
-            var_15314da30b44470 = player.infilanimindex - 1;
-            var_1126685ee85ab1e2 = "<unknown string>" + player.infilanimindex;
-            var_3df9d9a1027fb9bc = animstruct.cameraentmoving gettagorigin(var_1126685ee85ab1e2);
-            cameraangles = animstruct.cameraentmoving gettagangles(var_1126685ee85ab1e2);
+            slotnumber = player.infilanimindex - 1;
+            prop_name = "<unknown string>" + player.infilanimindex;
+            cameraorigin = animstruct.cameraentmoving gettagorigin(prop_name);
+            cameraangles = animstruct.cameraentmoving gettagangles(prop_name);
             baseorigin = player getvieworigin();
-            var_b7034ef67b8ca88d = var_3df9d9a1027fb9bc;
-            var_5a5ade6f6717ebc2 = anglestoforward(cameraangles);
-            var_fad8ba79dadaf9ee = (var_5a5ade6f6717ebc2[0] * -1, var_5a5ade6f6717ebc2[1] * -1, 0);
-            var_fad8ba79dadaf9ee = vectornormalize(var_fad8ba79dadaf9ee);
-            denominator = vectordot(var_fad8ba79dadaf9ee, var_5a5ade6f6717ebc2);
-            difference = baseorigin - var_b7034ef67b8ca88d;
-            t = vectordot(difference, var_fad8ba79dadaf9ee) / denominator;
-            result = var_b7034ef67b8ca88d + t * var_5a5ade6f6717ebc2;
+            rayorigin = cameraorigin;
+            raydir = anglestoforward(cameraangles);
+            planenormal = (raydir[0] * -1, raydir[1] * -1, 0);
+            planenormal = vectornormalize(planenormal);
+            denominator = vectordot(planenormal, raydir);
+            difference = baseorigin - rayorigin;
+            t = vectordot(difference, planenormal) / denominator;
+            result = rayorigin + t * raydir;
             offset = result - baseorigin;
-            println("<unknown string>" + var_15314da30b44470 + "<unknown string>" + offset[0] + "<unknown string>" + offset[1] + "<unknown string>" + offset[2] + "<unknown string>");
-            var_47293b1e94ff8fb0 = baseorigin + var_ca8604d07949e4ec * offset[0] + var_f8ff5945440f4cdb * offset[2];
-            var_ac59002aa0721741 = distance(var_3df9d9a1027fb9bc, var_47293b1e94ff8fb0);
-            var_cf201622a9fd5646 = var_47293b1e94ff8fb0 - var_3df9d9a1027fb9bc;
+            println("<unknown string>" + slotnumber + "<unknown string>" + offset[0] + "<unknown string>" + offset[1] + "<unknown string>" + offset[2] + "<unknown string>");
+            entorigin = baseorigin + entright * offset[0] + entup * offset[2];
+            cameradistance = distance(cameraorigin, entorigin);
+            var_cf201622a9fd5646 = entorigin - cameraorigin;
             var_cf201622a9fd5646 = vectornormalize(var_cf201622a9fd5646);
-            var_abdc396b57c7f955 = vectordot(var_5a5ade6f6717ebc2, var_cf201622a9fd5646);
-            println("<unknown string>" + var_15314da30b44470 + "<unknown string>" + var_ac59002aa0721741 + "<unknown string>" + var_abdc396b57c7f955 + "<unknown string>");
-            var_4200398f14c8db5 = var_3df9d9a1027fb9bc - var_47293b1e94ff8fb0;
+            var_abdc396b57c7f955 = vectordot(raydir, var_cf201622a9fd5646);
+            println("<unknown string>" + slotnumber + "<unknown string>" + cameradistance + "<unknown string>" + var_abdc396b57c7f955 + "<unknown string>");
+            var_4200398f14c8db5 = cameraorigin - entorigin;
             var_629f52c3d96c0cb9 = length(var_4200398f14c8db5);
             var_867d9818ce7f2161 = acos(var_4200398f14c8db5[2] / var_629f52c3d96c0cb9);
-            println("<unknown string>" + var_15314da30b44470 + "<unknown string>" + var_629f52c3d96c0cb9 + "<unknown string>" + var_867d9818ce7f2161 + "<unknown string>");
+            println("<unknown string>" + slotnumber + "<unknown string>" + var_629f52c3d96c0cb9 + "<unknown string>" + var_867d9818ce7f2161 + "<unknown string>");
         }
     #/
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6807
 // Size: 0xaa
 function headlessinfils() {
     dist = distance(level.br_ac130.pathstruct.startpt, level.br_ac130.pathstruct.endpt);
-    time = dist / namespace_ad389306d44fc6b4::getc130speed() / level.headlessinfilplayers.size;
+    time = dist / scripts/mp/gametypes/br_c130::getc130speed() / level.headlessinfilplayers.size;
     for (i = 0; i < level.headlessinfilplayers.size; i++) {
         wait(time);
         level.headlessinfilplayers[i] notify("halo_jump_c130");
@@ -2033,7 +2056,7 @@ function headlessinfils() {
     level.headlessinfilplayers = undefined;
 }
 
-// Namespace namespace_147cc21b507a21ed/namespace_973962356ce55fee
+// Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68b8
 // Size: 0x39

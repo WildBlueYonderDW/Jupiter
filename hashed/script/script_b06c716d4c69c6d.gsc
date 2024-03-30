@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_b_ob_exfil_industrial_cs;
 
-// Namespace mp_jup_st_b_ob_exfil_industrial_cs/namespace_a7208969aa04a1b3
+// Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x459
 // Size: 0x6d
@@ -23,166 +23,166 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_b_ob_exfil_industrial_cs/namespace_a7208969aa04a1b3
+// Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cd
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_b_ob_exfil_industrial_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_b_ob_exfil_industrial_cs");
 }
 
-// Namespace mp_jup_st_b_ob_exfil_industrial_cs/namespace_a7208969aa04a1b3
+// Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53c
 // Size: 0xb7a
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.target2 = "exfil_destination_1_exit_start";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-4091.3, 33340.3, 1425), (0, 261.37, 0), "exfil_destination_1", "exfil_destination_1_enter_start");
+    fe [[ f ]](s, us, cf, (-4091.3, 33340.3, 1425), (0, 261.37, 0), "exfil_destination_1", "exfil_destination_1_enter_start");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-4088.6, 40862.2, 2045.78), (350.04, 251.29, 0.88), "exfil_destination_1");
+    fe [[ f ]](s, us, cf, (-4088.6, 40862.2, 2045.78), (350.04, 251.29, 0.88), "exfil_destination_1");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.name = "exfil_content_destination_industrial";
     s.variantname = "content_destination";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-3584, 42358, 1861), (0, 0, 0), "ob_st_b_industrial_exfil_destination");
+    fe [[ f ]](s, us, cf, (-3584, 42358, 1861), (0, 0, 0), "ob_st_b_industrial_exfil_destination");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.content_key = "exfil_interact";
     s.variantname = "content_struct";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (2606.5, 28426.9, 1006), (0, 352.1, 0), "exfil_content_struct_industrial_east", "exfil_content_instance_industrial_east");
+    fe [[ f ]](s, us, cf, (2606.5, 28426.9, 1006), (0, 352.1, 0), "exfil_content_struct_industrial_east", "exfil_content_instance_industrial_east");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (105, 34960.1, 1256), (0, 199.98, 0), "exfil_destination_1");
+    fe [[ f ]](s, us, cf, (105, 34960.1, 1256), (0, 199.98, 0), "exfil_destination_1");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-65.7, 40283.8, 2406), (355, 241.37, -0), "exfil_destination_1");
+    fe [[ f ]](s, us, cf, (-65.7, 40283.8, 2406), (355, 241.37, -0), "exfil_destination_1");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.content_key = "exfil_interact";
     s.variantname = "content_struct";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-9289, 37575, 1368), (0.6, 184.29, -3.76), "exfil_content_struct_industrial_west", "exfil_content_instance_industrial_west");
+    fe [[ f ]](s, us, cf, (-9289, 37575, 1368), (0.6, 184.29, -3.76), "exfil_content_struct_industrial_west", "exfil_content_instance_industrial_west");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (5196, 54707, 1944), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (5196, 54707, 1944), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (1344.1, 38761.3, 3482), (0, 3.9, 0), "exfil_1_auto2", "exfil_1_auto3");
+    fe [[ f ]](s, us, cf, (1344.1, 38761.3, 3482), (0, 3.9, 0), "exfil_1_auto2", "exfil_1_auto3");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_accel = float(75);
     s.script_speed = int(250);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (2724.8, 38203.5, 3406), (0, 273.9, 0), "exfil_1_auto3", "exfil_1_auto4");
+    fe [[ f ]](s, us, cf, (2724.8, 38203.5, 3406), (0, 273.9, 0), "exfil_1_auto3", "exfil_1_auto4");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (8195.8, 27840.4, 3718), (0, 273.9, 0), "exfil_1_auto4", "exfil_1_auto5");
+    fe [[ f ]](s, us, cf, (8195.8, 27840.4, 3718), (0, 273.9, 0), "exfil_1_auto4", "exfil_1_auto5");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (8358.2, 23599.9, 3438), (0, 273.9, 0), "exfil_1_auto5", "exfil_1_auto6");
+    fe [[ f ]](s, us, cf, (8358.2, 23599.9, 3438), (0, 273.9, 0), "exfil_1_auto5", "exfil_1_auto6");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (16145.6, 21349.1, 1276.86), (0, 333.9, 0), "exfil_1_auto6");
+    fe [[ f ]](s, us, cf, (16145.6, 21349.1, 1276.86), (0, 333.9, 0), "exfil_1_auto6");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (2289.7, 57190.3, 4250), (0, 273.9, 0), "exfil_destination_1_enter_start", "exfil_1_auto7");
+    fe [[ f ]](s, us, cf, (2289.7, 57190.3, 4250), (0, 273.9, 0), "exfil_destination_1_enter_start", "exfil_1_auto7");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (13075.7, 60481.9, 4250), (0, 273.9, 0), "exfil_1_auto7", "exfil_1_auto8");
+    fe [[ f ]](s, us, cf, (13075.7, 60481.9, 4250), (0, 273.9, 0), "exfil_1_auto7", "exfil_1_auto8");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (14872.9, 52455.5, 4250), (0, 243.9, 0), "exfil_1_auto8", "exfil_1_auto9");
+    fe [[ f ]](s, us, cf, (14872.9, 52455.5, 4250), (0, 243.9, 0), "exfil_1_auto8", "exfil_1_auto9");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (8542.6, 43811.2, 4610), (0, 258.9, 0), "exfil_1_auto9");
+    fe [[ f ]](s, us, cf, (8542.6, 43811.2, 4610), (0, 258.9, 0), "exfil_1_auto9");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.content_script_name = "exfil";
     s.variantname = "content_instance";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-9313.5, 37105.1, 2579), (0, 0, 0), "exfil_content_instance_industrial_west", "core_features_industrial_location");
+    fe [[ f ]](s, us, cf, (-9313.5, 37105.1, 2579), (0, 0, 0), "exfil_content_instance_industrial_west", "core_features_industrial_location");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.variantname = "content_location";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-3602, 41963, 1715), (0, 0, 0), "core_features_industrial_location", "ob_st_b_industrial_exfil_destination");
+    fe [[ f ]](s, us, cf, (-3602, 41963, 1715), (0, 0, 0), "core_features_industrial_location", "ob_st_b_industrial_exfil_destination");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.content_script_name = "exfil";
     s.variantname = "content_instance";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (2588, 27856.6, 1544), (0, 314.57, 0), "exfil_content_instance_industrial_east", "core_features_industrial_location");
+    fe [[ f ]](s, us, cf, (2588, 27856.6, 1544), (0, 314.57, 0), "exfil_content_instance_industrial_east", "core_features_industrial_location");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-41414, 36338, 4458), (0, 324.9, 0), undefined, "cspf_0_auto12084200315981243333", "exfil_content_struct_industrial_west");
+    fe [[ f ]](s, us, cf, (-41414, 36338, 4458), (0, 324.9, 0), undefined, "cspf_0_auto12084200315981243333", "exfil_content_struct_industrial_west");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-40989, 36035, 5985), (0, 324.9, 0), "cspf_0_auto12084200315981243333", "cspf_0_auto9439421660916165491");
+    fe [[ f ]](s, us, cf, (-40989, 36035, 5985), (0, 324.9, 0), "cspf_0_auto12084200315981243333", "cspf_0_auto9439421660916165491");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-35606, 31458, 5934), (0, 324.9, 0), "cspf_0_auto9439421660916165491", "cspf_0_auto1162171163973581414");
+    fe [[ f ]](s, us, cf, (-35606, 31458, 5934), (0, 324.9, 0), "cspf_0_auto9439421660916165491", "cspf_0_auto1162171163973581414");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-28421, 27768, 5274), (0, 358.9, 0), "cspf_0_auto1162171163973581414", "cspf_0_auto17792082497698880895");
+    fe [[ f ]](s, us, cf, (-28421, 27768, 5274), (0, 358.9, 0), "cspf_0_auto1162171163973581414", "cspf_0_auto17792082497698880895");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-20670, 26180, 5095), (0, 359.4, 0), "cspf_0_auto17792082497698880895", "cspf_0_auto3044103984309199137");
+    fe [[ f ]](s, us, cf, (-20670, 26180, 5095), (0, 359.4, 0), "cspf_0_auto17792082497698880895", "cspf_0_auto3044103984309199137");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-12801, 28360, 4813), (0, 105.4, 0), "cspf_0_auto3044103984309199137", "cspf_0_auto13792619656935203045");
+    fe [[ f ]](s, us, cf, (-12801, 28360, 4813), (0, 105.4, 0), "cspf_0_auto3044103984309199137", "cspf_0_auto13792619656935203045");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-8825, 32338, 4414), (0, 161.4, 0), "cspf_0_auto13792619656935203045", "cspf_0_auto1241395187686590015");
+    fe [[ f ]](s, us, cf, (-8825, 32338, 4414), (0, 161.4, 0), "cspf_0_auto13792619656935203045", "cspf_0_auto1241395187686590015");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-9018, 36995, 3949), (0, 177.12, 0), "cspf_0_auto1241395187686590015");
+    fe [[ f ]](s, us, cf, (-9018, 36995, 3949), (0, 177.12, 0), "cspf_0_auto1241395187686590015");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-28081.1, 43303.1, 2277), (0, 0.9, 0), undefined, "cspf_0_auto14310868345412780421", "exfil_content_struct_industrial_east");
+    fe [[ f ]](s, us, cf, (-28081.1, 43303.1, 2277), (0, 0.9, 0), undefined, "cspf_0_auto14310868345412780421", "exfil_content_struct_industrial_east");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-26747, 43335, 5066), (0, 0.9, 0), "cspf_0_auto14310868345412780421", "cspf_0_auto14841453219060481416");
+    fe [[ f ]](s, us, cf, (-26747, 43335, 5066), (0, 0.9, 0), "cspf_0_auto14310868345412780421", "cspf_0_auto14841453219060481416");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-15353, 42139, 5015), (0, 0.9, 0), "cspf_0_auto14841453219060481416", "cspf_0_auto4995411593187183647");
+    fe [[ f ]](s, us, cf, (-15353, 42139, 5015), (0, 0.9, 0), "cspf_0_auto14841453219060481416", "cspf_0_auto4995411593187183647");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-6581, 41014, 4964), (0, 0.9, 0), "cspf_0_auto4995411593187183647", "cspf_0_auto16056656821391295778");
+    fe [[ f ]](s, us, cf, (-6581, 41014, 4964), (0, 0.9, 0), "cspf_0_auto4995411593187183647", "cspf_0_auto16056656821391295778");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-1812, 35635, 3606), (0, 0.9, 0), "cspf_0_auto16056656821391295778", "cspf_0_auto10797188140911198959");
+    fe [[ f ]](s, us, cf, (-1812, 35635, 3606), (0, 0.9, 0), "cspf_0_auto16056656821391295778", "cspf_0_auto10797188140911198959");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_exfil_industrial_cs";
     s.script_speed = int(60);
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-94, 31686, 2395), (0, 0.9, 0), "cspf_0_auto10797188140911198959");
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe [[ f ]](s, us, cf, (-94, 31686, 2395), (0, 0.9, 0), "cspf_0_auto10797188140911198959");
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_b_ob_exfil_industrial_cs/namespace_a7208969aa04a1b3
+// Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10bd
 // Size: 0x3
@@ -190,7 +190,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_b_ob_exfil_industrial_cs/namespace_a7208969aa04a1b3
+// Namespace mp_jup_st_b_ob_exfil_industrial_cs / namespace_a7208969aa04a1b3
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0xf

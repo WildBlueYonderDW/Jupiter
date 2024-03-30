@@ -12,9 +12,9 @@
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\mp\objidpoolmanager.gsc;
 
-#namespace namespace_c30e528e4ccf94cf;
+#namespace br_collection_quest;
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x244
 // Size: 0xda
@@ -35,7 +35,7 @@ function init() {
     getquestdata("collect_locale").nextid = 0;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x325
 // Size: 0xb6
@@ -44,12 +44,12 @@ function col_removequestinstance() {
     locale hideuielements(self);
     uiobjectivehidefromteam(self.team);
     foreach (player in getteamdata(self.team, "players")) {
-        namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(locale.objectiveiconid, player);
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(locale.objectiveiconid, player);
     }
     releaseteamonquest(self.team);
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0x243
@@ -59,17 +59,17 @@ function takequestitem(pickupent) {
     instance.team = self.team;
     instance.startlocation = checkpoint(self.origin);
     instance registerteamonquest(self.team, self);
-    var_354d1457278b342c = spawnstruct();
-    var_354d1457278b342c.searchfunc = "questPointsArray";
-    var_354d1457278b342c.searchcircleorigin = instance.startlocation;
-    var_354d1457278b342c.searchradiusmax = 10000;
-    var_354d1457278b342c.searchradiusmin = 0;
-    var_354d1457278b342c.searchradiusidealmax = 6000;
-    var_354d1457278b342c.searchradiusidealmin = 4000;
-    var_354d1457278b342c.mintime = 30;
-    var_354d1457278b342c.initialplayer = self;
-    var_354d1457278b342c.questtypes = 7;
-    locale = instance requestquestlocale("collect_locale", var_354d1457278b342c);
+    search_params = spawnstruct();
+    search_params.searchfunc = "questPointsArray";
+    search_params.searchcircleorigin = instance.startlocation;
+    search_params.searchradiusmax = 10000;
+    search_params.searchradiusmin = 0;
+    search_params.searchradiusidealmax = 6000;
+    search_params.searchradiusidealmin = 4000;
+    search_params.mintime = 30;
+    search_params.initialplayer = self;
+    search_params.questtypes = 7;
+    locale = instance requestquestlocale("collect_locale", search_params);
     instance.totalcollecteditems = 0;
     foreach (player in getteamdata(self.team, "players")) {
         player.collecteditems = 0;
@@ -86,7 +86,7 @@ function takequestitem(pickupent) {
     displayplayersplash(self, "br_scavenger_quest_start_tablet_finder");
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x62c
 // Size: 0xdc
@@ -104,7 +104,7 @@ function updatelocaleplayerlist() {
     self.playerlist = var_b87d7e190bafbd80;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x70f
 // Size: 0x58
@@ -114,7 +114,7 @@ function updateusablestateall() {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x76e
 // Size: 0x87
@@ -123,13 +123,13 @@ function updateusablestate(item) {
         if (array_contains(self.playerlist, player)) {
             item enableplayeruse(player);
             item showtoplayer(player);
-        } else {
-            item disableplayeruse(player);
+            continue;
         }
+        item disableplayeruse(player);
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7fc
 // Size: 0x77
@@ -140,7 +140,7 @@ function showuielements(instance) {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x87a
 // Size: 0x6f
@@ -150,7 +150,7 @@ function updatecollectionui(instance) {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f0
 // Size: 0x36
@@ -161,21 +161,21 @@ function updatecollectionuiforplayer(instance, player) {
     player uiobjectivesetparameter(instance.totalcollecteditems);
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x92d
 // Size: 0x93
 function determineobjectiveiconvisibility() {
     foreach (player in self.playerlist) {
         if (distance2d(player.origin, self.curorigin) > 0) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(self.objectiveiconid, player);
-        } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(self.objectiveiconid, player);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(self.objectiveiconid, player);
+            continue;
         }
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(self.objectiveiconid, player);
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c7
 // Size: 0x76
@@ -186,7 +186,7 @@ function hideuielements(instance) {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa44
 // Size: 0xec
@@ -206,12 +206,12 @@ function findpoint() {
         } else {
             return undefined;
         }
-    } else {
-        return point;
+        return;
     }
+    return point;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb37
 // Size: 0x84
@@ -219,51 +219,51 @@ function forcespawnitem() {
     if (isdefined(self.previouspoints) && self.previouspoints.size > 0) {
         point = self.previouspoints[0];
         self.previouspoints = array_remove(self.previouspoints, self.previouspoints[0]);
-    } else {
-        for (index = 0; index < 30; index++) {
-            point = findpoint();
-            if (!isdefined(point)) {
-                return point;
-            }
+        return;
+    }
+    for (index = 0; index < 30; index++) {
+        point = findpoint();
+        if (!isdefined(point)) {
+            return point;
         }
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc2
 // Size: 0xb1
 function spawnitem(point) {
     self.numitems++;
-    var_d9a39bcc719e38e5 = spawn("script_model", point);
-    var_d9a39bcc719e38e5 setmodel("box_wooden_grenade_01");
-    var_d9a39bcc719e38e5 makeusable();
-    var_d9a39bcc719e38e5 setcursorhint("HINT_NOICON");
-    var_d9a39bcc719e38e5 setuseholdduration("duration_short");
-    var_d9a39bcc719e38e5 sethintdisplayfov(150);
-    var_d9a39bcc719e38e5 setusefov(150);
-    var_d9a39bcc719e38e5 setuserange(150);
-    var_d9a39bcc719e38e5 sethintstring("MP/SCAV_PICKUP_PROMPT");
-    var_d9a39bcc719e38e5 setasgametypeobjective();
-    var_d9a39bcc719e38e5.locale = self;
-    var_d9a39bcc719e38e5 thread stashthink();
-    self.itemlist[self.itemlist.size] = var_d9a39bcc719e38e5;
+    stashlocation = spawn("script_model", point);
+    stashlocation setmodel("box_wooden_grenade_01");
+    stashlocation makeusable();
+    stashlocation setcursorhint("HINT_NOICON");
+    stashlocation setuseholdduration("duration_short");
+    stashlocation sethintdisplayfov(150);
+    stashlocation setusefov(150);
+    stashlocation setuserange(150);
+    stashlocation sethintstring("MP/SCAV_PICKUP_PROMPT");
+    stashlocation setasgametypeobjective();
+    stashlocation.locale = self;
+    stashlocation thread stashthink();
+    self.itemlist[self.itemlist.size] = stashlocation;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc7a
 // Size: 0x35
 function stashthink() {
     self endon("death");
     self endon("remove_locale");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         thread usestash(player);
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb6
 // Size: 0x131
@@ -290,7 +290,7 @@ function usestash(player) {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdee
 // Size: 0xfe
@@ -311,7 +311,7 @@ function completecollectionquest(stash) {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xef3
 // Size: 0x2d
@@ -321,19 +321,18 @@ function failcollectionquest() {
     removequestinstance();
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf27
 // Size: 0x1b
 function col_checkiflocaleisavailable() {
     if (self.subscribedinstances.size < 4) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf49
 // Size: 0xb5
@@ -349,26 +348,26 @@ function col_createquestlocale(placement) {
     return locale;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1006
 // Size: 0xa8
 function col_createcircleobjectiveicon() {
-    self.objectiveiconid = namespace_5a22b6f3a56f7e9b::requestobjectiveid(1);
+    self.objectiveiconid = scripts/mp/objidpoolmanager::requestobjectiveid(1);
     if (self.objectiveiconid != -1) {
-        namespace_5a22b6f3a56f7e9b::objective_add_objective(self.objectiveiconid, "current", (0, 0, 0), "ui_mp_br_mapmenu_icon_scavengerhunt_tablet");
-        namespace_5a22b6f3a56f7e9b::update_objective_position(self.objectiveiconid, self.curorigin);
-        namespace_5a22b6f3a56f7e9b::update_objective_setbackground(self.objectiveiconid, 2);
-        namespace_5a22b6f3a56f7e9b::objective_playermask_hidefromall(self.objectiveiconid);
-        namespace_5a22b6f3a56f7e9b::objective_set_play_intro(self.objectiveiconid, 1);
-    } else {
-        /#
-            println("<unknown string>");
-        #/
+        scripts/mp/objidpoolmanager::objective_add_objective(self.objectiveiconid, "current", (0, 0, 0), "ui_mp_br_mapmenu_icon_scavengerhunt_tablet");
+        scripts/mp/objidpoolmanager::update_objective_position(self.objectiveiconid, self.curorigin);
+        scripts/mp/objidpoolmanager::update_objective_setbackground(self.objectiveiconid, 2);
+        scripts/mp/objidpoolmanager::objective_playermask_hidefromall(self.objectiveiconid);
+        scripts/mp/objidpoolmanager::objective_set_play_intro(self.objectiveiconid, 1);
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10b5
 // Size: 0x8f
@@ -390,7 +389,7 @@ function col_localethink_itemspawn() {
     self.nextitem++;
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x114b
 // Size: 0x26
@@ -401,7 +400,7 @@ function col_localethink_objectivevisibility() {
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1178
 // Size: 0xbd
@@ -416,14 +415,14 @@ function col_removelocaleinstance() {
         item.origin = item.origin + (0, 0, -500);
         item delete();
     }
-    namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.objectiveiconid);
+    scripts/mp/objidpoolmanager::returnobjectiveid(self.objectiveiconid);
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x123c
 // Size: 0xd6
-function col_circletick(var_819edacdacb810e4, var_e86632d645c137d0) {
+function col_circletick(var_819edacdacb810e4, dangercircleradius) {
     if (!isdefined(self.lastcircletick)) {
         self.lastcircletick = -1;
     }
@@ -433,14 +432,14 @@ function col_circletick(var_819edacdacb810e4, var_e86632d645c137d0) {
     }
     self.lastcircletick = currenttime;
     dist = distance2d(self.curorigin, var_819edacdacb810e4);
-    if (dist > var_e86632d645c137d0) {
-        foreach (var_fb5fdfafc29f4513 in self.subscribedinstances) {
-            getquestinstancedata("collection", var_fb5fdfafc29f4513) failcollectionquest();
+    if (dist > dangercircleradius) {
+        foreach (instanceid in self.subscribedinstances) {
+            getquestinstancedata("collection", instanceid) failcollectionquest();
         }
     }
 }
 
-// Namespace namespace_c30e528e4ccf94cf/namespace_133f9416b8e7c5aa
+// Namespace br_collection_quest / scripts/mp/gametypes/br_collection_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1319
 // Size: 0x1d

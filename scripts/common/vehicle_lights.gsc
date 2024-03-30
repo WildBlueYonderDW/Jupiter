@@ -5,7 +5,7 @@
 
 #namespace vehicle_lights;
 
-// Namespace vehicle_lights/namespace_e73885f6df777712
+// Namespace vehicle_lights / scripts/common/vehicle_lights
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10b
 // Size: 0x38
@@ -14,7 +14,7 @@ function lights_on(group, classname) {
     array_levelthread(groups, &lights_on_internal, classname);
 }
 
-// Namespace vehicle_lights/namespace_e73885f6df777712
+// Namespace vehicle_lights / scripts/common/vehicle_lights
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14a
 // Size: 0x19a
@@ -36,7 +36,7 @@ function group_light(model, name, group) {
     level.vehicle.templates.vehicle_lights_group[model][group][level.vehicle.templates.vehicle_lights_group[model][group].size] = name;
 }
 
-// Namespace vehicle_lights/namespace_e73885f6df777712
+// Namespace vehicle_lights / scripts/common/vehicle_lights
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2eb
 // Size: 0x74
@@ -54,7 +54,7 @@ function lights_delayfxforframe() {
     level.fxdelay = undefined;
 }
 
-// Namespace vehicle_lights/namespace_e73885f6df777712
+// Namespace vehicle_lights / scripts/common/vehicle_lights
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x366
 // Size: 0x235
@@ -63,7 +63,7 @@ function lights_off_internal(group, model, classname) {
     if (isdefined(classname)) {
         model = classname;
     } else if (!isdefined(model)) {
-        model = function_53c4c53197386572(self.classname_mp, self.classname);
+        model = default_to(self.classname_mp, self.classname);
     }
     if (!isdefined(group)) {
         group = "all";
@@ -107,7 +107,7 @@ function lights_off_internal(group, model, classname) {
     }
 }
 
-// Namespace vehicle_lights/namespace_e73885f6df777712
+// Namespace vehicle_lights / scripts/common/vehicle_lights
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a2
 // Size: 0x2f0
@@ -119,7 +119,7 @@ function lights_on_internal(group, model) {
         group = "all";
     }
     if (!isdefined(model)) {
-        model = function_53c4c53197386572(self.classname_mp, self.classname);
+        model = default_to(self.classname_mp, self.classname);
     }
     if (!isdefined(level.vehicle.templates.vehicle_lights_group)) {
         return;
@@ -144,13 +144,11 @@ function lights_on_internal(group, model) {
         } else {
             delay = 0;
         }
-        delay = delay + level.fxdelay;
-        while (isdefined(var_ccbc0e3634b40c2a["" + delay])) {
-            delay = delay + 0.05;
+        for (delay = delay + level.fxdelay; isdefined(var_ccbc0e3634b40c2a["" + delay]); delay = delay + 0.05) {
         }
         var_ccbc0e3634b40c2a["" + delay] = 1;
         if (istrue(template.isscriptable)) {
-            if (namespace_dbbb37eb352edf96::function_9b915d163f6d1d5a(template.part)) {
+            if (scripts/common/vehicle::function_9b915d163f6d1d5a(template.part)) {
                 if (group == "brakelights") {
                     delaythread(delay, &function_3677f2be30fdd581, template.part, "brake");
                 } else if (group == "daylights") {
@@ -170,7 +168,7 @@ function lights_on_internal(group, model) {
     level.fxdelay = 0;
 }
 
-// Namespace vehicle_lights/namespace_e73885f6df777712
+// Namespace vehicle_lights / scripts/common/vehicle_lights
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x899
 // Size: 0x42

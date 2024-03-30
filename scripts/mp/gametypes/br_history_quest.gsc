@@ -13,9 +13,9 @@
 #using scripts\mp\gameobjects.gsc;
 #using scripts\cp_mp\calloutmarkerping.gsc;
 
-#namespace namespace_121b35267d780bcf;
+#namespace br_history_quest;
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x240
 // Size: 0xd9
@@ -29,13 +29,13 @@ function init() {
     registerremovequestinstance("history", &his_removequestinstance);
     registeronplayerdisconnect("history", &his_playerdisconnect);
     registeronrespawn("history", &his_respawn);
-    registerquestthink("history", &function_5cb7cb503aea12c8, 0.1);
+    registerquestthink("history", &his_think, 0.1);
     questtimerinit("history", 0);
     registerontimerexpired("history", &his_ontimerexpired);
     createallhistorydestinations();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x320
 // Size: 0x36
@@ -50,15 +50,15 @@ function his_respawn(player) {
     showquestobjicontoplayer(player);
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35d
 // Size: 0x1c
 function his_ontimerexpired() {
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_gen_fail", self.team, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_gen_fail", self.team, 1);
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x380
 // Size: 0xbd
@@ -76,32 +76,31 @@ function his_removequestinstance() {
     releaseteamonquest(self.team);
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x444
 // Size: 0x4d
-function his_playerdisconnect(var_345221032955c106) {
-    if (var_345221032955c106.team == self.team) {
-        if (!isteamvalid(var_345221032955c106.team)) {
+function his_playerdisconnect(disconnectplayer) {
+    if (disconnectplayer.team == self.team) {
+        if (!isteamvalid(disconnectplayer.team)) {
             self.result = "fail";
             removequestinstance();
         }
     }
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x498
 // Size: 0x2c
 function checkforcorrectinstance(player) {
     if (player.team == self.team) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cb
 // Size: 0x1ce
@@ -127,7 +126,7 @@ function givequest(team, id, player, modifier, rewardscriptable) {
     return instance;
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0x79
@@ -143,7 +142,7 @@ function applyquest() {
     return instance;
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x722
 // Size: 0x29
@@ -156,7 +155,7 @@ function oninstanceremoved() {
     instance notify("update");
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x752
 // Size: 0x39e
@@ -186,13 +185,13 @@ function createallhistorydestinations() {
     getquestdata("history").numrequireddestinations = getdvarint(@"hash_e6e6458e790f4fc7", 1);
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xaf7
 // Size: 0xbf
-function createhistorydestination(var_5923058289b3d96b) {
+function createhistorydestination(destorigin) {
     destination = spawnstruct();
-    destination.origin = namespace_d3d40f75bb4e4c32::droptogroundmultitrace(var_5923058289b3d96b, 0, -200) + (0, 0, 20);
+    destination.origin = scripts/mp/gametypes/br_public::droptogroundmultitrace(destorigin, 0, -200) + (0, 0, 20);
     destination.gameobject = spawn("script_model", destination.origin);
     destination.gameobject setmodel("electronics_keycard_office_02_black_gold");
     destination.gameobject.angles = (45, 0, 45);
@@ -201,21 +200,21 @@ function createhistorydestination(var_5923058289b3d96b) {
     return destination;
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbbe
 // Size: 0x41
 function function_d2d089ee1f5a18cf() {
     level endon("game_ended");
     self endon("death");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         player function_61ede860368601be(self);
         player playlocalsound("br_pickup_generic");
     }
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc06
 // Size: 0xcf
@@ -231,7 +230,7 @@ function function_61ede860368601be(destination) {
     questinstance reachhistorydestination();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcdc
 // Size: 0x224
@@ -247,10 +246,10 @@ function sethistorydestination() {
     }
     self.currentdestination = getquestdata("history").destinations[self.currentdestindex];
     movequestobjicon(self.currentdestination.origin + (0, 0, 38));
-    if (!istrue(self.currentdestination.gameobject.var_3871dbbf9f536ad6)) {
-        self.currentdestination.gameobject.var_3871dbbf9f536ad6 = 1;
+    if (!istrue(self.currentdestination.gameobject.hintinit)) {
+        self.currentdestination.gameobject.hintinit = 1;
         self.currentdestination.gameobject disableplayeruseforallplayers();
-        self.currentdestination.gameobject namespace_19b4203b51d56488::sethintobject(undefined, undefined, undefined, "MP_BR_INGAME/X1_CARD_USE", undefined, "duration_none", undefined, 200, 90, 72, 90);
+        self.currentdestination.gameobject scripts/mp/gameobjects::sethintobject(undefined, undefined, undefined, "MP_BR_INGAME/X1_CARD_USE", undefined, "duration_none", undefined, 200, 90, 72, 90);
         self.currentdestination.gameobject setuseprioritymax();
     }
     foreach (player in getteamdata(self.team, "players")) {
@@ -260,7 +259,7 @@ function sethistorydestination() {
     updatehistoryhud();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf07
 // Size: 0xac
@@ -278,7 +277,7 @@ function setfirsthistorydestination() {
     sethistorydestination();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfba
 // Size: 0x30
@@ -290,7 +289,7 @@ function setnexthistorydestination() {
     sethistorydestination();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xff1
 // Size: 0xc1
@@ -300,21 +299,21 @@ function reachhistorydestination() {
     #/
     self.destprogress++;
     foreach (player in getteamdata(self.team, "players")) {
-        player namespace_ede58c1e66c2c280::calloutmarkerping_removecallout(7);
+        player scripts/cp_mp/calloutmarkerping::calloutmarkerping_removecallout(7);
     }
     if (self.destprogress < getquestdata("history").numrequireddestinations) {
         setnexthistorydestination();
         displayteamsplash(self.team, "br_history_quest_next_destination");
-    } else {
-        his_completemission();
+        return;
     }
+    his_completemission();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10b9
 // Size: 0x21
-function function_5cb7cb503aea12c8() {
+function his_think() {
     /#
         function_d2caa40694d469ab();
     #/
@@ -323,7 +322,7 @@ function function_5cb7cb503aea12c8() {
     }
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10e1
 // Size: 0x12d
@@ -334,8 +333,8 @@ function his_completemission() {
     params = spawnstruct();
     rewardtier = getquestrewardtier(self.team);
     missionid = getquestindex("history");
-    var_11d65784f0b6afa2 = getquestrewardgroupindex(getquestrewardbuildgroupref("history"));
-    params.packedbits = packsplashparambits(missionid, rewardtier, var_11d65784f0b6afa2);
+    rewardindex = getquestrewardgroupindex(getquestrewardbuildgroupref("history"));
+    params.packedbits = packsplashparambits(missionid, rewardtier, rewardindex);
     if (getdvarint(@"hash_4b7d23ad6fca65d8", 1)) {
         players = level.teamdata[self.team]["alivePlayers"];
         displaysplashtoplayers(players, "br_history_quest_complete", params);
@@ -348,7 +347,7 @@ function his_completemission() {
     removequestinstance();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1215
 // Size: 0x22
@@ -360,7 +359,7 @@ function failhistoryquest() {
     removequestinstance();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x123e
 // Size: 0x65
@@ -371,7 +370,7 @@ function updatehistoryhud() {
     }
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12aa
 // Size: 0x26
@@ -383,7 +382,7 @@ function hidehistoryhudfromplayer(player) {
     player uiobjectivehide();
 }
 
-// Namespace namespace_121b35267d780bcf/namespace_53776f31345f516c
+// Namespace br_history_quest / scripts/mp/gametypes/br_history_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d7
 // Size: 0xc7
@@ -398,7 +397,7 @@ function deletehistoryhud() {
     }
     deletequestobjicon();
     foreach (player in getteamdata(self.team, "players")) {
-        player namespace_ede58c1e66c2c280::calloutmarkerping_removecallout(7);
+        player scripts/cp_mp/calloutmarkerping::calloutmarkerping_removecallout(7);
     }
 }
 

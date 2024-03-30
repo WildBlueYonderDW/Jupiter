@@ -13,9 +13,9 @@
 #using scripts\mp\gametypes\br_attractions.gsc;
 #using scripts\mp\utility\points.gsc;
 
-#namespace namespace_1bd8d3ce57fb56ea;
+#namespace br_attraction_kingofthehill;
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ef
 // Size: 0x3a
@@ -25,7 +25,7 @@ function init() {
     registerlocations();
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x330
 // Size: 0x14e
@@ -49,24 +49,24 @@ function registerlocations() {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x485
 // Size: 0x202
-function registerlocation(origin, var_29a79d378c70e0b, var_dfe92bb3a3b6a89a, var_ccb00530d7a24ee3, var_a943937478cd458d) {
+function registerlocation(origin, captureradius, captureheight, var_ccb00530d7a24ee3, groundoffsetz) {
     var_f98843815888ea41 = 30;
     nextindex = level.brattractions["koth"].locations.size;
     level.brattractions["koth"].locations[nextindex] = spawnstruct();
     location = level.brattractions["koth"].locations[nextindex];
-    location.capturetrigger = spawn("trigger_radius", origin, 0, var_29a79d378c70e0b, var_dfe92bb3a3b6a89a);
-    location.capturetrigger.radius = var_29a79d378c70e0b;
+    location.capturetrigger = spawn("trigger_radius", origin, 0, captureradius, captureheight);
+    location.capturetrigger.radius = captureradius;
     location.capturetrigger.players = [];
-    namespace_f1565a2788ab1e89::makeenterexittrigger(location.capturetrigger, &playerlocationtriggerenter, &playerlocationtriggerexit);
-    trigorigin = origin + (0, 0, -1 * var_a943937478cd458d);
-    var_21efa20e3c93c7d5 = var_a943937478cd458d + var_f98843815888ea41;
-    location.icontrigger = namespace_8bbc300af6d3c2fb::createattractionicontrigger("koth", 0, trigorigin, var_21efa20e3c93c7d5, "ui_mp_br_mapmenu_icon_poi_sb_koh", var_ccb00530d7a24ee3, &playerattractiontriggerenter, &playerattractiontriggerexit, "br_attraction_koth");
+    scripts/mp/utility/trigger::makeenterexittrigger(location.capturetrigger, &playerlocationtriggerenter, &playerlocationtriggerexit);
+    trigorigin = origin + (0, 0, -1 * groundoffsetz);
+    iconzoffset = groundoffsetz + var_f98843815888ea41;
+    location.icontrigger = scripts/mp/gametypes/br_attractions::createattractionicontrigger("koth", 0, trigorigin, iconzoffset, "ui_mp_br_mapmenu_icon_poi_sb_koh", var_ccb00530d7a24ee3, &playerattractiontriggerenter, &playerattractiontriggerexit, "br_attraction_koth");
     location.capturetrigger.objectiveiconid = location.icontrigger.closeobjectiveiconid;
-    location.icontrigger namespace_8bbc300af6d3c2fb::triggeraddobjectivetext("MP_BR_INGAME/ATTRACT_KOTH_CAPTURE");
+    location.icontrigger scripts/mp/gametypes/br_attractions::triggeraddobjectivetext("MP_BR_INGAME/ATTRACT_KOTH_CAPTURE");
     location.icontrigger.location = location;
     location.capturetrigger.location = location;
     location.besttime = 0;
@@ -75,7 +75,7 @@ function registerlocation(origin, var_29a79d378c70e0b, var_dfe92bb3a3b6a89a, var
     location.contested = 0;
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x68e
 // Size: 0x1c
@@ -83,7 +83,7 @@ function getkothlocations() {
     return level.brattractions["koth"].locations;
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b2
 // Size: 0x14d
@@ -98,7 +98,7 @@ function playerlocationtriggerenter(player, trigger) {
     waittillplayerlanded(player);
     if (istrue(level.brgametype.useserverhud)) {
         if (!isdefined(player.hudkothtimer)) {
-            player.hudkothtimer = namespace_8bbc300af6d3c2fb::createhudtimer(1);
+            player.hudkothtimer = scripts/mp/gametypes/br_attractions::createhudtimer(1);
         } else {
             player notify("keepHudKothTimer");
             player.hudkothtimer.alpha = 1;
@@ -115,7 +115,7 @@ function playerlocationtriggerenter(player, trigger) {
     trigger locationtriggerupdate();
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x806
 // Size: 0xef
@@ -143,7 +143,7 @@ function playerlocationtriggerexit(player, trigger) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8fc
 // Size: 0x19
@@ -153,7 +153,7 @@ function waittillplayerlanded(player) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x91c
 // Size: 0x8b
@@ -175,7 +175,7 @@ function playerstoptimerdelete() {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9ae
 // Size: 0x28
@@ -183,7 +183,7 @@ function validplayer(player) {
     return isdefined(player) && isalive(player) && !istrue(player.disconnecting);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9de
 // Size: 0x196
@@ -196,7 +196,9 @@ function locationtriggerupdate() {
         }
         if (!isdefined(ownerteam)) {
             ownerteam = player.team;
-        } else if (player.team != ownerteam) {
+            continue;
+        }
+        if (player.team != ownerteam) {
             contested = 1;
             break;
         }
@@ -223,7 +225,7 @@ function locationtriggerupdate() {
     objective_sethot(self.objectiveiconid, contested);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7b
 // Size: 0xf5
@@ -253,7 +255,7 @@ function locationtriggersetpaused(ispaused) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc77
 // Size: 0x138
@@ -264,12 +266,10 @@ function awardcapturepoints(location, trigger) {
     level endon("awardCapturePointsRunning");
     seconds = 1;
     while (!level.gameended) {
-        waittime = 0;
-        while (waittime < seconds && !level.gameended) {
+        for (waittime = 0; waittime < seconds && !level.gameended; waittime = 0) {
             wait(level.framedurationseconds);
             waittime = waittime + level.framedurationseconds;
             if (istrue(location.contested)) {
-                waittime = 0;
             }
         }
         if (level.gameended) {
@@ -280,13 +280,13 @@ function awardcapturepoints(location, trigger) {
                 if (!isplayer(player)) {
                     continue;
                 }
-                player namespace_48a08c5037514e04::doscoreevent(#"hash_32eed765ef0d59f6");
+                player scripts/mp/utility/points::doScoreEvent(#"hash_32eed765ef0d59f6");
             }
         }
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb6
 // Size: 0x86
@@ -302,7 +302,7 @@ function playertimestart(location) {
     thread playerstartbesttimetracking(location);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe43
 // Size: 0x4b
@@ -311,14 +311,14 @@ function playerstarttimetracking(location) {
     self notify("playerStartTimeTracking");
     self endon("playerStartTimeTracking");
     location endon("stopTimeTracking");
-    while (1) {
+    while (true) {
         var_5fd2522e101604a5 = playergettotaltime();
-        namespace_8bbc300af6d3c2fb::playersetattractiontime(var_5fd2522e101604a5);
+        scripts/mp/gametypes/br_attractions::playersetattractiontime(var_5fd2522e101604a5);
         waitframe();
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe95
 // Size: 0x76
@@ -333,7 +333,7 @@ function playertimestamp() {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf12
 // Size: 0x57
@@ -348,7 +348,7 @@ function playergettotaltime() {
     return totaltime;
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf71
 // Size: 0x10c
@@ -366,18 +366,18 @@ function onplayerdisconnect(player) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1084
 // Size: 0x6b
 function playerattractiontriggerenter(player, trigger) {
-    player.hudkothbesttime = namespace_8bbc300af6d3c2fb::createhudtimer(3);
-    player.hudkothbesttimelabel = namespace_8bbc300af6d3c2fb::createhudstring(2);
+    player.hudkothbesttime = scripts/mp/gametypes/br_attractions::createhudtimer(3);
+    player.hudkothbesttimelabel = scripts/mp/gametypes/br_attractions::createhudstring(2);
     trigger.location.capturetrigger locationtriggerupdate();
     player playerupdatebesttimehud(trigger.location);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10f6
 // Size: 0x54
@@ -390,7 +390,7 @@ function playerattractiontriggerexit(player, trigger) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1151
 // Size: 0x4a
@@ -398,7 +398,7 @@ function isbestplayertime(location, time, player) {
     return isdefined(location.bestplayer) && location.bestplayer == player && time == location.besttime;
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11a3
 // Size: 0x4c
@@ -409,7 +409,7 @@ function updatelocationbesttime(location, time, player) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f6
 // Size: 0x94
@@ -422,7 +422,7 @@ function updatelocationbesttimehud(location) {
     }
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1291
 // Size: 0xe2
@@ -444,7 +444,7 @@ function playerupdatebesttimehud(location) {
     playerupdatehudstate(location);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x137a
 // Size: 0xa6
@@ -468,15 +468,15 @@ function playerstartbesttimetracking(location) {
     updatelocationbesttimehud(location);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1427
 // Size: 0x131
 function playerupdatehudstate(location) {
     state = 0;
     var_5fd2522e101604a5 = playergettotaltime();
-    var_f63c334678a03505 = !isdefined(self.kothtotaltime);
-    if (var_f63c334678a03505) {
+    offsite = !isdefined(self.kothtotaltime);
+    if (offsite) {
         if (!isdefined(location.besttime) || location.besttime == 0) {
             state = 0;
         } else if (location.besttimestate == 1) {
@@ -495,17 +495,17 @@ function playerupdatehudstate(location) {
     } else {
         state = 7;
     }
-    namespace_8bbc300af6d3c2fb::playersetattractionstateindex(state);
-    namespace_8bbc300af6d3c2fb::playersetattractiontime(var_5fd2522e101604a5);
-    namespace_8bbc300af6d3c2fb::playersetattractionbestplayer(location.bestplayer);
+    scripts/mp/gametypes/br_attractions::playersetattractionstateindex(state);
+    scripts/mp/gametypes/br_attractions::playersetattractiontime(var_5fd2522e101604a5);
+    scripts/mp/gametypes/br_attractions::playersetattractionbestplayer(location.bestplayer);
     if (state == 7 || state == 3) {
         thread playerstartbesttimeupdate(location);
-    } else {
-        namespace_8bbc300af6d3c2fb::playersetattractionbesttime(location.besttime);
+        return;
     }
+    scripts/mp/gametypes/br_attractions::playersetattractionbesttime(location.besttime);
 }
 
-// Namespace namespace_1bd8d3ce57fb56ea/namespace_5198cbcc9f2f3157
+// Namespace br_attraction_kingofthehill / scripts/mp/gametypes/br_attraction_kingofthehill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x155f
 // Size: 0x60
@@ -516,7 +516,7 @@ function playerstartbesttimeupdate(location) {
     location endon("stopTimeTracking");
     while (isdefined(location.bestplayer)) {
         var_8ef5a089a5b9cbf3 = location.bestplayer playergettotaltime();
-        namespace_8bbc300af6d3c2fb::playersetattractionbesttime(var_8ef5a089a5b9cbf3);
+        scripts/mp/gametypes/br_attractions::playersetattractionbesttime(var_8ef5a089a5b9cbf3);
         waitframe();
     }
 }

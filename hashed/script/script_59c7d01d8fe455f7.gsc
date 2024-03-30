@@ -2,7 +2,7 @@
 #using scripts\asm\asm.gsc;
 #using scripts\asm\asm_bb.gsc;
 #using script_7ff3a914e6c698c5;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_3badb8914eb5ac16;
 #using script_7edf952f8921aa6b;
@@ -14,7 +14,7 @@
 
 #namespace namespace_50f6658a88689353;
 
-// Namespace namespace_50f6658a88689353/namespace_b9742a57ad9ac793
+// Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x158
 // Size: 0x76
@@ -24,10 +24,10 @@ function private function_f49a30f92555b827() {
     function_3f12f7bb3b0f7b28();
     level.scr_anim[self.animname]["spawn"] = "spawn";
     level.scr_anim[self.animname]["spawn_fast"] = "spawn_fast";
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_move_speed_changed", &on_move_speed_changed);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_move_speed_changed", &on_move_speed_changed);
 }
 
-// Namespace namespace_50f6658a88689353/namespace_b9742a57ad9ac793
+// Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d5
 // Size: 0xf0
@@ -38,7 +38,7 @@ function function_f4d5b246417ef16a(asmname, statename, params) {
     self.asm.footsteps.time = 0;
     self.asm.customdata = spawnstruct();
     asm_setmoveplaybackrate(1);
-    thread function_692d3f57a32b93d9();
+    thread wander_listener();
     function_64d97cf652a4d385();
     function_a9a0b485d2e58d71();
     function_949f643edcd1aade();
@@ -48,7 +48,7 @@ function function_f4d5b246417ef16a(asmname, statename, params) {
     ent_flag_set("zombie_asm_init_finished");
 }
 
-// Namespace namespace_50f6658a88689353/namespace_b9742a57ad9ac793
+// Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0x2f
@@ -57,13 +57,13 @@ function private on_ai_init(params) {
     callback::remove("on_ai_init", &on_ai_init);
 }
 
-// Namespace namespace_50f6658a88689353/namespace_b9742a57ad9ac793
+// Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x302
 // Size: 0x42
-function function_692d3f57a32b93d9() {
+function wander_listener() {
     self endon("death");
-    while (1) {
+    while (true) {
         self waittill("wander_start");
         function_f1e5805da192a1ef("walk", "wander", 22);
         self waittill("wander_end");
@@ -71,7 +71,7 @@ function function_692d3f57a32b93d9() {
     }
 }
 
-// Namespace namespace_50f6658a88689353/namespace_b9742a57ad9ac793
+// Namespace namespace_50f6658a88689353 / namespace_b9742a57ad9ac793
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34b
 // Size: 0x1b

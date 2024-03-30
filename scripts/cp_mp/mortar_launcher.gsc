@@ -2,14 +2,14 @@
 #using scripts\engine\utility.gsc;
 #using scripts\engine\math.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\common\anim.gsc;
 #using scripts\engine\trace.gsc;
 
-#namespace namespace_9aa71acc623cd869;
+#namespace mortar_launcher;
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x47a
 // Size: 0xe8
@@ -24,16 +24,16 @@ function mortar_launcher_init() {
     }
     foreach (mortar in mortars) {
         if (istrue(level.ismp)) {
-            jumpiffalse(!isdefined(namespace_36f464722d326bbe::getlocaleid()) || isdefined(namespace_36f464722d326bbe::getlocaleid()) && isdefined(mortar.script_noteworthy) && mortar.script_noteworthy != level.localeid) LOC_000000ca;
-            mortar delete();
-        } else {
-        LOC_000000ca:
-            mortar thread mortar_test(mortar);
+            if (!isdefined(scripts/cp_mp/utility/game_utility::getlocaleid()) || isdefined(scripts/cp_mp/utility/game_utility::getlocaleid()) && isdefined(mortar.script_noteworthy) && mortar.script_noteworthy != level.localeid) {
+                mortar delete();
+                continue;
+            }
         }
+        mortar thread mortar_test(mortar);
     }
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x569
 // Size: 0x51
@@ -43,7 +43,7 @@ function load_fx() {
     level._effect["vfx_mortar_explosion"] = loadfx("vfx/iw8/weap/_explo/mortar/vfx_mortar_explosion_bm.vfx");
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c1
 // Size: 0x6e
@@ -54,7 +54,7 @@ function setupmortarplayeranimscripts() {
     level.scr_viewmodelanim["player_mortar"]["player_mortar_fire"] = "emb_vm_mortar_player";
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x636
 // Size: 0x64
@@ -65,11 +65,11 @@ function setupmortarmodelanimscripts() {
     level.scr_viewmodelanim["mortar"]["player_mortar_fire"] = "emb_vm_mortar_mortar";
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0xc1
-function create_player_rig(player, animname, var_486db5fa512a3b6b, var_ce4af45f8fff86b7) {
+function create_player_rig(player, animname, var_486db5fa512a3b6b, blockview) {
     if (!isdefined(player)) {
         return;
     }
@@ -83,7 +83,7 @@ function create_player_rig(player, animname, var_486db5fa512a3b6b, var_ce4af45f8
     player.player_rig useanimtree(%script_model);
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x769
 // Size: 0xbb
@@ -99,18 +99,18 @@ function put_player_into_rig(rig, blendtime, right, left, top, bottom, player) {
     player playerlinktodelta(rig, "tag_player", 1, right, left, top, bottom, 1);
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x82b
 // Size: 0x3e
 function take_player_out_of_rig(player) {
-    player val::function_c9d0b43701bdba00("mortar");
-    player val::function_c9d0b43701bdba00("put_player_into_rig");
+    player val::reset_all("mortar");
+    player val::reset_all("put_player_into_rig");
     player unlink();
     player.player_rig delete();
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x870
 // Size: 0x71
@@ -124,7 +124,7 @@ function mortar_launch_player_effect(player, mortar) {
     mortar hidepart(mortar.shell, "misc_wm_mortar");
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e8
 // Size: 0x221
@@ -143,34 +143,34 @@ function movemortar(model, start, end, time, height) {
             model anglemortar();
             waitframe();
         }
-    } else {
-        var_2555cafd1e701ba5 = 1200;
-        if (isdefined(height)) {
-            var_2555cafd1e701ba5 = height;
-        }
-        framefrac = 1 / time / 0.05;
-        frac = 0;
-        while (frac < 1) {
-            model.origin = math::get_point_on_parabola(start, end, var_2555cafd1e701ba5, frac);
-            model anglemortar();
-            /#
-                if (istrue(level.var_c4b97cb2ff04d6b0)) {
-                    thread draw_line_for_time(model.origin, model.origin + (0, 0, 128), 1, 1, 1, 0.05);
-                }
-            #/
-            frac = frac + framefrac;
-            wait(0.05);
-        }
-        model.origin = end;
+        return;
+    }
+    apex = 1200;
+    if (isdefined(height)) {
+        apex = height;
+    }
+    framefrac = 1 / time / 0.05;
+    frac = 0;
+    while (frac < 1) {
+        model.origin = math::get_point_on_parabola(start, end, apex, frac);
+        model anglemortar();
         /#
-            if (istrue(level.var_c4b97cb2ff04d6b0)) {
-                thread draw_line_for_time(model.origin, model.origin + (0, 0, 128), 1, 1, 1, 5);
+            if (istrue(level.mortar_debug)) {
+                thread draw_line_for_time(model.origin, model.origin + (0, 0, 128), 1, 1, 1, 0.05);
             }
         #/
+        frac = frac + framefrac;
+        wait(0.05);
     }
+    model.origin = end;
+    /#
+        if (istrue(level.mortar_debug)) {
+            thread draw_line_for_time(model.origin, model.origin + (0, 0, 128), 1, 1, 1, 5);
+        }
+    #/
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb10
 // Size: 0x60
@@ -184,7 +184,7 @@ function anglemortar() {
     self.prevorigin = self.origin;
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb77
 // Size: 0x191
@@ -200,7 +200,7 @@ function mortar_test(mortar) {
     mortar.animname = "mortar";
     mortar useanimtree(%script_model);
     mortar.og_angles = mortar.angles;
-    while (1) {
+    while (true) {
         mortar.interact makeusable();
         player = mortar.interact waittill("trigger");
         player val::set("mortar_test", "usability", 0);
@@ -212,7 +212,7 @@ function mortar_test(mortar) {
     }
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0f
 // Size: 0x1da
@@ -233,11 +233,11 @@ function player_launch_mortar(player, mortar) {
         player.player_rig show();
         mortar delaythread(2.25, &launch_mortar, result, player);
         thread mortar_launch_player_effect(player, mortar);
-        mortar thread namespace_bc4a4b9456315863::anim_single([0:mortar, 1:player.player_rig], "player_mortar_fire");
+        mortar thread scripts/common/anim::anim_single([mortar, player.player_rig], "player_mortar_fire");
         player.player_rig waittillmatch("single anim", "end");
         mortar notify("mortar_fired");
     }
-    player val::function_c9d0b43701bdba00("mortar_test");
+    player val::reset_all("mortar_test");
     mortar hidepart(mortar.shell, "misc_wm_mortar");
     take_player_out_of_rig(player);
     if (isdefined(mortar.previs_model)) {
@@ -245,7 +245,7 @@ function player_launch_mortar(player, mortar) {
     }
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xef0
 // Size: 0x254
@@ -257,7 +257,7 @@ function mortar_targetting(mortar) {
     if (isdefined(mortar.previs_model)) {
         mortar.previs_model setscriptablepartstate("target", "active");
     }
-    while (1) {
+    while (true) {
         if (self stancebuttonpressed() || self attackbuttonpressed()) {
             if (self attackbuttonpressed()) {
                 while (self attackbuttonpressed()) {
@@ -270,7 +270,7 @@ function mortar_targetting(mortar) {
             }
             return undefined;
         }
-        trace = namespace_2a184fc4902783dc::ray_trace(self geteye() + (0, 0, 128), self geteye() + anglestoforward(self getplayerangles()) * 16000);
+        trace = scripts/engine/trace::ray_trace(self geteye() + (0, 0, 128), self geteye() + anglestoforward(self getplayerangles()) * 16000);
         pos = getgroundposition(trace["position"], 8, 0, 1500);
         angles = vectortoangles(pos - mortar.origin);
         mortar.angles = (0, angles[1], 0);
@@ -289,7 +289,7 @@ function mortar_targetting(mortar) {
     }
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x114b
 // Size: 0x3b
@@ -301,7 +301,7 @@ function mortar_ondeathcleanup(mortar) {
     }
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x118d
 // Size: 0x2b2
@@ -353,7 +353,7 @@ function launch_mortar(endpos, player) {
     mortar delete();
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1446
 // Size: 0x1c
@@ -361,7 +361,7 @@ function kill_mortar_target() {
     self.previs_model setscriptablepartstate("target", "neutral");
 }
 
-// Namespace namespace_9aa71acc623cd869/namespace_fa0f1567c0a7f374
+// Namespace mortar_launcher / scripts/cp_mp/mortar_launcher
 // Params c, eflags: 0x0
 // Checksum 0x0, Offset: 0x1469
 // Size: 0x1b7

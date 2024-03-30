@@ -7,7 +7,7 @@
 
 #namespace playerstats;
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x214
@@ -16,17 +16,17 @@ function init() {
         return;
     }
     level.playerstats = spawnstruct();
-    var_584994fab4a8712b = level.playerstats;
-    var_584994fab4a8712b.statgroups = [];
-    var_584994fab4a8712b.disabledstats = [];
-    var_584994fab4a8712b.enabled = 1;
-    var_584994fab4a8712b.readonly = 0;
-    var_584994fab4a8712b.ratios = [];
-    var_584994fab4a8712b.ratiochildren = [];
-    var_584994fab4a8712b.disabledpaths = [];
-    registerplayerstatratio([0:"combatStats", 1:"kdRatio"], [0:"combatStats", 1:"kills"], [0:"combatStats", 1:"deaths"]);
-    registerplayerstatratio([0:"combatStats", 1:"accuracy"], [0:"combatStats", 1:"hits"], [0:"combatStats", 1:"totalShots"]);
-    registerplayerstatratio([0:"matchStats", 1:"winLossRatio"], [0:"matchStats", 1:"wins"], [0:"matchStats", 1:"losses"]);
+    globals = level.playerstats;
+    globals.statgroups = [];
+    globals.disabledstats = [];
+    globals.enabled = 1;
+    globals.readonly = 0;
+    globals.ratios = [];
+    globals.ratiochildren = [];
+    globals.disabledpaths = [];
+    registerplayerstatratio(["combatStats", "kdRatio"], ["combatStats", "kills"], ["combatStats", "deaths"]);
+    registerplayerstatratio(["combatStats", "accuracy"], ["combatStats", "hits"], ["combatStats", "totalShots"]);
+    registerplayerstatratio(["matchStats", "winLossRatio"], ["matchStats", "wins"], ["matchStats", "losses"]);
     addtostatgroup("kdr", "combatStats", "kills");
     addtostatgroup("kdr", "combatStats", "deaths");
     addtostatgroup("kdr", "combatStats", "kdRatio");
@@ -38,7 +38,7 @@ function init() {
     addtostatgroup("losses", "matchStats", "losses");
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0xb0
@@ -50,30 +50,30 @@ function initplayer() {
         self.playerstats = self.pers["playerstats"];
     } else {
         self.playerstats = spawnstruct();
-        var_5571a07135ba6940 = self.playerstats;
+        playerplayerstats = self.playerstats;
         self.playerstats.values = [];
         self.playerstats.paths = [];
         self.playerstats.bufferedstats = [];
     }
-    if (!namespace_cd0b2d039510b38d::runleanthreadmode()) {
+    if (!scripts/mp/utility/game::runleanthreadmode()) {
         thread bufferedstatwritethink();
     }
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a1
 // Size: 0x2f
 function bufferedstatwritethink() {
     self endon("disconnect");
-    while (!namespace_4b0406965e556711::levelflag("game_over")) {
+    while (!scripts/mp/flags::levelflag("game_over")) {
         writebufferedstats();
         wait(2);
     }
     writebufferedstats();
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d7
 // Size: 0xd4
@@ -81,191 +81,205 @@ function writebufferedstats() {
     if (isai(self)) {
         return;
     }
-    foreach (var_be5d99e3162a7241, unused in self.playerstats.bufferedstats) {
-        patharray = self.playerstats.paths[var_be5d99e3162a7241];
-        value = self.playerstats.values[var_be5d99e3162a7241];
+    foreach (pathkey, unused in self.playerstats.bufferedstats) {
+        patharray = self.playerstats.paths[pathkey];
+        value = self.playerstats.values[pathkey];
         writeplayerstat(value, patharray[0], patharray[1], patharray[2], patharray[3], patharray[4]);
     }
     self.playerstats.bufferedstats = [];
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b2
 // Size: 0xc1
-function getplayerstatpathkey(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    var_ba170ae7da09e6a3 = "";
-    if (isdefined(var_59be985b7443028d)) {
-        var_ba170ae7da09e6a3 = var_59be945b7442f9c1 + "." + var_59be915b7442f328 + "." + var_59be925b7442f55b + "." + var_59be975b7443005a + "." + var_59be985b7443028d;
-    } else if (isdefined(var_59be975b7443005a)) {
-        var_ba170ae7da09e6a3 = var_59be945b7442f9c1 + "." + var_59be915b7442f328 + "." + var_59be925b7442f55b + "." + var_59be975b7443005a;
-    } else if (isdefined(var_59be925b7442f55b)) {
-        var_ba170ae7da09e6a3 = var_59be945b7442f9c1 + "." + var_59be915b7442f328 + "." + var_59be925b7442f55b;
-    } else if (isdefined(var_59be915b7442f328)) {
-        var_ba170ae7da09e6a3 = var_59be945b7442f9c1 + "." + var_59be915b7442f328;
-    } else if (isdefined(var_59be945b7442f9c1)) {
-        var_ba170ae7da09e6a3 = var_59be945b7442f9c1;
+function getplayerstatpathkey(path1, path2, path3, path4, path5) {
+    pathstring = "";
+    if (isdefined(path5)) {
+        pathstring = path1 + "." + path2 + "." + path3 + "." + path4 + "." + path5;
+    } else if (isdefined(path4)) {
+        pathstring = path1 + "." + path2 + "." + path3 + "." + path4;
+    } else if (isdefined(path3)) {
+        pathstring = path1 + "." + path2 + "." + path3;
+    } else if (isdefined(path2)) {
+        pathstring = path1 + "." + path2;
+    } else if (isdefined(path1)) {
+        pathstring = path1;
     }
-    return var_ba170ae7da09e6a3;
+    return pathstring;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x67b
 // Size: 0xd6
-function writeplayerstat(value, var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    if (isdefined(var_59be985b7443028d)) {
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d, value);
-    } else if (isdefined(var_59be975b7443005a)) {
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, value);
-    } else if (isdefined(var_59be925b7442f55b)) {
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, value);
-    } else if (isdefined(var_59be915b7442f328)) {
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, value);
-    } else if (isdefined(var_59be945b7442f9c1)) {
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, value);
+function writeplayerstat(value, path1, path2, path3, path4, path5) {
+    if (isdefined(path5)) {
+        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, path3, path4, path5, value);
+        return;
+    }
+    if (isdefined(path4)) {
+        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, path3, path4, value);
+        return;
+    }
+    if (isdefined(path3)) {
+        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, path3, value);
+        return;
+    }
+    if (isdefined(path2)) {
+        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, value);
+        return;
+    }
+    if (isdefined(path1)) {
+        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, value);
     }
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x758
 // Size: 0xc9
-function readplayerstat(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    if (isdefined(var_59be985b7443028d)) {
-        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
-    } else if (isdefined(var_59be975b7443005a)) {
-        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a);
-    } else if (isdefined(var_59be925b7442f55b)) {
-        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b);
-    } else if (isdefined(var_59be915b7442f328)) {
-        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1, var_59be915b7442f328);
-    } else if (isdefined(var_59be945b7442f9c1)) {
-        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", var_59be945b7442f9c1);
+function readplayerstat(path1, path2, path3, path4, path5) {
+    if (isdefined(path5)) {
+        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, path3, path4, path5);
+    }
+    if (isdefined(path4)) {
+        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, path3, path4);
+    }
+    if (isdefined(path3)) {
+        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2, path3);
+    }
+    if (isdefined(path2)) {
+        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", path1, path2);
+    }
+    if (isdefined(path1)) {
+        return self getplayerdata(level.var_5d69837cf4db0407, "playerStats", path1);
     }
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x828
 // Size: 0xa2
-function flagstatforbufferedwrite(var_be5d99e3162a7241) {
-    var_584994fab4a8712b = level.playerstats;
-    if (namespace_4b0406965e556711::levelflag("game_over")) {
-        patharray = self.playerstats.paths[var_be5d99e3162a7241];
-        value = self.playerstats.values[var_be5d99e3162a7241];
+function flagstatforbufferedwrite(pathkey) {
+    globals = level.playerstats;
+    if (scripts/mp/flags::levelflag("game_over")) {
+        patharray = self.playerstats.paths[pathkey];
+        value = self.playerstats.values[pathkey];
         writeplayerstat(value, patharray[0], patharray[1], patharray[2], patharray[3], patharray[4]);
         return;
     }
-    self.playerstats.bufferedstats[var_be5d99e3162a7241] = 1;
+    self.playerstats.bufferedstats[pathkey] = 1;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d1
 // Size: 0x96
-function setplayerstat_internal(value, var_be5d99e3162a7241, var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    patharray = [0:var_59be945b7442f9c1];
-    patharray[patharray.size] = var_59be915b7442f328;
-    patharray[patharray.size] = var_59be925b7442f55b;
-    patharray[patharray.size] = var_59be975b7443005a;
-    patharray[patharray.size] = var_59be985b7443028d;
-    self.playerstats.values[var_be5d99e3162a7241] = value;
-    self.playerstats.paths[var_be5d99e3162a7241] = patharray;
+function setplayerstat_internal(value, pathkey, path1, path2, path3, path4, path5) {
+    patharray = [path1];
+    patharray[patharray.size] = path2;
+    patharray[patharray.size] = path3;
+    patharray[patharray.size] = path4;
+    patharray[patharray.size] = path5;
+    self.playerstats.values[pathkey] = value;
+    self.playerstats.paths[pathkey] = patharray;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x96e
 // Size: 0xfd
-function addtoplayerstat_internal(var_930290d7f474a0ae, var_be5d99e3162a7241, var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    patharray = [0:var_59be945b7442f9c1];
-    patharray[patharray.size] = var_59be915b7442f328;
-    patharray[patharray.size] = var_59be925b7442f55b;
-    patharray[patharray.size] = var_59be975b7443005a;
-    patharray[patharray.size] = var_59be985b7443028d;
-    if (!isdefined(self.playerstats.paths[var_be5d99e3162a7241])) {
-        var_10dc579c373a93dd = readplayerstat(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
-        self.playerstats.values[var_be5d99e3162a7241] = var_10dc579c373a93dd + var_930290d7f474a0ae;
-        self.playerstats.paths[var_be5d99e3162a7241] = patharray;
-    } else {
-        self.playerstats.values[var_be5d99e3162a7241] = self.playerstats.values[var_be5d99e3162a7241] + var_930290d7f474a0ae;
+function addtoplayerstat_internal(var_930290d7f474a0ae, pathkey, path1, path2, path3, path4, path5) {
+    patharray = [path1];
+    patharray[patharray.size] = path2;
+    patharray[patharray.size] = path3;
+    patharray[patharray.size] = path4;
+    patharray[patharray.size] = path5;
+    if (!isdefined(self.playerstats.paths[pathkey])) {
+        var_10dc579c373a93dd = readplayerstat(path1, path2, path3, path4, path5);
+        self.playerstats.values[pathkey] = var_10dc579c373a93dd + var_930290d7f474a0ae;
+        self.playerstats.paths[pathkey] = patharray;
+        return;
     }
+    self.playerstats.values[pathkey] = self.playerstats.values[pathkey] + var_930290d7f474a0ae;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa72
 // Size: 0xbd
-function modifystatwritability(var_be5d99e3162a7241, var_fa0ab025b91d42cd) {
-    var_584994fab4a8712b = level.playerstats;
-    if (var_fa0ab025b91d42cd) {
+function modifystatwritability(pathkey, writable) {
+    globals = level.playerstats;
+    if (writable) {
         /#
-            assertex(isdefined(var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241]) && var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241] > 0, "Attempting to make a stat writable more times than it has been made read only");
+            assertex(isdefined(globals.disabledstats[pathkey]) && globals.disabledstats[pathkey] > 0, "Attempting to make a stat writable more times than it has been made read only");
         #/
-        var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241]--;
-        if (var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241] <= 0) {
-            var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241] = undefined;
+        globals.disabledstats[pathkey]--;
+        if (globals.disabledstats[pathkey] <= 0) {
+            globals.disabledstats[pathkey] = undefined;
         }
-    } else if (!isdefined(var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241])) {
-        var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241] = 1;
-    } else {
-        var_584994fab4a8712b.disabledstats[var_be5d99e3162a7241]++;
+        return;
     }
+    if (!isdefined(globals.disabledstats[pathkey])) {
+        globals.disabledstats[pathkey] = 1;
+        return;
+    }
+    globals.disabledstats[pathkey]++;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb36
 // Size: 0x2d
-function isstatwritable_internal(var_be5d99e3162a7241) {
-    return !areplayerstatsreadonly() && !isdefined(level.playerstats.disabledstats[var_be5d99e3162a7241]);
+function isstatwritable_internal(pathkey) {
+    return !areplayerstatsreadonly() && !isdefined(level.playerstats.disabledstats[pathkey]);
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb6b
 // Size: 0xa1
-function addtostatgroup(var_14e8c48563b7348a, var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    var_584994fab4a8712b = level.playerstats;
-    var_be5d99e3162a7241 = getplayerstatpathkey(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
-    if (!isdefined(var_584994fab4a8712b.statgroups[var_14e8c48563b7348a])) {
-        var_584994fab4a8712b.statgroups[var_14e8c48563b7348a] = [];
+function addtostatgroup(statgroup, path1, path2, path3, path4, path5) {
+    globals = level.playerstats;
+    pathkey = getplayerstatpathkey(path1, path2, path3, path4, path5);
+    if (!isdefined(globals.statgroups[statgroup])) {
+        globals.statgroups[statgroup] = [];
     }
-    var_584994fab4a8712b.statgroups[var_14e8c48563b7348a][var_584994fab4a8712b.statgroups[var_14e8c48563b7348a].size] = var_be5d99e3162a7241;
+    globals.statgroups[statgroup][globals.statgroups[statgroup].size] = pathkey;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc13
 // Size: 0x82
-function modifystatgroupwritability(var_14e8c48563b7348a, var_fa0ab025b91d42cd) {
-    var_584994fab4a8712b = level.playerstats;
-    foreach (var_be5d99e3162a7241 in var_584994fab4a8712b.statgroups[var_14e8c48563b7348a]) {
-        modifystatwritability(var_be5d99e3162a7241, var_fa0ab025b91d42cd);
+function modifystatgroupwritability(statgroup, writable) {
+    globals = level.playerstats;
+    foreach (pathkey in globals.statgroups[statgroup]) {
+        modifystatwritability(pathkey, writable);
     }
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc9c
 // Size: 0x129
-function calculateplayerstatratio(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
+function calculateplayerstatratio(path1, path2, path3, path4, path5) {
     if (!areplayerstatsenabled()) {
         return undefined;
     }
-    var_584994fab4a8712b = level.playerstats;
-    var_be5d99e3162a7241 = getplayerstatpathkey(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
-    if (!isdefined(var_584994fab4a8712b.ratios[var_be5d99e3162a7241])) {
+    globals = level.playerstats;
+    pathkey = getplayerstatpathkey(path1, path2, path3, path4, path5);
+    if (!isdefined(globals.ratios[pathkey])) {
         /#
-            assertmsg("updatePlayerStatRatio() - Un-Registered ratio "" + var_be5d99e3162a7241 + """);
+            assertmsg("updatePlayerStatRatio() - Un-Registered ratio "" + pathkey + """);
         #/
     }
-    if (!isstatwritable_internal(var_be5d99e3162a7241)) {
+    if (!isstatwritable_internal(pathkey)) {
         return;
     }
-    var_998d185046c07e5c = var_584994fab4a8712b.ratios[var_be5d99e3162a7241]["numerator"];
-    var_85468554d750c31d = var_584994fab4a8712b.ratios[var_be5d99e3162a7241]["denominator"];
+    var_998d185046c07e5c = globals.ratios[pathkey]["numerator"];
+    var_85468554d750c31d = globals.ratios[pathkey]["denominator"];
     numerator = getplayerstat(var_998d185046c07e5c[0], var_998d185046c07e5c[1], var_998d185046c07e5c[2], var_998d185046c07e5c[3], var_998d185046c07e5c[4]);
     denominator = getplayerstat(var_85468554d750c31d[0], var_85468554d750c31d[1], var_85468554d750c31d[2], var_85468554d750c31d[3], var_85468554d750c31d[4]);
     if (denominator == 0) {
@@ -274,48 +288,48 @@ function calculateplayerstatratio(var_59be945b7442f9c1, var_59be915b7442f328, va
     return numerator / denominator;
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdcd
 // Size: 0x4f
-function updateplayerstatratio(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    value = calculateplayerstatratio(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
-    setplayerstat(value, var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
+function updateplayerstatratio(path1, path2, path3, path4, path5) {
+    value = calculateplayerstatratio(path1, path2, path3, path4, path5);
+    setplayerstat(value, path1, path2, path3, path4, path5);
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe23
 // Size: 0x4f
-function updateplayerstatratiobuffered(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d) {
-    value = calculateplayerstatratio(var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
-    setplayerstatbuffered(value, var_59be945b7442f9c1, var_59be915b7442f328, var_59be925b7442f55b, var_59be975b7443005a, var_59be985b7443028d);
+function updateplayerstatratiobuffered(path1, path2, path3, path4, path5) {
+    value = calculateplayerstatratio(path1, path2, path3, path4, path5);
+    setplayerstatbuffered(value, path1, path2, path3, path4, path5);
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe79
 // Size: 0x9d
 function updateparentratios(var_795f8fa71513ebce) {
-    var_584994fab4a8712b = level.playerstats;
-    if (!isdefined(var_584994fab4a8712b.ratiochildren[var_795f8fa71513ebce])) {
+    globals = level.playerstats;
+    if (!isdefined(globals.ratiochildren[var_795f8fa71513ebce])) {
         return;
     }
-    foreach (var_558824b1025d74ab in var_584994fab4a8712b.ratiochildren[var_795f8fa71513ebce]) {
+    foreach (var_558824b1025d74ab in globals.ratiochildren[var_795f8fa71513ebce]) {
         updateplayerstatratio(var_558824b1025d74ab[0], var_558824b1025d74ab[1], var_558824b1025d74ab[2], var_558824b1025d74ab[3], var_558824b1025d74ab[4]);
     }
 }
 
-// Namespace playerstats/namespace_3300a08ae9755a72
+// Namespace playerstats / scripts/mp/playerstats
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf1d
 // Size: 0x9d
 function updateparentratiosbuffered(var_795f8fa71513ebce) {
-    var_584994fab4a8712b = level.playerstats;
-    if (!isdefined(var_584994fab4a8712b.ratiochildren[var_795f8fa71513ebce])) {
+    globals = level.playerstats;
+    if (!isdefined(globals.ratiochildren[var_795f8fa71513ebce])) {
         return;
     }
-    foreach (var_558824b1025d74ab in var_584994fab4a8712b.ratiochildren[var_795f8fa71513ebce]) {
+    foreach (var_558824b1025d74ab in globals.ratiochildren[var_795f8fa71513ebce]) {
         updateplayerstatratiobuffered(var_558824b1025d74ab[0], var_558824b1025d74ab[1], var_558824b1025d74ab[2], var_558824b1025d74ab[3], var_558824b1025d74ab[4]);
     }
 }

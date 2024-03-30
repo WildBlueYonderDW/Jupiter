@@ -16,22 +16,22 @@
 
 #namespace namespace_f5af6f6fc1dbd6b7;
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x392c
 // Size: 0x1f
 function init() {
-    function_d0c04d2061f1e80a();
+    init_voice();
     function_ed24376a19a1b0fe();
-    function_aab0cd8461430413();
+    init_music();
     function_6ca37af6683e78ec();
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3952
 // Size: 0x91
-function function_d0c04d2061f1e80a() {
+function init_voice() {
     if (istrue(game["isLaunchChunk"])) {
         var_ae34c52213832650 = "ustl";
     } else {
@@ -50,374 +50,374 @@ function function_d0c04d2061f1e80a() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39ea
 // Size: 0x15
-function function_aab0cd8461430413() {
+function init_music() {
     if (!isdefined(game["music"])) {
         function_1d15528daa831962();
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a06
 // Size: 0x15f
 function function_1d15528daa831962() {
-    function_b11cfee3350d246a("axis_used_nuke", "mus_fd_nuke_fired");
-    function_b11cfee3350d246a("axis_hit_by_nuke", "mus_fd_nuke_hit");
-    trials_loss = [0:"mp_round_lose_playlist"];
-    function_b11cfee3350d246a("trials_loss", trials_loss);
-    trials_win_low = [0:"mp_round_win_playlist"];
-    function_b11cfee3350d246a("trials_win_low", trials_win_low);
-    trials_win_mid = [0:"mp_round_win_playlist"];
-    function_b11cfee3350d246a("trials_win_mid", trials_win_mid);
-    trials_win_high = [0:"mp_round_win_playlist"];
-    function_b11cfee3350d246a("trials_win_high", trials_win_high);
-    infected = [0:"infected_01", 1:"infected_02", 2:"infected_03", 3:"infected_04", 4:"infected_05"];
-    function_b11cfee3350d246a("infected", infected);
-    ko_carry_music = [0:"mp_hp_new_playlist", 1:"mp_hp_captured_playlist"];
-    function_b11cfee3350d246a("ko_carry_music", ko_carry_music);
-    prisoner_carry_music = [0:"mp_prisoner_loop_1", 1:"mp_prisoner_loop_2"];
-    function_b11cfee3350d246a("prisoner_carry_music", prisoner_carry_music);
+    setmusicset("axis_used_nuke", "mus_fd_nuke_fired");
+    setmusicset("axis_hit_by_nuke", "mus_fd_nuke_hit");
+    trials_loss = ["mp_round_lose_playlist"];
+    setmusicset("trials_loss", trials_loss);
+    trials_win_low = ["mp_round_win_playlist"];
+    setmusicset("trials_win_low", trials_win_low);
+    trials_win_mid = ["mp_round_win_playlist"];
+    setmusicset("trials_win_mid", trials_win_mid);
+    trials_win_high = ["mp_round_win_playlist"];
+    setmusicset("trials_win_high", trials_win_high);
+    infected = ["infected_01", "infected_02", "infected_03", "infected_04", "infected_05"];
+    setmusicset("infected", infected);
+    ko_carry_music = ["mp_hp_new_playlist", "mp_hp_captured_playlist"];
+    setmusicset("ko_carry_music", ko_carry_music);
+    prisoner_carry_music = ["mp_prisoner_loop_1", "mp_prisoner_loop_2"];
+    setmusicset("prisoner_carry_music", prisoner_carry_music);
     function_79d09d8dff37ff80();
     function_c85c8d480a1f8d97();
     function_350d33613fa93e9();
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b6c
 // Size: 0x4a6
 function function_a5e3fac0c5201a8() {
-    allies_suspense = [0:"mx_mp_generic_suspense_1", 1:"mx_mp_generic_suspense_2", 2:"mx_mp_generic_suspense_3", 3:"mx_mp_generic_suspense_4", 4:"mx_mp_generic_suspense_5", 5:"mx_mp_generic_suspense_6", 6:"mx_mp_generic_suspense_7", 7:"mx_mp_generic_suspense_8", 8:"mx_mp_mexico_suspense_1", 9:"mx_mp_mexico_suspense_2", 10:"mx_mp_mexico_suspense_3", 11:"mx_mp_mexico_suspense_4", 12:"mx_mp_mexico_suspense_5", 13:"mx_mp_mexico_suspense_6", 14:"mx_mp_mexico_suspense_7", 15:"mx_mp_mexico_suspense_8"];
+    allies_suspense = ["mx_mp_generic_suspense_1", "mx_mp_generic_suspense_2", "mx_mp_generic_suspense_3", "mx_mp_generic_suspense_4", "mx_mp_generic_suspense_5", "mx_mp_generic_suspense_6", "mx_mp_generic_suspense_7", "mx_mp_generic_suspense_8", "mx_mp_mexico_suspense_1", "mx_mp_mexico_suspense_2", "mx_mp_mexico_suspense_3", "mx_mp_mexico_suspense_4", "mx_mp_mexico_suspense_5", "mx_mp_mexico_suspense_6", "mx_mp_mexico_suspense_7", "mx_mp_mexico_suspense_8"];
     if (function_5df2f278f44a6ffd("middle_east")) {
-        var_7bb0f6f911721ebc = [0:"mx_mp_mideast_suspense_1", 1:"mx_mp_mideast_suspense_2", 2:"mx_mp_mideast_suspense_3", 3:"mx_mp_mideast_suspense_4", 4:"mx_mp_mideast_suspense_5", 5:"mx_mp_mideast_suspense_6", 6:"mx_mp_mideast_suspense_7", 7:"mx_mp_mideast_suspense_8"];
+        var_7bb0f6f911721ebc = ["mx_mp_mideast_suspense_1", "mx_mp_mideast_suspense_2", "mx_mp_mideast_suspense_3", "mx_mp_mideast_suspense_4", "mx_mp_mideast_suspense_5", "mx_mp_mideast_suspense_6", "mx_mp_mideast_suspense_7", "mx_mp_mideast_suspense_8"];
         allies_suspense = array_combine(allies_suspense, var_7bb0f6f911721ebc);
     }
-    function_b11cfee3350d246a("allies_suspense", allies_suspense);
-    allies_suspense_classic = [0:"mx_mp_generic_suspense_1_classic", 1:"mx_mp_generic_suspense_2_classic", 2:"mx_mp_generic_suspense_3_classic", 3:"mx_mp_generic_suspense_4_classic", 4:"mx_mp_generic_suspense_5_classic", 5:"mx_mp_generic_suspense_6_classic", 6:"mx_mp_generic_suspense_7_classic", 7:"mx_mp_generic_suspense_8_classic"];
+    setmusicset("allies_suspense", allies_suspense);
+    allies_suspense_classic = ["mx_mp_generic_suspense_1_classic", "mx_mp_generic_suspense_2_classic", "mx_mp_generic_suspense_3_classic", "mx_mp_generic_suspense_4_classic", "mx_mp_generic_suspense_5_classic", "mx_mp_generic_suspense_6_classic", "mx_mp_generic_suspense_7_classic", "mx_mp_generic_suspense_8_classic"];
     if (function_5df2f278f44a6ffd("middle_east")) {
-        var_117a27f685ad48c7 = [0:"mx_mp_mideast_suspense_1_classic", 1:"mx_mp_mideast_suspense_2_classic", 2:"mx_mp_mideast_suspense_3_classic", 3:"mx_mp_mideast_suspense_4_classic", 4:"mx_mp_mideast_suspense_5_classic", 5:"mx_mp_mideast_suspense_6_classic", 6:"mx_mp_mideast_suspense_7_classic", 7:"mx_mp_mideast_suspense_8_classic"];
+        var_117a27f685ad48c7 = ["mx_mp_mideast_suspense_1_classic", "mx_mp_mideast_suspense_2_classic", "mx_mp_mideast_suspense_3_classic", "mx_mp_mideast_suspense_4_classic", "mx_mp_mideast_suspense_5_classic", "mx_mp_mideast_suspense_6_classic", "mx_mp_mideast_suspense_7_classic", "mx_mp_mideast_suspense_8_classic"];
         allies_suspense_classic = array_combine(allies_suspense_classic, var_117a27f685ad48c7);
     }
     if (function_5df2f278f44a6ffd("mexico")) {
-        var_ba852636d22aeecd = [0:"mx_mp_mexico_suspense_1_classic", 1:"mx_mp_mexico_suspense_2_classic", 2:"mx_mp_mexico_suspense_3_classic", 3:"mx_mp_mexico_suspense_4_classic", 4:"mx_mp_mexico_suspense_5_classic", 5:"mx_mp_mexico_suspense_6_classic", 6:"mx_mp_mexico_suspense_7_classic", 7:"mx_mp_mexico_suspense_8_classic"];
+        var_ba852636d22aeecd = ["mx_mp_mexico_suspense_1_classic", "mx_mp_mexico_suspense_2_classic", "mx_mp_mexico_suspense_3_classic", "mx_mp_mexico_suspense_4_classic", "mx_mp_mexico_suspense_5_classic", "mx_mp_mexico_suspense_6_classic", "mx_mp_mexico_suspense_7_classic", "mx_mp_mexico_suspense_8_classic"];
         allies_suspense_classic = array_combine(allies_suspense_classic, var_ba852636d22aeecd);
     }
-    function_b11cfee3350d246a("allies_suspense_classic", allies_suspense_classic);
-    axis_suspense = [0:"mx_mp_generic_suspense_1", 1:"mx_mp_generic_suspense_2", 2:"mx_mp_generic_suspense_3", 3:"mx_mp_generic_suspense_4", 4:"mx_mp_generic_suspense_5", 5:"mx_mp_generic_suspense_6", 6:"mx_mp_generic_suspense_7", 7:"mx_mp_generic_suspense_8", 8:"mx_mp_mexico_suspense_1", 9:"mx_mp_mexico_suspense_2", 10:"mx_mp_mexico_suspense_3", 11:"mx_mp_mexico_suspense_4", 12:"mx_mp_mexico_suspense_5", 13:"mx_mp_mexico_suspense_6", 14:"mx_mp_mexico_suspense_7", 15:"mx_mp_mexico_suspense_8"];
+    setmusicset("allies_suspense_classic", allies_suspense_classic);
+    axis_suspense = ["mx_mp_generic_suspense_1", "mx_mp_generic_suspense_2", "mx_mp_generic_suspense_3", "mx_mp_generic_suspense_4", "mx_mp_generic_suspense_5", "mx_mp_generic_suspense_6", "mx_mp_generic_suspense_7", "mx_mp_generic_suspense_8", "mx_mp_mexico_suspense_1", "mx_mp_mexico_suspense_2", "mx_mp_mexico_suspense_3", "mx_mp_mexico_suspense_4", "mx_mp_mexico_suspense_5", "mx_mp_mexico_suspense_6", "mx_mp_mexico_suspense_7", "mx_mp_mexico_suspense_8"];
     if (function_5df2f278f44a6ffd("middle_east")) {
-        var_8cbc4de0ff7369f1 = [0:"mx_mp_mideast_suspense_1", 1:"mx_mp_mideast_suspense_2", 2:"mx_mp_mideast_suspense_3", 3:"mx_mp_mideast_suspense_4", 4:"mx_mp_mideast_suspense_5", 5:"mx_mp_mideast_suspense_6", 6:"mx_mp_mideast_suspense_7", 7:"mx_mp_mideast_suspense_8"];
+        var_8cbc4de0ff7369f1 = ["mx_mp_mideast_suspense_1", "mx_mp_mideast_suspense_2", "mx_mp_mideast_suspense_3", "mx_mp_mideast_suspense_4", "mx_mp_mideast_suspense_5", "mx_mp_mideast_suspense_6", "mx_mp_mideast_suspense_7", "mx_mp_mideast_suspense_8"];
         axis_suspense = array_combine(axis_suspense, var_8cbc4de0ff7369f1);
     }
-    function_b11cfee3350d246a("axis_suspense", axis_suspense);
-    axis_suspense_classic = [0:"mx_mp_generic_suspense_1_classic", 1:"mx_mp_generic_suspense_2_classic", 2:"mx_mp_generic_suspense_3_classic", 3:"mx_mp_generic_suspense_4_classic", 4:"mx_mp_generic_suspense_5_classic", 5:"mx_mp_generic_suspense_6_classic", 6:"mx_mp_generic_suspense_7_classic", 7:"mx_mp_generic_suspense_8_classic"];
+    setmusicset("axis_suspense", axis_suspense);
+    axis_suspense_classic = ["mx_mp_generic_suspense_1_classic", "mx_mp_generic_suspense_2_classic", "mx_mp_generic_suspense_3_classic", "mx_mp_generic_suspense_4_classic", "mx_mp_generic_suspense_5_classic", "mx_mp_generic_suspense_6_classic", "mx_mp_generic_suspense_7_classic", "mx_mp_generic_suspense_8_classic"];
     if (function_5df2f278f44a6ffd("middle_east")) {
-        var_688a88378ff6ab1e = [0:"mx_mp_mideast_suspense_1_classic", 1:"mx_mp_mideast_suspense_2_classic", 2:"mx_mp_mideast_suspense_3_classic", 3:"mx_mp_mideast_suspense_4_classic", 4:"mx_mp_mideast_suspense_5_classic", 5:"mx_mp_mideast_suspense_6_classic", 6:"mx_mp_mideast_suspense_7_classic", 7:"mx_mp_mideast_suspense_8_classic"];
+        var_688a88378ff6ab1e = ["mx_mp_mideast_suspense_1_classic", "mx_mp_mideast_suspense_2_classic", "mx_mp_mideast_suspense_3_classic", "mx_mp_mideast_suspense_4_classic", "mx_mp_mideast_suspense_5_classic", "mx_mp_mideast_suspense_6_classic", "mx_mp_mideast_suspense_7_classic", "mx_mp_mideast_suspense_8_classic"];
         axis_suspense_classic = array_combine(axis_suspense_classic, var_688a88378ff6ab1e);
     }
     if (function_5df2f278f44a6ffd("mexico")) {
-        var_ac960a84746d1e6e = [0:"mx_mp_mexico_suspense_1_classic", 1:"mx_mp_mexico_suspense_2_classic", 2:"mx_mp_mexico_suspense_3_classic", 3:"mx_mp_mexico_suspense_4_classic", 4:"mx_mp_mexico_suspense_5_classic", 5:"mx_mp_mexico_suspense_6_classic", 6:"mx_mp_mexico_suspense_7_classic", 7:"mx_mp_mexico_suspense_8_classic"];
+        var_ac960a84746d1e6e = ["mx_mp_mexico_suspense_1_classic", "mx_mp_mexico_suspense_2_classic", "mx_mp_mexico_suspense_3_classic", "mx_mp_mexico_suspense_4_classic", "mx_mp_mexico_suspense_5_classic", "mx_mp_mexico_suspense_6_classic", "mx_mp_mexico_suspense_7_classic", "mx_mp_mexico_suspense_8_classic"];
         axis_suspense_classic = array_combine(axis_suspense_classic, var_ac960a84746d1e6e);
     }
-    function_b11cfee3350d246a("axis_suspense_classic", axis_suspense_classic);
+    setmusicset("axis_suspense_classic", axis_suspense_classic);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4019
 // Size: 0xc20
 function function_79d09d8dff37ff80() {
-    var_fdd4cb56c3b978a3 = namespace_36f464722d326bbe::isbrstylegametype();
+    var_fdd4cb56c3b978a3 = scripts/cp_mp/utility/game_utility::isbrstylegametype();
     if (!istrue(var_fdd4cb56c3b978a3)) {
         return;
     }
-    br_lobby_intro = [0:""];
-    function_b11cfee3350d246a("br_lobby_intro", br_lobby_intro);
-    br_lobby_outro = [0:"mx_mp_br_prelobby_outro"];
-    function_b11cfee3350d246a("br_lobby_outro", br_lobby_outro);
-    br_infil_intro = [0:"mx_mp_br_infil_1"];
-    function_b11cfee3350d246a("br_infil_intro", br_infil_intro);
-    br_plane_jump = [0:""];
-    function_b11cfee3350d246a("br_plane_jump", br_plane_jump);
-    br_plane_jump_parachute = [0:""];
-    function_b11cfee3350d246a("br_plane_jump_parachute", br_plane_jump_parachute);
-    br_gulag_intro = [0:"mx_mp_br_gulag_intro_1"];
-    function_b11cfee3350d246a("br_gulag_intro", br_gulag_intro);
-    br_gulag_jailer = [0:""];
-    function_b11cfee3350d246a("br_gulag_jailer", br_gulag_jailer);
-    br_gulag_lose = [0:"mx_mp_br_gulag_lose"];
-    function_b11cfee3350d246a("br_gulag_lose", br_gulag_lose);
-    br_gulag_win = [0:"mx_mp_br_gulag_win"];
-    function_b11cfee3350d246a("br_gulag_win", br_gulag_win);
-    br_ring_low = [0:"mx_mp_br_circle_close_low_1", 1:"mx_mp_br_circle_close_low_2", 2:"mx_mp_br_circle_close_low_3", 3:"mx_mp_br_circle_close_low_4"];
-    function_b11cfee3350d246a("br_ring_low", br_ring_low);
-    br_ring_med = [0:"mx_mp_br_circle_close_med_1", 1:"mx_mp_br_circle_close_med_2", 2:"mx_mp_br_circle_close_med_3", 3:"mx_mp_br_circle_close_med_4"];
-    function_b11cfee3350d246a("br_ring_med", br_ring_med);
-    br_ring_high = [0:"mx_mp_br_circle_close_high_1", 1:"mx_mp_br_circle_close_high_2", 2:"mx_mp_br_circle_close_high_3", 3:"mx_mp_br_circle_close_high_4"];
-    function_b11cfee3350d246a("br_ring_high", br_ring_high);
-    br_ring_final = [0:"mx_mp_br_circle_close_final_1", 1:"mx_mp_br_circle_close_final_2"];
-    function_b11cfee3350d246a("br_ring_final", br_ring_final);
-    br_exfil_intro1 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro1", br_exfil_intro1);
-    br_exfil_intro2 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro2", br_exfil_intro2);
-    br_exfil_intro3 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro3", br_exfil_intro3);
-    br_exfil_intro4 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro4", br_exfil_intro4);
-    br_exfil_intro5 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro5", br_exfil_intro5);
-    br_exfil_intro6 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro6", br_exfil_intro6);
-    br_exfil_intro7 = [0:"mx_mp_br_exfil1"];
-    function_b11cfee3350d246a("br_exfil_intro7", br_exfil_intro7);
-    br_secondary_exfil = [0:"mx_mp_br_sv_exfil_loop"];
-    function_b11cfee3350d246a("br_secondary_exfil", br_secondary_exfil);
-    br_secondary_exfil_aborted = [0:"mx_mp_br_sv_exfil_abort"];
-    function_b11cfee3350d246a("br_secondary_exfil_aborted", br_secondary_exfil_aborted);
-    br_secondary_exfil_success = [0:"mx_mp_br_sv_exfil_success"];
-    function_b11cfee3350d246a("br_secondary_exfil_success", br_secondary_exfil_success);
-    br_cq_element = [0:"mx_mp_br_cq_elementfound_1", 1:"mx_mp_br_cq_elementfound_2", 2:"mx_mp_br_cq_elementfound_3", 3:"mx_mp_br_cq_elementfound_7"];
-    function_b11cfee3350d246a("br_cq_element", br_cq_element);
-    br_cq_bomb_armed = [0:"mx_mp_br_cq_bombarmed_1", 1:"mx_mp_br_cq_bombarmed_2", 2:"mx_mp_br_cq_bombarmed_3", 3:"mx_mp_br_cq_bombarmed_4", 4:"mx_mp_br_cq_bombarmed_5"];
-    function_b11cfee3350d246a("br_cq_bomb_armed", br_cq_bomb_armed);
-    br_cq_ending_flyby = [0:"mx_mp_br_cq_airplaneoneshot_1"];
-    function_b11cfee3350d246a("br_cq_ending_flyby", br_cq_ending_flyby);
-    br_cq_exfil = [0:"mx_mp_br_cq_exfil_1"];
-    function_b11cfee3350d246a("br_cq_exfil", br_cq_exfil);
-    plunder_tenpercent = [0:"br_plunder_tenpercent_1", 1:"br_plunder_tenpercent_2"];
-    function_b11cfee3350d246a("plunder_tenpercent", plunder_tenpercent);
-    plunder_thirtypercent = [0:"br_plunder_thirtypercent_1", 1:"br_plunder_thirtypercent_2"];
-    function_b11cfee3350d246a("plunder_thirtypercent", plunder_thirtypercent);
-    plunder_fiftypercent = [0:"br_plunder_fiftypercent_1", 1:"br_plunder_fiftypercent_2", 2:"br_plunder_fiftypercent_3"];
-    function_b11cfee3350d246a("plunder_fiftypercent", plunder_fiftypercent);
-    plunder_seventyfivepercent = [0:"br_plunder_seventyfivepercent_1", 1:"br_plunder_seventyfivepercent_2", 2:"br_plunder_seventyfivepercent_3"];
-    function_b11cfee3350d246a("plunder_seventyfivepercent", plunder_seventyfivepercent);
-    plunder_ninetypercent = [0:"br_plunder_ninetypercent_1", 1:"br_plunder_ninetypercent_2", 2:"br_plunder_ninetypercent_3"];
-    function_b11cfee3350d246a("plunder_ninetypercent", plunder_ninetypercent);
-    plunder_bonustime_long = [0:"br_plunder_bonustime_long"];
-    function_b11cfee3350d246a("plunder_bonustime_long", plunder_bonustime_long);
-    var_e9602e7cd3b7a190 = [0:"mx_mp_br_delta_zonecontrol_loop1", 1:"mx_mp_br_delta_zonecontrol_loop2", 2:"mx_mp_br_delta_zonecontrol_loop3"];
-    function_b11cfee3350d246a("zc_zone_streak_main", var_e9602e7cd3b7a190);
-    if (namespace_36f464722d326bbe::function_314ff105a27cc131()) {
-        br_lobby_outro = [0:"mx_mp_br_fk_prelobby_outro"];
-        function_b11cfee3350d246a("br_lobby_outro", br_lobby_outro);
-        br_infil_intro = [0:"mx_mp_br_fk_infil_1"];
-        function_b11cfee3350d246a("br_infil_intro", br_infil_intro);
-        br_plane_jump = [0:""];
-        function_b11cfee3350d246a("br_plane_jump", br_plane_jump);
-        br_plane_jump_parachute = [0:""];
-        function_b11cfee3350d246a("br_plane_jump_parachute", br_plane_jump_parachute);
-        br_ring_low = [0:"mx_mp_br_fk_circle_close_low_1", 1:"mx_mp_br_fk_circle_close_low_2", 2:"mx_mp_br_fk_circle_close_low_3", 3:"mx_mp_br_fk_circle_close_low_4"];
-        function_b11cfee3350d246a("br_ring_low", br_ring_low);
-        br_ring_med = [0:"mx_mp_br_fk_circle_close_med_1", 1:"mx_mp_br_fk_circle_close_med_2", 2:"mx_mp_br_fk_circle_close_med_3", 3:"mx_mp_br_fk_circle_close_med_4"];
-        function_b11cfee3350d246a("br_ring_med", br_ring_med);
-        br_ring_high = [0:"mx_mp_br_fk_circle_close_high_1", 1:"mx_mp_br_fk_circle_close_high_2", 2:"mx_mp_br_fk_circle_close_high_3", 3:"mx_mp_br_fk_circle_close_high_4"];
-        function_b11cfee3350d246a("br_ring_high", br_ring_high);
-        br_ring_final = [0:"mx_mp_br_fk_circle_close_final_loop_1", 1:"mx_mp_br_fk_circle_close_final_loop_2"];
-        function_b11cfee3350d246a("br_ring_final", br_ring_final);
-        br_exfil_intro1 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro1", br_exfil_intro1);
-        br_exfil_intro2 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro2", br_exfil_intro2);
-        br_exfil_intro3 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro3", br_exfil_intro3);
-        br_exfil_intro4 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro4", br_exfil_intro4);
-        br_exfil_intro5 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro5", br_exfil_intro5);
-        br_exfil_intro6 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro6", br_exfil_intro6);
-        br_exfil_intro7 = [0:"mx_mp_br_fk_exfil_1"];
-        function_b11cfee3350d246a("br_exfil_intro7", br_exfil_intro7);
+    br_lobby_intro = [""];
+    setmusicset("br_lobby_intro", br_lobby_intro);
+    br_lobby_outro = ["mx_mp_br_prelobby_outro"];
+    setmusicset("br_lobby_outro", br_lobby_outro);
+    br_infil_intro = ["mx_mp_br_infil_1"];
+    setmusicset("br_infil_intro", br_infil_intro);
+    br_plane_jump = [""];
+    setmusicset("br_plane_jump", br_plane_jump);
+    br_plane_jump_parachute = [""];
+    setmusicset("br_plane_jump_parachute", br_plane_jump_parachute);
+    br_gulag_intro = ["mx_mp_br_gulag_intro_1"];
+    setmusicset("br_gulag_intro", br_gulag_intro);
+    br_gulag_jailer = [""];
+    setmusicset("br_gulag_jailer", br_gulag_jailer);
+    br_gulag_lose = ["mx_mp_br_gulag_lose"];
+    setmusicset("br_gulag_lose", br_gulag_lose);
+    br_gulag_win = ["mx_mp_br_gulag_win"];
+    setmusicset("br_gulag_win", br_gulag_win);
+    br_ring_low = ["mx_mp_br_circle_close_low_1", "mx_mp_br_circle_close_low_2", "mx_mp_br_circle_close_low_3", "mx_mp_br_circle_close_low_4"];
+    setmusicset("br_ring_low", br_ring_low);
+    br_ring_med = ["mx_mp_br_circle_close_med_1", "mx_mp_br_circle_close_med_2", "mx_mp_br_circle_close_med_3", "mx_mp_br_circle_close_med_4"];
+    setmusicset("br_ring_med", br_ring_med);
+    br_ring_high = ["mx_mp_br_circle_close_high_1", "mx_mp_br_circle_close_high_2", "mx_mp_br_circle_close_high_3", "mx_mp_br_circle_close_high_4"];
+    setmusicset("br_ring_high", br_ring_high);
+    br_ring_final = ["mx_mp_br_circle_close_final_1", "mx_mp_br_circle_close_final_2"];
+    setmusicset("br_ring_final", br_ring_final);
+    br_exfil_intro1 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro1", br_exfil_intro1);
+    br_exfil_intro2 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro2", br_exfil_intro2);
+    br_exfil_intro3 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro3", br_exfil_intro3);
+    br_exfil_intro4 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro4", br_exfil_intro4);
+    br_exfil_intro5 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro5", br_exfil_intro5);
+    br_exfil_intro6 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro6", br_exfil_intro6);
+    br_exfil_intro7 = ["mx_mp_br_exfil1"];
+    setmusicset("br_exfil_intro7", br_exfil_intro7);
+    br_secondary_exfil = ["mx_mp_br_sv_exfil_loop"];
+    setmusicset("br_secondary_exfil", br_secondary_exfil);
+    br_secondary_exfil_aborted = ["mx_mp_br_sv_exfil_abort"];
+    setmusicset("br_secondary_exfil_aborted", br_secondary_exfil_aborted);
+    br_secondary_exfil_success = ["mx_mp_br_sv_exfil_success"];
+    setmusicset("br_secondary_exfil_success", br_secondary_exfil_success);
+    br_cq_element = ["mx_mp_br_cq_elementfound_1", "mx_mp_br_cq_elementfound_2", "mx_mp_br_cq_elementfound_3", "mx_mp_br_cq_elementfound_7"];
+    setmusicset("br_cq_element", br_cq_element);
+    br_cq_bomb_armed = ["mx_mp_br_cq_bombarmed_1", "mx_mp_br_cq_bombarmed_2", "mx_mp_br_cq_bombarmed_3", "mx_mp_br_cq_bombarmed_4", "mx_mp_br_cq_bombarmed_5"];
+    setmusicset("br_cq_bomb_armed", br_cq_bomb_armed);
+    br_cq_ending_flyby = ["mx_mp_br_cq_airplaneoneshot_1"];
+    setmusicset("br_cq_ending_flyby", br_cq_ending_flyby);
+    br_cq_exfil = ["mx_mp_br_cq_exfil_1"];
+    setmusicset("br_cq_exfil", br_cq_exfil);
+    plunder_tenpercent = ["br_plunder_tenpercent_1", "br_plunder_tenpercent_2"];
+    setmusicset("plunder_tenpercent", plunder_tenpercent);
+    plunder_thirtypercent = ["br_plunder_thirtypercent_1", "br_plunder_thirtypercent_2"];
+    setmusicset("plunder_thirtypercent", plunder_thirtypercent);
+    plunder_fiftypercent = ["br_plunder_fiftypercent_1", "br_plunder_fiftypercent_2", "br_plunder_fiftypercent_3"];
+    setmusicset("plunder_fiftypercent", plunder_fiftypercent);
+    plunder_seventyfivepercent = ["br_plunder_seventyfivepercent_1", "br_plunder_seventyfivepercent_2", "br_plunder_seventyfivepercent_3"];
+    setmusicset("plunder_seventyfivepercent", plunder_seventyfivepercent);
+    plunder_ninetypercent = ["br_plunder_ninetypercent_1", "br_plunder_ninetypercent_2", "br_plunder_ninetypercent_3"];
+    setmusicset("plunder_ninetypercent", plunder_ninetypercent);
+    plunder_bonustime_long = ["br_plunder_bonustime_long"];
+    setmusicset("plunder_bonustime_long", plunder_bonustime_long);
+    zc_zone_streak = ["mx_mp_br_delta_zonecontrol_loop1", "mx_mp_br_delta_zonecontrol_loop2", "mx_mp_br_delta_zonecontrol_loop3"];
+    setmusicset("zc_zone_streak_main", zc_zone_streak);
+    if (scripts/cp_mp/utility/game_utility::function_314ff105a27cc131()) {
+        br_lobby_outro = ["mx_mp_br_fk_prelobby_outro"];
+        setmusicset("br_lobby_outro", br_lobby_outro);
+        br_infil_intro = ["mx_mp_br_fk_infil_1"];
+        setmusicset("br_infil_intro", br_infil_intro);
+        br_plane_jump = [""];
+        setmusicset("br_plane_jump", br_plane_jump);
+        br_plane_jump_parachute = [""];
+        setmusicset("br_plane_jump_parachute", br_plane_jump_parachute);
+        br_ring_low = ["mx_mp_br_fk_circle_close_low_1", "mx_mp_br_fk_circle_close_low_2", "mx_mp_br_fk_circle_close_low_3", "mx_mp_br_fk_circle_close_low_4"];
+        setmusicset("br_ring_low", br_ring_low);
+        br_ring_med = ["mx_mp_br_fk_circle_close_med_1", "mx_mp_br_fk_circle_close_med_2", "mx_mp_br_fk_circle_close_med_3", "mx_mp_br_fk_circle_close_med_4"];
+        setmusicset("br_ring_med", br_ring_med);
+        br_ring_high = ["mx_mp_br_fk_circle_close_high_1", "mx_mp_br_fk_circle_close_high_2", "mx_mp_br_fk_circle_close_high_3", "mx_mp_br_fk_circle_close_high_4"];
+        setmusicset("br_ring_high", br_ring_high);
+        br_ring_final = ["mx_mp_br_fk_circle_close_final_loop_1", "mx_mp_br_fk_circle_close_final_loop_2"];
+        setmusicset("br_ring_final", br_ring_final);
+        br_exfil_intro1 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro1", br_exfil_intro1);
+        br_exfil_intro2 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro2", br_exfil_intro2);
+        br_exfil_intro3 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro3", br_exfil_intro3);
+        br_exfil_intro4 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro4", br_exfil_intro4);
+        br_exfil_intro5 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro5", br_exfil_intro5);
+        br_exfil_intro6 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro6", br_exfil_intro6);
+        br_exfil_intro7 = ["mx_mp_br_fk_exfil_1"];
+        setmusicset("br_exfil_intro7", br_exfil_intro7);
     }
-    if (namespace_36f464722d326bbe::function_5e0e3a24dbb1fae1()) {
-        br_lobby_outro = [0:"mx_mp_br_delta_prelobby_outro"];
-        function_b11cfee3350d246a("br_lobby_outro", br_lobby_outro);
-        br_infil_intro = [0:"mx_mp_br_delta_infil_1"];
-        function_b11cfee3350d246a("br_infil_intro", br_infil_intro);
-        br_plane_jump = [0:""];
-        function_b11cfee3350d246a("br_plane_jump", br_plane_jump);
-        br_plane_jump_parachute = [0:""];
-        function_b11cfee3350d246a("br_plane_jump_parachute", br_plane_jump_parachute);
-        br_gulag_intro = [0:"mx_mp_br_delta_gulag_intro_1"];
-        function_b11cfee3350d246a("br_gulag_intro", br_gulag_intro);
-        br_ring_low = [0:"mx_mp_br_delta_circle_close_low_1", 1:"mx_mp_br_delta_circle_close_low_2", 2:"mx_mp_br_delta_circle_close_low_3", 3:"mx_mp_br_delta_circle_close_low_4"];
-        function_b11cfee3350d246a("br_ring_low", br_ring_low);
-        br_ring_med = [0:"mx_mp_br_delta_circle_close_med_1", 1:"mx_mp_br_delta_circle_close_med_2", 2:"mx_mp_br_delta_circle_close_med_3", 3:"mx_mp_br_delta_circle_close_med_4"];
-        function_b11cfee3350d246a("br_ring_med", br_ring_med);
-        br_ring_high = [0:"mx_mp_br_delta_circle_close_high_1", 1:"mx_mp_br_delta_circle_close_high_2", 2:"mx_mp_br_delta_circle_close_high_3", 3:"mx_mp_br_delta_circle_close_high_4"];
-        function_b11cfee3350d246a("br_ring_high", br_ring_high);
-        br_ring_final = [0:"mx_mp_br_delta_circle_close_final_loop_1", 1:"mx_mp_br_delta_circle_close_final_loop_2"];
-        function_b11cfee3350d246a("br_ring_final", br_ring_final);
-        br_exfil_intro1 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro1", br_exfil_intro1);
-        br_exfil_intro2 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro2", br_exfil_intro2);
-        br_exfil_intro3 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro3", br_exfil_intro3);
-        br_exfil_intro4 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro4", br_exfil_intro4);
-        br_exfil_intro5 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro5", br_exfil_intro5);
-        br_exfil_intro6 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro6", br_exfil_intro6);
-        br_exfil_intro7 = [0:"mx_mp_br_delta_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro7", br_exfil_intro7);
+    if (scripts/cp_mp/utility/game_utility::function_5e0e3a24dbb1fae1()) {
+        br_lobby_outro = ["mx_mp_br_delta_prelobby_outro"];
+        setmusicset("br_lobby_outro", br_lobby_outro);
+        br_infil_intro = ["mx_mp_br_delta_infil_1"];
+        setmusicset("br_infil_intro", br_infil_intro);
+        br_plane_jump = [""];
+        setmusicset("br_plane_jump", br_plane_jump);
+        br_plane_jump_parachute = [""];
+        setmusicset("br_plane_jump_parachute", br_plane_jump_parachute);
+        br_gulag_intro = ["mx_mp_br_delta_gulag_intro_1"];
+        setmusicset("br_gulag_intro", br_gulag_intro);
+        br_ring_low = ["mx_mp_br_delta_circle_close_low_1", "mx_mp_br_delta_circle_close_low_2", "mx_mp_br_delta_circle_close_low_3", "mx_mp_br_delta_circle_close_low_4"];
+        setmusicset("br_ring_low", br_ring_low);
+        br_ring_med = ["mx_mp_br_delta_circle_close_med_1", "mx_mp_br_delta_circle_close_med_2", "mx_mp_br_delta_circle_close_med_3", "mx_mp_br_delta_circle_close_med_4"];
+        setmusicset("br_ring_med", br_ring_med);
+        br_ring_high = ["mx_mp_br_delta_circle_close_high_1", "mx_mp_br_delta_circle_close_high_2", "mx_mp_br_delta_circle_close_high_3", "mx_mp_br_delta_circle_close_high_4"];
+        setmusicset("br_ring_high", br_ring_high);
+        br_ring_final = ["mx_mp_br_delta_circle_close_final_loop_1", "mx_mp_br_delta_circle_close_final_loop_2"];
+        setmusicset("br_ring_final", br_ring_final);
+        br_exfil_intro1 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro1", br_exfil_intro1);
+        br_exfil_intro2 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro2", br_exfil_intro2);
+        br_exfil_intro3 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro3", br_exfil_intro3);
+        br_exfil_intro4 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro4", br_exfil_intro4);
+        br_exfil_intro5 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro5", br_exfil_intro5);
+        br_exfil_intro6 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro6", br_exfil_intro6);
+        br_exfil_intro7 = ["mx_mp_br_delta_exfil1"];
+        setmusicset("br_exfil_intro7", br_exfil_intro7);
     }
-    if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
-        br_lobby_intro = [0:"mx_mp_br_prelobby_intro"];
-        function_b11cfee3350d246a("br_lobby_intro", br_lobby_intro);
-        br_lobby_outro = [0:"mx_mp_br_prelobby_outro"];
-        function_b11cfee3350d246a("br_lobby_outro", br_lobby_outro);
-        br_infil_intro = [0:"mx_mp_br_infil_1"];
-        function_b11cfee3350d246a("br_infil_intro", br_infil_intro);
-        br_plane_jump = [0:"mx_mp_br_infil_parachute_1", 1:"mx_mp_br_infil_parachute_2", 2:"mx_mp_br_infil_parachute_3", 3:"mx_mp_br_infil_parachute_4"];
-        function_b11cfee3350d246a("br_plane_jump", br_plane_jump);
-        br_plane_jump_parachute = [0:""];
-        function_b11cfee3350d246a("br_plane_jump_parachute", br_plane_jump_parachute);
-        br_gulag_intro = [0:"mx_mp_br_gulag_intro_1", 1:"mx_mp_br_gulag_intro_2", 2:"mx_mp_br_gulag_intro_3"];
-        function_b11cfee3350d246a("br_gulag_intro", br_gulag_intro);
-        br_gulag_jailer = [0:"mx_mp_br_gulag_juggernaut"];
-        function_b11cfee3350d246a("br_gulag_jailer", br_gulag_jailer);
-        br_gulag_lose = [0:"mx_mp_br_gulag_lose"];
-        function_b11cfee3350d246a("br_gulag_lose", br_gulag_lose);
-        br_gulag_win = [0:"mx_mp_br_gulag_win"];
-        function_b11cfee3350d246a("br_gulag_win", br_gulag_win);
-        br_ring_low = [0:"mx_mp_br_circle_close_low_1", 1:"mx_mp_br_circle_close_low_2", 2:"mx_mp_br_circle_close_low_3"];
-        function_b11cfee3350d246a("br_ring_low", br_ring_low);
-        br_ring_med = [0:"mx_mp_br_circle_close_med_1", 1:"mx_mp_br_circle_close_med_2", 2:"mx_mp_br_circle_close_med_3"];
-        function_b11cfee3350d246a("br_ring_med", br_ring_med);
-        br_ring_high = [0:"mx_mp_br_circle_close_high_1", 1:"mx_mp_br_circle_close_high_2", 2:"mx_mp_br_circle_close_high_3"];
-        function_b11cfee3350d246a("br_ring_high", br_ring_high);
-        br_ring_final = [0:"mx_mp_br_circle_close_final_loop_1", 1:"mx_mp_br_circle_close_final_loop_2", 2:"mx_mp_br_circle_close_final_loop_3"];
-        function_b11cfee3350d246a("br_ring_final", br_ring_final);
-        br_exfil_intro1 = [0:"mx_mp_br_exfil1"];
-        function_b11cfee3350d246a("br_exfil_intro1", br_exfil_intro1);
-        br_exfil_intro2 = [0:"mx_mp_br_exfil2"];
-        function_b11cfee3350d246a("br_exfil_intro2", br_exfil_intro2);
-        br_exfil_intro3 = [0:"mx_mp_br_exfil3"];
-        function_b11cfee3350d246a("br_exfil_intro3", br_exfil_intro3);
-        br_exfil_intro4 = [0:"mx_mp_br_exfil4"];
-        function_b11cfee3350d246a("br_exfil_intro4", br_exfil_intro4);
-        br_exfil_intro5 = [0:"mx_mp_br_exfil5"];
-        function_b11cfee3350d246a("br_exfil_intro5", br_exfil_intro5);
-        br_exfil_intro6 = [0:"mx_mp_br_exfil6"];
-        function_b11cfee3350d246a("br_exfil_intro6", br_exfil_intro6);
-        br_exfil_intro7 = [0:"mx_mp_br_exfil7"];
-        function_b11cfee3350d246a("br_exfil_intro7", br_exfil_intro7);
+    if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
+        br_lobby_intro = ["mx_mp_br_prelobby_intro"];
+        setmusicset("br_lobby_intro", br_lobby_intro);
+        br_lobby_outro = ["mx_mp_br_prelobby_outro"];
+        setmusicset("br_lobby_outro", br_lobby_outro);
+        br_infil_intro = ["mx_mp_br_infil_1"];
+        setmusicset("br_infil_intro", br_infil_intro);
+        br_plane_jump = ["mx_mp_br_infil_parachute_1", "mx_mp_br_infil_parachute_2", "mx_mp_br_infil_parachute_3", "mx_mp_br_infil_parachute_4"];
+        setmusicset("br_plane_jump", br_plane_jump);
+        br_plane_jump_parachute = [""];
+        setmusicset("br_plane_jump_parachute", br_plane_jump_parachute);
+        br_gulag_intro = ["mx_mp_br_gulag_intro_1", "mx_mp_br_gulag_intro_2", "mx_mp_br_gulag_intro_3"];
+        setmusicset("br_gulag_intro", br_gulag_intro);
+        br_gulag_jailer = ["mx_mp_br_gulag_juggernaut"];
+        setmusicset("br_gulag_jailer", br_gulag_jailer);
+        br_gulag_lose = ["mx_mp_br_gulag_lose"];
+        setmusicset("br_gulag_lose", br_gulag_lose);
+        br_gulag_win = ["mx_mp_br_gulag_win"];
+        setmusicset("br_gulag_win", br_gulag_win);
+        br_ring_low = ["mx_mp_br_circle_close_low_1", "mx_mp_br_circle_close_low_2", "mx_mp_br_circle_close_low_3"];
+        setmusicset("br_ring_low", br_ring_low);
+        br_ring_med = ["mx_mp_br_circle_close_med_1", "mx_mp_br_circle_close_med_2", "mx_mp_br_circle_close_med_3"];
+        setmusicset("br_ring_med", br_ring_med);
+        br_ring_high = ["mx_mp_br_circle_close_high_1", "mx_mp_br_circle_close_high_2", "mx_mp_br_circle_close_high_3"];
+        setmusicset("br_ring_high", br_ring_high);
+        br_ring_final = ["mx_mp_br_circle_close_final_loop_1", "mx_mp_br_circle_close_final_loop_2", "mx_mp_br_circle_close_final_loop_3"];
+        setmusicset("br_ring_final", br_ring_final);
+        br_exfil_intro1 = ["mx_mp_br_exfil1"];
+        setmusicset("br_exfil_intro1", br_exfil_intro1);
+        br_exfil_intro2 = ["mx_mp_br_exfil2"];
+        setmusicset("br_exfil_intro2", br_exfil_intro2);
+        br_exfil_intro3 = ["mx_mp_br_exfil3"];
+        setmusicset("br_exfil_intro3", br_exfil_intro3);
+        br_exfil_intro4 = ["mx_mp_br_exfil4"];
+        setmusicset("br_exfil_intro4", br_exfil_intro4);
+        br_exfil_intro5 = ["mx_mp_br_exfil5"];
+        setmusicset("br_exfil_intro5", br_exfil_intro5);
+        br_exfil_intro6 = ["mx_mp_br_exfil6"];
+        setmusicset("br_exfil_intro6", br_exfil_intro6);
+        br_exfil_intro7 = ["mx_mp_br_exfil7"];
+        setmusicset("br_exfil_intro7", br_exfil_intro7);
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c40
 // Size: 0x5ed
 function function_c85c8d480a1f8d97() {
-    var_6a1d06b01f51312e = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "dmz";
+    var_6a1d06b01f51312e = scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "dmz";
     if (!istrue(var_6a1d06b01f51312e)) {
         return;
     }
-    dmz_infil = [0:"iw9_mp_dmz_infil1", 1:"iw9_mp_dmz_infil2", 2:"iw9_mp_dmz_infil3", 3:"iw9_mp_dmz_infil4", 4:"iw9_mp_dmz_infil5"];
-    function_b11cfee3350d246a("dmz_infil", dmz_infil);
-    dmz_activity_start = [0:"iw9_mp_dmz_activity_start"];
-    function_b11cfee3350d246a("dmz_activity_start", dmz_activity_start);
-    dmz_activity_tension = [0:"iw9_mp_dmz_activity_tension"];
-    function_b11cfee3350d246a("dmz_activity_tension", dmz_activity_tension);
-    dmz_activity_action = [0:"iw9_mp_dmz_activity_action"];
-    function_b11cfee3350d246a("dmz_activity_action", dmz_activity_action);
-    dmz_activity_win = [0:"iw9_mp_dmz_activity_won"];
-    function_b11cfee3350d246a("dmz_activity_win", dmz_activity_win);
-    dmz_activity_lose = [0:"iw9_mp_dmz_activity_lose"];
-    function_b11cfee3350d246a("dmz_activity_lose", dmz_activity_lose);
-    dmz_exfil_start = [0:"iw9_mp_dmz_exfil1", 1:"iw9_mp_dmz_exfil2"];
-    function_b11cfee3350d246a("dmz_exfil_start", dmz_exfil_start);
-    dmz_exfil_manual = [0:"iw9_mp_dmz_exfil_manual"];
-    function_b11cfee3350d246a("dmz_exfil_manual", dmz_exfil_manual);
-    dmz_exfil_end = [0:""];
-    function_b11cfee3350d246a("dmz_exfil_end", dmz_exfil_end);
-    dmz_exfil_abort = [0:"iw9_mp_dmz_exfil_abort"];
-    function_b11cfee3350d246a("dmz_exfil_abort", dmz_exfil_abort);
-    dmz_stronghold_unlock = [0:"dmz_stronghold_unlock"];
-    function_b11cfee3350d246a("dmz_stronghold_unlock", dmz_stronghold_unlock);
-    dmz_elimination_start = [0:"dmz_elimination_accept"];
-    function_b11cfee3350d246a("dmz_elimination_start", dmz_elimination_start);
-    dmz_elimination_approach = [0:"dmz_elimination_approach"];
-    function_b11cfee3350d246a("dmz_elimination_approach", dmz_elimination_approach);
-    dmz_elimination_win = [0:"dmz_elimination_kill"];
-    function_b11cfee3350d246a("dmz_elimination_win", dmz_elimination_win);
-    dmz_geigersearch_pickups = [0:"dmz_geigersearch_pickups"];
-    function_b11cfee3350d246a("dmz_geigersearch_pickups", dmz_geigersearch_pickups);
-    dmz_hostage_start = [0:"dmz_fortress_hostage_contract"];
-    function_b11cfee3350d246a("dmz_hostage_start", dmz_hostage_start);
-    dmz_hostage_approach = [0:"dmz_fortress_hostage_approach"];
-    function_b11cfee3350d246a("dmz_hostage_approach", dmz_hostage_approach);
-    dmz_hostage_breach = [0:"dmz_stronghold_unlock"];
-    function_b11cfee3350d246a("dmz_hostage_breach", dmz_hostage_breach);
-    dmz_hostage_rescue = [0:"dmz_fortress_hostage_rescue"];
-    function_b11cfee3350d246a("dmz_hostage_rescue", dmz_hostage_rescue);
-    dmz_hostage_rescue_failed = [0:"dmz_fortress_hostage_rescuefailed"];
-    function_b11cfee3350d246a("dmz_hostage_rescue_failed", dmz_hostage_rescue_failed);
-    dmz_trap_start = [0:"dmz_trap_assigned"];
-    function_b11cfee3350d246a("dmz_trap_start", dmz_trap_start);
-    dmz_trap_approach = [0:"dmz_trap_approach"];
-    function_b11cfee3350d246a("dmz_trap_approach", dmz_trap_approach);
-    dmz_trap_drill = [0:"dmz_trap_drill"];
-    function_b11cfee3350d246a("dmz_trap_drill", dmz_trap_drill);
-    dmz_train_safe_drill = [0:"mx_mp_dmz_safecracker_train_loop"];
-    function_b11cfee3350d246a("dmz_train_safe_drill", dmz_train_safe_drill);
+    dmz_infil = ["iw9_mp_dmz_infil1", "iw9_mp_dmz_infil2", "iw9_mp_dmz_infil3", "iw9_mp_dmz_infil4", "iw9_mp_dmz_infil5"];
+    setmusicset("dmz_infil", dmz_infil);
+    dmz_activity_start = ["iw9_mp_dmz_activity_start"];
+    setmusicset("dmz_activity_start", dmz_activity_start);
+    dmz_activity_tension = ["iw9_mp_dmz_activity_tension"];
+    setmusicset("dmz_activity_tension", dmz_activity_tension);
+    dmz_activity_action = ["iw9_mp_dmz_activity_action"];
+    setmusicset("dmz_activity_action", dmz_activity_action);
+    dmz_activity_win = ["iw9_mp_dmz_activity_won"];
+    setmusicset("dmz_activity_win", dmz_activity_win);
+    dmz_activity_lose = ["iw9_mp_dmz_activity_lose"];
+    setmusicset("dmz_activity_lose", dmz_activity_lose);
+    dmz_exfil_start = ["iw9_mp_dmz_exfil1", "iw9_mp_dmz_exfil2"];
+    setmusicset("dmz_exfil_start", dmz_exfil_start);
+    dmz_exfil_manual = ["iw9_mp_dmz_exfil_manual"];
+    setmusicset("dmz_exfil_manual", dmz_exfil_manual);
+    dmz_exfil_end = [""];
+    setmusicset("dmz_exfil_end", dmz_exfil_end);
+    dmz_exfil_abort = ["iw9_mp_dmz_exfil_abort"];
+    setmusicset("dmz_exfil_abort", dmz_exfil_abort);
+    dmz_stronghold_unlock = ["dmz_stronghold_unlock"];
+    setmusicset("dmz_stronghold_unlock", dmz_stronghold_unlock);
+    dmz_elimination_start = ["dmz_elimination_accept"];
+    setmusicset("dmz_elimination_start", dmz_elimination_start);
+    dmz_elimination_approach = ["dmz_elimination_approach"];
+    setmusicset("dmz_elimination_approach", dmz_elimination_approach);
+    dmz_elimination_win = ["dmz_elimination_kill"];
+    setmusicset("dmz_elimination_win", dmz_elimination_win);
+    dmz_geigersearch_pickups = ["dmz_geigersearch_pickups"];
+    setmusicset("dmz_geigersearch_pickups", dmz_geigersearch_pickups);
+    dmz_hostage_start = ["dmz_fortress_hostage_contract"];
+    setmusicset("dmz_hostage_start", dmz_hostage_start);
+    dmz_hostage_approach = ["dmz_fortress_hostage_approach"];
+    setmusicset("dmz_hostage_approach", dmz_hostage_approach);
+    dmz_hostage_breach = ["dmz_stronghold_unlock"];
+    setmusicset("dmz_hostage_breach", dmz_hostage_breach);
+    dmz_hostage_rescue = ["dmz_fortress_hostage_rescue"];
+    setmusicset("dmz_hostage_rescue", dmz_hostage_rescue);
+    dmz_hostage_rescue_failed = ["dmz_fortress_hostage_rescuefailed"];
+    setmusicset("dmz_hostage_rescue_failed", dmz_hostage_rescue_failed);
+    dmz_trap_start = ["dmz_trap_assigned"];
+    setmusicset("dmz_trap_start", dmz_trap_start);
+    dmz_trap_approach = ["dmz_trap_approach"];
+    setmusicset("dmz_trap_approach", dmz_trap_approach);
+    dmz_trap_drill = ["dmz_trap_drill"];
+    setmusicset("dmz_trap_drill", dmz_trap_drill);
+    dmz_train_safe_drill = ["mx_mp_dmz_safecracker_train_loop"];
+    setmusicset("dmz_train_safe_drill", dmz_train_safe_drill);
     if (level.mapname == "mp_bio_lab" || level.mapname == "mp_biobunker") {
-        dmz_infil = [0:"dmz_stronghold_unlock"];
-        function_b11cfee3350d246a("dmz_infil", dmz_infil);
+        dmz_infil = ["dmz_stronghold_unlock"];
+        setmusicset("dmz_infil", dmz_infil);
     }
-    if (namespace_36f464722d326bbe::function_e21746abaaaf8414()) {
-        dmz_infil = [0:"mx_mp_dmz_s2_infil1", 1:"mx_mp_dmz_s2_infil2"];
-        function_b11cfee3350d246a("dmz_infil", dmz_infil);
-        dmz_activity_start = [0:"mx_mp_dmz_s2_activity_start"];
-        function_b11cfee3350d246a("dmz_activity_start", dmz_activity_start);
-        dmz_activity_tension = [0:"mx_mp_dmz_s2_activity_tension"];
-        function_b11cfee3350d246a("dmz_activity_tension", dmz_activity_tension);
-        dmz_activity_action = [0:"mx_mp_dmz_s2_activity_action"];
-        function_b11cfee3350d246a("dmz_activity_action", dmz_activity_action);
-        dmz_activity_win = [0:"mx_mp_dmz_s2_activity_win"];
-        function_b11cfee3350d246a("dmz_activity_win", dmz_activity_win);
-        dmz_activity_lose = [0:"mx_mp_dmz_s2_activity_lose"];
-        function_b11cfee3350d246a("dmz_activity_lose", dmz_activity_lose);
-        dmz_exfil_start = [0:"mx_mp_dmz_s2_exfil1", 1:"mx_mp_dmz_s2_exfil2"];
-        function_b11cfee3350d246a("dmz_exfil_start", dmz_exfil_start);
-        dmz_stronghold_unlock = [0:"dmz_stronghold_unlock"];
-        function_b11cfee3350d246a("dmz_stronghold_unlock", dmz_stronghold_unlock);
-        dmz_elimination_start = [0:"mx_mp_dmz_s2_activity_start"];
-        function_b11cfee3350d246a("dmz_elimination_start", dmz_activity_start);
-        dmz_elimination_approach = [0:"mx_mp_dmz_s2_activity_action_loop2"];
-        function_b11cfee3350d246a("dmz_elimination_approach", dmz_elimination_approach);
-        dmz_elimination_win = [0:""];
-        function_b11cfee3350d246a("dmz_elimination_win", dmz_elimination_win);
-        dmz_geigersearch_pickups = [0:"mx_mp_dmz_s2_activity_pickups"];
-        function_b11cfee3350d246a("dmz_geigersearch_pickups", dmz_geigersearch_pickups);
-        dmz_hostage_start = [0:"mx_mp_dmz_s2_activity_start"];
-        function_b11cfee3350d246a("dmz_hostage_start", dmz_hostage_start);
-        dmz_hostage_approach = [0:"mx_mp_dmz_s2_activity_tension"];
-        function_b11cfee3350d246a("dmz_hostage_approach", dmz_hostage_approach);
-        dmz_hostage_breach = [0:"dmz_stronghold_unlock"];
-        function_b11cfee3350d246a("dmz_hostage_breach", dmz_hostage_breach);
-        dmz_hostage_rescue = [0:"mx_mp_dmz_s2_activity_action_loop3"];
-        function_b11cfee3350d246a("dmz_hostage_rescue", dmz_hostage_rescue);
-        dmz_hostage_rescue_failed = [0:"mx_mp_dmz_s2_activity_lose"];
-        function_b11cfee3350d246a("dmz_hostage_rescue_failed", dmz_hostage_rescue_failed);
-        dmz_trap_start = [0:"mx_mp_dmz_s2_activity_start"];
-        function_b11cfee3350d246a("dmz_trap_start", dmz_trap_start);
-        dmz_trap_approach = [0:"mx_mp_dmz_s2_activity_tension"];
-        function_b11cfee3350d246a("dmz_trap_approach", dmz_trap_approach);
-        dmz_trap_drill = [0:"mx_mp_dmz_s2_activity_action_loop2"];
-        function_b11cfee3350d246a("dmz_trap_drill", dmz_trap_drill);
+    if (scripts/cp_mp/utility/game_utility::function_e21746abaaaf8414()) {
+        dmz_infil = ["mx_mp_dmz_s2_infil1", "mx_mp_dmz_s2_infil2"];
+        setmusicset("dmz_infil", dmz_infil);
+        dmz_activity_start = ["mx_mp_dmz_s2_activity_start"];
+        setmusicset("dmz_activity_start", dmz_activity_start);
+        dmz_activity_tension = ["mx_mp_dmz_s2_activity_tension"];
+        setmusicset("dmz_activity_tension", dmz_activity_tension);
+        dmz_activity_action = ["mx_mp_dmz_s2_activity_action"];
+        setmusicset("dmz_activity_action", dmz_activity_action);
+        dmz_activity_win = ["mx_mp_dmz_s2_activity_win"];
+        setmusicset("dmz_activity_win", dmz_activity_win);
+        dmz_activity_lose = ["mx_mp_dmz_s2_activity_lose"];
+        setmusicset("dmz_activity_lose", dmz_activity_lose);
+        dmz_exfil_start = ["mx_mp_dmz_s2_exfil1", "mx_mp_dmz_s2_exfil2"];
+        setmusicset("dmz_exfil_start", dmz_exfil_start);
+        dmz_stronghold_unlock = ["dmz_stronghold_unlock"];
+        setmusicset("dmz_stronghold_unlock", dmz_stronghold_unlock);
+        dmz_elimination_start = ["mx_mp_dmz_s2_activity_start"];
+        setmusicset("dmz_elimination_start", dmz_activity_start);
+        dmz_elimination_approach = ["mx_mp_dmz_s2_activity_action_loop2"];
+        setmusicset("dmz_elimination_approach", dmz_elimination_approach);
+        dmz_elimination_win = [""];
+        setmusicset("dmz_elimination_win", dmz_elimination_win);
+        dmz_geigersearch_pickups = ["mx_mp_dmz_s2_activity_pickups"];
+        setmusicset("dmz_geigersearch_pickups", dmz_geigersearch_pickups);
+        dmz_hostage_start = ["mx_mp_dmz_s2_activity_start"];
+        setmusicset("dmz_hostage_start", dmz_hostage_start);
+        dmz_hostage_approach = ["mx_mp_dmz_s2_activity_tension"];
+        setmusicset("dmz_hostage_approach", dmz_hostage_approach);
+        dmz_hostage_breach = ["dmz_stronghold_unlock"];
+        setmusicset("dmz_hostage_breach", dmz_hostage_breach);
+        dmz_hostage_rescue = ["mx_mp_dmz_s2_activity_action_loop3"];
+        setmusicset("dmz_hostage_rescue", dmz_hostage_rescue);
+        dmz_hostage_rescue_failed = ["mx_mp_dmz_s2_activity_lose"];
+        setmusicset("dmz_hostage_rescue_failed", dmz_hostage_rescue_failed);
+        dmz_trap_start = ["mx_mp_dmz_s2_activity_start"];
+        setmusicset("dmz_trap_start", dmz_trap_start);
+        dmz_trap_approach = ["mx_mp_dmz_s2_activity_tension"];
+        setmusicset("dmz_trap_approach", dmz_trap_approach);
+        dmz_trap_drill = ["mx_mp_dmz_s2_activity_action_loop2"];
+        setmusicset("dmz_trap_drill", dmz_trap_drill);
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5234
 // Size: 0xa
@@ -425,90 +425,90 @@ function function_350d33613fa93e9() {
     function_8b0c0a46f9743150();
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5245
 // Size: 0x592
 function function_8b0c0a46f9743150() {
-    br_infil_intro_classic = [0:"mx_mp_br_infil_1_classic"];
-    function_b11cfee3350d246a("br_infil_intro_classic", br_infil_intro_classic);
-    br_gulag_lose_classic = [0:"mx_mp_br_gulag_lose_classic"];
-    function_b11cfee3350d246a("br_gulag_lose_classic", br_gulag_lose_classic);
-    br_gulag_win_classic = [0:"mx_mp_br_gulag_win_classic"];
-    function_b11cfee3350d246a("br_gulag_win_classic", br_gulag_win_classic);
-    br_ring_low_classic = [0:"mx_mp_br_circle_close_low_1_classic", 1:"mx_mp_br_circle_close_low_2_classic"];
-    function_b11cfee3350d246a("br_ring_low_classic", br_ring_low_classic);
-    br_ring_med_classic = [0:"mx_mp_br_circle_close_med_1_classic", 1:"mx_mp_br_circle_close_med_2_classic"];
-    function_b11cfee3350d246a("br_ring_med_classic", br_ring_med_classic);
-    br_ring_high_classic = [0:"mx_mp_br_circle_close_high_1_classic", 1:"mx_mp_br_circle_close_high_2_classic"];
-    function_b11cfee3350d246a("br_ring_high_classic", br_ring_high_classic);
-    br_ring_final_classic = [0:"mx_mp_br_circle_close_final_loop_1_classic", 1:"mx_mp_br_circle_close_final_loop_2_classic"];
-    function_b11cfee3350d246a("br_ring_final_classic", br_ring_final_classic);
-    br_exfil_intro1_classic = [0:"mx_mp_br_exfil1_classic"];
-    function_b11cfee3350d246a("br_exfil_intro1_classic", br_exfil_intro1_classic);
-    br_exfil_intro2_classic = [0:"mx_mp_br_exfil2_classic"];
-    function_b11cfee3350d246a("br_exfil_intro2_classic", br_exfil_intro2_classic);
-    br_exfil_intro3_classic = [0:"mx_mp_br_exfil3_classic"];
-    function_b11cfee3350d246a("br_exfil_intro3_classic", br_exfil_intro3_classic);
-    br_exfil_intro4_classic = [0:"mx_mp_br_exfil4_classic"];
-    function_b11cfee3350d246a("br_exfil_intro4_classic", br_exfil_intro4_classic);
-    br_exfil_intro5_classic = [0:"mx_mp_br_exfil5_classic"];
-    function_b11cfee3350d246a("br_exfil_intro5_classic", br_exfil_intro5_classic);
-    br_exfil_intro6_classic = [0:"mx_mp_br_exfil6_classic"];
-    function_b11cfee3350d246a("br_exfil_intro6_classic", br_exfil_intro6_classic);
-    br_exfil_intro7_classic = [0:"mx_mp_br_exfil6_classic"];
-    function_b11cfee3350d246a("br_exfil_intro7_classic", br_exfil_intro7_classic);
-    br_cq_element_classic = [0:"mx_mp_br_cq_elementfound_1_classic", 1:"mx_mp_br_cq_elementfound_2_classic", 2:"mx_mp_br_cq_elementfound_3_classic"];
-    function_b11cfee3350d246a("br_cq_element_classic", br_cq_element_classic);
-    br_cq_bomb_armed_classic = [0:"mx_mp_br_cq_bombarmed_1_classic"];
-    function_b11cfee3350d246a("br_cq_bomb_armed_classic", br_cq_bomb_armed_classic);
-    dmz_infil_classic = [0:"iw9_mp_dmz_infil1_classic", 1:"iw9_mp_dmz_infil2_classic", 2:"iw9_mp_dmz_infil3_classic", 3:"iw9_mp_dmz_infil4_classic", 4:"iw9_mp_dmz_infil5_classic"];
-    function_b11cfee3350d246a("dmz_infil_classic", dmz_infil_classic);
-    dmz_activity_start_classic = [0:"iw9_mp_dmz_activity_start_classic"];
-    function_b11cfee3350d246a("dmz_activity_start_classic", dmz_activity_start_classic);
-    dmz_activity_tension_classic = [0:"iw9_mp_dmz_activity_tension_classic"];
-    function_b11cfee3350d246a("dmz_activity_tension_classic", dmz_activity_tension_classic);
-    dmz_activity_action_classic = [0:"iw9_mp_dmz_activity_action_classic"];
-    function_b11cfee3350d246a("dmz_activity_action_classic", dmz_activity_action_classic);
-    dmz_activity_win_classic = [0:"iw9_mp_dmz_activity_won_classic"];
-    function_b11cfee3350d246a("dmz_activity_win_classic", dmz_activity_win_classic);
-    dmz_activity_lose_classic = [0:"iw9_mp_dmz_activity_lose_classic"];
-    function_b11cfee3350d246a("dmz_activity_lose_classic", dmz_activity_lose_classic);
-    dmz_exfil_start_classic = [0:"iw9_mp_dmz_exfil1_classic", 1:"iw9_mp_dmz_exfil2_classic"];
-    function_b11cfee3350d246a("dmz_exfil_start_classic", dmz_exfil_start_classic);
-    dmz_stronghold_unlock_classic = [0:"dmz_stronghold_unlock_classic"];
-    function_b11cfee3350d246a("dmz_stronghold_unlock_classic", dmz_stronghold_unlock_classic);
-    dmz_elimination_start_classic = [0:"dmz_elimination_accept_classic"];
-    function_b11cfee3350d246a("dmz_elimination_start_classic", dmz_elimination_start_classic);
-    dmz_elimination_approach_classic = [0:"dmz_elimination_approach_classic"];
-    function_b11cfee3350d246a("dmz_elimination_approach_classic", dmz_elimination_approach_classic);
-    dmz_elimination_win_classic = [0:"dmz_elimination_kill_classic"];
-    function_b11cfee3350d246a("dmz_elimination_win_classic", dmz_elimination_win_classic);
-    dmz_geigersearch_pickups_classic = [0:"dmz_geigersearch_pickups_classic"];
-    function_b11cfee3350d246a("dmz_geigersearch_pickups_classic", dmz_geigersearch_pickups_classic);
-    dmz_hostage_start_classic = [0:"dmz_fortress_hostage_contract_classic"];
-    function_b11cfee3350d246a("dmz_hostage_start_classic", dmz_hostage_start_classic);
-    dmz_hostage_approach_classic = [0:"dmz_fortress_hostage_approach_classic"];
-    function_b11cfee3350d246a("dmz_hostage_approach_classic", dmz_hostage_approach_classic);
-    dmz_hostage_breach_classic = [0:"dmz_stronghold_unlock_classic"];
-    function_b11cfee3350d246a("dmz_hostage_breach_classic", dmz_hostage_breach_classic);
-    dmz_hostage_rescue_classic = [0:"dmz_fortress_hostage_rescue_classic"];
-    function_b11cfee3350d246a("dmz_hostage_rescue_classic", dmz_hostage_rescue_classic);
-    dmz_hostage_rescue_failed_classic = [0:"dmz_fortress_hostage_rescuefailed_classic"];
-    function_b11cfee3350d246a("dmz_hostage_rescue_failed_classic", dmz_hostage_rescue_failed_classic);
-    dmz_trap_start_classic = [0:"dmz_trap_assigned_classic"];
-    function_b11cfee3350d246a("dmz_trap_start_classic", dmz_trap_start_classic);
-    dmz_trap_approach_classic = [0:"dmz_trap_approach_classic"];
-    function_b11cfee3350d246a("dmz_trap_approach_classic", dmz_trap_approach_classic);
-    dmz_trap_drill_classic = [0:"dmz_trap_drill_classic"];
-    function_b11cfee3350d246a("dmz_trap_drill_classic", dmz_trap_drill_classic);
-    dmz_train_safe_drill_classic = [0:"mx_mp_dmz_safecracker_train_loop"];
-    function_b11cfee3350d246a("dmz_train_safe_drill_classic", dmz_train_safe_drill_classic);
-    var_9be07d4da97c507b = [0:"zc_points_streak_classic"];
-    function_b11cfee3350d246a("zc_zone_streak_main_classic", var_9be07d4da97c507b);
+    br_infil_intro_classic = ["mx_mp_br_infil_1_classic"];
+    setmusicset("br_infil_intro_classic", br_infil_intro_classic);
+    br_gulag_lose_classic = ["mx_mp_br_gulag_lose_classic"];
+    setmusicset("br_gulag_lose_classic", br_gulag_lose_classic);
+    br_gulag_win_classic = ["mx_mp_br_gulag_win_classic"];
+    setmusicset("br_gulag_win_classic", br_gulag_win_classic);
+    br_ring_low_classic = ["mx_mp_br_circle_close_low_1_classic", "mx_mp_br_circle_close_low_2_classic"];
+    setmusicset("br_ring_low_classic", br_ring_low_classic);
+    br_ring_med_classic = ["mx_mp_br_circle_close_med_1_classic", "mx_mp_br_circle_close_med_2_classic"];
+    setmusicset("br_ring_med_classic", br_ring_med_classic);
+    br_ring_high_classic = ["mx_mp_br_circle_close_high_1_classic", "mx_mp_br_circle_close_high_2_classic"];
+    setmusicset("br_ring_high_classic", br_ring_high_classic);
+    br_ring_final_classic = ["mx_mp_br_circle_close_final_loop_1_classic", "mx_mp_br_circle_close_final_loop_2_classic"];
+    setmusicset("br_ring_final_classic", br_ring_final_classic);
+    br_exfil_intro1_classic = ["mx_mp_br_exfil1_classic"];
+    setmusicset("br_exfil_intro1_classic", br_exfil_intro1_classic);
+    br_exfil_intro2_classic = ["mx_mp_br_exfil2_classic"];
+    setmusicset("br_exfil_intro2_classic", br_exfil_intro2_classic);
+    br_exfil_intro3_classic = ["mx_mp_br_exfil3_classic"];
+    setmusicset("br_exfil_intro3_classic", br_exfil_intro3_classic);
+    br_exfil_intro4_classic = ["mx_mp_br_exfil4_classic"];
+    setmusicset("br_exfil_intro4_classic", br_exfil_intro4_classic);
+    br_exfil_intro5_classic = ["mx_mp_br_exfil5_classic"];
+    setmusicset("br_exfil_intro5_classic", br_exfil_intro5_classic);
+    br_exfil_intro6_classic = ["mx_mp_br_exfil6_classic"];
+    setmusicset("br_exfil_intro6_classic", br_exfil_intro6_classic);
+    br_exfil_intro7_classic = ["mx_mp_br_exfil6_classic"];
+    setmusicset("br_exfil_intro7_classic", br_exfil_intro7_classic);
+    br_cq_element_classic = ["mx_mp_br_cq_elementfound_1_classic", "mx_mp_br_cq_elementfound_2_classic", "mx_mp_br_cq_elementfound_3_classic"];
+    setmusicset("br_cq_element_classic", br_cq_element_classic);
+    br_cq_bomb_armed_classic = ["mx_mp_br_cq_bombarmed_1_classic"];
+    setmusicset("br_cq_bomb_armed_classic", br_cq_bomb_armed_classic);
+    dmz_infil_classic = ["iw9_mp_dmz_infil1_classic", "iw9_mp_dmz_infil2_classic", "iw9_mp_dmz_infil3_classic", "iw9_mp_dmz_infil4_classic", "iw9_mp_dmz_infil5_classic"];
+    setmusicset("dmz_infil_classic", dmz_infil_classic);
+    dmz_activity_start_classic = ["iw9_mp_dmz_activity_start_classic"];
+    setmusicset("dmz_activity_start_classic", dmz_activity_start_classic);
+    dmz_activity_tension_classic = ["iw9_mp_dmz_activity_tension_classic"];
+    setmusicset("dmz_activity_tension_classic", dmz_activity_tension_classic);
+    dmz_activity_action_classic = ["iw9_mp_dmz_activity_action_classic"];
+    setmusicset("dmz_activity_action_classic", dmz_activity_action_classic);
+    dmz_activity_win_classic = ["iw9_mp_dmz_activity_won_classic"];
+    setmusicset("dmz_activity_win_classic", dmz_activity_win_classic);
+    dmz_activity_lose_classic = ["iw9_mp_dmz_activity_lose_classic"];
+    setmusicset("dmz_activity_lose_classic", dmz_activity_lose_classic);
+    dmz_exfil_start_classic = ["iw9_mp_dmz_exfil1_classic", "iw9_mp_dmz_exfil2_classic"];
+    setmusicset("dmz_exfil_start_classic", dmz_exfil_start_classic);
+    dmz_stronghold_unlock_classic = ["dmz_stronghold_unlock_classic"];
+    setmusicset("dmz_stronghold_unlock_classic", dmz_stronghold_unlock_classic);
+    dmz_elimination_start_classic = ["dmz_elimination_accept_classic"];
+    setmusicset("dmz_elimination_start_classic", dmz_elimination_start_classic);
+    dmz_elimination_approach_classic = ["dmz_elimination_approach_classic"];
+    setmusicset("dmz_elimination_approach_classic", dmz_elimination_approach_classic);
+    dmz_elimination_win_classic = ["dmz_elimination_kill_classic"];
+    setmusicset("dmz_elimination_win_classic", dmz_elimination_win_classic);
+    dmz_geigersearch_pickups_classic = ["dmz_geigersearch_pickups_classic"];
+    setmusicset("dmz_geigersearch_pickups_classic", dmz_geigersearch_pickups_classic);
+    dmz_hostage_start_classic = ["dmz_fortress_hostage_contract_classic"];
+    setmusicset("dmz_hostage_start_classic", dmz_hostage_start_classic);
+    dmz_hostage_approach_classic = ["dmz_fortress_hostage_approach_classic"];
+    setmusicset("dmz_hostage_approach_classic", dmz_hostage_approach_classic);
+    dmz_hostage_breach_classic = ["dmz_stronghold_unlock_classic"];
+    setmusicset("dmz_hostage_breach_classic", dmz_hostage_breach_classic);
+    dmz_hostage_rescue_classic = ["dmz_fortress_hostage_rescue_classic"];
+    setmusicset("dmz_hostage_rescue_classic", dmz_hostage_rescue_classic);
+    dmz_hostage_rescue_failed_classic = ["dmz_fortress_hostage_rescuefailed_classic"];
+    setmusicset("dmz_hostage_rescue_failed_classic", dmz_hostage_rescue_failed_classic);
+    dmz_trap_start_classic = ["dmz_trap_assigned_classic"];
+    setmusicset("dmz_trap_start_classic", dmz_trap_start_classic);
+    dmz_trap_approach_classic = ["dmz_trap_approach_classic"];
+    setmusicset("dmz_trap_approach_classic", dmz_trap_approach_classic);
+    dmz_trap_drill_classic = ["dmz_trap_drill_classic"];
+    setmusicset("dmz_trap_drill_classic", dmz_trap_drill_classic);
+    dmz_train_safe_drill_classic = ["mx_mp_dmz_safecracker_train_loop"];
+    setmusicset("dmz_train_safe_drill_classic", dmz_train_safe_drill_classic);
+    var_9be07d4da97c507b = ["zc_points_streak_classic"];
+    setmusicset("zc_zone_streak_main_classic", var_9be07d4da97c507b);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57de
 // Size: 0x4b
@@ -517,30 +517,28 @@ function function_a7859595cdf7077(var_8b8c889f4a1b7c8) {
     self.var_dacd6424f90c605d = [];
     if (var_8b8c889f4a1b7c8 == "faction") {
         thread function_42b070fb8d72b5f8();
-    } else {
-        if (var_8b8c889f4a1b7c8 == "musicStyle") {
-            goto LOC_00000049;
-        }
-        function_414b65c7174581d1("mp_default");
-    LOC_00000049:
+        return;
     }
-LOC_00000049:
+    if (var_8b8c889f4a1b7c8 == "musicStyle") {
+        return;
+    }
+    function_414b65c7174581d1("mp_default");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5830
 // Size: 0x753
 function function_42b070fb8d72b5f8() {
-    var_f42e10b1b219ca25 = namespace_54d20dd0dd79277f::getteamvoiceinfix("allies");
-    var_97018a742c407dd0 = namespace_54d20dd0dd79277f::getteamvoiceinfix("axis");
+    alliesfaction = scripts/mp/utility/teams::getteamvoiceinfix("allies");
+    axisfaction = scripts/mp/utility/teams::getteamvoiceinfix("axis");
     self.var_dacd6424f90c605d["musicbank_allies"] = undefined;
     self.var_dacd6424f90c605d["musicbank_axis"] = undefined;
     if (getgametype() == "xfire") {
-        var_bf375eeb814dd878 = namespace_54d20dd0dd79277f::getteamvoiceinfix("team_three");
+        var_bf375eeb814dd878 = scripts/mp/utility/teams::getteamvoiceinfix("team_three");
         self.var_dacd6424f90c605d["musicbank_team_three"] = undefined;
-        if (self.var_acfbb9caed7125f9 == 1) {
-            switch (var_f42e10b1b219ca25) {
+        if (self.musicpack == 1) {
+            switch (alliesfaction) {
             case #"hash_af17f86d59bb3d35":
                 function_414b65c7174581d1("mp_faction_tf141_classic", "allies");
                 break;
@@ -554,7 +552,7 @@ function function_42b070fb8d72b5f8() {
                 function_414b65c7174581d1("mp_default", "allies");
                 break;
             }
-            switch (var_97018a742c407dd0) {
+            switch (axisfaction) {
             case #"hash_d73ed93ff1b09b71":
                 function_414b65c7174581d1("mp_faction_opfor_classic", "axis");
                 break;
@@ -592,7 +590,7 @@ function function_42b070fb8d72b5f8() {
                 break;
             }
         } else {
-            switch (var_f42e10b1b219ca25) {
+            switch (alliesfaction) {
             case #"hash_af17f86d59bb3d35":
                 function_414b65c7174581d1("mp_faction_tf141", "allies");
                 break;
@@ -606,7 +604,7 @@ function function_42b070fb8d72b5f8() {
                 function_414b65c7174581d1("mp_default", "allies");
                 break;
             }
-            switch (var_97018a742c407dd0) {
+            switch (axisfaction) {
             case #"hash_d73ed93ff1b09b71":
                 function_414b65c7174581d1("mp_faction_opfor", "axis");
                 break;
@@ -644,19 +642,23 @@ function function_42b070fb8d72b5f8() {
                 break;
             }
         }
-    } else if (getdvarint(@"hash_57efffe601711595", 0) && getgametype() == "koth") {
-        if (var_f42e10b1b219ca25 == "t141" || var_f42e10b1b219ca25 == "rang" || var_f42e10b1b219ca25 == "seal") {
+        return;
+    }
+    if (getdvarint(@"hash_57efffe601711595", 0) && getgametype() == "koth") {
+        if (alliesfaction == "t141" || alliesfaction == "rang" || alliesfaction == "seal") {
             function_414b65c7174581d1("mp_mode_hordepoint", "allies");
         } else {
             function_414b65c7174581d1("mp_mode_hordepoint", "allies");
         }
-        if (var_97018a742c407dd0 == "opfo" || var_97018a742c407dd0 == "spet" || var_97018a742c407dd0 == "mili") {
+        if (axisfaction == "opfo" || axisfaction == "spet" || axisfaction == "mili") {
             function_414b65c7174581d1("mp_mode_hordepoint", "axis");
         } else {
             function_414b65c7174581d1("mp_mode_hordepoint", "axis");
         }
-    } else if (self.var_acfbb9caed7125f9 == 1) {
-        switch (var_f42e10b1b219ca25) {
+        return;
+    }
+    if (self.musicpack == 1) {
+        switch (alliesfaction) {
         case #"hash_af17f86d59bb3d35":
             function_414b65c7174581d1("mp_faction_tf141_classic", "allies");
             break;
@@ -670,7 +672,7 @@ function function_42b070fb8d72b5f8() {
             function_414b65c7174581d1("mp_default", "allies");
             break;
         }
-        switch (var_97018a742c407dd0) {
+        switch (axisfaction) {
         case #"hash_d73ed93ff1b09b71":
             function_414b65c7174581d1("mp_faction_opfor_classic", "axis");
             break;
@@ -684,50 +686,50 @@ function function_42b070fb8d72b5f8() {
             function_414b65c7174581d1("mp_default", "axis");
             break;
         }
-    } else {
-        switch (var_f42e10b1b219ca25) {
-        case #"hash_af17f86d59bb3d35":
-            function_414b65c7174581d1("mp_faction_tf141", "allies");
-            break;
-        case #"hash_20abb6900079e8a3":
-            function_414b65c7174581d1("mp_faction_rangers", "allies");
-            break;
-        case #"hash_b4f27b89f5a78a00":
-            function_414b65c7174581d1("mp_faction_navyseals", "allies");
-            break;
-        default:
-            function_414b65c7174581d1("mp_default", "allies");
-            break;
-        }
-        switch (var_97018a742c407dd0) {
-        case #"hash_d73ed93ff1b09b71":
-            function_414b65c7174581d1("mp_faction_opfor", "axis");
-            break;
-        case #"hash_521188a1f4fac07":
-            function_414b65c7174581d1("mp_faction_spetsnaz", "axis");
-            break;
-        case #"hash_bfb1c034c59a88dc":
-            function_414b65c7174581d1("mp_faction_militia", "axis");
-            break;
-        default:
-            function_414b65c7174581d1("mp_default", "axis");
-            break;
-        }
+        return;
+    }
+    switch (alliesfaction) {
+    case #"hash_af17f86d59bb3d35":
+        function_414b65c7174581d1("mp_faction_tf141", "allies");
+        break;
+    case #"hash_20abb6900079e8a3":
+        function_414b65c7174581d1("mp_faction_rangers", "allies");
+        break;
+    case #"hash_b4f27b89f5a78a00":
+        function_414b65c7174581d1("mp_faction_navyseals", "allies");
+        break;
+    default:
+        function_414b65c7174581d1("mp_default", "allies");
+        break;
+    }
+    switch (axisfaction) {
+    case #"hash_d73ed93ff1b09b71":
+        function_414b65c7174581d1("mp_faction_opfor", "axis");
+        break;
+    case #"hash_521188a1f4fac07":
+        function_414b65c7174581d1("mp_faction_spetsnaz", "axis");
+        break;
+    case #"hash_bfb1c034c59a88dc":
+        function_414b65c7174581d1("mp_faction_militia", "axis");
+        break;
+    default:
+        function_414b65c7174581d1("mp_default", "axis");
+        break;
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f8a
 // Size: 0x16c
-function function_414b65c7174581d1(var_8e6988e5e46aad6e, var_efae3e4809d7d027, var_94297cc109e4d6a5) {
+function function_414b65c7174581d1(var_8e6988e5e46aad6e, str_faction, var_94297cc109e4d6a5) {
     if (isdefined(getscriptbundle("musicbank:" + var_8e6988e5e46aad6e))) {
-        if (isdefined(var_efae3e4809d7d027)) {
+        if (isdefined(str_faction)) {
             self.var_dacd6424f90c605d["musicbank"] = undefined;
             if (getgametype() == "xfire") {
                 self.var_dacd6424f90c605d["musicbank_team_three"] = undefined;
             }
-            switch (var_efae3e4809d7d027) {
+            switch (str_faction) {
             case #"hash_5f54b9bf7583687f":
                 self.var_dacd6424f90c605d["musicbank_allies"] = var_8e6988e5e46aad6e;
                 function_ad9f5152bfdebcfe("musicbank", var_8e6988e5e46aad6e, getscriptbundle("musicbank:" + var_8e6988e5e46aad6e));
@@ -746,29 +748,30 @@ function function_414b65c7174581d1(var_8e6988e5e46aad6e, var_efae3e4809d7d027, v
                 break;
             }
             return;
-        } else if (!isdefined(var_efae3e4809d7d027) && isdefined(var_94297cc109e4d6a5)) {
-            return;
-        } else if (isdefined(var_efae3e4809d7d027) && isdefined(var_94297cc109e4d6a5)) {
-            return;
-        } else {
+        }
+        if (!isdefined(str_faction) && isdefined(var_94297cc109e4d6a5)) {
             return;
         }
+        if (isdefined(str_faction) && isdefined(var_94297cc109e4d6a5)) {
+            return;
+        }
+        return;
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60fd
 // Size: 0x51
 function function_cd6fa41e597b8df0(var_83adde1ef76f568a) {
-    var_8622842a2b7990a0 = function_291ab2db66d6ea2e(var_83adde1ef76f568a);
-    if (isdefined(var_8622842a2b7990a0)) {
-        musicstate = utility::function_7a2aaa4a09a4d250(var_8622842a2b7990a0.musicstates);
+    musicevent = function_291ab2db66d6ea2e(var_83adde1ef76f568a);
+    if (isdefined(musicevent)) {
+        musicstate = utility::array_random(musicevent.musicstates);
         self setplayermusicstate(musicstate.statename);
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6155
 // Size: 0x122
@@ -777,25 +780,23 @@ function function_291ab2db66d6ea2e(var_83adde1ef76f568a) {
         return undefined;
     }
     if (self.team == "allies") {
-        musicbank = namespace_f86ba2003950072a::function_9a0f23d8adcd6392("musicbank", self.var_dacd6424f90c605d["musicbank_allies"]);
+        musicbank = audio_utility::function_9a0f23d8adcd6392("musicbank", self.var_dacd6424f90c605d["musicbank_allies"]);
     } else if (self.team == "axis") {
-        musicbank = namespace_f86ba2003950072a::function_9a0f23d8adcd6392("musicbank", self.var_dacd6424f90c605d["musicbank_axis"]);
+        musicbank = audio_utility::function_9a0f23d8adcd6392("musicbank", self.var_dacd6424f90c605d["musicbank_axis"]);
     } else if (self.team == "team_three") {
-        musicbank = namespace_f86ba2003950072a::function_9a0f23d8adcd6392("musicbank", self.var_dacd6424f90c605d["musicbank_team_three"]);
-        goto LOC_000000d4;
+        musicbank = audio_utility::function_9a0f23d8adcd6392("musicbank", self.var_dacd6424f90c605d["musicbank_team_three"]);
     }
-LOC_000000d4:
     if (!isdefined(musicbank)) {
         return;
     }
-    foreach (event in musicbank.var_8622842a2b7990a0) {
+    foreach (event in musicbank.musicevent) {
         if (event.eventid == var_83adde1ef76f568a) {
             return event;
         }
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x627e
 // Size: 0xc4c
@@ -927,33 +928,33 @@ function function_ed24376a19a1b0fe() {
     game["dialog"]["round_draw"] = "dx_mp_gmst_anno_uktl_gsrt";
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ed1
 // Size: 0x6e
 function function_6ca37af6683e78ec() {
-    namespace_71eef510d7f364cf::registeronplayerspawncallback(&onplayerspawned);
+    scripts/mp/utility/spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
     level thread onplayerconnect();
     level thread onlastalive();
     level thread musiccontroller();
     level thread ongameended();
     level thread onroundswitch();
-    if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "gwai") {
+    if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "gwai") {
         setdvar(@"hash_58a078a367c02ab3", 1);
         setdvar(@"hash_c5d765aefb9658bd", 1500);
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f46
 // Size: 0x85
 function onplayerconnect() {
     for (;;) {
         player = level waittill("connected");
-        var_acfbb9caed7125f9 = getdvarint(@"hash_61e9133b2e499a6c");
-        player.var_acfbb9caed7125f9 = var_acfbb9caed7125f9;
-        if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "dmz") {
+        musicpack = getdvarint(@"hash_61e9133b2e499a6c");
+        player.musicpack = musicpack;
+        if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "dmz") {
             player thread function_8ffc5ac70256254b();
         }
         player thread function_a7859595cdf7077("faction");
@@ -963,7 +964,7 @@ function onplayerconnect() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6fd2
 // Size: 0x10b
@@ -978,25 +979,25 @@ function onplayerspawned() {
     }
     if (getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || getgametype() == "gwbomb" || getgametype() == "gwtdm" || isgroundwarcoremode()) {
         self setsoundsubmix("iw9_mp_groundwar_focus");
-    } else if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    } else if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         self setsoundsubmix("wz_br_focus");
     } else if (getgametype() == "ballmode") {
         self setsoundsubmix("iw9_mp_soccer");
     } else {
         self setsoundsubmix("iw9_mp_core_focus");
     }
-    if (getsubgametype() == "dmz" && namespace_36f464722d326bbe::function_e21746abaaaf8414()) {
+    if (getsubgametype() == "dmz" && scripts/cp_mp/utility/game_utility::function_e21746abaaaf8414()) {
         self setsoundsubmix("iw9_mp_sealion_dmz");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70e4
 // Size: 0x12b
 function function_8ffc5ac70256254b() {
     self endon("disconnect");
-    var_6a1d06b01f51312e = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "dmz";
+    var_6a1d06b01f51312e = scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "dmz";
     var_cdee7f83a96700f2 = getdvarint(@"hash_9c43b60485fbd92e", 0) == 0;
     if (!istrue(var_6a1d06b01f51312e)) {
         return;
@@ -1010,8 +1011,8 @@ function function_8ffc5ac70256254b() {
     }
     if (istrue(var_cdee7f83a96700f2)) {
         self setsoundsubmix("solo_cin_igc_music", 0);
-        while (!namespace_4b0406965e556711::gameflag("prematch_done")) {
-            if (istrue(level.var_466a09c79541fc26) || isnumber(level.matchcountdowntime) && level.matchcountdowntime <= 3) {
+        while (!scripts/mp/flags::gameflag("prematch_done")) {
+            if (istrue(level.infilcompleted) || isnumber(level.matchcountdowntime) && level.matchcountdowntime <= 3) {
                 break;
             }
             waitframe();
@@ -1020,7 +1021,7 @@ function function_8ffc5ac70256254b() {
         self clearsoundsubmix("solo_cin_igc_music", 2);
     }
     if (isdefined(level.prematchperiod)) {
-        while (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+        while (!scripts/mp/flags::gameflag("prematch_done")) {
             waitframe();
         }
     }
@@ -1028,7 +1029,7 @@ function function_8ffc5ac70256254b() {
     self setplayermusicstate("");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7216
 // Size: 0x33
@@ -1036,24 +1037,23 @@ function waitcountdown() {
     level endon("host_migration_begin");
     self endon("disconnect");
     for (;;) {
-        for (;;) {
-            if (namespace_4b0406965e556711::gameflag("prematch_done")) {
-                self notify("luinotifyserver", "matchReady");
-                return;
-            }
+        if (scripts/mp/flags::gameflag("prematch_done")) {
+            self notify("luinotifyserver", "matchReady");
+            return;
         }
+        wait(1);
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7250
 // Size: 0x1d4
 function playflyoveraudioline() {
     level endon("host_migration_begin");
     self endon("disconnect");
-    var_c924752368853f99 = gettimepassed() / 1000 + 6;
-    if (var_c924752368853f99 >= level.prematchperiod) {
+    normalizedtimepassed = gettimepassed() / 1000 + 6;
+    if (normalizedtimepassed >= level.prematchperiod) {
         return;
     }
     if (!level.rankedmatch) {
@@ -1084,7 +1084,9 @@ function playflyoveraudioline() {
             default:
                 break;
             }
-        } else if (self.sessionteam == "axis") {
+            return;
+        }
+        if (self.sessionteam == "axis") {
             switch (teamid) {
             case 0:
                 self playannouncersound("jtfw_mtc1_sdf_flyover");
@@ -1108,7 +1110,7 @@ function playflyoveraudioline() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x742b
 // Size: 0x44e
@@ -1128,14 +1130,14 @@ function dointro() {
     if (level.script == "mp_m_speed") {
         waiting = 0;
     } else {
-        waiting = !namespace_4b0406965e556711::gameflag("prematch_done") && (!isroundbased() || isfirstround());
+        waiting = !scripts/mp/flags::gameflag("prematch_done") && (!isroundbased() || isfirstround());
     }
     if (waiting) {
         thread waitcountdown();
         thread prematch_music();
         self setsoundsubmix("iw9_mp_core_prematch");
         for (;;) {
-            value = result = self waittill("luinotifyserver");
+            result, value = self waittill("luinotifyserver");
             if (result == "matchReady") {
                 break;
             }
@@ -1143,7 +1145,7 @@ function dointro() {
     }
     self clearsoundsubmix("iw9_mp_core_prematch", 2);
     if (istrue(level.infilvotiming)) {
-        namespace_4b0406965e556711::gameflagwait("prematch_done");
+        scripts/mp/flags::gameflagwait("prematch_done");
         wait(1.5);
     }
     if (isdefined(game["dialog"]["gametype"]) && (!level.splitscreen || self == level.players[0])) {
@@ -1180,7 +1182,7 @@ function dointro() {
             }
         }
     }
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     waitframe();
     if (istrue(level.var_aaee655630513b9d)) {
         wait(3.5);
@@ -1198,16 +1200,20 @@ function dointro() {
                 leaderdialogonplayer("defense_obj", "introboost");
             }
         }
-    } else if (self.team == game["attackers"]) {
+        return;
+    }
+    if (self.team == game["attackers"]) {
         if (!self issplitscreenplayer() || self issplitscreenplayerprimary()) {
             leaderdialogonplayer("offense_obj", "introboost");
         }
-    } else if (!self issplitscreenplayer() || self issplitscreenplayerprimary()) {
+        return;
+    }
+    if (!self issplitscreenplayer() || self issplitscreenplayerprimary()) {
         leaderdialogonplayer("defense_obj", "introboost");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7880
 // Size: 0xd4
@@ -1232,19 +1238,19 @@ function function_3aa69e0e6827ce5(var_167b74d4ec89f276) {
         wait(15);
         if (isent(self) && isplayer(self)) {
             self clearclienttriggeraudiozone(3);
-        } else {
             return;
         }
+        return;
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x795b
 // Size: 0x3b8
 function prematch_music() {
     self endon("disconnect");
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (scripts/mp/flags::gameflag("prematch_done")) {
         return;
     }
     level waittill("prematch_music");
@@ -1333,18 +1339,18 @@ function prematch_music() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d1a
 // Size: 0x139
 function shouldplayarenaintro() {
     if (iswinbytworulegametype()) {
-        return 0;
+        return false;
     }
     if (game["finalRound"] == 1) {
         game["dialog"]["offense_obj"] = "boost_tied_matchpoint";
         game["dialog"]["defense_obj"] = "boost_tied_matchpoint";
-        return 1;
+        return true;
     } else if (game["matchPoint"] == 1) {
         var_10ba24a48f1b3f6d = "";
         foreach (entry in level.teamnamelist) {
@@ -1361,19 +1367,19 @@ function shouldplayarenaintro() {
             game["dialog"]["offense_obj"] = "boost_losing_matchpoint";
             game["dialog"]["defense_obj"] = "boost_winning_matchpoint";
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7e5b
 // Size: 0x49
 function watchhostmigration() {
     self endon("disconnect");
     level endon("grace_period_ending");
-    while (1) {
+    while (true) {
         level waittill("host_migration_begin");
         var_70fb9c790a2bb63d = level.ingraceperiod;
         level waittill("host_migration_end");
@@ -1383,7 +1389,7 @@ function watchhostmigration() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7eab
 // Size: 0x9f
@@ -1402,12 +1408,12 @@ function onlastalive() {
         level thread onlastalive();
         return;
     }
-    if (!namespace_446fc987a980892f::function_d87d5deb069bf8e5("player_last_man_standing", player)) {
+    if (!namespace_446fc987a980892f::playevent("player_last_man_standing", player)) {
         player leaderdialogonplayer("last_alive");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f51
 // Size: 0x1a1
@@ -1444,7 +1450,7 @@ function onroundswitch() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x80f9
 // Size: 0x1d8
@@ -1460,10 +1466,10 @@ function plunder_endgame_music() {
     game["music"]["payback_win"] = [];
     game["music"]["payback_win"][game["music"]["payback_win"].size] = "mp_win_1";
     game["music"]["payback_win"][game["music"]["payback_win"].size] = "mp_win_2";
-    var_c3e10a42a81ade25 = namespace_e8a49b70d0769b66::getteamscoreplacements();
+    placements = scripts/mp/gamescore::getteamscoreplacements();
     level.endmusicplayed = 1;
     foreach (player in level.players) {
-        placement = var_c3e10a42a81ade25[player.team];
+        placement = placements[player.team];
         if (placement <= 10) {
             payback_win = function_17ee301cf0b5ba85("payback_win");
             player setplayermusicstate(payback_win);
@@ -1476,7 +1482,7 @@ function plunder_endgame_music() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x82d8
 // Size: 0x44
@@ -1486,7 +1492,7 @@ function dmz_activity_start(players) {
     function_fe75a89529dd0fd0(players, dmz_activity_start, undefined, undefined, dmz_activity_start_classic);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8323
 // Size: 0x44
@@ -1496,7 +1502,7 @@ function dmz_activity_tension(players) {
     function_fe75a89529dd0fd0(players, dmz_activity_tension, undefined, undefined, dmz_activity_tension_classic);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x836e
 // Size: 0x44
@@ -1506,7 +1512,7 @@ function function_39a3ba69d3b190a5(players) {
     function_fe75a89529dd0fd0(players, dmz_activity_action, undefined, undefined, dmz_activity_action_classic);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83b9
 // Size: 0x44
@@ -1516,7 +1522,7 @@ function dmz_activity_win(players) {
     function_fe75a89529dd0fd0(players, dmz_activity_win, undefined, undefined, dmz_activity_win_classic);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8404
 // Size: 0x44
@@ -1526,7 +1532,7 @@ function dmz_activity_lose(players) {
     function_fe75a89529dd0fd0(players, dmz_activity_lose, undefined, undefined, dmz_activity_lose_classic);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x844f
 // Size: 0x356
@@ -1537,7 +1543,7 @@ function ongameended() {
     if (!isdefined(winner) || isdefined(level.endmusicplayed)) {
         return;
     }
-    if (namespace_36f464722d326bbe::isbrstylegametype() && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "rumble_mgl") {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype() && getsubgametype() != "plunder" && getsubgametype() != "risk" && getsubgametype() != "rumble_mgl") {
         return;
     }
     if (!ismusicenabled()) {
@@ -1565,9 +1571,9 @@ function ongameended() {
                 player setsoundsubmix("mp_matchend_music", 2);
                 if (winner == player.team) {
                     player thread function_cd6fa41e597b8df0("mp_victory");
-                } else {
-                    player thread function_cd6fa41e597b8df0("mp_defeat");
+                    continue;
                 }
+                player thread function_cd6fa41e597b8df0("mp_defeat");
             }
         }
     } else {
@@ -1586,15 +1592,15 @@ function ongameended() {
             #/
             if (isstring(winner) && winner == player.team || !isstring(winner) && isdefined(winner.team) && winner.team == player.team) {
                 player thread function_cd6fa41e597b8df0("mp_victory");
-            } else {
-                player thread function_cd6fa41e597b8df0("mp_defeat");
+                continue;
             }
+            player thread function_cd6fa41e597b8df0("mp_defeat");
         }
     }
     level.endmusicplayed = 1;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87ac
 // Size: 0xb4
@@ -1607,13 +1613,13 @@ function function_9d7b08b1c2165e1(winner) {
         player setsoundsubmix("mp_matchend_music", 2);
         if (winner == player.team) {
             player thread function_cd6fa41e597b8df0("mp_victory");
-        } else {
-            player thread function_cd6fa41e597b8df0("mp_defeat");
+            continue;
         }
+        player thread function_cd6fa41e597b8df0("mp_defeat");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8867
 // Size: 0x9b
@@ -1622,15 +1628,15 @@ function midpoint_music(winning_team) {
     foreach (player in level.players) {
         if (winning_team == player.team) {
             player thread function_cd6fa41e597b8df0("mp_midpoint_winning");
-        } else {
-            player thread function_cd6fa41e597b8df0("mp_midpoint_losing");
+            continue;
         }
+        player thread function_cd6fa41e597b8df0("mp_midpoint_losing");
     }
     wait(25);
     thread suspensemusic();
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8909
 // Size: 0xce
@@ -1642,9 +1648,9 @@ function dominating_music(var_8b9b442335d5c181) {
     foreach (player in level.players) {
         if (var_8b9b442335d5c181 == player.team) {
             player thread function_cd6fa41e597b8df0("mp_dominating");
-        } else {
-            player thread function_cd6fa41e597b8df0("mp_dominated");
+            continue;
         }
+        player thread function_cd6fa41e597b8df0("mp_dominated");
     }
     level.dominating_music = 1;
     wait(25);
@@ -1652,7 +1658,7 @@ function dominating_music(var_8b9b442335d5c181) {
     thread suspensemusic();
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x89de
 // Size: 0x11a
@@ -1676,7 +1682,7 @@ function bombplanted_music() {
     level.bombplanted_music = 1;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8aff
 // Size: 0x254
@@ -1710,28 +1716,36 @@ function roundwinnerdialog() {
         leaderdialog("round_success", "allies");
         leaderdialog("round_failure", "axis");
         leaderdialog("round_failure", "team_three");
-    } else if (winner == "axis") {
+        return;
+    }
+    if (winner == "axis") {
         leaderdialog("round_success", "axis");
         leaderdialog("round_failure", "allies");
         leaderdialog("round_failure", "team_three");
-    } else if (winner == "team_three") {
+        return;
+    }
+    if (winner == "team_three") {
         leaderdialog("round_success", "team_three");
         leaderdialog("round_failure", "allies");
         leaderdialog("round_failure", "axis");
-    } else if (!var_ba1d87a61aadec55 && axisscore > alliesscore) {
+        return;
+    }
+    if (!var_ba1d87a61aadec55 && axisscore > alliesscore) {
         leaderdialog("round_success", "axis");
         leaderdialog("round_failure", "allies");
-    } else if (!var_ba1d87a61aadec55 && alliesscore > axisscore) {
+        return;
+    }
+    if (!var_ba1d87a61aadec55 && alliesscore > axisscore) {
         leaderdialog("round_success", "allies");
         leaderdialog("round_failure", "axis");
-    } else {
-        leaderdialog("round_draw", "allies");
-        leaderdialog("round_draw", "axis");
-        leaderdialog("round_draw", "team_three");
+        return;
     }
+    leaderdialog("round_draw", "allies");
+    leaderdialog("round_draw", "axis");
+    leaderdialog("round_draw", "team_three");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d5a
 // Size: 0x1e6
@@ -1744,7 +1758,7 @@ function gamewinnerdialog() {
     if (!isdefined(winner)) {
         return;
     }
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         return;
     }
     if (getdvar(@"hash_e65e9a96eb2ff62b") == "wm") {
@@ -1758,30 +1772,36 @@ function gamewinnerdialog() {
             }
             if (i < 3) {
                 player leaderdialogonplayer("mission_success");
-            } else {
-                player leaderdialogonplayer("mission_failure");
+                continue;
             }
+            player leaderdialogonplayer("mission_failure");
         }
-    } else if (winner == "allies") {
+        return;
+    }
+    if (winner == "allies") {
         leaderdialog("mission_success", "allies");
         leaderdialog("mission_failure", "axis");
         leaderdialog("mission_failure", "team_three");
-    } else if (winner == "axis") {
+        return;
+    }
+    if (winner == "axis") {
         leaderdialog("mission_success", "axis");
         leaderdialog("mission_failure", "allies");
         leaderdialog("mission_failure", "team_three");
-    } else if (winner == "team_three") {
+        return;
+    }
+    if (winner == "team_three") {
         leaderdialog("mission_success", "team_three");
         leaderdialog("mission_failure", "axis");
         leaderdialog("mission_failure", "allies");
-    } else {
-        leaderdialog("mission_draw", "axis");
-        leaderdialog("mission_draw", "allies");
-        leaderdialog("mission_draw", "team_three");
+        return;
     }
+    leaderdialog("mission_draw", "axis");
+    leaderdialog("mission_draw", "allies");
+    leaderdialog("mission_draw", "team_three");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f47
 // Size: 0x481
@@ -1829,9 +1849,9 @@ function musiccontroller() {
                             foreach (player in level.players) {
                                 if (player.team == "allies") {
                                     player thread function_cd6fa41e597b8df0("mp_round_winning");
-                                } else {
-                                    player thread function_cd6fa41e597b8df0("mp_round_losing");
+                                    continue;
                                 }
+                                player thread function_cd6fa41e597b8df0("mp_round_losing");
                             }
                         }
                         leaderdialog("winning_score", "allies");
@@ -1841,38 +1861,40 @@ function musiccontroller() {
                             foreach (player in level.players) {
                                 if (player.team == "allies") {
                                     player thread function_cd6fa41e597b8df0("mp_round_losing");
-                                } else {
-                                    player thread function_cd6fa41e597b8df0("mp_round_winning");
+                                    continue;
                                 }
+                                player thread function_cd6fa41e597b8df0("mp_round_winning");
                             }
                         }
                         leaderdialog("winning_score", "axis");
                         leaderdialog("losing_score", "allies");
                     }
                 } else {
-                    var_6dd753add7d1c236 = namespace_e8a49b70d0769b66::gethighestscoringplayer();
-                    var_15030f107e796007 = namespace_e8a49b70d0769b66::getlosingplayers();
-                    excludelist[0] = var_6dd753add7d1c236;
+                    winningplayer = scripts/mp/gamescore::gethighestscoringplayer();
+                    losingplayers = scripts/mp/gamescore::getlosingplayers();
+                    excludelist[0] = winningplayer;
                     if (ismusicenabled()) {
                         foreach (player in level.players) {
-                            if (var_6dd753add7d1c236.pers["team"] == player.team) {
+                            if (winningplayer.pers["team"] == player.team) {
                                 player thread function_cd6fa41e597b8df0("mp_round_winning");
-                            } else {
-                                player thread function_cd6fa41e597b8df0("mp_round_losing");
+                                continue;
                             }
+                            player thread function_cd6fa41e597b8df0("mp_round_losing");
                         }
                     }
-                    var_6dd753add7d1c236 leaderdialogonplayer("winning_score");
-                    leaderdialogonplayers("losing_score", var_15030f107e796007);
+                    winningplayer leaderdialogonplayer("winning_score");
+                    leaderdialogonplayers("losing_score", losingplayers);
                 }
             }
         }
-    } else if (getgametype() != "arena") {
-        function_6f9b54cea87f1c9e();
+        return;
+    }
+    if (getgametype() != "arena") {
+        clearmusicstate();
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x93cf
 // Size: 0x173
@@ -1883,10 +1905,10 @@ function matchendingsoonleaderdialog(dialog, timeleftint) {
             dialog = "timesup_ten";
         } else if (istrue(game["isLaunchChunk"])) {
             if (game["launchChunkRuleSet"] == 1 || game["launchChunkRuleSet"] == 2) {
-                return 0;
+                return false;
             }
         } else {
-            return 0;
+            return false;
         }
     }
     if (level.teambased) {
@@ -1902,12 +1924,12 @@ function matchendingsoonleaderdialog(dialog, timeleftint) {
                 players[players.size] = p;
             }
         }
-        namespace_944ddf7b8df1b0e3::leaderdialogonplayers(dialog, players);
+        scripts/mp/utility/dialog::leaderdialogonplayers(dialog, players);
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x954a
 // Size: 0xa6
@@ -1918,14 +1940,14 @@ function timelimitmusic(team) {
         foreach (player in level.players) {
             if (team == player.team) {
                 player thread function_cd6fa41e597b8df0("mp_timesup_winning");
-            } else {
-                player thread function_cd6fa41e597b8df0("mp_timesup_losing");
+                continue;
             }
+            player thread function_cd6fa41e597b8df0("mp_timesup_losing");
         }
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x95f7
 // Size: 0x65
@@ -1936,7 +1958,7 @@ function headquarters_newhq_music() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9663
 // Size: 0x84
@@ -1951,7 +1973,7 @@ function headquarters_captured_music() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x96ee
 // Size: 0xae
@@ -1963,14 +1985,14 @@ function headquarters_deactivate_music(claimteam) {
         foreach (player in level.players) {
             if (claimteam == player.team) {
                 player thread function_cd6fa41e597b8df0("mp_destroyed_pos");
-            } else {
-                player thread function_cd6fa41e597b8df0("mp_destroyed_neg");
+                continue;
             }
+            player thread function_cd6fa41e597b8df0("mp_destroyed_neg");
         }
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x97a3
 // Size: 0x8f
@@ -1979,13 +2001,13 @@ function function_de3628204e049a6d(claimteam) {
     foreach (player in level.players) {
         if (claimteam == player.team) {
             player thread function_cd6fa41e597b8df0("mp_destroyed_pos");
-        } else {
-            player thread function_cd6fa41e597b8df0("mp_destroyed_neg");
+            continue;
         }
+        player thread function_cd6fa41e597b8df0("mp_destroyed_neg");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9839
 // Size: 0x21
@@ -1994,7 +2016,7 @@ function infected_music() {
     self setplayermusicstate(infected);
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9861
 // Size: 0xf8
@@ -2028,7 +2050,7 @@ function suspensemusic(var_8c71e0347db7824d) {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9960
 // Size: 0x18
@@ -2037,18 +2059,18 @@ function suspensemusic_reset(waittime) {
     self.nosuspensemusic = undefined;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x997f
 // Size: 0x2f
 function stopsuspensemusic() {
     level notify("stop_suspense_music");
     if (isdefined(level.cursuspsensetrack) && level.cursuspsensetrack.size == 2) {
-        function_6f9b54cea87f1c9e();
+        clearmusicstate();
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99b5
 // Size: 0x23
@@ -2059,7 +2081,7 @@ function enablemusic() {
     level.musicenabled++;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x99df
 // Size: 0x48
@@ -2076,11 +2098,11 @@ function disablemusic() {
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9a2e
 // Size: 0x34b
-function round_end_music(winner, endreasontext, var_656b99fc50e799ae) {
+function round_end_music(winner, endreasontext, endreasontextloss) {
     if (isdefined(level.endmusicplayed)) {
         return;
     }
@@ -2090,53 +2112,67 @@ function round_end_music(winner, endreasontext, var_656b99fc50e799ae) {
     if (getgametype() == "xfire") {
         thread stopsuspensemusic();
         function_4f651c1e1ec8dae6(winner);
-    } else {
-        thread stopsuspensemusic();
-        if (level.halftimetype == "halftime" && level.roundlimit && game["roundsPlayed"] * 2 == level.roundlimit) {
-            setmusicstate("mus_mp_halftime");
-        } else if (level.playovertime) {
-            setmusicstate("mus_mp_halftime");
-        } else if (level.halftimetype == "halftime" && !level.roundlimit) {
-            foreach (player in level.players) {
-                if (getgametype() != "arena") {
-                    if (winner == "tie") {
-                        player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
-                    } else if (winner == player.team) {
-                        player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
-                    } else {
-                        player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
-                    }
-                } else if (winner == "tie") {
+        return;
+    }
+    thread stopsuspensemusic();
+    if (level.halftimetype == "halftime" && level.roundlimit && game["roundsPlayed"] * 2 == level.roundlimit) {
+        setmusicstate("mus_mp_halftime");
+        return;
+    }
+    if (level.playovertime) {
+        setmusicstate("mus_mp_halftime");
+        return;
+    }
+    if (level.halftimetype == "halftime" && !level.roundlimit) {
+        foreach (player in level.players) {
+            if (getgametype() != "arena") {
+                if (winner == "tie") {
                     player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
                 } else if (winner == player.team) {
                     player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
                 } else {
                     player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
                 }
+                continue;
             }
-        } else if (level.halftimetype == "halftime" && getgametype() == "dd" && !hitroundlimit()) {
-            foreach (player in level.players) {
-                if (getgametype() != "arena") {
-                    if (winner == "tie") {
-                        player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
-                    } else if (winner == player.team) {
-                        player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
-                    } else {
-                        player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
-                    }
-                } else if (winner == "tie") {
+            if (winner == "tie") {
+                player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
+                continue;
+            }
+            if (winner == player.team) {
+                player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
+                continue;
+            }
+            player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
+        }
+        return;
+    }
+    if (level.halftimetype == "halftime" && getgametype() == "dd" && !hitroundlimit()) {
+        foreach (player in level.players) {
+            if (getgametype() != "arena") {
+                if (winner == "tie") {
                     player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
                 } else if (winner == player.team) {
                     player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
                 } else {
                     player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
                 }
+                continue;
             }
+            if (winner == "tie") {
+                player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
+                continue;
+            }
+            if (winner == player.team) {
+                player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
+                continue;
+            }
+            player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
         }
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d80
 // Size: 0xc0
@@ -2145,15 +2181,17 @@ function function_4f651c1e1ec8dae6(winner) {
     foreach (player in level.players) {
         if (winner == "tie") {
             player thread function_cd6fa41e597b8df0("mp_round_draw_" + getarenaroundendmusictype());
-        } else if (winner == player.team) {
-            player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
-        } else {
-            player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
+            continue;
         }
+        if (winner == player.team) {
+            player thread function_cd6fa41e597b8df0("mp_round_win_" + getarenaroundendmusictype());
+            continue;
+        }
+        player thread function_cd6fa41e597b8df0("mp_round_loss_" + getarenaroundendmusictype());
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e47
 // Size: 0xc9
@@ -2163,69 +2201,69 @@ function function_6c71c8bc6495a0df(generic) {
         foreach (player in level.players) {
             player thread function_cd6fa41e597b8df0("mp_overtime");
         }
-    } else {
-        foreach (player in level.players) {
-            player thread function_cd6fa41e597b8df0("mp_overtime");
-        }
+        return;
+    }
+    foreach (player in level.players) {
+        player thread function_cd6fa41e597b8df0("mp_overtime");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f17
 // Size: 0xe1
 function getarenaroundendmusictype() {
-    var_dc1f442c2a011890 = "early";
-    var_2a558c1bc57f2d69 = 0;
+    musictype = "early";
+    mostroundswon = 0;
     foreach (entry in level.teamnamelist) {
         roundswon = game["roundsWon"][entry];
-        if (roundswon > var_2a558c1bc57f2d69) {
-            var_2a558c1bc57f2d69 = roundswon;
+        if (roundswon > mostroundswon) {
+            mostroundswon = roundswon;
         }
     }
-    if (var_2a558c1bc57f2d69 > 0) {
-        perc = var_2a558c1bc57f2d69 / level.winlimit;
+    if (mostroundswon > 0) {
+        perc = mostroundswon / level.winlimit;
         if (perc <= 0.34) {
-            var_dc1f442c2a011890 = "early";
+            musictype = "early";
         } else if (perc >= 0.34 && perc <= 0.67) {
-            var_dc1f442c2a011890 = "mid";
+            musictype = "mid";
         } else {
-            var_dc1f442c2a011890 = "late";
+            musictype = "late";
         }
     }
-    return var_dc1f442c2a011890;
+    return musictype;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa000
 // Size: 0xb3
 function function_aecafe54c65c0e35(players) {
-    players = function_53c4c53197386572(players, level.players);
-    var_5e2fbd511e678760 = [];
+    players = default_to(players, level.players);
+    br_players = [];
     if (isarray(players)) {
         foreach (player in players) {
-            var_de14d878883d4c57 = player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag();
+            var_de14d878883d4c57 = player scripts/mp/gametypes/br_public::isplayerinorgoingtogulag();
             if (isplayer(player) && !isagent(player) && !isbot(player) && !var_de14d878883d4c57) {
-                var_5e2fbd511e678760[var_5e2fbd511e678760.size] = player;
+                br_players[br_players.size] = player;
             }
         }
     }
-    return var_5e2fbd511e678760;
+    return br_players;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0bb
 // Size: 0x313
-function function_a486df26072a530a(circleindex, var_35157f8df527ffad, var_2948ca54731de34f) {
+function function_a486df26072a530a(circleindex, circletotal, var_2948ca54731de34f) {
     level endon("game_ended");
-    var_2948ca54731de34f = function_53c4c53197386572(var_2948ca54731de34f, 0.05);
+    var_2948ca54731de34f = default_to(var_2948ca54731de34f, 0.05);
     /#
         assert(isnumber(circleindex));
     #/
     /#
-        assert(isnumber(var_35157f8df527ffad));
+        assert(isnumber(circletotal));
     #/
     if (isstruct(level.br_circle)) {
         if (isnumber(level.br_circle.var_da6c0f6a12518740) && level.br_circle.var_da6c0f6a12518740 == circleindex) {
@@ -2234,26 +2272,26 @@ function function_a486df26072a530a(circleindex, var_35157f8df527ffad, var_2948ca
             level.br_circle.var_da6c0f6a12518740 = circleindex;
         }
     }
-    var_272b0ee396e8a69a = int(var_35157f8df527ffad - 1);
+    var_272b0ee396e8a69a = int(circletotal - 1);
     var_1b32fded15194cc7 = var_272b0ee396e8a69a / 3;
     var_3494d23f34a9dac = int(floor(var_1b32fded15194cc7));
     var_61d4cf0c14f1b38f = int(var_3494d23f34a9dac * 3);
     var_695acfe00695da06 = int(max(0, var_272b0ee396e8a69a - var_61d4cf0c14f1b38f));
-    var_1de6c353a6694763 = int(var_3494d23f34a9dac) - 1;
-    var_138f041ff5d8fecb = int(var_3494d23f34a9dac * 2 + var_695acfe00695da06) - 1;
-    var_d9ec05fdc8a389a7 = int(var_3494d23f34a9dac * 3);
-    finalindex = int(max(1, var_35157f8df527ffad - 1));
+    lowindex = int(var_3494d23f34a9dac) - 1;
+    medindex = int(var_3494d23f34a9dac * 2 + var_695acfe00695da06) - 1;
+    highindex = int(var_3494d23f34a9dac * 3);
+    finalindex = int(max(1, circletotal - 1));
     waittime = max(0.05, var_2948ca54731de34f);
     wait(waittime);
     var_d7a79f6b50712f98 = "";
     var_96dd8ab6925778d3 = "";
-    if (circleindex <= var_1de6c353a6694763) {
+    if (circleindex <= lowindex) {
         var_d7a79f6b50712f98 = function_17ee301cf0b5ba85("br_ring_low");
         var_96dd8ab6925778d3 = function_17ee301cf0b5ba85("br_ring_low_classic");
-    } else if (circleindex <= var_138f041ff5d8fecb) {
+    } else if (circleindex <= medindex) {
         var_d7a79f6b50712f98 = function_17ee301cf0b5ba85("br_ring_med");
         var_96dd8ab6925778d3 = function_17ee301cf0b5ba85("br_ring_med_classic");
-    } else if (circleindex <= var_d9ec05fdc8a389a7) {
+    } else if (circleindex <= highindex) {
         var_d7a79f6b50712f98 = function_17ee301cf0b5ba85("br_ring_high");
         var_96dd8ab6925778d3 = function_17ee301cf0b5ba85("br_ring_high_classic");
     } else if (circleindex == finalindex) {
@@ -2275,7 +2313,7 @@ function function_a486df26072a530a(circleindex, var_35157f8df527ffad, var_2948ca
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3d5
 // Size: 0xb
@@ -2283,7 +2321,7 @@ function plunder_tenpercent_music() {
     level notify("stop_suspense_music");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3e7
 // Size: 0x84
@@ -2292,17 +2330,17 @@ function plunder_thirtypercent_music() {
     if (isdefined(level.thirtypercent_music) && level.thirtypercent_music == 1) {
         return;
     }
-    if (namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
+    if (scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf()) {
         return;
     }
     level notify("stop_suspense_music");
     var_17c8d9e220164807 = game["music"]["plunder_tenpercent"].size;
-    var_dcc499c9734611f8 = randomint(var_17c8d9e220164807);
-    setmusicstate(game["music"]["plunder_tenpercent"][var_dcc499c9734611f8]);
+    tracknum = randomint(var_17c8d9e220164807);
+    setmusicstate(game["music"]["plunder_tenpercent"][tracknum]);
     level.thirtypercent_music = 1;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa472
 // Size: 0x8d
@@ -2311,17 +2349,17 @@ function plunder_fiftypercent_music(team) {
     if (isdefined(level.fiftypercent_music) && level.fiftypercent_music == 1) {
         return;
     }
-    if (namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
+    if (scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf()) {
         return;
     }
     var_17c8d9e220164807 = game["music"]["plunder_thirtypercent"].size;
-    var_dcc499c9734611f8 = randomint(var_17c8d9e220164807);
-    setmusicstate(game["music"]["plunder_thirtypercent"][var_dcc499c9734611f8]);
+    tracknum = randomint(var_17c8d9e220164807);
+    setmusicstate(game["music"]["plunder_thirtypercent"][tracknum]);
     level.fiftypercent_music = 1;
     level notify("fiftypercent_music");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa506
 // Size: 0x8d
@@ -2330,17 +2368,17 @@ function plunder_seventyfivepercent_music(team) {
     if (isdefined(level.seventyfivepercent_music) && level.seventyfivepercent_music == 1) {
         return;
     }
-    if (namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
+    if (scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf()) {
         return;
     }
     var_17c8d9e220164807 = game["music"]["plunder_fiftypercent"].size;
-    var_dcc499c9734611f8 = randomint(var_17c8d9e220164807);
-    setmusicstate(game["music"]["plunder_fiftypercent"][var_dcc499c9734611f8]);
+    tracknum = randomint(var_17c8d9e220164807);
+    setmusicstate(game["music"]["plunder_fiftypercent"][tracknum]);
     level.seventyfivepercent_music = 1;
     level notify("seventyfivepercent_music");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa59a
 // Size: 0x86
@@ -2348,17 +2386,17 @@ function plunder_ninetypercent_music(team) {
     if (isdefined(level.ninetypercent_music) && level.ninetypercent_music == 1) {
         return;
     }
-    if (namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
+    if (scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf()) {
         return;
     }
     var_17c8d9e220164807 = game["music"]["plunder_seventyfivepercent"].size;
-    var_dcc499c9734611f8 = randomint(var_17c8d9e220164807);
-    setmusicstate(game["music"]["plunder_seventyfivepercent"][var_dcc499c9734611f8]);
+    tracknum = randomint(var_17c8d9e220164807);
+    setmusicstate(game["music"]["plunder_seventyfivepercent"][tracknum]);
     level.ninetypercent_music = 1;
     level notify("ninetypercent_music");
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa627
 // Size: 0x75
@@ -2366,16 +2404,16 @@ function plunder_overtime_music() {
     if (isdefined(level.overtime_music) && level.overtime_music == 1) {
         return;
     }
-    if (namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
+    if (scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf()) {
         return;
     }
     var_17c8d9e220164807 = game["music"]["plunder_ninetypercent"].size;
-    var_dcc499c9734611f8 = randomint(var_17c8d9e220164807);
-    setmusicstate(game["music"]["plunder_ninetypercent"][var_dcc499c9734611f8]);
+    tracknum = randomint(var_17c8d9e220164807);
+    setmusicstate(game["music"]["plunder_ninetypercent"][tracknum]);
     level.overtime_music = 1;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa6a3
 // Size: 0x31
@@ -2387,18 +2425,18 @@ function function_283a36147406b42f() {
     level.overtime_music = 1;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa6db
 // Size: 0x27
 function function_c080ebbcdcc3176f() {
-    if (!isdefined(self.var_43653d344aa392af)) {
-        self.var_43653d344aa392af = 1;
+    if (!isdefined(self.warp_music)) {
+        self.warp_music = 1;
         self setplayermusicstate("iw9_mp_dmz_biobunker_enter");
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa709
 // Size: 0xe
@@ -2406,7 +2444,7 @@ function ismusicenabled() {
     return level.musicenabled > 0;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa71f
 // Size: 0x35f
@@ -2414,92 +2452,92 @@ function function_535120141f535b49() {
     self endon("disconnect");
     level endon("game_ended");
     stopsuspensemusic();
-    if (!isdefined(self.var_8ec3c32833063aaa)) {
-        self.var_8ec3c32833063aaa = 0;
+    if (!isdefined(self.music_value)) {
+        self.music_value = 0;
     }
     if (!isdefined(self.var_33ed4a0a9ccd0f0a)) {
         self.var_33ed4a0a9ccd0f0a = 0;
     }
-    if (!isdefined(self.var_e37dad9b93dae844)) {
-        self.var_e37dad9b93dae844 = 0;
+    if (!isdefined(self.music_time)) {
+        self.music_time = 0;
     }
-    while (1) {
-        var_65c6ed2a9e69239a = self.var_8ec3c32833063aaa - self.var_33ed4a0a9ccd0f0a;
-        if (self.var_8ec3c32833063aaa >= 0) {
-            self.var_33ed4a0a9ccd0f0a = self.var_8ec3c32833063aaa;
+    while (true) {
+        music_diff = self.music_value - self.var_33ed4a0a9ccd0f0a;
+        if (self.music_value >= 0) {
+            self.var_33ed4a0a9ccd0f0a = self.music_value;
         }
-        iprintln("current music diff is " + var_65c6ed2a9e69239a);
-        if (var_65c6ed2a9e69239a > 0) {
-            if (var_65c6ed2a9e69239a > 1 && var_65c6ed2a9e69239a < 6) {
-                if (!isdefined(self.var_cf8537c71bfa2021)) {
+        iprintln("current music diff is " + music_diff);
+        if (music_diff > 0) {
+            if (music_diff > 1 && music_diff < 6) {
+                if (!isdefined(self.music_low)) {
                     thread function_32e2796e3dbf61ac();
                 }
-            } else if (var_65c6ed2a9e69239a >= 6 && var_65c6ed2a9e69239a <= 15) {
-                if (!isdefined(self.var_c369f1c713faff19)) {
+            } else if (music_diff >= 6 && music_diff <= 15) {
+                if (!isdefined(self.music_med)) {
                     thread function_3f789f6e464550d8();
                 }
-            } else if (var_65c6ed2a9e69239a > 15) {
-                if (!isdefined(self.var_992116460039917d)) {
+            } else if (music_diff > 15) {
+                if (!isdefined(self.music_high)) {
                     thread function_ee789bca4d90f206();
                 }
             }
         }
-        if (var_65c6ed2a9e69239a < 0) {
-            if (var_65c6ed2a9e69239a <= -5 && var_65c6ed2a9e69239a > -10) {
-                if (isdefined(self.var_c369f1c713faff19) || isdefined(self.var_992116460039917d) || isdefined(self.var_cf8537c71bfa2021)) {
+        if (music_diff < 0) {
+            if (music_diff <= -5 && music_diff > -10) {
+                if (isdefined(self.music_med) || isdefined(self.music_high) || isdefined(self.music_low)) {
                     self setsoundsubmix("iw9_mp_musictest_fadeout", 4);
                     self notify("clear_music_low");
                     self notify("clear_music_med");
                     self notify("clear_music_high");
-                    self.var_cf8537c71bfa2021 = undefined;
-                    self.var_992116460039917d = undefined;
-                    self.var_c369f1c713faff19 = undefined;
-                    wait(self.var_e37dad9b93dae844 + 10);
-                    if (self.var_8ec3c32833063aaa >= 0) {
-                        self.var_33ed4a0a9ccd0f0a = self.var_8ec3c32833063aaa;
+                    self.music_low = undefined;
+                    self.music_high = undefined;
+                    self.music_med = undefined;
+                    wait(self.music_time + 10);
+                    if (self.music_value >= 0) {
+                        self.var_33ed4a0a9ccd0f0a = self.music_value;
                     }
                     self stoplocalsound("mus_iw9_mpmusictest_ambient1_intro");
                     self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
                 }
-            } else if (var_65c6ed2a9e69239a < -10) {
-                if (isdefined(self.var_c369f1c713faff19) || isdefined(self.var_992116460039917d)) {
+            } else if (music_diff < -10) {
+                if (isdefined(self.music_med) || isdefined(self.music_high)) {
                     self playlocalsound("mus_iw9_mpmusictest_hit1_intro");
                 }
-                if (isdefined(self.var_c369f1c713faff19) || isdefined(self.var_992116460039917d) || isdefined(self.var_cf8537c71bfa2021)) {
+                if (isdefined(self.music_med) || isdefined(self.music_high) || isdefined(self.music_low)) {
                     self setsoundsubmix("iw9_mp_musictest_fadeout", 2);
                     self notify("clear_music_low");
                     self notify("clear_music_med");
                     self notify("clear_music_high");
-                    self.var_cf8537c71bfa2021 = undefined;
-                    self.var_992116460039917d = undefined;
-                    self.var_c369f1c713faff19 = undefined;
-                    wait(self.var_e37dad9b93dae844 + 10);
-                    if (self.var_8ec3c32833063aaa >= 0) {
-                        self.var_33ed4a0a9ccd0f0a = self.var_8ec3c32833063aaa;
+                    self.music_low = undefined;
+                    self.music_high = undefined;
+                    self.music_med = undefined;
+                    wait(self.music_time + 10);
+                    if (self.music_value >= 0) {
+                        self.var_33ed4a0a9ccd0f0a = self.music_value;
                     }
                     self stoplocalsound("mus_iw9_mpmusictest_ambient1_intro");
                     self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
                 }
             }
         }
-        if (self.var_8ec3c32833063aaa >= 0) {
-            self.var_8ec3c32833063aaa = self.var_8ec3c32833063aaa - 0.5;
+        if (self.music_value >= 0) {
+            self.music_value = self.music_value - 0.5;
         }
-        if (self.var_8ec3c32833063aaa < 0) {
-            self.var_8ec3c32833063aaa = 0;
+        if (self.music_value < 0) {
+            self.music_value = 0;
         }
-        iprintln("current music value is " + self.var_8ec3c32833063aaa);
+        iprintln("current music value is " + self.music_value);
         wait(2);
-        if (self.var_e37dad9b93dae844 > 0) {
-            self.var_e37dad9b93dae844 = self.var_e37dad9b93dae844 - 2;
-            if (self.var_e37dad9b93dae844 < 0) {
-                self.var_e37dad9b93dae844 = 0;
+        if (self.music_time > 0) {
+            self.music_time = self.music_time - 2;
+            if (self.music_time < 0) {
+                self.music_time = 0;
             }
         }
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaa85
 // Size: 0x71
@@ -2507,18 +2545,18 @@ function function_32e2796e3dbf61ac() {
     self endon("disconnect");
     self endon("clear_music_low");
     level endon("game_ended");
-    if (!isdefined(self.var_cf8537c71bfa2021)) {
-        self.var_cf8537c71bfa2021 = 1;
+    if (!isdefined(self.music_low)) {
+        self.music_low = 1;
         self playlocalsound("mus_iw9_mpmusictest_ambient1_intro");
         iprintln("adding low music");
-        self.var_e37dad9b93dae844 = 25;
-        wait(self.var_e37dad9b93dae844);
+        self.music_time = 25;
+        wait(self.music_time);
         iprintln("low music state cleared");
-        self.var_cf8537c71bfa2021 = undefined;
+        self.music_low = undefined;
     }
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaafd
 // Size: 0x123
@@ -2526,34 +2564,34 @@ function function_3f789f6e464550d8() {
     self endon("disconnect");
     self endon("clear_music_med");
     level endon("game_ended");
-    if (isdefined(self.var_992116460039917d)) {
-        self.var_992116460039917d = 1;
-        self.var_c369f1c713faff19 = 1;
+    if (isdefined(self.music_high)) {
+        self.music_high = 1;
+        self.music_med = 1;
         self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
         self setplayermusicstate("");
         self notify("clear_music_high");
         iprintln("adding med music");
-        self.var_e37dad9b93dae844 = 21;
-        wait(self.var_e37dad9b93dae844);
+        self.music_time = 21;
+        wait(self.music_time);
         iprintln("music states cleared");
-        self.var_992116460039917d = undefined;
-        self.var_c369f1c713faff19 = undefined;
-    } else {
-        self.var_c369f1c713faff19 = 1;
-        self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
-        self setplayermusicstate("iw9_mpmusictest_perc1");
-        iprintln("adding med music");
-        self.var_e37dad9b93dae844 = 21;
-        wait(self.var_e37dad9b93dae844 - 2);
-        self setsoundsubmix("iw9_mp_musictest_fadeout", 2);
-        self stopplayermusicstate("iw9_mpmusictest_perc1");
-        wait(self.var_e37dad9b93dae844 + 2);
-        iprintln("med music state cleared");
-        self.var_c369f1c713faff19 = undefined;
+        self.music_high = undefined;
+        self.music_med = undefined;
+        return;
     }
+    self.music_med = 1;
+    self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
+    self setplayermusicstate("iw9_mpmusictest_perc1");
+    iprintln("adding med music");
+    self.music_time = 21;
+    wait(self.music_time - 2);
+    self setsoundsubmix("iw9_mp_musictest_fadeout", 2);
+    self stopplayermusicstate("iw9_mpmusictest_perc1");
+    wait(self.music_time + 2);
+    iprintln("med music state cleared");
+    self.music_med = undefined;
 }
 
-// Namespace namespace_f5af6f6fc1dbd6b7/namespace_3bde6869e44a2770
+// Namespace namespace_f5af6f6fc1dbd6b7 / scripts/mp/music_and_dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xac27
 // Size: 0x126
@@ -2561,30 +2599,30 @@ function function_ee789bca4d90f206() {
     self endon("disconnect");
     self endon("clear_music_high");
     level endon("game_ended");
-    if (isdefined(self.var_c369f1c713faff19)) {
-        self.var_992116460039917d = 1;
-        self.var_c369f1c713faff19 = 1;
+    if (isdefined(self.music_med)) {
+        self.music_high = 1;
+        self.music_med = 1;
         self setplayermusicstate("");
         self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
         self notify("clear_music_med");
         iprintln("adding high music");
-        self.var_e37dad9b93dae844 = 31;
-        wait(self.var_e37dad9b93dae844);
+        self.music_time = 31;
+        wait(self.music_time);
         iprintln("music states cleared");
-        self.var_992116460039917d = undefined;
-        self.var_c369f1c713faff19 = undefined;
-    } else {
-        self.var_992116460039917d = 1;
-        self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
-        self setplayermusicstate("iw9_mpmusictest_bass1");
-        iprintln("adding high music");
-        self.var_e37dad9b93dae844 = 30.5;
-        wait(self.var_e37dad9b93dae844 - 2);
-        self setsoundsubmix("iw9_mp_musictest_fadeout", 2);
-        self stopplayermusicstate("iw9_mpmusictest_bass1");
-        wait(self.var_e37dad9b93dae844 + 2);
-        iprintln("high music state cleared");
-        self.var_992116460039917d = undefined;
+        self.music_high = undefined;
+        self.music_med = undefined;
+        return;
     }
+    self.music_high = 1;
+    self clearsoundsubmix("iw9_mp_musictest_fadeout", 2);
+    self setplayermusicstate("iw9_mpmusictest_bass1");
+    iprintln("adding high music");
+    self.music_time = 30.5;
+    wait(self.music_time - 2);
+    self setsoundsubmix("iw9_mp_musictest_fadeout", 2);
+    self stopplayermusicstate("iw9_mpmusictest_bass1");
+    wait(self.music_time + 2);
+    iprintln("high music state cleared");
+    self.music_high = undefined;
 }
 

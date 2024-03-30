@@ -5,7 +5,7 @@
 
 #namespace vehicle_compass;
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x220
 // Size: 0x39
@@ -15,7 +15,7 @@ function vehicle_compass_registerinstance(vehicle) {
     vehicle_compass_show(vehicle);
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x260
 // Size: 0x2f
@@ -24,7 +24,7 @@ function vehicle_compass_deregisterinstance(vehicle) {
     leveldata.instances[vehicle getentitynumber()] = undefined;
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x296
 // Size: 0x48
@@ -33,7 +33,7 @@ function vehicle_compass_instanceisregistered(vehicle) {
     return isdefined(leveldata.instances[vehicle getentitynumber()]) && leveldata.instances[vehicle getentitynumber()] == vehicle;
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e6
 // Size: 0x81
@@ -55,12 +55,12 @@ function vehicle_compass_updatevisibilityforplayer(vehicle, player, var_6ecb77fd
     }
     if (!vehicle_compass_shouldbevisibletoplayer(vehicle, player)) {
         vehicle vehicleshowonminimapforclient(player, 0);
-    } else {
-        vehicle vehicleshowonminimapforclient(player, 1);
+        return;
     }
+    vehicle vehicleshowonminimapforclient(player, 1);
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36e
 // Size: 0xa8
@@ -82,7 +82,7 @@ function vehicle_compass_updatevisibilityforallplayers(vehicle, var_6ecb77fd1f27
     }
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41d
 // Size: 0x85
@@ -96,21 +96,21 @@ function vehicle_compass_updateallvisibilityforplayer(player) {
     }
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a9
 // Size: 0x4f
 function vehicle_compass_shouldbevisibletoplayer(vehicle, player) {
     if (issharedfuncdefined("vehicle_compass", "shouldBeVisibleToPlayer")) {
-        shouldbevisibletoplayer = [[ getsharedfunc("vehicle_compass", "shouldBeVisibleToPlayer") ]](vehicle, player);
-        if (isdefined(shouldbevisibletoplayer)) {
-            return shouldbevisibletoplayer;
+        shouldBeVisibleToPlayer = [[ getsharedfunc("vehicle_compass", "shouldBeVisibleToPlayer") ]](vehicle, player);
+        if (isdefined(shouldBeVisibleToPlayer)) {
+            return shouldBeVisibleToPlayer;
         }
     }
     return 1;
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x500
 // Size: 0x81
@@ -121,15 +121,15 @@ function vehicle_compass_show(vehicle) {
     }
     if (isdefined(leveldata.instances[vehicle getentitynumber()])) {
         if (level.teambased) {
-            vehicle_compass_setteamfriendlyto(vehicle, namespace_1fbd40990ee60ede::vehicle_occupancy_getteamfriendlyto(vehicle));
+            vehicle_compass_setteamfriendlyto(vehicle, scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_getteamfriendlyto(vehicle));
         } else {
-            vehicle_compass_setplayerfriendlyto(vehicle, namespace_1fbd40990ee60ede::vehicle_occupancy_getplayerfriendlyto(vehicle));
+            vehicle_compass_setplayerfriendlyto(vehicle, scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_getplayerfriendlyto(vehicle));
         }
         vehicle_compass_updatevisibilityforallplayers(vehicle, 1);
     }
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x588
 // Size: 0x45
@@ -141,7 +141,7 @@ function vehicle_compass_hide(vehicle) {
     }
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d4
 // Size: 0xb8
@@ -157,7 +157,7 @@ function vehicle_compass_setteamfriendlyto(vehicle, team) {
     vehicle setvehicleteam(team);
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x693
 // Size: 0x1c
@@ -165,7 +165,7 @@ function vehicle_compass_setplayerfriendlyto(vehicle, player) {
     vehicle setentityowner(undefined);
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b6
 // Size: 0xec
@@ -189,7 +189,7 @@ function vehicle_compass_init() {
     }
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a9
 // Size: 0x38
@@ -200,7 +200,7 @@ function vehicle_compass_getleveldata() {
     return level.vehicle.compass;
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7e9
 // Size: 0x91
@@ -218,7 +218,7 @@ function vehicle_compass_friendlystatuschangedcallback(vehicle, var_965ea26e6eb2
     vehicle_compass_updatevisibilityforallplayers(vehicle);
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x881
 // Size: 0x21
@@ -229,7 +229,7 @@ function vehicle_compass_playerjoinedteamcallback(player) {
     vehicle_compass_updateallvisibilityforplayer(player);
 }
 
-// Namespace vehicle_compass/namespace_2a495135d56d95b7
+// Namespace vehicle_compass / scripts/cp_mp/vehicles/vehicle_compass
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8a9
 // Size: 0xb

@@ -20,21 +20,21 @@
 
 #namespace namespace_d43d1f9fd65a2d2c;
 
-// Namespace namespace_d43d1f9fd65a2d2c/namespace_c6f145eb7c1cd71f
+// Namespace namespace_d43d1f9fd65a2d2c / namespace_c6f145eb7c1cd71f
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x112
 // Size: 0x2a
 function init() {
-    namespace_58a74e7d54b56e8d::registerkillstreak("cluster_spike", &namespace_39febbb7a6990e45::function_4d4dfa5c57455df0);
-    namespace_3c37cb17ade254d::registersharedfunc("cluster_spike", "attachXRays", &function_d0f5e3c6e6080d5d);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("cluster_spike", &namespace_39febbb7a6990e45::function_4d4dfa5c57455df0);
+    scripts/engine/utility::registersharedfunc("cluster_spike", "attachXRays", &function_d0f5e3c6e6080d5d);
 }
 
-// Namespace namespace_d43d1f9fd65a2d2c/namespace_c6f145eb7c1cd71f
+// Namespace namespace_d43d1f9fd65a2d2c / namespace_c6f145eb7c1cd71f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x143
 // Size: 0x21
-function function_d0f5e3c6e6080d5d(var_a051766a1ec54371) {
-    var_a051766a1ec54371 function_5226227bce83ebe9(3, var_a051766a1ec54371.team);
-    return var_a051766a1ec54371;
+function function_d0f5e3c6e6080d5d(clusterspike) {
+    clusterspike function_5226227bce83ebe9(3, clusterspike.team);
+    return clusterspike;
 }
 

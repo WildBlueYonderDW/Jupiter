@@ -11,10 +11,10 @@
 #using scripts\mp\utility\teams.gsc;
 #using scripts\mp\gametypes\common.gsc;
 #using script_48814951e916af89;
-#using script_120270bd0a747a35;
+#using scripts\mp\ai_behavior.gsc;
 #using scripts\mp\globallogic.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
-#using script_26508f2de04c7a52;
+#using scripts\mp\gametypes\mgl_mp.gsc;
 #using scripts\mp\gameobjects.gsc;
 #using scripts\mp\gametypes\obj_dom.gsc;
 #using scripts\mp\gametypes\bradley_spawner.gsc;
@@ -36,7 +36,7 @@
 
 #namespace dom;
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd49
 // Size: 0x4b0
@@ -44,20 +44,20 @@ function main() {
     if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
         return;
     }
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
-    level.usestrongholdhills = dvarintvalue("useStrongholdHills", 0, 0, 1);
-    if (level.usestrongholdhills) {
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
+    level.useStrongholdHills = dvarintvalue("useStrongholdHills", 0, 0, 1);
+    if (level.useStrongholdHills) {
         allowed[0] = "hardpoint";
-    } else if (namespace_36f464722d326bbe::function_2d79a7a3b91c4c3e()) {
-        allowed = namespace_afbc0aa1b551667a::function_4248416fffb4c5b3();
+    } else if (scripts/cp_mp/utility/game_utility::function_2d79a7a3b91c4c3e()) {
+        allowed = scripts/mp/gametypes/mgl_mp::function_4248416fffb4c5b3();
     } else {
         allowed[0] = getgametype();
     }
-    if (namespace_36f464722d326bbe::function_21322da268e71c19() || issubstr(getgametype(), "snipers")) {
-        allowed[0] = namespace_cd0b2d039510b38d::function_60bf8d82001fc22c();
+    if (scripts/cp_mp/utility/game_utility::function_21322da268e71c19() || issubstr(getgametype(), "snipers")) {
+        allowed[0] = scripts/mp/utility/game::getbasegametype();
     }
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -85,13 +85,13 @@ function main() {
     if (isdefined(level.numflagsscoreonkill) && level.numflagsscoreonkill > 0) {
         level.teamscoresonkill = [];
         level.onnormaldeath = &onnormaldeath;
-        setdynamicdvar(function_2ef675c13ca1c4af(@"hash_39365bfde3c7d1c4"), 1);
+        setdynamicdvar(hashcat(@"hash_39365bfde3c7d1c4"), 1);
     }
-    level.domflag_setneutral = &namespace_98b55913d2326ac8::domflag_setneutral;
-    level.dompoint_setcaptured = &namespace_98b55913d2326ac8::dompoint_setcaptured;
+    level.domflag_setneutral = &scripts/mp/gametypes/obj_dom::domflag_setneutral;
+    level.dompoint_setcaptured = &scripts/mp/gametypes/obj_dom::dompoint_setcaptured;
     level.onflagcapture = &onflagcapture;
     level.playholdtwovo = 0;
-    if (namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         game["dialog"]["gametype"] = "dx_mp_domi_game_uktl_dnt1";
     } else {
         game["dialog"]["gametype"] = "dx_mp_domi_game_uktl_name";
@@ -125,12 +125,12 @@ function main() {
     game["dialog"]["friendly_scoring"] = "iw9_mpgm_anno_uktl_hofs";
     game["dialog"]["enemy_scoring"] = "iw9_mpgm_anno_uktl_hoes";
     function_2776ced2d74c6681();
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
-        namespace_afbc0aa1b551667a::function_8c9c24a50231b1f9();
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
+        scripts/mp/gametypes/mgl_mp::function_8c9c24a50231b1f9();
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1200
 // Size: 0x25c
@@ -138,7 +138,7 @@ function function_2776ced2d74c6681() {
     if (!getdvarint(@"hash_708473a41b11b061", 0)) {
         return;
     }
-    if (namespace_36f464722d326bbe::function_21322da268e71c19()) {
+    if (scripts/cp_mp/utility/game_utility::function_21322da268e71c19()) {
         game["dialog"]["gametype"] = "dx_mp_domh_mode_t141_name";
     } else {
         game["dialog"]["gametype"] = "dx_mp_domi_game_uktl_name";
@@ -173,7 +173,7 @@ function function_2776ced2d74c6681() {
     game["dialog"]["enemy_scoring"] = "dx_mp_gmst_anno_t141_gslc";
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1463
 // Size: 0x287
@@ -202,7 +202,7 @@ function initializematchrules() {
     registerhalftimedvar("dom", 0);
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16f1
 // Size: 0x81
@@ -214,11 +214,11 @@ function seticonnames() {
     level.iconcontested = "waypoint_contested";
     level.icontaking = "waypoint_taking";
     level.iconlosing = "waypoint_losing";
-    level.var_88e61386ef037aaf = "waypoint_clearing";
+    level.iconclearing = "waypoint_clearing";
     level.var_a58e0495b821276 = "waypoint_reinforcing";
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1779
 // Size: 0x1af
@@ -258,10 +258,10 @@ function onstartgametype() {
         thread removedompoint();
         thread placedompoint();
     #/
-    namespace_662734e7fa8a8b94::inittankspawns();
+    scripts/mp/gametypes/bradley_spawner::inittankspawns();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x192f
 // Size: 0x28
@@ -271,50 +271,50 @@ function private function_952bd6e10104d8a() {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x195e
 // Size: 0x1e6
 function updategametypedvars() {
     updatecommongametypedvars();
     level.flagcapturetime = dvarfloatvalue("flagCaptureTime", 10, 0, 30);
-    level.flagdecaytime = dvarfloatvalue("flagDecayTime", 0, 0, 30);
-    level.flagmodelhidden = dvarintvalue("flagModelHidden", 0, 0, 1);
+    level.flagDecayTime = dvarfloatvalue("flagDecayTime", 0, 0, 30);
+    level.flagModelHidden = dvarintvalue("flagModelHidden", 0, 0, 1);
     level.flagneutralization = dvarintvalue("flagNeutralization", 0, 0, 1);
-    level.flagreinforcement = dvarintvalue("flagReinforcement", 0, 0, 1);
+    level.flagReinforcement = dvarintvalue("flagReinforcement", 0, 0, 1);
     level.flagsrequiredtoscore = dvarintvalue("flagsRequiredToScore", 1, 1, 3);
     level.numflagsscoreonkill = dvarintvalue("numFlagsScoreOnKill", 0, 0, 3);
     level.objectivescaler = dvarfloatvalue("objScalar", 4, 1, 10);
     level.pointsperflag = dvarintvalue("pointsPerFlag", 1, 1, 300);
-    level.pointsperreinforcedflag = dvarintvalue("pointsPerReinforcedFlag", 0, 0, 300);
-    level.reinforcementstompscalar = dvarfloatvalue("reinforcementStompScalar", 1, 1, 10);
-    level.shufflehillroundcount = dvarintvalue("shuffleHillRoundCount", 2, 0, 10);
-    level.strongholdscoreallcapincrement = dvarintvalue("strongholdScoreAllCapIncrement", 2, 2, 10);
-    level.strongholdscoreincrement = dvarintvalue("strongholdScoreIncrement", 1, 1, 5);
-    level.strongholdscoreinterval = dvarfloatvalue("strongholdScoreInterval", 1, 1, 10);
-    level.usestrongholdscoring = dvarintvalue("useStrongholdScoring", 0, 0, 1);
+    level.pointsPerReinforcedFlag = dvarintvalue("pointsPerReinforcedFlag", 0, 0, 300);
+    level.reinforcementStompScalar = dvarfloatvalue("reinforcementStompScalar", 1, 1, 10);
+    level.shuffleHillRoundCount = dvarintvalue("shuffleHillRoundCount", 2, 0, 10);
+    level.strongholdScoreAllCapIncrement = dvarintvalue("strongholdScoreAllCapIncrement", 2, 2, 10);
+    level.strongholdScoreIncrement = dvarintvalue("strongholdScoreIncrement", 1, 1, 5);
+    level.strongholdScoreInterval = dvarfloatvalue("strongholdScoreInterval", 1, 1, 10);
+    level.useStrongholdScoring = dvarintvalue("useStrongholdScoring", 0, 0, 1);
     level.precappoints = dvarintvalue("preCapPoints", 0, 0, 1);
     level.capturetype = dvarintvalue("captureType", 1, 0, 3);
     level.capturedecay = dvarintvalue("captureDecay", 1, 0, 1);
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b4b
 // Size: 0x268
 function initspawns() {
     if (function_bff229a11ecd1e34()) {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic(#"default");
-    } else if (isdefined(namespace_36f464722d326bbe::getlocaleid())) {
+        scripts/mp/spawnlogic::setactivespawnlogic(#"default");
+    } else if (isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
         spawnlogic::setactivespawnlogic("BigTDM", "Crit_Default");
     } else {
         spawnlogic::setactivespawnlogic("Domination", "Crit_Default");
     }
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    var_6170ec00c4bc9b5b = "dom";
-    if (spawnlogic::function_b17bf43316b9fb08(var_6170ec00c4bc9b5b)) {
-        spawnlogic::function_afe4709b818e7c9e(var_6170ec00c4bc9b5b);
+    spawnkey = "dom";
+    if (spawnlogic::function_b17bf43316b9fb08(spawnkey)) {
+        spawnlogic::function_afe4709b818e7c9e(spawnkey);
     } else {
         spawnlogic::addstartspawnpoints("mp_dom_spawn_allies_start");
         spawnlogic::addstartspawnpoints("mp_dom_spawn_axis_start");
@@ -329,12 +329,12 @@ function initspawns() {
         spawnlogic::addspawnpoints("allies", "mp_dom_spawn_secondary", 1, 1);
         spawnlogic::addspawnpoints("axis", "mp_dom_spawn_secondary", 1, 1);
         spawns = spawnlogic::getspawnpointarray("mp_dom_spawn");
-        var_3a5288f40c8be099 = spawnlogic::getspawnpointarray("mp_dom_spawn_secondary");
+        spawnssecondary = spawnlogic::getspawnpointarray("mp_dom_spawn_secondary");
         spawnlogic::registerspawnset("primary", spawns);
-        spawnlogic::registerspawnset("fallback", var_3a5288f40c8be099);
+        spawnlogic::registerspawnset("fallback", spawnssecondary);
         spawnlogic::function_48ed29b53fd72775();
     }
-    if (namespace_8e28f8b325a83325::function_167619fe3d0cff00()) {
+    if (scripts/mp/spawnselection::function_167619fe3d0cff00()) {
         level.gamemodestartspawnpointnames = [];
         level.gamemodestartspawnpointnames[game["attackers"]] = "mp_dom_spawn_allies_start";
         level.gamemodestartspawnpointnames[game["defenders"]] = "mp_dom_spawn_axis_start";
@@ -346,7 +346,7 @@ function initspawns() {
     setmapcenter(level.mapcenter);
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dba
 // Size: 0x91
@@ -355,12 +355,12 @@ function getspawnpoint() {
     var_e02688745e0052c3 = getteamdompoints(spawnteam);
     enemyteam = getotherteam(spawnteam)[0];
     var_db44ac0d1491f876 = getteamdompoints(enemyteam);
-    var_a57270e5ba6e59a3 = getpreferreddompoints(var_e02688745e0052c3, var_db44ac0d1491f876, spawnteam, enemyteam);
-    var_ba0a9fd614a3f6ee = namespace_164d533d51098167::function_5647d0dca50a2d4d(var_a57270e5ba6e59a3["preferred"], var_a57270e5ba6e59a3["secondary"]);
+    flaggroups = getpreferreddompoints(var_e02688745e0052c3, var_db44ac0d1491f876, spawnteam, enemyteam);
+    var_ba0a9fd614a3f6ee = spawnfactor::function_5647d0dca50a2d4d(flaggroups["preferred"], flaggroups["secondary"]);
     return spawnlogic::getspawnpointforplayer(self, var_ba0a9fd614a3f6ee);
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e53
 // Size: 0x7c
@@ -374,16 +374,16 @@ function getteamdompoints(team) {
     return var_e02688745e0052c3;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ed7
 // Size: 0x230
 function getpreferreddompoints(var_e02688745e0052c3, var_db44ac0d1491f876, team, enemyteam) {
     var_eca8ba29df25a989 = [];
     if (var_e02688745e0052c3.size == level.objectives.size) {
-        var_3a37f3ae11a88ed4 = level.bestspawnflag[enemyteam];
+        enemyspawnflag = level.bestspawnflag[enemyteam];
         foreach (flag in var_e02688745e0052c3) {
-            if (flag != var_3a37f3ae11a88ed4) {
+            if (flag != enemyspawnflag) {
                 var_eca8ba29df25a989[var_eca8ba29df25a989.size] = flag;
             }
         }
@@ -394,18 +394,18 @@ function getpreferreddompoints(var_e02688745e0052c3, var_db44ac0d1491f876, team,
     } else if (var_e02688745e0052c3.size == 0) {
         var_e4b0a18c08e01fc9 = level.bestspawnflag[team];
         if (var_db44ac0d1491f876.size > 0 && var_db44ac0d1491f876.size < level.objectives.size) {
-            var_e4b0a18c08e01fc9 = namespace_98b55913d2326ac8::getunownedflagneareststart(team);
+            var_e4b0a18c08e01fc9 = scripts/mp/gametypes/obj_dom::getunownedflagneareststart(team);
         }
         var_eca8ba29df25a989[var_eca8ba29df25a989.size] = var_e4b0a18c08e01fc9;
     }
     preferreddompoints = 0;
     secondarydompoints = 0;
     foreach (flag in var_eca8ba29df25a989) {
-        if (flag namespace_19b4203b51d56488::getclaimteam() == "none") {
+        if (flag scripts/mp/gameobjects::getclaimteam() == "none") {
             preferreddompoints = preferreddompoints | flag.spawnflagid;
-        } else {
-            secondarydompoints = secondarydompoints | flag.spawnflagid;
+            continue;
         }
+        secondarydompoints = secondarydompoints | flag.spawnflagid;
     }
     if (preferreddompoints & 1 && preferreddompoints & 2) {
         preferreddompoints = preferreddompoints | 32;
@@ -416,88 +416,88 @@ function getpreferreddompoints(var_e02688745e0052c3, var_db44ac0d1491f876, team,
     if (preferreddompoints & 1 && preferreddompoints & 4) {
         preferreddompoints = preferreddompoints | 128;
     }
-    var_a57270e5ba6e59a3 = [];
-    var_a57270e5ba6e59a3["preferred"] = preferreddompoints;
-    var_a57270e5ba6e59a3["secondary"] = secondarydompoints;
-    return var_a57270e5ba6e59a3;
+    flaggroups = [];
+    flaggroups["preferred"] = preferreddompoints;
+    flaggroups["secondary"] = secondarydompoints;
+    return flaggroups;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x210f
 // Size: 0x89f
 function domflags() {
     primaryflags = [];
-    var_528742b1628eb47c = [];
+    secondaryflags = [];
     level.changenumdomflags = 0;
-    if (level.usestrongholdhills) {
-        var_c49b98f4adb52d7b = namespace_f1b0a92156c7301c::getzonearray("hardpoint_zone");
-        if (!isdefined(game["strongholdFlagKeys"]) || level.shufflehillroundcount > 0 && game["roundsPlayed"] % level.shufflehillroundcount == 0) {
-            var_3dabce211c987a42 = var_c49b98f4adb52d7b;
+    if (level.useStrongholdHills) {
+        allflags = scripts/mp/gametypes/koth::getzonearray("hardpoint_zone");
+        if (!isdefined(game["strongholdFlagKeys"]) || level.shuffleHillRoundCount > 0 && game["roundsPlayed"] % level.shuffleHillRoundCount == 0) {
+            tempflags = allflags;
             if (isdefined(game["strongholdFlagKeys"])) {
-                var_e1e302c0235f5998 = randomintrange(0, var_3dabce211c987a42.size - game["strongholdFlagKeys"].size);
-                while (var_e1e302c0235f5998 > 0) {
-                    var_496c6ad9ba0c9c80 = game["strongholdFlagKeys"][randomint(game["strongholdFlagKeys"].size)];
-                    game["strongholdFlagKeys"] = array_remove(game["strongholdFlagKeys"], var_496c6ad9ba0c9c80);
-                    foreach (hill in var_3dabce211c987a42) {
-                        if (hill.script_label == var_496c6ad9ba0c9c80) {
-                            var_3dabce211c987a42 = array_remove(var_3dabce211c987a42, hill);
-                            var_e1e302c0235f5998--;
+                removecount = randomintrange(0, tempflags.size - game["strongholdFlagKeys"].size);
+                while (removecount > 0) {
+                    randomflag = game["strongholdFlagKeys"][randomint(game["strongholdFlagKeys"].size)];
+                    game["strongholdFlagKeys"] = array_remove(game["strongholdFlagKeys"], randomflag);
+                    foreach (hill in tempflags) {
+                        if (hill.script_label == randomflag) {
+                            tempflags = array_remove(tempflags, hill);
+                            removecount--;
                             break;
                         }
                     }
                 }
             }
             var_2a267ac444be003e = [];
-            var_15e6d8f207a41389 = namespace_3c37cb17ade254d::get_array_of_closest(namespace_d7fe36703a9572fe::getstartspawnavg("allies", "mp_dom_spawn_allies_start"), var_3dabce211c987a42, undefined, 2);
-            var_496c6ad9ba0c9c80 = var_15e6d8f207a41389[randomint(var_15e6d8f207a41389.size)];
-            var_3dabce211c987a42 = array_remove(var_3dabce211c987a42, var_496c6ad9ba0c9c80);
-            var_2a267ac444be003e[0] = var_496c6ad9ba0c9c80.script_label;
-            var_96cd90a3393629a0 = namespace_3c37cb17ade254d::get_array_of_closest(namespace_d7fe36703a9572fe::getstartspawnavg("axis", "mp_dom_spawn_axis_start"), var_3dabce211c987a42, undefined, 2);
-            var_496c6ad9ba0c9c80 = var_96cd90a3393629a0[randomint(var_96cd90a3393629a0.size)];
-            var_3dabce211c987a42 = array_remove(var_3dabce211c987a42, var_496c6ad9ba0c9c80);
-            var_2a267ac444be003e[2] = var_496c6ad9ba0c9c80.script_label;
-            var_496c6ad9ba0c9c80 = var_3dabce211c987a42[randomint(var_3dabce211c987a42.size)];
-            var_3dabce211c987a42 = array_remove(var_3dabce211c987a42, var_496c6ad9ba0c9c80);
-            var_2a267ac444be003e[1] = var_496c6ad9ba0c9c80.script_label;
+            allyhills = scripts/engine/utility::get_array_of_closest(scripts/mp/spawncamera::getstartspawnavg("allies", "mp_dom_spawn_allies_start"), tempflags, undefined, 2);
+            randomflag = allyhills[randomint(allyhills.size)];
+            tempflags = array_remove(tempflags, randomflag);
+            var_2a267ac444be003e[0] = randomflag.script_label;
+            axishills = scripts/engine/utility::get_array_of_closest(scripts/mp/spawncamera::getstartspawnavg("axis", "mp_dom_spawn_axis_start"), tempflags, undefined, 2);
+            randomflag = axishills[randomint(axishills.size)];
+            tempflags = array_remove(tempflags, randomflag);
+            var_2a267ac444be003e[2] = randomflag.script_label;
+            randomflag = tempflags[randomint(tempflags.size)];
+            tempflags = array_remove(tempflags, randomflag);
+            var_2a267ac444be003e[1] = randomflag.script_label;
             game["strongholdFlagKeys"] = var_2a267ac444be003e;
         }
-        var_79b9159e31664699 = [0:"_a", 1:"_b", 2:"_c", 3:"_d", 4:"_e"];
+        flagnames = ["_a", "_b", "_c", "_d", "_e"];
         flagindex = 0;
-        var_173231b2f39bcf53 = [];
+        selectedflags = [];
         for (i = 0; i < game["strongholdFlagKeys"].size; i++) {
-            var_9111499e2f9187d = game["strongholdFlagKeys"][i];
-            foreach (zone in var_c49b98f4adb52d7b) {
-                if (var_9111499e2f9187d != zone.script_label) {
+            hillkey = game["strongholdFlagKeys"][i];
+            foreach (zone in allflags) {
+                if (hillkey != zone.script_label) {
                     continue;
                 }
-                key = var_79b9159e31664699[flagindex];
+                key = flagnames[flagindex];
                 zone.script_label = key;
                 zone.objectivekey = key;
-                var_173231b2f39bcf53[var_173231b2f39bcf53.size] = zone;
+                selectedflags[selectedflags.size] = zone;
                 flagindex++;
                 break;
             }
         }
-        primaryflags = var_173231b2f39bcf53;
+        primaryflags = selectedflags;
         level.changenumdomflags = getdvarint(@"hash_f9faada5b0dcc0d3", 3);
     } else {
-        if (isdefined(namespace_36f464722d326bbe::getlocaleid())) {
+        if (isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
             var_85e038319fbafcf9 = getentarray("flag_primary", "targetname");
             foreach (flag in var_85e038319fbafcf9) {
                 if (isdefined(flag.script_noteworthy) && flag.script_noteworthy == level.localeid) {
                     primaryflags[primaryflags.size] = flag;
-                } else {
-                    flag delete();
+                    continue;
                 }
+                flag delete();
             }
         } else {
             level.changenumdomflags = getdvarint(@"hash_f9faada5b0dcc0d3", 0);
             primaryflags = getentarray("flag_primary", "targetname");
         }
-        var_528742b1628eb47c = getentarray("flag_secondary", "targetname");
+        secondaryflags = getentarray("flag_secondary", "targetname");
     }
-    if (primaryflags.size + var_528742b1628eb47c.size < 2) {
+    if (primaryflags.size + secondaryflags.size < 2) {
         /#
             assertmsg("^1Not enough domination flags found in level! Perhaps you picked a localeID that was NOT set up.");
         #/
@@ -508,61 +508,61 @@ function domflags() {
     } else {
         setomnvar("ui_num_dom_flags", primaryflags.size);
     }
-    triggers = array_combine(primaryflags, var_528742b1628eb47c);
+    triggers = array_combine(primaryflags, secondaryflags);
     if (level.changenumdomflags == 3 || level.mapname == "mp_rust") {
         foreach (trigger in triggers) {
             trigger remapdomtriggerscriptlabel();
         }
     }
     foreach (trigger in triggers) {
-        if (!level.usestrongholdhills && level.changenumdomflags == 3) {
-            jumpiffalse(trigger.script_label == "_d" || trigger.script_label == "_e") LOC_000005d3;
-        } else {
-        LOC_000005d3:
-            modifytriggerlocation(trigger);
-            domflag = namespace_98b55913d2326ac8::setupobjective(trigger, undefined, 1, 1);
-            domflag thread function_57034c991fb8630b(trigger.target, trigger.script_label);
-            level.objectives[domflag.objectivekey] = domflag;
+        if (!level.useStrongholdHills && level.changenumdomflags == 3) {
+            if (trigger.script_label == "_d" || trigger.script_label == "_e") {
+                continue;
+            }
         }
+        modifytriggerlocation(trigger);
+        domflag = scripts/mp/gametypes/obj_dom::setupobjective(trigger, undefined, 1, 1);
+        domflag thread function_57034c991fb8630b(trigger.target, trigger.script_label);
+        level.objectives[domflag.objectivekey] = domflag;
     }
     var_7fc4b3db1868930f = spawnlogic::getspawnpointarray("mp_dom_spawn_axis_start");
     var_99a20728731ac0b0 = spawnlogic::getspawnpointarray("mp_dom_spawn_allies_start");
     level.startpos["allies"] = var_99a20728731ac0b0[0].origin;
     level.startpos["axis"] = var_7fc4b3db1868930f[0].origin;
     level.bestspawnflag = [];
-    level.bestspawnflag["allies"] = namespace_98b55913d2326ac8::getunownedflagneareststart("allies", undefined);
-    level.bestspawnflag["axis"] = namespace_98b55913d2326ac8::getunownedflagneareststart("axis", level.bestspawnflag["allies"]);
+    level.bestspawnflag["allies"] = scripts/mp/gametypes/obj_dom::getunownedflagneareststart("allies", undefined);
+    level.bestspawnflag["axis"] = scripts/mp/gametypes/obj_dom::getunownedflagneareststart("axis", level.bestspawnflag["allies"]);
     flagsetup();
     thread modifieddefendradiussetup();
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill_any_2("prematch_done", "start_mode_setup");
     }
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
         iconsize = "icon_medium";
     } else {
         iconsize = undefined;
     }
     foreach (flag in level.objectives) {
-        var_3c2389ba69e5822b = namespace_98b55913d2326ac8::getreservedobjid(flag.objectivekey);
-        flag namespace_19b4203b51d56488::requestid(1, 1, var_3c2389ba69e5822b, undefined, undefined, iconsize);
+        var_3c2389ba69e5822b = scripts/mp/gametypes/obj_dom::getreservedobjid(flag.objectivekey);
+        flag scripts/mp/gameobjects::requestid(1, 1, var_3c2389ba69e5822b, undefined, undefined, iconsize);
         flag.onuse = &dompoint_onuse;
-        flag.onbeginuse = &function_d70c3184ea673a4d;
-        flag.onuseupdate = &namespace_98b55913d2326ac8::dompoint_onuseupdate;
-        flag.onenduse = &function_bff131e700eb75f1;
-        flag.oncontested = &function_2e53cbf84d9183ea;
-        flag.onuncontested = &function_4d1f05e524d465bb;
-        flag.onunoccupied = &function_30fe1401e41cecc6;
-        flag.var_dbee3cf9cc42cf08 = &namespace_98b55913d2326ac8::function_3dc46df97466e4d3;
-        flag.var_ff5925101700484b = &namespace_98b55913d2326ac8::function_3dc46df97466e4d3;
+        flag.onbeginuse = &dom_onbeginuse;
+        flag.onuseupdate = &scripts/mp/gametypes/obj_dom::dompoint_onuseupdate;
+        flag.onenduse = &dom_onenduse;
+        flag.oncontested = &dom_oncontested;
+        flag.onuncontested = &dom_onuncontested;
+        flag.onunoccupied = &dom_onunoccupied;
+        flag.oncleared = &scripts/mp/gametypes/obj_dom::function_3dc46df97466e4d3;
+        flag.ondecayed = &scripts/mp/gametypes/obj_dom::function_3dc46df97466e4d3;
         flag.onpinnedstate = &function_f2d95c239bf680ac;
         flag.onunpinnedstate = &function_10b7087fecf03775;
-        flag.stompprogressreward = &namespace_98b55913d2326ac8::dompoint_stompprogressreward;
-        flag namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_defend", "waypoint_target");
-        flag namespace_19b4203b51d56488::setvisibleteam("any");
-        flag namespace_98b55913d2326ac8::domflag_setneutral();
+        flag.stompprogressreward = &scripts/mp/gametypes/obj_dom::dompoint_stompprogressreward;
+        flag scripts/mp/gameobjects::setobjectivestatusicons("waypoint_defend", "waypoint_target");
+        flag scripts/mp/gameobjects::setvisibleteam("any");
+        flag scripts/mp/gametypes/obj_dom::domflag_setneutral();
     }
     if (level.precappoints) {
-        thread namespace_98b55913d2326ac8::precap();
+        thread scripts/mp/gametypes/obj_dom::precap();
     }
     if (level.codcasterenabled) {
         thread updatetriggerforcodcaster();
@@ -572,7 +572,7 @@ function domflags() {
     #/
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29b5
 // Size: 0xba
@@ -589,7 +589,7 @@ function function_57034c991fb8630b(target, label) {
     function_726259d42f88361("idle");
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a76
 // Size: 0xb6
@@ -600,14 +600,14 @@ function function_726259d42f88361(state) {
         waitframe();
     }
     var_a27485475186b39d = "chevron_";
-    foreach (var_eae85273686f4f4 in self.chevrons) {
-        for (i = 0; i < var_eae85273686f4f4.numchevrons; i++) {
-            var_eae85273686f4f4 setscriptablepartstate(var_a27485475186b39d + i, state);
+    foreach (chevron in self.chevrons) {
+        for (i = 0; i < chevron.numchevrons; i++) {
+            chevron setscriptablepartstate(var_a27485475186b39d + i, state);
         }
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b33
 // Size: 0xef
@@ -627,79 +627,81 @@ function function_223fb185e0afb231() {
     }
     if (self.stalemate) {
         thread function_726259d42f88361("contested");
-    } else if (!self.isunoccupied) {
+        return;
+    }
+    if (!self.isunoccupied) {
         thread function_726259d42f88361(self.mostnumtouchingteam);
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c29
 // Size: 0x1b
-function function_d70c3184ea673a4d(player) {
-    namespace_98b55913d2326ac8::dompoint_onusebegin(player);
+function dom_onbeginuse(player) {
+    scripts/mp/gametypes/obj_dom::dompoint_onusebegin(player);
     function_223fb185e0afb231();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c4b
 // Size: 0x47
-function function_bff131e700eb75f1(team, player, success) {
-    namespace_98b55913d2326ac8::dompoint_onuseend(team, player, success);
+function dom_onenduse(team, player, success) {
+    scripts/mp/gametypes/obj_dom::dompoint_onuseend(team, player, success);
     if (success) {
         thread function_726259d42f88361(player.team);
-    } else {
-        function_223fb185e0afb231();
+        return;
     }
+    function_223fb185e0afb231();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c99
 // Size: 0x11
-function function_2e53cbf84d9183ea() {
-    namespace_98b55913d2326ac8::dompoint_oncontested();
+function dom_oncontested() {
+    scripts/mp/gametypes/obj_dom::dompoint_oncontested();
     function_223fb185e0afb231();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cb1
 // Size: 0x25
-function function_4d1f05e524d465bb(lastclaimteam) {
-    namespace_98b55913d2326ac8::dompoint_onuncontested(lastclaimteam);
+function dom_onuncontested(lastclaimteam) {
+    scripts/mp/gametypes/obj_dom::dompoint_onuncontested(lastclaimteam);
     delaythread(0.05, &function_223fb185e0afb231);
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cdd
 // Size: 0x11
-function function_30fe1401e41cecc6() {
-    namespace_98b55913d2326ac8::dompoint_onunoccupied();
+function dom_onunoccupied() {
+    scripts/mp/gametypes/obj_dom::dompoint_onunoccupied();
     function_223fb185e0afb231();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cf5
 // Size: 0x1b
 function function_f2d95c239bf680ac(player) {
-    namespace_98b55913d2326ac8::dompoint_onpinnedstate(player);
+    scripts/mp/gametypes/obj_dom::dompoint_onpinnedstate(player);
     function_223fb185e0afb231();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d17
 // Size: 0x1b
 function function_10b7087fecf03775(player) {
-    namespace_98b55913d2326ac8::dompoint_onunpinnedstate(player);
+    scripts/mp/gametypes/obj_dom::dompoint_onunpinnedstate(player);
     function_223fb185e0afb231();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d39
 // Size: 0xb7
@@ -721,7 +723,7 @@ function modifytriggerlocation(trigger) {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2df7
 // Size: 0xf5
@@ -734,16 +736,20 @@ function remapdomtriggerscriptlabel() {
             self.script_label = "_e";
             self.remappedscriptlabel = 1;
         }
-    } else if (level.mapname == "mp_rust") {
+        return;
+    }
+    if (level.mapname == "mp_rust") {
         if (self.script_label == "_a") {
             self.script_label = "_b";
-        } else if (self.script_label == "_b") {
+            return;
+        }
+        if (self.script_label == "_b") {
             self.script_label = "_a";
         }
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ef3
 // Size: 0x359
@@ -757,15 +763,15 @@ function updatedomscores() {
     }
     while (!level.gameended) {
         waittime = 5;
-        if (level.usestrongholdscoring) {
-            waittime = level.strongholdscoreinterval;
+        if (level.useStrongholdScoring) {
+            waittime = level.strongholdScoreInterval;
         }
-        timeleft = namespace_d576b6dc7cef9c62::gettimeremaining();
+        timeleft = scripts/mp/gamelogic::gettimeremaining();
         if (timeleft < 5000 && timeleft > 0) {
             waittime = timeleft / 1000;
         }
         wait(waittime);
-        namespace_e323c8674b44c8f4::waittillhostmigrationdone();
+        scripts/mp/hostmigration::waittillhostmigrationdone();
         domflags = getowneddomflags();
         foreach (entry in level.teamnamelist) {
             level.scoretick[entry] = 0;
@@ -773,33 +779,35 @@ function updatedomscores() {
         if (domflags.size) {
             for (i = 1; i < domflags.size; i++) {
                 domflag = domflags[i];
-                var_c2b268e253c97d27 = gettime() - domflag.capturetime;
-                for (j = i - 1; j >= 0 && var_c2b268e253c97d27 > gettime() - domflags[j].capturetime; j--) {
+                flagscore = gettime() - domflag.capturetime;
+                for (j = i - 1; j >= 0 && flagscore > gettime() - domflags[j].capturetime; j--) {
                     domflags[j + 1] = domflags[j];
                 }
                 domflags[j + 1] = domflag;
             }
-            if (level.usestrongholdscoring) {
+            if (level.useStrongholdScoring) {
                 foreach (team in level.teamnamelist) {
-                    var_fee716687dd29378 = namespace_98b55913d2326ac8::getteamflagcount(team, level.usestrongholdscoring);
+                    var_fee716687dd29378 = scripts/mp/gametypes/obj_dom::getteamflagcount(team, level.useStrongholdScoring);
                     if (var_fee716687dd29378 == level.objectives.size) {
-                        level.scoretick[team] = level.strongholdscoreallcapincrement;
-                    } else if (var_fee716687dd29378 >= level.flagsrequiredtoscore) {
-                        level.scoretick[team] = level.strongholdscoreincrement;
+                        level.scoretick[team] = level.strongholdScoreAllCapIncrement;
+                        continue;
+                    }
+                    if (var_fee716687dd29378 >= level.flagsrequiredtoscore) {
+                        level.scoretick[team] = level.strongholdScoreIncrement;
                     }
                 }
             } else {
                 foreach (domflag in domflags) {
-                    team = domflag namespace_19b4203b51d56488::getownerteam();
+                    team = domflag scripts/mp/gameobjects::getownerteam();
                     /#
                         assert(isgameplayteam(team));
                     #/
                     teamscore = getteamscore(team);
-                    var_fee716687dd29378 = namespace_98b55913d2326ac8::getteamflagcount(team);
+                    var_fee716687dd29378 = scripts/mp/gametypes/obj_dom::getteamflagcount(team);
                     if (var_fee716687dd29378 >= level.flagsrequiredtoscore) {
                         level.scoretick[team] = level.scoretick[team] + level.pointsperflag;
-                        if (istrue(domflag.var_11d80259a066ab76) && isdefined(level.pointsperreinforcedflag)) {
-                            level.scoretick[team] = level.scoretick[team] + level.pointsperreinforcedflag;
+                        if (istrue(domflag.reinforced) && isdefined(level.pointsPerReinforcedFlag)) {
+                            level.scoretick[team] = level.scoretick[team] + level.pointsPerReinforcedFlag;
                         }
                     }
                 }
@@ -810,50 +818,50 @@ function updatedomscores() {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3253
 // Size: 0x162
 function updatescores() {
-    var_bc96f305d3d139cf = [];
+    teamshitscorelimit = [];
     foreach (entry in level.teamnamelist) {
-        var_882b7ad682ff97ce = game["teamScores"][entry] + level.scoretick[entry];
-        if (var_882b7ad682ff97ce >= level.roundscorelimit) {
-            var_bc96f305d3d139cf[var_bc96f305d3d139cf.size] = entry;
+        targetscore = game["teamScores"][entry] + level.scoretick[entry];
+        if (targetscore >= level.roundscorelimit) {
+            teamshitscorelimit[teamshitscorelimit.size] = entry;
         }
     }
-    if (var_bc96f305d3d139cf.size == 1) {
-        level.scoretick[var_bc96f305d3d139cf[0]] = level.roundscorelimit - game["teamScores"][var_bc96f305d3d139cf[0]];
+    if (teamshitscorelimit.size == 1) {
+        level.scoretick[teamshitscorelimit[0]] = level.roundscorelimit - game["teamScores"][teamshitscorelimit[0]];
     }
-    var_e80dc2f88d61c61c = namespace_e8a49b70d0769b66::calculatewinningteam();
+    var_e80dc2f88d61c61c = scripts/mp/gamescore::calculatewinningteam();
     foreach (entry in level.teamnamelist) {
         if (level.scoretick[entry] > 0) {
-            namespace_e8a49b70d0769b66::giveteamscoreforobjective(entry, level.scoretick[entry], 1, undefined, 1);
+            scripts/mp/gamescore::giveteamscoreforobjective(entry, level.scoretick[entry], 1, undefined, 1);
         }
     }
-    var_3397acf8985dbd01 = namespace_e8a49b70d0769b66::calculatewinningteam();
+    var_3397acf8985dbd01 = scripts/mp/gamescore::calculatewinningteam();
     if (var_e80dc2f88d61c61c != var_3397acf8985dbd01) {
-        namespace_e8a49b70d0769b66::playscorestatusdialog(var_3397acf8985dbd01, 1, var_e80dc2f88d61c61c);
+        scripts/mp/gamescore::playscorestatusdialog(var_3397acf8985dbd01, 1, var_e80dc2f88d61c61c);
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33bc
 // Size: 0x123
 function checkendgame(var_bedc18e1c7da5fbf) {
-    var_59666e71a5a0a42e = gettime() - level.lastcaptime;
-    if (matchmakinggame() && var_bedc18e1c7da5fbf < 2 && var_59666e71a5a0a42e > 120000) {
+    timesincelastcap = gettime() - level.lastcaptime;
+    if (matchmakinggame() && var_bedc18e1c7da5fbf < 2 && timesincelastcap > 120000) {
         level.forcedend = 1;
-        thread namespace_d576b6dc7cef9c62::endgame("none", game["end_reason"]["dom_force_end"]);
+        thread scripts/mp/gamelogic::endgame("none", game["end_reason"]["dom_force_end"]);
         return;
     }
-    if (level.objectives.size == 3 && level.playholdtwovo && var_59666e71a5a0a42e > 30000) {
+    if (level.objectives.size == 3 && level.playholdtwovo && timesincelastcap > 30000) {
         foreach (entry in level.teamnamelist) {
-            if (namespace_98b55913d2326ac8::getteamflagcount(entry) == 2) {
+            if (scripts/mp/gametypes/obj_dom::getteamflagcount(entry) == 2) {
                 otherteam = getotherteam(entry)[0];
-                namespace_944ddf7b8df1b0e3::statusdialog("enemy_captured_2", otherteam);
-                namespace_944ddf7b8df1b0e3::statusdialog("friendly_captured_2", entry);
+                scripts/mp/utility/dialog::statusdialog("enemy_captured_2", otherteam);
+                scripts/mp/utility/dialog::statusdialog("friendly_captured_2", entry);
                 level.playholdtwovo = 0;
                 break;
             }
@@ -861,21 +869,21 @@ function checkendgame(var_bedc18e1c7da5fbf) {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34e6
 // Size: 0xa9
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     if (!isplayer(attacker) || attacker.team == self.team) {
         return;
     }
     if (isdefined(objweapon) && namespace_e0ee43ef2dddadaa::iskillstreakweapon(objweapon.basename)) {
         return;
     }
-    namespace_98b55913d2326ac8::awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00);
+    scripts/mp/gametypes/obj_dom::awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid);
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3596
 // Size: 0x5a
@@ -885,29 +893,29 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35f7
 // Size: 0x83
 function getowneddomflags() {
     domflags = [];
     foreach (domflag in level.objectives) {
-        if (domflag namespace_19b4203b51d56488::getownerteam() != "neutral" && isdefined(domflag.capturetime)) {
+        if (domflag scripts/mp/gameobjects::getownerteam() != "neutral" && isdefined(domflag.capturetime)) {
             domflags[domflags.size] = domflag;
         }
     }
     return domflags;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3682
 // Size: 0x9
 function getflagteam() {
-    return namespace_19b4203b51d56488::getownerteam();
+    return scripts/mp/gameobjects::getownerteam();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3693
 // Size: 0xfa
@@ -924,7 +932,7 @@ function flagsetup() {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3794
 // Size: 0x61
@@ -940,23 +948,22 @@ function getflagspawnidforobjectivekey(objectivekey) {
         return 8;
     case #"hash_fac2c1f6bddd4371":
         return 16;
-        break;
     }
     return undefined;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37fd
 // Size: 0xdc
 function getspawnpointflagassignment(spawnpoint) {
-    if (namespace_36f464722d326bbe::isarenamap()) {
+    if (scripts/cp_mp/utility/game_utility::isarenamap()) {
         if (spawnpoint.script_noteworthy == "1" || spawnpoint.script_noteworthy == "2" || spawnpoint.script_noteworthy == "3") {
             spawnpoint.script_noteworthy = "";
         }
     }
     if (isdefined(spawnpoint.script_noteworthy) && spawnpoint.script_noteworthy != "") {
-        if (!isdefined(namespace_36f464722d326bbe::getlocaleid())) {
+        if (!isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
             var_73ef432f38ced282 = parseflagassignmentstring(spawnpoint.script_noteworthy);
             if (isdefined(var_73ef432f38ced282)) {
                 return var_73ef432f38ced282;
@@ -967,7 +974,7 @@ function getspawnpointflagassignment(spawnpoint) {
     return var_ef41e2c126d3ee6b.spawnflagid;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38e1
 // Size: 0xde
@@ -1001,17 +1008,17 @@ function parseflagassignmentstring(stringvalue) {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39c6
 // Size: 0x1ca
 function findnearestdompoint(pos) {
-    var_73d756724e06734c = [];
+    navmeshpoints = [];
     foreach (dompoint in level.objectives) {
         dompoint.navmeshpos = getclosestpointonnavmesh(dompoint.trigger.origin);
-        var_73d756724e06734c[var_73d756724e06734c.size] = dompoint.navmeshpos;
+        navmeshpoints[navmeshpoints.size] = dompoint.navmeshpos;
     }
-    var_2a1e7872f714f838 = findclosestpointbyapproxpathdist(var_73d756724e06734c, getclosestpointonnavmesh(pos));
+    var_2a1e7872f714f838 = findclosestpointbyapproxpathdist(navmeshpoints, getclosestpointonnavmesh(pos));
     var_ef41e2c126d3ee6b = undefined;
     if (!isdefined(var_2a1e7872f714f838)) {
         nearestdist = undefined;
@@ -1036,7 +1043,7 @@ function findnearestdompoint(pos) {
     return var_ef41e2c126d3ee6b;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b98
 // Size: 0x8e
@@ -1050,18 +1057,18 @@ function modifieddefendradiussetup() {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c2d
 // Size: 0x633
 function domdebug() {
     /#
         spawnpoints = spawnlogic::getteamspawnpoints("secured_e");
-        var_41210aee152f0f24 = spawnlogic::getteamfallbackspawnpoints("secured_e");
-        spawnpoints = array_combine(spawnpoints, var_41210aee152f0f24);
+        fallbacks = spawnlogic::getteamfallbackspawnpoints("secured_e");
+        spawnpoints = array_combine(spawnpoints, fallbacks);
         ispathdataavailable = spawnlogic::ispathdataavailable();
-        var_1d06954d1a38c688 = (0, 0, 12);
-        var_ce6fe2eade88ce3b = (0, 0, 64);
+        heightoffsetlines = (0, 0, 12);
+        heightoffsetnames = (0, 0, 64);
         colors = [];
         colors[1] = (1, 0, 0);
         colors[2] = (0, 1, 0);
@@ -1071,13 +1078,13 @@ function domdebug() {
         colors[32] = (1, 1, 0);
         colors[64] = (0, 1, 1);
         colors[128] = (1, 0, 1);
-        while (1) {
+        while (true) {
             if (getdvar(@"hash_695e8f43f6b03cd4") != "dx_mp_domi_game_uktl_dlsc") {
                 wait(1);
                 continue;
             }
             setdevdvar(@"hash_9d60ff019dc50c22", "dx_mp_domi_game_uktl_dlsc");
-            while (1) {
+            while (true) {
                 if (getdvar(@"hash_695e8f43f6b03cd4") != "dx_mp_domi_game_uktl_dlsc") {
                     setdevdvar(@"hash_9d60ff019dc50c22", "secured_d");
                     break;
@@ -1086,49 +1093,49 @@ function domdebug() {
                     waitframe();
                     continue;
                 }
-                var_b7965b0fcb4595c1 = [];
-                var_b7965b0fcb4595c1[1] = [0:level.objectives["dx_mp_domi_game_uktl_dlsd"]];
-                var_b7965b0fcb4595c1[2] = [0:level.objectives["losing_e"]];
-                var_b7965b0fcb4595c1[4] = [0:level.objectives["dx_mp_domi_game_uktl_dlob"]];
-                var_b7965b0fcb4595c1[8] = [0:level.objectives["lost_c"]];
-                var_b7965b0fcb4595c1[16] = [0:level.objectives["dx_mp_domi_game_uktl_dloe"]];
-                var_b7965b0fcb4595c1[32] = [0:level.objectives["dx_mp_domi_game_uktl_dlsd"], 1:level.objectives["losing_e"]];
-                var_b7965b0fcb4595c1[64] = [0:level.objectives["dx_mp_domi_game_uktl_dlob"], 1:level.objectives["losing_e"]];
-                var_b7965b0fcb4595c1[128] = [0:level.objectives["dx_mp_domi_game_uktl_dlsd"], 1:level.objectives["dx_mp_domi_game_uktl_dlob"]];
+                endpoints = [];
+                endpoints[1] = [level.objectives["dx_mp_domi_game_uktl_dlsd"]];
+                endpoints[2] = [level.objectives["losing_e"]];
+                endpoints[4] = [level.objectives["dx_mp_domi_game_uktl_dlob"]];
+                endpoints[8] = [level.objectives["lost_c"]];
+                endpoints[16] = [level.objectives["dx_mp_domi_game_uktl_dloe"]];
+                endpoints[32] = [level.objectives["dx_mp_domi_game_uktl_dlsd"], level.objectives["losing_e"]];
+                endpoints[64] = [level.objectives["dx_mp_domi_game_uktl_dlob"], level.objectives["losing_e"]];
+                endpoints[128] = [level.objectives["dx_mp_domi_game_uktl_dlsd"], level.objectives["dx_mp_domi_game_uktl_dlob"]];
                 foreach (spawnpoint in spawnpoints) {
-                    var_6d80e693415c94b2 = spawnpoint.scriptdata;
-                    if (!isdefined(var_6d80e693415c94b2.domflagassignments)) {
+                    spawnpointdata = spawnpoint.scriptdata;
+                    if (!isdefined(spawnpointdata.domflagassignments)) {
                         continue;
                     }
-                    if (!isdefined(var_6d80e693415c94b2.var_601117ef603f46a3)) {
-                        var_6d80e693415c94b2.var_601117ef603f46a3 = [];
+                    if (!isdefined(spawnpointdata.var_601117ef603f46a3)) {
+                        spawnpointdata.var_601117ef603f46a3 = [];
                     }
                     if (ispathdataavailable) {
-                        foreach (endpoint in var_b7965b0fcb4595c1[spawnpoint.scriptdata.domflagassignments]) {
-                            if (!isdefined(var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid])) {
-                                var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid] = level.players[0] findpath(spawnpoint.origin, endpoint.curorigin);
+                        foreach (endpoint in endpoints[spawnpoint.scriptdata.domflagassignments]) {
+                            if (!isdefined(spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid])) {
+                                spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid] = level.players[0] findpath(spawnpoint.origin, endpoint.curorigin);
                             }
-                            if (!isdefined(var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid]) || var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid].size == 0) {
+                            if (!isdefined(spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid]) || spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid].size == 0) {
                                 continue;
                             }
                             color = colors[spawnpoint.scriptdata.domflagassignments];
-                            line(spawnpoint.origin + var_1d06954d1a38c688, var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid][0] + var_1d06954d1a38c688, color);
-                            for (i = 0; i < var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid].size - 1; i++) {
-                                line(var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid][i] + var_1d06954d1a38c688, var_6d80e693415c94b2.var_601117ef603f46a3[endpoint.spawnflagid][i + 1] + var_1d06954d1a38c688, color);
+                            line(spawnpoint.origin + heightoffsetlines, spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid][0] + heightoffsetlines, color);
+                            for (i = 0; i < spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid].size - 1; i++) {
+                                line(spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid][i] + heightoffsetlines, spawnpointdata.var_601117ef603f46a3[endpoint.spawnflagid][i + 1] + heightoffsetlines, color);
                             }
                         }
-                    } else {
-                        foreach (endpoint in var_b7965b0fcb4595c1[spawnpoint.scriptdata.domflagassignments]) {
-                            line(endpoint.curorigin + var_1d06954d1a38c688, spawnpoint.origin + var_1d06954d1a38c688, (0.2, 0.2, 0.6));
-                        }
+                        continue;
+                    }
+                    foreach (endpoint in endpoints[spawnpoint.scriptdata.domflagassignments]) {
+                        line(endpoint.curorigin + heightoffsetlines, spawnpoint.origin + heightoffsetlines, (0.2, 0.2, 0.6));
                     }
                 }
-                foreach (var_37e3a1eaa43ea82c in level.objectives) {
-                    if (var_37e3a1eaa43ea82c == level.bestspawnflag["enemy_captured_2"]) {
-                        print3d(var_37e3a1eaa43ea82c.trigger.origin + var_ce6fe2eade88ce3b, "iw9_mpgm_anno_uktl_hofs");
+                foreach (flaglocation in level.objectives) {
+                    if (flaglocation == level.bestspawnflag["enemy_captured_2"]) {
+                        print3d(flaglocation.trigger.origin + heightoffsetnames, "iw9_mpgm_anno_uktl_hofs");
                     }
-                    if (var_37e3a1eaa43ea82c == level.bestspawnflag["secured_e"]) {
-                        print3d(var_37e3a1eaa43ea82c.trigger.origin + var_ce6fe2eade88ce3b, "useStrongholdScoring");
+                    if (flaglocation == level.bestspawnflag["secured_e"]) {
+                        print3d(flaglocation.trigger.origin + heightoffsetnames, "useStrongholdScoring");
                     }
                 }
                 waitframe();
@@ -1137,18 +1144,18 @@ function domdebug() {
     #/
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4267
 // Size: 0x25
-function onspawnplayer(var_9156b53bcf7ce573) {
+function onspawnplayer(revivespawn) {
     thread updatematchstatushintonspawn();
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
-        thread namespace_afbc0aa1b551667a::function_f9ae07213a0af3de();
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
+        thread scripts/mp/gametypes/mgl_mp::function_f9ae07213a0af3de();
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4293
 // Size: 0x54
@@ -1164,36 +1171,35 @@ function updatecpm() {
     self.cpm = self.numcaps / getminutespassed();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x42ee
 // Size: 0x1e
 function getcapxpscale() {
     if (self.cpm < 4) {
         return 1;
-    } else {
-        return 0.25;
     }
+    return 0.25;
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4313
 // Size: 0x2d
 function onplayerconnect(player) {
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
-        player thread namespace_afbc0aa1b551667a::function_8bb13aa2a5d32576(player, "mp_gametype_domination_match_introduction");
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
+        player thread scripts/mp/gametypes/mgl_mp::function_8bb13aa2a5d32576(player, "mp_gametype_domination_match_introduction");
     }
     player thread onplayerspawned();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4347
 // Size: 0x85
 function onplayerspawned(player) {
     self endon("disconnect");
-    while (1) {
+    while (true) {
         self waittill("spawned");
         setextrascore0(0);
         if (isdefined(self.pers["captures"])) {
@@ -1206,78 +1212,78 @@ function onplayerspawned(player) {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43d3
 // Size: 0x1b9
-function onflagcapture(objectivetype, label, var_22282e7d48ca3400, team, oldteam, var_579da7b2997dec60) {
+function onflagcapture(objectivetype, label, credit_player, team, oldteam, flagobj) {
     level.usestartspawns = 0;
     /#
         assert(team != "neutral");
     #/
     otherteam = getotherteam(team)[0];
-    if (namespace_98b55913d2326ac8::getteamflagcount(team) == level.objectives.size) {
-        namespace_a34451ae3d453e::playsoundonplayers("mp_dom_flag_captured_all", team);
-        namespace_a34451ae3d453e::playsoundonplayers("mp_dom_flag_lost_all", otherteam);
+    if (scripts/mp/gametypes/obj_dom::getteamflagcount(team) == level.objectives.size) {
+        scripts/mp/utility/sound::playsoundonplayers("mp_dom_flag_captured_all", team);
+        scripts/mp/utility/sound::playsoundonplayers("mp_dom_flag_lost_all", otherteam);
     } else {
-        namespace_a34451ae3d453e::playsoundonplayers("mp_dom_flag_captured", team);
-        namespace_a34451ae3d453e::playsoundonplayers("mp_dom_flag_lost", otherteam);
+        scripts/mp/utility/sound::playsoundonplayers("mp_dom_flag_captured", team);
+        scripts/mp/utility/sound::playsoundonplayers("mp_dom_flag_lost", otherteam);
     }
-    var_22282e7d48ca3400 namespace_b919c4be206d3c80::function_48544e365f4f5648(15, 1);
-    if (namespace_98b55913d2326ac8::getteamflagcount(team) < level.objectives.size) {
-        namespace_944ddf7b8df1b0e3::statusdialog("secured" + self.objectivekey, team);
+    credit_player scripts/mp/codcasterclientmatchdata::function_48544e365f4f5648(15, 1);
+    if (scripts/mp/gametypes/obj_dom::getteamflagcount(team) < level.objectives.size) {
+        scripts/mp/utility/dialog::statusdialog("secured" + self.objectivekey, team);
         if (isdefined(oldteam) && oldteam == "neutral") {
             if (isdefined(level.objectives) && level.objectives.size == 5 && (self.objectivekey == "_c" || self.objectivekey == "_d") || self.objectivekey == "_b") {
-                namespace_944ddf7b8df1b0e3::statusdialog("lost" + self.objectivekey, otherteam);
+                scripts/mp/utility/dialog::statusdialog("lost" + self.objectivekey, otherteam);
             }
         } else {
-            namespace_944ddf7b8df1b0e3::statusdialog("lost" + self.objectivekey, otherteam);
+            scripts/mp/utility/dialog::statusdialog("lost" + self.objectivekey, otherteam);
         }
     } else {
-        thread namespace_3bde6869e44a2770::dominating_music(team);
-        namespace_944ddf7b8df1b0e3::statusdialog("gamestate_domwinning", team);
-        namespace_944ddf7b8df1b0e3::statusdialog("gamestate_domlosing", otherteam);
+        thread scripts/mp/music_and_dialog::dominating_music(team);
+        scripts/mp/utility/dialog::statusdialog("gamestate_domwinning", team);
+        scripts/mp/utility/dialog::statusdialog("gamestate_domlosing", otherteam);
     }
     if (istrue(level.var_d0d511ba6517842a)) {
         function_d0d511ba6517842a(team);
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4593
 // Size: 0xb1
-function dompoint_onuse(var_22282e7d48ca3400) {
-    namespace_98b55913d2326ac8::dompoint_onuse(var_22282e7d48ca3400, var_22282e7d48ca3400.team);
+function dompoint_onuse(credit_player) {
+    scripts/mp/gametypes/obj_dom::dompoint_onuse(credit_player, credit_player.team);
     if (isdefined(level.teamscoresonkill)) {
         foreach (team in level.teamnamelist) {
-            var_fee716687dd29378 = namespace_98b55913d2326ac8::getteamflagcount(team);
+            var_fee716687dd29378 = scripts/mp/gametypes/obj_dom::getteamflagcount(team);
             level.teamscoresonkill[team] = var_fee716687dd29378 >= level.numflagsscoreonkill && var_fee716687dd29378 >= level.flagsrequiredtoscore;
         }
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x464b
 // Size: 0xa
 function function_6d0c070c982eddb4() {
-    namespace_b919c4be206d3c80::function_edba1ee7c2375a5();
+    scripts/mp/codcasterclientmatchdata::function_edba1ee7c2375a5();
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x465c
 // Size: 0xa7
 function function_95b0959344794f91() {
     /#
         self endon("boost_groundwar");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
-                namespace_e8a49b70d0769b66::giveteamscoreforobjective("enemy_captured_2", getdvarint(@"hash_46a6b424af6acbc2"), 1);
+                scripts/mp/gamescore::giveteamscoreforobjective("enemy_captured_2", getdvarint(@"hash_46a6b424af6acbc2"), 1);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
-                namespace_e8a49b70d0769b66::giveteamscoreforobjective("secured_e", getdvarint(@"hash_86e14326e43c0115"), 1);
+                scripts/mp/gamescore::giveteamscoreforobjective("secured_e", getdvarint(@"hash_86e14326e43c0115"), 1);
                 break;
             }
             wait(1);
@@ -1288,30 +1294,30 @@ function function_95b0959344794f91() {
     #/
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x470a
 // Size: 0x197
 function removedompoint() {
     /#
         self endon("boost_groundwar");
-        while (1) {
+        while (true) {
             if (getdvar(@"hash_6ce167f2cdc8ef7c", "mp_dom_spawn") != "mp_dom_spawn") {
-                var_45360a7a32781f43 = getdvar(@"hash_6ce167f2cdc8ef7c", "mp_dom_spawn");
+                flaglabel = getdvar(@"hash_6ce167f2cdc8ef7c", "mp_dom_spawn");
                 foreach (domflag in level.objectives) {
-                    if (isdefined(domflag.objectivekey) && domflag.objectivekey == var_45360a7a32781f43) {
-                        domflag namespace_19b4203b51d56488::allowuse("allies");
+                    if (isdefined(domflag.objectivekey) && domflag.objectivekey == flaglabel) {
+                        domflag scripts/mp/gameobjects::allowuse("allies");
                         domflag.trigger = undefined;
                         domflag notify("team");
                         domflag.visibleteam = "allies";
-                        domflag namespace_19b4203b51d56488::setobjectivestatusicons(undefined);
-                        var_3dabce211c987a42 = [];
+                        domflag scripts/mp/gameobjects::setobjectivestatusicons(undefined);
+                        tempflags = [];
                         foreach (objective in level.objectives) {
-                            if (objective.objectivekey != var_45360a7a32781f43) {
-                                var_3dabce211c987a42[objective.objectivekey] = objective;
+                            if (objective.objectivekey != flaglabel) {
+                                tempflags[objective.objectivekey] = objective;
                             }
                         }
-                        level.objectives = var_3dabce211c987a42;
+                        level.objectives = tempflags;
                         break;
                     }
                 }
@@ -1322,51 +1328,51 @@ function removedompoint() {
     #/
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48a8
 // Size: 0x488
 function placedompoint() {
     /#
         self endon("boost_groundwar");
-        while (1) {
+        while (true) {
             if (getdvar(@"hash_29d45d6822a1cf6d", "mp_dom_spawn") != "mp_dom_spawn") {
-                var_45360a7a32781f43 = getdvar(@"hash_29d45d6822a1cf6d", "mp_dom_spawn");
+                flaglabel = getdvar(@"hash_29d45d6822a1cf6d", "mp_dom_spawn");
                 zone = spawnstruct();
                 zone.origin = level.players[0].origin;
                 zone.angles = level.players[0].angles;
                 trigger = spawn("_b", zone.origin, 0, 120, 128);
                 zone.trigger = trigger;
-                zone.trigger.script_label = var_45360a7a32781f43;
+                zone.trigger.script_label = flaglabel;
                 zone.ownerteam = "idle";
                 tracestart = zone.origin + (0, 0, 32);
                 traceend = zone.origin + (0, 0, -32);
-                trace = namespace_2a184fc4902783dc::ray_trace(tracestart, traceend, undefined, namespace_2a184fc4902783dc::create_default_contents(1));
+                trace = scripts/engine/trace::ray_trace(tracestart, traceend, undefined, scripts/engine/trace::create_default_contents(1));
                 zone.origin = trace["dom_force_end"];
                 zone.upangles = vectortoangles(trace["mp_frontier"]);
                 zone.forward = anglestoforward(zone.upangles);
                 zone.right = anglestoright(zone.upangles);
                 zone.visuals[0] = spawn("mp_dom_flag_lost_all", zone.origin);
                 zone.visuals[0].angles = zone.angles;
-                domflag = namespace_19b4203b51d56488::createuseobject("idle", zone.trigger, zone.visuals, (0, 0, 100));
-                domflag namespace_19b4203b51d56488::allowuse("jugg");
-                domflag namespace_19b4203b51d56488::setusetime(10);
+                domflag = scripts/mp/gameobjects::createuseobject("idle", zone.trigger, zone.visuals, (0, 0, 100));
+                domflag scripts/mp/gameobjects::allowuse("jugg");
+                domflag scripts/mp/gameobjects::setusetime(10);
                 if (isdefined(trigger.objectivekey)) {
                     domflag.objectivekey = trigger.objectivekey;
                 } else {
-                    domflag.objectivekey = domflag namespace_19b4203b51d56488::getlabel();
+                    domflag.objectivekey = domflag scripts/mp/gameobjects::getlabel();
                 }
                 if (isdefined(trigger.iconname)) {
                     domflag.iconname = trigger.iconname;
                 } else {
-                    domflag.iconname = domflag namespace_19b4203b51d56488::getlabel();
+                    domflag.iconname = domflag scripts/mp/gameobjects::getlabel();
                 }
-                domflag namespace_19b4203b51d56488::setobjectivestatusicons(level.icondefend, level.iconneutral);
-                domflag namespace_19b4203b51d56488::setvisibleteam("<unknown string>");
+                domflag scripts/mp/gameobjects::setobjectivestatusicons(level.icondefend, level.iconneutral);
+                domflag scripts/mp/gameobjects::setvisibleteam("<unknown string>");
                 domflag.onuse = &dompoint_onuse;
-                domflag.onbeginuse = &namespace_98b55913d2326ac8::dompoint_onusebegin;
-                domflag.onuseupdate = &namespace_98b55913d2326ac8::dompoint_onuseupdate;
-                domflag.onenduse = &namespace_98b55913d2326ac8::dompoint_onuseend;
+                domflag.onbeginuse = &scripts/mp/gametypes/obj_dom::dompoint_onusebegin;
+                domflag.onuseupdate = &scripts/mp/gametypes/obj_dom::dompoint_onuseupdate;
+                domflag.onenduse = &scripts/mp/gametypes/obj_dom::dompoint_onuseend;
                 domflag.nousebar = 1;
                 domflag.id = "<unknown string>";
                 domflag.firstcapture = 1;
@@ -1374,14 +1380,14 @@ function placedompoint() {
                 domflag.decayrate = 50;
                 tracestart = zone.visuals[0].origin + (0, 0, 32);
                 traceend = zone.visuals[0].origin + (0, 0, -32);
-                contentoverride = namespace_2a184fc4902783dc::create_contents(1, 1, 1, 1, 0, 1, 1);
+                contentoverride = scripts/engine/trace::create_contents(1, 1, 1, 1, 0, 1, 1);
                 ignoreents = [];
-                trace = namespace_2a184fc4902783dc::ray_trace(tracestart, traceend, ignoreents, contentoverride);
+                trace = scripts/engine/trace::ray_trace(tracestart, traceend, ignoreents, contentoverride);
                 domflag.baseeffectpos = trace["dom_force_end"];
                 upangles = vectortoangles(trace["mp_frontier"]);
                 domflag.baseeffectforward = anglestoforward(upangles);
-                domflag namespace_98b55913d2326ac8::initializematchrecording();
-                domflag thread namespace_98b55913d2326ac8::domflag_setneutral();
+                domflag scripts/mp/gametypes/obj_dom::initializematchrecording();
+                domflag thread scripts/mp/gametypes/obj_dom::domflag_setneutral();
                 level.objectives[domflag.objectivekey] = domflag;
                 setdynamicdvar(@"hash_29d45d6822a1cf6d", "mp_dom_spawn");
             }
@@ -1390,16 +1396,16 @@ function placedompoint() {
     #/
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d37
 // Size: 0x16
 function updatematchstatushintonspawn() {
     level endon("game_ended");
-    namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("dom_cap_defend");
+    scripts/mp/hud_message::function_f004ef4606b9efdc("dom_cap_defend");
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d54
 // Size: 0x151
@@ -1411,7 +1417,7 @@ function updatetriggerforcodcaster() {
             mlgpoint = 0;
             foreach (dompoint in level.objectives) {
                 if (player istouching(dompoint.trigger) && isalive(player)) {
-                    mlgpoint = namespace_98b55913d2326ac8::getreservedobjid(dompoint.objectivekey) + 1;
+                    mlgpoint = scripts/mp/gametypes/obj_dom::getreservedobjid(dompoint.objectivekey) + 1;
                     break;
                 }
             }
@@ -1428,14 +1434,14 @@ function updatetriggerforcodcaster() {
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4eac
 // Size: 0x2bd
 function function_d0d511ba6517842a(team) {
     var_b5b1784d5a1327c7 = team + "_agents";
-    var_3d2e4b298e935c8d = function_9368fb9261e4cd0a(var_b5b1784d5a1327c7);
-    var_644d90de7685f75 = level.var_72e8a99508b7be1b - var_3d2e4b298e935c8d;
+    totalspawned = function_9368fb9261e4cd0a(var_b5b1784d5a1327c7);
+    var_644d90de7685f75 = level.var_72e8a99508b7be1b - totalspawned;
     if (var_644d90de7685f75 <= 0) {
         return;
     }
@@ -1450,9 +1456,9 @@ function function_d0d511ba6517842a(team) {
                 agent thread function_a5117518725da028(agent, self.trigger.origin);
                 if (team == "allies") {
                     agent namespace_14d36171baccf528::function_c37c4f9d687074ff("body_mp_eastern_geist_1_1_lod1", "head_mp_eastern_bale_1_1");
-                } else {
-                    agent namespace_14d36171baccf528::function_c37c4f9d687074ff("body_spetsnaz_cqc", "head_spetsnaz_cqc");
+                    continue;
                 }
+                agent namespace_14d36171baccf528::function_c37c4f9d687074ff("body_spetsnaz_cqc", "head_spetsnaz_cqc");
             }
         }
     }
@@ -1470,22 +1476,22 @@ function function_d0d511ba6517842a(team) {
                 }
             }
         }
-    } else {
-        var_40e875a042b82875 = getdvarint(@"hash_2c76d4f86fd341de", 0);
-        if (var_40e875a042b82875 > 0) {
-            for (i = 0; i < var_40e875a042b82875; i++) {
-                agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
-                if (isdefined(agent)) {
-                    agent thread function_35c195df2ba46725(agent, team);
-                    namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
-                    agent thread function_a5117518725da028(agent, self.trigger.origin);
-                }
+        return;
+    }
+    var_40e875a042b82875 = getdvarint(@"hash_2c76d4f86fd341de", 0);
+    if (var_40e875a042b82875 > 0) {
+        for (i = 0; i < var_40e875a042b82875; i++) {
+            agent = ai_mp_requestspawnagent("enemy_mp_jugg_base", self.trigger.origin, (0, 0, 0), "absolute", var_b5b1784d5a1327c7, "jugg", var_b5b1784d5a1327c7, team);
+            if (isdefined(agent)) {
+                agent thread function_35c195df2ba46725(agent, team);
+                namespace_14d36171baccf528::function_1828f1e20e52b418(agent);
+                agent thread function_a5117518725da028(agent, self.trigger.origin);
             }
         }
     }
 }
 
-// Namespace dom/namespace_6b4b8b8421d203ba
+// Namespace dom / scripts/mp/gametypes/dom
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5170
 // Size: 0x85

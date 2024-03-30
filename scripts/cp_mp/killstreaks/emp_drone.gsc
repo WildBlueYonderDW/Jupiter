@@ -2,9 +2,9 @@
 #using scripts\engine\trace.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using script_3db04fd1b466bdba;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
@@ -18,7 +18,7 @@
 
 #namespace emp_drone;
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x588
 // Size: 0x29
@@ -28,7 +28,7 @@ function init() {
     }
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b8
 // Size: 0x2d
@@ -36,14 +36,14 @@ function empdrone_beginsuper() {
     self endon("death_or_disconnect");
     self endon("reconDroneEnded");
     self endon("reconDroneUnset");
-    if (!namespace_f64231d5b7a2c3c4::reservevehicle()) {
-        return 0;
+    if (!scripts/cp_mp/vehicles/vehicle_tracking::reservevehicle()) {
+        return false;
     }
     thread empdrone_superusethink();
-    return 1;
+    return true;
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ed
 // Size: 0xc4
@@ -51,7 +51,7 @@ function empdrone_superusethink() {
     streakinfo = createstreakinfo("emp_drone", self);
     result = empdrone_tryuse(streakinfo);
     if (!result) {
-        namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+        scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
     }
     wait(0.05);
     if (result) {
@@ -61,35 +61,37 @@ function empdrone_superusethink() {
         if (issharedfuncdefined("sound", "trySayLocalSound")) {
             level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](self, #"hash_d661aea88fc83c08");
         }
-    } else if (issharedfuncdefined("supers", "superUseFinished")) {
+        return;
+    }
+    if (issharedfuncdefined("supers", "superUseFinished")) {
         [[ getsharedfunc("supers", "superUseFinished") ]](1);
     }
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b8
 // Size: 0x73
 function empdrone_tryuse(streakinfo) {
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
-            return 0;
+            return false;
         }
     }
-    var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweapontabletdeploy(streakinfo, &empdrone_weapongiven);
-    if (!istrue(var_9b1deb5e9d32bbe3)) {
-        return 0;
+    deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweapontabletdeploy(streakinfo, &empdrone_weapongiven);
+    if (!istrue(deployresult)) {
+        return false;
     }
     if (isdefined(level.killstreakbeginusefunc)) {
         if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
-            return 0;
+            return false;
         }
     }
     thread empdrone_rundrone(streakinfo);
-    return 1;
+    return true;
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x733
 // Size: 0x9e
@@ -106,15 +108,15 @@ function empdrone_equipment_wrapper(ref, slot, objweapon) {
     }
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d8
 // Size: 0xe
 function empdrone_weapongiven(streakinfo) {
-    return 1;
+    return true;
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ee
 // Size: 0x11a
@@ -139,26 +141,26 @@ function empdrone_rundrone(streakinfo) {
     self setclientomnvar("ui_emp_drone_overlay", 1);
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90f
 // Size: 0x2bf
 function empdrone_createdrone(streakinfo) {
-    var_45306a38c5430b1a = empdrone_findstartposition();
-    forwardangles = vectortoangles(var_45306a38c5430b1a.targetpos - var_45306a38c5430b1a.startpos);
-    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+    startposstruct = empdrone_findstartposition();
+    forwardangles = vectortoangles(startposstruct.targetpos - startposstruct.startpos);
+    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
     spawndata = spawnstruct();
-    spawndata.origin = var_45306a38c5430b1a.startpos;
+    spawndata.origin = startposstruct.startpos;
     spawndata.angles = forwardangles;
     spawndata.modelname = "veh8_ind_air_bombing_drone";
     spawndata.vehicletype = "rcplane_physics_mp";
     spawndata.targetname = "rcplane";
     spawndata.cannotbesuspended = 1;
-    var_ee8da5624236dc89 = spawnstruct();
-    drone = namespace_f64231d5b7a2c3c4::_spawnvehicle(spawndata, var_ee8da5624236dc89);
+    faildata = spawnstruct();
+    drone = scripts/cp_mp/vehicles/vehicle_tracking::_spawnvehicle(spawndata, faildata);
     if (!isdefined(drone)) {
         /#
-            thread namespace_3c37cb17ade254d::error("killstreak");
+            thread scripts/engine/utility::error("killstreak");
         #/
         return;
     }
@@ -181,7 +183,7 @@ function empdrone_createdrone(streakinfo) {
     if (issharedfuncdefined("killstreak", "killstreakSetDeathCallback")) {
         drone [[ getsharedfunc("killstreak", "killstreakSetDeathCallback") ]](streakinfo.streakname, &empdrone_handledeathdamage);
     }
-    namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(drone, drone.vehiclename);
+    scripts/cp_mp/vehicles/vehicle_tracking::vehicle_tracking_registerinstance(drone, drone.vehiclename);
     if (issharedfuncdefined("killstreak", "addToActiveKillstreakList")) {
         drone [[ getsharedfunc("killstreak", "addToActiveKillstreakList") ]](streakinfo.streakname, "Killstreak_Air", self, 0, 1, 25);
     }
@@ -191,32 +193,32 @@ function empdrone_createdrone(streakinfo) {
     drone thread empdrone_collidethink();
     drone thread empdrone_watchearlyexit();
     drone thread empdrone_watchdetonate();
-    drone namespace_5a51aa78ea0b1b9f::set_apply_emp_callback(&empdrone_empapplied);
+    drone scripts/cp_mp/emp_debuff::set_apply_emp_callback(&empdrone_empapplied);
     return drone;
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbd6
 // Size: 0xcd
 function empdrone_findstartposition() {
-    var_5fa1e1697a302583 = namespace_9abe40d2af041eb2::getkillstreakairstrikeheightent();
+    heightent = scripts/cp_mp/utility/killstreak_utility::getkillstreakairstrikeheightent();
     heightoffset = (0, 0, 600);
-    if (isdefined(var_5fa1e1697a302583)) {
-        var_d274915779774224 = var_5fa1e1697a302583.origin[2] + -100;
-        heightoffset = (0, 0, var_d274915779774224);
+    if (isdefined(heightent)) {
+        heightz = heightent.origin[2] + -100;
+        heightoffset = (0, 0, heightz);
     }
     forwardvector = anglestoforward(self.angles);
-    var_8a88744ab78f625f = heightoffset + self.origin;
-    startpos = var_8a88744ab78f625f - forwardvector * 4000;
-    targetpos = var_8a88744ab78f625f;
+    aboveplayerpos = heightoffset + self.origin;
+    startpos = aboveplayerpos - forwardvector * 4000;
+    targetpos = aboveplayerpos;
     struct = spawnstruct();
     struct.startpos = startpos;
     struct.targetpos = targetpos;
     return struct;
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcab
 // Size: 0x77
@@ -228,12 +230,12 @@ function empdrone_timeoutthink() {
     while (timeout > 0) {
         self.owner setclientomnvar("ui_killstreak_countdown", gettime() + int(timeout * 1000));
         timeout = timeout - 0.05;
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(0.05);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(0.05);
     }
     thread empdrone_destroy();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd29
 // Size: 0x91
@@ -242,11 +244,11 @@ function empdrone_collidethink() {
     self.owner endon("disconnect");
     self endon("death");
     self vehphys_enablecollisioncallback(1);
-    ent = impulse = normal = position = flag1 = flag0 = body1 = body0 = self waittill("collision");
+    body0, body1, flag0, flag1, position, normal, impulse, ent = self waittill("collision");
     thread empdrone_explode();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdc1
 // Size: 0x3f
@@ -259,7 +261,7 @@ function empdrone_watchdetonate() {
     thread empdrone_explode();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe07
 // Size: 0x74
@@ -277,7 +279,7 @@ function empdrone_watchearlyexit() {
     thread empdrone_exit();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe82
 // Size: 0x31
@@ -287,7 +289,7 @@ function empdrone_handledeathdamage(data) {
     empdrone_destroy();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeba
 // Size: 0x55
@@ -299,7 +301,7 @@ function empdrone_explode() {
     empdrone_delete();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf16
 // Size: 0x4e
@@ -310,7 +312,7 @@ function empdrone_destroy() {
     empdrone_delete();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf6b
 // Size: 0x14
@@ -318,7 +320,7 @@ function empdrone_exit() {
     self.owner empdrone_returnplayer(self);
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf86
 // Size: 0x74
@@ -328,11 +330,11 @@ function empdrone_delete() {
         self thread [[ getsharedfunc("dlog", "fieldUpgradeExpired") ]](self.owner, self.superid, self.usedcount, 0);
     }
     self stoploopsound("iw8_rc_plane_engine");
-    namespace_f64231d5b7a2c3c4::vehicle_tracking_deregisterinstance(self);
-    namespace_f64231d5b7a2c3c4::_deletevehicle(self);
+    scripts/cp_mp/vehicles/vehicle_tracking::vehicle_tracking_deregisterinstance(self);
+    scripts/cp_mp/vehicles/vehicle_tracking::_deletevehicle(self);
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1001
 // Size: 0xb0
@@ -346,7 +348,7 @@ function empdrone_returnplayer(drone) {
     self controlsunlink();
     self cameraunlink(drone);
     empdrone_clearomnvars();
-    val::function_c9d0b43701bdba00("empDrone");
+    val::reset_all("empDrone");
     drone stoploopsound("iw8_rc_plane_engine");
     self notifyonplayercommandremove("emp_drone_detonate", "+frag");
     drone.iscontrolled = undefined;
@@ -354,7 +356,7 @@ function empdrone_returnplayer(drone) {
     drone notify("emp_drone_exited");
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10b8
 // Size: 0x10
@@ -362,7 +364,7 @@ function empdrone_clearomnvars() {
     self setclientomnvar("ui_emp_drone_overlay", 0);
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10cf
 // Size: 0x31
@@ -372,12 +374,12 @@ function empdrone_empapplied(data) {
     empdrone_destroy();
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1107
 // Size: 0x55
 function empdrone_givepointsfordeath(attacker) {
-    if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
+    if (istrue(scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
         if (issharedfuncdefined("player", "doScoreEvent")) {
             attacker thread [[ getsharedfunc("player", "doScoreEvent") ]]("destroyed_equipment");
@@ -385,13 +387,13 @@ function empdrone_givepointsfordeath(attacker) {
     }
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1163
 // Size: 0x2d4
 function empdrone_explodeemp() {
-    var_adb14ff6edfb13e3 = makeweapon("emp_drone_non_player_mp");
-    var_6a96cebaf12d3691 = makeweapon("emp_drone_non_player_direct_mp");
+    indirectweapon = makeweapon("emp_drone_non_player_mp");
+    directhitweapon = makeweapon("emp_drone_non_player_direct_mp");
     ents = empdebuff_get_emp_ents(self.origin, 768);
     foreach (ent in ents) {
         if (ent == self) {
@@ -399,19 +401,19 @@ function empdrone_explodeemp() {
         }
         entowner = ent.owner;
         if (isdefined(entowner)) {
-            jumpiffalse(entowner != self.owner && !namespace_f8065cafc523dba5::playersareenemies(self.owner, entowner)) LOC_00000111;
-        } else {
-        LOC_00000111:
-            distsqr = distancesquared(self.origin, ent.origin);
-            weapon = ter_op(distsqr > 4096, var_adb14ff6edfb13e3, var_6a96cebaf12d3691);
-            ent dodamage(1, self.origin, self.owner, self, "MOD_EXPLOSIVE", weapon);
-            data = packdamagedata(self.owner, ent, 1, weapon, "MOD_EXPLOSIVE", self, self.origin);
-            thread empdrone_applyemp(data);
-            if (issharedfuncdefined("pers", "incPersStat")) {
-                self.owner [[ getsharedfunc("pers", "incPersStat") ]]("empDroneHits", 1);
+            if (entowner != self.owner && !scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, entowner)) {
+                continue;
             }
-            self.usedcount++;
         }
+        distsqr = distancesquared(self.origin, ent.origin);
+        weapon = ter_op(distsqr > 4096, indirectweapon, directhitweapon);
+        ent dodamage(1, self.origin, self.owner, self, "MOD_EXPLOSIVE", weapon);
+        data = packdamagedata(self.owner, ent, 1, weapon, "MOD_EXPLOSIVE", self, self.origin);
+        thread empdrone_applyemp(data);
+        if (issharedfuncdefined("pers", "incPersStat")) {
+            self.owner [[ getsharedfunc("pers", "incPersStat") ]]("empDroneHits", 1);
+        }
+        self.usedcount++;
     }
     playerweapon = makeweapon("emp_drone_player_mp");
     radiusdamage(self.origin, 64, 60, 1, self.owner, "MOD_EXPLOSIVE", playerweapon);
@@ -420,7 +422,7 @@ function empdrone_explodeemp() {
         if (!player can_be_empd()) {
             continue;
         }
-        if (player != self.owner && !namespace_f8065cafc523dba5::playersareenemies(self.owner, player)) {
+        if (player != self.owner && !scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, player)) {
             continue;
         }
         player dodamage(1, self.origin, self.owner, self, "MOD_EXPLOSIVE", playerweapon);
@@ -429,7 +431,7 @@ function empdrone_explodeemp() {
     }
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x143e
 // Size: 0x1ac
@@ -460,7 +462,7 @@ function empdrone_applyemp(data) {
     }
 }
 
-// Namespace emp_drone/namespace_5b16930b9511d4ed
+// Namespace emp_drone / scripts/cp_mp/killstreaks/emp_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15f1
 // Size: 0x5b

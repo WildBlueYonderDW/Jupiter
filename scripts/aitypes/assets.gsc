@@ -5,7 +5,7 @@
 
 #namespace assets;
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5dd
 // Size: 0x3
@@ -13,7 +13,7 @@ function main() {
     
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e7
 // Size: 0x154
@@ -39,7 +39,7 @@ function soldier() {
     }
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x742
 // Size: 0x3
@@ -47,7 +47,7 @@ function civilian() {
     
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x74c
 // Size: 0x3
@@ -55,7 +55,7 @@ function dog() {
     
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x756
 // Size: 0x82
@@ -71,7 +71,7 @@ function juggernaut() {
     }
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7df
 // Size: 0x9b
@@ -89,7 +89,7 @@ function suicidebomber() {
     }
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x881
 // Size: 0x1d
@@ -99,7 +99,7 @@ function zombie() {
     }
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8a5
 // Size: 0x74
@@ -119,7 +119,7 @@ function function_89bd0a0f1b23fe8d(type) {
     level.var_7d310f9c5a785dcb[type] = 1;
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x920
 // Size: 0x26
@@ -127,7 +127,7 @@ function function_fca40a005d4059d6(type) {
     return isdefined(level.var_7d310f9c5a785dcb) && istrue(level.var_7d310f9c5a785dcb[type]);
 }
 
-// Namespace assets/namespace_8bef0f00d6d36a69
+// Namespace assets / scripts/aitypes/assets
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x94e
 // Size: 0xcc
@@ -139,10 +139,10 @@ function function_7d79a3fa97a020cc() {
         level.g_effect["human_gib_fullbody"] = loadfx("vfx/iw8/weap/_explo/suicide/vfx_gib_dir1.vfx");
         level.g_effect["human_gib_head"] = loadfx("vfx/iw8/weap/_impact/flesh/vfx_imp_flesh_fatal_head_med_dismb.vfx");
         level.g_effect["human_gib_head_cap"] = loadfx("vfx/iw8/weap/_impact/flesh/vfx_dismemberment_head_cap.vfx");
-    } else {
-        level.g_effect["human_gib_fullbody"] = loadfx("vfx/core/blank.vfx");
-        level.g_effect["human_gib_head"] = loadfx("vfx/core/blank.vfx");
-        level.g_effect["human_gib_head_cap"] = loadfx("vfx/core/blank.vfx");
+        return;
     }
+    level.g_effect["human_gib_fullbody"] = loadfx("vfx/core/blank.vfx");
+    level.g_effect["human_gib_head"] = loadfx("vfx/core/blank.vfx");
+    level.g_effect["human_gib_head_cap"] = loadfx("vfx/core/blank.vfx");
 }
 

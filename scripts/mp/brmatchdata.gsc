@@ -9,13 +9,13 @@
 #using scripts\mp\utility\stats.gsc;
 #using scripts\mp\matchdata.gsc;
 
-#namespace namespace_db69cb54d08bb3aa;
+#namespace brmatchdata;
 
-// Namespace namespace_db69cb54d08bb3aa/namespace_5d2a2ec56e561e3
+// Namespace brmatchdata / scripts/mp/brmatchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb0
 // Size: 0xa
 function init() {
-    namespace_eb72aa155b5e14e7::init();
+    scripts/mp/matchdata::init();
 }
 

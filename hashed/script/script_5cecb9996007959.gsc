@@ -1,46 +1,45 @@
 // mwiii decomp prototype
 #using scripts\asm\asm_bb.gsc;
 #using scripts\asm\asm.gsc;
-#using script_10b6724c15a95e8;
+#using scripts\common\cap.gsc;
 
 #namespace namespace_ee40130089e5429f;
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x199
 // Size: 0x7f
-function function_36ae2d2c117cdb23(var_cc4f2e0388379546) {
-    switch (var_cc4f2e0388379546) {
+function getfunction(funcid) {
+    switch (funcid) {
     case #"hash_dab0d83df51da4d":
         return &function_3dbd361f74b442f9;
     case #"hash_722d767fd6d40f56":
         return &function_a157fbbc31d9eb1a;
     case #"hash_902f9e79d5e57c83":
-        return &function_d9a30a0827fab997;
+        return &oneventreceived;
     case #"hash_1637227a26307eb5":
-        return &function_46a6cb991c2a5d49;
+        return &setstationary;
     case #"hash_6279e013ab5c4fdd":
         return &usearmorplate;
-        break;
     }
     /#
-        assertmsg("Missing function pointer for " + var_cc4f2e0388379546);
+        assertmsg("Missing function pointer for " + funcid);
     #/
 }
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f
 // Size: 0xc
-function function_3dbd361f74b442f9(var_f8d4ed108521e632) {
+function function_3dbd361f74b442f9(interactionid) {
     
 }
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x232
 // Size: 0xa1
-function function_a157fbbc31d9eb1a(var_f8d4ed108521e632) {
+function function_a157fbbc31d9eb1a(interactionid) {
     self clearbtgoal(1);
     self notify("endusearmorplate");
     /#
@@ -55,53 +54,53 @@ function function_a157fbbc31d9eb1a(var_f8d4ed108521e632) {
         self setscriptablepartstate(var_8a46c62f0a756dd3, "default");
     }
     if (isalive(self) && self.asmname == "cap_use_armor_plate_solo") {
-        namespace_aebb27832287cd3a::function_b6af4ade50626e90();
+        scripts/common/cap::cap_exit();
     }
 }
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2da
 // Size: 0x66
-function function_d9a30a0827fab997(receiver, info, origin) {
+function oneventreceived(receiver, info, origin) {
     if (info == "focused_on") {
         distsq = distancesquared(receiver.origin, origin);
-        var_63233bca53efdd98 = 150;
-        if (distsq < var_63233bca53efdd98 * var_63233bca53efdd98) {
+        breakoutdist = 150;
+        if (distsq < breakoutdist * breakoutdist) {
             self notify("endusearmorplate");
-            return 1;
+            return true;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x348
 // Size: 0x29
-function function_46a6cb991c2a5d49(statename, params) {
+function setstationary(statename, params) {
     self function_e64ea2b4e79c4b74(1);
     self setbtgoalradius(1, params[0]);
 }
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x378
 // Size: 0x72
 function usearmorplate(statename, params) {
     self endon("death");
     self endon("endusearmorplate");
-    var_3e38ee41dc326fdc = "cap_use_armor_plate_solo";
-    if (self.asmname != var_3e38ee41dc326fdc) {
-        namespace_aebb27832287cd3a::cap_start(var_3e38ee41dc326fdc, "caps/interactions/cap_use_armor_plate_solo");
+    capname = "cap_use_armor_plate_solo";
+    if (self.asmname != capname) {
+        scripts/common/cap::cap_start(capname, "caps/interactions/cap_use_armor_plate_solo");
     }
     function_30b70873a0937989("Using Armor Plate!");
     self waittill("cap_exit_completed");
     asm_fireephemeralevent("use_armor_plate", "end");
 }
 
-// Namespace namespace_ee40130089e5429f/namespace_6930af0ec0bf4a3f
+// Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x64

@@ -3,57 +3,57 @@
 
 #namespace namespace_94efe9b48c602c39;
 
-// Namespace namespace_94efe9b48c602c39/namespace_954524c8d6293cb9
+// Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11b
 // Size: 0x35
 function function_628ac163573e544e() {
     if (isdefined(level.var_50e605b4f0a0152b)) {
         [[ level.var_50e605b4f0a0152b ]]();
-    } else {
-        function_900f562c61c6a5d6("ammo", &function_b56fe557ccce0d8f, &function_67d2e1159a24893);
+        return;
     }
+    function_900f562c61c6a5d6("ammo", &use_ammo, &function_67d2e1159a24893);
 }
 
-// Namespace namespace_94efe9b48c602c39/namespace_954524c8d6293cb9
+// Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x157
 // Size: 0xb1
-function function_b56fe557ccce0d8f(itembundle, item) {
-    var_4f04b15053655ba = item.count;
-    var_4f04b15053655ba = function_dbeac47bbdfe2c89(self.currentprimaryweapon, itembundle, var_4f04b15053655ba);
-    if (var_4f04b15053655ba == 0) {
+function use_ammo(itembundle, item) {
+    ammoleft = item.count;
+    ammoleft = function_dbeac47bbdfe2c89(self.currentprimaryweapon, itembundle, ammoleft);
+    if (ammoleft == 0) {
         return 0;
     }
     primary_weapons = self getweaponslistprimaries();
     foreach (primary_weapon in primary_weapons) {
-        var_4f04b15053655ba = function_dbeac47bbdfe2c89(primary_weapon, itembundle, var_4f04b15053655ba);
-        if (var_4f04b15053655ba == 0) {
+        ammoleft = function_dbeac47bbdfe2c89(primary_weapon, itembundle, ammoleft);
+        if (ammoleft == 0) {
             return 0;
         }
     }
-    return var_4f04b15053655ba;
+    return ammoleft;
 }
 
-// Namespace namespace_94efe9b48c602c39/namespace_954524c8d6293cb9
+// Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x210
 // Size: 0xc8
-function function_67d2e1159a24893(itembundle, item, var_b2635db617b09abd, var_8bd8fa2792aa0511) {
+function function_67d2e1159a24893(itembundle, item, autouse, allowswap) {
     primary_weapons = self getweaponslistprimaries();
     foreach (primary_weapon in primary_weapons) {
         var_fe768d47e57d337a = function_207fcdc93a85aa07(primary_weapon);
         if (isdefined(var_fe768d47e57d337a) && var_fe768d47e57d337a == itembundle.ref) {
             var_de8a9ead75a0581 = self getweaponammostock(primary_weapon);
             if (var_de8a9ead75a0581 < primary_weapon.maxammo) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_94efe9b48c602c39/namespace_954524c8d6293cb9
+// Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2e0
 // Size: 0xe8
@@ -76,7 +76,6 @@ function private function_207fcdc93a85aa07(primary_weapon) {
         return "brloot_ammo_50cal";
     case #"hash_c5a1525ba35389fa":
         return "brloot_ammo_rocket";
-        break;
     }
     /#
         println("<unknown string>" + weapon_class + "<unknown string>");
@@ -84,21 +83,21 @@ function private function_207fcdc93a85aa07(primary_weapon) {
     return "brloot_ammo_762";
 }
 
-// Namespace namespace_94efe9b48c602c39/namespace_954524c8d6293cb9
+// Namespace namespace_94efe9b48c602c39 / namespace_954524c8d6293cb9
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d0
 // Size: 0xa9
-function function_dbeac47bbdfe2c89(primary_weapon, itembundle, var_4f04b15053655ba) {
+function function_dbeac47bbdfe2c89(primary_weapon, itembundle, ammoleft) {
     var_fe768d47e57d337a = function_207fcdc93a85aa07(primary_weapon);
     if (isdefined(var_fe768d47e57d337a) && var_fe768d47e57d337a == itembundle.ref) {
         var_de8a9ead75a0581 = self getweaponammostock(primary_weapon);
         if (var_de8a9ead75a0581 < primary_weapon.maxammo) {
             var_ae99050519de73b2 = primary_weapon.maxammo - var_de8a9ead75a0581;
-            var_cb8b543e9d0c0d0d = int(min(var_4f04b15053655ba, var_ae99050519de73b2));
-            var_4f04b15053655ba = var_4f04b15053655ba - var_cb8b543e9d0c0d0d;
+            var_cb8b543e9d0c0d0d = int(min(ammoleft, var_ae99050519de73b2));
+            ammoleft = ammoleft - var_cb8b543e9d0c0d0d;
             self setweaponammostock(primary_weapon, var_de8a9ead75a0581 + var_cb8b543e9d0c0d0d);
         }
     }
-    return var_4f04b15053655ba;
+    return ammoleft;
 }
 

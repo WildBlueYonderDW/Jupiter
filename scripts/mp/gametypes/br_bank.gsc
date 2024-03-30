@@ -3,9 +3,9 @@
 #using scripts\mp\hud_util.gsc;
 #using scripts\mp\utility\trigger.gsc;
 
-#namespace namespace_d5abca8ae174a8dc;
+#namespace br_bank;
 
-// Namespace namespace_d5abca8ae174a8dc/namespace_a40a12217571c945
+// Namespace br_bank / scripts/mp/gametypes/br_bank
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x153
 // Size: 0x100
@@ -23,43 +23,43 @@ function init() {
         trigger.playersinsidebank = 0;
         trigger.alarmstillplaying = 0;
         trigger.banklights = getstructarray(trigger.target, "targetname");
-        trigger thread namespace_f1565a2788ab1e89::makeenterexittrigger(trigger, &bankplayerentering, &bankplayerexiting);
+        trigger thread scripts/mp/utility/trigger::makeenterexittrigger(trigger, &bankplayerentering, &bankplayerexiting);
     }
 }
 
-// Namespace namespace_d5abca8ae174a8dc/namespace_a40a12217571c945
+// Namespace br_bank / scripts/mp/gametypes/br_bank
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25a
 // Size: 0x4f
-function bankplayerentering(player, var_10b336ba132ad5f5) {
-    if (!isdefined(var_10b336ba132ad5f5)) {
+function bankplayerentering(player, banktrigger) {
+    if (!isdefined(banktrigger)) {
         return;
     }
-    var_10b336ba132ad5f5.playersinsidebank = var_10b336ba132ad5f5.playersinsidebank + 1;
-    if (var_10b336ba132ad5f5.playersinsidebank != 1) {
+    banktrigger.playersinsidebank = banktrigger.playersinsidebank + 1;
+    if (banktrigger.playersinsidebank != 1) {
         return;
     }
-    var_10b336ba132ad5f5 thread bankturnonalarm();
+    banktrigger thread bankturnonalarm();
 }
 
-// Namespace namespace_d5abca8ae174a8dc/namespace_a40a12217571c945
+// Namespace br_bank / scripts/mp/gametypes/br_bank
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b0
 // Size: 0x6e
-function bankplayerexiting(player, var_10b336ba132ad5f5) {
-    if (!isdefined(var_10b336ba132ad5f5)) {
+function bankplayerexiting(player, banktrigger) {
+    if (!isdefined(banktrigger)) {
         return;
     }
     /#
-        assertex(var_10b336ba132ad5f5.playersinsidebank > 0, "br_bank: negative number of players in the bank. Sanity check.");
+        assertex(banktrigger.playersinsidebank > 0, "br_bank: negative number of players in the bank. Sanity check.");
     #/
-    var_10b336ba132ad5f5.playersinsidebank = max(var_10b336ba132ad5f5.playersinsidebank - 1, 0);
-    if (var_10b336ba132ad5f5.playersinsidebank == 0) {
-        var_10b336ba132ad5f5 thread bankturnoffalarm();
+    banktrigger.playersinsidebank = max(banktrigger.playersinsidebank - 1, 0);
+    if (banktrigger.playersinsidebank == 0) {
+        banktrigger thread bankturnoffalarm();
     }
 }
 
-// Namespace namespace_d5abca8ae174a8dc/namespace_a40a12217571c945
+// Namespace br_bank / scripts/mp/gametypes/br_bank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x325
 // Size: 0x99
@@ -82,44 +82,44 @@ function bankplunderdeposited() {
     }
 }
 
-// Namespace namespace_d5abca8ae174a8dc/namespace_a40a12217571c945
+// Namespace br_bank / scripts/mp/gametypes/br_bank
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c5
 // Size: 0x13d
 function bankturnonalarm() {
     self notify("bank_alarm_triggered");
-    var_10b336ba132ad5f5 = self;
-    var_10b336ba132ad5f5.alarmstillplaying = 1;
-    var_10b336ba132ad5f5 playloopsound("bank_alarm_lp");
-    foreach (var_3d1b95cc30175a75 in var_10b336ba132ad5f5.banklights) {
-        var_72f11fb16a8128c8 = anglestoforward(var_3d1b95cc30175a75.angles);
-        var_6ed3eef0e424456e = anglestoup(var_3d1b95cc30175a75.angles);
-        var_3d1b95cc30175a75.fx = spawnfx(level._effect["poi_light_bank"], var_3d1b95cc30175a75.origin + var_72f11fb16a8128c8 * 5, var_72f11fb16a8128c8, var_6ed3eef0e424456e);
-        triggerfx(var_3d1b95cc30175a75.fx);
+    banktrigger = self;
+    banktrigger.alarmstillplaying = 1;
+    banktrigger playloopsound("bank_alarm_lp");
+    foreach (banklight in banktrigger.banklights) {
+        forwardvect = anglestoforward(banklight.angles);
+        upvect = anglestoup(banklight.angles);
+        banklight.fx = spawnfx(level._effect["poi_light_bank"], banklight.origin + forwardvect * 5, forwardvect, upvect);
+        triggerfx(banklight.fx);
     }
     var_50b6c105426b8e48 = getdvarint(@"hash_5b11f68d6b008181", 5);
     wait(var_50b6c105426b8e48);
-    var_10b336ba132ad5f5.alarmstillplaying = 0;
-    if (var_10b336ba132ad5f5.playersinsidebank == 0) {
-        var_10b336ba132ad5f5 bankturnoffalarm();
+    banktrigger.alarmstillplaying = 0;
+    if (banktrigger.playersinsidebank == 0) {
+        banktrigger bankturnoffalarm();
     }
 }
 
-// Namespace namespace_d5abca8ae174a8dc/namespace_a40a12217571c945
+// Namespace br_bank / scripts/mp/gametypes/br_bank
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x509
 // Size: 0x9e
 function bankturnoffalarm() {
     self endon("bank_alarm_triggered");
-    var_10b336ba132ad5f5 = self;
-    if (var_10b336ba132ad5f5.alarmstillplaying) {
+    banktrigger = self;
+    if (banktrigger.alarmstillplaying) {
         return;
     }
     wait(3);
-    var_10b336ba132ad5f5 stoploopsound();
-    foreach (var_3d1b95cc30175a75 in var_10b336ba132ad5f5.banklights) {
-        if (isdefined(var_3d1b95cc30175a75.fx)) {
-            var_3d1b95cc30175a75.fx delete();
+    banktrigger stoploopsound();
+    foreach (banklight in banktrigger.banklights) {
+        if (isdefined(banklight.fx)) {
+            banklight.fx delete();
         }
     }
 }

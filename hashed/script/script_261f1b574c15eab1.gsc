@@ -6,7 +6,7 @@
 
 #namespace namespace_ddf44c860acc3f80;
 
-// Namespace namespace_ddf44c860acc3f80/namespace_8db7d778efdc3d65
+// Namespace namespace_ddf44c860acc3f80 / namespace_8db7d778efdc3d65
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b
 // Size: 0x14
@@ -14,7 +14,7 @@ function main() {
     function_c0b3ddc9a6bdcc46("veh9_overland_2016", &function_7993e6a0ef6e50d9);
 }
 
-// Namespace namespace_ddf44c860acc3f80/namespace_8db7d778efdc3d65
+// Namespace namespace_ddf44c860acc3f80 / namespace_8db7d778efdc3d65
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb6
 // Size: 0x1e

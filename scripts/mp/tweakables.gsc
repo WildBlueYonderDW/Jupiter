@@ -3,7 +3,7 @@
 
 #namespace tweakables;
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x298
 // Size: 0x185
@@ -44,7 +44,7 @@ function gettweakabledvarvalue(category, name) {
     return value;
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x425
 // Size: 0x174
@@ -84,7 +84,7 @@ function gettweakabledvar(category, name) {
     return value;
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a1
 // Size: 0x1e9
@@ -119,9 +119,9 @@ function gettweakablevalue(category, name) {
         break;
     }
     /#
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("allowfrag", "allowclaymores")) {
-            gametype = [[ namespace_3c37cb17ade254d::getsharedfunc("allowfrag", "allowclaymores") ]]();
-            overridedvar = function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", gametype, "<unknown string>", category, "<unknown string>", name);
+        if (scripts/engine/utility::issharedfuncdefined("allowfrag", "allowclaymores")) {
+            gametype = [[ scripts/engine/utility::getsharedfunc("allowfrag", "allowclaymores") ]]();
+            overridedvar = hashcat(@"hash_d98c82b5a26dc973", gametype, "<unknown string>", category, "<unknown string>", name);
             if (isstring(value)) {
                 return getdvar(overridedvar, value);
             } else {
@@ -135,7 +135,7 @@ function gettweakablevalue(category, name) {
     return value;
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x792
 // Size: 0x174
@@ -175,7 +175,7 @@ function gettweakablelastvalue(category, name) {
     return value;
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x90e
 // Size: 0x178
@@ -212,7 +212,7 @@ function settweakabledvar(category, name, value) {
     setdvar(dvar, value);
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa8d
 // Size: 0x164
@@ -247,7 +247,7 @@ function settweakablevalue(category, name, value) {
     }
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbf8
 // Size: 0x164
@@ -282,7 +282,7 @@ function settweakablelastvalue(category, name, value) {
     }
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd63
 // Size: 0x3eb
@@ -360,7 +360,7 @@ function registertweakable(category, name, dvar, value) {
     }
 }
 
-// Namespace tweakables/namespace_775507ba36294dfb
+// Namespace tweakables / scripts/mp/tweakables
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1155
 // Size: 0x478

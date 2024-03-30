@@ -3,18 +3,18 @@
 #using scripts\common\utility.gsc;
 #using script_7d535542e36d66f9;
 #using script_26f456dbdf9aa216;
-#using script_10b6724c15a95e8;
+#using scripts\common\cap.gsc;
 #using script_5d265b4fca61f070;
-#using script_4e1d4dd23699a8a4;
+#using scripts\asm\cap.gsc;
 
 #namespace coverfire;
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x265
 // Size: 0x133
-function function_36ae2d2c117cdb23(var_cc4f2e0388379546) {
-    switch (var_cc4f2e0388379546) {
+function getfunction(funcid) {
+    switch (funcid) {
     case #"hash_dab0d83df51da4d":
         return &function_3dbd361f74b442f9;
     case #"hash_722d767fd6d40f56":
@@ -28,11 +28,11 @@ function function_36ae2d2c117cdb23(var_cc4f2e0388379546) {
     case #"hash_3958941e1685548a":
         return &function_c753b2bac95c6bfe;
     case #"hash_713dc5b1c250d91c":
-        return &function_32d11ef968f509a0;
+        return &coveringfire;
     case #"hash_a3836dc7307ecb50":
         return &function_ddf0d739daa1d97c;
     case #"hash_99efb042f2d3bcd8":
-        return &function_e94882b86c7aadac;
+        return &changecover;
     case #"hash_20885c126c27e8a5":
         return &function_30b70873a0937989;
     case #"hash_c51876f65be2c3b3":
@@ -40,32 +40,31 @@ function function_36ae2d2c117cdb23(var_cc4f2e0388379546) {
     case #"hash_80804c8d4d60b774":
         return &namespace_a3bb9840357a7ef2::function_5ad32ab5f21ddf93;
     case #"hash_49987181712dbfd5":
-        return &function_46a6cb991c2a5d49;
+        return &setstationary;
     case #"hash_ebecb858f57398a5":
         return &function_c3722414c55a6ae1;
     case #"hash_2bb757aa70fc12dd":
-        return &function_8586052802bd2c79;
-        break;
+        return &cleargoal;
     }
     /#
-        assertmsg("Missing function pointer for " + var_cc4f2e0388379546);
+        assertmsg("Missing function pointer for " + funcid);
     #/
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39f
 // Size: 0x2e
-function function_3dbd361f74b442f9(var_f8d4ed108521e632) {
+function function_3dbd361f74b442f9(interactionid) {
     self.keepclaimednode = 1;
     self.bulletsinclip = weaponclipsize(self.weapon);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d4
 // Size: 0x62
-function function_a157fbbc31d9eb1a(var_f8d4ed108521e632) {
+function function_a157fbbc31d9eb1a(interactionid) {
     self clearbtgoal(1);
     self.maxfaceenemydist = 300;
     self aiclearscriptdesiredspeed();
@@ -74,20 +73,20 @@ function function_a157fbbc31d9eb1a(var_f8d4ed108521e632) {
     self.shootstyleoverride = undefined;
     self setlookatentity();
     if (!isalive(self)) {
-        function_ae368fad1a1dc337(var_f8d4ed108521e632, "death", 1);
+        function_ae368fad1a1dc337(interactionid, "death", 1);
     }
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43d
 // Size: 0x29
-function function_46a6cb991c2a5d49(statename, params) {
+function setstationary(statename, params) {
     self function_e64ea2b4e79c4b74(1);
     self setbtgoalradius(1, params[0]);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x8c
@@ -100,13 +99,13 @@ function function_bd30a256562f3cdc(statename, params) {
     if (!isdefined(other)) {
         return;
     }
-    function_6fbea72303085c6f(other, 1);
-    namespace_aebb27832287cd3a::cap_start("cap_coverfire", "caps/interactions/cap_coverfire");
+    enablelookatentity(other, 1);
+    scripts/common/cap::cap_start("cap_coverfire", "caps/interactions/cap_coverfire");
     function_216c67ab6749137a(self, other, "moving");
     wait(1);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x500
 // Size: 0x8a
@@ -117,7 +116,7 @@ function function_b98f00d5db5e9c5d(statename, params) {
         return;
     }
     other endon("death");
-    function_6fbea72303085c6f(other, 1, 0.8);
+    enablelookatentity(other, 1, 0.8);
     wait(1);
     if (!isdefined(other) || !isdefined(self)) {
         return;
@@ -131,7 +130,7 @@ function function_b98f00d5db5e9c5d(statename, params) {
     self function_1c339daaba3f71db(0);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x591
 // Size: 0x63
@@ -139,13 +138,13 @@ function function_5ef09b6972c9fab(statename, params) {
     other = function_cbe869548ea6baac("changingcover");
     self endon("death");
     other endon("death");
-    function_6fbea72303085c6f(other, 1);
-    namespace_aebb27832287cd3a::cap_start("cap_coverfire", "caps/interactions/cap_coverfire_volunteer");
+    enablelookatentity(other, 1);
+    scripts/common/cap::cap_start("cap_coverfire", "caps/interactions/cap_coverfire_volunteer");
     function_216c67ab6749137a(self, other, "suppressing");
     wait(1);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5fb
 // Size: 0x82
@@ -159,15 +158,15 @@ function function_c753b2bac95c6bfe(statename, params) {
     if (!isdefined(other) || !isdefined(self)) {
         return;
     }
-    function_6fbea72303085c6f(other, 1);
+    enablelookatentity(other, 1);
     function_216c67ab6749137a(self, other, "moving");
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x684
 // Size: 0xb6
-function function_32d11ef968f509a0(statename, params) {
+function coveringfire(statename, params) {
     self endon("death");
     self endon("endcoverfire");
     other = function_cbe869548ea6baac("changingcover");
@@ -185,7 +184,7 @@ function function_32d11ef968f509a0(statename, params) {
     self.shootstyleoverride = "full";
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x741
 // Size: 0x28
@@ -194,11 +193,11 @@ function function_ddf0d739daa1d97c(statename, params) {
     self.providecoveringfire = 0;
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x770
 // Size: 0x9c
-function function_e94882b86c7aadac(statename, params) {
+function changecover(statename, params) {
     self endon("death");
     self endon("endcoverfire");
     self.maxfaceenemydist = 64;
@@ -215,7 +214,7 @@ function function_e94882b86c7aadac(statename, params) {
     }
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x813
 // Size: 0x25
@@ -225,7 +224,7 @@ function dialogue(statename, params) {
     }
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83f
 // Size: 0x20
@@ -233,19 +232,19 @@ function function_c3722414c55a6ae1(statename) {
     return isdefined(self.covernode) || !isalive(self);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x867
 // Size: 0x15
-function function_8586052802bd2c79(statename) {
+function cleargoal(statename) {
     self clearbtgoal(1);
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x883
 // Size: 0x61
-function function_678bbf15ac4b000f(interval, func, param, bool) {
+function dodelay(interval, func, param, bool) {
     time = gettime() + interval;
     while (gettime() < time) {
         if (!isdefined(bool)) {
@@ -254,14 +253,14 @@ function function_678bbf15ac4b000f(interval, func, param, bool) {
         if (isdefined(func)) {
             if (isdefined(param)) {
                 self [[ func ]](param);
-            } else {
-                self [[ func ]]();
+                continue;
             }
+            self [[ func ]]();
         }
     }
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8eb
 // Size: 0x45
@@ -271,7 +270,7 @@ function function_30b70873a0937989(var_22e9090a351646e9) {
     #/
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x937
 // Size: 0x32
@@ -281,7 +280,7 @@ function function_cbe869548ea6baac(tag) {
     return users[0];
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x971
 // Size: 0x171
@@ -307,23 +306,23 @@ function function_9867614bbd49f378(asmname, statename, params) {
     } else if (anglediff >= -135 && anglediff < -45) {
         animindex = 4;
     }
-    turnanim = namespace_dd3a5c61bf082e18::function_18e6c36c02a94dbd(statename, statename + "_" + animindex);
+    turnanim = scripts/asm/cap::function_18e6c36c02a94dbd(statename, statename + "_" + animindex);
     /#
-        assertex(isdefined(turnanim), "Cardinal turn anim index " + animindex + "is missing in cap animset " + self.var_ae3ea15396b65c1f);
+        assertex(isdefined(turnanim), "Cardinal turn anim index " + animindex + "is missing in cap animset " + self.animsetname);
     #/
     return turnanim;
 }
 
-// Namespace coverfire/namespace_c35c41aba500a8a0
+// Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xaea
 // Size: 0x4f
-function function_8fd655a41a26c662(asmname, statename, var_f2b19b25d457c2a6, param) {
+function function_8fd655a41a26c662(asmname, statename, tostatename, param) {
     if (!isdefined(self.prevcovernode)) {
-        return 0;
+        return false;
     }
     if (!isdefined(param)) {
-        return 0;
+        return false;
     }
     return self.prevcovernode.type == param;
 }

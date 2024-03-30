@@ -13,7 +13,7 @@
 
 #namespace traverse;
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x40c
 // Size: 0x1d6
@@ -33,12 +33,12 @@ function playtraverseanim_deprecated(asmname, statename, params) {
     #/
     self orientmode("face angle", startnode.angles[1]);
     startnode.traverse_height = startnode.origin[2] + startnode.traverse_height_delta;
-    var_4587095419257a6e = startnode.traverse_height - startnode.origin[2];
-    thread teleportthread(var_4587095419257a6e - params);
+    realheight = startnode.traverse_height - startnode.origin[2];
+    thread teleportthread(realheight - params);
     blendtime = 0.15;
     self aisetanim(statename, traverseanim);
     var_22943623b8e97c62 = 0.2;
-    var_1e0f9ec2ac420034 = 0.2;
+    endblendtime = 0.2;
     thread traverse_donotetracks(asmname, statename);
     if (!animhasnotetrack(traversexanim, "gravity on")) {
         var_cc694b7fbbf6503c = 1.23;
@@ -57,7 +57,7 @@ function playtraverseanim_deprecated(asmname, statename, params) {
     terminatetraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e9
 // Size: 0x94
@@ -75,7 +75,7 @@ function playtraverseanim(asmname, statename, params) {
     terminatetraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x684
 // Size: 0x301
@@ -93,9 +93,9 @@ function playtraverseanim_doublejump(asmname, statename, params) {
     start_node.traverse_height = start_node.origin[2] + start_node.traverse_height_delta - 44;
     var_559df5f9875a294e = [];
     if (start_node.traverse_height > var_e14ac44f6f147496[2]) {
-        var_444c050f4f499268 = (start_node.origin[0] + var_e14ac44f6f147496[0]) * 0.5;
-        var_444c060f4f49949b = (start_node.origin[1] + var_e14ac44f6f147496[1]) * 0.5;
-        var_559df5f9875a294e[var_559df5f9875a294e.size] = (var_444c050f4f499268, var_444c060f4f49949b, start_node.traverse_height);
+        halfway_x = (start_node.origin[0] + var_e14ac44f6f147496[0]) * 0.5;
+        halfway_y = (start_node.origin[1] + var_e14ac44f6f147496[1]) * 0.5;
+        var_559df5f9875a294e[var_559df5f9875a294e.size] = (halfway_x, halfway_y, start_node.traverse_height);
         /#
             if (var_3016b22139446579 != 0) {
                 jump_over_position = var_559df5f9875a294e[0];
@@ -133,7 +133,7 @@ function playtraverseanim_doublejump(asmname, statename, params) {
     thread terminatetraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x98c
 // Size: 0x2d
@@ -142,7 +142,7 @@ function traverse_doublejump_cleanup(asmname, statename, params) {
     self.ragdoll_immediate = undefined;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9c0
 // Size: 0x3b
@@ -154,25 +154,24 @@ function traverse_donotetracks(asmname, statename) {
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa02
 // Size: 0x74
-function getexternaltraverseinfo(var_57ee0a2aa16ac4d4) {
+function getexternaltraverseinfo(traversename) {
     /#
         assertex(isdefined(level.scr_traverse), "level.scr_traverse must be setup properly to use custom traverses");
     #/
     /#
-        assertex(isdefined(level.scr_traverse[var_57ee0a2aa16ac4d4]), "level.scr_traverse[ " + var_57ee0a2aa16ac4d4 + " ] entry not defined.");
+        assertex(isdefined(level.scr_traverse[traversename]), "level.scr_traverse[ " + traversename + " ] entry not defined.");
     #/
-    if (isdefined(level.scr_traverse) && isdefined(level.scr_traverse[var_57ee0a2aa16ac4d4])) {
-        return level.scr_traverse[var_57ee0a2aa16ac4d4];
-    } else {
-        return undefined;
+    if (isdefined(level.scr_traverse) && isdefined(level.scr_traverse[traversename])) {
+        return level.scr_traverse[traversename];
     }
+    return undefined;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xa7d
 // Size: 0x49
@@ -183,7 +182,7 @@ function playtraverseanim_external(asmname, statename, params) {
     playtraverseanim_scaled(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xacd
 // Size: 0xba
@@ -192,22 +191,22 @@ function choosetraverseanim_external(asmname, statename, params) {
     /#
         assert(isdefined(startnode));
     #/
-    var_57ee0a2aa16ac4d4 = startnode.animscript;
-    if (isdefined(level.var_2a12779877c8c257) && isdefined(level.var_2a12779877c8c257[var_57ee0a2aa16ac4d4])) {
-        xanim = [[ level.var_2a12779877c8c257[var_57ee0a2aa16ac4d4] ]](asmname, statename, params);
+    traversename = startnode.animscript;
+    if (isdefined(level.var_2a12779877c8c257) && isdefined(level.var_2a12779877c8c257[traversename])) {
+        xanim = [[ level.var_2a12779877c8c257[traversename] ]](asmname, statename, params);
         /#
             assert(isanimation(xanim));
         #/
         return xanim;
     }
-    animinfo = getexternaltraverseinfo(var_57ee0a2aa16ac4d4);
+    animinfo = getexternaltraverseinfo(traversename);
     /#
         assert(isanimation(animinfo));
     #/
     return animinfo;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb8f
 // Size: 0xa0
@@ -216,39 +215,39 @@ function playdoublejumpfinishanim(asmname, statename, params) {
     self animmode("noclip");
     self orientmode("face angle", self.angles[1]);
     self.useanimgoalweight = 1;
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    self aisetanim(statename, var_2c8936d08f85c5c1);
-    xanim = asm_getxanim(statename, var_2c8936d08f85c5c1);
+    animid = asm_getanim(asmname, statename);
+    self aisetanim(statename, animid);
+    xanim = asm_getxanim(statename, animid);
     asm_playfacialanim(asmname, statename, xanim);
     asm_donotetracks(asmname, statename);
     thread terminatetraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc36
 // Size: 0xc8
 function getdoublejumpoffsetposition(asmname, var_223efa34c2b82dc8, endpos, endangles, notetrackname) {
-    var_2c8936d08f85c5c1 = asm_chooseanim(asmname, var_223efa34c2b82dc8);
+    animid = asm_chooseanim(asmname, var_223efa34c2b82dc8);
     /#
-        assert(isdefined(var_2c8936d08f85c5c1));
+        assert(isdefined(animid));
     #/
-    xanim = asm_getxanim(var_223efa34c2b82dc8, var_2c8936d08f85c5c1);
-    var_926d6d611f7ff7ab = getnotetracktimes(xanim, notetrackname);
+    xanim = asm_getxanim(var_223efa34c2b82dc8, animid);
+    aligntime = getnotetracktimes(xanim, notetrackname);
     /#
-        assert(isdefined(var_926d6d611f7ff7ab) && var_926d6d611f7ff7ab.size > 0);
+        assert(isdefined(aligntime) && aligntime.size > 0);
     #/
-    time = var_926d6d611f7ff7ab[0];
-    var_95abccfe668f369a = getmovedelta(xanim, 0, time);
+    time = aligntime[0];
+    animdelta = getmovedelta(xanim, 0, time);
     var_f73bea4534a3831f = getangledelta(xanim, 0, time);
-    return namespace_d925b2b52656868e::calcanimstartpos(endpos, endangles[1], var_95abccfe668f369a, var_f73bea4534a3831f);
+    return scripts/asm/soldier/cover::calcanimstartpos(endpos, endangles[1], animdelta, var_f73bea4534a3831f);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd06
 // Size: 0x1ab
-function doublejumpneedsfinishanim(asmname, var_7130b2131fee9bda, startnode, endpos) {
+function doublejumpneedsfinishanim(asmname, nextstatename, startnode, endpos) {
     /#
         assert(isdefined(startnode));
     #/
@@ -257,12 +256,12 @@ function doublejumpneedsfinishanim(asmname, var_7130b2131fee9bda, startnode, end
     #/
     /#
         if (getdvarint(@"hash_db3bdaface7c82ec", 0) == 3) {
-            return 0;
+            return false;
         }
     #/
     deltaz = endpos[2] - startnode.origin[2];
     if (deltaz < 0) {
-        return 0;
+        return false;
     }
     if (isdefined(startnode.jump_over_offset) && getdvarint(@"hash_db3bdaface7c82ec", 0) != 2) {
         jump_over_offset = startnode.jump_over_offset;
@@ -274,42 +273,42 @@ function doublejumpneedsfinishanim(asmname, var_7130b2131fee9bda, startnode, end
         var_e5e2b98a87142185 = jump_over_position[2];
         var_e5e2b98a87142185 = var_e5e2b98a87142185 - 44;
         if (endpos[2] < var_e5e2b98a87142185) {
-            return 0;
+            return false;
         }
     }
     delta = endpos - startnode.origin;
     delta = (delta[0], delta[1], 0);
-    var_f1a4d9d10fd4b365 = vectortoangles(delta);
-    offsetpos = getdoublejumpoffsetposition(asmname, var_7130b2131fee9bda, endpos, var_f1a4d9d10fd4b365, "footstep_left_small");
-    var_992dca4693dcc459 = offsetpos - startnode.origin;
-    if (vectordot(var_992dca4693dcc459, delta) < 0) {
-        return 0;
+    desiredangles = vectortoangles(delta);
+    offsetpos = getdoublejumpoffsetposition(asmname, nextstatename, endpos, desiredangles, "footstep_left_small");
+    newdelta = offsetpos - startnode.origin;
+    if (vectordot(newdelta, delta) < 0) {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xeb9
 // Size: 0x85
-function checkdoublejumpfinish(asmname, statename, var_f2b19b25d457c2a6, params) {
+function checkdoublejumpfinish(asmname, statename, tostatename, params) {
     startnode = gettraversalstartnode();
     if (!isdefined(startnode)) {
         thread terminatetraverse(asmname, "double_jump");
-        return 0;
+        return false;
     }
     endpos = self getnegotiationendpos();
     /#
         assert(isdefined(endpos));
     #/
-    if (!doublejumpneedsfinishanim(asmname, var_f2b19b25d457c2a6, startnode, endpos)) {
+    if (!doublejumpneedsfinishanim(asmname, tostatename, startnode, endpos)) {
         thread terminatetraverse(asmname, "double_jump");
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf46
 // Size: 0x20
@@ -320,7 +319,7 @@ function gettraversalstartnode() {
     return self getnegotiationstartnode();
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x117
@@ -338,18 +337,18 @@ function playdoublejumpmantleorvault(asmname, statename, zoffset) {
     #/
     delta = endpos - startnode.origin;
     delta = (delta[0], delta[1], 0);
-    var_f1a4d9d10fd4b365 = vectortoangles(delta);
+    desiredangles = vectortoangles(delta);
     jumpanim = asm_getanim(asmname, statename);
     /#
         assert(isdefined(jumpanim));
     #/
-    var_7130b2131fee9bda = statename + "_finish";
-    var_3b137c718ea27788 = getdoublejumpoffsetposition(asmname, var_7130b2131fee9bda, endpos, var_f1a4d9d10fd4b365, "mantle_align");
-    var_3b137c718ea27788 = (var_3b137c718ea27788[0], var_3b137c718ea27788[1], var_3b137c718ea27788[2] + zoffset);
-    playscaledjump(asmname, statename, jumpanim, var_3b137c718ea27788, var_f1a4d9d10fd4b365, 1, 0, 1);
+    nextstatename = statename + "_finish";
+    mantlestartpos = getdoublejumpoffsetposition(asmname, nextstatename, endpos, desiredangles, "mantle_align");
+    mantlestartpos = (mantlestartpos[0], mantlestartpos[1], mantlestartpos[2] + zoffset);
+    playscaledjump(asmname, statename, jumpanim, mantlestartpos, desiredangles, 1, 0, 1);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x108c
 // Size: 0x27
@@ -357,7 +356,7 @@ function playdoublejumpmantle(asmname, statename, params) {
     playdoublejumpmantleorvault(asmname, statename, -8);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x10ba
 // Size: 0x27
@@ -365,7 +364,7 @@ function playdoublejumpvault(asmname, statename, params) {
     playdoublejumpmantleorvault(asmname, statename, -42);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10e8
 // Size: 0x3a
@@ -375,7 +374,7 @@ function doublejumpterminate(asmname, statename, params) {
     self.traversal_start_node = undefined;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1129
 // Size: 0x35
@@ -385,11 +384,11 @@ function doublejumpearlyterminate(asmname, statename, params) {
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1165
 // Size: 0x4a
-function isdoublejumpanimdone(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdoublejumpanimdone(asmname, statename, tostatename, params) {
     /#
         if (getdvarint(@"hash_db3bdaface7c82ec", 0) == 3) {
             return 0;
@@ -398,7 +397,7 @@ function isdoublejumpanimdone(asmname, statename, var_f2b19b25d457c2a6, params) 
     return asm_eventfired(asmname, "end");
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x11b7
 // Size: 0x3cd
@@ -441,9 +440,9 @@ function playdoublejumptraversal(asmname, statename, params) {
             var_e5e2b98a87142185 = jump_over_position[2];
             var_e5e2b98a87142185 = var_e5e2b98a87142185 - 44;
             if (var_e5e2b98a87142185 > endpos[2]) {
-                var_444c050f4f499268 = (startnode.origin[0] + endpos[0]) * 0.5;
-                var_444c060f4f49949b = (startnode.origin[1] + endpos[1]) * 0.5;
-                jump_over_position = (var_444c050f4f499268, var_444c060f4f49949b, jump_over_position[2]);
+                halfway_x = (startnode.origin[0] + endpos[0]) * 0.5;
+                halfway_y = (startnode.origin[1] + endpos[1]) * 0.5;
+                jump_over_position = (halfway_x, halfway_y, jump_over_position[2]);
             } else {
                 jump_over_position = undefined;
             }
@@ -464,13 +463,13 @@ function playdoublejumptraversal(asmname, statename, params) {
             }
         }
     #/
-    var_7130b2131fee9bda = statename + "_finish";
-    if (doublejumpneedsfinishanim(asmname, var_7130b2131fee9bda, startnode, endpos)) {
+    nextstatename = statename + "_finish";
+    if (doublejumpneedsfinishanim(asmname, nextstatename, startnode, endpos)) {
         delta = endpos - startnode.origin;
         delta = (delta[0], delta[1], 0);
-        var_f1a4d9d10fd4b365 = vectortoangles(delta);
-        var_7130b2131fee9bda = statename + "_finish";
-        offsetpos = getdoublejumpoffsetposition(asmname, var_7130b2131fee9bda, endpos, var_f1a4d9d10fd4b365, "footstep_left_small");
+        desiredangles = vectortoangles(delta);
+        nextstatename = statename + "_finish";
+        offsetpos = getdoublejumpoffsetposition(asmname, nextstatename, endpos, desiredangles, "footstep_left_small");
         endpos = offsetpos;
     }
     delta = endpos - startnode.origin;
@@ -484,11 +483,11 @@ function playdoublejumptraversal(asmname, statename, params) {
         }
     }
     delta = (delta[0], delta[1], 0);
-    var_f1a4d9d10fd4b365 = vectortoangles(delta);
-    playscaledjump(asmname, statename, jumpanim, endpos, var_f1a4d9d10fd4b365, animendtime, var_4c4c6c6d3c2b086b, 1);
+    desiredangles = vectortoangles(delta);
+    playscaledjump(asmname, statename, jumpanim, endpos, desiredangles, animendtime, var_4c4c6c6d3c2b086b, 1);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x158b
 // Size: 0xe8
@@ -516,7 +515,7 @@ function choosedoublejumpanim(asmname, statename, params) {
     return animname;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x167b
 // Size: 0x127
@@ -538,21 +537,21 @@ function getwallnodeposition(startnode, index) {
     #/
     angleoffset = startnode.angles - startnode.wall_info.startnodeoriginalangles;
     if (angleoffset != (0, 0, 0)) {
-        var_728d033793cea02f = rotatevector(startnode.wall_info.nodeoffsets[index], angleoffset);
-        var_76a8010a974fa50e = startnode.origin + var_728d033793cea02f;
+        worlddelta = rotatevector(startnode.wall_info.nodeoffsets[index], angleoffset);
+        nodeposition = startnode.origin + worlddelta;
     } else {
-        var_76a8010a974fa50e = startnode.origin + startnode.wall_info.nodeoffsets[index];
+        nodeposition = startnode.origin + startnode.wall_info.nodeoffsets[index];
     }
-    return var_76a8010a974fa50e;
+    return nodeposition;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x17aa
 // Size: 0x160
-function shouldwallrunshoot(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldwallrunshoot(asmname, statename, tostatename, params) {
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     enemypos = self.enemy.origin;
     startnode = self.traversal_start_node;
@@ -568,20 +567,20 @@ function shouldwallrunshoot(asmname, statename, var_f2b19b25d457c2a6, params) {
     /#
         assert(startnode.wall_info.nodeoffsets.size > self.wall_run_current_node_index + 1);
     #/
-    var_32386d797e03a9b = getwallnodeposition(startnode, self.wall_run_current_node_index);
-    var_5c6241c759f06574 = getwallnodeposition(startnode, self.wall_run_current_node_index + 1);
-    var_5c6241c759f06574 = (var_5c6241c759f06574[0], var_5c6241c759f06574[1], var_32386d797e03a9b[2]);
-    enemypos = (enemypos[0], enemypos[1], var_32386d797e03a9b[2]);
-    var_51c78b431f0e5118 = vectornormalize(var_5c6241c759f06574 - var_32386d797e03a9b);
-    var_b3bca3e7f11a1cce = vectornormalize(enemypos - var_32386d797e03a9b);
-    dot = vectordot(var_51c78b431f0e5118, var_b3bca3e7f11a1cce);
+    wallstartpos = getwallnodeposition(startnode, self.wall_run_current_node_index);
+    wallendpos = getwallnodeposition(startnode, self.wall_run_current_node_index + 1);
+    wallendpos = (wallendpos[0], wallendpos[1], wallstartpos[2]);
+    enemypos = (enemypos[0], enemypos[1], wallstartpos[2]);
+    walldir = vectornormalize(wallendpos - wallstartpos);
+    enemydir = vectornormalize(enemypos - wallstartpos);
+    dot = vectordot(walldir, enemydir);
     if (dot < 0.2588) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1912
 // Size: 0x4b
@@ -593,7 +592,7 @@ function choosewallrunanim(asmname, statename, params) {
     return jumpanim;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1965
 // Size: 0x43
@@ -606,11 +605,11 @@ function getsmoothstep(delta) {
     return delta * delta * (3 - 2 * delta);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19b0
 // Size: 0x178
-function teleportdeltaovernumframes(statename, waittime, delta, numframes, animname, var_c08b84490b532fb2) {
+function teleportdeltaovernumframes(statename, waittime, delta, numframes, animname, playbackrate) {
     self endon(statename + "_finished");
     if (waittime > 0) {
         wait(waittime);
@@ -618,8 +617,8 @@ function teleportdeltaovernumframes(statename, waittime, delta, numframes, animn
     framedelta = delta / numframes;
     startpos = self.origin[2];
     endpos = startpos + delta[2];
-    var_d7b27cf20a29d5ed = self.origin[2];
-    self setanimrate(animname, var_c08b84490b532fb2);
+    lastz = self.origin[2];
+    self setanimrate(animname, playbackrate);
     for (i = 0; i < numframes; i++) {
         var_3897e5e4048f4e94 = 1;
         /#
@@ -628,12 +627,12 @@ function teleportdeltaovernumframes(statename, waittime, delta, numframes, animn
             }
         #/
         if (var_3897e5e4048f4e94) {
-            var_b1d0bc03029f6a2c = i / (numframes - 1);
-            smoothstep = getsmoothstep(var_b1d0bc03029f6a2c);
+            pct = i / (numframes - 1);
+            smoothstep = getsmoothstep(pct);
             newz = endpos * smoothstep + startpos * (1 - smoothstep);
-            var_bc77fc372e8358f9 = newz - var_d7b27cf20a29d5ed;
+            var_bc77fc372e8358f9 = newz - lastz;
             framedelta = (framedelta[0], framedelta[1], var_bc77fc372e8358f9);
-            var_d7b27cf20a29d5ed = newz;
+            lastz = newz;
         }
         neworigin = self.origin + framedelta;
         self forceteleport(neworigin);
@@ -644,39 +643,41 @@ function teleportdeltaovernumframes(statename, waittime, delta, numframes, animn
     self setanimrate(animname, 1);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2f
 // Size: 0x55
-function function_a7808f1a33760028(dest, statename) {
+function debugdest(dest, statename) {
     /#
         self notify("single_jump");
         self endon("single_jump");
         self endon(statename + "off");
-        while (1) {
+        while (true) {
             line(self.origin, dest, (0, 255, 0));
             waitframe();
         }
     #/
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b8b
 // Size: 0x40
 function wallrunnotehandler(note, params) {
     if (note == "start_jump") {
         thread handlejumpteleports(params);
-    } else if (note == "end_mantle") {
+        return;
+    }
+    if (note == "end_mantle") {
         self animmode("gravity");
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bd2
 // Size: 0x38c
-function handlejumpteleports(params, animtime, var_c08b84490b532fb2) {
+function handlejumpteleports(params, animtime, playbackrate) {
     /#
         assert(isarray(params));
     #/
@@ -695,7 +696,7 @@ function handlejumpteleports(params, animtime, var_c08b84490b532fb2) {
     if (!isdefined(animtime)) {
         animtime = (gettime() - starttime) * 0.001;
     }
-    var_f2b13ab0eded36c8 = animtime / animlength;
+    animtimepct = animtime / animlength;
     var_cab4a622d5af2e97 = getnotetracktimes(animname, "end_jump");
     var_930caef7352c0f86 = getnotetracktimes(animname, "end_double_jump");
     if (var_930caef7352c0f86.size > 0) {
@@ -708,11 +709,11 @@ function handlejumpteleports(params, animtime, var_c08b84490b532fb2) {
         assert(var_cab4a622d5af2e97.size > 0);
     #/
     if (isdefined(self.jump_over_position)) {
-        var_8c2c7ea3bd382df4 = (var_cab4a622d5af2e97[0] - var_f2b13ab0eded36c8) / 2 + var_f2b13ab0eded36c8;
+        var_8c2c7ea3bd382df4 = (var_cab4a622d5af2e97[0] - animtimepct) / 2 + animtimepct;
         var_cab4a622d5af2e97[0] = var_8c2c7ea3bd382df4;
         desiredendpos = self.jump_over_position;
     }
-    movedelta = getmovedelta(animname, var_f2b13ab0eded36c8, var_8c2c7ea3bd382df4);
+    movedelta = getmovedelta(animname, animtimepct, var_8c2c7ea3bd382df4);
     animendpos = self localtoworldcoords(movedelta);
     /#
         if (getdvarint(@"hash_df899f2d04257001", 0) != 0 && isdefined(self.traversal_start_node)) {
@@ -725,37 +726,37 @@ function handlejumpteleports(params, animtime, var_c08b84490b532fb2) {
             }
         }
     #/
-    if (!isdefined(var_c08b84490b532fb2)) {
-        var_c08b84490b532fb2 = 1;
+    if (!isdefined(playbackrate)) {
+        playbackrate = 1;
     }
     if (var_87ef9fdeb401c595) {
         var_44a93f09b80b3ae = distance(self.origin, animendpos);
         var_3d5c613a9500564 = distance(self.origin, desiredendpos);
-        var_c08b84490b532fb2 = var_44a93f09b80b3ae / var_3d5c613a9500564;
-        if (var_c08b84490b532fb2 < 0.7) {
-            var_c08b84490b532fb2 = 0.7;
-        } else if (var_c08b84490b532fb2 > 1.3) {
-            var_c08b84490b532fb2 = 1.3;
+        playbackrate = var_44a93f09b80b3ae / var_3d5c613a9500564;
+        if (playbackrate < 0.7) {
+            playbackrate = 0.7;
+        } else if (playbackrate > 1.3) {
+            playbackrate = 1.3;
         }
     }
-    var_4f37a7756ec2161 = desiredendpos - animendpos;
+    scaledelta = desiredendpos - animendpos;
     var_e7f1395489e50fc7 = var_cab4a622d5af2e97[0] * animlength;
-    var_1d68f4358ce9d989 = var_e7f1395489e50fc7 - var_f2b13ab0eded36c8 * animlength;
-    var_1d68f4358ce9d989 = var_1d68f4358ce9d989 * 1 / var_c08b84490b532fb2;
-    numframes = var_1d68f4358ce9d989 * 20;
+    jumpduration = var_e7f1395489e50fc7 - animtimepct * animlength;
+    jumpduration = jumpduration * 1 / playbackrate;
+    numframes = jumpduration * 20;
     numframes = ceil(numframes);
-    var_e6e3302c3fab30f3 = gettime();
-    teleportdeltaovernumframes(statename, 0, var_4f37a7756ec2161, numframes, animname, var_c08b84490b532fb2);
+    teleportstarttime = gettime();
+    teleportdeltaovernumframes(statename, 0, scaledelta, numframes, animname, playbackrate);
     if (isdefined(self.jump_over_position)) {
-        var_b5b8fd952b4deb49 = (gettime() - var_e6e3302c3fab30f3) * var_c08b84490b532fb2;
-        var_15d48e620b386a45 = animtime + var_b5b8fd952b4deb49 * 0.001;
+        animtimedelta = (gettime() - teleportstarttime) * playbackrate;
+        var_15d48e620b386a45 = animtime + animtimedelta * 0.001;
         self.jump_over_position = undefined;
         params[6] = 0;
-        handlejumpteleports(params, var_15d48e620b386a45, var_c08b84490b532fb2);
+        handlejumpteleports(params, var_15d48e620b386a45, playbackrate);
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f65
 // Size: 0x75
@@ -767,11 +768,11 @@ function getwallrunyawfromstartnode(startnode) {
         assert(startnode.wall_info.nodeoffsets.size >= 2);
     #/
     delta = getwallnodeposition(startnode, 1) - getwallnodeposition(startnode, 0);
-    var_f1a4d9d10fd4b365 = vectortoangles(delta);
-    return var_f1a4d9d10fd4b365[1];
+    desiredangles = vectortoangles(delta);
+    return desiredangles[1];
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fe2
 // Size: 0xfe
@@ -787,10 +788,10 @@ function getwallrundirectionfromstartnode(startnode) {
     #/
     self.wall_run_current_node_index = 0;
     delta = getwallnodeposition(startnode, 1) - getwallnodeposition(startnode, 0);
-    var_f1a4d9d10fd4b365 = vectortoangles(delta);
-    self.wall_run_yaw = var_f1a4d9d10fd4b365[1];
+    desiredangles = vectortoangles(delta);
+    self.wall_run_yaw = desiredangles[1];
     startposition = getwallnodeposition(startnode, self.wall_run_current_node_index);
-    right = anglestoright(var_f1a4d9d10fd4b365);
+    right = anglestoright(desiredangles);
     dir = startposition - startnode.origin;
     dot = vectordot(right, dir);
     if (dot > 0) {
@@ -799,7 +800,7 @@ function getwallrundirectionfromstartnode(startnode) {
     return "left";
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20e8
 // Size: 0x64
@@ -817,7 +818,7 @@ function setupwallrunifneeded() {
     self.wall_run_direction = getwallrundirectionfromstartnode(startnode);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2153
 // Size: 0x13
@@ -826,7 +827,7 @@ function getwallrundirection() {
     return self.wall_run_direction;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x216e
 // Size: 0x73
@@ -842,7 +843,7 @@ function wallrunterminate(asmname, statename, params) {
     self.traversal_start_node = undefined;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x21e8
 // Size: 0x50
@@ -853,7 +854,7 @@ function traversalorientearlyterminate(asmname, statename, params) {
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x223f
 // Size: 0x147
@@ -864,23 +865,23 @@ function playwallrunattach(asmname, statename, params) {
     if (isdefined(params) && params == "shoot") {
         setupwallrunaimlimits();
     }
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    xanim = asm_getxanim(statename, var_2c8936d08f85c5c1);
+    animid = asm_getanim(asmname, statename);
+    xanim = asm_getxanim(statename, animid);
     var_bf02a06228e2e48e = getnotetracktimes(xanim, "wall_contact");
     /#
         assert(isdefined(var_bf02a06228e2e48e) && var_bf02a06228e2e48e.size > 0);
     #/
     time = var_bf02a06228e2e48e[0];
     angledelta = getangledelta(xanim, 0, time);
-    var_d4c3d11ec9988c73 = self.wall_run_yaw - angledelta;
-    var_34a46042d4886070 = (0, var_d4c3d11ec9988c73, 0);
+    faceyaw = self.wall_run_yaw - angledelta;
+    var_34a46042d4886070 = (0, faceyaw, 0);
     self forceteleport(self.origin, var_34a46042d4886070);
-    self aisetanim(statename, var_2c8936d08f85c5c1);
+    self aisetanim(statename, animid);
     asm_playfacialanim(asmname, statename, xanim);
     endnote = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x238d
 // Size: 0xac
@@ -894,19 +895,19 @@ function getwallattachoffsetposition(asmname) {
         assert(isdefined(var_bf02a06228e2e48e) && var_bf02a06228e2e48e.size > 0);
     #/
     time = var_bf02a06228e2e48e[0];
-    var_95abccfe668f369a = getmovedelta(animname, 0, time);
+    animdelta = getmovedelta(animname, 0, time);
     var_f73bea4534a3831f = getangledelta(animname, 0, time);
-    return namespace_d925b2b52656868e::calcanimstartpos(getwallnodeposition(self.traversal_start_node, 0), self.wall_run_yaw, var_95abccfe668f369a, var_f73bea4534a3831f);
+    return scripts/asm/soldier/cover::calcanimstartpos(getwallnodeposition(self.traversal_start_node, 0), self.wall_run_yaw, animdelta, var_f73bea4534a3831f);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2441
 // Size: 0x1b7
 function playwallrunenter(asmname, statename, params) {
     self endon(statename + "_finished");
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    xanim = asm_getxanim(statename, var_2c8936d08f85c5c1);
+    animid = asm_getanim(asmname, statename);
+    xanim = asm_getxanim(statename, animid);
     startnode = self.traversal_start_node;
     /#
         assert(isdefined(startnode));
@@ -921,31 +922,31 @@ function playwallrunenter(asmname, statename, params) {
     var_86fca619ba5c4a5 = getwallnodeposition(startnode, 0);
     delta = var_86fca619ba5c4a5 - self.origin;
     delta = (delta[0], delta[1], 0);
-    var_f1a4d9d10fd4b365 = vectortoangles(delta);
-    var_fec5c3566ec9f0e3 = getwallattachoffsetposition();
-    self orientmode("face angle", var_f1a4d9d10fd4b365[1]);
+    desiredangles = vectortoangles(delta);
+    jumpdestination = getwallattachoffsetposition();
+    self orientmode("face angle", desiredangles[1]);
     /#
         assert(isdefined(self.wall_run_direction));
     #/
     /#
         if (getdvarint(@"hash_df899f2d04257001", 0) != 0) {
-            function_52e0db833127ec95(self.origin, var_fec5c3566ec9f0e3, (128, 0, 255), 100);
+            function_52e0db833127ec95(self.origin, jumpdestination, (128, 0, 255), 100);
         }
     #/
     animendtime = 1;
-    var_def9680d43be7384 = getnotetracktimes(xanim, "code_move");
-    if (isdefined(var_def9680d43be7384) && var_def9680d43be7384.size > 0) {
-        animendtime = var_def9680d43be7384[0];
+    codemovetime = getnotetracktimes(xanim, "code_move");
+    if (isdefined(codemovetime) && codemovetime.size > 0) {
+        animendtime = codemovetime[0];
     }
-    playscaledjump(asmname, statename, var_2c8936d08f85c5c1, var_fec5c3566ec9f0e3, var_f1a4d9d10fd4b365, animendtime, 0, 1);
-    self forceteleport(var_fec5c3566ec9f0e3, var_f1a4d9d10fd4b365);
+    playscaledjump(asmname, statename, animid, jumpdestination, desiredangles, animendtime, 0, 1);
+    self forceteleport(jumpdestination, desiredangles);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25ff
 // Size: 0x111
-function playscaledjump(asmname, statename, var_2c8936d08f85c5c1, var_a41fa8f1437baeae, var_f1a4d9d10fd4b365, var_8c2c7ea3bd382df4, var_4c4c6c6d3c2b086b, var_87ef9fdeb401c595) {
+function playscaledjump(asmname, statename, animid, desiredposition, desiredangles, var_8c2c7ea3bd382df4, var_4c4c6c6d3c2b086b, var_87ef9fdeb401c595) {
     self endon(statename + "_finished");
     if (!isdefined(var_8c2c7ea3bd382df4)) {
         var_8c2c7ea3bd382df4 = 1;
@@ -956,18 +957,18 @@ function playscaledjump(asmname, statename, var_2c8936d08f85c5c1, var_a41fa8f143
     if (!isdefined(var_87ef9fdeb401c595)) {
         var_87ef9fdeb401c595 = 0;
     }
-    self forceteleport(self.origin, var_f1a4d9d10fd4b365);
+    self forceteleport(self.origin, desiredangles);
     self animmode("noclip");
-    self orientmode("face angle", var_f1a4d9d10fd4b365[1]);
-    xanim = asm_getxanim(statename, var_2c8936d08f85c5c1);
+    self orientmode("face angle", desiredangles[1]);
+    xanim = asm_getxanim(statename, animid);
     self.useanimgoalweight = 1;
-    self aisetanim(statename, var_2c8936d08f85c5c1);
+    self aisetanim(statename, animid);
     asm_playfacialanim(asmname, statename, xanim);
-    var_847a224d4aad486 = [0:statename, 1:xanim, 2:var_a41fa8f1437baeae, 3:gettime(), 4:var_8c2c7ea3bd382df4, 5:var_4c4c6c6d3c2b086b, 6:var_87ef9fdeb401c595];
-    asm_donotetracks(asmname, statename, &wallrunnotehandler, var_847a224d4aad486);
+    notetrackparams = [statename, xanim, desiredposition, gettime(), var_8c2c7ea3bd382df4, var_4c4c6c6d3c2b086b, var_87ef9fdeb401c595];
+    asm_donotetracks(asmname, statename, &wallrunnotehandler, notetrackparams);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2717
 // Size: 0xb8
@@ -976,10 +977,10 @@ function choosewallattachanim(asmname, statename, params) {
         return self.wall_run_attach_anim;
     }
     aliasname = self.wall_run_direction;
-    var_5babffa7f03ce512 = angleclamp180(self.wall_run_yaw - self.angles[1]);
-    var_5babffa7f03ce512 = abs(var_5babffa7f03ce512);
-    if (var_5babffa7f03ce512 >= 22.5) {
-        if (var_5babffa7f03ce512 > 67.5) {
+    yawdelta = angleclamp180(self.wall_run_yaw - self.angles[1]);
+    yawdelta = abs(yawdelta);
+    if (yawdelta >= 22.5) {
+        if (yawdelta > 67.5) {
             aliasname = aliasname + "_90";
         } else {
             aliasname = aliasname + "_45";
@@ -989,7 +990,7 @@ function choosewallattachanim(asmname, statename, params) {
     return self.wall_run_attach_anim;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x27d7
 // Size: 0x1a9
@@ -1013,26 +1014,26 @@ function choosewallrunenteranim(asmname, statename, params) {
         assert(startnode.wall_info.nodeoffsets.size >= 2);
     #/
     var_15e16054caefc232 = getwallnodeposition(startnode, 0);
-    var_61045d8733281ee5 = var_15e16054caefc232[2] - self.origin[2];
-    var_b15cd98e18d1a870 = 0;
-    if (var_61045d8733281ee5 >= 0) {
-        if (var_61045d8733281ee5 > 120) {
-            var_b15cd98e18d1a870 = 1;
+    zdelta = var_15e16054caefc232[2] - self.origin[2];
+    bdoublejump = 0;
+    if (zdelta >= 0) {
+        if (zdelta > 120) {
+            bdoublejump = 1;
         }
-    } else if (0 - var_61045d8733281ee5 > 240) {
-        var_b15cd98e18d1a870 = 1;
+    } else if (0 - zdelta > 240) {
+        bdoublejump = 1;
     }
-    if (var_b15cd98e18d1a870 == 0) {
+    if (bdoublejump == 0) {
         distsq = distancesquared(self.origin, var_15e16054caefc232);
         if (distsq > 40000) {
-            var_b15cd98e18d1a870 = 1;
+            bdoublejump = 1;
         }
     }
     prefix = "left_";
     if (self.asm.footsteps.foot == "right") {
         prefix = "right_";
     }
-    if (var_b15cd98e18d1a870) {
+    if (bdoublejump) {
         alias = prefix + "double_jump";
     } else {
         alias = prefix + "single_jump";
@@ -1041,7 +1042,7 @@ function choosewallrunenteranim(asmname, statename, params) {
     return jumpanim;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2988
 // Size: 0x48
@@ -1054,32 +1055,32 @@ function senddelayedevent(asmname, statename, time, event, var_775aaa9fdd143162)
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x29d7
 // Size: 0xbd
-function hasanotherwallrun(asmname, statename, var_f2b19b25d457c2a6, params) {
+function hasanotherwallrun(asmname, statename, tostatename, params) {
     if (!isdefined(self.wall_run_current_node_index)) {
-        return 0;
+        return false;
     }
     startnode = self.traversal_start_node;
     if (!isdefined(startnode)) {
-        return 0;
+        return false;
     }
     /#
         assert(isdefined(startnode.wall_info));
     #/
     var_a3e2cf82e6f677a4 = self.wall_run_current_node_index + 2;
     if (startnode.wall_info.nodeoffsets.size <= var_a3e2cf82e6f677a4) {
-        return 0;
+        return false;
     }
     /#
         assert(startnode.wall_info.nodeoffsets.size > var_a3e2cf82e6f677a4 + 1);
     #/
-    return 1;
+    return true;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a9c
 // Size: 0x10d
@@ -1095,17 +1096,17 @@ function playwallruncontinue(asmname, statename, params) {
         assert(startnode.wall_info.nodeoffsets.size > self.wall_run_current_node_index + 1);
     #/
     endpos = getwallnodeposition(startnode, self.wall_run_current_node_index);
-    var_f1a4d9d10fd4b365 = self.angles;
+    desiredangles = self.angles;
     if (self.wall_run_direction == "left") {
         self.wall_run_direction = "right";
     } else {
         self.wall_run_direction = "left";
     }
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    playscaledjump(asmname, statename, var_2c8936d08f85c5c1, endpos, var_f1a4d9d10fd4b365);
+    animid = asm_getanim(asmname, statename);
+    playscaledjump(asmname, statename, animid, endpos, desiredangles);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bb0
 // Size: 0xde
@@ -1123,11 +1124,11 @@ function getwallrunmantleposition(startnode) {
     if (angleoffset == (0, 0, 0)) {
         return (startnode.origin + startnode.wall_info.mantleoffset);
     }
-    var_728d033793cea02f = rotatevector(startnode.wall_info.mantleoffset, angleoffset);
-    return startnode.origin + var_728d033793cea02f;
+    worlddelta = rotatevector(startnode.wall_info.mantleoffset, angleoffset);
+    return startnode.origin + worlddelta;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c96
 // Size: 0xb7
@@ -1148,7 +1149,7 @@ function getwallrunmantleangles(startnode) {
     return (0, angleclamp180(startnode.wall_info.mantleangles[1] + angleoffset), 0);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d55
 // Size: 0x72
@@ -1160,18 +1161,18 @@ function getwallruntomantletype() {
     if (!isdefined(startnode.wall_info.mantleoffset)) {
         return "none";
     }
-    var_ba9d9f198faba440 = getwallrunmantleposition(startnode);
-    if (var_ba9d9f198faba440[2] >= self.origin[2]) {
+    mantlepos = getwallrunmantleposition(startnode);
+    if (mantlepos[2] >= self.origin[2]) {
         return "high";
     }
     return "low";
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dcf
 // Size: 0x73
-function shouldwallruntovault(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldwallruntovault(asmname, statename, tostatename, params) {
     startnode = self.traversal_start_node;
     /#
         assert(isdefined(startnode));
@@ -1182,7 +1183,7 @@ function shouldwallruntovault(asmname, statename, var_f2b19b25d457c2a6, params) 
     return startnode.wall_info.bvaultover;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e4a
 // Size: 0x2c1
@@ -1200,8 +1201,8 @@ function playwallrunloop(asmname, statename, params) {
     /#
         assert(isdefined(loopanim));
     #/
-    var_76c92379ed351610 = asm_getxanim(statename, loopanim);
-    movedelta = getmovedelta(var_76c92379ed351610);
+    loopxanim = asm_getxanim(statename, loopanim);
+    movedelta = getmovedelta(loopxanim);
     var_c1c17849832b0c9d = length2d(movedelta);
     /#
         assert(var_c1c17849832b0c9d > 0);
@@ -1211,14 +1212,14 @@ function playwallrunloop(asmname, statename, params) {
         /#
             assert(isdefined(exitanim));
         #/
-        var_315d9a31b78a7f02 = asm_getxanim("wall_run_exit", exitanim);
-        var_7a01b5ed5ca503cd = getnotetracktimes(var_315d9a31b78a7f02, "start_jump");
+        exitxanim = asm_getxanim("wall_run_exit", exitanim);
+        var_7a01b5ed5ca503cd = getnotetracktimes(exitxanim, "start_jump");
         /#
             assert(isdefined(var_7a01b5ed5ca503cd) && var_7a01b5ed5ca503cd.size > 0);
         #/
-        var_6949f2bc98970ee0 = getanimlength(var_315d9a31b78a7f02);
-        var_d56a0b3c801f0bf6 = getmovedelta(var_315d9a31b78a7f02, 0, var_7a01b5ed5ca503cd[0]);
-        var_d72c308d5da52d60 = length2d(var_d56a0b3c801f0bf6);
+        var_6949f2bc98970ee0 = getanimlength(exitxanim);
+        exitmovedelta = getmovedelta(exitxanim, 0, var_7a01b5ed5ca503cd[0]);
+        var_d72c308d5da52d60 = length2d(exitmovedelta);
     } else {
         var_d72c308d5da52d60 = 0;
     }
@@ -1232,19 +1233,19 @@ function playwallrunloop(asmname, statename, params) {
         var_bb633c459e7832b8 = 0;
     }
     var_aeb58353cbdd1e6d = var_bb633c459e7832b8 / var_c1c17849832b0c9d;
-    animlength = getanimlength(var_76c92379ed351610);
-    var_2166da624f53fb6c = animlength * var_aeb58353cbdd1e6d;
-    thread senddelayedevent(asmname, statename, var_2166da624f53fb6c, "wall_run_loop_done", 1);
-    var_4dac4bf2efe97c4f = vectornormalize(delta);
-    self orientmode("face direction", var_4dac4bf2efe97c4f);
+    animlength = getanimlength(loopxanim);
+    animtimeneeded = animlength * var_aeb58353cbdd1e6d;
+    thread senddelayedevent(asmname, statename, animtimeneeded, "wall_run_loop_done", 1);
+    desiredmovedir = vectornormalize(delta);
+    self orientmode("face direction", desiredmovedir);
     thread playwallrunendsound(statename);
     self animmode("noclip");
     self aisetanim(statename, loopanim);
-    asm_playfacialanim(asmname, statename, var_76c92379ed351610);
+    asm_playfacialanim(asmname, statename, loopxanim);
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3112
 // Size: 0x34
@@ -1256,29 +1257,29 @@ function playwallrunendsound(statename) {
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x314d
 // Size: 0x1df
 function choosewallrunexitanim(asmname, statename, params) {
     alias = self.wall_run_direction;
     endpos = self getnegotiationendpos();
-    var_61045d8733281ee5 = endpos[2] - self.origin[2];
-    var_b15cd98e18d1a870 = 0;
-    if (var_61045d8733281ee5 >= 0) {
-        if (var_61045d8733281ee5 > 120) {
-            var_b15cd98e18d1a870 = 1;
+    zdelta = endpos[2] - self.origin[2];
+    bdoublejump = 0;
+    if (zdelta >= 0) {
+        if (zdelta > 120) {
+            bdoublejump = 1;
         }
-    } else if (0 - var_61045d8733281ee5 > 240) {
-        var_b15cd98e18d1a870 = 1;
+    } else if (0 - zdelta > 240) {
+        bdoublejump = 1;
     }
-    if (var_b15cd98e18d1a870 == 0) {
+    if (bdoublejump == 0) {
         distsq = distancesquared(self.origin, endpos);
         if (distsq > 46225) {
-            var_b15cd98e18d1a870 = 1;
+            bdoublejump = 1;
         }
     }
-    if (var_b15cd98e18d1a870) {
+    if (bdoublejump) {
         alias = alias + "_double";
     }
     endpos = self getnegotiationendpos();
@@ -1289,11 +1290,11 @@ function choosewallrunexitanim(asmname, statename, params) {
     dir = self getnegotiationendpos() - getwallnodeposition(startnode, startnode.wall_info.nodeoffsets.size - 1);
     dir = (dir[0], dir[1], 0);
     dir = vectornormalize(dir);
-    var_f1a4d9d10fd4b365 = vectortoangles(dir);
-    var_5babffa7f03ce512 = angleclamp180(var_f1a4d9d10fd4b365[1] - self.angles[1]);
-    var_5babffa7f03ce512 = abs(var_5babffa7f03ce512);
-    if (var_5babffa7f03ce512 >= 22.5) {
-        if (var_5babffa7f03ce512 > 67.5) {
+    desiredangles = vectortoangles(dir);
+    yawdelta = angleclamp180(desiredangles[1] - self.angles[1]);
+    yawdelta = abs(yawdelta);
+    if (yawdelta >= 22.5) {
+        if (yawdelta > 67.5) {
             alias = alias + "_90";
         } else {
             alias = alias + "_45";
@@ -1303,7 +1304,7 @@ function choosewallrunexitanim(asmname, statename, params) {
     return jumpanim;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3334
 // Size: 0x16f
@@ -1320,13 +1321,13 @@ function playwallrunexit(asmname, statename, params) {
     /#
         assert(isdefined(startnode.wall_info));
     #/
-    var_f1a4d9d10fd4b365 = self.angles;
+    desiredangles = self.angles;
     var_8c2c7ea3bd382df4 = 1;
     animname = asm_getanim(asmname, statename);
-    var_40aee82e33a154c3 = getnotetracktimes(animname, "ground");
+    groundtime = getnotetracktimes(animname, "ground");
     self function_62004d7561fd321e();
-    if (isdefined(var_40aee82e33a154c3) && var_40aee82e33a154c3.size > 0) {
-        var_8c2c7ea3bd382df4 = var_40aee82e33a154c3[0];
+    if (isdefined(groundtime) && groundtime.size > 0) {
+        var_8c2c7ea3bd382df4 = groundtime[0];
     } else {
         var_930caef7352c0f86 = getnotetracktimes(animname, "end_double_jump");
         if (isdefined(var_930caef7352c0f86) && var_930caef7352c0f86.size > 0) {
@@ -1341,33 +1342,33 @@ function playwallrunexit(asmname, statename, params) {
     if (soundexists("wallrun_end_npc")) {
         self playsound("wallrun_end_npc");
     }
-    playscaledjump(asmname, statename, animname, endpos, var_f1a4d9d10fd4b365, var_8c2c7ea3bd382df4, 1, 1);
+    playscaledjump(asmname, statename, animname, endpos, desiredangles, var_8c2c7ea3bd382df4, 1, 1);
     thread terminatewallruntraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x34aa
 // Size: 0xc2
-function isnotdoingwallruntransition(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isnotdoingwallruntransition(asmname, statename, tostatename, params) {
     if (isdefined(self.traversal_start_node)) {
-        return 0;
+        return false;
     }
     /#
         if (getdvarint(@"hash_df899f2d04257001", 0) != 0) {
-            if (self setuptraversaltransitioncheck(asmname, statename, var_f2b19b25d457c2a6, params)) {
+            if (self setuptraversaltransitioncheck(asmname, statename, tostatename, params)) {
                 thread draworigin();
                 thread drawdebugline(self.traversal_start_node.origin, (0, 0, 1), (1, 0, 0));
-                thread function_c529e8a46bfdb3bd(statename, self.traversal_start_node, self getnegotiationendpos());
+                thread debugwallrun(statename, self.traversal_start_node, self getnegotiationendpos());
                 self.traversal_start_node = undefined;
                 self.wall_run_direction = undefined;
             }
         }
     #/
-    return 1;
+    return true;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3574
 // Size: 0x56
@@ -1381,7 +1382,7 @@ function terminatewallruntraverse(asmname, statename) {
     terminatetraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x35d1
 // Size: 0x24f
@@ -1395,16 +1396,16 @@ function playwallruntomantle(asmname, statename, params) {
     /#
         assert(isdefined(endnodepos));
     #/
-    var_4f3c80d982122657 = getwallrunmantleposition(startnode);
+    mantleendpos = getwallrunmantleposition(startnode);
     if (isdefined(startnode.wall_info.bvaultover) || getwallruntomantletype() == "high") {
         mantleangles = getwallrunmantleangles(startnode);
         if (!isdefined(mantleangles)) {
-            delta = endnodepos - var_4f3c80d982122657;
+            delta = endnodepos - mantleendpos;
             delta = (delta[0], delta[1], 0);
             mantleangles = vectortoangles(delta);
         }
     } else {
-        delta = var_4f3c80d982122657 - self.origin;
+        delta = mantleendpos - self.origin;
         delta = (delta[0], delta[1], 0);
         mantleangles = vectortoangles(delta);
     }
@@ -1426,76 +1427,76 @@ function playwallruntomantle(asmname, statename, params) {
     var_99b01baf607ed310 = getmovedelta(var_691e59d933435353, var_40d329cf034e4307, var_45d80567424231ae);
     self forceteleport(self.origin, mantleangles);
     var_6f31e626554d6ab9 = self localtoworldcoords(var_99b01baf607ed310);
-    var_36166c1716b38f9b = var_6f31e626554d6ab9 - self.origin;
-    var_3b137c718ea27788 = var_4f3c80d982122657 - var_36166c1716b38f9b;
+    actualdelta = var_6f31e626554d6ab9 - self.origin;
+    mantlestartpos = mantleendpos - actualdelta;
     /#
         if (getdvarint(@"hash_df899f2d04257001", 0) != 0) {
-            function_52e0db833127ec95(self.origin, var_3b137c718ea27788, (255, 0, 0), 100);
+            function_52e0db833127ec95(self.origin, mantlestartpos, (255, 0, 0), 100);
         }
     #/
-    playscaledjump(asmname, statename, var_691e59d933435353, var_3b137c718ea27788, mantleangles, var_40d329cf034e4307, 0, 1);
+    playscaledjump(asmname, statename, var_691e59d933435353, mantlestartpos, mantleangles, var_40d329cf034e4307, 0, 1);
     thread terminatewallruntraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3827
 // Size: 0x307
 function playtraversaltransition(asmname, statename, params) {
     self endon(statename + "_finished");
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    if (!isdefined(var_2c8936d08f85c5c1)) {
+    animid = asm_getanim(asmname, statename);
+    if (!isdefined(animid)) {
         asm_fireevent(asmname, "code_move");
         return;
     }
-    xanim = asm_getxanim(statename, var_2c8936d08f85c5c1);
+    xanim = asm_getxanim(statename, animid);
     animendtime = 1;
-    var_95aca96ee2618fe = undefined;
+    notetracktimes = undefined;
     if (getdvarint(@"hash_f13997d88562c7b5", 1) == 1) {
-        var_95aca96ee2618fe = getnotetracktimes(xanim, "align");
+        notetracktimes = getnotetracktimes(xanim, "align");
     }
-    if (!isdefined(var_95aca96ee2618fe) || var_95aca96ee2618fe.size == 0) {
-        var_95aca96ee2618fe = getnotetracktimes(xanim, "code_move");
+    if (!isdefined(notetracktimes) || notetracktimes.size == 0) {
+        notetracktimes = getnotetracktimes(xanim, "code_move");
     }
-    if (isdefined(var_95aca96ee2618fe) && var_95aca96ee2618fe.size > 0) {
-        animendtime = var_95aca96ee2618fe[0];
+    if (isdefined(notetracktimes) && notetracktimes.size > 0) {
+        animendtime = notetracktimes[0];
     }
-    var_f075350fc4be0d85 = getmovedelta(xanim, 0, animendtime);
+    stopdelta = getmovedelta(xanim, 0, animendtime);
     var_fd7c686cead623aa = getangledelta(xanim, 0, animendtime);
-    var_d5a54d862aacc2 = self.traversal_start_node;
+    negotiationnode = self.traversal_start_node;
     /#
-        assert(isdefined(var_d5a54d862aacc2));
+        assert(isdefined(negotiationnode));
     #/
     /#
         if (getdvarint(@"hash_df899f2d04257001", 0) != 0 && self.traversal_start_node.animscript == "<unknown string>") {
             thread draworigin();
-            thread drawdebugline(var_d5a54d862aacc2.origin, (0, 0, 1), (1, 0, 0));
-            thread function_c529e8a46bfdb3bd(statename, self.traversal_start_node, self getnegotiationendpos());
+            thread drawdebugline(negotiationnode.origin, (0, 0, 1), (1, 0, 0));
+            thread debugwallrun(statename, self.traversal_start_node, self getnegotiationendpos());
         }
     #/
-    var_228c1f2f3a2d92f1 = getanimlength(xanim) * animendtime;
-    var_64366dd6eea5221d = int(ceil(var_228c1f2f3a2d92f1 * 20));
+    anim_length = getanimlength(xanim) * animendtime;
+    var_64366dd6eea5221d = int(ceil(anim_length * 20));
     if (self.traversal_start_node.animscript == "wall_run") {
         var_7fe6f6537340df66 = getwallnodeposition(self.traversal_start_node, 0) - self.origin;
         var_71ab5f95b941ad8d = vectortoangles(var_7fe6f6537340df66);
         desiredyaw = var_71ab5f95b941ad8d[1];
     } else {
-        var_4e68f5990e21a5ed = self getnegotiationendpos() - self.traversal_start_node.origin;
-        var_4e68f5990e21a5ed = (var_4e68f5990e21a5ed[0], var_4e68f5990e21a5ed[1], 0);
-        var_f1a4d9d10fd4b365 = vectortoangles(var_4e68f5990e21a5ed);
-        desiredyaw = var_f1a4d9d10fd4b365[1];
+        desireddelta = self getnegotiationendpos() - self.traversal_start_node.origin;
+        desireddelta = (desireddelta[0], desireddelta[1], 0);
+        desiredangles = vectortoangles(desireddelta);
+        desiredyaw = desiredangles[1];
     }
-    var_641c7b140664d9d3 = namespace_d925b2b52656868e::calcanimstartpos(var_d5a54d862aacc2.origin, desiredyaw, var_f075350fc4be0d85, var_fd7c686cead623aa);
+    stopstartpos = scripts/asm/soldier/cover::calcanimstartpos(negotiationnode.origin, desiredyaw, stopdelta, var_fd7c686cead623aa);
     arrivalyaw = desiredyaw - var_fd7c686cead623aa;
     self.a.arrivalasmstatename = statename;
     self.useanimgoalweight = 1;
-    self startcoverarrival(var_641c7b140664d9d3, arrivalyaw, var_64366dd6eea5221d);
-    self aisetanim(statename, var_2c8936d08f85c5c1);
+    self startcoverarrival(stopstartpos, arrivalyaw, var_64366dd6eea5221d);
+    self aisetanim(statename, animid);
     asm_playfacialanim(asmname, statename, xanim);
     asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b35
 // Size: 0x127
@@ -1503,46 +1504,46 @@ function choosetraversaltransition(asmname, statename, params) {
     approachdir = anglestoforward(self.angles);
     var_98309fe48684a69 = vectortoangles(approachdir);
     if (self.traversal_start_node.animscript == "wall_run") {
-        var_f1a4d9d10fd4b365 = vectortoangles(getwallnodeposition(self.traversal_start_node, 0) - self.origin);
+        desiredangles = vectortoangles(getwallnodeposition(self.traversal_start_node, 0) - self.origin);
     } else {
-        var_4e68f5990e21a5ed = self getnegotiationendpos() - self.traversal_start_node.origin;
-        var_4e68f5990e21a5ed = (var_4e68f5990e21a5ed[0], var_4e68f5990e21a5ed[1], 0);
-        var_f1a4d9d10fd4b365 = vectortoangles(var_4e68f5990e21a5ed);
+        desireddelta = self getnegotiationendpos() - self.traversal_start_node.origin;
+        desireddelta = (desireddelta[0], desireddelta[1], 0);
+        desiredangles = vectortoangles(desireddelta);
     }
-    desiredyaw = var_f1a4d9d10fd4b365[1];
+    desiredyaw = desiredangles[1];
     anglediff = angleclamp180(desiredyaw - var_98309fe48684a69[1]);
     angleindex = getangleindex(anglediff, 22.5);
-    var_9b9c0392fa49456d = getstopanims(asmname, statename, undefined, 1);
-    if (!isdefined(var_9b9c0392fa49456d[angleindex])) {
+    stopanims = getstopanims(asmname, statename, undefined, 1);
+    if (!isdefined(stopanims[angleindex])) {
         return undefined;
     }
-    return var_9b9c0392fa49456d[angleindex];
+    return stopanims[angleindex];
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c64
 // Size: 0x59
-function shouldabortwallrunattach(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldabortwallrunattach(asmname, statename, tostatename, params) {
     distsq = distance2dsquared(self.origin, getwallnodeposition(self.traversal_start_node, 1));
     if (distsq < 144) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cc5
 // Size: 0x40
-function shouldtraversetransitionto(asmname, statename, var_f2b19b25d457c2a6, params) {
-    if (var_f2b19b25d457c2a6 == self.traversal_start_node.animscript) {
-        return 1;
+function shouldtraversetransitionto(asmname, statename, tostatename, params) {
+    if (tostatename == self.traversal_start_node.animscript) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d0d
 // Size: 0x55
@@ -1553,83 +1554,82 @@ function istraversaltransitionsupported(animscript) {
     case #"hash_6fc6878fd3fd1e7a":
     case #"hash_8f681d217a32aef7":
     case #"hash_d14662a6eb371af5":
-        return 1;
-        break;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d6a
 // Size: 0x313
-function shoulddotraversaltransition(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shoulddotraversaltransition(asmname, statename, tostatename, params) {
     if (!isdefined(self.traversal_start_node)) {
-        return 0;
+        return false;
     }
     if (!istraversaltransitionsupported(self.traversal_start_node.animscript)) {
-        return 0;
+        return false;
     }
     if (!self.facemotion) {
-        return 0;
+        return false;
     }
-    var_e19498e123df4d73 = undefined;
+    traversal_direction = undefined;
     if (self.traversal_start_node.animscript == "wall_run") {
-        var_e19498e123df4d73 = getwallrundirectionfromstartnode(self.traversal_start_node);
-        var_4e68f5990e21a5ed = getwallnodeposition(self.traversal_start_node, 0) - self.origin;
-        var_f1a4d9d10fd4b365 = vectortoangles(var_4e68f5990e21a5ed);
+        traversal_direction = getwallrundirectionfromstartnode(self.traversal_start_node);
+        desireddelta = getwallnodeposition(self.traversal_start_node, 0) - self.origin;
+        desiredangles = vectortoangles(desireddelta);
     } else {
-        var_4e68f5990e21a5ed = self getnegotiationendpos() - self.traversal_start_node.origin;
-        var_4e68f5990e21a5ed = (var_4e68f5990e21a5ed[0], var_4e68f5990e21a5ed[1], 0);
-        var_e19498e123df4d73 = vectornormalize(var_4e68f5990e21a5ed);
-        var_f1a4d9d10fd4b365 = vectortoangles(var_e19498e123df4d73);
+        desireddelta = self getnegotiationendpos() - self.traversal_start_node.origin;
+        desireddelta = (desireddelta[0], desireddelta[1], 0);
+        traversal_direction = vectornormalize(desireddelta);
+        desiredangles = vectortoangles(traversal_direction);
     }
-    var_d9bfc18f40907748 = var_f1a4d9d10fd4b365[1];
+    traversalyaw = desiredangles[1];
     approachdir = anglestoforward(self.angles);
     var_98309fe48684a69 = vectortoangles(approachdir);
-    anglediff = angleclamp180(var_d9bfc18f40907748 - var_98309fe48684a69[1]);
+    anglediff = angleclamp180(traversalyaw - var_98309fe48684a69[1]);
     angleindex = getangleindex(anglediff, 22.5);
-    var_9b9c0392fa49456d = getstopanims(asmname, var_f2b19b25d457c2a6, undefined, 1);
-    stopanim = var_9b9c0392fa49456d[angleindex];
+    stopanims = getstopanims(asmname, tostatename, undefined, 1);
+    stopanim = stopanims[angleindex];
     if (!isdefined(stopanim)) {
-        return 0;
+        return false;
     }
     animendtime = 1;
-    var_95aca96ee2618fe = undefined;
+    notetracktimes = undefined;
     if (getdvarint(@"hash_f13997d88562c7b5", 1) == 1) {
-        var_95aca96ee2618fe = getnotetracktimes(stopanim, "align");
+        notetracktimes = getnotetracktimes(stopanim, "align");
     }
-    if (!isdefined(var_95aca96ee2618fe) || var_95aca96ee2618fe.size == 0) {
-        var_95aca96ee2618fe = getnotetracktimes(stopanim, "code_move");
+    if (!isdefined(notetracktimes) || notetracktimes.size == 0) {
+        notetracktimes = getnotetracktimes(stopanim, "code_move");
     }
-    if (isdefined(var_95aca96ee2618fe) && var_95aca96ee2618fe.size > 0) {
-        animendtime = var_95aca96ee2618fe[0];
+    if (isdefined(notetracktimes) && notetracktimes.size > 0) {
+        animendtime = notetracktimes[0];
     }
-    var_f075350fc4be0d85 = getmovedelta(stopanim, 0, animendtime);
+    stopdelta = getmovedelta(stopanim, 0, animendtime);
     var_fd7c686cead623aa = getangledelta(stopanim, 0, animendtime);
-    var_d49262ab30e7c20 = distance2d(self.origin, self.traversal_start_node.origin);
-    var_4e851016ecec5294 = length(var_f075350fc4be0d85);
-    delta = var_d49262ab30e7c20 - var_4e851016ecec5294;
+    disttonode = distance2d(self.origin, self.traversal_start_node.origin);
+    var_4e851016ecec5294 = length(stopdelta);
+    delta = disttonode - var_4e851016ecec5294;
     if (delta < 0) {
-        var_2418c08254d8b1f6 = anglestoforward(var_f1a4d9d10fd4b365);
-        dot = vectordot(approachdir, var_2418c08254d8b1f6);
+        traversedir = anglestoforward(desiredangles);
+        dot = vectordot(approachdir, traversedir);
         if (dot > 0.707) {
             if (abs(delta) > 10) {
-                return 0;
+                return false;
             }
         } else if (abs(delta) > 64) {
-            return 0;
+            return false;
         }
     } else if (delta > 10) {
-        return 0;
+        return false;
     }
     if (self.traversal_start_node.animscript == "wall_run") {
-        self.wall_run_direction = var_e19498e123df4d73;
+        self.wall_run_direction = traversal_direction;
     }
-    return 1;
+    return true;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4085
 // Size: 0x2f
@@ -1641,7 +1641,7 @@ function handlewallrunattachnotetrack(note) {
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x40bb
 // Size: 0x2f
@@ -1652,7 +1652,7 @@ function setupwallrunaimlimits() {
     self.leftaimlimit = 90;
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x40f1
 // Size: 0x71
@@ -1664,14 +1664,14 @@ function drawdebugline(pos, normal, color) {
         level endon("<unknown string>");
         self endon("<unknown string>");
         lineend = pos + normal * 100;
-        while (1) {
+        while (true) {
             line(pos, lineend, color, 1, 1, 1);
             wait(0.05);
         }
     #/
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4169
 // Size: 0x3e
@@ -1684,7 +1684,7 @@ function function_52e0db833127ec95(from, to, color, duration) {
     #/
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x41ae
 // Size: 0x9c
@@ -1697,7 +1697,7 @@ function draworigin() {
         self endon("<unknown string>");
         color = (0, 0, 1);
         normal = (0, 0, 1);
-        while (1) {
+        while (true) {
             pos = self.origin;
             lineend = pos + normal * 100;
             line(pos, lineend, color, 1, 1, 1);
@@ -1706,43 +1706,43 @@ function draworigin() {
     #/
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4251
 // Size: 0x12b
-function function_c529e8a46bfdb3bd(statename, startnode, endpos) {
+function debugwallrun(statename, startnode, endpos) {
     /#
-        var_d6c2c3334e02123f = (0, 1, 0);
-        var_d6c2c4334e021472 = (0, 0, 1);
-        color = var_d6c2c3334e02123f;
+        color1 = (0, 1, 0);
+        color2 = (0, 0, 1);
+        color = color1;
         line(startnode.origin, getwallnodeposition(startnode, 0), color, 1, 1, 300);
         currentpos = startnode.origin;
         for (i = 0; i < startnode.wall_info.nodeoffsets.size - 1; i++) {
             if (i % 2 == 0) {
-                color = var_d6c2c4334e021472;
+                color = color2;
             } else {
-                color = var_d6c2c3334e02123f;
+                color = color1;
             }
             currentpos = getwallnodeposition(startnode, i);
             line(currentpos, getwallnodeposition(startnode, i + 1), color, 1, 1, 300);
             currentpos = getwallnodeposition(startnode, i + 1);
             if (i % 2 == 0) {
-                color = var_d6c2c3334e02123f;
-            } else {
-                color = var_d6c2c4334e021472;
+                color = color1;
+                continue;
             }
+            color = color2;
         }
         line(currentpos, endpos, color, 1, 1, 300);
     #/
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4383
 // Size: 0x43e
 function playtraverseanim_ladder(asmname, statename, params) {
     self endon(statename + "_finished");
-    self function_148259b5edf82f38(1);
+    self aisetisonladder(1);
     startnode = self getnegotiationstartnode();
     endpos = self getnegotiationendpos();
     /#
@@ -1790,42 +1790,42 @@ function playtraverseanim_ladder(asmname, statename, params) {
         self aisetanim(statename, var_f3fa34446bde31bf, rate);
         asm_donotetracks(asmname, statename);
     }
-    var_2a9e077675b53676 = endpos;
+    loopendpos = endpos;
     if (isdefined(var_5af16561805a75b1)) {
         var_ba9f413c71dc05c1 = asm_getxanim(statename, var_5af16561805a75b1);
         var_7e1ef9266bfb4e87 = getmovedelta(var_ba9f413c71dc05c1);
         if (var_571103a8a150fca9) {
-            var_2a9e077675b53676 = startnode.traverse_height - (0, 0, 48);
+            loopendpos = startnode.traverse_height - (0, 0, 48);
         } else {
-            var_2a9e077675b53676 = endpos - var_7e1ef9266bfb4e87 + (0, 0, 1);
+            loopendpos = endpos - var_7e1ef9266bfb4e87 + (0, 0, 1);
         }
     }
     /#
         assert(isdefined(var_451f10c8ea3f02b7));
     #/
-    var_29dc8002ce343a5d = var_2a9e077675b53676 - self.origin;
+    var_29dc8002ce343a5d = loopendpos - self.origin;
     if (var_29dc8002ce343a5d[2] * starttoend[2] > 0) {
-        var_4e385eff4bd3affb = asm_getxanim(statename, var_451f10c8ea3f02b7);
-        var_4badba7b39f1758e = getmovedelta(var_4e385eff4bd3affb);
-        var_2f9556e4b32808e = var_4badba7b39f1758e[2] * rate / getanimlength(var_4e385eff4bd3affb);
-        var_340de6c50aee0a47 = var_29dc8002ce343a5d[2] / var_2f9556e4b32808e;
+        climbxanim = asm_getxanim(statename, var_451f10c8ea3f02b7);
+        var_4badba7b39f1758e = getmovedelta(climbxanim);
+        var_2f9556e4b32808e = var_4badba7b39f1758e[2] * rate / getanimlength(climbxanim);
+        climbtime = var_29dc8002ce343a5d[2] / var_2f9556e4b32808e;
         /#
-            assert(var_340de6c50aee0a47 > 0);
+            assert(climbtime > 0);
         #/
-        if (!isdefined(var_4e385eff4bd3affb) || !isdefined(var_4badba7b39f1758e) || !isdefined(var_2f9556e4b32808e) || !isdefined(var_340de6c50aee0a47)) {
-            var_38548703ea2bdadc = function_2285421dfc79c4d5();
+        if (!isdefined(climbxanim) || !isdefined(var_4badba7b39f1758e) || !isdefined(var_2f9556e4b32808e) || !isdefined(climbtime)) {
+            arcname = function_2285421dfc79c4d5();
             var_6af018c22f5f179f = self.basearchetype;
             /#
-                println("<unknown string>" + var_451f10c8ea3f02b7 + "<unknown string>" + var_38548703ea2bdadc + "<unknown string>" + statename + "<unknown string>" + var_6af018c22f5f179f + "<unknown string>");
+                println("<unknown string>" + var_451f10c8ea3f02b7 + "<unknown string>" + arcname + "<unknown string>" + statename + "<unknown string>" + var_6af018c22f5f179f + "<unknown string>");
             #/
         }
         self aisetanim(statename, var_451f10c8ea3f02b7, rate);
-        asm_donotetracksfortime(asmname, statename, var_340de6c50aee0a47);
+        asm_donotetracksfortime(asmname, statename, climbtime);
     }
     if (isdefined(var_5af16561805a75b1)) {
         self aisetanim(statename, var_5af16561805a75b1, rate);
         waitframe();
-        notetrackhandle = &namespace_39fbff2ac567437e::handletraversewarpnotetracks;
+        notetrackhandle = &scripts/asm/traverse::handletraversewarpnotetracks;
         self.traversestartnode = startnode;
         self.traverseendnode = self getnegotiationendnode();
         self.var_70a168924eccff58 = endpos;
@@ -1836,21 +1836,21 @@ function playtraverseanim_ladder(asmname, statename, params) {
     terminatetraverse(asmname, statename);
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x47c8
 // Size: 0x58
 function terminate_ladder(asmname, statename, params) {
     var_b48e997e59346e83 = !isalive(self);
     self.nogravityragdoll = var_b48e997e59346e83;
-    self function_148259b5edf82f38(0);
+    self aisetisonladder(0);
     self.var_70a168924eccff58 = undefined;
     if (var_b48e997e59346e83) {
         self.forceragdollimmediate = 0;
     }
 }
 
-// Namespace traverse/namespace_3b7962b756121d75
+// Namespace traverse / scripts/asm/soldier/traverse
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4827
 // Size: 0x93

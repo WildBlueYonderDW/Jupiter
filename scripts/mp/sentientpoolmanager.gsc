@@ -4,7 +4,7 @@
 
 #namespace namespace_26be03d9c56f9498;
 
-// Namespace namespace_26be03d9c56f9498/namespace_6d9917c3dc05dbe9
+// Namespace namespace_26be03d9c56f9498 / scripts/mp/sentientpoolmanager
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18d
 // Size: 0x1f4
@@ -40,11 +40,11 @@ function init() {
     flag_set("sentientpoolmanager_initialized");
 }
 
-// Namespace namespace_26be03d9c56f9498/namespace_6d9917c3dc05dbe9
+// Namespace namespace_26be03d9c56f9498 / scripts/mp/sentientpoolmanager
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x388
 // Size: 0x1b8
-function registersentient(threatbiasgroup, var_5c00772332ce642c, var_4918b66cebc7fbe7, var_5f6534ad3a0a1fa2, var_719c179eabb70b31, var_8928fdf873929e88) {
+function registersentient(threatbiasgroup, var_5c00772332ce642c, islethal, var_5f6534ad3a0a1fa2, var_719c179eabb70b31, var_8928fdf873929e88) {
     var_ee6f4af9861df2ab = -1;
     for (i = 0; i < level.sentientpools.size; i++) {
         if (level.sentientpools[i] == threatbiasgroup) {
@@ -61,11 +61,11 @@ function registersentient(threatbiasgroup, var_5c00772332ce642c, var_4918b66cebc
     if (isdefined(self.sentientpool)) {
         return;
     }
-    var_1b4129ac518dea9b = getsentientcounts();
-    var_761770fede046a2f = getsentientlimits();
-    if (var_1b4129ac518dea9b["other"] + var_1b4129ac518dea9b["expendable"] >= var_761770fede046a2f["other"]) {
-        var_64518d95210a12e7 = level removebestsentient(var_ee6f4af9861df2ab);
-        if (!var_64518d95210a12e7) {
+    sentientcounts = getsentientcounts();
+    sentientlimits = getsentientlimits();
+    if (sentientcounts["other"] + sentientcounts["expendable"] >= sentientlimits["other"]) {
+        maderoom = level removebestsentient(var_ee6f4af9861df2ab);
+        if (!maderoom) {
             return;
         }
     }
@@ -84,7 +84,7 @@ function registersentient(threatbiasgroup, var_5c00772332ce642c, var_4918b66cebc
     }
     if (istrue(succeeded)) {
         self setthreatbiasgroup(threatbiasgroup);
-        if (istrue(var_4918b66cebc7fbe7)) {
+        if (istrue(islethal)) {
             self makeentitynomeleetarget();
         }
         level.activesentients[threatbiasgroup][self.sentientpoolindex] = self;
@@ -92,23 +92,23 @@ function registersentient(threatbiasgroup, var_5c00772332ce642c, var_4918b66cebc
     }
 }
 
-// Namespace namespace_26be03d9c56f9498/namespace_6d9917c3dc05dbe9
+// Namespace namespace_26be03d9c56f9498 / scripts/mp/sentientpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x547
 // Size: 0x6f
 function monitorsentient(var_5f6534ad3a0a1fa2) {
     level endon("game_ended");
     poolid = self.sentientpool;
-    var_35fa1149ae3912e5 = self.sentientpoolindex;
+    keyid = self.sentientpoolindex;
     if (isdefined(var_5f6534ad3a0a1fa2)) {
         waittill_any_3("death", "remove_sentient", var_5f6534ad3a0a1fa2);
     } else {
         waittill_either("death", "remove_sentient");
     }
-    unregistersentient(poolid, var_35fa1149ae3912e5);
+    unregistersentient(poolid, keyid);
 }
 
-// Namespace namespace_26be03d9c56f9498/namespace_6d9917c3dc05dbe9
+// Namespace namespace_26be03d9c56f9498 / scripts/mp/sentientpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5bd
 // Size: 0xa3
@@ -116,48 +116,48 @@ function removebestsentient(var_6f03d6ebff31de00) {
     /#
         assert(var_6f03d6ebff31de00 >= 0 && var_6f03d6ebff31de00 < level.sentientpools.size);
     #/
-    var_77cb0f7ec307be39 = undefined;
+    bestsentient = undefined;
     for (i = 0; i <= var_6f03d6ebff31de00; i++) {
         /#
             assert(isdefined(level.sentientpools[i]));
         #/
-        var_77cb0f7ec307be39 = getbestsentientfrompool(level.sentientpools[i]);
-        if (isdefined(var_77cb0f7ec307be39)) {
+        bestsentient = getbestsentientfrompool(level.sentientpools[i]);
+        if (isdefined(bestsentient)) {
             break;
         }
     }
-    if (!isdefined(var_77cb0f7ec307be39)) {
-        return 0;
+    if (!isdefined(bestsentient)) {
+        return false;
     }
-    var_77cb0f7ec307be39 unregistersentient(var_77cb0f7ec307be39.sentientpool, var_77cb0f7ec307be39.sentientpoolindex);
-    return 1;
+    bestsentient unregistersentient(bestsentient.sentientpool, bestsentient.sentientpoolindex);
+    return true;
 }
 
-// Namespace namespace_26be03d9c56f9498/namespace_6d9917c3dc05dbe9
+// Namespace namespace_26be03d9c56f9498 / scripts/mp/sentientpoolmanager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x668
 // Size: 0x9b
-function getbestsentientfrompool(var_daf372b2e19fb88f) {
-    var_77cb0f7ec307be39 = undefined;
-    var_3071102f98cbed33 = undefined;
-    foreach (sentient in level.activesentients[var_daf372b2e19fb88f]) {
-        if (!isdefined(var_3071102f98cbed33) || sentient.sentientaddedtime < var_3071102f98cbed33) {
-            var_3071102f98cbed33 = sentient.sentientaddedtime;
-            var_77cb0f7ec307be39 = sentient;
+function getbestsentientfrompool(pooltype) {
+    bestsentient = undefined;
+    oldesttime = undefined;
+    foreach (sentient in level.activesentients[pooltype]) {
+        if (!isdefined(oldesttime) || sentient.sentientaddedtime < oldesttime) {
+            oldesttime = sentient.sentientaddedtime;
+            bestsentient = sentient;
         }
     }
-    return var_77cb0f7ec307be39;
+    return bestsentient;
 }
 
-// Namespace namespace_26be03d9c56f9498/namespace_6d9917c3dc05dbe9
+// Namespace namespace_26be03d9c56f9498 / scripts/mp/sentientpoolmanager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70b
 // Size: 0x57
-function unregistersentient(poolid, var_35fa1149ae3912e5) {
-    if (!isdefined(poolid) || !isdefined(var_35fa1149ae3912e5)) {
+function unregistersentient(poolid, keyid) {
+    if (!isdefined(poolid) || !isdefined(keyid)) {
         return;
     }
-    level.activesentients[poolid][var_35fa1149ae3912e5] = undefined;
+    level.activesentients[poolid][keyid] = undefined;
     if (isdefined(self)) {
         self.sentientpool = undefined;
         self.sentientpoolindex = undefined;

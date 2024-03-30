@@ -9,9 +9,9 @@
 #using scripts\mp\utility\perk.gsc;
 #using scripts\mp\utility\teams.gsc;
 
-#namespace namespace_746502d6fe3110aa;
+#namespace br_maphints;
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x25a
 // Size: 0xb2
@@ -25,13 +25,13 @@ function init() {
     level.maphints["computers"] = [];
     level thread onplayerconnect();
     level thread init_season3_intel_challenges();
-    if (namespace_36f464722d326bbe::getmapname() == "mp_br_mechanics") {
+    if (scripts/cp_mp/utility/game_utility::getmapname() == "mp_br_mechanics") {
         initlocs_test();
     } else {
         initlocs_computer();
     }
-    namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("maphint_computer", &maphint_computerscriptableused);
-    if (0) {
+    scripts/engine/scriptable::scriptable_addusedcallbackbypart("maphint_computer", &maphint_computerscriptableused);
+    if (false) {
         level thread maphint_debugthink();
     }
     /#
@@ -39,7 +39,7 @@ function init() {
     #/
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x313
 // Size: 0x36c
@@ -72,7 +72,7 @@ function initlocs_keypads() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x686
 // Size: 0x98
@@ -83,7 +83,7 @@ function initlocs_phones() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x725
 // Size: 0x264
@@ -108,7 +108,7 @@ function initlocs_computer() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x990
 // Size: 0x11a
@@ -123,7 +123,7 @@ function initlocs_radio() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xab1
 // Size: 0x4a
@@ -134,7 +134,7 @@ function maphint_keypadscriptableused(instance, part, state, player, var_a5b2c54
     level thread _maphint_keypadscriptableused(instance, part, state, player, var_a5b2c541413aa895);
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb02
 // Size: 0x71
@@ -147,7 +147,7 @@ function _maphint_keypadscriptableused(instance, part, state, player, var_a5b2c5
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xb7a
 // Size: 0x4a
@@ -158,7 +158,7 @@ function maphint_phonescriptableused(instance, part, state, player, var_a5b2c541
     level thread _maphint_phonescriptableused(instance, part, state, player, var_a5b2c541413aa895);
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbcb
 // Size: 0x71
@@ -171,18 +171,18 @@ function _maphint_phonescriptableused(instance, part, state, player, var_a5b2c54
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc43
 // Size: 0x52
-function maphint_computerscriptableused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function maphint_computerscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     /#
         assert(part == "maphint_computer");
     #/
     level thread _maphint_computerscriptableused(instance, part, state, player, var_a5b2c541413aa895);
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc9c
 // Size: 0x71
@@ -195,7 +195,7 @@ function _maphint_computerscriptableused(instance, part, state, player, var_a5b2
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd14
 // Size: 0x2f4
@@ -227,16 +227,16 @@ function initlocs_test() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x100f
 // Size: 0x1dc
 function maphint_debugthink() {
     var_ba3bef4f8e6e3086 = 1;
-    while (1) {
+    while (true) {
         if (var_ba3bef4f8e6e3086) {
             foreach (hint in level.maphints["phones"]) {
-                thread namespace_d028276791d9cff6::drawsphere(hint.scriptable.origin, 64, 1, (0, 1, 0));
+                thread scripts/mp/utility/debug::drawsphere(hint.scriptable.origin, 64, 1, (0, 1, 0));
             }
         }
         if (getdvarint(@"hash_87c1bbd83c66bfc9", 0) == 1) {
@@ -257,22 +257,22 @@ function maphint_debugthink() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f2
 // Size: 0x559
 function init_season3_intel_challenges() {
     level.intelchallengesdata = [];
     gameflaginit("intel_challenges_setup_complete", 0);
-    var_1b0fd1877949fe92 = getdvarint(@"hash_67078a9b140dd8a0", 0);
-    for (row = 0; 1; row++) {
+    currentweek = getdvarint(@"hash_67078a9b140dd8a0", 0);
+    for (row = 0; true; row++) {
         ref = tablelookupbyrow("mp/intel_challenges.csv", row, 0);
         if (!isdefined(ref) || ref == "") {
             break;
         }
         ingame = int(tablelookupbyrow("mp/intel_challenges.csv", row, 2));
         week = int(tablelookupbyrow("mp/intel_challenges.csv", row, 1));
-        if (week > var_1b0fd1877949fe92 && getdvarint(@"hash_253f01d86ed6f6e4", 0) == 0) {
+        if (week > currentweek && getdvarint(@"hash_253f01d86ed6f6e4", 0) == 0) {
             row++;
             continue;
         }
@@ -282,10 +282,10 @@ function init_season3_intel_challenges() {
         originy = float(tablelookupbyrow("mp/intel_challenges.csv", row, 6));
         originz = float(tablelookupbyrow("mp/intel_challenges.csv", row, 7));
         origin = (originx, originy, originz);
-        var_924b2ef42305583f = float(tablelookupbyrow("mp/intel_challenges.csv", row, 8));
-        var_924b2df42305560c = float(tablelookupbyrow("mp/intel_challenges.csv", row, 9));
-        var_924b30f423055ca5 = float(tablelookupbyrow("mp/intel_challenges.csv", row, 10));
-        angles = (var_924b2ef42305583f, var_924b2df42305560c, var_924b30f423055ca5);
+        anglesx = float(tablelookupbyrow("mp/intel_challenges.csv", row, 8));
+        anglesy = float(tablelookupbyrow("mp/intel_challenges.csv", row, 9));
+        anglesz = float(tablelookupbyrow("mp/intel_challenges.csv", row, 10));
+        angles = (anglesx, anglesy, anglesz);
         data = spawnstruct();
         data.ref = ref;
         data.ingame = ingame;
@@ -339,11 +339,11 @@ function init_season3_intel_challenges() {
         level.intelchallengesdata[ref].collectall = 1;
     }
     level thread assignscriptablemodels();
-    namespace_17c25f0877bfb620::scriptable_addusedcallback(&intelused);
+    scripts/engine/scriptable::scriptable_addusedcallback(&intelused);
     gameflagset("intel_challenges_setup_complete");
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1752
 // Size: 0xd7
@@ -359,26 +359,26 @@ function assignscriptablemodels() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1830
 // Size: 0x1c4
 function function_49a09152c5d422b() {
     /#
         gameflagwait("ui_intel_interact");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_253f01d86ed6f6e4", 0) == 1) {
                 foreach (key, entry in level.intelchallengesdata) {
                     if (!entry.ingame) {
                         continue;
                     }
                     foreach (instance in level.intelchallengesdata[key].scriptables) {
-                        thread namespace_f2ffc0540883e1ad::drawsphere(instance.origin, 16, level.framedurationseconds, (1, 0, 0));
+                        thread scripts/cp_mp/utility/debug_utility::drawsphere(instance.origin, 16, level.framedurationseconds, (1, 0, 0));
                         print3d(instance.origin, key, (1, 1, 1), 1, 1, level.frameduration);
                     }
                     if (level.intelchallengesdata[key].scriptables.size == 0) {
                         origin = entry.origin + (0, 0, 36);
-                        thread namespace_f2ffc0540883e1ad::drawsphere(origin, 16, level.framedurationseconds, (1, 0, 0));
+                        thread scripts/cp_mp/utility/debug_utility::drawsphere(origin, 16, level.framedurationseconds, (1, 0, 0));
                         print3d(origin, key, (1, 1, 1), 1, 1, level.frameduration);
                     }
                 }
@@ -388,7 +388,7 @@ function function_49a09152c5d422b() {
     #/
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19fb
 // Size: 0x75
@@ -398,7 +398,7 @@ function showintelscriptablestoplayer(player, key) {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a77
 // Size: 0x75
@@ -408,18 +408,18 @@ function hideintelscriptablesfromplayer(player, key) {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1af3
 // Size: 0x27
 function onplayerconnect() {
-    while (1) {
+    while (true) {
         player = level waittill("connected");
         player thread assignintelchallenges();
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b21
 // Size: 0x266
@@ -433,31 +433,31 @@ function assignintelchallenges() {
     }
     self.activeintelchallengekeys = [];
     if (getdvarint(@"hash_253f01d86ed6f6e4", 0) == 1) {
-        var_72a9ba770fbea73b = [];
+        allsteps = [];
         foreach (key, entry in level.intelchallengesdata) {
             if (!entry.ingame) {
                 continue;
             }
-            var_72a9ba770fbea73b[var_72a9ba770fbea73b.size] = key;
+            allsteps[allsteps.size] = key;
         }
-        self.activeintelchallengekeys = var_72a9ba770fbea73b;
+        self.activeintelchallengekeys = allsteps;
     } else {
-        var_1b0fd1877949fe92 = 3001;
-        var_60669594e9a721df = undefined;
+        currentweek = 3001;
+        firstfound = undefined;
         foreach (key, entry in level.intelchallengesdata) {
-            if (entry.week < var_1b0fd1877949fe92) {
+            if (entry.week < currentweek) {
                 continue;
             }
-            if (var_1b0fd1877949fe92 < entry.week) {
-                var_1b0fd1877949fe92 = entry.week;
+            if (currentweek < entry.week) {
+                currentweek = entry.week;
             }
-            if (isdefined(var_60669594e9a721df) && var_60669594e9a721df < entry.week) {
-                var_60669594e9a721df = undefined;
+            if (isdefined(firstfound) && firstfound < entry.week) {
+                firstfound = undefined;
             }
             completed = self getplayerdata(level.var_5d69837cf4db0407, "missionComplete", key);
-            if (!isdefined(var_60669594e9a721df) && !completed) {
-                var_60669594e9a721df = entry.week;
-                var_1b0fd1877949fe92++;
+            if (!isdefined(firstfound) && !completed) {
+                firstfound = entry.week;
+                currentweek++;
                 self.activeintelchallengekeys[self.activeintelchallengekeys.size] = key;
             }
         }
@@ -473,23 +473,23 @@ function assignintelchallenges() {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d8e
 // Size: 0x1ea
-function intelused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function intelused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     if (isdefined(instance) && isdefined(instance.type) && instance.type == "intel") {
-        var_27be02959911ae4d = 1;
+        cancollect = 1;
         if (!array_contains(player.activeintelchallengekeys, instance.datakey)) {
-            var_27be02959911ae4d = 0;
+            cancollect = 0;
         }
         if (instance.datakey == "ch_intel_season3_2_5") {
-            if (!player namespace_82dcd1d5ae30ff7::_hasperk("specialty_hack")) {
-                var_27be02959911ae4d = 0;
+            if (!player scripts/mp/utility/perk::_hasperk("specialty_hack")) {
+                cancollect = 0;
                 playsoundatpos(player.origin, "br_computer_deny");
             }
         }
-        if (var_27be02959911ae4d) {
+        if (cancollect) {
             if (istrue(level.intelchallengesdata[instance.datakey].collectall)) {
                 if (!isdefined(player.pers[instance.datakey])) {
                     player.pers[instance.datakey] = 1;
@@ -510,7 +510,7 @@ function intelused(instance, part, state, player, var_a5b2c541413aa895, var_cc38
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f7f
 // Size: 0x36
@@ -518,12 +518,12 @@ function isplayeronintelchallenge(player, ref) {
     return isdefined(player.activeintelchallengekeys) && array_contains(player.activeintelchallengekeys, ref);
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fbd
 // Size: 0xa0
-function markintelwithrecondrone(var_6d5a295ae3c46554, ent) {
-    teammates = namespace_54d20dd0dd79277f::getfriendlyplayers(var_6d5a295ae3c46554.team, 0);
+function markintelwithrecondrone(droneowner, ent) {
+    teammates = scripts/mp/utility/teams::getfriendlyplayers(droneowner.team, 0);
     foreach (player in teammates) {
         if (isplayeronintelchallenge(player, ent.datakey)) {
             intelused(ent.scriptable, undefined, undefined, player);
@@ -531,15 +531,15 @@ function markintelwithrecondrone(var_6d5a295ae3c46554, ent) {
     }
 }
 
-// Namespace namespace_746502d6fe3110aa/namespace_ebc037f6b65487ff
+// Namespace br_maphints / scripts/mp/gametypes/br_maphints
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2064
 // Size: 0xad
 function function_511e2c2a5399f0d9() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         data = self waittill("emp_applied");
-        teammates = namespace_54d20dd0dd79277f::getfriendlyplayers(data.attacker, 0);
+        teammates = scripts/mp/utility/teams::getfriendlyplayers(data.attacker, 0);
         foreach (player in teammates) {
             if (isplayeronintelchallenge(player, self.datakey)) {
                 intelused(self.scriptable, undefined, undefined, player);

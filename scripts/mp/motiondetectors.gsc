@@ -13,7 +13,7 @@
 
 #namespace motiondetectors;
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x190
@@ -54,7 +54,7 @@ function init() {
     script_model_anims();
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x104
@@ -70,7 +70,7 @@ function script_model_anims() {
     level.interactionanimlength = getanimlength(level.scr_anim["lightswitch"]["interact"]);
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb3d
 // Size: 0x81
@@ -78,40 +78,42 @@ function motiondetectors() {
     wait(5);
     volumes = getentarray("md_volume", "script_noteworthy");
     foreach (volume in volumes) {
-        var_5c72a7d5a67cf248 = volume get_target_array();
-        volume thread motiondetectionproc(var_5c72a7d5a67cf248);
+        linkedcomponents = volume get_target_array();
+        volume thread motiondetectionproc(linkedcomponents);
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc5
 // Size: 0xf1
-function lightonroutine(var_28f2010af77c3d08, nvglights) {
-    wait(var_28f2010af77c3d08);
+function lightonroutine(delaystart, nvglights) {
+    wait(delaystart);
     if (self.code_classname == "light") {
         if (!isdefined(self.savedintensity)) {
-            var_c7a32a54c0084820 = 50;
+            finalintensity = 50;
         } else {
-            var_c7a32a54c0084820 = self.savedintensity;
+            finalintensity = self.savedintensity;
         }
-        self setlightintensity(var_c7a32a54c0084820 * 0.7);
+        self setlightintensity(finalintensity * 0.7);
         thread play_sound_in_space("mp_lights_int_on", self.origin);
         wait(0.1);
         thread play_loop_sound_on_entity("mp_lights_int_on_loop");
-        self setlightintensity(var_c7a32a54c0084820 * 0.1);
+        self setlightintensity(finalintensity * 0.1);
         wait(0.05);
-        self setlightintensity(var_c7a32a54c0084820 * 0.4);
+        self setlightintensity(finalintensity * 0.4);
         wait(0.1);
-        self setlightintensity(var_c7a32a54c0084820 * 0.2);
+        self setlightintensity(finalintensity * 0.2);
         wait(0.15);
-        self setlightintensity(var_c7a32a54c0084820);
-    } else if (self.code_classname == "scriptable") {
+        self setlightintensity(finalintensity);
+        return;
+    }
+    if (self.code_classname == "scriptable") {
         self setscriptablepartstate("light", "light_on");
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcbd
 // Size: 0xc4
@@ -121,13 +123,15 @@ function lightoffroutine(lights, nvglights) {
             light setlightintensity(0);
             light thread play_sound_in_space("mp_lights_int_off", light.origin);
             light notify("stop sound" + "mp_lights_int_on_loop");
-        } else if (light.code_classname == "scriptable") {
+            continue;
+        }
+        if (light.code_classname == "scriptable") {
             light setscriptablepartstate("light", "power_off");
         }
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd88
 // Size: 0x65d
@@ -146,13 +150,21 @@ function motiondetectionproc(components) {
     foreach (component in components) {
         if (component.code_classname == "light") {
             struct.lights[struct.lights.size] = component;
-        } else if (isdefined(component.script_noteworthy) && component.script_noteworthy == "masterSwitch") {
+            continue;
+        }
+        if (isdefined(component.script_noteworthy) && component.script_noteworthy == "masterSwitch") {
             struct.masterswitches[struct.masterswitches.size] = component;
-        } else if (component.code_classname == "script_model" && !isdefined(component.script_parameters)) {
+            continue;
+        }
+        if (component.code_classname == "script_model" && !isdefined(component.script_parameters)) {
             struct.models[struct.models.size] = component;
-        } else if (component.code_classname == "script_origin") {
+            continue;
+        }
+        if (component.code_classname == "script_origin") {
             struct.nvglights[struct.nvglights.size] = component;
-        } else if (isdefined(component.script_label) && component.script_label == "blinding_volume") {
+            continue;
+        }
+        if (isdefined(component.script_label) && component.script_label == "blinding_volume") {
             struct.triggerblind = component;
         }
     }
@@ -162,7 +174,9 @@ function motiondetectionproc(components) {
         if (light.code_classname == "light") {
             light.savedintensity = light getlightintensity();
             light setlightintensity(0);
-        } else if (light.code_classname == "scriptable") {
+            continue;
+        }
+        if (light.code_classname == "scriptable") {
             light setscriptablepartstate("light", "power_off");
         }
     }
@@ -183,7 +197,7 @@ function motiondetectionproc(components) {
     }
     thread onoffmodelswap(struct.models, "off");
     thread motiondetectionstatus(struct);
-    while (1) {
+    while (true) {
         if (struct.switchstatus == "on") {
             self notify("masterSwitch_on");
             if (!struct.lightson) {
@@ -219,7 +233,7 @@ function motiondetectionproc(components) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13ec
 // Size: 0x199
@@ -232,32 +246,32 @@ function blindplayers(struct) {
             }
             if (player istouching(struct.triggerblind)) {
                 player activatenightvisionblind();
-            } else {
-                foreach (light in struct.lights) {
-                    if (distancesquared(light.origin, player.origin) > 230400) {
-                        continue;
-                    }
-                    if (!namespace_3c37cb17ade254d::within_fov(player geteye(), player getplayerangles(), light.origin, 0.707106)) {
-                        continue;
-                    }
-                    trace = namespace_2a184fc4902783dc::ray_trace(player geteye(), light.origin, undefined, namespace_2a184fc4902783dc::create_default_contents(1));
-                    if (distancesquared(trace["position"], light.origin) <= 324) {
-                        player activatenightvisionblind();
-                        break;
-                    }
+                continue;
+            }
+            foreach (light in struct.lights) {
+                if (distancesquared(light.origin, player.origin) > 230400) {
+                    continue;
+                }
+                if (!scripts/engine/utility::within_fov(player geteye(), player getplayerangles(), light.origin, 0.707106)) {
+                    continue;
+                }
+                trace = scripts/engine/trace::ray_trace(player geteye(), light.origin, undefined, scripts/engine/trace::create_default_contents(1));
+                if (distancesquared(trace["position"], light.origin) <= 324) {
+                    player activatenightvisionblind();
+                    break;
                 }
             }
         }
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x158c
 // Size: 0x93
 function nameplatemanagement(struct) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         if (struct.lightson == 0) {
             foreach (player in level.players) {
                 if (player istouching(self)) {
@@ -269,7 +283,7 @@ function nameplatemanagement(struct) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1626
 // Size: 0x81
@@ -288,13 +302,13 @@ function manageplayerindarkvolume(volume, struct) {
     self.indarkvolume = undefined;
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ae
 // Size: 0xde
 function motiondetectionstatus(struct) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         struct.detection = 0;
         foreach (player in level.players) {
             if (player istouching(self)) {
@@ -311,7 +325,7 @@ function motiondetectionstatus(struct) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1793
 // Size: 0x88
@@ -328,7 +342,7 @@ function motiondetectioncooldown(struct) {
     struct.switchstatus = "off";
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1822
 // Size: 0x3d
@@ -340,44 +354,45 @@ function runlightswitch(volume, struct) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1866
 // Size: 0x30b
 function createlightswitchtrigger(volume, struct) {
-    var_49181284b44d5afb = spawn("script_model", self.origin, 40, 0, 60);
-    var_49181284b44d5afb setmodel("uk_electrical_box_medium_02_animated");
-    var_49181284b44d5afb.angles = self.angles;
+    switchtrigger = spawn("script_model", self.origin, 40, 0, 60);
+    switchtrigger setmodel("uk_electrical_box_medium_02_animated");
+    switchtrigger.angles = self.angles;
     if (self.script_parameters == "motion") {
         return;
     }
-    var_4cf9285c14be6131 = get_target_array();
-    foreach (part in var_4cf9285c14be6131) {
+    childparts = get_target_array();
+    foreach (part in childparts) {
         if (part.code_classname == "script_origin") {
             if (isdefined(part.script_noteworthy) && part.script_noteworthy == "sceneNode") {
-                var_49181284b44d5afb.scenenode = part;
+                switchtrigger.scenenode = part;
             } else {
-                var_49181284b44d5afb.hintlightmodel = spawn("script_model", part.origin);
-                var_49181284b44d5afb.hintlightmodel.angles = part.angles;
-                var_49181284b44d5afb.hintlightmodel setmodel(part.script_noteworthy);
-                var_49181284b44d5afb.hintlightmodel.modelname = part.script_noteworthy;
+                switchtrigger.hintlightmodel = spawn("script_model", part.origin);
+                switchtrigger.hintlightmodel.angles = part.angles;
+                switchtrigger.hintlightmodel setmodel(part.script_noteworthy);
+                switchtrigger.hintlightmodel.modelname = part.script_noteworthy;
             }
-        } else if (part.code_classname == "light") {
-            var_49181284b44d5afb.hintlight = part;
             continue;
         }
+        if (part.code_classname == "light") {
+            switchtrigger.hintlight = part;
+        }
     }
-    if (namespace_36f464722d326bbe::isnightmap()) {
-        var_49181284b44d5afb makeusable();
-        var_49181284b44d5afb setusepriority(0);
-        var_49181284b44d5afb setuserange(80);
-        var_49181284b44d5afb sethintdisplayrange(200);
-        var_49181284b44d5afb setusefov(120);
-        var_49181284b44d5afb sethintdisplayfov(120);
-        var_49181284b44d5afb setcursorhint("HINT_BUTTON");
-        if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-            var_49181284b44d5afb sethintstring("MP/LIGHT_SWITCH");
-            var_49181284b44d5afb sethinticon("icon_electrical_box");
+    if (scripts/cp_mp/utility/game_utility::isnightmap()) {
+        switchtrigger makeusable();
+        switchtrigger setusepriority(0);
+        switchtrigger setuserange(80);
+        switchtrigger sethintdisplayrange(200);
+        switchtrigger setusefov(120);
+        switchtrigger sethintdisplayfov(120);
+        switchtrigger setcursorhint("HINT_BUTTON");
+        if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
+            switchtrigger sethintstring("MP/LIGHT_SWITCH");
+            switchtrigger sethinticon("icon_electrical_box");
         }
     }
     if (isdefined(volume.script_parameters) && volume.script_parameters == "motion") {
@@ -386,22 +401,22 @@ function createlightswitchtrigger(volume, struct) {
         struct.switchstatus = "off";
     }
     foreach (player in level.players) {
-        var_49181284b44d5afb enableplayeruse(player);
+        switchtrigger enableplayeruse(player);
     }
-    if (isdefined(var_49181284b44d5afb.hintlightmodel) && isdefined(var_49181284b44d5afb.hintlight)) {
-        var_49181284b44d5afb.hintlightcolor = var_49181284b44d5afb.hintlight getlightintensity();
-        var_49181284b44d5afb thread manageswitchhintlight(struct);
+    if (isdefined(switchtrigger.hintlightmodel) && isdefined(switchtrigger.hintlight)) {
+        switchtrigger.hintlightcolor = switchtrigger.hintlight getlightintensity();
+        switchtrigger thread manageswitchhintlight(struct);
     }
-    return var_49181284b44d5afb;
+    return switchtrigger;
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b79
 // Size: 0xd1
 function watchlightswitchuse(struct) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         if (!isplayer(player)) {
             continue;
@@ -419,7 +434,7 @@ function watchlightswitchuse(struct) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c51
 // Size: 0x73
@@ -429,18 +444,18 @@ function swapswitchstatus(waittime, struct) {
     if (struct.switchstatus == "motion" || struct.switchstatus == "off") {
         struct.switchstatus = "on";
         self notify("masterSwitch_on");
-    } else {
-        struct.switchstatus = "off";
+        return;
     }
+    struct.switchstatus = "off";
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ccb
 // Size: 0xa5
 function manageswitchhintlight(struct) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         if (struct.switchstatus == "on") {
             self.hintlight setlightintensity(0);
             self.hintlightmodel setmodel(self.hintlightmodel.modelname);
@@ -452,7 +467,7 @@ function manageswitchhintlight(struct) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d77
 // Size: 0x80
@@ -465,7 +480,7 @@ function getlightswitchstatus(switches) {
     return "motion";
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dff
 // Size: 0xb0
@@ -473,16 +488,16 @@ function onoffmodelswap(models, state) {
     foreach (model in models) {
         if (state == "on") {
             model setmodel(model.modelname + "_on");
-        } else {
-            model setmodel(model.modelname);
-            if (isdefined(model.flare)) {
-                model.flare delete();
-            }
+            continue;
+        }
+        model setmodel(model.modelname);
+        if (isdefined(model.flare)) {
+            model.flare delete();
         }
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1eb6
 // Size: 0xa7
@@ -495,17 +510,17 @@ function lightswitchinteraction(player, struct) {
     wait(animlength);
     setdvar(@"hash_7eb1641737ab83b7", 0);
     self notify("interaction_complete");
-    return 1;
+    return true;
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f65
 // Size: 0x45
 function watchplayerdeath(player) {
     self endon("interaction_complete");
     self.cancelinteraction = 0;
-    while (1) {
+    while (true) {
         if (!isdefined(player) || !isreallyalive(player)) {
             self.cancelinteraction = 1;
             break;
@@ -514,7 +529,7 @@ function watchplayerdeath(player) {
     }
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fb1
 // Size: 0xe9
@@ -536,7 +551,7 @@ function create_player_rig(player, animname, var_486db5fa512a3b6b) {
     remove_player_rig(player);
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a1
 // Size: 0x92
@@ -555,7 +570,7 @@ function remove_player_rig(player) {
     player.player_rig = undefined;
 }
 
-// Namespace motiondetectors/namespace_91812d9f6e7b8a2b
+// Namespace motiondetectors / scripts/mp/motiondetectors
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x213a
 // Size: 0x1d

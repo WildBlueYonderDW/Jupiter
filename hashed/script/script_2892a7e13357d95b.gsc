@@ -3,35 +3,35 @@
 
 #namespace namespace_a9be6690006809fc;
 
-// Namespace namespace_a9be6690006809fc/namespace_500325c20d920621
+// Namespace namespace_a9be6690006809fc / namespace_500325c20d920621
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70
 // Size: 0x100
 function function_c43f9411e4146fbd() {
-    var_9c02e895e4dbdc3b = #"undefined";
+    lpconlevel = #"undefined";
     if (isdefined(level.var_a7b62649c81b481a) && isdefined(level.var_a7b62649c81b481a.var_acc161de36707de2)) {
         var_cb6979b637e87c98 = level.var_a7b62649c81b481a.var_acc161de36707de2;
         switch (var_cb6979b637e87c98) {
         case 0:
-            var_9c02e895e4dbdc3b = #"hash_c6851a6deebc5413";
+            lpconlevel = #"hash_c6851a6deebc5413";
             break;
         case 1:
-            var_9c02e895e4dbdc3b = #"hash_7d305d057fa7b947";
+            lpconlevel = #"hash_7d305d057fa7b947";
             break;
         case 2:
-            var_9c02e895e4dbdc3b = #"hash_c63664e808c01db2";
+            lpconlevel = #"hash_c63664e808c01db2";
             break;
         case 3:
-            var_9c02e895e4dbdc3b = #"hash_3c2f470545de38d3";
+            lpconlevel = #"hash_3c2f470545de38d3";
             break;
         case 4:
-            var_9c02e895e4dbdc3b = #"hash_69645756fbedb0a2";
+            lpconlevel = #"hash_69645756fbedb0a2";
             break;
         case 5:
-            var_9c02e895e4dbdc3b = #"hash_b75819a959589344";
+            lpconlevel = #"hash_b75819a959589344";
             break;
         }
     }
-    return var_9c02e895e4dbdc3b;
+    return lpconlevel;
 }
 

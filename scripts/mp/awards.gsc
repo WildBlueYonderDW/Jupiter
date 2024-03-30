@@ -14,30 +14,30 @@
 
 #namespace awards;
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26d
 // Size: 0x28
 function init() {
     initawards();
-    namespace_71eef510d7f364cf::registeronplayerspawncallback(&onplayerspawned);
+    scripts/mp/utility/spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
     level thread onplayerconnect();
     level thread saveaarawardsonroundswitch();
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29c
 // Size: 0x34
 function onplayerconnect() {
-    while (1) {
+    while (true) {
         player = level waittill("connected");
         player thread initaarawardlist();
         player.awardqueue = [];
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d7
 // Size: 0xd
@@ -45,7 +45,7 @@ function onplayerspawned() {
     self.awardsthislife = [];
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2eb
 // Size: 0xa
@@ -53,7 +53,7 @@ function initawards() {
     initmidmatchawards();
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0x65
@@ -63,12 +63,12 @@ function function_6df0786b01ec7028(ref) {
     #/
     aarpriority = tablelookup("mp/awardtable.csv", 0, ref, 1);
     if (isdefined(aarpriority) && aarpriority > 0) {
-        var_908ffeb2459e73af = randomfloat(1);
-        level.var_6d808d6c553c2d9a[ref] = float(aarpriority) + var_908ffeb2459e73af;
+        randomvalue = randomfloat(1);
+        level.var_6d808d6c553c2d9a[ref] = float(aarpriority) + randomvalue;
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x368
 // Size: 0x14
@@ -76,12 +76,12 @@ function initmidmatchaward(ref) {
     function_6df0786b01ec7028(ref);
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x383
 // Size: 0x6a
 function initmidmatchawards() {
-    for (row = 0; 1; row++) {
+    for (row = 0; true; row++) {
         ref = tablelookupbyrow("mp/awardtable.csv", row, 0);
         if (!isdefined(ref) || ref == "") {
             break;
@@ -96,26 +96,26 @@ function initmidmatchawards() {
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0x3e
 function incplayerrecord(ref) {
-    var_f313905dff43d261 = self getplayerdata("common", "awards", ref);
-    self setplayerdata("common", "awards", ref, var_f313905dff43d261 + 1);
+    recordvalue = self getplayerdata("common", "awards", ref);
+    self setplayerdata("common", "awards", ref, recordvalue + 1);
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x439
 // Size: 0x17d
-function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, immediate, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
+function giveaward(ref, objweapon, pointsoverride, xpoverride, immediate, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo) {
     if (!istrue(immediate)) {
         self endon("disconnect");
         waitframe();
         waittillslowprocessallowed();
     }
-    if (!namespace_62c556437da28f50::function_34294184e90b96c(ref)) {
+    if (!scripts/mp/rank::function_34294184e90b96c(ref)) {
         /#
             assertmsg("giveAward() called on "" + ref + "" which is not marked as an award in the current score event list. IsAward should be checked.");
         #/
@@ -124,19 +124,19 @@ function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, i
     if (isenumvaluevalid(level.var_5d69837cf4db0407, "Awards", function_f28fd66285fa2c9(ref))) {
         addawardtoaarlist(ref);
     }
-    xp = var_4b5a99c16abfdfb1;
+    xp = xpoverride;
     if (!isdefined(xp)) {
-        xp = namespace_62c556437da28f50::getscoreinfoxp(ref);
+        xp = scripts/mp/rank::getscoreinfoxp(ref);
     }
     if (isdefined(xp) && xp > 0) {
-        namespace_62c556437da28f50::giverankxp(ref, xp, objweapon, undefined, immediate, undefined, undefined, var_7ec7671a1e0c788f);
+        scripts/mp/rank::giverankxp(ref, xp, objweapon, undefined, immediate, undefined, undefined, eventinfo);
     }
-    if (!isdefined(var_91185ff4a2e16a72)) {
-        points = namespace_62c556437da28f50::getscoreinfovalue(ref);
-        var_91185ff4a2e16a72 = function_53c4c53197386572(points, 0);
+    if (!isdefined(pointsoverride)) {
+        points = scripts/mp/rank::getscoreinfovalue(ref);
+        pointsoverride = default_to(points, 0);
     }
-    if (var_91185ff4a2e16a72 > 0) {
-        giveunifiedpoints(ref, objweapon, var_91185ff4a2e16a72, -1, victim, cankillchain, streakinfo, undefined, var_7ec7671a1e0c788f);
+    if (pointsoverride > 0) {
+        giveunifiedpoints(ref, objweapon, pointsoverride, -1, victim, cankillchain, streakinfo, undefined, eventinfo);
     }
     bufferednotify("earned_award_buffered", ref);
     if (isdefined(self.awardsthislife[ref])) {
@@ -149,28 +149,28 @@ function giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, i
     #/
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5bd
 // Size: 0x12d
-function queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
-    var_6dfac1dd9d7ffae2 = spawnstruct();
-    var_6dfac1dd9d7ffae2.ref = [0:ref, 1:gettime()];
-    var_6dfac1dd9d7ffae2.objweapon = objweapon;
-    var_6dfac1dd9d7ffae2.var_91185ff4a2e16a72 = var_91185ff4a2e16a72;
-    var_6dfac1dd9d7ffae2.var_4b5a99c16abfdfb1 = var_4b5a99c16abfdfb1;
-    var_6dfac1dd9d7ffae2.var_51bdae03b05bc75e = var_51bdae03b05bc75e;
-    var_6dfac1dd9d7ffae2.var_30e33d4e4669117f = var_30e33d4e4669117f;
-    var_6dfac1dd9d7ffae2.victim = victim;
-    var_6dfac1dd9d7ffae2.cankillchain = cankillchain;
-    var_6dfac1dd9d7ffae2.streakinfo = streakinfo;
-    var_6dfac1dd9d7ffae2.var_ad8c6c5cc50af10b = var_ad8c6c5cc50af10b;
-    var_6dfac1dd9d7ffae2.var_7ec7671a1e0c788f = var_7ec7671a1e0c788f;
-    self.awardqueue[self.awardqueue.size] = var_6dfac1dd9d7ffae2;
+function queuemidmatchaward(ref, objweapon, pointsoverride, xpoverride, var_51bdae03b05bc75e, dontwait, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo) {
+    awardinfo = spawnstruct();
+    awardinfo.ref = [ref, gettime()];
+    awardinfo.objweapon = objweapon;
+    awardinfo.pointsoverride = pointsoverride;
+    awardinfo.xpoverride = xpoverride;
+    awardinfo.var_51bdae03b05bc75e = var_51bdae03b05bc75e;
+    awardinfo.dontwait = dontwait;
+    awardinfo.victim = victim;
+    awardinfo.cankillchain = cankillchain;
+    awardinfo.streakinfo = streakinfo;
+    awardinfo.var_ad8c6c5cc50af10b = var_ad8c6c5cc50af10b;
+    awardinfo.eventinfo = eventinfo;
+    self.awardqueue[self.awardqueue.size] = awardinfo;
     thread flushmidmatchawardqueuewhenable();
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f1
 // Size: 0xef
@@ -179,12 +179,12 @@ function flushmidmatchawardqueue() {
         assertex(!shouldqueuemidmatchaward(), "Attempting to flush award queue when the awards can't be dispalyed");
     #/
     foreach (award in self.awardqueue) {
-        givemidmatchaward(award.ref, award.objweapon, award.var_91185ff4a2e16a72, award.var_4b5a99c16abfdfb1, award.var_51bdae03b05bc75e, award.var_30e33d4e4669117f, award.victim, award.cankillchain, award.streakinfo, award.var_ad8c6c5cc50af10b, award.var_7ec7671a1e0c788f);
+        givemidmatchaward(award.ref, award.objweapon, award.pointsoverride, award.xpoverride, award.var_51bdae03b05bc75e, award.dontwait, award.victim, award.cankillchain, award.streakinfo, award.var_ad8c6c5cc50af10b, award.eventinfo);
     }
     self.awardqueue = [];
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7e7
 // Size: 0x36
@@ -192,7 +192,7 @@ function flushmidmatchawardqueuewhenable() {
     self endon("disconnect");
     self notify("flushMidMatchAwardQueueWhenAble()");
     self endon("flushMidMatchAwardQueueWhenAble()");
-    while (1) {
+    while (true) {
         if (!shouldqueuemidmatchaward()) {
             break;
         }
@@ -201,13 +201,13 @@ function flushmidmatchawardqueuewhenable() {
     thread flushmidmatchawardqueue();
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x824
 // Size: 0xb2
 function shouldqueuemidmatchaward(var_3cda0e0b6a2d1f97) {
     if (level.gameended) {
-        return 0;
+        return false;
     }
     /#
         if (getdvarint(@"hash_9779e069cc4f5bc8", 0) > 0) {
@@ -217,7 +217,7 @@ function shouldqueuemidmatchaward(var_3cda0e0b6a2d1f97) {
         if (isdefined(level.var_6d05adacfaa6fbb2)) {
             if (level.var_6d05adacfaa6fbb2 > 0) {
                 level.var_6d05adacfaa6fbb2--;
-                return 1;
+                return true;
             }
             level.var_6d05adacfaa6fbb2 = undefined;
         }
@@ -225,18 +225,18 @@ function shouldqueuemidmatchaward(var_3cda0e0b6a2d1f97) {
     if (!isreallyalive(self)) {
         if (!istrue(var_3cda0e0b6a2d1f97) || isinkillcam()) {
             if (!isusingremote()) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8de
 // Size: 0x167
-function givemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f) {
+function givemidmatchaward(ref, objweapon, pointsoverride, xpoverride, var_51bdae03b05bc75e, dontwait, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo) {
     if (!isplayer(self)) {
         return;
     }
@@ -267,18 +267,18 @@ function givemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16ab
         #/
         ref = function_1823ff50bb28148d(ref);
     }
-    if (self ispcplayer() && namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (self ispcplayer() && scripts/mp/flags::gameflag("prematch_done")) {
         createnvidiavideo(ref);
     }
     if (shouldqueuemidmatchaward(var_51bdae03b05bc75e)) {
-        queuemidmatchaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_51bdae03b05bc75e, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f);
+        queuemidmatchaward(ref, objweapon, pointsoverride, xpoverride, var_51bdae03b05bc75e, dontwait, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo);
         return;
     }
-    namespace_bd0162aedd8c8594::logevent_awardgained(ref);
-    thread giveaward(ref, objweapon, var_91185ff4a2e16a72, var_4b5a99c16abfdfb1, var_30e33d4e4669117f, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, var_7ec7671a1e0c788f);
+    scripts/mp/analyticslog::logevent_awardgained(ref);
+    thread giveaward(ref, objweapon, pointsoverride, xpoverride, dontwait, victim, cankillchain, streakinfo, var_ad8c6c5cc50af10b, eventinfo);
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa4c
 // Size: 0x1d6
@@ -288,18 +288,18 @@ function createnvidiavideo(ref) {
         var_7861cc7f1384834e = 9;
     } else if (ref == #"hash_8368a43e439d8a67") {
         var_7861cc7f1384834e = 7;
-    } else if (ref == #"hash_978b9bab778f200b") {
+    } else if (ref == #"grenade_double") {
         var_7861cc7f1384834e = 12;
-    } else if (ref == #"hash_3b7863dcdff98b13") {
+    } else if (ref == #"explosive_stick") {
         var_7861cc7f1384834e = 13;
     } else if (ref == #"item_impact") {
         var_7861cc7f1384834e = 8;
     }
     if (!isdefined(var_7861cc7f1384834e)) {
-        if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
             if (ref == #"double") {
                 var_7861cc7f1384834e = 17;
-            } else if (ref == #"hash_f42b79a30529ba75") {
+            } else if (ref == #"triple") {
                 var_7861cc7f1384834e = 18;
             } else if (ref == #"longshot") {
                 var_7861cc7f1384834e = 19;
@@ -307,7 +307,7 @@ function createnvidiavideo(ref) {
                 var_7861cc7f1384834e = 20;
             } else if (ref == #"backstab") {
                 var_7861cc7f1384834e = 21;
-            } else if (ref == #"hash_123320811bf44b63") {
+            } else if (ref == #"throwingknife_kill") {
                 var_7861cc7f1384834e = 22;
             }
         } else if (ref == #"five") {
@@ -316,11 +316,11 @@ function createnvidiavideo(ref) {
             var_7861cc7f1384834e = 2;
         } else if (ref == #"eight") {
             var_7861cc7f1384834e = 3;
-        } else if (ref == #"hash_f3d5adb30a50aa6d") {
+        } else if (ref == #"streak_10") {
             var_7861cc7f1384834e = 4;
-        } else if (ref == #"hash_f3d913b30a538d96") {
+        } else if (ref == #"streak_20") {
             var_7861cc7f1384834e = 5;
-        } else if (ref == #"hash_f3dc99b30a56a71f") {
+        } else if (ref == #"streak_30") {
             var_7861cc7f1384834e = 6;
         } else if (ref == #"six") {
             var_7861cc7f1384834e = 10;
@@ -335,7 +335,7 @@ function createnvidiavideo(ref) {
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc29
 // Size: 0x33f
@@ -343,49 +343,49 @@ function addawardtoaarlist(ref) {
     if (!isdefined(self.aarawards)) {
         self.aarawards = [];
         self.aarawardcount = 0;
-        for (var_44d5a2614eed724e = 0; var_44d5a2614eed724e < 10; var_44d5a2614eed724e++) {
+        for (awardindex = 0; awardindex < 10; awardindex++) {
             struct = spawnstruct();
-            self.aarawards[var_44d5a2614eed724e] = struct;
+            self.aarawards[awardindex] = struct;
             struct.ref = "none";
             struct.count = 0;
         }
     }
-    foreach (var_44d5a2614eed724e, var_6dfac1dd9d7ffae2 in self.aarawards) {
-        if (var_6dfac1dd9d7ffae2.ref == ref) {
-            var_6dfac1dd9d7ffae2.count++;
-            self setplayerdata("common", "round", "awards", var_44d5a2614eed724e, "value", var_6dfac1dd9d7ffae2.count);
+    foreach (awardindex, awardinfo in self.aarawards) {
+        if (awardinfo.ref == ref) {
+            awardinfo.count++;
+            self setplayerdata("common", "round", "awards", awardindex, "value", awardinfo.count);
             return;
         }
     }
-    var_ece43214e2fd6e1 = function_53c4c53197386572(level.var_6d808d6c553c2d9a[ref], 0);
-    for (var_347e4138d03a99c8 = 0; var_347e4138d03a99c8 < self.aarawards.size; var_347e4138d03a99c8++) {
-        var_6dfac1dd9d7ffae2 = self.aarawards[var_347e4138d03a99c8];
-        if (var_6dfac1dd9d7ffae2.ref == "none") {
+    newpriority = default_to(level.var_6d808d6c553c2d9a[ref], 0);
+    for (insertindex = 0; insertindex < self.aarawards.size; insertindex++) {
+        awardinfo = self.aarawards[insertindex];
+        if (awardinfo.ref == "none") {
             break;
         }
-        var_cca79d36f592ef75 = function_53c4c53197386572(level.var_6d808d6c553c2d9a[var_6dfac1dd9d7ffae2.ref], 0);
-        if (var_ece43214e2fd6e1 > var_cca79d36f592ef75) {
+        otherpriority = default_to(level.var_6d808d6c553c2d9a[awardinfo.ref], 0);
+        if (newpriority > otherpriority) {
             break;
         }
     }
-    if (var_347e4138d03a99c8 >= self.aarawards.size) {
+    if (insertindex >= self.aarawards.size) {
         return;
     }
-    for (listindex = self.aarawards.size - 2; listindex >= var_347e4138d03a99c8; listindex--) {
+    for (listindex = self.aarawards.size - 2; listindex >= insertindex; listindex--) {
         newindex = listindex + 1;
         self.aarawards[newindex] = self.aarawards[listindex];
-        var_6dfac1dd9d7ffae2 = self.aarawards[newindex];
-        if (var_6dfac1dd9d7ffae2.ref != "none") {
-            self setplayerdata("common", "round", "awards", newindex, "award", function_f28fd66285fa2c9(var_6dfac1dd9d7ffae2.ref));
-            self setplayerdata("common", "round", "awards", newindex, "value", var_6dfac1dd9d7ffae2.count);
+        awardinfo = self.aarawards[newindex];
+        if (awardinfo.ref != "none") {
+            self setplayerdata("common", "round", "awards", newindex, "award", function_f28fd66285fa2c9(awardinfo.ref));
+            self setplayerdata("common", "round", "awards", newindex, "value", awardinfo.count);
         }
     }
-    var_6dfac1dd9d7ffae2 = spawnstruct();
-    self.aarawards[var_347e4138d03a99c8] = var_6dfac1dd9d7ffae2;
-    var_6dfac1dd9d7ffae2.ref = ref;
-    var_6dfac1dd9d7ffae2.count = 1;
-    self setplayerdata("common", "round", "awards", var_347e4138d03a99c8, "award", function_f28fd66285fa2c9(var_6dfac1dd9d7ffae2.ref));
-    self setplayerdata("common", "round", "awards", var_347e4138d03a99c8, "value", var_6dfac1dd9d7ffae2.count);
+    awardinfo = spawnstruct();
+    self.aarawards[insertindex] = awardinfo;
+    awardinfo.ref = ref;
+    awardinfo.count = 1;
+    self setplayerdata("common", "round", "awards", insertindex, "award", function_f28fd66285fa2c9(awardinfo.ref));
+    self setplayerdata("common", "round", "awards", insertindex, "value", awardinfo.count);
     if (self.aarawardcount < 10) {
         self.aarawardcount++;
         self setplayerdata("common", "round", "awardCount", self.aarawardcount);
@@ -395,7 +395,7 @@ function addawardtoaarlist(ref) {
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf6f
 // Size: 0xaf
@@ -406,13 +406,13 @@ function initaarawardlist() {
         return;
     }
     self setplayerdata("common", "round", "awardCount", 0);
-    for (var_44d5a2614eed724e = 0; var_44d5a2614eed724e < 10; var_44d5a2614eed724e++) {
-        self setplayerdata("common", "round", "awards", var_44d5a2614eed724e, "award", "none");
-        self setplayerdata("common", "round", "awards", var_44d5a2614eed724e, "value", 0);
+    for (awardindex = 0; awardindex < 10; awardindex++) {
+        self setplayerdata("common", "round", "awards", awardindex, "award", "none");
+        self setplayerdata("common", "round", "awards", awardindex, "value", 0);
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1025
 // Size: 0x6f
@@ -425,7 +425,7 @@ function saveaarawardsonroundswitch() {
     }
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x109b
 // Size: 0x40
@@ -435,23 +435,23 @@ function saveaarawards() {
     self.savedaarawards = 1;
 }
 
-// Namespace awards/namespace_46006c5769c2ac90
+// Namespace awards / scripts/mp/awards
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10e2
 // Size: 0xe9
 function function_c346fd8caa61c2ed() {
     /#
-        for (var_44d5a2614eed724e = 0; var_44d5a2614eed724e < self.aarawards.size; var_44d5a2614eed724e++) {
-            var_6dfac1dd9d7ffae2 = self.aarawards[var_44d5a2614eed724e];
-            var_6c4759d0aa083a92 = self getplayerdata("<unknown string>", "<unknown string>", "<unknown string>", var_44d5a2614eed724e, "<unknown string>");
-            var_c7198bd08368f0e4 = self getplayerdata("<unknown string>", "<unknown string>", "<unknown string>", var_44d5a2614eed724e, "<unknown string>");
+        for (awardindex = 0; awardindex < self.aarawards.size; awardindex++) {
+            awardinfo = self.aarawards[awardindex];
+            pdref = self getplayerdata("<unknown string>", "<unknown string>", "<unknown string>", awardindex, "<unknown string>");
+            pdcount = self getplayerdata("<unknown string>", "<unknown string>", "<unknown string>", awardindex, "<unknown string>");
             /#
-                assert(var_6dfac1dd9d7ffae2.ref == var_6c4759d0aa083a92);
+                assert(awardinfo.ref == pdref);
             #/
             /#
-                assert(var_6dfac1dd9d7ffae2.count == var_c7198bd08368f0e4);
+                assert(awardinfo.count == pdcount);
             #/
-            println("<unknown string>" + var_44d5a2614eed724e + 1 + "<unknown string>" + var_6dfac1dd9d7ffae2.ref + "<unknown string>" + var_6dfac1dd9d7ffae2.count);
+            println("<unknown string>" + awardindex + 1 + "<unknown string>" + awardinfo.ref + "<unknown string>" + awardinfo.count);
         }
     #/
 }

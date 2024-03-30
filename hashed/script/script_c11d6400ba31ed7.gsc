@@ -3,9 +3,9 @@
 #using scripts\engine\utility.gsc;
 #using script_f4e8d02d2f70888;
 
-#namespace namespace_237d6a3c263cc39c;
+#namespace squadmanager;
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bb
 // Size: 0xfc
@@ -19,13 +19,13 @@ function createsquad(squadname, var_5346a21915702367) {
     squad.team = getsquadteam(var_5346a21915702367);
     squad.members = [];
     squad.squadlist = [];
-    squad.var_10d358f42e97ea = [];
+    squad.cooldowntimes = [];
     squad.squadid = anim.squadindex.size;
     anim.squadindex[squad.squadid] = squad;
     level notify("squad created " + squadname);
     anim notify("squad created " + squadname);
-    if (isdefined(anim.var_417d31a4284fd63f)) {
-        squad thread [[ anim.var_417d31a4284fd63f ]]();
+    if (isdefined(anim.squadcreatefunc)) {
+        squad thread [[ anim.squadcreatefunc ]]();
     }
     /#
         squad thread function_1e0a52e0fce5e432();
@@ -33,7 +33,7 @@ function createsquad(squadname, var_5346a21915702367) {
     return squad;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3bf
 // Size: 0xf6
@@ -53,7 +53,7 @@ function deletesquad(squadname) {
     anim notify("squad deleted " + squadname);
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4bc
 // Size: 0x3c
@@ -66,7 +66,7 @@ function getsquadteam(var_5346a21915702367) {
     return squadteam;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x500
 // Size: 0x149
@@ -95,7 +95,7 @@ function addtosquad(squadname) {
     self.lastenemysighttime = 0;
     self.combattime = 0;
     self.starttime = gettime();
-    squad.var_f54c29e2793a21fb = function_53c4c53197386572(squad.var_f54c29e2793a21fb, 0);
+    squad.var_f54c29e2793a21fb = default_to(squad.var_f54c29e2793a21fb, 0);
     squadid = squad.var_f54c29e2793a21fb;
     squad.members[squadid] = self;
     squad.var_f54c29e2793a21fb++;
@@ -105,7 +105,7 @@ function addtosquad(squadname) {
     thread memberdeathwaiter(squad, squadid);
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x650
 // Size: 0xd3
@@ -140,26 +140,25 @@ function removefromsquad(squad, squadid) {
     }
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x72a
 // Size: 0x44
-function function_a5c82b8ba8a0c279(var_9cb951de1a571d32, var_f901ca059b18a27b, var_a4136d44ae0ef2de) {
+function function_a5c82b8ba8a0c279(var_9cb951de1a571d32, true_value, false_value) {
     if (var_9cb951de1a571d32) {
-        if (isfunction(var_f901ca059b18a27b)) {
-            return [[ var_f901ca059b18a27b ]]();
+        if (isfunction(true_value)) {
+            return [[ true_value ]]();
         } else {
-            return var_f901ca059b18a27b;
+            return true_value;
         }
     }
-    if (isfunction(var_a4136d44ae0ef2de)) {
-        return [[ var_a4136d44ae0ef2de ]]();
-    } else {
-        return var_a4136d44ae0ef2de;
+    if (isfunction(false_value)) {
+        return [[ false_value ]]();
     }
+    return false_value;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x775
 // Size: 0xa4
@@ -169,17 +168,16 @@ function function_1cb4f2ef6b07869c() {
         index = (start_index + i) % self.members.size;
         guy = self.members[index];
         if (!isalive(guy) || !isdefined(guy.enemy) || !guy.bisincombat) {
-            continue;
         }
     }
     return self.members[start_index];
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x821
 // Size: 0x7b
-function function_4e6e09a47e502152() {
+function getenemyarray() {
     array = [];
     foreach (ai in getaiarray()) {
         if (isenemyteam(self.team, ai.team)) {
@@ -189,7 +187,7 @@ function function_4e6e09a47e502152() {
     return array;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a4
 // Size: 0x3d
@@ -197,7 +195,7 @@ function function_48706811c593324b() {
     return isdefined(self.enemy) && isdefined(self.enemy.node) && isdefined(self.enemy.covernode);
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e9
 // Size: 0x14
@@ -205,7 +203,7 @@ function squadtracker() {
     anim endon("squad deleted " + self.squadname);
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x904
 // Size: 0x46
@@ -218,18 +216,18 @@ function memberdeathwaiter(squad, squadid) {
     removefromsquad(squad, squadid);
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x951
 // Size: 0x217
 function updateall() {
     neworigin = (0, 0, 0);
-    var_217b7bee279e546d = (0, 0, 0);
+    newheading = (0, 0, 0);
     var_8bf9f8d903167b37 = 0;
-    var_ea3b9998985b96f = undefined;
+    curenemy = undefined;
     isincombat = 0;
-    var_d835c6cad3821c61 = !isdefined(self.enemy);
-    if (!var_d835c6cad3821c61) {
+    needheading = !isdefined(self.enemy);
+    if (!needheading) {
         self.forward = vectornormalize(self.enemy.origin - self.origin);
     }
     foreach (member in self.members) {
@@ -238,36 +236,38 @@ function updateall() {
         }
         var_8bf9f8d903167b37++;
         neworigin = neworigin + member.origin;
-        if (var_d835c6cad3821c61) {
-            var_217b7bee279e546d = var_217b7bee279e546d + anglestoforward(member.angles);
+        if (needheading) {
+            newheading = newheading + anglestoforward(member.angles);
         }
         if (istrue(member.bisincombat)) {
             isincombat = 1;
         }
         if (isdefined(member.enemy) && isdefined(member.enemy.squad)) {
-            if (!isdefined(var_ea3b9998985b96f)) {
-                var_ea3b9998985b96f = member.enemy.squad;
-            } else if (member.enemy.squad.members.size > var_ea3b9998985b96f.members.size) {
-                var_ea3b9998985b96f = member.enemy.squad;
+            if (!isdefined(curenemy)) {
+                curenemy = member.enemy.squad;
+                continue;
+            }
+            if (member.enemy.squad.members.size > curenemy.members.size) {
+                curenemy = member.enemy.squad;
             }
         }
     }
     if (var_8bf9f8d903167b37) {
         self.origin = neworigin / var_8bf9f8d903167b37;
-        if (var_d835c6cad3821c61) {
-            self.forward = var_217b7bee279e546d / var_8bf9f8d903167b37;
+        if (needheading) {
+            self.forward = newheading / var_8bf9f8d903167b37;
         }
     } else {
         self.origin = undefined;
-        if (var_d835c6cad3821c61) {
+        if (needheading) {
             self.forward = undefined;
         }
     }
     self.isincombat = isincombat;
-    self.enemy = var_ea3b9998985b96f;
+    self.enemy = curenemy;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb6f
 // Size: 0x14
@@ -275,57 +275,57 @@ function updatememberstates() {
     anim endon("squad deleted " + self.squadname);
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb8a
 // Size: 0xf3
-function aiupdatecombat(var_bc08e2b32a09ab5a) {
+function aiupdatecombat(timeslice) {
     if (!isdefined(self.combattime)) {
         return;
     }
     if (isdefined(self.lastenemysightpos)) {
         if (self.combattime < 0) {
-            self.combattime = var_bc08e2b32a09ab5a;
+            self.combattime = timeslice;
         } else {
-            self.combattime = self.combattime + var_bc08e2b32a09ab5a;
+            self.combattime = self.combattime + timeslice;
         }
         self.lastenemysighttime = gettime();
         return;
     } else if (isdefined(self.bt_escaping) && self.bt_escaping || isdefined(self.asmname) && self.asmname != "jackal" && self issuppressed()) {
-        self.combattime = self.combattime + var_bc08e2b32a09ab5a;
+        self.combattime = self.combattime + timeslice;
         return;
     }
     if (self.combattime > 0) {
-        self.combattime = 0 - var_bc08e2b32a09ab5a;
-    } else {
-        self.combattime = self.combattime - var_bc08e2b32a09ab5a;
+        self.combattime = 0 - timeslice;
+        return;
     }
+    self.combattime = self.combattime - timeslice;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc84
 // Size: 0xc0
-function aiupdatesuppressed(var_bc08e2b32a09ab5a) {
+function aiupdatesuppressed(timeslice) {
     if (!isdefined(self.suppressedtime)) {
         return;
     }
     if (isdefined(self.bt_escaping) && self.bt_escaping || isdefined(self.asmname) && self.asmname != "jackal" && self issuppressed()) {
         if (self.suppressedtime < 0) {
-            self.suppressedtime = var_bc08e2b32a09ab5a;
-        } else {
-            self.suppressedtime = self.suppressedtime + var_bc08e2b32a09ab5a;
+            self.suppressedtime = timeslice;
+            return;
         }
+        self.suppressedtime = self.suppressedtime + timeslice;
         return;
     }
     if (self.suppressedtime > 0) {
-        self.suppressedtime = 0 - var_bc08e2b32a09ab5a;
-    } else {
-        self.suppressedtime = self.suppressedtime - var_bc08e2b32a09ab5a;
+        self.suppressedtime = 0 - timeslice;
+        return;
     }
+    self.suppressedtime = self.suppressedtime - timeslice;
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd4b
 // Size: 0xd3
@@ -335,7 +335,7 @@ function function_1e0a52e0fce5e432() {
             return;
         }
         anim endon("<unknown string>" + self.squadname);
-        while (1) {
+        while (true) {
             wait(0.05);
             function_11287c170b69b7f2(self.origin, self.forward);
             foreach (member in self.members) {
@@ -348,7 +348,7 @@ function function_1e0a52e0fce5e432() {
     #/
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe25
 // Size: 0xad
@@ -365,7 +365,7 @@ function function_11287c170b69b7f2(pos, forward) {
     #/
 }
 
-// Namespace namespace_237d6a3c263cc39c/namespace_fe5fbd2b56f035f
+// Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xed9
 // Size: 0x10d
@@ -375,11 +375,11 @@ function _draw_arrow(start, end, color) {
         dist = length(end - start);
         forward = anglestoforward(angle);
         forwardfar = forward * dist;
-        var_6d57df1b675794b6 = 5;
-        forwardclose = forward * (dist - var_6d57df1b675794b6);
+        arrow_size = 5;
+        forwardclose = forward * (dist - arrow_size);
         right = anglestoright(angle);
-        leftdraw = right * var_6d57df1b675794b6 * -1;
-        rightdraw = right * var_6d57df1b675794b6;
+        leftdraw = right * arrow_size * -1;
+        rightdraw = right * arrow_size;
         line(start, end, color, 1, 0, 1);
         line(start, start + forwardfar, color, 1, 0, 1);
         line(start + forwardfar, start + forwardclose + rightdraw, color, 1, 0, 1);

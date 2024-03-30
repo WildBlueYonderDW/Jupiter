@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#namespace namespace_89d6c8e51de7d9fc;
+#namespace emp_drone_mp;
 
-// Namespace namespace_89d6c8e51de7d9fc/namespace_357ddee02a59afef
+// Namespace emp_drone_mp / scripts/mp/killstreaks/emp_drone_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68
 // Size: 0x3

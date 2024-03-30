@@ -1,8 +1,8 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\values.gsc;
+#using scripts\common\callbacks.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_13865ca76df87ea;
 #using script_2669878cf5a1b6bc;
@@ -19,7 +19,7 @@
 
 #namespace juggernaut;
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84b
 // Size: 0xf4
@@ -45,24 +45,24 @@ function init() {
     registervisibilityomnvarforkillstreak("juggernaut", "mask_damage_critical", 5);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x946
 // Size: 0x270
 function initconfig() {
-    var_584994fab4a8712b = level.juggksglobals;
+    globals = level.juggksglobals;
     config = undefined;
     if (issharedfuncdefined("juggernaut", "initConfig")) {
         config = self [[ getsharedfunc("juggernaut", "initConfig") ]]();
     }
-    var_584994fab4a8712b.config = config;
+    globals.config = config;
     config.infiniteammo = 1;
     config.infiniteammoupdaterate = 4;
     config.maxhealth = 3000;
     config.startinghealth = 3000;
     config.suit = "iw9_ks_juggernaut_mp";
     config.clothtype = "vestheavy";
-    config.var_400ef51562606e7a = "milhvygr";
+    config.geartype = "milhvygr";
     config.execution = "execution_mp_juggernaut_01";
     config.head_health = config.maxhealth * 0.9;
     config.torso_upper_health = config.maxhealth * 0.5;
@@ -85,7 +85,7 @@ function initconfig() {
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbbd
 // Size: 0x52f
@@ -108,13 +108,13 @@ function function_23f0145756ed19cb(bundle) {
         config.right_leg_health = config.maxhealth * bundle.var_beab43fbce66e637;
         config.left_leg_health = config.maxhealth * bundle.var_beab43fbce66e637;
         config.movespeedscalar = bundle.var_2c9122780ca2e437;
-        if (isdefined(bundle.var_4067184a66c1feb1)) {
-            config.classstruct.loadoutprimary = bundle.var_4067184a66c1feb1;
+        if (isdefined(bundle.juggernautprimaryweapon)) {
+            config.classstruct.loadoutprimary = bundle.juggernautprimaryweapon;
         } else {
             config.classstruct.loadoutprimary = "none";
         }
-        if (isdefined(bundle.var_c48baae66fc5f9f1)) {
-            config.classstruct.loadoutsecondary = bundle.var_c48baae66fc5f9f1;
+        if (isdefined(bundle.juggernautsecondaryweapon)) {
+            config.classstruct.loadoutsecondary = bundle.juggernautsecondaryweapon;
         } else {
             config.classstruct.loadoutsecondary = "none";
         }
@@ -136,47 +136,47 @@ function function_23f0145756ed19cb(bundle) {
         } else {
             config.infiniteammoupdaterate = undefined;
         }
-        config.execution = bundle.var_eae856be7fea7239;
-        config.suit = bundle.var_fc1320a71853eb7c;
+        config.execution = bundle.juggernautexecution;
+        config.suit = bundle.juggernautsuit;
         config.clothtype = bundle.var_40b6bbc083e50def;
         config.bodymodel = bundle.var_c0816bafc46c2bb6;
-        config.headmodel = bundle.var_81a8ebd7b6bc0c7c;
-        config.viewmodel = bundle.var_a92eea6b6557a819;
+        config.headmodel = bundle.juggernautheadmodel;
+        config.viewmodel = bundle.juggernautviewmodel;
         if (!bundle.var_4da8c9c4a056dc12 || !isdefined(config.perks)) {
             config.perks = [];
         }
-        if (isdefined(bundle.var_ee3e7dd486179916) && bundle.var_ee3e7dd486179916.size > 0) {
-            foreach (var_21c5c7949ca848e1 in bundle.var_ee3e7dd486179916) {
-                config.perks[var_21c5c7949ca848e1.name] = 1;
+        if (isdefined(bundle.juggernautperks) && bundle.juggernautperks.size > 0) {
+            foreach (juggernautperk in bundle.juggernautperks) {
+                config.perks[juggernautperk.name] = 1;
             }
         }
     }
     return config;
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10f4
 // Size: 0x459
 function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex) {
-    config = function_7e7b315fcb2b9159(var_89c3fff29839bf2a, 1);
+    config = structcopy(var_89c3fff29839bf2a, 1);
     var_9b32d1936831f5aa = undefined;
     if (isdefined(bundle.var_d96d3e6ceed581fd.blueprints) && bundle.var_d96d3e6ceed581fd.blueprints.size > 0 && blueprintindex > 0) {
         var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.blueprints[blueprintindex - 1].genericblueprint;
-    } else if (isdefined(bundle.var_d96d3e6ceed581fd.var_85ec36a3c387a93a)) {
-        var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.var_85ec36a3c387a93a;
+    } else if (isdefined(bundle.var_d96d3e6ceed581fd.blueprint_default)) {
+        var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.blueprint_default;
     }
     config.deployweapon = function_dd2a4fb3522f314(var_9b32d1936831f5aa, "deployWeapon");
     primaryweaponname = function_8df651a1b2728b15(var_9b32d1936831f5aa, "primaryWeapon");
     var_a1aa2d822e933d07 = function_b9ff4b6230995332(var_9b32d1936831f5aa, "primaryWeapon");
     secondaryweaponname = function_8df651a1b2728b15(var_9b32d1936831f5aa, "secondaryWeapon");
     var_e426ac0fd477f647 = function_b9ff4b6230995332(var_9b32d1936831f5aa, "secondaryWeapon");
-    var_145192ceef62d852 = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "lethalEquipment");
-    var_97fbcdea08315d73 = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "tacticalEquipment");
-    lethalequipmentblueprintindex = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "lethalEquipmentBlueprintIndex");
-    tacticalequipmentblueprintindex = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "tacticalEquipmentBlueprintIndex");
-    var_6b3c36cc33280e97 = function_29e16a88682086b2(var_9b32d1936831f5aa, "suit", "suit");
-    var_8b10c9ea167f0ff2 = function_29e16a88682086b2(var_9b32d1936831f5aa, "execution", "execution");
+    lethalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "lethalEquipment");
+    tacticalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "tacticalEquipment");
+    lethalEquipmentBlueprintIndex = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "lethalEquipmentBlueprintIndex");
+    tacticalEquipmentBlueprintIndex = function_29e16a88682086b2(var_9b32d1936831f5aa, "string", "tacticalEquipmentBlueprintIndex");
+    suitname = function_29e16a88682086b2(var_9b32d1936831f5aa, "suit", "suit");
+    executionname = function_29e16a88682086b2(var_9b32d1936831f5aa, "execution", "execution");
     bodymodel = function_29e16a88682086b2(var_9b32d1936831f5aa, "xmodel", "bodyModel");
     headmodel = function_29e16a88682086b2(var_9b32d1936831f5aa, "xmodel", "headModel");
     viewmodel = function_29e16a88682086b2(var_9b32d1936831f5aa, "xmodel", "viewModel");
@@ -192,23 +192,23 @@ function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex)
     function_51b8a3cf6102ba3(config.classstruct.loadoutprimary, var_a1aa2d822e933d07, config, 1);
     function_51b8a3cf6102ba3(config.classstruct.loadoutsecondary, var_e426ac0fd477f647, config, 0);
     config.classstruct.loadoutequipmentprimary = "none";
-    if (isdefined(var_145192ceef62d852)) {
-        config.classstruct.loadoutequipmentprimary = var_145192ceef62d852;
+    if (isdefined(lethalequipmentname)) {
+        config.classstruct.loadoutequipmentprimary = lethalequipmentname;
     }
     config.classstruct.loadoutequipmentsecondary = "none";
-    if (isdefined(var_97fbcdea08315d73)) {
-        config.classstruct.loadoutequipmentsecondary = var_97fbcdea08315d73;
+    if (isdefined(tacticalequipmentname)) {
+        config.classstruct.loadoutequipmentsecondary = tacticalequipmentname;
     }
     config.classstruct.var_b68e3a0a9c628d23 = 0;
-    if (isdefined(lethalequipmentblueprintindex)) {
-        config.classstruct.var_b68e3a0a9c628d23 = int(lethalequipmentblueprintindex);
+    if (isdefined(lethalEquipmentBlueprintIndex)) {
+        config.classstruct.var_b68e3a0a9c628d23 = int(lethalEquipmentBlueprintIndex);
     }
     config.classstruct.var_a1dfc5ce15795a3 = 0;
-    if (isdefined(tacticalequipmentblueprintindex)) {
-        config.classstruct.var_a1dfc5ce15795a3 = int(tacticalequipmentblueprintindex);
+    if (isdefined(tacticalEquipmentBlueprintIndex)) {
+        config.classstruct.var_a1dfc5ce15795a3 = int(tacticalEquipmentBlueprintIndex);
     }
-    config.execution = var_8b10c9ea167f0ff2;
-    config.suit = var_6b3c36cc33280e97;
+    config.execution = executionname;
+    config.suit = suitname;
     config.bodymodel = bodymodel;
     config.headmodel = headmodel;
     config.viewmodel = viewmodel;
@@ -216,7 +216,7 @@ function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex)
     return config;
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1555
 // Size: 0x193
@@ -224,31 +224,31 @@ function function_51b8a3cf6102ba3(weaponname, blueprintname, config, isprimary) 
     if (!isdefined(blueprintname) || weaponname == "none") {
         return;
     }
-    var_b59c0baba823053c = function_332b73d2eca8c367(weaponname, blueprintname);
-    if (!isdefined(var_b59c0baba823053c)) {
+    blueprintbundle = function_332b73d2eca8c367(weaponname, blueprintname);
+    if (!isdefined(blueprintbundle)) {
         return;
     }
-    var_a1cb298d90255f53 = function_64ccc54bdbae5cf6(var_b59c0baba823053c.lootid);
+    var_a1cb298d90255f53 = function_64ccc54bdbae5cf6(blueprintbundle.lootid);
     var_49e6ef3edadd524e = namespace_e0ee43ef2dddadaa::getweaponrootname(weaponname);
     var_91bbf8d2294a656e = namespace_e0ee43ef2dddadaa::weaponattachcustomtoidmap(var_49e6ef3edadd524e, var_a1cb298d90255f53);
     attachments = [];
-    var_f3464d71f01f614e = [];
+    attachmentids = [];
     foreach (attachment, id in var_91bbf8d2294a656e) {
         attachments[attachments.size] = attachment;
-        var_f3464d71f01f614e[var_f3464d71f01f614e.size] = id;
+        attachmentids[attachmentids.size] = id;
     }
     if (isprimary) {
         config.classstruct.loadoutprimaryvariantid = var_a1cb298d90255f53;
         config.classstruct.loadoutprimaryattachments = attachments;
-        config.classstruct.loadoutprimaryattachmentids = var_f3464d71f01f614e;
-    } else {
-        config.classstruct.loadoutsecondaryvariantid = var_a1cb298d90255f53;
-        config.classstruct.loadoutsecondaryattachments = attachments;
-        config.classstruct.loadoutsecondaryattachmentids = var_f3464d71f01f614e;
+        config.classstruct.loadoutprimaryattachmentids = attachmentids;
+        return;
     }
+    config.classstruct.loadoutsecondaryvariantid = var_a1cb298d90255f53;
+    config.classstruct.loadoutsecondaryattachments = attachments;
+    config.classstruct.loadoutsecondaryattachmentids = attachmentids;
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16ef
 // Size: 0xd8
@@ -262,17 +262,17 @@ function initmarker() {
     leveldata.activatecallback = &oncrateactivated;
     leveldata.minimapicon = "ui_map_icon_jugg_drop";
     leveldata.headicon = "ui_map_icon_jugg_drop";
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
         leveldata.capturestring = "MP/BR_CRATE_LOADOUT";
     } else {
         leveldata.capturestring = "KILLSTREAKS_HINTS/JUGG_CRATE_PICKUP";
     }
-    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         leveldata.basemodel = "military_carepackage_03_jugg_mp";
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17ce
 // Size: 0x22
@@ -280,55 +280,55 @@ function init_jugg_vo() {
     game["dialog"]["juggernaut" + "_use"] = "killstreak_remote_operator" + "_request_response";
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f7
 // Size: 0x41
-function tryusejuggernaut(var_76553dc7aaad2909, var_ca56839b2e00edce) {
+function tryusejuggernaut(activateimmediate, var_ca56839b2e00edce) {
     streakinfo = createstreakinfo("juggernaut", self);
     streakinfo.var_ca56839b2e00edce = var_ca56839b2e00edce;
-    tryusejuggernautfromstruct(streakinfo, var_76553dc7aaad2909);
+    tryusejuggernautfromstruct(streakinfo, activateimmediate);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x183f
 // Size: 0x11a
-function tryusejuggernautfromstruct(streakinfo, var_76553dc7aaad2909) {
-    if (namespace_3c37cb17ade254d::issharedfuncdefined("juggernaut", "canTriggerJuggernaut")) {
-        if (!self [[ namespace_3c37cb17ade254d::getsharedfunc("juggernaut", "canTriggerJuggernaut") ]](streakinfo)) {
-            return 0;
+function tryusejuggernautfromstruct(streakinfo, activateimmediate) {
+    if (scripts/engine/utility::issharedfuncdefined("juggernaut", "canTriggerJuggernaut")) {
+        if (!self [[ scripts/engine/utility::getsharedfunc("juggernaut", "canTriggerJuggernaut") ]](streakinfo)) {
+            return false;
         }
     }
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
-            return 0;
+            return false;
         }
     }
-    var_97e8248da4371635 = getdvarint(@"hash_3f1bd355bf340abb");
-    if (var_97e8248da4371635 || istrue(var_76553dc7aaad2909)) {
+    instantdeploy = getdvarint(@"hash_3f1bd355bf340abb");
+    if (instantdeploy || istrue(activateimmediate)) {
         thread activatejugg(streakinfo);
     } else {
-        namespace_f64231d5b7a2c3c4::reservevehicle();
+        scripts/cp_mp/vehicles/vehicle_tracking::reservevehicle();
         deployweaponobj = makeweapon("deploy_juggernaut_mp");
         if (isdefined(level.var_27f78817b59dfe32)) {
             streakinfo.var_fb58a31c756db4cc = level.var_27f78817b59dfe32;
         }
-        var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponfireddeploy(streakinfo, deployweaponobj, "grenade_fire", undefined, undefined, &markerthrown);
-        if (!istrue(var_9b1deb5e9d32bbe3)) {
-            namespace_f64231d5b7a2c3c4::clearvehiclereservation();
-            return 0;
+        deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, deployweaponobj, "grenade_fire", undefined, undefined, &markerthrown);
+        if (!istrue(deployresult)) {
+            scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
+            return false;
         }
     }
     if (isdefined(level.killstreakbeginusefunc)) {
         if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1961
 // Size: 0xa1
@@ -345,7 +345,7 @@ function markerthrown(streakinfo, weaponobj, projectile) {
     return "success";
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a0a
 // Size: 0x1d2
@@ -359,14 +359,14 @@ function watchmarkeractivate(streakinfo) {
         if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
             [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
         }
-        namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+        scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
         return;
     }
     if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
         [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
     }
-    owner thread namespace_6c578d6ef48f10ef::airdrop_playdeploydialog(streakinfo);
-    if (issharedfuncdefined("juggernaut", "dropCrateFromScriptedHeli") && !namespace_36f464722d326bbe::isbrstylegametype()) {
+    owner thread scripts/cp_mp/killstreaks/airdrop::airdrop_playdeploydialog(streakinfo);
+    if (issharedfuncdefined("juggernaut", "dropCrateFromScriptedHeli") && !scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         streakinfo.vehicleisreserved = 1;
         data = streakinfo;
         scenenode = [[ getsharedfunc("juggernaut", "dropCrateFromScriptedHeli") ]](owner, owner.team, "juggernaut", position, var_811f337efd111e98, position, data, streakinfo);
@@ -378,16 +378,16 @@ function watchmarkeractivate(streakinfo) {
                 owner [[ getsharedfunc("killstreak", "awardKillstreakFromStruct") ]](streakinfo.mpstreaksysteminfo, "other");
             }
         }
-    } else {
-        namespace_f64231d5b7a2c3c4::clearvehiclereservation();
-        if (namespace_36f464722d326bbe::isbrstylegametype()) {
-            var_e648e96614161011 = 1;
-            owner thread namespace_6c578d6ef48f10ef::spawnjuggernautcrateatposition(position, var_e648e96614161011);
-        }
+        return;
+    }
+    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+        var_e648e96614161011 = 1;
+        owner thread scripts/cp_mp/killstreaks/airdrop::spawnjuggernautcrateatposition(position, var_e648e96614161011);
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1be3
 // Size: 0x23
@@ -397,7 +397,7 @@ function oncrateactivated(var_510b9bde18d66cdd) {
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c0d
 // Size: 0xae
@@ -411,12 +411,12 @@ function oncratecaptured(player) {
         if (issharedfuncdefined("airdrop", "showKillstreakSplash")) {
             player [[ getsharedfunc("airdrop", "showKillstreakSplash") ]](streakinfo.streakname, undefined, 1);
         }
-    } else {
-        player activatejugg(streakinfo);
+        return;
     }
+    player activatejugg(streakinfo);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cc2
 // Size: 0x38
@@ -425,15 +425,15 @@ function oncratedestroyed(immediate) {
     level callback::callback("killstreak_finish_use", {streakinfo:streakinfo});
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d01
 // Size: 0x1b9
 function activatejugg(streakinfo) {
-    var_584994fab4a8712b = level.juggksglobals;
+    globals = level.juggksglobals;
     result = 0;
     if (issharedfuncdefined("juggernaut", "makeJuggernaut")) {
-        result = self [[ getsharedfunc("juggernaut", "makeJuggernaut") ]](var_584994fab4a8712b.config, streakinfo);
+        result = self [[ getsharedfunc("juggernaut", "makeJuggernaut") ]](globals.config, streakinfo);
     }
     if (!result) {
         return 0;
@@ -462,12 +462,12 @@ function activatejugg(streakinfo) {
     thread watchforjuggernautgameend(streakinfo);
     thread watchforjuggernautend(streakinfo);
     thread watchforjuggernautdisconnect(streakinfo);
-    if (getdvarint(@"hash_452a3eb9af12510c", 1) && !namespace_36f464722d326bbe::isbrstylegametype() && !iscp()) {
+    if (getdvarint(@"hash_452a3eb9af12510c", 1) && !scripts/cp_mp/utility/game_utility::isbrstylegametype() && !iscp()) {
         thread dropminigunondeath();
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ec1
 // Size: 0xc1
@@ -475,27 +475,27 @@ function dropminigunondeath() {
     self endon("disconnect");
     level endon("game_ended");
     self waittill("death");
-    var_1ef2006e3f6f0f89 = "iw9_lm_dblmg_mp";
+    minigunref = "iw9_lm_dblmg_mp";
     if (utility::iscp()) {
-        var_1ef2006e3f6f0f89 = "iw9_lm_dblmg2_cp";
+        minigunref = "iw9_lm_dblmg2_cp";
     }
-    minigunweapon = namespace_d325722f2754c2c4::function_eeaa22f0cd1ff845(var_1ef2006e3f6f0f89);
+    minigunweapon = scripts/cp_mp/utility/weapon_utility::function_eeaa22f0cd1ff845(minigunref);
     self giveweapon(minigunweapon);
-    var_65b055c9a44990a9 = self dropitem(minigunweapon);
-    if (!isdefined(var_65b055c9a44990a9)) {
+    droppedgun = self dropitem(minigunweapon);
+    if (!isdefined(droppedgun)) {
         self takeallweapons();
         return;
     }
-    var_65b055c9a44990a9.objweapon = minigunweapon;
-    var_65b055c9a44990a9.targetname = "dropped_weapon";
+    droppedgun.objweapon = minigunweapon;
+    droppedgun.targetname = "dropped_weapon";
     if (issharedfuncdefined("juggernaut", "watchPickup")) {
-        var_65b055c9a44990a9 thread [[ getsharedfunc("juggernaut", "watchPickup") ]](self);
+        droppedgun thread [[ getsharedfunc("juggernaut", "watchPickup") ]](self);
     }
     waitframe();
     self takeallweapons();
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f89
 // Size: 0x35
@@ -504,11 +504,11 @@ function watchforjuggernautgameend(streakinfo) {
     self endon("juggernaut_end");
     level waittill("game_ended");
     if (isdefined(self) && isdefined(streakinfo)) {
-        namespace_9abe40d2af041eb2::recordkillstreakendstats(streakinfo);
+        scripts/cp_mp/utility/killstreak_utility::recordkillstreakendstats(streakinfo);
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fc5
 // Size: 0x151
@@ -532,21 +532,21 @@ function watchforjuggernautend(streakinfo) {
     onjuggernautend(streakinfo, juggcontext);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x211d
 // Size: 0x5a
 function onjuggernautend(streakinfo, juggcontext) {
-    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         level callback::callback("killstreak_finish_use", {streakinfo:streakinfo});
         streakinfo.expiredbydeath = 1;
-        namespace_9abe40d2af041eb2::recordkillstreakendstats(streakinfo);
+        scripts/cp_mp/utility/killstreak_utility::recordkillstreakendstats(streakinfo);
     }
     namespace_46e942396566f2da::function_cb5051bfab85d56a();
     cleanupjuggobjective(juggcontext);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x217e
 // Size: 0x3e
@@ -558,12 +558,12 @@ function watchforjuggernautdisconnect(streakinfo) {
     cleanupjuggobjective(juggcontext);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21c3
 // Size: 0x17f
 function createjuggobjective(var_cbcc20cc563590c7) {
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         if (!isdefined(var_cbcc20cc563590c7)) {
             var_cbcc20cc563590c7 = "playerObjective";
         }
@@ -572,35 +572,35 @@ function createjuggobjective(var_cbcc20cc563590c7) {
         } else {
             self setscriptablepartstate(var_cbcc20cc563590c7, "juggernaut", 0);
         }
-    } else {
-        var_477f81d188723410 = undefined;
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "requestObjectiveID")) {
-            var_477f81d188723410 = namespace_3c37cb17ade254d::getsharedfunc("game", "requestObjectiveID");
-        }
-        if (isdefined(var_477f81d188723410)) {
-            objid = [[ var_477f81d188723410 ]](99);
-            self.juggcontext.juggobjid = objid;
-            namespace_5a22b6f3a56f7e9b::objective_add_objective(objid, "active", self.origin, "hud_icon_minimap_killstreak_juggernaut");
-            namespace_5a22b6f3a56f7e9b::objective_set_play_intro(objid, 0);
-            namespace_5a22b6f3a56f7e9b::objective_set_play_outro(objid, 0);
-            foreach (player in level.players) {
-                if (!isdefined(player) || isbot(player) || player == self) {
-                    continue;
-                }
-                namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(objid, player);
+        return;
+    }
+    requestfunc = undefined;
+    if (scripts/engine/utility::issharedfuncdefined("game", "requestObjectiveID")) {
+        requestfunc = scripts/engine/utility::getsharedfunc("game", "requestObjectiveID");
+    }
+    if (isdefined(requestfunc)) {
+        objid = [[ requestfunc ]](99);
+        self.juggcontext.juggobjid = objid;
+        scripts/mp/objidpoolmanager::objective_add_objective(objid, "active", self.origin, "hud_icon_minimap_killstreak_juggernaut");
+        scripts/mp/objidpoolmanager::objective_set_play_intro(objid, 0);
+        scripts/mp/objidpoolmanager::objective_set_play_outro(objid, 0);
+        foreach (player in level.players) {
+            if (!isdefined(player) || isbot(player) || player == self) {
+                continue;
             }
-            namespace_5a22b6f3a56f7e9b::update_objective_onentity(objid, self);
-            namespace_5a22b6f3a56f7e9b::update_objective_setbackground(objid, 1);
-            if (level.teambased) {
-                namespace_5a22b6f3a56f7e9b::update_objective_ownerteam(objid, self.team);
-            } else {
-                namespace_5a22b6f3a56f7e9b::update_objective_ownerclient(objid, self);
-            }
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(objid, player);
         }
+        scripts/mp/objidpoolmanager::update_objective_onentity(objid, self);
+        scripts/mp/objidpoolmanager::update_objective_setbackground(objid, 1);
+        if (level.teambased) {
+            scripts/mp/objidpoolmanager::update_objective_ownerteam(objid, self.team);
+            return;
+        }
+        scripts/mp/objidpoolmanager::update_objective_ownerclient(objid, self);
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2349
 // Size: 0x4c
@@ -614,41 +614,43 @@ function function_608bedac972d60af(var_cbcc20cc563590c7) {
     self setscriptablepartstate(var_cbcc20cc563590c7, "juggernaut", 0);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x239c
 // Size: 0x79
 function cleanupjuggobjective(juggcontext, var_cbcc20cc563590c7) {
     self notify("jugg_icon_cleanup");
-    if (isdefined(self) && namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (isdefined(self) && scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         if (!isdefined(var_cbcc20cc563590c7)) {
             var_cbcc20cc563590c7 = "playerObjective";
         }
         self setscriptablepartstate(var_cbcc20cc563590c7, "off", 0);
-    } else if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "returnObjectiveID")) {
-        [[ namespace_3c37cb17ade254d::getsharedfunc("game", "returnObjectiveID") ]](juggcontext.juggobjid);
+        return;
+    }
+    if (scripts/engine/utility::issharedfuncdefined("game", "returnObjectiveID")) {
+        [[ scripts/engine/utility::getsharedfunc("game", "returnObjectiveID") ]](juggcontext.juggobjid);
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x241c
 // Size: 0x65
-function watchjuggernautweaponenduse(var_a2d4837d22e88282, var_6e8abb5cb9bfd417) {
-    thread removejuggernautweapononaction("switched_from_minigun", var_6e8abb5cb9bfd417);
-    thread removejuggernautweapononaction("minigun_ammo_depleted", var_6e8abb5cb9bfd417);
+function watchjuggernautweaponenduse(juggernautweaponobject, prevweaponobject) {
+    thread removejuggernautweapononaction("switched_from_minigun", prevweaponobject);
+    thread removejuggernautweapononaction("minigun_ammo_depleted", prevweaponobject);
     thread removejuggernautweapononaction("death");
     thread removejuggernautweapononaction("scr_change_swim_state");
-    thread watchjuggernautweaponswitch(var_a2d4837d22e88282);
-    thread function_de04c507f957b420(var_a2d4837d22e88282);
-    thread watchjuggernautweaponammo(var_a2d4837d22e88282);
+    thread watchjuggernautweaponswitch(juggernautweaponobject);
+    thread function_de04c507f957b420(juggernautweaponobject);
+    thread watchjuggernautweaponammo(juggernautweaponobject);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2488
 // Size: 0xa2
-function watchjuggernautweaponswitch(var_a2d4837d22e88282) {
+function watchjuggernautweaponswitch(juggernautweaponobject) {
     self endon("death");
     self endon("disconnect");
     self endon("juggernaut_start");
@@ -656,9 +658,9 @@ function watchjuggernautweaponswitch(var_a2d4837d22e88282) {
     level endon("game_ended");
     self notifyonplayercommand("manual_switch_from_minigun", "+weapnext");
     self notifyonplayercommand("manual_switch_from_minigun", "+weapprev");
-    while (1) {
+    while (true) {
         self waittill("manual_switch_from_minigun");
-        if (self getcurrentweapon() != var_a2d4837d22e88282) {
+        if (self getcurrentweapon() != juggernautweaponobject) {
             continue;
         }
         var_545cf9fdbae045a5 = namespace_e0ee43ef2dddadaa::getgrenadeinpullback();
@@ -670,22 +672,22 @@ function watchjuggernautweaponswitch(var_a2d4837d22e88282) {
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2531
 // Size: 0x76
-function function_de04c507f957b420(var_a2d4837d22e88282) {
+function function_de04c507f957b420(juggernautweaponobject) {
     self endon("death");
     self endon("disconnect");
     self endon("juggernaut_start");
     self endon("dropped_minigun");
     level endon("game_ended");
-    while (1) {
-        var_88b2f9e2206ae20a = var_66b3db972ac1531e = self waittill("weapon_pickup");
-        if (self getcurrentweapon() != var_a2d4837d22e88282) {
+    while (true) {
+        newweaponobj, droppedweaponobj = self waittill("weapon_pickup");
+        if (self getcurrentweapon() != juggernautweaponobject) {
             continue;
         }
-        if (!isdefined(var_88b2f9e2206ae20a)) {
+        if (!isdefined(droppedweaponobj)) {
             continue;
         }
         self notify("switched_from_minigun");
@@ -693,19 +695,19 @@ function function_de04c507f957b420(var_a2d4837d22e88282) {
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25ae
 // Size: 0x5b
-function watchjuggernautweaponammo(var_a2d4837d22e88282) {
+function watchjuggernautweaponammo(juggernautweaponobject) {
     self endon("death");
     self endon("disconnect");
     self endon("juggernaut_start");
     self endon("dropped_minigun");
     level endon("game_ended");
-    while (1) {
-        var_7e7c62618a84b0c6 = self getweaponammoclip(var_a2d4837d22e88282);
-        if (var_7e7c62618a84b0c6 <= 0) {
+    while (true) {
+        currentweaponclipammo = self getweaponammoclip(juggernautweaponobject);
+        if (currentweaponclipammo <= 0) {
             self notify("minigun_ammo_depleted");
             break;
         }
@@ -713,24 +715,24 @@ function watchjuggernautweaponammo(var_a2d4837d22e88282) {
     }
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2610
 // Size: 0x3d
-function removejuggernautweapononaction(action, var_6e8abb5cb9bfd417) {
+function removejuggernautweapononaction(action, prevweaponobject) {
     self endon("disconnect");
     self endon("juggernaut_start");
     self endon("dropped_minigun");
     level endon("game_ended");
     self waittill(action);
-    dropjuggernautweapon(action, var_6e8abb5cb9bfd417);
+    dropjuggernautweapon(action, prevweaponobject);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2654
 // Size: 0x203
-function dropjuggernautweapon(action, var_6e8abb5cb9bfd417) {
+function dropjuggernautweapon(action, prevweaponobject) {
     self.pickedupcoreminigun = undefined;
     self.minigunprevweaponobject = undefined;
     self.playerstreakspeedscale = undefined;
@@ -744,18 +746,18 @@ function dropjuggernautweapon(action, var_6e8abb5cb9bfd417) {
         val::set("fakeJugg", "mount_top", 1);
         val::set("fakeJugg", "mount_side", 1);
     }
-    var_1ef2006e3f6f0f89 = "iw9_lm_dblmg_mp";
+    minigunref = "iw9_lm_dblmg_mp";
     if (utility::iscp()) {
-        var_1ef2006e3f6f0f89 = "iw9_lm_dblmg2_cp";
+        minigunref = "iw9_lm_dblmg2_cp";
     }
-    minigunweapon = namespace_d325722f2754c2c4::function_eeaa22f0cd1ff845(var_1ef2006e3f6f0f89);
+    minigunweapon = scripts/cp_mp/utility/weapon_utility::function_eeaa22f0cd1ff845(minigunref);
     if (action == "switched_from_minigun" || action == "used_ammo_box" || action == "death") {
         if (self hasweapon(minigunweapon) && getdvarint(@"hash_452a3eb9af12510c", 1)) {
-            var_65b055c9a44990a9 = self dropitem(minigunweapon);
-            var_65b055c9a44990a9.objweapon = minigunweapon;
-            var_65b055c9a44990a9.targetname = "dropped_weapon";
+            droppedgun = self dropitem(minigunweapon);
+            droppedgun.objweapon = minigunweapon;
+            droppedgun.targetname = "dropped_weapon";
             if (issharedfuncdefined("juggernaut", "watchPickup")) {
-                var_65b055c9a44990a9 thread [[ getsharedfunc("juggernaut", "watchPickup") ]](self);
+                droppedgun thread [[ getsharedfunc("juggernaut", "watchPickup") ]](self);
             }
         }
     } else if (action == "minigun_ammo_depleted") {
@@ -769,32 +771,32 @@ function dropjuggernautweapon(action, var_6e8abb5cb9bfd417) {
             thread function_b63097fd668a69e1(action, minigunweapon, oldammo);
         }
     }
-    if (isdefined(var_6e8abb5cb9bfd417)) {
-        self.lastdroppableweaponobj = var_6e8abb5cb9bfd417;
-        self switchtoweapon(var_6e8abb5cb9bfd417);
+    if (isdefined(prevweaponobject)) {
+        self.lastdroppableweaponobj = prevweaponobject;
+        self switchtoweapon(prevweaponobject);
     }
     self notify("dropped_minigun");
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x285e
 // Size: 0x32
 function delaytakeminigun(delaytime, minigunweapon) {
     self endon("death_or_disconnect");
     level endon("game_ended");
-    namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(delaytime);
+    scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(delaytime);
     self takeweapon(minigunweapon);
 }
 
-// Namespace juggernaut/namespace_3fad206953a935fe
+// Namespace juggernaut / scripts/cp_mp/killstreaks/juggernaut
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2897
 // Size: 0x102
 function function_b63097fd668a69e1(action, minigunweapon, oldammo) {
     self endon("death_or_disconnect");
     self waittill(action);
-    while (1) {
+    while (true) {
         var_545cf9fdbae045a5 = namespace_e0ee43ef2dddadaa::getgrenadeinpullback();
         if (!self isswimming() && !(isdefined(self.carryobject) && isdefined(self.carryobject.carryobjectasset) && self.carryobject.carryobjectasset == "hostage_rescue")) {
             self giveweapon(minigunweapon);
@@ -802,8 +804,8 @@ function function_b63097fd668a69e1(action, minigunweapon, oldammo) {
             self setweaponammoclip(minigunweapon, oldammo);
             previousweapon = self.lastdroppableweaponobj;
             if (!isdefined(previousweapon)) {
-                var_9111b9a018285894 = namespace_df5cfdbe6e2d3812::getcurrentprimaryweaponsminusalt();
-                previousweapon = var_9111b9a018285894[0];
+                currentprimaries = scripts/cp_mp/utility/inventory_utility::getcurrentprimaryweaponsminusalt();
+                previousweapon = currentprimaries[0];
             }
             if (issharedfuncdefined("juggernaut", "juggernautWeaponPickedUp")) {
                 self [[ getsharedfunc("juggernaut", "juggernautWeaponPickedUp") ]](minigunweapon, previousweapon);

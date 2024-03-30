@@ -3,7 +3,7 @@
 
 #namespace ui;
 
-// Namespace ui/namespace_61d0e47c5dff187c
+// Namespace ui / scripts/common/ui
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x81
 // Size: 0x93
@@ -19,7 +19,7 @@ function lui_registercallback(channel, callback) {
     }
 }
 
-// Namespace ui/namespace_61d0e47c5dff187c
+// Namespace ui / scripts/common/ui
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11b
 // Size: 0xc1
@@ -29,16 +29,16 @@ function lui_notify_callback(channel, value, value2) {
             foreach (callback in level.lui_callbacks[channel]) {
                 if (isdefined(value2)) {
                     self thread [[ callback ]](value, value2);
-                } else {
-                    self thread [[ callback ]](value);
+                    continue;
                 }
+                self thread [[ callback ]](value);
             }
         }
         if (isdefined(value2)) {
             self notify("luinotifyserver", channel);
-        } else {
-            self notify("luinotifyserver", channel);
+            return;
         }
+        self notify("luinotifyserver", channel);
     }
 }
 

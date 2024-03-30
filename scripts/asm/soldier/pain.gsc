@@ -13,102 +13,102 @@
 
 #namespace pain;
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x47
-function isdamagelocation_rarm(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_rarm(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         return damagelocationisany("right_arm_upper", "right_arm_lower", "right_hand");
     }
     return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x47
-function isdamagelocation_rleg(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_rleg(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         return damagelocationisany("right_leg_upper", "right_foot", "right_leg_lower");
     }
     return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x61b
 // Size: 0x47
-function isdamagelocation_lleg(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_lleg(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         return damagelocationisany("left_leg_upper", "left_foot", "left_leg_lower");
     }
     return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x66a
 // Size: 0x47
-function isdamagelocation_larm(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_larm(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         return damagelocationisany("left_arm_upper", "left_arm_lower", "left_hand");
     }
     return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x42
-function isdamagelocation_torso(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_torso(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         return damagelocationisany("torso_upper", "torso_lower");
     }
     return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x703
 // Size: 0x47
-function isdamagelocation_head(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_head(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         return damagelocationisany("head", "neck", "helmet");
     }
     return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x752
 // Size: 0x4d
-function isdamagelocation_larmcrouch(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_larmcrouch(asmname, statename, tostatename, params) {
     return damagelocationisany("left_hand", "left_arm_upper", "left_arm_lower", "left_leg_upper", "left_leg_lower", "left_foot", "torso_lower");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x7a7
 // Size: 0x68
-function isdamagelocation_back(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_back(asmname, statename, tostatename, params) {
     if (!self.damageshield) {
         if (gethumandamagedirstring() == 1 && !damagelocationisany("left_leg_upper", "left_leg_lower", "left_foot", "right_leg_upper", "right_leg_lower", "right_foot")) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x817
 // Size: 0x66
-function isdamagelocation_torsocovercrouch(asmname, statename, var_f2b19b25d457c2a6, params) {
+function isdamagelocation_torsocovercrouch(asmname, statename, tostatename, params) {
     return damagelocationisany("right_arm_upper", "right_arm_lower", "right_hand", "left_hand", "left_arm_upper", "left_arm_lower", "left_leg_upper", "left_leg_lower", "left_foot", "right_leg_upper", "right_leg_lower", "right_foot");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x885
 // Size: 0x32
@@ -116,7 +116,7 @@ function choosepainanimshock(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, "shock_loop_" + self.currentpose);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8bf
 // Size: 0x5f
@@ -127,7 +127,7 @@ function playsonicshockfx() {
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x925
 // Size: 0x112
@@ -152,7 +152,7 @@ function playshockpainloop(asmname, statename, params) {
     finishpain(asmname, statename, params);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3e
 // Size: 0x23
@@ -160,34 +160,34 @@ function shockpainloop_c6_cleanup(asmname, statename, params) {
     self stopsounds();
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa68
 // Size: 0xf3
-function shockpainloop_internal(asmname, statename, var_c08b84490b532fb2, var_9177df4fa6f67675, var_d865b83b6d412e31) {
+function shockpainloop_internal(asmname, statename, playbackrate, ismovestate, allowrandom) {
     self endon(statename + "_finished");
     self endon("painloop_end");
-    if (isdefined(var_9177df4fa6f67675) && var_9177df4fa6f67675) {
-        var_bf3de88b0e06a07c = asm_lookupanimfromaliasifexists("knobs", "move");
-        if (isdefined(var_bf3de88b0e06a07c)) {
-            self setmoveanimknob(var_bf3de88b0e06a07c);
+    if (isdefined(ismovestate) && ismovestate) {
+        moveknob = asm_lookupanimfromaliasifexists("knobs", "move");
+        if (isdefined(moveknob)) {
+            self setmoveanimknob(moveknob);
         }
     }
     prevanim = asm_getbodyknob();
     curanim = asm_getanim(asmname, statename);
-    while (1) {
-        if (isdefined(var_d865b83b6d412e31)) {
+    while (true) {
+        if (isdefined(allowrandom)) {
             curanim = asm_getanim(asmname, statename);
         }
-        var_678b2c6541e01262 = asm_getxanim(statename, curanim);
-        self aisetanim(statename, curanim, var_c08b84490b532fb2);
-        asm_playfacialanim(asmname, statename, var_678b2c6541e01262);
+        curxanim = asm_getxanim(statename, curanim);
+        self aisetanim(statename, curanim, playbackrate);
+        asm_playfacialanim(asmname, statename, curxanim);
         prevanim = curanim;
-        asm_donotetrackssingleloop(asmname, statename, var_678b2c6541e01262, asm_getnotehandler(asmname, statename));
+        asm_donotetrackssingleloop(asmname, statename, curxanim, asm_getnotehandler(asmname, statename));
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb62
 // Size: 0x32
@@ -195,7 +195,7 @@ function chooseshockpainrecovery(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, "shock_finish_" + self.currentpose);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb9c
 // Size: 0x27
@@ -203,7 +203,7 @@ function playpainanim(asmname, statename, params) {
     playpainaniminternal(asmname, statename, params, 0);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xbca
 // Size: 0x28
@@ -211,7 +211,7 @@ function playpainanimwithadditives(asmname, statename, params) {
     playpainaniminternal(asmname, statename, params, 1);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xbf9
 // Size: 0x3d
@@ -220,7 +220,7 @@ function playpainanimlmg(asmname, statename, params) {
     playpainaniminternal(asmname, statename, params, 0);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc3d
 // Size: 0x21
@@ -230,27 +230,27 @@ function pain_can_use_handler(note, params) {
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc65
 // Size: 0x13c
 function getpainweaponsize() {
     size = "_md";
-    var_3e7b2f709e2f6164 = "rifle";
+    weaponsize = "rifle";
     objweapon = self.damageweapon;
     if (isdefined(objweapon) && objweapon.basename != "iw8_sn_mike14") {
-        var_3e7b2f709e2f6164 = objweapon.classname;
+        weaponsize = objweapon.classname;
     }
-    if (var_3e7b2f709e2f6164 == "pistol" || var_3e7b2f709e2f6164 == "smg") {
+    if (weaponsize == "pistol" || weaponsize == "smg") {
         size = "_md";
-    } else if (var_3e7b2f709e2f6164 == "spread") {
+    } else if (weaponsize == "spread") {
         size = "_md";
         if (isdefined(self.lastattacker) && distancesquared(self.lastattacker.origin, self.origin) <= 62500) {
             size = "_lg";
         }
-    } else if (var_3e7b2f709e2f6164 == "sniper" || var_3e7b2f709e2f6164 == "mg") {
+    } else if (weaponsize == "sniper" || weaponsize == "mg") {
         size = "_lg";
-    } else if (var_3e7b2f709e2f6164 == "grenade" && isdefined(self.damagemod) && self.damagemod == "MOD_IMPACT") {
+    } else if (weaponsize == "grenade" && isdefined(self.damagemod) && self.damagemod == "MOD_IMPACT") {
         size = "_lg";
     }
     if (isdefined(level.fnasmsoldiergetpainweaponsize)) {
@@ -259,7 +259,7 @@ function getpainweaponsize() {
     return size;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xda9
 // Size: 0xc0
@@ -267,19 +267,20 @@ function getpaindirectiontoactor() {
     if (isdefined(self.damageyaw) && self.damageyaw >= -45 && self.damageyaw <= 45) {
         dir = "_b";
         return dir;
-    } else if (isdefined(self.damageyaw) && self.damageyaw < -45 && self.damageyaw > -135) {
+    }
+    if (isdefined(self.damageyaw) && self.damageyaw < -45 && self.damageyaw > -135) {
         dir = "_l";
         return dir;
-    } else if (isdefined(self.damageyaw) && self.damageyaw > 45 && self.damageyaw < 135) {
+    }
+    if (isdefined(self.damageyaw) && self.damageyaw > 45 && self.damageyaw < 135) {
         dir = "_r";
         return dir;
-    } else {
-        dir = "_f";
-        return dir;
     }
+    dir = "_f";
+    return dir;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe70
 // Size: 0x4d
@@ -291,11 +292,11 @@ function choosedirectionalpainanim_transition(asmname, statename, params) {
     return asm_getrandomanim(statename);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec5
 // Size: 0x276
-function playpainaniminternal(asmname, statename, params, var_837bcc3e005feb5d, var_96d69c0cc6fb90c1, var_1a502982e90b16d9, var_b6a66cc6c81067a0, var_94987ccb5819c6e9) {
+function playpainaniminternal(asmname, statename, params, var_837bcc3e005feb5d, var_96d69c0cc6fb90c1, statenameoverride, var_b6a66cc6c81067a0, var_94987ccb5819c6e9) {
     self endon(statename + "_finished");
     if (isdefined(self.a.paintime)) {
         self.a.lastpaintime = self.a.paintime;
@@ -308,11 +309,11 @@ function playpainaniminternal(asmname, statename, params, var_837bcc3e005feb5d, 
     } else {
         self.a.painonstairs = undefined;
     }
-    self.a.var_682a42d4ea27fe49 = 1;
-    if (isdefined(self.var_40bc0e4adb7920bd)) {
-        var_35ab2dabe0210d0f = [[ self.var_40bc0e4adb7920bd ]]();
-        if (!istrue(var_35ab2dabe0210d0f)) {
-            self.a.var_682a42d4ea27fe49 = undefined;
+    self.a.painplaying = 1;
+    if (isdefined(self.painfunction)) {
+        shouldcontinue = [[ self.painfunction ]]();
+        if (!istrue(shouldcontinue)) {
+            self.a.painplaying = undefined;
             return;
         }
     }
@@ -321,67 +322,65 @@ function playpainaniminternal(asmname, statename, params, var_837bcc3e005feb5d, 
         self orientmode("face angle", self.angles[1]);
     }
     if (!isdefined(self.no_pain_sound)) {
-        namespace_166dc34a2c7481df::saygenericdialogue("pain");
+        scripts/anim/face::saygenericdialogue("pain");
     }
-    if (namespace_f0a0c13f724da4b::shouldhelmetpoponpain(utility::wasdamagedbyexplosive())) {
-        namespace_f0a0c13f724da4b::helmetpop();
+    if (scripts/asm/soldier/death::shouldhelmetpoponpain(utility::wasdamagedbyexplosive())) {
+        scripts/asm/soldier/death::helmetpop();
     }
     animstatename = statename;
-    if (isdefined(var_1a502982e90b16d9)) {
-        animstatename = var_1a502982e90b16d9;
+    if (isdefined(statenameoverride)) {
+        animstatename = statenameoverride;
     }
     var_c9edb1b72607d824 = asm_getanim(asmname, statename, params);
     /#
         assert(isdefined(var_c9edb1b72607d824));
     #/
     self aisetanim(animstatename, var_c9edb1b72607d824);
-    var_6b9ecb781431451a = asm_getxanim(animstatename, var_c9edb1b72607d824);
-    asm_playfacialanim(asmname, statename, var_6b9ecb781431451a);
+    painxanim = asm_getxanim(animstatename, var_c9edb1b72607d824);
+    asm_playfacialanim(asmname, statename, painxanim);
     if (isdefined(var_94987ccb5819c6e9)) {
-        self thread [[ var_94987ccb5819c6e9 ]](asmname, statename, var_c9edb1b72607d824, var_6b9ecb781431451a);
+        self thread [[ var_94987ccb5819c6e9 ]](asmname, statename, var_c9edb1b72607d824, painxanim);
     }
     self.requestdifferentcover = 1;
-    if (animhasnotetrack(var_6b9ecb781431451a, "code_move")) {
+    if (animhasnotetrack(painxanim, "code_move")) {
         asm_donotetracks(asmname, statename, undefined, undefined, animstatename);
     }
     asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename), undefined, animstatename);
     if (istrue(var_96d69c0cc6fb90c1)) {
         finishpain(asmname, statename, params);
-    } else {
-        finishpain(asmname, statename);
+        return;
     }
+    finishpain(asmname, statename);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1142
 // Size: 0x2c
-function paincanend(statename, var_6ef4fd3894a9f0a2) {
-    switch (var_6ef4fd3894a9f0a2) {
+function paincanend(statename, notename) {
+    switch (notename) {
     case #"hash_b28f889d3f68dd76":
         return 1;
-        break;
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1175
 // Size: 0x58
 function coverexppainselectreturna(asmname, statename, params) {
     if (isdefined(self._blackboard.coverexposetype) && self._blackboard.coverexposetype == "A") {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11d4
 // Size: 0x6c
 function finishpain(asmname, statename, params) {
-    self.a.var_682a42d4ea27fe49 = undefined;
+    self.a.painplaying = undefined;
     self notify("killanimscript");
     returnstate = undefined;
     if (isdefined(params)) {
@@ -397,7 +396,7 @@ function finishpain(asmname, statename, params) {
     thread asm_setstate(returnstate, undefined);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1247
 // Size: 0x33
@@ -406,7 +405,7 @@ function playcoverpainanimwithadditives(asmname, statename, params) {
     playpainaniminternal(asmname, statename, params, 1);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1281
 // Size: 0x31
@@ -415,7 +414,7 @@ function playcoverpainanim(asmname, statename, params) {
     playpainanim(asmname, statename, params);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x12b9
 // Size: 0x97
@@ -434,7 +433,7 @@ function choosepainanim_standtorsotoexposed(asmname, statename, params) {
     return var_24be4e2b091e63bf;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1358
 // Size: 0x8f
@@ -442,16 +441,16 @@ function choosepainanim_standtorso(asmname, statename, params) {
     if (damagelocationisany("torso_upper")) {
         self.lasttorsoanim = "torso_upper";
         return asm_lookupanimfromalias(statename, "torso_upper");
-    } else if (damagelocationisany("torso_lower")) {
+    }
+    if (damagelocationisany("torso_lower")) {
         self.lasttorsoanim = "torso_lower";
         return asm_lookupanimfromalias(statename, "torso_lower");
-    } else {
-        self.lasttorsoanim = "default";
-        return asm_lookupanimfromalias(statename, "default");
     }
+    self.lasttorsoanim = "default";
+    return asm_lookupanimfromalias(statename, "default");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x13ee
 // Size: 0x17f
@@ -484,7 +483,7 @@ function choosepainanim_stand(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1575
 // Size: 0x59
@@ -499,7 +498,7 @@ function choosepainanim_damageshield(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x15d6
 // Size: 0x51
@@ -512,7 +511,7 @@ function choosedynamicpainanim_expcrouchlegs(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x162f
 // Size: 0xa3
@@ -531,7 +530,7 @@ function choosepainanim_crouch(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16da
 // Size: 0x18d
@@ -565,7 +564,7 @@ function choosepainanim_pistol(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x186f
 // Size: 0x6d
@@ -575,12 +574,11 @@ function choosepainanim_covercorner_helper(asmname, statename, params, angles) {
     }
     if (self.currentpose == "crouch") {
         return asm_lookupanimfromalias(statename, "crouch");
-    } else {
-        return asm_lookupanimfromalias(statename, "stand");
     }
+    return asm_lookupanimfromalias(statename, "stand");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x18e3
 // Size: 0x26
@@ -588,7 +586,7 @@ function choosepainanim_covercorner(asmname, statename, params) {
     return choosepainanim_covercorner_helper(asmname, statename, params, undefined);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1911
 // Size: 0x34
@@ -597,7 +595,7 @@ function choosedynamicpainanim_back(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, alias);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x194d
 // Size: 0xa9
@@ -617,7 +615,7 @@ function choosedynamicpainanim_covercrouch(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x19fe
 // Size: 0x16c
@@ -647,7 +645,7 @@ function choosedynamicpainanim_coverstand(asmname, statename, params) {
     return var_53aabd9cafd5b202[randomint(var_53aabd9cafd5b202.size)];
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b72
 // Size: 0x3b
@@ -656,7 +654,7 @@ function function_9a4a7270010ada09(asmname, statename, params) {
     cleanuppainanim(asmname, statename, params);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bb4
 // Size: 0x176
@@ -664,7 +662,7 @@ function cleanuppainanim(asmname, statename, params) {
     if (isdefined(self.script) && self.script == "pain") {
         self notify("killanimscript");
     }
-    self.a.var_682a42d4ea27fe49 = undefined;
+    self.a.painplaying = undefined;
     if (isdefined(self.damageshieldpain)) {
         self.damageshieldcounter = undefined;
         self.damageshieldpain = undefined;
@@ -681,7 +679,7 @@ function cleanuppainanim(asmname, statename, params) {
     self._blackboard.var_74f8f2b8eff7c7f = 0;
     clearpainturnrate(asmname, statename, params);
     if (istrue(self.leavecasualkiller)) {
-        namespace_1a7cea57c200f504::terminate_casualkiller(asmname, statename, params);
+        scripts/asm/soldier/script_funcs::terminate_casualkiller(asmname, statename, params);
     }
     if (!istrue(self.ignoreall)) {
         if (isdefined(self.enemy) && lengthsquared(self.velocity) < 1 && isdefined(self.weapon) && !istrue(self.enemy.ignoreme) && self cansee(self.enemy)) {
@@ -690,21 +688,21 @@ function cleanuppainanim(asmname, statename, params) {
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d31
 // Size: 0x61
-function transition_flashfinished(asmname, var_8f4ef4fdb5e7800a, var_93279c66a2e49a45, params) {
+function transition_flashfinished(asmname, fromstate, tostate, params) {
     if (!isflashed()) {
-        return 1;
+        return true;
     }
     if (gettime() > self.flashendtime) {
-        return 1;
+        return true;
     }
     return asm_eventfired(asmname, "end") || asm_eventfired(asmname, "finish");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d9a
 // Size: 0x5c
@@ -717,7 +715,7 @@ function function_f0cf338a66c2a842(asmname, statename, params) {
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dfd
 // Size: 0x42
@@ -727,19 +725,19 @@ function function_5f1b71fde3cd5900(asmname, statename, params) {
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e46
 // Size: 0x33
 function function_e00aa948164f088c(asmname, statename, params) {
     if (isstunned()) {
-        return 0;
+        return false;
     }
     cleanuppainanim(asmname, statename, params);
-    return 1;
+    return true;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e81
 // Size: 0x41
@@ -750,7 +748,7 @@ function playanim_flashed(asmname, statename, params) {
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ec9
 // Size: 0xd5
@@ -758,11 +756,11 @@ function playanim_flashed_internal(asmname, statename) {
     var_c22c902bf03bd098 = asm_getanim(asmname, statename);
     rate = 1;
     if (isdefined(self.flashendtime)) {
-        var_1ea801324c12e83d = self.flashendtime - gettime();
+        flashlength = self.flashendtime - gettime();
         xanim = asm_getxanim(statename, var_c22c902bf03bd098);
         animlength = getanimlength(xanim) * 1000;
-        if (var_1ea801324c12e83d > 0) {
-            rate = animlength / var_1ea801324c12e83d;
+        if (flashlength > 0) {
+            rate = animlength / flashlength;
         }
         rate = rate + randomfloatrange(-0.1, 0.05);
         rate = clamp(rate, 0.65, 1.2);
@@ -771,23 +769,23 @@ function playanim_flashed_internal(asmname, statename) {
     self aisetanim(statename, var_c22c902bf03bd098, rate);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fa5
 // Size: 0x64
 function playanim_monitorflashrestart(asmname, statename) {
     self endon(statename + "_finished");
-    var_b2a1f003a8f9e6d2 = self.flashendtime;
+    prevflashendtime = self.flashendtime;
     while (isdefined(self.flashendtime)) {
-        if (var_b2a1f003a8f9e6d2 != self.flashendtime) {
+        if (prevflashendtime != self.flashendtime) {
             playanim_flashed_internal(asmname, statename);
-            var_b2a1f003a8f9e6d2 = self.flashendtime;
+            prevflashendtime = self.flashendtime;
         }
         waitframe();
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2010
 // Size: 0x2d
@@ -796,7 +794,7 @@ function cleanupflashanim(asmname, statename, params) {
     flashbangstop();
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2044
 // Size: 0xb0
@@ -807,13 +805,13 @@ function playanim_burning(asmname, statename, params) {
         function_216c67ab6749137a(self, undefined, "burn", var_fc3f189c0832aec2);
     }
     var_aac951fea290e449 = asm_getanim(asmname, statename, params);
-    var_9ee867a6bba39a0d = randomfloatrange(0.8, 1.2);
+    playrate = randomfloatrange(0.8, 1.2);
     self orientmode("face angle", self.angles[1]);
-    self aisetanim(statename, var_aac951fea290e449, var_9ee867a6bba39a0d);
+    self aisetanim(statename, var_aac951fea290e449, playrate);
     asm_donotetracks(asmname, statename, &burn_notetrack_handler);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20fb
 // Size: 0xf5
@@ -840,25 +838,25 @@ function burn_notetrack_handler(note) {
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f7
 // Size: 0x229
-function painanimfaceenemy(asmname, statename, var_2c8936d08f85c5c1, xanim) {
+function painanimfaceenemy(asmname, statename, animid, xanim) {
     self endon(statename + "_finished");
     enemy = self.enemy;
     animlength = getanimlength(xanim);
     endtime = animlength * 0.8;
-    var_f462f2c7298cb429 = animlength;
+    startaimtime = animlength;
     var_6767247f28fabd3c = getnotetracktimes(xanim, "face_enemy")[0];
     if (isdefined(var_6767247f28fabd3c)) {
         endtime = var_6767247f28fabd3c * animlength;
     } else {
         if (asm_currentstatehasflag(asmname, "notetrackAim")) {
-            var_5cbbf76a71910120 = getnotetracktimes(xanim, "start_aim")[0];
-            if (isdefined(var_5cbbf76a71910120)) {
-                endtime = min(endtime, max(0, var_5cbbf76a71910120 - 0.3) * animlength);
-                var_f462f2c7298cb429 = var_5cbbf76a71910120 * animlength;
+            startaimfrac = getnotetracktimes(xanim, "start_aim")[0];
+            if (isdefined(startaimfrac)) {
+                endtime = min(endtime, max(0, startaimfrac - 0.3) * animlength);
+                startaimtime = startaimfrac * animlength;
             }
         }
         endtime = min(endtime, max(0, animlength - 0.5));
@@ -870,48 +868,48 @@ function painanimfaceenemy(asmname, statename, var_2c8936d08f85c5c1, xanim) {
         if (isdefined(var_ab47b2ec8e13ed55)) {
             var_253b2641c5fcf77a = var_ab47b2ec8e13ed55;
         }
-        var_b819721cefd782d2 = getanimlength(xanim) * var_253b2641c5fcf77a - endtime;
-        var_e473d197cb34ae13 = gettime() + var_b819721cefd782d2 * 1000;
+        turnduration = getanimlength(xanim) * var_253b2641c5fcf77a - endtime;
+        var_e473d197cb34ae13 = gettime() + turnduration * 1000;
         while (gettime() < var_e473d197cb34ae13 && isalive(enemy)) {
-            var_a79562cded0c03a2 = enemy.origin - self.origin;
-            var_7ef311e27099889b = vectortoyaw(var_a79562cded0c03a2);
-            anglediff = angleclamp180(var_7ef311e27099889b - self.angles[1]);
-            var_30992c23ce045edf = self getanimtime(xanim);
-            var_1875fb38b6d4d4e4 = getangledelta(xanim, var_30992c23ce045edf, var_253b2641c5fcf77a);
-            delta = anglediff - var_1875fb38b6d4d4e4;
+            metoenemy = enemy.origin - self.origin;
+            angletoenemy = vectortoyaw(metoenemy);
+            anglediff = angleclamp180(angletoenemy - self.angles[1]);
+            curt = self getanimtime(xanim);
+            remainingrot = getangledelta(xanim, curt, var_253b2641c5fcf77a);
+            delta = anglediff - remainingrot;
             self orientmode("face angle", self.angles[1] + delta);
             waitframe();
         }
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2427
 // Size: 0x7f
 function playpainanim_faceplayer(asmname, statename, params) {
     self endon(statename + "_finished");
-    var_eb1ac6373dfde285 = undefined;
+    fnthread = undefined;
     if (isalive(self.enemy) && isdefined(self.lastattacker) && self.enemy == self.lastattacker) {
-        var_eb1ac6373dfde285 = &painanimfaceenemy;
+        fnthread = &painanimfaceenemy;
     }
-    playpainaniminternal(asmname, statename, params, 0, 1, undefined, 1, var_eb1ac6373dfde285);
+    playpainaniminternal(asmname, statename, params, 0, 1, undefined, 1, fnthread);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x24ad
 // Size: 0x7e
 function playpainanim_exposedstand(asmname, statename, params) {
     self endon(statename + "_finished");
-    var_eb1ac6373dfde285 = undefined;
+    fnthread = undefined;
     if (isalive(self.enemy) && isdefined(self.lastattacker) && self.enemy == self.lastattacker) {
-        var_eb1ac6373dfde285 = &painanimfaceenemy;
+        fnthread = &painanimfaceenemy;
     }
-    playpainaniminternal(asmname, statename, params, 0, 1, undefined, 0, var_eb1ac6373dfde285);
+    playpainaniminternal(asmname, statename, params, 0, 1, undefined, 0, fnthread);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2532
 // Size: 0x44
@@ -921,23 +919,23 @@ function playpainanim_exposedcrouch(asmname, statename, params) {
     playpainaniminternal(asmname, statename, params, 0, 1);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x257d
 // Size: 0xb6
 function playpainanim_exposedcrouchtransition(asmname, statename, params) {
     self endon(statename + "_finished");
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    self aisetanim(statename, var_2c8936d08f85c5c1);
-    asm_playfacialanim(asmname, statename, asm_getxanim(statename, var_2c8936d08f85c5c1));
+    animid = asm_getanim(asmname, statename);
+    self aisetanim(statename, animid);
+    asm_playfacialanim(asmname, statename, asm_getxanim(statename, animid));
     if (isalive(self.enemy) && isdefined(self.painattacker) && self.enemy == self.painattacker) {
-        thread painanimfaceenemy(asmname, statename, var_2c8936d08f85c5c1, asm_getxanim(statename, var_2c8936d08f85c5c1));
+        thread painanimfaceenemy(asmname, statename, animid, asm_getxanim(statename, animid));
     }
     self.painattacker = undefined;
     asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x263a
 // Size: 0x45
@@ -948,7 +946,7 @@ function clearpainturnrate(asmname, statename, params) {
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2686
 // Size: 0xc9
@@ -961,28 +959,28 @@ function function_111158d9cee51970(asmname, statename, params) {
     self orientmode("face current");
     self animmode("live_ragdoll");
     if (isdefined(var_5443645c78427889)) {
-        var_2c8936d08f85c5c1 = asm_getanim(asmname, statename, var_5443645c78427889);
+        animid = asm_getanim(asmname, statename, var_5443645c78427889);
     } else {
-        var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
+        animid = asm_getanim(asmname, statename);
     }
     thread function_6d4426b00706324e();
-    self aisetanim(statename, var_2c8936d08f85c5c1);
+    self aisetanim(statename, animid);
     endnote = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
     if (endnote == "code_move") {
         endnote = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2756
 // Size: 0xb3
 function function_56a47f26f49fc5eb(asmname, statename, blendtime, params) {
     self endon(statename + "_finished");
-    var_2c8936d08f85c5c1 = asm_getanim(asmname, statename);
-    animname = asm_getxanim(statename, var_2c8936d08f85c5c1);
+    animid = asm_getanim(asmname, statename);
+    animname = asm_getxanim(statename, animid);
     thread function_b3b20911062201ad();
-    self aisetanim(statename, var_2c8936d08f85c5c1);
+    self aisetanim(statename, animid);
     asm_playfacialanim(asmname, statename, animname);
     self function_9c471a7e95a2747e(animname);
     endnote = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
@@ -991,7 +989,7 @@ function function_56a47f26f49fc5eb(asmname, statename, blendtime, params) {
     }
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2810
 // Size: 0x3c
@@ -1004,7 +1002,7 @@ function function_6d4426b00706324e() {
     namespace_223959d3e5206cfb::placeweaponon(self.weapon, "chest");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2853
 // Size: 0x3c
@@ -1017,15 +1015,15 @@ function function_b3b20911062201ad() {
     namespace_223959d3e5206cfb::placeweaponon(self.weapon, "right");
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2896
 // Size: 0x2e
-function function_e585c560d79f00f8(asmname, statename, var_f2b19b25d457c2a6, params) {
+function function_e585c560d79f00f8(asmname, statename, tostatename, params) {
     return istrue(self.var_e585c560d79f00f8);
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x28cc
 // Size: 0x47
@@ -1035,7 +1033,7 @@ function function_5e9e03bdd9237c0f(asmname, statename, params) {
     return var_c9edb1b72607d824;
 }
 
-// Namespace pain/namespace_7eac13b458714f13
+// Namespace pain / scripts/asm/soldier/pain
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x291b
 // Size: 0x47

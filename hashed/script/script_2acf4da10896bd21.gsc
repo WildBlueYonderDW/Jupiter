@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_d_ob_intel_cs;
 
-// Namespace mp_jup_st_d_ob_intel_cs/namespace_71ff6e94606912fd
+// Namespace mp_jup_st_d_ob_intel_cs / namespace_71ff6e94606912fd
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ba
 // Size: 0x6d
@@ -23,82 +23,82 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_d_ob_intel_cs/namespace_71ff6e94606912fd
+// Namespace mp_jup_st_d_ob_intel_cs / namespace_71ff6e94606912fd
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_d_ob_intel_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_d_ob_intel_cs");
 }
 
-// Namespace mp_jup_st_d_ob_intel_cs/namespace_71ff6e94606912fd
+// Namespace mp_jup_st_d_ob_intel_cs / namespace_71ff6e94606912fd
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39d
 // Size: 0x430
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "deadbolt";
     s.name = "deadbolt_audio_intel";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-28224.5, 9753.5, 1171), (0, 185.31, 0), "deadbolt_audio_intel", undefined, "intel_s0_deadbolt_audio_quartrmstr");
+    fe [[ f ]](s, us, cf, (-28224.5, 9753.5, 1171), (0, 185.31, 0), "deadbolt_audio_intel", undefined, "intel_s0_deadbolt_audio_quartrmstr");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "deadbolt";
     s.name = "deadbolt_audio_intel";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-15895.5, -22178.5, 4664), (0, 343.53, 0), "deadbolt_audio_intel", undefined, "intel_s0_deadbolt_audio_keepitrun");
+    fe [[ f ]](s, us, cf, (-15895.5, -22178.5, 4664), (0, 343.53, 0), "deadbolt_audio_intel", undefined, "intel_s0_deadbolt_audio_keepitrun");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "deadbolt";
     s.name = "deadbolt_radio_intel";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-14292, -13873.5, 1849), (0, 87.9, 38.67), "deadbolt_radio_intel", undefined, "intel_s0_deadbolt_radio_1stimpress");
+    fe [[ f ]](s, us, cf, (-14292, -13873.5, 1849), (0, 87.9, 38.67), "deadbolt_radio_intel", undefined, "intel_s0_deadbolt_radio_1stimpress");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "deadbolt";
     s.name = "deadbolt_radio_intel";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-34428, -32089.5, 2058), (0, 173.19, 0), "deadbolt_radio_intel", undefined, "intel_s0_deadbolt_radio_ifneedride");
+    fe [[ f ]](s, us, cf, (-34428, -32089.5, 2058), (0, 173.19, 0), "deadbolt_radio_intel", undefined, "intel_s0_deadbolt_radio_ifneedride");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "terminus";
     s.name = "terminus_audio_intel";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-27337, -11357.5, 1665.25), (0, 172.2, 0), "terminus_audio_intel", undefined, "intel_s0_terminus_audio_noharm");
+    fe [[ f ]](s, us, cf, (-27337, -11357.5, 1665.25), (0, 172.2, 0), "terminus_audio_intel", undefined, "intel_s0_terminus_audio_noharm");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.name = "note_intel";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-18946, 4916, 1451), (0, 275.3, 0), "note_intel", undefined, "jup_zm_ob_intel_notes_04");
+    fe [[ f ]](s, us, cf, (-18946, 4916, 1451), (0, 275.3, 0), "note_intel", undefined, "jup_zm_ob_intel_notes_04");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "stronghold";
     s.name = "terminus_audio_intel_stronghold_d_marina_building_10";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-31667.4, 8286.45, 1364.6), (0, 97.63, 0), "terminus_audio_intel_warlord");
+    fe [[ f ]](s, us, cf, (-31667.4, 8286.45, 1364.6), (0, 97.63, 0), "terminus_audio_intel_warlord");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "stronghold";
     s.name = "terminus_audio_intel_stronghold_d_house_md_03";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-21595.8, 8742.5, 2553), (0, 217.63, 0), "terminus_audio_intel_warlord");
+    fe [[ f ]](s, us, cf, (-21595.8, 8742.5, 2553), (0, 217.63, 0), "terminus_audio_intel_warlord");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "stronghold";
     s.name = "terminus_audio_intel_stronghold_d_house_md_08";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-32976, 14796.3, 1108.72), (359.93, 277.8, -3.86), "terminus_audio_intel_warlord");
+    fe [[ f ]](s, us, cf, (-32976, 14796.3, 1108.72), (359.93, 277.8, -3.86), "terminus_audio_intel_warlord");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_d_ob_intel_cs";
     s.groupid = "stronghold";
     s.name = "terminus_audio_intel_stronghold_d_house_md_08_2";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-19164.8, 9348.75, 2135.5), (0.23, 62.49, -4.12), "terminus_audio_intel_warlord");
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe [[ f ]](s, us, cf, (-19164.8, 9348.75, 2135.5), (0.23, 62.49, -4.12), "terminus_audio_intel_warlord");
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_d_ob_intel_cs/namespace_71ff6e94606912fd
+// Namespace mp_jup_st_d_ob_intel_cs / namespace_71ff6e94606912fd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x3
@@ -106,7 +106,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_d_ob_intel_cs/namespace_71ff6e94606912fd
+// Namespace mp_jup_st_d_ob_intel_cs / namespace_71ff6e94606912fd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7de
 // Size: 0xf

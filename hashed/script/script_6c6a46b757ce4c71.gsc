@@ -2,12 +2,12 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using script_54f6d121e91434f8;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\devgui.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using script_35de402efc5acfb3;
 #using script_2ad704f5066d8674;
 #using script_7c03ab87c5f9f420;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using script_371b4c2ab5861e62;
 #using scripts\mp\damage.gsc;
 #using script_24fbedba9a7a1ef4;
@@ -17,9 +17,9 @@
 #using scripts\mp\weapons.gsc;
 #using script_22f1701e151b9d12;
 
-#namespace namespace_46b675bc0fc6663b;
+#namespace ob_humans;
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83e
 // Size: 0x17a
@@ -46,7 +46,7 @@ function function_45657962a8ad47e() {
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x9bf
 // Size: 0x7a
@@ -61,92 +61,92 @@ function private function_a4b670d860d7cf61() {
     level thread namespace_c39580665208f0a4::function_83599506981c29cd();
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa40
 // Size: 0xa1d
 function function_20f21f6a7707e19() {
-    level.battlechatter.eventstrings["rvnv"]["low_ammo"] = [0:"b035_defz_blam"];
-    level.battlechatter.eventstrings["rvnv"]["left"] = [0:"b035_defz_blft"];
-    level.battlechatter.eventstrings["rvnv"]["right"] = [0:"b035_defz_brgt"];
-    level.battlechatter.eventstrings["rvnv"]["high"] = [0:"b035_defz_bhgh"];
-    level.battlechatter.eventstrings["rvnv"]["order_attack"] = [0:"b035_defz_batk"];
-    level.battlechatter.eventstrings["rvnv"]["using_smoke"] = [0:"b035_defz_busm"];
-    level.battlechatter.eventstrings["rvnv"]["using_flash"] = [0:"b035_defz_bufl"];
-    level.battlechatter.eventstrings["rvnv"]["using_grenade"] = [0:"b035_defz_bugr"];
-    level.battlechatter.eventstrings["rvnv"]["using_molotov"] = [0:"b035_defz_buml"];
-    level.battlechatter.eventstrings["rvnv"]["reloading"] = [0:"b035_defz_brld"];
-    level.battlechatter.eventstrings["rvnv"]["moving"] = [0:"b035_defz_bmov"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_using_flash"] = [0:"b035_defz_befl"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_using_grenade"] = [0:"b035_defz_begr"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_using_molotov"] = [0:"b035_defz_beml"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_using_rpg"] = [0:"b035_defz_berp"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_attacking"] = [0:"b035_defz_beat"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_soldier"] = [0:"b035_defz_besd"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_soldiers"] = [0:"b035_defz_besm"];
-    level.battlechatter.eventstrings["rvnv"]["aquired_target"] = [0:"b035_defz_btac"];
-    level.battlechatter.eventstrings["rvnv"]["youre_exposed"] = [0:"b035_defz_bexp"];
-    level.battlechatter.eventstrings["rvnv"]["target_covered"] = [0:"b035_defz_btcv"];
-    level.battlechatter.eventstrings["rvnv"]["killfirm_enemy"] = [0:"b035_defz_bkfe"];
-    level.battlechatter.eventstrings["rvnv"]["killfirm_target"] = [0:"b035_defz_bkft"];
-    level.battlechatter.eventstrings["rvnv"]["killfirm_helo"] = [0:"b035_defz_bkfh"];
-    level.battlechatter.eventstrings["rvnv"]["praise"] = [0:"b035_defz_bprs"];
-    level.battlechatter.eventstrings["rvnv"]["wounded"] = [0:"b035_defz_bwnd"];
-    level.battlechatter.eventstrings["rvnv"]["enemy_sniper"] = [0:"b035_defz_besn"];
-    level.battlechatter.eventstrings["rvnv"]["checkfire"] = [0:"b035_defz_bchk"];
-    level.battlechatter.eventstrings["rvnv"]["reviver"] = [0:"b035_defz_brvg"];
-    level.battlechatter.eventstrings["jans"]["low_ammo"] = [0:"b017_exfa_blam"];
-    level.battlechatter.eventstrings["jans"]["left"] = [0:"b017_exfa_blft"];
-    level.battlechatter.eventstrings["jans"]["right"] = [0:"b017_exfa_brgt"];
-    level.battlechatter.eventstrings["jans"]["high"] = [0:"b017_exfa_bhgh"];
-    level.battlechatter.eventstrings["jans"]["order_attack"] = [0:"b017_exfa_batk"];
-    level.battlechatter.eventstrings["jans"]["using_smoke"] = [0:"b017_exfa_busm"];
-    level.battlechatter.eventstrings["jans"]["using_flash"] = [0:"b017_exfa_bufl"];
-    level.battlechatter.eventstrings["jans"]["using_grenade"] = [0:"b017_exfa_bugr"];
-    level.battlechatter.eventstrings["jans"]["using_molotov"] = [0:"b017_exfa_buml"];
-    level.battlechatter.eventstrings["jans"]["reloading"] = [0:"b017_exfa_brld"];
-    level.battlechatter.eventstrings["jans"]["moving"] = [0:"b017_exfa_bmov"];
-    level.battlechatter.eventstrings["jans"]["enemy_using_flash"] = [0:"b017_exfa_befl"];
-    level.battlechatter.eventstrings["jans"]["enemy_using_grenade"] = [0:"b017_exfa_begr"];
-    level.battlechatter.eventstrings["jans"]["enemy_using_molotov"] = [0:"b017_exfa_beml"];
-    level.battlechatter.eventstrings["jans"]["enemy_using_rpg"] = [0:"b017_exfa_berp"];
-    level.battlechatter.eventstrings["jans"]["enemy_attacking"] = [0:"b017_exfa_beat"];
-    level.battlechatter.eventstrings["jans"]["enemy_soldier"] = [0:"b017_exfa_besd"];
-    level.battlechatter.eventstrings["jans"]["enemy_soldiers"] = [0:"b017_exfa_besm"];
-    level.battlechatter.eventstrings["jans"]["aquired_target"] = [0:"b017_exfa_btac"];
-    level.battlechatter.eventstrings["jans"]["youre_exposed"] = [0:"b017_exfa_bexp"];
-    level.battlechatter.eventstrings["jans"]["target_covered"] = [0:"b017_exfa_btcv"];
-    level.battlechatter.eventstrings["jans"]["killfirm_enemy"] = [0:"b017_exfa_bkfe"];
-    level.battlechatter.eventstrings["jans"]["killfirm_target"] = [0:"b017_exfa_bkft"];
-    level.battlechatter.eventstrings["jans"]["killfirm_helo"] = [0:"b017_exfa_bkfh"];
-    level.battlechatter.eventstrings["jans"]["praise"] = [0:"b017_exfa_bprs"];
-    level.battlechatter.eventstrings["jans"]["wounded"] = [0:"b017_exfa_bwnd"];
-    level.battlechatter.eventstrings["jans"]["enemy_sniper"] = [0:"b017_exfa_besn"];
-    level.battlechatter.eventstrings["jans"]["checkfire"] = [0:"b017_exfa_bchk"];
-    level.battlechatter.eventstrings["jans"]["need_revive"] = [0:"b017_exfa_bdwn"];
-    level.battlechatter.eventstrings["jans"]["been_revived"] = [0:"b017_exfa_brvd"];
-    level.battlechatter.eventstrings["jans"]["reviver"] = [0:"b017_exfa_brvg"];
-    namespace_378f8281e2d12ced::function_bf23e005e136dc90("need_revive", "need_revive", 0, 2, 5);
-    namespace_378f8281e2d12ced::function_bf23e005e136dc90("been_revived", "been_revived", 0, 2, 5);
-    namespace_378f8281e2d12ced::function_bf23e005e136dc90("reviver", "reviver", 0, 2, 5);
+    level.battlechatter.eventstrings["rvnv"]["low_ammo"] = ["b035_defz_blam"];
+    level.battlechatter.eventstrings["rvnv"]["left"] = ["b035_defz_blft"];
+    level.battlechatter.eventstrings["rvnv"]["right"] = ["b035_defz_brgt"];
+    level.battlechatter.eventstrings["rvnv"]["high"] = ["b035_defz_bhgh"];
+    level.battlechatter.eventstrings["rvnv"]["order_attack"] = ["b035_defz_batk"];
+    level.battlechatter.eventstrings["rvnv"]["using_smoke"] = ["b035_defz_busm"];
+    level.battlechatter.eventstrings["rvnv"]["using_flash"] = ["b035_defz_bufl"];
+    level.battlechatter.eventstrings["rvnv"]["using_grenade"] = ["b035_defz_bugr"];
+    level.battlechatter.eventstrings["rvnv"]["using_molotov"] = ["b035_defz_buml"];
+    level.battlechatter.eventstrings["rvnv"]["reloading"] = ["b035_defz_brld"];
+    level.battlechatter.eventstrings["rvnv"]["moving"] = ["b035_defz_bmov"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_using_flash"] = ["b035_defz_befl"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_using_grenade"] = ["b035_defz_begr"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_using_molotov"] = ["b035_defz_beml"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_using_rpg"] = ["b035_defz_berp"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_attacking"] = ["b035_defz_beat"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_soldier"] = ["b035_defz_besd"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_soldiers"] = ["b035_defz_besm"];
+    level.battlechatter.eventstrings["rvnv"]["aquired_target"] = ["b035_defz_btac"];
+    level.battlechatter.eventstrings["rvnv"]["youre_exposed"] = ["b035_defz_bexp"];
+    level.battlechatter.eventstrings["rvnv"]["target_covered"] = ["b035_defz_btcv"];
+    level.battlechatter.eventstrings["rvnv"]["killfirm_enemy"] = ["b035_defz_bkfe"];
+    level.battlechatter.eventstrings["rvnv"]["killfirm_target"] = ["b035_defz_bkft"];
+    level.battlechatter.eventstrings["rvnv"]["killfirm_helo"] = ["b035_defz_bkfh"];
+    level.battlechatter.eventstrings["rvnv"]["praise"] = ["b035_defz_bprs"];
+    level.battlechatter.eventstrings["rvnv"]["wounded"] = ["b035_defz_bwnd"];
+    level.battlechatter.eventstrings["rvnv"]["enemy_sniper"] = ["b035_defz_besn"];
+    level.battlechatter.eventstrings["rvnv"]["checkfire"] = ["b035_defz_bchk"];
+    level.battlechatter.eventstrings["rvnv"]["reviver"] = ["b035_defz_brvg"];
+    level.battlechatter.eventstrings["jans"]["low_ammo"] = ["b017_exfa_blam"];
+    level.battlechatter.eventstrings["jans"]["left"] = ["b017_exfa_blft"];
+    level.battlechatter.eventstrings["jans"]["right"] = ["b017_exfa_brgt"];
+    level.battlechatter.eventstrings["jans"]["high"] = ["b017_exfa_bhgh"];
+    level.battlechatter.eventstrings["jans"]["order_attack"] = ["b017_exfa_batk"];
+    level.battlechatter.eventstrings["jans"]["using_smoke"] = ["b017_exfa_busm"];
+    level.battlechatter.eventstrings["jans"]["using_flash"] = ["b017_exfa_bufl"];
+    level.battlechatter.eventstrings["jans"]["using_grenade"] = ["b017_exfa_bugr"];
+    level.battlechatter.eventstrings["jans"]["using_molotov"] = ["b017_exfa_buml"];
+    level.battlechatter.eventstrings["jans"]["reloading"] = ["b017_exfa_brld"];
+    level.battlechatter.eventstrings["jans"]["moving"] = ["b017_exfa_bmov"];
+    level.battlechatter.eventstrings["jans"]["enemy_using_flash"] = ["b017_exfa_befl"];
+    level.battlechatter.eventstrings["jans"]["enemy_using_grenade"] = ["b017_exfa_begr"];
+    level.battlechatter.eventstrings["jans"]["enemy_using_molotov"] = ["b017_exfa_beml"];
+    level.battlechatter.eventstrings["jans"]["enemy_using_rpg"] = ["b017_exfa_berp"];
+    level.battlechatter.eventstrings["jans"]["enemy_attacking"] = ["b017_exfa_beat"];
+    level.battlechatter.eventstrings["jans"]["enemy_soldier"] = ["b017_exfa_besd"];
+    level.battlechatter.eventstrings["jans"]["enemy_soldiers"] = ["b017_exfa_besm"];
+    level.battlechatter.eventstrings["jans"]["aquired_target"] = ["b017_exfa_btac"];
+    level.battlechatter.eventstrings["jans"]["youre_exposed"] = ["b017_exfa_bexp"];
+    level.battlechatter.eventstrings["jans"]["target_covered"] = ["b017_exfa_btcv"];
+    level.battlechatter.eventstrings["jans"]["killfirm_enemy"] = ["b017_exfa_bkfe"];
+    level.battlechatter.eventstrings["jans"]["killfirm_target"] = ["b017_exfa_bkft"];
+    level.battlechatter.eventstrings["jans"]["killfirm_helo"] = ["b017_exfa_bkfh"];
+    level.battlechatter.eventstrings["jans"]["praise"] = ["b017_exfa_bprs"];
+    level.battlechatter.eventstrings["jans"]["wounded"] = ["b017_exfa_bwnd"];
+    level.battlechatter.eventstrings["jans"]["enemy_sniper"] = ["b017_exfa_besn"];
+    level.battlechatter.eventstrings["jans"]["checkfire"] = ["b017_exfa_bchk"];
+    level.battlechatter.eventstrings["jans"]["need_revive"] = ["b017_exfa_bdwn"];
+    level.battlechatter.eventstrings["jans"]["been_revived"] = ["b017_exfa_brvd"];
+    level.battlechatter.eventstrings["jans"]["reviver"] = ["b017_exfa_brvg"];
+    namespace_378f8281e2d12ced::addevent("need_revive", "need_revive", 0, 2, 5);
+    namespace_378f8281e2d12ced::addevent("been_revived", "been_revived", 0, 2, 5);
+    namespace_378f8281e2d12ced::addevent("reviver", "reviver", 0, 2, 5);
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1464
 // Size: 0xad
 function private function_425f70bba2ca4d6b() {
-    level namespace_7f0bcee5d45a1dea::add("on_agent_spawned", &function_7e2e3e062b49f13b);
+    level scripts/common/callbacks::add("on_agent_spawned", &function_7e2e3e062b49f13b);
     registersharedfunc("ai_mp_controller", "agentPers_getAgentPersData", &namespace_14d36171baccf528::agentpers_getagentpersdata);
     registersharedfunc("ai_mp_controller", "agentPers_setAgentPersData", &namespace_14d36171baccf528::agentpers_setagentpersdata);
-    registersharedfunc("ai_mp_controller", "handleDamageFeedback", &namespace_3e725f3cc58bddd3::handledamagefeedback);
+    registersharedfunc("ai_mp_controller", "handleDamageFeedback", &scripts/mp/damage::handledamagefeedback);
     registersharedfunc("vehicle_damage", "modifyVehicleDamage", &function_431dee4c36d7e3ba);
     level.agent_funcs["soldier"]["on_damaged"] = &namespace_daa149ca485fd50a::callbacksoldieragentdamaged;
-    level.agent_funcs["soldier"]["gametype_on_killed"] = &namespace_329d1a4521cd0e73::callbacksoldieragentgametypekilled;
+    level.agent_funcs["soldier"]["gametype_on_killed"] = &scripts/mp/mp_agent_damage::callbacksoldieragentgametypekilled;
     level.createrpgrepulsors = 0;
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1518
 // Size: 0x1be
@@ -185,14 +185,14 @@ function private function_7e2e3e062b49f13b(params) {
         if (is_equal(agent.agent_type, "actor_jup_ob_ally_ravenov_base")) {
             agent namespace_2fdc8e343bfb2334::function_848612e5b224425b("rvnv", "b035", "b035");
         }
-        agent thread namespace_3bbb5a98b932c46f::watchgrenadeusage();
+        agent thread scripts/mp/weapons::watchgrenadeusage();
         agent.var_8c5c47f81a1869e5 = &namespace_daa149ca485fd50a::function_7d0d24665d72f13c;
         agent.var_cd6a3a50f09688b9 = &namespace_daa149ca485fd50a::function_59ea6b2f800cb082;
-        agent.var_7e1971e4a9ec2cdc = 1;
+        agent.dontdamageriotshield = 1;
     }
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x16dd
 // Size: 0xe9
@@ -209,14 +209,14 @@ function private function_3043f74f8b90b7dd(agent) {
     agent.var_e89cb8048a26c2c5 = 0.7;
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x17cd
 // Size: 0xa8
 function private function_65162bac204e8044(agent) {
     agent.var_9aa77ab756fdca82 = 100;
     agent.var_43e2ad424676b8d4 = 60;
-    agent.var_3d1bbef280ea37b4 = 3000;
+    agent.paincooldown = 3000;
     agent.baseaccuracy = getdvarfloat(@"hash_a02664619d86b8c9", 0.85);
     agent.var_526f1dcf41e8b261 = getdvarfloat(@"hash_1adf88fd35fbac70", 5.8);
     agent.var_4268b42fc89d0be9 = 0.04;
@@ -224,7 +224,7 @@ function private function_65162bac204e8044(agent) {
     agent.var_e89cb8048a26c2c5 = 0.4;
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x187c
 // Size: 0x150
@@ -240,7 +240,7 @@ function private function_125032d40c0a1677(agent) {
     agent function_859a90c664dba240(1);
     agent function_136adff8f817fad6(0);
     if (function_ec3aea190c440d29(@"hash_e5a2fe52e7fd74d7")) {
-        agent.var_8790c077c95db752 = getdvarint(@"hash_e5a2fe52e7fd74d7");
+        agent.maxarmorhealth = getdvarint(@"hash_e5a2fe52e7fd74d7");
         agent.armorhealth = getdvarint(@"hash_e5a2fe52e7fd74d7");
     }
     if (function_ec3aea190c440d29(@"hash_bcd6c3f5ca11d056")) {
@@ -249,7 +249,7 @@ function private function_125032d40c0a1677(agent) {
     }
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x19d3
 // Size: 0x1e2
@@ -274,7 +274,7 @@ function private function_125033d40c0a18aa(agent) {
     agent function_859a90c664dba240(1);
     agent function_136adff8f817fad6(1);
     if (function_ec3aea190c440d29(@"hash_c8e0804febe485ce")) {
-        agent.var_8790c077c95db752 = getdvarint(@"hash_c8e0804febe485ce");
+        agent.maxarmorhealth = getdvarint(@"hash_c8e0804febe485ce");
         agent.armorhealth = getdvarint(@"hash_c8e0804febe485ce");
     }
     if (function_ec3aea190c440d29(@"hash_7366919330cee7b1")) {
@@ -283,7 +283,7 @@ function private function_125033d40c0a18aa(agent) {
     }
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1bbc
 // Size: 0x1d0
@@ -308,7 +308,7 @@ function private function_125034d40c0a1add(agent) {
     agent function_859a90c664dba240(1);
     agent function_136adff8f817fad6(1);
     if (function_ec3aea190c440d29(@"hash_4227d53e5aece55d")) {
-        agent.var_8790c077c95db752 = getdvarint(@"hash_4227d53e5aece55d");
+        agent.maxarmorhealth = getdvarint(@"hash_4227d53e5aece55d");
         agent.armorhealth = getdvarint(@"hash_4227d53e5aece55d");
     }
     if (function_ec3aea190c440d29(@"hash_ac59bb34c9d0f0bc")) {
@@ -317,7 +317,7 @@ function private function_125034d40c0a1add(agent) {
     }
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1d93
 // Size: 0xcc
@@ -344,18 +344,17 @@ function private function_431dee4c36d7e3ba(inflictor, objweapon, damage) {
     }
     if (isdefined(maxdamage)) {
         return min(damage, maxdamage);
-    } else {
-        return damage;
     }
+    return damage;
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e66
 // Size: 0x186
 function function_cf5321434f9b38c1(idamage, smeansofdeath, objweapon) {
     maxdamage = undefined;
-    invehicle = namespace_e47104b48662385b::isinvehicle();
+    invehicle = player_utility::isinvehicle();
     if (invehicle && isdefined(level.ob.var_bbdcdae3439d9cec)) {
         idamage = int(idamage * level.ob.var_bbdcdae3439d9cec);
     }
@@ -389,7 +388,7 @@ function function_cf5321434f9b38c1(idamage, smeansofdeath, objweapon) {
     return idamage;
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1ff4
 // Size: 0x8
@@ -397,7 +396,7 @@ function private function_d76746a809428932() {
     return "shadowcompany";
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2004
 // Size: 0x1b
@@ -405,7 +404,7 @@ function private function_5555a1ab2616c388() {
     function_f3bb4f4911a1beb2("player", "setIgnoredByMercs", "disguise", 1);
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2026
 // Size: 0x1a
@@ -413,7 +412,7 @@ function private function_1aa05b7937a3b1a2() {
     function_f3bb4f4911a1beb2("player", "setIgnoredByMercs", "disguise", 0);
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x2047
 // Size: 0x3
@@ -421,7 +420,7 @@ function private function_c3a8389891d2f901() {
     
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x2051
 // Size: 0x1ad
@@ -451,7 +450,7 @@ function private function_3a2ca530d33dbb7c() {
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2205
 // Size: 0x9b
@@ -460,13 +459,13 @@ function function_ef3da4a8b1880c27(spawntag) {
         firstplayer = level.players[0];
         playerforward = anglestoforward(firstplayer.angles);
         offsetposition = firstplayer.origin + playerforward * 100 + (0, 0, 10);
-        encounterid = namespace_614554f86e52695c::function_54da428ad4a96f2e("<unknown string>", offsetposition, 32, 0, 1, 0);
+        encounterid = namespace_614554f86e52695c::spawn_request("<unknown string>", offsetposition, 32, 0, 1, 0);
         function_d37068aac7785c04(encounterid, spawntag[0], 1);
         function_fc38783a3da0bc71(encounterid, 1);
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22a7
 // Size: 0x102
@@ -475,7 +474,7 @@ function function_bc8f27e3d1eef91e() {
         level endon("<unknown string>");
         setdevdvarifuninitialized(@"hash_f9e17cb98b253864", 0);
         var_4aedb83e4489153d = 1;
-        while (1) {
+        while (true) {
             if (int(getunarchiveddebugdvar(@"hash_f9e17cb98b253864", "<unknown string>")) > 0 && var_4aedb83e4489153d) {
                 var_4aedb83e4489153d = 0;
                 setdvar(@"hash_f51f34be092e6691", 1);
@@ -495,65 +494,65 @@ function function_bc8f27e3d1eef91e() {
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23b0
 // Size: 0x1b2
 function function_d170903981c617de(player) {
     /#
         var_557c51a81144b954 = 0;
-        if (isdefined(player.var_83abcb9b3a5dbe24) && isdefined(player.var_83abcb9b3a5dbe24.var_6ff9941006fb29cd)) {
-            var_557c51a81144b954 = player.var_83abcb9b3a5dbe24.var_6ff9941006fb29cd.size;
+        if (isdefined(player.activities) && isdefined(player.activities.var_6ff9941006fb29cd)) {
+            var_557c51a81144b954 = player.activities.var_6ff9941006fb29cd.size;
         }
         function_5c0adb7451b9af7a(player, "<unknown string>" + var_557c51a81144b954 + "<unknown string>");
         if (var_557c51a81144b954 > 0) {
-            foreach (var_85afed0f5a7270c4, var_3433cfdaabb0b969 in player.var_83abcb9b3a5dbe24.var_6ff9941006fb29cd) {
-                var_e8b975085b1b28e3 = player.var_83abcb9b3a5dbe24.var_6346961d07f668fe == var_85afed0f5a7270c4;
-                var_e6013eac45290cab = level.var_83abcb9b3a5dbe24.instances[var_85afed0f5a7270c4];
-                if (isdefined(var_e6013eac45290cab)) {
-                    var_18a891d44600ee10 = var_e6013eac45290cab.var_626b45032e1892da;
-                    var_af0662d6485d5d58 = var_e6013eac45290cab.type;
+            foreach (var_85afed0f5a7270c4, var_3433cfdaabb0b969 in player.activities.var_6ff9941006fb29cd) {
+                var_e8b975085b1b28e3 = player.activities.var_6346961d07f668fe == var_85afed0f5a7270c4;
+                activityinstance = level.activities.instances[var_85afed0f5a7270c4];
+                if (isdefined(activityinstance)) {
+                    activitytag = activityinstance.varianttag;
+                    activitytype = activityinstance.type;
                     var_8a82ef4a9c0fccc2 = 0;
-                    if (isdefined(var_e6013eac45290cab.var_741c4f3150e30c83)) {
-                        var_8a82ef4a9c0fccc2 = function_93587d5ba6247f36(var_e6013eac45290cab.var_741c4f3150e30c83, player);
+                    if (isdefined(activityinstance.var_741c4f3150e30c83)) {
+                        var_8a82ef4a9c0fccc2 = function_93587d5ba6247f36(activityinstance.var_741c4f3150e30c83, player);
                     }
-                    function_5c0adb7451b9af7a(player, "<unknown string>" + var_18a891d44600ee10 + "<unknown string>" + var_af0662d6485d5d58 + "<unknown string>" + "<unknown string>" + var_e8b975085b1b28e3 + "<unknown string>" + "<unknown string>" + var_8a82ef4a9c0fccc2 + "<unknown string>");
+                    function_5c0adb7451b9af7a(player, "<unknown string>" + activitytag + "<unknown string>" + activitytype + "<unknown string>" + "<unknown string>" + var_e8b975085b1b28e3 + "<unknown string>" + "<unknown string>" + var_8a82ef4a9c0fccc2 + "<unknown string>");
                 }
             }
         }
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2569
 // Size: 0x5f
 function function_629369a1a5cd2636(text) {
     /#
-        var_a814ad7efd8815fc = int(getdvar(@"hash_6e561210fe14f90c", 0));
-        if (var_a814ad7efd8815fc > 0) {
+        shouldlog = int(getdvar(@"hash_6e561210fe14f90c", 0));
+        if (shouldlog > 0) {
             if (isstartstr(text, "<unknown string>")) {
                 println("<unknown string>" + text);
-            } else {
-                println("<unknown string>" + text);
+                return;
             }
+            println("<unknown string>" + text);
         }
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x25cf
 // Size: 0x4c
-function function_f7e877aa7e97d952(var_e6013eac45290cab, text) {
+function function_f7e877aa7e97d952(activityinstance, text) {
     /#
-        if (isdefined(var_e6013eac45290cab) && isdefined(var_e6013eac45290cab.var_626b45032e1892da)) {
-            function_629369a1a5cd2636("<unknown string>" + var_e6013eac45290cab.var_626b45032e1892da + "<unknown string>" + text);
+        if (isdefined(activityinstance) && isdefined(activityinstance.varianttag)) {
+            function_629369a1a5cd2636("<unknown string>" + activityinstance.varianttag + "<unknown string>" + text);
         }
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2622
 // Size: 0x46
@@ -565,14 +564,14 @@ function function_5c0adb7451b9af7a(player, text) {
     #/
 }
 
-// Namespace namespace_46b675bc0fc6663b/namespace_27209657e8dae5bb
+// Namespace ob_humans / namespace_27209657e8dae5bb
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x266f
 // Size: 0x76
-function function_dd0ceeddc603cb3e(player, var_e6013eac45290cab, text) {
+function function_dd0ceeddc603cb3e(player, activityinstance, text) {
     /#
-        if (isdefined(player) && isplayer(player) && isdefined(var_e6013eac45290cab) && isdefined(var_e6013eac45290cab.var_626b45032e1892da)) {
-            function_629369a1a5cd2636("<unknown string>" + player.clientid + "<unknown string>" + var_e6013eac45290cab.var_626b45032e1892da + "<unknown string>" + text);
+        if (isdefined(player) && isplayer(player) && isdefined(activityinstance) && isdefined(activityinstance.varianttag)) {
+            function_629369a1a5cd2636("<unknown string>" + player.clientid + "<unknown string>" + activityinstance.varianttag + "<unknown string>" + text);
         }
     #/
 }

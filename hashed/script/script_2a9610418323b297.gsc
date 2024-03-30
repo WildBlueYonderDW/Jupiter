@@ -5,7 +5,7 @@
 
 #namespace namespace_e893c4b348cb7bdc;
 
-// Namespace namespace_e893c4b348cb7bdc/namespace_9bd3ffe069c7fbeb
+// Namespace namespace_e893c4b348cb7bdc / namespace_9bd3ffe069c7fbeb
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x195
 // Size: 0x19
@@ -13,7 +13,7 @@ function autoexec main() {
     function_df7ab5b0f898e8bc(function_1823ff50bb28148d("laser_charge"), &init);
 }
 
-// Namespace namespace_e893c4b348cb7bdc/namespace_9bd3ffe069c7fbeb
+// Namespace namespace_e893c4b348cb7bdc / namespace_9bd3ffe069c7fbeb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0xa0
@@ -21,12 +21,12 @@ function private init() {
     if (issharedfuncdefined("killstreak", "registerKillstreak")) {
         [[ getsharedfunc("killstreak", "registerKillstreak") ]]("laser_charge", &function_8d078aa4eb392280);
     }
-    bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["laser_charge"];
+    bundle = level.streakglobals.streakbundles["laser_charge"];
     weapon = isdefined(bundle) && isdefined(bundle.var_69539d680440246) ? bundle.var_69539d680440246 : "super_laser_charge_mp";
     function_a41e3a211a9e37a4("laser_charge", weapon, #"low");
 }
 
-// Namespace namespace_e893c4b348cb7bdc/namespace_9bd3ffe069c7fbeb
+// Namespace namespace_e893c4b348cb7bdc / namespace_9bd3ffe069c7fbeb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x25c
 // Size: 0xf9
@@ -44,7 +44,7 @@ function private function_8d078aa4eb392280(streakinfo) {
                 return 0;
             }
         }
-        bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["laser_charge"];
+        bundle = level.streakglobals.streakbundles["laser_charge"];
         result = function_f3bb4f4911a1beb2("super_laser_charge", "tryUse", bundle);
         if (istrue(result)) {
             self notify("disable_super_speed_vfx");
@@ -53,11 +53,10 @@ function private function_8d078aa4eb392280(streakinfo) {
             self notify("enable_super_speed_vfx");
         }
         return result;
-    } else {
-        /#
-            assertmsg("The super version of laser charge is not initialized.");
-        #/
-        return 0;
     }
+    /#
+        assertmsg("The super version of laser charge is not initialized.");
+    #/
+    return 0;
 }
 

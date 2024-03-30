@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_68d062fad885eeb3;
 
-// Namespace namespace_68d062fad885eeb3/namespace_689de5b2bc60d21a
+// Namespace namespace_68d062fad885eeb3 / namespace_689de5b2bc60d21a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe7
 // Size: 0x34
@@ -12,7 +12,7 @@ function function_2fce2f81588a2462() {
     level.var_bf8aa3f39f981625[level.var_bf8aa3f39f981625.size] = &function_56bc2530b5374d3e;
 }
 
-// Namespace namespace_68d062fad885eeb3/namespace_689de5b2bc60d21a
+// Namespace namespace_68d062fad885eeb3 / namespace_689de5b2bc60d21a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x122
 // Size: 0x3f
@@ -26,7 +26,7 @@ function function_56bc2530b5374d3e() {
     self.damage_functions[self.damage_functions.size] = &function_4142a252055b545a;
 }
 
-// Namespace namespace_68d062fad885eeb3/namespace_689de5b2bc60d21a
+// Namespace namespace_68d062fad885eeb3 / namespace_689de5b2bc60d21a
 // Params 10, eflags: 0x4
 // Checksum 0x0, Offset: 0x168
 // Size: 0xec
@@ -52,7 +52,7 @@ function private function_4142a252055b545a(damage, attacker, direction_vec, poin
     self.health = self.health + int(heal_amount);
 }
 
-// Namespace namespace_68d062fad885eeb3/namespace_689de5b2bc60d21a
+// Namespace namespace_68d062fad885eeb3 / namespace_689de5b2bc60d21a
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x25b
 // Size: 0xb5

@@ -7,7 +7,7 @@
 
 #namespace audio;
 
-// Namespace audio/namespace_6d5a878b89a00070
+// Namespace audio / scripts/mp/audio
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed
 // Size: 0x3a
@@ -15,12 +15,12 @@ function init_audio() {
     if (!isdefined(level.audio)) {
         level.audio = spawnstruct();
     }
-    function_6dca6f439ca0a74f();
+    snd_init();
     init_reverb();
     level.onplayerconnectaudioinit = &onplayerconnectaudioinit;
 }
 
-// Namespace audio/namespace_6d5a878b89a00070
+// Namespace audio / scripts/mp/audio
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12e
 // Size: 0x3f
@@ -32,7 +32,7 @@ function onplayerconnectaudioinit() {
     self setsoundsubmix("hit_indicator_hipfire");
 }
 
-// Namespace audio/namespace_6d5a878b89a00070
+// Namespace audio / scripts/mp/audio
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x174
 // Size: 0x20
@@ -40,7 +40,7 @@ function init_reverb() {
     add_reverb("default", "generic", 0.15, 0.9, 2);
 }
 
-// Namespace audio/namespace_6d5a878b89a00070
+// Namespace audio / scripts/mp/audio
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19b
 // Size: 0x9c
@@ -63,7 +63,7 @@ function add_reverb(name, type, wetlevel, drylevel, fadetime) {
     level.audio.reverb_settings[name] = reverb;
 }
 
-// Namespace audio/namespace_6d5a878b89a00070
+// Namespace audio / scripts/mp/audio
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x170
@@ -96,7 +96,7 @@ function is_roomtype_valid(type) {
         case #"hash_ed5b5dc2ce86f143":
         case #"hash_f1a23e97c35685da":
         case #"hash_f67bf6cfc4a6bc7a":
-            
+            return;
         default:
             /#
                 assertmsg(type + "<unknown string>");
@@ -106,15 +106,15 @@ function is_roomtype_valid(type) {
     #/
 }
 
-// Namespace audio/namespace_6d5a878b89a00070
+// Namespace audio / scripts/mp/audio
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b5
 // Size: 0x63
 function apply_reverb(name) {
     if (!isdefined(level.audio.reverb_settings[name])) {
         reverb = level.audio.reverb_settings["default"];
-    } else {
-        reverb = level.audio.reverb_settings[name];
+        return;
     }
+    reverb = level.audio.reverb_settings[name];
 }
 

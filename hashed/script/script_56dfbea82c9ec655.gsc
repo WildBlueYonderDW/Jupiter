@@ -6,7 +6,7 @@
 
 #namespace active_env;
 
-// Namespace active_env/namespace_51d054e3b355f17b
+// Namespace active_env / namespace_51d054e3b355f17b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15c
 // Size: 0x183
@@ -17,7 +17,7 @@ function function_ad6fde6a4dc38d62() {
         switch (var_4c561d08d8d8ace4.targetname) {
         case #"hash_f6ab701adbab8ee":
             var_4c561d08d8d8ace4.var_684fe18b13b38981 = 1.1;
-            var_4c561d08d8d8ace4 thread function_76e800296b2f9057();
+            var_4c561d08d8d8ace4 thread diving_board();
             break;
         case #"hash_b53ae7f76fa3f3ed":
             var_4c561d08d8d8ace4 thread namespace_91faf49cc72f0b47::function_b8554b5efa2488b0();
@@ -41,15 +41,15 @@ function function_ad6fde6a4dc38d62() {
     }
 }
 
-// Namespace active_env/namespace_51d054e3b355f17b
+// Namespace active_env / namespace_51d054e3b355f17b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e6
 // Size: 0x15
-function function_76e800296b2f9057() {
-    trigger::makeenterexittrigger(self, &function_d6276ad6a106ac3e, &function_367dc07c86026968);
+function diving_board() {
+    trigger::makeenterexittrigger(self, &function_d6276ad6a106ac3e, &diving_board_exit);
 }
 
-// Namespace active_env/namespace_51d054e3b355f17b
+// Namespace active_env / namespace_51d054e3b355f17b
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x302
 // Size: 0xb5
@@ -69,17 +69,17 @@ function private function_d6276ad6a106ac3e(e_player, trigger) {
     }
 }
 
-// Namespace active_env/namespace_51d054e3b355f17b
+// Namespace active_env / namespace_51d054e3b355f17b
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x3be
 // Size: 0x2f
-function private function_367dc07c86026968(e_player, trigger) {
+function private diving_board_exit(e_player, trigger) {
     if (isplayer(e_player) && isalive(e_player)) {
         e_player notify("diving_board_exited");
     }
 }
 
-// Namespace active_env/namespace_51d054e3b355f17b
+// Namespace active_env / namespace_51d054e3b355f17b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0x84
@@ -94,7 +94,7 @@ function function_9b6351833e5d2963() {
     }
 }
 
-// Namespace active_env/namespace_51d054e3b355f17b
+// Namespace active_env / namespace_51d054e3b355f17b
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x47f
 // Size: 0x103
@@ -109,13 +109,11 @@ function private function_c68de1abc965cc8(s_dest, var_24ad452813ef0b6f) {
     if (isdefined(s_dest.script_parameters)) {
         n_move_time = float(s_dest.script_parameters);
     }
-    var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate("pelvis", 1);
-    while (isdefined(var_6621a39da07e6c42) && var_6621a39da07e6c42 == "visible") {
+    for (var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate("pelvis", 1); isdefined(var_6621a39da07e6c42) && var_6621a39da07e6c42 == "visible"; var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate("pelvis", 1)) {
         self moveto(self.origin + var_bb66384ea5dfaee3 * var_7856bbc39a600358, n_move_time, 0, 0);
         wait(n_move_time);
         self moveto(self.origin + var_bb66384ea5dfaee3 * var_7856bbc39a600358 * -1, n_move_time, 0, 0);
         wait(n_move_time);
-        var_6621a39da07e6c42 = var_24ad452813ef0b6f getscriptablepartstate("pelvis", 1);
     }
 }
 

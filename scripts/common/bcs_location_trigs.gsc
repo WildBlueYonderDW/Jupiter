@@ -4,7 +4,7 @@
 
 #namespace namespace_5ed1b2403729301b;
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21bc
 // Size: 0x5c
@@ -22,7 +22,7 @@ function bcs_location_trigs_init() {
     anim.locationlastcallouttimes = [];
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x221f
 // Size: 0x20c
@@ -32,7 +32,7 @@ function bcs_trigs_assign_aliases() {
     #/
     anim.bcs_locations = [];
     trigs = getentarray("trigger_multiple", "code_classname");
-    var_a4162f1221e6a6 = [];
+    location_triggers = [];
     foreach (trig in trigs) {
         if (!issubstr(trig.classname, "trigger_multiple_bcs")) {
             continue;
@@ -40,53 +40,53 @@ function bcs_trigs_assign_aliases() {
         if (isdefined(level.mapname) && level.mapname == "mp_crash2" && trig.classname == "trigger_multiple_bcs_dronecrash") {
             continue;
         }
-        var_a4162f1221e6a6[var_a4162f1221e6a6.size] = trig;
+        location_triggers[location_triggers.size] = trig;
         if (!isdefined(level.bcs_location_mappings[trig.classname])) {
             /#
                 println("barrel" + trig.classname + "trigger_multiple_bcs_sp_roof" + trig.origin);
             #/
+            continue;
+        }
+        if (trig.classname == "trigger_multiple_bcs_kvp") {
+            /#
+                assertex(isdefined(trig.script_location), "KVP volumes need to set their location/soundalias using the 'script_location' KVP.");
+            #/
+            locationstr = trig.script_location;
         } else {
-            if (trig.classname == "trigger_multiple_bcs_kvp") {
-                /#
-                    assertex(isdefined(trig.script_location), "KVP volumes need to set their location/soundalias using the 'script_location' KVP.");
-                #/
-                var_7ff1bf768556a2bd = trig.script_location;
-            } else {
-                /#
-                    assertex(!isdefined(trig.script_location), "script_location is only supported on 'KVP' location volumes not, " + trig.classname);
-                #/
-                var_7ff1bf768556a2bd = level.bcs_location_mappings[trig.classname];
-            }
-            aliases = parselocationaliases(var_7ff1bf768556a2bd);
-            if (aliases.size > 1) {
-                aliases = array_randomize(aliases);
-            }
-            trig.locationaliases = aliases;
-            if (trig.spawnflags & 1) {
-                trig.islandmark = 1;
-            }
+            /#
+                assertex(!isdefined(trig.script_location), "script_location is only supported on 'KVP' location volumes not, " + trig.classname);
+            #/
+            locationstr = level.bcs_location_mappings[trig.classname];
+        }
+        aliases = parselocationaliases(locationstr);
+        if (aliases.size > 1) {
+            aliases = array_randomize(aliases);
+        }
+        trig.locationaliases = aliases;
+        if (trig.spawnflags & 1) {
+            trig.islandmark = 1;
         }
     }
-    anim.bcs_locations = var_a4162f1221e6a6;
+    anim.bcs_locations = location_triggers;
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2432
 // Size: 0x23
-function parselocationaliases(var_7ff1bf768556a2bd) {
-    locationaliases = strtok(var_7ff1bf768556a2bd, " ");
+function parselocationaliases(locationstr) {
+    locationaliases = strtok(locationstr, " ");
     return locationaliases;
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x245d
 // Size: 0x122
 function add_bcs_location_mapping(classname, alias) {
     if (isdefined(level.bcs_location_mappings[classname])) {
-        var_ffed1da1387e6d58 = level.bcs_location_mappings[classname];
-        var_c4ca02f647e105bb = parselocationaliases(var_ffed1da1387e6d58);
+        existing = level.bcs_location_mappings[classname];
+        var_c4ca02f647e105bb = parselocationaliases(existing);
         aliases = parselocationaliases(alias);
         foreach (a in aliases) {
             foreach (e in var_c4ca02f647e105bb) {
@@ -95,14 +95,14 @@ function add_bcs_location_mapping(classname, alias) {
                 }
             }
         }
-        var_ffed1da1387e6d58 = var_ffed1da1387e6d58 + " " + alias;
-        level.bcs_location_mappings[classname] = var_ffed1da1387e6d58;
-    } else {
-        level.bcs_location_mappings[classname] = alias;
+        existing = existing + " " + alias;
+        level.bcs_location_mappings[classname] = existing;
+        return;
     }
+    level.bcs_location_mappings[classname] = alias;
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2586
 // Size: 0x3c
@@ -112,12 +112,12 @@ function bcs_location_trigger_mapping() {
         sp();
         sp_embassy();
         sp_lab();
-    } else {
-        mp_callouts();
+        return;
     }
+    mp_callouts();
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25c9
 // Size: 0x8a5
@@ -254,7 +254,7 @@ function sp() {
     add_bcs_location_mapping("trigger_multiple_bcs_sp_van", "van");
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e75
 // Size: 0x69
@@ -267,7 +267,7 @@ function sp_embassy() {
     add_bcs_location_mapping("trigger_multiple_bcs_sp_embassy_pillars", "pillars");
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ee5
 // Size: 0x36
@@ -277,7 +277,7 @@ function sp_lab() {
     add_bcs_location_mapping("trigger_multiple_bcs_sp_lab_object_gastanks", "gastanks");
 }
 
-// Namespace namespace_5ed1b2403729301b/namespace_bea06470f299ab84
+// Namespace namespace_5ed1b2403729301b / scripts/common/bcs_location_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f22
 // Size: 0x476

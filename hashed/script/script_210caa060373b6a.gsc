@@ -10,7 +10,7 @@
 
 #namespace setup;
 
-// Namespace setup/namespace_bbb55abdbe98026a
+// Namespace setup / namespace_bbb55abdbe98026a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb
 // Size: 0x145
@@ -18,7 +18,7 @@ function setupagent(taskid) {
     if (istrue(self.bagentinitialized)) {
         return anim.success;
     }
-    namespace_17c3bf83be64b180::soldier_init_common();
+    scripts/aitypes/combat::soldier_init_common();
     self.goalradius = 480;
     self.goalheight = 1024;
     self.moveplaybackrate = 1;
@@ -33,8 +33,8 @@ function setupagent(taskid) {
     self.fnplaceweaponon = &namespace_223959d3e5206cfb::placeweaponon;
     self.fndropweapon = &namespace_223959d3e5206cfb::dropaiweapon;
     self.fnstealthgotonode = &namespace_30928b2d56e819f::go_to_node;
-    namespace_58609e68adef6b3d::function_3aba5f22b60d37f5();
-    namespace_34bf5965727c0922::setupsoldierdefaults();
+    scripts/asm/soldier/patrol::function_3aba5f22b60d37f5();
+    scripts/asm/shared/utility::setupsoldierdefaults();
     self.dropweapon = 0;
     thread default_weaponsetup();
     thread handledeathcleanup();
@@ -47,7 +47,7 @@ function setupagent(taskid) {
     return anim.success;
 }
 
-// Namespace setup/namespace_bbb55abdbe98026a
+// Namespace setup / namespace_bbb55abdbe98026a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x218
 // Size: 0x2c
@@ -57,7 +57,7 @@ function function_40150623eb9f4ea2(taskid) {
     self.var_98add129a7ecb962 = 0;
 }
 
-// Namespace setup/namespace_bbb55abdbe98026a
+// Namespace setup / namespace_bbb55abdbe98026a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24b
 // Size: 0x19

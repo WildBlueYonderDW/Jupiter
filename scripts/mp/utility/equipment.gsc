@@ -6,12 +6,12 @@
 
 #namespace equipment;
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x343
 // Size: 0x10f
 function get_mine_ignore_list() {
-    ignorelist = [0:self];
+    ignorelist = [self];
     if (isdefined(level.dynamicladders)) {
         foreach (struct in level.dynamicladders) {
             ignorelist[ignorelist.size] = struct.ents[0];
@@ -30,13 +30,13 @@ function get_mine_ignore_list() {
     return ignorelist;
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45a
 // Size: 0x44b
-function get_sticky_grenade_destination(grenade, var_f432e8f2c3b65bad, var_76831d64528b6d31, var_8df3ff6d9db28011, fusetime, data) {
+function get_sticky_grenade_destination(grenade, gunangles, speedforward, speedup, fusetime, data) {
     /#
-        assertex(var_76831d64528b6d31 != 0 && var_8df3ff6d9db28011 != 0, "get_sticky_grenade_destination() speedForward and speedUp cannot both be zero.");
+        assertex(speedforward != 0 && speedup != 0, "get_sticky_grenade_destination() speedForward and speedUp cannot both be zero.");
     #/
     grenade endon("death");
     if (!isdefined(data)) {
@@ -52,7 +52,7 @@ function get_sticky_grenade_destination(grenade, var_f432e8f2c3b65bad, var_76831
         data.amortize = 1;
     }
     if (!isdefined(data.ignorelist)) {
-        data.ignorelist = [0:grenade, 1:grenade.owner];
+        data.ignorelist = [grenade, grenade.owner];
     }
     if (!isdefined(data.ignorclutter)) {
         data.ignoreclutter = 1;
@@ -69,19 +69,19 @@ function get_sticky_grenade_destination(grenade, var_f432e8f2c3b65bad, var_76831
     /#
         assertex(data.divisions > 0, "get_sticky_grenade_destination() .divisions must be greater than zero.");
     #/
-    var_46bccf24774ba912 = data.maxtime / data.divisions;
+    steptime = data.maxtime / data.divisions;
     times[0] = 0;
     positions[0] = grenade.origin;
     var_cbe776efc22487c7 = data.divisions;
-    dirforward = anglestoforward(var_f432e8f2c3b65bad);
-    var_6dea3f838287bded = (0, 0, 1);
-    vel = dirforward * var_76831d64528b6d31 + var_6dea3f838287bded * var_8df3ff6d9db28011;
-    var_71b049ff6296dc2f = var_6dea3f838287bded * vectordot(var_6dea3f838287bded, vel);
+    dirforward = anglestoforward(gunangles);
+    dirup = (0, 0, 1);
+    vel = dirforward * speedforward + dirup * speedup;
+    var_71b049ff6296dc2f = dirup * vectordot(dirup, vel);
     var_60cecc5d1218a89e = vel - var_71b049ff6296dc2f;
     for (i = 1; i < data.divisions; i++) {
         prevtime = times[i - 1];
         prevposition = positions[i - 1];
-        nexttime = i * var_46bccf24774ba912;
+        nexttime = i * steptime;
         var_3e6b57d717b688d8 = var_60cecc5d1218a89e * nexttime;
         var_46de56d5eb869951 = var_71b049ff6296dc2f * nexttime + 0.5 * (0, 0, -800) * nexttime * nexttime;
         nextposition = positions[0] + var_3e6b57d717b688d8 + var_46de56d5eb869951;
@@ -99,10 +99,10 @@ function get_sticky_grenade_destination(grenade, var_f432e8f2c3b65bad, var_76831
             var_ec7b20b1054d5d98 = nextposition - prevposition;
             var_5805327f64d62d38 = length(var_ec7b20b1054d5d98);
             var_35ebf7955ec217cf = var_ec7b20b1054d5d98 / var_5805327f64d62d38;
-            var_75c0b9c719a5fc05 = prevposition - data.destination;
-            var_59d191507790c7c9 = vectordot(var_35ebf7955ec217cf, var_75c0b9c719a5fc05);
+            prevtodest = prevposition - data.destination;
+            var_59d191507790c7c9 = vectordot(var_35ebf7955ec217cf, prevtodest);
             var_fb921beb20aa928d = clamp(var_59d191507790c7c9 / var_5805327f64d62d38, 0, 1);
-            data.destinationtime = prevtime + var_46bccf24774ba912 * var_fb921beb20aa928d;
+            data.destinationtime = prevtime + steptime * var_fb921beb20aa928d;
             break;
         } else if (i == data.divisions - 1) {
             data.destination = nextposition;
@@ -117,21 +117,21 @@ function get_sticky_grenade_destination(grenade, var_f432e8f2c3b65bad, var_76831
     return data;
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8ad
 // Size: 0x94
-function get_grenade_cast_contents(var_aafb624f1dd4f653) {
+function get_grenade_cast_contents(includeplayers) {
     contents = undefined;
-    if (istrue(var_aafb624f1dd4f653)) {
-        contents = physics_createcontents([0:"physicscontents_missileclip", 1:"physicscontents_item", 2:"physicscontents_vehicle", 3:"physicscontents_glass", 4:"physicscontents_water", 5:"physicscontents_characterproxy"]);
+    if (istrue(includeplayers)) {
+        contents = physics_createcontents(["physicscontents_missileclip", "physicscontents_item", "physicscontents_vehicle", "physicscontents_glass", "physicscontents_water", "physicscontents_characterproxy"]);
     } else {
-        contents = physics_createcontents([0:"physicscontents_missileclip", 1:"physicscontents_item", 2:"physicscontents_vehicle", 3:"physicscontents_glass", 4:"physicscontents_water"]);
+        contents = physics_createcontents(["physicscontents_missileclip", "physicscontents_item", "physicscontents_vehicle", "physicscontents_glass", "physicscontents_water"]);
     }
     return contents;
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x949
 // Size: 0x61f
@@ -179,19 +179,19 @@ function plant(grenade, data) {
     var_6eb1ccfdf22d82b7 = 0;
     position = data.notifyorigin;
     normal = data.notifynormal;
-    var_bf8e5f003146af44 = data.notifyentity;
+    linkedparent = data.notifyentity;
     stuck = data.notifyhit;
     angles = undefined;
     if (!istrue(stuck)) {
         position = data.calcorigin;
         normal = data.calcnormal;
-        var_bf8e5f003146af44 = data.calcentity;
+        linkedparent = data.calcentity;
         stuck = data.calchit;
-        if (istrue(stuck) && isdefined(var_bf8e5f003146af44) && var_bf8e5f003146af44 getnonstick()) {
+        if (istrue(stuck) && isdefined(linkedparent) && linkedparent getnonstick()) {
             stuck = undefined;
         }
         contents = get_grenade_cast_contents(0);
-        ignorelist = [0:grenade];
+        ignorelist = [grenade];
         caststart = self geteye() - (0, 0, 30);
         castend = caststart + anglestoforward(self getplayerangles(1)) * 20;
         results = physics_raycast(caststart, castend, contents, ignorelist, 0, "physicsquery_closest", 1);
@@ -232,7 +232,7 @@ function plant(grenade, data) {
         if (!isdefined(contents)) {
             contents = get_grenade_cast_contents();
         }
-        ignorelist = [0:grenade];
+        ignorelist = [grenade];
         caststart = grenade.releaseownerorigin + (0, 0, 1);
         castend = caststart + (0, 0, -1 * data.plantmaxdistbelowownerfeet);
         results = physics_raycast(caststart, castend, contents, ignorelist, 1, "physicsquery_closest", 1);
@@ -240,7 +240,7 @@ function plant(grenade, data) {
             position = results[0]["position"];
             normal = results[0]["normal"];
             if (isdefined(normal) && vectordot(normal, (0, 0, 1)) < data.plantnormalcos) {
-                return 0;
+                return false;
             }
             var_28b3f77bb0070f33 = grenade.releaseownerangles * (0, 1, 0);
             if (isdefined(normal)) {
@@ -250,14 +250,14 @@ function plant(grenade, data) {
                 angles = var_28b3f77bb0070f33;
             }
             position = position + anglestoup(angles) * data.plantoffsetz;
-            var_bf8e5f003146af44 = results[0]["entity"];
+            linkedparent = results[0]["entity"];
             grenade dontinterpolate();
             grenade.origin = position;
             grenade.angles = angles;
             /#
             #/
         } else {
-            return 0;
+            return false;
         }
     } else {
         if (!isdefined(angles)) {
@@ -276,13 +276,13 @@ function plant(grenade, data) {
         /#
         #/
     }
-    if (isdefined(var_bf8e5f003146af44)) {
-        grenade linkto(var_bf8e5f003146af44);
+    if (isdefined(linkedparent)) {
+        grenade linkto(linkedparent);
     }
-    return 1;
+    return true;
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf70
 // Size: 0x44
@@ -296,7 +296,7 @@ function plant_watch_stuck(grenade, data) {
     return data;
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfbc
 // Size: 0x7f
@@ -310,7 +310,7 @@ function plant_watch_stuck_notify(grenade, data) {
     data notify("start_race");
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1042
 // Size: 0xad
@@ -323,7 +323,7 @@ function plant_watch_stuck_calculate(grenade, data) {
     data.calchit = data.destinationhit;
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10f6
 // Size: 0x2f
@@ -333,7 +333,7 @@ function plant_watch_stuck_timeout(grenade, data) {
     data notify("start_race");
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x112c
 // Size: 0x96
@@ -351,13 +351,13 @@ function plant_clamp_angles(angles, data) {
     return (pitch, yaw, roll);
 }
 
-// Namespace equipment/namespace_ff64cf6a607bc089
+// Namespace equipment / scripts/mp/utility/equipment
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11ca
 // Size: 0x63
 function watch_flight_collision() {
     original_pos = self.origin;
-    while (1) {
+    while (true) {
         platform = self waittill("touching_platform");
         if (isdefined(platform) && self istouching(platform) && self.origin[2] - original_pos[2] > 12) {
             self notify("collision_with_platform");

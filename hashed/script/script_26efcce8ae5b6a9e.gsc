@@ -6,7 +6,7 @@
 
 #namespace ob_seismic_refractor;
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x172
 // Size: 0x6
@@ -15,7 +15,7 @@ function function_8086d05fcf37c41e() {
     #/
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x17b
@@ -27,10 +27,10 @@ function spawn_refractor(spawn_struct, var_cd74e8066ff626a6, var_c974765ba1e28e9
         var_c974765ba1e28e93 = "jup_hacking_device_ob";
     }
     if (!isdefined(level.scriptable_notify_callback_funcs["refractor_activated"]) || !array_contains(level.scriptable_notify_callback_funcs["refractor_activated"], &function_aa84440f79224493)) {
-        namespace_17c25f0877bfb620::scriptable_addnotifycallback("refractor_activated", &function_aa84440f79224493);
+        scripts/engine/scriptable::scriptable_addnotifycallback("refractor_activated", &function_aa84440f79224493);
     }
     if (!isdefined(level.scriptable_notify_callback_funcs["refractor_hammer"]) || !array_contains(level.scriptable_notify_callback_funcs["refractor_hammer"], &function_81edae2f148e254e)) {
-        namespace_17c25f0877bfb620::scriptable_addnotifycallback("refractor_hammer", &function_81edae2f148e254e);
+        scripts/engine/scriptable::scriptable_addnotifycallback("refractor_hammer", &function_81edae2f148e254e);
     }
     refractor = spawnscriptable(var_cd74e8066ff626a6, spawn_struct.origin, spawn_struct.angles);
     refractor.hammer = spawnscriptable("ob_seismic_refractor_hammer", spawn_struct.origin, spawn_struct.angles);
@@ -44,7 +44,7 @@ function spawn_refractor(spawn_struct, var_cd74e8066ff626a6, var_c974765ba1e28e9
     return refractor;
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x302
 // Size: 0x2b
@@ -54,7 +54,7 @@ function function_d5c87e3695f5b16(callback) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x334
 // Size: 0x2b
@@ -64,7 +64,7 @@ function function_d290ab656c9cd6e2(callback) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x366
 // Size: 0x2b
@@ -74,7 +74,7 @@ function function_3c5ad201440cf164(callback) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x398
 // Size: 0x2b
@@ -84,7 +84,7 @@ function function_9cdaad2239acc1fc(callback) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ca
 // Size: 0x2b
@@ -94,7 +94,7 @@ function function_938ec5691a0782f8(callback) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0x6
@@ -103,7 +103,7 @@ function function_c31851330ac22c3c() {
     #/
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x409
 // Size: 0x60
@@ -113,7 +113,7 @@ function private function_cbbab99365ff243f(player) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x470
 // Size: 0x69
@@ -124,7 +124,7 @@ function private function_d62d4fe8da417ddd(player) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4e0
 // Size: 0x94
@@ -139,7 +139,7 @@ function private function_f083c5f7558264f4(player) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x57b
 // Size: 0xa1
@@ -155,7 +155,7 @@ function private function_7192fa51a97ee5e9(player) {
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x623
 // Size: 0x16
@@ -163,7 +163,7 @@ function private function_cf139bdff2bdcaad(func) {
     self.var_db4f5c48c8cb9a3c = func;
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x640
 // Size: 0x26
@@ -174,7 +174,7 @@ function function_e23f7699eb3f384e() {
     self freescriptable();
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x66d
 // Size: 0x6
@@ -183,21 +183,21 @@ function function_8a76744810afe9be() {
     #/
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x67a
 // Size: 0x7f
-function private function_aa84440f79224493(instance, var_4930cbce302555b1, param, var_535d9c3fdddab5a9) {
+function private function_aa84440f79224493(instance, notif, param, var_535d9c3fdddab5a9) {
     foreach (func in instance.var_aa599c358ec2ad3e) {
-        instance thread [[ func ]](instance, var_4930cbce302555b1, param, var_535d9c3fdddab5a9);
+        instance thread [[ func ]](instance, notif, param, var_535d9c3fdddab5a9);
     }
 }
 
-// Namespace ob_seismic_refractor/namespace_75f95b427df8560e
+// Namespace ob_seismic_refractor / namespace_75f95b427df8560e
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x700
 // Size: 0x114
-function private function_81edae2f148e254e(instance, var_4930cbce302555b1, params, var_535d9c3fdddab5a9) {
+function private function_81edae2f148e254e(instance, notif, params, var_535d9c3fdddab5a9) {
     if (!isdefined(instance.hammer)) {
         return;
     }

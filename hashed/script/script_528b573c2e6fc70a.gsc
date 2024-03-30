@@ -14,12 +14,12 @@
 #using scripts\mp\sentientpoolmanager.gsc;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using script_736dec95a49487a6;
-#using script_5f903436642211af;
+#using scripts\common\elevators.gsc;
 #using scripts\mp\equipment_interact.gsc;
 
-#namespace namespace_5bf5bed1385c9007;
+#namespace agent_claymore;
 
-// Namespace namespace_5bf5bed1385c9007/namespace_d4389b4b98ee0dc0
+// Namespace agent_claymore / namespace_d4389b4b98ee0dc0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x156
 // Size: 0x14
@@ -27,7 +27,7 @@ function function_af4eb22319ad376(grenade) {
     grenade function_4a6f3ce45560d2a4();
 }
 
-// Namespace namespace_5bf5bed1385c9007/namespace_d4389b4b98ee0dc0
+// Namespace agent_claymore / namespace_d4389b4b98ee0dc0
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x171
 // Size: 0x1ad
@@ -38,7 +38,7 @@ function function_4a6f3ce45560d2a4() {
     owner = self.owner;
     team = self.owner.team;
     var_541986f994da2469 = isagent(owner);
-    namespace_cd074ac917dcd87a::registerspawn(1, &claymore::sweepclaymore);
+    ent_manager::registerspawn(1, &claymore::sweepclaymore);
     namespace_26be03d9c56f9498::registersentient("Lethal_Static", owner, 1);
     owner onequipmentplanted(self, "equip_claymore", &claymore::claymore_delete, 1);
     self missilethermal();

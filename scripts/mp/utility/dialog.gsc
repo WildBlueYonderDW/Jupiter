@@ -13,7 +13,7 @@
 
 #namespace dialog;
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x252
 // Size: 0x14e
@@ -32,8 +32,8 @@ function leaderdialog(dialog, team, group, excludelist, location, time) {
     }
     players = level.players;
     if (isdefined(team)) {
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "getTeamData")) {
-            players = [[ namespace_3c37cb17ade254d::getsharedfunc("game", "getTeamData") ]](team, "players");
+        if (scripts/engine/utility::issharedfuncdefined("game", "getTeamData")) {
+            players = [[ scripts/engine/utility::getsharedfunc("game", "getTeamData") ]](team, "players");
         }
     }
     for (i = 0; i < players.size; i++) {
@@ -46,13 +46,13 @@ function leaderdialog(dialog, team, group, excludelist, location, time) {
         }
         if (dialog == "halfway_friendly_score" && namespace_27c74152ccb91331::function_a1e1b35a0bd2f57c(player, dialog)) {
             namespace_27c74152ccb91331::function_55b08d6d71b41402(player, dialog);
-        } else {
-            player leaderdialogonplayer_internal(dialog, group, undefined, location, time);
+            continue;
         }
+        player leaderdialogonplayer_internal(dialog, group, undefined, location, time);
     }
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a7
 // Size: 0x63
@@ -62,7 +62,7 @@ function initstatusdialog() {
     }
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x411
 // Size: 0xc5
@@ -85,7 +85,7 @@ function statusdialog(dialog, team, group, excludelist, location, time) {
     level.lastteamstatustime[team][dialog] = gettime();
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dd
 // Size: 0x55
@@ -96,7 +96,7 @@ function delayedleaderdialog(sound, team, group, excludelist, location, time) {
     leaderdialog(sound, team, group, excludelist, location, time);
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x539
 // Size: 0x76
@@ -106,25 +106,25 @@ function leaderdialogonplayers(dialog, players, group, location) {
     }
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b6
 // Size: 0x5c
-function leaderdialogonplayer(dialog, group, var_e8f8f1056da11e98, location, time) {
+function leaderdialogonplayer(dialog, group, groupoverride, location, time) {
     if (!isdefined(game["dialog"][dialog])) {
         /#
             println("detl_" + dialog + "circle_peek");
         #/
         return;
     }
-    leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, location, time);
+    leaderdialogonplayer_internal(dialog, group, groupoverride, location, time);
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x619
 // Size: 0x470
-function leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, location, time) {
+function leaderdialogonplayer_internal(dialog, group, groupoverride, location, time) {
     if (istrue(level.disableannouncer)) {
         return;
     }
@@ -134,7 +134,7 @@ function leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, loca
     if (isdefined(time)) {
         time = time * 1000;
         if (!isdefined(self.playerlastdialogstatus)) {
-            namespace_944ddf7b8df1b0e3::initstatusdialogonplayer();
+            scripts/mp/utility/dialog::initstatusdialogonplayer();
         }
         if (gettime() < self.playerlastdialogstatus["time"] + time && self.playerlastdialogstatus["dialog"] == dialog) {
             return;
@@ -143,50 +143,50 @@ function leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, loca
         self.playerlastdialogstatus["dialog"] = dialog;
     }
     team = self.pers["team"];
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
-        team = namespace_d3d40f75bb4e4c32::brgetoperatorteam(self);
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+        team = scripts/mp/gametypes/br_public::brgetoperatorteam(self);
     }
     if (isdefined(team) && isgameplayteam(team)) {
         announcer = self getplayerdata("common", "mp_announcer_type");
         if (function_99fd33719db79d3f(game["dialog"][dialog]) || function_1937c4131d39b030(game["dialog"][dialog])) {
             var_9ae55bedba1d14d6 = strtok(game["dialog"][dialog], "_");
             prefix = var_9ae55bedba1d14d6[0] + "_" + var_9ae55bedba1d14d6[1] + "_" + var_9ae55bedba1d14d6[2] + "_" + var_9ae55bedba1d14d6[3];
-            var_5f02b3a1fba344d5 = getteamvoiceinfix(team);
+            infix = getteamvoiceinfix(team);
             suffix = var_9ae55bedba1d14d6[5];
             if (getdvarint(@"hash_a464cb031c16ee87", 0)) {
                 if (is_equal(team, "allies")) {
-                    var_5f02b3a1fba344d5 = "t141";
+                    infix = "t141";
                 } else {
-                    var_5f02b3a1fba344d5 = "sptnz";
+                    infix = "sptnz";
                 }
             }
-            var_cb3339ece72dbdeb = prefix + "_" + var_5f02b3a1fba344d5 + "_" + suffix;
+            soundname = prefix + "_" + infix + "_" + suffix;
         } else if (function_ee82db162f3b07a8(game["dialog"][dialog])) {
             prefix = "dx_mp_";
-            var_5f02b3a1fba344d5 = getteamvoiceinfix(team);
+            infix = getteamvoiceinfix(team);
             var_9ae55bedba1d14d6 = strtok(game["dialog"][dialog], "_");
-            dialog = prefix + var_9ae55bedba1d14d6[1] + "_" + var_9ae55bedba1d14d6[2] + "_" + var_5f02b3a1fba344d5 + "tl_" + var_9ae55bedba1d14d6[4];
-            var_cb3339ece72dbdeb = dialog;
+            dialog = prefix + var_9ae55bedba1d14d6[1] + "_" + var_9ae55bedba1d14d6[2] + "_" + infix + "tl_" + var_9ae55bedba1d14d6[4];
+            soundname = dialog;
         } else if (function_1937c4131d39b030(game["dialog"][dialog])) {
             prefix = "dx_mp_";
-            var_5f02b3a1fba344d5 = getteamvoiceinfix(team);
+            infix = getteamvoiceinfix(team);
             var_9ae55bedba1d14d6 = strtok(game["dialog"][dialog], "_");
-            dialog = prefix + var_9ae55bedba1d14d6[2] + "_" + var_9ae55bedba1d14d6[3] + "_" + var_5f02b3a1fba344d5 + "tl_" + var_9ae55bedba1d14d6[5];
-            var_cb3339ece72dbdeb = dialog;
+            dialog = prefix + var_9ae55bedba1d14d6[2] + "_" + var_9ae55bedba1d14d6[3] + "_" + infix + "tl_" + var_9ae55bedba1d14d6[5];
+            soundname = dialog;
         } else {
             prefix = "dx_mpa_";
-            if (namespace_36f464722d326bbe::isbrstylegametype() && function_6b1af1c789523d89(dialog)) {
+            if (scripts/cp_mp/utility/game_utility::isbrstylegametype() && function_6b1af1c789523d89(dialog)) {
                 prefix = "dx_bra_";
             }
             if (announcer > 0) {
-                var_5f02b3a1fba344d5 = tablelookupbyrow("mp/announcervoicedata.csv", announcer, 3);
-                var_cb3339ece72dbdeb = prefix + var_5f02b3a1fba344d5 + "_" + game["dialog"][dialog];
+                infix = tablelookupbyrow("mp/announcervoicedata.csv", announcer, 3);
+                soundname = prefix + infix + "_" + game["dialog"][dialog];
             } else {
-                var_5f02b3a1fba344d5 = getteamvoiceinfix(team);
-                var_cb3339ece72dbdeb = prefix + var_5f02b3a1fba344d5 + "tl_" + game["dialog"][dialog];
+                infix = getteamvoiceinfix(team);
+                soundname = prefix + infix + "tl_" + game["dialog"][dialog];
             }
-            if (namespace_cd0b2d039510b38d::getsubgametype() == "dmz" || namespace_cd0b2d039510b38d::getsubgametype() == "exgm") {
-                var_cb3339ece72dbdeb = prefix + "uktl_" + game["dialog"][dialog];
+            if (scripts/mp/utility/game::getsubgametype() == "dmz" || scripts/mp/utility/game::getsubgametype() == "exgm") {
+                soundname = prefix + "uktl_" + game["dialog"][dialog];
             }
             var_31d69d326a1d3eda = issubstr(dialog, "lrad");
             var_ba47c289a27153c6 = issubstr(dialog, "switchblade_drone ");
@@ -203,18 +203,18 @@ function leaderdialogonplayer_internal(dialog, group, var_e8f8f1056da11e98, loca
                 } else {
                     teamref = "uktl_";
                 }
-                var_cb3339ece72dbdeb = prefix + streak + teamref + game["dialog"][dialog];
+                soundname = prefix + streak + teamref + game["dialog"][dialog];
             }
         }
-        var_cb3339ece72dbdeb = tolower(var_cb3339ece72dbdeb);
+        soundname = tolower(soundname);
         if (function_d03495fe6418377b(dialog)) {
             dialog = function_f28fd66285fa2c9(dialog);
         }
-        self queuedialogforplayer(var_cb3339ece72dbdeb, dialog, 2, group, var_e8f8f1056da11e98, location);
+        self queuedialogforplayer(soundname, dialog, 2, group, groupoverride, location);
     }
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa90
 // Size: 0x17
@@ -222,7 +222,7 @@ function function_ee82db162f3b07a8(dialog) {
     return issubstr(dialog, "iw9");
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaaf
 // Size: 0x2a
@@ -230,7 +230,7 @@ function function_99fd33719db79d3f(dialog) {
     return getdvarint(@"hash_708473a41b11b061", 0) && issubstr(dialog, "dx_mp_");
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xae1
 // Size: 0x4a
@@ -238,7 +238,7 @@ function function_1937c4131d39b030(dialog) {
     return getdvarint(@"hash_a464cb031c16ee87", 0) > 0 && (issubstr(dialog, "_mode_") || issubstr(dialog, "_shrd_") || issubstr(dialog, "_game_"));
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb33
 // Size: 0x23
@@ -246,7 +246,7 @@ function function_26fb379f4ba5caa2(team) {
     return ter_op(team == "allies", "uk", "ru");
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb5e
 // Size: 0x3a
@@ -258,7 +258,7 @@ function function_6b1af1c789523d89(dialog) {
     return var_c2d024171c7e33a7;
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba0
 // Size: 0x29
@@ -267,11 +267,11 @@ function initstatusdialogonplayer() {
     self.playerlastdialogstatus["dialog"] = "";
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xbd0
 // Size: 0x106
-function sitrepdialogonplayer(dialog, group, var_e8f8f1056da11e98, location, var_33e84a22f9f80374) {
+function sitrepdialogonplayer(dialog, group, groupoverride, location, announceroverride) {
     if (!isdefined(game["dialog"][dialog])) {
         /#
             println("detl_" + dialog + "<unknown string>");
@@ -282,29 +282,28 @@ function sitrepdialogonplayer(dialog, group, var_e8f8f1056da11e98, location, var
     if (!isdefined(self.lastsitreptime) || currenttime < self.lastsitreptime + 30000 || currenttime < level.lastteamstatustime[self.team][dialog] + 5000) {
         return;
     }
-    if (isdefined(var_33e84a22f9f80374)) {
-        var_840772ec06a3e063 = var_33e84a22f9f80374;
+    if (isdefined(announceroverride)) {
+        var_840772ec06a3e063 = announceroverride;
     } else {
         var_840772ec06a3e063 = getteamvoiceinfix(self.team);
     }
     self.lastsitreptime = currenttime;
-    var_cb3339ece72dbdeb = "dx_mpa_" + var_840772ec06a3e063 + "tl_" + game["dialog"][dialog];
-    self queuedialogforplayer(var_cb3339ece72dbdeb, dialog, 2, group, var_e8f8f1056da11e98, location);
+    soundname = "dx_mpa_" + var_840772ec06a3e063 + "tl_" + game["dialog"][dialog];
+    self queuedialogforplayer(soundname, dialog, 2, group, groupoverride, location);
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0x1b
 function getdialoguedebouncetime() {
     if (istrue(level.longdialoguecooldown)) {
         return 15000;
-    } else {
-        return 5000;
     }
+    return 5000;
 }
 
-// Namespace dialog/namespace_944ddf7b8df1b0e3
+// Namespace dialog / scripts/mp/utility/dialog
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcff
 // Size: 0x77

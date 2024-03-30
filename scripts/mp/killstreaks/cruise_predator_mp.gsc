@@ -13,18 +13,18 @@
 
 #namespace namespace_a635c889f6cc10b4;
 
-// Namespace namespace_a635c889f6cc10b4/namespace_a3bdd3ddc04af0d3
+// Namespace namespace_a635c889f6cc10b4 / scripts/mp/killstreaks/cruise_predator_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x166
 // Size: 0x56
 function init() {
-    namespace_58a74e7d54b56e8d::registerkillstreak("cruise_predator", &namespace_fd47b78f0802e959::tryusecruisepredatorfromstruct);
-    namespace_3c37cb17ade254d::registersharedfunc("cruise_predator", "registerVO", &cruisepredator_registervo);
-    namespace_3c37cb17ade254d::registersharedfunc("cruise_predator", "eventRecord", &cruisepredator_eventrecord);
-    namespace_3c37cb17ade254d::registersharedfunc("cruise_predator", "assignTargetMarkers", &cruisepredator_assigntargetmarkers);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("cruise_predator", &scripts/cp_mp/killstreaks/cruise_predator::tryusecruisepredatorfromstruct);
+    scripts/engine/utility::registersharedfunc("cruise_predator", "registerVO", &cruisepredator_registervo);
+    scripts/engine/utility::registersharedfunc("cruise_predator", "eventRecord", &cruisepredator_eventrecord);
+    scripts/engine/utility::registersharedfunc("cruise_predator", "assignTargetMarkers", &cruisepredator_assigntargetmarkers);
 }
 
-// Namespace namespace_a635c889f6cc10b4/namespace_a3bdd3ddc04af0d3
+// Namespace namespace_a635c889f6cc10b4 / scripts/mp/killstreaks/cruise_predator_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c3
 // Size: 0x60
@@ -34,17 +34,17 @@ function cruisepredator_registervo() {
     game["dialog"]["cruise_predator" + "_miss_target"] = "killstreak_remote_operator" + "_miss_target";
 }
 
-// Namespace namespace_a635c889f6cc10b4/namespace_a3bdd3ddc04af0d3
+// Namespace namespace_a635c889f6cc10b4 / scripts/mp/killstreaks/cruise_predator_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22a
 // Size: 0x19
 function cruisepredator_eventrecord(explodepos) {
     if (isdefined(explodepos)) {
-        namespace_391de535501b0143::predatormissileimpact(explodepos);
+        scripts/mp/events::predatormissileimpact(explodepos);
     }
 }
 
-// Namespace namespace_a635c889f6cc10b4/namespace_a3bdd3ddc04af0d3
+// Namespace namespace_a635c889f6cc10b4 / scripts/mp/killstreaks/cruise_predator_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x163
@@ -52,24 +52,24 @@ function cruisepredator_assigntargetmarkers(user) {
     var_2cd52bbc2a67b7cf = [];
     var_ff93381949523976 = [];
     var_22ccb4186bd27179 = level.players;
-    var_2395b77bdd5f9ca4 = spawnstruct();
+    groupsstruct = spawnstruct();
     foreach (player in var_22ccb4186bd27179) {
         if (level.teambased && player.team == user.team || player == user) {
             var_ff93381949523976[var_ff93381949523976.size] = player;
-        } else {
-            if (player namespace_82dcd1d5ae30ff7::_hasperk("specialty_noscopeoutline")) {
-                continue;
-            }
-            var_2cd52bbc2a67b7cf[var_2cd52bbc2a67b7cf.size] = player;
+            continue;
         }
+        if (player scripts/mp/utility/perk::_hasperk("specialty_noscopeoutline")) {
+            continue;
+        }
+        var_2cd52bbc2a67b7cf[var_2cd52bbc2a67b7cf.size] = player;
     }
     if (isdefined(level.killstreak_additional_targets)) {
         foreach (target in level.killstreak_additional_targets) {
             var_2cd52bbc2a67b7cf = array_add(var_2cd52bbc2a67b7cf, target);
         }
     }
-    var_2395b77bdd5f9ca4.enemytargetmarkergroup = var_2cd52bbc2a67b7cf;
-    var_2395b77bdd5f9ca4.friendlytargetmarkergroup = var_ff93381949523976;
-    return var_2395b77bdd5f9ca4;
+    groupsstruct.enemytargetmarkergroup = var_2cd52bbc2a67b7cf;
+    groupsstruct.friendlytargetmarkergroup = var_ff93381949523976;
+    return groupsstruct;
 }
 

@@ -8,7 +8,7 @@
 
 #namespace namespace_70e675ecd54f03da;
 
-// Namespace namespace_70e675ecd54f03da/namespace_293239a8fbb98e69
+// Namespace namespace_70e675ecd54f03da / scripts/mp/perks/perk_mark_targets
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x3
@@ -16,7 +16,7 @@ function marktarget_init() {
     
 }
 
-// Namespace namespace_70e675ecd54f03da/namespace_293239a8fbb98e69
+// Namespace namespace_70e675ecd54f03da / scripts/mp/perks/perk_mark_targets
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x72
@@ -26,7 +26,7 @@ function marktarget_run(victim, objweapon, smeansofdeath) {
     }
 }
 
-// Namespace namespace_70e675ecd54f03da/namespace_293239a8fbb98e69
+// Namespace namespace_70e675ecd54f03da / scripts/mp/perks/perk_mark_targets
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15f
 // Size: 0x3e
@@ -40,7 +40,7 @@ function marktarget_execute(target) {
     }
 }
 
-// Namespace namespace_70e675ecd54f03da/namespace_293239a8fbb98e69
+// Namespace namespace_70e675ecd54f03da / scripts/mp/perks/perk_mark_targets
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a4
 // Size: 0x71
@@ -51,13 +51,13 @@ function tagmarkedplayer(target) {
     if (target _hasperk("specialty_frangible_resist")) {
         var_79e98e0273d56283 = var_79e98e0273d56283 + getdvarfloat(@"hash_cfc1f984f402559f", -0.5);
     }
-    var_97384b887ab6a3c0 = gettime() + 3500 * var_79e98e0273d56283;
-    while (gettime() < var_97384b887ab6a3c0) {
+    timemarked = gettime() + 3500 * var_79e98e0273d56283;
+    while (gettime() < timemarked) {
         waitframe();
     }
 }
 
-// Namespace namespace_70e675ecd54f03da/namespace_293239a8fbb98e69
+// Namespace namespace_70e675ecd54f03da / scripts/mp/perks/perk_mark_targets
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21c
 // Size: 0xd

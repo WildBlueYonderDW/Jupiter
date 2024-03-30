@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\mp\utility\killstreak.gsc;
 #using scripts\mp\utility\player.gsc;
 #using scripts\mp\killstreaks\killstreaks.gsc;
@@ -10,7 +10,7 @@
 
 #namespace remotemissile;
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x273
 // Size: 0x59
@@ -25,26 +25,26 @@ function init() {
     level.remotemissile_fx["explode"] = loadfx("vfx/core/expl/aerial_explosion");
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x75
 function tryusepredatormissile(lifeid, streakname) {
     setusingremote("remotemissile");
-    result = namespace_58a74e7d54b56e8d::initridekillstreak();
+    result = scripts/mp/killstreaks/killstreaks::initridekillstreak();
     if (result != "success") {
         if (result != "disconnect") {
             clearusingremote();
         }
-        val::function_c9d0b43701bdba00("ride_killstreak");
-        return 0;
+        val::reset_all("ride_killstreak");
+        return false;
     }
     self setclientomnvar("ui_predator_missile", 1);
     level thread _fire(lifeid, self);
-    return 1;
+    return true;
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x350
 // Size: 0x32c
@@ -83,12 +83,14 @@ function getbestspawnpoint(remotemissilespawnpoints) {
     foreach (spawnpoint in remotemissilespawnpoints) {
         foreach (player in spawnpoint.validplayers) {
             spawnpoint.spawnscore = spawnpoint.spawnscore + 1;
-            if (namespace_2a184fc4902783dc::_bullet_trace_passed(player.origin + (0, 0, 32), spawnpoint.origin, 0, player)) {
+            if (scripts/engine/trace::_bullet_trace_passed(player.origin + (0, 0, 32), spawnpoint.origin, 0, player)) {
                 spawnpoint.spawnscore = spawnpoint.spawnscore + 3;
             }
             if (spawnpoint.spawnscore > bestspawn.spawnscore) {
                 bestspawn = spawnpoint;
-            } else if (spawnpoint.spawnscore == bestspawn.spawnscore) {
+                continue;
+            }
+            if (spawnpoint.spawnscore == bestspawn.spawnscore) {
                 if (cointoss()) {
                     bestspawn = spawnpoint;
                 }
@@ -98,7 +100,7 @@ function getbestspawnpoint(remotemissilespawnpoints) {
     return bestspawn;
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x684
 // Size: 0x242
@@ -119,7 +121,7 @@ function _fire(lifeid, player) {
         targetpos = remotemissilespawn.targetent.origin;
         vector = vectornormalize(startpos - targetpos);
         startpos = vector * 14000 + targetpos;
-        rocket = namespace_d325722f2754c2c4::_magicbullet(makeweapon("remotemissile_projectile_mp"), startpos, targetpos, player);
+        rocket = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("remotemissile_projectile_mp"), startpos, targetpos, player);
     } else {
         upvector = (0, 0, level.missileremotelaunchvert);
         backdist = level.missileremotelaunchhorz;
@@ -127,7 +129,7 @@ function _fire(lifeid, player) {
         forward = anglestoforward(player.angles);
         startpos = player.origin + upvector + forward * backdist * -1;
         targetpos = player.origin + forward * targetdist;
-        rocket = namespace_d325722f2754c2c4::_magicbullet(makeweapon("remotemissile_projectile_mp"), startpos, targetpos, player);
+        rocket = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("remotemissile_projectile_mp"), startpos, targetpos, player);
     }
     if (!isdefined(rocket)) {
         player clearusingremote();
@@ -141,7 +143,7 @@ function _fire(lifeid, player) {
     missileeyes(player, rocket);
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8cd
 // Size: 0x12e
@@ -153,7 +155,7 @@ function function_7ffa02c6592145d(lifeid, player) {
         forward = anglestoforward(player.angles);
         startpos = player.origin + upvector + forward * backdist * -1;
         targetpos = player.origin + forward * targetdist;
-        rocket = namespace_d325722f2754c2c4::_magicbullet(makeweapon("<unknown string>"), startpos, targetpos, player);
+        rocket = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("<unknown string>"), startpos, targetpos, player);
         if (!isdefined(rocket)) {
             return;
         }
@@ -169,7 +171,7 @@ function function_7ffa02c6592145d(lifeid, player) {
     #/
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa02
 // Size: 0x33
@@ -185,7 +187,7 @@ function handledamage() {
     #/
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3c
 // Size: 0x147
@@ -226,7 +228,7 @@ function missileeyes(player, rocket) {
     player clearusingremote();
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb8a
 // Size: 0x17
@@ -236,7 +238,7 @@ function delayedfofoverlay() {
     wait(0.15);
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xba8
 // Size: 0x76
@@ -255,7 +257,7 @@ function player_cleanuponteamchange(rocket) {
     level.remotemissileinprogress = undefined;
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc25
 // Size: 0x3e
@@ -267,7 +269,7 @@ function rocket_cleanupondeath() {
     level.remotemissileinprogress = undefined;
 }
 
-// Namespace remotemissile/namespace_66ad129398ca21c0
+// Namespace remotemissile / scripts/mp/killstreaks/remotemissile
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6a
 // Size: 0x4a

@@ -3,13 +3,13 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 
-#namespace namespace_26a75045c9dd4bcb;
+#namespace hud_util;
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_b8228ec48134f64
+// Namespace hud_util / namespace_b8228ec48134f64
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9a
 // Size: 0xd2
-function create_client_overlay(var_2193fde10bf4b43a, start_alpha, player) {
+function create_client_overlay(shader_name, start_alpha, player) {
     if (isdefined(player)) {
         overlay = newclienthudelem(player);
     } else {
@@ -17,7 +17,7 @@ function create_client_overlay(var_2193fde10bf4b43a, start_alpha, player) {
     }
     overlay.x = 0;
     overlay.y = 0;
-    overlay setshader(var_2193fde10bf4b43a, 640, 480);
+    overlay setshader(shader_name, 640, 480);
     overlay.alignx = "left";
     overlay.aligny = "top";
     overlay.sort = 1;
@@ -28,7 +28,7 @@ function create_client_overlay(var_2193fde10bf4b43a, start_alpha, player) {
     return overlay;
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_b8228ec48134f64
+// Namespace hud_util / namespace_b8228ec48134f64
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x174
 // Size: 0x63
@@ -49,7 +49,7 @@ function fade_in(time, shader) {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_b8228ec48134f64
+// Namespace hud_util / namespace_b8228ec48134f64
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1de
 // Size: 0x1f
@@ -60,7 +60,7 @@ function get_optional_overlay(shader) {
     return get_overlay(shader);
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_b8228ec48134f64
+// Namespace hud_util / namespace_b8228ec48134f64
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x205
 // Size: 0x56
@@ -78,7 +78,7 @@ function fade_out(time, shader) {
     }
 }
 
-// Namespace namespace_26a75045c9dd4bcb/namespace_b8228ec48134f64
+// Namespace hud_util / namespace_b8228ec48134f64
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x262
 // Size: 0xb3

@@ -8,9 +8,9 @@
 #using scripts\asm\shared\mp\utility.gsc;
 #using scripts\anim\notetracks_mp.gsc;
 
-#namespace namespace_725871aae3b7bfd4;
+#namespace anim_mp;
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x282
 // Size: 0x134
@@ -31,28 +31,28 @@ function init() {
     anim.callbacks["reach_with_standard_adjustments_end"] = &function_4e8646c3e9f9ec0a;
     anim.callbacks["AnimHandleNotetrack"] = &mp_anim_handle_notetrack;
     anim.callbacks["EntityHandleNotetrack"] = &mp_entity_handle_notetrack;
-    anim.callbacks["EntityHandleNotetrackAnimEnd"] = &namespace_a4081f3d58d76916::function_8b5c774e7238fec5;
-    anim.callbacks["AIAnimFirstFrame"] = &namespace_aaebfc23308fe5e4::ai_anim_first_frame;
-    anim.callbacks["playXcam"] = &function_a871831543fd27ef;
+    anim.callbacks["EntityHandleNotetrackAnimEnd"] = &scripts/anim/notetracks::function_8b5c774e7238fec5;
+    anim.callbacks["AIAnimFirstFrame"] = &scripts/asm/shared/mp/utility::ai_anim_first_frame;
+    anim.callbacks["playXcam"] = &play_xcam;
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3bd
 // Size: 0x24
-function play_sound_at_viewheight(aliasname, var_b1a4e9fa39b3858a, var_a68adbd3eefe9282) {
+function play_sound_at_viewheight(aliasname, notification_string, var_a68adbd3eefe9282) {
     self playsound(aliasname);
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e8
 // Size: 0x5
 function should_do_anim() {
-    return 1;
+    return true;
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x97
@@ -66,47 +66,49 @@ function teleport_entity(origin, angles) {
             self vehicle_teleport(origin, angles);
             self dontinterpolate();
         }
-    } else if (isplayer(self)) {
+        return;
+    }
+    if (isplayer(self)) {
         self setorigin(origin);
         self setplayerangles(angles);
-    } else {
-        self.origin = origin;
-        self.angles = angles;
-        self dontinterpolate();
+        return;
     }
+    self.origin = origin;
+    self.angles = angles;
+    self dontinterpolate();
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x493
 // Size: 0x56
 function function_c606ca98a77e09ca() {
-    var_458075ba716043ba = 1;
+    canteleport = 1;
     if (isdefined(self.vehiclename)) {
         switch (self.vehiclename) {
         case #"hash_2289ec11d77bce8f":
         case #"hash_56979e0566996b2e":
         case #"hash_d849f9d4eaa9ed93":
-            var_458075ba716043ba = 0;
+            canteleport = 0;
             break;
         }
     }
-    return var_458075ba716043ba;
+    return canteleport;
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f1
 // Size: 0x35
-function do_facial_anim(dofacialanim, var_9ac73a1996d2dae, doanimation, anime, animname, dialogue) {
-    return 0;
+function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, animname, dialogue) {
+    return false;
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52e
 // Size: 0x212
-function do_animation(org, angles, animname, anime, var_314c4455b996b224, idleanim, var_43e50904d011917e) {
+function do_animation(org, angles, animname, anime, anim_string, idleanim, var_43e50904d011917e) {
     var_173bdb8ba434651d = 0;
     animation = undefined;
     if (isdefined(idleanim) && !isagent(self)) {
@@ -120,7 +122,7 @@ function do_animation(org, angles, animname, anime, var_314c4455b996b224, idlean
         self._lastanime = anime;
     }
     if (self.code_classname == "misc_turret" && !isdefined(idleanim)) {
-        self setflaggedanim(var_314c4455b996b224, animation, 1, goaltime);
+        self setflaggedanim(anim_string, animation, 1, goaltime);
     } else {
         if (self.code_classname == "script_vehicle") {
             self vehicleplayanim(animation);
@@ -133,34 +135,34 @@ function do_animation(org, angles, animname, anime, var_314c4455b996b224, idlean
             var_173bdb8ba434651d = 1;
             var_1ed6bbc02282dd5 = "agent_scripted_" + getdvar(@"hash_687fb8f9b7a23245");
             if (archetypeassetloaded(var_1ed6bbc02282dd5)) {
-                var_a165f8affea867ac = spawnstruct();
+                scripted_node = spawnstruct();
                 if (isdefined(org)) {
-                    var_a165f8affea867ac.origin = org;
-                    var_a165f8affea867ac.angles = angles;
+                    scripted_node.origin = org;
+                    scripted_node.angles = angles;
                 }
                 var_5a0a7dfb51da0682 = getanimname(animation);
-                thread namespace_aaebfc23308fe5e4::animscriptmp(var_1ed6bbc02282dd5, "animscripted", var_5a0a7dfb51da0682, undefined, undefined, undefined, var_a165f8affea867ac);
+                thread scripts/asm/shared/mp/utility::animscriptmp(var_1ed6bbc02282dd5, "animscripted", var_5a0a7dfb51da0682, undefined, undefined, undefined, scripted_node);
             } else {
-                thread namespace_aaebfc23308fe5e4::function_577d8abff6067c23(anime, var_314c4455b996b224, org, angles);
+                thread scripts/asm/shared/mp/utility::function_577d8abff6067c23(anime, anim_string, org, angles);
             }
         } else {
             animmode = undefined;
             if (istrue(self.backwards)) {
                 animmode = "backwards";
             }
-            self animscripted(var_314c4455b996b224, org, angles, animation, animmode, root, goaltime);
+            self animscripted(anim_string, org, angles, animation, animmode, root, goaltime);
         }
     }
-    thread start_notetrack_wait(self, var_314c4455b996b224, anime, animname, animation, var_173bdb8ba434651d);
+    thread start_notetrack_wait(self, anim_string, anime, animname, animation, var_173bdb8ba434651d);
     return getanimlength(animation);
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x748
 // Size: 0x115
-function mp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, var_f20e2b3859e05e9f) {
-    anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, var_f20e2b3859e05e9f);
+function mp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner) {
+    anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner);
     if (isdefined(scr_notetrack["flag"])) {
         if (issharedfuncdefined("game", "gameflagSet")) {
             [[ getsharedfunc("game", "gameflagSet") ]](scr_notetrack["flag"]);
@@ -186,51 +188,51 @@ function mp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, var_
     }
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x864
 // Size: 0x20
 function mp_entity_handle_notetrack(guy, notetrack) {
-    if (guy namespace_aca06a2f73bc4246::function_6d9ff7d18e45dc9c(notetrack)) {
+    if (guy scripts/anim/notetracks_mp::function_6d9ff7d18e45dc9c(notetrack)) {
         return;
     }
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88b
 // Size: 0x6e
-function anim_player_solo(player, player_rig, anime, tag, var_9e8a16d47a03007a, var_8e3b87acaad3de58) {
+function anim_player_solo(player, player_rig, anime, tag, var_9e8a16d47a03007a, animname_override) {
     self endon("death");
     players[0] = player;
     player_rigs[0] = player_rig;
     if (!isdefined(var_9e8a16d47a03007a)) {
         var_9e8a16d47a03007a = 0;
     }
-    anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, var_8e3b87acaad3de58);
+    anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override);
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x900
 // Size: 0x49
-function anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, var_8e3b87acaad3de58) {
+function anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override) {
     if (!isdefined(var_9e8a16d47a03007a)) {
         var_9e8a16d47a03007a = 0;
     }
-    anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03007a, var_8e3b87acaad3de58);
+    anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override);
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x950
 // Size: 0x144
-function anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03007a, var_8e3b87acaad3de58) {
+function anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override) {
     duration = 0;
     foreach (player in players) {
         animname = undefined;
-        if (isdefined(var_8e3b87acaad3de58)) {
-            animname = var_8e3b87acaad3de58;
+        if (isdefined(animname_override)) {
+            animname = animname_override;
         } else {
             animname = player.animname;
         }
@@ -242,24 +244,24 @@ function anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03
         }
     }
     if (isdefined(player_rigs)) {
-        anim_single(player_rigs, anime, tag, var_9e8a16d47a03007a, var_8e3b87acaad3de58);
+        anim_single(player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override);
     }
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa9b
 // Size: 0x93
-function function_a871831543fd27ef(var_437b6bb41d98df26, origin, angles) {
-    var_f25cb776566aa658 = undefined;
-    var_f25cb776566aa658 = function_53c4c53197386572(var_f25cb776566aa658, 0);
+function play_xcam(xcamasset, origin, angles) {
+    camnum = undefined;
+    camnum = default_to(camnum, 0);
     foreach (player in level.players) {
-        player playxcam(var_437b6bb41d98df26, var_f25cb776566aa658, origin, angles);
+        player playxcam(xcamasset, camnum, origin, angles);
     }
-    wait(function_4358b309fdcc6d44(var_437b6bb41d98df26));
+    wait(getxcamlength(xcamasset));
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb35
 // Size: 0x41
@@ -274,7 +276,7 @@ function function_3c8f0102ea5254f3(framecount) {
     wait(frametime);
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7d
 // Size: 0x122
@@ -303,7 +305,7 @@ function function_b9c0db166bfa05de(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_725871aae3b7bfd4/namespace_4e680905778c0f0f
+// Namespace anim_mp / scripts/mp/anim
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xca7
 // Size: 0xa5

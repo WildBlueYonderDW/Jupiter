@@ -1,13 +1,13 @@
 // mwiii decomp prototype
 #using scripts\asm\asm_bb.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\math.gsc;
 #using scripts\engine\utility.gsc;
 #using script_595089f78ef8e11b;
 
 #namespace namespace_bf163b9d91d432d4;
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35c
 // Size: 0x1bf
@@ -30,12 +30,12 @@ function function_62acb9a556ab5175() {
     function_f11270bb42f7f080("pain_electric_vox", "pain_electric", "vox_ai_mimic_pain_electric", 3);
     function_f11270bb42f7f080("vox_death", "vox_death", "vox_ai_mimic_death", 4);
     level thread function_1dc3dbebbb45158a();
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("killed_body_cloned", &function_c9071c313b8c83dc);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_entity_revealed", &function_c0b5ec9f8877f0c2);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_entity_hidden_in_prop", &function_78f226fccfe4f778);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("killed_body_cloned", &play_death_vo);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_entity_revealed", &function_c0b5ec9f8877f0c2);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_entity_hidden_in_prop", &function_78f226fccfe4f778);
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x522
 // Size: 0x13
@@ -44,15 +44,15 @@ function function_1e388b876cdce171() {
     thread function_664debe3a324ac7a();
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x53c
 // Size: 0xe7
 function private function_664debe3a324ac7a() {
     level endon("game_ended");
     self endon("death");
-    while (1) {
-        notifies = [0:"vox_scream_long", 1:"vox_melee", 2:"vox_tentacle_out", 3:"vox_spit", 4:"vox_appear", 5:"vox_tentacle_in"];
+    while (true) {
+        notifies = ["vox_scream_long", "vox_melee", "vox_tentacle_out", "vox_spit", "vox_appear", "vox_tentacle_in"];
         event = waittill_any_in_array_return(notifies);
         switch (event) {
         case #"hash_61c966d3596089cd":
@@ -70,20 +70,20 @@ function private function_664debe3a324ac7a() {
     }
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x62a
 // Size: 0x5a
-function private function_c9071c313b8c83dc(params) {
+function private play_death_vo(params) {
     /#
         assert(isdefined(params.body));
     #/
-    var_ed9360e85180f100 = function_fc041668d6654de8();
-    self stopsoundchannel(var_ed9360e85180f100);
-    level thread function_d01c8da69fe6ad5(params.body, "vox_death", "vox_ai_mimic_death", 4);
+    str_channel = function_fc041668d6654de8();
+    self stopsoundchannel(str_channel);
+    level thread play_vox(params.body, "vox_death", "vox_ai_mimic_death", 4);
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x68b
 // Size: 0x2e
@@ -94,7 +94,7 @@ function private function_c0b5ec9f8877f0c2(params) {
     }
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x6c0
 // Size: 0x2e
@@ -105,7 +105,7 @@ function private function_78f226fccfe4f778(params) {
     }
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x6f5
 // Size: 0x34
@@ -118,25 +118,25 @@ function private function_5bda47768887115f(n_time) {
     thread function_78c6b4fdf8524643();
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x730
 // Size: 0xbe
 function function_78c6b4fdf8524643() {
-    var_fc3f1cd5f74c5908 = 3;
+    ambient_cap = 3;
     self notify("ambientvox_singleton");
     self endon("ambientvox_singleton");
     self endon("ambientvox_shutdown");
     self endon("death");
     var_299fe3d37c321f97 = 0;
-    while (1) {
+    while (true) {
         params = function_4e5d15fb46a1875f();
-        var_b4ee4904cd7d9269 = params.var_b1b1f6668aecbbe5;
+        ambient_notify = params.var_b1b1f6668aecbbe5;
         n_waittime = params.var_39dc1f6992cbf2cf;
         if (isdefined(level.var_3c408363d81b00e0)) {
             level.var_3c408363d81b00e0++;
-            if (level.var_3c408363d81b00e0 < var_fc3f1cd5f74c5908) {
-                function_f707c26d8f269f94(var_b4ee4904cd7d9269);
+            if (level.var_3c408363d81b00e0 < ambient_cap) {
+                function_f707c26d8f269f94(ambient_notify);
                 waitframe();
                 ent_flag_waitopen("playing_vo");
             }
@@ -145,7 +145,7 @@ function function_78c6b4fdf8524643() {
     }
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x7f5
 // Size: 0x65
@@ -160,14 +160,14 @@ function private function_4e5d15fb46a1875f() {
     return params;
 }
 
-// Namespace namespace_bf163b9d91d432d4/namespace_7133a3c0eaf1ba60
+// Namespace namespace_bf163b9d91d432d4 / namespace_7133a3c0eaf1ba60
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x862
 // Size: 0x2c
 function private function_1dc3dbebbb45158a() {
     level endon("game_ended");
     level.var_3c408363d81b00e0 = 0;
-    while (1) {
+    while (true) {
         level.var_3c408363d81b00e0 = 0;
         wait(0.1);
     }

@@ -5,9 +5,9 @@
 #using scripts\mp\utility\player.gsc;
 #using scripts\mp\utility\weapon.gsc;
 
-#namespace namespace_1c4c07369f28b4f1;
+#namespace challenges_mp;
 
-// Namespace namespace_1c4c07369f28b4f1/namespace_b47d9e242ea192bc
+// Namespace challenges_mp / scripts/mp/challenges_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x3

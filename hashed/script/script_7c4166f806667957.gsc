@@ -3,7 +3,7 @@
 
 #namespace namespace_7709500196d2fa46;
 
-// Namespace namespace_7709500196d2fa46/namespace_bc95a1194169b6e9
+// Namespace namespace_7709500196d2fa46 / namespace_bc95a1194169b6e9
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x7d
 // Size: 0x1f
@@ -12,7 +12,7 @@ function autoexec main() {
     function_c0b3ddc9a6bdcc46("veh_jup_hind", &function_2e36ed86124a1acf);
 }
 
-// Namespace namespace_7709500196d2fa46/namespace_bc95a1194169b6e9
+// Namespace namespace_7709500196d2fa46 / namespace_bc95a1194169b6e9
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x1e

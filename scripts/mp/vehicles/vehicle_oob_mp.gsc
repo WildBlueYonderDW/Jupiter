@@ -5,9 +5,9 @@
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 
-#namespace namespace_a892509dac574128;
+#namespace vehicle_oob_mp;
 
-// Namespace namespace_a892509dac574128/namespace_1cad239ed01de62d
+// Namespace vehicle_oob_mp / scripts/mp/vehicles/vehicle_oob_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f2
 // Size: 0x34
@@ -16,7 +16,7 @@ function vehicle_oob_mp_registeroutoftimecallback(vehiclename, callback) {
     leveldata.outoftimecallbacks[vehiclename] = callback;
 }
 
-// Namespace namespace_a892509dac574128/namespace_1cad239ed01de62d
+// Namespace vehicle_oob_mp / scripts/mp/vehicles/vehicle_oob_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22d
 // Size: 0x92
@@ -34,7 +34,7 @@ function vehicle_oob_mp_init() {
     registeroobclearcallback("vehicle", &vehicle_oob_mp_clearcallback);
 }
 
-// Namespace namespace_a892509dac574128/namespace_1cad239ed01de62d
+// Namespace vehicle_oob_mp / scripts/mp/vehicles/vehicle_oob_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c6
 // Size: 0x50
@@ -48,11 +48,11 @@ function vehicle_oob_mp_getleveldata() {
     return level.vehicle.oob;
 }
 
-// Namespace namespace_a892509dac574128/namespace_1cad239ed01de62d
+// Namespace vehicle_oob_mp / scripts/mp/vehicles/vehicle_oob_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31e
 // Size: 0x65
-function vehicle_oob_mp_outoftimecallback(var_2f57cfae824ca728, var_93f5db7e81311353) {
+function vehicle_oob_mp_outoftimecallback(timeoutendnotify, clearnotify) {
     leveldata = vehicle_oob_mp_getleveldata();
     callback = leveldata.outoftimecallbacks[self.vehiclename];
     /#
@@ -62,12 +62,12 @@ function vehicle_oob_mp_outoftimecallback(var_2f57cfae824ca728, var_93f5db7e8131
     self [[ callback ]]();
 }
 
-// Namespace namespace_a892509dac574128/namespace_1cad239ed01de62d
+// Namespace vehicle_oob_mp / scripts/mp/vehicles/vehicle_oob_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x67
 function vehicle_oob_mp_clearcallback() {
-    occupants = namespace_1fbd40990ee60ede::vehicle_occupancy_getalloccupants(self);
+    occupants = scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_getalloccupants(self);
     foreach (occupant in occupants) {
         occupant setclientomnvar("ui_out_of_bounds_countdown", 0);
     }

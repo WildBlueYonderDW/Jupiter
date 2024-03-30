@@ -7,7 +7,7 @@
 
 #namespace namespace_2c3a8b16eb34bd6;
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x132
 // Size: 0xb6
@@ -20,25 +20,25 @@ function init() {
     level.var_a4dab5000eca4682 = getdvarint(@"hash_3fd4f18a01c87ce2", 10);
     level.var_be6c4a2a3ea18574 = 0;
     level.var_373b806b04381d6f = 0;
-    namespace_71073fa38f11492::registerbrgametypefunc("updatePlayerAndTeamCountUI", &function_806ad317de2af4f3);
-    namespace_71073fa38f11492::registerbrgametypefunc("onPlayerKilled", &function_6436c089f777048b);
-    namespace_71073fa38f11492::registerbrgametypefunc("onPlayerConnect", &function_f5fd598a80445d04);
-    namespace_71073fa38f11492::registerbrgametypefunc("onPlayerDisconnect", &function_98b1fbbdd7377898);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("updatePlayerAndTeamCountUI", &function_806ad317de2af4f3);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("onPlayerKilled", &function_6436c089f777048b);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("onPlayerConnect", &function_f5fd598a80445d04);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("onPlayerDisconnect", &function_98b1fbbdd7377898);
     level thread watchprematchdone();
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ef
 // Size: 0x246
-function function_806ad317de2af4f3(aliveplayercount, var_a4c3a5afe5b8da9b) {
+function function_806ad317de2af4f3(aliveplayercount, activeteams) {
     totalplayers = level.players.size;
     aliveplayercount = 0;
     var_35068b9b9dc4c73f = 0;
-    var_a4c3a5afe5b8da9b = [];
+    activeteams = [];
     for (i = 0; i < totalplayers; i++) {
         player = level.players[i];
-        if (player namespace_d20f8ef223912e12::function_7dbb8165d792b06c()) {
+        if (player scripts/mp/gametypes/br::function_7dbb8165d792b06c()) {
             continue;
         }
         if (!istrue(player.br_iseliminated)) {
@@ -46,27 +46,27 @@ function function_806ad317de2af4f3(aliveplayercount, var_a4c3a5afe5b8da9b) {
                 var_35068b9b9dc4c73f++;
             } else {
                 aliveplayercount++;
-                var_a4c3a5afe5b8da9b[player.team] = 1;
+                activeteams[player.team] = 1;
             }
         }
-        if (!isdefined(var_a4c3a5afe5b8da9b[player.team])) {
-            result = namespace_71073fa38f11492::runbrgametypefunc("isTeamEliminated", player.team);
+        if (!isdefined(activeteams[player.team])) {
+            result = scripts/mp/gametypes/br_gametypes::runbrgametypefunc("isTeamEliminated", player.team);
             if (isdefined(result)) {
                 if (!result) {
-                    var_a4c3a5afe5b8da9b[player.team] = 1;
+                    activeteams[player.team] = 1;
                 }
             }
         }
     }
-    foreach (uibot in namespace_d20f8ef223912e12::function_749723c2a45a0233()) {
+    foreach (uibot in scripts/mp/gametypes/br::function_749723c2a45a0233()) {
         aliveplayercount++;
-        var_a4c3a5afe5b8da9b[uibot.team] = 1;
+        activeteams[uibot.team] = 1;
     }
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
-        activeteamcount = int(var_a4c3a5afe5b8da9b.size + level.var_8ed22c88753f7445 / namespace_36f464722d326bbe::function_4fb37368ae3585bb());
+    if (scripts/mp/flags::gameflag("prematch_done")) {
+        activeteamcount = int(activeteams.size + level.var_8ed22c88753f7445 / scripts/cp_mp/utility/game_utility::function_4fb37368ae3585bb());
         aliveplayercount = int(aliveplayercount + level.var_8ed22c88753f7445);
     } else {
-        activeteamcount = int(var_a4c3a5afe5b8da9b.size + level.var_be6c4a2a3ea18574 / namespace_36f464722d326bbe::function_4fb37368ae3585bb());
+        activeteamcount = int(activeteams.size + level.var_be6c4a2a3ea18574 / scripts/cp_mp/utility/game_utility::function_4fb37368ae3585bb());
         aliveplayercount = int(aliveplayercount + level.var_be6c4a2a3ea18574);
     }
     level.var_373b806b04381d6f = activeteamcount;
@@ -79,24 +79,24 @@ function function_806ad317de2af4f3(aliveplayercount, var_a4c3a5afe5b8da9b) {
             assert(aliveplayercount <= var_6837562bca96ad34);
         #/
         /#
-            assert(var_a4c3a5afe5b8da9b.size <= var_6837562bca96ad34);
+            assert(activeteams.size <= var_6837562bca96ad34);
         #/
     #/
     var_47bf15e70ee220a = (var_35068b9b9dc4c73f << 16) + (activeteamcount << 8) + aliveplayercount;
     setomnvar("ui_br_match_stats", var_47bf15e70ee220a);
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43c
 // Size: 0x23
-function function_6436c089f777048b(var_642470e1abc1bbf9) {
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
+function function_6436c089f777048b(deathdata) {
+    if (scripts/mp/flags::gameflag("prematch_done")) {
         level thread function_479d3f9aaf4e3bf0();
     }
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x466
 // Size: 0xde
@@ -114,27 +114,27 @@ function function_f5fd598a80445d04(player) {
     var_f5439adc07558e92 = level.var_8ed22c88753f7445 + totalplayers;
     for (i = 0; i < var_e4762082ef346678; i++) {
         level.var_be6c4a2a3ea18574 = min(var_f5439adc07558e92, level.var_be6c4a2a3ea18574 + 1);
-        namespace_d20f8ef223912e12::updateplayerandteamcountui();
+        scripts/mp/gametypes/br::updateplayerandteamcountui();
         if (level.var_8ed22c88753f7445 <= 0) {
             return;
         }
     }
-    namespace_d20f8ef223912e12::updateplayerandteamcountui();
+    scripts/mp/gametypes/br::updateplayerandteamcountui();
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54b
 // Size: 0x2f
 function function_98b1fbbdd7377898(player) {
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (scripts/mp/flags::gameflag("prematch_done")) {
         level thread function_479d3f9aaf4e3bf0();
         return;
     }
     level thread function_479d3f9aaf4e3bf0(1);
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x581
 // Size: 0x1b
@@ -142,12 +142,12 @@ function function_397f011c8120ea71() {
     self setclientomnvar("ui_br_player_position", level.var_373b806b04381d6f + 1);
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a3
 // Size: 0x73
 function watchprematchdone() {
-    namespace_d20f8ef223912e12::updateplayerandteamcountui();
+    scripts/mp/gametypes/br::updateplayerandteamcountui();
     level waittill("prematch_over");
     level.var_e4762082ef346678 = undefined;
     level.var_be6c4a2a3ea18574 = undefined;
@@ -157,10 +157,10 @@ function watchprematchdone() {
     } else {
         level.var_8ed22c88753f7445 = 0;
     }
-    namespace_d20f8ef223912e12::updateplayerandteamcountui();
+    scripts/mp/gametypes/br::updateplayerandteamcountui();
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x61d
 // Size: 0xa5
@@ -168,23 +168,23 @@ function function_479d3f9aaf4e3bf0(bimmediate) {
     if (level.var_8ed22c88753f7445 <= 0) {
         return;
     }
-    var_92e1f1e24bf5febd = namespace_3c37cb17ade254d::ter_op(namespace_4b0406965e556711::gameflag("prematch_done"), level.var_aefac0c879f41d97, level.var_e4762082ef346678);
-    if (!isdefined(var_92e1f1e24bf5febd)) {
+    decrementcount = scripts/engine/utility::ter_op(scripts/mp/flags::gameflag("prematch_done"), level.var_aefac0c879f41d97, level.var_e4762082ef346678);
+    if (!isdefined(decrementcount)) {
         return;
     }
-    for (i = 0; i < var_92e1f1e24bf5febd; i++) {
+    for (i = 0; i < decrementcount; i++) {
         if (!istrue(bimmediate)) {
             wait(randomfloat(5));
         }
         level.var_8ed22c88753f7445 = max(0, level.var_8ed22c88753f7445 - 1);
-        namespace_d20f8ef223912e12::updateplayerandteamcountui();
+        scripts/mp/gametypes/br::updateplayerandteamcountui();
         if (level.var_8ed22c88753f7445 <= 0) {
             return;
         }
     }
 }
 
-// Namespace namespace_2c3a8b16eb34bd6/namespace_eca7530e5715bb19
+// Namespace namespace_2c3a8b16eb34bd6 / namespace_eca7530e5715bb19
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c9
 // Size: 0x81
@@ -193,7 +193,7 @@ function getalivecount() {
     aliveplayercount = 0;
     for (i = 0; i < totalplayers; i++) {
         player = level.players[i];
-        if (player namespace_d20f8ef223912e12::function_7dbb8165d792b06c()) {
+        if (player scripts/mp/gametypes/br::function_7dbb8165d792b06c()) {
             continue;
         }
         if (!istrue(player.br_iseliminated)) {

@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#namespace namespace_75ccc7a377fd7988;
+#namespace feature_init;
 
-// Namespace namespace_75ccc7a377fd7988/namespace_38feff38bcbe347
+// Namespace feature_init / namespace_38feff38bcbe347
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68
 // Size: 0x42

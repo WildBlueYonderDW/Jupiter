@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace hud;
 
-// Namespace hud/namespace_95fef46456ed271b
+// Namespace hud / scripts/mp/hud
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbd
 // Size: 0x1c2
@@ -36,7 +36,7 @@ function init() {
     level.lowertextfontsize = 1.6;
 }
 
-// Namespace hud/namespace_95fef46456ed271b
+// Namespace hud / scripts/mp/hud
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x286
 // Size: 0x6f
@@ -51,7 +51,7 @@ function fontpulseinit(maxfontscale) {
     self.outframes = 4;
 }
 
-// Namespace hud/namespace_95fef46456ed271b
+// Namespace hud / scripts/mp/hud
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0x97

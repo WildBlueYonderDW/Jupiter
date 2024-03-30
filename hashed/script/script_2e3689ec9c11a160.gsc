@@ -8,12 +8,12 @@
 
 #namespace namespace_a61f752dea02cbf9;
 
-// Namespace namespace_a61f752dea02cbf9/namespace_81c5e22f6647f87c
+// Namespace namespace_a61f752dea02cbf9 / namespace_81c5e22f6647f87c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16d
 // Size: 0x11c
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_fb34274fe0861d2");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_fb34274fe0861d2");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_781de85130f2625a");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 100;
@@ -33,13 +33,13 @@ function main() {
     #/
     self.var_a942dd31d55102c9 = self.asmasset;
     self.a = spawnstruct();
-    namespace_bf5a1761a8d1bb07::asm_init_blackboard();
-    namespace_f08e04b63067d27f::bt_init();
-    namespace_28d7bb9fcf17949d::asm_init(self.asmasset, self.animationarchetype);
-    namespace_6205bc7c5e394598::ai_init();
+    scripts/asm/asm::asm_init_blackboard();
+    scripts/aitypes/bt_util::bt_init();
+    scripts/asm/asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts/common/ai::ai_init();
 }
 
-// Namespace namespace_a61f752dea02cbf9/namespace_81c5e22f6647f87c
+// Namespace namespace_a61f752dea02cbf9 / namespace_81c5e22f6647f87c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x290
 // Size: 0x57
@@ -53,7 +53,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_a61f752dea02cbf9/namespace_81c5e22f6647f87c
+// Namespace namespace_a61f752dea02cbf9 / namespace_81c5e22f6647f87c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ee
 // Size: 0x1b
@@ -63,7 +63,7 @@ function function_9ac26a51c94ccf52() {
     #/
 }
 
-// Namespace namespace_a61f752dea02cbf9/namespace_81c5e22f6647f87c
+// Namespace namespace_a61f752dea02cbf9 / namespace_81c5e22f6647f87c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x310
 // Size: 0xc0
@@ -79,8 +79,8 @@ function precache() {
         level.agent_definition[agent_type]["setup_model_func"] = &setup_model;
         level.agent_definition[agent_type]["subclass"] = getscriptbundle(%"hash_781de85130f2625a");
     }
-    namespace_e8f3f30f2d3e4a89::agent_init();
-    namespace_f08e04b63067d27f::init();
-    namespace_8bef0f00d6d36a69::soldier();
+    scripts/cp_mp/agents/agent_init::agent_init();
+    scripts/aitypes/bt_util::init();
+    scripts/aitypes/assets::soldier();
 }
 

@@ -17,17 +17,17 @@
 #using scripts\mp\gametypes\obj_dom.gsc;
 #using scripts\mp\objidpoolmanager.gsc;
 
-#namespace namespace_b990692ec1c5d18b;
+#namespace br_dom_quest;
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59f
 // Size: 0xf2
-function function_fb7271d5ee18b98d(data) {
-    level.var_3c9ad0fee1a9350b = spawnstruct();
-    level.var_3c9ad0fee1a9350b.capturetime = getdvarint(@"hash_d1ba52fb82cf7653", 30);
-    level.var_3c9ad0fee1a9350b.time = getdvarint(@"hash_be42880c860992ec", 240);
-    level.var_3c9ad0fee1a9350b.var_29a79d378c70e0b = getdvarint(@"hash_51711b96c9b3eec0", 128);
+function getcontractdata(data) {
+    level.domprops = spawnstruct();
+    level.domprops.capturetime = getdvarint(@"hash_d1ba52fb82cf7653", 30);
+    level.domprops.time = getdvarint(@"hash_be42880c860992ec", 240);
+    level.domprops.captureradius = getdvarint(@"hash_51711b96c9b3eec0", 128);
     /#
         assert(isdefined(game["dialog"]));
     #/
@@ -38,26 +38,26 @@ function function_fb7271d5ee18b98d(data) {
     setupdom();
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x698
 // Size: 0x30
 function function_9088ffe8cb64311f() {
     placement = self.tablet function_8baad4bd99e782a3();
     if (!isdefined(placement)) {
-        return 0;
+        return false;
     }
     self.reservedplacement = placement;
-    return 1;
+    return true;
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6d0
 // Size: 0x148
 function function_e387efb61ad86b48() {
     uiobjectiveshowtoteam("domination", self.teams[0]);
-    time = level.var_3c9ad0fee1a9350b.time;
+    time = level.domprops.time;
     time = function_9b6275085fbcb8f4(time);
     function_5a15174d34f0670c(time);
     thread function_a859560671de3158(time);
@@ -72,27 +72,27 @@ function function_e387efb61ad86b48() {
     domflagupdateicons();
     uiobjectiveshowtoteam("domination", self.teams[0]);
     foreach (player in getteamdata(self.teams[0], "players")) {
-        player thread namespace_44abc05161e2e2cb::showsplash("br_domination_quest_start_team");
+        player thread scripts/mp/hud_message::showsplash("br_domination_quest_start_team");
     }
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_dom_accept", self.teams[0], 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_dom_accept", self.teams[0], 1);
     /#
         print("icon_waypoint_ot");
     #/
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x81f
 // Size: 0x50
 function function_34a295960f3d086(success) {
     self notify("task_ended");
     self.ended = 1;
-    self.domflag namespace_19b4203b51d56488::releaseid();
+    self.domflag scripts/mp/gameobjects::releaseid();
     wait(1);
-    function_93663fe58d95f174(ter_op(istrue(success), self.teams[0], undefined));
+    endcontract(ter_op(istrue(success), self.teams[0], undefined));
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x876
 // Size: 0x75
@@ -103,19 +103,19 @@ function function_a859560671de3158(time) {
     params = spawnstruct();
     params.intvar = 0;
     displayteamsplash(self.teams[0], "br_domination_quest_timer_expired", params);
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_gen_fail", self.teams[0], 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_gen_fail", self.teams[0], 1);
     thread function_34a295960f3d086(0);
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f2
 // Size: 0x171
 function function_8baad4bd99e782a3() {
     locations = array_randomize(getstructarray("dmz_dom_tower", "script_noteworthy"));
-    var_fdc6ee1b91ebb7bf = namespace_c5622898120e827f::getmintimetillpointindangercircle(self.origin);
+    var_fdc6ee1b91ebb7bf = scripts/mp/gametypes/br_circle::getmintimetillpointindangercircle(self.origin);
     placement = undefined;
-    var_2ed718e1da0b965 = undefined;
+    bestlocindex = undefined;
     var_be0f4d48fa40793f = 12000;
     foreach (i, node in locations) {
         dist = distance2d(node.origin, self.origin);
@@ -123,7 +123,7 @@ function function_8baad4bd99e782a3() {
             continue;
         }
         if (!level.br_circle_disabled) {
-            var_28deb7ff62e281d3 = namespace_c5622898120e827f::getmintimetillpointindangercircle(node.origin);
+            var_28deb7ff62e281d3 = scripts/mp/gametypes/br_circle::getmintimetillpointindangercircle(node.origin);
             if (var_28deb7ff62e281d3 < var_fdc6ee1b91ebb7bf) {
                 continue;
             }
@@ -142,7 +142,7 @@ function function_8baad4bd99e782a3() {
             }
             if (var_5435995e95681b89 < var_be0f4d48fa40793f) {
                 var_be0f4d48fa40793f = var_5435995e95681b89;
-                var_2ed718e1da0b965 = i;
+                bestlocindex = i;
                 placement = node;
                 if (var_5435995e95681b89 <= 0) {
                     break;
@@ -153,18 +153,18 @@ function function_8baad4bd99e782a3() {
     return placement;
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa6b
 // Size: 0x1e6
 function function_a5ecbc99b54d31da(placement) {
-    var_1606f84a9b5bd33b = placement.origin;
-    radius = level.var_3c9ad0fee1a9350b.var_29a79d378c70e0b;
-    trigger = spawn("trigger_radius", var_1606f84a9b5bd33b, 0, int(radius), int(level.br_domheight));
+    domflagorigin = placement.origin;
+    radius = level.domprops.captureradius;
+    trigger = spawn("trigger_radius", domflagorigin, 0, int(radius), int(level.br_domheight));
     trigger.angles = placement.angles;
     trigger.script_label = "_a";
     level.setdomscriptablepartstatefunc = &domflag_setdomscriptablepartstate;
-    domflag = namespace_98b55913d2326ac8::setupobjective(trigger);
+    domflag = scripts/mp/gametypes/obj_dom::setupobjective(trigger);
     domflag.flagmodel setmodel("lm_domination_point_01");
     /#
         domflag.debugtype = "dom";
@@ -176,9 +176,9 @@ function function_a5ecbc99b54d31da(placement) {
     domflag.usecondition = &domflag_usecondition;
     domflag.lockupdatingicons = 1;
     domflag.checkuseconditioninthink = 1;
-    namespace_5a22b6f3a56f7e9b::update_objective_position(domflag.objidnum, domflag.curorigin + (0, 0, 60));
-    level.flagcapturetime = level.var_3c9ad0fee1a9350b.capturetime;
-    domflag namespace_19b4203b51d56488::setusetime(level.flagcapturetime);
+    scripts/mp/objidpoolmanager::update_objective_position(domflag.objidnum, domflag.curorigin + (0, 0, 60));
+    level.flagcapturetime = level.domprops.capturetime;
+    domflag scripts/mp/gameobjects::setusetime(level.flagcapturetime);
     self.lastcircletick = -1;
     self.domflag = domflag;
     self.curorigin = domflag.curorigin;
@@ -186,7 +186,7 @@ function function_a5ecbc99b54d31da(placement) {
     self.radius = radius;
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc58
 // Size: 0xb3
@@ -194,13 +194,13 @@ function domflagupdateicons() {
     objective_showtoplayersinmask(self.domflag.objidnum);
     objective_removeallfrommask(self.domflag.objidnum);
     foreach (player in getteamdata(self.teams[0], "players")) {
-        if (!player namespace_d3d40f75bb4e4c32::isplayeringulag()) {
+        if (!player scripts/mp/gametypes/br_public::isplayeringulag()) {
             objective_addclienttomask(self.domflag.objidnum, player);
         }
     }
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd12
 // Size: 0x26
@@ -208,7 +208,7 @@ function domflag_hideiconfromplayer(player) {
     objective_removeclientfrommask(self.domflag.objidnum, player);
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd3f
 // Size: 0x26
@@ -216,7 +216,7 @@ function domflag_showicontoplayer(player) {
     objective_addclienttomask(self.domflag.objidnum, player);
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd6c
 // Size: 0x12
@@ -226,7 +226,7 @@ function domflagupdateiconsframeend() {
     domflagupdateicons();
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd85
 // Size: 0x125
@@ -248,16 +248,16 @@ function deletedomflaggameobject() {
     self.domflag notify("deleted");
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb1
 // Size: 0x10
 function gameobjectreleaseid_delayed() {
     wait(0.1);
-    namespace_19b4203b51d56488::releaseid();
+    scripts/mp/gameobjects::releaseid();
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec8
 // Size: 0x1c4
@@ -290,23 +290,23 @@ function setupdom() {
     _setdomflagiconinfo("icon_waypoint_ot", "neutral", "MP_INGAME_ONLY/OBJ_OTFLAGLOC_CAPS", 0);
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1093
 // Size: 0x6a
-function _setdomflagiconinfo(name, colors, string, var_b50e35d9c370899b) {
+function _setdomflagiconinfo(name, colors, string, pulses) {
     level.waypointcolors[name] = colors;
     level.waypointbgtype[name] = 1;
     level.waypointstring[name] = string;
     level.waypointshader[name] = "ui_mp_br_mapmenu_icon_dom_objective";
-    level.waypointpulses[name] = var_b50e35d9c370899b;
+    level.waypointpulses[name] = pulses;
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1104
 // Size: 0x6c
-function domflag_onuseupdate(team, progress, change, var_4b22e50e504339fe) {
+function domflag_onuseupdate(team, progress, change, capplayer) {
     if (progress < 1 && !level.gameended) {
         play_spotrep_capture_sfx(progress, team);
     }
@@ -315,62 +315,62 @@ function domflag_onuseupdate(team, progress, change, var_4b22e50e504339fe) {
     }
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1177
 // Size: 0x155
-function domflag_onbeginuse(var_22282e7d48ca3400) {
+function domflag_onbeginuse(credit_player) {
     if (!isdefined(self.obj_icon_revealed) || !self.obj_icon_revealed) {
         self.obj_icon_revealed = 1;
         level thread utilflare_shootflare(self.curorigin, "dom");
-        playerteam = getteamarray(var_22282e7d48ca3400.team);
-        playersinrange = namespace_7e17181d03156026::getplayersinradius(self.curorigin, 7800, undefined, playerteam);
+        playerteam = getteamarray(credit_player.team);
+        playersinrange = scripts/mp/utility/player::getplayersinradius(self.curorigin, 7800, undefined, playerteam);
         foreach (player in playersinrange) {
             if (isdefined(player) && isalive(player)) {
-                player thread namespace_44abc05161e2e2cb::showsplash("br_domination_quest_alert");
+                player thread scripts/mp/hud_message::showsplash("br_domination_quest_alert");
             }
         }
-        var_96674628376eaba6 = namespace_54d20dd0dd79277f::getfriendlyplayers(var_22282e7d48ca3400.team, 0);
-        foreach (teammate in var_96674628376eaba6) {
+        playersquad = scripts/mp/utility/teams::getfriendlyplayers(credit_player.team, 0);
+        foreach (teammate in playersquad) {
             teammate notify("calloutmarkerping_warzoneKillQuestIcon");
         }
     }
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12d3
 // Size: 0x1ea
-function domflag_onuse(var_22282e7d48ca3400) {
-    if (self.task.teams[0] == var_22282e7d48ca3400.team) {
+function domflag_onuse(credit_player) {
+    if (self.task.teams[0] == credit_player.team) {
         missionid = getquestindex("domination");
         questrewardcirclepeek(self.task.teams[0]);
         rewards = function_d212a5e7a40d7c8d("dom", self.task.teams[0]);
         if (rewards && rewards[0]) {
             function_878ebcc241b54505("br_domination_quest_complete", function_3d262d56274bd22e("dom"), rewards[0], self.task.teams[0]);
         }
-        displaysquadmessagetoteam(self.task.teams[0], var_22282e7d48ca3400, 8, missionid);
-        level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_dom_success", self.task.teams[0], 1, 1);
+        displaysquadmessagetoteam(self.task.teams[0], credit_player, 8, missionid);
+        level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_dom_success", self.task.teams[0], 1, 1);
         self.task.rewardorigin = self.flagmodel.origin;
         self.task.rewardangles = self.flagmodel.angles;
         self.task.result = "success";
         self.task thread function_34a295960f3d086(1);
-    } else {
-        displayteamsplash(self.task.teams[0], "br_domination_quest_failure");
-        level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_gen_fail", self.task.teams[0], 1);
-        self.task.result = "fail";
+        return;
     }
+    displayteamsplash(self.task.teams[0], "br_domination_quest_failure");
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_gen_fail", self.task.teams[0], 1);
+    self.task.result = "fail";
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14c4
 // Size: 0x26
 function domflag_onenduse(team, player, success) {
-    namespace_98b55913d2326ac8::dompoint_onuseend(team, player, success);
+    scripts/mp/gametypes/obj_dom::dompoint_onuseend(team, player, success);
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14f1
 // Size: 0x8f
@@ -387,11 +387,11 @@ function play_spotrep_capture_sfx(progress, team) {
     }
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1587
 // Size: 0x9b
-function domflag_setdomscriptablepartstate(part, state, var_ba360e4ff7be8d96) {
+function domflag_setdomscriptablepartstate(part, state, statemod) {
     switch (state) {
     case #"hash_1c39674e5b0de0f3":
     case #"hash_3699ac6c262c25ea":
@@ -399,19 +399,18 @@ function domflag_setdomscriptablepartstate(part, state, var_ba360e4ff7be8d96) {
         return 0;
     default:
         state = "using";
-        if (isdefined(var_ba360e4ff7be8d96)) {
-            state = state + var_ba360e4ff7be8d96;
+        if (isdefined(statemod)) {
+            state = state + statemod;
         }
         self.scriptable setscriptablepartstate(part, state);
         if (part == "pulse") {
             self.scriptable setscriptablepartstate("flag", state);
         }
         return 1;
-        break;
     }
 }
 
-// Namespace namespace_b990692ec1c5d18b/namespace_564346a19fee25e0
+// Namespace br_dom_quest / scripts/mp/gametypes/br_dom_quest
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1629
 // Size: 0x45

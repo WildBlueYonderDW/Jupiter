@@ -22,7 +22,7 @@
 
 #namespace trial;
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ee
 // Size: 0x7b3
@@ -33,9 +33,9 @@ function main() {
     flag_init("strike_init_done");
     trial_mission_data_init();
     trial_retrieve_persistent_values();
-    namespace_f6027de4091ac1ae::init_trial_patches();
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/trials/mp_trials_patches::init_trial_patches();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     if (isusingmatchrulesdata()) {
         setcommonrulesfrommatchrulesdata();
     } else {
@@ -75,17 +75,17 @@ function main() {
         break;
     }
     level.allowed_gametypes = allowed;
-    namespace_19b4203b51d56488::main(allowed);
-    namespace_cd0b2d039510b38d::registerroundswitchdvar(level.gametype, 0, 0, 9);
-    namespace_cd0b2d039510b38d::registertimelimitdvar(level.gametype, 0);
-    namespace_cd0b2d039510b38d::registerscorelimitdvar(level.gametype, 0);
-    namespace_cd0b2d039510b38d::registerroundlimitdvar(level.gametype, 1);
-    namespace_cd0b2d039510b38d::registerwinlimitdvar(level.gametype, 1);
-    namespace_cd0b2d039510b38d::registernumlivesdvar(level.gametype, 0);
-    namespace_cd0b2d039510b38d::registerhalftimedvar(level.gametype, 0);
+    scripts/mp/gameobjects::main(allowed);
+    scripts/mp/utility/game::registerroundswitchdvar(level.gametype, 0, 0, 9);
+    scripts/mp/utility/game::registertimelimitdvar(level.gametype, 0);
+    scripts/mp/utility/game::registerscorelimitdvar(level.gametype, 0);
+    scripts/mp/utility/game::registerroundlimitdvar(level.gametype, 1);
+    scripts/mp/utility/game::registerwinlimitdvar(level.gametype, 1);
+    scripts/mp/utility/game::registernumlivesdvar(level.gametype, 0);
+    scripts/mp/utility/game::registerhalftimedvar(level.gametype, 0);
     setspecialloadout();
-    namespace_310ba947928891df::updatecommongametypedvars();
-    namespace_5078ee98abb32db9::initparachutedvars();
+    scripts/mp/gametypes/common::updatecommongametypedvars();
+    scripts/cp_mp/parachute::initparachutedvars();
     level.supportintel = 0;
     level.supportnuke = 0;
     level.disablespawncamera = 1;
@@ -93,7 +93,7 @@ function main() {
     level.challengesallowed = 0;
     level.getspawnpoint = &getspawnpoint;
     level.onplayerconnect = &onplayerconnect;
-    level.bypassclasschoicefunc = &namespace_d19129e4fa5d176::alwaysgamemodeclass;
+    level.bypassclasschoicefunc = &scripts/mp/class::alwaysgamemodeclass;
     level.endgame = &trialendgame;
     if (level.scripted_spawner_func.size) {
         level.starttime = 0;
@@ -177,17 +177,17 @@ function main() {
             break;
         }
     }
-    namespace_9f25beb31a159a16::init();
+    scripts/mp/trials/trial_enemy_sentry_turret::init();
     if (level.trial["compassMaterialOverride"] != "") {
         waitframe();
-        namespace_3e528bdeb387613a::setupminimap(level.trial["compassMaterialOverride"]);
+        scripts/mp/compass::setupminimap(level.trial["compassMaterialOverride"]);
     }
     /#
         function_2e9e80d411685c12();
     #/
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x10a8
 // Size: 0xa0
@@ -209,23 +209,23 @@ function trialendgame(winner, endreasontext) {
     exitlevel(0);
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x114f
 // Size: 0x3b7
 function trial_mission_data_init() {
-    var_6fed165ac80bc702 = trial_fetch_mission_table();
+    mission_table = trial_fetch_mission_table();
     /#
-        assert(tableexists(var_6fed165ac80bc702));
+        assert(tableexists(mission_table));
     #/
     missionid = getdvarint(@"hash_b93f834a6e6a8b21", 0);
     if (missionid == 0) {
-        var_6ae64d9896aef8f2 = tablelookup(var_6fed165ac80bc702, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
-        if (var_6ae64d9896aef8f2 != "") {
+        fallbackid = tablelookup(mission_table, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
+        if (fallbackid != "") {
             /#
-                println("ui_trial_reward_received" + var_6ae64d9896aef8f2 + "assault" + getdvar(@"hash_687fb8f9b7a23245"));
+                println("ui_trial_reward_received" + fallbackid + "assault" + getdvar(@"hash_687fb8f9b7a23245"));
             #/
-            missionid = var_6ae64d9896aef8f2;
+            missionid = fallbackid;
         } else {
             /#
                 assertmsg("ui_trial_mission_id omnvar unspecified. Cannot fallback to a mission because no mission is registered for " + getdvar(@"hash_687fb8f9b7a23245") + ". Can't initialize mission!");
@@ -234,17 +234,17 @@ function trial_mission_data_init() {
         }
     }
     level.trial["missionID"] = int(missionid);
-    level.trial["zone"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 2);
-    level.trial["missionScript"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 3);
-    level.trial["variant"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 4);
-    level.trial["team"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 5);
-    level.trial["scoreType"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 6);
-    level.trial["tier1"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 8));
-    level.trial["tier2"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 9));
-    level.trial["tier3"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 10));
-    level.trial["attempts"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 11));
-    level.trial["compassMaterialOverride"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 18);
-    level.trial["playerDataId"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 20));
+    level.trial["zone"] = tablelookup(mission_table, 0, level.trial["missionID"], 2);
+    level.trial["missionScript"] = tablelookup(mission_table, 0, level.trial["missionID"], 3);
+    level.trial["variant"] = tablelookup(mission_table, 0, level.trial["missionID"], 4);
+    level.trial["team"] = tablelookup(mission_table, 0, level.trial["missionID"], 5);
+    level.trial["scoreType"] = tablelookup(mission_table, 0, level.trial["missionID"], 6);
+    level.trial["tier1"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 8));
+    level.trial["tier2"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 9));
+    level.trial["tier3"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 10));
+    level.trial["attempts"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 11));
+    level.trial["compassMaterialOverride"] = tablelookup(mission_table, 0, level.trial["missionID"], 18);
+    level.trial["playerDataId"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 20));
     if (level.trial["zone"] != getdvar(@"hash_687fb8f9b7a23245")) {
         /#
             assertmsg("Incorrect map, " + getdvar(@"hash_687fb8f9b7a23245") + ", launched for mission ID " + level.trial["missionID"] + ". Expected " + level.trial["zone"] + "!");
@@ -258,22 +258,22 @@ function trial_mission_data_init() {
     setomnvar("ui_trial_tier_3_requirement", level.trial["tier3"]);
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x150d
 // Size: 0x3a6
 function function_72965bdb36677ee9(missionid) {
-    var_6fed165ac80bc702 = trial_fetch_mission_table();
+    mission_table = trial_fetch_mission_table();
     /#
-        assert(tableexists(var_6fed165ac80bc702));
+        assert(tableexists(mission_table));
     #/
     if (missionid == 0) {
-        var_6ae64d9896aef8f2 = tablelookup(var_6fed165ac80bc702, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
-        if (var_6ae64d9896aef8f2 != "") {
+        fallbackid = tablelookup(mission_table, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
+        if (fallbackid != "") {
             /#
-                println("ui_trial_reward_received" + var_6ae64d9896aef8f2 + "assault" + getdvar(@"hash_687fb8f9b7a23245"));
+                println("ui_trial_reward_received" + fallbackid + "assault" + getdvar(@"hash_687fb8f9b7a23245"));
             #/
-            missionid = var_6ae64d9896aef8f2;
+            missionid = fallbackid;
         } else {
             /#
                 assertmsg("ui_trial_mission_id omnvar unspecified. Cannot fallback to a mission because no mission is registered for " + getdvar(@"hash_687fb8f9b7a23245") + ". Can't initialize mission!");
@@ -282,17 +282,17 @@ function function_72965bdb36677ee9(missionid) {
         }
     }
     level.trial["missionID"] = int(missionid);
-    level.trial["zone"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 2);
-    level.trial["missionScript"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 3);
-    level.trial["variant"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 4);
-    level.trial["team"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 5);
-    level.trial["scoreType"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 6);
-    level.trial["tier1"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 8));
-    level.trial["tier2"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 9));
-    level.trial["tier3"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 10));
-    level.trial["attempts"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 11));
-    level.trial["compassMaterialOverride"] = tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 18);
-    level.trial["playerDataId"] = int(tablelookup(var_6fed165ac80bc702, 0, level.trial["missionID"], 20));
+    level.trial["zone"] = tablelookup(mission_table, 0, level.trial["missionID"], 2);
+    level.trial["missionScript"] = tablelookup(mission_table, 0, level.trial["missionID"], 3);
+    level.trial["variant"] = tablelookup(mission_table, 0, level.trial["missionID"], 4);
+    level.trial["team"] = tablelookup(mission_table, 0, level.trial["missionID"], 5);
+    level.trial["scoreType"] = tablelookup(mission_table, 0, level.trial["missionID"], 6);
+    level.trial["tier1"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 8));
+    level.trial["tier2"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 9));
+    level.trial["tier3"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 10));
+    level.trial["attempts"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 11));
+    level.trial["compassMaterialOverride"] = tablelookup(mission_table, 0, level.trial["missionID"], 18);
+    level.trial["playerDataId"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 20));
     if (level.trial["zone"] != getdvar(@"hash_687fb8f9b7a23245")) {
         /#
             assertmsg("Incorrect map, " + getdvar(@"hash_687fb8f9b7a23245") + ", launched for mission ID " + level.trial["missionID"] + ". Expected " + level.trial["zone"] + "!");
@@ -306,7 +306,7 @@ function function_72965bdb36677ee9(missionid) {
     setomnvar("ui_trial_tier_3_requirement", level.trial["tier3"]);
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18ba
 // Size: 0xc9
@@ -315,36 +315,36 @@ function getspawnpoint() {
         waitframe();
     }
     spawnpointname = "mp_trial_spawn";
-    spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray(spawnpointname);
+    spawnpoints = scripts/mp/spawnlogic::getspawnpointarray(spawnpointname);
     /#
         assert(spawnpoints.size);
     #/
-    spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
+    spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints);
     if (isdefined(level.trial_spawn_vehicle)) {
-        seat = namespace_1fbd40990ee60ede::function_d3d95972f58ad2bc(level.trial_spawn_vehicle);
+        seat = scripts/cp_mp/vehicles/vehicle_occupancy::function_d3d95972f58ad2bc(level.trial_spawn_vehicle);
         data = spawnstruct();
         data.useonspawn = 1;
         data.enterstartwaitmsg = "spawned_player";
-        thread namespace_1fbd40990ee60ede::vehicle_occupancy_enter(level.trial_spawn_vehicle, seat, self, data);
+        thread scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_enter(level.trial_spawn_vehicle, seat, self, data);
         self.spawningintovehicle = 1;
     }
     return spawnpoint;
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x198b
 // Size: 0x1d8
 function onplayerconnect(player) {
-    if (utility::function_d5d0823d606a2a6e("tdm")) {
+    if (utility::is_trial("tdm")) {
         if (isbot(player)) {
             return;
         }
     }
-    player thread namespace_e5ed2f5a5ee8410e::addtoteam(level.trial["team"]);
+    player thread scripts/mp/menus::addtoteam(level.trial["team"]);
     level.teamdata["allies"]["soundInfix"] = "uk";
     level.teamdata["axis"]["soundInfix"] = "ru";
-    player namespace_d19129e4fa5d176::function_a16868d4dcd81a4b();
+    player scripts/mp/class::function_a16868d4dcd81a4b();
     player setclientomnvar("ui_total_fade", 1);
     if (isdefined(level.trial_map_loadout)) {
         player.pers["gamemodeLoadout"] = level.trial_map_loadout;
@@ -362,21 +362,21 @@ function onplayerconnect(player) {
         #/
         exitlevel(0);
     }
-    level.player namespace_d20f8ef223912e12::playerexecutionsdisable();
+    level.player scripts/mp/gametypes/br::playerexecutionsdisable();
     wait(1);
-    thread namespace_36f464722d326bbe::fadetoblackforplayer(player, 0, 0.5);
+    thread scripts/cp_mp/utility/game_utility::fadetoblackforplayer(player, 0, 0.5);
     if (game["trial"]["tries_remaining"] < level.trial["attempts"]) {
-        player namespace_944ddf7b8df1b0e3::leaderdialogonplayer("trial_retry");
+        player scripts/mp/utility/dialog::leaderdialogonplayer("trial_retry");
     } else if (getdvar(@"hash_687fb8f9b7a23245") == getdvar(@"hash_3ff42928b2b7f8e5", "")) {
-        player namespace_944ddf7b8df1b0e3::leaderdialogonplayer("trial_intro_short");
+        player scripts/mp/utility/dialog::leaderdialogonplayer("trial_intro_short");
     } else {
-        player namespace_944ddf7b8df1b0e3::leaderdialogonplayer("trial_intro");
+        player scripts/mp/utility/dialog::leaderdialogonplayer("trial_intro");
     }
     setdvar(@"hash_3ff42928b2b7f8e5", getdvar(@"hash_687fb8f9b7a23245"));
     thread trial_restart_watcher();
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b6a
 // Size: 0x3da
@@ -402,50 +402,50 @@ function setspecialloadout() {
     var_9309e04671262786 = getent("trial_starting_weapon", "script_noteworthy");
     var_226dd676a3cf59cb = getent("trial_starting_weapon_2", "script_noteworthy");
     if (isdefined(var_9309e04671262786)) {
-        var_5660bee41c94af5f = strtok(var_9309e04671262786.script_parameters, "+");
-        var_51b7953d0e3a6f82 = var_5660bee41c94af5f[0];
-        var_116a551dc9d3c305 = array_remove(var_5660bee41c94af5f, var_51b7953d0e3a6f82);
+        weap_tokens = strtok(var_9309e04671262786.script_parameters, "+");
+        var_51b7953d0e3a6f82 = weap_tokens[0];
+        var_116a551dc9d3c305 = array_remove(weap_tokens, var_51b7953d0e3a6f82);
         level.trial_loadout["axis"]["loadoutPrimary"] = var_51b7953d0e3a6f82;
         foreach (i, attachment in var_116a551dc9d3c305) {
             if (!i) {
                 level.trial_loadout["axis"]["loadoutPrimaryAttachment"] = attachment;
-            } else {
-                key = "loadoutPrimaryAttachment" + i + 1;
-                level.trial_loadout["axis"][key] = attachment;
+                continue;
             }
+            key = "loadoutPrimaryAttachment" + i + 1;
+            level.trial_loadout["axis"][key] = attachment;
         }
     }
     if (isdefined(var_226dd676a3cf59cb)) {
-        var_5660bee41c94af5f = strtok(var_226dd676a3cf59cb.script_parameters, "+");
-        var_51b7953d0e3a6f82 = var_5660bee41c94af5f[0];
-        var_116a551dc9d3c305 = array_remove(var_5660bee41c94af5f, var_51b7953d0e3a6f82);
+        weap_tokens = strtok(var_226dd676a3cf59cb.script_parameters, "+");
+        var_51b7953d0e3a6f82 = weap_tokens[0];
+        var_116a551dc9d3c305 = array_remove(weap_tokens, var_51b7953d0e3a6f82);
         level.trial_loadout["axis"]["loadoutSecondary"] = var_51b7953d0e3a6f82;
         foreach (i, attachment in var_116a551dc9d3c305) {
             if (!i) {
                 level.trial_loadout["axis"]["loadoutSecondaryAttachment"] = attachment;
-            } else {
-                key = "loadoutSecondaryAttachment" + i + 1;
-                level.trial_loadout["axis"][key] = attachment;
+                continue;
             }
+            key = "loadoutSecondaryAttachment" + i + 1;
+            level.trial_loadout["axis"][key] = attachment;
         }
     }
     level.trial_loadout["allies"] = level.trial_loadout["axis"];
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f4b
 // Size: 0x31
 function infinite_reserve_ammo() {
     level endon("game_ended");
     self endon("disconnect");
-    while (1) {
+    while (true) {
         self waittill("reload");
         self givemaxammo(self.currentprimaryweapon);
     }
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f83
 // Size: 0x197
@@ -460,60 +460,60 @@ function trial_weapon_spawn() {
         weapon thread weapon_think();
     }
     /#
-        var_89e9f545fb8c88c1 = tablelookup(trial_fetch_mission_table(), 0, level.trial["<unknown string>"], 1);
-        if (var_89e9f545fb8c88c1 == "<unknown string>") {
+        strid = tablelookup(trial_fetch_mission_table(), 0, level.trial["<unknown string>"], 1);
+        if (strid == "<unknown string>") {
             println("<unknown string>");
-        } else {
-            println("<unknown string>");
-            println("<unknown string>");
-            print(var_89e9f545fb8c88c1);
-            foreach (weap in level.trial_weapons) {
-                if (isdefined(weap.spawned_weapon)) {
-                    str = getsubstr(weap.spawned_weapon.classname, 7);
-                    print("<unknown string>" + str);
-                }
-            }
-            println("<unknown string>");
+            return;
         }
+        println("<unknown string>");
+        println("<unknown string>");
+        print(strid);
+        foreach (weap in level.trial_weapons) {
+            if (isdefined(weap.spawned_weapon)) {
+                str = getsubstr(weap.spawned_weapon.classname, 7);
+                print("<unknown string>" + str);
+            }
+        }
+        println("<unknown string>");
     #/
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2121
 // Size: 0x390
 function weapon_think() {
     level.player endon("death");
-    var_5660bee41c94af5f = strtok(self.script_parameters, "+");
-    var_51b7953d0e3a6f82 = var_5660bee41c94af5f[0];
-    var_116a551dc9d3c305 = array_remove(var_5660bee41c94af5f, var_51b7953d0e3a6f82);
-    var_11a1fa68aeb971c0 = namespace_36f464722d326bbe::function_d2d2b803a7b741a4();
+    weap_tokens = strtok(self.script_parameters, "+");
+    var_51b7953d0e3a6f82 = weap_tokens[0];
+    var_116a551dc9d3c305 = array_remove(weap_tokens, var_51b7953d0e3a6f82);
+    var_11a1fa68aeb971c0 = scripts/cp_mp/utility/game_utility::function_d2d2b803a7b741a4();
     basename = namespace_e0ee43ef2dddadaa::weaponassetnamemap(var_51b7953d0e3a6f82);
-    var_a7408dbfed49f3f9 = makeweapon(basename);
-    var_98a8134515df9081 = [];
-    var_a1ae8ff6d228344d = 0;
+    weapobj = makeweapon(basename);
+    attachmentsvalid = [];
+    has_akimbo = 0;
     foreach (a in var_116a551dc9d3c305) {
-        if (var_a7408dbfed49f3f9 canuseattachment(a)) {
+        if (weapobj canuseattachment(a)) {
             if (a == "akimbo") {
-                var_a1ae8ff6d228344d = 1;
+                has_akimbo = 1;
             }
-            var_98a8134515df9081[var_98a8134515df9081.size] = a;
-        } else {
-            /#
-                assertmsg("Invalid attachment: " + a + " found for weapon: " + basename);
-            #/
+            attachmentsvalid[attachmentsvalid.size] = a;
+            continue;
         }
+        /#
+            assertmsg("Invalid attachment: " + a + " found for weapon: " + basename);
+        #/
     }
-    var_116a551dc9d3c305 = var_98a8134515df9081;
-    var_91c18f9d87634d94 = namespace_e0ee43ef2dddadaa::buildweapon(var_51b7953d0e3a6f82, var_116a551dc9d3c305, "none", "none", -1, undefined, undefined, undefined, var_11a1fa68aeb971c0);
-    weapon_name = getcompleteweaponname(var_91c18f9d87634d94);
-    if (var_a1ae8ff6d228344d) {
+    var_116a551dc9d3c305 = attachmentsvalid;
+    built_weapon = namespace_e0ee43ef2dddadaa::buildweapon(var_51b7953d0e3a6f82, var_116a551dc9d3c305, "none", "none", -1, undefined, undefined, undefined, var_11a1fa68aeb971c0);
+    weapon_name = getcompleteweaponname(built_weapon);
+    if (has_akimbo) {
         thread weapon_akimbo_prop_think(weapon_name);
     }
     while (!isdefined(level.player.primaryinventory[0])) {
         waitframe();
     }
-    while (1) {
+    while (true) {
         var_caf3a434dc6e3312 = 0;
         var_caf3a534dc6e3545 = 0;
         if (isdefined(level.player.primaryinventory[0])) {
@@ -525,32 +525,32 @@ function weapon_think() {
         if (!isdefined(self.spawned_weapon) && !var_caf3a434dc6e3312 && !var_caf3a534dc6e3545) {
             self.spawned_weapon = spawn("weapon_" + weapon_name, self.origin, 17);
             self.spawned_weapon.angles = self.angles;
-            clip_ammo = weaponclipsize(var_91c18f9d87634d94);
-            var_59cf20581d014f8e = weaponmaxammo(var_91c18f9d87634d94);
+            clip_ammo = weaponclipsize(built_weapon);
+            reserve_ammo = weaponmaxammo(built_weapon);
             if (isdefined(self.script_noteworthy)) {
                 if (self.script_noteworthy == "outline") {
-                    namespace_cbd3754a0c69cc63::outlineenableforplayer(self.spawned_weapon, level.player, "outline_trial_item", "level_script");
+                    scripts/mp/utility/outline::outlineenableforplayer(self.spawned_weapon, level.player, "outline_trial_item", "level_script");
                 } else if (self.script_noteworthy == "osp") {
-                    namespace_cbd3754a0c69cc63::outlineenableforplayer(self.spawned_weapon, level.player, "outlinefill_nodepth_cyan", "level_script");
-                    var_59cf20581d014f8e = 0;
+                    scripts/mp/utility/outline::outlineenableforplayer(self.spawned_weapon, level.player, "outlinefill_nodepth_cyan", "level_script");
+                    reserve_ammo = 0;
                 }
             }
-            if (var_a1ae8ff6d228344d) {
+            if (has_akimbo) {
                 clip_ammo = 0;
             }
             if (istrue(level.player_limitedammo)) {
-                var_59cf20581d014f8e = level.enemiestotal - clip_ammo;
+                reserve_ammo = level.enemiestotal - clip_ammo;
             }
-            self.spawned_weapon itemweaponsetammo(clip_ammo, var_59cf20581d014f8e);
+            self.spawned_weapon itemweaponsetammo(clip_ammo, reserve_ammo);
         }
-        objweapon = var_47dcfbc98e2103ee = level.player waittill("weapon_dropped");
-        if (isdefined(var_47dcfbc98e2103ee) && isdefined(objweapon) && getcompleteweaponname(objweapon) == weapon_name) {
-            var_47dcfbc98e2103ee delete();
+        droppedent, objweapon = level.player waittill("weapon_dropped");
+        if (isdefined(droppedent) && isdefined(objweapon) && getcompleteweaponname(objweapon) == weapon_name) {
+            droppedent delete();
         }
     }
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x24b8
 // Size: 0x15e
@@ -576,7 +576,7 @@ function weapon_akimbo_prop_think(weapon_name) {
     }
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x261d
 // Size: 0x14b
@@ -584,16 +584,16 @@ function trial_end_score_dialogue() {
     var_a14d1d7d5339e7fe = undefined;
     var_a14d1c7d5339e5cb = undefined;
     var_a14d1b7d5339e398 = undefined;
-    var_76526f2b092d6a59 = getomnvar("ui_trial_main_score");
-    var_f642a654edaf0a48 = getomnvar("ui_trial_main_time");
-    if (var_76526f2b092d6a59 != -1) {
-        var_a14d1d7d5339e7fe = var_76526f2b092d6a59 >= getomnvar("ui_trial_tier_1_requirement");
-        var_a14d1c7d5339e5cb = var_76526f2b092d6a59 >= getomnvar("ui_trial_tier_2_requirement");
-        var_a14d1b7d5339e398 = var_76526f2b092d6a59 >= getomnvar("ui_trial_tier_3_requirement");
-    } else if (var_f642a654edaf0a48 != -1) {
-        var_a14d1d7d5339e7fe = var_f642a654edaf0a48 <= getomnvar("ui_trial_tier_1_requirement");
-        var_a14d1c7d5339e5cb = var_f642a654edaf0a48 <= getomnvar("ui_trial_tier_2_requirement");
-        var_a14d1b7d5339e398 = var_f642a654edaf0a48 <= getomnvar("ui_trial_tier_3_requirement");
+    main_score = getomnvar("ui_trial_main_score");
+    main_time = getomnvar("ui_trial_main_time");
+    if (main_score != -1) {
+        var_a14d1d7d5339e7fe = main_score >= getomnvar("ui_trial_tier_1_requirement");
+        var_a14d1c7d5339e5cb = main_score >= getomnvar("ui_trial_tier_2_requirement");
+        var_a14d1b7d5339e398 = main_score >= getomnvar("ui_trial_tier_3_requirement");
+    } else if (main_time != -1) {
+        var_a14d1d7d5339e7fe = main_time <= getomnvar("ui_trial_tier_1_requirement");
+        var_a14d1c7d5339e5cb = main_time <= getomnvar("ui_trial_tier_2_requirement");
+        var_a14d1b7d5339e398 = main_time <= getomnvar("ui_trial_tier_3_requirement");
     }
     if (istrue(level.trial_fail_alt)) {
         level.trial_fail_alt = 0;
@@ -607,14 +607,14 @@ function trial_end_score_dialogue() {
     } else {
         dialog = "trial_end_tier_0";
     }
-    level.player namespace_944ddf7b8df1b0e3::leaderdialogonplayer(dialog);
+    level.player scripts/mp/utility/dialog::leaderdialogonplayer(dialog);
     trial_ui_waittill_retry();
     if (!istrue(level.trial_restarting)) {
-        level.player namespace_944ddf7b8df1b0e3::leaderdialogonplayer("trial_retry");
+        level.player scripts/mp/utility/dialog::leaderdialogonplayer("trial_retry");
     }
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x276f
 // Size: 0xde
@@ -636,12 +636,12 @@ function trial_retrieve_persistent_values() {
     setomnvar("ui_trial_tries_remaining", int(game["trial"]["tries_remaining"]));
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2854
 // Size: 0x52
 function trial_restart_watcher() {
-    while (1) {
+    while (true) {
         msg = level.player waittill("luinotifyserver");
         if (msg == "trial_restart") {
             if (!isdefined(level.isinrewardflow) || !level.isinrewardflow) {
@@ -651,7 +651,7 @@ function trial_restart_watcher() {
     }
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28ad
 // Size: 0x48
@@ -665,7 +665,7 @@ function processlobbydata() {
     sendclientmatchdata();
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x28fc
 // Size: 0x1ff
@@ -697,7 +697,7 @@ function processlobbydataforclient(player) {
     player setplayerdata("common", "round", "clientMatchIndex", player.clientmatchdataid);
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b02
 // Size: 0xe
@@ -707,17 +707,17 @@ function function_2e9e80d411685c12() {
     #/
 }
 
-// Namespace trial/namespace_316a67d5fbb372aa
+// Namespace trial / scripts/mp/gametypes/trial
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b17
 // Size: 0x4a
 function function_c27ed1f1252188f8() {
     /#
         setdevdvarifuninitialized(@"hash_8b4dddca0bda590f", -1);
-        while (1) {
-            var_a16b1bfe5419bdd1 = getdvarint(@"hash_8b4dddca0bda590f", -1);
-            if (var_a16b1bfe5419bdd1 != -1) {
-                function_7bd94570d05ebf80(var_a16b1bfe5419bdd1);
+        while (true) {
+            force_tier = getdvarint(@"hash_8b4dddca0bda590f", -1);
+            if (force_tier != -1) {
+                function_7bd94570d05ebf80(force_tier);
             }
             waitframe();
         }

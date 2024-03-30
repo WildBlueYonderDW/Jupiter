@@ -12,12 +12,12 @@
 
 #namespace jup_ob_enemy_specialist_rusher;
 
-// Namespace jup_ob_enemy_specialist_rusher/namespace_31c9fdf99ee01836
+// Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x213
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"jup_ob_enemy_specialist_rusher");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_ob_enemy_specialist_rusher");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_4815c41776311ed2");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 350;
@@ -26,22 +26,22 @@ function main() {
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "rusher";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_soldier_base_ob");
-    switch (namespace_ac7e8770abb7eb1::get_random_weapon(2)) {
+    switch (scripts/code/character::get_random_weapon(2)) {
     case 0:
-        var_fea750d6814b803d = "jup_jp07_pi_uzulum, [ comp_sm_03, jup_jp07_pi_uzulum_mag_32_9mm ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "jup_jp07_pi_uzulum, [ comp_sm_03, jup_jp07_pi_uzulum_mag_32_9mm ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 1:
-        var_fea750d6814b803d = "iw9_pi_golf18, [ jup_comp_pi_01, iw9_minireddot01 ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_pi_golf18, [ jup_comp_pi_01, iw9_minireddot01 ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     }
     self giveweapon(self.weapon);
     self setspawnweapon(self.weapon);
     self.bulletsinclip = weaponclipsize(self.weapon);
     self.primaryweapon = self.weapon;
-    var_a68442ebadb66eb1 = "smoke_bomb_rusher_mp";
-    self.grenadeweapon = level.var_67b54180a55f70e1[var_a68442ebadb66eb1];
+    grenadeweaponhash = "smoke_bomb_rusher_mp";
+    self.grenadeweapon = level.var_67b54180a55f70e1[grenadeweaponhash];
     self.grenadeammo = 2;
     setup_model();
     /#
@@ -55,13 +55,13 @@ function main() {
     #/
     self.var_a942dd31d55102c9 = self.asmasset;
     self.a = spawnstruct();
-    namespace_bf5a1761a8d1bb07::asm_init_blackboard();
-    namespace_f08e04b63067d27f::bt_init();
-    namespace_28d7bb9fcf17949d::asm_init(self.asmasset, self.animationarchetype);
-    namespace_6205bc7c5e394598::ai_init();
+    scripts/asm/asm::asm_init_blackboard();
+    scripts/aitypes/bt_util::bt_init();
+    scripts/asm/asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts/common/ai::ai_init();
 }
 
-// Namespace jup_ob_enemy_specialist_rusher/namespace_31c9fdf99ee01836
+// Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x488
 // Size: 0x57
@@ -75,7 +75,7 @@ function setup_model() {
     }
 }
 
-// Namespace jup_ob_enemy_specialist_rusher/namespace_31c9fdf99ee01836
+// Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e6
 // Size: 0x9
@@ -83,7 +83,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_7cf51730be3e013c::main();
 }
 
-// Namespace jup_ob_enemy_specialist_rusher/namespace_31c9fdf99ee01836
+// Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f7
 // Size: 0xcf
@@ -100,17 +100,17 @@ function precache() {
         level.agent_definition[agent_type]["subclass"] = getscriptbundle(%"hash_4815c41776311ed2");
         namespace_7cf51730be3e013c::function_8168fbf6282d398b();
     }
-    namespace_e8f3f30f2d3e4a89::agent_init();
-    namespace_f08e04b63067d27f::init();
-    namespace_8bef0f00d6d36a69::soldier();
-    thread function_e8cf870298e36bdc();
+    scripts/cp_mp/agents/agent_init::agent_init();
+    scripts/aitypes/bt_util::init();
+    scripts/aitypes/assets::soldier();
+    thread setup_weapons();
 }
 
-// Namespace jup_ob_enemy_specialist_rusher/namespace_31c9fdf99ee01836
+// Namespace jup_ob_enemy_specialist_rusher / namespace_31c9fdf99ee01836
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5cd
 // Size: 0x106
-function function_e8cf870298e36bdc() {
+function setup_weapons() {
     while (!isdefined(level.weaponmapdata)) {
         waitframe();
     }
@@ -119,15 +119,15 @@ function function_e8cf870298e36bdc() {
     }
     var_5576d3be590a9a64 = "jup_jp07_pi_uzulum, [ comp_sm_03, jup_jp07_pi_uzulum_mag_32_9mm ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d3be590a9a64])) {
-        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("jup_jp07_pi_uzulum", [0:"comp_sm_03", 1:"jup_jp07_pi_uzulum_mag_32_9mm"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = scripts/mp/class::function_e83615f8a92e4378("jup_jp07_pi_uzulum", ["comp_sm_03", "jup_jp07_pi_uzulum_mag_32_9mm"], "none", "none");
     }
     var_5576d6be590aa0fd = "iw9_pi_golf18, [ jup_comp_pi_01, iw9_minireddot01 ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d6be590aa0fd])) {
-        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_pi_golf18", [0:"jup_comp_pi_01", 1:"iw9_minireddot01"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = scripts/mp/class::function_e83615f8a92e4378("iw9_pi_golf18", ["jup_comp_pi_01", "iw9_minireddot01"], "none", "none");
     }
-    var_a68442ebadb66eb1 = "smoke_bomb_rusher_mp";
-    if (!isdefined(level.var_67b54180a55f70e1[var_a68442ebadb66eb1])) {
-        level.var_67b54180a55f70e1[var_a68442ebadb66eb1] = makeweapon("smoke_bomb_rusher_mp");
+    grenadeweaponhash = "smoke_bomb_rusher_mp";
+    if (!isdefined(level.var_67b54180a55f70e1[grenadeweaponhash])) {
+        level.var_67b54180a55f70e1[grenadeweaponhash] = makeweapon("smoke_bomb_rusher_mp");
     }
 }
 

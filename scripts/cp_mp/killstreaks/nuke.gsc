@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
@@ -18,7 +18,7 @@
 
 #namespace nuke;
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x99
@@ -26,7 +26,7 @@ function init() {
     if (issharedfuncdefined("nuke", "init")) {
         [[ getsharedfunc("nuke", "init") ]]();
     }
-    level.nuke_expl_struct = namespace_36f464722d326bbe::getlocalestruct("nuke_expl_pos");
+    level.nuke_expl_struct = scripts/cp_mp/utility/game_utility::getlocalestruct("nuke_expl_pos");
     /#
         setdevdvarifuninitialized(@"hash_9d7c4e6216d74263", 0);
         setdevdvarifuninitialized(@"hash_aff3efc76e4dfeb2", 1);
@@ -38,7 +38,7 @@ function init() {
     level function_af7b6584a27af59f();
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa92
 // Size: 0x35
@@ -47,7 +47,7 @@ function function_c406cde778937505() {
     game["dialog"]["nuke_multi_use"] = "killstreak_remote_operator" + "_request_response";
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xace
 // Size: 0x3
@@ -55,7 +55,7 @@ function function_ae8a4b0e2c6b7396() {
     
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xad8
 // Size: 0x11
@@ -63,20 +63,20 @@ function function_af7b6584a27af59f() {
     level.nukeinfo = spawnstruct();
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0x47
 function tryusenuke(var_ea8ab1373211e7e6, var_66cdedd14979a988) {
-    var_5bb8bcc61bc76d46 = "nuke";
+    nukestreak = "nuke";
     if (isdefined(var_ea8ab1373211e7e6)) {
-        var_5bb8bcc61bc76d46 = var_ea8ab1373211e7e6;
+        nukestreak = var_ea8ab1373211e7e6;
     }
-    streakinfo = createstreakinfo(var_5bb8bcc61bc76d46, self);
+    streakinfo = createstreakinfo(nukestreak, self);
     return tryusenukefromstruct(streakinfo, var_66cdedd14979a988);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb3f
 // Size: 0x353
@@ -86,7 +86,7 @@ function tryusenukefromstruct(streakinfo, var_66cdedd14979a988) {
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
             streakinfo notify("killstreak_finished_with_deploy_weapon");
-            return 0;
+            return false;
         }
     }
     var_b87822b980d6e763 = ter_op(isdefined(streakinfo.var_b87822b980d6e763), streakinfo.var_b87822b980d6e763, undefined);
@@ -99,9 +99,9 @@ function tryusenukefromstruct(streakinfo, var_66cdedd14979a988) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NUKE_ALREADY_INBOUND");
         }
-        return 0;
+        return false;
     }
-    bundle = level.var_b23156d776b1d85.var_38f2a11237246ac["nuke"];
+    bundle = level.streakglobals.streakbundles["nuke"];
     var_33e40859dae8ac8d = isdefined(bundle) && isdefined(bundle.deployweaponname);
     if (streakinfo.streakname == "nuke_select_location") {
         if (var_33e40859dae8ac8d) {
@@ -109,15 +109,15 @@ function tryusenukefromstruct(streakinfo, var_66cdedd14979a988) {
         } else {
             var_dd21567fdd9a3a6a = "iw9_spotter_scope_mp";
         }
-        var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponfireddeploy(streakinfo, function_eeaa22f0cd1ff845(var_dd21567fdd9a3a6a), "weapon_fired", &weapongivennuke, &weaponswitchendednuke, &weaponfirednuke);
-        var_eb9cbd43baeae1c6 = namespace_203b58a09d020a50::airstrike_getownerlookatpos(self);
+        deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, function_eeaa22f0cd1ff845(var_dd21567fdd9a3a6a), "weapon_fired", &weapongivennuke, &weaponswitchendednuke, &weaponfirednuke);
+        var_eb9cbd43baeae1c6 = scripts/cp_mp/killstreaks/airstrike::airstrike_getownerlookatpos(self);
         var_3dabfa23bef362b5 = 25;
-        var_d44b7b1a5d0e8f39 = undefined;
+        otherteams = undefined;
         if (issharedfuncdefined("game", "getOtherTeam")) {
-            var_d44b7b1a5d0e8f39 = [[ getsharedfunc("game", "getOtherTeam") ]](streakinfo.owner.team);
+            otherteams = [[ getsharedfunc("game", "getOtherTeam") ]](streakinfo.owner.team);
         }
-        if (isdefined(var_d44b7b1a5d0e8f39)) {
-            level thread nuke_warnenemiesnukeincoming(var_d44b7b1a5d0e8f39[0]);
+        if (isdefined(otherteams)) {
+            level thread nuke_warnenemiesnukeincoming(otherteams[0]);
         }
     } else if (!istrue(level.mercywintriggered)) {
         if (var_33e40859dae8ac8d) {
@@ -125,56 +125,56 @@ function tryusenukefromstruct(streakinfo, var_66cdedd14979a988) {
         } else {
             var_dd21567fdd9a3a6a = "ks_remote_nuke_mp";
         }
-        var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweapontabletdeploy(streakinfo, undefined, undefined, undefined, undefined, var_dd21567fdd9a3a6a, 0);
+        deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweapontabletdeploy(streakinfo, undefined, undefined, undefined, undefined, var_dd21567fdd9a3a6a, 0);
     } else {
-        var_9b1deb5e9d32bbe3 = 1;
+        deployresult = 1;
     }
-    if (!istrue(var_9b1deb5e9d32bbe3) || level.gameended) {
+    if (!istrue(deployresult) || level.gameended) {
         level.nukeinfo.incoming = undefined;
         level.nukeinfo.player = undefined;
         streakinfo notify("killstreak_finished_with_deploy_weapon");
-        return 0;
+        return false;
     }
     if (isdefined(level.killstreakbeginusefunc)) {
         if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
             level.nukeinfo.incoming = undefined;
             level.nukeinfo.player = undefined;
             streakinfo notify("killstreak_finished_with_deploy_weapon");
-            return 0;
+            return false;
         }
     }
     thread nuke_start(streakinfo, 0, undefined, var_eb9cbd43baeae1c6, var_b87822b980d6e763, var_3dabfa23bef362b5, var_66cdedd14979a988);
     if (streakinfo.streakname != "nuke_select_location" && !istrue(level.mercywintriggered)) {
         utility::trycall(level.matchdata_logkillstreakevent, "nuke", self.origin);
     }
-    return 1;
+    return true;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe9a
 // Size: 0xe
 function weapongivennuke(streakinfo) {
-    return 1;
+    return true;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb0
 // Size: 0x27
-function weaponswitchendednuke(streakinfo, var_41bf9bf4918115ac) {
-    if (istrue(var_41bf9bf4918115ac)) {
-        thread namespace_203b58a09d020a50::airstrike_watchforads(streakinfo, "splash_icon_nuke");
+function weaponswitchendednuke(streakinfo, switchresult) {
+    if (istrue(switchresult)) {
+        thread scripts/cp_mp/killstreaks/airstrike::airstrike_watchforads(streakinfo, "splash_icon_nuke");
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xede
 // Size: 0x6a
-function weaponfirednuke(streakinfo, var_a9dd4e8c5e5c7178, var_b663fbbcbb2f5780) {
-    var_b21e2e887c161b9 = namespace_203b58a09d020a50::airstrike_getownerlookatpos(self);
-    if (!isdefined(var_b21e2e887c161b9)) {
+function weaponfirednuke(streakinfo, var_a9dd4e8c5e5c7178, firedprojectile) {
+    mappoint = scripts/cp_mp/killstreaks/airstrike::airstrike_getownerlookatpos(self);
+    if (!isdefined(mappoint)) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/INVALID_POINT");
         }
@@ -183,7 +183,7 @@ function weaponfirednuke(streakinfo, var_a9dd4e8c5e5c7178, var_b663fbbcbb2f5780)
     return "success";
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf50
 // Size: 0x5f
@@ -197,34 +197,34 @@ function nuke_delaythread(delay, func, owner, streakinfo) {
     level thread [[ func ]](owner, streakinfo);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfb6
 // Size: 0x505
-function nuke_start(streakinfo, var_3a565847d875f3ec, var_edbe27b2d5f1e060, var_92aaddad0fcb1fa8, var_b87822b980d6e763, var_3dabfa23bef362b5, weaponoverride) {
+function nuke_start(streakinfo, allowcancel, launchposoverride, explodeposoverride, var_b87822b980d6e763, var_3dabfa23bef362b5, weaponoverride) {
     level endon("nuke_cancelled");
     level notify("used_nuke");
     self notify("used_nuke");
     streakinfo notify("killstreak_finished_with_deploy_weapon", 1);
     nukeinfo = spawnstruct();
     nukeinfo.team = self.pers["team"];
-    nukeinfo.var_3a565847d875f3ec = istrue(var_3a565847d875f3ec);
+    nukeinfo.allowcancel = istrue(allowcancel);
     nukeinfo.cancelled = undefined;
     nukeinfo.detonated = undefined;
     nukeinfo.gameover = undefined;
-    nukeinfo.var_a8fb915f46a518d9 = 0;
-    nukeinfo.var_6d77c28b2dbed93d = 0;
+    nukeinfo.visioninprogress = 0;
+    nukeinfo.timescalefactor = 0;
     nukeinfo.nuketype = streakinfo.streakname;
     nukeinfo.streakinfo = streakinfo;
     nukeinfo.incoming = 1;
     if (isplayer(self)) {
         nukeinfo.player = self;
     }
-    nukegoalpoint = function_b913fa4052092442(nukeinfo.nuketype, var_92aaddad0fcb1fa8);
-    var_ffb179778403bed7 = function_5e29f303004c9602(nukeinfo.nuketype, nukegoalpoint, var_edbe27b2d5f1e060);
-    var_d7ea0c53e00a2519 = function_4eb440a17165aeee(nukeinfo.nuketype, 6, var_b87822b980d6e763);
+    nukegoalpoint = function_b913fa4052092442(nukeinfo.nuketype, explodeposoverride);
+    var_ffb179778403bed7 = function_5e29f303004c9602(nukeinfo.nuketype, nukegoalpoint, launchposoverride);
+    nukestarttimer = function_4eb440a17165aeee(nukeinfo.nuketype, 6, var_b87822b980d6e763);
     var_fc0ffdf77aeec040 = function_cd3712661b44dfb(nukeinfo.nuketype, 10, var_3dabfa23bef362b5);
-    var_c9d3f58c83d60d18 = function_e6e5495e21e67613(nukeinfo.nuketype, weaponoverride);
+    nukeweapon = nuke_getweapon(nukeinfo.nuketype, weaponoverride);
     if (!isdefined(nukeinfo.clockobject)) {
         nukeinfo.clockobject = spawn("script_origin", var_ffb179778403bed7 + (0, 0, 100));
         nukeinfo.clockobject dontinterpolate();
@@ -232,12 +232,12 @@ function nuke_start(streakinfo, var_3a565847d875f3ec, var_edbe27b2d5f1e060, var_
     } else {
         nukeinfo.clockobject.origin = var_ffb179778403bed7 + (0, 0, 100);
     }
-    nukeinfo.var_b0d1c69e44f250ec = var_ffb179778403bed7;
+    nukeinfo.launchpoint = var_ffb179778403bed7;
     nukeinfo.goalpoint = nukegoalpoint;
-    nukeinfo.var_51bee2f5b3b4e278 = var_d7ea0c53e00a2519;
-    nukeinfo.var_c6773756acf950fd = var_fc0ffdf77aeec040;
-    nukeinfo.var_6ea387e8dfa3cccd = var_d7ea0c53e00a2519 + var_fc0ffdf77aeec040;
-    nukeinfo.weapon = var_c9d3f58c83d60d18;
+    nukeinfo.starttimer = nukestarttimer;
+    nukeinfo.explosiontimer = var_fc0ffdf77aeec040;
+    nukeinfo.var_6ea387e8dfa3cccd = nukestarttimer + var_fc0ffdf77aeec040;
+    nukeinfo.weapon = nukeweapon;
     nukeinfo.inflictor = spawn("script_model", nukegoalpoint + (0, 0, 5000));
     nukeinfo.inflictor setmodel("tag_origin");
     nukeinfo.inflictor.team = nukeinfo.team;
@@ -246,10 +246,10 @@ function nuke_start(streakinfo, var_3a565847d875f3ec, var_edbe27b2d5f1e060, var_
     level.nukeinfo = nukeinfo;
     level thread nuke_startlaunchsequence(self, streakinfo);
     if (nukeinfo.nuketype == "nuke_multi") {
-        level thread nuke_delaythread(nukeinfo.var_51bee2f5b3b4e278, &function_2f5646d1ef5c8b81, self, streakinfo);
-        level thread nuke_delaythread(nukeinfo.var_51bee2f5b3b4e278, &function_e361a03e34d52440, self, streakinfo);
-        level thread nuke_delaythread(nukeinfo.var_51bee2f5b3b4e278, &function_36fb604b46a1514a, self, streakinfo);
-        level thread nuke_delaythread(nukeinfo.var_51bee2f5b3b4e278, &function_acb30efb36c7f230, self, streakinfo);
+        level thread nuke_delaythread(nukeinfo.starttimer, &function_2f5646d1ef5c8b81, self, streakinfo);
+        level thread nuke_delaythread(nukeinfo.starttimer, &function_e361a03e34d52440, self, streakinfo);
+        level thread nuke_delaythread(nukeinfo.starttimer, &function_36fb604b46a1514a, self, streakinfo);
+        level thread nuke_delaythread(nukeinfo.starttimer, &function_acb30efb36c7f230, self, streakinfo);
     } else {
         if (isdefined(streakinfo.nuketype) && streakinfo.nuketype == "nuke_select_location") {
             level thread nuke_delaythread(nukeinfo.var_6ea387e8dfa3cccd, &nuke_createradiationzone, self, streakinfo);
@@ -264,26 +264,26 @@ function nuke_start(streakinfo, var_3a565847d875f3ec, var_edbe27b2d5f1e060, var_
     if (issharedfuncdefined("nuke", "addTeamRankXPMultiplier")) {
         [[ getsharedfunc("nuke", "addTeamRankXPMultiplier") ]](2, level.nukeinfo.team, "nuke");
     }
-    if (level.nukeinfo.var_3a565847d875f3ec) {
+    if (level.nukeinfo.allowcancel) {
         level thread nuke_watchownerdisconnect(nukeinfo.player);
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14c2
 // Size: 0x5a
 function nuke_watchownerdisconnect(owner) {
-    if (!istrue(level.nukeinfo.var_6d77c28b2dbed93d)) {
+    if (!istrue(level.nukeinfo.timescalefactor)) {
         soundsettimescalefactorfromtable("nuke");
-        level.nukeinfo.var_6d77c28b2dbed93d = 1;
+        level.nukeinfo.timescalefactor = 1;
     }
     level endon("game_ended");
     owner waittill("disconnect");
     nuke_cancel();
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1523
 // Size: 0x59
@@ -296,7 +296,7 @@ function nuke_cancel() {
     level notify("nuke_cancelled");
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1583
 // Size: 0x145
@@ -315,28 +315,28 @@ function nuke_starttimer(traveltime) {
         setomnvar("ui_nuke_player_id", level.nukeinfo.player getentitynumber());
     }
     level thread nuke_updateuitimers(traveltime);
-    var_4d699cf255438b85 = traveltime;
+    nuketimer = traveltime;
     var_4301659e40735d70 = 0;
     var_8a02211e4ff9cb79 = 0;
     level.nukeinfo.clockobject playsound("iw9_mgb_splash");
-    while (var_4d699cf255438b85 > 0) {
-        if (var_4d699cf255438b85 <= 10) {
+    while (nuketimer > 0) {
+        if (nuketimer <= 10) {
             if (isdefined(level.nukeinfo.missile) && !istrue(var_4301659e40735d70)) {
                 level thread nuke_startmissileflightaudio();
                 var_4301659e40735d70 = 1;
             }
         }
-        if (var_4d699cf255438b85 <= 4.9) {
+        if (nuketimer <= 4.9) {
             if (isdefined(level.nukeinfo.missile) && !istrue(var_8a02211e4ff9cb79)) {
                 var_8a02211e4ff9cb79 = 1;
             }
         }
         wait(1);
-        var_4d699cf255438b85--;
+        nuketimer--;
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16cf
 // Size: 0x29
@@ -346,7 +346,7 @@ function nuke_startmissileflightaudio() {
     wait(7);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16ff
 // Size: 0x10
@@ -354,21 +354,21 @@ function nuke_cleartimer() {
     setomnvar("ui_nuke_countdown_active", -1);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1716
 // Size: 0x2f1
 function nuke_startlaunchsequence(owner, streakinfo) {
     nuketype = level.nukeinfo.nuketype;
-    var_d7ea0c53e00a2519 = level.nukeinfo.var_51bee2f5b3b4e278;
-    var_fc0ffdf77aeec040 = level.nukeinfo.var_c6773756acf950fd;
+    nukestarttimer = level.nukeinfo.starttimer;
+    var_fc0ffdf77aeec040 = level.nukeinfo.explosiontimer;
     var_81c12fe9c2d29fa7 = level.nukeinfo.var_6ea387e8dfa3cccd;
-    launchpos = level.nukeinfo.var_b0d1c69e44f250ec;
+    launchpos = level.nukeinfo.launchpoint;
     explodepos = level.nukeinfo.goalpoint;
-    var_c9d3f58c83d60d18 = level.nukeinfo.weapon;
+    nukeweapon = level.nukeinfo.weapon;
     var_22e6bb02f93c20d1 = nuketype == "nuke_multi";
     var_a3c021e65ff921dc = nuketype == "nuke_select_location";
-    level thread nuke_startprelaunchalarm(var_d7ea0c53e00a2519, streakinfo, owner);
+    level thread nuke_startprelaunchalarm(nukestarttimer, streakinfo, owner);
     if (var_22e6bb02f93c20d1) {
         level thread function_74f04922f32f9f6c(launchpos, explodepos, var_81c12fe9c2d29fa7, streakinfo, owner);
     }
@@ -380,12 +380,12 @@ function nuke_startlaunchsequence(owner, streakinfo) {
         if (issharedfuncdefined("game", "getGameType")) {
             gametype = [[ getsharedfunc("game", "getGameType") ]]();
         }
-        var_aa0023821e2dee76 = undefined;
+        timelimitdvar = undefined;
         if (issharedfuncdefined("nuke", "stopTheClock")) {
-            var_aa0023821e2dee76 = [[ getsharedfunc("nuke", "stopTheClock") ]](gametype);
+            timelimitdvar = [[ getsharedfunc("nuke", "stopTheClock") ]](gametype);
         }
-        if (isdefined(var_aa0023821e2dee76)) {
-            hashvalue = getdvarfloat(var_aa0023821e2dee76, 0);
+        if (isdefined(timelimitdvar)) {
+            hashvalue = getdvarfloat(timelimitdvar, 0);
             if (issharedfuncdefined("game", "setOverTimeLimitDvar")) {
                 [[ getsharedfunc("game", "setOverTimeLimitDvar") ]](hashvalue);
             }
@@ -401,17 +401,17 @@ function nuke_startlaunchsequence(owner, streakinfo) {
         level.disablespawncamera = 1;
     }
     if (issharedfuncdefined("nuke", "hostmigration_waitLongDurationWithPause")) {
-        [[ getsharedfunc("nuke", "hostmigration_waitLongDurationWithPause") ]](var_d7ea0c53e00a2519);
+        [[ getsharedfunc("nuke", "hostmigration_waitLongDurationWithPause") ]](nukestarttimer);
     }
     level thread nuke_starttimer(var_fc0ffdf77aeec040);
     if (istrue(var_22e6bb02f93c20d1)) {
-        level thread function_3eb69e3deebb567(owner, streakinfo, explodepos, var_fc0ffdf77aeec040, var_c9d3f58c83d60d18);
-    } else {
-        level thread nuke_launchmissile(owner, streakinfo, launchpos, explodepos, var_fc0ffdf77aeec040, var_c9d3f58c83d60d18);
+        level thread function_3eb69e3deebb567(owner, streakinfo, explodepos, var_fc0ffdf77aeec040, nukeweapon);
+        return;
     }
+    level thread nuke_launchmissile(owner, streakinfo, launchpos, explodepos, var_fc0ffdf77aeec040, nukeweapon);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a0e
 // Size: 0xe9
@@ -436,26 +436,26 @@ function nuke_startprelaunchalarm(var_b807a7599e6f56dc, streakinfo, owner) {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1afe
 // Size: 0xc6
-function function_74f04922f32f9f6c(var_5f4190c47572964f, var_ef2e38e51568075b, var_81c12fe9c2d29fa7, streakinfo, owner) {
+function function_74f04922f32f9f6c(var_5f4190c47572964f, baseexplosionpoint, var_81c12fe9c2d29fa7, streakinfo, owner) {
     level endon("game_ended");
     drone = spawn("script_model", var_5f4190c47572964f);
     drone setmodel("veh9_mil_air_large_drone_mp");
     drone setcandamage(0);
-    drone.angles = vectortoangles((var_ef2e38e51568075b[0], var_ef2e38e51568075b[1], 0) - (var_5f4190c47572964f[0], var_5f4190c47572964f[1], 0));
+    drone.angles = vectortoangles((baseexplosionpoint[0], baseexplosionpoint[1], 0) - (var_5f4190c47572964f[0], var_5f4190c47572964f[1], 0));
     drone setscriptablepartstate("engine", "on", 0);
     drone moveto(var_5f4190c47572964f + anglestoforward(drone.angles) * 5000, var_81c12fe9c2d29fa7);
     level.nukeinfo.drone = drone;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bcb
 // Size: 0x3ba
-function function_3eb69e3deebb567(owner, streakinfo, explodepos, traveltime, var_c9d3f58c83d60d18) {
+function function_3eb69e3deebb567(owner, streakinfo, explodepos, traveltime, nukeweapon) {
     level endon("game_ended");
     /#
         assertex(isdefined(level.nukeinfo.drone), "nuke_launchBombs: Missing drone to launch the bombs from");
@@ -467,52 +467,52 @@ function function_3eb69e3deebb567(owner, streakinfo, explodepos, traveltime, var
     }
     level.nukeinfo.bombs = [];
     drone = level.nukeinfo.drone;
-    var_a780020e8099cab2 = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
-    var_95046b2fb0c1d7a0 = [0:explodepos - anglestoforward(drone.angles) * 2500, 1:explodepos - anglestoforward(drone.angles) * 1000, 2:explodepos + anglestoforward(drone.angles) * 1000, 3:explodepos + anglestoforward(drone.angles) * 2500, 4:explodepos];
-    var_fbcabd62b8f66eb8 = namespace_2a184fc4902783dc::create_contents(0, 1, 1, 1);
+    nukegravity = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
+    explodeposlist = [explodepos - anglestoforward(drone.angles) * 2500, explodepos - anglestoforward(drone.angles) * 1000, explodepos + anglestoforward(drone.angles) * 1000, explodepos + anglestoforward(drone.angles) * 2500, explodepos];
+    tracecontents = scripts/engine/trace::create_contents(0, 1, 1, 1);
     rightoffset = 500;
     for (i = 0; i < 5; i++) {
-        var_2054934da4fd5851 = 0;
+        lastbomb = 0;
         nextindex = i + 1;
         if (nextindex == 5) {
-            var_2054934da4fd5851 = 1;
+            lastbomb = 1;
         }
-        var_9ea4faf9f08cb80d = drone.origin - (0, 0, 100) + anglestoforward(drone.angles) * 500;
-        launchpos = var_9ea4faf9f08cb80d + anglestoright(drone.angles) * rightoffset;
-        var_236ee72ff767d96d = var_95046b2fb0c1d7a0[i];
-        if (!istrue(var_2054934da4fd5851)) {
-            var_a0a41ba05e16ffe6 = randomintrange(1000, 2500);
+        launchoffset = drone.origin - (0, 0, 100) + anglestoforward(drone.angles) * 500;
+        launchpos = launchoffset + anglestoright(drone.angles) * rightoffset;
+        potentialpos = explodeposlist[i];
+        if (!istrue(lastbomb)) {
+            randdist = randomintrange(1000, 2500);
             randangle = randomint(360);
-            x = var_95046b2fb0c1d7a0[i][0] + var_a0a41ba05e16ffe6 * cos(randangle);
-            y = var_95046b2fb0c1d7a0[i][1] + var_a0a41ba05e16ffe6 * sin(randangle);
-            z = var_95046b2fb0c1d7a0[i][2];
-            var_236ee72ff767d96d = (x, y, z);
+            x = explodeposlist[i][0] + randdist * cos(randangle);
+            y = explodeposlist[i][1] + randdist * sin(randangle);
+            z = explodeposlist[i][2];
+            potentialpos = (x, y, z);
         }
-        var_3b8c153f4d5d7f16 = namespace_2a184fc4902783dc::ray_trace(launchpos, var_236ee72ff767d96d, drone, var_fbcabd62b8f66eb8);
-        var_a25beb2b2566b9c4 = var_236ee72ff767d96d;
-        if (isdefined(var_3b8c153f4d5d7f16) && isdefined(var_3b8c153f4d5d7f16["hittype"] != "hittype_none")) {
-            var_a25beb2b2566b9c4 = var_3b8c153f4d5d7f16["position"];
+        bombtrace = scripts/engine/trace::ray_trace(launchpos, potentialpos, drone, tracecontents);
+        newexplodepos = potentialpos;
+        if (isdefined(bombtrace) && isdefined(bombtrace["hittype"] != "hittype_none")) {
+            newexplodepos = bombtrace["position"];
         }
-        var_10afa5659c39462f = (var_a25beb2b2566b9c4 - 0.5 * var_a780020e8099cab2 * squared(traveltime) - launchpos) / traveltime;
-        bomb = magicgrenademanual(var_c9d3f58c83d60d18, launchpos, var_10afa5659c39462f, traveltime);
+        nukevelocity = (newexplodepos - 0.5 * nukegravity * squared(traveltime) - launchpos) / traveltime;
+        bomb = magicgrenademanual(nukeweapon, launchpos, nukevelocity, traveltime);
         bomb setscriptablepartstate("launch_bomb_source", "on", 0);
         bomb setscriptablepartstate("launch", "on", 0);
-        if (istrue(var_2054934da4fd5851)) {
+        if (istrue(lastbomb)) {
             level notify("nuke_last_bomb_launch");
         }
-        level thread function_610c4d047fafd311(bomb, streakinfo, traveltime, var_2054934da4fd5851);
+        level thread function_610c4d047fafd311(bomb, streakinfo, traveltime, lastbomb);
         level.nukeinfo.bombs[level.nukeinfo.bombs.size] = bomb;
         wait(randomfloatrange(0.5, 1));
         rightoffset = rightoffset - 250;
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f8c
 // Size: 0x1ee
-function function_610c4d047fafd311(bomb, streakinfo, traveltime, var_2054934da4fd5851) {
-    if (istrue(var_2054934da4fd5851)) {
+function function_610c4d047fafd311(bomb, streakinfo, traveltime, lastbomb) {
+    if (istrue(lastbomb)) {
         wait(traveltime - 2.8);
         bomb setscriptablepartstate("last_bomb_sfx", "on", 0);
         wait(2.8);
@@ -520,23 +520,23 @@ function function_610c4d047fafd311(bomb, streakinfo, traveltime, var_2054934da4f
         wait(traveltime);
     }
     position = bomb.origin;
-    var_56f0277b0ed98101 = 3;
+    shakeduration = 3;
     var_ff85637831346339 = 0.3;
     var_ff624f78310def85 = 0.15;
     var_ff625578310dfcb7 = 0.1;
-    var_31bfd6cefec15dc7 = 1500;
-    var_31e2eacefee7d17b = 5000;
-    var_31e2e4cefee7c449 = 10000;
+    radiusscalemax = 1500;
+    radiusscalemid = 5000;
+    radiusscalemin = 10000;
     if (issharedfuncdefined("shellshock", "artillery_earthQuake")) {
-        [[ getsharedfunc("shellshock", "artillery_earthQuake") ]](position, var_56f0277b0ed98101, var_ff85637831346339, var_ff624f78310def85, var_ff625578310dfcb7, var_31bfd6cefec15dc7, var_31e2eacefee7d17b, var_31e2e4cefee7c449, undefined, 1, 1);
+        [[ getsharedfunc("shellshock", "artillery_earthQuake") ]](position, shakeduration, var_ff85637831346339, var_ff624f78310def85, var_ff625578310dfcb7, radiusscalemax, radiusscalemid, radiusscalemin, undefined, 1, 1);
     }
     bombowner = level.nukeinfo.player;
-    var_8c517b9f2ddb52b3 = 3000;
+    killradius = 3000;
     var_d0712dbca713335f = nuke_cankilleverything();
     if (istrue(var_d0712dbca713335f)) {
-        function_44b8d70a3d3ca307(bombowner, position, var_8c517b9f2ddb52b3);
+        function_44b8d70a3d3ca307(bombowner, position, killradius);
     }
-    if (istrue(var_2054934da4fd5851)) {
+    if (istrue(lastbomb)) {
         level notify("nuke_last_bomb_impact");
         nuke_cleartimer();
         level.nukeinfo.detonated = 1;
@@ -544,41 +544,41 @@ function function_610c4d047fafd311(bomb, streakinfo, traveltime, var_2054934da4f
         thread play_loopsound_in_space("iw9_mgb_post_fire", bomb.origin);
         if (!istrue(level.mercywintriggered)) {
             if (isdefined(level.nukeinfo.player) && isdefined(streakinfo)) {
-                level.nukeinfo.player namespace_9abe40d2af041eb2::recordkillstreakendstats(streakinfo);
+                level.nukeinfo.player scripts/cp_mp/utility/killstreak_utility::recordkillstreakendstats(streakinfo);
             }
         }
     }
     bomb detonate();
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2181
 // Size: 0x5b
 function function_9e9a2fdc07dcdd72(bomb, traveltime) {
     bomb endon("death");
     bomb endon("explode");
-    var_bf96b95f2df1d8bc = 0;
+    timecounter = 0;
     var_8a02211e4ff9cb79 = 0;
-    while (1) {
-        if (var_bf96b95f2df1d8bc >= 8) {
+    while (true) {
+        if (timecounter >= 8) {
             break;
         }
-        var_bf96b95f2df1d8bc = var_bf96b95f2df1d8bc + 0.05;
+        timecounter = timecounter + 0.05;
         wait(0.05);
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21e3
 // Size: 0x344
-function function_44b8d70a3d3ca307(owner, position, var_8c517b9f2ddb52b3) {
-    var_32d90540fa4c9fc3 = var_8c517b9f2ddb52b3 * var_8c517b9f2ddb52b3;
+function function_44b8d70a3d3ca307(owner, position, killradius) {
+    killradiussq = killradius * killradius;
     var_705cc2040029edb7 = owner;
-    var_c9d3f58c83d60d18 = makeweapon(level.nukeinfo.weapon);
-    var_b8fa26a3f6b83cec = utility::function_2d7fd59d039fa69b(position, var_8c517b9f2ddb52b3);
-    foreach (character in var_b8fa26a3f6b83cec) {
+    nukeweapon = makeweapon(level.nukeinfo.weapon);
+    characterlist = utility::function_2d7fd59d039fa69b(position, killradius);
+    foreach (character in characterlist) {
         if (!isdefined(character)) {
             continue;
         }
@@ -592,56 +592,56 @@ function function_44b8d70a3d3ca307(owner, position, var_8c517b9f2ddb52b3) {
                 } else if (!isdefined(owner)) {
                     var_705cc2040029edb7 = character;
                 }
-                character dodamage(999999, level.nukeinfo.inflictor.origin, var_705cc2040029edb7, level.nukeinfo.inflictor, "MOD_EXPLOSIVE", var_c9d3f58c83d60d18, "none");
+                character dodamage(999999, level.nukeinfo.inflictor.origin, var_705cc2040029edb7, level.nukeinfo.inflictor, "MOD_EXPLOSIVE", nukeweapon, "none");
             }
         }
     }
     killstreaklist = level.activekillstreaks;
-    var_bd572a35f03ced5b = undefined;
+    vehiclelist = undefined;
     if (isdefined(level.vehicle) && isdefined(level.vehicle.interact) && isdefined(level.vehicle.interact.vehicles)) {
-        var_bd572a35f03ced5b = level.vehicle.interact.vehicles;
+        vehiclelist = level.vehicle.interact.vehicles;
     }
-    var_a1a3722fb9707783 = [[ level.getactiveequipmentarray ]]();
-    var_34ca454bbec477f1 = [];
+    equipmentlist = [[ level.getactiveequipmentarray ]]();
+    activeobjects = [];
     if (isdefined(killstreaklist)) {
-        var_34ca454bbec477f1 = array_combine_unique(var_34ca454bbec477f1, killstreaklist);
+        activeobjects = array_combine_unique(activeobjects, killstreaklist);
     }
-    if (isdefined(var_bd572a35f03ced5b)) {
-        var_34ca454bbec477f1 = array_combine_unique(var_34ca454bbec477f1, var_bd572a35f03ced5b);
+    if (isdefined(vehiclelist)) {
+        activeobjects = array_combine_unique(activeobjects, vehiclelist);
     }
-    if (isdefined(var_a1a3722fb9707783)) {
-        var_34ca454bbec477f1 = array_combine_unique(var_34ca454bbec477f1, var_a1a3722fb9707783);
+    if (isdefined(equipmentlist)) {
+        activeobjects = array_combine_unique(activeobjects, equipmentlist);
     }
-    foreach (object in var_34ca454bbec477f1) {
+    foreach (object in activeobjects) {
         if (!isdefined(object)) {
             continue;
         }
-        if (distancesquared(object.origin, position) > var_32d90540fa4c9fc3) {
+        if (distancesquared(object.origin, position) > killradiussq) {
             continue;
         }
-        if (object namespace_1f188a13f7e79610::isvehicle() && !isdefined(object.streakinfo)) {
+        if (object scripts/cp_mp/vehicles/vehicle::isvehicle() && !isdefined(object.streakinfo)) {
             object.var_a8f4bb03b366aa80 = 1;
-            object namespace_1f188a13f7e79610::vehicle_explode();
-        } else {
-            object dodamage(99999, level.nukeinfo.inflictor.origin, var_705cc2040029edb7, level.nukeinfo.inflictor, "MOD_EXPLOSIVE", var_c9d3f58c83d60d18, "none");
+            object scripts/cp_mp/vehicles/vehicle::vehicle_explode();
+            continue;
         }
+        object dodamage(99999, level.nukeinfo.inflictor.origin, var_705cc2040029edb7, level.nukeinfo.inflictor, "MOD_EXPLOSIVE", nukeweapon, "none");
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x252e
 // Size: 0x1ad
-function nuke_launchmissile(owner, streakinfo, launchpos, explodepos, traveltime, var_c9d3f58c83d60d18) {
+function nuke_launchmissile(owner, streakinfo, launchpos, explodepos, traveltime, nukeweapon) {
     level endon("game_ended");
     if (isdefined(owner) && isplayer(owner)) {
         if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
             level thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_nuke", owner);
         }
     }
-    var_a780020e8099cab2 = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
-    var_10afa5659c39462f = (explodepos - 0.5 * var_a780020e8099cab2 * squared(traveltime) - launchpos) / traveltime;
-    level.nukeinfo.missile = magicgrenademanual(var_c9d3f58c83d60d18, launchpos, var_10afa5659c39462f, traveltime);
+    nukegravity = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
+    nukevelocity = (explodepos - 0.5 * nukegravity * squared(traveltime) - launchpos) / traveltime;
+    level.nukeinfo.missile = magicgrenademanual(nukeweapon, launchpos, nukevelocity, traveltime);
     level.nukeinfo.missile setscriptablepartstate("launch", "on", 0);
     /#
         var_5c563a9f55dea93d = getdvarint(@"hash_35e0e06e57d92306", 0);
@@ -656,35 +656,35 @@ function nuke_launchmissile(owner, streakinfo, launchpos, explodepos, traveltime
     #/
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x26e2
 // Size: 0x159
-function nuke_findunobstructedfiringinfo(var_8dd61e2f04dc2c58, var_c85514760eff92a9, var_cf90f734f1c34521) {
+function nuke_findunobstructedfiringinfo(nukestart, nukeend, var_cf90f734f1c34521) {
     nukeinfo = spawnstruct();
-    var_1bfa180c6fdd09dd = physics_createcontents([0:"physicscontents_vehicleclip", 1:"physicscontents_missileclip", 2:"physicscontents_clipshot"]);
-    var_7b669bdcc35fd6fa = -2000;
-    var_7b8a85dcc3882150 = 2000;
-    var_a780020e8099cab2 = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
-    while (1) {
-        var_be819573448d27bc = var_8dd61e2f04dc2c58;
+    collisioncontents = physics_createcontents(["physicscontents_vehicleclip", "physicscontents_missileclip", "physicscontents_clipshot"]);
+    currentmin = -2000;
+    currentmax = 2000;
+    nukegravity = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
+    while (true) {
+        var_be819573448d27bc = nukestart;
         var_969bf3922a5aa40b = var_be819573448d27bc + (0, 0, 5000);
-        if (namespace_2a184fc4902783dc::ray_trace_passed(var_be819573448d27bc, var_969bf3922a5aa40b, undefined, var_1bfa180c6fdd09dd)) {
-            var_10afa5659c39462f = (var_c85514760eff92a9 - 0.5 * var_a780020e8099cab2 * squared(var_cf90f734f1c34521) - var_be819573448d27bc) / var_cf90f734f1c34521;
+        if (scripts/engine/trace::ray_trace_passed(var_be819573448d27bc, var_969bf3922a5aa40b, undefined, collisioncontents)) {
+            nukevelocity = (nukeend - 0.5 * nukegravity * squared(var_cf90f734f1c34521) - var_be819573448d27bc) / var_cf90f734f1c34521;
             nukeinfo.sourcepos = var_be819573448d27bc;
-            nukeinfo.goalpos = var_c85514760eff92a9;
-            nukeinfo.initvelocity = var_10afa5659c39462f;
+            nukeinfo.goalpos = nukeend;
+            nukeinfo.initvelocity = nukevelocity;
             break;
         }
-        var_be819573448d27bc = var_be819573448d27bc + anglestoright(self.angles) * randomintrange(var_7b669bdcc35fd6fa, var_7b8a85dcc3882150);
-        var_7b669bdcc35fd6fa = int(var_7b669bdcc35fd6fa * 1.3);
-        var_7b8a85dcc3882150 = int(var_7b8a85dcc3882150 * 1.3);
+        var_be819573448d27bc = var_be819573448d27bc + anglestoright(self.angles) * randomintrange(currentmin, currentmax);
+        currentmin = int(currentmin * 1.3);
+        currentmax = int(currentmax * 1.3);
         waitframe();
     }
     return nukeinfo;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2843
 // Size: 0x25f
@@ -693,7 +693,7 @@ function nuke_explosion(owner, streakinfo) {
     nuke_cleartimer();
     level.nukeinfo.detonated = 1;
     level notify("nuke_detonated");
-    if (istrue(streakinfo.var_fc46647c49fa8a11)) {
+    if (istrue(streakinfo.skipexplosion)) {
         return;
     }
     if (isdefined(level.nukeinfo.missile)) {
@@ -719,16 +719,16 @@ function nuke_explosion(owner, streakinfo) {
                 }
             }
         }
-    } else {
-        foreach (character in level.characters) {
-            if (isplayer(character) && [[ getsharedfunc("player", "isReallyAlive") ]](character)) {
-                character thread nuke_startnukedeathfx_chooselocationversion();
-            }
+        return;
+    }
+    foreach (character in level.characters) {
+        if (isplayer(character) && [[ getsharedfunc("player", "isReallyAlive") ]](character)) {
+            character thread nuke_startnukedeathfx_chooselocationversion();
         }
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2aa9
 // Size: 0x67
@@ -738,7 +738,7 @@ function nuke_startexplosionaudio(explosionpos) {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b17
 // Size: 0x9c
@@ -754,26 +754,26 @@ function nuke_slowmo(owner, streakinfo) {
     level waittill("nuke_death");
     setslowmotion(1, 0.25, 0.1);
     /#
-        var_3a6f86f8fa6a5421 = getdvarint(@"hash_aff3efc76e4dfeb2", 1);
-        if (!var_3a6f86f8fa6a5421) {
+        endgameoff = getdvarint(@"hash_aff3efc76e4dfeb2", 1);
+        if (!endgameoff) {
             wait(3);
             setslowmotion(0.25, 1, 0);
         }
     #/
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bba
 // Size: 0x3b
 function setnuketimescalefactor() {
-    if (!istrue(level.nukeinfo.var_6d77c28b2dbed93d)) {
+    if (!istrue(level.nukeinfo.timescalefactor)) {
         soundsettimescalefactorfromtable("nuke");
-        level.nukeinfo.var_6d77c28b2dbed93d = 1;
+        level.nukeinfo.timescalefactor = 1;
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bfc
 // Size: 0x71
@@ -784,7 +784,7 @@ function nuke_dof(owner, streakinfo) {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c74
 // Size: 0x19
@@ -793,14 +793,14 @@ function nuke_adjustexplosiondof() {
     self setphysicaldepthoffield(2, 1500);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c94
 // Size: 0x15a
 function nuke_vision(owner, streakinfo) {
     level endon("nuke_cancelled");
-    level.nukeinfo.var_a8fb915f46a518d9 = 1;
-    if (istrue(streakinfo.var_9ed60d0d51f90d76)) {
+    level.nukeinfo.visioninprogress = 1;
+    if (istrue(streakinfo.skipvision)) {
         return;
     }
     visionsetnaked("nuke_global_flash", 0.05);
@@ -820,13 +820,13 @@ function nuke_vision(owner, streakinfo) {
                 continue;
             }
             player setclientomnvar("ui_world_fade", 1);
-            level thread namespace_36f464722d326bbe::fadetoblackforplayer(player, 0, 0.25);
+            level thread scripts/cp_mp/utility/game_utility::fadetoblackforplayer(player, 0, 0.25);
         }
     }
-    level.nukeinfo.var_a8fb915f46a518d9 = 0;
+    level.nukeinfo.visioninprogress = 0;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2df5
 // Size: 0x47
@@ -837,7 +837,7 @@ function nuke_fadeflashvision(var_a327466df35c5c88, var_9d7a33ca9811c391) {
     visionsetnaked("", var_9d7a33ca9811c391);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e43
 // Size: 0x4ad
@@ -876,11 +876,11 @@ function nuke_death(owner, streakinfo) {
                     [[ getsharedfunc("nuke", "destroyActiveObjects") ]]();
                 }
             } else if (!istrue(level.blocknukekills)) {
-                var_b0c33d224b825287 = undefined;
+                enemyteams = undefined;
                 if (issharedfuncdefined("game", "getEnemyTeams")) {
-                    var_b0c33d224b825287 = [[ getsharedfunc("game", "getEnemyTeams") ]](level.nukeinfo.inflictor.team);
+                    enemyteams = [[ getsharedfunc("game", "getEnemyTeams") ]](level.nukeinfo.inflictor.team);
                 }
-                foreach (entry in var_b0c33d224b825287) {
+                foreach (entry in enemyteams) {
                     if (issharedfuncdefined("nuke", "destroyActiveObjects")) {
                         [[ getsharedfunc("nuke", "destroyActiveObjects") ]](entry);
                     }
@@ -891,11 +891,11 @@ function nuke_death(owner, streakinfo) {
             }
         } else {
             foreach (character in level.characters) {
-                isplayerinradzone = 0;
+                isPlayerInRadZone = 0;
                 if (issharedfuncdefined("nuke", "isPlayerInRadZone")) {
-                    isplayerinradzone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](character, level.nukeinfo.goalpoint, 25000000);
+                    isPlayerInRadZone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](character, level.nukeinfo.goalpoint, 25000000);
                 }
-                if (isplayerinradzone) {
+                if (isPlayerInRadZone) {
                     character.nuked = 1;
                     if ([[ getsharedfunc("player", "isReallyAlive") ]](character)) {
                         if (issharedfuncdefined("nuke", "killPlayer")) {
@@ -907,7 +907,7 @@ function nuke_death(owner, streakinfo) {
         }
         if (!istrue(level.mercywintriggered)) {
             if (isdefined(level.nukeinfo.player) && isdefined(streakinfo)) {
-                level.nukeinfo.player namespace_9abe40d2af041eb2::recordkillstreakendstats(streakinfo);
+                level.nukeinfo.player scripts/cp_mp/utility/killstreak_utility::recordkillstreakendstats(streakinfo);
             }
         }
     }
@@ -920,7 +920,7 @@ function nuke_death(owner, streakinfo) {
                 return;
             }
         #/
-        while (istrue(level.nukeinfo.var_a8fb915f46a518d9)) {
+        while (istrue(level.nukeinfo.visioninprogress)) {
             waitframe();
         }
         level.nukeinfo.gameover = 1;
@@ -928,7 +928,7 @@ function nuke_death(owner, streakinfo) {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32f7
 // Size: 0xc4
@@ -937,15 +937,15 @@ function function_2f5646d1ef5c8b81(owner, streakinfo) {
     level endon("game_ended");
     level waittill("nuke_last_bomb_launch");
     if (!istrue(streakinfo.var_8b07383e09b74fad)) {
-        var_5b4471e9efde87c3 = level.nukeinfo.var_c6773756acf950fd;
-        visionsetfadetoblack("nuke_global_flash", var_5b4471e9efde87c3 * 1.75);
+        explodetime = level.nukeinfo.explosiontimer;
+        visionsetfadetoblack("nuke_global_flash", explodetime * 1.75);
     }
     foreach (player in level.players) {
         player setsoundsubmix("jup_kls_mgb", 6);
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33c2
 // Size: 0xfc
@@ -963,24 +963,24 @@ function function_36fb604b46a1514a(owner, streakinfo) {
             if (!isdefined(player)) {
                 continue;
             }
-            level thread namespace_36f464722d326bbe::fadetoblackforplayer(player, 0, 3);
+            level thread scripts/cp_mp/utility/game_utility::fadetoblackforplayer(player, 0, 3);
         }
     }
     level notify("nuke_bomb_slam_white_finished");
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34c5
 // Size: 0x150
 function function_e361a03e34d52440(owner, streakinfo) {
     level endon("nuke_cancelled");
     level endon("game_ended");
-    var_5b4471e9efde87c3 = level.nukeinfo.var_c6773756acf950fd;
-    var_d15ea961076c2a0f = var_5b4471e9efde87c3 / 3;
-    var_895e3bf2db2f84fb = [0:"far", 1:"mid", 2:"near"];
-    for (var_535b30b922b731e1 = 0; var_535b30b922b731e1 < var_895e3bf2db2f84fb.size; var_535b30b922b731e1++) {
-        var_f4fa9d362463d738 = "player_mgb_shake_" + var_895e3bf2db2f84fb[var_535b30b922b731e1] + "_mp";
+    explodetime = level.nukeinfo.explosiontimer;
+    var_d15ea961076c2a0f = explodetime / 3;
+    var_895e3bf2db2f84fb = ["far", "mid", "near"];
+    for (motionindex = 0; motionindex < var_895e3bf2db2f84fb.size; motionindex++) {
+        var_f4fa9d362463d738 = "player_mgb_shake_" + var_895e3bf2db2f84fb[motionindex] + "_mp";
         foreach (player in level.players) {
             if (!isdefined(player)) {
                 continue;
@@ -988,31 +988,33 @@ function function_e361a03e34d52440(owner, streakinfo) {
             player notify("nuke_bomb_next_stage");
             if (!player _isalive()) {
                 level thread function_f903c3e8aabfc042(player, var_f4fa9d362463d738, "spawned_player");
-            } else if (player isusingremote()) {
-                level thread function_f903c3e8aabfc042(player, var_f4fa9d362463d738, "stopped_using_remote");
-            } else {
-                function_f7348e400b4a608d(player, var_f4fa9d362463d738, 0, 1);
+                continue;
             }
+            if (player isusingremote()) {
+                level thread function_f903c3e8aabfc042(player, var_f4fa9d362463d738, "stopped_using_remote");
+                continue;
+            }
+            function_f7348e400b4a608d(player, var_f4fa9d362463d738, 0, 1);
         }
         wait(var_d15ea961076c2a0f);
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x361c
 // Size: 0x50
-function function_f903c3e8aabfc042(player, var_f4fa9d362463d738, var_4063cdc9b79e33f2) {
+function function_f903c3e8aabfc042(player, var_f4fa9d362463d738, triggernotify) {
     player endon("death_or_disconnect");
     player endon("nuke_bomb_next_stage");
     player endon("nuke_bomb_delayed_earthquake");
     level endon("game_ended");
-    player waittill(var_4063cdc9b79e33f2);
+    player waittill(triggernotify);
     function_f7348e400b4a608d(player, var_f4fa9d362463d738, 0, 1);
     player notify("nuke_bomb_delayed_earthquake");
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3673
 // Size: 0xfe
@@ -1040,13 +1042,13 @@ function function_acb30efb36c7f230(owner, streakinfo) {
     level thread nuke_delayendgame(10, winner, 1);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3778
 // Size: 0x62
-function nuke_delayendgame(delaytime, winner, var_7db0ffa183f91058, var_3a4c75a01773062c) {
+function nuke_delayendgame(delaytime, winner, playbnk, var_3a4c75a01773062c) {
     level endon("game_ended");
-    if (istrue(var_7db0ffa183f91058)) {
+    if (istrue(playbnk)) {
         level thread function_54a492aef8fd981f(var_3a4c75a01773062c);
     }
     if (issharedfuncdefined("nuke", "delayEndGame")) {
@@ -1054,14 +1056,14 @@ function nuke_delayendgame(delaytime, winner, var_7db0ffa183f91058, var_3a4c75a0
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37e1
 // Size: 0xb1
 function function_54a492aef8fd981f(delaytime) {
     level endon("game_ended");
     if (isdefined(delaytime)) {
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(delaytime);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(delaytime);
     }
     level notify("play_nuke_bnk");
     setomnvarforallclients("post_game_state", 12);
@@ -1071,51 +1073,51 @@ function function_54a492aef8fd981f(delaytime) {
             if (!isdefined(player)) {
                 continue;
             }
-            level thread namespace_36f464722d326bbe::function_852712268d005332(player, 0, 1);
+            level thread scripts/cp_mp/utility/game_utility::function_852712268d005332(player, 0, 1);
         }
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3899
 // Size: 0xff
 function nuke_earthquake(owner, streakinfo) {
     level endon("nuke_cancelled");
-    var_9798c7aa7c0a8a06 = level.nukeinfo.goalpoint;
-    earthquake(0.4, 1.5, var_9798c7aa7c0a8a06, 100000);
+    earthquakeorigin = level.nukeinfo.goalpoint;
+    earthquake(0.4, 1.5, earthquakeorigin, 100000);
     level thread nuke_playshockwaveearthquake(streakinfo);
     level waittill("nuke_death");
     if (level.nukeinfo.nuketype == "nuke_select_location") {
-        earthquake(0.3, 1, var_9798c7aa7c0a8a06, 100000);
+        earthquake(0.3, 1, earthquakeorigin, 100000);
     } else {
-        earthquake(0.7, 3, var_9798c7aa7c0a8a06, 100000);
+        earthquake(0.7, 3, earthquakeorigin, 100000);
     }
     foreach (player in level.players) {
         player playrumbleonentity("damage_heavy");
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x399f
 // Size: 0x82
 function nuke_playshockwaveearthquake(streakinfo) {
     level endon("nuke_cancelled");
     level endon("nuke_death");
-    var_9b5ba1713b6db4d = 0.01;
-    var_9798c7aa7c0a8a06 = level.nukeinfo.goalpoint;
-    while (1) {
-        earthquake(var_9b5ba1713b6db4d, 0.05, var_9798c7aa7c0a8a06, 100000);
+    earthquakeintensity = 0.01;
+    earthquakeorigin = level.nukeinfo.goalpoint;
+    while (true) {
+        earthquake(earthquakeintensity, 0.05, earthquakeorigin, 100000);
         wait(0.05);
-        var_9b5ba1713b6db4d = var_9b5ba1713b6db4d + 0.0015;
-        if (var_9b5ba1713b6db4d >= 0.3) {
-            var_9b5ba1713b6db4d = 0.3;
+        earthquakeintensity = earthquakeintensity + 0.0015;
+        if (earthquakeintensity >= 0.3) {
+            earthquakeintensity = 0.3;
         }
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a28
 // Size: 0x24
@@ -1125,7 +1127,7 @@ function onplayerspawned() {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a53
 // Size: 0x52
@@ -1142,7 +1144,7 @@ function nuke_setvisionforplayer(delaytime, transitiontime) {
     self visionsetnakedforplayer("nuke_global_aftermath", transitiontime);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3aac
 // Size: 0x99
@@ -1163,19 +1165,19 @@ function nuke_updateuitimers(traveltime) {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b4c
 // Size: 0x23
 function nuke_updatevisiononhostmigration() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         level waittill("host_migration_end");
         level nuke_setaftermathvision(0);
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b76
 // Size: 0x6f
@@ -1186,17 +1188,17 @@ function nuke_setaftermathvision(transitiontime) {
             return;
         }
     #/
-    shouldnukeendgame = 1;
+    shouldNukeEndGame = 1;
     if (issharedfuncdefined("nuke", "shouldNukeEndGame")) {
-        shouldnukeendgame = [[ getsharedfunc("nuke", "shouldNukeEndGame") ]]();
+        shouldNukeEndGame = [[ getsharedfunc("nuke", "shouldNukeEndGame") ]]();
     }
-    if (!shouldnukeendgame) {
+    if (!shouldNukeEndGame) {
         return;
     }
     function_e6e629829270e1fa();
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3bec
 // Size: 0x96
@@ -1207,13 +1209,13 @@ function function_e6e629829270e1fa() {
             continue;
         }
         if (!istrue(level.var_587f8a02a3f577)) {
-            level thread namespace_36f464722d326bbe::fadetoblackforplayer(player, 1);
+            level thread scripts/cp_mp/utility/game_utility::fadetoblackforplayer(player, 1);
         }
         player setclienttriggeraudiozonepartialwithfade("nuke_killstreak", 2, "ambient", "ambient_events");
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c89
 // Size: 0xc8
@@ -1239,7 +1241,7 @@ function nuke_startnukedeathfx() {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d58
 // Size: 0x7b
@@ -1255,7 +1257,7 @@ function nuke_startnukedeathfx_chooselocationversion() {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3dda
 // Size: 0xb2
@@ -1267,14 +1269,14 @@ function nuke_playrollingdeathfx(delaytime) {
     if (!isusingremote()) {
         self visionsetnakedforplayer("nuke_deathblur", 4);
     }
-    var_65dfd5b2ea1f9b40 = self.origin;
-    var_7ceeea837b3cd54a = level.nukeinfo.goalpoint;
-    var_74af035d1495d131 = var_65dfd5b2ea1f9b40;
-    bodyfx = "nuke_rolling_death";
-    playfx(getfx(bodyfx), var_65dfd5b2ea1f9b40, var_7ceeea837b3cd54a - var_74af035d1495d131, undefined, self);
+    fxlocation = self.origin;
+    explosionloc = level.nukeinfo.goalpoint;
+    bodyloc = fxlocation;
+    bodyFX = "nuke_rolling_death";
+    playfx(getfx(bodyFX), fxlocation, explosionloc - bodyloc, undefined, self);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e93
 // Size: 0x2cb
@@ -1303,14 +1305,14 @@ function nuke_atomizebody() {
     loc[2][3]["org"] = self gettagorigin("j_wrist_ri");
     loc[2][3]["angles"] = self gettagangles("j_wrist_ri");
     self.body hide();
-    var_65dfd5b2ea1f9b40 = self.body.origin;
-    var_632c8e583fc9aea9 = level.nukeinfo.inflictor.origin * (1, 1, 0);
-    var_74af035d1495d131 = var_65dfd5b2ea1f9b40 * (1, 1, 0);
-    bodyfx = "nuke_atomize_body";
-    playfx(getfx(bodyfx), var_65dfd5b2ea1f9b40, var_632c8e583fc9aea9 - var_74af035d1495d131);
+    fxlocation = self.body.origin;
+    inflictorloc = level.nukeinfo.inflictor.origin * (1, 1, 0);
+    bodyloc = fxlocation * (1, 1, 0);
+    bodyFX = "nuke_atomize_body";
+    playfx(getfx(bodyFX), fxlocation, inflictorloc - bodyloc);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4165
 // Size: 0x27
@@ -1322,13 +1324,13 @@ function nuke_cankilleverything() {
     return var_cfc1a4c269cffb70;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4194
 // Size: 0x254
 function nuke_createradiationzone(owner, streakinfo) {
     if (!iscp()) {
-        if (0) {
+        if (false) {
             wait(10);
             playfx(getfx("vfx_nuke_zone_5000_static_s"), (0, 0, 0));
             nuke_registerradzone((0, 0, 0));
@@ -1338,7 +1340,7 @@ function nuke_createradiationzone(owner, streakinfo) {
             level.nukedangerzones[level.nukedangerzones.size] = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](level.nukeinfo.goalpoint - (0, 0, 1000), 5000, 15000, "axis", 4000);
             level.nukedangerzones[level.nukedangerzones.size] = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](level.nukeinfo.goalpoint - (0, 0, 1000), 5000, 15000, "allies", 4000);
         } else {
-            streakinfo.sealevelorigin = (level.nukeinfo.goalpoint[0], level.nukeinfo.goalpoint[1], namespace_5078ee98abb32db9::getc130sealevel());
+            streakinfo.sealevelorigin = (level.nukeinfo.goalpoint[0], level.nukeinfo.goalpoint[1], scripts/cp_mp/parachute::getc130sealevel());
             playfx(getfx("vfx_nuke_zone_5000_static_s"), streakinfo.sealevelorigin);
             nuke_registerradzone(streakinfo.sealevelorigin);
             if (!isdefined(level.nukedangerzones)) {
@@ -1351,7 +1353,7 @@ function nuke_createradiationzone(owner, streakinfo) {
     thread nuke_finalizelocationnuke(owner);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43ef
 // Size: 0x42
@@ -1363,32 +1365,32 @@ function nuke_registerradzone(origin) {
     level.radzones[level.radzones.size] = origin;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4438
 // Size: 0x25
-function nuke_removeradzone(var_b8d14e966ac9d9b8) {
-    level.radzones = array_remove(level.radzones, var_b8d14e966ac9d9b8);
+function nuke_removeradzone(zoneent) {
+    level.radzones = array_remove(level.radzones, zoneent);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4464
 // Size: 0x241
 function nuke_radzones_think() {
     level endon("game_ended");
     damagetick = 10;
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             player.inradzone = 0;
-            foreach (var_456b8f0ea933d0e5 in level.radzones) {
-                isplayerinradzone = 0;
+            foreach (zoneorigin in level.radzones) {
+                isPlayerInRadZone = 0;
                 if (issharedfuncdefined("nuke", "isPlayerInRadZone")) {
-                    isplayerinradzone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, var_456b8f0ea933d0e5, 25000000);
+                    isPlayerInRadZone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, zoneorigin, 25000000);
                 }
-                if (isplayerinradzone) {
+                if (isPlayerInRadZone) {
                     if (istrue(player.gasmaskequipped)) {
-                        player namespace_9c6cddd872ad75f7::processdamage(damagetick);
+                        player scripts/cp_mp/gasmask::processdamage(damagetick);
                     } else {
                         if (issharedfuncdefined("game", "tutorialPrint")) {
                             player thread [[ getsharedfunc("game", "tutorialPrint") ]]("MP/NUKE_RADIATION_HURT", 2);
@@ -1402,12 +1404,12 @@ function nuke_radzones_think() {
             if (player.inradzone) {
                 continue;
             }
-            foreach (var_456b8f0ea933d0e5 in level.radzones) {
-                isplayerinradzone = 0;
+            foreach (zoneorigin in level.radzones) {
+                isPlayerInRadZone = 0;
                 if (issharedfuncdefined("nuke", "isPlayerInRadZone")) {
-                    isplayerinradzone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, var_456b8f0ea933d0e5, 36000000);
+                    isPlayerInRadZone = [[ getsharedfunc("nuke", "isPlayerInRadZone") ]](player, zoneorigin, 36000000);
                 }
-                if (isplayerinradzone) {
+                if (isPlayerInRadZone) {
                     if (issharedfuncdefined("game", "tutorialPrint")) {
                         player thread [[ getsharedfunc("game", "tutorialPrint") ]]("MP/NUKE_RADIATION_WARNING", 2);
                     }
@@ -1419,13 +1421,13 @@ function nuke_radzones_think() {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46ac
 // Size: 0xaa
 function nuke_warnenemiesnukeincoming(var_9464d7d05c5ca6b5) {
     level endon("nuke_death");
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             if (player.team == var_9464d7d05c5ca6b5) {
                 if (issharedfuncdefined("game", "tutorialPrint")) {
@@ -1437,7 +1439,7 @@ function nuke_warnenemiesnukeincoming(var_9464d7d05c5ca6b5) {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x475d
 // Size: 0x54
@@ -1452,13 +1454,13 @@ function nuke_finalizelocationnuke(owner) {
     visionsetnaked("", 1);
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x47b8
 // Size: 0x40
 function nuke_abortkillcamonspawn() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         player = level waittill("player_spawned");
         if (isdefined(player)) {
             player notify("abort_killcam");
@@ -1467,11 +1469,11 @@ function nuke_abortkillcamonspawn() {
     }
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x47ff
 // Size: 0xd4
-function function_b913fa4052092442(nuketype, var_d3af29b5dbd3ac10) {
+function function_b913fa4052092442(nuketype, goalposoverride) {
     goalpoint = self.origin + anglestoforward(self.angles) * 15000;
     if (isdefined(level.nuke_expl_struct)) {
         goalpoint = level.nuke_expl_struct.origin;
@@ -1486,67 +1488,67 @@ function function_b913fa4052092442(nuketype, var_d3af29b5dbd3ac10) {
             }
         }
     }
-    if (isdefined(var_d3af29b5dbd3ac10)) {
-        goalpoint = var_d3af29b5dbd3ac10;
+    if (isdefined(goalposoverride)) {
+        goalpoint = goalposoverride;
     }
     return goalpoint;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48db
 // Size: 0x108
-function function_5e29f303004c9602(nuketype, goalpoint, var_edbe27b2d5f1e060) {
-    var_b0d1c69e44f250ec = goalpoint + (0, 0, 30000) + anglestoforward(self.angles) * 30000;
+function function_5e29f303004c9602(nuketype, goalpoint, launchposoverride) {
+    launchpoint = goalpoint + (0, 0, 30000) + anglestoforward(self.angles) * 30000;
     if (nuketype == "nuke_multi") {
-        var_b0d1c69e44f250ec = goalpoint + (0, 0, 15000) + anglestoforward(self.angles) * 15000;
+        launchpoint = goalpoint + (0, 0, 15000) + anglestoforward(self.angles) * 15000;
     } else if (isdefined(level.nuke_expl_struct)) {
         var_48a3e962b69604ac = vectornormalize((goalpoint[0], goalpoint[1], 0) - (self.origin[0], self.origin[1], 0));
-        var_b0d1c69e44f250ec = goalpoint + var_48a3e962b69604ac * 15000;
-        var_b0d1c69e44f250ec = var_b0d1c69e44f250ec + (0, 0, 30000) + var_48a3e962b69604ac * 5000;
+        launchpoint = goalpoint + var_48a3e962b69604ac * 15000;
+        launchpoint = launchpoint + (0, 0, 30000) + var_48a3e962b69604ac * 5000;
     } else if (nuketype != "nuke_select_location") {
         /#
             self iprintlnbold("script_origin");
         #/
     }
-    if (isdefined(var_edbe27b2d5f1e060)) {
-        var_ffb179778403bed7 = var_edbe27b2d5f1e060;
+    if (isdefined(launchposoverride)) {
+        var_ffb179778403bed7 = launchposoverride;
     }
-    return var_b0d1c69e44f250ec;
+    return launchpoint;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49eb
 // Size: 0x45
-function function_4eb440a17165aeee(nuketype, starttime, var_4f5531954a808b12) {
-    var_51bee2f5b3b4e278 = starttime;
+function function_4eb440a17165aeee(nuketype, starttime, starttimeoverride) {
+    starttimer = starttime;
     if (istrue(level.mercywintriggered)) {
-        var_51bee2f5b3b4e278 = 0.7;
+        starttimer = 0.7;
     }
-    if (isdefined(var_4f5531954a808b12)) {
-        var_51bee2f5b3b4e278 = var_4f5531954a808b12;
+    if (isdefined(starttimeoverride)) {
+        starttimer = starttimeoverride;
     }
-    return var_51bee2f5b3b4e278;
+    return starttimer;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a38
 // Size: 0x31
-function function_cd3712661b44dfb(nuketype, var_5b4471e9efde87c3, var_3dabfa23bef362b5) {
-    var_960e367a86646a43 = var_5b4471e9efde87c3;
+function function_cd3712661b44dfb(nuketype, explodetime, var_3dabfa23bef362b5) {
+    explodetimer = explodetime;
     if (isdefined(var_3dabfa23bef362b5)) {
-        var_960e367a86646a43 = var_3dabfa23bef362b5;
+        explodetimer = var_3dabfa23bef362b5;
     }
-    return var_960e367a86646a43;
+    return explodetimer;
 }
 
-// Namespace nuke/namespace_670e1516d92a7a2b
+// Namespace nuke / scripts/cp_mp/killstreaks/nuke
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a71
 // Size: 0x3e
-function function_e6e5495e21e67613(nuketype, weaponoverride) {
+function nuke_getweapon(nuketype, weaponoverride) {
     baseweapon = "nuke_mp";
     if (nuketype == "nuke_multi") {
         baseweapon = "nuke_multi_mp";

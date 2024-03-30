@@ -1,13 +1,13 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\mp\utility\perk.gsc;
 #using scripts\mp\weapons.gsc;
 
-#namespace namespace_14484b6532b3e61b;
+#namespace chill_common;
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x145
 // Size: 0xb3
@@ -25,7 +25,7 @@ function chill_init() {
     level.chill_data = chill_data;
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ff
 // Size: 0x127
@@ -47,18 +47,18 @@ function chill(id, duration) {
         chill_impair();
         self setscriptablepartstate("chilled", "active", 0);
         thread chill_update();
-    } else {
-        if (!isdefined(struct.times[id])) {
-            struct.active++;
-        }
-        duration = duration * 1000;
-        starttime = gettime();
-        endtime = starttime + duration;
-        struct.times[id] = (starttime, endtime, duration);
+        return;
     }
+    if (!isdefined(struct.times[id])) {
+        struct.active++;
+    }
+    duration = duration * 1000;
+    starttime = gettime();
+    endtime = starttime + duration;
+    struct.times[id] = (starttime, endtime, duration);
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x32d
 // Size: 0xb2
@@ -80,11 +80,11 @@ function chillend(id) {
         chill_impairend();
         self setscriptablepartstate("chilled", "neutral", 0);
         self.chill_data = undefined;
-        namespace_3bbb5a98b932c46f::updatemovespeedscale();
+        scripts/mp/weapons::updatemovespeedscale();
     }
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e6
 // Size: 0x29
@@ -93,7 +93,7 @@ function ischilled() {
     return isdefined(struct) && isdefined(struct.active);
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x417
 // Size: 0x15
@@ -102,18 +102,18 @@ function chill_resetdata() {
     self.chill_data = undefined;
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x433
 // Size: 0x7a
 function chill_resetscriptable() {
     self setscriptablepartstate("chilled", "neutral", 0);
-    foreach (var_3fca284e7ec14db5 in level.chill_data.blindparts) {
-        self setscriptablepartstate(var_3fca284e7ec14db5, "neutral", 0);
+    foreach (blindpart in level.chill_data.blindparts) {
+        self setscriptablepartstate(blindpart, "neutral", 0);
     }
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b4
 // Size: 0x4b
@@ -124,15 +124,15 @@ function chill_impair() {
     val::set("chill_impair", "mantle", 0);
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x506
 // Size: 0xf
 function chill_impairend() {
-    val::function_c9d0b43701bdba00("chill_impair");
+    val::reset_all("chill_impair");
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x51c
 // Size: 0x14d
@@ -166,7 +166,7 @@ function chill_blind() {
     var_6c4731c8a94c0275.blindid = undefined;
 }
 
-// Namespace namespace_14484b6532b3e61b/namespace_558d47f756e9d17c
+// Namespace chill_common / scripts/mp/killstreaks/chill_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x670
 // Size: 0x12a
@@ -175,9 +175,9 @@ function chill_update() {
     self endon("chillReset");
     self endon("chillEnd");
     struct = self.chill_data;
-    while (1) {
+    while (true) {
         time = gettime();
-        var_73b066dd05cf2496 = 0;
+        bestratio = 0;
         foreach (id, arr in struct.times) {
             start = arr[0];
             end = arr[1];
@@ -185,15 +185,15 @@ function chill_update() {
             if (time < end) {
                 elapsed = time - start;
                 ratio = 1 - elapsed / duration;
-                if (ratio > var_73b066dd05cf2496) {
-                    var_73b066dd05cf2496 = ratio;
+                if (ratio > bestratio) {
+                    bestratio = ratio;
                 }
-            } else {
-                thread chillend(id);
+                continue;
             }
+            thread chillend(id);
         }
-        struct.speedmod = var_73b066dd05cf2496 * -0.55;
-        namespace_3bbb5a98b932c46f::updatemovespeedscale();
+        struct.speedmod = bestratio * -0.55;
+        scripts/mp/weapons::updatemovespeedscale();
         wait(0.1);
     }
 }

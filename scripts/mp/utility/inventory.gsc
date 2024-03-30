@@ -9,7 +9,7 @@
 
 #namespace inventory;
 
-// Namespace inventory/namespace_92e4af149e72dc29
+// Namespace inventory / scripts/mp/utility/inventory
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf
 // Size: 0x1f
@@ -20,27 +20,27 @@ function getlastweapon() {
     return self.lastnormalweaponobj;
 }
 
-// Namespace inventory/namespace_92e4af149e72dc29
+// Namespace inventory / scripts/mp/utility/inventory
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd6
 // Size: 0x5f
 function switchtolastweapon() {
     if (!isai(self)) {
         lastweaponobj = getlastweapon();
-        if (namespace_a2f809133c566621::isjuggernaut()) {
-            lastweaponobj = namespace_68f1873625691c6::jugg_getminigunweapon();
+        if (scripts/mp/utility/killstreak::isjuggernaut()) {
+            lastweaponobj = scripts/mp/juggernaut::jugg_getminigunweapon();
         } else if (!self hasweapon(lastweaponobj)) {
             lastweaponobj = getfirstprimaryweapon();
         }
         if (isdefined(lastweaponobj)) {
             _switchtoweapon(lastweaponobj);
         }
-    } else {
-        _switchtoweapon("none");
+        return;
     }
+    _switchtoweapon("none");
 }
 
-// Namespace inventory/namespace_92e4af149e72dc29
+// Namespace inventory / scripts/mp/utility/inventory
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13c
 // Size: 0x63
@@ -55,11 +55,11 @@ function getfirstprimaryweapon() {
     return weaponslist[0];
 }
 
-// Namespace inventory/namespace_92e4af149e72dc29
+// Namespace inventory / scripts/mp/utility/inventory
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a7
 // Size: 0x1d5
-function registerweaponchangecallback(callbackfunc, var_342b4a7404fd91ab, var_83d988341d1d6755) {
+function registerweaponchangecallback(callbackfunc, isoneshot, var_83d988341d1d6755) {
     data = self.weaponchangecallbacks;
     if (!isdefined(data)) {
         data = spawnstruct();
@@ -71,11 +71,11 @@ function registerweaponchangecallback(callbackfunc, var_342b4a7404fd91ab, var_83
         data.persistentcallbacks = [];
     }
     id = undefined;
-    if (istrue(var_342b4a7404fd91ab)) {
+    if (istrue(isoneshot)) {
         /#
-            foreach (var_b14642b7e8747d44 in data.oneshotcallbacks) {
+            foreach (oneshotcallback in data.oneshotcallbacks) {
                 /#
-                    assertex(var_b14642b7e8747d44 != callbackfunc, "<unknown string>");
+                    assertex(oneshotcallback != callbackfunc, "<unknown string>");
                 #/
             }
         #/
@@ -84,9 +84,9 @@ function registerweaponchangecallback(callbackfunc, var_342b4a7404fd91ab, var_83
         data.oneshotcallbacks[id] = callbackfunc;
     } else {
         /#
-            foreach (var_ca6eebb03b2bb512 in data.callbacks) {
+            foreach (othercallback in data.callbacks) {
                 /#
-                    assertex(var_ca6eebb03b2bb512 != callbackfunc, "<unknown string>");
+                    assertex(othercallback != callbackfunc, "<unknown string>");
                 #/
             }
         #/
@@ -100,7 +100,7 @@ function registerweaponchangecallback(callbackfunc, var_342b4a7404fd91ab, var_83
     return id;
 }
 
-// Namespace inventory/namespace_92e4af149e72dc29
+// Namespace inventory / scripts/mp/utility/inventory
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x384
 // Size: 0x4e
@@ -111,12 +111,12 @@ function unregisterweaponchangecallback(id) {
     #/
     if (id < 0) {
         data.oneshotcallbacks[id] = undefined;
-    } else {
-        data.callbacks[id] = undefined;
+        return;
     }
+    data.callbacks[id] = undefined;
 }
 
-// Namespace inventory/namespace_92e4af149e72dc29
+// Namespace inventory / scripts/mp/utility/inventory
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0xe5

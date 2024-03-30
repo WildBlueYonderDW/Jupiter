@@ -32,14 +32,14 @@
 
 #namespace br_lootchopper;
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x626
 // Size: 0x1d0
 function init() {
     level.averagealliesz = 0;
     level.loot_choppers = [];
-    if (namespace_cd0b2d039510b38d::getsubgametype() != "plunder") {
+    if (scripts/mp/utility/game::getsubgametype() != "plunder") {
         registersharedfunc("br_lootchopper", "lootChopper_onCrateUse", &lootchopper_oncrateuse);
     }
     level.quadgridcenterpoints = [];
@@ -66,7 +66,7 @@ function init() {
     #/
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7fd
 // Size: 0x3a
@@ -74,16 +74,16 @@ function registerleveldataforvehicle() {
     while (!isdefined(level.vehicle)) {
         waitframe();
     }
-    var_e2818ad39a3341b4 = namespace_1f188a13f7e79610::vehicle_getleveldataforvehicle("loot_chopper", 1);
+    var_e2818ad39a3341b4 = scripts/cp_mp/vehicles/vehicle::vehicle_getleveldataforvehicle("loot_chopper", 1);
     var_e2818ad39a3341b4.canfly = 1;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83e
 // Size: 0x254
-function lootchopper_initspawninfo(var_ed09715e306a1455) {
-    var_a43491919a0d6a88 = lootchopper_getspawnlocations(var_ed09715e306a1455);
+function lootchopper_initspawninfo(circleinfo) {
+    var_a43491919a0d6a88 = lootchopper_getspawnlocations(circleinfo);
     level.loot_chopper_spawns = [];
     level.loot_chopper_spawns["quad_1"] = [];
     level.loot_chopper_spawns["quad_2"] = [];
@@ -96,8 +96,8 @@ function lootchopper_initspawninfo(var_ed09715e306a1455) {
         closestdist = undefined;
         closestquad = undefined;
         var_64602cfeef6c46da = undefined;
-        if (var_ed09715e306a1455.isvalid) {
-            foreach (quadindex, quad in var_ed09715e306a1455.quadpoints) {
+        if (circleinfo.isvalid) {
+            foreach (quadindex, quad in circleinfo.quadpoints) {
                 var_8d6061447ac0bf39 = distance2dsquared(spawnzone.origin, quad);
                 if (!isdefined(closestdist) || var_8d6061447ac0bf39 < closestdist) {
                     closestdist = var_8d6061447ac0bf39;
@@ -116,102 +116,102 @@ function lootchopper_initspawninfo(var_ed09715e306a1455) {
             }
         }
         spawnzone.origin = spawnzone.origin * (1, 1, 0);
-        spawnzone.origin = namespace_d20f8ef223912e12::getoffsetspawnoriginmultitrace(spawnzone.origin, (0, 0, 10000));
+        spawnzone.origin = scripts/mp/gametypes/br::getoffsetspawnoriginmultitrace(spawnzone.origin, (0, 0, 10000));
         level.loot_chopper_spawns[var_64602cfeef6c46da][level.loot_chopper_spawns[var_64602cfeef6c46da].size] = spawnzone;
     }
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa99
 // Size: 0xda
-function lootchopper_getspawnlocations(var_ed09715e306a1455) {
+function lootchopper_getspawnlocations(circleinfo) {
     var_1b5b62b6222f38c0 = [];
     foreach (location in level.br_prematchspawnlocations) {
-        if (var_ed09715e306a1455.isvalid) {
-            jumpiffalse(distance2dsquared(location.origin, var_ed09715e306a1455.center) > var_ed09715e306a1455.radius * var_ed09715e306a1455.radius) LOC_000000a1;
-        } else {
-        LOC_000000a1:
-            newlocation = spawnstruct();
-            newlocation.origin = location.origin;
-            var_1b5b62b6222f38c0[var_1b5b62b6222f38c0.size] = newlocation;
+        if (circleinfo.isvalid) {
+            if (distance2dsquared(location.origin, circleinfo.center) > circleinfo.radius * circleinfo.radius) {
+                continue;
+            }
         }
+        newlocation = spawnstruct();
+        newlocation.origin = location.origin;
+        var_1b5b62b6222f38c0[var_1b5b62b6222f38c0.size] = newlocation;
     }
     return var_1b5b62b6222f38c0;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7b
 // Size: 0x11e
 function lootchopper_initcircleinfo(circlecenter, circleradius) {
-    var_ed09715e306a1455 = spawnstruct();
-    var_ed09715e306a1455.isvalid = isdefined(circlecenter) && isdefined(circleradius);
-    if (var_ed09715e306a1455.isvalid) {
-        var_ed09715e306a1455.center = circlecenter;
-        var_ed09715e306a1455.radius = circleradius;
+    circleinfo = spawnstruct();
+    circleinfo.isvalid = isdefined(circlecenter) && isdefined(circleradius);
+    if (circleinfo.isvalid) {
+        circleinfo.center = circlecenter;
+        circleinfo.radius = circleradius;
         var_28752bf2ea017628 = 45;
         cosangle = cos(var_28752bf2ea017628);
         var_50972e48b8d175a4 = sin(var_28752bf2ea017628);
-        var_ed09715e306a1455.quadpoints[0] = circlecenter + (-1 * cosangle, var_50972e48b8d175a4, 0) * circleradius * 0.5;
-        var_ed09715e306a1455.quadpoints[1] = circlecenter + (cosangle, var_50972e48b8d175a4, 0) * circleradius * 0.5;
-        var_ed09715e306a1455.quadpoints[2] = circlecenter + (cosangle, -1 * var_50972e48b8d175a4, 0) * circleradius * 0.5;
-        var_ed09715e306a1455.quadpoints[3] = circlecenter + (-1 * cosangle, -1 * var_50972e48b8d175a4, 0) * circleradius * 0.5;
+        circleinfo.quadpoints[0] = circlecenter + (-1 * cosangle, var_50972e48b8d175a4, 0) * circleradius * 0.5;
+        circleinfo.quadpoints[1] = circlecenter + (cosangle, var_50972e48b8d175a4, 0) * circleradius * 0.5;
+        circleinfo.quadpoints[2] = circlecenter + (cosangle, -1 * var_50972e48b8d175a4, 0) * circleradius * 0.5;
+        circleinfo.quadpoints[3] = circlecenter + (-1 * cosangle, -1 * var_50972e48b8d175a4, 0) * circleradius * 0.5;
     }
-    return var_ed09715e306a1455;
+    return circleinfo;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xca1
 // Size: 0x267
 function lootchopper_managespawns() {
     level endon("game_ended");
-    if (namespace_d3d40f75bb4e4c32::function_d6ae35e0ce14bbaf()) {
+    if (scripts/mp/gametypes/br_public::function_d6ae35e0ce14bbaf()) {
         return;
     }
     circlecenter = undefined;
     circleradius = undefined;
     if (isdefined(level.br_circle) && isdefined(level.br_circle.safecircleent)) {
-        circlecenter = namespace_c5622898120e827f::getsafecircleorigin();
-        circleradius = namespace_c5622898120e827f::getsafecircleradius();
+        circlecenter = scripts/mp/gametypes/br_circle::getsafecircleorigin();
+        circleradius = scripts/mp/gametypes/br_circle::getsafecircleradius();
     }
-    var_ed09715e306a1455 = namespace_479f2912131dabfc::lootchopper_initcircleinfo(circlecenter, circleradius);
-    lootchopper_initspawninfo(var_ed09715e306a1455);
+    circleinfo = scripts/mp/gametypes/br_lootchopper::lootchopper_initcircleinfo(circlecenter, circleradius);
+    lootchopper_initspawninfo(circleinfo);
     /#
         level thread function_fb7c809b0f8f7639();
     #/
     level waittill("br_prematchEnded");
     var_e1ce21e5b4d1163f = getdvarint(@"hash_d043ee66392f7b83", 6);
     var_477413d8c0675495 = getdvarint(@"hash_38568daa586b1fe3", 6000);
-    var_f013e3fc1f370ca7 = getdvarint(@"hash_31c380c6ba1eab38", 360);
-    var_3fb775a12c864c31 = getdvarint(@"hash_31e696c6ba452352", 480);
+    mincooldowntime = getdvarint(@"hash_31c380c6ba1eab38", 360);
+    maxcooldowntime = getdvarint(@"hash_31e696c6ba452352", 480);
     if (level.mapname == "mp_br_mechanics") {
         var_477413d8c0675495 = 1000;
     }
-    while (1) {
+    while (true) {
         var_992edc40264e2f58 = getdvarint(@"hash_1853d73ee1c86fd4", 0);
         if (!var_992edc40264e2f58) {
             waitframe();
             continue;
         }
-        var_b1d5325407f562dd = randomintrange(var_f013e3fc1f370ca7, var_3fb775a12c864c31);
+        spawninterval = randomintrange(mincooldowntime, maxcooldowntime);
         if (istrue(level.usemilestonephases)) {
-            namespace_4b0406965e556711::gameflagwait("activate_cash_helis");
+            scripts/mp/flags::gameflagwait("activate_cash_helis");
         } else {
-            wait(var_b1d5325407f562dd);
+            wait(spawninterval);
         }
         if (level.loot_choppers.size < var_e1ce21e5b4d1163f) {
             var_6eebc4632b89c8c8 = var_e1ce21e5b4d1163f - level.loot_choppers.size;
             for (i = 0; i < var_6eebc4632b89c8c8; i++) {
-                var_32b962c704fde3e7 = i + 1;
-                if (var_32b962c704fde3e7 > 4) {
-                    var_32b962c704fde3e7 = 1;
+                quadid = i + 1;
+                if (quadid > 4) {
+                    quadid = 1;
                 }
-                patrolzone = lootchopper_findunoccupiedpatrolzone(level.loot_chopper_spawns["quad_" + var_32b962c704fde3e7], var_477413d8c0675495);
+                patrolzone = lootchopper_findunoccupiedpatrolzone(level.loot_chopper_spawns["quad_" + quadid], var_477413d8c0675495);
                 if (!isdefined(patrolzone)) {
                     /#
-                        iprintlnbold("chopper_support_turret_br" + var_32b962c704fde3e7 + "<unknown string>");
+                        iprintlnbold("chopper_support_turret_br" + quadid + "<unknown string>");
                     #/
                     wait(1);
                 }
@@ -226,25 +226,25 @@ function lootchopper_managespawns() {
             if (istrue(level.usemilestonephases)) {
                 return;
             }
-        } else {
-            while (level.loot_choppers.size >= var_e1ce21e5b4d1163f) {
-                waitframe();
-            }
+            continue;
+        }
+        while (level.loot_choppers.size >= var_e1ce21e5b4d1163f) {
+            waitframe();
         }
     }
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf0f
 // Size: 0xe7
 function function_fb7c809b0f8f7639() {
     /#
         level endon("<unknown string>");
-        var_32b962c704fde3e7 = 0;
-        while (1) {
-            var_94498af4ca201804 = getdvarint(@"hash_6e1432e14f4ba139", 0);
-            if (!var_94498af4ca201804) {
+        quadid = 0;
+        while (true) {
+            testspawn = getdvarint(@"hash_6e1432e14f4ba139", 0);
+            if (!testspawn) {
                 waitframe();
                 continue;
             }
@@ -252,13 +252,13 @@ function function_fb7c809b0f8f7639() {
             if (level.mapname == "<unknown string>") {
                 var_477413d8c0675495 = 1000;
             }
-            var_32b962c704fde3e7++;
-            if (var_32b962c704fde3e7 > 4) {
-                var_32b962c704fde3e7 = 1;
+            quadid++;
+            if (quadid > 4) {
+                quadid = 1;
             }
-            patrolzone = lootchopper_findunoccupiedpatrolzone(level.loot_chopper_spawns["<unknown string>" + var_32b962c704fde3e7], var_477413d8c0675495);
+            patrolzone = lootchopper_findunoccupiedpatrolzone(level.loot_chopper_spawns["<unknown string>" + quadid], var_477413d8c0675495);
             if (!isdefined(patrolzone)) {
-                iprintlnbold("chopper_support_turret_br" + var_32b962c704fde3e7 + "<unknown string>");
+                iprintlnbold("chopper_support_turret_br" + quadid + "<unknown string>");
                 wait(1);
             }
             showsplashtoall("<unknown string>");
@@ -269,25 +269,25 @@ function function_fb7c809b0f8f7639() {
     #/
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xffd
 // Size: 0xc6
-function lootchopper_findunoccupiedpatrolzone(var_eb629964517b0c20, var_6d423f3f70906691) {
+function lootchopper_findunoccupiedpatrolzone(availablespawns, var_6d423f3f70906691) {
     patrolzone = undefined;
-    if (var_eb629964517b0c20.size > 0) {
-        var_93e8eb0cc5bc4cb9 = [];
-        foreach (var_6c00c2e1adf59f74 in var_eb629964517b0c20) {
-            if (istrue(var_6c00c2e1adf59f74.chopperoccupied)) {
+    if (availablespawns.size > 0) {
+        validspawns = [];
+        foreach (potentialspawn in availablespawns) {
+            if (istrue(potentialspawn.chopperoccupied)) {
                 continue;
             }
-            if (lootchopper_isnearbyoccupiedspawns(var_6c00c2e1adf59f74, var_6d423f3f70906691)) {
+            if (lootchopper_isnearbyoccupiedspawns(potentialspawn, var_6d423f3f70906691)) {
                 continue;
             }
-            var_93e8eb0cc5bc4cb9[var_93e8eb0cc5bc4cb9.size] = var_6c00c2e1adf59f74;
+            validspawns[validspawns.size] = potentialspawn;
         }
-        if (var_93e8eb0cc5bc4cb9.size > 0) {
-            patrolzone = var_93e8eb0cc5bc4cb9[randomint(var_93e8eb0cc5bc4cb9.size)];
+        if (validspawns.size > 0) {
+            patrolzone = validspawns[randomint(validspawns.size)];
         }
         if (isdefined(patrolzone)) {
             patrolzone.chopperoccupied = 1;
@@ -296,19 +296,19 @@ function lootchopper_findunoccupiedpatrolzone(var_eb629964517b0c20, var_6d423f3f
     return patrolzone;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10cb
 // Size: 0x117
-function lootchopper_isnearbyoccupiedspawns(var_6c00c2e1adf59f74, var_6d423f3f70906691) {
+function lootchopper_isnearbyoccupiedspawns(potentialspawn, var_6d423f3f70906691) {
     var_7128b7aee8de7665 = 0;
-    var_1094f1264dd82c0c = level.loot_chopper_spawns;
+    allspawns = level.loot_chopper_spawns;
     mindistsq = var_6d423f3f70906691 * var_6d423f3f70906691;
-    if (isdefined(var_1094f1264dd82c0c)) {
-        foreach (var_e7b2ec6d5cfcad0d in var_1094f1264dd82c0c) {
-            foreach (var_c629cfb5aee5be94 in var_e7b2ec6d5cfcad0d) {
+    if (isdefined(allspawns)) {
+        foreach (quadrantspawns in allspawns) {
+            foreach (var_c629cfb5aee5be94 in quadrantspawns) {
                 if (istrue(var_c629cfb5aee5be94.chopperoccupied)) {
-                    if (distance2dsquared(var_6c00c2e1adf59f74.origin, var_c629cfb5aee5be94.origin) < mindistsq) {
+                    if (distance2dsquared(potentialspawn.origin, var_c629cfb5aee5be94.origin) < mindistsq) {
                         var_7128b7aee8de7665 = 1;
                         break;
                     }
@@ -322,7 +322,7 @@ function lootchopper_isnearbyoccupiedspawns(var_6c00c2e1adf59f74, var_6d423f3f70
     return var_7128b7aee8de7665;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11ea
 // Size: 0x81
@@ -339,11 +339,11 @@ function lootchopper_getzonebyindex(index) {
     return var_6622760dd5560c8a;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1273
 // Size: 0x8b7
-function lootchopper_spawn(patrolzone, var_ee7155023f428e5b, var_cecd1599dbcc976, overrideweapon) {
+function lootchopper_spawn(patrolzone, overridevehicletype, overridemodel, overrideweapon) {
     patrollocation = undefined;
     patrolradius = getdvarint(@"hash_ad78da1d72e62dd3", 4000);
     if (isdefined(patrolzone)) {
@@ -360,7 +360,7 @@ function lootchopper_spawn(patrolzone, var_ee7155023f428e5b, var_cecd1599dbcc976
             patrollocation = playersalive[randomindex].origin;
         }
         if (isdefined(patrollocation)) {
-            patrollocation = namespace_d20f8ef223912e12::getoffsetspawnoriginmultitrace(patrollocation, (0, 0, 10000));
+            patrollocation = scripts/mp/gametypes/br::getoffsetspawnoriginmultitrace(patrollocation, (0, 0, 10000));
         }
     }
     if (!isdefined(patrollocation)) {
@@ -369,24 +369,24 @@ function lootchopper_spawn(patrolzone, var_ee7155023f428e5b, var_cecd1599dbcc976
         #/
         return;
     }
-    var_a5639d6f3f95033a = namespace_343543689c1d8859::getpathstart(patrollocation);
-    startingangles = vectortoangles(patrollocation - var_a5639d6f3f95033a);
+    startingposition = scripts/cp_mp/killstreaks/chopper_support::getpathstart(patrollocation);
+    startingangles = vectortoangles(patrollocation - startingposition);
     if (getdvarint(@"hash_f3aec952abe1e494", 1)) {
-        var_e0be8bb269d1b3ee = namespace_d3d40f75bb4e4c32::function_cc755ff7170d3dd0();
+        var_e0be8bb269d1b3ee = scripts/mp/gametypes/br_public::function_cc755ff7170d3dd0();
         var_18459465a6813445 = var_e0be8bb269d1b3ee + 10000;
-        if (var_a5639d6f3f95033a[2] < var_18459465a6813445) {
-            var_a5639d6f3f95033a = (var_a5639d6f3f95033a[0], var_a5639d6f3f95033a[1], var_18459465a6813445);
+        if (startingposition[2] < var_18459465a6813445) {
+            startingposition = (startingposition[0], startingposition[1], var_18459465a6813445);
         }
     }
-    var_6ea44339b53b31bc = ter_op(isdefined(var_ee7155023f428e5b), var_ee7155023f428e5b, "veh_chopper_support_dmz_mp");
-    var_a5c6d4f05fa73949 = "veh8_mil_air_palfa_east";
+    spawnvehicletype = ter_op(isdefined(overridevehicletype), overridevehicletype, "veh_chopper_support_dmz_mp");
+    choppermodel = "veh8_mil_air_palfa_east";
     if (istrue(level.var_a83a4e71446bfef7)) {
-        var_a5c6d4f05fa73949 = "veh9_mil_air_heli_hind";
+        choppermodel = "veh9_mil_air_heli_hind";
     }
-    if (isdefined(var_cecd1599dbcc976)) {
-        var_a5c6d4f05fa73949 = var_cecd1599dbcc976;
+    if (isdefined(overridemodel)) {
+        choppermodel = overridemodel;
     }
-    chopper = namespace_f64231d5b7a2c3c4::_spawnhelicopter(level.players[randomint(level.players.size)], var_a5639d6f3f95033a, startingangles, var_6ea44339b53b31bc, var_a5c6d4f05fa73949);
+    chopper = scripts/cp_mp/vehicles/vehicle_tracking::_spawnhelicopter(level.players[randomint(level.players.size)], startingposition, startingangles, spawnvehicletype, choppermodel);
     if (!isdefined(chopper)) {
         logstring("br_lootchopper::lootChopper_spawn - chopper failed to spawn!");
         return;
@@ -397,7 +397,7 @@ function lootchopper_spawn(patrolzone, var_ee7155023f428e5b, var_cecd1599dbcc976
     chopper.team = "neutral";
     chopper.angles = startingangles;
     chopper.flaresreservecount = getdvarint(@"hash_5db4b9205b63bbd3", 0);
-    chopper.pathstart = var_a5639d6f3f95033a;
+    chopper.pathstart = startingposition;
     chopper.pathgoal = patrollocation;
     chopper.currentaction = "patrol";
     chopper.currenttarget = undefined;
@@ -418,7 +418,7 @@ function lootchopper_spawn(patrolzone, var_ee7155023f428e5b, var_cecd1599dbcc976
     chopper.health = getdvarint(@"hash_117db97fcbbffbb8", 4500);
     chopper.maxhealth = getdvarint(@"hash_117db97fcbbffbb8", 4500);
     chopper.currenthealth = getdvarint(@"hash_117db97fcbbffbb8", 4500);
-    chopper namespace_6d9917c3dc05dbe9::registersentient("Level_Vehicle", chopper.team);
+    chopper scripts/mp/sentientpoolmanager::registersentient("Level_Vehicle", chopper.team);
     chopper lootchopper_setupdamagefunctionality();
     chopper setscriptablepartstate("blinking_lights", "on", 0);
     chopper setscriptablepartstate("engine", "on", 0);
@@ -471,22 +471,22 @@ function lootchopper_spawn(patrolzone, var_ee7155023f428e5b, var_cecd1599dbcc976
     chopper.lootfunc = &lootchopper_droploot;
     chopper.cleanupfunc = &lootchopper_cleanup;
     chopper lootchopper_createobjective();
-    chopper thread namespace_343543689c1d8859::choppersupport_neargoalsettings();
-    chopper thread namespace_343543689c1d8859::choppersupport_watchdestroyed();
+    chopper thread scripts/cp_mp/killstreaks/chopper_support::choppersupport_neargoalsettings();
+    chopper thread scripts/cp_mp/killstreaks/chopper_support::chopperSupport_watchDestroyed();
     if (issharedfuncdefined("flares", "handleIncomingStinger")) {
-        chopper thread [[ getsharedfunc("flares", "handleIncomingStinger") ]](&namespace_343543689c1d8859::choppersupport_handlemissiledetection);
+        chopper thread [[ getsharedfunc("flares", "handleIncomingStinger") ]](&scripts/cp_mp/killstreaks/chopper_support::choppersupport_handlemissiledetection);
     }
-    chopper thread namespace_343543689c1d8859::choppersupport_movetolocation(chopper.pathgoal, 1);
+    chopper thread scripts/cp_mp/killstreaks/chopper_support::choppersupport_movetolocation(chopper.pathgoal, 1);
     return chopper;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b32
 // Size: 0x2f8
 function lootchopper_setupdamagefunctionality() {
     self.vehiclename = "loot_chopper";
-    namespace_ad22b9cf6a2b30d::set_vehicle_hit_damage_data(self.vehiclename, 20);
+    scripts/mp/vehicles/damage::set_vehicle_hit_damage_data(self.vehiclename, 20);
     lootchopper_modifyweapondamage("iw9_la_gromeo_mp", 4, 20);
     lootchopper_modifyweapondamage("iw9_la_kgolf_mp", 4, 20);
     lootchopper_modifyweapondamage("iw9_la_rpapa7_mp", 4, 20);
@@ -518,101 +518,101 @@ function lootchopper_setupdamagefunctionality() {
     lootchopper_modifyweapondamage("gunship_40mm_mp", 5, 20);
     lootchopper_modifyweapondamage("gunship_25mm_mp", 2.85714, 20);
     lootchopper_modifyweapondamage("hover_jet_proj_mp", 5, 20);
-    namespace_5a0f3ca265d3a4c8::vehicle_damage_enableownerdamage(self);
-    namespace_ad22b9cf6a2b30d::get_vehicle_mod_damage_data(self.vehiclename, 1);
-    namespace_ad22b9cf6a2b30d::set_pre_mod_damage_callback(self.vehiclename, &lootchopper_premodifydamage);
-    namespace_ad22b9cf6a2b30d::set_post_mod_damage_callback(self.vehiclename, &lootchopper_postmodifydamage);
-    namespace_ad22b9cf6a2b30d::set_death_callback(self.vehiclename, &lootchopper_handledeathdamage);
-    namespace_9abe40d2af041eb2::function_cfc5e3633ef950fd(1, 2000, &function_c300bcca405c826d);
-    namespace_9abe40d2af041eb2::function_cfc5e3633ef950fd(2, 1000, &function_f70041f0a83148ce);
-    namespace_9abe40d2af041eb2::function_cfc5e3633ef950fd(3, 500, &function_3cd972f38ff76d2c);
-    namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(self);
+    scripts/cp_mp/vehicles/vehicle_damage::vehicle_damage_enableownerdamage(self);
+    scripts/mp/vehicles/damage::get_vehicle_mod_damage_data(self.vehiclename, 1);
+    scripts/mp/vehicles/damage::set_pre_mod_damage_callback(self.vehiclename, &lootchopper_premodifydamage);
+    scripts/mp/vehicles/damage::set_post_mod_damage_callback(self.vehiclename, &lootchopper_postmodifydamage);
+    scripts/mp/vehicles/damage::set_death_callback(self.vehiclename, &lootchopper_handledeathdamage);
+    scripts/cp_mp/utility/killstreak_utility::function_cfc5e3633ef950fd(1, 2000, &function_c300bcca405c826d);
+    scripts/cp_mp/utility/killstreak_utility::function_cfc5e3633ef950fd(2, 1000, &function_f70041f0a83148ce);
+    scripts/cp_mp/utility/killstreak_utility::function_cfc5e3633ef950fd(3, 500, &function_3cd972f38ff76d2c);
+    scripts/cp_mp/vehicles/vehicle_tracking::vehicle_tracking_registerinstance(self);
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e31
 // Size: 0x40
 function lootchopper_modifyweapondamage(weaponname, var_dc9cc1d7198502c2, var_e88cbe78a1e25e8a) {
-    namespace_ad22b9cf6a2b30d::set_weapon_hit_damage_data_for_vehicle(weaponname, var_dc9cc1d7198502c2, self.vehiclename);
-    namespace_ad22b9cf6a2b30d::set_vehicle_hit_damage_data_for_weapon(self.vehiclename, var_e88cbe78a1e25e8a, weaponname);
+    scripts/mp/vehicles/damage::set_weapon_hit_damage_data_for_vehicle(weaponname, var_dc9cc1d7198502c2, self.vehiclename);
+    scripts/mp/vehicles/damage::set_vehicle_hit_damage_data_for_weapon(self.vehiclename, var_e88cbe78a1e25e8a, weaponname);
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e78
 // Size: 0x3a
 function lootchopper_premodifydamage(data) {
     damage = data.damage;
     attacker = data.attacker;
-    return 1;
+    return true;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1eba
 // Size: 0x106
 function lootchopper_postmodifydamage(data) {
-    namespace_343543689c1d8859::function_400022dabdb64055(data);
+    scripts/cp_mp/killstreaks/chopper_support::function_400022dabdb64055(data);
     if (!isdefined(self.attackers)) {
         self.attackers = [];
     }
     var_996b260954d28d79 = lootchopper_getattackerdata(data.attacker);
     if (!isdefined(var_996b260954d28d79)) {
-        var_bbca3e84d8043876 = spawnstruct();
-        var_bbca3e84d8043876.player = data.attacker;
-        var_bbca3e84d8043876.objweapon = data.objweapon;
-        var_bbca3e84d8043876.totaldamage = data.damage;
-        self.attackers[self.attackers.size] = var_bbca3e84d8043876;
+        newattacker = spawnstruct();
+        newattacker.player = data.attacker;
+        newattacker.objweapon = data.objweapon;
+        newattacker.totaldamage = data.damage;
+        self.attackers[self.attackers.size] = newattacker;
     } else {
         var_996b260954d28d79.totaldamage = var_996b260954d28d79.totaldamage + data.damage;
         var_996b260954d28d79.objweapon = data.objweapon;
     }
-    namespace_9abe40d2af041eb2::killstreak_updatedamagestate(self.currenthealth);
-    return 1;
+    scripts/cp_mp/utility/killstreak_utility::killstreak_updateDamageState(self.currenthealth);
+    return true;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fc8
 // Size: 0x136
 function lootchopper_handledeathdamage(data) {
-    namespace_343543689c1d8859::choppersupport_handledeathdamage(data);
+    scripts/cp_mp/killstreaks/chopper_support::choppersupport_handledeathdamage(data);
     scoreevent = undefined;
     points = undefined;
     killer = data.attacker;
-    foreach (var_a64d70120038e5fa in self.attackers) {
-        if (isdefined(var_a64d70120038e5fa.player)) {
-            if (isdefined(killer) && killer == var_a64d70120038e5fa.player) {
+    foreach (attackerinfo in self.attackers) {
+        if (isdefined(attackerinfo.player)) {
+            if (isdefined(killer) && killer == attackerinfo.player) {
                 scoreevent = #"hash_916af74a28436e1c";
             } else {
                 scoreevent = #"hash_59b8198b31baf7ea";
             }
-            points = namespace_62c556437da28f50::getscoreinfovalue(scoreevent);
-            var_a64d70120038e5fa.player thread namespace_62c556437da28f50::giverankxp(scoreevent, points, var_a64d70120038e5fa.objweapon);
-            var_a64d70120038e5fa.player thread namespace_391de535501b0143::killeventtextpopup(scoreevent, 0);
-            thread namespace_aad14af462a74d08::vehiclekilled(self, var_a64d70120038e5fa.player, 0, var_a64d70120038e5fa.objweapon);
+            points = scripts/mp/rank::getscoreinfovalue(scoreevent);
+            attackerinfo.player thread scripts/mp/rank::giverankxp(scoreevent, points, attackerinfo.objweapon);
+            attackerinfo.player thread scripts/mp/events::killeventtextpopup(scoreevent, 0);
+            thread scripts/cp_mp/challenges::vehiclekilled(self, attackerinfo.player, 0, attackerinfo.objweapon);
         }
     }
     self notify("death");
-    return 1;
+    return true;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2106
 // Size: 0xfb
-function lootchopper_patrolzone(var_ce938a4ea8a54d5) {
+function lootchopper_patrolzone(initialpatrol) {
     if (self.currentaction != "patrol") {
         self.currentaction = "patrol";
-    } else if (self.currentaction == "patrol" && !istrue(var_ce938a4ea8a54d5)) {
+    } else if (self.currentaction == "patrol" && !istrue(initialpatrol)) {
         return;
     }
     self clearlookatent();
     self setneargoalnotifydist(300);
     var_65af68838583c396 = 0;
     var_b9a46106a6a99ee8 = 0;
-    while (1) {
+    while (true) {
         if (self.currentaction == "attacking") {
             if (!istrue(var_65af68838583c396)) {
                 var_65af68838583c396 = 1;
@@ -620,12 +620,12 @@ function lootchopper_patrolzone(var_ce938a4ea8a54d5) {
             waitframe();
             continue;
         }
-        if (!istrue(var_ce938a4ea8a54d5) && istrue(var_65af68838583c396)) {
+        if (!istrue(initialpatrol) && istrue(var_65af68838583c396)) {
             var_65af68838583c396 = 0;
         }
-        var_6e281dbd69fc980e = self.patrollocation + anglestoforward((0, var_b9a46106a6a99ee8, 0)) * int(self.patrolradius / 1.2);
+        newgoal = self.patrollocation + anglestoforward((0, var_b9a46106a6a99ee8, 0)) * int(self.patrolradius / 1.2);
         var_b9a46106a6a99ee8 = var_b9a46106a6a99ee8 + 90;
-        namespace_343543689c1d8859::choppersupport_movetolocation(var_6e281dbd69fc980e, 1);
+        scripts/cp_mp/killstreaks/chopper_support::choppersupport_movetolocation(newgoal, 1);
         if (var_b9a46106a6a99ee8 >= 360) {
             var_b9a46106a6a99ee8 = 0;
         }
@@ -633,20 +633,20 @@ function lootchopper_patrolzone(var_ce938a4ea8a54d5) {
     }
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2208
 // Size: 0x6b
 function lootchopper_droploot() {
     droplocation = lootchopper_finddroplocation(self.origin + (0, 0, 500));
     if (isdefined(droplocation)) {
-        var_e38f5ec33ed2cb0 = namespace_6c578d6ef48f10ef::dropbrlootchoppercrate(self.origin, droplocation);
-        var_ef5d5141fdb51174 = namespace_6c578d6ef48f10ef::gettriggerobject(var_e38f5ec33ed2cb0);
-        var_ef5d5141fdb51174.usetimeoverride = 10;
+        plundercrate = scripts/cp_mp/killstreaks/airdrop::dropbrlootchoppercrate(self.origin, droplocation);
+        triggerobject = scripts/cp_mp/killstreaks/airdrop::gettriggerobject(plundercrate);
+        triggerobject.usetimeoverride = 10;
     }
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x227a
 // Size: 0xa6
@@ -655,17 +655,17 @@ function lootchopper_finddroplocation(starttrace) {
     endtrace = starttrace - (0, 0, 20000);
     ignorelist = [];
     if (isent(self)) {
-        ignorelist = [0:self, 1:self.frontturret, 2:self.rearturret];
+        ignorelist = [self, self.frontturret, self.rearturret];
         ignorelist = array_removeundefined(ignorelist);
     }
-    trace = namespace_2a184fc4902783dc::ray_trace(starttrace, endtrace, ignorelist);
+    trace = scripts/engine/trace::ray_trace(starttrace, endtrace, ignorelist);
     if (isdefined(trace) && trace["hittype"] != "hittype_none") {
         droplocation = trace["position"];
     }
     return droplocation;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2328
 // Size: 0x166
@@ -675,11 +675,11 @@ function lootchopper_oncrateuse(player) {
         var_e168aeaf2d8a83f4 = getdvarint(@"hash_7daf22bb16ed19fe", 50000);
         var_c8a8cadcfbff950a = var_c8a8cadcfbff950a + var_e168aeaf2d8a83f4;
     }
-    dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
-    dropstruct.var_dfba5a2c3c6f0a07 = 10;
+    dropstruct = scripts/mp/gametypes/br_pickups::function_7b9f3966a7a42003();
+    dropstruct.dropidx = 10;
     self.itemsdropped = 0;
-    var_e05413a53b5d9167 = namespace_c6ccccd95254983f::dropplunderbyrarity(var_c8a8cadcfbff950a / 100, dropstruct);
-    foreach (ent in var_e05413a53b5d9167) {
+    pickupents = scripts/mp/gametypes/br_plunder::dropplunderbyrarity(var_c8a8cadcfbff950a / 100, dropstruct);
+    foreach (ent in pickupents) {
         ent.lootsource = "loot_chopper";
     }
     if (!isdefined(player.lootcachesopened)) {
@@ -687,13 +687,13 @@ function lootchopper_oncrateuse(player) {
     } else {
         player.lootcachesopened++;
     }
-    if (namespace_cd0b2d039510b38d::getsubgametype() == "risk" || namespace_cd0b2d039510b38d::getsubgametype() == "plunder") {
-        player namespace_d3d40f75bb4e4c32::updatebrscoreboardstat("lootCachesOpened", player.lootcachesopened);
+    if (scripts/mp/utility/game::getsubgametype() == "risk" || scripts/mp/utility/game::getsubgametype() == "plunder") {
+        player scripts/mp/gametypes/br_public::updatebrscoreboardstat("lootCachesOpened", player.lootcachesopened);
     }
-    player thread namespace_48a08c5037514e04::doscoreevent(#"hash_70e5de61cfaa916b");
+    player thread scripts/mp/utility/points::doScoreEvent(#"hash_70e5de61cfaa916b");
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2495
 // Size: 0x7d
@@ -705,29 +705,29 @@ function lootchopper_cleanup() {
         self.patrolzone.chopperoccupied = undefined;
     }
     if (isdefined(self.objectiveiconid)) {
-        namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.objectiveiconid);
+        scripts/mp/objidpoolmanager::returnobjectiveid(self.objectiveiconid);
     }
-    namespace_f64231d5b7a2c3c4::vehicle_tracking_deregisterinstance(self);
+    scripts/cp_mp/vehicles/vehicle_tracking::vehicle_tracking_deregisterinstance(self);
     level.loot_choppers = array_remove(level.loot_choppers, self);
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2519
 // Size: 0x6b
 function lootchopper_createobjective() {
-    objectiveiconid = namespace_5a22b6f3a56f7e9b::requestobjectiveid(1);
+    objectiveiconid = scripts/mp/objidpoolmanager::requestobjectiveid(1);
     if (objectiveiconid != -1) {
-        namespace_5a22b6f3a56f7e9b::objective_add_objective(objectiveiconid, "active", self.origin, "ui_mp_br_mapmenu_icon_boss_chopper", "icon_medium");
-        namespace_5a22b6f3a56f7e9b::update_objective_setbackground(objectiveiconid, 1);
-        namespace_5a22b6f3a56f7e9b::objective_playermask_showtoall(objectiveiconid);
-        namespace_5a22b6f3a56f7e9b::update_objective_onentity(objectiveiconid, self);
+        scripts/mp/objidpoolmanager::objective_add_objective(objectiveiconid, "active", self.origin, "ui_mp_br_mapmenu_icon_boss_chopper", "icon_medium");
+        scripts/mp/objidpoolmanager::update_objective_setbackground(objectiveiconid, 1);
+        scripts/mp/objidpoolmanager::objective_playermask_showtoall(objectiveiconid);
+        scripts/mp/objidpoolmanager::update_objective_onentity(objectiveiconid, self);
         objective_sethideelevation(objectiveiconid, 1);
     }
     self.objectiveiconid = objectiveiconid;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x258b
 // Size: 0x93
@@ -745,7 +745,7 @@ function lootchopper_getattackerdata(var_76b6b96d4589e81d) {
     return attackerdata;
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2626
 // Size: 0x14
@@ -753,7 +753,7 @@ function function_c300bcca405c826d() {
     self setscriptablepartstate("body_damage_light", "on");
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2641
 // Size: 0x14
@@ -761,7 +761,7 @@ function function_f70041f0a83148ce() {
     self setscriptablepartstate("body_damage_medium", "on");
 }
 
-// Namespace br_lootchopper/namespace_479f2912131dabfc
+// Namespace br_lootchopper / scripts/mp/gametypes/br_lootchopper
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x265c
 // Size: 0x14

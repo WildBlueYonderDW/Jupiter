@@ -4,14 +4,14 @@
 #using scripts\mp\utility\usability.gsc;
 #using scripts\mp\utility\entity.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using scripts\cp_mp\killstreaks\helper_drone.gsc;
 #using scripts\mp\equipment\ammo_box.gsc;
 
 #namespace weapon_drop;
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x305
 // Size: 0x1d
@@ -19,16 +19,16 @@ function weapondrop_init() {
     level._effect["weapon_drop_impact"] = loadfx("vfx/iw9/killstreaks/smk_signal/vfx_carepkg_landing_dust.vfx");
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x329
 // Size: 0xd
 function weapondrop_beginsuper() {
     thread weapondrop_givedropweapon();
-    return 1;
+    return true;
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33e
 // Size: 0xdd
@@ -39,19 +39,21 @@ function weapondrop_givedropweapon() {
     streakinfo = createstreakinfo("weapondrop", self);
     streakinfo.deployweaponobj = makeweapon("deploy_weapondrop_mp");
     val::set("giveDropWeapon", "killstreaks", 0);
-    var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponfireddeploy(streakinfo, streakinfo.deployweaponobj, "grenade_fire");
-    val::function_c9d0b43701bdba00("giveDropWeapon");
-    if (istrue(var_9b1deb5e9d32bbe3)) {
+    deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, streakinfo.deployweaponobj, "grenade_fire");
+    val::reset_all("giveDropWeapon");
+    if (istrue(deployresult)) {
         streakinfo notify("killstreak_finished_with_deploy_weapon");
         if (issharedfuncdefined("supers", "superUseFinished")) {
             [[ getsharedfunc("supers", "superUseFinished") ]]();
         }
-    } else if (issharedfuncdefined("supers", "superUseFinished")) {
+        return;
+    }
+    if (issharedfuncdefined("supers", "superUseFinished")) {
         [[ getsharedfunc("supers", "superUseFinished") ]](1);
     }
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x422
 // Size: 0x39
@@ -60,15 +62,15 @@ function weapondrop_used(grenade) {
     self endon("disconnect");
     pos = grenade waittill("explode");
     grenade weapondrop_deploydrone(self, pos);
-    return 1;
+    return true;
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x463
 // Size: 0xfc
 function weapondrop_deploydrone(owner, pos) {
-    drone = owner namespace_bba8bc8532aa4913::deliverydrone_delivertopoint(pos, &weapondrop_dronedelivery);
+    drone = owner scripts/cp_mp/killstreaks/helper_drone::deliverydrone_delivertopoint(pos, &weapondrop_dronedelivery);
     if (isdefined(drone)) {
         deliverybox = spawn("script_model", drone.origin);
         deliverybox setmodel("military_crate_field_upgrade_01");
@@ -87,7 +89,7 @@ function weapondrop_deploydrone(owner, pos) {
     }
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x566
 // Size: 0x13
@@ -95,7 +97,7 @@ function weapondrop_dronedelivery() {
     self.deliverybox weapondrop_createdrop();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x580
 // Size: 0x39
@@ -108,7 +110,7 @@ function weapondrop_createdropondeath(deliverybox) {
     deliverybox thread weapondrop_createdrop();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c0
 // Size: 0x88
@@ -120,13 +122,13 @@ function weapondrop_createdrop() {
     self notify("deliveryBox_dropped");
     self unlink();
     cratephysicson();
-    var_7b59b41b01684053 = self.origin - (0, 0, 1000);
-    killstreak_createdangerzone(var_7b59b41b01684053, 100, 1000, 30, self.owner, self.team);
+    targetlocation = self.origin - (0, 0, 1000);
+    killstreak_createdangerzone(targetlocation, 100, 1000, 30, self.owner, self.team);
     thread watchcrateimpact();
     thread watchcratesettle();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x11
@@ -135,7 +137,7 @@ function deletecrate() {
     self delete();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x667
 // Size: 0x78
@@ -146,12 +148,12 @@ function cratephysicson() {
     self.physicson = 1;
     self.unresolved_collision_kill = 1;
     self physicslaunchserver((0, 0, 0), (0, 0, 0), 1200);
-    var_212a44a5393c3b34 = self physics_getbodyid(0);
-    physics_setbodycenterofmassnormal(var_212a44a5393c3b34, (0, 0, -0.75));
+    bodyid = self physics_getbodyid(0);
+    physics_setbodycenterofmassnormal(bodyid, (0, 0, -0.75));
     self physics_registerforcollisioncallback();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x4e
@@ -168,7 +170,7 @@ function cratephysicsoff() {
     killstreak_destroydangerzone();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x73b
 // Size: 0x5d
@@ -181,11 +183,11 @@ function watchcratesettle() {
             return;
         }
     }
-    self.owner thread namespace_8209302c4f35ef97::ammobox_settled(self);
+    self.owner thread scripts/mp/equipment/ammo_box::ammobox_settled(self);
     thread cratephysicsoff();
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x79f
 // Size: 0x5d
@@ -193,8 +195,8 @@ function watchcratesettleinternal() {
     wait(1);
     endtime = gettime() + 10000;
     while (gettime() < endtime) {
-        var_212a44a5393c3b34 = self physics_getbodyid(0);
-        velocity = physics_getbodylinvel(var_212a44a5393c3b34);
+        bodyid = self physics_getbodyid(0);
+        velocity = physics_getbodylinvel(bodyid);
         if (lengthsquared(velocity) <= 0.5) {
             break;
         }
@@ -202,7 +204,7 @@ function watchcratesettleinternal() {
     }
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x803
 // Size: 0x122
@@ -213,10 +215,10 @@ function watchcrateimpact(delay) {
         wait(delay);
     }
     var_260ef1536027d0e1 = 0;
-    while (1) {
-        ent = impulse = normal = position = flag1 = flag0 = body1 = body0 = self waittill("collision");
-        if (isdefined(ent) && ent namespace_bba8bc8532aa4913::ishelperdrone()) {
-            ent thread namespace_bba8bc8532aa4913::function_ba1c5496f8fc5f67();
+    while (true) {
+        body0, body1, flag0, flag1, position, normal, impulse, ent = self waittill("collision");
+        if (isdefined(ent) && ent scripts/cp_mp/killstreaks/helper_drone::ishelperdrone()) {
+            ent thread scripts/cp_mp/killstreaks/helper_drone::function_ba1c5496f8fc5f67();
         }
         if (gettime() - var_260ef1536027d0e1 >= 200) {
             var_260ef1536027d0e1 = gettime();
@@ -233,7 +235,7 @@ function watchcrateimpact(delay) {
     }
 }
 
-// Namespace weapon_drop/namespace_7f468c66c778cc41
+// Namespace weapon_drop / scripts/mp/equipment/weapon_drop
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92c
 // Size: 0x7f

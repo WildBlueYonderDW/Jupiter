@@ -5,27 +5,27 @@
 #using scripts\mp\utility\perk.gsc;
 #using scripts\mp\hud_message.gsc;
 #using scripts\mp\utility\player.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using script_104e3370b024f998;
 #using scripts\engine\trace.gsc;
 
 #namespace namespace_ba300dc864b9baf9;
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22c
 // Size: 0x155
 function function_cfb677b5f7d5e644() {
     if (!isalive(self) || self isparachuting() || self isskydiving() || self isonladder() || self function_9cc921a57ff4deb5() || self isinexecutionattack() || self isinexecutionvictim()) {
-        return 0;
+        return false;
     }
-    if (istrue(self.inlaststand) || isdefined(self.usingremote) || istrue(self.isdeploying) || istrue(self.usingascender) || namespace_f8065cafc523dba5::function_b7869f6d9d4242e3(self) || istrue(self.isjuggernaut) || istrue(self.var_859654e0445a36d9)) {
-        return 0;
+    if (istrue(self.inlaststand) || isdefined(self.usingremote) || istrue(self.isdeploying) || istrue(self.usingascender) || scripts/cp_mp/utility/player_utility::function_b7869f6d9d4242e3(self) || istrue(self.isjuggernaut) || istrue(self.var_859654e0445a36d9)) {
+        return false;
     }
     if (isdefined(self.vehicle)) {
-        return 0;
+        return false;
     }
-    thread namespace_44abc05161e2e2cb::showsplash("super_teleport_deploy" + "_activate", undefined, self, undefined, undefined, undefined, 1);
+    thread scripts/mp/hud_message::showsplash("super_teleport_deploy" + "_activate", undefined, self, undefined, undefined, undefined, 1);
     self setclientomnvar("ui_field_upgrade_use", 0);
     giveperk("specialty_third_person");
     function_6caa4b447cb1ee5c(1);
@@ -34,10 +34,10 @@ function function_cfb677b5f7d5e644() {
     delaythread(getdvarfloat(@"hash_96dbd55b49ef1c2b", 0.1), &function_456da1486741f194, 1);
     delaythread(getdvarfloat(@"hash_81dbead1ca86d536", 0.2), &function_e2b829448c14c0f4, 1);
     thread function_4b2fa585273dbb8c();
-    return 1;
+    return true;
 }
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x389
 // Size: 0x39
@@ -45,28 +45,28 @@ function function_e2b829448c14c0f4(shouldhide) {
     if (shouldhide) {
         function_a593971d75d82113();
         function_379bb555405c16bb("temp_v_teleport_superpower::superTeleport_hide()");
-    } else {
-        function_6fb380927695ee76();
-        function_985b0973f29da4f8("temp_v_teleport_superpower::superTeleport_hide()");
+        return;
     }
+    function_6fb380927695ee76();
+    function_985b0973f29da4f8("temp_v_teleport_superpower::superTeleport_hide()");
 }
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c9
 // Size: 0xa4
-function function_6caa4b447cb1ee5c(var_9f7dff969c876c26) {
-    if (var_9f7dff969c876c26) {
-        var_6944da8624ccdf1d = [0:"ads", 1:"weapon_switch", 2:"weapon_pickup", 3:"weapon_switch_clip", 4:"reload", 5:"allow_jump", 6:"usability", 7:"vehicle_use", 8:"execution_attack", 9:"execution_victim"];
-        namespace_7e17181d03156026::_freezecontrols(1);
-        namespace_1cd9f6896754adb0::function_59c053b89257bc95("teleport_superpower", var_6944da8624ccdf1d, 0);
-    } else {
-        namespace_7e17181d03156026::_freezecontrols(0);
-        namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("teleport_superpower");
+function function_6caa4b447cb1ee5c(isteleporting) {
+    if (isteleporting) {
+        blockedvalues = ["ads", "weapon_switch", "weapon_pickup", "weapon_switch_clip", "reload", "allow_jump", "usability", "vehicle_use", "execution_attack", "execution_victim"];
+        scripts/mp/utility/player::_freezecontrols(1);
+        scripts/common/values::set_array("teleport_superpower", blockedvalues, 0);
+        return;
     }
+    scripts/mp/utility/player::_freezecontrols(0);
+    scripts/common/values::reset_all("teleport_superpower");
 }
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x474
 // Size: 0x9d
@@ -85,61 +85,61 @@ function function_4b2fa585273dbb8c() {
     namespace_416e533f6ed17708::function_269b97f3d86eb172();
 }
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x518
 // Size: 0x180
 function function_3754ea1a27eecdd8() {
-    var_b3c15d36553b30b5 = self.origin + (0, 0, getdvarint(@"hash_6607bd90c44f0838", 5000));
-    caststart = var_b3c15d36553b30b5;
-    var_fa13273fbff1ab7c = self.origin;
-    var_f4fb3e42fc7eee67 = 1000;
+    initialstart = self.origin + (0, 0, getdvarint(@"hash_6607bd90c44f0838", 5000));
+    caststart = initialstart;
+    cachedposition = self.origin;
+    safeheight = 1000;
     mapcenter = level.mapcenter;
     var_b8726efb17f1fe54 = 0;
-    while (1) {
+    while (true) {
         if (var_b8726efb17f1fe54 > 20) {
-            position = var_fa13273fbff1ab7c;
+            position = cachedposition;
             break;
         }
         castend = caststart + (0, 0, -2000);
-        trace = namespace_2a184fc4902783dc::ray_trace(caststart, castend, self, namespace_2a184fc4902783dc::create_default_contents(1));
-        var_142adc6587364423 = 0;
+        trace = scripts/engine/trace::ray_trace(caststart, castend, self, scripts/engine/trace::create_default_contents(1));
+        positionsafe = 0;
         position = caststart;
         dist = distance(caststart, trace["position"]);
         if (dist >= 1000) {
-            var_142adc6587364423 = 1;
+            positionsafe = 1;
         }
         if (canspawn(position)) {
-            if (var_142adc6587364423) {
+            if (positionsafe) {
                 break;
             } else {
-                var_fa13273fbff1ab7c = position;
+                cachedposition = position;
             }
         }
         dir = flatten_vector(vectornormalize(mapcenter - caststart));
         caststart = caststart + dir * randomintrange(250, 1000);
-        if (!var_142adc6587364423) {
-            caststart = (caststart.x, caststart.y, var_b3c15d36553b30b5.z);
-            caststart = caststart + (0, 0, var_f4fb3e42fc7eee67 - dist);
+        if (!positionsafe) {
+            caststart = (caststart.x, caststart.y, initialstart.z);
+            caststart = caststart + (0, 0, safeheight - dist);
         }
         waitframe();
     }
     return position;
 }
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a0
 // Size: 0x3f
-function function_456da1486741f194(var_be6106930385bd5b) {
-    if (var_be6106930385bd5b) {
-        playfx(namespace_3c37cb17ade254d::getfx("superPower_teleportOut"), self.origin);
-    } else {
-        self setscriptablepartstate("superpowers", "teleportIn", 0);
+function function_456da1486741f194(isout) {
+    if (isout) {
+        playfx(scripts/engine/utility::getfx("superPower_teleportOut"), self.origin);
+        return;
     }
+    self setscriptablepartstate("superpowers", "teleportIn", 0);
 }
 
-// Namespace namespace_ba300dc864b9baf9/namespace_9f9a23de1f1dc7ff
+// Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e6
 // Size: 0x65

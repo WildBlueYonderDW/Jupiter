@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\unittest\util.gsc;
 
-#namespace namespace_9b6cb473c89e4499;
+#namespace unittest_threads;
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x423
 // Size: 0x33
@@ -15,7 +15,7 @@ function thread_wait() {
     test_print("thread_wait: 2");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x45d
 // Size: 0x2e
@@ -25,7 +25,7 @@ function f_resume(i) {
     test_print("f_resume: 1: " + i);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x492
 // Size: 0x2b
@@ -36,17 +36,17 @@ function thread_resume() {
     wait(0.2);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c4
 // Size: 0x56
 function f_notify(i) {
     test_print("f_notify wait: " + i);
-    y = x = level waittill("f");
+    x, y = level waittill("f");
     test_print("f_notify: " + i + " " + x + " " + y);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x521
 // Size: 0x34
@@ -57,7 +57,7 @@ function thread_wait_notify() {
     level notify("f", 1);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x55c
 // Size: 0xd
@@ -66,17 +66,17 @@ function thread_terminate_child() {
     return 2;
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x571
 // Size: 0x15
 function thread_terminate_wrapper() {
     level endon("thread_terminate_endon");
     level thread thread_terminate_child();
-    return 1;
+    return true;
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x58e
 // Size: 0x36
@@ -84,12 +84,12 @@ function thread_terminate_notify() {
     x = thread_terminate_wrapper();
     if (!isdefined(x)) {
         test_print("thread_terminate_notify: <undefined>");
-    } else {
-        test_print("thread_terminate_notify: " + x);
+        return;
     }
+    test_print("thread_terminate_notify: " + x);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5cb
 // Size: 0x3b
@@ -99,7 +99,7 @@ function f_match(notifystr, i) {
     test_print("f_match: " + i);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x60d
 // Size: 0x2e
@@ -109,19 +109,19 @@ function waittillmatch_wait(index) {
     test_print("waittillmatch_wait end: " + index);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x642
 // Size: 0x34
 function waittillmatch_loop(index) {
     level endon("waittillmatch_end");
-    while (1) {
+    while (true) {
         level waittillmatch("wtm_loop", "loop");
         level thread waittillmatch_wait(index);
     }
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x67d
 // Size: 0xab
@@ -145,7 +145,7 @@ function thread_waittill_match() {
     level notify("waittillmatch_end");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x72f
 // Size: 0x27
@@ -157,7 +157,7 @@ function f_endon(i) {
     }
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x75d
 // Size: 0x57
@@ -172,7 +172,7 @@ function stack_endon_recurse(i) {
     test_print("stack_endon_recurse: end");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x13
@@ -181,7 +181,7 @@ function stack_endon() {
     stack_endon_recurse(3);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d5
 // Size: 0x52
@@ -196,7 +196,7 @@ function thread_endon() {
     test_print("stack_endon: end");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x82e
 // Size: 0x43
@@ -206,7 +206,7 @@ function f_churn(i) {
     test_print("f_churn notify: " + i + ": " + x);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x878
 // Size: 0x25
@@ -216,7 +216,7 @@ function thread_churn() {
     }
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a4
 // Size: 0xd
@@ -224,7 +224,7 @@ function thread_churn_notify() {
     level notify("churn", 4);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8b8
 // Size: 0x29
@@ -234,7 +234,7 @@ function f_waitframe(i) {
     test_print("f_waitframe: " + i);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e8
 // Size: 0x25
@@ -244,7 +244,7 @@ function thread_waitframe() {
     }
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x914
 // Size: 0x29
@@ -254,7 +254,7 @@ function f_waitframeend(i) {
     test_print("f_waitframeend: " + i);
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x944
 // Size: 0x25
@@ -264,12 +264,12 @@ function thread_waitframeend() {
     }
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x970
 // Size: 0x38
 function f_running_func() {
-    for (i = 0; 1; i++) {
+    for (i = 0; true; i++) {
         test_print("f_running: " + i);
         if (i == 3) {
             level notify("f_running");
@@ -278,7 +278,7 @@ function f_running_func() {
     return i;
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9b0
 // Size: 0x10
@@ -287,7 +287,7 @@ function f_running_func_call() {
     return f_running_func();
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c8
 // Size: 0x11
@@ -296,7 +296,7 @@ function f_running_thread_call() {
     return childthread f_running_func();
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e1
 // Size: 0x22
@@ -306,7 +306,7 @@ function f_running_nested_1() {
     test_print("f_nested_1: post");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa0a
 // Size: 0x29
@@ -317,7 +317,7 @@ function f_running_nested_2() {
     test_print("f_nested_2: post");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3a
 // Size: 0x22
@@ -327,7 +327,7 @@ function f_running_nested_3() {
     test_print("f_nested_3: post");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa63
 // Size: 0x2a
@@ -338,7 +338,7 @@ function f_running_nested_4() {
     test_print("f_nested_4: post");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa94
 // Size: 0xf
@@ -346,7 +346,7 @@ function f_running_nested_5() {
     test_print("f_nested_5");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xaaa
 // Size: 0x23
@@ -356,7 +356,7 @@ function f_running_nested_call() {
     test_print("f_nested: post");
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xad4
 // Size: 0x54
@@ -369,7 +369,7 @@ function thread_running_notify() {
     test_print("thread_running_nested_call: IsDefined: " + isdefined(i));
 }
 
-// Namespace namespace_9b6cb473c89e4499/namespace_503c01e131cd03a8
+// Namespace unittest_threads / scripts/unittest/threads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb2f
 // Size: 0x99

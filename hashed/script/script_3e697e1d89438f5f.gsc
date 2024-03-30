@@ -2,7 +2,7 @@
 #using scripts\asm\asm.gsc;
 #using scripts\asm\asm_bb.gsc;
 #using script_7ff3a914e6c698c5;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_3badb8914eb5ac16;
 #using script_7edf952f8921aa6b;
@@ -16,20 +16,20 @@
 
 #namespace namespace_2ad7130c99350bc1;
 
-// Namespace namespace_2ad7130c99350bc1/namespace_b4f60eced64b93fb
+// Namespace namespace_2ad7130c99350bc1 / namespace_b4f60eced64b93fb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x376
 // Size: 0x3e9
 function private function_f49a30f92555b827() {
-    var_e9de22bdc3e99ea0 = self function_70eafce34621eaa2();
+    shouldstrip = self function_70eafce34621eaa2();
     function_29b5fb70d7ea841();
-    function_304c63cbb536c526(var_e9de22bdc3e99ea0);
+    function_304c63cbb536c526(shouldstrip);
     function_a8d762b7f47cf728();
     function_7dcdb0119cb801c6();
     function_d03eea41ff9cfe90();
     function_52b682d1bb0ddc02();
     function_a40873f83b05ce3c();
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_move_speed_changed", &on_move_speed_changed);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_move_speed_changed", &on_move_speed_changed);
     level.scr_anim[self.animname]["spawn"] = "spawn";
     level.scr_anim[self.animname]["spawn_hop"] = "spawn_hop";
     level.scr_anim[self.animname]["spawn_barrel_44"] = "spawn_barrel_44";
@@ -61,18 +61,18 @@ function private function_f49a30f92555b827() {
     level.scr_anim[self.animname]["jump_across_128"] = "jump_across_128";
 }
 
-// Namespace namespace_2ad7130c99350bc1/namespace_b4f60eced64b93fb
+// Namespace namespace_2ad7130c99350bc1 / namespace_b4f60eced64b93fb
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x766
 // Size: 0xe8
-function function_b45b4cb9b781cbd(asmname, statename, params) {
+function zombieinit(asmname, statename, params) {
     function_a343ac31ca854535(&function_f49a30f92555b827);
     self.asm.footsteps = spawnstruct();
     self.asm.footsteps.foot = "invalid";
     self.asm.footsteps.time = 0;
     self.asm.customdata = spawnstruct();
     asm_setmoveplaybackrate(1);
-    function_be2d0b11a3aaba0c();
+    init_melee();
     function_3426adec3c5d6cb6();
     function_64d97cf652a4d385();
     init_pain();
@@ -81,7 +81,7 @@ function function_b45b4cb9b781cbd(asmname, statename, params) {
     ent_flag_set("zombie_asm_init_finished");
 }
 
-// Namespace namespace_2ad7130c99350bc1/namespace_b4f60eced64b93fb
+// Namespace namespace_2ad7130c99350bc1 / namespace_b4f60eced64b93fb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x855
 // Size: 0x2f
@@ -90,11 +90,11 @@ function private on_ai_init(params) {
     callback::remove("on_ai_init", &on_ai_init);
 }
 
-// Namespace namespace_2ad7130c99350bc1/namespace_b4f60eced64b93fb
+// Namespace namespace_2ad7130c99350bc1 / namespace_b4f60eced64b93fb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x88b
 // Size: 0x32
 function private on_move_speed_changed(params) {
-    self._blackboard.var_f20ced1f24ab8752 = random([0:1, 1:0]);
+    self._blackboard.var_f20ced1f24ab8752 = random([1, 0]);
 }
 

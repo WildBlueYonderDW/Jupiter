@@ -8,9 +8,9 @@
 #using scripts\mp\utility\script.gsc;
 #using scripts\mp\gameobjects.gsc;
 
-#namespace namespace_4e9b1257b086176e;
+#namespace bots_gametype_ctf;
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x229
 // Size: 0x11
@@ -19,7 +19,7 @@ function main() {
     setup_bot_ctf();
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x241
 // Size: 0x6
@@ -28,7 +28,7 @@ function function_e45e46b7c35deadb() {
     #/
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24e
 // Size: 0x42
@@ -38,13 +38,13 @@ function setup_callbacks() {
     level.bot_funcs["get_watch_node_chance"] = &bot_ctf_get_node_chance;
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x297
 // Size: 0x1d1
 function setup_bot_ctf() {
     /#
-        if (0) {
+        if (false) {
             level.var_5c7085cb60319b4 = 1;
         }
     #/
@@ -75,7 +75,7 @@ function setup_bot_ctf() {
     level.bot_gametype_precaching_done = 1;
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x41
@@ -89,7 +89,7 @@ function crate_can_use(crate) {
     return bot_ctf_flag_is_home_of_team(self.team);
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x49e
@@ -126,17 +126,17 @@ function bot_ctf_think() {
                 level.bot_known_flag_carrier_loc[enemy_team] = undefined;
             }
         }
-        var_b3e8aeb3e9fe5518 = 0;
+        sprint_desired = 0;
         if (self.role == "attacker") {
             if (bot_ctf_player_has_flag()) {
-                var_b3e8aeb3e9fe5518 = 1;
+                sprint_desired = 1;
             } else if (!bot_ctf_enemy_team_flag_is_picked_up()) {
-                var_b3e8aeb3e9fe5518 = distancesquared(self.origin, level.teamflags[enemy_team].curorigin) < squared(get_flag_protect_radius());
+                sprint_desired = distancesquared(self.origin, level.teamflags[enemy_team].curorigin) < squared(get_flag_protect_radius());
             }
         } else if (!bot_ctf_flag_is_home_of_team(self.team)) {
-            var_b3e8aeb3e9fe5518 = !bot_ctf_my_team_flag_is_picked_up();
+            sprint_desired = !bot_ctf_my_team_flag_is_picked_up();
         }
-        self botsetflag("force_sprint", var_b3e8aeb3e9fe5518);
+        self botsetflag("force_sprint", sprint_desired);
         var_a4775e629f031993 = 0;
         if (bot_ctf_player_has_flag()) {
             if (bot_ctf_flag_is_home_of_team(self.team)) {
@@ -152,14 +152,14 @@ function bot_ctf_think() {
             } else if (gettime() > self.next_flag_hide_time) {
                 clear_defend();
                 nodes = getnodesinradius(level.capzones[self.team].curorigin, 900, 0, 300);
-                var_7e939d9754fb78de = self botnodepick(nodes, nodes.size * 0.15, "node_hide_anywhere");
-                if (!isdefined(var_7e939d9754fb78de)) {
-                    var_7e939d9754fb78de = level.capzones[self.team].nearest_node;
+                hide_node = self botnodepick(nodes, nodes.size * 0.15, "node_hide_anywhere");
+                if (!isdefined(hide_node)) {
+                    hide_node = level.capzones[self.team].nearest_node;
                 }
                 /#
-                    assert(isdefined(var_7e939d9754fb78de));
+                    assert(isdefined(hide_node));
                 #/
-                success = self botsetscriptgoalnode(var_7e939d9754fb78de, "critical");
+                success = self botsetscriptgoalnode(hide_node, "critical");
                 if (success) {
                     self.next_flag_hide_time = gettime() + 15000;
                 }
@@ -200,73 +200,73 @@ function bot_ctf_think() {
     }
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x95d
 // Size: 0x2ad
 function bot_ctf_recover_flag() {
     var_db965920aa486082 = undefined;
-    var_f1826f769cfe617a = level.teamflags[self.team];
-    var_c80369fc0f449358 = var_f1826f769cfe617a.carrier;
-    if (!isdefined(var_c80369fc0f449358)) {
-        var_db965920aa486082 = var_f1826f769cfe617a.curorigin;
-    } else if (self botcanseeentity(var_c80369fc0f449358)) {
-        var_db965920aa486082 = var_c80369fc0f449358.origin;
+    my_flag = level.teamflags[self.team];
+    flag_carrier = my_flag.carrier;
+    if (!isdefined(flag_carrier)) {
+        var_db965920aa486082 = my_flag.curorigin;
+    } else if (self botcanseeentity(flag_carrier)) {
+        var_db965920aa486082 = flag_carrier.origin;
         if (self botgetdifficultysetting("strategyLevel") > 0 && !bot_ctf_flag_is_home_of_team(self.team)) {
             if (!isdefined(level.bot_known_flag_carrier_loc)) {
                 level.bot_known_flag_carrier_loc = [];
             }
-            if (!isdefined(level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team])) {
-                level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team] = [];
+            if (!isdefined(level.bot_known_flag_carrier_loc[flag_carrier.team])) {
+                level.bot_known_flag_carrier_loc[flag_carrier.team] = [];
             }
-            level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team]["origin"] = var_db965920aa486082;
-            level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team]["time"] = gettime();
+            level.bot_known_flag_carrier_loc[flag_carrier.team]["origin"] = var_db965920aa486082;
+            level.bot_known_flag_carrier_loc[flag_carrier.team]["time"] = gettime();
         }
-    } else if (isdefined(var_f1826f769cfe617a.curcarrierorigin)) {
-        if (isdefined(var_f1826f769cfe617a.compassicons["friendly"])) {
-            if (var_f1826f769cfe617a.objidpingfriendly) {
-                var_db965920aa486082 = var_f1826f769cfe617a.curcarrierorigin;
+    } else if (isdefined(my_flag.curcarrierorigin)) {
+        if (isdefined(my_flag.compassicons["friendly"])) {
+            if (my_flag.objidpingfriendly) {
+                var_db965920aa486082 = my_flag.curcarrierorigin;
             } else {
-                var_db965920aa486082 = var_c80369fc0f449358.origin;
+                var_db965920aa486082 = flag_carrier.origin;
             }
         }
     } else {
-        var_db965920aa486082 = var_f1826f769cfe617a.curorigin;
+        var_db965920aa486082 = my_flag.curorigin;
     }
     if (isdefined(var_db965920aa486082)) {
         clear_defend();
         self botsetscriptgoal(var_db965920aa486082, 16, "critical");
-    } else {
-        var_c74e2e565ee3fe18 = undefined;
-        var_3ad830dc9d89106d = undefined;
-        if (self botgetdifficultysetting("strategyLevel") > 0) {
-            if (isdefined(level.bot_known_flag_carrier_loc) && isdefined(level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team])) {
-                var_3ad830dc9d89106d = gettime() - level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team]["time"];
-                if (var_3ad830dc9d89106d < 10000) {
-                    var_c74e2e565ee3fe18 = level.bot_known_flag_carrier_loc[var_c80369fc0f449358.team]["origin"];
-                }
+        return;
+    }
+    var_c74e2e565ee3fe18 = undefined;
+    var_3ad830dc9d89106d = undefined;
+    if (self botgetdifficultysetting("strategyLevel") > 0) {
+        if (isdefined(level.bot_known_flag_carrier_loc) && isdefined(level.bot_known_flag_carrier_loc[flag_carrier.team])) {
+            var_3ad830dc9d89106d = gettime() - level.bot_known_flag_carrier_loc[flag_carrier.team]["time"];
+            if (var_3ad830dc9d89106d < 10000) {
+                var_c74e2e565ee3fe18 = level.bot_known_flag_carrier_loc[flag_carrier.team]["origin"];
             }
-        }
-        if (isdefined(var_c74e2e565ee3fe18)) {
-            if (var_3ad830dc9d89106d < 5000) {
-                clear_defend();
-                self botsetscriptgoal(var_c74e2e565ee3fe18, 16, "critical");
-            } else if (!bot_is_patrolling()) {
-                bot_defend_stop();
-                bot_patrol_area(var_c74e2e565ee3fe18, 400);
-            }
-        } else {
-            clear_defend();
-            var_e7073093c8c51701 = self botgetscriptgoaltype();
-            if (var_e7073093c8c51701 == "objective" || var_e7073093c8c51701 == "critical") {
-                self botclearscriptgoal();
-            }
-            update_personality_default();
         }
     }
+    if (isdefined(var_c74e2e565ee3fe18)) {
+        if (var_3ad830dc9d89106d < 5000) {
+            clear_defend();
+            self botsetscriptgoal(var_c74e2e565ee3fe18, 16, "critical");
+        } else if (!bot_is_patrolling()) {
+            bot_defend_stop();
+            bot_patrol_area(var_c74e2e565ee3fe18, 400);
+        }
+        return;
+    }
+    clear_defend();
+    var_e7073093c8c51701 = self botgetscriptgoaltype();
+    if (var_e7073093c8c51701 == "objective" || var_e7073093c8c51701 == "critical") {
+        self botclearscriptgoal();
+    }
+    update_personality_default();
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc11
 // Size: 0x13
@@ -276,7 +276,7 @@ function clear_defend() {
     }
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc2b
 // Size: 0x9
@@ -284,15 +284,15 @@ function is_protecting_flag() {
     return bot_is_protecting();
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc3c
 // Size: 0x73
 function get_flag_protect_radius() {
     if (isalive(self) && !isdefined(level.protect_radius)) {
-        var_fa52693cf4679c62 = self botgetworldsize();
-        var_dd6786927bde6332 = (var_fa52693cf4679c62[0] + var_fa52693cf4679c62[1]) / 2;
-        level.protect_radius = min(800, var_dd6786927bde6332 / 5.5);
+        worldbounds = self botgetworldsize();
+        average_side = (worldbounds[0] + worldbounds[1]) / 2;
+        level.protect_radius = min(800, average_side / 5.5);
     }
     if (!isdefined(level.protect_radius)) {
         return 900;
@@ -300,44 +300,44 @@ function get_flag_protect_radius() {
     return level.protect_radius;
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb7
 // Size: 0xdf
 function ctf_bot_attacker_limit_for_team(team) {
-    var_6ace8681f94cdc7c = bot_gametype_get_num_players_on_team(team);
-    if (var_6ace8681f94cdc7c == 1) {
+    team_limit = bot_gametype_get_num_players_on_team(team);
+    if (team_limit == 1) {
         return 1;
     }
     if (bot_ctf_flag_is_home_of_team(team)) {
-        var_5995918ec569a5b3 = var_6ace8681f94cdc7c * 0.67;
+        var_5995918ec569a5b3 = team_limit * 0.67;
     } else {
         enemy_team = getotherteam(team)[0];
         if (bot_ctf_flag_is_home_of_team(enemy_team)) {
-            var_5995918ec569a5b3 = var_6ace8681f94cdc7c * 0.5;
+            var_5995918ec569a5b3 = team_limit * 0.5;
         } else {
-            var_5995918ec569a5b3 = var_6ace8681f94cdc7c * 0.4;
+            var_5995918ec569a5b3 = team_limit * 0.4;
         }
     }
     var_363da16eb06140fe = int(roundup(var_5995918ec569a5b3));
-    var_cd5052914e11eb6a = game["teamScores"][team];
-    var_5a293d5e08a8b462 = game["teamScores"][get_enemy_team(team)];
-    if (var_cd5052914e11eb6a + 1 < var_5a293d5e08a8b462) {
-        var_363da16eb06140fe = int(min(var_363da16eb06140fe + 1, var_6ace8681f94cdc7c));
+    my_score = game["teamScores"][team];
+    enemy_score = game["teamScores"][get_enemy_team(team)];
+    if (my_score + 1 < enemy_score) {
+        var_363da16eb06140fe = int(min(var_363da16eb06140fe + 1, team_limit));
     }
     return var_363da16eb06140fe;
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd9e
 // Size: 0x27
 function ctf_bot_defender_limit_for_team(team) {
-    var_6ace8681f94cdc7c = bot_gametype_get_num_players_on_team(team);
-    return var_6ace8681f94cdc7c - ctf_bot_attacker_limit_for_team(team);
+    team_limit = bot_gametype_get_num_players_on_team(team);
+    return team_limit - ctf_bot_attacker_limit_for_team(team);
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdcd
 // Size: 0x2e
@@ -345,7 +345,7 @@ function get_allied_attackers_for_team(team) {
     return bot_gametype_get_allied_attackers_for_team(team, level.capzones[team].curorigin, get_flag_protect_radius());
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe03
 // Size: 0x2e
@@ -353,7 +353,7 @@ function get_allied_defenders_for_team(team) {
     return bot_gametype_get_allied_defenders_for_team(team, level.capzones[team].curorigin, get_flag_protect_radius());
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe39
 // Size: 0x21
@@ -364,7 +364,7 @@ function bot_ctf_ai_director_update() {
     thread bot_gametype_attacker_defender_ai_director_update();
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe61
 // Size: 0x5a
@@ -382,15 +382,15 @@ function bot_ctf_get_node_chance(node) {
     return 0.2;
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xec3
 // Size: 0x1d
 function bot_ctf_flag_is_home_of_team(team) {
-    return level.teamflags[team] namespace_19b4203b51d56488::ishome();
+    return level.teamflags[team] scripts/mp/gameobjects::ishome();
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xee8
 // Size: 0x22
@@ -398,7 +398,7 @@ function bot_ctf_flag_picked_up_of_team(team) {
     return isdefined(level.teamflags[team].carrier);
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf12
 // Size: 0x12
@@ -406,7 +406,7 @@ function bot_ctf_my_team_flag_is_picked_up() {
     return bot_ctf_flag_picked_up_of_team(self.team);
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf2c
 // Size: 0x26
@@ -415,7 +415,7 @@ function bot_ctf_enemy_team_flag_is_picked_up() {
     return bot_ctf_flag_picked_up_of_team(enemy_team);
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf5a
 // Size: 0xd
@@ -423,25 +423,25 @@ function bot_ctf_player_has_flag() {
     return isdefined(self.carryflag);
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf6f
 // Size: 0x10
 function bot_ctf_can_switch_to_defender() {
     if (bot_ctf_player_has_flag()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_4e9b1257b086176e/namespace_3005fd10ea05d166
+// Namespace bots_gametype_ctf / scripts/mp/bots/bots_gametype_ctf
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf87
 // Size: 0x10
 function bot_ctf_player_always_attacker() {
     if (bot_ctf_player_has_flag()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

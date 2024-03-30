@@ -9,7 +9,7 @@
 #using scripts\mp\utility\player.gsc;
 #using scripts\mp\utility\perk.gsc;
 #using scripts\mp\utility\stats.gsc;
-#using script_e8a252b4c2138ed;
+#using scripts\mp\gametypes\gold_gun.gsc;
 #using scripts\mp\spawnlogic.gsc;
 #using scripts\mp\globallogic.gsc;
 #using scripts\mp\gameobjects.gsc;
@@ -28,15 +28,15 @@
 
 #namespace dm;
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x264
 function main() {
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -67,11 +67,11 @@ function main() {
     setteammode("ffa");
     if (istrue(level.aonrules)) {
         level.denyclasschoice = 1;
-        namespace_310ba947928891df::addspecialistdialog();
-        level.bypassclasschoicefunc = &namespace_d19129e4fa5d176::alwaysgamemodeclass;
+        scripts/mp/gametypes/common::addspecialistdialog();
+        level.bypassclasschoicefunc = &scripts/mp/class::alwaysgamemodeclass;
         setspecialloadout();
         game["dialog"]["gametype"] = "gametype_aon";
-    } else if (namespace_36f464722d326bbe::function_21322da268e71c19()) {
+    } else if (scripts/cp_mp/utility/game_utility::function_21322da268e71c19()) {
         game["dialog"]["gametype"] = "dx_mp_ffah_mode_t141_name";
     } else {
         game["dialog"]["gametype"] = "dx_mp_ffal_game_uktl_name";
@@ -87,7 +87,7 @@ function main() {
     #/
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xab7
 // Size: 0xdf
@@ -105,7 +105,7 @@ function initializematchrules() {
     registerhalftimedvar("dm", 0);
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb9d
 // Size: 0x241
@@ -121,29 +121,29 @@ function onstartgametype() {
         setobjectivehinttext(entry, "OBJECTIVES/DM_HINT");
     }
     if (function_bff229a11ecd1e34()) {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic(#"default");
+        scripts/mp/spawnlogic::setactivespawnlogic(#"default");
     } else {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic("FreeForAll", "Crit_Default");
+        scripts/mp/spawnlogic::setactivespawnlogic("FreeForAll", "Crit_Default");
     }
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    var_6170ec00c4bc9b5b = "ffa";
-    if (namespace_b2d5aa2baf2b5701::function_b17bf43316b9fb08(var_6170ec00c4bc9b5b)) {
-        namespace_b2d5aa2baf2b5701::function_85f6a1797c330b26(var_6170ec00c4bc9b5b, 1, "start", "start");
-        namespace_b2d5aa2baf2b5701::function_85f6a1797c330b26(var_6170ec00c4bc9b5b, 0, "spawn", "spawn");
-        namespace_b2d5aa2baf2b5701::function_85f6a1797c330b26(var_6170ec00c4bc9b5b, 2, "fallback", "fallback", 1);
+    spawnkey = "ffa";
+    if (scripts/mp/spawnlogic::function_b17bf43316b9fb08(spawnkey)) {
+        scripts/mp/spawnlogic::initspawnlist(spawnkey, 1, "start", "start");
+        scripts/mp/spawnlogic::initspawnlist(spawnkey, 0, "spawn", "spawn");
+        scripts/mp/spawnlogic::initspawnlist(spawnkey, 2, "fallback", "fallback", 1);
     } else {
-        namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_dm_spawn_start", 1);
-        namespace_b2d5aa2baf2b5701::addspawnpoints("allies", "mp_dm_spawn");
-        namespace_b2d5aa2baf2b5701::addspawnpoints("allies", "mp_dm_spawn_secondary", 1, 1);
-        namespace_b2d5aa2baf2b5701::addspawnpoints("axis", "mp_dm_spawn");
-        namespace_b2d5aa2baf2b5701::addspawnpoints("axis", "mp_dm_spawn_secondary", 1, 1);
-        spawns = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_dm_spawn");
-        var_3a5288f40c8be099 = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_dm_spawn_secondary");
-        namespace_b2d5aa2baf2b5701::registerspawnset("primary", spawns);
-        namespace_b2d5aa2baf2b5701::registerspawnset("fallback", var_3a5288f40c8be099);
+        scripts/mp/spawnlogic::addstartspawnpoints("mp_dm_spawn_start", 1);
+        scripts/mp/spawnlogic::addspawnpoints("allies", "mp_dm_spawn");
+        scripts/mp/spawnlogic::addspawnpoints("allies", "mp_dm_spawn_secondary", 1, 1);
+        scripts/mp/spawnlogic::addspawnpoints("axis", "mp_dm_spawn");
+        scripts/mp/spawnlogic::addspawnpoints("axis", "mp_dm_spawn_secondary", 1, 1);
+        spawns = scripts/mp/spawnlogic::getspawnpointarray("mp_dm_spawn");
+        spawnssecondary = scripts/mp/spawnlogic::getspawnpointarray("mp_dm_spawn_secondary");
+        scripts/mp/spawnlogic::registerspawnset("primary", spawns);
+        scripts/mp/spawnlogic::registerspawnset("fallback", spawnssecondary);
     }
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
     level.quickmessagetoall = 1;
     if (function_59bc1a507006dcb1()) {
@@ -151,12 +151,12 @@ function onstartgametype() {
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xde5
 // Size: 0x16b
 function updategametypedvars() {
-    namespace_310ba947928891df::updatecommongametypedvars();
+    scripts/mp/gametypes/common::updatecommongametypedvars();
     level.aonrules = dvarintvalue("aonRules", 0, 0, 4);
     level.scoreontargetplayer = dvarintvalue("scoreOnTargetPlayer", 0, 0, 1);
     level.targetplayercycle = dvarintvalue("targetPlayerCycle", 0, 0, 1);
@@ -186,75 +186,75 @@ function updategametypedvars() {
     }
     if (level.aonrules > 0) {
         level.blockweapondrops = 1;
-    } else {
-        level notify("cancel_loadweapons");
+        return;
     }
+    level notify("cancel_loadweapons");
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf57
 // Size: 0xb5
 function getspawnpoint() {
     spawnpoint = undefined;
     if (level.ingraceperiod) {
-        spawnpoints = namespace_b2d5aa2baf2b5701::function_7d00c6d6c09f3be3();
+        spawnpoints = scripts/mp/spawnlogic::getstartspawnpoints();
         if (!isdefined(level.requiresminstartspawns)) {
             /#
                 assertex(spawnpoints.size != 0 || spawnpoints.size >= 8, "FFA requires at least " + 8 + " start spawns");
             #/
         }
         if (spawnpoints.size > 0) {
-            spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints, 1);
+            spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints, 1);
         }
         if (!isdefined(spawnpoint)) {
-            spawnpoints = namespace_b2d5aa2baf2b5701::getteamspawnpoints(self.team);
-            spawnpoint = namespace_90f75d3fdf89a43e::getstartspawnpoint_freeforall(spawnpoints);
+            spawnpoints = scripts/mp/spawnlogic::getteamspawnpoints(self.team);
+            spawnpoint = scripts/mp/spawnscoring::getstartspawnpoint_freeforall(spawnpoints);
         }
     } else {
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, "none", "primary", "fallback");
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, "none", "primary", "fallback");
         /#
-            function_456325525cd504d4(spawnpoint);
+            comparespawns(spawnpoint);
         #/
     }
     return spawnpoint;
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1014
 // Size: 0x17c
-function function_456325525cd504d4(spawnpoint) {
+function comparespawns(spawnpoint) {
     /#
         if (getdvarint(@"hash_b5ceec3e3cb419be") != 0) {
-            spawnpoints = namespace_b2d5aa2baf2b5701::getteamspawnpoints(self.team);
+            spawnpoints = scripts/mp/spawnlogic::getteamspawnpoints(self.team);
             fallbackspawnpoints = [];
-            var_965ef52941de8769 = namespace_90f75d3fdf89a43e::getspawnpoint_legacy(spawnpoints, fallbackspawnpoints);
+            scriptspawnpoint = scripts/mp/spawnscoring::getspawnpoint_legacy(spawnpoints, fallbackspawnpoints);
             if (!isdefined(level.var_3d292942d52b104a)) {
                 level.var_3d292942d52b104a = 0;
                 level.var_2dc7108159dc1da3 = 0;
                 level.var_a065445ba781ddf6 = 0;
             }
             level.var_3d292942d52b104a++;
-            println("FreeForAll" + var_965ef52941de8769.index + "iw8_knife" + var_965ef52941de8769.totalscore);
-            if (var_965ef52941de8769.index == spawnpoint.index) {
+            println("FreeForAll" + scriptspawnpoint.index + "iw8_knife" + scriptspawnpoint.totalscore);
+            if (scriptspawnpoint.index == spawnpoint.index) {
                 level.var_2dc7108159dc1da3++;
                 iprintlnbold("loadoutSuper" + level.var_2dc7108159dc1da3 / level.var_3d292942d52b104a * 100 + "game_ended" + "<unknown string>" + level.var_2dc7108159dc1da3 + "<unknown string>" + level.var_3d292942d52b104a);
             } else {
                 level.var_a065445ba781ddf6++;
                 iprintlnbold("<unknown string>" + level.var_2dc7108159dc1da3 / level.var_3d292942d52b104a * 100 + "game_ended" + "<unknown string>" + level.var_2dc7108159dc1da3 + "<unknown string>" + level.var_3d292942d52b104a);
             }
-            return var_965ef52941de8769;
+            return scriptspawnpoint;
         }
     #/
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1197
 // Size: 0xac
-function onspawnplayer(var_9156b53bcf7ce573) {
-    namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("kill");
+function onspawnplayer(revivespawn) {
+    scripts/mp/hud_message::function_f004ef4606b9efdc("kill");
     if (level.aonrules > 0) {
         thread onspawnfinished();
     }
@@ -265,23 +265,23 @@ function onspawnplayer(var_9156b53bcf7ce573) {
         }
     }
     if (function_59bc1a507006dcb1()) {
-        if (istrue(self.var_43d76c324d4f0d86)) {
-            self.var_43d76c324d4f0d86 = undefined;
+        if (istrue(self.perkscleared)) {
+            self.perkscleared = undefined;
         }
         if (isdefined(self.loadoutperks) && !istrue(self.remove_perks)) {
-            thread namespace_cf3741b0a1a2a7c9::function_cfd132407d0f14b3();
+            thread scripts/mp/gametypes/gold_gun::function_cfd132407d0f14b3();
         }
         self.remove_perks = 0;
     }
     level notify("spawned_player");
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x124a
 // Size: 0x174
 function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon) {
-    var_9570b6e76c7e14f9 = namespace_310ba947928891df::oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
+    var_9570b6e76c7e14f9 = scripts/mp/gametypes/common::oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
     if (istrue(var_9570b6e76c7e14f9)) {
         return;
     }
@@ -305,24 +305,24 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x13c5
 // Size: 0x19f
-function onplayerscore(event, player, originalpoints, victim, var_7ec7671a1e0c788f) {
+function onplayerscore(event, player, originalpoints, victim, eventinfo) {
     player incpersstat("gamemodeScore", originalpoints);
     newscore = int(player getpersstat("gamemodeScore"));
-    player namespace_2685ec368e022695::statsetchild("round", "gamemodeScore", newscore);
+    player scripts/mp/persistence::statsetchild("round", "gamemodeScore", newscore);
     if (player.pers["cur_kill_streak"] > player getpersstat("killChains")) {
         player.pers["killChains"] = player.pers["cur_kill_streak"];
         player setextrascore1(player.pers["cur_kill_streak"]);
     }
-    if (isdefined(var_7ec7671a1e0c788f)) {
-        if (istrue(var_7ec7671a1e0c788f.var_3a13c58c2a354968)) {
+    if (isdefined(eventinfo)) {
+        if (istrue(eventinfo.var_3a13c58c2a354968)) {
             return 0;
         }
     }
-    if (event == #"kill" || event == #"hash_49ee3d646e1fd20f" || isdefined(var_7ec7671a1e0c788f) && istrue(var_7ec7671a1e0c788f.var_e0badec2b1517ca3)) {
+    if (event == #"kill" || event == #"elimination_kill" || isdefined(eventinfo) && istrue(eventinfo.iskillstreakkill)) {
         if (level.scoreontargetplayer) {
             if (victim != player.targetvictim) {
                 return 0;
@@ -333,37 +333,37 @@ function onplayerscore(event, player, originalpoints, victim, var_7ec7671a1e0c78
                 player thread newtargetmessage();
             }
         }
-        var_cc7886247a15dfdf = namespace_62c556437da28f50::getscoreinfovalue(#"hash_cade9c820001f3bf");
+        adjustedscore = scripts/mp/rank::getscoreinfovalue(#"score_increment");
         /#
-            assert(isdefined(var_cc7886247a15dfdf));
+            assert(isdefined(adjustedscore));
         #/
-        return var_cc7886247a15dfdf;
+        return adjustedscore;
     } else if (event == #"assist_ffa") {
         player bufferednotify("earned_score_buffered", originalpoints);
     }
     return 0;
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x156c
 // Size: 0xa3
 function dohalftimevo(attacker) {
-    attacker namespace_944ddf7b8df1b0e3::leaderdialogonplayer("ffa_lead_first");
+    attacker scripts/mp/utility/dialog::leaderdialogonplayer("ffa_lead_first");
     newarray = array_sort_with_func(level.players, &compare_player_score);
     if (isdefined(newarray[1])) {
-        newarray[1] namespace_944ddf7b8df1b0e3::leaderdialogonplayer("ffa_lead_second");
+        newarray[1] scripts/mp/utility/dialog::leaderdialogonplayer("ffa_lead_second");
     }
     if (isdefined(newarray[2]) && newarray.size > 2) {
-        newarray[2] namespace_944ddf7b8df1b0e3::leaderdialogonplayer("ffa_lead_third");
+        newarray[2] scripts/mp/utility/dialog::leaderdialogonplayer("ffa_lead_third");
     }
     if (isdefined(newarray[newarray.size - 1]) && newarray.size > 3) {
-        newarray[newarray.size - 1] namespace_944ddf7b8df1b0e3::leaderdialogonplayer("ffa_lead_last");
+        newarray[newarray.size - 1] scripts/mp/utility/dialog::leaderdialogonplayer("ffa_lead_last");
     }
     level.didhalfscorevoboost = 1;
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1616
 // Size: 0x2b
@@ -371,7 +371,7 @@ function compare_player_score(left, right) {
     return left.score >= right.score;
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1649
 // Size: 0x19
@@ -381,7 +381,7 @@ function onspawnfinished() {
     runaonrules();
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1669
 // Size: 0x3de
@@ -440,37 +440,37 @@ function setspecialloadout() {
     level.aon_loadouts["allies"]["loadoutKillstreak2"] = "none";
     level.aon_loadouts["allies"]["loadoutKillstreak3"] = "none";
     level.aon_loadouts["allies"]["loadoutUsingSpecialist"] = 1;
-    level.aon_loadouts["allies"]["loadoutPerks"] = [0:"specialty_hustle", 1:"specialty_hardline"];
-    level.aon_loadouts["allies"]["loadoutExtraPerks"] = [0:"specialty_scavenger_plus", 1:"specialty_huntmaster", 2:"specialty_surveillance"];
+    level.aon_loadouts["allies"]["loadoutPerks"] = ["specialty_hustle", "specialty_hardline"];
+    level.aon_loadouts["allies"]["loadoutExtraPerks"] = ["specialty_scavenger_plus", "specialty_huntmaster", "specialty_surveillance"];
     level.aon_loadouts["allies"]["loadoutGesture"] = "playerData";
     level.aon_loadouts["allies"]["loadoutFieldUpgrade1"] = "super_deadsilence";
     level.aon_loadouts["allies"]["loadoutFieldUpgrade2"] = "none";
     level.aon_loadouts["axis"] = level.aon_loadouts["allies"];
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a4e
 // Size: 0x30
 function runaonrules() {
     giveextraaonperks();
-    var_f968c960c23738e6 = namespace_d325722f2754c2c4::function_eeaa22f0cd1ff845("iw9_knifestab_mp");
-    self giveweapon(var_f968c960c23738e6);
-    self assignweaponmeleeslot(var_f968c960c23738e6);
+    knifeweapon = scripts/cp_mp/utility/weapon_utility::function_eeaa22f0cd1ff845("iw9_knifestab_mp");
+    self giveweapon(knifeweapon);
+    self assignweaponmeleeslot(knifeweapon);
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a85
 // Size: 0x89
 function giveextraaonperks() {
-    extraperks = [0:"specialty_blindeye", 1:"specialty_gpsjammer", 2:"specialty_falldamage", 3:"specialty_sharp_focus", 4:"specialty_stalker"];
+    extraperks = ["specialty_blindeye", "specialty_gpsjammer", "specialty_falldamage", "specialty_sharp_focus", "specialty_stalker"];
     foreach (perk in extraperks) {
         giveperk(perk);
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b15
 // Size: 0x6b
@@ -478,13 +478,13 @@ function onplayerconnect(player) {
     if (level.aonrules > 0) {
         if (level.allowkillstreaks) {
         }
-        player namespace_d19129e4fa5d176::function_a16868d4dcd81a4b();
+        player scripts/mp/class::function_a16868d4dcd81a4b();
         player.pers["gamemodeLoadout"] = level.aon_loadouts["allies"];
-        player loadweaponsforplayer([0:"iw8_pi_golf21_mp", 1:"iw8_knife_mp"], 1);
+        player loadweaponsforplayer(["iw8_pi_golf21_mp", "iw8_knife_mp"], 1);
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b87
 // Size: 0x26b
@@ -492,7 +492,7 @@ function gettarget() {
     level endon("game_ended");
     self notify("get_target");
     self endon("get_target");
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill("prematch_done");
     }
     firsttime = 0;
@@ -503,9 +503,8 @@ function gettarget() {
         foreach (p in level.players) {
             if (p == self) {
                 continue;
-            } else {
-                self.targetarray[self.targetarray.size] = p;
             }
+            self.targetarray[self.targetarray.size] = p;
         }
     }
     if (self.targetarray.size > 0) {
@@ -531,17 +530,17 @@ function gettarget() {
     if (level.showtargettime != 0) {
         self.curorigin = self.origin;
         self.offset3d = (0, 0, 10);
-        namespace_19b4203b51d56488::requestid(1, 1);
+        scripts/mp/gameobjects::requestid(1, 1);
         objid = self.objidnum;
         objective_setlabel(objid, "MP_INGAME_ONLY/OBJ_TARGET_CAPS");
         objective_setzoffset(objid, 90);
         objective_icon(objid, "hud_icon_targeted_player_cir");
         objective_setplayintro(objid, 1);
-        namespace_5a22b6f3a56f7e9b::objective_playermask_single(objid, self);
+        scripts/mp/objidpoolmanager::objective_playermask_single(objid, self);
         objective_setbackground(objid, 2);
         objective_position(objid, self.curorigin);
         objective_state(objid, "current");
-        namespace_5a22b6f3a56f7e9b::update_objective_onentity(objid, self.targetvictim);
+        scripts/mp/objidpoolmanager::update_objective_onentity(objid, self.targetvictim);
         objective_setownerclient(objid, self.targetvictim);
         if (level.showtargettime > 1) {
             thread updatetargetlocation();
@@ -550,19 +549,19 @@ function gettarget() {
     thread targetvictimdeathwatcher();
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1df9
 // Size: 0x49
 function targetvictimdeathwatcher() {
     level endon("game_ended");
     self waittill("target_eliminated");
-    thread namespace_44abc05161e2e2cb::showsplash("target_eliminated", namespace_62c556437da28f50::getscoreinfovalue(#"kill"));
+    thread scripts/mp/hud_message::showsplash("target_eliminated", scripts/mp/rank::getscoreinfovalue(#"kill"));
     objective_state(self.objidnum, "done");
-    namespace_19b4203b51d56488::releaseid();
+    scripts/mp/gameobjects::releaseid();
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e49
 // Size: 0xa4
@@ -576,18 +575,17 @@ function updatetargetlocation() {
         level.objpingdelay = 3;
     }
     for (;;) {
-        for (;;) {
-            if (isdefined(self.targetvictim)) {
-                namespace_5a22b6f3a56f7e9b::update_objective_position(self.objidnum, self.curorigin + self.offset3d);
-                objective_ping(self.objidnum);
-                wait(level.objpingdelay);
-                continue;
-            }
+        if (isdefined(self.targetvictim)) {
+            scripts/mp/objidpoolmanager::update_objective_position(self.objidnum, self.curorigin + self.offset3d);
+            objective_ping(self.objidnum);
+            wait(level.objpingdelay);
+            continue;
         }
+        waitframe();
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ef4
 // Size: 0x60
@@ -595,7 +593,7 @@ function updatetargetcurorigin() {
     level endon("game_ended");
     self.targetvictim endon("disconnect");
     self endon("target_eliminated");
-    while (1) {
+    while (true) {
         if (isdefined(self.targetvictim)) {
             self.curorigin = self.targetvictim.origin + (0, 0, 90);
         }
@@ -603,7 +601,7 @@ function updatetargetcurorigin() {
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f5b
 // Size: 0x61
@@ -611,7 +609,7 @@ function newtargetmessage() {
     level endon("game_ended");
     self notify("endDeathWatcher");
     self endon("endDeathWatcher");
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill("prematch_done");
     }
     wait(2.5);
@@ -620,7 +618,7 @@ function newtargetmessage() {
     }
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc3
 // Size: 0x1c
@@ -628,14 +626,14 @@ function function_59bc1a507006dcb1() {
     return getdvar(@"hash_e65e9a96eb2ff62b", "dm") == "gold_gun";
 }
 
-// Namespace dm/namespace_d20685f22386fb99
+// Namespace dm / scripts/mp/gametypes/dm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fe7
 // Size: 0x156
 function function_aeefcd8920dc46e0() {
     /#
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0 || getdvarint(@"hash_86e14326e43c0115") != 0) {
                 points = 0;
                 var_ff962a1182d547dc = getdvarint(@"hash_46a6b424af6acbc2");
@@ -651,7 +649,7 @@ function function_aeefcd8920dc46e0() {
                 }
                 foreach (player in level.players) {
                     for (i = 0; i < points; i++) {
-                        player namespace_e8a49b70d0769b66::giveplayerscore(#"kill", 1);
+                        player scripts/mp/gamescore::giveplayerscore(#"kill", 1);
                     }
                     waitframe();
                 }

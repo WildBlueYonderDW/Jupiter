@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#namespace namespace_4878c451191fd45d;
+#namespace ai_shooting;
 
-// Namespace namespace_4878c451191fd45d/namespace_c51004e268722bdc
+// Namespace ai_shooting / scripts/code/ai_shooting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b
 // Size: 0xbf
@@ -12,20 +12,20 @@ function decidenumshotsformg() {
     }
     usingturret = isdefined(turret);
     if (usingturret && isdefined(turret.script_burst_min)) {
-        var_1ca111ff86819c24 = turret.script_burst_min;
+        bursttime = turret.script_burst_min;
     } else {
-        var_1ca111ff86819c24 = 0.5;
+        bursttime = 0.5;
     }
     if (usingturret && isdefined(turret.script_burst_max)) {
-        var_bc2ef30947c2cbd2 = turret.script_burst_max - var_1ca111ff86819c24;
+        burstrange = turret.script_burst_max - bursttime;
     } else {
-        var_bc2ef30947c2cbd2 = 1.5;
+        burstrange = 1.5;
     }
-    var_f9cf7a09079abea = var_1ca111ff86819c24 + randomfloat(var_bc2ef30947c2cbd2);
-    return int(var_f9cf7a09079abea * 10);
+    burst_length = bursttime + randomfloat(burstrange);
+    return int(burst_length * 10);
 }
 
-// Namespace namespace_4878c451191fd45d/namespace_c51004e268722bdc
+// Namespace ai_shooting / scripts/code/ai_shooting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x132
 // Size: 0x8f
@@ -45,17 +45,17 @@ function decidenumshotsforfull() {
     return numshots;
 }
 
-// Namespace namespace_4878c451191fd45d/namespace_c51004e268722bdc
+// Namespace ai_shooting / scripts/code/ai_shooting
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0xb2
 function decidenumshotsforburst(var_b22c497b24d57aca) {
-    var_d2564e986c0ef171 = 5;
+    maxburst = 5;
     var_8ba699667e1a6d48 = weaponburstcount(self.weapon);
     if (var_8ba699667e1a6d48) {
         numshots = var_8ba699667e1a6d48;
     } else {
-        numshots = reduceshotcountbydistance(var_d2564e986c0ef171, var_b22c497b24d57aca);
+        numshots = reduceshotcountbydistance(maxburst, var_b22c497b24d57aca);
         numshots = numshots + randomintrange(-2, 3);
         numshots = int(max(numshots, 1));
     }
@@ -71,7 +71,7 @@ function decidenumshotsforburst(var_b22c497b24d57aca) {
     return self.bulletsinclip;
 }
 
-// Namespace namespace_4878c451191fd45d/namespace_c51004e268722bdc
+// Namespace ai_shooting / scripts/code/ai_shooting
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x283
 // Size: 0xd7
@@ -80,11 +80,11 @@ function reduceshotcountbydistance(var_ed80adb830bc0010, var_b22c497b24d57aca) {
     var_613a15adbe0efe37 = 810000;
     var_e9710b1cecb896f = 1562500;
     var_5646233813d9b9e6 = 2560000;
-    var_7c6ca70421a9ff30 = [0:var_5e2b1cc3aba6d0ec, 1:var_613a15adbe0efe37, 2:var_e9710b1cecb896f, 3:var_5646233813d9b9e6];
+    alldistances = [var_5e2b1cc3aba6d0ec, var_613a15adbe0efe37, var_e9710b1cecb896f, var_5646233813d9b9e6];
     /#
-        assert(var_ed80adb830bc0010 > var_7c6ca70421a9ff30.size);
+        assert(var_ed80adb830bc0010 > alldistances.size);
     #/
-    foreach (currentdistance in var_7c6ca70421a9ff30) {
+    foreach (currentdistance in alldistances) {
         if (var_b22c497b24d57aca > currentdistance) {
             var_ed80adb830bc0010 = var_ed80adb830bc0010 - 1;
         }

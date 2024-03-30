@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\shellshock_utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
@@ -11,7 +11,7 @@
 
 #namespace thermobaric_grenade;
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x311
 // Size: 0x5b
@@ -22,28 +22,28 @@ function autoexec main() {
     registersharedfunc("thermobaric_grenade", "thermobaric_grenade_init", &thermobaric_grenade_init);
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x373
 // Size: 0x70
 function thermobaric_grenade_init() {
-    var_e5255d7c501309dd = namespace_4fb9dddfb8c1a67a::getequipmenttableinfo("equip_thermobaric_grenade");
-    if (isdefined(var_e5255d7c501309dd) && isdefined(var_e5255d7c501309dd.bundle)) {
-        utility::add_fx("thermobaric_explosion_ground", var_e5255d7c501309dd.bundle.var_908692e6c3d0fb58);
-        utility::add_fx("thermobaric_explosion_air", var_e5255d7c501309dd.bundle.var_d1b32d9e6e3d5f0b);
+    equipmenttable = namespace_4fb9dddfb8c1a67a::getequipmenttableinfo("equip_thermobaric_grenade");
+    if (isdefined(equipmenttable) && isdefined(equipmenttable.bundle)) {
+        utility::add_fx("thermobaric_explosion_ground", equipmenttable.bundle.var_908692e6c3d0fb58);
+        utility::add_fx("thermobaric_explosion_air", equipmenttable.bundle.var_d1b32d9e6e3d5f0b);
     }
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0x45e
 function function_a4cf6140ad44312c(grenade, bundle) {
     level.var_1310e63387ada26 = grenade.weapon_name;
     bundle = function_faec1a1cb92464a4(level.var_1310e63387ada26);
-    function_cb722e58dd976a9a(level.var_1310e63387ada26, #"hash_9ac03668bc0a2bd5", @"hash_862f98773eb2b9bf", bundle.var_461270791602aa19, 1);
+    function_cb722e58dd976a9a(level.var_1310e63387ada26, #"do_stun", @"hash_862f98773eb2b9bf", bundle.do_stun, 1);
     function_cb722e58dd976a9a(level.var_1310e63387ada26, #"hash_b52d0dd2ab9ca8fb", @"hash_9823776fa6f2b6bd", bundle.var_544bec498b7bd247, 1);
-    function_cb722e58dd976a9a(level.var_1310e63387ada26, #"hash_d54311b633e8295", @"hash_bca4b85e9ff30fdf", bundle.var_35e2a0c2bac627f1, 1);
+    function_cb722e58dd976a9a(level.var_1310e63387ada26, #"do_fire", @"hash_bca4b85e9ff30fdf", bundle.do_fire, 1);
     function_cb722e58dd976a9a(level.var_1310e63387ada26, #"hash_3561a8bad495bd9f", @"hash_82eeaa9e860b9595", bundle.var_b077008c7b62a49b, 1);
     function_e3093afa85e28051(level.var_1310e63387ada26, #"hash_8fc578945af768c0", @"hash_770783e5df2c2a36", bundle.var_5df6fe5c5a356d54, 1.5);
     function_e3093afa85e28051(level.var_1310e63387ada26, #"hash_8faa8e945ae0c66a", @"hash_772a75e5df525324", bundle.var_5e19ec5c5a5b8d76, 2.5);
@@ -65,7 +65,7 @@ function function_a4cf6140ad44312c(grenade, bundle) {
     function_e3093afa85e28051(level.var_1310e63387ada26, #"hash_204b3b9e9e971d66", @"hash_cc41b687ffa79510", bundle.var_8f12276f936aa42, 4.25);
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84f
 // Size: 0xc9
@@ -76,104 +76,104 @@ function thermobaric_grenade_used(grenade) {
     if (isdefined(grenade.ticks) && grenade.ticks >= 1) {
         grenade.iscooked = 1;
     }
-    var_4b0db67804e50aec = grenade.owner getgunangles();
-    var_33b453837f886dae = anglestoforward(var_4b0db67804e50aec);
+    gunangle = grenade.owner getgunangles();
+    gunforward = anglestoforward(gunangle);
     var_f901cb7707ef1b2c = grenade.weapon_name;
     function_92580d8a2fdccb7b("equip_thermobaric_pool_mp_p", grenade.spawnpos, 5000);
     position = grenade waittill("explode");
-    function_90a9e9f5e4922a2a(position, var_33b453837f886dae, var_f901cb7707ef1b2c);
+    function_90a9e9f5e4922a2a(position, gunforward, var_f901cb7707ef1b2c);
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x91f
 // Size: 0x177
-function function_90a9e9f5e4922a2a(position, var_33b453837f886dae, var_f901cb7707ef1b2c, var_155c56b2e3db23c9) {
-    var_246648a337842d7d = getgroundposition(position, 5);
-    var_fe54a074022bc207 = distancesquared(position, var_246648a337842d7d) <= squared(function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_a02f369aef3c6b3b"));
-    function_8bc975f46b0dca4(var_fe54a074022bc207, position);
-    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_d54311b633e8295") == 1 && var_fe54a074022bc207 && issharedfuncdefined("molotov", "molotov_simulate_impact")) {
-        thread thermobaric_fire(var_33b453837f886dae, var_246648a337842d7d);
+function function_90a9e9f5e4922a2a(position, gunforward, var_f901cb7707ef1b2c, forceteam) {
+    groundposition = getgroundposition(position, 5);
+    istouchingground = distancesquared(position, groundposition) <= squared(function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_a02f369aef3c6b3b"));
+    function_8bc975f46b0dca4(istouchingground, position);
+    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"do_fire") == 1 && istouchingground && issharedfuncdefined("molotov", "molotov_simulate_impact")) {
+        thread thermobaric_fire(gunforward, groundposition);
     }
     explosionradius = getgrenadedamageradius(var_f901cb7707ef1b2c);
     agents = getaiarrayinradius(position, explosionradius);
-    var_a783bf2bef7a7b30 = ter_op(isdefined(var_155c56b2e3db23c9), var_155c56b2e3db23c9, self.team);
+    var_a783bf2bef7a7b30 = ter_op(isdefined(forceteam), forceteam, self.team);
     foreach (agent in agents) {
-        if (agent namespace_448ccf1ca136fbbe::function_ec40425fb125f6cf("thermobaric", var_a783bf2bef7a7b30) || is_equal(agent.team, var_a783bf2bef7a7b30)) {
+        if (agent scripts/common/utility::function_ec40425fb125f6cf("thermobaric", var_a783bf2bef7a7b30) || is_equal(agent.team, var_a783bf2bef7a7b30)) {
             continue;
         }
         agent function_ad3ba4982eef1921(self, position, explosionradius);
     }
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa9d
 // Size: 0x3f
-function function_8bc975f46b0dca4(var_fe54a074022bc207, position) {
-    if (var_fe54a074022bc207) {
+function function_8bc975f46b0dca4(istouchingground, position) {
+    if (istouchingground) {
         playfx(utility::getfx("thermobaric_explosion_ground"), position);
-    } else {
-        playfx(utility::getfx("thermobaric_explosion_air"), position);
+        return;
     }
+    playfx(utility::getfx("thermobaric_explosion_air"), position);
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xae3
 // Size: 0xef
-function thermobaric_fire(var_33b453837f886dae, var_246648a337842d7d) {
+function thermobaric_fire(gunforward, groundposition) {
     wait(0.25);
     worldup = (0, 0, 1);
-    right = vectorcross(var_33b453837f886dae, worldup);
+    right = vectorcross(gunforward, worldup);
     forward = vectorcross(right, worldup);
     angles = axistoangles(forward, right, worldup);
     angles = (angles[0], angles[1], 0);
     velocity = rotatepointaroundvector(right, forward, function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_b92a2351a80ffbe8")) * function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_c1623ae8f1fff702");
-    var_7b32a8c5291e5968 = function_13665242ac5e0b29(angles, var_246648a337842d7d);
-    [[ getsharedfunc("molotov", "molotov_simulate_impact") ]](var_7b32a8c5291e5968, var_246648a337842d7d, angles, undefined, velocity, gettime(), "equip_thermobaric_pool_mp_p");
+    firesource = function_13665242ac5e0b29(angles, groundposition);
+    [[ getsharedfunc("molotov", "molotov_simulate_impact") ]](firesource, groundposition, angles, undefined, velocity, gettime(), "equip_thermobaric_pool_mp_p");
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbd9
 // Size: 0x23b
 function function_13665242ac5e0b29(angles, position) {
-    var_7b32a8c5291e5968 = spawn("script_origin", position);
-    var_7b32a8c5291e5968.angles = angles;
-    var_7b32a8c5291e5968.owner = self;
-    var_7b32a8c5291e5968.team = self.team;
-    var_7b32a8c5291e5968.script_noteworthy = "thermobaric_fire";
-    var_7b32a8c5291e5968.weapon_name = level.var_1310e63387ada26;
-    var_7b32a8c5291e5968.var_e569b726ededed94 = spawnstruct();
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_e0cf068ccab49e34 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_d98d6e38f81f7c43");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_74fbf35a2265fa59 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_d511323888718c");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_81c84c326caec1d2 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_99081da968d2dc99");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_9369d29bfd0aec71 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_409cbd0f5f8928d8");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_1b01e583ecc2fb9a = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_a8a98335d9870657");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_439885d26a2f9bf5 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_ae4bc4d33f256174");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_2d8b92ed79acc178 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_e84bcb27d615fb10");
-    var_7b32a8c5291e5968.var_e569b726ededed94.var_f9e916cb313e0dbe = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_204b3b9e9e971d66");
-    var_7b32a8c5291e5968.var_e569b726ededed94.means_of_death = "MOD_FIRE";
-    var_7b32a8c5291e5968.var_e569b726ededed94.useweapon = level.var_1310e63387ada26;
-    return var_7b32a8c5291e5968;
+    firesource = spawn("script_origin", position);
+    firesource.angles = angles;
+    firesource.owner = self;
+    firesource.team = self.team;
+    firesource.script_noteworthy = "thermobaric_fire";
+    firesource.weapon_name = level.var_1310e63387ada26;
+    firesource.var_e569b726ededed94 = spawnstruct();
+    firesource.var_e569b726ededed94.var_e0cf068ccab49e34 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_d98d6e38f81f7c43");
+    firesource.var_e569b726ededed94.var_74fbf35a2265fa59 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_d511323888718c");
+    firesource.var_e569b726ededed94.var_81c84c326caec1d2 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_99081da968d2dc99");
+    firesource.var_e569b726ededed94.var_9369d29bfd0aec71 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_409cbd0f5f8928d8");
+    firesource.var_e569b726ededed94.var_1b01e583ecc2fb9a = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_a8a98335d9870657");
+    firesource.var_e569b726ededed94.var_439885d26a2f9bf5 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_ae4bc4d33f256174");
+    firesource.var_e569b726ededed94.var_2d8b92ed79acc178 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_e84bcb27d615fb10");
+    firesource.var_e569b726ededed94.flamemaxduration = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_204b3b9e9e971d66");
+    firesource.var_e569b726ededed94.means_of_death = "MOD_FIRE";
+    firesource.var_e569b726ededed94.useweapon = level.var_1310e63387ada26;
+    return firesource;
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe1c
 // Size: 0x20a
 function onplayerdamaged(data) {
     if (data.meansofdeath == "MOD_IMPACT") {
-        return 1;
+        return true;
     }
     if (!isdefined(data.inflictor) && data.meansofdeath == "MOD_SUICIDE") {
-        return 1;
+        return true;
     } else if (!isdefined(data.inflictor)) {
-        return 0;
+        return false;
     }
     if (isdefined(data.inflictor.script_noteworthy) && data.inflictor.script_noteworthy == "thermobaric_fire") {
-        return 1;
+        return true;
     }
     victim = data.victim;
     attacker = data.attacker;
@@ -191,9 +191,9 @@ function onplayerdamaged(data) {
         }
     #/
     if (var_8907f741f3a7b3f7 && distance(point, victim.origin) > var_a929ea32fd20e1c4) {
-        return 1;
+        return true;
     }
-    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_9ac03668bc0a2bd5") == 1) {
+    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"do_stun") == 1) {
         victim function_2cccb72d594d9345(data.inflictor, attacker, explosionradius, var_8907f741f3a7b3f7);
     }
     if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_b52d0dd2ab9ca8fb") == 1) {
@@ -202,10 +202,10 @@ function onplayerdamaged(data) {
     if (isdefined(attacker) && issharedfuncdefined("pers", "incPersStat")) {
         attacker [[ getsharedfunc("pers", "incPersStat") ]]("thermobaricGrenadeHits", 1);
     }
-    return 1;
+    return true;
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x102e
 // Size: 0x10b
@@ -213,17 +213,17 @@ function function_ad3ba4982eef1921(attacker, explosionpos, explosionradius) {
     if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_b52d0dd2ab9ca8fb") == 1) {
         thread function_4499c828c334b707(attacker);
     }
-    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_9ac03668bc0a2bd5") == 1) {
-        var_bdee91b326d03668 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8fc578945af768c0");
-        var_be1187b326f66822 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8faa8e945ae0c66a");
+    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"do_stun") == 1) {
+        stuntimemin = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8fc578945af768c0");
+        stuntimemax = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8faa8e945ae0c66a");
         scale = clamp(1 - distance(self.origin, explosionpos) / explosionradius, 0, 1);
-        var_4399a43cae1b5a8a = var_be1187b326f66822 - var_bdee91b326d03668;
-        time = var_bdee91b326d03668 + var_4399a43cae1b5a8a * scale;
+        scalevalue = stuntimemax - stuntimemin;
+        time = stuntimemin + scalevalue * scale;
         self notify("flashbang", self.origin);
     }
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1140
 // Size: 0x15d
@@ -237,12 +237,12 @@ function function_2cccb72d594d9345(einflictor, eattacker, explosionradius, var_8
     if (!val::get("stunned")) {
         return;
     }
-    var_bdee91b326d03668 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8fc578945af768c0");
-    var_be1187b326f66822 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8faa8e945ae0c66a");
+    stuntimemin = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8fc578945af768c0");
+    stuntimemax = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_8faa8e945ae0c66a");
     var_f7a2ecc9ae1a3cc7 = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_469e0c07d101aa90");
     scale = clamp(1 - distance(self.origin, einflictor.origin) / explosionradius, 0, 1);
-    var_4399a43cae1b5a8a = var_be1187b326f66822 - var_bdee91b326d03668;
-    time = var_bdee91b326d03668 + var_4399a43cae1b5a8a * scale;
+    scalevalue = stuntimemax - stuntimemin;
+    time = stuntimemin + scalevalue * scale;
     if (var_8907f741f3a7b3f7) {
         time = time * var_f7a2ecc9ae1a3cc7;
     }
@@ -254,13 +254,13 @@ function function_2cccb72d594d9345(einflictor, eattacker, explosionradius, var_8
     _shellshock("thermobaric_grenade", "stun", time, 1);
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12a4
 // Size: 0xca
 function function_4499c828c334b707(var_71e0be188d8b0eba) {
     waittillframeend();
-    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_3561a8bad495bd9f") == 1 && function_eba2f2e094684b8f("specialty_blastshield")) {
+    if (function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_3561a8bad495bd9f") == 1 && player_hasperk("specialty_blastshield")) {
         return;
     }
     var_b9b206ac4598f4bd = function_74a4a69afb4bc82b(level.var_1310e63387ada26, #"hash_6ce1773bbe616b11");
@@ -272,7 +272,7 @@ function function_4499c828c334b707(var_71e0be188d8b0eba) {
     thread function_f8694111713a4874(var_830498e50511eec5);
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1375
 // Size: 0x2a
@@ -282,7 +282,7 @@ function function_f8694111713a4874(waittime) {
     self.var_26b2ca341e1aebea = undefined;
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13a6
 // Size: 0x11d
@@ -299,7 +299,7 @@ function thermobaric_additional_explosive_damage(victim, attacker, damage) {
     return 0;
 }
 
-// Namespace thermobaric_grenade/namespace_d61c6e0163d61af4
+// Namespace thermobaric_grenade / namespace_d61c6e0163d61af4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14cb
 // Size: 0x26

@@ -8,7 +8,7 @@
 
 #namespace shared;
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x70
@@ -24,7 +24,7 @@ function teleportthread(verticaloffset) {
     }
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x101
@@ -51,31 +51,33 @@ function teleportthreadex(verticaloffset, delay, frames, animrate) {
     }
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x325
 // Size: 0x1a
-function dotraverse(var_aeb119a0ed15e45f) {
+function dotraverse(traversedata) {
     /#
         assertmsg("if you are hitting this, you are doing something dreadfully wrong.");
     #/
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x346
 // Size: 0x45
 function handletraversenotetracks(note) {
     if (note == "traverse_death") {
         return handletraversedeathnotetrack();
-    } else if (note == "traverse_align") {
+    }
+    if (note == "traverse_align") {
         return handletraversealignment();
-    } else if (note == "traverse_drop") {
+    }
+    if (note == "traverse_drop") {
         return handletraversedrop();
     }
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x392
 // Size: 0x48
@@ -87,7 +89,7 @@ function handletraversedeathnotetrack() {
     }
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e1
 // Size: 0xa9
@@ -100,12 +102,12 @@ function handletraversealignment() {
         var_256ca46d1effdd41 = self.traversestartnode.traverse_height;
     }
     if (isdefined(self.traverseheight) && isdefined(var_256ca46d1effdd41)) {
-        var_c96a4bfb26396aa5 = var_256ca46d1effdd41 - self.traversestartz;
-        thread teleportthread(var_c96a4bfb26396aa5 - self.traverseheight);
+        currentheight = var_256ca46d1effdd41 - self.traversestartz;
+        thread teleportthread(currentheight - self.traverseheight);
     }
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x491
 // Size: 0x1a5
@@ -133,21 +135,21 @@ function handletraversedrop() {
     } else {
         animrate = 1;
     }
-    var_5a9dadadd41366e = (var_524af19a4f9d376a - var_9c41c6bce074794) / 3;
-    numframes = ceil(var_5a9dadadd41366e * 20);
+    teleportlength = (var_524af19a4f9d376a - var_9c41c6bce074794) / 3;
+    numframes = ceil(teleportlength * 20);
     thread teleportthreadex(dropoffset, 0, numframes, animrate);
     thread finishtraversedrop(endpos[2]);
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x63d
 // Size: 0x4a
-function finishtraversedrop(var_ba8d57c006ab035b) {
+function finishtraversedrop(finalz) {
     self endon("killanimscript");
-    var_ba8d57c006ab035b = var_ba8d57c006ab035b + 4;
-    while (1) {
-        if (self.origin[2] < var_ba8d57c006ab035b) {
+    finalz = finalz + 4;
+    while (true) {
+        if (self.origin[2] < finalz) {
             self animmode("gravity");
             break;
         }
@@ -155,7 +157,7 @@ function finishtraversedrop(var_ba8d57c006ab035b) {
     }
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x68e
 // Size: 0x17
@@ -164,7 +166,7 @@ function donothingfunc() {
     self waittill("killanimscript");
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ac
 // Size: 0x32
@@ -174,7 +176,7 @@ function dog_jump_down(frames, rate, var_d0527d58bb610197, var_5a11f5d9304a0c83)
     #/
 }
 
-// Namespace shared/namespace_80c14191b262bb30
+// Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e5
 // Size: 0xb

@@ -17,7 +17,7 @@
 
 #namespace hud_message;
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdde
 // Size: 0xd1d
@@ -184,11 +184,11 @@ function init() {
     level.var_4cd98c0c1064cfc0 = [];
     level.var_97cd5ee2098d8181 = -2;
     level thread onplayerconnect();
-    namespace_3846cfb60b2ef12f::registeronluieventcallback(&splashshowncallback);
+    scripts/mp/utility/lui_game_event_aggregator::registeronluieventcallback(&splashshowncallback);
     level.showerrormessagefunc = &showerrormessage;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b02
 // Size: 0x2b
@@ -200,55 +200,55 @@ function onplayerconnect() {
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b34
 // Size: 0x70
-function showkillstreaksplash(var_f7b6cc6c062a7a43, var_f06b5c1ac51df6a6, var_69e685e96dbf1d48, var_42b1e877ab187c6) {
+function showkillstreaksplash(splashref, streakval, fromcarepackage, var_42b1e877ab187c6) {
     if (!isplayer(self)) {
         return;
     }
     altdisplayindex = undefined;
-    if (istrue(var_69e685e96dbf1d48)) {
+    if (istrue(fromcarepackage)) {
         altdisplayindex = 1;
     }
-    var_f7b6cc6c062a7a43 = getspecialistsplashfromkillstreak(var_f7b6cc6c062a7a43);
-    showsplash(var_f7b6cc6c062a7a43, var_f06b5c1ac51df6a6, undefined, altdisplayindex, undefined, var_42b1e877ab187c6);
-    if (!namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
-        namespace_9abe40d2af041eb2::function_8959c1606f65e65(var_f7b6cc6c062a7a43, function_1823ff50bb28148d(var_f7b6cc6c062a7a43));
+    splashref = getspecialistsplashfromkillstreak(splashref);
+    showsplash(splashref, streakval, undefined, altdisplayindex, undefined, var_42b1e877ab187c6);
+    if (!scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
+        scripts/cp_mp/utility/killstreak_utility::function_8959c1606f65e65(splashref, function_1823ff50bb28148d(splashref));
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bab
 // Size: 0x33
-function getspecialistsplashfromkillstreak(var_f7b6cc6c062a7a43) {
-    var_fec8b7a457ed3a4f = var_f7b6cc6c062a7a43;
-    specialistperk = namespace_b6a8027f477010e1::getspecialistperkforstreak(var_f7b6cc6c062a7a43);
+function getspecialistsplashfromkillstreak(splashref) {
+    var_fec8b7a457ed3a4f = splashref;
+    specialistperk = scripts/mp/perks/perks::getspecialistperkforstreak(splashref);
     if (isdefined(specialistperk)) {
         var_fec8b7a457ed3a4f = specialistperk;
     }
     return var_fec8b7a457ed3a4f;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1be6
 // Size: 0xb2
-function showsplashwithkillcheckhack(ref, optionalnumber, playerforplayercard, altdisplayindex, var_42b1e877ab187c6, var_e79995fa243ca9) {
+function showsplashwithkillcheckhack(ref, optionalnumber, playerforplayercard, altdisplayindex, var_42b1e877ab187c6, forceshow) {
     level endon("game_ended");
     self endon("disconnect");
     waitframe();
     if (isdefined(self.lastkilltime)) {
-        var_49ab8094244f4fe1 = getdvarfloat(@"hash_1eb32d180bc7cff8", 0.5) * 1000;
-        delaytime = int(max(var_49ab8094244f4fe1 - gettime() - self.lastkilltime, 0));
+        maxdelaytime = getdvarfloat(@"hash_1eb32d180bc7cff8", 0.5) * 1000;
+        delaytime = int(max(maxdelaytime - gettime() - self.lastkilltime, 0));
         wait(delaytime / 1000);
     }
-    showsplash(ref, optionalnumber, playerforplayercard, altdisplayindex, 1, var_42b1e877ab187c6, var_e79995fa243ca9);
+    showsplash(ref, optionalnumber, playerforplayercard, altdisplayindex, 1, var_42b1e877ab187c6, forceshow);
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c9f
 // Size: 0x21
@@ -256,19 +256,19 @@ function function_51614e8fce37b07f(ref, var_42b1e877ab187c6) {
     showsplash(ref, undefined, undefined, undefined, undefined, var_42b1e877ab187c6);
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cc7
 // Size: 0x135
-function showsplash(ref, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6, var_e79995fa243ca9) {
-    if (function_4e3eb46838440959() && !istrue(var_e79995fa243ca9)) {
+function showsplash(ref, optionalnumber, playerforplayercard, altdisplayindex, var_ef4849b4cb3ac7e2, var_42b1e877ab187c6, forceshow) {
+    if (function_4e3eb46838440959() && !istrue(forceshow)) {
         return;
     }
     /#
         assert(isplayer(self));
     #/
     if (!istrue(var_ef4849b4cb3ac7e2)) {
-        thread showsplashwithkillcheckhack(ref, optionalnumber, playerforplayercard, altdisplayindex, var_42b1e877ab187c6, var_e79995fa243ca9);
+        thread showsplashwithkillcheckhack(ref, optionalnumber, playerforplayercard, altdisplayindex, var_42b1e877ab187c6, forceshow);
         return;
     }
     playernumforplayercard = undefined;
@@ -280,8 +280,8 @@ function showsplash(ref, optionalnumber, playerforplayercard, altdisplayindex, v
         return;
     }
     var_44d582ed00c6eb0b = 0;
-    if (isdefined(level.var_62f6f7640e4431e3)) {
-        var_44d582ed00c6eb0b = function_53c4c53197386572(level.var_62f6f7640e4431e3.var_651047db5ba78359, var_44d582ed00c6eb0b);
+    if (isdefined(level.gametypebundle)) {
+        var_44d582ed00c6eb0b = default_to(level.gametypebundle.var_651047db5ba78359, var_44d582ed00c6eb0b);
     }
     if (!isreallyalive(self) && isplayer(self) && !self iscodcaster() && !var_44d582ed00c6eb0b) {
         queuesplash(ref, optionalnumber, playerforplayercard, playernumforplayercard, altdisplayindex, var_42b1e877ab187c6);
@@ -290,7 +290,7 @@ function showsplash(ref, optionalnumber, playerforplayercard, altdisplayindex, v
     showsplashinternal(ref, optionalnumber, playerforplayercard, playernumforplayercard, altdisplayindex, var_42b1e877ab187c6);
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e03
 // Size: 0x2da
@@ -305,27 +305,27 @@ function showsplashinternal(ref, optionalnumber, playerforplayercard, playernumf
     }
     if (getdvarint(@"hash_ef4f06e55f320347", 0) == 1) {
         var_a4e353fa34a0f7bd = 1;
-        var_83afa1bb13298ac7 = function_73baf095c3b9cce6(ref, var_42b1e877ab187c6);
-        if (!isdefined(var_83afa1bb13298ac7) || var_83afa1bb13298ac7 < 0) {
+        splashid = function_73baf095c3b9cce6(ref, var_42b1e877ab187c6);
+        if (!isdefined(splashid) || splashid < 0) {
             var_a4e353fa34a0f7bd = 0;
-            var_83afa1bb13298ac7 = getsplashid(ref);
+            splashid = getsplashid(ref);
         }
     } else {
         var_a4e353fa34a0f7bd = 0;
-        var_83afa1bb13298ac7 = getsplashid(ref);
-        if (!isdefined(var_83afa1bb13298ac7) || var_83afa1bb13298ac7 < 0) {
-            var_83afa1bb13298ac7 = function_73baf095c3b9cce6(ref, var_42b1e877ab187c6);
+        splashid = getsplashid(ref);
+        if (!isdefined(splashid) || splashid < 0) {
+            splashid = function_73baf095c3b9cce6(ref, var_42b1e877ab187c6);
             var_a4e353fa34a0f7bd = 1;
         }
     }
-    if (!isdefined(var_83afa1bb13298ac7) || var_83afa1bb13298ac7 < 0) {
+    if (!isdefined(splashid) || splashid < 0) {
         /#
             assertmsg("showSplashInternal() called for ref "" + function_3c8848a3a11b2553(ref) + "" but could not find it in " + getsplashtablename() + " or via script bundle.");
         #/
         return;
     }
     /#
-        assertex(var_83afa1bb13298ac7 < (2047 ^ 4095), "ui_splash_id_X is too small to store all splashes. Increase the size of the omnvar.");
+        assertex(splashid < (2047 ^ 4095), "ui_splash_id_X is too small to store all splashes. Increase the size of the omnvar.");
     #/
     if (!isdefined(self.var_e04f5d9b477cb89f)) {
         self.var_e04f5d9b477cb89f = 0;
@@ -333,7 +333,7 @@ function showsplashinternal(ref, optionalnumber, playerforplayercard, playernumf
     if (!isdefined(self.var_e983b466b2ec69d5)) {
         self.var_e983b466b2ec69d5 = 1;
     }
-    var_5c9ddcf56d36f133 = var_83afa1bb13298ac7;
+    var_5c9ddcf56d36f133 = splashid;
     if (self.var_e983b466b2ec69d5) {
         var_5c9ddcf56d36f133 = var_5c9ddcf56d36f133 | 2047 ^ 4095;
     }
@@ -374,7 +374,7 @@ function showsplashinternal(ref, optionalnumber, playerforplayercard, playernumf
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20e4
 // Size: 0xeb
@@ -390,14 +390,14 @@ function queuesplash(ref, optionalnumber, playerforplayercard, playernumforplaye
         self.splashqueuehead = struct;
         self.splashqueuetail = struct;
         thread handlesplashqueue();
-    } else {
-        var_520ae50ddf0f19c4 = self.splashqueuetail;
-        var_520ae50ddf0f19c4.nextsplash = struct;
-        self.splashqueuetail = struct;
+        return;
     }
+    oldtail = self.splashqueuetail;
+    oldtail.nextsplash = struct;
+    self.splashqueuetail = struct;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21d6
 // Size: 0x14a
@@ -406,12 +406,12 @@ function handlesplashqueue() {
     self endon("death_or_disconnect");
     self endon("clearSplashQueue");
     while (isdefined(self.splashqueuehead)) {
-        if (namespace_36f464722d326bbe::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm" || getsubgametype() == "plunder" || getsubgametype() == "risk" || getsubgametype() == "rumble_mgl")) {
+        if (scripts/cp_mp/utility/game_utility::isbrstylegametype() && (getsubgametype() == "dmz" || getsubgametype() == "exgm" || getsubgametype() == "plunder" || getsubgametype() == "risk" || getsubgametype() == "rumble_mgl")) {
             waittill_any_2("splash_list_cleared", "can_show_splashes");
         } else {
             waittill_any_2("splash_list_cleared", "spawned_player");
         }
-        for (var_2aca94dd41d845f8 = 0; var_2aca94dd41d845f8 < 6; var_2aca94dd41d845f8++) {
+        for (queueindex = 0; queueindex < 6; queueindex++) {
             struct = self.splashqueuehead;
             showsplashinternal(struct.ref, struct.optionalnumber, struct.playerforplayercard, struct.playernumforplayercard, struct.altdisplayindex, struct.var_42b1e877ab187c6);
             self.splashqueuehead = struct.nextsplash;
@@ -423,7 +423,7 @@ function handlesplashqueue() {
     self.splashqueuetail = undefined;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2327
 // Size: 0x5f
@@ -431,33 +431,33 @@ function clearsplashqueue() {
     self notify("clearSplashQueue");
     nextsplash = self.splashqueuehead;
     while (isdefined(nextsplash)) {
-        var_7fc1e5683a6ebebd = nextsplash;
-        nextsplash = var_7fc1e5683a6ebebd.nextsplash;
-        var_7fc1e5683a6ebebd.nextsplash = undefined;
+        currentsplash = nextsplash;
+        nextsplash = currentsplash.nextsplash;
+        currentsplash.nextsplash = undefined;
     }
     self.splashqueuehead = undefined;
     self.splashqueuetail = undefined;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x238d
 // Size: 0x44
-function getsplashid(var_f7b6cc6c062a7a43) {
-    id = level.splashtablecache[var_f7b6cc6c062a7a43];
+function getsplashid(splashref) {
+    id = level.splashtablecache[splashref];
     if (!isdefined(id)) {
-        id = tablelookuprownum(getsplashtablename(), 0, var_f7b6cc6c062a7a43);
-        level.splashtablecache[var_f7b6cc6c062a7a43] = id;
+        id = tablelookuprownum(getsplashtablename(), 0, splashref);
+        level.splashtablecache[splashref] = id;
     }
     return id;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23d9
 // Size: 0x1c3
-function function_73baf095c3b9cce6(var_f7b6cc6c062a7a43, var_42b1e877ab187c6) {
-    id = level.var_4cd98c0c1064cfc0[var_f7b6cc6c062a7a43];
+function function_73baf095c3b9cce6(splashref, var_42b1e877ab187c6) {
+    id = level.var_4cd98c0c1064cfc0[splashref];
     if (isdefined(id)) {
         return id;
     }
@@ -465,50 +465,50 @@ function function_73baf095c3b9cce6(var_f7b6cc6c062a7a43, var_42b1e877ab187c6) {
     if (isdefined(var_42b1e877ab187c6)) {
         var_c1c3e6a4f162ab45 = var_42b1e877ab187c6;
     }
-    if (!isdefined(var_c1c3e6a4f162ab45) && isdefined(level.var_62f6f7640e4431e3)) {
-        var_c1c3e6a4f162ab45 = level.var_62f6f7640e4431e3.var_f7d29cef55a5fb26;
+    if (!isdefined(var_c1c3e6a4f162ab45) && isdefined(level.gametypebundle)) {
+        var_c1c3e6a4f162ab45 = level.gametypebundle.splashlist;
     }
     if (!isdefined(var_c1c3e6a4f162ab45)) {
-        var_c1c3e6a4f162ab45 = level.var_1a2b600a06ec21f4.var_f7d29cef55a5fb26;
+        var_c1c3e6a4f162ab45 = level.gamemodebundle.splashlist;
     }
     if (!isdefined(var_c1c3e6a4f162ab45)) {
         return undefined;
     }
     if (function_73e183e02834309d(var_c1c3e6a4f162ab45)) {
-        var_f7d29cef55a5fb26 = getscriptbundle(var_c1c3e6a4f162ab45);
+        splashlist = getscriptbundle(var_c1c3e6a4f162ab45);
     } else {
-        var_f7d29cef55a5fb26 = getscriptbundle(function_2ef675c13ca1c4af(%"hash_7ac5a0b15c7d50e5", var_c1c3e6a4f162ab45));
+        splashlist = getscriptbundle(hashcat(%"hash_7ac5a0b15c7d50e5", var_c1c3e6a4f162ab45));
     }
-    if (!isdefined(var_f7d29cef55a5fb26) || !isdefined(var_f7d29cef55a5fb26.var_194df4fe813ae6d7)) {
+    if (!isdefined(splashlist) || !isdefined(splashlist.splash_list)) {
         return undefined;
     }
-    foreach (var_68cc4b3bf54adcfe in var_f7d29cef55a5fb26.var_194df4fe813ae6d7) {
-        if (var_68cc4b3bf54adcfe.ref != var_f7b6cc6c062a7a43) {
+    foreach (var_68cc4b3bf54adcfe in splashlist.splash_list) {
+        if (var_68cc4b3bf54adcfe.ref != splashref) {
             continue;
         }
         /#
-            assertex(isdefined(var_68cc4b3bf54adcfe.var_c922a8c8a92c3282), "Invalid splashBundle for ref " + function_f28fd66285fa2c9(var_f7b6cc6c062a7a43));
+            assertex(isdefined(var_68cc4b3bf54adcfe.splashbundle), "Invalid splashBundle for ref " + function_f28fd66285fa2c9(splashref));
         #/
-        id = function_2336488258354fbc(#"hash_a372798eadba5c90", function_2ef675c13ca1c4af(%"hash_39857ea6520cf871", var_68cc4b3bf54adcfe.var_c922a8c8a92c3282));
+        id = function_2336488258354fbc(#"scriptbundle_splash", hashcat(%"hash_39857ea6520cf871", var_68cc4b3bf54adcfe.splashbundle));
         if (!isdefined(id)) {
             break;
         }
-        level.var_4cd98c0c1064cfc0[var_f7b6cc6c062a7a43] = id;
+        level.var_4cd98c0c1064cfc0[splashref] = id;
         return id;
     }
-    id = namespace_62c556437da28f50::function_1e00d01d19fde519(var_f7b6cc6c062a7a43);
+    id = scripts/mp/rank::function_1e00d01d19fde519(splashref);
     if (isdefined(id)) {
-        level.var_4cd98c0c1064cfc0[var_f7b6cc6c062a7a43] = id;
+        level.var_4cd98c0c1064cfc0[splashref] = id;
         return id;
     }
     return undefined;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25a4
 // Size: 0x8f
-function function_cd236201b71f07e2(var_f7b6cc6c062a7a43, var_de02835724550257) {
+function function_cd236201b71f07e2(splashref, var_de02835724550257) {
     self endon("disconnect");
     if (self getclientomnvar("ui_match_in_progress") == 1) {
         return;
@@ -525,11 +525,11 @@ function function_cd236201b71f07e2(var_f7b6cc6c062a7a43, var_de02835724550257) {
     while (level.matchcountdowntime > var_de02835724550257) {
         wait(1);
     }
-    showsplash(var_f7b6cc6c062a7a43);
+    showsplash(splashref);
     level.var_5135022cc0f6a101 = 1;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x263a
 // Size: 0x1d7
@@ -540,11 +540,11 @@ function lowermessagethink() {
     if (isdefined(level.lowermessagefont)) {
         lowermessagefont = level.lowermessagefont;
     }
-    var_7417d49a6c72a483 = level.lowertexty;
+    messagey = level.lowertexty;
     var_4c254f3e1813b5ac = level.lowertextfontsize;
     var_ed9168da0f317746 = 1.25;
     if (level.splitscreen || self issplitscreenplayer() && !isai(self)) {
-        var_7417d49a6c72a483 = var_7417d49a6c72a483 - 40;
+        messagey = messagey - 40;
         var_4c254f3e1813b5ac = level.lowertextfontsize * 1.3;
         var_ed9168da0f317746 = var_ed9168da0f317746 * 1.5;
     }
@@ -553,7 +553,7 @@ function lowermessagethink() {
     self.lowermessage.archived = 0;
     self.lowermessage.sort = 10;
     self.lowermessage.showinkillcam = 0;
-    self.lowermessage setpoint("CENTER", level.lowertextyalign, 0, var_7417d49a6c72a483);
+    self.lowermessage setpoint("CENTER", level.lowertextyalign, 0, messagey);
     self.lowertimer = createfontstring("default", var_ed9168da0f317746);
     self.lowertimer setparent(self.lowermessage);
     self.lowertimer setpoint("TOP", "BOTTOM", 0, 0);
@@ -563,21 +563,21 @@ function lowermessagethink() {
     self.lowertimer.showinkillcam = 0;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2818
 // Size: 0x4
 function isdoingsplash() {
-    return 0;
+    return false;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2824
 // Size: 0x759
-function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b99fc50e799ae, roundendextramessage) {
+function teamoutcomenotify(winner, isround, endreasontext, endreasontextloss, roundendextramessage) {
     self endon("disconnect");
-    var_f15e96279c3bc254 = winner;
+    tempwinner = winner;
     gametype = getgametype();
     if (isdefined(roundendextramessage)) {
         self setclientomnvar("ui_round_end_extra_message", roundendextramessage);
@@ -591,44 +591,44 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
     }
     if (winner == "halftime") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["halftime"]);
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "intermission") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["intermission"]);
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "switching_sides") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["side_switch"]);
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "roundend") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["roundend"]);
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "overtime") {
         if (iswinbytworulegametype() && !allteamstied()) {
             self setclientomnvar("ui_round_end_title", game["round_end"]["match_point"]);
         } else {
             self setclientomnvar("ui_round_end_title", game["round_end"]["overtime"]);
         }
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "match_point") {
         if (gametype == "wm") {
             self setclientomnvar("ui_round_end_title", game["round_end"]["side_switch"]);
-            var_f15e96279c3bc254 = "allies";
+            tempwinner = "allies";
         } else {
             self setclientomnvar("ui_round_end_title", game["round_end"]["match_point"]);
-            var_f15e96279c3bc254 = "allies";
+            tempwinner = "allies";
         }
     } else if (winner == "final_round") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["final_round"]);
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "win_by_two") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["win_by_two"]);
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (winner == "tie") {
-        if (var_83c9459b644dc44f && !waslastround()) {
+        if (isround && !waslastround()) {
             self setclientomnvar("ui_round_end_title", game["round_end"]["round_draw"]);
         } else {
             self setclientomnvar("ui_round_end_title", game["round_end"]["draw"]);
         }
-        var_f15e96279c3bc254 = "allies";
+        tempwinner = "allies";
     } else if (self iscodcaster()) {
         self setclientomnvar("ui_round_end_title", game["round_end"]["spectator"]);
     } else if (isdefined(self.pers["team"]) && winner == team) {
@@ -636,12 +636,12 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
             if (team == winner) {
                 self setclientomnvar("ui_round_end_title", game["round_end"]["victory"]);
             }
-        } else if (var_83c9459b644dc44f && !waslastround()) {
+        } else if (isround && !waslastround()) {
             self setclientomnvar("ui_round_end_title", game["round_end"]["round_win"]);
         } else {
             self setclientomnvar("ui_round_end_title", game["round_end"]["victory"]);
         }
-    } else if (var_83c9459b644dc44f && !waslastround() && gametype != "wm") {
+    } else if (isround && !waslastround() && gametype != "wm") {
         self setclientomnvar("ui_round_end_title", game["round_end"]["round_loss"]);
     } else {
         self setclientomnvar("ui_round_end_title", game["round_end"]["defeat"]);
@@ -650,14 +650,14 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
         }
     }
     if (!self iscodcaster()) {
-        winner = var_f15e96279c3bc254;
+        winner = tempwinner;
     }
-    if (getgametype() == "arena" || namespace_36f464722d326bbe::isbrstylegametype() || getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "siege" || function_60bf8d82001fc22c() == "control") {
-        if (isdefined(var_656b99fc50e799ae)) {
+    if (getgametype() == "arena" || scripts/cp_mp/utility/game_utility::isbrstylegametype() || getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "siege" || getbasegametype() == "control") {
+        if (isdefined(endreasontextloss)) {
             if (isdefined(self.pers["team"]) && winner == team) {
                 endreasontext = endreasontext;
             } else {
-                endreasontext = var_656b99fc50e799ae;
+                endreasontext = endreasontextloss;
             }
         }
     } else if (inovertime() && waslastround() && istimetobeatrulegametype()) {
@@ -674,11 +674,11 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
                 endreasontext = game["end_reason"]["time_to_beat_uplink_loss"];
             }
         }
-    } else if (isdefined(var_656b99fc50e799ae)) {
+    } else if (isdefined(endreasontextloss)) {
         if (isdefined(self.pers["team"]) && winner == team) {
             endreasontext = endreasontext;
         } else {
-            endreasontext = var_656b99fc50e799ae;
+            endreasontext = endreasontextloss;
         }
     }
     if (!isdefined(endreasontext)) {
@@ -704,15 +704,15 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
         }
     }
     if (!isroundbased() || !isobjectivebased() || ismoddedroundgame()) {
-        var_12be976ef709f668 = namespace_e8a49b70d0769b66::_getteamscore(team);
-        if (var_12be976ef709f668 > 16000) {
-            var_12be976ef709f668 = 16000;
+        friendlyscore = scripts/mp/gamescore::_getteamscore(team);
+        if (friendlyscore > 16000) {
+            friendlyscore = 16000;
         }
-        enemyscore = namespace_e8a49b70d0769b66::_getteamscore(getotherteam(team)[0]);
+        enemyscore = scripts/mp/gamescore::_getteamscore(getotherteam(team)[0]);
         if (enemyscore > 16000) {
             enemyscore = 16000;
         }
-        self setclientomnvar("ui_round_end_friendly_score", var_12be976ef709f668);
+        self setclientomnvar("ui_round_end_friendly_score", friendlyscore);
         self setclientomnvar("ui_round_end_enemy_score", enemyscore);
     } else {
         self setclientomnvar("ui_round_end_friendly_score", game["roundsWon"][team]);
@@ -723,34 +723,34 @@ function teamoutcomenotify(winner, var_83c9459b644dc44f, endreasontext, var_656b
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f84
 // Size: 0x22a
-function outcomenotify(winner, endreasontext, var_656b99fc50e799ae) {
+function outcomenotify(winner, endreasontext, endreasontextloss) {
     self endon("disconnect");
     players = level.placement["all"];
-    var_8bcf55e50a4a221c = players[0];
+    firstplace = players[0];
     secondplace = players[1];
-    var_f4fdba919af1736d = players[2];
+    thirdplace = players[2];
     var_2571942a4dcd338e = level.players.size > 3;
     if (isstring(winner) && winner == "tie") {
-        if (isdefined(var_8bcf55e50a4a221c) && namespace_e8a49b70d0769b66::_getplayerscore(var_8bcf55e50a4a221c) == namespace_e8a49b70d0769b66::_getplayerscore(self)) {
+        if (isdefined(firstplace) && scripts/mp/gamescore::_getplayerscore(firstplace) == scripts/mp/gamescore::_getplayerscore(self)) {
             self setclientomnvar("ui_round_end_title", game["round_end"]["tie"]);
             self setclientomnvar("ui_round_end_reason", endreasontext);
-        } else if (isdefined(var_8bcf55e50a4a221c) && self == var_8bcf55e50a4a221c || isdefined(secondplace) && self == secondplace || isdefined(var_f4fdba919af1736d) && self == var_f4fdba919af1736d) {
+        } else if (isdefined(firstplace) && self == firstplace || isdefined(secondplace) && self == secondplace || isdefined(thirdplace) && self == thirdplace) {
             self setclientomnvar("ui_round_end_title", game["round_end"]["tie"]);
             self setclientomnvar("ui_round_end_reason", endreasontext);
         } else {
             self setclientomnvar("ui_round_end_title", game["round_end"]["defeat"]);
-            self setclientomnvar("ui_round_end_reason", ter_op(isdefined(var_656b99fc50e799ae), var_656b99fc50e799ae, endreasontext));
+            self setclientomnvar("ui_round_end_reason", ter_op(isdefined(endreasontextloss), endreasontextloss, endreasontext));
         }
-    } else if (isdefined(var_8bcf55e50a4a221c) && self == var_8bcf55e50a4a221c || istrue(var_2571942a4dcd338e) && (isdefined(secondplace) && self == secondplace || isdefined(var_f4fdba919af1736d) && self == var_f4fdba919af1736d)) {
+    } else if (isdefined(firstplace) && self == firstplace || istrue(var_2571942a4dcd338e) && (isdefined(secondplace) && self == secondplace || isdefined(thirdplace) && self == thirdplace)) {
         self setclientomnvar("ui_round_end_title", game["round_end"]["victory"]);
         self setclientomnvar("ui_round_end_reason", endreasontext);
     } else {
         self setclientomnvar("ui_round_end_title", game["round_end"]["defeat"]);
-        self setclientomnvar("ui_round_end_reason", ter_op(isdefined(var_656b99fc50e799ae), var_656b99fc50e799ae, endreasontext));
+        self setclientomnvar("ui_round_end_reason", ter_op(isdefined(endreasontextloss), endreasontextloss, endreasontext));
         if (istrue(self.joinedinprogress) && onlinestatsenabled()) {
             endreasontext = game["end_reason"]["loss_stat_prevented"];
         }
@@ -760,18 +760,18 @@ function outcomenotify(winner, endreasontext, var_656b99fc50e799ae) {
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31b5
 // Size: 0x6c
 function getsplashtablename() {
-    if (isdefined(level.var_1a2b600a06ec21f4) && isdefined(level.var_1a2b600a06ec21f4.var_fa386c9362c91a3e) && level.var_1a2b600a06ec21f4.var_fa386c9362c91a3e != "") {
-        return level.var_1a2b600a06ec21f4.var_fa386c9362c91a3e;
+    if (isdefined(level.gamemodebundle) && isdefined(level.gamemodebundle.splashtable) && level.gamemodebundle.splashtable != "") {
+        return level.gamemodebundle.splashtable;
     }
     return getdvar(@"hash_b7b83cc9df67c558", "mp/splashTable.csv");
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3229
 // Size: 0x5
@@ -779,7 +779,7 @@ function getsplashtablemaxaltdisplays() {
     return 5;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3236
 // Size: 0x65
@@ -798,42 +798,42 @@ function cleanuplocalplayersplashlist() {
     self notify("splash_list_cleared");
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32a2
 // Size: 0x1f
-function splashshowncallback(channel, var_ea8523762e51dd5e) {
+function splashshowncallback(channel, splashindex) {
     if (channel != "splash_shown") {
         return;
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x32c8
 // Size: 0x1e
-function onkillstreaksplashshown(var_f7b6cc6c062a7a43) {
-    namespace_9abe40d2af041eb2::function_8959c1606f65e65(var_f7b6cc6c062a7a43, var_f7b6cc6c062a7a43);
-    thread checkforspecialistbonusvo(var_f7b6cc6c062a7a43);
+function onkillstreaksplashshown(splashref) {
+    scripts/cp_mp/utility/killstreak_utility::function_8959c1606f65e65(splashref, splashref);
+    thread checkforspecialistbonusvo(splashref);
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32ed
 // Size: 0x40
-function checkforspecialistbonusvo(var_f7b6cc6c062a7a43) {
-    specialistperk = namespace_b6a8027f477010e1::getspecialistperkforstreak();
-    if (var_f7b6cc6c062a7a43 == "specialist_perk_bonus") {
+function checkforspecialistbonusvo(splashref) {
+    specialistperk = scripts/mp/perks/perks::getspecialistperkforstreak();
+    if (splashref == "specialist_perk_bonus") {
         wait(2);
-        level thread namespace_25c5a6f43bb97b43::trysaylocalsound(self, #"hash_66d4835263b12ee1");
+        level thread scripts/mp/battlechatter_mp::trysaylocalsound(self, #"hash_66d4835263b12ee1");
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3334
 // Size: 0xde
-function showerrormessage(var_1797174f9e968e96, var_d153265565df63da) {
+function showerrormessage(var_1797174f9e968e96, optionalparam) {
     /#
         assertex(isstring(var_1797174f9e968e96), "Passing value to showErrorMessage that isn't a string : "" + var_1797174f9e968e96);
     #/
@@ -841,8 +841,8 @@ function showerrormessage(var_1797174f9e968e96, var_d153265565df63da) {
     /#
         assertex(isdefined(rownum) && rownum >= 0, "Unable to find "" + var_1797174f9e968e96 + "" in errorMessages.csv");
     #/
-    if (isdefined(var_d153265565df63da)) {
-        self setclientomnvar("ui_mp_error_message_param", var_d153265565df63da);
+    if (isdefined(optionalparam)) {
+        self setclientomnvar("ui_mp_error_message_param", optionalparam);
     } else {
         self setclientomnvar("ui_mp_error_message_param", -1);
     }
@@ -856,29 +856,29 @@ function showerrormessage(var_1797174f9e968e96, var_d153265565df63da) {
     self setclientomnvar("ui_mp_error_trigger", ter_op(self.errormessagebitflipper, 2, 1));
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3419
 // Size: 0x6b
-function showerrormessagetoallplayers(var_1797174f9e968e96, var_d153265565df63da) {
+function showerrormessagetoallplayers(var_1797174f9e968e96, optionalparam) {
     foreach (player in level.players) {
-        player showerrormessage(var_1797174f9e968e96, var_d153265565df63da);
+        player showerrormessage(var_1797174f9e968e96, optionalparam);
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x348b
 // Size: 0x33
 function testmiscmessage(messageref) {
     rownum = tablelookuprownum("mp/miscMessages.csv", 0, messageref);
     if (isdefined(rownum) && rownum >= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34c6
 // Size: 0x8d
@@ -895,7 +895,7 @@ function showmiscmessage(messageref) {
     self setclientomnvar("ui_misc_message_trigger", 1);
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x355a
 // Size: 0x19d
@@ -910,8 +910,8 @@ function eventsplashesthink() {
     }
     self waittill("loadout_class_selected");
     var_19323a94e0c59dfb = 0;
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
-        level namespace_4b0406965e556711::gameflagwait("prematch_done");
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
+        level scripts/mp/flags::gameflagwait("prematch_done");
         var_19323a94e0c59dfb = 1;
     }
     if (!isdefined(self)) {
@@ -922,7 +922,7 @@ function eventsplashesthink() {
         if (var_19323a94e0c59dfb) {
             wait(2);
         }
-        if (namespace_36f464722d326bbe::function_e3ef0908b595e8e1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_4562364e09176965") == 2 || self isps4player() && getdvarfloat(@"hash_10f733902fb6e20") == 2) {
+        if (scripts/cp_mp/utility/game_utility::function_e3ef0908b595e8e1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_4562364e09176965") == 2 || self isps4player() && getdvarfloat(@"hash_10f733902fb6e20") == 2) {
             showsplash("event_double_xp", undefined, self);
         }
         if (getdvarint(@"hash_dc3e80d2e74fb4b5") == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_2bdc03077e6414dc") == 2) {
@@ -940,11 +940,11 @@ function eventsplashesthink() {
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36fe
 // Size: 0x13b
-function notifyteam(var_2b9a889f3be2981b, var_818ac67c76f27d3a, var_ac6ca28a64718193, var_4725e52b7c3aa25c, var_6acc43fa4db03a7f, var_6ad135fa4db6448c, playerforplayercard) {
+function notifyteam(friendlystring, enemystring, friendlyteam, skipplayers, var_6acc43fa4db03a7f, var_6ad135fa4db6448c, playerforplayercard) {
     foreach (player in level.players) {
         if (!isreallyalive(player)) {
             continue;
@@ -952,33 +952,33 @@ function notifyteam(var_2b9a889f3be2981b, var_818ac67c76f27d3a, var_ac6ca28a6471
         if (!isgameplayteam(player.team)) {
             continue;
         }
-        if (player.team == var_ac6ca28a64718193) {
-            if (!canshowsplash(var_2b9a889f3be2981b)) {
+        if (player.team == friendlyteam) {
+            if (!canshowsplash(friendlystring)) {
                 continue;
             }
-            if (isdefined(var_4725e52b7c3aa25c)) {
-                if (!array_contains(var_4725e52b7c3aa25c, player)) {
-                    player thread namespace_44abc05161e2e2cb::showsplash(var_2b9a889f3be2981b, var_6acc43fa4db03a7f, playerforplayercard);
+            if (isdefined(skipplayers)) {
+                if (!array_contains(skipplayers, player)) {
+                    player thread scripts/mp/hud_message::showsplash(friendlystring, var_6acc43fa4db03a7f, playerforplayercard);
                 }
             } else {
-                player thread namespace_44abc05161e2e2cb::showsplash(var_2b9a889f3be2981b, var_6acc43fa4db03a7f, playerforplayercard);
+                player thread scripts/mp/hud_message::showsplash(friendlystring, var_6acc43fa4db03a7f, playerforplayercard);
             }
-        } else {
-            if (!canshowsplash(var_818ac67c76f27d3a)) {
-                continue;
-            }
-            if (isdefined(var_4725e52b7c3aa25c)) {
-                if (!array_contains(var_4725e52b7c3aa25c, player)) {
-                    player thread namespace_44abc05161e2e2cb::showsplash(var_818ac67c76f27d3a, var_6ad135fa4db6448c, playerforplayercard);
-                }
-            } else {
-                player thread namespace_44abc05161e2e2cb::showsplash(var_818ac67c76f27d3a, var_6ad135fa4db6448c, playerforplayercard);
-            }
+            continue;
         }
+        if (!canshowsplash(enemystring)) {
+            continue;
+        }
+        if (isdefined(skipplayers)) {
+            if (!array_contains(skipplayers, player)) {
+                player thread scripts/mp/hud_message::showsplash(enemystring, var_6ad135fa4db6448c, playerforplayercard);
+            }
+            continue;
+        }
+        player thread scripts/mp/hud_message::showsplash(enemystring, var_6ad135fa4db6448c, playerforplayercard);
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3840
 // Size: 0x2b
@@ -987,7 +987,7 @@ function function_2b88d4a7a0b44e30(ref) {
     return var_5c9ddcf56d36f133;
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3873
 // Size: 0x1f
@@ -995,27 +995,29 @@ function function_f004ef4606b9efdc(ref) {
     self setclientomnvar("ui_match_status_hint_text", function_2b88d4a7a0b44e30(ref));
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3899
 // Size: 0xd3
-function updatematchstatushintforallplayers(var_ac6ca28a64718193, var_7272b671334aa84f, var_ed7758b45551517e, var_6db141a3a3e03b2b, var_dc3596691b18226a) {
+function updatematchstatushintforallplayers(friendlyteam, friendlyhint, enemyhint, specplayer, var_dc3596691b18226a) {
     level notify("updateHint");
     level endon("updateHint");
     foreach (player in level.players) {
-        if (isdefined(var_ac6ca28a64718193) && player.team == var_ac6ca28a64718193) {
-            if (isdefined(var_6db141a3a3e03b2b) && player == var_6db141a3a3e03b2b) {
+        if (isdefined(friendlyteam) && player.team == friendlyteam) {
+            if (isdefined(specplayer) && player == specplayer) {
                 player function_f004ef4606b9efdc(var_dc3596691b18226a);
             } else {
-                player function_f004ef4606b9efdc(var_7272b671334aa84f);
+                player function_f004ef4606b9efdc(friendlyhint);
             }
-        } else if (isdefined(var_ed7758b45551517e)) {
-            player function_f004ef4606b9efdc(var_ed7758b45551517e);
+            continue;
+        }
+        if (isdefined(enemyhint)) {
+            player function_f004ef4606b9efdc(enemyhint);
         }
     }
 }
 
-// Namespace hud_message/namespace_44abc05161e2e2cb
+// Namespace hud_message / scripts/mp/hud_message
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3973
 // Size: 0x22

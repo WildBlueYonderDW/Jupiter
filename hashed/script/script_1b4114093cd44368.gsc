@@ -5,39 +5,39 @@
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
 #using scripts\mp\utility\lower_message.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using script_4b87f2871b6b025c;
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using scripts\cp_mp\entityheadicons.gsc;
 
 #namespace oxygenmask;
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x361
 // Size: 0x66
 function function_234851f94416f178() {
     level.var_f6bad8618358a031 = spawnstruct();
-    level.var_f6bad8618358a031.var_3d605bc71c5d48e3 = "iw9_oxygenmask";
+    level.var_f6bad8618358a031.holdweaponname = "iw9_oxygenmask";
     level.var_f6bad8618358a031.var_1df8739f84d611ae = 99;
     if (issharedfuncdefined("oxygenmask", "init")) {
         [[ getsharedfunc("oxygenmask", "init") ]]();
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ce
 // Size: 0x26
 function give_oxygenmask() {
     if (istrue(self.var_23a6763562820c70) && iscp()) {
-        return 0;
+        return false;
     }
     thread function_80143a61b671bdd3();
-    return 1;
+    return true;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0xd
@@ -45,36 +45,35 @@ function function_23a6763562820c70() {
     return istrue(self.var_23a6763562820c70);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x411
 // Size: 0xe2
-function oxygenmask_tryshowhint() {
+function oxygenmask_tryShowHint() {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self notify("oxygenmask_tryShowHint");
     self endon("oxygenmask_tryShowHint");
-    if (!isdefined(level.var_f6bad8618358a031.var_4a80a7848a4968e2)) {
-        level.var_f6bad8618358a031.var_4a80a7848a4968e2 = [];
+    if (!isdefined(level.var_f6bad8618358a031.hintsplayed)) {
+        level.var_f6bad8618358a031.hintsplayed = [];
     }
-    var_afd4a4922443a15c = level.var_f6bad8618358a031.var_4a80a7848a4968e2;
+    hintdata = level.var_f6bad8618358a031.hintsplayed;
     entnum = self getentitynumber();
-    if (!isdefined(var_afd4a4922443a15c[entnum])) {
-        var_afd4a4922443a15c[entnum] = 0;
+    if (!isdefined(hintdata[entnum])) {
+        hintdata[entnum] = 0;
     }
-    var_d5a0474d01815168 = getdvarint(@"hash_cfa01cde7d01c1e2", 1);
-    if (var_d5a0474d01815168 <= var_afd4a4922443a15c[entnum]) {
+    nummsg = getdvarint(@"hash_cfa01cde7d01c1e2", 1);
+    if (nummsg <= hintdata[entnum]) {
         return;
-    } else {
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("rebreather_hint");
-        wait(5);
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("clear_lower_msg");
-        var_afd4a4922443a15c[entnum]++;
-        level.var_f6bad8618358a031.var_4a80a7848a4968e2 = var_afd4a4922443a15c;
     }
+    scripts/mp/utility/lower_message::setlowermessageomnvar("rebreather_hint");
+    wait(5);
+    scripts/mp/utility/lower_message::setlowermessageomnvar("clear_lower_msg");
+    hintdata[entnum]++;
+    level.var_f6bad8618358a031.hintsplayed = hintdata;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fa
 // Size: 0x67
@@ -90,12 +89,12 @@ function function_8fc85383e9f1b6e6() {
         if (isdefined(self.var_72f72f6558f6a22a)) {
             self.var_72f72f6558f6a22a delete();
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x569
 // Size: 0x1a0
@@ -108,31 +107,31 @@ function private function_80143a61b671bdd3() {
     currweapon = self getcurrentweapon();
     if (currweapon.basename != "none") {
         if (getdvarint(@"hash_44f86dd3c04fba8f", 0)) {
-            if (namespace_448ccf1ca136fbbe::iscp()) {
+            if (scripts/common/utility::iscp()) {
                 self forceplaygestureviewmodel("ges_magma_gas_mask_on");
             } else {
                 self forceplaygestureviewmodel("ges_visor_down");
             }
         }
     }
-    if (namespace_448ccf1ca136fbbe::iscp()) {
-        namespace_1cd9f6896754adb0::set("oxygenmask", "weapon_switch", 0);
-        namespace_1cd9f6896754adb0::set("oxygenmask", "melee", 0);
-        namespace_1cd9f6896754adb0::set("oxygenmask", "equipment_primary", 0);
-        namespace_1cd9f6896754adb0::set("oxygenmask", "equipment_secondary", 0);
-        namespace_1cd9f6896754adb0::set("oxygenmask", "weapon_pickup", 0);
+    if (scripts/common/utility::iscp()) {
+        scripts/common/values::set("oxygenmask", "weapon_switch", 0);
+        scripts/common/values::set("oxygenmask", "melee", 0);
+        scripts/common/values::set("oxygenmask", "equipment_primary", 0);
+        scripts/common/values::set("oxygenmask", "equipment_secondary", 0);
+        scripts/common/values::set("oxygenmask", "weapon_pickup", 0);
     }
-    thread oxygenmask_tryshowhint();
+    thread oxygenmask_tryShowHint();
     function_2f21b35828315a0(0);
     if (issharedfuncdefined("oxygenmask", "onGive")) {
         self [[ getsharedfunc("oxygenmask", "onGive") ]]();
     }
     self.var_23a6763562820c70 = 1;
     self.var_c0eb949c54277b2c = undefined;
-    if (namespace_448ccf1ca136fbbe::iscp()) {
+    if (scripts/common/utility::iscp()) {
         namespace_8ade6bdb04213c12::function_a05de828303d4bed();
         childthread namespace_8ade6bdb04213c12::function_8c3428aeb7c8b1f4(10);
-        function_c2ee77402d52be9(level.var_f6bad8618358a031.var_3d605bc71c5d48e3);
+        function_c2ee77402d52be9(level.var_f6bad8618358a031.holdweaponname);
         wait(0.5);
     }
     thread oxygenmask_handle_death();
@@ -142,7 +141,7 @@ function private function_80143a61b671bdd3() {
     function_7823f77f978a3360();
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x710
 // Size: 0x169
@@ -151,38 +150,42 @@ function function_7823f77f978a3360() {
     self endon("game_ended");
     self endon("drop_oxygenmask");
     self endon("give_oxygenmask");
-    while (1) {
+    while (true) {
         wait(0.05);
         can_use = function_67506c2318ca4da2();
         trying = function_27e7b88ea18125f();
         var_d45ca71a300e2c90 = isdefined(self getcurrentweapon()) && is_equal(self getcurrentweapon().var_9d7facbe889e667c, %"iw9_oxygenmask");
-        var_a7c6d05b37dcde8e = isdefined(self.vehicle) && namespace_1fbd40990ee60ede::vehicle_occupancy_getdriver(self.vehicle) == self || isusingremote();
-        if (!var_d45ca71a300e2c90 && !var_a7c6d05b37dcde8e) {
+        nonplayerstate = isdefined(self.vehicle) && scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_getdriver(self.vehicle) == self || isusingremote();
+        if (!var_d45ca71a300e2c90 && !nonplayerstate) {
             thread function_a51cb31233eacf9e();
         }
         if (trying && can_use) {
             function_44524a0826f0975a(1);
             function_eae1981ab021806b();
-        } else if (trying && !can_use) {
+            continue;
+        }
+        if (trying && !can_use) {
             function_44524a0826f0975a(0);
             if (issharedfuncdefined("oxygenmask", "onUnusable")) {
                 self thread [[ getsharedfunc("oxygenmask", "onUnusable") ]]();
             }
-        } else if (can_use && !trying) {
+            continue;
+        }
+        if (can_use && !trying) {
             function_44524a0826f0975a(1);
             if (iscp()) {
                 function_8b61dac63b58c6ce("Ready");
             }
-        } else {
-            function_44524a0826f0975a(0);
-            if (iscp()) {
-                function_8b61dac63b58c6ce("Not Usable");
-            }
+            continue;
+        }
+        function_44524a0826f0975a(0);
+        if (iscp()) {
+            function_8b61dac63b58c6ce("Not Usable");
         }
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x880
 // Size: 0x9
@@ -190,7 +193,7 @@ function function_2e4cd4d627c30c24() {
     return give_oxygenmask();
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x891
 // Size: 0x3
@@ -198,7 +201,7 @@ function private function_2c9c3bc278844056() {
     
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x59
@@ -208,13 +211,13 @@ function private function_44524a0826f0975a(toggle) {
     }
     self.var_9c26d9c1ec7fdc65 = toggle;
     if (istrue(toggle)) {
-        namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("oxygenmask_canfire");
-    } else {
-        namespace_1cd9f6896754adb0::set("oxygenmask_canfire", "fire", 0);
+        scripts/common/values::reset_all("oxygenmask_canfire");
+        return;
     }
+    scripts/common/values::set("oxygenmask_canfire", "fire", 0);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8fb
 // Size: 0x59
@@ -224,24 +227,24 @@ function private function_2f21b35828315a0(toggle) {
     }
     self.var_58a1bd2c2c9338ad = toggle;
     if (istrue(toggle)) {
-        namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("oxygenmask_canads");
-    } else {
-        namespace_1cd9f6896754adb0::set("oxygenmask_canads", "ads", 0);
+        scripts/common/values::reset_all("oxygenmask_canads");
+        return;
     }
+    scripts/common/values::set("oxygenmask_canads", "ads", 0);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x95b
 // Size: 0x3c
-function private function_c2ee77402d52be9(var_848e355a646647a0) {
+function private function_c2ee77402d52be9(holdweapon) {
     self.var_9a46747153a02d2f = self getcurrentweapon();
-    var_4c31d0690f7e6d1d = makeweapon(var_848e355a646647a0);
+    var_4c31d0690f7e6d1d = makeweapon(holdweapon);
     _giveweapon(var_4c31d0690f7e6d1d);
     self switchtoweaponimmediate(var_4c31d0690f7e6d1d);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x99e
 // Size: 0x57
@@ -254,11 +257,11 @@ function private function_581a506815c94633(deployweaponname) {
         self stopviewmodelanim();
     }
     objweapon = makeweapon(deployweaponname);
-    result = function_f19f8b4cf085ecbd(objweapon);
+    result = giveandfireoffhandreliable(objweapon);
     return result;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9fd
 // Size: 0x2c
@@ -269,7 +272,7 @@ function function_8b61dac63b58c6ce(state) {
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa30
 // Size: 0x1f
@@ -280,7 +283,7 @@ function function_ddd53cc3c592bd02() {
     return self.var_fe2b9ee0479ad3cf;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xa57
 // Size: 0x61
@@ -301,15 +304,15 @@ function private oxygenmask_handle_death() {
     give_oxygenmask();
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xabf
 // Size: 0xd8
 function function_a51cb31233eacf9e() {
     self notify("drop_oxygenmask");
-    namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("oxygenmask");
-    namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("oxygenmask_canfire");
-    namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("oxygenmask_canads");
+    scripts/common/values::reset_all("oxygenmask");
+    scripts/common/values::reset_all("oxygenmask_canfire");
+    scripts/common/values::reset_all("oxygenmask_canads");
     if (issharedfuncdefined("oxygenmask", "onRemove")) {
         [[ getsharedfunc("oxygenmask", "onRemove") ]]();
     }
@@ -320,74 +323,74 @@ function function_a51cb31233eacf9e() {
     currweapon = self getcurrentweapon();
     if (currweapon.basename != "none") {
         if (getdvarint(@"hash_44f86dd3c04fba8f", 0)) {
-            if (namespace_448ccf1ca136fbbe::iscp()) {
+            if (scripts/common/utility::iscp()) {
                 self forceplaygestureviewmodel("ges_magma_gas_mask_off");
-            } else {
-                self forceplaygestureviewmodel("ges_visor_up");
+                return;
             }
+            self forceplaygestureviewmodel("ges_visor_up");
         }
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb9e
 // Size: 0x37
 function private function_27e7b88ea18125f() {
-    if (self attackbuttonpressed() || self buttonpressed("MOUSE1") || istrue(self.var_af23415abf13e8fa) && function_988138367c74b1f5()) {
-        return 1;
+    if (self attackbuttonpressed() || self buttonpressed("MOUSE1") || istrue(self.var_af23415abf13e8fa) && isswimmingunderwater()) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0xd2
 function private function_67506c2318ca4da2() {
     if (!_isalive()) {
-        return 0;
+        return false;
     }
     if (istrue(self.inlaststand)) {
-        return 0;
+        return false;
     }
     if (getdvarint(@"hash_73621d9d9f54e301", 0)) {
-        return 1;
+        return true;
     }
-    if (!self function_6f55d55ccff20d14()) {
-        return 0;
+    if (!self isswimunderwater()) {
+        return false;
     }
     if (self function_635e39fc16a64657()) {
-        return 0;
+        return false;
     }
     if (self israisingweapon()) {
-        return 0;
+        return false;
     }
     if (!isnullweapon(self getheldoffhand())) {
-        return 0;
+        return false;
     }
     if (istrue(self.var_a3bde3b734d04764)) {
-        return 0;
+        return false;
     }
     if (istrue(self.var_c0eb949c54277b2c)) {
-        return 0;
+        return false;
     }
     if (istrue(level.var_ec0baa43406de34a)) {
-        return 0;
+        return false;
     }
     if (istrue(self.var_8d47f4af9323f11e)) {
-        return 0;
+        return false;
     }
     if (isdefined(self.var_984bd769a1e0201e)) {
         usetime = 4000;
         if (gettime() < self.var_984bd769a1e0201e + usetime) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xcb7
 // Size: 0x16
@@ -395,7 +398,7 @@ function private function_bc75520a8c4707ba() {
     return getdvarfloat(@"hash_c5320528e750d996", 0.75);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xcd5
 // Size: 0x124
@@ -415,8 +418,8 @@ function private function_eae1981ab021806b() {
     thread function_2c9c3bc278844056();
     self notify("used_oxygen_mask");
     level notify("used_oxygen_mask", self);
-    var_110a8239b8d015bc = waittill_notify_or_timeout_return("weapon_fired", 4);
-    if (var_110a8239b8d015bc == "weapon_fired") {
+    returnmsg = waittill_notify_or_timeout_return("weapon_fired", 4);
+    if (returnmsg == "weapon_fired") {
         thread function_95812dcc553470bd();
     }
     self notify("oxygenmask_fired");
@@ -432,7 +435,7 @@ function private function_eae1981ab021806b() {
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe00
 // Size: 0x2e
@@ -445,7 +448,7 @@ function function_1ab4e7e73ad0c18e() {
     thread function_44524a0826f0975a(0);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe35
 // Size: 0x15
@@ -454,7 +457,7 @@ function function_9ac10cec8e7b9d40() {
     function_2f21b35828315a0(0);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xe51
 // Size: 0x3f
@@ -469,38 +472,38 @@ function private function_87a62a5519055b00() {
     self stopforcedfire();
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xe97
 // Size: 0xa9
-function private function_64a40faf54efbdb0() {
+function private enable_headicon() {
     icon = "hud_icon_equipment_oxygen";
     offset = 16;
-    var_b9352c16dbbdc298 = 1;
-    var_1e440f4549d5e518 = [];
+    drawwalls = 1;
+    toshowto = [];
     if (level.players.size == 1) {
         return;
     }
     for (i = 0; i < level.players.size; i++) {
         if (level.players[i] != self) {
-            var_1e440f4549d5e518[var_1e440f4549d5e518.size] = level.players[i];
+            toshowto[toshowto.size] = level.players[i];
         }
     }
-    self.var_afd8a16fcba5b91 = namespace_7bdde15c3500a23f::setheadicon_singleimage(var_1e440f4549d5e518, icon, offset, 0, 512, 100, 0, 0, var_b9352c16dbbdc298, undefined, 1);
+    self.var_afd8a16fcba5b91 = scripts/cp_mp/entityheadicons::setheadicon_singleimage(toshowto, icon, offset, 0, 512, 100, 0, 0, drawwalls, undefined, 1);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xf47
 // Size: 0x2a
-function private function_afbabc657353367f() {
+function private disable_headicon() {
     if (isdefined(self.var_afd8a16fcba5b91)) {
-        namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.var_afd8a16fcba5b91);
+        scripts/cp_mp/entityheadicons::setheadicon_deleteicon(self.var_afd8a16fcba5b91);
         self.var_afd8a16fcba5b91 = undefined;
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xf78
 // Size: 0x7c
@@ -509,19 +512,19 @@ function private debug_allow_shoot_while_ufoing() {
     self endon("death_or_disconnect");
     self endon("drop_oxygenmask");
     currentstate = 0;
-    while (1) {
+    while (true) {
         if (self isufo() && currentstate == 0) {
             currentstate = 1;
-            namespace_1cd9f6896754adb0::function_c9d0b43701bdba00("debug_allow_shoot_while_ufoing");
+            scripts/common/values::reset_all("debug_allow_shoot_while_ufoing");
         } else if (!self isufo() && currentstate == 1) {
             currentstate = 0;
-            namespace_1cd9f6896754adb0::set("debug_allow_shoot_while_ufoing", "fire", 0);
+            scripts/common/values::set("debug_allow_shoot_while_ufoing", "fire", 0);
         }
         wait(0.05);
     }
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xffb
 // Size: 0x51
@@ -533,7 +536,7 @@ function private function_95812dcc553470bd() {
     namespace_8ade6bdb04213c12::function_8c3428aeb7c8b1f4(var_96da5f505495f48a, &function_bc75520a8c4707ba);
 }
 
-// Namespace oxygenmask/namespace_86d0d418da518a0e
+// Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1053
 // Size: 0x44
@@ -543,9 +546,9 @@ function private function_5ec8d8473d72b73() {
     self startforcedfire();
     if (iscp()) {
         childthread function_87a62a5519055b00();
-    } else {
-        waittill_any_2("oxygenmask_fail", "oxygenmask_fired");
-        self stopforcedfire();
+        return;
     }
+    waittill_any_2("oxygenmask_fail", "oxygenmask_fired");
+    self stopforcedfire();
 }
 

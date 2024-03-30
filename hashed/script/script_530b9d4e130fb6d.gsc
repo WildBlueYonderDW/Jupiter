@@ -1,14 +1,14 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\devgui.gsc;
 #using script_3a9930dfe832ae05;
-#using script_427ce33ec0c820cf;
+#using scripts\common\powerups.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_7c40fa80892a721;
 
 #namespace full_armor;
 
-// Namespace full_armor/namespace_2d90d2cd549eea35
+// Namespace full_armor / namespace_2d90d2cd549eea35
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0xd5
 // Size: 0x1d
@@ -19,7 +19,7 @@ function autoexec main() {
     function_d5fc5da2613d29dd();
 }
 
-// Namespace full_armor/namespace_2d90d2cd549eea35
+// Namespace full_armor / namespace_2d90d2cd549eea35
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf9
 // Size: 0x60
@@ -33,7 +33,7 @@ function function_d5fc5da2613d29dd() {
     #/
 }
 
-// Namespace full_armor/namespace_2d90d2cd549eea35
+// Namespace full_armor / namespace_2d90d2cd549eea35
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x160
 // Size: 0x83
@@ -49,7 +49,7 @@ function function_589539e3a6b1386f() {
     return 0;
 }
 
-// Namespace full_armor/namespace_2d90d2cd549eea35
+// Namespace full_armor / namespace_2d90d2cd549eea35
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x3b
@@ -60,16 +60,16 @@ function function_58a4e1d475eb979b(chance, context) {
     return chance;
 }
 
-// Namespace full_armor/namespace_2d90d2cd549eea35
+// Namespace full_armor / namespace_2d90d2cd549eea35
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22e
 // Size: 0xd1
-function function_89fc1f6a39554ce9(str_powerup, var_4d44d70760d7ad71) {
+function function_89fc1f6a39554ce9(str_powerup, ent_powerup) {
     a_players = function_a56a8b17eae57b09(str_powerup);
     foreach (player in a_players) {
-        var_ee96be2201d4d114 = isdefined(player.armorhealth) && isdefined(player.var_8790c077c95db752) && player.var_8790c077c95db752 > 0;
+        var_ee96be2201d4d114 = isdefined(player.armorhealth) && isdefined(player.maxarmorhealth) && player.maxarmorhealth > 0;
         if (var_ee96be2201d4d114 && !player namespace_f8d3520d3483c1::function_e47b13babb51a365()) {
-            player namespace_f8d3520d3483c1::function_32bc8e85688648f4(player.var_8790c077c95db752);
+            player namespace_f8d3520d3483c1::repair_armor(player.maxarmorhealth);
         }
         player thread namespace_2b1145f62aa835b8::function_a93fbc5ac33fc2f2(str_powerup);
     }

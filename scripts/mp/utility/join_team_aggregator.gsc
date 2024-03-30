@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_f7eae0a211807471;
 
-// Namespace namespace_f7eae0a211807471/namespace_1309ce202b9aa92b
+// Namespace namespace_f7eae0a211807471 / scripts/mp/utility/join_team_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa2
 // Size: 0x75
@@ -14,7 +14,7 @@ function onplayerjointeam(player) {
     }
 }
 
-// Namespace namespace_f7eae0a211807471/namespace_1309ce202b9aa92b
+// Namespace namespace_f7eae0a211807471 / scripts/mp/utility/join_team_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11e
 // Size: 0x39
@@ -25,7 +25,7 @@ function registeronplayerjointeamcallback(callback) {
     level.onjointeamcallbacks[level.onjointeamcallbacks.size] = callback;
 }
 
-// Namespace namespace_f7eae0a211807471/namespace_1309ce202b9aa92b
+// Namespace namespace_f7eae0a211807471 / scripts/mp/utility/join_team_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15e
 // Size: 0xae
@@ -45,7 +45,7 @@ function onplayerjointeamnospectator(player) {
     }
 }
 
-// Namespace namespace_f7eae0a211807471/namespace_1309ce202b9aa92b
+// Namespace namespace_f7eae0a211807471 / scripts/mp/utility/join_team_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x213
 // Size: 0x39

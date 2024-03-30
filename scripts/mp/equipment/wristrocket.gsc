@@ -6,9 +6,9 @@
 #using scripts\mp\weapons.gsc;
 #using scripts\mp\shellshock.gsc;
 
-#namespace namespace_c65b32cc99e6bc3c;
+#namespace wristrocket;
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x37
@@ -17,7 +17,7 @@ function wristrocketinit() {
     level._effect["wristrocket_thruster"] = loadfx("vfx/iw7/_requests/mp/power/vfx_wrist_rocket_thruster");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x314
 // Size: 0xb
@@ -25,7 +25,7 @@ function wristrocket_set() {
     thread wristrocket_watcheffects();
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x326
 // Size: 0xb
@@ -33,7 +33,7 @@ function wristrocket_unset() {
     self notify("wristRocket_unset");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x338
 // Size: 0xb0
@@ -53,7 +53,7 @@ function wristrocketused(grenade) {
     rocket thread wristrocket_watchstuck();
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0x3b
@@ -66,7 +66,7 @@ function wristrocket_watchfuse(fusetime) {
     thread wristrocket_explode();
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x431
 // Size: 0x8f
@@ -75,7 +75,7 @@ function wristrocket_watchstuck() {
     self.owner endon("disconnect");
     stuckto = self waittill("missile_stuck");
     if (isplayer(stuckto)) {
-        self.owner namespace_3bbb5a98b932c46f::grenadestuckto(self, stuckto);
+        self.owner scripts/mp/weapons::grenadestuckto(self, stuckto);
     }
     self stoploopsound();
     self setscriptablepartstate("stuck", "active", 0);
@@ -84,7 +84,7 @@ function wristrocket_watchstuck() {
     thread wristrocket_watchfuse(1.35);
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c7
 // Size: 0x41
@@ -95,7 +95,7 @@ function wristrocket_explode() {
     thread wristrocket_delete();
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50f
 // Size: 0x23
@@ -106,7 +106,7 @@ function wristrocket_delete() {
     self delete();
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x539
 // Size: 0xa9
@@ -122,7 +122,7 @@ function wristrocket_createrocket(grenade) {
     return rocket;
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ea
 // Size: 0x18c
@@ -131,26 +131,26 @@ function wristrocket_watcheffects() {
     self notify("wristRocket_watchEffects");
     self endon("wristRocket_watchEffects");
     var_fb0b2f8f6aa55804 = 0;
-    while (1) {
-        var_c05958d616ddf1c5 = spawnstruct();
+    while (true) {
+        raceresult = spawnstruct();
         if (var_fb0b2f8f6aa55804) {
-            childthread wristrocket_watcheffectsraceheldoffhandbreak(var_c05958d616ddf1c5);
+            childthread wristrocket_watcheffectsraceheldoffhandbreak(raceresult);
         } else {
-            childthread wristrocket_watcheffectsracegrenadepullback(var_c05958d616ddf1c5);
+            childthread wristrocket_watcheffectsracegrenadepullback(raceresult);
         }
-        childthread wristrocket_watcheffectsracegrenadefired(var_c05958d616ddf1c5);
-        childthread wristrocket_watcheffectsracesuperstarted(var_c05958d616ddf1c5);
-        childthread wristrocket_watcheffectsracedeath(var_c05958d616ddf1c5);
-        childthread wristrocket_watcheffectsraceunset(var_c05958d616ddf1c5);
+        childthread wristrocket_watcheffectsracegrenadefired(raceresult);
+        childthread wristrocket_watcheffectsracesuperstarted(raceresult);
+        childthread wristrocket_watcheffectsracedeath(raceresult);
+        childthread wristrocket_watcheffectsraceunset(raceresult);
         var_fb0b2f8f6aa55804 = 0;
         self waittill("wristRocket_watchEffectsRaceStart");
         waittillframeend();
-        grenadepullback = istrue(var_c05958d616ddf1c5.grenadepullback);
-        grenadefire = istrue(var_c05958d616ddf1c5.grenadefire);
-        superstarted = istrue(var_c05958d616ddf1c5.superstarted);
-        death = istrue(var_c05958d616ddf1c5.death);
-        unset = istrue(var_c05958d616ddf1c5.unset);
-        heldoffhandbreak = istrue(var_c05958d616ddf1c5.heldoffhandbreak);
+        grenadepullback = istrue(raceresult.grenadepullback);
+        grenadefire = istrue(raceresult.grenadefire);
+        superstarted = istrue(raceresult.superstarted);
+        death = istrue(raceresult.death);
+        unset = istrue(raceresult.unset);
+        heldoffhandbreak = istrue(raceresult.heldoffhandbreak);
         if (death) {
             self notify("wristRocket_watchEffectsRaceEnd");
             thread wristrocket_endeffects();
@@ -173,87 +173,87 @@ function wristrocket_watcheffects() {
     }
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77d
 // Size: 0x5b
-function wristrocket_watcheffectsracegrenadepullback(var_c05958d616ddf1c5) {
+function wristrocket_watcheffectsracegrenadepullback(raceresult) {
     self endon("wristRocket_watchEffectsRaceEnd");
-    while (1) {
+    while (true) {
         objweapon = self waittill("grenade_pullback");
         if (objweapon.basename == "pop_rocket_mp") {
             break;
         }
     }
-    var_c05958d616ddf1c5.grenadepullback = 1;
+    raceresult.grenadepullback = 1;
     self notify("wristRocket_watchEffectsRaceStart");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7df
 // Size: 0x66
-function wristrocket_watcheffectsracegrenadefired(var_c05958d616ddf1c5) {
+function wristrocket_watcheffectsracegrenadefired(raceresult) {
     self endon("wristRocket_watchEffectsRaceEnd");
-    while (1) {
-        objweapon = grenade = self waittill("grenade_fire");
+    while (true) {
+        grenade, objweapon = self waittill("grenade_fire");
         if (objweapon.basename == "pop_rocket_mp") {
             break;
         }
     }
-    var_c05958d616ddf1c5.grenadefire = 1;
+    raceresult.grenadefire = 1;
     self notify("wristRocket_watchEffectsRaceStart");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x31
-function wristrocket_watcheffectsracesuperstarted(var_c05958d616ddf1c5) {
+function wristrocket_watcheffectsracesuperstarted(raceresult) {
     self endon("wristRocket_watchEffectsRaceEnd");
     self waittill("super_started");
-    var_c05958d616ddf1c5.superstarted = 1;
+    raceresult.superstarted = 1;
     self notify("wristRocket_watchEffectsRaceStart");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x884
 // Size: 0x31
-function wristrocket_watcheffectsracedeath(var_c05958d616ddf1c5) {
+function wristrocket_watcheffectsracedeath(raceresult) {
     self endon("wristRocket_watchEffectsRaceEnd");
     self waittill("death");
-    var_c05958d616ddf1c5.death = 1;
+    raceresult.death = 1;
     self notify("wristRocket_watchEffectsRaceStart");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8bc
 // Size: 0x31
-function wristrocket_watcheffectsraceunset(var_c05958d616ddf1c5) {
+function wristrocket_watcheffectsraceunset(raceresult) {
     self endon("wristRocket_watchEffectsRaceEnd");
     self waittill("wristRocket_unset");
-    var_c05958d616ddf1c5.unset = 1;
+    raceresult.unset = 1;
     self notify("wristRocket_watchEffectsRaceStart");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f4
 // Size: 0x4e
-function wristrocket_watcheffectsraceheldoffhandbreak(var_c05958d616ddf1c5) {
+function wristrocket_watcheffectsraceheldoffhandbreak(raceresult) {
     self endon("wristRocket_watchEffectsRaceEnd");
     waitframe();
     weapon = makeweapon("pop_rocket_mp");
     while (self getheldoffhand() == weapon) {
         waitframe();
     }
-    var_c05958d616ddf1c5.heldoffhandbreak = 1;
+    raceresult.heldoffhandbreak = 1;
     self notify("wristRocket_watchEffectsRaceStart");
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x949
 // Size: 0x43
@@ -266,7 +266,7 @@ function wristrocket_begineffects() {
     self setscriptablepartstate("wristRocketWorld", "active", 0);
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x993
 // Size: 0x1d
@@ -275,7 +275,7 @@ function wristrocket_endeffects() {
     self setscriptablepartstate("wristRocketWorld", "neutral", 0);
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b7
 // Size: 0xb5
@@ -294,11 +294,11 @@ function wristrocketcooksuicideexplodecheck(inflictor, attacker, victim, meansof
     }
     explodepos = victim gettagorigin("tag_weapon_left");
     radiusdamage(explodepos, 175, 200, 70, attacker, "MOD_EXPLOSIVE", "pop_rocket_mp");
-    namespace_6de0840c25c8dc22::grenade_earthquakeatposition(explodepos, 0.6);
+    scripts/mp/shellshock::grenade_earthquakeatposition(explodepos, 0.6);
     playfx(getfx("wristrocket_explode"), explodepos);
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa73
 // Size: 0x45
@@ -315,7 +315,7 @@ function wristrocket_cleanuponparentdeath(parent, delay) {
     self delete();
 }
 
-// Namespace namespace_c65b32cc99e6bc3c/namespace_44f7e377356e9926
+// Namespace wristrocket / scripts/mp/equipment/wristrocket
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xabf
 // Size: 0x27

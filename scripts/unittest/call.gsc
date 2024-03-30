@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\unittest\util.gsc;
 
-#namespace namespace_8b4e29119994c020;
+#namespace unittest_call;
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f0
 // Size: 0xf
@@ -11,7 +11,7 @@ function noargs() {
     test_print("noargs");
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x206
 // Size: 0x26
@@ -22,7 +22,7 @@ function onearg(a) {
     test_print("onearg: " + a);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x233
 // Size: 0x3a
@@ -30,7 +30,7 @@ function multiarg(a, b, c) {
     test_print("multiarg: " + a + " " + b + " " + c);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x30
@@ -38,12 +38,11 @@ function recurse_internal(n) {
     if (n > 0) {
         test_print("recurse_internal: " + n);
         return recurse_internal(n - 1);
-    } else {
-        return n;
     }
+    return n;
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ab
 // Size: 0x20
@@ -51,22 +50,22 @@ function recurse(n) {
     test_print("recurse: " + recurse_internal(n));
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d2
 // Size: 0x4f
 function function_3ee3cd6fe2c81bd1(count) {
     level endon("vm_execute_context");
-    var_1f34c3efad7a70f5 = count - 1;
+    new_count = count - 1;
     test_print("vm_execute_context: " + count);
     if (count <= 0) {
         test_print("vm_execute_context: done");
         return;
     }
-    function_79d19ed5ae591fb5(&vm_execute_context, var_1f34c3efad7a70f5);
+    function_79d19ed5ae591fb5(&vm_execute_context, new_count);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x328
 // Size: 0x14
@@ -74,7 +73,7 @@ function function_3ee3ca6fe2c81538(count) {
     function_3ee3cd6fe2c81bd1(count);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x343
 // Size: 0x14
@@ -82,21 +81,21 @@ function vm_execute_context(count) {
     function_3ee3ca6fe2c81538(count);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x35e
 // Size: 0x48
 function function_d71cba50ce323656(count) {
-    var_1f34c3efad7a70f5 = count - 1;
+    new_count = count - 1;
     test_print("vm_execute_stack: " + count);
     if (count <= 0) {
         test_print("vm_execute_stack: done");
         return;
     }
-    function_79d19ed5ae591fb5(&function_eef3761d632d107f, var_1f34c3efad7a70f5);
+    function_79d19ed5ae591fb5(&vm_execute_stack, new_count);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ad
 // Size: 0x14
@@ -104,24 +103,24 @@ function function_d71cb950ce323423(count) {
     function_d71cba50ce323656(count);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c8
 // Size: 0x14
-function function_eef3761d632d107f(count) {
+function vm_execute_stack(count) {
     function_d71cb950ce323423(count);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e3
 // Size: 0x15
 function function_234f3c181e22628e() {
     vm_execute_context(3);
-    function_eef3761d632d107f(3);
+    vm_execute_stack(3);
 }
 
-// Namespace namespace_8b4e29119994c020/namespace_60b679d37c2dcfd3
+// Namespace unittest_call / scripts/unittest/call
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ff
 // Size: 0x407

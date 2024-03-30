@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\mp\hud_util.gsc;
 #using scripts\mp\utility\dvars.gsc;
@@ -50,7 +50,7 @@
 
 #namespace cyber;
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1466
 // Size: 0x406
@@ -58,11 +58,11 @@ function main() {
     if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
         return;
     }
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
     allowed[1] = "blocker";
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -97,25 +97,25 @@ function main() {
     level.gamemodemaydropweapon = &isplayeroutsideofanybombsite;
     level.onexfilstarted = &onexfilstarted;
     level.onmaprestart = &function_b47a96f58a61d923;
-    level.resetuiomnvargamemode = &namespace_fa795886dfc5f58a::resetuiomnvargamemode;
+    level.resetuiomnvargamemode = &scripts/mp/gametypes/obj_bombzone::resetuiomnvargamemode;
     level.emplightsoff = &emplightsoff;
     level.allowlatecomers = 0;
     level.bombplanted = 0;
     level.bombplantedteam = undefined;
     level.bombexploded = 0;
     game["canScoreOnTie"] = 1;
-    if (namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         game["dialog"]["gametype"] = "iw9_cybr_mode_uktl_cyt1";
     } else {
         game["dialog"]["gametype"] = "iw9_cybr_mode_uktl_cynm";
     }
     if (!isdefined(game["roundsPlayed"])) {
-        var_126fe93c04fe16df = "iw9_cybr_mode_uktl_cybo";
+        boostvo = "iw9_cybr_mode_uktl_cybo";
     } else {
-        var_126fe93c04fe16df = "iw9_cybr_mode_uktl_cybs";
+        boostvo = "iw9_cybr_mode_uktl_cybs";
     }
-    game["dialog"]["offense_obj"] = var_126fe93c04fe16df;
-    game["dialog"]["defense_obj"] = var_126fe93c04fe16df;
+    game["dialog"]["offense_obj"] = boostvo;
+    game["dialog"]["defense_obj"] = boostvo;
     game["dialog"]["emppickup_friendly"] = "iw9_cybr_mode_uktl_cyaa";
     game["dialog"]["emppickup_friendly_first"] = "iw9_cybr_mode_uktl_cyab";
     game["dialog"]["emppickup_enemy"] = "iw9_cybr_mode_uktl_cyac";
@@ -144,7 +144,7 @@ function main() {
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1873
 // Size: 0x18f
@@ -166,16 +166,16 @@ function initializematchrules() {
     registerhalftimedvar("cyber", 0);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a09
 // Size: 0x1a
 function waittooverridegraceperiod() {
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     level.overrideingraceperiod = 1;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a2a
 // Size: 0x1d
@@ -184,7 +184,7 @@ function onprecachegametype() {
     game["bomb_recovered_sound"] = "iw9_mp_ui_objective_taken";
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a4e
 // Size: 0x188
@@ -221,7 +221,7 @@ function onstartgametype() {
     setupwaypointicons();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bdd
 // Size: 0x124
@@ -238,38 +238,38 @@ function updategametypedvars() {
     level.showenemycarrier = dvarintvalue("showEnemyCarrier", 5, 0, 6);
     level.idleresettime = dvarfloatvalue("idleResetTime", 0, 0, 60);
     level.pickuptime = dvarfloatvalue("pickupTime", 0, 0, 10);
-    level.allowempweapon = dvarintvalue("allowEMPWeapon", 0, 0, 1);
+    level.allowEMPWeapon = dvarintvalue("allowEMPWeapon", 0, 0, 1);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d08
 // Size: 0x19f
 function initspawns() {
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    namespace_b2d5aa2baf2b5701::addspawnpoints(game["attackers"], "mp_cyber_spawn_allies");
-    namespace_b2d5aa2baf2b5701::addspawnpoints(game["defenders"], "mp_cyber_spawn_axis");
-    var_66d22f456a85031a = function_53c4c53197386572(level.var_998e6c3eeb879000, 0);
-    attackers = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_cyber_spawn_allies", var_66d22f456a85031a);
-    defenders = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_cyber_spawn_axis", var_66d22f456a85031a);
-    namespace_b2d5aa2baf2b5701::registerspawnset("start_attackers", attackers);
-    namespace_b2d5aa2baf2b5701::registerspawnset("start_defenders", defenders);
-    namespace_b2d5aa2baf2b5701::addspawnpoints("allies", "mp_ctf_spawn", 1);
-    namespace_b2d5aa2baf2b5701::addspawnpoints("axis", "mp_ctf_spawn", 1);
+    scripts/mp/spawnlogic::addspawnpoints(game["attackers"], "mp_cyber_spawn_allies");
+    scripts/mp/spawnlogic::addspawnpoints(game["defenders"], "mp_cyber_spawn_axis");
+    csspawn = default_to(level.scriptedsetup, 0);
+    attackers = scripts/mp/spawnlogic::getspawnpointarray("mp_cyber_spawn_allies", csspawn);
+    defenders = scripts/mp/spawnlogic::getspawnpointarray("mp_cyber_spawn_axis", csspawn);
+    scripts/mp/spawnlogic::registerspawnset("start_attackers", attackers);
+    scripts/mp/spawnlogic::registerspawnset("start_defenders", defenders);
+    scripts/mp/spawnlogic::addspawnpoints("allies", "mp_ctf_spawn", 1);
+    scripts/mp/spawnlogic::addspawnpoints("axis", "mp_ctf_spawn", 1);
     if (getgametypenumlives() != 1) {
         assignteamspawns();
         level.cyberteamspawnsetids["allies"] = "allies";
         level.cyberteamspawnsetids["axis"] = "axis";
-        namespace_b2d5aa2baf2b5701::registerspawnset("allies", level.teamspawnpoints["allies"]);
-        namespace_b2d5aa2baf2b5701::registerspawnset("axis", level.teamspawnpoints["axis"]);
-        namespace_b2d5aa2baf2b5701::registerspawnset("neutral", level.teamspawnpoints["neutral"]);
+        scripts/mp/spawnlogic::registerspawnset("allies", level.teamspawnpoints["allies"]);
+        scripts/mp/spawnlogic::registerspawnset("axis", level.teamspawnpoints["axis"]);
+        scripts/mp/spawnlogic::registerspawnset("neutral", level.teamspawnpoints["neutral"]);
     }
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1eae
 // Size: 0x11f
@@ -277,114 +277,116 @@ function getspawnpoint() {
     if (spawnlogic::function_bff229a11ecd1e34()) {
         spawnlogic::setactivespawnlogic(#"start");
     } else {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic("StartSpawn", "Crit_Default");
+        scripts/mp/spawnlogic::setactivespawnlogic("StartSpawn", "Crit_Default");
     }
     spawnteam = self.pers["team"];
     if (getgametypenumlives() != 1) {
-        if (namespace_b2d5aa2baf2b5701::shoulduseteamstartspawn()) {
+        if (scripts/mp/spawnlogic::shoulduseteamstartspawn()) {
             if (spawnteam == game["attackers"]) {
-                namespace_b2d5aa2baf2b5701::activatespawnset("start_attackers", 1);
-                spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, undefined, "start_attackers");
+                scripts/mp/spawnlogic::activatespawnset("start_attackers", 1);
+                spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_attackers");
             } else {
-                namespace_b2d5aa2baf2b5701::activatespawnset("start_defenders", 1);
-                spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, undefined, "start_defenders");
+                scripts/mp/spawnlogic::activatespawnset("start_defenders", 1);
+                spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_defenders");
             }
         } else {
-            spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, level.cyberteamspawnsetids[spawnteam], "neutral");
+            spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, level.cyberteamspawnsetids[spawnteam], "neutral");
         }
     } else if (spawnteam == game["attackers"]) {
-        namespace_b2d5aa2baf2b5701::activatespawnset("start_attackers", 1);
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, undefined, "start_attackers");
+        scripts/mp/spawnlogic::activatespawnset("start_attackers", 1);
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_attackers");
     } else {
-        namespace_b2d5aa2baf2b5701::activatespawnset("start_defenders", 1);
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, undefined, "start_defenders");
+        scripts/mp/spawnlogic::activatespawnset("start_defenders", 1);
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_defenders");
     }
     return spawnpoint;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fd5
 // Size: 0x7b
-function function_72118bfd9964ea0a(teamname) {
+function isenemyteameliminated(teamname) {
     players = level.teamdata[teamname]["players"];
     foreach (player in players) {
-        if (namespace_7e17181d03156026::isreallyalive(player)) {
-            return 0;
+        if (scripts/mp/utility/player::isreallyalive(player)) {
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2058
 // Size: 0x43c
 function assignteamspawns() {
     level.spawnnodetype = "mp_ctf_spawn";
-    spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray(level.spawnnodetype);
-    ispathdataavailable = namespace_b2d5aa2baf2b5701::ispathdataavailable();
+    spawnpoints = scripts/mp/spawnlogic::getspawnpointarray(level.spawnnodetype);
+    ispathdataavailable = scripts/mp/spawnlogic::ispathdataavailable();
     level.teamspawnpoints["axis"] = [];
     level.teamspawnpoints["allies"] = [];
     level.teamspawnpoints["neutral"] = [];
     if (level.objectives.size == 2) {
-        var_6d651a87c5a99dbb = level.objectives["axis"];
-        var_3e473a3d5740c130 = level.objectives["allies"];
-        var_d363bc9d0700ed97 = (var_6d651a87c5a99dbb.curorigin[0], var_6d651a87c5a99dbb.curorigin[1], 0);
-        var_59bdaac880603126 = (var_3e473a3d5740c130.curorigin[0], var_3e473a3d5740c130.curorigin[1], 0);
-        var_e2d2b97130316270 = var_59bdaac880603126 - var_d363bc9d0700ed97;
-        var_4dac618cc1728faa = length2d(var_e2d2b97130316270);
+        axisbombsite = level.objectives["axis"];
+        alliesbombsite = level.objectives["allies"];
+        var_d363bc9d0700ed97 = (axisbombsite.curorigin[0], axisbombsite.curorigin[1], 0);
+        var_59bdaac880603126 = (alliesbombsite.curorigin[0], alliesbombsite.curorigin[1], 0);
+        bombsitedelta = var_59bdaac880603126 - var_d363bc9d0700ed97;
+        bombsitedist = length2d(bombsitedelta);
         foreach (spawnpoint in spawnpoints) {
             var_c982049ea3238d92 = (spawnpoint.origin[0], spawnpoint.origin[1], 0);
             var_42eaea0258074021 = var_c982049ea3238d92 - var_d363bc9d0700ed97;
-            var_4d2d882316198c95 = vectordot(var_42eaea0258074021, var_e2d2b97130316270);
-            var_79d0930df6523209 = var_4d2d882316198c95 / var_4dac618cc1728faa * var_4dac618cc1728faa;
+            dotvalue = vectordot(var_42eaea0258074021, bombsitedelta);
+            var_79d0930df6523209 = dotvalue / bombsitedist * bombsitedist;
             if (var_79d0930df6523209 < 0.33) {
-                spawnpoint.teambase = var_6d651a87c5a99dbb.ownerteam;
+                spawnpoint.teambase = axisbombsite.ownerteam;
                 level.teamspawnpoints[spawnpoint.teambase][level.teamspawnpoints[spawnpoint.teambase].size] = spawnpoint;
-            } else if (var_79d0930df6523209 > 0.67) {
-                spawnpoint.teambase = var_3e473a3d5740c130.ownerteam;
+                continue;
+            }
+            if (var_79d0930df6523209 > 0.67) {
+                spawnpoint.teambase = alliesbombsite.ownerteam;
                 level.teamspawnpoints[spawnpoint.teambase][level.teamspawnpoints[spawnpoint.teambase].size] = spawnpoint;
-            } else {
-                var_1ea3ff868194391b = undefined;
-                var_f3417be7c70940a0 = undefined;
-                if (ispathdataavailable) {
-                    var_1ea3ff868194391b = getpathdist(spawnpoint.origin, var_6d651a87c5a99dbb.curorigin, 999999);
-                }
-                if (isdefined(var_1ea3ff868194391b) && var_1ea3ff868194391b != -1) {
-                    var_f3417be7c70940a0 = getpathdist(spawnpoint.origin, var_3e473a3d5740c130.curorigin, 999999);
-                }
-                if (!isdefined(var_f3417be7c70940a0) || var_f3417be7c70940a0 == -1) {
-                    var_1ea3ff868194391b = distance2d(var_6d651a87c5a99dbb.curorigin, spawnpoint.origin);
-                    var_f3417be7c70940a0 = distance2d(var_3e473a3d5740c130.curorigin, spawnpoint.origin);
-                }
-                var_7c7809cdc3f571e5 = max(var_1ea3ff868194391b, var_f3417be7c70940a0);
-                var_126715ed2b04d65f = min(var_1ea3ff868194391b, var_f3417be7c70940a0);
-                var_882f07cd483ee4da = var_126715ed2b04d65f / var_7c7809cdc3f571e5;
-                if (var_882f07cd483ee4da > 0.5) {
-                    level.teamspawnpoints["neutral"][level.teamspawnpoints["neutral"].size] = spawnpoint;
-                }
+                continue;
+            }
+            var_1ea3ff868194391b = undefined;
+            var_f3417be7c70940a0 = undefined;
+            if (ispathdataavailable) {
+                var_1ea3ff868194391b = getpathdist(spawnpoint.origin, axisbombsite.curorigin, 999999);
+            }
+            if (isdefined(var_1ea3ff868194391b) && var_1ea3ff868194391b != -1) {
+                var_f3417be7c70940a0 = getpathdist(spawnpoint.origin, alliesbombsite.curorigin, 999999);
+            }
+            if (!isdefined(var_f3417be7c70940a0) || var_f3417be7c70940a0 == -1) {
+                var_1ea3ff868194391b = distance2d(axisbombsite.curorigin, spawnpoint.origin);
+                var_f3417be7c70940a0 = distance2d(alliesbombsite.curorigin, spawnpoint.origin);
+            }
+            var_7c7809cdc3f571e5 = max(var_1ea3ff868194391b, var_f3417be7c70940a0);
+            var_126715ed2b04d65f = min(var_1ea3ff868194391b, var_f3417be7c70940a0);
+            distpercent = var_126715ed2b04d65f / var_7c7809cdc3f571e5;
+            if (distpercent > 0.5) {
+                level.teamspawnpoints["neutral"][level.teamspawnpoints["neutral"].size] = spawnpoint;
             }
         }
-    } else {
-        foreach (spawnpoint in spawnpoints) {
-            spawnpoint.teambase = getnearestbombsiteteam(spawnpoint);
-            if (spawnpoint.teambase == "axis") {
-                level.teamspawnpoints["axis"][level.teamspawnpoints["axis"].size] = spawnpoint;
-            } else {
-                level.teamspawnpoints["allies"][level.teamspawnpoints["allies"].size] = spawnpoint;
-            }
+        return;
+    }
+    foreach (spawnpoint in spawnpoints) {
+        spawnpoint.teambase = getnearestbombsiteteam(spawnpoint);
+        if (spawnpoint.teambase == "axis") {
+            level.teamspawnpoints["axis"][level.teamspawnpoints["axis"].size] = spawnpoint;
+            continue;
         }
+        level.teamspawnpoints["allies"][level.teamspawnpoints["allies"].size] = spawnpoint;
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x249b
 // Size: 0x106
 function getnearestbombsiteteam(spawnpoint) {
-    ispathdataavailable = namespace_b2d5aa2baf2b5701::ispathdataavailable();
-    var_da039f6e2e6a19d2 = undefined;
+    ispathdataavailable = scripts/mp/spawnlogic::ispathdataavailable();
+    nearestbombsite = undefined;
     nearestdist = undefined;
     foreach (bombsite in level.objectives) {
         dist = undefined;
@@ -394,48 +396,48 @@ function getnearestbombsiteteam(spawnpoint) {
         if (!isdefined(dist) || dist == -1) {
             dist = distancesquared(bombsite.curorigin, spawnpoint.origin);
         }
-        if (!isdefined(var_da039f6e2e6a19d2) || dist < nearestdist) {
-            var_da039f6e2e6a19d2 = bombsite;
+        if (!isdefined(nearestbombsite) || dist < nearestdist) {
+            nearestbombsite = bombsite;
             nearestdist = dist;
         }
     }
-    return getotherteam(var_da039f6e2e6a19d2.ownerteam)[0];
+    return getotherteam(nearestbombsite.ownerteam)[0];
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x25a9
 // Size: 0xc6
-function private function_5151fb129e5aafdf(var_a350db35c646e0f9) {
+function private function_5151fb129e5aafdf(spawntriggers) {
     /#
-        assertex(isdefined(var_a350db35c646e0f9) && var_a350db35c646e0f9.size > 0, "Invalid spawn trigger array");
+        assertex(isdefined(spawntriggers) && spawntriggers.size > 0, "Invalid spawn trigger array");
     #/
     switch (level.mapname) {
     case #"hash_b4040d028dc0782a":
-        foreach (var_128edf2232d31c50 in var_a350db35c646e0f9) {
-            if (distancesquared((9770, 11472, -82), var_128edf2232d31c50.origin) < 1) {
-                var_a350db35c646e0f9 = namespace_3c37cb17ade254d::array_remove(var_a350db35c646e0f9, var_128edf2232d31c50);
+        foreach (spawntrigger in spawntriggers) {
+            if (distancesquared((9770, 11472, -82), spawntrigger.origin) < 1) {
+                spawntriggers = scripts/engine/utility::array_remove(spawntriggers, spawntrigger);
             }
         }
         break;
     default:
         break;
     }
-    return var_a350db35c646e0f9;
+    return spawntriggers;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2677
 // Size: 0x8c2
 function cyberattack() {
-    var_8a65b17ba13a8fdd = getentarray("cyber_emp", "targetname");
-    foreach (cyberemp in var_8a65b17ba13a8fdd) {
+    cyberemps = getentarray("cyber_emp", "targetname");
+    foreach (cyberemp in cyberemps) {
         cyberemp delete();
     }
-    var_92fc6d4f242a0f8d = function_53c4c53197386572(getstructarray("cyber_emp_pickup_trig", "script_noteworthy"), []);
+    var_92fc6d4f242a0f8d = default_to(getstructarray("cyber_emp_pickup_trig", "script_noteworthy"), []);
     if (var_92fc6d4f242a0f8d.size > 0) {
-        level.var_998e6c3eeb879000 = 1;
+        level.scriptedsetup = 1;
     } else {
         var_92fc6d4f242a0f8d = getentarray("cyber_emp_pickup_trig", "targetname");
         if (var_92fc6d4f242a0f8d.size > 0) {
@@ -472,31 +474,31 @@ function cyberattack() {
         }
         game["empSpawn"] = level.empspawnindex;
     }
-    var_f583b91c1067e38f = var_92fc6d4f242a0f8d[level.empspawnindex];
-    if (!istrue(level.allowempweapon)) {
-        var_f583b91c1067e38f = spawn("trigger_radius", var_f583b91c1067e38f.origin, 0, 32, 128);
+    emptrigger = var_92fc6d4f242a0f8d[level.empspawnindex];
+    if (!istrue(level.allowEMPWeapon)) {
+        emptrigger = spawn("trigger_radius", emptrigger.origin, 0, 32, 128);
     }
-    visuals[0] = spawn("script_model", var_f583b91c1067e38f.origin);
+    visuals[0] = spawn("script_model", emptrigger.origin);
     visuals[0] setmodel("projectile_cyber_emp_v0");
     tracestart = visuals[0].origin + (0, 0, 32);
     traceend = visuals[0].origin + (0, 0, -100);
-    ignoreents = [0:visuals[0]];
-    contentoverride = namespace_2a184fc4902783dc::create_contents(1, 1, 1, 1, 1, 1, 1);
-    trace = namespace_2a184fc4902783dc::ray_trace(tracestart, traceend, ignoreents, contentoverride);
+    ignoreents = [visuals[0]];
+    contentoverride = scripts/engine/trace::create_contents(1, 1, 1, 1, 1, 1, 1);
+    trace = scripts/engine/trace::ray_trace(tracestart, traceend, ignoreents, contentoverride);
     if (trace["fraction"] < 1) {
         visuals[0].origin = trace["position"] + (0, 0, 2);
     }
-    var_f583b91c1067e38f enablelinkto();
-    var_f583b91c1067e38f linkto(visuals[0]);
-    var_f583b91c1067e38f.baseorigin = var_f583b91c1067e38f.origin;
-    var_f583b91c1067e38f.no_moving_platfrom_unlink = 1;
-    var_f583b91c1067e38f.linktoenabledflag = 1;
+    emptrigger enablelinkto();
+    emptrigger linkto(visuals[0]);
+    emptrigger.baseorigin = emptrigger.origin;
+    emptrigger.no_moving_platfrom_unlink = 1;
+    emptrigger.linktoenabledflag = 1;
     if (!level.multibomb) {
-        level.cyberemp = namespace_19b4203b51d56488::createcarryobject("neutral", var_f583b91c1067e38f, visuals, (0, 0, 16), undefined, 1);
+        level.cyberemp = scripts/mp/gameobjects::createcarryobject("neutral", emptrigger, visuals, (0, 0, 16), undefined, 1);
         level.cyberemp.cancontestclaim = 1;
         level.cyberemp.stalemate = 0;
         level.cyberemp.wasstalemate = 1;
-        level.cyberemp namespace_19b4203b51d56488::allowuse("any");
+        level.cyberemp scripts/mp/gameobjects::allowuse("any");
         level.cyberemp.curprogress = 0;
         level.cyberemp.usetime = 0.05;
         level.cyberemp.userate = 1;
@@ -510,8 +512,8 @@ function cyberattack() {
             level.cyberemp.trigger sethintstring("MP/EMP_PICKUP_USE");
             level.cyberemp.trigger setusepriority(-1 - 1 - 1 - 1);
         }
-        level.cyberemp namespace_19b4203b51d56488::setusetime(level.cyberemp.usetime);
-        level.cyberemp namespace_19b4203b51d56488::setwaitweaponchangeonuse(0);
+        level.cyberemp scripts/mp/gameobjects::setusetime(level.cyberemp.usetime);
+        level.cyberemp scripts/mp/gameobjects::setwaitweaponchangeonuse(0);
         level.cyberemp.allowweapons = 1;
         level.cyberemp.onpickup = &onpickup;
         level.cyberemp.ondrop = &ondrop;
@@ -521,50 +523,50 @@ function cyberattack() {
         level.bombrespawnangles = level.cyberemp.visuals[0].angles;
         level.cyberemp.visualgroundoffset = (0, 0, 2);
         if (getdvarint(@"hash_484e617d6f7b7fa7") != 0) {
-            level.cyberemp namespace_19b4203b51d56488::function_316d9da870e12a03([0:level.cyberemp.visuals[0]], level.cyberemp.trigger, 1, 80, 0, &function_bf60004ce7bda1f8);
+            level.cyberemp scripts/mp/gameobjects::function_316d9da870e12a03([level.cyberemp.visuals[0]], level.cyberemp.trigger, 1, 80, 0, &onempdropped);
         }
     } else {
-        var_f583b91c1067e38f delete();
+        emptrigger delete();
         visuals[0] delete();
     }
-    var_999a5ea101dcf58e = function_53c4c53197386572(getent("cyber_empzone_axis", "targetname"), undefined);
-    if (isdefined(var_999a5ea101dcf58e)) {
-        var_f9cbff5134da960b = getstruct("cyber_empzone_axis", "script_noteworthy");
-        if (isdefined(var_f9cbff5134da960b)) {
-            var_999a5ea101dcf58e.origin = drop_to_ground(var_f9cbff5134da960b.origin, 10, -10);
+    empzoneaxis = default_to(getent("cyber_empzone_axis", "targetname"), undefined);
+    if (isdefined(empzoneaxis)) {
+        originoverride = getstruct("cyber_empzone_axis", "script_noteworthy");
+        if (isdefined(originoverride)) {
+            empzoneaxis.origin = drop_to_ground(originoverride.origin, 10, -10);
         }
     } else {
-        var_999a5ea101dcf58e = function_ce51e08dcc037220(getent("cyber_empzone_axis", "script_noteworthy"), undefined, "No cyber_empzone_axis trigger found in map. Please bug this to the level designer");
-        if (!isdefined(var_999a5ea101dcf58e)) {
+        empzoneaxis = function_ce51e08dcc037220(getent("cyber_empzone_axis", "script_noteworthy"), undefined, "No cyber_empzone_axis trigger found in map. Please bug this to the level designer");
+        if (!isdefined(empzoneaxis)) {
             return;
         }
     }
-    var_16f4d27615f0d9b1 = function_53c4c53197386572(getent("cyber_empzone_allies", "targetname"), undefined);
-    if (isdefined(var_16f4d27615f0d9b1)) {
-        var_f9cbff5134da960b = getstruct("cyber_empzone_allies", "script_noteworthy");
-        if (isdefined(var_f9cbff5134da960b)) {
-            var_16f4d27615f0d9b1.origin = drop_to_ground(var_f9cbff5134da960b.origin, 10, -10);
+    empzoneallies = default_to(getent("cyber_empzone_allies", "targetname"), undefined);
+    if (isdefined(empzoneallies)) {
+        originoverride = getstruct("cyber_empzone_allies", "script_noteworthy");
+        if (isdefined(originoverride)) {
+            empzoneallies.origin = drop_to_ground(originoverride.origin, 10, -10);
         }
     } else {
-        var_16f4d27615f0d9b1 = function_ce51e08dcc037220(getent("cyber_empzone_allies", "script_noteworthy"), undefined, "No cyber_empzone_allies trigger found in map. Please bug this to the level designer");
-        if (!isdefined(var_16f4d27615f0d9b1)) {
+        empzoneallies = function_ce51e08dcc037220(getent("cyber_empzone_allies", "script_noteworthy"), undefined, "No cyber_empzone_allies trigger found in map. Please bug this to the level designer");
+        if (!isdefined(empzoneallies)) {
             return;
         }
     }
-    var_e42151cf313ec61e = function_53c4c53197386572(getent("cyber_emp_defuse_axis", "targetname"), undefined);
+    var_e42151cf313ec61e = default_to(getent("cyber_emp_defuse_axis", "targetname"), undefined);
     if (isdefined(var_e42151cf313ec61e)) {
         var_e42151cf313ec61e delete();
     }
-    var_838d920af3079ba1 = function_53c4c53197386572(getent("cyber_emp_defuse_allies", "targetname"), undefined);
+    var_838d920af3079ba1 = default_to(getent("cyber_emp_defuse_allies", "targetname"), undefined);
     if (isdefined(var_838d920af3079ba1)) {
         var_838d920af3079ba1 delete();
     }
     if (game["switchedsides"]) {
-        level.objectives["allies"] = createbombzone("allies", var_999a5ea101dcf58e);
-        level.objectives["axis"] = createbombzone("axis", var_16f4d27615f0d9b1);
+        level.objectives["allies"] = createbombzone("allies", empzoneaxis);
+        level.objectives["axis"] = createbombzone("axis", empzoneallies);
     } else {
-        level.objectives["allies"] = createbombzone("allies", var_16f4d27615f0d9b1);
-        level.objectives["axis"] = createbombzone("axis", var_999a5ea101dcf58e);
+        level.objectives["allies"] = createbombzone("allies", empzoneallies);
+        level.objectives["axis"] = createbombzone("axis", empzoneaxis);
     }
     level notify("enable_player_usability");
     level.objectives["axis"] thread data_center_sfx_loop();
@@ -574,7 +576,7 @@ function cyberattack() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f40
 // Size: 0x2f5
@@ -582,20 +584,20 @@ function createbombzone(team, trigger) {
     var_6668f4680f6b59bb = undefined;
     if (isdefined(trigger) && isdefined(trigger.target)) {
         var_6668f4680f6b59bb = getentarray(trigger.target, "targetname");
-        foreach (var_e921cd594eb1122a in var_6668f4680f6b59bb) {
-            var_e921cd594eb1122a delete();
+        foreach (cyberempzone in var_6668f4680f6b59bb) {
+            cyberempzone delete();
         }
     }
     visuals[0] = spawn("script_model", drop_to_ground(trigger.origin, 10, -10));
     visuals[0] setmodel("misc_carepackage_friendly");
-    if (istrue(level.var_998e6c3eeb879000)) {
+    if (istrue(level.scriptedsetup)) {
         trigger = visuals[0];
         trigger.usetype = 1;
         trigger.isuseobject = 1;
         trigger.skiptouching = 1;
         trigger makeusable();
     }
-    bombzone = namespace_19b4203b51d56488::createuseobject(team, trigger, visuals, (0, 0, 64), undefined, 1);
+    bombzone = scripts/mp/gameobjects::createuseobject(team, trigger, visuals, (0, 0, 64), undefined, 1);
     bombzone.onuse = &onuse;
     bombzone.onbeginuse = &onbeginuse;
     bombzone.onenduse = &onenduse;
@@ -607,10 +609,10 @@ function createbombzone(team, trigger) {
     bombzone.trigger setusehideprogressbar(1);
     bombzone.bombplanted = 0;
     bombzone.bombexploded = undefined;
-    bombzone namespace_19b4203b51d56488::setusetime(level.planttime);
-    bombzone namespace_19b4203b51d56488::setusetext("MP/PLANTING_EXPLOSIVE");
-    bombzone namespace_19b4203b51d56488::setusehinttext("MP/HOLD_TO_PLANT_EXPLOSIVES");
-    bombzone namespace_19b4203b51d56488::setwaitweaponchangeonuse(0);
+    bombzone scripts/mp/gameobjects::setusetime(level.planttime);
+    bombzone scripts/mp/gameobjects::setusetext("MP/PLANTING_EXPLOSIVE");
+    bombzone scripts/mp/gameobjects::setusehinttext("MP/HOLD_TO_PLANT_EXPLOSIVES");
+    bombzone scripts/mp/gameobjects::setwaitweaponchangeonuse(0);
     bombzone.objectivekey = "_" + team;
     bombzone.label = bombzone.objectivekey;
     bombzone resetbombsite(1, undefined, 1);
@@ -625,59 +627,59 @@ function createbombzone(team, trigger) {
     return bombzone;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x323d
 // Size: 0x243
 function startmatchobjectiveicons() {
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill_any_2("prematch_done", "start_mode_setup");
     }
-    level.objectives["allies"] namespace_19b4203b51d56488::requestid(1, 1);
-    level.objectives["allies"] namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite");
-    level.objectives["allies"] namespace_19b4203b51d56488::setvisibleteam("any");
-    level.objectives["axis"] namespace_19b4203b51d56488::requestid(1, 1);
-    level.objectives["axis"] namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite");
-    level.objectives["axis"] namespace_19b4203b51d56488::setvisibleteam("any");
+    level.objectives["allies"] scripts/mp/gameobjects::requestid(1, 1);
+    level.objectives["allies"] scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite");
+    level.objectives["allies"] scripts/mp/gameobjects::setvisibleteam("any");
+    level.objectives["axis"] scripts/mp/gameobjects::requestid(1, 1);
+    level.objectives["axis"] scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite");
+    level.objectives["axis"] scripts/mp/gameobjects::setvisibleteam("any");
     level thread hidebombsitesaftermatchstart();
-    level.cyberemp namespace_19b4203b51d56488::requestid(1, 1);
-    level.cyberemp namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_emp");
-    level.cyberemp namespace_19b4203b51d56488::setvisibleteam("any");
+    level.cyberemp scripts/mp/gameobjects::requestid(1, 1);
+    level.cyberemp scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_emp");
+    level.cyberemp scripts/mp/gameobjects::setvisibleteam("any");
     if (isdefined(level.cyberemp.visuals[0])) {
-        level.cyberemp.visuals[0] namespace_fa795886dfc5f58a::setteaminhuddatafromteamname("neutral");
+        level.cyberemp.visuals[0] scripts/mp/gametypes/obj_bombzone::setteaminhuddatafromteamname("neutral");
         level.cyberemp.visuals[0] setasgametypeobjective();
     }
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(level.cyberemp.objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(level.cyberemp.objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_intro(level.cyberemp.objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(level.cyberemp.objidnum, 0);
     objective_setspecialobjectivedisplay(level.cyberemp.objidnum, 1);
-    var_220be32c83520117 = namespace_5a22b6f3a56f7e9b::requestobjectiveid(99);
-    level.cyberemp.pingobjidnum = var_220be32c83520117;
-    namespace_5a22b6f3a56f7e9b::objective_add_objective(var_220be32c83520117, "done", level.cyberemp.origin);
-    level.cyberemp namespace_19b4203b51d56488::setvisibleteam("none", var_220be32c83520117);
-    objective_setownerteam(var_220be32c83520117, undefined);
-    level.cyberemp namespace_19b4203b51d56488::setobjectivestatusallicons("icon_waypoint_escort_emp", "waypoint_capture_kill", undefined, var_220be32c83520117);
+    pingobjid = scripts/mp/objidpoolmanager::requestobjectiveid(99);
+    level.cyberemp.pingobjidnum = pingobjid;
+    scripts/mp/objidpoolmanager::objective_add_objective(pingobjid, "done", level.cyberemp.origin);
+    level.cyberemp scripts/mp/gameobjects::setvisibleteam("none", pingobjid);
+    objective_setownerteam(pingobjid, undefined);
+    level.cyberemp scripts/mp/gameobjects::setobjectivestatusallicons("icon_waypoint_escort_emp", "waypoint_capture_kill", undefined, pingobjid);
     setcarriervisibility();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3487
 // Size: 0x117
 function hidebombsitesaftermatchstart() {
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill("prematch_done");
     }
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(level.objectives["allies"].objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(level.objectives["allies"].objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 1);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(level.objectives["axis"].objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(level.objectives["axis"].objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 1);
-    level.objectives["allies"] namespace_19b4203b51d56488::setvisibleteam("none");
-    level.objectives["axis"] namespace_19b4203b51d56488::setvisibleteam("none");
+    scripts/mp/objidpoolmanager::objective_set_play_intro(level.objectives["allies"].objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(level.objectives["allies"].objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 1);
+    scripts/mp/objidpoolmanager::objective_set_play_intro(level.objectives["axis"].objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(level.objectives["axis"].objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 1);
+    level.objectives["allies"] scripts/mp/gameobjects::setvisibleteam("none");
+    level.objectives["axis"] scripts/mp/gameobjects::setvisibleteam("none");
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x35a5
 // Size: 0xc
@@ -685,41 +687,41 @@ function emptriggerholdonuse(player) {
     
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x35b8
 // Size: 0x168
 function setupkillcament(bombzone) {
-    var_27ba39cb4da36c7 = spawn("script_origin", self.origin);
-    var_27ba39cb4da36c7.angles = self.angles;
-    var_27ba39cb4da36c7 rotateyaw(-45, 0.05);
+    temporg = spawn("script_origin", self.origin);
+    temporg.angles = self.angles;
+    temporg rotateyaw(-45, 0.05);
     waitframe();
     campos = undefined;
-    var_b44cefcf38b5da97 = self.origin + (0, 0, 45);
-    var_dfdbe7c0c9dca192 = self.origin + anglestoforward(var_27ba39cb4da36c7.angles) * 100 + (0, 0, 128);
-    content = [0:"physicscontents_clipshot", 1:"physicscontents_missileclip", 2:"physicscontents_vehicle"];
+    bulletstart = self.origin + (0, 0, 45);
+    bulletend = self.origin + anglestoforward(temporg.angles) * 100 + (0, 0, 128);
+    content = ["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle"];
     contentoverride = physics_createcontents(content);
-    result = namespace_2a184fc4902783dc::ray_trace(var_b44cefcf38b5da97, var_dfdbe7c0c9dca192, self, contentoverride);
+    result = scripts/engine/trace::ray_trace(bulletstart, bulletend, self, contentoverride);
     campos = result["position"];
     self.killcament = spawn("script_model", campos);
     self.killcament setscriptmoverkillcam("explosive");
     bombzone.killcamentnum = self.killcament getentitynumber();
-    var_27ba39cb4da36c7 delete();
+    temporg delete();
     /#
-        self.killcament thread function_db3df42ecd416b38(self);
+        self.killcament thread debugkillcament(self);
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3727
 // Size: 0x1d1
-function function_db3df42ecd416b38(visual) {
+function debugkillcament(visual) {
     /#
         self endon("mlg_icon_waypoint_emp_planted");
         level endon("on");
         visual endon("mlg_icon_waypoint_emp_planted");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_3f3a15fb7e7c9b0") > 0) {
                 line(self.origin, self.origin + anglestoforward(self.angles) * 10, (1, 0, 0));
                 line(self.origin, self.origin + anglestoright(self.angles) * 10, (0, 1, 0));
@@ -734,13 +736,13 @@ function function_db3df42ecd416b38(visual) {
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38ff
 // Size: 0x70
 function empsitewatcher() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         level waittill("bomb_pickup");
         if (level.cyberemp.carrier.team == "allies") {
             level.objectives["axis"] setupforplanting();
@@ -751,7 +753,7 @@ function empsitewatcher() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3976
 // Size: 0x64
@@ -764,25 +766,25 @@ function data_center_sfx_loop() {
     ent delete();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x39e1
 // Size: 0x175
 function onbeginuse(player) {
-    if (!namespace_19b4203b51d56488::isfriendlyteam(player.pers["team"]) && !level.bombplanted) {
+    if (!scripts/mp/gameobjects::isfriendlyteam(player.pers["team"]) && !level.bombplanted) {
         player.isplanting = 1;
         setomnvar("ui_bomb_interacting", 1);
-        namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_emp_planting");
+        scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_emp_planting");
     } else {
         player.isdefusing = 1;
         setomnvar("ui_bomb_interacting", 3);
         namespace_f5675568ccc8acc6::function_7d42d3f8dd68280c(2, player.team, player getentitynumber());
-        namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_defend_empsite_nt", "icon_waypoint_emp_defusing");
-        namespace_5a22b6f3a56f7e9b::objective_teammask_removefrommask(self.radialtimeobjid, player.team);
+        scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_defend_empsite_nt", "icon_waypoint_emp_defusing");
+        scripts/mp/objidpoolmanager::objective_teammask_removefrommask(self.radialtimeobjid, player.team);
     }
     player thread allowedwhileplanting(0);
-    if (level.bombplanted && !namespace_19b4203b51d56488::isfriendlyteam(player.pers["team"])) {
-        player namespace_c52269d70f989750::notify_enemy_bots_bomb_used("defuse");
+    if (level.bombplanted && !scripts/mp/gameobjects::isfriendlyteam(player.pers["team"])) {
+        player scripts/mp/bots/bots_util::notify_enemy_bots_bomb_used("defuse");
         player.isdefusing = 1;
         setomnvar("ui_bomb_interacting", 3);
         setomnvar("ui_bomb_defuser", player getentitynumber());
@@ -793,7 +795,7 @@ function onbeginuse(player) {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b5d
 // Size: 0x94
@@ -808,26 +810,26 @@ function allowedwhileplanting(isallowed) {
     val::set("planting", "mantle", isallowed);
     val::set("planting", "offhand_weapons", isallowed);
     if (isallowed) {
-        val::function_c9d0b43701bdba00("planting");
+        val::reset_all("planting");
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bf8
 // Size: 0x199
 function onenduse(team, player, result) {
     objid = self.objidnum;
-    namespace_5a22b6f3a56f7e9b::objective_set_progress(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_show_progress(objid, 0);
+    scripts/mp/objidpoolmanager::objective_set_progress(objid, 0);
+    scripts/mp/objidpoolmanager::objective_show_progress(objid, 0);
     if (!result) {
         if (player.isdefusing) {
-            namespace_19b4203b51d56488::setobjectivestatusallicons("icon_waypoint_defuse_empsite_nt", "icon_waypoint_defend_empsite_nt", "mlg_icon_waypoint_emp_planted");
+            scripts/mp/gameobjects::setobjectivestatusallicons("icon_waypoint_defuse_empsite_nt", "icon_waypoint_defend_empsite_nt", "mlg_icon_waypoint_emp_planted");
         } else {
-            namespace_19b4203b51d56488::setobjectivestatusallicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite", undefined);
+            scripts/mp/gameobjects::setobjectivestatusallicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite", undefined);
         }
         if (isdefined(self.radialtimeobjid)) {
-            namespace_5a22b6f3a56f7e9b::objective_teammask_addtomask(self.radialtimeobjid, player.team);
+            scripts/mp/objidpoolmanager::objective_teammask_addtomask(self.radialtimeobjid, player.team);
         }
         if (player meleebuttonpressed()) {
             interruptbombplanting(player);
@@ -850,50 +852,50 @@ function onenduse(team, player, result) {
         player setclientomnvar("ui_objective_pinned_text_param", 0);
         player.ui_bomb_planting_defusing = undefined;
     }
-    if (!namespace_19b4203b51d56488::isfriendlyteam(player.pers["team"])) {
+    if (!scripts/mp/gameobjects::isfriendlyteam(player.pers["team"])) {
         if (isdefined(level.cyberemp) && !result) {
             level.cyberemp.visuals[0] show();
         }
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d98
 // Size: 0xcf
-function startnpcbombusesound(weaponname, var_cb3339ece72dbdeb) {
+function startnpcbombusesound(weaponname, soundname) {
     self endon("death");
     self endon("stopNpcBombSound");
     if (isanymlgmatch() || istrue(level.silentplant) || _hasperk("specialty_engineer")) {
         self setentitysoundcontext("silent_plant", "on");
         return;
     }
-    while (1) {
-        var_66b3db972ac1531e = self waittill("weapon_change");
-        if (var_66b3db972ac1531e.basename == weaponname) {
+    while (true) {
+        newweaponobj = self waittill("weapon_change");
+        if (newweaponobj.basename == weaponname) {
             break;
         }
     }
-    self playsoundtoteam(var_cb3339ece72dbdeb, self.team, self);
+    self playsoundtoteam(soundname, self.team, self);
     enemyteam = getotherteam(self.team)[0];
-    self playsoundtoteam(var_cb3339ece72dbdeb, enemyteam);
+    self playsoundtoteam(soundname, enemyteam);
     self waittill("weapon_change");
     self notify("stopNpcBombSound");
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e6e
 // Size: 0x3f9
-function onpickup(player, var_5760e0f038d1baa3, defused) {
+function onpickup(player, playervo, defused) {
     level notify("bomb_pickup");
-    if (istrue(level.allowempweapon)) {
+    if (istrue(level.allowEMPWeapon)) {
         curweapon = player getcurrentprimaryweapon();
         if (isdefined(curweapon.basename) && curweapon.basename == "iw8_lm_dblmg_mp") {
             player notify("switched_from_minigun");
         }
         player _giveweapon("iw9_cyberemp_mp");
-        if (!istrue(defused) && !player namespace_a2f809133c566621::isjuggernaut() && !isbot(player)) {
+        if (!istrue(defused) && !player scripts/mp/utility/killstreak::isjuggernaut() && !isbot(player)) {
             player _switchtoweaponimmediate("iw9_cyberemp_mp");
         }
     }
@@ -902,7 +904,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
     player setclientomnvar("ui_emp_carrier_hud", 1);
     namespace_f5675568ccc8acc6::function_7d42d3f8dd68280c(16, player.team, player getentitynumber());
     if (self.firstpickup) {
-        player thread doscoreevent(#"hash_bb78056c283362a4");
+        player thread doScoreEvent(#"emp_grab");
     }
     level.usestartspawns = 0;
     team = player.pers["team"];
@@ -924,32 +926,32 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
         }
         leaderdialog(var_a675744864c65c1, team, "bomb");
         leaderdialog("emppickup_enemy", otherteam, "bomb");
-        namespace_a34451ae3d453e::playsoundonplayers(game["bomb_recovered_sound"], team);
-        var_4725e52b7c3aa25c = getteamdata(player.team, "players");
-        level thread namespace_44abc05161e2e2cb::notifyteam("emp_pickup", "emp_pickup_enemy", player.team, var_4725e52b7c3aa25c);
-        player thread namespace_44abc05161e2e2cb::showsplash("emp_pickup");
+        scripts/mp/utility/sound::playsoundonplayers(game["bomb_recovered_sound"], team);
+        skipplayers = getteamdata(player.team, "players");
+        level thread scripts/mp/hud_message::notifyteam("emp_pickup", "emp_pickup_enemy", player.team, skipplayers);
+        player thread scripts/mp/hud_message::showsplash("emp_pickup");
         level thread teamplayercardsplash("callout_emppickup", player, player.team, undefined, 1);
     }
-    level thread namespace_44abc05161e2e2cb::updatematchstatushintforallplayers(player.team, "cyber_carrier_defend", "cyber_data_defend", player, "cyber_emp_plant");
+    level thread scripts/mp/hud_message::updatematchstatushintforallplayers(player.team, "cyber_carrier_defend", "cyber_data_defend", player, "cyber_emp_plant");
     self.offset3d = (0, 0, 85);
-    namespace_19b4203b51d56488::setownerteam(team);
-    namespace_19b4203b51d56488::allowuse("none");
+    scripts/mp/gameobjects::setownerteam(team);
+    scripts/mp/gameobjects::allowuse("none");
     if (isdefined(level.showenemycarrier)) {
         if (level.showenemycarrier == 0) {
-            namespace_19b4203b51d56488::setvisibleteam("friendly");
+            scripts/mp/gameobjects::setvisibleteam("friendly");
             objective_state(self.pingobjidnum, "done");
         } else {
-            namespace_19b4203b51d56488::setvisibleteam("friendly");
+            scripts/mp/gameobjects::setvisibleteam("friendly");
             objective_state(self.pingobjidnum, "current");
-            namespace_19b4203b51d56488::updatecompassicon("enemy", self.pingobjidnum);
+            scripts/mp/gameobjects::updatecompassicon("enemy", self.pingobjidnum);
             objective_icon(self.pingobjidnum, "icon_waypoint_kill");
         }
     }
-    namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_escort_emp", "waypoint_capture_kill");
-    level.objectives[team] namespace_19b4203b51d56488::setvisibleteam("none");
-    level.objectives[otherteam] namespace_19b4203b51d56488::setvisibleteam("any");
-    namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 0);
+    scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_escort_emp", "waypoint_capture_kill");
+    level.objectives[team] scripts/mp/gameobjects::setvisibleteam("none");
+    level.objectives[otherteam] scripts/mp/gameobjects::setvisibleteam("any");
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 0);
     var_7e2c53b0bcf117d9 = spawnstruct();
     var_7e2c53b0bcf117d9.player = player;
     var_7e2c53b0bcf117d9.eventname = "pickup";
@@ -957,7 +959,7 @@ function onpickup(player, var_5760e0f038d1baa3, defused) {
     namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_game_event", var_7e2c53b0bcf117d9);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x426e
 // Size: 0x172
@@ -965,78 +967,76 @@ function ondrop(player) {
     self notify("emp_dropped");
     setomnvar("ui_bomb_carrier", -1);
     if (level.bombplanted) {
-        namespace_19b4203b51d56488::setownerteam(player.team);
-        namespace_19b4203b51d56488::allowuse("none");
+        scripts/mp/gameobjects::setownerteam(player.team);
+        scripts/mp/gameobjects::allowuse("none");
     } else {
         foreach (objective in level.objectives) {
             objective resetbombsite(1);
         }
-        playsoundonplayers(game["bomb_dropped_sound"], namespace_19b4203b51d56488::getownerteam());
+        playsoundonplayers(game["bomb_dropped_sound"], scripts/mp/gameobjects::getownerteam());
         self.offset3d = (0, 0, 16);
-        namespace_19b4203b51d56488::allowuse("any");
-        namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_emp", "icon_waypoint_emp");
-        namespace_19b4203b51d56488::setownerteam("neutral");
-        namespace_19b4203b51d56488::setvisibleteam("any");
+        scripts/mp/gameobjects::allowuse("any");
+        scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_emp", "icon_waypoint_emp");
+        scripts/mp/gameobjects::setownerteam("neutral");
+        scripts/mp/gameobjects::setvisibleteam("any");
         if (isdefined(player)) {
-            printonteamarg("MP/EXPLOSIVES_DROPPED_BY", namespace_19b4203b51d56488::getownerteam(), player);
+            printonteamarg("MP/EXPLOSIVES_DROPPED_BY", scripts/mp/gameobjects::getownerteam(), player);
         }
-        level thread namespace_44abc05161e2e2cb::updatematchstatushintforallplayers(player.team, "cyber_emp_pickup", "cyber_emp_pickup");
+        level thread scripts/mp/hud_message::updatematchstatushintforallplayers(player.team, "cyber_emp_pickup", "cyber_emp_pickup");
         if (level.idleresettime > 0) {
             thread returnaftertime();
         }
     }
-    if (istrue(level.allowempweapon)) {
+    if (istrue(level.allowEMPWeapon)) {
         player _takeweapon("iw9_cyberemp_mp");
         player switchtolastweapon();
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x43e7
 // Size: 0xae
 function returnaftertime() {
     level endon("bomb_pickup");
-    var_8e53d4ca3de8531a = 0;
-    while (var_8e53d4ca3de8531a < level.idleresettime) {
+    for (currentwaittime = 0; currentwaittime < level.idleresettime; currentwaittime = currentwaittime + level.framedurationseconds) {
         waitframe();
         if (self.ownerteam == "neutral") {
-            var_8e53d4ca3de8531a = var_8e53d4ca3de8531a + level.framedurationseconds;
         }
     }
     foreach (team in level.teamnamelist) {
         playsoundonplayers(game["bomb_dropped_sound"], team);
     }
-    namespace_19b4203b51d56488::returnhome();
+    scripts/mp/gameobjects::returnhome();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x449c
 // Size: 0x5d3
 function onuse(player) {
     team = player.pers["team"];
     otherteam = getotherteam(team)[0];
-    if (!namespace_19b4203b51d56488::isfriendlyteam(player.pers["team"]) && !level.bombplanted) {
+    if (!scripts/mp/gameobjects::isfriendlyteam(player.pers["team"]) && !level.bombplanted) {
         level thread empjamandrumbleclients(0);
-        setomnvar("ui_bomb_timer_endtime_a", int(namespace_d576b6dc7cef9c62::gettimeremaining()) + gettime());
+        setomnvar("ui_bomb_timer_endtime_a", int(scripts/mp/gamelogic::gettimeremaining()) + gettime());
         level notify("bomb_planted");
         player notify("bomb_planted");
         player notify("objective", "plant");
         namespace_f5675568ccc8acc6::function_7d42d3f8dd68280c(15, player.team, player getentitynumber());
-        var_4725e52b7c3aa25c = [];
-        var_4725e52b7c3aa25c[var_4725e52b7c3aa25c.size] = player;
-        level thread namespace_44abc05161e2e2cb::notifyteam("emp_planted", "emp_planted_enemy", player.team, var_4725e52b7c3aa25c);
-        player thread namespace_44abc05161e2e2cb::showsplash("emp_planted", namespace_62c556437da28f50::getscoreinfovalue(#"plant"));
+        skipplayers = [];
+        skipplayers[skipplayers.size] = player;
+        level thread scripts/mp/hud_message::notifyteam("emp_planted", "emp_planted_enemy", player.team, skipplayers);
+        player thread scripts/mp/hud_message::showsplash("emp_planted", scripts/mp/rank::getscoreinfovalue(#"plant"));
         level thread teamplayercardsplash("callout_empplanted", player, undefined, undefined, 1);
-        level thread namespace_44abc05161e2e2cb::updatematchstatushintforallplayers(player.team, "cyber_emp_defend", "cyber_emp_defsue");
+        level thread scripts/mp/hud_message::updatematchstatushintforallplayers(player.team, "cyber_emp_defend", "cyber_emp_defsue");
         player setclientomnvar("ui_emp_carrier_hud", 0);
         leaderdialog("empplanted_friendly", team);
         player playsoundtoteam("mp_bombplaced_friendly", team);
         leaderdialog("empplanted_enemy", otherteam);
         player playsoundtoteam("mp_bombplaced_enemy", otherteam);
-        player thread doscoreevent(#"plant");
-        player namespace_aad14af462a74d08::onplant();
+        player thread doScoreEvent(#"plant");
+        player scripts/cp_mp/challenges::onplant();
         var_7e2c53b0bcf117d9 = spawnstruct();
         var_7e2c53b0bcf117d9.player = player;
         var_7e2c53b0bcf117d9.eventname = "plant";
@@ -1044,10 +1044,10 @@ function onuse(player) {
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_game_event", var_7e2c53b0bcf117d9);
         player.bombplantedtime = gettime();
         player incpersstat("plants", 1);
-        player namespace_b919c4be206d3c80::function_48544e365f4f5648(15, 1);
-        player namespace_2685ec368e022695::statsetchild("round", "plants", player.pers["plants"]);
+        player scripts/mp/codcasterclientmatchdata::function_48544e365f4f5648(15, 1);
+        player scripts/mp/persistence::statsetchild("round", "plants", player.pers["plants"]);
         player setextrascore0(player.pers["plants"]);
-        player namespace_74465391b3cf76b::addplantingcharge();
+        player scripts/cp_mp/pet_watch::addplantingcharge();
         level.bombplanted = 1;
         level thread bombplanted(self, player.pers["team"]);
         level.bombowner = player;
@@ -1055,63 +1055,63 @@ function onuse(player) {
         if (level.codcasterenabled) {
             player setgametypevip(0);
         }
-        level.cyberemp namespace_19b4203b51d56488::setdropped();
-        level.cyberemp namespace_19b4203b51d56488::allowuse("none");
-        level.cyberemp namespace_19b4203b51d56488::setvisibleteam("none");
-        if (istrue(level.allowempweapon)) {
+        level.cyberemp scripts/mp/gameobjects::setdropped();
+        level.cyberemp scripts/mp/gameobjects::allowuse("none");
+        level.cyberemp scripts/mp/gameobjects::setvisibleteam("none");
+        if (istrue(level.allowEMPWeapon)) {
             player _takeweapon("iw9_cyberemp_mp");
             player switchtolastweapon();
         }
         self.useweapon = makeweapon("iw9_cyberemp_defuse_mp");
         setupfordefusing(self, player);
-    } else {
-        player notify("bomb_defused");
-        player notify("objective", "defuse");
-        var_4555368557dc49ac = function_72118bfd9964ea0a(otherteam);
-        if (var_4555368557dc49ac) {
-            var_ebbe93b2cf924047 = "empdefused_final_friendly";
-            var_ad194f060980b384 = "empdefused_final_enemy";
-            level.var_1242a000845a4331 = 1;
-        } else {
-            var_ebbe93b2cf924047 = "empdefused_friendly";
-            var_ad194f060980b384 = "empdefused_enemy";
-        }
-        leaderdialog(var_ebbe93b2cf924047, team);
-        leaderdialog(var_ad194f060980b384, otherteam);
-        var_4725e52b7c3aa25c = [];
-        var_4725e52b7c3aa25c[var_4725e52b7c3aa25c.size] = player;
-        level thread namespace_44abc05161e2e2cb::notifyteam("emp_defuse", "emp_defuse_enemy", player.team, var_4725e52b7c3aa25c);
-        level thread teamplayercardsplash("callout_empdefused", player, undefined, undefined, 1);
-        level thread namespace_44abc05161e2e2cb::updatematchstatushintforallplayers(player.team, "cyber_carrier_defend", "cyber_data_defend", player, "cyber_emp_plant");
-        if (isdefined(level.bombowner) && level.bombowner.bombplantedtime + 3000 + level.defusetime * 1000 > gettime() && isreallyalive(level.bombowner)) {
-            player thread namespace_62c556437da28f50::scoreeventpopup(#"ninja_defuse");
-            player thread namespace_44abc05161e2e2cb::showsplash("ninja_defuse", namespace_62c556437da28f50::getscoreinfovalue(#"defuse"));
-        } else {
-            player thread namespace_62c556437da28f50::scoreeventpopup(#"defuse");
-            player thread namespace_44abc05161e2e2cb::showsplash("emp_defuse", namespace_62c556437da28f50::getscoreinfovalue(#"defuse"));
-        }
-        player thread namespace_48a08c5037514e04::doscoreevent(#"hash_d42f3a6d11e62127");
-        player incpersstat("defuses", 1);
-        player namespace_b919c4be206d3c80::function_48544e365f4f5648(15, 1);
-        player namespace_2685ec368e022695::statsetchild("round", "defuses", player.pers["defuses"]);
-        namespace_aad14af462a74d08::function_c51330573171a1be(player);
-        var_7e2c53b0bcf117d9 = spawnstruct();
-        var_7e2c53b0bcf117d9.player = player;
-        var_7e2c53b0bcf117d9.eventname = "defuse";
-        var_7e2c53b0bcf117d9.position = player.origin;
-        namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_game_event", var_7e2c53b0bcf117d9);
-        level.bombplanted = 0;
-        level thread bombdefused(self);
-        resetbombsite(1, player);
-        if (var_4555368557dc49ac) {
-            wait(3);
-        }
-        level.cyberemp namespace_19b4203b51d56488::allowuse("any");
-        level.cyberemp namespace_19b4203b51d56488::setpickedup(player, 0, 1);
+        return;
     }
+    player notify("bomb_defused");
+    player notify("objective", "defuse");
+    defusedgameend = isenemyteameliminated(otherteam);
+    if (defusedgameend) {
+        var_ebbe93b2cf924047 = "empdefused_final_friendly";
+        var_ad194f060980b384 = "empdefused_final_enemy";
+        level.var_1242a000845a4331 = 1;
+    } else {
+        var_ebbe93b2cf924047 = "empdefused_friendly";
+        var_ad194f060980b384 = "empdefused_enemy";
+    }
+    leaderdialog(var_ebbe93b2cf924047, team);
+    leaderdialog(var_ad194f060980b384, otherteam);
+    skipplayers = [];
+    skipplayers[skipplayers.size] = player;
+    level thread scripts/mp/hud_message::notifyteam("emp_defuse", "emp_defuse_enemy", player.team, skipplayers);
+    level thread teamplayercardsplash("callout_empdefused", player, undefined, undefined, 1);
+    level thread scripts/mp/hud_message::updatematchstatushintforallplayers(player.team, "cyber_carrier_defend", "cyber_data_defend", player, "cyber_emp_plant");
+    if (isdefined(level.bombowner) && level.bombowner.bombplantedtime + 3000 + level.defusetime * 1000 > gettime() && isreallyalive(level.bombowner)) {
+        player thread scripts/mp/rank::scoreeventpopup(#"ninja_defuse");
+        player thread scripts/mp/hud_message::showsplash("ninja_defuse", scripts/mp/rank::getscoreinfovalue(#"defuse"));
+    } else {
+        player thread scripts/mp/rank::scoreeventpopup(#"defuse");
+        player thread scripts/mp/hud_message::showsplash("emp_defuse", scripts/mp/rank::getscoreinfovalue(#"defuse"));
+    }
+    player thread scripts/mp/utility/points::doScoreEvent(#"hash_d42f3a6d11e62127");
+    player incpersstat("defuses", 1);
+    player scripts/mp/codcasterclientmatchdata::function_48544e365f4f5648(15, 1);
+    player scripts/mp/persistence::statsetchild("round", "defuses", player.pers["defuses"]);
+    scripts/cp_mp/challenges::function_c51330573171a1be(player);
+    var_7e2c53b0bcf117d9 = spawnstruct();
+    var_7e2c53b0bcf117d9.player = player;
+    var_7e2c53b0bcf117d9.eventname = "defuse";
+    var_7e2c53b0bcf117d9.position = player.origin;
+    namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_on_game_event", var_7e2c53b0bcf117d9);
+    level.bombplanted = 0;
+    level thread bombdefused(self);
+    resetbombsite(1, player);
+    if (defusedgameend) {
+        wait(3);
+    }
+    level.cyberemp scripts/mp/gameobjects::allowuse("any");
+    level.cyberemp scripts/mp/gameobjects::setpickedup(player, 0, 1);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a76
 // Size: 0xdb
@@ -1130,93 +1130,91 @@ function empjamandrumbleclients(rumble, endgame) {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b58
 // Size: 0xcb
 function resetbombsite(defused, player, matchstart) {
     if (!defused) {
-        namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_planted_empsite", "icon_waypoint_target_empsite");
-        namespace_19b4203b51d56488::setvisibleteam("any");
-    } else {
-        if (istrue(matchstart)) {
-            goto LOC_000000c9;
-        }
-        if (isdefined(player)) {
-            self.ownerteam = player.team;
-        }
-        self.id = "bomb_zone";
-        namespace_19b4203b51d56488::allowuse("none");
-        namespace_19b4203b51d56488::setvisibleteam("none");
-        namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 1);
-        namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 1);
-    LOC_000000c9:
+        scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_planted_empsite", "icon_waypoint_target_empsite");
+        scripts/mp/gameobjects::setvisibleteam("any");
+        return;
     }
-LOC_000000c9:
+    if (istrue(matchstart)) {
+        return;
+    }
+    if (isdefined(player)) {
+        self.ownerteam = player.team;
+    }
+    self.id = "bomb_zone";
+    scripts/mp/gameobjects::allowuse("none");
+    scripts/mp/gameobjects::setvisibleteam("none");
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 1);
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 1);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c2a
 // Size: 0x97
 function setupforplanting() {
     self.trigger enableplayeruse(level.cyberemp.carrier);
-    namespace_19b4203b51d56488::allowuse("enemy");
-    namespace_19b4203b51d56488::setusetime(level.planttime);
-    namespace_19b4203b51d56488::setusetext("MP/PLANTING_EXPLOSIVE");
-    namespace_19b4203b51d56488::setusehinttext("MP/HOLD_TO_PLANT_EMP");
-    namespace_19b4203b51d56488::setkeyobject(level.cyberemp);
+    scripts/mp/gameobjects::allowuse("enemy");
+    scripts/mp/gameobjects::setusetime(level.planttime);
+    scripts/mp/gameobjects::setusetext("MP/PLANTING_EXPLOSIVE");
+    scripts/mp/gameobjects::setusehinttext("MP/HOLD_TO_PLANT_EMP");
+    scripts/mp/gameobjects::setkeyobject(level.cyberemp);
     self.useweapon = makeweapon("iw9_cyberemp_plant_mp");
-    namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite");
+    scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_defend_empsite", "icon_waypoint_target_empsite");
     self.bombplanted = 0;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cc8
 // Size: 0x1e4
 function setupfordefusing(defuseobject, player) {
     self.trigger setusepriority(-1 - 1 - 1 - 1);
     self.ownerteam = player.team;
-    namespace_19b4203b51d56488::allowuse("enemy");
-    namespace_19b4203b51d56488::setusetime(level.defusetime);
-    namespace_19b4203b51d56488::setusetext("MP/DEFUSING_EXPLOSIVE");
-    namespace_19b4203b51d56488::setusehinttext("MP/HOLD_TO_DEFUSE_EMP");
-    namespace_19b4203b51d56488::setkeyobject(undefined);
-    namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_defend_empsite_nt", "icon_waypoint_defuse_empsite_nt");
-    thread namespace_fa795886dfc5f58a::bombradialfill(player.team, "icon_waypoint_planted_empsite", "icon_waypoint_defuse_empsite");
-    namespace_19b4203b51d56488::setvisibleteam("any", self.radialtimeobjid);
+    scripts/mp/gameobjects::allowuse("enemy");
+    scripts/mp/gameobjects::setusetime(level.defusetime);
+    scripts/mp/gameobjects::setusetext("MP/DEFUSING_EXPLOSIVE");
+    scripts/mp/gameobjects::setusehinttext("MP/HOLD_TO_DEFUSE_EMP");
+    scripts/mp/gameobjects::setkeyobject(undefined);
+    scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_defend_empsite_nt", "icon_waypoint_defuse_empsite_nt");
+    thread scripts/mp/gametypes/obj_bombzone::bombradialfill(player.team, "icon_waypoint_planted_empsite", "icon_waypoint_defuse_empsite");
+    scripts/mp/gameobjects::setvisibleteam("any", self.radialtimeobjid);
     self.id = "defuse_object";
     self.bombplanted = 1;
-    var_b0c33d224b825287 = getenemyteams(player.team);
-    var_3aaa5fb58a6c2eb7 = var_b0c33d224b825287[0];
-    foreach (p in getteamdata(var_3aaa5fb58a6c2eb7, "players")) {
+    enemyteams = getenemyteams(player.team);
+    defuseownerteam = enemyteams[0];
+    foreach (p in getteamdata(defuseownerteam, "players")) {
         self.trigger enableplayeruse(p);
     }
-    if (istrue(level.var_998e6c3eeb879000)) {
+    if (istrue(level.scriptedsetup)) {
         teammates = getsquadmates(player.team);
-        foreach (var_c98aac0e8e6eaf8c in teammates) {
-            self.trigger disableplayeruse(var_c98aac0e8e6eaf8c);
+        foreach (mate in teammates) {
+            self.trigger disableplayeruse(mate);
         }
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4eb3
 // Size: 0x6b
 function bombdefused(object) {
-    namespace_d576b6dc7cef9c62::resumetimer();
+    scripts/mp/gamelogic::resumetimer();
     level.timelimitoverride = 0;
     level.scorelimitoverride = 0;
     object.bombplanted = 0;
     setomnvar("ui_bomb_owner_team", -1);
     level thread [[ level.updategameevents ]]();
-    object.visuals[0] namespace_d576b6dc7cef9c62::stoptickingsound();
+    object.visuals[0] scripts/mp/gamelogic::stoptickingsound();
     level notify("bomb_defused");
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f25
 // Size: 0xc
@@ -1224,13 +1222,13 @@ function oncantuse(player) {
     
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f38
 // Size: 0x493
 function bombplanted(destroyedobj, team) {
     level endon("overtime");
-    namespace_d576b6dc7cef9c62::pausetimer();
+    scripts/mp/gamelogic::pausetimer();
     setomnvar("ui_match_timer_stopped", 0);
     level.bombplantedteam = team;
     level.timelimitoverride = 1;
@@ -1243,12 +1241,12 @@ function bombplanted(destroyedobj, team) {
         }
     }
     setgameendtime(int(gettime() + level.bombtimer * 1000));
-    destroyedobj.visuals[0] thread namespace_d576b6dc7cef9c62::playtickingsound();
+    destroyedobj.visuals[0] thread scripts/mp/gamelogic::playtickingsound();
     starttime = gettime();
     thread bomb_pre_exp_music();
     thread bomb_pre_exp_sfx_wait(destroyedobj.visuals[0].origin);
     bombtimerwait();
-    destroyedobj.visuals[0] namespace_d576b6dc7cef9c62::stoptickingsound();
+    destroyedobj.visuals[0] scripts/mp/gamelogic::stoptickingsound();
     if (!level.bombplanted) {
         if (level.persbombtimer) {
             timepassed = (gettime() - starttime) / 1000;
@@ -1262,13 +1260,13 @@ function bombplanted(destroyedobj, team) {
     if (isdefined(level.bombowner)) {
         destroyedobj.visuals[0] radiusdamage(explosionorigin, 512, 1, 1, level.bombowner, "MOD_EXPLOSIVE", "bomb_site_mp");
         level.bombowner incpersstat("destructions", 1);
-        level.bombowner namespace_2685ec368e022695::statsetchild("round", "destructions", level.bombowner.pers["destructions"]);
+        level.bombowner scripts/mp/persistence::statsetchild("round", "destructions", level.bombowner.pers["destructions"]);
     } else {
         destroyedobj.visuals[0] radiusdamage(explosionorigin, 512, 1, 1, undefined, "MOD_EXPLOSIVE", "bomb_site_mp");
     }
     playsoundatpos(explosionorigin, "iw9_exp_cyber_emp_close");
-    var_9af72bbdfdeace5d = destroyedobj.visuals[0] gettagorigin("tag_origin");
-    explosioneffect = spawnfx(level._effect["emp_detonation"], var_9af72bbdfdeace5d);
+    vfxorigin = destroyedobj.visuals[0] gettagorigin("tag_origin");
+    explosioneffect = spawnfx(level._effect["emp_detonation"], vfxorigin);
     triggerfx(explosioneffect);
     earthquake(0.6, 1.5, explosionorigin, 10000);
     destroyedobj.visuals[0] setmodel("misc_carepackage_friendly_dmg");
@@ -1287,25 +1285,25 @@ function bombplanted(destroyedobj, team) {
         exploder(destroyedobj.exploderindex);
     }
     destroyedobj.bombplanted = 0;
-    level.cyberemp namespace_19b4203b51d56488::setvisibleteam("none");
-    level.objectives["allies"] namespace_19b4203b51d56488::setvisibleteam("none");
-    level.objectives["axis"] namespace_19b4203b51d56488::setvisibleteam("none");
-    namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 0);
+    level.cyberemp scripts/mp/gameobjects::setvisibleteam("none");
+    level.objectives["allies"] scripts/mp/gameobjects::setvisibleteam("none");
+    level.objectives["axis"] scripts/mp/gameobjects::setvisibleteam("none");
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["allies"].objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_show_for_mlg_spectator(level.objectives["axis"].objidnum, 0);
     setgameendtime(0);
     level.scorelimitoverride = 1;
     if (isdefined(level.bombowner)) {
         level thread teamplayercardsplash("callout_destroyed_cyberbombsite", level.bombowner);
     }
-    destroyedobj namespace_19b4203b51d56488::releaseid();
+    destroyedobj scripts/mp/gameobjects::releaseid();
     if (istrue(level.nukeinfo.incoming)) {
         return;
     }
     wait(3);
-    thread namespace_d576b6dc7cef9c62::endgame(team, game["end_reason"]["target_destroyed"], undefined, undefined, level.detonatescore);
+    thread scripts/mp/gamelogic::endgame(team, game["end_reason"]["target_destroyed"], undefined, undefined, level.detonatescore);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x53d2
 // Size: 0x5a
@@ -1315,30 +1313,30 @@ function bombtimerwait() {
     var_4dfaa92e2bce1194 = int(level.bombtimer * 1000 + gettime());
     setomnvar("ui_bomb_timer_endtime", var_4dfaa92e2bce1194);
     level thread handlehostmigration(var_4dfaa92e2bce1194);
-    namespace_e323c8674b44c8f4::waitlongdurationwithgameendtimeupdate(level.bombtimer);
+    scripts/mp/hostmigration::waitlongdurationwithgameendtimeupdate(level.bombtimer);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5433
 // Size: 0x13
 function bomb_pre_exp_music() {
-    thread namespace_3bde6869e44a2770::stopsuspensemusic();
-    thread namespace_3bde6869e44a2770::bombplanted_music();
+    thread scripts/mp/music_and_dialog::stopsuspensemusic();
+    thread scripts/mp/music_and_dialog::bombplanted_music();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x544d
 // Size: 0x3d
-function bomb_pre_exp_sfx_wait(var_80b64a135ea82d49) {
+function bomb_pre_exp_sfx_wait(sfx_org) {
     level endon("bomb_defused");
     level endon("overtime_ended");
     wait(max(level.bombtimer - 2, 0.1));
-    playsoundatpos(var_80b64a135ea82d49, "iw9_exp_cyber_emp_preexplode");
+    playsoundatpos(sfx_org, "iw9_exp_cyber_emp_preexplode");
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5491
 // Size: 0x55
@@ -1348,13 +1346,13 @@ function handlehostmigration(var_4dfaa92e2bce1194) {
     level endon("game_ended");
     level endon("disconnect");
     level waittill("host_migration_begin");
-    timepassed = namespace_e323c8674b44c8f4::waittillhostmigrationdone();
+    timepassed = scripts/mp/hostmigration::waittillhostmigrationdone();
     if (timepassed > 0) {
         setomnvar("ui_bomb_timer_endtime", var_4dfaa92e2bce1194 + timepassed);
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x54ed
 // Size: 0x2f
@@ -1365,7 +1363,7 @@ function overtimethread(time) {
     level.disablespawning = 1;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5523
 // Size: 0x86
@@ -1373,14 +1371,14 @@ function givelastonteamwarning() {
     self endon("death_or_disconnect");
     level endon("game_ended");
     waittillrecoveredhealth(3);
-    level thread namespace_25c5a6f43bb97b43::trysaylocalsound(self, #"hash_915f01baa2419c9f");
+    level thread scripts/mp/battlechatter_mp::trysaylocalsound(self, #"hash_915f01baa2419c9f");
     otherteam = getotherteam(self.pers["team"])[0];
     level thread teamplayercardsplash("callout_lastteammemberalive", self, self.pers["team"]);
     level thread teamplayercardsplash("callout_lastenemyalive", self, otherteam);
     level notify("last_alive", self);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x55b0
 // Size: 0x31
@@ -1389,17 +1387,17 @@ function ontimelimit() {
         return;
     }
     function_f0f967947c6a7ec8();
-    thread namespace_d576b6dc7cef9c62::endgame("tie", game["end_reason"]["cyber_tie"]);
+    thread scripts/mp/gamelogic::endgame("tie", game["end_reason"]["cyber_tie"]);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x55e8
 // Size: 0xfb
-function onspawnplayer(var_9156b53bcf7ce573) {
+function onspawnplayer(revivespawn) {
     self setclientomnvar("ui_securing", 0);
     self setclientomnvar("ui_securing_progress", 0);
-    namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("hide_match_hint");
+    scripts/mp/hud_message::function_f004ef4606b9efdc("hide_match_hint");
     if (level.multibomb) {
         self setclientomnvar("ui_emp_carrier_hud", 1);
     } else {
@@ -1421,7 +1419,7 @@ function onspawnplayer(var_9156b53bcf7ce573) {
     thread updatematchstatushintonspawn();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x56ea
 // Size: 0x87
@@ -1436,33 +1434,35 @@ function updatebombsiteusability() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5778
 // Size: 0xf1
 function updatematchstatushintonspawn() {
     if (level.bombplanted) {
         if (isdefined(level.bombplantedteam) && level.bombplantedteam == self.team) {
-            namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("cyber_emp_defend");
+            scripts/mp/hud_message::function_f004ef4606b9efdc("cyber_emp_defend");
         } else {
-            namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("cyber_emp_defsue");
+            scripts/mp/hud_message::function_f004ef4606b9efdc("cyber_emp_defsue");
         }
-    } else if (isdefined(level.cyberemp) && isdefined(level.cyberemp.carrier)) {
+        return;
+    }
+    if (isdefined(level.cyberemp) && isdefined(level.cyberemp.carrier)) {
         if (level.cyberemp.carrier.team == self.team) {
             if (level.cyberemp.carrier == self) {
-                namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("cyber_emp_plant");
+                scripts/mp/hud_message::function_f004ef4606b9efdc("cyber_emp_plant");
             } else {
-                namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("cyber_carrier_defend");
+                scripts/mp/hud_message::function_f004ef4606b9efdc("cyber_carrier_defend");
             }
         } else {
-            namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("cyber_data_defend");
+            scripts/mp/hud_message::function_f004ef4606b9efdc("cyber_data_defend");
         }
-    } else {
-        namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("cyber_emp_pickup");
+        return;
     }
+    scripts/mp/hud_message::function_f004ef4606b9efdc("cyber_emp_pickup");
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5870
 // Size: 0x5d
@@ -1474,19 +1474,19 @@ function function_f0f967947c6a7ec8() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x58d4
 // Size: 0x42
 function interruptbombplanting(player) {
     if (istrue(player.isplanting) && isdefined(player.lastnonuseweapon)) {
         player _switchtoweaponimmediate(player.lastnonuseweapon);
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x591e
 // Size: 0x179
@@ -1498,24 +1498,30 @@ function ondeadevent(team) {
     if (team == "all") {
         if (level.bombplanted) {
             otherteam = getotherteam(level.bombplantedteam)[0];
-            thread namespace_d576b6dc7cef9c62::endgame(level.bombplantedteam, game["end_reason"][tolower(game[otherteam]) + "_eliminated"], undefined, undefined, level.detonatescore);
+            thread scripts/mp/gamelogic::endgame(level.bombplantedteam, game["end_reason"][tolower(game[otherteam]) + "_eliminated"], undefined, undefined, level.detonatescore);
         } else {
-            thread namespace_d576b6dc7cef9c62::endgame("tie", game["end_reason"]["tie"]);
+            thread scripts/mp/gamelogic::endgame("tie", game["end_reason"]["tie"]);
         }
-    } else if (level.bombplanted) {
+        return;
+    }
+    if (level.bombplanted) {
         if (team != level.bombplantedteam) {
-            thread namespace_d576b6dc7cef9c62::endgame(level.bombplantedteam, game["end_reason"][tolower(game[team]) + "_eliminated"], undefined, undefined, level.detonatescore);
+            thread scripts/mp/gamelogic::endgame(level.bombplantedteam, game["end_reason"][tolower(game[team]) + "_eliminated"], undefined, undefined, level.detonatescore);
         } else {
             return;
         }
-    } else if (team == game["attackers"]) {
-        level thread namespace_d576b6dc7cef9c62::endgame(game["defenders"], game["end_reason"][tolower(game[game["attackers"]]) + "_eliminated"]);
-    } else if (team == game["defenders"]) {
-        level thread namespace_d576b6dc7cef9c62::endgame(game["attackers"], game["end_reason"][tolower(game[game["defenders"]]) + "_eliminated"]);
+        return;
+    }
+    if (team == game["attackers"]) {
+        level thread scripts/mp/gamelogic::endgame(game["defenders"], game["end_reason"][tolower(game[game["attackers"]]) + "_eliminated"]);
+        return;
+    }
+    if (team == game["defenders"]) {
+        level thread scripts/mp/gamelogic::endgame(game["attackers"], game["end_reason"][tolower(game[game["defenders"]]) + "_eliminated"]);
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a9e
 // Size: 0x49
@@ -1530,11 +1536,11 @@ function ononeleftevent(team) {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x5aee
 // Size: 0xc4
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     self setclientomnvar("ui_emp_carrier_hud", 0);
     thread checkallowspectating();
     if (!isplayer(attacker) || attacker.team == self.team) {
@@ -1543,10 +1549,10 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
     if (self.isbombcarrier && level.codcasterenabled) {
         self setgametypevip(0);
     }
-    awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00);
+    awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bb9
 // Size: 0x89
@@ -1562,11 +1568,11 @@ function checkallowspectating() {
         update = 1;
     }
     if (update) {
-        namespace_5aeecefc462876::updatespectatesettings();
+        scripts/mp/spectating::updatespectatesettings();
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c49
 // Size: 0xe8
@@ -1575,15 +1581,19 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
     if (victim.isplanting) {
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "planting");
         attacker incpersstat("defends", 1);
-        attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
-    } else if (victim.isbombcarrier) {
+        attacker scripts/mp/persistence::statsetchild("round", "defends", attacker.pers["defends"]);
+        return;
+    }
+    if (victim.isbombcarrier) {
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "carrying");
-    } else if (victim.isdefusing) {
+        return;
+    }
+    if (victim.isdefusing) {
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "defusing");
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d38
 // Size: 0x1b
@@ -1593,44 +1603,44 @@ function printothint() {
     self.otspawned = 1;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d5a
 // Size: 0x487
-function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     var_9ff9376383f4bc58 = 0;
     var_8363beb01b537d3e = 0;
-    var_88f4967a49a22ed7 = 0;
+    awardeddefend = 0;
     victim = self;
-    var_f7ded1fdb02a123d = victim.origin;
-    var_86c1c8628b1d55f8 = attacker.origin;
+    victimpos = victim.origin;
+    attackerpos = attacker.origin;
     attackerisinflictor = 0;
     if (isdefined(einflictor)) {
-        var_86c1c8628b1d55f8 = einflictor.origin;
+        attackerpos = einflictor.origin;
         attackerisinflictor = einflictor == attacker;
     }
     if (isdefined(level.cyberemp.carrier)) {
         if (isdefined(attacker) && isplayer(attacker) && attacker.pers["team"] != victim.pers["team"]) {
             if (isdefined(attacker.isbombcarrier) && attackerisinflictor && isdefined(objweapon) && objweapon.basename == "iw9_cyberemp_mp") {
-                attacker thread namespace_62c556437da28f50::scoreeventpopup(#"hash_381f16dd2b01c743");
-                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_8f7ff4d5395b6ac3");
+                attacker thread scripts/mp/rank::scoreeventpopup(#"hash_381f16dd2b01c743");
+                attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_8f7ff4d5395b6ac3");
             } else if (istrue(victim.isbombcarrier)) {
                 victim.isbombcarrier = 0;
                 if (istrue(victim.showempminimap)) {
                     victim hideminimap();
                 }
-                attacker thread namespace_62c556437da28f50::scoreeventpopup(#"hash_a019ba6fda76386");
-                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2e0245db0447f036");
-                thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "carrying");
+                attacker thread scripts/mp/rank::scoreeventpopup(#"hash_a019ba6fda76386");
+                attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_2e0245db0447f036");
+                thread utility::trycall(level.matchdata_logvictimkillevent, killid, "carrying");
             }
             if (attacker.pers["team"] == level.cyberemp.ownerteam && attacker != level.cyberemp.carrier) {
-                var_db36f135f40e7940 = distancesquared(level.cyberemp.carrier.origin, var_86c1c8628b1d55f8);
+                var_db36f135f40e7940 = distancesquared(level.cyberemp.carrier.origin, attackerpos);
                 if (var_db36f135f40e7940 < 105625) {
-                    attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
+                    attacker thread scripts/mp/rank::scoreeventpopup(#"defend");
+                    attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_2d96ced878338cd2");
                     attacker incpersstat("defends", 1);
-                    attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
-                    thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
+                    attacker scripts/mp/persistence::statsetchild("round", "defends", attacker.pers["defends"]);
+                    thread utility::trycall(level.matchdata_logvictimkillevent, killid, "defending");
                 }
             }
         }
@@ -1639,62 +1649,61 @@ function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objwea
         if (istrue(bombzone.trigger.trigger_off)) {
             continue;
         }
-        ownerteam = bombzone namespace_19b4203b51d56488::getownerteam();
+        ownerteam = bombzone scripts/mp/gameobjects::getownerteam();
         if (ownerteam != attacker.team) {
-            var_a3a2ce8b8e74ebef = distsquaredcheck(bombzone.trigger, var_86c1c8628b1d55f8, var_f7ded1fdb02a123d);
+            var_a3a2ce8b8e74ebef = distsquaredcheck(bombzone.trigger, attackerpos, victimpos);
             if (var_a3a2ce8b8e74ebef) {
                 var_8363beb01b537d3e = 1;
-                attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
+                attacker thread scripts/mp/rank::scoreeventpopup(#"assault");
+                attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_5a3b180273be47b1");
                 bombzone notify("assault", attacker);
-                thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
+                thread utility::trycall(level.matchdata_logattackerkillevent, killid, "assaulting");
                 continue;
             }
-        } else {
-            var_f6a091229a5e7b04 = distsquaredcheck(bombzone.trigger, var_86c1c8628b1d55f8, var_f7ded1fdb02a123d);
-            if (var_f6a091229a5e7b04) {
-                var_88f4967a49a22ed7 = 1;
-                attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
-                bombzone notify("defend", attacker);
-                attacker incpersstat("defends", 1);
-                attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
-                thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "defending");
-                continue;
-            }
+            continue;
+        }
+        givedefend = distsquaredcheck(bombzone.trigger, attackerpos, victimpos);
+        if (givedefend) {
+            awardeddefend = 1;
+            attacker thread scripts/mp/rank::scoreeventpopup(#"defend");
+            attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_2d96ced878338cd2");
+            bombzone notify("defend", attacker);
+            attacker incpersstat("defends", 1);
+            attacker scripts/mp/persistence::statsetchild("round", "defends", attacker.pers["defends"]);
+            thread utility::trycall(level.matchdata_logattackerkillevent, killid, "defending");
         }
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x61e8
 // Size: 0xbe
-function distsquaredcheck(trigger, var_86c1c8628b1d55f8, var_f7ded1fdb02a123d) {
-    var_9ae8b00a8e8f64fa = distancesquared(trigger.origin, var_86c1c8628b1d55f8);
-    var_1881a89c6f1e8775 = distancesquared(trigger.origin, var_f7ded1fdb02a123d);
+function distsquaredcheck(trigger, attackerpos, victimpos) {
+    var_9ae8b00a8e8f64fa = distancesquared(trigger.origin, attackerpos);
+    var_1881a89c6f1e8775 = distancesquared(trigger.origin, victimpos);
     if (var_9ae8b00a8e8f64fa < 105625 || var_1881a89c6f1e8775 < 105625) {
         if (!isdefined(trigger.modifieddefendcheck)) {
             return 1;
-        } else if (var_86c1c8628b1d55f8[2] - trigger.origin[2] < 100 || var_f7ded1fdb02a123d[2] - trigger.origin[2] < 100) {
+        } else if (attackerpos[2] - trigger.origin[2] < 100 || victimpos[2] - trigger.origin[2] < 100) {
             return 1;
         } else {
             return 0;
         }
-    } else {
-        return 0;
+        return;
     }
+    return 0;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x62ad
 // Size: 0xa
 function function_b47a96f58a61d923() {
-    namespace_b919c4be206d3c80::function_edba1ee7c2375a5();
+    scripts/mp/codcasterclientmatchdata::function_edba1ee7c2375a5();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x62be
 // Size: 0x103
@@ -1704,16 +1713,16 @@ function empradarwatcher() {
     self endon("bomb_planted");
     self endon("last_stand_start");
     self endon("emp_dropped");
-    if (istrue(level.allowempweapon)) {
+    if (istrue(level.allowEMPWeapon)) {
         thread weaponswapwatcher();
     }
     while (isdefined(level.cyberemp.carrier) && self == level.cyberemp.carrier) {
         waitframe();
-        if (istrue(level.allowempweapon) && self.currentprimaryweapon.basename != "iw9_cyberemp_mp") {
+        if (istrue(level.allowEMPWeapon) && self.currentprimaryweapon.basename != "iw9_cyberemp_mp") {
             continue;
         }
         if (!isdefined(self.nextradarpingtime) || gettime() > self.nextradarpingtime) {
-            if (istrue(level.allowempweapon)) {
+            if (istrue(level.allowEMPWeapon)) {
                 triggeroneoffradarsweep(self);
             } else {
                 triggerportableradarping(self.origin, self, 1000);
@@ -1723,7 +1732,7 @@ function empradarwatcher() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x63c8
 // Size: 0x87
@@ -1732,7 +1741,7 @@ function weaponswapwatcher() {
     self endon("death_or_disconnect");
     self endon("bomb_planted");
     self.showempminimap = 0;
-    while (1) {
+    while (true) {
         if (self.currentprimaryweapon.basename == "iw9_cyberemp_mp") {
             if (!istrue(self.showempminimap)) {
                 showminimap();
@@ -1746,7 +1755,7 @@ function weaponswapwatcher() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6456
 // Size: 0xd2
@@ -1764,16 +1773,16 @@ function applybombcarrierclass() {
         waitframe();
     }
     self.pers["gamemodeLoadout"] = level.cyber_loadouts[self.team];
-    namespace_add8ab90fc53d7f7::spawnpoint_setspawnpoint(self.origin, self.angles);
+    scripts/mp/equipment/tac_insert::spawnpoint_setspawnpoint(self.origin, self.angles);
     self.gamemode_chosenclass = self.class;
-    namespace_d19129e4fa5d176::function_a16868d4dcd81a4b();
+    scripts/mp/class::function_a16868d4dcd81a4b();
     self notify("faux_spawn");
     self.gameobject_fauxspawn = 1;
     self.faux_spawn_stance = self getstance();
-    thread namespace_99ac021a7547cae3::spawnplayer(1);
+    thread scripts/mp/playerlogic::spawnplayer(1);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x652f
 // Size: 0xa3
@@ -1793,13 +1802,13 @@ function removebombcarrierclass() {
     self notify("lost_juggernaut");
     waitframe();
     self.pers["gamemodeLoadout"] = undefined;
-    namespace_add8ab90fc53d7f7::spawnpoint_setspawnpoint(self.origin, self.angles);
+    scripts/mp/equipment/tac_insert::spawnpoint_setspawnpoint(self.origin, self.angles);
     self notify("faux_spawn");
     self.faux_spawn_stance = self getstance();
-    thread namespace_99ac021a7547cae3::spawnplayer(1);
+    thread scripts/mp/playerlogic::spawnplayer(1);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x65d9
 // Size: 0x2ac
@@ -1842,23 +1851,23 @@ function setcarriervisibility() {
             level.cyberemp.objpingdelay = 4;
             break;
         }
-    } else {
-        level.cyberemp.objidpingfriendly = 1;
-        level.cyberemp.objidpingenemy = 0;
-        level.cyberemp.objpingdelay = 3;
+        return;
     }
+    level.cyberemp.objidpingfriendly = 1;
+    level.cyberemp.objidpingenemy = 0;
+    level.cyberemp.objpingdelay = 3;
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x688c
 // Size: 0xdf
 function onexfilstarted() {
-    level.cyberemp namespace_19b4203b51d56488::releaseid();
+    level.cyberemp scripts/mp/gameobjects::releaseid();
     if (isdefined(level.cyberemp.carrier)) {
-        foreach (var_aedd764b7987a8b2 in level.objectives) {
-            if (var_aedd764b7987a8b2.bombplanted == 0) {
-                var_aedd764b7987a8b2.trigger disableplayeruse(level.cyberemp.carrier);
+        foreach (empsite in level.objectives) {
+            if (empsite.bombplanted == 0) {
+                empsite.trigger disableplayeruse(level.cyberemp.carrier);
             }
         }
     }
@@ -1866,14 +1875,14 @@ function onexfilstarted() {
     level.cyberemp.visuals[0] delete();
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6972
 // Size: 0x219
 function emplightsoff() {
     level endon("game_ended");
     level waittill("emp_detonated");
-    while (1) {
+    while (true) {
         foreach (struct in level.emplights) {
             struct.switchstatus = "off";
             handleemponoff(struct);
@@ -1902,7 +1911,7 @@ function emplightsoff() {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b92
 // Size: 0xe9
@@ -1912,35 +1921,37 @@ function destroytvs() {
     tvs = getentarray("destructibleTVs", "script_noteworthy");
     foreach (tv in tvs) {
         var_fa10ca1040abb07 = getscriptablearray(tv.target, "targetname");
-        foreach (var_be61e7030b1f3b80 in var_fa10ca1040abb07) {
-            var_be61e7030b1f3b80 setscriptablepartstate("tv", "dead");
+        foreach (stv in var_fa10ca1040abb07) {
+            stv setscriptablepartstate("tv", "dead");
             waitframe();
         }
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c82
 // Size: 0x170
-function handleemponoff(struct, var_38a6b48a5f70c0b8) {
+function handleemponoff(struct, timeoverride) {
     timedelay = 0.2;
-    if (isdefined(var_38a6b48a5f70c0b8)) {
-        timedelay = var_38a6b48a5f70c0b8;
+    if (isdefined(timeoverride)) {
+        timedelay = timeoverride;
     }
     if (struct.switchstatus == "on") {
         self notify("masterSwitch_on");
         if (!struct.lightson) {
             foreach (light in struct.lights) {
-                light thread namespace_91812d9f6e7b8a2b::lightonroutine(randomfloat(timedelay));
+                light thread scripts/mp/motiondetectors::lightonroutine(randomfloat(timedelay));
             }
-            thread namespace_91812d9f6e7b8a2b::onoffmodelswap(struct.models, "on");
+            thread scripts/mp/motiondetectors::onoffmodelswap(struct.models, "on");
             struct.lightson = 1;
         }
-    } else if (struct.switchstatus == "off") {
+        return;
+    }
+    if (struct.switchstatus == "off") {
         if (struct.lightson) {
-            level namespace_91812d9f6e7b8a2b::lightoffroutine(struct.lights);
-            thread namespace_91812d9f6e7b8a2b::onoffmodelswap(struct.models, "off");
+            level scripts/mp/motiondetectors::lightoffroutine(struct.lights);
+            thread scripts/mp/motiondetectors::onoffmodelswap(struct.models, "off");
             struct.lightson = 0;
         }
         if (isdefined(self.script_parameters) && self.script_parameters == "motion") {
@@ -1950,33 +1961,33 @@ function handleemponoff(struct, var_38a6b48a5f70c0b8) {
     }
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6df9
 // Size: 0x19
-function function_bf60004ce7bda1f8(player) {
+function onempdropped(player) {
     player setclientomnvar("ui_emp_carrier_hud", 0);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e19
 // Size: 0x157
 function setupwaypointicons() {
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_emp", 2, "neutral", "MP_INGAME_ONLY/OBJ_EMP_CAPS", "hud_icon_cyber_bomb", 0, 10);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_escort_emp", 2, "friendly", "MP_INGAME_ONLY/OBJ_ESCORT_CAPS", "hud_icon_cyber_bomb", 0, 10);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_defend_empsite", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_cyber_bombsite", 0, 3);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_target_empsite", 0, "enemy", "MP_INGAME_ONLY/OBJ_ATTACK_CAPS", "icon_waypoint_cyber_bombsite", 0, 3);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_planted_empsite", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_cyber_bombsite", 0, 4);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_defuse_empsite", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSE_CAPS", "icon_waypoint_cyber_bombsite", 0, 4);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_emp_planting", 0, "enemy", "MP_INGAME_ONLY/OBJ_PLANTING_CAPS", "icon_waypoint_cyber_bombsite", 0, 3);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_emp_defusing", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSING_CAPS", "icon_waypoint_cyber_bombsite", 0, 4);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_defend_empsite_nt", 0, "friendly", "", "icon_waypoint_cyber_bombsite", 0, undefined);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_defuse_empsite_nt", 0, "enemy", "", "icon_waypoint_cyber_bombsite", 0, undefined);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("mlg_icon_waypoint_emp_planted", 0, "neutral", "", "icon_minimap_objective_codcaster_bomb", 0, undefined);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_emp", 2, "neutral", "MP_INGAME_ONLY/OBJ_EMP_CAPS", "hud_icon_cyber_bomb", 0, 10);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_escort_emp", 2, "friendly", "MP_INGAME_ONLY/OBJ_ESCORT_CAPS", "hud_icon_cyber_bomb", 0, 10);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_defend_empsite", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_cyber_bombsite", 0, 3);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_target_empsite", 0, "enemy", "MP_INGAME_ONLY/OBJ_ATTACK_CAPS", "icon_waypoint_cyber_bombsite", 0, 3);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_planted_empsite", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_cyber_bombsite", 0, 4);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_defuse_empsite", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSE_CAPS", "icon_waypoint_cyber_bombsite", 0, 4);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_emp_planting", 0, "enemy", "MP_INGAME_ONLY/OBJ_PLANTING_CAPS", "icon_waypoint_cyber_bombsite", 0, 3);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_emp_defusing", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSING_CAPS", "icon_waypoint_cyber_bombsite", 0, 4);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_defend_empsite_nt", 0, "friendly", "", "icon_waypoint_cyber_bombsite", 0, undefined);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_defuse_empsite_nt", 0, "enemy", "", "icon_waypoint_cyber_bombsite", 0, undefined);
+    scripts/mp/gamelogic::setwaypointiconinfo("mlg_icon_waypoint_emp_planted", 0, "neutral", "", "icon_minimap_objective_codcaster_bomb", 0, undefined);
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6f77
 // Size: 0xb8
@@ -1990,7 +2001,7 @@ function function_8598880f9b913b55() {
         while (!level.bombplanted) {
             if (getdvarint(@"hash_28d1831203c6967b", 0) == 1) {
                 if (isdefined(level.cyberemp.carrier)) {
-                    level.cyberemp.carrier.carryobject thread namespace_19b4203b51d56488::setdropped();
+                    level.cyberemp.carrier.carryobject thread scripts/mp/gameobjects::setdropped();
                     setdevdvar(@"hash_28d1831203c6967b", 0);
                     break;
                 }
@@ -2004,7 +2015,7 @@ function function_8598880f9b913b55() {
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7036
 // Size: 0x24b
@@ -2045,7 +2056,7 @@ function function_847f04c317e266d() {
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7288
 // Size: 0x1bf
@@ -2082,7 +2093,7 @@ function function_a60e39eb7d5bd5f4() {
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x744e
 // Size: 0x167
@@ -2116,7 +2127,7 @@ function function_4df61dc99c28632b() {
     #/
 }
 
-// Namespace cyber/namespace_5d8d5ae44462641f
+// Namespace cyber / scripts/mp/gametypes/cyber
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x75bc
 // Size: 0x167

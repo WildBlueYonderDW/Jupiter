@@ -31,14 +31,14 @@
 
 #namespace killcam;
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaba
 // Size: 0xe2
 function init() {
-    level.killcam = namespace_775507ba36294dfb::gettweakablevalue("game", "allowkillcam");
+    level.killcam = scripts/mp/tweakables::gettweakablevalue("game", "allowkillcam");
     level.killcammiscitems = [];
-    for (row = 0; 1; row++) {
+    for (row = 0; true; row++) {
         id = tablelookupbyrow("mp_cp/miscKillcamItems.csv", row, 0);
         if (!isdefined(id) || id == "") {
             break;
@@ -58,7 +58,7 @@ function init() {
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba3
 // Size: 0x206
@@ -109,7 +109,7 @@ function getkillcamentity(attacker, einflictor, objweapon, meansofdeath) {
     return einflictor;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb1
 // Size: 0x1a3
@@ -145,13 +145,12 @@ function usesattackeraskillcamentity(attacker, inflictor, objweapon, meansofdeat
     case #"hash_e1e4906cafc3af9d":
     case #"hash_fd9c279f85990dad":
     case #"hash_fe08358bc8f9a34a":
-        return 1;
-        break;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf5c
 // Size: 0x81
@@ -159,7 +158,7 @@ function usesvehiclekillcamentityrelay(attacker, inflictor, objweapon, meansofde
     if (!isdefined(inflictor)) {
         return 0;
     }
-    if (!inflictor namespace_1f188a13f7e79610::isvehicle()) {
+    if (!inflictor scripts/cp_mp/vehicles/vehicle::isvehicle()) {
         return 0;
     }
     switch (meansofdeath) {
@@ -170,11 +169,10 @@ function usesvehiclekillcamentityrelay(attacker, inflictor, objweapon, meansofde
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfe4
 // Size: 0x19c
@@ -182,17 +180,17 @@ function prekillcamnotify(attacker) {
     if (isdefined(attacker) && !isagent(attacker)) {
         var_ad0224b36ccb588c = [];
         if (isdefined(self.class) && isdefined(self.classstruct)) {
-            var_1583b947947ad005 = namespace_99ac021a7547cae3::getplayerassets(self.classstruct);
+            var_1583b947947ad005 = scripts/mp/playerlogic::getplayerassets(self.classstruct);
             var_ad0224b36ccb588c[var_ad0224b36ccb588c.size] = var_1583b947947ad005;
         }
         if (isdefined(attacker.class) && isdefined(attacker.classstruct)) {
-            var_af890d92bafd84cf = attacker namespace_99ac021a7547cae3::getplayerassets(attacker.classstruct);
+            var_af890d92bafd84cf = attacker scripts/mp/playerlogic::getplayerassets(attacker.classstruct);
             var_ad0224b36ccb588c[var_ad0224b36ccb588c.size] = var_af890d92bafd84cf;
         }
         if (var_ad0224b36ccb588c.size > 0) {
-            namespace_99ac021a7547cae3::loadplayerassets(var_ad0224b36ccb588c, 1);
+            scripts/mp/playerlogic::loadplayerassets(var_ad0224b36ccb588c, 1);
         }
-        if (isdefined(attacker.var_acb55a437c3145c0) && isdefined(attacker.var_acb55a437c3145c0.code_classname) && attacker.var_acb55a437c3145c0.code_classname == "trigger_hurt") {
+        if (isdefined(attacker.damagetrigger) && isdefined(attacker.damagetrigger.code_classname) && attacker.damagetrigger.code_classname == "trigger_hurt") {
             if (isdefined(attacker.team)) {
                 team = attacker.team;
             } else {
@@ -202,64 +200,64 @@ function prekillcamnotify(attacker) {
             if (!isdefined(level.var_58a42cd072629ca) || [[ level.var_58a42cd072629ca ]]()) {
                 self function_bc667001f9dd3808(attacker geteye());
             }
-        } else {
-            if (!isdefined(level.var_58a42cd072629ca) || [[ level.var_58a42cd072629ca ]]()) {
-                self function_bc667001f9dd3808(attacker geteye());
-            }
-            if (isplayer(attacker)) {
-                self loadcustomizationplayerview(attacker);
-            }
+            return;
+        }
+        if (!isdefined(level.var_58a42cd072629ca) || [[ level.var_58a42cd072629ca ]]()) {
+            self function_bc667001f9dd3808(attacker geteye());
+        }
+        if (isplayer(attacker)) {
+            self loadcustomizationplayerview(attacker);
         }
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 16, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1187
 // Size: 0x1fd
 function makekillcamdata(einflictor, inflictoragentinfo, attackernum, killcamentityindex, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent, objweapon, offsettime, maxtime, attacker, victim, smeansofdeath, attackerloadoutperks, skippable, doslowmo) {
-    var_b5a1f56c62bdb31d = spawnstruct();
-    var_b5a1f56c62bdb31d.einflictor = einflictor;
-    var_b5a1f56c62bdb31d.inflictoragentinfo = inflictoragentinfo;
-    var_b5a1f56c62bdb31d.attackernum = attackernum;
-    var_b5a1f56c62bdb31d.killcamentityindex = killcamentityindex;
-    var_b5a1f56c62bdb31d.killcamentitystarttime = killcamentitystarttime;
-    var_b5a1f56c62bdb31d.killcamlookatentityindex = killcamlookatentityindex;
-    var_b5a1f56c62bdb31d.killcamentstickstolookatent = killcamentstickstolookatent;
-    var_b5a1f56c62bdb31d.objweapon = objweapon;
-    var_b5a1f56c62bdb31d.offsettime = offsettime;
-    var_b5a1f56c62bdb31d.maxtime = maxtime;
-    var_b5a1f56c62bdb31d.attacker = attacker;
-    var_b5a1f56c62bdb31d.victim = victim;
-    var_b5a1f56c62bdb31d.smeansofdeath = smeansofdeath;
-    var_b5a1f56c62bdb31d.attackerloadoutperks = attackerloadoutperks;
-    var_b5a1f56c62bdb31d.skippable = skippable;
-    var_b5a1f56c62bdb31d.doslowmo = doslowmo;
-    var_b5a1f56c62bdb31d.var_6035b072327656eb = int(clamp(attacker.health / attacker.maxhealth * 127, 0, 127));
+    killcamstruct = spawnstruct();
+    killcamstruct.einflictor = einflictor;
+    killcamstruct.inflictoragentinfo = inflictoragentinfo;
+    killcamstruct.attackernum = attackernum;
+    killcamstruct.killcamentityindex = killcamentityindex;
+    killcamstruct.killcamentitystarttime = killcamentitystarttime;
+    killcamstruct.killcamlookatentityindex = killcamlookatentityindex;
+    killcamstruct.killcamentstickstolookatent = killcamentstickstolookatent;
+    killcamstruct.objweapon = objweapon;
+    killcamstruct.offsettime = offsettime;
+    killcamstruct.maxtime = maxtime;
+    killcamstruct.attacker = attacker;
+    killcamstruct.victim = victim;
+    killcamstruct.smeansofdeath = smeansofdeath;
+    killcamstruct.attackerloadoutperks = attackerloadoutperks;
+    killcamstruct.skippable = skippable;
+    killcamstruct.doslowmo = doslowmo;
+    killcamstruct.attackerhealthratio = int(clamp(attacker.health / attacker.maxhealth * 127, 0, 127));
     if (isdefined(attacker)) {
-        var_b5a1f56c62bdb31d.var_14a780f439cfff1d = attacker.origin;
+        killcamstruct.streampos = attacker.origin;
     } else if (isdefined(victim)) {
-        var_b5a1f56c62bdb31d.var_14a780f439cfff1d = victim.origin;
+        killcamstruct.streampos = victim.origin;
     }
     if (smeansofdeath == "MOD_EXECUTION") {
-        var_b5a1f56c62bdb31d.executionref = namespace_f446f6030ca8cff8::execution_getrefbyplayer(attacker);
+        killcamstruct.executionref = scripts/cp_mp/execution::execution_getrefbyplayer(attacker);
     }
-    return var_b5a1f56c62bdb31d;
+    return killcamstruct;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x138c
 // Size: 0xde
-function dokillcamfromstruct(var_b5a1f56c62bdb31d, predelay, var_53c65e436a20e8e4, var_dbefc13f81d8d26a) {
-    killcam(var_b5a1f56c62bdb31d.einflictor, var_b5a1f56c62bdb31d.inflictoragentinfo, var_b5a1f56c62bdb31d.attackernum, var_b5a1f56c62bdb31d.killcamentityindex, var_b5a1f56c62bdb31d.killcamentitystarttime, var_b5a1f56c62bdb31d.killcamlookatentityindex, var_b5a1f56c62bdb31d.killcamentstickstolookatent, var_b5a1f56c62bdb31d.objweapon, predelay, var_b5a1f56c62bdb31d.offsettime, var_53c65e436a20e8e4, var_b5a1f56c62bdb31d.maxtime, var_b5a1f56c62bdb31d.attacker, var_b5a1f56c62bdb31d.victim, var_b5a1f56c62bdb31d.smeansofdeath, var_b5a1f56c62bdb31d.attackerloadoutperks, var_b5a1f56c62bdb31d.skippable, var_b5a1f56c62bdb31d.doslowmo, var_dbefc13f81d8d26a);
+function dokillcamfromstruct(killcamstruct, predelay, var_53c65e436a20e8e4, isfinalkillcam) {
+    killcam(killcamstruct.einflictor, killcamstruct.inflictoragentinfo, killcamstruct.attackernum, killcamstruct.killcamentityindex, killcamstruct.killcamentitystarttime, killcamstruct.killcamlookatentityindex, killcamstruct.killcamentstickstolookatent, killcamstruct.objweapon, predelay, killcamstruct.offsettime, var_53c65e436a20e8e4, killcamstruct.maxtime, killcamstruct.attacker, killcamstruct.victim, killcamstruct.smeansofdeath, killcamstruct.attackerloadoutperks, killcamstruct.skippable, killcamstruct.doslowmo, isfinalkillcam);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params b, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1471
 // Size: 0x434
-function calckillcamtimes(einflictor, inflictoragentinfo, attacker, attackernum, victim, maxtime, predelay, objweapon, var_53c65e436a20e8e4, var_5c539133a8240074, smeansofdeath) {
+function calckillcamtimes(einflictor, inflictoragentinfo, attacker, attackernum, victim, maxtime, predelay, objweapon, var_53c65e436a20e8e4, delayedtime, smeansofdeath) {
     if (getdvar(@"hash_a9e445810ebd46be") == "") {
         var_49e6ef3edadd524e = function_f581838ce4328f7a(objweapon);
         if (level.showingfinalkillcam) {
@@ -267,12 +265,12 @@ function calckillcamtimes(einflictor, inflictoragentinfo, attacker, attackernum,
                 camtime = 4;
             } else if (getgametype() == "arena") {
                 if (isdefined(attacker.recentkillcount) && attacker.recentkillcount > 1) {
-                    camtime = 4 + level.maxkillcamdelay - var_5c539133a8240074;
+                    camtime = 4 + level.maxkillcamdelay - delayedtime;
                 } else {
-                    camtime = 1.5 + level.maxkillcamdelay - var_5c539133a8240074;
+                    camtime = 1.5 + level.maxkillcamdelay - delayedtime;
                 }
             } else {
-                camtime = 4 + level.maxkillcamdelay - var_5c539133a8240074;
+                camtime = 4 + level.maxkillcamdelay - delayedtime;
             }
         } else if (objweapon.basename == "artillery_mp") {
             camtime = 2.25;
@@ -329,34 +327,34 @@ function calckillcamtimes(einflictor, inflictoragentinfo, attacker, attackernum,
     if (!isdefined(attacker) || isagent(attacker) || isagent(einflictor)) {
         attackernum = victim getentitynumber();
     }
-    var_9e78f0ac35b8615a = trimkillcamtime(inflictoragentinfo, attacker, camtime, postdelay, predelay, maxtime);
-    if (!isdefined(var_9e78f0ac35b8615a)) {
+    killcamtimes = trimkillcamtime(inflictoragentinfo, attacker, camtime, postdelay, predelay, maxtime);
+    if (!isdefined(killcamtimes)) {
         return undefined;
     }
     /#
-        assert(isdefined(var_9e78f0ac35b8615a.camtime));
+        assert(isdefined(killcamtimes.camtime));
     #/
     /#
-        assert(isdefined(var_9e78f0ac35b8615a.postdelay));
+        assert(isdefined(killcamtimes.postdelay));
     #/
     /#
-        assert(isdefined(var_9e78f0ac35b8615a.killcamlength));
+        assert(isdefined(killcamtimes.killcamlength));
     #/
     /#
-        assert(isdefined(var_9e78f0ac35b8615a.killcamoffset));
+        assert(isdefined(killcamtimes.killcamoffset));
     #/
-    return var_9e78f0ac35b8615a;
+    return killcamtimes;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18ad
 // Size: 0x1e
-function setkilledbyuiomnvar(var_34521c3f3a06b3b4) {
-    self setclientomnvar("ui_killcam_killedby_id", var_34521c3f3a06b3b4 getentitynumber());
+function setkilledbyuiomnvar(killedbyplayer) {
+    self setclientomnvar("ui_killcam_killedby_id", killedbyplayer getentitynumber());
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18d2
 // Size: 0xb8
@@ -368,27 +366,27 @@ function function_b07f44c04a1ab4d2(attacker) {
     }
     if (isdefined(attacker.equipment) && isdefined(attacker.equipment["secondary"])) {
         self setclientomnvar("ui_killcam_killedby_equipment_secondary", attacker.equipment["secondary"]);
-    } else {
-        self setclientomnvar("ui_killcam_killedby_equipment_secondary", "none");
+        return;
     }
+    self setclientomnvar("ui_killcam_killedby_equipment_secondary", "none");
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1991
 // Size: 0x32
 function function_64266f65b359ad7(attacker) {
-    self setclientomnvar("ui_killcam_killedby_super1", attacker namespace_727d2aa1d6c72038::perkpackage_getfirstfieldupgrade());
-    self setclientomnvar("ui_killcam_killedby_super2", attacker namespace_727d2aa1d6c72038::perkpackage_getsecondfieldupgrade());
+    self setclientomnvar("ui_killcam_killedby_super1", attacker scripts/mp/perks/perkpackage::perkpackage_getfirstfieldupgrade());
+    self setclientomnvar("ui_killcam_killedby_super2", attacker scripts/mp/perks/perkpackage::perkpackage_getsecondfieldupgrade());
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19ca
 // Size: 0x19f
-function setupkillcamui(attacker, victim, objweapon, var_9e78f0ac35b8615a, var_53c65e436a20e8e4, attackerloadoutperks) {
+function setupkillcamui(attacker, victim, objweapon, killcamtimes, var_53c65e436a20e8e4, attackerloadoutperks) {
     /#
-        assert(namespace_36f464722d326bbe::isgameparticipant(attacker));
+        assert(scripts/cp_mp/utility/game_utility::isgameparticipant(attacker));
     #/
     if (isplayer(attacker)) {
         setkilledbyuiomnvar(attacker);
@@ -399,65 +397,65 @@ function setupkillcamui(attacker, victim, objweapon, var_9e78f0ac35b8615a, var_5
         setkillcamkillstreaktypeomnvars(objweapon);
     } else if (istrue(level.allowperks) && isdefined(attackerloadoutperks)) {
         var_9e0a050f0398edc3 = attacker.pers["loadoutExtraPerks"];
-        namespace_b6a8027f477010e1::setomnvarsforperklist("ui_killcam_killedby_perk", attackerloadoutperks, var_9e0a050f0398edc3);
+        scripts/mp/perks/perks::setomnvarsforperklist("ui_killcam_killedby_perk", attackerloadoutperks, var_9e0a050f0398edc3);
     }
     function_b07f44c04a1ab4d2(attacker);
     function_64266f65b359ad7(attacker);
-    forcerespawn = getdvarint(@"hash_5d64cd3b24cf883a");
-    if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forcerespawn == 0 && !level.gameended) {
+    forceRespawn = getdvarint(@"hash_5d64cd3b24cf883a");
+    if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forceRespawn == 0 && !level.gameended) {
         self setclientomnvar("ui_killcam_text", "skip");
     } else if (!level.gameended) {
         self setclientomnvar("ui_killcam_text", "respawn");
     } else {
         self setclientomnvar("ui_killcam_text", "none");
     }
-    setkillcamuitimer(var_9e78f0ac35b8615a.killcamlength);
+    setkillcamuitimer(killcamtimes.killcamlength);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b70
 // Size: 0x98
 function queueforkillcam() {
     level.numplayerswaitingtoenterkillcam++;
     var_c40a8900810543a2 = 1;
-    if (istrue(level.showingfinalkillcam) && namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (istrue(level.showingfinalkillcam) && scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         var_c40a8900810543a2 = 5;
     }
-    var_5c539133a8240074 = level.framedurationseconds * int(floor((level.numplayerswaitingtoenterkillcam - 1) / var_c40a8900810543a2));
-    level.maxkillcamdelay = var_5c539133a8240074;
-    if (var_5c539133a8240074 > 0) {
+    delayedtime = level.framedurationseconds * int(floor((level.numplayerswaitingtoenterkillcam - 1) / var_c40a8900810543a2));
+    level.maxkillcamdelay = delayedtime;
+    if (delayedtime > 0) {
         /#
             println("ui_killcam_killedby_equipment_primary" + level.numplayerswaitingtoenterkillcam);
         #/
-        wait(var_5c539133a8240074);
+        wait(delayedtime);
     }
     waitframe();
     level.numplayerswaitingtoenterkillcam--;
-    return var_5c539133a8240074;
+    return delayedtime;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c10
 // Size: 0x8f
 function function_89219d56ee2cf4e2() {
     if (isplayer(self)) {
-        var_11baba2fa5da7f6b = 0;
+        isskipped = 0;
         var_cfe146984e2524ed = round_float(self.killcamlength, 1, 1);
         var_b740f5a639690509 = round_float(self.killcamwatchtime, 1, 1);
         if (var_b740f5a639690509 < var_cfe146984e2524ed) {
-            var_11baba2fa5da7f6b = 1;
+            isskipped = 1;
         }
-        self dlog_recordplayerevent("dlog_event_match_killcam", [0:"time_spent", 1:self.killcamwatchtime, 2:"is_skipped", 3:var_11baba2fa5da7f6b]);
+        self dlog_recordplayerevent("dlog_event_match_killcam", ["time_spent", self.killcamwatchtime, "is_skipped", isskipped]);
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 19, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ca6
 // Size: 0x3c5
-function killcam(einflictor, inflictoragentinfo, attackernum, killcamentityindex, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent, objweapon, predelay, offsettime, var_53c65e436a20e8e4, maxtime, attacker, victim, smeansofdeath, attackerloadoutperks, skippable, doslowmo, var_dbefc13f81d8d26a) {
+function killcam(einflictor, inflictoragentinfo, attackernum, killcamentityindex, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent, objweapon, predelay, offsettime, var_53c65e436a20e8e4, maxtime, attacker, victim, smeansofdeath, attackerloadoutperks, skippable, doslowmo, isfinalkillcam) {
     self endon("disconnect");
     self endon("spawned");
     level endon("game_ended");
@@ -465,64 +463,64 @@ function killcam(einflictor, inflictoragentinfo, attackernum, killcamentityindex
     resetplayeromnvarsonkillcam();
     if (attackernum < 0 || !isdefined(attacker)) {
         self notify("killcam_canceled");
-        if (istrue(var_dbefc13f81d8d26a)) {
+        if (istrue(isfinalkillcam)) {
             self setclientomnvar("post_game_state", 1);
         }
         return;
     }
-    var_5c539133a8240074 = queueforkillcam();
-    var_9e78f0ac35b8615a = calckillcamtimes(einflictor, inflictoragentinfo, attacker, attackernum, victim, maxtime, predelay, objweapon, var_53c65e436a20e8e4, var_5c539133a8240074, smeansofdeath);
-    if (!isdefined(var_9e78f0ac35b8615a) || !isdefined(var_9e78f0ac35b8615a.killcamoffset) || !isdefined(victim) || istrue(level.var_904aa57b8b22090c)) {
+    delayedtime = queueforkillcam();
+    killcamtimes = calckillcamtimes(einflictor, inflictoragentinfo, attacker, attackernum, victim, maxtime, predelay, objweapon, var_53c65e436a20e8e4, delayedtime, smeansofdeath);
+    if (!isdefined(killcamtimes) || !isdefined(killcamtimes.killcamoffset) || !isdefined(victim) || istrue(level.var_904aa57b8b22090c)) {
         self notify("killcam_canceled");
-        if (istrue(var_dbefc13f81d8d26a)) {
+        if (istrue(isfinalkillcam)) {
             self setclientomnvar("post_game_state", 1);
         }
         return;
     }
-    setupkillcamui(attacker, victim, objweapon, var_9e78f0ac35b8615a, var_53c65e436a20e8e4, attackerloadoutperks);
+    setupkillcamui(attacker, victim, objweapon, killcamtimes, var_53c65e436a20e8e4, attackerloadoutperks);
     if (isplayer(attacker)) {
         self loadcustomizationplayerview(attacker);
     }
-    if (isdefined(level.var_d39aa4b67cefa0d6) && isdefined(einflictor.var_fda11f45e9c5542)) {
+    if (isdefined(level.var_d39aa4b67cefa0d6) && isdefined(einflictor.racecar)) {
         self playlocalsound(level.var_d39aa4b67cefa0d6);
     }
     self setsoundsubmix("iw9_mp_core_killcam_mix");
-    beginarchiveplayback(attackernum, var_9e78f0ac35b8615a.killcamoffset, var_9e78f0ac35b8615a.killcamlength, offsettime);
-    var_eed67ecb94e5635b = setkillcamerastyle(einflictor, inflictoragentinfo, attackernum, victim, killcamentityindex, var_9e78f0ac35b8615a, objweapon);
+    beginarchiveplayback(attackernum, killcamtimes.killcamoffset, killcamtimes.killcamlength, offsettime);
+    var_eed67ecb94e5635b = setkillcamerastyle(einflictor, inflictoragentinfo, attackernum, victim, killcamentityindex, killcamtimes, objweapon);
     if (!var_eed67ecb94e5635b) {
-        thread setkillcamentity(killcamentityindex, var_9e78f0ac35b8615a.killcamoffset, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent);
+        thread setkillcamentity(killcamentityindex, killcamtimes.killcamoffset, killcamentitystarttime, killcamlookatentityindex, killcamentstickstolookatent);
     }
-    thread endedkillcamcleanup(var_dbefc13f81d8d26a);
+    thread endedkillcamcleanup(isfinalkillcam);
     waitframe();
     if (!isdefined(self)) {
         return;
     }
-    checkkillcamtruncation(var_9e78f0ac35b8615a.killcamoffset);
-    var_9e78f0ac35b8615a.camtime = self.archivetime - level.framedurationseconds - predelay;
-    var_9e78f0ac35b8615a.killcamlength = var_9e78f0ac35b8615a.camtime + var_9e78f0ac35b8615a.postdelay;
-    self.killcamlength = var_9e78f0ac35b8615a.killcamlength;
-    if (var_9e78f0ac35b8615a.camtime <= 0) {
+    checkkillcamtruncation(killcamtimes.killcamoffset);
+    killcamtimes.camtime = self.archivetime - level.framedurationseconds - predelay;
+    killcamtimes.killcamlength = killcamtimes.camtime + killcamtimes.postdelay;
+    self.killcamlength = killcamtimes.killcamlength;
+    if (killcamtimes.camtime <= 0) {
         /#
             println("<unknown string>");
         #/
-        killcamcleanup(1, undefined, var_dbefc13f81d8d26a);
+        killcamcleanup(1, undefined, isfinalkillcam);
         return;
     }
     self.killcam = 1;
     self.var_7c813e50ff75be27 = 1;
-    thread spawnedkillcamcleanup(var_dbefc13f81d8d26a);
+    thread spawnedkillcamcleanup(isfinalkillcam);
     if (istrue(doslowmo)) {
-        thread dokillcamslowmo(var_9e78f0ac35b8615a.camtime);
+        thread dokillcamslowmo(killcamtimes.camtime);
     }
     if (!isdefined(skippable) || skippable) {
         thread waitskipkillcambutton(var_53c65e436a20e8e4);
         thread function_7e144cfdd1c3385e();
     }
     if (getdvarint(@"hash_6a04bab2b440c5eb", 0)) {
-        thread namespace_58a74e7d54b56e8d::function_770554a011a28178();
+        thread scripts/mp/killstreaks/killstreaks::function_770554a011a28178();
     }
-    if (istrue(var_dbefc13f81d8d26a)) {
-        thread namespace_70d685b02aaee20e::finalkillcamplaybackbegin();
+    if (istrue(isfinalkillcam)) {
+        thread scripts/mp/final_killcam::finalkillcamplaybackbegin();
     }
     thread endkillcamifnothingtoshow();
     if (!isbot(self)) {
@@ -531,13 +529,13 @@ function killcam(einflictor, inflictoragentinfo, attackernum, killcamentityindex
     self.killcamwatchtime = gettime();
     waittillkillcamover();
     self.killcamwatchtime = (gettime() - self.killcamwatchtime) / 1000;
-    namespace_3c5a4254f2b957ea::incpersstat("timeWatchingKillcams", self.killcamwatchtime);
-    killcamcleanup(1, undefined, var_dbefc13f81d8d26a);
+    scripts/mp/utility/stats::incpersstat("timeWatchingKillcams", self.killcamwatchtime);
+    killcamcleanup(1, undefined, isfinalkillcam);
     function_89219d56ee2cf4e2();
     printspawnmessage("killcam::killcam() COMPLETE");
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2072
 // Size: 0x58
@@ -548,39 +546,39 @@ function resetstreamerposhint() {
         self clearpredictedstreampos();
     }
     if (istrue(level.showingfinalkillcam)) {
-        namespace_d576b6dc7cef9c62::predictandclearintermissionstreaming();
+        scripts/mp/gamelogic::predictandclearintermissionstreaming();
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20d1
 // Size: 0x24
-function setuppotgui(spectateplayer, var_396646edb4ba78fe) {
+function setuppotgui(spectateplayer, durationsec) {
     setkilledbyuiomnvar(spectateplayer);
-    setkillcamuitimer(var_396646edb4ba78fe);
+    setkillcamuitimer(durationsec);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20fc
 // Size: 0x11a
-function potg_killcam(spectateentity, psoffsettime, var_7bf1255a3715a632, var_754110404c0d574f) {
+function potg_killcam(spectateentity, psoffsettime, starttimems, endtimems) {
     self endon("disconnect");
-    namespace_34eb47d51c422b79::prekillcamnotify(spectateentity);
+    scripts/mp/killcam::prekillcamnotify(spectateentity);
     resetplayeromnvarsonkillcam();
     var_79fe9d21e7286c23 = spectateentity getentitynumber();
     queueforkillcam();
     if (isplayer(spectateentity)) {
         self loadcustomizationplayerview(spectateentity);
     }
-    var_2d2fce6a8562bfa4 = gettime();
-    var_897b58815b52404c = (var_2d2fce6a8562bfa4 - var_7bf1255a3715a632) / 1000;
-    var_a7611280671612f1 = (var_2d2fce6a8562bfa4 - var_754110404c0d574f) / 1000;
-    var_396646edb4ba78fe = (var_754110404c0d574f - var_7bf1255a3715a632) / 1000;
-    setuppotgui(spectateentity, var_396646edb4ba78fe);
+    curtimems = gettime();
+    var_897b58815b52404c = (curtimems - starttimems) / 1000;
+    var_a7611280671612f1 = (curtimems - endtimems) / 1000;
+    durationsec = (endtimems - starttimems) / 1000;
+    setuppotgui(spectateentity, durationsec);
     self.archiveusepotg = 1;
-    beginarchiveplayback(var_79fe9d21e7286c23, var_897b58815b52404c, var_396646edb4ba78fe, psoffsettime);
+    beginarchiveplayback(var_79fe9d21e7286c23, var_897b58815b52404c, durationsec, psoffsettime);
     waitframe();
     if (!isdefined(self)) {
         return;
@@ -593,19 +591,19 @@ function potg_killcam(spectateentity, psoffsettime, var_7bf1255a3715a632, var_75
     potgkillcamcleanup();
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x221d
 // Size: 0x2f
 function potgkillcamcleanup() {
     self.killcam = undefined;
-    namespace_5aeecefc462876::setspectatepermissions();
+    scripts/mp/spectating::setspectatepermissions();
     updatesessionstate("dead");
     clearkillcamstate();
     self notify("killcam_ended");
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2253
 // Size: 0x11d
@@ -619,24 +617,28 @@ function setkillcamnormalweaponomnvars(objweapon, smeansofdeath, einflictor, exe
         return;
     }
     if (isdefined(einflictor) && isdefined(einflictor.glgrenadeparent)) {
-        var_11d2f075e9a0e643 = undefined;
+        equipmenttype = undefined;
         objweapon = einflictor.glgrenadeparent;
         einflictor = undefined;
     } else {
-        var_11d2f075e9a0e643 = namespace_68e641469fde3fa7::getequipmenttype(objweapon);
+        equipmenttype = scripts/mp/utility/weapon::getequipmenttype(objweapon);
     }
-    if (isdefined(namespace_85d036cb78063c4a::getsuperrefforsuperweapon(objweapon))) {
+    if (isdefined(scripts/mp/supers::getsuperrefforsuperweapon(objweapon))) {
         setkillcamsupertypeomnvars(objweapon);
-    } else if (isdefined(var_11d2f075e9a0e643) && (var_11d2f075e9a0e643 == "lethal" || var_11d2f075e9a0e643 == "tactical")) {
-        setkillcamequipmenttypeomnvars(objweapon);
-    } else if (isdefined(level.killcammiscitems[objweapon.basename])) {
-        setkillcammisctypeomnvars(level.killcammiscitems[objweapon.basename]);
-    } else {
-        setkillcamweapontypeomnvars(objweapon, einflictor, attacker);
+        return;
     }
+    if (isdefined(equipmenttype) && (equipmenttype == "lethal" || equipmenttype == "tactical")) {
+        setkillcamequipmenttypeomnvars(objweapon);
+        return;
+    }
+    if (isdefined(level.killcammiscitems[objweapon.basename])) {
+        setkillcammisctypeomnvars(level.killcammiscitems[objweapon.basename]);
+        return;
+    }
+    setkillcamweapontypeomnvars(objweapon, einflictor, attacker);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2377
 // Size: 0x84
@@ -650,13 +652,13 @@ function waitskipkillcambutton(var_53c65e436a20e8e4) {
         if (isdefined(level.var_d39aa4b67cefa0d6)) {
             thread function_e35f3dda3b0ea636();
         }
-        namespace_3c5a4254f2b957ea::incpersstat("skippedKillcams", 1);
+        scripts/mp/utility/stats::incpersstat("skippedKillcams", 1);
         printspawnmessage("killcam::waitSkipKillcamButton() Killcam SKIPPED");
         self notify("abort_killcam");
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2402
 // Size: 0x6a
@@ -664,7 +666,7 @@ function function_7e144cfdd1c3385e() {
     self endon("disconnect");
     self endon("killcam_ended");
     self endon("abort_killcam");
-    if (self function_c6cb3e654225077a()) {
+    if (self usingtouch()) {
         while (!self jumpbuttonpressed()) {
             waitframe();
         }
@@ -673,42 +675,42 @@ function function_7e144cfdd1c3385e() {
             waitframe();
         }
     }
-    namespace_3c5a4254f2b957ea::incpersstat("skippedKillcams", 1);
+    scripts/mp/utility/stats::incpersstat("skippedKillcams", 1);
     printspawnmessage("killcam::waitSkipKillcamKBMOrTouch() Killcam SKIPPED");
     self notify("abort_killcam");
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2473
 // Size: 0x2c
-function spawnedkillcamcleanup(var_dbefc13f81d8d26a) {
+function spawnedkillcamcleanup(isfinalkillcam) {
     self endon("disconnect");
     self endon("killcam_ended");
     self waittill("spawned");
-    killcamcleanup(0, undefined, var_dbefc13f81d8d26a);
+    killcamcleanup(0, undefined, isfinalkillcam);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24a6
 // Size: 0x2e
-function endedkillcamcleanup(var_dbefc13f81d8d26a) {
+function endedkillcamcleanup(isfinalkillcam) {
     self endon("disconnect");
     self endon("killcam_ended");
     level waittill("game_ended");
-    killcamcleanup(1, 1, var_dbefc13f81d8d26a);
+    killcamcleanup(1, 1, isfinalkillcam);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24db
 // Size: 0x96
-function killcamcleanup(updatesession, gameended, var_dbefc13f81d8d26a) {
+function killcamcleanup(updatesession, gameended, isfinalkillcam) {
     clearkillcamomnvars();
     self.killcam = undefined;
     setcinematiccamerastyle("unknown", -1, -1);
-    namespace_5aeecefc462876::setspectatepermissions(gameended);
+    scripts/mp/spectating::setspectatepermissions(gameended);
     clearkillcamstate();
     if (istrue(updatesession) && !istrue(gameended)) {
         updatesessionstate("dead");
@@ -716,12 +718,12 @@ function killcamcleanup(updatesession, gameended, var_dbefc13f81d8d26a) {
     self notify("killcam_ended");
     self clearsoundsubmix("iw9_mp_core_killcam_mix");
     self clearsoundsubmix("iw9_mp_killcam");
-    if (istrue(var_dbefc13f81d8d26a)) {
+    if (istrue(isfinalkillcam)) {
         self setclientomnvar("post_game_state", 1);
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2578
 // Size: 0x206
@@ -739,9 +741,9 @@ function setkillcamweapontypeomnvars(objweapon, einflictor, attacker) {
         setkillcamkilledbyitemomnvars(-1, -1);
         return;
     }
-    var_60ce74182e7c83a7 = namespace_3f0ea7483345a2c0::getlootinfoforweapon(objweapon.basename, objweapon.variantid);
-    if (isdefined(var_60ce74182e7c83a7)) {
-        self setclientomnvar("ui_killcam_killedby_loot_variant_id", var_60ce74182e7c83a7.variantid);
+    lootinfo = scripts/mp/loot::getlootinfoforweapon(objweapon.basename, objweapon.variantid);
+    if (isdefined(lootinfo)) {
+        self setclientomnvar("ui_killcam_killedby_loot_variant_id", lootinfo.variantid);
     } else {
         self setclientomnvar("ui_killcam_killedby_loot_variant_id", -1);
     }
@@ -752,8 +754,8 @@ function setkillcamweapontypeomnvars(objweapon, einflictor, attacker) {
             attachments = [];
         }
         var_26e8678bd2761ff9 = 0;
-        for (var_40e4b9c48b36c9ec = 0; var_40e4b9c48b36c9ec < attachments.size; var_40e4b9c48b36c9ec++) {
-            var_b72fb037a64a6025 = attachments[var_40e4b9c48b36c9ec];
+        for (attachindex = 0; attachindex < attachments.size; attachindex++) {
+            var_b72fb037a64a6025 = attachments[attachindex];
             if (attachmentisselectable(rootweaponname, var_b72fb037a64a6025)) {
                 if (var_26e8678bd2761ff9 >= 8) {
                     /#
@@ -762,45 +764,45 @@ function setkillcamweapontypeomnvars(objweapon, einflictor, attacker) {
                     break;
                 }
                 if (isdefined(level.weaponattachments) && isdefined(level.weaponattachments[var_b72fb037a64a6025])) {
-                    var_4f13b964ab82fe13 = level.weaponattachments[var_b72fb037a64a6025];
-                    self setclientomnvar("ui_killcam_killedby_attachment" + var_26e8678bd2761ff9 + 1, var_4f13b964ab82fe13);
+                    attachmentlootid = level.weaponattachments[var_b72fb037a64a6025];
+                    self setclientomnvar("ui_killcam_killedby_attachment" + var_26e8678bd2761ff9 + 1, attachmentlootid);
                     var_26e8678bd2761ff9++;
                 }
             }
         }
-        for (var_40e4b9c48b36c9ec = var_26e8678bd2761ff9; var_40e4b9c48b36c9ec < 8; var_40e4b9c48b36c9ec++) {
-            self setclientomnvar("ui_killcam_killedby_attachment" + var_40e4b9c48b36c9ec + 1, -1);
+        for (attachindex = var_26e8678bd2761ff9; attachindex < 8; attachindex++) {
+            self setclientomnvar("ui_killcam_killedby_attachment" + attachindex + 1, -1);
         }
     }
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2785
 // Size: 0x48
 function setkillcamsupertypeomnvars(objweapon) {
-    ref = namespace_85d036cb78063c4a::getsuperrefforsuperweapon(objweapon);
-    id = namespace_85d036cb78063c4a::getsuperid(ref);
+    ref = scripts/mp/supers::getsuperrefforsuperweapon(objweapon);
+    id = scripts/mp/supers::getsuperid(ref);
     setkillcamkilledbyitemomnvars(2, id);
     clearlootweaponomnvars();
     clearkillcamattachmentomnvars();
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27d4
 // Size: 0x57
 function setkillcamequipmenttypeomnvars(objweapon) {
-    equipmentref = namespace_1a507865f681850e::getequipmentreffromweapon(objweapon);
-    var_9b83efba8bfecc3f = namespace_1a507865f681850e::getequipmenttableinfo(equipmentref);
-    if (isdefined(var_9b83efba8bfecc3f)) {
-        setkillcamkilledbyitemomnvars(3, var_9b83efba8bfecc3f.id);
+    equipmentref = scripts/mp/equipment::getequipmentreffromweapon(objweapon);
+    equipmentinfo = scripts/mp/equipment::getequipmenttableinfo(equipmentref);
+    if (isdefined(equipmentinfo)) {
+        setkillcamkilledbyitemomnvars(3, equipmentinfo.id);
     }
     clearlootweaponomnvars();
     clearkillcamattachmentomnvars();
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2832
 // Size: 0x41
@@ -808,14 +810,14 @@ function setkillcamexecutiontypeomnvars(ref) {
     if (!isdefined(ref)) {
         id = 0;
     } else {
-        id = namespace_f446f6030ca8cff8::execution_getidbyref(ref);
+        id = scripts/cp_mp/execution::execution_getidbyref(ref);
     }
     setkillcamkilledbyitemomnvars(4, id);
     clearlootweaponomnvars();
     clearkillcamattachmentomnvars();
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x287a
 // Size: 0x24
@@ -825,12 +827,12 @@ function setkillcammisctypeomnvars(id) {
     clearkillcamattachmentomnvars();
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28a5
 // Size: 0xa8
 function isnoneweaponinflictor(einflictor) {
-    var_2919414905a66f17 = 0;
+    isnoneweapon = 0;
     if (isdefined(einflictor) && isdefined(einflictor.targetname)) {
         switch (einflictor.targetname) {
         case #"hash_2b6c3cfd33ba8b3":
@@ -841,14 +843,14 @@ function isnoneweaponinflictor(einflictor) {
         case #"hash_2b6c8cfd33bb092":
         case #"hash_3fd866e3da61a87":
         case #"hash_5cfc71f81e9bba54":
-            var_2919414905a66f17 = 1;
+            isnoneweapon = 1;
             break;
         }
     }
-    return var_2919414905a66f17;
+    return isnoneweapon;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2955
 // Size: 0x76
@@ -866,15 +868,15 @@ function isenvironmentalinflictor(einflictor) {
     return var_b61b72e59b2ea4e2;
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29d3
 // Size: 0xb
 function resetplayeromnvarsonkillcam() {
-    namespace_84cff6185e39aa66::vehomn_clearall(self);
+    scripts/cp_mp/utility/vehicle_omnvar_utility::vehomn_clearall(self);
 }
 
-// Namespace killcam/namespace_34eb47d51c422b79
+// Namespace killcam / scripts/mp/killcam
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x29e5
 // Size: 0xea

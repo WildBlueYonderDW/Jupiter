@@ -3,16 +3,16 @@
 #using scripts\common\utility.gsc;
 #using scripts\mp\killstreaks\killstreaks.gsc;
 
-#namespace namespace_52d9641ffe2e3031;
+#namespace remoteturret;
 
-// Namespace namespace_52d9641ffe2e3031/namespace_55e2ccf03df352f2
+// Namespace remoteturret / scripts/mp/killstreaks/remoteturret
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x298
 // Size: 0x329
 function init() {
     level.turrettype = [];
     level.turrettype["mg_turret"] = "remote_mg_turret";
-    namespace_58a74e7d54b56e8d::registerkillstreak("remote_mg_turret", &tryuseremotemgturret);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("remote_mg_turret", &tryuseremotemgturret);
     level.turretsettings = [];
     level.turretsettings["mg_turret"] = spawnstruct();
     level.turretsettings["mg_turret"].sentrymodeon = "manual";
@@ -44,7 +44,7 @@ function init() {
     #/
 }
 
-// Namespace namespace_52d9641ffe2e3031/namespace_55e2ccf03df352f2
+// Namespace remoteturret / scripts/mp/killstreaks/remoteturret
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c8
 // Size: 0x14

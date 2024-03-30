@@ -2,7 +2,7 @@
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using script_2047cdbf5176ba0;
 #using script_92b815b18f0ba61;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_528320cb3630530d;
 #using script_704ba57fc06b1040;
@@ -101,7 +101,7 @@
 
 #namespace mp_jup_bigmap_ob;
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x5df
 // Size: 0x11
@@ -109,12 +109,12 @@ function autoexec init() {
     level.var_cd52e517ad96566d = &main;
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f7
 // Size: 0x368
 function main() {
-    level thread function_fc2a55f451f430ee();
+    level thread cleanup_map();
     level callback::add("register_activities", &function_d0ffb4e404349b30);
     level callback::add("register_objectives", &function_83ecb01b31530309);
     level callback::add("register_features", &function_c4ca7f1cd743b5d2);
@@ -147,7 +147,7 @@ function main() {
     namespace_2ca3dad2d6898e0d::main();
     namespace_db64ae640647c5cd::main();
     namespace_f2713faa50431351::main();
-    namespace_3c37cb17ade254d::flag_set("gas_station_create_script_initialized");
+    scripts/engine/utility::flag_set("gas_station_create_script_initialized");
     namespace_981841431137dfcc::main();
     namespace_e03919da9578d3dc::main();
     namespace_2fd4af9f8020b5a0::main();
@@ -178,9 +178,9 @@ function main() {
     level thread function_bc95ea3a25ee0024();
     if (getdvarint(@"hash_f0651f120dc9412d", 0)) {
         namespace_8f52b12ca3af49b1::main();
-        namespace_609a42b1d504aad6::function_30a591676d601c38();
+        namespace_609a42b1d504aad6::quest_init();
     } else {
-        namespace_609a42b1d504aad6::function_c3537df6d3e86a6c();
+        namespace_609a42b1d504aad6::clip_handler();
     }
     if (getdvarint(@"hash_f0651c120dc93a94", 0)) {
         namespace_6d31e91c26415292::main();
@@ -210,11 +210,11 @@ function main() {
     createnavlink("tile_a_emergency_link_1", (-31993, 27646, 1434), (-32093, 27607, 1588));
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x966
 // Size: 0x1cc
-function private function_fc2a55f451f430ee() {
+function private cleanup_map() {
     for (index = 1; index < 13; index++) {
         number = "";
         if (index < 10) {
@@ -247,8 +247,8 @@ function private function_fc2a55f451f430ee() {
     mapname = getmapname();
     if (isdefined(mapname)) {
         if (mapname == "mp_jup_bigmap") {
-            var_9e713408a92ed052 = [0:"clip_zombie_container", 1:"clip_zombie_container_opening", 2:"clip_zombie_container_door", 3:"clip_zombie_container_floor"];
-            foreach (entityname in var_9e713408a92ed052) {
+            entitynames = ["clip_zombie_container", "clip_zombie_container_opening", "clip_zombie_container_door", "clip_zombie_container_floor"];
+            foreach (entityname in entitynames) {
                 entities = getentarray(entityname, "targetname");
                 for (index = 0; index < entities.size; index++) {
                     entities[index] delete();
@@ -259,12 +259,12 @@ function private function_fc2a55f451f430ee() {
     }
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb39
 // Size: 0x35
 function function_a39aa470df6cd578() {
-    while (1) {
+    while (true) {
         if (getdvar(@"hash_dffbbb2b70b78aee", "0") == "1") {
             function_3dfc24cbac6795be();
             return;
@@ -273,7 +273,7 @@ function function_a39aa470df6cd578() {
     }
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb75
 // Size: 0x4a
@@ -290,12 +290,12 @@ function function_3dfc24cbac6795be() {
     thread namespace_a07f20e9740e52::init();
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc6
 // Size: 0x35
 function function_6ad85f8d5c683ce4() {
-    while (1) {
+    while (true) {
         if (getdvar(@"hash_6e5464e5ee3bd77d", "0") == "1") {
             function_9fb88526b60e2e45();
             return;
@@ -304,7 +304,7 @@ function function_6ad85f8d5c683ce4() {
     }
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc02
 // Size: 0x4a
@@ -321,12 +321,12 @@ function function_9fb88526b60e2e45() {
     thread namespace_d0c78bdaf71b04f6::init();
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc53
 // Size: 0x35
 function function_67ce1aff066faf12() {
-    while (1) {
+    while (true) {
         if (getdvar(@"hash_6ffd9adb060c50c9", "0") == "1") {
             function_78795efa67a421b();
             return;
@@ -335,7 +335,7 @@ function function_67ce1aff066faf12() {
     }
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc8f
 // Size: 0x43
@@ -351,7 +351,7 @@ function function_78795efa67a421b() {
     thread namespace_d7e80b14e1130dc4::init();
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcd9
 // Size: 0x14c
@@ -360,10 +360,10 @@ function function_bc95ea3a25ee0024() {
         return;
     }
     if (getdvarint(@"hash_6dfc320987b819", 0)) {
-        var_dabe5dc8a76998e8 = [0:"vehicle_group_a", 1:"vehicle_group_b", 2:"vehicle_group_c", 3:"vehicle_group_d", 4:"vehicle_group_e", 5:"vehicle_group_f", 6:"vehicle_group_g", 7:"vehicle_group_h", 8:"vehicle_group_i"];
+        var_dabe5dc8a76998e8 = ["vehicle_group_a", "vehicle_group_b", "vehicle_group_c", "vehicle_group_d", "vehicle_group_e", "vehicle_group_f", "vehicle_group_g", "vehicle_group_h", "vehicle_group_i"];
         a_s_spawns = [];
-        foreach (var_14d6304ff0553d7 in var_dabe5dc8a76998e8) {
-            var_43392d5f952613b6 = getstructarray(var_14d6304ff0553d7, "script_noteworthy");
+        foreach (vehicle_group in var_dabe5dc8a76998e8) {
+            var_43392d5f952613b6 = getstructarray(vehicle_group, "script_noteworthy");
             a_s_spawns = array_combine(a_s_spawns, namespace_f9b6a4254d2d8100::function_48f13f47907a7e67(var_43392d5f952613b6));
             waitframe();
         }
@@ -377,7 +377,7 @@ function function_bc95ea3a25ee0024() {
     callback::callback("ob_vehicles_create_script_done");
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe2c
 // Size: 0x22
@@ -387,7 +387,7 @@ function function_ce4bae9d68c21731() {
     setdvar(@"hash_f1d095735ac37f33", 1);
 }
 
-// Namespace mp_jup_bigmap_ob/namespace_5fa0502c9f3a3cf
+// Namespace mp_jup_bigmap_ob / namespace_5fa0502c9f3a3cf
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe55
 // Size: 0x49

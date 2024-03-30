@@ -27,12 +27,12 @@
 
 #namespace namespace_70fc35e94db9839b;
 
-// Namespace namespace_70fc35e94db9839b/namespace_be1f12aa953a539a
+// Namespace namespace_70fc35e94db9839b / namespace_be1f12aa953a539a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a4
 // Size: 0x1b1
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_688fafe09e676ff8");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_688fafe09e676ff8");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_579d39f2f40c41bf");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 180;
@@ -41,8 +41,8 @@ function main() {
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "soldier";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_soldier_base_ob");
-    var_fea750d6814b803d = "iw9_sm_beta, [ none, none, none, none, none, none ], none, none";
-    self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+    primaryweaponhash = "iw9_sm_beta, [ none, none, none, none, none, none ], none, none";
+    self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
     self giveweapon(self.weapon);
     self setspawnweapon(self.weapon);
     self.bulletsinclip = weaponclipsize(self.weapon);
@@ -61,13 +61,13 @@ function main() {
     #/
     self.var_a942dd31d55102c9 = self.asmasset;
     self.a = spawnstruct();
-    namespace_bf5a1761a8d1bb07::asm_init_blackboard();
-    namespace_f08e04b63067d27f::bt_init();
-    namespace_28d7bb9fcf17949d::asm_init(self.asmasset, self.animationarchetype);
-    namespace_6205bc7c5e394598::ai_init();
+    scripts/asm/asm::asm_init_blackboard();
+    scripts/aitypes/bt_util::bt_init();
+    scripts/asm/asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts/common/ai::ai_init();
 }
 
-// Namespace namespace_70fc35e94db9839b/namespace_be1f12aa953a539a
+// Namespace namespace_70fc35e94db9839b / namespace_be1f12aa953a539a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x6d
@@ -84,7 +84,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_70fc35e94db9839b/namespace_be1f12aa953a539a
+// Namespace namespace_70fc35e94db9839b / namespace_be1f12aa953a539a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d0
 // Size: 0x14a
@@ -95,47 +95,34 @@ function function_9ac26a51c94ccf52() {
     switch (self.var_e2682e6f1838391e) {
     case 0:
         return namespace_7d3b12eaf52e5063::main();
-        break;
     case 1:
         return namespace_9c005241e2d2ce27::main();
-        break;
     case 2:
         return namespace_9c005341e2d2d05a::main();
-        break;
     case 3:
         return namespace_9c005441e2d2d28d::main();
-        break;
     case 4:
         return namespace_489304c6fe3a495b::main();
-        break;
     case 5:
         return namespace_489305c6fe3a4b8e::main();
-        break;
     case 6:
         return namespace_5cfc4ed0ea7654ff::main();
-        break;
     case 7:
         return namespace_5cfc4fd0ea765732::main();
-        break;
     case 8:
         return namespace_ffc709ab88f6587f::main();
-        break;
     case 9:
         return namespace_ffc70aab88f65ab2::main();
-        break;
     case 10:
         return namespace_ffc70bab88f65ce5::main();
-        break;
     case 11:
         return namespace_474abb8d4fd3a643::main();
-        break;
     case 12:
         return namespace_474abc8d4fd3a876::main();
-        break;
     }
 }
 
-// Namespace namespace_70fc35e94db9839b/namespace_be1f12aa953a539a
+// Namespace namespace_70fc35e94db9839b / namespace_be1f12aa953a539a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x621
 // Size: 0x84
@@ -146,20 +133,16 @@ function function_efa2a2a09745fbd() {
     switch (self.var_e2682e6f1838391e) {
     case 0:
         return namespace_385f3646395c9f26::main();
-        break;
     case 1:
         return namespace_385f3546395c9cf3::main();
-        break;
     case 2:
         return namespace_385f3446395c9ac0::main();
-        break;
     case 3:
         return namespace_385f3b46395caa25::main();
-        break;
     }
 }
 
-// Namespace namespace_70fc35e94db9839b/namespace_be1f12aa953a539a
+// Namespace namespace_70fc35e94db9839b / namespace_be1f12aa953a539a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ac
 // Size: 0x13f
@@ -192,26 +175,26 @@ function precache() {
         namespace_385f3446395c9ac0::function_8168fbf6282d398b();
         namespace_385f3b46395caa25::function_8168fbf6282d398b();
     }
-    namespace_e8f3f30f2d3e4a89::agent_init();
-    namespace_f08e04b63067d27f::init();
-    namespace_8bef0f00d6d36a69::soldier();
-    thread function_e8cf870298e36bdc();
+    scripts/cp_mp/agents/agent_init::agent_init();
+    scripts/aitypes/bt_util::init();
+    scripts/aitypes/assets::soldier();
+    thread setup_weapons();
 }
 
-// Namespace namespace_70fc35e94db9839b/namespace_be1f12aa953a539a
+// Namespace namespace_70fc35e94db9839b / namespace_be1f12aa953a539a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f2
 // Size: 0xa2
-function function_e8cf870298e36bdc() {
+function setup_weapons() {
     while (!isdefined(level.weaponmapdata)) {
         waitframe();
     }
     if (!isdefined(level.var_67b54180a55f70e1)) {
         level.var_67b54180a55f70e1 = [];
     }
-    var_fea750d6814b803d = "iw9_sm_beta, [ none, none, none, none, none, none ], none, none";
-    if (!isdefined(level.var_67b54180a55f70e1[var_fea750d6814b803d])) {
-        level.var_67b54180a55f70e1[var_fea750d6814b803d] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_sm_beta", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+    primaryweaponhash = "iw9_sm_beta, [ none, none, none, none, none, none ], none, none";
+    if (!isdefined(level.var_67b54180a55f70e1[primaryweaponhash])) {
+        level.var_67b54180a55f70e1[primaryweaponhash] = scripts/mp/class::function_e83615f8a92e4378("iw9_sm_beta", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
 }
 

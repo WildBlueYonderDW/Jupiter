@@ -6,7 +6,7 @@
 
 #namespace obj_capture;
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0xbd
@@ -24,7 +24,7 @@ function init() {
     level.objectivesettings["ctf"] = settings;
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x7e
@@ -32,30 +32,30 @@ function createcaptureobjective(objectname, team, settings) {
     if (!isdefined(settings)) {
         settings = level.objectivesettings["ctf"];
     }
-    var_61b9936bd67afc79 = createcarryobject(objectname, team, settings);
-    goal = creategoal(var_61b9936bd67afc79.visuals[0].target, var_61b9936bd67afc79, team, settings);
-    var_61b9936bd67afc79.goal = goal;
+    carryobj = createcarryobject(objectname, team, settings);
+    goal = creategoal(carryobj.visuals[0].target, carryobj, team, settings);
+    carryobj.goal = goal;
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x1ed
 function createcarryobject(objectname, team, settings) {
-    var_5ff5210f68c5f433 = getent(objectname, "targetname");
-    if (!isdefined(var_5ff5210f68c5f433)) {
+    objectvisuals = getent(objectname, "targetname");
+    if (!isdefined(objectvisuals)) {
         error("No model named " + objectname + " found!");
         return;
     }
-    trigger = spawn("trigger_radius", var_5ff5210f68c5f433.origin, 0, 96, 120);
-    object = namespace_19b4203b51d56488::createcarryobject(team, trigger, [0:var_5ff5210f68c5f433], (0, 0, 85));
-    object namespace_19b4203b51d56488::setteamusetime("friendly", settings.pickuptime);
-    object namespace_19b4203b51d56488::setteamusetime("enemy", settings.pickuptime);
-    object namespace_19b4203b51d56488::setteamusetext("enemy", settings.usetextfriendly);
-    object namespace_19b4203b51d56488::setteamusetext("friendly", settings.usetextenemy);
-    object namespace_19b4203b51d56488::allowcarry("enemy");
-    object namespace_19b4203b51d56488::setobjectivestatusicons(settings.pickupicon, settings.pickupicon);
-    object namespace_19b4203b51d56488::setvisibleteam("enemy");
+    trigger = spawn("trigger_radius", objectvisuals.origin, 0, 96, 120);
+    object = scripts/mp/gameobjects::createcarryobject(team, trigger, [objectvisuals], (0, 0, 85));
+    object scripts/mp/gameobjects::setteamusetime("friendly", settings.pickuptime);
+    object scripts/mp/gameobjects::setteamusetime("enemy", settings.pickuptime);
+    object scripts/mp/gameobjects::setteamusetext("enemy", settings.usetextfriendly);
+    object scripts/mp/gameobjects::setteamusetext("friendly", settings.usetextenemy);
+    object scripts/mp/gameobjects::allowcarry("enemy");
+    object scripts/mp/gameobjects::setobjectivestatusicons(settings.pickupicon, settings.pickupicon);
+    object scripts/mp/gameobjects::setvisibleteam("enemy");
     object.objidpingfriendly = 1;
     object.allowweapons = 1;
     object.onpickup = settings.onpickupfn;
@@ -64,59 +64,59 @@ function createcarryobject(objectname, team, settings) {
     object.onreset = settings.onresetfn;
     object.settings = settings;
     if (!isdefined(settings.carrymodel)) {
-        settings.carrymodel = var_5ff5210f68c5f433.model;
+        settings.carrymodel = objectvisuals.model;
     }
     object setnodeploy(1);
     object setnonstick(1);
     return object;
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e8
 // Size: 0xe2
-function creategoal(var_4e0bfadc66e471d1, var_c07321ac837070b6, team, settings) {
-    var_bd7f0d49276a106a = getent(var_4e0bfadc66e471d1, "targetname");
-    if (!isdefined(var_bd7f0d49276a106a)) {
-        error("No goal trigger named " + var_bd7f0d49276a106a + " found!");
+function creategoal(goalname, var_c07321ac837070b6, team, settings) {
+    goaltrigger = getent(goalname, "targetname");
+    if (!isdefined(goaltrigger)) {
+        error("No goal trigger named " + goaltrigger + " found!");
         return;
     }
-    goal = namespace_19b4203b51d56488::createuseobject(team, var_bd7f0d49276a106a, [], (0, 0, 85));
-    goal namespace_19b4203b51d56488::allowuse("enemy");
-    goal namespace_19b4203b51d56488::setvisibleteam("any");
-    goal namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_blitz_defend", "waypoint_blitz_goal");
-    goal namespace_19b4203b51d56488::setusetime(settings.delivertime);
-    goal namespace_19b4203b51d56488::setkeyobject(var_c07321ac837070b6);
+    goal = scripts/mp/gameobjects::createuseobject(team, goaltrigger, [], (0, 0, 85));
+    goal scripts/mp/gameobjects::allowuse("enemy");
+    goal scripts/mp/gameobjects::setvisibleteam("any");
+    goal scripts/mp/gameobjects::setobjectivestatusicons("waypoint_blitz_defend", "waypoint_blitz_goal");
+    goal scripts/mp/gameobjects::setusetime(settings.delivertime);
+    goal scripts/mp/gameobjects::setkeyobject(var_c07321ac837070b6);
     goal.onuse = settings.ondelivered;
     goal.settings = settings;
     return goal;
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d2
 // Size: 0x73
-function onobjectpickup(player, var_5760e0f038d1baa3, defused) {
-    if (player.team == namespace_19b4203b51d56488::getownerteam()) {
-        namespace_19b4203b51d56488::returnhome();
-    } else {
-        player attachobjecttocarrier(self.settings.carrymodel);
-        namespace_19b4203b51d56488::setvisibleteam("any");
-        namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_capture_kill", "waypoint_escort");
+function onobjectpickup(player, playervo, defused) {
+    if (player.team == scripts/mp/gameobjects::getownerteam()) {
+        scripts/mp/gameobjects::returnhome();
+        return;
     }
+    player attachobjecttocarrier(self.settings.carrymodel);
+    scripts/mp/gameobjects::setvisibleteam("any");
+    scripts/mp/gameobjects::setobjectivestatusicons("waypoint_capture_kill", "waypoint_escort");
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x64c
 // Size: 0x35
 function onobjectdrop(player) {
-    namespace_19b4203b51d56488::allowcarry("any");
-    namespace_19b4203b51d56488::setvisibleteam("any");
-    namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_capture_recover", "waypoint_capture_take");
+    scripts/mp/gameobjects::allowcarry("any");
+    scripts/mp/gameobjects::setvisibleteam("any");
+    scripts/mp/gameobjects::setobjectivestatusicons("waypoint_capture_recover", "waypoint_capture_take");
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x3d
@@ -126,10 +126,10 @@ function returnaftertime() {
     }
     self endon("picked_up");
     wait(self.settings.returntime);
-    namespace_19b4203b51d56488::returnhome();
+    scripts/mp/gameobjects::returnhome();
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6cc
 // Size: 0x3
@@ -137,27 +137,27 @@ function onobjectreset() {
     
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d6
 // Size: 0x45
 function onobjectdelivered(player) {
-    self.keyobject namespace_19b4203b51d56488::allowcarry("none");
-    self.keyobject namespace_19b4203b51d56488::setvisibleteam("none");
+    self.keyobject scripts/mp/gameobjects::allowcarry("none");
+    self.keyobject scripts/mp/gameobjects::setvisibleteam("none");
     player detachobjectifcarried();
-    namespace_19b4203b51d56488::deleteuseobject();
+    scripts/mp/gameobjects::deleteuseobject();
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x722
 // Size: 0x25
-function attachobjecttocarrier(var_6c37c6a8bb079680) {
-    self attach(var_6c37c6a8bb079680, "tag_stowed_back3", 1);
-    self.carriedobject = var_6c37c6a8bb079680;
+function attachobjecttocarrier(objectmodelname) {
+    self attach(objectmodelname, "tag_stowed_back3", 1);
+    self.carriedobject = objectmodelname;
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x74e
 // Size: 0x2f
@@ -168,11 +168,11 @@ function detachobjectifcarried() {
     }
 }
 
-// Namespace obj_capture/namespace_11625d1b28bcd0be
+// Namespace obj_capture / scripts/mp/gametypes/obj_capture
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x784
 // Size: 0x5b
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     detachobjectifcarried();
 }
 

@@ -5,7 +5,7 @@
 
 #namespace squad_utility;
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f
 // Size: 0x29
@@ -15,21 +15,21 @@ function function_c9406922e0267f09() {
     }
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f
 // Size: 0x58
-function getsquadmembers(var_68bb1f110ec06a58, var_7102f45d5f0b5834) {
-    if (!isdefined(var_68bb1f110ec06a58) && !(isdefined(self) && isdefined(self.team))) {
+function getsquadmembers(testteam, aliveonly) {
+    if (!isdefined(testteam) && !(isdefined(self) && isdefined(self.team))) {
         return [];
     }
     if (issharedfuncdefined("squad_utility", "getSquadMembers")) {
-        return [[ getsharedfunc("squad_utility", "getSquadMembers") ]](var_68bb1f110ec06a58, var_7102f45d5f0b5834);
+        return [[ getsharedfunc("squad_utility", "getSquadMembers") ]](testteam, aliveonly);
     }
     return [];
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1df
 // Size: 0x4d
@@ -43,17 +43,17 @@ function getsquadleader(team, index) {
     return level.squaddata[team][index].squadleader;
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x234
 // Size: 0x16e
 function shouldmodesetsquads() {
-    if (isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.issquadmode)) {
+    if (isdefined(level.gametypebundle) && istrue(level.gametypebundle.issquadmode)) {
         return issquadmode();
     }
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
-        if (istrue(namespace_3c37cb17ade254d::function_f3bb4f4911a1beb2("teamAssim", "isEnabled"))) {
-            var_14babd7bb6a93112 = namespace_3c37cb17ade254d::function_f3bb4f4911a1beb2("teamAssim", "getMaxAssimilationTeamSize");
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+        if (istrue(scripts/engine/utility::function_f3bb4f4911a1beb2("teamAssim", "isEnabled"))) {
+            var_14babd7bb6a93112 = scripts/engine/utility::function_f3bb4f4911a1beb2("teamAssim", "getMaxAssimilationTeamSize");
             return (isdefined(var_14babd7bb6a93112) && var_14babd7bb6a93112 > 1);
         } else {
             return issquadmode();
@@ -80,20 +80,19 @@ function shouldmodesetsquads() {
         return issquadmode();
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x9f
 function function_a9cb1bbce9eb3d1b() {
-    if (isdefined(level.var_62f6f7640e4431e3) && istrue(level.var_62f6f7640e4431e3.var_597e7a2e7fd129b)) {
+    if (isdefined(level.gametypebundle) && istrue(level.gametypebundle.var_597e7a2e7fd129b)) {
         return 1;
     }
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
-        if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "rumble_mgl") {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+        if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "rumble_mgl") {
             return 0;
         } else if (getdvarint(@"hash_80ba0c604a8e46f3", 0) == 1) {
             return 0;
@@ -107,11 +106,10 @@ function function_a9cb1bbce9eb3d1b() {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x44f
 // Size: 0xf
@@ -119,18 +117,18 @@ function issquadmode() {
     return level.maxsquadsize > 1;
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x466
 // Size: 0x49
 function function_6b09c63febc4655c(team, index) {
     if (!isdefined(level.squaddata[team][index])) {
-        return 0;
+        return false;
     }
     return level.squaddata[team][index].players.size == level.maxsquadsize;
 }
 
-// Namespace squad_utility/namespace_ca7b90256548aa40
+// Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0x39

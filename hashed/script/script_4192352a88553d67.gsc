@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace telemetry;
 
-// Namespace telemetry/namespace_627d023f48c9561
+// Namespace telemetry / namespace_627d023f48c9561
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72
 // Size: 0xa9
@@ -19,10 +19,10 @@ function init() {
         if (!isdefined(game["telemetry"].game_event_count)) {
             game["telemetry"].game_event_count = 0;
         }
-    } else {
-        /#
-            println("<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>");
+    #/
 }
 

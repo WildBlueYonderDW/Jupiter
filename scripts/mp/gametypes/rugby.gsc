@@ -32,25 +32,25 @@
 
 #namespace rugby;
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe58
 // Size: 0x2f3
 function main() {
-    var_584994fab4a8712b = spawnstruct();
-    level.rugby = var_584994fab4a8712b;
-    var_584994fab4a8712b.endzones = [];
-    var_584994fab4a8712b.endzones["allies"] = [];
-    var_584994fab4a8712b.endzones["axis"] = [];
-    var_584994fab4a8712b.juggcratesetups = [];
-    var_584994fab4a8712b.goals = [];
-    var_584994fab4a8712b.activejuggcrates = [];
-    var_584994fab4a8712b.activejuggernauts = [];
-    var_584994fab4a8712b.lastjuggpositions = [];
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    globals = spawnstruct();
+    level.rugby = globals;
+    globals.endzones = [];
+    globals.endzones["allies"] = [];
+    globals.endzones["axis"] = [];
+    globals.juggcratesetups = [];
+    globals.goals = [];
+    globals.activejuggcrates = [];
+    globals.activejuggernauts = [];
+    globals.lastjuggpositions = [];
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     initrules();
     level.teambased = 1;
     level.objectivebased = 1;
@@ -65,19 +65,19 @@ function main() {
     level.ontimelimitot = &ontimelimitot;
     level.var_5fec67fa7f314c8a = &function_75d33aa666ba0a2e;
     game["canScoreOnTie"] = 1;
-    if (namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         game["dialog"]["gametype"] = "iw9_rgby_mode_uktl_rgt1";
     } else {
         game["dialog"]["gametype"] = "gametype_onslaught";
     }
     game["dialog"]["boost"] = "boost_rugby";
     if (!isdefined(game["roundsPlayed"])) {
-        var_126fe93c04fe16df = "boost_rugby";
+        boostvo = "boost_rugby";
     } else {
-        var_126fe93c04fe16df = "boost_rugby_short";
+        boostvo = "boost_rugby_short";
     }
-    game["dialog"]["offense_obj"] = var_126fe93c04fe16df;
-    game["dialog"]["defense_obj"] = var_126fe93c04fe16df;
+    game["dialog"]["offense_obj"] = boostvo;
+    game["dialog"]["defense_obj"] = boostvo;
     game["dialog"]["rugby_enemy_close_goal"] = "rugby_enemy_close_goal";
     game["dialog"]["rugby_friendly_close_goal"] = "rugby_friendly_close_goal";
     game["dialog"]["rugby_lost_jugg"] = "rugby_lost_jugg";
@@ -93,7 +93,7 @@ function main() {
     level._effect["rugby_score_explosion"] = loadfx("vfx/iw9/dmz/bombsite/vfx_dmz_bombsite_expl.vfx");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1152
 // Size: 0xbe
@@ -116,15 +116,15 @@ function initrules() {
     level.currenttimelimitdelay = 0;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1217
 // Size: 0xa
 function updategametypedvars() {
-    namespace_310ba947928891df::updatecommongametypedvars();
+    scripts/mp/gametypes/common::updatecommongametypedvars();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1228
 // Size: 0x106
@@ -132,19 +132,19 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     jugghealth = getmatchrulesdata("rugbyData", "juggHealth");
     setdynamicdvar(@"hash_916482a23f7db002", jugghealth);
-    juggspeed = getmatchrulesdata("rugbyData", "juggSpeed");
-    setdynamicdvar(@"hash_fca821906f4a663f", juggspeed);
-    juggteamspeed = getmatchrulesdata("rugbyData", "juggTeamSpeed");
-    setdynamicdvar(@"hash_64d4d28dc063bff0", juggteamspeed);
-    juggtimeout = getmatchrulesdata("rugbyData", "juggTimeout");
-    setdynamicdvar(@"hash_364db51c6de274cf", juggtimeout);
-    helpermax = getmatchrulesdata("rugbyData", "helperMax");
-    setdynamicdvar(@"hash_f3f419ef3e285de3", helpermax);
-    juggcapturetime = getmatchrulesdata("rugbyData", "juggCaptureTime");
-    setdynamicdvar(@"hash_f96f8ff371da9f0f", juggcapturetime);
+    juggSpeed = getmatchrulesdata("rugbyData", "juggSpeed");
+    setdynamicdvar(@"hash_fca821906f4a663f", juggSpeed);
+    juggTeamSpeed = getmatchrulesdata("rugbyData", "juggTeamSpeed");
+    setdynamicdvar(@"hash_64d4d28dc063bff0", juggTeamSpeed);
+    juggTimeout = getmatchrulesdata("rugbyData", "juggTimeout");
+    setdynamicdvar(@"hash_364db51c6de274cf", juggTimeout);
+    helperMax = getmatchrulesdata("rugbyData", "helperMax");
+    setdynamicdvar(@"hash_f3f419ef3e285de3", helperMax);
+    juggCaptureTime = getmatchrulesdata("rugbyData", "juggCaptureTime");
+    setdynamicdvar(@"hash_f96f8ff371da9f0f", juggCaptureTime);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1335
 // Size: 0x11
@@ -152,18 +152,18 @@ function getjuggmaxhealth() {
     return getdvarint(@"hash_916482a23f7db002");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x134e
 // Size: 0x70
-function getjuggspeedscalar(var_16661ce060a7da4d) {
-    var_76b81ed8d4161bbc = -0.3 + 0.1 * getdvarfloat(@"hash_fca821906f4a663f");
-    var_16661ce060a7da4d = int(min(var_16661ce060a7da4d, getdvarint(@"hash_f3f419ef3e285de3")));
+function getjuggspeedscalar(helperplayers) {
+    unassistedscalar = -0.3 + 0.1 * getdvarfloat(@"hash_fca821906f4a663f");
+    helperplayers = int(min(helperplayers, getdvarint(@"hash_f3f419ef3e285de3")));
     var_cae04f4ff3aa680c = 0.08 * getdvarfloat(@"hash_64d4d28dc063bff0");
-    return var_76b81ed8d4161bbc + var_16661ce060a7da4d * var_cae04f4ff3aa680c;
+    return unassistedscalar + helperplayers * var_cae04f4ff3aa680c;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13c6
 // Size: 0x11
@@ -171,7 +171,7 @@ function getjuggtimeout() {
     return getdvarfloat(@"hash_364db51c6de274cf");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13df
 // Size: 0x11
@@ -179,7 +179,7 @@ function function_cca61180d8fdf0ea() {
     return getdvarfloat(@"hash_f96f8ff371da9f0f");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13f8
 // Size: 0x13
@@ -187,7 +187,7 @@ function function_d973247bb17fe16() {
     return getdvarfloat(@"hash_d2716123812605f", 45);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1413
 // Size: 0xa8
@@ -208,17 +208,17 @@ function onstartgametype() {
     #/
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14c2
 // Size: 0x2a
 function function_e2e13253ff7a00b1() {
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     wait(5);
-    level thread namespace_44abc05161e2e2cb::notifyteam("jugg_capture", "jugg_capture", "allies");
+    level thread scripts/mp/hud_message::notifyteam("jugg_capture", "jugg_capture", "allies");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f3
 // Size: 0x44
@@ -228,110 +228,114 @@ function initrugbyents() {
     initjuggcratesetupents();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x153e
 // Size: 0xb1
 function initendzoneents() {
-    var_584994fab4a8712b = level.rugby;
+    globals = level.rugby;
     endzones = getstructarray("rugby_endzone", "targetname");
-    foreach (var_54b003ce5d016238 in endzones) {
-        initendzoneent(var_54b003ce5d016238);
-        var_584994fab4a8712b.endzones[var_54b003ce5d016238.team][var_584994fab4a8712b.endzones[var_54b003ce5d016238.team].size] = var_54b003ce5d016238;
+    foreach (endzone in endzones) {
+        initendzoneent(endzone);
+        globals.endzones[endzone.team][globals.endzones[endzone.team].size] = endzone;
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15f6
 // Size: 0x246
-function initendzoneent(var_54b003ce5d016238) {
-    var_f19941e08f779517 = getentarray(var_54b003ce5d016238.target, "targetname");
+function initendzoneent(endzone) {
+    var_f19941e08f779517 = getentarray(endzone.target, "targetname");
     /#
-        assertex(isdefined(var_f19941e08f779517) && var_f19941e08f779517.size > 0, "Rugby Endzone at " + var_54b003ce5d016238.origin + " does not point to any trigger_multiple_mp_rugby_endzone triggers");
+        assertex(isdefined(var_f19941e08f779517) && var_f19941e08f779517.size > 0, "Rugby Endzone at " + endzone.origin + " does not point to any trigger_multiple_mp_rugby_endzone triggers");
     #/
     foreach (ent in var_f19941e08f779517) {
         if (ent.classname == "trigger_multiple_mp_rugby_endzone") {
-            var_54b003ce5d016238.trigger = ent;
+            endzone.trigger = ent;
         }
         if (isdefined(ent.script_noteworthy) && getsubstr(ent.script_noteworthy, 0, 3) == "fx_") {
             ent delete();
         }
     }
     /#
-        assertex(isdefined(var_54b003ce5d016238.trigger), "Rugby Endzone at " + var_54b003ce5d016238.origin + " is not targeting a trigger_multiple_mp_rugby_endzone");
+        assertex(isdefined(endzone.trigger), "Rugby Endzone at " + endzone.origin + " is not targeting a trigger_multiple_mp_rugby_endzone");
     #/
-    function_bede361fc24cbfe1(var_54b003ce5d016238);
-    if (var_54b003ce5d016238.spawnflags & 1) {
-        var_54b003ce5d016238.team = "allies";
-        var_54b003ce5d016238.trigger.objectivekey = "allies";
-    } else if (var_54b003ce5d016238.spawnflags & 2) {
-        var_54b003ce5d016238.team = "axis";
-        var_54b003ce5d016238.trigger.objectivekey = "axis";
+    function_bede361fc24cbfe1(endzone);
+    if (endzone.spawnflags & 1) {
+        endzone.team = "allies";
+        endzone.trigger.objectivekey = "allies";
+    } else if (endzone.spawnflags & 2) {
+        endzone.team = "axis";
+        endzone.trigger.objectivekey = "axis";
     } else {
-        var_54b003ce5d016238.team = "allies";
-        var_54b003ce5d016238.trigger.objectivekey = "allies";
+        endzone.team = "allies";
+        endzone.trigger.objectivekey = "allies";
         /#
-            assertmsg("Rugby Endzone at " + var_54b003ce5d016238.origin + " is marked as neither Allies nor Axis");
+            assertmsg("Rugby Endzone at " + endzone.origin + " is marked as neither Allies nor Axis");
         #/
     }
     foreach (ent in var_f19941e08f779517) {
-        if (!isdefined(var_54b003ce5d016238.chevrons)) {
-            level thread function_7c63d60ba6168aea(var_54b003ce5d016238);
+        if (!isdefined(endzone.chevrons)) {
+            level thread function_7c63d60ba6168aea(endzone);
         }
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1843
 // Size: 0xc9
-function function_bede361fc24cbfe1(var_54b003ce5d016238) {
+function function_bede361fc24cbfe1(endzone) {
     if (level.mapname == "mp_crash2") {
-        if (distance2d(var_54b003ce5d016238.origin, (312, -1552, 216)) < 10) {
-            var_54b003ce5d016238.spawnflags = 1;
+        if (distance2d(endzone.origin, (312, -1552, 216)) < 10) {
+            endzone.spawnflags = 1;
         }
-    } else if (level.mapname == "mp_scrapyard") {
-        if (distance2d(var_54b003ce5d016238.origin, (-25223.3, -12439.2, 36.5)) < 10) {
-            var_54b003ce5d016238.spawnflags = 2;
-        } else if (distance2d(var_54b003ce5d016238.origin, (-26150.7, -8967.81, 144)) < 10) {
-            var_54b003ce5d016238.spawnflags = 1;
+        return;
+    }
+    if (level.mapname == "mp_scrapyard") {
+        if (distance2d(endzone.origin, (-25223.3, -12439.2, 36.5)) < 10) {
+            endzone.spawnflags = 2;
+            return;
+        }
+        if (distance2d(endzone.origin, (-26150.7, -8967.81, 144)) < 10) {
+            endzone.spawnflags = 1;
         }
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1913
 // Size: 0xa4
 function initjuggcratesetupents() {
-    var_584994fab4a8712b = level.rugby;
+    globals = level.rugby;
     juggcratesetups = getstructarray("rugby_jugg_crate", "targetname");
-    foreach (var_115f6563192f74ea in juggcratesetups) {
-        var_115f6563192f74ea = function_10f430e91c6c8be3(var_115f6563192f74ea);
-        var_584994fab4a8712b.juggcratesetups[var_584994fab4a8712b.juggcratesetups.size] = var_115f6563192f74ea;
+    foreach (juggcratesetup in juggcratesetups) {
+        juggcratesetup = function_10f430e91c6c8be3(juggcratesetup);
+        globals.juggcratesetups[globals.juggcratesetups.size] = juggcratesetup;
     }
-    level.rugby = var_584994fab4a8712b;
+    level.rugby = globals;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19be
 // Size: 0x78
-function function_10f430e91c6c8be3(var_115f6563192f74ea) {
+function function_10f430e91c6c8be3(juggcratesetup) {
     switch (level.mapname) {
     case #"hash_d39c51733bbe5712":
-        if (distance(var_115f6563192f74ea.origin, (3113.65, -1118.5, 378.5)) < 10) {
-            var_115f6563192f74ea.origin = (2751, -1028, 376.5);
+        if (distance(juggcratesetup.origin, (3113.65, -1118.5, 378.5)) < 10) {
+            juggcratesetup.origin = (2751, -1028, 376.5);
         }
         break;
     default:
         break;
     }
-    return var_115f6563192f74ea;
+    return juggcratesetup;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a3e
 // Size: 0xa9
@@ -339,56 +343,56 @@ function initoverheadcameras() {
     level.spectatorcameras = [];
     level.spectatorcameras[0]["allies"] = spawnstruct();
     level.spectatorcameras[0]["axis"] = spawnstruct();
-    namespace_d7fe36703a9572fe::setgamemodecamera("allies", level.spectatorcameras[0]["allies"]);
-    namespace_d7fe36703a9572fe::setgamemodecamera("axis", level.spectatorcameras[0]["axis"]);
+    scripts/mp/spawncamera::setgamemodecamera("allies", level.spectatorcameras[0]["allies"]);
+    scripts/mp/spawncamera::setgamemodecamera("axis", level.spectatorcameras[0]["axis"]);
     updateoverheadcamerapos("allies");
     updateoverheadcamerapos("axis");
     level.updategamemodecamera = &updateoverheadcamerapos;
     level.spectatorcameratime = 1.25;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1aee
 // Size: 0xd4
 function initjugg() {
-    juggconfig = namespace_68f1873625691c6::jugg_createconfig();
+    juggconfig = scripts/mp/juggernaut::jugg_createconfig();
     level.rugby.juggconfig = juggconfig;
     maxhealth = getjuggmaxhealth();
     juggconfig.maxhealth = maxhealth;
     juggconfig.startinghealth = maxhealth;
     juggconfig.suit = "iw9_juggernaut_mp";
     juggconfig.clothtype = "vestheavy";
-    juggconfig.var_400ef51562606e7a = "milhvygr";
+    juggconfig.geartype = "milhvygr";
     juggconfig.forcetostand = 0;
     juggconfig.allows["sprint"] = 1;
     juggconfig.allows["weapon_switch"] = undefined;
     juggconfig.classstruct.loadoutprimary = "iw8_lm_dblmg";
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bc9
 // Size: 0x3f1
 function initspawns() {
-    var_584994fab4a8712b = level.rugby;
+    globals = level.rugby;
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
     if (function_bff229a11ecd1e34()) {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic(#"default");
+        scripts/mp/spawnlogic::setactivespawnlogic(#"default");
     } else {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic("Rugby", "Crit_Default");
+        scripts/mp/spawnlogic::setactivespawnlogic("Rugby", "Crit_Default");
     }
-    var_584994fab4a8712b.startspawnclassname = "mp_rugby_spawn";
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints(var_584994fab4a8712b.startspawnclassname + "_allies_start", 1, "allies");
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints(var_584994fab4a8712b.startspawnclassname + "_axis_start", 1, "axis");
+    globals.startspawnclassname = "mp_rugby_spawn";
+    scripts/mp/spawnlogic::addstartspawnpoints(globals.startspawnclassname + "_allies_start", 1, "allies");
+    scripts/mp/spawnlogic::addstartspawnpoints(globals.startspawnclassname + "_axis_start", 1, "axis");
     if (!isdefined(level.teamstartspawnpoints)) {
-        var_584994fab4a8712b.startspawnclassname = "mp_tdm_spawn";
-        namespace_b2d5aa2baf2b5701::addstartspawnpoints(var_584994fab4a8712b.startspawnclassname + "_allies_start", 1, "allies");
-        namespace_b2d5aa2baf2b5701::addstartspawnpoints(var_584994fab4a8712b.startspawnclassname + "_axis_start", 1, "axis");
+        globals.startspawnclassname = "mp_tdm_spawn";
+        scripts/mp/spawnlogic::addstartspawnpoints(globals.startspawnclassname + "_allies_start", 1, "allies");
+        scripts/mp/spawnlogic::addstartspawnpoints(globals.startspawnclassname + "_axis_start", 1, "axis");
     }
     /#
-        assertex(isdefined(level.teamstartspawnpoints), "No " + var_584994fab4a8712b.startspawnclassname + " start spawns found");
+        assertex(isdefined(level.teamstartspawnpoints), "No " + globals.startspawnclassname + " start spawns found");
     #/
     /#
         assertex(isdefined(level.teamstartspawnpoints["allies"]) && level.teamstartspawnpoints["allies"].size != 0, "No allies start spawn points found");
@@ -396,77 +400,77 @@ function initspawns() {
     /#
         assertex(isdefined(level.teamstartspawnpoints["axis"]) && level.teamstartspawnpoints["axis"].size != 0, "No axis start spawn points found");
     #/
-    var_7d38b2b1adc3e7d1 = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_rugby_spawn_allies");
-    var_91ebf7fb8e7d58cc = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_rugby_spawn_axis");
-    if (var_7d38b2b1adc3e7d1.size <= 0 || var_91ebf7fb8e7d58cc.size <= 0) {
-        var_bcda489aa10d2d1e = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_tdm_spawn");
-        foreach (spawnpoint in var_bcda489aa10d2d1e) {
-            if (distancesquared(spawnpoint.origin, var_584994fab4a8712b.goals["allies"].origin) < distancesquared(spawnpoint.origin, var_584994fab4a8712b.goals["axis"].origin)) {
-                var_7d38b2b1adc3e7d1[var_7d38b2b1adc3e7d1.size] = spawnpoint;
-            } else {
-                var_91ebf7fb8e7d58cc[var_91ebf7fb8e7d58cc.size] = spawnpoint;
+    alliesspawnpoints = scripts/mp/spawnlogic::getspawnpointarray("mp_rugby_spawn_allies");
+    axisspawnpoints = scripts/mp/spawnlogic::getspawnpointarray("mp_rugby_spawn_axis");
+    if (alliesspawnpoints.size <= 0 || axisspawnpoints.size <= 0) {
+        genericspawnpoints = scripts/mp/spawnlogic::getspawnpointarray("mp_tdm_spawn");
+        foreach (spawnpoint in genericspawnpoints) {
+            if (distancesquared(spawnpoint.origin, globals.goals["allies"].origin) < distancesquared(spawnpoint.origin, globals.goals["axis"].origin)) {
+                alliesspawnpoints[alliesspawnpoints.size] = spawnpoint;
+                continue;
             }
+            axisspawnpoints[axisspawnpoints.size] = spawnpoint;
         }
     }
-    var_9b921d9972ea01fb = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_rugby_spawn_allies_secondary");
-    var_c88a41aa013294d6 = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_rugby_spawn_axis_secondary");
-    namespace_b2d5aa2baf2b5701::registerspawnpoints("allies", var_7d38b2b1adc3e7d1);
-    namespace_b2d5aa2baf2b5701::registerspawnpoints("axis", var_91ebf7fb8e7d58cc);
-    namespace_b2d5aa2baf2b5701::registerspawnpoints("allies", var_9b921d9972ea01fb);
-    namespace_b2d5aa2baf2b5701::registerspawnpoints("axis", var_c88a41aa013294d6);
-    namespace_b2d5aa2baf2b5701::registerspawnset("rugby_allies", var_7d38b2b1adc3e7d1);
-    namespace_b2d5aa2baf2b5701::registerspawnset("rugby_axis", var_91ebf7fb8e7d58cc);
-    namespace_b2d5aa2baf2b5701::registerspawnset("rugby_allies_base", var_9b921d9972ea01fb);
-    namespace_b2d5aa2baf2b5701::registerspawnset("rugby_axis_base", var_c88a41aa013294d6);
-    var_584994fab4a8712b.spawnsets = [];
-    var_584994fab4a8712b.spawnsets["allies"] = "rugby_allies";
-    var_584994fab4a8712b.spawnsets["axis"] = "rugby_axis";
-    var_584994fab4a8712b.fallbackspawnsets = [];
-    var_584994fab4a8712b.fallbackspawnsets["allies"] = "rugby_allies_base";
-    var_584994fab4a8712b.fallbackspawnsets["axis"] = "rugby_axis_base";
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    var_9b921d9972ea01fb = scripts/mp/spawnlogic::getspawnpointarray("mp_rugby_spawn_allies_secondary");
+    var_c88a41aa013294d6 = scripts/mp/spawnlogic::getspawnpointarray("mp_rugby_spawn_axis_secondary");
+    scripts/mp/spawnlogic::registerspawnpoints("allies", alliesspawnpoints);
+    scripts/mp/spawnlogic::registerspawnpoints("axis", axisspawnpoints);
+    scripts/mp/spawnlogic::registerspawnpoints("allies", var_9b921d9972ea01fb);
+    scripts/mp/spawnlogic::registerspawnpoints("axis", var_c88a41aa013294d6);
+    scripts/mp/spawnlogic::registerspawnset("rugby_allies", alliesspawnpoints);
+    scripts/mp/spawnlogic::registerspawnset("rugby_axis", axisspawnpoints);
+    scripts/mp/spawnlogic::registerspawnset("rugby_allies_base", var_9b921d9972ea01fb);
+    scripts/mp/spawnlogic::registerspawnset("rugby_axis_base", var_c88a41aa013294d6);
+    globals.spawnsets = [];
+    globals.spawnsets["allies"] = "rugby_allies";
+    globals.spawnsets["axis"] = "rugby_axis";
+    globals.fallbackspawnsets = [];
+    globals.fallbackspawnsets["allies"] = "rugby_allies_base";
+    globals.fallbackspawnsets["axis"] = "rugby_axis_base";
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc1
 // Size: 0x181
 function getspawnpoint() {
-    var_584994fab4a8712b = level.rugby;
-    var_21af6c045d6ddf93 = self.pers["team"];
+    globals = level.rugby;
+    spawnpointteam = self.pers["team"];
     if (istrue(game["switchedsides"])) {
-        var_21af6c045d6ddf93 = ter_op(var_21af6c045d6ddf93 == "allies", "axis", "allies");
+        spawnpointteam = ter_op(spawnpointteam == "allies", "axis", "allies");
     }
-    var_dcabafc0cc1b60ed = ter_op(var_21af6c045d6ddf93 == "allies", "axis", "allies");
-    if (namespace_b2d5aa2baf2b5701::shoulduseteamstartspawn()) {
-        spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray(var_584994fab4a8712b.startspawnclassname + "_" + var_21af6c045d6ddf93 + "_start");
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
+    var_dcabafc0cc1b60ed = ter_op(spawnpointteam == "allies", "axis", "allies");
+    if (scripts/mp/spawnlogic::shoulduseteamstartspawn()) {
+        spawnpoints = scripts/mp/spawnlogic::getspawnpointarray(globals.startspawnclassname + "_" + spawnpointteam + "_start");
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints);
     } else {
-        juggpos = getjuggorcratepos();
-        var_629e5fe2f6b337fa = [];
-        var_629e5fe2f6b337fa["singlePointPos"] = juggpos;
-        var_629e5fe2f6b337fa["minDistToSinglePointSq"] = 562500;
-        var_629e5fe2f6b337fa["maxDistToSinglePointSq"] = 36000000;
-        var_629e5fe2f6b337fa["distRangeToSinglePointSq"] = 36000000 - 562500;
-        var_629e5fe2f6b337fa["juggPos"] = juggpos;
-        var_629e5fe2f6b337fa["rugbyFieldDir2D"] = var_584994fab4a8712b.goals[var_dcabafc0cc1b60ed].origin - var_584994fab4a8712b.goals[var_21af6c045d6ddf93].origin;
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, self.team, var_584994fab4a8712b.spawnsets[var_21af6c045d6ddf93], var_584994fab4a8712b.fallbackspawnsets[var_21af6c045d6ddf93], undefined, var_629e5fe2f6b337fa);
+        juggPos = getjuggorcratepos();
+        spawnparams = [];
+        spawnparams["singlePointPos"] = juggPos;
+        spawnparams["minDistToSinglePointSq"] = 562500;
+        spawnparams["maxDistToSinglePointSq"] = 36000000;
+        spawnparams["distRangeToSinglePointSq"] = 36000000 - 562500;
+        spawnparams["juggPos"] = juggPos;
+        spawnparams["rugbyFieldDir2D"] = globals.goals[var_dcabafc0cc1b60ed].origin - globals.goals[spawnpointteam].origin;
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, self.team, globals.spawnsets[spawnpointteam], globals.fallbackspawnsets[spawnpointteam], undefined, spawnparams);
     }
     return spawnpoint;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x214a
 // Size: 0x4d
 function modeonteamchangedeath(player) {
-    if (isdefined(level.var_9a453437a59c7a57)) {
-        player setclientomnvar("ui_rugby_jugg_friendly", ter_op(player.team == level.var_9a453437a59c7a57.team, 0, 1));
+    if (isdefined(level.rugbyjugg)) {
+        player setclientomnvar("ui_rugby_jugg_friendly", ter_op(player.team == level.rugbyjugg.team, 0, 1));
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x219e
 // Size: 0x83
@@ -482,18 +486,18 @@ function onplayerconnect(player) {
     thread onplayerspawned(player);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2228
 // Size: 0x7d
 function onplayerspawned(player) {
     player waittill("spawned");
-    if (isdefined(level.var_9a453437a59c7a57) && isdefined(level.var_9a453437a59c7a57.team) && isdefined(player.team)) {
-        player setclientomnvar("ui_rugby_jugg_friendly", ter_op(player.team == level.var_9a453437a59c7a57.team, 0, 1));
+    if (isdefined(level.rugbyjugg) && isdefined(level.rugbyjugg.team) && isdefined(player.team)) {
+        player setclientomnvar("ui_rugby_jugg_friendly", ter_op(player.team == level.rugbyjugg.team, 0, 1));
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 14, eflags: 0x0
 // Checksum 0x0, Offset: 0x22ac
 // Size: 0xd8
@@ -502,75 +506,81 @@ function onplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smeans
         if (idamage >= var_fcdf19e3cdd29669) {
             idamage = var_fcdf19e3cdd29669;
         }
-        eattacker namespace_2685ec368e022695::statsetchild("round", "damage", eattacker.pers["damage"]);
+        eattacker scripts/mp/persistence::statsetchild("round", "damage", eattacker.pers["damage"]);
         eattacker setextrascore0(eattacker.pers["damage"]);
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x238b
 // Size: 0x41
 function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon) {
-    namespace_310ba947928891df::oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
+    scripts/mp/gametypes/common::oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params a, eflags: 0x0
 // Checksum 0x0, Offset: 0x23d3
 // Size: 0x98
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     self.overrideweaponspeed_speedscale = undefined;
     if (!isplayer(attacker) || attacker.team == self.team) {
         return;
     }
-    awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00);
+    awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x2472
 // Size: 0x2e3
-function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     var_8363beb01b537d3e = 0;
-    var_88f4967a49a22ed7 = 0;
+    awardeddefend = 0;
     victim = self;
-    var_f7ded1fdb02a123d = victim.origin;
-    var_86c1c8628b1d55f8 = attacker.origin;
+    victimpos = victim.origin;
+    attackerpos = attacker.origin;
     attackerisinflictor = 0;
     if (isdefined(einflictor)) {
-        var_86c1c8628b1d55f8 = einflictor.origin;
+        attackerpos = einflictor.origin;
         attackerisinflictor = einflictor == attacker;
     }
-    if (isdefined(level.var_9a453437a59c7a57)) {
+    if (isdefined(level.rugbyjugg)) {
         if (isdefined(attacker) && isplayer(attacker) && attacker.team != victim.team) {
-            if (attacker == level.var_9a453437a59c7a57) {
+            if (attacker == level.rugbyjugg) {
                 attacker thread function_e3e3e81453fd788b(#"hash_670456684d1ac92f");
-            } else if (victim == level.var_9a453437a59c7a57) {
-                attacker thread function_e3e3e81453fd788b(#"hash_fd0c8fbac1063eaa");
-            } else if (attacker.team == level.var_9a453437a59c7a57.team && attacker != level.var_9a453437a59c7a57) {
-                var_9b65eac5ec48eb9b = distancesquared(level.var_9a453437a59c7a57.origin, var_86c1c8628b1d55f8);
+                return;
+            }
+            if (victim == level.rugbyjugg) {
+                attacker thread function_e3e3e81453fd788b(#"kill_juggernaut");
+                return;
+            }
+            if (attacker.team == level.rugbyjugg.team && attacker != level.rugbyjugg) {
+                var_9b65eac5ec48eb9b = distancesquared(level.rugbyjugg.origin, attackerpos);
                 if (var_9b65eac5ec48eb9b < 105625) {
-                    attacker thread namespace_62c556437da28f50::scoreeventpopup(#"defend");
-                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_2d96ced878338cd2");
+                    attacker thread scripts/mp/rank::scoreeventpopup(#"defend");
+                    attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_2d96ced878338cd2");
                     attacker incpersstat("defends", 1);
-                    attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
+                    attacker scripts/mp/persistence::statsetchild("round", "defends", attacker.pers["defends"]);
                     attacker setextrascore1(attacker.pers["defends"]);
-                    thread utility::trycall(level.matchdata_logvictimkillevent, var_61b5d0250b328f00, "defending");
+                    thread utility::trycall(level.matchdata_logvictimkillevent, killid, "defending");
                 }
-            } else if (attacker.team != level.var_9a453437a59c7a57.team && victim.team == level.var_9a453437a59c7a57.team) {
-                var_9b65eac5ec48eb9b = distancesquared(level.var_9a453437a59c7a57.origin, var_f7ded1fdb02a123d);
+                return;
+            }
+            if (attacker.team != level.rugbyjugg.team && victim.team == level.rugbyjugg.team) {
+                var_9b65eac5ec48eb9b = distancesquared(level.rugbyjugg.origin, victimpos);
                 if (var_9b65eac5ec48eb9b < 105625) {
-                    attacker thread namespace_62c556437da28f50::scoreeventpopup(#"assault");
-                    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_5a3b180273be47b1");
-                    thread utility::trycall(level.matchdata_logattackerkillevent, var_61b5d0250b328f00, "assaulting");
+                    attacker thread scripts/mp/rank::scoreeventpopup(#"assault");
+                    attacker thread scripts/mp/utility/points::doScoreEvent(#"hash_5a3b180273be47b1");
+                    thread utility::trycall(level.matchdata_logattackerkillevent, killid, "assaulting");
                 }
             }
         }
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x275c
 // Size: 0x2a
@@ -578,10 +588,10 @@ function ontimelimit() {
     if (level.gameended) {
         return;
     }
-    thread namespace_d576b6dc7cef9c62::endgame("tie", game["end_reason"]["cyber_tie"]);
+    thread scripts/mp/gamelogic::endgame("tie", game["end_reason"]["cyber_tie"]);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x278d
 // Size: 0x9f
@@ -594,29 +604,29 @@ function ontimelimitot() {
             function_1d7e98e21e22f61a();
             level thread function_aecdd5e4b8140008();
         }
-    } else {
-        level.canprocessot = 1;
-        level.currenttimelimitdelay = level.ontimelimitgraceperiod;
+        return;
     }
+    level.canprocessot = 1;
+    level.currenttimelimitdelay = level.ontimelimitgraceperiod;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2833
 // Size: 0x49
 function function_aecdd5e4b8140008() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         if (level.rugby.activejuggernauts.size > 0) {
             wait(0.05);
-        } else {
-            level.currenttimelimitdelay = level.ontimelimitgraceperiod;
-            break;
+            continue;
         }
+        level.currenttimelimitdelay = level.ontimelimitgraceperiod;
+        break;
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2883
 // Size: 0x48
@@ -628,7 +638,7 @@ function function_da84ed466ccfc207() {
     return time;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28d3
 // Size: 0x23
@@ -638,72 +648,72 @@ function function_1d7e98e21e22f61a() {
     setomnvar("ui_obj_progress", 0);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28fd
 // Size: 0x11b
 function getjuggorcratepos() {
-    var_584994fab4a8712b = level.rugby;
-    if (isdefined(level.var_9a453437a59c7a57)) {
-        return level.var_9a453437a59c7a57.origin;
-    } else if (var_584994fab4a8712b.activejuggernauts.size > 0) {
-        foreach (jugg in var_584994fab4a8712b.activejuggernauts) {
+    globals = level.rugby;
+    if (isdefined(level.rugbyjugg)) {
+        return level.rugbyjugg.origin;
+    } else if (globals.activejuggernauts.size > 0) {
+        foreach (jugg in globals.activejuggernauts) {
             return jugg.origin;
         }
     } else {
         /#
-            assert(var_584994fab4a8712b.activejuggcrates.size);
+            assert(globals.activejuggcrates.size);
         #/
-        foreach (crate in var_584994fab4a8712b.activejuggcrates) {
+        foreach (crate in globals.activejuggcrates) {
             return crate.origin;
         }
     }
     return undefined;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a20
 // Size: 0x94
 function doesteamhaveactivejugg(team) {
-    var_584994fab4a8712b = level.rugby;
-    if (var_584994fab4a8712b.activejuggernauts.size > 0) {
-        foreach (jugg in var_584994fab4a8712b.activejuggernauts) {
+    globals = level.rugby;
+    if (globals.activejuggernauts.size > 0) {
+        foreach (jugg in globals.activejuggernauts) {
             if (jugg.team == team) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2abc
 // Size: 0x105
-function onjuggproximityscore(var_72837284fe79dfab) {
+function onjuggproximityscore(juggplayer) {
     level endon("game_ended");
-    playsoundatpos(var_72837284fe79dfab.origin, "exp_bombsite_lr");
-    playfx(getfx("rugby_score_explosion"), var_72837284fe79dfab.origin);
-    players = getplayersinradius(var_72837284fe79dfab.origin, 800);
+    playsoundatpos(juggplayer.origin, "exp_bombsite_lr");
+    playfx(getfx("rugby_score_explosion"), juggplayer.origin);
+    players = getplayersinradius(juggplayer.origin, 800);
     foreach (player in players) {
-        if (player != var_72837284fe79dfab && player.team != var_72837284fe79dfab.team) {
-            player dodamage(5000, var_72837284fe79dfab.origin, player, undefined, "MOD_EXPLOSIVE");
+        if (player != juggplayer && player.team != juggplayer.team) {
+            player dodamage(5000, juggplayer.origin, player, undefined, "MOD_EXPLOSIVE");
         }
     }
-    thread namespace_d576b6dc7cef9c62::endgame(var_72837284fe79dfab.team, game["end_reason"]["target_destroyed"]);
+    thread scripts/mp/gamelogic::endgame(juggplayer.team, game["end_reason"]["target_destroyed"]);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bc8
 // Size: 0x65
 function setupinitialstate() {
-    var_584994fab4a8712b = level.rugby;
-    if (!activateendzone(var_584994fab4a8712b.endzones["allies"][0], "allies")) {
+    globals = level.rugby;
+    if (!activateendzone(globals.endzones["allies"][0], "allies")) {
         return;
     }
-    if (!activateendzone(var_584994fab4a8712b.endzones["axis"][0], "axis")) {
+    if (!activateendzone(globals.endzones["axis"][0], "axis")) {
         return;
     }
     if (!activatenewjuggcrate()) {
@@ -711,13 +721,13 @@ function setupinitialstate() {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c34
 // Size: 0x99
 function activatenewjuggcrate() {
-    var_4fdabb9630366776 = randomint(level.rugby.juggcratesetups.size);
-    var_a851cc05483290a7 = level.rugby.juggcratesetups[var_4fdabb9630366776];
+    setupindex = randomint(level.rugby.juggcratesetups.size);
+    var_a851cc05483290a7 = level.rugby.juggcratesetups[setupindex];
     if (!isdefined(var_a851cc05483290a7)) {
         /#
             assertmsg("No Rugby Jugg Crates found");
@@ -727,12 +737,12 @@ function activatenewjuggcrate() {
     return activatejuggcrate(var_a851cc05483290a7.origin, ter_op(isdefined(var_a851cc05483290a7.angles), var_a851cc05483290a7.angles, (0, 0, 0)), 1);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cd5
 // Size: 0xa9
 function activateendzone(var_aab41eeedec2662d, team) {
-    var_584994fab4a8712b = level.rugby;
+    globals = level.rugby;
     if (istrue(game["switchedsides"])) {
         team = ter_op(team == "allies", "axis", "allies");
     }
@@ -740,51 +750,51 @@ function activateendzone(var_aab41eeedec2662d, team) {
         /#
             assertmsg("No " + team + " Endzones found");
         #/
-        return 0;
+        return false;
     }
-    if (isdefined(var_584994fab4a8712b.goals[team])) {
-        deactivateendzone(var_584994fab4a8712b.goals[team]);
+    if (isdefined(globals.goals[team])) {
+        deactivateendzone(globals.goals[team]);
     }
-    var_584994fab4a8712b.goals[team] = var_aab41eeedec2662d;
+    globals.goals[team] = var_aab41eeedec2662d;
     var_aab41eeedec2662d thread watchforjuggproximityscore(team);
-    return 1;
+    return true;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d86
 // Size: 0x14
-function deactivateendzone(var_54b003ce5d016238) {
-    var_54b003ce5d016238 notify("endzone_deactivate");
+function deactivateendzone(endzone) {
+    endzone notify("endzone_deactivate");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2da1
 // Size: 0x145
-function function_7c63d60ba6168aea(var_54b003ce5d016238) {
+function function_7c63d60ba6168aea(endzone) {
     if (level.mapname == "mp_shipment" || level.mapname == "mp_euphrates" || level.mapname == "mp_rust" || level.mapname == "mp_crash2" || level.mapname == "mp_malyshev") {
-        if (var_54b003ce5d016238.trigger.objectivekey == "allies") {
+        if (endzone.trigger.objectivekey == "allies") {
             target = "allies_endzone_vis";
         } else {
             target = "axis_endzone_vis";
         }
     } else if (level.mapname == "mp_backlot2") {
-        if (var_54b003ce5d016238.trigger.targetname == "allies_endzone") {
+        if (endzone.trigger.targetname == "allies_endzone") {
             target = "axis_endzone_vis";
         } else {
             target = "allies_endzone_vis";
         }
-    } else if (var_54b003ce5d016238.trigger.targetname == "allies_endzone") {
+    } else if (endzone.trigger.targetname == "allies_endzone") {
         target = "allies_endzone_vis";
     } else {
         target = "axis_endzone_vis";
     }
-    var_54b003ce5d016238 thread function_8fa98f8a53842866(target, var_54b003ce5d016238.trigger.targetname);
-    var_54b003ce5d016238 thread updatechevrons("idle");
+    endzone thread function_8fa98f8a53842866(target, endzone.trigger.targetname);
+    endzone thread updatechevrons("idle");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2eed
 // Size: 0x13a
@@ -800,9 +810,13 @@ function function_8fa98f8a53842866(target, label) {
         if (isdefined(visual.script_noteworthy)) {
             if (visual.script_noteworthy == "2") {
                 chevrons[index].numchevrons = 2;
-            } else if (visual.script_noteworthy == "3") {
+                continue;
+            }
+            if (visual.script_noteworthy == "3") {
                 chevrons[index].numchevrons = 3;
-            } else if (visual.script_noteworthy == "4") {
+                continue;
+            }
+            if (visual.script_noteworthy == "4") {
                 chevrons[index].numchevrons = 4;
             }
         }
@@ -810,7 +824,7 @@ function function_8fa98f8a53842866(target, label) {
     self.chevrons = chevrons;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x302e
 // Size: 0xaa
@@ -820,32 +834,32 @@ function updatechevrons(state) {
     while (!isdefined(self.chevrons)) {
         waitframe();
     }
-    foreach (var_eae85273686f4f4 in self.chevrons) {
-        for (i = 0; i < var_eae85273686f4f4.numchevrons; i++) {
-            var_eae85273686f4f4 setscriptablepartstate("chevron_" + i, state);
+    foreach (chevron in self.chevrons) {
+        for (i = 0; i < chevron.numchevrons; i++) {
+            chevron setscriptablepartstate("chevron_" + i, state);
         }
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x30df
 // Size: 0x1ee
 function function_182e902215d205b5(othervisuals, label) {
-    var_c081a38873b1d5e3 = [];
+    modifiedvisuals = [];
     var_d23f6234846f86a6 = [];
     switch (level.mapname) {
     case #"hash_9de262a7132ec180":
-        var_d23f6234846f86a6["1"] = [0:(-564, 1848, 24)];
-        var_d23f6234846f86a6["2"] = [0:(-1314, 440, 24), 1:(-1362, 816, 24)];
+        var_d23f6234846f86a6["1"] = [(-564, 1848, 24)];
+        var_d23f6234846f86a6["2"] = [(-1314, 440, 24), (-1362, 816, 24)];
         break;
     case #"hash_66ce5cdcd3b547f3":
     case #"hash_ff009e5fab42b778":
-        var_d23f6234846f86a6["3"] = [0:(-692, 1828, 42), 1:(-300, 1548, 76)];
+        var_d23f6234846f86a6["3"] = [(-692, 1828, 42), (-300, 1548, 76)];
         break;
     case #"hash_f09747c9feb47eb1":
-        var_d23f6234846f86a6["8"] = [0:(688, 256, 280)];
-        var_d23f6234846f86a6["20"] = [0:(212, 1436, 338)];
+        var_d23f6234846f86a6["8"] = [(688, 256, 280)];
+        var_d23f6234846f86a6["20"] = [(212, 1436, 338)];
         break;
     default:
         break;
@@ -854,91 +868,91 @@ function function_182e902215d205b5(othervisuals, label) {
         foreach (visual in othervisuals) {
             foreach (entry in var_d23f6234846f86a6[label]) {
                 if (distance(visual.origin, entry) < 10) {
-                    var_c081a38873b1d5e3[var_c081a38873b1d5e3.size] = visual;
+                    modifiedvisuals[modifiedvisuals.size] = visual;
                     break;
                 }
             }
         }
     }
-    othervisuals = array_remove_array(othervisuals, var_c081a38873b1d5e3);
+    othervisuals = array_remove_array(othervisuals, modifiedvisuals);
     return othervisuals;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32d5
 // Size: 0x8cf
 function function_d94e76f45911efa5(othervisuals, label) {
     var_34dce00df63cff91 = [];
-    var_c081a38873b1d5e3 = [];
+    modifiedvisuals = [];
     switch (level.mapname) {
     case #"hash_d8bbcfc499e70e6f":
         var_34dce00df63cff91["allies_endzone"] = [];
-        var_34dce00df63cff91["allies_endzone"][0] = [0:(-2376, -3322, 39), 1:(0, -90, 0)];
-        var_34dce00df63cff91["allies_endzone"][1] = [0:(-2071, -3537, 0), 1:(0, 180, 0)];
-        var_34dce00df63cff91["allies_endzone"][2] = [0:(-2071, -3653, 0), 1:(0, 180, 0)];
-        var_34dce00df63cff91["allies_endzone"][3] = [0:(-2071, -3754, 3), 1:(0, 180, 0)];
+        var_34dce00df63cff91["allies_endzone"][0] = [(-2376, -3322, 39), (0, -90, 0)];
+        var_34dce00df63cff91["allies_endzone"][1] = [(-2071, -3537, 0), (0, 180, 0)];
+        var_34dce00df63cff91["allies_endzone"][2] = [(-2071, -3653, 0), (0, 180, 0)];
+        var_34dce00df63cff91["allies_endzone"][3] = [(-2071, -3754, 3), (0, 180, 0)];
         var_34dce00df63cff91["axis_endzone"] = [];
-        var_34dce00df63cff91["axis_endzone"][0] = [0:(2137, 493, 124), 1:(0, -85, 0)];
-        var_34dce00df63cff91["axis_endzone"][1] = [0:(2302, 495, 128), 1:(0, -90, 0)];
-        var_34dce00df63cff91["axis_endzone"][2] = [0:(2390, 495, 134), 1:(0, -90, 0)];
-        var_34dce00df63cff91["axis_endzone"][3] = [0:(2457, 494, 134), 1:(0, -90, 0)];
+        var_34dce00df63cff91["axis_endzone"][0] = [(2137, 493, 124), (0, -85, 0)];
+        var_34dce00df63cff91["axis_endzone"][1] = [(2302, 495, 128), (0, -90, 0)];
+        var_34dce00df63cff91["axis_endzone"][2] = [(2390, 495, 134), (0, -90, 0)];
+        var_34dce00df63cff91["axis_endzone"][3] = [(2457, 494, 134), (0, -90, 0)];
         break;
     case #"hash_cce4bca393df84eb":
         var_34dce00df63cff91["axis_endzone"] = [];
-        var_34dce00df63cff91["axis_endzone"][0] = [0:(-722, -1428, 201), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][1] = [0:(-722, -1567, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][2] = [0:(-721, -1496, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][3] = [0:(-721, -1639, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][4] = [0:(-720, -1711, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][5] = [0:(-720, -1806, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][6] = [0:(-719, -1896, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][7] = [0:(-719, -1999, 200), 1:(0, 0, 0)];
-        var_34dce00df63cff91["axis_endzone"][8] = [0:(-483, -2074, 200), 1:(0, -270, 0)];
+        var_34dce00df63cff91["axis_endzone"][0] = [(-722, -1428, 201), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][1] = [(-722, -1567, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][2] = [(-721, -1496, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][3] = [(-721, -1639, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][4] = [(-720, -1711, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][5] = [(-720, -1806, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][6] = [(-719, -1896, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][7] = [(-719, -1999, 200), (0, 0, 0)];
+        var_34dce00df63cff91["axis_endzone"][8] = [(-483, -2074, 200), (0, -270, 0)];
         break;
     case #"hash_143ad8976cca3ba":
         var_34dce00df63cff91["allies_endzone"] = [];
-        var_34dce00df63cff91["allies_endzone"][0] = [0:(4948, 1284, 9), 1:(0, 45, 0)];
+        var_34dce00df63cff91["allies_endzone"][0] = [(4948, 1284, 9), (0, 45, 0)];
         break;
     case #"hash_9de262a7132ec180":
         var_34dce00df63cff91["axis_endzone"] = [];
-        var_34dce00df63cff91["axis_endzone"][0] = [0:(-603, 3101, 33), 1:(0, 155, 0)];
+        var_34dce00df63cff91["axis_endzone"][0] = [(-603, 3101, 33), (0, 155, 0)];
         var_34dce00df63cff91["allies_endzone"] = [];
-        var_34dce00df63cff91["allies_endzone"][0] = [0:(-1070, 600, 32), 1:(0, -20, 0)];
+        var_34dce00df63cff91["allies_endzone"][0] = [(-1070, 600, 32), (0, -20, 0)];
         break;
     case #"hash_7246ed8ceb925ba9":
         var_34dce00df63cff91["axis_endzone"] = [];
-        var_34dce00df63cff91["axis_endzone"][0] = [0:(1773, -1148, 302), 1:(0, -90, 0)];
-        var_34dce00df63cff91["axis_endzone"][1] = [0:(2098, -1153, 292), 1:(0, -90, 0)];
+        var_34dce00df63cff91["axis_endzone"][0] = [(1773, -1148, 302), (0, -90, 0)];
+        var_34dce00df63cff91["axis_endzone"][1] = [(2098, -1153, 292), (0, -90, 0)];
         break;
     case #"hash_688334408379d4fb":
     case #"hash_d32ec8c7ac2ec13b":
         var_34dce00df63cff91["allies_endzone"] = [];
-        var_34dce00df63cff91["allies_endzone"][0] = [0:(1648, 367, 291), 1:(0, 0, 0)];
-        var_34dce00df63cff91["allies_endzone"][1] = [0:(1947, 859, 255), 1:(0, 270, 0)];
-        var_34dce00df63cff91["allies_endzone"][2] = [0:(1691, 854, 291), 1:(0, 270, 0)];
+        var_34dce00df63cff91["allies_endzone"][0] = [(1648, 367, 291), (0, 0, 0)];
+        var_34dce00df63cff91["allies_endzone"][1] = [(1947, 859, 255), (0, 270, 0)];
+        var_34dce00df63cff91["allies_endzone"][2] = [(1691, 854, 291), (0, 270, 0)];
         break;
     case #"hash_f09747c9feb47eb1":
         var_34dce00df63cff91["allies_endzone"] = [];
-        var_34dce00df63cff91["allies_endzone"][0] = [0:(-2404.94, -1457.67, 280), 1:(0, 0, 0)];
-        var_34dce00df63cff91["allies_endzone"][1] = [0:(-849.814, -1158.33, 280), 1:(0, 180, 0)];
-        var_34dce00df63cff91["allies_endzone"][2] = [0:(-1978.45, -341.57, 280), 1:(0, 270, 0)];
-        var_34dce00df63cff91["allies_endzone"][3] = [0:(-1143, -975, 280), 1:(0, 270, 0)];
+        var_34dce00df63cff91["allies_endzone"][0] = [(-2404.94, -1457.67, 280), (0, 0, 0)];
+        var_34dce00df63cff91["allies_endzone"][1] = [(-849.814, -1158.33, 280), (0, 180, 0)];
+        var_34dce00df63cff91["allies_endzone"][2] = [(-1978.45, -341.57, 280), (0, 270, 0)];
+        var_34dce00df63cff91["allies_endzone"][3] = [(-1143, -975, 280), (0, 270, 0)];
         var_34dce00df63cff91["axis_endzone"] = [];
-        var_34dce00df63cff91["axis_endzone"][0] = [0:(-1300.9, 4861.72, 269), 1:(0, 180, 0)];
-        var_34dce00df63cff91["axis_endzone"][1] = [0:(-1300.9, 4947, 269), 1:(0, 180, 0)];
-        var_34dce00df63cff91["axis_endzone"][2] = [0:(-1300.9, 4759, 269), 1:(0, 180, 0)];
-        var_34dce00df63cff91["axis_endzone"][3] = [0:(-1293.48, 4459.81, 273), 1:(0, 180, 0)];
-        var_34dce00df63cff91["axis_endzone"][4] = [0:(-1293.48, 4392, 274), 1:(0, 180, 0)];
-        var_34dce00df63cff91["axis_endzone"][5] = [0:(-2300.19, 3725.48, 288), 1:(0, 90, 0)];
-        var_34dce00df63cff91["axis_endzone"][6] = [0:(-1700.19, 3725.48, 286), 1:(0, 90, 0)];
-        var_34dce00df63cff91["axis_endzone"][7] = [0:(-1598.19, 4348.83, 279), 1:(0, 90, 0)];
+        var_34dce00df63cff91["axis_endzone"][0] = [(-1300.9, 4861.72, 269), (0, 180, 0)];
+        var_34dce00df63cff91["axis_endzone"][1] = [(-1300.9, 4947, 269), (0, 180, 0)];
+        var_34dce00df63cff91["axis_endzone"][2] = [(-1300.9, 4759, 269), (0, 180, 0)];
+        var_34dce00df63cff91["axis_endzone"][3] = [(-1293.48, 4459.81, 273), (0, 180, 0)];
+        var_34dce00df63cff91["axis_endzone"][4] = [(-1293.48, 4392, 274), (0, 180, 0)];
+        var_34dce00df63cff91["axis_endzone"][5] = [(-2300.19, 3725.48, 288), (0, 90, 0)];
+        var_34dce00df63cff91["axis_endzone"][6] = [(-1700.19, 3725.48, 286), (0, 90, 0)];
+        var_34dce00df63cff91["axis_endzone"][7] = [(-1598.19, 4348.83, 279), (0, 90, 0)];
         break;
     case #"hash_a3aa6afd955c54d":
     case #"hash_8cd7282b2d63b917":
         var_34dce00df63cff91["allies_endzone"] = [];
-        var_34dce00df63cff91["allies_endzone"][0] = [0:(765, -1883, 23), 1:(0, 180, 0)];
-        var_34dce00df63cff91["allies_endzone"][1] = [0:(762, -2006, 187), 1:(0, 180, 0)];
+        var_34dce00df63cff91["allies_endzone"][0] = [(765, -1883, 23), (0, 180, 0)];
+        var_34dce00df63cff91["allies_endzone"][1] = [(762, -2006, 187), (0, 180, 0)];
         break;
     default:
         break;
@@ -948,14 +962,14 @@ function function_d94e76f45911efa5(othervisuals, label) {
             origin = entry[0];
             angles = entry[1];
             scriptable = spawnscriptable("hardpoint_chevron", origin, angles);
-            var_c081a38873b1d5e3[var_c081a38873b1d5e3.size] = scriptable;
+            modifiedvisuals[modifiedvisuals.size] = scriptable;
         }
     }
-    othervisuals = array_combine(othervisuals, var_c081a38873b1d5e3);
+    othervisuals = array_combine(othervisuals, modifiedvisuals);
     return othervisuals;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bac
 // Size: 0x37
@@ -965,31 +979,31 @@ function createvisualsinfo(scriptable, origin, angles) {
     return scriptable;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3beb
 // Size: 0xa8
-function setupgoalvisualsforjugg(var_72837284fe79dfab) {
-    var_aaf899a23248ac63 = var_72837284fe79dfab.team;
-    var_b0c33d224b825287 = getenemyteams(var_aaf899a23248ac63);
+function setupgoalvisualsforjugg(juggplayer) {
+    juggteam = juggplayer.team;
+    enemyteams = getenemyteams(juggteam);
     /#
-        assert(var_b0c33d224b825287.size == 1);
+        assert(enemyteams.size == 1);
     #/
-    var_2e912abc2c41e4da = var_b0c33d224b825287[0];
-    var_54b003ce5d016238 = level.rugby.goals[var_2e912abc2c41e4da];
-    var_54b003ce5d016238 thread updatechevrons(var_2e912abc2c41e4da);
-    var_52ecbed785600f78 = level.rugby.goals[var_aaf899a23248ac63];
+    defendingteam = enemyteams[0];
+    endzone = level.rugby.goals[defendingteam];
+    endzone thread updatechevrons(defendingteam);
+    var_52ecbed785600f78 = level.rugby.goals[juggteam];
     var_52ecbed785600f78 thread updatechevrons("off");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c9a
 // Size: 0x66
 function watchforjuggproximityscore(team) {
     level endon("game_ended");
     self endon("endzone_deactivate");
-    while (1) {
+    while (true) {
         var_67e70b397fb73acc = self.trigger waittill("trigger");
         if (isdefined(var_67e70b397fb73acc.rugbyjugginfo) && var_67e70b397fb73acc.team != team) {
             onjuggproximityscore(var_67e70b397fb73acc);
@@ -998,68 +1012,68 @@ function watchforjuggproximityscore(team) {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d07
 // Size: 0x21f
-function activatenewjuggernaut(var_72837284fe79dfab) {
-    var_584994fab4a8712b = level.rugby;
-    var_7ecfa0327f684d3b = setupplayerasjugg(var_72837284fe79dfab);
-    if (!var_7ecfa0327f684d3b) {
-        return 0;
+function activatenewjuggernaut(juggplayer) {
+    globals = level.rugby;
+    setupresult = setupplayerasjugg(juggplayer);
+    if (!setupresult) {
+        return false;
     }
     var_ecd37c93245b48ea = spawnstruct();
-    var_ecd37c93245b48ea.player = var_72837284fe79dfab;
-    var_fe94a717b75f319f = var_72837284fe79dfab getentitynumber();
+    var_ecd37c93245b48ea.player = juggplayer;
+    var_fe94a717b75f319f = juggplayer getentitynumber();
     var_ecd37c93245b48ea.id = var_fe94a717b75f319f;
-    var_584994fab4a8712b.activejuggernauts[var_fe94a717b75f319f] = var_72837284fe79dfab;
-    level.var_9a453437a59c7a57 = var_72837284fe79dfab;
-    var_72837284fe79dfab.rugbyjugginfo = var_ecd37c93245b48ea;
-    createobjectiveiconsforactivejugg(var_72837284fe79dfab, var_ecd37c93245b48ea);
-    startjugghud(var_72837284fe79dfab);
-    setupgoalvisualsforjugg(var_72837284fe79dfab);
-    var_72837284fe79dfab thread watchjugghealth();
-    var_72837284fe79dfab thread watchforjuggdeathdisconnect();
-    var_72837284fe79dfab thread watchjuggprogress();
-    var_72837284fe79dfab thread watchteammatesnearjugg();
+    globals.activejuggernauts[var_fe94a717b75f319f] = juggplayer;
+    level.rugbyjugg = juggplayer;
+    juggplayer.rugbyjugginfo = var_ecd37c93245b48ea;
+    createobjectiveiconsforactivejugg(juggplayer, var_ecd37c93245b48ea);
+    startjugghud(juggplayer);
+    setupgoalvisualsforjugg(juggplayer);
+    juggplayer thread watchjugghealth();
+    juggplayer thread watchforjuggdeathdisconnect();
+    juggplayer thread watchjuggprogress();
+    juggplayer thread watchteammatesnearjugg();
     if (getjuggtimeout() > 0) {
-        var_72837284fe79dfab thread watchjuggtimeout();
+        juggplayer thread watchjuggtimeout();
     }
-    var_72837284fe79dfab namespace_944ddf7b8df1b0e3::leaderdialogonplayer("rugby_new_jugg", "obj");
-    var_72837284fe79dfab thread namespace_44abc05161e2e2cb::showsplash("jugg_player");
-    excludelist = [0:var_72837284fe79dfab];
-    otherteam = getotherteam(var_72837284fe79dfab.team)[0];
-    namespace_944ddf7b8df1b0e3::statusdialog("rugby_secured_jugg", var_72837284fe79dfab.team, "obj", excludelist);
-    namespace_944ddf7b8df1b0e3::statusdialog("rugby_lost_jugg", otherteam, "obj");
-    level thread function_64357cc14d714493(var_72837284fe79dfab.team, otherteam);
+    juggplayer scripts/mp/utility/dialog::leaderdialogonplayer("rugby_new_jugg", "obj");
+    juggplayer thread scripts/mp/hud_message::showsplash("jugg_player");
+    excludelist = [juggplayer];
+    otherteam = getotherteam(juggplayer.team)[0];
+    scripts/mp/utility/dialog::statusdialog("rugby_secured_jugg", juggplayer.team, "obj", excludelist);
+    scripts/mp/utility/dialog::statusdialog("rugby_lost_jugg", otherteam, "obj");
+    level thread function_64357cc14d714493(juggplayer.team, otherteam);
     foreach (player in level.players) {
-        if (player.team == var_72837284fe79dfab.team) {
-            if (player != var_72837284fe79dfab) {
-                player thread namespace_44abc05161e2e2cb::showsplash("jugg_captured");
+        if (player.team == juggplayer.team) {
+            if (player != juggplayer) {
+                player thread scripts/mp/hud_message::showsplash("jugg_captured");
             }
-        } else {
-            player thread namespace_44abc05161e2e2cb::showsplash("jugg_lost");
+            continue;
         }
+        player thread scripts/mp/hud_message::showsplash("jugg_lost");
     }
-    return 1;
+    return true;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f2e
 // Size: 0x31
-function function_64357cc14d714493(var_aaf899a23248ac63, otherteam) {
+function function_64357cc14d714493(juggteam, otherteam) {
     wait(3);
-    namespace_944ddf7b8df1b0e3::statusdialog("rugby_order_attack", var_aaf899a23248ac63);
-    namespace_944ddf7b8df1b0e3::statusdialog("rugby_order_fallback", otherteam);
+    scripts/mp/utility/dialog::statusdialog("rugby_order_attack", juggteam);
+    scripts/mp/utility/dialog::statusdialog("rugby_order_fallback", otherteam);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f66
 // Size: 0x1a6
 function deactivatejuggernaut(player) {
-    var_584994fab4a8712b = level.rugby;
+    globals = level.rugby;
     var_ecd37c93245b48ea = player.rugbyjugginfo;
     /#
         assert(var_ecd37c93245b48ea.player == player);
@@ -1067,40 +1081,40 @@ function deactivatejuggernaut(player) {
     if (isdefined(player)) {
         player.rugbyjugginfo = undefined;
     }
-    var_584994fab4a8712b.activejuggernauts[var_ecd37c93245b48ea.id] = undefined;
-    level.var_9a453437a59c7a57 = undefined;
+    globals.activejuggernauts[var_ecd37c93245b48ea.id] = undefined;
+    level.rugbyjugg = undefined;
     cleanupobjectiveiconsforjugg(player, var_ecd37c93245b48ea);
     clearjugghud();
-    foreach (var_54b003ce5d016238 in var_584994fab4a8712b.endzones) {
-        var_54b003ce5d016238[0] thread updatechevrons("idle");
+    foreach (endzone in globals.endzones) {
+        endzone[0] thread updatechevrons("idle");
     }
     level.rugby.var_6222195e9884820 = undefined;
     level.rugby.var_687d3e3e7cdf8208 = undefined;
     level.rugby.var_a3e08b16ea9dc56d = undefined;
     level.rugby.var_c6dd6edc503e61a8 = undefined;
     if (isdefined(player) && isdefined(player.team)) {
-        level thread namespace_44abc05161e2e2cb::notifyteam("jugg_down_fr", "jugg_down_en", player.team);
+        level thread scripts/mp/hud_message::notifyteam("jugg_down_fr", "jugg_down_en", player.team);
     } else {
-        level thread namespace_44abc05161e2e2cb::notifyteam("jugg_capture", "jugg_capture", "allies");
+        level thread scripts/mp/hud_message::notifyteam("jugg_capture", "jugg_capture", "allies");
     }
     setomnvar("ui_obj_timer", 0);
     setomnvar("ui_obj_progress", 0);
     player notify("rugby_jugg_end");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4113
 // Size: 0xa1
-function startjugghud(var_72837284fe79dfab) {
-    setomnvar("ui_rugby_jugg_client", var_72837284fe79dfab);
+function startjugghud(juggplayer) {
+    setomnvar("ui_rugby_jugg_client", juggplayer);
     setomnvar("ui_rugby_jugg_health", 1);
     foreach (player in level.players) {
-        player setclientomnvar("ui_rugby_jugg_friendly", ter_op(player.team == var_72837284fe79dfab.team, 0, 1));
+        player setclientomnvar("ui_rugby_jugg_friendly", ter_op(player.team == juggplayer.team, 0, 1));
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x41bb
 // Size: 0x6a
@@ -1111,20 +1125,20 @@ function clearjugghud() {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x422c
 // Size: 0x3f
 function watchjugghealth() {
     level endon("game_ended");
     self endon("rugby_jugg_end");
-    while (1) {
+    while (true) {
         self waittill("damage");
         setomnvar("ui_rugby_jugg_health", self.health / self.maxhealth);
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4272
 // Size: 0xbc
@@ -1148,46 +1162,46 @@ function watchforjuggdeathdisconnect() {
     deactivatejuggernaut(self);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4335
 // Size: 0x271
 function watchjuggprogress() {
     level endon("game_ended");
     self endon("rugby_jugg_end");
-    var_aaf899a23248ac63 = self.team;
-    var_b0c33d224b825287 = getenemyteams(var_aaf899a23248ac63);
+    juggteam = self.team;
+    enemyteams = getenemyteams(juggteam);
     /#
-        assert(var_b0c33d224b825287.size == 1);
+        assert(enemyteams.size == 1);
     #/
-    var_2e912abc2c41e4da = var_b0c33d224b825287[0];
-    var_e728aa816ece6c6d = level.rugby.goals[var_aaf899a23248ac63];
-    var_7693d852900723cf = level.rugby.goals[var_2e912abc2c41e4da];
-    var_b1fcbb0f6c5d7c8a = var_7693d852900723cf.origin - var_e728aa816ece6c6d.origin;
-    var_e56ae451d16a08b2 = vectordot(var_b1fcbb0f6c5d7c8a, var_b1fcbb0f6c5d7c8a);
-    var_d4bc622ee7721caa = undefined;
-    while (1) {
-        var_84e914491011509c = self.origin * (1, 1, 0) - var_e728aa816ece6c6d.origin * (1, 1, 0);
-        progress = vectordot(var_b1fcbb0f6c5d7c8a, var_84e914491011509c) / var_e56ae451d16a08b2;
+    defendingteam = enemyteams[0];
+    homegoal = level.rugby.goals[juggteam];
+    targetgoal = level.rugby.goals[defendingteam];
+    var_b1fcbb0f6c5d7c8a = targetgoal.origin - homegoal.origin;
+    goaldistsq = vectordot(var_b1fcbb0f6c5d7c8a, var_b1fcbb0f6c5d7c8a);
+    progresscheck = undefined;
+    while (true) {
+        var_84e914491011509c = self.origin * (1, 1, 0) - homegoal.origin * (1, 1, 0);
+        progress = vectordot(var_b1fcbb0f6c5d7c8a, var_84e914491011509c) / goaldistsq;
         progress = clamp(progress, 0, 1);
         var_4a7b5a73817ead7b = [];
-        var_4a7b5a73817ead7b[var_aaf899a23248ac63] = progress;
-        var_4a7b5a73817ead7b[var_2e912abc2c41e4da] = 1 - progress;
+        var_4a7b5a73817ead7b[juggteam] = progress;
+        var_4a7b5a73817ead7b[defendingteam] = 1 - progress;
         foreach (player in level.players) {
-            if (player.team == var_aaf899a23248ac63 || player.team == var_2e912abc2c41e4da) {
+            if (player.team == juggteam || player.team == defendingteam) {
                 player setclientomnvar("ui_rugby_jugg_progress", var_4a7b5a73817ead7b[player.team]);
             }
         }
         if (progress > 0.8) {
-            level thread function_5fbdad9f043bc253(progress, var_aaf899a23248ac63, var_2e912abc2c41e4da);
+            level thread function_5fbdad9f043bc253(progress, juggteam, defendingteam);
         }
-        if (isdefined(level.var_9a453437a59c7a57)) {
-            if (!isdefined(var_d4bc622ee7721caa)) {
-                var_d4bc622ee7721caa = progress;
+        if (isdefined(level.rugbyjugg)) {
+            if (!isdefined(progresscheck)) {
+                progresscheck = progress;
             }
-            if (progress > var_d4bc622ee7721caa + 0.1) {
-                var_d4bc622ee7721caa = progress;
-                level.var_9a453437a59c7a57 thread doscoreevent(#"hash_9fdad7cba5ab8ddf");
+            if (progress > progresscheck + 0.1) {
+                progresscheck = progress;
+                level.rugbyjugg thread doScoreEvent(#"hash_9fdad7cba5ab8ddf");
             }
         }
         level.lastjuggpositions[self.rugbyjugginfo.id] = self.origin;
@@ -1195,11 +1209,11 @@ function watchjuggprogress() {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x45ad
 // Size: 0x179
-function function_5fbdad9f043bc253(progress, var_aaf899a23248ac63, var_2e912abc2c41e4da) {
+function function_5fbdad9f043bc253(progress, juggteam, defendingteam) {
     if (!isdefined(level.rugby.var_6222195e9884820)) {
         level.rugby.var_6222195e9884820 = 1;
         level.rugby.var_687d3e3e7cdf8208 = gettime();
@@ -1212,60 +1226,60 @@ function function_5fbdad9f043bc253(progress, var_aaf899a23248ac63, var_2e912abc2
         level.rugby.var_c6dd6edc503e61a8 = progress;
     }
     if (istrue(level.rugby.var_6222195e9884820)) {
-        namespace_944ddf7b8df1b0e3::statusdialog("rugby_friendly_close_goal", var_aaf899a23248ac63, "obj");
-        namespace_944ddf7b8df1b0e3::statusdialog("rugby_enemy_close_goal", var_2e912abc2c41e4da, "obj");
-        thread namespace_3bde6869e44a2770::timelimitmusic(var_aaf899a23248ac63);
+        scripts/mp/utility/dialog::statusdialog("rugby_friendly_close_goal", juggteam, "obj");
+        scripts/mp/utility/dialog::statusdialog("rugby_enemy_close_goal", defendingteam, "obj");
+        thread scripts/mp/music_and_dialog::timelimitmusic(juggteam);
     }
     level.rugby.var_6222195e9884820 = 0;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x472d
 // Size: 0xcb
 function setupplayerasjugg(player) {
     juggconfig = level.rugby.juggconfig;
-    result = player namespace_68f1873625691c6::jugg_makejuggernaut(juggconfig);
+    result = player scripts/mp/juggernaut::jugg_makejuggernaut(juggconfig);
     if (!result) {
-        return 0;
+        return false;
     }
     player.droppeddeathweapon = 1;
     player givemaxammo(player.classstruct.loadoutprimaryobject);
     player.playerstreakspeedscale = getjuggspeedscalar(0);
-    player namespace_3bbb5a98b932c46f::updatemovespeedscale();
+    player scripts/mp/weapons::updatemovespeedscale();
     player thread handlejuggjumpspam();
-    var_b0c33d224b825287 = getenemyteams(player.team);
+    enemyteams = getenemyteams(player.team);
     /#
-        assert(var_b0c33d224b825287.size == 1);
+        assert(enemyteams.size == 1);
     #/
-    var_2e912abc2c41e4da = var_b0c33d224b825287[0];
-    return 1;
+    defendingteam = enemyteams[0];
+    return true;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4800
 // Size: 0xd6
 function watchteammatesnearjugg() {
     level endon("game_ended");
     self endon("rugby_jugg_end");
-    while (1) {
-        var_ade1a8ebc52f0903 = 0;
+    while (true) {
+        nearbyteammates = 0;
         foreach (player in level.players) {
             if (player.team != self.team || player == self) {
                 continue;
             }
             if (distancesquared(player.origin, self.origin) < 122500) {
-                var_ade1a8ebc52f0903++;
+                nearbyteammates++;
             }
         }
-        self.playerstreakspeedscale = getjuggspeedscalar(var_ade1a8ebc52f0903);
-        namespace_3bbb5a98b932c46f::updatemovespeedscale();
+        self.playerstreakspeedscale = getjuggspeedscalar(nearbyteammates);
+        scripts/mp/weapons::updatemovespeedscale();
         wait(0.1);
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48dd
 // Size: 0x4f
@@ -1281,7 +1295,7 @@ function watchjuggtimeout() {
     self suicide();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4933
 // Size: 0x74
@@ -1297,7 +1311,7 @@ function function_56bdeedc04731234(jugg) {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x49ae
 // Size: 0x101
@@ -1305,133 +1319,133 @@ function handlejuggjumpspam() {
     level endon("game_ended");
     self endon("rugby_jugg_end");
     self notifyonplayercommand("jugg_jumped", "+goStand");
-    while (1) {
+    while (true) {
         self waittill("jugg_jumped");
         while (!self isonground()) {
             waitframe();
         }
-        var_9dc430bc2f680645 = self getvelocity();
-        var_4e3d8f59bf0f7030 = (var_9dc430bc2f680645[0] * 0.25, var_9dc430bc2f680645[1] * 0.25, var_9dc430bc2f680645[2]);
-        self setvelocity(var_4e3d8f59bf0f7030);
+        oldvel = self getvelocity();
+        newvel = (oldvel[0] * 0.25, oldvel[1] * 0.25, oldvel[2]);
+        self setvelocity(newvel);
         self.overrideweaponspeed_speedscale = 0.2;
-        namespace_3bbb5a98b932c46f::updatemovespeedscale();
-        while (1) {
+        scripts/mp/weapons::updatemovespeedscale();
+        while (true) {
             result = waittill_any_timeout_1(1, "jugg_jumped");
             if (result == "jugg_jumped") {
                 while (!self isonground()) {
                     waitframe();
                 }
-                var_9dc430bc2f680645 = self getvelocity();
-                var_4e3d8f59bf0f7030 = (var_9dc430bc2f680645[0] * 0.25, var_9dc430bc2f680645[1] * 0.25, var_9dc430bc2f680645[2]);
-                self setvelocity(var_4e3d8f59bf0f7030);
-            } else {
-                break;
+                oldvel = self getvelocity();
+                newvel = (oldvel[0] * 0.25, oldvel[1] * 0.25, oldvel[2]);
+                self setvelocity(newvel);
+                continue;
             }
+            break;
         }
         self.overrideweaponspeed_speedscale = undefined;
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ab6
 // Size: 0x38
 function function_d6e8f4ec9a310d75() {
     var_3c2389ba69e5822b = 0;
     level.var_e536c17539f4e08a = spawnstruct();
-    level.var_e536c17539f4e08a.objidnum = namespace_5a22b6f3a56f7e9b::requestreservedid(var_3c2389ba69e5822b);
+    level.var_e536c17539f4e08a.objidnum = scripts/mp/objidpoolmanager::requestreservedid(var_3c2389ba69e5822b);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4af5
 // Size: 0x7f
-function createobjectiveiconsforactivejugg(var_72837284fe79dfab, var_ecd37c93245b48ea) {
-    createjuggobjective(var_72837284fe79dfab, var_ecd37c93245b48ea);
-    var_b0c33d224b825287 = getenemyteams(var_72837284fe79dfab.team);
+function createobjectiveiconsforactivejugg(juggplayer, var_ecd37c93245b48ea) {
+    createjuggobjective(juggplayer, var_ecd37c93245b48ea);
+    enemyteams = getenemyteams(juggplayer.team);
     /#
-        assert(var_b0c33d224b825287.size == 1);
+        assert(enemyteams.size == 1);
     #/
-    var_2e912abc2c41e4da = var_b0c33d224b825287[0];
-    var_54b003ce5d016238 = level.rugby.goals[var_2e912abc2c41e4da];
-    createendzoneobjective(var_54b003ce5d016238, var_2e912abc2c41e4da, var_ecd37c93245b48ea);
+    defendingteam = enemyteams[0];
+    endzone = level.rugby.goals[defendingteam];
+    createendzoneobjective(endzone, defendingteam, var_ecd37c93245b48ea);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b7b
 // Size: 0x33
-function cleanupobjectiveiconsforjugg(var_72837284fe79dfab, var_ecd37c93245b48ea) {
-    namespace_5a22b6f3a56f7e9b::update_objective_state(0, "done");
-    namespace_5a22b6f3a56f7e9b::returnobjectiveid(var_ecd37c93245b48ea.endzoneobjid);
+function cleanupobjectiveiconsforjugg(juggplayer, var_ecd37c93245b48ea) {
+    scripts/mp/objidpoolmanager::update_objective_state(0, "done");
+    scripts/mp/objidpoolmanager::returnobjectiveid(var_ecd37c93245b48ea.endzoneobjid);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bb5
 // Size: 0xa1
-function createjuggobjective(var_72837284fe79dfab, var_ecd37c93245b48ea) {
+function createjuggobjective(juggplayer, var_ecd37c93245b48ea) {
     objid = 0;
     var_ecd37c93245b48ea.juggobjid = objid;
-    namespace_5a22b6f3a56f7e9b::objective_add_objective(objid, "current", var_72837284fe79dfab.origin, "icon_waypoint_jugg");
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_playermask_showtoall(objid);
-    namespace_5a22b6f3a56f7e9b::update_objective_onentity(objid, var_72837284fe79dfab);
-    namespace_5a22b6f3a56f7e9b::update_objective_setzoffset(objid, 90);
-    objective_setownerteam(objid, var_72837284fe79dfab.team);
+    scripts/mp/objidpoolmanager::objective_add_objective(objid, "current", juggplayer.origin, "icon_waypoint_jugg");
+    scripts/mp/objidpoolmanager::objective_set_play_intro(objid, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(objid, 0);
+    scripts/mp/objidpoolmanager::objective_playermask_showtoall(objid);
+    scripts/mp/objidpoolmanager::update_objective_onentity(objid, juggplayer);
+    scripts/mp/objidpoolmanager::update_objective_setzoffset(objid, 90);
+    objective_setownerteam(objid, juggplayer.team);
     objective_setfriendlylabel(objid, "MP_MODE_RUGBY/JUGG_ESCORT");
     objective_setenemylabel(objid, "MP_MODE_RUGBY/JUGG_KILL");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c5d
 // Size: 0x93
-function createendzoneobjective(var_54b003ce5d016238, var_2e912abc2c41e4da, var_ecd37c93245b48ea) {
-    objid = namespace_5a22b6f3a56f7e9b::requestobjectiveid(99);
+function createendzoneobjective(endzone, defendingteam, var_ecd37c93245b48ea) {
+    objid = scripts/mp/objidpoolmanager::requestobjectiveid(99);
     var_ecd37c93245b48ea.endzoneobjid = objid;
-    namespace_5a22b6f3a56f7e9b::objective_add_objective(objid, "current", var_54b003ce5d016238.origin, "icon_waypoint_hq");
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_playermask_showtoall(objid);
-    objective_setownerteam(objid, var_2e912abc2c41e4da);
+    scripts/mp/objidpoolmanager::objective_add_objective(objid, "current", endzone.origin, "icon_waypoint_hq");
+    scripts/mp/objidpoolmanager::objective_set_play_intro(objid, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(objid, 0);
+    scripts/mp/objidpoolmanager::objective_playermask_showtoall(objid);
+    objective_setownerteam(objid, defendingteam);
     objective_setfriendlylabel(objid, "MP_MODE_RUGBY/ENDZONE_DEFEND");
     objective_setenemylabel(objid, "MP_MODE_RUGBY/ENDZONE_ASSAULT");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cf7
 // Size: 0x8e
 function activatejuggcrate(droppos, angles, firstspawn) {
-    var_584994fab4a8712b = level.rugby;
-    if (!function_8b3285549edc119a(droppos)) {
+    globals = level.rugby;
+    if (!isvaliddroppoint(droppos)) {
         droppos = level.var_91544a9e7182acc0;
         angles = level.var_3367385244b5b2b3;
     }
-    var_c307f792531b5fa8 = createjuggcrate(droppos, angles, firstspawn);
-    var_584994fab4a8712b.activejuggcrates[0] = var_c307f792531b5fa8;
-    var_584994fab4a8712b.activejuggcrates[0].crateid = var_c307f792531b5fa8;
-    return 1;
+    newcrate = createjuggcrate(droppos, angles, firstspawn);
+    globals.activejuggcrates[0] = newcrate;
+    globals.activejuggcrates[0].crateid = newcrate;
+    return true;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d8d
 // Size: 0x77
-function function_8b3285549edc119a(droppos) {
-    var_30a9783b0595242a = 1;
+function isvaliddroppoint(droppos) {
+    validdroppoint = 1;
     foreach (trigger in level.var_a4619c3c1ce4c58) {
         if (ispointinvolume(droppos, trigger)) {
-            var_30a9783b0595242a = 0;
+            validdroppoint = 0;
             break;
         }
     }
-    return var_30a9783b0595242a;
+    return validdroppoint;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e0c
 // Size: 0x1a8
@@ -1440,33 +1454,33 @@ function createjuggcrate(droppos, angles, firstspawn) {
     groundpos = groundpos + (0, 0, 5);
     crate = spawn("script_model", groundpos);
     crate.angles = angles;
-    crate.visuals = [0:crate];
+    crate.visuals = [crate];
     crate.trigger = crate;
     crate.trigger.origin = crate.origin;
     crate.curorigin = crate.trigger.origin;
     crate.safeorigin = crate.trigger.origin;
     crate.visuals[0] setmodel("military_crate_large_stackable_01_jugg");
     crate thread juggcratemanageuse(crate);
-    crate thread namespace_19b4203b51d56488::setdropped(undefined, undefined, 1);
+    crate thread scripts/mp/gameobjects::setdropped(undefined, undefined, 1);
     crate.crateid = crate getentitynumber();
     if (istrue(firstspawn)) {
         level.var_91544a9e7182acc0 = droppos;
         level.var_3367385244b5b2b3 = angles;
         foreach (team in level.teamnamelist) {
-            namespace_944ddf7b8df1b0e3::statusdialog("rugby_capture_jugg", team, "obj");
+            scripts/mp/utility/dialog::statusdialog("rugby_capture_jugg", team, "obj");
         }
     }
     return crate;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fbc
 // Size: 0x9b
 function gunkillerhackthread() {
     level endon("game_ended");
     self endon("death");
-    while (1) {
+    while (true) {
         dropped_weapons = getweaponarray();
         foreach (droppeditem in dropped_weapons) {
             if (distance2dsquared(droppeditem.origin, self.origin) < 40000) {
@@ -1477,7 +1491,7 @@ function gunkillerhackthread() {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x505e
 // Size: 0x54e
@@ -1488,7 +1502,7 @@ function juggcratemanageuse(crate) {
     useent.usetype = 1;
     useent.destination = self.origin + (0, 0, 30);
     useent.isuseobject = 1;
-    self.useent = namespace_19b4203b51d56488::createholduseobject("neutral", useent, self.visuals, (0, 0, 64));
+    self.useent = scripts/mp/gameobjects::createholduseobject("neutral", useent, self.visuals, (0, 0, 64));
     foreach (team in level.teamnamelist) {
         self.useent.teamprogress = undefined;
     }
@@ -1501,10 +1515,10 @@ function juggcratemanageuse(crate) {
     self.useent.trigger setusehideprogressbar(1);
     self.useent.trigger setusepriority(-1 - 1 - 1 - 1);
     self.useent.trigger sethintonobstruction("hide");
-    self.useent namespace_19b4203b51d56488::setusetime(function_cca61180d8fdf0ea());
+    self.useent scripts/mp/gameobjects::setusetime(function_cca61180d8fdf0ea());
     self.useent.interactteam = "any";
     self.useent.curprogress = 0;
-    self.useent.defaultusetime = self.useent.var_e88f93a281f8856e;
+    self.useent.defaultusetime = self.useent.usetim;
     self.useent.userate = 1;
     self.useent.id = "rugby_jugg";
     self.useent.exclusiveuse = 0;
@@ -1526,29 +1540,29 @@ function juggcratemanageuse(crate) {
     self.useent.majoritycapprogress = 1;
     self.useent.wasmajoritycapprogress = 0;
     self.useent.resetprogress = 1;
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill_any_2("prematch_done", "start_mode_setup");
     }
     self.useent.type = "useObject";
     self.useent.offset3d = (0, 0, 32);
-    self.useent namespace_19b4203b51d56488::requestid(1, 1);
-    self.useent namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_jugg_crate");
-    self.useent namespace_19b4203b51d56488::setvisibleteam("any");
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(self.useent.objidnum, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(self.useent.objidnum, 0);
+    self.useent scripts/mp/gameobjects::requestid(1, 1);
+    self.useent scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_jugg_crate");
+    self.useent scripts/mp/gameobjects::setvisibleteam("any");
+    scripts/mp/objidpoolmanager::objective_set_play_intro(self.useent.objidnum, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(self.useent.objidnum, 0);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x55b3
 // Size: 0x4f
 function function_25a22a5801e9c215(player) {
-    namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_taking", "icon_waypoint_losing");
-    namespace_944ddf7b8df1b0e3::statusdialog("rugby_securing_jugg", player.team, "obj");
+    scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_taking", "icon_waypoint_losing");
+    scripts/mp/utility/dialog::statusdialog("rugby_securing_jugg", player.team, "obj");
     self.visuals[0] playloopsound("mp_care_package_non_owner_cap");
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5609
 // Size: 0xf7
@@ -1573,25 +1587,25 @@ function function_60506c80cb5907f0(player) {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5707
 // Size: 0xbd
 function function_d06091706a0b3695(team, player, result) {
     self.visuals[0] stoploopsound("mp_care_package_non_owner_cap");
     if (!result) {
-        namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_jugg_crate");
+        scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_jugg_crate");
     }
-    namespace_5a22b6f3a56f7e9b::objective_set_progress_team(self.objidnum, player.team);
-    namespace_5a22b6f3a56f7e9b::objective_set_progress(self.objidnum, self.curprogress / self.usetime);
+    scripts/mp/objidpoolmanager::objective_set_progress_team(self.objidnum, player.team);
+    scripts/mp/objidpoolmanager::objective_set_progress(self.objidnum, self.curprogress / self.usetime);
     if (self.curprogress > 0) {
-        namespace_5a22b6f3a56f7e9b::objective_show_team_progress(self.objidnum, player.team);
-    } else {
-        namespace_5a22b6f3a56f7e9b::objective_show_progress(self.objidnum, 0);
+        scripts/mp/objidpoolmanager::objective_show_team_progress(self.objidnum, player.team);
+        return;
     }
+    scripts/mp/objidpoolmanager::objective_show_progress(self.objidnum, 0);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x57cb
 // Size: 0xc
@@ -1599,115 +1613,115 @@ function function_d3025f84aa90109d(player) {
     
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57de
 // Size: 0x13
 function juggcratecleanup() {
-    namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.objidnum);
+    scripts/mp/objidpoolmanager::returnobjectiveid(self.objidnum);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x57f8
 // Size: 0xa9
 function createjuggcrateobjective(crate) {
-    objid = namespace_5a22b6f3a56f7e9b::requestobjectiveid(99);
+    objid = scripts/mp/objidpoolmanager::requestobjectiveid(99);
     crate.objid = objid;
     pos = crate.origin + (0, 0, 32);
-    namespace_5a22b6f3a56f7e9b::objective_add_objective(objid, "current", pos, "icon_waypoint_jugg");
-    namespace_5a22b6f3a56f7e9b::objective_set_play_intro(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_set_play_outro(objid, 0);
-    namespace_5a22b6f3a56f7e9b::objective_playermask_showtoall(objid);
+    scripts/mp/objidpoolmanager::objective_add_objective(objid, "current", pos, "icon_waypoint_jugg");
+    scripts/mp/objidpoolmanager::objective_set_play_intro(objid, 0);
+    scripts/mp/objidpoolmanager::objective_set_play_outro(objid, 0);
+    scripts/mp/objidpoolmanager::objective_playermask_showtoall(objid);
     objective_setneutrallabel(objid, "MP_MODE_RUGBY/CRATE_CAPTURE");
     objective_setfriendlylabel(objid, "MP_MODE_RUGBY/CRATE_CAPTURING");
     objective_setenemylabel(objid, "MP_MODE_RUGBY/CRATE_LOSING");
     updatejuggcrateobjectivestate(crate);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x58a8
 // Size: 0x75
 function updatejuggcrateobjectivestate(crate) {
     objid = crate.objid;
-    var_769b15f773adecb6 = istrue(crate.inuse);
-    if (var_769b15f773adecb6) {
+    beingcaptured = istrue(crate.inuse);
+    if (beingcaptured) {
         objective_setownerteam(objid, crate.usingplayer.team);
         objective_sethot(objid, 1);
-    } else {
-        objective_setownerteam(objid, undefined);
-        objective_sethot(objid, 0);
+        return;
     }
+    objective_setownerteam(objid, undefined);
+    objective_sethot(objid, 0);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5924
 // Size: 0x71
 function function_75d33aa666ba0a2e(player) {
     juggconfig = level.rugby.juggconfig;
     if (istrue(player.isjuggernaut)) {
-        player namespace_44abc05161e2e2cb::showerrormessage("KILLSTREAKS/JUGG_CANNOT_BE_PICKED_UP");
-        return 0;
+        player scripts/mp/hud_message::showerrormessage("KILLSTREAKS/JUGG_CANNOT_BE_PICKED_UP");
+        return false;
     }
-    result = player namespace_68f1873625691c6::function_a5af0a72ac912a3d(juggconfig);
+    result = player scripts/mp/juggernaut::function_a5af0a72ac912a3d(juggconfig);
     if (!isdefined(result)) {
-        player namespace_44abc05161e2e2cb::showerrormessage("KILLSTREAKS/JUGG_CANNOT_BECOME");
-        return 0;
+        player scripts/mp/hud_message::showerrormessage("KILLSTREAKS/JUGG_CANNOT_BECOME");
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x599d
 // Size: 0x235
-function updateoverheadcamerapos(var_723c1c68caf21fd9) {
-    if (isdefined(var_723c1c68caf21fd9)) {
-        team = var_723c1c68caf21fd9;
-        var_16c2b399cf8faee1 = level.spectatorcameras[0][team];
+function updateoverheadcamerapos(initialsetupteam) {
+    if (isdefined(initialsetupteam)) {
+        team = initialsetupteam;
+        camstruct = level.spectatorcameras[0][team];
     } else {
         team = self.team;
-        var_16c2b399cf8faee1 = level.spectatorcameras[0][self.team];
+        camstruct = level.spectatorcameras[0][self.team];
     }
-    var_584994fab4a8712b = level.rugby;
+    globals = level.rugby;
     side = undefined;
     if (!istrue(game["switchedsides"])) {
         side = team;
     } else {
         side = ter_op(team == "allies", "axis", "allies");
     }
-    var_a5d5a7083729299a = ter_op(side == "allies", "axis", "allies");
-    var_974c1a9e4fc7b421 = var_584994fab4a8712b.endzones[side][0].origin;
-    var_1d743581d71e8a20 = var_584994fab4a8712b.endzones[var_a5d5a7083729299a][0].origin;
+    otherside = ter_op(side == "allies", "axis", "allies");
+    var_974c1a9e4fc7b421 = globals.endzones[side][0].origin;
+    var_1d743581d71e8a20 = globals.endzones[otherside][0].origin;
     var_1f621b6115d4567 = (var_1d743581d71e8a20 - var_974c1a9e4fc7b421) * (1, 1, 0);
     var_5d88d0ca4a5ce25 = length2d(var_1f621b6115d4567);
-    var_5fa1e1697a302583 = namespace_9abe40d2af041eb2::getkillstreakairstrikeheightent();
-    if (isdefined(var_5fa1e1697a302583)) {
-        var_9261f47cf5bdfef3 = var_5fa1e1697a302583.origin[2];
+    heightent = scripts/cp_mp/utility/killstreak_utility::getkillstreakairstrikeheightent();
+    if (isdefined(heightent)) {
+        camheight = heightent.origin[2];
     } else {
-        var_9261f47cf5bdfef3 = 5000;
+        camheight = 5000;
     }
     campos = undefined;
     looktargetpos = undefined;
     if (doesteamhaveactivejugg(team)) {
-        juggpos = getjuggorcratepos();
-        campos = juggpos + var_1f621b6115d4567 * -3000 / var_5d88d0ca4a5ce25;
-        campos = (campos[0], campos[1], var_9261f47cf5bdfef3);
-        looktargetpos = juggpos + (var_1d743581d71e8a20 - juggpos) * 0.5;
+        juggPos = getjuggorcratepos();
+        campos = juggPos + var_1f621b6115d4567 * -3000 / var_5d88d0ca4a5ce25;
+        campos = (campos[0], campos[1], camheight);
+        looktargetpos = juggPos + (var_1d743581d71e8a20 - juggPos) * 0.5;
     } else {
         campos = var_974c1a9e4fc7b421 + var_1f621b6115d4567 * -2000 / var_5d88d0ca4a5ce25;
-        campos = (campos[0], campos[1], var_9261f47cf5bdfef3);
+        campos = (campos[0], campos[1], camheight);
         looktargetpos = getjuggorcratepos();
     }
     lookdir = looktargetpos - campos;
-    var_efb14e53541b5b48 = vectortoangles(lookdir);
-    var_16c2b399cf8faee1.origin = campos;
-    var_16c2b399cf8faee1.angles = var_efb14e53541b5b48;
+    camangles = vectortoangles(lookdir);
+    camstruct.origin = campos;
+    camstruct.angles = camangles;
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bd9
 // Size: 0x11b
@@ -1715,7 +1729,7 @@ function startspectatorview() {
     setlowermessageomnvar(0);
     waitframe();
     updatesessionstate("spectator");
-    namespace_5aeecefc462876::setdisabled();
+    scripts/mp/spectating::setdisabled();
     if (isdefined(self.lastdeathangles)) {
         self setplayerangles(self.lastdeathangles);
     }
@@ -1737,7 +1751,7 @@ function startspectatorview() {
     cameraent movecameratomappos(self, var_dead2082432cecc, var_6788dc28320974a);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5cfb
 // Size: 0x18
@@ -1747,7 +1761,7 @@ function dohalfwayflash() {
     applythermal();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d1a
 // Size: 0x27
@@ -1760,7 +1774,7 @@ function endspectatorview() {
     thread runslamzoomonspawn();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d48
 // Size: 0x16
@@ -1769,7 +1783,7 @@ function applythermal() {
     self thermalvisionon();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d65
 // Size: 0xa
@@ -1777,7 +1791,7 @@ function removethermal() {
     self thermalvisionoff();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d76
 // Size: 0x104
@@ -1798,7 +1812,7 @@ function movecameratomappos(player, var_9813182985677b23, finalangles) {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e81
 // Size: 0xee
@@ -1822,7 +1836,7 @@ function runslamzoomonspawn() {
     wait(1);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f76
 // Size: 0xd8
@@ -1844,7 +1858,7 @@ function playslamzoomflash() {
     overlay destroy();
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6055
 // Size: 0xb9
@@ -1860,7 +1874,7 @@ function enableplayeroutlinesforoverheadcam() {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6115
 // Size: 0x70
@@ -1873,40 +1887,40 @@ function removeplayeroutlinesforoverheadcam() {
     }
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x618c
 // Size: 0xd0
 function setupwaypointicons() {
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_jugg_crate", 0, "neutral", "MP_MODE_RUGBY/CRATE_CAPTURE", "icon_waypoint_jugg", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_jugg", 1, "friendly", "MP_INGAME_ONLY/OBJ_ESCORT_CAPS", "icon_waypoint_jugg", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_jugg", 1, "enemy", "MP_INGAME_ONLY/OBJ_KILL_CAPS", "icon_waypoint_jugg", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_hq_defend", 0, "friendly", "MP_MODE_RUGBY/ENDZONE_DEFEND", "icon_waypoint_hq", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_hq_attack", 0, "enemy", "MP_MODE_RUGBY/ENDZONE_ASSAULT", "icon_waypoint_hq", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_taking", 0, "friendly", "MP_INGAME_ONLY/OBJ_TAKING_CAPS", "icon_waypoint_jugg", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("icon_waypoint_losing", 0, "enemy", "MP_INGAME_ONLY/OBJ_LOSING_CAPS", "icon_waypoint_jugg", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_jugg_crate", 0, "neutral", "MP_MODE_RUGBY/CRATE_CAPTURE", "icon_waypoint_jugg", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_jugg", 1, "friendly", "MP_INGAME_ONLY/OBJ_ESCORT_CAPS", "icon_waypoint_jugg", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_jugg", 1, "enemy", "MP_INGAME_ONLY/OBJ_KILL_CAPS", "icon_waypoint_jugg", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_hq_defend", 0, "friendly", "MP_MODE_RUGBY/ENDZONE_DEFEND", "icon_waypoint_hq", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_hq_attack", 0, "enemy", "MP_MODE_RUGBY/ENDZONE_ASSAULT", "icon_waypoint_hq", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_taking", 0, "friendly", "MP_INGAME_ONLY/OBJ_TAKING_CAPS", "icon_waypoint_jugg", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("icon_waypoint_losing", 0, "enemy", "MP_INGAME_ONLY/OBJ_LOSING_CAPS", "icon_waypoint_jugg", 0);
 }
 
-// Namespace rugby/namespace_1775668e99dafe49
+// Namespace rugby / scripts/mp/gametypes/rugby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6263
 // Size: 0x116
 function function_a9f58f4a75680c3a() {
     /#
-        while (1) {
-            var_584994fab4a8712b = level.rugby;
+        while (true) {
+            globals = level.rugby;
             if (getdvarint(@"hash_ccb2ab4c50c032d2", 0) == 1) {
                 setdvar(@"hash_ccb2ab4c50c032d2", 0);
-                foreach (crate in var_584994fab4a8712b.activejuggcrates) {
-                    var_1f5bb8f398bf1e01 = 0;
+                foreach (crate in globals.activejuggcrates) {
+                    crateused = 0;
                     foreach (player in level.players) {
                         if (isai(player)) {
                             crate function_60506c80cb5907f0(player);
-                            var_1f5bb8f398bf1e01 = 1;
+                            crateused = 1;
                             break;
                         }
                     }
-                    if (var_1f5bb8f398bf1e01) {
+                    if (crateused) {
                         break;
                     }
                 }

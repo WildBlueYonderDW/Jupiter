@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using script_2047cdbf5176ba0;
 #using script_92b815b18f0ba61;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_62a4f7a62643fe8;
 #using script_31b70210f1726bd2;
@@ -10,7 +10,7 @@
 
 #namespace namespace_7a0daa40a5650029;
 
-// Namespace namespace_7a0daa40a5650029/namespace_998eb9292aa36405
+// Namespace namespace_7a0daa40a5650029 / namespace_998eb9292aa36405
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0xd7
 // Size: 0x11
@@ -18,7 +18,7 @@ function autoexec init() {
     level.var_b59297aa6933406b = &main;
 }
 
-// Namespace namespace_7a0daa40a5650029/namespace_998eb9292aa36405
+// Namespace namespace_7a0daa40a5650029 / namespace_998eb9292aa36405
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef
 // Size: 0x58

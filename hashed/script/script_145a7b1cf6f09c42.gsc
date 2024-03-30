@@ -14,41 +14,41 @@
 
 #namespace namespace_76b8c9d9aeef6321;
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x26c
 // Size: 0x370
-function setupobjective(trigger, var_8b9949739f4e0f6, var_5ddbc1faed2c56e6, var_3c2389ba69e5822b) {
+function setupobjective(trigger, skipobjid, var_5ddbc1faed2c56e6, var_3c2389ba69e5822b) {
     visual[0] = spawn("script_model", trigger.origin);
     ownerteam = function_2e3b4aa15c51aa90(trigger.script_label);
-    var_f68bd377b932ee64 = function_a7de388c32637f42(trigger.script_label);
-    moneypile = createuseobject(ownerteam, trigger, visual, (0, 0, 64), var_3c2389ba69e5822b, var_8b9949739f4e0f6);
+    alloweduser = function_a7de388c32637f42(trigger.script_label);
+    moneypile = createuseobject(ownerteam, trigger, visual, (0, 0, 64), var_3c2389ba69e5822b, skipobjid);
     moneypile setvisibleteam("any");
-    moneypile allowuse(var_f68bd377b932ee64);
+    moneypile allowuse(alloweduser);
     moneypile.trigger setusepriority(-1 - 1 - 1 - 1);
     moneypile.trigger setuseholdduration("duration_short");
     moneypile.trigger sethintonobstruction("show");
     moneypile requestid(1, 1, var_3c2389ba69e5822b);
     moneypile.exclusiveuse = 0;
-    moneypile.var_2361cb77c7226f85 = [];
+    moneypile.clientprogress = [];
     moneypile.checkuseconditioninthink = 1;
     moneypile.var_2efb40714a6e9468 = 1;
-    moneypile.var_bd91d0c9c243b0df = 0;
+    moneypile.allowsweapon = 0;
     moneypile.var_cc367d287df0480b = 0;
     if (ownerteam == "neutral") {
         moneypile setobjectivestatusicons(level.var_909dfa41d4c004d8, level.var_909dfa41d4c004d8);
-        var_d412ecbe461759fe = ter_op(getdvarint(@"hash_4e4da58f88e22860", 0), 20, 1000);
-        moneypile.var_d412ecbe461759fe = var_d412ecbe461759fe;
-        moneypile setusetime(level.var_33e1ab49db4cb12f);
+        currentmoney = ter_op(getdvarint(@"hash_4e4da58f88e22860", 0), 20, 1000);
+        moneypile.currentmoney = currentmoney;
+        moneypile setusetime(level.neutralcapturetime);
     } else {
-        moneypile setobjectivestatusicons(level.var_46d190af0e774ad, level.var_a93b79fb9e061647);
-        moneypile.var_d412ecbe461759fe = 0;
-        moneypile setusetime(level.var_c4bf2b151014aa16);
+        moneypile setobjectivestatusicons(level.var_46d190af0e774ad, level.iconsteal);
+        moneypile.currentmoney = 0;
+        moneypile setusetime(level.enemycapturetime);
         if (game["switchedsides"]) {
             if (ownerteam == "allies") {
-                moneypile.var_d412ecbe461759fe = game["attackerGoldBars"];
+                moneypile.currentmoney = game["attackerGoldBars"];
             } else {
-                moneypile.var_d412ecbe461759fe = game["defenderGoldBars"];
+                moneypile.currentmoney = game["defenderGoldBars"];
             }
         }
         function_f01b3311ea2144e(moneypile);
@@ -61,10 +61,10 @@ function setupobjective(trigger, var_8b9949739f4e0f6, var_5ddbc1faed2c56e6, var_
     moneypile.ownerteam = ownerteam;
     moneypile.origin = trigger.origin;
     if (trigger.script_label == "_a" || trigger.script_label == "_b") {
-        var_25d213b4714288ce = spawn("trigger_radius", trigger.origin, 0, 90, 128);
-        var_25d213b4714288ce.script_label = trigger.script_label;
-        var_25d213b4714288ce.moneypile = moneypile;
-        thread function_28d3a4d017b4d4a5(var_25d213b4714288ce);
+        clonetrigger = spawn("trigger_radius", trigger.origin, 0, 90, 128);
+        clonetrigger.script_label = trigger.script_label;
+        clonetrigger.moneypile = moneypile;
+        thread function_28d3a4d017b4d4a5(clonetrigger);
         moneypile thread function_b41e97065e86a3ea();
     }
     moneypile.trigger.moneypile = moneypile;
@@ -72,7 +72,7 @@ function setupobjective(trigger, var_8b9949739f4e0f6, var_5ddbc1faed2c56e6, var_
     return moneypile;
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0x90
@@ -87,13 +87,13 @@ function function_a31737d625cdf5eb(usable, player) {
     return {string:"", type:"HINT_NOICON"};
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x67c
 // Size: 0x15a
 function function_28d3a4d017b4d4a5(dropzone) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         player = dropzone waittill("trigger");
         if (level.gameended) {
             return;
@@ -101,97 +101,97 @@ function function_28d3a4d017b4d4a5(dropzone) {
         if (!isplayer(player)) {
             continue;
         }
-        if (dropzone.moneypile.ownerteam == player.team && player.var_d412ecbe461759fe > 0) {
-            for (i = 0; i < player.var_d412ecbe461759fe; i++) {
-                player thread doscoreevent(#"gold_secure");
+        if (dropzone.moneypile.ownerteam == player.team && player.currentmoney > 0) {
+            for (i = 0; i < player.currentmoney; i++) {
+                player thread doScoreEvent(#"gold_secure");
             }
-            player incpersstat("gold_secure", player.var_d412ecbe461759fe);
+            player incpersstat("gold_secure", player.currentmoney);
             player setextrascore0(player.pers["gold_secure"]);
-            dropzone.moneypile.var_d412ecbe461759fe = dropzone.moneypile.var_d412ecbe461759fe + player.var_d412ecbe461759fe;
-            player.var_d412ecbe461759fe = 0;
-            player setclientomnvar("ui_gold", player.var_d412ecbe461759fe);
+            dropzone.moneypile.currentmoney = dropzone.moneypile.currentmoney + player.currentmoney;
+            player.currentmoney = 0;
+            player setclientomnvar("ui_gold", player.currentmoney);
             function_f01b3311ea2144e(dropzone.moneypile);
             player playsound("br_pickup_cash_vlrg_01");
         }
     }
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7dd
 // Size: 0x42
 function function_b41e97065e86a3ea() {
     level waittill("round_end_finished");
     if (self.ownerteam == "allies") {
-        game["attackerGoldBars"] = self.var_d412ecbe461759fe;
-    } else {
-        game["defenderGoldBars"] = self.var_d412ecbe461759fe;
+        game["attackerGoldBars"] = self.currentmoney;
+        return;
     }
+    game["defenderGoldBars"] = self.currentmoney;
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x826
 // Size: 0x46
 function function_d154043bb1c69c98(player) {
-    if (self.var_d412ecbe461759fe <= 0 || player.var_d412ecbe461759fe >= player.var_9bbec58d3647abff || level.gameended) {
-        return 0;
+    if (self.currentmoney <= 0 || player.currentmoney >= player.maxmoney || level.gameended) {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x874
 // Size: 0x11b
 function function_cc1facd3f297a76c(player) {
-    player.var_d412ecbe461759fe = player.var_d412ecbe461759fe + 1;
-    player setclientomnvar("ui_gold", player.var_d412ecbe461759fe);
+    player.currentmoney = player.currentmoney + 1;
+    player setclientomnvar("ui_gold", player.currentmoney);
     player updateuiprogress(self, 0);
-    self.var_d412ecbe461759fe = self.var_d412ecbe461759fe - 1;
+    self.currentmoney = self.currentmoney - 1;
     player playsound("br_pickup_cash_lrg_01");
     if (self.ownerteam != "neutral") {
         function_f01b3311ea2144e(self);
-        player thread doscoreevent(#"gold_steal");
+        player thread doScoreEvent(#"gold_steal");
         player incpersstat("gold_steal", 1);
         player setextrascore1(player.pers["gold_steal"]);
         function_d626b8e88755fe64(player);
-    } else {
-        player thread doscoreevent(#"hash_e23c154d554b16a6");
-        if (getdvarint(@"hash_4e4da58f88e22860", 0) && self.var_d412ecbe461759fe <= 0) {
-            function_896249bc3c12863d();
-            function_9030f4d114a157df(level.var_ecec7a4115b35c9[level.var_9916fff305749068]);
-        }
+        return;
+    }
+    player thread doScoreEvent(#"gold_collect");
+    if (getdvarint(@"hash_4e4da58f88e22860", 0) && self.currentmoney <= 0) {
+        function_896249bc3c12863d();
+        function_9030f4d114a157df(level.var_ecec7a4115b35c9[level.var_9916fff305749068]);
     }
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x996
 // Size: 0x99
 function function_d626b8e88755fe64(player) {
     otherteam = getotherteam(player.team)[0];
-    var_3c366d97c1d245a2 = ter_op(otherteam == "axis", "axis_team_splash_appeared", "allies_team_splash_appeared");
-    if (!flag(var_3c366d97c1d245a2)) {
-        flag_set(var_3c366d97c1d245a2);
+    otherteamflag = ter_op(otherteam == "axis", "axis_team_splash_appeared", "allies_team_splash_appeared");
+    if (!flag(otherteamflag)) {
+        flag_set(otherteamflag);
         /#
             assertex(isdefined(level.var_9105385a7ecadc0c), "Please define the gold rush splash list");
         #/
         showsplashtoteam(otherteam, "gold_rush_steal", undefined, undefined, undefined, undefined, level.var_9105385a7ecadc0c);
-        thread function_87134192ff77be44(var_3c366d97c1d245a2);
+        thread function_87134192ff77be44(otherteamflag);
     }
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa36
 // Size: 0x17
-function function_87134192ff77be44(var_3c366d97c1d245a2) {
+function function_87134192ff77be44(otherteamflag) {
     wait(10);
-    flag_clear(var_3c366d97c1d245a2);
+    flag_clear(otherteamflag);
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa54
 // Size: 0x69
@@ -206,7 +206,7 @@ function function_2e3b4aa15c51aa90(objectivekey) {
     return ownerteam;
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xac5
 // Size: 0x3c
@@ -219,32 +219,32 @@ function function_a7de388c32637f42(objectivekey) {
     return ownerteam;
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb09
 // Size: 0x56
 function function_f01b3311ea2144e(moneypile) {
-    namespace_e8a49b70d0769b66::_setteamscore(moneypile.ownerteam, moneypile.var_d412ecbe461759fe);
-    if (moneypile.var_d412ecbe461759fe == 0) {
-        moneypile namespace_19b4203b51d56488::setvisibleteam("friendly");
-    } else {
-        moneypile namespace_19b4203b51d56488::setvisibleteam("any");
+    scripts/mp/gamescore::_setteamscore(moneypile.ownerteam, moneypile.currentmoney);
+    if (moneypile.currentmoney == 0) {
+        moneypile scripts/mp/gameobjects::setvisibleteam("friendly");
+        return;
     }
+    moneypile scripts/mp/gameobjects::setvisibleteam("any");
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb66
 // Size: 0x32
 function function_896249bc3c12863d() {
     if (level.var_ecec7a4115b35c9.size == level.var_9916fff305749068) {
         level.var_9916fff305749068 = 1;
-    } else {
-        level.var_9916fff305749068++;
+        return;
     }
+    level.var_9916fff305749068++;
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb9f
 // Size: 0x79
@@ -252,13 +252,13 @@ function function_9030f4d114a157df(var_6a0664dbed9c56fc) {
     foreach (var_963ddbf1bda4c460 in level.var_ecec7a4115b35c9) {
         if (var_963ddbf1bda4c460 == var_6a0664dbed9c56fc) {
             thread function_c9dce10ad224933a(var_963ddbf1bda4c460);
-        } else {
-            function_e61ac104d25c6faa(var_963ddbf1bda4c460, "none", 0);
+            continue;
         }
+        function_e61ac104d25c6faa(var_963ddbf1bda4c460, "none", 0);
     }
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc1f
 // Size: 0x1e
@@ -267,21 +267,21 @@ function function_c9dce10ad224933a(var_963ddbf1bda4c460) {
     function_e61ac104d25c6faa(var_963ddbf1bda4c460, "any", 20);
 }
 
-// Namespace namespace_76b8c9d9aeef6321/namespace_9e3a2df040c9b328
+// Namespace namespace_76b8c9d9aeef6321 / namespace_9e3a2df040c9b328
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc44
 // Size: 0xd1
-function function_e61ac104d25c6faa(var_963ddbf1bda4c460, visibility, var_d412ecbe461759fe) {
+function function_e61ac104d25c6faa(var_963ddbf1bda4c460, visibility, currentmoney) {
     var_963ddbf1bda4c460 setvisibleteam(visibility);
     var_963ddbf1bda4c460 allowuse(visibility);
-    var_963ddbf1bda4c460.var_d412ecbe461759fe = var_d412ecbe461759fe;
+    var_963ddbf1bda4c460.currentmoney = currentmoney;
     foreach (var_5658359672a6082c in level.var_c78ba5dba4b7d426) {
         if (int(var_5658359672a6082c.script_objective) == int(var_963ddbf1bda4c460.trigger.script_objective)) {
             if (visibility == "any") {
                 var_5658359672a6082c show();
-            } else {
-                var_5658359672a6082c hide();
+                continue;
             }
+            var_5658359672a6082c hide();
         }
     }
 }

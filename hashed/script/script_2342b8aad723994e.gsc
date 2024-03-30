@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_36820a34c6c5dfcc;
 
-// Namespace namespace_36820a34c6c5dfcc/namespace_c31609f90efcf2ca
+// Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68
 // Size: 0x76
@@ -14,7 +14,7 @@ function onplayerjoinsquad(player) {
     }
 }
 
-// Namespace namespace_36820a34c6c5dfcc/namespace_c31609f90efcf2ca
+// Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe5
 // Size: 0x39
@@ -25,7 +25,7 @@ function registeronplayerjoinsquadcallback(callback) {
     level.onjoinsquadcallbacks[level.onjoinsquadcallbacks.size] = callback;
 }
 
-// Namespace namespace_36820a34c6c5dfcc/namespace_c31609f90efcf2ca
+// Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x125
 // Size: 0x76
@@ -38,7 +38,7 @@ function function_2a1e4811621fdcde(player) {
     }
 }
 
-// Namespace namespace_36820a34c6c5dfcc/namespace_c31609f90efcf2ca
+// Namespace namespace_36820a34c6c5dfcc / namespace_c31609f90efcf2ca
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0x39

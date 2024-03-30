@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace util;
 
-// Namespace util/namespace_98114aceec719a87
+// Namespace util / scripts/unittest/util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7f
 // Size: 0x1c
@@ -10,7 +10,7 @@ function test_print(msg) {
     sysprint(msg);
 }
 
-// Namespace util/namespace_98114aceec719a87
+// Namespace util / scripts/unittest/util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa2
 // Size: 0x1a
@@ -18,7 +18,7 @@ function test_begin(tag) {
     test_print(tag + "_begin");
 }
 
-// Namespace util/namespace_98114aceec719a87
+// Namespace util / scripts/unittest/util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc3
 // Size: 0x1a

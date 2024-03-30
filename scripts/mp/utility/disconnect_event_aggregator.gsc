@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_758f4cbc8c088674;
 
-// Namespace namespace_758f4cbc8c088674/namespace_f1d40c362677777e
+// Namespace namespace_758f4cbc8c088674 / scripts/mp/utility/disconnect_event_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68
 // Size: 0x77
@@ -14,7 +14,7 @@ function rundisconnectcallbacks(player) {
     }
 }
 
-// Namespace namespace_758f4cbc8c088674/namespace_f1d40c362677777e
+// Namespace namespace_758f4cbc8c088674 / scripts/mp/utility/disconnect_event_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x76
@@ -27,7 +27,7 @@ function function_7104b549684a0447(player) {
     }
 }
 
-// Namespace namespace_758f4cbc8c088674/namespace_f1d40c362677777e
+// Namespace namespace_758f4cbc8c088674 / scripts/mp/utility/disconnect_event_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x163
 // Size: 0x39
@@ -38,7 +38,7 @@ function registerondisconnecteventcallback(callback) {
     level.ondisconnecteventcallbacks[level.ondisconnecteventcallbacks.size] = callback;
 }
 
-// Namespace namespace_758f4cbc8c088674/namespace_f1d40c362677777e
+// Namespace namespace_758f4cbc8c088674 / scripts/mp/utility/disconnect_event_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0x39

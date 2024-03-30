@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_33a47cc54fbe0ab9;
 
-// Namespace namespace_33a47cc54fbe0ab9/namespace_fd8ff6a1c9b4f3c7
+// Namespace namespace_33a47cc54fbe0ab9 / namespace_fd8ff6a1c9b4f3c7
 // Params 14, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68
 // Size: 0xf5
@@ -14,11 +14,11 @@ function function_d1e4826b0a4db6ee(einflictor, eattacker, victim, idamage, idfla
     }
 }
 
-// Namespace namespace_33a47cc54fbe0ab9/namespace_fd8ff6a1c9b4f3c7
+// Namespace namespace_33a47cc54fbe0ab9 / namespace_fd8ff6a1c9b4f3c7
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x164
 // Size: 0x39
-function function_95c943d6949814d1(callback) {
+function registerpostplayerdamagecallback(callback) {
     if (!isdefined(level.var_808c7a20e8c01b63)) {
         level.var_808c7a20e8c01b63 = [];
     }

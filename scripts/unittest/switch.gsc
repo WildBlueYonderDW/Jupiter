@@ -1,15 +1,15 @@
 // mwiii decomp prototype
 #using scripts\unittest\util.gsc;
 
-#namespace namespace_89c902463f02748c;
+#namespace unittest_switch;
 
-// Namespace namespace_89c902463f02748c/namespace_9bf67152cdd35093
+// Namespace unittest_switch / scripts/unittest/switch
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ee
 // Size: 0x6f9
 function switch_case() {
-    var_ce5805b01262ae30 = [0:2, 1:1, 2:4, 3:3, 4:0];
-    foreach (c in var_ce5805b01262ae30) {
+    numcases = [2, 1, 4, 3, 0];
+    foreach (c in numcases) {
         switch (c) {
         case 0:
             test_print("number 0");
@@ -25,8 +25,8 @@ function switch_case() {
             break;
         }
     }
-    var_60baac5a33171d69 = [0:"b", 1:"a", 2:"foo", 3:"d", 4:"c"];
-    foreach (c in var_60baac5a33171d69) {
+    strcases = ["b", "a", "foo", "d", "c"];
+    foreach (c in strcases) {
         switch (c) {
         case #"hash_31103fbc01bd840c":
             test_print("string a");
@@ -45,8 +45,8 @@ function switch_case() {
             break;
         }
     }
-    var_d00b61b1f0e46841 = [0:"a", 1:2, 2:0, 3:"foo", 4:"b", 5:1];
-    foreach (c in var_d00b61b1f0e46841) {
+    mixedcases = ["a", 2, 0, "foo", "b", 1];
+    foreach (c in mixedcases) {
         switch (c) {
         case #"hash_31103fbc01bd840c":
             test_print("mixed a");
@@ -65,8 +65,8 @@ function switch_case() {
             break;
         }
     }
-    var_4532b9e018851ec3 = [0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8];
-    foreach (c in var_4532b9e018851ec3) {
+    skipcases = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    foreach (c in skipcases) {
         switch (c) {
         case 0:
         case 1:
@@ -90,7 +90,7 @@ function switch_case() {
             break;
         }
     }
-    var_5fd7177feb6ad53 = [0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7];
+    var_5fd7177feb6ad53 = [0, 1, 2, 3, 4, 5, 6, 7];
     foreach (c in var_5fd7177feb6ad53) {
         switch (c) {
         case 0:
@@ -106,7 +106,7 @@ function switch_case() {
             break;
         }
     }
-    var_5fd7177feb6ad53 = [0:"foo_a", 1:"foo_b", 2:"foo_c", 3:"foo_d"];
+    var_5fd7177feb6ad53 = ["foo_a", "foo_b", "foo_c", "foo_d"];
     foreach (c in var_5fd7177feb6ad53) {
         switch (c) {
         case #"hash_bec7864bdc9acd1b":
@@ -116,16 +116,16 @@ function switch_case() {
             break;
         }
     }
-    var_1cebe1079ed86b6 = [0:0, 1:1, 2:2, 3:3];
-    foreach (c in var_1cebe1079ed86b6) {
+    singlecases = [0, 1, 2, 3];
+    foreach (c in singlecases) {
         switch (c) {
         default:
             test_print("single: " + c);
             break;
         }
     }
-    var_1cebe1079ed86b6 = [0:"foo_a", 1:"foo_b", 2:"foo_c", 3:"foo_d"];
-    foreach (c in var_1cebe1079ed86b6) {
+    singlecases = ["foo_a", "foo_b", "foo_c", "foo_d"];
+    foreach (c in singlecases) {
         switch (c) {
         case #"hash_bec7874bdc9aceae":
             test_print("single_str: " + c);
@@ -134,17 +134,16 @@ function switch_case() {
     }
 }
 
-// Namespace namespace_89c902463f02748c/namespace_9bf67152cdd35093
+// Namespace unittest_switch / scripts/unittest/switch
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ee
 // Size: 0x18f
 function switch_nest() {
     test_print("switch_nest");
-    var_ce5805b01262ae30 = [0:0, 1:0, 2:0, 3:1, 4:0, 5:2, 6:1, 7:0, 8:1, 9:1, 10:1, 11:2];
-    i = 0;
-    while (i < var_ce5805b01262ae30.size) {
-        c0 = var_ce5805b01262ae30[i];
-        c1 = var_ce5805b01262ae30[i + 1];
+    numcases = [0, 0, 0, 1, 0, 2, 1, 0, 1, 1, 1, 2];
+    for (i = 0; i < numcases.size; i = i + 2) {
+        c0 = numcases[i];
+        c1 = numcases[i + 1];
         switch (c0) {
         case 0:
             switch (c1) {
@@ -176,11 +175,10 @@ function switch_nest() {
             test_print("nest bad");
             break;
         }
-        i = i + 2;
     }
 }
 
-// Namespace namespace_89c902463f02748c/namespace_9bf67152cdd35093
+// Namespace unittest_switch / scripts/unittest/switch
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa84
 // Size: 0x71
@@ -194,14 +192,14 @@ function switch_loop() {
                 }
             }
             test_print("switch_loop: " + j);
-            continue;
+            break;
         default:
-            continue;
+            break;
         }
     }
 }
 
-// Namespace namespace_89c902463f02748c/namespace_9bf67152cdd35093
+// Namespace unittest_switch / scripts/unittest/switch
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xafc
 // Size: 0x30

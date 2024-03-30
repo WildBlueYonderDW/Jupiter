@@ -3,7 +3,7 @@
 
 #namespace interactive;
 
-// Namespace interactive/namespace_ad136f1d5091df4a
+// Namespace interactive / scripts/common/interactive
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70
 // Size: 0x67
@@ -20,7 +20,7 @@ function entity_used(entity, player) {
     thread [[ level.interactive_used_funcs[entity.interactive_used_func_id] ]](entity, player);
 }
 
-// Namespace interactive/namespace_ad136f1d5091df4a
+// Namespace interactive / scripts/common/interactive
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xde
 // Size: 0x81
@@ -40,7 +40,7 @@ function interactive_addusedcallback(usedcallback, id) {
     return id;
 }
 
-// Namespace interactive/namespace_ad136f1d5091df4a
+// Namespace interactive / scripts/common/interactive
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x167
 // Size: 0x16
@@ -48,7 +48,7 @@ function interactive_addusedcallbacktoentity(id) {
     self.interactive_used_func_id = id;
 }
 
-// Namespace interactive/namespace_ad136f1d5091df4a
+// Namespace interactive / scripts/common/interactive
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x184
 // Size: 0xd
@@ -56,7 +56,7 @@ function interactive_removeusedcallbackfromentity() {
     self.interactive_used_func_id = undefined;
 }
 
-// Namespace interactive/namespace_ad136f1d5091df4a
+// Namespace interactive / scripts/common/interactive
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x198
 // Size: 0x6f
@@ -71,7 +71,7 @@ function function_366418be14db1a9f(usable, player) {
     return undefined;
 }
 
-// Namespace interactive/namespace_ad136f1d5091df4a
+// Namespace interactive / scripts/common/interactive
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20f
 // Size: 0x41

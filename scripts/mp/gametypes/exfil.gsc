@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\mp\hud_util.gsc;
 #using scripts\mp\utility\dvars.gsc;
@@ -26,7 +26,7 @@
 
 #namespace exfil;
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x713
 // Size: 0x1d
@@ -34,7 +34,7 @@ function exfilinit() {
     level._effect["vfx_smk_signal"] = loadfx("vfx/_requests/mp_gameplay/vfx_smk_signal");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x737
 // Size: 0x148
@@ -51,38 +51,38 @@ function onexfilstart(winner, getexfilloccallback, var_7c52b433f53d39ee, onexfil
         thread removeallobjids();
     }
     level.ignorescoring = 1;
-    namespace_d576b6dc7cef9c62::resumetimer();
+    scripts/mp/gamelogic::resumetimer();
     level.starttime = gettime();
     level.discardtime = 0;
     level.timerpausetime = 0;
     timelimit = level.exfilactivetimer + level.exfilextracttimer;
-    gamemode = function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_timelimit");
+    gamemode = hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_timelimit");
     level.watchdvars[gamemode].value = timelimit;
     level.overridewatchdvars[gamemode] = timelimit;
     runexfil(winner, onexfilkilled);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x886
 // Size: 0xa2
 function removeallobjids() {
     foreach (o in level.objectives) {
         if (isdefined(o.objidnum)) {
-            o namespace_19b4203b51d56488::releaseid();
+            o scripts/mp/gameobjects::releaseid();
         }
         if (isdefined(o.trigger) && isdefined(o.trigger.objidnum)) {
-            o.trigger namespace_19b4203b51d56488::releaseid();
+            o.trigger scripts/mp/gameobjects::releaseid();
         }
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x92f
 // Size: 0x83
 function runexfil(winner, onhelikilled) {
-    level thread namespace_44abc05161e2e2cb::notifyteam("callout_exfil_winners", "callout_exfil_losers", winner);
+    level thread scripts/mp/hud_message::notifyteam("callout_exfil_winners", "callout_exfil_losers", winner);
     level thread spawnexfilzone(winner);
     level thread spawnexfilplayers(winner);
     leaderdialog("enemy_exfil", getotherteam(winner)[0], "status");
@@ -92,19 +92,19 @@ function runexfil(winner, onhelikilled) {
     level.ontimelimit = &onexfiltimelimit;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9b9
 // Size: 0x72
 function spawnexfilplayers(winner) {
-    gamemode = function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_numlives");
+    gamemode = hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_numlives");
     level.watchdvars[gamemode].value = 1;
     level.overridewatchdvars[gamemode] = 1;
     level notify("extract_players_spawned");
-    level thread namespace_44abc05161e2e2cb::updatematchstatushintforallplayers(winner, "exfil_prevent", "exfil_go");
+    level thread scripts/mp/hud_message::updatematchstatushintforallplayers(winner, "exfil_prevent", "exfil_go");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa32
 // Size: 0x8f
@@ -112,13 +112,13 @@ function skipkillcamandspawn() {
     self notify("abort_killcam");
     self.cancelkillcam = 1;
     waitframe();
-    thread namespace_99ac021a7547cae3::spawnplayer(0, 1);
+    thread scripts/mp/playerlogic::spawnplayer(0, 1);
     if (isteamreviveenabled() && isdefined(level.revivetriggers[self.guid])) {
-        level.revivetriggers[self.guid].victim thread namespace_7db13bdf599e41a6::removetrigger(level.revivetriggers[self.guid].victim.guid);
+        level.revivetriggers[self.guid].victim thread scripts/mp/teamrevive::removetrigger(level.revivetriggers[self.guid].victim.guid);
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xac8
 // Size: 0x465
@@ -150,9 +150,9 @@ function spawnexfilzone(winner) {
     level.exfilgoalent.ownerteam = var_c8a41ae10dd3b1d2;
     level.exfilgoalent.type = "";
     droppoint = level.exfilgoaltrigger.origin;
-    contentoverride = namespace_2a184fc4902783dc::create_contents(0, 1, 1, 0, 0, 1, 1);
+    contentoverride = scripts/engine/trace::create_contents(0, 1, 1, 0, 0, 1, 1);
     ignoreents = [];
-    trace = namespace_2a184fc4902783dc::ray_trace(level.exfilgoalent.origin + (0, 0, 20), level.exfilgoalent.origin - (0, 0, 4000), ignoreents, contentoverride, 0);
+    trace = scripts/engine/trace::ray_trace(level.exfilgoalent.origin + (0, 0, 20), level.exfilgoalent.origin - (0, 0, 4000), ignoreents, contentoverride, 0);
     if (isplayer(trace["entity"])) {
         trace["entity"] = undefined;
     }
@@ -171,23 +171,23 @@ function spawnexfilzone(winner) {
         level.exfilgoalent playloopsound("mp_flare_burn_lp");
     }
     level.exfilgoaltrigger thread goaltriggerwatcher(self);
-    level.exfilobjid = namespace_5a22b6f3a56f7e9b::requestobjectiveid(99);
+    level.exfilobjid = scripts/mp/objidpoolmanager::requestobjectiveid(99);
     if (level.exfilobjid != -1) {
-        var_24c76fc549f7fd9 = "current";
-        namespace_5a22b6f3a56f7e9b::objective_add_objective(level.exfilobjid, var_24c76fc549f7fd9, level.exfilgoaltrigger.origin + (0, 0, 60));
-        namespace_5a22b6f3a56f7e9b::objective_set_play_intro(level.exfilobjid, 1);
-        namespace_5a22b6f3a56f7e9b::objective_set_play_outro(level.exfilobjid, 1);
-        namespace_5a22b6f3a56f7e9b::objective_playermask_showtoall(level.exfilobjid);
+        objectivestate = "current";
+        scripts/mp/objidpoolmanager::objective_add_objective(level.exfilobjid, objectivestate, level.exfilgoaltrigger.origin + (0, 0, 60));
+        scripts/mp/objidpoolmanager::objective_set_play_intro(level.exfilobjid, 1);
+        scripts/mp/objidpoolmanager::objective_set_play_outro(level.exfilobjid, 1);
+        scripts/mp/objidpoolmanager::objective_playermask_showtoall(level.exfilobjid);
         self.showworldicon = 1;
     }
-    level.exfilgoalent namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_waitfor_exfil", "icon_waypoint_prevent_exfil", level.exfilobjid);
+    level.exfilgoalent scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_waitfor_exfil", "icon_waypoint_prevent_exfil", level.exfilobjid);
     objective_sethot(level.exfilobjid, 1);
     level thread watchforexfilactive(winner);
     waitframe();
     playfxontag(level._effect["vfx_smk_signal"], level.exfilgoalent, "tag_origin");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf34
 // Size: 0x78
@@ -196,7 +196,7 @@ function goaltriggerwatcher(player) {
     self notify("trigger_start");
     self endon("trigger_start");
     level waittill("extract_trigger_active");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         if (player.team == level.exfilgoalent.team && !istrue(player.extracted)) {
             level thread onexfilsuccess(player);
@@ -204,7 +204,7 @@ function goaltriggerwatcher(player) {
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfb3
 // Size: 0x72
@@ -212,14 +212,14 @@ function watchforexfilactive(winner) {
     level endon("game_ended");
     level thread runexfilnotactivefill(winner);
     level thread runexfilwaitactiveunfill(winner);
-    var_68d24288e5c2a0b4 = level.exfilactivetimer;
-    wait(var_68d24288e5c2a0b4);
+    exfilactivetime = level.exfilactivetimer;
+    wait(exfilactivetime);
     level.exfilnotactive = 0;
     level notify("extract_trigger_active");
-    level.exfilgoalent namespace_19b4203b51d56488::setobjectivestatusicons("icon_waypoint_active_exfil", "icon_waypoint_prevent_exfil", level.exfilobjid);
+    level.exfilgoalent scripts/mp/gameobjects::setobjectivestatusicons("icon_waypoint_active_exfil", "icon_waypoint_prevent_exfil", level.exfilobjid);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x102c
 // Size: 0xff
@@ -227,17 +227,17 @@ function runexfilnotactivefill(winner) {
     level endon("game_ended");
     level.exfilnotactive = 1;
     updaterate = level.framedurationseconds;
-    var_a1dfe9d4920a43fa = updaterate * 1000;
-    var_68d24288e5c2a0b4 = level.exfilactivetimer;
-    var_68d24288e5c2a0b4 = var_68d24288e5c2a0b4 * 1000;
-    addtime = var_a1dfe9d4920a43fa;
+    updateratems = updaterate * 1000;
+    exfilactivetime = level.exfilactivetimer;
+    exfilactivetime = exfilactivetime * 1000;
+    addtime = updateratems;
     while (level.exfilnotactive) {
         if (addtime != 0) {
-            var_5f6264f695308483 = min(addtime / var_68d24288e5c2a0b4, 1);
-            namespace_5a22b6f3a56f7e9b::objective_set_progress_team(self.exfilobjid, undefined);
-            namespace_5a22b6f3a56f7e9b::objective_show_progress(self.exfilobjid, 1);
-            namespace_5a22b6f3a56f7e9b::objective_set_progress(self.exfilobjid, var_5f6264f695308483);
-            addtime = min(addtime + var_a1dfe9d4920a43fa, var_68d24288e5c2a0b4);
+            var_5f6264f695308483 = min(addtime / exfilactivetime, 1);
+            scripts/mp/objidpoolmanager::objective_set_progress_team(self.exfilobjid, undefined);
+            scripts/mp/objidpoolmanager::objective_show_progress(self.exfilobjid, 1);
+            scripts/mp/objidpoolmanager::objective_set_progress(self.exfilobjid, var_5f6264f695308483);
+            addtime = min(addtime + updateratems, exfilactivetime);
         }
         waitframe();
     }
@@ -245,7 +245,7 @@ function runexfilnotactivefill(winner) {
     leaderdialog("exfilarrive_friendly", winner, "status");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1132
 // Size: 0x105
@@ -254,54 +254,54 @@ function runexfilwaitactiveunfill(winner) {
     level waittill("extract_trigger_active");
     level.exfilactive = 1;
     updaterate = level.framedurationseconds;
-    var_a1dfe9d4920a43fa = updaterate * 1000;
+    updateratems = updaterate * 1000;
     var_75f51a7eb662fe97 = level.exfilextracttimer;
     var_75f51a7eb662fe97 = var_75f51a7eb662fe97 * 1000;
-    var_d3d9f3ad00693948 = var_75f51a7eb662fe97 - var_a1dfe9d4920a43fa;
+    subtime = var_75f51a7eb662fe97 - updateratems;
     while (level.exfilactive) {
-        var_5f6264f695308483 = var_d3d9f3ad00693948 / var_75f51a7eb662fe97;
-        namespace_5a22b6f3a56f7e9b::objective_set_progress_team(self.exfilobjid, getotherteam(winner)[0]);
-        namespace_5a22b6f3a56f7e9b::objective_show_progress(self.exfilobjid, 1);
-        namespace_5a22b6f3a56f7e9b::objective_set_progress(self.exfilobjid, var_5f6264f695308483);
-        var_d3d9f3ad00693948 = max(var_d3d9f3ad00693948 - var_a1dfe9d4920a43fa, 1);
+        var_5f6264f695308483 = subtime / var_75f51a7eb662fe97;
+        scripts/mp/objidpoolmanager::objective_set_progress_team(self.exfilobjid, getotherteam(winner)[0]);
+        scripts/mp/objidpoolmanager::objective_show_progress(self.exfilobjid, 1);
+        scripts/mp/objidpoolmanager::objective_set_progress(self.exfilobjid, var_5f6264f695308483);
+        subtime = max(subtime - updateratems, 1);
         waitframe();
     }
     leaderdialog("exfilend_enemy", getotherteam(winner)[0], "status");
     leaderdialog("exfilend_friendly", winner, "status");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x123e
 // Size: 0xc7
-function switchtoexfilweapons(winner, var_996eac0d7f6fe3ab) {
+function switchtoexfilweapons(winner, exfilweapon) {
     level waittill("extract_players_spawned");
     var_c8a41ae10dd3b1d2 = getotherteam(winner)[0];
     if (var_c8a41ae10dd3b1d2 != "tie") {
         foreach (p in level.players) {
             if (p.team == var_c8a41ae10dd3b1d2) {
                 p takeallweapons();
-                p namespace_df5cfdbe6e2d3812::_giveweapon(var_996eac0d7f6fe3ab, undefined, undefined, 1);
-                p thread switchtoexfilweapon(var_996eac0d7f6fe3ab);
-                p namespace_1a507865f681850e::giveequipment("equip_throwing_knife", "primary");
+                p scripts/cp_mp/utility/inventory_utility::_giveweapon(exfilweapon, undefined, undefined, 1);
+                p thread switchtoexfilweapon(exfilweapon);
+                p scripts/mp/equipment::giveequipment("equip_throwing_knife", "primary");
             }
         }
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x130c
 // Size: 0x2c
-function switchtoexfilweapon(var_996eac0d7f6fe3ab) {
+function switchtoexfilweapon(exfilweapon) {
     self endon("death_or_disconnect");
     self endon("end_switchToFists");
-    while (domonitoredweaponswitch(var_996eac0d7f6fe3ab, 1) == 0) {
+    while (domonitoredweaponswitch(exfilweapon, 1) == 0) {
         waitframe();
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x133f
 // Size: 0x21
@@ -312,7 +312,7 @@ function onexfiltimelimit() {
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1367
 // Size: 0x115
@@ -320,21 +320,21 @@ function onexfilsuccess(player) {
     level endon("game_ended");
     player.extracted = 1;
     player.spawnprotection = 1;
-    player namespace_41cb45263e591751::setlightarmorvalue(player, 1000, undefined, 0);
-    player val::function_2d6e7e0b80767910("exfil_success", [0:"usability", 1:"offhand_weapons", 2:"killstreaks", 3:"supers", 4:"gesture", 5:"weapon", 6:"weapon_switch"]);
-    player val::function_3633b947164be4f3("exfil_success", 0);
-    player thread namespace_44abc05161e2e2cb::showsplash("callout_exfil_success");
+    player scripts/mp/lightarmor::setlightarmorvalue(player, 1000, undefined, 0);
+    player val::group_register("exfil_success", ["usability", "offhand_weapons", "killstreaks", "supers", "gesture", "weapon", "weapon_switch"]);
+    player val::group_set("exfil_success", 0);
+    player thread scripts/mp/hud_message::showsplash("callout_exfil_success");
     while (!player isonground()) {
         waitframe();
     }
     player allowmovement(0);
-    var_3ebcc9541185a5ee = spawn("script_origin", player.origin);
-    var_3ebcc9541185a5ee setmodel("tag_origin");
-    player playerlinkto(var_3ebcc9541185a5ee);
-    var_3ebcc9541185a5ee moveto(var_3ebcc9541185a5ee.origin + (0, 0, 10000), 5, 2, 2);
+    movetoent = spawn("script_origin", player.origin);
+    movetoent setmodel("tag_origin");
+    player playerlinkto(movetoent);
+    movetoent moveto(movetoent.origin + (0, 0, 10000), 5, 2, 2);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1483
 // Size: 0x18
@@ -343,13 +343,13 @@ function stopunfillthread(time) {
     self.exfilactive = 0;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x14a2
 // Size: 0x256
-function assignhelitoexfilpoint(onhelikilled, var_35e197dc52ce8af9, team) {
-    wait(var_35e197dc52ce8af9 + randomint(10));
-    vehicle = level.players[0] namespace_3a5b7dd73e67921c::spawnextractchopper(self, self.origin, onhelikilled, 10 + var_35e197dc52ce8af9);
+function assignhelitoexfilpoint(onhelikilled, timeoffsetnum, team) {
+    wait(timeoffsetnum + randomint(10));
+    vehicle = level.players[0] scripts/mp/gametypes/br_extract_chopper::spawnextractchopper(self, self.origin, onhelikilled, 10 + timeoffsetnum);
     vehicle playloopsound("br_exfil_lbravo_engine_temp");
     colmodel = getent("clip64x64x256", "targetname");
     colmodelent = spawn("script_model", vehicle gettagorigin("tag_origin"));
@@ -383,7 +383,7 @@ function assignhelitoexfilpoint(onhelikilled, var_35e197dc52ce8af9, team) {
     vehicle thread exfilpilotactorthink(team, vehicle.scene_node, scene_name);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ff
 // Size: 0x25
@@ -392,33 +392,33 @@ function createextractvfx() {
     playfxontag(getfx("vfx_smk_signal_gr"), self.vfxent, "tag_origin");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x172b
 // Size: 0x8c
-function exfilpilotactorthink(team, scene_node, scene_name, var_16e334d22d37be73) {
+function exfilpilotactorthink(team, scene_node, scene_name, extra_crew) {
     level endon("game_ended");
-    self.actors = thread spawnexfilpilotactors(team, scene_name, var_16e334d22d37be73);
+    self.actors = thread spawnexfilpilotactors(team, scene_name, extra_crew);
     anim_first_frame(self.actors, "lbravo_exfil", "origin_animate_jnt");
     hideactors();
     showactors();
     if (isdefined(self.path)) {
-        exfilactorthinkpath(team, scene_node, scene_name, var_16e334d22d37be73);
-    } else {
-        exfilactorthinkanim(team, scene_node, scene_name, var_16e334d22d37be73);
+        exfilactorthinkpath(team, scene_node, scene_name, extra_crew);
+        return;
     }
+    exfilactorthinkanim(team, scene_node, scene_name, extra_crew);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x17be
 // Size: 0x4b
-function exfilactorthinkpath(team, scene_node, scene_name, var_16e334d22d37be73) {
+function exfilactorthinkpath(team, scene_node, scene_name, extra_crew) {
     thread exfilactorloopthink(self.actors[0]);
     thread exfilactorloopthink(self.actors[1]);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1810
 // Size: 0x26
@@ -427,22 +427,22 @@ function exfilactorloopthink(actor) {
     anim_single_solo(actor, "lbravo_exfil_loop_exit", "origin_animate_jnt");
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x183d
 // Size: 0x2d
 function exfilactorloop(actor) {
     self endon("unload");
-    while (1) {
+    while (true) {
         anim_single_solo(actor, "lbravo_exfil_loop", "origin_animate_jnt");
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1871
 // Size: 0xc4
-function exfilactorthinkanim(team, scene_node, scene_name, var_16e334d22d37be73) {
+function exfilactorthinkanim(team, scene_node, scene_name, extra_crew) {
     thread anim_single(self.actors, "lbravo_exfil", "origin_animate_jnt");
     duration = getanimlength(level.scr_anim["pilot"]["lbravo_exfil"]);
     wait(duration);
@@ -452,11 +452,11 @@ function exfilactorthinkanim(team, scene_node, scene_name, var_16e334d22d37be73)
     self.actors = undefined;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x193c
 // Size: 0xaf
-function spawnexfilpilotactors(team, scene_name, var_16e334d22d37be73) {
+function spawnexfilpilotactors(team, scene_name, extra_crew) {
     actors = [];
     actors[actors.size] = exfil_spawn_anim_model("pilot", "origin_animate_jnt", "fullbody_ppilot_crew_a");
     actors[actors.size] = exfil_spawn_anim_model("copilot", "origin_animate_jnt", "fullbody_ppilot_crew_a");
@@ -466,48 +466,48 @@ function spawnexfilpilotactors(team, scene_name, var_16e334d22d37be73) {
     return actors;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x19f3
 // Size: 0x17a
-function exfil_spawn_anim_model(animname, var_609c1b125a13456, body, head, weapon) {
+function exfil_spawn_anim_model(animname, linkto_ent, body, head, weapon) {
     guy = spawn("script_model", (0, 0, 0));
     guy setmodel(body);
     if (isdefined(head)) {
-        var_f4246828592f1c0f = spawn("script_model", (0, 0, 0));
-        var_f4246828592f1c0f setmodel(head);
-        var_f4246828592f1c0f linkto(guy, "j_spine4", (0, 0, 0), (0, 0, 0));
-        guy.head = var_f4246828592f1c0f;
-        guy thread delete_on_death(var_f4246828592f1c0f);
+        guy_head = spawn("script_model", (0, 0, 0));
+        guy_head setmodel(head);
+        guy_head linkto(guy, "j_spine4", (0, 0, 0), (0, 0, 0));
+        guy.head = guy_head;
+        guy thread delete_on_death(guy_head);
     }
     if (isdefined(weapon)) {
-        var_e71ccb5e6023bcdd = spawn("script_model", (0, 0, 0));
-        var_e71ccb5e6023bcdd setmodel(weapon);
-        var_e71ccb5e6023bcdd linkto(guy, "j_gun", (0, 0, 0), (0, 0, 0));
-        guy thread delete_on_death(var_e71ccb5e6023bcdd);
-        guy.weapon = var_e71ccb5e6023bcdd;
+        guy_weapon = spawn("script_model", (0, 0, 0));
+        guy_weapon setmodel(weapon);
+        guy_weapon linkto(guy, "j_gun", (0, 0, 0), (0, 0, 0));
+        guy thread delete_on_death(guy_weapon);
+        guy.weapon = guy_weapon;
     }
     guy.animname = animname;
     guy setanimtree();
-    if (isdefined(var_609c1b125a13456)) {
+    if (isdefined(linkto_ent)) {
         thread delete_on_death(guy);
-        guy linkto(self, var_609c1b125a13456, (0, 0, 0), (0, 0, 0));
+        guy linkto(self, linkto_ent, (0, 0, 0), (0, 0, 0));
     }
     return guy;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b75
 // Size: 0x55
 function bugoutontimeout(heli) {
     level waittill_any_2("exfil_continue_game_end", "exfil_on_nuke_arrival");
-    namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.exfilgoalent.exfilobjid);
+    scripts/mp/objidpoolmanager::returnobjectiveid(self.exfilgoalent.exfilobjid);
     thread forcelinkgoaltriggerwatcher(heli);
     heli thread exfilleavesequence(heli.origin);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bd1
 // Size: 0x98
@@ -515,7 +515,7 @@ function forcelinkgoaltriggerwatcher(heli) {
     level endon("game_ended");
     self notify("trigger_start");
     self endon("trigger_start");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         if (player.team == self.exfilgoalent.team && !istrue(player.extracted)) {
             player thread playeranimlinktochopper(heli);
@@ -527,7 +527,7 @@ function forcelinkgoaltriggerwatcher(heli) {
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c70
 // Size: 0x98
@@ -539,13 +539,13 @@ function exfilusetriggerused(player, seatnum, var_7838d4d4a6f522d6) {
         playerlinktochopper(player, self, self.exfilspace);
         thread disableotherseats(player, seatnum, var_7838d4d4a6f522d6);
         self.exfilspace--;
-    } else {
-        thread exfilleavesequence();
-        namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.extractzone.exfilgoalent.exfilobjid);
+        return;
     }
+    thread exfilleavesequence();
+    scripts/mp/objidpoolmanager::returnobjectiveid(self.extractzone.exfilgoalent.exfilobjid);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d0f
 // Size: 0xae
@@ -553,33 +553,33 @@ function waitforsquadthenleave(player) {
     teamplayers = level.teamdata[player.team]["players"];
     foreach (p in teamplayers) {
         if (p != player) {
-            p thread namespace_68747ec28caa9f9e::tutorialprint("MP_INGAME_ONLY/GET_ON_CHOPPER", 10);
-        } else {
-            p thread namespace_68747ec28caa9f9e::tutorialprint("MP_INGAME_ONLY/CHOPPER_LEAVING_SOON", 10);
+            p thread scripts/mp/utility/print::tutorialprint("MP_INGAME_ONLY/GET_ON_CHOPPER", 10);
+            continue;
         }
+        p thread scripts/mp/utility/print::tutorialprint("MP_INGAME_ONLY/CHOPPER_LEAVING_SOON", 10);
     }
     wait(10);
     thread exfilleavesequence(undefined, 1);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dc4
 // Size: 0x82
-function disableotherseats(player, var_642f32d0cbb64c85, var_7838d4d4a6f522d6) {
+function disableotherseats(player, usedseat, var_7838d4d4a6f522d6) {
     foreach (interact in self.interactiontriggers) {
         interact disableplayeruse(player);
     }
     if (isdefined(var_7838d4d4a6f522d6)) {
-        player thread enableexitprompt(var_642f32d0cbb64c85, self, var_7838d4d4a6f522d6);
+        player thread enableexitprompt(usedseat, self, var_7838d4d4a6f522d6);
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e4d
 // Size: 0xbd
-function enableexitprompt(var_642f32d0cbb64c85, vehicle, var_7838d4d4a6f522d6) {
+function enableexitprompt(usedseat, vehicle, var_7838d4d4a6f522d6) {
     interaction = spawn("script_model", self.origin);
     interaction setmodel("tag_origin");
     interaction linkto(self);
@@ -591,17 +591,17 @@ function enableexitprompt(var_642f32d0cbb64c85, vehicle, var_7838d4d4a6f522d6) {
     interaction setusefov(360);
     interaction sethintonobstruction("hide");
     interaction setuseholdduration("duration_short");
-    interaction thread exfil_hopoff_think(vehicle, self, var_642f32d0cbb64c85, var_7838d4d4a6f522d6);
+    interaction thread exfil_hopoff_think(vehicle, self, usedseat, var_7838d4d4a6f522d6);
     vehicle.exitinteract = interaction;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f11
 // Size: 0xfd
-function exfil_hopoff_think(vehicle, player, var_642f32d0cbb64c85, var_7838d4d4a6f522d6) {
+function exfil_hopoff_think(vehicle, player, usedseat, var_7838d4d4a6f522d6) {
     makechopperseatplayerusable(player);
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         self makeunusable();
         player stopanimscriptsceneevent();
@@ -617,44 +617,44 @@ function exfil_hopoff_think(vehicle, player, var_642f32d0cbb64c85, var_7838d4d4a
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2015
 // Size: 0x8d
-function playerlinktochopper(player, heli, var_54100ca480291b0c) {
+function playerlinktochopper(player, heli, linktotag) {
     level endon("game_ended");
     player.extracted = 1;
     player.spawnprotection = 1;
-    player namespace_41cb45263e591751::setlightarmorvalue(player, 1000, undefined, 0);
-    player thread namespace_44abc05161e2e2cb::showsplash("callout_exfil_success");
+    player scripts/mp/lightarmor::setlightarmorvalue(player, 1000, undefined, 0);
+    player thread scripts/mp/hud_message::showsplash("callout_exfil_success");
     while (!player isonground()) {
         waitframe();
     }
     player allowmovement(0);
-    player playerlinkto(heli, "tag_passenger" + var_54100ca480291b0c, 1, 180, -180, 180, 180, 0);
+    player playerlinkto(heli, "tag_passenger" + linktotag, 1, 180, -180, 180, 180, 0);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a9
 // Size: 0x1f8
-function playeranimlinktochopper(exfil, var_e4b9cd561c7c0de6) {
+function playeranimlinktochopper(exfil, spot_index) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("player_free_spot");
     self endon("joined_team");
-    if (!isdefined(var_e4b9cd561c7c0de6)) {
+    if (!isdefined(spot_index)) {
         for (i = 0; i < exfil.passengers.size; i++) {
             if (exfil.passengers[i] == exfil.extractzone) {
                 exfil.passengers[i] = self;
-                var_e4b9cd561c7c0de6 = i;
+                spot_index = i;
             }
         }
         exfil thread disableotherseats(self);
     }
-    thread infil_player_rig("slot_" + var_e4b9cd561c7c0de6, "viewhands_base_iw8");
+    thread infil_player_rig("slot_" + spot_index, "viewhands_base_iw8");
     self.player_rig linkto(exfil, "origin_animate_jnt", (0, 0, 0), (0, 0, 0));
-    switch (var_e4b9cd561c7c0de6) {
+    switch (spot_index) {
     case 0:
         self lerpviewangleclamp(1, 0.25, 0.25, 35, 180, 90, 45);
         break;
@@ -676,11 +676,11 @@ function playeranimlinktochopper(exfil, var_e4b9cd561c7c0de6) {
     level endon("game_ended");
     self.extracted = 1;
     self.spawnprotection = 1;
-    namespace_41cb45263e591751::setlightarmorvalue(self, 1000, undefined, 0);
+    scripts/mp/lightarmor::setlightarmorvalue(self, 1000, undefined, 0);
     rideloop(exfil);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x22a8
 // Size: 0x53
@@ -695,35 +695,35 @@ function rideloop(exfil) {
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2302
 // Size: 0x87
-function exfilleavesequence(var_37c1299e74aaa6e7, endgame) {
+function exfilleavesequence(nukeposition, endgame) {
     if (isdefined(self.exitinteract)) {
         self.exitinteract makeunusable();
     }
-    thread namespace_3a5b7dd73e67921c::littlebirdleave();
+    thread scripts/mp/gametypes/br_extract_chopper::littlebirdleave();
     playannouncerbattlechatter(self.team, "extract_littlebird_leaving_a_friendly", 10);
     thread doexfilsplashforpassengers();
     if (isdefined(level.onexfilfinishedcallback)) {
-        self [[ level.onexfilfinishedcallback ]](var_37c1299e74aaa6e7);
+        self [[ level.onexfilfinishedcallback ]](nukeposition);
     }
     if (isdefined(endgame)) {
         waitthenendgame(self.team);
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2390
 // Size: 0x25
 function waitthenendgame(winningteam) {
     wait(5);
-    thread namespace_d576b6dc7cef9c62::endgame(winningteam, game["end_reason"]["objective_completed"]);
+    thread scripts/mp/gamelogic::endgame(winningteam, game["end_reason"]["objective_completed"]);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x23bc
 // Size: 0x57
@@ -731,12 +731,12 @@ function doexfilsplashforpassengers() {
     wait(1);
     for (i = 0; i < self.passengers.size; i++) {
         if (self.passengers[i] != self.extractzone) {
-            self.passengers[i] thread namespace_44abc05161e2e2cb::showsplash("callout_exfil_success");
+            self.passengers[i] thread scripts/mp/hud_message::showsplash("callout_exfil_success");
         }
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x241a
 // Size: 0xff
@@ -746,17 +746,17 @@ function init_useprompt_interactions(player) {
     pos2 = self gettagorigin("tag_passenger2");
     pos3 = self gettagorigin("tag_passenger3");
     pos4 = self gettagorigin("tag_passenger4");
-    var_5caa6f9f456ad6b0 = self gettagorigin("tag_passenger5");
-    var_5caa729f456add49 = self gettagorigin("tag_passenger6");
+    pos5 = self gettagorigin("tag_passenger5");
+    pos6 = self gettagorigin("tag_passenger6");
     create_exfil_interaction(pos1, "MP/HOLD_TO_GET_ON_CHOPPER", 0, player);
     create_exfil_interaction(pos2, "MP/HOLD_TO_GET_ON_CHOPPER", 2, player);
     create_exfil_interaction(pos3, "MP/HOLD_TO_GET_ON_CHOPPER", 4, player);
     create_exfil_interaction(pos4, "MP/HOLD_TO_GET_ON_CHOPPER", 1, player);
-    create_exfil_interaction(var_5caa6f9f456ad6b0, "MP/HOLD_TO_GET_ON_CHOPPER", 3, player);
-    create_exfil_interaction(var_5caa729f456add49, "MP/HOLD_TO_GET_ON_CHOPPER", 5, player);
+    create_exfil_interaction(pos5, "MP/HOLD_TO_GET_ON_CHOPPER", 3, player);
+    create_exfil_interaction(pos6, "MP/HOLD_TO_GET_ON_CHOPPER", 5, player);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2520
 // Size: 0xc0
@@ -776,7 +776,7 @@ function create_exfil_interaction(loc, hintstring, seatnum, player) {
     self.interactiontriggers[self.interactiontriggers.size] = interaction;
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x25e7
 // Size: 0x62
@@ -786,14 +786,14 @@ function exfil_use_think(vehicle, seatnum, player) {
     } else {
         makechopperseatteamusable(vehicle.team);
     }
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         self makeunusable();
         vehicle exfilusetriggerused(player, seatnum, self);
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2650
 // Size: 0x1c
@@ -802,7 +802,7 @@ function makechopperseatteamusable(team) {
     thread _updatechopperseatteamusable(team);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2673
 // Size: 0x1c
@@ -811,7 +811,7 @@ function makechopperseatplayerusable(player) {
     thread _updatechopperseatplayerusable(player);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2696
 // Size: 0x9e
@@ -822,53 +822,53 @@ function _updatechopperseatteamusable(team) {
             if (player.team == team) {
                 self showtoplayer(player);
                 self enableplayeruse(player);
-            } else {
-                self disableplayeruse(player);
-                self hidefromplayer(player);
+                continue;
             }
+            self disableplayeruse(player);
+            self hidefromplayer(player);
         }
         level waittill("joined_team");
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x273b
 // Size: 0x94
-function _updatechopperseatplayerusable(var_fba0376e0036de8d) {
+function _updatechopperseatplayerusable(useplayer) {
     self endon("death");
     for (;;) {
         foreach (player in level.players) {
-            if (player == var_fba0376e0036de8d) {
+            if (player == useplayer) {
                 self showtoplayer(player);
                 self enableplayeruse(player);
-            } else {
-                self disableplayeruse(player);
-                self hidefromplayer(player);
+                continue;
             }
+            self disableplayeruse(player);
+            self hidefromplayer(player);
         }
         level waittill("joined_team");
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x27d6
 // Size: 0xc9
-function playannouncerbattlechatter(team, var_cb3339ece72dbdeb, suffix) {
+function playannouncerbattlechatter(team, soundname, suffix) {
     level endon("game_ended");
     faction = "ustl";
-    soundalias = "dx_mpa_" + faction + "_" + var_cb3339ece72dbdeb + "_" + suffix;
+    soundalias = "dx_mpa_" + faction + "_" + soundname + "_" + suffix;
     if (soundexists(soundalias)) {
         foreach (player in level.players) {
             if (player.team == team) {
-                player queuedialogforplayer(soundalias, var_cb3339ece72dbdeb, 2);
+                player queuedialogforplayer(soundalias, soundname, 2);
             }
         }
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28a6
 // Size: 0x27
@@ -878,7 +878,7 @@ function votimeendingsoon() {
     playannouncerbattlechatter(game["attackers"], "extract_littlebird_leaving_soon_a_friendly", 10);
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x28d4
 // Size: 0x7c
@@ -888,7 +888,7 @@ function commander_play_sound_func(alias, notification, var_9a0afe8ff3d2508f) {
     }
 }
 
-// Namespace exfil/namespace_2458b63c4aff5232
+// Namespace exfil / scripts/mp/gametypes/exfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2957
 // Size: 0x3

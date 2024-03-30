@@ -12,7 +12,7 @@
 
 #namespace move;
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x450
 // Size: 0x14e
@@ -49,7 +49,7 @@ function playanim_exit(asmname, statename, params) {
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a5
 // Size: 0x9d
@@ -77,7 +77,7 @@ function chooseanim_exit(asmname, statename, params) {
     return exitanim;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x64a
 // Size: 0x36
@@ -90,7 +90,7 @@ function determinedesiredexitspeed() {
     return desiredspeed;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x688
 // Size: 0xd5
@@ -116,35 +116,35 @@ function chooseanim_exitsoldier(asmname, statename, params) {
     return exitanim;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x765
 // Size: 0xf2
-function getstartanim(statename, var_b63e3aa50397f874, idx, var_72c986bd4a45a6c1) {
-    if (!isdefined(var_b63e3aa50397f874)) {
-        var_b63e3aa50397f874 = "";
+function getstartanim(statename, optionalsuffix, idx, var_72c986bd4a45a6c1) {
+    if (!isdefined(optionalsuffix)) {
+        optionalsuffix = "";
     }
     /#
-        assert(!asm_hasalias(statename, "0" + var_b63e3aa50397f874));
+        assert(!asm_hasalias(statename, "0" + optionalsuffix));
     #/
     /#
-        assert(!asm_hasalias(statename, "5" + var_b63e3aa50397f874));
+        assert(!asm_hasalias(statename, "5" + optionalsuffix));
     #/
-    var_f9129a56a004cdb7 = [0:2, 1:3, 2:6, 3:9, 4:8, 5:7, 6:4, 7:1, 8:2];
-    var_993274082d629f60 = var_f9129a56a004cdb7[idx];
-    if (var_993274082d629f60 == 8) {
+    var_f9129a56a004cdb7 = [2, 3, 6, 9, 8, 7, 4, 1, 2];
+    keypadidx = var_f9129a56a004cdb7[idx];
+    if (keypadidx == 8) {
         if (var_72c986bd4a45a6c1 < 0) {
-            aliasname = var_993274082d629f60 + "r" + var_b63e3aa50397f874;
+            aliasname = keypadidx + "r" + optionalsuffix;
         } else {
-            aliasname = var_993274082d629f60 + "l" + var_b63e3aa50397f874;
+            aliasname = keypadidx + "l" + optionalsuffix;
         }
     } else {
-        aliasname = var_993274082d629f60 + var_b63e3aa50397f874;
+        aliasname = keypadidx + optionalsuffix;
     }
     return asm_lookupanimfromaliasifexists(statename, aliasname);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x85f
 // Size: 0x41
@@ -156,12 +156,12 @@ function getstartmindist() {
     return 100;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8a8
 // Size: 0x107
 function getexitnode() {
-    var_de315b064bb20d9 = undefined;
+    exitnode = undefined;
     limit = 400;
     if (actor_is3d()) {
         limit = 1024;
@@ -169,33 +169,33 @@ function getexitnode() {
         limit = 4096;
     }
     if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < limit) {
-        var_de315b064bb20d9 = self.node;
+        exitnode = self.node;
     } else if (isdefined(self.prevnode) && distancesquared(self.origin, self.prevnode.origin) < limit) {
-        var_de315b064bb20d9 = self.prevnode;
+        exitnode = self.prevnode;
     }
     if (isdefined(self.heat) && !actor_is3d()) {
-        if (isdefined(var_de315b064bb20d9) && absangleclamp180(self.angles[1] - var_de315b064bb20d9.angles[1]) > 30) {
+        if (isdefined(exitnode) && absangleclamp180(self.angles[1] - exitnode.angles[1]) > 30) {
             return undefined;
         }
     }
-    return var_de315b064bb20d9;
+    return exitnode;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b7
 // Size: 0x58c
-function determinestartanim(statename, var_8a1b6d26fbf96ea9, var_b63e3aa50397f874) {
-    var_33aec6b87b156757 = self getnegotiationstartnode();
-    if (isdefined(var_33aec6b87b156757)) {
-        goalpos = var_33aec6b87b156757.origin;
+function determinestartanim(statename, var_8a1b6d26fbf96ea9, optionalsuffix) {
+    negstartnode = self getnegotiationstartnode();
+    if (isdefined(negstartnode)) {
+        goalpos = negstartnode.origin;
     } else {
         goalpos = self.pathgoalpos;
     }
     /#
         assert(isdefined(goalpos));
     #/
-    var_de315b064bb20d9 = getexitnode();
+    exitnode = getexitnode();
     if (var_8a1b6d26fbf96ea9) {
         lookaheadpos = self.origin + self.lookaheaddir * self.lookaheaddist;
         var_5dce5380d64570b5 = lookaheadpos;
@@ -204,14 +204,14 @@ function determinestartanim(statename, var_8a1b6d26fbf96ea9, var_b63e3aa50397f87
         var_5dce5380d64570b5 = self getposonpath(32);
     }
     lookaheadangles = vectortoangles(lookaheadpos - self.origin);
-    var_78744f455b1d78cd = vectortoangles(var_5dce5380d64570b5 - self.origin);
-    if (nodeshouldfaceangles(var_de315b064bb20d9) && !var_8a1b6d26fbf96ea9) {
-        currentangles = var_de315b064bb20d9.angles;
+    nearlookaheadangles = vectortoangles(var_5dce5380d64570b5 - self.origin);
+    if (nodeshouldfaceangles(exitnode) && !var_8a1b6d26fbf96ea9) {
+        currentangles = exitnode.angles;
     } else {
         currentangles = self.angles;
     }
     anglediff = angleclamp180(lookaheadangles[1] - currentangles[1]);
-    var_72c986bd4a45a6c1 = angleclamp180(var_78744f455b1d78cd[1] - currentangles[1]);
+    var_72c986bd4a45a6c1 = angleclamp180(nearlookaheadangles[1] - currentangles[1]);
     var_28f7bf20c229aedb = vectortoangles(self.lookaheaddir);
     var_8ebc075f7302487d = angleclamp180(var_28f7bf20c229aedb[1] - currentangles[1]);
     if (abs(var_8ebc075f7302487d) > 135 && abs(anglediff) < 90) {
@@ -227,47 +227,47 @@ function determinestartanim(statename, var_8a1b6d26fbf96ea9, var_b63e3aa50397f87
     if (self pathdisttogoal(1) < mindist) {
         return;
     }
-    var_26565b4b4f2f0779 = getangleindices(anglediff);
-    var_dcf8f9e44bfa1d96 = self getnavposition();
-    idx = var_26565b4b4f2f0779[0];
+    angleindices = getangleindices(anglediff);
+    curpossnapped = self getnavposition();
+    idx = angleindices[0];
     startanim = undefined;
     if (isdefined(self.var_57e1b0c4ad45db70)) {
-        startanim = getstartanim(self.var_57e1b0c4ad45db70, var_b63e3aa50397f874, idx, var_72c986bd4a45a6c1);
+        startanim = getstartanim(self.var_57e1b0c4ad45db70, optionalsuffix, idx, var_72c986bd4a45a6c1);
     } else {
-        startanim = getstartanim(statename, var_b63e3aa50397f874, idx, var_72c986bd4a45a6c1);
+        startanim = getstartanim(statename, optionalsuffix, idx, var_72c986bd4a45a6c1);
     }
     if (!isdefined(self.var_57e1b0c4ad45db70)) {
-        var_63218147d1beacac = issubstr(statename, "cover");
+        exitcover = issubstr(statename, "cover");
         var_8c94765ca587f86c = currentangles;
-        if (var_63218147d1beacac && isdefined(var_de315b064bb20d9)) {
-            var_950fdaf84ee5363 = [0:-180, 1:-135, 2:-90, 3:-90, 4:-90, 5:90, 6:90, 7:135, 8:-180];
+        if (exitcover && isdefined(exitnode)) {
+            var_950fdaf84ee5363 = [-180, -135, -90, -90, -90, 90, 90, 135, -180];
             yawoffset = var_950fdaf84ee5363[idx];
             if (issubstr(statename, "left") && idx == 4) {
                 yawoffset = yawoffset * -1;
             }
-            var_8c94765ca587f86c = (0, angleclamp(var_de315b064bb20d9.angles[1] + yawoffset), 0);
+            var_8c94765ca587f86c = (0, angleclamp(exitnode.angles[1] + yawoffset), 0);
         } else {
-            var_fd659656ff546e = [0:180, 1:-135, 2:-90, 3:-45, 4:0, 5:45, 6:90, 7:135, 8:180];
+            var_fd659656ff546e = [180, -135, -90, -45, 0, 45, 90, 135, 180];
             yawoffset = var_fd659656ff546e[idx];
             var_8c94765ca587f86c = (0, angleclamp(self.angles[1] + yawoffset), 0);
         }
-        var_28c922fde27e0717 = 20;
-        var_76c97d8fa34a0aed = anglestoforward(var_8c94765ca587f86c);
-        velocity = var_76c97d8fa34a0aed * self aigettargetspeed();
-        movedelta = vectornormalize(var_76c97d8fa34a0aed) * 5;
-        var_29187ec6e45d7481 = self getadjustedexitdirection(var_28c922fde27e0717, velocity, movedelta);
-        switch (var_29187ec6e45d7481[0]) {
+        fmindist = 20;
+        animmovedelta = anglestoforward(var_8c94765ca587f86c);
+        velocity = animmovedelta * self aigettargetspeed();
+        movedelta = vectornormalize(animmovedelta) * 5;
+        exitdata = self getadjustedexitdirection(fmindist, velocity, movedelta);
+        switch (exitdata[0]) {
         case 1:
-            var_29187ec6e45d7481[1] = vectornormalize(var_29187ec6e45d7481[1]);
-            var_3ffc07559e34cbf3 = vectortoangles(var_29187ec6e45d7481[1]);
-            var_cbfa26d1fe952710 = math::wrap(-179, 179, angleclamp180(var_3ffc07559e34cbf3[1] - currentangles[1]));
+            exitdata[1] = vectornormalize(exitdata[1]);
+            adjustedexitangles = vectortoangles(exitdata[1]);
+            var_cbfa26d1fe952710 = math::wrap(-179, 179, angleclamp180(adjustedexitangles[1] - currentangles[1]));
             var_926edf5ccd852690 = getangleindices(var_cbfa26d1fe952710, 45);
             var_4b4b8fb40b0a2db2 = angleclamp180(var_8c94765ca587f86c[1] - currentangles[1]);
-            var_b56298300777ee7a = getangleindices(var_4b4b8fb40b0a2db2);
+            currentexitangles = getangleindices(var_4b4b8fb40b0a2db2);
             newindex = var_926edf5ccd852690[0];
             for (i = var_926edf5ccd852690.size - 1; i >= 0; i--) {
                 angleindex = var_926edf5ccd852690[i];
-                if (angleindex == var_b56298300777ee7a[0]) {
+                if (angleindex == currentexitangles[0]) {
                     continue;
                 } else if ((idx == 8 || idx == 0) && (angleindex == 8 || angleindex == 0)) {
                     continue;
@@ -279,7 +279,7 @@ function determinestartanim(statename, var_8a1b6d26fbf96ea9, var_b63e3aa50397f87
             }
             idx = newindex;
             self.asm.customdata.ignoreexitwarp = 1;
-            startanim = getstartanim(statename, var_b63e3aa50397f874, idx, var_72c986bd4a45a6c1);
+            startanim = getstartanim(statename, optionalsuffix, idx, var_72c986bd4a45a6c1);
             break;
         case 2:
             startanim = undefined;
@@ -291,7 +291,7 @@ function determinestartanim(statename, var_8a1b6d26fbf96ea9, var_b63e3aa50397f87
     return startanim;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf4b
 // Size: 0x1c
@@ -301,7 +301,7 @@ function movebattlechatter_helper(var_2e5e380655d9414) {
     movestartbattlechatter(var_2e5e380655d9414);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf6e
 // Size: 0x85
@@ -313,14 +313,14 @@ function function_c0771b0b4a16ebde(statename) {
         self notify("enabled");
         self endon("face enemy or motion");
         self endon(statename + "_knob");
-        while (1) {
+        while (true) {
             print3d(self.origin + (0, 0, 72), "<unknown string>", (1, 0.25, 0.25), 1, 2, 1);
             wait(0.05);
         }
     #/
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xffa
 // Size: 0x5b
@@ -335,7 +335,7 @@ function function_ac721a17dab10e87(suffix, statename, node) {
     #/
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x105c
 // Size: 0x4e0
@@ -344,24 +344,24 @@ function playstartanim(asmname, statename, startanim, var_bef3b4b769e8abe4) {
     lookaheadpos = self getposonpath(128);
     lookaheadangles = vectortoangles(lookaheadpos - self.origin);
     anglediff = angleclamp180(lookaheadangles[1] - self.angles[1]);
-    var_df150dde45538e3c = asm_getxanim(statename, startanim);
-    var_370a8c08be55a7a5 = getnotetracktimes(var_df150dde45538e3c, "code_move");
-    var_6955b58947031cd2 = getnotetracktimes(var_df150dde45538e3c, "corner");
-    var_bf4fa70506ca66c1 = getnotetracktimes(var_df150dde45538e3c, "warp_exit_start");
-    var_d9a20f501851b31e = getnotetracktimes(var_df150dde45538e3c, "warp_exit_end");
-    var_fb9376b06aba09d7 = 1;
+    startxanim = asm_getxanim(statename, startanim);
+    var_370a8c08be55a7a5 = getnotetracktimes(startxanim, "code_move");
+    cornertimes = getnotetracktimes(startxanim, "corner");
+    warpstarttimes = getnotetracktimes(startxanim, "warp_exit_start");
+    var_d9a20f501851b31e = getnotetracktimes(startxanim, "warp_exit_end");
+    endtimefrac = 1;
     if (var_370a8c08be55a7a5.size > 0) {
         self.requestarrivalnotify = 1;
-        var_fb9376b06aba09d7 = var_370a8c08be55a7a5[0];
+        endtimefrac = var_370a8c08be55a7a5[0];
     }
-    var_f49f40eb39da8b4e = getangledelta3d(var_df150dde45538e3c, 0, var_fb9376b06aba09d7);
+    var_f49f40eb39da8b4e = getangledelta3d(startxanim, 0, endtimefrac);
     self animmode("zonly_physics", 0);
     self setuseanimgoalweight(0.2);
-    var_ef7ea12479918983 = self.moveplaybackrate;
+    exitrate = self.moveplaybackrate;
     if (demeanorhasblendspace() && isentasoldier()) {
-        var_ef7ea12479918983 = 1;
+        exitrate = 1;
     }
-    var_da09f2e04da7570e = getmovedelta(var_df150dde45538e3c, 0, var_fb9376b06aba09d7);
+    var_da09f2e04da7570e = getmovedelta(startxanim, 0, endtimefrac);
     var_c4ec2d674bc02eb4 = length(var_da09f2e04da7570e);
     var_9c52e37b49e97a0b = self getposonpath(var_c4ec2d674bc02eb4);
     if (var_c4ec2d674bc02eb4 > 1) {
@@ -370,59 +370,55 @@ function playstartanim(asmname, statename, startanim, var_bef3b4b769e8abe4) {
         var_b46ed9e10e2b2da0 = self getposonpath(12) - self getnavposition();
     }
     var_2c820822533ffafc = vectortoyaw(var_b46ed9e10e2b2da0);
-    asm_playfacialanim(asmname, statename, var_df150dde45538e3c);
-    self aisetanim(statename, startanim, var_ef7ea12479918983);
+    asm_playfacialanim(asmname, statename, startxanim);
+    self aisetanim(statename, startanim, exitrate);
     var_5c0d1cbfc351f2e1 = 1;
-    var_5ec185bb9e766d14 = spawnstruct();
-    var_5ec185bb9e766d14.xanim = var_df150dde45538e3c;
+    animdata = spawnstruct();
+    animdata.xanim = startxanim;
     if (isdefined(self.asm.customdata.ignoreexitwarp)) {
-        goto LOC_0000040c;
-    }
-    if (var_6955b58947031cd2.size > 0) {
-        var_e6621fa4cf24a23f = getmovedelta(var_df150dde45538e3c, 0, var_6955b58947031cd2[0]);
-        var_8e8cb6f743122604 = length(var_e6621fa4cf24a23f);
-        var_583b1c0039d7eba0 = self getposonpath(var_8e8cb6f743122604);
+    } else if (cornertimes.size > 0) {
+        cornertranslation = getmovedelta(startxanim, 0, cornertimes[0]);
+        cornerdist = length(cornertranslation);
+        var_583b1c0039d7eba0 = self getposonpath(cornerdist);
         var_5076fb03fb7166e3 = var_9c52e37b49e97a0b;
-        if (var_c4ec2d674bc02eb4 - var_8e8cb6f743122604 < 2) {
+        if (var_c4ec2d674bc02eb4 - cornerdist < 2) {
             var_5076fb03fb7166e3 = self getposonpath(var_c4ec2d674bc02eb4 + 6);
         }
         var_f41896ed9d57f898 = var_5076fb03fb7166e3 - var_583b1c0039d7eba0;
         var_364f8dea82c92744 = vectortoyaw(var_f41896ed9d57f898);
-        if (var_bf4fa70506ca66c1.size > 0 && var_bf4fa70506ca66c1[0] > 0 && var_bf4fa70506ca66c1[0] < var_6955b58947031cd2[0]) {
-            var_5ec185bb9e766d14.posalongpath = var_583b1c0039d7eba0;
-            var_5ec185bb9e766d14.anglealongpath = var_364f8dea82c92744;
-            var_5ec185bb9e766d14.endnote = "corner";
-            if (var_d9a20f501851b31e.size > 0 && var_d9a20f501851b31e[0] < var_6955b58947031cd2[0]) {
-                var_5ec185bb9e766d14.duration = int((var_d9a20f501851b31e[0] - var_bf4fa70506ca66c1[0]) * getanimlength(var_df150dde45538e3c) * 1000 / var_ef7ea12479918983);
+        if (warpstarttimes.size > 0 && warpstarttimes[0] > 0 && warpstarttimes[0] < cornertimes[0]) {
+            animdata.posalongpath = var_583b1c0039d7eba0;
+            animdata.anglealongpath = var_364f8dea82c92744;
+            animdata.endnote = "corner";
+            if (var_d9a20f501851b31e.size > 0 && var_d9a20f501851b31e[0] < cornertimes[0]) {
+                animdata.duration = int((var_d9a20f501851b31e[0] - warpstarttimes[0]) * getanimlength(startxanim) * 1000 / exitrate);
             }
         } else {
-            motionwarpwithnotetracks(var_df150dde45538e3c, var_583b1c0039d7eba0, (0, var_364f8dea82c92744, 0), undefined, "corner", undefined, 0);
+            motionwarpwithnotetracks(startxanim, var_583b1c0039d7eba0, (0, var_364f8dea82c92744, 0), undefined, "corner", undefined, 0);
         }
-    } else if (var_bf4fa70506ca66c1.size == 0 || var_bf4fa70506ca66c1[0] == 0) {
+    } else if (warpstarttimes.size == 0 || warpstarttimes[0] == 0) {
         /#
-            assertex(var_370a8c08be55a7a5.size > 0, "Animation requires code_move for motion warp: " + function_3c8848a3a11b2553(getanimname(var_df150dde45538e3c)));
+            assertex(var_370a8c08be55a7a5.size > 0, "Animation requires code_move for motion warp: " + function_3c8848a3a11b2553(getanimname(startxanim)));
         #/
         duration = undefined;
-        if (var_bf4fa70506ca66c1.size > 0 && var_d9a20f501851b31e.size > 0 && var_d9a20f501851b31e[0] < var_370a8c08be55a7a5[0]) {
-            duration = int((var_d9a20f501851b31e[0] - var_bf4fa70506ca66c1[0]) * getanimlength(var_df150dde45538e3c) * 1000);
+        if (warpstarttimes.size > 0 && var_d9a20f501851b31e.size > 0 && var_d9a20f501851b31e[0] < var_370a8c08be55a7a5[0]) {
+            duration = int((var_d9a20f501851b31e[0] - warpstarttimes[0]) * getanimlength(startxanim) * 1000);
         }
-        motionwarpwithnotetracks(var_df150dde45538e3c, var_9c52e37b49e97a0b, (0, var_2c820822533ffafc, 0), undefined, "code_move", duration, 0);
-    LOC_0000040c:
+        motionwarpwithnotetracks(startxanim, var_9c52e37b49e97a0b, (0, var_2c820822533ffafc, 0), undefined, "code_move", duration, 0);
     }
-LOC_0000040c:
-    if (!isdefined(var_5ec185bb9e766d14.posalongpath)) {
-        var_5ec185bb9e766d14.posalongpath = var_9c52e37b49e97a0b;
-        var_5ec185bb9e766d14.anglealongpath = var_2c820822533ffafc;
-        var_5ec185bb9e766d14.endnote = "code_move";
-        if (var_bf4fa70506ca66c1.size > 0 && var_d9a20f501851b31e.size > 0) {
-            var_5ec185bb9e766d14.duration = int((var_d9a20f501851b31e[0] - var_bf4fa70506ca66c1[0]) * getanimlength(var_df150dde45538e3c) * 1000 / var_ef7ea12479918983);
+    if (!isdefined(animdata.posalongpath)) {
+        animdata.posalongpath = var_9c52e37b49e97a0b;
+        animdata.anglealongpath = var_2c820822533ffafc;
+        animdata.endnote = "code_move";
+        if (warpstarttimes.size > 0 && var_d9a20f501851b31e.size > 0) {
+            animdata.duration = int((var_d9a20f501851b31e[0] - warpstarttimes[0]) * getanimlength(startxanim) * 1000 / exitrate);
         }
     }
     groundent = self getgroundentity();
     if (isdefined(groundent)) {
-        var_5ec185bb9e766d14 = motionwarp_localizedata(var_5ec185bb9e766d14, groundent);
+        animdata = motionwarp_localizedata(animdata, groundent);
     }
-    asm_donotetracks(asmname, statename, &handlewarpexitstart, var_5ec185bb9e766d14, undefined, !var_bef3b4b769e8abe4);
+    asm_donotetracks(asmname, statename, &handlewarpexitstart, animdata, undefined, !var_bef3b4b769e8abe4);
     self motionwarpcancel();
     if (var_bef3b4b769e8abe4) {
         self animmode("normal", 0);
@@ -431,41 +427,40 @@ LOC_0000040c:
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1543
 // Size: 0x9e
-function motionwarp_localizedata(var_5ec185bb9e766d14, groundent) {
+function motionwarp_localizedata(animdata, groundent) {
     var_d352089b1ad84c9f = invertangles(groundent.angles);
-    var_ae6b4de373bb5886 = var_5ec185bb9e766d14.posalongpath - groundent.origin;
+    var_ae6b4de373bb5886 = animdata.posalongpath - groundent.origin;
     var_175bb7a3f0ea3191 = rotatevector(var_ae6b4de373bb5886, var_d352089b1ad84c9f);
-    var_5ec185bb9e766d14.posalongpath = var_175bb7a3f0ea3191;
-    var_5ec185bb9e766d14.anglealongpath = combineangles((0, var_5ec185bb9e766d14.anglealongpath, 0), var_d352089b1ad84c9f);
-    var_5ec185bb9e766d14.groundent = groundent;
-    return var_5ec185bb9e766d14;
+    animdata.posalongpath = var_175bb7a3f0ea3191;
+    animdata.anglealongpath = combineangles((0, animdata.anglealongpath, 0), var_d352089b1ad84c9f);
+    animdata.groundent = groundent;
+    return animdata;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15e9
 // Size: 0xdb
-function motionwarp_getworldifydata(var_5ec185bb9e766d14) {
+function motionwarp_getworldifydata(animdata) {
     posalongpath = undefined;
     anglealongpath = undefined;
-    groundent = var_5ec185bb9e766d14.groundent;
+    groundent = animdata.groundent;
     if (isdefined(groundent)) {
-        var_175bb7a3f0ea3191 = var_5ec185bb9e766d14.posalongpath;
+        var_175bb7a3f0ea3191 = animdata.posalongpath;
         var_ae6b4de373bb5886 = rotatevector(var_175bb7a3f0ea3191, groundent.angles);
         posalongpath = var_ae6b4de373bb5886 + groundent.origin;
-        angles = combineangles(var_5ec185bb9e766d14.anglealongpath, groundent.angles);
+        angles = combineangles(animdata.anglealongpath, groundent.angles);
         anglealongpath = angles[1];
-        return [0:posalongpath, 1:anglealongpath];
-    } else {
-        return [0:var_5ec185bb9e766d14.posalongpath, 1:var_5ec185bb9e766d14.anglealongpath];
+        return [posalongpath, anglealongpath];
     }
+    return [animdata.posalongpath, animdata.anglealongpath];
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16cb
 // Size: 0x11e
@@ -494,7 +489,7 @@ function handlewarpexitstart(note, params) {
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f0
 // Size: 0x15e
@@ -503,25 +498,25 @@ function checktransitionpreconditions() {
         /#
             function_57bc598a3c0d7a1e("<unknown string>" + self getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     if (!self.facemotion) {
         /#
             function_57bc598a3c0d7a1e("<unknown string>" + self getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     if (isdefined(self.disableexits) && self.disableexits) {
         /#
             function_57bc598a3c0d7a1e("<unknown string>" + self getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     if (self.stairsstate != "none") {
         /#
             function_57bc598a3c0d7a1e("<unknown string>" + self getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     mindist = 100;
     demeanor = asm_getdemeanor();
@@ -537,12 +532,12 @@ function checktransitionpreconditions() {
         /#
             function_57bc598a3c0d7a1e("<unknown string>" + self getentitynumber() + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1956
 // Size: 0x168
@@ -552,16 +547,16 @@ function function_b2fce9f29bd45cc3(asmname, statename, params) {
         assertex(isdefined(self.enemy), "No enemy?! This should be guaranteed via check in ai_asm_builtin.cpp::ShouldRunNGun");
     #/
     var_63a5b32b096323be = self getshootfrompos();
-    var_cff075b05a95577b = self getshootpos(var_63a5b32b096323be);
-    if (isdefined(var_cff075b05a95577b)) {
-        targetpos = var_cff075b05a95577b.shootpos;
+    targetposstruct = self getshootpos(var_63a5b32b096323be);
+    if (isdefined(targetposstruct)) {
+        targetpos = targetposstruct.shootpos;
     } else {
         targetpos = self lastknownpos(self.enemy);
     }
     var_84dba057067c3c3e = targetpos - self getposonpath(14);
     var_51da48562495c03a = vectortoyaw(var_84dba057067c3c3e);
-    var_c25f85e3d458191d = vectortoyaw(self.lookaheaddir);
-    var_43810d21f771f553 = angleclamp180(var_51da48562495c03a - var_c25f85e3d458191d);
+    pathyaw = vectortoyaw(self.lookaheaddir);
+    var_43810d21f771f553 = angleclamp180(var_51da48562495c03a - pathyaw);
     var_9bed543f317c7601 = -1;
     if (var_43810d21f771f553 > 100) {
         var_9bed543f317c7601 = asm_lookupanimfromalias(statename, "run_n_gun_hard_left");
@@ -578,7 +573,7 @@ function function_b2fce9f29bd45cc3(asmname, statename, params) {
     return var_9bed543f317c7601;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ac6
 // Size: 0x3a
@@ -588,157 +583,157 @@ function stoprunngun(asmname, statename, params) {
     self.baimedataimtarget = 0;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b07
 // Size: 0x49a
-function shouldstrafeaimchange(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldstrafeaimchange(asmname, statename, tostatename, params) {
     var_c7662529da3a7f64 = 1;
     if (var_c7662529da3a7f64) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.asm.strafe_foot)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.pathgoalpos)) {
-        return 0;
+        return false;
     }
     if (self getreacquirestate() == "enabled") {
-        return 0;
+        return false;
     }
     if (isonanystairs()) {
-        return 0;
+        return false;
     }
     var_f290d7530d6aba37 = self getstairsenterdist();
     var_50cfd72556c53ee8 = self getstairsstateatdist(var_f290d7530d6aba37);
     if (var_50cfd72556c53ee8 != "none") {
-        return 0;
+        return false;
     }
     targetspeed = self aigettargetspeed();
     if (self.lookaheaddist < 90) {
-        return 0;
+        return false;
     }
-    var_c25f85e3d458191d = vectortoyaw(self.lookaheaddir);
+    pathyaw = vectortoyaw(self.lookaheaddir);
     if (vectordot(vectornormalize(self.velocity), vectornormalize(self.lookaheaddir)) < 0.9) {
-        return 0;
+        return false;
     }
     var_8c3ab01d2f494a38 = self asmeventfiredwithin(asmname, "sharp_turn", 50);
     if (var_8c3ab01d2f494a38) {
-        var_185171d0a16d0416 = angleclamp180(var_c25f85e3d458191d - self.angles[1]);
+        var_185171d0a16d0416 = angleclamp180(pathyaw - self.angles[1]);
         var_c1350e6cda2f627a = angleclamp180(vectortoyaw(self.velocity) - self.angles[1]);
         if (abs(angleclamp180(var_c1350e6cda2f627a - var_185171d0a16d0416)) > 45) {
-            return 0;
+            return false;
         }
     } else {
-        var_c1350e6cda2f627a = angleclamp180(var_c25f85e3d458191d - self.angles[1]);
+        var_c1350e6cda2f627a = angleclamp180(pathyaw - self.angles[1]);
     }
     var_63a5b32b096323be = self getshootfrompos();
-    var_cff075b05a95577b = self getshootpos(var_63a5b32b096323be);
+    targetposstruct = self getshootpos(var_63a5b32b096323be);
     if (self.facemotion || self.predictedfacemotion || self shouldcautiousstrafe()) {
         var_43810d21f771f553 = 0;
-    } else if (isdefined(var_cff075b05a95577b) || self iscurrentenemyvalid()) {
-        if (isdefined(var_cff075b05a95577b)) {
-            targetpos = var_cff075b05a95577b.shootpos;
+    } else if (isdefined(targetposstruct) || self iscurrentenemyvalid()) {
+        if (isdefined(targetposstruct)) {
+            targetpos = targetposstruct.shootpos;
         } else {
             if (issentient(self.enemy) && gettime() - self lastknowntime(self.enemy) > 2000) {
-                return 0;
+                return false;
             }
             targetpos = self lastknownpos(self.enemy);
         }
         if (distance2dsquared(targetpos, self.origin) < 22500) {
-            return 0;
+            return false;
         }
         var_84dba057067c3c3e = targetpos - self getposonpath(32);
         var_51da48562495c03a = vectortoyaw(var_84dba057067c3c3e);
         if (abs(angleclamp180(var_51da48562495c03a - self.angles[1])) < 45) {
-            return 0;
+            return false;
         }
-        var_43810d21f771f553 = angleclamp180(var_c25f85e3d458191d - var_51da48562495c03a);
+        var_43810d21f771f553 = angleclamp180(pathyaw - var_51da48562495c03a);
     } else if (istrue(self._blackboard.forcestrafe)) {
-        return 0;
+        return false;
     } else {
         if (var_8c3ab01d2f494a38 || self pathdisttogoal() < 64) {
-            return 0;
+            return false;
         }
-        var_43810d21f771f553 = angleclamp180(var_c25f85e3d458191d - self.desiredangle);
+        var_43810d21f771f553 = angleclamp180(pathyaw - self.desiredangle);
     }
     if (abs(angleclamp180(var_c1350e6cda2f627a - var_43810d21f771f553)) < 45) {
-        return 0;
+        return false;
     }
-    var_a6ec3a05cd51b860 = namespace_bf5a1761a8d1bb07::yawdiffto2468(var_c1350e6cda2f627a);
-    var_d4c7b1e5457a2668 = namespace_bf5a1761a8d1bb07::yawdiffto2468(var_43810d21f771f553);
-    if (var_a6ec3a05cd51b860 == var_d4c7b1e5457a2668) {
-        return 0;
+    curdir = scripts/asm/asm::yawdiffto2468(var_c1350e6cda2f627a);
+    desireddir = scripts/asm/asm::yawdiffto2468(var_43810d21f771f553);
+    if (curdir == desireddir) {
+        return false;
     }
-    var_c7eeabfb94518b4d = "fast";
+    speedstring = "fast";
     if (isentasoldier() && demeanorhasblendspace()) {
         archetype = self getbasearchetype();
-        var_c7eeabfb94518b4d = getnearestspeedthresholdname(archetype, targetspeed);
-        if (var_c7eeabfb94518b4d == "shuffle" || var_c7eeabfb94518b4d == "walk") {
-            var_c7eeabfb94518b4d = "walk";
-        } else if (var_c7eeabfb94518b4d != "fast") {
-            var_c7eeabfb94518b4d = "fast";
+        speedstring = getnearestspeedthresholdname(archetype, targetspeed);
+        if (speedstring == "shuffle" || speedstring == "walk") {
+            speedstring = "walk";
+        } else if (speedstring != "fast") {
+            speedstring = "fast";
         }
-        self.strafepoispeedtarget = getanimspeedthreshold(archetype, var_c7eeabfb94518b4d);
+        self.strafepoispeedtarget = getanimspeedthreshold(archetype, speedstring);
     } else {
         self.strafepoispeedtarget = undefined;
     }
-    alias = var_c7eeabfb94518b4d + "_" + self.asm.strafe_foot + "_" + var_a6ec3a05cd51b860 + "_to_" + var_d4c7b1e5457a2668;
-    if (!asm_hasalias(var_f2b19b25d457c2a6, alias)) {
-        if (var_a6ec3a05cd51b860 == "4" || var_a6ec3a05cd51b860 == "6") {
-            alias = var_c7eeabfb94518b4d + "_feet_together_" + var_a6ec3a05cd51b860 + "_to_" + var_d4c7b1e5457a2668;
+    alias = speedstring + "_" + self.asm.strafe_foot + "_" + curdir + "_to_" + desireddir;
+    if (!asm_hasalias(tostatename, alias)) {
+        if (curdir == "4" || curdir == "6") {
+            alias = speedstring + "_feet_together_" + curdir + "_to_" + desireddir;
         } else {
-            alias = var_c7eeabfb94518b4d + "_foot_l_forward_" + var_a6ec3a05cd51b860 + "_to_" + var_d4c7b1e5457a2668;
+            alias = speedstring + "_foot_l_forward_" + curdir + "_to_" + desireddir;
         }
-        if (!asm_hasalias(var_f2b19b25d457c2a6, alias)) {
-            return 0;
+        if (!asm_hasalias(tostatename, alias)) {
+            return false;
         }
     }
     self.asm.strafeaimchangealias = alias;
-    return 1;
+    return true;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fa9
 // Size: 0x45
-function shouldrestartaimchange(asmname, statename, var_f2b19b25d457c2a6, params) {
-    if (asm_eventfired(asmname, "code_move") && shouldstrafeaimchange(asmname, statename, var_f2b19b25d457c2a6, params)) {
-        return 1;
+function shouldrestartaimchange(asmname, statename, tostatename, params) {
+    if (asm_eventfired(asmname, "code_move") && shouldstrafeaimchange(asmname, statename, tostatename, params)) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ff6
 // Size: 0x1fa
-function aimchangeorientation(var_19b744b1cdee4bcb, rate, endtime, var_da53c72859d22ed6, var_f5704b6af9b1e950) {
+function aimchangeorientation(turnxanim, rate, endtime, var_da53c72859d22ed6, var_f5704b6af9b1e950) {
     self endon("end_aim_change_orient");
     self.aimchange_oldturnrate = self.turnrate;
-    var_c6741e13d5c04d5a = getangledelta(var_19b744b1cdee4bcb, 0, endtime);
+    var_c6741e13d5c04d5a = getangledelta(turnxanim, 0, endtime);
     var_935ce979bb3ef270 = var_da53c72859d22ed6 - self.angles[1];
     var_935ce979bb3ef270 = angleclamp180(var_935ce979bb3ef270);
     var_573cd9df7b140b5a = angleclamp180(var_935ce979bb3ef270 - var_c6741e13d5c04d5a);
     var_74fb9d076076aa21 = var_c6741e13d5c04d5a;
     while (isdefined(self) && isalive(self)) {
-        currentanimtime = self aigetanimtime(var_19b744b1cdee4bcb);
+        currentanimtime = self aigetanimtime(turnxanim);
         var_28f83227b5dbdea8 = min(currentanimtime + level.frameduration / 1000 / var_f5704b6af9b1e950 * rate, 1);
-        var_8ccbb038d1a5d254 = getangledelta(var_19b744b1cdee4bcb, currentanimtime, var_28f83227b5dbdea8);
+        var_8ccbb038d1a5d254 = getangledelta(turnxanim, currentanimtime, var_28f83227b5dbdea8);
         if ((var_74fb9d076076aa21 - var_8ccbb038d1a5d254) * var_74fb9d076076aa21 > 0) {
             var_74fb9d076076aa21 = var_74fb9d076076aa21 - var_8ccbb038d1a5d254;
         } else {
             var_8ccbb038d1a5d254 = var_74fb9d076076aa21;
             var_74fb9d076076aa21 = 0;
         }
-        var_6bdb8335862f56ee = var_8ccbb038d1a5d254 / var_c6741e13d5c04d5a;
-        var_bac2c21af365572b = var_573cd9df7b140b5a * var_6bdb8335862f56ee;
+        lerpfraction = var_8ccbb038d1a5d254 / var_c6741e13d5c04d5a;
+        var_bac2c21af365572b = var_573cd9df7b140b5a * lerpfraction;
         var_d5655124cc692c6f = var_8ccbb038d1a5d254 + var_bac2c21af365572b;
-        var_7f55545f660ef1bb = angleclamp(self.angles[1] + var_d5655124cc692c6f);
+        faceangle = angleclamp(self.angles[1] + var_d5655124cc692c6f);
         var_6b38b069b1d09ad = angleclamp(self.angles[1] + clamp(var_d5655124cc692c6f * 3, -179, 179.9));
         self orientmode("face angle", var_6b38b069b1d09ad);
         if (var_d5655124cc692c6f != 0) {
-            turnrate = abs(angleclamp180(self.angles[1] - var_7f55545f660ef1bb)) / level.frameduration;
+            turnrate = abs(angleclamp180(self.angles[1] - faceangle)) / level.frameduration;
             if (turnrate > 0) {
                 self.turnrate = turnrate;
             }
@@ -747,56 +742,56 @@ function aimchangeorientation(var_19b744b1cdee4bcb, rate, endtime, var_da53c7285
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x21f7
 // Size: 0x33e
 function playanim_strafeaimchange(asmname, statename, params) {
     self endon(statename + "_finished");
     animindex = asm_getanim(asmname, statename);
-    var_19b744b1cdee4bcb = asm_getxanim(statename, animindex);
+    turnxanim = asm_getxanim(statename, animindex);
     self.asm.strafeaimchangealias = undefined;
     self.sharpturnforceusevelocity = 1;
     rate = 1;
-    var_8ba91cc72b54af6c = undefined;
+    exitspeed = undefined;
     if (isdefined(self.strafepoispeedtarget) && isentasoldier() && demeanorhasblendspace()) {
         targetspeed = self aigettargetspeed();
         rate = targetspeed / self.strafepoispeedtarget;
-        var_8ba91cc72b54af6c = targetspeed;
+        exitspeed = targetspeed;
         rate = clamp(rate, 0.6, 1.4);
     }
     self aisetanim(statename, animindex, rate);
-    asm_playfacialanim(asmname, statename, var_19b744b1cdee4bcb);
-    var_1cf3cc2bfbd90835 = getnotetracktimes(var_19b744b1cdee4bcb, "code_move");
-    var_268f83e1ba7fb62b = getnotetracktimes(var_19b744b1cdee4bcb, "finish");
+    asm_playfacialanim(asmname, statename, turnxanim);
+    var_1cf3cc2bfbd90835 = getnotetracktimes(turnxanim, "code_move");
+    finishnotes = getnotetracktimes(turnxanim, "finish");
     endtime = 1;
     if (var_1cf3cc2bfbd90835.size > 0) {
         endtime = var_1cf3cc2bfbd90835[0];
-    } else if (var_268f83e1ba7fb62b.size > 0) {
-        endtime = var_268f83e1ba7fb62b[0];
+    } else if (finishnotes.size > 0) {
+        endtime = finishnotes[0];
     }
-    var_f5704b6af9b1e950 = getanimlength(var_19b744b1cdee4bcb);
+    var_f5704b6af9b1e950 = getanimlength(turnxanim);
     animlength = var_f5704b6af9b1e950 * endtime;
     var_da53c72859d22ed6 = vectortoyaw(self.lookaheaddir);
-    var_7b953df46ffa1995 = undefined;
+    facetargetpos = undefined;
     if (!istrue(self.facemotion) && !istrue(self.predictedfacemotion) && !self shouldcautiousstrafe()) {
-        var_76c97d8fa34a0aed = getmovedelta(var_19b744b1cdee4bcb, 0, endtime);
-        var_4c9c5e3a46583337 = self getposonpath(length(var_76c97d8fa34a0aed));
+        animmovedelta = getmovedelta(turnxanim, 0, endtime);
+        pathendpos = self getposonpath(length(animmovedelta));
         var_63a5b32b096323be = self getshootfrompos();
-        var_cff075b05a95577b = self getshootpos(var_63a5b32b096323be);
+        targetposstruct = self getshootpos(var_63a5b32b096323be);
         enemypos = undefined;
-        if (isdefined(var_cff075b05a95577b)) {
-            enemypos = var_cff075b05a95577b.shootpos;
+        if (isdefined(targetposstruct)) {
+            enemypos = targetposstruct.shootpos;
         } else if (isdefined(self.enemy)) {
             enemypos = self lastknownpos(self.enemy);
         }
         if (isdefined(enemypos)) {
-            var_84dba057067c3c3e = vectornormalize(enemypos - var_4c9c5e3a46583337);
+            var_84dba057067c3c3e = vectornormalize(enemypos - pathendpos);
             var_da53c72859d22ed6 = vectortoyaw(var_84dba057067c3c3e);
-            var_7b953df46ffa1995 = enemypos;
+            facetargetpos = enemypos;
         }
     }
-    thread aimchangeorientation(var_19b744b1cdee4bcb, rate, endtime, var_da53c72859d22ed6, var_f5704b6af9b1e950);
+    thread aimchangeorientation(turnxanim, rate, endtime, var_da53c72859d22ed6, var_f5704b6af9b1e950);
     note = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
     self notify("end_aim_change_orient");
     if (isdefined(self.aimchange_oldturnrate)) {
@@ -806,20 +801,20 @@ function playanim_strafeaimchange(asmname, statename, params) {
         self.aimchange_oldturnrate = undefined;
     }
     if (note == "code_move") {
-        if (isdefined(var_7b953df46ffa1995)) {
-            self orientmode("face point", var_7b953df46ffa1995);
+        if (isdefined(facetargetpos)) {
+            self orientmode("face point", facetargetpos);
         } else {
             self orientmode("face angle", var_da53c72859d22ed6);
         }
         self animmode("normal");
         asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
     }
-    if (isdefined(var_8ba91cc72b54af6c)) {
-        self aisettargetspeed(var_8ba91cc72b54af6c);
+    if (isdefined(exitspeed)) {
+        self aisettargetspeed(exitspeed);
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x253c
 // Size: 0x53
@@ -830,7 +825,7 @@ function chooseanim_strafeaimchange(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, self.asm.strafeaimchangealias);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2597
 // Size: 0x57
@@ -843,7 +838,7 @@ function strafeaimchange_cleanup(asmname, statename, params) {
     self.sharpturnforceusevelocity = 0;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x25f5
 // Size: 0x119
@@ -868,13 +863,13 @@ function handlestrafenotetracks(note) {
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2715
 // Size: 0xae
 function playanim_strafereverse(asmname, statename, params) {
     self endon(statename + "_finished");
-    var_49705e6ad03a9802 = 0.4;
+    zonlytime = 0.4;
     var_878ed8f396ed59bd = asm_getanim(asmname, statename);
     self aisetanim(statename, var_878ed8f396ed59bd);
     self orientmode("face enemy or motion");
@@ -887,7 +882,7 @@ function playanim_strafereverse(asmname, statename, params) {
     asm_fireevent(asmname, "end");
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x27ca
 // Size: 0x24
@@ -895,7 +890,7 @@ function strafereverse_cleanup(asmname, statename, params) {
     self setstrafereverse(0);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x27f5
 // Size: 0x4c
@@ -906,22 +901,22 @@ function chooseanim_strafearrive(asmname, statename, params) {
     return self.asm.strafearrival_animindex;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2849
 // Size: 0x90
 function choosewalkandtalkanims(asmname, statename, params) {
     animstruct = spawnstruct();
-    var_d3ebb1fd79cbe1d2 = [];
-    var_d3ebb1fd79cbe1d2[0] = asm_lookupanimfromalias(statename, "0");
-    var_d3ebb1fd79cbe1d2[1] = asm_lookupanimfromalias(statename, "1");
-    var_d3ebb1fd79cbe1d2[2] = asm_lookupanimfromalias(statename, "2");
-    animstruct.anims = var_d3ebb1fd79cbe1d2;
+    moveanims = [];
+    moveanims[0] = asm_lookupanimfromalias(statename, "0");
+    moveanims[1] = asm_lookupanimfromalias(statename, "1");
+    moveanims[2] = asm_lookupanimfromalias(statename, "2");
+    animstruct.anims = moveanims;
     animstruct.forwardanim = asm_lookupanimfromalias(statename, "forward");
     return animstruct;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28e1
 // Size: 0x38
@@ -929,18 +924,18 @@ function shouldwalkandtalk() {
     return bb_moverequested() && isdefined(self._blackboard.walk_and_talk_requested) && self._blackboard.walk_and_talk_requested;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2921
 // Size: 0x2e
 function walkandtalkdonotetracks(asmname, statename) {
     self endon(statename + "_finished");
-    while (1) {
+    while (true) {
         asm_donotetracks(asmname, statename);
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2956
 // Size: 0x3df
@@ -958,19 +953,19 @@ function movewalkandtalk(asmname, statename, params) {
     self setflaggedanim(statename, forwardanim, 1, 0.2, 1);
     thread walkandtalkdonotetracks(asmname, statename);
     lastangle = 0;
-    var_4cb53f922f32382e = 20;
-    while (1) {
+    blendframes = 20;
+    while (true) {
         arrival = asm_eventfired(asmname, "cover_approach");
         disttogoal = self pathdisttogoal();
         if (arrival && disttogoal < 150) {
             anglediff = anglediffwalkandtalk();
             index = 1;
-            while (index <= var_4cb53f922f32382e) {
-                i = index / var_4cb53f922f32382e;
+            while (index <= blendframes) {
+                i = index / blendframes;
                 result = i * i * (3 - 2 * i);
-                var_f378f750b9379926 = anglediff;
-                actualangle = var_f378f750b9379926 * result;
-                var_1b374815fb658b4b = var_f378f750b9379926 - actualangle;
+                transitiondegree = anglediff;
+                actualangle = transitiondegree * result;
+                var_1b374815fb658b4b = transitiondegree - actualangle;
                 animweights = getwalkandtalkanimweights(var_1b374815fb658b4b);
                 for (animindex = 0; animindex < animweights.size; animindex++) {
                     self setanim(anims[animindex], animweights[animindex], 0.2, 1, 1);
@@ -989,79 +984,79 @@ function movewalkandtalk(asmname, statename, params) {
                 wait(0.05);
                 waittillframeend();
             }
-        } else {
-            anglediff = anglediffwalkandtalk();
-            var_3cc8fba2e49545a3 = lastangle - anglediff;
-            if (var_3cc8fba2e49545a3 < 0) {
-                var_3cc8fba2e49545a3 = var_3cc8fba2e49545a3 * -1;
-            }
-            if (var_3cc8fba2e49545a3 >= 60) {
-                var_7b7e39cb9a3fc1d3 = lastangle;
-                var_71ea1ef57b26f1b9 = lastangle;
-                index = 1;
-                while (index <= var_4cb53f922f32382e) {
-                    anglediff = anglediffwalkandtalk();
-                    var_14d30308b9f18e3f = var_7b7e39cb9a3fc1d3 - anglediff;
-                    if (var_14d30308b9f18e3f < 0) {
-                        var_14d30308b9f18e3f = var_14d30308b9f18e3f * -1;
-                    }
-                    if (var_14d30308b9f18e3f >= 60) {
-                        if (index == 1) {
-                            index = 1;
-                        } else {
-                            index = index - 1;
-                        }
-                        newangle = var_7b7e39cb9a3fc1d3 - lastangle;
-                        i = index / var_4cb53f922f32382e;
-                        result = i * i * (3 - 2 * i);
-                        var_5aa9c8971ae96b16 = newangle * result;
-                        var_71ea1ef57b26f1b9 = var_5aa9c8971ae96b16 + lastangle;
+            continue;
+        }
+        anglediff = anglediffwalkandtalk();
+        largetransition = lastangle - anglediff;
+        if (largetransition < 0) {
+            largetransition = largetransition * -1;
+        }
+        if (largetransition >= 60) {
+            var_7b7e39cb9a3fc1d3 = lastangle;
+            var_71ea1ef57b26f1b9 = lastangle;
+            index = 1;
+            while (index <= blendframes) {
+                anglediff = anglediffwalkandtalk();
+                var_14d30308b9f18e3f = var_7b7e39cb9a3fc1d3 - anglediff;
+                if (var_14d30308b9f18e3f < 0) {
+                    var_14d30308b9f18e3f = var_14d30308b9f18e3f * -1;
+                }
+                if (var_14d30308b9f18e3f >= 60) {
+                    if (index == 1) {
                         index = 1;
-                        lastangle = var_71ea1ef57b26f1b9;
+                    } else {
+                        index = index - 1;
                     }
-                    i = index / var_4cb53f922f32382e;
+                    newangle = var_7b7e39cb9a3fc1d3 - lastangle;
+                    i = index / blendframes;
                     result = i * i * (3 - 2 * i);
-                    var_f378f750b9379926 = anglediff - var_71ea1ef57b26f1b9;
-                    actualangle = var_f378f750b9379926 * result;
-                    var_1b374815fb658b4b = actualangle + lastangle;
-                    animweights = getwalkandtalkanimweights(var_1b374815fb658b4b);
-                    for (animindex = 0; animindex < animweights.size; animindex++) {
-                        self setanim(anims[animindex], animweights[animindex], 0.2, 1, 1);
-                    }
-                    index++;
-                    var_7b7e39cb9a3fc1d3 = anglediff;
-                    wait(0.05);
-                    waittillframeend();
+                    var_5aa9c8971ae96b16 = newangle * result;
+                    var_71ea1ef57b26f1b9 = var_5aa9c8971ae96b16 + lastangle;
+                    index = 1;
+                    lastangle = var_71ea1ef57b26f1b9;
                 }
-            } else {
-                animweights = getwalkandtalkanimweights(anglediff);
-                for (index = 0; index < animweights.size; index++) {
-                    if (isdefined(anims[index])) {
-                        self setanim(anims[index], animweights[index], 0.2, 1, 1);
-                    }
+                i = index / blendframes;
+                result = i * i * (3 - 2 * i);
+                transitiondegree = anglediff - var_71ea1ef57b26f1b9;
+                actualangle = transitiondegree * result;
+                var_1b374815fb658b4b = actualangle + lastangle;
+                animweights = getwalkandtalkanimweights(var_1b374815fb658b4b);
+                for (animindex = 0; animindex < animweights.size; animindex++) {
+                    self setanim(anims[animindex], animweights[animindex], 0.2, 1, 1);
                 }
+                index++;
+                var_7b7e39cb9a3fc1d3 = anglediff;
                 wait(0.05);
                 waittillframeend();
             }
-            lastangle = anglediff;
+        } else {
+            animweights = getwalkandtalkanimweights(anglediff);
+            for (index = 0; index < animweights.size; index++) {
+                if (isdefined(anims[index])) {
+                    self setanim(anims[index], animweights[index], 0.2, 1, 1);
+                }
+            }
+            wait(0.05);
+            waittillframeend();
         }
+        lastangle = anglediff;
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d3c
 // Size: 0x143
 function anglediffwalkandtalk() {
     targetpos = self.walk_and_talk_target.origin;
-    var_3b4d8ab7e1947f44 = self.origin;
-    offsetdir = targetpos - var_3b4d8ab7e1947f44;
+    actorpos = self.origin;
+    offsetdir = targetpos - actorpos;
     facingdir = anglestoforward(self.angles);
     cross = vectorcross(facingdir, offsetdir);
-    var_8c4df4c0c2ed1c92 = vectornormalize(cross);
-    var_f99c61aa3bb21bf0 = vectornormalize(offsetdir);
-    var_14f0ba9b842953a9 = vectornormalize(facingdir);
-    dot = vectordot(var_f99c61aa3bb21bf0, var_14f0ba9b842953a9);
+    crossnormalize = vectornormalize(cross);
+    offsetnorm = vectornormalize(offsetdir);
+    facingnorm = vectornormalize(facingdir);
+    dot = vectordot(offsetnorm, facingnorm);
     if (isdefined(self.walk_and_talk_hemisphere)) {
         anglediff = math::anglebetweenvectors(offsetdir, facingdir);
         if (self.walk_and_talk_hemisphere == "right") {
@@ -1075,23 +1070,22 @@ function anglediffwalkandtalk() {
             }
             return anglediff;
         }
-    } else {
-        if (dot >= 1) {
-            return 180;
-        }
-        if (dot <= -1) {
-            return -180;
-        } else {
-            anglediff = math::anglebetweenvectors(offsetdir, facingdir);
-            if (var_8c4df4c0c2ed1c92[2] == -1) {
-                anglediff = anglediff * -1;
-            }
-            return anglediff;
-        }
+        return;
     }
+    if (dot >= 1) {
+        return 180;
+    }
+    if (dot <= -1) {
+        return -180;
+    }
+    anglediff = math::anglebetweenvectors(offsetdir, facingdir);
+    if (crossnormalize[2] == -1) {
+        anglediff = anglediff * -1;
+    }
+    return anglediff;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e86
 // Size: 0xe8
@@ -1100,43 +1094,43 @@ function getwalkandtalkanimweights(yaw) {
     for (index = 0; index < 3; index++) {
         animweights[index] = 0;
     }
-    var_2d702ddb2a9c3231 = [0:-180, 1:0, 2:180];
+    var_2d702ddb2a9c3231 = [-180, 0, 180];
     for (index = 0; yaw >= var_2d702ddb2a9c3231[index]; index++) {
         /#
             assert(index < var_2d702ddb2a9c3231.size);
         #/
     }
-    var_d1eea60321b43092 = index - 1;
+    last_index = index - 1;
     next_index = index;
     /#
         assert(index > 0 && index <= 3);
     #/
-    var_e0c8607002f43670 = (yaw - var_2d702ddb2a9c3231[var_d1eea60321b43092]) / (var_2d702ddb2a9c3231[next_index] - var_2d702ddb2a9c3231[var_d1eea60321b43092]);
+    var_e0c8607002f43670 = (yaw - var_2d702ddb2a9c3231[last_index]) / (var_2d702ddb2a9c3231[next_index] - var_2d702ddb2a9c3231[last_index]);
     var_538bf88f24008653 = 1 - var_e0c8607002f43670;
-    animweights[var_d1eea60321b43092] = var_538bf88f24008653;
+    animweights[last_index] = var_538bf88f24008653;
     animweights[next_index] = var_e0c8607002f43670;
     animweights[1] = max(0.01, animweights[1]);
     return animweights;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f76
 // Size: 0x4b
 function movestartbattlechatter(var_2e5e380655d9414) {
-    movetype = namespace_bf5a1761a8d1bb07::asm_getdemeanor();
+    movetype = scripts/asm/asm::asm_getdemeanor();
     if (movetype == "frantic" || movetype == "combat" || movetype == "sprint") {
         function_216c67ab6749137a(self, undefined, "move", var_2e5e380655d9414);
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fc8
 // Size: 0x79
-function shouldreloadwhilemoving(asmname, statename, var_f2b19b25d457c2a6, params) {
-    if (!namespace_28edc79fcf2fe234::bb_reloadrequested()) {
-        return 0;
+function shouldreloadwhilemoving(asmname, statename, tostatename, params) {
+    if (!scripts/asm/asm_bb::bb_reloadrequested()) {
+        return false;
     }
     archetype = self getbasearchetype();
     if (isspeedwithincqbrange(archetype, self aigetdesiredspeed())) {
@@ -1148,7 +1142,7 @@ function shouldreloadwhilemoving(asmname, statename, var_f2b19b25d457c2a6, param
     return mindist < disttogoal;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3049
 // Size: 0x5b
@@ -1161,7 +1155,7 @@ function choosereloadwhilemoving(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, alias);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x30ac
 // Size: 0x66
@@ -1174,18 +1168,18 @@ function playreloadwhilemoving(asmname, statename, params) {
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3119
 // Size: 0x3c
 function terminatereloadwhilemoving(asmname, statename, params) {
-    if (!namespace_bf5a1761a8d1bb07::asm_eventfired(asmname, "reload done")) {
-        namespace_192c166ad8ed6432::refillclip();
+    if (!scripts/asm/asm::asm_eventfired(asmname, "reload done")) {
+        scripts/anim/weaponlist::refillclip();
     }
-    namespace_1a7cea57c200f504::reload_cleanup(asmname, statename, params);
+    scripts/asm/soldier/script_funcs::reload_cleanup(asmname, statename, params);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x315c
 // Size: 0x20
@@ -1193,7 +1187,7 @@ function isonanystairs() {
     return isdefined(self.pathgoalpos) && self.stairsstate != "none";
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3184
 // Size: 0x37
@@ -1202,11 +1196,11 @@ function getgroundangle() {
     if (abs(slope) > 0.99) {
         return 0;
     }
-    var_55e93cd84d333d71 = acos(slope);
-    return var_55e93cd84d333d71;
+    riserun = acos(slope);
+    return riserun;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x31c3
 // Size: 0xd7
@@ -1226,11 +1220,11 @@ function chooseanim_stairs(asmname, statename, params) {
             alias = var_7e147d94763036ac;
         }
     }
-    var_b2d44e59bdd5197a = asm_lookupanimfromalias(statename, alias);
-    return var_b2d44e59bdd5197a;
+    stairsanim = asm_lookupanimfromalias(statename, alias);
+    return stairsanim;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x32a2
 // Size: 0xed
@@ -1256,11 +1250,11 @@ function chooseanim_stairs_rise_run(asmname, statename, params) {
             alias = var_7e147d94763036ac;
         }
     }
-    var_b2d44e59bdd5197a = asm_lookupanimfromalias(statename, alias);
-    return var_b2d44e59bdd5197a;
+    stairsanim = asm_lookupanimfromalias(statename, alias);
+    return stairsanim;
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3397
 // Size: 0x2f3
@@ -1273,32 +1267,32 @@ function slopeupdate(asmname, statename, params) {
         var_d3ee4b860b00683f = 0;
         var_8c6d33f889f4ea11 = (0, 0, 1);
         self endon(statename + "_finished");
-        var_4ada6b5c09cf4a64 = asm_lookupanimfromalias(statename, statename + "_knob");
-        var_15e042e2e6f020dd = asm_getxanim(statename, var_4ada6b5c09cf4a64);
+        addknob = asm_lookupanimfromalias(statename, statename + "_knob");
+        addanim = asm_getxanim(statename, addknob);
         var_3e9fff4931014eb8 = asm_lookupanimfromalias(statename, statename + "_scrub_anim");
-        var_b19bfc7a5ca49c01 = asm_getxanim(statename, var_3e9fff4931014eb8);
-        self setanim(var_15e042e2e6f020dd, 1, 0.1, 0);
-        self setanim(var_b19bfc7a5ca49c01, 1, 0.1, 0);
-        while (1) {
-            var_42df814509c079b7 = ray_trace(self.origin + (0, 0, 12), self.origin - (0, 0, 999));
-            var_f8b6736d170ea6c = var_42df814509c079b7["normal"];
-            var_f8b6736d170ea6c = vectorlerp(var_8c6d33f889f4ea11, var_f8b6736d170ea6c, 0.25);
-            var_8c6d33f889f4ea11 = var_f8b6736d170ea6c;
+        scrubanim = asm_getxanim(statename, var_3e9fff4931014eb8);
+        self setanim(addanim, 1, 0.1, 0);
+        self setanim(scrubanim, 1, 0.1, 0);
+        while (true) {
+            rayinfo = ray_trace(self.origin + (0, 0, 12), self.origin - (0, 0, 999));
+            raynormal = rayinfo["normal"];
+            raynormal = vectorlerp(var_8c6d33f889f4ea11, raynormal, 0.25);
+            var_8c6d33f889f4ea11 = raynormal;
             var_753cc7857ed5a9ed = anglestoup(self.angles);
-            var_7553feaf32873060 = math::vector_project_onto_plane(var_f8b6736d170ea6c, var_753cc7857ed5a9ed);
+            normproj = math::vector_project_onto_plane(raynormal, var_753cc7857ed5a9ed);
             yawangles = self.angles;
-            var_379097055795a272 = anglestoforward(yawangles);
-            var_4e75d9cb5398f7ed = anglebetweenvectorssigned(var_379097055795a272, var_7553feaf32873060, var_753cc7857ed5a9ed);
-            var_873556140ea95085 = var_4e75d9cb5398f7ed + 180;
-            var_e08b4ab11320959 = var_f8b6736d170ea6c[2];
+            anglesforward = anglestoforward(yawangles);
+            normang = anglebetweenvectorssigned(anglesforward, normproj, var_753cc7857ed5a9ed);
+            var_873556140ea95085 = normang + 180;
+            var_e08b4ab11320959 = raynormal[2];
             var_d3ee4b860b00683f = math::normalize_value(1, 0.707, var_e08b4ab11320959);
             var_d3ee4b860b00683f = 1 - var_d3ee4b860b00683f;
-            self setanim(var_15e042e2e6f020dd, var_d3ee4b860b00683f, 0.2, 0);
+            self setanim(addanim, var_d3ee4b860b00683f, 0.2, 0);
             self setcustomnodegameparameter("slopes_scrub_direction", var_873556140ea95085);
             /#
-                line(self.origin, self.origin + 300 * var_379097055795a272, (1, 0, 0), 4);
-                line(self.origin, self.origin + 300 * var_f8b6736d170ea6c, (0, 1, 0), 4);
-                line(self.origin, self.origin + 300 * var_7553feaf32873060, (0, 0, 1), 4);
+                line(self.origin, self.origin + 300 * anglesforward, (1, 0, 0), 4);
+                line(self.origin, self.origin + 300 * raynormal, (0, 1, 0), 4);
+                line(self.origin, self.origin + 300 * normproj, (0, 0, 1), 4);
                 print3d(self.origin + (24, 0, 66), "<unknown string>" + var_873556140ea95085 + "<unknown string>" + var_d3ee4b860b00683f, (0.5, 0.5, 0.75), 1, 0.45, 1);
             #/
             waitframe();
@@ -1306,7 +1300,7 @@ function slopeupdate(asmname, statename, params) {
     }
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3691
 // Size: 0x58
@@ -1314,30 +1308,30 @@ function slopecleanup(asmname, statename, params) {
     if (isagent(self)) {
         return;
     }
-    var_b9ed8fe7204c646d = asm_lookupanimfromalias(statename, statename + "_knob");
-    self clearanim(asm_getxanim(statename, var_b9ed8fe7204c646d), 0.1, "ease_inout_quad");
+    knob = asm_lookupanimfromalias(statename, statename + "_knob");
+    self clearanim(asm_getxanim(statename, knob), 0.1, "ease_inout_quad");
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x36f0
 // Size: 0xb3
 function stumblechooseanim(asmname, statename, params) {
     archetype = self getbasearchetype();
-    var_856ec761433007a9 = getanimspeedthreshold(archetype, "run");
-    var_81a5ddc08a0b28d4 = getanimspeedthreshold(archetype, "sprint");
+    runthreshold = getanimspeedthreshold(archetype, "run");
+    sprintthreshold = getanimspeedthreshold(archetype, "sprint");
     speed = length(self.velocity);
     alias = "stumble_jog";
-    if (isdefined(var_81a5ddc08a0b28d4) && speed > var_81a5ddc08a0b28d4) {
+    if (isdefined(sprintthreshold) && speed > sprintthreshold) {
         alias = "stumble_sprint";
     }
-    if (isdefined(var_856ec761433007a9) && speed > var_856ec761433007a9) {
+    if (isdefined(runthreshold) && speed > runthreshold) {
         alias = "stumble_run";
     }
     return asm_chooseanim(asmname, statename, alias);
 }
 
-// Namespace move/namespace_d09b117bc1b1d73e
+// Namespace move / scripts/asm/soldier/move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x37ab
 // Size: 0x46

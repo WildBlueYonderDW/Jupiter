@@ -20,21 +20,21 @@
 
 #namespace airstrike_mp;
 
-// Namespace airstrike_mp/namespace_863bda310707c7c4
+// Namespace airstrike_mp / scripts/mp/killstreaks/airstrike_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x203
 // Size: 0x8e
 function init() {
-    namespace_58a74e7d54b56e8d::registerkillstreak("precision_airstrike", &namespace_203b58a09d020a50::tryuseairstrikefromstruct);
-    namespace_58a74e7d54b56e8d::registerkillstreak("multi_airstrike", &namespace_203b58a09d020a50::tryuseairstrikefromstruct);
-    namespace_58a74e7d54b56e8d::registerkillstreak("fuel_airstrike", &namespace_203b58a09d020a50::tryuseairstrikefromstruct);
-    namespace_3c37cb17ade254d::registersharedfunc("airstrike", "airstrike_params", &init_airstrike_params);
-    namespace_3c37cb17ade254d::registersharedfunc("airstrike", "getSelectMapPoint", &airstrike_getmapselectpoint);
-    namespace_3c37cb17ade254d::registersharedfunc("airstrike", "startMapSelectSequence", &airstrike_startmapselectsequence);
-    namespace_3c37cb17ade254d::registersharedfunc("airstrike", "addSpawnDangerZone", &airstrike_addspawndangerzone);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("precision_airstrike", &scripts/cp_mp/killstreaks/airstrike::tryuseairstrikefromstruct);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("multi_airstrike", &scripts/cp_mp/killstreaks/airstrike::tryuseairstrikefromstruct);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("fuel_airstrike", &scripts/cp_mp/killstreaks/airstrike::tryuseairstrikefromstruct);
+    scripts/engine/utility::registersharedfunc("airstrike", "airstrike_params", &init_airstrike_params);
+    scripts/engine/utility::registersharedfunc("airstrike", "getSelectMapPoint", &airstrike_getmapselectpoint);
+    scripts/engine/utility::registersharedfunc("airstrike", "startMapSelectSequence", &airstrike_startmapselectsequence);
+    scripts/engine/utility::registersharedfunc("airstrike", "addSpawnDangerZone", &airstrike_addspawndangerzone);
 }
 
-// Namespace airstrike_mp/namespace_863bda310707c7c4
+// Namespace airstrike_mp / scripts/mp/killstreaks/airstrike_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x298
 // Size: 0x1d2
@@ -49,36 +49,36 @@ function init_airstrike_params() {
     level.airstrikesettings["multi_airstrike"].streakname = "multi_airstrike";
     level.airstrikesettings["multi_airstrike"].modelbase = "veh8_mil_air_alfa10";
     level.airstrikesettings["multi_airstrike"].var_c80e3ea2a37a7182 = "ks_airstrike_mp";
-    level.airstrikesettings["multi_airstrike"].deployweaponobj = makeweapon(namespace_bc3bdbac7cebdc14::function_5d9830f341fbd83a());
+    level.airstrikesettings["multi_airstrike"].deployweaponobj = makeweapon(scripts/mp/killstreaks/mapselect::function_5d9830f341fbd83a());
     level.airstrikesettings["fuel_airstrike"] = spawnstruct();
     level.airstrikesettings["fuel_airstrike"].streakname = "fuel_airstrike";
     level.airstrikesettings["fuel_airstrike"].modelbase = "veh9_mil_air_suniform25_mp";
     level.airstrikesettings["fuel_airstrike"].var_c80e3ea2a37a7182 = "ks_fuelstrike_mp";
-    level.airstrikesettings["fuel_airstrike"].deployweaponobj = makeweapon(namespace_bc3bdbac7cebdc14::function_5d9830f341fbd83a());
+    level.airstrikesettings["fuel_airstrike"].deployweaponobj = makeweapon(scripts/mp/killstreaks/mapselect::function_5d9830f341fbd83a());
 }
 
-// Namespace airstrike_mp/namespace_863bda310707c7c4
+// Namespace airstrike_mp / scripts/mp/killstreaks/airstrike_mp
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x471
 // Size: 0x31
-function airstrike_getmapselectpoint(streakinfo, var_cdce0f8be900c487, var_edc5bb5a4b3dd2ff) {
+function airstrike_getmapselectpoint(streakinfo, selectnum, directionalselection) {
     self playlocalsound("iw9_ks_tablet_ui_screen_plr");
-    return namespace_bc3bdbac7cebdc14::function_a5839924b6723eac(streakinfo, var_cdce0f8be900c487, var_edc5bb5a4b3dd2ff);
+    return scripts/mp/killstreaks/mapselect::function_a5839924b6723eac(streakinfo, selectnum, directionalselection);
 }
 
-// Namespace airstrike_mp/namespace_863bda310707c7c4
+// Namespace airstrike_mp / scripts/mp/killstreaks/airstrike_mp
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0x38
-function airstrike_startmapselectsequence(navmesh, var_edc5bb5a4b3dd2ff, var_7426e996c9eb34d3, var_3922786267ccc2a8, streakinfo) {
-    namespace_bc3bdbac7cebdc14::function_90f093ca8576232f(navmesh, var_edc5bb5a4b3dd2ff, var_7426e996c9eb34d3, var_3922786267ccc2a8, streakinfo);
+function airstrike_startmapselectsequence(navmesh, directionalselection, directionaltype, selectortype, streakinfo) {
+    scripts/mp/killstreaks/mapselect::function_90f093ca8576232f(navmesh, directionalselection, directionaltype, selectortype, streakinfo);
 }
 
-// Namespace airstrike_mp/namespace_863bda310707c7c4
+// Namespace airstrike_mp / scripts/mp/killstreaks/airstrike_mp
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0x5f
-function airstrike_addspawndangerzone(pos, radius, height, var_ac6ca28a64718193, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1) {
-    namespace_b2d5aa2baf2b5701::addspawndangerzone(pos, radius, height, var_ac6ca28a64718193, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1);
+function airstrike_addspawndangerzone(pos, radius, height, friendlyteam, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1) {
+    scripts/mp/spawnlogic::addspawndangerzone(pos, radius, height, friendlyteam, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1);
 }
 

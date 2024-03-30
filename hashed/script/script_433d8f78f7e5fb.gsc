@@ -6,7 +6,7 @@
 
 #namespace namespace_2430e72272756bb0;
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e1
 // Size: 0x15f
@@ -39,7 +39,7 @@ function init_flavorbursts() {
     anim.flavorburstsused = [];
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x647
 // Size: 0x27e
@@ -48,39 +48,39 @@ function assign_npcid() {
         setnpcid();
         return;
     }
-    var_cf64803f6000ae12 = function_53c4c53197386572(self.script_friendname, self.classname);
-    var_cf64803f6000ae12 = tolower(var_cf64803f6000ae12);
+    friendname = default_to(self.script_friendname, self.classname);
+    friendname = tolower(friendname);
     self.battlechatter.npcid = undefined;
-    if (issubstr(var_cf64803f6000ae12, "alejandro")) {
+    if (issubstr(friendname, "alejandro")) {
         self.battlechatter.countryid = "alej";
-    } else if (issubstr(var_cf64803f6000ae12, "farah")) {
+    } else if (issubstr(friendname, "farah")) {
         self.battlechatter.countryid = "fara";
-    } else if (issubstr(var_cf64803f6000ae12, "price")) {
+    } else if (issubstr(friendname, "price")) {
         self.battlechatter.countryid = "pric";
-    } else if (issubstr(var_cf64803f6000ae12, "gaz") || issubstr(var_cf64803f6000ae12, "kyle")) {
+    } else if (issubstr(friendname, "gaz") || issubstr(friendname, "kyle")) {
         self.battlechatter.countryid = "gazz";
-    } else if (issubstr(var_cf64803f6000ae12, "ghost")) {
+    } else if (issubstr(friendname, "ghost")) {
         self.battlechatter.countryid = "ghos";
-    } else if (issubstr(var_cf64803f6000ae12, "griggs")) {
+    } else if (issubstr(friendname, "griggs")) {
         self.battlechatter.countryid = "grig";
-    } else if (issubstr(var_cf64803f6000ae12, "graves")) {
+    } else if (issubstr(friendname, "graves")) {
         self.battlechatter.countryid = "grav";
-    } else if (issubstr(var_cf64803f6000ae12, "soap")) {
+    } else if (issubstr(friendname, "soap")) {
         self.battlechatter.countryid = "soap";
-    } else if (issubstr(var_cf64803f6000ae12, "laswell")) {
+    } else if (issubstr(friendname, "laswell")) {
         self.battlechatter.countryid = "lasw";
-    } else if (issubstr(var_cf64803f6000ae12, "nikolai")) {
+    } else if (issubstr(friendname, "nikolai")) {
         self.battlechatter.countryid = "niko";
-    } else if (issubstr(var_cf64803f6000ae12, "rodolfo")) {
+    } else if (issubstr(friendname, "rodolfo")) {
         self.battlechatter.countryid = "rodo";
     } else {
         setnpcid();
         return;
     }
-    self.battlechatter.var_732df8db084ab0c5 = 1;
+    self.battlechatter.ishero = 1;
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8cc
 // Size: 0x27d
@@ -92,7 +92,7 @@ function bcs_setup_countryids() {
         bcs_setup_voice(#"unitednations", "UN", 1, 1, "", "");
         bcs_setup_voice(#"unitednationshelmet", "UN", 1, 1, "", "");
         bcs_setup_voice(#"unitednationsfemale", "UN", 1, 1, "", "");
-        bcs_setup_voice(#"hash_9d3b854d5388c492", "SD", 1, 0, "", "");
+        bcs_setup_voice(#"setdef", "SD", 1, 0, "", "");
         bcs_setup_voice(#"unitedstates", "USS", 4, 1, "uscm", "usst");
         bcs_setup_voice(#"sas", "USM", 1, 1, "", "");
         bcs_setup_voice(#"fsa", "LF", 1, 1, "", "");
@@ -104,12 +104,12 @@ function bcs_setup_countryids() {
         bcs_setup_voice(#"alqatala", "AQS", 5, 0, "aqsc", "aqss");
         bcs_setup_voice(#"cartel", "CTM", 4, 1, "crcm", "crst");
         bcs_setup_voice(#"shadowcompany", "PMC", 6, 1, "pmcc", "pmcs");
-        bcs_setup_voice(#"hash_c29519f09f0f250", "CFS", 6, 1, "crwc", "crws");
+        bcs_setup_voice(#"crown", "CFS", 6, 1, "crwc", "crws");
         bcs_setup_voice(#"russian", "RU", 9, 0, "rusc", "russ");
     }
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb50
 // Size: 0x579
@@ -257,7 +257,7 @@ function function_793f0c4da1ff138f(countryid) {
     level.battlechatter.names[countryid] = create_deck(names, 1, 1, 1);
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10d0
 // Size: 0xea
@@ -275,7 +275,7 @@ function bcs_setup_playernameids() {
     anim.playernameids["fsafemale"] = "1";
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11c1
 // Size: 0x62
@@ -289,11 +289,10 @@ function isalliedcountryid(id) {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x122a
 // Size: 0x4a
@@ -305,29 +304,28 @@ function isalliedmilitarycountryid(id) {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x127b
 // Size: 0x1a
 function bcisgrenade(model) {
     if (model == "offhand_wm_grenade_mike67") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_2430e72272756bb0/namespace_e28f0031df263755
+// Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x129d
 // Size: 0x1a
 function bcisrpg(classname) {
     if (classname == "rocketlauncher") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 

@@ -17,9 +17,9 @@
 #using scripts\mp\agents\agents.gsc;
 #using scripts\mp\damage.gsc;
 
-#namespace namespace_77822be8ee8a609a;
+#namespace br_attraction_shootingrange;
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57b
 // Size: 0xe9
@@ -40,7 +40,7 @@ function init() {
     init_ranges();
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x66b
 // Size: 0x67
@@ -59,51 +59,51 @@ function init_structs() {
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d9
 // Size: 0x135
 function init_structs_mp_br_mechanics() {
-    root = namespace_78c0387340392041::add_struct("attraction_shootingrange", "test_range_objects");
-    root namespace_78c0387340392041::struct_set_fields((-1961, 470, 0), (0, 0, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage");
-    s namespace_78c0387340392041::struct_set_fields((-1961, 708, 0), (0, 180, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((-1961, 530, 0), (0, 0, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((-1961, 470, 0), (0, 0, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((-1961, 410, 0), (0, 0, 0));
+    root = scripts/mp/gametypes/br_attraction_racetrack::add_struct("attraction_shootingrange", "test_range_objects");
+    root scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((-1961, 470, 0), (0, 0, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((-1961, 708, 0), (0, 180, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((-1961, 530, 0), (0, 0, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((-1961, 470, 0), (0, 0, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((-1961, 410, 0), (0, 0, 0));
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x815
 // Size: 0x255
 function init_structs_mp_don3() {
-    root = namespace_78c0387340392041::add_struct("attraction_shootingrange", "military_base_range_1");
-    root namespace_78c0387340392041::struct_set_fields((4183, 51989, 1029), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((4225, 52031, 1029), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((4183, 51989, 1029), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((4141, 51947, 1029), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage");
-    s namespace_78c0387340392041::struct_set_fields((3941, 51747, 1029), (0, 135, 0));
-    root = namespace_78c0387340392041::add_struct("attraction_shootingrange", "military_base_range_3");
-    root namespace_78c0387340392041::struct_set_fields((6341, 55005, 1018), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((6299, 54963, 1018), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((6341, 55005, 1018), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((6371, 54975, 1010), (0, -45, 0));
-    s = namespace_78c0387340392041::add_struct(root.target, undefined, "show_damage_death");
-    s namespace_78c0387340392041::struct_set_fields((6383, 55047, 1018), (0, -45, 0));
+    root = scripts/mp/gametypes/br_attraction_racetrack::add_struct("attraction_shootingrange", "military_base_range_1");
+    root scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((4183, 51989, 1029), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((4225, 52031, 1029), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((4183, 51989, 1029), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((4141, 51947, 1029), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((3941, 51747, 1029), (0, 135, 0));
+    root = scripts/mp/gametypes/br_attraction_racetrack::add_struct("attraction_shootingrange", "military_base_range_3");
+    root scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((6341, 55005, 1018), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((6299, 54963, 1018), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((6341, 55005, 1018), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((6371, 54975, 1010), (0, -45, 0));
+    s = scripts/mp/gametypes/br_attraction_racetrack::add_struct(root.target, undefined, "show_damage_death");
+    s scripts/mp/gametypes/br_attraction_racetrack::struct_set_fields((6383, 55047, 1018), (0, -45, 0));
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa71
 // Size: 0x6b
@@ -114,7 +114,7 @@ function init_ranges() {
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xae3
 // Size: 0xbf
@@ -134,30 +134,30 @@ function init_range(range) {
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xba9
 // Size: 0x81
 function init_standard_range(range, locindex) {
     init_range_targets(range);
-    range.icontrigger = namespace_8bbc300af6d3c2fb::createattractionicontrigger("range", locindex, range.origin, 150, "ui_mp_br_mapmenu_icon_poi_sb_range", 1800, &playerattractiontriggerenter, &playerattractiontriggerexit, "br_attraction_sr");
-    range.icontrigger namespace_8bbc300af6d3c2fb::triggeraddobjectivetext("MP_BR_INGAME/ATTRACT_SR_NAME");
-    range.icontrigger namespace_8bbc300af6d3c2fb::triggersafearea();
+    range.icontrigger = scripts/mp/gametypes/br_attractions::createattractionicontrigger("range", locindex, range.origin, 150, "ui_mp_br_mapmenu_icon_poi_sb_range", 1800, &playerattractiontriggerenter, &playerattractiontriggerexit, "br_attraction_sr");
+    range.icontrigger scripts/mp/gametypes/br_attractions::triggeraddobjectivetext("MP_BR_INGAME/ATTRACT_SR_NAME");
+    range.icontrigger scripts/mp/gametypes/br_attractions::triggersafearea();
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc31
 // Size: 0x62
 function playerattractiontriggerenter(player, trigger) {
     var_5527b5ba26b5064b = !isdefined(player.sr_next_ammo_restock_time) || gettime() > player.sr_next_ammo_restock_time;
     if (var_5527b5ba26b5064b) {
-        namespace_8d949790b9957051::function_42f888e2e819cc64(player);
+        scripts/mp/ammorestock::function_42f888e2e819cc64(player);
         player.sr_next_ammo_restock_time = gettime() + 10000;
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc9a
 // Size: 0x14
@@ -165,7 +165,7 @@ function playerattractiontriggerexit(player, trigger) {
     
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb5
 // Size: 0x18b
@@ -200,11 +200,11 @@ function init_range_targets(range) {
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe47
 // Size: 0x17e
-function init_range_target_show_damage(range, target, var_c1ea0bc07133b32d) {
+function init_range_target_show_damage(range, target, show_death) {
     if (!isent(target)) {
         maxagents = getmaxagents();
         useagents = useagents();
@@ -220,7 +220,7 @@ function init_range_target_show_damage(range, target, var_c1ea0bc07133b32d) {
             while (!isdefined(level.agentarray) || level.agentarray.size < maxagents) {
                 waitframe();
             }
-            target_model = namespace_b97aebbb3666dd87::add_humanoid_agent("player", "axis", "callback", target.origin, target.angles, undefined, 1, 0, undefined, &agentclasscallback, 0, 1, 1, 1);
+            target_model = scripts/mp/agents/agents::add_humanoid_agent("player", "axis", "callback", target.origin, target.angles, undefined, 1, 0, undefined, &agentclasscallback, 0, 1, 1, 1);
             target_model _setsuit("iw9_defaultsuit_mp");
             target_model enableanimstate(0);
             target_model.bcdisabled = 1;
@@ -231,14 +231,14 @@ function init_range_target_show_damage(range, target, var_c1ea0bc07133b32d) {
     } else {
         target_model = target;
     }
-    thread target_show_damage_damage_watch(range, target_model, var_c1ea0bc07133b32d);
+    thread target_show_damage_damage_watch(range, target_model, show_death);
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xfcc
 // Size: 0x3ed
-function target_show_damage_damage_watch(range, target, var_c1ea0bc07133b32d) {
+function target_show_damage_damage_watch(range, target, show_death) {
     target endon("death");
     if (!isagent(target)) {
         target setcandamage(1);
@@ -255,13 +255,13 @@ function target_show_damage_damage_watch(range, target, var_c1ea0bc07133b32d) {
         head.origin = rotatevector(head_offset, target.angles) + target.origin;
         head.radius = 5;
     }
-    while (1) {
-        if (!var_c1ea0bc07133b32d || !var_af794a323d5a8f4) {
+    while (true) {
+        if (!show_death || !var_af794a323d5a8f4) {
             target.health = health;
             var_815f66fffb610612 = 1;
             var_af794a323d5a8f4 = 1;
         }
-        weapon = idflags = partname = tagname = modelname = meansofdeath = point = direction_vec = attacker = damage = target waittill("damage");
+        damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, weapon = target waittill("damage");
         if (istrue(target.is_dead)) {
             continue;
         }
@@ -271,40 +271,40 @@ function target_show_damage_damage_watch(range, target, var_c1ea0bc07133b32d) {
         killed = var_af794a323d5a8f4 && !is_alive;
         headshot = 0;
         if (isdefined(head)) {
-            headshot = !namespace_3e725f3cc58bddd3::isspreadweapon(weapon) && distance(point, head.origin) < head.radius;
+            headshot = !scripts/mp/damage::isspreadweapon(weapon) && distance(point, head.origin) < head.radius;
             if (headshot) {
                 damage = int(damage * 1.4);
             }
         }
-        var_7a541e653b7997db = attacker;
+        attackerplayer = attacker;
         if (isdefined(attacker) && !isplayer(attacker) && isdefined(attacker.owner) && isplayer(attacker.owner)) {
-            var_7a541e653b7997db = attacker.owner;
+            attackerplayer = attacker.owner;
         }
-        if (isdefined(var_7a541e653b7997db)) {
-            target.attacker = var_7a541e653b7997db;
-            var_cdcedb142f61b43e = "standard";
+        if (isdefined(attackerplayer)) {
+            target.attacker = attackerplayer;
+            typehit = "standard";
             bulletdamage = isbulletdamage(meansofdeath);
-            var_b98146816886d3c4 = ter_op(bulletdamage && isprimaryweapon(weapon), "standardspread", "standard");
-            if (var_c1ea0bc07133b32d) {
+            hitmarkertype = ter_op(bulletdamage && isprimaryweapon(weapon), "standardspread", "standard");
+            if (show_death) {
                 hitsound = undefined;
                 if (has_armor) {
-                    var_cdcedb142f61b43e = "hitarmorlight";
+                    typehit = "hitarmorlight";
                     hitsound = "hit_marker_3d_armor";
                 } else if (armor_break) {
-                    var_cdcedb142f61b43e = "hithelmetlightbreak";
+                    typehit = "hithelmetlightbreak";
                     hitsound = "hit_marker_3d_armor_break";
                 }
-                if (var_cdcedb142f61b43e == "hitarmorlightbreak" || var_cdcedb142f61b43e == "hitarmormaxplatebreak") {
+                if (typehit == "hitarmorlightbreak" || typehit == "hitarmormaxplatebreak") {
                     armorbreak = 1;
-                    if (var_b98146816886d3c4 == "standardspread") {
-                        var_b98146816886d3c4 = "standardspreadarmor";
+                    if (hitmarkertype == "standardspread") {
+                        hitmarkertype = "standardspreadarmor";
                     } else {
-                        var_b98146816886d3c4 = "standardarmor";
+                        hitmarkertype = "standardarmor";
                     }
                 }
-                var_7a541e653b7997db updatedamagefeedback(var_cdcedb142f61b43e, killed, headshot, var_b98146816886d3c4);
+                attackerplayer updatedamagefeedback(typehit, killed, headshot, hitmarkertype);
                 if (isdefined(hitsound)) {
-                    var_7a541e653b7997db playlocalsound(hitsound);
+                    attackerplayer playlocalsound(hitsound);
                 }
                 if (killed) {
                     if (!isagent(target)) {
@@ -313,17 +313,17 @@ function target_show_damage_damage_watch(range, target, var_c1ea0bc07133b32d) {
                     }
                 }
             } else {
-                var_7a541e653b7997db updatedamagefeedback(var_cdcedb142f61b43e, 0, headshot, var_b98146816886d3c4);
+                attackerplayer updatedamagefeedback(typehit, 0, headshot, hitmarkertype);
             }
-            thread target_show_damage(range, target, var_7a541e653b7997db, damage);
-            thread target_show_dist(point, var_7a541e653b7997db);
+            thread target_show_damage(range, target, attackerplayer, damage);
+            thread target_show_dist(point, attackerplayer);
         }
         var_815f66fffb610612 = has_armor;
         var_af794a323d5a8f4 = is_alive;
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x13c0
 // Size: 0x2d3
@@ -349,10 +349,10 @@ function target_show_damage(range, target, player, damage) {
     if (!isdefined(player.ui_damage_num_cycle)) {
         player.ui_damage_num_cycle = 0;
     }
-    var_6fcf5ed72aafe20d = 7;
-    frac = player.ui_damage_num_cycle % var_6fcf5ed72aafe20d / var_6fcf5ed72aafe20d;
+    cycle_count = 7;
+    frac = player.ui_damage_num_cycle % cycle_count / cycle_count;
     player.ui_damage_num_cycle = player.ui_damage_num_cycle + 2;
-    hudelem = player namespace_52f6938dd902c7d0::createfontstring("objective", 1);
+    hudelem = player scripts/mp/hud_util::createfontstring("objective", 1);
     sr.ui_damage_num_elems[index] = hudelem;
     hudelem.alpha = 1;
     hudelem.glowalpha = 0;
@@ -376,7 +376,7 @@ function target_show_damage(range, target, player, damage) {
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x169a
 // Size: 0x1c6
@@ -388,7 +388,7 @@ function target_show_dist(point, player) {
     player endon("attraction_sr_range_hud");
     hudelem = player.attraction_sr_range_hud;
     if (!isdefined(hudelem)) {
-        hudelem = player namespace_52f6938dd902c7d0::createfontstring("objective", 1);
+        hudelem = player scripts/mp/hud_util::createfontstring("objective", 1);
         hudelem.alpha = 1;
         hudelem.glowalpha = 0;
         hudelem.hidewheninmenu = 1;
@@ -419,7 +419,7 @@ function target_show_dist(point, player) {
     }
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1867
 // Size: 0x14
@@ -427,7 +427,7 @@ function target_drop_loot(range, target) {
     
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1882
 // Size: 0xaa
@@ -449,7 +449,7 @@ function target_play_death_anim(range, target) {
     target.is_dead = 0;
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1933
 // Size: 0x1d
@@ -457,7 +457,7 @@ function useagents() {
     return istrue(level.brattractions["sr"].useagents);
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1958
 // Size: 0x133
@@ -482,13 +482,13 @@ function createagenttargetloadout() {
     loadout["loadoutKillstreak2"] = "none";
     loadout["loadoutKillstreak3"] = "none";
     loadout["loadoutSuper"] = "super_br_extract";
-    loadout["loadoutPerks"] = [0:"specialty_null"];
+    loadout["loadoutPerks"] = ["specialty_null"];
     loadout["loadoutGesture"] = "playerData";
     loadout["loadoutExecution"] = "none";
     return loadout;
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a93
 // Size: 0x1c
@@ -496,7 +496,7 @@ function agentclasscallback() {
     return level.brattractions["sr"].agenttargetloadout;
 }
 
-// Namespace namespace_77822be8ee8a609a/namespace_51a7c8347ab4d393
+// Namespace br_attraction_shootingrange / scripts/mp/gametypes/br_attraction_shootingrange
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ab7
 // Size: 0x17

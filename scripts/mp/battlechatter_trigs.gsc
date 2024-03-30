@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\common\bcs_location_trigs.gsc;
 
-#namespace namespace_4e19c1024ec88548;
+#namespace battlechatter_trigs;
 
-// Namespace namespace_4e19c1024ec88548/namespace_35dd51b19c926c71
+// Namespace battlechatter_trigs / scripts/mp/battlechatter_trigs
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x647
 // Size: 0x3
@@ -11,7 +11,7 @@ function extra_location_trigger_mapping() {
     
 }
 
-// Namespace namespace_4e19c1024ec88548/namespace_35dd51b19c926c71
+// Namespace battlechatter_trigs / scripts/mp/battlechatter_trigs
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x651
 // Size: 0x1f0

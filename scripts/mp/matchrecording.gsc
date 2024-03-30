@@ -6,9 +6,9 @@
 #using scripts\mp\matchdata.gsc;
 #using scripts\mp\flags.gsc;
 
-#namespace namespace_2f8890c7d5191619;
+#namespace matchrecording;
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc1f
 // Size: 0x145
@@ -16,11 +16,11 @@ function init() {
     /#
         assertex(!isdefined(level.matchrecording_type), "matchRecording_init() already called");
     #/
-    var_ca55ff9933d1c7f0 = matchrecording_getrecordingtype();
-    if (!matchrecording_validaterecordingtype(var_ca55ff9933d1c7f0)) {
+    recordingtype = matchrecording_getrecordingtype();
+    if (!matchrecording_validaterecordingtype(recordingtype)) {
         return;
     } else {
-        level.matchrecording_type = var_ca55ff9933d1c7f0;
+        level.matchrecording_type = recordingtype;
     }
     level.matchreceventcountline = 0;
     level.matchrecevents = [];
@@ -44,7 +44,7 @@ function init() {
     level thread matchrecording_vehiclewatcher("matchrecording_chopper", "CHOPPER_VEHICLE");
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd6b
 // Size: 0x78
@@ -61,31 +61,31 @@ function matchrecording_getrecordingtype() {
     return type;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdeb
 // Size: 0xdf
-function matchrecording_validaterecordingtype(var_b0a68d1419f4b2a8) {
+function matchrecording_validaterecordingtype(typeval) {
     result = 1;
-    if (var_b0a68d1419f4b2a8 == 0) {
+    if (typeval == 0) {
         result = 0;
-    } else if (var_b0a68d1419f4b2a8 < 0 || var_b0a68d1419f4b2a8 > 4) {
+    } else if (typeval < 0 || typeval > 4) {
         /#
-            assertmsg("Match Recording type from DVAR scr_match_recording value should never be less than 0 or greater than 4. Value is: " + var_b0a68d1419f4b2a8);
+            assertmsg("Match Recording type from DVAR scr_match_recording value should never be less than 0 or greater than 4. Value is: " + typeval);
         #/
         result = 0;
-    } else if (var_b0a68d1419f4b2a8 == 3 || var_b0a68d1419f4b2a8 == 4) {
+    } else if (typeval == 3 || typeval == 4) {
         var_1342032fe5b235a6 = 0;
         /#
             var_1342032fe5b235a6 = 1;
         #/
         if (!var_1342032fe5b235a6) {
             /#
-                assertmsg("matchRecording set to script data file save mode while not in dev. This only works in dev. Recording type is: " + var_b0a68d1419f4b2a8);
+                assertmsg("matchRecording set to script data file save mode while not in dev. This only works in dev. Recording type is: " + typeval);
             #/
             result = 0;
         }
-    } else if (var_b0a68d1419f4b2a8 == 1 || var_b0a68d1419f4b2a8 == 2) {
+    } else if (typeval == 1 || typeval == 2) {
         var_accdc2233ab9770 = getdvarint(@"hash_b328f87e7c1ded21", 0);
         var_5ae8370351e1a4a1 = analyticsstreamerislogfilestreamingenabled();
         result = var_accdc2233ab9770 == 1 || var_5ae8370351e1a4a1 == 1;
@@ -96,7 +96,7 @@ function matchrecording_validaterecordingtype(var_b0a68d1419f4b2a8) {
     return result;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed2
 // Size: 0x1c
@@ -104,7 +104,7 @@ function matchrecording_isenabled() {
     return isdefined(level.matchrecording_type) && level.matchrecording_type > 0;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef6
 // Size: 0x53
@@ -119,108 +119,108 @@ function matchrecording_teammap(teamname) {
     return result;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf51
 // Size: 0x301
 function matchrecording_eventcharmap(event) {
-    var_96d176a367e72c83 = undefined;
+    eventchar = undefined;
     switch (event) {
     case #"hash_ec91d04aafaffe56":
-        var_96d176a367e72c83 = "p";
+        eventchar = "p";
         break;
     case #"hash_945fc291982ded18":
-        var_96d176a367e72c83 = "s";
+        eventchar = "s";
         break;
     case #"hash_f8c2554e05678a8d":
-        var_96d176a367e72c83 = "d";
+        eventchar = "d";
         break;
     case #"hash_8f7fd70c5987ea59":
-        var_96d176a367e72c83 = "b";
+        eventchar = "b";
         break;
     case #"hash_36c6169aaf0125a0":
-        var_96d176a367e72c83 = "e";
+        eventchar = "e";
         break;
     case #"hash_3819040083fb6294":
-        var_96d176a367e72c83 = "t";
+        eventchar = "t";
         break;
     case #"hash_8d9e20b710f779a7":
-        var_96d176a367e72c83 = "l";
+        eventchar = "l";
         break;
     case #"hash_3dd92e59bd6a825e":
-        var_96d176a367e72c83 = "[";
+        eventchar = "[";
         break;
     case #"hash_bfab0a97caa56709":
-        var_96d176a367e72c83 = "]";
+        eventchar = "]";
         break;
     case #"hash_15aa75e5faef833b":
-        var_96d176a367e72c83 = "A";
+        eventchar = "A";
         break;
     case #"hash_15aa76e5faef84ce":
-        var_96d176a367e72c83 = "B";
+        eventchar = "B";
         break;
     case #"hash_15aa77e5faef8661":
-        var_96d176a367e72c83 = "C";
+        eventchar = "C";
         break;
     case #"hash_15aa78e5faef87f4":
-        var_96d176a367e72c83 = "D";
+        eventchar = "D";
         break;
     case #"hash_15aa79e5faef8987":
-        var_96d176a367e72c83 = "E";
+        eventchar = "E";
         break;
     case #"hash_15aa84e5faef9ad8":
-        var_96d176a367e72c83 = "0";
+        eventchar = "0";
         break;
     case #"hash_15aa85e5faef9c6b":
-        var_96d176a367e72c83 = "1";
+        eventchar = "1";
         break;
     case #"hash_15aa86e5faef9dfe":
-        var_96d176a367e72c83 = "2";
+        eventchar = "2";
         break;
     case #"hash_15aa87e5faef9f91":
-        var_96d176a367e72c83 = "3";
+        eventchar = "3";
         break;
     case #"hash_15aa88e5faefa124":
-        var_96d176a367e72c83 = "4";
+        eventchar = "4";
         break;
     case #"hash_af78f78a213f2e9a":
-        var_96d176a367e72c83 = "S";
+        eventchar = "S";
         break;
     case #"hash_99264a563d62312b":
-        var_96d176a367e72c83 = "O";
+        eventchar = "O";
         break;
     case #"hash_77fea0649b41a0d5":
-        var_96d176a367e72c83 = "!";
+        eventchar = "!";
         break;
     case #"hash_30765763b6eae663":
-        var_96d176a367e72c83 = "m";
+        eventchar = "m";
         break;
     case #"hash_27bd18e3a64148c2":
-        var_96d176a367e72c83 = "u";
+        eventchar = "u";
         break;
     case #"hash_ebe8ddb545ee11c0":
-        var_96d176a367e72c83 = "?";
+        eventchar = "?";
         break;
     case #"hash_84e2df1e1e7795ee":
-        var_96d176a367e72c83 = "n";
+        eventchar = "n";
         break;
     case #"hash_5dad097e1ee588e":
-        var_96d176a367e72c83 = "+";
+        eventchar = "+";
         break;
     case #"hash_8eb45d501d18b819":
-        var_96d176a367e72c83 = "^";
+        eventchar = "^";
         break;
     case #"hash_faf31591468c0301":
-        var_96d176a367e72c83 = "G";
+        eventchar = "G";
         break;
     case #"hash_539e90ea786e44c5":
-        var_96d176a367e72c83 = "g";
+        eventchar = "g";
         break;
     case #"hash_bd9d4e183a058042":
-        var_96d176a367e72c83 = "V";
+        eventchar = "V";
         break;
     case #"hash_933571b34f210f5f":
-        var_96d176a367e72c83 = "H";
+        eventchar = "H";
         break;
     default:
         /#
@@ -228,10 +228,10 @@ function matchrecording_eventcharmap(event) {
         #/
         break;
     }
-    return var_96d176a367e72c83;
+    return eventchar;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x125a
 // Size: 0x145
@@ -296,48 +296,48 @@ function matchrecording_getfileheaderarray() {
     return array;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13a7
 // Size: 0x1d6
-function matchrecording_logevent(var_619cf3736c12073, teamname, event, x, y, var_932081ff95e8cb30, var_eca15488bd96edf9, var_31ef7d754ebf53f, var_baa945e8fb3ba8aa) {
+function matchrecording_logevent(var_619cf3736c12073, teamname, event, x, y, timemsec, opstateindex, var_31ef7d754ebf53f, var_baa945e8fb3ba8aa) {
     if (!matchrecording_isenabled()) {
         return;
     }
     matchrecording_inceventlinecount();
-    var_ac9bf40e02d1bfcf = matchrecording_teammap(teamname);
+    teamidx = matchrecording_teammap(teamname);
     xy = int(x) + "," + int(y);
-    var_96d176a367e72c83 = matchrecording_eventcharmap(event);
+    eventchar = matchrecording_eventcharmap(event);
     if (event == "BULLET" || event == "FRONT_LINE" || event == "FRONT_LINE_ALLIES" || event == "FRONT_LINE_AXIS") {
         /#
             assertex(isdefined(var_31ef7d754ebf53f) && isdefined(var_baa945e8fb3ba8aa), "matchRecording_logEvent() passed " + event + " event type without opXEnd and opYEnd values.");
         #/
     }
-    var_3378306339a5aa51 = "";
-    if (isdefined(var_eca15488bd96edf9)) {
+    strstate = "";
+    if (isdefined(opstateindex)) {
         /#
-            assertex(var_eca15488bd96edf9 == int(var_eca15488bd96edf9) && var_eca15488bd96edf9 >= 0, "matchRecording_logEvent() passes state index value that wasn't a positive integer.");
+            assertex(opstateindex == int(opstateindex) && opstateindex >= 0, "matchRecording_logEvent() passes state index value that wasn't a positive integer.");
         #/
-        var_3378306339a5aa51 = " s:" + var_eca15488bd96edf9;
+        strstate = " s:" + opstateindex;
     }
     var_a9e08ccaa418b973 = "";
     if (isdefined(var_31ef7d754ebf53f) && isdefined(var_baa945e8fb3ba8aa)) {
         var_a9e08ccaa418b973 = " " + int(var_31ef7d754ebf53f) + "," + int(var_baa945e8fb3ba8aa);
     }
-    var_fdb35062cd12c096 = "|" + var_619cf3736c12073 + " " + var_ac9bf40e02d1bfcf + " " + var_96d176a367e72c83 + " " + xy + " " + var_932081ff95e8cb30 + var_a9e08ccaa418b973 + var_3378306339a5aa51;
-    level.matchrecevents[level.matchrecevents.size - 1] = level.matchrecevents[level.matchrecevents.size - 1] + var_fdb35062cd12c096;
+    eventpack = "|" + var_619cf3736c12073 + " " + teamidx + " " + eventchar + " " + xy + " " + timemsec + var_a9e08ccaa418b973 + strstate;
+    level.matchrecevents[level.matchrecevents.size - 1] = level.matchrecevents[level.matchrecevents.size - 1] + eventpack;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1584
 // Size: 0xb4
-function matchrecording_logeventmsg(event, var_932081ff95e8cb30, var_e377539688c48f4b) {
+function matchrecording_logeventmsg(event, timemsec, var_e377539688c48f4b) {
     if (!matchrecording_isenabled()) {
         return;
     }
     matchrecording_inceventlinecount();
-    var_96d176a367e72c83 = matchrecording_eventcharmap(event);
+    eventchar = matchrecording_eventcharmap(event);
     if (var_e377539688c48f4b != "") {
         if (!isdefined(var_e377539688c48f4b)) {
             var_e377539688c48f4b = "";
@@ -345,11 +345,11 @@ function matchrecording_logeventmsg(event, var_932081ff95e8cb30, var_e377539688c
             var_e377539688c48f4b = " "" + var_e377539688c48f4b + """;
         }
     }
-    var_fdb35062cd12c096 = "|0 0 " + var_96d176a367e72c83 + " " + var_932081ff95e8cb30 + var_e377539688c48f4b;
-    level.matchrecevents[level.matchrecevents.size - 1] = level.matchrecevents[level.matchrecevents.size - 1] + var_fdb35062cd12c096;
+    eventpack = "|0 0 " + eventchar + " " + timemsec + var_e377539688c48f4b;
+    level.matchrecevents[level.matchrecevents.size - 1] = level.matchrecevents[level.matchrecevents.size - 1] + eventpack;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x163f
 // Size: 0xbc
@@ -358,13 +358,13 @@ function matchrecording_logeventplayername(ownerid, teamname, ownername) {
         return;
     }
     matchrecording_inceventlinecount();
-    var_ac9bf40e02d1bfcf = matchrecording_teammap(teamname);
-    var_96d176a367e72c83 = matchrecording_eventcharmap("PLAYER_NAME");
-    var_fdb35062cd12c096 = "|" + ownerid + " " + var_ac9bf40e02d1bfcf + " " + var_96d176a367e72c83 + " " + """ + ownername + """;
-    level.matchrecevents[level.matchrecevents.size - 1] = level.matchrecevents[level.matchrecevents.size - 1] + var_fdb35062cd12c096;
+    teamidx = matchrecording_teammap(teamname);
+    eventchar = matchrecording_eventcharmap("PLAYER_NAME");
+    eventpack = "|" + ownerid + " " + teamidx + " " + eventchar + " " + """ + ownername + """;
+    level.matchrecevents[level.matchrecevents.size - 1] = level.matchrecevents[level.matchrecevents.size - 1] + eventpack;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1702
 // Size: 0xbc
@@ -373,7 +373,9 @@ function matchrecording_inceventlinecount() {
     if (level.matchrecevents.size == 0) {
         level.matchrecevents[level.matchrecevents.size] = "<mrec_events> ";
         level.matchreceventcountline = 0;
-    } else if (level.matchreceventcountline > 30 || level.matchrecevents[level.matchrecevents.size - 1].size > 800) {
+        return;
+    }
+    if (level.matchreceventcountline > 30 || level.matchrecevents[level.matchrecevents.size - 1].size > 800) {
         if (level.matchrecording_type == 1 || level.matchrecording_type == 3) {
             matchrecording_dump();
         }
@@ -382,7 +384,7 @@ function matchrecording_inceventlinecount() {
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17c5
 // Size: 0xa8
@@ -410,7 +412,7 @@ function matchrecording_dump() {
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1874
 // Size: 0x92
@@ -429,13 +431,13 @@ function matchrecording_glog_dump() {
     level.matchrecevents = [];
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x190d
 // Size: 0x6f
 function matchrecording_glog_addheader() {
-    var_4bd127f7a6c73dd2 = matchrecording_getfileheaderarray();
-    foreach (h in var_4bd127f7a6c73dd2) {
+    headerstrings = matchrecording_getfileheaderarray();
+    foreach (h in headerstrings) {
         logprint(h);
         if (analyticsstreamerislogfilestreamingenabled()) {
             analyticsstreamerlogfilewritetobuffer(h);
@@ -443,7 +445,7 @@ function matchrecording_glog_addheader() {
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1983
 // Size: 0x96
@@ -452,7 +454,7 @@ function matchrecording_scriptdata_openfilewrite() {
         /#
             assertex(!isdefined(level.var_ac13a3f4ca2c6c83), "E");
         #/
-        level.var_ac13a3f4ca2c6c83 = "Event Logged" + level.script + "<unknown string>" + getgametype() + "<unknown string>" + namespace_eb72aa155b5e14e7::getmatchstarttimeutc() + "<unknown string>";
+        level.var_ac13a3f4ca2c6c83 = "Event Logged" + level.script + "<unknown string>" + getgametype() + "<unknown string>" + scripts/mp/matchdata::getmatchstarttimeutc() + "<unknown string>";
         fileid = openfile(level.var_ac13a3f4ca2c6c83, "<unknown string>");
         if (fileid == -1) {
             /#
@@ -463,7 +465,7 @@ function matchrecording_scriptdata_openfilewrite() {
     #/
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a20
 // Size: 0x63
@@ -485,25 +487,25 @@ function matchrecording_scriptdata_openfileappend() {
     #/
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a8a
 // Size: 0x8c
-function matchrecording_scriptdata_openfileaddheader(var_5dceff890b44ad77) {
+function matchrecording_scriptdata_openfileaddheader(closeafter) {
     /#
         fileid = matchrecording_scriptdata_openfilewrite();
-        var_4bd127f7a6c73dd2 = matchrecording_getfileheaderarray();
-        foreach (h in var_4bd127f7a6c73dd2) {
+        headerstrings = matchrecording_getfileheaderarray();
+        foreach (h in headerstrings) {
             fprintln(fileid, h);
         }
-        if (var_5dceff890b44ad77) {
+        if (closeafter) {
             fileid = closefile(fileid);
         }
         return fileid;
     #/
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b1d
 // Size: 0xd3
@@ -531,7 +533,7 @@ function matchrecording_scriptdata_dump() {
     #/
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bf7
 // Size: 0x110
@@ -540,8 +542,8 @@ function matchrecording_logallplayerposthink() {
         return;
     }
     level endon("game_ended");
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
-    while (1) {
+    scripts/mp/flags::gameflagwait("prematch_done");
+    while (true) {
         timestart = gettime();
         players = level.players;
         foreach (player in players) {
@@ -555,18 +557,18 @@ function matchrecording_logallplayerposthink() {
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d0e
 // Size: 0x27
 function matchrecording_onplayerconnect() {
-    while (1) {
+    while (true) {
         player = level waittill("connected");
         player thread matchrecording_usereventthink();
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d3c
 // Size: 0x1f4
@@ -574,9 +576,9 @@ function matchrecording_loggameendstats() {
     level waittill("game_ended");
     sidekillcount = 0;
     var_25c32cef8be0663b = 0;
-    var_176da9f1546c225 = 0;
+    anglestotal = 0;
     engagementcount = 0;
-    var_e485e348b80ba43c = 0;
+    engagementtotal = 0;
     foreach (player in level.players) {
         if (isdefined(player.sidekillcount)) {
             sidekillcount = player.sidekillcount;
@@ -585,12 +587,12 @@ function matchrecording_loggameendstats() {
             engagementcount = player.engagementcount;
         }
         if (isdefined(player.engagementtime)) {
-            var_e485e348b80ba43c = player.engagementtime;
+            engagementtotal = player.engagementtime;
         }
     }
     if (engagementcount > 0) {
         matchrecording_logeventmsg("LOG_STAT", gettime(), "Shot in the back percent: " + sidekillcount / engagementcount * 100 + "%");
-        matchrecording_logeventmsg("LOG_STAT", gettime(), "Avg. Engagement Length: " + var_e485e348b80ba43c / engagementcount / 1000 + "s");
+        matchrecording_logeventmsg("LOG_STAT", gettime(), "Avg. Engagement Length: " + engagementtotal / engagementcount / 1000 + "s");
     }
     if (isdefined(level.frontlineinfo) && isdefined(level.frontlineinfo.uptime) && isdefined(level.frontlineinfo.downtime)) {
         totaltime = level.frontlineinfo.uptime + level.frontlineinfo.downtime;
@@ -600,7 +602,7 @@ function matchrecording_loggameendstats() {
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f37
 // Size: 0xa9
@@ -613,7 +615,7 @@ function matchrecording_usereventthink() {
     self notifyonplayercommand("log_user_event_start", "+actionslot 3");
     self notifyonplayercommand("log_user_event_end", "-actionslot 3");
     self notifyonplayercommand("log_user_event_generic_event", "+gostand");
-    while (1) {
+    while (true) {
         self waittill("log_user_event_start");
         notification = waittill_any_return_no_endon_death_2("log_user_event_end", "log_user_event_generic_event");
         if (notification == "log_user_event_generic_event") {
@@ -623,7 +625,7 @@ function matchrecording_usereventthink() {
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fe7
 // Size: 0x33
@@ -636,26 +638,26 @@ function matchrecording_generateid() {
     return returnvalue;
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2022
 // Size: 0x3b
-function matchrecording_vehiclewatcher(var_70687e0cc558a009, var_e8e12c0a3441ad85) {
+function matchrecording_vehiclewatcher(notifymsg, logtype) {
     level endon("game_ended");
-    while (1) {
-        vehicle = level waittill(var_70687e0cc558a009);
-        vehicle matchrecording_vehicletrackingthink(var_e8e12c0a3441ad85);
+    while (true) {
+        vehicle = level waittill(notifymsg);
+        vehicle matchrecording_vehicletrackingthink(logtype);
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2064
 // Size: 0xc8
-function matchrecording_vehicletrackingthink(var_e8e12c0a3441ad85) {
+function matchrecording_vehicletrackingthink(logtype) {
     level endon("game_ended");
     self endon("death");
-    var_f794f29935653f3e = matchrecording_generateid();
+    vehicleid = matchrecording_generateid();
     if (!isdefined(self.team)) {
         iprintln("MatchRecording - Can't log vehicle, because it has no team");
         return;
@@ -664,21 +666,21 @@ function matchrecording_vehicletrackingthink(var_e8e12c0a3441ad85) {
         iprintln("MatchRecording - Can't log vehicle, because it has no origin");
         return;
     }
-    thread matchrecording_vehiclecleanupthink(var_f794f29935653f3e, var_e8e12c0a3441ad85);
-    while (1) {
+    thread matchrecording_vehiclecleanupthink(vehicleid, logtype);
+    while (true) {
         state = ter_op(self.team == "allies", 1, 2);
-        matchrecording_logevent(var_f794f29935653f3e, self.team, var_e8e12c0a3441ad85, self.origin[0], self.origin[1], gettime(), state);
+        matchrecording_logevent(vehicleid, self.team, logtype, self.origin[0], self.origin[1], gettime(), state);
         wait(0.25);
     }
 }
 
-// Namespace namespace_2f8890c7d5191619/namespace_dd65bffb586a92ba
+// Namespace matchrecording / scripts/mp/matchrecording
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2133
 // Size: 0x39
-function matchrecording_vehiclecleanupthink(logid, var_e8e12c0a3441ad85) {
+function matchrecording_vehiclecleanupthink(logid, logtype) {
     level endon("game_ended");
     self waittill("death");
-    matchrecording_logevent(logid, "allies", var_e8e12c0a3441ad85, 0, 0, gettime(), 0);
+    matchrecording_logevent(logid, "allies", logtype, 0, 0, gettime(), 0);
 }
 

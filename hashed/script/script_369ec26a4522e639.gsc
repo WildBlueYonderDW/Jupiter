@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_i_ob_activities_vault_cs;
 
-// Namespace mp_jup_st_i_ob_activities_vault_cs/namespace_5b92d94106f62eb3
+// Namespace mp_jup_st_i_ob_activities_vault_cs / namespace_5b92d94106f62eb3
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11e
 // Size: 0x6d
@@ -23,65 +23,65 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_i_ob_activities_vault_cs/namespace_5b92d94106f62eb3
+// Namespace mp_jup_st_i_ob_activities_vault_cs / namespace_5b92d94106f62eb3
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x192
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_i_ob_activities_vault_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_i_ob_activities_vault_cs");
 }
 
-// Namespace mp_jup_st_i_ob_activities_vault_cs/namespace_5b92d94106f62eb3
+// Namespace mp_jup_st_i_ob_activities_vault_cs / namespace_5b92d94106f62eb3
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x201
 // Size: 0x392
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (0, 0, 0), (0, 0, 0), undefined, undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (0, 0, 0), (0, 0, 0), undefined, undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
     s.name = "vault_cache";
     s.script_linkname = "link_vault_panic_room";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29884.2, -30427.9, 3036), (0, 159.12, 0), "s_vault_cache", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (29884.2, -30427.9, 3036), (0, 159.12, 0), "s_vault_cache", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
     s.name = "vault_doors";
     s.script_linkname = "link_vault_panic_room";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29832.5, -30566.2, 3036.5), (0, 250.17, 0), "s_vault_door", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (29832.5, -30566.2, 3036.5), (0, 250.17, 0), "s_vault_door", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
     s.name = "vault_doors";
     s.script_linkname = "link_vault_panic_room";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29810.8, -30384.8, 3038), (0, 160.66, 0), "s_vault_door", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (29810.8, -30384.8, 3038), (0, 160.66, 0), "s_vault_door", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
     s.name = "vault_cache";
     s.script_linkname = "link_vault_panic_room";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29953.2, -30453.9, 3036), (0, 159.96, 0), "s_vault_cache", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (29953.2, -30453.9, 3036), (0, 159.96, 0), "s_vault_cache", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
     s.name = "vault_cache";
     s.script_linkname = "link_vault_panic_room";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29804.2, -30478.4, 3036), (0, 250.46, 0), "s_vault_cache", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (29804.2, -30478.4, 3036), (0, 250.46, 0), "s_vault_cache", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_vault_cs";
     s.script_linkto = "link_vault_panic_room";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29931.5, -30496.2, 3036), (0, 336.84, 0), "vault_panic_room_center", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe [[ f ]](s, us, cf, (29931.5, -30496.2, 3036), (0, 336.84, 0), "vault_panic_room_center", undefined, undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_i_ob_activities_vault_cs/namespace_5b92d94106f62eb3
+// Namespace mp_jup_st_i_ob_activities_vault_cs / namespace_5b92d94106f62eb3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59a
 // Size: 0x3
@@ -89,7 +89,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_i_ob_activities_vault_cs/namespace_5b92d94106f62eb3
+// Namespace mp_jup_st_i_ob_activities_vault_cs / namespace_5b92d94106f62eb3
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a4
 // Size: 0xf

@@ -8,7 +8,7 @@
 
 #namespace heavyarmor;
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x107
 // Size: 0x9e
@@ -21,12 +21,12 @@ function addheavyarmor(value) {
         self.heavyarmor = struct;
         struct.hp = struct.hp + value;
         self notify("heavyArmor_added");
-    } else {
-        struct.hp = struct.hp + value;
+        return;
     }
+    struct.hp = struct.hp + value;
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ac
 // Size: 0xa3
@@ -46,7 +46,7 @@ function subtractheavyarmor(value) {
     }
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x256
 // Size: 0x28
@@ -58,44 +58,44 @@ function removeheavyarmor() {
     self.heavyarmor = undefined;
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x285
 // Size: 0x1de
-function heavyarmormodifydamage(victim, attacker, damage, var_6cac94b6632aa667, smeansofdeath, sweapon, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query) {
-    if (damage <= 0 && var_6cac94b6632aa667 <= 0) {
-        return [0:0, 1:damage, 2:var_6cac94b6632aa667];
+function heavyarmormodifydamage(victim, attacker, damage, damageadd, smeansofdeath, sweapon, impactpoint, impactdir, shitloc, inflictor, query) {
+    if (damage <= 0 && damageadd <= 0) {
+        return [0, damage, damageadd];
     }
     if (smeansofdeath == "MOD_SUICIDE") {
-        return [0:0, 1:damage, 2:var_6cac94b6632aa667];
+        return [0, damage, damageadd];
     }
     if (isdefined(attacker) && (attacker.classname == "trigger_hurt" || attacker.classname == "worldspawn")) {
-        return [0:0, 1:damage, 2:var_6cac94b6632aa667];
+        return [0, damage, damageadd];
     }
     if (!victim hasheavyarmor()) {
-        return [0:0, 1:damage, 2:var_6cac94b6632aa667];
+        return [0, damage, damageadd];
     }
     if (isbombsiteweapon(sweapon)) {
-        return [0:0, 1:damage, 2:var_6cac94b6632aa667];
+        return [0, damage, damageadd];
     }
     if (victim hasheavyarmorinvulnerability()) {
-        return [0:1, 1:1, 2:0];
+        return [1, 1, 0];
     }
     var_b87fe815189396e6 = victim getheavyarmor();
-    modifier = heavyarmor_getdamagemodifier(victim, attacker, damage, var_6cac94b6632aa667, smeansofdeath, sweapon, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query);
+    modifier = heavyarmor_getdamagemodifier(victim, attacker, damage, damageadd, smeansofdeath, sweapon, impactpoint, impactdir, shitloc, inflictor, query);
     modifieddamage = damage * modifier;
-    var_b85ff186894ba31e = var_6cac94b6632aa667 * modifier;
-    var_69d5427f107982f5 = modifieddamage + var_b85ff186894ba31e;
+    var_b85ff186894ba31e = damageadd * modifier;
+    modifieddamageblocked = modifieddamage + var_b85ff186894ba31e;
     if (!query) {
-        victim subtractheavyarmor(var_69d5427f107982f5);
+        victim subtractheavyarmor(modifieddamageblocked);
     }
     if (victim hasheavyarmorinvulnerability()) {
-        return [0:var_b87fe815189396e6, 1:1, 2:0];
+        return [var_b87fe815189396e6, 1, 0];
     }
-    return [0:damage + var_6cac94b6632aa667, 1:1, 2:0];
+    return [damage + damageadd, 1, 0];
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46b
 // Size: 0x21
@@ -106,7 +106,7 @@ function getheavyarmor() {
     return self.heavyarmor.hp;
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x494
 // Size: 0x3e
@@ -114,7 +114,7 @@ function hasheavyarmor() {
     return isdefined(self.heavyarmor) && (self.heavyarmor.hp > 0 || istrue(self.heavyarmor.invulnerabilityframe));
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4da
 // Size: 0x25
@@ -122,7 +122,7 @@ function hasheavyarmorinvulnerability() {
     return isdefined(self.heavyarmor) && istrue(self.heavyarmor.invulnerabilityframe);
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x507
 // Size: 0x41
@@ -137,11 +137,11 @@ function heavyarmor_break() {
     thread removeheavyarmor();
 }
 
-// Namespace heavyarmor/namespace_50e4516861e3641c
+// Namespace heavyarmor / scripts/mp/heavyarmor
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54f
 // Size: 0x11b
-function heavyarmor_getdamagemodifier(victim, attacker, damage, var_6cac94b6632aa667, smeansofdeath, sweapon, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query) {
+function heavyarmor_getdamagemodifier(victim, attacker, damage, damageadd, smeansofdeath, sweapon, impactpoint, impactdir, shitloc, inflictor, query) {
     modifiers = [];
     if (issuperweapon(sweapon)) {
         modifiers[modifiers.size] = 1.33;
@@ -155,12 +155,12 @@ function heavyarmor_getdamagemodifier(victim, attacker, damage, var_6cac94b6632a
     if (isheadshot(shitloc, smeansofdeath, attacker)) {
         modifiers[modifiers.size] = 1.5;
     }
-    var_1d71101015322dd2 = 1;
+    bestmodifier = 1;
     foreach (modifier in modifiers) {
-        if (modifier > var_1d71101015322dd2) {
-            modifier = var_1d71101015322dd2;
+        if (modifier > bestmodifier) {
+            modifier = bestmodifier;
         }
     }
-    return var_1d71101015322dd2;
+    return bestmodifier;
 }
 

@@ -16,7 +16,7 @@
 #using scripts\mp\spawnscoring.gsc;
 #using scripts\mp\utility\points.gsc;
 #using scripts\mp\utility\stats.gsc;
-#using script_27c2db69a21775a0;
+#using scripts\mp\gametypes\arm_vehicles.gsc;
 #using scripts\cp_mp\vehicles\vehicle_interact.gsc;
 #using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
 #using scripts\cp_mp\vehicles\vehicle.gsc;
@@ -33,14 +33,14 @@
 #using scripts\mp\tweakables.gsc;
 #using scripts\mp\objidpoolmanager.gsc;
 
-#namespace namespace_f463d4704ecd6902;
+#namespace spawnselection;
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd37
 // Size: 0x283
 function init() {
-    if (namespace_8e28f8b325a83325::function_167619fe3d0cff00()) {
+    if (scripts/mp/spawnselection::function_167619fe3d0cff00()) {
         setdvar(@"hash_5fc696f5bbb3ca62", 0);
     } else {
         return;
@@ -70,19 +70,19 @@ function init() {
         level.var_d280c5fdb0036183 = &function_dc3a172bf923d9b3;
     }
     level thread initspawns();
-    namespace_61d0e47c5dff187c::lui_registercallback("tac_ops_spawn_focus_changed", &endcondition_focuschanged);
-    namespace_71eef510d7f364cf::registeronplayerspawncallback(&isplayerindanger_think);
+    scripts/common/ui::lui_registercallback("tac_ops_spawn_focus_changed", &endcondition_focuschanged);
+    scripts/mp/utility/spawn_event_aggregator::registeronplayerspawncallback(&isplayerindanger_think);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfc1
 // Size: 0x5
 function function_dc3a172bf923d9b3() {
-    return 1;
+    return true;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfce
 // Size: 0x3
@@ -90,67 +90,67 @@ function delayspawntoc130() {
     
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfd8
 // Size: 0x186
 function churnareas() {
-    var_45c9dae424956501 = [];
-    var_45c9dae424956501[0] = "lane01_";
-    var_45c9dae424956501[1] = "lane02_";
-    var_45c9dae424956501[2] = "lane03_";
-    var_265f87a0122dcfe7 = [];
-    var_265f87a0122dcfe7[var_265f87a0122dcfe7.size] = var_45c9dae424956501[0] + randomint(3) + 1;
-    var_265f87a0122dcfe7[var_265f87a0122dcfe7.size] = var_45c9dae424956501[1] + randomint(3) + 1;
-    var_265f87a0122dcfe7[var_265f87a0122dcfe7.size] = var_45c9dae424956501[2] + randomint(3) + 1;
-    setspawnlocations(var_265f87a0122dcfe7, "allies");
-    var_4e35ac8fc8c9f4ce = [];
-    var_4e35ac8fc8c9f4ce[var_265f87a0122dcfe7.size] = var_45c9dae424956501[0] + randomint(3) + 1;
-    var_4e35ac8fc8c9f4ce[var_265f87a0122dcfe7.size] = var_45c9dae424956501[1] + randomint(3) + 1;
-    var_4e35ac8fc8c9f4ce[var_265f87a0122dcfe7.size] = var_45c9dae424956501[2] + randomint(3) + 1;
-    setspawnlocations(var_4e35ac8fc8c9f4ce, "axis");
+    lanenames = [];
+    lanenames[0] = "lane01_";
+    lanenames[1] = "lane02_";
+    lanenames[2] = "lane03_";
+    alliesareas = [];
+    alliesareas[alliesareas.size] = lanenames[0] + randomint(3) + 1;
+    alliesareas[alliesareas.size] = lanenames[1] + randomint(3) + 1;
+    alliesareas[alliesareas.size] = lanenames[2] + randomint(3) + 1;
+    setspawnlocations(alliesareas, "allies");
+    axisareas = [];
+    axisareas[alliesareas.size] = lanenames[0] + randomint(3) + 1;
+    axisareas[alliesareas.size] = lanenames[1] + randomint(3) + 1;
+    axisareas[alliesareas.size] = lanenames[2] + randomint(3) + 1;
+    setspawnlocations(axisareas, "axis");
     updatespawnareas();
-    while (1) {
+    while (true) {
         wait(10);
-        var_265f87a0122dcfe7 = [];
-        var_265f87a0122dcfe7[var_265f87a0122dcfe7.size] = var_45c9dae424956501[0] + randomint(3) + 1;
-        var_265f87a0122dcfe7[var_265f87a0122dcfe7.size] = var_45c9dae424956501[1] + randomint(3) + 1;
-        var_265f87a0122dcfe7[var_265f87a0122dcfe7.size] = var_45c9dae424956501[2] + randomint(3) + 1;
-        setspawnlocations(var_265f87a0122dcfe7, "allies");
-        var_4e35ac8fc8c9f4ce = [];
-        var_4e35ac8fc8c9f4ce[var_4e35ac8fc8c9f4ce.size] = var_45c9dae424956501[0] + randomint(3) + 1;
-        var_4e35ac8fc8c9f4ce[var_4e35ac8fc8c9f4ce.size] = var_45c9dae424956501[1] + randomint(3) + 1;
-        var_4e35ac8fc8c9f4ce[var_4e35ac8fc8c9f4ce.size] = var_45c9dae424956501[2] + randomint(3) + 1;
-        setspawnlocations(var_4e35ac8fc8c9f4ce, "axis");
+        alliesareas = [];
+        alliesareas[alliesareas.size] = lanenames[0] + randomint(3) + 1;
+        alliesareas[alliesareas.size] = lanenames[1] + randomint(3) + 1;
+        alliesareas[alliesareas.size] = lanenames[2] + randomint(3) + 1;
+        setspawnlocations(alliesareas, "allies");
+        axisareas = [];
+        axisareas[axisareas.size] = lanenames[0] + randomint(3) + 1;
+        axisareas[axisareas.size] = lanenames[1] + randomint(3) + 1;
+        axisareas[axisareas.size] = lanenames[2] + randomint(3) + 1;
+        setspawnlocations(axisareas, "axis");
         updatespawnareas();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1165
 // Size: 0x19c
-function setspawnlocations(var_f05f5b44b0e2757f, team) {
-    var_fccd72853ab541be = [];
+function setspawnlocations(refarray, team) {
+    dynamiclocations = [];
     foreach (loc in level.availablespawnlocations[team]) {
         if (issubstr(loc, "dynamic") || issubstr(loc, "vehicle") || issubstr(loc, "squad")) {
-            var_fccd72853ab541be[var_fccd72853ab541be.size] = loc;
+            dynamiclocations[dynamiclocations.size] = loc;
         }
     }
     level.availablespawnlocations[team] = [];
-    foreach (ref in var_f05f5b44b0e2757f) {
+    foreach (ref in refarray) {
         if (!array_contains(level.availablespawnlocations[team], ref)) {
             level.availablespawnlocations[team][level.availablespawnlocations[team].size] = ref;
         }
     }
-    foreach (ref in var_fccd72853ab541be) {
+    foreach (ref in dynamiclocations) {
         if (!array_contains(level.availablespawnlocations[team], ref)) {
             level.availablespawnlocations[team][level.availablespawnlocations[team].size] = ref;
         }
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1308
 // Size: 0x43
@@ -160,7 +160,7 @@ function allowspawnlocation(ref, team) {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1352
 // Size: 0x88
@@ -174,7 +174,7 @@ function removespawnlocation(ref, team) {
     level.availablespawnlocations[team] = availablespawnlocations;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13e1
 // Size: 0xb
@@ -182,7 +182,7 @@ function updatespawnareas() {
     level notify("tac_ops_map_changed");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13f3
 // Size: 0x9f
@@ -198,7 +198,7 @@ function initspawns() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1499
 // Size: 0x4c2
@@ -208,8 +208,8 @@ function setupspawnlocations() {
     }
     level.spawnselectionlocations = [];
     foreach (entry in level.teamnamelist) {
-        spawns = namespace_b2d5aa2baf2b5701::getspawnpointarray(level.gamemodespawnpointnames[entry]);
-        namespace_b2d5aa2baf2b5701::registerspawnpoints(entry, spawns);
+        spawns = scripts/mp/spawnlogic::getspawnpointarray(level.gamemodespawnpointnames[entry]);
+        scripts/mp/spawnlogic::registerspawnpoints(entry, spawns);
         foreach (s in spawns) {
             if (!isdefined(s.target) || s.target == "") {
                 continue;
@@ -224,7 +224,7 @@ function setupspawnlocations() {
             target = undefined;
             if (targets.size == 1) {
                 target = targets[0];
-            } else if (isdefined(namespace_36f464722d326bbe::getlocaleid())) {
+            } else if (isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
                 foreach (ent in targets) {
                     if (isdefined(ent.script_noteworthy) && ent.script_noteworthy == level.localeid) {
                         target = ent;
@@ -247,49 +247,44 @@ function setupspawnlocations() {
             ref = target.script_label;
             team = entry;
             if (isdefined(target.script_team) && isgameplayteam(target.script_team)) {
-                if (namespace_36f464722d326bbe::getmapname() == "mp_quarry2" && target.targetname == "gw_fob_03_safe_axis") {
+                if (scripts/cp_mp/utility/game_utility::getmapname() == "mp_quarry2" && target.targetname == "gw_fob_03_safe_axis") {
                     team = "axis";
+                } else if (team == "team_three" || team == "team_four") {
                 } else {
-                    if (team == "team_three" || team == "team_four") {
-                        goto LOC_00000324;
-                    }
                     team = target.script_team;
-                LOC_00000324:
                 }
-            LOC_00000324:
             }
-        LOC_00000324:
             if (isdefined(level.spawnselectionlocations[ref]) && isdefined(level.spawnselectionlocations[ref][team])) {
                 loc = level.spawnselectionlocations[ref][team];
                 if (!array_contains(loc.spawnpoints, s)) {
                     loc.spawnpoints[loc.spawnpoints.size] = s;
                 }
-            } else {
-                struct = spawnstruct();
-                struct.origin = target.origin;
-                struct.angles = target.angles;
-                struct.spawnpoints = [];
-                struct.spawnpoints[0] = s;
-                if (!issubstr(ref, "safe")) {
-                    initspawnarea(team, struct, ref);
-                } else {
-                    level.spawnselectionlocations[ref][team] = struct;
-                }
+                continue;
             }
+            struct = spawnstruct();
+            struct.origin = target.origin;
+            struct.angles = target.angles;
+            struct.spawnpoints = [];
+            struct.spawnpoints[0] = s;
+            if (!issubstr(ref, "safe")) {
+                initspawnarea(team, struct, ref);
+                continue;
+            }
+            level.spawnselectionlocations[ref][team] = struct;
         }
         foreach (key, teamarray in level.spawnselectionlocations) {
             if (isdefined(teamarray[entry])) {
-                namespace_b2d5aa2baf2b5701::registerspawnset(key + "_" + entry, teamarray[entry].spawnpoints);
+                scripts/mp/spawnlogic::registerspawnset(key + "_" + entry, teamarray[entry].spawnpoints);
             }
         }
     }
-    level.usespawnselection = namespace_8e28f8b325a83325::function_167619fe3d0cff00() && level.spawnselectionlocations.size > 0;
+    level.usespawnselection = scripts/mp/spawnselection::function_167619fe3d0cff00() && level.spawnselectionlocations.size > 0;
     if (level.usespawnselection) {
         level.getspawnpoint = &getspawnpoint;
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1962
 // Size: 0x16b
@@ -298,9 +293,9 @@ function initspawnarea(team, struct, ref) {
     /#
         assertex(typeid >= 0, "tac_ops_map::addSpawnArea() - Unknown typeRef "" + ref + """);
     #/
-    var_1c75a457e19f3b75 = spawn("script_model", struct.origin);
-    var_1c75a457e19f3b75 setmodel("tag_origin");
-    struct.anchorentity = var_1c75a457e19f3b75;
+    anchorent = spawn("script_model", struct.origin);
+    anchorent setmodel("tag_origin");
+    struct.anchorentity = anchorent;
     struct.typeid = typeid;
     struct.typeref = ref;
     struct.owner = "allies";
@@ -318,12 +313,12 @@ function initspawnarea(team, struct, ref) {
         struct.labelid = typeid;
     }
     if (isdefined(struct.dynamicent)) {
-        var_1c75a457e19f3b75 linkto(struct.dynamicent);
+        anchorent linkto(struct.dynamicent);
     }
     level.spawnselectionlocations[ref][team] = struct;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ad4
 // Size: 0x2c
@@ -335,7 +330,7 @@ function getlabelid(ref) {
     return labelid;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b08
 // Size: 0x35
@@ -343,24 +338,24 @@ function setanchorent(ref, team, ent) {
     level.spawnselectionlocations[ref][team].anchorentity = ent;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b44
 // Size: 0x7f
 function setupspawninfluencezones() {
     level.spawninfluencezones = [];
     for (i = 1; i <= 5; i++) {
-        trigger = namespace_36f464722d326bbe::getlocaleent("gw_fob_0" + i + "_spawnInfluenceZone");
+        trigger = scripts/cp_mp/utility/game_utility::getlocaleent("gw_fob_0" + i + "_spawnInfluenceZone");
         if (!isdefined(trigger)) {
             continue;
         }
-        namespace_f1565a2788ab1e89::makeenterexittrigger(trigger, &spawninfluencezone_onusebegin, &spawninfluencezone_onuseend);
+        scripts/mp/utility/trigger::makeenterexittrigger(trigger, &spawninfluencezone_onusebegin, &spawninfluencezone_onuseend);
         trigger.touchlist = [];
         level.spawninfluencezones["gw_fob_0" + i] = trigger;
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bca
 // Size: 0x57
@@ -371,7 +366,7 @@ function spawninfluencezone_onusebegin(ent, trigger) {
     trigger.touchlist = array_add(trigger.touchlist, ent);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c28
 // Size: 0x57
@@ -382,13 +377,13 @@ function spawninfluencezone_onuseend(ent, trigger) {
     trigger.touchlist = array_remove(trigger.touchlist, ent);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c86
 // Size: 0xae
 function isteamtouching(team) {
     found = 0;
-    var_92cc828bfcf717c8 = [];
+    validtouchlist = [];
     foreach (entry in self.touchlist) {
         if (!isdefined(entry)) {
             continue;
@@ -396,21 +391,21 @@ function isteamtouching(team) {
         if (isdefined(entry.team) && entry.team == team) {
             found = 1;
         }
-        var_92cc828bfcf717c8[var_92cc828bfcf717c8.size] = entry;
+        validtouchlist[validtouchlist.size] = entry;
     }
-    self.touchlist = var_92cc828bfcf717c8;
+    self.touchlist = validtouchlist;
     return found;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d3c
 // Size: 0x831
 function getspawnpoint() {
-    namespace_b2d5aa2baf2b5701::deactivateallspawnsets();
-    if (namespace_b2d5aa2baf2b5701::shoulduseteamstartspawn()) {
-        spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray(level.gamemodestartspawnpointnames[self.team]);
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
+    scripts/mp/spawnlogic::deactivateallspawnsets();
+    if (scripts/mp/spawnlogic::shoulduseteamstartspawn()) {
+        spawnpoints = scripts/mp/spawnlogic::getspawnpointarray(level.gamemodestartspawnpointnames[self.team]);
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints);
         return spawnpoint;
     }
     spawnpoint = undefined;
@@ -420,71 +415,72 @@ function getspawnpoint() {
         if (issubstr(self.selectedspawnarea, "squad")) {
             index = undefined;
             if (self.selectedspawnarea == "squad_leader") {
-                index = level.squaddata[self.team][self.var_ff97225579de16a].squadleader.var_3f78c6a0862f9e25;
+                index = level.squaddata[self.team][self.sessionsquadid].squadleader.var_3f78c6a0862f9e25;
             } else {
                 index = int(getsubstr(self.selectedspawnarea, self.selectedspawnarea.size - 1, self.selectedspawnarea.size));
             }
-            teammate = level.squaddata[self.team][self.var_ff97225579de16a].players[index];
-            spawnpoint = namespace_90f75d3fdf89a43e::findteammatebuddyspawn(teammate);
-            teammate thread namespace_48a08c5037514e04::doscoreevent(#"squad_spawn");
-            thread namespace_48a08c5037514e04::doscoreevent(#"hash_5fe4192c1fd1be4c");
+            teammate = level.squaddata[self.team][self.sessionsquadid].players[index];
+            spawnpoint = scripts/mp/spawnscoring::findteammatebuddyspawn(teammate);
+            teammate thread scripts/mp/utility/points::doScoreEvent(#"squad_spawn");
+            thread scripts/mp/utility/points::doScoreEvent(#"hash_5fe4192c1fd1be4c");
             self.wassquadspawned = 1;
             if (isdefined(teammate.vehicle)) {
                 self.spawningintovehicle = 1;
                 self.vehiclespawninginto = teammate.vehicle.vehiclename;
             }
-            namespace_3c5a4254f2b957ea::incpersstat("spawnSelectSquad", 1);
-            teammate namespace_3c5a4254f2b957ea::incpersstat("timesSelectedAsSquadLeader", 1);
+            scripts/mp/utility/stats::incpersstat("spawnSelectSquad", 1);
+            teammate scripts/mp/utility/stats::incpersstat("timesSelectedAsSquadLeader", 1);
         } else if (issubstr(self.selectedspawnarea, "dynamic")) {
-            spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, self.team, undefined, undefined, 2);
-            thread namespace_35f66e61f847336c::spawnplayertoc130();
+            spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, self.team, undefined, undefined, 2);
+            thread scripts/mp/gametypes/arm_vehicles::spawnplayertoc130();
         } else if (issubstr(self.selectedspawnarea, "vehicle")) {
-            spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, self.team, undefined, undefined, 2);
-            var_a5d118f040f60db0 = level.spawnselectionlocations[self.selectedspawnarea][self.team].dynamicent;
+            spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, self.team, undefined, undefined, 2);
+            vehicleent = level.spawnselectionlocations[self.selectedspawnarea][self.team].dynamicent;
             forwardoffset = -200;
             heightoffset = 64;
-            spawnpoint.origin = var_a5d118f040f60db0.origin + anglestoforward(var_a5d118f040f60db0.angles) * forwardoffset + (0, 0, heightoffset);
-            spawnpoint.angles = (0, var_a5d118f040f60db0.angles[1], 0);
-            seat = function_d3d95972f58ad2bc(var_a5d118f040f60db0);
-            if (isdefined(seat) && istrue(namespace_141c4634b6ea7b27::vehicle_interact_vehiclecanbeused(var_a5d118f040f60db0)) && (istrue(namespace_dace9d390bc4a290::vehicle_spawn_getleveldataforvehicle(var_a5d118f040f60db0 namespace_1f188a13f7e79610::function_d93ec4635290febd()).var_1ad50a59da38c8f5) || seat == "driver")) {
+            spawnpoint.origin = vehicleent.origin + anglestoforward(vehicleent.angles) * forwardoffset + (0, 0, heightoffset);
+            spawnpoint.angles = (0, vehicleent.angles[1], 0);
+            seat = function_d3d95972f58ad2bc(vehicleent);
+            if (isdefined(seat) && istrue(scripts/cp_mp/vehicles/vehicle_interact::vehicle_interact_vehiclecanbeused(vehicleent)) && (istrue(scripts/cp_mp/vehicles/vehicle_spawn::vehicle_spawn_getleveldataforvehicle(vehicleent scripts/cp_mp/vehicles/vehicle::function_d93ec4635290febd()).var_1ad50a59da38c8f5) || seat == "driver")) {
                 data = spawnstruct();
                 data.useonspawn = 1;
                 data.enterstartwaitmsg = "spawned_player";
-                thread vehicle_occupancy_enter(var_a5d118f040f60db0, seat, self, data);
+                thread vehicle_occupancy_enter(vehicleent, seat, self, data);
             } else {
-                exitboundinginfo = function_517f60905f08bf96(var_a5d118f040f60db0);
-                var_b8e7e41430673dd2 = vehicle_occupancy_getleveldataforvehicle(var_a5d118f040f60db0.vehiclename);
+                exitboundinginfo = function_517f60905f08bf96(vehicleent);
+                var_b8e7e41430673dd2 = vehicle_occupancy_getleveldataforvehicle(vehicleent.vehiclename);
                 var_de71eef0ad57608 = 0;
                 foreach (ref, direction in var_b8e7e41430673dd2.exitdirections) {
                     if (direction == "top" || direction == "inside") {
-                        position = vehicle_occupancy_getexitposition(var_a5d118f040f60db0, self, ref, exitboundinginfo, 1);
-                        var_7862c7c7ade2b42e = var_b8e7e41430673dd2.exitoffsets[ref];
+                        position = vehicle_occupancy_getexitposition(vehicleent, self, ref, exitboundinginfo, 1);
+                        exitoffset = var_b8e7e41430673dd2.exitoffsets[ref];
                         if (isdefined(position)) {
                             spawnpoint.origin = position;
-                            self.var_f109e15fae27ddc2 = var_a5d118f040f60db0;
-                            self.var_9066885bd8b59751 = var_7862c7c7ade2b42e;
-                            thread namespace_1f188a13f7e79610::vehicle_preventplayercollisiondamagefortimeafterexit(var_a5d118f040f60db0, self);
+                            self.var_f109e15fae27ddc2 = vehicleent;
+                            self.platformoffset = exitoffset;
+                            thread scripts/cp_mp/vehicles/vehicle::vehicle_preventplayercollisiondamagefortimeafterexit(vehicleent, self);
                             break;
-                        } else if (!var_de71eef0ad57608) {
+                        }
+                        if (!var_de71eef0ad57608) {
                             var_de71eef0ad57608 = 1;
-                            var_e2818ad39a3341b4 = vehicle_occupancy_getleveldataforvehicle(var_a5d118f040f60db0 namespace_1f188a13f7e79610::function_d93ec4635290febd());
-                            var_7862c7c7ade2b42e = var_e2818ad39a3341b4.exitoffsets[ref];
-                            spawnpoint.origin = var_a5d118f040f60db0.origin + rotatevector(var_7862c7c7ade2b42e, var_a5d118f040f60db0.angles);
-                            self.var_f109e15fae27ddc2 = var_a5d118f040f60db0;
-                            self.var_9066885bd8b59751 = var_7862c7c7ade2b42e;
-                            thread namespace_1f188a13f7e79610::vehicle_preventplayercollisiondamagefortimeafterexit(var_a5d118f040f60db0, self);
+                            var_e2818ad39a3341b4 = vehicle_occupancy_getleveldataforvehicle(vehicleent scripts/cp_mp/vehicles/vehicle::function_d93ec4635290febd());
+                            exitoffset = var_e2818ad39a3341b4.exitoffsets[ref];
+                            spawnpoint.origin = vehicleent.origin + rotatevector(exitoffset, vehicleent.angles);
+                            self.var_f109e15fae27ddc2 = vehicleent;
+                            self.platformoffset = exitoffset;
+                            thread scripts/cp_mp/vehicles/vehicle::vehicle_preventplayercollisiondamagefortimeafterexit(vehicleent, self);
                         }
                     }
                 }
             }
-            driver = vehicle_occupancy_getdriver(var_a5d118f040f60db0);
-            vehicleref = var_a5d118f040f60db0 namespace_1f188a13f7e79610::function_d93ec4635290febd();
-            var_4ac41c9583912b8f = namespace_dace9d390bc4a290::vehicle_spawn_getleveldataforvehicle(vehicleref).var_51b047bd40d984fe;
+            driver = vehicle_occupancy_getdriver(vehicleent);
+            vehicleref = vehicleent scripts/cp_mp/vehicles/vehicle::function_d93ec4635290febd();
+            var_4ac41c9583912b8f = scripts/cp_mp/vehicles/vehicle_spawn::vehicle_spawn_getleveldataforvehicle(vehicleref).var_51b047bd40d984fe;
             if (isdefined(driver) && isdefined(var_4ac41c9583912b8f) && var_4ac41c9583912b8f != "") {
-                driver thread namespace_48a08c5037514e04::doscoreevent(function_1823ff50bb28148d(var_4ac41c9583912b8f));
+                driver thread scripts/mp/utility/points::doScoreEvent(function_1823ff50bb28148d(var_4ac41c9583912b8f));
             }
             self.spawningintovehicle = 1;
-            namespace_3c5a4254f2b957ea::incpersstat("spawnSelectVehicle", 1);
+            scripts/mp/utility/stats::incpersstat("spawnSelectVehicle", 1);
         } else if (self.selectedspawnarea == "tac_insert") {
             if (isdefined(self.setspawnpoint)) {
                 self.ti_spawn = 1;
@@ -511,30 +507,30 @@ function getspawnpoint() {
             } else {
                 ref = self.selectedspawnarea + "_" + self.team;
             }
-            namespace_b2d5aa2baf2b5701::activatespawnset(ref, 1);
-            spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, self.team, undefined, undefined, 2);
+            scripts/mp/spawnlogic::activatespawnset(ref, 1);
+            spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, self.team, undefined, undefined, 2);
             if (issubstr(self.selectedspawnarea, "alliesHQ") || issubstr(self.selectedspawnarea, "axisHQ")) {
-                namespace_3c5a4254f2b957ea::incpersstat("spawnSelectBase", 1);
+                scripts/mp/utility/stats::incpersstat("spawnSelectBase", 1);
             } else {
-                namespace_3c5a4254f2b957ea::incpersstat("spawnSelectFlag", 1);
+                scripts/mp/utility/stats::incpersstat("spawnSelectFlag", 1);
             }
         }
     } else {
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, self.team, undefined, undefined, 2);
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, self.team, undefined, undefined, 2);
     }
     if (istrue(level.usesquadspawn) && istrue(self.squadspawnconfirmed)) {
-        var_279bb6642ec5e695 = self getspectatingplayer();
-        if (isdefined(var_279bb6642ec5e695) && isdefined(self.var_ff97225579de16a) && self.team == var_279bb6642ec5e695.team && self.var_ff97225579de16a == var_279bb6642ec5e695.var_ff97225579de16a) {
-            spawnpoint = namespace_90f75d3fdf89a43e::findteammatebuddyspawn(var_279bb6642ec5e695);
-            var_279bb6642ec5e695 thread namespace_48a08c5037514e04::givexpwithtext(#"squad_spawn");
-            thread namespace_48a08c5037514e04::givexpwithtext(#"hash_5fe4192c1fd1be4c");
+        spectatingteammate = self getspectatingplayer();
+        if (isdefined(spectatingteammate) && isdefined(self.sessionsquadid) && self.team == spectatingteammate.team && self.sessionsquadid == spectatingteammate.sessionsquadid) {
+            spawnpoint = scripts/mp/spawnscoring::findteammatebuddyspawn(spectatingteammate);
+            spectatingteammate thread scripts/mp/utility/points::givexpwithtext(#"squad_spawn");
+            thread scripts/mp/utility/points::givexpwithtext(#"hash_5fe4192c1fd1be4c");
             self.wassquadspawned = 1;
         }
     }
     return spawnpoint;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2575
 // Size: 0x8a
@@ -555,7 +551,7 @@ function refreshplayerspawnareaomnvars() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2606
 // Size: 0x3cd
@@ -565,7 +561,7 @@ function evaluatefobspawns() {
     self notify("evaluateFOBSpawns");
     self endon("evaluateFOBSpawns");
     var_e62653e4f73622a = [];
-    while (1) {
+    while (true) {
         if (var_e62653e4f73622a.size > level.availablespawnlocations[self.team].size) {
             thread refreshplayerspawnareaomnvars();
             return;
@@ -599,18 +595,18 @@ function evaluatefobspawns() {
                 self setclientomnvar("ui_tom_spawn_entity_" + index, selected.anchorentity);
             }
             indanger = 0;
-            var_a81af2627597688a = 0;
+            isowned = 0;
             var_8d03c3781f6b70c0 = 0;
             var_5e41ee78365ed202 = 0;
             if (isdefined(selected.objectivekey)) {
                 indanger = istrue(selected.indanger);
-                var_a81af2627597688a = level.objectives[selected.objectivekey].ownerteam == self.team;
+                isowned = level.objectives[selected.objectivekey].ownerteam == self.team;
             } else if (issubstr(entry, "vehicle")) {
-                var_c6577c1382e4b40d = selected.dynamicent;
-                if (isdefined(var_c6577c1382e4b40d) && !istrue(var_c6577c1382e4b40d.isdestroyed)) {
-                    indanger = istrue(var_c6577c1382e4b40d.indanger);
-                    var_8d03c3781f6b70c0 = hassquadmatepassengers(var_c6577c1382e4b40d, self);
-                    if (vehicle_occupancy_getavailablevehicleseats(var_c6577c1382e4b40d).size == 0 || !istrue(namespace_141c4634b6ea7b27::vehicle_interact_vehiclecanbeused(var_c6577c1382e4b40d))) {
+                vehent = selected.dynamicent;
+                if (isdefined(vehent) && !istrue(vehent.isdestroyed)) {
+                    indanger = istrue(vehent.indanger);
+                    var_8d03c3781f6b70c0 = hassquadmatepassengers(vehent, self);
+                    if (vehicle_occupancy_getavailablevehicleseats(vehent).size == 0 || !istrue(scripts/cp_mp/vehicles/vehicle_interact::vehicle_interact_vehiclecanbeused(vehent))) {
                         var_5e41ee78365ed202 = 1;
                     }
                 }
@@ -619,7 +615,7 @@ function evaluatefobspawns() {
             if (indanger) {
                 id = id + 128;
             }
-            if (var_a81af2627597688a) {
+            if (isowned) {
                 id = id + 256;
             }
             if (istrue(var_5e41ee78365ed202)) {
@@ -643,7 +639,7 @@ function evaluatefobspawns() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29da
 // Size: 0x23c
@@ -653,27 +649,25 @@ function isobjectiveindanger(objectivekey, team) {
     case #"hash_def5f510c5aa68f4":
         if (istrue(level.var_b307135dbcef5a38)) {
             return (team != obj.ownerteam);
-            goto LOC_000000a2;
+        } else {
+            return false;
         }
-        return 0;
     case #"hash_ffc490adcece137f":
-    LOC_000000a2:
         if (!level.var_a09dce2c531d0bab) {
-            return 1;
+            return true;
         }
         if (istrue(level.var_f335c53db1d6dd34)) {
             return (team != obj.ownerteam);
         }
-        var_763491d0037dff6e = level.var_c0e8540c63b7af50 > 0;
-        var_d590566a3430702f = isdefined(obj.var_f271d42faf329b89) && obj.var_f271d42faf329b89 <= level.var_c0e8540c63b7af50;
-        if (var_763491d0037dff6e) {
-            return !var_d590566a3430702f;
-            goto LOC_00000113;
+        checkpct = level.var_c0e8540c63b7af50 > 0;
+        allowpercent = isdefined(obj.var_f271d42faf329b89) && obj.var_f271d42faf329b89 <= level.var_c0e8540c63b7af50;
+        if (checkpct) {
+            return !allowpercent;
+        } else {
+            return false;
         }
-        return 0;
     case #"hash_2da0874a234cfd12":
-    LOC_00000113:
-        return 0;
+        return false;
     default:
         var_90ee2572b0fe338a = obj.ownerteam != team;
         iscontested = !level.var_f13131261b4c6ad5 && obj.stalemate;
@@ -688,35 +682,34 @@ function isobjectiveindanger(objectivekey, team) {
             isbeingcaptured = 0;
         }
         return (var_90ee2572b0fe338a || iscontested || isblocked || isbeingcaptured || var_a3a90d8c2aee0964);
-        break;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c1e
 // Size: 0x15e
-function isvehicleindanger(var_c6577c1382e4b40d) {
+function isvehicleindanger(vehent) {
     currenttime = gettime();
-    var_e2adec8d28854d3f = isdefined(var_c6577c1382e4b40d) && isdefined(var_c6577c1382e4b40d.lasttimedamaged) && var_c6577c1382e4b40d.lasttimedamaged + 5000 > currenttime;
-    oob = isdefined(var_c6577c1382e4b40d) && var_c6577c1382e4b40d namespace_d9c77dc2a6fe29c6::istouchingoobtrigger();
+    tookdamage = isdefined(vehent) && isdefined(vehent.lasttimedamaged) && vehent.lasttimedamaged + 5000 > currenttime;
+    oob = isdefined(vehent) && vehent scripts/mp/outofbounds::istouchingoobtrigger();
     enemyinproximity = 0;
-    if (isdefined(var_c6577c1382e4b40d.team)) {
-        var_35c341a22b58d17d = utility::playersnear(var_c6577c1382e4b40d.origin, 384);
+    if (isdefined(vehent.team)) {
+        var_35c341a22b58d17d = utility::playersnear(vehent.origin, 384);
         foreach (player in var_35c341a22b58d17d) {
-            if (isdefined(player) && player.team != var_c6577c1382e4b40d.team && isalive(player) && !isdefined(player.fauxdead)) {
-                if (abs(var_c6577c1382e4b40d.origin[2] - player.origin[2]) < 100) {
+            if (isdefined(player) && player.team != vehent.team && isalive(player) && !isdefined(player.fauxdead)) {
+                if (abs(vehent.origin[2] - player.origin[2]) < 100) {
                     enemyinproximity = 1;
                     break;
                 }
             }
         }
     }
-    return var_e2adec8d28854d3f || oob || enemyinproximity;
+    return tookdamage || oob || enemyinproximity;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d84
 // Size: 0x33
@@ -727,75 +720,75 @@ function function_167619fe3d0cff00() {
     return level.usespawnselection;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2dbf
 // Size: 0x2d6
-function vehicleindangertracking(var_c6577c1382e4b40d) {
-    var_c6577c1382e4b40d endon("death");
-    var_c6577c1382e4b40d.indanger = 0;
-    var_55d25b77e9fb1759 = getdvarfloat(@"hash_b5bc6252b2764d8c", 0.15);
-    while (1) {
+function vehicleindangertracking(vehent) {
+    vehent endon("death");
+    vehent.indanger = 0;
+    ignoredamagethreshold = getdvarfloat(@"hash_b5bc6252b2764d8c", 0.15);
+    while (true) {
         currenttime = gettime();
-        burningdown = istrue(var_c6577c1382e4b40d.burningdown);
-        var_83d6b23061e5bf09 = namespace_d325722f2754c2c4::islockedonto(var_c6577c1382e4b40d);
-        var_f7772e25266681de = vehicle_occupancy_canspawninto(var_c6577c1382e4b40d);
-        var_e2adec8d28854d3f = isdefined(var_c6577c1382e4b40d) && isdefined(var_c6577c1382e4b40d.lasttimedamaged) && var_c6577c1382e4b40d.lasttimedamaged + 5000 > currenttime;
-        oob = isdefined(var_c6577c1382e4b40d) && var_c6577c1382e4b40d namespace_d9c77dc2a6fe29c6::istouchingoobtrigger();
-        var_5aa9cfb2ea0ff115 = 0;
+        burningdown = istrue(vehent.burningdown);
+        missilelocked = scripts/cp_mp/utility/weapon_utility::islockedonto(vehent);
+        var_f7772e25266681de = vehicle_occupancy_canspawninto(vehent);
+        tookdamage = isdefined(vehent) && isdefined(vehent.lasttimedamaged) && vehent.lasttimedamaged + 5000 > currenttime;
+        oob = isdefined(vehent) && vehent scripts/mp/outofbounds::istouchingoobtrigger();
+        isbeached = 0;
         enemyinproximity = 0;
-        if (isdefined(var_c6577c1382e4b40d.team) && var_c6577c1382e4b40d.vehiclename != "apc_russian" && var_c6577c1382e4b40d.vehiclename != "veh9_apc_8x8") {
-            var_35c341a22b58d17d = utility::playersnear(var_c6577c1382e4b40d.origin, 384);
+        if (isdefined(vehent.team) && vehent.vehiclename != "apc_russian" && vehent.vehiclename != "veh9_apc_8x8") {
+            var_35c341a22b58d17d = utility::playersnear(vehent.origin, 384);
             foreach (player in var_35c341a22b58d17d) {
-                if (isdefined(player) && player.team != var_c6577c1382e4b40d.team && isalive(player) && !isdefined(player.fauxdead)) {
-                    if (abs(var_c6577c1382e4b40d.origin[2] - player.origin[2]) < 100) {
+                if (isdefined(player) && player.team != vehent.team && isalive(player) && !isdefined(player.fauxdead)) {
+                    if (abs(vehent.origin[2] - player.origin[2]) < 100) {
                         enemyinproximity = 1;
                         break;
                     }
                 }
             }
         }
-        if (var_c6577c1382e4b40d.vehiclename == "apc_russian" || var_c6577c1382e4b40d.vehiclename == "veh9_apc_8x8" || var_c6577c1382e4b40d.vehiclename == "veh9_palfa") {
-            var_6990f1d64bbbbbf3 = var_c6577c1382e4b40d.health / var_c6577c1382e4b40d.maxhealth;
-            if (var_6990f1d64bbbbbf3 > var_55d25b77e9fb1759) {
-                var_e2adec8d28854d3f = 0;
+        if (vehent.vehiclename == "apc_russian" || vehent.vehiclename == "veh9_apc_8x8" || vehent.vehiclename == "veh9_palfa") {
+            currenthealthpct = vehent.health / vehent.maxhealth;
+            if (currenthealthpct > ignoredamagethreshold) {
+                tookdamage = 0;
             }
-            var_83d6b23061e5bf09 = 0;
-        } else if (var_c6577c1382e4b40d.vehiclename == "veh9_patrol_boat") {
-            var_5aa9cfb2ea0ff115 = var_c6577c1382e4b40d vehicle_isonground();
+            missilelocked = 0;
+        } else if (vehent.vehiclename == "veh9_patrol_boat") {
+            isbeached = vehent vehicle_isonground();
         }
-        var_2492daef403f6853 = var_c6577c1382e4b40d.indanger;
-        var_c6577c1382e4b40d.indanger = var_e2adec8d28854d3f || oob || enemyinproximity || burningdown || var_83d6b23061e5bf09 || !var_f7772e25266681de || var_5aa9cfb2ea0ff115;
+        lastoutcome = vehent.indanger;
+        vehent.indanger = tookdamage || oob || enemyinproximity || burningdown || missilelocked || !var_f7772e25266681de || isbeached;
         waitframe();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x309c
 // Size: 0xf4
 function hassquadmatepassengers(vehicle, player) {
     if (!isdefined(level.squaddata)) {
-        return 0;
+        return false;
     }
-    var_607da387f3617ed1 = level.squaddata[self.team][self.var_ff97225579de16a].players;
+    squadmates = level.squaddata[self.team][self.sessionsquadid].players;
     foreach (occupant in vehicle.occupants) {
-        foreach (var_c98aac0e8e6eaf8c in var_607da387f3617ed1) {
-            if (var_c98aac0e8e6eaf8c == occupant) {
-                return 1;
+        foreach (mate in squadmates) {
+            if (mate == occupant) {
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3198
 // Size: 0x22e
 function setspawnselectionorder() {
     markers = getstructarray("axisLeft_alliesRight", "targetname");
-    if (isdefined(namespace_36f464722d326bbe::getlocaleid())) {
+    if (isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
         var_ef171a7416dc2ab0 = undefined;
         foreach (marker in markers) {
             if (marker.script_noteworthy == level.localeid) {
@@ -813,84 +806,83 @@ function setspawnselectionorder() {
         foreach (index, team in location) {
             if (index != self.team) {
                 continue;
-            } else {
-                var_c099305bcdb72ad7[var_c099305bcdb72ad7.size] = team;
             }
+            var_c099305bcdb72ad7[var_c099305bcdb72ad7.size] = team;
         }
     }
     if (self.team == "axis") {
-        var_3067799883aaeeb7 = var_ef171a7416dc2ab0 array_sort_with_func(var_c099305bcdb72ad7, &sortlocationsbydistance_closestfirst);
+        objectives_ordered = var_ef171a7416dc2ab0 array_sort_with_func(var_c099305bcdb72ad7, &sortlocationsbydistance_closestfirst);
     } else {
-        var_3067799883aaeeb7 = var_ef171a7416dc2ab0 array_sort_with_func(var_c099305bcdb72ad7, &sortlocationsbydistance_farthestfirst);
+        objectives_ordered = var_ef171a7416dc2ab0 array_sort_with_func(var_c099305bcdb72ad7, &sortlocationsbydistance_farthestfirst);
     }
-    foreach (index, objective in var_3067799883aaeeb7) {
+    foreach (index, objective in objectives_ordered) {
         self setclientomnvar("ui_tom_spawn_entity_" + index, objective.anchorentity);
         self setclientomnvar("ui_tom_spawn_id_" + index, objective.labelid);
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33cd
 // Size: 0x47
-function sortlocationsbydistance_closestfirst(var_fcf7e6e6d8c4861, var_fcf7b6e6d8c41c8) {
-    return distancesquared(var_fcf7e6e6d8c4861.origin, self.origin) < distancesquared(var_fcf7b6e6d8c41c8.origin, self.origin);
+function sortlocationsbydistance_closestfirst(location1, location2) {
+    return distancesquared(location1.origin, self.origin) < distancesquared(location2.origin, self.origin);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x341c
 // Size: 0x47
-function sortlocationsbydistance_farthestfirst(var_fcf7e6e6d8c4861, var_fcf7b6e6d8c41c8) {
-    return distancesquared(var_fcf7e6e6d8c4861.origin, self.origin) > distancesquared(var_fcf7b6e6d8c41c8.origin, self.origin);
+function sortlocationsbydistance_farthestfirst(location1, location2) {
+    return distancesquared(location1.origin, self.origin) > distancesquared(location2.origin, self.origin);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x346b
 // Size: 0x1b2
 function picklane(lane) {
-    var_b67beb76f4cec0f7 = undefined;
+    areakey = undefined;
     foreach (loc in level.availablespawnlocations[self.team]) {
         if (issubstr(loc, lane)) {
-            var_b67beb76f4cec0f7 = loc;
+            areakey = loc;
             break;
         }
     }
-    if (!isdefined(var_b67beb76f4cec0f7)) {
+    if (!isdefined(areakey)) {
         return;
     }
-    if (!isdefined(level.spawnselectionlocations[var_b67beb76f4cec0f7])) {
+    if (!isdefined(level.spawnselectionlocations[areakey])) {
         return;
     }
-    selected = level.spawnselectionlocations[var_b67beb76f4cec0f7][self.team];
+    selected = level.spawnselectionlocations[areakey][self.team];
     if (!isdefined(selected)) {
         return;
     }
     var_4e2f30f5b1dfa9f3 = self.team == "allies";
-    var_69de983472a45af9 = 0;
+    laneindex = 0;
     switch (lane) {
     case #"hash_2eafa9a536901cad":
     case #"hash_7270631ce8f6357f":
     case #"hash_c9b3133a17a3b2d0":
-        var_69de983472a45af9 = ter_op(var_4e2f30f5b1dfa9f3, 0, 2);
+        laneindex = ter_op(var_4e2f30f5b1dfa9f3, 0, 2);
         break;
     case #"hash_2881ce6c1efb40c5":
     case #"hash_2eafa6a5369017f4":
     case #"hash_7273231ce8f80f56":
-        var_69de983472a45af9 = 1;
+        laneindex = 1;
         break;
     case #"hash_2eafa7a536901987":
     case #"hash_726a231ce8f15391":
     case #"hash_96815ce4f2a3dbc5":
-        var_69de983472a45af9 = ter_op(var_4e2f30f5b1dfa9f3, 2, 0);
+        laneindex = ter_op(var_4e2f30f5b1dfa9f3, 2, 0);
         break;
     }
-    self setclientomnvar("ui_tom_spawn_entity_" + var_69de983472a45af9, selected.anchorentity);
-    self setclientomnvar("ui_tom_spawn_id_" + var_69de983472a45af9, selected.labelid);
+    self setclientomnvar("ui_tom_spawn_entity_" + laneindex, selected.anchorentity);
+    self setclientomnvar("ui_tom_spawn_id_" + laneindex, selected.labelid);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3624
 // Size: 0xca
@@ -906,7 +898,7 @@ function refreshsquadspawns() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x36f5
 // Size: 0xee
@@ -928,11 +920,11 @@ function refreshdynamicspawns() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37ea
 // Size: 0x104
-function waitforspawnselection(timeuntilspawn, var_54a4645082a09829) {
+function waitforspawnselection(timeuntilspawn, forcepick) {
     if (istrue(level.gameended) || istrue(level.nukeinfo.detonated)) {
         pickrandomnonvehiclespawn();
         return;
@@ -946,9 +938,9 @@ function waitforspawnselection(timeuntilspawn, var_54a4645082a09829) {
         pickrandomnonvehiclespawn();
         return;
     }
-    if (isai(self) || istrue(var_54a4645082a09829) || issubstr(self.name, "_hl_")) {
+    if (isai(self) || istrue(forcepick) || issubstr(self.name, "_hl_")) {
         timeuntilspawnmessaging(timeuntilspawn, "waiting_to_spawn");
-        if (namespace_b2d5aa2baf2b5701::shoulduseteamstartspawn()) {
+        if (scripts/mp/spawnlogic::shoulduseteamstartspawn()) {
             return;
         }
         pickrandomnonvehiclespawn();
@@ -962,7 +954,7 @@ function waitforspawnselection(timeuntilspawn, var_54a4645082a09829) {
     self lerpfovscalefactor(1, 0.2);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38f5
 // Size: 0x94
@@ -976,7 +968,7 @@ function pickrandomnonvehiclespawn() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3990
 // Size: 0x9a
@@ -993,7 +985,7 @@ function pickrandomvehiclespawn(var_b6603908715584da) {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a31
 // Size: 0x33
@@ -1002,7 +994,7 @@ function pickrandomspawn() {
     self.selectedspawnarea = var_e7479a24d5e8f522[0];
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a6c
 // Size: 0xa8
@@ -1012,14 +1004,14 @@ function function_37b8d5f51288ba7d() {
         timeoutms = getdvarint(@"hash_a06dc2c4de808757", 9000);
         self.var_a7461778c6502729 = 1;
     }
-    var_dc51de4e8cbd07b = namespace_d7fe36703a9572fe::getspawncamera();
-    var_11f3b4465c8b637b = namespace_d3d40f75bb4e4c32::playerstreamhintlocation(var_dc51de4e8cbd07b.origin, timeoutms);
-    namespace_36f464722d326bbe::fadetoblackforplayer(self, 1, 0);
-    namespace_d3d40f75bb4e4c32::playerwaittillstreamhintcomplete();
-    namespace_36f464722d326bbe::fadetoblackforplayer(self, 0, 0.5);
+    spawncamera = scripts/mp/spawncamera::getspawncamera();
+    streamorigin = scripts/mp/gametypes/br_public::playerstreamhintlocation(spawncamera.origin, timeoutms);
+    scripts/cp_mp/utility/game_utility::fadetoblackforplayer(self, 1, 0);
+    scripts/mp/gametypes/br_public::playerwaittillstreamhintcomplete();
+    scripts/cp_mp/utility/game_utility::fadetoblackforplayer(self, 0, 0.5);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b1b
 // Size: 0x2dc
@@ -1039,15 +1031,15 @@ function spawnselectionthink(timeuntilspawn) {
     if (!self [[ level.var_d280c5fdb0036183 ]]()) {
         return;
     }
-    namespace_d19129e4fa5d176::loadout_clearperks();
-    thread namespace_d7fe36703a9572fe::startspawncamera(0, 0, 0);
+    scripts/mp/class::loadout_clearperks();
+    thread scripts/mp/spawncamera::startspawncamera(0, 0, 0);
     thread function_37b8d5f51288ba7d();
     self.selectedspawnarea = undefined;
     self.inspawnselection = 1;
     self setclientomnvar("ui_hide_objectives", 1);
     thread selectiondelaymessaging(timeuntilspawn);
     if (istrue(level.spawnselectionshowfriendly) || istrue(level.spawnselectionshowenemy)) {
-        thread namespace_8af839578a30040a::flashpoint_spawnselectionvfx();
+        thread scripts/mp/flashpoint::flashpoint_spawnselectionvfx();
     }
     if (istrue(level.showteamtanks)) {
         thread vehicle_showteamtanks();
@@ -1066,10 +1058,10 @@ function spawnselectionthink(timeuntilspawn) {
         thread watchforafk();
     }
     self.var_f9cd51a4708ec70f = 0;
-    while (1) {
-        var_302dce65cab2acf3 = watchendconditions();
+    while (true) {
+        endcondition = watchendconditions();
         var_83cb6d50fa2daf87 = 1;
-        switch (var_302dce65cab2acf3) {
+        switch (endcondition) {
         case #"hash_2400cb6252980d91":
             var_83cb6d50fa2daf87 = 1;
             break;
@@ -1079,15 +1071,15 @@ function spawnselectionthink(timeuntilspawn) {
             break;
         case #"hash_d79f98d6ba6dd9de":
             var_83cb6d50fa2daf87 = 1;
-            namespace_d7fe36703a9572fe::deletespawncamera();
+            scripts/mp/spawncamera::deletespawncamera();
             break;
         case #"hash_315ca762a236ee4b":
             var_83cb6d50fa2daf87 = 1;
-            namespace_d7fe36703a9572fe::deletespawncamera();
+            scripts/mp/spawncamera::deletespawncamera();
             break;
         case #"hash_e73d5cfa4614c287":
             var_83cb6d50fa2daf87 = 1;
-            namespace_d7fe36703a9572fe::deletespawncamera();
+            scripts/mp/spawncamera::deletespawncamera();
             break;
         case #"hash_8bfb9f6e1ffad7f4":
             var_83cb6d50fa2daf87 = 0;
@@ -1120,7 +1112,7 @@ function spawnselectionthink(timeuntilspawn) {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3dfe
 // Size: 0x2f
@@ -1133,7 +1125,7 @@ function checkformatchend() {
     self setclientomnvar("ui_tac_ops_map_open", 0);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e34
 // Size: 0x4f
@@ -1150,7 +1142,7 @@ function watchforafk() {
     kick(self getentitynumber(), "EXE/PLAYERKICKED_INACTIVE", 1);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e8a
 // Size: 0x109
@@ -1166,14 +1158,14 @@ function selectiondelaymessaging(timeuntilspawn) {
     if (getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || getgametype() == "gwbomb" || getgametype() == "bigctf") {
         self setclientomnvar("ui_tom_respawnTimerActive", 0);
     }
-    namespace_58fb4f2e73fd41a0::setlowermessageomnvar("select_spawn");
+    scripts/mp/utility/lower_message::setlowermessageomnvar("select_spawn");
     self.canprocessselection = 1;
     if (isdefined(self.selectedspawnarea)) {
         validateselectedspawnarea();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f9a
 // Size: 0x7b
@@ -1187,15 +1179,15 @@ function validateselectedspawnarea() {
     self.selectedspawnarea = undefined;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x401c
 // Size: 0x476
 function selectionmade() {
     self endon("disconnect");
     self endon("tac_ops_map_selection_valid");
-    while (1) {
-        var_84d6164f2a6eb8da = message = self waittill("luinotifyserver");
+    while (true) {
+        message, var_84d6164f2a6eb8da = self waittill("luinotifyserver");
         if (message == "tac_ops_spawn_area_selected") {
             var_84d6164f2a6eb8da = updateplayerspawninputtype(var_84d6164f2a6eb8da);
             printspawnmessage("spawnSelection::selectionMade() START");
@@ -1214,17 +1206,17 @@ function selectionmade() {
                 }
             }
             if (!isdefined(selectedspawnarea)) {
-                var_3cab94f850a2511f = getsquadspawnlocations(self.team, self.var_ff97225579de16a);
-                foreach (loc in var_3cab94f850a2511f) {
+                squadlocations = getsquadspawnlocations(self.team, self.sessionsquadid);
+                foreach (loc in squadlocations) {
                     if (isdefined(loc.dynamicent) && loc.dynamicent getentitynumber() == var_84d6164f2a6eb8da) {
-                        if (loc.dynamicent.team != self.team || loc.dynamicent.var_ff97225579de16a != self.var_ff97225579de16a) {
+                        if (loc.dynamicent.team != self.team || loc.dynamicent.sessionsquadid != self.sessionsquadid) {
                             thread refreshplayerspawnareaomnvars();
                             /#
                                 assertmsg("Attemped to spawn on someone who isn't on your squad:" + "
 self.team           = " + self.team + "
-self.sessionsquadid     = " + self.var_ff97225579de16a + "
+self.sessionsquadid     = " + self.sessionsquadid + "
 loc.dynamicEnt.team = " + loc.dynamicent + "
-loc.dynamicEnt.sessionsquadid = " + loc.dynamicent.var_ff97225579de16a);
+loc.dynamicEnt.sessionsquadid = " + loc.dynamicent.sessionsquadid);
                             #/
                             break;
                         }
@@ -1233,12 +1225,12 @@ loc.dynamicEnt.sessionsquadid = " + loc.dynamicent.var_ff97225579de16a);
                         }
                         vehicle = loc.dynamicent.vehicle;
                         if (isdefined(vehicle)) {
-                            if (vehicle_occupancy_getavailablevehicleseats(vehicle).size == 0 || !istrue(namespace_141c4634b6ea7b27::vehicle_interact_vehiclecanbeused(vehicle))) {
+                            if (vehicle_occupancy_getavailablevehicleseats(vehicle).size == 0 || !istrue(scripts/cp_mp/vehicles/vehicle_interact::vehicle_interact_vehiclecanbeused(vehicle))) {
                                 break;
                             }
                         }
                         spawninfo = spawnstruct();
-                        spawninfo = namespace_90f75d3fdf89a43e::capsulepass(spawninfo, loc.dynamicent);
+                        spawninfo = scripts/mp/spawnscoring::capsulepass(spawninfo, loc.dynamicent);
                         if (!isdefined(spawninfo.spawnposition)) {
                             loc.dynamicent.nogroundfoundtime = gettime();
                             break;
@@ -1267,7 +1259,7 @@ loc.dynamicEnt.sessionsquadid = " + loc.dynamicent.var_ff97225579de16a);
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4499
 // Size: 0x111
@@ -1286,7 +1278,7 @@ function updateplayerspawninputtype(var_84d6164f2a6eb8da) {
     return var_84d6164f2a6eb8da & ~(var_c1606c1030582cfa | var_9078b4c4e3258dfb | var_caaf532a5fd0a997 | var_e4f4a7af0d80ea24);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45b2
 // Size: 0x77
@@ -1303,7 +1295,7 @@ function watchendconditions() {
     return result;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4631
 // Size: 0x3b
@@ -1312,14 +1304,14 @@ function endconditionwatcher_selectionmade() {
     self endon("tac_ops_end_condition_met");
     self notify("endConditionWatcher_SelectionMade()");
     self endon("endConditionWatcher_SelectionMade()");
-    while (1) {
+    while (true) {
         self waittill("tac_ops_map_selection_made");
         self notify("tac_ops_map_selection_valid");
         break;
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4673
 // Size: 0x340
@@ -1341,8 +1333,8 @@ function endcondition_focuschanged(var_84d6164f2a6eb8da) {
         }
     }
     if (!isdefined(selectedspawnarea)) {
-        var_3cab94f850a2511f = getsquadspawnlocations(self.team, self.var_ff97225579de16a);
-        foreach (loc in var_3cab94f850a2511f) {
+        squadlocations = getsquadspawnlocations(self.team, self.sessionsquadid);
+        foreach (loc in squadlocations) {
             if (isdefined(loc.dynamicent) && loc.dynamicent getentitynumber() == var_84d6164f2a6eb8da) {
                 thread keepstreamposfresh(loc.dynamicent.origin);
                 selectedspawnarea = loc.typeref;
@@ -1385,11 +1377,11 @@ function endcondition_focuschanged(var_84d6164f2a6eb8da) {
         while (!gameflag("prematch_done")) {
             waitframe();
         }
-        thread namespace_d7fe36703a9572fe::movetospawncamera(0);
+        thread scripts/mp/spawncamera::movetospawncamera(0);
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49ba
 // Size: 0x48
@@ -1399,13 +1391,13 @@ function keepstreamposfresh(origin) {
     self endon("spawned_player");
     self notify("keepStreamPosFresh");
     self endon("keepStreamPosFresh");
-    while (1) {
+    while (true) {
         self function_bc667001f9dd3808(origin, 1);
         wait(1);
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a09
 // Size: 0x30
@@ -1418,7 +1410,7 @@ function endconditionwatcher_gameended() {
     self notify("tac_ops_map_game_ended");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a40
 // Size: 0x30
@@ -1431,7 +1423,7 @@ function endconditionwatcher_mapcleared() {
     self notify("tac_ops_map_cleared");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a77
 // Size: 0x30
@@ -1444,7 +1436,7 @@ function endconditionwatcher_mapchanged() {
     self notify("tac_ops_map_changed");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4aae
 // Size: 0x30
@@ -1457,7 +1449,7 @@ function endconditionwatcher_nuke() {
     self notify("tac_ops_map_nuke");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ae5
 // Size: 0x2c
@@ -1470,7 +1462,7 @@ function function_b0e57461a4af2476() {
     self notify("tac_ops_map_no_valid_selections");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b18
 // Size: 0x47
@@ -1486,27 +1478,27 @@ function spawnselectionshutdown_nuke() {
     self visionsetnakedforplayer("flir_0_black_to_white_heavy_damage", 0.05);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b66
 // Size: 0x11c
 function adddynamicspawnarea(team, ent, ref, offset) {
     if (isdefined(level.spawnselectionlocations[ref]) && isdefined(level.spawnselectionlocations[ref][team])) {
-        var_7bf80d7ff1d68a01 = level.spawnselectionlocations[ref][team];
-        var_7bf80d7ff1d68a01.origin = ent.origin + ter_op(isdefined(offset), offset, (0, 0, 0));
-        var_7bf80d7ff1d68a01.angles = ent.angles;
-    } else {
-        var_7bf80d7ff1d68a01 = spawnstruct();
-        var_7bf80d7ff1d68a01.origin = ent.origin + ter_op(isdefined(offset), offset, (0, 0, 0));
-        var_7bf80d7ff1d68a01.angles = ent.angles;
-        var_7bf80d7ff1d68a01.dynamicent = ent;
-        var_7bf80d7ff1d68a01.script_noteworthy = ref;
-        initspawnarea(team, var_7bf80d7ff1d68a01, ref);
-        updatespawnareas();
+        areastruct = level.spawnselectionlocations[ref][team];
+        areastruct.origin = ent.origin + ter_op(isdefined(offset), offset, (0, 0, 0));
+        areastruct.angles = ent.angles;
+        return;
     }
+    areastruct = spawnstruct();
+    areastruct.origin = ent.origin + ter_op(isdefined(offset), offset, (0, 0, 0));
+    areastruct.angles = ent.angles;
+    areastruct.dynamicent = ent;
+    areastruct.script_noteworthy = ref;
+    initspawnarea(team, areastruct, ref);
+    updatespawnareas();
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c89
 // Size: 0x65
@@ -1520,7 +1512,7 @@ function removedynamicspawnarea(team, ref) {
     updatespawnareas();
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cf5
 // Size: 0x5f
@@ -1532,7 +1524,7 @@ function getsquadspawnlocations(team, squadindex) {
     return locations;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d5c
 // Size: 0x16a
@@ -1551,25 +1543,25 @@ function updatesquadspawn(team, squad, ref, ent) {
             level.squadspawnselectionlocations[team][squad][ref] = undefined;
             return;
         }
-        var_7bf80d7ff1d68a01 = level.squadspawnselectionlocations[team][squad][ref];
-        var_7bf80d7ff1d68a01.typeref = ref;
-        var_7bf80d7ff1d68a01.origin = ent.origin;
-        var_7bf80d7ff1d68a01.angles = ent.angles;
-        var_7bf80d7ff1d68a01.dynamicent = ent;
-    } else {
-        if (!isdefined(ent)) {
-            return;
-        }
-        var_7bf80d7ff1d68a01 = spawnstruct();
-        var_7bf80d7ff1d68a01.typeref = ref;
-        var_7bf80d7ff1d68a01.origin = ent.origin;
-        var_7bf80d7ff1d68a01.angles = ent.angles;
-        var_7bf80d7ff1d68a01.dynamicent = ent;
-        level.squadspawnselectionlocations[team][squad][ref] = var_7bf80d7ff1d68a01;
+        areastruct = level.squadspawnselectionlocations[team][squad][ref];
+        areastruct.typeref = ref;
+        areastruct.origin = ent.origin;
+        areastruct.angles = ent.angles;
+        areastruct.dynamicent = ent;
+        return;
     }
+    if (!isdefined(ent)) {
+        return;
+    }
+    areastruct = spawnstruct();
+    areastruct.typeref = ref;
+    areastruct.origin = ent.origin;
+    areastruct.angles = ent.angles;
+    areastruct.dynamicent = ent;
+    level.squadspawnselectionlocations[team][squad][ref] = areastruct;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ecd
 // Size: 0x37
@@ -1580,7 +1572,7 @@ function removespawnareaondeathdisconnect(team, ref) {
     thread addspawnareaonspawn(team, ref);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f0b
 // Size: 0x3d
@@ -1592,7 +1584,7 @@ function addspawnareaonspawn(team, ref) {
     thread removespawnareaondeathdisconnect(team, ref);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f4f
 // Size: 0x9c
@@ -1603,7 +1595,7 @@ function function_360feec64890e6f1() {
     self.var_eaea86358d19ed20 = 1;
     var_f148fcd88267d96e = int(level.tispawndelay);
     self setclientomnvar("ui_tom_ti_respawnTimer", gettime() + var_f148fcd88267d96e * 1000);
-    while (1) {
+    while (true) {
         var_f148fcd88267d96e = clamp(var_f148fcd88267d96e, 0, level.tispawndelay);
         if (var_f148fcd88267d96e == 0) {
             self setclientomnvar("ui_tom_ti_respawnTimer", 0);
@@ -1616,7 +1608,7 @@ function function_360feec64890e6f1() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ff2
 // Size: 0x121
@@ -1629,27 +1621,27 @@ function function_7de3f8f504024fde() {
     self notify("evaluateTISpawn");
     self endon("evaluateTISpawn");
     startindex = level.availablespawnlocations[self.team].size;
-    var_221d2a4479c093b6 = startindex + 4;
-    var_b0b3efd85f274c12 = spawnstruct();
-    var_b0b3efd85f274c12.entity = self.setspawnpoint;
-    var_b0b3efd85f274c12.id = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "tac_insert");
+    tiindex = startindex + 4;
+    tidata = spawnstruct();
+    tidata.entity = self.setspawnpoint;
+    tidata.id = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "tac_insert");
     if (!istrue(self.var_eaea86358d19ed20)) {
         thread function_360feec64890e6f1();
     }
-    while (1) {
+    while (true) {
         if (!isdefined(self.setspawnpoint)) {
-            self setclientomnvar("ui_tom_spawn_id_" + var_221d2a4479c093b6, -1);
-            self setclientomnvar("ui_tom_spawn_entity_" + var_221d2a4479c093b6, undefined);
+            self setclientomnvar("ui_tom_spawn_id_" + tiindex, -1);
+            self setclientomnvar("ui_tom_spawn_entity_" + tiindex, undefined);
             refreshplayerspawnareaomnvars();
             return;
         }
-        self setclientomnvar("ui_tom_spawn_id_" + var_221d2a4479c093b6, var_b0b3efd85f274c12.id);
-        self setclientomnvar("ui_tom_spawn_entity_" + var_221d2a4479c093b6, var_b0b3efd85f274c12.entity);
+        self setclientomnvar("ui_tom_spawn_id_" + tiindex, tidata.id);
+        self setclientomnvar("ui_tom_spawn_entity_" + tiindex, tidata.entity);
         waitframe();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x511a
 // Size: 0x57e
@@ -1667,7 +1659,7 @@ function evaluatesquadspawn() {
     typeid[1] = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "squad_1");
     typeid[2] = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "squad_2");
     typeid[3] = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "squad_3");
-    var_72e07b77470f32d9 = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "squad_leader");
+    squadleaderid = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, "squad_leader");
     var_5966e8a05a4d1903 = [];
     for (i = 0; i < 4; i++) {
         data = spawnstruct();
@@ -1676,13 +1668,13 @@ function evaluatesquadspawn() {
         data.idmask = undefined;
         var_5966e8a05a4d1903[i] = data;
     }
-    var_4da35154d6d43593 = [];
+    squadrefs = [];
     for (i = 0; i < 4; i++) {
-        var_4da35154d6d43593[i] = "squad_" + i;
+        squadrefs[i] = "squad_" + i;
     }
-    while (1) {
-        squadleader = namespace_ca7b90256548aa40::getsquadleader(self.team, self.var_ff97225579de16a);
-        players = level.squaddata[self.team][self.var_ff97225579de16a].players;
+    while (true) {
+        squadleader = namespace_ca7b90256548aa40::getsquadleader(self.team, self.sessionsquadid);
+        players = level.squaddata[self.team][self.sessionsquadid].players;
         for (i = 0; i < 4; i++) {
             if (!isdefined(var_5966e8a05a4d1903[i].guid)) {
                 continue;
@@ -1698,10 +1690,10 @@ function evaluatesquadspawn() {
             } else {
                 player = undefined;
             }
-            ref = var_4da35154d6d43593[i];
-            updatesquadspawn(self.team, self.var_ff97225579de16a, ref, player);
+            ref = squadrefs[i];
+            updatesquadspawn(self.team, self.sessionsquadid, ref, player);
         }
-        locations = getsquadspawnlocations(self.team, self.var_ff97225579de16a);
+        locations = getsquadspawnlocations(self.team, self.sessionsquadid);
         for (i = 0; i < 4; i++) {
             if (i < players.size) {
                 player = players[i];
@@ -1712,7 +1704,7 @@ function evaluatesquadspawn() {
             if (!issquadleader && istrue(level.spawnsquadleaderonly)) {
                 continue;
             }
-            ref = var_4da35154d6d43593[i];
+            ref = squadrefs[i];
             selected = locations[ref];
             var_d059a36c2835b580 = isdefined(player) && isdefined(player.vehicle) && istrue(player.vehicle.israllypointvehicle);
             if (isdefined(player) && self != player && issquadspawnable(player) && !istrue(var_d059a36c2835b580)) {
@@ -1726,7 +1718,7 @@ function evaluatesquadspawn() {
                 }
                 if (isdefined(player.vehicle)) {
                     idmask = idmask + 512;
-                    if (vehicle_occupancy_getavailablevehicleseats(player.vehicle).size == 0 || !istrue(namespace_141c4634b6ea7b27::vehicle_interact_vehiclecanbeused(player.vehicle))) {
+                    if (vehicle_occupancy_getavailablevehicleseats(player.vehicle).size == 0 || !istrue(scripts/cp_mp/vehicles/vehicle_interact::vehicle_interact_vehiclecanbeused(player.vehicle))) {
                         idmask = idmask + 1024;
                     }
                     if (player.vehicle.vehiclename == "little_bird" || player.vehicle.vehiclename == "little_bird_mg") {
@@ -1745,22 +1737,22 @@ function evaluatesquadspawn() {
                     var_5966e8a05a4d1903[i].idmask = idmask;
                     self setclientomnvar("ui_tom_spawn_id_" + startindex + i, idmask);
                 }
-            } else {
-                if (isdefined(var_5966e8a05a4d1903[i].entity)) {
-                    var_5966e8a05a4d1903[i].entity = undefined;
-                    self setclientomnvar("ui_tom_spawn_entity_" + startindex + i, undefined);
-                }
-                if (isdefined(var_5966e8a05a4d1903[i].idmask) && var_5966e8a05a4d1903[i].idmask != -1) {
-                    var_5966e8a05a4d1903[i].idmask = -1;
-                    self setclientomnvar("ui_tom_spawn_id_" + startindex + i, -1);
-                }
+                continue;
+            }
+            if (isdefined(var_5966e8a05a4d1903[i].entity)) {
+                var_5966e8a05a4d1903[i].entity = undefined;
+                self setclientomnvar("ui_tom_spawn_entity_" + startindex + i, undefined);
+            }
+            if (isdefined(var_5966e8a05a4d1903[i].idmask) && var_5966e8a05a4d1903[i].idmask != -1) {
+                var_5966e8a05a4d1903[i].idmask = -1;
+                self setclientomnvar("ui_tom_spawn_id_" + startindex + i, -1);
             }
         }
         waitframe();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x569f
 // Size: 0x50e
@@ -1781,11 +1773,11 @@ function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
             respawntype = 3;
         }
     }
-    var_33c2a141ebc8f7ae = gettime();
+    initialtime = gettime();
     selectionmade = 0;
     while (!selectionmade) {
         currenttime = gettime();
-        spawndelay = (var_33c2a141ebc8f7ae + timeuntilspawn * 1000 - currenttime) / 1000;
+        spawndelay = (initialtime + timeuntilspawn * 1000 - currenttime) / 1000;
         switch (respawntype) {
         case 0:
             self.squadspawnconfirmed = 0;
@@ -1794,7 +1786,7 @@ function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
                 thread handlesquadspawnabort();
             }
             if (!spawnedasspectator) {
-                thread namespace_99ac021a7547cae3::respawn_asspectator(self.origin + (0, 0, 60), self.angles);
+                thread scripts/mp/playerlogic::respawn_asspectator(self.origin + (0, 0, 60), self.angles);
             }
             spawnedasspectator = 1;
             startindex = ter_op(isdefined(self.spawnselectedsquadmate), self.spawnselectedsquadmate, 0);
@@ -1831,10 +1823,10 @@ function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
             }
             break;
         case 1:
-            thread namespace_d7fe36703a9572fe::startspawncamera();
-            var_7f011a0a8adbdf3d = thread namespace_d7fe36703a9572fe::getspawncamerawaittime();
-            if (!isdefined(var_7f011a0a8adbdf3d)) {
-                var_7f011a0a8adbdf3d = 0;
+            thread scripts/mp/spawncamera::startspawncamera();
+            cameradelay = thread scripts/mp/spawncamera::getspawncamerawaittime();
+            if (!isdefined(cameradelay)) {
+                cameradelay = 0;
             }
             if (istrue(level.usec130spawnfirstonly)) {
                 self.spawnedusingc130 = 1;
@@ -1843,57 +1835,57 @@ function handlerespawnselection(spawnedasspectator, timeuntilspawn) {
             selectionmade = 1;
             break;
         case 2:
-            var_6109158034da3fe9 = gameflag("infil_will_run") && !istrue(gameflag("infil_started"));
-            if ((getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || getgametype() == "bigctf") && !var_6109158034da3fe9 && !gameflag("prematch_done")) {
-                var_c2106fa614419d22 = [[ level.var_e637d49948a038d3 ]](self.team);
-                var_5940f376a254619d = spawn("script_model", var_c2106fa614419d22.startorigin);
-                var_5940f376a254619d setmodel("tag_origin");
-                var_5940f376a254619d.angles = var_c2106fa614419d22.startangles;
-                self cameralinkto(var_5940f376a254619d, "tag_origin");
-                var_5940f376a254619d moveto(var_c2106fa614419d22.endorigin, 18);
-                var_5940f376a254619d rotateto(var_c2106fa614419d22.endangles, 18);
+            caninfil = gameflag("infil_will_run") && !istrue(gameflag("infil_started"));
+            if ((getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "risk" || getgametype() == "bigctf") && !caninfil && !gameflag("prematch_done")) {
+                camerapositions = [[ level.var_e637d49948a038d3 ]](self.team);
+                cament = spawn("script_model", camerapositions.startorigin);
+                cament setmodel("tag_origin");
+                cament.angles = camerapositions.startangles;
+                self cameralinkto(cament, "tag_origin");
+                cament moveto(camerapositions.endorigin, 18);
+                cament rotateto(camerapositions.endangles, 18);
                 gameflagwait("prematch_done");
                 self cameraunlink();
                 self.spawncameratime = 0.5;
-                thread namespace_d7fe36703a9572fe::startspawncamera(0, 0.5, 0.5);
+                thread scripts/mp/spawncamera::startspawncamera(0, 0.5, 0.5);
             } else {
                 self.spawncameratime = 0.5;
-                thread namespace_d7fe36703a9572fe::startspawncamera(0, 0.5, 0.5);
+                thread scripts/mp/spawncamera::startspawncamera(0, 0.5, 0.5);
             }
-            var_7f011a0a8adbdf3d = thread namespace_d7fe36703a9572fe::getspawncamerawaittime();
-            if (!isdefined(var_7f011a0a8adbdf3d)) {
-                var_7f011a0a8adbdf3d = 0;
+            cameradelay = thread scripts/mp/spawncamera::getspawncamerawaittime();
+            if (!isdefined(cameradelay)) {
+                cameradelay = 0;
             }
-            waitforspawnselection(spawndelay + var_7f011a0a8adbdf3d);
+            waitforspawnselection(spawndelay + cameradelay);
             if (isdefined(self.selectedspawnarea)) {
                 selectionmade = 1;
             }
             break;
         case 3:
-            thread namespace_d7fe36703a9572fe::startspawncamera();
-            var_7f011a0a8adbdf3d = thread namespace_d7fe36703a9572fe::getspawncamerawaittime();
-            if (!isdefined(var_7f011a0a8adbdf3d)) {
-                var_7f011a0a8adbdf3d = 0;
+            thread scripts/mp/spawncamera::startspawncamera();
+            cameradelay = thread scripts/mp/spawncamera::getspawncamerawaittime();
+            if (!isdefined(cameradelay)) {
+                cameradelay = 0;
             }
-            timeuntilspawnmessaging(spawndelay + var_7f011a0a8adbdf3d, "waiting_to_spawn");
+            timeuntilspawnmessaging(spawndelay + cameradelay, "waiting_to_spawn");
             selectionmade = 1;
             break;
         }
     }
     if (needsbuttontorespawn()) {
         if (!istrue(self.waitingtoselectclass)) {
-            namespace_58fb4f2e73fd41a0::setlowermessageomnvar("press_to_spawn");
+            scripts/mp/utility/lower_message::setlowermessageomnvar("press_to_spawn");
         }
         if (!spawnedasspectator) {
-            thread namespace_99ac021a7547cae3::respawn_asspectator(self.origin + (0, 0, 60), self.angles);
+            thread scripts/mp/playerlogic::respawn_asspectator(self.origin + (0, 0, 60), self.angles);
         }
         spawnedasspectator = 1;
         waitrespawnbutton();
     }
-    thread namespace_d7fe36703a9572fe::endspawncamera();
+    thread scripts/mp/spawncamera::endspawncamera();
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5bb4
 // Size: 0x50
@@ -1908,7 +1900,7 @@ function handlesquadspawnabort() {
     self notify("squad_spawn_abort");
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c0b
 // Size: 0xb1
@@ -1919,20 +1911,22 @@ function handlesquadspawncycle() {
     self notify("handleSquadSpawnCycle");
     self endon("handleSquadSpawnCycle");
     self notifyonplayercommand("cyclePos", "+gostand");
-    while (1) {
+    while (true) {
         result = waittill_any_return_2("cyclePos", "cycleNeg");
         if (isdefined(result)) {
             current = self getspectatingplayer();
             if (result == "cyclePos") {
                 thread cyclevalidsquadspectate(current.var_3f78c6a0862f9e25, 1);
-            } else if (result == "cycleNeg") {
+                continue;
+            }
+            if (result == "cycleNeg") {
                 thread cyclevalidsquadspectate(current.var_3f78c6a0862f9e25, 0);
             }
         }
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5cc3
 // Size: 0x55
@@ -1941,99 +1935,99 @@ function handlesquadspawnconfirm(timeuntilspawn) {
     self endon("end_respawn");
     self endon("squad_spawn_abort");
     timeuntilspawnmessaging(timeuntilspawn, "waiting_to_spawn");
-    namespace_58fb4f2e73fd41a0::setlowermessageomnvar("squad_spawn");
+    scripts/mp/utility/lower_message::setlowermessageomnvar("squad_spawn");
     self notifyonplayercommand("respawn_confirm", "+usereload");
     self waittill("respawn_confirm");
-    return 1;
+    return true;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d20
 // Size: 0xed
-function cyclevalidsquadspectate(startindex, var_9fc5fbeae7221fb6) {
+function cyclevalidsquadspectate(startindex, positive) {
     self endon("disconnect");
     self endon("end_respawn");
     self endon("squad_spawn_abort");
     self notify("cycleValidSquadSpectate");
     self endon("cycleValidSquadSpectate");
-    players = level.squaddata[self.team][self.var_ff97225579de16a].players;
-    var_39d4bb9b710ffd49 = startindex;
-    step = ter_op(var_9fc5fbeae7221fb6, 1, -1);
+    players = level.squaddata[self.team][self.sessionsquadid].players;
+    checkindex = startindex;
+    step = ter_op(positive, 1, -1);
     for (i = 0; i < players.size; i++) {
-        if (iscurrentspectatetarget(players[var_39d4bb9b710ffd49]) || !issquadspawnable(players[var_39d4bb9b710ffd49])) {
-            var_39d4bb9b710ffd49 = var_39d4bb9b710ffd49 + step;
-            if (var_39d4bb9b710ffd49 == players.size) {
-                var_39d4bb9b710ffd49 = 0;
+        if (iscurrentspectatetarget(players[checkindex]) || !issquadspawnable(players[checkindex])) {
+            checkindex = checkindex + step;
+            if (checkindex == players.size) {
+                checkindex = 0;
             }
-            if (var_39d4bb9b710ffd49 == -1) {
-                var_39d4bb9b710ffd49 = players.size - 1;
+            if (checkindex == -1) {
+                checkindex = players.size - 1;
             }
-        } else {
-            thread monitorsquadspectator(players[var_39d4bb9b710ffd49]);
-            return 1;
+            continue;
         }
+        thread monitorsquadspectator(players[checkindex]);
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e15
 // Size: 0x36
 function iscurrentspectatetarget(player) {
     if (!isdefined(self.forcespectatorclient)) {
-        return 0;
+        return false;
     }
-    var_279bb6642ec5e695 = self getspectatingplayer();
-    if (!isdefined(var_279bb6642ec5e695)) {
-        return 0;
+    spectatingteammate = self getspectatingplayer();
+    if (!isdefined(spectatingteammate)) {
+        return false;
     }
-    return player == var_279bb6642ec5e695;
+    return player == spectatingteammate;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e53
 // Size: 0x49
 function issquadspawnable(player) {
     if (!isdefined(player)) {
-        return 0;
+        return false;
     }
     if (!isreallyalive(player)) {
-        return 0;
+        return false;
     }
     if (istrue(player.inspawncamera)) {
-        return 0;
+        return false;
     }
     if (player isskydiving()) {
-        return 0;
+        return false;
     }
     if (player isusingremote()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ea4
 // Size: 0x28
 function isplayerindanger_think() {
     thread internal_isplayerindanger_think();
     if (getdvarint(@"hash_99a922188ec4750f", 0) == 1) {
-        thread namespace_90f75d3fdf89a43e::squadspawndebug();
+        thread scripts/mp/spawnscoring::squadspawndebug();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ed3
 // Size: 0x34
 function internal_isplayerindanger_think() {
     self endon("death_or_disconnect");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         if (issquadspawnable(self)) {
             self.indanger = issquadmateindanger(self);
         }
@@ -2041,57 +2035,57 @@ function internal_isplayerindanger_think() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f0e
 // Size: 0x220
 function issquadmateindanger(player) {
     currenttime = gettime();
     if (isdefined(player) && isdefined(player.pers["lastDamageTime"]) && player.pers["lastDamageTime"] + 5000 > currenttime || isdefined(player.lasttimedamaged) && player.lasttimedamaged + 5000 > currenttime) {
-        return 1;
+        return true;
     }
     if (player isonladder()) {
-        return 1;
+        return true;
     }
-    player namespace_25c5a6f43bb97b43::validaterecentattackers();
+    player scripts/mp/battlechatter_mp::validaterecentattackers();
     if (isdefined(player.recentattackers) && player.recentattackers.size > 0) {
-        return 1;
+        return true;
     }
     if (isdefined(player.lastweaponfiretimestart) && player.lastweaponfiretimestart + 3000 > currenttime) {
-        return 1;
+        return true;
     }
     if (isdefined(player.lastweaponfiretimestart) && isdefined(player.lastweaponfiretimeend) && player.lastweaponfiretimestart > player.lastweaponfiretimeend || isdefined(player.lastweaponfiretimestart) && !isdefined(player.lastweaponfiretimeend)) {
-        return 1;
+        return true;
     }
     var_f2e473b17ca70265 = player getclosestenemy(384, 100, 1);
     if (isdefined(var_f2e473b17ca70265)) {
-        return 1;
+        return true;
     }
     if (isdefined(player.vehicle)) {
         if (istrue(player.vehicle.burningdown)) {
-            return 1;
+            return true;
         }
-        if (istrue(namespace_d325722f2754c2c4::islockedonto(player.vehicle))) {
-            return 1;
+        if (istrue(scripts/cp_mp/utility/weapon_utility::islockedonto(player.vehicle))) {
+            return true;
         }
     }
-    if (isdefined(player) && player namespace_d9c77dc2a6fe29c6::istouchingoobtrigger()) {
-        return 1;
+    if (isdefined(player) && player scripts/mp/outofbounds::istouchingoobtrigger()) {
+        return true;
     }
     if (getdvarint(@"hash_3728c11e46ec4b26", 0) == 1) {
         bucket = player getspawnbucketforplayer(1, player.origin);
-        bucket = namespace_b2d5aa2baf2b5701::getspawnbucketfromstring(bucket);
+        bucket = scripts/mp/spawnlogic::getspawnbucketfromstring(bucket);
         if (bucket >= 2) {
-            return 1;
+            return true;
         }
     }
     if (isdefined(player) && isdefined(player.nogroundfoundtime) && player.nogroundfoundtime + 1000 > currenttime) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6136
 // Size: 0x103
@@ -2121,7 +2115,7 @@ function monitorsquadspectator(target) {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6240
 // Size: 0x101
@@ -2135,45 +2129,45 @@ function spawntoc130() {
         return;
     }
     if (!istrue(level.usec130spawnfirstonly) && isdefined(level.timeuntilnextc130) && level.timeuntilnextc130[self.team] - gettime() <= (level.flighttime + level.timebetweenc130passes) * 1000) {
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("waiting_for_c130", int(level.timeuntilnextc130[self.team]));
+        scripts/mp/utility/lower_message::setlowermessageomnvar("waiting_for_c130", int(level.timeuntilnextc130[self.team]));
     } else {
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar("clear_lower_msg");
+        scripts/mp/utility/lower_message::setlowermessageomnvar("clear_lower_msg");
     }
-    thread namespace_35f66e61f847336c::spawnplayertoc130();
+    thread scripts/mp/gametypes/arm_vehicles::spawnplayertoc130();
     if (isdefined(level.spawnc130[self.team])) {
         self waittill("c130_ready");
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6348
 // Size: 0x69
 function needsbuttontorespawn() {
-    if (namespace_775507ba36294dfb::gettweakablevalue("player", "forcerespawn") != 0) {
-        return 0;
+    if (scripts/mp/tweakables::gettweakablevalue("player", "forcerespawn") != 0) {
+        return false;
     }
     if (!self.hasspawned) {
-        return 0;
+        return false;
     }
-    wavebased = getdvarint(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_waverespawndelay")) > 0;
+    wavebased = getdvarint(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_waverespawndelay")) > 0;
     if (wavebased) {
-        return 0;
+        return false;
     }
     if (self.wantsafespawn) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63b9
 // Size: 0x2b
 function waitrespawnbutton() {
     self endon("disconnect");
     self endon("end_respawn");
-    while (1) {
+    while (true) {
         if (self usebuttonpressed()) {
             break;
         }
@@ -2181,7 +2175,7 @@ function waitrespawnbutton() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63eb
 // Size: 0x52
@@ -2191,12 +2185,12 @@ function timeuntilspawnmessaging(timeuntilspawn, reason) {
         if (!isdefined(reason)) {
             reason = "waiting_to_spawn";
         }
-        namespace_58fb4f2e73fd41a0::setlowermessageomnvar(reason, int(gettime() + timeuntilspawn * 1000));
+        scripts/mp/utility/lower_message::setlowermessageomnvar(reason, int(gettime() + timeuntilspawn * 1000));
         waittill_any_timeout_no_endon_death_1(timeuntilspawn, "force_spawn");
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6444
 // Size: 0x2a9
@@ -2208,20 +2202,20 @@ function managesquadcameraposition(ref) {
     self endon("manageSquadCameraPosition");
     index = undefined;
     if (ref == "squad_leader") {
-        index = level.squaddata[self.team][self.var_ff97225579de16a].squadleader.var_3f78c6a0862f9e25;
+        index = level.squaddata[self.team][self.sessionsquadid].squadleader.var_3f78c6a0862f9e25;
     } else {
         index = int(getsubstr(ref, ref.size - 1, ref.size));
     }
-    var_356a015aa1975023 = undefined;
-    if (isdefined(level.squaddata[self.team]) && isdefined(level.squaddata[self.team][self.var_ff97225579de16a]) && isdefined(level.squaddata[self.team][self.var_ff97225579de16a].players[index])) {
-        var_356a015aa1975023 = level.squaddata[self.team][self.var_ff97225579de16a].players[index];
+    goalplayer = undefined;
+    if (isdefined(level.squaddata[self.team]) && isdefined(level.squaddata[self.team][self.sessionsquadid]) && isdefined(level.squaddata[self.team][self.sessionsquadid].players[index])) {
+        goalplayer = level.squaddata[self.team][self.sessionsquadid].players[index];
     }
     forward = level.spawnselectionteamforward[self.team];
-    while (isdefined(self.spawncameraent) && isdefined(var_356a015aa1975023)) {
+    while (isdefined(self.spawncameraent) && isdefined(goalplayer)) {
         goalposition = [];
         goalangles = [];
         if (istrue(level.usestaticspawnselectioncamera)) {
-            temp = namespace_8e28f8b325a83325::getstaticcameraposition(self.team);
+            temp = scripts/mp/spawnselection::getstaticcameraposition(self.team);
             goalposition = temp.origin;
             goalangles = temp.angles;
         } else {
@@ -2229,10 +2223,10 @@ function managesquadcameraposition(ref) {
             if (istrue(level.useunifiedspawnselectioncameraheight)) {
                 heightoffset = function_87bbbee0bbf27304();
             }
-            goalposition = var_356a015aa1975023.origin + forward * -8500 + (0, 0, heightoffset);
-            var_67794ff6e49c4961 = vectornormalize(var_356a015aa1975023.origin - goalposition);
-            goalangles = vectortoanglessafe(var_67794ff6e49c4961, (0, 0, 1));
-            goalposition = goalposition + [[ level.var_3c89983e2030dfff ]](self.team, var_356a015aa1975023.origin);
+            goalposition = goalplayer.origin + forward * -8500 + (0, 0, heightoffset);
+            goalvector = vectornormalize(goalplayer.origin - goalposition);
+            goalangles = vectortoanglessafe(goalvector, (0, 0, 1));
+            goalposition = goalposition + [[ level.var_3c89983e2030dfff ]](self.team, goalplayer.origin);
         }
         self.spawncameratargetpos = goalposition;
         self.spawncameratargetang = goalangles;
@@ -2242,7 +2236,7 @@ function managesquadcameraposition(ref) {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66f4
 // Size: 0x2e5
@@ -2253,14 +2247,14 @@ function managevehiclecameraposition(ref) {
     self notify("manageVehicleCameraPosition");
     self endon("manageVehicleCameraPosition");
     index = int(getsubstr(ref, ref.size - 1, ref.size));
-    var_a5d118f040f60db0 = level.spawnselectionlocations[ref][self.team].dynamicent;
+    vehicleent = level.spawnselectionlocations[ref][self.team].dynamicent;
     forward = level.spawnselectionteamforward[self.team];
     var_ff816c44d164cac1 = 0;
-    while (isdefined(self.spawncameraent) && isdefined(var_a5d118f040f60db0) && !istrue(var_a5d118f040f60db0.isdestroyed)) {
+    while (isdefined(self.spawncameraent) && isdefined(vehicleent) && !istrue(vehicleent.isdestroyed)) {
         goalposition = [];
         goalangles = [];
         if (istrue(level.usestaticspawnselectioncamera)) {
-            temp = namespace_8e28f8b325a83325::getstaticcameraposition(self.team);
+            temp = scripts/mp/spawnselection::getstaticcameraposition(self.team);
             goalposition = temp.origin;
             goalangles = temp.angles;
         } else {
@@ -2268,11 +2262,11 @@ function managevehiclecameraposition(ref) {
             if (istrue(level.useunifiedspawnselectioncameraheight)) {
                 heightoffset = function_87bbbee0bbf27304();
             }
-            goalposition = var_a5d118f040f60db0.origin + forward * -8500 + (0, 0, heightoffset);
+            goalposition = vehicleent.origin + forward * -8500 + (0, 0, heightoffset);
             groundpos = level.spawnselectionlocations[ref][self.team].anchorentity.origin;
             camerapos = groundpos + forward * -8500 + (0, 0, heightoffset);
-            var_6d399a908d913b0b = vectornormalize(groundpos - camerapos);
-            goalangles = vectortoanglessafe(var_6d399a908d913b0b, (0, 0, 1));
+            toground = vectornormalize(groundpos - camerapos);
+            goalangles = vectortoanglessafe(toground, (0, 0, 1));
             goalposition = goalposition + [[ level.var_3c89983e2030dfff ]](self.team, groundpos);
         }
         self.spawncameratargetpos = goalposition;
@@ -2289,7 +2283,7 @@ function managevehiclecameraposition(ref) {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69e0
 // Size: 0xe5
@@ -2299,37 +2293,37 @@ function managevehiclehealthui(ref) {
     self endon("tac_ops_spawn_focus_changed");
     self notify("manageVehicleHealthUI");
     self endon("manageVehicleHealthUI");
-    var_a5d118f040f60db0 = level.spawnselectionlocations[ref][self.team].dynamicent;
+    vehicleent = level.spawnselectionlocations[ref][self.team].dynamicent;
     self setclientomnvar("ui_tom_veh_health_percent", 0);
     waitframe();
     var_3ed7c323526c2b33 = undefined;
-    while (isdefined(var_a5d118f040f60db0)) {
-        var_559a0810819cf4f0 = int(clamp(var_a5d118f040f60db0.health / var_a5d118f040f60db0.maxhealth * 100, 0, 100));
+    while (isdefined(vehicleent)) {
+        healthpercent = int(clamp(vehicleent.health / vehicleent.maxhealth * 100, 0, 100));
         /#
-            if (var_559a0810819cf4f0 < 0) {
+            if (healthpercent < 0) {
                 println("gw_fob_0");
             }
         #/
-        if (!isdefined(var_3ed7c323526c2b33) || var_3ed7c323526c2b33 != var_559a0810819cf4f0) {
-            self setclientomnvar("ui_tom_veh_health_percent", int(var_559a0810819cf4f0));
-            var_3ed7c323526c2b33 = var_559a0810819cf4f0;
+        if (!isdefined(var_3ed7c323526c2b33) || var_3ed7c323526c2b33 != healthpercent) {
+            self setclientomnvar("ui_tom_veh_health_percent", int(healthpercent));
+            var_3ed7c323526c2b33 = healthpercent;
         }
         waitframe();
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6acc
 // Size: 0x383
 function getclosestavailablespawnlocation() {
     closestdistsq = undefined;
-    var_f7f7ea6e8e4c442d = undefined;
+    closestref = undefined;
     if (!gameflag("prematch_done") && (getgametype() == "arm" || getgametype() == "conflict" || getgametype() == "bigctf") || getgametype() == "risk" || !isdefined(self.hasvisitedgwspawnselection)) {
         if (self.team == "axis" || self.team == "team_three" || self.team == "team_four") {
-            var_f7f7ea6e8e4c442d = "gw_fob_axisHQ";
+            closestref = "gw_fob_axisHQ";
         } else {
-            var_f7f7ea6e8e4c442d = "gw_fob_alliesHQ";
+            closestref = "gw_fob_alliesHQ";
         }
         self.hasvisitedgwspawnselection = 1;
     } else {
@@ -2342,17 +2336,17 @@ function getclosestavailablespawnlocation() {
             if (ref == "gw_fob_" + self.team + "HQ") {
                 if (distsq < 4194304) {
                     closestdistsq = distsq;
-                    var_f7f7ea6e8e4c442d = ref;
+                    closestref = ref;
                     break;
                 }
             }
             if (!isdefined(closestdistsq) || distsq < closestdistsq) {
                 closestdistsq = distsq;
-                var_f7f7ea6e8e4c442d = ref;
+                closestref = ref;
             }
         }
-        if (isdefined(level.squadspawnselectionlocations) && isdefined(level.squadspawnselectionlocations[self.team][self.var_ff97225579de16a])) {
-            locations = getsquadspawnlocations(self.team, self.var_ff97225579de16a);
+        if (isdefined(level.squadspawnselectionlocations) && isdefined(level.squadspawnselectionlocations[self.team][self.sessionsquadid])) {
+            locations = getsquadspawnlocations(self.team, self.sessionsquadid);
             foreach (loc in locations) {
                 if (loc.dynamicent == self) {
                     continue;
@@ -2360,40 +2354,40 @@ function getclosestavailablespawnlocation() {
                 distsq = distancesquared(self.origin, loc.dynamicent.origin);
                 if (distsq < closestdistsq) {
                     closestdistsq = distsq;
-                    var_f7f7ea6e8e4c442d = loc.typeref;
+                    closestref = loc.typeref;
                 }
             }
         }
     }
     /#
-        if (issubstr(var_f7f7ea6e8e4c442d, "spawnSelectSquad")) {
+        if (issubstr(closestref, "spawnSelectSquad")) {
             println("_safe_");
         }
     #/
     id = -1;
-    if (isdefined(var_f7f7ea6e8e4c442d)) {
-        if (!issubstr(var_f7f7ea6e8e4c442d, "squad") && !issubstr(var_f7f7ea6e8e4c442d, "vehicle") && !issubstr(var_f7f7ea6e8e4c442d, "HQ")) {
-            var_ecb1ed5831deb517 = var_f7f7ea6e8e4c442d + "_" + level.localeid;
+    if (isdefined(closestref)) {
+        if (!issubstr(closestref, "squad") && !issubstr(closestref, "vehicle") && !issubstr(closestref, "HQ")) {
+            var_ecb1ed5831deb517 = closestref + "_" + level.localeid;
             id = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, var_ecb1ed5831deb517);
         }
         if (id == -1) {
-            id = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, var_f7f7ea6e8e4c442d);
+            id = tablelookuprownum("mp/spawnSelectionMapData.csv", 0, closestref);
         }
         self setclientomnvar("ui_tom_previous_selection", id);
-        self.forcedspawncameraref = var_f7f7ea6e8e4c442d;
-    } else {
-        self setclientomnvar("ui_tom_previous_selection", -1);
-        self.forcedspawncameraref = undefined;
+        self.forcedspawncameraref = closestref;
+        return;
     }
+    self setclientomnvar("ui_tom_previous_selection", -1);
+    self.forcedspawncameraref = undefined;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e56
 // Size: 0x4d6
 function getstaticcameraposition(team) {
     /#
-        assert(isdefined(namespace_36f464722d326bbe::getlocaleid()), "Asking for static spawn selection camera when no locale has been set.");
+        assert(isdefined(scripts/cp_mp/utility/game_utility::getlocaleid()), "Asking for static spawn selection camera when no locale has been set.");
     #/
     var_fbc978e58d9efd71 = spawnstruct();
     if (isdefined(level.var_45abec6de5366021) && isdefined(level.var_7b73a66e2d4ca32f)) {
@@ -2485,7 +2479,7 @@ function getstaticcameraposition(team) {
     return var_fbc978e58d9efd71;
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7334
 // Size: 0x15f
@@ -2510,34 +2504,32 @@ function function_87bbbee0bbf27304() {
             return 12000;
         default:
             return 7000;
-            break;
         }
-    } else {
-        switch (level.localeid) {
-        case #"hash_369d95655b32cf37":
-            return 7000;
-        case #"hash_369d96655b32d0ca":
-            return 8000;
-        case #"hash_369d97655b32d25d":
-            return 8000;
-        case #"hash_369d88655b32bac0":
-            return 8000;
-        case #"hash_369d89655b32bc53":
-            return 8000;
-        case #"hash_2cd4bf8e90f233e7":
-            return 7000;
-        case #"hash_2cd4be8e90f23254":
-            return 5000;
-        case #"hash_2cd7bf8e90f4727e":
-            return 12000;
-        default:
-            return 7000;
-            break;
-        }
+        return;
+    }
+    switch (level.localeid) {
+    case #"hash_369d95655b32cf37":
+        return 7000;
+    case #"hash_369d96655b32d0ca":
+        return 8000;
+    case #"hash_369d97655b32d25d":
+        return 8000;
+    case #"hash_369d88655b32bac0":
+        return 8000;
+    case #"hash_369d89655b32bc53":
+        return 8000;
+    case #"hash_2cd4bf8e90f233e7":
+        return 7000;
+    case #"hash_2cd4be8e90f23254":
+        return 5000;
+    case #"hash_2cd7bf8e90f4727e":
+        return 12000;
+    default:
+        return 7000;
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x749a
 // Size: 0x10d
@@ -2546,7 +2538,7 @@ function updatefobindanger() {
         return;
     }
     level thread updatefobspawnsindanger();
-    while (1) {
+    while (true) {
         foreach (team in level.teamnamelist) {
             foreach (entry in level.availablespawnlocations[team]) {
                 selected = level.spawnselectionlocations[entry][team];
@@ -2559,22 +2551,22 @@ function updatefobindanger() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75ae
 // Size: 0x303
 function updatefobspawnsindanger() {
-    while (1) {
+    while (true) {
         foreach (team in level.teamnamelist) {
-            var_f7632b4589b2bed4 = getteamdata(team, "players")[0];
+            testplayer = getteamdata(team, "players")[0];
             foreach (location in level.availablespawnlocations[team]) {
                 if (!issubstr(location, "HQ") && issubstr(location, "fob")) {
-                    var_2ebe16a8c2cafe36 = 1;
-                    var_786e91448e72be = isdefined(level.spawnglobals.spawnsets[location + "_safe_" + team]);
-                    var_8a0fca89b6c1a093 = location + "_" + team;
-                    var_363d9492f84cd9e5 = undefined;
-                    if (var_786e91448e72be) {
-                        var_363d9492f84cd9e5 = location + "_safe_" + team;
+                    canuseprimary = 1;
+                    canusefallback = isdefined(level.spawnglobals.spawnsets[location + "_safe_" + team]);
+                    primaryset = location + "_" + team;
+                    fallbackset = undefined;
+                    if (canusefallback) {
+                        fallbackset = location + "_safe_" + team;
                     }
                     if (isdefined(level.spawninfluencezones)) {
                         trigger = undefined;
@@ -2586,28 +2578,28 @@ function updatefobspawnsindanger() {
                             }
                         }
                         if (isdefined(trigger) && trigger isteamtouching(getotherteam(team)[0])) {
-                            var_2ebe16a8c2cafe36 = 0;
+                            canuseprimary = 0;
                         }
                     }
                     indanger = 0;
-                    if (isdefined(var_f7632b4589b2bed4)) {
+                    if (isdefined(testplayer)) {
                         var_1e77bb9e18bf61a7 = undefined;
                         var_55807291c518deed = undefined;
-                        if (var_2ebe16a8c2cafe36) {
-                            namespace_b2d5aa2baf2b5701::activatespawnset(var_8a0fca89b6c1a093, 1);
-                            var_1e77bb9e18bf61a7 = var_f7632b4589b2bed4 getspawnbucketforplayer();
-                            var_1e77bb9e18bf61a7 = namespace_b2d5aa2baf2b5701::getspawnbucketfromstring(var_1e77bb9e18bf61a7);
+                        if (canuseprimary) {
+                            scripts/mp/spawnlogic::activatespawnset(primaryset, 1);
+                            var_1e77bb9e18bf61a7 = testplayer getspawnbucketforplayer();
+                            var_1e77bb9e18bf61a7 = scripts/mp/spawnlogic::getspawnbucketfromstring(var_1e77bb9e18bf61a7);
                         }
-                        if (var_786e91448e72be) {
-                            namespace_b2d5aa2baf2b5701::activatespawnset(var_363d9492f84cd9e5, 1);
-                            var_55807291c518deed = var_f7632b4589b2bed4 getspawnbucketforplayer();
-                            var_55807291c518deed = namespace_b2d5aa2baf2b5701::getspawnbucketfromstring(var_55807291c518deed);
+                        if (canusefallback) {
+                            scripts/mp/spawnlogic::activatespawnset(fallbackset, 1);
+                            var_55807291c518deed = testplayer getspawnbucketforplayer();
+                            var_55807291c518deed = scripts/mp/spawnlogic::getspawnbucketfromstring(var_55807291c518deed);
                         }
-                        if (var_2ebe16a8c2cafe36 && var_786e91448e72be) {
+                        if (canuseprimary && canusefallback) {
                             indanger = var_1e77bb9e18bf61a7 >= 2 && var_55807291c518deed >= 2;
-                        } else if (var_2ebe16a8c2cafe36 && !var_786e91448e72be) {
+                        } else if (canuseprimary && !canusefallback) {
                             indanger = var_1e77bb9e18bf61a7 >= 2;
-                        } else if (var_786e91448e72be) {
+                        } else if (canusefallback) {
                             indanger = var_55807291c518deed >= 2;
                         }
                     }
@@ -2621,7 +2613,7 @@ function updatefobspawnsindanger() {
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78b8
 // Size: 0x2a1
@@ -2630,12 +2622,12 @@ function updatespecificfobindanger(location, player, team) {
     if (!isdefined(objectivekey) || !isdefined(level.objectives[objectivekey]) || !isdefined(level.objectives[objectivekey].spawnpointdangertime) || level.objectives[objectivekey].spawnpointdangertime == gettime()) {
         return;
     }
-    var_2ebe16a8c2cafe36 = 1;
-    var_786e91448e72be = isdefined(level.spawnglobals.spawnsets[location + "_safe_" + team]);
-    var_8a0fca89b6c1a093 = location + "_" + team;
-    var_363d9492f84cd9e5 = undefined;
-    if (var_786e91448e72be) {
-        var_363d9492f84cd9e5 = location + "_safe_" + team;
+    canuseprimary = 1;
+    canusefallback = isdefined(level.spawnglobals.spawnsets[location + "_safe_" + team]);
+    primaryset = location + "_" + team;
+    fallbackset = undefined;
+    if (canusefallback) {
+        fallbackset = location + "_safe_" + team;
     }
     if (isdefined(level.spawninfluencezones)) {
         trigger = undefined;
@@ -2647,28 +2639,28 @@ function updatespecificfobindanger(location, player, team) {
             }
         }
         if (isdefined(trigger) && isdefined(trigger.numplayers) && trigger.numplayers[getotherteam(team)[0]] > 0) {
-            var_2ebe16a8c2cafe36 = 0;
+            canuseprimary = 0;
         }
     }
     indanger = 0;
     if (isdefined(player)) {
         var_1e77bb9e18bf61a7 = undefined;
         var_55807291c518deed = undefined;
-        if (var_2ebe16a8c2cafe36) {
-            namespace_b2d5aa2baf2b5701::activatespawnset(var_8a0fca89b6c1a093, 1);
+        if (canuseprimary) {
+            scripts/mp/spawnlogic::activatespawnset(primaryset, 1);
             var_1e77bb9e18bf61a7 = player getspawnbucketforplayer();
-            var_1e77bb9e18bf61a7 = namespace_b2d5aa2baf2b5701::getspawnbucketfromstring(var_1e77bb9e18bf61a7);
+            var_1e77bb9e18bf61a7 = scripts/mp/spawnlogic::getspawnbucketfromstring(var_1e77bb9e18bf61a7);
         }
-        if (var_786e91448e72be) {
-            namespace_b2d5aa2baf2b5701::activatespawnset(var_363d9492f84cd9e5, 1);
+        if (canusefallback) {
+            scripts/mp/spawnlogic::activatespawnset(fallbackset, 1);
             var_55807291c518deed = player getspawnbucketforplayer();
-            var_55807291c518deed = namespace_b2d5aa2baf2b5701::getspawnbucketfromstring(var_55807291c518deed);
+            var_55807291c518deed = scripts/mp/spawnlogic::getspawnbucketfromstring(var_55807291c518deed);
         }
-        if (var_2ebe16a8c2cafe36 && var_786e91448e72be) {
+        if (canuseprimary && canusefallback) {
             indanger = var_1e77bb9e18bf61a7 >= 2 && var_55807291c518deed >= 2;
-        } else if (var_2ebe16a8c2cafe36 && !var_786e91448e72be) {
+        } else if (canuseprimary && !canusefallback) {
             indanger = var_1e77bb9e18bf61a7 >= 2;
-        } else if (var_786e91448e72be) {
+        } else if (canusefallback) {
             indanger = var_55807291c518deed >= 2;
         }
     }
@@ -2676,28 +2668,28 @@ function updatespecificfobindanger(location, player, team) {
     level.objectives[objectivekey].spawnpointdangertime = gettime();
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7b60
 // Size: 0x168
 function vehicle_showteamtanks() {
     self endon("disconnect");
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     foreach (tank in level.trackedtanks[self.team]) {
-        namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(tank.spawnselectionmarker.objidnum, self);
+        scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(tank.spawnselectionmarker.objidnum, self);
     }
     while (self.inspawnselection) {
         waitframe();
     }
     foreach (tank in level.trackedtanks["axis"]) {
-        namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(tank.spawnselectionmarker.objidnum, self);
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(tank.spawnselectionmarker.objidnum, self);
     }
     foreach (tank in level.trackedtanks["allies"]) {
-        namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(tank.spawnselectionmarker.objidnum, self);
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(tank.spawnselectionmarker.objidnum, self);
     }
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ccf
 // Size: 0x215
@@ -2707,30 +2699,30 @@ function function_f83711dd7546db96() {
     }
     if (self.team == "allies") {
         if (level.var_a50b22fa98674a50) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.marker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.marker.objidnum, self);
         } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.marker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.marker.objidnum, self);
         }
         if (level.var_f15becfbc1b01a1b) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
         } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
         }
-    } else {
-        if (level.var_a50b22fa98674a50) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.marker.objidnum, self);
-        } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.marker.objidnum, self);
-        }
-        if (level.var_f15becfbc1b01a1b) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
-        } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
-        }
+        return;
     }
+    if (level.var_a50b22fa98674a50) {
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.marker.objidnum, self);
+    } else {
+        scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.marker.objidnum, self);
+    }
+    if (level.var_f15becfbc1b01a1b) {
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
+        return;
+    }
+    scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
 }
 
-// Namespace namespace_f463d4704ecd6902/namespace_8e28f8b325a83325
+// Namespace spawnselection / scripts/mp/spawnselection
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7eeb
 // Size: 0x215
@@ -2740,26 +2732,26 @@ function function_dc659688380c4195() {
     }
     if (self.team == "allies") {
         if (level.var_757ec02df4d678f5) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.marker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.marker.objidnum, self);
         } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.marker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.marker.objidnum, self);
         }
         if (level.var_6f40c2b6970373c0) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
         } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.enemymarker.objidnum, self);
         }
-    } else {
-        if (level.var_757ec02df4d678f5) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.marker.objidnum, self);
-        } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.marker.objidnum, self);
-        }
-        if (level.var_6f40c2b6970373c0) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
-        } else {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
-        }
+        return;
     }
+    if (level.var_757ec02df4d678f5) {
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.axishqloc.marker.objidnum, self);
+    } else {
+        scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.axishqloc.marker.objidnum, self);
+    }
+    if (level.var_6f40c2b6970373c0) {
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
+        return;
+    }
+    scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(level.gw_objstruct.allieshqloc.enemymarker.objidnum, self);
 }
 

@@ -27,18 +27,18 @@
 
 #namespace assault;
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x646
 // Size: 0x272
 function main() {
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
     allowed[1] = "sd";
     allowed[2] = "bombzone";
     allowed[3] = "blocker";
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -66,7 +66,7 @@ function main() {
     level.ontimelimit = &ontimelimit;
     level.onnormaldeath = &onnormaldeath;
     level.onobjectivecomplete = &onobjectivecomplete;
-    level.resetuiomnvargamemode = &namespace_fa795886dfc5f58a::resetuiomnvargamemode;
+    level.resetuiomnvargamemode = &scripts/mp/gametypes/obj_bombzone::resetuiomnvargamemode;
     level.allowlatecomers = 0;
     game["dialog"]["offense_obj"] = "obj_destroy";
     game["dialog"]["defense_obj"] = "obj_defend";
@@ -82,7 +82,7 @@ function main() {
     #/
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8bf
 // Size: 0x1a1
@@ -110,7 +110,7 @@ function initializematchrules() {
     registerhalftimedvar("assault", 0);
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x1d
@@ -119,7 +119,7 @@ function onprecachegametype() {
     game["bomb_recovered_sound"] = "iw9_mp_ui_objective_taken";
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x16d
@@ -153,40 +153,40 @@ function onstartgametype() {
     thread initializeobjectives();
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbff
 // Size: 0x9c
 function initspawns() {
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_assault_spawn_attacker_start");
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_assault_spawn_defender_start");
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    scripts/mp/spawnlogic::addstartspawnpoints("mp_assault_spawn_attacker_start");
+    scripts/mp/spawnlogic::addstartspawnpoints("mp_assault_spawn_defender_start");
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
     level.assaultspawns = [];
     initbombsitespawns("attacker");
     initbombsitespawns("defender");
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xca2
 // Size: 0xdc
 function initbombsitespawns(side) {
     level.assaultspawns[side] = [];
     spawnpointname = "mp_assault_spawn_" + side;
-    spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray(spawnpointname);
+    spawnpoints = scripts/mp/spawnlogic::getspawnpointarray(spawnpointname);
     foreach (point in spawnpoints) {
-        var_4655da7a5e810735 = point.script_noteworthy;
-        if (!isdefined(level.assaultspawns[side][var_4655da7a5e810735])) {
-            level.assaultspawns[side][var_4655da7a5e810735] = [];
+        pointlabel = point.script_noteworthy;
+        if (!isdefined(level.assaultspawns[side][pointlabel])) {
+            level.assaultspawns[side][pointlabel] = [];
         }
-        level.assaultspawns[side][var_4655da7a5e810735][level.assaultspawns[side][var_4655da7a5e810735].size] = point;
+        level.assaultspawns[side][pointlabel][level.assaultspawns[side][pointlabel].size] = point;
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd85
 // Size: 0xbf
@@ -197,22 +197,22 @@ function getspawnpoint() {
         side = "attacker";
     }
     if (level.ingraceperiod) {
-        spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_assault_spawn_" + side + "_start");
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
+        spawnpoints = scripts/mp/spawnlogic::getspawnpointarray("mp_assault_spawn_" + side + "_start");
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints);
     } else {
-        var_99e78e0020363c33 = level.curobj.label;
-        var_ebb926478ddc1722 = level.assaultspawns[side][var_99e78e0020363c33];
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_random(var_ebb926478ddc1722);
+        zonelabel = level.curobj.label;
+        filteredspawnpoints = level.assaultspawns[side][zonelabel];
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint_random(filteredspawnpoints);
     }
     return spawnpoint;
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe4c
 // Size: 0xea
-function onspawnplayer(var_9156b53bcf7ce573) {
-    if (namespace_36f464722d326bbe::isgameparticipant(self)) {
+function onspawnplayer(revivespawn) {
+    if (scripts/cp_mp/utility/game_utility::isgameparticipant(self)) {
         self.isplanting = 0;
         self.isdefusing = 0;
         self.isbombcarrier = 0;
@@ -234,16 +234,16 @@ function onspawnplayer(var_9156b53bcf7ce573) {
     self allowboostjump(allowjump);
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0xf3d
 // Size: 0x69
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     self setclientomnvar("ui_carrying_bomb", 0);
     thread checkallowspectating();
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfad
 // Size: 0x89
@@ -259,11 +259,11 @@ function checkallowspectating() {
         update = 1;
     }
     if (update) {
-        namespace_5aeecefc462876::updatespectatesettings();
+        scripts/mp/spectating::updatespectatesettings();
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x103d
 // Size: 0xea
@@ -276,18 +276,18 @@ function sd_endgame(winningteam, endreasontext) {
     level.finalkillcam_winner = winningteam;
     if (endreasontext == game["end_reason"]["target_destroyed"] || endreasontext == game["end_reason"]["bomb_defused"]) {
         if (!isdefined(level.finalkillcam_killcamentityindex[winningteam]) || level.finalkillcam_killcamentityindex[winningteam] != level.curobj.killcamentnum) {
-            namespace_70d685b02aaee20e::erasefinalkillcam();
+            scripts/mp/final_killcam::erasefinalkillcam();
         }
     }
-    thread namespace_d576b6dc7cef9c62::endgame(winningteam, endreasontext);
+    thread scripts/mp/gamelogic::endgame(winningteam, endreasontext);
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x112e
 // Size: 0x14c
 function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon) {
-    score = namespace_62c556437da28f50::getscoreinfovalue(#"kill");
+    score = scripts/mp/rank::getscoreinfovalue(#"kill");
     /#
         assert(isdefined(score));
     #/
@@ -295,17 +295,21 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
     if (victim.isplanting) {
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "planting");
         attacker incpersstat("defends", 1);
-        attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
-    } else if (victim.isbombcarrier) {
+        attacker scripts/mp/persistence::statsetchild("round", "defends", attacker.pers["defends"]);
+        return;
+    }
+    if (victim.isbombcarrier) {
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "carrying");
-    } else if (victim.isdefusing) {
+        return;
+    }
+    if (victim.isdefusing) {
         thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "defusing");
         attacker incpersstat("defends", 1);
-        attacker namespace_2685ec368e022695::statsetchild("round", "defends", attacker.pers["defends"]);
+        attacker scripts/mp/persistence::statsetchild("round", "defends", attacker.pers["defends"]);
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1281
 // Size: 0x90
@@ -319,12 +323,12 @@ function ontimelimit() {
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1318
 // Size: 0x88
 function updategametypedvars() {
-    namespace_310ba947928891df::updatecommongametypedvars();
+    scripts/mp/gametypes/common::updatecommongametypedvars();
     level.planttime = dvarfloatvalue("planttime", 5, 0, 20);
     level.defusetime = dvarfloatvalue("defusetime", 5, 0, 20);
     level.bombtimer = dvarfloatvalue("bombtimer", 45, 1, 300);
@@ -332,7 +336,7 @@ function updategametypedvars() {
     level.bombresettimer = dvarintvalue("bombResetTimer", 60, 0, 180);
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13a7
 // Size: 0x4e
@@ -342,7 +346,7 @@ function setspecialloadout() {
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13fc
 // Size: 0x34
@@ -353,19 +357,19 @@ function isplayeroutsideofcurbombsite(weaponname) {
     return 0;
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1438
 // Size: 0x54
 function initializeobjectives() {
     level.firsttimebomb = 1;
-    var_a554e9b93a45f42f = getentarray("bombzone", "targetname");
-    level.objectives = var_a554e9b93a45f42f;
+    tempobjectives = getentarray("bombzone", "targetname");
+    level.objectives = tempobjectives;
     level.curobjectiveindex = 0;
     level.curobj = setupnextobjective(level.curobjectiveindex);
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1493
 // Size: 0x105
@@ -379,17 +383,17 @@ function setupnextobjective(index) {
     switch (objectivetype) {
     case #"hash_a8ca4a84621810fb":
         if (isdefined(level.firsttimebomb)) {
-            namespace_fa795886dfc5f58a::bombzone_setupbombcase("sd_bomb");
+            scripts/mp/gametypes/obj_bombzone::bombzone_setupbombcase("sd_bomb");
             level.firsttimebomb = undefined;
         } else {
-            namespace_fa795886dfc5f58a::advancebombcase();
+            scripts/mp/gametypes/obj_bombzone::advancebombcase();
         }
-        objective = namespace_fa795886dfc5f58a::setupobjective(index);
-        namespace_944ddf7b8df1b0e3::leaderdialog("offense_obj", game["attackers"]);
-        namespace_944ddf7b8df1b0e3::leaderdialog("defense_obj", game["defenders"]);
+        objective = scripts/mp/gametypes/obj_bombzone::setupobjective(index);
+        scripts/mp/utility/dialog::leaderdialog("offense_obj", game["attackers"]);
+        scripts/mp/utility/dialog::leaderdialog("defense_obj", game["defenders"]);
         break;
     case #"hash_55dd4aa166877663":
-        objective = namespace_98b55913d2326ac8::setupobjective(level.objectives[index]);
+        objective = scripts/mp/gametypes/obj_dom::setupobjective(level.objectives[index]);
         break;
     case #"hash_c749446269c21985":
         break;
@@ -399,39 +403,39 @@ function setupnextobjective(index) {
     return objective;
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x15a0
 // Size: 0x107
-function onobjectivecomplete(objectivetype, objectivelabel, creditplayer, var_ef310ddd2ba0f321, otherdata) {
+function onobjectivecomplete(objectivetype, objectivelabel, creditplayer, creditteam, otherdata) {
     switch (objectivetype) {
     case #"hash_55dd4aa166877663":
-        ondompointobjectivecomplete(objectivelabel, creditplayer, var_ef310ddd2ba0f321, otherdata);
+        ondompointobjectivecomplete(objectivelabel, creditplayer, creditteam, otherdata);
         break;
     case #"hash_a8ca4a84621810fb":
-        onbombzoneobjectivecomplete(objectivelabel, creditplayer, var_ef310ddd2ba0f321, otherdata);
+        onbombzoneobjectivecomplete(objectivelabel, creditplayer, creditteam, otherdata);
         break;
     }
-    if (var_ef310ddd2ba0f321 == game["attackers"]) {
+    if (creditteam == game["attackers"]) {
         level.curobjectiveindex++;
         if (level.curobjectiveindex < level.objectives.size) {
-            var_f001ed7d3b4f0f1 = getwatcheddvar("addObjectiveTime");
-            setoverridewatchdvar("timelimit", gettimelimit() + var_f001ed7d3b4f0f1);
+            additionaltime = getwatcheddvar("addObjectiveTime");
+            setoverridewatchdvar("timelimit", gettimelimit() + additionaltime);
             restarttimer();
             level.curobj = setupnextobjective(level.curobjectiveindex);
-        } else {
-            setgameendtime(0);
-            wait(3);
-            sd_endgame(game["attackers"], game["end_reason"]["target_destroyed"]);
+            return;
         }
+        setgameendtime(0);
+        wait(3);
+        sd_endgame(game["attackers"], game["end_reason"]["target_destroyed"]);
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ae
 // Size: 0xad
-function ondompointobjectivecomplete(objectivelabel, creditplayer, var_ef310ddd2ba0f321, oldteam) {
+function ondompointobjectivecomplete(objectivelabel, creditplayer, creditteam, oldteam) {
     team = creditplayer.team;
     /#
         assert(team != "neutral");
@@ -439,34 +443,34 @@ function ondompointobjectivecomplete(objectivelabel, creditplayer, var_ef310ddd2
     if (oldteam == "neutral") {
         otherteam = getotherteam(team)[0];
         thread printandsoundoneveryone(team, otherteam, undefined, undefined, "mp_dom_flag_captured", undefined, creditplayer);
-        namespace_944ddf7b8df1b0e3::statusdialog("secured" + self.label, team, 1);
-        namespace_944ddf7b8df1b0e3::statusdialog("lost_" + self.label, otherteam, 1);
+        scripts/mp/utility/dialog::statusdialog("secured" + self.label, team, 1);
+        scripts/mp/utility/dialog::statusdialog("lost_" + self.label, otherteam, 1);
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1762
 // Size: 0x57
-function onbombzoneobjectivecomplete(objectivelabel, creditplayer, var_ef310ddd2ba0f321, otherdata) {
-    if (var_ef310ddd2ba0f321 == game["defenders"]) {
+function onbombzoneobjectivecomplete(objectivelabel, creditplayer, creditteam, otherdata) {
+    if (creditteam == game["defenders"]) {
         restarttimer();
-        thread namespace_fa795886dfc5f58a::respawnbombcase();
-        level.curobj = namespace_fa795886dfc5f58a::setupobjective(level.curobjectiveindex);
+        thread scripts/mp/gametypes/obj_bombzone::respawnbombcase();
+        level.curobj = scripts/mp/gametypes/obj_bombzone::setupobjective(level.curobjectiveindex);
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17c0
 // Size: 0x2c
 function restarttimer() {
-    namespace_d576b6dc7cef9c62::resumetimer();
+    scripts/mp/gamelogic::resumetimer();
     level.timepaused = gettime() - level.timepausestart;
     level.timelimitoverride = 0;
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17f3
 // Size: 0x26
@@ -478,14 +482,14 @@ function setuppingwatcher() {
     thread waitforplayerping();
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1820
 // Size: 0x51
 function waitforplayerping() {
     self endon("death_or_disconnect");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         self waittill("playerPing");
         if (isreallyalive(self) && !isusingremote()) {
             if (self adsbuttonpressed()) {
@@ -497,7 +501,7 @@ function waitforplayerping() {
     }
 }
 
-// Namespace assault/namespace_8d3ff0905c8241c9
+// Namespace assault / scripts/mp/gametypes/assault
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1878
 // Size: 0x1c0
@@ -506,13 +510,13 @@ function doping() {
     level endon("game_ended");
     tracestart = self geteye();
     traceend = tracestart + anglestoforward(self getplayerangles()) * 2000;
-    result = namespace_2a184fc4902783dc::ray_trace(tracestart, traceend, self);
+    result = scripts/engine/trace::ray_trace(tracestart, traceend, self);
     hitent = result["entity"];
     message = "WAYPOINT";
-    var_308f6f17aaf703ff = (1, 1, 1);
+    messagecolor = (1, 1, 1);
     if (isdefined(hitent)) {
         if (isdefined(hitent.team) && hitent.team != self.team) {
-            var_308f6f17aaf703ff = (1, 0, 0);
+            messagecolor = (1, 0, 0);
             if (isplayer(hitent)) {
                 message = "KILL";
                 self notify("enemy_sighted");
@@ -523,22 +527,22 @@ function doping() {
             if (hitent.script_gameobjectname == "bombzone") {
                 if (self.team == game["attackers"]) {
                     message = "ATTACK";
-                    var_308f6f17aaf703ff = (1, 1, 0);
+                    messagecolor = (1, 1, 0);
                 } else {
                     message = "DEFEND";
-                    var_308f6f17aaf703ff = (0, 0, 1);
+                    messagecolor = (0, 0, 1);
                 }
             } else if (hitent.script_gameobjectname == "sd") {
                 if (self.team == game["attackers"]) {
                     message = "OBJECTIVE";
-                    var_308f6f17aaf703ff = (1, 1, 0);
+                    messagecolor = (1, 1, 0);
                 }
             }
         }
     }
     /#
-        print3d(result["iw9_mp_ui_objective_lost"], message, var_308f6f17aaf703ff, 1, 1, 200);
-        sphere(result["iw9_mp_ui_objective_lost"], 2, var_308f6f17aaf703ff, 1, 200);
+        print3d(result["iw9_mp_ui_objective_lost"], message, messagecolor, 1, 1, 200);
+        sphere(result["iw9_mp_ui_objective_lost"], 2, messagecolor, 1, 200);
     #/
 }
 

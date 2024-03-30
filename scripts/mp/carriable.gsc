@@ -1,6 +1,6 @@
 // mwiii decomp prototype
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_2669878cf5a1b6bc;
@@ -23,7 +23,7 @@
 
 #namespace carriable;
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d6
 // Size: 0x53a
@@ -81,13 +81,13 @@ function initcarriables() {
     level._effect["vfx_ntoxin_exp_air"] = loadfx("vfx/iw8_br/equipment/vfx_ntoxin_exp_air");
     level.usablecarriables = [];
     level.carriablemagicgrenades = [];
-    namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("br_carriable_pickup", &scriptable_carriable_use);
-    namespace_17c25f0877bfb620::scriptable_adddamagedcallback(&scriptable_carriable_damage);
+    scripts/engine/scriptable::scriptable_addusedcallbackbypart("br_carriable_pickup", &scriptable_carriable_use);
+    scripts/engine/scriptable::scriptable_adddamagedcallback(&scriptable_carriable_damage);
     clean_and_spawn_carriables();
-    namespace_c5622898120e827f::function_eca79fa0f341ee08(9, &dangercircletick_carriable);
+    scripts/mp/gametypes/br_circle::function_eca79fa0f341ee08(9, &dangercircletick_carriable);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf17
 // Size: 0x1c5
@@ -133,7 +133,7 @@ function spawn_entity_carriable(type, origin, angles) {
     return var_4302fa9bcdb3790;
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10e4
 // Size: 0xe3
@@ -164,7 +164,7 @@ function clean_and_spawn_carriables() {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11ce
 // Size: 0xce
@@ -175,62 +175,62 @@ function spawn_carriables_from_scriptables_total_percentage() {
     if (var_dc44d971ba523f8.size == 0) {
         return;
     }
-    var_e4cad961dae4b508 = getdvarfloat(@"hash_538da4cbdf728ccc", 0);
-    var_4573280b0f353d64 = floor(var_e4cad961dae4b508 * var_dc44d971ba523f8.size);
+    spawnchance = getdvarfloat(@"hash_538da4cbdf728ccc", 0);
+    numenabled = floor(spawnchance * var_dc44d971ba523f8.size);
     for (i = 0; i < var_dc44d971ba523f8.size; i++) {
-        if (i < var_4573280b0f353d64) {
+        if (i < numenabled) {
             var_dc44d971ba523f8[i] setscriptablepartstate("br_carriable_pickup", "useable");
-        } else {
-            var_dc44d971ba523f8[i] setscriptablepartstate("br_carriable_pickup", "disabled");
+            continue;
         }
+        var_dc44d971ba523f8[i] setscriptablepartstate("br_carriable_pickup", "disabled");
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12a3
 // Size: 0x111
 function spawn_carriables_from_scriptables_individual_percentage() {
-    var_e4cad961dae4b508 = getdvarfloat(@"hash_538da4cbdf728ccc", 0);
+    spawnchance = getdvarfloat(@"hash_538da4cbdf728ccc", 0);
     var_f6765e70dd9ad53f = array_randomize(getentitylessscriptablearray("scriptable_br_carriable_propane", "classname"));
     var_187ccfe910b75663 = array_randomize(getentitylessscriptablearray("scriptable_br_carriable_neurotoxin", "classname"));
     if (var_f6765e70dd9ad53f.size > 0) {
-        var_4573280b0f353d64 = floor(var_e4cad961dae4b508 * var_f6765e70dd9ad53f.size);
+        numenabled = floor(spawnchance * var_f6765e70dd9ad53f.size);
         for (i = 0; i < var_f6765e70dd9ad53f.size; i++) {
-            if (i < var_4573280b0f353d64) {
+            if (i < numenabled) {
                 var_f6765e70dd9ad53f[i] setscriptablepartstate("br_carriable_pickup", "useable");
-            } else {
-                var_f6765e70dd9ad53f[i] setscriptablepartstate("br_carriable_pickup", "disabled");
+                continue;
             }
+            var_f6765e70dd9ad53f[i] setscriptablepartstate("br_carriable_pickup", "disabled");
         }
     }
     if (var_187ccfe910b75663.size > 0) {
-        var_4573280b0f353d64 = floor(var_e4cad961dae4b508 * var_187ccfe910b75663.size);
+        numenabled = floor(spawnchance * var_187ccfe910b75663.size);
         for (i = 0; i < var_187ccfe910b75663.size; i++) {
-            if (i < var_4573280b0f353d64) {
+            if (i < numenabled) {
                 var_187ccfe910b75663[i] setscriptablepartstate("br_carriable_pickup", "useable");
-            } else {
-                var_187ccfe910b75663[i] setscriptablepartstate("br_carriable_pickup", "disabled");
+                continue;
             }
+            var_187ccfe910b75663[i] setscriptablepartstate("br_carriable_pickup", "disabled");
         }
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13bb
 // Size: 0x146
-function scriptable_carriable_use(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function scriptable_carriable_use(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     /#
         assert(part == "br_carriable_pickup");
     #/
     if (istrue(level.gameended)) {
         return;
     }
-    if (!player namespace_f8065cafc523dba5::_isalive() || istrue(player.inlaststand)) {
+    if (!player scripts/cp_mp/utility/player_utility::_isalive() || istrue(player.inlaststand)) {
         return;
     }
-    if (player namespace_f8065cafc523dba5::isinvehicle()) {
+    if (player scripts/cp_mp/utility/player_utility::isinvehicle()) {
         if (isdefined(level.showuseresultsfeedback)) {
             player [[ level.showuseresultsfeedback ]](17);
             return;
@@ -252,7 +252,7 @@ function scriptable_carriable_use(instance, part, state, player, var_a5b2c541413
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1508
 // Size: 0x32
@@ -260,7 +260,7 @@ function iscarriablescriptable(instance) {
     return instance.type == "br_carriable_neurotoxin" || instance.type == "br_carriable_propane";
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params b, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x89
@@ -271,7 +271,7 @@ function scriptable_carriable_damage(einflictor, eattacker, instance, idamage, i
     level thread scriptable_carriable_damage_internal(einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params b, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15d2
 // Size: 0x14a
@@ -293,7 +293,7 @@ function scriptable_carriable_damage_internal(einflictor, eattacker, instance, i
     var_60063a1bf733cfd5 delete();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1723
 // Size: 0x48
@@ -306,7 +306,7 @@ function respawn_scriptible_carriable_wait(instance, part) {
     instance setscriptablepartstate("br_carriable_pickup", "useable");
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1772
 // Size: 0x6a
@@ -319,7 +319,7 @@ function spawn_carriable_at_struct(struct) {
     var_4302fa9bcdb3790 = spawn_entity_carriable(type, struct.origin);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17e3
 // Size: 0xd9
@@ -341,7 +341,7 @@ function function_a1a40eb763fdd549(arg) {
     #/
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18c3
 // Size: 0x24
@@ -349,13 +349,13 @@ function function_a6ec7bb20c89f0e8() {
     /#
         if (!isdefined(level.usablecarriables)) {
             initcarriables();
-        } else {
-            clean_and_spawn_carriables();
+            return;
         }
+        clean_and_spawn_carriables();
     #/
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18ee
 // Size: 0x7f
@@ -372,7 +372,7 @@ function carriable_init(carriabletype) {
     self sethintrequiresholding(1);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1974
 // Size: 0x23
@@ -382,7 +382,7 @@ function carriable_respawn() {
     carriable_ready();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x199e
 // Size: 0x9a
@@ -407,7 +407,7 @@ function carriable_ready() {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a3f
 // Size: 0x129
@@ -415,9 +415,8 @@ function carriable_damage_wait() {
     self endon("death");
     self endon("explode");
     self endon("pickup");
-LOC_00000070:
-    while (1) {
-        objweapon = idflags = var_920ff4456ce9a2fc = var_1d3f20a69ced2dd5 = var_9e834fe6754a9c98 = smeansofdeath = vpoint = var_fea2a171f4ce7311 = eattacker = idamage = self waittill("damage");
+    while (true) {
+        idamage, eattacker, vhitdir, vpoint, smeansofdeath, smodelname, stagname, spartname, idflags, objweapon = self waittill("damage");
         self.health = 99999999;
         if (idamage < 2) {
             thread carriable_lightfuse(eattacker);
@@ -438,7 +437,7 @@ LOC_00000070:
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b6f
 // Size: 0xdb
@@ -449,7 +448,7 @@ function carriable_lightfuse(player) {
     if (istrue(self.fuselit)) {
         return;
     }
-    if (0) {
+    if (false) {
         thread carriable_fuse_ui(player);
     }
     player setclientomnvar("ui_gas_can_status", 2);
@@ -463,25 +462,25 @@ function carriable_lightfuse(player) {
     thread carriable_explode();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c51
 // Size: 0x95
 function carriable_fuse_ui(player) {
-    var_b15bcca3144fd7dd = player createprimaryprogressbar();
+    usebar = player createprimaryprogressbar();
     var_721e3650de671da6 = player createprimaryprogressbartext();
     var_721e3650de671da6 settext("FUSE LIT");
     fuse = getdvarfloat(@"hash_7bba431554c05335", 5);
     if (fuse <= 0) {
         fuse = 1;
     }
-    var_b15bcca3144fd7dd updatebar(0, 1 / fuse);
+    usebar updatebar(0, 1 / fuse);
     player waittill_any_3("death", "weapon_fired", "drop_object");
-    var_b15bcca3144fd7dd destroyelem();
+    usebar destroyelem();
     var_721e3650de671da6 destroyelem();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ced
 // Size: 0xdd
@@ -505,7 +504,7 @@ function carriable_explode() {
     self delete();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dd1
 // Size: 0x57
@@ -513,7 +512,7 @@ function carriable_pickup_wait() {
     self endon("death");
     self endon("explode");
     self endon("pickup");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         if (isdefined(player) && isalive(player) && carriable_can_pickup(player)) {
             thread carriable_pickup(player);
@@ -522,15 +521,15 @@ function carriable_pickup_wait() {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e2f
 // Size: 0x23b
 function carriable_pickup(player) {
     self notify("pickup");
     level notify("carriable_kill_callout_" + self.origin);
-    var_bf8e5f003146af44 = self getlinkedparent();
-    if (isdefined(var_bf8e5f003146af44)) {
+    linkedparent = self getlinkedparent();
+    if (isdefined(linkedparent)) {
         self unlink();
     }
     player val::set("carriable", "equipment_primary", 0);
@@ -573,7 +572,7 @@ function carriable_pickup(player) {
     player setclientomnvar("ui_gas_can_status", 1);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2071
 // Size: 0x132
@@ -581,108 +580,108 @@ function valid_carriable_pickup_weapon(weapon) {
     weaponname = undefined;
     if (isweapon(weapon)) {
         if (isnullweapon(weapon)) {
-            return 0;
+            return false;
         }
         foreach (carriabletype in level.carriabletypes) {
             if (carriabletype.weaponref == weapon) {
-                return 0;
+                return false;
             }
         }
         weaponname = weapon.basename;
     }
     if (isstring(weapon)) {
         if (weapon == "none") {
-            return 0;
+            return false;
         }
         foreach (carriabletype in level.carriabletypes) {
             if (carriabletype.weaponref.basename == weapon) {
-                return 0;
+                return false;
             }
         }
         weaponname = weapon;
     }
-    if (namespace_a2f809133c566621::isremotekillstreakweapon(weaponname)) {
-        return 0;
+    if (scripts/mp/utility/killstreak::isremotekillstreakweapon(weaponname)) {
+        return false;
     }
     if (iskillstreakweapon(weapon)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21ab
 // Size: 0x194
 function carriable_can_pickup(player) {
     if (!isplayer(player)) {
-        return 0;
+        return false;
     }
     if (!player val::get("weapon")) {
-        return 0;
+        return false;
     }
-    if (player namespace_85d036cb78063c4a::issuperinuse()) {
-        return 0;
+    if (player scripts/mp/supers::issuperinuse()) {
+        return false;
     }
-    if (player namespace_f8065cafc523dba5::isinvehicle()) {
-        return 0;
+    if (player scripts/cp_mp/utility/player_utility::isinvehicle()) {
+        return false;
     }
     if (istrue(player.inlaststand)) {
-        return 0;
+        return false;
     }
     if (istrue(player.isreviving)) {
-        return 0;
+        return false;
     }
     if (player isskydiving()) {
-        return 0;
+        return false;
     }
     if (istrue(player.isjuggernaut)) {
         if (isdefined(level.showuseresultsfeedback)) {
             player [[ level.showuseresultsfeedback ]](16);
-            return 0;
+            return false;
         }
     }
     if (isdefined(player.manuallyjoiningkillstreak) && player.manuallyjoiningkillstreak) {
-        return 0;
+        return false;
     }
     if (istrue(player.iscarrying)) {
         if (isdefined(level.showuseresultsfeedback)) {
             player [[ level.showuseresultsfeedback ]](3);
-            return 0;
+            return false;
         }
     }
     currentweapon = player getcurrentweapon();
     if (isdefined(currentweapon)) {
         if (!valid_carriable_pickup_weapon(currentweapon)) {
-            player namespace_44abc05161e2e2cb::showerrormessage("MP/CANNOT_USE_GENERIC");
-            return 0;
+            player scripts/mp/hud_message::showerrormessage("MP/CANNOT_USE_GENERIC");
+            return false;
         }
     }
     nextweapon = player.changingweapon;
     if (isdefined(nextweapon) && player isswitchingweapon()) {
         if (!valid_carriable_pickup_weapon(nextweapon)) {
-            return 0;
+            return false;
         }
     }
     if (player isanymonitoredweaponswitchinprogress()) {
         nextweapon = player getcurrentmonitoredweaponswitchweapon();
         if (!valid_carriable_pickup_weapon(nextweapon)) {
-            return 0;
+            return false;
         }
     }
     if (player isusingremote()) {
-        return 0;
+        return false;
     }
     if (istrue(self.fuselit)) {
-        return 0;
+        return false;
     }
     if (istrue(player.insertingarmorplate)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2347
 // Size: 0x136
@@ -690,11 +689,11 @@ function carriable_throw_watch(carriable) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("drop_object");
-    var_aa9a4a3e3351d974 = 0;
+    extra_pitch = 0;
     force = getdvarfloat(@"hash_30e08e7aa2432f46", 500);
     spawnorigin = undefined;
-    while (1) {
-        objweapon = projectile = self waittill("grenade_fire");
+    while (true) {
+        projectile, objweapon = self waittill("grenade_fire");
         if (objweapon != carriable.carriabletype.weaponref) {
             continue;
         }
@@ -707,17 +706,17 @@ function carriable_throw_watch(carriable) {
         break;
     }
     if (self issprintsliding()) {
-        var_aa9a4a3e3351d974 = -12;
+        extra_pitch = -12;
         force = force + 200;
     }
     playerangles = self getplayerangles();
-    playerangles = playerangles + (var_aa9a4a3e3351d974, 0, 0);
+    playerangles = playerangles + (extra_pitch, 0, 0);
     playerangles = (clamp(playerangles[0], -85, 85), playerangles[1], playerangles[2]);
     dir = anglestoforward(playerangles);
     carriable thread carriable_physics_launch_drop(dir * force, self, spawnorigin);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2484
 // Size: 0x27
@@ -727,7 +726,7 @@ function disable_weapon_swap_until_swap_finished() {
     self enableweaponswitch();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24b2
 // Size: 0x73
@@ -736,7 +735,7 @@ function carriable_weapon_change_watch(carriable) {
     self endon("death_or_disconnect");
     self endon("drop_object");
     thread disable_weapon_swap_until_swap_finished();
-    while (1) {
+    while (true) {
         objweapon = self waittill("weapon_change");
         if (!isdefined(objweapon)) {
             continue;
@@ -748,7 +747,7 @@ function carriable_weapon_change_watch(carriable) {
     carriable thread carriable_set_dropped(0);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x252c
 // Size: 0x34
@@ -756,13 +755,13 @@ function carriable_error_messsage_watch() {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("drop_object");
-    while (1) {
+    while (true) {
         self waittill("lethal_attempt_carriable");
-        namespace_44abc05161e2e2cb::showerrormessage("MP/CANNOT_USE_GENERIC");
+        scripts/mp/hud_message::showerrormessage("MP/CANNOT_USE_GENERIC");
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2567
 // Size: 0x70
@@ -770,14 +769,14 @@ function carriable_player_state_drop_watch(carriable) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("drop_object");
-    while (1) {
+    while (true) {
         if (self isskydiving()) {
             break;
         }
-        if (namespace_85d036cb78063c4a::issuperinuse()) {
+        if (scripts/mp/supers::issuperinuse()) {
             break;
         }
-        if (namespace_f8065cafc523dba5::isinvehicle(1)) {
+        if (scripts/cp_mp/utility/player_utility::isinvehicle(1)) {
             break;
         }
         if (self isinexecutionattack() || self isinexecutionvictim()) {
@@ -788,7 +787,7 @@ function carriable_player_state_drop_watch(carriable) {
     carriable thread carriable_set_dropped(0);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25de
 // Size: 0x8b
@@ -796,11 +795,11 @@ function carriable_fuse_light_watch(carriable) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("drop_object");
-    while (1) {
+    while (true) {
         self waittill("fuse_attempt_carriable");
         if (self getcurrentweapon() == carriable.carriabletype.weaponref && !self attackbuttonpressed()) {
             fadeouttime = self getgestureanimlength("ges_gas_can_ignite");
-            thread namespace_d3d40f75bb4e4c32::playerplaygestureweaponanim("iw8_ges_plyr_gas_can_ignite", fadeouttime);
+            thread scripts/mp/gametypes/br_public::playerplaygestureweaponanim("iw8_ges_plyr_gas_can_ignite", fadeouttime);
             wait(fadeouttime);
             carriable thread carriable_lightfuse(self);
             return;
@@ -808,7 +807,7 @@ function carriable_fuse_light_watch(carriable) {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2670
 // Size: 0x77
@@ -823,7 +822,7 @@ function carriable_player_death_watch(carriable) {
     carriable thread carriable_physics_launch_drop(dir * force, self);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26ee
 // Size: 0x1cc
@@ -849,9 +848,9 @@ function carriable_physics_launch(force, droppingplayer, spawnorigin) {
         }
         startpos = origin;
         delta = vectornormalize(force) * 80;
-        content = [0:"physicscontents_clipshot", 1:"physicscontents_missileclip", 2:"physicscontents_vehicle", 3:"physicscontents_characterproxy", 4:"physicscontents_glass", 5:"physicscontents_itemclip"];
+        content = ["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle", "physicscontents_characterproxy", "physicscontents_glass", "physicscontents_itemclip"];
         contentoverride = physics_createcontents(content);
-        trace = namespace_2a184fc4902783dc::sphere_trace(startpos, startpos + delta, 38, droppingplayer, contentoverride);
+        trace = scripts/engine/trace::sphere_trace(startpos, startpos + delta, 38, droppingplayer, contentoverride);
         if (trace["fraction"] < 1) {
             t = 0.7 * trace["fraction"];
             self.origin = startpos + delta * t;
@@ -863,7 +862,7 @@ function carriable_physics_launch(force, droppingplayer, spawnorigin) {
     self physicslaunchserver(self.origin, force);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28c1
 // Size: 0xec
@@ -871,8 +870,8 @@ function carriable_watch_for_physics_collison() {
     self endon("death");
     self endon("explode");
     self endon("pickup");
-    while (1) {
-        ent = impulse = normal = position = flag1 = flag0 = body1 = body0 = self waittill("collision");
+    while (true) {
+        body0, body1, flag0, flag1, position, normal, impulse, ent = self waittill("collision");
         if (!istrue(self.fuselit)) {
             continue;
         }
@@ -890,7 +889,7 @@ function carriable_watch_for_physics_collison() {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29b4
 // Size: 0x41
@@ -901,16 +900,16 @@ function carriable_physics_launch_drop(force, droppingplayer, spawnorigin) {
     carriable_ready();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29fc
 // Size: 0x18f
-function carriable_set_dropped(var_59facc6ecf6fa8e8) {
+function carriable_set_dropped(skip_physics) {
     var_cd8246fc3bc0c25e = 40;
     drop_height_offset = 11;
     var_c0bd1ff563abb64 = 7.1;
-    if (!isdefined(var_59facc6ecf6fa8e8)) {
-        var_59facc6ecf6fa8e8 = 0;
+    if (!isdefined(skip_physics)) {
+        skip_physics = 0;
     }
     self.droptime = gettime();
     self notify("dropped");
@@ -930,22 +929,22 @@ function carriable_set_dropped(var_59facc6ecf6fa8e8) {
     self.origin = droporigin;
     self.angles = dropangles;
     self show();
-    var_bf8e5f003146af44 = self getlinkedparent();
-    if (isdefined(var_bf8e5f003146af44)) {
+    linkedparent = self getlinkedparent();
+    if (isdefined(linkedparent)) {
         self unlink();
     }
     carrier_cleanup();
     self dontinterpolate();
     self.ownerteam = "any";
-    if (!var_59facc6ecf6fa8e8) {
+    if (!skip_physics) {
         velocity = forward * var_cd8246fc3bc0c25e;
         carriable_physics_launch(velocity);
         carriable_ready();
     }
-    return 1;
+    return true;
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b93
 // Size: 0x105
@@ -954,7 +953,7 @@ function carrier_cleanup() {
         self.carrier.iscarrying = 0;
         self setotherent(undefined);
         self.carrier thread carrier_remove_carriable_weapon();
-        self.carrier val::function_c9d0b43701bdba00("carriable");
+        self.carrier val::reset_all("carriable");
         if (!isai(self.carrier)) {
             self.carrier notifyonplayercommandremove("lethal_attempt_carriable", "+frag");
             self.carrier notifyonplayercommandremove("lethal_attempt_carriable", "+smoke");
@@ -969,7 +968,7 @@ function carrier_cleanup() {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c9f
 // Size: 0xec
@@ -985,30 +984,31 @@ function carrier_remove_carriable_weapon() {
             }
             self takeweapon(carriabletype.weaponref);
             break;
-        } else if (self hasweapon(carriabletype.weaponref)) {
+        }
+        if (self hasweapon(carriabletype.weaponref)) {
             self takeweapon(carriabletype.weaponref);
             break;
         }
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d92
 // Size: 0xb3
-function dangercircletick_carriable(var_819edacdacb810e4, var_e86632d645c137d0, var_5d954f1724092f5a) {
+function dangercircletick_carriable(var_819edacdacb810e4, dangercircleradius, thresholdradius) {
     if (!isdefined(level.usablecarriables)) {
         return;
     }
-    var_8fa87d2c8780e014 = var_e86632d645c137d0 * var_e86632d645c137d0;
+    radiussquared = dangercircleradius * dangercircleradius;
     foreach (carriable in level.usablecarriables) {
-        if (isdefined(carriable) && !carriable islinked() && distance2dsquared(carriable.origin, var_819edacdacb810e4) > var_8fa87d2c8780e014) {
+        if (isdefined(carriable) && !carriable islinked() && distance2dsquared(carriable.origin, var_819edacdacb810e4) > radiussquared) {
             carriable delete();
         }
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e4c
 // Size: 0x44
@@ -1016,15 +1016,15 @@ function carriable_inactive_delete_wait() {
     self endon("death");
     self endon("explode");
     self endon("pickup");
-    var_44a306db74f92b95 = getdvarfloat(@"hash_4e50a1220c7fd1b7", 300);
-    if (var_44a306db74f92b95 == 0) {
+    inactivetime = getdvarfloat(@"hash_4e50a1220c7fd1b7", 300);
+    if (inactivetime == 0) {
         return;
     }
-    wait(var_44a306db74f92b95);
+    wait(inactivetime);
     self delete();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e97
 // Size: 0x313
@@ -1032,13 +1032,13 @@ function carriable_detonate_propane() {
     var_d1ae17964fa90b93 = 2;
     bottom = self.origin + (0, 0, -96);
     end_pos = physicstrace(self.origin, bottom);
-    var_6545e5a11a4dd3d3 = end_pos == bottom;
-    var_686e4b3b73a4c816 = "detonateGround";
-    if (var_6545e5a11a4dd3d3) {
-        var_686e4b3b73a4c816 = "detonateAir";
+    inairdetonation = end_pos == bottom;
+    detonatestate = "detonateGround";
+    if (inairdetonation) {
+        detonatestate = "detonateAir";
     }
     var_78f5cdc32556c758 = spawnscriptable("br_carriable_explosion_propane", self.origin, self.angles);
-    var_78f5cdc32556c758 setscriptablepartstate("carrible_explode_base", var_686e4b3b73a4c816);
+    var_78f5cdc32556c758 setscriptablepartstate("carrible_explode_base", detonatestate);
     var_78f5cdc32556c758 thread cleanupexplosionleftovers(5);
     burnsource = spawn("script_origin", self.origin);
     burnsource.angles = self.angles;
@@ -1058,18 +1058,18 @@ function carriable_detonate_propane() {
     #/
     level.carriablemagicgrenades = array_removedead(level.carriablemagicgrenades);
     i = 0;
-    var_74b69695e9378902 = getfirespoutlaunchvectors(var_3643807096870f55);
+    vecarray = getfirespoutlaunchvectors(var_3643807096870f55);
     while (i < var_3643807096870f55) {
         if (level.carriablemagicgrenades.size >= 12) {
             break;
         }
-        grenade = magicgrenademanual(var_6f03a584827203cb, self.origin + var_74b69695e9378902[i] * 0.02, var_74b69695e9378902[i], 5);
+        grenade = magicgrenademanual(var_6f03a584827203cb, self.origin + vecarray[i] * 0.02, vecarray[i], 5);
         level.carriablemagicgrenades = array_add(level.carriablemagicgrenades, grenade);
         grenade thread firespoutwatch(burnsource);
         i++;
     }
     if (end_pos != bottom) {
-        burnsource namespace_df478cc572a311d3::molotov_simulate_impact(burnsource, end_pos, (0, 0, 0), undefined, (0, 0, 0), gettime());
+        burnsource scripts/mp/equipment/molotov::molotov_simulate_impact(burnsource, end_pos, (0, 0, 0), undefined, (0, 0, 0), gettime());
     } else if (level.carriablemagicgrenades.size < 12) {
         grenade = magicgrenademanual(var_6f03a584827203cb, self.origin + (0, 0, -30), (0, 0, -200), 5);
         level.carriablemagicgrenades = array_add(level.carriablemagicgrenades, grenade);
@@ -1078,28 +1078,28 @@ function carriable_detonate_propane() {
     burnsource thread cleanupexplosionleftovers(30);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31b1
 // Size: 0xe8
 function getfirespoutlaunchvectors(numvectors) {
-    var_74b69695e9378902 = [];
+    vecarray = [];
     if (numvectors <= 0) {
-        return var_74b69695e9378902;
+        return vecarray;
     }
     var_61c09649126ded45 = 360 / numvectors;
     var_d470a1b4d4afb175 = randomfloatrange(-1 * var_61c09649126ded45, var_61c09649126ded45);
     for (i = 0; i < numvectors; i++) {
-        var_f7b5065a48a75b79 = randomfloatrange(-0.5 * var_61c09649126ded45, 0.5 * var_61c09649126ded45);
-        angle = i * var_61c09649126ded45 + var_f7b5065a48a75b79 + var_d470a1b4d4afb175;
+        randomoffset = randomfloatrange(-0.5 * var_61c09649126ded45, 0.5 * var_61c09649126ded45);
+        angle = i * var_61c09649126ded45 + randomoffset + var_d470a1b4d4afb175;
         dir = vectornormalize(rotatepointaroundvector((0, 0, 1), (0, 0.7, 0.7), angle));
         power = randomfloatrange(250, 400);
-        var_74b69695e9378902[var_74b69695e9378902.size] = dir * power;
+        vecarray[vecarray.size] = dir * power;
     }
-    return var_74b69695e9378902;
+    return vecarray;
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32a1
 // Size: 0x7d
@@ -1107,12 +1107,12 @@ function firespoutwatch(burnsource) {
     self endon("death");
     self endon("missile_dest_failed");
     stuckto = self waittill("missile_stuck");
-    burnsource namespace_df478cc572a311d3::molotov_simulate_impact(burnsource, self.origin, burnsource.angles, undefined, (0, 0, 0), gettime());
+    burnsource scripts/mp/equipment/molotov::molotov_simulate_impact(burnsource, self.origin, burnsource.angles, undefined, (0, 0, 0), gettime());
     level.carriablemagicgrenades = array_remove(level.carriablemagicgrenades, self);
     self delete();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3325
 // Size: 0x3d
@@ -1125,13 +1125,13 @@ function cleanupexplosionleftovers(waittime) {
     if (isdefined(self)) {
         if (isent(self)) {
             self delete();
-        } else {
-            self freescriptable();
+            return;
         }
+        self freescriptable();
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3369
 // Size: 0xf0
@@ -1139,33 +1139,33 @@ function carriable_detonate_neurotoxin() {
     var_d1ae17964fa90b93 = 2;
     bottom = self.origin + (0, 0, -96);
     end_pos = physicstrace(self.origin, bottom);
-    var_6545e5a11a4dd3d3 = end_pos == bottom;
-    var_3c0bbfd0a2893de1 = self.owner;
-    if (!isplayer(var_3c0bbfd0a2893de1)) {
-        var_3c0bbfd0a2893de1 = undefined;
+    inairdetonation = end_pos == bottom;
+    gasowner = self.owner;
+    if (!isplayer(gasowner)) {
+        gasowner = undefined;
     }
-    var_686e4b3b73a4c816 = "detonateGround";
-    if (var_6545e5a11a4dd3d3) {
-        var_686e4b3b73a4c816 = "detonateAir";
+    detonatestate = "detonateGround";
+    if (inairdetonation) {
+        detonatestate = "detonateAir";
     }
     var_78f5cdc32556c758 = spawnscriptable("br_carriable_explosion_neurotoxin", self.origin, self.angles);
-    var_78f5cdc32556c758 setscriptablepartstate("carrible_explode_base", var_686e4b3b73a4c816);
-    self radiusdamage(self.origin, 150, 250, 1, var_3c0bbfd0a2893de1, "MOD_EXPLOSIVE");
-    thread neurotoxin_damage_loop(var_78f5cdc32556c758, var_6545e5a11a4dd3d3, var_3c0bbfd0a2893de1);
+    var_78f5cdc32556c758 setscriptablepartstate("carrible_explode_base", detonatestate);
+    self radiusdamage(self.origin, 150, 250, 1, gasowner, "MOD_EXPLOSIVE");
+    thread neurotoxin_damage_loop(var_78f5cdc32556c758, inairdetonation, gasowner);
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3460
 // Size: 0xa2
-function neurotoxin_damage_loop(var_78f5cdc32556c758, var_6545e5a11a4dd3d3, owner) {
+function neurotoxin_damage_loop(var_78f5cdc32556c758, inairdetonation, owner) {
     carriabletype = self.carriabletype;
     centerpoint = self.origin;
-    var_686e4b3b73a4c816 = "groundLoop";
-    if (var_6545e5a11a4dd3d3) {
-        var_686e4b3b73a4c816 = "airLoop";
+    detonatestate = "groundLoop";
+    if (inairdetonation) {
+        detonatestate = "airLoop";
     }
-    var_78f5cdc32556c758 setscriptablepartstate("carrible_neurotoxin_loop", var_686e4b3b73a4c816);
+    var_78f5cdc32556c758 setscriptablepartstate("carrible_neurotoxin_loop", detonatestate);
     level add_neurotoxin_damage_area(centerpoint, owner);
     wait(float(30));
     if (isdefined(var_78f5cdc32556c758)) {
@@ -1174,7 +1174,7 @@ function neurotoxin_damage_loop(var_78f5cdc32556c758, var_6545e5a11a4dd3d3, owne
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3509
 // Size: 0x9d
@@ -1182,18 +1182,18 @@ function add_neurotoxin_damage_area(cloudorigin, owner) {
     if (!isdefined(level.active_neurotoxin_clouds)) {
         level.active_neurotoxin_clouds = [];
     }
-    var_aecd34d93e8ef81b = spawnstruct();
-    var_aecd34d93e8ef81b.cloudorigin = cloudorigin;
-    var_aecd34d93e8ef81b.damageendtime = gettime() + 30000;
-    var_aecd34d93e8ef81b.owner = owner;
-    level.active_neurotoxin_clouds = array_add(level.active_neurotoxin_clouds, var_aecd34d93e8ef81b);
+    gascloud = spawnstruct();
+    gascloud.cloudorigin = cloudorigin;
+    gascloud.damageendtime = gettime() + 30000;
+    gascloud.owner = owner;
+    level.active_neurotoxin_clouds = array_add(level.active_neurotoxin_clouds, gascloud);
     if (level.active_neurotoxin_clouds.size > 1) {
         return;
     }
     level thread neurotoxin_damage_monitor();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35ad
 // Size: 0x2cb
@@ -1206,16 +1206,16 @@ function neurotoxin_damage_monitor() {
         foreach (cloud in level.active_neurotoxin_clouds) {
             if (gettime() > cloud.damageendtime) {
                 var_49b5eb24f5905b4a[var_49b5eb24f5905b4a.size] = cloud;
-            } else {
-                /#
-                    sphere(cloud.cloudorigin, var_819be75f52a5761d, (0, 1, 0), 1, 60);
-                #/
-                players = namespace_7e17181d03156026::getplayersinradius(cloud.cloudorigin, var_819be75f52a5761d);
-                foreach (player in players) {
-                    player.cloudref = cloud;
-                }
-                var_eeb0840267726c6d = array_combine_unique(var_eeb0840267726c6d, players);
+                continue;
             }
+            /#
+                sphere(cloud.cloudorigin, var_819be75f52a5761d, (0, 1, 0), 1, 60);
+            #/
+            players = scripts/mp/utility/player::getplayersinradius(cloud.cloudorigin, var_819be75f52a5761d);
+            foreach (player in players) {
+                player.cloudref = cloud;
+            }
+            var_eeb0840267726c6d = array_combine_unique(var_eeb0840267726c6d, players);
         }
         foreach (player in var_eeb0840267726c6d) {
             if (!isdefined(player.cloudref)) {
@@ -1223,22 +1223,22 @@ function neurotoxin_damage_monitor() {
             }
             if (player.team == player.cloudref.owner.team && player != player.cloudref.owner) {
                 player.cloudref = undefined;
-            } else {
-                if (namespace_9c6cddd872ad75f7::hasgasmask(player)) {
-                    player thread neurotoxin_mask_monitor();
-                    if (isdefined(level.var_f26b4e7eb9af8155)) {
-                        player [[ level.var_f26b4e7eb9af8155 ]]("carriable_neurotoxin");
-                    } else if (!istrue(player.gasmaskequipped)) {
-                        player notify("toggle_gasmask");
-                    }
-                    player namespace_9c6cddd872ad75f7::processdamage(damagetick);
-                } else {
-                    player dodamage(damagetick, player.origin, player.cloudref.owner, undefined, "MOD_TRIGGER_HURT", "danger_circle_br");
-                    player namespace_f8d3520d3483c1::damagearmor(damagetick);
-                    player namespace_c5622898120e827f::tryplaycoughaudio();
-                }
-                player.cloudref = undefined;
+                continue;
             }
+            if (scripts/cp_mp/gasmask::hasgasmask(player)) {
+                player thread neurotoxin_mask_monitor();
+                if (isdefined(level.var_f26b4e7eb9af8155)) {
+                    player [[ level.var_f26b4e7eb9af8155 ]]("carriable_neurotoxin");
+                } else if (!istrue(player.gasmaskequipped)) {
+                    player notify("toggle_gasmask");
+                }
+                player scripts/cp_mp/gasmask::processdamage(damagetick);
+            } else {
+                player dodamage(damagetick, player.origin, player.cloudref.owner, undefined, "MOD_TRIGGER_HURT", "danger_circle_br");
+                player namespace_f8d3520d3483c1::damagearmor(damagetick);
+                player scripts/mp/gametypes/br_circle::tryplaycoughaudio();
+            }
+            player.cloudref = undefined;
         }
         if (var_49b5eb24f5905b4a.size > 0) {
             level.active_neurotoxin_clouds = array_remove_array(level.active_neurotoxin_clouds, var_49b5eb24f5905b4a);
@@ -1247,7 +1247,7 @@ function neurotoxin_damage_monitor() {
     }
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x387f
 // Size: 0xc3
@@ -1262,7 +1262,9 @@ function neurotoxin_mask_monitor() {
         player.inneurotoxintimestamp = undefined;
         if (isdefined(level.var_c57ee1e174e42601)) {
             player [[ level.var_c57ee1e174e42601 ]]("carriable_neurotoxin");
-        } else if (istrue(player.gasmaskequipped)) {
+            return;
+        }
+        if (istrue(player.gasmaskequipped)) {
             player notify("toggle_gasmask");
         }
         return;
@@ -1270,7 +1272,7 @@ function neurotoxin_mask_monitor() {
     player.inneurotoxintimestamp = gettime();
 }
 
-// Namespace carriable/namespace_c758024ed02b8875
+// Namespace carriable / scripts/mp/carriable
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3949
 // Size: 0x1d4
@@ -1281,15 +1283,15 @@ function function_a48e852b0f6a3295(args) {
         if (!isdefined(args)) {
             return;
         }
-        var_47f3f37d04065b9f = float(args);
-        if (var_47f3f37d04065b9f == 0) {
+        drawdist = float(args);
+        if (drawdist == 0) {
             return;
         }
-        var_d6e1169355081a8e = var_47f3f37d04065b9f * var_47f3f37d04065b9f;
+        var_d6e1169355081a8e = drawdist * drawdist;
         var_f6765e70dd9ad53f = getentitylessscriptablearray("pickup", "physicscontents_glass");
         var_187ccfe910b75663 = getentitylessscriptablearray("br_carriable_explosion_propane", "physicscontents_glass");
         var_dc44d971ba523f8 = array_combine(var_f6765e70dd9ad53f, var_187ccfe910b75663, level.var_62e26ec58fa61b3);
-        while (1) {
+        while (true) {
             foreach (carriable in var_dc44d971ba523f8) {
                 var_5479151c606b66f8 = distance2dsquared(carriable.origin, level.players[0].origin);
                 if (var_5479151c606b66f8 < var_d6e1169355081a8e) {
@@ -1299,9 +1301,9 @@ function function_a48e852b0f6a3295(args) {
                             name = "<unknown string>";
                         }
                         print3d(carriable.origin + (0, 0, 10), name, (1, 1, 1), 1, 0.95, 62, 1);
-                    } else {
-                        print3d(carriable.origin + (0, 0, 0), "<unknown string>", (0, 1, 0), 1, 1.9, 62, 1);
+                        continue;
                     }
+                    print3d(carriable.origin + (0, 0, 0), "<unknown string>", (0, 1, 0), 1, 1.9, 62, 1);
                 }
             }
             wait(1);

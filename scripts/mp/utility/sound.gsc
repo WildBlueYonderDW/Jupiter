@@ -7,7 +7,7 @@
 
 #namespace sound;
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x162
 // Size: 0x34
@@ -18,7 +18,7 @@ function exploder_sound() {
     self playsound(level.scr_sound[self.script_sound]);
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19d
 // Size: 0x230
@@ -30,7 +30,9 @@ function playsoundonplayers(sound, team, excludelist) {
         if (isdefined(level.players[0])) {
             level.players[0] playlocalsound(sound);
         }
-    } else if (isdefined(team)) {
+        return;
+    }
+    if (isdefined(team)) {
         if (isdefined(excludelist)) {
             for (i = 0; i < level.players.size; i++) {
                 player = level.players[i];
@@ -52,7 +54,9 @@ function playsoundonplayers(sound, team, excludelist) {
                 }
             }
         }
-    } else if (isdefined(excludelist)) {
+        return;
+    }
+    if (isdefined(excludelist)) {
         for (i = 0; i < level.players.size; i++) {
             if (level.players[i] issplitscreenplayer() && !level.players[i] issplitscreenplayerprimary()) {
                 continue;
@@ -61,17 +65,17 @@ function playsoundonplayers(sound, team, excludelist) {
                 level.players[i] playlocalsound(sound);
             }
         }
-    } else {
-        for (i = 0; i < level.players.size; i++) {
-            if (level.players[i] issplitscreenplayer() && !level.players[i] issplitscreenplayerprimary()) {
-                continue;
-            }
-            level.players[i] playlocalsound(sound);
+        return;
+    }
+    for (i = 0; i < level.players.size; i++) {
+        if (level.players[i] issplitscreenplayer() && !level.players[i] issplitscreenplayerprimary()) {
+            continue;
         }
+        level.players[i] playlocalsound(sound);
     }
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d4
 // Size: 0x1c
@@ -79,19 +83,19 @@ function play_sound_on_entity(alias, var_b426f32755673ba6) {
     play_sound_on_tag(alias);
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f7
 // Size: 0x3a
 function play_sound_on_tag(alias, tag) {
     if (isdefined(tag)) {
         playsoundatpos(self gettagorigin(tag), alias);
-    } else {
-        playsoundatpos(self.origin, alias);
+        return;
     }
+    playsoundatpos(self.origin, alias);
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x438
 // Size: 0x13e
@@ -106,24 +110,28 @@ function playdeathsound(meansofdeath) {
     }
     if (meansofdeath == "MOD_FALLING" || meansofdeath == "MOD_SUICIDE" && isplayer(self)) {
         if (self.team == "axis") {
-            namespace_f8065cafc523dba5::playplayerandnpcsounds(self, "plr_death_explosion", type + "_death_russian_" + rand);
+            scripts/cp_mp/utility/player_utility::playplayerandnpcsounds(self, "plr_death_explosion", type + "_death_russian_" + rand);
         } else {
-            namespace_f8065cafc523dba5::playplayerandnpcsounds(self, "plr_death_explosion", type + "_death_american_" + rand);
+            scripts/cp_mp/utility/player_utility::playplayerandnpcsounds(self, "plr_death_explosion", type + "_death_american_" + rand);
         }
-    } else if (isplayer(self)) {
-        if (self.team == "axis") {
-            namespace_f8065cafc523dba5::playplayerandnpcsounds(self, "plr_death_generic", type + "_death_russian_" + rand);
-        } else {
-            namespace_f8065cafc523dba5::playplayerandnpcsounds(self, "plr_death_generic", type + "_death_american_" + rand);
-        }
-    } else if (self.team == "axis") {
-        self playsound(type + "_death_russian_" + rand);
-    } else {
-        self playsound(type + "_death_american_" + rand);
+        return;
     }
+    if (isplayer(self)) {
+        if (self.team == "axis") {
+            scripts/cp_mp/utility/player_utility::playplayerandnpcsounds(self, "plr_death_generic", type + "_death_russian_" + rand);
+        } else {
+            scripts/cp_mp/utility/player_utility::playplayerandnpcsounds(self, "plr_death_generic", type + "_death_american_" + rand);
+        }
+        return;
+    }
+    if (self.team == "axis") {
+        self playsound(type + "_death_russian_" + rand);
+        return;
+    }
+    self playsound(type + "_death_american_" + rand);
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57d
 // Size: 0x4f
@@ -136,7 +144,7 @@ function function_7cf31218d8d83aaf() {
     }
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d3
 // Size: 0xab
@@ -155,13 +163,13 @@ function function_39467625717d8d27(name) {
         /#
             iprintlnbold("<unknown string>" + name + "<unknown string>");
         #/
-    } else {
-        level.var_6f72b465b2081001 settransientsoundbank(name + ".all", 1);
-        level.var_30649350266f97c8[name] = level.var_30649350266f97c8.size;
+        return;
     }
+    level.var_6f72b465b2081001 settransientsoundbank(name + ".all", 1);
+    level.var_30649350266f97c8[name] = level.var_30649350266f97c8.size;
 }
 
-// Namespace sound/namespace_a34451ae3d453e
+// Namespace sound / scripts/mp/utility/sound
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x685
 // Size: 0x9f
@@ -179,10 +187,10 @@ function function_a6357559500ee9fe(name) {
     if (isdefined(level.var_30649350266f97c8[name])) {
         level.var_6f72b465b2081001 settransientsoundbank(name + ".all", 0);
         level.var_30649350266f97c8[name] = undefined;
-    } else {
-        /#
-            iprintlnbold("<unknown string>" + name + "<unknown string>");
-        #/
+        return;
     }
+    /#
+        iprintlnbold("<unknown string>" + name + "<unknown string>");
+    #/
 }
 

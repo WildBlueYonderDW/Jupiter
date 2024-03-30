@@ -5,7 +5,7 @@
 
 #namespace zombie_knockdown;
 
-// Namespace zombie_knockdown/namespace_db1ce2c035564e2c
+// Namespace zombie_knockdown / namespace_db1ce2c035564e2c
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0xb8
 // Size: 0x2f
@@ -14,7 +14,7 @@ function private autoexec init() {
     registersharedfunc("zombie", "isZombieInKnockdown", &function_e67a89537ae7d4b7);
 }
 
-// Namespace zombie_knockdown/namespace_db1ce2c035564e2c
+// Namespace zombie_knockdown / namespace_db1ce2c035564e2c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xee
 // Size: 0x79
@@ -36,7 +36,7 @@ function function_e96aac065abbec4e(source_pos) {
     function_ac90fa5cc0a80298("knockdown_in");
 }
 
-// Namespace zombie_knockdown/namespace_db1ce2c035564e2c
+// Namespace zombie_knockdown / namespace_db1ce2c035564e2c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16e
 // Size: 0x17

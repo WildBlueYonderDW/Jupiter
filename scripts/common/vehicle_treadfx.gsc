@@ -2,9 +2,9 @@
 #using scripts\common\utility.gsc;
 #using scripts\common\vehicle_build.gsc;
 
-#namespace namespace_4a079edd1329361a;
+#namespace vehicle_treadfx;
 
-// Namespace namespace_4a079edd1329361a/namespace_fdd963a6f780db8b
+// Namespace vehicle_treadfx / scripts/common/vehicle_treadfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8e8
 // Size: 0x4ed
@@ -116,15 +116,15 @@ function main(classname) {
     }
 }
 
-// Namespace namespace_4a079edd1329361a/namespace_fdd963a6f780db8b
+// Namespace vehicle_treadfx / scripts/common/vehicle_treadfx
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xddc
 // Size: 0x26
 function setvehiclefx(classname, material, fx) {
-    namespace_d8730aa891576e41::set_vehicle_effect(classname, material, fx);
+    scripts/common/vehicle_build::set_vehicle_effect(classname, material, fx);
 }
 
-// Namespace namespace_4a079edd1329361a/namespace_fdd963a6f780db8b
+// Namespace vehicle_treadfx / scripts/common/vehicle_treadfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe09
 // Size: 0x81
@@ -136,7 +136,7 @@ function setallvehiclefx(classname, fx) {
     }
 }
 
-// Namespace namespace_4a079edd1329361a/namespace_fdd963a6f780db8b
+// Namespace vehicle_treadfx / scripts/common/vehicle_treadfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe91
 // Size: 0x146

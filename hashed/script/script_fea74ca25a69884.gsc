@@ -24,7 +24,7 @@
 #using scripts\mp\spawnlogic.gsc;
 #using scripts\mp\laststand.gsc;
 #using scripts\mp\gametypes\br_gulag.gsc;
-#using script_a34750d17473c49;
+#using scripts\mp\gametypes\br_utility.gsc;
 #using scripts\mp\playerlogic.gsc;
 #using scripts\mp\gametypes\br_circle.gsc;
 #using scripts\mp\gamelogic.gsc;
@@ -49,7 +49,7 @@
 
 #namespace namespace_3db0584c4c3b350b;
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7ce
 // Size: 0x4b
@@ -58,12 +58,12 @@ function init() {
         setdvarifuninitialized(@"hash_87e38fca685cec1d", 1);
     #/
     if (getdvarint(@"hash_87e38fca685cec1d", 0)) {
-        namespace_e4c20df2c9115a56::registerhandlecommand(&function_dd5235ea93f4af20);
-        thread namespace_e4c20df2c9115a56::commandwatcher(@"hash_97cda940cb7bd182", &namespace_e4c20df2c9115a56::handlecommand);
+        scripts/mp/gametypes/br_dev::registerhandlecommand(&function_dd5235ea93f4af20);
+        thread scripts/mp/gametypes/br_dev::commandwatcher(@"hash_97cda940cb7bd182", &scripts/mp/gametypes/br_dev::handlecommand);
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x820
 // Size: 0x44
@@ -77,7 +77,7 @@ function function_dd5235ea93f4af20(command, args) {
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x86b
 // Size: 0x99
@@ -90,28 +90,28 @@ function devscriptedtests(args) {
     }
     function_d721ba3a92dffd4c();
     function_8032016446156bad();
-    function_26e60c051f1c9ba6();
-    function_a77dc072d0e3be59();
+    resetplayers();
+    resetcircles();
     var_57accdc40b2f50e = spawnteams(args);
-    var_5d192b4c08040010 = var_57accdc40b2f50e[1];
-    var_92b132654e85cbc4 = var_57accdc40b2f50e[0];
+    enemyteammates = var_57accdc40b2f50e[1];
+    hostteammates = var_57accdc40b2f50e[0];
     host iprintlnbold("Test ready");
     wait(2);
-    function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4c08040010);
+    runtests(args, host, hostteammates, enemyteammates);
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x86
-function function_b59fcddf8ee2d0ba() {
-    if (namespace_36f464722d326bbe::isdonetskmap()) {
-        spawnlocations = [0:namespace_d20f8ef223912e12::createspawnlocation((-21500, 46200, -300), 0, 6000), 1:namespace_d20f8ef223912e12::createspawnlocation((51000, -39000, 1401), 0, 4000), 2:namespace_d20f8ef223912e12::createspawnlocation((32000, 40000, 767), 0, 5500), 3:namespace_d20f8ef223912e12::createspawnlocation((23000, -15000, -158), 0, 6000)];
+function getspawnlocations() {
+    if (scripts/cp_mp/utility/game_utility::isdonetskmap()) {
+        spawnlocations = [scripts/mp/gametypes/br::createspawnlocation((-21500, 46200, -300), 0, 6000), scripts/mp/gametypes/br::createspawnlocation((51000, -39000, 1401), 0, 4000), scripts/mp/gametypes/br::createspawnlocation((32000, 40000, 767), 0, 5500), scripts/mp/gametypes/br::createspawnlocation((23000, -15000, -158), 0, 6000)];
         return spawnlocations;
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x998
 // Size: 0x1c5
@@ -137,12 +137,12 @@ function function_d721ba3a92dffd4c() {
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb64
 // Size: 0xca
 function function_8032016446156bad() {
-    namespace_4b0406965e556711::gameflagset("prematch_done");
+    scripts/mp/flags::gameflagset("prematch_done");
     level notify("prematch_over");
     level notify("cancel_public_event");
     setomnvar("ui_prematch_period", 0);
@@ -158,14 +158,14 @@ function function_8032016446156bad() {
     setdvar(@"hash_cb2d56d085e5a9b9", 150);
     setdvar(@"hash_2c879521333c4987", 0);
     level.var_c3a1ed2db43ce5a = 3;
-    namespace_b2d5aa2baf2b5701::function_182c52d5da69684d();
+    scripts/mp/spawnlogic::function_182c52d5da69684d();
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc35
 // Size: 0x162
-function function_26e60c051f1c9ba6() {
+function resetplayers() {
     foreach (player in level.players) {
         if (player isplayerheadless()) {
             player allowmovement(0);
@@ -186,22 +186,22 @@ function function_26e60c051f1c9ba6() {
         player.var_4af73ce40a5d8572 = undefined;
         player notify("gulag_end");
         player notify("last_stand_start");
-        player namespace_10260b963310d30e::finishreviveplayer("self_revive_success", player);
+        player scripts/mp/laststand::finishreviveplayer("self_revive_success", player);
         player setstance("stand");
         player setallstreamloaddist(0);
         player.setspawnpoint = undefined;
-        var_9fdc1f9e4fc628e4 = spawnstruct();
-        var_9fdc1f9e4fc628e4.var_fb551788da0fc531 = 0;
-        player namespace_47fd1e79a44628cd::playerrespawngulagcleanup(var_9fdc1f9e4fc628e4);
-        player namespace_47fd1e79a44628cd::playergulagarenaready();
+        optparams = spawnstruct();
+        optparams.var_fb551788da0fc531 = 0;
+        player scripts/mp/gametypes/br_gulag::playerrespawngulagcleanup(optparams);
+        player scripts/mp/gametypes/br_gulag::playergulagarenaready();
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd9e
 // Size: 0xa2
-function function_a77dc072d0e3be59() {
+function resetcircles() {
     if (isdefined(level.br_circle.safecircleent)) {
         level.br_circle.dangercircleui.hidden = 1;
         level.br_circle.dangercircleent.hidden = 1;
@@ -211,13 +211,13 @@ function function_a77dc072d0e3be59() {
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe47
 // Size: 0x252
 function spawnteams(args) {
     host = gethost(args);
-    spawnlocations = function_b59fcddf8ee2d0ba();
+    spawnlocations = getspawnlocations();
     if (!isdefined(level.devspectateloc)) {
         level.devspectateloc = [];
     }
@@ -250,22 +250,22 @@ function spawnteams(args) {
             spawnorigin = spawnlocations[i].origin;
         }
         player1 playerteleporttoloc(spawnorigin, 0);
-        for (var_e1d097c517c3af5b = 0; var_e1d097c517c3af5b < var_e2d2256d6f8ba785; var_e1d097c517c3af5b++) {
-            var_b16a2ed5e620b451 = level.var_cc15d00c0dfbf14e[var_e1d097c517c3af5b][i];
-            var_b16a2ed5e620b451 playerteleporttoloc(spawnorigin, var_e1d097c517c3af5b + 1);
+        for (slotindex = 0; slotindex < var_e2d2256d6f8ba785; slotindex++) {
+            nextplayer = level.var_cc15d00c0dfbf14e[slotindex][i];
+            nextplayer playerteleporttoloc(spawnorigin, slotindex + 1);
         }
     }
     level.disablespawning = 1;
     totalplayers = getlivingplayers();
     level.totalplayers = totalplayers.size;
-    return [0:level.var_84931945e7b207, 1:level.var_cc15d00c0dfbf14e];
+    return [level.var_84931945e7b207, level.var_cc15d00c0dfbf14e];
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10a1
 // Size: 0xd0
-function playerteleporttoloc(spawnorigin, var_dcef536353ea980b) {
+function playerteleporttoloc(spawnorigin, posindex) {
     if (self isplayerheadless()) {
         self allowmovement(0);
         self allowfire(0);
@@ -276,7 +276,7 @@ function playerteleporttoloc(spawnorigin, var_dcef536353ea980b) {
         spawnorigin = level.devspectateloc[entnum];
     } else {
         dir = anglestoforward((0, 0, 0));
-        spawnorigin = spawnorigin + dir * var_dcef536353ea980b * 50;
+        spawnorigin = spawnorigin + dir * posindex * 50;
         spawnorigin = getgroundposition(spawnorigin, 15, 100);
     }
     self setorigin(spawnorigin);
@@ -286,13 +286,13 @@ function playerteleporttoloc(spawnorigin, var_dcef536353ea980b) {
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1178
 // Size: 0x160
 function reviveteam(host, team) {
     teammates = level.teamdata[team]["players"];
-    var_e89fb3807c5150ca = 0;
+    revivedplayers = 0;
     foreach (player in teammates) {
         if (!isalive(player) || player.sessionstate != "playing") {
             entnum = player getentitynumber();
@@ -304,36 +304,36 @@ function reviveteam(host, team) {
                 player.forcespawnorigin = player.origin;
             }
             player spawnclientdevtest(0);
-            var_e89fb3807c5150ca = 1;
+            revivedplayers = 1;
         }
         if (istrue(player.br_iseliminated)) {
-            namespace_80cec6cfc70c4f95::unmarkplayeraseliminated(player);
+            scripts/mp/gametypes/br_utility::unmarkplayeraseliminated(player);
         }
     }
-    if (var_e89fb3807c5150ca) {
+    if (revivedplayers) {
         host iprintlnbold("Reviving Team: " + team);
         wait(1);
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x10b
 function getteamspawnbots(host, team) {
-    var_fc617751f654a141 = 0;
+    numtospawn = 0;
     if (level.teamdata[team]["teamCount"] < level.maxteamsize) {
-        var_fc617751f654a141 = level.maxteamsize - level.teamdata[team]["teamCount"];
+        numtospawn = level.maxteamsize - level.teamdata[team]["teamCount"];
     }
-    if (var_fc617751f654a141 > 0) {
+    if (numtospawn > 0) {
         level.modespawnclient = &spawnclientdevtest;
-        addbots(var_fc617751f654a141, team);
+        addbots(numtospawn, team);
         host iprintlnbold("Spawning Team: " + team);
         timeout = gettime() + 10000;
         while (gettime() < timeout && level.teamdata[team]["aliveCount"] < level.maxteamsize) {
             waitframe();
         }
-        level.modespawnclient = &namespace_d20f8ef223912e12::spawnclientbr;
+        level.modespawnclient = &scripts/mp/gametypes/br::spawnclientbr;
     }
     /#
         assert(level.teamdata[team]["alivePlayers"].size == level.maxteamsize);
@@ -341,32 +341,32 @@ function getteamspawnbots(host, team) {
     return level.teamdata[team]["alivePlayers"];
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13f2
 // Size: 0xe6
-function function_46c357e31a65af85() {
+function botcallback() {
     team = self.bot_team;
     players = level.teamdata[team]["players"];
     for (i = 0; i < level.maxteamsize; i++) {
-        var_46ad8d2ae6655343 = 1;
+        validindex = 1;
         foreach (player in players) {
             if (self == player) {
                 continue;
             }
             if (isdefined(player.var_3f78c6a0862f9e25) && player.var_3f78c6a0862f9e25 == i) {
-                var_46ad8d2ae6655343 = 0;
+                validindex = 0;
                 break;
             }
         }
-        if (var_46ad8d2ae6655343) {
+        if (validindex) {
             self.var_3f78c6a0862f9e25 = i;
             break;
         }
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14df
 // Size: 0x54
@@ -374,20 +374,20 @@ function addbots(numbots, team) {
     if (!isdefined(team)) {
         team = "autoassign";
     }
-    level thread [[ level.bot_funcs["bots_spawn"] ]](numbots, team, &function_46c357e31a65af85);
+    level thread [[ level.bot_funcs["bots_spawn"] ]](numbots, team, &botcallback);
     if (level.matchmakingmatch) {
         setmatchdata("hasBots", 1);
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x153a
 // Size: 0xb5
-function spawnclientdevtest(var_9156b53bcf7ce573) {
-    self.class = namespace_d20f8ef223912e12::pickprematchrandomloadout();
+function spawnclientdevtest(revivespawn) {
+    self.class = scripts/mp/gametypes/br::pickprematchrandomloadout();
     self.pers["class"] = self.class;
-    namespace_99ac021a7547cae3::spawnplayer(undefined, 0);
+    scripts/mp/playerlogic::spawnplayer(undefined, 0);
     self freezecontrols(1);
     waitframe();
     self skydive_setdeploymentstatus(0);
@@ -403,7 +403,7 @@ function spawnclientdevtest(var_9156b53bcf7ce573) {
     self freezecontrols(0);
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15f6
 // Size: 0x16
@@ -411,18 +411,18 @@ function function_df49f9975e17b225(value) {
     self.br_infilstarted = value;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1613
 // Size: 0x2c
-function function_645de575b455626c(var_c2012867b496a7cb) {
+function disconnectbot(botplayer) {
     /#
-        assert(isbot(var_c2012867b496a7cb));
+        assert(isbot(botplayer));
     #/
-    kick(var_c2012867b496a7cb getentitynumber(), "EXE/PLAYERKICKED_BOT_BALANCE");
+    kick(botplayer getentitynumber(), "EXE/PLAYERKICKED_BOT_BALANCE");
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1646
 // Size: 0x92
@@ -440,11 +440,11 @@ function killplayer(victim, var_25012cdc0dfdc53f) {
     return enemy;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16e0
 // Size: 0xac
-function killplayerinstant(victim, var_25012cdc0dfdc53f, var_e953bcc50c294ae4) {
+function killplayerinstant(victim, var_25012cdc0dfdc53f, keeplaststand) {
     enemy = var_25012cdc0dfdc53f;
     if (isarray(var_25012cdc0dfdc53f)) {
         enemy = getnearbyaliveplayer(victim.origin, var_25012cdc0dfdc53f);
@@ -452,8 +452,8 @@ function killplayerinstant(victim, var_25012cdc0dfdc53f, var_e953bcc50c294ae4) {
     if (!isdefined(enemy)) {
         enemy = victim;
     }
-    if (!istrue(var_e953bcc50c294ae4) && victim namespace_82dcd1d5ae30ff7::_hasperk("specialty_pistoldeath")) {
-        victim namespace_82dcd1d5ae30ff7::removeperk("specialty_pistoldeath");
+    if (!istrue(keeplaststand) && victim scripts/mp/utility/perk::_hasperk("specialty_pistoldeath")) {
+        victim scripts/mp/utility/perk::removeperk("specialty_pistoldeath");
     }
     while (isalive(victim)) {
         victim dodamage(500, enemy.origin, enemy, undefined, "MOD_EXPLOSIVE", enemy getcurrentprimaryweapon());
@@ -465,7 +465,7 @@ function killplayerinstant(victim, var_25012cdc0dfdc53f, var_e953bcc50c294ae4) {
     return enemy;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1794
 // Size: 0x9b
@@ -477,8 +477,8 @@ function putinlaststand(player, var_25012cdc0dfdc53f) {
     if (!isdefined(enemy)) {
         enemy = player;
     }
-    if (!player namespace_82dcd1d5ae30ff7::_hasperk("specialty_pistoldeath")) {
-        player namespace_82dcd1d5ae30ff7::giveperk("specialty_pistoldeath");
+    if (!player scripts/mp/utility/perk::_hasperk("specialty_pistoldeath")) {
+        player scripts/mp/utility/perk::giveperk("specialty_pistoldeath");
     }
     while (!istrue(player.inlaststand)) {
         player dodamage(30, enemy.origin, enemy, undefined, "MOD_EXPLOSIVE", enemy getcurrentprimaryweapon());
@@ -487,14 +487,14 @@ function putinlaststand(player, var_25012cdc0dfdc53f) {
     return enemy;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1837
 // Size: 0x2af
 function scriptcircleat(origin, radius) {
     if (!isdefined(level.br_circle.safecircleent)) {
-        thread namespace_c5622898120e827f::runcircles(1);
-        level.br_circle thread namespace_c5622898120e827f::circledamagetick();
+        thread scripts/mp/gametypes/br_circle::runcircles(1);
+        level.br_circle thread scripts/mp/gametypes/br_circle::circledamagetick();
     }
     waitframe();
     level notify("CirclePeekCleanup");
@@ -503,9 +503,9 @@ function scriptcircleat(origin, radius) {
     level.br_circle.circleindex = circleindex;
     var_f007ce073dc3c519 = circleindex == 0;
     var_6b890e6be7982efb = circleindex == level.br_level.br_circleclosetimes.size - 1;
-    var_c3d4caa5cb4132e6 = level.br_level.br_circledelaytimes[circleindex];
+    prewaittime = level.br_level.br_circledelaytimes[circleindex];
     closetime = level.br_level.br_circleclosetimes[circleindex];
-    var_154ef61b7a7f747a = level.br_level.br_circleradii[circleindex + 1];
+    targetradius = level.br_level.br_circleradii[circleindex + 1];
     setomnvar("ui_br_circle_num", circleindex + 1);
     level.br_circle.centertarget = origin;
     level.br_circle.safecircleent.origin = origin;
@@ -516,18 +516,18 @@ function scriptcircleat(origin, radius) {
     level notify("update_circle_hide");
     level.br_circle.safecircleui.origin = level.br_circle.safecircleent.origin;
     level.br_circle.dangercircleui.origin = origin + (0, 0, radius);
-    namespace_c5622898120e827f::setstaticuicircles(999, level.br_circle.safecircleui, level.br_circle.dangercircleui, var_6b890e6be7982efb);
+    scripts/mp/gametypes/br_circle::setstaticuicircles(999, level.br_circle.safecircleui, level.br_circle.dangercircleui, var_6b890e6be7982efb);
     level notify("br_circle_set");
     waitframe();
     level notify("br_circle_started");
     level.br_circle.dangercircleent brcirclemoveto(origin[0], origin[1], radius, 1);
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aed
 // Size: 0x2c
-function function_2ea11e29fb71e2ad(args, numteams) {
+function setnumteams(args, numteams) {
     if (numteams <= 0) {
         return;
     }
@@ -535,7 +535,7 @@ function function_2ea11e29fb71e2ad(args, numteams) {
     return spawnteams(args);
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b21
 // Size: 0x9f
@@ -548,31 +548,31 @@ function getnearbyaliveplayer(org, players) {
             return players[0];
         }
     }
-    var_2ec9f2281965d86b = undefined;
+    aliveplayer = undefined;
     for (i = 1; i < players.size; i++) {
         player = players[i];
         if (isalive(player)) {
-            var_2ec9f2281965d86b = player;
+            aliveplayer = player;
             break;
         }
     }
-    return var_2ec9f2281965d86b;
+    return aliveplayer;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bc8
 // Size: 0x63
 function argshave(args, token) {
     foreach (arg in args) {
         if (arg == token) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c33
 // Size: 0x14f
@@ -580,7 +580,7 @@ function gethost(args) {
     if (isdefined(level.devspectatetesthost)) {
         return level.devspectatetesthost;
     }
-    host = namespace_d576b6dc7cef9c62::gethostplayer();
+    host = scripts/mp/gamelogic::gethostplayer();
     if (argshave(args, "clientHost")) {
         foreach (player in level.players) {
             if (!isai(player) && !player isplayerheadless() && (!isdefined(host) || player != host)) {
@@ -605,7 +605,7 @@ function gethost(args) {
     return host;
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d8a
 // Size: 0x77
@@ -613,16 +613,16 @@ function playerstartrecondronewait() {
     pickupent = spawnstruct();
     pickupent.scriptablename = "brloot_killstreak_recondrone";
     pickupent.count = 1;
-    namespace_cb965d2f71fefddc::takesuperpickup(pickupent);
+    scripts/mp/gametypes/br_pickups::takesuperpickup(pickupent);
     wait(1);
-    var_641083e829d5514c = makeweapon("super_default_mp");
-    namespace_85d036cb78063c4a::trysuperusebegin(var_641083e829d5514c);
+    superweapon = makeweapon("super_default_mp");
+    scripts/mp/supers::trysuperusebegin(superweapon);
     while (self getcurrentprimaryweapon().basename != "ks_remote_drone_mp") {
         waitframe();
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e08
 // Size: 0x1d
@@ -631,7 +631,7 @@ function waitandsuicide(delaytime, player) {
     player suicide();
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e2c
 // Size: 0x68
@@ -640,17 +640,17 @@ function onprematchstarted2() {
     level thread onprematchfadedone2();
     c130pathstruct = undefined;
     if (!istrue(level.br_infils_disabled)) {
-        c130pathstruct = namespace_ad389306d44fc6b4::createtestc130path();
+        c130pathstruct = scripts/mp/gametypes/br_c130::createtestc130path();
     }
     waitframe();
     level.br_c130spawndone = 0;
     level.br_latejoininfilready = 0;
     namespace_973962356ce55fee::beginbrc130playeraniminfilsequence(c130pathstruct, "player");
-    level thread namespace_ad389306d44fc6b4::waittoplayinfildialog();
+    level thread scripts/mp/gametypes/br_c130::waittoplayinfildialog();
     level notify("infils_ready");
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e9b
 // Size: 0x18a
@@ -661,42 +661,42 @@ function onprematchfadedone2() {
         level.spectatetestonprematchfadedone = 1;
         return;
     }
-    namespace_4b0406965e556711::gameflagwait("prematch_fade_done");
-    level thread namespace_d20f8ef223912e12::resetalldoors(var_36648016ce75e753 * 1.5);
-    level thread namespace_ede58c1e66c2c280::calloutmarkerping_removeallcalloutsforallplayers(1);
-    level thread namespace_15d3019056d1bcea::brvehicleonprematchstarted();
-    level thread namespace_15111e421d79d07d::onprematchdone();
-    namespace_d20f8ef223912e12::cleanupmolotovs();
-    namespace_15d3019056d1bcea::emptyallvehicles();
+    scripts/mp/flags::gameflagwait("prematch_fade_done");
+    level thread scripts/mp/gametypes/br::resetalldoors(var_36648016ce75e753 * 1.5);
+    level thread scripts/cp_mp/calloutmarkerping::calloutmarkerping_removeallcalloutsforallplayers(1);
+    level thread scripts/mp/gametypes/br_vehicles::brvehicleonprematchstarted();
+    level thread scripts/mp/gametypes/br_functional_poi::onprematchdone();
+    scripts/mp/gametypes/br::cleanupmolotovs();
+    scripts/mp/gametypes/br_vehicles::emptyallvehicles();
     foreach (player in level.players) {
-        player namespace_d20f8ef223912e12::setplayerprematchallows();
-        player thread namespace_cb965d2f71fefddc::resetplayerinventory();
+        player scripts/mp/gametypes/br::setplayerprematchallows();
+        player thread scripts/mp/gametypes/br_pickups::resetplayerinventory();
         if (istrue(player.hasspawned)) {
             if (istrue(player.usingascender)) {
-                player namespace_c851aa543ccfe72f::ascenderinstantstop();
+                player scripts/cp_mp/auto_ascender::ascenderinstantstop();
             }
-            player thread namespace_3bbb5a98b932c46f::deleteplacedequipment();
+            player thread scripts/mp/weapons::deleteplacedequipment();
         }
     }
     foreach (player in level.players) {
         if (isdefined(player.burninginfo)) {
-            player namespace_df478cc572a311d3::molotov_clear_burning();
+            player scripts/mp/equipment/molotov::molotov_clear_burning();
         }
-        player namespace_484d135e1e3717ed::javelin_forceclear();
+        player scripts/mp/javelin::javelin_forceclear();
     }
     level notify("prematch_cleanup");
     if (!istrue(level.br_circle_disabled)) {
-        level thread namespace_c5622898120e827f::runcircles(1);
+        level thread scripts/mp/gametypes/br_circle::runcircles(1);
     }
 }
 
-// Namespace namespace_3db0584c4c3b350b/namespace_ed19ace3eeb2e4
+// Namespace namespace_3db0584c4c3b350b / namespace_ed19ace3eeb2e4
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x202c
 // Size: 0x3359
-function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4c08040010) {
+function runtests(args, host, hostteammates, enemyteammates) {
     if (argshave(args, "killcam1") || argshave(args, "killchain") || argshave(args, "disconnect1") || argshave(args, "disconnect2") || argshave(args, "disconnect3")) {
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
         if (argshave(args, "disconnect2")) {
             while (host.sessionstate != "intermission") {
                 waitframe();
@@ -710,7 +710,7 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
             }
             wait(0.5);
         } else {
-            namespace_a9c534dc7832aba4::waittillspectating(host);
+            scripts/mp/gametypes/br_spectate::waittillspectating(host);
             wait(3);
             if (argshave(args, "disconnect1")) {
                 host iprintlnbold("Waiting");
@@ -719,77 +719,67 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         }
     }
     if (argshave(args, "disconnect1") || argshave(args, "disconnect2") || argshave(args, "disconnect3")) {
-        playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        function_645de575b455626c(playertospectate);
+        playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
+        disconnectbot(playertospectate);
     }
     if (argshave(args, "killchain")) {
-        playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        while (!isdefined(playertospectate)) {
+        for (playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer(); !isdefined(playertospectate); playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer()) {
             waitframe();
-            playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
         }
-        killplayer(playertospectate, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayer(playertospectate, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(3);
     }
     if (argshave(args, "killchain")) {
-        playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        while (!isdefined(playertospectate)) {
+        for (playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer(); !isdefined(playertospectate); playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer()) {
             waitframe();
-            playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
         }
-        killplayer(playertospectate, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayer(playertospectate, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(3);
     }
     if (argshave(args, "killchain")) {
-        playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        while (!isdefined(playertospectate)) {
+        for (playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer(); !isdefined(playertospectate); playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer()) {
             waitframe();
-            playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
         }
-        killplayer(playertospectate, var_5d192b4c08040010[1]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayer(playertospectate, enemyteammates[1]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(3);
     }
     if (argshave(args, "killchain")) {
-        playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        while (!isdefined(playertospectate)) {
+        for (playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer(); !isdefined(playertospectate); playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer()) {
             waitframe();
-            playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
         }
-        killplayer(playertospectate, var_5d192b4c08040010[1]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayer(playertospectate, enemyteammates[1]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(3);
     }
     if (argshave(args, "killchain")) {
-        playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        while (!isdefined(playertospectate)) {
+        for (playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer(); !isdefined(playertospectate); playertospectate = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer()) {
             waitframe();
-            playertospectate = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
         }
-        killplayer(playertospectate, var_5d192b4c08040010[1]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayer(playertospectate, enemyteammates[1]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(3);
     }
     if (argshave(args, "gulag1")) {
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
                 player function_df49f9975e17b225(1);
-                killplayer(player, var_5d192b4c08040010[0]);
+                killplayer(player, enemyteammates[0]);
             }
         }
         wait(10);
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
     }
     if (argshave(args, "gulag2") || argshave(args, "gulag3")) {
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
         host waittill("killcam_ended");
         wait(2);
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
                 player function_df49f9975e17b225(1);
-                killplayer(player, var_5d192b4c08040010[0]);
+                killplayer(player, enemyteammates[0]);
             }
         }
         while (!isdefined(host getspectatingplayer())) {
@@ -798,9 +788,9 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         friendly = host getspectatingplayer();
         friendly function_df49f9975e17b225(1);
         wait(1);
-        foreach (player in var_5d192b4c08040010[0]) {
+        foreach (player in enemyteammates[0]) {
             player function_df49f9975e17b225(1);
-            killplayer(player, var_5d192b4c08040010[1]);
+            killplayer(player, enemyteammates[1]);
         }
         while (!istrue(friendly.gulagarena)) {
             waitframe();
@@ -811,10 +801,10 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
             setspawnpoint.playerspawnpos = (26474, -16709, -162);
             setspawnpoint.playerspawnangles = (85, 135, 0);
             friendly.setspawnpoint = setspawnpoint;
-            foreach (player in var_5d192b4c08040010[0]) {
+            foreach (player in enemyteammates[0]) {
                 if (istrue(player.gulagarena)) {
                     player function_df49f9975e17b225(1);
-                    killplayer(player, var_5d192b4c08040010[1]);
+                    killplayer(player, enemyteammates[1]);
                     break;
                 }
             }
@@ -828,14 +818,14 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
             playerangles = friendly getplayerangles();
             friendly setplayerangles((85, playerangles[1], 0));
         } else {
-            killplayer(friendly, var_5d192b4c08040010[1]);
+            killplayer(friendly, enemyteammates[1]);
         }
     }
     if (argshave(args, "gulag4")) {
         host function_df49f9975e17b225(1);
-        enemy = killplayer(host, var_5d192b4c08040010[0]);
+        enemy = killplayer(host, enemyteammates[0]);
         enemy function_df49f9975e17b225(1);
-        killplayer(enemy, var_92b132654e85cbc4);
+        killplayer(enemy, hostteammates);
     }
     if (argshave(args, "gulaggulag")) {
         first = getdvarint(@"hash_ad0ddaf795b2ef1a", 0);
@@ -843,17 +833,17 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         setdvar(@"hash_e5f703a38f6e8043", 9999);
         setdvar(@"hash_8bdee07fa09e810a", first);
         host function_df49f9975e17b225(1);
-        enemy = killplayer(host, var_5d192b4c08040010[0]);
+        enemy = killplayer(host, enemyteammates[0]);
         setdvar(@"hash_8bdee07fa09e810a", second);
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
                 player function_df49f9975e17b225(1);
-                killplayer(player, var_5d192b4c08040010[0]);
+                killplayer(player, enemyteammates[0]);
             }
         }
         setdvar(@"hash_8bdee07fa09e810a", first);
         enemy function_df49f9975e17b225(1);
-        killplayer(enemy, var_5d192b4c08040010[1]);
+        killplayer(enemy, enemyteammates[1]);
         while (!istrue(host.gulagarena) && !istrue(enemy.gulagarena)) {
             waitframe();
         }
@@ -862,8 +852,8 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         setdvar(@"hash_e5f703a38f6e8043", 90);
     }
     if (argshave(args, "killkill")) {
-        enemy = var_5d192b4c08040010[0][0];
-        foreach (player in var_92b132654e85cbc4) {
+        enemy = enemyteammates[0][0];
+        foreach (player in hostteammates) {
             if (player != host) {
                 killplayer(player, enemy);
             }
@@ -873,39 +863,39 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         killplayer(host, enemy);
     }
     if (argshave(args, "killcam2")) {
-        enemy = killplayer(host, var_5d192b4c08040010[0]);
+        enemy = killplayer(host, enemyteammates[0]);
         wait(3);
-        killplayer(host.nextplayertospectate, var_5d192b4c08040010[0]);
+        killplayer(host.nextplayertospectate, enemyteammates[0]);
     }
     if (argshave(args, "gulag5") || argshave(args, "gulag6")) {
-        var_71a8e3c80df475a0 = undefined;
-        foreach (player in var_92b132654e85cbc4) {
-            if (!isdefined(var_71a8e3c80df475a0) && player != host) {
-                var_71a8e3c80df475a0 = player;
-            } else {
-                killplayer(player, var_5d192b4c08040010[0]);
-                namespace_a9c534dc7832aba4::waittillspectating(player);
+        nothost = undefined;
+        foreach (player in hostteammates) {
+            if (!isdefined(nothost) && player != host) {
+                nothost = player;
+                continue;
             }
+            killplayer(player, enemyteammates[0]);
+            scripts/mp/gametypes/br_spectate::waittillspectating(player);
         }
-        var_71a8e3c80df475a0 function_df49f9975e17b225(1);
+        nothost function_df49f9975e17b225(1);
         if (argshave(args, "gulag6")) {
             setdvar(@"hash_e5f703a38f6e8043", 9999);
             first = getdvarint(@"hash_ad0ddaf795b2ef1a", 5);
             setdvar(@"hash_8bdee07fa09e810a", first);
-            var_71a8e3c80df475a0.longgulagstream = 1;
+            nothost.longgulagstream = 1;
         }
-        killplayer(var_71a8e3c80df475a0, var_5d192b4c08040010[0]);
+        killplayer(nothost, enemyteammates[0]);
     }
     if (argshave(args, "gulag7")) {
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
         host waittill("killcam_ended");
         wait(2);
-        var_435b226327d6361a = undefined;
-        foreach (player in var_92b132654e85cbc4) {
+        gulagplayer = undefined;
+        foreach (player in hostteammates) {
             if (player != host) {
                 player function_df49f9975e17b225(1);
-                var_435b226327d6361a = player;
-                var_435b226327d6361a namespace_47fd1e79a44628cd::initplayerjail();
+                gulagplayer = player;
+                gulagplayer scripts/mp/gametypes/br_gulag::initplayerjail();
                 break;
             }
         }
@@ -913,20 +903,20 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
             waitframe();
         }
         wait(1);
-        var_9af272f7c0618531 = undefined;
-        foreach (player in var_5d192b4c08040010[0]) {
+        gulagenemy = undefined;
+        foreach (player in enemyteammates[0]) {
             player function_df49f9975e17b225(1);
-            var_9af272f7c0618531 = player;
-            killplayer(player, var_5d192b4c08040010[1]);
+            gulagenemy = player;
+            killplayer(player, enemyteammates[1]);
             break;
         }
-        while (!istrue(var_435b226327d6361a.gulagarena) && !istrue(var_9af272f7c0618531.gulagarena)) {
+        while (!istrue(gulagplayer.gulagarena) && !istrue(gulagenemy.gulagarena)) {
             waitframe();
         }
         wait(5);
         setdvar(@"hash_e43719f8cb449c07", 1);
-        killplayer(var_9af272f7c0618531, var_435b226327d6361a);
-        while (host getspectatingplayer() != var_435b226327d6361a) {
+        killplayer(gulagenemy, gulagplayer);
+        while (host getspectatingplayer() != gulagplayer) {
             /#
                 println("br_circle_set");
             #/
@@ -939,47 +929,47 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         level.gulag.timelimit = 3;
         setdvar(@"hash_1ff83f4f24656c5b", 3);
         setdvar(@"hash_e5f703a38f6e8043", -1);
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
         host waittill("killcam_ended");
         wait(2);
-        var_435b226327d6361a = undefined;
-        foreach (player in var_92b132654e85cbc4) {
+        gulagplayer = undefined;
+        foreach (player in hostteammates) {
             if (player != host) {
                 player function_df49f9975e17b225(1);
-                var_435b226327d6361a = player;
-                var_435b226327d6361a namespace_47fd1e79a44628cd::initplayerjail();
+                gulagplayer = player;
+                gulagplayer scripts/mp/gametypes/br_gulag::initplayerjail();
                 break;
             }
         }
         while (!isdefined(host getspectatingplayer())) {
             waitframe();
         }
-        while (host getspectatingplayer() != var_435b226327d6361a) {
+        while (host getspectatingplayer() != gulagplayer) {
             iprintlnbold("Switch to spectating gulag player");
             waitframe();
         }
         wait(1);
-        var_9af272f7c0618531 = undefined;
-        foreach (player in var_5d192b4c08040010[0]) {
+        gulagenemy = undefined;
+        foreach (player in enemyteammates[0]) {
             player function_df49f9975e17b225(1);
-            var_9af272f7c0618531 = player;
-            killplayer(player, var_5d192b4c08040010[1]);
+            gulagenemy = player;
+            killplayer(player, enemyteammates[1]);
             break;
         }
     }
     if (argshave(args, "gulag9")) {
         host function_df49f9975e17b225(1);
-        enemy = killplayer(host, var_5d192b4c08040010[0]);
+        enemy = killplayer(host, enemyteammates[0]);
         enemy function_df49f9975e17b225(1);
-        killplayer(enemy, var_92b132654e85cbc4);
-        foreach (player in var_92b132654e85cbc4) {
+        killplayer(enemy, hostteammates);
+        foreach (player in hostteammates) {
             if (player != host) {
-                killplayer(player, var_5d192b4c08040010[0]);
+                killplayer(player, enemyteammates[0]);
             }
         }
-        foreach (player in var_5d192b4c08040010[0]) {
+        foreach (player in enemyteammates[0]) {
             if (player != enemy) {
-                killplayer(player, var_5d192b4c08040010[1]);
+                killplayer(player, enemyteammates[1]);
             }
         }
         while (!istrue(host.gulagarena)) {
@@ -994,150 +984,148 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         setdvar(@"hash_2c879521333c4987", 0);
     }
     if (argshave(args, "gulag10")) {
-        var_57b48ef0392ddd42 = var_5d192b4c08040010[0][0];
+        var_57b48ef0392ddd42 = enemyteammates[0][0];
         var_57b48ef0392ddd42 function_df49f9975e17b225(1);
-        killplayer(var_57b48ef0392ddd42, var_5d192b4c08040010[1]);
-        var_57b48df0392ddb0f = var_5d192b4c08040010[1][0];
+        killplayer(var_57b48ef0392ddd42, enemyteammates[1]);
+        var_57b48df0392ddb0f = enemyteammates[1][0];
         var_57b48df0392ddb0f function_df49f9975e17b225(1);
-        killplayer(var_57b48df0392ddb0f, var_5d192b4c08040010[0]);
+        killplayer(var_57b48df0392ddb0f, enemyteammates[0]);
         wait(1);
         var_57b896f03931e4b1 = host;
         var_57b896f03931e4b1 function_df49f9975e17b225(1);
-        killplayer(var_57b896f03931e4b1, var_5d192b4c08040010[0]);
-        var_57b893f03931de18 = var_5d192b4c08040010[0][1];
+        killplayer(var_57b896f03931e4b1, enemyteammates[0]);
+        var_57b893f03931de18 = enemyteammates[0][1];
         var_57b893f03931de18 function_df49f9975e17b225(1);
-        killplayer(var_57b893f03931de18, var_5d192b4c08040010[1]);
+        killplayer(var_57b893f03931de18, enemyteammates[1]);
         while (!istrue(var_57b48ef0392ddd42.gulagarena) || !istrue(var_57b48df0392ddb0f.gulagarena) || !istrue(var_57b896f03931e4b1.jailed) || !istrue(var_57b893f03931de18.jailed)) {
             waitframe();
         }
         setdvar(@"hash_98b297a8680cbdc2", 1);
-        var_52a4b4a1649783ed = var_5d192b4c08040010[1][1];
-        var_52a4b4a1649783ed function_df49f9975e17b225(1);
-        killplayer(var_52a4b4a1649783ed, var_5d192b4c08040010[0]);
+        playerc = enemyteammates[1][1];
+        playerc function_df49f9975e17b225(1);
+        killplayer(playerc, enemyteammates[0]);
         wait(1);
-        while (istrue(var_52a4b4a1649783ed.gulagloading)) {
+        while (istrue(playerc.gulagloading)) {
             waitframe();
         }
-        namespace_47fd1e79a44628cd::shutdowngulag("circle_index", 0);
+        scripts/mp/gametypes/br_gulag::shutdowngulag("circle_index", 0);
         wait(1);
-        function_645de575b455626c(var_52a4b4a1649783ed);
+        disconnectbot(playerc);
         wait(3);
         setdvar(@"hash_98b297a8680cbdc2", 0);
     }
     if (argshave(args, "gulag11")) {
         host function_df49f9975e17b225(1);
-        putinlaststand(host, var_5d192b4c08040010[1]);
+        putinlaststand(host, enemyteammates[1]);
         wait(1);
-        namespace_47fd1e79a44628cd::shutdowngulag("circle_index", 0);
+        scripts/mp/gametypes/br_gulag::shutdowngulag("circle_index", 0);
         wait(1);
-        host namespace_10260b963310d30e::finishreviveplayer("self_revive_success", host);
+        host scripts/mp/laststand::finishreviveplayer("self_revive_success", host);
         wait(5);
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
     }
     if (argshave(args, "twooneframe")) {
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                killplayer(player, var_5d192b4c08040010[0]);
+                killplayer(player, enemyteammates[0]);
                 break;
             }
         }
         wait(5);
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (isalive(player)) {
-                killplayerinstant(player, var_5d192b4c08040010[0]);
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
     }
     if (argshave(args, "suicide")) {
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                killplayer(player, var_5d192b4c08040010[0]);
+                killplayer(player, enemyteammates[0]);
             }
         }
         wait(5);
-        if (host namespace_82dcd1d5ae30ff7::_hasperk("specialty_pistoldeath")) {
-            host namespace_82dcd1d5ae30ff7::removeperk("specialty_pistoldeath");
+        if (host scripts/mp/utility/perk::_hasperk("specialty_pistoldeath")) {
+            host scripts/mp/utility/perk::removeperk("specialty_pistoldeath");
         }
         host suicide();
     }
     if (argshave(args, "team")) {
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                killplayerinstant(player, var_5d192b4c08040010[0]);
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
     }
     if (argshave(args, "moving")) {
-        killplayerinstant(host, var_5d192b4c08040010[0]);
+        killplayerinstant(host, enemyteammates[0]);
         while (!isdefined(host.playertospectate)) {
             waitframe();
         }
         player = host.playertospectate;
         dir = anglestoforward(player.angles);
         amount = getdvarint(@"hash_347466495c6777db", 5);
-        var_13c5603d4beea2fc = host getspectatingplayer();
-        while (!isdefined(var_13c5603d4beea2fc)) {
-            var_e4a58e54d20994f2 = player.origin + dir * amount;
-            player setorigin(var_e4a58e54d20994f2);
+        for (spectatingplayer = host getspectatingplayer(); !isdefined(spectatingplayer); spectatingplayer = host getspectatingplayer()) {
+            nextorg = player.origin + dir * amount;
+            player setorigin(nextorg);
             waitframe();
-            var_13c5603d4beea2fc = host getspectatingplayer();
         }
     }
     if (argshave(args, "heli1") || argshave(args, "heli2")) {
         friendly = undefined;
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
                 if (!isdefined(friendly)) {
                     friendly = player;
-                } else {
-                    killplayerinstant(player, var_5d192b4c08040010[0]);
+                    continue;
                 }
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
         wait(1);
-        killplayerinstant(host, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayerinstant(host, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(1);
         keys = getarraykeys(level.vehicle.instances["little_bird"]);
         heli = level.vehicle.instances["little_bird"][keys[0]];
         instance = heli getlinkedscriptableinstance();
         friendly setorigin(heli.origin);
         wait(1);
-        namespace_141c4634b6ea7b27::vehicle_interact_scriptableused(instance, "single", "vehicle_use", friendly, 0);
+        scripts/cp_mp/vehicles/vehicle_interact::vehicle_interact_scriptableused(instance, "single", "vehicle_use", friendly, 0);
         if (argshave(args, "heli2")) {
             wait(3);
-            function_645de575b455626c(friendly);
+            disconnectbot(friendly);
         }
     }
     if (argshave(args, "water")) {
         host setorigin((28252, -32627, -415));
     }
     if (argshave(args, "disconnectswitch1")) {
-        killplayerinstant(host, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
-        friendly = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
+        killplayerinstant(host, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
+        friendly = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
         while (!host buttonpressed("BUTTON_RSHLDR")) {
             waitframe();
         }
-        var_4995442795b82170 = undefined;
-        foreach (player in var_92b132654e85cbc4) {
+        friendly2 = undefined;
+        foreach (player in hostteammates) {
             if (player != host && player != friendly) {
-                var_4995442795b82170 = player;
+                friendly2 = player;
                 break;
             }
         }
         wait(0.5);
-        function_645de575b455626c(var_4995442795b82170);
+        disconnectbot(friendly2);
     }
     if (argshave(args, "disconnectswitch2")) {
-        killplayerinstant(host, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
-        friendly = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
+        killplayerinstant(host, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
+        friendly = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
         while (!host buttonpressed("BUTTON_RSHLDR")) {
             waitframe();
         }
         wait(0.5);
-        function_645de575b455626c(friendly);
+        disconnectbot(friendly);
     }
     if (argshave(args, "endspectate")) {
         level.br_infils_disabled = 1;
@@ -1147,162 +1135,162 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         setdvar(@"hash_faf1db5754891b2d", 2);
         level.gulag.maxuses = 0;
         wait(1);
-        killplayerinstant(host, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        killplayerinstant(host, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(2);
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                killplayerinstant(player, var_5d192b4c08040010[0]);
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(2);
-        enemy = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        killplayerinstant(enemy, var_5d192b4c08040010[1]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        enemy = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
+        killplayerinstant(enemy, enemyteammates[1]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(2);
-        enemy = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        killplayerinstant(enemy, var_5d192b4c08040010[1]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        enemy = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
+        killplayerinstant(enemy, enemyteammates[1]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(2);
-        enemy = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
-        killplayerinstant(enemy, var_5d192b4c08040010[1]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
+        enemy = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
+        killplayerinstant(enemy, enemyteammates[1]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
         wait(2);
     }
     if (argshave(args, "teamwipe1")) {
         setdvar(@"hash_2c879521333c4987", 5);
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                killplayerinstant(player, var_5d192b4c08040010[0]);
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
         wait(getdvarfloat(@"hash_b436ad5a39cb1f59", 5));
-        enemy = killplayerinstant(host, var_5d192b4c08040010[0]);
+        enemy = killplayerinstant(host, enemyteammates[0]);
         wait(getdvarfloat(@"hash_1f5ea86d19b61851", 13));
-        killplayerinstant(enemy, var_5d192b4c08040010[1]);
+        killplayerinstant(enemy, enemyteammates[1]);
     }
     if (argshave(args, "deathswitch1")) {
         setdvar(@"hash_2c879521333c4987", 5);
-        killplayerinstant(host, var_5d192b4c08040010[0]);
-        namespace_a9c534dc7832aba4::waittillspectating(host);
-        friendly = host namespace_a9c534dc7832aba4::playergetspectatingplayer();
+        killplayerinstant(host, enemyteammates[0]);
+        scripts/mp/gametypes/br_spectate::waittillspectating(host);
+        friendly = host scripts/mp/gametypes/br_spectate::playergetspectatingplayer();
         while (!host buttonpressed("BUTTON_RSHLDR")) {
             waitframe();
         }
-        var_4995442795b82170 = undefined;
-        foreach (player in var_92b132654e85cbc4) {
+        friendly2 = undefined;
+        foreach (player in hostteammates) {
             if (player != host && player != friendly) {
-                var_4995442795b82170 = player;
+                friendly2 = player;
                 break;
             }
         }
         wait(0.5);
-        killplayerinstant(var_4995442795b82170, var_5d192b4c08040010[0]);
+        killplayerinstant(friendly2, enemyteammates[0]);
     }
     if (argshave(args, "squadwidget")) {
         setdvar(@"hash_e5f703a38f6e8043", 9999);
         setdvar(@"hash_2c879521333c4987", 3);
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                function_645de575b455626c(player);
+                disconnectbot(player);
             }
         }
         wait(5);
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
-        killplayerinstant(var_90465ae4437c9aba, host);
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy1 function_df49f9975e17b225(1);
+        killplayerinstant(enemy1, host);
         wait(getdvarfloat(@"hash_32c6816aee4fdb27", 4));
         killplayerinstant(host, enemy2);
     }
     if (argshave(args, "killall")) {
         level.overrideingraceperiod = 1;
-        lastplayer = var_92b132654e85cbc4[1];
-        foreach (player in var_92b132654e85cbc4) {
+        lastplayer = hostteammates[1];
+        foreach (player in hostteammates) {
             if (player != lastplayer) {
-                killplayerinstant(player, var_5d192b4c08040010[0]);
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
-        foreach (player in var_5d192b4c08040010[0]) {
-            killplayerinstant(player, var_5d192b4c08040010[1]);
+        foreach (player in enemyteammates[0]) {
+            killplayerinstant(player, enemyteammates[1]);
         }
-        foreach (player in var_5d192b4c08040010[1]) {
-            killplayerinstant(player, var_5d192b4c08040010[0]);
+        foreach (player in enemyteammates[1]) {
+            killplayerinstant(player, enemyteammates[0]);
         }
         wait(10);
-        function_645de575b455626c(lastplayer);
+        disconnectbot(lastplayer);
         level.overrideingraceperiod = undefined;
     }
     if (argshave(args, "moneykill")) {
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
-                player namespace_c6ccccd95254983f::playersetplundercount(45);
+                player scripts/mp/gametypes/br_plunder::playersetplundercount(45);
                 player function_df49f9975e17b225(1);
-                killplayerinstant(player, var_5d192b4c08040010[0]);
+                killplayerinstant(player, enemyteammates[0]);
             }
         }
         wait(5);
-        killplayerinstant(host, var_5d192b4c08040010[0]);
+        killplayerinstant(host, enemyteammates[0]);
     }
     if (argshave(args, "buyback1")) {
         scriptcircleat(host.origin, 500);
         setdvar(@"hash_e5f703a38f6e8043", -1);
-        var_52a4b2a164977f87 = host;
-        var_52a4b2a164977f87 function_df49f9975e17b225(1);
-        killplayer(var_52a4b2a164977f87, var_5d192b4c08040010[1]);
-        var_90460ae4437beaca = var_5d192b4c08040010[1][0];
-        var_90460ae4437beaca function_df49f9975e17b225(1);
-        killplayer(var_90460ae4437beaca, var_5d192b4c08040010[1]);
-        while (!istrue(var_52a4b2a164977f87.gulagarena)) {
+        playera = host;
+        playera function_df49f9975e17b225(1);
+        killplayer(playera, enemyteammates[1]);
+        enemya = enemyteammates[1][0];
+        enemya function_df49f9975e17b225(1);
+        killplayer(enemya, enemyteammates[1]);
+        while (!istrue(playera.gulagarena)) {
             waitframe();
         }
         wait(5);
-        killplayerinstant(var_52a4b2a164977f87, []);
-        while (!isdefined(var_52a4b2a164977f87 getspectatingplayer())) {
+        killplayerinstant(playera, []);
+        while (!isdefined(playera getspectatingplayer())) {
             waitframe();
         }
-        var_52a4b3a1649781ba = var_52a4b2a164977f87 getspectatingplayer();
-        var_52a4b3a1649781ba function_df49f9975e17b225(1);
-        var_52a4b4a1649783ed = undefined;
-        foreach (player in var_92b132654e85cbc4) {
-            if (player != var_52a4b2a164977f87 && player != var_52a4b3a1649781ba) {
-                var_52a4b4a1649783ed = player;
+        playerb = playera getspectatingplayer();
+        playerb function_df49f9975e17b225(1);
+        playerc = undefined;
+        foreach (player in hostteammates) {
+            if (player != playera && player != playerb) {
+                playerc = player;
                 break;
             }
         }
-        var_52a4b4a1649783ed namespace_c6ccccd95254983f::playersetplundercount(45);
-        killplayer(var_52a4b3a1649781ba, var_5d192b4c08040010[1]);
-        while (!istrue(var_52a4b3a1649781ba.jailed)) {
+        playerc scripts/mp/gametypes/br_plunder::playersetplundercount(45);
+        killplayer(playerb, enemyteammates[1]);
+        while (!istrue(playerb.jailed)) {
             waitframe();
         }
-        while (!isdefined(var_52a4b2a164977f87 getspectatingplayer()) || var_52a4b2a164977f87 getspectatingplayer() != var_52a4b3a1649781ba) {
+        while (!isdefined(playera getspectatingplayer()) || playera getspectatingplayer() != playerb) {
             waitframe();
         }
-        var_904609e4437be897 = var_5d192b4c08040010[1][1];
-        var_904609e4437be897 function_df49f9975e17b225(1);
-        killplayer(var_904609e4437be897, var_5d192b4c08040010[1]);
-        while (!istrue(var_52a4b3a1649781ba.gulagarena)) {
+        enemyb = enemyteammates[1][1];
+        enemyb function_df49f9975e17b225(1);
+        killplayer(enemyb, enemyteammates[1]);
+        while (!istrue(playerb.gulagarena)) {
             waitframe();
         }
         wait(5);
         setdvar(@"hash_2c879521333c4987", 3);
-        killplayerinstant(var_52a4b3a1649781ba, []);
-        var_52a4b4a1649783ed namespace_cb965d2f71fefddc::addrespawntoken(1);
-        var_52a4b2a164977f87 thread namespace_47fd1e79a44628cd::playergulagautowin(var_52a4b4a1649783ed, 0);
+        killplayerinstant(playerb, []);
+        playerc scripts/mp/gametypes/br_pickups::addrespawntoken(1);
+        playera thread scripts/mp/gametypes/br_gulag::playergulagautowin(playerc, 0);
     }
     if (argshave(args, "teamwipe2")) {
-        killplayerinstant(host, var_5d192b4c08040010[0]);
+        killplayerinstant(host, enemyteammates[0]);
         host waittill("killcam_ended");
         wait(2);
         count = 0;
-        foreach (player in var_92b132654e85cbc4) {
+        foreach (player in hostteammates) {
             if (player != host) {
                 if (count > 0) {
-                    player namespace_c6ccccd95254983f::playersetplundercount(45);
+                    player scripts/mp/gametypes/br_plunder::playersetplundercount(45);
                     player function_df49f9975e17b225(1);
                 }
-                killplayerinstant(player, var_5d192b4c08040010[1]);
+                killplayerinstant(player, enemyteammates[1]);
                 count++;
                 wait(5);
             }
@@ -1310,109 +1298,109 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
     }
     if (argshave(args, "gulag11")) {
         host function_df49f9975e17b225(1);
-        putinlaststand(host, var_5d192b4c08040010[1]);
+        putinlaststand(host, enemyteammates[1]);
         wait(1);
-        namespace_47fd1e79a44628cd::shutdowngulag("circle_index", 0);
+        scripts/mp/gametypes/br_gulag::shutdowngulag("circle_index", 0);
         wait(1);
-        host namespace_10260b963310d30e::finishreviveplayer("self_revive_success", host);
+        host scripts/mp/laststand::finishreviveplayer("self_revive_success", host);
         wait(5);
-        killplayer(host, var_5d192b4c08040010[0]);
+        killplayer(host, enemyteammates[0]);
     }
     if (argshave(args, "infilDeath")) {
-        thread waitandsuicide(getdvarint(@"hash_80d1406b579aaa79", 1), var_92b132654e85cbc4[1]);
+        thread waitandsuicide(getdvarint(@"hash_80d1406b579aaa79", 1), hostteammates[1]);
         onprematchstarted2();
         level waittill("br_c130_left_bounds");
         wait(2);
-        var_92b132654e85cbc4[2] function_df49f9975e17b225(0);
-        killplayerinstant(var_92b132654e85cbc4[2], var_5d192b4c08040010[0]);
+        hostteammates[2] function_df49f9975e17b225(0);
+        killplayerinstant(hostteammates[2], enemyteammates[0]);
         wait(5);
         host function_df49f9975e17b225(0);
-        killplayerinstant(host, var_5d192b4c08040010[0]);
+        killplayerinstant(host, enemyteammates[0]);
     }
     if (argshave(args, "reconGulag1")) {
         setdvar(@"hash_faf1db5754891b2d", 9);
         wait(5);
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[1][0];
-        function_645de575b455626c(var_5d192b4c08040010[0][2]);
-        function_645de575b455626c(var_5d192b4c08040010[0][1]);
-        function_645de575b455626c(var_5d192b4c08040010[1][2]);
-        function_645de575b455626c(var_5d192b4c08040010[1][1]);
-        function_645de575b455626c(var_92b132654e85cbc4[2]);
-        function_645de575b455626c(var_92b132654e85cbc4[1]);
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[1][0];
+        disconnectbot(enemyteammates[0][2]);
+        disconnectbot(enemyteammates[0][1]);
+        disconnectbot(enemyteammates[1][2]);
+        disconnectbot(enemyteammates[1][1]);
+        disconnectbot(hostteammates[2]);
+        disconnectbot(hostteammates[1]);
         wait(1);
         host playerstartrecondronewait();
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
-        killplayerinstant(var_90465ae4437c9aba, enemy2);
+        enemy1 function_df49f9975e17b225(1);
+        killplayerinstant(enemy1, enemy2);
         wait(7);
         host function_df49f9975e17b225(1);
-        if (!host namespace_82dcd1d5ae30ff7::_hasperk("specialty_pistoldeath")) {
-            host namespace_82dcd1d5ae30ff7::giveperk("specialty_pistoldeath");
+        if (!host scripts/mp/utility/perk::_hasperk("specialty_pistoldeath")) {
+            host scripts/mp/utility/perk::giveperk("specialty_pistoldeath");
         }
         killplayerinstant(host, enemy2, 1);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(5);
-        killplayerinstant(var_90465ae4437c9aba, host);
+        killplayerinstant(enemy1, host);
     }
     if (argshave(args, "reconGulag2")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_4995472795b82809 = var_92b132654e85cbc4[1];
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995472795b82809 == host) {
-            var_4995472795b82809 = var_92b132654e85cbc4[0];
-        } else if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        friendly1 = hostteammates[1];
+        friendly2 = hostteammates[2];
+        if (friendly1 == host) {
+            friendly1 = hostteammates[0];
+        } else if (friendly2 == host) {
+            friendly2 = hostteammates[0];
         }
-        function_645de575b455626c(var_5d192b4c08040010[0][2]);
-        function_645de575b455626c(var_5d192b4c08040010[1][2]);
-        function_645de575b455626c(var_5d192b4c08040010[1][1]);
-        function_645de575b455626c(var_5d192b4c08040010[1][0]);
-        killplayerinstant(var_4995442795b82170, var_90465ae4437c9aba);
+        disconnectbot(enemyteammates[0][2]);
+        disconnectbot(enemyteammates[1][2]);
+        disconnectbot(enemyteammates[1][1]);
+        disconnectbot(enemyteammates[1][0]);
+        killplayerinstant(friendly2, enemy1);
         wait(1);
-        var_4995472795b82809 playerstartrecondronewait();
+        friendly1 playerstartrecondronewait();
         wait(2);
-        killplayerinstant(host, var_90465ae4437c9aba);
+        killplayerinstant(host, enemy1);
         host waittill("killcam_ended");
         wait(3);
         enemy2 function_df49f9975e17b225(1);
-        killplayerinstant(enemy2, var_4995472795b82809);
-        var_4995472795b82809 function_df49f9975e17b225(1);
-        if (!var_4995472795b82809 namespace_82dcd1d5ae30ff7::_hasperk("specialty_pistoldeath")) {
-            var_4995472795b82809 namespace_82dcd1d5ae30ff7::giveperk("specialty_pistoldeath");
+        killplayerinstant(enemy2, friendly1);
+        friendly1 function_df49f9975e17b225(1);
+        if (!friendly1 scripts/mp/utility/perk::_hasperk("specialty_pistoldeath")) {
+            friendly1 scripts/mp/utility/perk::giveperk("specialty_pistoldeath");
         }
-        killplayerinstant(var_4995472795b82809, var_90465ae4437c9aba, 1);
-        while (!istrue(var_4995472795b82809.gulagarena)) {
+        killplayerinstant(friendly1, enemy1, 1);
+        while (!istrue(friendly1.gulagarena)) {
             waitframe();
         }
         wait(5);
-        killplayerinstant(var_4995472795b82809, enemy2);
+        killplayerinstant(friendly1, enemy2);
     }
     if (argshave(args, "endGameTwoDie")) {
         setdvar(@"hash_faf1db5754891b2d", 8);
         wait(5);
-        namespace_47fd1e79a44628cd::shutdowngulag("circle_index", 0);
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        var_4995472795b82809 = var_92b132654e85cbc4[1];
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995472795b82809 == host) {
-            var_4995472795b82809 = var_92b132654e85cbc4[0];
-        } else if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[0];
+        scripts/mp/gametypes/br_gulag::shutdowngulag("circle_index", 0);
+        enemy1 = enemyteammates[0][0];
+        friendly1 = hostteammates[1];
+        friendly2 = hostteammates[2];
+        if (friendly1 == host) {
+            friendly1 = hostteammates[0];
+        } else if (friendly2 == host) {
+            friendly2 = hostteammates[0];
         }
-        killplayerinstant(var_5d192b4c08040010[0][2], host);
-        killplayerinstant(var_5d192b4c08040010[0][1], host);
-        killplayerinstant(var_5d192b4c08040010[1][2], host);
-        killplayerinstant(var_5d192b4c08040010[1][1], host);
-        killplayerinstant(var_5d192b4c08040010[1][0], host);
-        killplayerinstant(var_4995472795b82809, var_90465ae4437c9aba);
-        killplayerinstant(var_4995442795b82170, var_90465ae4437c9aba);
+        killplayerinstant(enemyteammates[0][2], host);
+        killplayerinstant(enemyteammates[0][1], host);
+        killplayerinstant(enemyteammates[1][2], host);
+        killplayerinstant(enemyteammates[1][1], host);
+        killplayerinstant(enemyteammates[1][0], host);
+        killplayerinstant(friendly1, enemy1);
+        killplayerinstant(friendly2, enemy1);
         wait(3);
-        host namespace_68f1873625691c6::jugg_makejuggernaut(level.juggksglobals.config);
+        host scripts/mp/juggernaut::jugg_makejuggernaut(level.juggksglobals.config);
         wait(3);
-        var_90465ae4437c9aba dodamage(999, var_90465ae4437c9aba.origin, var_90465ae4437c9aba, undefined, "MOD_TRIGGER_HURT", "danger_circle_br");
+        enemy1 dodamage(999, enemy1.origin, enemy1, undefined, "MOD_TRIGGER_HURT", "danger_circle_br");
         while (isalive(host)) {
             host dodamage(999, host.origin, host, undefined, "MOD_TRIGGER_HURT", "danger_circle_br");
             waitframe();
@@ -1422,91 +1410,89 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         setomnvar("scriptable_loot_hide", 0);
         startorigin = host.origin;
         startangles = host.angles;
-        var_cde7f7f943b0f728 = 0;
-        var_2e3d43d19bbe802b = 0;
-        var_338deefd32d7ae30 = 0;
-        while (1) {
-            var_cb4fad49263e20c4 = getitemdropinfo(startorigin + (var_cde7f7f943b0f728, var_2e3d43d19bbe802b, 0), startangles);
-            spawnpickup("brloot_self_revive", var_cb4fad49263e20c4);
+        curxoffset = 0;
+        curyoffset = 0;
+        for (var_338deefd32d7ae30 = 0; true; var_338deefd32d7ae30 = 0) {
+            dropinfo = getitemdropinfo(startorigin + (curxoffset, curyoffset, 0), startangles);
+            spawnpickup("brloot_self_revive", dropinfo);
             var_338deefd32d7ae30++;
-            var_cde7f7f943b0f728 = var_cde7f7f943b0f728 + 10;
-            if (var_cde7f7f943b0f728 > 5000) {
-                var_cde7f7f943b0f728 = 0;
-                var_2e3d43d19bbe802b = var_2e3d43d19bbe802b + 10;
-                if (var_2e3d43d19bbe802b > 100) {
-                    var_2e3d43d19bbe802b = 0;
+            curxoffset = curxoffset + 10;
+            if (curxoffset > 5000) {
+                curxoffset = 0;
+                curyoffset = curyoffset + 10;
+                if (curyoffset > 100) {
+                    curyoffset = 0;
                 }
             }
             if (var_338deefd32d7ae30 > 8) {
                 waitframe();
-                var_338deefd32d7ae30 = 0;
             }
         }
     }
     if (argshave(args, "tempTeamTest")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        var_90465ae4437c9aba hudoutlineenableforclient(host, "defaulthudoutline");
+        enemy1 = enemyteammates[0][0];
+        enemy1 hudoutlineenableforclient(host, "defaulthudoutline");
         host.var_b5091efefe8e436b = "axis";
-        var_90465ae4437c9aba.var_b5091efefe8e436b = "axis";
+        enemy1.var_b5091efefe8e436b = "axis";
     }
     if (argshave(args, "gulag22a")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[1][0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[1][0];
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        var_904658e4437c9654 function_df49f9975e17b225(1);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(var_904658e4437c9654, var_5d192b4c08040010[0]);
+        enemy3 function_df49f9975e17b225(1);
+        killplayer(host, enemyteammates[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(enemy3, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(10);
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
-        var_9af272f7c0618531 = var_90465ae4437c9aba;
-        if (teammate == var_90465ae4437c9aba) {
-            var_9af272f7c0618531 = enemy2;
+        gulagenemy = enemy1;
+        if (teammate == enemy1) {
+            gulagenemy = enemy2;
         }
-        killplayer(host, var_9af272f7c0618531);
+        killplayer(host, gulagenemy);
         wait(getdvarint(@"hash_f4becbcb52fb0332", 2));
-        function_645de575b455626c(teammate);
+        disconnectbot(teammate);
     }
     if (argshave(args, "gulag22b")) {
         setdvar(@"hash_8bdee07fa09e810a", 0);
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[1][0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[1][0];
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_b03f2c4ab975486e = var_92b132654e85cbc4[1];
-        if (var_b03f2c4ab975486e == host || var_b03f2c4ab975486e == var_70189b6a231df8d6) {
-            var_b03f2c4ab975486e = var_92b132654e85cbc4[2];
+        friendlyjail = hostteammates[1];
+        if (friendlyjail == host || friendlyjail == var_70189b6a231df8d6) {
+            friendlyjail = hostteammates[2];
         }
-        var_b03f2c4ab975486e function_df49f9975e17b225(1);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
+        friendlyjail function_df49f9975e17b225(1);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(12);
-        killplayer(var_b03f2c4ab975486e, var_904658e4437c9654);
+        killplayer(friendlyjail, enemy3);
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
-        var_9af272f7c0618531 = var_90465ae4437c9aba;
-        if (teammate == var_90465ae4437c9aba) {
-            var_9af272f7c0618531 = enemy2;
+        gulagenemy = enemy1;
+        if (teammate == enemy1) {
+            gulagenemy = enemy2;
         }
-        killplayer(host, var_9af272f7c0618531);
+        killplayer(host, gulagenemy);
         while (!isdefined(host getspectatingplayer()) || host getspectatingplayer() != teammate) {
             waitframe();
         }
@@ -1514,66 +1500,66 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         /#
             assert(teammate == var_70189b6a231df8d6);
         #/
-        killplayer(teammate, var_90465ae4437c9aba);
-        while (!isdefined(host getspectatingplayer()) || host getspectatingplayer() != var_b03f2c4ab975486e) {
+        killplayer(teammate, enemy1);
+        while (!isdefined(host getspectatingplayer()) || host getspectatingplayer() != friendlyjail) {
             waitframe();
         }
         var_df2fbb13c226be75 = "timeout";
         if (namespace_eb17b46cdcb98eea::function_1980065ce4dc067b()) {
             var_df2fbb13c226be75 = "br_twotwo_gulag_win_jail_timeout";
         }
-        thread namespace_47fd1e79a44628cd::gulagvictory(var_b03f2c4ab975486e.arena, var_b03f2c4ab975486e, 1, 0, var_df2fbb13c226be75);
+        thread scripts/mp/gametypes/br_gulag::gulagvictory(friendlyjail.arena, friendlyjail, 1, 0, var_df2fbb13c226be75);
     }
     if (argshave(args, "gulag22c")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[1][0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[1][0];
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        var_904658e4437c9654 function_df49f9975e17b225(1);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(var_904658e4437c9654, var_5d192b4c08040010[0]);
+        enemy3 function_df49f9975e17b225(1);
+        killplayer(host, enemyteammates[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(enemy3, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(10);
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
-        var_9af272f7c0618531 = var_90465ae4437c9aba;
-        if (teammate == var_90465ae4437c9aba) {
-            var_9af272f7c0618531 = enemy2;
+        gulagenemy = enemy1;
+        if (teammate == enemy1) {
+            gulagenemy = enemy2;
         }
-        killplayer(host, var_9af272f7c0618531);
-        killplayer(teammate, var_9af272f7c0618531);
+        killplayer(host, gulagenemy);
+        killplayer(teammate, gulagenemy);
         setdvar(@"hash_9e78730ec3baa38c", 0.1);
         eventdata = level.br_pe_data[3];
         eventdata.active = 1;
-        namespace_d76af9f804655767::function_145e3d3099bb97c4(eventdata);
+        scripts/mp/gametypes/br_publicevents::activateevent(eventdata);
     }
     if (argshave(args, "gulag22d")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(10);
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
-        var_24b7d6dc16777f00 = var_90465ae4437c9aba;
-        if (teammate == var_90465ae4437c9aba) {
+        var_24b7d6dc16777f00 = enemy1;
+        if (teammate == enemy1) {
             var_24b7d6dc16777f00 = enemy2;
         }
         killplayer(host, var_24b7d6dc16777f00);
@@ -1582,58 +1568,58 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         setdvar(@"hash_9e78730ec3baa38c", 0.1);
         eventdata = level.br_pe_data[3];
         eventdata.active = 1;
-        namespace_d76af9f804655767::function_145e3d3099bb97c4(eventdata);
+        scripts/mp/gametypes/br_publicevents::activateevent(eventdata);
     }
     if (argshave(args, "gulag22e")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         wait(1);
-        killplayer(var_4995442795b82170, var_5d192b4c08040010[0]);
+        killplayer(friendly2, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(10);
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
-        killplayer(var_90465ae4437c9aba, host);
+        killplayer(enemy1, host);
         killplayer(enemy2, host);
     }
     if (argshave(args, "gulag22f")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
@@ -1642,186 +1628,186 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         host iprintlnbold("END ARENA");
         host.arena notify("matchEnded");
         host.arena notify("fight_over_early");
-        thread namespace_47fd1e79a44628cd::handleendarena(host.arena, undefined, 1, 1, "debug", var_4995442795b82170);
+        thread scripts/mp/gametypes/br_gulag::handleendarena(host.arena, undefined, 1, 1, "debug", friendly2);
         wait(10);
         host iprintlnbold("Kill Players");
-        killplayer(var_90465ae4437c9aba, host);
+        killplayer(enemy1, host);
         killplayer(enemy2, host);
     }
     if (argshave(args, "gulag22g")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[0][2];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[0][2];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(getdvarint(@"hash_f4becbcb52fb0332", 12));
         if (getdvarint(@"hash_197c9f3caaa6312b", 0)) {
-            killplayer(host, var_5d192b4c08040010[0]);
-            killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+            killplayer(host, enemyteammates[0]);
+            killplayer(var_70189b6a231df8d6, enemyteammates[0]);
             wait(getdvarfloat(@"hash_3a9d30277e079900", 0));
         } else if (getdvarint(@"hash_b3434b6b4b7df9fb", 0)) {
-            killplayer(host, var_5d192b4c08040010[0]);
+            killplayer(host, enemyteammates[0]);
             wait(getdvarfloat(@"hash_3a9d30277e079900", 0));
         }
         arena = host.arena;
         if (getdvarint(@"hash_fb8d8ca747bf8b29", 0)) {
-            namespace_b5b2280a66414fff::vip_respawnplayer(host, var_4995442795b82170, "debug");
-            namespace_b5b2280a66414fff::vip_respawnplayer(var_70189b6a231df8d6, var_4995442795b82170, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(host, friendly2, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(var_70189b6a231df8d6, friendly2, "debug");
         } else {
-            namespace_b5b2280a66414fff::vip_respawnplayer(var_90465ae4437c9aba, var_904658e4437c9654, "debug");
-            namespace_b5b2280a66414fff::vip_respawnplayer(var_90465ae4437c9aba, var_904658e4437c9654, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(enemy1, enemy3, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(enemy1, enemy3, "debug");
         }
     }
     if (argshave(args, "gulag22h")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[0][2];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[0][2];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(getdvarint(@"hash_f4becbcb52fb0332", 12));
         if (getdvarint(@"hash_197c9f3caaa6312b", 0)) {
-            killplayer(host, var_5d192b4c08040010[0]);
-            killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+            killplayer(host, enemyteammates[0]);
+            killplayer(var_70189b6a231df8d6, enemyteammates[0]);
             wait(getdvarfloat(@"hash_3a9d30277e079900", 0));
         } else if (getdvarint(@"hash_b3434b6b4b7df9fb", 1)) {
-            killplayer(host, var_5d192b4c08040010[0]);
+            killplayer(host, enemyteammates[0]);
             wait(getdvarfloat(@"hash_3a9d30277e079900", 1));
         }
         arena = host.arena;
         if (getdvarint(@"hash_fb8d8ca747bf8b29", 1)) {
-            namespace_b5b2280a66414fff::vip_respawnplayer(host, var_4995442795b82170, "debug");
-            namespace_b5b2280a66414fff::vip_respawnplayer(var_70189b6a231df8d6, var_4995442795b82170, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(host, friendly2, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(var_70189b6a231df8d6, friendly2, "debug");
         } else {
-            namespace_b5b2280a66414fff::vip_respawnplayer(var_90465ae4437c9aba, var_904658e4437c9654, "debug");
-            namespace_b5b2280a66414fff::vip_respawnplayer(var_90465ae4437c9aba, var_904658e4437c9654, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(enemy1, enemy3, "debug");
+            scripts/mp/gametypes/br_vip_quest::vip_respawnplayer(enemy1, enemy3, "debug");
         }
     }
     if (argshave(args, "gulag22i")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[0][2];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[0][2];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         wait(getdvarint(@"hash_f4becbcb52fb0332", 5));
-        function_645de575b455626c(var_70189b6a231df8d6);
-        function_645de575b455626c(var_90465ae4437c9aba);
-        function_645de575b455626c(enemy2);
+        disconnectbot(var_70189b6a231df8d6);
+        disconnectbot(enemy1);
+        disconnectbot(enemy2);
     }
     if (argshave(args, "gulag22j")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_904658e4437c9654 = var_5d192b4c08040010[0][2];
-        var_90460ae4437beaca = var_5d192b4c08040010[1][0];
-        var_904609e4437be897 = var_5d192b4c08040010[1][1];
-        var_904608e4437be664 = var_5d192b4c08040010[1][2];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        enemy3 = enemyteammates[0][2];
+        enemya = enemyteammates[1][0];
+        enemyb = enemyteammates[1][1];
+        enemyc = enemyteammates[1][2];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        var_904658e4437c9654 function_df49f9975e17b225(1);
-        var_90460ae4437beaca function_df49f9975e17b225(1);
-        var_904609e4437be897 function_df49f9975e17b225(1);
-        var_904608e4437be664 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, host);
+        enemy3 function_df49f9975e17b225(1);
+        enemya function_df49f9975e17b225(1);
+        enemyb function_df49f9975e17b225(1);
+        enemyc function_df49f9975e17b225(1);
+        killplayer(enemy1, host);
         killplayer(enemy2, host);
-        killplayer(var_90460ae4437beaca, host);
-        killplayer(var_904609e4437be897, host);
-        while (!istrue(var_90465ae4437c9aba.gulagarena)) {
+        killplayer(enemya, host);
+        killplayer(enemyb, host);
+        while (!istrue(enemy1.gulagarena)) {
             waitframe();
         }
         wait(getdvarint(@"hash_f4becbcb52fb0332", 1));
-        killplayer(host, var_90465ae4437c9aba);
-        killplayer(var_70189b6a231df8d6, var_90465ae4437c9aba);
-        killplayer(var_904658e4437c9654, host);
-        killplayer(var_904608e4437be664, host);
-        while (!istrue(host.jailed) || !istrue(var_70189b6a231df8d6.jailed) || !istrue(var_904658e4437c9654.jailed) || !istrue(var_904608e4437be664.jailed)) {
+        killplayer(host, enemy1);
+        killplayer(var_70189b6a231df8d6, enemy1);
+        killplayer(enemy3, host);
+        killplayer(enemyc, host);
+        while (!istrue(host.jailed) || !istrue(var_70189b6a231df8d6.jailed) || !istrue(enemy3.jailed) || !istrue(enemyc.jailed)) {
             waitframe();
         }
-        namespace_47fd1e79a44628cd::shutdowngulag("debug", 0);
+        scripts/mp/gametypes/br_gulag::shutdowngulag("debug", 0);
     }
     if (argshave(args, "gulag22k")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_70189b6a231df8d6 = var_92b132654e85cbc4[0];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        var_70189b6a231df8d6 = hostteammates[0];
         if (var_70189b6a231df8d6 == host) {
-            var_70189b6a231df8d6 = var_92b132654e85cbc4[1];
+            var_70189b6a231df8d6 = hostteammates[1];
         }
         var_70189b6a231df8d6 function_df49f9975e17b225(1);
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
+        friendly2 function_df49f9975e17b225(1);
         host function_df49f9975e17b225(1);
-        var_90465ae4437c9aba function_df49f9975e17b225(1);
+        enemy1 function_df49f9975e17b225(1);
         enemy2 function_df49f9975e17b225(1);
-        killplayer(var_90465ae4437c9aba, var_5d192b4c08040010[1]);
-        killplayer(enemy2, var_5d192b4c08040010[1]);
-        killplayer(host, var_5d192b4c08040010[0]);
-        killplayer(var_70189b6a231df8d6, var_5d192b4c08040010[0]);
+        killplayer(enemy1, enemyteammates[1]);
+        killplayer(enemy2, enemyteammates[1]);
+        killplayer(host, enemyteammates[0]);
+        killplayer(var_70189b6a231df8d6, enemyteammates[0]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
@@ -1831,145 +1817,145 @@ function function_77a10f0eec39cb4f(args, host, var_92b132654e85cbc4, var_5d192b4
         killplayer(enemy2, host);
     }
     if (argshave(args, "jailbreakRespawn")) {
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_4995472795b82809 = var_92b132654e85cbc4[0];
-        if (var_4995472795b82809 == host) {
-            var_4995472795b82809 = var_92b132654e85cbc4[1];
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        friendly1 = hostteammates[0];
+        if (friendly1 == host) {
+            friendly1 = hostteammates[1];
         }
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_4995442795b82170 function_df49f9975e17b225(1);
-        killplayer(host, var_5d192b4c08040010[1]);
-        killplayer(var_4995472795b82809, var_5d192b4c08040010[1]);
-        killplayer(var_4995442795b82170, var_5d192b4c08040010[0]);
+        friendly2 function_df49f9975e17b225(1);
+        killplayer(host, enemyteammates[1]);
+        killplayer(friendly1, enemyteammates[1]);
+        killplayer(friendly2, enemyteammates[0]);
         wait(getdvarint(@"hash_3a9d33277e079f99", 10));
         setdvar(@"hash_9e78730ec3baa38c", 0.1);
         eventdata = level.br_pe_data[3];
         eventdata.active = 1;
-        namespace_d76af9f804655767::function_145e3d3099bb97c4(eventdata);
+        scripts/mp/gametypes/br_publicevents::activateevent(eventdata);
     }
     if (argshave(args, "gulag22l")) {
-        var_c012bf62499f5c7a = function_2ea11e29fb71e2ad(args, 4);
-        var_5d192b4c08040010 = var_c012bf62499f5c7a[1];
-        var_92b132654e85cbc4 = var_c012bf62499f5c7a[0];
-        var_52a4b2a164977f87 = host;
-        var_52a4b3a1649781ba = var_5d192b4c08040010[0][0];
-        var_52a4b4a1649783ed = var_5d192b4c08040010[1][0];
-        var_52a4ada164977488 = var_5d192b4c08040010[2][0];
-        var_52a4aea1649776bb = var_5d192b4c08040010[2][1];
-        var_4995472795b82809 = var_92b132654e85cbc4[0];
-        if (var_4995472795b82809 == host) {
-            var_4995472795b82809 = var_92b132654e85cbc4[1];
+        var_c012bf62499f5c7a = setnumteams(args, 4);
+        enemyteammates = var_c012bf62499f5c7a[1];
+        hostteammates = var_c012bf62499f5c7a[0];
+        playera = host;
+        playerb = enemyteammates[0][0];
+        playerc = enemyteammates[1][0];
+        playerd = enemyteammates[2][0];
+        playere = enemyteammates[2][1];
+        friendly1 = hostteammates[0];
+        if (friendly1 == host) {
+            friendly1 = hostteammates[1];
         }
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_52a4b2a164977f87 function_df49f9975e17b225(1);
-        var_52a4b3a1649781ba function_df49f9975e17b225(1);
-        var_52a4b4a1649783ed function_df49f9975e17b225(0);
-        var_52a4ada164977488 function_df49f9975e17b225(1);
-        var_52a4aea1649776bb function_df49f9975e17b225(1);
-        killplayer(var_52a4b2a164977f87, var_5d192b4c08040010[1]);
-        killplayer(var_52a4b3a1649781ba, var_5d192b4c08040010[1]);
-        killplayer(var_52a4ada164977488, var_5d192b4c08040010[0]);
-        killplayer(var_52a4aea1649776bb, var_5d192b4c08040010[0]);
-        function_645de575b455626c(var_4995472795b82809);
-        function_645de575b455626c(var_4995442795b82170);
-        function_645de575b455626c(var_5d192b4c08040010[1][1]);
-        function_645de575b455626c(var_5d192b4c08040010[1][2]);
+        playera function_df49f9975e17b225(1);
+        playerb function_df49f9975e17b225(1);
+        playerc function_df49f9975e17b225(0);
+        playerd function_df49f9975e17b225(1);
+        playere function_df49f9975e17b225(1);
+        killplayer(playera, enemyteammates[1]);
+        killplayer(playerb, enemyteammates[1]);
+        killplayer(playerd, enemyteammates[0]);
+        killplayer(playere, enemyteammates[0]);
+        disconnectbot(friendly1);
+        disconnectbot(friendly2);
+        disconnectbot(enemyteammates[1][1]);
+        disconnectbot(enemyteammates[1][2]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
         /#
-            assert(teammate == var_52a4b3a1649781ba);
+            assert(teammate == playerb);
         #/
         wait(10);
         arena = host.arena;
-        killplayer(var_52a4b2a164977f87, var_52a4ada164977488);
+        killplayer(playera, playerd);
         wait(3);
-        killplayer(var_52a4b4a1649783ed, var_5d192b4c08040010[2][2]);
+        killplayer(playerc, enemyteammates[2][2]);
         while (!isdefined(arena.var_707537a8904aa962) || arena.var_707537a8904aa962.size == 0) {
             waitframe();
         }
-        var_fb8418425dc67596 = arena.var_707537a8904aa962[0];
+        jailer = arena.var_707537a8904aa962[0];
         wait(3);
-        while (isalive(var_fb8418425dc67596)) {
-            var_fb8418425dc67596 dodamage(var_fb8418425dc67596.health, var_52a4b3a1649781ba.origin, var_52a4b3a1649781ba, var_52a4b3a1649781ba, "MOD_RIFLE_BULLET", var_52a4b3a1649781ba getcurrentprimaryweapon());
+        while (isalive(jailer)) {
+            jailer dodamage(jailer.health, playerb.origin, playerb, playerb, "MOD_RIFLE_BULLET", playerb getcurrentprimaryweapon());
         }
-        while (!isalive(var_52a4b2a164977f87)) {
+        while (!isalive(playera)) {
             waitframe();
         }
         wait(3);
-        var_52a4b2a164977f87 function_df49f9975e17b225(0);
-        killplayer(var_52a4b2a164977f87, var_52a4ada164977488);
+        playera function_df49f9975e17b225(0);
+        killplayer(playera, playerd);
     }
     if (argshave(args, "gulag22m")) {
-        var_bfe236624969d2f2 = function_2ea11e29fb71e2ad(args, 4);
-        var_5d192b4c08040010 = var_bfe236624969d2f2[1];
-        var_92b132654e85cbc4 = var_bfe236624969d2f2[0];
-        var_52a4b2a164977f87 = host;
-        var_52a4b3a1649781ba = var_5d192b4c08040010[0][0];
-        var_52a4b4a1649783ed = var_5d192b4c08040010[1][0];
-        var_52a4ada164977488 = var_5d192b4c08040010[1][1];
-        var_4995472795b82809 = var_92b132654e85cbc4[0];
-        if (var_4995472795b82809 == host) {
-            var_4995472795b82809 = var_92b132654e85cbc4[1];
+        var_bfe236624969d2f2 = setnumteams(args, 4);
+        enemyteammates = var_bfe236624969d2f2[1];
+        hostteammates = var_bfe236624969d2f2[0];
+        playera = host;
+        playerb = enemyteammates[0][0];
+        playerc = enemyteammates[1][0];
+        playerd = enemyteammates[1][1];
+        friendly1 = hostteammates[0];
+        if (friendly1 == host) {
+            friendly1 = hostteammates[1];
         }
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[1];
+        friendly2 = hostteammates[2];
+        if (friendly2 == host) {
+            friendly2 = hostteammates[1];
         }
-        var_52a4b2a164977f87 function_df49f9975e17b225(1);
-        var_52a4b3a1649781ba function_df49f9975e17b225(1);
-        var_52a4b4a1649783ed function_df49f9975e17b225(1);
-        var_52a4ada164977488 function_df49f9975e17b225(1);
-        killplayer(var_52a4b2a164977f87, var_5d192b4c08040010[1]);
-        killplayer(var_52a4b3a1649781ba, var_5d192b4c08040010[1]);
-        killplayer(var_52a4b4a1649783ed, var_5d192b4c08040010[0]);
-        killplayer(var_52a4ada164977488, var_5d192b4c08040010[0]);
-        function_645de575b455626c(var_4995472795b82809);
-        function_645de575b455626c(var_4995442795b82170);
-        function_645de575b455626c(var_5d192b4c08040010[0][1]);
-        function_645de575b455626c(var_5d192b4c08040010[0][2]);
+        playera function_df49f9975e17b225(1);
+        playerb function_df49f9975e17b225(1);
+        playerc function_df49f9975e17b225(1);
+        playerd function_df49f9975e17b225(1);
+        killplayer(playera, enemyteammates[1]);
+        killplayer(playerb, enemyteammates[1]);
+        killplayer(playerc, enemyteammates[0]);
+        killplayer(playerd, enemyteammates[0]);
+        disconnectbot(friendly1);
+        disconnectbot(friendly2);
+        disconnectbot(enemyteammates[0][1]);
+        disconnectbot(enemyteammates[0][2]);
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
         teammate = namespace_6ea7652ec407cc80::function_1bd32287885bb933(host);
         /#
-            assert(teammate == var_52a4b3a1649781ba);
+            assert(teammate == playerb);
         #/
         wait(10);
         arena = host.arena;
-        killplayer(var_52a4b3a1649781ba, var_52a4ada164977488);
+        killplayer(playerb, playerd);
         wait(3);
-        killplayer(var_52a4b2a164977f87, var_52a4ada164977488);
+        killplayer(playera, playerd);
     }
     if (argshave(args, "endGameTeam")) {
         level.br_infils_disabled = 1;
         setdvar(@"hash_faf1db5754891b2d", 8);
         wait(5);
-        namespace_47fd1e79a44628cd::shutdowngulag("circle_index", 0);
-        var_90465ae4437c9aba = var_5d192b4c08040010[0][0];
-        enemy2 = var_5d192b4c08040010[0][1];
-        var_4995472795b82809 = var_92b132654e85cbc4[1];
-        var_4995442795b82170 = var_92b132654e85cbc4[2];
-        if (var_4995472795b82809 == host) {
-            var_4995472795b82809 = var_92b132654e85cbc4[0];
-        } else if (var_4995442795b82170 == host) {
-            var_4995442795b82170 = var_92b132654e85cbc4[0];
+        scripts/mp/gametypes/br_gulag::shutdowngulag("circle_index", 0);
+        enemy1 = enemyteammates[0][0];
+        enemy2 = enemyteammates[0][1];
+        friendly1 = hostteammates[1];
+        friendly2 = hostteammates[2];
+        if (friendly1 == host) {
+            friendly1 = hostteammates[0];
+        } else if (friendly2 == host) {
+            friendly2 = hostteammates[0];
         }
         killplayerinstant(enemy2, host);
         wait(1);
-        killplayerinstant(var_4995472795b82809, var_90465ae4437c9aba);
+        killplayerinstant(friendly1, enemy1);
         wait(1);
-        killplayerinstant(var_4995442795b82170, var_90465ae4437c9aba);
+        killplayerinstant(friendly2, enemy1);
         wait(1);
-        killplayerinstant(host, var_90465ae4437c9aba);
+        killplayerinstant(host, enemy1);
     }
 }
 

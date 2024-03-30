@@ -1,50 +1,50 @@
 // mwiii decomp prototype
 #namespace debug;
 
-// Namespace debug/namespace_d028276791d9cff6
+// Namespace debug / scripts/mp/utility/debug
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x68
 // Size: 0xa6
-function drawent(ent, radius, var_f614dcdafd466705, var_7cadcf765f48d20b, color) {
+function drawent(ent, radius, forwardlen, drawtimeseconds, color) {
     /#
-        var_f8a269392b9c9b15 = int(var_7cadcf765f48d20b / level.framedurationseconds);
-        for (frame = 0; frame < var_f8a269392b9c9b15; frame++) {
+        drawframes = int(drawtimeseconds / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
             sphere(ent.origin, radius, color);
-            line(ent.origin, ent.origin + anglestoforward(ent.angles) * var_f614dcdafd466705, color);
+            line(ent.origin, ent.origin + anglestoforward(ent.angles) * forwardlen, color);
             waitframe();
         }
     #/
 }
 
-// Namespace debug/namespace_d028276791d9cff6
+// Namespace debug / scripts/mp/utility/debug
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x115
 // Size: 0x64
-function drawline(start, end, var_7cadcf765f48d20b, color) {
+function drawline(start, end, drawtimeseconds, color) {
     /#
-        var_f8a269392b9c9b15 = int(var_7cadcf765f48d20b / level.framedurationseconds);
-        for (frame = 0; frame < var_f8a269392b9c9b15; frame++) {
+        drawframes = int(drawtimeseconds / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
             line(start, end, color);
             waitframe();
         }
     #/
 }
 
-// Namespace debug/namespace_d028276791d9cff6
+// Namespace debug / scripts/mp/utility/debug
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x180
 // Size: 0x64
-function drawsphere(origin, radius, var_7cadcf765f48d20b, color) {
+function drawsphere(origin, radius, drawtimeseconds, color) {
     /#
-        var_f8a269392b9c9b15 = int(var_7cadcf765f48d20b / level.framedurationseconds);
-        for (frame = 0; frame < var_f8a269392b9c9b15; frame++) {
+        drawframes = int(drawtimeseconds / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
             sphere(origin, radius, color);
             waitframe();
         }
     #/
 }
 
-// Namespace debug/namespace_d028276791d9cff6
+// Namespace debug / scripts/mp/utility/debug
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0xf5
@@ -53,8 +53,8 @@ function drawangles(origin, angles, var_3e6845817408f87e, scalar) {
         if (!isdefined(scalar)) {
             scalar = 1;
         }
-        var_f8a269392b9c9b15 = int(var_3e6845817408f87e / level.framedurationseconds);
-        for (frame = 0; frame < var_f8a269392b9c9b15; frame++) {
+        drawframes = int(var_3e6845817408f87e / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
             fwd = anglestoforward(angles);
             right = anglestoright(angles);
             up = anglestoup(angles);

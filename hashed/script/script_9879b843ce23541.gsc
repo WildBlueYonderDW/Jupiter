@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_c_ob_contracts_outlast_cs;
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ab
 // Size: 0x6d
@@ -23,33 +23,33 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_c_ob_contracts_outlast_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_c_ob_contracts_outlast_cs");
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38e
 // Size: 0x40
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d5
 // Size: 0x3
@@ -57,7 +57,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3df
 // Size: 0xf
@@ -65,7 +65,7 @@ function cleanup() {
     function_71a564b3bc009618("mp_jup_st_c_ob_contracts_outlast_cs");
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f5
 // Size: 0x69
@@ -73,69 +73,69 @@ function function_fd69cf02ba4d90a2() {
     var_d13c18af4084bdfd = spawnstruct();
     var_d13c18af4084bdfd.name = "REV_OB_OUTLAST";
     var_d13c18af4084bdfd.scriptbundle = "jup_ob_activitydefinition_outlast";
-    var_d13c18af4084bdfd.var_dc10941a425d283c = &main;
+    var_d13c18af4084bdfd.mainfunction = &main;
     var_d13c18af4084bdfd.var_6e7eb28b2997b5b4 = &function_82613e20fba2deb9;
     var_d13c18af4084bdfd.var_ad1dcd56d202e9ac = &function_6da2952367672ac0;
     return var_d13c18af4084bdfd;
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x466
 // Size: 0x84
-function function_82613e20fba2deb9(var_44fe95ae31b81c6d, var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
-    if (!isdefined(var_ce173d78f5680530)) {
-        var_ce173d78f5680530 = "mp_jup_st_c_ob_contracts_outlast_cs";
+function function_82613e20fba2deb9(instancename, fe, us, cf) {
+    if (!isdefined(cf)) {
+        cf = "mp_jup_st_c_ob_contracts_outlast_cs";
     }
-    switch (var_44fe95ae31b81c6d) {
+    switch (instancename) {
     case #"hash_be319c631d0f7c35":
-        function_1488ab214a370dfc(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_1488ab214a370dfc(fe, us, cf);
         break;
     case #"hash_adc900025b117076":
-        function_facd10c8ca3914e1(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_facd10c8ca3914e1(fe, us, cf);
         break;
     case #"hash_98aa29e8232bd239":
-        function_7c52b3d4d456946a(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_7c52b3d4d456946a(fe, us, cf);
         break;
     }
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f1
 // Size: 0x6c0
-function function_1488ab214a370dfc(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_1488ab214a370dfc(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (30728, 40930.5, 1187.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_dock", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (30728, 40930.5, 1187.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_dock", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32188.5, 40428.5, 936), (0, 327.4, 0), "s_outlast_c_dock_reward", "s_outlast_c_dock", "s_outlast_c_dock_reward", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (32188.5, 40428.5, 936), (0, 327.4, 0), "s_outlast_c_dock_reward", "s_outlast_c_dock", "s_outlast_c_dock_reward", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32423.5, 40634.1, 935.5), (0, 329.5, 0), "pnd", "s_outlast_c_dock", "pnd", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (32423.5, 40634.1, 935.5), (0, 329.5, 0), "pnd", "s_outlast_c_dock", "pnd", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (30303.5, 40278, 1000.5), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_dock", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (30303.5, 40278, 1000.5), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_dock", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (27851.2, 34598.5, 1234.75), (0, 131.22, 0), "activity_nexus_instance_joiner", "s_outlast_c_dock", "OUTLAST_C_DOCK", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (27851.2, 34598.5, 1234.75), (0, 131.22, 0), "activity_nexus_instance_joiner", "s_outlast_c_dock", "OUTLAST_C_DOCK", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32634.5, 42696, 919), (0, 135, 0), "zombie_spawn_wave_1", "s_outlast_c_dock", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (32634.5, 42696, 919), (0, 135, 0), "zombie_spawn_wave_1", "s_outlast_c_dock", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32137.8, 40324.8, 991), (0, 61.3, 0), "s_outlast_c_dock", "s_outlast_c_dock", "objective_outlast_c_dock", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (32137.8, 40324.8, 991), (0, 61.3, 0), "s_outlast_c_dock", "s_outlast_c_dock", "objective_outlast_c_dock", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (31796.5, 38473, 1042), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_dock", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (31796.5, 38473, 1042), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_dock", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (31248, 38494.5, 1045.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_dock", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (31248, 38494.5, 1045.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_dock", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (31276.5, 41641, 931.5), (0, 135, 0), "zombie_spawn_wave_1", "s_outlast_c_dock", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (31276.5, 41641, 931.5), (0, 135, 0), "zombie_spawn_wave_1", "s_outlast_c_dock", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.is_cs_trigger = 1;
@@ -145,13 +145,13 @@ function function_1488ab214a370dfc(var_ce2d3c78f5803630, us, var_ce173d78f568053
     s.height = 128;
     s.length = "128";
     s.width = "128";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (31707.5, 40663, 952), (0, 59.9, 0), "outlast_noent_entrance_trigger", "s_outlast_c_dock", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (31707.5, 40663, 952), (0, 59.9, 0), "outlast_noent_entrance_trigger", "s_outlast_c_dock", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32643, 40358, 938), (0, 165.1, 0), "ava_tablet", "s_outlast_c_dock", "ava_tablet", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (32643, 40358, 938), (0, 165.1, 0), "ava_tablet", "s_outlast_c_dock", "ava_tablet", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32225, 40284.5, 991.5), (0, 135, 0), "outlast_space", "s_outlast_c_dock", "outlast_space", undefined, undefined, (0, 0, 0), (0, 0, 0), 1200);
+    fe [[ f ]](s, us, cf, (32225, 40284.5, 991.5), (0, 135, 0), "outlast_space", "s_outlast_c_dock", "outlast_space", undefined, undefined, (0, 0, 0), (0, 0, 0), 1200);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.is_cs_trigger = 1;
@@ -161,40 +161,40 @@ function function_1488ab214a370dfc(var_ce2d3c78f5803630, us, var_ce173d78f568053
     s.height = 128;
     s.length = "128";
     s.width = "128";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (32278.5, 40332, 952), (0, 59.9, 0), "outlast_noent_entrance_trigger", "s_outlast_c_dock", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (32278.5, 40332, 952), (0, 59.9, 0), "outlast_noent_entrance_trigger", "s_outlast_c_dock", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbb8
 // Size: 0x6e1
-function function_facd10c8ca3914e1(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_facd10c8ca3914e1(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.name = "script_struct";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (38234.8, 20463.8, 3329.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_monestary", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (38234.8, 20463.8, 3329.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_monestary", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (35289.5, 17275, 3139.5), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_monestary", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (35289.5, 17275, 3139.5), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_monestary", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37226.5, 18883.5, 3344), (0, 327.4, 0), "s_outlast_c_monestary_reward", "s_outlast_c_monestary", "s_outlast_c_monestary_reward", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (37226.5, 18883.5, 3344), (0, 327.4, 0), "s_outlast_c_monestary_reward", "s_outlast_c_monestary", "s_outlast_c_monestary_reward", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37436.5, 19032.1, 3381.5), (0, 126.8, 0), "pnd", "s_outlast_c_monestary", "pnd", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (37436.5, 19032.1, 3381.5), (0, 126.8, 0), "pnd", "s_outlast_c_monestary", "pnd", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (34453.2, 17967.2, 3067.5), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_monestary", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (34453.2, 17967.2, 3067.5), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_monestary", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (33382, 20369, 2501.25), (0, 118.2, -0), "activity_nexus_instance_joiner", "s_outlast_c_monestary", "OUTLAST_C_MONESTARY", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (33382, 20369, 2501.25), (0, 118.2, -0), "activity_nexus_instance_joiner", "s_outlast_c_monestary", "OUTLAST_C_MONESTARY", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (38498.5, 17074, 3567), (0, 135, 0), "zombie_spawn_wave_1", "s_outlast_c_monestary", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (38498.5, 17074, 3567), (0, 135, 0), "zombie_spawn_wave_1", "s_outlast_c_monestary", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37437.9, 19034.4, 3437), (0, 36.8, 0), "s_outlast_c_monestary", undefined, "objective_outlast_c_monestary", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (37437.9, 19034.4, 3437), (0, 36.8, 0), "s_outlast_c_monestary", undefined, "objective_outlast_c_monestary", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.is_cs_trigger = 1;
@@ -204,7 +204,7 @@ function function_facd10c8ca3914e1(var_ce2d3c78f5803630, us, var_ce173d78f568053
     s.height = 128;
     s.length = "128";
     s.width = "128";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (36801, 19111, 3364), (0, 37.38, 0), "outlast_noent_entrance_trigger", "s_outlast_c_monestary", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (36801, 19111, 3364), (0, 37.38, 0), "outlast_noent_entrance_trigger", "s_outlast_c_monestary", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.is_cs_trigger = 1;
@@ -214,7 +214,7 @@ function function_facd10c8ca3914e1(var_ce2d3c78f5803630, us, var_ce173d78f568053
     s.height = 128;
     s.length = "128";
     s.width = "128";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37045, 18771, 3364), (0, 37.38, 0), "outlast_noent_entrance_trigger", "s_outlast_c_monestary", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (37045, 18771, 3364), (0, 37.38, 0), "outlast_noent_entrance_trigger", "s_outlast_c_monestary", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.is_cs_trigger = 1;
@@ -224,57 +224,57 @@ function function_facd10c8ca3914e1(var_ce2d3c78f5803630, us, var_ce173d78f568053
     s.height = 128;
     s.length = "128";
     s.width = "128";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37652, 18698, 3364), (0, 37.38, 0), "outlast_noent_entrance_trigger", "s_outlast_c_monestary", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (37652, 18698, 3364), (0, 37.38, 0), "outlast_noent_entrance_trigger", "s_outlast_c_monestary", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37184, 18714, 3344), (0, 159.2, 0), "ava_tablet", "s_outlast_c_monestary", "ava_tablet", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (37184, 18714, 3344), (0, 159.2, 0), "ava_tablet", "s_outlast_c_monestary", "ava_tablet", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (37046, 18724.5, 3388.5), (0, 135, 0), "outlast_space", "s_outlast_c_monestary", "outlast_space", undefined, undefined, (0, 0, 0), (0, 0, 0), 1200);
+    fe [[ f ]](s, us, cf, (37046, 18724.5, 3388.5), (0, 135, 0), "outlast_space", "s_outlast_c_monestary", "outlast_space", undefined, undefined, (0, 0, 0), (0, 0, 0), 1200);
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12a0
 // Size: 0x5dc
-function function_7c52b3d4d456946a(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_7c52b3d4d456946a(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (22149.5, 28231.5, 1616.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_chemist", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (22149.5, 28231.5, 1616.5), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_chemist", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23893.5, 27787, 1357), (0, 269.71, 0), "s_outlast_c_chemist_reward", "s_outlast_c_chemist", "s_outlast_c_chemist_reward", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23893.5, 27787, 1357), (0, 269.71, 0), "s_outlast_c_chemist_reward", "s_outlast_c_chemist", "s_outlast_c_chemist_reward", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23613.5, 27735.1, 1357), (0, 359.57, 0), "pnd", "s_outlast_c_chemist", "pnd", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23613.5, 27735.1, 1357), (0, 359.57, 0), "pnd", "s_outlast_c_chemist", "pnd", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (21584.5, 27873, 1348.81), (0, 285.53, 0), "zombie_spawn_wave_2", "s_outlast_c_chemist", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (21584.5, 27873, 1348.81), (0, 285.53, 0), "zombie_spawn_wave_2", "s_outlast_c_chemist", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (29352.5, 23224, 1464.5), (0, 58.39, 0), "activity_nexus_instance_joiner", "s_outlast_c_chemist", "OUTLAST_C_CHEMIST", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (29352.5, 23224, 1464.5), (0, 58.39, 0), "activity_nexus_instance_joiner", "s_outlast_c_chemist", "OUTLAST_C_CHEMIST", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23784, 29302, 1348), (0, 208.58, 0), "zombie_spawn_wave_1", "s_outlast_c_chemist", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23784, 29302, 1348), (0, 208.58, 0), "zombie_spawn_wave_1", "s_outlast_c_chemist", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23559.3, 27625.8, 1420), (0, 61.3, 0), "s_outlast_c_chemist", undefined, "objective_outlast_c_chemist", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23559.3, 27625.8, 1420), (0, 61.3, 0), "s_outlast_c_chemist", undefined, "objective_outlast_c_chemist", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23218, 25774, 1357), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_chemist", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23218, 25774, 1357), (0, 135, 0), "zombie_spawn_wave_2", "s_outlast_c_chemist", "zombie_spawn_wave_2", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (22967.5, 25997.5, 1350.19), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_chemist", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (22967.5, 25997.5, 1350.19), (0, 135, 0), "zombie_spawn_wave_3", "s_outlast_c_chemist", "zombie_spawn_wave_3", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (22867, 28929, 1358), (0, 271.42, 0), "zombie_spawn_wave_1", "s_outlast_c_chemist", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (22867, 28929, 1358), (0, 271.42, 0), "zombie_spawn_wave_1", "s_outlast_c_chemist", "zombie_spawn_wave_1", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (24060.5, 27802.5, 1361), (0, 217.9, 0), "ava_tablet", "s_outlast_c_chemist", "ava_tablet", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (24060.5, 27802.5, 1361), (0, 217.9, 0), "ava_tablet", "s_outlast_c_chemist", "ava_tablet", undefined, undefined, (0, 0, 0), (0, 0, 0));
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23646.5, 27585.5, 1420.5), (0, 135, 0), "outlast_space", "s_outlast_c_chemist", "outlast_space", undefined, undefined, (0, 0, 0), (0, 0, 0), 1200);
+    fe [[ f ]](s, us, cf, (23646.5, 27585.5, 1420.5), (0, 135, 0), "outlast_space", "s_outlast_c_chemist", "outlast_space", undefined, undefined, (0, 0, 0), (0, 0, 0), 1200);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_c_ob_contracts_outlast_cs";
     s.is_cs_trigger = 1;
@@ -284,45 +284,45 @@ function function_7c52b3d4d456946a(var_ce2d3c78f5803630, us, var_ce173d78f568053
     s.height = 128;
     s.length = "128";
     s.width = "128";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (23700, 27633, 1381), (0, 359.85, 0), "outlast_noent_entrance_trigger", "s_outlast_c_chemist", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
+    fe [[ f ]](s, us, cf, (23700, 27633, 1381), (0, 359.85, 0), "outlast_noent_entrance_trigger", "s_outlast_c_chemist", undefined, undefined, undefined, (0, 0, 0), (0, 0, 0));
 }
 
-// Namespace mp_jup_st_c_ob_contracts_outlast_cs/namespace_c2b4253bc0f296e5
+// Namespace mp_jup_st_c_ob_contracts_outlast_cs / namespace_c2b4253bc0f296e5
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1883
 // Size: 0x28f
 function function_6da2952367672ac0() {
-    var_fdc9acdc19473f08 = [];
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_outlast";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (32135.9, 40320.6, 982);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(32313.5, 40174.5, 994)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:1500];
-    var_fdc9acdc19473f08["OUTLAST_C_DOCK"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_outlast";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (37434.4, 19031.4, 3428);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(38210.5, 19821.5, 3506)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:1500];
-    var_fdc9acdc19473f08["OUTLAST_C_MONESTARY"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_ob_activitydefinition_outlast";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_c_ob_contracts_outlast_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (23557.4, 27621.6, 1411);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (0, 0, 0);
-    var_5f614235e4cbbd5b.locationorigin = [0:(23735, 27475.5, 1423)];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [0:(0, 0, 0)];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [0:1500];
-    var_fdc9acdc19473f08["OUTLAST_C_CHEMIST"] = var_5f614235e4cbbd5b;
-    return var_fdc9acdc19473f08;
+    activityinstances = [];
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_outlast";
+    instancestruct.cf = "mp_jup_st_c_ob_contracts_outlast_cs";
+    instancestruct.scriptstructorigin = (32135.9, 40320.6, 982);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(32313.5, 40174.5, 994)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [1500];
+    activityinstances["OUTLAST_C_DOCK"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_outlast";
+    instancestruct.cf = "mp_jup_st_c_ob_contracts_outlast_cs";
+    instancestruct.scriptstructorigin = (37434.4, 19031.4, 3428);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(38210.5, 19821.5, 3506)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [1500];
+    activityinstances["OUTLAST_C_MONESTARY"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_ob_activitydefinition_outlast";
+    instancestruct.cf = "mp_jup_st_c_ob_contracts_outlast_cs";
+    instancestruct.scriptstructorigin = (23557.4, 27621.6, 1411);
+    instancestruct.scriptstructoriginoffset = (0, 0, 0);
+    instancestruct.locationorigin = [(23735, 27475.5, 1423)];
+    instancestruct.locationoriginoffset = [(0, 0, 0)];
+    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
+    instancestruct.locationradius = [1500];
+    activityinstances["OUTLAST_C_CHEMIST"] = instancestruct;
+    return activityinstances;
 }
 

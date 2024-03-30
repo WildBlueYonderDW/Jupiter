@@ -10,7 +10,7 @@
 
 #namespace cover;
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ed
 // Size: 0x2b
@@ -18,43 +18,43 @@ function shouldcoverexpose() {
     return bb_getrequestedcoverstate() == "exposed" && isdefined(self.enemy) && isdefined(self.node);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x220
 // Size: 0x46
-function shouldcoverexposedreload(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldcoverexposedreload(asmname, statename, tostatename, params) {
     if (isdefined(self.covernode) && self.balwayscoverexposed) {
         return bb_reloadrequested();
     }
     return 0;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x57
-function calcanimstartpos(var_d59ce05d15358f85, var_2cdc979364d3101c, var_95abccfe668f369a, var_f73bea4534a3831f) {
-    var_ce5c9b08861a4466 = var_2cdc979364d3101c - var_f73bea4534a3831f;
-    angles = (0, var_ce5c9b08861a4466, 0);
-    var_728d033793cea02f = rotatevector(var_95abccfe668f369a, angles);
-    return var_d59ce05d15358f85 - var_728d033793cea02f;
+function calcanimstartpos(stoppos, var_2cdc979364d3101c, animdelta, var_f73bea4534a3831f) {
+    dangle = var_2cdc979364d3101c - var_f73bea4534a3831f;
+    angles = (0, dangle, 0);
+    worlddelta = rotatevector(animdelta, angles);
+    return stoppos - worlddelta;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cd
 // Size: 0x26
 function ishighnode(node) {
     if (!isdefined(node)) {
-        return 0;
+        return false;
     }
     if (node isvalidpeekoutdir("over")) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fb
 // Size: 0x56
@@ -66,7 +66,7 @@ function start_conceal_add(statename, anime, waittime) {
     thread conceal_add_cleanup(statename);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x358
 // Size: 0x4b
@@ -74,21 +74,21 @@ function transitionedfromrun(asmname) {
     prevstate = self asmgetstatetransitioningfrom(asmname);
     if (isdefined(prevstate)) {
         if (prevstate == "stand_run_loop") {
-            return 1;
+            return true;
         } else if (actor_is3d() && prevstate == "stand_run_strafe_loop") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ab
 // Size: 0x18e
 function playcoveranimloop3d(asmname, statename, params) {
     if (!isdefined(self.asm.lastcovernode)) {
-        var_9f34b86d9ac843f4 = [0:namespace_28edc79fcf2fe234::bb_getcovernode(), 1:self.node];
+        var_9f34b86d9ac843f4 = [scripts/asm/asm_bb::bb_getcovernode(), self.node];
         for (i = 0; !isdefined(self.asm.lastcovernode) && i < var_9f34b86d9ac843f4.size; i++) {
             if (isdefined(var_9f34b86d9ac843f4[i]) && distancesquared(self.origin, var_9f34b86d9ac843f4[i].origin) < 256) {
                 self.asm.lastcovernode = var_9f34b86d9ac843f4[i];
@@ -111,7 +111,7 @@ function playcoveranimloop3d(asmname, statename, params) {
     playcoveranimloop(asmname, statename, params);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x540
 // Size: 0x158
@@ -119,7 +119,7 @@ function playcoveranimloop(asmname, statename, params) {
     self.keepclaimednodeifvalid = 1;
     if (isdefined(params)) {
         if (params == "stickToNode") {
-            covernode = namespace_28edc79fcf2fe234::bb_getcovernode();
+            covernode = scripts/asm/asm_bb::bb_getcovernode();
             if (isdefined(covernode)) {
                 if (distancesquared(covernode.origin, self.origin) < 16) {
                     self safeteleport(covernode.origin);
@@ -134,7 +134,7 @@ function playcoveranimloop(asmname, statename, params) {
         }
     }
     if (!isagent(self)) {
-        animindex = archetypegetrandomalias(self.var_ae3ea15396b65c1f, statename, "conceal_add", 0);
+        animindex = archetypegetrandomalias(self.animsetname, statename, "conceal_add", 0);
         covernode = bb_getcovernode();
         if (isdefined(animindex) && isdefined(covernode) && (covernode.type == "Conceal Crouch" || covernode.type == "Conceal Stand")) {
             var_b2c6a031d79506f7 = asm_getxanim(statename, animindex);
@@ -145,7 +145,7 @@ function playcoveranimloop(asmname, statename, params) {
     function_fb56c9527636713f(asmname, statename, 1);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69f
 // Size: 0x89
@@ -155,59 +155,59 @@ function conceal_add_cleanup(statename) {
     self notify("conceal_add_cleanup");
     self endon("conceal_add_cleanup");
     self waittill(statename + "_finished");
-    if (archetypehasstate(self.var_ae3ea15396b65c1f, "knobs")) {
-        anime = archetypegetalias(self.var_ae3ea15396b65c1f, "knobs", "conceal_add", 0);
+    if (archetypehasstate(self.animsetname, "knobs")) {
+        anime = archetypegetalias(self.animsetname, "knobs", "conceal_add", 0);
         if (isdefined(anime)) {
             self clearanim(anime.anims, 0.4);
         }
     }
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72f
 // Size: 0x9e
-function lerpto(covernode, var_2f841227a5cdde35, var_a86ac46ef036b2b6) {
-    self endon(var_a86ac46ef036b2b6);
-    while (1) {
-        var_eda694106bcafae6 = covernode.origin - self.origin;
-        var_28660e5725a496a2 = length(var_eda694106bcafae6);
+function lerpto(covernode, var_2f841227a5cdde35, endonstr) {
+    self endon(endonstr);
+    while (true) {
+        metodest = covernode.origin - self.origin;
+        var_28660e5725a496a2 = length(metodest);
         if (var_28660e5725a496a2 < var_2f841227a5cdde35) {
             self safeteleport(covernode.origin);
             break;
         }
-        var_eda694106bcafae6 = var_eda694106bcafae6 / var_28660e5725a496a2;
-        dest = self.origin + var_eda694106bcafae6 * var_2f841227a5cdde35;
+        metodest = metodest / var_28660e5725a496a2;
+        dest = self.origin + metodest * var_2f841227a5cdde35;
         self safeteleport(dest);
         wait(0.05);
     }
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x3e
 function terminatecoverreload(asmname, statename, params) {
     asm_fireephemeralevent("reload", "end");
     self function_4ea7891f787c6725();
-    namespace_1a7cea57c200f504::reload_cleanup(asmname, statename, params);
+    scripts/asm/soldier/script_funcs::reload_cleanup(asmname, statename, params);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x819
 // Size: 0x7d
 function playcoveranim_droprpg(asmname, statename, params) {
     self.keepclaimednodeifvalid = 1;
     var_d6dd63cefb3c4ee = asm_getanim(asmname, statename);
-    var_66aebe1d33f3b18 = asm_getxanim(statename, var_d6dd63cefb3c4ee);
+    myxanim = asm_getxanim(statename, var_d6dd63cefb3c4ee);
     self orientmode("face current");
     self aisetanim(statename, var_d6dd63cefb3c4ee);
-    asm_playfacialanim(asmname, statename, var_66aebe1d33f3b18);
-    asm_donotetracks(asmname, statename, namespace_bf5a1761a8d1bb07::asm_getnotehandler(asmname, statename));
+    asm_playfacialanim(asmname, statename, myxanim);
+    asm_donotetracks(asmname, statename, scripts/asm/asm::asm_getnotehandler(asmname, statename));
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x89d
 // Size: 0x147
@@ -219,40 +219,40 @@ function playshuffleloop(asmname, statename, params) {
     var_946cbac627c6d79d["stand_shuffle_left"] = 90;
     self endon(statename + "_finished");
     var_6c3daa22f3c8f9c3 = asm_getanim(asmname, statename);
-    var_9def5b8f72499c7f = asm_getxanim(statename, var_6c3daa22f3c8f9c3);
+    shufflexanim = asm_getxanim(statename, var_6c3daa22f3c8f9c3);
     self aisetanim(statename, var_6c3daa22f3c8f9c3);
-    asm_playfacialanim(asmname, statename, var_9def5b8f72499c7f);
+    asm_playfacialanim(asmname, statename, shufflexanim);
     if (isdefined(self._blackboard.shufflenode)) {
-        var_7f55545f660ef1bb = self._blackboard.shufflenode.angles[1];
+        faceangle = self._blackboard.shufflenode.angles[1];
     } else if (isdefined(self.node)) {
-        var_7f55545f660ef1bb = self.node.angles[1];
+        faceangle = self.node.angles[1];
     } else {
-        var_7f55545f660ef1bb = self.angles[1];
+        faceangle = self.angles[1];
     }
     if (self.unittype != "c6" && isdefined(var_946cbac627c6d79d[statename])) {
-        var_7f55545f660ef1bb = var_7f55545f660ef1bb + var_946cbac627c6d79d[statename];
+        faceangle = faceangle + var_946cbac627c6d79d[statename];
     }
-    self orientmode("face angle", var_7f55545f660ef1bb);
+    self orientmode("face angle", faceangle);
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x9eb
 // Size: 0xc8
-function shouldplayshuffleenter(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldplayshuffleenter(asmname, statename, tostatename, params) {
     /#
         assert(isdefined(self._blackboard.shufflenode));
     #/
-    var_e7097d92847c054c = asm_getrandomanim(asmname, var_f2b19b25d457c2a6);
-    var_fca130e132110162 = asm_getxanim(var_f2b19b25d457c2a6, var_e7097d92847c054c);
-    var_f63319923b121d0 = getmovedelta(var_fca130e132110162);
-    var_9e00fac7aa4e669 = lengthsquared(var_f63319923b121d0);
+    enteranim = asm_getrandomanim(asmname, tostatename);
+    enterxanim = asm_getxanim(tostatename, enteranim);
+    entertranslation = getmovedelta(enterxanim);
+    enterdistsq = lengthsquared(entertranslation);
     disttogoalsq = distancesquared(self.origin, self._blackboard.shufflenode.origin);
-    return var_9e00fac7aa4e669 <= disttogoalsq + 1;
+    return enterdistsq <= disttogoalsq + 1;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xabb
 // Size: 0x2f
@@ -260,11 +260,11 @@ function abortshufflecleanup(asmname, statename, params) {
     self._blackboard.shufflenode = undefined;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xaf1
 // Size: 0x2ac
-function shouldbeginshuffleexit(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldbeginshuffleexit(asmname, statename, tostatename, params) {
     /#
         assert(isdefined(self._blackboard.shufflenode));
     #/
@@ -291,28 +291,28 @@ function shouldbeginshuffleexit(asmname, statename, var_f2b19b25d457c2a6, params
         }
     }
     if (isdefined(params) && nodetype != params) {
-        return 0;
+        return false;
     }
-    exitanim = asm_getrandomanim(asmname, var_f2b19b25d457c2a6);
-    var_315d9a31b78a7f02 = asm_getxanim(statename, exitanim);
-    var_7b749c88c64b98dc = self._blackboard.shufflenode.origin - self.origin;
-    goaldir = vectornormalize(var_7b749c88c64b98dc);
-    var_d56a0b3c801f0bf6 = getmovedelta(var_315d9a31b78a7f02, 0, 1);
-    var_b1151bc68af15725 = length(var_d56a0b3c801f0bf6);
-    goalpos = self._blackboard.shufflenode.origin - goaldir * var_b1151bc68af15725;
-    var_7b749c88c64b98dc = goalpos - self.origin;
-    var_97698266774f21ac = self._blackboard.shufflenode.origin - shufflefromnode.origin;
-    var_97698266774f21ac = (var_97698266774f21ac[0], var_97698266774f21ac[1], 0);
-    if (vectordot(var_97698266774f21ac, var_7b749c88c64b98dc) <= 0) {
-        return 1;
+    exitanim = asm_getrandomanim(asmname, tostatename);
+    exitxanim = asm_getxanim(statename, exitanim);
+    goaldelta = self._blackboard.shufflenode.origin - self.origin;
+    goaldir = vectornormalize(goaldelta);
+    exitmovedelta = getmovedelta(exitxanim, 0, 1);
+    exitdist = length(exitmovedelta);
+    goalpos = self._blackboard.shufflenode.origin - goaldir * exitdist;
+    goaldelta = goalpos - self.origin;
+    shuffledelta = self._blackboard.shufflenode.origin - shufflefromnode.origin;
+    shuffledelta = (shuffledelta[0], shuffledelta[1], 0);
+    if (vectordot(shuffledelta, goaldelta) <= 0) {
+        return true;
     }
     if (length2dsquared(self.velocity) > 1 && vectordot(goaldir, self.velocity) <= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xda5
 // Size: 0x1b7
@@ -322,8 +322,8 @@ function playshuffleanim_arrival(asmname, statename, params) {
     arrivalxanim = asm_getxanim(statename, arrivalanim);
     self aisetanim(statename, arrivalanim);
     asm_playfacialanim(asmname, statename, arrivalxanim);
-    var_773bbe3e674f23b7 = getmovedelta(arrivalxanim);
-    var_9e90966804914dea = getangledelta3d(arrivalxanim);
+    animtranslation = getmovedelta(arrivalxanim);
+    animrotation = getangledelta3d(arrivalxanim);
     if (isdefined(self._blackboard.shufflenode)) {
         node = self._blackboard.shufflenode;
     } else {
@@ -331,22 +331,22 @@ function playshuffleanim_arrival(asmname, statename, params) {
     }
     if (isdefined(node)) {
         desiredendpos = node.origin;
-        var_611d21936599bc82 = (0, getnodeforwardyaw(node), 0);
-        var_83da498ee1b4f7fb = combineangles(var_611d21936599bc82, invertangles(var_9e90966804914dea));
-        var_3de691449164f7eb = node.origin - rotatevector(var_773bbe3e674f23b7, var_83da498ee1b4f7fb);
+        desiredendangles = (0, getnodeforwardyaw(node), 0);
+        desiredstartangles = combineangles(desiredendangles, invertangles(animrotation));
+        desiredstartpos = node.origin - rotatevector(animtranslation, desiredstartangles);
     } else {
-        desiredendpos = self.origin + var_773bbe3e674f23b7;
-        var_611d21936599bc82 = combineangles(self.angles, var_9e90966804914dea);
-        var_3de691449164f7eb = self.origin;
-        var_83da498ee1b4f7fb = self.angles;
+        desiredendpos = self.origin + animtranslation;
+        desiredendangles = combineangles(self.angles, animrotation);
+        desiredstartpos = self.origin;
+        desiredstartangles = self.angles;
     }
-    var_6040e7eba5e09557 = int(1000 * getanimlength(arrivalxanim) - 200);
+    warpduration = int(1000 * getanimlength(arrivalxanim) - 200);
     self startcoverarrival();
-    self motionwarpwithanim(var_3de691449164f7eb, var_83da498ee1b4f7fb, desiredendpos, var_611d21936599bc82, var_6040e7eba5e09557);
+    self motionwarpwithanim(desiredstartpos, desiredstartangles, desiredendpos, desiredendangles, warpduration);
     asm_donotetracks(asmname, statename);
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xf63
 // Size: 0x49
@@ -356,20 +356,20 @@ function playshuffleanim_terminate(asmname, statename, params) {
     self finishcoverarrival();
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfb3
 // Size: 0x15
 function coverreloadnotetrackhandler(note) {
-    namespace_a4081f3d58d76916::notetrack_prefix_handler(note);
+    scripts/anim/notetracks::notetrack_prefix_handler(note);
     return undefined;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xfd0
 // Size: 0x1e7
-function cover3dpickexposedir(asmname, statename, var_f2b19b25d457c2a6, params) {
+function cover3dpickexposedir(asmname, statename, tostatename, params) {
     /#
         assert(isdefined(self.enemy));
     #/
@@ -381,54 +381,54 @@ function cover3dpickexposedir(asmname, statename, var_f2b19b25d457c2a6, params) 
     #/
     self.bt.cover3dexposedirpicked = undefined;
     enemyeye = (self.enemy.origin + getenemyeyepos()) / 2;
-    current_state = anim.asm[asmname].states[var_f2b19b25d457c2a6];
-    var_eeb5ebbb83f5768d = array_randomize(current_state.transitions);
-    var_d34161275b1730c1 = undefined;
-    foreach (transition in var_eeb5ebbb83f5768d) {
+    current_state = anim.asm[asmname].states[tostatename];
+    random_transitions = array_randomize(current_state.transitions);
+    dir_picked = undefined;
+    foreach (transition in random_transitions) {
         /#
             assert(isdefined(transition.shouldtransitionparams));
         #/
-        var_d34161275b1730c1 = transition.shouldtransitionparams;
-        if (var_d34161275b1730c1 == "up") {
+        dir_picked = transition.shouldtransitionparams;
+        if (dir_picked == "up") {
             break;
         }
-        nodeoffset = getcover3dnodeoffset(self.node, var_d34161275b1730c1);
-        var_ecd488c76cf5e978 = self.node.origin + nodeoffset;
-        if (sighttracepassed(var_ecd488c76cf5e978, enemyeye, 0, undefined)) {
+        nodeoffset = getcover3dnodeoffset(self.node, dir_picked);
+        nodelookfrompoint = self.node.origin + nodeoffset;
+        if (sighttracepassed(nodelookfrompoint, enemyeye, 0, undefined)) {
             break;
         }
     }
     /#
-        assert(isdefined(var_d34161275b1730c1));
+        assert(isdefined(dir_picked));
     #/
-    self.bt.cover3dexposedirpicked = asmname + "_" + var_f2b19b25d457c2a6 + "_" + var_d34161275b1730c1;
-    return 1;
+    self.bt.cover3dexposedirpicked = asmname + "_" + tostatename + "_" + dir_picked;
+    return true;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x11bf
 // Size: 0x55
-function cover3dcanexposedir(asmname, statename, var_f2b19b25d457c2a6, params) {
+function cover3dcanexposedir(asmname, statename, tostatename, params) {
     var_b045478fad8648fe = asmname + "_" + statename + "_" + params;
     return var_b045478fad8648fe == self.bt.cover3dexposedirpicked;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x121c
 // Size: 0xdb
-function checkcovermultichangerequest(asmname, statename, var_f2b19b25d457c2a6, params) {
+function checkcovermultichangerequest(asmname, statename, tostatename, params) {
     if (!bb_iscovermultiswitchrequested()) {
-        return 0;
+        return false;
     }
-    covernode = namespace_28edc79fcf2fe234::bb_getcovernode();
+    covernode = scripts/asm/asm_bb::bb_getcovernode();
     /#
         assert(isdefined(covernode));
     #/
     requestednodetype = bb_getrequestedcovermultiswitchnodetype();
     if (requestednodetype != params) {
-        return 0;
+        return false;
     }
     /#
         assert(!isdefined(self.asm.covermultiswitchdata));
@@ -436,10 +436,10 @@ function checkcovermultichangerequest(asmname, statename, var_f2b19b25d457c2a6, 
     self.asm.covermultiswitchdata = spawnstruct();
     self.asm.covermultiswitchdata.requestednode = covernode;
     self.asm.covermultiswitchdata.requestednodetype = requestednodetype;
-    return 1;
+    return true;
 }
 
-// Namespace cover/namespace_d925b2b52656868e
+// Namespace cover / scripts/asm/soldier/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x12ff
 // Size: 0x9f

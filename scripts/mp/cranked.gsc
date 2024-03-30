@@ -14,7 +14,7 @@
 
 #namespace cranked;
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a9
 // Size: 0x21
@@ -22,7 +22,7 @@ function registercrankedtimerdvar(dvarstring, value) {
     registerwatchdvarint("crankedBombTimer", value);
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d1
 // Size: 0x36
@@ -35,12 +35,12 @@ function setcrankeddvarfordev() {
     #/
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x40e
 // Size: 0xab
 function makeplayercranked(event) {
-    namespace_944ddf7b8df1b0e3::leaderdialogonplayer(event);
+    scripts/mp/utility/dialog::leaderdialogonplayer(event);
     setcrankedplayerbombtimer("kill");
     self.cranked = 1;
     self.supportcranked = 1;
@@ -53,10 +53,10 @@ function makeplayercranked(event) {
     giveperk("specialty_stalker");
     giveperk("specialty_sprintfire");
     self.movespeedscaler = 1.2;
-    namespace_3bbb5a98b932c46f::updatemovespeedscale();
+    scripts/mp/weapons::updatemovespeedscale();
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c0
 // Size: 0x1c6
@@ -66,15 +66,15 @@ function oncranked(victim, attacker, lifeid) {
     }
     if (isdefined(attacker.cranked)) {
         event = #"hash_9a398b6a291fcd80";
-        attacker thread namespace_62c556437da28f50::scoreeventpopup(#"hash_e7ec5c6f05dda4d9");
+        attacker thread scripts/mp/rank::scoreeventpopup(#"time_added");
         attacker thread oncrankedkill(event);
-        if (!istrue(namespace_36f464722d326bbe::function_b2c4b42f9236924())) {
+        if (!istrue(scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924())) {
             attacker playlocalsound("jup_cranked_timer_refill");
         }
     } else if (isreallyalive(attacker) && (function_f698bfd3efa33302() || function_e9f3a160bbefe208(attacker))) {
         attacker makeplayercranked("begin_cranked");
-        attacker thread namespace_62c556437da28f50::scoreeventpopup(#"begin_cranked");
-        if (!istrue(namespace_36f464722d326bbe::function_b2c4b42f9236924())) {
+        attacker thread scripts/mp/rank::scoreeventpopup(#"begin_cranked");
+        if (!istrue(scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924())) {
             attacker playlocalsound("jup_cranked_timer_start");
         }
     }
@@ -93,16 +93,16 @@ function oncranked(victim, attacker, lifeid) {
                 continue;
             }
             player thread oncrankedassist("assist_cranked");
-            player thread namespace_62c556437da28f50::scoreeventpopup(#"assist_cranked");
-            player thread namespace_62c556437da28f50::scoreeventpopup(#"hash_e7ec5c6f05dda4d9");
-            if (!istrue(namespace_36f464722d326bbe::function_b2c4b42f9236924())) {
+            player thread scripts/mp/rank::scoreeventpopup(#"assist_cranked");
+            player thread scripts/mp/rank::scoreeventpopup(#"time_added");
+            if (!istrue(scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924())) {
                 player playlocalsound("jup_cranked_timer_refill_assist");
             }
         }
     }
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68d
 // Size: 0x1f
@@ -113,7 +113,7 @@ function oncrankedhit(victim) {
     setcrankedplayerbombtimer("hit");
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b3
 // Size: 0x36
@@ -125,7 +125,7 @@ function cleanupcrankedplayertimer() {
     thread waitthenstopcrankedbombtimer();
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f0
 // Size: 0xc
@@ -134,7 +134,7 @@ function waitthenstopcrankedbombtimer() {
     self notify("stop_cranked");
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x703
 // Size: 0x37
@@ -147,7 +147,7 @@ function oncrankedkill(event) {
     setcrankedplayerbombtimer("kill");
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x741
 // Size: 0x26
@@ -157,7 +157,7 @@ function oncrankedassist(event) {
     setcrankedplayerbombtimer("assist");
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76e
 // Size: 0x224
@@ -197,7 +197,7 @@ function setcrankedplayerbombtimer(type) {
     thread watchcrankedendgame();
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x999
 // Size: 0x75
@@ -208,15 +208,15 @@ function watchcrankedplayerhostmigration() {
     self endon("death_or_disconnect");
     self endon("stop_cranked");
     level waittill("host_migration_begin");
-    timepassed = namespace_e323c8674b44c8f4::waittillhostmigrationdone();
+    timepassed = scripts/mp/hostmigration::waittillhostmigrationdone();
     if (timepassed > 0) {
         self setclientomnvar("ui_cranked_bomb_timer_end_milliseconds", self.cranked_end_time + timepassed);
-    } else {
-        self setclientomnvar("ui_cranked_bomb_timer_end_milliseconds", self.cranked_end_time);
+        return;
     }
+    self setclientomnvar("ui_cranked_bomb_timer_end_milliseconds", self.cranked_end_time);
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa15
 // Size: 0x5b
@@ -225,7 +225,7 @@ function watchcrankedendgame() {
     self endon("watchEndGame");
     self endon("death_or_disconnect");
     self endon("stop_cranked");
-    while (1) {
+    while (true) {
         if (game["state"] == "postgame" || level.gameended) {
             self setclientomnvar("ui_cranked_bomb_timer_end_milliseconds", 0);
             break;
@@ -234,7 +234,7 @@ function watchcrankedendgame() {
     }
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa77
 // Size: 0x18c
@@ -245,38 +245,38 @@ function watchcrankedbombtimer(waittime) {
     level endon("game_ended");
     self endon("stop_cranked");
     thread crankedprogressuiupdater(waittime);
-    var_928b160c136333a8 = 10;
-    var_8440421626c8b0cf = waittime - var_928b160c136333a8 - 1;
+    countdown_time = 10;
+    var_8440421626c8b0cf = waittime - countdown_time - 1;
     if (var_8440421626c8b0cf > 0) {
-        namespace_e323c8674b44c8f4::waitlongdurationwithgameendtimeupdate(var_8440421626c8b0cf);
-        namespace_e323c8674b44c8f4::waitlongdurationwithgameendtimeupdate(1);
+        scripts/mp/hostmigration::waitlongdurationwithgameendtimeupdate(var_8440421626c8b0cf);
+        scripts/mp/hostmigration::waitlongdurationwithgameendtimeupdate(1);
         self playlocalsound("jup_cranked_timer_warning");
     }
-    while (var_928b160c136333a8 > 0) {
-        if (var_928b160c136333a8 == 1) {
+    while (countdown_time > 0) {
+        if (countdown_time == 1) {
             self playlocalsound("jup_cranked_timer_tick_last");
-        } else if (var_928b160c136333a8 <= 5) {
+        } else if (countdown_time <= 5) {
             self playlocalsound("jup_cranked_timer_tick_half");
-        } else if (var_928b160c136333a8 < 10) {
+        } else if (countdown_time < 10) {
             self playlocalsound("jup_cranked_timer_tick");
         }
-        namespace_e323c8674b44c8f4::waitlongdurationwithgameendtimeupdate(1);
-        var_928b160c136333a8--;
+        scripts/mp/hostmigration::waitlongdurationwithgameendtimeupdate(1);
+        countdown_time--;
     }
     if (isdefined(self) && isreallyalive(self) && getgametype() != "tdef") {
         self playsound("vest_expl_trans");
-        var_4db9d8af7f807d76 = self.origin + (0, 0, 32);
-        playfx(level._effect["cranked_explode"], var_4db9d8af7f807d76);
+        explorg = self.origin + (0, 0, 32);
+        playfx(level._effect["cranked_explode"], explorg);
         _suicide();
-        self radiusdamage(var_4db9d8af7f807d76, 256, 200, 100, self, "MOD_EXPLOSIVE", "bomb_site_mp");
+        self radiusdamage(explorg, 256, 200, 100, self, "MOD_EXPLOSIVE", "bomb_site_mp");
         self setclientomnvar("ui_cranked_bomb_timer_end_milliseconds", 0);
-        if (namespace_f8065cafc523dba5::_isalive()) {
-            self dodamage(self.maxhealth, var_4db9d8af7f807d76, self, undefined, "MOD_EXPLOSIVE", "bomb_site_mp");
+        if (scripts/cp_mp/utility/player_utility::_isalive()) {
+            self dodamage(self.maxhealth, explorg, self, undefined, "MOD_EXPLOSIVE", "bomb_site_mp");
         }
     }
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc0a
 // Size: 0xa7
@@ -297,7 +297,7 @@ function crankedprogressuiupdater(waittime) {
     }
 }
 
-// Namespace cranked/namespace_58012cf453ba1014
+// Namespace cranked / scripts/mp/cranked
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcb8
 // Size: 0x49
@@ -308,8 +308,8 @@ function function_68a1353068460d1() {
     }
     if (isdefined(self.cranked) && self.cranked) {
         setcrankedplayerbombtimer("kill");
-    } else {
-        oncranked(undefined, self);
+        return;
     }
+    oncranked(undefined, self);
 }
 

@@ -4,8 +4,8 @@
 #using scripts\engine\utility.gsc;
 #using scripts\engine\math.gsc;
 #using scripts\common\utility.gsc;
-#using script_4c770a9a4ad7659c;
-#using script_3b64eb40368c1450;
+#using scripts\common\callbacks.gsc;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
 #using scripts\mp\agents\agent_utility.gsc;
 #using scripts\mp\perks\perkfunctions.gsc;
@@ -34,7 +34,7 @@
 #using script_b0385bb45379222;
 #using script_46fdf7b12c5f5620;
 #using scripts\mp\flags.gsc;
-#using script_55e6a436b6b3048c;
+#using scripts\mp\meatshield.gsc;
 #using script_556b8aeaa691317f;
 #using scripts\mp\cranked.gsc;
 #using scripts\mp\equipment.gsc;
@@ -94,7 +94,7 @@
 #using scripts\mp\outofbounds.gsc;
 #using script_cbb0697de4c5728;
 #using scripts\mp\gameobjects.gsc;
-#using script_77c18cdedec620b3;
+#using scripts\common\debug.gsc;
 #using scripts\mp\deathicons.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using scripts\mp\killstreaks\killstreaks.gsc;
@@ -124,11 +124,11 @@
 
 #namespace damage;
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 16, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32e7
 // Size: 0x1140
-function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1) {
+function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1) {
     if (isdefined(eattacker) && isdefined(eattacker.classname) && eattacker.classname == "worldspawn") {
         eattacker = undefined;
     }
@@ -136,10 +136,10 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         eattacker = eattacker.gunner;
     }
     if (getdvarint(@"hash_c36efcba0f21f379", 0) == 1 && isdefined(objweapon)) {
-        var_7956cc8a3f6e983d = weapon::getweaponrootname(objweapon.basename);
-        var_904c82687ddfeb02 = namespace_38b993c4618e76cd::getlootidfromref(var_7956cc8a3f6e983d);
-        var_b2a4bce10dbbb085 = namespace_38b993c4618e76cd::function_20be2251dd0a8076(var_904c82687ddfeb02);
-        var_eaa882d1344e713 = var_904c82687ddfeb02 == 39598 && level.gametype == "gold_gun" && istrue(eattacker.raygun);
+        baseweaponref = weapon::getweaponrootname(objweapon.basename);
+        weaponlootid = namespace_38b993c4618e76cd::getlootidfromref(baseweaponref);
+        var_b2a4bce10dbbb085 = namespace_38b993c4618e76cd::function_20be2251dd0a8076(weaponlootid);
+        var_eaa882d1344e713 = weaponlootid == 39598 && level.gametype == "gold_gun" && istrue(eattacker.raygun);
         if (var_b2a4bce10dbbb085 && !var_eaa882d1344e713) {
             victim = eattacker;
         }
@@ -159,7 +159,7 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             return;
         }
     }
-    if (namespace_24e240b9cee9d3b9::function_f79445ae166c7150(eattacker, victim) || namespace_5c7433352e1f5cc7::function_7b08c98431abda40(eattacker, victim)) {
+    if (br_dom_gulag::function_f79445ae166c7150(eattacker, victim) || br_ai_gulag::function_7b08c98431abda40(eattacker, victim)) {
         function_403e958ecd04f255(victim, "isInLastStand( victim ) && IsTrue( level.laststand_always_disable_damage )");
         return;
     }
@@ -169,14 +169,14 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             return;
         }
         if (isdefined(victim.team)) {
-            var_a993c42adf98794d = getdvarint(function_2ef675c13ca1c4af(@"hash_cc6c5774be41ec78", utility::string(victim.team)), 0) != 0;
+            var_a993c42adf98794d = getdvarint(hashcat(@"hash_cc6c5774be41ec78", utility::string(victim.team)), 0) != 0;
             if (var_a993c42adf98794d) {
                 function_403e958ecd04f255(victim, "hits");
                 return;
             }
         }
         if (getdvarint(@"hash_45dd70c0ac1afda2", 0) != 0) {
-            victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, 0);
+            victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, 0);
             function_403e958ecd04f255(victim, "on_damaged_finished");
             return;
         }
@@ -194,9 +194,9 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         function_403e958ecd04f255(victim, "iDFlags & DFLAGS_STUN");
         return;
     }
-    var_fc92d300e26e37a0 = filterdamage(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc);
-    if (isdefined(var_fc92d300e26e37a0)) {
-        function_403e958ecd04f255(victim, "filterDamage true, " + var_fc92d300e26e37a0);
+    shouldreturn = filterdamage(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc);
+    if (isdefined(shouldreturn)) {
+        function_403e958ecd04f255(victim, "filterDamage true, " + shouldreturn);
         return;
     }
     attackerishittingteammate = attackerishittingteam(victim, eattacker);
@@ -208,7 +208,7 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             return;
         }
     }
-    if (isdefined(level.var_2ceb2474be1c597e) && [[ level.var_2ceb2474be1c597e ]](einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1)) {
+    if (isdefined(level.var_2ceb2474be1c597e) && [[ level.var_2ceb2474be1c597e ]](einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1)) {
         return;
     }
     var_f754ceb1e24b2acd = isplayer(victim) && victim function_fc05ebabfbf10e33() && smeansofdeath != "MOD_MEATSHIELD";
@@ -227,21 +227,21 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             return;
         }
         idamage = 1;
-        var_6a7bec5bae7edfed finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, undefined, 0);
+        var_6a7bec5bae7edfed finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, undefined, 0);
         return;
     }
     var_5120869216e5bbbe = isplayer(victim) && victim function_a237aba99cf26050() && smeansofdeath == "MOD_FALLING";
     if (istrue(var_5120869216e5bbbe)) {
         var_5e64a8df23fb6063 = victim function_3be2afc5f1b4cd2d();
         if (isdefined(var_5e64a8df23fb6063) && isplayer(var_5e64a8df23fb6063)) {
-            var_a6bb61971108293a = victim.health <= idamage;
-            var_8cd906397bfa5efa = idamage / var_5e64a8df23fb6063.maxhealth * var_5e64a8df23fb6063.var_423a9f9e23833f65;
-            var_5e64a8df23fb6063 meatshield::function_afdf3e6cbe0522d7(var_8cd906397bfa5efa, var_a6bb61971108293a);
+            instantkill = victim.health <= idamage;
+            meatshielddamage = idamage / var_5e64a8df23fb6063.maxhealth * var_5e64a8df23fb6063.var_423a9f9e23833f65;
+            var_5e64a8df23fb6063 meatshield::function_afdf3e6cbe0522d7(meatshielddamage, instantkill);
         }
     }
     var_1a52fb785a04c793 = isdefined(einflictor) && einflictor vehicle::isvehicle() && !iskillstreakweapon && smeansofdeath == "MOD_EXPLOSIVE";
     if (attackerishittingteammate && !var_1a52fb785a04c793) {
-        idamage = handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, iskillstreakweapon);
+        idamage = handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, iskillstreakweapon);
         if (idamage == 0) {
             function_403e958ecd04f255(victim, "handleFriendlyFireDamage damage == 0");
             return;
@@ -254,9 +254,9 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
     }
     if (istrue(victim.spawnprotection) || victim function_f1dcadc8f7c3477c()) {
         var_d0d4ae57019e885d = smeansofdeath == "MOD_TRIGGER_HURT" || isdefined(eattacker) && isdefined(eattacker.classname) && eattacker.classname == "trigger_hurt";
-        var_228c3b335149221a = smeansofdeath == "MOD_FALLING";
-        var_84e1133e7f895003 = smeansofdeath == "MOD_SUICIDE";
-        if (!var_d0d4ae57019e885d && !var_228c3b335149221a && !var_84e1133e7f895003) {
+        wasfalldamage = smeansofdeath == "MOD_FALLING";
+        wassuicidedamage = smeansofdeath == "MOD_SUICIDE";
+        if (!var_d0d4ae57019e885d && !wasfalldamage && !wassuicidedamage) {
             handledamagefeedback(einflictor, eattacker, victim, 0, smeansofdeath, objweapon, shitloc, idflags, 1, 1, iskillstreakweapon);
             function_403e958ecd04f255(victim, "( istrue( victim.spawnProtection ) || victim IsLastStandInvulnerable() ) && !wasHurtTrigger && !wasFallDamage");
             return;
@@ -269,13 +269,13 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         function_403e958ecd04f255(victim, "eAttacker.classname == script_origin && eAttacker.type == soft_landing");
         return;
     }
-    var_d35e82fc5aa0aa84 = 1;
+    headshotmultiplier = 1;
     if (isdefined(var_be4285b26ed99ab1) && var_be4285b26ed99ab1 > 0) {
-        var_d35e82fc5aa0aa84 = idamage / var_be4285b26ed99ab1;
+        headshotmultiplier = idamage / var_be4285b26ed99ab1;
     }
     idflags = idflags | 4;
-    if (isspreadweapon(objweapon) && namespace_25ead30c6ed027fb::validshotcheck(smeansofdeath, eattacker)) {
-        if (namespace_23227899dfba5895::isdragonsbreathweapon(objweapon) && (weapon::getweapongroup(objweapon) == "weapon_shotgun" || istrue(objweapon.isalternate) || function_f30a6d3194f97c09(objweapon, "specialty_incendiary_alt"))) {
+    if (isspreadweapon(objweapon) && damage_utility::validshotcheck(smeansofdeath, eattacker)) {
+        if (dragonsbreath::isdragonsbreathweapon(objweapon) && (weapon::getweapongroup(objweapon) == "weapon_shotgun" || istrue(objweapon.isalternate) || getweaponhasperk(objweapon, "specialty_incendiary_alt"))) {
             victim thread dragonsbreathhitloccollection(shitloc, eattacker, objweapon);
         }
         idamage = spreadshotdamagemod(victim, eattacker, objweapon, idamage, idflags);
@@ -284,8 +284,8 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             return;
         }
     }
-    var_5c3f9357f11d2223 = objweapon.basename;
-    if (!isdefined(var_5c3f9357f11d2223)) {
+    weaponbasename = objweapon.basename;
+    if (!isdefined(weaponbasename)) {
         /#
             assertmsg("Damage.gsc - Callback_PlayerDamage_internal: objWeapon.baseName is undefined");
         #/
@@ -294,17 +294,10 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
     if (isdefined(equiptype)) {
         if (equiptype == "lethal") {
             idamage = lethalequipmentdamagemod(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon);
-        } else {
-            if (equiptype == "equipment_other") {
-                goto LOC_00000a45;
-            }
-            if (equiptype == "tactical") {
-            LOC_00000a45:
-            }
-        LOC_00000a45:
+        } else if (equiptype == "equipment_other") {
+        } else if (equiptype == "tactical") {
         }
-    LOC_00000a45:
-        damagedata = namespace_25ead30c6ed027fb::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor, vpoint, vdir, undefined, undefined, partname, undefined, idflags, undefined, shitloc);
+        damagedata = damage_utility::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor, vpoint, vdir, undefined, undefined, partname, undefined, idflags, undefined, shitloc);
         result = equipment::equiponplayerdamaged(damagedata);
         if (isdefined(result) && result == 0) {
             function_403e958ecd04f255(victim, "IsDefined( getEquipmentType ) && equipOnPlayerDamaged() == false");
@@ -316,15 +309,15 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         wassuicide = smeansofdeath == "MOD_SUICIDE";
         if (!var_e0815ed56506a6a3 && !wassuicide) {
             var_54a24336cc9a143d = istrue(objweapon.isalternate);
-            if (isdefined(equiptype) && !weapon::isthrowingknife(var_5c3f9357f11d2223) || var_54a24336cc9a143d || smeansofdeath == "MOD_EXPLOSIVE") {
-                var_54a88b0118510e9f = int(max(victim.health / 5, 1));
-                if (idamage >= var_54a88b0118510e9f) {
-                    idamage = var_54a88b0118510e9f;
+            if (isdefined(equiptype) && !weapon::isthrowingknife(weaponbasename) || var_54a24336cc9a143d || smeansofdeath == "MOD_EXPLOSIVE") {
+                damagelimit = int(max(victim.health / 5, 1));
+                if (idamage >= damagelimit) {
+                    idamage = damagelimit;
                 }
             }
         }
     }
-    weaptype = weapon::getweapontype(var_5c3f9357f11d2223);
+    weaptype = weapon::getweapontype(weaponbasename);
     if (isdefined(weaptype) && weaptype == "killstreak") {
         idamage = killstreakdamagefilter(eattacker, victim, idamage, objweapon, smeansofdeath);
         if (idamage == 0) {
@@ -349,20 +342,20 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         function_403e958ecd04f255(victim, "iDamage == 0 && lightArmorDamage == 0");
         return;
     }
-    if (namespace_23227899dfba5895::isdragonsbreathweapon(objweapon) && !isspreadweapon(objweapon)) {
+    if (dragonsbreath::isdragonsbreathweapon(objweapon) && !isspreadweapon(objweapon)) {
         victim thread function_c206c109a26f598(idamage + var_1da1a66b5c6a06a7, eattacker, objweapon, shitloc);
     } else if (crossbow::function_fc87aff67fb01e6f(objweapon)) {
-        victim thread function_5a05899bb304a6d4(shitloc, namespace_3544bf049e15c786::function_42b0dfeb350f6ea5());
+        victim thread function_5a05899bb304a6d4(shitloc, scripts/cp_mp/crossbow::function_42b0dfeb350f6ea5());
     }
     if (!istrue(victim.donotmodifydamage)) {
-        var_619984a4a37b8423 = cac_modified_damage(victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, einflictor, 0, idflags, iskillstreakweapon, var_d35e82fc5aa0aa84);
-        idamage = var_619984a4a37b8423[0];
-        var_986b2e0350629522 = var_619984a4a37b8423[1];
-        var_b2883531afa6b83d = var_1da1a66b5c6a06a7 != 0 || var_986b2e0350629522 != 0;
-        shitloc = var_619984a4a37b8423[2];
+        modifieddamageresults = cac_modified_damage(victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, einflictor, 0, idflags, iskillstreakweapon, headshotmultiplier);
+        idamage = modifieddamageresults[0];
+        var_986b2e0350629522 = modifieddamageresults[1];
+        armorhit = var_1da1a66b5c6a06a7 != 0 || var_986b2e0350629522 != 0;
+        shitloc = modifieddamageresults[2];
     } else {
         var_986b2e0350629522 = 0;
-        var_b2883531afa6b83d = 0;
+        armorhit = 0;
     }
     if (!istrue(level.var_6ef7df34c802c174) && iskilltradedamage(eattacker, victim, idamage, smeansofdeath, objweapon, var_b0fc59ff15058522)) {
         function_403e958ecd04f255(victim, "isKillTradeDamage()");
@@ -372,12 +365,12 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         shitloc = victim.forcehitlocation;
         victim.forcehitlocation = undefined;
     }
-    if (isplayer(eattacker) && (var_5c3f9357f11d2223 == "smoke_grenade_mp" || weapon::isthrowingknife(var_5c3f9357f11d2223))) {
-        eattacker thread gamelogic::threadedsetweaponstatbyname(var_5c3f9357f11d2223, 1, "hits");
+    if (isplayer(eattacker) && (weaponbasename == "smoke_grenade_mp" || weapon::isthrowingknife(weaponbasename))) {
+        eattacker thread gamelogic::threadedsetweaponstatbyname(weaponbasename, 1, "hits");
     }
-    var_b4c09bd8d141ed77 = vdir;
+    vdamagedir = vdir;
     if (isdefined(idflags) && idflags & 256 && idamage < self.health) {
-        var_b4c09bd8d141ed77 = victim.origin - eattacker.origin;
+        vdamagedir = victim.origin - eattacker.origin;
     }
     if (isenvironmentalscriptableinflictor(einflictor)) {
         idamage = 0;
@@ -404,7 +397,7 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
         if (isdefined(einflictor.equipmentref) && istrue(einflictor.equipmentref == "equip_throwstar")) {
             idamage = throwstar::function_db4bbcfe23f19148(einflictor, victim, idamage, partname);
         }
-        if (isdefined(einflictor.var_ab13877362519a4f) && istrue(einflictor.var_ab13877362519a4f) && (istrue(einflictor.equipmentref == "equip_throwing_knife") || istrue(einflictor.equipmentref == "equip_shuriken") || istrue(einflictor.equipmentref == "equip_throwstar"))) {
+        if (isdefined(einflictor.bwasunderwater) && istrue(einflictor.bwasunderwater) && (istrue(einflictor.equipmentref == "equip_throwing_knife") || istrue(einflictor.equipmentref == "equip_shuriken") || istrue(einflictor.equipmentref == "equip_throwstar"))) {
             idamage = throwing_knife::function_3d8b0933df7505fd(victim);
         }
     }
@@ -419,8 +412,8 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             }
         }
     }
-    if (isdefined(eattacker) && isplayer(eattacker) && isdefined(eattacker.var_91ff03702332cc07)) {
-        eattacker.var_91ff03702332cc07 = eattacker.var_91ff03702332cc07 + idamage;
+    if (isdefined(eattacker) && isplayer(eattacker) && isdefined(eattacker.lifetimedamage)) {
+        eattacker.lifetimedamage = eattacker.lifetimedamage + idamage;
     }
     if (isdefined(victim) && isplayer(victim) && !function_483cc81bff18273b(victim)) {
         victim.var_489f22c08f63bc0f = victim.var_489f22c08f63bc0f + idamage;
@@ -442,12 +435,12 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
             }
         }
     }
-    preplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, var_b4c09bd8d141ed77, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7);
-    victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, var_b4c09bd8d141ed77, shitloc, psoffsettime, modelindex, partname, var_b2883531afa6b83d);
-    postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, var_b4c09bd8d141ed77, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7, var_986b2e0350629522, var_fcdf19e3cdd29669, iskillstreakweapon);
+    preplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdamagedir, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7);
+    victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdamagedir, shitloc, psoffsettime, modelindex, partname, armorhit);
+    postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdamagedir, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7, var_986b2e0350629522, var_fcdf19e3cdd29669, iskillstreakweapon);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x442f
 // Size: 0xea
@@ -459,7 +452,7 @@ function dragonsbreathhitloccollection(hitloc, eattacker, objweapon) {
         return;
     }
     if (!isdefined(self.dragonsbreathdamage)) {
-        self.dragonsbreathdamage = namespace_23227899dfba5895::function_df4e9a1e313ea352();
+        self.dragonsbreathdamage = dragonsbreath::function_df4e9a1e313ea352();
     }
     self.dragonsbreathdamage.newhitlocs = utility::array_add(self.dragonsbreathdamage.newhitlocs, hitloc);
     waittillframeend();
@@ -472,13 +465,13 @@ function dragonsbreathhitloccollection(hitloc, eattacker, objweapon) {
         self.dragonsbreathdamage.newhitlocs = [];
     }
     if (isreallyalive(self)) {
-        namespace_23227899dfba5895::function_6dc8c5de229e86ff(newhitlocs, eattacker, objweapon);
-    } else {
-        namespace_23227899dfba5895::function_56a694363da738ac();
+        dragonsbreath::function_6dc8c5de229e86ff(newhitlocs, eattacker, objweapon);
+        return;
     }
+    dragonsbreath::function_56a694363da738ac();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 14, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4520
 // Size: 0x40f
@@ -509,10 +502,10 @@ function preplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smean
     if (isdefined(objweapon) && objweapon.basename == "bunkerbuster_round_mp") {
         if (isdefined(einflictor) && isdefined(victim)) {
             var_84ca13f5a0250278 = distance(einflictor.origin, victim.origin);
-            eattacker dlog_recordplayerevent("dlog_event_mp_bunkerbuster_expl_dist_to_enemy", [0:"victim", 1:victim, 2:"distance", 3:var_84ca13f5a0250278], 0);
+            eattacker dlog_recordplayerevent("dlog_event_mp_bunkerbuster_expl_dist_to_enemy", ["victim", victim, "distance", var_84ca13f5a0250278], 0);
         }
     }
-    namespace_30a6d7a07831c1e2::bulletoutlinecheck(eattacker, victim, objweapon.basename, smeansofdeath);
+    perkfunctions::bulletoutlinecheck(eattacker, victim, objweapon.basename, smeansofdeath);
     if (smeansofdeath == "MOD_FALLING") {
         victim thread emitfalldamage(idamage);
     }
@@ -535,7 +528,7 @@ function preplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smean
         var_b94cd1b61321122a = victim function_c603bed3b1c8d11(victim.currentprimaryweapon, 0);
     }
     victim.var_ddae1352e36165f6 = var_b94cd1b61321122a;
-    victim thread namespace_bc0fc4dcb86d0ecb::onplayerdamaged(eattacker, victim, smeansofdeath);
+    victim thread potg_events::onplayerdamaged(eattacker, victim, smeansofdeath);
     victim thread challenges::playerdamaged(einflictor, eattacker, idamage, smeansofdeath, objweapon, shitloc);
     if (isdefined(eattacker) && idamage != 0) {
         eattacker notify("victim_damaged", victim);
@@ -548,7 +541,7 @@ function preplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smean
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4936
 // Size: 0x57
@@ -557,13 +550,13 @@ function function_2f5049bbe3c5e733(objweapon, meansofdeath) {
     return game_utility::function_ba5574c7f287c587() && (var_f2c2804490dd2160 || meansofdeath == "MOD_MELEE");
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4995
 // Size: 0xa2c
 function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_1da1a66b5c6a06a7, var_986b2e0350629522, var_fcdf19e3cdd29669, iskillstreakweapon) {
     originaldamage = idamage;
-    var_34459eb0ef220c40 = utility::isbulletdamage(smeansofdeath);
+    bisbulletdamage = utility::isbulletdamage(smeansofdeath);
     if (getdvarint(@"hash_fb388f508f5527e3", 0) == 1 && isdefined(eattacker) && isdefined(eattacker.origin)) {
         victim function_95874c67f460495f(eattacker.origin);
     }
@@ -590,35 +583,35 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
                 idamage = self.health - 1;
             } else {
                 var_366b0ecc2f28aead = getcompleteweaponname(objweapon);
-                self [[ namespace_cb97214c768c4dbd::agentfunc("on_damaged_finished") ]](einflictor, eattacker, idamage, idflags, smeansofdeath, var_366b0ecc2f28aead, vpoint, vdir, shitloc, psoffsettime);
+                self [[ agent_utility::agentfunc("on_damaged_finished") ]](einflictor, eattacker, idamage, idflags, smeansofdeath, var_366b0ecc2f28aead, vpoint, vdir, shitloc, psoffsettime);
             }
         } else {
             var_366b0ecc2f28aead = getcompleteweaponname(objweapon);
-            self [[ namespace_cb97214c768c4dbd::agentfunc("on_damaged_finished") ]](einflictor, eattacker, idamage, idflags, smeansofdeath, var_366b0ecc2f28aead, vpoint, vdir, shitloc, psoffsettime);
+            self [[ agent_utility::agentfunc("on_damaged_finished") ]](einflictor, eattacker, idamage, idflags, smeansofdeath, var_366b0ecc2f28aead, vpoint, vdir, shitloc, psoffsettime);
         }
     } else {
         challenges::function_4ab6f9fba6bb9cc5(self, idamage, var_1da1a66b5c6a06a7);
     }
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587() && isplayer(eattacker)) {
-        namespace_aad14af462a74d08::function_f4d8c689aaf296e5(eattacker, objweapon, idamage, var_1da1a66b5c6a06a7);
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587() && isplayer(eattacker)) {
+        scripts/cp_mp/challenges::function_f4d8c689aaf296e5(eattacker, objweapon, idamage, var_1da1a66b5c6a06a7);
     }
     handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, idflags, var_1da1a66b5c6a06a7, var_986b2e0350629522, iskillstreakweapon, partname);
-    function_18525950b3caba30(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon);
-    if (var_34459eb0ef220c40) {
-        victim thread namespace_20260f65229aa888::adddamagetaken(eattacker, objweapon, idamage);
+    handledamageeffects(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon);
+    if (bisbulletdamage) {
+        victim thread battlechatter_mp::adddamagetaken(eattacker, objweapon, idamage);
     }
-    if (isagent(eattacker) && isdefined(eattacker) && eattacker namespace_e47104b48662385b::_isalive() && eattacker != victim) {
-        victim thread namespace_20260f65229aa888::addrecentattacker(eattacker);
+    if (isagent(eattacker) && isdefined(eattacker) && eattacker player_utility::_isalive() && eattacker != victim) {
+        victim thread battlechatter_mp::addrecentattacker(eattacker);
     }
-    if (isdefined(victim) && victim namespace_e47104b48662385b::_isalive()) {
+    if (isdefined(victim) && victim player_utility::_isalive()) {
         if (victim.health < 30) {
-            victim thread namespace_20260f65229aa888::hurtbadlywait();
+            victim thread battlechatter_mp::hurtbadlywait();
         }
         if (isdefined(eattacker) && eattacker != victim && isexplosivedamagemod(smeansofdeath)) {
             var_a5269902cd18ca05 = isdefined(objweapon) && objweapon.basename == "safe_c4_mp";
-            var_46a8bb92aa6c8d0e = isdefined(objweapon) && objweapon.basename == "gas_mp";
-            if (!isdefined(objweapon) || !var_46a8bb92aa6c8d0e && !var_a5269902cd18ca05) {
-                level thread namespace_20260f65229aa888::trysaylocalsound(victim, #"hash_cafa7ad7442c35d5", undefined, 0.5);
+            isgas = isdefined(objweapon) && objweapon.basename == "gas_mp";
+            if (!isdefined(objweapon) || !isgas && !var_a5269902cd18ca05) {
+                level thread battlechatter_mp::trysaylocalsound(victim, #"hash_cafa7ad7442c35d5", undefined, 0.5);
             }
         }
     }
@@ -626,24 +619,24 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
     if (isdefined(eattacker) && eattacker != victim) {
         level.usestartspawns = 0;
     }
-    if (isplayer(eattacker) && isdefined(eattacker namespace_3c5a4254f2b957ea::getpersstat("participation"))) {
-        eattacker namespace_3c5a4254f2b957ea::incpersstat("participation", 1);
+    if (isplayer(eattacker) && isdefined(eattacker scripts/mp/utility/stats::getpersstat("participation"))) {
+        eattacker scripts/mp/utility/stats::incpersstat("participation", 1);
     } else if (isplayer(eattacker)) {
         eattacker.pers["participation"] = 1;
     }
     /#
-        namespace_45ecbe78f599af72::function_c9e5c511b923a42f(idamage, eattacker, victim, smeansofdeath, shitloc, einflictor, vpoint, var_1da1a66b5c6a06a7, var_986b2e0350629522);
+        weapon_utility::function_c9e5c511b923a42f(idamage, eattacker, victim, smeansofdeath, shitloc, einflictor, vpoint, var_1da1a66b5c6a06a7, var_986b2e0350629522);
     #/
     if (isdefined(level.cinematic_replay_recording) && isplayer(einflictor)) {
-        var_4169c6a89b43f49 = spawnstruct();
-        var_4169c6a89b43f49.victim = victim;
-        var_4169c6a89b43f49.vpoint = vpoint;
-        var_4169c6a89b43f49.vdir = vdir;
-        var_4169c6a89b43f49.objweapon = objweapon;
-        var_4169c6a89b43f49.kill = !isalive(victim);
-        einflictor.hitrecord[einflictor.hitrecord.size] = var_4169c6a89b43f49;
+        recordstruct = spawnstruct();
+        recordstruct.victim = victim;
+        recordstruct.vpoint = vpoint;
+        recordstruct.vdir = vdir;
+        recordstruct.objweapon = objweapon;
+        recordstruct.kill = !isalive(victim);
+        einflictor.hitrecord[einflictor.hitrecord.size] = recordstruct;
     }
-    if (isdefined(level.matchrecording_logeventmsg) && isplayer(victim) && isdefined(einflictor) && isplayer(einflictor) && var_34459eb0ef220c40) {
+    if (isdefined(level.matchrecording_logeventmsg) && isplayer(victim) && isdefined(einflictor) && isplayer(einflictor) && bisbulletdamage) {
         if (var_fcdf19e3cdd29669 == victim.maxhealth && victim.health != self.maxhealth) {
             victim.engagementstarttime = gettime();
         }
@@ -657,20 +650,20 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
         }
         if (isshrapnelsource(objweapon, smeansofdeath) && isreallyalive(victim) && eattacker != victim) {
             if (isdefined(eattacker.var_a3376181eed3ffac)) {
-                var_8d7328510c2d577e = eattacker.var_a3376181eed3ffac;
-                var_43f20ac8f8c9340b = (level.healthregendelay + var_8d7328510c2d577e) * 1000;
-                var_cd49b265a29f4b38 = (var_43f20ac8f8c9340b / level.healthregendelay * 1000 - 1) / -1;
-                namespace_54a2eae43eaa8bf5::function_5457f0107a845374("explosive_delay_perk", var_cd49b265a29f4b38, var_43f20ac8f8c9340b);
+                regendelayseconds = eattacker.var_a3376181eed3ffac;
+                targetdelayms = (level.healthregendelay + regendelayseconds) * 1000;
+                delaymod = (targetdelayms / level.healthregendelay * 1000 - 1) / -1;
+                namespace_54a2eae43eaa8bf5::function_5457f0107a845374("explosive_delay_perk", delaymod, targetdelayms);
             }
             if (istrue(eattacker.var_11554e20eb10a6dd)) {
-                eattacker thread namespace_30a6d7a07831c1e2::function_dd4a053345e159c2(victim);
+                eattacker thread perkfunctions::function_dd4a053345e159c2(victim);
             }
         }
-        if (var_34459eb0ef220c40 || objweapon.basename == "throwstar_mp") {
-            if (function_1f2e4ff84140d164(objweapon, eattacker) && namespace_25ead30c6ed027fb::islowerbodyshot(shitloc, smeansofdeath, eattacker) && !victim _hasperk("specialty_dauntless")) {
-                eattacker thread namespace_30a6d7a07831c1e2::ammodisabling_run(victim, objweapon.basename == "throwstar_mp");
+        if (bisbulletdamage || objweapon.basename == "throwstar_mp") {
+            if (function_1f2e4ff84140d164(objweapon, eattacker) && damage_utility::islowerbodyshot(shitloc, smeansofdeath, eattacker) && !victim _hasperk("specialty_dauntless")) {
+                eattacker thread perkfunctions::ammodisabling_run(victim, objweapon.basename == "throwstar_mp");
             }
-            if (eattacker function_c38aa07aff945ff7(vdir, victim)) {
+            if (eattacker shouldmeleeslow(vdir, victim)) {
                 eattacker thread function_fbd5b90ec07c28c4(victim);
             }
         }
@@ -697,9 +690,9 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
             victim stats::incpersstat("explosionsSurvived", 1);
             if (getdvarint(@"hash_cf6378092db0d69c", 0) == 1) {
                 if (isdefined(einflictor)) {
-                    var_acd8faa0e7dde1b2 = function_347074f909e9dea5(einflictor, objweapon);
-                    if (var_acd8faa0e7dde1b2[0] == 1) {
-                        victim thread function_bf56dbd2a1035901(var_acd8faa0e7dde1b2.size);
+                    testarray = function_347074f909e9dea5(einflictor, objweapon);
+                    if (testarray[0] == 1) {
+                        victim thread function_bf56dbd2a1035901(testarray.size);
                     }
                 }
             }
@@ -707,8 +700,8 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
         }
     } else {
         if (isdefined(victim) && isdefined(einflictor) && namespace_14ec1bc880a07c3b::function_eae0802093a7e5f5(einflictor)) {
-            if (isdefined(einflictor.var_a5d118f040f60db0)) {
-                victim function_b3bbb3a877d45df6(einflictor.var_a5d118f040f60db0);
+            if (isdefined(einflictor.vehicleent)) {
+                victim function_b3bbb3a877d45df6(einflictor.vehicleent);
             }
         }
         if (isdefined(idflags) && isdefined(8) && idflags & 8 && isdefined(16384) && !(idflags & 16384)) {
@@ -724,7 +717,7 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
         namespace_d36e6800233f4f97::function_3cceb052d780fef1("gulagTrackPlayerBulletHitPlayer", eattacker);
     }
     if (isplayer(victim) && isplayer(eattacker)) {
-        if (var_34459eb0ef220c40 && eattacker _hasperk("specialty_combat_scout")) {
+        if (bisbulletdamage && eattacker _hasperk("specialty_combat_scout")) {
             attackerdamage = istrue(idamage > 0 || var_1da1a66b5c6a06a7 > 0 || var_986b2e0350629522 > 0);
             victim thread function_84c8fc967497800(eattacker, attackerdamage, objweapon);
         }
@@ -732,35 +725,35 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
     /#
         assertex(originaldamage == idamage, "Damage modified in postPlayerDamaged(). This does nothing, damage has already been applied");
     #/
-    var_d27680ff86693f5c = {var_1da1a66b5c6a06a7:var_1da1a66b5c6a06a7, partname:partname, shitloc:shitloc, vdir:vdir, vpoint:vpoint, objweapon:objweapon, smeansofdeath:smeansofdeath, idflags:idflags, idamage:idamage, einflictor:einflictor, eattacker:eattacker, victim:victim};
-    callback::callback("player_damaged", var_d27680ff86693f5c);
+    sparams = {var_1da1a66b5c6a06a7:var_1da1a66b5c6a06a7, partname:partname, shitloc:shitloc, vdir:vdir, vpoint:vpoint, objweapon:objweapon, smeansofdeath:smeansofdeath, idflags:idflags, idamage:idamage, einflictor:einflictor, eattacker:eattacker, victim:victim};
+    callback::callback("player_damaged", sparams);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53c8
 // Size: 0x36
 function function_1f2e4ff84140d164(objweapon, eattacker) {
     if (objweapon hasattachment("ammomod_slow") || eattacker perk::_hasperk("specialty_wounding")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5406
 // Size: 0xff
 function private function_347074f909e9dea5(einflictor, objweapon) {
     if (isdefined(einflictor.equipmentref)) {
-        var_9b83efba8bfecc3f = equipment::getequipmenttableinfo(einflictor.equipmentref);
-        if (isdefined(var_9b83efba8bfecc3f) && var_9b83efba8bfecc3f.defaultslot == "primary") {
-            return [0:1];
+        equipmentinfo = equipment::getequipmenttableinfo(einflictor.equipmentref);
+        if (isdefined(equipmentinfo) && equipmentinfo.defaultslot == "primary") {
+            return [1];
         }
     }
     if (isdefined(objweapon)) {
         if (weapon::iskillstreakweapon(objweapon)) {
-            return [0:1, 1:1];
+            return [1, 1];
         }
         switch (objweapon.basename) {
         case #"hash_13a265ac820ea0df":
@@ -771,73 +764,72 @@ function private function_347074f909e9dea5(einflictor, objweapon) {
         case #"hash_a9e31b8ffd42a67b":
         case #"hash_e704ecf8710c6f57":
         case #"hash_f55c20924061bd15":
-            return [0:1];
-            break;
+            return [1];
         }
     }
-    return [0:0];
+    return [0];
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x550d
 // Size: 0x75
-function private function_bf56dbd2a1035901(var_ea3f6e5c800c0e9c, var_af9644f18eb1d154, velocity) {
+function private function_bf56dbd2a1035901(knockdownintensity, isvehiclehit, velocity) {
     self endon("death_or_disconnect");
-    if (!istrue(self.var_9e3bdda27a519a9f)) {
+    if (!istrue(self.perkthirdperson)) {
         self setcamerathirdperson(1);
     }
-    if (istrue(var_af9644f18eb1d154)) {
+    if (istrue(isvehiclehit)) {
         self function_babd8af3054d8abe("torso_upper", velocity);
         wait(3);
     } else {
         self function_360874d9808f0724();
-        wait(utility::ter_op(var_ea3f6e5c800c0e9c == 2, 5, 3));
+        wait(utility::ter_op(knockdownintensity == 2, 5, 3));
     }
-    class::function_c5ce8711741e44b8();
+    class::setthirdpersonview();
     self function_d87e1768229d0e3e();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5589
 // Size: 0x90
 function meleestagger_anglesviewattack(victim, attacker) {
     vdir = anglestoforward((0, victim getplayerangles()[1], 0));
-    var_6f2237e4477ca77d = vectornormalize((attacker.origin[0], attacker.origin[1], 0) - (victim.origin[0], victim.origin[1], 0));
-    return math::anglebetweenvectorssigned(vdir, var_6f2237e4477ca77d, (0, 0, 1));
+    vattack = vectornormalize((attacker.origin[0], attacker.origin[1], 0) - (victim.origin[0], victim.origin[1], 0));
+    return math::anglebetweenvectorssigned(vdir, vattack, (0, 0, 1));
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5621
 // Size: 0x7a
 function isshrapnelsource(objweapon, meansofdeath) {
     if (!isdefined(objweapon) || isnullweapon(objweapon)) {
-        return 0;
+        return false;
     }
     if (!isexplosivedamagemod(meansofdeath)) {
-        return 0;
+        return false;
     }
     if (weapon::iskillstreakweapon(objweapon)) {
-        return 0;
+        return false;
     }
     if (weapon::isvehicleweapon(objweapon)) {
-        return 0;
+        return false;
     }
     if (weapon::isgamemodeweapon(objweapon)) {
-        return 0;
+        return false;
     }
-    var_11d2f075e9a0e643 = weapon::getequipmenttype(objweapon);
-    if (isdefined(var_11d2f075e9a0e643)) {
-        if (var_11d2f075e9a0e643 != "lethal") {
-            return 0;
+    equipmenttype = weapon::getequipmenttype(objweapon);
+    if (isdefined(equipmenttype)) {
+        if (equipmenttype != "lethal") {
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56a3
 // Size: 0x203
@@ -852,9 +844,9 @@ function meleestagger(attacker) {
         self setviewkickscale(utility::ter_op(attacker perk::_hasperk("specialty_hardmelee"), 3, 1.5));
     }
     duration = utility::ter_op(attacker perk::_hasperk("specialty_hardmelee"), var_989ea0994c0bafe0 * 1.5, var_989ea0994c0bafe0);
-    namespace_cc0f9da8a00806f6::_shellshock("melee_mp", "damage", duration, 0, 0);
+    shellshock_utility::_shellshock("melee_mp", "damage", duration, 0, 0);
     yaw = 0;
-    if (isdefined(attacker) && attacker namespace_e47104b48662385b::_isalive()) {
+    if (isdefined(attacker) && attacker player_utility::_isalive()) {
         angle = meleestagger_anglesviewattack(self, attacker);
         if (angle < 15) {
             yaw = 10;
@@ -871,10 +863,10 @@ function meleestagger(attacker) {
     wait(0.05);
     self setviewkickscale(var_e501fdb86740b153);
     duration = utility::ter_op(attacker perk::_hasperk("specialty_hardmelee"), var_c0d3d09fb36a355e * 1.5, var_c0d3d09fb36a355e);
-    namespace_cc0f9da8a00806f6::_shellshock("melee_mp_after", "damage", duration, 0, 0);
+    shellshock_utility::_shellshock("melee_mp_after", "damage", duration, 0, 0);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x58ad
 // Size: 0xfb
@@ -900,7 +892,7 @@ function meleedofroutine(attacker) {
     player::setdof_default();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x59af
 // Size: 0x24
@@ -909,67 +901,67 @@ function monitormeleeoverlay(overlay) {
     overlay destroy();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59da
 // Size: 0x5c
 function allowdamageflash(attacker, victim, objweapon, meansofdeath, damage) {
     if (isagent(victim)) {
-        return 0;
+        return false;
     }
     if (function_816434396dce13f(victim)) {
-        return 0;
+        return false;
     }
     if (damage == 0) {
-        return 0;
+        return false;
     }
     if (suppressdamageflash(attacker, victim, objweapon, meansofdeath, damage)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a3e
 // Size: 0x32
 function suppressdamageflash(attacker, victim, objweapon, meansofdeath, damage) {
     if (isdefined(objweapon)) {
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a78
 // Size: 0x80
 function weaponignoresbrarmor(attacker, victim, damage, objweapon, smeansofdeath, inflictor, shitloc) {
-    var_5c3f9357f11d2223 = objweapon.basename;
-    if (isdefined(var_5c3f9357f11d2223) && var_5c3f9357f11d2223 == "danger_circle_br") {
-        return 1;
+    weaponbasename = objweapon.basename;
+    if (isdefined(weaponbasename) && weaponbasename == "danger_circle_br") {
+        return true;
     }
     if (smeansofdeath == "MOD_EXECUTION") {
-        return 1;
+        return true;
     }
     if (smeansofdeath == "MOD_FALLING") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b00
 // Size: 0x19
-function function_7b2f2a8a9aa41d44(var_5c3f9357f11d2223) {
-    return isdefined(var_5c3f9357f11d2223) && var_5c3f9357f11d2223 == "danger_circle_br";
+function function_7b2f2a8a9aa41d44(weaponbasename) {
+    return isdefined(weaponbasename) && weaponbasename == "danger_circle_br";
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params d, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b21
 // Size: 0x877
-function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query, idflags, iskillstreakweapon, var_d35e82fc5aa0aa84) {
+function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon, impactpoint, impactdir, shitloc, inflictor, query, idflags, iskillstreakweapon, headshotmultiplier) {
     /#
         assert(isplayer(victim) || isagent(victim));
     #/
@@ -977,10 +969,10 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
         assert(function_483cc81bff18273b(victim) || isdefined(victim.team));
     #/
     victim notify("damage_begin", attacker);
-    if (!isdefined(var_d35e82fc5aa0aa84)) {
-        var_d35e82fc5aa0aa84 = 1;
+    if (!isdefined(headshotmultiplier)) {
+        headshotmultiplier = 1;
     }
-    var_6cac94b6632aa667 = 0;
+    damageadd = 0;
     var_986b2e0350629522 = 0;
     var_7820f81ee1adf7b9 = victim armor::hasarmor();
     var_c258168e026adb0f = victim armor::hashelmet();
@@ -989,38 +981,38 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
         helmet_clearbroke(attacker);
     }
     if (utility::isbulletdamage(smeansofdeath)) {
-        var_5c3f9357f11d2223 = objweapon.basename;
-        headshot = namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker);
-        var_26df8fb7ad0299c0 = namespace_25ead30c6ed027fb::istorsoshot(shitloc, smeansofdeath, attacker);
-        if (isdefined(objweapon) && weapon::iscacprimaryorsecondary(var_5c3f9357f11d2223)) {
+        weaponbasename = objweapon.basename;
+        headshot = damage_utility::isheadshot(shitloc, smeansofdeath, attacker);
+        torsoshot = damage_utility::istorsoshot(shitloc, smeansofdeath, attacker);
+        if (isdefined(objweapon) && weapon::iscacprimaryorsecondary(weaponbasename)) {
             if (isbehindmeleevictim(attacker, victim) && isplayer(victim)) {
-                level thread namespace_20260f65229aa888::saytoself(victim, "plr_hit_back", undefined, 0.1);
+                level thread battlechatter_mp::saytoself(victim, "plr_hit_back", undefined, 0.1);
             }
         }
         if (isdefined(idflags) && idflags & 256) {
-            if (var_5c3f9357f11d2223 != "none" && !weapon::issuperweapon(var_5c3f9357f11d2223)) {
+            if (weaponbasename != "none" && !weapon::issuperweapon(weaponbasename)) {
                 damage = damage * 0.4;
             }
         }
         if (isplayer(attacker) && attacker perk::_hasperk("specialty_paint_pro") && !istrue(iskillstreakweapon)) {
-            victim thread namespace_30a6d7a07831c1e2::setpainted(attacker);
+            victim thread perkfunctions::setpainted(attacker);
         }
-        if (weapon::isminigunweapon(var_5c3f9357f11d2223) && game_utility::isbrstylegametype()) {
-            damage = damage * namespace_702c7cf141169c57::getminigundamagescale();
+        if (weapon::isminigunweapon(weaponbasename) && game_utility::isbrstylegametype()) {
+            damage = damage * br_jugg_common::getminigundamagescale();
         }
-        hitarmorvest = var_26df8fb7ad0299c0 && victim perk::_hasperk("specialty_armorvest");
+        hitarmorvest = torsoshot && victim perk::_hasperk("specialty_armorvest");
         var_946cdaf05db4eca7 = headshot && var_c258168e026adb0f;
         hithelmet = headshot && istrue(victim.hasheadgear);
         var_287ab4d602b23a2a = istrue(attacker.lastcrossbowhadstoppingpower) && weapon::getweaponrootname(objweapon) == "iw9_dm_crossbow";
         var_2b1f3da5885ae9eb = attacker perk::_hasperk("specialty_bulletdamage") || var_287ab4d602b23a2a;
         armorpiercing = isfmjdamage(objweapon, smeansofdeath);
         if (var_946cdaf05db4eca7 && !istrue(victim.inlaststand)) {
-            var_ae95568a563d5912 = weaponclass(objweapon);
-            var_ac4a1f6f548136ea = 0;
-            if (var_ae95568a563d5912 == "sniper" || var_ae95568a563d5912 == "dmr") {
-                var_ac4a1f6f548136ea = 1;
+            attackerweaponclass = weaponclass(objweapon);
+            snipershot = 0;
+            if (attackerweaponclass == "sniper" || attackerweaponclass == "dmr") {
+                snipershot = 1;
             }
-            var_f74a43b699b0afd2 = victim armor::damagehelmet(damage, var_ac4a1f6f548136ea, var_483b72bbc1109ab2);
+            var_f74a43b699b0afd2 = victim armor::damagehelmet(damage, snipershot, impactdir);
             damage = damage * var_f74a43b699b0afd2;
         }
         if (var_2b1f3da5885ae9eb && hitarmorvest) {
@@ -1031,13 +1023,13 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
                     assertmsg("applyStoppingPower() passed damage <= 0. Damage must be a positive.");
                 #/
             } else {
-                var_cf48c2b5f099e09a = applystoppingpower(objweapon, shitloc, smeansofdeath, attacker, damage, 100);
-                var_6cac94b6632aa667 = var_6cac94b6632aa667 + var_cf48c2b5f099e09a - damage;
+                damagenew = applystoppingpower(objweapon, shitloc, smeansofdeath, attacker, damage, 100);
+                damageadd = damageadd + damagenew - damage;
             }
         } else if (hitarmorvest && !istrue(victim.tookvesthit) && !armorpiercing) {
             victim.tookvesthit = 1;
-            var_cf48c2b5f099e09a = adjustbulletstokill(damage, 100, level.armorvestbulletdelta);
-            var_6cac94b6632aa667 = var_6cac94b6632aa667 + var_cf48c2b5f099e09a - damage;
+            damagenew = adjustbulletstokill(damage, 100, level.armorvestbulletdelta);
+            damageadd = damageadd + damagenew - damage;
             helmet_sethit(attacker);
         } else if (hithelmet && !armorpiercing) {
             damagemod = headgear::getdamagemod();
@@ -1047,7 +1039,7 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
                 damagehelmet = int(min(victim.health - 1, damagehelmet));
             }
             var_a97d0ca28da74569 = damage - damagehelmet;
-            var_6cac94b6632aa667 = var_6cac94b6632aa667 - var_a97d0ca28da74569;
+            damageadd = damageadd - var_a97d0ca28da74569;
             victim notify("headgear_save");
             helmet_sethit(attacker);
         }
@@ -1060,16 +1052,16 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
             }
         }
         if (attacker perk::_hasperk("specialty_headhunter") && headshot) {
-            if (var_d35e82fc5aa0aa84 <= 1) {
+            if (headshotmultiplier <= 1) {
                 damage = damage + 10;
             } else {
                 disttovictim = distance(attacker.origin, victim.origin);
                 if (disttovictim < level.var_a7b25d0a3d5b8f1e) {
-                    damage = damage + 20 * var_d35e82fc5aa0aa84;
+                    damage = damage + 20 * headshotmultiplier;
                 } else if (disttovictim < level.var_a7b25d0a3d5b8f1e) {
-                    damage = damage + 15 * var_d35e82fc5aa0aa84;
+                    damage = damage + 15 * headshotmultiplier;
                 } else {
-                    damage = damage + 10 * var_d35e82fc5aa0aa84;
+                    damage = damage + 10 * headshotmultiplier;
                 }
             }
         }
@@ -1078,20 +1070,20 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
             idamage = 0;
         }
     }
-    var_d089499e6152ef2c = trophy_system::trophy_modifieddamage(attacker, victim, objweapon.basename, damage, var_6cac94b6632aa667);
+    var_d089499e6152ef2c = trophy_system::trophy_modifieddamage(attacker, victim, objweapon.basename, damage, damageadd);
     damage = var_d089499e6152ef2c[0];
-    var_6cac94b6632aa667 = var_d089499e6152ef2c[1];
+    damageadd = var_d089499e6152ef2c[1];
     if (victim heavyarmor::hasheavyarmor()) {
-        var_d089499e6152ef2c = heavyarmor::heavyarmormodifydamage(victim, attacker, damage, var_6cac94b6632aa667, smeansofdeath, objweapon.basename, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query);
+        var_d089499e6152ef2c = heavyarmor::heavyarmormodifydamage(victim, attacker, damage, damageadd, smeansofdeath, objweapon.basename, impactpoint, impactdir, shitloc, inflictor, query);
         var_986b2e0350629522 = var_d089499e6152ef2c[0] > 0;
         damage = var_d089499e6152ef2c[1];
-        var_6cac94b6632aa667 = var_d089499e6152ef2c[2];
+        damageadd = var_d089499e6152ef2c[2];
     }
     if (lightarmor::haslightarmor(victim)) {
-        var_d089499e6152ef2c = lightarmor::lightarmor_modifydamage(victim, attacker, damage, var_6cac94b6632aa667, smeansofdeath, objweapon.basename, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query);
+        var_d089499e6152ef2c = lightarmor::lightarmor_modifydamage(victim, attacker, damage, damageadd, smeansofdeath, objweapon.basename, impactpoint, impactdir, shitloc, inflictor, query);
         var_1da1a66b5c6a06a7 = var_d089499e6152ef2c[0] > 0;
         damage = var_d089499e6152ef2c[1];
-        var_6cac94b6632aa667 = var_d089499e6152ef2c[2];
+        damageadd = var_d089499e6152ef2c[2];
     }
     if (isplayer(attacker)) {
         var_1bd99d39b987c15e = victim armor::hasarmor();
@@ -1106,70 +1098,68 @@ function cac_modified_damage(victim, attacker, damage, smeansofdeath, objweapon,
     if (hashealthshield(victim)) {
         damage = victim gethealthshielddamage(damage);
     }
-    var_7a63e4284c138381 = smeansofdeath == "MOD_FALLING" && damage >= victim.maxhealth;
+    fatalfalldamage = smeansofdeath == "MOD_FALLING" && damage >= victim.maxhealth;
     var_ff20188c5460f129 = isdefined(inflictor) && (isdefined(inflictor.stuckto) && inflictor.stuckto == victim || isdefined(inflictor.stuckenemyentity) && inflictor.stuckenemyentity == victim);
-    if (istrue(victim.inlaststand) && !var_7a63e4284c138381) {
+    if (istrue(victim.inlaststand) && !fatalfalldamage) {
         if (var_ff20188c5460f129 && (objweapon.basename == "semtex_mp" || objweapon.basename == "bunkerbuster_not_burrowed_mp")) {
-            goto LOC_000007d8;
+        } else {
+            damage = int(ceil(damage * getmatchrulesdata("commonOption", "lastStandDamageTakenScalar")));
         }
-        damage = int(ceil(damage * getmatchrulesdata("commonOption", "lastStandDamageTakenScalar")));
-    LOC_000007d8:
     }
-LOC_000007d8:
     if (damage <= 1) {
         damage = int(ceil(clamp(damage, 0, 1)));
     } else {
-        damage = int(damage + var_6cac94b6632aa667);
+        damage = int(damage + damageadd);
     }
     if (victim killstreak::isjuggernaut()) {
-        damage = modify_juggernaut_damage(victim, attacker, damage, smeansofdeath, objweapon, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query, idflags, iskillstreakweapon);
+        damage = modify_juggernaut_damage(victim, attacker, damage, smeansofdeath, objweapon, impactpoint, impactdir, shitloc, inflictor, query, idflags, iskillstreakweapon);
         if (damage >= self.health && istrue(self.var_9c1941d3bc009d2e)) {
             self.var_9c1941d3bc009d2e = 0;
-            thread namespace_68f1873625691c6::jugg_removejuggernaut();
+            thread scripts/mp/juggernaut::jugg_removejuggernaut();
             damage = 0;
         }
     }
-    return [0:damage, 1:var_986b2e0350629522, 2:shitloc];
+    return [damage, var_986b2e0350629522, shitloc];
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63a0
 // Size: 0xe4
 function modify_blast_shield_damage(damage, attacker, victim, var_463424d8c7b063d4) {
     if (isdefined(var_463424d8c7b063d4)) {
-        var_2d0e5379ab68da90 = int(min(victim.var_81c247612e9c90c3, var_463424d8c7b063d4 * damage));
-        victim.var_81c247612e9c90c3 = victim.var_81c247612e9c90c3 - var_2d0e5379ab68da90;
-        victim notify("blast_shield_damaged", victim.var_81c247612e9c90c3);
-        if (victim.var_81c247612e9c90c3 <= 0) {
-            victim namespace_30a6d7a07831c1e2::function_2e7374f107a12700();
+        var_2d0e5379ab68da90 = int(min(victim.flakjackethealth, var_463424d8c7b063d4 * damage));
+        victim.flakjackethealth = victim.flakjackethealth - var_2d0e5379ab68da90;
+        victim notify("blast_shield_damaged", victim.flakjackethealth);
+        if (victim.flakjackethealth <= 0) {
+            victim perkfunctions::breakflakjacket();
         }
         return (damage - var_2d0e5379ab68da90);
     }
-    var_24096f38c6718c4c = level.blastshieldmod;
+    blastdamagemod = level.blastshieldmod;
     var_1422fd8555ab8bf0 = level.blastshieldclamp;
-    var_46381c94b0138dc7 = int(damage * var_24096f38c6718c4c);
+    var_46381c94b0138dc7 = int(damage * blastdamagemod);
     if (attacker != victim) {
         var_46381c94b0138dc7 = clamp(var_46381c94b0138dc7, 0, var_1422fd8555ab8bf0);
     }
     return var_46381c94b0138dc7;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 12, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x648c
 // Size: 0x505
-function modify_juggernaut_damage(victim, attacker, damage, smeansofdeath, objweapon, var_96586eec2364c35b, var_483b72bbc1109ab2, shitloc, inflictor, query, idflags, iskillstreakweapon) {
-    var_ae95568a563d5912 = weaponclass(objweapon);
+function modify_juggernaut_damage(victim, attacker, damage, smeansofdeath, objweapon, impactpoint, impactdir, shitloc, inflictor, query, idflags, iskillstreakweapon) {
+    attackerweaponclass = weaponclass(objweapon);
     damagescale = 1;
     if (isdefined(attacker) && attacker killstreak::isjuggernaut() && game_utility::isbrstylegametype()) {
-        damagescale = namespace_702c7cf141169c57::getjuggdamagescale();
+        damagescale = br_jugg_common::getjuggdamagescale();
     } else if (game_utility::function_21322da268e71c19()) {
         damagescale = 1.25;
     }
     if (utility::isbulletdamage(smeansofdeath)) {
         var_b4a7d8cd8c4fb7da = isdefined(inflictor) && (isdefined(inflictor.stuckto) && inflictor.stuckto == victim || isdefined(inflictor.stuckenemyentity) && inflictor.stuckenemyentity == victim);
-        switch (var_ae95568a563d5912) {
+        switch (attackerweaponclass) {
         case #"hash_719417cb1de832b6":
         case #"hash_900cb96c552c5e8e":
             damage = min(15, damage);
@@ -1231,8 +1221,8 @@ function modify_juggernaut_damage(victim, attacker, damage, smeansofdeath, objwe
             break;
         }
         damage = function_5e4aa8d548cc604e(damage, objweapon, attacker, smeansofdeath);
-    } else if (utility::function_f1d312f6935bc2d2(smeansofdeath)) {
-        switch (var_ae95568a563d5912) {
+    } else if (utility::isimpactdamage(smeansofdeath)) {
+        switch (attackerweaponclass) {
         case #"hash_e224d0b635d0dadd":
             damage = min(10, damage);
             break;
@@ -1266,7 +1256,7 @@ function modify_juggernaut_damage(victim, attacker, damage, smeansofdeath, objwe
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6999
 // Size: 0x1a2
@@ -1283,40 +1273,39 @@ function modifydestructibledamage(damage, inflictor, objweapon) {
     classname = inflictor.classname;
     if (isdefined(classname) && isstartstr(classname, "scriptable_")) {
         classname = getsubstr(classname, 11, classname.size);
-        classnames = [0:"uk_gas_tank_thin_cylinder", 1:"uk_misc_fuel_jug", 2:"uk_fire_extinguisher", 3:"uk_misc_fuel_jug", 4:"decor_barrels_gameplay_flammable", 5:"un_propane_gas_tank", 6:"machinery_oxygen_generator_tank", 7:"sol_barrel", 8:"box_wooden_grenade", 9:"container_gas_tank", 10:"decor_propane_tank", 11:"equipment_propane_burner_stove", 12:"equipment_propane_tank", 13:"misc_propane_rocket", 14:"oil_drum", 15:"rp_propane_tank", 16:"misc_exterior_oxygen_barrel"];
-        foreach (var_ae9cfb330e2cd21 in classnames) {
-            if (isstartstr(classname, var_ae9cfb330e2cd21)) {
+        classnames = ["uk_gas_tank_thin_cylinder", "uk_misc_fuel_jug", "uk_fire_extinguisher", "uk_misc_fuel_jug", "decor_barrels_gameplay_flammable", "un_propane_gas_tank", "machinery_oxygen_generator_tank", "sol_barrel", "box_wooden_grenade", "container_gas_tank", "decor_propane_tank", "equipment_propane_burner_stove", "equipment_propane_tank", "misc_propane_rocket", "oil_drum", "rp_propane_tank", "misc_exterior_oxygen_barrel"];
+        foreach (_classname in classnames) {
+            if (isstartstr(classname, _classname)) {
                 if (game_utility::isanymlgmatch()) {
                     return 0;
-                } else {
-                    return int(min(damage, 60));
                 }
+                return int(min(damage, 60));
             }
         }
     }
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b43
 // Size: 0x98
 function iskilltradedamage(eattacker, victim, idamage, smeansofdeath, objweapon, var_b0fc59ff15058522) {
     if (isdefined(eattacker) && isplayer(eattacker) && (!isalive(eattacker) || player::function_d7afe062ef51bd77(eattacker))) {
         if (istrue(var_b0fc59ff15058522) && isspreadweapon(objweapon)) {
-            return 1;
+            return true;
         } else if (idamage >= victim.health) {
             if (smeansofdeath == "MOD_MELEE") {
-                return 1;
+                return true;
             } else if (istrue(var_b0fc59ff15058522)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6be3
 // Size: 0x29
@@ -1324,30 +1313,29 @@ function isspreadweapon(objweapon) {
     return isdefined(objweapon) && isdefined(weaponclass(objweapon)) && weaponclass(objweapon) == "spread";
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6c14
 // Size: 0x60
 function function_2be5b08ed39d6a54(eattacker, victim, objweapon) {
     if (objweapon.basename == "semtex_bolt_splash_mp" && isdefined(victim.var_ea445bb2097eaa16) && isdefined(eattacker) && utility::array_contains(victim.var_ea445bb2097eaa16, eattacker)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6c7c
 // Size: 0x67
 function issmallsplashdamage(objweapon) {
     if (objweapon.basename == "semtex_xmike109_splash_mp" || objweapon.basename == "thermite_xmike109_radius_mp" || objweapon.basename == "semtex_bolt_splash_mp" || objweapon.basename == "thermite_bolt_radius_mp") {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6cea
 // Size: 0x369
@@ -1359,12 +1347,12 @@ function spreadshotdamagemod(victim, eattacker, objweapon, idamage, idflags) {
         if (!isdefined(eattacker.pelletweaponvictimids)) {
             eattacker.pelletweaponvictimids = [];
         }
-        foreach (var_ad11aa18430d8799, var_25762ef6bb7ced23 in eattacker.pelletweaponvictimids) {
-            foreach (victimid, var_3a99d1cafe4a4bac in var_25762ef6bb7ced23) {
-                if ((time - var_3a99d1cafe4a4bac.time) / 1000 > 0.1) {
-                    eattacker.pelletweaponvictimids[var_ad11aa18430d8799] = utility::array_remove_key(eattacker.pelletweaponvictimids[var_ad11aa18430d8799], victimid);
-                    if (eattacker.pelletweaponvictimids[var_ad11aa18430d8799].size == 0) {
-                        eattacker.pelletweaponvictimids = utility::array_remove_key(eattacker.pelletweaponvictimids, var_ad11aa18430d8799);
+        foreach (ihand, var_25762ef6bb7ced23 in eattacker.pelletweaponvictimids) {
+            foreach (victimid, victimstruct in var_25762ef6bb7ced23) {
+                if ((time - victimstruct.time) / 1000 > 0.1) {
+                    eattacker.pelletweaponvictimids[ihand] = utility::array_remove_key(eattacker.pelletweaponvictimids[ihand], victimid);
+                    if (eattacker.pelletweaponvictimids[ihand].size == 0) {
+                        eattacker.pelletweaponvictimids = utility::array_remove_key(eattacker.pelletweaponvictimids, ihand);
                     }
                 }
             }
@@ -1379,10 +1367,10 @@ function spreadshotdamagemod(victim, eattacker, objweapon, idamage, idflags) {
         eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed = array_sort_with_func(eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed, &is_lower);
         if (eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed.size >= eattacker.pelletweaponvictimids[hand][victimentnum].var_33ac4c9665be6910) {
             if (idamage > eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed[0]) {
-                var_85d9d85f3ad5012a = idamage - eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed[0];
+                damagedelta = idamage - eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed[0];
                 eattacker.pelletweaponvictimids[hand][victimentnum].pelletdmgpassed[0] = idamage;
                 eattacker.pelletweaponvictimids[hand][victimentnum].var_7981f7d372990a2b = 1;
-                idamage = var_85d9d85f3ad5012a;
+                idamage = damagedelta;
             } else {
                 return 0;
             }
@@ -1394,7 +1382,7 @@ function spreadshotdamagemod(victim, eattacker, objweapon, idamage, idflags) {
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x705b
 // Size: 0xbb
@@ -1414,7 +1402,7 @@ function function_c415d83582aad1e4(eattacker, objweapon, time) {
     return struct;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x711e
 // Size: 0x17
@@ -1422,7 +1410,7 @@ function is_lower(a, b) {
     return a < b;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x713d
 // Size: 0xd0
@@ -1436,23 +1424,24 @@ function getspreadpelletspershot(eattacker, objweapon) {
             return 3;
         }
         ads = eattacker playerads() > 0.5;
-        var_c1bce78a815cb59f = 0;
+        tacstance = 0;
         if (rootname == "jup_jp16_sh_recho870") {
-            var_c1bce78a815cb59f = eattacker function_c603bed3b1c8d11(objweapon, 0);
+            tacstance = eattacker function_c603bed3b1c8d11(objweapon, 0);
         }
-        if (ads || var_c1bce78a815cb59f) {
+        if (ads || tacstance) {
             return 4;
         } else {
             return 3;
         }
-    } else if (objweapon hasattachment("jup_ammo_410g_ball")) {
-        return 2;
-    } else {
-        return 4;
+        return;
     }
+    if (objweapon hasattachment("jup_ammo_410g_ball")) {
+        return 2;
+    }
+    return 4;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7214
 // Size: 0x2d
@@ -1460,7 +1449,7 @@ function helmet_washit(attacker) {
     return isdefined(attacker.hithelmet) && gettime() == attacker.hithelmet;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7249
 // Size: 0x1d
@@ -1468,7 +1457,7 @@ function helmet_sethit(attacker) {
     attacker.hithelmet = gettime();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x726d
 // Size: 0x17
@@ -1476,7 +1465,7 @@ function helmet_clearhit(attacker) {
     attacker.hithelmet = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x728b
 // Size: 0x2d
@@ -1484,7 +1473,7 @@ function helmet_wasbroke(attacker) {
     return isdefined(attacker.brokehelmet) && gettime() == attacker.brokehelmet;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72c0
 // Size: 0x1d
@@ -1492,7 +1481,7 @@ function helmet_setbroke(attacker) {
     attacker.brokehelmet = gettime();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72e4
 // Size: 0x17
@@ -1500,7 +1489,7 @@ function helmet_clearbroke(attacker) {
     attacker.brokehelmet = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7302
 // Size: 0xab
@@ -1523,65 +1512,65 @@ function applystoppingpower(objweapon, shitloc, smeansofdeath, attacker, damage,
     return adjustbulletstokill(damage, maxhealth, var_585a576d50c69137);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x73b5
 // Size: 0x1e7
 function stoppingpowercanonehitkill(objweapon, shitloc, smeansofdeath, attacker) {
     var_49e6ef3edadd524e = weapon::getweaponrootname(objweapon);
-    var_8f7990d96df8ba76 = weaponclass(objweapon);
+    sweaponclass = weaponclass(objweapon);
     if (var_49e6ef3edadd524e == "iw9_dm_crossbow") {
-        return 1;
-    } else if (var_8f7990d96df8ba76 == "sniper") {
+        return true;
+    } else if (sweaponclass == "sniper") {
         switch (var_49e6ef3edadd524e) {
         case #"hash_6bc7a937030008a":
         case #"hash_fbeff8fdb669137d":
-            if (namespace_25ead30c6ed027fb::istorsouppershot(shitloc, smeansofdeath, attacker) || namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker)) {
-                return 1;
+            if (damage_utility::istorsouppershot(shitloc, smeansofdeath, attacker) || damage_utility::isheadshot(shitloc, smeansofdeath, attacker)) {
+                return true;
             }
             break;
         case #"hash_1f3b9e13f5e1433c":
         case #"hash_3bab3553abce2fd1":
         case #"hash_ec99e7d11ddb9eea":
-            if (namespace_25ead30c6ed027fb::istorsoshot(shitloc, smeansofdeath, attacker) || namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker)) {
-                return 1;
+            if (damage_utility::istorsoshot(shitloc, smeansofdeath, attacker) || damage_utility::isheadshot(shitloc, smeansofdeath, attacker)) {
+                return true;
             }
             break;
         default:
-            if (namespace_25ead30c6ed027fb::isupperbodyshot(shitloc, smeansofdeath, attacker) || namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker)) {
-                return 1;
+            if (damage_utility::isupperbodyshot(shitloc, smeansofdeath, attacker) || damage_utility::isheadshot(shitloc, smeansofdeath, attacker)) {
+                return true;
             }
             break;
         }
-    } else if (var_8f7990d96df8ba76 == "pistol") {
+    } else if (sweaponclass == "pistol") {
         switch (var_49e6ef3edadd524e) {
         case #"hash_bf2d3ffce9ef56d1":
         case #"hash_daf5a16da560ec6d":
-            if (namespace_25ead30c6ed027fb::istorsouppershot(shitloc, smeansofdeath, attacker) || namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker)) {
-                return 1;
+            if (damage_utility::istorsouppershot(shitloc, smeansofdeath, attacker) || damage_utility::isheadshot(shitloc, smeansofdeath, attacker)) {
+                return true;
             }
             break;
         }
-    } else if (var_8f7990d96df8ba76 == "rifle") {
+    } else if (sweaponclass == "rifle") {
         switch (var_49e6ef3edadd524e) {
         case #"hash_3a523c4bbb66256a":
         case #"hash_5a18d10b44f6c48c":
-            if (namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker)) {
-                return 1;
+            if (damage_utility::isheadshot(shitloc, smeansofdeath, attacker)) {
+                return true;
             }
             break;
         }
         ammotype = getweaponammopoolname(objweapon);
         if (ammotype == %"hash_a9efef52b466ad3" || ammotype == %"hash_6aa606a18241ad16") {
-            if (namespace_25ead30c6ed027fb::istorsouppershot(shitloc, smeansofdeath, attacker) || namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, attacker)) {
-                return 1;
+            if (damage_utility::istorsouppershot(shitloc, smeansofdeath, attacker) || damage_utility::isheadshot(shitloc, smeansofdeath, attacker)) {
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75a4
 // Size: 0x16d
@@ -1620,7 +1609,7 @@ function adjustbulletstokill(damage, maxhealth, delta) {
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7719
 // Size: 0x21
@@ -1628,17 +1617,17 @@ function getbulletstokill(maxhealth, damage) {
     return int(ceil(maxhealth / damage));
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7742
 // Size: 0x8d
 function isbehindmeleevictim(attacker, victim) {
     var_b3e4c19e4d37bea0 = vectornormalize((victim.origin[0], victim.origin[1], 0) - (attacker.origin[0], attacker.origin[1], 0));
-    var_7a049b761920208 = anglestoforward((0, victim.angles[1], 0));
-    return vectordot(var_b3e4c19e4d37bea0, var_7a049b761920208) > 0.4;
+    fwdvic = anglestoforward((0, victim.angles[1], 0));
+    return vectordot(var_b3e4c19e4d37bea0, fwdvic) > 0.4;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77d7
 // Size: 0xc2
@@ -1648,15 +1637,15 @@ function killstreakdamagefilter(eattacker, victim, idamage, objweapon, smeansofd
         var_b4d4d1947da73e65 = [[ level.gamemodespawnprotectedcallback ]](eattacker, victim, idamage, objweapon, smeansofdeath);
     }
     if (victim game_utility::isspawnprotected() || istrue(var_b4d4d1947da73e65)) {
-        var_54a88b0118510e9f = int(max(victim.health / 4, 1));
-        if (idamage >= var_54a88b0118510e9f && weapon::iskillstreakweapon(objweapon.basename) && !weapon::weaponbypassspawnprotection(objweapon) && smeansofdeath != "MOD_MELEE") {
-            idamage = var_54a88b0118510e9f;
+        damagelimit = int(max(victim.health / 4, 1));
+        if (idamage >= damagelimit && weapon::iskillstreakweapon(objweapon.basename) && !weapon::weaponbypassspawnprotection(objweapon) && smeansofdeath != "MOD_MELEE") {
+            idamage = damagelimit;
         }
     }
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 13, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78a1
 // Size: 0xee
@@ -1680,11 +1669,11 @@ function function_b1493282af6c1334(einflictor, eattacker, victim, idamage, idfla
     return var_b51ab50e109ad01a;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 15, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7997
 // Size: 0x8c5
-function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, iskillstreakweapon) {
+function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, iskillstreakweapon) {
     if (isdefined(einflictor) && !isplayer(einflictor)) {
         if (!isdefined(eattacker)) {
             if (isdefined(einflictor.owner)) {
@@ -1700,7 +1689,7 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
     }
     if (isdefined(objweapon)) {
         if (utility::isbulletdamage(smeansofdeath) && (weapon::iscacprimaryweapon(objweapon.basename) || weapon::iscacsecondaryweapon(objweapon.basename)) && !super_stimpistol::function_76ca0b3d8b2555ca(objweapon)) {
-            level thread namespace_20260f65229aa888::trysaylocalsound(victim, #"hash_2a23c8694884293e", undefined, 0.25);
+            level thread battlechatter_mp::trysaylocalsound(victim, #"hash_2a23c8694884293e", undefined, 0.25);
         }
         if (super_stimpistol::function_76ca0b3d8b2555ca(objweapon)) {
             return 0;
@@ -1727,10 +1716,10 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
                 idamage = victim.health;
             }
             eattacker.lastdamagewasfromenemy = 0;
-            if (isdefined(eattacker namespace_3c5a4254f2b957ea::getpersstat("teamdamage"))) {
+            if (isdefined(eattacker scripts/mp/utility/stats::getpersstat("teamdamage"))) {
                 eattacker stats::incpersstat("teamdamage", idamage);
             }
-            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
             return 0;
         }
     }
@@ -1744,13 +1733,13 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
             idamage = 1;
         }
         victim.lastdamagewasfromenemy = 0;
-        if (isspreadweapon(objweapon) && namespace_25ead30c6ed027fb::validshotcheck(smeansofdeath, eattacker)) {
-            if (namespace_23227899dfba5895::isdragonsbreathweapon(objweapon) && (weapon::getweapongroup(objweapon) == "weapon_shotgun" || istrue(objweapon.isalternate))) {
+        if (isspreadweapon(objweapon) && damage_utility::validshotcheck(smeansofdeath, eattacker)) {
+            if (dragonsbreath::isdragonsbreathweapon(objweapon) && (weapon::getweapongroup(objweapon) == "weapon_shotgun" || istrue(objweapon.isalternate))) {
                 victim thread dragonsbreathhitloccollection(shitloc, eattacker, objweapon);
             }
         }
         logfriendlyfire(victim, eattacker, idamage, smeansofdeath);
-        victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+        victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
         eattacker handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, idflags, 0, 0, iskillstreakweapon);
         return 0;
     } else if (level.friendlyfire == 2) {
@@ -1760,7 +1749,7 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
         }
         eattacker.lastdamagewasfromenemy = 0;
         if (!function_b1493282af6c1334(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname)) {
-            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
         }
         return 0;
     } else if (level.friendlyfire == 3) {
@@ -1770,21 +1759,21 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
         }
         victim.lastdamagewasfromenemy = 0;
         eattacker.lastdamagewasfromenemy = 0;
-        if (isspreadweapon(objweapon) && namespace_25ead30c6ed027fb::validshotcheck(smeansofdeath, eattacker)) {
-            if (namespace_23227899dfba5895::isdragonsbreathweapon(objweapon) && (weapon::getweapongroup(objweapon) == "weapon_shotgun" || istrue(objweapon.isalternate))) {
+        if (isspreadweapon(objweapon) && damage_utility::validshotcheck(smeansofdeath, eattacker)) {
+            if (dragonsbreath::isdragonsbreathweapon(objweapon) && (weapon::getweapongroup(objweapon) == "weapon_shotgun" || istrue(objweapon.isalternate))) {
                 victim thread dragonsbreathhitloccollection(shitloc, eattacker, objweapon);
             }
         }
         logfriendlyfire(victim, eattacker, idamage, smeansofdeath);
-        victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+        victim finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
         if (!function_b1493282af6c1334(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname)) {
-            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
         }
         eattacker handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, idflags, 0, 0, iskillstreakweapon);
         return 0;
     } else if (level.friendlyfire == 4) {
         var_399ac373783533b5 = !function_b1493282af6c1334(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
-        if (var_399ac373783533b5 && isdefined(eattacker namespace_3c5a4254f2b957ea::getpersstat("teamdamage")) && self.team == eattacker.team) {
+        if (var_399ac373783533b5 && isdefined(eattacker scripts/mp/utility/stats::getpersstat("teamdamage")) && self.team == eattacker.team) {
             teamdamage = int(idamage);
             if (idamage > victim.health) {
                 teamdamage = victim.health;
@@ -1822,7 +1811,7 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
                 idamage = 1;
             }
             eattacker.lastdamagewasfromenemy = 0;
-            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+            damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
             if (!istrue(eattacker.pers["didHitFFPunishLimit"])) {
                 eattacker.pers["didHitFFPunishLimit"] = 1;
                 eattacker.pers["totalFFDamageDoneBeforePunish"] = eattacker.pers["teamdamage"];
@@ -1833,39 +1822,39 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8264
 // Size: 0xcf
 function isfriendlyfireprotectedperiod(attacker) {
     if (isdefined(level.gametype) && level.gametype == "havoc") {
-        return 0;
+        return false;
     }
     if (game_utility::isanymlgmatch() && !istrue(level.var_ec2fb549b15ad827)) {
-        return 0;
+        return false;
     }
     if (level.ingraceperiod) {
-        return 1;
+        return true;
     }
     if (isdefined(attacker) && isdefined(attacker.pers) && isdefined(attacker.pers["teamkills"]) && attacker.pers["teamkills"] > 1 && game_utility::gettimepassed() < level.graceperiod * 1000 + 8000 + attacker.pers["teamkills"] * 1000) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 14, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x833b
 // Size: 0xb5
-function damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname) {
-    if (eattacker namespace_e47104b48662385b::_isalive()) {
+function damageattacker(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname) {
+    if (eattacker player_utility::_isalive()) {
         eattacker.friendlydamage = 1;
-        eattacker finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
+        eattacker finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname);
         eattacker.friendlydamage = undefined;
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83f7
 // Size: 0x29
@@ -1873,7 +1862,7 @@ function mlghitlocrequiresclamp(shitloc) {
     return shitloc == "head" || shitloc == "helmet" || shitloc == "neck";
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8428
 // Size: 0xd6
@@ -1891,16 +1880,16 @@ function mlgmodifyheadshotdamage(eattacker, idamage, smeansofdeath, objweapon, s
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8506
 // Size: 0x161
 function modifyfalldamage(victim, idamage, idflags, smeansofdeath) {
     modifieddamage = idamage;
     if (isdefined(smeansofdeath) && smeansofdeath == "MOD_FALLING") {
-        if (istrue(victim.var_2cd6a0d57bdd5b1a)) {
+        if (istrue(victim.falldamageprotection)) {
             modifieddamage = 0;
-        } else if (victim namespace_a2f809133c566621::isjuggernaut() || getdvarint(@"hash_f1b2bd0a1fa58a73", 0)) {
+        } else if (victim scripts/mp/utility/killstreak::isjuggernaut() || getdvarint(@"hash_f1b2bd0a1fa58a73", 0)) {
             modifieddamage = victim juggernaut::jugg_modifyfalldamage();
         } else if (victim namespace_1f2efdb89e5f3a6e::function_95adb84c5ca51c36() || istrue(self.var_b6aa5954bf6a457a)) {
             modifieddamage = victim namespace_1f2efdb89e5f3a6e::function_3a307fd8eb4f27eb();
@@ -1908,7 +1897,7 @@ function modifyfalldamage(victim, idamage, idflags, smeansofdeath) {
             modifieddamage = victim.health - 1;
         } else if (modifieddamage < victim.maxhealth) {
             modifieddamage = modifieddamage / victim.maxhealth * modifieddamage / victim.maxhealth * victim.maxhealth;
-            thread namespace_646e434ccdd09379::function_2ca98396c7f5cc85(modifieddamage);
+            thread damage_effects::falldamageeffects(modifieddamage);
             if (istrue(self.var_808d06ddfc93a4e4)) {
                 if (isdefined(level.var_6ca69a7226d8f8b5)) {
                     modifieddamage = modifieddamage * level.var_6ca69a7226d8f8b5;
@@ -1923,7 +1912,7 @@ function modifyfalldamage(victim, idamage, idflags, smeansofdeath) {
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x866f
 // Size: 0xb4
@@ -1944,20 +1933,20 @@ function modifyvehicletoplayerdamage(einflictor, eattacker, victim, idamage, sme
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x872b
 // Size: 0x75
 function function_53b212d296370f7(victim, idamage, idflags, shitloc, smeansofdeath, eattacker, objweapon) {
     modifieddamage = idamage;
-    vehicle = victim namespace_e47104b48662385b::getvehicle();
+    vehicle = victim player_utility::getvehicle();
     if (isdefined(vehicle)) {
         modifieddamage = vehicle_damage::function_9cac3af67ee6b40a(vehicle, victim, idamage, idflags, shitloc, smeansofdeath, eattacker, objweapon);
     }
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87a8
 // Size: 0x7b
@@ -1971,20 +1960,20 @@ function modifycrushdamage(einflictor, eattacker, victim, idamage, smeansofdeath
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x882b
 // Size: 0x97
 function function_754e680a5b56b39e(eattacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1) {
     modifieddamage = idamage;
     if (isdefined(eattacker) && isdefined(smeansofdeath) && isdefined(objweapon)) {
-        if (namespace_23227899dfba5895::function_cfd2e1e48edaf93(objweapon)) {
-            objweapon = eattacker namespace_45ecbe78f599af72::function_1e3102980c3a4cc1(objweapon);
+        if (dragonsbreath::function_cfd2e1e48edaf93(objweapon)) {
+            objweapon = eattacker weapon_utility::function_1e3102980c3a4cc1(objweapon);
             if (!isspreadweapon(objweapon)) {
-                var_ad6e07429cabf92b = victim.health;
+                victimhealth = victim.health;
                 modifieddamage = var_be4285b26ed99ab1;
-                if (modifieddamage >= var_ad6e07429cabf92b) {
-                    modifieddamage = var_ad6e07429cabf92b - 1;
+                if (modifieddamage >= victimhealth) {
+                    modifieddamage = victimhealth - 1;
                 }
             }
         }
@@ -1992,7 +1981,7 @@ function function_754e680a5b56b39e(eattacker, victim, objweapon, smeansofdeath, 
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88ca
 // Size: 0xd9
@@ -2000,8 +1989,8 @@ function function_2aa2c49ee1702368(eattacker, victim, objweapon, smeansofdeath, 
     if (!game_utility::function_21322da268e71c19()) {
         return idamage;
     }
-    data = namespace_25ead30c6ed027fb::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor);
-    if (victim namespace_25ead30c6ed027fb::isstuckdamagekill(data)) {
+    data = damage_utility::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor);
+    if (victim damage_utility::isstuckdamagekill(data)) {
         return idamage;
     }
     if (victim killstreak::isjuggernaut()) {
@@ -2011,66 +2000,58 @@ function function_2aa2c49ee1702368(eattacker, victim, objweapon, smeansofdeath, 
     if (isdefined(equiptype)) {
         if (equiptype == "lethal") {
             idamage = function_88c7467b96144afd(objweapon, idamage);
-        } else {
-            if (equiptype == "equipment_other") {
-                goto LOC_000000c1;
-            }
-            if (equiptype == "tactical") {
-            LOC_000000c1:
-            }
-        LOC_000000c1:
+        } else if (equiptype == "equipment_other") {
+        } else if (equiptype == "tactical") {
         }
-    LOC_000000c1:
     }
-LOC_000000c1:
     if (utility::isbulletdamage(smeansofdeath)) {
         idamage = function_18b0510fbca05ff7(objweapon, idamage);
     }
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x89ab
 // Size: 0x76
 function private function_88c7467b96144afd(objweapon, damage) {
-    var_3eb952b99f137248 = @"hash_303dbc969fd35e79";
+    dvarstringbase = @"hash_303dbc969fd35e79";
     if (isdefined(objweapon.basename)) {
-        dvarstring = function_2ef675c13ca1c4af(var_3eb952b99f137248, objweapon.basename);
-        var_b4be57645c0cf041 = self.maxhealth / 150;
-        damage = damage * getdvarfloat(dvarstring, var_b4be57645c0cf041);
+        dvarstring = hashcat(dvarstringbase, objweapon.basename);
+        defaultratio = self.maxhealth / 150;
+        damage = damage * getdvarfloat(dvarstring, defaultratio);
     }
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8a29
 // Size: 0xc7
 function private function_18b0510fbca05ff7(objweapon, damage) {
-    var_3eb952b99f137248 = @"hash_303dbc969fd35e79";
+    dvarstringbase = @"hash_303dbc969fd35e79";
     if (isdefined(objweapon.classname)) {
-        dvarstring = function_2ef675c13ca1c4af(var_3eb952b99f137248, objweapon.classname);
+        dvarstring = hashcat(dvarstringbase, objweapon.classname);
         damageratio = getdvarfloat(dvarstring, 0);
         damage = damage * utility::ter_op(damageratio == 0, 1, damageratio);
     }
     if (isdefined(objweapon.basename)) {
-        dvarstring = function_2ef675c13ca1c4af(var_3eb952b99f137248, objweapon.basename);
+        dvarstring = hashcat(dvarstringbase, objweapon.basename);
         damageratio = getdvarfloat(dvarstring, 0);
         damage = damage * utility::ter_op(damageratio == 0, 1, damageratio);
     }
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8af8
 // Size: 0x367
 function function_49f3d4de0e352093(inflictor, attacker, victim, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1, shitloc) {
     modifieddamage = idamage;
     iskillstreakweapon = istrue(weapon::iskillstreakweapon(objweapon));
-    var_c51482faace41c59 = issubstr(objweapon.basename, "frag_grenade");
-    if (var_c51482faace41c59) {
+    isfraggrenade = issubstr(objweapon.basename, "frag_grenade");
+    if (isfraggrenade) {
         /#
             assert(smeansofdeath == "MOD_GRENADE" || smeansofdeath == "MOD_GRENADE_SPLASH" || smeansofdeath == "MOD_IMPACT", "Unexpected means of death found with Frag Grenade: " + smeansofdeath);
         #/
@@ -2078,7 +2059,7 @@ function function_49f3d4de0e352093(inflictor, attacker, victim, objweapon, smean
     if (isexplosivedamagemod(smeansofdeath)) {
         if (isplayer(attacker)) {
             if (attacker != victim && attacker perk::_hasperk("specialty_paint") && !iskillstreakweapon) {
-                victim thread namespace_30a6d7a07831c1e2::setpainted(attacker);
+                victim thread perkfunctions::setpainted(attacker);
             }
         }
         modifieddamage = modifydestructibledamage(modifieddamage, inflictor, objweapon);
@@ -2104,14 +2085,12 @@ function function_49f3d4de0e352093(inflictor, attacker, victim, objweapon, smean
                 break;
             }
         }
-        var_c7fe40d41a2e7963 = function_fc64178f71375137(victim.loadoutperks, "specialty_eod_vest");
+        var_c7fe40d41a2e7963 = arraycontains(victim.loadoutperks, "specialty_eod_vest");
         if (issharedfuncdefined("thermobaric_grenade", "thermobaric_additional_explosive_damage")) {
             modifieddamage = modifieddamage + [[ getsharedfunc("thermobaric_grenade", "thermobaric_additional_explosive_damage") ]](victim, attacker, modifieddamage);
         }
         if (isplayer(attacker) && weaponinheritsperks(objweapon) && attacker perk::_hasperk("specialty_explosivedamage") && victim perk::_hasperk("specialty_blastshield")) {
-            goto LOC_00000340;
-        }
-        if (isplayer(attacker) && weaponinheritsperks(objweapon) && !iskillstreakweapon && attacker perk::_hasperk("specialty_explosivedamage")) {
+        } else if (isplayer(attacker) && weaponinheritsperks(objweapon) && !iskillstreakweapon && attacker perk::_hasperk("specialty_explosivedamage")) {
             modifieddamage = modifieddamage + modifieddamage * level.explosivedamagemod;
         } else if ((var_c7fe40d41a2e7963 || victim perk::_hasperk("specialty_blastshield")) && !damage_should_ignore_blast_shield(attacker, victim, objweapon, smeansofdeath, inflictor, shitloc)) {
             if (var_c7fe40d41a2e7963) {
@@ -2120,11 +2099,9 @@ function function_49f3d4de0e352093(inflictor, attacker, victim, objweapon, smean
                 #/
             }
             var_46381c94b0138dc7 = modify_blast_shield_damage(modifieddamage, attacker, victim, victim.var_8cbe63a199e19de);
-            victim perks::activateperk("specialty_eod");
+            victim perks::activatePerk("specialty_eod");
             modifieddamage = modifieddamage - modifieddamage - var_46381c94b0138dc7;
-        LOC_00000340:
         }
-    LOC_00000340:
         if (isdefined(level.lethaldelay) && !equipment::lethaldelaypassed()) {
             modifieddamage = modifieddamage * level.graceperiodgrenademod;
         }
@@ -2132,7 +2109,7 @@ function function_49f3d4de0e352093(inflictor, attacker, victim, objweapon, smean
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8e67
 // Size: 0xb5
@@ -2141,14 +2118,14 @@ function function_112ee98a4faca19a(inflictor, attacker, victim, objweapon, smean
     if (smeansofdeath == "MOD_FIRE") {
         if (victim perk::_hasperk("specialty_blastshield") && !damage_should_ignore_blast_shield(attacker, victim, objweapon, smeansofdeath, inflictor, shitloc)) {
             var_46381c94b0138dc7 = modify_blast_shield_damage(modifieddamage, attacker, victim, victim.var_fb1106d94cc95901);
-            victim perks::activateperk("specialty_eod");
+            victim perks::activatePerk("specialty_eod");
             modifieddamage = modifieddamage - modifieddamage - var_46381c94b0138dc7;
         }
     }
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f24
 // Size: 0x2ef
@@ -2156,20 +2133,20 @@ function function_7e8906e2dab3d41e(inflictor, attacker, victim, objweapon, smean
     modifieddamage = idamage;
     if (isdefined(objweapon) && isdefined(smeansofdeath) && victim _hasperk("specialty_super_protection")) {
         weaponref = objweapon.basename;
-        var_ae95568a563d5912 = weaponclass(objweapon);
+        attackerweaponclass = weaponclass(objweapon);
         var_b4a7d8cd8c4fb7da = isdefined(inflictor) && (isdefined(inflictor.stuckto) && inflictor.stuckto == victim || isdefined(inflictor.stuckenemyentity) && inflictor.stuckenemyentity == victim);
-        if (isdefined(weaponref) && isdefined(var_ae95568a563d5912)) {
+        if (isdefined(weaponref) && isdefined(attackerweaponclass)) {
             if (isbulletdamage(smeansofdeath)) {
-                switch (var_ae95568a563d5912) {
+                switch (attackerweaponclass) {
                 case #"hash_e224d0b635d0dadd":
                     if (istrue(var_b4a7d8cd8c4fb7da)) {
                         modifieddamage = min(1, idamage);
                     }
                     break;
                 }
-            } else if (function_f1d312f6935bc2d2(smeansofdeath)) {
-                if (isdefined(var_ae95568a563d5912)) {
-                    switch (var_ae95568a563d5912) {
+            } else if (isimpactdamage(smeansofdeath)) {
+                if (isdefined(attackerweaponclass)) {
+                    switch (attackerweaponclass) {
                     case #"hash_2ab98cab4066a74e":
                         modifieddamage = min(self.maxhealth, idamage);
                         break;
@@ -2210,12 +2187,12 @@ function function_7e8906e2dab3d41e(inflictor, attacker, victim, objweapon, smean
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 13, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x921b
 // Size: 0x3fd
 function modifydamagegeneral(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, var_be4285b26ed99ab1, partname) {
-    var_69cfd14b4398c458 = idamage;
+    unmodifieddamage = idamage;
     idamage = mlgmodifyheadshotdamage(eattacker, idamage, smeansofdeath, objweapon, shitloc);
     idamage = modifyfalldamage(victim, idamage, idflags, smeansofdeath);
     idamage = modifyvehicletoplayerdamage(einflictor, eattacker, victim, idamage, smeansofdeath);
@@ -2229,14 +2206,14 @@ function modifydamagegeneral(einflictor, eattacker, victim, idamage, idflags, sm
     if (isdefined(level.modifyplayerdamage)) {
         idamage = int([[ level.modifyplayerdamage ]](einflictor, victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, idflags, var_be4285b26ed99ab1));
     }
-    var_57ac5dc40b2e5a9 = armor::function_90ce8eb3ddaa4943(eattacker, einflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, var_69cfd14b4398c458, partname);
+    var_57ac5dc40b2e5a9 = armor::function_90ce8eb3ddaa4943(eattacker, einflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname);
     var_1da1a66b5c6a06a7 = var_57ac5dc40b2e5a9[1];
     idamage = var_57ac5dc40b2e5a9[0];
     if (var_1da1a66b5c6a06a7 > 0 && isplayer(eattacker)) {
         if (shouldrecorddamagestats(eattacker)) {
             eattacker stats::incpersstat("damage", var_1da1a66b5c6a06a7);
             eattacker namespace_969918091e5d9483::function_d16498b27251da56(1, var_1da1a66b5c6a06a7);
-            if (isdefined(eattacker namespace_3c5a4254f2b957ea::getpersstat("friendlyDamageDone")) && victim.team == eattacker.team) {
+            if (isdefined(eattacker scripts/mp/utility/stats::getpersstat("friendlyDamageDone")) && victim.team == eattacker.team) {
                 eattacker stats::incpersstat("friendlyDamageDone", var_1da1a66b5c6a06a7);
             }
         } else if (isdefined(level.onattackerdamagenottracked)) {
@@ -2264,12 +2241,12 @@ function modifydamagegeneral(einflictor, eattacker, victim, idamage, idflags, sm
         }
     }
     if (!isdefined(victim.donotmodifydamage)) {
-        idamage = int(idamage * victim namespace_25ead30c6ed027fb::getdamagemodifiertotal(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc));
+        idamage = int(idamage * victim damage_utility::getdamagemodifiertotal(einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc));
     }
     if (isdefined(eattacker) && isdefined(eattacker.var_888410f22da94ad0) && istrue(eattacker.var_888410f22da94ad0)) {
         idamage = idamage * 0.5;
     }
-    if (namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, eattacker)) {
+    if (damage_utility::isheadshot(shitloc, smeansofdeath, eattacker)) {
         smeansofdeath = "MOD_HEAD_SHOT";
     }
     if (tweakables::gettweakablevalue("game", "onlyheadshots") || tweakables::gettweakablevalue("game", "one_tap_headshot")) {
@@ -2277,10 +2254,10 @@ function modifydamagegeneral(einflictor, eattacker, victim, idamage, idflags, sm
             idamage = 150;
         }
     }
-    return [0:idamage, 1:var_1da1a66b5c6a06a7];
+    return [idamage, var_1da1a66b5c6a06a7];
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9620
 // Size: 0x4f6
@@ -2292,9 +2269,9 @@ function handleriotshieldhits(einflictor, victim, eattacker, idamage, smeansofde
         victim.forcehitlocation = "none";
         return idamage;
     }
-    data = namespace_25ead30c6ed027fb::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor, vpoint, vdir, undefined, undefined, undefined, idflags);
-    var_638af1e086448f2f = istrue(victim.ignoreriotshieldxp);
-    isenemy = istrue(namespace_e47104b48662385b::playersareenemies(victim, eattacker));
+    data = damage_utility::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor, vpoint, vdir, undefined, undefined, undefined, idflags);
+    ignorexp = istrue(victim.ignoreriotshieldxp);
+    isenemy = istrue(player_utility::playersareenemies(victim, eattacker));
     if (getdvarint(@"hash_79392ae6dcfba9e9", 0)) {
         isfriendly = isfriendlyfire(victim, eattacker);
         var_df49e818dfac7dba = isdefined(victim) && (isdefined(eattacker) && eattacker == victim || isdefined(eattacker.owner) && eattacker.owner == victim);
@@ -2319,10 +2296,10 @@ function handleriotshieldhits(einflictor, victim, eattacker, idamage, smeansofde
         if (weapon::isenvironmentweapon(objweapon.basename)) {
             shielddamage = 25;
         } else {
-            var_619984a4a37b8423 = cac_modified_damage(victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, einflictor, 0, idflags);
-            shielddamage = var_619984a4a37b8423[0];
-            var_986b2e0350629522 = var_619984a4a37b8423[1];
-            shitloc = var_619984a4a37b8423[2];
+            modifieddamageresults = cac_modified_damage(victim, eattacker, idamage, smeansofdeath, objweapon, vpoint, vdir, shitloc, einflictor, 0, idflags);
+            shielddamage = modifieddamageresults[0];
+            var_986b2e0350629522 = modifieddamageresults[1];
+            shitloc = modifieddamageresults[2];
         }
         victim stats::incpersstat("riotShieldDamageAbsorbed", shielddamage);
         if (isplayer(eattacker) && isdefined(victim.rearguardattackers)) {
@@ -2333,25 +2310,25 @@ function handleriotshieldhits(einflictor, victim, eattacker, idamage, smeansofde
                 victim.rearguardattackers[idx] = victim.rearguardattackers[idx] + shielddamage;
             }
         }
-        if (var_638af1e086448f2f) {
+        if (ignorexp) {
             return 0;
         }
         if (!weapon::isenvironmentweapon(objweapon.basename) || utility::cointoss()) {
             victim.shieldbullethits++;
         }
         if (victim.shieldbullethits >= level.riotshieldxpbullets && isenemy) {
-            var_244c8b1a0fd7b3f2 = 1;
+            xpmultiplier = 1;
             if (self.recentshieldxp > 4) {
-                var_244c8b1a0fd7b3f2 = 1 / self.recentshieldxp;
+                xpmultiplier = 1 / self.recentshieldxp;
             }
             basepoints = rank::getscoreinfovalue(#"shield_damage");
-            victim thread points::doscoreevent(#"shield_damage", victim.currentweapon, basepoints * var_244c8b1a0fd7b3f2);
+            victim thread points::doScoreEvent(#"shield_damage", victim.currentweapon, basepoints * xpmultiplier);
             victim thread giverecentshieldxp();
             victim.shieldbullethits = 0;
         }
     }
-    var_33e2d54d8812e8ce = isdefined(einflictor) && isdefined(einflictor.stuckenemyentity) && einflictor.stuckenemyentity == victim;
-    var_232d7ef9f0f8baa8 = victim function_3f6d1c80aac1b91();
+    stuckdamage = isdefined(einflictor) && isdefined(einflictor.stuckenemyentity) && einflictor.stuckenemyentity == victim;
+    shieldweapon = victim function_3f6d1c80aac1b91();
     if (idflags & 32) {
         victim.forcehitlocation = "none";
         if (!(idflags & 64)) {
@@ -2360,24 +2337,24 @@ function handleriotshieldhits(einflictor, victim, eattacker, idamage, smeansofde
         }
     } else if (idflags & 128) {
         victim.forcehitlocation = "none";
-        if (victim namespace_25ead30c6ed027fb::isstuckdamagekill(data)) {
+        if (victim damage_utility::isstuckdamagekill(data)) {
             idamage = victim.maxhealth;
         }
-    } else if (isdefined(eattacker) && istrue(eattacker.var_7e1971e4a9ec2cdc)) {
+    } else if (isdefined(eattacker) && istrue(eattacker.dontdamageriotshield)) {
         return 0;
-    } else if (isdefined(var_232d7ef9f0f8baa8) && var_232d7ef9f0f8baa8.var_8296392555ef410c > 0) {
+    } else if (isdefined(shieldweapon) && shieldweapon.var_8296392555ef410c > 0) {
         victim.forcehitlocation = "none";
-        idamage = int(idamage * var_232d7ef9f0f8baa8.var_8296392555ef410c);
+        idamage = int(idamage * shieldweapon.var_8296392555ef410c);
     } else {
         return 0;
     }
-    if (smeansofdeath == "MOD_MELEE" && namespace_45ecbe78f599af72::isriotshield(objweapon.basename)) {
+    if (smeansofdeath == "MOD_MELEE" && weapon_utility::isriotshield(objweapon.basename)) {
         victim stunplayer(0);
     }
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b1e
 // Size: 0x286
@@ -2422,18 +2399,18 @@ function filterdamage(einflictor, eattacker, victim, idamage, smeansofdeath, obj
     if (function_2be5b08ed39d6a54(eattacker, victim, objweapon)) {
         return "crossbow semtex splash damage on stuckto victim";
     }
-    if (smeansofdeath == "MOD_CRUSH" && isdefined(einflictor) && einflictor vehicle::isvehicle() && victim namespace_e47104b48662385b::isinvehicle()) {
+    if (smeansofdeath == "MOD_CRUSH" && isdefined(einflictor) && einflictor vehicle::isvehicle() && victim player_utility::isinvehicle()) {
         return "hitByVehicleWhileInVehicle";
     }
     if (vehicle::vehicle_playershouldignorecollisiondamage(einflictor, victim, smeansofdeath, objweapon)) {
         return "vehicle_playerShouldIgnoreCollisionDamage";
     }
-    if (vehicle::vehicle_isrubbingagainstvehicle(einflictor, victim, smeansofdeath)) {
+    if (vehicle::vehicle_isRubbingAgainstVehicle(einflictor, victim, smeansofdeath)) {
         return "vehicle_isRubbingAgainstVehicle";
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params b, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9dab
 // Size: 0x29d
@@ -2450,8 +2427,8 @@ function logattacker(victim, eattacker, einflictor, objweapon, idamage, vpoint, 
         addattacker(victim, eattacker.secondowner, einflictor, objweapon, idamage, vpoint, vdir, shitloc, psoffsettime, smeansofdeath, var_1da1a66b5c6a06a7);
     }
     if (isdefined(einflictor) && isdefined(einflictor.owner)) {
-        var_aeae22d243e7af66 = isdefined(einflictor.owner.team) && einflictor.owner.team != victim.team || level.friendlyfire == 1;
-        if (var_aeae22d243e7af66 && isdefined(einflictor.owner.guid) && !isdefined(self.attackerdata[einflictor.owner.guid])) {
+        lethalteam = isdefined(einflictor.owner.team) && einflictor.owner.team != victim.team || level.friendlyfire == 1;
+        if (lethalteam && isdefined(einflictor.owner.guid) && !isdefined(self.attackerdata[einflictor.owner.guid])) {
             addattacker(victim, einflictor.owner, einflictor, objweapon, idamage, vpoint, vdir, shitloc, psoffsettime, smeansofdeath, var_1da1a66b5c6a06a7);
         }
     }
@@ -2459,12 +2436,12 @@ function logattacker(victim, eattacker, einflictor, objweapon, idamage, vpoint, 
         eattacker thread weapons::checkhit(objweapon, victim, shitloc, idamage);
         eattacker thread events::damagedplayer(self, idamage);
         victim.attackerposition = eattacker.origin;
-    } else {
-        victim.attackerposition = undefined;
+        return;
     }
+    victim.attackerposition = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa04f
 // Size: 0x1bd
@@ -2481,12 +2458,12 @@ function logattackerkillstreak(victim, idamage, eattacker, vdir, vpoint, smeanso
     }
     if (isdefined(eattacker) && isplayer(eattacker) && isdefined(sweapon) && eattacker != victim) {
         victim.attackerposition = eattacker.origin;
-    } else {
-        victim.attackerposition = undefined;
+        return;
     }
+    victim.attackerposition = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa213
 // Size: 0x353
@@ -2528,7 +2505,7 @@ function loggrenadedata(einflictor, eattacker, victim, idamage, smeansofdeath, o
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 12, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa56d
 // Size: 0xbb5
@@ -2542,238 +2519,232 @@ function handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofde
     }
     var_168973eaf883aea1 = isdefined(eattacker) && isdefined(eattacker.classname) && !isdefined(eattacker.gunner) && (eattacker.classname == "script_vehicle" || eattacker.classname == "misc_turret" || eattacker.classname == "script_model");
     if (var_168973eaf883aea1 && isdefined(eattacker.gunner)) {
-        var_91ebb035a259e76a = eattacker.gunner;
+        damager = eattacker.gunner;
     } else if (isdefined(eattacker) && isdefined(eattacker.owner)) {
-        var_91ebb035a259e76a = eattacker.owner;
+        damager = eattacker.owner;
     } else {
-        var_91ebb035a259e76a = eattacker;
+        damager = eattacker;
     }
-    var_cdcedb142f61b43e = "standard";
-    if (isdefined(var_91ebb035a259e76a) && var_91ebb035a259e76a != victim && idamage + var_1da1a66b5c6a06a7 + var_986b2e0350629522 > 0 && (!isdefined(shitloc) || shitloc != "shield")) {
-        var_4ffe32f42d51a763 = !victim namespace_e47104b48662385b::_isalive() || isagent(victim) && idamage >= victim.health;
+    typehit = "standard";
+    if (isdefined(damager) && damager != victim && idamage + var_1da1a66b5c6a06a7 + var_986b2e0350629522 > 0 && (!isdefined(shitloc) || shitloc != "shield")) {
+        waskilled = !victim player_utility::_isalive() || isagent(victim) && idamage >= victim.health;
         var_b44e627d6a911f55 = game_utility::function_fa7bfcc1d68b7b73();
         var_dc726e8cc0b003a3 = isdefined(victim.var_bed158a6dfac230d) && victim.var_bed158a6dfac230d > 2;
         var_a2ffd9894fd368c5 = isdefined(victim.var_4045f099f3da4bd) && victim.var_4045f099f3da4bd == "brloot_plate_carrier_tempered";
-        var_ccf879b038e4391 = idamage + var_1da1a66b5c6a06a7 + var_986b2e0350629522;
+        damagecaused = idamage + var_1da1a66b5c6a06a7 + var_986b2e0350629522;
         var_135003274a4cc703 = 0;
         if (istrue(var_dc726e8cc0b003a3) && isdefined(victim.armorhealth)) {
-            var_135003274a4cc703 = victim.armorhealth + var_ccf879b038e4391 >= 150;
+            var_135003274a4cc703 = victim.armorhealth + damagecaused >= 150;
         }
         if (isplayer(eattacker) && function_3201a1bc3ff0e482(eattacker, victim, smeansofdeath, idflags)) {
-            var_cdcedb142f61b43e = "hitsuppression";
+            typehit = "hitsuppression";
         } else if (victim perk::_hasperk("specialty_pistoldeath") && isdefined(victim.inlaststand) && victim.inlaststand == 1 && !victim.hasshownlaststandicon) {
             victim.hasshownlaststandicon = 1;
-            var_cdcedb142f61b43e = "hitlaststand";
+            typehit = "hitlaststand";
         } else if (!isagent(victim) && victim function_f1dcadc8f7c3477c()) {
-            var_cdcedb142f61b43e = "hitlaststand";
+            typehit = "hitlaststand";
         } else if (istrue(victim.isjuggernaut)) {
             if (istrue(victim.isjuggernautrecon)) {
-                var_cdcedb142f61b43e = "hitjuggernautrecon";
+                typehit = "hitjuggernautrecon";
             } else {
-                var_cdcedb142f61b43e = "hitjuggernaut";
+                typehit = "hitjuggernaut";
             }
         } else if (isplayer(victim) && istrue(victim function_fc05ebabfbf10e33())) {
-            var_cdcedb142f61b43e = "hitarmorheavy";
+            typehit = "hitarmorheavy";
         } else if (victim heavyarmor::hasheavyarmor() || victim heavyarmor::hasheavyarmorinvulnerability()) {
-            var_cdcedb142f61b43e = "hitarmorheavy";
+            typehit = "hitarmorheavy";
         } else if (idflags & 16) {
-            var_cdcedb142f61b43e = "stun";
+            typehit = "stun";
         } else if (hashealthshield(victim)) {
-            var_cdcedb142f61b43e = "hitarmorlight";
-        } else if (armor::armorvest_wasbroke(var_91ebb035a259e76a)) {
-            var_cdcedb142f61b43e = "hitarmorlightbreak";
+            typehit = "hitarmorlight";
+        } else if (armor::armorvest_wasbroke(damager)) {
+            typehit = "hitarmorlightbreak";
             if (var_dc726e8cc0b003a3 && !var_b44e627d6a911f55) {
-                var_cdcedb142f61b43e = "hitarmormaxplatebreak";
+                typehit = "hitarmormaxplatebreak";
             }
             if (var_a2ffd9894fd368c5 && !var_b44e627d6a911f55) {
-                var_cdcedb142f61b43e = "hitarmortemperedbreak";
+                typehit = "hitarmortemperedbreak";
             }
         } else if (victim perk::_hasperk("specialty_durability")) {
-            var_cdcedb142f61b43e = "hitdurability";
+            typehit = "hitdurability";
         } else if (function_7cc9753f2f84e883(eattacker, victim) || victim game_utility::isspawnprotected() && iskillstreakweapon && !weapon::weaponbypassspawnprotection(objweapon)) {
-            var_cdcedb142f61b43e = "hitspawnprotect";
-        } else if (helmet_wasbroke(var_91ebb035a259e76a)) {
-            var_cdcedb142f61b43e = "hithelmetlightbreak";
-        } else if (armor::armorvest_washit(var_91ebb035a259e76a)) {
-            var_cdcedb142f61b43e = "hitarmorlight";
+            typehit = "hitspawnprotect";
+        } else if (helmet_wasbroke(damager)) {
+            typehit = "hithelmetlightbreak";
+        } else if (armor::armorvest_washit(damager)) {
+            typehit = "hitarmorlight";
             if ((getdvarint(@"hash_2f7767a2a092ce1a", 0) || !getdvarint(@"hash_f786619a1f55409f", 0)) && var_dc726e8cc0b003a3 && !var_b44e627d6a911f55) {
-                var_cdcedb142f61b43e = "hitarmorlightmaxlevel";
+                typehit = "hitarmorlightmaxlevel";
             }
             if (var_a2ffd9894fd368c5 && !var_b44e627d6a911f55) {
-                var_cdcedb142f61b43e = "hitarmorlighttempered";
+                typehit = "hitarmorlighttempered";
             }
-        } else if (helmet_washit(var_91ebb035a259e76a)) {
-            var_cdcedb142f61b43e = "hithelmetlight";
+        } else if (helmet_washit(damager)) {
+            typehit = "hithelmetlight";
         } else if (var_1da1a66b5c6a06a7 > 0) {
-            var_cdcedb142f61b43e = "hitarmorlight";
+            typehit = "hitarmorlight";
         } else if (victim _hasperk("specialty_regen_delay_reduced")) {
-            var_cdcedb142f61b43e = "hitquickfix";
+            typehit = "hitquickfix";
         } else if (istrue(victim.var_808d06ddfc93a4e4)) {
-            var_cdcedb142f61b43e = "hitbattlerage";
-        } else if (function_bd90db337f1ae0d4(victim, var_91ebb035a259e76a)) {
-            function_675990374e11b0f7(victim, var_91ebb035a259e76a);
-            var_cdcedb142f61b43e = "hitresolute";
+            typehit = "hitbattlerage";
+        } else if (function_bd90db337f1ae0d4(victim, damager)) {
+            function_675990374e11b0f7(victim, damager);
+            typehit = "hitresolute";
         } else if (istacticaldamage(objweapon, smeansofdeath) && victim perk::_hasperk("specialty_stun_resistance")) {
-            var_cdcedb142f61b43e = "hittacresist";
+            typehit = "hittacresist";
         } else if (victim perk::_hasperk("specialty_blastshield") && !damage_should_ignore_blast_shield(eattacker, victim, objweapon, smeansofdeath, einflictor, shitloc)) {
-            var_cdcedb142f61b43e = "hitblastshield";
+            typehit = "hitblastshield";
         } else if (istrue(victim.adrenalinepoweractive)) {
-            var_cdcedb142f61b43e = "hitadrenaline";
+            typehit = "hitadrenaline";
         } else if (isdefined(objweapon) && objweapon.basename == "sound_veil_mp") {
-            var_cdcedb142f61b43e = "hitsoundveil";
+            typehit = "hitsoundveil";
         } else if (getdvarint(@"hash_1db87c3b655b5645", 0) == 1) {
-            var_cdcedb142f61b43e = "hithealth";
+            typehit = "hithealth";
         }
-        eattacker game_utility::clearspawnprotection();
+        eattacker game_utility::clearSpawnProtection();
         bulletdamage = utility::isbulletdamage(smeansofdeath);
-        var_b98146816886d3c4 = utility::ter_op(bulletdamage && weapon::isprimaryweapon(objweapon), "standardspread", "standard");
+        hitmarkertype = utility::ter_op(bulletdamage && weapon::isprimaryweapon(objweapon), "standardspread", "standard");
         if (istrue(level.var_3ff7c73209fcf59d)) {
-            if (bulletdamage && istrue(victim.var_38841d8e75a06ab3) || isexplosivedamagemod(smeansofdeath) && istrue(victim.var_ce34e72182b33556)) {
-                var_cdcedb142f61b43e = "hitskydiveprotection";
+            if (bulletdamage && istrue(victim.skydive_spawnprotection) || isexplosivedamagemod(smeansofdeath) && istrue(victim.var_ce34e72182b33556)) {
+                typehit = "hitskydiveprotection";
             }
         }
         armorbreak = 0;
-        if (var_cdcedb142f61b43e == "hitarmorlightbreak" || var_cdcedb142f61b43e == "hitarmormaxplatebreak" || var_cdcedb142f61b43e == "hitarmortemperedbreak") {
+        if (typehit == "hitarmorlightbreak" || typehit == "hitarmormaxplatebreak" || typehit == "hitarmortemperedbreak") {
             armorbreak = 1;
             if (var_a2ffd9894fd368c5) {
-                var_b98146816886d3c4 = "temperedarmorbreak";
+                hitmarkertype = "temperedarmorbreak";
                 if (istrue(var_b44e627d6a911f55) && !istrue(var_135003274a4cc703)) {
-                    var_b98146816886d3c4 = utility::ter_op(var_b98146816886d3c4 == "standardspread", "standardspreadarmorbreak", "standardarmorbreak");
+                    hitmarkertype = utility::ter_op(hitmarkertype == "standardspread", "standardspreadarmorbreak", "standardarmorbreak");
                 }
             } else if (var_dc726e8cc0b003a3) {
-                var_b98146816886d3c4 = "threeplatearmorbreak";
+                hitmarkertype = "threeplatearmorbreak";
                 if (istrue(var_b44e627d6a911f55) && !istrue(var_135003274a4cc703)) {
-                    var_b98146816886d3c4 = utility::ter_op(var_b98146816886d3c4 == "standardspread", "standardspreadarmorbreak", "standardarmorbreak");
+                    hitmarkertype = utility::ter_op(hitmarkertype == "standardspread", "standardspreadarmorbreak", "standardarmorbreak");
                 }
-            } else if (var_b98146816886d3c4 == "standardspread") {
-                var_b98146816886d3c4 = "standardspreadarmorbreak";
+            } else if (hitmarkertype == "standardspread") {
+                hitmarkertype = "standardspreadarmorbreak";
             } else {
-                var_b98146816886d3c4 = "standardarmorbreak";
+                hitmarkertype = "standardarmorbreak";
             }
-        } else if (var_cdcedb142f61b43e == "hitarmorlight" || var_cdcedb142f61b43e == "hitarmorlightmaxlevel" || var_cdcedb142f61b43e == "hitarmorlighttempered") {
+        } else if (typehit == "hitarmorlight" || typehit == "hitarmorlightmaxlevel" || typehit == "hitarmorlighttempered") {
             if (var_a2ffd9894fd368c5) {
-                var_b98146816886d3c4 = "temperedarmor";
+                hitmarkertype = "temperedarmor";
                 if (istrue(var_b44e627d6a911f55) && !istrue(var_135003274a4cc703)) {
-                    var_b98146816886d3c4 = utility::ter_op(var_b98146816886d3c4 == "standardspread", "standardspreadarmor", "standardarmor");
+                    hitmarkertype = utility::ter_op(hitmarkertype == "standardspread", "standardspreadarmor", "standardarmor");
                 }
             } else if (var_dc726e8cc0b003a3) {
-                var_b98146816886d3c4 = "threeplatearmor";
+                hitmarkertype = "threeplatearmor";
                 if (istrue(var_b44e627d6a911f55) && !istrue(var_135003274a4cc703)) {
-                    var_b98146816886d3c4 = utility::ter_op(var_b98146816886d3c4 == "standardspread", "standardspreadarmor", "standardarmor");
+                    hitmarkertype = utility::ter_op(hitmarkertype == "standardspread", "standardspreadarmor", "standardarmor");
                 }
-            } else if (var_b98146816886d3c4 == "standardspread") {
-                var_b98146816886d3c4 = "standardspreadarmor";
+            } else if (hitmarkertype == "standardspread") {
+                hitmarkertype = "standardspreadarmor";
             } else {
-                var_b98146816886d3c4 = "standardarmor";
+                hitmarkertype = "standardarmor";
             }
-        } else if (var_cdcedb142f61b43e == "hitblastshield" && victim perk::_hasperk("specialty_flak_jacket")) {
-            var_b98146816886d3c4 = "hitflakjacket";
+        } else if (typehit == "hitblastshield" && victim perk::_hasperk("specialty_flak_jacket")) {
+            hitmarkertype = "hitflakjacket";
         }
-        headshot = !isspreadweapon(objweapon) && namespace_25ead30c6ed027fb::isheadshot(shitloc, smeansofdeath, eattacker);
-        if (weapon::function_160a992c78bdf589(objweapon) && namespace_25ead30c6ed027fb::function_b656251147d7d40b(partname)) {
+        headshot = !isspreadweapon(objweapon) && damage_utility::isheadshot(shitloc, smeansofdeath, eattacker);
+        if (weapon::function_160a992c78bdf589(objweapon) && damage_utility::function_b656251147d7d40b(partname)) {
             headshot = 1;
         }
         if (eattacker perk::_hasperk("specialty_headhunter") && headshot) {
-            var_cdcedb142f61b43e = "hitheadhunter";
+            typehit = "hitheadhunter";
         }
-        var_14b8f2eeba6a3e78 = 1;
+        allowdamagefeedback = 1;
         var_62cf84636d4cef2c = smeansofdeath == "MOD_MELEE";
         victimentnum = "" + victim getentitynumber();
-        if (var_4ffe32f42d51a763 && isdefined(victim.body)) {
+        if (waskilled && isdefined(victim.body)) {
             var_249fca7089cd498f = victim.body getentitynumber();
         } else {
             var_249fca7089cd498f = victim getentitynumber();
         }
         var_65cb04ee667315bc = 0;
-        if (!armorbreak && isspreadweapon(objweapon) && isdefined(var_91ebb035a259e76a.pelletweaponvictimids)) {
-            foreach (var_4663bfaed1a30ec9 in var_91ebb035a259e76a.pelletweaponvictimids) {
+        if (!armorbreak && isspreadweapon(objweapon) && isdefined(damager.pelletweaponvictimids)) {
+            foreach (var_4663bfaed1a30ec9 in damager.pelletweaponvictimids) {
                 if (isdefined(var_4663bfaed1a30ec9[victimentnum]) && var_4663bfaed1a30ec9[victimentnum].pelletdmgpassed.size > 1) {
                     var_65cb04ee667315bc = 1;
                 }
             }
         }
-        if (!weapon::iskillstreakweapon(objweapon) && isplayer(var_91ebb035a259e76a)) {
-            if (bulletdamage || (isspreadweapon(objweapon) ? !var_65cb04ee667315bc : function_102d677621400199(objweapon))) {
-                var_91ebb035a259e76a namespace_3c5a4254f2b957ea::initpersstat("shotsBulletHit");
+        if (!weapon::iskillstreakweapon(objweapon) && isplayer(damager)) {
+            if (bulletdamage || (isspreadweapon(objweapon) ? !var_65cb04ee667315bc : islauncherweapon(objweapon))) {
+                damager scripts/mp/utility/stats::initpersstat("shotsBulletHit");
                 var_5f7f853e0aeb4d24 = 0;
-                if (1) {
-                    goto LOC_00000a98;
-                }
-                if (function_102d677621400199(objweapon) || isspreadweapon(objweapon)) {
-                    var_5c3f9357f11d2223 = objweapon.basename;
-                    if (!isdefined(var_5c3f9357f11d2223)) {
+                if (true) {
+                } else if (islauncherweapon(objweapon) || isspreadweapon(objweapon)) {
+                    weaponbasename = objweapon.basename;
+                    if (!isdefined(weaponbasename)) {
                         var_5f7f853e0aeb4d24 = 1;
                     } else {
-                        if (!isdefined(var_91ebb035a259e76a.lasthittime[objweapon.basename])) {
-                            var_91ebb035a259e76a.lasthittime[objweapon.basename] = 0;
+                        if (!isdefined(damager.lasthittime[objweapon.basename])) {
+                            damager.lasthittime[objweapon.basename] = 0;
                         }
-                        if (var_91ebb035a259e76a.lasthittime[objweapon.basename] == gettime()) {
+                        if (damager.lasthittime[objweapon.basename] == gettime()) {
                             var_5f7f853e0aeb4d24 = 1;
                         } else {
-                            var_91ebb035a259e76a.lasthittime[objweapon.basename] = gettime();
-                        LOC_00000a98:
+                            damager.lasthittime[objweapon.basename] = gettime();
                         }
-                    LOC_00000a98:
                     }
-                LOC_00000a98:
                 }
-            LOC_00000a98:
                 if (!var_5f7f853e0aeb4d24) {
-                    var_91ebb035a259e76a namespace_3c5a4254f2b957ea::incpersstat("shotsBulletHit", 1);
-                    var_91ebb035a259e76a thread namespace_6b49ddb858f34366::function_298b6dd0b26f13bd();
-                    var_91ebb035a259e76a thread namespace_6b49ddb858f34366::function_2efd6926efd58b49(1);
+                    damager scripts/mp/utility/stats::incpersstat("shotsBulletHit", 1);
+                    damager thread namespace_6b49ddb858f34366::function_298b6dd0b26f13bd();
+                    damager thread namespace_6b49ddb858f34366::function_2efd6926efd58b49(1);
                 }
             }
         }
         if (!var_62cf84636d4cef2c && var_65cb04ee667315bc) {
-            if (var_4ffe32f42d51a763 || armorbreak) {
+            if (waskilled || armorbreak) {
                 var_62cf84636d4cef2c = 1;
             } else {
-                var_14b8f2eeba6a3e78 = 0;
+                allowdamagefeedback = 0;
             }
         }
-        if (var_14b8f2eeba6a3e78) {
+        if (allowdamagefeedback) {
             var_203066c6662e1f2d = undefined;
-            if (getdvarint(@"hash_2909726ff0e12a7d", 0) == 1 && isdefined(level.var_1a2b600a06ec21f4) && istrue(level.var_1a2b600a06ec21f4.var_e76a5e57e1ff6b9b)) {
+            if (getdvarint(@"hash_2909726ff0e12a7d", 0) == 1 && isdefined(level.gamemodebundle) && istrue(level.gamemodebundle.var_e76a5e57e1ff6b9b)) {
                 var_203066c6662e1f2d = spawnstruct();
                 if (isplayer(victim) || isagent(victim)) {
-                    var_203066c6662e1f2d.var_bce5d209227a00cb = player::isinlaststand(victim);
-                    var_203066c6662e1f2d.isfriendly = isfriendlyfire(victim, var_91ebb035a259e76a);
+                    var_203066c6662e1f2d.isenemydown = player::isinlaststand(victim);
+                    var_203066c6662e1f2d.isfriendly = isfriendlyfire(victim, damager);
                     if (bulletdamage && weapon::isprimaryweapon(objweapon)) {
-                        var_b98146816886d3c4 = 1;
+                        hitmarkertype = 1;
                     } else {
-                        var_b98146816886d3c4 = 2;
+                        hitmarkertype = 2;
                     }
                 }
             }
             var_f7ea2887b1e3535b = armor::function_77b7145c92102847(victim armor::function_ac266fc218266d08() + var_1da1a66b5c6a06a7);
-            var_91ebb035a259e76a damagefeedback::updatedamagefeedback(var_cdcedb142f61b43e, var_4ffe32f42d51a763, headshot, var_b98146816886d3c4, var_62cf84636d4cef2c, undefined, var_249fca7089cd498f, var_f7ea2887b1e3535b, var_203066c6662e1f2d);
+            damager damagefeedback::updatedamagefeedback(typehit, waskilled, headshot, hitmarkertype, var_62cf84636d4cef2c, undefined, var_249fca7089cd498f, var_f7ea2887b1e3535b, var_203066c6662e1f2d);
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb129
 // Size: 0x41
-function function_18525950b3caba30(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon) {
-    namespace_646e434ccdd09379::damageeffects(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon);
+function handledamageeffects(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon) {
+    damage_effects::damageeffects(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb171
 // Size: 0x22f
 function lethalequipmentdamagemod(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon) {
-    data = namespace_25ead30c6ed027fb::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor, undefined, undefined, undefined, undefined, undefined, idflags);
+    data = damage_utility::packdamagedata(eattacker, victim, idamage, objweapon, smeansofdeath, einflictor, undefined, undefined, undefined, undefined, undefined, idflags);
     if (isdefined(einflictor) && isdefined(einflictor.damagedby)) {
         eattacker = einflictor.damagedby;
     }
-    if (victim namespace_25ead30c6ed027fb::isstuckdamagekill(data)) {
+    if (victim damage_utility::isstuckdamagekill(data)) {
         if (victim killstreak::isjuggernaut()) {
             idamage = min(300, idamage);
-        } else if (isdefined(victim.var_8790c077c95db752)) {
-            idamage = victim.maxhealth + victim.var_8790c077c95db752;
+        } else if (isdefined(victim.maxarmorhealth)) {
+            idamage = victim.maxhealth + victim.maxarmorhealth;
         } else {
             idamage = victim.maxhealth;
         }
@@ -2789,7 +2760,7 @@ function lethalequipmentdamagemod(einflictor, eattacker, victim, idamage, idflag
         var_7e2c53b0bcf117d9.weaponname = weapon::getweaponrootname(objweapon);
         var_7e2c53b0bcf117d9.fullweaponname = getcompleteweaponname(objweapon);
         var_7e2c53b0bcf117d9.statname = "damage";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = min(victim.health, idamage);
+        var_7e2c53b0bcf117d9.incvalue = min(victim.health, idamage);
         var_7e2c53b0bcf117d9.variantid = -1;
         var_7e2c53b0bcf117d9.weaponobj = objweapon;
         eattacker namespace_c45ac99c4997e722::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
@@ -2797,109 +2768,109 @@ function lethalequipmentdamagemod(einflictor, eattacker, victim, idamage, idflag
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 12, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb3a8
 // Size: 0x208
 function playerkilled_initdeathdata(inflictor, attacker, victim, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration, isfauxdeath) {
-    var_642470e1abc1bbf9 = namespace_25ead30c6ed027fb::packdamagedata(attacker, victim, damage, objweapon, meansofdeath, inflictor, undefined, direction_vec, undefined, undefined, undefined, undefined, damageflags);
-    var_642470e1abc1bbf9.hitloc = hitloc;
-    var_642470e1abc1bbf9.psoffsettime = psoffsettime;
-    var_642470e1abc1bbf9.deathanimduration = deathanimduration;
-    var_642470e1abc1bbf9.isfauxdeath = isfauxdeath;
+    deathdata = damage_utility::packdamagedata(attacker, victim, damage, objweapon, meansofdeath, inflictor, undefined, direction_vec, undefined, undefined, undefined, undefined, damageflags);
+    deathdata.hitloc = hitloc;
+    deathdata.psoffsettime = psoffsettime;
+    deathdata.deathanimduration = deathanimduration;
+    deathdata.isfauxdeath = isfauxdeath;
     if (meansofdeath == "MOD_EXECUTION") {
-        var_642470e1abc1bbf9.executionref = execution::execution_getrefbyplayer(attacker);
+        deathdata.executionref = execution::execution_getrefbyplayer(attacker);
     }
-    var_642470e1abc1bbf9.dokillcam = 0;
-    var_642470e1abc1bbf9.dofinalkillcam = 1;
-    var_642470e1abc1bbf9.killcamentity = undefined;
-    var_642470e1abc1bbf9.killcamentityindex = -1;
-    var_642470e1abc1bbf9.killcamentitystarttime = 0;
-    var_642470e1abc1bbf9.inflictoragentinfo = undefined;
-    var_642470e1abc1bbf9.killcamentstickstovictim = undefined;
-    var_642470e1abc1bbf9.isfriendlyfire = undefined;
-    var_642470e1abc1bbf9.primaryweapon = undefined;
-    var_642470e1abc1bbf9.lifeid = undefined;
-    var_642470e1abc1bbf9.attackerentnum = undefined;
-    var_642470e1abc1bbf9.iskillstreakweapon = undefined;
-    var_642470e1abc1bbf9.var_bfcdebee0e8a3189 = undefined;
-    var_642470e1abc1bbf9.weaponfullstring = undefined;
-    var_642470e1abc1bbf9.isnukekill = 0;
-    var_642470e1abc1bbf9.deathscenetimesec = getdvarfloat(@"hash_ac849f1ec300d19c", 1.75);
-    var_642470e1abc1bbf9.deathscenetimems = int(var_642470e1abc1bbf9.deathscenetimesec * 1000);
-    var_642470e1abc1bbf9.deathtime = gettime();
-    var_642470e1abc1bbf9.brvictiminlaststand = undefined;
-    var_642470e1abc1bbf9.var_f83c15acb64c91b7 = isdefined(victim) && istrue(victim.var_f83c15acb64c91b7);
-    return var_642470e1abc1bbf9;
+    deathdata.dokillcam = 0;
+    deathdata.dofinalkillcam = 1;
+    deathdata.killcamentity = undefined;
+    deathdata.killcamentityindex = -1;
+    deathdata.killcamentitystarttime = 0;
+    deathdata.inflictoragentinfo = undefined;
+    deathdata.killcamentstickstovictim = undefined;
+    deathdata.isfriendlyfire = undefined;
+    deathdata.primaryweapon = undefined;
+    deathdata.lifeid = undefined;
+    deathdata.attackerentnum = undefined;
+    deathdata.iskillstreakweapon = undefined;
+    deathdata.var_bfcdebee0e8a3189 = undefined;
+    deathdata.weaponfullstring = undefined;
+    deathdata.isnukekill = 0;
+    deathdata.deathscenetimesec = getdvarfloat(@"hash_ac849f1ec300d19c", 1.75);
+    deathdata.deathscenetimems = int(deathdata.deathscenetimesec * 1000);
+    deathdata.deathtime = gettime();
+    deathdata.brvictiminlaststand = undefined;
+    deathdata.var_f83c15acb64c91b7 = isdefined(victim) && istrue(victim.var_f83c15acb64c91b7);
+    return deathdata;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb5b8
 // Size: 0x238
-function playerkilled_parameterfixup(var_642470e1abc1bbf9) {
+function playerkilled_parameterfixup(deathdata) {
     /#
-        assert(var_642470e1abc1bbf9.victim.sessionteam != "spectator");
+        assert(deathdata.victim.sessionteam != "spectator");
     #/
-    if (isdefined(var_642470e1abc1bbf9.inflictor) && istrue(var_642470e1abc1bbf9.inflictor.var_26fb072855fd4772)) {
-        var_642470e1abc1bbf9.meansofdeath = "MOD_CRUSH";
-        var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.inflictor;
-        var_642470e1abc1bbf9.attacker.team = game_utility::getotherteam(var_642470e1abc1bbf9.victim.team)[0];
+    if (isdefined(deathdata.inflictor) && istrue(deathdata.inflictor.var_26fb072855fd4772)) {
+        deathdata.meansofdeath = "MOD_CRUSH";
+        deathdata.attacker = deathdata.inflictor;
+        deathdata.attacker.team = game_utility::getotherteam(deathdata.victim.team)[0];
     }
-    if (var_642470e1abc1bbf9.victim == var_642470e1abc1bbf9.attacker && var_642470e1abc1bbf9.meansofdeath == "MOD_CRUSH") {
-        var_642470e1abc1bbf9.meansofdeath = "MOD_SUICIDE";
+    if (deathdata.victim == deathdata.attacker && deathdata.meansofdeath == "MOD_CRUSH") {
+        deathdata.meansofdeath = "MOD_SUICIDE";
     }
-    if (var_642470e1abc1bbf9.objweapon.basename == "none") {
-        if (isdefined(var_642470e1abc1bbf9.inflictor) && isdefined(var_642470e1abc1bbf9.inflictor.baseweapon)) {
-            var_642470e1abc1bbf9.objweapon.basename = var_642470e1abc1bbf9.inflictor.baseweapon;
+    if (deathdata.objweapon.basename == "none") {
+        if (isdefined(deathdata.inflictor) && isdefined(deathdata.inflictor.baseweapon)) {
+            deathdata.objweapon.basename = deathdata.inflictor.baseweapon;
         }
     }
-    var_642470e1abc1bbf9.victim playerkilled_fixupattacker(var_642470e1abc1bbf9);
-    if (namespace_25ead30c6ed027fb::isheadshot(var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.meansofdeath, var_642470e1abc1bbf9.attacker)) {
-        var_642470e1abc1bbf9.meansofdeath = "MOD_HEAD_SHOT";
+    deathdata.victim playerkilled_fixupattacker(deathdata);
+    if (damage_utility::isheadshot(deathdata.hitloc, deathdata.meansofdeath, deathdata.attacker)) {
+        deathdata.meansofdeath = "MOD_HEAD_SHOT";
     }
-    if (var_642470e1abc1bbf9.isfauxdeath) {
-        var_642470e1abc1bbf9.dokillcam = 0;
-        var_642470e1abc1bbf9.deathanimduration = var_642470e1abc1bbf9.victim playerforcedeathanim(var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.meansofdeath, var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.direction_vec);
+    if (deathdata.isfauxdeath) {
+        deathdata.dokillcam = 0;
+        deathdata.deathanimduration = deathdata.victim playerforcedeathanim(deathdata.inflictor, deathdata.meansofdeath, deathdata.objweapon, deathdata.hitloc, deathdata.direction_vec);
     }
     /#
-        function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9);
+        function_af3ebb9d1ecd18e7(deathdata);
     #/
     /#
-        function_18c42af5777dcd9f(var_642470e1abc1bbf9);
+        function_18c42af5777dcd9f(deathdata);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7f7
 // Size: 0xb88
-function playerkilled_fixupattacker(var_642470e1abc1bbf9) {
-    var_642470e1abc1bbf9.attacker = _validateattacker(var_642470e1abc1bbf9.attacker);
-    if (isdefined(var_642470e1abc1bbf9.inflictor) && istrue(var_642470e1abc1bbf9.inflictor.var_26fb072855fd4772)) {
+function playerkilled_fixupattacker(deathdata) {
+    deathdata.attacker = _validateattacker(deathdata.attacker);
+    if (isdefined(deathdata.inflictor) && istrue(deathdata.inflictor.var_26fb072855fd4772)) {
         if (isdefined(level.var_b6e3760a75368efc)) {
-            var_642470e1abc1bbf9.attacker = [[ level.var_b6e3760a75368efc ]](var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.victim);
+            deathdata.attacker = [[ level.var_b6e3760a75368efc ]](deathdata.inflictor, deathdata.victim);
         }
     }
     assistedsuicide = 0;
-    if (!isdefined(var_642470e1abc1bbf9.attacker)) {
+    if (!isdefined(deathdata.attacker)) {
         assistedsuicide = 1;
-    } else if (isdefined(var_642470e1abc1bbf9.attacker.classname) && (var_642470e1abc1bbf9.attacker.classname == "trigger_hurt" || var_642470e1abc1bbf9.attacker.classname == "worldspawn")) {
+    } else if (isdefined(deathdata.attacker.classname) && (deathdata.attacker.classname == "trigger_hurt" || deathdata.attacker.classname == "worldspawn")) {
         assistedsuicide = 1;
-    } else if (var_642470e1abc1bbf9.attacker == var_642470e1abc1bbf9.victim) {
+    } else if (deathdata.attacker == deathdata.victim) {
         assistedsuicide = 1;
-        if (var_642470e1abc1bbf9.meansofdeath == "MOD_SUICIDE") {
-            logattacker(var_642470e1abc1bbf9.victim, var_642470e1abc1bbf9.attacker, var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.damage, undefined, undefined, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.psoffsettime, var_642470e1abc1bbf9.meansofdeath, 0);
+        if (deathdata.meansofdeath == "MOD_SUICIDE") {
+            logattacker(deathdata.victim, deathdata.attacker, deathdata.inflictor, deathdata.objweapon, deathdata.damage, undefined, undefined, deathdata.hitloc, deathdata.psoffsettime, deathdata.meansofdeath, 0);
         }
     }
     if (assistedsuicide) {
         bestplayer = undefined;
-        if (isdefined(var_642470e1abc1bbf9.victim.attackers) && self.attackers.size > 0) {
-            foreach (player in var_642470e1abc1bbf9.victim.attackers) {
+        if (isdefined(deathdata.victim.attackers) && self.attackers.size > 0) {
+            foreach (player in deathdata.victim.attackers) {
                 if (!isdefined(player)) {
                     continue;
                 }
-                if (!isdefined(var_642470e1abc1bbf9.victim)) {
+                if (!isdefined(deathdata.victim)) {
                     continue;
                 }
                 if (!isdefined(_validateattacker(player))) {
@@ -2908,42 +2879,44 @@ function playerkilled_fixupattacker(var_642470e1abc1bbf9) {
                 if (!isdefined(player.guid)) {
                     continue;
                 }
-                if (!isdefined(var_642470e1abc1bbf9.victim.attackerdata)) {
+                if (!isdefined(deathdata.victim.attackerdata)) {
                     continue;
                 }
-                if (!isdefined(var_642470e1abc1bbf9.victim.attackerdata[player.guid])) {
+                if (!isdefined(deathdata.victim.attackerdata[player.guid])) {
                     continue;
                 }
-                if (!isdefined(var_642470e1abc1bbf9.victim.attackerdata[player.guid].damage)) {
+                if (!isdefined(deathdata.victim.attackerdata[player.guid].damage)) {
                     continue;
                 }
-                if (player == var_642470e1abc1bbf9.victim || level.teambased && player.team == var_642470e1abc1bbf9.victim.team) {
+                if (player == deathdata.victim || level.teambased && player.team == deathdata.victim.team) {
                     continue;
                 }
-                if (var_642470e1abc1bbf9.victim.attackerdata[player.guid].damage > 1 && !isdefined(bestplayer)) {
+                if (deathdata.victim.attackerdata[player.guid].damage > 1 && !isdefined(bestplayer)) {
                     bestplayer = player;
-                } else if (isdefined(bestplayer) && var_642470e1abc1bbf9.victim.attackerdata[player.guid].damage > var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].damage) {
+                    continue;
+                }
+                if (isdefined(bestplayer) && deathdata.victim.attackerdata[player.guid].damage > deathdata.victim.attackerdata[bestplayer.guid].damage) {
                     bestplayer = player;
                 }
             }
         }
         if (!isdefined(bestplayer)) {
-            if (isdefined(var_642470e1abc1bbf9.victim.debuffedbyplayers) && var_642470e1abc1bbf9.victim.debuffedbyplayers.size > 0) {
-                var_f6f171fa9c145f8 = [0:"chargemode_mp", 1:"cryo_mine_mp", 2:"concussion_grenade_mp", 3:"super_trophy_mp", 4:"blackout_grenade_mp", 5:"power_spider_grenade_mp", 6:"emp_grenade_mp"];
+            if (isdefined(deathdata.victim.debuffedbyplayers) && deathdata.victim.debuffedbyplayers.size > 0) {
+                var_f6f171fa9c145f8 = ["chargemode_mp", "cryo_mine_mp", "concussion_grenade_mp", "super_trophy_mp", "blackout_grenade_mp", "power_spider_grenade_mp", "emp_grenade_mp"];
                 foreach (var_65928e4c6195a5b in var_f6f171fa9c145f8) {
-                    var_a676df5d3d80a259 = gamescore::getdebuffattackersbyweapon(var_642470e1abc1bbf9.victim, var_65928e4c6195a5b);
+                    var_a676df5d3d80a259 = gamescore::getdebuffattackersbyweapon(deathdata.victim, var_65928e4c6195a5b);
                     if (var_a676df5d3d80a259.size > 0) {
                         for (i = var_a676df5d3d80a259.size - 1; i >= 0; i--) {
                             var_e0573162d646b530 = var_a676df5d3d80a259[i];
                             if (!isdefined(_validateattacker(var_e0573162d646b530))) {
                                 continue;
                             }
-                            if (!istrue(namespace_e47104b48662385b::playersareenemies(var_e0573162d646b530, var_642470e1abc1bbf9.victim))) {
+                            if (!istrue(player_utility::playersareenemies(var_e0573162d646b530, deathdata.victim))) {
                                 continue;
                             }
                             bestplayer = var_e0573162d646b530;
-                            if (!isdefined(var_642470e1abc1bbf9.victim.attackerdata) || !isdefined(var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid])) {
-                                addattacker(var_642470e1abc1bbf9.victim, bestplayer, undefined, makeweapon(var_65928e4c6195a5b), 0, undefined, undefined, undefined, undefined, "MOD_EXPLOSIVE");
+                            if (!isdefined(deathdata.victim.attackerdata) || !isdefined(deathdata.victim.attackerdata[bestplayer.guid])) {
+                                addattacker(deathdata.victim, bestplayer, undefined, makeweapon(var_65928e4c6195a5b), 0, undefined, undefined, undefined, undefined, "MOD_EXPLOSIVE");
                             }
                             break;
                         }
@@ -2955,78 +2928,78 @@ function playerkilled_fixupattacker(var_642470e1abc1bbf9) {
             }
         }
         if (isdefined(bestplayer)) {
-            var_642470e1abc1bbf9.attacker = bestplayer;
-            var_642470e1abc1bbf9.attacker.assistedsuicide = 1;
-            var_642470e1abc1bbf9.objweapon = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].objweapon;
-            var_642470e1abc1bbf9.direction_vec = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].vdir;
-            var_642470e1abc1bbf9.hitloc = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].shitloc;
-            var_642470e1abc1bbf9.psoffsettime = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].psoffsettime;
-            var_642470e1abc1bbf9.meansofdeath = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].smeansofdeath;
-            var_642470e1abc1bbf9.damage = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].damage;
-            if (istrue(var_642470e1abc1bbf9.victim.squadwiped) && isdefined(var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].inflictor)) {
-                var_642470e1abc1bbf9.inflictor = var_642470e1abc1bbf9.victim.attackerdata[bestplayer.guid].inflictor;
+            deathdata.attacker = bestplayer;
+            deathdata.attacker.assistedsuicide = 1;
+            deathdata.objweapon = deathdata.victim.attackerdata[bestplayer.guid].objweapon;
+            deathdata.direction_vec = deathdata.victim.attackerdata[bestplayer.guid].vdir;
+            deathdata.hitloc = deathdata.victim.attackerdata[bestplayer.guid].shitloc;
+            deathdata.psoffsettime = deathdata.victim.attackerdata[bestplayer.guid].psoffsettime;
+            deathdata.meansofdeath = deathdata.victim.attackerdata[bestplayer.guid].smeansofdeath;
+            deathdata.damage = deathdata.victim.attackerdata[bestplayer.guid].damage;
+            if (istrue(deathdata.victim.squadwiped) && isdefined(deathdata.victim.attackerdata[bestplayer.guid].inflictor)) {
+                deathdata.inflictor = deathdata.victim.attackerdata[bestplayer.guid].inflictor;
             }
-            var_642470e1abc1bbf9.assistedsuicide = 1;
-        } else if (!isdefined(var_642470e1abc1bbf9.attacker.team) || var_642470e1abc1bbf9.attacker.team == "neutral") {
-            var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.victim;
+            deathdata.assistedsuicide = 1;
+        } else if (!isdefined(deathdata.attacker.team) || deathdata.attacker.team == "neutral") {
+            deathdata.attacker = deathdata.victim;
         }
     }
-    if (isdefined(var_642470e1abc1bbf9.attacker) && isdefined(var_642470e1abc1bbf9.attacker.code_classname)) {
-        if (var_642470e1abc1bbf9.attacker.code_classname == "script_vehicle" && isdefined(var_642470e1abc1bbf9.attacker.owner)) {
-            var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.attacker.owner;
+    if (isdefined(deathdata.attacker) && isdefined(deathdata.attacker.code_classname)) {
+        if (deathdata.attacker.code_classname == "script_vehicle" && isdefined(deathdata.attacker.owner)) {
+            deathdata.attacker = deathdata.attacker.owner;
         }
-        if (var_642470e1abc1bbf9.attacker.code_classname == "misc_turret" && isdefined(var_642470e1abc1bbf9.attacker.owner)) {
-            if (isdefined(var_642470e1abc1bbf9.attacker.vehicle)) {
-                var_642470e1abc1bbf9.attacker.vehicle notify("killedPlayer", var_642470e1abc1bbf9.victim);
+        if (deathdata.attacker.code_classname == "misc_turret" && isdefined(deathdata.attacker.owner)) {
+            if (isdefined(deathdata.attacker.vehicle)) {
+                deathdata.attacker.vehicle notify("killedPlayer", deathdata.victim);
             }
-            var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.attacker.owner;
+            deathdata.attacker = deathdata.attacker.owner;
         }
-        if (isagent(var_642470e1abc1bbf9.attacker)) {
-            if (isdefined(var_642470e1abc1bbf9.attacker.owner)) {
-                var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.attacker.owner;
-            }
-        }
-        if (var_642470e1abc1bbf9.attacker.code_classname == "script_model" && isdefined(var_642470e1abc1bbf9.attacker.owner)) {
-            var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.attacker.owner;
-            if (!isfriendlyfire(var_642470e1abc1bbf9.victim, var_642470e1abc1bbf9.attacker) && var_642470e1abc1bbf9.attacker != var_642470e1abc1bbf9.victim) {
-                var_642470e1abc1bbf9.attacker notify("crushed_enemy");
+        if (isagent(deathdata.attacker)) {
+            if (isdefined(deathdata.attacker.owner)) {
+                deathdata.attacker = deathdata.attacker.owner;
             }
         }
-    }
-    if (isdefined(var_642470e1abc1bbf9.inflictor) && !isplayer(var_642470e1abc1bbf9.inflictor)) {
-        if (!isdefined(var_642470e1abc1bbf9.attacker)) {
-            if (isdefined(var_642470e1abc1bbf9.inflictor.owner)) {
-                var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.inflictor.owner;
-            }
-        } else if (!isplayer(var_642470e1abc1bbf9.attacker)) {
-            if (isdefined(var_642470e1abc1bbf9.inflictor.owner)) {
-                var_642470e1abc1bbf9.attacker = var_642470e1abc1bbf9.inflictor.owner;
+        if (deathdata.attacker.code_classname == "script_model" && isdefined(deathdata.attacker.owner)) {
+            deathdata.attacker = deathdata.attacker.owner;
+            if (!isfriendlyfire(deathdata.victim, deathdata.attacker) && deathdata.attacker != deathdata.victim) {
+                deathdata.attacker notify("crushed_enemy");
             }
         }
     }
-    if (isdefined(var_642470e1abc1bbf9.attacker) && var_642470e1abc1bbf9.attacker != var_642470e1abc1bbf9.victim) {
-        if (isdefined(var_642470e1abc1bbf9.inflictor) && var_642470e1abc1bbf9.inflictor == var_642470e1abc1bbf9.victim) {
-            var_642470e1abc1bbf9.inflictor = var_642470e1abc1bbf9.attacker;
+    if (isdefined(deathdata.inflictor) && !isplayer(deathdata.inflictor)) {
+        if (!isdefined(deathdata.attacker)) {
+            if (isdefined(deathdata.inflictor.owner)) {
+                deathdata.attacker = deathdata.inflictor.owner;
+            }
+        } else if (!isplayer(deathdata.attacker)) {
+            if (isdefined(deathdata.inflictor.owner)) {
+                deathdata.attacker = deathdata.inflictor.owner;
+            }
         }
     }
-    if (isdefined(var_642470e1abc1bbf9.inflictor) && isdefined(var_642470e1abc1bbf9.inflictor.var_9328ded553f15d2b) && !istrue(namespace_e47104b48662385b::playersareenemies(var_642470e1abc1bbf9.victim, var_642470e1abc1bbf9.inflictor.var_9328ded553f15d2b))) {
-        var_642470e1abc1bbf9.attacker = self;
+    if (isdefined(deathdata.attacker) && deathdata.attacker != deathdata.victim) {
+        if (isdefined(deathdata.inflictor) && deathdata.inflictor == deathdata.victim) {
+            deathdata.inflictor = deathdata.attacker;
+        }
     }
-    var_642470e1abc1bbf9.attacker.assistedsuicide = 0;
+    if (isdefined(deathdata.inflictor) && isdefined(deathdata.inflictor.var_9328ded553f15d2b) && !istrue(player_utility::playersareenemies(deathdata.victim, deathdata.inflictor.var_9328ded553f15d2b))) {
+        deathdata.attacker = self;
+    }
+    deathdata.attacker.assistedsuicide = 0;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc386
 // Size: 0x2a6
-function playerkilled_precalc(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    inflictor = var_642470e1abc1bbf9.inflictor;
-    objweapon = var_642470e1abc1bbf9.objweapon;
+function playerkilled_precalc(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    inflictor = deathdata.inflictor;
+    objweapon = deathdata.objweapon;
     victim.perkoutlined = 0;
     victim.deathspectatepos = undefined;
-    victim.deathtime = var_642470e1abc1bbf9.deathtime;
+    victim.deathtime = deathdata.deathtime;
     victim.attacker = attacker;
     victim.lastdeathpos = victim.origin;
     victim.lastdeathangles = victim getplayerangles();
@@ -3034,79 +3007,79 @@ function playerkilled_precalc(var_642470e1abc1bbf9) {
         victim thread namespace_4925be476a433a59::function_221ea9f08eaf2346();
     }
     if (isdefined(inflictor) && !isplayer(inflictor) && isdefined(inflictor.primaryweapon)) {
-        var_642470e1abc1bbf9.primaryweapon = inflictor.primaryweapon;
+        deathdata.primaryweapon = inflictor.primaryweapon;
     } else if (isdefined(attacker) && isplayer(attacker) && !isnullweapon(attacker getcurrentprimaryweapon())) {
-        var_642470e1abc1bbf9.primaryweapon = getcompleteweaponname(attacker getcurrentprimaryweapon());
+        deathdata.primaryweapon = getcompleteweaponname(attacker getcurrentprimaryweapon());
     } else if (objweapon.isalternate) {
-        var_642470e1abc1bbf9.primaryweapon = objweapon.basename;
+        deathdata.primaryweapon = objweapon.basename;
     } else {
-        var_642470e1abc1bbf9.primaryweapon = undefined;
+        deathdata.primaryweapon = undefined;
     }
-    var_642470e1abc1bbf9.lifeid = victim.matchdatalifeindex;
-    if (!isdefined(var_642470e1abc1bbf9.lifeid)) {
-        var_642470e1abc1bbf9.lifeid = level.maxlives - 1;
+    deathdata.lifeid = victim.matchdatalifeindex;
+    if (!isdefined(deathdata.lifeid)) {
+        deathdata.lifeid = level.maxlives - 1;
     }
     if (game_utility::isgameparticipant(attacker)) {
-        var_642470e1abc1bbf9.attackerentnum = attacker getentitynumber();
+        deathdata.attackerentnum = attacker getentitynumber();
     } else {
-        var_642470e1abc1bbf9.attackerentnum = -1;
+        deathdata.attackerentnum = -1;
     }
-    var_642470e1abc1bbf9.iskillstreakweapon = weapon::iskillstreakweapon(objweapon.basename);
-    var_642470e1abc1bbf9.weaponfullstring = getcompleteweaponname(objweapon);
-    var_642470e1abc1bbf9.var_bfcdebee0e8a3189 = isdefined(objweapon) && isdefined(objweapon.basename) && objweapon.basename == "bomb_site_mp";
-    var_642470e1abc1bbf9.isfriendlyfire = isfriendlyfire(victim, attacker);
-    var_642470e1abc1bbf9.isnukekill = objweapon.basename == "nuke_mp";
-    var_642470e1abc1bbf9.brvictiminlaststand = player::isinlaststand(victim);
+    deathdata.iskillstreakweapon = weapon::iskillstreakweapon(objweapon.basename);
+    deathdata.weaponfullstring = getcompleteweaponname(objweapon);
+    deathdata.var_bfcdebee0e8a3189 = isdefined(objweapon) && isdefined(objweapon.basename) && objweapon.basename == "bomb_site_mp";
+    deathdata.isfriendlyfire = isfriendlyfire(victim, attacker);
+    deathdata.isnukekill = objweapon.basename == "nuke_mp";
+    deathdata.brvictiminlaststand = player::isinlaststand(victim);
     /#
-        function_f9249bb06eb48092(var_642470e1abc1bbf9);
+        function_f9249bb06eb48092(deathdata);
     #/
     /#
-        function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9);
+        function_af3ebb9d1ecd18e7(deathdata);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc633
 // Size: 0xe15
-function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    inflictor = var_642470e1abc1bbf9.inflictor;
-    objweapon = var_642470e1abc1bbf9.objweapon;
-    damage = var_642470e1abc1bbf9.damage;
-    meansofdeath = var_642470e1abc1bbf9.meansofdeath;
-    isfauxdeath = var_642470e1abc1bbf9.isfauxdeath;
-    hitloc = var_642470e1abc1bbf9.hitloc;
-    direction_vec = var_642470e1abc1bbf9.direction_vec;
+function playerkilled_sharedlogic_early(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    inflictor = deathdata.inflictor;
+    objweapon = deathdata.objweapon;
+    damage = deathdata.damage;
+    meansofdeath = deathdata.meansofdeath;
+    isfauxdeath = deathdata.isfauxdeath;
+    hitloc = deathdata.hitloc;
+    direction_vec = deathdata.direction_vec;
     victim notify("killed_player");
     outline::outlinedisableinternalall(victim);
     victim showuidamageflash();
     victim setblurforplayer(0, 0);
-    victim namespace_df478cc572a311d3::molotov_clear_fx();
-    victim namespace_3bbb5a98b932c46f::function_6b4a68dbdae21499();
+    victim scripts/mp/equipment/molotov::molotov_clear_fx();
+    victim scripts/mp/weapons::clearburning();
     if (!game_utility::runleanthreadmode()) {
         print::printgameaction("death", victim);
     }
     victim launchshield(damage, meansofdeath);
     victim riotshield::riotshield_clear();
     if (isdefined(attacker.petwatch) && attacker != victim) {
-        attacker namespace_883b0db1d686c37e::addkillcharge();
+        attacker pet_watch::addkillcharge();
         if (meansofdeath == "MOD_EXECUTION") {
-            attacker namespace_883b0db1d686c37e::addexecutioncharge();
+            attacker pet_watch::addexecutioncharge();
         } else if (victim playerkilled_washitbyvehicle(meansofdeath, inflictor)) {
-            attacker namespace_883b0db1d686c37e::addvehicularmanslaughtercharge();
+            attacker pet_watch::addvehicularmanslaughtercharge();
         }
     }
     if (meansofdeath == "MOD_EXECUTION") {
         attacker stats::incpersstat("executionKills", 1);
-        level thread namespace_20260f65229aa888::trysaylocalsound(attacker, #"hash_197b54b4d0e467b7", undefined, 1);
+        level thread battlechatter_mp::trysaylocalsound(attacker, #"hash_197b54b4d0e467b7", undefined, 1);
     }
-    if (victim namespace_3e725f3cc58bddd3::playerkilled_washitbyvehicle(meansofdeath, inflictor)) {
+    if (victim scripts/mp/damage::playerkilled_washitbyvehicle(meansofdeath, inflictor)) {
         inflictor notify("vehicle_killed_player");
     }
-    var_647f0cec5589b0ca = victim getcurrentweapon();
-    if (!victim weapon::iskillstreakweapon(var_647f0cec5589b0ca)) {
+    victimheldweapon = victim getcurrentweapon();
+    if (!victim weapon::iskillstreakweapon(victimheldweapon)) {
         weapons::savetogglescopestates();
         weapons::savealtstates();
     }
@@ -3126,8 +3099,8 @@ function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
     }
     perks::updateactiveperks(inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc, direction_vec);
     supers::updateactivesupers(inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc, direction_vec);
-    namespace_c65b32cc99e6bc3c::wristrocketcooksuicideexplodecheck(inflictor, attacker, victim, meansofdeath, objweapon);
-    if (meansofdeath != "MOD_HEAD_SHOT" && !var_642470e1abc1bbf9.isnukekill) {
+    wristrocket::wristrocketcooksuicideexplodecheck(inflictor, attacker, victim, meansofdeath, objweapon);
+    if (meansofdeath != "MOD_HEAD_SHOT" && !deathdata.isnukekill) {
         if (isdefined(level.custom_death_sound)) {
             [[ level.custom_death_sound ]](victim, meansofdeath, inflictor);
         } else if (meansofdeath != "MOD_MELEE") {
@@ -3138,29 +3111,29 @@ function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
         [[ level.custom_death_effect ]](victim, meansofdeath, inflictor);
     }
     if (meansofdeath != "MOD_SUICIDE" && (game_utility::isaigameparticipant(victim) || game_utility::isaigameparticipant(attacker)) && isdefined(level.bot_funcs) && isdefined(level.bot_funcs["get_attacker_ent"])) {
-        var_e2b86dd732390777 = [[ level.bot_funcs["get_attacker_ent"] ]](attacker, inflictor);
-        if (isdefined(var_e2b86dd732390777)) {
+        killing_entity = [[ level.bot_funcs["get_attacker_ent"] ]](attacker, inflictor);
+        if (isdefined(killing_entity)) {
             if (game_utility::isaigameparticipant(victim) && !isagent(victim)) {
                 /#
-                    assert(!isdefined(var_e2b86dd732390777.classname) || var_e2b86dd732390777.classname != "worldspawn" && var_e2b86dd732390777.classname != "trigger_hurt");
+                    assert(!isdefined(killing_entity.classname) || killing_entity.classname != "worldspawn" && killing_entity.classname != "trigger_hurt");
                 #/
-                victim botmemoryevent("death", var_642470e1abc1bbf9.weaponfullstring, var_e2b86dd732390777.origin, victim.origin, var_e2b86dd732390777);
+                victim botmemoryevent("death", deathdata.weaponfullstring, killing_entity.origin, victim.origin, killing_entity);
             }
             if (game_utility::isaigameparticipant(attacker) && !isagent(attacker)) {
                 var_6b82b9183bb9b5df = 1;
-                if (isdefined(var_e2b86dd732390777.classname) && (var_e2b86dd732390777.classname == "script_vehicle" && isdefined(var_e2b86dd732390777.helitype) || var_e2b86dd732390777.classname == "rocket" || var_e2b86dd732390777.classname == "misc_turret")) {
+                if (isdefined(killing_entity.classname) && (killing_entity.classname == "script_vehicle" && isdefined(killing_entity.helitype) || killing_entity.classname == "rocket" || killing_entity.classname == "misc_turret")) {
                     var_6b82b9183bb9b5df = 0;
                 }
                 if (var_6b82b9183bb9b5df) {
-                    attacker botmemoryevent("kill", var_642470e1abc1bbf9.weaponfullstring, var_e2b86dd732390777.origin, victim.origin, victim);
+                    attacker botmemoryevent("kill", deathdata.weaponfullstring, killing_entity.origin, victim.origin, victim);
                 }
             }
         }
     }
     if ((game_utility::isteamreviveenabled() || game_utility::isbrstylegametype() || victim perk::_hasperk("specialty_survivor")) && flags::gameflag("prematch_done") && !istrue(victim.hvtnorevive) && istrue(victim.inlaststand)) {
-        laststand::ondeath(var_642470e1abc1bbf9);
+        laststand::ondeath(deathdata);
     }
-    laststand::function_d393166ea9eab059(var_642470e1abc1bbf9);
+    laststand::function_d393166ea9eab059(deathdata);
     if (game_utility::isteamreviveenabled() && flags::gameflag("prematch_done") && !istrue(victim.switching_teams)) {
         if (meansofdeath == "MOD_FALLING" && victim teamrevive::isvalidrevivetriggerspawnposition()) {
             victim teamrevive::setvalidreviveposition();
@@ -3180,23 +3153,23 @@ function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
         if ([[ utility::getsharedfunc("game", "isBRStyleGameType") ]]()) {
             victim challenges::stopchallengetimer("alive_in_gas");
             victim challenges::stopchallengetimer("alive_not_downed");
-            if (istrue(level.br_prematchstarted) && !namespace_a548bd428a566cf3::isplayeringulag()) {
-                namespace_9cb8bb5897c3d5b2::branalytics_inventory_snapshot(self, "player_death");
+            if (istrue(level.br_prematchstarted) && !br_public::isplayeringulag()) {
+                br_analytics::branalytics_inventory_snapshot(self, "player_death");
             }
         }
     }
     var_87f4e7d1a685aec1 = victim killstreak::iscontrollingproxyagent() ? victim.playerproxyagent : victim;
     if (attacker perk::_hasperk("specialty_scavenger")) {
-        var_87f4e7d1a685aec1 thread weapons::dropscavengerfordeath(attacker, var_642470e1abc1bbf9.meansofdeath);
+        var_87f4e7d1a685aec1 thread weapons::dropscavengerfordeath(attacker, deathdata.meansofdeath);
     }
     if (getdvarint(@"hash_5afa341109e3a9f4", 0)) {
-        var_87f4e7d1a685aec1 thread weapons::function_7e895e1c85354e17(attacker, var_642470e1abc1bbf9.meansofdeath);
+        var_87f4e7d1a685aec1 thread weapons::function_7e895e1c85354e17(attacker, deathdata.meansofdeath);
     }
     var_87f4e7d1a685aec1 [[ level.weapondropfunction ]](attacker, meansofdeath, undefined, damage);
     if (!isfauxdeath) {
         if (isplayer(attacker)) {
             victim setclientomnvar("ui_killcam_killedby_id", attacker getentitynumber());
-            victim setclientomnvar("ui_killcam_killedby_health_ratio", int(clamp(var_642470e1abc1bbf9.attacker.health / var_642470e1abc1bbf9.attacker.maxhealth * 127, 0, 127)));
+            victim setclientomnvar("ui_killcam_killedby_health_ratio", int(clamp(deathdata.attacker.health / deathdata.attacker.maxhealth * 127, 0, 127)));
         } else if (attacker.classname == "trigger_hurt" || attacker.classname == "worldspawn") {
             victim setclientomnvar("ui_killcam_killedby_id", victim getentitynumber());
         } else {
@@ -3213,62 +3186,62 @@ function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
     var_63c3344d9c1f9816 = istrue(victim.fauxdead) && istrue(victim.switching_teams);
     if (!var_63c3344d9c1f9816) {
         if (!isdefined(level.modemayconsiderplayerdead) || [[ level.modemayconsiderplayerdead ]](victim)) {
-            victim namespace_66c176d3c67cc0c2::removefromalivecount(undefined, "playerKilled");
+            victim playerlogic::removefromalivecount(undefined, "playerKilled");
         }
     }
     if (!isdefined(victim.switching_teams)) {
-        if (!istrue(level.ignorescoring) && !var_642470e1abc1bbf9.isfriendlyfire) {
-            if (!namespace_36f464722d326bbe::function_d04af493b6e718ac()) {
+        if (!istrue(level.ignorescoring) && !deathdata.isfriendlyfire) {
+            if (!scripts/cp_mp/utility/game_utility::function_d04af493b6e718ac()) {
                 victim namespace_26e1361ab951ec6b::addtoplayerstat(1, "combatStats", "deaths");
             }
-            if (victim namespace_3c5a4254f2b957ea::getpersstat("deaths") < 999) {
+            if (victim scripts/mp/utility/stats::getpersstat("deaths") < 999) {
                 victim stats::incpersstat("deaths", 1);
                 victim.deaths = victim stats::getpersstat("deaths");
                 victim persistence::statsetchild("round", "deaths", victim.deaths, level.ignorekdrstats);
             }
         }
     }
-    var_4115733aaa384eea = meansofdeath;
-    if (isdefined(var_642470e1abc1bbf9.idflags) && var_642470e1abc1bbf9.idflags & 8 && !(var_642470e1abc1bbf9.idflags & 16384)) {
+    obitmeansofdeath = meansofdeath;
+    if (isdefined(deathdata.idflags) && deathdata.idflags & 8 && !(deathdata.idflags & 16384)) {
         if (isdefined(attacker.bulletkillsinaframecount) && attacker.bulletkillsinaframecount == 0) {
-            var_4115733aaa384eea = "MOD_PENETRATION";
+            obitmeansofdeath = "MOD_PENETRATION";
             if (isplayer(attacker)) {
-                attacker thread points::givexpwithtext(#"hash_86e6ab76a75129c7");
+                attacker thread points::givexpwithtext(#"penetration_kill");
             }
         }
-    } else if (objweapon.basename == "semtex_xmike109_mp" && var_642470e1abc1bbf9.hitloc == "head" || var_642470e1abc1bbf9.hitloc == "helmet") {
-        var_4115733aaa384eea = "MOD_HEAD_SHOT";
+    } else if (objweapon.basename == "semtex_xmike109_mp" && deathdata.hitloc == "head" || deathdata.hitloc == "helmet") {
+        obitmeansofdeath = "MOD_HEAD_SHOT";
     }
-    if (isdefined(var_642470e1abc1bbf9.inflictor) && istrue(var_642470e1abc1bbf9.inflictor.iswztrain)) {
-        var_4115733aaa384eea = "MOD_CRUSH";
+    if (isdefined(deathdata.inflictor) && istrue(deathdata.inflictor.iswztrain)) {
+        obitmeansofdeath = "MOD_CRUSH";
     }
     if (game_utility::isbrstylegametype()) {
-        var_f86da5d91524e369 = [];
+        obitplayers = [];
         if (isdefined(level.var_c5877dbe60fddbf6)) {
-            var_f86da5d91524e369 = level.var_c5877dbe60fddbf6;
+            obitplayers = level.var_c5877dbe60fddbf6;
         }
         if (isdefined(victim)) {
             victimteam = teams::getfriendlyplayers(victim.team, 0);
             if (isdefined(victimteam)) {
-                var_f86da5d91524e369 = utility::array_combine(var_f86da5d91524e369, victimteam);
+                obitplayers = utility::array_combine(obitplayers, victimteam);
             }
         }
         if (isdefined(attacker) && isplayer(attacker)) {
             attackerteam = teams::getfriendlyplayers(attacker.team, 0);
             if (isdefined(attackerteam) && victim.team != attacker.team) {
-                var_f86da5d91524e369 = utility::array_combine(var_f86da5d91524e369, attackerteam);
+                obitplayers = utility::array_combine(obitplayers, attackerteam);
             }
         }
-        if (var_f86da5d91524e369.size > 0) {
-            var_d7f5ef4a14230875 = utility::ter_op(vehicle::function_4687f4da72911323(var_642470e1abc1bbf9), "MOD_EXPLOSIVE", var_4115733aaa384eea);
-            obituary(victim, attacker, objweapon, var_d7f5ef4a14230875, var_f86da5d91524e369);
+        if (obitplayers.size > 0) {
+            var_d7f5ef4a14230875 = utility::ter_op(vehicle::function_4687f4da72911323(deathdata), "MOD_EXPLOSIVE", obitmeansofdeath);
+            obituary(victim, attacker, objweapon, var_d7f5ef4a14230875, obitplayers);
         }
     } else {
         var_aae3f6afd894e63a = objweapon;
-        if (isdefined(var_4115733aaa384eea) && var_4115733aaa384eea == "MOD_EXPLOSIVE" && (!isdefined(var_aae3f6afd894e63a) || isnullweapon(var_aae3f6afd894e63a))) {
+        if (isdefined(obitmeansofdeath) && obitmeansofdeath == "MOD_EXPLOSIVE" && (!isdefined(var_aae3f6afd894e63a) || isnullweapon(var_aae3f6afd894e63a))) {
             var_aae3f6afd894e63a = makeweapon("obit_explosive");
         }
-        var_d7f5ef4a14230875 = utility::ter_op(vehicle::function_4687f4da72911323(var_642470e1abc1bbf9), "MOD_EXPLOSIVE", var_4115733aaa384eea);
+        var_d7f5ef4a14230875 = utility::ter_op(vehicle::function_4687f4da72911323(deathdata), "MOD_EXPLOSIVE", obitmeansofdeath);
         obituary(victim, attacker, var_aae3f6afd894e63a, var_d7f5ef4a14230875);
     }
     victim updatedeathdetails(victim.attackers, victim.attackerdata, attacker);
@@ -3276,35 +3249,35 @@ function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
     victim bounty::playerresetbountypoints();
     victim bounty::playerresetbountystreak();
     victim thread supers::handledeath(attacker);
-    victim namespace_20260f65229aa888::onplayerkilled(inflictor, attacker, damage, meansofdeath, objweapon, var_642470e1abc1bbf9.direction_vec, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.psoffsettime, var_642470e1abc1bbf9.deathanimduration, var_642470e1abc1bbf9.lifeid);
-    victim thread [[ level.onplayerkilledcommon ]](inflictor, attacker, damage, meansofdeath, objweapon, var_642470e1abc1bbf9.direction_vec, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.psoffsettime, var_642470e1abc1bbf9.deathanimduration, var_642470e1abc1bbf9.lifeid, weapon::iskillstreakweapon(var_647f0cec5589b0ca));
+    victim battlechatter_mp::onplayerkilled(inflictor, attacker, damage, meansofdeath, objweapon, deathdata.direction_vec, deathdata.hitloc, deathdata.psoffsettime, deathdata.deathanimduration, deathdata.lifeid);
+    victim thread [[ level.onplayerkilledcommon ]](inflictor, attacker, damage, meansofdeath, objweapon, deathdata.direction_vec, deathdata.hitloc, deathdata.psoffsettime, deathdata.deathanimduration, deathdata.lifeid, weapon::iskillstreakweapon(victimheldweapon));
     if (isai(victim) && isdefined(level.bot_funcs) && isdefined(level.bot_funcs["on_killed"])) {
-        victim thread [[ level.bot_funcs["on_killed"] ]](inflictor, attacker, damage, meansofdeath, var_642470e1abc1bbf9.weaponfullstring, var_642470e1abc1bbf9.direction_vec, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.psoffsettime, var_642470e1abc1bbf9.deathanimduration, var_642470e1abc1bbf9.lifeid);
+        victim thread [[ level.bot_funcs["on_killed"] ]](inflictor, attacker, damage, meansofdeath, deathdata.weaponfullstring, deathdata.direction_vec, deathdata.hitloc, deathdata.psoffsettime, deathdata.deathanimduration, deathdata.lifeid);
     }
-    var_d34b50843aa65c42 = (var_642470e1abc1bbf9.deathtime - victim.spawntime) / 1000;
-    if (isdefined(victim namespace_3c5a4254f2b957ea::getpersstat("shortestLife"))) {
-        if (victim namespace_3c5a4254f2b957ea::getpersstat("shortestLife") == 0 || var_d34b50843aa65c42 < victim namespace_3c5a4254f2b957ea::getpersstat("shortestLife")) {
-            victim.pers["shortestLife"] = var_d34b50843aa65c42;
+    victimlifetime = (deathdata.deathtime - victim.spawntime) / 1000;
+    if (isdefined(victim scripts/mp/utility/stats::getpersstat("shortestLife"))) {
+        if (victim scripts/mp/utility/stats::getpersstat("shortestLife") == 0 || victimlifetime < victim scripts/mp/utility/stats::getpersstat("shortestLife")) {
+            victim.pers["shortestLife"] = victimlifetime;
         }
     }
-    if (isdefined(victim namespace_3c5a4254f2b957ea::getpersstat("shortestLife"))) {
-        if (victim namespace_3c5a4254f2b957ea::getpersstat("longestLife") == 0 || var_d34b50843aa65c42 > namespace_3c5a4254f2b957ea::getpersstat("longestLife")) {
-            victim.pers["longestLife"] = var_d34b50843aa65c42;
+    if (isdefined(victim scripts/mp/utility/stats::getpersstat("shortestLife"))) {
+        if (victim scripts/mp/utility/stats::getpersstat("longestLife") == 0 || victimlifetime > scripts/mp/utility/stats::getpersstat("longestLife")) {
+            victim.pers["longestLife"] = victimlifetime;
         }
     }
     /#
-        function_f9249bb06eb48092(var_642470e1abc1bbf9);
+        function_f9249bb06eb48092(deathdata);
     #/
     /#
-        function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9);
+        function_af3ebb9d1ecd18e7(deathdata);
     #/
     if (game_utility::function_ba5574c7f287c587()) {
-        var_16c2d930984f2fef = self isreloading();
-        if (var_16c2d930984f2fef) {
+        isplayerreloading = self isreloading();
+        if (isplayerreloading) {
             var_5814d27874b48e54 = spawnstruct();
             var_5814d27874b48e54.player = self;
-            var_5814d27874b48e54.var_c739ba1eb6635b73 = getsystemtimeinmicroseconds();
-            var_5814d27874b48e54.var_c198f7ca473378fb = "DEATH";
+            var_5814d27874b48e54.reloadcanceltime = getsystemtimeinmicroseconds();
+            var_5814d27874b48e54.cancelreason = "DEATH";
             namespace_c45ac99c4997e722::function_80820d6d364c1836("callback_on_reload_cancel", var_5814d27874b48e54);
         }
         if (isdefined(attacker) && isdefined(attacker.team)) {
@@ -3313,20 +3286,20 @@ function playerkilled_sharedlogic_early(var_642470e1abc1bbf9) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd44f
 // Size: 0x3eb
-function playerkilled_logkill(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    inflictor = var_642470e1abc1bbf9.inflictor;
-    objweapon = var_642470e1abc1bbf9.objweapon;
-    weaponfullstring = var_642470e1abc1bbf9.weaponfullstring;
-    meansofdeath = var_642470e1abc1bbf9.meansofdeath;
-    lifeid = var_642470e1abc1bbf9.lifeid;
+function playerkilled_logkill(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    inflictor = deathdata.inflictor;
+    objweapon = deathdata.objweapon;
+    weaponfullstring = deathdata.weaponfullstring;
+    meansofdeath = deathdata.meansofdeath;
+    lifeid = deathdata.lifeid;
     victim utility::trycall(level.clientmatchdata_logplayerdeath, attacker);
-    namespace_c45ac99c4997e722::function_80820d6d364c1836("callback_player_death", var_642470e1abc1bbf9);
+    namespace_c45ac99c4997e722::function_80820d6d364c1836("callback_player_death", deathdata);
     victim analyticslog::logevent_path();
     victim analyticslog::logevent_playerdeath(attacker, meansofdeath, weaponfullstring);
     attacker analyticslog::logevent_playerkill(victim, meansofdeath, weaponfullstring);
@@ -3338,11 +3311,11 @@ function playerkilled_logkill(var_642470e1abc1bbf9) {
             var_d4b54dc4008c298c = mapweapon(var_d4b54dc4008c298c, inflictor);
             var_b2b6cafcdb2218d2 = getcompleteweaponname(var_d4b54dc4008c298c);
             if (var_b2b6cafcdb2218d2.size > 0 && meansofdeath.size > 0) {
-                thread namespace_d576b6dc7cef9c62::trackleaderboarddeathstats(attacker, victim, var_b2b6cafcdb2218d2, meansofdeath);
+                thread scripts/mp/gamelogic::trackleaderboarddeathstats(attacker, victim, var_b2b6cafcdb2218d2, meansofdeath);
             }
         }
         if (weaponfullstring.size > 0 && meansofdeath.size > 0) {
-            thread namespace_d576b6dc7cef9c62::trackattackerleaderboarddeathstats(attacker, victim, weaponfullstring, meansofdeath);
+            thread scripts/mp/gamelogic::trackattackerleaderboarddeathstats(attacker, victim, weaponfullstring, meansofdeath);
         }
     } else if (isagent(attacker) && attacker != self && (!level.teambased || level.teambased && self.team != attacker.team)) {
         var_d4b54dc4008c298c = victim.lastdroppableweaponobj;
@@ -3351,8 +3324,8 @@ function playerkilled_logkill(var_642470e1abc1bbf9) {
         victim thread gamelogic::threadedsetweaponstatbyname(var_b2b6cafcdb2218d2, 1, "deaths", attacker);
     }
     if (isdefined(level.matchrecording_logeventmsg) && isdefined(inflictor) && isplayer(inflictor) && utility::isbulletdamage(meansofdeath)) {
-        var_b450825c6bf90c22 = inflictor.origin - victim.origin;
-        var_a25e56f3ab389dbc = vectornormalize((var_b450825c6bf90c22[0], var_b450825c6bf90c22[1], 0));
+        toinflictor = inflictor.origin - victim.origin;
+        var_a25e56f3ab389dbc = vectornormalize((toinflictor[0], toinflictor[1], 0));
         playerdir = anglestoforward(victim.angles);
         var_71082de84d50d735 = vectornormalize((playerdir[0], playerdir[1], 0));
         var_eec27afb6560632a = clamp(var_71082de84d50d735[0] * var_a25e56f3ab389dbc[0] + var_71082de84d50d735[1] * var_a25e56f3ab389dbc[1], -1, 1);
@@ -3378,135 +3351,138 @@ function playerkilled_logkill(var_642470e1abc1bbf9) {
     updatecombatrecordkillstats(attacker, victim, meansofdeath, objweapon);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd841
 // Size: 0x10a
-function playerkilled_finddeathtype(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    inflictor = var_642470e1abc1bbf9.inflictor;
-    meansofdeath = var_642470e1abc1bbf9.meansofdeath;
+function playerkilled_finddeathtype(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    inflictor = deathdata.inflictor;
+    meansofdeath = deathdata.meansofdeath;
     if (victim isswitchingteams()) {
         return "deathType_switchingTeams";
-    } else if (!isplayer(attacker) || isplayer(attacker) && meansofdeath == "MOD_FALLING") {
-        return "deathType_worldDeath";
-    } else if (attacker == victim || !namespace_e47104b48662385b::playersareenemies(attacker, victim) && entity::isdronepackage(inflictor)) {
-        return "deathType_suicide";
-    } else if (var_642470e1abc1bbf9.isfriendlyfire && !var_642470e1abc1bbf9.isnukekill) {
-        return "deathType_friendlyFire";
-    } else if (istrue(victim.inlaststand)) {
-        return "deathType_inLastStand";
-    } else {
-        return "deathType_normal";
     }
+    if (!isplayer(attacker) || isplayer(attacker) && meansofdeath == "MOD_FALLING") {
+        return "deathType_worldDeath";
+    }
+    if (attacker == victim || !player_utility::playersareenemies(attacker, victim) && entity::isdronepackage(inflictor)) {
+        return "deathType_suicide";
+    }
+    if (deathdata.isfriendlyfire && !deathdata.isnukekill) {
+        return "deathType_friendlyFire";
+    }
+    if (istrue(victim.inlaststand)) {
+        return "deathType_inLastStand";
+    }
+    return "deathType_normal";
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd952
 // Size: 0x1e4
-function playerkilled_handledeathtype(var_642470e1abc1bbf9) {
-    victim = var_642470e1abc1bbf9.victim;
-    var_642470e1abc1bbf9.deathtype = playerkilled_finddeathtype(var_642470e1abc1bbf9);
-    isfauxdeath = istrue(var_642470e1abc1bbf9.isfauxdeath);
+function playerkilled_handledeathtype(deathdata) {
+    victim = deathdata.victim;
+    deathdata.deathtype = playerkilled_finddeathtype(deathdata);
+    isfauxdeath = istrue(deathdata.isfauxdeath);
     if (!isfauxdeath || getdvarint(@"hash_896b182fbfa8d9de", 0)) {
         victim notify("player_fatal_death");
     }
-    switch (var_642470e1abc1bbf9.deathtype) {
+    switch (deathdata.deathtype) {
     case #"hash_fea1e712b5740278":
         handleteamchangedeath();
         break;
     case #"hash_1184b43822fe56f0":
-        handleworlddeath(var_642470e1abc1bbf9, var_642470e1abc1bbf9.attacker, var_642470e1abc1bbf9.lifeid, var_642470e1abc1bbf9.meansofdeath, var_642470e1abc1bbf9.hitloc);
+        handleworlddeath(deathdata, deathdata.attacker, deathdata.lifeid, deathdata.meansofdeath, deathdata.hitloc);
         break;
     case #"hash_c03eabf71149f406":
-        handlesuicidedeath(var_642470e1abc1bbf9.meansofdeath, var_642470e1abc1bbf9.hitloc);
+        handlesuicidedeath(deathdata.meansofdeath, deathdata.hitloc);
         break;
     case #"hash_e97320d8279bef45":
-        handlefriendlyfiredeath(var_642470e1abc1bbf9);
+        handlefriendlyfiredeath(deathdata);
         break;
     case #"hash_ce250de499ae9603":
-        handleinlaststanddeath(var_642470e1abc1bbf9);
+        handleinlaststanddeath(deathdata);
         break;
     case #"hash_a9f265ec10b615d":
-        handlenormaldeath(var_642470e1abc1bbf9.lifeid, var_642470e1abc1bbf9.attacker, var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.meansofdeath, victim, var_642470e1abc1bbf9.iskillstreakweapon, var_642470e1abc1bbf9);
+        handlenormaldeath(deathdata.lifeid, deathdata.attacker, deathdata.inflictor, deathdata.objweapon, deathdata.meansofdeath, victim, deathdata.iskillstreakweapon, deathdata);
         break;
     default:
         /#
-            assertmsg("Unhandled DeathType "" + var_642470e1abc1bbf9.deathtype + """);
+            assertmsg("Unhandled DeathType "" + deathdata.deathtype + """);
         #/
         break;
     }
-    function_8be77b53bcbd6d2d(var_642470e1abc1bbf9.attacker, 0);
+    function_8be77b53bcbd6d2d(deathdata.attacker, 0);
     /#
-        function_f9249bb06eb48092(var_642470e1abc1bbf9);
+        function_f9249bb06eb48092(deathdata);
     #/
     /#
-        function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9);
+        function_af3ebb9d1ecd18e7(deathdata);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdb3d
 // Size: 0x21f
-function playerkilled_sharedlogic_late(var_642470e1abc1bbf9) {
-    playerkilled_handlecorpse(var_642470e1abc1bbf9);
+function playerkilled_sharedlogic_late(deathdata) {
+    playerkilled_handlecorpse(deathdata);
     outofbounds::clearoob(self, 1);
-    setdeathtimerlength(var_642470e1abc1bbf9);
-    attacker = var_642470e1abc1bbf9.attacker;
+    setdeathtimerlength(deathdata);
+    attacker = deathdata.attacker;
     if (isdefined(attacker.owner)) {
         attacker = attacker.owner;
     }
     if (!isplayer(attacker)) {
-        var_642470e1abc1bbf9.dokillcam = 0;
-        var_642470e1abc1bbf9.dofinalkillcam = 0;
+        deathdata.dokillcam = 0;
+        deathdata.dofinalkillcam = 0;
     }
     if (level.killcam || level.finalkillcamenabled) {
-        playerkilled_killcamsetup(var_642470e1abc1bbf9);
+        playerkilled_killcamsetup(deathdata);
     }
     if (game_utility::isbrstylegametype()) {
-        namespace_9cb8bb5897c3d5b2::branalytics_down(var_642470e1abc1bbf9.attacker, var_642470e1abc1bbf9.victim, var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.deathtype, var_642470e1abc1bbf9.meansofdeath);
+        br_analytics::branalytics_down(deathdata.attacker, deathdata.victim, deathdata.objweapon, deathdata.deathtype, deathdata.meansofdeath);
     }
-    thread challenges::ondeath(var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.attacker, var_642470e1abc1bbf9.damage, var_642470e1abc1bbf9.damageflags, var_642470e1abc1bbf9.meansofdeath, var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.attacker.modifiers);
+    thread challenges::ondeath(deathdata.inflictor, deathdata.attacker, deathdata.damage, deathdata.damageflags, deathdata.meansofdeath, deathdata.objweapon, deathdata.hitloc, deathdata.attacker.modifiers);
     if (!game_utility::runleanthreadmode() || getdvarint(@"hash_ee4a7c4b0cf8c75b", 1)) {
-        playerkilled_logkill(var_642470e1abc1bbf9);
+        playerkilled_logkill(deathdata);
     }
     if (isdefined(level.var_cc2c79de99db62c) && level.var_cc2c79de99db62c) {
         namespace_969918091e5d9483::function_94c8f3722d550646();
         level.var_cc2c79de99db62c = 0;
     }
-    namespace_e2785bb1da360f91::function_eceb462b367e4b04(var_642470e1abc1bbf9);
-    callback::callback("player_death", var_642470e1abc1bbf9);
+    namespace_e2785bb1da360f91::function_eceb462b367e4b04(deathdata);
+    callback::callback("player_death", deathdata);
     if (function_6b9f8406e6153597()) {
         if (isdefined(attacker) && isplayer(attacker)) {
             attacker function_410078bd7a6f4a1(1);
         }
-        if (isdefined(var_642470e1abc1bbf9.victim) && isplayer(var_642470e1abc1bbf9.victim)) {
-            var_642470e1abc1bbf9.victim function_410078bd7a6f4a1(2);
+        if (isdefined(deathdata.victim) && isplayer(deathdata.victim)) {
+            deathdata.victim function_410078bd7a6f4a1(2);
         }
     }
     /#
-        function_f9249bb06eb48092(var_642470e1abc1bbf9);
+        function_f9249bb06eb48092(deathdata);
     #/
     /#
-        function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9);
+        function_af3ebb9d1ecd18e7(deathdata);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdd63
 // Size: 0x58c
-function playerkilled_handlecorpse(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    inflictor = var_642470e1abc1bbf9.inflictor;
-    meansofdeath = var_642470e1abc1bbf9.meansofdeath;
-    objweapon = var_642470e1abc1bbf9.objweapon;
-    isfauxdeath = var_642470e1abc1bbf9.isfauxdeath;
-    hitloc = var_642470e1abc1bbf9.hitloc;
+function playerkilled_handlecorpse(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    inflictor = deathdata.inflictor;
+    meansofdeath = deathdata.meansofdeath;
+    objweapon = deathdata.objweapon;
+    isfauxdeath = deathdata.isfauxdeath;
+    hitloc = deathdata.hitloc;
     var_f5b166094dc876c1 = 0;
     if (isdefined(victim.carryobject) && !isfauxdeath) {
         victim notify("drop_called");
@@ -3514,17 +3490,17 @@ function playerkilled_handlecorpse(var_642470e1abc1bbf9) {
     }
     if (game_utility::isteamreviveenabled() && !outofbounds::isoob(self) && flags::gameflag("prematch_done") && level.teambased) {
         if (istrue(level.var_2a91b79384531432)) {
-            level callback::callback("on_revive_trigger_requested", var_642470e1abc1bbf9);
+            level callback::callback("on_revive_trigger_requested", deathdata);
         } else {
             level thread teamrevive::spawnrevivetrigger(victim, attacker, "new_trigger_spawned", meansofdeath);
         }
     }
-    vehicle::vehicle_playerkilledbycollision(var_642470e1abc1bbf9);
+    vehicle::vehicle_playerkilledbycollision(deathdata);
     if (!isdefined(self.nocorpse) && !istrue(victim.skipcorpse)) {
         if (istrue(self.liveragdoll)) {
             victim.body = victim;
         } else {
-            victim.body = victim cloneplayer(var_642470e1abc1bbf9.deathanimduration, attacker);
+            victim.body = victim cloneplayer(deathdata.deathanimduration, attacker);
             victim.body.targetname = "player_corpse";
         }
         /#
@@ -3540,9 +3516,11 @@ function playerkilled_handlecorpse(var_642470e1abc1bbf9) {
             var_b8f254d4fd3f46a2 = [];
             foreach (index, player in level.players) {
                 if (isdefined(victim)) {
-                    if (istrue(namespace_e47104b48662385b::playersareenemies(player, victim)) && player perk::_hasperk("specialty_kill_report")) {
+                    if (istrue(player_utility::playersareenemies(player, victim)) && player perk::_hasperk("specialty_kill_report")) {
                         var_e707f0032fa7b4bb[index] = player;
-                    } else if (player iscodcaster()) {
+                        continue;
+                    }
+                    if (player iscodcaster()) {
                         var_b8f254d4fd3f46a2[index] = player;
                     }
                 }
@@ -3552,21 +3530,21 @@ function playerkilled_handlecorpse(var_642470e1abc1bbf9) {
             }
         }
         if (!istrue(self.liveragdoll)) {
-            if (var_642470e1abc1bbf9.isnukekill) {
+            if (deathdata.isnukekill) {
             }
-            if (var_642470e1abc1bbf9.isfauxdeath) {
-                victim namespace_f8065cafc523dba5::function_a593971d75d82113();
-                victim namespace_f8065cafc523dba5::function_379bb555405c16bb("damage::PlayerKilled_handleCorpse()");
+            if (deathdata.isfauxdeath) {
+                victim scripts/cp_mp/utility/player_utility::function_a593971d75d82113();
+                victim scripts/cp_mp/utility/player_utility::function_379bb555405c16bb("damage::PlayerKilled_handleCorpse()");
                 victim setsolid(0);
             }
-            victim thread _startragdoll(var_642470e1abc1bbf9.victim.body, var_642470e1abc1bbf9.meansofdeath, var_642470e1abc1bbf9.inflictor);
+            victim thread _startragdoll(deathdata.victim.body, deathdata.meansofdeath, deathdata.inflictor);
         }
         victim thread callcorpsetablefuncs();
-        if (!istrue(var_642470e1abc1bbf9.assistedsuicide)) {
-            if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        if (!istrue(deathdata.assistedsuicide)) {
+            if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
                 if (getsubgametype() == "dmz" && istrue(self.liveragdoll)) {
                     var_f5b166094dc876c1 = 1;
-                } else if (isdefined(level.pleaforhelp)) {
+                } else if (isdefined(level.pleaForHelp)) {
                     var_f5b166094dc876c1 = !istrue(namespace_51790b5acb47a506::function_bfdfd3c9ba0cc7cb(victim));
                 } else {
                     var_f5b166094dc876c1 = 1;
@@ -3576,28 +3554,32 @@ function playerkilled_handlecorpse(var_642470e1abc1bbf9) {
             }
         }
         if (istrue(var_f5b166094dc876c1)) {
-            victim namespace_46e942396566f2da::function_1dd3a521ea9ecf27(attacker, objweapon, meansofdeath, hitloc, inflictor, var_642470e1abc1bbf9.executionref);
+            victim namespace_46e942396566f2da::function_1dd3a521ea9ecf27(attacker, objweapon, meansofdeath, hitloc, inflictor, deathdata.executionref);
         }
     } else if (!istrue(self.liveragdoll)) {
         if (isdefined(victim.nocorpse) && !istrue(victim.skipcorpse)) {
-            victim.body = victim cloneplayer(var_642470e1abc1bbf9.deathanimduration);
+            victim.body = victim cloneplayer(deathdata.deathanimduration);
             victim.body hide(1);
         }
     }
     if (!istrue(game["isLaunchChunk"])) {
         victim.streaktype = class::loadout_getplayerstreaktype(victim.streaktype);
-        var_3e4944bceee5519 = namespace_8319cdbe938cd234::function_9f1dc821e9a8506();
+        var_3e4944bceee5519 = killstreak_utility::function_9f1dc821e9a8506();
         if (killstreaks::streaktyperesetsondeath(victim.streaktype)) {
             if (!level.casualscorestreaks && !victim perk::_hasperk("specialty_support_killstreaks") && !var_3e4944bceee5519) {
                 victim killstreaks::resetstreakpoints();
                 victim killstreaks::resetstreakavailability();
-            } else if (level.casualscorestreaks && !var_3e4944bceee5519) {
-                var_885ad6b3c9d47759 = killstreaks::checkcasualstreaksreset();
-                if (var_885ad6b3c9d47759) {
+                return;
+            }
+            if (level.casualscorestreaks && !var_3e4944bceee5519) {
+                shouldreset = killstreaks::checkcasualstreaksreset();
+                if (shouldreset) {
                     victim killstreaks::resetstreakpoints();
                     victim killstreaks::resetstreakavailability();
                 }
-            } else if (var_3e4944bceee5519) {
+                return;
+            }
+            if (var_3e4944bceee5519) {
                 if (getdvarint(@"hash_9e63e7a9c6f6ee4c", 1) == 1) {
                     victim killstreaks::function_21e35dd4600c80a7();
                 }
@@ -3608,7 +3590,7 @@ function playerkilled_handlecorpse(var_642470e1abc1bbf9) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe2f6
 // Size: 0x312
@@ -3623,36 +3605,36 @@ function _startragdoll(corpse, meansofdeath, inflictor) {
         animduration = getanimlength(deathanim);
     }
     startdelay = undefined;
-    vehicle = namespace_e47104b48662385b::getvehicle();
+    vehicle = player_utility::getvehicle();
     var_b9e330c2bda52fb5 = playerkilled_washitbyvehicle(meansofdeath, inflictor);
     var_6126d8436c986baf = undefined;
-    var_4030c4ad220257f2 = animhasnotetrack(deathanim, "delete_corpse");
-    var_41736ebfc0d6434c = animhasnotetrack(deathanim, "delete_corpse_delayed");
+    deletecorpse = animhasnotetrack(deathanim, "delete_corpse");
+    deletecorpsedelayed = animhasnotetrack(deathanim, "delete_corpse_delayed");
     noragdoll = animhasnotetrack(deathanim, "no_ragdoll");
-    var_ce8bcdf49c43b6d0 = animhasnotetrack(deathanim, "start_ragdoll");
-    if (isdefined(vehicle) || isdefined(self.var_e9a71c27fef1b65a) && isdefined(self.var_abd157413ac4e022)) {
+    hasstartdelay = animhasnotetrack(deathanim, "start_ragdoll");
+    if (isdefined(vehicle) || isdefined(self.var_e9a71c27fef1b65a) && isdefined(self.externalvehicle)) {
         if (isdefined(vehicle)) {
             var_6126d8436c986baf = vehicle_occupancy::vehicle_occupancy_getoccupantseat(vehicle, self);
         } else {
-            vehicle = self.var_abd157413ac4e022;
+            vehicle = self.externalvehicle;
             var_6126d8436c986baf = self.var_e9a71c27fef1b65a;
         }
-        if (noragdoll || var_ce8bcdf49c43b6d0) {
+        if (noragdoll || hasstartdelay) {
             vehicle_occupancy::vehicle_occupancy_linkseatcorpse(corpse, vehicle, var_6126d8436c986baf);
             corpse setcorpsefalling(0);
             corpse.linktooriginandangles = vehicle_occupancy::vehicle_occupancy_linktooriginandangles(vehicle, var_6126d8436c986baf);
         }
-        if (var_4030c4ad220257f2 || var_41736ebfc0d6434c || noragdoll || var_ce8bcdf49c43b6d0) {
-            var_f9e25038fed22bf0 = !noragdoll && !var_ce8bcdf49c43b6d0 || isdefined(self.var_abd157413ac4e022);
-            duration = utility::ter_op(var_41736ebfc0d6434c, animduration, animduration + 3);
+        if (deletecorpse || deletecorpsedelayed || noragdoll || hasstartdelay) {
+            var_f9e25038fed22bf0 = !noragdoll && !hasstartdelay || isdefined(self.externalvehicle);
+            duration = utility::ter_op(deletecorpsedelayed, animduration, animduration + 3);
             thread playerkilled_deletecorpseoutofvehicle(corpse, vehicle, var_6126d8436c986baf, duration, var_f9e25038fed22bf0);
         }
     }
     if (meansofdeath != "mod_execution" && !noragdoll) {
         startdelay = 0;
-        if (var_ce8bcdf49c43b6d0 && animduration > 0) {
-            var_9296f7895c90c8ed = getnotetracktimes(deathanim, "start_ragdoll")[0];
-            startdelay = var_9296f7895c90c8ed * animduration;
+        if (hasstartdelay && animduration > 0) {
+            startfraction = getnotetracktimes(deathanim, "start_ragdoll")[0];
+            startdelay = startfraction * animduration;
         }
         if (var_b9e330c2bda52fb5) {
             startdelay = 0;
@@ -3664,42 +3646,42 @@ function _startragdoll(corpse, meansofdeath, inflictor) {
             return;
         }
         if (isdefined(vehicle)) {
-            corpse thread _unlinkcorpsefromvehicle(vehicle, var_6126d8436c986baf, var_4030c4ad220257f2, var_41736ebfc0d6434c, startdelay, animduration);
+            corpse thread _unlinkcorpsefromvehicle(vehicle, var_6126d8436c986baf, deletecorpse, deletecorpsedelayed, startdelay, animduration);
             corpse notify("cancel_delete_corpse");
             vehicle_occupancy::vehicle_occupancy_clearseatcorpse(corpse, vehicle, var_6126d8436c986baf);
-        } else {
-            if (!corpse isragdoll()) {
-                if (var_b9e330c2bda52fb5) {
-                    corpse startragdollfromvehiclehit(inflictor);
-                } else {
-                    corpse startragdoll();
-                }
-            }
-            if (isdefined(level.var_83ed94a4c034a642)) {
-                self thread [[ level.var_83ed94a4c034a642 ]](corpse, animduration);
+            return;
+        }
+        if (!corpse isragdoll()) {
+            if (var_b9e330c2bda52fb5) {
+                corpse startragdollfromvehiclehit(inflictor);
             } else {
-                var_c00a326249963ab5 = function_cd0171313cca081();
-                var_cff2e3774745e3dd = var_c00a326249963ab5[1];
-                var_b2afba0be4e4e55 = var_c00a326249963ab5[0];
-                if (isdefined(var_b2afba0be4e4e55) && isdefined(var_cff2e3774745e3dd)) {
-                    corpse thread function_c837dcc441a2d51b(var_b2afba0be4e4e55, var_cff2e3774745e3dd);
-                } else {
-                    corpse thread _donewithcorpse(var_4030c4ad220257f2, var_41736ebfc0d6434c, startdelay, animduration);
-                }
+                corpse startragdoll();
             }
         }
+        if (isdefined(level.var_83ed94a4c034a642)) {
+            self thread [[ level.var_83ed94a4c034a642 ]](corpse, animduration);
+            return;
+        }
+        var_c00a326249963ab5 = function_cd0171313cca081();
+        var_cff2e3774745e3dd = var_c00a326249963ab5[1];
+        var_b2afba0be4e4e55 = var_c00a326249963ab5[0];
+        if (isdefined(var_b2afba0be4e4e55) && isdefined(var_cff2e3774745e3dd)) {
+            corpse thread function_c837dcc441a2d51b(var_b2afba0be4e4e55, var_cff2e3774745e3dd);
+            return;
+        }
+        corpse thread _donewithcorpse(deletecorpse, deletecorpsedelayed, startdelay, animduration);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe60f
 // Size: 0x86
-function _donewithcorpse(var_4030c4ad220257f2, var_41736ebfc0d6434c, startdelay, animduration) {
+function _donewithcorpse(deletecorpse, deletecorpsedelayed, startdelay, animduration) {
     corpse = self;
-    if (var_4030c4ad220257f2 || var_41736ebfc0d6434c) {
+    if (deletecorpse || deletecorpsedelayed) {
         deletedelay = animduration;
-        if (var_41736ebfc0d6434c) {
+        if (deletecorpsedelayed) {
             animduration = animduration + 3;
         }
         if (isdefined(startdelay)) {
@@ -3710,12 +3692,14 @@ function _donewithcorpse(var_4030c4ad220257f2, var_41736ebfc0d6434c, startdelay,
             return;
         }
         corpse delete();
-    } else if (!game_utility::isteamreviveenabled() && !isagent(self)) {
+        return;
+    }
+    if (!game_utility::isteamreviveenabled() && !isagent(self)) {
         corpse setplayercorpsedone();
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe69c
 // Size: 0x4f
@@ -3730,7 +3714,7 @@ function function_c837dcc441a2d51b(var_b2afba0be4e4e55, var_cff2e3774745e3dd) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe6f2
 // Size: 0x97
@@ -3741,26 +3725,26 @@ function function_cd0171313cca081() {
     } else if (istrue(player.gulag)) {
         arena = namespace_de6eb888abbe38e1::function_2f4344abdc200e43(player);
         if (!isdefined(arena) || !isdefined(arena.time)) {
-            return [0:undefined, 1:undefined];
+            return [undefined, undefined];
         } else {
-            return [0:"corpse_manually_deleted", 1:arena.time];
+            return ["corpse_manually_deleted", arena.time];
         }
     }
-    return [0:undefined, 1:undefined];
+    return [undefined, undefined];
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe791
 // Size: 0x18e
-function _unlinkcorpsefromvehicle(vehicle, var_6126d8436c986baf, var_4030c4ad220257f2, var_41736ebfc0d6434c, startdelay, animduration) {
+function _unlinkcorpsefromvehicle(vehicle, var_6126d8436c986baf, deletecorpse, deletecorpsedelayed, startdelay, animduration) {
     corpse = self;
     var_78235dcdec40f390 = getdvarint(@"hash_7c902421e1883986", 1);
     var_14615b298620c411 = !var_78235dcdec40f390;
-    var_9d6e760e37be3ed1 = getdvarint(@"hash_c041b4135b55d8b7", 1);
+    immediateragdoll = getdvarint(@"hash_c041b4135b55d8b7", 1);
     if (var_78235dcdec40f390) {
         if (!corpse isragdoll()) {
-            corpse startragdoll(var_9d6e760e37be3ed1);
+            corpse startragdoll(immediateragdoll);
         }
     }
     waittime = getdvarfloat(@"hash_7d1401b6075479ac", 0.1);
@@ -3772,19 +3756,19 @@ function _unlinkcorpsefromvehicle(vehicle, var_6126d8436c986baf, var_4030c4ad220
             originoffset = (0, 0, 0);
             linktooriginandangles = vehicle_occupancy::vehicle_occupancy_linktooriginandangles(vehicle, var_6126d8436c986baf);
             originoffset = linktooriginandangles.origin - corpse.linktooriginandangles.origin;
-            var_a4f5fb62ba3a113b = corpse.origin + originoffset;
+            corpseorigin = corpse.origin + originoffset;
             var_a918f1be2147ec75 = linktooriginandangles.angles;
-            corpse trajectoryupdateoriginandangles(var_a4f5fb62ba3a113b, var_a918f1be2147ec75);
+            corpse trajectoryupdateoriginandangles(corpseorigin, var_a918f1be2147ec75);
         }
         corpse unlink();
         if (var_14615b298620c411) {
-            corpse startragdoll(var_9d6e760e37be3ed1);
+            corpse startragdoll(immediateragdoll);
         }
-        corpse thread _donewithcorpse(var_4030c4ad220257f2, var_41736ebfc0d6434c, startdelay, animduration);
+        corpse thread _donewithcorpse(deletecorpse, deletecorpsedelayed, startdelay, animduration);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe926
 // Size: 0x5f
@@ -3798,154 +3782,154 @@ function playerkilled_deletecorpseoutofvehicle(corpse, vehicle, seatid, duration
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe98c
 // Size: 0x35
 function playerkilled_washitbyvehicle(meansofdeath, inflictor) {
     if (meansofdeath != "MOD_CRUSH") {
-        return 0;
+        return false;
     }
     if (!isdefined(inflictor)) {
-        return 0;
+        return false;
     }
     if (!inflictor vehicle::isvehicle()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe9c9
 // Size: 0x3de
-function playerkilled_killcamsetup(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    inflictor = var_642470e1abc1bbf9.inflictor;
-    meansofdeath = var_642470e1abc1bbf9.meansofdeath;
-    objweapon = var_642470e1abc1bbf9.objweapon;
-    executionref = var_642470e1abc1bbf9.executionref;
+function playerkilled_killcamsetup(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    inflictor = deathdata.inflictor;
+    meansofdeath = deathdata.meansofdeath;
+    objweapon = deathdata.objweapon;
+    executionref = deathdata.executionref;
     if (isdefined(attacker) && istrue(attacker.assistedsuicide) || level.teambased && isdefined(attacker) && utility::is_equal(attacker.team, victim.team) || istrue(level.var_c2111af4e4ece485)) {
-        var_642470e1abc1bbf9.dokillcam = 0;
-        var_642470e1abc1bbf9.dofinalkillcam = 0;
+        deathdata.dokillcam = 0;
+        deathdata.dofinalkillcam = 0;
     }
-    if (!isdefined(var_642470e1abc1bbf9.killcamentity)) {
-        var_642470e1abc1bbf9.killcamentity = victim killcam::getkillcamentity(attacker, inflictor, objweapon, meansofdeath);
+    if (!isdefined(deathdata.killcamentity)) {
+        deathdata.killcamentity = victim killcam::getkillcamentity(attacker, inflictor, objweapon, meansofdeath);
     }
-    if (isdefined(var_642470e1abc1bbf9.killcamentity)) {
-        var_642470e1abc1bbf9.killcamentityindex = var_642470e1abc1bbf9.killcamentity getentitynumber();
-        var_642470e1abc1bbf9.killcamentitystarttime = var_642470e1abc1bbf9.killcamentity.birthtime;
-        if (!isdefined(var_642470e1abc1bbf9.killcamentitystarttime)) {
-            var_642470e1abc1bbf9.killcamentitystarttime = 0;
+    if (isdefined(deathdata.killcamentity)) {
+        deathdata.killcamentityindex = deathdata.killcamentity getentitynumber();
+        deathdata.killcamentitystarttime = deathdata.killcamentity.birthtime;
+        if (!isdefined(deathdata.killcamentitystarttime)) {
+            deathdata.killcamentitystarttime = 0;
         }
     }
     /#
         if (getdvarint(@"hash_fc512bc1308e1801") != 0) {
-            var_642470e1abc1bbf9.dokillcam = 1;
+            deathdata.dokillcam = 1;
         }
     #/
-    if (isdefined(inflictor) && istrue(var_642470e1abc1bbf9.inflictor.var_26fb072855fd4772)) {
-        var_642470e1abc1bbf9.dokillcam = 1;
+    if (isdefined(inflictor) && istrue(deathdata.inflictor.var_26fb072855fd4772)) {
+        deathdata.dokillcam = 1;
     }
-    if (var_642470e1abc1bbf9.dokillcam) {
+    if (deathdata.dokillcam) {
         victim killcam::prekillcamnotify(attacker);
         if (isdefined(inflictor) && isagent(inflictor)) {
-            var_642470e1abc1bbf9.inflictoragentinfo = spawnstruct();
-            var_642470e1abc1bbf9.inflictoragentinfo.agent_type = inflictor.agent_type;
-            var_642470e1abc1bbf9.inflictoragentinfo.lastspawntime = inflictor.lastspawntime;
+            deathdata.inflictoragentinfo = spawnstruct();
+            deathdata.inflictoragentinfo.agent_type = inflictor.agent_type;
+            deathdata.inflictoragentinfo.lastspawntime = inflictor.lastspawntime;
         }
     }
-    var_642470e1abc1bbf9.killcamentstickstovictim = meansofdeath == "MOD_IMPACT" || meansofdeath == "MOD_HEAD_SHOT" && isdefined(inflictor) || meansofdeath == "MOD_GRENADE" || isdefined(victim) && isdefined(victim.stuckbygrenade) && isdefined(inflictor) && victim.stuckbygrenade == inflictor || objweapon.basename == "throwingknifec4_mp";
-    if (!var_642470e1abc1bbf9.iskillstreakweapon || function_1a9394eb58e66a9b(objweapon)) {
+    deathdata.killcamentstickstovictim = meansofdeath == "MOD_IMPACT" || meansofdeath == "MOD_HEAD_SHOT" && isdefined(inflictor) || meansofdeath == "MOD_GRENADE" || isdefined(victim) && isdefined(victim.stuckbygrenade) && isdefined(inflictor) && victim.stuckbygrenade == inflictor || objweapon.basename == "throwingknifec4_mp";
+    if (!deathdata.iskillstreakweapon || function_1a9394eb58e66a9b(objweapon)) {
         killcam::setkillcamnormalweaponomnvars(objweapon, meansofdeath, inflictor, executionref, attacker);
     }
-    var_ed6248b2a7a7a508 = isdefined(attacker) && isdefined(attacker.classname) && attacker.classname != "trigger_hurt" && attacker.classname != "worldspawn" && attacker != victim;
-    if (level.recordfinalkillcam && var_642470e1abc1bbf9.dofinalkillcam) {
-        if (!istrue(level.disable_killcam) && meansofdeath != "MOD_SUICIDE" && var_ed6248b2a7a7a508) {
-            final_killcam::recordfinalkillcam(5, victim, attacker, var_642470e1abc1bbf9.attackerentnum, inflictor, var_642470e1abc1bbf9.killcamentityindex, var_642470e1abc1bbf9.killcamentitystarttime, var_642470e1abc1bbf9.killcamentstickstovictim, objweapon, var_642470e1abc1bbf9.psoffsettime, meansofdeath);
+    attackerisvalid = isdefined(attacker) && isdefined(attacker.classname) && attacker.classname != "trigger_hurt" && attacker.classname != "worldspawn" && attacker != victim;
+    if (level.recordfinalkillcam && deathdata.dofinalkillcam) {
+        if (!istrue(level.disable_killcam) && meansofdeath != "MOD_SUICIDE" && attackerisvalid) {
+            final_killcam::recordfinalkillcam(5, victim, attacker, deathdata.attackerentnum, inflictor, deathdata.killcamentityindex, deathdata.killcamentitystarttime, deathdata.killcamentstickstovictim, objweapon, deathdata.psoffsettime, meansofdeath);
         }
     }
     /#
-        function_f9249bb06eb48092(var_642470e1abc1bbf9);
+        function_f9249bb06eb48092(deathdata);
     #/
     /#
-        function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9);
+        function_af3ebb9d1ecd18e7(deathdata);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xedae
 // Size: 0x11c
-function playerkilled_deathscene(var_642470e1abc1bbf9) {
-    victim = var_642470e1abc1bbf9.victim;
+function playerkilled_deathscene(deathdata) {
+    victim = deathdata.victim;
     victim endon("spawned");
-    if (victim namespace_dc51de4e8cbd07b::function_581a8fc6f76d525d()) {
-        victim namespace_dc51de4e8cbd07b::function_cdff2f0b5dcf3aa1();
+    if (victim spawncamera::function_581a8fc6f76d525d()) {
+        victim spawncamera::function_cdff2f0b5dcf3aa1();
     }
-    if (!var_642470e1abc1bbf9.isfauxdeath) {
+    if (!deathdata.isfauxdeath) {
         if (!isdefined(victim.respawntimerstarttime)) {
-            victim.respawntimerstarttime = gettime() + var_642470e1abc1bbf9.deathscenetimems;
+            victim.respawntimerstarttime = gettime() + deathdata.deathscenetimems;
         }
-        wait(var_642470e1abc1bbf9.deathscenetimesec);
-        if (var_642470e1abc1bbf9.dokillcam) {
-            var_e9e21d7db272a441 = final_killcam::skipkillcamduringdeathtimer(0.5);
-            var_642470e1abc1bbf9.dokillcam = isdefined(var_e9e21d7db272a441) && !var_e9e21d7db272a441;
+        wait(deathdata.deathscenetimesec);
+        if (deathdata.dokillcam) {
+            skipkillcam = final_killcam::skipkillcamduringdeathtimer(0.5);
+            deathdata.dokillcam = isdefined(skipkillcam) && !skipkillcam;
         }
         if (isdefined(victim)) {
             victim notify("death_delay_finished");
-            if (getdvarint(@"hash_8d86e6b3c30bfbf1", 1) == 1 && !namespace_36f464722d326bbe::isbrstylegametype()) {
-                victim thread namespace_99ac021a7547cae3::function_5c5f27d13e5eb129();
+            if (getdvarint(@"hash_8d86e6b3c30bfbf1", 1) == 1 && !scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+                victim thread scripts/mp/playerlogic::function_5c5f27d13e5eb129();
             }
         }
     } else if (!isdefined(victim.respawntimerstarttime)) {
         victim.respawntimerstarttime = gettime();
     }
     /#
-        function_f9249bb06eb48092(var_642470e1abc1bbf9);
+        function_f9249bb06eb48092(deathdata);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeed1
 // Size: 0x438
 function playerkilled_killcam(var_7ce346cc7a54d100) {
-    var_642470e1abc1bbf9 = var_7ce346cc7a54d100;
-    if (!isdefined(var_642470e1abc1bbf9.victim)) {
+    deathdata = var_7ce346cc7a54d100;
+    if (!isdefined(deathdata.victim)) {
         return;
     }
-    deathtime = var_642470e1abc1bbf9.victim.deathtime;
-    if (getdvarint(@"hash_98f5c716d594181b", 1) && isdefined(var_642470e1abc1bbf9.victim.laststanddowneddata)) {
-        var_642470e1abc1bbf9 = var_642470e1abc1bbf9.victim.laststanddowneddata;
-        var_642470e1abc1bbf9.victim.laststanddowneddata = undefined;
-        var_642470e1abc1bbf9.dokillcam = var_7ce346cc7a54d100.dokillcam && isplayer(var_642470e1abc1bbf9.attacker);
-        deathtime = var_642470e1abc1bbf9.deathtime;
+    deathtime = deathdata.victim.deathtime;
+    if (getdvarint(@"hash_98f5c716d594181b", 1) && isdefined(deathdata.victim.laststanddowneddata)) {
+        deathdata = deathdata.victim.laststanddowneddata;
+        deathdata.victim.laststanddowneddata = undefined;
+        deathdata.dokillcam = var_7ce346cc7a54d100.dokillcam && isplayer(deathdata.attacker);
+        deathtime = deathdata.deathtime;
     }
     if (!isdefined(deathtime)) {
         return;
     }
-    var_642470e1abc1bbf9.victim endon("spawned");
-    victim = var_642470e1abc1bbf9.victim;
-    attacker = var_642470e1abc1bbf9.attacker;
+    deathdata.victim endon("spawned");
+    victim = deathdata.victim;
+    attacker = deathdata.attacker;
     postdeathdelay = (gettime() - deathtime) / 1000;
     if (isdefined(level.modevalidatekillcam)) {
-        [[ level.modevalidatekillcam ]](var_642470e1abc1bbf9);
+        [[ level.modevalidatekillcam ]](deathdata);
     }
-    if (!istrue(victim.cancelkillcam) && var_642470e1abc1bbf9.dokillcam && level.killcam && game["state"] == "playing" && !victim isusingremote() && !level.showingfinalkillcam && !istrue(level.var_904aa57b8b22090c)) {
-        timeuntilspawn = namespace_66c176d3c67cc0c2::timeuntilspawn(1);
-        var_2ec157fffde08fd7 = [];
+    if (!istrue(victim.cancelkillcam) && deathdata.dokillcam && level.killcam && game["state"] == "playing" && !victim isusingremote() && !level.showingfinalkillcam && !istrue(level.var_904aa57b8b22090c)) {
+        timeuntilspawn = playerlogic::timeuntilspawn(1);
+        attackerperks = [];
         if (isdefined(attacker.perks)) {
             foreach (key, index in attacker.perks) {
-                var_2ec157fffde08fd7[var_2ec157fffde08fd7.size] = key;
+                attackerperks[attackerperks.size] = key;
             }
         } else if (isdefined(attacker.pers)) {
-            foreach (var_ca5ad0c2334c4a6c in [0:"loadoutStandardPerks", 1:"loadoutExtraPerks"]) {
-                if (array_contains_key(attacker.pers, var_ca5ad0c2334c4a6c)) {
-                    foreach (perk in attacker.pers[var_ca5ad0c2334c4a6c]) {
-                        if (perk != "" && perk != "none" && perk != "specialty_null" && !array_contains(var_2ec157fffde08fd7, perk)) {
-                            var_2ec157fffde08fd7[var_2ec157fffde08fd7.size] = perk;
+            foreach (perkarr in ["loadoutStandardPerks", "loadoutExtraPerks"]) {
+                if (array_contains_key(attacker.pers, perkarr)) {
+                    foreach (perk in attacker.pers[perkarr]) {
+                        if (perk != "" && perk != "none" && perk != "specialty_null" && !array_contains(attackerperks, perk)) {
+                            attackerperks[attackerperks.size] = perk;
                         }
                     }
                 }
@@ -3955,7 +3939,7 @@ function playerkilled_killcam(var_7ce346cc7a54d100) {
             victim thread startcopycatoption(attacker);
         }
         skippable = 1;
-        victim killcam::killcam(var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.inflictoragentinfo, var_642470e1abc1bbf9.attackerentnum, var_642470e1abc1bbf9.killcamentityindex, var_642470e1abc1bbf9.killcamentitystarttime, undefined, var_642470e1abc1bbf9.killcamentstickstovictim, var_642470e1abc1bbf9.objweapon, postdeathdelay, var_642470e1abc1bbf9.psoffsettime, timeuntilspawn, gamelogic::timeuntilroundend(), attacker, victim, var_642470e1abc1bbf9.meansofdeath, var_2ec157fffde08fd7, skippable);
+        victim killcam::killcam(deathdata.inflictor, deathdata.inflictoragentinfo, deathdata.attackerentnum, deathdata.killcamentityindex, deathdata.killcamentitystarttime, undefined, deathdata.killcamentstickstovictim, deathdata.objweapon, postdeathdelay, deathdata.psoffsettime, timeuntilspawn, gamelogic::timeuntilroundend(), attacker, victim, deathdata.meansofdeath, attackerperks, skippable);
         if (isdefined(victim) && !istrue(level.disablecopycatloadout)) {
             victim thread stopcopycatoption();
         }
@@ -3971,16 +3955,16 @@ function playerkilled_killcam(var_7ce346cc7a54d100) {
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf310
 // Size: 0x108
-function playerkilled_spawn(var_642470e1abc1bbf9) {
-    victim = var_642470e1abc1bbf9.victim;
+function playerkilled_spawn(deathdata) {
+    victim = deathdata.victim;
     if (!isdefined(victim)) {
         return;
     }
-    if (isdefined(level.modeplayerkilledspawn) && [[ level.modeplayerkilledspawn ]](var_642470e1abc1bbf9, 1)) {
+    if (isdefined(level.modeplayerkilledspawn) && [[ level.modeplayerkilledspawn ]](deathdata, 1)) {
         return;
     }
     if (istrue(victim.liveragdoll)) {
@@ -3988,7 +3972,7 @@ function playerkilled_spawn(var_642470e1abc1bbf9) {
     }
     victim endon("spawned");
     victim endon("disconnect");
-    attacker = var_642470e1abc1bbf9.attacker;
+    attacker = deathdata.attacker;
     victim resetplayervariables();
     victim resetplayeromnvarsonspawn();
     if (isdefined(attacker)) {
@@ -4005,11 +3989,11 @@ function playerkilled_spawn(var_642470e1abc1bbf9) {
         return;
     }
     if (class::isvalidclass(victim.class)) {
-        victim thread namespace_66c176d3c67cc0c2::spawnclient();
+        victim thread playerlogic::spawnclient();
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 12, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf41f
 // Size: 0xe3
@@ -4018,29 +4002,29 @@ function playerkilled_internal(inflictor, attacker, victim, damage, damageflags,
     if (game["state"] == "postgame") {
         return;
     }
-    var_642470e1abc1bbf9 = victim playerkilled_initdeathdata(inflictor, attacker, victim, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration, isfauxdeath);
-    playerkilled_parameterfixup(var_642470e1abc1bbf9);
-    playerkilled_precalc(var_642470e1abc1bbf9);
-    playerkilled_sharedlogic_early(var_642470e1abc1bbf9);
-    playerkilled_handledeathtype(var_642470e1abc1bbf9);
-    playerkilled_sharedlogic_late(var_642470e1abc1bbf9);
-    playerkilled_deathscene(var_642470e1abc1bbf9);
-    playerkilled_killcam(var_642470e1abc1bbf9);
-    playerkilled_spawn(var_642470e1abc1bbf9);
+    deathdata = victim playerkilled_initdeathdata(inflictor, attacker, victim, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration, isfauxdeath);
+    playerkilled_parameterfixup(deathdata);
+    playerkilled_precalc(deathdata);
+    playerkilled_sharedlogic_early(deathdata);
+    playerkilled_handledeathtype(deathdata);
+    playerkilled_sharedlogic_late(deathdata);
+    playerkilled_deathscene(deathdata);
+    playerkilled_killcam(deathdata);
+    playerkilled_spawn(deathdata);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf509
 // Size: 0x14
 function isswitchingteams() {
     if (isdefined(self.switching_teams)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf525
 // Size: 0x46
@@ -4051,44 +4035,44 @@ function isteamswitchbalanced() {
     return playercounts[self.joining_team] - playercounts[self.leaving_team] < 2;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf573
 // Size: 0x6b
 function isfriendlyfire(victim, attacker) {
     if (!level.teambased) {
-        return 0;
+        return false;
     }
     if (!isdefined(attacker)) {
-        return 0;
+        return false;
     }
     if (!isplayer(attacker) && !isdefined(attacker.team)) {
-        return 0;
+        return false;
     }
     if (victim.team != attacker.team) {
-        return 0;
+        return false;
     }
     if (victim == attacker) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf5e6
 // Size: 0x21
 function killedself(attacker) {
     if (!isplayer(attacker)) {
-        return 0;
+        return false;
     }
     if (attacker != self) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf60f
 // Size: 0x83
@@ -4108,12 +4092,12 @@ function handleteamchangedeath() {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf699
 // Size: 0x1a2
-function handleworlddeath(var_642470e1abc1bbf9, attacker, lifeid, smeansofdeath, shitloc) {
-    victim = var_642470e1abc1bbf9.victim;
+function handleworlddeath(deathdata, attacker, lifeid, smeansofdeath, shitloc) {
+    victim = deathdata.victim;
     victim.deathspectatepos = victim.origin;
     if (!isdefined(attacker)) {
         return;
@@ -4127,19 +4111,19 @@ function handleworlddeath(var_642470e1abc1bbf9, attacker, lifeid, smeansofdeath,
         assert(isagent(attacker) || teams::isgameplayteam(attacker.team) || teams::function_44a6f98cc3c0f5f4(attacker.team));
     #/
     if (level.teambased && attacker.team != self.team || !level.teambased) {
-        if (isdefined(level.onnormaldeath) && (isplayer(attacker) || isagent(attacker)) && attacker.team != "spectator" || isdefined(attacker.var_acb55a437c3145c0)) {
+        if (isdefined(level.onnormaldeath) && (isplayer(attacker) || isagent(attacker)) && attacker.team != "spectator" || isdefined(attacker.damagetrigger)) {
             if (!level.gameended) {
                 [[ level.onnormaldeath ]](self, attacker, lifeid, smeansofdeath);
             }
         }
     }
     if (isagent(attacker) || teams::function_44a6f98cc3c0f5f4(attacker.team)) {
-        var_642470e1abc1bbf9.dokillcam = 1;
+        deathdata.dokillcam = 1;
         thread handlenormaldeath_sounds(attacker, victim, smeansofdeath);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf842
 // Size: 0xfa
@@ -4155,8 +4139,8 @@ function handlesuicidedeath(smeansofdeath, shitloc) {
     if (isdefined(level.onsuicidedeath)) {
         [[ level.onsuicidedeath ]](self);
     }
-    if (isdefined(level.var_90420335f9a84867)) {
-        self [[ level.var_90420335f9a84867 ]](undefined, 0);
+    if (isdefined(level.onplayerkilledcallback)) {
+        self [[ level.onplayerkilledcallback ]](undefined, 0);
     }
     self.suicidespawndelay = 1;
     if (isdefined(self.friendlydamage)) {
@@ -4165,26 +4149,26 @@ function handlesuicidedeath(smeansofdeath, shitloc) {
     thread function_4e8bd2bd787c0dda(smeansofdeath);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf943
 // Size: 0x281
-function handlefriendlyfiredeath(var_642470e1abc1bbf9) {
-    attacker = var_642470e1abc1bbf9.attacker;
-    victim = var_642470e1abc1bbf9.victim;
-    meansofdeath = var_642470e1abc1bbf9.meansofdeath;
+function handlefriendlyfiredeath(deathdata) {
+    attacker = deathdata.attacker;
+    victim = deathdata.victim;
+    meansofdeath = deathdata.meansofdeath;
     var_f03e984a6fb59137 = 0;
     if (meansofdeath == "MOD_GRENADE" || meansofdeath == "MOD_GRENADE_SPLASH") {
-        var_da0825016d12704e = function_1823ff50bb28148d(game_utility::function_60bf8d82001fc22c());
+        var_da0825016d12704e = function_1823ff50bb28148d(game_utility::getbasegametype());
         if (var_da0825016d12704e == #"control" || var_da0825016d12704e == #"koth") {
             if (isdefined(victim.isonobjective) && istrue(victim.isonobjective)) {
                 var_f03e984a6fb59137 = 1;
             }
         }
-    } else if (istrue(var_642470e1abc1bbf9.iskillstreakweapon)) {
+    } else if (istrue(deathdata.iskillstreakweapon)) {
         var_f03e984a6fb59137 = 1;
     }
-    if (istrue(var_642470e1abc1bbf9.var_bfcdebee0e8a3189)) {
+    if (istrue(deathdata.var_bfcdebee0e8a3189)) {
         return;
     }
     if (var_f03e984a6fb59137 && attacker.pers["teamkills"] < level.maxallowedteamkills) {
@@ -4200,7 +4184,7 @@ function handlefriendlyfiredeath(var_642470e1abc1bbf9) {
     if (level.maxallowedteamkills < 0) {
         return;
     }
-    teamkilldelay = attacker namespace_66c176d3c67cc0c2::teamkilldelay();
+    teamkilldelay = attacker playerlogic::teamkilldelay();
     if (teamkilldelay > 0) {
         attacker.pers["teamKillPunish"] = 1;
         attacker notify("team_kill_punish");
@@ -4214,57 +4198,60 @@ function handlefriendlyfiredeath(var_642470e1abc1bbf9) {
         if (!istrue(attacker.pers["hitFFLimit"]) && attacker.pers["teamkills"] >= level.maxallowedteamkills) {
             attacker.pers["hitFFLimit"] = 1;
             attacker hud_message::showerrormessage("MP/FRIENDLY_FIRE_PUNISH_SWITCH");
-        } else if (istrue(level.var_7d731c7dcbefbf3d)) {
+            return;
+        }
+        if (istrue(level.var_7d731c7dcbefbf3d)) {
             attacker hud_message::showerrormessage("MP/FRIENDLY_FIRE_WILL_NOT");
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfbcb
 // Size: 0x364
-function handleinlaststanddeath(var_642470e1abc1bbf9) {
+function handleinlaststanddeath(deathdata) {
     /#
-        if (isbot(var_642470e1abc1bbf9.victim) && getdvarint(@"hash_e125675f281d4f47", 0) == 1) {
-            var_642470e1abc1bbf9.dokillcam = 0;
+        if (isbot(deathdata.victim) && getdvarint(@"hash_e125675f281d4f47", 0) == 1) {
+            deathdata.dokillcam = 0;
             return;
         }
     #/
-    if (istrue(level.var_1a2b600a06ec21f4.var_198508771f0592a9)) {
+    if (istrue(level.gamemodebundle.var_198508771f0592a9)) {
         attacker = self.laststandattacker;
         inflictor = self.laststanddowneddata.inflictor;
         objweapon = self.laststanddowneddata.objweapon;
         meansofdeath = self.laststanddowneddata.meansofdeath;
         if (!isdefined(inflictor)) {
-            inflictor = self.laststanddowneddata.var_bfcfdc8956ad23b0;
+            inflictor = self.laststanddowneddata.inflictorcopy;
         }
         if (isdefined(self.attackers)) {
             foreach (var_7694fc472af9f89d in self.attackers) {
                 if (var_7694fc472af9f89d == attacker) {
                     continue;
-                } else if (!isdefined(var_7694fc472af9f89d.modifiers)) {
+                }
+                if (!isdefined(var_7694fc472af9f89d.modifiers)) {
                     var_7694fc472af9f89d.modifiers = [];
                 }
             }
         }
-        handlenormaldeath(var_642470e1abc1bbf9.lifeid, attacker, inflictor, objweapon, meansofdeath, self, var_642470e1abc1bbf9.iskillstreakweapon, var_642470e1abc1bbf9, 0);
+        handlenormaldeath(deathdata.lifeid, attacker, inflictor, objweapon, meansofdeath, self, deathdata.iskillstreakweapon, deathdata, 0);
     } else {
-        if (!istrue(var_642470e1abc1bbf9.victim.disable_killcam)) {
-            var_642470e1abc1bbf9.dokillcam = 1;
+        if (!istrue(deathdata.victim.disable_killcam)) {
+            deathdata.dokillcam = 1;
         }
-        if (!var_642470e1abc1bbf9.iskillstreakweapon) {
-            var_642470e1abc1bbf9.attacker thread points::function_e3e3e81453fd788b(#"hash_4b2faaeab2b30db", var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.victim);
+        if (!deathdata.iskillstreakweapon) {
+            deathdata.attacker thread points::function_e3e3e81453fd788b(#"hash_4b2faaeab2b30db", deathdata.objweapon, deathdata.victim);
         }
         if (isdefined(self.laststandattacker)) {
             self.laststandattacker playerincrementscoreboardkills();
         }
         var_24244b97c44b0386 = undefined;
-        if (isdefined(self.laststandattacker) && var_642470e1abc1bbf9.attacker != self.laststandattacker) {
+        if (isdefined(self.laststandattacker) && deathdata.attacker != self.laststandattacker) {
             var_24244b97c44b0386 = 1;
-            thread challenges::onplayerkilled(self.laststandattacker, self.laststandattacker, 0, var_642470e1abc1bbf9.damageflags, self.laststandmeansofdeath, self.laststandweaponobj, var_642470e1abc1bbf9.hitloc, self.laststandattackermodifiers);
-            if (isdefined(level.var_90420335f9a84867)) {
-                self [[ level.var_90420335f9a84867 ]](self.laststandattacker, 0);
+            thread challenges::onplayerkilled(self.laststandattacker, self.laststandattacker, 0, deathdata.damageflags, self.laststandmeansofdeath, self.laststandweaponobj, deathdata.hitloc, self.laststandattackermodifiers);
+            if (isdefined(level.onplayerkilledcallback)) {
+                self [[ level.onplayerkilledcallback ]](self.laststandattacker, 0);
             }
             self.laststandattacker thread rank::scoreeventpopup(#"kill_confirmed");
         }
@@ -4272,7 +4259,7 @@ function handleinlaststanddeath(var_642470e1abc1bbf9) {
         if (istrue(var_24244b97c44b0386)) {
             var_b9c265f657115663 = 1;
         }
-        handlenormaldeath(var_642470e1abc1bbf9.lifeid, var_642470e1abc1bbf9.attacker, var_642470e1abc1bbf9.inflictor, var_642470e1abc1bbf9.objweapon, var_642470e1abc1bbf9.meansofdeath, self, var_642470e1abc1bbf9.iskillstreakweapon, var_642470e1abc1bbf9, 1, var_b9c265f657115663);
+        handlenormaldeath(deathdata.lifeid, deathdata.attacker, deathdata.inflictor, deathdata.objweapon, deathdata.meansofdeath, self, deathdata.iskillstreakweapon, deathdata, 1, var_b9c265f657115663);
     }
     self.laststandattacker = undefined;
     self.laststandmeansofdeath = undefined;
@@ -4280,7 +4267,7 @@ function handleinlaststanddeath(var_642470e1abc1bbf9) {
     self.laststandattackermodifiers = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xff36
 // Size: 0x3f
@@ -4295,7 +4282,7 @@ function function_11ea8154fd8726c5(var_306f84215cfc4820) {
     return "";
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xff7d
 // Size: 0x3bb
@@ -4312,25 +4299,19 @@ function handlenormaldeath_sounds(attacker, victim, smeansofdeath, einflictor, v
     var_31920aa482f41ae8 = !game_utility::function_b2c4b42f9236924() || getdvarint(@"hash_c2989c398361dbb3", 0) != 0;
     var_e7d4a41e01c7228c = game_utility::function_b2c4b42f9236924() && getdvarint(@"hash_58f2c5b698828174", 0) != 0;
     if (function_80ade967129c9845()) {
-        goto LOC_000002c7;
-    }
-    if (isagent(attacker)) {
+    } else if (isagent(attacker)) {
         if (!utility::isbulletdamage(smeansofdeath) || isdefined(einflictor) && attacker != einflictor) {
-            goto LOC_0000017f;
-        }
-        if (smeansofdeath == "MOD_HEAD_SHOT") {
+        } else if (smeansofdeath == "MOD_HEAD_SHOT") {
             ent playsoundtoplayer("bullet_impact_headshot_plr", victim);
             ent playsoundtoteam("bullet_impact_headshot_npc", victim.team, victim);
         } else {
             ent playsoundtoteam("mp_hit_alert_final_npc", victim.team);
-        LOC_0000017f:
         }
-    LOC_0000017f:
     } else if (!utility::isbulletdamage(smeansofdeath) || isdefined(einflictor) && attacker != einflictor) {
         if (var_e08e0d086a79892b) {
             if (smeansofdeath == "MOD_PROJECTILE" || smeansofdeath == "MOD_PROJECTILE_SPLASH") {
-                var_90e6bc3a37537c77 = "mp_kill_alert" + function_11ea8154fd8726c5(var_306f84215cfc4820);
-                ent playsoundtoplayer(var_90e6bc3a37537c77, attacker);
+                soundtoplay = "mp_kill_alert" + function_11ea8154fd8726c5(var_306f84215cfc4820);
+                ent playsoundtoplayer(soundtoplay, attacker);
             } else {
                 ent playsoundtoplayer("mp_kill_alert_quiet", attacker);
             }
@@ -4339,8 +4320,8 @@ function handlenormaldeath_sounds(attacker, victim, smeansofdeath, einflictor, v
         ent playsoundtoplayer("bullet_impact_headshot_plr", victim);
         ent playsoundtoplayer("bullet_impact_headshot", attacker);
         if (var_e08e0d086a79892b) {
-            var_90e6bc3a37537c77 = "mp_headshot_alert" + function_11ea8154fd8726c5(var_306f84215cfc4820);
-            ent playsoundtoplayer(var_90e6bc3a37537c77, attacker);
+            soundtoplay = "mp_headshot_alert" + function_11ea8154fd8726c5(var_306f84215cfc4820);
+            ent playsoundtoplayer(soundtoplay, attacker);
         }
         ent playsoundtoteam("bullet_impact_headshot_npc", victim.team, victim);
         ent playsoundtoteam("bullet_impact_headshot_npc", attacker.team, attacker);
@@ -4348,16 +4329,13 @@ function handlenormaldeath_sounds(attacker, victim, smeansofdeath, einflictor, v
         ent playsoundtoteam("mp_hit_alert_final_npc", victim.team);
         ent playsoundtoteam("mp_hit_alert_final_npc", attacker.team, attacker);
         if (var_e08e0d086a79892b) {
-            var_506b055e36391339 = utility::ter_op(var_e7d4a41e01c7228c, "mp_kill_alert_quiet", "mp_kill_alert");
+            killalert = utility::ter_op(var_e7d4a41e01c7228c, "mp_kill_alert_quiet", "mp_kill_alert");
             if (!var_e7d4a41e01c7228c) {
-                var_506b055e36391339 = var_506b055e36391339 + function_11ea8154fd8726c5(var_306f84215cfc4820);
+                killalert = killalert + function_11ea8154fd8726c5(var_306f84215cfc4820);
             }
-            ent playsoundtoplayer(var_506b055e36391339, attacker);
-        LOC_000002c7:
+            ent playsoundtoplayer(killalert, attacker);
         }
-    LOC_000002c7:
     }
-LOC_000002c7:
     if (isplayer(victim)) {
         if (smeansofdeath != "MOD_EXECUTION" && (smeansofdeath == "MOD_MELEE" || smeansofdeath == "MOD_FALLING" || smeansofdeath == "MOD_TRIGGER_HURT" || smeansofdeath == "MOD_SUICIDE")) {
             victim playlocalsound("deaths_door_death_quiet");
@@ -4373,16 +4351,16 @@ LOC_000002c7:
                 if (isdefined(var_10e1ef8c47f876d8) && var_10e1ef8c47f876d8 != "") {
                     victim playlocalsound(var_10e1ef8c47f876d8);
                 }
-            } else {
-                /#
-                    function_5013853947770621(#"hash_e4a6063613016089");
-                #/
+                return;
             }
+            /#
+                function_5013853947770621(#"hash_e4a6063613016089");
+            #/
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1033f
 // Size: 0xa2
@@ -4400,7 +4378,7 @@ function function_4e8bd2bd787c0dda(smeansofdeath) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x103e8
 // Size: 0xd
@@ -4408,32 +4386,32 @@ function function_80ade967129c9845() {
     return istrue(level.var_57ece26e490ad8c4);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params a, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x103fd
 // Size: 0x17e7
-function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeath, victim, iskillstreakweapon, var_642470e1abc1bbf9, var_c7944407e05a6f77, var_b9c265f657115663) {
+function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeath, victim, iskillstreakweapon, deathdata, var_c7944407e05a6f77, var_b9c265f657115663) {
     if (smeansofdeath == "MOD_GRENADE" && einflictor == attacker) {
-        addattacker(victim, attacker, einflictor, objweapon, var_642470e1abc1bbf9.damage, (0, 0, 0), var_642470e1abc1bbf9.direction_vec, var_642470e1abc1bbf9.hitloc, var_642470e1abc1bbf9.psoffsettime, smeansofdeath);
+        addattacker(victim, attacker, einflictor, objweapon, deathdata.damage, (0, 0, 0), deathdata.direction_vec, deathdata.hitloc, deathdata.psoffsettime, smeansofdeath);
     }
-    var_642470e1abc1bbf9.dokillcam = 1;
+    deathdata.dokillcam = 1;
     if (isai(victim) && isdefined(level.bot_funcs) && isdefined(level.bot_funcs["should_do_killcam"])) {
-        var_642470e1abc1bbf9.dokillcam = victim [[ level.bot_funcs["should_do_killcam"] ]]();
+        deathdata.dokillcam = victim [[ level.bot_funcs["should_do_killcam"] ]]();
     }
     if (istrue(level.disable_killcam) || istrue(victim.disable_killcam)) {
-        var_642470e1abc1bbf9.dokillcam = 0;
+        deathdata.dokillcam = 0;
     }
-    attacker thread events::killedplayer(lifeid, self, objweapon, smeansofdeath, einflictor, var_642470e1abc1bbf9);
-    if (isbulletdamage(smeansofdeath) || ismeleedamage(smeansofdeath) || function_102d677621400199(objweapon)) {
+    attacker thread events::killedplayer(lifeid, self, objweapon, smeansofdeath, einflictor, deathdata);
+    if (isbulletdamage(smeansofdeath) || ismeleedamage(smeansofdeath) || islauncherweapon(objweapon)) {
         attacker thread namespace_4925be476a433a59::function_4552872977024e34(victim);
     }
     if (!istrue(level.disablestattracking)) {
         self.var_f215f63a4834bb72 = isdefined(self.lastattackedshieldplayer) && isdefined(self.lastattackedshieldtime) && self.lastattackedshieldplayer != attacker;
-        victim thread namespace_aad14af462a74d08::onplayerkilled(einflictor, attacker, var_642470e1abc1bbf9.damage, var_642470e1abc1bbf9.damageflags, smeansofdeath, objweapon, var_642470e1abc1bbf9.hitloc, attacker.modifiers);
-        if (isdefined(level.var_90420335f9a84867)) {
-            self [[ level.var_90420335f9a84867 ]](attacker, istrue(var_b9c265f657115663));
+        victim thread scripts/cp_mp/challenges::onplayerkilled(einflictor, attacker, deathdata.damage, deathdata.damageflags, smeansofdeath, objweapon, deathdata.hitloc, attacker.modifiers);
+        if (isdefined(level.onplayerkilledcallback)) {
+            self [[ level.onplayerkilledcallback ]](attacker, istrue(var_b9c265f657115663));
         }
-        namespace_b919c4be206d3c80::function_6f792f70ffe4cd4d(attacker, victim);
+        scripts/mp/codcasterclientmatchdata::function_6f792f70ffe4cd4d(attacker, victim);
         victim.pers["cur_death_streak"]++;
         if (smeansofdeath == "MOD_HEAD_SHOT") {
             attacker namespace_26e1361ab951ec6b::addtoplayerstat(1, "combatStats", "headshots");
@@ -4483,7 +4461,7 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
             case #"hash_9ba0a6ff6081954e":
             case #"hash_acc752b9cde2ff4f":
                 attacker stats::incpersstat("throwingKnifeKills", 1);
-                attacker namespace_883b0db1d686c37e::addthrowingknifecharge();
+                attacker pet_watch::addthrowingknifecharge();
                 break;
             case #"hash_4320d77f90725183":
                 attacker stats::incpersstat("c4Kills", 1);
@@ -4513,10 +4491,10 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
         namespace_969918091e5d9483::function_5a82c337b996baa5(6, 0);
         if (isplayer(attacker) && !namespace_e0ee43ef2dddadaa::iskillstreakweapon(objweapon.basename)) {
             attacker namespace_969918091e5d9483::function_1882f80b14421089(6, 1);
-            consecutivekills = attacker.var_1a34ed8eb5c6e9c[6];
-            if (!(consecutivekills % 5)) {
+            consecutiveKills = attacker.var_1a34ed8eb5c6e9c[6];
+            if (!(consecutiveKills % 5)) {
                 if (!game_utility::isbrstylegametype()) {
-                    namespace_31d46e80f376f2f7::function_7d42d3f8dd68280c(13, attacker.team, attacker getentitynumber(), consecutivekills);
+                    namespace_31d46e80f376f2f7::function_7d42d3f8dd68280c(13, attacker.team, attacker getentitynumber(), consecutiveKills);
                 }
             }
         }
@@ -4536,15 +4514,15 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
                 var_d2db6cb7f6d5d36d.pers["killsPerWeapon"] = [];
             }
             rootname = weapon::getweaponrootname(objweapon);
-            var_b590dd50c4fe1f77 = 0;
-            foreach (var_5dc27a5bf459c504, data in var_d2db6cb7f6d5d36d.pers["killsPerWeapon"]) {
-                if (var_5dc27a5bf459c504 == rootname) {
+            weaponfound = 0;
+            foreach (weaponkey, data in var_d2db6cb7f6d5d36d.pers["killsPerWeapon"]) {
+                if (weaponkey == rootname) {
                     data.killcount++;
-                    var_b590dd50c4fe1f77 = 1;
+                    weaponfound = 1;
                     break;
                 }
             }
-            if (!var_b590dd50c4fe1f77) {
+            if (!weaponfound) {
                 data = spawnstruct();
                 data.killcount = 1;
                 data.basename = objweapon.basename;
@@ -4553,7 +4531,7 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
             }
         }
     }
-    var_90ab65120e5446c7 = attacker.pers["cur_kill_streak"];
+    lastkillstreak = attacker.pers["cur_kill_streak"];
     if (!istrue(level.ignorescoring) && (isalive(attacker) || isdefined(attacker.streaktype) && attacker.streaktype == "support")) {
         if (smeansofdeath == "MOD_MELEE" && !attacker killstreak::isjuggernaut() || attacker killstreak::killshouldaddtokillstreak(objweapon)) {
             attacker registerkill(objweapon, smeansofdeath, 1, iskillstreakweapon);
@@ -4574,19 +4552,19 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
             }
         }
     }
-    if (istrue(level.var_1a2b600a06ec21f4.var_198508771f0592a9)) {
+    if (istrue(level.gamemodebundle.var_198508771f0592a9)) {
         attacker function_1306e8a08ab7bbab(victim, objweapon, einflictor, iskillstreakweapon);
     } else if (!istrue(iskillstreakweapon) && !weapon::iskillstreakvehicleinflictor(einflictor) || points::isforcekillstreakprogressweapon(objweapon)) {
         attacker thread events::killeventtextpopup(#"kill", 0);
-        var_4d407fe4bf2c6305 = undefined;
+        pointoverride = undefined;
         if (game_utility::isbrstylegametype() && !flags::gameflag("prematch_done")) {
-            var_4d407fe4bf2c6305 = 100;
+            pointoverride = 100;
         }
-        var_4b5a99c16abfdfb1 = undefined;
+        xpoverride = undefined;
         if (istrue(level.var_f60a3be40c34023d)) {
-            var_4b5a99c16abfdfb1 = getdvarint(@"hash_defd7006efde9127", 100);
+            xpoverride = getdvarint(@"hash_defd7006efde9127", 100);
         }
-        attacker thread points::doscoreevent(#"kill", objweapon, var_4d407fe4bf2c6305, var_4b5a99c16abfdfb1, victim);
+        attacker thread points::doScoreEvent(#"kill", objweapon, pointoverride, xpoverride, victim);
         attacker bounty::bountyincreasestreak();
         attacker bounty::bountycollect(victim.lastbounty, victim.origin);
     }
@@ -4602,42 +4580,42 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
     }
     if (!attacker utility::isusingremote()) {
         weaponlist = victim getweaponslistprimaries();
-        var_5d4277e0c084de15 = 0;
+        wassniper = 0;
         foreach (weapon in weaponlist) {
             if (weaponclass(weapon.basename) == "sniper") {
-                var_5d4277e0c084de15 = 1;
+                wassniper = 1;
                 break;
             }
         }
-        if (var_5d4277e0c084de15) {
-            level thread namespace_20260f65229aa888::trysaylocalsound(attacker, #"hash_2ee580bbe139941a", undefined, 0.75);
+        if (wassniper) {
+            level thread battlechatter_mp::trysaylocalsound(attacker, #"hash_2ee580bbe139941a", undefined, 0.75);
         } else {
-            level thread namespace_20260f65229aa888::trysaylocalsound(attacker, #"hash_29c83d721f765ab4", undefined, 0.75);
+            level thread battlechatter_mp::trysaylocalsound(attacker, #"hash_29c83d721f765ab4", undefined, 0.75);
         }
     }
-    var_5a127424b8df87b6 = undefined;
+    vocallout = undefined;
     switch (victim.loadoutarchetype) {
     case #"hash_98ff6f21872f18e0":
-        var_5a127424b8df87b6 = "plr_killfirm_warfighter";
+        vocallout = "plr_killfirm_warfighter";
         break;
     }
-    if (isdefined(var_5a127424b8df87b6)) {
-        level thread namespace_20260f65229aa888::saytoself(attacker, var_5a127424b8df87b6, "plr_killfirm_generic", 0.75);
+    if (isdefined(vocallout)) {
+        level thread battlechatter_mp::saytoself(attacker, vocallout, "plr_killfirm_generic", 0.75);
     }
     if (istrue(self.var_f215f63a4834bb72) && !istrue(level.disablestattracking)) {
         var_6d6b794a7b5386a0 = getdvarint(@"hash_89c66b6f125f4f6", 2500);
-        if (var_642470e1abc1bbf9.deathtime - self.lastattackedshieldtime < var_6d6b794a7b5386a0) {
+        if (deathdata.deathtime - self.lastattackedshieldtime < var_6d6b794a7b5386a0) {
             self.lastattackedshieldplayer thread gamescore::processshieldassist(self);
-        } else if (isalive(self.lastattackedshieldplayer) && var_642470e1abc1bbf9.deathtime - self.lastattackedshieldtime < 5000) {
+        } else if (isalive(self.lastattackedshieldplayer) && deathdata.deathtime - self.lastattackedshieldtime < 5000) {
             forwardvec = vectornormalize(anglestoforward(self.angles));
-            var_5a1dae383f6c2bde = vectornormalize(self.lastattackedshieldplayer.origin - self.origin);
-            if (vectordot(var_5a1dae383f6c2bde, forwardvec) > 0.925) {
+            shieldvec = vectornormalize(self.lastattackedshieldplayer.origin - self.origin);
+            if (vectordot(shieldvec, forwardvec) > 0.925) {
                 self.lastattackedshieldplayer thread gamescore::processshieldassist(self);
             } else {
-                self.lastattackedshieldplayer namespace_e8a49b70d0769b66::function_5a687b65c904b197(attacker, self, attacker.team);
+                self.lastattackedshieldplayer scripts/mp/gamescore::function_5a687b65c904b197(attacker, self, attacker.team);
             }
         } else {
-            self.lastattackedshieldplayer namespace_e8a49b70d0769b66::function_5a687b65c904b197(attacker, self, attacker.team);
+            self.lastattackedshieldplayer scripts/mp/gamescore::function_5a687b65c904b197(attacker, self, attacker.team);
         }
     }
     if (!game_utility::runleanthreadmode()) {
@@ -4646,8 +4624,8 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
     var_986a03ff4ba86052 = 1;
     if (!istrue(level.disablestattracking) && isdefined(self.attackers)) {
         var_ae089731ca00d639 = 0;
-        if (istrue(level.var_1a2b600a06ec21f4.var_198508771f0592a9)) {
-            var_ae089731ca00d639 = level.var_1a2b600a06ec21f4.var_ae089731ca00d639 * 1000;
+        if (istrue(level.gamemodebundle.var_198508771f0592a9)) {
+            var_ae089731ca00d639 = level.gamemodebundle.var_ae089731ca00d639 * 1000;
         }
         foreach (player in self.attackers) {
             if (isdefined(level.assists_disabled)) {
@@ -4667,48 +4645,48 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
                 assert(isdefined(attackerdata));
             #/
             assistweapon = attackerdata.objweapon;
-            if (istrue(level.var_1a2b600a06ec21f4.var_198508771f0592a9)) {
+            if (istrue(level.gamemodebundle.var_198508771f0592a9)) {
                 if (istrue(self.inlaststand)) {
                     if (attackerdata.lasttimedamaged < self.laststandstarttime) {
-                        var_5a52fa5c572f20b5 = self.laststandstarttime - attackerdata.lasttimedamaged;
-                        if (var_5a52fa5c572f20b5 > var_ae089731ca00d639) {
+                        timesincelastdamaged = self.laststandstarttime - attackerdata.lasttimedamaged;
+                        if (timesincelastdamaged > var_ae089731ca00d639) {
                             continue;
                         }
                     }
-                    goto LOC_00000fee;
-                }
-                var_5a52fa5c572f20b5 = var_642470e1abc1bbf9.deathtime - attackerdata.lasttimedamaged;
-                jumpiffalse(var_5a52fa5c572f20b5 > var_ae089731ca00d639) LOC_00000fee;
-            } else {
-            LOC_00000fee:
-                if (!(istrue(var_b9c265f657115663) && isdefined(self.laststandattacker) && player == self.laststandattacker)) {
-                    var_54351d786449ee9e = 0;
-                    if (isdefined(attackerdata.damage)) {
-                        if (attackerdata.damage >= 70) {
-                            var_54351d786449ee9e = 2;
-                        } else if (attackerdata.damage >= 35) {
-                            var_54351d786449ee9e = 1;
-                        }
-                    }
-                    player thread gamescore::processassist(self, assistweapon, var_54351d786449ee9e);
-                }
-                var_986a03ff4ba86052 = 0;
-                if (isdefined(player.super)) {
-                    if (player.super.staticdata.ref == "super_battlerage") {
-                        player battlerage::function_3f783a5aca22152d();
+                } else {
+                    timesincelastdamaged = deathdata.deathtime - attackerdata.lasttimedamaged;
+                    if (timesincelastdamaged > var_ae089731ca00d639) {
+                        continue;
                     }
                 }
-                if (!isdefined(player.equipment)) {
-                    player.equipment = [];
-                }
-                if (isdefined(player.equipment["secondary"]) && player.equipment["secondary"] == "equip_battlerage") {
-                    if (istrue(player.var_808d06ddfc93a4e4)) {
-                        player battlerage::function_9e87f6624dd929f1();
+            }
+            if (!(istrue(var_b9c265f657115663) && isdefined(self.laststandattacker) && player == self.laststandattacker)) {
+                bonusmagnitude = 0;
+                if (isdefined(attackerdata.damage)) {
+                    if (attackerdata.damage >= 70) {
+                        bonusmagnitude = 2;
+                    } else if (attackerdata.damage >= 35) {
+                        bonusmagnitude = 1;
                     }
                 }
-                if (player perk::_hasperk("specialty_boom")) {
-                    victim thread namespace_30a6d7a07831c1e2::setboominternal(player);
+                player thread gamescore::processassist(self, assistweapon, bonusmagnitude);
+            }
+            var_986a03ff4ba86052 = 0;
+            if (isdefined(player.super)) {
+                if (player.super.staticdata.ref == "super_battlerage") {
+                    player battlerage::function_3f783a5aca22152d();
                 }
+            }
+            if (!isdefined(player.equipment)) {
+                player.equipment = [];
+            }
+            if (isdefined(player.equipment["secondary"]) && player.equipment["secondary"] == "equip_battlerage") {
+                if (istrue(player.var_808d06ddfc93a4e4)) {
+                    player battlerage::function_9e87f6624dd929f1();
+                }
+            }
+            if (player perk::_hasperk("specialty_boom")) {
+                victim thread perkfunctions::setboominternal(player);
             }
         }
     }
@@ -4730,19 +4708,19 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
     }
     if (level.teambased) {
         if (isdefined(attacker.team) && isdefined(level.uavmodels) && isdefined(level.uavmodels[attacker.team]) && level.uavmodels[attacker.team].size > 0) {
-            var_543ee40d273786c8 = [];
+            uavtypes = [];
             foreach (uav in level.uavmodels[attacker.team]) {
-                if (isdefined(uav) && isdefined(uav.owner) && uav.owner != attacker && !utility::array_contains(var_543ee40d273786c8, uav.uavtype)) {
-                    eventname = function_2ef675c13ca1c4af(function_1823ff50bb28148d(uav.uavtype), "_assist");
-                    var_91185ff4a2e16a72 = undefined;
+                if (isdefined(uav) && isdefined(uav.owner) && uav.owner != attacker && !utility::array_contains(uavtypes, uav.uavtype)) {
+                    eventname = hashcat(function_1823ff50bb28148d(uav.uavtype), "_assist");
+                    pointsoverride = undefined;
                     if (!isdefined(uav.assistsgiven)) {
                         uav.assistsgiven = 0;
                     }
                     var_ccfe1eb50c191e67 = utility::ter_op(uav.uavtype == "directional_uav", 15, 10);
                     if (uav.assistsgiven < var_ccfe1eb50c191e67) {
-                        uav.owner thread points::doscoreevent(eventname, undefined, var_91185ff4a2e16a72, undefined, undefined, undefined, undefined, undefined, uav.streakinfo);
+                        uav.owner thread points::doScoreEvent(eventname, undefined, pointsoverride, undefined, undefined, undefined, undefined, undefined, uav.streakinfo);
                     } else {
-                        uav.owner thread points::givexpwithtext(eventname, var_91185ff4a2e16a72);
+                        uav.owner thread points::givexpwithtext(eventname, pointsoverride);
                     }
                     uav.assistsgiven++;
                     switch (uav.uavtype) {
@@ -4756,7 +4734,7 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
                         uav.owner stats::incpersstat("killstreakAUAVAssists", 1);
                         break;
                     }
-                    var_543ee40d273786c8[var_543ee40d273786c8.size] = uav.uavtype;
+                    uavtypes[uavtypes.size] = uav.uavtype;
                     challenges::processuavassist(uav.owner, uav.uavtype);
                     uav.owner script::bufferednotify("update_uav_assist_buffered");
                     uav.owner combatrecordkillstreakstat(uav.uavtype);
@@ -4767,17 +4745,17 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
             foreach (drone in level.supportdrones) {
                 if (level.teambased && drone.team == attacker.team && drone.owner != attacker) {
                     if (isdefined(drone.enemiesmarked) && isdefined(drone.enemiesmarked[self getentitynumber()])) {
-                        drone.owner thread points::doscoreevent(function_2ef675c13ca1c4af(function_1823ff50bb28148d(drone.streakinfo.streakname), "_assist"));
+                        drone.owner thread points::doScoreEvent(hashcat(function_1823ff50bb28148d(drone.streakinfo.streakname), "_assist"));
                     }
                 }
                 if (drone.helperdronetype == "scrambler_drone_guard") {
                     if (level.teambased && drone.team == attacker.team && drone.owner != attacker) {
-                        eventname = function_2ef675c13ca1c4af(function_1823ff50bb28148d(drone.streakinfo.streakname), "_assist");
+                        eventname = hashcat(function_1823ff50bb28148d(drone.streakinfo.streakname), "_assist");
                         if (!isdefined(drone.assistsgiven)) {
                             drone.assistsgiven = 0;
                         }
                         if (drone.assistsgiven < 10) {
-                            drone.owner thread points::doscoreevent(eventname, undefined, undefined, undefined, undefined, undefined, undefined, undefined, drone.streakinfo);
+                            drone.owner thread points::doScoreEvent(eventname, undefined, undefined, undefined, undefined, undefined, undefined, undefined, drone.streakinfo);
                         } else {
                             drone.owner thread points::givexpwithtext(eventname);
                         }
@@ -4789,21 +4767,21 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
         }
         binoculars::binoculars_giveassistpoints(attacker, self);
         if (isdefined(attacker.team) && isdefined(level.activewpzones) && level.activewpzones.size > 0) {
-            var_b16682794bb72308 = level.activewpzones[0];
-            var_bfb78b87a67e2eb9 = var_b16682794bb72308.owner;
-            var_a9be838ef5e091ef = var_b16682794bb72308.team;
+            wpzone = level.activewpzones[0];
+            var_bfb78b87a67e2eb9 = wpzone.owner;
+            var_a9be838ef5e091ef = wpzone.team;
             if (attacker.team == var_a9be838ef5e091ef && attacker != var_bfb78b87a67e2eb9) {
                 if (istrue(victim.wpdisorient) || istrue(victim.wpburning)) {
                     eventname = #"hash_213b00973af47f5e";
-                    if (!isdefined(var_b16682794bb72308.assistsgiven)) {
-                        var_b16682794bb72308.assistsgiven = 0;
+                    if (!isdefined(wpzone.assistsgiven)) {
+                        wpzone.assistsgiven = 0;
                     }
-                    if (var_b16682794bb72308.assistsgiven < 15) {
-                        var_bfb78b87a67e2eb9 thread points::doscoreevent(eventname, undefined, undefined, undefined, undefined, undefined, undefined, undefined, var_b16682794bb72308.streakinfo);
+                    if (wpzone.assistsgiven < 15) {
+                        var_bfb78b87a67e2eb9 thread points::doScoreEvent(eventname, undefined, undefined, undefined, undefined, undefined, undefined, undefined, wpzone.streakinfo);
                     } else {
                         var_bfb78b87a67e2eb9 thread points::givexpwithtext(eventname);
                     }
-                    var_b16682794bb72308.assistsgiven++;
+                    wpzone.assistsgiven++;
                     var_bfb78b87a67e2eb9 stats::incpersstat("killstreakWhitePhosphorousKillsAssists", 1);
                 }
             }
@@ -4813,12 +4791,12 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
         function_b908a35b0981168e();
         if (!function_e42efe66fa95ca55()) {
             attacker setclientomnvar("ui_killed_player", self getentitynumber());
-            attacker setclientomnvar("ui_killed_player_notify", var_642470e1abc1bbf9.deathtime);
+            attacker setclientomnvar("ui_killed_player_notify", deathdata.deathtime);
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11beb
 // Size: 0x73
@@ -4830,18 +4808,20 @@ function function_213650502f1ed86f(victim) {
             var_d2db6cb7f6d5d36d incpersstat("killsFromBehind", 1);
             victim incpersstat("deathsFromBehind", 1);
         }
-    } else if (isdefined(level.prematchaddkillfunc)) {
+        return;
+    }
+    if (isdefined(level.prematchaddkillfunc)) {
         var_d2db6cb7f6d5d36d [[ level.prematchaddkillfunc ]]();
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11c65
 // Size: 0x8c
 function playerincrementscoreboardkills() {
     var_d2db6cb7f6d5d36d = self;
-    if (!namespace_36f464722d326bbe::function_d04af493b6e718ac()) {
+    if (!scripts/cp_mp/utility/game_utility::function_d04af493b6e718ac()) {
         var_d2db6cb7f6d5d36d namespace_26e1361ab951ec6b::addtoplayerstat(1, "combatStats", "kills");
     }
     if (var_d2db6cb7f6d5d36d stats::getpersstat("kills") < 14999) {
@@ -4851,7 +4831,7 @@ function playerincrementscoreboardkills() {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11cf8
 // Size: 0x1c3
@@ -4860,37 +4840,37 @@ function function_1306e8a08ab7bbab(victim, objweapon, einflictor, iskillstreakwe
         /#
             assertex(isdefined(einflictor.equipmentref), "Using equipment with undefined equipmentRef");
         #/
-        var_85a1e8b6a105e2bb = level.equipment.table[einflictor.equipmentref].bundle;
-        scoreevent = var_85a1e8b6a105e2bb.var_9676cbc72225d61c;
+        equipmentbundle = level.equipment.table[einflictor.equipmentref].bundle;
+        scoreevent = equipmentbundle.eliminationscoreevent;
         if (isdefined(scoreevent)) {
-            thread points::doscoreevent(scoreevent, objweapon, undefined, undefined, victim);
+            thread points::doScoreEvent(scoreevent, objweapon, undefined, undefined, victim);
             return;
         }
     } else if (istrue(einflictor.issuper)) {
         /#
             assertex(isdefined(einflictor.equipmentref), "Using super with undefined equipmentRef");
         #/
-        var_19c643069b108770 = level.superglobals.staticsuperdata["super_" + einflictor.equipmentref].bundle;
-        scoreevent = var_19c643069b108770.var_9676cbc72225d61c;
+        superbundle = level.superglobals.staticsuperdata["super_" + einflictor.equipmentref].bundle;
+        scoreevent = superbundle.eliminationscoreevent;
         if (isdefined(scoreevent)) {
-            thread points::doscoreevent(scoreevent, objweapon, undefined, undefined, victim);
+            thread points::doScoreEvent(scoreevent, objweapon, undefined, undefined, victim);
             return;
         }
     } else if (istrue(iskillstreakweapon)) {
         /#
             assertex(isdefined(einflictor.streakinfo), "Using scorestreak with undefined streakInfo");
         #/
-        var_cbab602e6919aad7 = level.var_b23156d776b1d85.var_38f2a11237246ac[einflictor.streakinfo.streakname];
-        scoreevent = var_cbab602e6919aad7.var_9676cbc72225d61c;
+        streakbundle = level.streakglobals.streakbundles[einflictor.streakinfo.streakname];
+        scoreevent = streakbundle.eliminationscoreevent;
         if (isdefined(scoreevent)) {
-            thread points::doscoreevent(scoreevent, objweapon, undefined, undefined, victim);
+            thread points::doScoreEvent(scoreevent, objweapon, undefined, undefined, victim);
             return;
         }
     }
-    thread points::doscoreevent(#"hash_49ee3d646e1fd20f", objweapon, undefined, undefined, victim);
+    thread points::doScoreEvent(#"elimination_kill", objweapon, undefined, undefined, victim);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11ec2
 // Size: 0x6b
@@ -4898,7 +4878,7 @@ function callback_playerkilled(inflictor, attacker, damage, damageflags, meansof
     playerkilled_internal(inflictor, attacker, self, damage, damageflags, meansofdeath, objweapon, direction_vec, hitloc, psoffsettime, deathanimduration, 0);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f34
 // Size: 0x48
@@ -4913,7 +4893,7 @@ function launchshield(damage, meansofdeath) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f83
 // Size: 0x5f
@@ -4929,17 +4909,17 @@ function resetplayervariables() {
     gameobjects::detachusemodels();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11fe9
 // Size: 0x24
 function resetplayeromnvarsonspawn() {
-    namespace_66c176d3c67cc0c2::resetuiomnvarscommon();
+    playerlogic::resetuiomnvarscommon();
     self setclientomnvar("ui_life_kill_count", 0);
     self setclientomnvar("ui_shrapnel_overlay", 0);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x12014
 // Size: 0x43a
@@ -4954,17 +4934,17 @@ function hitlocdebug(attacker, victim, damage, hitloc, dflags) {
     }
     if (!isdefined(attacker.hitlocinited)) {
         for (i = 0; i < 6; i++) {
-            attacker setclientdvar(function_2ef675c13ca1c4af(@"hash_3dd1dde9508849d5", utility::string(i)), "");
+            attacker setclientdvar(hashcat(@"hash_3dd1dde9508849d5", utility::string(i)), "");
         }
         attacker.hitlocinited = 1;
     }
     if (level.splitscreen || !isplayer(attacker)) {
         return;
     }
-    var_f2f77b9518946235 = 6;
+    elemcount = 6;
     if (!isdefined(attacker.damageinfo)) {
         attacker.damageinfo = [];
-        for (i = 0; i < var_f2f77b9518946235; i++) {
+        for (i = 0; i < elemcount; i++) {
             attacker.damageinfo[i] = spawnstruct();
             attacker.damageinfo[i].damage = 0;
             attacker.damageinfo[i].hitloc = "";
@@ -4974,7 +4954,7 @@ function hitlocdebug(attacker, victim, damage, hitloc, dflags) {
         attacker.damageinfocolorindex = 0;
         attacker.damageinfovictim = undefined;
     }
-    for (i = var_f2f77b9518946235 - 1; i > 0; i--) {
+    for (i = elemcount - 1; i > 0; i--) {
         attacker.damageinfo[i].damage = attacker.damageinfo[i - 1].damage;
         attacker.damageinfo[i].hitloc = attacker.damageinfo[i - 1].hitloc;
         attacker.damageinfo[i].bp = attacker.damageinfo[i - 1].bp;
@@ -4991,20 +4971,20 @@ function hitlocdebug(attacker, victim, damage, hitloc, dflags) {
     }
     attacker.damageinfovictim = victim;
     attacker.damageinfo[0].colorindex = attacker.damageinfocolorindex;
-    for (i = 0; i < var_f2f77b9518946235; i++) {
+    for (i = 0; i < elemcount; i++) {
         color = "^" + colors[attacker.damageinfo[i].colorindex];
         if (attacker.damageinfo[i].hitloc != "") {
             val = color + attacker.damageinfo[i].hitloc;
             if (attacker.damageinfo[i].bp) {
                 val = val + " (BP)";
             }
-            attacker setclientdvar(function_2ef675c13ca1c4af(@"hash_3dd1dde9508849d5", utility::string(i)), val);
+            attacker setclientdvar(hashcat(@"hash_3dd1dde9508849d5", utility::string(i)), val);
         }
-        attacker setclientdvar(function_2ef675c13ca1c4af(@"hash_9df3a18be699b19d", utility::string(i)), color + attacker.damageinfo[i].damage);
+        attacker setclientdvar(hashcat(@"hash_9df3a18be699b19d", utility::string(i)), color + attacker.damageinfo[i].damage);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12455
 // Size: 0x33
@@ -5017,7 +4997,7 @@ function giverecentshieldxp() {
     self.recentshieldxp = 0;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1248f
 // Size: 0x71
@@ -5030,13 +5010,13 @@ function updateinflictorstat(einflictor, eattacker, sweapon, otherent) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12507
 // Size: 0x5f9
 function addattacker(victim, eattacker, einflictor, objweapon, idamage, vpoint, vdir, shitloc, psoffsettime, smeansofdeath, var_1da1a66b5c6a06a7) {
     if (!isdefined(eattacker.guid) && (isagent(eattacker) || isplayer(eattacker))) {
-        eattacker.guid = eattacker namespace_7e17181d03156026::getuniqueid();
+        eattacker.guid = eattacker scripts/mp/utility/player::getuniqueid();
     }
     if (!isdefined(eattacker.guid)) {
         return;
@@ -5064,25 +5044,25 @@ function addattacker(victim, eattacker, einflictor, objweapon, idamage, vpoint, 
     if (isdefined(smeansofdeath) && smeansofdeath != "MOD_MELEE") {
         attackerdata.didnonmeleedamage = 1;
     }
-    var_11d2f075e9a0e643 = weapon::getequipmenttype(objweapon);
-    if (isdefined(var_11d2f075e9a0e643)) {
-        if (var_11d2f075e9a0e643 == "lethal") {
+    equipmenttype = weapon::getequipmenttype(objweapon);
+    if (isdefined(equipmenttype)) {
+        if (equipmenttype == "lethal") {
             attackerdata.diddamagewithlethalequipment = 1;
         }
-        if (var_11d2f075e9a0e643 == "tactical") {
+        if (equipmenttype == "tactical") {
             attackerdata.diddamagewithtacticalequipment = 1;
         }
     }
-    idamage = function_53c4c53197386572(idamage, 0);
-    var_1da1a66b5c6a06a7 = function_53c4c53197386572(var_1da1a66b5c6a06a7, 0);
+    idamage = default_to(idamage, 0);
+    var_1da1a66b5c6a06a7 = default_to(var_1da1a66b5c6a06a7, 0);
     if (isdefined(smeansofdeath) && smeansofdeath == "MOD_SUICIDE") {
-        totalhealth = victim.maxhealth + function_53c4c53197386572(victim.armorhealth, 0) + var_1da1a66b5c6a06a7;
+        totalhealth = victim.maxhealth + default_to(victim.armorhealth, 0) + var_1da1a66b5c6a06a7;
     } else {
-        totalhealth = victim.health + function_53c4c53197386572(victim.armorhealth, 0) + var_1da1a66b5c6a06a7;
+        totalhealth = victim.health + default_to(victim.armorhealth, 0) + var_1da1a66b5c6a06a7;
     }
     totaldamage = idamage + var_1da1a66b5c6a06a7;
     var_d69d6cc16d8b71fb = ter_op(totaldamage > totalhealth, totalhealth, totaldamage);
-    attackerdata namespace_4887422e77f3514e::function_f74c4c476c9489f6();
+    attackerdata namespace_4887422e77f3514e::updatefirsttimedamaged();
     attackerdata.hitcount++;
     attackerdata.damage = attackerdata.damage + totaldamage;
     attackerdata.var_d69d6cc16d8b71fb = attackerdata.var_d69d6cc16d8b71fb + var_d69d6cc16d8b71fb;
@@ -5096,35 +5076,35 @@ function addattacker(victim, eattacker, einflictor, objweapon, idamage, vpoint, 
     attackerdata.lasttimedamaged = currenttime;
     attackerdata.inflictor = einflictor;
     attackerdata.var_4ce88b2dfe0bfa52 = istrue(victim.var_4ce88b2dfe0bfa52);
-    if (!isdefined(attackerdata.var_282f568e901445ce)) {
-        attackerdata.var_282f568e901445ce = [];
+    if (!isdefined(attackerdata.damagesources)) {
+        attackerdata.damagesources = [];
     }
     var_22de319bdc95fea2 = "none";
-    var_1189bd7fbe2861f8 = namespace_1a507865f681850e::getequipmentreffromweapon(objweapon);
-    if (isdefined(var_1189bd7fbe2861f8)) {
-        var_22de319bdc95fea2 = var_1189bd7fbe2861f8;
+    equipref = scripts/mp/equipment::getequipmentreffromweapon(objweapon);
+    if (isdefined(equipref)) {
+        var_22de319bdc95fea2 = equipref;
     } else if (namespace_e0ee43ef2dddadaa::iskillstreakweapon(objweapon)) {
-        var_22de319bdc95fea2 = namespace_a2f809133c566621::getkillstreaknamefromweapon(objweapon);
+        var_22de319bdc95fea2 = scripts/mp/utility/killstreak::getkillstreaknamefromweapon(objweapon);
     } else if (isdefined(smeansofdeath) && (smeansofdeath == "MOD_FALLING" || smeansofdeath == "MOD_CRUSH" || smeansofdeath == "MOD_MELEE" || smeansofdeath == "MOD_EXECUTION")) {
         var_22de319bdc95fea2 = smeansofdeath;
-    } else if (istrue(victim.islaststandbleedoutdmg) || istrue(victim.var_1cae08f4d3d931c1) || istrue(victim.var_4ce88b2dfe0bfa52)) {
+    } else if (istrue(victim.islaststandbleedoutdmg) || istrue(victim.bleedout) || istrue(victim.var_4ce88b2dfe0bfa52)) {
         var_22de319bdc95fea2 = "BLEED_TICK";
     } else if (isdefined(smeansofdeath) && smeansofdeath == "MOD_EXPLOSIVE" && isdefined(einflictor) && einflictor.code_classname == "scriptable") {
         var_22de319bdc95fea2 = "ENV_EXPLOSIVE";
-    } else if (namespace_68e641469fde3fa7::isbombsiteweapon(objweapon)) {
+    } else if (scripts/mp/utility/weapon::isbombsiteweapon(objweapon)) {
         var_22de319bdc95fea2 = "BOMB_SITE";
-    } else if (istrue(victim.var_93532ea94accabdb)) {
+    } else if (istrue(victim.oobdeath)) {
         var_22de319bdc95fea2 = "OOB";
     } else if (isdefined(objweapon.basename)) {
         var_22de319bdc95fea2 = objweapon.basename;
     }
-    if (!isdefined(attackerdata.var_282f568e901445ce[var_22de319bdc95fea2])) {
-        attackerdata.var_282f568e901445ce[var_22de319bdc95fea2] = 1;
+    if (!isdefined(attackerdata.damagesources[var_22de319bdc95fea2])) {
+        attackerdata.damagesources[var_22de319bdc95fea2] = 1;
     }
     attackerdata.var_8519cf56b38d717d = var_22de319bdc95fea2;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12b07
 // Size: 0x299
@@ -5140,7 +5120,7 @@ function addattackerkillstreak(victim, idamage, eattacker, vdir, vpoint, smeanso
         victim.attackerdata[eattacker.guid].firsttimedamaged = gettime();
         victim.attackerdata[eattacker.guid].hitcount = 1;
     }
-    victim.attackerdata[eattacker.guid] namespace_4887422e77f3514e::function_f74c4c476c9489f6();
+    victim.attackerdata[eattacker.guid] namespace_4887422e77f3514e::updatefirsttimedamaged();
     victim.attackerdata[eattacker.guid].damage = victim.attackerdata[eattacker.guid].damage + idamage;
     victim.attackerdata[eattacker.guid].vpoint = vpoint;
     victim.attackerdata[eattacker.guid].vdir = vdir;
@@ -5150,7 +5130,7 @@ function addattackerkillstreak(victim, idamage, eattacker, vdir, vpoint, smeanso
     victim.attackerdata[eattacker.guid].lasttimedamaged = gettime();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12da7
 // Size: 0x17
@@ -5159,26 +5139,26 @@ function resetattackerlist() {
     self.attackerdata = [];
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params f, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12dc5
 // Size: 0xc2
-function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1) {
-    var_8f8788fae5311b0a = gettime();
-    callback_playerdamage_internal(einflictor, eattacker, self, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1);
+function callback_playerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1) {
+    dmgtime = gettime();
+    callback_playerdamage_internal(einflictor, eattacker, self, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1);
     /#
-        assertex(var_8f8788fae5311b0a == gettime(), "Damage internal callback happened over multiple frames");
+        assertex(dmgtime == gettime(), "Damage internal callback happened over multiple frames");
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12e8e
 // Size: 0x1df
-function function_f9237ec4a57b0ff9(eattacker, var_ba9dc00e6d5896dc, idamage, var_d7bc24cd73dfc712, objweapon, shitloc) {
+function function_f9237ec4a57b0ff9(eattacker, var_ba9dc00e6d5896dc, idamage, fdistance, objweapon, shitloc) {
     if (shouldrecorddamagestats(eattacker)) {
         eattacker stats::incpersstat("damage", var_ba9dc00e6d5896dc);
-        if (isdefined(eattacker namespace_3c5a4254f2b957ea::getpersstat("friendlyDamageDone")) && self.team == eattacker.team) {
+        if (isdefined(eattacker scripts/mp/utility/stats::getpersstat("friendlyDamageDone")) && self.team == eattacker.team) {
             eattacker stats::incpersstat("friendlyDamageDone", var_ba9dc00e6d5896dc);
         }
         if (!isdefined(eattacker.damagethisround)) {
@@ -5189,26 +5169,28 @@ function function_f9237ec4a57b0ff9(eattacker, var_ba9dc00e6d5896dc, idamage, var
         if (eattacker != self && self.team != eattacker.team) {
             eattacker namespace_969918091e5d9483::function_d16498b27251da56(1, var_ba9dc00e6d5896dc);
             fullweaponname = getcompleteweaponname(objweapon);
-            var_a1d4e7d5ef9da660 = min(self.health, idamage);
-            eattacker thread gamelogic::threadedsetweaponstatbyname(fullweaponname, var_a1d4e7d5ef9da660, "damage", self);
+            incvalue = min(self.health, idamage);
+            eattacker thread gamelogic::threadedsetweaponstatbyname(fullweaponname, incvalue, "damage", self);
         }
-        if (shitloc == "head" && isdefined(eattacker namespace_3c5a4254f2b957ea::getpersstat("shotsHitHead"))) {
+        if (shitloc == "head" && isdefined(eattacker scripts/mp/utility/stats::getpersstat("shotsHitHead"))) {
             eattacker stats::incpersstat("shotsHitHead", 1);
         }
         eattacker utility::trycall(level.matchdata_logweaponstat, weapon::getweaponrootname(objweapon), "damage", min(self.health, idamage), -1);
         weaponobj = weapon::mapweapon(objweapon);
         sweapon = getcompleteweaponname(weaponobj);
         eattacker thread gamelogic::threadedsetweaponstatbyname(sweapon, var_ba9dc00e6d5896dc, "damage_dealt");
-    } else if (isdefined(level.onattackerdamagenottracked)) {
+        return;
+    }
+    if (isdefined(level.onattackerdamagenottracked)) {
         eattacker [[ level.onattackerdamagenottracked ]](var_ba9dc00e6d5896dc);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 15, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13074
 // Size: 0x791
-function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, var_d7bc24cd73dfc712, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b2883531afa6b83d, flinch) {
+function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, armorhit, flinch) {
     idamage = int(idamage);
     var_ba9dc00e6d5896dc = int(min(idamage, self.health));
     if (isdefined(eattacker) && isplayer(eattacker) && !function_483cc81bff18273b(eattacker)) {
@@ -5216,11 +5198,11 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
             eattacker thread namespace_4925be476a433a59::function_e08012bdba393c79(objweapon, var_ba9dc00e6d5896dc);
             eattacker thread namespace_4925be476a433a59::function_f9b01f503cdbfd7d(var_ba9dc00e6d5896dc);
         }
-        function_f9237ec4a57b0ff9(eattacker, var_ba9dc00e6d5896dc, idamage, var_d7bc24cd73dfc712, objweapon, shitloc);
+        function_f9237ec4a57b0ff9(eattacker, var_ba9dc00e6d5896dc, idamage, fdistance, objweapon, shitloc);
     } else if (isdefined(einflictor) && einflictor vehicle::isvehicle()) {
         vehicle = einflictor;
         if (isdefined(vehicle.owner) && isplayer(vehicle.owner)) {
-            function_f9237ec4a57b0ff9(vehicle.owner, var_ba9dc00e6d5896dc, idamage, var_d7bc24cd73dfc712, objweapon, shitloc);
+            function_f9237ec4a57b0ff9(vehicle.owner, var_ba9dc00e6d5896dc, idamage, fdistance, objweapon, shitloc);
         }
     }
     if (isplayer(self)) {
@@ -5250,10 +5232,10 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
         playerkilled_internal(einflictor, eattacker, self, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, 0, 1);
     } else {
         if (isdefined(self.var_5c11205f47af8b92)) {
-            var_289c10e1777afae0 = idamage >= self.health;
-            var_f0a50955d3420be9 = gettime() - self.var_5c11205f47af8b92 <= 1000 && riotshield::riotshield_hasweapon() && function_cd066c9463ad28c5(objweapon, smeansofdeath);
+            isfataldamage = idamage >= self.health;
+            isvalidshielddamage = gettime() - self.var_5c11205f47af8b92 <= 1000 && riotshield::riotshield_hasweapon() && function_cd066c9463ad28c5(objweapon, smeansofdeath);
             var_ed364fc58a359515 = !utility::isusingremote();
-            if (var_289c10e1777afae0 && var_f0a50955d3420be9 && var_ed364fc58a359515) {
+            if (isfataldamage && isvalidshielddamage && var_ed364fc58a359515) {
                 /#
                     iprintln("torso_upper" + self.name);
                 #/
@@ -5274,16 +5256,16 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
             if (!isdefined(partname)) {
                 partname = "";
             }
-            if (!isdefined(var_b2883531afa6b83d)) {
-                var_b2883531afa6b83d = 0;
+            if (!isdefined(armorhit)) {
+                armorhit = 0;
             }
             if (shoulduseexplosiveindicator(smeansofdeath)) {
                 idflags = idflags | 256;
             }
             if (!isdefined(flinch)) {
                 var_e9a18bdaf2a766e9 = smeansofdeath == "MOD_TRIGGER_HURT" && isdefined(self.islaststandbleedoutdmg);
-                var_759752d90b530740 = smeansofdeath == "MOD_TRIGGER_HURT" && isdefined(objweapon) && objweapon.basename == "danger_circle_br";
-                flinch = !var_e9a18bdaf2a766e9 && !var_759752d90b530740;
+                iscircledamage = smeansofdeath == "MOD_TRIGGER_HURT" && isdefined(objweapon) && objweapon.basename == "danger_circle_br";
+                flinch = !var_e9a18bdaf2a766e9 && !iscircledamage;
             }
             if (isdefined(eattacker) && isplayer(eattacker) && eattacker != self) {
                 if (!isdefined(eattacker.var_198b774c93c48891)) {
@@ -5294,7 +5276,7 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
                 self.var_9691e7d8cde294f2 = gettime();
             }
             var_ed39daa6a02d755d = idamage >= self.health && !laststand::function_27d0ea02ed3cc35f(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, 500);
-            if (game_utility::isteamreviveenabled() && istrue(level.liveragdollrevive) && var_ed39daa6a02d755d && (!istrue(level.var_46c429e667d32f63) || istrue(teams::getteamdata(self.team, "noRespawns")))) {
+            if (game_utility::isteamreviveenabled() && istrue(level.liveRagdollRevive) && var_ed39daa6a02d755d && (!istrue(level.var_46c429e667d32f63) || istrue(teams::getteamdata(self.team, "noRespawns")))) {
                 if (istrue(self.inlaststand)) {
                     self laststandrevive();
                 }
@@ -5303,12 +5285,12 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
                 /#
                     println("EXE/PLAYERKICKED_TEAMKILLS" + gettime() + "havoc" + self.name + "neck" + self.health + "suicideGrenadeKill" + idamage + "specialty_pistoldeath");
                 #/
-                self finishplayerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, 0, modelindex, partname, var_b2883531afa6b83d, flinch, var_d7bc24cd73dfc712);
+                self finishplayerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, 0, modelindex, partname, armorhit, flinch, fdistance);
                 /#
                     println("EXE/PLAYERKICKED_TEAMKILLS" + gettime() + "havoc" + self.name + "hitarmormaxplatebreak" + self.health + "kill");
                 #/
                 if (isdefined(einflictor) && isdefined(eattacker)) {
-                    self function_aa7cfaf65f9b354(einflictor, eattacker);
+                    self lookatkiller(einflictor, eattacker);
                 }
                 player::_freezecontrols(1, undefined, "liveRagdoll");
                 self sethidenameplate(1);
@@ -5317,7 +5299,7 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
                 self function_6b4c8718bc36d1ef(1);
                 self function_e4ccd01fb7ec7a6f(1);
                 self function_360874d9808f0724();
-                class::function_c5ce8711741e44b8();
+                class::setthirdpersonview();
                 if (!isdefined(einflictor) && !isdefined(eattacker)) {
                     einflictor = self;
                     eattacker = self;
@@ -5327,12 +5309,12 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
                     self notify("death");
                     self notify("death_or_disconnect");
                     if (game_utility::function_ba5574c7f287c587()) {
-                        var_16c2d930984f2fef = self isreloading();
-                        if (var_16c2d930984f2fef) {
+                        isplayerreloading = self isreloading();
+                        if (isplayerreloading) {
                             var_5814d27874b48e54 = spawnstruct();
                             var_5814d27874b48e54.player = self;
-                            var_5814d27874b48e54.var_c739ba1eb6635b73 = getsystemtimeinmicroseconds();
-                            var_5814d27874b48e54.var_c198f7ca473378fb = "DEATH";
+                            var_5814d27874b48e54.reloadcanceltime = getsystemtimeinmicroseconds();
+                            var_5814d27874b48e54.cancelreason = "DEATH";
                             namespace_c45ac99c4997e722::function_80820d6d364c1836("callback_on_reload_cancel", var_5814d27874b48e54);
                         }
                     }
@@ -5340,17 +5322,17 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
             } else if (istrue(level.ob_pvpve) && !istrue(self.liveragdoll) && var_ed39daa6a02d755d) {
                 self notify("last_stand_bleedout");
             } else {
-                self finishplayerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, 0, modelindex, partname, var_b2883531afa6b83d, flinch, var_d7bc24cd73dfc712);
+                self finishplayerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime, 0, modelindex, partname, armorhit, flinch, fdistance);
             }
         }
     }
     if (smeansofdeath == "MOD_EXPLOSIVE_BULLET") {
-        namespace_cc0f9da8a00806f6::_shellshock("damage_mp", "damage", getdvarfloat(@"hash_6dc396ffe00e3bf6"), 0, 0);
+        shellshock_utility::_shellshock("damage_mp", "damage", getdvarfloat(@"hash_6dc396ffe00e3bf6"), 0, 0);
     }
     damageshellshockandrumble(einflictor, objweapon, smeansofdeath, idamage, idflags, eattacker);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1380c
 // Size: 0x34
@@ -5358,15 +5340,15 @@ function shoulduseexplosiveindicator(smeansofdeath) {
     return smeansofdeath == "MOD_GRENADE" || smeansofdeath == "MOD_GRENADE_SPLASH" || smeansofdeath == "MOD_EXPLOSIVE" || smeansofdeath == "MOD_FIRE";
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13848
 // Size: 0x57
-function callback_playerimpaled(eattacker, objweapon, var_f98a651c69c13cba, vpoint, vdir, shitloc, var_920ff4456ce9a2fc, var_19f6f25777706f34) {
-    thread weapons::impale(eattacker, self, objweapon, var_f98a651c69c13cba, vpoint, vdir, shitloc, var_920ff4456ce9a2fc, var_19f6f25777706f34);
+function callback_playerimpaled(eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34) {
+    thread weapons::impale(eattacker, self, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x138a6
 // Size: 0x24
@@ -5377,15 +5359,15 @@ function allowfauxdeath() {
     return level.allowfauxdeath;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x138d2
 // Size: 0x80c
 function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration) {
-    var_6d8f177c77496430 = isforcedlaststand(self, einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc);
+    forcelaststand = isforcedlaststand(self, einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc);
     var_4a823a0c8e9adbb7 = laststand::function_27d0ea02ed3cc35f(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration);
-    if (!var_6d8f177c77496430 && !var_4a823a0c8e9adbb7) {
-        return 0;
+    if (!forcelaststand && !var_4a823a0c8e9adbb7) {
+        return false;
     }
     if (isdefined(attacker) && isplayer(attacker) && attacker != self && !istrue(attacker.gulag) && !istrue(level.var_fdb13ccd60afe05c)) {
         attacker thread hud_message::showsplash("br_enemy_downed", undefined, self);
@@ -5418,45 +5400,45 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
                 attacker = einflictor.owner;
             }
         }
-        var_642470e1abc1bbf9 = playerkilled_initdeathdata(einflictor, attacker, self, idamage, 0, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, 0);
-        playerkilled_parameterfixup(var_642470e1abc1bbf9);
-        playerkilled_precalc(var_642470e1abc1bbf9);
-        var_642470e1abc1bbf9.laststandkill = 1;
+        deathdata = playerkilled_initdeathdata(einflictor, attacker, self, idamage, 0, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, 0);
+        playerkilled_parameterfixup(deathdata);
+        playerkilled_precalc(deathdata);
+        deathdata.laststandkill = 1;
         self.playergoingintols = 1;
         if (isplayer(attacker) && attacker != self) {
             self.laststandattacker = attacker;
-            self.laststandmeansofdeath = var_642470e1abc1bbf9.meansofdeath;
+            self.laststandmeansofdeath = deathdata.meansofdeath;
             self.laststandweaponobj = objweapon;
-            attacker thread events::function_b7f154368abbe463(self, objweapon, smeansofdeath, einflictor, var_642470e1abc1bbf9);
+            attacker thread events::function_b7f154368abbe463(self, objweapon, smeansofdeath, einflictor, deathdata);
             self.laststandattackermodifiers = attacker.modifiers;
         }
         self.lastbounty = bounty::playergetbountypoints();
         bounty::playerresetbountypoints();
         bounty::playerresetbountystreak();
-        var_642470e1abc1bbf9.isfriendlyfire = isfriendlyfire(self, attacker);
+        deathdata.isfriendlyfire = isfriendlyfire(self, attacker);
         if (getdvarint(@"hash_98f5c716d594181b", 1)) {
-            self.laststanddowneddata = var_642470e1abc1bbf9;
+            self.laststanddowneddata = deathdata;
         }
-        if (istrue(level.var_1a2b600a06ec21f4.var_198508771f0592a9)) {
-            self.laststanddowneddata = var_642470e1abc1bbf9;
-            var_5771a98dbf346253 = istrue(einflictor.isequipment);
+        if (istrue(level.gamemodebundle.var_198508771f0592a9)) {
+            self.laststanddowneddata = deathdata;
+            inflictorisequipment = istrue(einflictor.isequipment);
             var_a8f54da1cfb1dea0 = istrue(einflictor.issuper);
-            if (var_5771a98dbf346253 || var_a8f54da1cfb1dea0) {
-                var_bfcfdc8956ad23b0 = spawnstruct();
-                var_bfcfdc8956ad23b0.isequipment = var_5771a98dbf346253;
-                var_bfcfdc8956ad23b0.issuper = var_a8f54da1cfb1dea0;
-                var_bfcfdc8956ad23b0.equipmentref = einflictor.equipmentref;
-                self.laststanddowneddata.var_bfcfdc8956ad23b0 = var_bfcfdc8956ad23b0;
+            if (inflictorisequipment || var_a8f54da1cfb1dea0) {
+                inflictorcopy = spawnstruct();
+                inflictorcopy.isequipment = inflictorisequipment;
+                inflictorcopy.issuper = var_a8f54da1cfb1dea0;
+                inflictorcopy.equipmentref = einflictor.equipmentref;
+                self.laststanddowneddata.inflictorcopy = inflictorcopy;
             }
         }
-        if (!var_642470e1abc1bbf9.isfriendlyfire && attacker != self) {
+        if (!deathdata.isfriendlyfire && attacker != self) {
             var_5b5deaccb6cc0f8a = 1;
             if (game_utility::isbrstylegametype()) {
                 if (isplayer(attacker) && attacker != self) {
                     if (!isbot(self)) {
                         attacker thread namespace_6b49ddb858f34366::function_ac584dc244d416b1();
                     }
-                    attacker namespace_a548bd428a566cf3::incrementplayersdownedstat();
+                    attacker br_public::incrementplayersdownedstat();
                     attacker thread rank::scoreeventpopup(#"downed");
                     killstreakweaponname = killstreak::getkillstreaknamefromweapon(objweapon);
                     if (isdefined(killstreakweaponname)) {
@@ -5469,45 +5451,45 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
                     }
                 }
                 if (attacker != self) {
-                    brgametype = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5();
+                    brgametype = scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5();
                     if (brgametype != "plunder" && brgametype != "risk" && brgametype != "kingslayer" && brgametype != "rumble_mgl" && level.teamdata[self.team]["alivePlayers"].size > 0 && isplayer(attacker)) {
-                        var_f86da5d91524e369 = [];
+                        obitplayers = [];
                         if (isdefined(level.var_c5877dbe60fddbf6)) {
-                            var_f86da5d91524e369 = level.var_c5877dbe60fddbf6;
+                            obitplayers = level.var_c5877dbe60fddbf6;
                         }
-                        var_f86da5d91524e369 = array_combine(var_f86da5d91524e369, level.teamdata[attacker.team]["alivePlayers"]);
-                        obituary(self, attacker, objweapon, "MOD_DOWN", var_f86da5d91524e369);
+                        obitplayers = array_combine(obitplayers, level.teamdata[attacker.team]["alivePlayers"]);
+                        obituary(self, attacker, objweapon, "MOD_DOWN", obitplayers);
                     }
-                    overlord::function_d87d5deb069bf8e5("squad_down_enemy", level.teamdata[self.team]["alivePlayers"]);
+                    overlord::playevent("squad_down_enemy", level.teamdata[self.team]["alivePlayers"]);
                 } else {
-                    overlord::function_d87d5deb069bf8e5("squad_down_self", level.teamdata[self.team]["alivePlayers"]);
+                    overlord::playevent("squad_down_self", level.teamdata[self.team]["alivePlayers"]);
                 }
-                if (isdefined(level.br_circle) && isdefined(level.br_circle.circleindex) && namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() != "rumble_mgl") {
+                if (isdefined(level.br_circle) && isdefined(level.br_circle.circleindex) && scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() != "rumble_mgl") {
                     circle = min(max(1, level.br_circle.circleindex), 6);
-                    event = function_2ef675c13ca1c4af(#"br_downenemy_circle_", utility::string(circle));
+                    event = hashcat(#"br_downEnemy_circle_", utility::string(circle));
                     if (rank::function_377a94f711d96927(event)) {
-                        attacker thread points::doscoreevent(event, objweapon);
+                        attacker thread points::doScoreEvent(event, objweapon);
                     }
                 }
             }
         }
     }
-    brgametype = namespace_36f464722d326bbe::function_6c1fce6f6b8779d5();
+    brgametype = scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5();
     if (brgametype == "plunder" || brgametype == "risk") {
         br_plunder::plunder_allowallrepositoryuseforplayer(self, 0, 1);
     }
     if (game_utility::isbrstylegametype()) {
-        namespace_9cb8bb5897c3d5b2::branalytics_down(attacker, self, objweapon, "downed", smeansofdeath);
+        br_analytics::branalytics_down(attacker, self, objweapon, "downed", smeansofdeath);
         if (smeansofdeath == "MOD_CRUSH" && isdefined(einflictor.classname) && einflictor.classname == "script_vehicle") {
             playsoundatpos(self.origin + (0, 0, 18), "vehicle_body_hit");
         }
     }
-    if (namespace_a548bd428a566cf3::isbrpracticemode()) {
+    if (br_public::isBrPracticeMode()) {
         if (isdefined(attacker) && isplayer(attacker) && !isbot(attacker)) {
             attacker notify("enemy_in_laststand");
         }
     }
-    if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "champion") {
+    if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "champion") {
         if (isdefined(attacker) && isdefined(attacker.team)) {
             level notify("down_enemy_laststand_" + attacker.team, attacker);
         }
@@ -5515,7 +5497,7 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
     if (isdefined(level.checkforlaststandwipe)) {
         if ([[ level.checkforlaststandwipe ]](self)) {
             self.playergoingintols = 0;
-            return 0;
+            return false;
         }
     }
     if (isdefined(level.var_2d3ee92902ba30fa)) {
@@ -5529,17 +5511,17 @@ function callback_playerlaststand(einflictor, attacker, idamage, smeansofdeath, 
             namespace_27c74152ccb91331::function_55b08d6d71b41402(attacker, "knocked_down_enemy");
         }
     }
-    if (namespace_3e725f3cc58bddd3::playerkilled_washitbyvehicle(smeansofdeath, einflictor)) {
+    if (scripts/mp/damage::playerkilled_washitbyvehicle(smeansofdeath, einflictor)) {
         einflictor notify("vehicle_downed_player");
     }
     if (var_5b5deaccb6cc0f8a && isdefined(attacker.guid)) {
         function_b908a35b0981168e(1);
         function_8be77b53bcbd6d2d(attacker, 1);
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x140e6
 // Size: 0x10d
@@ -5561,20 +5543,22 @@ function function_b908a35b0981168e(isdowned) {
     self setclientomnvar("ui_num_attackers", attackercount);
     self.var_7744df488b629b5 = 1;
     if (attackercount > 1) {
-        thread namespace_62c556437da28f50::scoreeventpopup(#"hash_59943f6a740f581b");
-    } else if (istrue(isdowned)) {
+        thread scripts/mp/rank::scoreeventpopup(#"hash_59943f6a740f581b");
+        return;
+    }
+    if (istrue(isdowned)) {
         if (getdvarint(@"hash_a188996b14552063", 0) == 1) {
-            thread namespace_62c556437da28f50::scoreeventpopup(#"hash_f954fa77f78fca21");
+            thread scripts/mp/rank::scoreeventpopup(#"downed_victim");
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x141fa
 // Size: 0x11d
 function isforcedlaststand(victim, einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc) {
-    var_6d8f177c77496430 = 0;
+    forcelaststand = 0;
     /#
         var_61468d0f2f1e6cb7 = getdvarint(@"hash_9564fda23c9d6dbd", 0);
         if (var_61468d0f2f1e6cb7) {
@@ -5585,25 +5569,25 @@ function isforcedlaststand(victim, einflictor, attacker, idamage, smeansofdeath,
         return 1;
     }
     if (game_utility::isbrstylegametype()) {
-        if (namespace_a548bd428a566cf3::istutorial()) {
+        if (br_public::istutorial()) {
             return 1;
         }
         if (!flags::gameflagexists("prematch_done") || flags::gameflag("prematch_done")) {
             if (smeansofdeath == "MOD_FALLING" && !istrue(self.gulagarena) && !istrue(self.inlaststand)) {
-                var_6d8f177c77496430 = 1;
+                forcelaststand = 1;
             }
         }
     }
     if (istrue(self.killstreaklaststand) && isdefined(level.killstreak_laststand_func)) {
-        var_6d8f177c77496430 = 1;
+        forcelaststand = 1;
     }
     if (istrue(level.var_c8dbb5a3e916546f)) {
-        var_6d8f177c77496430 = 1;
+        forcelaststand = 1;
     }
-    return var_6d8f177c77496430;
+    return forcelaststand;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1431f
 // Size: 0x101
@@ -5633,36 +5617,37 @@ function gethitlocheight(shitloc) {
     case #"hash_168c74e879f0ba11":
     case #"hash_9536712388e65bce":
         return 5;
-        break;
     }
     return 48;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14428
 // Size: 0xb2
 function damageshellshockandrumble(einflictor, objweapon, smeansofdeath, idamage, idflags, eattacker) {
-    thread namespace_3bbb5a98b932c46f::onweapondamage(einflictor, objweapon, smeansofdeath, idamage, eattacker);
+    thread scripts/mp/weapons::onweapondamage(einflictor, objweapon, smeansofdeath, idamage, eattacker);
     if (!isai(self) && utility::getdamagetype(smeansofdeath) != "bullet") {
         self playrumbleonentity("damage_heavy");
         if (isdefined(einflictor) && isdefined(einflictor.var_9c675043198097a3)) {
             self [[ einflictor.var_9c675043198097a3 ]](einflictor);
-        } else if (!game_utility::isbrstylegametype() && smeansofdeath == "MOD_TRIGGER_HURT") {
+            return;
+        }
+        if (!game_utility::isbrstylegametype() && smeansofdeath == "MOD_TRIGGER_HURT") {
             self playsoundtoplayer("trigger_hurt_impact_plr", self);
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x144e1
 // Size: 0x56
 function callback_killingblow(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, psoffsettime) {
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1453f
 // Size: 0xd9
@@ -5671,26 +5656,26 @@ function function_49d8cc008e5f6722(eattacker, victim, idflags) {
     victim endon("disconnect");
     if (getdvarint(@"hash_fa43f14297cc7d79", 0) == 1) {
         if (idflags & 512) {
-            var_6acb3cd9c5bb74e9 = "outline_nodepth_cyan";
+            outlinetype = "outline_nodepth_cyan";
         } else if (istrue(victim.inlaststand)) {
-            var_6acb3cd9c5bb74e9 = "outline_nodepth_red";
+            outlinetype = "outline_nodepth_red";
         } else {
-            var_6acb3cd9c5bb74e9 = "outline_nodepth_orange";
+            outlinetype = "outline_nodepth_orange";
         }
     } else {
-        var_6acb3cd9c5bb74e9 = "outline_nodepth_trans_white";
+        outlinetype = "outline_nodepth_trans_white";
     }
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587()) {
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587()) {
         if (!isplayer(eattacker) && isdefined(eattacker.owner)) {
             eattacker = eattacker.owner;
         }
     }
-    victim namespace_b903a23a81915f18::hudoutline_enable_internal(eattacker, "damage", var_6acb3cd9c5bb74e9);
+    victim scripts/mp/outline::hudoutline_enable_internal(eattacker, "damage", outlinetype);
     wait(0.2);
     victim outline::function_32dfa50c47325abe(eattacker, "damage", 1);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1461f
 // Size: 0x21
@@ -5698,7 +5683,7 @@ function emitfalldamage(idamage) {
     physicsexplosionsphere(self.origin, 64, 64, 1);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 11, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14647
 // Size: 0x256
@@ -5718,8 +5703,8 @@ function gamemodemodifyplayerdamage(einflictor, victim, eattacker, idamage, smea
             case #"hash_b107b5547c755d23":
                 if (!victim killstreak::isjuggernaut()) {
                     idamage = victim.maxhealth;
-                    if (isdefined(victim.var_8790c077c95db752)) {
-                        idamage = idamage + victim.var_8790c077c95db752;
+                    if (isdefined(victim.maxarmorhealth)) {
+                        idamage = idamage + victim.maxarmorhealth;
                     }
                 }
                 break;
@@ -5749,13 +5734,13 @@ function gamemodemodifyplayerdamage(einflictor, victim, eattacker, idamage, smea
     return idamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x148a5
 // Size: 0x7b
 function registerkill(objweapon, smeansofdeath, var_82a240a652326f8, iskillstreakweapon) {
     self.killcountthislife++;
-    namespace_3c5a4254f2b957ea::incpersstat("cur_kill_streak", 1);
+    scripts/mp/utility/stats::incpersstat("cur_kill_streak", 1);
     thread namespace_6b49ddb858f34366::function_d8eb5fb3b35ed1a1();
     if (function_e42efe66fa95ca55()) {
         return;
@@ -5764,7 +5749,7 @@ function registerkill(objweapon, smeansofdeath, var_82a240a652326f8, iskillstrea
     self setclientomnvar("ui_life_kill_count", killcountthislife);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14927
 // Size: 0xd
@@ -5772,11 +5757,11 @@ function function_e42efe66fa95ca55() {
     return istrue(level.var_e42efe66fa95ca55);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1493c
 // Size: 0x1d7
-function monitordamage(maxhealth, damagefeedback, var_c5d89c3a1224b118, var_d7b6456018542238, var_a1823ac1157568db, rumble, var_22435c27e2916650) {
+function monitordamage(maxhealth, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak, rumble, resetdamagetaken) {
     self endon("death");
     level endon("game_ended");
     self endon("monitorDamageEnd");
@@ -5786,31 +5771,29 @@ function monitordamage(maxhealth, damagefeedback, var_c5d89c3a1224b118, var_d7b6
     self setcandamage(1);
     self.health = 2147483647;
     self.maxhealth = maxhealth;
-    if (!isdefined(self.damagetaken) || istrue(var_22435c27e2916650)) {
+    if (!isdefined(self.damagetaken) || istrue(resetdamagetaken)) {
         self.damagetaken = 0;
     }
-    if (!isdefined(var_a1823ac1157568db)) {
-        var_a1823ac1157568db = 0;
+    if (!isdefined(biskillstreak)) {
+        biskillstreak = 0;
     }
-    running = 1;
-    while (running) {
-        inflictor = normal = angles = origin = objweapon = idflags = partname = tagname = modelname = meansofdeath = point = direction_vec = attacker = damage = self waittill("damage");
+    for (running = 1; running; running = monitordamageoneshot(damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak)) {
+        damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, origin, angles, normal, inflictor = self waittill("damage");
         objweapon = weapon::mapweapon(objweapon, inflictor);
         if (rumble) {
             self playrumbleonentity("damage_light");
         }
-        if (var_a1823ac1157568db) {
+        if (biskillstreak) {
             weaponname = "none";
             if (isdefined(objweapon)) {
                 weaponname = getcompleteweaponname(objweapon);
             }
             logattackerkillstreak(self, damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, weaponname);
         }
-        running = monitordamageoneshot(damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, var_c5d89c3a1224b118, var_d7b6456018542238, var_a1823ac1157568db);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14b1a
 // Size: 0x45
@@ -5824,41 +5807,39 @@ function monitordamageend() {
     self setcandamage(0);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 15, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14b66
 // Size: 0x27e
-function monitordamageoneshot(damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, var_c5d89c3a1224b118, var_d7b6456018542238, var_a1823ac1157568db) {
+function monitordamageoneshot(damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, inflictor, damagefeedback, ondeathfunc, var_d7b6456018542238, biskillstreak) {
     if (!isdefined(self)) {
-        return 0;
+        return false;
     }
     if (isdefined(attacker) && isdefined(attacker.owner)) {
         attacker = attacker.owner;
     }
     if (isdefined(attacker) && !game_utility::isgameparticipant(attacker)) {
-        return 1;
+        return true;
     }
-    if (isdefined(attacker) && !namespace_3bbb5a98b932c46f::friendlyfirecheck(self.owner, attacker)) {
+    if (isdefined(attacker) && !scripts/mp/weapons::friendlyfirecheck(self.owner, attacker)) {
         if (isdefined(self.equipmentref) && self.equipmentref == "equip_tac_cover") {
-            goto LOC_0000010c;
+        } else {
+            return true;
         }
-        return 1;
-    LOC_0000010c:
     }
-LOC_0000010c:
     modifieddamage = damage;
     if (!istrue(self.skipignoredamage) && non_player_should_ignore_damage(attacker, objweapon, inflictor, meansofdeath)) {
-        return 1;
+        return true;
     }
     if (isdefined(objweapon)) {
-        damagedata = namespace_25ead30c6ed027fb::packdamagedata(attacker, self, damage, objweapon, meansofdeath, inflictor, point, direction_vec, modelname, partname, tagname, idflags);
+        damagedata = damage_utility::packdamagedata(attacker, self, damage, objweapon, meansofdeath, inflictor, point, direction_vec, modelname, partname, tagname, idflags);
         if (!isdefined(var_d7b6456018542238)) {
             var_d7b6456018542238 = &modifydamage;
         }
         modifieddamage = self [[ var_d7b6456018542238 ]](damagedata);
     }
     if (modifieddamage <= 0) {
-        return 1;
+        return true;
     }
     self.wasdamaged = 1;
     self.damagetaken = self.damagetaken + int(modifieddamage);
@@ -5869,27 +5850,27 @@ LOC_0000010c:
     if (isdefined(idflags) && idflags & 256) {
         self.wasdamagedfrombulletricochet = 1;
     }
-    if (istrue(var_a1823ac1157568db)) {
+    if (istrue(biskillstreak)) {
         killstreaks::killstreakhit(attacker, objweapon, self, meansofdeath, modifieddamage);
     }
     if (isdefined(attacker)) {
         if (isplayer(attacker)) {
             attacker damagefeedback::updatedamagefeedback(damagefeedback);
             if (isreallyalive(attacker)) {
-                attacker namespace_cd0b2d039510b38d::clearspawnprotection();
+                attacker scripts/mp/utility/game::clearSpawnProtection();
             }
         }
     }
     if (self.damagetaken >= self.maxhealth) {
-        damagedata = namespace_25ead30c6ed027fb::packdamagedata(attacker, self, damage, objweapon, meansofdeath, inflictor, point, direction_vec, modelname, partname, tagname, idflags);
+        damagedata = damage_utility::packdamagedata(attacker, self, damage, objweapon, meansofdeath, inflictor, point, direction_vec, modelname, partname, tagname, idflags);
         thread equipmentdestroyed(inflictor, attacker, damage, idflags, undefined, objweapon, undefined, attacker.modifiers);
-        self thread [[ var_c5d89c3a1224b118 ]](damagedata);
-        return 0;
+        self thread [[ ondeathfunc ]](damagedata);
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14dec
 // Size: 0xd1
@@ -5899,7 +5880,7 @@ function modifydamage(data) {
     type = data.meansofdeath;
     damage = data.damage;
     idflag = data.idflag;
-    if (isdefined(idflag) && idflag && 256) {
+    if (isdefined(idflag) && idflag && true) {
         modifieddamage = 0.6 * damage;
     } else {
         modifieddamage = damage;
@@ -5911,12 +5892,12 @@ function modifydamage(data) {
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14ec5
 // Size: 0x107
 function handlemissiledamage(objweapon, meansofdeath, damage) {
-    var_adad6640398c7b3a = damage;
+    actualdamage = damage;
     switch (objweapon.basename) {
     case #"hash_13a265ac820ea0df":
     case #"hash_1ed1da8a2c218aa7":
@@ -5931,17 +5912,17 @@ function handlemissiledamage(objweapon, meansofdeath, damage) {
     case #"hash_f55c20924061bd15":
     case #"hash_fe08358bc8f9a34a":
         self.largeprojectiledamage = 1;
-        var_adad6640398c7b3a = self.maxhealth + 1;
+        actualdamage = self.maxhealth + 1;
         break;
     case #"hash_8d402b4aee106399":
         self.largeprojectiledamage = 0;
-        var_adad6640398c7b3a = var_adad6640398c7b3a * 2;
+        actualdamage = actualdamage * 2;
         break;
     }
-    return var_adad6640398c7b3a;
+    return actualdamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14fd4
 // Size: 0xa5
@@ -5967,7 +5948,7 @@ function handlegrenadedamage(objweapon, damagetype, modifieddamage) {
     return modifieddamage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15081
 // Size: 0x1d
@@ -5975,7 +5956,7 @@ function handleempdamage(objweapon, meansofdeath, damage) {
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x150a6
 // Size: 0xaf
@@ -5995,7 +5976,7 @@ function handleapdamage(objweapon, meansofdeath, damage, attacker, victim) {
     return int(damage * modifier);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1515d
 // Size: 0x50
@@ -6010,7 +5991,7 @@ function handleapammodamage(objweapon, smeansofdeath, damage, var_be4285b26ed99a
     return damage;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x151b5
 // Size: 0x53
@@ -6022,7 +6003,7 @@ function function_5e4aa8d548cc604e(damage, objweapon, attacker, meansofdeath) {
     return int(damage * modifier);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15210
 // Size: 0x4a
@@ -6034,19 +6015,19 @@ function function_10268164ab1bcc31(damage, objweapon, attacker) {
     return int(damage * modifier);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15262
 // Size: 0x50
 function handleakimbodamage(objweapon, meansofdeath, damage, attacker, victim) {
-    if (!namespace_68e641469fde3fa7::isakimbo(objweapon)) {
+    if (!scripts/mp/utility/weapon::isakimbo(objweapon)) {
         return damage;
     }
     modifier = 1;
     return int(damage * modifier);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x152ba
 // Size: 0x57
@@ -6063,7 +6044,7 @@ function handleshotgundamage(objweapon, meansofdeath, damage) {
     return int(min(150, damage));
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x15319
 // Size: 0xad
@@ -6073,7 +6054,7 @@ function onkillstreakdamaged(killstreakname, attacker, weapon, damage) {
         if (isdefined(attacker.owner) && isplayer(attacker.owner)) {
             attacker = attacker.owner;
         }
-        if (isplayer(attacker) && self.owner namespace_e47104b48662385b::isenemy(attacker)) {
+        if (isplayer(attacker) && self.owner player_utility::isenemy(attacker)) {
             var_2d113e958c753976 = attacker;
         }
     }
@@ -6082,12 +6063,12 @@ function onkillstreakdamaged(killstreakname, attacker, weapon, damage) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x153cd
 // Size: 0x1a2
-function onkillstreakkilled(killstreakname, attacker, objweapon, damagetype, damage, scorepopupname, leaderdialog, var_6342e2da1dc12454, var_dc695757f69ed065) {
-    var_40ea91e2825fa07a = 0;
+function onkillstreakkilled(killstreakname, attacker, objweapon, damagetype, damage, scorepopupname, leaderdialog, cardsplash, skipdeathnotify) {
+    notifyflag = 0;
     var_2d113e958c753976 = undefined;
     if (isdefined(attacker) && isdefined(self.owner)) {
         if (isdefined(attacker.owner) && isplayer(attacker.owner)) {
@@ -6097,7 +6078,7 @@ function onkillstreakkilled(killstreakname, attacker, objweapon, damagetype, dam
             if (!isalliedsentient(self.owner, attacker)) {
                 var_2d113e958c753976 = attacker;
             }
-        } else if (self.owner namespace_e47104b48662385b::isenemy(attacker)) {
+        } else if (self.owner player_utility::isenemy(attacker)) {
             var_2d113e958c753976 = attacker;
         }
     }
@@ -6105,32 +6086,32 @@ function onkillstreakkilled(killstreakname, attacker, objweapon, damagetype, dam
         if (isdefined(level.var_ce95c7540070f7d0)) {
             [[ level.var_ce95c7540070f7d0 ]](killstreakname, self.team, var_2d113e958c753976);
         }
-        if (isdefined(var_6342e2da1dc12454)) {
-            var_2d113e958c753976 namespace_20260f65229aa888::killstreakdestroyed(killstreakname);
+        if (isdefined(cardsplash)) {
+            var_2d113e958c753976 battlechatter_mp::killstreakdestroyed(killstreakname);
         }
         thread events::killedkillstreak(killstreakname, var_2d113e958c753976, objweapon);
         thread challenges::killstreakkilled(killstreakname, self.owner, self, var_2d113e958c753976, damage, damagetype, objweapon, scorepopupname);
         gestures::processcalloutdeath(self, var_2d113e958c753976);
-        var_40ea91e2825fa07a = 1;
+        notifyflag = 1;
     }
     thread events::processscrapassist(var_2d113e958c753976);
     if (isdefined(self.owner) && isdefined(leaderdialog)) {
-        self.owner namespace_8319cdbe938cd234::function_8959c1606f65e65(killstreakname, leaderdialog);
+        self.owner killstreak_utility::function_8959c1606f65e65(killstreakname, leaderdialog);
     }
-    if (!istrue(var_dc695757f69ed065)) {
+    if (!istrue(skipdeathnotify)) {
         self notify("death");
     }
-    return var_40ea91e2825fa07a;
+    return notifyflag;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15577
 // Size: 0x18a
-function updatedeathdetails(var_fb0ece5f482aff3e, attackerdata, killer) {
+function updatedeathdetails(attackerlist, attackerdata, killer) {
     attackercount = 0;
     if (isdefined(killer) && isplayer(killer) && isdefined(killer.health)) {
-        if (!killer namespace_e47104b48662385b::_isalive()) {
+        if (!killer player_utility::_isalive()) {
             self setclientomnvar("ui_death_details_enemy_health", 0);
         } else {
             self setclientomnvar("ui_death_details_enemy_health", int(clamp(killer.health, 0, killer.maxhealth)) / killer.maxhealth);
@@ -6138,13 +6119,13 @@ function updatedeathdetails(var_fb0ece5f482aff3e, attackerdata, killer) {
     } else {
         self setclientomnvar("ui_death_details_enemy_health", -1);
     }
-    if (isdefined(var_fb0ece5f482aff3e) && isdefined(attackerdata)) {
-        foreach (guid, attacker in var_fb0ece5f482aff3e) {
+    if (isdefined(attackerlist) && isdefined(attackerdata)) {
+        foreach (guid, attacker in attackerlist) {
             if (!isplayer(attacker)) {
                 continue;
             }
-            var_3010362406c84dcf = attacker getentitynumber();
-            self setclientomnvar("ui_death_details_attacker_" + attackercount, var_3010362406c84dcf);
+            attackernumber = attacker getentitynumber();
+            self setclientomnvar("ui_death_details_attacker_" + attackercount, attackernumber);
             self setclientomnvar("ui_death_details_hits_" + attackercount, int(min(attackerdata[guid].hitcount, 10)));
             attackercount++;
             if (attackercount >= 4) {
@@ -6152,29 +6133,29 @@ function updatedeathdetails(var_fb0ece5f482aff3e, attackerdata, killer) {
             }
         }
     }
-    for (var_ed391f2e5d37dc2a = attackercount; var_ed391f2e5d37dc2a < 4; var_ed391f2e5d37dc2a++) {
-        self setclientomnvar("ui_death_details_attacker_" + var_ed391f2e5d37dc2a, -1);
+    for (clearindex = attackercount; clearindex < 4; clearindex++) {
+        self setclientomnvar("ui_death_details_attacker_" + clearindex, -1);
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15708
 // Size: 0xa4
-function setdeathtimerlength(var_642470e1abc1bbf9) {
-    victim = var_642470e1abc1bbf9.victim;
-    var_d8d2129eff08b4b1 = 0;
-    if (victim namespace_66c176d3c67cc0c2::mayspawn() && !level.disablespawncamera) {
-        timeuntilspawn = namespace_66c176d3c67cc0c2::timeuntilspawn(1);
-        var_906a882502dd814a = 2.25;
+function setdeathtimerlength(deathdata) {
+    victim = deathdata.victim;
+    actualtimeuntilspawn = 0;
+    if (victim playerlogic::mayspawn() && !level.disablespawncamera) {
+        timeuntilspawn = playerlogic::timeuntilspawn(1);
+        minimumtime = 2.25;
         var_b5c34c3bc6c7e65 = 1;
-        timeuntilspawn = max(timeuntilspawn + var_b5c34c3bc6c7e65, var_906a882502dd814a);
-        var_d8d2129eff08b4b1 = timeuntilspawn + var_642470e1abc1bbf9.deathscenetimesec;
+        timeuntilspawn = max(timeuntilspawn + var_b5c34c3bc6c7e65, minimumtime);
+        actualtimeuntilspawn = timeuntilspawn + deathdata.deathscenetimesec;
     }
-    victim.death_timer_length = int(var_d8d2129eff08b4b1 * 10);
+    victim.death_timer_length = int(actualtimeuntilspawn * 10);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x157b3
 // Size: 0x132
@@ -6218,12 +6199,11 @@ function getindexfromhitloc(shitloc) {
         return 17;
     case #"hash_db653a4972b3c13b":
         return 18;
-        break;
     }
     return 0;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x158ed
 // Size: 0x18
@@ -6231,7 +6211,7 @@ function showuidamageflash() {
     self setclientomnvar("ui_damage_event", self.damageeventcount);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1590c
 // Size: 0x15d
@@ -6241,9 +6221,9 @@ function updatecombatrecordkillstats(attacker, victim, meansofdeath, objweapon) 
     }
     if (isdefined(attacker) && isplayer(attacker) && attacker != victim) {
         if (isdefined(objweapon)) {
-            var_11d2f075e9a0e643 = weapon::getequipmenttype(objweapon);
-            if (isdefined(var_11d2f075e9a0e643) && var_11d2f075e9a0e643 == "lethal") {
-                equipment = namespace_1a507865f681850e::getequipmentreffromweapon(objweapon);
+            equipmenttype = weapon::getequipmenttype(objweapon);
+            if (isdefined(equipmenttype) && equipmenttype == "lethal") {
+                equipment = scripts/mp/equipment::getequipmentreffromweapon(objweapon);
                 if (!isdefined(equipment)) {
                     /#
                         assertmsg("damage - updateCombatRecordKillStats was unable to getEquipmentRefFromWeapon with objWeapon" + objweapon.basename);
@@ -6257,25 +6237,25 @@ function updatecombatrecordkillstats(attacker, victim, meansofdeath, objweapon) 
                     equipment = "equip_snowball";
                 }
                 attacker combatrecordlethalkill(equipment);
-            } else {
-                killstreak = killstreak::getkillstreaknamefromweapon(objweapon);
-                if (isdefined(killstreak)) {
-                    if (isenumvaluevalid(level.var_5d69837cf4db0407, "LethalScorestreakStatItems", killstreak)) {
-                        attacker combatrecordkillstreakstat(killstreak);
-                    }
+                return;
+            }
+            killstreak = killstreak::getkillstreaknamefromweapon(objweapon);
+            if (isdefined(killstreak)) {
+                if (isenumvaluevalid(level.var_5d69837cf4db0407, "LethalScorestreakStatItems", killstreak)) {
+                    attacker combatrecordkillstreakstat(killstreak);
                 }
-                if (istrue(attacker.personalradaractive)) {
-                    attacker combatrecordtacticalstat("power_periphVis");
-                }
-                if (istrue(attacker.adrenalinepoweractive)) {
-                    attacker combatrecordtacticalstat("equip_adrenaline");
-                }
+            }
+            if (istrue(attacker.personalradaractive)) {
+                attacker combatrecordtacticalstat("power_periphVis");
+            }
+            if (istrue(attacker.adrenalinepoweractive)) {
+                attacker combatrecordtacticalstat("equip_adrenaline");
             }
         }
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15a70
 // Size: 0xfa
@@ -6283,23 +6263,23 @@ function combatrecordequipmentused(weapon) {
     if (!stats::canrecordcombatrecordstats()) {
         return;
     }
-    var_4918b66cebc7fbe7 = equipment::isequipmentlethal(weapon);
+    islethal = equipment::isequipmentlethal(weapon);
     if (weapon == "equip_throwing_knife_fire" || weapon == "equip_throwing_knife_electric" || weapon == "equip_shuriken") {
         weapon = "equip_throwing_knife";
     }
     if (weapon == "equip_pball") {
         weapon = "equip_snowball";
     }
-    if (var_4918b66cebc7fbe7) {
+    if (islethal) {
         oldvalue = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", "lethalStats", weapon, "uses");
         self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "lethalStats", weapon, "uses", oldvalue + 1);
-    } else {
-        oldvalue = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "uses");
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "uses", oldvalue + 1);
+        return;
     }
+    oldvalue = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "uses");
+    self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "uses", oldvalue + 1);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15b71
 // Size: 0x64
@@ -6311,22 +6291,22 @@ function combatrecordlethalkill(weapon) {
     self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "lethalStats", weapon, "kills", oldvalue + 1);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15bdc
 // Size: 0x7f
-function combatrecordtacticalstat(weapon, var_d2194902e87613eb) {
+function combatrecordtacticalstat(weapon, incrementvalue) {
     if (!stats::canrecordcombatrecordstats() || isagent(self)) {
         return;
     }
-    if (!isdefined(var_d2194902e87613eb)) {
-        var_d2194902e87613eb = 1;
+    if (!isdefined(incrementvalue)) {
+        incrementvalue = 1;
     }
     oldvalue = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "extraStat1");
-    self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "extraStat1", oldvalue + var_d2194902e87613eb);
+    self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "tacticalStats", weapon, "extraStat1", oldvalue + incrementvalue);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15c62
 // Size: 0x74
@@ -6334,49 +6314,49 @@ function combatrecordkillstreakstat(streakname) {
     if (!stats::canrecordcombatrecordstats()) {
         return;
     }
-    var_b326f2fc8716b6d8 = stats::getstreakrecordtype(streakname);
-    if (!isdefined(var_b326f2fc8716b6d8)) {
+    recordtype = stats::getstreakrecordtype(streakname);
+    if (!isdefined(recordtype)) {
         return;
     }
-    oldvalue = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", var_b326f2fc8716b6d8, streakname, "extraStat1");
-    self setplayerdata(level.var_5d69837cf4db0407, "playerStats", var_b326f2fc8716b6d8, streakname, "extraStat1", oldvalue + 1);
+    oldvalue = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", recordtype, streakname, "extraStat1");
+    self setplayerdata(level.var_5d69837cf4db0407, "playerStats", recordtype, streakname, "extraStat1", oldvalue + 1);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15cdd
 // Size: 0x6a
-function enqueuecorpsetablefunc(var_cc4f2e0388379546, func) {
+function enqueuecorpsetablefunc(funcid, func) {
     if (!isdefined(self.corpsetablefuncs)) {
         self.corpsetablefuncs = [];
         self.corpsetablefunccounts = [];
     }
-    if (!isdefined(self.corpsetablefuncs[var_cc4f2e0388379546])) {
-        self.corpsetablefuncs[var_cc4f2e0388379546] = func;
-        self.corpsetablefunccounts[var_cc4f2e0388379546] = 0;
+    if (!isdefined(self.corpsetablefuncs[funcid])) {
+        self.corpsetablefuncs[funcid] = func;
+        self.corpsetablefunccounts[funcid] = 0;
     }
-    self.corpsetablefunccounts[var_cc4f2e0388379546]++;
+    self.corpsetablefunccounts[funcid]++;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15d4e
 // Size: 0x5c
-function dequeuecorpsetablefunc(var_cc4f2e0388379546) {
+function dequeuecorpsetablefunc(funcid) {
     if (!isdefined(self.corpsetablefuncs)) {
         return;
     }
-    if (!isdefined(self.corpsetablefuncs[var_cc4f2e0388379546])) {
+    if (!isdefined(self.corpsetablefuncs[funcid])) {
         return;
     }
-    self.corpsetablefunccounts[var_cc4f2e0388379546]--;
-    if (self.corpsetablefunccounts[var_cc4f2e0388379546] <= 0) {
-        self.corpsetablefuncs[var_cc4f2e0388379546] = undefined;
-        self.corpsetablefunccounts[var_cc4f2e0388379546] = undefined;
+    self.corpsetablefunccounts[funcid]--;
+    if (self.corpsetablefunccounts[funcid] <= 0) {
+        self.corpsetablefuncs[funcid] = undefined;
+        self.corpsetablefunccounts[funcid] = undefined;
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15db1
 // Size: 0x81
@@ -6384,14 +6364,14 @@ function callcorpsetablefuncs() {
     if (!isdefined(self.corpsetablefuncs)) {
         return;
     }
-    var_3741ea5b9fb53ec3 = self.body;
+    corpsetable = self.body;
     foreach (func in self.corpsetablefuncs) {
-        self thread [[ func ]](var_3741ea5b9fb53ec3);
+        self thread [[ func ]](corpsetable);
     }
     thread clearcorpsetablefuncs();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15e39
 // Size: 0x1f
@@ -6401,7 +6381,7 @@ function clearcorpsetablefuncs() {
     self.corpsetablefunccounts = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15e5f
 // Size: 0x5e
@@ -6421,7 +6401,7 @@ function startcopycatoption(attacker) {
     class::copyclassfornextlife(attacker);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15ec4
 // Size: 0xb
@@ -6429,7 +6409,7 @@ function stopcopycatoption() {
     self notify("stop_copy_cat_option");
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15ed6
 // Size: 0x69
@@ -6445,7 +6425,7 @@ function isenvironmentalscriptableinflictor(einflictor) {
     return var_619c67271783522f;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15f47
 // Size: 0x5b
@@ -6454,18 +6434,18 @@ function shouldrecorddamagestats(player) {
         assertex(isplayer(player), "Parameter of shouldRecordDamageStats should be of player type.");
     #/
     if (function_483cc81bff18273b(player)) {
-        return 0;
+        return false;
     }
     if (istrue(level.disabledamagestattracking)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.disabledamagestattrackingfunc) && ![[ level.disabledamagestattrackingfunc ]](player)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15faa
 // Size: 0x143
@@ -6473,33 +6453,33 @@ function logfriendlyfire(player, attacker, damage, method) {
     if (!isdefined(player) || !isdefined(attacker) || !isdefined(method)) {
         return;
     }
-    var_da8c4c2cb070b775 = damage >= player.health;
+    willkill = damage >= player.health;
     var_7e2c53b0bcf117d9 = spawnstruct();
     var_7e2c53b0bcf117d9.weaponname = weapon::getweaponrootname(attacker.currentweapon);
     var_7e2c53b0bcf117d9.fullweaponname = getcompleteweaponname(attacker.currentweapon);
     var_7e2c53b0bcf117d9.statname = "friendly_fire_damage";
-    var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = int(min(damage, player.health));
+    var_7e2c53b0bcf117d9.incvalue = int(min(damage, player.health));
     var_7e2c53b0bcf117d9.variantid = -1;
     var_7e2c53b0bcf117d9.weaponobj = attacker.currentweapon;
     attacker namespace_c45ac99c4997e722::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
-    player dlog_recordplayerevent("dlog_event_friendly_fire", [0:"attacker", 1:attacker, 2:"damage", 3:damage, 4:"is_fatal_damage", 5:var_da8c4c2cb070b775, 6:"damage_method", 7:method]);
+    player dlog_recordplayerevent("dlog_event_friendly_fire", ["attacker", attacker, "damage", damage, "is_fatal_damage", willkill, "damage_method", method]);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x160f4
 // Size: 0x1fa
 function function_694d74d8b5ac556f(eattacker, idamage, var_1da1a66b5c6a06a7, smeansofdeath, objweapon, victim) {
     if (!isscriptedagent(eattacker) || eattacker.unittype == "zombie") {
-        return [0:idamage, 1:var_1da1a66b5c6a06a7];
+        return [idamage, var_1da1a66b5c6a06a7];
     }
     if (smeansofdeath == "MOD_EXECUTION" || smeansofdeath == "MOD_DOWN") {
-        return [0:idamage, 1:var_1da1a66b5c6a06a7];
+        return [idamage, var_1da1a66b5c6a06a7];
     }
     maxdamage = undefined;
     if (isdefined(level.var_ed524ae7534d93e6)) {
         maxdamage = level.var_ed524ae7534d93e6;
-    } else if (isdefined(level.var_e38979eb8fd7f7fd) && level.var_e38979eb8fd7f7fd != -1) {
+    } else if (isdefined(level.agentmaxdamage) && level.agentmaxdamage != -1) {
         class = weaponclass(objweapon);
         switch (class) {
         case #"hash_8cdaf2e4ecfe5b51":
@@ -6518,13 +6498,13 @@ function function_694d74d8b5ac556f(eattacker, idamage, var_1da1a66b5c6a06a7, sme
             } else if (smeansofdeath == "MOD_MELEE") {
                 maxdamage = level.var_e2fbc9e65108b1e;
             } else {
-                maxdamage = level.var_e38979eb8fd7f7fd;
+                maxdamage = level.agentmaxdamage;
             }
             break;
         }
     }
     if (isdefined(maxdamage)) {
-        invehicle = namespace_e47104b48662385b::isinvehicle();
+        invehicle = player_utility::isinvehicle();
         if (invehicle && isdefined(level.var_4899061e2e21dd13) && level.var_4899061e2e21dd13 != -1) {
             maxdamage = int(maxdamage * level.var_4899061e2e21dd13);
         }
@@ -6538,47 +6518,47 @@ function function_694d74d8b5ac556f(eattacker, idamage, var_1da1a66b5c6a06a7, sme
             }
         }
     }
-    return [0:idamage, 1:var_1da1a66b5c6a06a7];
+    return [idamage, var_1da1a66b5c6a06a7];
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x162f6
 // Size: 0x5f
-function function_fe5ee0f83d4109eb(einflictor, attacker, smeansofdeath, objweapon) {
+function issuicide(einflictor, attacker, smeansofdeath, objweapon) {
     if (isdefined(attacker) && attacker == self) {
-        return 1;
+        return true;
     }
     if (isdefined(smeansofdeath) && (smeansofdeath == "MOD_TRIGGER_HURT" || smeansofdeath == "MOD_SUICIDE")) {
-        return 1;
+        return true;
     }
     if (entity::isdronepackage(einflictor)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1635d
 // Size: 0x5b
-function function_e07d55b45fc82ae0(einflictor, attacker) {
+function isteamkill(einflictor, attacker) {
     if (!isdefined(attacker)) {
-        return 0;
+        return false;
     }
     if (!isplayer(attacker) && !isdefined(attacker.team)) {
-        return 0;
+        return false;
     }
     if (self.team != attacker.team) {
-        return 0;
+        return false;
     }
     if (self == attacker) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x163c0
 // Size: 0xb2
@@ -6607,21 +6587,21 @@ function function_cd066c9463ad28c5(objweapon, smeansofdeath) {
     return var_f91bacb796f4fde4;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1647a
 // Size: 0x82
 function function_a062727999a72d2f(weaponname) {
-    var_f8c0529126c5fb04 = [0:"iw9_sh_vecho_mp", 1:"iw9_pi_swhiskey_mp", 2:"iw9_sh_tsierra12_mp"];
+    var_f8c0529126c5fb04 = ["iw9_sh_vecho_mp", "iw9_pi_swhiskey_mp", "iw9_sh_tsierra12_mp"];
     foreach (i in var_f8c0529126c5fb04) {
         if (i == weaponname) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16504
 // Size: 0x56
@@ -6631,7 +6611,7 @@ function function_403e958ecd04f255(victim, reason) {
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16561
 // Size: 0x6d0
@@ -6645,28 +6625,28 @@ function function_8be77b53bcbd6d2d(attacker, type) {
         if (type == 0) {
             self.attackerdata[attacker.guid].killedby = 1;
         } else if (type == 1) {
-            self.attackerdata[attacker.guid].var_76207f194a157fb5 = 1;
+            self.attackerdata[attacker.guid].downedby = 1;
         }
     }
-    var_d614b27c91dfd5f9 = [];
+    displaydata = [];
     if (isdefined(attacker) && isdefined(attacker.guid) && isdefined(self.attackerdata[attacker.guid])) {
-        var_d614b27c91dfd5f9[0] = self.attackerdata[attacker.guid];
+        displaydata[0] = self.attackerdata[attacker.guid];
     }
     currenttime = gettime();
-    var_4c2335db73179a86 = getdvarfloat(@"hash_568c61c9cb10a05a", 20) * 1000;
+    ignoremaxtime = getdvarfloat(@"hash_568c61c9cb10a05a", 20) * 1000;
     var_27759d6e184c86e1 = getdvarint(@"hash_10925a6ddd9190c1", 0) == 0;
-    while (1) {
+    while (true) {
         var_21aa6f16d3025af6 = undefined;
         var_753e95a387880b4f = undefined;
         foreach (attackerdata in self.attackerdata) {
-            if (array_contains(var_d614b27c91dfd5f9, attackerdata)) {
+            if (array_contains(displaydata, attackerdata)) {
                 continue;
             }
             if (var_27759d6e184c86e1 && istrue(attackerdata.var_4ce88b2dfe0bfa52)) {
                 continue;
             }
             elapsedtime = attackerdata.lasttimedamaged - currenttime;
-            if (abs(elapsedtime) > var_4c2335db73179a86) {
+            if (abs(elapsedtime) > ignoremaxtime) {
                 continue;
             }
             if (!isdefined(var_753e95a387880b4f) || var_753e95a387880b4f > elapsedtime) {
@@ -6675,100 +6655,100 @@ function function_8be77b53bcbd6d2d(attacker, type) {
             }
         }
         if (isdefined(var_21aa6f16d3025af6)) {
-            var_d614b27c91dfd5f9[var_d614b27c91dfd5f9.size] = var_21aa6f16d3025af6;
-        } else {
-            break;
+            displaydata[displaydata.size] = var_21aa6f16d3025af6;
+            continue;
         }
+        break;
     }
     var_c41dadd6f0b10385 = 0;
     for (index = 0; index < 6; index++) {
-        if (index < var_d614b27c91dfd5f9.size) {
-            data = var_d614b27c91dfd5f9[index];
-            lootid = namespace_e0ee43ef2dddadaa::function_9c331f88be5a1478(data.objweapon);
+        if (index < displaydata.size) {
+            data = displaydata[index];
+            lootid = namespace_e0ee43ef2dddadaa::getweaponlootid(data.objweapon);
             if (lootid == 0) {
-                var_1189bd7fbe2861f8 = namespace_1a507865f681850e::getequipmentreffromweapon(data.objweapon);
-                if (isdefined(var_1189bd7fbe2861f8)) {
-                    lootid = namespace_38b993c4618e76cd::getlootidfromref(var_1189bd7fbe2861f8);
+                equipref = scripts/mp/equipment::getequipmentreffromweapon(data.objweapon);
+                if (isdefined(equipref)) {
+                    lootid = namespace_38b993c4618e76cd::getlootidfromref(equipref);
                 } else if (namespace_e0ee43ef2dddadaa::iskillstreakweapon(data.objweapon)) {
-                    killstreakname = namespace_a2f809133c566621::getkillstreaknamefromweapon(data.objweapon);
+                    killstreakname = scripts/mp/utility/killstreak::getkillstreaknamefromweapon(data.objweapon);
                     lootid = namespace_38b993c4618e76cd::getlootidfromref(killstreakname);
                 } else if (isdefined(data.objweapon.basename)) {
                     lootid = namespace_38b993c4618e76cd::getlootidfromref(data.objweapon.basename);
                 }
             }
-            attackerent = function_53c4c53197386572(data.attackerent, undefined);
-            lootid = int(clamp(function_53c4c53197386572(lootid, 0), 0, 2147483647));
-            var_9d0080ba4b9a0226 = function_53c4c53197386572(data.var_282f568e901445ce.size > 1, 0);
-            damage = int(clamp(function_53c4c53197386572(data.var_d69d6cc16d8b71fb, 0), 0, 1023));
-            hitcount = int(clamp(function_53c4c53197386572(data.hitcount, 0), 0, 255));
-            var_76207f194a157fb5 = function_53c4c53197386572(istrue(data.var_76207f194a157fb5), 0);
-            killedby = function_53c4c53197386572(istrue(data.killedby), 0);
-            friendly = function_53c4c53197386572(namespace_f8065cafc523dba5::isfriendly(self.team, data.attackerent), 0);
-            var_f5e1c7e19d1f681c = 0;
+            attackerent = default_to(data.attackerent, undefined);
+            lootid = int(clamp(default_to(lootid, 0), 0, 2147483647));
+            multiweapon = default_to(data.damagesources.size > 1, 0);
+            damage = int(clamp(default_to(data.var_d69d6cc16d8b71fb, 0), 0, 1023));
+            hitcount = int(clamp(default_to(data.hitcount, 0), 0, 255));
+            downedby = default_to(istrue(data.downedby), 0);
+            killedby = default_to(istrue(data.killedby), 0);
+            friendly = default_to(scripts/cp_mp/utility/player_utility::isfriendly(self.team, data.attackerent), 0);
+            damagetypeoverride = 0;
             if (isdefined(data.var_8519cf56b38d717d)) {
                 switch (data.var_8519cf56b38d717d) {
                 case #"hash_b15027ffbdc0ecb":
-                    var_f5e1c7e19d1f681c = 1;
+                    damagetypeoverride = 1;
                     break;
                 case #"hash_f91d639d29feb858":
-                    var_f5e1c7e19d1f681c = 2;
+                    damagetypeoverride = 2;
                     break;
                 case #"hash_e4fbf0b31ced1661":
-                    var_f5e1c7e19d1f681c = 3;
+                    damagetypeoverride = 3;
                     break;
                 case #"hash_91d0b5d30ea06560":
-                    var_f5e1c7e19d1f681c = 4;
+                    damagetypeoverride = 4;
                     break;
                 case #"hash_daa7ba4e87e42b9":
-                    var_f5e1c7e19d1f681c = 5;
+                    damagetypeoverride = 5;
                     break;
                 case #"hash_abb1587cdc6def23":
-                    var_f5e1c7e19d1f681c = 6;
+                    damagetypeoverride = 6;
                     break;
                 case #"hash_a5123f4d02745600":
-                    var_f5e1c7e19d1f681c = 7;
+                    damagetypeoverride = 7;
                     break;
                 case #"hash_61e42661ac27b9f2":
-                    var_f5e1c7e19d1f681c = 8;
+                    damagetypeoverride = 8;
                     break;
                 case #"hash_24cf9a6ca3404493":
-                    var_f5e1c7e19d1f681c = 9;
+                    damagetypeoverride = 9;
                     break;
                 default:
-                    var_f5e1c7e19d1f681c = 10;
+                    damagetypeoverride = 10;
                     if (isdefined(data.smeansofdeath) && data.smeansofdeath == "MOD_SUICIDE") {
-                        var_f5e1c7e19d1f681c = 9;
+                        damagetypeoverride = 9;
                     }
                     break;
                 }
             }
             self setclientomnvar("ui_combat_report_attacker_" + index, attackerent);
             self setclientomnvar("ui_combat_report_weapon_lootid_" + index, lootid);
-            self setclientomnvar("ui_combat_report_multi_weapon_" + index, var_9d0080ba4b9a0226);
+            self setclientomnvar("ui_combat_report_multi_weapon_" + index, multiweapon);
             self setclientomnvar("ui_combat_report_damage_" + index, damage);
             self setclientomnvar("ui_combat_report_hits_" + index, hitcount);
-            self setclientomnvar("ui_combat_report_downedby_" + index, var_76207f194a157fb5);
+            self setclientomnvar("ui_combat_report_downedby_" + index, downedby);
             self setclientomnvar("ui_combat_report_killedby_" + index, killedby);
             self setclientomnvar("ui_combat_report_friendly_" + index, friendly);
-            self setclientomnvar("ui_combat_report_damage_type_override_" + index, var_f5e1c7e19d1f681c);
-        } else {
-            self setclientomnvar("ui_combat_report_attacker_" + index, undefined);
-            self setclientomnvar("ui_combat_report_weapon_lootid_" + index, 0);
-            self setclientomnvar("ui_combat_report_multi_weapon_" + index, 0);
-            self setclientomnvar("ui_combat_report_damage_" + index, 0);
-            self setclientomnvar("ui_combat_report_hits_" + index, 0);
-            self setclientomnvar("ui_combat_report_downedby_" + index, 0);
-            self setclientomnvar("ui_combat_report_killedby_" + index, 0);
-            self setclientomnvar("ui_combat_report_friendly_" + index, 0);
-            self setclientomnvar("ui_combat_report_damage_type_override_" + index, 0);
+            self setclientomnvar("ui_combat_report_damage_type_override_" + index, damagetypeoverride);
+            continue;
         }
+        self setclientomnvar("ui_combat_report_attacker_" + index, undefined);
+        self setclientomnvar("ui_combat_report_weapon_lootid_" + index, 0);
+        self setclientomnvar("ui_combat_report_multi_weapon_" + index, 0);
+        self setclientomnvar("ui_combat_report_damage_" + index, 0);
+        self setclientomnvar("ui_combat_report_hits_" + index, 0);
+        self setclientomnvar("ui_combat_report_downedby_" + index, 0);
+        self setclientomnvar("ui_combat_report_killedby_" + index, 0);
+        self setclientomnvar("ui_combat_report_friendly_" + index, 0);
+        self setclientomnvar("ui_combat_report_damage_type_override_" + index, 0);
     }
-    var_768fe1af4dda51ad = function_53c4c53197386572(var_d614b27c91dfd5f9.size, 0);
-    var_768fe1af4dda51ad = int(clamp(var_768fe1af4dda51ad, 0, 6));
-    self setclientomnvar("ui_combat_report_num_attackers", var_768fe1af4dda51ad);
+    numattackers = default_to(displaydata.size, 0);
+    numattackers = int(clamp(numattackers, 0, 6));
+    self setclientomnvar("ui_combat_report_num_attackers", numattackers);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16c38
 // Size: 0x190
@@ -6780,74 +6760,74 @@ function function_84c8fc967497800(attacker, attackerdamage, attackerweapon) {
     if (!isreallyalive(victim) || victim isplayeringulag()) {
         return;
     }
-    attackerteam = namespace_54d20dd0dd79277f::getteamdata(attacker.team, "alivePlayers");
+    attackerteam = scripts/mp/utility/teams::getteamdata(attacker.team, "alivePlayers");
     if (!isdefined(attackerteam)) {
         return;
     }
     if (victim _hasperk("specialty_covert_ops")) {
         attacker thread function_b3e014b644ff0edb(2);
-    } else {
-        foreach (player in attackerteam) {
-            if (!isdefined(player.var_6745f7e4484f1a55)) {
-                continue;
-            }
-            if (player.var_6745f7e4484f1a55 == victim) {
-                return;
-            }
+        return;
+    }
+    foreach (player in attackerteam) {
+        if (!isdefined(player.var_6745f7e4484f1a55)) {
+            continue;
         }
-        attacker notify("combatscout_targetSwitch");
-        var_c3255c35acfc668c = function_f7060d6be77fc6a2(attacker.origin, victim.origin);
-        victim function_87dfbd72f4fdd76f(attacker, int(5), var_c3255c35acfc668c);
-        currenttime = gettime();
-        if (!isdefined(attacker.var_d0a7a6015ed83b19) || currenttime > attacker.var_d0a7a6015ed83b19 + 1500) {
-            attacker playlocalsound("recon_drone_marked_owner");
-            attacker.var_d0a7a6015ed83b19 = gettime();
+        if (player.var_6745f7e4484f1a55 == victim) {
+            return;
         }
+    }
+    attacker notify("combatscout_targetSwitch");
+    marktype = function_f7060d6be77fc6a2(attacker.origin, victim.origin);
+    victim function_87dfbd72f4fdd76f(attacker, int(5), marktype);
+    currenttime = gettime();
+    if (!isdefined(attacker.var_d0a7a6015ed83b19) || currenttime > attacker.var_d0a7a6015ed83b19 + 1500) {
+        attacker playlocalsound("recon_drone_marked_owner");
+        attacker.var_d0a7a6015ed83b19 = gettime();
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16dcf
 // Size: 0x1bd
-function function_87dfbd72f4fdd76f(attacker, var_b6b08a6a6f96b5c4, var_c3255c35acfc668c) {
+function function_87dfbd72f4fdd76f(attacker, pingtime, marktype) {
     victim = self;
     level endon("game_ended");
     victim endon("disconnect");
-    var_5283d6ed761e8022 = var_b6b08a6a6f96b5c4 * 1000;
-    if (!isdefined(var_c3255c35acfc668c)) {
-        var_c3255c35acfc668c = getdvarint(@"hash_1330d41fefd75985", 1);
+    var_5283d6ed761e8022 = pingtime * 1000;
+    if (!isdefined(marktype)) {
+        marktype = getdvarint(@"hash_1330d41fefd75985", 1);
     }
-    switch (var_c3255c35acfc668c) {
+    switch (marktype) {
     case 3:
-        var_b6b08a6a6f96b5c4 = int(var_b6b08a6a6f96b5c4 * 1.6);
+        pingtime = int(pingtime * 1.6);
         var_5283d6ed761e8022 = int(var_5283d6ed761e8022 * 1.6);
         break;
     case 2:
-        var_b6b08a6a6f96b5c4 = int(var_b6b08a6a6f96b5c4 * 1);
+        pingtime = int(pingtime * 1);
         var_5283d6ed761e8022 = int(var_5283d6ed761e8022 * 1);
         break;
     case 1:
     default:
-        var_b6b08a6a6f96b5c4 = int(var_b6b08a6a6f96b5c4 * 0.75);
+        pingtime = int(pingtime * 0.75);
         var_5283d6ed761e8022 = int(var_5283d6ed761e8022 * 0.75);
         break;
     }
-    icon = victim thread namespace_7bdde15c3500a23f::setheadicon_singleimage(attacker.team, "hud_icon_new_marked", 8, 1, 5000, 500, undefined, 1, 1);
+    icon = victim thread scripts/cp_mp/entityheadicons::setheadicon_singleimage(attacker.team, "hud_icon_new_marked", 8, 1, 5000, 500, undefined, 1, 1);
     currenttime = gettime();
     if (!isdefined(victim.var_70ec5815eb1aa3f2) || currenttime > victim.var_70ec5815eb1aa3f2 + 1500) {
         victim namespace_893ac0cf28c5af44::function_fa08d1d78cf5cb01();
         victim playlocalsound("recon_drone_spotted_plr");
         victim.var_70ec5815eb1aa3f2 = gettime();
     }
-    victim thread function_c712df451114149d(attacker, icon, var_b6b08a6a6f96b5c4);
+    victim thread function_c712df451114149d(attacker, icon, pingtime);
     triggerportableradarpingteam(victim.origin, attacker.team, 40, var_5283d6ed761e8022);
     /#
-        iprintln("ui_killcam_killedby_health_ratio" + var_c3255c35acfc668c + "new_trigger_spawned" + var_b6b08a6a6f96b5c4);
+        iprintln("ui_killcam_killedby_health_ratio" + marktype + "new_trigger_spawned" + pingtime);
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16f93
 // Size: 0x75
@@ -6857,30 +6837,32 @@ function function_c712df451114149d(attacker, icon, waittime) {
     victim endon("disconnect");
     attacker.var_6745f7e4484f1a55 = victim;
     waittill_any_ents_or_timeout_return(waittime, victim, "death", attacker, "combatscout_targetSwitch");
-    namespace_7bdde15c3500a23f::setheadicon_deleteicon(icon);
+    scripts/cp_mp/entityheadicons::setheadicon_deleteicon(icon);
     attacker.var_6745f7e4484f1a55 = undefined;
     attacker.var_d0a7a6015ed83b19 = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1700f
 // Size: 0x6d
-function function_f7060d6be77fc6a2(var_4ec83c6262d70534, var_d58995fcdb46b749) {
-    dist = distance2d(var_4ec83c6262d70534, var_d58995fcdb46b749);
+function function_f7060d6be77fc6a2(attackerloc, victimloc) {
+    dist = distance2d(attackerloc, victimloc);
     /#
         iprintln("start_ragdoll" + dist);
     #/
     if (dist >= 0 && dist <= 2000) {
         return 1;
-    } else if (dist > 2000 && dist <= 4000) {
+    }
+    if (dist > 2000 && dist <= 4000) {
         return 2;
-    } else if (dist > 4000) {
+    }
+    if (dist > 4000) {
         return 3;
     }
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17083
 // Size: 0x76
@@ -6901,7 +6883,7 @@ function function_b3e014b644ff0edb(time) {
     attacker.var_b9fc1ffc6b388cf5 = undefined;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17100
 // Size: 0x9b
@@ -6917,25 +6899,25 @@ function function_fbd5b90ec07c28c4(victim) {
     victim weapons::updatemovespeedscale();
     victim val::set("bulletDamageMeleeSlow", "sprint", 0);
     utility::waittill_any_timeout_1(0.7, "death");
-    victim val::function_c9d0b43701bdba00("bulletDamageMeleeSlow");
+    victim val::reset_all("bulletDamageMeleeSlow");
     victim.var_529eb36595b1d4bf = undefined;
     victim weapons::updatemovespeedscale();
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x171a2
 // Size: 0x7d
-function function_c38aa07aff945ff7(vdir, victim) {
+function shouldmeleeslow(vdir, victim) {
     if (getdvarint(@"hash_73b7043bcd71993a", 0) && weapon::ismeleeonly(victim.currentweapon)) {
         if (vectordot(vdir, anglestoforward(victim.angles)) < 0 && distance2dsquared(self.origin, victim.origin) < 562500) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17227
 // Size: 0x4c
@@ -6949,7 +6931,7 @@ function function_3e0f845008bbd48d(func_damage_override) {
     level.var_5cb687ba43fb7102 = utility::function_6d6af8144a5131f1(level.var_5cb687ba43fb7102, func_damage_override);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1727a
 // Size: 0x37
@@ -6960,96 +6942,96 @@ function function_ba85b91abfec02d8(func) {
     level.var_5cb687ba43fb7102 = utility::array_remove(level.var_5cb687ba43fb7102, func);
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x172b8
 // Size: 0x178
-function function_18c42af5777dcd9f(var_642470e1abc1bbf9) {
+function function_18c42af5777dcd9f(deathdata) {
     /#
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281 = [];
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["should_do_killcam"] = var_642470e1abc1bbf9.attacker;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["pistolHeadshots"] = var_642470e1abc1bbf9.victim;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["thermiteKills"] = var_642470e1abc1bbf9.damage;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["longestStreak"] = var_642470e1abc1bbf9.objweapon;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["secondary"] = var_642470e1abc1bbf9.meansofdeath;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["ui_killed_player_notify"] = var_642470e1abc1bbf9.inflictor;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["^"] = var_642470e1abc1bbf9.direction_vec;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["Callback_KillingBlow == false"] = var_642470e1abc1bbf9.damageflags;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["rumble_mgl"] = var_642470e1abc1bbf9.hitloc;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["enemy_in_laststand"] = var_642470e1abc1bbf9.psoffsettime;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["vampirism"] = var_642470e1abc1bbf9.deathanimduration;
-        var_642470e1abc1bbf9.var_28cd1e201ecd8281["uses"] = var_642470e1abc1bbf9.isfauxdeath;
+        deathdata.var_28cd1e201ecd8281 = [];
+        deathdata.var_28cd1e201ecd8281["should_do_killcam"] = deathdata.attacker;
+        deathdata.var_28cd1e201ecd8281["pistolHeadshots"] = deathdata.victim;
+        deathdata.var_28cd1e201ecd8281["thermiteKills"] = deathdata.damage;
+        deathdata.var_28cd1e201ecd8281["longestStreak"] = deathdata.objweapon;
+        deathdata.var_28cd1e201ecd8281["secondary"] = deathdata.meansofdeath;
+        deathdata.var_28cd1e201ecd8281["ui_killed_player_notify"] = deathdata.inflictor;
+        deathdata.var_28cd1e201ecd8281["^"] = deathdata.direction_vec;
+        deathdata.var_28cd1e201ecd8281["Callback_KillingBlow == false"] = deathdata.damageflags;
+        deathdata.var_28cd1e201ecd8281["rumble_mgl"] = deathdata.hitloc;
+        deathdata.var_28cd1e201ecd8281["enemy_in_laststand"] = deathdata.psoffsettime;
+        deathdata.var_28cd1e201ecd8281["vampirism"] = deathdata.deathanimduration;
+        deathdata.var_28cd1e201ecd8281["uses"] = deathdata.isfauxdeath;
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17437
 // Size: 0x213
-function function_f9249bb06eb48092(var_642470e1abc1bbf9) {
+function function_f9249bb06eb48092(deathdata) {
     /#
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["should_do_killcam"] == var_642470e1abc1bbf9.attacker, "dlog_event_friendly_fire");
+            assertex(deathdata.var_28cd1e201ecd8281["should_do_killcam"] == deathdata.attacker, "dlog_event_friendly_fire");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["pistolHeadshots"] == var_642470e1abc1bbf9.victim, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["pistolHeadshots"] == deathdata.victim, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["thermiteKills"] == var_642470e1abc1bbf9.damage, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["thermiteKills"] == deathdata.damage, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["longestStreak"] == var_642470e1abc1bbf9.objweapon, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["longestStreak"] == deathdata.objweapon, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["secondary"] == var_642470e1abc1bbf9.meansofdeath, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["secondary"] == deathdata.meansofdeath, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["ui_killed_player_notify"] == var_642470e1abc1bbf9.inflictor, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["ui_killed_player_notify"] == deathdata.inflictor, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["^"] == var_642470e1abc1bbf9.direction_vec, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["^"] == deathdata.direction_vec, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["Callback_KillingBlow == false"] == var_642470e1abc1bbf9.damageflags, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["Callback_KillingBlow == false"] == deathdata.damageflags, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["rumble_mgl"] == var_642470e1abc1bbf9.hitloc, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["rumble_mgl"] == deathdata.hitloc, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["enemy_in_laststand"] == var_642470e1abc1bbf9.psoffsettime, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["enemy_in_laststand"] == deathdata.psoffsettime, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["vampirism"] == var_642470e1abc1bbf9.deathanimduration, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["vampirism"] == deathdata.deathanimduration, "<unknown string>");
         #/
         /#
-            assertex(var_642470e1abc1bbf9.var_28cd1e201ecd8281["uses"] == var_642470e1abc1bbf9.isfauxdeath, "<unknown string>");
+            assertex(deathdata.var_28cd1e201ecd8281["uses"] == deathdata.isfauxdeath, "<unknown string>");
         #/
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17651
 // Size: 0x2e
-function function_af3ebb9d1ecd18e7(var_642470e1abc1bbf9) {
+function function_af3ebb9d1ecd18e7(deathdata) {
     /#
         /#
-            assertex(var_642470e1abc1bbf9.deathtime == gettime(), "<unknown string>");
+            assertex(deathdata.deathtime == gettime(), "<unknown string>");
         #/
     #/
 }
 
-// Namespace damage/namespace_3e725f3cc58bddd3
+// Namespace damage / scripts/mp/damage
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x17686
 // Size: 0xfd
-function function_1b7b7da2e72eeffe(attacker, var_650e1916e052d2c7, smeansofdeath, objweapon) {
+function function_1b7b7da2e72eeffe(attacker, recentdamage, smeansofdeath, objweapon) {
     /#
         self endon("<unknown string>");
         if (!isdefined(self.var_e6c94d7b9dc402ee)) {
-            self.var_e6c94d7b9dc402ee = var_650e1916e052d2c7;
+            self.var_e6c94d7b9dc402ee = recentdamage;
         } else {
-            self.var_e6c94d7b9dc402ee = self.var_e6c94d7b9dc402ee + var_650e1916e052d2c7;
+            self.var_e6c94d7b9dc402ee = self.var_e6c94d7b9dc402ee + recentdamage;
         }
         self notify("<unknown string>");
         self endon("<unknown string>");

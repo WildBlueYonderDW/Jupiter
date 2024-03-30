@@ -4,7 +4,7 @@
 
 #namespace passives;
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x94
 // Size: 0x14
@@ -13,7 +13,7 @@ function init() {
     passiveparsetable();
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf
 // Size: 0x224
@@ -21,7 +21,7 @@ function passiveparsetable() {
     if (!isdefined(level.passivemap)) {
         level.passivemap = [];
     }
-    for (row = 0; 1; row++) {
+    for (row = 0; true; row++) {
         id = tablelookupbyrow("mp/passivetable.csv", row, 0);
         if (id == "") {
             break;
@@ -57,7 +57,7 @@ function passiveparsetable() {
     }
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2da
 // Size: 0x34
@@ -69,7 +69,7 @@ function getpassivestruct(passive) {
     return struct;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x316
 // Size: 0x41
@@ -81,7 +81,7 @@ function getpassiveattachment(passive) {
     return struct.attachmentref;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35f
 // Size: 0x41
@@ -93,7 +93,7 @@ function getpassiveperk(passive) {
     return struct.perkref;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a8
 // Size: 0x41
@@ -105,7 +105,7 @@ function getpassivemessage(passive) {
     return struct.messageref;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x7b
@@ -119,7 +119,7 @@ function getweapontypepassives() {
     return passives;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x474
 // Size: 0x7b
@@ -133,7 +133,7 @@ function getkillstreaktypepassives() {
     return passives;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f7
 // Size: 0x7b
@@ -147,7 +147,7 @@ function getlethaltypepassives() {
     return passives;
 }
 
-// Namespace passives/namespace_d42f0311f511b910
+// Namespace passives / scripts/mp/passives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x7b

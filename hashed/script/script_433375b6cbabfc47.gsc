@@ -5,7 +5,7 @@
 
 #namespace namespace_560e78dfaa3a1c81;
 
-// Namespace namespace_560e78dfaa3a1c81/namespace_7d24de258f16ea69
+// Namespace namespace_560e78dfaa3a1c81 / namespace_7d24de258f16ea69
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x35
@@ -16,7 +16,7 @@ function function_92fcbb3c9780deb7(taskid, params) {
     return anim.running;
 }
 
-// Namespace namespace_560e78dfaa3a1c81/namespace_7d24de258f16ea69
+// Namespace namespace_560e78dfaa3a1c81 / namespace_7d24de258f16ea69
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe0
 // Size: 0x95
@@ -40,7 +40,7 @@ function function_3c1b4ff1cb5f468d(source_pos, intensity) {
     return 1;
 }
 
-// Namespace namespace_560e78dfaa3a1c81/namespace_7d24de258f16ea69
+// Namespace namespace_560e78dfaa3a1c81 / namespace_7d24de258f16ea69
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17d
 // Size: 0xe

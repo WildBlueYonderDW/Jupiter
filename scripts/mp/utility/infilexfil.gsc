@@ -1,14 +1,14 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\engine\trace.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 
-#namespace namespace_9d0f8a9d932ed5e3;
+#namespace infilexfil;
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x60b
 // Size: 0xd9
@@ -25,13 +25,15 @@ function getinfilpath(targetname) {
             if (isdefined(path.script_noteworthy) && path.script_noteworthy == "interactive") {
                 return path;
             }
-        } else if (!isdefined(path.script_noteworthy) || path.script_noteworthy != "interactive") {
+            continue;
+        }
+        if (!isdefined(path.script_noteworthy) || path.script_noteworthy != "interactive") {
             return path;
         }
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6eb
 // Size: 0x4d
@@ -49,7 +51,7 @@ function player_unlink(guy) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0x58
@@ -67,7 +69,7 @@ function player_free_look(guy) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x79e
 // Size: 0x49
@@ -83,7 +85,7 @@ function player_fov_80_instant(guy) {
     player lerpfovbypreset("80_instant");
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ee
 // Size: 0x49
@@ -99,7 +101,7 @@ function player_fov_default_1(guy) {
     player lerpfovbypreset("zombiearcade");
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x83e
 // Size: 0x5c
@@ -117,7 +119,7 @@ function player_fov_default_2(guy) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a1
 // Size: 0x5d
@@ -135,7 +137,7 @@ function player_lock_look_1_second(guy) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x905
 // Size: 0x5d
@@ -153,7 +155,7 @@ function player_lock_look_2_second(guy) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x969
 // Size: 0x54
@@ -171,7 +173,7 @@ function player_lock_look_instant(guy) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c4
 // Size: 0x5a
@@ -187,7 +189,7 @@ function rumble_low(guy) {
     player thread updateshakeonplayer(undefined, undefined, undefined, undefined, undefined, "mig_rumble", 0.05, 0.1);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa25
 // Size: 0x6f
@@ -203,7 +205,7 @@ function cam_shake_low(guy) {
     player thread updateshakeonplayer(0.06, 0.075, 2, player.origin, 8000, "mig_rumble", 0.05, 0.1);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa9b
 // Size: 0x6b
@@ -219,7 +221,7 @@ function cam_shake_running(guy) {
     player thread updateshakeonplayer(0.09, 0.115, 2, player.origin, 8000, undefined, 0.15, 0.5);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0d
 // Size: 0x6e
@@ -235,7 +237,7 @@ function cam_shake_parked(guy) {
     player thread updateshakeonplayer(0.065, 0.09, 0.5, player.origin, 8000, undefined, 0.15, 0.5);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb82
 // Size: 0x45
@@ -251,11 +253,11 @@ function cam_shake_off(guy) {
     player notify("stop_cam_shake");
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbce
 // Size: 0xca
-function updateshakeonplayer(var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa5a6ef8c302a935, var_5c7fa8f909b33748, var_19067c8c80afb50, var_21f510057c7bf283, var_30f2848645468450, var_30cf7a864520269a) {
+function updateshakeonplayer(var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa5a6ef8c302a935, var_5c7fa8f909b33748, var_19067c8c80afb50, rumblename, waitmin, waitmax) {
     if (istrue(level.interactiveinfil) && istrue(self.interactivecombat)) {
         return;
     }
@@ -268,14 +270,14 @@ function updateshakeonplayer(var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa5
         if (isdefined(var_7ac5f1f9205ac776) && isdefined(var_7ae8e3f92080f064)) {
             self earthquakeforplayer(randomfloatrange(var_7ac5f1f9205ac776, var_7ae8e3f92080f064), var_fa5a6ef8c302a935, var_5c7fa8f909b33748, var_19067c8c80afb50);
         }
-        if (isdefined(var_21f510057c7bf283)) {
-            self playrumbleonpositionforclient(var_21f510057c7bf283, self.origin);
+        if (isdefined(rumblename)) {
+            self playrumbleonpositionforclient(rumblename, self.origin);
         }
-        wait(randomfloatrange(var_30f2848645468450, var_30cf7a864520269a));
+        wait(randomfloatrange(waitmin, waitmax));
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc9f
 // Size: 0x65
@@ -288,7 +290,7 @@ function hideactors() {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0b
 // Size: 0x65
@@ -301,7 +303,7 @@ function showactors() {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd77
 // Size: 0x49
@@ -317,7 +319,7 @@ function setcinematicmotion_heli(guy) {
     player setcinematicmotionoverride("player_heli_ride");
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc7
 // Size: 0x49
@@ -333,7 +335,7 @@ function setcinematicmotion_playermotion(guy) {
     player setcinematicmotionoverride("iw9_playermotion");
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe17
 // Size: 0x49
@@ -349,7 +351,7 @@ function setcinematicmotion_disabled(guy) {
     player setcinematicmotionoverride("disabled");
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe67
 // Size: 0x40
@@ -360,7 +362,7 @@ function set_cinematicmotionomnvaroverrides(value) {
     self setclientomnvar("handheld_camera_translation_view_mod_override", value);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeae
 // Size: 0xce
@@ -370,7 +372,7 @@ function set_cinematicmotionomnvarovertime(startval, endval, duration) {
     duration = duration * 1000;
     endtime = int(currenttime + duration);
     diff = abs(startval - endval);
-    while (1) {
+    while (true) {
         currenttime = gettime();
         t = clamp(1 - (endtime - currenttime) / duration, 0, 1);
         frac = ter_op(startval < endval, diff * t + startval, startval - diff * t);
@@ -382,7 +384,7 @@ function set_cinematicmotionomnvarovertime(startval, endval, duration) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf83
 // Size: 0x4a
@@ -398,7 +400,7 @@ function setcinematicmotion_omnvaroverride_max_instant(guy) {
     player set_cinematicmotionomnvaroverrides(1);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfd4
 // Size: 0x55
@@ -414,7 +416,7 @@ function setcinematicmotion_omnvaroverride_max_1(guy) {
     player thread set_cinematicmotionomnvarovertime(0, 1, 1);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1030
 // Size: 0x55
@@ -430,7 +432,7 @@ function setcinematicmotion_omnvaroverride_max_2(guy) {
     player thread set_cinematicmotionomnvarovertime(0, 1, 2);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x108c
 // Size: 0x55
@@ -446,7 +448,7 @@ function setcinematicmotion_omnvaroverride_max_3(guy) {
     player thread set_cinematicmotionomnvarovertime(0, 1, 3);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10e8
 // Size: 0x55
@@ -462,7 +464,7 @@ function setcinematicmotion_omnvaroverride_max_4(guy) {
     player thread set_cinematicmotionomnvarovertime(0, 1, 4);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1144
 // Size: 0x55
@@ -478,7 +480,7 @@ function setcinematicmotion_omnvaroverride_max_5(guy) {
     player thread set_cinematicmotionomnvarovertime(0, 1, 5);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11a0
 // Size: 0x4a
@@ -494,7 +496,7 @@ function setcinematicmotion_omnvaroverride_min_instant(guy) {
     player set_cinematicmotionomnvaroverrides(0);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11f1
 // Size: 0x55
@@ -510,7 +512,7 @@ function setcinematicmotion_omnvaroverride_min_1(guy) {
     player thread set_cinematicmotionomnvarovertime(1, 0, 1);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x124d
 // Size: 0x55
@@ -526,7 +528,7 @@ function setcinematicmotion_omnvaroverride_min_2(guy) {
     player thread set_cinematicmotionomnvarovertime(1, 0, 2);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12a9
 // Size: 0x55
@@ -542,7 +544,7 @@ function setcinematicmotion_omnvaroverride_min_3(guy) {
     player thread set_cinematicmotionomnvarovertime(1, 0, 3);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1305
 // Size: 0x55
@@ -558,7 +560,7 @@ function setcinematicmotion_omnvaroverride_min_4(guy) {
     player thread set_cinematicmotionomnvarovertime(1, 0, 4);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1361
 // Size: 0x55
@@ -574,12 +576,12 @@ function setcinematicmotion_omnvaroverride_min_5(guy) {
     player thread set_cinematicmotionomnvarovertime(1, 0, 5);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13bd
 // Size: 0x4e
 function player_equip_nvg(guy) {
-    if (!namespace_36f464722d326bbe::function_d2d2b803a7b741a4()) {
+    if (!scripts/cp_mp/utility/game_utility::function_d2d2b803a7b741a4()) {
         return;
     }
     if (!isdefined(guy)) {
@@ -593,7 +595,7 @@ function player_equip_nvg(guy) {
     player nightvisionviewon();
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1412
 // Size: 0x11c
@@ -606,16 +608,16 @@ function getgroundcompensationheight(guy) {
     } else {
         player = guy;
     }
-    var_31c17768c4aba01c = player.origin[2];
-    contents = namespace_2a184fc4902783dc::create_solid_ai_contents(1);
+    currentz = player.origin[2];
+    contents = scripts/engine/trace::create_solid_ai_contents(1);
     startpos = player.origin + 12 * (0, 0, 1);
     endpos = player.origin - 24 * (0, 0, 1);
-    groundpos = namespace_2a184fc4902783dc::player_trace(startpos, endpos, player.angles, [0:player, 1:player.infil.linktoent], contents)["position"];
+    groundpos = scripts/engine/trace::player_trace(startpos, endpos, player.angles, [player, player.infil.linktoent], contents)["position"];
     groundz = groundpos[2];
-    player.infilheightcompensation = groundz - var_31c17768c4aba01c;
+    player.infilheightcompensation = groundz - currentz;
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1535
 // Size: 0xeb
@@ -635,21 +637,21 @@ function compensatetoground() {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1627
 // Size: 0x26c
-function infil_player_rig_updated(animname, spawnpos, var_b7850001037aa074) {
+function infil_player_rig_updated(animname, spawnpos, spawnang) {
     self.animname = animname;
     if (!isdefined(spawnpos)) {
         spawnpos = (0, 0, 0);
     }
-    if (!isdefined(var_b7850001037aa074)) {
-        var_b7850001037aa074 = (0, 0, 0);
+    if (!isdefined(spawnang)) {
+        spawnang = (0, 0, 0);
     }
     self function_b88c89bb7cd1ab8e(spawnpos);
     player_rig = spawn("script_arms", spawnpos, 0, 0, self);
-    player_rig.angles = var_b7850001037aa074;
+    player_rig.angles = spawnang;
     player_rig.player = self;
     self.player_rig = player_rig;
     self.player_rig hide(1);
@@ -678,7 +680,7 @@ function infil_player_rig_updated(animname, spawnpos, var_b7850001037aa074) {
             println("<unknown string>" + self.name + "<unknown string>" + animname + "<unknown string>" + isdefined(self.player_rig));
         #/
         self unlink();
-        thread namespace_df5cfdbe6e2d3812::function_9897d143c3feee05();
+        thread scripts/cp_mp/utility/inventory_utility::function_9897d143c3feee05();
     }
     if (isdefined(player_rig)) {
         if (isdefined(player_rig.var_a898e429efa25958)) {
@@ -691,7 +693,7 @@ function infil_player_rig_updated(animname, spawnpos, var_b7850001037aa074) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x189a
 // Size: 0xb1b
@@ -917,7 +919,7 @@ function handledofnotetrack(type) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23bc
 // Size: 0x180
@@ -971,7 +973,7 @@ function handlecinematicmotionnotetrack(var_d8958445ed7ab829) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2543
 // Size: 0x5d1
@@ -989,7 +991,7 @@ function handleweaponstatenotetrack(state) {
         self.player ent_flag_set("swapLoadout_blocked");
         self.player thread cleanupswaploadoutflags();
         if (!isai(self.player) && isdefined(self) && isdefined(self.player) && isalive(self.player)) {
-            self.player namespace_df5cfdbe6e2d3812::function_fc6a5b145563be33();
+            self.player scripts/cp_mp/utility/inventory_utility::function_fc6a5b145563be33();
         }
         if (istrue(self.updatedversion)) {
             self showonlytoplayer(self.player);
@@ -1000,7 +1002,7 @@ function handleweaponstatenotetrack(state) {
         break;
     case #"hash_5281b0cd075003":
         if (isdefined(self.player.infilweapon) && self.player hasweapon(self.player.infilweapon)) {
-            self.player namespace_df5cfdbe6e2d3812::_takeweapon(self.player.infilweapon);
+            self.player scripts/cp_mp/utility/inventory_utility::_takeweapon(self.player.infilweapon);
         }
         self.player.infilweaponraise = 1;
         if (self.player ent_flag_exist("swapLoadout_blocked") && self.player ent_flag("swapLoadout_blocked")) {
@@ -1014,12 +1016,12 @@ function handleweaponstatenotetrack(state) {
             self.player [[ getsharedfunc("player", "loadout_finalizeWeapons") ]]();
         }
         if (!isai(self.player)) {
-            self.player namespace_df5cfdbe6e2d3812::function_9897d143c3feee05();
+            self.player scripts/cp_mp/utility/inventory_utility::function_9897d143c3feee05();
         }
         if (istrue(self.updatedversion) && self.player islinked()) {
             self.player playerlinkedsetforceparentvisible(0);
         }
-        self.player val::function_c9d0b43701bdba00("notetrack_drop");
+        self.player val::reset_all("notetrack_drop");
         break;
     case #"hash_9682e089e580b4b8":
         if (isdefined(self.var_953281e4198e2ff7)) {
@@ -1050,7 +1052,7 @@ function handleweaponstatenotetrack(state) {
         self.player setdemeanorviewmodel("normal");
         break;
     case #"hash_a8f0b714fb0cb53b":
-        self.player val::function_c9d0b43701bdba00("notetrack_hold");
+        self.player val::reset_all("notetrack_hold");
         break;
     case #"hash_dd93195493d0c818":
         self.player val::set("notetrack_hold", "fire", 0);
@@ -1079,7 +1081,7 @@ function handleweaponstatenotetrack(state) {
     }
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b1b
 // Size: 0x47
@@ -1091,7 +1093,7 @@ function cleanupswaploadoutflags() {
     ent_flag_clear("swapLoadout_complete", 1);
 }
 
-// Namespace namespace_9d0f8a9d932ed5e3/namespace_7624a117b05021c5
+// Namespace infilexfil / scripts/mp/utility/infilexfil
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b69
 // Size: 0xe9
@@ -1114,7 +1116,6 @@ function function_c96464f39952b78a(vehicle) {
             return "car";
         default:
             return "generic";
-            break;
         }
     }
     return "generic";

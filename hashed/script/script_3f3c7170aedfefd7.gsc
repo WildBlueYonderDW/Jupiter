@@ -4,7 +4,7 @@
 
 #namespace namespace_15b61b6788c29fd2;
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x113
 // Size: 0x27
@@ -15,24 +15,24 @@ function function_9e3f4898db5d314e(callback) {
     self [[ callback ]]();
 }
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x141
 // Size: 0x97
-function function_e23dcf42aae58dad(delta, callback, var_16c5559b456ac301) {
+function function_e23dcf42aae58dad(delta, callback, onlybots) {
     level endon("game_ended");
     self endon("disconnect");
     foreach (enemy in level.players) {
-        if (isdefined(var_16c5559b456ac301) && var_16c5559b456ac301) {
-            jumpiftrue(isbot(enemy)) LOC_00000079;
-        } else {
-        LOC_00000079:
-            function_3482e3d6bb34c1bf(enemy, delta, callback);
+        if (isdefined(onlybots) && onlybots) {
+            if (!isbot(enemy)) {
+                continue;
+            }
         }
+        function_3482e3d6bb34c1bf(enemy, delta, callback);
     }
 }
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1df
 // Size: 0xb5
@@ -51,24 +51,24 @@ function function_3482e3d6bb34c1bf(enemy, delta, callback) {
     }
 }
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x29b
 // Size: 0x8e
-function function_ec7f69bba0f79ee7(callback, var_16c5559b456ac301) {
+function function_ec7f69bba0f79ee7(callback, onlybots) {
     level endon("game_ended");
     self endon("disconnect");
     foreach (enemy in level.players) {
-        if (isdefined(var_16c5559b456ac301) && var_16c5559b456ac301) {
-            jumpiftrue(isbot(enemy)) LOC_00000071;
-        } else {
-        LOC_00000071:
-            function_8441daa65ac853d9(enemy, callback);
+        if (isdefined(onlybots) && onlybots) {
+            if (!isbot(enemy)) {
+                continue;
+            }
         }
+        function_8441daa65ac853d9(enemy, callback);
     }
 }
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x330
 // Size: 0x8d
@@ -85,7 +85,7 @@ function function_8441daa65ac853d9(enemy, callback) {
     }
 }
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x26
@@ -96,7 +96,7 @@ function function_d138a208396bb595() {
     self notify("ftue_enemy_loot_viewed");
 }
 
-// Namespace namespace_15b61b6788c29fd2/namespace_6a577d053271961d
+// Namespace namespace_15b61b6788c29fd2 / namespace_6a577d053271961d
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x58

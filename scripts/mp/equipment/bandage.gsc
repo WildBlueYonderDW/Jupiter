@@ -10,9 +10,9 @@
 #using scripts\mp\equipment.gsc;
 #using scripts\mp\gametypes\br_public.gsc;
 
-#namespace namespace_9813110ef9f69edd;
+#namespace bandage;
 
-// Namespace namespace_9813110ef9f69edd/namespace_5a8d603f2e1c2a87
+// Namespace bandage / scripts/mp/equipment/bandage
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x139
 // Size: 0x8
@@ -20,7 +20,7 @@ function getbandagehealfractionbr() {
     return 0.2;
 }
 
-// Namespace namespace_9813110ef9f69edd/namespace_5a8d603f2e1c2a87
+// Namespace bandage / scripts/mp/equipment/bandage
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x149
 // Size: 0x5
@@ -28,7 +28,7 @@ function getbandagehealtimebr() {
     return 5;
 }
 
-// Namespace namespace_9813110ef9f69edd/namespace_5a8d603f2e1c2a87
+// Namespace bandage / scripts/mp/equipment/bandage
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x156
 // Size: 0x5
@@ -36,25 +36,25 @@ function getfirstaidhealtimebr() {
     return 5;
 }
 
-// Namespace namespace_9813110ef9f69edd/namespace_5a8d603f2e1c2a87
+// Namespace bandage / scripts/mp/equipment/bandage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x163
 // Size: 0x5c
 function getbandagetime(itemname) {
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
-        var_7607f8111cfe5ff7 = 1;
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+        healscale = 1;
         if (isdefined(self.br_armorlevel) && self.br_armorlevel == 3) {
-            var_7607f8111cfe5ff7 = 0.75;
+            healscale = 0.75;
         }
         if (itemname == "equip_bandages") {
-            return (5 * var_7607f8111cfe5ff7);
+            return (5 * healscale);
         }
-        return (5 * var_7607f8111cfe5ff7);
+        return (5 * healscale);
     }
     return 5;
 }
 
-// Namespace namespace_9813110ef9f69edd/namespace_5a8d603f2e1c2a87
+// Namespace bandage / scripts/mp/equipment/bandage
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c7
 // Size: 0xec
@@ -66,7 +66,7 @@ function usebandage(itemname, var_1156b7a3b9b6aa08) {
         return;
     }
     weaponobj = "bandage_mp";
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         weaponobj = "bandage_br_fake";
     }
     self disableweaponswitch();
@@ -78,17 +78,17 @@ function usebandage(itemname, var_1156b7a3b9b6aa08) {
     bandageheal(itemname);
     wait(0.25);
     if (self hasweapon(weaponobj)) {
-        namespace_df5cfdbe6e2d3812::getridofweapon(weaponobj);
+        scripts/cp_mp/utility/inventory_utility::getridofweapon(weaponobj);
     }
     self allowfire(1);
     self enableweaponswitch();
     var_1156b7a3b9b6aa08--;
-    namespace_1a507865f681850e::setequipmentslotammo("health", var_1156b7a3b9b6aa08);
+    scripts/mp/equipment::setequipmentslotammo("health", var_1156b7a3b9b6aa08);
     self.bandageactive = 0;
     self.healthregendisabled = 1;
 }
 
-// Namespace namespace_9813110ef9f69edd/namespace_5a8d603f2e1c2a87
+// Namespace bandage / scripts/mp/equipment/bandage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ba
 // Size: 0x39
@@ -96,7 +96,7 @@ function bandageheal(itemname) {
     self endon("heal_end");
     self endon("death_or_disconnect");
     level endon("game_ended");
-    thread namespace_d3d40f75bb4e4c32::watchhealend();
+    thread scripts/mp/gametypes/br_public::watchhealend();
     self notify("force_regeneration");
     wait(getbandagetime(itemname));
 }

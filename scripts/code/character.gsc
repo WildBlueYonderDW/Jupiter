@@ -3,7 +3,7 @@
 
 #namespace character;
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe0
 // Size: 0xbe
@@ -15,24 +15,24 @@ function get_least_used_model(array) {
         if (!isdefined(level.character_model_cache[array[i]])) {
             level.character_model_cache[array[i]] = 0;
         }
-        var_be3639147941e00a = level.character_model_cache[array[i]];
-        if (var_be3639147941e00a > lowest_use) {
+        model_count = level.character_model_cache[array[i]];
+        if (model_count > lowest_use) {
             continue;
         }
-        if (var_be3639147941e00a < lowest_use) {
+        if (model_count < lowest_use) {
             lowest_indices = [];
-            lowest_use = var_be3639147941e00a;
+            lowest_use = model_count;
         }
         lowest_indices[lowest_indices.size] = i;
     }
     /#
         assertex(lowest_indices.size, "Tried to set a model but the lowest indices didn't exist");
     #/
-    var_cb8e2003144ac503 = random(lowest_indices);
-    return array[var_cb8e2003144ac503];
+    rnd = random(lowest_indices);
+    return array[rnd];
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x2e
@@ -42,7 +42,7 @@ function precachemodelarray(a) {
     }
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1db
 // Size: 0x11a
@@ -74,7 +74,7 @@ function attachhead(var_e1b8a2cda2a36f9, var_7556f3e1bb0846bc) {
     self.headmodel = var_7556f3e1bb0846bc[index];
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0xa3
@@ -94,7 +94,7 @@ function attachhat(var_cb1b71997ebf2a1a, var_827c5e69d673ce17) {
     self.hatmodel = var_827c5e69d673ce17[index];
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x40
@@ -108,7 +108,7 @@ function new() {
     self [[ anim.putguninhand ]](oldgunhand);
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ed
 // Size: 0xee
@@ -135,7 +135,7 @@ function save() {
     return info;
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e3
 // Size: 0xe4
@@ -162,7 +162,7 @@ function load(info) {
     }
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ce
 // Size: 0x90
@@ -184,7 +184,7 @@ function precache(info) {
     }
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x665
 // Size: 0x45
@@ -194,7 +194,7 @@ function initialize_character_group(prefix, group, amount) {
     }
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b1
 // Size: 0x12
@@ -202,7 +202,7 @@ function get_random_weapon(amount) {
     return randomint(amount);
 }
 
-// Namespace character/namespace_ac7e8770abb7eb1
+// Namespace character / scripts/code/character
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6cb
 // Size: 0x15

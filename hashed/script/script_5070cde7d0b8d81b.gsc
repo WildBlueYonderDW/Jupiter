@@ -2,7 +2,7 @@
 #using scripts\asm\asm.gsc;
 #using scripts\asm\asm_bb.gsc;
 #using script_7ff3a914e6c698c5;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_3badb8914eb5ac16;
 #using script_7edf952f8921aa6b;
@@ -13,7 +13,7 @@
 
 #namespace namespace_d94cac041d4a3fb0;
 
-// Namespace namespace_d94cac041d4a3fb0/namespace_47165a56c84fbe8f
+// Namespace namespace_d94cac041d4a3fb0 / namespace_47165a56c84fbe8f
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x100
 // Size: 0x18
@@ -23,7 +23,7 @@ function private function_f49a30f92555b827() {
     function_96f220b689167b22();
 }
 
-// Namespace namespace_d94cac041d4a3fb0/namespace_47165a56c84fbe8f
+// Namespace namespace_d94cac041d4a3fb0 / namespace_47165a56c84fbe8f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f
 // Size: 0xda
@@ -41,7 +41,7 @@ function function_e3e1894798c371bf(asmname, statename, params) {
     ent_flag_set("zombie_asm_init_finished");
 }
 
-// Namespace namespace_d94cac041d4a3fb0/namespace_47165a56c84fbe8f
+// Namespace namespace_d94cac041d4a3fb0 / namespace_47165a56c84fbe8f
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x200
 // Size: 0x2f

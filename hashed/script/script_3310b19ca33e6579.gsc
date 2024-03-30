@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_b_ob_activities_doghouse_cs;
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x143
 // Size: 0x6d
@@ -23,33 +23,33 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b7
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_b_ob_activities_doghouse_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_b_ob_activities_doghouse_cs");
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x226
 // Size: 0x40
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26d
 // Size: 0x3
@@ -57,7 +57,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x277
 // Size: 0xf
@@ -65,7 +65,7 @@ function cleanup() {
     function_71a564b3bc009618("mp_jup_st_b_ob_activities_doghouse_cs");
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x69
@@ -73,105 +73,105 @@ function function_fd69cf02ba4d90a2() {
     var_d13c18af4084bdfd = spawnstruct();
     var_d13c18af4084bdfd.name = "REV_OB_DOGHOUSE";
     var_d13c18af4084bdfd.scriptbundle = "jup_activitydefinition_doghouse";
-    var_d13c18af4084bdfd.var_dc10941a425d283c = &main;
+    var_d13c18af4084bdfd.mainfunction = &main;
     var_d13c18af4084bdfd.var_6e7eb28b2997b5b4 = &function_82613e20fba2deb9;
     var_d13c18af4084bdfd.var_ad1dcd56d202e9ac = &function_6da2952367672ac0;
     return var_d13c18af4084bdfd;
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fe
 // Size: 0x84
-function function_82613e20fba2deb9(var_44fe95ae31b81c6d, var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
-    if (!isdefined(var_ce173d78f5680530)) {
-        var_ce173d78f5680530 = "mp_jup_st_b_ob_activities_doghouse_cs";
+function function_82613e20fba2deb9(instancename, fe, us, cf) {
+    if (!isdefined(cf)) {
+        cf = "mp_jup_st_b_ob_activities_doghouse_cs";
     }
-    switch (var_44fe95ae31b81c6d) {
+    switch (instancename) {
     case #"hash_987da87821c81bc1":
-        function_f6aecbbc4ed2314e(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_f6aecbbc4ed2314e(fe, us, cf);
         break;
     case #"hash_83c47397ab853dff":
-        function_5ec22cc6ba28c668(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_5ec22cc6ba28c668(fe, us, cf);
         break;
     case #"hash_df4ca7b2c01063d2":
-        function_a5b07a9a8179cf25(var_ce2d3c78f5803630, us, var_ce173d78f5680530);
+        function_a5b07a9a8179cf25(fe, us, cf);
         break;
     }
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x389
 // Size: 0xa8
-function function_f6aecbbc4ed2314e(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_f6aecbbc4ed2314e(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_activities_doghouse_cs";
     s.name = "doghouse_scriptable_struct";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (57, 0, 0), (0, 0, 0), "doghouse_scriptable_struct", "DOGHOUSE_B_JUNKYARD", undefined, undefined, undefined, (9023.5, 37708, 1213.29), (0, 0.84, 0));
+    fe [[ f ]](s, us, cf, (57, 0, 0), (0, 0, 0), "doghouse_scriptable_struct", "DOGHOUSE_B_JUNKYARD", undefined, undefined, undefined, (9023.5, 37708, 1213.29), (0, 0.84, 0));
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x438
 // Size: 0xa8
-function function_5ec22cc6ba28c668(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_5ec22cc6ba28c668(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_activities_doghouse_cs";
     s.name = "doghouse_scriptable_struct";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (57, 0, 0), (0, 0, 0), "doghouse_scriptable_struct", "DOGHOUSE_B_OFFICE", undefined, undefined, undefined, (-6306, 21448, 1000.5), (0, 72.83, 0));
+    fe [[ f ]](s, us, cf, (57, 0, 0), (0, 0, 0), "doghouse_scriptable_struct", "DOGHOUSE_B_OFFICE", undefined, undefined, undefined, (-6306, 21448, 1000.5), (0, 72.83, 0));
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e7
 // Size: 0xa8
-function function_a5b07a9a8179cf25(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function function_a5b07a9a8179cf25(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_b_ob_activities_doghouse_cs";
     s.name = "doghouse_scriptable_struct";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (57, 0, 0), (0, 0, 0), "doghouse_scriptable_struct", "DOGHOUSE_B_ISLAND", undefined, undefined, undefined, (14133.8, 17203.8, 901.3), (0, 130.37, 0));
+    fe [[ f ]](s, us, cf, (57, 0, 0), (0, 0, 0), "doghouse_scriptable_struct", "DOGHOUSE_B_ISLAND", undefined, undefined, undefined, (14133.8, 17203.8, 901.3), (0, 130.37, 0));
 }
 
-// Namespace mp_jup_st_b_ob_activities_doghouse_cs/namespace_ad2316c62db96c41
+// Namespace mp_jup_st_b_ob_activities_doghouse_cs / namespace_ad2316c62db96c41
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x596
 // Size: 0x1e1
 function function_6da2952367672ac0() {
-    var_fdc9acdc19473f08 = [];
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_activitydefinition_doghouse";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_b_ob_activities_doghouse_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (0, 0, 0);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (9023.5, 37708, 1213.29);
-    var_5f614235e4cbbd5b.locationorigin = [];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [];
-    var_fdc9acdc19473f08["DOGHOUSE_B_JUNKYARD"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_activitydefinition_doghouse";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_b_ob_activities_doghouse_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (0, 0, 0);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (-6306, 21448, 1000.5);
-    var_5f614235e4cbbd5b.locationorigin = [];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [];
-    var_fdc9acdc19473f08["DOGHOUSE_B_OFFICE"] = var_5f614235e4cbbd5b;
-    var_5f614235e4cbbd5b = spawnstruct();
-    var_5f614235e4cbbd5b.scriptbundle = "jup_activitydefinition_doghouse";
-    var_5f614235e4cbbd5b.var_ce173d78f5680530 = "mp_jup_st_b_ob_activities_doghouse_cs";
-    var_5f614235e4cbbd5b.var_f58ef0ea93d6d695 = (0, 0, 0);
-    var_5f614235e4cbbd5b.var_79974a5ccd2183ba = (14133.8, 17203.8, 901.3);
-    var_5f614235e4cbbd5b.locationorigin = [];
-    var_5f614235e4cbbd5b.var_aed7dd4b5484e1d7 = [];
-    var_5f614235e4cbbd5b.var_45283ef87b6e04b6 = [];
-    var_5f614235e4cbbd5b.var_a19931107c2774a8 = [];
-    var_fdc9acdc19473f08["DOGHOUSE_B_ISLAND"] = var_5f614235e4cbbd5b;
-    return var_fdc9acdc19473f08;
+    activityinstances = [];
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_activitydefinition_doghouse";
+    instancestruct.cf = "mp_jup_st_b_ob_activities_doghouse_cs";
+    instancestruct.scriptstructorigin = (0, 0, 0);
+    instancestruct.scriptstructoriginoffset = (9023.5, 37708, 1213.29);
+    instancestruct.locationorigin = [];
+    instancestruct.locationoriginoffset = [];
+    instancestruct.var_45283ef87b6e04b6 = [];
+    instancestruct.locationradius = [];
+    activityinstances["DOGHOUSE_B_JUNKYARD"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_activitydefinition_doghouse";
+    instancestruct.cf = "mp_jup_st_b_ob_activities_doghouse_cs";
+    instancestruct.scriptstructorigin = (0, 0, 0);
+    instancestruct.scriptstructoriginoffset = (-6306, 21448, 1000.5);
+    instancestruct.locationorigin = [];
+    instancestruct.locationoriginoffset = [];
+    instancestruct.var_45283ef87b6e04b6 = [];
+    instancestruct.locationradius = [];
+    activityinstances["DOGHOUSE_B_OFFICE"] = instancestruct;
+    instancestruct = spawnstruct();
+    instancestruct.scriptbundle = "jup_activitydefinition_doghouse";
+    instancestruct.cf = "mp_jup_st_b_ob_activities_doghouse_cs";
+    instancestruct.scriptstructorigin = (0, 0, 0);
+    instancestruct.scriptstructoriginoffset = (14133.8, 17203.8, 901.3);
+    instancestruct.locationorigin = [];
+    instancestruct.locationoriginoffset = [];
+    instancestruct.var_45283ef87b6e04b6 = [];
+    instancestruct.locationradius = [];
+    activityinstances["DOGHOUSE_B_ISLAND"] = instancestruct;
+    return activityinstances;
 }
 

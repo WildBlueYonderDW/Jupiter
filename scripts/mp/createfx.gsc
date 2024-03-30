@@ -7,7 +7,7 @@
 
 #namespace createfx;
 
-// Namespace createfx/namespace_d41a02a8460c3acc
+// Namespace createfx / scripts/mp/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc9
 // Size: 0x14d
@@ -40,15 +40,15 @@ function createfx() {
     level waittill("eternity");
 }
 
-// Namespace createfx/namespace_d41a02a8460c3acc
+// Namespace createfx / scripts/mp/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x1f
-function func_position_player_get(var_918cdf5248017e62) {
+function func_position_player_get(lastplayerorigin) {
     return level.player.origin;
 }
 
-// Namespace createfx/namespace_d41a02a8460c3acc
+// Namespace createfx / scripts/mp/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x244
 // Size: 0xa1
@@ -62,12 +62,12 @@ function callback_playerconnect() {
         self.health = 10000000;
         level.player = self;
         thread createfxlogic();
-    } else {
-        kick(self getentitynumber());
+        return;
     }
+    kick(self getentitynumber());
 }
 
-// Namespace createfx/namespace_d41a02a8460c3acc
+// Namespace createfx / scripts/mp/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0x56
@@ -77,32 +77,32 @@ function func_player_speed() {
     setdvar(@"hash_11a6aaf18b50047b", level._createfx.player_speed);
 }
 
-// Namespace createfx/namespace_d41a02a8460c3acc
+// Namespace createfx / scripts/mp/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x349
 // Size: 0x18b
 function reflectionprobe_hide_hp() {
     /#
-        var_61476326a2abb32a = getentarray("<unknown string>", "<unknown string>");
-        var_e410b05793f0a2e7 = getentarray("<unknown string>", "<unknown string>");
-        var_9b5644490d688215 = getentarray("<unknown string>", "<unknown string>");
-        var_d41438cea1d76963 = getentarray("<unknown string>", "<unknown string>");
-        foreach (zone in var_61476326a2abb32a) {
+        neutralpoint = getentarray("<unknown string>", "<unknown string>");
+        enemypoint = getentarray("<unknown string>", "<unknown string>");
+        friendpoint = getentarray("<unknown string>", "<unknown string>");
+        contestpoint = getentarray("<unknown string>", "<unknown string>");
+        foreach (zone in neutralpoint) {
             zone hide();
         }
-        foreach (zone in var_e410b05793f0a2e7) {
+        foreach (zone in enemypoint) {
             zone hide();
         }
-        foreach (zone in var_9b5644490d688215) {
+        foreach (zone in friendpoint) {
             zone hide();
         }
-        foreach (zone in var_d41438cea1d76963) {
+        foreach (zone in contestpoint) {
             zone hide();
         }
     #/
 }
 
-// Namespace createfx/namespace_d41a02a8460c3acc
+// Namespace createfx / scripts/mp/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4db
 // Size: 0xea

@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\unittest\util.gsc;
 
-#namespace namespace_e0ae03ff9fc1812c;
+#namespace unittest_ops;
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x3a
@@ -12,7 +12,7 @@ function plus(x, y) {
     test_print(x + " + " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x213
 // Size: 0x3a
@@ -21,7 +21,7 @@ function minus(x, y) {
     test_print(x + " - " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x254
 // Size: 0x3a
@@ -30,7 +30,7 @@ function mul(x, y) {
     test_print(x + " * " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x295
 // Size: 0x3a
@@ -39,7 +39,7 @@ function div(x, y) {
     test_print(x + " / " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d6
 // Size: 0x3a
@@ -48,37 +48,37 @@ function mod(x, y) {
     test_print(x + " % " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x317
 // Size: 0x5a
-function eq(x, y, var_5745c957ec91cc72, var_f30db3a20452fd7) {
+function eq(x, y, xstr, ystr) {
     z = x == y;
-    if (!isdefined(var_5745c957ec91cc72)) {
-        var_5745c957ec91cc72 = x;
+    if (!isdefined(xstr)) {
+        xstr = x;
     }
-    if (!isdefined(var_f30db3a20452fd7)) {
-        var_f30db3a20452fd7 = y;
+    if (!isdefined(ystr)) {
+        ystr = y;
     }
-    test_print(var_5745c957ec91cc72 + " == " + var_f30db3a20452fd7 + ": " + z);
+    test_print(xstr + " == " + ystr + ": " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x378
 // Size: 0x5a
-function ne(x, y, var_5745c957ec91cc72, var_f30db3a20452fd7) {
+function ne(x, y, xstr, ystr) {
     z = x != y;
-    if (!isdefined(var_5745c957ec91cc72)) {
-        var_5745c957ec91cc72 = x;
+    if (!isdefined(xstr)) {
+        xstr = x;
     }
-    if (!isdefined(var_f30db3a20452fd7)) {
-        var_f30db3a20452fd7 = y;
+    if (!isdefined(ystr)) {
+        ystr = y;
     }
-    test_print(var_5745c957ec91cc72 + " != " + var_f30db3a20452fd7 + ": " + z);
+    test_print(xstr + " != " + ystr + ": " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x3a
@@ -87,7 +87,7 @@ function lt(x, y) {
     test_print(x + " < " + y + ": " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x41a
 // Size: 0x3a
@@ -96,7 +96,7 @@ function le(x, y) {
     test_print(x + " <= " + y + ": " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x45b
 // Size: 0x3a
@@ -105,7 +105,7 @@ function gt(x, y) {
     test_print(x + " > " + y + ": " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x49c
 // Size: 0x3a
@@ -114,7 +114,7 @@ function ge(x, y) {
     test_print(x + " >= " + y + ": " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4dd
 // Size: 0x3a
@@ -123,7 +123,7 @@ function sl(x, y) {
     test_print(x + " << " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x51e
 // Size: 0x3a
@@ -132,7 +132,7 @@ function sr(x, y) {
     test_print(x + " >> " + y + " = " + z);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x55f
 // Size: 0x24
@@ -140,7 +140,7 @@ function limit(i, str) {
     test_print(i + " == " + str);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x58a
 // Size: 0x77c
@@ -271,26 +271,26 @@ function binary() {
     limit(9223372036854775807, "9223372036854775807");
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0d
 // Size: 0xbc
 function types() {
     x = 1;
     y = 2;
-    var_cdf8e978f5472d93 = x + y + x;
-    test_print("z0: " + var_cdf8e978f5472d93);
-    var_cdf8e878f5472b60 = var_cdf8e978f5472d93 + x + y;
-    test_print("z1: " + var_cdf8e878f5472b60);
-    var_cdf8eb78f54731f9 = var_cdf8e878f5472b60 + 1;
-    test_print("z2: " + var_cdf8eb78f54731f9);
-    var_cdf8ea78f5472fc6 = var_cdf8eb78f54731f9 + "ok";
-    test_print("z3: " + var_cdf8ea78f5472fc6);
-    var_cdf8ed78f547365f = var_cdf8ea78f5472fc6 + "bye";
-    test_print("z4: " + var_cdf8ed78f547365f);
+    z0 = x + y + x;
+    test_print("z0: " + z0);
+    z1 = z0 + x + y;
+    test_print("z1: " + z1);
+    z2 = z1 + 1;
+    test_print("z2: " + z2);
+    z3 = z2 + "ok";
+    test_print("z3: " + z3);
+    z4 = z3 + "bye";
+    test_print("z4: " + z4);
 }
 
-// Namespace namespace_e0ae03ff9fc1812c/namespace_f6d1025fe518977d
+// Namespace unittest_ops / scripts/unittest/ops
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdd0
 // Size: 0x29

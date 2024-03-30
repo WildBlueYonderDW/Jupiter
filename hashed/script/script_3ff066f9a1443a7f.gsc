@@ -3,14 +3,14 @@
 
 #namespace namespace_b3f671d851067611;
 
-// Namespace namespace_b3f671d851067611/namespace_2a5ddef6b9e7fc31
+// Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0xc4
 // Size: 0x9b
 function private autoexec init() {
     character = #"hash_462b221d539098ad";
-    if (!isdefined(level.var_586887bc5dc30f34)) {
-        level.var_586887bc5dc30f34 = [];
+    if (!isdefined(level.fncharacter)) {
+        level.fncharacter = [];
     }
     if (!isdefined(level.var_7d97144daa7995cd)) {
         level.var_7d97144daa7995cd = [];
@@ -18,15 +18,15 @@ function private autoexec init() {
     if (!isdefined(level.var_44bf7e31237b3073)) {
         level.var_44bf7e31237b3073 = [];
     }
-    level.var_586887bc5dc30f34[character] = &main;
+    level.fncharacter[character] = &main;
     if (issp()) {
-        level.var_7d97144daa7995cd[character] = &function_430419022a9c3ffe;
-    } else {
-        level.var_7d97144daa7995cd[character] = &function_8168fbf6282d398b;
+        level.var_7d97144daa7995cd[character] = &precache_sp;
+        return;
     }
+    level.var_7d97144daa7995cd[character] = &function_8168fbf6282d398b;
 }
 
-// Namespace namespace_b3f671d851067611/namespace_2a5ddef6b9e7fc31
+// Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x166
 // Size: 0xbb
@@ -47,7 +47,7 @@ function main() {
     }
 }
 
-// Namespace namespace_b3f671d851067611/namespace_2a5ddef6b9e7fc31
+// Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x228
 // Size: 0x3
@@ -55,17 +55,17 @@ function precache() {
     
 }
 
-// Namespace namespace_b3f671d851067611/namespace_2a5ddef6b9e7fc31
+// Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x232
 // Size: 0x20
-function function_430419022a9c3ffe() {
+function precache_sp() {
     precache();
     precachemodel("c_jup_zmb_mimic_hvt_emp");
     precachemodel("c_jup_zmb_mimic_head_hvt_emp");
 }
 
-// Namespace namespace_b3f671d851067611/namespace_2a5ddef6b9e7fc31
+// Namespace namespace_b3f671d851067611 / namespace_2a5ddef6b9e7fc31
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x259
 // Size: 0xa

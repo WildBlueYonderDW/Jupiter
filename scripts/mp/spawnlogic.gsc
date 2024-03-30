@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\mp\utility\game.gsc;
 #using scripts\mp\utility\player.gsc;
 #using scripts\mp\utility\damage.gsc;
@@ -18,7 +18,7 @@
 
 #namespace spawnlogic;
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1281
 // Size: 0x453
@@ -58,12 +58,12 @@ function init() {
     level.spawnglobals.activespawnsets = [];
     level.spawnglobals.spawnsetlists = [];
     level.spawnglobals.spawnpointscriptdata = [];
-    if (isdefined(level.var_62f6f7640e4431e3.var_466145510d447d04)) {
-        level.spawnglobals.var_466145510d447d04 = getspawnbucketfromstring(level.var_62f6f7640e4431e3.var_466145510d447d04);
+    if (isdefined(level.gametypebundle.var_466145510d447d04)) {
+        level.spawnglobals.var_466145510d447d04 = getspawnbucketfromstring(level.gametypebundle.var_466145510d447d04);
     }
-    level.var_dec2781e0b09018c = getdvarint(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_use_safe_fallback_spawns"), 0) == 1;
+    level.var_dec2781e0b09018c = getdvarint(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_use_safe_fallback_spawns"), 0) == 1;
     level thread spawnpointupdate();
-    level thread namespace_36f464722d326bbe::function_e8d365de417a3e14();
+    level thread scripts/cp_mp/utility/game_utility::trackprojectiles();
     level thread trackhostmigrationend();
     level thread trackcarepackages();
     thread printstartupdebugmessages();
@@ -75,48 +75,48 @@ function init() {
         level.teamspawnpoints[level.teamnamelist[i]] = [];
         level.teamfallbackspawnpoints[level.teamnamelist[i]] = [];
     }
-    namespace_b41002c7afebd276::init_spawn_factors();
-    namespace_b41002c7afebd276::function_28565316737536aa();
+    scripts/mp/spawnfactor::init_spawn_factors();
+    scripts/mp/spawnfactor::function_28565316737536aa();
     level.disablebuddyspawn = !istrue(getmatchrulesdata("commonOption", "buddySpawnEnabled"));
     loadspawnlogicweights();
     lanetriggers = getentarray("trigger_multiple_mp_spawn_lane", "classname");
     level.spawnglobals.lanetriggers = lanetriggers;
-    foreach (index, var_8e574dae649f764d in level.spawnglobals.lanetriggers) {
-        var_8e574dae649f764d.index = index;
-        var_8e574dae649f764d.indexflag = 1 << index;
+    foreach (index, lanetrigger in level.spawnglobals.lanetriggers) {
+        lanetrigger.index = index;
+        lanetrigger.indexflag = 1 << index;
     }
     ignoretriggers = getentarray("trigger_multiple_mp_spawn_ignore", "classname");
-    foreach (var_e05174eb75e5f721 in ignoretriggers) {
-        makeenterexittrigger(var_e05174eb75e5f721, &ignoretriggerenter, &ignoretriggerexit);
+    foreach (ignoretrigger in ignoretriggers) {
+        makeenterexittrigger(ignoretrigger, &ignoretriggerenter, &ignoretriggerexit);
     }
-    function_5d5b3e315998583b();
+    initspawntypes();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16db
 // Size: 0x89
-function function_e2cbae3344485f14(type, setname, var_474c126f25186d39, var_94ec027babd4d45, var_eef6ea650f5518d4) {
-    spawntype = {var_bcf811ed79e3c085:[], type:type};
-    spawntype.var_bcf811ed79e3c085[0] = setname;
-    spawntype.var_bcf811ed79e3c085[1] = var_474c126f25186d39;
-    spawntype.var_bcf811ed79e3c085[2] = var_94ec027babd4d45;
-    spawntype.func = var_eef6ea650f5518d4;
+function function_e2cbae3344485f14(type, setname, var_474c126f25186d39, var_94ec027babd4d45, type_func) {
+    spawntype = {setnames:[], type:type};
+    spawntype.setnames[0] = setname;
+    spawntype.setnames[1] = var_474c126f25186d39;
+    spawntype.setnames[2] = var_94ec027babd4d45;
+    spawntype.func = type_func;
     return spawntype;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x176c
 // Size: 0xaf
-function function_5d5b3e315998583b() {
+function initspawntypes() {
     level.spawnglobals.spawntypes = [];
     level.spawnglobals.spawntypes[0] = function_e2cbae3344485f14(0, "primary", "primary_attackers", "primary_defenders", &function_9328a9c1fc8d2043);
     level.spawnglobals.spawntypes[1] = function_e2cbae3344485f14(1, "start", "start_attackers", "start_defenders", &function_f4882bf77adf2d71);
     level.spawnglobals.spawntypes[2] = function_e2cbae3344485f14(2, "fallback", "fallback_attackers", "fallback_defenders", &function_9328a9c1fc8d2043);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1822
 // Size: 0xc
@@ -124,38 +124,38 @@ function codecallbackhandler_spawnpointprecalc(team) {
     
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1835
 // Size: 0x15f
 function codecallbackhandler_spawnpointscore(spawnpoint, team) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
+    spawncontext = level.spawnglobals.activespawncontext;
     /#
-        assertex(isdefined(var_4db3cfd2ea2d7b8f), "GetSpawnpointForPlayer() called while there is no active spawn query context, script logic cannot run");
+        assertex(isdefined(spawncontext), "GetSpawnpointForPlayer() called while there is no active spawn query context, script logic cannot run");
     #/
-    var_584994fab4a8712b = level.spawnglobals;
+    globals = level.spawnglobals;
     var_638d9cd5c072165c = 0;
     spawnpoint.scriptdata = level.spawnglobals.spawnpointscriptdata[spawnpoint.index];
     /#
         assertex(isdefined(spawnpoint.scriptdata), "Spawn Logic Error: No script data found for a spawnpoint. Was spawnpoint never registered?");
     #/
-    foreach (var_c05389572bacde83, var_265d3f5274b6106f in var_584994fab4a8712b.activescriptfactors) {
-        var_4f72e56648b22650 = 0;
-        if (isdefined(var_265d3f5274b6106f.paramreflist)) {
+    foreach (factorref, factorstruct in globals.activescriptfactors) {
+        factorscore = 0;
+        if (isdefined(factorstruct.paramreflist)) {
             /#
-                function_d344bbcacf5e4d96(var_c05389572bacde83, var_265d3f5274b6106f, var_4db3cfd2ea2d7b8f);
+                function_d344bbcacf5e4d96(factorref, factorstruct, spawncontext);
             #/
         }
-        var_4f72e56648b22650 = [[ var_265d3f5274b6106f.func ]](spawnpoint);
+        factorscore = [[ factorstruct.func ]](spawnpoint);
         /#
-            assert(var_4f72e56648b22650 >= 0 && var_4f72e56648b22650 <= 100);
+            assert(factorscore >= 0 && factorscore <= 100);
         #/
-        var_638d9cd5c072165c = var_638d9cd5c072165c + var_4f72e56648b22650 * var_265d3f5274b6106f.weight;
+        var_638d9cd5c072165c = var_638d9cd5c072165c + factorscore * factorstruct.weight;
     }
     return var_638d9cd5c072165c;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x199c
 // Size: 0x43
@@ -165,15 +165,15 @@ function codecallbackhandler_spawnpointcritscore(spawnpoint, team) {
             return "setActiveSpawnLogic() attempting to use spawn logic but that type was not found in the gametype asset";
         }
     #/
-    bucket = namespace_90f75d3fdf89a43e::criticalfactors_callback(spawnpoint);
+    bucket = scripts/mp/spawnscoring::criticalfactors_callback(spawnpoint);
     return bucket;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19e7
 // Size: 0x726
-function getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fallbackspawnset, var_a22bad5fe6fbf86d, var_629e5fe2f6b337fa) {
+function getspawnpoint(spawningplayer, spawnteam, spawnpointset, fallbackspawnset, var_a22bad5fe6fbf86d, spawnparams) {
     if (!isdefined(var_a22bad5fe6fbf86d)) {
         if (isdefined(level.spawnglobals.var_466145510d447d04)) {
             var_a22bad5fe6fbf86d = level.spawnglobals.var_466145510d447d04;
@@ -189,20 +189,20 @@ function getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fa
         }
     #/
     /#
-        level.var_53043465614ec8f8 = var_566fa37091337572;
+        level.var_53043465614ec8f8 = spawnpointset;
         level.var_b5bad5601a066c66 = fallbackspawnset;
     #/
-    var_4db3cfd2ea2d7b8f = createspawnquerycontext(var_1a329a914f290661, spawnteam, var_629e5fe2f6b337fa);
-    setactivespawnquerycontext(var_4db3cfd2ea2d7b8f);
-    if (isdefined(var_566fa37091337572)) {
+    spawncontext = createspawnquerycontext(spawningplayer, spawnteam, spawnparams);
+    setactivespawnquerycontext(spawncontext);
+    if (isdefined(spawnpointset)) {
         /#
-            assertex(getspawnsetsize(var_566fa37091337572) > 0, "getSpawnpoint() called on an empty spawn set. Is the map missing the correct spawn point type?");
+            assertex(getspawnsetsize(spawnpointset) > 0, "getSpawnpoint() called on an empty spawn set. Is the map missing the correct spawn point type?");
         #/
-        activatespawnset(var_566fa37091337572, 1);
+        activatespawnset(spawnpointset, 1);
     }
     /#
-        if (namespace_cd0b2d039510b38d::getgametype() != "frontline" && namespace_cd0b2d039510b38d::getgametype() != "Undefined spawn factor asset in GameTypeBundle for index " && namespace_cd0b2d039510b38d::getgametype() != "playerspawnfactorset:" && namespace_cd0b2d039510b38d::getgametype() != "mp/spawnweights_jup4" && namespace_cd0b2d039510b38d::getgametype() != "Unknown Factor Type "") {
-            namespace_e6eafa63d63ab54d::function_847de9fd3b2ff0da(var_566fa37091337572, fallbackspawnset);
+        if (scripts/mp/utility/game::getgametype() != "frontline" && scripts/mp/utility/game::getgametype() != "Undefined spawn factor asset in GameTypeBundle for index " && scripts/mp/utility/game::getgametype() != "playerspawnfactorset:" && scripts/mp/utility/game::getgametype() != "mp/spawnweights_jup4" && scripts/mp/utility/game::getgametype() != "Unknown Factor Type "") {
+            scripts/mp/dev::function_847de9fd3b2ff0da(spawnpointset, fallbackspawnset);
         }
     #/
     bestspawnpoint = getspawnpointfromcode();
@@ -216,8 +216,8 @@ function getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fa
     if (isdefined(fallbackspawnset) && getspawnsetsize(fallbackspawnset) > 0 && bestspawnpoint.bucket >= 2) {
         activatespawnset(fallbackspawnset, 1);
         /#
-            if (namespace_cd0b2d039510b38d::getgametype() != "frontline" && namespace_cd0b2d039510b38d::getgametype() != "Undefined spawn factor asset in GameTypeBundle for index " && namespace_cd0b2d039510b38d::getgametype() != "playerspawnfactorset:" && namespace_cd0b2d039510b38d::getgametype() != "mp/spawnweights_jup4") {
-                namespace_e6eafa63d63ab54d::function_847de9fd3b2ff0da(var_566fa37091337572, fallbackspawnset, 1);
+            if (scripts/mp/utility/game::getgametype() != "frontline" && scripts/mp/utility/game::getgametype() != "Undefined spawn factor asset in GameTypeBundle for index " && scripts/mp/utility/game::getgametype() != "playerspawnfactorset:" && scripts/mp/utility/game::getgametype() != "mp/spawnweights_jup4") {
+                scripts/mp/dev::function_847de9fd3b2ff0da(spawnpointset, fallbackspawnset, 1);
             }
         #/
         var_cdcf9f48fa2d305a = getspawnpointfromcode();
@@ -230,55 +230,55 @@ function getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fa
         }
     }
     if (level.forcebuddyspawn) {
-        var_c242207ef2f146cc = namespace_90f75d3fdf89a43e::findbuddyspawn();
-        if (isdefined(var_c242207ef2f146cc)) {
+        buddyspawnpoint = scripts/mp/spawnscoring::findbuddyspawn();
+        if (isdefined(buddyspawnpoint)) {
             /#
                 if (getdvarint(@"hash_f3b498670cb45729", 0) != 0) {
                     if (!isdefined(level.var_952af294bfd228a7["Normal"])) {
                         level.var_952af294bfd228a7["Normal"] = [];
                     }
-                    level.var_952af294bfd228a7["Normal"][level.var_952af294bfd228a7["Normal"].size] = var_c242207ef2f146cc;
+                    level.var_952af294bfd228a7["Normal"][level.var_952af294bfd228a7["Normal"].size] = buddyspawnpoint;
                 }
             #/
-            var_c242207ef2f146cc.bucket = 3;
-            var_c242207ef2f146cc.usingfallback = usingfallback;
-            var_c242207ef2f146cc.threatsight = var_29aed5db4bb4c839;
-            var_c242207ef2f146cc.damagemod = var_c4dc16cc4cc64978;
-            return var_c242207ef2f146cc;
+            buddyspawnpoint.bucket = 3;
+            buddyspawnpoint.usingfallback = usingfallback;
+            buddyspawnpoint.threatsight = var_29aed5db4bb4c839;
+            buddyspawnpoint.damagemod = var_c4dc16cc4cc64978;
+            return buddyspawnpoint;
         }
     }
     if (bestspawnpoint.bucket >= 2) {
-        if (istrue(level.var_dec2781e0b09018c) && !istrue(var_1a329a914f290661.var_5849bdd2ad415eec)) {
-            var_1a329a914f290661.var_5849bdd2ad415eec = 1;
-            var_c42b8ff1d20c40fa = level.spawnglobals.activespawnlogic;
-            var_81169ab9145e4c70 = level.spawnglobals.var_ec3926d151bc9b3d;
-            var_5d44bb0d0e2c6c7a = getdvar(@"hash_c2e2232e83d7f64f", "AwayFromEnemies");
-            var_138964eab0e4f2f0 = getdvar(@"hash_f8b577d6d5572673", "Crit_Default");
-            setactivespawnlogic(var_5d44bb0d0e2c6c7a, var_138964eab0e4f2f0);
-            bestspawnpoint = getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fallbackspawnset, var_a22bad5fe6fbf86d, var_629e5fe2f6b337fa);
-            setactivespawnlogic(var_c42b8ff1d20c40fa, var_81169ab9145e4c70);
-            var_1a329a914f290661.var_5849bdd2ad415eec = undefined;
+        if (istrue(level.var_dec2781e0b09018c) && !istrue(spawningplayer.var_5849bdd2ad415eec)) {
+            spawningplayer.var_5849bdd2ad415eec = 1;
+            previouslogic = level.spawnglobals.activespawnlogic;
+            previouscrit = level.spawnglobals.var_ec3926d151bc9b3d;
+            safelogic = getdvar(@"hash_c2e2232e83d7f64f", "AwayFromEnemies");
+            safecrit = getdvar(@"hash_f8b577d6d5572673", "Crit_Default");
+            setactivespawnlogic(safelogic, safecrit);
+            bestspawnpoint = getspawnpoint(spawningplayer, spawnteam, spawnpointset, fallbackspawnset, var_a22bad5fe6fbf86d, spawnparams);
+            setactivespawnlogic(previouslogic, previouscrit);
+            spawningplayer.var_5849bdd2ad415eec = undefined;
         }
         var_cf9bd39bcb455a12 = getdvarint(@"hash_32e4dc28cdff8ad3", 0) != 1;
         if (var_a22bad5fe6fbf86d >= 3 && !var_cf9bd39bcb455a12) {
-            var_c242207ef2f146cc = namespace_90f75d3fdf89a43e::findbuddyspawn();
-            if (isdefined(var_c242207ef2f146cc)) {
-                namespace_90f75d3fdf89a43e::logbadspawn("Using buddy spawn", var_1a329a914f290661);
+            buddyspawnpoint = scripts/mp/spawnscoring::findbuddyspawn();
+            if (isdefined(buddyspawnpoint)) {
+                scripts/mp/spawnscoring::logbadspawn("Using buddy spawn", spawningplayer);
                 /#
                     if (getdvarint(@"hash_f3b498670cb45729", 0) != 0) {
                         if (!isdefined(level.var_952af294bfd228a7["threatsight"])) {
                             level.var_952af294bfd228a7["threatsight"] = [];
                         }
-                        level.var_952af294bfd228a7["threatsight"][level.var_952af294bfd228a7["threatsight"].size] = var_c242207ef2f146cc;
+                        level.var_952af294bfd228a7["threatsight"][level.var_952af294bfd228a7["threatsight"].size] = buddyspawnpoint;
                     }
                 #/
-                var_c242207ef2f146cc.bucket = 3;
-                var_c242207ef2f146cc.usingfallback = usingfallback;
-                var_c242207ef2f146cc.threatsight = var_29aed5db4bb4c839;
-                var_c242207ef2f146cc.damagemod = var_c4dc16cc4cc64978;
-                return var_c242207ef2f146cc;
+                buddyspawnpoint.bucket = 3;
+                buddyspawnpoint.usingfallback = usingfallback;
+                buddyspawnpoint.threatsight = var_29aed5db4bb4c839;
+                buddyspawnpoint.damagemod = var_c4dc16cc4cc64978;
+                return buddyspawnpoint;
             }
-            namespace_90f75d3fdf89a43e::logbadspawn("CANNOT BUDDY SPAWN! Using bad code spawn", var_1a329a914f290661);
+            scripts/mp/spawnscoring::logbadspawn("CANNOT BUDDY SPAWN! Using bad code spawn", spawningplayer);
         }
     }
     if (bestspawnpoint.bucket > 2 && var_a22bad5fe6fbf86d >= 4) {
@@ -286,8 +286,8 @@ function getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fa
             bestspawnpoint = undefined;
         }
         if (!isdefined(bestspawnpoint)) {
-            var_b46d2a4b62c02cfe = namespace_b2d5aa2baf2b5701::getteamspawnpoints(var_1a329a914f290661.team);
-            bestspawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_random(var_b46d2a4b62c02cfe);
+            spawnpointlist = scripts/mp/spawnlogic::getteamspawnpoints(spawningplayer.team);
+            bestspawnpoint = scripts/mp/spawnlogic::getspawnpoint_random(spawnpointlist);
         }
         if (!isdefined(bestspawnpoint)) {
             bestspawnpoint = getrandomspawnpointfromactivesets();
@@ -315,39 +315,39 @@ function getspawnpoint(var_1a329a914f290661, spawnteam, var_566fa37091337572, fa
             level.var_952af294bfd228a7[bestspawnpoint.bucket][level.var_952af294bfd228a7[bestspawnpoint.bucket].size] = bestspawnpoint;
         }
     #/
-    if (!istrue(level.disablespawncamera) && !istrue(var_1a329a914f290661.skipspawncamera) && bestspawnpoint.bucket >= 2 && bestspawnpoint.threatsight < 300) {
-        var_1a329a914f290661.shouldgetnewspawnpoint = 1;
+    if (!istrue(level.disablespawncamera) && !istrue(spawningplayer.skipspawncamera) && bestspawnpoint.bucket >= 2 && bestspawnpoint.threatsight < 300) {
+        spawningplayer.shouldgetnewspawnpoint = 1;
     }
     return bestspawnpoint;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2115
 // Size: 0x9a
-function createspawnquerycontext(var_1a329a914f290661, team, factorparams) {
-    var_4db3cfd2ea2d7b8f = spawnstruct();
-    var_4db3cfd2ea2d7b8f.player = var_1a329a914f290661;
-    var_4db3cfd2ea2d7b8f.team = team;
-    var_4db3cfd2ea2d7b8f.time = gettime();
-    var_4db3cfd2ea2d7b8f.factorparams = factorparams;
+function createspawnquerycontext(spawningplayer, team, factorparams) {
+    spawncontext = spawnstruct();
+    spawncontext.player = spawningplayer;
+    spawncontext.team = team;
+    spawncontext.time = gettime();
+    spawncontext.factorparams = factorparams;
     if (level.teambased) {
-        var_4db3cfd2ea2d7b8f.enemyteam = getenemyteams(team)[0];
+        spawncontext.enemyteam = getenemyteams(team)[0];
     } else {
-        var_4db3cfd2ea2d7b8f.enemyteam = "none";
+        spawncontext.enemyteam = "none";
     }
-    return var_4db3cfd2ea2d7b8f;
+    return spawncontext;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21b7
 // Size: 0x21
-function setactivespawnquerycontext(var_4db3cfd2ea2d7b8f) {
-    level.spawnglobals.activespawncontext = var_4db3cfd2ea2d7b8f;
+function setactivespawnquerycontext(spawncontext) {
+    level.spawnglobals.activespawncontext = spawncontext;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21df
 // Size: 0x16
@@ -355,7 +355,7 @@ function getactivespawnquerycontext() {
     return level.spawnglobals.activespawncontext;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21fd
 // Size: 0x16
@@ -363,146 +363,146 @@ function clearactivespawnquerycontext() {
     level.spawnglobals.activespawncontext = undefined;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x221a
 // Size: 0x1a
 function trackhostmigrationend() {
-    while (1) {
+    while (true) {
         self waittill("host_migration_end");
         deactivateallspawnsets();
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x223b
 // Size: 0x66
 function clearcodefactors() {
-    foreach (var_c05389572bacde83, var_36247ced4a30872 in level.spawnglobals.factors) {
-        registerspawnfactor(var_c05389572bacde83, 0);
+    foreach (factorref, factorinfo in level.spawnglobals.factors) {
+        registerspawnfactor(factorref, 0);
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22a8
 // Size: 0xd8
-function registercodefactors(var_a9e383f55738b673) {
+function registercodefactors(factorweights) {
     if (function_bff229a11ecd1e34()) {
-        foreach (struct in var_a9e383f55738b673) {
-            registerspawnfactor(struct.var_ccbba16287668f0a, struct.weight);
+        foreach (struct in factorweights) {
+            registerspawnfactor(struct.factor, struct.weight);
         }
     } else {
-        foreach (var_ccbba16287668f0a, weight in var_a9e383f55738b673) {
-            registerspawnfactor(var_ccbba16287668f0a, weight);
+        foreach (factor, weight in factorweights) {
+            registerspawnfactor(factor, weight);
         }
     }
     registerspawnfactor("script", 1);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2387
 // Size: 0x62
 function function_182c52d5da69684d() {
-    foreach (var_c05389572bacde83, unused in level.spawnglobals.var_a9e770068a1e3964) {
-        function_1e485a1145b721c5(var_c05389572bacde83, 0);
+    foreach (factorref, unused in level.spawnglobals.criticalfactors) {
+        function_1e485a1145b721c5(factorref, 0);
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23f0
 // Size: 0x62
-function function_3237e56ca7621667(var_92f8972c415555a) {
-    foreach (var_ccbba16287668f0a in var_92f8972c415555a) {
-        function_1e485a1145b721c5(var_ccbba16287668f0a.var_ccbba16287668f0a);
+function function_3237e56ca7621667(enabledfactors) {
+    foreach (factor in enabledfactors) {
+        function_1e485a1145b721c5(factor.factor);
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2459
 // Size: 0x3a
-function function_8ac9620f8251ef84(var_ab190eba6c313055) {
+function isactivespawnlogic(logictype) {
     if (!isdefined(level.spawnglobals.activespawnlogic)) {
-        return 0;
+        return false;
     }
-    return level.spawnglobals.activespawnlogic == var_ab190eba6c313055;
+    return level.spawnglobals.activespawnlogic == logictype;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x249b
 // Size: 0x5f0
-function setactivespawnlogic(var_ab190eba6c313055, var_64fec856bc253947, var_7d25b12691ee7cc1) {
+function setactivespawnlogic(logictype, criticalfactortype, var_7d25b12691ee7cc1) {
     if (!istrue(var_7d25b12691ee7cc1)) {
-        var_94534b11bbbcfcb5 = getdvar(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_spawnlogic_override"), "");
-        if (isdefined(var_94534b11bbbcfcb5) && var_94534b11bbbcfcb5 != "") {
-            var_ab190eba6c313055 = var_94534b11bbbcfcb5;
+        logicoverride = getdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_spawnlogic_override"), "");
+        if (isdefined(logicoverride) && logicoverride != "") {
+            logictype = logicoverride;
         }
-        var_f7b8f7147b718401 = getdvar(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_spawnlogic_crit_override"), "");
-        if (isdefined(var_f7b8f7147b718401) && var_f7b8f7147b718401 != "") {
-            var_64fec856bc253947 = var_f7b8f7147b718401;
+        critoverride = getdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_spawnlogic_crit_override"), "");
+        if (isdefined(critoverride) && critoverride != "") {
+            criticalfactortype = critoverride;
         }
     }
     /#
-        var_cf9920abd4823ebd = function_bff229a11ecd1e34();
-        level.var_e9d31890c07ffffc = "CODE spawn logic enabled" + var_cf9920abd4823ebd + "mp_rescue_spawn_defender";
-        if (var_cf9920abd4823ebd) {
+        newdata = function_bff229a11ecd1e34();
+        level.var_e9d31890c07ffffc = "CODE spawn logic enabled" + newdata + "mp_rescue_spawn_defender";
+        if (newdata) {
             foreach (set in level.spawnglobals.var_8c5be78fb206a3a6) {
-                level.var_e9d31890c07ffffc = level.var_e9d31890c07ffffc + "mp_sd_spawn_defender" + function_3c8848a3a11b2553(set.alias) + "Attacker Spawn was unable to find " + function_3c8848a3a11b2553(function_53c4c53197386572(set.var_3daecc1c13f040c2, "<unknown string>")) + "<unknown string>" + function_3c8848a3a11b2553(function_53c4c53197386572(set.var_a098c0af3ab5e704, "<unknown string>")) + "<unknown string>";
+                level.var_e9d31890c07ffffc = level.var_e9d31890c07ffffc + "mp_sd_spawn_defender" + function_3c8848a3a11b2553(set.alias) + "Attacker Spawn was unable to find " + function_3c8848a3a11b2553(default_to(set.factorbundle, "<unknown string>")) + "<unknown string>" + function_3c8848a3a11b2553(default_to(set.criticalbundle, "<unknown string>")) + "<unknown string>";
             }
         }
-        level.var_e9d31890c07ffffc = level.var_e9d31890c07ffffc + "<unknown string>" + function_3c8848a3a11b2553(var_ab190eba6c313055) + "<unknown string>" + function_53c4c53197386572(var_64fec856bc253947, "<unknown string>") + "<unknown string>" + function_53c4c53197386572(var_7d25b12691ee7cc1, "<unknown string>") + "<unknown string>";
+        level.var_e9d31890c07ffffc = level.var_e9d31890c07ffffc + "<unknown string>" + function_3c8848a3a11b2553(logictype) + "<unknown string>" + default_to(criticalfactortype, "<unknown string>") + "<unknown string>" + default_to(var_7d25b12691ee7cc1, "<unknown string>") + "<unknown string>";
         level.var_e9d31890c07ffffc = level.var_e9d31890c07ffffc + "<unknown string>" + istrue(level.teambased) + "mp_rescue_spawn_defender";
         function_6d8d81caf145f097(level.var_e9d31890c07ffffc);
     #/
-    var_584994fab4a8712b = level.spawnglobals;
-    var_584994fab4a8712b.logicvariantid = 0;
-    var_584994fab4a8712b.activespawnlogic = var_ab190eba6c313055;
-    var_584994fab4a8712b.var_ec3926d151bc9b3d = var_64fec856bc253947;
-    var_584994fab4a8712b.activescriptfactors = [];
+    globals = level.spawnglobals;
+    globals.logicvariantid = 0;
+    globals.activespawnlogic = logictype;
+    globals.var_ec3926d151bc9b3d = criticalfactortype;
+    globals.activescriptfactors = [];
     if (function_bff229a11ecd1e34()) {
         /#
-            assertex(isdefined(var_584994fab4a8712b.var_4c3494e7bacb24a[var_584994fab4a8712b.activespawnlogic]), "setActiveSpawnLogic() attempting to use spawn logic but that type was not found in the gametype asset");
+            assertex(isdefined(globals.var_4c3494e7bacb24a[globals.activespawnlogic]), "setActiveSpawnLogic() attempting to use spawn logic but that type was not found in the gametype asset");
         #/
-        foreach (var_ccbba16287668f0a in var_584994fab4a8712b.var_4c3494e7bacb24a[var_ab190eba6c313055].var_158f23d937e6defc.factors) {
-            var_c05389572bacde83 = var_ccbba16287668f0a.var_ccbba16287668f0a;
-            if (namespace_b41002c7afebd276::isfactorregistered(var_c05389572bacde83) && namespace_b41002c7afebd276::isfactorscriptonly(var_c05389572bacde83)) {
-                var_265d3f5274b6106f = spawnstruct();
-                var_265d3f5274b6106f.func = namespace_b41002c7afebd276::getfactorfunction(var_c05389572bacde83);
-                var_265d3f5274b6106f.paramreflist = namespace_b41002c7afebd276::getfactorparamreflist(var_c05389572bacde83);
-                var_265d3f5274b6106f.weight = var_ccbba16287668f0a.weight;
-                var_584994fab4a8712b.activescriptfactors[var_c05389572bacde83] = var_265d3f5274b6106f;
+        foreach (factor in globals.var_4c3494e7bacb24a[logictype].spawnfactors.factors) {
+            factorref = factor.factor;
+            if (scripts/mp/spawnfactor::isfactorregistered(factorref) && scripts/mp/spawnfactor::isfactorscriptonly(factorref)) {
+                factorstruct = spawnstruct();
+                factorstruct.func = scripts/mp/spawnfactor::getfactorfunction(factorref);
+                factorstruct.paramreflist = scripts/mp/spawnfactor::getfactorparamreflist(factorref);
+                factorstruct.weight = factor.weight;
+                globals.activescriptfactors[factorref] = factorstruct;
             }
         }
     } else {
         /#
-            assertex(isdefined(var_584994fab4a8712b.spawnfactorweights[var_584994fab4a8712b.activespawnlogic]), "setActiveSpawnLogic() attempting to use spawn logic "" + var_ab190eba6c313055 + "" but that type was not found in spawnWeights.csv");
+            assertex(isdefined(globals.spawnfactorweights[globals.activespawnlogic]), "setActiveSpawnLogic() attempting to use spawn logic "" + logictype + "" but that type was not found in spawnWeights.csv");
         #/
-        foreach (var_c05389572bacde83, weight in var_584994fab4a8712b.spawnfactorweights[var_ab190eba6c313055]) {
-            if (namespace_b41002c7afebd276::isfactorregistered(var_c05389572bacde83) && namespace_b41002c7afebd276::isfactorscriptonly(var_c05389572bacde83)) {
-                var_265d3f5274b6106f = spawnstruct();
-                var_265d3f5274b6106f.func = namespace_b41002c7afebd276::getfactorfunction(var_c05389572bacde83);
-                var_265d3f5274b6106f.paramreflist = namespace_b41002c7afebd276::getfactorparamreflist(var_c05389572bacde83);
-                var_265d3f5274b6106f.weight = weight;
-                var_584994fab4a8712b.activescriptfactors[var_c05389572bacde83] = var_265d3f5274b6106f;
+        foreach (factorref, weight in globals.spawnfactorweights[logictype]) {
+            if (scripts/mp/spawnfactor::isfactorregistered(factorref) && scripts/mp/spawnfactor::isfactorscriptonly(factorref)) {
+                factorstruct = spawnstruct();
+                factorstruct.func = scripts/mp/spawnfactor::getfactorfunction(factorref);
+                factorstruct.paramreflist = scripts/mp/spawnfactor::getfactorparamreflist(factorref);
+                factorstruct.weight = weight;
+                globals.activescriptfactors[factorref] = factorstruct;
             }
         }
     }
     clearcodefactors();
     if (function_bff229a11ecd1e34()) {
-        registercodefactors(var_584994fab4a8712b.var_4c3494e7bacb24a[var_ab190eba6c313055].var_158f23d937e6defc.factors);
+        registercodefactors(globals.var_4c3494e7bacb24a[logictype].spawnfactors.factors);
     } else {
-        registercodefactors(var_584994fab4a8712b.spawnfactorweights[var_ab190eba6c313055]);
+        registercodefactors(globals.spawnfactorweights[logictype]);
     }
     function_182c52d5da69684d();
     if (function_bff229a11ecd1e34()) {
-        function_3237e56ca7621667(var_584994fab4a8712b.var_4c3494e7bacb24a[var_ab190eba6c313055].var_a9e770068a1e3964.factors);
+        function_3237e56ca7621667(globals.var_4c3494e7bacb24a[logictype].criticalfactors.factors);
         if (function_3e631ca44718151f("respectFrontline")) {
-            frontlineinfo = namespace_b41002c7afebd276::getglobalfrontlineinfo();
+            frontlineinfo = scripts/mp/spawnfactor::getglobalfrontlineinfo();
             if (isdefined(frontlineinfo) && isdefined(frontlineinfo.anchordir) && isdefined(frontlineinfo.primaryanchorpos)) {
                 enablefrontlinecriticalfactor(frontlineinfo.anchordir, frontlineinfo.primaryanchorpos);
             } else {
@@ -511,43 +511,40 @@ function setactivespawnlogic(var_ab190eba6c313055, var_64fec856bc253947, var_7d2
         }
     } else {
         function_60120f0efc69fc63();
-        if (istrue(var_584994fab4a8712b.criticalfactortypes[var_64fec856bc253947]["frontline"])) {
-            frontlineinfo = namespace_b41002c7afebd276::getglobalfrontlineinfo();
+        if (istrue(globals.criticalfactortypes[criticalfactortype]["frontline"])) {
+            frontlineinfo = scripts/mp/spawnfactor::getglobalfrontlineinfo();
             if (isdefined(frontlineinfo) && isdefined(frontlineinfo.anchordir) && isdefined(frontlineinfo.primaryanchorpos)) {
                 enablefrontlinecriticalfactor(frontlineinfo.anchordir, frontlineinfo.primaryanchorpos);
             } else {
                 enablefrontlinecriticalfactor();
             }
-            goto LOC_000005d0;
         }
-    LOC_000005d0:
     }
-LOC_000005d0:
     if (level.teambased) {
         registerspawnteamsmode(1);
-    } else {
-        registerspawnteamsmode(0);
+        return;
     }
+    registerspawnteamsmode(0);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a92
 // Size: 0x37
-function function_84e52176cce3bd6b(var_6170ec00c4bc9b5b, var_5b57669a18c87628) {
-    if (!isdefined(var_5b57669a18c87628)) {
-        return 0;
+function function_84e52176cce3bd6b(spawnkey, overridekey) {
+    if (!isdefined(overridekey)) {
+        return false;
     }
-    if (var_5b57669a18c87628 == "") {
-        return 0;
+    if (overridekey == "") {
+        return false;
     }
-    if (isdefined(var_6170ec00c4bc9b5b) && var_6170ec00c4bc9b5b == var_5b57669a18c87628) {
-        return 0;
+    if (isdefined(spawnkey) && spawnkey == overridekey) {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ad1
 // Size: 0x7aa
@@ -562,65 +559,65 @@ function loadspawnlogicweights() {
         level.spawnglobals.var_8c5be78fb206a3a6 = [];
     #/
     if (function_bff229a11ecd1e34()) {
-        foreach (index, set in level.var_62f6f7640e4431e3.var_7b4496518c2be4e7) {
-            var_26adf74a25d00f6b = 1;
+        foreach (index, set in level.gametypebundle.var_7b4496518c2be4e7) {
+            validset = 1;
             if (isdefined(set.alias)) {
                 alias = function_1823ff50bb28148d(set.alias);
             } else {
                 /#
                     assertmsg("Undefined spawn factor alias in GameTypeBundle for index " + index);
                 #/
-                var_26adf74a25d00f6b = var_26adf74a25d00f6b & 0;
+                validset = validset & 0;
             }
-            var_2729f482a310e236 = spawnstruct();
-            if (isdefined(set.var_3daecc1c13f040c2) && set.var_3daecc1c13f040c2 != %"") {
-                var_2729f482a310e236.var_158f23d937e6defc = getscriptbundle(set.var_3daecc1c13f040c2);
+            setstruct = spawnstruct();
+            if (isdefined(set.factorbundle) && set.factorbundle != %"") {
+                setstruct.spawnfactors = getscriptbundle(set.factorbundle);
             } else {
                 /#
                     assertmsg("Undefined spawn factor asset in GameTypeBundle for index " + index);
                 #/
-                var_26adf74a25d00f6b = var_26adf74a25d00f6b & 0;
+                validset = validset & 0;
             }
-            if (isdefined(set.var_a098c0af3ab5e704) && set.var_a098c0af3ab5e704 != %"") {
-                var_2729f482a310e236.var_a9e770068a1e3964 = getscriptbundle(set.var_a098c0af3ab5e704);
+            if (isdefined(set.criticalbundle) && set.criticalbundle != %"") {
+                setstruct.criticalfactors = getscriptbundle(set.criticalbundle);
             } else {
                 /#
                     assertmsg("Invalid critical factor asset in GameTypeBundle for index " + index);
                 #/
-                var_26adf74a25d00f6b = var_26adf74a25d00f6b & 0;
+                validset = validset & 0;
             }
-            if (var_26adf74a25d00f6b) {
-                level.spawnglobals.var_4c3494e7bacb24a[alias] = var_2729f482a310e236;
+            if (validset) {
+                level.spawnglobals.var_4c3494e7bacb24a[alias] = setstruct;
                 /#
                     level.spawnglobals.var_8c5be78fb206a3a6[alias] = set;
                 #/
             }
         }
-        if (isdefined(level.var_55f7ec9f66f3468d) && isdefined(level.var_55f7ec9f66f3468d.var_f60bfe56c8ed82cc) && level.var_55f7ec9f66f3468d.var_f60bfe56c8ed82cc.size > 0) {
-            foreach (override in level.var_55f7ec9f66f3468d.var_f60bfe56c8ed82cc) {
-                if (function_84e52176cce3bd6b(level.var_62f6f7640e4431e3.var_ae4a67201759ddbe, override.var_fef4eff75abb3e1b)) {
+        if (isdefined(level.mapbundle) && isdefined(level.mapbundle.var_f60bfe56c8ed82cc) && level.mapbundle.var_f60bfe56c8ed82cc.size > 0) {
+            foreach (override in level.mapbundle.var_f60bfe56c8ed82cc) {
+                if (function_84e52176cce3bd6b(level.gametypebundle.var_ae4a67201759ddbe, override.gametypefactorkey)) {
                     continue;
                 }
                 /#
                     assertex(isdefined(override.alias), "Spawn overrides must contain a valid alias name in the mapinfo.");
                 #/
                 /#
-                    assertex(isdefined(override.var_3daecc1c13f040c2), "Spawn overrides must contain a valid PlayerSpawnFactorSet scriptbundle name in the mapinfo.");
+                    assertex(isdefined(override.factorbundle), "Spawn overrides must contain a valid PlayerSpawnFactorSet scriptbundle name in the mapinfo.");
                 #/
                 /#
-                    assertex(isdefined(override.var_a098c0af3ab5e704), "Spawn overrides must contain a valid PlayerSpawnCriticalFactorSet scriptbundle name in the mapinfo.");
+                    assertex(isdefined(override.criticalbundle), "Spawn overrides must contain a valid PlayerSpawnCriticalFactorSet scriptbundle name in the mapinfo.");
                 #/
                 alias = function_1823ff50bb28148d(override.alias);
                 if (isdefined(level.spawnglobals.var_4c3494e7bacb24a[alias])) {
-                    if (isdefined(override.var_3daecc1c13f040c2) && override.var_3daecc1c13f040c2 != %"") {
-                        level.spawnglobals.var_4c3494e7bacb24a[alias].var_158f23d937e6defc = getscriptbundle("playerspawnfactorset:" + override.var_3daecc1c13f040c2);
+                    if (isdefined(override.factorbundle) && override.factorbundle != %"") {
+                        level.spawnglobals.var_4c3494e7bacb24a[alias].spawnfactors = getscriptbundle("playerspawnfactorset:" + override.factorbundle);
                     } else {
                         /#
                             assertmsg("Invalid spawn factor override in mapInfo for alias " + override.alias);
                         #/
                     }
-                    if (isdefined(override.var_a098c0af3ab5e704) && override.var_a098c0af3ab5e704 != %"") {
-                        level.spawnglobals.var_4c3494e7bacb24a[alias].var_a9e770068a1e3964 = getscriptbundle("playerspawncriticalfactorset:" + override.var_a098c0af3ab5e704);
+                    if (isdefined(override.criticalbundle) && override.criticalbundle != %"") {
+                        level.spawnglobals.var_4c3494e7bacb24a[alias].criticalfactors = getscriptbundle("playerspawncriticalfactorset:" + override.criticalbundle);
                     } else {
                         /#
                             assertmsg("Invalid critical factor override in mapInfo for alias " + override.alias);
@@ -666,49 +663,49 @@ function loadspawnlogicweights() {
         }
     }
     row = -1;
-    while (1) {
+    while (true) {
         row++;
         var_883b09c13233feb = tablelookupbyrow(var_10554cc50f831d91, row, 0);
         if (!isdefined(var_883b09c13233feb) || var_883b09c13233feb == "") {
             break;
         }
-        var_ccbba16287668f0a = tablelookupbyrow(var_10554cc50f831d91, row, 2);
+        factor = tablelookupbyrow(var_10554cc50f831d91, row, 2);
         /#
-            assertex(isdefined(var_ccbba16287668f0a) && var_ccbba16287668f0a != "", "Could not read factor for spawn logic type "" + var_883b09c13233feb + """);
+            assertex(isdefined(factor) && factor != "", "Could not read factor for spawn logic type "" + var_883b09c13233feb + """);
         #/
-        var_368b494836d546ea = tablelookupbyrow(var_10554cc50f831d91, row, 1);
+        factortype = tablelookupbyrow(var_10554cc50f831d91, row, 1);
         /#
-            assertex(isdefined(var_368b494836d546ea) && var_368b494836d546ea != "", "Could not read factorType for spawn logic type "" + var_883b09c13233feb + """);
+            assertex(isdefined(factortype) && factortype != "", "Could not read factorType for spawn logic type "" + var_883b09c13233feb + """);
         #/
         /#
-            assertex(var_368b494836d546ea == "Normal" || var_368b494836d546ea == "Critical", "Unknown Factor Type "" + var_368b494836d546ea + "" for factor "" + var_ccbba16287668f0a + "" of type "" + var_883b09c13233feb + """);
+            assertex(factortype == "Normal" || factortype == "Critical", "Unknown Factor Type "" + factortype + "" for factor "" + factor + "" of type "" + var_883b09c13233feb + """);
         #/
-        if (var_368b494836d546ea == "Normal") {
+        if (factortype == "Normal") {
             if (!isdefined(level.spawnglobals.spawnfactorweights[var_883b09c13233feb])) {
                 level.spawnglobals.spawnfactorweights[var_883b09c13233feb] = [];
             }
             /#
-                assertex(!isdefined(level.spawnglobals.spawnfactorweights[var_883b09c13233feb][var_ccbba16287668f0a]), "spawnweights.csv has factor "" + var_ccbba16287668f0a + "" defined twice for "" + var_883b09c13233feb + """);
+                assertex(!isdefined(level.spawnglobals.spawnfactorweights[var_883b09c13233feb][factor]), "spawnweights.csv has factor "" + factor + "" defined twice for "" + var_883b09c13233feb + """);
             #/
             weight = tablelookupbyrow(var_10554cc50f831d91, row, 3);
             /#
                 assertex(isdefined(weight) && weight != "", "Could not read weight for spawn logic type "" + var_883b09c13233feb + """);
             #/
             weight = float(weight);
-            level.spawnglobals.spawnfactorweights[var_883b09c13233feb][var_ccbba16287668f0a] = weight;
-        } else {
-            if (!isdefined(level.spawnglobals.criticalfactortypes[var_883b09c13233feb])) {
-                level.spawnglobals.criticalfactortypes[var_883b09c13233feb] = [];
-            }
-            /#
-                assertex(!isdefined(level.spawnglobals.criticalfactortypes[var_883b09c13233feb][var_ccbba16287668f0a]), "spawnweights.csv has factor "" + var_ccbba16287668f0a + "" defined twice for "" + var_883b09c13233feb + """);
-            #/
-            level.spawnglobals.criticalfactortypes[var_883b09c13233feb][var_ccbba16287668f0a] = 1;
+            level.spawnglobals.spawnfactorweights[var_883b09c13233feb][factor] = weight;
+            continue;
         }
+        if (!isdefined(level.spawnglobals.criticalfactortypes[var_883b09c13233feb])) {
+            level.spawnglobals.criticalfactortypes[var_883b09c13233feb] = [];
+        }
+        /#
+            assertex(!isdefined(level.spawnglobals.criticalfactortypes[var_883b09c13233feb][factor]), "spawnweights.csv has factor "" + factor + "" defined twice for "" + var_883b09c13233feb + """);
+        #/
+        level.spawnglobals.criticalfactortypes[var_883b09c13233feb][factor] = 1;
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3282
 // Size: 0x164
@@ -717,72 +714,72 @@ function scorespawnpoint(spawnpoint) {
         assertex(isdefined(level.spawnglobals.activespawnlogic), "Attempting to get a spawn point, but setActiveSpawnLogic() has not been called.");
     #/
     if (function_bff229a11ecd1e34()) {
-        foreach (var_ccbba16287668f0a, weight in level.spawnglobals.var_4c3494e7bacb24a[level.spawnglobals.activespawnlogic].var_158f23d937e6defc.factors) {
-            namespace_b41002c7afebd276::calculatefactorscore(spawnpoint, var_ccbba16287668f0a, weight);
+        foreach (factor, weight in level.spawnglobals.var_4c3494e7bacb24a[level.spawnglobals.activespawnlogic].spawnfactors.factors) {
+            scripts/mp/spawnfactor::calculatefactorscore(spawnpoint, factor, weight);
         }
     } else {
-        foreach (var_ccbba16287668f0a, weight in level.spawnglobals.spawnfactorweights[level.spawnglobals.activespawnlogic]) {
-            namespace_b41002c7afebd276::calculatefactorscore(spawnpoint, var_ccbba16287668f0a, weight);
+        foreach (factor, weight in level.spawnglobals.spawnfactorweights[level.spawnglobals.activespawnlogic]) {
+            scripts/mp/spawnfactor::calculatefactorscore(spawnpoint, factor, weight);
         }
     }
     /#
-        var_9f9c381ae9df11a9 = getdvarint(@"hash_6e7192ebd1ebfe8", -1);
-        if (var_9f9c381ae9df11a9 == spawnpoint.index || var_9f9c381ae9df11a9 == -2) {
+        debugdvar = getdvarint(@"hash_6e7192ebd1ebfe8", -1);
+        if (debugdvar == spawnpoint.index || debugdvar == -2) {
             function_4c2c5ecea9fd1e73(spawnpoint);
         }
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33ed
 // Size: 0x7e
-function isfactorinuse(var_7be5a2e10a013091) {
+function isfactorinuse(factorname) {
     if (function_bff229a11ecd1e34()) {
-        return isdefined(level.spawnglobals.var_4c3494e7bacb24a[level.spawnglobals.activespawnlogic].var_158f23d937e6defc.factors[var_7be5a2e10a013091]);
+        return isdefined(level.spawnglobals.var_4c3494e7bacb24a[level.spawnglobals.activespawnlogic].spawnfactors.factors[factorname]);
     }
-    return isdefined(level.spawnglobals.spawnfactorweights[level.spawnglobals.activespawnlogic][var_7be5a2e10a013091]);
+    return isdefined(level.spawnglobals.spawnfactorweights[level.spawnglobals.activespawnlogic][factorname]);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3473
 // Size: 0x9f
-function function_3e631ca44718151f(var_7be5a2e10a013091) {
-    foreach (var_ccbba16287668f0a in level.spawnglobals.var_4c3494e7bacb24a[level.spawnglobals.activespawnlogic].var_a9e770068a1e3964.factors) {
-        if (var_ccbba16287668f0a.var_ccbba16287668f0a == var_7be5a2e10a013091) {
-            return 1;
+function function_3e631ca44718151f(factorname) {
+    foreach (factor in level.spawnglobals.var_4c3494e7bacb24a[level.spawnglobals.activespawnlogic].criticalfactors.factors) {
+        if (factor.factor == factorname) {
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x351a
 // Size: 0xc
-function function_7d00c6d6c09f3be3() {
+function getstartspawnpoints() {
     return level.startspawnpoints;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x352e
 // Size: 0x223
-function function_386623fc65375fa8(var_ff1aa7a587aea124, spawnpointname, var_e88e1be231eb03b) {
+function function_386623fc65375fa8(spawnpointents, spawnpointname, allowempty) {
     spawnpoints = [];
     if (isdefined(level.modifiedspawnpoints)) {
-        for (index = 0; index < var_ff1aa7a587aea124.size; index++) {
-            if (checkmodifiedspawnpoint(var_ff1aa7a587aea124[index])) {
+        for (index = 0; index < spawnpointents.size; index++) {
+            if (checkmodifiedspawnpoint(spawnpointents[index])) {
                 continue;
             }
-            spawnpoints[spawnpoints.size] = var_ff1aa7a587aea124[index];
+            spawnpoints[spawnpoints.size] = spawnpointents[index];
         }
     } else {
-        spawnpoints = var_ff1aa7a587aea124;
+        spawnpoints = spawnpointents;
     }
     if (!spawnpoints.size) {
-        if (!istrue(var_e88e1be231eb03b)) {
+        if (!istrue(allowempty)) {
             /#
                 assertmsg("^1Error: No " + spawnpointname + " spawnpoints found in level!");
             #/
@@ -802,11 +799,11 @@ function function_386623fc65375fa8(var_ff1aa7a587aea124, spawnpointname, var_e88
         foreach (spawnpoint in spawnpoints) {
             spawnpoint.infront = 1;
             forwarddir = anglestoforward(spawnpoint.angles);
-            foreach (var_cf29aff039bc8abe in spawnpoints) {
-                if (spawnpoint == var_cf29aff039bc8abe) {
+            foreach (adjacentspawn in spawnpoints) {
+                if (spawnpoint == adjacentspawn) {
                     continue;
                 }
-                var_a4237dca130ab969 = vectornormalize(var_cf29aff039bc8abe.origin - spawnpoint.origin);
+                var_a4237dca130ab969 = vectornormalize(adjacentspawn.origin - spawnpoint.origin);
                 var_3d7c180940df1bef = vectordot(forwarddir, var_a4237dca130ab969);
                 if (var_3d7c180940df1bef > 0.86) {
                     spawnpoint.infront = 0;
@@ -818,81 +815,81 @@ function function_386623fc65375fa8(var_ff1aa7a587aea124, spawnpointname, var_e88
     return spawnpoints;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3759
 // Size: 0x38
-function addstartspawnpoints(spawnpointname, var_e88e1be231eb03b, team) {
-    var_ff1aa7a587aea124 = getspawnpointarray(spawnpointname);
-    function_386623fc65375fa8(var_ff1aa7a587aea124, spawnpointname, var_e88e1be231eb03b);
+function addstartspawnpoints(spawnpointname, allowempty, team) {
+    spawnpointents = getspawnpointarray(spawnpointname);
+    function_386623fc65375fa8(spawnpointents, spawnpointname, allowempty);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3798
 // Size: 0x95
-function function_f4882bf77adf2d71(var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5, team, var_e88e1be231eb03b, isfallback) {
-    if (!isdefined(var_e88e1be231eb03b)) {
-        var_e88e1be231eb03b = 0;
+function function_f4882bf77adf2d71(spawnkey, spawnvalue, team, allowempty, isfallback) {
+    if (!isdefined(allowempty)) {
+        allowempty = 0;
     }
     if (!isdefined(isfallback)) {
         isfallback = 0;
     }
-    var_ff1aa7a587aea124 = getspawnpointarray("mp_spawn_point", var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5);
-    var_fd22d9e60c032271 = function_a73407f802d46a1c("mp_spawn_point", var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5);
-    spawnpoints = function_386623fc65375fa8(var_ff1aa7a587aea124, var_fd22d9e60c032271, var_e88e1be231eb03b);
+    spawnpointents = getspawnpointarray("mp_spawn_point", spawnkey, spawnvalue);
+    arraykey = getspawnpointarraykey("mp_spawn_point", spawnkey, spawnvalue);
+    spawnpoints = function_386623fc65375fa8(spawnpointents, arraykey, allowempty);
     if (spawnpoints.size) {
         registerspawnpoints(team, spawnpoints, isfallback);
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3834
 // Size: 0x6f
-function addspawnpoints(team, spawnpointname, var_d5690ac669bf0ff, isfallback) {
-    if (!isdefined(var_d5690ac669bf0ff)) {
-        var_d5690ac669bf0ff = 0;
+function addspawnpoints(team, spawnpointname, issetoptional, isfallback) {
+    if (!isdefined(issetoptional)) {
+        issetoptional = 0;
     }
     if (!isdefined(isfallback)) {
         isfallback = 0;
     }
-    var_efa35ded043e4a0f = getspawnpointarray(spawnpointname);
-    if (!var_efa35ded043e4a0f.size) {
+    newspawnpoints = getspawnpointarray(spawnpointname);
+    if (!newspawnpoints.size) {
         /#
-            assertex(var_d5690ac669bf0ff, "^1Error: No " + spawnpointname + " spawnpoints found in level!");
+            assertex(issetoptional, "^1Error: No " + spawnpointname + " spawnpoints found in level!");
         #/
         return;
     }
-    registerspawnpoints(team, var_efa35ded043e4a0f, isfallback);
+    registerspawnpoints(team, newspawnpoints, isfallback);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38aa
 // Size: 0x89
-function function_9328a9c1fc8d2043(var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5, team, var_d5690ac669bf0ff, isfallback) {
-    if (!isdefined(var_d5690ac669bf0ff)) {
-        var_d5690ac669bf0ff = 0;
+function function_9328a9c1fc8d2043(spawnkey, spawnvalue, team, issetoptional, isfallback) {
+    if (!isdefined(issetoptional)) {
+        issetoptional = 0;
     }
     if (!isdefined(isfallback)) {
         isfallback = 0;
     }
-    var_efa35ded043e4a0f = getspawnpointarray("mp_spawn_point", var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5);
-    if (!var_efa35ded043e4a0f.size) {
+    newspawnpoints = getspawnpointarray("mp_spawn_point", spawnkey, spawnvalue);
+    if (!newspawnpoints.size) {
         /#
-            assertex(var_d5690ac669bf0ff, "^1Error: No " + function_a73407f802d46a1c("mp_spawn_point", var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5) + " spawnpoints found in level!");
+            assertex(issetoptional, "^1Error: No " + getspawnpointarraykey("mp_spawn_point", spawnkey, spawnvalue) + " spawnpoints found in level!");
         #/
         return;
     }
-    registerspawnpoints(team, var_efa35ded043e4a0f, isfallback);
+    registerspawnpoints(team, newspawnpoints, isfallback);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x393a
 // Size: 0x134
-function registerspawnpoints(team, var_efa35ded043e4a0f, isfallback) {
+function registerspawnpoints(team, newspawnpoints, isfallback) {
     if (!isdefined(level.spawnpoints)) {
         level.spawnpoints = [];
     }
@@ -902,7 +899,7 @@ function registerspawnpoints(team, var_efa35ded043e4a0f, isfallback) {
     if (!isdefined(level.teamfallbackspawnpoints[team])) {
         level.teamfallbackspawnpoints[team] = [];
     }
-    foreach (spawnpoint in var_efa35ded043e4a0f) {
+    foreach (spawnpoint in newspawnpoints) {
         if (checkmodifiedspawnpoint(spawnpoint)) {
             continue;
         }
@@ -913,13 +910,13 @@ function registerspawnpoints(team, var_efa35ded043e4a0f, isfallback) {
         if (istrue(isfallback)) {
             level.teamfallbackspawnpoints[team][level.teamfallbackspawnpoints[team].size] = spawnpoint;
             spawnpoint.isfallback = 1;
-        } else {
-            level.teamspawnpoints[team][level.teamspawnpoints[team].size] = spawnpoint;
+            continue;
         }
+        level.teamspawnpoints[team][level.teamspawnpoints[team].size] = spawnpoint;
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a75
 // Size: 0x31e
@@ -936,11 +933,11 @@ function spawnpointinit() {
     spawnpoint.inited = 1;
     spawnpoint.alternates = [];
     spawnpoint.lastscore = [];
-    var_fbcabd62b8f66eb8 = physics_createcontents([0:"physicscontents_missileclip", 1:"physicscontents_clipshot"]);
-    hits = physics_raycast(spawnpoint.sighttracepoint, spawnpoint.sighttracepoint + (0, 0, 1024), var_fbcabd62b8f66eb8, [], 0, "physicsquery_any");
+    tracecontents = physics_createcontents(["physicscontents_missileclip", "physicscontents_clipshot"]);
+    hits = physics_raycast(spawnpoint.sighttracepoint, spawnpoint.sighttracepoint + (0, 0, 1024), tracecontents, [], 0, "physicsquery_any");
     if (hits > 0) {
         startpoint = spawnpoint.sighttracepoint + spawnpoint.forward * 100;
-        hits = physics_raycast(startpoint, spawnpoint.sighttracepoint + (0, 0, 1024), var_fbcabd62b8f66eb8, [], 0, "physicsquery_any");
+        hits = physics_raycast(startpoint, spawnpoint.sighttracepoint + (0, 0, 1024), tracecontents, [], 0, "physicsquery_any");
         if (hits > 0) {
             spawnpoint.outside = 0;
         }
@@ -955,64 +952,64 @@ function spawnpointinit() {
     }
     spawnpoint.lanemask = 0;
     spawnpoint.lanes = [];
-    foreach (var_8e574dae649f764d in level.spawnglobals.lanetriggers) {
-        if (ispointinvolume(spawnpoint.origin, var_8e574dae649f764d)) {
-            spawnpoint.lanemask = spawnpoint.lanemask | var_8e574dae649f764d.indexflag;
-            spawnpoint.lanes[spawnpoint.lanes.size] = var_8e574dae649f764d.index;
+    foreach (lanetrigger in level.spawnglobals.lanetriggers) {
+        if (ispointinvolume(spawnpoint.origin, lanetrigger)) {
+            spawnpoint.lanemask = spawnpoint.lanemask | lanetrigger.indexflag;
+            spawnpoint.lanes[spawnpoint.lanes.size] = lanetrigger.index;
         }
     }
     initspawnpointvalues(spawnpoint);
     loginitialspawnposition(spawnpoint);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d9a
 // Size: 0x47
-function function_a73407f802d46a1c(classname, key, value) {
-    var_fd22d9e60c032271 = classname;
+function getspawnpointarraykey(classname, key, value) {
+    arraykey = classname;
     if (isdefined(key) && isdefined(value)) {
-        var_fd22d9e60c032271 = var_fd22d9e60c032271 + "." + key + "." + value;
+        arraykey = arraykey + "." + key + "." + value;
     }
-    return var_fd22d9e60c032271;
+    return arraykey;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3de9
 // Size: 0x13c
-function function_32d25b070a9516de(var_b46d2a4b62c02cfe) {
+function function_32d25b070a9516de(spawnpointlist) {
     returnarray = [];
-    if (isdefined(namespace_36f464722d326bbe::getlocaleid())) {
-        var_df08a16a5e6579c3 = level.localeid;
-        foreach (spawnpoint in var_b46d2a4b62c02cfe) {
+    if (isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
+        targetnoteworthy = level.localeid;
+        foreach (spawnpoint in spawnpointlist) {
             if (checkmodifiedspawnpoint(spawnpoint)) {
                 continue;
             }
-            if (isdefined(spawnpoint.script_noteworthy) && spawnpoint.script_noteworthy == var_df08a16a5e6579c3) {
+            if (isdefined(spawnpoint.script_noteworthy) && spawnpoint.script_noteworthy == targetnoteworthy) {
                 returnarray[returnarray.size] = spawnpoint;
             }
         }
         if (returnarray.size == 0) {
-            returnarray = var_b46d2a4b62c02cfe;
+            returnarray = spawnpointlist;
         }
     } else {
-        foreach (spawnpoint in var_b46d2a4b62c02cfe) {
+        foreach (spawnpoint in spawnpointlist) {
             if (checkmodifiedspawnpoint(spawnpoint)) {
                 continue;
             }
             if (isdefined(spawnpoint.script_noteworthy)) {
-                jumpiffalse(issubstr(spawnpoint.script_noteworthy, "locale")) LOC_0000011f;
-            } else {
-            LOC_0000011f:
-                returnarray[returnarray.size] = spawnpoint;
+                if (issubstr(spawnpoint.script_noteworthy, "locale")) {
+                    continue;
+                }
             }
+            returnarray[returnarray.size] = spawnpoint;
         }
     }
     return returnarray;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f2d
 // Size: 0xa0
@@ -1020,20 +1017,20 @@ function getspawnpointarray(classname, key, value) {
     if (!isdefined(level.spawnpointarray)) {
         level.spawnpointarray = [];
     }
-    var_fd22d9e60c032271 = function_a73407f802d46a1c(classname, key, value);
-    if (!isdefined(level.spawnpointarray[var_fd22d9e60c032271])) {
+    arraykey = getspawnpointarraykey(classname, key, value);
+    if (!isdefined(level.spawnpointarray[arraykey])) {
         var_fc32063c5b6bd8a8 = [];
         if (isdefined(key) && isdefined(value)) {
             var_fc32063c5b6bd8a8 = getspawnarray(classname, key, value);
         } else {
             var_fc32063c5b6bd8a8 = getspawnarray(classname);
         }
-        level.spawnpointarray[var_fd22d9e60c032271] = function_32d25b070a9516de(var_fc32063c5b6bd8a8);
+        level.spawnpointarray[arraykey] = function_32d25b070a9516de(var_fc32063c5b6bd8a8);
     }
-    return level.spawnpointarray[var_fd22d9e60c032271];
+    return level.spawnpointarray[arraykey];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fd5
 // Size: 0x21
@@ -1041,7 +1038,7 @@ function function_5cb7f8468d3b9fe0(key, value) {
     return getspawnpointarray("mp_spawn_point", key, value);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ffe
 // Size: 0x134
@@ -1058,27 +1055,27 @@ function getspawnpointfromcode() {
             assertmsg("No spawn point returned from code");
         #/
     }
-    dlog_recordevent("mp_spawn_event", [0:"score", 1:spawnpoint.score, 2:"threatsight", 3:spawnpoint.threatsight, 4:"totalscore", 5:spawnpoint.totalscore, 6:"spawnx", 7:spawnpoint.origin[0], 8:"spawny", 9:spawnpoint.origin[1], 10:"spawnz", 11:spawnpoint.origin[2]]);
+    dlog_recordevent("mp_spawn_event", ["score", spawnpoint.score, "threatsight", spawnpoint.threatsight, "totalscore", spawnpoint.totalscore, "spawnx", spawnpoint.origin[0], "spawny", spawnpoint.origin[1], "spawnz", spawnpoint.origin[2]]);
     logcodefrontlineupdate(spawnpoint);
     return spawnpoint;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x413a
 // Size: 0xbb
 function logcodefrontlineupdate(spawnpoint) {
-    if (namespace_dd65bffb586a92ba::matchrecording_isenabled()) {
+    if (scripts/mp/matchrecording::matchrecording_isenabled()) {
         if (istrue(spawnpoint.frontlineenabled)) {
             var_86af21ba2c8d7509 = ter_op(self.team == "allies", spawnpoint.frontlineused, 1);
             var_53360ee7221c1a96 = ter_op(self.team == "axis", spawnpoint.frontlineused, 1);
             frontlinedir = rotatevector(spawnpoint.frontlinedir, (0, 90, 0));
-            namespace_b41002c7afebd276::logfrontlinetomatchrecording(spawnpoint.frontlinepos, frontlinedir, var_86af21ba2c8d7509, var_53360ee7221c1a96);
+            scripts/mp/spawnfactor::logfrontlinetomatchrecording(spawnpoint.frontlinepos, frontlinedir, var_86af21ba2c8d7509, var_53360ee7221c1a96);
         }
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41fc
 // Size: 0xa4
@@ -1086,28 +1083,28 @@ function getspawnpoint_random(spawnpoints) {
     if (!isdefined(spawnpoints)) {
         return undefined;
     }
-    var_3299c5ebf747a6b9 = undefined;
-    spawnpoints = namespace_90f75d3fdf89a43e::checkdynamicspawns(spawnpoints);
+    randomspawnpoint = undefined;
+    spawnpoints = scripts/mp/spawnscoring::checkdynamicspawns(spawnpoints);
     spawnpoints = array_randomize(spawnpoints);
     foreach (spawnpoint in spawnpoints) {
-        var_3299c5ebf747a6b9 = spawnpoint;
-        if (canspawn(var_3299c5ebf747a6b9.origin) && !positionwouldtelefrag(var_3299c5ebf747a6b9.origin)) {
+        randomspawnpoint = spawnpoint;
+        if (canspawn(randomspawnpoint.origin) && !positionwouldtelefrag(randomspawnpoint.origin)) {
             break;
         }
     }
-    return var_3299c5ebf747a6b9;
+    return randomspawnpoint;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42a8
 // Size: 0xd8
-function getspawnpoint_startspawn(spawnpoints, var_728d3544ba462895) {
+function getspawnpoint_startspawn(spawnpoints, onlyunselected) {
     if (!isdefined(spawnpoints)) {
         return undefined;
     }
     bestspawn = undefined;
-    spawnpoints = namespace_90f75d3fdf89a43e::checkdynamicspawns(spawnpoints);
+    spawnpoints = scripts/mp/spawnscoring::checkdynamicspawns(spawnpoints);
     foreach (spawnpoint in spawnpoints) {
         if (!isdefined(spawnpoint.selected)) {
             continue;
@@ -1122,7 +1119,7 @@ function getspawnpoint_startspawn(spawnpoints, var_728d3544ba462895) {
         bestspawn = spawnpoint;
     }
     if (!isdefined(bestspawn)) {
-        if (istrue(var_728d3544ba462895)) {
+        if (istrue(onlyunselected)) {
             return undefined;
         }
         bestspawn = getspawnpoint_random(spawnpoints);
@@ -1133,18 +1130,18 @@ function getspawnpoint_startspawn(spawnpoints, var_728d3544ba462895) {
     return bestspawn;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4388
 // Size: 0x29
 function trackcarepackages() {
-    while (1) {
+    while (true) {
         level.carepackages = getentarray("care_package", "targetname");
         wait(0.05);
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43b8
 // Size: 0x17
@@ -1152,7 +1149,7 @@ function getteamspawnpoints(team) {
     return level.teamspawnpoints[team];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x43d7
 // Size: 0x17
@@ -1160,7 +1157,7 @@ function getteamfallbackspawnpoints(team) {
     return level.teamfallbackspawnpoints[team];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x43f6
 // Size: 0x2a
@@ -1171,7 +1168,7 @@ function ispathdataavailable() {
     return level.pathdataavailable;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4428
 // Size: 0x1e8
@@ -1197,26 +1194,26 @@ function spawnpointupdate() {
             }
             waitframe();
         }
-        var_26b37e5ae3600917 = [];
+        spawnpointnodes = [];
         if (level.spawnpoints.size == 0) {
             error("Spawn System Failure. No Spawnpoints found.");
         }
         for (index = 0; index < level.spawnpoints.size; index++) {
             for (innerindex = 0; innerindex < level.spawnpoints[index].radiuspathnodes.size; innerindex++) {
-                var_26b37e5ae3600917[var_26b37e5ae3600917.size] = level.spawnpoints[index].radiuspathnodes[innerindex];
+                spawnpointnodes[spawnpointnodes.size] = level.spawnpoints[index].radiuspathnodes[innerindex];
             }
         }
-        cachespawnpathnodesincode(var_26b37e5ae3600917);
+        cachespawnpathnodesincode(spawnpointnodes);
     }
     /#
-        while (1) {
+        while (true) {
             level.forcebuddyspawn = getdvarint(@"hash_3c88de2237eb6f6d") > 0;
             wait(0.25);
         }
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4617
 // Size: 0x144
@@ -1230,28 +1227,28 @@ function getactiveplayerlist() {
             if (character.sessionstate != "playing") {
                 continue;
             }
-            jumpiftrue(character val::get("player_for_spawn_logic")) LOC_00000099;
-        } else {
-        LOC_00000099:
-            character.spawnlogicteam = getspawnteam(character);
-            if (character.spawnlogicteam == "spectator") {
+            if (!character val::get("player_for_spawn_logic")) {
                 continue;
             }
-            if (isagent(character) && character.agent_type == "seeker") {
-                continue;
-            }
-            spawnlogictraceheight = getplayertraceheight(character);
-            spawntracelocation = character geteye();
-            spawntracelocation = (spawntracelocation[0], spawntracelocation[1], character.origin[2] + spawnlogictraceheight);
-            character.spawnlogictraceheight = spawnlogictraceheight;
-            character.spawntracelocation = spawntracelocation;
-            var_d4d7a55bc1e8f68e[var_d4d7a55bc1e8f68e.size] = character;
         }
+        character.spawnlogicteam = getspawnteam(character);
+        if (character.spawnlogicteam == "spectator") {
+            continue;
+        }
+        if (isagent(character) && character.agent_type == "seeker") {
+            continue;
+        }
+        spawnlogictraceheight = getplayertraceheight(character);
+        spawntracelocation = character geteye();
+        spawntracelocation = (spawntracelocation[0], spawntracelocation[1], character.origin[2] + spawnlogictraceheight);
+        character.spawnlogictraceheight = spawnlogictraceheight;
+        character.spawntracelocation = spawntracelocation;
+        var_d4d7a55bc1e8f68e[var_d4d7a55bc1e8f68e.size] = character;
     }
     return var_d4d7a55bc1e8f68e;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4763
 // Size: 0x13
@@ -1259,7 +1256,7 @@ function addspawnviewer(entity) {
     entity registerentityspawnviewer();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x477d
 // Size: 0x13
@@ -1267,15 +1264,15 @@ function removespawnviewer(entity) {
     entity clearentityspawnviewer();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params a, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4797
 // Size: 0x68
-function addspawndangerzone(pos, radius, height, var_ac6ca28a64718193, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1, var_e5aaf9c36f430309) {
-    return influencepoint_add(pos, radius, height, var_ac6ca28a64718193, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1, var_e5aaf9c36f430309);
+function addspawndangerzone(pos, radius, height, friendlyteam, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1, manualcleanup) {
+    return influencepoint_add(pos, radius, height, friendlyteam, lifetime, playerowner, var_d4a6ace0dec22bae, parentent, var_41171640c23ae1c1, manualcleanup);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4807
 // Size: 0x14
@@ -1283,7 +1280,7 @@ function removespawndangerzone(handle) {
     influencepoint_remove(handle);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4822
 // Size: 0x13
@@ -1291,7 +1288,7 @@ function isspawndangerzonealive(handle) {
     return influencepoint_isscripthandlevalid(handle);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x483d
 // Size: 0x6
@@ -1299,117 +1296,117 @@ function getdefaultminedangerzoneradiussize() {
     return 350;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x484b
 // Size: 0x10e
-function influencepoint_add(pos, radius, height, var_ac6ca28a64718193, lifetime, playerowner, var_f0022422dc721463, parentent, var_41171640c23ae1c1, var_e5aaf9c36f430309) {
-    if (!isdefined(var_ac6ca28a64718193) && isdefined(playerowner)) {
-        var_ac6ca28a64718193 = playerowner.team;
+function influencepoint_add(pos, radius, height, friendlyteam, lifetime, playerowner, var_f0022422dc721463, parentent, var_41171640c23ae1c1, manualcleanup) {
+    if (!isdefined(friendlyteam) && isdefined(playerowner)) {
+        friendlyteam = playerowner.team;
     }
-    var_4c1c66d3cc3c8ace = undefined;
+    codehandle = undefined;
     if (isdefined(playerowner)) {
         if (isdefined(var_f0022422dc721463)) {
-            var_4c1c66d3cc3c8ace = createspawninfluencepoint(pos, radius, height, var_ac6ca28a64718193, playerowner, var_f0022422dc721463);
+            codehandle = createspawninfluencepoint(pos, radius, height, friendlyteam, playerowner, var_f0022422dc721463);
         } else {
-            var_4c1c66d3cc3c8ace = createspawninfluencepoint(pos, radius, height, var_ac6ca28a64718193, playerowner);
+            codehandle = createspawninfluencepoint(pos, radius, height, friendlyteam, playerowner);
         }
     } else {
-        var_4c1c66d3cc3c8ace = createspawninfluencepoint(pos, radius, height, var_ac6ca28a64718193);
+        codehandle = createspawninfluencepoint(pos, radius, height, friendlyteam);
     }
     /#
-        assertex(isdefined(var_4c1c66d3cc3c8ace), "CreateSpawnInfluencePoint() failed to create influence point");
+        assertex(isdefined(codehandle), "CreateSpawnInfluencePoint() failed to create influence point");
     #/
-    if (!isdefined(var_4c1c66d3cc3c8ace)) {
+    if (!isdefined(codehandle)) {
         return;
     }
-    var_cd3f75cf2cd67808 = influencepoint_getnewscripthandle(var_4c1c66d3cc3c8ace);
+    scripthandle = influencepoint_getnewscripthandle(codehandle);
     /#
-        assert(influencepoint_isscripthandlevalid(var_cd3f75cf2cd67808));
+        assert(influencepoint_isscripthandlevalid(scripthandle));
     #/
-    if (!istrue(var_e5aaf9c36f430309)) {
-        thread influencepoint_cleanupthink(var_cd3f75cf2cd67808, &removespawndangerzone, parentent, lifetime, var_41171640c23ae1c1);
+    if (!istrue(manualcleanup)) {
+        thread influencepoint_cleanupthink(scripthandle, &removespawndangerzone, parentent, lifetime, var_41171640c23ae1c1);
     }
-    return var_cd3f75cf2cd67808;
+    return scripthandle;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4961
 // Size: 0x42
-function influencepoint_remove(var_cd3f75cf2cd67808) {
+function influencepoint_remove(scripthandle) {
     /#
-        assertex(influencepoint_isscripthandlevalid(var_cd3f75cf2cd67808), "Attempting to remove a spawn influence point that has already been removed");
+        assertex(influencepoint_isscripthandlevalid(scripthandle), "Attempting to remove a spawn influence point that has already been removed");
     #/
-    var_4c1c66d3cc3c8ace = influencepoint_getcodehandlefromscripthandle(var_cd3f75cf2cd67808);
-    destroyspawninfluencepoint(var_4c1c66d3cc3c8ace);
-    influencepoint_invalidatescripthandlesforcodehandle(var_4c1c66d3cc3c8ace);
+    codehandle = influencepoint_getcodehandlefromscripthandle(scripthandle);
+    destroyspawninfluencepoint(codehandle);
+    influencepoint_invalidatescripthandlesforcodehandle(codehandle);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49aa
 // Size: 0x7d
-function influencepoint_getnewscripthandle(var_4c1c66d3cc3c8ace) {
+function influencepoint_getnewscripthandle(codehandle) {
     spawnglobals = level.spawnglobals;
     /#
-        assert(var_4c1c66d3cc3c8ace < 65536 - 1);
+        assert(codehandle < 65536 - 1);
     #/
-    if (!isdefined(spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace])) {
-        spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace] = 0;
+    if (!isdefined(spawnglobals.influencenodealloccounts[codehandle])) {
+        spawnglobals.influencenodealloccounts[codehandle] = 0;
     }
-    var_b20e482710bf4419 = spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace];
-    var_cd3f75cf2cd67808 = var_b20e482710bf4419 << 16 | var_4c1c66d3cc3c8ace;
-    return var_cd3f75cf2cd67808;
+    alloccount = spawnglobals.influencenodealloccounts[codehandle];
+    scripthandle = alloccount << 16 | codehandle;
+    return scripthandle;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a2f
 // Size: 0x65
-function influencepoint_invalidatescripthandlesforcodehandle(var_4c1c66d3cc3c8ace) {
+function influencepoint_invalidatescripthandlesforcodehandle(codehandle) {
     spawnglobals = level.spawnglobals;
-    spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace]++;
-    var_b20e482710bf4419 = spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace];
-    if (var_b20e482710bf4419 >= 65536 - 1) {
-        var_b20e482710bf4419 = 0;
-        spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace] = 0;
+    spawnglobals.influencenodealloccounts[codehandle]++;
+    alloccount = spawnglobals.influencenodealloccounts[codehandle];
+    if (alloccount >= 65536 - 1) {
+        alloccount = 0;
+        spawnglobals.influencenodealloccounts[codehandle] = 0;
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a9b
 // Size: 0x16
-function influencepoint_getcodehandlefromscripthandle(var_cd3f75cf2cd67808) {
-    return var_cd3f75cf2cd67808 & 65536 - 1;
+function influencepoint_getcodehandlefromscripthandle(scripthandle) {
+    return scripthandle & 65536 - 1;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ab9
 // Size: 0x10
-function influencepoint_getalloccountfromscripthandle(var_cd3f75cf2cd67808) {
-    return var_cd3f75cf2cd67808 >> 16;
+function influencepoint_getalloccountfromscripthandle(scripthandle) {
+    return scripthandle >> 16;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ad1
 // Size: 0x65
-function influencepoint_isscripthandlevalid(var_cd3f75cf2cd67808) {
+function influencepoint_isscripthandlevalid(scripthandle) {
     spawnglobals = level.spawnglobals;
-    var_80420be8a5b2f86b = influencepoint_getalloccountfromscripthandle(var_cd3f75cf2cd67808);
-    var_4c1c66d3cc3c8ace = influencepoint_getcodehandlefromscripthandle(var_cd3f75cf2cd67808);
-    var_b20e482710bf4419 = spawnglobals.influencenodealloccounts[var_4c1c66d3cc3c8ace];
-    return isdefined(var_b20e482710bf4419) && var_80420be8a5b2f86b == var_b20e482710bf4419;
+    var_80420be8a5b2f86b = influencepoint_getalloccountfromscripthandle(scripthandle);
+    codehandle = influencepoint_getcodehandlefromscripthandle(scripthandle);
+    alloccount = spawnglobals.influencenodealloccounts[codehandle];
+    return isdefined(alloccount) && var_80420be8a5b2f86b == alloccount;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b3e
 // Size: 0xa2
-function influencepoint_cleanupthink(handle, var_3ba354cea9bb25d9, owner, lifetime, removeondeath) {
+function influencepoint_cleanupthink(handle, removalfunc, owner, lifetime, removeondeath) {
     level endon("game_ended");
     endons = [];
     if (isdefined(removeondeath)) {
@@ -1430,10 +1427,10 @@ function influencepoint_cleanupthink(handle, var_3ba354cea9bb25d9, owner, lifeti
     if (!influencepoint_isscripthandlevalid(handle)) {
         return;
     }
-    [[ var_3ba354cea9bb25d9 ]](handle);
+    [[ removalfunc ]](handle);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4be7
 // Size: 0x195
@@ -1443,8 +1440,8 @@ function updatespawnviewers() {
         level.spawnviewersupdatetime = gettime();
         thread function_9ab26c0d48173ab1();
     #/
-    foreach (var_ff3fe241243b175b in level.spawnviewers) {
-        var_ff3fe241243b175b.spawnviewpathnodes = undefined;
+    foreach (viewer in level.spawnviewers) {
+        viewer.spawnviewpathnodes = undefined;
     }
     foreach (turret in level.turrets) {
         if (!isdefined(turret)) {
@@ -1454,17 +1451,17 @@ function updatespawnviewers() {
         level.spawnviewers[level.spawnviewers.size] = turret;
         turret.spawnviewpathnodes = undefined;
     }
-    foreach (var_dc473b03215bf865 in level.ugvs) {
-        if (!isdefined(var_dc473b03215bf865)) {
+    foreach (ugv in level.ugvs) {
+        if (!isdefined(ugv)) {
             continue;
         }
-        var_dc473b03215bf865.spawnlogicteam = getspawnteam(var_dc473b03215bf865);
-        level.spawnviewers[level.spawnviewers.size] = var_dc473b03215bf865;
-        var_dc473b03215bf865.spawnviewpathnodes = undefined;
+        ugv.spawnlogicteam = getspawnteam(ugv);
+        level.spawnviewers[level.spawnviewers.size] = ugv;
+        ugv.spawnviewpathnodes = undefined;
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d83
 // Size: 0x20
@@ -1472,7 +1469,7 @@ function arespawnviewersvalid() {
     return isdefined(level.spawnviewersupdatetime) && level.spawnviewersupdatetime == gettime();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4dab
 // Size: 0x11
@@ -1483,7 +1480,7 @@ function function_9ab26c0d48173ab1() {
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4dc3
 // Size: 0x28f
@@ -1496,47 +1493,47 @@ function logspawnpointsightupdate(spawnpoint, team) {
             spawnpoint.logid = [[ level.matchrecording_generateid ]]();
         }
         if (isdefined(spawnpoint.logid)) {
-            var_9fabc939f9e112ab = 3;
+            statevalue = 3;
             if (level.teambased) {
-                var_2784aea6e45300de = 1;
-                var_17111b33f4f70359 = 1;
+                allieson = 1;
+                axison = 1;
                 if (team == "allies") {
                     /#
                         assert(spawnpoint.hassightdata["allies"]);
                     #/
-                    var_2784aea6e45300de = spawnpoint.logspawndisabled["allies"] == 0;
+                    allieson = spawnpoint.logspawndisabled["allies"] == 0;
                     var_a0804401f03be2f4 = isdefined(spawnpoint.loggedstate) && (spawnpoint.loggedstate == 0 || spawnpoint.loggedstate == 2);
-                    var_17111b33f4f70359 = ter_op(isdefined(spawnpoint.loggedstate), var_a0804401f03be2f4, 0);
+                    axison = ter_op(isdefined(spawnpoint.loggedstate), var_a0804401f03be2f4, 0);
                 } else {
                     /#
                         assert(spawnpoint.hassightdata["axis"]);
                     #/
-                    var_17111b33f4f70359 = spawnpoint.logspawndisabled["axis"] == 0;
+                    axison = spawnpoint.logspawndisabled["axis"] == 0;
                     var_9c34cf8271074603 = isdefined(spawnpoint.loggedstate) && (spawnpoint.loggedstate == 0 || spawnpoint.loggedstate == 1);
-                    var_2784aea6e45300de = ter_op(isdefined(spawnpoint.loggedstate), var_9c34cf8271074603, 0);
+                    allieson = ter_op(isdefined(spawnpoint.loggedstate), var_9c34cf8271074603, 0);
                 }
-                if (var_2784aea6e45300de && var_17111b33f4f70359) {
-                    var_9fabc939f9e112ab = 0;
-                } else if (var_2784aea6e45300de) {
-                    var_9fabc939f9e112ab = 1;
-                } else if (var_17111b33f4f70359) {
-                    var_9fabc939f9e112ab = 2;
+                if (allieson && axison) {
+                    statevalue = 0;
+                } else if (allieson) {
+                    statevalue = 1;
+                } else if (axison) {
+                    statevalue = 2;
                 }
             } else {
                 /#
                     assert(spawnpoint.hassightdata["all"]);
                 #/
-                var_9fabc939f9e112ab = ter_op(spawnpoint.fullsights["all"] == 0, 0, 3);
+                statevalue = ter_op(spawnpoint.fullsights["all"] == 0, 0, 3);
             }
-            if (!isdefined(spawnpoint.loggedstate) || spawnpoint.loggedstate != var_9fabc939f9e112ab) {
-                [[ level.matchrecording_logevent ]](spawnpoint.logid, "allies", "SPAWN_ENTITY", spawnpoint.origin[0], spawnpoint.origin[1], gettime(), var_9fabc939f9e112ab);
-                spawnpoint.loggedstate = var_9fabc939f9e112ab;
+            if (!isdefined(spawnpoint.loggedstate) || spawnpoint.loggedstate != statevalue) {
+                [[ level.matchrecording_logevent ]](spawnpoint.logid, "allies", "SPAWN_ENTITY", spawnpoint.origin[0], spawnpoint.origin[1], gettime(), statevalue);
+                spawnpoint.loggedstate = statevalue;
             }
         }
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5059
 // Size: 0xdc
@@ -1555,7 +1552,7 @@ function loginitialspawnposition(spawnpoint) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x513c
 // Size: 0x1ae
@@ -1565,28 +1562,28 @@ function spawnpointdistanceupdate(spawnpoint) {
     #/
     if (isdefined(spawnpoint) && isdefined(spawnpoint.mindistsquared)) {
         foreach (player in level.spawnviewers) {
-            var_8336f113929858a6 = distancesquared(player.origin, spawnpoint.origin);
+            distsquared = distancesquared(player.origin, spawnpoint.origin);
             if (isdefined(spawnpoint.mindistsquared[player.spawnlogicteam])) {
-                if (var_8336f113929858a6 < spawnpoint.mindistsquared[player.spawnlogicteam]) {
-                    spawnpoint.mindistsquared[player.spawnlogicteam] = var_8336f113929858a6;
+                if (distsquared < spawnpoint.mindistsquared[player.spawnlogicteam]) {
+                    spawnpoint.mindistsquared[player.spawnlogicteam] = distsquared;
                 }
                 if (player.spawnlogicteam == "spectator") {
                     continue;
                 }
-                spawnpoint.distsumsquared[player.spawnlogicteam] = spawnpoint.distsumsquared[player.spawnlogicteam] + var_8336f113929858a6;
-                spawnpoint.distsumsquaredcapped[player.spawnlogicteam] = spawnpoint.distsumsquaredcapped[player.spawnlogicteam] + min(var_8336f113929858a6, namespace_b41002c7afebd276::maxplayerspawninfluencedistsquared());
+                spawnpoint.distsumsquared[player.spawnlogicteam] = spawnpoint.distsumsquared[player.spawnlogicteam] + distsquared;
+                spawnpoint.distsumsquaredcapped[player.spawnlogicteam] = spawnpoint.distsumsquaredcapped[player.spawnlogicteam] + min(distsquared, scripts/mp/spawnfactor::maxplayerspawninfluencedistsquared());
                 spawnpoint.totalplayers[player.spawnlogicteam]++;
             }
         }
         spawnpoint.hasdistdata = 1;
-    } else {
-        /#
-            assertmsg("SpawnPoint is undefined for SpawnPointDistanceUpdate");
-        #/
+        return;
     }
+    /#
+        assertmsg("SpawnPoint is undefined for SpawnPointDistanceUpdate");
+    #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52f1
 // Size: 0x36
@@ -1598,7 +1595,7 @@ function getspawnteam(ent) {
     return team;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x532f
 // Size: 0x24
@@ -1608,7 +1605,7 @@ function initspawnpointvalues(spawnpoint) {
     function_32368b70c6aa5729(spawnpoint);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x535a
 // Size: 0x7e
@@ -1617,12 +1614,12 @@ function clearspawnpointsightdata(spawnpoint) {
         foreach (teamname in level.teamnamelist) {
             clearteamspawnpointsightdata(spawnpoint, teamname);
         }
-    } else {
-        clearteamspawnpointsightdata(spawnpoint, "all");
+        return;
     }
+    clearteamspawnpointsightdata(spawnpoint, "all");
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x53df
 // Size: 0xc
@@ -1630,7 +1627,7 @@ function setupplayerspawnsightdata(player) {
     
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53f2
 // Size: 0x7e
@@ -1639,12 +1636,12 @@ function clearspawnpointdistancedata(spawnpoint) {
         foreach (teamname in level.teamnamelist) {
             clearteamspawnpointdistancedata(spawnpoint, teamname);
         }
-    } else {
-        clearteamspawnpointdistancedata(spawnpoint, "all");
+        return;
     }
+    clearteamspawnpointdistancedata(spawnpoint, "all");
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5477
 // Size: 0x76
@@ -1657,7 +1654,7 @@ function clearteamspawnpointsightdata(spawnpoint, team) {
     spawnpoint.maxjumpsightvalue[team] = 0;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54f4
 // Size: 0x61
@@ -1669,7 +1666,7 @@ function clearteamspawnpointdistancedata(spawnpoint, team) {
     spawnpoint.totalplayers[team] = 0;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x555c
 // Size: 0x4e
@@ -1687,7 +1684,7 @@ function getplayertraceheight(player, var_de6e84bcd0dd9094) {
     return 32;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x55b2
 // Size: 0x114
@@ -1701,23 +1698,23 @@ function additionalsighttraceentities(spawnpoint, entarray) {
             continue;
         }
         spawnpoint.hassightdata[team] = 1;
-        var_d9b5bdd7ca5a54a3 = ent.origin + (0, 0, 50);
-        var_b800ab5aa521d39b = 0;
-        if (!var_b800ab5aa521d39b) {
-            var_b800ab5aa521d39b = spawnsighttrace(spawnpoint, spawnpoint.sighttracepoint, var_d9b5bdd7ca5a54a3);
+        enttracepoint = ent.origin + (0, 0, 50);
+        sightvalue = 0;
+        if (!sightvalue) {
+            sightvalue = spawnsighttrace(spawnpoint, spawnpoint.sighttracepoint, enttracepoint);
         }
-        if (!var_b800ab5aa521d39b) {
+        if (!sightvalue) {
             continue;
         }
-        if (var_b800ab5aa521d39b > 0.95) {
+        if (sightvalue > 0.95) {
             spawnpoint.fullsights[team]++;
-        } else {
-            spawnpoint.cornersights[team]++;
+            continue;
         }
+        spawnpoint.cornersights[team]++;
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56cd
 // Size: 0x173
@@ -1751,7 +1748,7 @@ function finalizespawnpointchoice(spawnpoint) {
     level.spawnglobals.lastteamspawnpoints[self.team] = spawnpoint;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5847
 // Size: 0x81
@@ -1763,7 +1760,7 @@ function expandspawnpointbounds(classname) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x58cf
 // Size: 0x7f
@@ -1784,7 +1781,7 @@ function expandmins(mins, point) {
     return mins;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5956
 // Size: 0x61
@@ -1801,15 +1798,15 @@ function expandmaxs(maxs, point) {
     return maxs;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59bf
 // Size: 0x7b
 function findboxcenter(mins, maxs) {
     center = (0, 0, 0);
-    var_53453e9c96325450 = getstruct("map_center_override", "targetname");
-    if (isdefined(var_53453e9c96325450)) {
-        center = var_53453e9c96325450.origin;
+    centeroverride = getstruct("map_center_override", "targetname");
+    if (isdefined(centeroverride)) {
+        center = centeroverride.origin;
     } else {
         center = maxs - mins;
         center = (center[0] / 2, center[1] / 2, center[2] / 2) + mins;
@@ -1817,42 +1814,42 @@ function findboxcenter(mins, maxs) {
     return center;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a42
 // Size: 0x7a
 function setmapcenterfordev() {
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    namespace_b2d5aa2baf2b5701::expandspawnpointbounds("mp_tdm_spawn_allies_start");
-    namespace_b2d5aa2baf2b5701::expandspawnpointbounds("mp_tdm_spawn_axis_start");
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    scripts/mp/spawnlogic::expandspawnpointbounds("mp_tdm_spawn_allies_start");
+    scripts/mp/spawnlogic::expandspawnpointbounds("mp_tdm_spawn_axis_start");
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ac3
 // Size: 0x7e
 function shoulduseteamstartspawn() {
     if (getdvarint(@"hash_8ba7b3d0520775da", 0) == 1) {
-        return 1;
+        return true;
     }
-    if (!namespace_4b0406965e556711::gameflag("prematch_done") && isdefined(game["infil"]) && !namespace_4b0406965e556711::gameflag("infil_started")) {
-        return 1;
+    if (!scripts/mp/flags::gameflag("prematch_done") && isdefined(game["infil"]) && !scripts/mp/flags::gameflag("infil_started")) {
+        return true;
     }
     if (istrue(level.disableteamstartspawns)) {
-        return 0;
+        return false;
     }
     return level.ingraceperiod && (!isdefined(level.numkills) || level.numkills == 0);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b49
 // Size: 0x54
-function getpathsighttestnodes(pos, var_87f843aa78393347) {
-    if (var_87f843aa78393347) {
+function getpathsighttestnodes(pos, bclose) {
+    if (bclose) {
         mindist = 0;
         maxdist = getclosenoderadiusdist();
     } else {
@@ -1862,26 +1859,26 @@ function getpathsighttestnodes(pos, var_87f843aa78393347) {
     return getnodesinradius(pos, maxdist, mindist, 512, "path");
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ba5
 // Size: 0x6a
 function getradiuspathsighttestnodes(pos) {
-    var_d76b59299a263fe5 = [];
-    var_495808766414483d = getclosestnodeinsight(pos);
-    if (isdefined(var_495808766414483d)) {
-        var_d76b59299a263fe5[0] = var_495808766414483d;
+    nodelist = [];
+    singlenode = getclosestnodeinsight(pos);
+    if (isdefined(singlenode)) {
+        nodelist[0] = singlenode;
     }
-    if (!isdefined(var_495808766414483d)) {
-        var_d76b59299a263fe5 = getnodesinradius(pos, getclosenoderadiusdist(), 0, 256, "path");
-        if (var_d76b59299a263fe5.size == 0) {
-            var_d76b59299a263fe5 = getnodesinradius(pos, 250, 0, 256, "path");
+    if (!isdefined(singlenode)) {
+        nodelist = getnodesinradius(pos, getclosenoderadiusdist(), 0, 256, "path");
+        if (nodelist.size == 0) {
+            nodelist = getnodesinradius(pos, 250, 0, 256, "path");
         }
     }
-    return var_d76b59299a263fe5;
+    return nodelist;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c17
 // Size: 0x3f0
@@ -1900,120 +1897,122 @@ function evaluateprecomputedlos(spawnpoint, team) {
     #/
     lowerlimitfullsights = 0.95;
     lowerlimitcornersights = 0;
-    var_b800ab5aa521d39b = undefined;
+    sightvalue = undefined;
     var_8ad95653a95ea1c3 = undefined;
     lowerlimitfullsights = level.spawnglobals.lowerlimitfullsights;
     lowerlimitcornersights = level.spawnglobals.lowerlimitcornersights;
     /#
         assert(arespawnviewersvalid());
     #/
-    foreach (var_ff3fe241243b175b in level.spawnviewers) {
-        if (level.teambased && var_ff3fe241243b175b.spawnlogicteam != enemyteam) {
+    foreach (viewer in level.spawnviewers) {
+        if (level.teambased && viewer.spawnlogicteam != enemyteam) {
             continue;
         }
-        if (spawnpoint.fullsights[var_ff3fe241243b175b.spawnlogicteam]) {
+        if (spawnpoint.fullsights[viewer.spawnlogicteam]) {
             break;
         }
-        if (!isdefined(var_ff3fe241243b175b.spawnviewpathnodes)) {
-            var_ff3fe241243b175b.spawnviewpathnodes = var_ff3fe241243b175b getnearnodelistforspawncheck(getfarnoderadiusdist());
-            if (!isdefined(var_ff3fe241243b175b.spawnviewpathnodes) || var_ff3fe241243b175b.spawnviewpathnodes.size == 0) {
+        if (!isdefined(viewer.spawnviewpathnodes)) {
+            viewer.spawnviewpathnodes = viewer getnearnodelistforspawncheck(getfarnoderadiusdist());
+            if (!isdefined(viewer.spawnviewpathnodes) || viewer.spawnviewpathnodes.size == 0) {
                 /#
-                    var_ff3fe241243b175b.var_cba3632b3172a989 = 1;
+                    viewer.var_cba3632b3172a989 = 1;
                 #/
-                if (isdefined(level.matchrecording_logeventmsg) && isplayer(var_ff3fe241243b175b)) {
-                    if (!isdefined(var_ff3fe241243b175b.lastpathnodewarningtime) || var_ff3fe241243b175b.lastpathnodewarningtime != gettime()) {
-                        [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "WARNING: Could not use TTLOS data for player " + var_ff3fe241243b175b.name);
-                        var_ff3fe241243b175b.lastpathnodewarningtime = gettime();
+                if (isdefined(level.matchrecording_logeventmsg) && isplayer(viewer)) {
+                    if (!isdefined(viewer.lastpathnodewarningtime) || viewer.lastpathnodewarningtime != gettime()) {
+                        [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "WARNING: Could not use TTLOS data for player " + viewer.name);
+                        viewer.lastpathnodewarningtime = gettime();
                     }
                 }
             }
         }
-        if (isdefined(var_ff3fe241243b175b.spawnviewpathnodes) && var_ff3fe241243b175b.spawnviewpathnodes.size > 0) {
-            var_cb4cc05929650738 = _precomputedlosdatatest(var_ff3fe241243b175b, spawnpoint);
-            var_b800ab5aa521d39b = var_cb4cc05929650738[0];
-            var_8ad95653a95ea1c3 = var_cb4cc05929650738[1];
+        if (isdefined(viewer.spawnviewpathnodes) && viewer.spawnviewpathnodes.size > 0) {
+            sightvalues = _precomputedlosdatatest(viewer, spawnpoint);
+            sightvalue = sightvalues[0];
+            var_8ad95653a95ea1c3 = sightvalues[1];
         }
-        if (!isdefined(var_b800ab5aa521d39b)) {
+        if (!isdefined(sightvalue)) {
             tracepos = undefined;
-            if (isplayer(var_ff3fe241243b175b)) {
-                tracepos = var_ff3fe241243b175b geteye();
+            if (isplayer(viewer)) {
+                tracepos = viewer geteye();
             } else {
-                tracepos = var_ff3fe241243b175b.origin + (0, 0, 50);
+                tracepos = viewer.origin + (0, 0, 50);
             }
-            var_b800ab5aa521d39b = directlineofsighttest(spawnpoint, var_ff3fe241243b175b, tracepos);
-            var_8ad95653a95ea1c3 = var_b800ab5aa521d39b;
+            sightvalue = directlineofsighttest(spawnpoint, viewer, tracepos);
+            var_8ad95653a95ea1c3 = sightvalue;
         }
-        if (!isdefined(spawnpoint.maxsightvalue[var_ff3fe241243b175b.spawnlogicteam]) || var_b800ab5aa521d39b > spawnpoint.maxsightvalue[var_ff3fe241243b175b.spawnlogicteam]) {
-            spawnpoint.maxsightvalue[var_ff3fe241243b175b.spawnlogicteam] = var_b800ab5aa521d39b;
+        if (!isdefined(spawnpoint.maxsightvalue[viewer.spawnlogicteam]) || sightvalue > spawnpoint.maxsightvalue[viewer.spawnlogicteam]) {
+            spawnpoint.maxsightvalue[viewer.spawnlogicteam] = sightvalue;
         }
-        if (isdefined(var_8ad95653a95ea1c3) && isplayer(var_ff3fe241243b175b)) {
-            if (!isdefined(spawnpoint.maxjumpsightvalue[var_ff3fe241243b175b.spawnlogicteam]) || var_8ad95653a95ea1c3 > spawnpoint.maxjumpsightvalue[var_ff3fe241243b175b.spawnlogicteam]) {
-                spawnpoint.maxjumpsightvalue[var_ff3fe241243b175b.spawnlogicteam] = var_8ad95653a95ea1c3;
+        if (isdefined(var_8ad95653a95ea1c3) && isplayer(viewer)) {
+            if (!isdefined(spawnpoint.maxjumpsightvalue[viewer.spawnlogicteam]) || var_8ad95653a95ea1c3 > spawnpoint.maxjumpsightvalue[viewer.spawnlogicteam]) {
+                spawnpoint.maxjumpsightvalue[viewer.spawnlogicteam] = var_8ad95653a95ea1c3;
             }
         }
-        if (var_b800ab5aa521d39b > lowerlimitfullsights) {
-            spawnpoint.fullsights[var_ff3fe241243b175b.spawnlogicteam]++;
-            spawnpoint.logspawndisabled[var_ff3fe241243b175b.spawnlogicteam]++;
-        } else if (var_b800ab5aa521d39b > lowerlimitcornersights) {
-            spawnpoint.cornersights[var_ff3fe241243b175b.spawnlogicteam]++;
+        if (sightvalue > lowerlimitfullsights) {
+            spawnpoint.fullsights[viewer.spawnlogicteam]++;
+            spawnpoint.logspawndisabled[viewer.spawnlogicteam]++;
+            continue;
+        }
+        if (sightvalue > lowerlimitcornersights) {
+            spawnpoint.cornersights[viewer.spawnlogicteam]++;
         }
     }
     spawnpoint.hassightdata[enemyteam] = 1;
     logspawnpointsightupdate(spawnpoint, enemyteam);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x600e
 // Size: 0x69
-function _precomputedlosdatatest(var_ff3fe241243b175b, spawnpoint) {
-    var_cb4cc05929650738 = checkttlosoverrides(var_ff3fe241243b175b, spawnpoint);
-    if (!isdefined(var_cb4cc05929650738)) {
-        if (checkttlosdeverrors(var_ff3fe241243b175b, spawnpoint)) {
-            return [0:1, 1:1];
+function _precomputedlosdatatest(viewer, spawnpoint) {
+    sightvalues = checkttlosoverrides(viewer, spawnpoint);
+    if (!isdefined(sightvalues)) {
+        if (checkttlosdeverrors(viewer, spawnpoint)) {
+            return [1, 1];
         }
-        var_cb4cc05929650738 = precomputedlosdatatest(var_ff3fe241243b175b.spawnviewpathnodes, spawnpoint.radiuspathnodes);
+        sightvalues = precomputedlosdatatest(viewer.spawnviewpathnodes, spawnpoint.radiuspathnodes);
     }
-    return var_cb4cc05929650738;
+    return sightvalues;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x607f
 // Size: 0xf6
-function checkttlosdeverrors(var_ff3fe241243b175b, spawnpoint) {
+function checkttlosdeverrors(viewer, spawnpoint) {
     /#
-        var_67243b08ecf2e214 = undefined;
-        if (!isdefined(var_ff3fe241243b175b.spawnviewpathnodes) || var_ff3fe241243b175b.spawnviewpathnodes.size == 0) {
-            var_4f2dbc4104804300 = ter_op(isplayer(var_ff3fe241243b175b), var_ff3fe241243b175b.name, "<unknown string>");
-            var_67243b08ecf2e214 = "<unknown string>" + var_4f2dbc4104804300 + "<unknown string>";
+        errormessage = undefined;
+        if (!isdefined(viewer.spawnviewpathnodes) || viewer.spawnviewpathnodes.size == 0) {
+            var_4f2dbc4104804300 = ter_op(isplayer(viewer), viewer.name, "<unknown string>");
+            errormessage = "<unknown string>" + var_4f2dbc4104804300 + "<unknown string>";
         } else if (!isdefined(spawnpoint.radiuspathnodes) || spawnpoint.radiuspathnodes.size == 0) {
-            var_67243b08ecf2e214 = "<unknown string>" + spawnpoint.origin;
+            errormessage = "<unknown string>" + spawnpoint.origin;
         }
-        if (isdefined(var_67243b08ecf2e214)) {
+        if (isdefined(errormessage)) {
             if (!isdefined(level.var_e660628db2a340a5) || gettime() - level.var_e660628db2a340a5 > 1000) {
                 level.var_e660628db2a340a5 = gettime();
-                iprintlnbold(var_67243b08ecf2e214);
+                iprintlnbold(errormessage);
             }
-            return 1;
+            return true;
         }
     #/
-    return 0;
+    return false;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x617d
 // Size: 0x139
-function checkttlosoverrides(var_ff3fe241243b175b, spawnpoint) {
+function checkttlosoverrides(viewer, spawnpoint) {
     if (!isdefined(level.spawnglobals.ttlosoverrides)) {
         return;
     }
-    foreach (var_865d8e40722512eb in var_ff3fe241243b175b.spawnviewpathnodes) {
+    foreach (var_865d8e40722512eb in viewer.spawnviewpathnodes) {
         var_24ed8518f6fc6e6 = var_865d8e40722512eb getnodenumber();
         if (isdefined(level.spawnglobals.ttlosoverrides[var_24ed8518f6fc6e6])) {
-            foreach (var_c229d93c0bb4f8e8 in spawnpoint.radiuspathnodes) {
-                var_7643b53b09bbf1d5 = var_c229d93c0bb4f8e8 getnodenumber();
+            foreach (spawnnode in spawnpoint.radiuspathnodes) {
+                var_7643b53b09bbf1d5 = spawnnode getnodenumber();
                 if (isdefined(level.spawnglobals.ttlosoverrides[var_24ed8518f6fc6e6][var_7643b53b09bbf1d5])) {
                     return level.spawnglobals.ttlosoverrides[var_24ed8518f6fc6e6][var_7643b53b09bbf1d5];
                 }
@@ -2022,13 +2021,13 @@ function checkttlosoverrides(var_ff3fe241243b175b, spawnpoint) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x62bd
 // Size: 0x116
-function addttlosoverride(var_61ee54cd86f22f08, var_61ee57cd86f235a1, var_48c0bd41cc10dfd8, var_84c277514873a859) {
+function addttlosoverride(nodea, nodeb, var_48c0bd41cc10dfd8, var_84c277514873a859) {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         if (isdefined(level.spawnglobals)) {
             break;
         }
@@ -2037,17 +2036,17 @@ function addttlosoverride(var_61ee54cd86f22f08, var_61ee57cd86f235a1, var_48c0bd
     if (!isdefined(level.spawnglobals.ttlosoverrides)) {
         level.spawnglobals.ttlosoverrides = [];
     }
-    if (!isdefined(level.spawnglobals.ttlosoverrides[var_61ee54cd86f22f08])) {
-        level.spawnglobals.ttlosoverrides[var_61ee54cd86f22f08] = [];
+    if (!isdefined(level.spawnglobals.ttlosoverrides[nodea])) {
+        level.spawnglobals.ttlosoverrides[nodea] = [];
     }
-    level.spawnglobals.ttlosoverrides[var_61ee54cd86f22f08][var_61ee57cd86f235a1] = [0:var_48c0bd41cc10dfd8, 1:var_84c277514873a859];
-    if (!isdefined(level.spawnglobals.ttlosoverrides[var_61ee57cd86f235a1])) {
-        level.spawnglobals.ttlosoverrides[var_61ee57cd86f235a1] = [];
+    level.spawnglobals.ttlosoverrides[nodea][nodeb] = [var_48c0bd41cc10dfd8, var_84c277514873a859];
+    if (!isdefined(level.spawnglobals.ttlosoverrides[nodeb])) {
+        level.spawnglobals.ttlosoverrides[nodeb] = [];
     }
-    level.spawnglobals.ttlosoverrides[var_61ee57cd86f235a1][var_61ee54cd86f22f08] = [0:var_48c0bd41cc10dfd8, 1:var_84c277514873a859];
+    level.spawnglobals.ttlosoverrides[nodeb][nodea] = [var_48c0bd41cc10dfd8, var_84c277514873a859];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63da
 // Size: 0x5
@@ -2055,7 +2054,7 @@ function getclosenoderadiusdist() {
     return 130;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63e7
 // Size: 0x5
@@ -2063,24 +2062,24 @@ function getfarnoderadiusdist() {
     return 250;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63f4
 // Size: 0xee
-function directlineofsighttest(spawnpoint, var_ff3fe241243b175b, tracepos) {
-    var_e880af5898ec6fd1 = spawnpoint.sighttracepoint;
-    var_4e18bf6f5eeee2f0 = tracepos;
-    contents = physics_createcontents([0:"physicscontents_ainosight"]);
-    var_aa517194e54f048b = physics_raycast(var_e880af5898ec6fd1, var_4e18bf6f5eeee2f0, contents, var_ff3fe241243b175b, 0, "physicsquery_any");
+function directlineofsighttest(spawnpoint, viewer, tracepos) {
+    raystart = spawnpoint.sighttracepoint;
+    rayend = tracepos;
+    contents = physics_createcontents(["physicscontents_ainosight"]);
+    castresult = physics_raycast(raystart, rayend, contents, viewer, 0, "physicsquery_any");
     /#
         if (getdvarint(@"hash_be68e4c2bcc0ac4c", 0) != 0 || getdvarint(@"hash_9d60ff019dc50c22", 0) != 0) {
-            line(var_e880af5898ec6fd1, var_4e18bf6f5eeee2f0 - (0, 0, 16), ter_op(var_aa517194e54f048b, (1, 0, 0), (0, 1, 0)), 1, 0, 15);
+            line(raystart, rayend - (0, 0, 16), ter_op(castresult, (1, 0, 0), (0, 1, 0)), 1, 0, 15);
         }
     #/
-    return ter_op(var_aa517194e54f048b, 0, 1);
+    return ter_op(castresult, 0, 1);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x64ea
 // Size: 0x6
@@ -2088,12 +2087,12 @@ function getmaxdistancetolos() {
     return 2550;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x64f8
 // Size: 0x79
 function checkttlosloaded() {
-    if (namespace_b2d5aa2baf2b5701::shoulduseprecomputedlos() && !namespace_b2d5aa2baf2b5701::isttlosdataavailable()) {
+    if (scripts/mp/spawnlogic::shoulduseprecomputedlos() && !scripts/mp/spawnlogic::isttlosdataavailable()) {
         if (isdefined(level.matchrecording_logeventmsg)) {
             [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "ERROR: TTLOS System disabled! Could not access visDistData");
         }
@@ -2107,7 +2106,7 @@ function checkttlosloaded() {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6578
 // Size: 0x2d
@@ -2115,7 +2114,7 @@ function shoulduseprecomputedlos() {
     return getdvarint(@"hash_d7358339b14a448f", 0) == 1 && !isdefined(level.disableprecomputedlos) && !generatinglosdata();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x65ad
 // Size: 0x14
@@ -2123,7 +2122,7 @@ function generatinglosdata() {
     return getdvarint(@"hash_74cacae425805743", 0) > 0;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x65c9
 // Size: 0x8
@@ -2131,7 +2130,7 @@ function isttlosdataavailable() {
     return getislosdatafileloaded();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x65d9
 // Size: 0x188
@@ -2157,13 +2156,13 @@ function printstartupdebugmessages() {
         [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "CODE spawn logic enabled");
         if (isdefined(level.spawnglobals.activespawnlogic)) {
             [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "Spawn Logic: " + level.spawnglobals.activespawnlogic);
-        } else {
-            [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "Spawn Logic: None");
+            return;
         }
+        [[ level.matchrecording_logeventmsg ]]("LOG_GENERIC_MESSAGE", gettime(), "Spawn Logic: None");
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6768
 // Size: 0x18
@@ -2171,7 +2170,7 @@ function isfallbackspawn(spawnpoint) {
     return istrue(spawnpoint.isfallback);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6788
 // Size: 0x9a
@@ -2186,7 +2185,7 @@ function logextraspawninfothink() {
         var_527d4e1d1288232e = [[ level.matchrecording_generateid ]]();
         var_9c8bbf6433e08edf = [[ level.matchrecording_generateid ]]();
     }
-    while (1) {
+    while (true) {
         if (!shoulduseprecomputedlos()) {
             break;
         }
@@ -2197,7 +2196,7 @@ function logextraspawninfothink() {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6829
 // Size: 0xee
@@ -2215,7 +2214,7 @@ function logextraspawn(team, logid) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x691e
 // Size: 0x18
@@ -2223,7 +2222,7 @@ function clearlastteamspawns() {
     level.spawnglobals.lastteamspawnpoints = [];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x693d
 // Size: 0x52
@@ -2231,7 +2230,7 @@ function getoriginidentifierstring(spawnpoint) {
     return int(spawnpoint.origin[0]) + " " + int(spawnpoint.origin[1]) + " " + int(spawnpoint.origin[2]);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6997
 // Size: 0x38
@@ -2239,13 +2238,13 @@ function getoriginidentifierstringnoz(spawnpoint) {
     return int(spawnpoint.origin[0]) + " " + int(spawnpoint.origin[1]);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69d7
 // Size: 0x2b4
 function checkmodifiedspawnpoint(spawnpoint) {
     if (!isdefined(level.modifiedspawnpoints)) {
-        return 0;
+        return false;
     }
     var_6d071bf9627c7f96 = undefined;
     originstring = getoriginidentifierstring(spawnpoint);
@@ -2258,37 +2257,39 @@ function checkmodifiedspawnpoint(spawnpoint) {
             var_6d071bf9627c7f96 = level.modifiedspawnpoints[originstring][spawnpoint.classname];
         }
     }
-    foreach (location, var_fea786092376efc8 in level.modifiedspawnpoints) {
-        foreach (classname, var_44d182ff9a64635b in var_fea786092376efc8) {
+    foreach (location, classnamedata in level.modifiedspawnpoints) {
+        foreach (classname, removaldata in classnamedata) {
             if (spawnpoint.classname != classname) {
                 continue;
             }
-            foreach (var_1e93f7232a9d345a, radius in var_44d182ff9a64635b) {
-                if (var_1e93f7232a9d345a == "removeradius") {
+            foreach (modifystring, radius in removaldata) {
+                if (modifystring == "removeradius") {
                     locstring = strtok(location, " ");
                     x = int(locstring[0]);
                     y = int(locstring[1]);
                     z = 0;
                     if (isdefined(locstring[2])) {
-                        z = function_53c4c53197386572(int(locstring[2]), 0);
+                        z = default_to(int(locstring[2]), 0);
                     }
                     origin = (x, y, z);
                     if (isdefined(locstring[2])) {
                         if (distance(spawnpoint.origin, origin) < radius) {
-                            return 1;
+                            return true;
                         }
-                    } else if (distance2d(spawnpoint.origin, origin) < radius) {
-                        return 1;
+                        continue;
+                    }
+                    if (distance2d(spawnpoint.origin, origin) < radius) {
+                        return true;
                     }
                 }
             }
         }
     }
     if (!isdefined(var_6d071bf9627c7f96)) {
-        return 0;
+        return false;
     }
     if (istrue(var_6d071bf9627c7f96["remove"])) {
-        return 1;
+        return true;
     }
     if (isdefined(var_6d071bf9627c7f96["origin"])) {
         spawnpoint.origin = var_6d071bf9627c7f96["origin"];
@@ -2299,10 +2300,10 @@ function checkmodifiedspawnpoint(spawnpoint) {
     if (istrue(var_6d071bf9627c7f96["no_alternates"])) {
         spawnpoint.noalternates = 1;
     }
-    return 0;
+    return false;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6c93
 // Size: 0xda
@@ -2313,25 +2314,25 @@ function calculateteamclusters(team) {
         if (!isreallyalive(player) || player.team != team || !player val::get("player_for_spawn_logic")) {
             continue;
         }
-        var_1c3554fbec9a21e5 = createcluster(player);
-        container.clusterlist[container.clusterlist.size] = var_1c3554fbec9a21e5;
+        newcluster = createcluster(player);
+        container.clusterlist[container.clusterlist.size] = newcluster;
     }
     mergeclusterlist(container);
     return container;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6d75
 // Size: 0x46
 function createcluster(player) {
     cluster = spawnstruct();
     cluster.center = player.origin;
-    cluster.players = [0:player];
+    cluster.players = [player];
     return cluster;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6dc3
 // Size: 0x25c
@@ -2341,17 +2342,17 @@ function mergeclusterlist(container) {
     var_14f82e0d331bcd8b = undefined;
     nearestdistsq = -1;
     for (var_a7b44bd189368a72 = 0; var_a7b44bd189368a72 < container.clusterlist.size; var_a7b44bd189368a72++) {
-        var_58f60ca818998af0 = container.clusterlist[var_a7b44bd189368a72];
+        clustera = container.clusterlist[var_a7b44bd189368a72];
         for (var_a7b44ad18936883f = var_a7b44bd189368a72 + 1; var_a7b44ad18936883f < container.clusterlist.size; var_a7b44ad18936883f++) {
-            var_58f60fa818999189 = container.clusterlist[var_a7b44ad18936883f];
-            distsq = distance2dsquared(var_58f60ca818998af0.center, var_58f60fa818999189.center);
+            clusterb = container.clusterlist[var_a7b44ad18936883f];
+            distsq = distance2dsquared(clustera.center, clusterb.center);
             if (distsq > 640000) {
                 continue;
             }
             if (nearestdistsq < 0 || distsq < nearestdistsq) {
                 nearestdistsq = distsq;
-                var_541b5a167c77648c = var_58f60ca818998af0;
-                var_541b5d167c776b25 = var_58f60fa818999189;
+                var_541b5a167c77648c = clustera;
+                var_541b5d167c776b25 = clusterb;
                 var_14f82e0d331bcd8b = var_a7b44ad18936883f;
             }
         }
@@ -2373,7 +2374,7 @@ function mergeclusterlist(container) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7026
 // Size: 0x31
@@ -2384,7 +2385,7 @@ function ignoretriggerenter(player, trigger) {
     player val::set("spawnIgnoreTrigger", "player_for_spawn_logic", 0);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x705e
 // Size: 0x2b
@@ -2392,10 +2393,10 @@ function ignoretriggerexit(player, trigger) {
     if (!isplayer(player)) {
         return;
     }
-    player val::function_c9d0b43701bdba00("spawnIgnoreTrigger");
+    player val::reset_all("spawnIgnoreTrigger");
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7090
 // Size: 0x7e
@@ -2413,7 +2414,6 @@ function getspawnbucketfromstring(var_cbf572b044ed12e0) {
         return 4;
     case #"hash_b612ae5499914631":
         return 5;
-        break;
     }
     /#
         assertmsg("Unknown Spawn Bucket Name");
@@ -2421,7 +2421,7 @@ function getspawnbucketfromstring(var_cbf572b044ed12e0) {
     return 2;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7116
 // Size: 0x62
@@ -2431,7 +2431,7 @@ function enablespawnpointlist(spawnpoints) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x717f
 // Size: 0x62
@@ -2441,64 +2441,64 @@ function disablespawnpointlist(spawnpoints) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x71e8
 // Size: 0x21
 function function_fd739ec45329729e(id) {
-    return level.var_584994fab4a8712b.spawnsetlists[id];
+    return level.globals.spawnsetlists[id];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7211
 // Size: 0x95
 function registerspawnset(id, spawnpoints) {
-    var_584994fab4a8712b = level.spawnglobals;
+    globals = level.spawnglobals;
     /#
-        assertex(isdefined(var_584994fab4a8712b), "registerSpawnSet() called too early -- call in/after StartGameType() of gamemode.");
+        assertex(isdefined(globals), "registerSpawnSet() called too early -- call in/after StartGameType() of gamemode.");
     #/
     /#
-        assertex(!isdefined(var_584994fab4a8712b.spawnsets[id]), "Trying to register a spawn set with a name that is already used");
+        assertex(!isdefined(globals.spawnsets[id]), "Trying to register a spawn set with a name that is already used");
     #/
-    var_584994fab4a8712b.spawnsets[id] = spawnpoints;
+    globals.spawnsets[id] = spawnpoints;
     if (isarray(spawnpoints)) {
-        var_584994fab4a8712b.spawnsetlists[id] = spawnpoints;
+        globals.spawnsetlists[id] = spawnpoints;
     } else {
-        var_584994fab4a8712b.spawnsetlists[id] = getspawnpointarray(spawnpoints);
+        globals.spawnsetlists[id] = getspawnpointarray(spawnpoints);
     }
     return id;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x72ae
 // Size: 0x30
 function function_8390bf8c3b74466a(id) {
     /#
-        var_584994fab4a8712b = level.spawnglobals;
-        var_584994fab4a8712b.spawnsets[id] = undefined;
+        globals = level.spawnglobals;
+        globals.spawnsets[id] = undefined;
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72e5
 // Size: 0xe2
 function activatespawnset(id, exclusive) {
-    var_584994fab4a8712b = level.spawnglobals;
+    globals = level.spawnglobals;
     /#
-        assertex(isdefined(var_584994fab4a8712b), "registerSpawnSet() called too early -- call in/after StartGameType() of gamemode.");
+        assertex(isdefined(globals), "registerSpawnSet() called too early -- call in/after StartGameType() of gamemode.");
     #/
     if (istrue(exclusive)) {
-        if (var_584994fab4a8712b.activespawnsets.size == 1 && isdefined(var_584994fab4a8712b.activespawnsets[id])) {
+        if (globals.activespawnsets.size == 1 && isdefined(globals.activespawnsets[id])) {
             return;
         }
         deactivateallspawnsets();
-    } else if (isdefined(var_584994fab4a8712b.activespawnsets[id])) {
+    } else if (isdefined(globals.activespawnsets[id])) {
         return;
     }
-    spawnset = var_584994fab4a8712b.spawnsets[id];
+    spawnset = globals.spawnsets[id];
     /#
         assertex(isdefined(spawnset), "activateSpawnSet() can't find spawnSet with ID " + id);
     #/
@@ -2510,38 +2510,38 @@ function activatespawnset(id, exclusive) {
         #/
         enablespawnpointsbyclassname(spawnset);
     }
-    var_584994fab4a8712b.activespawnsets[id] = 1;
+    globals.activespawnsets[id] = 1;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x73ce
 // Size: 0xeb
 function deactivatespawnset(id) {
-    var_584994fab4a8712b = level.spawnglobals;
+    globals = level.spawnglobals;
     /#
-        assertex(isdefined(var_584994fab4a8712b), "deactivateSpawnSet() called too early -- call in/after StartGameType() of gamemode.");
+        assertex(isdefined(globals), "deactivateSpawnSet() called too early -- call in/after StartGameType() of gamemode.");
     #/
     var_fecf52449f0d8583 = [];
-    foreach (key, value in var_584994fab4a8712b.activespawnsets) {
+    foreach (key, value in globals.activespawnsets) {
         if (key != id) {
             var_fecf52449f0d8583[key] = 1;
-        } else {
-            spawnset = var_584994fab4a8712b.spawnsets[id];
-            if (isarray(spawnset)) {
-                disablespawnpointlist(spawnset);
-            } else {
-                /#
-                    assert(isstring(spawnset));
-                #/
-                disablespawnpointsbyclassname(spawnset);
-            }
+            continue;
         }
+        spawnset = globals.spawnsets[id];
+        if (isarray(spawnset)) {
+            disablespawnpointlist(spawnset);
+            continue;
+        }
+        /#
+            assert(isstring(spawnset));
+        #/
+        disablespawnpointsbyclassname(spawnset);
     }
-    var_584994fab4a8712b.activespawnsets = var_fecf52449f0d8583;
+    globals.activespawnsets = var_fecf52449f0d8583;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x74c0
 // Size: 0x1e
@@ -2550,7 +2550,7 @@ function deactivateallspawnsets() {
     disablespawnpoints();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x74e5
 // Size: 0x22
@@ -2558,40 +2558,38 @@ function getspawnsetsize(id) {
     return level.spawnglobals.spawnsetlists[id].size;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x750f
 // Size: 0x41
 function getrandomspawnpointfromset(id) {
-    var_584994fab4a8712b = level.spawnglobals;
-    return var_584994fab4a8712b.spawnsetlists[id][randomint(var_584994fab4a8712b.spawnsetlists[id].size)];
+    globals = level.spawnglobals;
+    return globals.spawnsetlists[id][randomint(globals.spawnsetlists[id].size)];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7558
 // Size: 0x96
 function getrandomspawnpointfromactivesets() {
     var_90be334c1c37268a = getarraykeys(level.spawnglobals.activespawnsets);
-    var_ffed3098c31f4403 = undefined;
-    while (!isdefined(var_ffed3098c31f4403) && var_90be334c1c37268a.size > 0) {
+    for (var_ffed3098c31f4403 = undefined; !isdefined(var_ffed3098c31f4403) && var_90be334c1c37268a.size > 0; var_ffed3098c31f4403 = undefined) {
         var_ffed3098c31f4403 = random(var_90be334c1c37268a);
         if (getspawnsetsize(var_ffed3098c31f4403) <= 0) {
             var_90be334c1c37268a = array_remove(var_90be334c1c37268a, var_ffed3098c31f4403);
-            var_ffed3098c31f4403 = undefined;
         }
     }
     return level.spawnglobals.spawnsetlists[var_ffed3098c31f4403][randomint(level.spawnglobals.spawnsetlists[var_ffed3098c31f4403].size)];
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x75f6
 // Size: 0x186
 function updatedebughud() {
     /#
         var_e582e1172dddb3dd = 0;
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_2889bd5801e0ce5a", 0) != 0) {
                 printtoscreen2d(1425, 875, "<unknown string>", (0, 1, 0), 2);
                 if (shoulduseprecomputedlos()) {
@@ -2618,7 +2616,7 @@ function updatedebughud() {
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7783
 // Size: 0xd8
@@ -2627,13 +2625,13 @@ function function_4c2c5ecea9fd1e73(spawnpoint) {
         println("<unknown string>" + spawnpoint.index + "<unknown string>");
         println("<unknown string>" + spawnpoint.totalscore);
         println("<unknown string>" + spawnpoint.totalpossiblescore);
-        foreach (var_7be5a2e10a013091, score in spawnpoint.var_54cd879162b8b086) {
-            println("<unknown string>" + var_7be5a2e10a013091 + "<unknown string>" + score + "<unknown string>" + spawnpoint.var_6531ac2ff1a37628[var_7be5a2e10a013091] + "<unknown string>");
+        foreach (factorname, score in spawnpoint.debugscoredata) {
+            println("<unknown string>" + factorname + "<unknown string>" + score + "<unknown string>" + spawnpoint.var_6531ac2ff1a37628[factorname] + "<unknown string>");
         }
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7862
 // Size: 0x62
@@ -2642,37 +2640,37 @@ function function_50a59d95bac1964e() {
         foreach (spawnpoint in level.spawnpoints) {
             initspawnpointvalues(spawnpoint);
         }
-        namespace_90f75d3fdf89a43e::resetperupdatespawnglobals();
+        scripts/mp/spawnscoring::resetperupdatespawnglobals();
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x78cb
 // Size: 0x12a
-function function_d344bbcacf5e4d96(var_c05389572bacde83, var_265d3f5274b6106f, var_4db3cfd2ea2d7b8f) {
+function function_d344bbcacf5e4d96(factorref, factorstruct, spawncontext) {
     /#
-        if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams)) {
+        if (!isdefined(spawncontext.factorparams)) {
             /#
-                assertmsg("<unknown string>" + function_3c8848a3a11b2553(var_c05389572bacde83) + "<unknown string>");
+                assertmsg("<unknown string>" + function_3c8848a3a11b2553(factorref) + "<unknown string>");
             #/
         }
-        var_6797b39a58eb7b6e = [];
-        foreach (var_963149f1c7d80f1f in var_265d3f5274b6106f.paramreflist) {
-            foreach (var_8437e2a35e8d84c9, var_19b8bfffd5a5cbad in var_4db3cfd2ea2d7b8f.factorparams) {
-                if (var_8437e2a35e8d84c9 == var_963149f1c7d80f1f) {
-                    var_6797b39a58eb7b6e[var_963149f1c7d80f1f] = var_19b8bfffd5a5cbad;
+        outputparams = [];
+        foreach (paramref in factorstruct.paramreflist) {
+            foreach (var_8437e2a35e8d84c9, var_19b8bfffd5a5cbad in spawncontext.factorparams) {
+                if (var_8437e2a35e8d84c9 == paramref) {
+                    outputparams[paramref] = var_19b8bfffd5a5cbad;
                     break;
                 }
             }
             /#
-                assertex(isdefined(var_6797b39a58eb7b6e[var_963149f1c7d80f1f]), "<unknown string>" + var_c05389572bacde83 + "<unknown string>" + function_3c8848a3a11b2553(var_963149f1c7d80f1f) + "<unknown string>");
+                assertex(isdefined(outputparams[paramref]), "<unknown string>" + factorref + "<unknown string>" + function_3c8848a3a11b2553(paramref) + "<unknown string>");
             #/
         }
     #/
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x79fc
 // Size: 0x7e
@@ -2686,7 +2684,7 @@ function createscriptedspawnpoint(classname, origin, angles, target, script_note
     return spawnpoint;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a82
 // Size: 0x1e5
@@ -2694,17 +2692,17 @@ function addscriptedspawnpoints(var_223764ad899d9fee) {
     if (!isdefined(level.scriptedspawnpointarray)) {
         level.scriptedspawnpointarray = [];
     }
-    foreach (var_caa4c2f24c7b89ac in var_223764ad899d9fee) {
-        classname = var_caa4c2f24c7b89ac.classname;
-        origin = var_caa4c2f24c7b89ac.origin;
-        angles = var_caa4c2f24c7b89ac.angles;
-        if (isdefined(var_caa4c2f24c7b89ac.target)) {
-            target = var_caa4c2f24c7b89ac.target;
+    foreach (scriptedspawnpoint in var_223764ad899d9fee) {
+        classname = scriptedspawnpoint.classname;
+        origin = scriptedspawnpoint.origin;
+        angles = scriptedspawnpoint.angles;
+        if (isdefined(scriptedspawnpoint.target)) {
+            target = scriptedspawnpoint.target;
         } else {
             target = "";
         }
-        if (isdefined(var_caa4c2f24c7b89ac.script_noteworthy)) {
-            script_noteworthy = var_caa4c2f24c7b89ac.script_noteworthy;
+        if (isdefined(scriptedspawnpoint.script_noteworthy)) {
+            script_noteworthy = scriptedspawnpoint.script_noteworthy;
         } else {
             script_noteworthy = "";
         }
@@ -2731,7 +2729,7 @@ function addscriptedspawnpoints(var_223764ad899d9fee) {
     level thread scriptedspawnpointsonmigration();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c6e
 // Size: 0x159
@@ -2741,38 +2739,38 @@ function scriptedspawnpointsonmigration() {
     /#
         assert(isdefined(level.scriptedspawnpointarray));
     #/
-    while (1) {
+    while (true) {
         level waittill("host_migration_begin");
         foreach (var_46a778b6f75c012c in level.scriptedspawnpointarray) {
-            foreach (var_caa4c2f24c7b89ac in var_46a778b6f75c012c) {
-                if (isdefined(var_caa4c2f24c7b89ac.target)) {
-                    target = var_caa4c2f24c7b89ac.target;
+            foreach (scriptedspawnpoint in var_46a778b6f75c012c) {
+                if (isdefined(scriptedspawnpoint.target)) {
+                    target = scriptedspawnpoint.target;
                 } else {
                     target = "";
                 }
-                if (isdefined(var_caa4c2f24c7b89ac.script_noteworthy)) {
-                    script_noteworthy = var_caa4c2f24c7b89ac.script_noteworthy;
+                if (isdefined(scriptedspawnpoint.script_noteworthy)) {
+                    script_noteworthy = scriptedspawnpoint.script_noteworthy;
                 } else {
                     script_noteworthy = "";
                 }
-                index = registerscriptedspawnpoints(var_caa4c2f24c7b89ac.classname, var_caa4c2f24c7b89ac.origin, var_caa4c2f24c7b89ac.angles, target, script_noteworthy);
+                index = registerscriptedspawnpoints(scriptedspawnpoint.classname, scriptedspawnpoint.origin, scriptedspawnpoint.angles, target, script_noteworthy);
             }
         }
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7dce
 // Size: 0x46
 function function_bff229a11ecd1e34() {
-    if (isdefined(level.var_62f6f7640e4431e3) && isdefined(level.var_62f6f7640e4431e3.var_7b4496518c2be4e7) && level.var_62f6f7640e4431e3.var_7b4496518c2be4e7.size > 0) {
-        return 1;
+    if (isdefined(level.gametypebundle) && isdefined(level.gametypebundle.var_7b4496518c2be4e7) && level.gametypebundle.var_7b4496518c2be4e7.size > 0) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7e1c
 // Size: 0x1ee
@@ -2794,15 +2792,15 @@ function function_5d5267daeda595(var_25ff9cceff399d80, var_e1fac4e807047e1c) {
         break;
     }
     spawns = [];
-    var_57407b8c8af4084e = function_ce51e08dcc037220(getstructarray(var_25ff9cceff399d80, "script_noteworthy"), undefined, "Attacker Spawn was unable to find " + var_25ff9cceff399d80 + " in the Battle Maps create script data");
-    if (isdefined(var_57407b8c8af4084e)) {
-        foreach (attacker in var_57407b8c8af4084e) {
+    attackerspawns = function_ce51e08dcc037220(getstructarray(var_25ff9cceff399d80, "script_noteworthy"), undefined, "Attacker Spawn was unable to find " + var_25ff9cceff399d80 + " in the Battle Maps create script data");
+    if (isdefined(attackerspawns)) {
+        foreach (attacker in attackerspawns) {
             spawns[spawns.size] = createscriptedspawnpoint(var_87226a6b58a1aa22, attacker.origin, attacker.angles);
         }
     }
-    var_232cf6a958a9f5ca = function_ce51e08dcc037220(getstructarray(var_e1fac4e807047e1c, "script_noteworthy"), undefined, "Defender Spawn was unable to find " + var_e1fac4e807047e1c + " in the Battle Maps create script data");
-    if (isdefined(var_232cf6a958a9f5ca)) {
-        foreach (defender in var_232cf6a958a9f5ca) {
+    defenderspawns = function_ce51e08dcc037220(getstructarray(var_e1fac4e807047e1c, "script_noteworthy"), undefined, "Defender Spawn was unable to find " + var_e1fac4e807047e1c + " in the Battle Maps create script data");
+    if (isdefined(defenderspawns)) {
+        foreach (defender in defenderspawns) {
             spawns[spawns.size] = createscriptedspawnpoint(var_40d7195435a4e5be, defender.origin, defender.angles);
         }
     }
@@ -2811,7 +2809,7 @@ function function_5d5267daeda595(var_25ff9cceff399d80, var_e1fac4e807047e1c) {
     }
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8011
 // Size: 0x152
@@ -2851,74 +2849,74 @@ function function_9a3bef3ffef9c904(var_a65640524cb6c8dd) {
     function_5d5267daeda595(var_25ff9cceff399d80, var_e1fac4e807047e1c);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x816a
 // Size: 0x128
-function function_85f6a1797c330b26(var_6170ec00c4bc9b5b, spawntype, var_946aef1c8521958b, var_23774b6ec7f05bdf, var_e1b01ae359d000dd) {
-    if (!isdefined(var_e1b01ae359d000dd)) {
-        var_e1b01ae359d000dd = 0;
+function initspawnlist(spawnkey, spawntype, attackervalue, defendervalue, isoptional) {
+    if (!isdefined(isoptional)) {
+        isoptional = 0;
     }
     /#
         assert(isdefined(level.spawnglobals.spawntypes[spawntype]));
     #/
     var_1321a74e5ce40775 = level.spawnglobals.spawntypes[spawntype];
     isfallback = spawntype == 2;
-    [[ var_1321a74e5ce40775.func ]](var_6170ec00c4bc9b5b, var_946aef1c8521958b, game["attackers"], var_e1b01ae359d000dd, isfallback);
-    [[ var_1321a74e5ce40775.func ]](var_6170ec00c4bc9b5b, var_23774b6ec7f05bdf, game["defenders"], var_e1b01ae359d000dd, isfallback);
-    if (var_946aef1c8521958b == var_23774b6ec7f05bdf) {
-        registerspawnset(var_1321a74e5ce40775.var_bcf811ed79e3c085[0], getspawnpointarray("mp_spawn_point", var_6170ec00c4bc9b5b, var_946aef1c8521958b));
-    } else {
-        registerspawnset(var_1321a74e5ce40775.var_bcf811ed79e3c085[1], getspawnpointarray("mp_spawn_point", var_6170ec00c4bc9b5b, var_946aef1c8521958b));
-        registerspawnset(var_1321a74e5ce40775.var_bcf811ed79e3c085[2], getspawnpointarray("mp_spawn_point", var_6170ec00c4bc9b5b, var_23774b6ec7f05bdf));
+    [[ var_1321a74e5ce40775.func ]](spawnkey, attackervalue, game["attackers"], isoptional, isfallback);
+    [[ var_1321a74e5ce40775.func ]](spawnkey, defendervalue, game["defenders"], isoptional, isfallback);
+    if (attackervalue == defendervalue) {
+        registerspawnset(var_1321a74e5ce40775.setnames[0], getspawnpointarray("mp_spawn_point", spawnkey, attackervalue));
+        return;
     }
+    registerspawnset(var_1321a74e5ce40775.setnames[1], getspawnpointarray("mp_spawn_point", spawnkey, attackervalue));
+    registerspawnset(var_1321a74e5ce40775.setnames[2], getspawnpointarray("mp_spawn_point", spawnkey, defendervalue));
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8299
 // Size: 0x64
-function function_d070732c2441ebef(var_6170ec00c4bc9b5b, var_7da9bc666c7997cd, var_91135223744ac3ad, start_attacker, start_defender, fallback_attacker, fallback_defender) {
-    function_85f6a1797c330b26(var_6170ec00c4bc9b5b, 1, start_attacker, start_defender);
-    function_85f6a1797c330b26(var_6170ec00c4bc9b5b, 0, var_7da9bc666c7997cd, var_91135223744ac3ad);
-    function_85f6a1797c330b26(var_6170ec00c4bc9b5b, 2, fallback_attacker, fallback_defender, 1);
+function initspawnlists(spawnkey, primary_attacker, primary_defender, start_attacker, start_defender, fallback_attacker, fallback_defender) {
+    initspawnlist(spawnkey, 1, start_attacker, start_defender);
+    initspawnlist(spawnkey, 0, primary_attacker, primary_defender);
+    initspawnlist(spawnkey, 2, fallback_attacker, fallback_defender, 1);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8304
 // Size: 0x39
-function function_afe4709b818e7c9e(var_6170ec00c4bc9b5b) {
-    function_d070732c2441ebef(var_6170ec00c4bc9b5b, "spawn", "spawn", "start_attacker", "start_defender", "fallback", "fallback");
+function function_afe4709b818e7c9e(spawnkey) {
+    initspawnlists(spawnkey, "spawn", "spawn", "start_attacker", "start_defender", "fallback", "fallback");
     function_48ed29b53fd72775();
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x8344
 // Size: 0x4f
-function function_542d0780ea7c537d(var_1a329a914f290661, spawnteam, var_629e5fe2f6b337fa) {
+function function_542d0780ea7c537d(spawningplayer, spawnteam, spawnparams) {
     if (spawnteam == game["attackers"]) {
-        return getspawnpoint(self, spawnteam, "start_attackers", "start_attackers", var_629e5fe2f6b337fa);
+        return getspawnpoint(self, spawnteam, "start_attackers", "start_attackers", spawnparams);
     }
-    return getspawnpoint(self, spawnteam, "start_defenders", "start_defenders", var_629e5fe2f6b337fa);
+    return getspawnpoint(self, spawnteam, "start_defenders", "start_defenders", spawnparams);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x839b
 // Size: 0xad
-function function_768bb924a0a3b2e9(var_cbf22c9edb76e72d, team, var_8a0fca89b6c1a093, var_363d9492f84cd9e5) {
+function function_768bb924a0a3b2e9(pair, team, primaryset, fallbackset) {
     if (!isdefined(level.spawnglobals.var_f36d416bc6168362)) {
         level.spawnglobals.var_f36d416bc6168362 = [];
     }
-    if (!isdefined(level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d])) {
-        level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d] = [];
+    if (!isdefined(level.spawnglobals.var_f36d416bc6168362[pair])) {
+        level.spawnglobals.var_f36d416bc6168362[pair] = [];
     }
-    level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d][team] = {fallback:var_363d9492f84cd9e5, primary:var_8a0fca89b6c1a093};
+    level.spawnglobals.var_f36d416bc6168362[pair][team] = {fallback:fallbackset, primary:primaryset};
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x844f
 // Size: 0x6f
@@ -2929,7 +2927,7 @@ function function_48ed29b53fd72775() {
     function_768bb924a0a3b2e9("default", game["defenders"], "primary", "fallback");
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84c5
 // Size: 0x6f
@@ -2940,56 +2938,56 @@ function function_437beaf209334ce2() {
     function_768bb924a0a3b2e9("default", game["defenders"], "primary_defenders", "fallback_defenders");
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x853b
 // Size: 0xcd
-function function_8be1c339876506b9(ent, var_cbf22c9edb76e72d, team, params) {
+function function_8be1c339876506b9(ent, pair, team, params) {
     /#
         assert(isdefined(level.spawnglobals.var_f36d416bc6168362));
     #/
     /#
-        assert(isdefined(level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d]));
+        assert(isdefined(level.spawnglobals.var_f36d416bc6168362[pair]));
     #/
     /#
-        assert(isdefined(level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d][team]));
+        assert(isdefined(level.spawnglobals.var_f36d416bc6168362[pair][team]));
     #/
-    return getspawnpoint(ent, team, level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d][team].primary, level.spawnglobals.var_f36d416bc6168362[var_cbf22c9edb76e72d][team].fallback, undefined, params);
+    return getspawnpoint(ent, team, level.spawnglobals.var_f36d416bc6168362[pair][team].primary, level.spawnglobals.var_f36d416bc6168362[pair][team].fallback, undefined, params);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8610
 // Size: 0x88
 function getspawnpointforplayer(player, params) {
-    var_cbf22c9edb76e72d = "default";
-    var_f6cf8482a6f0b335 = #"default";
+    pair = "default";
+    factor_set = #"default";
     if (shoulduseteamstartspawn()) {
-        var_cbf22c9edb76e72d = "start";
-        var_f6cf8482a6f0b335 = #"start";
+        pair = "start";
+        factor_set = #"start";
     }
     if (function_bff229a11ecd1e34()) {
-        if (!function_8ac9620f8251ef84(var_f6cf8482a6f0b335)) {
-            setactivespawnlogic(var_f6cf8482a6f0b335);
+        if (!isactivespawnlogic(factor_set)) {
+            setactivespawnlogic(factor_set);
         }
     }
-    return function_8be1c339876506b9(player, var_cbf22c9edb76e72d, player.pers["team"], params);
+    return function_8be1c339876506b9(player, pair, player.pers["team"], params);
 }
 
-// Namespace spawnlogic/namespace_b2d5aa2baf2b5701
+// Namespace spawnlogic / scripts/mp/spawnlogic
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x86a0
 // Size: 0x51
-function function_b17bf43316b9fb08(var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5) {
-    if (!isdefined(var_9e9bd2d16bf2b7e5)) {
-        var_9e9bd2d16bf2b7e5 = "spawn";
+function function_b17bf43316b9fb08(spawnkey, spawnvalue) {
+    if (!isdefined(spawnvalue)) {
+        spawnvalue = "spawn";
     }
     /#
         if (getdvarint(@"hash_4dc85278508b1ec3", 0) != 0) {
-            return 0;
+            return false;
         }
     #/
-    var_c3d3bd79b9a86217 = namespace_b2d5aa2baf2b5701::function_5cb7f8468d3b9fe0(var_6170ec00c4bc9b5b, var_9e9bd2d16bf2b7e5);
+    var_c3d3bd79b9a86217 = scripts/mp/spawnlogic::function_5cb7f8468d3b9fe0(spawnkey, spawnvalue);
     return var_c3d3bd79b9a86217.size != 0;
 }
 

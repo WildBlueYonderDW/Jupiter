@@ -20,38 +20,38 @@
 
 #namespace helicopter;
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x708
 // Size: 0x49
 function init() {
     level._effect["vehicle_flares"] = loadfx("vfx/iw8_mp/killstreak/vfx_apache_angel_flares.vfx");
     level._effect["jet_flares"] = loadfx("vfx/iw8_mp/killstreak/vfx_harrier_angel_flares.vfx");
-    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         level thread getaveragelowspawnpoint();
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x758
 // Size: 0xaf
 function getaveragelowspawnpoint() {
-    spawnpoints = namespace_b2d5aa2baf2b5701::function_32d25b070a9516de(getspawnarray("mp_tdm_spawn_allies_start"));
+    spawnpoints = scripts/mp/spawnlogic::function_32d25b070a9516de(getspawnarray("mp_tdm_spawn_allies_start"));
     count = 0;
-    var_d9fb82610410df01 = 0;
+    totalz = 0;
     foreach (point in spawnpoints) {
         count++;
-        var_d9fb82610410df01 = var_d9fb82610410df01 + point.origin[2];
+        totalz = totalz + point.origin[2];
     }
     if (count > 0) {
-        level.averagealliesz = var_d9fb82610410df01 / count;
-    } else {
-        level.averagealliesz = 0;
+        level.averagealliesz = totalz / count;
+        return;
     }
+    level.averagealliesz = 0;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x80e
 // Size: 0x47
@@ -60,15 +60,15 @@ function makehelitype(helitype, deathfx, lightfxfunc) {
     level.lightfxfunc[helitype] = lightfxfunc;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x85c
 // Size: 0x32
-function addairexplosion(helitype, var_69d36adbdec29dc) {
-    level.chopper_fx["explode"]["air_death"][helitype] = loadfx(var_69d36adbdec29dc);
+function addairexplosion(helitype, explodefx) {
+    level.chopper_fx["explode"]["air_death"][helitype] = loadfx(explodefx);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x895
 // Size: 0x99
@@ -82,7 +82,7 @@ function defaultlightfx() {
     playfxontag(level.chopper_fx["light"]["tail"], self, "tag_light_tail");
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x935
 // Size: 0x20
@@ -90,43 +90,43 @@ function usehelicopter(lifeid, streakname) {
     return tryusehelicopter(lifeid, "helicopter");
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x95d
 // Size: 0x14c
 function tryusehelicopter(lifeid, helitype) {
     var_4440147083abaf0a = 1;
     if (isdefined(level.chopper)) {
-        var_54aa70777df37ff1 = 1;
+        shouldqueue = 1;
     } else {
-        var_54aa70777df37ff1 = 0;
+        shouldqueue = 0;
     }
-    if (isdefined(level.chopper) && var_54aa70777df37ff1) {
+    if (isdefined(level.chopper) && shouldqueue) {
         self iprintlnbold("KILLSTREAKS_HELI_IN_QUEUE");
         if (isdefined(helitype) && helitype != "helicopter") {
             streakname = "helicopter_" + helitype;
         } else {
             streakname = "helicopter";
         }
-        var_872a3d52fc91c4a1 = spawn("script_origin", (0, 0, 0));
-        var_872a3d52fc91c4a1 hide();
-        var_872a3d52fc91c4a1 thread deleteonentnotify(self, "disconnect");
-        var_872a3d52fc91c4a1.player = self;
-        var_872a3d52fc91c4a1.lifeid = lifeid;
-        var_872a3d52fc91c4a1.helitype = helitype;
-        var_872a3d52fc91c4a1.streakname = streakname;
-        queueadd("helicopter", var_872a3d52fc91c4a1);
-        return 0;
+        queueent = spawn("script_origin", (0, 0, 0));
+        queueent hide();
+        queueent thread deleteonentnotify(self, "disconnect");
+        queueent.player = self;
+        queueent.lifeid = lifeid;
+        queueent.helitype = helitype;
+        queueent.streakname = streakname;
+        queueadd("helicopter", queueent);
+        return false;
     } else if (currentactivevehiclecount() >= maxvehiclesallowed() || level.fauxvehiclecount + var_4440147083abaf0a >= maxvehiclesallowed()) {
         self iprintlnbold("KILLSTREAKS/TOO_MANY_VEHICLES");
-        return 0;
+        return false;
     }
     var_4440147083abaf0a = 1;
     starthelicopter(lifeid, helitype);
-    return 1;
+    return true;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab1
 // Size: 0x26
@@ -136,7 +136,7 @@ function deleteonentnotify(ent, notifystring) {
     self delete();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xade
 // Size: 0xad
@@ -153,7 +153,7 @@ function starthelicopter(lifeid, helitype) {
     thread heli_think(lifeid, self, startnode, self.pers["team"], helitype);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x147
@@ -172,7 +172,7 @@ function precachehelicoptersounds() {
     level.heli_sound["axis"]["missilefire"] = "weap_cobra_missile_fire";
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xce0
 // Size: 0x2b
@@ -184,7 +184,7 @@ function heli_getteamforsoundclip() {
     return teamname;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd13
 // Size: 0xf6
@@ -205,7 +205,7 @@ function spawn_helicopter(owner, origin, angles, vehicletype, modelname) {
     return chopper;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe11
 // Size: 0x8f
@@ -216,11 +216,11 @@ function helidialog(dialoggroup) {
     level.lasthelidialogtime = gettime();
     randomindex = randomint(level.helidialog[dialoggroup].size);
     soundalias = level.helidialog[dialoggroup][randomindex];
-    var_aeeca9f734ea50c1 = getteamvoiceinfix(self.team) + "tl" + soundalias;
-    self playlocalsound(var_aeeca9f734ea50c1);
+    fullsoundalias = getteamvoiceinfix(self.team) + "tl" + soundalias;
+    self playlocalsound(fullsoundalias);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xea7
 // Size: 0x2b4
@@ -249,7 +249,7 @@ function updateareanodes(areanodes) {
         helinode = getent(node.target, "targetname");
         foreach (player in node.validplayers) {
             node.nodescore = node.nodescore + 1;
-            if (namespace_2a184fc4902783dc::_bullet_trace_passed(player.origin + (0, 0, 32), helinode.origin, 0, player)) {
+            if (scripts/engine/trace::_bullet_trace_passed(player.origin + (0, 0, 32), helinode.origin, 0, player)) {
                 node.nodescore = node.nodescore + 3;
             }
         }
@@ -260,7 +260,7 @@ function updateareanodes(areanodes) {
     return getent(bestnode.target, "targetname");
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1163
 // Size: 0x28e
@@ -268,8 +268,8 @@ function heli_think(lifeid, owner, startnode, heli_team, helitype) {
     heliorigin = startnode.origin;
     heliangles = startnode.angles;
     vehicletype = "cobra_mp";
-    var_b8957cd52d1efa30 = "vehicle_battle_hind";
-    chopper = spawn_helicopter(owner, heliorigin, heliangles, vehicletype, var_b8957cd52d1efa30);
+    vehiclemodel = "vehicle_battle_hind";
+    chopper = spawn_helicopter(owner, heliorigin, heliangles, vehicletype, vehiclemodel);
     if (!isdefined(chopper)) {
         return;
     }
@@ -292,10 +292,10 @@ function heli_think(lifeid, owner, startnode, heli_team, helitype) {
     chopper.secondarytarget = undefined;
     chopper.attacker = undefined;
     chopper.currentstate = "ok";
-    chopper namespace_6d9917c3dc05dbe9::registersentient("Killstreak_Air", owner);
+    chopper scripts/mp/sentientpoolmanager::registersentient("Killstreak_Air", owner);
     chopper.empgrenaded = 0;
     if (helitype == "flares" || helitype == "minigun") {
-        chopper thread namespace_dc0d47ddf0ead8a3::flares_monitor(1);
+        chopper thread scripts/mp/killstreaks/flares::flares_monitor(1);
     }
     chopper thread heli_leave_on_disconnect(owner);
     chopper thread heli_leave_on_changeteams(owner);
@@ -308,16 +308,16 @@ function heli_think(lifeid, owner, startnode, heli_team, helitype) {
     chopper endon("crashing");
     chopper endon("leaving");
     chopper endon("death");
-    var_8cad8ad1dfb1b849 = getentarray("heli_attack_area", "targetname");
-    var_36f77433815409f = undefined;
-    var_36f77433815409f = level.heli_loop_nodes[randomint(level.heli_loop_nodes.size)];
+    attackareas = getentarray("heli_attack_area", "targetname");
+    loopnode = undefined;
+    loopnode = level.heli_loop_nodes[randomint(level.heli_loop_nodes.size)];
     chopper heli_fly_simple_path(startnode);
     chopper thread heli_targeting();
     chopper thread heli_leave_on_timeout(60);
-    chopper thread heli_fly_loop_path(var_36f77433815409f);
+    chopper thread heli_fly_loop_path(loopnode);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13f8
 // Size: 0x110
@@ -328,24 +328,24 @@ function heli_existance() {
     self notify("helicopter_done");
     self notify("helicopter_removed");
     player = undefined;
-    var_872a3d52fc91c4a1 = queueremovefirst("helicopter");
-    if (!isdefined(var_872a3d52fc91c4a1)) {
+    queueent = queueremovefirst("helicopter");
+    if (!isdefined(queueent)) {
         level.chopper = undefined;
         return;
     }
-    player = var_872a3d52fc91c4a1.player;
-    lifeid = var_872a3d52fc91c4a1.lifeid;
-    streakname = var_872a3d52fc91c4a1.streakname;
-    helitype = var_872a3d52fc91c4a1.helitype;
-    var_872a3d52fc91c4a1 delete();
+    player = queueent.player;
+    lifeid = queueent.lifeid;
+    streakname = queueent.streakname;
+    helitype = queueent.helitype;
+    queueent delete();
     if (isdefined(player) && (player.sessionstate == "playing" || player.sessionstate == "dead")) {
         player starthelicopter(lifeid, helitype);
-    } else {
-        level.chopper = undefined;
+        return;
     }
+    level.chopper = undefined;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x150f
 // Size: 0x10a
@@ -366,23 +366,21 @@ function heli_targeting() {
             targets[targets.size] = player;
         }
         if (targets.size) {
-            targetplayer = getbestprimarytarget(targets);
-            while (!isdefined(targetplayer)) {
+            for (targetplayer = getbestprimarytarget(targets); !isdefined(targetplayer); targetplayer = getbestprimarytarget(targets)) {
                 waitframe();
-                targetplayer = getbestprimarytarget(targets);
             }
             self.primarytarget = targetplayer;
             self notify("primary acquired");
         }
         if (isdefined(self.primarytarget)) {
             fireontarget(self.primarytarget);
-        } else {
-            wait(0.25);
+            continue;
         }
+        wait(0.25);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1620
 // Size: 0x129
@@ -394,7 +392,7 @@ function cantarget_turret(player) {
     if (distance(player.origin, self.origin) > level.heli_visual_range) {
         return 0;
     }
-    if (!self.owner namespace_f8065cafc523dba5::isenemy(player)) {
+    if (!self.owner scripts/cp_mp/utility/player_utility::isenemy(player)) {
         return 0;
     }
     if (isdefined(player.spawntime) && (gettime() - player.spawntime) / 1000 <= 5) {
@@ -412,7 +410,7 @@ function cantarget_turret(player) {
     return cantarget;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1751
 // Size: 0x286
@@ -446,24 +444,24 @@ function getbestprimarytarget(targets) {
             } else {
                 min = (min[0], corners[1].origin[1], min[2]);
             }
-            jumpiffalse(player.origin[0] < min[0] || player.origin[0] > max[0] || player.origin[1] < min[1] || player.origin[1] > max[1]) LOC_00000216;
-        } else {
-        LOC_00000216:
-            if (player.threatlevel < highest) {
+            if (player.origin[0] < min[0] || player.origin[0] > max[0] || player.origin[1] < min[1] || player.origin[1] > max[1]) {
                 continue;
             }
-            if (!namespace_2a184fc4902783dc::_bullet_trace_passed(player.origin + (0, 0, 32), self.origin, 0, self)) {
-                wait(0.05);
-            } else {
-                highest = player.threatlevel;
-                primarytarget = player;
-            }
         }
+        if (player.threatlevel < highest) {
+            continue;
+        }
+        if (!scripts/engine/trace::_bullet_trace_passed(player.origin + (0, 0, 32), self.origin, 0, self)) {
+            wait(0.05);
+            continue;
+        }
+        highest = player.threatlevel;
+        primarytarget = player;
     }
     return primarytarget;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19df
 // Size: 0x122
@@ -485,7 +483,7 @@ function update_player_threat(player) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b08
 // Size: 0x4a
@@ -499,7 +497,7 @@ function heli_reset() {
     self setturningability(0.9);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b59
 // Size: 0x41
@@ -510,7 +508,7 @@ function addrecentdamage(damage) {
     self.recentdamageamount = self.recentdamageamount - damage;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ba1
 // Size: 0x106
@@ -529,13 +527,13 @@ function modifydamage(data) {
         var_be7c04516c5d9ccd = 1;
         var_ca960a517459fe15 = 2;
     }
-    modifieddamage = namespace_a2f809133c566621::getmodifiedantikillstreakdamage(attacker, objweapon, type, modifieddamage, self.maxhealth, var_cb15fa5174e71840, var_be7c04516c5d9ccd, var_ca960a517459fe15);
+    modifieddamage = scripts/mp/utility/killstreak::getmodifiedantikillstreakdamage(attacker, objweapon, type, modifieddamage, self.maxhealth, var_cb15fa5174e71840, var_be7c04516c5d9ccd, var_ca960a517459fe15);
     thread addrecentdamage(modifieddamage);
     self notify("heli_damage_fx");
     return modifieddamage;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1caf
 // Size: 0xf6
@@ -547,7 +545,7 @@ function handledeathdamage(data) {
     idflags = data.idflags;
     if (isdefined(attacker)) {
         config = level.heliconfigs[self.streakname];
-        var_3737240cefe2c793 = namespace_3e725f3cc58bddd3::onkillstreakkilled(self.streakname, attacker, objweapon, type, damage, config.scorepopup, config.destroyedvo, config.callout);
+        var_3737240cefe2c793 = scripts/mp/damage::onkillstreakkilled(self.streakname, attacker, objweapon, type, damage, config.scorepopup, config.destroyedvo, config.callout);
         if (var_3737240cefe2c793) {
             attacker notify("destroyed_helicopter");
             self.killingattacker = attacker;
@@ -555,11 +553,11 @@ function handledeathdamage(data) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dac
 // Size: 0x6d
-function heli_damage_monitor(type, var_66816dff4d94b0b3, var_a39ff9e13bbc6340) {
+function heli_damage_monitor(type, shouldrumble, var_a39ff9e13bbc6340) {
     self endon("crashing");
     self endon("leaving");
     self.streakname = type;
@@ -567,10 +565,10 @@ function heli_damage_monitor(type, var_66816dff4d94b0b3, var_a39ff9e13bbc6340) {
     if (!istrue(var_a39ff9e13bbc6340)) {
         thread heli_health();
     }
-    namespace_3e725f3cc58bddd3::monitordamage(self.maxhealth, "helicopter", &handledeathdamage, &modifydamage, 1, var_66816dff4d94b0b3);
+    scripts/mp/damage::monitordamage(self.maxhealth, "helicopter", &handledeathdamage, &modifydamage, 1, shouldrumble);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e20
 // Size: 0xdf
@@ -580,8 +578,8 @@ function heli_watchempdamage() {
     self endon("crashing");
     self.owner endon("disconnect");
     level endon("game_ended");
-    while (1) {
-        duration = attacker = self waittill("emp_damage");
+    while (true) {
+        attacker, duration = self waittill("emp_damage");
         self.empgrenaded = 1;
         if (isdefined(self.mgturretleft)) {
             self.mgturretleft notify("stop_shooting");
@@ -600,7 +598,7 @@ function heli_watchempdamage() {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f06
 // Size: 0x1ca
@@ -613,7 +611,7 @@ function heli_health() {
     damagestate = 3;
     self setdamagestage(damagestate);
     config = level.heliconfigs[self.streakname];
-    while (1) {
+    while (true) {
         self waittill("heli_damage_fx");
         if (damagestate > 0 && self.damagetaken >= self.maxhealth) {
             damagestate = 0;
@@ -621,13 +619,16 @@ function heli_health() {
             stopfxontag(level.chopper_fx["damage"]["heavy_smoke"], self, config.enginevfxtag);
             self notify("death");
             break;
-        } else if (damagestate > 1 && self.damagetaken >= self.maxhealth * 0.66) {
+        }
+        if (damagestate > 1 && self.damagetaken >= self.maxhealth * 0.66) {
             damagestate = 1;
             self setdamagestage(damagestate);
             self.currentstate = "heavy smoke";
             stopfxontag(level.chopper_fx["damage"]["light_smoke"], self, config.enginevfxtag);
             playfxontag(level.chopper_fx["damage"]["heavy_smoke"], self, config.enginevfxtag);
-        } else if (damagestate > 2 && self.damagetaken >= self.maxhealth * 0.33) {
+            continue;
+        }
+        if (damagestate > 2 && self.damagetaken >= self.maxhealth * 0.33) {
             damagestate = 2;
             self setdamagestage(damagestate);
             self.currentstate = "light smoke";
@@ -636,7 +637,7 @@ function heli_health() {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20d7
 // Size: 0x8d
@@ -646,21 +647,21 @@ function heli_watchdeath() {
     self waittill("death");
     if (isdefined(self.largeprojectiledamage) && self.largeprojectiledamage) {
         thread heli_explode(1);
-    } else {
-        config = level.heliconfigs[self.streakname];
-        playfxontag(level.chopper_fx["damage"]["on_fire"], self, config.enginevfxtag);
-        thread heli_crash();
+        return;
     }
+    config = level.heliconfigs[self.streakname];
+    playfxontag(level.chopper_fx["damage"]["on_fire"], self, config.enginevfxtag);
+    thread heli_crash();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x216b
 // Size: 0x92
 function heli_crash() {
     self notify("crashing");
     self clearlookatent();
-    var_5bac506d468bc5e8 = level.heli_crash_nodes[randomint(level.heli_crash_nodes.size)];
+    crashnode = level.heli_crash_nodes[randomint(level.heli_crash_nodes.size)];
     if (isdefined(self.mgturretleft)) {
         self.mgturretleft notify("stop_shooting");
     }
@@ -669,11 +670,11 @@ function heli_crash() {
     }
     thread heli_spin(180);
     thread heli_secondary_explosions();
-    heli_fly_simple_path(var_5bac506d468bc5e8);
+    heli_fly_simple_path(crashnode);
     thread heli_explode();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2204
 // Size: 0xbc
@@ -690,7 +691,7 @@ function heli_secondary_explosions() {
     self playsound(level.heli_sound[teamname]["hitsecondary"]);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22c7
 // Size: 0x74
@@ -706,7 +707,7 @@ function heli_spin(speed) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2342
 // Size: 0x64
@@ -721,13 +722,13 @@ function spinsoundshortly() {
     self playloopsound(level.heli_sound[teamname]["spinstart"]);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23ad
 // Size: 0x14d
-function heli_explode(var_878a6a7f24d66385) {
+function heli_explode(altstyle) {
     self notify("death");
-    if (isdefined(var_878a6a7f24d66385) && isdefined(level.chopper_fx["explode"]["air_death"][self.heli_type])) {
+    if (isdefined(altstyle) && isdefined(level.chopper_fx["explode"]["air_death"][self.heli_type])) {
         var_27bc369e650add5 = self gettagangles("tag_deathfx");
         playfx(level.chopper_fx["explode"]["air_death"][self.heli_type], self gettagorigin("tag_deathfx"), anglestoforward(var_27bc369e650add5), anglestoup(var_27bc369e650add5));
     } else {
@@ -745,19 +746,19 @@ function heli_explode(var_878a6a7f24d66385) {
     self delete();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2501
 // Size: 0x62
 function check_owner() {
     if (!isdefined(self.owner) || !isdefined(self.owner.pers["team"]) || self.owner.pers["team"] != self.team) {
         thread heli_leave();
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x256b
 // Size: 0x2a
@@ -768,7 +769,7 @@ function heli_leave_on_disconnect(owner) {
     thread heli_leave();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x259c
 // Size: 0x34
@@ -779,7 +780,7 @@ function heli_leave_on_changeteams(owner) {
     thread heli_leave();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x25d7
 // Size: 0x2a
@@ -790,7 +791,7 @@ function heli_leave_on_spawned(owner) {
     thread heli_leave();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2608
 // Size: 0x2a
@@ -801,18 +802,18 @@ function heli_leave_on_gameended(owner) {
     thread heli_leave();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2639
 // Size: 0x2a
 function heli_leave_on_timeout(timeout) {
     self endon("death");
     self endon("helicopter_done");
-    namespace_e323c8674b44c8f4::waitlongdurationwithhostmigrationpause(timeout);
+    scripts/mp/hostmigration::waitlongdurationwithhostmigrationpause(timeout);
     thread heli_leave();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x266a
 // Size: 0x376
@@ -821,13 +822,13 @@ function fireontarget(targetplayer) {
     self endon("crashing");
     self endon("leaving");
     var_f8819918db5085ef = 15;
-    var_66a64bc395b4ff7b = 0;
-    var_811dc7cfcfd29886 = 0;
+    loopscount = 0;
+    totalheight = 0;
     foreach (node in level.heli_loop_nodes) {
-        var_66a64bc395b4ff7b++;
-        var_811dc7cfcfd29886 = var_811dc7cfcfd29886 + node.origin[2];
+        loopscount++;
+        totalheight = totalheight + node.origin[2];
     }
-    var_9b53fc8fa63d4127 = var_811dc7cfcfd29886 / var_66a64bc395b4ff7b;
+    var_9b53fc8fa63d4127 = totalheight / loopscount;
     self notify("newTarget");
     if (isdefined(self.secondarytarget) && self.secondarytarget.damagetaken < self.secondarytarget.maxhealth) {
         return;
@@ -840,15 +841,15 @@ function fireontarget(targetplayer) {
     var_bbe89bb08d4aaa08 = self.primarytarget.origin * (1, 1, 0);
     var_4bb61811b9080546 = self.origin * (0, 0, 1);
     var_2a530280d4341a8a = var_bbe89bb08d4aaa08 + var_4bb61811b9080546;
-    var_9a0013a4ace3b419 = distance2d(self.origin, currenttarget.origin);
-    if (var_9a0013a4ace3b419 < 1000) {
+    targetdistance2d = distance2d(self.origin, currenttarget.origin);
+    if (targetdistance2d < 1000) {
         var_f8819918db5085ef = 600;
     }
     var_4a05b5b6307a4629 = anglestoforward(currenttarget.angles);
     var_4a05b5b6307a4629 = var_4a05b5b6307a4629 * (1, 1, 0);
     var_3f662d6595827e55 = var_2a530280d4341a8a + var_f8819918db5085ef * var_4a05b5b6307a4629;
-    var_c43fa317dc81b416 = var_3f662d6595827e55 - var_2a530280d4341a8a;
-    attackangle = vectortoangles(var_c43fa317dc81b416);
+    attackvector = var_3f662d6595827e55 - var_2a530280d4341a8a;
+    attackangle = vectortoangles(attackvector);
     attackangle = attackangle * (1, 1, 0);
     thread attackgroundtarget(currenttarget);
     self vehicle_setspeed(80);
@@ -883,7 +884,7 @@ function fireontarget(targetplayer) {
     waittill_any_timeout_1(3, "near_goal");
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x29e7
 // Size: 0x1e4
@@ -898,65 +899,65 @@ function attackgroundtarget(currenttarget) {
         self.isattacking = 0;
         return;
     }
-    var_72fde5447014f573 = distance2dsquared(self.origin, currenttarget.origin);
-    if (var_72fde5447014f573 < 640000) {
+    dist2dsq = distance2dsquared(self.origin, currenttarget.origin);
+    if (dist2dsq < 640000) {
         thread dropbombs(currenttarget);
         self.isattacking = 0;
         return;
-    } else if (checkisfacing(50, currenttarget) && cointoss()) {
+    }
+    if (checkisfacing(50, currenttarget) && cointoss()) {
         thread firemissile(currenttarget);
         self.isattacking = 0;
         return;
-    } else {
-        weaponshoottime = weaponfiretime("cobra_20mm_mp");
-        var_922819de2d68c5e7 = 0;
-        var_900a892cf774ea30 = 0;
-        for (i = 0; i < level.heli_turretclipsize; i++) {
-            if (!isdefined(self)) {
-                break;
-            }
-            if (self.empgrenaded) {
-                break;
-            }
-            if (!isdefined(currenttarget)) {
-                break;
-            }
-            if (!isalive(currenttarget)) {
-                break;
-            }
-            if (self.damagetaken >= self.maxhealth) {
-                continue;
-            }
-            if (!checkisfacing(55, currenttarget)) {
-                self stoploopsound();
-                var_900a892cf774ea30 = 0;
-                wait(weaponshoottime);
-                i--;
-            } else {
-                if (i < level.heli_turretclipsize - 1) {
-                    wait(weaponshoottime);
-                }
-                if (!isdefined(currenttarget) || !isalive(currenttarget)) {
-                    break;
-                }
-                if (!var_900a892cf774ea30) {
-                    self playloopsound("weap_hind_20mm_fire_npc");
-                    var_900a892cf774ea30 = 1;
-                }
-                self setvehweapon("cobra_20mm_mp");
-                self fireweapon("tag_flash", currenttarget);
-            }
-        }
-        if (!isdefined(self)) {
-            return;
-        }
-        self stoploopsound();
-        var_900a892cf774ea30 = 0;
-        self.isattacking = 0;
     }
+    weaponshoottime = weaponfiretime("cobra_20mm_mp");
+    var_922819de2d68c5e7 = 0;
+    loopsoundplaying = 0;
+    for (i = 0; i < level.heli_turretclipsize; i++) {
+        if (!isdefined(self)) {
+            break;
+        }
+        if (self.empgrenaded) {
+            break;
+        }
+        if (!isdefined(currenttarget)) {
+            break;
+        }
+        if (!isalive(currenttarget)) {
+            break;
+        }
+        if (self.damagetaken >= self.maxhealth) {
+            continue;
+        }
+        if (!checkisfacing(55, currenttarget)) {
+            self stoploopsound();
+            loopsoundplaying = 0;
+            wait(weaponshoottime);
+            i--;
+            continue;
+        }
+        if (i < level.heli_turretclipsize - 1) {
+            wait(weaponshoottime);
+        }
+        if (!isdefined(currenttarget) || !isalive(currenttarget)) {
+            break;
+        }
+        if (!loopsoundplaying) {
+            self playloopsound("weap_hind_20mm_fire_npc");
+            loopsoundplaying = 1;
+        }
+        self setvehweapon("cobra_20mm_mp");
+        self fireweapon("tag_flash", currenttarget);
+    }
+    if (!isdefined(self)) {
+        return;
+    }
+    self stoploopsound();
+    loopsoundplaying = 0;
+    self.isattacking = 0;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bd2
 // Size: 0xc7
@@ -966,22 +967,21 @@ function checkisfacing(tolerance, currenttarget) {
     if (!isdefined(tolerance)) {
         tolerance = 10;
     }
-    var_596005145e41eab5 = anglestoforward(self.angles);
+    heliforwardvector = anglestoforward(self.angles);
     var_6d9d6722a1121a79 = currenttarget.origin - self.origin;
-    var_596005145e41eab5 = var_596005145e41eab5 * (1, 1, 0);
+    heliforwardvector = heliforwardvector * (1, 1, 0);
     var_6d9d6722a1121a79 = var_6d9d6722a1121a79 * (1, 1, 0);
     var_6d9d6722a1121a79 = vectornormalize(var_6d9d6722a1121a79);
-    var_596005145e41eab5 = vectornormalize(var_596005145e41eab5);
-    var_466e87ce09ca407b = vectordot(var_6d9d6722a1121a79, var_596005145e41eab5);
-    var_5762b77f73eda7c0 = cos(tolerance);
-    if (var_466e87ce09ca407b >= var_5762b77f73eda7c0) {
+    heliforwardvector = vectornormalize(heliforwardvector);
+    targetcosine = vectordot(var_6d9d6722a1121a79, heliforwardvector);
+    facingcosine = cos(tolerance);
+    if (targetcosine >= facingcosine) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ca0
 // Size: 0xdc
@@ -992,15 +992,15 @@ function isfacing(tolerance, currenttarget) {
         tolerance = 10;
     }
     while (isalive(currenttarget)) {
-        var_596005145e41eab5 = anglestoforward(self.angles);
+        heliforwardvector = anglestoforward(self.angles);
         var_6d9d6722a1121a79 = currenttarget.origin - self.origin;
-        var_596005145e41eab5 = var_596005145e41eab5 * (1, 1, 0);
+        heliforwardvector = heliforwardvector * (1, 1, 0);
         var_6d9d6722a1121a79 = var_6d9d6722a1121a79 * (1, 1, 0);
         var_6d9d6722a1121a79 = vectornormalize(var_6d9d6722a1121a79);
-        var_596005145e41eab5 = vectornormalize(var_596005145e41eab5);
-        var_466e87ce09ca407b = vectordot(var_6d9d6722a1121a79, var_596005145e41eab5);
-        var_5762b77f73eda7c0 = cos(tolerance);
-        if (var_466e87ce09ca407b >= var_5762b77f73eda7c0) {
+        heliforwardvector = vectornormalize(heliforwardvector);
+        targetcosine = vectordot(var_6d9d6722a1121a79, heliforwardvector);
+        facingcosine = cos(tolerance);
+        if (targetcosine >= facingcosine) {
             self notify("facing");
             break;
         }
@@ -1008,7 +1008,7 @@ function isfacing(tolerance, currenttarget) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d83
 // Size: 0x36
@@ -1019,7 +1019,7 @@ function waitontargetordeath(target, timeout) {
     waittill_notify_or_timeout("turret_on_target", timeout);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2dc0
 // Size: 0x131
@@ -1036,10 +1036,10 @@ function firemissile(missiletarget) {
             return;
         }
         if (cointoss()) {
-            missile = namespace_d325722f2754c2c4::_magicbullet(makeweapon("hind_missile_mp"), self gettagorigin("tag_missile_right") - (0, 0, 64), missiletarget.origin, self.owner);
+            missile = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("hind_missile_mp"), self gettagorigin("tag_missile_right") - (0, 0, 64), missiletarget.origin, self.owner);
             missile.vehicle_fired_from = self;
         } else {
-            missile = namespace_d325722f2754c2c4::_magicbullet(makeweapon("hind_missile_mp"), self gettagorigin("tag_missile_left") - (0, 0, 64), missiletarget.origin, self.owner);
+            missile = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("hind_missile_mp"), self gettagorigin("tag_missile_left") - (0, 0, 64), missiletarget.origin, self.owner);
             missile.vehicle_fired_from = self;
         }
         missile missile_settargetent(missiletarget);
@@ -1049,7 +1049,7 @@ function firemissile(missiletarget) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ef8
 // Size: 0x104
@@ -1062,17 +1062,17 @@ function dropbombs(missiletarget) {
     }
     for (i = 0; i < randomintrange(2, 5); i++) {
         if (cointoss()) {
-            missile = namespace_d325722f2754c2c4::_magicbullet(makeweapon("hind_bomb_mp"), self gettagorigin("tag_missile_left") - (0, 0, 45), missiletarget.origin, self.owner);
+            missile = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("hind_bomb_mp"), self gettagorigin("tag_missile_left") - (0, 0, 45), missiletarget.origin, self.owner);
             missile.vehicle_fired_from = self;
         } else {
-            missile = namespace_d325722f2754c2c4::_magicbullet(makeweapon("hind_bomb_mp"), self gettagorigin("tag_missile_right") - (0, 0, 45), missiletarget.origin, self.owner);
+            missile = scripts/cp_mp/utility/weapon_utility::_magicbullet(makeweapon("hind_bomb_mp"), self gettagorigin("tag_missile_right") - (0, 0, 45), missiletarget.origin, self.owner);
             missile.vehicle_fired_from = self;
         }
         wait(randomfloatrange(0.35, 0.65));
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3003
 // Size: 0x159
@@ -1082,8 +1082,7 @@ function getoriginoffsets(goalnode) {
     numtraces = 0;
     maxtraces = 40;
     traceoffset = (0, 0, -196);
-    traceorigin = namespace_2a184fc4902783dc::_bullet_trace(startorigin + traceoffset, endorigin + traceoffset, 0, self);
-    while (distancesquared(traceorigin["position"], endorigin + traceoffset) > 10 && numtraces < maxtraces) {
+    for (traceorigin = scripts/engine/trace::_bullet_trace(startorigin + traceoffset, endorigin + traceoffset, 0, self); distancesquared(traceorigin["position"], endorigin + traceoffset) > 10 && numtraces < maxtraces; traceorigin = scripts/engine/trace::_bullet_trace(startorigin + traceoffset, endorigin + traceoffset, 0, self)) {
         /#
             println("cobra_helicopter_secondary_exp" + distancesquared(traceorigin["tl"], endorigin + traceoffset));
         #/
@@ -1098,7 +1097,6 @@ function getoriginoffsets(goalnode) {
         /#
         #/
         numtraces++;
-        traceorigin = namespace_2a184fc4902783dc::_bullet_trace(startorigin + traceoffset, endorigin + traceoffset, 0, self);
     }
     offsets = [];
     offsets["start"] = startorigin;
@@ -1106,7 +1104,7 @@ function getoriginoffsets(goalnode) {
     return offsets;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3164
 // Size: 0x14c
@@ -1133,71 +1131,70 @@ function traveltonode(goalnode) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32b7
 // Size: 0x41
-function _setvehgoalpos(goalposition, var_e6a6756bbbe9a3e, var_10947963c8a8a722) {
-    if (!isdefined(var_e6a6756bbbe9a3e)) {
-        var_e6a6756bbbe9a3e = 0;
+function _setvehgoalpos(goalposition, shouldstop, var_10947963c8a8a722) {
+    if (!isdefined(shouldstop)) {
+        shouldstop = 0;
     }
     var_10947963c8a8a722 = 0;
     if (var_10947963c8a8a722) {
-        thread _setvehgoalposadheretomesh(goalposition, var_e6a6756bbbe9a3e);
-    } else {
-        self setvehgoalpos(goalposition, var_e6a6756bbbe9a3e);
+        thread _setvehgoalposadheretomesh(goalposition, shouldstop);
+        return;
     }
+    self setvehgoalpos(goalposition, shouldstop);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32ff
 // Size: 0x25b
-function _setvehgoalposadheretomesh(goalposition, var_e6a6756bbbe9a3e) {
+function _setvehgoalposadheretomesh(goalposition, shouldstop) {
     self endon("death");
     self endon("leaving");
     self endon("crashing");
-    var_7cf2e671d5ce666f = goalposition;
+    finalgoalposition = goalposition;
     for (;;) {
-        for (;;) {
-            if (!isdefined(self)) {
-                return;
-            }
-            if (distance_2d_squared(self.origin, var_7cf2e671d5ce666f) < 65536) {
-                self setvehgoalpos(var_7cf2e671d5ce666f, var_e6a6756bbbe9a3e);
-                /#
-                    println("leaving");
-                #/
-                break;
-            }
-            var_8b299bc599c459a5 = vectortoangles(var_7cf2e671d5ce666f - self.origin);
-            var_c7645062191fd7c6 = anglestoforward(var_8b299bc599c459a5);
-            var_7a7eaf576c2dcc51 = self.origin + var_c7645062191fd7c6 * (1, 1, 0) * 250;
-            traceoffset = (0, 0, 2500);
-            tracestart = var_7a7eaf576c2dcc51 + gethelipilotmeshoffset() + traceoffset;
-            traceend = var_7a7eaf576c2dcc51 + gethelipilotmeshoffset() - traceoffset;
-            tracepos = namespace_2a184fc4902783dc::_bullet_trace(tracestart, traceend, 0, self, 0, 0, 1);
-            var_7c00eb979037c433 = tracepos;
-            if (isdefined(tracepos["entity"]) && tracepos["entity"] == self && tracepos["normal"][2] > 0.1) {
-                var_a38b0f14438e3e6 = tracepos["position"][2] - 4400;
-                var_cdff5d407723f731 = var_a38b0f14438e3e6 - self.origin[2];
-                if (var_cdff5d407723f731 > 256) {
-                    tracepos["position"] = tracepos["position"] * (1, 1, 0);
-                    tracepos["position"] = tracepos["position"] + (0, 0, self.origin[2] + 256);
-                } else if (var_cdff5d407723f731 < -256) {
-                    tracepos["position"] = tracepos["position"] * (1, 1, 0);
-                    tracepos["position"] = tracepos["position"] + (0, 0, self.origin[2] - 256);
-                }
-                var_7c00eb979037c433 = tracepos["position"] - gethelipilotmeshoffset() + (0, 0, 600);
-            } else {
-                var_7c00eb979037c433 = var_7cf2e671d5ce666f;
-            }
-            self setvehgoalpos(var_7c00eb979037c433, 0);
+        if (!isdefined(self)) {
+            return;
         }
+        if (distance_2d_squared(self.origin, finalgoalposition) < 65536) {
+            self setvehgoalpos(finalgoalposition, shouldstop);
+            /#
+                println("leaving");
+            #/
+            break;
+        }
+        vecangles = vectortoangles(finalgoalposition - self.origin);
+        vecforward = anglestoforward(vecangles);
+        var_7a7eaf576c2dcc51 = self.origin + vecforward * (1, 1, 0) * 250;
+        traceoffset = (0, 0, 2500);
+        tracestart = var_7a7eaf576c2dcc51 + gethelipilotmeshoffset() + traceoffset;
+        traceend = var_7a7eaf576c2dcc51 + gethelipilotmeshoffset() - traceoffset;
+        tracepos = scripts/engine/trace::_bullet_trace(tracestart, traceend, 0, self, 0, 0, 1);
+        microgoalposition = tracepos;
+        if (isdefined(tracepos["entity"]) && tracepos["entity"] == self && tracepos["normal"][2] > 0.1) {
+            traceposz = tracepos["position"][2] - 4400;
+            zchange = traceposz - self.origin[2];
+            if (zchange > 256) {
+                tracepos["position"] = tracepos["position"] * (1, 1, 0);
+                tracepos["position"] = tracepos["position"] + (0, 0, self.origin[2] + 256);
+            } else if (zchange < -256) {
+                tracepos["position"] = tracepos["position"] * (1, 1, 0);
+                tracepos["position"] = tracepos["position"] + (0, 0, self.origin[2] - 256);
+            }
+            microgoalposition = tracepos["position"] - gethelipilotmeshoffset() + (0, 0, 600);
+        } else {
+            microgoalposition = finalgoalposition;
+        }
+        self setvehgoalpos(microgoalposition, 0);
+        wait(0.15);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3561
 // Size: 0x1d7
@@ -1207,8 +1204,7 @@ function heli_fly_simple_path(startnode) {
     self notify("flying");
     self endon("flying");
     heli_reset();
-    currentnode = startnode;
-    while (isdefined(currentnode.target)) {
+    for (currentnode = startnode; isdefined(currentnode.target); currentnode = nextnode) {
         nextnode = getent(currentnode.target, "targetname");
         /#
             assertex(isdefined(nextnode), "Next node in path is undefined, but has targetname. Bad Node Position: " + currentnode.origin);
@@ -1232,13 +1228,12 @@ function heli_fly_simple_path(startnode) {
         if (!isdefined(nextnode.target)) {
             _setvehgoalpos(nextnode.origin + self.zoffset, 1);
             self waittill("near_goal");
-        } else {
-            _setvehgoalpos(nextnode.origin + self.zoffset, 0);
-            self waittill("near_goal");
-            self setgoalyaw(nextnode.angles[1]);
-            self waittill("goal");
+            continue;
         }
-        currentnode = nextnode;
+        _setvehgoalpos(nextnode.origin + self.zoffset, 0);
+        self waittill("near_goal");
+        self setgoalyaw(nextnode.angles[1]);
+        self waittill("goal");
     }
     /#
         println(currentnode.origin);
@@ -1246,7 +1241,7 @@ function heli_fly_simple_path(startnode) {
     #/
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x373f
 // Size: 0x237
@@ -1258,8 +1253,7 @@ function heli_fly_loop_path(startnode) {
     self endon("flying");
     heli_reset();
     thread heli_loop_speed_control(startnode);
-    currentnode = startnode;
-    while (isdefined(currentnode.target)) {
+    for (currentnode = startnode; isdefined(currentnode.target); currentnode = nextnode) {
         nextnode = getent(currentnode.target, "targetname");
         /#
             assertex(isdefined(nextnode), "Next node in path is undefined, but has targetname. Bad Node Position: " + currentnode.origin);
@@ -1287,17 +1281,16 @@ function heli_fly_loop_path(startnode) {
             _setvehgoalpos(nextnode.origin + self.zoffset, 1, 1);
             self waittill("near_goal");
             wait(nextnode.script_delay);
-        } else {
-            _setvehgoalpos(nextnode.origin + self.zoffset, 0, 1);
-            self waittill("near_goal");
-            self setgoalyaw(nextnode.angles[1]);
-            self waittill("goal");
+            continue;
         }
-        currentnode = nextnode;
+        _setvehgoalpos(nextnode.origin + self.zoffset, 0, 1);
+        self waittill("near_goal");
+        self setgoalyaw(nextnode.angles[1]);
+        self waittill("goal");
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x397d
 // Size: 0x14e
@@ -1312,42 +1305,42 @@ function heli_loop_speed_control(currentnode) {
         self.desired_speed = 30 + randomint(20);
         self.desired_accel = 15 + randomint(15);
     }
-    var_e803426d2abadfc0 = 0;
+    lastspeed = 0;
     var_b1d46319aa26b913 = 0;
-    while (1) {
-        var_af03a5ac7d47d6cd = self.desired_speed;
+    while (true) {
+        goalspeed = self.desired_speed;
         var_4c3fe0af18132696 = self.desired_accel;
         if (isdefined(self.isattacking) && self.isattacking) {
             waitframe();
             continue;
         }
         if (self.helitype != "flares" && isdefined(self.primarytarget) && !heli_is_threatened()) {
-            var_af03a5ac7d47d6cd = var_af03a5ac7d47d6cd * 0.25;
+            goalspeed = goalspeed * 0.25;
         }
-        if (var_e803426d2abadfc0 != var_af03a5ac7d47d6cd || var_b1d46319aa26b913 != var_4c3fe0af18132696) {
+        if (lastspeed != goalspeed || var_b1d46319aa26b913 != var_4c3fe0af18132696) {
             self vehicle_setspeed(75, 35);
-            var_e803426d2abadfc0 = var_af03a5ac7d47d6cd;
+            lastspeed = goalspeed;
             var_b1d46319aa26b913 = var_4c3fe0af18132696;
         }
         wait(0.05);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ad2
 // Size: 0x2b
 function heli_is_threatened() {
     if (self.recentdamageamount > 50) {
-        return 1;
+        return true;
     }
     if (self.currentstate == "heavy smoke") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b05
 // Size: 0x175
@@ -1358,39 +1351,38 @@ function heli_fly_well(destnodes) {
     self endon("crashing");
     self endon("leaving");
     for (;;) {
-        for (;;) {
-            if (isdefined(self.isattacking) && self.isattacking) {
-                waitframe();
-                continue;
-            }
-            currentnode = get_best_area_attack_node(destnodes);
-            traveltonode(currentnode);
-            if (isdefined(currentnode.script_airspeed) && isdefined(currentnode.script_accel)) {
-                heli_speed = currentnode.script_airspeed;
-                heli_accel = currentnode.script_accel;
-            } else {
-                heli_speed = 30 + randomint(20);
-                heli_accel = 15 + randomint(15);
-            }
-            self vehicle_setspeed(75, 35);
-            _setvehgoalpos(currentnode.origin + self.zoffset, 1);
-            self setgoalyaw(currentnode.angles[1] + level.heli_angle_offset);
-            if (level.heli_forced_wait != 0) {
-                self waittill("near_goal");
-                wait(level.heli_forced_wait);
-                continue;
-            }
-            if (!isdefined(currentnode.script_delay)) {
-                self waittill("near_goal");
-                wait(5 + randomint(5));
-                continue;
-            }
-            self waittill("goal");
+        if (isdefined(self.isattacking) && self.isattacking) {
+            waitframe();
+            continue;
         }
+        currentnode = get_best_area_attack_node(destnodes);
+        traveltonode(currentnode);
+        if (isdefined(currentnode.script_airspeed) && isdefined(currentnode.script_accel)) {
+            heli_speed = currentnode.script_airspeed;
+            heli_accel = currentnode.script_accel;
+        } else {
+            heli_speed = 30 + randomint(20);
+            heli_accel = 15 + randomint(15);
+        }
+        self vehicle_setspeed(75, 35);
+        _setvehgoalpos(currentnode.origin + self.zoffset, 1);
+        self setgoalyaw(currentnode.angles[1] + level.heli_angle_offset);
+        if (level.heli_forced_wait != 0) {
+            self waittill("near_goal");
+            wait(level.heli_forced_wait);
+            continue;
+        }
+        if (!isdefined(currentnode.script_delay)) {
+            self waittill("near_goal");
+            wait(5 + randomint(5));
+            continue;
+        }
+        self waittill("goal");
+        wait(currentnode.script_delay);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c81
 // Size: 0x13
@@ -1398,27 +1390,27 @@ function get_best_area_attack_node(destnodes) {
     return updateareanodes(destnodes);
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c9c
 // Size: 0x14f
-function heli_leave(var_58cf87ea08ab452e) {
+function heli_leave(leavepos) {
     self notify("leaving");
     self clearlookatent();
     if (isdefined(self.helitype) && self.helitype == "osprey" && isdefined(self.pathgoal)) {
         _setvehgoalpos(self.pathgoal, 1);
         waittill_any_timeout_1(5, "goal");
     }
-    if (!isdefined(var_58cf87ea08ab452e)) {
+    if (!isdefined(leavepos)) {
         leavenode = level.heli_leave_nodes[randomint(level.heli_leave_nodes.size)];
-        var_58cf87ea08ab452e = leavenode.origin;
+        leavepos = leavenode.origin;
     }
-    var_60347fd2432f3a63 = spawn("script_origin", var_58cf87ea08ab452e);
-    if (isdefined(var_60347fd2432f3a63)) {
-        self setlookatent(var_60347fd2432f3a63);
-        var_60347fd2432f3a63 thread wait_and_delete(3);
+    endent = spawn("script_origin", leavepos);
+    if (isdefined(endent)) {
+        self setlookatent(endent);
+        endent thread wait_and_delete(3);
     }
-    var_b2805e2f86ac4904 = (var_58cf87ea08ab452e - self.origin) * 2000;
+    var_b2805e2f86ac4904 = (leavepos - self.origin) * 2000;
     heli_reset();
     self vehicle_setspeed(180, 45);
     _setvehgoalpos(var_b2805e2f86ac4904, 1);
@@ -1433,7 +1425,7 @@ function heli_leave(var_58cf87ea08ab452e) {
     self delete();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3df2
 // Size: 0x23
@@ -1444,7 +1436,7 @@ function wait_and_delete(waittime) {
     self delete();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e1c
 // Size: 0x59
@@ -1454,7 +1446,7 @@ function debug_print3d(message, color, ent, origin_offset, frames) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e7c
 // Size: 0x7e
@@ -1462,25 +1454,27 @@ function debug_print3d_simple(message, ent, offset, frames) {
     if (isdefined(level.heli_debug) && level.heli_debug == 1) {
         if (isdefined(frames)) {
             thread draw_text(message, (0.8, 0.8, 0.8), ent, offset, frames);
-        } else {
-            thread draw_text(message, (0.8, 0.8, 0.8), ent, offset, 0);
+            return;
         }
+        thread draw_text(message, (0.8, 0.8, 0.8), ent, offset, 0);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f01
 // Size: 0x84
 function debug_line(from, to, color, frames) {
     if (isdefined(level.heli_debug) && level.heli_debug == 1 && !isdefined(frames)) {
         thread draw_line(from, to, color);
-    } else if (isdefined(level.heli_debug) && level.heli_debug == 1) {
+        return;
+    }
+    if (isdefined(level.heli_debug) && level.heli_debug == 1) {
         thread draw_line(from, to, color, frames);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f8c
 // Size: 0xa7
@@ -1492,20 +1486,20 @@ function draw_text(msg, color, ent, offset, frames) {
             #/
             wait(0.05);
         }
-    } else {
-        for (i = 0; i < frames; i++) {
-            if (!isdefined(ent)) {
-                break;
-            }
-            /#
-                print3d(ent.origin + offset, msg, color, 0.5, 4);
-            #/
-            wait(0.05);
+        return;
+    }
+    for (i = 0; i < frames; i++) {
+        if (!isdefined(ent)) {
+            break;
         }
+        /#
+            print3d(ent.origin + offset, msg, color, 0.5, 4);
+        #/
+        wait(0.05);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x403a
 // Size: 0x68
@@ -1516,28 +1510,27 @@ function draw_line(from, to, color, frames) {
                 line(from, to, color);
                 wait(0.05);
             }
-        } else {
-            for (;;) {
-                line(from, to, color);
-                wait(0.05);
-            }
+            return;
+        }
+        for (;;) {
+            line(from, to, color);
+            wait(0.05);
         }
     #/
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x40a9
 // Size: 0x40
 function exceededmaxlittlebirds(streakname) {
     if (level.littlebirds.size >= 4 || level.littlebirds.size >= 2 && streakname == "littlebird_flock") {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x40f0
 // Size: 0x4c
@@ -1548,7 +1541,7 @@ function pavelowmadeselectionvo() {
     self playlocalsound(game["voice"][self.team] + "KS_pvl_inbound");
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4143
 // Size: 0x69
@@ -1568,7 +1561,7 @@ function lbonkilled() {
     lbexplode();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41b3
 // Size: 0x8b
@@ -1583,7 +1576,7 @@ function lbspin(speed) {
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4245
 // Size: 0x98
@@ -1596,7 +1589,7 @@ function lbexplode() {
     removelittlebird();
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42e4
 // Size: 0x41
@@ -1604,13 +1597,13 @@ function trail_fx(trail_fx, trail_tag, stop_notify) {
     self notify(stop_notify);
     self endon(stop_notify);
     self endon("death");
-    while (1) {
+    while (true) {
         playfxontag(trail_fx, self, trail_tag);
         wait(0.05);
     }
 }
 
-// Namespace helicopter/namespace_f88f890445eec227
+// Namespace helicopter / scripts/mp/killstreaks/helicopter
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x432c
 // Size: 0x108

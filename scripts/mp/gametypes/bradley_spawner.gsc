@@ -8,9 +8,9 @@
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using scripts\mp\gametypes\dom.gsc;
 
-#namespace namespace_e4691dd72735bbc5;
+#namespace bradley_spawner;
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b5
 // Size: 0x37
@@ -19,24 +19,24 @@ function monitoradd(tank, timeout) {
     level.tanktimeoutlist[level.tanktimeoutlist.size] = tank;
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x103
-function spawntanks(var_a85ce59e9fcd4439, team) {
+function spawntanks(tankstructs, team) {
     level endon("game_ended");
     wait(0.05);
-    foreach (tankspawn in var_a85ce59e9fcd4439) {
-        if (!isdefined(tankspawn.angles)) {
-            tankspawn.angles = (0, 0, 0);
+    foreach (tankSpawn in tankstructs) {
+        if (!isdefined(tankSpawn.angles)) {
+            tankSpawn.angles = (0, 0, 0);
         }
-        refill = ter_op(isdefined(tankspawn.script_force_count), tankspawn.script_force_count, 0);
-        timeout = ter_op(isdefined(tankspawn.script_timeout), tankspawn.script_timeout, 0);
-        level thread spawntankandmonitor(tankspawn.origin, tankspawn.angles, team, refill, timeout);
+        refill = ter_op(isdefined(tankSpawn.script_force_count), tankSpawn.script_force_count, 0);
+        timeout = ter_op(isdefined(tankSpawn.script_timeout), tankSpawn.script_timeout, 0);
+        level thread spawntankandmonitor(tankSpawn.origin, tankSpawn.angles, team, refill, timeout);
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fd
 // Size: 0x71
@@ -44,7 +44,7 @@ function spawntankandmonitor(origin, angles, team, refill, timeout) {
     level endon("game_ended");
     tank = spawntank(origin, angles, team, timeout, 0);
     if (refill) {
-        while (1) {
+        while (true) {
             tank waittill("death");
             wait(3);
             tank = spawntank(origin, angles, team, timeout, 1);
@@ -52,7 +52,7 @@ function spawntankandmonitor(origin, angles, team, refill, timeout) {
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x475
 // Size: 0x103
@@ -77,7 +77,7 @@ function spawntank(origin, angles, team, timeout, infil) {
     return tank;
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x580
 // Size: 0x30e
@@ -98,14 +98,14 @@ function inittankspawns() {
     if (getdvarint(@"hash_3bfe19e3234d5dff", 0) == 0) {
         return;
     }
-    gametypes = [0:"cmd", 1:"dom", 2:"war", 3:"arm", 4:"conflict", 5:"risk"];
-    var_8c28012a76120a71 = array_find(gametypes, getgametype());
-    if (!isdefined(var_8c28012a76120a71)) {
-        var_8c28012a76120a71 = gametypes.size;
+    gametypes = ["cmd", "dom", "war", "arm", "conflict", "risk"];
+    gameindex = array_find(gametypes, getgametype());
+    if (!isdefined(gameindex)) {
+        gameindex = gametypes.size;
     }
-    for (i = var_8c28012a76120a71; i < gametypes.size; i++) {
-        var_9fb431ae2d7ece3b = gametypes[i];
-        if (var_9fb431ae2d7ece3b == "war") {
+    for (i = gameindex; i < gametypes.size; i++) {
+        testgametype = gametypes[i];
+        if (testgametype == "war") {
             if (level.tankstartspawnallies.size != 0 || level.tankstartspawnaxis.size != 0 || level.tankstartspawnneutral.size != 0) {
                 spawnstartingbradleystdm();
                 if (level.tankstartspawnneutral.size != 0) {
@@ -113,12 +113,16 @@ function inittankspawns() {
                 }
                 break;
             }
-        } else if (var_9fb431ae2d7ece3b == "dom") {
+            continue;
+        }
+        if (testgametype == "dom") {
             if (level.tankstartspawnalliesdom.size != 0 || level.tankstartspawnaxisdom.size != 0 || level.tankspawndom_a.size != 0 || level.tankspawndom_b.size != 0 || level.tankspawndom_c.size != 0) {
                 thread kickoffneutralbradleyspawnsdom();
                 break;
             }
-        } else if (var_9fb431ae2d7ece3b == "cmd") {
+            continue;
+        }
+        if (testgametype == "cmd") {
             if (level.tankstartspawnalliescmd.size != 0 || level.tankstartspawnaxiscmd.size != 0 || level.tankspawncmd_1.size != 0 || level.tankspawncmd_2.size != 0 || level.tankspawncmd_3.size != 0) {
                 spawnstartingbradleyscmd();
                 break;
@@ -127,7 +131,7 @@ function inittankspawns() {
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x895
 // Size: 0x151
@@ -154,41 +158,41 @@ function spawnstartingbradleystdm() {
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ed
 // Size: 0x1a1
 function spawnstartingbradleysdom() {
     if (level.tankstartspawnalliesdom.size != 0 && level.tankstartspawnaxisdom.size != 0) {
         var_7e4886c52a1bc723 = (0, 0, 0);
-        var_a6c0109970e785cd = (0, 0, 0);
+        allyorigin = (0, 0, 0);
         var_76fd430e3623fb30 = (0, 0, 0);
-        var_c0e9f05d2f85a432 = (0, 0, 0);
+        axisorigin = (0, 0, 0);
         if (isdefined(level.tankstartspawnalliesdom[0].angles)) {
             var_7e4886c52a1bc723 = level.tankstartspawnalliesdom[0].angles;
         }
-        var_a6c0109970e785cd = level.tankstartspawnalliesdom[0].origin;
+        allyorigin = level.tankstartspawnalliesdom[0].origin;
         /#
             println("<unknown string>" + level.tankstartspawnalliesdom[0].origin);
         #/
         if (isdefined(level.tankstartspawnaxisdom[0].angles)) {
             var_76fd430e3623fb30 = level.tankstartspawnaxisdom[0].angles;
         }
-        var_c0e9f05d2f85a432 = level.tankstartspawnaxisdom[0].origin;
+        axisorigin = level.tankstartspawnaxisdom[0].origin;
         /#
             println("<unknown string>" + level.tankstartspawnaxisdom[0].origin);
         #/
         if (game["switchedsides"]) {
-            thread spawnbradleynoduration(var_c0e9f05d2f85a432, var_76fd430e3623fb30, "allies");
-            thread spawnbradleynoduration(var_a6c0109970e785cd, var_7e4886c52a1bc723, "axis");
-        } else {
-            thread spawnbradleynoduration(var_c0e9f05d2f85a432, var_76fd430e3623fb30, "axis");
-            thread spawnbradleynoduration(var_a6c0109970e785cd, var_7e4886c52a1bc723, "allies");
+            thread spawnbradleynoduration(axisorigin, var_76fd430e3623fb30, "allies");
+            thread spawnbradleynoduration(allyorigin, var_7e4886c52a1bc723, "axis");
+            return;
         }
+        thread spawnbradleynoduration(axisorigin, var_76fd430e3623fb30, "axis");
+        thread spawnbradleynoduration(allyorigin, var_7e4886c52a1bc723, "allies");
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb95
 // Size: 0x151
@@ -215,37 +219,37 @@ function spawnstartingbradleyscmd() {
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xced
 // Size: 0x115
 function kickoffneutralbradleyspawnstdm() {
     level endon("game_ended");
     wait(12);
-    tankspawn = random(level.tankstartspawnneutral);
+    tankSpawn = random(level.tankstartspawnneutral);
     angles = (0, 0, 0);
-    if (isdefined(tankspawn.angles)) {
-        angles = tankspawn.angles;
+    if (isdefined(tankSpawn.angles)) {
+        angles = tankSpawn.angles;
     }
     /#
-        println("<unknown string>" + tankspawn.origin);
+        println("<unknown string>" + tankSpawn.origin);
         println("<unknown string>" + angles);
     #/
-    thread spawnbradleynoduration(tankspawn.origin, angles);
+    thread spawnbradleynoduration(tankSpawn.origin, angles);
     timelimit = gettimelimit();
     timelimitmin = timelimit / 3;
     spawntime = max(timelimitmin, 180);
     spawntime = min(spawntime, 240);
-    while (1) {
+    while (true) {
         wait(spawntime);
         if (vehicle_tracking_getgameinstances("light_tank").size < 2) {
-            tankspawn = selectneutralspawn();
-            thread spawnbradleynoduration(tankspawn.origin, tankspawn.angles);
+            tankSpawn = selectneutralspawn();
+            thread spawnbradleynoduration(tankSpawn.origin, tankSpawn.angles);
         }
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe09
 // Size: 0x8c
@@ -256,40 +260,40 @@ function kickoffneutralbradleyspawnsdom() {
     timelimitmin = timelimit / 3;
     spawntime = max(timelimitmin, 180);
     spawntime = min(spawntime, 240);
-    while (1) {
+    while (true) {
         wait(spawntime);
         if (vehicle_tracking_getgameinstances("light_tank").size < 2) {
-            var_892859fb1ae1e343 = selectdomspawn();
-            if (!isdefined(var_892859fb1ae1e343)) {
-                var_892859fb1ae1e343 = delayspawnuntilpointcap();
+            dompt = selectdomspawn();
+            if (!isdefined(dompt)) {
+                dompt = delayspawnuntilpointcap();
             }
-            spawndombradley(var_892859fb1ae1e343);
+            spawndombradley(dompt);
         }
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe9c
 // Size: 0xc3
-function spawndombradley(var_892859fb1ae1e343) {
-    if (var_892859fb1ae1e343.objectivekey == "_a") {
-        tankspawn = random(level.tankspawndom_a);
-    } else if (var_892859fb1ae1e343.objectivekey == "_b") {
-        tankspawn = random(level.tankspawndom_b);
+function spawndombradley(dompt) {
+    if (dompt.objectivekey == "_a") {
+        tankSpawn = random(level.tankspawndom_a);
+    } else if (dompt.objectivekey == "_b") {
+        tankSpawn = random(level.tankspawndom_b);
     } else {
-        tankspawn = random(level.tankspawndom_c);
+        tankSpawn = random(level.tankspawndom_c);
     }
-    if (isdefined(tankspawn)) {
+    if (isdefined(tankSpawn)) {
         angles = (0, 0, 0);
-        if (isdefined(tankspawn.angles)) {
-            angles = tankspawn.angles;
+        if (isdefined(tankSpawn.angles)) {
+            angles = tankSpawn.angles;
         }
-        thread spawnbradleynoduration(tankspawn.origin, angles);
+        thread spawnbradleynoduration(tankSpawn.origin, angles);
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf66
 // Size: 0x177
@@ -298,83 +302,87 @@ function tryspawnneutralbradleycmd(point) {
         if (point == 1) {
             if (level.tankspawncmd_1.size != 0) {
                 angles = (0, 0, 0);
-                tankspawn = random(level.tankspawncmd_1);
-                if (isdefined(tankspawn.angles)) {
-                    angles = tankspawn.angles;
+                tankSpawn = random(level.tankspawncmd_1);
+                if (isdefined(tankSpawn.angles)) {
+                    angles = tankSpawn.angles;
                 }
-                thread spawnbradleynoduration(tankspawn.origin, angles, "allies");
+                thread spawnbradleynoduration(tankSpawn.origin, angles, "allies");
             }
-        } else if (point == 2) {
+            return;
+        }
+        if (point == 2) {
             if (level.tankspawncmd_2.size != 0) {
                 angles = (0, 0, 0);
-                tankspawn = random(level.tankspawncmd_2);
-                if (isdefined(tankspawn.angles)) {
-                    angles = tankspawn.angles;
+                tankSpawn = random(level.tankspawncmd_2);
+                if (isdefined(tankSpawn.angles)) {
+                    angles = tankSpawn.angles;
                 }
-                thread spawnbradleynoduration(tankspawn.origin, angles, "allies");
+                thread spawnbradleynoduration(tankSpawn.origin, angles, "allies");
             }
-        } else if (point == 3) {
+            return;
+        }
+        if (point == 3) {
             if (level.tankspawncmd_3.size != 0) {
                 angles = (0, 0, 0);
-                tankspawn = random(level.tankspawncmd_3);
-                if (isdefined(tankspawn.angles)) {
-                    angles = tankspawn.angles;
+                tankSpawn = random(level.tankspawncmd_3);
+                if (isdefined(tankSpawn.angles)) {
+                    angles = tankSpawn.angles;
                 }
-                thread spawnbradleynoduration(tankspawn.origin, angles, "allies");
+                thread spawnbradleynoduration(tankSpawn.origin, angles, "allies");
             }
         }
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10e4
 // Size: 0x2d
 function delayspawnuntilpointcap() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         wait(3);
-        var_892859fb1ae1e343 = selectdomspawn();
-        if (isdefined(var_892859fb1ae1e343)) {
-            return var_892859fb1ae1e343;
+        dompt = selectdomspawn();
+        if (isdefined(dompt)) {
+            return dompt;
         }
     }
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1118
 // Size: 0x1e
 function selectneutralspawn() {
-    tankspawn = random(level.tankstartspawnneutral);
-    return tankspawn;
+    tankSpawn = random(level.tankstartspawnneutral);
+    return tankSpawn;
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x113e
 // Size: 0x8d
 function selectdomspawn() {
-    var_81813e4560da38e8 = namespace_6b4b8b8421d203ba::getteamdompoints("allies");
-    var_31cd4798ce98e96f = namespace_6b4b8b8421d203ba::getteamdompoints("axis");
-    var_9bb266f7bf9b6cbb = namespace_6b4b8b8421d203ba::getteamdompoints("neutral");
-    if (var_81813e4560da38e8.size == 3 || var_31cd4798ce98e96f.size == 3) {
+    allypoints = scripts/mp/gametypes/dom::getteamdompoints("allies");
+    axispoints = scripts/mp/gametypes/dom::getteamdompoints("axis");
+    neutralpoints = scripts/mp/gametypes/dom::getteamdompoints("neutral");
+    if (allypoints.size == 3 || axispoints.size == 3) {
         return undefined;
-    } else if (var_81813e4560da38e8.size < var_31cd4798ce98e96f.size) {
-        if (var_81813e4560da38e8.size == 0) {
-            return var_9bb266f7bf9b6cbb[0];
+    } else if (allypoints.size < axispoints.size) {
+        if (allypoints.size == 0) {
+            return neutralpoints[0];
         }
-        return var_81813e4560da38e8[0];
-    } else if (var_81813e4560da38e8.size > var_31cd4798ce98e96f.size) {
-        if (var_31cd4798ce98e96f.size == 0) {
-            return var_9bb266f7bf9b6cbb[0];
+        return allypoints[0];
+    } else if (allypoints.size > axispoints.size) {
+        if (axispoints.size == 0) {
+            return neutralpoints[0];
         }
-        return var_31cd4798ce98e96f[0];
+        return axispoints[0];
     }
     return undefined;
 }
 
-// Namespace namespace_e4691dd72735bbc5/namespace_662734e7fa8a8b94
+// Namespace bradley_spawner / scripts/mp/gametypes/bradley_spawner
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11d3
 // Size: 0xd5

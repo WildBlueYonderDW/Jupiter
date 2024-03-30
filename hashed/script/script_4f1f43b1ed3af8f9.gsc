@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_b8f8e2f86acf53ed;
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_d56a43a0cbd2ac83
+// Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c
 // Size: 0x23
@@ -12,7 +12,7 @@ function init() {
     level thread onplayerconnect();
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_d56a43a0cbd2ac83
+// Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb6
 // Size: 0x22
@@ -23,7 +23,7 @@ function onplayerconnect() {
     }
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_d56a43a0cbd2ac83
+// Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdf
 // Size: 0x39
@@ -34,7 +34,7 @@ function registeronplayerspawncallback(callback) {
     level.onplayerspawncallbacks[level.onplayerspawncallbacks.size] = callback;
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_d56a43a0cbd2ac83
+// Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f
 // Size: 0x7b
@@ -48,7 +48,7 @@ function function_de35280460ae9411(remove_callback) {
     level.onplayerspawncallbacks = temp_array;
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_d56a43a0cbd2ac83
+// Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a1
 // Size: 0x67

@@ -13,22 +13,22 @@
 #using scripts\mp\killstreaks\killstreaks.gsc;
 #using scripts\mp\utility\join_team_aggregator.gsc;
 
-#namespace namespace_c3bdbc6bfbfa4d94;
+#namespace helper_drone_mp;
 
-// Namespace namespace_c3bdbc6bfbfa4d94/namespace_220ed8fa6c43602d
+// Namespace helper_drone_mp / scripts/mp/killstreaks/helper_drone_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x115
 // Size: 0x55
 function helper_drone_init() {
-    namespace_9bdcf9f3e8428ce0::function_98a4e2a877ef7bb1();
+    namespace_9bdcf9f3e8428ce0::recondrone_init();
     namespace_7b540f1008fe7830::function_c260cd16a5c5a2d9();
-    namespace_58a74e7d54b56e8d::registerkillstreak("radar_drone_overwatch", &tryusehelperdronefromstruct);
-    namespace_58a74e7d54b56e8d::registerkillstreak("scrambler_drone_guard", &tryusehelperdronefromstruct);
-    namespace_1309ce202b9aa92b::registeronplayerjointeamcallback(&helperdrone_updateheadicononjointeam);
-    namespace_3c37cb17ade254d::registersharedfunc("helper_drone", "attachXRays", &function_3e5187005523c45c);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("radar_drone_overwatch", &tryusehelperdronefromstruct);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("scrambler_drone_guard", &tryusehelperdronefromstruct);
+    scripts/mp/utility/join_team_aggregator::registeronplayerjointeamcallback(&helperdrone_updateheadicononjointeam);
+    scripts/engine/utility::registersharedfunc("helper_drone", "attachXRays", &function_3e5187005523c45c);
 }
 
-// Namespace namespace_c3bdbc6bfbfa4d94/namespace_220ed8fa6c43602d
+// Namespace helper_drone_mp / scripts/mp/killstreaks/helper_drone_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x171
 // Size: 0xc
@@ -36,7 +36,7 @@ function helperdrone_updateheadicononjointeam(player) {
     
 }
 
-// Namespace namespace_c3bdbc6bfbfa4d94/namespace_220ed8fa6c43602d
+// Namespace helper_drone_mp / scripts/mp/killstreaks/helper_drone_mp
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x184
 // Size: 0x21

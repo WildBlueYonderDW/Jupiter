@@ -2,7 +2,7 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\mp\agents\agent_utility.gsc;
 #using scripts\mp\utility\game.gsc;
 #using scripts\mp\flags.gsc;
@@ -10,7 +10,7 @@
 
 #namespace br_helicopters;
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x382
 // Size: 0x134
@@ -31,25 +31,25 @@ function setuphalodropplayer(player) {
     player setcandamage(0);
     player cancelmantle();
     player playerlinktodelta(playerlinkent, "tag_player", 1, 40, 40, -5, 70, 0);
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     player notifyonplayercommand("halo_jump_c130", "+gostand");
-    player thread namespace_ad389306d44fc6b4::listenjump(self, 1);
-    player thread namespace_ad389306d44fc6b4::listenkick(self, 1);
+    player thread scripts/mp/gametypes/br_c130::listenjump(self, 1);
+    player thread scripts/mp/gametypes/br_c130::listenkick(self, 1);
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bd
 // Size: 0x54
 function spawnplayertohelicam(player) {
     player.angles = self.angles;
-    player thread namespace_ad389306d44fc6b4::listenjump(self, 1);
-    player thread namespace_ad389306d44fc6b4::listenkick(self, 1);
+    player thread scripts/mp/gametypes/br_c130::listenjump(self, 1);
+    player thread scripts/mp/gametypes/br_c130::listenkick(self, 1);
     player.br_infil_type = "heli";
     player thread orbitcam(self);
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x518
 // Size: 0x129
@@ -66,14 +66,14 @@ function orbitcam(heli) {
     if (isdefined(self.br_orbitcam)) {
         self.br_orbitcam delete();
     }
-    var_b205be0302d9f3a6 = spawn("script_model", heli.origin);
-    var_b205be0302d9f3a6 setmodel("tag_player");
-    var_b205be0302d9f3a6 linkto(heli, "tag_origin", (0, 0, 50), (0, 0, 0));
-    self.br_orbitcam = var_b205be0302d9f3a6;
+    pov = spawn("script_model", heli.origin);
+    pov setmodel("tag_player");
+    pov linkto(heli, "tag_origin", (0, 0, 50), (0, 0, 0));
+    self.br_orbitcam = pov;
     self cameraset("camera_custom_orbit_2");
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x648
 // Size: 0x60
@@ -84,7 +84,7 @@ function forceejectall() {
     }
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6af
 // Size: 0x2a0
@@ -98,25 +98,25 @@ function jumplistener(heli, jumptime) {
     self notifyonplayercommand("halo_jump", "+gostand");
     self waittill("halo_jump");
     lookangles = self getplayerangles();
-    var_59ca84ff0b0b2c1b = heli getfirstopenjumporigin();
+    jumporigin = heli getfirstopenjumporigin();
     left = anglestoleft(heli.angles);
-    var_f9805aad354a150e = var_59ca84ff0b0b2c1b.origin + left * 200;
-    contents = physics_createcontents([0:"physicscontents_glass", 1:"physicscontents_water", 2:"physicscontents_playerclip", 3:"physicscontents_vehicleclip"]);
+    var_f9805aad354a150e = jumporigin.origin + left * 200;
+    contents = physics_createcontents(["physicscontents_glass", "physicscontents_water", "physicscontents_playerclip", "physicscontents_vehicleclip"]);
     spawnpos = (0, 0, 0);
-    var_e021c2744cc7ed68 = physics_raycast(var_f9805aad354a150e, var_f9805aad354a150e + (0, 0, -1) * 20000, contents, undefined, 0, "physicsquery_closest", 1);
-    if (isdefined(var_e021c2744cc7ed68) && var_e021c2744cc7ed68.size > 0) {
-        castend = var_e021c2744cc7ed68[0]["position"];
+    castresults = physics_raycast(var_f9805aad354a150e, var_f9805aad354a150e + (0, 0, -1) * 20000, contents, undefined, 0, "physicsquery_closest", 1);
+    if (isdefined(castresults) && castresults.size > 0) {
+        castend = castresults[0]["position"];
         spawnpos = getclosestpointonnavmesh(castend);
     } else {
         iprintln("ERROR NOTHING BELOW TO CAST ON");
     }
     self unlink();
-    var_44fa3f00f2040a19 = spawn("script_model", self.origin);
-    var_44fa3f00f2040a19.angles = self.angles;
-    var_44fa3f00f2040a19 setmodel("tag_origin");
-    self playerlinkto(var_44fa3f00f2040a19);
-    var_44fa3f00f2040a19 moveto(spawnpos + (0, 0, 24), jumptime, 0, 1);
-    self playerlinkto(var_44fa3f00f2040a19);
+    fallent = spawn("script_model", self.origin);
+    fallent.angles = self.angles;
+    fallent setmodel("tag_origin");
+    self playerlinkto(fallent);
+    fallent moveto(spawnpos + (0, 0, 24), jumptime, 0, 1);
+    self playerlinkto(fallent);
     parachute = spawn("script_model", self.origin + (0, 0, 300));
     parachute setmodel("ctl_parachute_player");
     parachute notsolid();
@@ -125,18 +125,18 @@ function jumplistener(heli, jumptime) {
     self unlink();
     heli.playerslots = array_remove(heli.playerslots, self);
     self setcandamage(1);
-    val::function_c9d0b43701bdba00("br_heli");
+    val::reset_all("br_heli");
     if (isdefined(heli)) {
         heli jumpdone();
     }
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x956
 // Size: 0x83
 function parachuteupdater(parachute) {
-    while (1) {
+    while (true) {
         if (self isonground() || !isalive(self)) {
             self.br_fallaccel = (0, 0, 0);
             parachute delete();
@@ -149,17 +149,17 @@ function parachuteupdater(parachute) {
     }
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e0
 // Size: 0x1dd
-function spawnheli(var_dba28832815db73f, spawnpos) {
+function spawnheli(helinum, spawnpos) {
     streakname = "jackal";
     streakinfo = fakestreakinfo();
-    var_d451d87b8d202be6 = "veh_blima_gunner_proto_mp";
-    var_a7afbebb4dc98ce7 = "veh8_mil_air_blima_gunner_streak_proto";
+    heli_vehicle = "veh_blima_gunner_proto_mp";
+    heli_model = "veh8_mil_air_blima_gunner_streak_proto";
     var_75e017ae58f23a0 = 1500;
-    heli = spawnvehicle(var_a7afbebb4dc98ce7, "br_spawn_heli_" + var_dba28832815db73f, var_d451d87b8d202be6, spawnpos, (0, -90, 0));
+    heli = spawnvehicle(heli_model, "br_spawn_heli_" + helinum, heli_vehicle, spawnpos, (0, -90, 0));
     heli.streakinfo = streakinfo;
     heli vehicle_setspeed(30, 15, 5);
     heli notsolid(0);
@@ -174,7 +174,7 @@ function spawnheli(var_dba28832815db73f, spawnpos) {
     heli.leaving = 0;
     heli.queuetokens = 0;
     heli.playerslots = [];
-    heli.playeroffsets = [0:(32, 30, -135), 1:(-32, 30, -135), 2:(0, 30, -135), 3:(16, 30, -135), 4:(-16, 30, -135)];
+    heli.playeroffsets = [(32, 30, -135), (-32, 30, -135), (0, 30, -135), (16, 30, -135), (-16, 30, -135)];
     heli.jumpslots = [];
     for (i = 0; i < 10; i++) {
         heli.jumpslots[i] = 0;
@@ -182,7 +182,7 @@ function spawnheli(var_dba28832815db73f, spawnpos) {
     return heli;
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc5
 // Size: 0x6b
@@ -199,7 +199,7 @@ function getfirstopenjumporigin() {
     return self.trail[9];
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc38
 // Size: 0x2a
@@ -208,7 +208,7 @@ function calctrailpoint() {
     return droppoint;
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6a
 // Size: 0x15a
@@ -222,7 +222,7 @@ function helipathmemory() {
         struct.angles = self.angles;
         self.trail[i] = struct;
     }
-    while (1) {
+    while (true) {
         for (i = 9; i > 0; i--) {
             self.trail[i].origin = self.trail[i - 1].origin;
             self.trail[i].angles = self.trail[i - 1].angles;
@@ -235,7 +235,7 @@ function helipathmemory() {
     }
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdcb
 // Size: 0xe2
@@ -257,15 +257,15 @@ function fakestreakinfo() {
     return streakinfo;
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb5
 // Size: 0x1b
-function ishelicopterfull(var_b0f792173c02c214) {
-    return var_b0f792173c02c214.playerslots.size == 10;
+function ishelicopterfull(copter) {
+    return copter.playerslots.size == 10;
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed8
 // Size: 0x2d
@@ -273,7 +273,7 @@ function sorthelosize(a, b) {
     return a.playerslots.size < b.playerslots.size;
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x16d
@@ -292,16 +292,16 @@ function getnexthelicopterwithroom(team) {
         }
     } else {
         var_2cc0a74e48cbf1cf = array_sort_with_func(level.br_helicopters, &sorthelosize);
-        foreach (var_e1fc45cb1d9e92f7 in var_2cc0a74e48cbf1cf) {
-            if (!ishelicopterfull(var_e1fc45cb1d9e92f7)) {
-                return var_e1fc45cb1d9e92f7;
+        foreach (helo in var_2cc0a74e48cbf1cf) {
+            if (!ishelicopterfull(helo)) {
+                return helo;
             }
         }
     }
     return undefined;
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1082
 // Size: 0x89
@@ -314,7 +314,7 @@ function kickanyremainingplayers() {
     }
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1112
 // Size: 0x14c
@@ -324,24 +324,24 @@ function exitandcleanup() {
     kickanyremainingplayers();
     self notify("begin_exit");
     self.leaving = 1;
-    var_5fa1e1697a302583 = getent("airstrikeheight", "targetname");
-    spawnheight = var_5fa1e1697a302583.origin[2];
+    heightent = getent("airstrikeheight", "targetname");
+    spawnheight = heightent.origin[2];
     mapcenter = (level.br_level.br_mapbounds[0] + level.br_level.br_mapbounds[1]) * 0.5;
-    var_d30d83160adfa539 = self.origin - mapcenter;
-    var_d30d83160adfa539 = (var_d30d83160adfa539[0], var_d30d83160adfa539[1], 0);
-    exitdir = vectornormalize(var_d30d83160adfa539);
-    var_ffce0466e6339868 = self.origin + exitdir * 10000 + (0, 0, 1) * spawnheight;
+    exitvec = self.origin - mapcenter;
+    exitvec = (exitvec[0], exitvec[1], 0);
+    exitdir = vectornormalize(exitvec);
+    exitendpoint = self.origin + exitdir * 10000 + (0, 0, 1) * spawnheight;
     exit_speed = 150;
     var_d1ef5a7d6b232a76 = 50;
     var_62773ac99d83d437 = 350;
     self vehicle_setspeed(exit_speed, var_d1ef5a7d6b232a76, var_d1ef5a7d6b232a76);
-    self setvehgoalpos(var_ffce0466e6339868, 0);
+    self setvehgoalpos(exitendpoint, 0);
     self setneargoalnotifydist(var_62773ac99d83d437);
     self waittill("near_goal");
     self delete();
 }
 
-// Namespace br_helicopters/namespace_5dd9c938a1d0a5bf
+// Namespace br_helicopters / scripts/mp/gametypes/br_helicopters
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1265
 // Size: 0x70

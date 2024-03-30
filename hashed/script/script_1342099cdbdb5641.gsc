@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using script_2047cdbf5176ba0;
 #using script_92b815b18f0ba61;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_4112b9259c9e0b23;
 #using script_2d28a28173247bad;
@@ -17,7 +17,7 @@
 
 #namespace namespace_b4c8e0f55ba8c71c;
 
-// Namespace namespace_b4c8e0f55ba8c71c/namespace_dd1b81793708120f
+// Namespace namespace_b4c8e0f55ba8c71c / namespace_dd1b81793708120f
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x209
 // Size: 0x11
@@ -25,7 +25,7 @@ function autoexec init() {
     level.var_efcc16c5e7fc5a6c = &main;
 }
 
-// Namespace namespace_b4c8e0f55ba8c71c/namespace_dd1b81793708120f
+// Namespace namespace_b4c8e0f55ba8c71c / namespace_dd1b81793708120f
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x221
 // Size: 0xfd
@@ -34,13 +34,13 @@ function main() {
     level thread function_3e48493972223605();
     namespace_644f62ff38e6df05::main();
     namespace_2469fcf354bc890d::main();
-    namespace_3c37cb17ade254d::flag_set("gas_station_create_script_initialized");
+    scripts/engine/utility::flag_set("gas_station_create_script_initialized");
     function_3c461eaaf1b29eae();
     namespace_2fd4af9f8020b5a0::main();
     thread namespace_6776e8e74ed64842::init();
     if (getdvarint(@"hash_f0651f120dc9412d", 0)) {
         namespace_8f52b12ca3af49b1::main();
-        namespace_609a42b1d504aad6::function_30a591676d601c38();
+        namespace_609a42b1d504aad6::quest_init();
         return;
     }
     if (getdvar(@"hash_6ffd9adb060c50c9", "0") == "1") {
@@ -56,7 +56,7 @@ function main() {
     level thread namespace_f9b6a4254d2d8100::function_63c6d4fbc0bc4d94(var_21af84bdbe252659);
 }
 
-// Namespace namespace_b4c8e0f55ba8c71c/namespace_dd1b81793708120f
+// Namespace namespace_b4c8e0f55ba8c71c / namespace_dd1b81793708120f
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x325
 // Size: 0x12f
@@ -64,11 +64,11 @@ function function_3e48493972223605() {
     setdvar(@"hash_f1d095735ac37f33", 1);
     waitframe();
     function_9b8829ab4092a7d7("ob_zombie_ambient", 1);
-    var_f6e341b64f830a1 = namespace_3c37cb17ade254d::getstructarray("s_ob_infil_supress", "targetname");
-    foreach (pos in var_f6e341b64f830a1) {
+    a_pos = scripts/engine/utility::getstructarray("s_ob_infil_supress", "targetname");
+    foreach (pos in a_pos) {
         function_606642b946a01237("infil_supress", pos.origin, pos.radius, 1);
     }
-    var_102014ab68ac4b78 = namespace_3c37cb17ade254d::getstructarray("s_ambient_blocker", "targetname");
+    var_102014ab68ac4b78 = scripts/engine/utility::getstructarray("s_ambient_blocker", "targetname");
     foreach (pos in var_102014ab68ac4b78) {
         if (isdefined(pos.radius)) {
             function_606642b946a01237("ambient_blocker", pos.origin, pos.radius, 1);
@@ -76,7 +76,7 @@ function function_3e48493972223605() {
     }
 }
 
-// Namespace namespace_b4c8e0f55ba8c71c/namespace_dd1b81793708120f
+// Namespace namespace_b4c8e0f55ba8c71c / namespace_dd1b81793708120f
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45b
 // Size: 0x11
@@ -85,7 +85,7 @@ function function_8716ff985c51f50c() {
     namespace_614554f86e52695c::function_b1fa4578ef08136f();
 }
 
-// Namespace namespace_b4c8e0f55ba8c71c/namespace_dd1b81793708120f
+// Namespace namespace_b4c8e0f55ba8c71c / namespace_dd1b81793708120f
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x473
 // Size: 0xf

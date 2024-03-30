@@ -9,7 +9,7 @@
 
 #namespace xmike109;
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x365
 // Size: 0x54
@@ -23,7 +23,7 @@ function initusage(weapon) {
     self.xmike109.active = 1;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c0
 // Size: 0x5b
@@ -35,11 +35,11 @@ function usageloop(weapon) {
     if (ammotype == "mag_xmike109") {
         return;
     }
-    var_6f14bbb852dacaf9 = getxmike109impactfunc(ammotype);
-    thread impactwatcher(weapon, ammotype, var_6f14bbb852dacaf9);
+    impactfunc = getxmike109impactfunc(ammotype);
+    thread impactwatcher(weapon, ammotype, impactfunc);
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x422
 // Size: 0x16
@@ -49,11 +49,11 @@ function cleanupafterweaponswitch() {
     self notify("cleanupXMike109ImpactWatcher");
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43f
 // Size: 0xd8
-function impactwatcher(var_551411054e80b44b, ammotype, var_2c27f44e59e5e0eb) {
+function impactwatcher(watcherweapon, ammotype, var_2c27f44e59e5e0eb) {
     self notify("cleanupXMike109ImpactWatcher");
     self endon("disconnect");
     self endon("cleanupXMike109ImpactWatcher");
@@ -61,38 +61,38 @@ function impactwatcher(var_551411054e80b44b, ammotype, var_2c27f44e59e5e0eb) {
     if (ammotype == "default") {
         return;
     }
-    while (1) {
-        hitloc = impactpos = var_f07322c0d6ca069c = weapon = surfacetype = surfacenormal = var_b3fcd958f4d7876e = hitent = var_9d7ca6252f103a3b = self waittill("bullet_first_impact");
-        if (var_551411054e80b44b != weapon) {
+    while (true) {
+        var_9d7ca6252f103a3b, hitent, hitentpart, surfacenormal, surfacetype, weapon, bulletdir, impactpos, hitloc = self waittill("bullet_first_impact");
+        if (watcherweapon != weapon) {
             continue;
         }
-        handleimpact(hitent, var_b3fcd958f4d7876e, hitloc, surfacenormal, surfacetype, weapon, var_f07322c0d6ca069c, impactpos, var_2c27f44e59e5e0eb, ammotype);
+        handleimpact(hitent, hitentpart, hitloc, surfacenormal, surfacetype, weapon, bulletdir, impactpos, var_2c27f44e59e5e0eb, ammotype);
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51e
 // Size: 0xc9
-function handleimpact(hitent, var_b3fcd958f4d7876e, hitloc, surfacenormal, surfacetype, weapon, var_f07322c0d6ca069c, impactpos, var_2c27f44e59e5e0eb, ammotype) {
-    var_87442b30a6159847 = shouldreflect(surfacetype, ammotype, hitent, var_b3fcd958f4d7876e, surfacenormal, var_f07322c0d6ca069c);
-    projectile = spawnprojectile(impactpos, var_f07322c0d6ca069c, ammotype, weapon, var_87442b30a6159847, surfacenormal);
+function handleimpact(hitent, hitentpart, hitloc, surfacenormal, surfacetype, weapon, bulletdir, impactpos, var_2c27f44e59e5e0eb, ammotype) {
+    reflected = shouldreflect(surfacetype, ammotype, hitent, hitentpart, surfacenormal, bulletdir);
+    projectile = spawnprojectile(impactpos, bulletdir, ammotype, weapon, reflected, surfacenormal);
     if (shoulddeleteimmediately(hitent)) {
         projectile delete();
         return;
-    } else if (shouldlink(hitent, var_87442b30a6159847)) {
-        linktoent(projectile, hitent, var_b3fcd958f4d7876e);
+    } else if (shouldlink(hitent, reflected)) {
+        linktoent(projectile, hitent, hitentpart);
     }
     if (isdefined(var_2c27f44e59e5e0eb)) {
-        [[ var_2c27f44e59e5e0eb ]](projectile, hitent, var_b3fcd958f4d7876e, hitloc, surfacetype, var_87442b30a6159847);
+        [[ var_2c27f44e59e5e0eb ]](projectile, hitent, hitentpart, hitloc, surfacetype, reflected);
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ee
 // Size: 0xb8
-function impactfunc_explo(projectile, hitent, var_b3fcd958f4d7876e, hitloc, surfacetype, var_87442b30a6159847) {
+function impactfunc_explo(projectile, hitent, hitentpart, hitloc, surfacetype, reflected) {
     fusetime = 0.1;
     projectile.grenade = magicgrenademanual("semtex_xmike109_mp", projectile.origin, (0, 0, 0), fusetime);
     projectile.grenade.angles = projectile.angles;
@@ -100,23 +100,23 @@ function impactfunc_explo(projectile, hitent, var_b3fcd958f4d7876e, hitloc, surf
     thread projectileimpactexplode(projectile, fusetime, hitloc);
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ad
 // Size: 0x41
-function impactfunc_fire(projectile, hitent, var_b3fcd958f4d7876e, hitloc, surfacetype, var_87442b30a6159847) {
-    thread projectileimpactthermite(projectile, hitent, var_b3fcd958f4d7876e, hitloc, var_87442b30a6159847);
+function impactfunc_fire(projectile, hitent, hitentpart, hitloc, surfacetype, reflected) {
+    thread projectileimpactthermite(projectile, hitent, hitentpart, hitloc, reflected);
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f5
 // Size: 0x34
-function impactfunc_null(projectile, hitent, var_b3fcd958f4d7876e, hitloc, surfacetype, var_87442b30a6159847) {
+function impactfunc_null(projectile, hitent, hitentpart, hitloc, surfacetype, reflected) {
     
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x730
 // Size: 0x164
@@ -125,17 +125,17 @@ function projectileimpactexplode(projectile, fusetime, hitloc) {
     projectile endon("entitydeleted");
     projectile.grenade waittill_any_timeout_no_endon_death_1(fusetime, "explode");
     projectile setscriptablepartstate("effects", "explode");
-    var_f6f7da32d9dcdd7f = makeweapon("semtex_xmike109_mp");
-    var_fc2162402fee9cea = makeweapon("semtex_xmike109_splash_mp");
-    function_49967318fbd12317(var_f6f7da32d9dcdd7f, projectile.weapon);
-    function_49967318fbd12317(var_fc2162402fee9cea, projectile.weapon);
+    stuckweapon = makeweapon("semtex_xmike109_mp");
+    splashweapon = makeweapon("semtex_xmike109_splash_mp");
+    function_49967318fbd12317(stuckweapon, projectile.weapon);
+    function_49967318fbd12317(splashweapon, projectile.weapon);
     glassradiusdamage(projectile.origin, 150, 50, 1);
     if (isdefined(projectile.stuckenemyentity) && isalive(projectile.stuckenemyentity)) {
-        projectile.stuckenemyentity namespace_169cd7a8fbc76ee5::forcestuckdamage();
-        projectile.stuckenemyentity dodamage(140, projectile.origin, self, self, "MOD_EXPLOSIVE", var_f6f7da32d9dcdd7f, hitloc);
-        projectile.stuckenemyentity namespace_169cd7a8fbc76ee5::forcestuckdamageclear();
+        projectile.stuckenemyentity scripts/cp_mp/utility/damage_utility::forcestuckdamage();
+        projectile.stuckenemyentity dodamage(140, projectile.origin, self, self, "MOD_EXPLOSIVE", stuckweapon, hitloc);
+        projectile.stuckenemyentity scripts/cp_mp/utility/damage_utility::forcestuckdamageclear();
     }
-    radiusdamagestepped(projectile.origin, 9, 35, 15, 25, 60, 14, self, "MOD_EXPLOSIVE", var_fc2162402fee9cea);
+    radiusdamagestepped(projectile.origin, 9, 35, 15, 25, 60, 14, self, "MOD_EXPLOSIVE", splashweapon);
     wait(0.4);
     if (!projectile validateprojectileent()) {
         return;
@@ -143,11 +143,11 @@ function projectileimpactexplode(projectile, fusetime, hitloc) {
     projectile delete();
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x80
-function projectileimpactthermite(projectile, hitent, var_b3fcd958f4d7876e, hitloc, var_87442b30a6159847) {
+function projectileimpactthermite(projectile, hitent, hitentpart, hitloc, reflected) {
     if (istrue(projectile.isgrenade)) {
         projectile setscriptablepartstate("effects", "reflectThermite");
         waitforstuck(projectile);
@@ -158,21 +158,21 @@ function projectileimpactthermite(projectile, hitent, var_b3fcd958f4d7876e, hitl
     thread thermiteburnout(projectile);
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x922
 // Size: 0x57
 function waitforstuck(projectile) {
     projectile endon("stuckWaitTimeout");
     projectile thread projectilewaittilstucktimeout();
-    var_16a48d7056e5c472 = stuckto = projectile waittill("missile_stuck");
+    stuckto, stuckpart = projectile waittill("missile_stuck");
     if (isdefined(stuckto)) {
-        linktoent(projectile, stuckto, var_16a48d7056e5c472);
+        linktoent(projectile, stuckto, stuckpart);
         projectile.bounceshot = 1;
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x980
 // Size: 0x13
@@ -183,36 +183,36 @@ function projectilewaittilstucktimeout() {
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x99a
 // Size: 0x19a
 function thermitestuckto(projectile) {
     self endon("disconnect");
     projectile endon("entitydeleted");
-    var_f6f7da32d9dcdd7f = makeweapon("thermite_xmike109_mp");
-    function_49967318fbd12317(var_f6f7da32d9dcdd7f, projectile.weapon);
+    stuckweapon = makeweapon("thermite_xmike109_mp");
+    function_49967318fbd12317(stuckweapon, projectile.weapon);
     if (isdefined(projectile.stuckenemyentity) && isalive(projectile.stuckenemyentity)) {
-        if (projectile.stuckenemyentity namespace_1f188a13f7e79610::isvehicle() || isdefined(projectile.stuckenemyentity.classname) && projectile.stuckenemyentity.classname == "misc_turret") {
+        if (projectile.stuckenemyentity scripts/cp_mp/vehicles/vehicle::isvehicle() || isdefined(projectile.stuckenemyentity.classname) && projectile.stuckenemyentity.classname == "misc_turret") {
             damage_interval = 0.95;
         } else {
             damage_interval = 0.25;
         }
         if (istrue(projectile.bounceshot)) {
-            projectile.stuckenemyentity dodamage(80, projectile.origin, self, projectile, "MOD_FIRE", var_f6f7da32d9dcdd7f);
+            projectile.stuckenemyentity dodamage(80, projectile.origin, self, projectile, "MOD_FIRE", stuckweapon);
         }
         ticks = int(3 / damage_interval);
         while (isdefined(projectile) && isdefined(projectile.stuckenemyentity) && isalive(projectile.stuckenemyentity) && ticks >= 0) {
-            projectile.stuckenemyentity namespace_169cd7a8fbc76ee5::forcestuckdamage();
-            projectile.stuckenemyentity dodamage(3, projectile.origin, self, projectile, "MOD_FIRE", var_f6f7da32d9dcdd7f);
-            projectile.stuckenemyentity namespace_169cd7a8fbc76ee5::forcestuckdamageclear();
+            projectile.stuckenemyentity scripts/cp_mp/utility/damage_utility::forcestuckdamage();
+            projectile.stuckenemyentity dodamage(3, projectile.origin, self, projectile, "MOD_FIRE", stuckweapon);
+            projectile.stuckenemyentity scripts/cp_mp/utility/damage_utility::forcestuckdamageclear();
             ticks--;
             wait(damage_interval);
         }
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb3b
 // Size: 0x11b
@@ -220,40 +220,40 @@ function thermiteradiusdamage(projectile) {
     self endon("disconnect");
     projectile endon("entitydeleted");
     ticks = int(12);
-    var_fa52c6d10ef1f00f = makeweapon("thermite_xmike109_radius_mp");
-    function_49967318fbd12317(var_fa52c6d10ef1f00f, projectile.weapon);
-    projectile.thermiteradiusweaponref = var_fa52c6d10ef1f00f.basename;
+    radiusweapon = makeweapon("thermite_xmike109_radius_mp");
+    function_49967318fbd12317(radiusweapon, projectile.weapon);
+    projectile.thermiteradiusweaponref = radiusweapon.basename;
     while (ticks > 0) {
         if (isdefined(projectile.stuckenemyentity) && isalive(projectile.stuckenemyentity)) {
-            projectile.stuckenemyentity namespace_169cd7a8fbc76ee5::adddamagemodifier("thermite25mmStuck", 0, 0, &thermite_damagemodifierignorefunc);
+            projectile.stuckenemyentity scripts/cp_mp/utility/damage_utility::adddamagemodifier("thermite25mmStuck", 0, 0, &thermite_damagemodifierignorefunc);
         }
-        projectile radiusdamage(projectile.origin, 50, 2, 2, self, "MOD_FIRE", var_fa52c6d10ef1f00f);
+        projectile radiusdamage(projectile.origin, 50, 2, 2, self, "MOD_FIRE", radiusweapon);
         if (isdefined(projectile.stuckenemyentity) && isalive(projectile.stuckenemyentity)) {
-            projectile.stuckenemyentity namespace_169cd7a8fbc76ee5::removedamagemodifier("thermite25mmStuck", 0);
+            projectile.stuckenemyentity scripts/cp_mp/utility/damage_utility::removedamagemodifier("thermite25mmStuck", 0);
         }
         ticks--;
         wait(0.25);
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc5d
 // Size: 0x92
 function thermite_damagemodifierignorefunc(inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc) {
     if (!isdefined(inflictor)) {
-        return 1;
+        return true;
     }
     if (!isdefined(inflictor.thermiteradiusweaponref) || inflictor.thermiteradiusweaponref != "thermite_xmike109_radius_mp") {
-        return 1;
+        return true;
     }
     if (!isdefined(inflictor.stuckenemyentity) || inflictor.stuckenemyentity != victim) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcf7
 // Size: 0x72
@@ -273,13 +273,13 @@ function thermiteburnout(projectile) {
     projectile delete();
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd70
 // Size: 0x155
-function spawnprojectile(impactpos, var_f07322c0d6ca069c, ammotype, weapon, var_87442b30a6159847, surfacenormal) {
-    if (var_87442b30a6159847 && ammotype == "thermal") {
-        vel = reflectprojectile(surfacenormal, var_f07322c0d6ca069c, impactpos, 1);
+function spawnprojectile(impactpos, bulletdir, ammotype, weapon, reflected, surfacenormal) {
+    if (reflected && ammotype == "thermal") {
+        vel = reflectprojectile(surfacenormal, bulletdir, impactpos, 1);
         org = impactpos + surfacenormal * 10;
         projectile = magicgrenademanual("xmike109_grenade", org, vel, 10);
         projectile.isgrenade = 1;
@@ -288,12 +288,12 @@ function spawnprojectile(impactpos, var_f07322c0d6ca069c, ammotype, weapon, var_
         projectile = spawn("script_model", impactpos);
         projectile setmodel("weapon_wm_sn_xmike109_projectile");
         projectile.origin = impactpos;
-        if (var_87442b30a6159847) {
-            vel = reflectprojectile(surfacenormal, var_f07322c0d6ca069c, impactpos, 0);
+        if (reflected) {
+            vel = reflectprojectile(surfacenormal, bulletdir, impactpos, 0);
             projectile physicslaunchserver(impactpos, vel);
         }
     }
-    projectile.angles = vectortoangles(var_f07322c0d6ca069c);
+    projectile.angles = vectortoangles(bulletdir);
     projectile setdeleteable(ammotype);
     projectile.owner = self;
     projectile.ammotype = ammotype;
@@ -304,7 +304,7 @@ function spawnprojectile(impactpos, var_f07322c0d6ca069c, ammotype, weapon, var_
     return projectile;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xecd
 // Size: 0x6b
@@ -323,7 +323,7 @@ function setdeleteable(ammotype) {
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf3f
 // Size: 0x27
@@ -334,32 +334,32 @@ function setdeleteabletimer(time) {
     manageworldspawnedprojectiles();
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf6d
 // Size: 0xb3
 function manageworldspawnedprojectiles(newstruct) {
     if (isdefined(newstruct)) {
-        var_5c397c9cf7a06802 = [0:newstruct];
+        temparr = [newstruct];
     } else {
-        var_5c397c9cf7a06802 = [];
+        temparr = [];
     }
     foreach (projectiles in level.xmike109projectiles) {
         if (!isdefined(projectiles)) {
             continue;
         }
         if (isdefined(projectiles)) {
-            if (var_5c397c9cf7a06802.size >= 4 && projectiles.deleteable) {
+            if (temparr.size >= 4 && projectiles.deleteable) {
                 projectiles delete();
-            } else {
-                var_5c397c9cf7a06802[var_5c397c9cf7a06802.size] = projectiles;
+                continue;
             }
+            temparr[temparr.size] = projectiles;
         }
     }
-    level.xmike109projectiles = var_5c397c9cf7a06802;
+    level.xmike109projectiles = temparr;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1027
 // Size: 0xbe
@@ -378,11 +378,10 @@ function getxmike109ammotype(weapon) {
         return "explosive";
     default:
         return "default";
-        break;
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10ec
 // Size: 0x4b
@@ -394,15 +393,14 @@ function getxmike109impactfunc(ammotype) {
         return &impactfunc_explo;
     default:
         return &impactfunc_null;
-        break;
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x113e
 // Size: 0x136
-function shouldreflect(surfacetype, ammotype, hitent, var_b3fcd958f4d7876e, surfacenormal, var_f07322c0d6ca069c) {
+function shouldreflect(surfacetype, ammotype, hitent, hitentpart, surfacenormal, bulletdir) {
     if (!isdefined(surfacetype)) {
         surfacetype = "";
     }
@@ -412,7 +410,7 @@ function shouldreflect(surfacetype, ammotype, hitent, var_b3fcd958f4d7876e, surf
     if (ammotype != "thermal") {
         return 0;
     }
-    if (!isdefined(hitent) && isdefined(var_b3fcd958f4d7876e)) {
+    if (!isdefined(hitent) && isdefined(hitentpart)) {
         return 1;
     }
     if (issameteamplayer(hitent) || issameteamagent(hitent)) {
@@ -422,7 +420,7 @@ function shouldreflect(surfacetype, ammotype, hitent, var_b3fcd958f4d7876e, surf
         return 0;
     }
     if (isdefined(hitent)) {
-        if (hitent namespace_1f188a13f7e79610::isvehicle()) {
+        if (hitent scripts/cp_mp/vehicles/vehicle::isvehicle()) {
             return 0;
         }
         if (isdefined(hitent.equipmentref) && hitent.equipmentref == "equip_tac_cover") {
@@ -435,7 +433,7 @@ function shouldreflect(surfacetype, ammotype, hitent, var_b3fcd958f4d7876e, surf
     case #"hash_8c9d4c67dcde81f2":
         return 1;
     default:
-        dot = abs(vectordot(var_f07322c0d6ca069c, surfacenormal));
+        dot = abs(vectordot(bulletdir, surfacenormal));
         if (dot < 0.2) {
             return 1;
         } else {
@@ -445,60 +443,60 @@ function shouldreflect(surfacetype, ammotype, hitent, var_b3fcd958f4d7876e, surf
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x127b
 // Size: 0xf2
-function reflectprojectile(surfacenormal, var_f07322c0d6ca069c, impactpos, isgrenade) {
+function reflectprojectile(surfacenormal, bulletdir, impactpos, isgrenade) {
     if (isgrenade) {
-        var_88545910d2fbd70a = 1500;
-        var_88774d10d322045e = 500;
-        var_88774310d321ee60 = 150;
+        speedmax = 1500;
+        speedmid = 500;
+        speedmin = 150;
     } else {
-        var_88545910d2fbd70a = 500;
-        var_88774d10d322045e = 500;
-        var_88774310d321ee60 = 500;
+        speedmax = 500;
+        speedmid = 500;
+        speedmin = 500;
     }
-    vec = math::vector_reflect(var_f07322c0d6ca069c, surfacenormal);
+    vec = math::vector_reflect(bulletdir, surfacenormal);
     vec = vectorlerp(vec, surfacenormal, 0.2);
-    dot = abs(vectordot(var_f07322c0d6ca069c, surfacenormal));
+    dot = abs(vectordot(bulletdir, surfacenormal));
     if (dot < 0.2) {
         dot = math::normalize_value(0, 0.2, dot);
-        var_91f849dfa0f2014c = math::factor_value(var_88545910d2fbd70a, var_88774d10d322045e, dot);
+        reflect_velocity = math::factor_value(speedmax, speedmid, dot);
     } else {
         dot = math::normalize_value(0.2, 1, dot);
-        var_91f849dfa0f2014c = math::factor_value(var_88774d10d322045e, var_88774310d321ee60, dot);
+        reflect_velocity = math::factor_value(speedmid, speedmin, dot);
     }
-    vec = vec * var_91f849dfa0f2014c;
+    vec = vec * reflect_velocity;
     return vec;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1375
 // Size: 0x40
 function shoulddeleteimmediately(hitent) {
     if (!isdefined(hitent)) {
-        return 0;
+        return false;
     }
     if (isagent(hitent) && hitent is_suicidebomber() && !isalive(hitent) && !isdefined(hitent getcorpseentity())) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13bd
 // Size: 0x22
-function shouldlink(hitent, var_87442b30a6159847) {
-    if (var_87442b30a6159847 || !isdefined(hitent)) {
-        return 0;
+function shouldlink(hitent, reflected) {
+    if (reflected || !isdefined(hitent)) {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13e7
 // Size: 0x21
@@ -506,11 +504,11 @@ function is_suicidebomber() {
     return istrue(isdefined(self.unittype) && self.unittype == "suicidebomber");
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1410
 // Size: 0xea
-function linktoent(projectile, hitent, var_b3fcd958f4d7876e) {
+function linktoent(projectile, hitent, hitentpart) {
     if ((isplayer(hitent) || isagent(hitent)) && !isalive(hitent)) {
         corpse = hitent getcorpseentity();
         if (isdefined(corpse)) {
@@ -520,8 +518,8 @@ function linktoent(projectile, hitent, var_b3fcd958f4d7876e) {
     if (isplayer(hitent)) {
         projectile hidefromplayer(hitent);
     }
-    if (isdefined(var_b3fcd958f4d7876e)) {
-        projectile linkto(hitent, var_b3fcd958f4d7876e);
+    if (isdefined(hitentpart)) {
+        projectile linkto(hitent, hitentpart);
     } else {
         projectile linkto(hitent);
     }
@@ -538,21 +536,20 @@ function linktoent(projectile, hitent, var_b3fcd958f4d7876e) {
     projectile thread projectiledeleteonnote(hitent, "beginC130");
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1501
 // Size: 0x2a
 function validateprojectileent() {
     if (isdefined(self) && istrue(self.isxmike109projectile)) {
         return 1;
-    } else {
-        /#
-            assertmsg("Ent expects to be a XMike109 bolt, but no longer is.");
-        #/
     }
+    /#
+        assertmsg("Ent expects to be a XMike109 bolt, but no longer is.");
+    #/
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1532
 // Size: 0x5a
@@ -568,7 +565,7 @@ function removestuckenemyondeathordisconnect(hitent) {
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1593
 // Size: 0x4a
@@ -585,13 +582,13 @@ function projectileunlinkonnote(hitent) {
     projectileunlink();
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15e4
 // Size: 0x55
-function projectileunlink(var_5be247f60b965650) {
-    if (!isdefined(var_5be247f60b965650)) {
-        var_5be247f60b965650 = (0, 0, 100);
+function projectileunlink(launchvec) {
+    if (!isdefined(launchvec)) {
+        launchvec = (0, 0, 100);
     }
     if (self islinked()) {
         self unlink();
@@ -599,10 +596,10 @@ function projectileunlink(var_5be247f60b965650) {
     if (!istrue(self.isgrenade)) {
         self solid();
     }
-    self physicslaunchserver(self.origin, var_5be247f60b965650);
+    self physicslaunchserver(self.origin, launchvec);
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1640
 // Size: 0x30
@@ -615,7 +612,7 @@ function projectiledeleteonnote(hitent, note) {
     self delete();
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1677
 // Size: 0x27
@@ -626,7 +623,7 @@ function projectiledeletethread() {
     }
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16a5
 // Size: 0x29
@@ -634,14 +631,13 @@ function issameteamplayer(hitent) {
     if (!isplayer(hitent)) {
         return 0;
     }
-    if (namespace_f8065cafc523dba5::isenemy(hitent)) {
+    if (scripts/cp_mp/utility/player_utility::isenemy(hitent)) {
         return 0;
-    } else {
-        return 1;
     }
+    return 1;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16d5
 // Size: 0x29
@@ -649,68 +645,67 @@ function isenemyteamplayer(hitent) {
     if (!isplayer(hitent)) {
         return 0;
     }
-    if (namespace_f8065cafc523dba5::isenemy(hitent)) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
-// Namespace xmike109/namespace_e78acea1c1a70fc
-// Params 1, eflags: 0x2 linked
-// Checksum 0x0, Offset: 0x1705
-// Size: 0x43
-function issameteamagent(hitent) {
-    if (!isagent(hitent)) {
-        return 0;
-    }
-    if (isdefined(hitent.agentteam) && self.team == hitent.agentteam) {
+    if (scripts/cp_mp/utility/player_utility::isenemy(hitent)) {
         return 1;
     }
     return 0;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
+// Params 1, eflags: 0x2 linked
+// Checksum 0x0, Offset: 0x1705
+// Size: 0x43
+function issameteamagent(hitent) {
+    if (!isagent(hitent)) {
+        return false;
+    }
+    if (isdefined(hitent.agentteam) && self.team == hitent.agentteam) {
+        return true;
+    }
+    return false;
+}
+
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1750
 // Size: 0x43
 function isenemyteamagent(hitent) {
     if (!isagent(hitent)) {
-        return 0;
+        return false;
     }
     if (isdefined(hitent.agentteam) && self.team == hitent.agentteam) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace xmike109/namespace_e78acea1c1a70fc
+// Namespace xmike109 / scripts/cp_mp/xmike109
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x179b
 // Size: 0xf1
 function cansticktoent(hitent) {
-    var_eb5a204e520cc8a3 = 0;
+    canstick = 0;
     if (isplayer(hitent) || isagent(hitent)) {
-        var_eb5a204e520cc8a3 = 1;
+        canstick = 1;
     }
-    if (hitent namespace_1f188a13f7e79610::isvehicle()) {
-        var_eb5a204e520cc8a3 = 1;
+    if (hitent scripts/cp_mp/vehicles/vehicle::isvehicle()) {
+        canstick = 1;
     }
     if (isdefined(hitent.classname)) {
         if (hitent.classname == "misc_turret") {
-            var_eb5a204e520cc8a3 = 1;
+            canstick = 1;
         }
         if (hitent.classname == "script_model") {
             if (isdefined(hitent.streakinfo) && (hitent.streakinfo.streakname == "uav" || hitent.streakinfo.streakname == "gunship")) {
-                var_eb5a204e520cc8a3 = 1;
+                canstick = 1;
             }
         }
     }
     if (isdefined(hitent.equipmentref)) {
         if (hitent.equipmentref == "equip_tac_cover") {
-            var_eb5a204e520cc8a3 = 1;
+            canstick = 1;
         }
     }
-    return var_eb5a204e520cc8a3;
+    return canstick;
 }
 

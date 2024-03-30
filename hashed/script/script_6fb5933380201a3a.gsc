@@ -7,7 +7,7 @@
 
 #namespace cqb;
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f
 // Size: 0x34
@@ -15,25 +15,25 @@ function setupcqbpointsofinterest() {
     level.cqbpointsofinterest = [];
     level.fnfindcqbpointsofinterest = &findcqbpointsofinterest;
     /#
-        level.var_59df2d95af603e88 = &function_256a24f9f2b871b8;
+        level.var_59df2d95af603e88 = &cqbdebug;
     #/
     thread gatherdynamiccqbstructs();
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xda
 // Size: 0x86
 function gatherdynamiccqbstructs() {
     waittillframeend();
     targetname = "poi";
-    var_41004a11197b9881 = getstructarray(targetname, "targetname");
-    foreach (point in var_41004a11197b9881) {
+    pointstructs = getstructarray(targetname, "targetname");
+    foreach (point in pointstructs) {
         level.cqbpointsofinterest[level.cqbpointsofinterest.size] = point;
     }
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x167
 // Size: 0x9c
@@ -43,7 +43,9 @@ function function_50fb5efa67518b10(poi) {
             self.cqb_point_of_interest = undefined;
             self function_f7d83c92f61dcc31(0);
         }
-    } else if (!is_equal(self.cqb_point_of_interest, poi)) {
+        return;
+    }
+    if (!is_equal(self.cqb_point_of_interest, poi)) {
         /#
             assert(isdefined(poi.origin));
         #/
@@ -52,7 +54,7 @@ function function_50fb5efa67518b10(poi) {
     }
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x139
@@ -62,10 +64,10 @@ function findcqbpointsofinterest() {
     }
     anim.findingcqbpointsofinterest = 1;
     /#
-        level thread function_256a24f9f2b871b8();
+        level thread cqbdebug();
     #/
     waitframe();
-    while (1) {
+    while (true) {
         ai = level.poi_activeai;
         if (!isdefined(ai)) {
             waitframe();
@@ -78,9 +80,9 @@ function findcqbpointsofinterest() {
                 guy function_50fb5efa67518b10(guy findbestpoi());
                 wait(0.05);
                 waited = 1;
-            } else {
-                var_c747600bddc1c484[var_c747600bddc1c484.size] = guy;
+                continue;
             }
+            var_c747600bddc1c484[var_c747600bddc1c484.size] = guy;
         }
         foreach (guy in var_c747600bddc1c484) {
             level.poi_activeai = array_remove(level.poi_activeai, guy);
@@ -91,24 +93,24 @@ function findcqbpointsofinterest() {
     }
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x34a
 // Size: 0x88
 function findbestpoi() {
     var_52690d5d67a35644 = 5000;
     ismoving = isdefined(self.pathgoalpos);
-    currentpoi = namespace_a280cc8ca2fafcf7::function_cb9cc0bf8a48e338();
-    var_debe466945cee3c5 = isdefined(currentpoi);
-    if (!var_debe466945cee3c5 && isdefined(self.poi_firstpoint)) {
+    currentpoi = scripts/asm/track::getcurrentpoi();
+    haspoi = isdefined(currentpoi);
+    if (!haspoi && isdefined(self.poi_firstpoint)) {
         return findfirstpoiinlink();
     }
-    if (var_debe466945cee3c5 && isdefined(currentpoi.target) || isdefined(self.nextpoi)) {
-        return findnextpoiinlink(var_debe466945cee3c5);
+    if (haspoi && isdefined(currentpoi.target) || isdefined(self.nextpoi)) {
+        return findnextpoiinlink(haspoi);
     }
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d9
 // Size: 0x91
@@ -126,22 +128,22 @@ function findfirstpoiinlink() {
         } else {
             return undefined;
         }
-    } else {
-        return undefined;
+        return;
     }
+    return undefined;
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x471
 // Size: 0x1c7
-function findnextpoiinlink(var_debe466945cee3c5) {
+function findnextpoiinlink(haspoi) {
     min_time = undefined;
-    currentpoi = namespace_a280cc8ca2fafcf7::function_cb9cc0bf8a48e338();
+    currentpoi = scripts/asm/track::getcurrentpoi();
     /#
-        assert(var_debe466945cee3c5 && isdefined(currentpoi.target) || isdefined(self.nextpoi));
+        assert(haspoi && isdefined(currentpoi.target) || isdefined(self.nextpoi));
     #/
-    if (var_debe466945cee3c5) {
+    if (haspoi) {
         if (isdefined(currentpoi.target)) {
             self.nextpoi = getstruct(currentpoi.target, "targetname");
         } else {
@@ -151,7 +153,7 @@ function findnextpoiinlink(var_debe466945cee3c5) {
     if (isdefined(self.poi_firstpoint)) {
         self.poi_firstpoint = undefined;
     }
-    if (var_debe466945cee3c5 && isdefined(currentpoi.script_time_min)) {
+    if (haspoi && isdefined(currentpoi.script_time_min)) {
         min_time = currentpoi.script_time_min * 1000;
     } else {
         min_time = 1200;
@@ -164,44 +166,44 @@ function findnextpoiinlink(var_debe466945cee3c5) {
             return undefined;
         }
     }
-    if (var_debe466945cee3c5 && gettime() < self.poi_starttime + min_time && iswithinfov(currentpoi)) {
+    if (haspoi && gettime() < self.poi_starttime + min_time && iswithinfov(currentpoi)) {
         return currentpoi;
-    } else if (!sighttracepassed(self geteye(), self.nextpoi.origin, 0, undefined)) {
-        return undefined;
-    } else {
-        if (!iswithinfov(self.nextpoi)) {
-            if (isdefined(self.nextpoi.target)) {
-                self.nextpoi = getstruct(self.nextpoi.target, "targetname");
-            } else {
-                poi_enable(0);
-            }
-            return undefined;
-        }
-        return self.nextpoi;
     }
+    if (!sighttracepassed(self geteye(), self.nextpoi.origin, 0, undefined)) {
+        return undefined;
+    }
+    if (!iswithinfov(self.nextpoi)) {
+        if (isdefined(self.nextpoi.target)) {
+            self.nextpoi = getstruct(self.nextpoi.target, "targetname");
+        } else {
+            poi_enable(0);
+        }
+        return undefined;
+    }
+    return self.nextpoi;
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x63f
 // Size: 0x8a
 function iswithinfov(poi) {
     if (istrue(self.poi_disablefov)) {
-        return 1;
+        return true;
     }
     /#
         assert(isdefined(poi));
     #/
-    var_8d39b8ad31508804 = anglestoforward(self.angles);
-    var_34907596d27333c2 = acos(vectordot(var_8d39b8ad31508804, vectornormalize(poi.origin - self geteye())));
+    myforward = anglestoforward(self.angles);
+    var_34907596d27333c2 = acos(vectordot(myforward, vectornormalize(poi.origin - self geteye())));
     return var_34907596d27333c2 < ter_op(isdefined(self.poi_fovlimit), self.poi_fovlimit, 90);
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d1
 // Size: 0x25
-function function_256a24f9f2b871b8() {
+function cqbdebug() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
@@ -210,7 +212,7 @@ function function_256a24f9f2b871b8() {
     #/
 }
 
-// Namespace cqb/namespace_9b37831a42423308
+// Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x175
@@ -221,18 +223,22 @@ function function_2cbce60ec0b41d2f() {
             return;
         }
         level.var_2cbce60ec0b41d2f = 1;
-        while (1) {
+        while (true) {
             if (getdvar(@"hash_e37c013185c9347c") != "<unknown string>") {
                 wait(1);
                 continue;
             }
             foreach (ai in level.poi_activeai) {
-                currentpoi = ai namespace_a280cc8ca2fafcf7::function_cb9cc0bf8a48e338();
+                currentpoi = ai scripts/asm/track::getcurrentpoi();
                 if (isdefined(currentpoi)) {
                     line(ai geteye(), currentpoi.origin, (0, 0, 1), 1, 0, 1);
-                } else if (isdefined(ai.nextpoi)) {
+                    continue;
+                }
+                if (isdefined(ai.nextpoi)) {
                     line(ai geteye(), ai.nextpoi.origin, (1, 0, 0), 1, 0, 1);
-                } else if (isdefined(ai.poi_firstpoint)) {
+                    continue;
+                }
+                if (isdefined(ai.poi_firstpoint)) {
                     line(ai geteye(), ai.poi_firstpoint.origin, (1, 0, 0), 1, 0, 1);
                 }
             }

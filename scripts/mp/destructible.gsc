@@ -1,6 +1,6 @@
 // mwiii decomp prototype
 #using scripts\common\anim.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\common\utility.gsc;
@@ -15,7 +15,7 @@
 
 #namespace destructible;
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x465
 // Size: 0x3
@@ -23,7 +23,7 @@ function init() {
     
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46f
 // Size: 0x3
@@ -31,7 +31,7 @@ function script_model_anims() {
     
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x479
 // Size: 0xe9
@@ -53,7 +53,7 @@ function create_player_rig(player, animname, var_486db5fa512a3b6b) {
     remove_player_rig(player);
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x569
 // Size: 0x92
@@ -72,7 +72,7 @@ function remove_player_rig(player) {
     player.player_rig = undefined;
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x602
 // Size: 0x1d
@@ -80,7 +80,7 @@ function watch_remove_rig(struct) {
     waittill_any_2("remove_rig", "death_or_disconnect");
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x626
 // Size: 0xdd
@@ -98,7 +98,7 @@ function add_destructible_array(value, type) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70a
 // Size: 0xf3
@@ -120,7 +120,7 @@ function add_destructible(struct, ent) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x804
 // Size: 0x1c4
@@ -171,7 +171,7 @@ function read_properties(ent) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9cf
 // Size: 0x121
@@ -201,7 +201,7 @@ function read_actions(ent) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xaf7
 // Size: 0x25
@@ -211,7 +211,7 @@ function waittime_process_action(type, time) {
     process_action(type);
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb23
 // Size: 0x1f
@@ -221,7 +221,7 @@ function waitmsg_process_action(waitmsg) {
     process_action(waitmsg);
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb49
 // Size: 0xef
@@ -239,7 +239,7 @@ function process_action(type) {
     self.state = type;
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc3f
 // Size: 0x160
@@ -276,12 +276,12 @@ function actionmap(action) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xda6
 // Size: 0x7a
 function setup_bomb_object(position) {
-    useobject = namespace_19b4203b51d56488::createhintobject(position, "HINT_BUTTON", "hud_icon_c4_plant", "MP/BREACH", undefined, undefined, undefined, 800, 120, 72, 120);
+    useobject = scripts/mp/gameobjects::createhintobject(position, "HINT_BUTTON", "hud_icon_c4_plant", "MP/BREACH", undefined, undefined, undefined, 800, 120, 72, 120);
     if (!isdefined(level.breachusetriggers)) {
         level.breachusetriggers = [];
     }
@@ -291,12 +291,12 @@ function setup_bomb_object(position) {
     return useobject;
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe28
 // Size: 0x389
 function bomb_planted_think(scenenodekey, player) {
-    var_9d423f29a3f3ffe = player.team;
+    plantedteam = player.team;
     self.defused = 0;
     if (!isdefined(self.breachindex)) {
         if (!isdefined(level.breachindex)) {
@@ -306,7 +306,7 @@ function bomb_planted_think(scenenodekey, player) {
         }
         self.breachindex = level.breachindex;
     }
-    bomb_fuse_think(var_9d423f29a3f3ffe);
+    bomb_fuse_think(plantedteam);
     if (!self.defused) {
         process_action("destroyed");
         explosionorigin = self.useobjects[scenenodekey].origin;
@@ -353,7 +353,7 @@ function bomb_planted_think(scenenodekey, player) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11b8
 // Size: 0x47
@@ -364,7 +364,7 @@ function playhostagehelp(origin) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1206
 // Size: 0x203
@@ -377,13 +377,13 @@ function bomb_fuse_think(team) {
     self.timerobject makeusable();
     assigninteractteam(getenemyteams(team));
     currenttime = gettime();
-    var_f28399727742eb23 = int(currenttime + 5000);
-    setomnvar("ui_ingame_timer_" + self.breachindex, var_f28399727742eb23);
+    bombendtime = int(currenttime + 5000);
+    setomnvar("ui_ingame_timer_" + self.breachindex, bombendtime);
     setomnvar("ui_ingame_timer_ent_" + self.breachindex, self.timerobject);
-    var_c301d652d9a73075 = var_f28399727742eb23 - currenttime;
+    var_c301d652d9a73075 = bombendtime - currenttime;
     while (!self.defused && var_c301d652d9a73075 > 0) {
         currenttime = gettime();
-        var_c301d652d9a73075 = var_f28399727742eb23 - currenttime;
+        var_c301d652d9a73075 = bombendtime - currenttime;
         if (var_c301d652d9a73075 < 1500) {
             if (var_c301d652d9a73075 <= 250) {
                 self.plantedbomb playsound("breach_warning_beep_05");
@@ -408,17 +408,17 @@ function bomb_fuse_think(team) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1410
 // Size: 0x8c
 function usetriggerthink(trigger) {
-    while (1) {
+    while (true) {
         player = trigger waittill("trigger");
         if (!array_contains(self.interactteams, player.team)) {
             continue;
         }
-        if (player namespace_68e641469fde3fa7::grenadeinpullback()) {
+        if (player scripts/mp/utility/weapon::grenadeinpullback()) {
             return 0;
         }
         if (player meleebuttonpressed()) {
@@ -429,13 +429,13 @@ function usetriggerthink(trigger) {
         }
         if (!isdefined(self.plantedbomb)) {
             plantbreachc4(trigger, player);
-        } else {
-            defusec4(player);
+            continue;
         }
+        defusec4(player);
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14a3
 // Size: 0x3bd
@@ -450,10 +450,10 @@ function plantbreachc4(trigger, player) {
         player unlink();
         player.linktoent delete();
         player.linktoent = undefined;
-        return 0;
+        return false;
     }
     if (istrue(self.cancelplant)) {
-        return 0;
+        return false;
     }
     player unlink();
     player.linktoent delete();
@@ -469,38 +469,38 @@ function plantbreachc4(trigger, player) {
     }
     player queuedialogforplayer("dx_mpp_" + faction + "_breach_plant", "cop_breach_plant", 2);
     thread create_player_rig(player, "planter");
-    player thread namespace_4e680905778c0f0f::anim_player_solo(player, player.player_rig, "plant");
-    var_f9faefd9721cae01 = spawn("script_model", self.scenenodes[trigger.scenenodekey].origin);
-    var_f9faefd9721cae01 setmodel("offhand_wm_c4");
-    var_f9faefd9721cae01.animname = "c4";
-    var_f9faefd9721cae01 useanimtree(%script_model);
-    self.plantedbomb = var_f9faefd9721cae01;
+    player thread scripts/mp/anim::anim_player_solo(player, player.player_rig, "plant");
+    wm_c4 = spawn("script_model", self.scenenodes[trigger.scenenodekey].origin);
+    wm_c4 setmodel("offhand_wm_c4");
+    wm_c4.animname = "c4";
+    wm_c4 useanimtree(%script_model);
+    self.plantedbomb = wm_c4;
     self.plantedkey = trigger.scenenodekey;
-    self.scenenodes[trigger.scenenodekey] thread anim_single_solo(var_f9faefd9721cae01, "plant");
+    self.scenenodes[trigger.scenenodekey] thread anim_single_solo(wm_c4, "plant");
     animlength = getanimlength(level.scr_anim["planter"]["plant"]);
-    var_84d825d7e4a24fde = 0.5;
-    wait(animlength - var_84d825d7e4a24fde);
+    armedtimeoffset = 0.5;
+    wait(animlength - armedtimeoffset);
     if (istrue(self.cancelplant)) {
-        return 0;
+        return false;
     }
     thread bomb_planted_think(trigger.scenenodekey, player);
     givebreachscore(player);
-    wait(var_84d825d7e4a24fde - 0.1);
+    wait(armedtimeoffset - 0.1);
     player thread takegunless();
     remove_player_rig(player);
     process_action("onuse");
     self notify("breach_complete");
-    return 1;
+    return true;
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1868
 // Size: 0xc9
 function watchplayerdeath(player) {
     self endon("breach_complete");
     self.cancelplant = 0;
-    while (1) {
+    while (true) {
         if (!isdefined(player) || !isreallyalive(player)) {
             foreach (entry in self.useobjects) {
                 entry show();
@@ -517,7 +517,7 @@ function watchplayerdeath(player) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1938
 // Size: 0x6e
@@ -529,7 +529,7 @@ function allowplayertobreach(player) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19ad
 // Size: 0x6e
@@ -541,7 +541,7 @@ function disallowplayertobreach(player) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a22
 // Size: 0x27
@@ -551,7 +551,7 @@ function defusec4(player) {
     givedefusescore(player);
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a50
 // Size: 0xa8
@@ -563,7 +563,7 @@ function onplayerjoinedteam(player) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aff
 // Size: 0x6b
@@ -574,7 +574,7 @@ function assigninteractteam(teams) {
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b71
 // Size: 0x1c9
@@ -593,10 +593,10 @@ function applyinteractteam(player) {
                     entry setuseholdduration("duration_medium");
                     entry enableplayeruse(player);
                     entry showtoplayer(player);
-                } else {
-                    entry disableplayeruse(player);
-                    entry hidefromplayer(player);
+                    continue;
                 }
+                entry disableplayeruse(player);
+                entry hidefromplayer(player);
             }
         } else {
             foreach (key, entry in self.useobjects) {
@@ -605,40 +605,40 @@ function applyinteractteam(player) {
                 entry showtoplayer(player);
             }
         }
-    } else {
-        if (isdefined(self.plantedbomb)) {
-            self.timerobject showtoplayer(player);
-        }
-        foreach (entry in self.useobjects) {
-            entry disableplayeruse(player);
-            entry hidefromplayer(player);
-        }
+        return;
+    }
+    if (isdefined(self.plantedbomb)) {
+        self.timerobject showtoplayer(player);
+    }
+    foreach (entry in self.useobjects) {
+        entry disableplayeruse(player);
+        entry hidefromplayer(player);
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d41
 // Size: 0x47
 function givebreachscore(player) {
     event = #"breach";
-    points = namespace_62c556437da28f50::getscoreinfovalue(event);
-    player thread namespace_62c556437da28f50::giverankxp(event, points);
-    player thread namespace_62c556437da28f50::scoreeventpopup(event);
+    points = scripts/mp/rank::getscoreinfovalue(event);
+    player thread scripts/mp/rank::giverankxp(event, points);
+    player thread scripts/mp/rank::scoreeventpopup(event);
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d8f
 // Size: 0x47
 function givedefusescore(player) {
-    event = #"hash_44f52653c35f1c07";
-    points = namespace_62c556437da28f50::getscoreinfovalue(event);
-    player thread namespace_62c556437da28f50::giverankxp(event, points);
-    player thread namespace_62c556437da28f50::scoreeventpopup(event);
+    event = #"breach_defuse";
+    points = scripts/mp/rank::getscoreinfovalue(event);
+    player thread scripts/mp/rank::giverankxp(event, points);
+    player thread scripts/mp/rank::scoreeventpopup(event);
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ddd
 // Size: 0x95
@@ -659,7 +659,7 @@ function givegunless() {
     return success;
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e7a
 // Size: 0xa9
@@ -680,20 +680,20 @@ function takegunless() {
     }
     self.takinggunless = 0;
     self.gunnlessweapon = undefined;
-    val::function_c9d0b43701bdba00("gunless");
+    val::reset_all("gunless");
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f2a
 // Size: 0x14
 function rockable_cars_init() {
     waitframe();
-    namespace_eae38e0288c268e1::rockable_cars_init();
+    scripts/common/rockable_vehicles::rockable_cars_init();
     level thread rockable_cars_watch_players();
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f45
 // Size: 0x4a2
@@ -702,7 +702,7 @@ function rockable_cars_watch_players() {
         return;
     }
     level endon("game_ended");
-    while (1) {
+    while (true) {
         foreach (player in level.players) {
             if (!isreallyalive(player)) {
                 continue;
@@ -714,78 +714,80 @@ function rockable_cars_watch_players() {
             if (!isdefined(car) || !istrue(car.var_743ebab8013b6cde)) {
                 continue;
             }
-            var_340d59422336e85a = player.origin - car.toppoint;
-            if (vectordot(var_340d59422336e85a, car.up) < 0) {
+            btwn = player.origin - car.toppoint;
+            if (vectordot(btwn, car.up) < 0) {
                 continue;
             }
-            forwarddot = vectordot(var_340d59422336e85a, car.forward);
+            forwarddot = vectordot(btwn, car.forward);
             var_4261b9974dee3bdb = abs(forwarddot);
             var_60bc4ce4bc1694b7 = var_4261b9974dee3bdb / car.halflength;
             if (var_60bc4ce4bc1694b7 > 1) {
                 continue;
             }
-            var_6b16895685c64534 = vectordot(var_340d59422336e85a, car.right);
-            var_92bfbb64d47dfeec = abs(var_6b16895685c64534);
-            var_1d2f8dbf170357c7 = var_92bfbb64d47dfeec / car.halfwidth;
-            if (var_1d2f8dbf170357c7 > 1) {
+            rightdot = vectordot(btwn, car.right);
+            var_92bfbb64d47dfeec = abs(rightdot);
+            halfwidthratio = var_92bfbb64d47dfeec / car.halfwidth;
+            if (halfwidthratio > 1) {
                 continue;
             }
-            var_4d5c2819cbf3d194 = ter_op(forwarddot >= 0, "front", "back");
-            var_8169b248be4d2462 = ter_op(var_6b16895685c64534 >= 0, "right", "left");
-            var_b6b4451b4fd94b27 = var_4d5c2819cbf3d194 + "_" + var_8169b248be4d2462;
-            if (isdefined(player.var_4005d3c144acd854) && player.var_4005d3c144acd854 == var_b6b4451b4fd94b27) {
+            lengthstr = ter_op(forwarddot >= 0, "front", "back");
+            widthstr = ter_op(rightdot >= 0, "right", "left");
+            rockstr = lengthstr + "_" + widthstr;
+            if (isdefined(player.lastrock) && player.lastrock == rockstr) {
                 continue;
             }
             id = player getentitynumber();
             if (!isdefined(car.players[id])) {
                 car rockable_car_add_player(player);
             }
-            car rockable_car_rock(player, var_60bc4ce4bc1694b7, var_1d2f8dbf170357c7, forwarddot, var_6b16895685c64534, var_b6b4451b4fd94b27);
+            car rockable_car_rock(player, var_60bc4ce4bc1694b7, halfwidthratio, forwarddot, rightdot, rockstr);
         }
         foreach (car in level.rockablecars.cars) {
             if (!isdefined(car)) {
                 continue;
             }
             foreach (id, player in car.players) {
-                var_d360b01d9a8ca0c3 = gettime() - car.touchtimes[id];
+                touchdelay = gettime() - car.touchtimes[id];
                 if (!isdefined(player) || !isreallyalive(player)) {
                     car rockable_car_remove_player(player, id, undefined, 0);
-                } else if (player ismantling() || !player isonground()) {
-                    car rockable_car_remove_player(player, id, var_d360b01d9a8ca0c3, 1);
-                } else {
-                    var_88cce618c00d03c = player getmovingplatformparent();
-                    if (!isdefined(var_88cce618c00d03c) || var_88cce618c00d03c != car) {
-                        car rockable_car_remove_player(player, id, var_d360b01d9a8ca0c3, 1);
-                    } else {
-                        var_340d59422336e85a = player.origin - car.toppoint;
-                        if (vectordot(var_340d59422336e85a, car.up) < 0) {
-                            car rockable_car_remove_player(player, id, var_d360b01d9a8ca0c3, 1);
-                        } else {
-                            forwarddot = vectordot(var_340d59422336e85a, car.forward);
-                            var_4261b9974dee3bdb = abs(forwarddot);
-                            var_60bc4ce4bc1694b7 = var_4261b9974dee3bdb / car.halflength;
-                            if (var_60bc4ce4bc1694b7 > 1) {
-                                car rockable_car_remove_player(player, id, var_d360b01d9a8ca0c3, 1);
-                            } else {
-                                var_6b16895685c64534 = vectordot(var_340d59422336e85a, car.right);
-                                var_92bfbb64d47dfeec = abs(var_6b16895685c64534);
-                                var_1d2f8dbf170357c7 = var_92bfbb64d47dfeec / car.halfwidth;
-                                if (var_1d2f8dbf170357c7 > 1) {
-                                    car rockable_car_remove_player(player, id, var_d360b01d9a8ca0c3, 1);
-                                } else {
-                                    car.touchtimes[id] = gettime();
-                                }
-                            }
-                        }
-                    }
+                    continue;
                 }
+                if (player ismantling() || !player isonground()) {
+                    car rockable_car_remove_player(player, id, touchdelay, 1);
+                    continue;
+                }
+                var_88cce618c00d03c = player getmovingplatformparent();
+                if (!isdefined(var_88cce618c00d03c) || var_88cce618c00d03c != car) {
+                    car rockable_car_remove_player(player, id, touchdelay, 1);
+                    continue;
+                }
+                btwn = player.origin - car.toppoint;
+                if (vectordot(btwn, car.up) < 0) {
+                    car rockable_car_remove_player(player, id, touchdelay, 1);
+                    continue;
+                }
+                forwarddot = vectordot(btwn, car.forward);
+                var_4261b9974dee3bdb = abs(forwarddot);
+                var_60bc4ce4bc1694b7 = var_4261b9974dee3bdb / car.halflength;
+                if (var_60bc4ce4bc1694b7 > 1) {
+                    car rockable_car_remove_player(player, id, touchdelay, 1);
+                    continue;
+                }
+                rightdot = vectordot(btwn, car.right);
+                var_92bfbb64d47dfeec = abs(rightdot);
+                halfwidthratio = var_92bfbb64d47dfeec / car.halfwidth;
+                if (halfwidthratio > 1) {
+                    car rockable_car_remove_player(player, id, touchdelay, 1);
+                    continue;
+                }
+                car.touchtimes[id] = gettime();
             }
         }
         waitframe();
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23ee
 // Size: 0x3b
@@ -795,40 +797,40 @@ function rockable_car_add_player(player) {
     self.touchtimes[id] = gettime();
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2430
 // Size: 0x9a
-function rockable_car_remove_player(player, id, var_d360b01d9a8ca0c3, var_bd8dbaf4dd9ca95d) {
+function rockable_car_remove_player(player, id, touchdelay, var_bd8dbaf4dd9ca95d) {
     if (var_bd8dbaf4dd9ca95d) {
-        if (isdefined(var_d360b01d9a8ca0c3) && var_d360b01d9a8ca0c3 >= 200) {
+        if (isdefined(touchdelay) && touchdelay >= 200) {
             self.players[id] = undefined;
             self.touchtimes[id] = undefined;
             self.rocktimes[id] = undefined;
             if (isdefined(player)) {
-                player.var_4005d3c144acd854 = undefined;
+                player.lastrock = undefined;
             }
         }
-    } else {
-        self.players[id] = undefined;
-        self.touchtimes[id] = undefined;
-        self.rocktimes[id] = undefined;
-        if (isdefined(player)) {
-            player.var_4005d3c144acd854 = undefined;
-        }
+        return;
+    }
+    self.players[id] = undefined;
+    self.touchtimes[id] = undefined;
+    self.rocktimes[id] = undefined;
+    if (isdefined(player)) {
+        player.lastrock = undefined;
     }
 }
 
-// Namespace destructible/namespace_f35854735f789d3c
+// Namespace destructible / scripts/mp/destructible
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24d1
 // Size: 0x83
-function rockable_car_rock(player, var_60bc4ce4bc1694b7, var_1d2f8dbf170357c7, forwarddot, var_6b16895685c64534, var_b6b4451b4fd94b27) {
-    if (var_60bc4ce4bc1694b7 > 0.4 && var_1d2f8dbf170357c7 > 0) {
-        self setscriptablepartstate("Anim_PlayerStandRock", var_b6b4451b4fd94b27, 0);
+function rockable_car_rock(player, var_60bc4ce4bc1694b7, halfwidthratio, forwarddot, rightdot, rockstr) {
+    if (var_60bc4ce4bc1694b7 > 0.4 && halfwidthratio > 0) {
+        self setscriptablepartstate("Anim_PlayerStandRock", rockstr, 0);
         id = player getentitynumber();
         self.rocktimes[id] = gettime();
-        player.var_4005d3c144acd854 = var_b6b4451b4fd94b27;
+        player.lastrock = rockstr;
     }
 }
 

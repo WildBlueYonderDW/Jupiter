@@ -5,9 +5,9 @@
 #using scripts\mp\bots\bots_util.gsc;
 #using scripts\mp\bots\bots_strategy.gsc;
 
-#namespace namespace_345c03315f647a48;
+#namespace bots_gametype_grnd;
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xed
 // Size: 0x11
@@ -16,7 +16,7 @@ function main() {
     setup_bot_grnd();
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x105
 // Size: 0x6
@@ -25,7 +25,7 @@ function function_e45e46b7c35deadb() {
     #/
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x112
 // Size: 0x18
@@ -33,7 +33,7 @@ function setup_callbacks() {
     level.bot_funcs["gametype_think"] = &bot_grnd_think;
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x131
 // Size: 0x22
@@ -43,7 +43,7 @@ function setup_bot_grnd() {
     level.bot_gametype_precaching_done = 1;
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15a
 // Size: 0xde
@@ -58,7 +58,7 @@ function bot_grnd_think() {
     }
     self botsetflag("separation", 0);
     thread clear_defend();
-    while (1) {
+    while (true) {
         wait(0.05);
         if (bot_has_tactical_goal()) {
             continue;
@@ -68,7 +68,9 @@ function bot_grnd_think() {
             if (isdefined(position)) {
                 self botsetscriptgoal(position.origin, 0, "objective");
             }
-        } else if (!bot_is_defending()) {
+            continue;
+        }
+        if (!bot_is_defending()) {
             self botclearscriptgoal();
             position = getnodeinzone();
             if (isdefined(position)) {
@@ -78,12 +80,12 @@ function bot_grnd_think() {
     }
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x23
 function clear_defend() {
-    while (1) {
+    while (true) {
         level waittill("zone_reset");
         if (bot_is_defending()) {
             bot_defend_stop();
@@ -91,7 +93,7 @@ function clear_defend() {
     }
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x269
 // Size: 0x57
@@ -100,12 +102,12 @@ function getnodeinzone() {
     if (nodes.size == 0 || !isdefined(nodes)) {
         return undefined;
     }
-    var_caac702d63510a96 = randomintrange(0, nodes.size);
-    position = nodes[var_caac702d63510a96];
+    nodesnum = randomintrange(0, nodes.size);
+    position = nodes[nodesnum];
     return position;
 }
 
-// Namespace namespace_345c03315f647a48/namespace_27f6f09425d5aa60
+// Namespace bots_gametype_grnd / scripts/mp/bots/bots_gametype_grnd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c8
 // Size: 0x3

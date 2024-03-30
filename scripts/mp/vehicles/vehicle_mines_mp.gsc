@@ -5,7 +5,7 @@
 
 #namespace namespace_9609f46bac493ba4;
 
-// Namespace namespace_9609f46bac493ba4/namespace_69bbb30e9ccdb9f9
+// Namespace namespace_9609f46bac493ba4 / scripts/mp/vehicles/vehicle_mines_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x96
 // Size: 0x19
@@ -13,7 +13,7 @@ function vehicle_mines_mp_init() {
     registersharedfunc("vehicle_mines", "trigger", &vehicle_mines_mp_minetrigger);
 }
 
-// Namespace namespace_9609f46bac493ba4/namespace_69bbb30e9ccdb9f9
+// Namespace namespace_9609f46bac493ba4 / scripts/mp/vehicles/vehicle_mines_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb6
 // Size: 0x14

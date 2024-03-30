@@ -12,7 +12,7 @@
 
 #namespace cover;
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x114
 // Size: 0x16
@@ -20,7 +20,7 @@ function getcoverstate() {
     return self._blackboard.coverstate;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x132
 // Size: 0x30
@@ -31,7 +31,7 @@ function shouldlookforinitialcover(taskid) {
     return anim.failure;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a
 // Size: 0x30
@@ -42,13 +42,13 @@ function lookforinitialcover(taskid) {
     return anim.failure;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0xed
-function lookforbettercover_internal(var_1fe63b952fe3ee08, var_30b84a9cb603754f, var_66fca63b388f049) {
+function lookforbettercover_internal(var_1fe63b952fe3ee08, var_30b84a9cb603754f, coverselector) {
     if (self.arriving) {
-        return 0;
+        return false;
     }
     if (!isdefined(var_30b84a9cb603754f)) {
         var_30b84a9cb603754f = 0;
@@ -56,32 +56,32 @@ function lookforbettercover_internal(var_1fe63b952fe3ee08, var_30b84a9cb603754f,
     if (self.doingambush) {
         node = self ambushgetnextambushnode();
     } else {
-        if (!isdefined(var_66fca63b388f049) && usingmg()) {
-            var_66fca63b388f049 = %"cover_lmg";
+        if (!isdefined(coverselector) && usingmg()) {
+            coverselector = %"cover_lmg";
         }
-        node = self findbestcovernode(var_66fca63b388f049, var_30b84a9cb603754f);
+        node = self findbestcovernode(coverselector, var_30b84a9cb603754f);
     }
     if (isdefined(node)) {
         if (!isdefined(self.node) || node != self.node || isdefined(var_1fe63b952fe3ee08) && node != var_1fe63b952fe3ee08) {
             if (self usecovernodeifpossible(node)) {
                 if (self.doingambush) {
                     if (self ambushcheckpath(node)) {
-                        return 1;
+                        return true;
                     } else {
                         self clearpath();
                         self.keepclaimednodeifvalid = 0;
                         self.keepclaimednode = 0;
-                        return 0;
+                        return false;
                     }
                 }
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x297
 // Size: 0x34
@@ -93,7 +93,7 @@ function update(task) {
     return anim.success;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x15
@@ -101,7 +101,7 @@ function isdoingambush(task) {
     return self.doingambush;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f0
 // Size: 0x23
@@ -110,19 +110,19 @@ function updatehide(task) {
     return anim.success;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x31b
 // Size: 0x52
 function function_a7f24f5dd4325ccf() {
     /#
         var_8a31cf5f87747a = getdvarint(@"hash_cc4c9095ab9f206f", 0);
-        var_d521ebb7eaf92fd7 = getdvarint(@"hash_932e9550632df2cb");
-        return var_8a31cf5f87747a == 1 && (var_d521ebb7eaf92fd7 == -1 || var_d521ebb7eaf92fd7 == self getentitynumber());
+        debugentindex = getdvarint(@"hash_932e9550632df2cb");
+        return var_8a31cf5f87747a == 1 && (debugentindex == -1 || debugentindex == self getentitynumber());
     #/
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x374
 // Size: 0x22
@@ -134,7 +134,7 @@ function function_1155b804efae0b2a(reason) {
     #/
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x39d
 // Size: 0x4f
@@ -148,7 +148,7 @@ function shouldreload(task, params) {
     return anim.success;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0xc
@@ -156,7 +156,7 @@ function terminatehide(task) {
     
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x407
 // Size: 0x14b
@@ -188,7 +188,7 @@ function shouldchangestanceforfun(task) {
     return anim.success;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x55a
 // Size: 0x1d
@@ -196,7 +196,7 @@ function setcoverchangestanceforfuntime() {
     self.var_58b37dad6411f81 = gettime() + randomintrange(5000, 20000);
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x57e
 // Size: 0xb3
@@ -209,18 +209,18 @@ function hasroomtofullexposecorner(node) {
         checkpos = checkpos + anglestoleft(node.angles) * var_16f58e6bcebc24ca;
     }
     if (!self maymovecheckfriendlyfire(checkpos)) {
-        return 0;
+        return false;
     }
     if (!ispointonnavmesh(checkpos, self, 1)) {
-        return 0;
+        return false;
     }
     if (!capsule_trace_passed(node.origin, checkpos, 15, 36, (0, 0, 0), self, create_character_contents())) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x639
 // Size: 0x86
@@ -235,7 +235,7 @@ function updatealwayscoverexposed(taskid) {
     return anim.success;
 }
 
-// Namespace cover/namespace_2c5796be89e7d85b
+// Namespace cover / scripts/aitypes/cover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c7
 // Size: 0x173

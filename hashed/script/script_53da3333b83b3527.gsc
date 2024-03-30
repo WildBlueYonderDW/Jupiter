@@ -5,7 +5,7 @@
 
 #namespace namespace_3dfa6eb6c5741630;
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41d
 // Size: 0xa
@@ -13,7 +13,7 @@ function init_gameskill() {
     setskill();
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42e
 // Size: 0x1c
@@ -21,7 +21,7 @@ function set_gameskill() {
     level.gameskill = getdvarint(@"hash_2ca7440fd32bd772", 1);
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x451
 // Size: 0xc
@@ -29,7 +29,7 @@ function get_gameskill() {
     return level.gameskill;
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x465
 // Size: 0xc8e
@@ -97,8 +97,8 @@ function setskill(reset) {
     level.difficultysettings["max_sniper_burst_delay_time"]["veteran"] = 1.1;
     level.difficultysettings["pain_test"]["easy"] = &always_pain;
     level.difficultysettings["pain_test"]["normal"] = &always_pain;
-    level.difficultysettings["pain_test"]["hardened"] = &namespace_2f36c2cc5a44d845::pain_protection;
-    level.difficultysettings["pain_test"]["veteran"] = &namespace_2f36c2cc5a44d845::pain_protection;
+    level.difficultysettings["pain_test"]["hardened"] = &scripts/common/gameskill::pain_protection;
+    level.difficultysettings["pain_test"]["veteran"] = &scripts/common/gameskill::pain_protection;
     level.difficultysettings["missTimeConstant"]["easy"] = 1;
     level.difficultysettings["missTimeConstant"]["normal"] = 0.05;
     level.difficultysettings["missTimeConstant"]["hardened"] = 0.03;
@@ -170,7 +170,7 @@ function setskill(reset) {
     updatealldifficulty();
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10fa
 // Size: 0xa
@@ -178,7 +178,7 @@ function updatealldifficulty() {
     setglobaldifficulty();
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x110b
 // Size: 0x297
@@ -210,7 +210,7 @@ function init_mgturretsettings() {
     level.mgturretsettings["fu"]["playerSpread"] = 0.5;
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13a9
 // Size: 0x2c
@@ -224,19 +224,19 @@ function setdifficulty() {
     set_difficulty_from_locked_settings();
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13dc
 // Size: 0x6d
 function setglobaldifficulty() {
-    var_cddda98c04947a50 = get_skill_from_index(level.gameskill);
+    current_skill = get_skill_from_index(level.gameskill);
     anim.pain_test = get_difficultysetting_global("pain_test");
     function_4afdefc72472a638(get_difficultysetting_global("min_sniper_burst_delay_time"));
     function_5eddc94e0785d7a2(get_difficultysetting_global("max_sniper_burst_delay_time"));
     setsaveddvar(@"hash_25f40faa68cfe5d6", get_difficultysetting_global("accuracyDistScale"));
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1450
 // Size: 0x3c
@@ -250,54 +250,54 @@ function updategameskill() {
     return level.gameskill;
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1494
 // Size: 0x402
-function apply_difficulty_settings(var_64e5d13011016a93) {
+function apply_difficulty_settings(current_frac) {
     self.gs = spawnstruct();
-    function_2a781949ace88ca4(get_difficultysetting_frac("player_diedRecentlyCooldown", var_64e5d13011016a93));
-    self.gs.maxflashbangtime = get_difficultysetting_frac("player_maxFlashBangTime", var_64e5d13011016a93);
-    self.gs.invultime_ondamagemin = get_difficultysetting_frac("invulTime_onDamageMin", var_64e5d13011016a93);
-    self.gs.invultime_ondamagemax = get_difficultysetting_frac("invulTime_onDamageMax", var_64e5d13011016a93);
-    self.gs.invultime_deathshieldduration = get_difficultysetting_frac("invulTime_deathShieldDuration", var_64e5d13011016a93);
-    self.gs.invultime_ondamage = get_difficultysetting_frac("invulTime_onDamage", var_64e5d13011016a93);
-    self.gs.deathsdoorduration = get_difficultysetting_frac("player_deathsDoorDuration", var_64e5d13011016a93);
+    function_2a781949ace88ca4(get_difficultysetting_frac("player_diedRecentlyCooldown", current_frac));
+    self.gs.maxflashbangtime = get_difficultysetting_frac("player_maxFlashBangTime", current_frac);
+    self.gs.invultime_ondamagemin = get_difficultysetting_frac("invulTime_onDamageMin", current_frac);
+    self.gs.invultime_ondamagemax = get_difficultysetting_frac("invulTime_onDamageMax", current_frac);
+    self.gs.invultime_deathshieldduration = get_difficultysetting_frac("invulTime_deathShieldDuration", current_frac);
+    self.gs.invultime_ondamage = get_difficultysetting_frac("invulTime_onDamage", current_frac);
+    self.gs.deathsdoorduration = get_difficultysetting_frac("player_deathsDoorDuration", current_frac);
     self.gs.scripteddamagemultiplier = 1;
     self.gs.scripteddeathshielddurationscale = 2;
-    self.gs.healthregendelaymin = get_difficultysetting_frac("player_healthRegenDelayMin", var_64e5d13011016a93);
-    self.gs.healthregendelaymax = get_difficultysetting_frac("player_healthRegenDelayMax", var_64e5d13011016a93);
-    self.gs.healthregendelay = get_difficultysetting_frac("player_healthRegenDelay", var_64e5d13011016a93);
-    self.gs.healthregenratemin = get_difficultysetting_frac("player_healthRegenRateMin", var_64e5d13011016a93);
-    self.gs.healthregenratemax = get_difficultysetting_frac("player_healthRegenRateMax", var_64e5d13011016a93);
-    self.gs.healthregendelay = get_difficultysetting_frac("player_healthRegenDelay", var_64e5d13011016a93);
-    self.gs.healthregenrate = get_difficultysetting_frac("player_healthRegenRate", var_64e5d13011016a93);
-    self.gs.player_attacker_accuracy = get_difficultysetting_frac("base_enemy_accuracy", var_64e5d13011016a93);
+    self.gs.healthregendelaymin = get_difficultysetting_frac("player_healthRegenDelayMin", current_frac);
+    self.gs.healthregendelaymax = get_difficultysetting_frac("player_healthRegenDelayMax", current_frac);
+    self.gs.healthregendelay = get_difficultysetting_frac("player_healthRegenDelay", current_frac);
+    self.gs.healthregenratemin = get_difficultysetting_frac("player_healthRegenRateMin", current_frac);
+    self.gs.healthregenratemax = get_difficultysetting_frac("player_healthRegenRateMax", current_frac);
+    self.gs.healthregendelay = get_difficultysetting_frac("player_healthRegenDelay", current_frac);
+    self.gs.healthregenrate = get_difficultysetting_frac("player_healthRegenRate", current_frac);
+    self.gs.player_attacker_accuracy = get_difficultysetting_frac("base_enemy_accuracy", current_frac);
     update_player_attacker_accuracy();
-    self.gs.playergrenadebasetime = int(get_difficultysetting_frac("playerGrenadeBaseTime", var_64e5d13011016a93));
-    self.gs.playergrenaderangetime = int(get_difficultysetting_frac("playerGrenadeRangeTime", var_64e5d13011016a93));
-    self.gs.playerdoublegrenadetime = int(get_difficultysetting_frac("playerDoubleGrenadeTime", var_64e5d13011016a93));
-    function_113dc070d175daff(get_difficultysetting_frac("min_sniper_burst_delay_time", var_64e5d13011016a93));
-    function_87e4ff0e078152e9(get_difficultysetting_frac("max_sniper_burst_delay_time", var_64e5d13011016a93));
+    self.gs.playergrenadebasetime = int(get_difficultysetting_frac("playerGrenadeBaseTime", current_frac));
+    self.gs.playergrenaderangetime = int(get_difficultysetting_frac("playerGrenadeRangeTime", current_frac));
+    self.gs.playerdoublegrenadetime = int(get_difficultysetting_frac("playerDoubleGrenadeTime", current_frac));
+    function_113dc070d175daff(get_difficultysetting_frac("min_sniper_burst_delay_time", current_frac));
+    function_87e4ff0e078152e9(get_difficultysetting_frac("max_sniper_burst_delay_time", current_frac));
     var_4cc77ae3c5e8921 = 1;
     if (level.gameskill == 0) {
         var_4cc77ae3c5e8921 = 2;
     }
-    function_90faf3f11984372a(get_difficultysetting_frac("sniperAccuDiffScale", var_64e5d13011016a93), var_4cc77ae3c5e8921, 1);
-    self.gs.damagemultiplierhealth = self.maxhealth / get_difficultysetting_frac("player_health", var_64e5d13011016a93);
+    function_90faf3f11984372a(get_difficultysetting_frac("sniperAccuDiffScale", current_frac), var_4cc77ae3c5e8921, 1);
+    self.gs.damagemultiplierhealth = self.maxhealth / get_difficultysetting_frac("player_health", current_frac);
     if (utility::playerarmorenabled()) {
-        self.gs.armorratiohealthregenthreshold = get_difficultysetting_frac("player_armorRatioHealthRegenThreshold", var_64e5d13011016a93);
-        self.gs.armordamagetohealthratiomin = get_difficultysetting_frac("player_armorDamageToHealthRatioMin", var_64e5d13011016a93);
-        self.gs.armordamagetohealthratiomax = get_difficultysetting_frac("player_armorDamageToHealthRatioMax", var_64e5d13011016a93);
-        self.gs.damagemultiplierarmor = self.armor.maxamount / get_difficultysetting_frac("player_armor", var_64e5d13011016a93);
+        self.gs.armorratiohealthregenthreshold = get_difficultysetting_frac("player_armorRatioHealthRegenThreshold", current_frac);
+        self.gs.armordamagetohealthratiomin = get_difficultysetting_frac("player_armorDamageToHealthRatioMin", current_frac);
+        self.gs.armordamagetohealthratiomax = get_difficultysetting_frac("player_armorDamageToHealthRatioMax", current_frac);
+        self.gs.damagemultiplierarmor = self.armor.maxamount / get_difficultysetting_frac("player_armor", current_frac);
         self.damagemultiplier = self.gs.damagemultiplierarmor;
     } else {
         self.damagemultiplier = self.gs.damagemultiplierhealth;
     }
-    self.threatbias = int(get_difficultysetting_frac("threatbias", var_64e5d13011016a93));
+    self.threatbias = int(get_difficultysetting_frac("threatbias", current_frac));
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x189d
 // Size: 0x15
@@ -306,7 +306,7 @@ function set_difficulty_from_locked_settings() {
     apply_difficulty_settings_shared(1);
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18b9
 // Size: 0xd
@@ -315,7 +315,7 @@ function resetskill() {
     setskill(1);
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x18cd
 // Size: 0x24a
@@ -342,7 +342,7 @@ function wave_difficulty_update(difficulty) {
     setsaveddvar(@"hash_25f40faa68cfe5d6", level.difficultysettings["accuracyDistScale"][setting]);
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b1e
 // Size: 0x6a
@@ -357,7 +357,7 @@ function update_player_attacker_accuracy() {
     self.attackeraccuracy = self.gs.player_attacker_accuracy * self.scriptedattackeraccuracy;
 }
 
-// Namespace namespace_3dfa6eb6c5741630/namespace_310bdaa3cf041c47
+// Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b8f
 // Size: 0xc

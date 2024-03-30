@@ -11,7 +11,7 @@
 
 #namespace accessories;
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d9
 // Size: 0x3
@@ -19,7 +19,7 @@ function init() {
     
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e3
 // Size: 0x11
@@ -27,7 +27,7 @@ function getaccessoryweaponbyindex(index) {
     return "none";
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0x11
@@ -35,7 +35,7 @@ function getaccessorydatabyindex(index) {
     return "none";
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x315
 // Size: 0x11
@@ -43,22 +43,22 @@ function getaccessorylogicbyindex(index) {
     return "none";
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32e
 // Size: 0xcd
-function giveplayeraccessory(accessorydata, var_d830f6c01b6d5949, accessorylogic) {
+function giveplayeraccessory(accessorydata, accessoryweapon, accessorylogic) {
     /#
-        assertex(var_d830f6c01b6d5949 != "none", "giveGesture() passed accessoryWeapon of "none"");
+        assertex(accessoryweapon != "none", "giveGesture() passed accessoryWeapon of "none"");
     #/
     clearplayeraccessory();
-    var_62681577c5058ee1 = getoperatorspecificaccessoryweapon(var_d830f6c01b6d5949);
-    if (!isdefined(var_62681577c5058ee1)) {
+    specificweapon = getoperatorspecificaccessoryweapon(accessoryweapon);
+    if (!isdefined(specificweapon)) {
         return;
     }
     self.accessorydata = accessorydata;
     self.accessorylogic = accessorylogic;
-    var_bb9eee998d441815 = shouldoperatorhideaccessoryworldmodel();
+    hidewm = shouldoperatorhideaccessoryworldmodel();
     if (isdefined(accessorylogic)) {
         switch (accessorylogic) {
         case #"hash_2c7f2b69647205f7":
@@ -67,7 +67,7 @@ function giveplayeraccessory(accessorydata, var_d830f6c01b6d5949, accessorylogic
             initthermometerwatch();
             break;
         case #"hash_dd93145493d0c039":
-            namespace_46e9069d8502773a::startholowatchvfx();
+            scripts/cp_mp/gestures::startholowatchvfx();
             break;
         default:
             break;
@@ -75,33 +75,33 @@ function giveplayeraccessory(accessorydata, var_d830f6c01b6d5949, accessorylogic
     }
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x402
 // Size: 0x2d
 function shouldoperatorhideaccessoryworldmodel() {
-    customization = namespace_6d8da2b47f878104::getcustomization();
-    var_5864ea4e21a60cd4 = customization["body"];
-    return namespace_465d40bb08a5337a::function_9745c4739bb8fdc0(var_5864ea4e21a60cd4);
+    customization = scripts/mp/teams::getcustomization();
+    operatorskin = customization["body"];
+    return namespace_465d40bb08a5337a::function_9745c4739bb8fdc0(operatorskin);
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x437
 // Size: 0xd
-function getoperatorspecificaccessoryweapon(var_d830f6c01b6d5949) {
-    return var_d830f6c01b6d5949;
+function getoperatorspecificaccessoryweapon(accessoryweapon) {
+    return accessoryweapon;
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x44c
 // Size: 0xa
 function testaccessoryvfx() {
-    namespace_46e9069d8502773a::startbluntwatchvfx();
+    scripts/cp_mp/gestures::startbluntwatchvfx();
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45d
 // Size: 0xa
@@ -109,7 +109,7 @@ function clearplayeraccessory() {
     self clearaccessory();
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46e
 // Size: 0x39
@@ -121,7 +121,7 @@ function initthermometerwatch() {
     }
 }
 
-// Namespace accessories/namespace_93104865b3b8748
+// Namespace accessories / scripts/mp/accessories
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x25d
@@ -205,7 +205,6 @@ function getmapbaselinetempurature() {
         return 81;
     default:
         return 68;
-        break;
     }
 }
 

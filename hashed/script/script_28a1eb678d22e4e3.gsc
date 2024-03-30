@@ -10,11 +10,11 @@
 
 #namespace namespace_9e6997f014dd0798;
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d9
 // Size: 0xed
-function function_fb7271d5ee18b98d(data) {
+function getcontractdata(data) {
     level.var_11cf2e43f74913df = spawnstruct();
     level.var_11cf2e43f74913df.time = getdvarint(@"hash_f3296f3f7c79bfb8", 240);
     level.var_11cf2e43f74913df.maxrange = getdvarint(@"hash_79550894c085d1db", 45000);
@@ -28,7 +28,7 @@ function function_fb7271d5ee18b98d(data) {
     data.funcs["onTeamAssigned"] = &function_c53c8c4438de68a4;
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3cd
 // Size: 0x3a
@@ -36,11 +36,11 @@ function function_712cf8277bcbd463() {
     if (namespace_bd614c3c2275579a::function_a9b26d3ed078e149()) {
         self.tablet.startdisabled = 1;
     }
-    self.tablet.var_b393cb8247aa43e1 = 1;
-    return 1;
+    self.tablet.strongholdcontract = 1;
+    return true;
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x40f
 // Size: 0x189
@@ -60,7 +60,7 @@ function function_c53c8c4438de68a4() {
     thread function_b8bab058c4c9ccb4(time);
     thread function_3b7d7950dda9e2b5();
     displayteamsplash(self.teams[0], "stronghold_infil_contract_accepted");
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_infiltration_accept", self.teams[0], 1, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_infiltration_accept", self.teams[0], 1, 1);
     self.curorigin = self.fortress.origin;
     createquestobjicon("ui_map_icon_obj_fortress", "current", self.curorigin + (0, 0, 65));
     players = getteamdata(self.teams[0], "players");
@@ -70,7 +70,7 @@ function function_c53c8c4438de68a4() {
     thread function_e3eef0b907523e1d();
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x59f
 // Size: 0x1be
@@ -80,27 +80,29 @@ function function_34bd31f3beba8f5a(success) {
         deletequestobjicon();
     }
     wait(1);
-    function_93663fe58d95f174(ter_op(istrue(success), self.teams[0], undefined));
+    endcontract(ter_op(istrue(success), self.teams[0], undefined));
     if (isdefined(self.fortress) && istrue(success)) {
-        self.fortress.var_7f893c2e20a823db = 1;
+        self.fortress.infiltrated = 1;
         self.fortress.var_21d7def7d337f552 = self.teams[0];
         self.fortress notify("stronghold_infiltrated");
         namespace_9823ee6035594d67::function_d95dbf57b47734d9(self.fortress, 1);
         logstring("BR STRONGHOLD " + array_find(level.var_f1073fbd45b59a06.var_df987907a483df89, self.fortress) + ": Fortress Infiltrated!");
-    } else if (istrue(success)) {
+        return;
+    }
+    if (istrue(success)) {
         params = spawnstruct();
-        var_501265b5fe210821 = function_d282041688c032b5("strongholdInfil");
-        params.intvar = var_501265b5fe210821;
-        function_878ebcc241b54505("stronghold_infil_contract_none", function_3d262d56274bd22e("strongholdInfil"), var_501265b5fe210821, self.teams[0]);
+        rewardcash = function_d282041688c032b5("strongholdInfil");
+        params.intvar = rewardcash;
+        function_878ebcc241b54505("stronghold_infil_contract_none", function_3d262d56274bd22e("strongholdInfil"), rewardcash, self.teams[0]);
         foreach (player in getteamdata(self.teams[0], "players")) {
-            player namespace_c6ccccd95254983f::playerplunderpickup(var_501265b5fe210821);
-            player namespace_c6ccccd95254983f::function_5a2284274d70f7d(1, var_501265b5fe210821);
+            player scripts/mp/gametypes/br_plunder::playerplunderpickup(rewardcash);
+            player scripts/mp/gametypes/br_plunder::function_5a2284274d70f7d(1, rewardcash);
         }
         logstring("BR STRONGHOLDS ERROR: Undefined Fortress Infiltrated!");
     }
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x764
 // Size: 0x23
@@ -111,7 +113,7 @@ function function_b8bab058c4c9ccb4(time) {
     function_832b654e4b84c000();
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x78e
 // Size: 0x2a
@@ -122,46 +124,46 @@ function function_3b7d7950dda9e2b5() {
     function_832b654e4b84c000(1);
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x87
-function function_832b654e4b84c000(var_257a28cd85bd4479) {
-    if (!isdefined(var_257a28cd85bd4479)) {
-        var_257a28cd85bd4479 = 0;
+function function_832b654e4b84c000(enemycaptured) {
+    if (!isdefined(enemycaptured)) {
+        enemycaptured = 0;
     }
     params = spawnstruct();
     params.intvar = 0;
     splash = "stronghold_infil_contract_failed";
-    if (istrue(var_257a28cd85bd4479)) {
+    if (istrue(enemycaptured)) {
         splash = "stronghold_infil_contract_poached";
     }
     displayteamsplash(self.teams[0], splash, params);
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_infiltration_fail", self.teams[0], 1, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_infiltration_fail", self.teams[0], 1, 1);
     thread function_34bd31f3beba8f5a(0);
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84d
 // Size: 0x184
 function function_fb13f636f30f3817(var_d83087ec1b2d5259) {
     locations = array_randomize(level.var_f1073fbd45b59a06.var_df987907a483df89);
     fortress = undefined;
-    var_2ed718e1da0b965 = undefined;
+    bestlocindex = undefined;
     var_be0f4d48fa40793f = level.var_11cf2e43f74913df.maxrange;
     foreach (location in locations) {
-        if (istrue(location.var_7f893c2e20a823db)) {
+        if (istrue(location.infiltrated)) {
             continue;
         }
-        if (istrue(location.var_933f9685674999fb) && !istrue(var_d83087ec1b2d5259)) {
+        if (istrue(location.isblacksite) && !istrue(var_d83087ec1b2d5259)) {
             continue;
         }
-        var_b1e1b0a993dbd52a = namespace_bbc79db4c3949a5c::function_a465e3c1371d7dab(location.origin);
-        if (!istrue(var_b1e1b0a993dbd52a)) {
+        incircle = namespace_bbc79db4c3949a5c::function_a465e3c1371d7dab(location.origin);
+        if (!istrue(incircle)) {
             continue;
         }
-        if (istrue(location.var_9611bf5bff3c688c)) {
+        if (istrue(location.unspawned)) {
             continue;
         }
         dist = distance2d(location.origin, self.origin);
@@ -180,7 +182,7 @@ function function_fb13f636f30f3817(var_d83087ec1b2d5259) {
     return fortress;
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9d9
 // Size: 0xd6
@@ -196,25 +198,25 @@ function function_1cf1557a05b2ae73(spawn_origin, team) {
     self.finishlinevfx = finishlinevfx;
 }
 
-// Namespace namespace_9e6997f014dd0798/namespace_6a760ad730220f95
+// Namespace namespace_9e6997f014dd0798 / namespace_6a760ad730220f95
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab6
 // Size: 0x1e0
 function function_e3eef0b907523e1d() {
     self endon("task_ended");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         foreach (player in getteamdata(self.teams[0], "players")) {
-            if (distance2d(player.origin, self.fortress.var_e1dd7bed632a13c3.origin) < self.fortress.var_e1dd7bed632a13c3.radius) {
+            if (distance2d(player.origin, self.fortress.missiontrigger.origin) < self.fortress.missiontrigger.radius) {
                 params = spawnstruct();
-                var_501265b5fe210821 = function_d282041688c032b5("strongholdInfil");
-                params.intvar = var_501265b5fe210821;
+                rewardcash = function_d282041688c032b5("strongholdInfil");
+                params.intvar = rewardcash;
                 foreach (player in getteamdata(self.teams[0], "players")) {
-                    player namespace_c6ccccd95254983f::playerplunderpickup(var_501265b5fe210821);
-                    player namespace_c6ccccd95254983f::function_5a2284274d70f7d(1, var_501265b5fe210821);
+                    player scripts/mp/gametypes/br_plunder::playerplunderpickup(rewardcash);
+                    player scripts/mp/gametypes/br_plunder::function_5a2284274d70f7d(1, rewardcash);
                 }
-                function_878ebcc241b54505("stronghold_infil_contract_completed", function_3d262d56274bd22e("strongholdInfil"), var_501265b5fe210821, self.teams[0]);
-                level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_misc_success", self.teams[0], 1, 1);
+                function_878ebcc241b54505("stronghold_infil_contract_completed", function_3d262d56274bd22e("strongholdInfil"), rewardcash, self.teams[0]);
+                level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_misc_success", self.teams[0], 1, 1);
                 squadmembers = getteamdata(self.teams[0], "players");
                 self.rewardmodifier = undefined;
                 self.result = "success";

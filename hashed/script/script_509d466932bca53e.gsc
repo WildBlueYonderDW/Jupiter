@@ -4,7 +4,7 @@
 #using script_7118a63f6a493ea8;
 #using scripts\mp\utility\game.gsc;
 #using script_53da3333b83b3527;
-#using script_5def7af2a9f04234;
+#using scripts\mp\poi.gsc;
 #using script_1407e72346815bc3;
 #using script_15c7dc779b327c9b;
 #using script_5b3343e89efb05b6;
@@ -38,7 +38,7 @@
 #using scripts\mp\class.gsc;
 #using scripts\mp\teams.gsc;
 #using scripts\mp\gametypes\br_maphints.gsc;
-#using script_65a96ea484cf876d;
+#using scripts\mp\playerhealth.gsc;
 #using scripts\mp\outofbounds.gsc;
 #using scripts\mp\gametypes\br_weapons.gsc;
 #using scripts\mp\gametypes\br_public.gsc;
@@ -112,7 +112,7 @@
 
 #namespace namespace_657dc7e018dcfce9;
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f06
 // Size: 0x17d
@@ -126,13 +126,13 @@ function init() {
     equipment_init();
     perk_init();
     player_init();
-    function_550feb35b9af0cda();
+    loadout_init();
     if (!istrue(game["isLaunchChunk"])) {
         vehicle_init();
     }
     game_init();
     spawn_init();
-    function_3577a32772853bff();
+    objective_init();
     if (!istrue(game["isLaunchChunk"])) {
         emp_init();
     }
@@ -158,19 +158,19 @@ function init() {
     function_a92ed2f4c44e5ffa();
     stealth_init();
     gameskill_init();
-    function_c08668fe290fc31a();
+    poi_init();
     function_c1199c7cd79918b3();
     vehicle_damage_init();
     function_1bc257700c3d014e();
     function_a30b248a8fc67a00();
-    function_d3ac40e24c2653a3();
+    battlechatter_init();
     host_migration_init();
     function_f677f2d747d21482();
     utility::registersharedfunc("game", "runLeanThreadMode", &game_utility::runleanthreadmode);
     utility::registersharedfunc("game", "lpcFeatureGated", &game_utility::lpcfeaturegated);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x208a
 // Size: 0x19
@@ -178,51 +178,51 @@ function gameskill_init() {
     utility::registersharedfunc("gameskill", "updatePlayerAttackerAccuracy", &namespace_3dfa6eb6c5741630::update_player_attacker_accuracy);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20aa
 // Size: 0x5b
-function function_c08668fe290fc31a() {
+function poi_init() {
     utility::registersharedfunc("poi", "isSystemActive", &poi::function_47d356083884f913);
     utility::registersharedfunc("poi", "isInActivePOI", &poi::function_9c93e67f90980177);
     utility::registersharedfunc("poi", "findPOIOriginIsIn", &poi::function_6cc445c02b5effac);
     utility::registersharedfunc("poi", "try_TranslatePOI", &poi::function_150af7f3a2874667);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x210c
 // Size: 0x71
 function stealth_init() {
-    utility::registersharedfunc("stealth", "init", &namespace_a741300253ce87f0::init);
+    utility::registersharedfunc("stealth", "init", &manager_mp::init);
     utility::registersharedfunc("stealth_music", "init", &namespace_17ca84825c926284::init);
-    utility::registersharedfunc("stealth_enemy", "init", &namespace_cdcb8ce97bf97395::init);
-    utility::registersharedfunc("stealth", "revertAiAccuracy", &namespace_a741300253ce87f0::revertaiaccuracy);
-    utility::registersharedfunc("stealth", "dropAiAccuracy", &namespace_a741300253ce87f0::dropaiaccuracy);
+    utility::registersharedfunc("stealth_enemy", "init", &enemy_mp::init);
+    utility::registersharedfunc("stealth", "revertAiAccuracy", &manager_mp::revertaiaccuracy);
+    utility::registersharedfunc("stealth", "dropAiAccuracy", &manager_mp::dropaiaccuracy);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2184
 // Size: 0x19
 function anim_init() {
-    utility::registersharedfunc("anim", "player_solo", &namespace_725871aae3b7bfd4::anim_player_solo);
+    utility::registersharedfunc("anim", "player_solo", &anim_mp::anim_player_solo);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21a4
 // Size: 0x87
 function hud_init() {
     utility::registersharedfunc("hud", "showSplash", &hud_message::showsplash);
-    utility::registersharedfunc("hud", "teamPlayerCardSplash", &namespace_26a75045c9dd4bcb::teamplayercardsplash);
+    utility::registersharedfunc("hud", "teamPlayerCardSplash", &hud_util::teamplayercardsplash);
     utility::registersharedfunc("hud", "showErrorMessage", &hud_message::showerrormessage);
-    utility::registersharedfunc("hud", "createHudElem", &namespace_26a75045c9dd4bcb::createhudelem);
-    utility::registersharedfunc("hud", "showElem", &namespace_26a75045c9dd4bcb::showelem);
-    utility::registersharedfunc("hud", "hideElem", &namespace_26a75045c9dd4bcb::hideelem);
+    utility::registersharedfunc("hud", "createHudElem", &hud_util::createhudelem);
+    utility::registersharedfunc("hud", "showElem", &hud_util::showelem);
+    utility::registersharedfunc("hud", "hideElem", &hud_util::hideelem);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2232
 // Size: 0x2d9
@@ -239,30 +239,30 @@ function killstreak_init() {
     utility::registersharedfunc("killstreak", "currentActiveVehicleCount", &killstreak::currentactivevehiclecount);
     utility::registersharedfunc("killstreak", "allowRideKillstreakPlayerExit", &killstreaks::allowridekillstreakplayerexit);
     utility::registersharedfunc("killstreak", "killstreakHit", &killstreaks::killstreakhit);
-    utility::registersharedfunc("killstreak", "getModifiedDamageUsingDamageTuning", &namespace_27a98b98aa61a370::getmodifieddamageusingdamagetuning);
+    utility::registersharedfunc("killstreak", "getModifiedDamageUsingDamageTuning", &damage_tuning::getmodifieddamageusingdamagetuning);
     utility::registersharedfunc("killstreak", "getModifiedAntiKillstreakDamage", &killstreak::getmodifiedantikillstreakdamage);
     utility::registersharedfunc("killstreak", "isKillstreakWeapon", &weapon::iskillstreakweapon);
     utility::registersharedfunc("killstreak", "doDamageToKillstreak", &killstreak::dodamagetokillstreak);
     utility::registersharedfunc("killstreak", "removeFromActiveKillstreakList", &killstreak::removefromactivekillstreaklist);
     utility::registersharedfunc("killstreak", "awardKillstreakFromStruct", &killstreaks::awardkillstreakfromstruct);
-    utility::registersharedfunc("killstreak", "getSelectMapPoint", &namespace_93a0b165a72baca5::function_a5839924b6723eac);
-    utility::registersharedfunc("killstreak", "startMapSelectSequence", &namespace_93a0b165a72baca5::function_90f093ca8576232f);
+    utility::registersharedfunc("killstreak", "getSelectMapPoint", &mapselect::function_a5839924b6723eac);
+    utility::registersharedfunc("killstreak", "startMapSelectSequence", &mapselect::function_90f093ca8576232f);
     utility::registersharedfunc("killstreak", "setKillstreakControlPriority", &killstreak::setkillstreakcontrolpriority);
     utility::registersharedfunc("killstreak", "updateScrapAssistDataForceCredit", &killstreaks::updatescrapassistdataforcecredit);
     utility::registersharedfunc("killstreak", "updateScrapAssistData", &killstreaks::updatescrapassistdata);
     utility::registersharedfunc("killstreak", "processScrapAssist", &events::processscrapassist);
-    utility::registersharedfunc("killstreak", "dangerNotifyPlayer", &namespace_fccefd1bae790645::dangernotifyplayer);
+    utility::registersharedfunc("killstreak", "dangerNotifyPlayer", &br_killstreaks::dangernotifyplayer);
     utility::registersharedfunc("killstreak", "getTargetMarker", &target_marker::gettargetmarker);
     utility::registersharedfunc("killstreak", "forceGiveKillstreak", &br_pickups::forcegivekillstreak);
-    utility::registersharedfunc("killstreak", "waittill_confirm_or_cancel", &namespace_93a0b165a72baca5::waittill_confirm_or_cancel);
+    utility::registersharedfunc("killstreak", "waittill_confirm_or_cancel", &mapselect::waittill_confirm_or_cancel);
     utility::registersharedfunc("killstreak", "forceUseKillstreak", &br_pickups::forceusekillstreak);
     utility::registersharedfunc("killstreak", "awardKillstreak", &killstreaks::awardkillstreak);
     utility::registersharedfunc("killstreak", "registerKillstreak", &killstreaks::registerkillstreak);
-    utility::registersharedfunc("killstreak", "registerKillstreakDamageDealingWeapon", &killstreaks::registerkillstreakdamagedealingweapon);
+    utility::registersharedfunc("killstreak", "registerKillstreakDamageDealingWeapon", &killstreaks::registerKillstreakDamageDealingWeapon);
     utility::registersharedfunc("killstreak", "handleMovingPlatform", &manual_turret_mp::manual_turret_handlemovingplatform);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2512
 // Size: 0x137
@@ -277,13 +277,13 @@ function equipment_init() {
     utility::registersharedfunc("equipment", "getEquipmentTableInfo", &equipment::getequipmenttableinfo);
     utility::registersharedfunc("equipment", "getEquipmentRefFromWeapon", &equipment::getequipmentreffromweapon);
     utility::registersharedfunc("equipment", "hackEquipment", &equipment::hackequipment);
-    utility::registersharedfunc("equipment", "isPlantedEquipment", &namespace_3bbb5a98b932c46f::isplantedequipment);
-    utility::registersharedfunc("equipment", "deleteExplosive", &namespace_3bbb5a98b932c46f::deleteexplosive);
+    utility::registersharedfunc("equipment", "isPlantedEquipment", &scripts/mp/weapons::isplantedequipment);
+    utility::registersharedfunc("equipment", "deleteExplosive", &scripts/mp/weapons::deleteexplosive);
     utility::registersharedfunc("equipment", "areNVGTogglableForPlayer", &nvg::function_258c5e445c8b7f80);
     utility::registersharedfunc("oxygenmask", "init", &namespace_1919d42246c620fa::init);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2650
 // Size: 0x45
@@ -293,7 +293,7 @@ function entity_init() {
     utility::registersharedfunc("entity", "isTouchingBoundsTrigger", &entity::istouchingboundstrigger);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x269c
 // Size: 0xb3
@@ -301,14 +301,14 @@ function perk_init() {
     utility::registersharedfunc("perk", "hasPerk", &perk::_hasperk);
     utility::registersharedfunc("perk", "removePerk", &perk::removeperk);
     utility::registersharedfunc("perk", "givePerk", &perk::giveperk);
-    utility::registersharedfunc("perk", "activatePerk", &namespace_b6a8027f477010e1::activateperk);
+    utility::registersharedfunc("perk", "activatePerk", &scripts/mp/perks/perks::activatePerk);
     utility::registersharedfunc("perk", "block", &perk::blockperkfunction);
     utility::registersharedfunc("perk", "unblock", &perk::unblockperkfunction);
     utility::registersharedfunc("perk", "perkpackage_giveOverrideFieldUpgrades", &perkpackage::perkpackage_giveoverridefieldupgrades);
-    utility::registersharedfunc("perk", "applyStunResistence", &namespace_30a6d7a07831c1e2::applystunresistence);
+    utility::registersharedfunc("perk", "applyStunResistence", &perkfunctions::applystunresistence);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2756
 // Size: 0x5d7
@@ -320,12 +320,12 @@ function player_init() {
     utility::registersharedfunc("player", "freezeLookControls", &player::_freezelookcontrols);
     utility::registersharedfunc("player", "printGameAction", &print::printgameaction);
     utility::registersharedfunc("player", "isPlayerADS", &player::isplayerads);
-    utility::registersharedfunc("player", "doScoreEvent", &points::doscoreevent);
+    utility::registersharedfunc("player", "doScoreEvent", &points::doScoreEvent);
     utility::registersharedfunc("player", "setThirdPersonDOF", &player::setthirdpersondof);
     utility::registersharedfunc("player", "hideMiniMap", &player::hideminimap);
     utility::registersharedfunc("player", "showMiniMap", &player::showminimap);
     utility::registersharedfunc("player", "getPlayersInRadius", &player::getplayersinradius);
-    utility::registersharedfunc("player", "isFriendly", &namespace_e47104b48662385b::isfriendly);
+    utility::registersharedfunc("player", "isFriendly", &player_utility::isfriendly);
     utility::registersharedfunc("player", "isReallyAlive", &player::isreallyalive);
     utility::registersharedfunc("player", "getStanceCenter", &player::getstancecenter);
     utility::registersharedfunc("player", "getStanceTop", &player::getstancetop);
@@ -334,8 +334,8 @@ function player_init() {
     utility::registersharedfunc("player", "lookupOtherOperator", &teams::lookupotheroperator);
     utility::registersharedfunc("player", "isInLastStand", &player::isinlaststand);
     utility::registersharedfunc("player", "disableClassSwapAllowed", &class::disableclassswapallowed);
-    utility::registersharedfunc("player", "isPlayerOnIntelChallenge", &namespace_746502d6fe3110aa::isplayeronintelchallenge);
-    utility::registersharedfunc("player", "getGametypeHealthPerFrame", &playerhealth::getgametypehealthperframe);
+    utility::registersharedfunc("player", "isPlayerOnIntelChallenge", &br_maphints::isplayeronintelchallenge);
+    utility::registersharedfunc("player", "getGametypeHealthPerFrame", &playerhealth::getGametypeHealthPerFrame);
     utility::registersharedfunc("player", "onFullHealth", &playerhealth::onfullhealth);
     utility::registersharedfunc("player", "isOOB", &outofbounds::isoob);
     utility::registersharedfunc("player", "hasKillstreak", &br_pickups::haskillstreak);
@@ -343,7 +343,7 @@ function player_init() {
     utility::registersharedfunc("player", "getCurrentSuper", &supers::getcurrentsuper);
     utility::registersharedfunc("player", "getCurrentSuperRef", &supers::getcurrentsuperref);
     utility::registersharedfunc("player", "br_ammo_player_is_maxed_out", &br_weapons::br_ammo_player_is_maxed_out);
-    utility::registersharedfunc("player", "hasSelfReviveToken", &namespace_a548bd428a566cf3::hasselfrevivetoken);
+    utility::registersharedfunc("player", "hasSelfReviveToken", &br_public::hasselfrevivetoken);
     utility::registersharedfunc("player", "takeWeaponPickup", &br_weapons::takeweaponpickup);
     utility::registersharedfunc("player", "forceGiveSuper", &br_pickups::forcegivesuper);
     utility::registersharedfunc("player", "resetSuper", &br_pickups::resetsuper);
@@ -351,39 +351,39 @@ function player_init() {
     utility::registersharedfunc("player", "addRespawnToken", &br_pickups::addrespawntoken);
     utility::registersharedfunc("player", "addSelfReviveToken", &br_pickups::addselfrevivetoken);
     utility::registersharedfunc("player", "isJuggernaut", &killstreak::isjuggernaut);
-    utility::registersharedfunc("player", "getAvailableDMZBackpackIndex", &namespace_e50e624d9af51c8c::getavailabledmzbackpackindex);
+    utility::registersharedfunc("player", "getAvailableDMZBackpackIndex", &namespace_e50e624d9af51c8c::getAvailableDMZBackpackIndex);
     utility::registersharedfunc("player", "playerPlunderKioskPurchase", &br_plunder::playerplunderkioskpurchase);
     utility::registersharedfunc("player", "preloadAndQueueClass", &class::preloadandqueueclass);
     utility::registersharedfunc("player", "br_giveSelectedClass", &br::br_giveselectedclass);
-    utility::registersharedfunc("player", "isEligibleForTeamRevive", &namespace_a548bd428a566cf3::iseligibleforteamrevive);
-    utility::registersharedfunc("player", "isRespawningFromToken", &namespace_a548bd428a566cf3::isrespawningfromtoken);
+    utility::registersharedfunc("player", "isEligibleForTeamRevive", &br_public::iseligibleforteamrevive);
+    utility::registersharedfunc("player", "isRespawningFromToken", &br_public::isrespawningfromtoken);
     utility::registersharedfunc("player", "playerGulagAutoWin", &br_gulag::playergulagautowin);
     utility::registersharedfunc("player", "playerPrestreamRespawnOrigin", &namespace_6e6b980bec22af5b::playerprestreamrespawnorigin);
     utility::registersharedfunc("player", "gulagFadeToBlack", &namespace_6e6b980bec22af5b::function_334a8fe67e88bbe7);
     utility::registersharedfunc("player", "gulagStreamExit", &namespace_6e6b980bec22af5b::function_961b4afc4c695b94);
     utility::registersharedfunc("player", "playerTeleportGulag", &namespace_6e6b980bec22af5b::function_ab31cf673d70f72d);
     utility::registersharedfunc("player", "playerCleanupEntOnDisconnect", &namespace_6e6b980bec22af5b::playercleanupentondisconnect);
-    utility::registersharedfunc("player", "playerWaittillStreamHintComplete", &namespace_a548bd428a566cf3::playerwaittillstreamhintcomplete);
-    utility::registersharedfunc("player", "playerClearStreamHintOrigin", &namespace_a548bd428a566cf3::playerclearstreamhintorigin);
+    utility::registersharedfunc("player", "playerWaittillStreamHintComplete", &br_public::playerwaittillstreamhintcomplete);
+    utility::registersharedfunc("player", "playerClearStreamHintOrigin", &br_public::playerclearstreamhintorigin);
     utility::registersharedfunc("player", "resetPlayerMoveSpeedScale", &namespace_6e6b980bec22af5b::resetplayermovespeedscale);
     utility::registersharedfunc("player", "gulagFadeFromBlack", &namespace_6e6b980bec22af5b::function_e68e4bb4f65f5fe4);
     utility::registersharedfunc("player", "doOnActionScoreEvent", &namespace_40cd4a4db2010f22::doonactionscoreevent);
     utility::registersharedfunc("player", "gulagTrackPlayerBulletHitAI", &function_e1e9831c1bcd6f59);
-    utility::registersharedfunc("player", "isInGulagCheck", &namespace_a548bd428a566cf3::isplayerinorgoingtogulag);
+    utility::registersharedfunc("player", "isInGulagCheck", &br_public::isplayerinorgoingtogulag);
     utility::registersharedfunc("player", "getUniqueId", &player::getuniqueid);
     utility::registersharedfunc("player", "initPlayerGameobjects", &gameobjects::init_player_gameobjects);
-    utility::registersharedfunc("player", "shellShock", &namespace_cc0f9da8a00806f6::_shellshock);
-    utility::registersharedfunc("player", "stopShellShock", &namespace_cc0f9da8a00806f6::_stopshellshock);
+    utility::registersharedfunc("player", "shellShock", &shellshock_utility::_shellshock);
+    utility::registersharedfunc("player", "stopShellShock", &shellshock_utility::_stopshellshock);
     utility::registersharedfunc("player", "fadeToBlackForPlayer", &game_utility::fadetoblackforplayer);
-    utility::registersharedfunc("player", "playerHasMoved", &namespace_66c176d3c67cc0c2::playerhasmoved);
-    utility::registersharedfunc("player", "checkHit", &namespace_3bbb5a98b932c46f::checkhit);
+    utility::registersharedfunc("player", "playerHasMoved", &playerlogic::playerhasmoved);
+    utility::registersharedfunc("player", "checkHit", &scripts/mp/weapons::checkhit);
     utility::registersharedfunc("player", "setDOF_cruiseFirst", undefined);
     utility::registersharedfunc("player", "addExtraMoveSpeed", &weapons::addextramovespeed);
     utility::registersharedfunc("player", "removeExtraMoveSpeed", &weapons::removeextramovespeed);
     utility::registersharedfunc("player", "updateMoveSpeed", &weapons::updatemovespeedscale);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d34
 // Size: 0x30
@@ -393,7 +393,7 @@ function function_e1e9831c1bcd6f59(eattacker, idamage) {
     }
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d6b
 // Size: 0x2f
@@ -402,24 +402,24 @@ function host_migration_init() {
     utility::registersharedfunc("hostmigration", "waittillNotifyOrTimeoutPause", &hostmigration::waittill_notify_or_timeout_hostmigration_pause);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2da1
 // Size: 0xdf
 function vehicle_init() {
-    utility::registersharedfunc("vehicle", "init", &namespace_e60bb0f12c163721::vehicle_mp_init);
+    utility::registersharedfunc("vehicle", "init", &vehicle_mp::vehicle_mp_init);
     utility::registersharedfunc("vehicle", "incrementFauxVehicleCount", &killstreak::incrementfauxvehiclecount);
     utility::registersharedfunc("vehicle", "decrementFauxVehicleCount", &killstreak::decrementfauxvehiclecount);
-    utility::registersharedfunc("vehicle", "reserveVehicle", &namespace_cfae3bfa0fa8d1dd::reservevehicle);
-    utility::registersharedfunc("vehicle", "clearVehicleReservation", &namespace_cfae3bfa0fa8d1dd::clearvehiclereservation);
-    utility::registersharedfunc("vehicle", "spawnVehicle", &namespace_cfae3bfa0fa8d1dd::_spawnvehicle);
-    utility::registersharedfunc("vehicle", "deleteVehicle", &namespace_cfae3bfa0fa8d1dd::_deletevehicle);
-    utility::registersharedfunc("vehicle", "registerInstance", &namespace_cfae3bfa0fa8d1dd::vehicle_tracking_registerinstance);
-    utility::registersharedfunc("vehicle", "deregisterInstance", &namespace_cfae3bfa0fa8d1dd::vehicle_tracking_deregisterinstance);
+    utility::registersharedfunc("vehicle", "reserveVehicle", &vehicle_tracking::reservevehicle);
+    utility::registersharedfunc("vehicle", "clearVehicleReservation", &vehicle_tracking::clearvehiclereservation);
+    utility::registersharedfunc("vehicle", "spawnVehicle", &vehicle_tracking::_spawnvehicle);
+    utility::registersharedfunc("vehicle", "deleteVehicle", &vehicle_tracking::_deletevehicle);
+    utility::registersharedfunc("vehicle", "registerInstance", &vehicle_tracking::vehicle_tracking_registerinstance);
+    utility::registersharedfunc("vehicle", "deregisterInstance", &vehicle_tracking::vehicle_tracking_deregisterinstance);
     utility::registersharedfunc("vehicle", "isVehicleWeapon", &weapon::isvehicleweapon);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e87
 // Size: 0x725
@@ -450,51 +450,51 @@ function game_init() {
     utility::registersharedfunc("game", "getSquadmates", &teams::getsquadmates);
     utility::registersharedfunc("game", "registerOnPlayerSpawnCallback", &namespace_b8f8e2f86acf53ed::registeronplayerspawncallback);
     utility::registersharedfunc("game", "registerPlayerFrameUpdateCallback", &namespace_5340b948743deeca::registerplayerframeupdatecallback);
-    utility::registersharedfunc("game", "trySayLocalSound", &namespace_20260f65229aa888::trysaylocalsound);
+    utility::registersharedfunc("game", "trySayLocalSound", &battlechatter_mp::trysaylocalsound);
     utility::registersharedfunc("game", "tutorialPrint", &print::tutorialprint);
     utility::registersharedfunc("game", "setOverTimeLimitDvar", &game_utility::setovertimelimitdvar);
     utility::registersharedfunc("game", "getHostPlayer", &gamelogic::gethostplayer);
-    utility::registersharedfunc("game", "brGetOperatorTeam", &namespace_a548bd428a566cf3::brgetoperatorteam);
+    utility::registersharedfunc("game", "brGetOperatorTeam", &br_public::brgetoperatorteam);
     utility::registersharedfunc("game", "gameFlag", &flags::gameflag);
     utility::registersharedfunc("game", "makeEnterExitTrigger", &trigger::makeenterexittrigger);
     utility::registersharedfunc("game", "registerSentient", &namespace_26be03d9c56f9498::registersentient);
     utility::registersharedfunc("game", "unregisterSentient", &namespace_26be03d9c56f9498::unregistersentient);
     utility::registersharedfunc("game", "gameflagSet", &flags::gameflagset);
     utility::registersharedfunc("game", "gameflagClear", &flags::gameflagclear);
-    utility::registersharedfunc("game", "isFeatureDisabled", &namespace_b8ca654fc4c2dd79::isfeaturedisabled);
+    utility::registersharedfunc("game", "isFeatureDisabled", &br_gametypes::isfeaturedisabled);
     utility::registersharedfunc("game", "checkForActiveObjIcon", &namespace_c133516bfc1d803c::checkforactiveobjicon);
     utility::registersharedfunc("game", "deleteQuestObjIcon", &namespace_c133516bfc1d803c::deletequestobjicon);
     utility::registersharedfunc("game", "spawnPickup", &br_pickups::spawnpickup);
     utility::registersharedfunc("game", "getItemDropOriginAndAngles", &br_pickups::getitemdroporiginandangles);
     utility::registersharedfunc("game", "br_forceGiveCustomPickupItem", &br_pickups::br_forcegivecustompickupitem);
-    utility::registersharedfunc("game", "brAnalytics_kiosk_purchaseItem", &namespace_9cb8bb5897c3d5b2::branalytics_kiosk_purchaseitem);
-    utility::registersharedfunc("game", "runBrGametypeFunc", &namespace_b8ca654fc4c2dd79::runbrgametypefunc);
-    utility::registersharedfunc("game", "isKiosk", &namespace_a548bd428a566cf3::iskiosk);
+    utility::registersharedfunc("game", "brAnalytics_kiosk_purchaseItem", &br_analytics::branalytics_kiosk_purchaseitem);
+    utility::registersharedfunc("game", "runBrGametypeFunc", &br_gametypes::runbrgametypefunc);
+    utility::registersharedfunc("game", "isKiosk", &br_public::isKiosk);
     utility::registersharedfunc("game", "canTakePickup", &br_pickups::cantakepickup);
-    utility::registersharedfunc("game", "brAnalytics_kiosk_menu_event", &namespace_9cb8bb5897c3d5b2::branalytics_kiosk_menu_event);
+    utility::registersharedfunc("game", "brAnalytics_kiosk_menu_event", &br_analytics::branalytics_kiosk_menu_event);
     utility::registersharedfunc("game", "createQuestObjIcon", &namespace_c133516bfc1d803c::createquestobjicon);
     utility::registersharedfunc("game", "showQuestObjIconToPlayer", &namespace_c133516bfc1d803c::showquestobjicontoplayer);
     utility::registersharedfunc("game", "hideQuestObjIconFromPlayer", &namespace_c133516bfc1d803c::hidequestobjiconfromplayer);
-    utility::registersharedfunc("game", "isPublicEventOfTypeActive", &namespace_882ad5502d1eedd6::ispubliceventoftypeactive);
-    utility::registersharedfunc("game", "isBrPracticeMode", &namespace_a548bd428a566cf3::isbrpracticemode);
+    utility::registersharedfunc("game", "isPublicEventOfTypeActive", &br_publicevents::ispubliceventoftypeactive);
+    utility::registersharedfunc("game", "isBrPracticeMode", &br_public::isBrPracticeMode);
     utility::registersharedfunc("game", "respawnTokenDisabled", &br_pickups::respawntokendisabled);
     utility::registersharedfunc("game", "traceSelectedMapLocation", &br::traceselectedmaplocation);
-    utility::registersharedfunc("game", "getDefaultWeaponAmmo", &namespace_9a3cc734bcf13a48::getdefaultweaponammo);
+    utility::registersharedfunc("game", "getDefaultWeaponAmmo", &br_gametype_dmz::getDefaultWeaponAmmo);
     utility::registersharedfunc("game", "getTeamData", &teams::getteamdata);
     utility::registersharedfunc("game", "isBackpackInventoryEnabled", &namespace_e50e624d9af51c8c::isbackpackinventoryenabled);
     utility::registersharedfunc("game", "calculatePurchaseXp", &br::calculatepurchasexp);
-    utility::registersharedfunc("game", "isAnyTutorialOrBotPracticeMatch", &namespace_a548bd428a566cf3::isanytutorialorbotpracticematch);
+    utility::registersharedfunc("game", "isAnyTutorialOrBotPracticeMatch", &br_public::isanytutorialorbotpracticematch);
     utility::registersharedfunc("game", "registerOnLuiEventCallback", &namespace_95a52c4860eaf4dd::registeronluieventcallback);
     utility::registersharedfunc("game", "isLoadoutIndexDefault", &menus::isloadoutindexdefault);
     utility::registersharedfunc("game", "getClassChoice", &menus::getclasschoice);
-    utility::registersharedfunc("game", "isBrGametypeFuncDefined", &namespace_b8ca654fc4c2dd79::isbrgametypefuncdefined);
+    utility::registersharedfunc("game", "isBrGametypeFuncDefined", &br_gametypes::isbrgametypefuncdefined);
     utility::registersharedfunc("game", "utilFlare_shootFlare", &namespace_c133516bfc1d803c::utilflare_shootflare);
     utility::registersharedfunc("game", "isValidPointInBounds", &br_circle::isvalidpointinbounds);
     utility::registersharedfunc("game", "initCirclePostStartToCircleIndex", &br_circle::initcirclepoststarttocircleindex);
-    utility::registersharedfunc("game", "isFeatureEnabled", &namespace_b8ca654fc4c2dd79::isfeatureenabled);
-    utility::registersharedfunc("game", "spectate_init", &namespace_a88bbb52a237c8a1::spectate_init);
+    utility::registersharedfunc("game", "isFeatureEnabled", &br_gametypes::isfeatureenabled);
+    utility::registersharedfunc("game", "spectate_init", &br_spectate::spectate_init);
     utility::registersharedfunc("game", "createHintObject", &gameobjects::createhintobject);
-    utility::registersharedfunc("game", "processTouchEnt", &gameobjects::processtouchent);
+    utility::registersharedfunc("game", "processTouchEnt", &gameobjects::processTouchEnt);
     utility::registersharedfunc("game", "isBRStyleGameType", &game_utility::isbrstylegametype);
     utility::registersharedfunc("game", "non_player_add_ignore_damage_signature", &damage::non_player_add_ignore_damage_signature);
     utility::registersharedfunc("game", "non_player_remove_ignore_damage_signature", &damage::non_player_remove_ignore_damage_signature);
@@ -505,11 +505,11 @@ function game_init() {
     utility::registersharedfunc("game", "isPointInOutOfBounds", &outofbounds::ispointinoutofbounds);
     utility::registersharedfunc("game", "findboxcenter", &spawnlogic::findboxcenter);
     utility::registersharedfunc("game", "isTeamReviveEnabled", &game_utility::isteamreviveenabled);
-    utility::registersharedfunc("game", "clearSpawnProtection", &game_utility::clearspawnprotection);
+    utility::registersharedfunc("game", "clearSpawnProtection", &game_utility::clearSpawnProtection);
     utility::registersharedfunc("game", "isLifeLimited", &game_utility::islifelimited);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35b3
 // Size: 0x5b
@@ -520,36 +520,36 @@ function spawn_init() {
     utility::registersharedfunc("spawn", "getCodeHandleFromScriptHandle", &spawnlogic::influencepoint_getcodehandlefromscripthandle);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3615
 // Size: 0x7b
-function function_3577a32772853bff() {
+function objective_init() {
     utility::registersharedfunc(#"objective", #"showtoplayer", &namespace_6c8a837ec98fe0b8::objective_playermask_addshowplayer);
     utility::registersharedfunc(#"objective", #"hidefromplayer", &namespace_6c8a837ec98fe0b8::objective_playermask_hidefrom);
     utility::registersharedfunc(#"objective", #"hidefromall", &namespace_6c8a837ec98fe0b8::objective_playermask_hidefromall);
     utility::registersharedfunc(#"objective", #"hash_8114455fc014da35", &namespace_6c8a837ec98fe0b8::function_fa3c420e27b5d08b);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3697
 // Size: 0x5d
 function emp_init() {
-    utility::registersharedfunc(#"emp", #"init", &namespace_8791d3d5975975e4::emp_debuff_init);
+    utility::registersharedfunc(#"emp", #"init", &emp_debuff_mp::emp_debuff_init);
     utility::registersharedfunc(#"emp", #"hash_a865e3770eb96298", &emp_debuff::function_ecb3af104f3ab0f4);
     utility::registersharedfunc(#"emp", #"emp_debuff_deregister", &emp_debuff::emp_debuff_deregister);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36fb
 // Size: 0x19
 function execution_init() {
-    utility::registersharedfunc("execution", "init", &namespace_d249b12f7ad44b07::execution_mp_init);
+    utility::registersharedfunc("execution", "init", &execution_mp::execution_mp_init);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x371b
 // Size: 0x1a5
@@ -566,16 +566,16 @@ function weapons_init() {
     utility::registersharedfunc("weapons", "saveAltStates", &weapons::savealtstates);
     utility::registersharedfunc("weapons", "updateSavedAltState", &weapons::updatesavedaltstate);
     utility::registersharedfunc("weapons", "updateToggleScopeState", &weapons::updatetogglescopestate);
-    utility::registersharedfunc("weapons", "onEquipmentPlanted", &namespace_3bbb5a98b932c46f::onequipmentplanted);
-    utility::registersharedfunc("weapons", "removeEquip", &namespace_3bbb5a98b932c46f::removeequip);
-    utility::registersharedfunc("weapons", "magicBullet", &namespace_45ecbe78f599af72::_magicbullet);
-    utility::registersharedfunc("weapons", "watchForPlacementFireState", &target_marker::watchforplacementfirestate);
+    utility::registersharedfunc("weapons", "onEquipmentPlanted", &scripts/mp/weapons::onequipmentplanted);
+    utility::registersharedfunc("weapons", "removeEquip", &scripts/mp/weapons::removeequip);
+    utility::registersharedfunc("weapons", "magicBullet", &weapon_utility::_magicbullet);
+    utility::registersharedfunc("weapons", "watchForPlacementFireState", &target_marker::watchForPlacementFireState);
     utility::registersharedfunc("weapons", "dropWeaponForDeath", &weapons::dropweaponfordeath);
-    utility::registersharedfunc("weapons", "getWeaponGroup", &namespace_68e641469fde3fa7::getweapongroup);
-    utility::registersharedfunc("weapons", "isSuperWeapon", &namespace_68e641469fde3fa7::issuperweapon);
+    utility::registersharedfunc("weapons", "getWeaponGroup", &scripts/mp/utility/weapon::getweapongroup);
+    utility::registersharedfunc("weapons", "isSuperWeapon", &scripts/mp/utility/weapon::issuperweapon);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38c7
 // Size: 0x137
@@ -596,18 +596,18 @@ function damage_init() {
     utility::registersharedfunc("damage", "monitorDamage", &damage::monitordamage);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a05
 // Size: 0x5b
 function sound_init() {
-    utility::registersharedfunc("sound", "trySayLocalSound", &namespace_20260f65229aa888::trysaylocalsound);
-    utility::registersharedfunc("sound", "playKillstreakDeployDialog", &namespace_20260f65229aa888::playkillstreakdeploydialog);
+    utility::registersharedfunc("sound", "trySayLocalSound", &battlechatter_mp::trysaylocalsound);
+    utility::registersharedfunc("sound", "playKillstreakDeployDialog", &battlechatter_mp::playkillstreakdeploydialog);
     utility::registersharedfunc("sound", "playSoundOnTag", &sound::play_sound_on_tag);
     utility::registersharedfunc("sound", "CodcasterSetPlayerStatusEffect", &player::codcastersetplayerstatuseffect);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a67
 // Size: 0x5b
@@ -618,7 +618,7 @@ function flares_init() {
     utility::registersharedfunc("flares", "playFx", &flares::flares_playfx);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ac9
 // Size: 0x2f
@@ -627,7 +627,7 @@ function shellshock_init() {
     utility::registersharedfunc("shellshock", "grenade_earthQuakeAtPosition", &shellshock::grenade_earthquakeatposition);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3aff
 // Size: 0x2f
@@ -636,17 +636,17 @@ function bots_init() {
     utility::registersharedfunc("bots", "bot_body_is_dead", &namespace_cc7250329787f909::bot_body_is_dead);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b35
 // Size: 0x36
 function function_550bcd278c30275e() {
     namespace_84c887a505a8f661::function_ce55987060167d4a();
-    utility::registersharedfunc("agents", "deactivateAgent", &namespace_cb97214c768c4dbd::deactivateagent);
-    utility::registersharedfunc("agents", "spawnNewAgentAiType", &namespace_39b39f93ee3db0c2::spawnnewagentaitype);
+    utility::registersharedfunc("agents", "deactivateAgent", &agent_utility::deactivateagent);
+    utility::registersharedfunc("agents", "spawnNewAgentAiType", &mp_agent::spawnnewagentaitype);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b72
 // Size: 0x71
@@ -658,23 +658,23 @@ function outline_init() {
     utility::registersharedfunc("outline", "hudOutlineViewmodelDisable", &outline::_hudoutlineviewmodeldisable);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3bea
 // Size: 0x19
 function game_utility_init() {
-    utility::registersharedfunc("game_utility", "init", &namespace_777f15a00eb29dd4::game_utility_mp_init);
+    utility::registersharedfunc("game_utility", "init", &game_utility_mp::game_utility_mp_init);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c0a
 // Size: 0x19
 function function_b9e6cdc26386e536() {
-    utility::registersharedfunc("dvar_utility", "getFloatProperty", &namespace_9a8c945fe45c8e5::getfloatproperty);
+    utility::registersharedfunc("dvar_utility", "getFloatProperty", &dvars::getfloatproperty);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c2a
 // Size: 0x87
@@ -687,15 +687,15 @@ function rank_init() {
     utility::registersharedfunc("rank", "killEventTextPopup", &events::killeventtextpopup);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3cb8
 // Size: 0x19
 function stats_init() {
-    registersharedfunc("stats", "getPersStat", &namespace_3c5a4254f2b957ea::getpersstat);
+    registersharedfunc("stats", "getPersStat", &scripts/mp/utility/stats::getpersstat);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3cd8
 // Size: 0x163
@@ -709,7 +709,7 @@ function supers_init() {
     utility::registersharedfunc("supers", "setSuperBasePoints", &supers::setsuperbasepoints);
     utility::registersharedfunc("supers", "refundSuper", &supers::refundsuper);
     utility::registersharedfunc("supers", "setSuperIsInUse", &supers::setsuperisinuse);
-    utility::registersharedfunc("supers", "setSuperIsActive", &supers::setsuperisactive);
+    utility::registersharedfunc("supers", "setSuperIsActive", &supers::setSuperIsActive);
     utility::registersharedfunc("supers", "getCurrentSuper", &supers::getcurrentsuper);
     utility::registersharedfunc("supers", "tryGiveUseWeapon", &supers::trygiveuseweapon);
     utility::registersharedfunc("supers", "isSuperInUse", &supers::issuperinuse);
@@ -718,7 +718,7 @@ function supers_init() {
     utility::registersharedfunc("supers", "updateSuperUIState", &supers::updatesuperuistate);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e42
 // Size: 0x2f
@@ -727,7 +727,7 @@ function gamescore_init() {
     utility::registersharedfunc("gamescore", "untrackDebuffAssist", &gamescore::untrackdebuffassist);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e78
 // Size: 0x19
@@ -735,18 +735,18 @@ function pers_init() {
     utility::registersharedfunc("pers", "incPersStat", &stats::incpersstat);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e98
 // Size: 0x5b
 function dlog_init() {
     utility::registersharedfunc("dlog", "fieldUpgradeExpired", &analyticslog::logevent_fieldupgradeexpired);
     utility::registersharedfunc("dlog", "killStreakExpired", &analyticslog::logevent_killstreakexpired);
-    utility::registersharedfunc("dlog", "brAnalytics_inventory_snapshot", &namespace_9cb8bb5897c3d5b2::branalytics_inventory_snapshot);
-    utility::registersharedfunc("dlog", "brAnalytics_kiosk_purchaseLoadout", &namespace_9cb8bb5897c3d5b2::branalytics_kiosk_purchaseloadout);
+    utility::registersharedfunc("dlog", "brAnalytics_inventory_snapshot", &br_analytics::branalytics_inventory_snapshot);
+    utility::registersharedfunc("dlog", "brAnalytics_kiosk_purchaseLoadout", &br_analytics::branalytics_kiosk_purchaseloadout);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3efa
 // Size: 0x9d
@@ -760,7 +760,7 @@ function challenges_init() {
     utility::registersharedfunc("challenges", "onPing", &challenges::onping);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f9e
 // Size: 0x2f
@@ -769,7 +769,7 @@ function function_a92ed2f4c44e5ffa() {
     utility::registersharedfunc("team_utility", "joinTeamAggregator", &namespace_f7eae0a211807471::registeronplayerjointeamcallback);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fd4
 // Size: 0x2f
@@ -778,7 +778,7 @@ function function_c1199c7cd79918b3() {
     utility::registersharedfunc("aggregator", "registerOnLuiEventCallback", &namespace_95a52c4860eaf4dd::registeronluieventcallback);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x400a
 // Size: 0x45
@@ -788,46 +788,46 @@ function vehicle_damage_init() {
     utility::registersharedfunc("vehicle", "set_vehicle_hit_damage_data_for_weapon", &damage::set_vehicle_hit_damage_data_for_weapon);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4056
 // Size: 0x19
 function function_1bc257700c3d014e() {
-    utility::registersharedfunc("cameras", "tacticalCamera_Hack", &namespace_d28c068a27f52a2e::tacticalcamera_hack);
+    utility::registersharedfunc("cameras", "tacticalCamera_Hack", &tactical_camera::tacticalCamera_Hack);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4076
 // Size: 0x19
 function function_a30b248a8fc67a00() {
-    utility::registersharedfunc("objdom", "distSquaredCheck", &namespace_c93989f0e1459191::distsquaredcheck);
+    utility::registersharedfunc("objdom", "distSquaredCheck", &obj_dom::distsquaredcheck);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4096
 // Size: 0x2f
-function function_d3ac40e24c2653a3() {
-    utility::registersharedfunc("battlechatter", "equipmentDestroyed", &namespace_20260f65229aa888::equipmentdestroyed);
-    utility::registersharedfunc("battlechatter", "onFieldUpgradeDestroy", &namespace_20260f65229aa888::onfieldupgradedestroy);
+function battlechatter_init() {
+    utility::registersharedfunc("battlechatter", "equipmentDestroyed", &battlechatter_mp::equipmentdestroyed);
+    utility::registersharedfunc("battlechatter", "onFieldUpgradeDestroy", &battlechatter_mp::onfieldupgradedestroy);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x40cc
 // Size: 0x9d
-function function_550feb35b9af0cda() {
-    utility::registersharedfunc("loadout", "cac_getFlcExtraEquipmentPrimary", &class::cac_getflcextraequipmentprimary);
-    utility::registersharedfunc("loadout", "cac_getFlcExtraEquipmentSecondary", &class::cac_getflcextraequipmentsecondary);
-    utility::registersharedfunc("loadout", "table_getFlcExtraEquipmentPrimary", &class::table_getflcextraequipmentprimary);
-    utility::registersharedfunc("loadout", "table_getFlcExtraEquipmentSecondary", &class::table_getflcextraequipmentsecondary);
+function loadout_init() {
+    utility::registersharedfunc("loadout", "cac_getFlcExtraEquipmentPrimary", &class::cac_getFlcExtraEquipmentPrimary);
+    utility::registersharedfunc("loadout", "cac_getFlcExtraEquipmentSecondary", &class::cac_getFlcExtraEquipmentSecondary);
+    utility::registersharedfunc("loadout", "table_getFlcExtraEquipmentPrimary", &class::table_getFlcExtraEquipmentPrimary);
+    utility::registersharedfunc("loadout", "table_getFlcExtraEquipmentSecondary", &class::table_getFlcExtraEquipmentSecondary);
     utility::registersharedfunc("loadout", "loadout_getClassType", &class::loadout_getclasstype);
     utility::registersharedfunc("loadout", "getExtraEquipmentPrimary", &class::cac_getextraequipmentprimary);
     utility::registersharedfunc("loadout", "getExtraEquipmentSecondary", &class::cac_getextraequipmentsecondary);
 }
 
-// Namespace namespace_657dc7e018dcfce9/namespace_1bb1b009684a30dc
+// Namespace namespace_657dc7e018dcfce9 / namespace_1bb1b009684a30dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4170
 // Size: 0x3

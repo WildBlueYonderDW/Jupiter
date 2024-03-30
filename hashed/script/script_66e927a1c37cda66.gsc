@@ -1,12 +1,12 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using script_422801cfe4074e05;
 
 #namespace namespace_30101e0cca498f6;
 
-// Namespace namespace_30101e0cca498f6/namespace_8a8c1d3ffd176d9c
+// Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12f
 // Size: 0x3c
@@ -16,15 +16,15 @@ function init() {
             assert(flag("<unknown string>"));
         #/
     #/
-    callback::add("on_agent_spawned", &function_ca7314732398a0db);
+    callback::add("on_agent_spawned", &on_ai_spawn);
     callback::add("on_ai_killed", &on_ai_killed);
 }
 
-// Namespace namespace_30101e0cca498f6/namespace_8a8c1d3ffd176d9c
+// Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x172
 // Size: 0x59
-function private function_ca7314732398a0db(params) {
+function private on_ai_spawn(params) {
     ent = params.agent;
     if (!isdefined(ent)) {
         return;
@@ -34,7 +34,7 @@ function private function_ca7314732398a0db(params) {
     analytics::function_a569c60476357392("agent_spawn", ent, state, data);
 }
 
-// Namespace namespace_30101e0cca498f6/namespace_8a8c1d3ffd176d9c
+// Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x152

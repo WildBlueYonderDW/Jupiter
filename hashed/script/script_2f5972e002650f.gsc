@@ -1,8 +1,8 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_4c770a9a4ad7659c;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\callbacks.gsc;
+#using scripts\common\devgui.gsc;
 #using scripts\engine\scriptable.gsc;
 #using script_860bfdfe82326e3;
 #using script_16ea1b94f0f381b3;
@@ -10,12 +10,12 @@
 
 #namespace loot_crystal;
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0xf3
 function function_f009d47735dc7adb() {
-    var_4af01a2d989e9f6f = level.var_1a2b600a06ec21f4.var_4af01a2d989e9f6f;
+    var_4af01a2d989e9f6f = level.gamemodebundle.var_4af01a2d989e9f6f;
     if (!isdefined(var_4af01a2d989e9f6f)) {
         /#
             assertmsg("no loot crystal bundle set for mode");
@@ -24,28 +24,28 @@ function function_f009d47735dc7adb() {
     }
     s_bundle = getscriptbundle("lootcrystal:" + var_4af01a2d989e9f6f);
     level.var_4af01a2d989e9f6f = s_bundle;
-    if (istrue(level.var_4af01a2d989e9f6f.var_c6ff3fb792f9b962)) {
+    if (istrue(level.var_4af01a2d989e9f6f.forcetrailfx)) {
         /#
             assertex(isdefined(level.var_4af01a2d989e9f6f.var_2e0dc21e3310887f), "no vfx set for force trail");
         #/
         level._effect["vfx_loot_crystal_trail"] = loadfx(level.var_4af01a2d989e9f6f.var_2e0dc21e3310887f);
     }
-    namespace_4164bc931714b00b::function_72f3dd0512f43c96("loot_crystal", &function_a60bb9caaac38e4e);
+    namespace_4164bc931714b00b::register_script("loot_crystal", &function_a60bb9caaac38e4e);
     level thread function_11d90b6aad7cc54f();
     scriptable_addnotifycallback("loot_crystal_destroyed", &loot_crystal_destroyed);
     callback::add("ob_content_process_create_script", &function_a62a277f18e23661);
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ad
 // Size: 0xa3
 function function_11d90b6aad7cc54f() {
     level endon("game_ended");
     waittillframeend();
-    var_e10b8f561af1621c = getstructarray("content_destination", "variantname");
-    if (isdefined(var_e10b8f561af1621c) && var_e10b8f561af1621c.size > 0) {
-        foreach (destination in var_e10b8f561af1621c) {
+    mapdestinations = getstructarray("content_destination", "variantname");
+    if (isdefined(mapdestinations) && mapdestinations.size > 0) {
+        foreach (destination in mapdestinations) {
             level thread function_fd67fc9069339eb0(destination);
         }
     }
@@ -55,7 +55,7 @@ function function_11d90b6aad7cc54f() {
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x457
 // Size: 0x592
@@ -73,7 +73,7 @@ function function_fd67fc9069339eb0(destination) {
         foreach (location in destination.locations) {
             loot_crystal = location.instances["loot_crystal"];
             if (isdefined(loot_crystal)) {
-                foreach (instance in loot_crystal.var_67b2b78e28eaa758) {
+                foreach (instance in loot_crystal.versions) {
                     difficulty = [[ level.var_8241e0d86017df29 ]](instance.origin);
                     switch (difficulty) {
                     case #"hash_7bb2cd766703d463":
@@ -93,10 +93,10 @@ function function_fd67fc9069339eb0(destination) {
                         break;
                     }
                 }
-                var_8d0fc73f82c3715c = 0;
-                var_d211eea36b16b15 = 0;
-                var_bd8640129a0b2867 = 0;
-                var_87155613ec4cfd1c = 0;
+                green_count = 0;
+                yellow_count = 0;
+                orange_count = 0;
+                red_count = 0;
                 var_f413f108e237053b = var_af05cdbea35d46c.size * var_a4dee53b875bb846;
                 var_263a1961483d1c6c = var_46b5992c2733accd.size * var_2665f3e21251620b;
                 var_59b0d07e8399e9a2 = var_41464293eca8efd7.size * var_6c7b9c59a38ff415;
@@ -106,51 +106,51 @@ function function_fd67fc9069339eb0(destination) {
                 var_41464293eca8efd7 = array_randomize(var_41464293eca8efd7);
                 var_6b94404ff55d952c = array_randomize(var_6b94404ff55d952c);
                 foreach (instance in var_af05cdbea35d46c) {
-                    if (var_8d0fc73f82c3715c < var_f413f108e237053b) {
-                        namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
-                        var_8d0fc73f82c3715c++;
+                    if (green_count < var_f413f108e237053b) {
+                        namespace_4164bc931714b00b::spawn_instance(instance);
+                        green_count++;
                     }
                 }
                 foreach (instance in var_46b5992c2733accd) {
-                    if (var_d211eea36b16b15 < var_263a1961483d1c6c) {
-                        namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
-                        var_d211eea36b16b15++;
+                    if (yellow_count < var_263a1961483d1c6c) {
+                        namespace_4164bc931714b00b::spawn_instance(instance);
+                        yellow_count++;
                     }
                 }
                 foreach (instance in var_41464293eca8efd7) {
-                    if (var_bd8640129a0b2867 < var_59b0d07e8399e9a2) {
-                        namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
-                        var_bd8640129a0b2867++;
+                    if (orange_count < var_59b0d07e8399e9a2) {
+                        namespace_4164bc931714b00b::spawn_instance(instance);
+                        orange_count++;
                     }
                 }
                 foreach (instance in var_6b94404ff55d952c) {
-                    if (var_87155613ec4cfd1c < var_11fd29abbcd121fb) {
-                        namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
-                        var_87155613ec4cfd1c++;
+                    if (red_count < var_11fd29abbcd121fb) {
+                        namespace_4164bc931714b00b::spawn_instance(instance);
+                        red_count++;
                     }
                 }
                 foreach (instance in var_142e262ef4250cdd) {
-                    namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
+                    namespace_4164bc931714b00b::spawn_instance(instance);
                 }
-                level.var_4af01a2d989e9f6f.var_8d0fc73f82c3715c = var_8d0fc73f82c3715c;
-                level.var_4af01a2d989e9f6f.var_d211eea36b16b15 = var_d211eea36b16b15;
-                level.var_4af01a2d989e9f6f.var_bd8640129a0b2867 = var_bd8640129a0b2867;
-                level.var_4af01a2d989e9f6f.var_87155613ec4cfd1c = var_87155613ec4cfd1c;
+                level.var_4af01a2d989e9f6f.green_count = green_count;
+                level.var_4af01a2d989e9f6f.yellow_count = yellow_count;
+                level.var_4af01a2d989e9f6f.orange_count = orange_count;
+                level.var_4af01a2d989e9f6f.red_count = red_count;
             }
         }
-    } else {
-        foreach (location in destination.locations) {
-            loot_crystal = location.instances["loot_crystal"];
-            if (isdefined(loot_crystal)) {
-                foreach (instance in loot_crystal.var_67b2b78e28eaa758) {
-                    namespace_4164bc931714b00b::function_7e2984b7610f3616(instance);
-                }
+        return;
+    }
+    foreach (location in destination.locations) {
+        loot_crystal = location.instances["loot_crystal"];
+        if (isdefined(loot_crystal)) {
+            foreach (instance in loot_crystal.versions) {
+                namespace_4164bc931714b00b::spawn_instance(instance);
             }
         }
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f0
 // Size: 0x232
@@ -158,59 +158,59 @@ function function_a60bb9caaac38e4e(struct) {
     /#
         assert(isstruct(struct), "no struct on spawn wallbuy");
     #/
-    if (isdefined(struct.var_305e36cbb51f88ce)) {
-        spawn_points = struct.var_305e36cbb51f88ce["loot_crystal_spawn"];
+    if (isdefined(struct.contentgroups)) {
+        spawn_points = struct.contentgroups["loot_crystal_spawn"];
     } else {
         spawn_points = getstructarray(struct.targetname, "target");
     }
     spawn_points = array_randomize(spawn_points);
     if (istrue(level.var_4af01a2d989e9f6f.var_89e2af74eb7cf125) && isdefined(level.var_8241e0d86017df29)) {
-        var_53f968fd95d49b22 = level.var_4af01a2d989e9f6f.var_4819e64b57d10e5b / 100;
-        var_a4d9d9dbfcbf6fb7 = level.var_4af01a2d989e9f6f.var_fb1f51496c10895c / 100;
-        var_3de3c8bce67e4fa9 = level.var_4af01a2d989e9f6f.var_305ebee8191eb016 / 100;
-        var_e8a4498fc709e6a2 = level.var_4af01a2d989e9f6f.var_818038caf4aeab2b / 100;
+        spawnpointsgreen = level.var_4af01a2d989e9f6f.var_4819e64b57d10e5b / 100;
+        spawnpointsyellow = level.var_4af01a2d989e9f6f.var_fb1f51496c10895c / 100;
+        spawnpointsorange = level.var_4af01a2d989e9f6f.var_305ebee8191eb016 / 100;
+        spawnpointsred = level.var_4af01a2d989e9f6f.var_818038caf4aeab2b / 100;
         difficulty = [[ level.var_8241e0d86017df29 ]](struct.origin);
-        var_dc713ce23542133 = spawn_points.size;
+        totalspawnpoints = spawn_points.size;
         switch (difficulty) {
         case #"hash_7bb2cd766703d463":
-            var_dc713ce23542133 = var_dc713ce23542133 * var_53f968fd95d49b22;
+            totalspawnpoints = totalspawnpoints * spawnpointsgreen;
             break;
         case #"hash_af83e47edfa8900a":
-            var_dc713ce23542133 = var_dc713ce23542133 * var_a4d9d9dbfcbf6fb7;
+            totalspawnpoints = totalspawnpoints * spawnpointsyellow;
             break;
         case #"hash_5343b465e56ec9a4":
-            var_dc713ce23542133 = var_dc713ce23542133 * var_3de3c8bce67e4fa9;
+            totalspawnpoints = totalspawnpoints * spawnpointsorange;
             break;
         case #"hash_651f76c0ad6741ec":
-            var_dc713ce23542133 = var_dc713ce23542133 * var_e8a4498fc709e6a2;
+            totalspawnpoints = totalspawnpoints * spawnpointsred;
             break;
         case #"hash_a1e09f51896088fb":
-            var_dc713ce23542133 = spawn_points.size;
+            totalspawnpoints = spawn_points.size;
             break;
         }
-        for (count = 0; count < var_dc713ce23542133; count++) {
+        for (count = 0; count < totalspawnpoints; count++) {
             point = spawn_points[count];
             point function_e87afa054556fca(point);
         }
-    } else {
-        foreach (point in spawn_points) {
-            point function_e87afa054556fca(point);
-        }
+        return;
+    }
+    foreach (point in spawn_points) {
+        point function_e87afa054556fca(point);
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc29
 // Size: 0x9b
 function function_e87afa054556fca(point) {
     randomindex = randomintrange(0, level.var_4af01a2d989e9f6f.var_63a804e036bfaf8f.size);
     scriptablename = level.var_4af01a2d989e9f6f.var_63a804e036bfaf8f[randomindex];
-    var_2f49151159f060ba = spawnscriptable(scriptablename.var_f65bc692c0385ca7, point.origin, point.angles);
+    var_2f49151159f060ba = spawnscriptable(scriptablename.lootcrystal, point.origin, point.angles);
     level.var_2161a5a5ecb28ea3 = array_add_safe(level.var_2161a5a5ecb28ea3, var_2f49151159f060ba);
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xccb
 // Size: 0x9e
@@ -232,7 +232,7 @@ function function_a4c9c7827c00cf5() {
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd70
 // Size: 0x15b
@@ -250,29 +250,29 @@ function function_1be1c2a4c44b823c() {
     } else if (n_round >= 55) {
         var_f3b3c6de643ff4ad = level.var_4af01a2d989e9f6f.var_3443cad32959c5b8;
     }
-    var_1d441103e7105cff = level namespace_2abc885019e1956::function_cd45408bd44fab07(var_f3b3c6de643ff4ad, 1, self.origin);
-    if (istrue(level.var_4af01a2d989e9f6f.var_c6ff3fb792f9b962)) {
-        foreach (item in var_1d441103e7105cff) {
+    itemsspawned = level namespace_2abc885019e1956::function_cd45408bd44fab07(var_f3b3c6de643ff4ad, 1, self.origin);
+    if (istrue(level.var_4af01a2d989e9f6f.forcetrailfx)) {
+        foreach (item in itemsspawned) {
             item.var_1c9b1e35f32a7097 = 1;
         }
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xed2
 // Size: 0x7f
 function function_a120a3b57a6087c2(item, originpos) {
-    var_34c14613d8b78b3e = spawn("script_model", originpos);
-    var_34c14613d8b78b3e setmodel("tag_origin");
-    playfxontag(getfx("vfx_loot_crystal_trail"), var_34c14613d8b78b3e, "tag_origin");
-    var_f9567f37db523f7a = item.origin - originpos;
-    var_34c14613d8b78b3e movegravity(var_f9567f37db523f7a, 1);
+    itemlauncher = spawn("script_model", originpos);
+    itemlauncher setmodel("tag_origin");
+    playfxontag(getfx("vfx_loot_crystal_trail"), itemlauncher, "tag_origin");
+    dirpos = item.origin - originpos;
+    itemlauncher movegravity(dirpos, 1);
     wait(1);
-    var_34c14613d8b78b3e delete();
+    itemlauncher delete();
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf58
 // Size: 0x8d
@@ -280,15 +280,15 @@ function loot_crystal_destroyed(instance, note, param, var_535d9c3fdddab5a9) {
     if (!istrue(instance.var_f6f86c3af9ca88a0)) {
         instance thread function_1be1c2a4c44b823c();
     }
-    var_d27680ff86693f5c = spawnstruct();
-    var_d27680ff86693f5c.instance = instance;
-    var_d27680ff86693f5c.note = note;
-    var_d27680ff86693f5c.param = param;
-    var_d27680ff86693f5c.var_535d9c3fdddab5a9 = var_535d9c3fdddab5a9;
-    callback::callback("loot_crystal_destroyed", var_d27680ff86693f5c);
+    sparams = spawnstruct();
+    sparams.instance = instance;
+    sparams.note = note;
+    sparams.param = param;
+    sparams.var_535d9c3fdddab5a9 = var_535d9c3fdddab5a9;
+    callback::callback("loot_crystal_destroyed", sparams);
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfec
 // Size: 0x179
@@ -299,9 +299,9 @@ function function_11817d38f58bbb(params) {
         foreach (crystal in level.var_2161a5a5ecb28ea3) {
             if (isdefined(crystal) && crystal getscriptablepartstate("loot_crystal") == "healthy") {
                 var_260d30366b6c35dc++;
-            } else {
-                var_e7cc345429d93ae3 = array_add(var_e7cc345429d93ae3, crystal);
+                continue;
             }
+            var_e7cc345429d93ae3 = array_add(var_e7cc345429d93ae3, crystal);
         }
         var_eecabbec50e06c39 = min(10, level.var_2161a5a5ecb28ea3.size);
         var_e098da9ac92f01ff = min(var_eecabbec50e06c39 - var_260d30366b6c35dc, 2);
@@ -312,21 +312,21 @@ function function_11817d38f58bbb(params) {
                         crystal setscriptablepartstate("loot_crystal", "healthy");
                     }
                 }
-            } else {
-                var_e7cc345429d93ae3 = array_randomize(var_e7cc345429d93ae3);
-                for (i = 0; i < var_e098da9ac92f01ff; i++) {
-                    var_e7cc345429d93ae3[i] setscriptablepartstate("loot_crystal", "healthy");
-                }
+                return;
+            }
+            var_e7cc345429d93ae3 = array_randomize(var_e7cc345429d93ae3);
+            for (i = 0; i < var_e098da9ac92f01ff; i++) {
+                var_e7cc345429d93ae3[i] setscriptablepartstate("loot_crystal", "healthy");
             }
         }
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x116c
 // Size: 0x5a7
-function function_a62a277f18e23661(var_d27680ff86693f5c) {
+function function_a62a277f18e23661(sparams) {
     if (getdvarint(@"hash_3f9da19597f5e1ba", 0)) {
         return;
     }
@@ -367,10 +367,10 @@ function function_a62a277f18e23661(var_d27680ff86693f5c) {
                 break;
             }
         }
-        var_8d0fc73f82c3715c = 0;
-        var_d211eea36b16b15 = 0;
-        var_bd8640129a0b2867 = 0;
-        var_87155613ec4cfd1c = 0;
+        green_count = 0;
+        yellow_count = 0;
+        orange_count = 0;
+        red_count = 0;
         var_f413f108e237053b = var_af05cdbea35d46c.size * var_a4dee53b875bb846;
         var_263a1961483d1c6c = var_46b5992c2733accd.size * var_2665f3e21251620b;
         var_59b0d07e8399e9a2 = var_41464293eca8efd7.size * var_6c7b9c59a38ff415;
@@ -383,50 +383,50 @@ function function_a62a277f18e23661(var_d27680ff86693f5c) {
             var_af05cdbea35d46c = [[ level.var_c383b967aa7e551b ]]("green_crystal", var_af05cdbea35d46c);
         }
         foreach (instance in var_af05cdbea35d46c) {
-            if (var_8d0fc73f82c3715c < var_f413f108e237053b) {
+            if (green_count < var_f413f108e237053b) {
                 function_a60bb9caaac38e4e(instance);
-                var_8d0fc73f82c3715c++;
+                green_count++;
             }
         }
         if (isdefined(level.var_c383b967aa7e551b)) {
             var_46b5992c2733accd = [[ level.var_c383b967aa7e551b ]]("yellow_crystal", var_46b5992c2733accd);
         }
         foreach (instance in var_46b5992c2733accd) {
-            if (var_d211eea36b16b15 < var_263a1961483d1c6c) {
+            if (yellow_count < var_263a1961483d1c6c) {
                 function_a60bb9caaac38e4e(instance);
-                var_d211eea36b16b15++;
+                yellow_count++;
             }
         }
         if (isdefined(level.var_c383b967aa7e551b)) {
             var_41464293eca8efd7 = [[ level.var_c383b967aa7e551b ]]("orange_crystal", var_41464293eca8efd7);
         }
         foreach (instance in var_41464293eca8efd7) {
-            if (var_bd8640129a0b2867 < var_59b0d07e8399e9a2) {
+            if (orange_count < var_59b0d07e8399e9a2) {
                 function_a60bb9caaac38e4e(instance);
-                var_bd8640129a0b2867++;
+                orange_count++;
             }
         }
         if (isdefined(level.var_c383b967aa7e551b)) {
             var_6b94404ff55d952c = [[ level.var_c383b967aa7e551b ]]("red_crystal", var_6b94404ff55d952c);
         }
         foreach (instance in var_6b94404ff55d952c) {
-            if (var_87155613ec4cfd1c < var_11fd29abbcd121fb) {
+            if (red_count < var_11fd29abbcd121fb) {
                 function_a60bb9caaac38e4e(instance);
-                var_87155613ec4cfd1c++;
+                red_count++;
             }
         }
         foreach (instance in var_142e262ef4250cdd) {
             function_a60bb9caaac38e4e(instance);
         }
-        level.var_4af01a2d989e9f6f.var_8d0fc73f82c3715c = var_8d0fc73f82c3715c;
-        level.var_4af01a2d989e9f6f.var_d211eea36b16b15 = var_d211eea36b16b15;
-        level.var_4af01a2d989e9f6f.var_bd8640129a0b2867 = var_bd8640129a0b2867;
-        level.var_4af01a2d989e9f6f.var_87155613ec4cfd1c = var_87155613ec4cfd1c;
+        level.var_4af01a2d989e9f6f.green_count = green_count;
+        level.var_4af01a2d989e9f6f.yellow_count = yellow_count;
+        level.var_4af01a2d989e9f6f.orange_count = orange_count;
+        level.var_4af01a2d989e9f6f.red_count = red_count;
         callback::callback("ob_crystals_create_script_done");
     }
 }
 
-// Namespace loot_crystal/namespace_3bf3843b524af7bd
+// Namespace loot_crystal / namespace_3bf3843b524af7bd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x171a
 // Size: 0x30

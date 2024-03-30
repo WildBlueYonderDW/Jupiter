@@ -4,7 +4,7 @@
 
 #namespace elevator;
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x138
@@ -12,11 +12,11 @@ function init() {
     if (getdvar(@"hash_74714610a987a982") == "1") {
         return;
     }
-    var_adede90fb88cd9cc = getentarray("elevator_group", "targetname");
-    if (!isdefined(var_adede90fb88cd9cc)) {
+    elevator_groups = getentarray("elevator_group", "targetname");
+    if (!isdefined(elevator_groups)) {
         return;
     }
-    if (!var_adede90fb88cd9cc.size) {
+    if (!elevator_groups.size) {
         return;
     }
     precachestring("ELEVATOR_CALL_HINT");
@@ -39,12 +39,12 @@ function init() {
     thread elevator_debug();
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x779
 // Size: 0x176
 function elevator_update_global_dvars() {
-    while (1) {
+    while (true) {
         level.elevator_accel = elevator_get_dvar(@"hash_f32e7148016d2756", "0.2");
         level.elevator_decel = elevator_get_dvar(@"hash_da5b272234cd0d73", "0.2");
         level.elevator_music = elevator_get_dvar_int(@"hash_87b3871ebe6fc289", "1");
@@ -64,7 +64,7 @@ function elevator_update_global_dvars() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f6
 // Size: 0xf
@@ -72,26 +72,26 @@ function elevator_think() {
     elevator_fsm("[A]");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90c
 // Size: 0x59
 function elevator_call() {
-    foreach (var_651e74abaa82eba1 in level.elevator_callbuttons) {
-        var_651e74abaa82eba1 thread monitor_callbutton();
+    foreach (callbutton in level.elevator_callbuttons) {
+        callbutton thread monitor_callbutton();
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x96c
 // Size: 0x62
-function floor_override(var_24b5a460bfbb32dc) {
+function floor_override(inside_trig) {
     self endon("elevator_moving");
     self.floor_override = 0;
     self.overrider = undefined;
-    while (1) {
-        player = var_24b5a460bfbb32dc waittill("trigger");
+    while (true) {
+        player = inside_trig waittill("trigger");
         self.floor_override = 1;
         self.overrider = player;
         break;
@@ -99,19 +99,19 @@ function floor_override(var_24b5a460bfbb32dc) {
     self notify("floor_override");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d5
 // Size: 0x356
 function elevator_fsm(state) {
     self.estate = state;
     door_trig = get_housing_door_trigger();
-    var_24b5a460bfbb32dc = get_housing_inside_trigger();
-    while (1) {
+    inside_trig = get_housing_inside_trigger();
+    while (true) {
         if (self.estate == "[A]") {
             if (level.elevator_return && get_curfloor() != get_initfloor()) {
                 self.moveto_floor = get_initfloor();
-                thread floor_override(var_24b5a460bfbb32dc);
+                thread floor_override(inside_trig);
                 waittill_or_timeout("floor_override", level.elevator_waittime);
                 if (self.floor_override && isdefined(self.overrider) && isplayer(self.overrider)) {
                     get_floor(self.overrider);
@@ -119,9 +119,9 @@ function elevator_fsm(state) {
                 self.estate = "[B]";
                 continue;
             }
-            while (1) {
+            while (true) {
                 if (self.moveto_floor == get_curfloor()) {
-                    param = var_24b5a460bfbb32dc discrete_waittill("trigger");
+                    param = inside_trig discrete_waittill("trigger");
                 } else {
                     param = "elevator_called";
                 }
@@ -130,9 +130,9 @@ function elevator_fsm(state) {
                     break;
                 }
                 if (isdefined(param) && isplayer(param) && isalive(param)) {
-                    var_db83fb26a6892637 = param istouching(var_24b5a460bfbb32dc);
-                    var_ba5566b3bf32ba20 = isdefined(var_24b5a460bfbb32dc.motion_trigger) && param istouching(var_24b5a460bfbb32dc.motion_trigger);
-                    var_fab9923d97d18fef = var_db83fb26a6892637 || var_ba5566b3bf32ba20;
+                    istouching_trigger = param istouching(inside_trig);
+                    var_ba5566b3bf32ba20 = isdefined(inside_trig.motion_trigger) && param istouching(inside_trig.motion_trigger);
+                    var_fab9923d97d18fef = istouching_trigger || var_ba5566b3bf32ba20;
                     if (var_fab9923d97d18fef) {
                         player = param;
                         get_floor(player);
@@ -184,36 +184,36 @@ function elevator_fsm(state) {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd32
 // Size: 0x1b4
 function monitor_callbutton() {
-    while (1) {
+    while (true) {
         player = discrete_waittill("trigger");
-        var_1f1d06f9964427b0 = undefined;
-        var_7303178f63edfed5 = [];
-        foreach (idx, var_5774a6a46fa3be88 in self.e) {
-            var_1f1d06f9964427b0 = idx;
-            var_7303178f63edfed5 = var_5774a6a46fa3be88;
+        call_floor = undefined;
+        call_elevators = [];
+        foreach (idx, linked_elevators in self.e) {
+            call_floor = idx;
+            call_elevators = linked_elevators;
         }
         /#
-            assert(isdefined(var_1f1d06f9964427b0) && isdefined(var_7303178f63edfed5) && var_7303178f63edfed5.size);
+            assert(isdefined(call_floor) && isdefined(call_elevators) && call_elevators.size);
         #/
         elevator_called = 0;
-        foreach (elevator in var_7303178f63edfed5) {
+        foreach (elevator in call_elevators) {
             moving = elevator elevator_floor_update();
             if (!level.elevator_aggressive_call && !moving) {
-                if (elevator get_curfloor() == var_1f1d06f9964427b0) {
+                if (elevator get_curfloor() == call_floor) {
                     elevator_called = 1;
-                    var_7303178f63edfed5 = [];
+                    call_elevators = [];
                     break;
                 }
             }
         }
-        foreach (elevator in var_7303178f63edfed5) {
+        foreach (elevator in call_elevators) {
             if (elevator.estate == "[A]") {
-                elevator call_elevator(var_1f1d06f9964427b0);
+                elevator call_elevator(call_floor);
                 elevator_called = 1;
                 if (!level.elevator_aggressive_call) {
                     break;
@@ -226,12 +226,12 @@ function monitor_callbutton() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeed
 // Size: 0x57
-function call_elevator(var_1f1d06f9964427b0) {
-    self.moveto_floor = var_1f1d06f9964427b0;
+function call_elevator(call_floor) {
+    self.moveto_floor = call_floor;
     inside_trigger = get_housing_inside_trigger();
     inside_trigger notify("trigger", "elevator_called");
     if (level.elevator_motion_detection) {
@@ -239,20 +239,20 @@ function call_elevator(var_1f1d06f9964427b0) {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf4b
 // Size: 0xa4
 function get_floor(player) {
     var_bd15884f5cd41f16 = get_outer_doorsets();
     if (var_bd15884f5cd41f16.size == 2) {
-        var_1703fb5d6a6acb41 = get_curfloor();
-        self.moveto_floor = !var_1703fb5d6a6acb41;
+        curfloor = get_curfloor();
+        self.moveto_floor = !curfloor;
         return;
     }
     player setclientdvar(@"hash_1cdbc3f4c0889e48", get_curfloor());
-    while (1) {
-        response = menu = player waittill("menuresponse");
+    while (true) {
+        menu, response = player waittill("menuresponse");
         if (menu == "elevator_floor_selector") {
             if (response != "none") {
                 self.moveto_floor = int(response);
@@ -262,7 +262,7 @@ function get_floor(player) {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xff6
 // Size: 0x60
@@ -278,17 +278,17 @@ function elevator_interrupt(door_trig) {
     self.elevator_interrupted = 1;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x105d
 // Size: 0xbe
 function elevator_floor_update() {
     mainframe = get_housing_mainframe();
-    var_455b112df88184e0 = mainframe.origin;
+    cur_pos = mainframe.origin;
     moving = 1;
-    foreach (idx, var_e3119e31d0658dda in get_outer_doorsets()) {
-        var_1c49c4424c716a30 = self.e["floor" + idx + "_pos"];
-        if (var_455b112df88184e0 == var_1c49c4424c716a30) {
+    foreach (idx, efloor in get_outer_doorsets()) {
+        floor_pos = self.e["floor" + idx + "_pos"];
+        if (cur_pos == floor_pos) {
             self.e["current_floor"] = idx;
             moving = 0;
         }
@@ -296,7 +296,7 @@ function elevator_floor_update() {
     return moving;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1123
 // Size: 0x12b
@@ -309,7 +309,7 @@ function elevator_sound_think() {
     thread listen_for("opening_inner_doors");
     thread listen_for("closed_inner_doors");
     thread listen_for("opened_inner_doors");
-    foreach (idx, var_e3119e31d0658dda in get_outer_doorsets()) {
+    foreach (idx, efloor in get_outer_doorsets()) {
         thread listen_for("closing_floor_" + idx + "_outer_doors");
         thread listen_for("opening_floor_" + idx + "_outer_doors");
         thread listen_for("closed_floor_" + idx + "_outer_doors");
@@ -320,12 +320,12 @@ function elevator_sound_think() {
     thread listen_for("elevator_moved");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1255
 // Size: 0xc3
 function listen_for(msg) {
-    while (1) {
+    while (true) {
         self waittill(msg);
         mainframe = get_housing_mainframe();
         if (issubstr(msg, "closing_")) {
@@ -349,7 +349,7 @@ function listen_for(msg) {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x131f
 // Size: 0xc4
@@ -364,7 +364,7 @@ function position_elevators() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13ea
 // Size: 0x1b6
@@ -378,18 +378,18 @@ function elevator_move(floor_num) {
     movetime = dist / speed;
     mainframe moveto(mainframe.origin + delta_vec, movetime, movetime * level.elevator_accel, movetime * level.elevator_decel);
     foreach (part in get_housing_children()) {
-        var_fbf029f7c07ed1e8 = part.origin + delta_vec;
+        moveto_pos = part.origin + delta_vec;
         if (!issubstr(part.classname, "trigger_")) {
-            part moveto(var_fbf029f7c07ed1e8, movetime, movetime * level.elevator_accel, movetime * level.elevator_decel);
-        } else {
-            part.origin = var_fbf029f7c07ed1e8;
+            part moveto(moveto_pos, movetime, movetime * level.elevator_accel, movetime * level.elevator_decel);
+            continue;
         }
+        part.origin = moveto_pos;
     }
     waittill_finish_moving(mainframe, self.e["floor" + floor_num + "_pos"]);
     self notify("elevator_moved");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15a7
 // Size: 0x106
@@ -411,7 +411,7 @@ function close_inner_doors() {
     self notify("closed_inner_doors");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16b4
 // Size: 0x133
@@ -434,7 +434,7 @@ function open_inner_doors() {
     self notify("opened_inner_doors");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17ee
 // Size: 0x10e
@@ -455,7 +455,7 @@ function close_outer_doors(floor_num) {
     self notify("closed_floor_" + floor_num + "_outer_doors");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1903
 // Size: 0x121
@@ -477,30 +477,30 @@ function open_outer_doors(floor_num) {
     self notify("opened_floor_" + floor_num + "_outer_doors");
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a2b
 // Size: 0xc7f
 function build_elevators() {
-    var_adede90fb88cd9cc = getentarray("elevator_group", "targetname");
+    elevator_groups = getentarray("elevator_group", "targetname");
     /#
-        assertex(isdefined(var_adede90fb88cd9cc) && var_adede90fb88cd9cc.size, "Radiant: Missing elevator bounding origins");
+        assertex(isdefined(elevator_groups) && elevator_groups.size, "Radiant: Missing elevator bounding origins");
     #/
     var_20aa4eadbc86b00 = getentarray("elevator_housing", "targetname");
     /#
-        assertex(isdefined(var_20aa4eadbc86b00) && var_20aa4eadbc86b00.size >= var_adede90fb88cd9cc.size, "Fail! Missing the whole elevator, script_brushmodel with [targetname = elevator_housing] must be correctly placed");
+        assertex(isdefined(var_20aa4eadbc86b00) && var_20aa4eadbc86b00.size >= elevator_groups.size, "Fail! Missing the whole elevator, script_brushmodel with [targetname = elevator_housing] must be correctly placed");
     #/
     var_99d29b5b670be15 = getentarray("elevator_doorset", "targetname");
     /#
-        assertex(isdefined(var_99d29b5b670be15) && var_99d29b5b670be15.size >= var_adede90fb88cd9cc.size, "Radiant: Missing elevator door(s)");
+        assertex(isdefined(var_99d29b5b670be15) && var_99d29b5b670be15.size >= elevator_groups.size, "Radiant: Missing elevator door(s)");
     #/
-    foreach (var_83cffcdcd2976304 in var_adede90fb88cd9cc) {
-        var_57dff06718226286 = getent(var_83cffcdcd2976304.target, "targetname");
+    foreach (elevator_bound in elevator_groups) {
+        var_57dff06718226286 = getent(elevator_bound.target, "targetname");
         var_4195778095aaca54 = [];
-        var_4195778095aaca54[0] = min(var_83cffcdcd2976304.origin[0], var_57dff06718226286.origin[0]);
-        var_4195778095aaca54[1] = max(var_83cffcdcd2976304.origin[0], var_57dff06718226286.origin[0]);
-        var_4195778095aaca54[2] = min(var_83cffcdcd2976304.origin[1], var_57dff06718226286.origin[1]);
-        var_4195778095aaca54[3] = max(var_83cffcdcd2976304.origin[1], var_57dff06718226286.origin[1]);
+        var_4195778095aaca54[0] = min(elevator_bound.origin[0], var_57dff06718226286.origin[0]);
+        var_4195778095aaca54[1] = max(elevator_bound.origin[0], var_57dff06718226286.origin[0]);
+        var_4195778095aaca54[2] = min(elevator_bound.origin[1], var_57dff06718226286.origin[1]);
+        var_4195778095aaca54[3] = max(elevator_bound.origin[1], var_57dff06718226286.origin[1]);
         parts = spawnstruct();
         parts.e["id"] = level.elevators.size;
         parts.e["housing"] = [];
@@ -543,20 +543,20 @@ function build_elevators() {
                 var_f6a5cf1c5d09a6fe = parts.e["outer_doorset"].size;
                 parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe] = [];
                 parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["door_closed_pos"] = elevator_doorset.origin;
-                var_69a72d7ec7ef23a4 = getent(elevator_doorset.target, "targetname");
-                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["left_door"] = var_69a72d7ec7ef23a4;
-                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["left_door_opened_pos"] = var_69a72d7ec7ef23a4.origin;
-                var_4879514832a59ab5 = getent(var_69a72d7ec7ef23a4.target, "targetname");
-                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["right_door"] = var_4879514832a59ab5;
-                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["right_door_opened_pos"] = var_4879514832a59ab5.origin;
+                leftdoor = getent(elevator_doorset.target, "targetname");
+                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["left_door"] = leftdoor;
+                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["left_door_opened_pos"] = leftdoor.origin;
+                rightdoor = getent(leftdoor.target, "targetname");
+                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["right_door"] = rightdoor;
+                parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["right_door_opened_pos"] = rightdoor.origin;
                 if (var_d1c3449bfb5c7cd0) {
-                    var_acd175a84b61485c = elevator_doorset.origin - var_69a72d7ec7ef23a4.origin;
-                    elevator_doorset.origin = var_69a72d7ec7ef23a4.origin;
-                    var_69a72d7ec7ef23a4.origin = var_69a72d7ec7ef23a4.origin + var_acd175a84b61485c;
-                    var_4879514832a59ab5.origin = var_4879514832a59ab5.origin - var_acd175a84b61485c;
+                    var_acd175a84b61485c = elevator_doorset.origin - leftdoor.origin;
+                    elevator_doorset.origin = leftdoor.origin;
+                    leftdoor.origin = leftdoor.origin + var_acd175a84b61485c;
+                    rightdoor.origin = rightdoor.origin - var_acd175a84b61485c;
                     parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["door_closed_pos"] = elevator_doorset.origin;
-                    parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["left_door_opened_pos"] = var_69a72d7ec7ef23a4.origin;
-                    parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["right_door_opened_pos"] = var_4879514832a59ab5.origin;
+                    parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["left_door_opened_pos"] = leftdoor.origin;
+                    parts.e["outer_doorset"][var_f6a5cf1c5d09a6fe]["right_door_opened_pos"] = rightdoor.origin;
                 }
             }
         }
@@ -584,18 +584,18 @@ function build_elevators() {
                 }
             }
         }
-        var_1c49c4424c716a30 = [];
-        foreach (i, var_3c922f24e6d5726b in parts.e["outer_doorset"]) {
+        floor_pos = [];
+        foreach (i, doorset in parts.e["outer_doorset"]) {
             mainframe = parts get_housing_mainframe();
-            var_1c49c4424c716a30 = (mainframe.origin[0], mainframe.origin[1], var_3c922f24e6d5726b["door_closed_pos"][2]);
-            parts.e["floor" + i + "_pos"] = var_1c49c4424c716a30;
-            if (mainframe.origin == var_1c49c4424c716a30) {
+            floor_pos = (mainframe.origin[0], mainframe.origin[1], doorset["door_closed_pos"][2]);
+            parts.e["floor" + i + "_pos"] = floor_pos;
+            if (mainframe.origin == floor_pos) {
                 parts.e["initial_floor"] = i;
                 parts.e["current_floor"] = i;
             }
         }
         level.elevators[level.elevators.size] = parts;
-        var_83cffcdcd2976304 delete();
+        elevator_bound delete();
         var_57dff06718226286 delete();
     }
     foreach (elevator_doorset in var_99d29b5b670be15) {
@@ -606,16 +606,16 @@ function build_elevators() {
         setup_hints();
     }
     foreach (elevator in level.elevators) {
-        var_fa32cd866699414a = elevator get_housing_primarylight();
-        if (isdefined(var_fa32cd866699414a) && var_fa32cd866699414a.size) {
-            foreach (var_b88e7e111018d3fd in var_fa32cd866699414a) {
-                var_b88e7e111018d3fd setlightintensity(0.75);
+        plights = elevator get_housing_primarylight();
+        if (isdefined(plights) && plights.size) {
+            foreach (plight in plights) {
+                plight setlightintensity(0.75);
             }
         }
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26b1
 // Size: 0x2ba
@@ -624,54 +624,54 @@ function build_call_buttons() {
     /#
         assertex(isdefined(level.elevator_callbuttons) && level.elevator_callbuttons.size > 1, "Missing or not enough elevator call buttons");
     #/
-    foreach (var_651e74abaa82eba1 in level.elevator_callbuttons) {
-        var_651e74abaa82eba1.e = [];
-        var_7c9bd32185a94469 = (0, 0, var_651e74abaa82eba1.origin[2]);
-        var_84a9e27d3f377cdf = (var_651e74abaa82eba1.origin[0], var_651e74abaa82eba1.origin[1], 0);
+    foreach (callbutton in level.elevator_callbuttons) {
+        callbutton.e = [];
+        var_7c9bd32185a94469 = (0, 0, callbutton.origin[2]);
+        var_84a9e27d3f377cdf = (callbutton.origin[0], callbutton.origin[1], 0);
         var_c0fc917aaed1b9bb = [];
         foreach (elevator in level.elevators) {
-            foreach (var_e484449a2ef68be1, var_e3119e31d0658dda in elevator get_outer_doorsets()) {
-                var_cf86a66be5425dbc = (0, 0, elevator.e["floor" + var_e484449a2ef68be1 + "_pos"][2]);
-                var_eefb6a6623d8d576 = (elevator.e["floor" + var_e484449a2ef68be1 + "_pos"][0], elevator.e["floor" + var_e484449a2ef68be1 + "_pos"][1], 0);
-                if (abs(distance(var_7c9bd32185a94469, var_cf86a66be5425dbc)) <= level.elevator_callbutton_link_v) {
-                    if (abs(distance(var_84a9e27d3f377cdf, var_eefb6a6623d8d576)) <= level.elevator_callbutton_link_h) {
+            foreach (f_idx, efloor in elevator get_outer_doorsets()) {
+                v_vec = (0, 0, elevator.e["floor" + f_idx + "_pos"][2]);
+                h_vec = (elevator.e["floor" + f_idx + "_pos"][0], elevator.e["floor" + f_idx + "_pos"][1], 0);
+                if (abs(distance(var_7c9bd32185a94469, v_vec)) <= level.elevator_callbutton_link_v) {
+                    if (abs(distance(var_84a9e27d3f377cdf, h_vec)) <= level.elevator_callbutton_link_h) {
                         var_c0fc917aaed1b9bb[var_c0fc917aaed1b9bb.size] = elevator;
-                        var_651e74abaa82eba1.e[var_e484449a2ef68be1] = var_c0fc917aaed1b9bb;
+                        callbutton.e[f_idx] = var_c0fc917aaed1b9bb;
                     }
                 }
             }
         }
-        var_651e74abaa82eba1 make_discrete_trigger();
+        callbutton make_discrete_trigger();
         /#
-            assertex(isdefined(var_651e74abaa82eba1.e) && var_651e74abaa82eba1.e.size, "Elevator call button at " + var_651e74abaa82eba1.origin + " failed to grab near by elevators, placed too far?");
+            assertex(isdefined(callbutton.e) && callbutton.e.size, "Elevator call button at " + callbutton.origin + " failed to grab near by elevators, placed too far?");
         #/
-        var_651e74abaa82eba1.motion_trigger = spawn("trigger_radius", var_651e74abaa82eba1.origin + (0, 0, -32), 0, 32, 64);
+        callbutton.motion_trigger = spawn("trigger_radius", callbutton.origin + (0, 0, -32), 0, 32, 64);
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2972
 // Size: 0x116
 function setup_hints() {
     foreach (elevator in level.elevators) {
-        var_9bd00d8648d3d2bb = elevator get_housing_inside_trigger();
+        use_trig = elevator get_housing_inside_trigger();
         floors = elevator get_outer_doorsets();
         var_de5f949cf6389975 = floors.size;
-        var_9bd00d8648d3d2bb setcursorhint("HINT_NOICON");
+        use_trig setcursorhint("HINT_NOICON");
         if (var_de5f949cf6389975 > 2) {
-            var_9bd00d8648d3d2bb sethintstring("ELEVATOR_FLOOR_SELECT_HINT");
-        } else {
-            var_9bd00d8648d3d2bb sethintstring("ELEVATOR_USE_HINT");
+            use_trig sethintstring("ELEVATOR_FLOOR_SELECT_HINT");
+            continue;
         }
+        use_trig sethintstring("ELEVATOR_USE_HINT");
     }
-    foreach (var_651e74abaa82eba1 in level.elevator_callbuttons) {
-        var_651e74abaa82eba1 setcursorhint("HINT_NOICON");
-        var_651e74abaa82eba1 sethintstring("ELEVATOR_CALL_HINT");
+    foreach (callbutton in level.elevator_callbuttons) {
+        callbutton setcursorhint("HINT_NOICON");
+        callbutton sethintstring("ELEVATOR_CALL_HINT");
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a8f
 // Size: 0x15
@@ -680,7 +680,7 @@ function make_discrete_trigger() {
     disable_trigger();
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2aab
 // Size: 0x5a
@@ -698,7 +698,7 @@ function discrete_waittill(msg) {
     return param;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b0d
 // Size: 0x7c
@@ -712,7 +712,7 @@ function enable_trigger() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b90
 // Size: 0x1f
@@ -723,7 +723,7 @@ function disable_trigger() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bb6
 // Size: 0x7c
@@ -737,7 +737,7 @@ function disable_trigger_helper() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c39
 // Size: 0x1d
@@ -745,7 +745,7 @@ function get_outer_doorset(floor_num) {
     return self.e["outer_doorset"][floor_num];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c5e
 // Size: 0x12
@@ -753,7 +753,7 @@ function get_outer_doorsets() {
     return self.e["outer_doorset"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c78
 // Size: 0x23
@@ -761,7 +761,7 @@ function get_outer_closedpos(floor_num) {
     return self.e["outer_doorset"][floor_num]["door_closed_pos"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ca3
 // Size: 0x23
@@ -769,7 +769,7 @@ function get_outer_leftdoor(floor_num) {
     return self.e["outer_doorset"][floor_num]["left_door"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cce
 // Size: 0x23
@@ -777,7 +777,7 @@ function get_outer_rightdoor(floor_num) {
     return self.e["outer_doorset"][floor_num]["right_door"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cf9
 // Size: 0x23
@@ -785,7 +785,7 @@ function get_outer_leftdoor_openedpos(floor_num) {
     return self.e["outer_doorset"][floor_num]["left_door_opened_pos"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d24
 // Size: 0x23
@@ -793,57 +793,57 @@ function get_outer_rightdoor_openedpos(floor_num) {
     return self.e["outer_doorset"][floor_num]["right_door_opened_pos"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d4f
 // Size: 0x155
 function get_housing_children() {
     children = [];
     door_trig = get_housing_door_trigger();
-    var_9bd00d8648d3d2bb = get_housing_inside_trigger();
-    var_d596b9cffb652ef6 = var_9bd00d8648d3d2bb.motion_trigger;
+    use_trig = get_housing_inside_trigger();
+    motion_trig = use_trig.motion_trigger;
     left_door = get_housing_leftdoor();
     right_door = get_housing_rightdoor();
     children[children.size] = door_trig;
-    children[children.size] = var_9bd00d8648d3d2bb;
+    children[children.size] = use_trig;
     children[children.size] = left_door;
     children[children.size] = right_door;
-    if (isdefined(var_d596b9cffb652ef6)) {
-        children[children.size] = var_d596b9cffb652ef6;
+    if (isdefined(motion_trig)) {
+        children[children.size] = motion_trig;
     }
     script_models = get_housing_models();
     foreach (emodel in script_models) {
         children[children.size] = emodel;
     }
-    var_f064d39cf631a944 = get_housing_primarylight();
-    foreach (var_b88e7e111018d3fd in var_f064d39cf631a944) {
-        children[children.size] = var_b88e7e111018d3fd;
+    primarylights = get_housing_primarylight();
+    foreach (plight in primarylights) {
+        children[children.size] = plight;
     }
     return children;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2eac
 // Size: 0xc2
 function get_housing_mainframe() {
     parts = self.e["housing"]["mainframe"];
-    var_d5b09e442f70bac2 = undefined;
+    housing_model = undefined;
     foreach (part in parts) {
         if (part.classname != "script_model" && part.code_classname != "light") {
             /#
-                assertex(!isdefined(var_d5b09e442f70bac2), "Fail! Found more than one elevator housing script_brushmodels per elevator");
+                assertex(!isdefined(housing_model), "Fail! Found more than one elevator housing script_brushmodels per elevator");
             #/
-            var_d5b09e442f70bac2 = part;
+            housing_model = part;
         }
     }
     /#
-        assertex(isdefined(var_d5b09e442f70bac2), "Epic fail! No elevator housing script_brushmodel found");
+        assertex(isdefined(housing_model), "Epic fail! No elevator housing script_brushmodel found");
     #/
-    return var_d5b09e442f70bac2;
+    return housing_model;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f76
 // Size: 0x8f
@@ -858,7 +858,7 @@ function get_housing_models() {
     return var_212f549bb87dc0e3;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x300d
 // Size: 0x8f
@@ -873,7 +873,7 @@ function get_housing_primarylight() {
     return var_6ddff02957646117;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x30a4
 // Size: 0x8d
@@ -888,7 +888,7 @@ function get_housing_musak_model() {
     return var_b1753895a03172ea;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3139
 // Size: 0x18
@@ -896,7 +896,7 @@ function get_housing_door_trigger() {
     return self.e["housing"]["door_trigger"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3159
 // Size: 0x18
@@ -904,7 +904,7 @@ function get_housing_inside_trigger() {
     return self.e["housing"]["inside_trigger"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3179
 // Size: 0x18
@@ -912,7 +912,7 @@ function get_housing_closedpos() {
     return self.e["housing"]["door_closed_pos"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3199
 // Size: 0x18
@@ -920,7 +920,7 @@ function get_housing_leftdoor() {
     return self.e["housing"]["left_door"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31b9
 // Size: 0x18
@@ -928,7 +928,7 @@ function get_housing_rightdoor() {
     return self.e["housing"]["right_door"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31d9
 // Size: 0x18
@@ -936,7 +936,7 @@ function get_housing_leftdoor_opened_pos() {
     return self.e["housing"]["left_door_opened_pos"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31f9
 // Size: 0x18
@@ -944,7 +944,7 @@ function get_housing_rightdoor_opened_pos() {
     return self.e["housing"]["right_door_opened_pos"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3219
 // Size: 0x23
@@ -953,7 +953,7 @@ function get_curfloor() {
     return self.e["current_floor"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3244
 // Size: 0x12
@@ -961,7 +961,7 @@ function get_initfloor() {
     return self.e["initial_floor"];
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x325e
 // Size: 0x80
@@ -970,7 +970,7 @@ function waittill_finish_moving(ent1, var_e46b13ef3f8c9dcb, ent2, var_4ed727c032
         ent2 = ent1;
         var_4ed727c032053180 = var_e46b13ef3f8c9dcb;
     }
-    while (1) {
+    while (true) {
         var_af7bfec8a5f57692 = ent1.origin;
         var_24312405e5d18857 = ent2.origin;
         if (var_af7bfec8a5f57692 == var_e46b13ef3f8c9dcb && var_24312405e5d18857 == var_4ed727c032053180) {
@@ -980,7 +980,7 @@ function waittill_finish_moving(ent1, var_e46b13ef3f8c9dcb, ent2, var_4ed727c032
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32e5
 // Size: 0xaa
@@ -988,33 +988,33 @@ function isinbound(var_45287878f0bc903f) {
     /#
         assertex(isdefined(self) && isdefined(self.origin), "Fail! Can not test bounds with the entity called on");
     #/
-    var_689c2033fe04622 = self.origin[0];
-    var_689c3033fe04855 = self.origin[1];
+    v_x = self.origin[0];
+    v_y = self.origin[1];
     min_x = var_45287878f0bc903f[0];
     max_x = var_45287878f0bc903f[1];
     min_y = var_45287878f0bc903f[2];
     max_y = var_45287878f0bc903f[3];
-    return var_689c2033fe04622 >= min_x && var_689c2033fe04622 <= max_x && var_689c3033fe04855 >= min_y && var_689c3033fe04855 <= max_y;
+    return v_x >= min_x && v_x <= max_x && v_y >= min_y && v_y <= max_y;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3397
 // Size: 0xcb
 function isinboundingspere(var_45287878f0bc903f) {
-    var_689c2033fe04622 = self.origin[0];
-    var_689c3033fe04855 = self.origin[1];
+    v_x = self.origin[0];
+    v_y = self.origin[1];
     min_x = var_45287878f0bc903f[0];
     max_x = var_45287878f0bc903f[1];
     min_y = var_45287878f0bc903f[2];
     max_y = var_45287878f0bc903f[3];
-    var_7f6034bb0bc7e29e = (min_x + max_x) / 2;
-    var_7f6035bb0bc7e4d1 = (min_y + max_y) / 2;
-    radius = abs(distance((min_x, min_y, 0), (var_7f6034bb0bc7e29e, var_7f6035bb0bc7e4d1, 0)));
-    return abs(distance((var_689c2033fe04622, var_689c3033fe04855, 0), (var_7f6034bb0bc7e29e, var_7f6035bb0bc7e4d1, 0))) < radius;
+    mid_x = (min_x + max_x) / 2;
+    mid_y = (min_y + max_y) / 2;
+    radius = abs(distance((min_x, min_y, 0), (mid_x, mid_y, 0)));
+    return abs(distance((v_x, v_y, 0), (mid_x, mid_y, 0))) < radius;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x346a
 // Size: 0x19
@@ -1023,7 +1023,7 @@ function waittill_or_timeout(msg, timer) {
     wait(timer);
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x348a
 // Size: 0x21
@@ -1031,20 +1031,19 @@ function elevator_get_dvar_int(dvar, def) {
     return int(elevator_get_dvar(dvar, def));
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34b3
 // Size: 0x37
 function elevator_get_dvar(dvar, def) {
     if (getdvar(dvar) != "") {
         return getdvarfloat(dvar);
-    } else {
-        setdvar(dvar, def);
-        return def;
     }
+    setdvar(dvar, def);
+    return def;
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34f1
 // Size: 0x564
@@ -1052,7 +1051,7 @@ function elevator_debug() {
     if (!level.elevator_debug) {
         return;
     }
-    while (1) {
+    while (true) {
         if (level.elevator_debug != 2) {
             continue;
         }
@@ -1077,32 +1076,32 @@ function elevator_debug() {
             /#
                 print3d(elevator.e["elevator_doorset"]["<unknown string>"].origin, "menuresponse" + i + "<unknown string>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
-            foreach (j, var_e3119e31d0658dda in elevator.e["outer_doorset"]) {
+            foreach (j, efloor in elevator.e["outer_doorset"]) {
                 /#
-                    print3d(var_e3119e31d0658dda["left_door_opened_pos"].origin + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "elevator_call", (0.75, 1, 0.75), 1, 0.25, 20);
+                    print3d(efloor["left_door_opened_pos"].origin + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "elevator_call", (0.75, 1, 0.75), 1, 0.25, 20);
                 #/
                 /#
-                    print3d(var_e3119e31d0658dda["<unknown string>"].origin + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "<unknown string>", (0.75, 1, 0.75), 1, 0.25, 20);
+                    print3d(efloor["<unknown string>"].origin + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "<unknown string>", (0.75, 1, 0.75), 1, 0.25, 20);
                 #/
                 /#
-                    print3d(var_e3119e31d0658dda["<unknown string>"] + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "<unknown string>", (0.75, 1, 0.75), 1, 0.25, 20);
+                    print3d(efloor["<unknown string>"] + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "<unknown string>", (0.75, 1, 0.75), 1, 0.25, 20);
                 #/
                 /#
                     print3d(elevator.e["<unknown string>" + j + "<unknown string>"] + (0, 0, 8), "menuresponse" + i + "<unknown string>" + j + "<unknown string>", (1, 0.75, 0.75), 1, 0.25, 20);
                 #/
             }
         }
-        foreach (var_651e74abaa82eba1 in level.elevator_callbuttons) {
+        foreach (callbutton in level.elevator_callbuttons) {
             /#
-                print3d(var_651e74abaa82eba1.origin, "<unknown string>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(callbutton.origin, "<unknown string>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
-            foreach (var_e484449a2ef68be1, var_e3119e31d0658dda in var_651e74abaa82eba1.e) {
+            foreach (f_idx, efloor in callbutton.e) {
                 printoffset = 0;
-                foreach (var_1cfa296a253fdc9d in var_e3119e31d0658dda) {
+                foreach (elinked in efloor) {
                     printoffset++;
-                    var_bd86ad8f5c8000ad = var_651e74abaa82eba1.origin + (0, 0, printoffset * -4);
+                    print_pos = callbutton.origin + (0, 0, printoffset * -4);
                     /#
-                        print3d(var_bd86ad8f5c8000ad, "<unknown string>" + var_e484449a2ef68be1 + "<unknown string>" + var_1cfa296a253fdc9d.e["<unknown string>"] + "<unknown string>", (0.75, 0.75, 1), 1, 0.25, 20);
+                        print3d(print_pos, "<unknown string>" + f_idx + "<unknown string>" + elinked.e["<unknown string>"] + "<unknown string>", (0.75, 0.75, 1), 1, 0.25, 20);
                     #/
                 }
             }
@@ -1111,24 +1110,24 @@ function elevator_debug() {
     }
 }
 
-// Namespace elevator/namespace_91671cfc18616400
+// Namespace elevator / scripts/common/elevator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a5c
 // Size: 0x93
 function function_d9d18dab18ebded(movingplatforment) {
     if (!isdefined(movingplatforment)) {
-        return 0;
+        return false;
     }
     if (isdefined(level.elevators)) {
-        foreach (var_6614a0347df667fa in level.elevators) {
-            if (!isdefined(var_6614a0347df667fa.car)) {
+        foreach (elevatorstruct in level.elevators) {
+            if (!isdefined(elevatorstruct.car)) {
                 continue;
             }
-            if (var_6614a0347df667fa.car == movingplatforment) {
-                return 1;
+            if (elevatorstruct.car == movingplatforment) {
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 

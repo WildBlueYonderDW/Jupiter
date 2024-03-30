@@ -13,7 +13,7 @@
 
 #namespace spectating;
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x269
 // Size: 0x96
@@ -21,18 +21,18 @@ function init() {
     foreach (entry in level.teamnamelist) {
         level.spectateoverride[entry] = spawnstruct();
     }
-    namespace_3846cfb60b2ef12f::registeronluieventcallback(&freecamcallback);
-    namespace_1309ce202b9aa92b::registeronplayerjointeamcallback(&onjoinedteam);
+    scripts/mp/utility/lui_game_event_aggregator::registeronluieventcallback(&freecamcallback);
+    scripts/mp/utility/join_team_aggregator::registeronplayerjointeamcallback(&onjoinedteam);
     if (getdvarint(@"hash_242c4deac00b8e5b", 0) != 0) {
         level thread getlevelmlgcams();
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x306
 // Size: 0x63
-function createmlgcamobject(icon, var_14e3b97a4e7f7ba) {
+function createmlgcamobject(icon, followrotation) {
     precacheshader(icon);
     camera = spawn("script_model", (0, 0, 0));
     camera setmodel("tag_origin");
@@ -40,17 +40,17 @@ function createmlgcamobject(icon, var_14e3b97a4e7f7ba) {
     return camera;
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x371
 // Size: 0x110
-function setlevelmlgcam(index, var_78f81d819c266965) {
+function setlevelmlgcam(index, csvfile) {
     tableindex = index;
     if (tableindex >= 4) {
         tableindex = tableindex - 4;
     }
     mapname = tolower(getdvar(@"hash_687fb8f9b7a23245"));
-    var_d9733d3b5b9c44ce = tablelookup(var_78f81d819c266965, 0, mapname, tableindex * 2 + 1);
+    var_d9733d3b5b9c44ce = tablelookup(csvfile, 0, mapname, tableindex * 2 + 1);
     if (var_d9733d3b5b9c44ce != "") {
         var_dd0f1974b9c2c56a = index + 1;
         if (index >= 5) {
@@ -58,14 +58,14 @@ function setlevelmlgcam(index, var_78f81d819c266965) {
         }
         level.cameramapobjs[index] = createmlgcamobject("compass_icon_codcaster_cam", 1);
         level.numbermapobjs[index] = createmlgcamobject("compass_icon_codcaster_num" + var_dd0f1974b9c2c56a, 0);
-        var_ffb7ba3abbf69f8c = tablelookup(var_78f81d819c266965, 0, mapname, tableindex * 2 + 2);
+        var_ffb7ba3abbf69f8c = tablelookup(csvfile, 0, mapname, tableindex * 2 + 2);
         level.camerapos[index] = getcameravecorang(var_d9733d3b5b9c44ce);
         level.cameraang[index] = getcameravecorang(var_ffb7ba3abbf69f8c);
         level.camerahighestindex = index;
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x488
 // Size: 0x9c
@@ -73,25 +73,25 @@ function getlevelmlgcams() {
     while (!isdefined(level.objectiveidpool)) {
         waitframe();
     }
-    var_78f81d819c266965 = "mp/CameraPositions";
-    var_3b2139bfd025890b = var_78f81d819c266965 + "_" + getgametype() + ".csv";
-    var_78f81d819c266965 = var_78f81d819c266965 + ".csv";
+    csvfile = "mp/CameraPositions";
+    var_3b2139bfd025890b = csvfile + "_" + getgametype() + ".csv";
+    csvfile = csvfile + ".csv";
     level.cameramapobjs = [];
     level.numbermapobjs = [];
     for (index = 0; index < 4; index++) {
-        setlevelmlgcam(index, var_78f81d819c266965);
+        setlevelmlgcam(index, csvfile);
     }
     for (index = 4; index < 8; index++) {
         setlevelmlgcam(index, var_3b2139bfd025890b);
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52b
 // Size: 0x71
-function getcameravecorang(var_9c0fe13528240836) {
-    var_26fa16ced67d6ad0 = strtok(var_9c0fe13528240836, " ");
+function getcameravecorang(elementstring) {
+    var_26fa16ced67d6ad0 = strtok(elementstring, " ");
     var_d2f65e1abe223ead = (0, 0, 0);
     if (isdefined(var_26fa16ced67d6ad0[0]) && isdefined(var_26fa16ced67d6ad0[1]) && isdefined(var_26fa16ced67d6ad0[2])) {
         var_d2f65e1abe223ead = (int(var_26fa16ced67d6ad0[0]), int(var_26fa16ced67d6ad0[1]), int(var_26fa16ced67d6ad0[2]));
@@ -99,7 +99,7 @@ function getcameravecorang(var_9c0fe13528240836) {
     return var_d2f65e1abe223ead;
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a4
 // Size: 0x14
@@ -107,7 +107,7 @@ function onjoinedteam(player) {
     player setspectatepermissions();
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5bf
 // Size: 0x92
@@ -127,7 +127,7 @@ function onjoinedspectators(player) {
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x658
 // Size: 0x78
@@ -139,14 +139,14 @@ function onspectatingclient() {
         player = self getspectatingplayer();
         if (isdefined(player)) {
             if (isdefined(player.calloutarea)) {
-                var_49996ebebbbbf375 = level.calloutglobals.areaidmap[player.calloutarea];
-                self setclientomnvar("ui_callout_area_id", var_49996ebebbbbf375);
+                areaid = level.calloutglobals.areaidmap[player.calloutarea];
+                self setclientomnvar("ui_callout_area_id", areaid);
             }
         }
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6d7
 // Size: 0x73
@@ -155,27 +155,26 @@ function onspectatingmlgcamera() {
     self endon("joined_team");
     for (;;) {
         self waittill("spectating_mlg_camera");
-        var_ecfcf631312f12af = self getmlgselectedcamera();
+        selectedcamera = self getmlgselectedcamera();
         if (self iscodcaster() || isdefined(self.pers["codcaster"]) && self.pers["codcaster"]) {
-            if (isdefined(var_ecfcf631312f12af)) {
+            if (isdefined(selectedcamera)) {
                 self setclientomnvar("ui_callout_area_id", -1);
-                continue;
             }
         }
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x751
 // Size: 0x25
 function freecamcallback(channel, view) {
     if (channel == "mlg_view_change") {
-        namespace_99ac021a7547cae3::resetuidvarsonspectate();
+        scripts/mp/playerlogic::resetuidvarsonspectate();
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77d
 // Size: 0x3d
@@ -186,7 +185,7 @@ function updatespectatesettings() {
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c1
 // Size: 0x142
@@ -197,23 +196,23 @@ function autoattachtoplayer() {
     level waittill_any_4("prematch_started", "prematch_done", "start_mode_setup", "infil_started");
     level.lastspectatedplayer = game["lastSpectatedPlayer"];
     for (;;) {
-        var_d4e316f35a455acd = undefined;
+        selectedclientnum = undefined;
         if (!self iscodcaster() || self isspectatingplayer() || self ismlgfreecamenabled() || self ismlgaerialcamenabled()) {
             break;
         }
         if (level.players.size > 1) {
             if (level.currentround > 1 && isdefined(level.lastspectatedplayer)) {
-                var_d4e316f35a455acd = level.lastspectatedplayer;
+                selectedclientnum = level.lastspectatedplayer;
             } else {
                 foreach (entry in level.teamnamelist) {
                     aliveplayers = getfriendlyplayers(entry, 1);
                     if (aliveplayers.size > 0) {
-                        var_d4e316f35a455acd = getlowestclientnum(aliveplayers, 1);
+                        selectedclientnum = getlowestclientnum(aliveplayers, 1);
                     }
                 }
             }
-            if (isdefined(var_d4e316f35a455acd)) {
-                self spectateclientnum(var_d4e316f35a455acd);
+            if (isdefined(selectedclientnum)) {
+                self spectateclientnum(selectedclientnum);
                 break;
             }
         }
@@ -221,7 +220,7 @@ function autoattachtoplayer() {
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90a
 // Size: 0x7e
@@ -232,19 +231,18 @@ function function_de89a33a1571dd0a() {
     self.codcasterballcamfollow = undefined;
     self.spectatingplayerbeforeballcam = undefined;
     for (;;) {
-        for (;;) {
-            if (self iscodcaster() && self isspectatingplayer()) {
-                player = self getspectatingplayer();
-                if (isdefined(player)) {
-                    level.lastspectatedplayer = player.clientid;
-                }
-                player namespace_f5675568ccc8acc6::function_20038a4ada38be4d(self);
+        if (self iscodcaster() && self isspectatingplayer()) {
+            player = self getspectatingplayer();
+            if (isdefined(player)) {
+                level.lastspectatedplayer = player.clientid;
             }
+            player namespace_f5675568ccc8acc6::function_20038a4ada38be4d(self);
         }
+        wait(0.05);
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x98f
 // Size: 0x1c
@@ -253,7 +251,7 @@ function saveendgamelocals() {
     game["lastSpectatedPlayer"] = level.lastspectatedplayer;
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9b2
 // Size: 0x49f
@@ -268,20 +266,20 @@ function setspectatepermissions(gameended) {
         self allowspectateteam("none", 1);
         return;
     }
-    spectatetype = namespace_775507ba36294dfb::gettweakablevalue("game", "spectatetype");
+    spectatetype = scripts/mp/tweakables::gettweakablevalue("game", "spectatetype");
     if (getdvarint(@"hash_e32ebdbb97a1ec4e", 0) == 1) {
         spectatetype = 2;
     }
     if (self iscodcaster()) {
         spectatetype = 2;
     }
-    if (istrue(self.inspawncamera) || isdefined(self.setspawnpoint) && namespace_99ac021a7547cae3::mayspawn()) {
+    if (istrue(self.inspawncamera) || isdefined(self.setspawnpoint) && scripts/mp/playerlogic::mayspawn()) {
         spectatetype = 0;
     }
     if (istrue(gameended)) {
         spectatetype = 2;
     }
-    if (istrue(level.var_a98a9986264d0efc)) {
+    if (istrue(level.disablespectate)) {
         spectatetype = 0;
     }
     team = self.sessionteam;
@@ -311,8 +309,8 @@ function setspectatepermissions(gameended) {
             team = self.pers["last_team"];
             setteamorplayeronly(team);
         } else if (istrue(level.prematchstarted)) {
-            var_f49ee9d2911c5ab5 = randomint(level.teamnamelist.size);
-            setteamorplayeronly(level.teamnamelist[var_f49ee9d2911c5ab5]);
+            randidx = randomint(level.teamnamelist.size);
+            setteamorplayeronly(level.teamnamelist[randidx]);
         } else {
             setteamorplayeronly("allies");
             thread waitforgamestartspectate();
@@ -335,13 +333,13 @@ function setspectatepermissions(gameended) {
             self allowspectateteam("freelook", 1);
         }
         if (istrue(level.spectateoverride[team].allowenemyspectate)) {
-            var_b0c33d224b825287 = getenemyteams(team);
-            foreach (entry in var_b0c33d224b825287) {
+            enemyteams = getenemyteams(team);
+            foreach (entry in enemyteams) {
                 self allowspectateteam(entry, 1);
             }
         }
     }
-    var_929fd4bdfabd747b = privatematch() && namespace_36f464722d326bbe::isbrstylegametype();
+    var_929fd4bdfabd747b = privatematch() && scripts/cp_mp/utility/game_utility::isbrstylegametype();
     /#
         if (getdvarint(@"hash_f7fccc8ff6925d24", 0) != 0) {
             var_929fd4bdfabd747b = 1;
@@ -358,7 +356,7 @@ function setspectatepermissions(gameended) {
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe58
 // Size: 0x21
@@ -369,7 +367,7 @@ function waitforgamestartspectate() {
     thread setspectatepermissions();
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe80
 // Size: 0x73
@@ -381,7 +379,7 @@ function setdisabled() {
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xefa
 // Size: 0xfa
@@ -392,43 +390,45 @@ function setteamorplayeronly(team) {
         foreach (entry in level.teamnamelist) {
             if (team == entry) {
                 self allowspectateteam(entry, 1);
-            } else {
-                self allowspectateteam(entry, 0);
+                continue;
             }
+            self allowspectateteam(entry, 0);
         }
-    } else {
-        self allowspectateteam("none", 1);
-        foreach (entry in level.teamnamelist) {
-            self allowspectateteam(entry, 1);
-        }
+        return;
+    }
+    self allowspectateteam("none", 1);
+    foreach (entry in level.teamnamelist) {
+        self allowspectateteam(entry, 1);
     }
 }
 
-// Namespace spectating/namespace_5aeecefc462876
+// Namespace spectating / scripts/mp/spectating
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xffb
 // Size: 0x12e
 function setfreelook(gameended) {
     self allowspectateteam("freelook", 1);
     self allowspectateteam("none", 1);
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (scripts/mp/flags::gameflag("prematch_done")) {
         foreach (entry in level.teamnamelist) {
             self allowspectateteam(entry, 1);
         }
         if (istrue(gameended)) {
-            thread namespace_99ac021a7547cae3::spawnspectator(undefined, undefined, 1);
+            thread scripts/mp/playerlogic::spawnspectator(undefined, undefined, 1);
         }
-    } else if (self iscodcaster()) {
+        return;
+    }
+    if (self iscodcaster()) {
         self allowspectateteam("allies", 1);
         self allowspectateteam("axis", 1);
         thread waitforgamestartspectate();
-    } else {
-        team = self.sessionteam;
-        if (self == level.players[0] || team == "spectator" || team == "codcaster") {
-            self allowspectateteam("allies", 1);
-            self allowspectateteam("axis", 0);
-            thread waitforgamestartspectate();
-        }
+        return;
+    }
+    team = self.sessionteam;
+    if (self == level.players[0] || team == "spectator" || team == "codcaster") {
+        self allowspectateteam("allies", 1);
+        self allowspectateteam("axis", 0);
+        thread waitforgamestartspectate();
     }
 }
 

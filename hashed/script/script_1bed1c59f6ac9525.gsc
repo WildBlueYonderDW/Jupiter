@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using script_2047cdbf5176ba0;
 #using script_92b815b18f0ba61;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using script_5cc103e78831ad9f;
 #using script_79de05378402bed1;
@@ -15,7 +15,7 @@
 
 #namespace namespace_6690c1df72f98f32;
 
-// Namespace namespace_6690c1df72f98f32/namespace_722ce752470892b
+// Namespace namespace_6690c1df72f98f32 / namespace_722ce752470892b
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x1d7
 // Size: 0x11
@@ -23,7 +23,7 @@ function autoexec init() {
     level.var_8bc670aa106fa796 = &main;
 }
 
-// Namespace namespace_6690c1df72f98f32/namespace_722ce752470892b
+// Namespace namespace_6690c1df72f98f32 / namespace_722ce752470892b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ef
 // Size: 0xdb
@@ -32,7 +32,7 @@ function main() {
     level thread function_7efd8a5b87c6c04b();
     namespace_ebb067ffc73349::main();
     namespace_f2713faa50431351::main();
-    namespace_3c37cb17ade254d::flag_set("gas_station_create_script_initialized");
+    scripts/engine/utility::flag_set("gas_station_create_script_initialized");
     level callback::add("register_activities", &function_98dcdf43b7f26265);
     level callback::add("register_objectives", &function_ecacd4e0ca8e97a);
     level callback::add("register_features", &function_78d8d7de4d1820b);
@@ -50,7 +50,7 @@ function main() {
     thread function_91dcb17ad9e37fde();
 }
 
-// Namespace namespace_6690c1df72f98f32/namespace_722ce752470892b
+// Namespace namespace_6690c1df72f98f32 / namespace_722ce752470892b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d1
 // Size: 0x12f
@@ -58,11 +58,11 @@ function function_7efd8a5b87c6c04b() {
     setdvar(@"hash_f1d095735ac37f33", 1);
     waitframe();
     function_9b8829ab4092a7d7("ob_zombie_ambient", 1);
-    var_f6e341b64f830a1 = namespace_3c37cb17ade254d::getstructarray("s_ob_infil_supress", "targetname");
-    foreach (pos in var_f6e341b64f830a1) {
+    a_pos = scripts/engine/utility::getstructarray("s_ob_infil_supress", "targetname");
+    foreach (pos in a_pos) {
         function_606642b946a01237("infil_supress", pos.origin, pos.radius, 1);
     }
-    var_102014ab68ac4b78 = namespace_3c37cb17ade254d::getstructarray("s_ambient_blocker", "targetname");
+    var_102014ab68ac4b78 = scripts/engine/utility::getstructarray("s_ambient_blocker", "targetname");
     foreach (pos in var_102014ab68ac4b78) {
         if (isdefined(pos.radius)) {
             function_606642b946a01237("ambient_blocker", pos.origin, pos.radius, 1);
@@ -70,7 +70,7 @@ function function_7efd8a5b87c6c04b() {
     }
 }
 
-// Namespace namespace_6690c1df72f98f32/namespace_722ce752470892b
+// Namespace namespace_6690c1df72f98f32 / namespace_722ce752470892b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x407
 // Size: 0x11
@@ -79,7 +79,7 @@ function function_91dcb17ad9e37fde() {
     namespace_614554f86e52695c::function_b1fa4578ef08136f();
 }
 
-// Namespace namespace_6690c1df72f98f32/namespace_722ce752470892b
+// Namespace namespace_6690c1df72f98f32 / namespace_722ce752470892b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x41f
 // Size: 0xf

@@ -11,7 +11,7 @@
 
 #namespace namespace_fd613a85da812eaa;
 
-// Namespace namespace_fd613a85da812eaa/namespace_ea79ad160580b4e7
+// Namespace namespace_fd613a85da812eaa / namespace_ea79ad160580b4e7
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a2
 // Size: 0x14
@@ -19,7 +19,7 @@ function main() {
     function_c0b3ddc9a6bdcc46("veh9_blima", &function_6cb969a7647dc10f);
 }
 
-// Namespace namespace_fd613a85da812eaa/namespace_ea79ad160580b4e7
+// Namespace namespace_fd613a85da812eaa / namespace_ea79ad160580b4e7
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1bd
 // Size: 0x3e
@@ -28,34 +28,34 @@ function private function_6cb969a7647dc10f() {
     callbacks["spawn"] = &function_41496c26b8d3660c;
     function_8497e7e46b5e397("veh9_blima", callbacks);
     if (utility::function_a10967d736dc56e5()) {
-        namespace_d8730aa891576e41::build_attach_models(&set_attached_models);
+        scripts/common/vehicle_build::build_attach_models(&set_attached_models);
     }
 }
 
-// Namespace namespace_fd613a85da812eaa/namespace_ea79ad160580b4e7
+// Namespace namespace_fd613a85da812eaa / namespace_ea79ad160580b4e7
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x202
 // Size: 0xbd
-function private function_41496c26b8d3660c(spawndata, var_ee8da5624236dc89) {
-    vehicle = function_bba34cf920370ff4("veh9_blima", spawndata, var_ee8da5624236dc89);
+function private function_41496c26b8d3660c(spawndata, faildata) {
+    vehicle = function_bba34cf920370ff4("veh9_blima", spawndata, faildata);
     if (!isdefined(vehicle)) {
         return undefined;
     }
-    if (istrue(spawndata.var_f16652e1462a3739)) {
+    if (istrue(spawndata.initai)) {
         vehicle.unload_hover_offset = 570;
         vehicle.unload_land_offset = 165;
         vehicle.script_badplace = 0;
         vehicle.vehiclesetuprope = 1;
         vehicle vehicle_setspeed(60, 20, 10);
-        vehicle.var_22aa4aa0cf0aa6bb = 1;
+        vehicle.preventrespawn = 1;
         vehicle.var_a8f4bb03b366aa80 = 1;
         vehicle.deathfunc = &vehicle_death;
-        vehicle namespace_1fbd40990ee60ede::function_a91927df280e94e4();
+        vehicle scripts/cp_mp/vehicles/vehicle_occupancy::function_a91927df280e94e4();
     }
     return vehicle;
 }
 
-// Namespace namespace_fd613a85da812eaa/namespace_ea79ad160580b4e7
+// Namespace namespace_fd613a85da812eaa / namespace_ea79ad160580b4e7
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2c7
 // Size: 0x131

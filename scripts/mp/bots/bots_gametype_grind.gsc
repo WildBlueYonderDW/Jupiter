@@ -8,18 +8,18 @@
 #using scripts\mp\bots\bots_gametype_conf.gsc;
 #using scripts\mp\gameobjects.gsc;
 
-#namespace namespace_7d74fa94c094d793;
+#namespace bots_gametype_grind;
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x171
 // Size: 0x11
 function main() {
     setup_callbacks();
-    namespace_4608513323948985::setup_bot_conf();
+    scripts/mp/bots/bots_gametype_conf::setup_bot_conf();
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x189
 // Size: 0x6
@@ -28,7 +28,7 @@ function function_e45e46b7c35deadb() {
     #/
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x196
 // Size: 0x18
@@ -36,7 +36,7 @@ function setup_callbacks() {
     level.bot_funcs["gametype_think"] = &bot_grind_think;
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x6b
@@ -52,18 +52,18 @@ function bot_grind_think() {
     if (self botgetdifficultysetting("strategyLevel") > 0) {
         childthread enemy_watcher();
     }
-    namespace_4608513323948985::bot_conf_think();
+    scripts/mp/bots/bots_gametype_conf::bot_conf_think();
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x227
 // Size: 0x13
 function function_3ec615a6536f891f(team) {
-    return namespace_19b4203b51d56488::caninteractwith(team);
+    return scripts/mp/gameobjects::caninteractwith(team);
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x242
 // Size: 0xc2
@@ -73,7 +73,7 @@ function function_eb22fb5239067420() {
         self.goal_zone = undefined;
         self notify("stop_going_to_zone");
         self botclearscriptgoal();
-        return 0;
+        return false;
     }
     if (self.conf_camping_zone && isdefined(self.var_12e47b0891f8e76e) && !self.var_12e47b0891f8e76e function_3ec615a6536f891f(self.team)) {
         self.conf_camping_zone = 0;
@@ -81,18 +81,18 @@ function function_eb22fb5239067420() {
         self notify("stop_camping_zone");
         self botclearscriptgoal();
         clear_camper_data();
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x30c
 // Size: 0x42b
 function bot_grind_extra_think() {
     if (!function_eb22fb5239067420()) {
-        return 1;
+        return true;
     }
     if (!isdefined(self.tag_getting)) {
         if (self.tagscarried > 0) {
@@ -102,7 +102,7 @@ function bot_grind_extra_think() {
             } else if (!isdefined(self.enemy) && !bot_in_combat()) {
                 bestdistsq = squared(1500 + self.tagscarried * 250);
             }
-            var_53388bf8bdf40a79 = undefined;
+            bestzone = undefined;
             foreach (objective in level.objectives) {
                 if (!objective function_3ec615a6536f891f(self.team)) {
                     continue;
@@ -110,26 +110,26 @@ function bot_grind_extra_think() {
                 distsq = distancesquared(self.origin, objective.trigger.origin);
                 if (distsq < bestdistsq) {
                     bestdistsq = distsq;
-                    var_53388bf8bdf40a79 = objective;
+                    bestzone = objective;
                 }
             }
-            if (isdefined(var_53388bf8bdf40a79)) {
+            if (isdefined(bestzone)) {
                 var_52d6c7e049076154 = 1;
                 if (self.grind_waiting_to_bank) {
-                    if (isdefined(self.goal_zone) && self.goal_zone == var_53388bf8bdf40a79) {
+                    if (isdefined(self.goal_zone) && self.goal_zone == bestzone) {
                         var_52d6c7e049076154 = 0;
                     }
                 }
                 if (var_52d6c7e049076154) {
                     self.grind_waiting_to_bank = 1;
-                    self.goal_zone = var_53388bf8bdf40a79;
+                    self.goal_zone = bestzone;
                     self botclearscriptgoal();
                     self notify("stop_going_to_zone");
                     self notify("stop_camping_zone");
                     self.conf_camping_zone = 0;
                     clear_camper_data();
                     bot_abort_tactical_goal("kill_tag");
-                    childthread bot_goto_zone(var_53388bf8bdf40a79, "tactical");
+                    childthread bot_goto_zone(bestzone, "tactical");
                 }
             }
             if (self.grind_waiting_to_bank) {
@@ -148,7 +148,7 @@ function bot_grind_extra_think() {
         }
         if (self.personality == "camper" && !self.conf_camping_tag && !self.grind_waiting_to_bank) {
             bestdistsq = undefined;
-            var_53388bf8bdf40a79 = undefined;
+            bestzone = undefined;
             foreach (objective in level.objectives) {
                 if (!objective function_3ec615a6536f891f(self.team)) {
                     continue;
@@ -156,18 +156,18 @@ function bot_grind_extra_think() {
                 distsq = distancesquared(self.origin, objective.trigger.origin);
                 if (!isdefined(bestdistsq) || distsq < bestdistsq) {
                     bestdistsq = distsq;
-                    var_53388bf8bdf40a79 = objective;
+                    bestzone = objective;
                 }
             }
-            if (isdefined(var_53388bf8bdf40a79)) {
+            if (isdefined(bestzone)) {
                 if (should_select_new_ambush_point()) {
-                    if (find_ambush_node(var_53388bf8bdf40a79.trigger.origin)) {
+                    if (find_ambush_node(bestzone.trigger.origin)) {
                         self.conf_camping_zone = 1;
-                        self.var_12e47b0891f8e76e = var_53388bf8bdf40a79;
+                        self.var_12e47b0891f8e76e = bestzone;
                         self notify("stop_going_to_zone");
                         self.grind_waiting_to_bank = 0;
                         self botclearscriptgoal();
-                        childthread bot_camp_zone(var_53388bf8bdf40a79, "camp");
+                        childthread bot_camp_zone(bestzone, "camp");
                     } else {
                         self notify("stop_camping_zone");
                         self.conf_camping_zone = 0;
@@ -188,7 +188,7 @@ function bot_grind_extra_think() {
     return self.grind_waiting_to_bank || self.conf_camping_zone;
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0x9a
@@ -203,7 +203,7 @@ function bot_goto_zone(zone, goal_type) {
     result = bot_waittill_goal_or_fail();
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7e0
 // Size: 0xda
@@ -225,13 +225,13 @@ function bot_camp_zone(zone, goal_type) {
     }
 }
 
-// Namespace namespace_7d74fa94c094d793/namespace_adbd02cf2d04892b
+// Namespace bots_gametype_grind / scripts/mp/bots/bots_gametype_grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c1
 // Size: 0x10e
 function enemy_watcher() {
     self.default_meleechargedist = self botgetdifficultysetting("meleeChargeDist");
-    while (1) {
+    while (true) {
         if (self botgetdifficultysetting("strategyLevel") < 2) {
             wait(0.5);
         } else {
@@ -240,10 +240,10 @@ function enemy_watcher() {
         if (isdefined(self.enemy) && isplayer(self.enemy) && isdefined(self.enemy.tagscarried) && self.enemy.tagscarried >= 3 && self botcanseeentity(self.enemy) && distance(self.origin, self.enemy.origin) <= 500) {
             self botsetdifficultysetting("meleeChargeDist", 500);
             self botsetflag("prefer_melee", 1);
-        } else {
-            self botsetdifficultysetting("meleeChargeDist", self.default_meleechargedist);
-            self botsetflag("prefer_melee", 0);
+            continue;
         }
+        self botsetdifficultysetting("meleeChargeDist", self.default_meleechargedist);
+        self botsetflag("prefer_melee", 0);
     }
 }
 

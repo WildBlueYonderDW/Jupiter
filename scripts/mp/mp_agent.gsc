@@ -1,8 +1,8 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\asm\asm.gsc;
 #using scripts\asm\asm_mp.gsc;
 #using scripts\asm\shared\mp\utility.gsc;
@@ -15,17 +15,17 @@
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using scripts\common\vehicle_code.gsc;
 
-#namespace namespace_39b39f93ee3db0c2;
+#namespace mp_agent;
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cf
 // Size: 0x8b
-function setupweapon(var_9ef97db737b5030e) {
+function setupweapon(primaryweaponobject) {
     /#
-        assertex(isweapon(var_9ef97db737b5030e), "weapon param for SetupWeapon needs to be a weapon object");
+        assertex(isweapon(primaryweaponobject), "weapon param for SetupWeapon needs to be a weapon object");
     #/
-    self.weapon = var_9ef97db737b5030e;
+    self.weapon = primaryweaponobject;
     self giveweapon(self.weapon);
     self setspawnweapon(self.weapon);
     self.bulletsinclip = weaponclipsize(self.weapon);
@@ -34,7 +34,7 @@ function setupweapon(var_9ef97db737b5030e) {
     self.grenadeammo = 0;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x561
 // Size: 0xce
@@ -61,7 +61,7 @@ function spawnnewagentaitype(aitype, position, angles, team, var_42e5c77b1d7fe6e
     return agent;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 7, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x637
 // Size: 0x60
@@ -74,7 +74,7 @@ function spawnnewagent(agent_type, spawn_team, spawn_position, spawn_angles, var
     return agent;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69f
 // Size: 0xec
@@ -84,7 +84,7 @@ function function_391ec48831a02c13(agent, agent_type, spawn_team, var_f9e7dc261e
     agent.spawntime = agent.connecttime;
     agent function_d99212ec742486d0(agent_type, spawn_team);
     agent function_af0713caaf6c21c5();
-    agent namespace_36f464722d326bbe::addtocharactersarray();
+    agent scripts/cp_mp/utility/game_utility::addtocharactersarray();
     agent function_c4f5a500340fe6c2(agent.agent_type);
     if (isdefined(var_f9e7dc261e07162e)) {
         if (isweapon(var_f9e7dc261e07162e)) {
@@ -104,7 +104,7 @@ function function_391ec48831a02c13(agent, agent_type, spawn_team, var_f9e7dc261e
     callback::callback("on_agent_spawned", params);
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x792
 // Size: 0x62
@@ -117,7 +117,7 @@ function function_af0713caaf6c21c5() {
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7fb
 // Size: 0x4b
@@ -128,7 +128,7 @@ function assign_agent_func(var_ad662d6a990f6fcc, default_func) {
     level.agent_funcs[self.agent_type][var_ad662d6a990f6fcc] = default_func;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84d
 // Size: 0x96
@@ -136,12 +136,12 @@ function function_b4a6a1a854015dfc(agent_type) {
     self.agent_type = agent_type;
     if (isdefined(level.var_92b4162e3c890dc0) && isdefined(level.agent_definition[agent_type]["subclass"]) && isdefined(level.var_92b4162e3c890dc0[level.agent_definition[agent_type]["subclass"].name])) {
         self [[ level.var_92b4162e3c890dc0[level.agent_definition[agent_type]["subclass"].name] ]]();
-    } else {
-        initagentscriptvariables();
+        return;
     }
+    initagentscriptvariables();
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ea
 // Size: 0xe0
@@ -169,7 +169,7 @@ function getfreeagent(agent_type) {
     return var_7818398cdd97fe84;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d2
 // Size: 0x58
@@ -185,7 +185,7 @@ function initagentscriptvariables() {
     initplayerscriptvariables();
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa31
 // Size: 0xf6
@@ -215,7 +215,7 @@ function initplayerscriptvariables() {
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb2e
 // Size: 0x49
@@ -229,7 +229,7 @@ function function_d99212ec742486d0(agent_type, spawn_team) {
     self.pers["team"] = spawn_team;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7e
 // Size: 0x20
@@ -238,33 +238,33 @@ function set_agent_health(health) {
     self.maxhealth = health;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba5
 // Size: 0x10f
 function is_friendly_damage(agent, attacker) {
     if (isdefined(attacker) && isdefined(agent) && isdefined(agent.team) && !istrue(attacker.allowfriendlyfire)) {
         if (isdefined(attacker.team) && attacker.team == agent.team) {
-            return 1;
+            return true;
         }
         if (isdefined(attacker.owner) && isdefined(attacker.owner.team) && attacker.owner.team == agent.team) {
-            return 1;
+            return true;
         }
         if (isdefined(attacker.vehicle) && isdefined(attacker.vehicle.team) && attacker.vehicle.team == agent.team) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 13, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcbc
 // Size: 0x319
 function default_on_damage(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     victim = self;
     func = undefined;
-    self.var_5910081b63b4abfa = idflags;
+    self.modifiedidflags = idflags;
     if (isdefined(self.var_970170ffd4b081ac)) {
         idamage = self [[ self.var_970170ffd4b081ac ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon);
     }
@@ -283,21 +283,23 @@ function default_on_damage(einflictor, eattacker, idamage, idflags, smeansofdeat
         return;
     }
     /#
-        namespace_d325722f2754c2c4::function_c9e5c511b923a42f(idamage, eattacker, victim, smeansofdeath, shitloc, einflictor, vpoint);
+        scripts/cp_mp/utility/weapon_utility::function_c9e5c511b923a42f(idamage, eattacker, victim, smeansofdeath, shitloc, einflictor, vpoint);
     #/
     if (istrue(victim.agentdamagefeedback)) {
-        var_22602300decb102b = 0;
-        if (namespace_3c37cb17ade254d::issharedfuncdefined("killstreak", "isKillstreakWeapon")) {
-            var_22602300decb102b = isdefined(objweapon) && [[ namespace_3c37cb17ade254d::getsharedfunc("killstreak", "isKillstreakWeapon") ]](objweapon.basename);
-            if (namespace_3c37cb17ade254d::issharedfuncdefined("damage", "handleDamageFeedback")) {
-                eattacker [[ namespace_3c37cb17ade254d::getsharedfunc("damage", "handleDamageFeedback") ]](einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, idflags, 0, 0, var_22602300decb102b);
+        biskillstreakweapon = 0;
+        if (scripts/engine/utility::issharedfuncdefined("killstreak", "isKillstreakWeapon")) {
+            biskillstreakweapon = isdefined(objweapon) && [[ scripts/engine/utility::getsharedfunc("killstreak", "isKillstreakWeapon") ]](objweapon.basename);
+            if (scripts/engine/utility::issharedfuncdefined("damage", "handleDamageFeedback")) {
+                eattacker [[ scripts/engine/utility::getsharedfunc("damage", "handleDamageFeedback") ]](einflictor, eattacker, victim, idamage, smeansofdeath, objweapon, shitloc, idflags, 0, 0, biskillstreakweapon);
             }
         }
     }
-    idflags = self.var_5910081b63b4abfa;
+    idflags = self.modifiedidflags;
     if (isdefined(victim.unittype) && isdefined(level.agent_funcs[victim.unittype]) && isdefined(level.agent_funcs[victim.unittype]["on_damaged_finished"])) {
         victim [[ level.agent_funcs[victim.unittype]["on_damaged_finished"] ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname);
-    } else if (isdefined(victim.agent_type)) {
+        return;
+    }
+    if (isdefined(victim.agent_type)) {
         /#
             assert(isdefined(level.agent_funcs[victim.agent_type]["on_damaged_finished"]));
         #/
@@ -305,11 +307,11 @@ function default_on_damage(einflictor, eattacker, idamage, idflags, smeansofdeat
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 14, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfdc
 // Size: 0x26e
-function default_on_damage_finished(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, var_b6f2ea21c3462024, modelindex, partname, var_b2883531afa6b83d) {
+function default_on_damage_finished(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname, armorhit) {
     prevhealth = self.health;
     objweapon = sweapon;
     self.damagedby = eattacker;
@@ -318,32 +320,34 @@ function default_on_damage_finished(einflictor, eattacker, idamage, idflags, sme
     /#
         assert(istrue(self.isactive));
     #/
-    self finishagentdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname, istrue(var_b2883531afa6b83d));
+    self finishagentdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname, istrue(armorhit));
     if (self.health > 0 && self.health < prevhealth) {
         self notify("pain");
-        namespace_28d7bb9fcf17949d::runpain();
+        scripts/asm/asm_mp::runpain();
     }
     if (isalive(self)) {
         if (isdefined(self.var_1ec812b92a31cdd3)) {
             foreach (func in self.var_1ec812b92a31cdd3) {
-                self [[ func ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, var_b6f2ea21c3462024, modelindex, partname);
+                self [[ func ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname);
             }
         }
         if (isdefined(self.unittype) && isdefined(level.agent_funcs[self.unittype]) && isdefined(level.agent_funcs[self.unittype]["gametype_on_damage_finished"])) {
             func = level.agent_funcs[self.unittype]["gametype_on_damage_finished"];
             if (isdefined(func)) {
-                [[ func ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, var_b6f2ea21c3462024, modelindex, partname);
+                [[ func ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname);
             }
-        } else if (isdefined(self.agent_type)) {
+            return;
+        }
+        if (isdefined(self.agent_type)) {
             func = level.agent_funcs[self.agent_type]["gametype_on_damage_finished"];
             if (isdefined(func)) {
-                [[ func ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, var_b6f2ea21c3462024, modelindex, partname);
+                [[ func ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname);
             }
         }
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 9, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1251
 // Size: 0x266
@@ -364,25 +368,27 @@ function default_on_killed(einflictor, eattacker, idamage, smeansofdeath, objwea
             self [[ func ]](einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration);
         }
     }
-    var_d785e68a23ba79c1 = spawnstruct();
-    var_d785e68a23ba79c1.einflictor = einflictor;
-    var_d785e68a23ba79c1.eattacker = eattacker;
-    var_d785e68a23ba79c1.idamage = idamage;
-    var_d785e68a23ba79c1.smeansofdeath = smeansofdeath;
-    var_d785e68a23ba79c1.sweapon = objweapon;
-    var_d785e68a23ba79c1.vdir = vdir;
-    var_d785e68a23ba79c1.shitloc = shitloc;
-    var_d785e68a23ba79c1.timeoffset = timeoffset;
-    var_d785e68a23ba79c1.deathanimduration = deathanimduration;
-    callback::callback("on_ai_killed", var_d785e68a23ba79c1);
+    params_struct = spawnstruct();
+    params_struct.einflictor = einflictor;
+    params_struct.eattacker = eattacker;
+    params_struct.idamage = idamage;
+    params_struct.smeansofdeath = smeansofdeath;
+    params_struct.sweapon = objweapon;
+    params_struct.vdir = vdir;
+    params_struct.shitloc = shitloc;
+    params_struct.timeoffset = timeoffset;
+    params_struct.deathanimduration = deathanimduration;
+    callback::callback("on_ai_killed", params_struct);
     if (isdefined(eattacker) && isdefined(eattacker.vehicle) && isdefined(eattacker.vehicle.var_74633b25289a1962)) {
-        [[ eattacker.vehicle.var_74633b25289a1962 ]](eattacker.vehicle, self, var_d785e68a23ba79c1);
-    } else if (isdefined(einflictor) && isdefined(einflictor.var_74633b25289a1962) && smeansofdeath == "MOD_CRUSH") {
-        [[ einflictor.var_74633b25289a1962 ]](einflictor, self, var_d785e68a23ba79c1);
+        [[ eattacker.vehicle.var_74633b25289a1962 ]](eattacker.vehicle, self, params_struct);
+        return;
+    }
+    if (isdefined(einflictor) && isdefined(einflictor.var_74633b25289a1962) && smeansofdeath == "MOD_CRUSH") {
+        [[ einflictor.var_74633b25289a1962 ]](einflictor, self, params_struct);
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14be
 // Size: 0x2c
@@ -394,7 +400,7 @@ function getnumactiveagents(type) {
     return agents.size;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14f2
 // Size: 0xb0
@@ -416,7 +422,7 @@ function getactiveagentsoftype(type) {
     return agents;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15aa
 // Size: 0x96
@@ -430,7 +436,7 @@ function getaliveagentsofteam(team) {
     return var_c5c35cc6c0816de1;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1648
 // Size: 0x3a
@@ -445,24 +451,24 @@ function activateagent() {
     self.isactive = 1;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1689
 // Size: 0x35
 function ai_washitbyvehicle(meansofdeath, attacker) {
     if (meansofdeath != "MOD_CRUSH") {
-        return 0;
+        return false;
     }
     if (!isdefined(attacker)) {
-        return 0;
+        return false;
     }
-    if (!attacker namespace_1f188a13f7e79610::isvehicle()) {
-        return 0;
+    if (!attacker scripts/cp_mp/vehicles/vehicle::isvehicle()) {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16c6
 // Size: 0x641
@@ -529,14 +535,14 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
         } else {
             self.body enablelinkto();
             deathanim = self.body getcorpseanim();
-            var_689ef6000ed3e5fc = getnotetracktimes(deathanim, "start_ragdoll");
-            var_10ccd1eb1d027b69 = isdefined(var_689ef6000ed3e5fc) && var_689ef6000ed3e5fc.size > 0;
+            ragdollnotetracks = getnotetracktimes(deathanim, "start_ragdoll");
+            shouldragdoll = isdefined(ragdollnotetracks) && ragdollnotetracks.size > 0;
             if (istrue(self._blackboard.var_f6d06d1e68f4f4e5)) {
                 self.body linktoblendtotag(self._blackboard.currentvehicle, self._blackboard.var_1745d2b69c72c627, 0);
             } else {
                 self.body linktomoveoffset(self._blackboard.currentvehicle, self._blackboard.var_1745d2b69c72c627);
             }
-            if (isdefined(self._blackboard.vehicledeathwait) || var_10ccd1eb1d027b69) {
+            if (isdefined(self._blackboard.vehicledeathwait) || shouldragdoll) {
                 thread delaystartragdoll(self.body, shitloc, objweapon, einflictor, smeansofdeath);
             } else {
                 self.body thread ragdoll_on_vehicle_death(self._blackboard.currentvehicle);
@@ -546,7 +552,9 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
                 }
             }
         }
-    } else if (istrue(self.burningtodeath)) {
+        return;
+    }
+    if (istrue(self.burningtodeath)) {
         if (self isscriptable() && self.body isscriptable()) {
             currentstate = self getscriptablepartstate("burn_to_death_by_molotov", 1);
             if (isdefined(currentstate) && currentstate == "active") {
@@ -555,23 +563,27 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
                 thread delaystartragdoll(self.body, shitloc, vdir, objweapon, einflictor, smeansofdeath);
             }
         }
-    } else if (var_37a99e672a1ecc0e) {
+        return;
+    }
+    if (var_37a99e672a1ecc0e) {
         /#
             assert(isdefined(self.lastattacker));
         #/
         self.body startragdollfromvehicleimpact(einflictor);
-    } else if (should_do_immediate_ragdoll(self)) {
+        return;
+    }
+    if (should_do_immediate_ragdoll(self)) {
         if (isdefined(self.ragdollhitloc) && isdefined(self.ragdollimpactvector)) {
             self.body startragdollfromimpact(self.ragdollhitloc, self.ragdollimpactvector);
         } else {
             do_immediate_ragdoll(self.body);
         }
-    } else {
-        thread delaystartragdoll(self.body, shitloc, vdir, objweapon, einflictor, smeansofdeath);
+        return;
     }
+    thread delaystartragdoll(self.body, shitloc, vdir, objweapon, einflictor, smeansofdeath);
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d0e
 // Size: 0x60
@@ -579,7 +591,7 @@ function function_89fcc8d16c4fd558(corpse, vehicle, seatid, var_f9e25038fed22bf0
     corpse endon("death");
     corpse endon("cancel_delete_corpse");
     if (!istrue(vehicle.isdestroyed)) {
-        namespace_1fbd40990ee60ede::vehicle_occupancy_assignseatcorpse(corpse, vehicle, seatid, var_f9e25038fed22bf0);
+        scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_assignseatcorpse(corpse, vehicle, seatid, var_f9e25038fed22bf0);
     }
     vehicle waittill("death");
     if (isdefined(corpse)) {
@@ -587,19 +599,19 @@ function function_89fcc8d16c4fd558(corpse, vehicle, seatid, var_f9e25038fed22bf0
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d75
 // Size: 0x81
 function function_7687424c385de94(vehicle, seatindex) {
-    foreach (seatid, var_5539341a688c012f in namespace_1f188a13f7e79610::function_29b4292c92443328(vehicle namespace_1f188a13f7e79610::function_d93ec4635290febd()).occupancy.seatids) {
+    foreach (seatid, var_5539341a688c012f in scripts/cp_mp/vehicles/vehicle::function_29b4292c92443328(vehicle scripts/cp_mp/vehicles/vehicle::function_d93ec4635290febd()).occupancy.seatids) {
         if (var_5539341a688c012f == seatindex) {
             return seatid;
         }
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dfd
 // Size: 0x51
@@ -609,11 +621,11 @@ function ragdoll_on_vehicle_death(vehicle) {
         return;
     }
     if (isdefined(vehicle)) {
-        while (1) {
+        while (true) {
             if (!isdefined(self)) {
                 return;
             }
-            if (!isdefined(vehicle) || vehicle namespace_b479ac682b93cd92::vehicle_iscorpse()) {
+            if (!isdefined(vehicle) || vehicle scripts/common/vehicle_code::vehicle_iscorpse()) {
                 self unlink();
                 self startragdoll();
                 return;
@@ -623,51 +635,51 @@ function ragdoll_on_vehicle_death(vehicle) {
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e55
 // Size: 0x4f
 function should_do_immediate_ragdoll(agent) {
     if (istrue(agent.do_immediate_ragdoll)) {
-        return 1;
+        return true;
     }
     if (istrue(agent.forceragdollimmediate)) {
-        return 1;
+        return true;
     }
     if (istrue(self.var_aa0214e1292a7b3) && !isdefined(self.vehicledeathwait)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1eac
 // Size: 0x1e3
-function do_immediate_ragdoll(var_9ebd9ba17cf84487) {
-    if (!isdefined(var_9ebd9ba17cf84487)) {
+function do_immediate_ragdoll(agent_body) {
+    if (!isdefined(agent_body)) {
         return;
     }
-    if (isdefined(var_9ebd9ba17cf84487.ragdollhitloc) && isdefined(var_9ebd9ba17cf84487.ragdollimpactvector)) {
-        var_9ebd9ba17cf84487 startragdollfromimpact(var_9ebd9ba17cf84487.ragdollhitloc, var_9ebd9ba17cf84487.ragdollimpactvector);
+    if (isdefined(agent_body.ragdollhitloc) && isdefined(agent_body.ragdollimpactvector)) {
+        agent_body startragdollfromimpact(agent_body.ragdollhitloc, agent_body.ragdollimpactvector);
         return;
     }
-    var_bfebd8adbc01a3b6 = 10;
+    initialimpulse = 10;
     damagetype = utility::getdamagetype(self.damagemod);
     if (isdefined(self.attacker) && isplayer(self.attacker) && damagetype == "melee") {
-        var_bfebd8adbc01a3b6 = 5;
+        initialimpulse = 5;
     }
     damagetaken = self.damagetaken;
     if (damagetype == "bullet" || isdefined(self.damagemod) && self.damagemod == "MOD_FIRE") {
         damagetaken = min(damagetaken, 300);
     }
-    var_ad937ff34ab29b84 = var_bfebd8adbc01a3b6 * damagetaken;
-    var_41f464988e49ddb = max(0.3, self.damagedir[2]);
-    direction = (self.damagedir[0], self.damagedir[1], var_41f464988e49ddb);
+    directionscale = initialimpulse * damagetaken;
+    directionup = max(0.3, self.damagedir[2]);
+    direction = (self.damagedir[0], self.damagedir[1], directionup);
     if (isdefined(self.ragdoll_directionscale)) {
         direction = direction * self.ragdoll_directionscale;
     } else {
-        direction = direction * var_ad937ff34ab29b84;
+        direction = direction * directionscale;
     }
     if (self.forceragdollimmediate) {
         direction = direction + self.prevanimdelta * 20 * 10;
@@ -679,10 +691,10 @@ function do_immediate_ragdoll(var_9ebd9ba17cf84487) {
     if (isdefined(self.ragdoll_damagelocation_none) && damagelocation == "none") {
         damagelocation = self.ragdoll_damagelocation_none;
     }
-    var_9ebd9ba17cf84487 startragdollfromimpact(damagelocation, direction);
+    agent_body startragdollfromimpact(damagelocation, direction);
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2096
 // Size: 0x2b2
@@ -697,7 +709,7 @@ function delaystartragdoll(ent, shitloc, vdir, objweapon, einflictor, smeansofde
             waittime = times[0] * getanimlength(deathanim);
             params = spawnstruct();
             params.corpse = ent;
-            params.var_18262b2d0ba142d4 = waittime;
+            params.annihilate_time = waittime;
             callback::callback("on_corpse_annihilated", params);
             if (waittime > 0) {
                 wait(waittime);
@@ -709,8 +721,8 @@ function delaystartragdoll(ent, shitloc, vdir, objweapon, einflictor, smeansofde
         }
     }
     if (isdefined(level.noragdollents) && level.noragdollents.size) {
-        foreach (var_672c0cce467a1c00 in level.noragdollents) {
-            if (distancesquared(ent.origin, var_672c0cce467a1c00.origin) < 65536) {
+        foreach (norag in level.noragdollents) {
+            if (distancesquared(ent.origin, norag.origin) < 65536) {
                 return;
             }
         }
@@ -752,13 +764,13 @@ function delaystartragdoll(ent, shitloc, vdir, objweapon, einflictor, smeansofde
     if (isdefined(ent)) {
         if (isdefined(ent.ragdollhitloc) && isdefined(ent.ragdollimpactvector)) {
             ent startragdollfromimpact(ent.ragdollhitloc, ent.ragdollimpactvector);
-        } else {
-            ent startragdoll();
+            return;
         }
+        ent startragdoll();
     }
 }
 
-// Namespace namespace_39b39f93ee3db0c2/namespace_34f6a6adabfc542d
+// Namespace mp_agent / scripts/mp/mp_agent
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x234f
 // Size: 0x4a

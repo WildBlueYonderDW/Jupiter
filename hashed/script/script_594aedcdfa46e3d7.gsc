@@ -9,11 +9,11 @@
 
 #namespace namespace_4661781de8850ae4;
 
-// Namespace namespace_4661781de8850ae4/namespace_9e7b04da80a97ce9
+// Namespace namespace_4661781de8850ae4 / namespace_9e7b04da80a97ce9
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab
 // Size: 0x14
 function init() {
-    namespace_58a74e7d54b56e8d::registerkillstreak("uav_bigmap", &namespace_2c99f682179581bf::function_e5931b9f76ed6cda);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("uav_bigmap", &namespace_2c99f682179581bf::function_e5931b9f76ed6cda);
 }
 

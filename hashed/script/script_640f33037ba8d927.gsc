@@ -4,7 +4,7 @@
 
 #namespace namespace_1d412d516148e9b4;
 
-// Namespace namespace_1d412d516148e9b4/namespace_db65270d1872d5f7
+// Namespace namespace_1d412d516148e9b4 / namespace_db65270d1872d5f7
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x110
 // Size: 0xc
@@ -12,7 +12,7 @@ function init() {
     level thread function_6ef0f16edb152d68();
 }
 
-// Namespace namespace_1d412d516148e9b4/namespace_db65270d1872d5f7
+// Namespace namespace_1d412d516148e9b4 / namespace_db65270d1872d5f7
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x123
 // Size: 0x1b
@@ -23,7 +23,7 @@ function function_6ef0f16edb152d68() {
     level thread function_e7501d779917972();
 }
 
-// Namespace namespace_1d412d516148e9b4/namespace_db65270d1872d5f7
+// Namespace namespace_1d412d516148e9b4 / namespace_db65270d1872d5f7
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x145
 // Size: 0x26a
@@ -38,10 +38,10 @@ function function_e7501d779917972() {
         if (!isdefined(instance)) {
             continue;
         }
-        namespace_cb965d2f71fefddc::registerscriptableinstance(instance);
-        var_ea3b9640a6ad3c8e = rotatevectorinverted(instance.origin - geo.origin, geo.angles);
+        scripts/mp/gametypes/br_pickups::registerscriptableinstance(instance);
+        localorigin = rotatevectorinverted(instance.origin - geo.origin, geo.angles);
         localangles = combineangles(invertangles(geo.angles), instance.angles);
-        instance scriptablesetparententity(geo, var_ea3b9640a6ad3c8e, localangles);
+        instance scriptablesetparententity(geo, localorigin, localangles);
         instance setscriptablepartstate("body", "closed_usable");
     }
     structs = getstructarray("buy_station_space_shipment", "targetname");
@@ -53,10 +53,10 @@ function function_e7501d779917972() {
         if (!isdefined(instance)) {
             continue;
         }
-        namespace_cb965d2f71fefddc::registerscriptableinstance(instance);
-        var_ea3b9640a6ad3c8e = rotatevectorinverted(instance.origin - geo.origin, geo.angles);
+        scripts/mp/gametypes/br_pickups::registerscriptableinstance(instance);
+        localorigin = rotatevectorinverted(instance.origin - geo.origin, geo.angles);
         localangles = combineangles(invertangles(geo.angles), instance.angles);
-        instance scriptablesetparententity(geo, var_ea3b9640a6ad3c8e, localangles);
+        instance scriptablesetparententity(geo, localorigin, localangles);
         instance setscriptablepartstate("body", "closed_usable");
     }
 }

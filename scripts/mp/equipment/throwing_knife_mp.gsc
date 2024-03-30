@@ -13,7 +13,7 @@
 
 #namespace namespace_70a9c767ad1878e5;
 
-// Namespace namespace_70a9c767ad1878e5/namespace_6402197089c71f13
+// Namespace namespace_70a9c767ad1878e5 / scripts/mp/equipment/throwing_knife_mp
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x144
 // Size: 0x45
@@ -23,13 +23,13 @@ function throwing_knife_mp_init() {
     registersharedfunc("throwing_knife", "tryToPickup", &throwing_knife_mp_trytopickup);
 }
 
-// Namespace namespace_70a9c767ad1878e5/namespace_6402197089c71f13
+// Namespace namespace_70a9c767ad1878e5 / scripts/mp/equipment/throwing_knife_mp
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x190
 // Size: 0xc0
-function throwing_knife_mp_ongive(equipmentref, var_cbb2b3d05e48bd27, variantid) {
+function throwing_knife_mp_ongive(equipmentref, equipmentslot, variantid) {
     if (_hasperk("specialty_equip_throwingKnife")) {
-        namespace_3bbb5a98b932c46f::function_ec132c173d4532ee("specialty_equip_throwingKnife");
+        scripts/mp/weapons::function_ec132c173d4532ee("specialty_equip_throwingKnife");
     }
     if (!isdefined(variantid) && isdefined(self.var_a6dd5c7e74106ce3) && isdefined(self.var_a6dd5c7e74106ce3[equipmentref])) {
         variantid = self.var_a6dd5c7e74106ce3[equipmentref];
@@ -42,21 +42,21 @@ function throwing_knife_mp_ongive(equipmentref, var_cbb2b3d05e48bd27, variantid)
     } else {
         self.throwingknifemelee = function_eeaa22f0cd1ff845("iw9_knifestab_mp");
     }
-    namespace_3bbb5a98b932c46f::function_dd1698252c31d637("specialty_equip_throwingKnife");
+    scripts/mp/weapons::weapon_giveperk("specialty_equip_throwingKnife");
 }
 
-// Namespace namespace_70a9c767ad1878e5/namespace_6402197089c71f13
+// Namespace namespace_70a9c767ad1878e5 / scripts/mp/equipment/throwing_knife_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x257
 // Size: 0x38
-function throwing_knife_mp_ontake(equipmentref, var_cbb2b3d05e48bd27) {
-    if (namespace_3bbb5a98b932c46f::function_4c614e296b3a410a("specialty_equip_throwingKnife")) {
-        namespace_3bbb5a98b932c46f::function_ec132c173d4532ee("specialty_equip_throwingKnife");
+function throwing_knife_mp_ontake(equipmentref, equipmentslot) {
+    if (scripts/mp/weapons::weapon_hasperk("specialty_equip_throwingKnife")) {
+        scripts/mp/weapons::function_ec132c173d4532ee("specialty_equip_throwingKnife");
     }
     self.throwingknifemelee = undefined;
 }
 
-// Namespace namespace_70a9c767ad1878e5/namespace_6402197089c71f13
+// Namespace namespace_70a9c767ad1878e5 / scripts/mp/equipment/throwing_knife_mp
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x296
 // Size: 0xa5
@@ -65,17 +65,17 @@ function throwing_knife_mp_trytopickup(equipmentref, variantid) {
         /#
             self iprintlnbold("<unknown string>");
         #/
-        return 0;
+        return false;
     }
-    if (namespace_1a507865f681850e::hasequipment(equipmentref) && namespace_1a507865f681850e::getequipmentammo(equipmentref) < namespace_1a507865f681850e::getequipmentmaxammo(equipmentref)) {
-        namespace_1a507865f681850e::incrementequipmentammo(equipmentref, 1, undefined, 1);
+    if (scripts/mp/equipment::hasequipment(equipmentref) && scripts/mp/equipment::getequipmentammo(equipmentref) < scripts/mp/equipment::getequipmentmaxammo(equipmentref)) {
+        scripts/mp/equipment::incrementequipmentammo(equipmentref, 1, undefined, 1);
         throwing_knife_mp_ongive(equipmentref, undefined, variantid);
     } else if (namespace_aead94004cf4c147::function_7e103028c464ab9a(namespace_38b993c4618e76cd::function_b88cfb4893ceedac(equipmentref)) && namespace_aead94004cf4c147::function_8a160d9935d47f5e(equipmentref, "equipment", 1)) {
-        namespace_aead94004cf4c147::additemtobackpackbyref(equipmentref, "equipment", 1);
+        namespace_aead94004cf4c147::addItemToBackpackByRef(equipmentref, "equipment", 1);
     } else {
-        return 0;
+        return false;
     }
     hudicontype("throwingknife");
-    return 1;
+    return true;
 }
 

@@ -3,9 +3,9 @@
 #using scripts\common\utility.gsc;
 #using scripts\common\createfx.gsc;
 
-#namespace namespace_63193a78e9356938;
+#namespace createfxmenu;
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d8
 // Size: 0x59f
@@ -80,7 +80,7 @@ function init_menu() {
     level._createfx.menus = menus;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa7e
 // Size: 0x17
@@ -88,7 +88,7 @@ function menu(name) {
     return level.create_fx_menu == name;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa9d
 // Size: 0x16
@@ -96,7 +96,7 @@ function setmenu(name) {
     level.create_fx_menu = name;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaba
 // Size: 0x5f
@@ -110,28 +110,28 @@ function create_fx_menu() {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb20
 // Size: 0x147
 function menu_create_select() {
     if (!isdefined(level._createfx.menu_create_select)) {
         level._createfx.menu_create_select = [];
-        var_fadb44f96ab8ec53 = [];
-        var_fadb44f96ab8ec53["1"] = &buttonpress_create_oneshot;
+        btnlist = [];
+        btnlist["1"] = &buttonpress_create_oneshot;
         if (!level.mp_createfx) {
-            var_fadb44f96ab8ec53["2"] = &buttonpress_create_loopfx;
-            var_fadb44f96ab8ec53["3"] = &buttonpress_create_loopsound;
-            var_fadb44f96ab8ec53["4"] = &buttonpress_create_exploder;
-            var_fadb44f96ab8ec53["5"] = &buttonpress_create_interval_sound;
-            var_fadb44f96ab8ec53["6"] = &buttonpress_create_reactiveent;
+            btnlist["2"] = &buttonpress_create_loopfx;
+            btnlist["3"] = &buttonpress_create_loopsound;
+            btnlist["4"] = &buttonpress_create_exploder;
+            btnlist["5"] = &buttonpress_create_interval_sound;
+            btnlist["6"] = &buttonpress_create_reactiveent;
         } else {
-            var_fadb44f96ab8ec53["2"] = &buttonpress_create_loopsound;
-            var_fadb44f96ab8ec53["3"] = &buttonpress_create_exploder;
-            var_fadb44f96ab8ec53["4"] = &buttonpress_create_interval_sound;
-            var_fadb44f96ab8ec53["5"] = &buttonpress_create_reactiveent;
+            btnlist["2"] = &buttonpress_create_loopsound;
+            btnlist["3"] = &buttonpress_create_exploder;
+            btnlist["4"] = &buttonpress_create_interval_sound;
+            btnlist["5"] = &buttonpress_create_reactiveent;
         }
-        level._createfx.menu_create_select = var_fadb44f96ab8ec53;
+        level._createfx.menu_create_select = btnlist;
     }
     foreach (index, func in level._createfx.menu_create_select) {
         if (button_is_clicked(index)) {
@@ -141,7 +141,7 @@ function menu_create_select() {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc6e
 // Size: 0x16
@@ -150,7 +150,7 @@ function buttonpress_create_oneshot() {
     draw_effects_list();
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc8b
 // Size: 0x16
@@ -159,7 +159,7 @@ function buttonpress_create_loopfx() {
     draw_effects_list();
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xca8
 // Size: 0x28
@@ -169,7 +169,7 @@ function buttonpress_create_loopsound() {
     finish_creating_entity(ent);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcd7
 // Size: 0x28
@@ -179,7 +179,7 @@ function buttonpress_create_exploder() {
     finish_creating_entity(ent);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd06
 // Size: 0x28
@@ -189,7 +189,7 @@ function buttonpress_create_interval_sound() {
     finish_creating_entity(ent);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd35
 // Size: 0x1c
@@ -198,7 +198,7 @@ function buttonpress_create_reactiveent() {
     finish_creating_entity(ent);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd58
 // Size: 0x3b
@@ -213,7 +213,7 @@ function menu_create() {
     menu_fx_creation();
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd9a
 // Size: 0x96
@@ -232,12 +232,12 @@ function menu_none() {
             clear_settable_fx();
             setmenu("add_options");
         }
-    } else {
-        level.last_displayed_ent = undefined;
+        return;
     }
+    level.last_displayed_ent = undefined;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe37
 // Size: 0x3d
@@ -253,7 +253,7 @@ function menu_add_options() {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe7b
 // Size: 0x45
@@ -268,7 +268,7 @@ function menu_select_by_name() {
     select_by_name();
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec7
 // Size: 0xe
@@ -276,7 +276,7 @@ function next_button() {
     return button_is_clicked("rightarrow");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xedd
 // Size: 0xe
@@ -284,7 +284,7 @@ function previous_button() {
     return button_is_clicked("leftarrow");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xef3
 // Size: 0x24
@@ -295,13 +295,13 @@ function exit_menu() {
     setmenu("none");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf1e
 // Size: 0x119
 function menu_fx_creation() {
     count = 0;
-    var_ad1cd7182f378920 = undefined;
+    picked_fx = undefined;
     keys = func_get_level_fx();
     for (i = level.effect_list_offset; i < keys.size; i++) {
         count = count + 1;
@@ -310,18 +310,18 @@ function menu_fx_creation() {
             var_7356ab609cfad76c = 0;
         }
         if (button_is_clicked(var_7356ab609cfad76c + "")) {
-            var_ad1cd7182f378920 = keys[i];
+            picked_fx = keys[i];
             break;
         }
         if (count > level.effect_list_offset_max) {
             break;
         }
     }
-    if (!isdefined(var_ad1cd7182f378920)) {
+    if (!isdefined(picked_fx)) {
         return;
     }
     if (menu("change_fxid")) {
-        apply_option_to_selected_fx(get_option("fxid"), var_ad1cd7182f378920);
+        apply_option_to_selected_fx(get_option("fxid"), picked_fx);
         level.effect_list_offset = 0;
         clear_fx_hudelements();
         setmenu("none");
@@ -329,15 +329,15 @@ function menu_fx_creation() {
     }
     ent = undefined;
     if (menu("create_loopfx")) {
-        ent = createloopeffect(var_ad1cd7182f378920);
+        ent = createloopeffect(picked_fx);
     }
     if (menu("create_oneshot")) {
-        ent = createoneshoteffect(var_ad1cd7182f378920);
+        ent = createoneshoteffect(picked_fx);
     }
     finish_creating_entity(ent);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x103e
 // Size: 0xff
@@ -357,7 +357,7 @@ function finish_creating_entity(ent) {
     setmenu("none");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1144
 // Size: 0x19
@@ -365,7 +365,7 @@ function entities_are_selected() {
     return level._createfx.selected_fx_ents.size > 0;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1165
 // Size: 0x111
@@ -374,7 +374,7 @@ function menu_change_selected_fx() {
         return;
     }
     count = 0;
-    var_746aa6e7fd75df62 = 0;
+    drawncount = 0;
     ent = get_last_selected_ent();
     for (i = 0; i < level._createfx.options.size; i++) {
         option = level._createfx.options[i];
@@ -385,36 +385,36 @@ function menu_change_selected_fx() {
         if (count < level.effect_list_offset) {
             continue;
         }
-        var_746aa6e7fd75df62++;
-        var_7356ab609cfad76c = var_746aa6e7fd75df62;
+        drawncount++;
+        var_7356ab609cfad76c = drawncount;
         if (var_7356ab609cfad76c == 10) {
             var_7356ab609cfad76c = 0;
         }
         if (button_is_clicked(var_7356ab609cfad76c + "")) {
-            prepare_option_for_change(option, var_746aa6e7fd75df62);
+            prepare_option_for_change(option, drawncount);
             break;
         }
-        if (var_746aa6e7fd75df62 > level.effect_list_offset_max) {
+        if (drawncount > level.effect_list_offset_max) {
             more = 1;
             break;
         }
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x127d
 // Size: 0xce
-function prepare_option_for_change(option, var_746aa6e7fd75df62) {
+function prepare_option_for_change(option, drawncount) {
     if (option["name"] == "fxid") {
         setmenu("change_fxid");
         draw_effects_list();
         return;
     }
     level.createfx_inputlocked = 1;
-    level._createfx.hudelems[var_746aa6e7fd75df62 + 3][0].color = (1, 1, 0);
+    level._createfx.hudelems[drawncount + 3][0].color = (1, 1, 0);
     if (isdefined(option["input_func"])) {
-        thread [[ option["input_func"] ]](var_746aa6e7fd75df62 + 3);
+        thread [[ option["input_func"] ]](drawncount + 3);
     } else {
         createfx_centerprint("To change " + option["description"] + " on selected entities, type /fx newvalue");
     }
@@ -422,7 +422,7 @@ function prepare_option_for_change(option, var_746aa6e7fd75df62) {
     setdvar(@"hash_88d99aa177a27680", "nil");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1352
 // Size: 0xe0
@@ -452,7 +452,7 @@ function menu_fx_option_set() {
     apply_option_to_selected_fx(option, setting);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1439
 // Size: 0xad
@@ -468,7 +468,7 @@ function apply_option_to_selected_fx(option, setting) {
     clear_settable_fx();
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14ed
 // Size: 0x70
@@ -482,7 +482,7 @@ function set_option_index(name) {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1564
 // Size: 0x2a
@@ -490,7 +490,7 @@ function get_selected_option() {
     return level._createfx.options[level._createfx.selected_fx_option_index];
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1596
 // Size: 0x22
@@ -498,16 +498,16 @@ function mask(type, name) {
     return isdefined(level.createfxmasks[type][name]);
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15c0
 // Size: 0xa6
-function addoption(type, name, description, var_4e94c5615c36ab4e, mask, input_func) {
+function addoption(type, name, description, defaultsetting, mask, input_func) {
     option = [];
     option["type"] = type;
     option["name"] = name;
     option["description"] = description;
-    option["default"] = var_4e94c5615c36ab4e;
+    option["default"] = defaultsetting;
     option["mask"] = mask;
     if (isdefined(input_func)) {
         option["input_func"] = input_func;
@@ -515,7 +515,7 @@ function addoption(type, name, description, var_4e94c5615c36ab4e, mask, input_fu
     level._createfx.options[level._createfx.options.size] = option;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x166d
 // Size: 0x6d
@@ -527,7 +527,7 @@ function get_option(name) {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16e1
 // Size: 0x189
@@ -535,7 +535,7 @@ function input_reactive_radius(menu_index) {
     /#
         level._createfx.hudelems[menu_index][0] setdevtext("Earthquake");
     #/
-    while (1) {
+    while (true) {
         waitframe();
         if (level.player buttonpressed("escape") || level.player buttonpressed("x")) {
             break;
@@ -560,7 +560,7 @@ function input_reactive_radius(menu_index) {
     clear_settable_fx();
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1871
 // Size: 0x22a
@@ -577,7 +577,7 @@ function display_fx_add_options(ent) {
     set_fx_hudelement("Origin: " + ent.v["origin"]);
     set_fx_hudelement("Angles: " + ent.v["angles"]);
     count = 0;
-    var_746aa6e7fd75df62 = 0;
+    drawncount = 0;
     more = 0;
     if (level.effect_list_offset >= level._createfx.options.size) {
         level.effect_list_offset = 0;
@@ -594,11 +594,11 @@ function display_fx_add_options(ent) {
         if (count < level.effect_list_offset) {
             continue;
         }
-        if (var_746aa6e7fd75df62 >= level.effect_list_offset_max) {
+        if (drawncount >= level.effect_list_offset_max) {
             continue;
         }
-        var_746aa6e7fd75df62++;
-        var_7356ab609cfad76c = var_746aa6e7fd75df62;
+        drawncount++;
+        var_7356ab609cfad76c = drawncount;
         if (var_7356ab609cfad76c == 10) {
             var_7356ab609cfad76c = 0;
         }
@@ -616,7 +616,7 @@ function display_fx_add_options(ent) {
     set_fx_hudelement("(x) Exit >");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aa2
 // Size: 0x9f
@@ -630,7 +630,7 @@ function add_option_to_selected_entities(option) {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b48
 // Size: 0x20
@@ -640,7 +640,7 @@ function menunone() {
     setmenu("none");
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b6f
 // Size: 0x25c
@@ -655,7 +655,7 @@ function display_fx_info(ent) {
     set_fx_hudelement("Angles: " + ent.v["angles"]);
     if (entities_are_selected()) {
         count = 0;
-        var_746aa6e7fd75df62 = 0;
+        drawncount = 0;
         more = 0;
         for (i = 0; i < level._createfx.options.size; i++) {
             option = level._createfx.options[i];
@@ -666,9 +666,9 @@ function display_fx_info(ent) {
             if (count < level.effect_list_offset) {
                 continue;
             }
-            var_746aa6e7fd75df62++;
-            set_fx_hudelement(var_746aa6e7fd75df62 + ". " + option["description"] + ": " + ent.v[option["name"]]);
-            if (var_746aa6e7fd75df62 > level.effect_list_offset_max) {
+            drawncount++;
+            set_fx_hudelement(drawncount + ". " + option["description"] + ": " + ent.v[option["name"]]);
+            if (drawncount > level.effect_list_offset_max) {
                 more = 1;
                 break;
             }
@@ -678,24 +678,24 @@ function display_fx_info(ent) {
         }
         set_fx_hudelement("(a) Add >");
         set_fx_hudelement("(x) Exit >");
-    } else {
-        count = 0;
-        more = 0;
-        for (i = 0; i < level._createfx.options.size; i++) {
-            option = level._createfx.options[i];
-            if (!isdefined(ent.v[option["name"]])) {
-                continue;
-            }
-            count++;
-            set_fx_hudelement(option["description"] + ": " + ent.v[option["name"]]);
-            if (count > level._createfx.hudelem_count) {
-                break;
-            }
+        return;
+    }
+    count = 0;
+    more = 0;
+    for (i = 0; i < level._createfx.options.size; i++) {
+        option = level._createfx.options[i];
+        if (!isdefined(ent.v[option["name"]])) {
+            continue;
+        }
+        count++;
+        set_fx_hudelement(option["description"] + ": " + ent.v[option["name"]]);
+        if (count > level._createfx.hudelem_count) {
+            break;
         }
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dd2
 // Size: 0xe4
@@ -722,7 +722,7 @@ function draw_effects_list(title) {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ebd
 // Size: 0x56
@@ -730,12 +730,12 @@ function increment_list_offset() {
     keys = func_get_level_fx();
     if (level.effect_list_offset >= keys.size - level.effect_list_offset_max) {
         level.effect_list_offset = 0;
-    } else {
-        level.effect_list_offset = level.effect_list_offset + level.effect_list_offset_max;
+        return;
     }
+    level.effect_list_offset = level.effect_list_offset + level.effect_list_offset_max;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f1a
 // Size: 0x53
@@ -747,13 +747,13 @@ function decrement_list_offset() {
     }
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f74
 // Size: 0x132
 function select_by_name() {
     count = 0;
-    var_ad1cd7182f378920 = undefined;
+    picked_fx = undefined;
     keys = func_get_level_fx();
     for (i = level.effect_list_offset; i < keys.size; i++) {
         count = count + 1;
@@ -762,28 +762,28 @@ function select_by_name() {
             var_7356ab609cfad76c = 0;
         }
         if (button_is_clicked(var_7356ab609cfad76c + "")) {
-            var_ad1cd7182f378920 = keys[i];
+            picked_fx = keys[i];
             break;
         }
         if (count > level.effect_list_offset_max) {
             break;
         }
     }
-    if (!isdefined(var_ad1cd7182f378920)) {
+    if (!isdefined(picked_fx)) {
         return;
     }
-    var_9eab1f284573cc85 = [];
+    index_array = [];
     foreach (i, ent in level.createfxent) {
-        if (issubstr(ent.v["fxid"], var_ad1cd7182f378920)) {
-            var_9eab1f284573cc85[var_9eab1f284573cc85.size] = i;
+        if (issubstr(ent.v["fxid"], picked_fx)) {
+            index_array[index_array.size] = i;
         }
     }
     deselect_all_ents();
-    select_index_array(var_9eab1f284573cc85);
+    select_index_array(index_array);
     level._createfx.select_by_name = 1;
 }
 
-// Namespace namespace_63193a78e9356938/namespace_b4f1977e6995d967
+// Namespace createfxmenu / scripts/common/createfxmenu
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20ad
 // Size: 0x2e

@@ -1,13 +1,13 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
-#using script_38eb8f4be20d54f4;
+#using scripts\common\devgui.gsc;
 #using script_398835140857d740;
 #using script_3a9930dfe832ae05;
-#using script_427ce33ec0c820cf;
+#using scripts\common\powerups.gsc;
 
 #namespace free_perk;
 
-// Namespace free_perk/namespace_2c8bebc278e21cf3
+// Namespace free_perk / namespace_2c8bebc278e21cf3
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x9a
 // Size: 0xa
@@ -15,7 +15,7 @@ function autoexec main() {
     function_bf3da8298127a63b();
 }
 
-// Namespace free_perk/namespace_2c8bebc278e21cf3
+// Namespace free_perk / namespace_2c8bebc278e21cf3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab
 // Size: 0x56
@@ -29,11 +29,11 @@ function function_bf3da8298127a63b() {
     #/
 }
 
-// Namespace free_perk/namespace_2c8bebc278e21cf3
+// Namespace free_perk / namespace_2c8bebc278e21cf3
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x108
 // Size: 0x7d
-function grab_free_perk(str_powerup, var_4d44d70760d7ad71) {
+function grab_free_perk(str_powerup, ent_powerup) {
     a_players = function_a56a8b17eae57b09(str_powerup);
     foreach (player in a_players) {
         player function_236b69ee9dd7d2d();
@@ -41,7 +41,7 @@ function grab_free_perk(str_powerup, var_4d44d70760d7ad71) {
     }
 }
 
-// Namespace free_perk/namespace_2c8bebc278e21cf3
+// Namespace free_perk / namespace_2c8bebc278e21cf3
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18c
 // Size: 0x37
@@ -50,9 +50,9 @@ function function_236b69ee9dd7d2d() {
     /#
         if (isdefined(perk_str)) {
             iprintlnbold("<unknown string>" + perk_str);
-        } else {
-            iprintlnbold("<unknown string>");
+            return;
         }
+        iprintlnbold("<unknown string>");
     #/
 }
 

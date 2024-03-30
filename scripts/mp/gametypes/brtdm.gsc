@@ -41,7 +41,7 @@
 
 #namespace brtdm;
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d8
 // Size: 0x319
@@ -49,10 +49,10 @@ function main() {
     if (getdvar(@"hash_f644e90eb9a008cf") == "mp_background") {
         return;
     }
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -70,13 +70,13 @@ function main() {
     level.teambased = 1;
     level.disablespawncamera = 1;
     level.ignoregulagredeploysplash = 1;
-    namespace_71073fa38f11492::init();
-    namespace_71073fa38f11492::disablefeature("kiosk");
-    namespace_71073fa38f11492::disablefeature("armor");
-    namespace_71073fa38f11492::disablefeature("missions");
-    namespace_71073fa38f11492::disablefeature("loot");
-    namespace_71073fa38f11492::disablefeature("dropbag");
-    namespace_71073fa38f11492::disablefeature("weapons");
+    scripts/mp/gametypes/br_gametypes::init();
+    scripts/mp/gametypes/br_gametypes::disablefeature("kiosk");
+    scripts/mp/gametypes/br_gametypes::disablefeature("armor");
+    scripts/mp/gametypes/br_gametypes::disablefeature("missions");
+    scripts/mp/gametypes/br_gametypes::disablefeature("loot");
+    scripts/mp/gametypes/br_gametypes::disablefeature("dropbag");
+    scripts/mp/gametypes/br_gametypes::disablefeature("weapons");
     updategametypedvars();
     level.onstartgametype = &onstartgametype;
     level.getspawnpoint = &getspawnpoint;
@@ -91,26 +91,26 @@ function main() {
         level.var_4e353dc2c64b19b1 = 1;
         level.modespawnclient = &function_68bc8caeffea7a83;
         level.var_a7f81dfdc88e53e6 = 1;
-        namespace_71073fa38f11492::disablefeature("circle");
+        scripts/mp/gametypes/br_gametypes::disablefeature("circle");
     }
     game["dialog"]["gametype"] = "gametype_tdm";
     game["dialog"]["boost"] = "boost_tdm";
     game["dialog"]["offense_obj"] = "boost_tdm";
     game["dialog"]["defense_obj"] = "boost_tdm";
-    level namespace_5078ee98abb32db9::initparachutedvars();
-    thread namespace_d58f8bbad53774ad::init();
+    level scripts/cp_mp/parachute::initparachutedvars();
+    thread scripts/mp/gametypes/br_c130airdrop::init();
     if (matchmakinggame()) {
         level.shouldgamelobbyremainintact = &shouldgamelobbyremainintact;
     }
     namespace_2c19af30dc7a566c::pause();
     namespace_2c19af30dc7a566c::function_4a18dd73a966821e(4);
-    namespace_2c19af30dc7a566c::function_6cce72ce8bb6af87([0:"allies", 1:"axis", 2:"team_three", 3:"team_four", 4:"team_five"]);
-    namespace_15d3019056d1bcea::brvehiclesinit();
+    namespace_2c19af30dc7a566c::function_6cce72ce8bb6af87(["allies", "axis", "team_three", "team_four", "team_five"]);
+    scripts/mp/gametypes/br_vehicles::brvehiclesinit();
     level.var_152d5a9c5ac5cdad = getdvarfloat(@"hash_ba9e8fbf0254be1e", 0.857);
     level.var_aa1aaed4a9b80d4b = getdvarint(@"hash_3196e3743c6871b2", 3);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f8
 // Size: 0x38
@@ -121,13 +121,13 @@ function initializematchrules() {
     setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa37
 // Size: 0x15b
 function onstartgametype() {
     setclientnamemode("auto_change");
-    namespace_cb965d2f71fefddc::br_pickups_init();
+    scripts/mp/gametypes/br_pickups::br_pickups_init();
     if (!isdefined(game["switchedsides"])) {
         game["switchedsides"] = 0;
     }
@@ -154,18 +154,18 @@ function onstartgametype() {
         level thread function_4e89ea3291f12198();
         level thread function_3fe54271a36d4f0d();
     #/
-    namespace_662734e7fa8a8b94::inittankspawns();
-    level thread namespace_15d3019056d1bcea::brvehiclesonstartgametype();
+    scripts/mp/gametypes/bradley_spawner::inittankspawns();
+    level thread scripts/mp/gametypes/br_vehicles::brvehiclesonstartgametype();
     initvehicles();
     level thread initprematchc130();
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb99
 // Size: 0x323
 function updategametypedvars() {
-    namespace_310ba947928891df::updatecommongametypedvars();
+    scripts/mp/gametypes/common::updatecommongametypedvars();
     setdvar(@"hash_de79e5c6b8a17221", getdvarint(@"hash_29a2aab7afd7a31a", 225));
     setdvar(@"hash_18e2dda6aaf07dc3", getdvarint(@"hash_6f3ca3679ac76b3c", 590));
     setdvar(@"hash_180a6f432cfb6644", getdvarint(@"hash_2cfd86efae0c680d", 225));
@@ -182,9 +182,9 @@ function updategametypedvars() {
         setdvar(@"hash_9a25e652b393bfce", level.brtdm_config.circleradius);
     }
     level.brtdm_config.disabledvehicles = [];
-    allvehicles = [0:"little_bird", 1:"atv", 2:"tac_rover"];
+    allvehicles = ["little_bird", "atv", "tac_rover"];
     foreach (vehicle in allvehicles) {
-        if (getdvarint(function_2ef675c13ca1c4af(@"hash_ce84d111a575beeb", vehicle), 0) == 1) {
+        if (getdvarint(hashcat(@"hash_ce84d111a575beeb", vehicle), 0) == 1) {
             level.brtdm_config.disabledvehicles[vehicle] = 1;
         }
     }
@@ -193,7 +193,7 @@ function updategametypedvars() {
     level.brtdm_config.spectatepoint.angles = getdvarvector(@"hash_25377000b8772425", level.brtdm_config.locale_defaults[@"hash_25377000b8772425"]);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xec3
 // Size: 0x2b
@@ -201,7 +201,7 @@ function setlocaledefaultvalue(dvar, value) {
     level.brtdm_config.locale_defaults[dvar] = value;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xef5
 // Size: 0x3802
@@ -752,7 +752,7 @@ function applylocaledefaults() {
     }
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46fe
 // Size: 0x25f
@@ -768,24 +768,24 @@ function initcircledata() {
     level.br_level.br_mapbounds = [];
     level.br_level.br_mapbounds[0] = (level.br_level.br_mapcenter[0] + level.brtdm_config.circleradius, level.br_level.br_mapcenter[1] + level.brtdm_config.circleradius, 0);
     level.br_level.br_mapbounds[1] = (level.br_level.br_mapcenter[0] - level.brtdm_config.circleradius, level.br_level.br_mapcenter[1] - level.brtdm_config.circleradius, 0);
-    level.br_level.br_circleminimapradii = [0:level.brtdm_config.circleradius, 1:level.brtdm_config.circleradius];
-    level.br_level.br_circleradii = [0:level.brtdm_config.circleradius, 1:level.brtdm_config.circleradius];
-    namespace_c5622898120e827f::initcircle();
-    level thread namespace_c5622898120e827f::runcircles(0);
+    level.br_level.br_circleminimapradii = [level.brtdm_config.circleradius, level.brtdm_config.circleradius];
+    level.br_level.br_circleradii = [level.brtdm_config.circleradius, level.brtdm_config.circleradius];
+    scripts/mp/gametypes/br_circle::initcircle();
+    level thread scripts/mp/gametypes/br_circle::runcircles(0);
     level.br_circle.circleindex = 0;
     setomnvar("ui_br_circle_num", 1);
     setomnvar("ui_br_minimap_radius", level.br_level.br_circleminimapradii[0]);
-    namespace_c5622898120e827f::setstaticuicircles(9999, level.br_circle.safecircleui, level.br_circle.dangercircleui, 0);
+    scripts/mp/gametypes/br_circle::setstaticuicircles(9999, level.br_circle.safecircleui, level.br_circle.dangercircleui, 0);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4964
 // Size: 0x3f2
 function initspawns() {
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
     level.brtdm_config.spawnheight["allies"] = getdvarfloat(@"hash_1fe5744c6a2c50a7", level.brtdm_config.locale_defaults[@"hash_1fe5744c6a2c50a7"]);
     level.brtdm_config.spawnheight["axis"] = getdvarfloat(@"hash_3c77d706ffd2c5cc", level.brtdm_config.locale_defaults[@"hash_1fe5744c6a2c50a7"]);
@@ -803,7 +803,7 @@ function initspawns() {
     level thread pregeneratespawnpoints();
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d5d
 // Size: 0x4d3
@@ -838,14 +838,14 @@ function getspawnpoint() {
         spawnangles = vectortoangles(level.brtdm_config.spawnvector[self.team]);
         randomyaw = randomfloatrange(level.brtdm_config.spawnanglemin, level.brtdm_config.spawnanglemax);
         spawnvector = anglestoforward((0, spawnangles[1] + ter_op(cointoss(), randomyaw, randomyaw * -1), 0));
-        var_53a3ed00687acc12 = randomfloatrange(level.brtdm_config.spawnoffsettacinsertmin, level.brtdm_config.spawnoffsettacinsertmax);
-        spawnorigin = self.setspawnpoint.playerspawnpos + spawnvector * var_53a3ed00687acc12;
+        randomdist = randomfloatrange(level.brtdm_config.spawnoffsettacinsertmin, level.brtdm_config.spawnoffsettacinsertmax);
+        spawnorigin = self.setspawnpoint.playerspawnpos + spawnvector * randomdist;
         if (distance2dsquared(spawnorigin, level.brtdm_config.circlecenter) > level.brtdm_config.circleradius * level.brtdm_config.circleradius) {
             var_2099c256f875ad40 = vectornormalize(spawnorigin - level.brtdm_config.circlecenter);
             spawnorigin = level.brtdm_config.circlecenter + var_2099c256f875ad40 * level.brtdm_config.circleradius * 0.99;
         }
-        var_fbcabd62b8f66eb8 = namespace_2a184fc4902783dc::create_default_contents(1);
-        groundorigin = drop_to_ground(spawnorigin, 10000, -20000, undefined, var_fbcabd62b8f66eb8);
+        tracecontents = scripts/engine/trace::create_default_contents(1);
+        groundorigin = drop_to_ground(spawnorigin, 10000, -20000, undefined, tracecontents);
         spawnorigin = (spawnorigin[0], spawnorigin[1], groundorigin[2]);
         spawnorigin = spawnorigin + (0, 0, 1) * level.brtdm_config.spawnheight[self.team];
         if (getdvarint(@"hash_53b56fcd1ad4a8ce") == 1) {
@@ -855,48 +855,48 @@ function getspawnpoint() {
         self.redeployspawn.angles = self.setspawnpoint.playerspawnangles;
         self.redeployspawn.lifeid = self.lifeid;
         self.redeployspawn.time = gettime();
-        namespace_add8ab90fc53d7f7::spawnpoint_clearspawnpoint(0, 1);
+        scripts/mp/equipment/tac_insert::spawnpoint_clearspawnpoint(0, 1);
     } else if (self.redeployspawn.team != self.team || self.redeployspawn.lifeid != self.lifeid) {
         return generatespawnpoint();
     }
     return self.redeployspawn;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5238
 // Size: 0x423
 function pregeneratespawnpoints() {
     level.redeployspawns = [];
-    var_502272fcccde5b8e = [0:"axis", 1:"allies"];
+    baseteamarray = ["axis", "allies"];
     spawncount = getdvarint(@"hash_e1111ce9b4b5eb16", 50);
-    var_e14067c17e332089 = getdvarint(@"hash_5951fd67c37a0e30", 5);
+    tracecount = getdvarint(@"hash_5951fd67c37a0e30", 5);
     var_7426330c61b55320 = 0;
-    foreach (team in var_502272fcccde5b8e) {
+    foreach (team in baseteamarray) {
         level.redeployspawns[team] = [];
         for (i = 0; i < spawncount; i++) {
             spawnpoint = spawnstruct();
             spawnangles = vectortoangles(level.brtdm_config.spawnvector[team]);
             randomyaw = randomfloatrange(level.brtdm_config.spawnanglemin, level.brtdm_config.spawnanglemax);
             spawnvector = anglestoforward((0, spawnangles[1] + ter_op(cointoss(), randomyaw, randomyaw * -1), 0));
-            var_53a3ed00687acc12 = randomfloatrange(level.brtdm_config.spawndistancemin, level.brtdm_config.spawndistancemax);
-            spawnorigin = level.brtdm_config.circlecenter + spawnvector * level.brtdm_config.circleradius * var_53a3ed00687acc12;
+            randomdist = randomfloatrange(level.brtdm_config.spawndistancemin, level.brtdm_config.spawndistancemax);
+            spawnorigin = level.brtdm_config.circlecenter + spawnvector * level.brtdm_config.circleradius * randomdist;
             if (istrue(level.brtdm_config.faceenemyspawn)) {
-                var_d663e897e8857ac3 = level.brtdm_config.spawnorigin[getotherteam(team)[0]] - spawnorigin;
-                spawnangles = vectortoangles(var_d663e897e8857ac3);
+                toenemyspawn = level.brtdm_config.spawnorigin[getotherteam(team)[0]] - spawnorigin;
+                spawnangles = vectortoangles(toenemyspawn);
             } else {
                 spawnangles = vectortoangles(spawnvector * -1);
             }
-            var_fbcabd62b8f66eb8 = namespace_2a184fc4902783dc::create_default_contents(1);
-            var_914989d39ad0d603 = 0;
+            tracecontents = scripts/engine/trace::create_default_contents(1);
+            highestz = 0;
             highesttraceindex = 0;
-            var_c0fd4e75a105deae = 10;
+            anglestep = 10;
             results = [];
-            for (j = 0; j < var_e14067c17e332089; j++) {
-                result = namespace_2a184fc4902783dc::ray_trace(spawnorigin + (0, 0, 10000), spawnorigin - (0, 0, 20000) + anglestoforward(spawnangles) * j * 2000, undefined, var_fbcabd62b8f66eb8)["position"];
+            for (j = 0; j < tracecount; j++) {
+                result = scripts/engine/trace::ray_trace(spawnorigin + (0, 0, 10000), spawnorigin - (0, 0, 20000) + anglestoforward(spawnangles) * j * 2000, undefined, tracecontents)["position"];
                 results[results.size] = result;
-                if (result[2] > var_914989d39ad0d603) {
-                    var_914989d39ad0d603 = result[2];
+                if (result[2] > highestz) {
+                    highestz = result[2];
                     highesttraceindex = j;
                 }
                 var_7426330c61b55320++;
@@ -905,7 +905,7 @@ function pregeneratespawnpoints() {
                     var_7426330c61b55320 = 0;
                 }
             }
-            spawnorigin = (spawnorigin[0], spawnorigin[1], var_914989d39ad0d603 + level.brtdm_config.spawnheight[team]);
+            spawnorigin = (spawnorigin[0], spawnorigin[1], highestz + level.brtdm_config.spawnheight[team]);
             spawnpoint.origin = spawnorigin;
             spawnpoint.traceresults = results;
             spawnpoint.highesttraceindex = highesttraceindex;
@@ -924,7 +924,7 @@ function pregeneratespawnpoints() {
     namespace_2c19af30dc7a566c::run();
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5662
 // Size: 0x109
@@ -944,7 +944,7 @@ function generatespawnpoint() {
     return self.redeployspawn;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5773
 // Size: 0x39
@@ -958,13 +958,13 @@ function function_58d40b27ff390fd1(team) {
     return team;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57b4
 // Size: 0xcc6
 function function_14d9ef66ff3c55fe() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_53b56fcd1ad4a8ce") == 1) {
                 thread drawline(level.brtdm_config.circlecenter + (0, 0, 10), level.brtdm_config.circlecenter + level.brtdm_config.spawnvector["vehicle_compass"] * level.brtdm_config.circleradius * level.brtdm_config.spawndistancemin + (0, 0, 10), level.framedurationseconds, (0, 1, 0));
                 thread drawline(level.brtdm_config.circlecenter, level.brtdm_config.circlecenter + level.brtdm_config.spawnvector["vehicle_compass"] * level.brtdm_config.circleradius * level.brtdm_config.spawndistancemax, level.framedurationseconds, (1, 0, 0));
@@ -1013,13 +1013,13 @@ function function_14d9ef66ff3c55fe() {
     #/
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6481
 // Size: 0xa6
 function function_4e89ea3291f12198() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_7f2b6c7d2b29dde9") == 1) {
                 if (isdefined(level.vehiclespawnlocs)) {
                     foreach (vehicle in level.vehiclespawnlocs) {
@@ -1032,13 +1032,13 @@ function function_4e89ea3291f12198() {
     #/
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x652e
 // Size: 0xa1
 function function_3fe54271a36d4f0d() {
     /#
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_bceac01d51fb87ef") == 1) {
                 if (isdefined(level.vehiclespawnlocs)) {
                     thread drawsphere(level.brtdm_config.circlecenter, level.brtdm_config.circleradius, 1.01, (0, 0, 1));
@@ -1050,35 +1050,35 @@ function function_3fe54271a36d4f0d() {
     #/
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x65d6
 // Size: 0x111
 function onplayerconnect(player) {
-    if (namespace_71073fa38f11492::isfeaturedisabled("circle")) {
+    if (scripts/mp/gametypes/br_gametypes::isfeaturedisabled("circle")) {
         return;
     }
     duration = 9999;
     safecircleent = level.br_circle.safecircleui;
     var_fb3b2613d6f0eb05 = level.br_circle.dangercircleui;
     if (!isbot(player)) {
-        var_416318ee02bcd7d9 = namespace_c5622898120e827f::_safecircledurationforplayer(player, duration);
+        var_416318ee02bcd7d9 = scripts/mp/gametypes/br_circle::_safecircledurationforplayer(player, duration);
         player setclientomnvar("ui_br_circle0_start_time", gettime());
         player setclientomnvar("ui_br_circle0_duration", var_416318ee02bcd7d9);
         player setclientomnvar("ui_br_circle0_start_entity", safecircleent);
         player setclientomnvar("ui_br_circle0_end_entity", safecircleent);
-        player namespace_c5622898120e827f::_hidesafecircleui();
-        var_416318ee02bcd7d9 = namespace_c5622898120e827f::_dangercircledurationforplayer(player, duration);
+        player scripts/mp/gametypes/br_circle::_hidesafecircleui();
+        var_416318ee02bcd7d9 = scripts/mp/gametypes/br_circle::_dangercircledurationforplayer(player, duration);
         player setclientomnvar("ui_br_circle1_start_time", gettime());
         player setclientomnvar("ui_br_circle1_duration", var_416318ee02bcd7d9);
         player setclientomnvar("ui_br_circle1_start_entity", var_fb3b2613d6f0eb05);
         player setclientomnvar("ui_br_circle1_end_entity", var_fb3b2613d6f0eb05);
     }
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (scripts/mp/flags::gameflag("prematch_done")) {
     }
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x66ee
 // Size: 0x82
@@ -1090,46 +1090,46 @@ function manageprematchfade(delay_time, var_c82eabb722c361a7) {
     }
     var_ad4dd16f29e24b77 = 0;
     var_dfab0807d83a77fe = 0.5;
-    thread namespace_99ac021a7547cae3::managerespawnfade(var_ad4dd16f29e24b77, var_dfab0807d83a77fe);
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    thread scripts/mp/playerlogic::managerespawnfade(var_ad4dd16f29e24b77, var_dfab0807d83a77fe);
+    scripts/mp/flags::gameflagwait("prematch_done");
     self clearallsoundsubmixes(6);
     self clearclienttriggeraudiozone(6);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6777
 // Size: 0x16
-function modespawn(var_9156b53bcf7ce573) {
+function modespawn(revivespawn) {
     thread playerrespawn();
-    return 1;
+    return true;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6795
 // Size: 0x61
-function function_68bc8caeffea7a83(var_9156b53bcf7ce573) {
+function function_68bc8caeffea7a83(revivespawn) {
     if (isbot(self)) {
-        namespace_d19129e4fa5d176::function_a16868d4dcd81a4b();
+        scripts/mp/class::function_a16868d4dcd81a4b();
         self.var_b2f042bf9991295d = "botloadout_jup_mp_01";
     }
     while (!isdefined(level.redeployspawns) || !isdefined(level.redeployspawns[self.pers["team"]])) {
         waitframe();
     }
-    return modespawn(var_9156b53bcf7ce573);
+    return modespawn(revivespawn);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x67fe
 // Size: 0x29
-function playerkilledspawn(var_642470e1abc1bbf9, var_8b3f6477dbed24d7) {
-    var_642470e1abc1bbf9.victim thread playerrespawn();
-    return 1;
+function playerkilledspawn(deathdata, finaldeath) {
+    deathdata.victim thread playerrespawn();
+    return true;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x682f
 // Size: 0x112
@@ -1139,36 +1139,36 @@ function playerrespawn() {
     if (istrue(level.gameended)) {
         return;
     }
-    namespace_99ac021a7547cae3::waitforremoteend();
+    scripts/mp/playerlogic::waitforremoteend();
     if (getdvarint(@"hash_fe3afd6ead4aa523", 1) == 1) {
         self endon("brWaitAndSpawnClientComplete");
     }
     spawnpoint = getspawnpoint();
-    var_11f3b4465c8b637b = namespace_8bfdb6eb5a3df67a::playerprestreamrespawnorigin(spawnpoint);
-    if (namespace_4b0406965e556711::gameflag("prematch_done")) {
+    streamorigin = namespace_8bfdb6eb5a3df67a::playerprestreamrespawnorigin(spawnpoint);
+    if (scripts/mp/flags::gameflag("prematch_done")) {
         var_ad4dd16f29e24b77 = 0;
         var_dfab0807d83a77fe = 0.5;
-        thread namespace_99ac021a7547cae3::managerespawnfade(var_ad4dd16f29e24b77, var_dfab0807d83a77fe);
+        thread scripts/mp/playerlogic::managerespawnfade(var_ad4dd16f29e24b77, var_dfab0807d83a77fe);
         if (var_ad4dd16f29e24b77 > 0) {
             self waittill("fadeDown_complete");
         }
     }
-    namespace_a9c534dc7832aba4::playerclearspectatekillchainsystem();
-    namespace_d20f8ef223912e12::spawnintermission(spawnpoint.origin, spawnpoint.angles);
-    namespace_5aeecefc462876::setdisabled();
-    namespace_d3d40f75bb4e4c32::playerwaittillstreamhintcomplete();
-    namespace_99ac021a7547cae3::spawnplayer(undefined, 0);
-    namespace_cb965d2f71fefddc::initplayer(1);
-    namespace_47fd1e79a44628cd::gulagwinnerrespawn(1, undefined, spawnpoint, 1, var_11f3b4465c8b637b, undefined, undefined, 0, 0, 1);
-    namespace_3e725f3cc58bddd3::resetplayervariables();
-    namespace_3e725f3cc58bddd3::resetplayeromnvarsonspawn();
+    scripts/mp/gametypes/br_spectate::playerclearspectatekillchainsystem();
+    scripts/mp/gametypes/br::spawnintermission(spawnpoint.origin, spawnpoint.angles);
+    scripts/mp/spectating::setdisabled();
+    scripts/mp/gametypes/br_public::playerwaittillstreamhintcomplete();
+    scripts/mp/playerlogic::spawnplayer(undefined, 0);
+    scripts/mp/gametypes/br_pickups::initplayer(1);
+    scripts/mp/gametypes/br_gulag::gulagwinnerrespawn(1, undefined, spawnpoint, 1, streamorigin, undefined, undefined, 0, 0, 1);
+    scripts/mp/damage::resetplayervariables();
+    scripts/mp/damage::resetplayeromnvarsonspawn();
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6948
 // Size: 0x91
-function onspawnplayer(var_9156b53bcf7ce573) {
+function onspawnplayer(revivespawn) {
     if (level.parachutecancutautodeploy) {
         self skydive_cutautodeployon();
     } else {
@@ -1179,16 +1179,16 @@ function onspawnplayer(var_9156b53bcf7ce573) {
     } else {
         self skydive_cutparachuteoff();
     }
-    namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("kill");
+    scripts/mp/hud_message::function_f004ef4606b9efdc("kill");
     if (level.spawnprotectiontimer > 0) {
         thread removespawnprotectiononnotify();
         thread removespawnprotectiononads();
     }
     thread manageafktracking();
-    namespace_9bb409deb69fb31d::updatesquadomnvars(self.team, self.var_ff97225579de16a);
+    namespace_9bb409deb69fb31d::updatesquadomnvars(self.team, self.sessionsquadid);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x69e0
 // Size: 0x2e
@@ -1196,10 +1196,10 @@ function removespawnprotectiononnotify() {
     self endon("death_or_disconnect");
     self endon("remove_spawn_protection");
     waittill_any_3("parachute_landed", "vehicle_enter", "weapon_fired");
-    namespace_310ba947928891df::removespawnprotection();
+    scripts/mp/gametypes/common::removespawnprotection();
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a15
 // Size: 0x2b
@@ -1209,10 +1209,10 @@ function removespawnprotectiononads() {
     while (self playerads() < 0.7) {
         waitframe();
     }
-    namespace_310ba947928891df::removespawnprotection();
+    scripts/mp/gametypes/common::removespawnprotection();
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a47
 // Size: 0x4e
@@ -1221,55 +1221,55 @@ function manageafktracking() {
     self notify("manageAFKTracking");
     self endon("manageAFKTracking");
     self.ignoreafkcheck = 1;
-    thread namespace_d19129e4fa5d176::blockclasschange();
+    thread scripts/mp/class::blockclasschange();
     self waittill("parachute_landed");
-    thread namespace_d19129e4fa5d176::unblockclasschange();
+    thread scripts/mp/class::unblockclasschange();
     self.ignoreafkcheck = undefined;
     self notify("afk_tracking_resume");
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a9c
 // Size: 0x41
 function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon) {
-    namespace_310ba947928891df::oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
+    scripts/mp/gametypes/common::oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params a, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ae4
 // Size: 0x6d
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
-    namespace_9bb409deb69fb31d::updatesquadomnvars(self.team, self.var_ff97225579de16a);
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
+    namespace_9bb409deb69fb31d::updatesquadomnvars(self.team, self.sessionsquadid);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b58
 // Size: 0x53
 function ontimelimit() {
-    winner = namespace_e8a49b70d0769b66::gethighestscoringteam();
+    winner = scripts/mp/gamescore::gethighestscoringteam();
     if (game["status"] == "overtime") {
         winner = "forfeit";
     } else if ("tie") {
         winner = "overtime";
     }
-    thread namespace_d576b6dc7cef9c62::endgame(winner, game["end_reason"]["time_limit_reached"]);
+    thread scripts/mp/gamelogic::endgame(winner, game["end_reason"]["time_limit_reached"]);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6bb2
 // Size: 0x4f
 function shouldgamelobbyremainintact() {
     axisscore = int(game["teamScores"]["axis"]);
     alliesscore = int(game["teamScores"]["allies"]);
-    var_f9c7aae8c6acd600 = axisscore - alliesscore;
-    return var_f9c7aae8c6acd600 < 10;
+    differential = axisscore - alliesscore;
+    return differential < 10;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c09
 // Size: 0x6a
@@ -1282,17 +1282,17 @@ function vehiclespawn_getspawndata(loc) {
     return spawndata;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c7b
 // Size: 0x7e
-function registervehicletype(refname, var_e4015cfe956f4f3f) {
+function registervehicletype(refname, spawnvehiclecallback) {
     /#
         assert(isdefined(refname));
     #/
     vehicleinfo = spawnstruct();
     vehicleinfo.refname = refname;
-    vehicleinfo.spawncallback = var_e4015cfe956f4f3f;
+    vehicleinfo.spawncallback = spawnvehiclecallback;
     vehicleinfo.vehiclespawns = function_b08e7e3a0b14f76f(refname);
     /#
         assert(isdefined(vehicleinfo.vehiclespawns));
@@ -1300,7 +1300,7 @@ function registervehicletype(refname, var_e4015cfe956f4f3f) {
     level.vehicleinfo[refname] = vehicleinfo;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d00
 // Size: 0x3a6
@@ -1336,23 +1336,23 @@ function initvehicles() {
             level.vehiclespawnlocs[index].refname = vehicleinfo.refname;
         }
     }
-    if (0) {
+    if (false) {
         foreach (loc in level.vehiclespawnlocs) {
             thread drawline(loc.origin, loc.origin + (0, 0, 1500), 1000, (1, 0, 0));
         }
     }
     level.vehiclespawnlocs = array_randomize(level.vehiclespawnlocs);
-    var_fc617751f654a141 = level.numnonrallyvehicles;
+    numtospawn = level.numnonrallyvehicles;
     if (!isdefined(level.numnonrallyvehicles)) {
-        var_fc617751f654a141 = 25;
+        numtospawn = 25;
     }
-    if (0) {
-        for (i = 0; i < var_fc617751f654a141; i++) {
+    if (false) {
+        for (i = 0; i < numtospawn; i++) {
             loc = level.vehiclespawnlocs[i];
             thread drawline(loc.origin + (0, 0, 1500), loc.origin + (0, 0, 2500), 1000, (0, 1, 0));
         }
     }
-    for (i = 0; i < var_fc617751f654a141; i++) {
+    for (i = 0; i < numtospawn; i++) {
         loc = level.vehiclespawnlocs[i];
         if (isdefined(loc)) {
             vehicleinfo = level.vehicleinfo[loc.refname];
@@ -1361,33 +1361,33 @@ function initvehicles() {
     }
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x70ad
 // Size: 0x1a0
 function getvehiclespawns(vehicleref, vehicletype) {
     spawns = [];
-    dvarstring = function_2ef675c13ca1c4af(@"hash_ad95d7262a11119e", vehicleref);
-    for (index = 0; 1; index++) {
-        var_f826f0378f17ae2f = function_2ef675c13ca1c4af(dvarstring, "_origin_", index);
-        var_d9c6c3c1205d844 = function_2ef675c13ca1c4af(dvarstring, "_angles_", index);
-        var_8a4ea3a3baa22e4 = (0, 0, 0);
-        if (isdefined(level.brtdm_config.locale_defaults[var_f826f0378f17ae2f])) {
-            var_8a4ea3a3baa22e4 = level.brtdm_config.locale_defaults[var_f826f0378f17ae2f];
+    dvarstring = hashcat(@"hash_ad95d7262a11119e", vehicleref);
+    for (index = 0; true; index++) {
+        origindvarstring = hashcat(dvarstring, "_origin_", index);
+        angledvarstring = hashcat(dvarstring, "_angles_", index);
+        defaultorigin = (0, 0, 0);
+        if (isdefined(level.brtdm_config.locale_defaults[origindvarstring])) {
+            defaultorigin = level.brtdm_config.locale_defaults[origindvarstring];
         }
-        origin = getdvarvector(var_f826f0378f17ae2f, var_8a4ea3a3baa22e4);
+        origin = getdvarvector(origindvarstring, defaultorigin);
         if (origin == (0, 0, 0)) {
             break;
         }
-        if (!namespace_c5622898120e827f::ispointincurrentsafecircle(origin)) {
+        if (!scripts/mp/gametypes/br_circle::ispointincurrentsafecircle(origin)) {
             index++;
             continue;
         }
         vehicle = spawnstruct();
         vehicle.origin = origin;
         var_7224bacab3f8ee26 = (0, 0, 0);
-        if (isdefined(level.brtdm_config.locale_defaults[var_d9c6c3c1205d844])) {
-            var_7224bacab3f8ee26 = level.brtdm_config.locale_defaults[var_d9c6c3c1205d844];
+        if (isdefined(level.brtdm_config.locale_defaults[angledvarstring])) {
+            var_7224bacab3f8ee26 = level.brtdm_config.locale_defaults[angledvarstring];
         }
         vehicle.angles = getdvarvector(var_7224bacab3f8ee26, var_7224bacab3f8ee26);
         vehicle.targetname = vehicleref;
@@ -1397,7 +1397,7 @@ function getvehiclespawns(vehicleref, vehicletype) {
     return spawns;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7255
 // Size: 0x298
@@ -1448,7 +1448,7 @@ function getatvspawns() {
     return spawns;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x74f5
 // Size: 0x298
@@ -1499,60 +1499,60 @@ function gettacroverspawns() {
     return spawns;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7795
 // Size: 0x59
-function vehiclespawn_littlebird(loc, var_ee8da5624236dc89) {
+function vehiclespawn_littlebird(loc, faildata) {
     if (!isdefined(loc.angles)) {
         loc.angles = (0, randomfloat(360), 0);
     }
     spawndata = vehiclespawn_getspawndata(loc);
-    return namespace_1f188a13f7e79610::vehicle_spawn("little_bird", spawndata, var_ee8da5624236dc89);
+    return scripts/cp_mp/vehicles/vehicle::vehicle_spawn("little_bird", spawndata, faildata);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x77f6
 // Size: 0x59
-function vehiclespawn_atv(loc, var_ee8da5624236dc89) {
+function vehiclespawn_atv(loc, faildata) {
     if (!isdefined(loc.angles)) {
         loc.angles = (0, randomfloat(360), 0);
     }
     spawndata = vehiclespawn_getspawndata(loc);
-    return namespace_1f188a13f7e79610::vehicle_spawn("atv", spawndata, var_ee8da5624236dc89);
+    return scripts/cp_mp/vehicles/vehicle::vehicle_spawn("atv", spawndata, faildata);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7857
 // Size: 0x59
-function vehiclespawn_tacrover(loc, var_ee8da5624236dc89) {
+function vehiclespawn_tacrover(loc, faildata) {
     if (!isdefined(loc.angles)) {
         loc.angles = (0, randomfloat(360), 0);
     }
     spawndata = vehiclespawn_getspawndata(loc);
-    return namespace_1f188a13f7e79610::vehicle_spawn("tac_rover", spawndata, var_ee8da5624236dc89);
+    return scripts/cp_mp/vehicles/vehicle::vehicle_spawn("tac_rover", spawndata, faildata);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x78b8
 // Size: 0xe5
 function filtervehiclespawnstructs(structs) {
-    var_7cb19f95dbc68942 = [];
+    filtered = [];
     if (getdvarint(@"hash_adb05b8132ec13b", level.brtdm_config.locale_defaults[@"hash_adb05b8132ec13b"]) == 1) {
-        return var_7cb19f95dbc68942;
+        return filtered;
     }
     foreach (struct in structs) {
         if (distance2dsquared(struct.origin, level.brtdm_config.circlecenter) < level.brtdm_config.circleradius * level.brtdm_config.circleradius) {
-            var_7cb19f95dbc68942[var_7cb19f95dbc68942.size] = struct;
+            filtered[filtered.size] = struct;
         }
     }
-    return var_7cb19f95dbc68942;
+    return filtered;
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x79a5
 // Size: 0x4c4
@@ -1566,70 +1566,70 @@ function initprematchc130() {
     pathdir = anglestoforward((0, var_6f680ee249f67b0d[1] + var_65a8a4791ddd85d8, 0));
     startpt = level.brtdm_config.circlecenter + level.brtdm_config.spawnvector["allies"] * (level.brtdm_config.circleradius + var_fba760f7c08b6fbb) + (0, 0, 1);
     endpt = level.brtdm_config.circlecenter + pathdir * (level.brtdm_config.circleradius * 2 + var_dc12f67d76b34297);
-    var_fbcabd62b8f66eb8 = namespace_2a184fc4902783dc::create_default_contents(1);
-    startpt = drop_to_ground(startpt, level.brtdm_config.spawnheight["allies"], -1 * level.brtdm_config.spawnheight["allies"], undefined, var_fbcabd62b8f66eb8);
+    tracecontents = scripts/engine/trace::create_default_contents(1);
+    startpt = drop_to_ground(startpt, level.brtdm_config.spawnheight["allies"], -1 * level.brtdm_config.spawnheight["allies"], undefined, tracecontents);
     startpt = startpt + (0, 0, 1) * (level.brtdm_config.spawnheight["allies"] + var_478490addcc8aa79);
-    endpt = drop_to_ground(endpt, level.brtdm_config.spawnheight["allies"], -1 * level.brtdm_config.spawnheight["allies"], undefined, var_fbcabd62b8f66eb8);
+    endpt = drop_to_ground(endpt, level.brtdm_config.spawnheight["allies"], -1 * level.brtdm_config.spawnheight["allies"], undefined, tracecontents);
     endpt = endpt + (0, 0, 1) * (level.brtdm_config.spawnheight["allies"] + var_478490addcc8aa79);
     pathstruct = spawnstruct();
     pathstruct.startpt = startpt;
     pathstruct.endpt = endpt;
     pathstruct.angle = vectortoangles(pathdir);
     dist = distance(pathstruct.startpt, pathstruct.endpt);
-    travelspeed = namespace_ad389306d44fc6b4::getc130speed();
+    travelspeed = scripts/mp/gametypes/br_c130::getc130speed();
     time = dist / travelspeed;
-    var_184d0a0ce31a2b27 = namespace_d58f8bbad53774ad::c130airdrop_spawn(pathstruct, dist, travelspeed, time);
-    var_184d0a0ce31a2b27 namespace_d58f8bbad53774ad::c130airdrop_startdelivery(0);
+    c130airdrop = scripts/mp/gametypes/br_c130airdrop::c130airdrop_spawn(pathstruct, dist, travelspeed, time);
+    c130airdrop scripts/mp/gametypes/br_c130airdrop::c130airdrop_startdelivery(0);
     var_6f680ee249f67b0d = vectortoangles(level.brtdm_config.spawnvector["axis"] * -1);
     pathdir = anglestoforward((0, var_6f680ee249f67b0d[1] + var_65a8a4791ddd85d8, 0));
     startpt = level.brtdm_config.circlecenter + level.brtdm_config.spawnvector["axis"] * (level.brtdm_config.circleradius + var_fba760f7c08b6fbb) + (0, 0, 1);
     endpt = level.brtdm_config.circlecenter + pathdir * (level.brtdm_config.circleradius * 2 + var_dc12f67d76b34297);
-    startpt = drop_to_ground(startpt, level.brtdm_config.spawnheight["axis"], -1 * level.brtdm_config.spawnheight["axis"], undefined, var_fbcabd62b8f66eb8);
+    startpt = drop_to_ground(startpt, level.brtdm_config.spawnheight["axis"], -1 * level.brtdm_config.spawnheight["axis"], undefined, tracecontents);
     startpt = startpt + (0, 0, 1) * (level.brtdm_config.spawnheight["axis"] + var_478490addcc8aa79);
-    endpt = drop_to_ground(endpt, level.brtdm_config.spawnheight["axis"], -1 * level.brtdm_config.spawnheight["axis"], undefined, var_fbcabd62b8f66eb8);
+    endpt = drop_to_ground(endpt, level.brtdm_config.spawnheight["axis"], -1 * level.brtdm_config.spawnheight["axis"], undefined, tracecontents);
     endpt = endpt + (0, 0, 1) * (level.brtdm_config.spawnheight["axis"] + var_478490addcc8aa79);
     pathstruct = spawnstruct();
     pathstruct.startpt = startpt;
     pathstruct.endpt = endpt;
     pathstruct.angle = vectortoangles(pathdir);
     dist = distance(pathstruct.startpt, pathstruct.endpt);
-    travelspeed = namespace_ad389306d44fc6b4::getc130speed();
+    travelspeed = scripts/mp/gametypes/br_c130::getc130speed();
     time = dist / travelspeed;
-    var_184d0a0ce31a2b27 = namespace_d58f8bbad53774ad::c130airdrop_spawn(pathstruct, dist, travelspeed, time);
-    var_184d0a0ce31a2b27 namespace_d58f8bbad53774ad::c130airdrop_startdelivery(0);
+    c130airdrop = scripts/mp/gametypes/br_c130airdrop::c130airdrop_spawn(pathstruct, dist, travelspeed, time);
+    c130airdrop scripts/mp/gametypes/br_c130airdrop::c130airdrop_startdelivery(0);
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7e70
 // Size: 0xbc
 function infil_radio_idle() {
     self endon("death_or_disconnect");
     if (isplayer(self)) {
-        var_e014d2bcf2d12fac = spawn("script_origin", (0, 0, 0));
-        var_e014d2bcf2d12fac showonlytoplayer(self);
+        radio_sfx = spawn("script_origin", (0, 0, 0));
+        radio_sfx showonlytoplayer(self);
         if (isdefined(self.team)) {
-            var_1d6df6a17cee3314 = namespace_54d20dd0dd79277f::getteamvoiceinfix(self.team);
-            var_53787b74a16a9d5e = "dx_mpo_" + var_1d6df6a17cee3314 + "op_drone_deathchatter";
+            var_1d6df6a17cee3314 = scripts/mp/utility/teams::getteamvoiceinfix(self.team);
+            dronechatter = "dx_mpo_" + var_1d6df6a17cee3314 + "op_drone_deathchatter";
         } else {
-            var_53787b74a16a9d5e = "dx_mpo_ruop_drone_deathchatter";
+            dronechatter = "dx_mpo_ruop_drone_deathchatter";
         }
-        if (!soundexists(var_53787b74a16a9d5e)) {
-            var_53787b74a16a9d5e = "dx_mpo_ruop_drone_deathchatter";
+        if (!soundexists(dronechatter)) {
+            dronechatter = "dx_mpo_ruop_drone_deathchatter";
         }
-        var_e014d2bcf2d12fac playloopsound(var_53787b74a16a9d5e);
-        namespace_4b0406965e556711::gameflagwait("prematch_done");
+        radio_sfx playloopsound(dronechatter);
+        scripts/mp/flags::gameflagwait("prematch_done");
         wait(2);
-        var_e014d2bcf2d12fac stoploopsound(var_53787b74a16a9d5e);
-        var_e014d2bcf2d12fac delete();
+        radio_sfx stoploopsound(dronechatter);
+        radio_sfx delete();
     }
 }
 
-// Namespace brtdm/namespace_688d525e3b139cdd
+// Namespace brtdm / scripts/mp/gametypes/brtdm
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7f33
 // Size: 0x16
 function vehicle_compass_br_shouldbevisibletoplayer(vehicle, player) {
-    return 1;
+    return true;
 }
 

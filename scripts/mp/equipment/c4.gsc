@@ -13,7 +13,7 @@
 #using scripts\mp\hud_message.gsc;
 #using scripts\mp\sentientpoolmanager.gsc;
 #using script_736dec95a49487a6;
-#using script_5f903436642211af;
+#using scripts\common\elevators.gsc;
 #using scripts\mp\perks\perk_equipmentping.gsc;
 #using scripts\cp_mp\entityheadicons.gsc;
 #using scripts\mp\spawnlogic.gsc;
@@ -25,7 +25,7 @@
 
 #namespace c4;
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x394
 // Size: 0x4f
@@ -34,7 +34,7 @@ function c4_set(equipmentref, slot, variantid) {
     thread c4_watchforaltdetonation(bundle);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ea
 // Size: 0x32d
@@ -45,9 +45,9 @@ function c4_used(grenade) {
     if (issharedfuncdefined(#"hash_d8976e21a6adafba", #"hash_ca0042e3cac99672")) {
         grenade [[ getsharedfunc(#"hash_d8976e21a6adafba", #"hash_ca0042e3cac99672") ]](grenade);
     }
-    grenade.bundle = namespace_1a507865f681850e::function_2113b6f7cb462692(grenade.weapon_name);
+    grenade.bundle = scripts/mp/equipment::function_2113b6f7cb462692(grenade.weapon_name);
     grenade.throwtime = gettime();
-    grenade namespace_2a9588dfac284b77::registerspawn(1, &sweepc4);
+    grenade scripts/cp_mp/ent_manager::registerspawn(1, &sweepc4);
     c4_addtoarray(grenade.owner, grenade);
     thread c4_watchfordetonation(grenade.bundle);
     thread c4_watchforaltdetonation(grenade.bundle);
@@ -57,14 +57,14 @@ function c4_used(grenade) {
     grenade thread minedamagemonitor();
     grenade thread c4_explodeonnotify();
     grenade thread c4_destroyongameend();
-    grenade thread namespace_43a68cf8c122ab9::remoteinteractsetup(&c4_detonate, 1, 0);
-    thread namespace_3bbb5a98b932c46f::monitordisownedgrenade(self, grenade);
+    grenade thread scripts/mp/equipment_interact::remoteinteractsetup(&c4_detonate, 1, 0);
+    thread scripts/mp/weapons::monitordisownedgrenade(self, grenade);
     grenade waittill("missile_stuck");
     if (isdefined(level.var_ca4e08767cbdae12)) {
-        var_425925a45729deae = grenade [[ level.var_ca4e08767cbdae12 ]]();
-        if (!var_425925a45729deae) {
-            namespace_44abc05161e2e2cb::showerrormessage("EQUIPMENT/PLANT_FAILED");
-            namespace_1a507865f681850e::incrementequipmentslotammo("primary");
+        canplant = grenade [[ level.var_ca4e08767cbdae12 ]]();
+        if (!canplant) {
+            scripts/mp/hud_message::showerrormessage("EQUIPMENT/PLANT_FAILED");
+            scripts/mp/equipment::incrementequipmentslotammo("primary");
             grenade delete();
             return;
         }
@@ -74,7 +74,7 @@ function c4_used(grenade) {
     onequipmentplanted(grenade, "equip_c4", &c4_delete);
     thread monitordisownedequipment(self, grenade);
     grenade thread makeexplosiveusabletag("tag_use", 1);
-    grenade namespace_6d9917c3dc05dbe9::registersentient("Lethal_Static", grenade.owner, 1);
+    grenade scripts/mp/sentientpoolmanager::registersentient("Lethal_Static", grenade.owner, 1);
     grenade.owner setclientomnvar("ui_mgl_c4_state", 1);
     if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
         grenade [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&c4_empapplied);
@@ -87,19 +87,19 @@ function c4_used(grenade) {
     grenade function_49197cd063a740ea(&c4_destroy);
     if (isdefined(level.elevators)) {
         foreach (elevators in level.elevators) {
-            elevators thread namespace_272931699e2fe8e9::function_5c07037726ae5001(grenade);
+            elevators thread scripts/common/elevators::function_5c07037726ae5001(grenade);
         }
     }
-    grenade thread namespace_90b872e9b61df82b::runequipmentping();
+    grenade thread scripts/mp/perks/perk_equipmentping::runequipmentping();
     grenade setscriptablepartstate("effects", "plant", 0);
-    thread namespace_3bbb5a98b932c46f::outlineequipmentforowner(grenade);
+    thread scripts/mp/weapons::outlineequipmentforowner(grenade);
     grenade missilethermal();
     grenade missileoutline();
-    grenade.headiconid = grenade namespace_7bdde15c3500a23f::setheadicon_factionimage(0, 0, undefined, undefined, undefined, 0.1, 1);
+    grenade.headiconid = grenade scripts/cp_mp/entityheadicons::setheadicon_factionimage(0, 0, undefined, undefined, undefined, 0.1, 1);
     grenade c4_updatedangerzone();
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x71e
 // Size: 0x9c
@@ -108,13 +108,13 @@ function c4_updatedangerzone() {
         return;
     }
     if (isdefined(self.dangerzone)) {
-        namespace_b2d5aa2baf2b5701::removespawndangerzone(self.dangerzone);
+        scripts/mp/spawnlogic::removespawndangerzone(self.dangerzone);
     }
     var_d8695b9748c307be = (self.origin[0], self.origin[1], self.origin[2] - 50);
-    self.dangerzone = namespace_b2d5aa2baf2b5701::addspawndangerzone(var_d8695b9748c307be, namespace_b2d5aa2baf2b5701::getdefaultminedangerzoneradiussize(), 100, self.owner.team, undefined, self.owner, 0, self, 1);
+    self.dangerzone = scripts/mp/spawnlogic::addspawndangerzone(var_d8695b9748c307be, scripts/mp/spawnlogic::getdefaultminedangerzoneradiussize(), 100, self.owner.team, undefined, self.owner, 0, self, 1);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c1
 // Size: 0x99
@@ -129,12 +129,12 @@ function c4_detonate(attacker) {
     if (istrue(self.bundle.var_1a27e2391b89641e)) {
         self setscriptablepartstate("effects", "warningTrigger", 0);
     }
-    var_34239d65afa3c19c = function_53c4c53197386572(self.bundle.var_5c5f92ec3e8158f9, 0.1);
-    wait(var_34239d65afa3c19c);
+    detonation_delay = default_to(self.bundle.c4_detonationdelay, 0.1);
+    wait(detonation_delay);
     thread c4_explode(attacker);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x861
 // Size: 0x206
@@ -144,27 +144,27 @@ function c4_explode(attacker) {
     var_cbf7be4f62a0ddb2 = undefined;
     statename = undefined;
     caststart = self.origin;
-    contents = namespace_2a184fc4902783dc::create_contents(0, 1, 1, 0, 1, 1, 0, 0, 0);
-    var_89e70a63b116955b = vectordot((0, 0, 1), anglestoup(self.angles));
-    if (abs(var_89e70a63b116955b) <= 0.81915) {
+    contents = scripts/engine/trace::create_contents(0, 1, 1, 0, 1, 1, 0, 0, 0);
+    updot = vectordot((0, 0, 1), anglestoup(self.angles));
+    if (abs(updot) <= 0.81915) {
         castend = caststart - anglestoup(self.angles) * 5;
-        var_e021c2744cc7ed68 = physics_raycast(caststart, castend, contents, self, 0, "physicsquery_closest", 1);
-        if (isdefined(var_e021c2744cc7ed68) && var_e021c2744cc7ed68.size > 0) {
+        castresults = physics_raycast(caststart, castend, contents, self, 0, "physicsquery_closest", 1);
+        if (isdefined(castresults) && castresults.size > 0) {
             var_cbf7be4f62a0ddb2 = 5;
             statename = "explode";
         }
-    } else if (var_89e70a63b116955b <= -0.96592) {
+    } else if (updot <= -0.96592) {
         castend = caststart - anglestoup(self.angles) * 5;
-        var_e021c2744cc7ed68 = physics_raycast(caststart, castend, contents, self, 0, "physicsquery_closest", 1);
-        if (isdefined(var_e021c2744cc7ed68) && var_e021c2744cc7ed68.size > 0) {
+        castresults = physics_raycast(caststart, castend, contents, self, 0, "physicsquery_closest", 1);
+        if (isdefined(castresults) && castresults.size > 0) {
             var_cbf7be4f62a0ddb2 = 5;
             statename = "explode";
         }
     }
     if (!isdefined(var_cbf7be4f62a0ddb2)) {
         castend = caststart - (0, 0, 1) * 20;
-        var_e021c2744cc7ed68 = physics_raycast(caststart, castend, contents, self, 0, "physicsquery_closest", 1);
-        if (!isdefined(var_e021c2744cc7ed68) || var_e021c2744cc7ed68.size <= 0) {
+        castresults = physics_raycast(caststart, castend, contents, self, 0, "physicsquery_closest", 1);
+        if (!isdefined(castresults) || castresults.size <= 0) {
             var_cbf7be4f62a0ddb2 = 5;
             statename = "explodeAir";
         }
@@ -174,7 +174,7 @@ function c4_explode(attacker) {
         statename = "explode";
     }
     if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
-        thread namespace_6205bc7c5e394598::function_f8903387ea945165(self.origin, 2);
+        thread scripts/common/ai::function_f8903387ea945165(self.origin, 2);
     }
     self setentityowner(attacker);
     self clearscriptabledamageowner();
@@ -182,7 +182,7 @@ function c4_explode(attacker) {
     thread c4_delete(var_cbf7be4f62a0ddb2);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa6e
 // Size: 0xb
@@ -190,7 +190,7 @@ function sweepc4() {
     thread c4_delete();
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa80
 // Size: 0x3a
@@ -200,7 +200,7 @@ function c4_destroy(attacker) {
     self setscriptablepartstate("hacked", "neutral", 0);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xac1
 // Size: 0x15f
@@ -215,11 +215,11 @@ function c4_delete(var_cbf7be4f62a0ddb2) {
     self setscriptablepartstate("hack_usable", "off");
     self setcandamage(0);
     makeexplosiveunusuabletag();
-    namespace_2a9588dfac284b77::deregisterspawn();
-    namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.headiconid);
+    scripts/cp_mp/ent_manager::deregisterspawn();
+    scripts/cp_mp/entityheadicons::setheadicon_deleteicon(self.headiconid);
     self.headiconid = undefined;
     if (isdefined(self.dangerzone)) {
-        namespace_b2d5aa2baf2b5701::removespawndangerzone(self.dangerzone);
+        scripts/mp/spawnlogic::removespawndangerzone(self.dangerzone);
         self.dangerzone = undefined;
     }
     owner = self.owner;
@@ -242,7 +242,7 @@ function c4_delete(var_cbf7be4f62a0ddb2) {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc27
 // Size: 0x4b
@@ -261,7 +261,7 @@ function c4_resetscriptableonunlink() {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc79
 // Size: 0x52
@@ -272,12 +272,12 @@ function c4_explodeonnotify() {
     attacker = self waittill("detonateExplosive");
     if (isdefined(attacker)) {
         thread c4_explode(attacker);
-    } else {
-        thread c4_explode(owner);
+        return;
     }
+    thread c4_explode(owner);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcd2
 // Size: 0xc3
@@ -285,9 +285,9 @@ function c4_empapplied(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
     self notify("enemy_destroyed_equipment", attacker);
-    if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
+    if (istrue(scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker namespace_58a74e7d54b56e8d::givescoreforequipment(self, undefined, 1);
+        attacker scripts/mp/killstreaks/killstreaks::givescoreforequipment(self, undefined, 1);
     }
     damagefeedback = "";
     if (istrue(self.hasruggedeqp)) {
@@ -297,21 +297,21 @@ function c4_empapplied(data) {
         attacker updatedamagefeedback(damagefeedback);
     }
     if (isdefined(data.ksemp)) {
-        thread function_156475610be70ced(attacker);
-    } else {
-        thread c4_destroy(attacker);
+        thread c4_disable(attacker);
+        return;
     }
+    thread c4_destroy(attacker);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd9c
 // Size: 0x85
 function function_3f54618ac84aa89f(data) {
     attacker = data.attacker;
-    if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
+    if (istrue(scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        attacker namespace_58a74e7d54b56e8d::givescoreforequipment(self);
+        attacker scripts/mp/killstreaks/killstreaks::givescoreforequipment(self);
     }
     damagefeedback = "";
     if (istrue(self.hasruggedeqp)) {
@@ -323,23 +323,23 @@ function function_3f54618ac84aa89f(data) {
     c4_explode(attacker);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe28
 // Size: 0x7b
-function function_156475610be70ced(attacker) {
+function c4_disable(attacker) {
     self endon("death");
-    attacker thread namespace_48a08c5037514e04::doscoreevent(#"hash_c45cd96bcaaf28d9");
+    attacker thread scripts/mp/utility/points::doScoreEvent(#"disabled_c4");
     self.isdisabled = 1;
     self setscriptablepartstate("emp", "on", 0);
-    if (!istrue(self.owner.var_65219c911f198c95)) {
+    if (!istrue(self.owner.ksempd)) {
         wait(6);
         self setscriptablepartstate("emp", "off", 0);
         self.isdisabled = 0;
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeaa
 // Size: 0x28
@@ -348,7 +348,7 @@ function function_f8ffbf95c0890c91(data) {
     self.isdisabled = 0;
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed9
 // Size: 0x24
@@ -358,35 +358,35 @@ function c4_destroyongameend() {
     thread c4_destroy();
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf04
 // Size: 0x3c
 function c4_validdetonationstate() {
     if (!isreallyalive(self)) {
-        return 0;
+        return false;
     }
     if (isusingremote()) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.c4s) || self.c4s.size <= 0) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf48
 // Size: 0x39
 function c4_candetonate() {
     if (istrue(self.isdisabled) || istrue(self.isjammed)) {
-        return 0;
+        return false;
     }
     return (gettime() - self.throwtime) / 1000 > 0.3;
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf89
 // Size: 0x148
@@ -402,9 +402,9 @@ function c4_watchfordetonation(bundle) {
     level endon("game_ended");
     self notify("watchForDetonation");
     self endon("watchForDetonation");
-    weaponname = function_53c4c53197386572(bundle.var_5e26ccbdf0d2766b, "c4_mp");
-    var_6969d6c5a2117c33 = function_53c4c53197386572(bundle.var_58fe77f04882df7a, "c4_empty_mp");
-    while (1) {
+    weaponname = default_to(bundle.c4_weapon, "c4_mp");
+    var_6969d6c5a2117c33 = default_to(bundle.var_58fe77f04882df7a, "c4_empty_mp");
+    while (true) {
         self waittill("detonate");
         var_49e6ef3edadd524e = function_f581838ce4328f7a(self getheldoffhand());
         if (self getheldoffhand().basename == weaponname || self getheldoffhand().basename == var_6969d6c5a2117c33 || self getheldoffhand().basename == "none" && isdefined(self.isusingcamera) && self.isusingcamera || var_49e6ef3edadd524e == "c4") {
@@ -413,7 +413,7 @@ function c4_watchfordetonation(bundle) {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10d8
 // Size: 0x14d
@@ -423,8 +423,8 @@ function c4_watchforaltdetonation(bundle) {
     if (issharedfuncdefined("game", "isCommonItemEnabled")) {
         var_8077ba6843ecc331 = [[ getsharedfunc("game", "isCommonItemEnabled") ]]();
     }
-    if (isdefined(level.var_930403be3592d644)) {
-        var_8077ba6843ecc331 = [[ level.var_930403be3592d644 ]]();
+    if (isdefined(level.itemsisenabled)) {
+        var_8077ba6843ecc331 = [[ level.itemsisenabled ]]();
     }
     if (!var_8077ba6843ecc331) {
         self endon("equipment_taken_" + "equip_c4");
@@ -441,7 +441,7 @@ function c4_watchforaltdetonation(bundle) {
     starttime = gettime();
     buttontime = 0;
     updaterate = level.framedurationseconds;
-    while (1) {
+    while (true) {
         if (self usebuttonpressed()) {
             buttontime = 0;
             while (self usebuttonpressed()) {
@@ -467,18 +467,18 @@ function c4_watchforaltdetonation(bundle) {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x122c
 // Size: 0x4f
 function c4_animdetonate(bundle) {
-    var_6969d6c5a2117c33 = function_53c4c53197386572(bundle.var_58fe77f04882df7a, "c4_empty_mp");
+    var_6969d6c5a2117c33 = default_to(bundle.var_58fe77f04882df7a, "c4_empty_mp");
     objweapon = makeweapon(var_6969d6c5a2117c33);
     self giveandfireoffhand(objweapon);
     thread c4_animdetonatecleanup(bundle);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1282
 // Size: 0x69
@@ -486,7 +486,7 @@ function c4_animdetonatecleanup(bundle) {
     self endon("death_or_disconnect");
     self notify("c4_animDetonateCleanup()");
     self endon("c4_animDetonateCleanup()");
-    var_6969d6c5a2117c33 = function_53c4c53197386572(bundle.var_58fe77f04882df7a, "c4_empty_mp");
+    var_6969d6c5a2117c33 = default_to(bundle.var_58fe77f04882df7a, "c4_empty_mp");
     objweapon = makeweapon(var_6969d6c5a2117c33);
     wait(1);
     if (self hasweapon(objweapon)) {
@@ -494,7 +494,7 @@ function c4_animdetonatecleanup(bundle) {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12f2
 // Size: 0x70
@@ -508,32 +508,32 @@ function c4_detonateall() {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1369
 // Size: 0x71
-function c4_onownerchanged(var_c0f9139ffd72e62d) {
+function c4_onownerchanged(oldowner) {
     if (istrue(self.exploding)) {
         return;
     }
-    c4_removefromarray(var_c0f9139ffd72e62d, self, self getentitynumber());
+    c4_removefromarray(oldowner, self, self getentitynumber());
     sentientpool = self.sentientpool;
-    namespace_6d9917c3dc05dbe9::unregistersentient(self.sentientpool, self.sentientpoolindex);
-    namespace_6d9917c3dc05dbe9::registersentient(sentientpool, self.owner, 1);
+    scripts/mp/sentientpoolmanager::unregistersentient(self.sentientpool, self.sentientpoolindex);
+    scripts/mp/sentientpoolmanager::registersentient(sentientpool, self.owner, 1);
     thread c4_destroy();
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13e1
 // Size: 0x23
 function c4_resetaltdetonpickup(bundle) {
-    if (namespace_1a507865f681850e::hasequipment("equip_c4")) {
+    if (scripts/mp/equipment::hasequipment("equip_c4")) {
         thread c4_watchforaltdetonation(bundle);
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x140b
 // Size: 0x16
@@ -541,7 +541,7 @@ function function_49197cd063a740ea(callbackfunction) {
     self.var_d1659ed0a33bf98f = callbackfunction;
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1428
 // Size: 0x64
@@ -555,7 +555,7 @@ function c4_addtoarray(owner, grenade) {
     thread c4_removefromarrayondeath(owner, grenade, entnum);
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1493
 // Size: 0xa8
@@ -574,7 +574,7 @@ function c4_removefromarray(owner, grenade, entnum) {
     }
 }
 
-// Namespace c4/namespace_7381a1f17171d16c
+// Namespace c4 / scripts/mp/equipment/c4
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1542
 // Size: 0x3d

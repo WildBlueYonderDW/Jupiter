@@ -3,7 +3,7 @@
 
 #namespace namespace_51245272d927355c;
 
-// Namespace namespace_51245272d927355c/namespace_c4accbf1f69e9610
+// Namespace namespace_51245272d927355c / scripts/vehicle/empty_nocollision
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x79
 // Size: 0x46
@@ -14,7 +14,7 @@ function main(model, type, classname) {
     build_is_airplane();
 }
 
-// Namespace namespace_51245272d927355c/namespace_c4accbf1f69e9610
+// Namespace namespace_51245272d927355c / scripts/vehicle/empty_nocollision
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x15

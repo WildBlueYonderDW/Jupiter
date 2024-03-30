@@ -13,7 +13,7 @@
 
 #namespace scoreboard;
 
-// Namespace scoreboard/namespace_633301c58b0b0cec
+// Namespace scoreboard / scripts/mp/scoreboard
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f2
 // Size: 0x5f
@@ -24,7 +24,7 @@ function processlobbyscoreboards() {
     }
 }
 
-// Namespace scoreboard/namespace_633301c58b0b0cec
+// Namespace scoreboard / scripts/mp/scoreboard
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x458
 // Size: 0x58c
@@ -36,24 +36,26 @@ function processmatchscoreboardinfo() {
         }
         alliesscore = getteamscore("allies");
         axisscore = getteamscore("axis");
-        team3score = getteamscore("team_three");
+        team3Score = getteamscore("team_three");
         if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
             setclientmatchdata("alliesScore", alliesscore);
             setclientmatchdata("axisScore", axisscore);
-            setclientmatchdata("team3Score", team3score);
+            setclientmatchdata("team3Score", team3Score);
             setclientmatchdata("scoreProgressLimit", getomnvar("ui_scorelimit"));
             setclientmatchdata("alliesKills", -1);
             setclientmatchdata("alliesDeaths", -1);
         }
-    } else if (level.teambased) {
+        return;
+    }
+    if (level.teambased) {
         alliesscore = getteamscore("allies");
         axisscore = getteamscore("axis");
         kills = 0;
         deaths = 0;
         foreach (player in level.players) {
-            if (isdefined(player namespace_3c5a4254f2b957ea::getpersstat("team")) && player namespace_3c5a4254f2b957ea::getpersstat("team") == "allies") {
-                kills = kills + player namespace_3c5a4254f2b957ea::getpersstat("kills");
-                deaths = deaths + player namespace_3c5a4254f2b957ea::getpersstat("deaths");
+            if (isdefined(player scripts/mp/utility/stats::getpersstat("team")) && player scripts/mp/utility/stats::getpersstat("team") == "allies") {
+                kills = kills + player scripts/mp/utility/stats::getpersstat("kills");
+                deaths = deaths + player scripts/mp/utility/stats::getpersstat("deaths");
             }
         }
         winner = "tie";
@@ -97,15 +99,15 @@ function processmatchscoreboardinfo() {
             buildscoreboardtype("allies");
             buildscoreboardtype("axis");
             foreach (player in level.players) {
-                var_e59c38a3a9665cfb = player namespace_3c5a4254f2b957ea::getpersstat("team");
+                var_e59c38a3a9665cfb = player scripts/mp/utility/stats::getpersstat("team");
                 if (!isdefined(var_e59c38a3a9665cfb)) {
                     continue;
                 }
                 if (var_e59c38a3a9665cfb == "spectator" || var_e59c38a3a9665cfb == "codcaster") {
                     player setplayerdata("common", "round", "scoreboardType", "allies");
-                } else {
-                    player setplayerdata("common", "round", "scoreboardType", var_e59c38a3a9665cfb);
+                    continue;
                 }
+                player setplayerdata("common", "round", "scoreboardType", var_e59c38a3a9665cfb);
             }
         } else {
             buildscoreboardtype(winner);
@@ -113,27 +115,27 @@ function processmatchscoreboardinfo() {
                 player setplayerdata("common", "round", "scoreboardType", winner);
             }
         }
-    } else {
-        buildscoreboardtype("neutral");
-        foreach (player in level.players) {
-            player setplayerdata("common", "round", "scoreboardType", "neutral");
-        }
-        if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
-            setclientmatchdata("alliesScore", -1);
-            setclientmatchdata("axisScore", -1);
-            setclientmatchdata("scoreProgressLimit", getomnvar("ui_scorelimit"));
-            setclientmatchdata("alliesKills", -1);
-            setclientmatchdata("alliesDeaths", -1);
-        }
+        return;
+    }
+    buildscoreboardtype("neutral");
+    foreach (player in level.players) {
+        player setplayerdata("common", "round", "scoreboardType", "neutral");
+    }
+    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+        setclientmatchdata("alliesScore", -1);
+        setclientmatchdata("axisScore", -1);
+        setclientmatchdata("scoreProgressLimit", getomnvar("ui_scorelimit"));
+        setclientmatchdata("alliesKills", -1);
+        setclientmatchdata("alliesDeaths", -1);
     }
 }
 
-// Namespace scoreboard/namespace_633301c58b0b0cec
+// Namespace scoreboard / scripts/mp/scoreboard
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9eb
 // Size: 0x1d6
 function processcommonplayerdataforplayer(player) {
-    var_851e1b97814c1a58 = player namespace_3c5a4254f2b957ea::getpersstat("summary");
+    var_851e1b97814c1a58 = player scripts/mp/utility/stats::getpersstat("summary");
     if (isdefined(var_851e1b97814c1a58)) {
         player setplayerdata("common", "round", "totalXp", var_851e1b97814c1a58["xp"]);
         player setplayerdata("common", "round", "scoreXp", var_851e1b97814c1a58["score"]);
@@ -143,7 +145,7 @@ function processcommonplayerdataforplayer(player) {
         player setplayerdata("common", "round", "medalXp", var_851e1b97814c1a58["medal"]);
         player setplayerdata("common", "common_entitlement_xp", var_851e1b97814c1a58["bonusXP"]);
     }
-    var_97b1e872968f2e54 = player namespace_3c5a4254f2b957ea::getpersstat("aarData");
+    var_97b1e872968f2e54 = player scripts/mp/utility/stats::getpersstat("aarData");
     if (isdefined(var_97b1e872968f2e54)) {
         player setplayerdata("common", "round", "aarData", "combat_xp", var_97b1e872968f2e54["combat_xp"]);
         player setplayerdata("common", "round", "aarData", "support_xp", var_97b1e872968f2e54["support_xp"]);
@@ -154,7 +156,7 @@ function processcommonplayerdataforplayer(player) {
     }
 }
 
-// Namespace scoreboard/namespace_633301c58b0b0cec
+// Namespace scoreboard / scripts/mp/scoreboard
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc8
 // Size: 0xb54
@@ -162,16 +164,16 @@ function setplayerscoreboardinfo() {
     if (getdvarint(@"hash_1bc373211683e0b6") == 0) {
         return;
     }
-    scoreboardplayercount = getclientmatchdata("scoreboardPlayerCount");
-    if (scoreboardplayercount < 200) {
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("score"))) {
-            setclientmatchdata("players", self.clientmatchdataid, "score", namespace_3c5a4254f2b957ea::getpersstat("score"));
+    scoreboardPlayerCount = getclientmatchdata("scoreboardPlayerCount");
+    if (scoreboardPlayerCount < 200) {
+        if (isdefined(scripts/mp/utility/stats::getpersstat("score"))) {
+            setclientmatchdata("players", self.clientmatchdataid, "score", scripts/mp/utility/stats::getpersstat("score"));
             /#
-                println("xp" + self.name + "aarData" + self.clientmatchdataid + "support_xp" + namespace_3c5a4254f2b957ea::getpersstat("extrascore1"));
+                println("xp" + self.name + "aarData" + self.clientmatchdataid + "support_xp" + scripts/mp/utility/stats::getpersstat("extrascore1"));
             #/
         }
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("kills"))) {
-            kills = namespace_3c5a4254f2b957ea::getpersstat("kills");
+        if (isdefined(scripts/mp/utility/stats::getpersstat("kills"))) {
+            kills = scripts/mp/utility/stats::getpersstat("kills");
             setclientmatchdata("players", self.clientmatchdataid, "kills", kills);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "extrascore" + kills);
@@ -179,8 +181,8 @@ function setplayerscoreboardinfo() {
         }
         if (getgametype() == "dm" || getgametype() == "gun") {
             assists = self.assists;
-        } else if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("assists"))) {
-            assists = namespace_3c5a4254f2b957ea::getpersstat("assists");
+        } else if (isdefined(scripts/mp/utility/stats::getpersstat("assists"))) {
+            assists = scripts/mp/utility/stats::getpersstat("assists");
         } else {
             assists = 0;
         }
@@ -188,15 +190,15 @@ function setplayerscoreboardinfo() {
         /#
             println("xp" + self.name + "aarData" + self.clientmatchdataid + "zonecontrol" + assists);
         #/
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("deaths"))) {
-            deaths = namespace_3c5a4254f2b957ea::getpersstat("deaths");
+        if (isdefined(scripts/mp/utility/stats::getpersstat("deaths"))) {
+            deaths = scripts/mp/utility/stats::getpersstat("deaths");
             setclientmatchdata("players", self.clientmatchdataid, "deaths", deaths);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + deaths);
             #/
         }
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("team"))) {
-            team = namespace_3c5a4254f2b957ea::getpersstat("team");
+        if (isdefined(scripts/mp/utility/stats::getpersstat("team"))) {
+            team = scripts/mp/utility/stats::getpersstat("team");
             setclientmatchdata("players", self.clientmatchdataid, "team", team);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + team);
@@ -209,15 +211,15 @@ function setplayerscoreboardinfo() {
                 #/
             }
         }
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("extrascore0"))) {
-            extrascore0 = namespace_3c5a4254f2b957ea::getpersstat("extrascore0");
+        if (isdefined(scripts/mp/utility/stats::getpersstat("extrascore0"))) {
+            extrascore0 = scripts/mp/utility/stats::getpersstat("extrascore0");
             setclientmatchdata("players", self.clientmatchdataid, "extrascore0", extrascore0);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + extrascore0);
             #/
         }
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("extrascore1"))) {
-            extrascore1 = namespace_3c5a4254f2b957ea::getpersstat("extrascore1");
+        if (isdefined(scripts/mp/utility/stats::getpersstat("extrascore1"))) {
+            extrascore1 = scripts/mp/utility/stats::getpersstat("extrascore1");
             setclientmatchdata("players", self.clientmatchdataid, "extrascore1", extrascore1);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + extrascore1);
@@ -230,22 +232,22 @@ function setplayerscoreboardinfo() {
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + timeplayed);
             #/
         }
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("rank")) && isdefined(namespace_3c5a4254f2b957ea::getpersstat("rankxp"))) {
+        if (isdefined(scripts/mp/utility/stats::getpersstat("rank")) && isdefined(scripts/mp/utility/stats::getpersstat("rankxp"))) {
             rank = getrank();
             setclientmatchdata("players", self.clientmatchdataid, "rank", rank);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + rank);
             #/
         }
-        if (isdefined(namespace_3c5a4254f2b957ea::getpersstat("prestige"))) {
-            prestige = namespace_62c556437da28f50::getprestigelevel();
+        if (isdefined(scripts/mp/utility/stats::getpersstat("prestige"))) {
+            prestige = scripts/mp/rank::getprestigelevel();
             setclientmatchdata("players", self.clientmatchdataid, "prestige", prestige);
             /#
                 println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + prestige);
             #/
         }
-        if (namespace_36f464722d326bbe::isbrstylegametype()) {
-            var_7746ca3b56c9afd3 = namespace_d20f8ef223912e12::calculateclientmatchdataextrainfopayload(self);
+        if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+            var_7746ca3b56c9afd3 = scripts/mp/gametypes/br::calculateclientmatchdataextrainfopayload(self);
             /#
                 assert(var_7746ca3b56c9afd3.size < 5);
             #/
@@ -257,27 +259,27 @@ function setplayerscoreboardinfo() {
                 #/
             }
             if (getsubgametype() == "risk" || getsubgametype() == "plunder") {
-                var_c3e10a42a81ade25 = namespace_e8a49b70d0769b66::getteamscoreplacements();
-                placement = var_c3e10a42a81ade25[self.team];
+                placements = scripts/mp/gamescore::getteamscoreplacements();
+                placement = placements[self.team];
                 /#
                     assert(isdefined(placement), "Placement somehow undefined for team: " + self.team);
                 #/
                 if (isdefined(placement)) {
                     setclientmatchdata("players", self.clientmatchdataid, "placement", placement);
                 }
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("plunder", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("plunder", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue);
                 lootcachesopened = 0;
                 if (isdefined(self.lootcachesopened)) {
                     lootcachesopened = self.lootcachesopened;
                 }
                 setclientmatchdata("players", self.clientmatchdataid, "extrascore5", lootcachesopened);
             } else if (getsubgametype() == "kingslayer") {
-                var_c3e10a42a81ade25 = namespace_e8a49b70d0769b66::getteamscoreplacements();
-                placement = var_c3e10a42a81ade25[self.team];
+                placements = scripts/mp/gamescore::getteamscoreplacements();
+                placement = placements[self.team];
                 setclientmatchdata("players", self.clientmatchdataid, "placement", placement);
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("kingslayer", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("kingslayer", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue);
                 lootcachesopened = 0;
                 if (isdefined(self.lootcachesopened)) {
                     lootcachesopened = self.lootcachesopened;
@@ -287,71 +289,71 @@ function setplayerscoreboardinfo() {
                 if (isdefined(self.teamplacement)) {
                     setclientmatchdata("players", self.clientmatchdataid, "placement", self.teamplacement);
                 }
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("resurgence", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("resurgence", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue);
                 /#
-                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + var_81dab8953b9df82);
+                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + packedvalue);
                 #/
             } else if (getsubgametype() == "resurgence_mgl") {
                 if (isdefined(self.teamplacement)) {
                     setclientmatchdata("players", self.clientmatchdataid, "placement", self.teamplacement);
                 }
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("resurgence_mgl", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("resurgence_mgl", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue);
                 /#
-                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + var_81dab8953b9df82);
+                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + packedvalue);
                 #/
             } else if (getsubgametype() == "champion") {
                 if (isdefined(self.teamplacement)) {
                     setclientmatchdata("players", self.clientmatchdataid, "placement", self.teamplacement);
                 }
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("champion", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("champion", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue);
                 /#
-                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + var_81dab8953b9df82);
+                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + packedvalue);
                 #/
             } else if (getsubgametype() == "zonecontrol") {
                 if (isdefined(self.teamplacement)) {
                     setclientmatchdata("players", self.clientmatchdataid, "placement", self.teamplacement);
                 }
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("zonecontrol", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82[0]);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("zonecontrol", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue[0]);
                 /#
-                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + var_81dab8953b9df82[0]);
+                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + packedvalue[0]);
                 #/
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore5", var_81dab8953b9df82[1]);
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore5", packedvalue[1]);
                 /#
-                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + var_81dab8953b9df82[1]);
+                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + packedvalue[1]);
                 #/
             } else {
                 if (isdefined(self.teamplacement)) {
                     setclientmatchdata("players", self.clientmatchdataid, "placement", self.teamplacement);
                 }
-                var_81dab8953b9df82 = [[ namespace_3c37cb17ade254d::getsharedfunc("br", "packClientMatchData") ]]();
-                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", var_81dab8953b9df82);
+                packedvalue = [[ scripts/engine/utility::getsharedfunc("br", "packClientMatchData") ]]();
+                setclientmatchdata("players", self.clientmatchdataid, "extrascore4", packedvalue);
                 /#
-                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + var_81dab8953b9df82);
+                    println("xp" + self.name + "aarData" + self.clientmatchdataid + "<unknown string>" + packedvalue);
                 #/
             }
         }
         /#
-            println("<unknown string>" + scoreboardplayercount);
+            println("<unknown string>" + scoreboardPlayerCount);
         #/
-        scoreboardplayercount++;
-        setclientmatchdata("scoreboardPlayerCount", scoreboardplayercount);
+        scoreboardPlayerCount++;
+        setclientmatchdata("scoreboardPlayerCount", scoreboardPlayerCount);
         /#
-            println("<unknown string>" + scoreboardplayercount);
+            println("<unknown string>" + scoreboardPlayerCount);
         #/
         maxplayercount = getdvarint(@"hash_818c699a5caaee4f", 0);
         setclientmatchdata("maxPlayerCount", maxplayercount);
-    } else {
-        /#
-            println("<unknown string>" + scoreboardplayercount + "<unknown string>");
-        #/
+        return;
     }
+    /#
+        println("<unknown string>" + scoreboardPlayerCount + "<unknown string>");
+    #/
 }
 
-// Namespace scoreboard/namespace_633301c58b0b0cec
+// Namespace scoreboard / scripts/mp/scoreboard
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1723
 // Size: 0x62
@@ -374,7 +376,7 @@ function computescoreboardslot(team, index) {
     return 0;
 }
 
-// Namespace scoreboard/namespace_633301c58b0b0cec
+// Namespace scoreboard / scripts/mp/scoreboard
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x178d
 // Size: 0x3e6
@@ -396,10 +398,10 @@ function buildscoreboardtype(team) {
                 teammembers = level.placement[teamname];
             }
             if (!isdefined(teammembers)) {
-                teammembers = namespace_54d20dd0dd79277f::getteamdata(teamname, "players");
+                teammembers = scripts/mp/utility/teams::getteamdata(teamname, "players");
             }
             foreach (player in teammembers) {
-                namespace_d576b6dc7cef9c62::assignclientmatchdataid(player);
+                scripts/mp/gamelogic::assignclientmatchdataid(player);
                 setclientmatchdata("scoreboards", computescoreboardslot(team, index), player.clientmatchdataid);
                 /#
                     println("<unknown string>" + team + "<unknown string>" + index + "<unknown string>" + player.clientmatchdataid + "<unknown string>");
@@ -407,7 +409,9 @@ function buildscoreboardtype(team) {
                 index++;
             }
         }
-    } else if (team == "neutral") {
+        return;
+    }
+    if (team == "neutral") {
         index = 0;
         foreach (player in level.placement["all"]) {
             setclientmatchdata("scoreboards", computescoreboardslot(team, index), player.clientmatchdataid);
@@ -416,23 +420,23 @@ function buildscoreboardtype(team) {
             #/
             index++;
         }
-    } else {
-        otherteam = getotherteam(team)[0];
-        index = 0;
-        foreach (player in level.placement[team]) {
-            setclientmatchdata("scoreboards", computescoreboardslot(team, index), player.clientmatchdataid);
-            /#
-                println("<unknown string>" + team + "<unknown string>" + index + "<unknown string>" + player.name + "aarData" + player.clientmatchdataid + "<unknown string>");
-            #/
-            index++;
-        }
-        foreach (player in level.placement[otherteam]) {
-            setclientmatchdata("scoreboards", computescoreboardslot(team, index), player.clientmatchdataid);
-            /#
-                println("<unknown string>" + team + "<unknown string>" + index + "<unknown string>" + player.name + "aarData" + player.clientmatchdataid + "<unknown string>");
-            #/
-            index++;
-        }
+        return;
+    }
+    otherteam = getotherteam(team)[0];
+    index = 0;
+    foreach (player in level.placement[team]) {
+        setclientmatchdata("scoreboards", computescoreboardslot(team, index), player.clientmatchdataid);
+        /#
+            println("<unknown string>" + team + "<unknown string>" + index + "<unknown string>" + player.name + "aarData" + player.clientmatchdataid + "<unknown string>");
+        #/
+        index++;
+    }
+    foreach (player in level.placement[otherteam]) {
+        setclientmatchdata("scoreboards", computescoreboardslot(team, index), player.clientmatchdataid);
+        /#
+            println("<unknown string>" + team + "<unknown string>" + index + "<unknown string>" + player.name + "aarData" + player.clientmatchdataid + "<unknown string>");
+        #/
+        index++;
     }
 }
 

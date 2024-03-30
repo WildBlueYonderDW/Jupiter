@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
 #using scripts\mp\utility\game.gsc;
 #using scripts\mp\utility\player.gsc;
@@ -21,7 +21,7 @@
 
 #namespace damage;
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x472
 // Size: 0x5a
@@ -34,21 +34,21 @@ function get_damageable_player(player, playerpos) {
     return newent;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d4
 // Size: 0x67
-function get_damageable_sentry(sentry, var_cfee6503c350b4e4) {
+function get_damageable_sentry(sentry, sentrypos) {
     newent = spawnstruct();
     newent.isplayer = 0;
     newent.isadestructable = 0;
     newent.issentry = 1;
     newent.entity = sentry;
-    newent.damagecenter = var_cfee6503c350b4e4;
+    newent.damagecenter = sentrypos;
     return newent;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x543
 // Size: 0x59
@@ -61,7 +61,7 @@ function get_damageable_grenade(grenade, entpos) {
     return newent;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5a4
 // Size: 0x59
@@ -74,7 +74,7 @@ function get_damageable_mine(mine, entpos) {
     return newent;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x605
 // Size: 0x25
@@ -82,7 +82,7 @@ function get_damageable_player_pos(player) {
     return player.origin + (0, 0, 32);
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x632
 // Size: 0x17
@@ -90,7 +90,7 @@ function get_damageable_grenade_pos(grenade) {
     return grenade.origin;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x651
 // Size: 0x9c
@@ -112,67 +112,66 @@ function istacticaldamage(objweapon, smeansofdeath) {
         return 0;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6f4
 // Size: 0x60
 function function_4766094b15b00a8(weapon, smeansofdeath, attacker) {
     var_27e27c2e96f2389d = 0;
     if (isbulletweapon(weapon)) {
-        if (isdefined(attacker) && attacker namespace_f8065cafc523dba5::function_eba2f2e094684b8f("specialty_incendiary")) {
+        if (isdefined(attacker) && attacker scripts/cp_mp/utility/player_utility::player_hasperk("specialty_incendiary")) {
             var_27e27c2e96f2389d = 1;
         }
-        if (isdefined(weapon) && namespace_8472f410cbc5f0c::function_cfd2e1e48edaf93(weapon)) {
+        if (isdefined(weapon) && scripts/cp_mp/dragonsbreath::function_cfd2e1e48edaf93(weapon)) {
             var_27e27c2e96f2389d = 1;
         }
     }
     return var_27e27c2e96f2389d;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75c
 // Size: 0x44
 function function_e287831520aa308b(weapon, attacker) {
     var_a167b7e09ac43f5e = 0;
     if (isbulletweapon(weapon)) {
-        if (isdefined(attacker) && attacker namespace_f8065cafc523dba5::function_eba2f2e094684b8f("specialty_explosivebullet")) {
+        if (isdefined(attacker) && attacker scripts/cp_mp/utility/player_utility::player_hasperk("specialty_explosivebullet")) {
             var_a167b7e09ac43f5e = 1;
         }
     }
     return var_a167b7e09ac43f5e;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a8
 // Size: 0x49
 function isfmjdamage(weapon, smeansofdeath) {
-    var_5766eb92b7841776 = 0;
+    isfmj = 0;
     if (isdefined(weapon) && isdefined(smeansofdeath) && isbulletdamage(smeansofdeath)) {
-        if (function_f30a6d3194f97c09(weapon, "specialty_armorpiercing")) {
-            var_5766eb92b7841776 = 1;
+        if (getweaponhasperk(weapon, "specialty_armorpiercing")) {
+            isfmj = 1;
         }
     }
-    return var_5766eb92b7841776;
+    return isfmj;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f9
 // Size: 0x38
 function function_73d1d5d600a0cbc3(smeansofdeath, attacker) {
     if (!isdefined(attacker) || !isplayer(attacker)) {
-        return 0;
+        return false;
     }
     return isbulletdamage(smeansofdeath) && attacker namespace_ed60dc1153ae1c06::function_1da49fb6441f8ab2();
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x839
 // Size: 0x8e
@@ -181,66 +180,66 @@ function function_3201a1bc3ff0e482(attacker, victim, smeansofdeath, idflags) {
     if (istrue(var_30d384da73217e13)) {
         if (isplayer(victim) || isagent(victim)) {
             if (namespace_f8d3520d3483c1::isbulletpenetration(idflags)) {
-                return 1;
+                return true;
             }
             if (isdefined(victim.vehicle)) {
-                return 1;
+                return true;
             }
             if (victim namespace_f8d3520d3483c1::hasarmor()) {
-                return 1;
+                return true;
             }
             if (istrue(victim.isjuggernaut)) {
-                return 1;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x8cf
 // Size: 0x153
 function islethalmeleeweapon(attacker, victim, objweapon, smeansofdeath) {
     if (smeansofdeath != "MOD_MELEE") {
-        return 0;
+        return false;
     }
     if (!isdefined(victim) || !isplayer(victim)) {
-        return 0;
+        return false;
     }
-    if (victim namespace_50e4516861e3641c::hasheavyarmor()) {
-        return 0;
+    if (victim scripts/mp/heavyarmor::hasheavyarmor()) {
+        return false;
     }
     if (!val::get("one_hit_melee_victim")) {
-        return 0;
+        return false;
     }
     if (isfistsonly(objweapon.basename)) {
-        return 0;
+        return false;
     }
     if (ismeleeoverrideweapon(objweapon)) {
-        return 1;
+        return true;
     }
     if (isknifeonly(objweapon.basename)) {
-        return 1;
+        return true;
     }
     if (isballweapon(objweapon)) {
-        return 1;
+        return true;
     }
     if (objweapon.basename == "iw8_defibrillator_mp") {
-        return 1;
+        return true;
     }
     if (isaxeweapon(objweapon.basename) && attacker getweaponammoclip(objweapon) > 0) {
-        return 1;
+        return true;
     }
     foreach (attachment in objweapon.attachments) {
         if (string_starts_with(attachment, "bayonet") || string_starts_with(attachment, "tacknife")) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa2a
 // Size: 0x237
@@ -253,38 +252,50 @@ function attackerishittingteam(victim, attacker) {
     }
     if (!level.teambased) {
         return 0;
-    } else if (!isdefined(attacker) || !isdefined(victim)) {
-        return 0;
-    } else if (!isdefined(victim.team) || !isdefined(attacker.team)) {
-        return 0;
-    } else if (victim == attacker) {
-        return 0;
-    } else if (namespace_36f464722d326bbe::function_2536e99eb6586f8f() && victim.pers["team"] == attacker.team && isdefined(attacker.teamchangedthisframe)) {
-        return 0;
-    } else if (namespace_36f464722d326bbe::function_2536e99eb6586f8f() && victim.pers["team"] != attacker.team && isdefined(attacker.teamchangedthisframe)) {
-        return 1;
-    } else if (isdefined(attacker.scrambled) && attacker.scrambled) {
-        return 0;
-    } else if (isplayerproxyagent(victim, attacker)) {
-        return 0;
-    } else if (isagent(victim) && istrue(victim.skipfriendlyfire)) {
-        return 0;
-    } else if (isagent(victim) && isdefined(victim.owner) && victim.owner == attacker) {
-        return 0;
-    } else if (namespace_ad49798629176e96::function_c210e62f0b64cfb1(attacker, victim)) {
-        return 0;
-    } else if (victim.team == attacker.team) {
-        return 1;
-    } else if (namespace_ad49798629176e96::function_9efae38238e4df66(attacker, victim)) {
-        return 1;
-    } else if (function_7cc9753f2f84e883(attacker, victim)) {
-        return 1;
-    } else {
+    }
+    if (!isdefined(attacker) || !isdefined(victim)) {
         return 0;
     }
+    if (!isdefined(victim.team) || !isdefined(attacker.team)) {
+        return 0;
+    }
+    if (victim == attacker) {
+        return 0;
+    }
+    if (scripts/cp_mp/utility/game_utility::isinfectedgametype() && victim.pers["team"] == attacker.team && isdefined(attacker.teamchangedthisframe)) {
+        return 0;
+    }
+    if (scripts/cp_mp/utility/game_utility::isinfectedgametype() && victim.pers["team"] != attacker.team && isdefined(attacker.teamchangedthisframe)) {
+        return 1;
+    }
+    if (isdefined(attacker.scrambled) && attacker.scrambled) {
+        return 0;
+    }
+    if (isplayerproxyagent(victim, attacker)) {
+        return 0;
+    }
+    if (isagent(victim) && istrue(victim.skipfriendlyfire)) {
+        return 0;
+    }
+    if (isagent(victim) && isdefined(victim.owner) && victim.owner == attacker) {
+        return 0;
+    }
+    if (namespace_ad49798629176e96::function_c210e62f0b64cfb1(attacker, victim)) {
+        return 0;
+    }
+    if (victim.team == attacker.team) {
+        return 1;
+    }
+    if (namespace_ad49798629176e96::function_9efae38238e4df66(attacker, victim)) {
+        return 1;
+    }
+    if (function_7cc9753f2f84e883(attacker, victim)) {
+        return 1;
+    }
+    return 0;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc68
 // Size: 0x6b
@@ -292,7 +303,7 @@ function function_7cc9753f2f84e883(eattacker, victim) {
     return isdefined(eattacker) && isdefined(victim) && isplayer(eattacker) && isplayer(victim) && isdefined(eattacker.var_3e8aeb2a9e8d86d6) && isdefined(victim.var_3e8aeb2a9e8d86d6) && eattacker.var_3e8aeb2a9e8d86d6 == victim.var_3e8aeb2a9e8d86d6;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcdb
 // Size: 0x38
@@ -308,51 +319,51 @@ function _validateattacker(eattacker) {
     return eattacker;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd1b
 // Size: 0x19
 function _validatevictim(victim) {
-    if (!victim namespace_f8065cafc523dba5::_isalive()) {
+    if (!victim scripts/cp_mp/utility/player_utility::_isalive()) {
         return undefined;
     }
     return victim;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd3c
 // Size: 0x114
 function damage_should_ignore_blast_shield(attacker, victim, objweapon, smeansofdeath, inflictor, hitloc) {
     if (smeansofdeath == "MOD_GRENADE") {
-        return 1;
+        return true;
     }
     if (smeansofdeath == "MOD_PROJECTILE") {
-        return 1;
+        return true;
     }
     if ((smeansofdeath == "MOD_FIRE" || isexplosivedamagemod(smeansofdeath)) == 0) {
-        return 1;
+        return true;
     }
     if (smeansofdeath == "MOD_EXPLOSIVE_BULLET" && (!isdefined(hitloc) || hitloc != "none")) {
-        return 1;
+        return true;
     }
     if (isdefined(attacker) && attacker == victim && !istrue(victim.var_567daf189be4de79)) {
-        return 1;
+        return true;
     }
-    data = namespace_169cd7a8fbc76ee5::packdamagedata(attacker, victim, undefined, objweapon, smeansofdeath, inflictor);
-    if (victim namespace_169cd7a8fbc76ee5::isstuckdamage(data)) {
-        return 1;
+    data = scripts/cp_mp/utility/damage_utility::packdamagedata(attacker, victim, undefined, objweapon, smeansofdeath, inflictor);
+    if (victim scripts/cp_mp/utility/damage_utility::isstuckdamage(data)) {
+        return true;
     }
     if (weaponignoresblastshield(objweapon, hitloc)) {
-        return 1;
+        return true;
     }
-    if (namespace_36f464722d326bbe::isbrstylegametype() && isdefined(victim) && istrue(victim.isjuggernaut) && isdefined(inflictor) && isdefined(inflictor.vehiclename)) {
-        return 1;
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype() && isdefined(victim) && istrue(victim.isjuggernaut) && isdefined(inflictor) && isdefined(inflictor.vehiclename)) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0xe58
 // Size: 0x4b
@@ -360,7 +371,7 @@ function _radiusdamage(origin, range, maxdamage, mindamage, attacker, meansofdea
     self radiusdamage(origin, range, maxdamage, mindamage, attacker, meansofdeath, weapon);
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeaa
 // Size: 0x27e
@@ -371,18 +382,22 @@ function radiusplayerdamage(origin, minradius, maxradius, mindamage, maxdamage, 
     if (!isdefined(ignoreattacker)) {
         ignoreattacker = 0;
     }
-    var_f145a993614d298f = namespace_2a184fc4902783dc::create_character_contents();
-    castcontents = namespace_2a184fc4902783dc::create_contents(0, 1, 1, 0, 1, 0);
+    var_f145a993614d298f = scripts/engine/trace::create_character_contents();
+    castcontents = scripts/engine/trace::create_contents(0, 1, 1, 0, 1, 0);
     ignorelist = [];
     foreach (character in level.characters) {
         if (!isdefined(character)) {
             continue;
         }
-        if (!character namespace_f8065cafc523dba5::_isalive()) {
+        if (!character scripts/cp_mp/utility/player_utility::_isalive()) {
             ignorelist[ignorelist.size] = character;
-        } else if (ignoreattacker && character == attacker) {
+            continue;
+        }
+        if (ignoreattacker && character == attacker) {
             ignorelist[ignorelist.size] = character;
-        } else if (level.teambased && character.team == attacker.team) {
+            continue;
+        }
+        if (level.teambased && character.team == attacker.team) {
             ignorelist[ignorelist.size] = character;
         }
     }
@@ -395,18 +410,18 @@ function radiusplayerdamage(origin, minradius, maxradius, mindamage, maxdamage, 
             if (!isdefined(ent)) {
                 continue;
             }
-            var_e021c2744cc7ed68 = physics_raycast(origin, point, castcontents, undefined, 0, "physicsquery_closest");
-            if (isdefined(var_e021c2744cc7ed68) && var_e021c2744cc7ed68.size > 0) {
+            castresults = physics_raycast(origin, point, castcontents, undefined, 0, "physicsquery_closest");
+            if (isdefined(castresults) && castresults.size > 0) {
                 continue;
             }
-            var_ae3412f7b9b48d44 = max(dist, minradius) / maxradius;
-            damage = mindamage + (maxdamage - mindamage) * var_ae3412f7b9b48d44;
+            distratio = max(dist, minradius) / maxradius;
+            damage = mindamage + (maxdamage - mindamage) * distratio;
             ent dodamage(damage, origin, attacker, inflictor, meansofdeath, weaponname);
         }
     }
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x112f
 // Size: 0x1e
@@ -414,7 +429,7 @@ function hashealthshield(player) {
     return isdefined(player) && isdefined(player.healthshield);
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1155
 // Size: 0x34
@@ -425,23 +440,23 @@ function gethealthshielddamage(damage) {
     return int(damage * self.healthshieldmod);
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1191
 // Size: 0x69
-function sethealthshield(var_5e2bb61a493095fd) {
+function sethealthshield(shieldvalue) {
     self.healthshield = 1;
     if (!isdefined(self.healthshieldmod)) {
         self.healthshieldmod = 1;
     }
-    var_5e2bb61a493095fd = int(clamp(var_5e2bb61a493095fd, 0, 100));
-    var_34985a43c94f1829 = (100 - var_5e2bb61a493095fd) / 100;
+    shieldvalue = int(clamp(shieldvalue, 0, 100));
+    var_34985a43c94f1829 = (100 - shieldvalue) / 100;
     if (var_34985a43c94f1829 < self.healthshieldmod) {
         self.healthshieldmod = var_34985a43c94f1829;
     }
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1201
 // Size: 0x17
@@ -450,25 +465,27 @@ function clearhealthshield() {
     self.healthshieldmod = undefined;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x121f
 // Size: 0xb6
-function _suicide(var_4bff266a15665fd9, var_1044662d97e67562) {
+function _suicide(checkremote, var_1044662d97e67562) {
     if (self.sessionstate != "playing") {
         /#
             println("remote_turret");
         #/
         return;
     }
-    if (playershoulddofauxdeath(var_4bff266a15665fd9) && !isdefined(self.fauxdead)) {
-        thread namespace_3e725f3cc58bddd3::playerkilled_internal(self, self, self, 10000, 0, "MOD_SUICIDE", nullweapon(), (0, 0, 0), "none", 0, 1116, 1);
-    } else if (!playershoulddofauxdeath(var_4bff266a15665fd9) && !isdefined(self.fauxdead) && (!isdefined(self.vehicle) || istrue(var_1044662d97e67562))) {
+    if (playershoulddofauxdeath(checkremote) && !isdefined(self.fauxdead)) {
+        thread scripts/mp/damage::playerkilled_internal(self, self, self, 10000, 0, "MOD_SUICIDE", nullweapon(), (0, 0, 0), "none", 0, 1116, 1);
+        return;
+    }
+    if (!playershoulddofauxdeath(checkremote) && !isdefined(self.fauxdead) && (!isdefined(self.vehicle) || istrue(var_1044662d97e67562))) {
         self suicide();
     }
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12dc
 // Size: 0x28
@@ -480,7 +497,7 @@ function suicide_on_end_remote() {
     thread suicide_on_alive();
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x130b
 // Size: 0x49
@@ -495,41 +512,41 @@ function suicide_on_alive() {
     _suicide();
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x135b
 // Size: 0x73
-function playershoulddofauxdeath(var_4bff266a15665fd9) {
-    if (!isdefined(var_4bff266a15665fd9)) {
-        var_4bff266a15665fd9 = 1;
+function playershoulddofauxdeath(checkremote) {
+    if (!isdefined(checkremote)) {
+        checkremote = 1;
     }
     if (istrue(self.isusingcamera)) {
-        return 0;
+        return false;
     }
-    if (istrue(var_4bff266a15665fd9) && isusingremote() && !islifelimited()) {
+    if (istrue(checkremote) && isusingremote() && !islifelimited()) {
         if (self.usingremote != "remote_turret") {
-            return 1;
+            return true;
         }
     }
     if (isdefined(level.modeshoulddofauxdeathfunc) && self [[ level.modeshoulddofauxdeathfunc ]]()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13d6
 // Size: 0x2a
 function isprojectiledamage(meansofdeath) {
-    var_7c02104b4aa99077 = "MOD_PROJECTILE MOD_IMPACT MOD_GRENADE MOD_HEAD_SHOT";
-    if (issubstr(var_7c02104b4aa99077, meansofdeath)) {
-        return 1;
+    projdamage = "MOD_PROJECTILE MOD_IMPACT MOD_GRENADE MOD_HEAD_SHOT";
+    if (issubstr(projdamage, meansofdeath)) {
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1408
 // Size: 0xf6
@@ -556,7 +573,7 @@ function non_player_log_attacker_data(data, attacker) {
         return;
     }
     if (isdefined(self.owner)) {
-        if (!namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker)) {
+        if (!scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, attacker)) {
             return;
         }
     } else if (level.teambased && isdefined(self.team) && self.team == attacker.team) {
@@ -565,7 +582,7 @@ function non_player_log_attacker_data(data, attacker) {
     non_player_add_attacker_data(data, attacker);
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1505
 // Size: 0x12a
@@ -586,11 +603,11 @@ function non_player_add_attacker_data(data, attacker) {
     attackerdata.partname = data.partname;
     attackerdata.meansofdeath = data.meansofdeath;
     attackerdata.firsttimedamaged = ter_op(isdefined(firsttimedamaged), firsttimedamaged, attackerdata.firsttimedamaged);
-    attackerdata namespace_4887422e77f3514e::function_f74c4c476c9489f6();
+    attackerdata namespace_4887422e77f3514e::updatefirsttimedamaged();
     attackerdata.lasttimedamaged = gettime();
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1636
 // Size: 0x147
@@ -625,7 +642,7 @@ function non_player_get_attacker_data(attacker, create) {
     return attackerdata;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1785
 // Size: 0xd
@@ -633,21 +650,20 @@ function non_player_clear_attacker_data() {
     self.attackerdata = undefined;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1799
 // Size: 0x151
 function non_player_should_ignore_damage(attacker, objweapon, inflictor, meansofdeath) {
     if (non_player_should_ignore_damage_signature(attacker, objweapon, inflictor, meansofdeath)) {
-        return 1;
+        return true;
     }
     if (isdefined(objweapon.basename)) {
         if (meansofdeath != "MOD_MELEE") {
             switch (objweapon.basename) {
             case #"hash_405f9521b5ee8402":
             case #"hash_807ae3204119bd41":
-                return 1;
-                break;
+                return true;
             }
         }
         if (meansofdeath == "MOD_IMPACT") {
@@ -659,8 +675,7 @@ function non_player_should_ignore_damage(attacker, objweapon, inflictor, meansof
             case #"hash_5e8f81314553dd36":
             case #"hash_6a2e4f9c54756dc7":
             case #"hash_d6565ec12efca627":
-                return 1;
-                break;
+                return true;
             }
         } else {
             switch (objweapon.basename) {
@@ -670,15 +685,14 @@ function non_player_should_ignore_damage(attacker, objweapon, inflictor, meansof
             case #"hash_c7ce3f77814f7950":
             case #"hash_cac2107b8e726d9d":
             case #"hash_d072a0adddda0068":
-                return 1;
-                break;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18f2
 // Size: 0x128
@@ -708,7 +722,7 @@ function non_player_add_ignore_damage_signature(attacker, objweapon, inflictor, 
     return id;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a22
 // Size: 0x25
@@ -719,7 +733,7 @@ function non_player_remove_ignore_damage_signature(id) {
     self.ignoredamagesignatures[id] = undefined;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a4e
 // Size: 0xd
@@ -727,67 +741,70 @@ function non_player_clear_ignore_damage_signatures() {
     self.ignoredamagesignatures = undefined;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a62
 // Size: 0x1c1
 function non_player_should_ignore_damage_signature(attacker, objweapon, inflictor, meansofdeath) {
     if (!isdefined(self.ignoredamagesignatures)) {
-        return 0;
+        return false;
     }
     if (isdefined(objweapon) && isstring(objweapon)) {
         objweapon = makeweapon(objweapon);
     }
     foreach (signature in self.ignoredamagesignatures) {
         if (!isdefined(signature)) {
-            return 0;
+            return false;
         }
         if (signature.checkattacker) {
             if (!isdefined(signature.attacker)) {
                 non_player_remove_ignore_damage_signature(signature.id);
                 continue;
-            }
-            if (!isdefined(attacker)) {
+            } else if (!isdefined(attacker)) {
+                continue;
+            } else if (attacker != signature.attacker) {
                 continue;
             }
-            jumpiffalse(attacker != signature.attacker) LOC_000000df;
-        } else if (signature.checkobjweapon) {
+        }
+        if (signature.checkobjweapon) {
             if (!isdefined(objweapon) || isnullweapon(objweapon)) {
                 continue;
+            } else if (objweapon.basename != signature.objweapon.basename) {
+                continue;
             }
-            jumpiffalse(objweapon.basename != signature.objweapon.basename) LOC_0000012a;
-        } else if (signature.checkinflictor) {
+        }
+        if (signature.checkinflictor) {
             if (!isdefined(signature.inflictor)) {
                 non_player_remove_ignore_damage_signature(signature.id);
                 continue;
-            }
-            if (!isdefined(inflictor)) {
+            } else if (!isdefined(inflictor)) {
+                continue;
+            } else if (inflictor != signature.inflictor) {
                 continue;
             }
-            jumpiffalse(inflictor != signature.inflictor) LOC_0000017d;
-        } else if (signature.checkmeansofdeath) {
+        }
+        if (signature.checkmeansofdeath) {
             if (!isdefined(meansofdeath)) {
                 continue;
+            } else if (meansofdeath != signature.meansofdeath) {
+                continue;
             }
-            jumpiffalse(meansofdeath != signature.meansofdeath) LOC_000001a9;
-        } else {
-        LOC_000001a9:
-            return 1;
         }
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace damage/namespace_a12dc1d0c8a64946
+// Namespace damage / scripts/mp/utility/damage
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c2b
 // Size: 0x75
 function islauncherdirectimpactdamage(objweapon, meansofdeath, var_68d17572ef704fa8) {
     if (objweapon.type != "projectile") {
-        return 0;
+        return false;
     }
     if (istrue(var_68d17572ef704fa8) && objweapon.isalternate && isdefined(objweapon.underbarrel)) {
-        return 0;
+        return false;
     }
     return meansofdeath == "MOD_IMPACT" || meansofdeath == "MOD_PROJECTILE" || meansofdeath == "MOD_GRENADE";
 }

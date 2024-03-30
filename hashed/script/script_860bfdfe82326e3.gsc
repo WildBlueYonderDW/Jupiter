@@ -3,65 +3,65 @@
 #using scripts\cp_mp\anim_scene.gsc;
 #using script_2583ee5680cf4736;
 
-#namespace namespace_4e16584f2211900a;
+#namespace content_manager;
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e6
 // Size: 0x35
 function function_9218617331ba59ff(instance, string) {
-    if (isdefined(instance.var_305e36cbb51f88ce[string])) {
-        return instance.var_305e36cbb51f88ce[string][0];
+    if (isdefined(instance.contentgroups[string])) {
+        return instance.contentgroups[string][0];
     }
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x222
 // Size: 0x41
 function function_223d2522d69e265d(instance, string) {
     var_6b6313322ac6a7a0 = [];
-    if (isdefined(instance.var_305e36cbb51f88ce[string])) {
-        var_6b6313322ac6a7a0 = instance.var_305e36cbb51f88ce[string];
+    if (isdefined(instance.contentgroups[string])) {
+        var_6b6313322ac6a7a0 = instance.contentgroups[string];
     }
     return var_6b6313322ac6a7a0;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26b
 // Size: 0x82
 function function_3e419ffd7ff0650d() {
     flag_init("content_manager_initialized");
-    level.var_a1c29f4029327195 = spawnstruct();
-    level.var_a1c29f4029327195.var_60af51053ce930e3 = [];
-    level.var_a1c29f4029327195.var_1f412e1caf05f81e = [];
-    function_a75798ec25ba862a();
-    function_474144349a81edb9();
-    level.var_a1c29f4029327195.var_e6c053e28858ae8b = [];
+    level.contentmanager = spawnstruct();
+    level.contentmanager.registeredscripts = [];
+    level.contentmanager.scriptcategories = [];
+    setup_destinations();
+    setup_locations();
+    level.contentmanager.spawnedinstances = [];
     flag_set("content_manager_initialized");
     /#
         level thread init_devgui();
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f4
 // Size: 0x1d
 function function_25d8f4a67b2f6fa6() {
-    function_a75798ec25ba862a();
-    function_474144349a81edb9();
+    setup_destinations();
+    setup_locations();
     /#
         level thread init_devgui();
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x318
 // Size: 0xbf
-function function_72f3dd0512f43c96(scriptname, spawncallback, var_76c7d77c9c5c25cb) {
+function register_script(scriptname, spawncallback, var_76c7d77c9c5c25cb) {
     /#
         assert(isstring(scriptname));
     #/
@@ -69,30 +69,30 @@ function function_72f3dd0512f43c96(scriptname, spawncallback, var_76c7d77c9c5c25
         assert(isdefined(spawncallback));
     #/
     /#
-        assertex(!isdefined(level.var_a1c29f4029327195.var_60af51053ce930e3[scriptname]), scriptname + " script is already registered in the content manager");
+        assertex(!isdefined(level.contentmanager.registeredscripts[scriptname]), scriptname + " script is already registered in the content manager");
     #/
     script = spawnstruct();
     script.scriptname = scriptname;
     script.spawncallback = spawncallback;
-    level.var_a1c29f4029327195.var_60af51053ce930e3[scriptname] = script;
+    level.contentmanager.registeredscripts[scriptname] = script;
     if (istrue(var_76c7d77c9c5c25cb)) {
-        array_add(level.var_a1c29f4029327195.var_be6410a3e31c071b, scriptname);
+        array_add(level.contentmanager.var_be6410a3e31c071b, scriptname);
     }
     return script;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3df
 // Size: 0x30
-function function_61ab14bba987948f(scriptname) {
+function get_script(scriptname) {
     /#
         assert(isstring(scriptname));
     #/
-    return level.var_a1c29f4029327195.var_60af51053ce930e3[scriptname];
+    return level.contentmanager.registeredscripts[scriptname];
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x417
 // Size: 0xf3
@@ -106,19 +106,19 @@ function function_2643181f53446ac4(key, value) {
     scripts = getstructarray(value, key);
     var_2d9173702eb7f54e = [];
     foreach (script in scripts) {
-        foreach (var_e5feb06a255e7309 in level.var_a1c29f4029327195.var_60af51053ce930e3) {
+        foreach (var_e5feb06a255e7309 in level.contentmanager.registeredscripts) {
             var_2d9173702eb7f54e[var_2d9173702eb7f54e.size] = var_e5feb06a255e7309;
         }
     }
     return var_2d9173702eb7f54e;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x512
 // Size: 0x151
-function function_1d0ccd8d315db185(destination, var_e8ea9430c257c42f) {
-    locations = array_randomize(function_b17692d3945df073(destination));
+function function_1d0ccd8d315db185(destination, content_category) {
+    locations = array_randomize(get_children(destination));
     for (i = 0; i < locations.size; i++) {
         if (isdefined(locations[i].variantname) && locations[i].variantname != "content_location") {
             array_remove_index(locations, i, 1);
@@ -126,36 +126,36 @@ function function_1d0ccd8d315db185(destination, var_e8ea9430c257c42f) {
     }
     array_removeundefined(locations, 1);
     foreach (location in locations) {
-        instances = array_randomize(function_b17692d3945df073(location));
+        instances = array_randomize(get_children(location));
         foreach (instance in instances) {
-            if (isdefined(instance.content_script_name) && instance.content_script_name == var_e8ea9430c257c42f) {
+            if (isdefined(instance.content_script_name) && instance.content_script_name == content_category) {
                 return instance;
             }
         }
     }
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66a
 // Size: 0x1f0
-function function_a75798ec25ba862a() {
-    level.var_a1c29f4029327195.destinations = [];
+function setup_destinations() {
+    level.contentmanager.destinations = [];
     if (!isdefined(level.struct_class_names["variantname"])) {
         return;
     }
-    var_e10b8f561af1621c = getstructarray("content_destination", "variantname");
-    foreach (destination in var_e10b8f561af1621c) {
+    mapdestinations = getstructarray("content_destination", "variantname");
+    foreach (destination in mapdestinations) {
         /#
             assert(isdefined(destination.targetname));
         #/
         /#
-            assert(!isdefined(level.var_a1c29f4029327195.destinations[destination.targetname]));
+            assert(!isdefined(level.contentmanager.destinations[destination.targetname]));
         #/
-        level.var_a1c29f4029327195.destinations[destination.targetname] = destination;
+        level.contentmanager.destinations[destination.targetname] = destination;
         function_dcb921c0f1ffc7a2(destination);
         destination.locations = [];
-        children = function_b17692d3945df073(destination);
+        children = get_children(destination);
         foreach (child in children) {
             if (child.variantname != "content_location") {
                 continue;
@@ -169,16 +169,16 @@ function function_a75798ec25ba862a() {
             destination.locations[child.targetname] = child;
         }
     }
-    level.var_a1c29f4029327195.destinations = array_randomize(level.var_a1c29f4029327195.destinations);
+    level.contentmanager.destinations = array_randomize(level.contentmanager.destinations);
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x861
 // Size: 0xd8
 function function_b1ae4ace992f6a83(str_destination, var_29d15208128f7711) {
     /#
-        assert(isdefined(level.var_a1c29f4029327195.destinations[str_destination]), "No destination struct found for targetname " + str_destination);
+        assert(isdefined(level.contentmanager.destinations[str_destination]), "No destination struct found for targetname " + str_destination);
     #/
     i = 0;
     foreach (var_bb24acdfc3f6728 in var_29d15208128f7711) {
@@ -186,12 +186,12 @@ function function_b1ae4ace992f6a83(str_destination, var_29d15208128f7711) {
         /#
             assert(isdefined(adjacency), "No destination struct found for adjacency targetname " + var_bb24acdfc3f6728);
         #/
-        level.var_a1c29f4029327195.destinations[str_destination].var_857bb36632f63005[i] = adjacency;
+        level.contentmanager.destinations[str_destination].adjacencies[i] = adjacency;
         i++;
     }
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x940
 // Size: 0x63
@@ -202,28 +202,28 @@ function function_38c2d8befceaca58(location) {
     /#
         assert(location.variantname == "content_location");
     #/
-    var_c56c2dfa9a246116 = isarray(location.var_e6c053e28858ae8b) && location.var_e6c053e28858ae8b.size > 0;
-    return var_c56c2dfa9a246116;
+    spawned_instances = isarray(location.spawnedinstances) && location.spawnedinstances.size > 0;
+    return spawned_instances;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9ab
 // Size: 0x2fd
-function function_474144349a81edb9() {
-    level.var_a1c29f4029327195.locations = [];
+function setup_locations() {
+    level.contentmanager.locations = [];
     if (!isdefined(level.struct_class_names["variantname"])) {
         return;
     }
-    var_43ea82aeb9e33db7 = getstructarray("content_location", "variantname");
-    foreach (location in var_43ea82aeb9e33db7) {
+    maplocations = getstructarray("content_location", "variantname");
+    foreach (location in maplocations) {
         /#
             assert(isdefined(location.targetname));
         #/
         /#
-            assert(!isdefined(level.var_a1c29f4029327195.locations[location.targetname]));
+            assert(!isdefined(level.contentmanager.locations[location.targetname]));
         #/
-        level.var_a1c29f4029327195.locations[location.targetname] = location;
+        level.contentmanager.locations[location.targetname] = location;
         if (isdefined(location.target)) {
             parent = getstruct(location.target, "targetname");
             if (isdefined(parent) && isdefined(parent.variantname) && parent.variantname == "content_destination") {
@@ -232,7 +232,7 @@ function function_474144349a81edb9() {
         }
         function_dcb921c0f1ffc7a2(location);
         location.instances = [];
-        children = function_b17692d3945df073(location);
+        children = get_children(location);
         foreach (child in children) {
             if (!isdefined(child.variantname) || child.variantname != "content_instance") {
                 continue;
@@ -242,20 +242,20 @@ function function_474144349a81edb9() {
             #/
             if (!isdefined(location.instances[child.content_script_name])) {
                 location.instances[child.content_script_name] = spawnstruct();
-                location.instances[child.content_script_name].var_67b2b78e28eaa758 = [];
+                location.instances[child.content_script_name].versions = [];
             }
-            location.instances[child.content_script_name].var_67b2b78e28eaa758 = function_53c4c53197386572(location.instances[child.content_script_name].var_67b2b78e28eaa758, []);
-            location.instances[child.content_script_name].var_67b2b78e28eaa758 = function_6d6af8144a5131f1(location.instances[child.content_script_name].var_67b2b78e28eaa758, child);
+            location.instances[child.content_script_name].versions = default_to(location.instances[child.content_script_name].versions, []);
+            location.instances[child.content_script_name].versions = function_6d6af8144a5131f1(location.instances[child.content_script_name].versions, child);
             child.location = location;
         }
     }
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcaf
 // Size: 0xc1
-function function_7e2984b7610f3616(instance) {
+function spawn_instance(instance) {
     /#
         assert(isstruct(instance));
     #/
@@ -269,14 +269,14 @@ function function_7e2984b7610f3616(instance) {
         assert(isstruct(instance.location));
     #/
     function_dcb921c0f1ffc7a2(instance);
-    script = level.var_a1c29f4029327195.var_60af51053ce930e3[instance.content_script_name];
+    script = level.contentmanager.registeredscripts[instance.content_script_name];
     if (isdefined(script.spawncallback)) {
         level thread [[ script.spawncallback ]](instance);
     }
     function_83373446144cfe7d(instance);
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd77
 // Size: 0x79
@@ -296,45 +296,45 @@ function function_200f782ea3757585(instance) {
     return !function_38c2d8befceaca58(instance.location);
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf8
 // Size: 0x100
 function function_83373446144cfe7d(instance) {
     /#
-        assert(isarray(level.var_a1c29f4029327195.var_e6c053e28858ae8b));
+        assert(isarray(level.contentmanager.spawnedinstances));
     #/
-    instance.location.var_e6c053e28858ae8b = function_53c4c53197386572(instance.location.var_e6c053e28858ae8b, []);
-    instance.location.var_e6c053e28858ae8b[instance.location.var_e6c053e28858ae8b.size] = instance;
-    var_e6c053e28858ae8b = level.var_a1c29f4029327195.var_e6c053e28858ae8b;
-    var_e6c053e28858ae8b[instance.content_script_name] = function_53c4c53197386572(var_e6c053e28858ae8b[instance.content_script_name], []);
-    var_e6c053e28858ae8b[instance.content_script_name][var_e6c053e28858ae8b[instance.content_script_name].size] = instance;
-    level.var_a1c29f4029327195.var_e6c053e28858ae8b = var_e6c053e28858ae8b;
+    instance.location.spawnedinstances = default_to(instance.location.spawnedinstances, []);
+    instance.location.spawnedinstances[instance.location.spawnedinstances.size] = instance;
+    spawnedinstances = level.contentmanager.spawnedinstances;
+    spawnedinstances[instance.content_script_name] = default_to(spawnedinstances[instance.content_script_name], []);
+    spawnedinstances[instance.content_script_name][spawnedinstances[instance.content_script_name].size] = instance;
+    level.contentmanager.spawnedinstances = spawnedinstances;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xeff
 // Size: 0x91
-function function_19bcbd034aaa5ce3(struct, var_91839babd32261f4, usecallback, offset) {
+function spawn_interact(struct, var_91839babd32261f4, usecallback, offset) {
     /#
         assert(isstruct(struct));
     #/
     /#
         assert(isdefined(usecallback));
     #/
-    offset = function_53c4c53197386572(offset, (0, 0, 0));
+    offset = default_to(offset, (0, 0, 0));
     interact = spawnscriptable(var_91839babd32261f4, struct.origin + offset, struct.angles);
     function_32645103f7520635(interact, usecallback);
-    interact function_99a7a88bec105cb5(1);
+    interact interact_show(1);
     return interact;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf98
 // Size: 0x34
-function function_99a7a88bec105cb5(b_show) {
+function interact_show(b_show) {
     state_name = "visible";
     if (!b_show) {
         state_name = "hidden";
@@ -342,7 +342,7 @@ function function_99a7a88bec105cb5(b_show) {
     self setscriptablepartstate("content_interact", state_name);
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfd3
 // Size: 0x14
@@ -350,42 +350,42 @@ function function_1ab52e17fab56634() {
     self setscriptablepartstate("content_interact", "inactive");
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0xfee
 // Size: 0x55
-function function_23ae540319eb2769(interact, part, state, player, var_11648d9cb3869a36, var_7babf251c31514d8) {
+function interact_used(interact, part, state, player, auto_use, use_string) {
     if (!isdefined(interact.var_e9c2e3596843e78)) {
         return;
     }
     interact thread [[ interact.var_e9c2e3596843e78 ]](player);
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x104a
 // Size: 0xa8
-function function_a6df741f1a9b67b1(var_5a078549a5190850, modelname, var_4056e5ccaf62d67d, var_f5dbb23ccbfbc995) {
-    function_53c4c53197386572(var_4056e5ccaf62d67d, 0);
-    function_53c4c53197386572(var_f5dbb23ccbfbc995, 1);
+function function_a6df741f1a9b67b1(contentstructs, modelname, var_4056e5ccaf62d67d, var_f5dbb23ccbfbc995) {
+    default_to(var_4056e5ccaf62d67d, 0);
+    default_to(var_f5dbb23ccbfbc995, 1);
     models = [];
-    foreach (struct in var_5a078549a5190850) {
+    foreach (struct in contentstructs) {
         model = spawn_script_model(struct, modelname, var_4056e5ccaf62d67d, var_f5dbb23ccbfbc995);
         models[models.size] = model;
     }
     return models;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10fa
 // Size: 0x1ef
 function spawn_script_model(struct, modelname, var_4056e5ccaf62d67d, var_f5dbb23ccbfbc995, var_194ed46ea3828b33) {
-    var_4056e5ccaf62d67d = function_53c4c53197386572(var_4056e5ccaf62d67d, 0);
-    var_f5dbb23ccbfbc995 = function_53c4c53197386572(var_f5dbb23ccbfbc995, 1);
-    var_194ed46ea3828b33 = function_53c4c53197386572(var_194ed46ea3828b33, struct.origin);
+    var_4056e5ccaf62d67d = default_to(var_4056e5ccaf62d67d, 0);
+    var_f5dbb23ccbfbc995 = default_to(var_f5dbb23ccbfbc995, 1);
+    var_194ed46ea3828b33 = default_to(var_194ed46ea3828b33, struct.origin);
     model = spawn("script_model", var_194ed46ea3828b33);
-    model.angles = function_53c4c53197386572(struct.angles, (0, 0, 0));
+    model.angles = default_to(struct.angles, (0, 0, 0));
     model setmodel(modelname);
     if (isdefined(struct.targetname)) {
         model.targetname = struct.targetname;
@@ -402,7 +402,7 @@ function spawn_script_model(struct, modelname, var_4056e5ccaf62d67d, var_f5dbb23
     if (var_f5dbb23ccbfbc995) {
     }
     parent = struct;
-    while (1) {
+    while (true) {
         if (isdefined(parent.variantname) && parent.variantname == "content_instance" && isdefined(parent.a)) {
             if (!array_contains(parent.a.models, model)) {
                 parent.a.models = array_add(parent.a.models, model);
@@ -421,19 +421,19 @@ function spawn_script_model(struct, modelname, var_4056e5ccaf62d67d, var_f5dbb23
     return model;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x12f1
 // Size: 0xfb
-function function_20cece1eac44f384(struct, var_fd1db4cbcc978938, var_52bec72bdd3b32dd) {
-    function_53c4c53197386572(var_52bec72bdd3b32dd, 0);
-    zbarrier = spawn(var_fd1db4cbcc978938, struct.origin);
+function spawn_zbarrier(struct, zbarrier_classname, var_52bec72bdd3b32dd) {
+    default_to(var_52bec72bdd3b32dd, 0);
+    zbarrier = spawn(zbarrier_classname, struct.origin);
     zbarrier.angles = struct.angles;
     if (var_52bec72bdd3b32dd) {
         zbarrier disconnectpaths();
     }
     parent = struct;
-    while (1) {
+    while (true) {
         if (parent.variantname == "content_instance") {
             if (!array_contains(parent.a.models, zbarrier)) {
                 parent.a.models = array_add(parent.a.models, zbarrier);
@@ -448,18 +448,18 @@ function function_20cece1eac44f384(struct, var_fd1db4cbcc978938, var_52bec72bdd3
     return zbarrier;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13f4
 // Size: 0x2a5
 function cleanup_spawned_instances() {
     level notify("cleanup_spawned_instances");
     var_c2e3697f2eabf2ea = 10;
-    var_72f5e4807344e520 = 0;
-    foreach (group in level.var_a1c29f4029327195.var_e6c053e28858ae8b) {
+    models_cleaned = 0;
+    foreach (group in level.contentmanager.spawnedinstances) {
         foreach (instance in group) {
-            if (isdefined(instance.var_4172b6056854f2f3)) {
-                foreach (model in instance.var_4172b6056854f2f3) {
+            if (isdefined(instance.a_models)) {
+                foreach (model in instance.a_models) {
                     if (isdefined(model)) {
                         if (isdefined(model.trigger)) {
                             model.trigger delete();
@@ -480,31 +480,31 @@ function cleanup_spawned_instances() {
                         }
                         model anim_scene_stop();
                         model delete();
-                        var_72f5e4807344e520 = var_72f5e4807344e520 + 1;
-                        if (var_72f5e4807344e520 % var_c2e3697f2eabf2ea == 0) {
+                        models_cleaned = models_cleaned + 1;
+                        if (models_cleaned % var_c2e3697f2eabf2ea == 0) {
                             wait(0.05);
                         }
                     }
                 }
-                instance.var_4172b6056854f2f3 = array_removeundefined(instance.var_4172b6056854f2f3);
+                instance.a_models = array_removeundefined(instance.a_models);
             }
             group = array_remove(group, instance);
-            instance.location.var_e6c053e28858ae8b = array_remove(instance.location.var_e6c053e28858ae8b, instance);
+            instance.location.spawnedinstances = array_remove(instance.location.spawnedinstances, instance);
         }
         group = array_removeundefined(group);
-        level.var_a1c29f4029327195.var_e6c053e28858ae8b = array_remove(level.var_a1c29f4029327195.var_e6c053e28858ae8b, group);
+        level.contentmanager.spawnedinstances = array_remove(level.contentmanager.spawnedinstances, group);
     }
-    array_removeundefined(level.var_a1c29f4029327195.var_e6c053e28858ae8b);
+    array_removeundefined(level.contentmanager.spawnedinstances);
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16a0
 // Size: 0xbf
 function function_dcb921c0f1ffc7a2(parent) {
-    children = function_b17692d3945df073(parent);
-    var_305e36cbb51f88ce = function_8133fcadd8a74b66(children);
-    parent.var_305e36cbb51f88ce = var_305e36cbb51f88ce;
+    children = get_children(parent);
+    contentgroups = function_8133fcadd8a74b66(children);
+    parent.contentgroups = contentgroups;
     foreach (child in children) {
         if (!isdefined(child.content_key) || child.variantname != "content_struct") {
             continue;
@@ -514,7 +514,7 @@ function function_dcb921c0f1ffc7a2(parent) {
     }
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1766
 // Size: 0xc6
@@ -524,24 +524,24 @@ function function_8133fcadd8a74b66(children) {
         if (!isdefined(child.content_key) || child.variantname != "content_struct") {
             continue;
         }
-        groups[child.content_key] = function_53c4c53197386572(groups[child.content_key], []);
+        groups[child.content_key] = default_to(groups[child.content_key], []);
         groups[child.content_key][groups[child.content_key].size] = child;
     }
     return groups;
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1834
 // Size: 0x33
-function function_b17692d3945df073(parent) {
+function get_children(parent) {
     if (!isdefined(parent.targetname)) {
         return [];
     }
     return getstructarray(parent.targetname, "target");
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x186f
 // Size: 0x37c
@@ -553,23 +553,23 @@ function init_devgui() {
         adddebugcommand("<unknown string>" + "<unknown string>" + "<unknown string>");
         path = devgui_path("<unknown string>", 0);
         add_devgui(devgui_path("<unknown string>", 0), "<unknown string>" + "<unknown string>" + "<unknown string>");
-        foreach (destination in level.var_a1c29f4029327195.destinations) {
+        foreach (destination in level.contentmanager.destinations) {
             foreach (location in destination.locations) {
-                foreach (var_5ba045294c1d4d1b in location.instances) {
-                    foreach (instance in var_5ba045294c1d4d1b.var_67b2b78e28eaa758) {
-                        var_56150f88eefb0135 = location.targetname + "<unknown string>" + instance.content_script_name;
+                foreach (instance_type in location.instances) {
+                    foreach (instance in instance_type.versions) {
+                        instancekey = location.targetname + "<unknown string>" + instance.content_script_name;
                         path = devgui_path("<unknown string>", 1, destination.targetname + "<unknown string>" + location.targetname + "<unknown string>" + instance.content_script_name);
-                        add_devgui(path, "<unknown string>" + "<unknown string>" + var_56150f88eefb0135);
+                        add_devgui(path, "<unknown string>" + "<unknown string>" + instancekey);
                     }
                 }
             }
         }
-        foreach (location in level.var_a1c29f4029327195.locations) {
-            foreach (var_5ba045294c1d4d1b in location.instances) {
-                foreach (instance in var_5ba045294c1d4d1b.var_67b2b78e28eaa758) {
-                    var_56150f88eefb0135 = location.targetname + "<unknown string>" + instance.content_script_name;
+        foreach (location in level.contentmanager.locations) {
+            foreach (instance_type in location.instances) {
+                foreach (instance in instance_type.versions) {
+                    instancekey = location.targetname + "<unknown string>" + instance.content_script_name;
                     path = devgui_path("<unknown string>", 2, location.targetname + "<unknown string>" + instance.content_script_name);
-                    add_devgui(path, "<unknown string>" + "<unknown string>" + var_56150f88eefb0135);
+                    add_devgui(path, "<unknown string>" + "<unknown string>" + instancekey);
                 }
             }
         }
@@ -578,7 +578,7 @@ function init_devgui() {
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bf2
 // Size: 0x54
@@ -593,7 +593,7 @@ function devgui_path(name, pos, str) {
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c4d
 // Size: 0x3f
@@ -604,7 +604,7 @@ function add_devgui(menu_path, commands) {
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c93
 // Size: 0x19
@@ -614,7 +614,7 @@ function addentrytodevgui(command) {
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cb3
 // Size: 0x16e
@@ -627,32 +627,32 @@ function addentrytodevgui_internal(command) {
         if (isdefined(game["<unknown string>"]) && game["<unknown string>"] == "<unknown string>") {
             return;
         }
-        var_94899ee0671e1c5d = "<unknown string>";
+        final_command = "<unknown string>";
         toks = strtok(command, "<unknown string>");
         space = "<unknown string>";
-        var_295ab3a52efb020f = 0;
+        num_toks = 0;
         foreach (tok in toks) {
-            var_af9c9df381f94999 = strtok(tok, "<unknown string>");
+            new_toks = strtok(tok, "<unknown string>");
             count = 1;
-            size = var_af9c9df381f94999.size;
-            foreach (var_1a598a8191bcb170 in var_af9c9df381f94999) {
+            size = new_toks.size;
+            foreach (new_tok in new_toks) {
                 if (count < size) {
-                    var_94899ee0671e1c5d = var_94899ee0671e1c5d + var_1a598a8191bcb170 + space;
+                    final_command = final_command + new_tok + space;
                 } else {
-                    var_94899ee0671e1c5d = var_94899ee0671e1c5d + var_1a598a8191bcb170;
+                    final_command = final_command + new_tok;
                 }
                 count++;
             }
-            var_295ab3a52efb020f++;
-            if (var_295ab3a52efb020f < toks.size) {
-                var_94899ee0671e1c5d = var_94899ee0671e1c5d + "<unknown string>";
+            num_toks++;
+            if (num_toks < toks.size) {
+                final_command = final_command + "<unknown string>";
             }
         }
-        adddebugcommand(var_94899ee0671e1c5d);
+        adddebugcommand(final_command);
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e28
 // Size: 0x130
@@ -660,37 +660,37 @@ function function_35cf2e81c8407bf7() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             setdvar(@"hash_861046be2917f04e", "<unknown string>");
             wait(0.05);
-            var_56150f88eefb0135 = getdvar(@"hash_861046be2917f04e", "<unknown string>");
-            if (var_56150f88eefb0135 == "<unknown string>") {
+            instancekey = getdvar(@"hash_861046be2917f04e", "<unknown string>");
+            if (instancekey == "<unknown string>") {
                 continue;
             }
-            keys = strtok(var_56150f88eefb0135, "<unknown string>");
+            keys = strtok(instancekey, "<unknown string>");
             if (keys.size != 2) {
                 continue;
             }
-            location = level.var_a1c29f4029327195.locations[keys[0]];
+            location = level.contentmanager.locations[keys[0]];
             if (!isdefined(location)) {
                 continue;
             }
-            if (isdefined(location.var_b7886c3d5545ba3a)) {
+            if (isdefined(location.spawnedinstance)) {
                 continue;
             }
-            instance = location.instances.var_67b2b78e28eaa758[keys[1]];
+            instance = location.instances.versions[keys[1]];
             if (!isdefined(instance)) {
                 continue;
             }
             teleport = function_9218617331ba59ff(instance, "<unknown string>");
-            function_53c4c53197386572(teleport, instance);
+            default_to(teleport, instance);
             level.players[0] setorigin(teleport.origin);
-            function_7e2984b7610f3616(instance);
+            spawn_instance(instance);
         }
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f5f
 // Size: 0xfe
@@ -698,13 +698,13 @@ function debug_draw() {
     /#
         self notify("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_8a58a350fd3df60e", 0)) {
-                foreach (destination in level.var_a1c29f4029327195.destinations) {
-                    function_ac0b580419066d20(destination);
+                foreach (destination in level.contentmanager.destinations) {
+                    draw_destination(destination);
                 }
-                foreach (location in level.var_a1c29f4029327195.locations) {
-                    function_2fba5395880d5447(location, location.destination);
+                foreach (location in level.contentmanager.locations) {
+                    draw_location(location, location.destination);
                 }
             }
             wait(0.05);
@@ -712,52 +712,52 @@ function debug_draw() {
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2064
 // Size: 0x30
-function function_ac0b580419066d20(destination) {
+function draw_destination(destination) {
     /#
-        function_b61b797023f317b9(destination, (0, 1, 0), undefined, destination.targetname);
+        draw_struct(destination, (0, 1, 0), undefined, destination.targetname);
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x209b
 // Size: 0xe2
-function function_2fba5395880d5447(location, destination) {
+function draw_location(location, destination) {
     /#
-        function_b61b797023f317b9(location, (0, 1, 1), destination, location.targetname);
-        foreach (var_5ba045294c1d4d1b in location.instances) {
-            foreach (instance in var_5ba045294c1d4d1b.var_67b2b78e28eaa758) {
-                function_34c04f8422c91f7b(instance, location);
+        draw_struct(location, (0, 1, 1), destination, location.targetname);
+        foreach (instance_type in location.instances) {
+            foreach (instance in instance_type.versions) {
+                draw_instance(instance, location);
             }
         }
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2184
 // Size: 0x35
-function function_34c04f8422c91f7b(instance, location) {
+function draw_instance(instance, location) {
     /#
-        function_b61b797023f317b9(instance, (0, 0, 1), location);
+        draw_struct(instance, (0, 0, 1), location);
         function_151de086961dc5d6(instance);
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x21c0
 // Size: 0xd5
 function function_151de086961dc5d6(node) {
     /#
-        if (isarray(node.var_305e36cbb51f88ce)) {
-            foreach (group in node.var_305e36cbb51f88ce) {
+        if (isarray(node.contentgroups)) {
+            foreach (group in node.contentgroups) {
                 foreach (child in group) {
-                    function_b61b797023f317b9(child, (1, 0, 1), node);
+                    draw_struct(child, (1, 0, 1), node);
                     function_151de086961dc5d6(child);
                 }
             }
@@ -765,17 +765,17 @@ function function_151de086961dc5d6(node) {
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x229c
 // Size: 0xc1
-function function_b61b797023f317b9(struct, color, parent, var_8ada48955e1c1ed8) {
+function draw_struct(struct, color, parent, extrastr) {
     /#
         debugstr = undefined;
         debugstr = function_8d3f50d17aeb1eae(debugstr, struct.variantname);
         debugstr = function_8d3f50d17aeb1eae(debugstr, struct.content_script_name);
         debugstr = function_8d3f50d17aeb1eae(debugstr, struct.content_key);
-        debugstr = function_8d3f50d17aeb1eae(debugstr, var_8ada48955e1c1ed8);
+        debugstr = function_8d3f50d17aeb1eae(debugstr, extrastr);
         if (isdefined(parent)) {
             line(struct.origin, parent.origin, color);
         }
@@ -784,7 +784,7 @@ function function_b61b797023f317b9(struct, color, parent, var_8ada48955e1c1ed8) 
     #/
 }
 
-// Namespace namespace_4e16584f2211900a/namespace_4164bc931714b00b
+// Namespace content_manager / namespace_4164bc931714b00b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2364
 // Size: 0x32

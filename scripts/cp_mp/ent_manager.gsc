@@ -2,9 +2,9 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 
-#namespace namespace_cd074ac917dcd87a;
+#namespace ent_manager;
 
-// Namespace namespace_cd074ac917dcd87a/namespace_2a9588dfac284b77
+// Namespace ent_manager / scripts/cp_mp/ent_manager
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x102
 // Size: 0x30
@@ -14,7 +14,7 @@ function init() {
     level.budgetedents = [];
 }
 
-// Namespace namespace_cd074ac917dcd87a/namespace_2a9588dfac284b77
+// Namespace ent_manager / scripts/cp_mp/ent_manager
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x139
 // Size: 0x31
@@ -24,7 +24,7 @@ function registerspawncount(entcount) {
     updatebudget();
 }
 
-// Namespace namespace_cd074ac917dcd87a/namespace_2a9588dfac284b77
+// Namespace ent_manager / scripts/cp_mp/ent_manager
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x171
 // Size: 0xa5
@@ -41,12 +41,12 @@ function deregisterspawn() {
         }
     }
     if (isdefined(self.entdeletefunc)) {
-        level.budgetedents = namespace_3c37cb17ade254d::array_remove(level.budgetedents, self);
+        level.budgetedents = scripts/engine/utility::array_remove(level.budgetedents, self);
         self.entdeletefunc = undefined;
     }
 }
 
-// Namespace namespace_cd074ac917dcd87a/namespace_2a9588dfac284b77
+// Namespace ent_manager / scripts/cp_mp/ent_manager
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21d
 // Size: 0x59
@@ -58,7 +58,7 @@ function registerspawn(entcount, deletefunc) {
     updatebudget();
 }
 
-// Namespace namespace_cd074ac917dcd87a/namespace_2a9588dfac284b77
+// Namespace ent_manager / scripts/cp_mp/ent_manager
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27d
 // Size: 0x95
@@ -72,11 +72,11 @@ function updatebudget() {
                 assertmsg("Error undefined entry in level.budgetedEnts!  Did this get deleted before deregistration?");
             #/
         }
-        level.budgetedents = namespace_3c37cb17ade254d::array_slice(level.budgetedents, 0, 1);
+        level.budgetedents = scripts/engine/utility::array_slice(level.budgetedents, 0, 1);
     }
 }
 
-// Namespace namespace_cd074ac917dcd87a/namespace_2a9588dfac284b77
+// Namespace ent_manager / scripts/cp_mp/ent_manager
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x319
 // Size: 0x7e

@@ -8,18 +8,18 @@
 
 #namespace namespace_d3a2045314c6410;
 
-// Namespace namespace_d3a2045314c6410/namespace_7592b800c0f1716e
+// Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x31
-function function_d0bf32b41b280147(asmname, statename, var_f2b19b25d457c2a6, params) {
+function function_d0bf32b41b280147(asmname, statename, tostatename, params) {
     if (namespace_9e6ef02d993a7eba::is_crawling()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_d3a2045314c6410/namespace_7592b800c0f1716e
+// Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11a
 // Size: 0xfd
@@ -35,7 +35,7 @@ function choosestandingdeathanim(asmname, statename, params, bmoving) {
     } else if (self.damageyaw > -45 && self.damageyaw <= 45) {
         alias = "backward";
     }
-    var_59c845b773d9a361 = function_97e3d03766d35f35();
+    var_59c845b773d9a361 = getdamagetaken();
     if (var_59c845b773d9a361 != "light") {
         alias = alias + "_" + var_59c845b773d9a361;
     }
@@ -43,7 +43,7 @@ function choosestandingdeathanim(asmname, statename, params, bmoving) {
     return deathanim;
 }
 
-// Namespace namespace_d3a2045314c6410/namespace_7592b800c0f1716e
+// Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x21f
 // Size: 0x3d
@@ -53,7 +53,7 @@ function playdeathanim(asmname, statename, params) {
     playanim(asmname, statename);
 }
 
-// Namespace namespace_d3a2045314c6410/namespace_7592b800c0f1716e
+// Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x263
 // Size: 0x7c
@@ -77,7 +77,7 @@ function playdeathanim_melee_ragdolldelayed(asmname, statename, params) {
     }
 }
 
-// Namespace namespace_d3a2045314c6410/namespace_7592b800c0f1716e
+// Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e6
 // Size: 0x27
@@ -85,11 +85,11 @@ function choosemovingdeathanim(asmname, statename, params) {
     return choosestandingdeathanim(asmname, statename, params, 1);
 }
 
-// Namespace namespace_d3a2045314c6410/namespace_7592b800c0f1716e
+// Namespace namespace_d3a2045314c6410 / namespace_7592b800c0f1716e
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x315
 // Size: 0x6c
-function function_97e3d03766d35f35() {
+function getdamagetaken() {
     damagetakentype = "light";
     if (isdefined(self.damagemod) && isexplosivedamagemod(self.damagemod)) {
         damagetakentype = "explosive";

@@ -3,7 +3,7 @@
 
 #namespace namespace_1db1af84206cddd0;
 
-// Namespace namespace_1db1af84206cddd0/namespace_eb1b5a598c9a5b07
+// Namespace namespace_1db1af84206cddd0 / namespace_eb1b5a598c9a5b07
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9ada
 // Size: 0x562
@@ -65,7 +65,7 @@ function function_8d59ea17104ccc81() {
     level.var_1a209bd995a7fa83["wz_iw9_exfil_outro_helicopter_sh010"] = mp_vehicles_always_loaded%wz_iw9_exfil_outro_helicopter_sh010;
 }
 
-// Namespace namespace_1db1af84206cddd0/namespace_eb1b5a598c9a5b07
+// Namespace namespace_1db1af84206cddd0 / namespace_eb1b5a598c9a5b07
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa043
 // Size: 0x183b
@@ -320,7 +320,7 @@ function function_9552697d50ec08e1() {
     level.var_1a209bd995a7fa83["wz_br_jup_infil_sh100_laptop3"] = script_model%wz_br_jup_infil_sh100_laptop3;
 }
 
-// Namespace namespace_1db1af84206cddd0/namespace_eb1b5a598c9a5b07
+// Namespace namespace_1db1af84206cddd0 / namespace_eb1b5a598c9a5b07
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb885
 // Size: 0x3bb8
@@ -938,10 +938,10 @@ function init() {
     level.var_1a209bd995a7fa83["wm_skyhook_ground_takeoff"] = script_model%wm_skyhook_ground_takeoff;
     level.var_1a209bd995a7fa83["wm_skyhook_ground_idle_open"] = script_model%wm_skyhook_ground_idle_open;
     level.var_74320167a9d0ecac = &function_bea4801ea91bd2f4;
-    namespace_35493d8b6027046f::fulton_initanims();
+    scripts/mp/equipment/fulton::fulton_initanims();
 }
 
-// Namespace namespace_1db1af84206cddd0/namespace_eb1b5a598c9a5b07
+// Namespace namespace_1db1af84206cddd0 / namespace_eb1b5a598c9a5b07
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf444
 // Size: 0x3c

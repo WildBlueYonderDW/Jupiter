@@ -4,7 +4,7 @@
 
 #namespace screens;
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2db
 // Size: 0x162
@@ -25,12 +25,12 @@ function init() {
     }
     if (isdefined(level.screens_think_func)) {
         array_thread(level.screens.screens, level.screens_think_func);
-    } else {
-        array_thread(level.screens.screens, &screens_think);
+        return;
     }
+    array_thread(level.screens.screens, &screens_think);
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x444
 // Size: 0xd2
@@ -45,7 +45,7 @@ function group_by_flag() {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x51d
 // Size: 0x47
@@ -58,12 +58,12 @@ function screens_think() {
     state = get_state();
     if (isdefined(state)) {
         do_state(state);
-    } else {
-        screens_fixed();
+        return;
     }
+    screens_fixed();
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x56b
 // Size: 0x2b8
@@ -133,7 +133,7 @@ function do_state(state) {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x82a
 // Size: 0x6a
@@ -145,7 +145,7 @@ function screens_create() {
     get_screens();
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x89b
 // Size: 0x3b
@@ -156,7 +156,7 @@ function screens_damage_think() {
     self.screen_model delete();
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8dd
 // Size: 0x3c
@@ -169,25 +169,25 @@ function screens_delete() {
     delete_screens();
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x920
 // Size: 0x120
-function screens_fixed(var_1f32425def6f7b2e) {
-    if (!isdefined(self.screens_fixed) && !isdefined(var_1f32425def6f7b2e)) {
+function screens_fixed(screen_override) {
+    if (!isdefined(self.screens_fixed) && !isdefined(screen_override)) {
         return;
     }
     self endon("stop_screens");
     self endon("stop_screens_fixed");
-    if (isdefined(var_1f32425def6f7b2e)) {
-        screen = var_1f32425def6f7b2e;
+    if (isdefined(screen_override)) {
+        screen = screen_override;
     } else {
         screen = "screen_fixed" + randomint(self.screens_fixed.size) + 1;
     }
     if (debug()) {
-        var_c926d15b7da67be = screen;
-        if (isdefined(var_1f32425def6f7b2e)) {
-            var_c926d15b7da67be = "override " + var_c926d15b7da67be;
+        display_screen = screen;
+        if (isdefined(screen_override)) {
+            display_screen = "override " + display_screen;
         }
         /#
             print3d(self.origin, screen, (1, 1, 1), 1, 0.1, 1000);
@@ -196,7 +196,7 @@ function screens_fixed(var_1f32425def6f7b2e) {
     self.state = "on";
     self.screen_model hideallparts();
     self.screen_model showpart(screen);
-    if (isdefined(self.screens_widget) && !isdefined(var_1f32425def6f7b2e)) {
+    if (isdefined(self.screens_widget) && !isdefined(screen_override)) {
         if (randomint(3) == 0) {
             screen = "screen_widget" + randomint(self.screens_widget.size) + 1;
             self.screen_model showpart(screen);
@@ -204,7 +204,7 @@ function screens_fixed(var_1f32425def6f7b2e) {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa47
 // Size: 0xa2
@@ -225,7 +225,7 @@ function screens_static() {
     self.screen_model showpart(screen);
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xaf0
 // Size: 0xf6
@@ -235,9 +235,8 @@ function screens_flip() {
     }
     self endon("stop_screens");
     self endon("stop_screens_flip");
-    var_e689afa1a3e3d500 = randomint(self.screens_flip.size) + 1;
-    while (1) {
-        for (i = var_e689afa1a3e3d500; i < self.screens_flip.size + 1; i++) {
+    for (start_screen = randomint(self.screens_flip.size) + 1; true; start_screen = 1) {
+        for (i = start_screen; i < self.screens_flip.size + 1; i++) {
             delay = 3;
             screen = "screen_flip" + i;
             if (debug()) {
@@ -250,11 +249,10 @@ function screens_flip() {
             self.screen_model showpart(screen);
             wait(delay);
         }
-        var_e689afa1a3e3d500 = 1;
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbed
 // Size: 0x100
@@ -264,9 +262,8 @@ function screens_fliprnd() {
     }
     self endon("stop_screens");
     self endon("stop_screens_fliprnd");
-    var_e689afa1a3e3d500 = randomint(self.screens_fliprnd.size) + 1;
-    while (1) {
-        for (i = var_e689afa1a3e3d500; i < self.screens_fliprnd.size + 1; i++) {
+    for (start_screen = randomint(self.screens_fliprnd.size) + 1; true; start_screen = 1) {
+        for (i = start_screen; i < self.screens_fliprnd.size + 1; i++) {
             delay = randomfloatrange(1.5, 4);
             screen = "screen_fliprnd" + i;
             if (debug()) {
@@ -279,11 +276,10 @@ function screens_fliprnd() {
             self.screen_model showpart(screen);
             wait(delay);
         }
-        var_e689afa1a3e3d500 = 1;
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcf4
 // Size: 0xa2
@@ -304,7 +300,7 @@ function screens_bink() {
     self.screen_model showpart(screen);
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd9d
 // Size: 0x161
@@ -315,8 +311,7 @@ function screens_red() {
     self endon("stop_screens");
     self endon("stop_screens_red");
     self.reversed = 0;
-    var_e689afa1a3e3d500 = randomint(self.screens_red.size) + 1;
-    while (1) {
+    for (start_screen = randomint(self.screens_red.size) + 1; true; start_screen = 1) {
         for (i = 1; i < self.screens_red.size + 1; i++) {
             delay = randomfloatrange(0.25, 0.5);
             if (randomint(6) == 0 && !self.reversed) {
@@ -340,11 +335,10 @@ function screens_red() {
             self.screen_model showpart(screen);
             wait(delay);
         }
-        var_e689afa1a3e3d500 = 1;
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf05
 // Size: 0xef
@@ -355,7 +349,7 @@ function screens_alertflip() {
     self endon("stop_screens");
     self endon("stop_screens_alertflip");
     self.screen_model hideallparts();
-    while (1) {
+    while (true) {
         delay = randomfloatrange(0.5, 1);
         if (debug()) {
             /#
@@ -372,7 +366,7 @@ function screens_alertflip() {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xffb
 // Size: 0x275
@@ -386,37 +380,51 @@ function get_screens() {
                     self.screens_red = [];
                 }
                 self.screens_red = array_add(self.screens_red, part_name);
-            } else if (issubstr(part_name, "screen_fixed")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_fixed")) {
                 if (!isdefined(self.screens_fixed)) {
                     self.screens_fixed = [];
                 }
                 self.screens_fixed = array_add(self.screens_fixed, part_name);
-            } else if (issubstr(part_name, "screen_static")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_static")) {
                 if (!isdefined(self.screens_static)) {
                     self.screens_static = [];
                 }
                 self.screens_static = array_add(self.screens_static, part_name);
-            } else if (issubstr(part_name, "screen_fliprnd")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_fliprnd")) {
                 if (!isdefined(self.screens_fliprnd)) {
                     self.screens_fliprnd = [];
                 }
                 self.screens_fliprnd = array_add(self.screens_fliprnd, part_name);
-            } else if (issubstr(part_name, "screen_flip")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_flip")) {
                 if (!isdefined(self.screens_flip)) {
                     self.screens_flip = [];
                 }
                 self.screens_flip = array_add(self.screens_flip, part_name);
-            } else if (issubstr(part_name, "screen_bink")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_bink")) {
                 if (!isdefined(self.screens_bink)) {
                     self.screens_bink = [];
                 }
                 self.screens_bink = array_add(self.screens_bink, part_name);
-            } else if (issubstr(part_name, "screen_alertflip")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_alertflip")) {
                 if (!isdefined(self.screens_alertflip)) {
                     self.screens_alertflip = [];
                 }
                 self.screens_alertflip = array_add(self.screens_alertflip, part_name);
-            } else if (issubstr(part_name, "screen_widget")) {
+                continue;
+            }
+            if (issubstr(part_name, "screen_widget")) {
                 if (!isdefined(self.screens_widget)) {
                     self.screens_widget = [];
                 }
@@ -426,7 +434,7 @@ function get_screens() {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1277
 // Size: 0xbb
@@ -457,7 +465,7 @@ function delete_screens() {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1339
 // Size: 0x171
@@ -498,7 +506,7 @@ function get_state() {
     return undefined;
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b2
 // Size: 0x187
@@ -527,18 +535,18 @@ function watch_scriptable() {
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1640
 // Size: 0x1a
 function debug() {
     if (getdvarint(@"hash_9a6917debd75e407") > 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1662
 // Size: 0x3
@@ -546,7 +554,7 @@ function set_screens_to_red() {
     
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x166c
 // Size: 0x21c
@@ -554,35 +562,35 @@ function screens_debug_counter() {
     if (!debug()) {
         return;
     }
-    while (1) {
-        var_f7aa19c560becea9 = 0;
+    while (true) {
+        active_screens = 0;
         var_ec0e4105bdc56e33 = 0;
         keys = getarraykeys(level.screens.screens_flagged);
         foreach (key in keys) {
             var_ec0e4105bdc56e33 = var_ec0e4105bdc56e33 + level.screens.screens_flagged[key].size;
             foreach (screen in level.screens.screens_flagged[key]) {
                 if (isdefined(screen.state) && screen.state == "on") {
-                    var_f7aa19c560becea9 = var_f7aa19c560becea9 + 1;
+                    active_screens = active_screens + 1;
                 }
             }
         }
         foreach (screen in level.screens.screens) {
             if (isdefined(screen.state) && screen.state == "on") {
-                var_f7aa19c560becea9 = var_f7aa19c560becea9 + 1;
+                active_screens = active_screens + 1;
             }
         }
-        var_49f11cb535c18fd1 = level.screens.screens.size + var_ec0e4105bdc56e33;
+        total_count = level.screens.screens.size + var_ec0e4105bdc56e33;
         /#
-            printtoscreen2d(1000, 70, "<unknown string>" + var_49f11cb535c18fd1, (1, 1, 1), 2);
+            printtoscreen2d(1000, 70, "<unknown string>" + total_count, (1, 1, 1), 2);
         #/
         /#
-            printtoscreen2d(1000, 100, "<unknown string>" + var_f7aa19c560becea9, (1, 1, 1), 2);
+            printtoscreen2d(1000, 100, "<unknown string>" + active_screens, (1, 1, 1), 2);
         #/
         waitframe();
     }
 }
 
-// Namespace screens/namespace_9047022678f1260f
+// Namespace screens / scripts/common/screens
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x188f
 // Size: 0x121
@@ -590,7 +598,7 @@ function screens_wait_for_flag(flag) {
     if (!flag_exist(flag)) {
         flag_init(flag);
     }
-    while (1) {
+    while (true) {
         flag_wait(flag);
         if (debug()) {
             iprintln(level.screens.screens_flagged[flag].size + " flagged screens activated: " + flag);

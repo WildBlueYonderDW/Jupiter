@@ -10,12 +10,12 @@
 
 #namespace br_challenges;
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x73
 function init() {
-    if (!namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         return;
     }
     registerchallenge("br_mastery_fiveContracts", &fivecontracts);
@@ -26,53 +26,53 @@ function init() {
     registerchallenge("br_mastery_roundKillExecute", &roundkillexecute);
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x307
 // Size: 0x5b
-function registerchallenge(var_a5cb6f1f6abe070b, var_242dd1075b2cdd44) {
+function registerchallenge(challengeref, challengefunc) {
     if (!isdefined(level.br_challenges)) {
         level.br_challenges = [];
     }
     /#
-        assertex(!isdefined(level.br_challenges[var_a5cb6f1f6abe070b]), "br challenge '" + var_a5cb6f1f6abe070b + "' already defined!");
+        assertex(!isdefined(level.br_challenges[challengeref]), "br challenge '" + challengeref + "' already defined!");
     #/
-    level.br_challenges[var_a5cb6f1f6abe070b] = var_242dd1075b2cdd44;
+    level.br_challenges[challengeref] = challengefunc;
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x369
 // Size: 0x50
-function challengeevaluator(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
+function challengeevaluator(challengeref, paramstruct) {
     /#
-        assert(isdefined(var_a5cb6f1f6abe070b));
+        assert(isdefined(challengeref));
     #/
     if (!isdefined(level.br_challenges)) {
         return;
     }
-    var_242dd1075b2cdd44 = level.br_challenges[var_a5cb6f1f6abe070b];
-    if (isdefined(var_242dd1075b2cdd44)) {
-        self thread [[ var_242dd1075b2cdd44 ]](var_a5cb6f1f6abe070b, var_cd37ce775909957b);
+    challengefunc = level.br_challenges[challengeref];
+    if (isdefined(challengefunc)) {
+        self thread [[ challengefunc ]](challengeref, paramstruct);
     }
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c0
 // Size: 0x39
-function awardmasterychallenge(var_a5cb6f1f6abe070b) {
+function awardmasterychallenge(challengeref) {
     if (getdvarint(@"hash_ad789c41a11e3f59", 0)) {
-        iprintlnbold("Mastery Challenge: " + var_a5cb6f1f6abe070b + " completed!");
+        iprintlnbold("Mastery Challenge: " + challengeref + " completed!");
     }
-    namespace_aad14af462a74d08::oncollectitem(var_a5cb6f1f6abe070b);
+    scripts/cp_mp/challenges::oncollectitem(challengeref);
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x400
 // Size: 0xe5
-function fivecontracts(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
+function fivecontracts(challengeref, paramstruct) {
     if (!isdefined(self.team)) {
         return;
     }
@@ -84,20 +84,20 @@ function fivecontracts(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
         if (!isreallyalive(player)) {
             return;
         }
-        if (var_a11643fdeedee81b && player namespace_d3d40f75bb4e4c32::isplayerinorgoingtogulag()) {
+        if (var_a11643fdeedee81b && player scripts/mp/gametypes/br_public::isplayerinorgoingtogulag()) {
             return;
         }
     }
-    awardmasterychallenge(var_a5cb6f1f6abe070b);
+    awardmasterychallenge(challengeref);
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4ec
 // Size: 0x12e
-function pointblank_airstrike(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
-    plane = var_cd37ce775909957b.plane;
-    targetsite = var_cd37ce775909957b.targetsite;
+function pointblank_airstrike(challengeref, paramstruct) {
+    plane = paramstruct.plane;
+    targetsite = paramstruct.targetsite;
     if (!isdefined(plane) || !isdefined(plane.airstrikeid) || !isdefined(plane.streakinfo) || !isdefined(targetsite)) {
         return;
     }
@@ -114,7 +114,7 @@ function pointblank_airstrike(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
     }
     /#
         if (getdvarint(@"hash_ad789c41a11e3f59", 0)) {
-            iprintlnbold("<unknown string>" + var_a5cb6f1f6abe070b + "<unknown string>" + streakinfo.kills);
+            iprintlnbold("<unknown string>" + challengeref + "<unknown string>" + streakinfo.kills);
         }
     #/
     if (streakinfo.kills >= 3) {
@@ -122,14 +122,14 @@ function pointblank_airstrike(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
     }
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x621
 // Size: 0xe8
-function pointblank_tomahawk(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
-    var_490fe8ae7b774eb8 = var_cd37ce775909957b.streakinfo;
-    targetsite = var_cd37ce775909957b.targetsite;
-    if (!isdefined(var_490fe8ae7b774eb8)) {
+function pointblank_tomahawk(challengeref, paramstruct) {
+    instreak = paramstruct.streakinfo;
+    targetsite = paramstruct.targetsite;
+    if (!isdefined(instreak)) {
         return;
     }
     if (!isdefined(targetsite)) {
@@ -141,27 +141,27 @@ function pointblank_tomahawk(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
     self endon("death_or_disconnect");
     self notify("pointBlank_tomahawk_killtracker");
     self endon("pointBlank_tomahawk_killtracker");
-    namespace_3c37cb17ade254d::waittill_any_timeout_2(20, "cluster_strike_finished");
+    scripts/engine/utility::waittill_any_timeout_2(20, "cluster_strike_finished");
     if (!isreallyalive(self)) {
         return;
     }
     /#
         if (getdvarint(@"hash_ad789c41a11e3f59", 0)) {
-            iprintlnbold("<unknown string>" + var_a5cb6f1f6abe070b + "<unknown string>" + var_490fe8ae7b774eb8.kills);
+            iprintlnbold("<unknown string>" + challengeref + "<unknown string>" + instreak.kills);
         }
     #/
-    if (var_490fe8ae7b774eb8.kills >= 3) {
+    if (instreak.kills >= 3) {
         awardmasterychallenge("br_mastery_pointBlankStreakKill");
     }
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x711
 // Size: 0x173
-function c4vehiclemultkill(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
-    meansofdeath = var_cd37ce775909957b.meansofdeath;
-    inflictor = var_cd37ce775909957b.inflictor;
+function c4vehiclemultkill(challengeref, paramstruct) {
+    meansofdeath = paramstruct.meansofdeath;
+    inflictor = paramstruct.inflictor;
     if (!isdefined(meansofdeath) || meansofdeath != "MOD_EXPLOSIVE") {
         return;
     }
@@ -179,45 +179,45 @@ function c4vehiclemultkill(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
     wait(4);
     /#
         if (getdvarint(@"hash_ad789c41a11e3f59", 0) && isdefined(self.recentc4vehiclekillcount)) {
-            iprintlnbold("<unknown string>" + var_a5cb6f1f6abe070b + "<unknown string>" + self.recentc4vehiclekillcount);
+            iprintlnbold("<unknown string>" + challengeref + "<unknown string>" + self.recentc4vehiclekillcount);
         }
     #/
     if (isdefined(self.recentc4vehiclekillcount) && self.recentc4vehiclekillcount >= 3) {
-        awardmasterychallenge(var_a5cb6f1f6abe070b);
-        var_a93943361d672dfb = c4vehiclecooperator(inflictor);
-        issameteam = isdefined(var_a93943361d672dfb) && isdefined(var_a93943361d672dfb.team) && isdefined(self.team) && var_a93943361d672dfb.team == self.team;
+        awardmasterychallenge(challengeref);
+        cooperator = c4vehiclecooperator(inflictor);
+        issameteam = isdefined(cooperator) && isdefined(cooperator.team) && isdefined(self.team) && cooperator.team == self.team;
         if (issameteam) {
-            var_a93943361d672dfb awardmasterychallenge(var_a5cb6f1f6abe070b);
+            cooperator awardmasterychallenge(challengeref);
         }
     }
     self.recentc4vehiclekillcount = undefined;
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88b
 // Size: 0x106
 function isvalidinflictorc4vehicle(inflictor) {
     if (!isdefined(inflictor)) {
-        return 0;
+        return false;
     }
     if (isdefined(inflictor.vehiclename) && !inflictor vehicle_is_stopped()) {
         children = inflictor getlinkedchildren();
         foreach (child in children) {
             if (isdefined(child.weapon_name) && child.weapon_name == "c4_mp") {
-                return 1;
+                return true;
             }
         }
     } else if (isdefined(inflictor.weapon_name) && inflictor.weapon_name == "c4_mp") {
         parent = inflictor getlinkedparent();
         if (isdefined(parent) && isdefined(parent.vehiclename) && !parent vehicle_is_stopped()) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x999
 // Size: 0x59
@@ -231,26 +231,26 @@ function c4vehiclecooperator(inflictor) {
     return undefined;
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9fa
 // Size: 0x20
-function roundkillexecute(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
+function roundkillexecute(challengeref, paramstruct) {
     awardmasterychallenge("br_mastery_roundKillExecute");
 }
 
-// Namespace br_challenges/namespace_a553e80c09b00591
+// Namespace br_challenges / scripts/mp/gametypes/br_challenges
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa21
 // Size: 0x109
-function ghostridewhip(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
+function ghostridewhip(challengeref, paramstruct) {
     self endon("disconnect");
     level endon("game_ended");
     if (!isdefined(self)) {
         return;
     }
-    exitdriver = var_cd37ce775909957b.exitdriver;
-    maderecentkill = var_cd37ce775909957b.maderecentkill;
+    exitdriver = paramstruct.exitdriver;
+    maderecentkill = paramstruct.maderecentkill;
     if (istrue(exitdriver)) {
         if (istrue(self.hasexiteddriver) && self.recentghostridekillcount != 0) {
             return;
@@ -273,7 +273,7 @@ function ghostridewhip(var_a5cb6f1f6abe070b, var_cd37ce775909957b) {
         return;
     }
     if (isdefined(self.recentghostridekillcount) && self.recentghostridekillcount >= 3) {
-        awardmasterychallenge(var_a5cb6f1f6abe070b);
+        awardmasterychallenge(challengeref);
     }
     self.recentghostridekillcount = undefined;
     self.hasexiteddriver = undefined;

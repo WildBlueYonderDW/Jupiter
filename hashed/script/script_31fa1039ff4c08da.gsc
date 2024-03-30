@@ -5,14 +5,14 @@
 
 #namespace namespace_7284c5b8ec4cf64e;
 
-// Namespace namespace_7284c5b8ec4cf64e/namespace_d430a4dc6d501cae
+// Namespace namespace_7284c5b8ec4cf64e / namespace_d430a4dc6d501cae
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0x12c
 // Size: 0xb4
 function private autoexec init() {
     character = #"hash_87f94518c4d081da";
-    if (!isdefined(level.var_586887bc5dc30f34)) {
-        level.var_586887bc5dc30f34 = [];
+    if (!isdefined(level.fncharacter)) {
+        level.fncharacter = [];
     }
     if (!isdefined(level.var_7d97144daa7995cd)) {
         level.var_7d97144daa7995cd = [];
@@ -20,16 +20,16 @@ function private autoexec init() {
     if (!isdefined(level.var_44bf7e31237b3073)) {
         level.var_44bf7e31237b3073 = [];
     }
-    level.var_586887bc5dc30f34[character] = &main;
+    level.fncharacter[character] = &main;
     if (issp()) {
-        level.var_7d97144daa7995cd[character] = &function_430419022a9c3ffe;
+        level.var_7d97144daa7995cd[character] = &precache_sp;
         level.var_44bf7e31237b3073[%"hash_5af9c7b07ca6be7b"] = &function_ecf17a96e49ab67;
-    } else {
-        level.var_7d97144daa7995cd[character] = &function_8168fbf6282d398b;
+        return;
     }
+    level.var_7d97144daa7995cd[character] = &function_8168fbf6282d398b;
 }
 
-// Namespace namespace_7284c5b8ec4cf64e/namespace_d430a4dc6d501cae
+// Namespace namespace_7284c5b8ec4cf64e / namespace_d430a4dc6d501cae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e7
 // Size: 0xc1
@@ -50,7 +50,7 @@ function main() {
     }
 }
 
-// Namespace namespace_7284c5b8ec4cf64e/namespace_d430a4dc6d501cae
+// Namespace namespace_7284c5b8ec4cf64e / namespace_d430a4dc6d501cae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2af
 // Size: 0x3
@@ -58,17 +58,17 @@ function precache() {
     
 }
 
-// Namespace namespace_7284c5b8ec4cf64e/namespace_d430a4dc6d501cae
+// Namespace namespace_7284c5b8ec4cf64e / namespace_d430a4dc6d501cae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b9
 // Size: 0x22
-function function_430419022a9c3ffe() {
+function precache_sp() {
     precache();
-    namespace_ac7e8770abb7eb1::precachemodelarray(namespace_ef66a3367c475e08::main());
+    scripts/code/character::precachemodelarray(namespace_ef66a3367c475e08::main());
     precachemodel("c_jup_zmb_zombie_base_male_head_1_gz");
 }
 
-// Namespace namespace_7284c5b8ec4cf64e/namespace_d430a4dc6d501cae
+// Namespace namespace_7284c5b8ec4cf64e / namespace_d430a4dc6d501cae
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e2
 // Size: 0xa
@@ -76,7 +76,7 @@ function function_8168fbf6282d398b() {
     precache();
 }
 
-// Namespace namespace_7284c5b8ec4cf64e/namespace_d430a4dc6d501cae
+// Namespace namespace_7284c5b8ec4cf64e / namespace_d430a4dc6d501cae
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f3
 // Size: 0x37
@@ -84,7 +84,6 @@ function function_ecf17a96e49ab67(xmodelalias) {
     switch (xmodelalias) {
     case #"hash_9c6e573b6583ceac":
         return namespace_ef66a3367c475e08::main();
-        break;
     }
     /#
         assert(0, "character_jup_zombie_base_male_shortsleeve_gz do not have any xmodelalias");

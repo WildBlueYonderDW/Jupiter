@@ -7,41 +7,41 @@
 
 #namespace namespace_b5630838e70308f0;
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0xec
 // Size: 0x14
 function autoexec main() {
-    namespace_d76af9f804655767::function_dbc8f6cb3760cd82("stronghold", &init);
+    scripts/mp/gametypes/br_publicevents::function_dbc8f6cb3760cd82("stronghold", &init);
 }
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x107
 // Size: 0xd9
 function init(config) {
-    var_7ec7671a1e0c788f = spawnstruct();
-    var_7ec7671a1e0c788f.validatefunc = &validatefunc;
-    var_7ec7671a1e0c788f.weight = config.weight;
-    var_7ec7671a1e0c788f.activatefunc = &activatefunc;
-    var_7ec7671a1e0c788f.waitfunc = &waitfunc;
-    var_7ec7671a1e0c788f.var_c9e871d29702e8cf = &function_c9e871d29702e8cf;
-    var_7ec7671a1e0c788f.var_d72a1842c5b57d1d = config.var_ce4b48e2a63b3705;
-    var_7ec7671a1e0c788f.var_f0f6529c88a18128 = namespace_d76af9f804655767::function_8fc51a5af06412cf(config.var_2b5e23900f3a692e);
-    var_7ec7671a1e0c788f.var_b9b56551e1acfee2 = namespace_c711384b1335919::function_8be9bae8228a91f7("stronghold");
-    namespace_d76af9f804655767::function_5b7d8ca93f8705f1(var_7ec7671a1e0c788f, "stronghold");
-    namespace_d76af9f804655767::registerpublicevent(6, var_7ec7671a1e0c788f);
+    eventinfo = spawnstruct();
+    eventinfo.validatefunc = &validatefunc;
+    eventinfo.weight = config.weight;
+    eventinfo.activatefunc = &activatefunc;
+    eventinfo.waitfunc = &waitfunc;
+    eventinfo.postinitfunc = &postinitfunc;
+    eventinfo.var_d72a1842c5b57d1d = config.maxtimes;
+    eventinfo.circleeventweights = scripts/mp/gametypes/br_publicevents::function_8fc51a5af06412cf(config.circleweights);
+    eventinfo.var_b9b56551e1acfee2 = namespace_c711384b1335919::function_8be9bae8228a91f7("stronghold");
+    scripts/mp/gametypes/br_publicevents::function_5b7d8ca93f8705f1(eventinfo, "stronghold");
+    scripts/mp/gametypes/br_publicevents::registerpublicevent(6, eventinfo);
 }
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e7
 // Size: 0xc
-function function_c9e871d29702e8cf() {
+function postinitfunc() {
     level thread function_1386247d217a2b2e();
 }
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x2e
@@ -52,15 +52,15 @@ function function_1386247d217a2b2e() {
     level notify("br_stronghold_pe_start");
 }
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22f
 // Size: 0x5
 function validatefunc() {
-    return 1;
+    return true;
 }
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23c
 // Size: 0x2d
@@ -71,7 +71,7 @@ function waitfunc() {
     wait(waittime);
 }
 
-// Namespace namespace_b5630838e70308f0/namespace_d770a833d61aefa1
+// Namespace namespace_b5630838e70308f0 / namespace_d770a833d61aefa1
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x270
 // Size: 0x12

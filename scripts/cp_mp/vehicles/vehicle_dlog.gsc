@@ -3,9 +3,9 @@
 #using scripts\common\utility.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 
-#namespace namespace_afc3fdfb787b1a22;
+#namespace vehicle_dlog;
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25b
 // Size: 0xf7
@@ -23,10 +23,10 @@ function vehicle_dlog_spawnevent(vehicle, spawntype, vehicletype) {
     if (!isdefined(vehicletype)) {
         return;
     }
-    dlog_recordevent("dlog_event_vehicle_spawn", [0:"vehicle_spawn_id", 1:instancedata.id, 2:"pos_x", 3:vehicle.origin[0], 4:"pos_y", 5:vehicle.origin[1], 6:"pos_z", 7:vehicle.origin[2], 8:"matchtime_ms", 9:namespace_36f464722d326bbe::gettimesincegamestart(), 10:"spawn_type", 11:spawntype, 12:"vehicle_type", 13:vehicletype]);
+    dlog_recordevent("dlog_event_vehicle_spawn", ["vehicle_spawn_id", instancedata.id, "pos_x", vehicle.origin[0], "pos_y", vehicle.origin[1], "pos_z", vehicle.origin[2], "matchtime_ms", scripts/cp_mp/utility/game_utility::gettimesincegamestart(), "spawn_type", spawntype, "vehicle_type", vehicletype]);
 }
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x359
 // Size: 0xf6
@@ -44,14 +44,14 @@ function vehicle_dlog_exitevent(vehicle, player, seatid, exittype) {
     if (!isdefined(exittype)) {
         return;
     }
-    player dlog_recordplayerevent("dlog_event_player_vehicle_exit", [0:"vehicle_spawn_id", 1:instancedata.id, 2:"exit_pos_x", 3:vehicle.origin[0], 4:"exit_pos_y", 5:vehicle.origin[1], 6:"exit_pos_z", 7:vehicle.origin[2], 8:"exit_seat_id", 9:seatid, 10:"exit_matchtime_ms", 11:namespace_36f464722d326bbe::gettimesincegamestart(), 12:"exit_type", 13:exittype]);
+    player dlog_recordplayerevent("dlog_event_player_vehicle_exit", ["vehicle_spawn_id", instancedata.id, "exit_pos_x", vehicle.origin[0], "exit_pos_y", vehicle.origin[1], "exit_pos_z", vehicle.origin[2], "exit_seat_id", seatid, "exit_matchtime_ms", scripts/cp_mp/utility/game_utility::gettimesincegamestart(), "exit_type", exittype]);
 }
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x456
 // Size: 0xf6
-function vehicle_dlog_enterevent(vehicle, player, seatid, var_6c6d078a43295c39) {
+function vehicle_dlog_enterevent(vehicle, player, seatid, entertype) {
     if (!isplayer(player)) {
         return;
     }
@@ -62,13 +62,13 @@ function vehicle_dlog_enterevent(vehicle, player, seatid, var_6c6d078a43295c39) 
     if (!isdefined(seatid)) {
         return;
     }
-    if (!isdefined(var_6c6d078a43295c39)) {
+    if (!isdefined(entertype)) {
         return;
     }
-    player dlog_recordplayerevent("dlog_event_player_vehicle_enter", [0:"vehicle_spawn_id", 1:instancedata.id, 2:"enter_pos_x", 3:vehicle.origin[0], 4:"enter_pos_y", 5:vehicle.origin[1], 6:"enter_pos_z", 7:vehicle.origin[2], 8:"enter_seat_id", 9:seatid, 10:"enter_matchtime_ms", 11:namespace_36f464722d326bbe::gettimesincegamestart(), 12:"enter_type", 13:var_6c6d078a43295c39]);
+    player dlog_recordplayerevent("dlog_event_player_vehicle_enter", ["vehicle_spawn_id", instancedata.id, "enter_pos_x", vehicle.origin[0], "enter_pos_y", vehicle.origin[1], "enter_pos_z", vehicle.origin[2], "enter_seat_id", seatid, "enter_matchtime_ms", scripts/cp_mp/utility/game_utility::gettimesincegamestart(), "enter_type", entertype]);
 }
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x553
 // Size: 0x70
@@ -84,7 +84,7 @@ function vehicle_dlog_init() {
     level.vehicle.dlogdata = leveldata;
 }
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5ca
 // Size: 0x38
@@ -95,7 +95,7 @@ function vehicle_dlog_getleveldata() {
     return level.vehicle.dlogdata;
 }
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x7f
@@ -111,7 +111,7 @@ function vehicle_dlog_getinstancedata(vehicle, create) {
     return instancedata;
 }
 
-// Namespace namespace_afc3fdfb787b1a22/namespace_d28769d7bb5c026b
+// Namespace vehicle_dlog / scripts/cp_mp/vehicles/vehicle_dlog
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x691
 // Size: 0x17

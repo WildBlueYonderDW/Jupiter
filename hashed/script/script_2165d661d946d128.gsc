@@ -23,7 +23,7 @@
 
 #namespace namespace_aa82a714f10d598b;
 
-// Namespace namespace_aa82a714f10d598b/namespace_a9afa590a6465da6
+// Namespace namespace_aa82a714f10d598b / namespace_a9afa590a6465da6
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x110
 // Size: 0xa1

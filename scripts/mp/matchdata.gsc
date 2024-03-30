@@ -16,7 +16,7 @@
 
 #namespace matchdata;
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f7
 // Size: 0x251
@@ -24,7 +24,7 @@ function init() {
     if (getdvarint(@"hash_4ba1427c86b79dc5") != 0 && !isdefined(game["gamestarted"])) {
         setmatchdatadef("ddl/mp/matchdata.ddl");
         setmatchdata("commonMatchData", "map", level.script);
-        if (namespace_36f464722d326bbe::function_21322da268e71c19()) {
+        if (scripts/cp_mp/utility/game_utility::function_21322da268e71c19()) {
             tmp = getgametype() + " hc";
             setmatchdata("commonMatchData", "gametype", tmp);
         } else {
@@ -39,7 +39,7 @@ function init() {
         }
     }
     if (getdvarint(@"hash_4ba1427c86b79dc5") != 0) {
-        if (namespace_36f464722d326bbe::isbrstylegametype()) {
+        if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
             level.maxlogclients = 200;
         } else {
             level.maxlogclients = 30;
@@ -72,7 +72,7 @@ function init() {
     level thread endofgamesummarylogger();
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x64f
 // Size: 0x70
@@ -80,11 +80,11 @@ function onroundend() {
     level.endtimeutcseconds = getsystemtime();
     setmatchdata("commonMatchData", "utc_end_time_s", level.endtimeutcseconds);
     setmatchdata("commonMatchData", "player_count_end", level.players.size);
-    setmatchdata("globalPlayerXpModifier", int(namespace_62c556437da28f50::getglobalrankxpmultiplier()));
-    setmatchdata("globalWeaponXpModifier", int(namespace_4cd6e0abb58d4200::getglobalweaponrankxpmultiplier()));
+    setmatchdata("globalPlayerXpModifier", int(scripts/mp/rank::getglobalrankxpmultiplier()));
+    setmatchdata("globalWeaponXpModifier", int(scripts/mp/weaponrank::getglobalweaponrankxpmultiplier()));
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c6
 // Size: 0x2f
@@ -95,7 +95,7 @@ function getmatchstarttimeutc() {
     return getmatchdata("commonMatchData", "utc_start_time_s");
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x2f
@@ -106,24 +106,24 @@ function getmatchendtimeutc() {
     return getmatchdata("commonMatchData", "utc_end_time_s");
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x734
 // Size: 0x42
 function gettimefrommatchstart(basetime) {
-    var_fbdcfbd6233e2398 = basetime;
+    timefrom = basetime;
     if (isdefined(level.starttimefrommatchstart)) {
-        var_fbdcfbd6233e2398 = var_fbdcfbd6233e2398 - level.starttimefrommatchstart;
-        if (var_fbdcfbd6233e2398 < 0) {
-            var_fbdcfbd6233e2398 = 0;
+        timefrom = timefrom - level.starttimefrommatchstart;
+        if (timefrom < 0) {
+            timefrom = 0;
         }
     } else {
-        var_fbdcfbd6233e2398 = 0;
+        timefrom = 0;
     }
-    return var_fbdcfbd6233e2398;
+    return timefrom;
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77e
 // Size: 0x22
@@ -133,7 +133,7 @@ function logkillstreakevent(event, position) {
     #/
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a7
 // Size: 0x22
@@ -143,7 +143,7 @@ function logattackerkillevent(lifeid, eventref) {
     #/
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d0
 // Size: 0x22
@@ -153,33 +153,33 @@ function logvictimkillevent(lifeid, eventref) {
     #/
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f9
 // Size: 0x22
-function logmultikill(lifeid, var_5fd73d74128a5e31) {
+function logmultikill(lifeid, multikillcount) {
     /#
         println("<unknown string>");
     #/
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x822
 // Size: 0x60
 function monitorweaponfire() {
     self endon("death_or_disconnect");
-    while (1) {
+    while (true) {
         self waittill("begin_firing");
         thread monitorweaponfiretime();
         weaponobj = self.lastdroppableweaponobj;
         weaponobj = mapweapon(weaponobj);
         sweapon = getcompleteweaponname(weaponobj);
-        thread namespace_d576b6dc7cef9c62::threadedsetweaponstatbyname(sweapon, 1, "trigger_pulls");
+        thread scripts/mp/gamelogic::threadedsetweaponstatbyname(sweapon, 1, "trigger_pulls");
     }
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x889
 // Size: 0x46
@@ -192,7 +192,7 @@ function monitorweaponfiretime() {
     self.lastweaponfiretimeend = gettime();
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d6
 // Size: 0x124
@@ -215,16 +215,16 @@ function ctgs_recordmatchstats() {
     score = getpersstat("score");
     rankxp = getrankxp();
     rank = getrankforxp(rankxp);
-    var_a5da089ad8a4e8b9 = self.pers["telemetry"].utc_connect_time_s;
-    timeplayed = getsystemtime() - var_a5da089ad8a4e8b9;
+    timejoined = self.pers["telemetry"].utc_connect_time_s;
+    timeplayed = getsystemtime() - timejoined;
     self ctgsreportusermatchstats(gamemode, kills, deaths, headshots, assists, suicides, score, rank, timeplayed);
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa01
 // Size: 0x350
-function logplayerdata(var_934dc135aaf6f953) {
+function logplayerdata(disconnectreason) {
     if (!isvalidclient(self)) {
         return;
     }
@@ -233,61 +233,61 @@ function logplayerdata(var_934dc135aaf6f953) {
     self sendcollectedclientanticheatdata();
     shots = 0;
     hits = 0;
-    foreach (var_5842e592ddcef384 in self.pers["matchdataWeaponStats"]) {
+    foreach (datastruct in self.pers["matchdataWeaponStats"]) {
         var_75e61e9afcfd1e96 = 0;
         var_e1e89bd150d2b6e5 = 0;
-        var_111dae76dbee9581 = 0;
-        var_4ac1d6453910f005 = 0;
-        var_2cd6c62534b95eb8 = 0;
-        var_8797207b95ae767 = 0;
+        vardeaths = 0;
+        varheadshots = 0;
+        varhits = 0;
+        varkills = 0;
         var_c4530fef629dd385 = 0;
-        var_be9811f337918ba3 = 0;
-        var_474a6d79ef62cf1a = 0;
-        var_6ea7d87f1769fdb7 = 0;
-        var_53565c7950c80700 = 0;
-        if (!namespace_36f464722d326bbe::isbrstylegametype()) {
-            if (isenumvaluevalid("common", "LoadoutWeapon", var_5842e592ddcef384.weapon)) {
-                var_75e61e9afcfd1e96 = self getplayerdata(level.loadoutsgroup, "squadMembers", "weapon_xp", var_5842e592ddcef384.weapon);
+        varshots = 0;
+        vartimeused = 0;
+        vardamage = 0;
+        varfriendlydamage = 0;
+        if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+            if (isenumvaluevalid("common", "LoadoutWeapon", datastruct.weapon)) {
+                var_75e61e9afcfd1e96 = self getplayerdata(level.loadoutsgroup, "squadMembers", "weapon_xp", datastruct.weapon);
             }
         }
-        foreach (statname, value in var_5842e592ddcef384.stats) {
+        foreach (statname, value in datastruct.stats) {
             if (statname == "deaths") {
-                var_111dae76dbee9581 = var_111dae76dbee9581 + value;
+                vardeaths = vardeaths + value;
             }
             if (statname == "headshots") {
-                var_4ac1d6453910f005 = var_4ac1d6453910f005 + value;
+                varheadshots = varheadshots + value;
             }
             if (statname == "hits") {
-                var_2cd6c62534b95eb8 = var_2cd6c62534b95eb8 + value;
+                varhits = varhits + value;
                 hits = hits + value;
             }
             if (statname == "ads_kills") {
                 var_c4530fef629dd385 = var_c4530fef629dd385 + value;
             }
             if (statname == "kills") {
-                var_8797207b95ae767 = var_8797207b95ae767 + value;
+                varkills = varkills + value;
             }
             if (statname == "shots") {
-                var_be9811f337918ba3 = var_be9811f337918ba3 + value;
+                varshots = varshots + value;
                 shots = shots + value;
             }
             if (statname == "xp_earned") {
                 var_e1e89bd150d2b6e5 = var_e1e89bd150d2b6e5 + value;
             }
             if (statname == "damage") {
-                var_6ea7d87f1769fdb7 = var_6ea7d87f1769fdb7 + value;
+                vardamage = vardamage + value;
             }
             if (statname == "friendly_fire_damage") {
-                var_53565c7950c80700 = var_53565c7950c80700 + value;
+                varfriendlydamage = varfriendlydamage + value;
             }
         }
-        if (!namespace_36f464722d326bbe::isbrstylegametype()) {
-            self dlog_recordplayerevent("dlog_event_mp_player_weapon_stats", [0:"weapon", 1:var_5842e592ddcef384.weapon, 2:"variant_id", 3:var_5842e592ddcef384.variantid, 4:"loadout_index", 5:var_5842e592ddcef384.loadoutindex, 6:"starting_weapon_xp", 7:var_75e61e9afcfd1e96, 8:"xp_earned", 9:var_e1e89bd150d2b6e5, 10:"deaths", 11:var_111dae76dbee9581, 12:"headshots", 13:var_4ac1d6453910f005, 14:"hits", 15:var_2cd6c62534b95eb8, 16:"kills", 17:var_8797207b95ae767, 18:"ads_kills", 19:var_c4530fef629dd385, 20:"shots", 21:var_be9811f337918ba3, 22:"timeUsed", 23:var_474a6d79ef62cf1a, 24:"damage", 25:var_6ea7d87f1769fdb7, 26:"friendly_fire_damage", 27:var_53565c7950c80700]);
+        if (!scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
+            self dlog_recordplayerevent("dlog_event_mp_player_weapon_stats", ["weapon", datastruct.weapon, "variant_id", datastruct.variantid, "loadout_index", datastruct.loadoutindex, "starting_weapon_xp", var_75e61e9afcfd1e96, "xp_earned", var_e1e89bd150d2b6e5, "deaths", vardeaths, "headshots", varheadshots, "hits", varhits, "kills", varkills, "ads_kills", var_c4530fef629dd385, "shots", varshots, "timeUsed", vartimeused, "damage", vardamage, "friendly_fire_damage", varfriendlydamage]);
         }
     }
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd58
 // Size: 0x1e5
@@ -309,17 +309,17 @@ function endofgamesummarylogger() {
         for (i = 0; i < 20; i++) {
             if (isdefined(player.challengescompleted) && isdefined(player.challengescompleted[i]) && player.challengescompleted[i] != "ch_prestige" && !issubstr(player.challengescompleted[i], "_daily") && !issubstr(player.challengescompleted[i], "_weekly")) {
                 player setplayerdata("common", "round", "challengesCompleted", i, player.challengescompleted[i]);
-            } else {
-                player setplayerdata("common", "round", "challengesCompleted", i, "ch_none");
+                continue;
             }
+            player setplayerdata("common", "round", "challengesCompleted", i, "ch_none");
         }
         current_map = tolower(getdvar(@"hash_687fb8f9b7a23245"));
-        player setplayerdata("common", "round", "gameMode", function_60bf8d82001fc22c());
+        player setplayerdata("common", "round", "gameMode", getbasegametype());
         player setplayerdata("common", "round", "map", current_map);
     }
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf44
 // Size: 0xe1
@@ -336,37 +336,36 @@ function recordrecentlyplayeddata() {
     }
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x102c
 // Size: 0x3e
 function isvalidclient(client) {
     if (istrue(game["isLaunchChunk"])) {
-        return 0;
+        return false;
     }
     if (!isdefined(client)) {
-        return 0;
+        return false;
     } else if (isagent(client)) {
-        return 0;
+        return false;
     } else if (!isplayer(client)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1072
 // Size: 0x31
 function canlogclient(client) {
     if (isvalidclient(client)) {
         return (client.clientid < level.maxlogclients);
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10aa
 // Size: 0x17
@@ -374,11 +373,11 @@ function canloglife(lifeid) {
     return lifeid < level.maxlives;
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10c9
 // Size: 0x3f
-function logattachmentstat(var_ff180c307f2bafd3, statname, var_a1d4e7d5ef9da660, weapon) {
+function logattachmentstat(attachname, statname, incvalue, weapon) {
     if (!level.matchdataattachmentstatsenabled) {
         return;
     }
@@ -387,7 +386,7 @@ function logattachmentstat(var_ff180c307f2bafd3, statname, var_a1d4e7d5ef9da660,
     #/
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x110f
 // Size: 0x22
@@ -397,21 +396,21 @@ function logchallenge(challengename, tier) {
     #/
 }
 
-// Namespace matchdata/namespace_eb72aa155b5e14e7
+// Namespace matchdata / scripts/mp/matchdata
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1138
 // Size: 0x85
-function logaward(var_84ea5cf2793332c1) {
+function logaward(awardname) {
     if (!isvalidclient(self)) {
         return;
     }
     if (isbot(self) || istestclient(self) || isai(self)) {
         return;
     }
-    var_16fbc6a2229d1d81 = gettimefrommatchstart(gettime());
-    if (function_d03495fe6418377b(var_84ea5cf2793332c1)) {
-        var_84ea5cf2793332c1 = function_f28fd66285fa2c9(var_84ea5cf2793332c1);
+    time_ms = gettimefrommatchstart(gettime());
+    if (function_d03495fe6418377b(awardname)) {
+        awardname = function_f28fd66285fa2c9(awardname);
     }
-    self dlog_recordplayerevent("dlog_event_player_award", [0:"time_ms_from_match_start", 1:var_16fbc6a2229d1d81, 2:"award", 3:var_84ea5cf2793332c1]);
+    self dlog_recordplayerevent("dlog_event_player_award", ["time_ms_from_match_start", time_ms, "award", awardname]);
 }
 

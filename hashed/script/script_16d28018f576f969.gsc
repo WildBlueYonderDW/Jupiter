@@ -25,19 +25,19 @@
 
 #namespace namespace_d02d9ea23a283808;
 
-// Namespace namespace_d02d9ea23a283808/namespace_197ebe97e16266ab
+// Namespace namespace_d02d9ea23a283808 / namespace_197ebe97e16266ab
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x130
 // Size: 0x4
 function function_b831ccf10a32a4b1() {
-    return 0;
+    return false;
 }
 
-// Namespace namespace_d02d9ea23a283808/namespace_197ebe97e16266ab
+// Namespace namespace_d02d9ea23a283808 / namespace_197ebe97e16266ab
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13c
 // Size: 0x1c
 function function_b24a36667938b8d4() {
-    level.ftuedata.var_1176926a4b469eac = "iw9_me_fists_mp";
+    level.ftuedata.playerstartingweapon = "iw9_me_fists_mp";
 }
 

@@ -4,16 +4,16 @@
 #using scripts\mp\utility\perk.gsc;
 #using scripts\mp\archetypes\archassault.gsc;
 
-#namespace namespace_1f3dad5168a71f24;
+#namespace archcommon;
 
-// Namespace namespace_1f3dad5168a71f24/namespace_93ae9c099aee8626
+// Namespace archcommon / scripts/mp/archetypes/archcommon
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfb
 // Size: 0xaf
 function init() {
     level.archetypes = [];
     level.archetypeids = [];
-    for (row = 0; 1; row++) {
+    for (row = 0; true; row++) {
         index = tablelookupbyrow("mp/battleRigTable.csv", row, 0);
         if (!isdefined(index) || index == "") {
             break;
@@ -28,7 +28,7 @@ function init() {
     }
 }
 
-// Namespace namespace_1f3dad5168a71f24/namespace_93ae9c099aee8626
+// Namespace archcommon / scripts/mp/archetypes/archcommon
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b1
 // Size: 0x54
@@ -36,41 +36,41 @@ function removearchetype(loadoutarchetype) {
     if (!isdefined(loadoutarchetype)) {
         return;
     }
-    var_f3297d3d4075dcb7 = undefined;
+    funcremove = undefined;
     switch (loadoutarchetype) {
     case #"hash_98ff6f21872f18e0":
-        var_f3297d3d4075dcb7 = &namespace_c3864852d989b3e2::removearchetype;
+        funcremove = &scripts/mp/archetypes/archassault::removearchetype;
         break;
     default:
         return;
     }
-    if (isdefined(var_f3297d3d4075dcb7)) {
-        self [[ var_f3297d3d4075dcb7 ]]();
+    if (isdefined(funcremove)) {
+        self [[ funcremove ]]();
     }
 }
 
-// Namespace namespace_1f3dad5168a71f24/namespace_93ae9c099aee8626
+// Namespace archcommon / scripts/mp/archetypes/archcommon
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20c
 // Size: 0x27
 function _allowbattleslide(allow) {
     if (allow) {
         giveperk("specialty_battleslide");
-    } else {
-        self notify("battleslide_unset");
+        return;
     }
+    self notify("battleslide_unset");
 }
 
-// Namespace namespace_1f3dad5168a71f24/namespace_93ae9c099aee8626
+// Namespace archcommon / scripts/mp/archetypes/archcommon
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23a
 // Size: 0x53
-function getrigindexfromarchetyperef(var_c156d240d6457e18) {
-    if (!isdefined(var_c156d240d6457e18) || var_c156d240d6457e18 == "none") {
+function getrigindexfromarchetyperef(archetyperefstring) {
+    if (!isdefined(archetyperefstring) || archetyperefstring == "none") {
         return 0;
     }
     for (rigindex = 0; rigindex < level.archetypes.size; rigindex++) {
-        if (level.archetypes[rigindex] == var_c156d240d6457e18) {
+        if (level.archetypes[rigindex] == archetyperefstring) {
             return rigindex;
         }
     }

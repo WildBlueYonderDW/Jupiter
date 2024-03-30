@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\unittest\util.gsc;
 
-#namespace namespace_4a4aaf00b68b13a9;
+#namespace unittest_variables;
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x732
 // Size: 0x2a8
@@ -38,15 +38,15 @@ function local() {
     test_print("x2: (" + x[0] + ", " + x[1] + ", " + x[2] + " )");
     u = undefined;
     test_print("u: " + isdefined(u));
-    var_cdd17378f51bec82 = spawnstruct();
-    s = var_cdd17378f51bec82;
+    s0 = spawnstruct();
+    s = s0;
     s = spawnstruct();
     a0 = [];
     a1 = a0;
-    a0 = [0:1, 1:2, 2:3];
+    a0 = [1, 2, 3];
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e1
 // Size: 0xa3
@@ -59,7 +59,7 @@ function defines() {
     test_print("DEF_MIX_EXPR: " + "foo" + 0);
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x3d0
@@ -81,10 +81,10 @@ function local_array() {
     test_print("local array string: size: " + a.size + " val: " + a["foo"] + " " + a["bar"] + " " + a["baz"]);
     test_print("local array index(after): size: " + a.size + " val: " + a[0] + " " + a[1] + " " + a[2]);
     a[@"hash_603095091be7b20b"] = 8;
-    a[#"hash_dff9438966ae6b57"] = 9;
+    a[#"xhash"] = 9;
     a[t"hash_9d1b361a"] = 10;
     a[%"asset"] = 11;
-    test_print("local array xhash: size: " + a.size + " val: " + a[@"hash_603095091be7b20b"] + " " + a[#"hash_dff9438966ae6b57"] + " " + a[t"hash_9d1b361a"] + " " + a[%"asset"]);
+    test_print("local array xhash: size: " + a.size + " val: " + a[@"hash_603095091be7b20b"] + " " + a[#"xhash"] + " " + a[t"hash_9d1b361a"] + " " + a[%"asset"]);
     test_print("local array string: size: " + a.size + " val: " + a["foo"] + " " + a["bar"] + " " + a["baz"]);
     test_print("local array index(after): size: " + a.size + " val: " + a[0] + " " + a[1] + " " + a[2]);
     test_print("local array foreach");
@@ -95,7 +95,7 @@ function local_array() {
     a[2] = undefined;
     a["bar"] = undefined;
     a[@"hash_603095091be7b20b"] = undefined;
-    a[#"hash_dff9438966ae6b57"] = undefined;
+    a[#"xhash"] = undefined;
     a[t"hash_9d1b361a"] = undefined;
     a[%"asset"] = undefined;
     test_print("local array remove index: size: " + a.size);
@@ -110,7 +110,7 @@ function local_array() {
     test_print("local array clear: IsDefined: " + isdefined(a));
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe62
 // Size: 0x334
@@ -146,7 +146,7 @@ function level_array() {
     test_print("level array clear: IsDefined: " + isdefined(level.a));
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x119d
 // Size: 0x4f9
@@ -199,7 +199,7 @@ function local_object() {
     test_print("local object array clear: IsDefined: " + isdefined(s.a));
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x169d
 // Size: 0x684
@@ -250,7 +250,7 @@ function level_object() {
     test_print("level object array clear: IsDefined: " + isdefined(level.s.a));
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d28
 // Size: 0x220
@@ -273,7 +273,7 @@ function local_combo() {
     test_print("local combo 3: " + a[2][0][0].a + " " + a[2][0][0].b + " " + a[2][0][1]);
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f4f
 // Size: 0x2c7
@@ -296,7 +296,7 @@ function level_combo() {
     test_print("level combo 3: " + level.a[2][0][0].a + " " + level.a[2][0][0].b + " " + level.a[2][0][1]);
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x221d
 // Size: 0x58
@@ -309,7 +309,7 @@ function is_true_print(val, name) {
     test_print("is_true: " + name + ": " + b + " isdefined: " + d);
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x227c
 // Size: 0x89
@@ -326,7 +326,7 @@ function is_true() {
     is_true_print(float_true, "float_true");
 }
 
-// Namespace namespace_4a4aaf00b68b13a9/namespace_93c48a6e1fb19e74
+// Namespace unittest_variables / scripts/unittest/variables
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x230c
 // Size: 0x5a

@@ -18,7 +18,7 @@
 
 #namespace namespace_d10869fbc73f98d7;
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x473
 // Size: 0x21d
@@ -51,11 +51,11 @@ function init() {
     game["dialog"]["mission_timedrun_accept"] = "mission_mission_time_accept";
     game["dialog"]["mission_timedrun_fail"] = "mission_mission_time_failed";
     /#
-        function_8f449f8c11c8ea84("br_assassination_notargets", "Circle tick requires dangerCircleOrigin to be defined", [0:5, 1:30, 2:60, 3:120, 4:180, 5:240, 6:300], getquestdata("br_assassination_notargets").missionbasetimer);
+        function_8f449f8c11c8ea84("br_assassination_notargets", "Circle tick requires dangerCircleOrigin to be defined", [5, 30, 60, 120, 180, 240, 300], getquestdata("br_assassination_notargets").missionbasetimer);
     #/
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x697
 // Size: 0x49
@@ -63,16 +63,16 @@ function trtablet_init() {
     /#
         function_edc6b2561f8041e0();
     #/
-    var_354d1457278b342c = tr_kiosksearchparams(self);
-    placement = findquestplacement("timedrun", var_354d1457278b342c);
+    search_params = tr_kiosksearchparams(self);
+    placement = findquestplacement("timedrun", search_params);
     if (!isdefined(placement)) {
-        return 0;
+        return false;
     }
     self.reservedplacement = placement;
-    return 1;
+    return true;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e8
 // Size: 0x308
@@ -93,20 +93,20 @@ function takequestitem(pickupent) {
     if (!locale.enabled) {
         instance.result = "no_locale";
         instance releaseteamonquest(self.team);
-        var_e141356311900568 = spawnstruct();
-        var_e141356311900568.origin = pickupent.origin;
-        var_e141356311900568.angles = pickupent.angles;
-        dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
-        if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "plunder") {
+        lootspawnpoint = spawnstruct();
+        lootspawnpoint.origin = pickupent.origin;
+        lootspawnpoint.angles = pickupent.angles;
+        dropstruct = scripts/mp/gametypes/br_pickups::function_7b9f3966a7a42003();
+        if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "plunder") {
             var_6b5e1783915835c1 = "mp/loot_set_cache_contents_dmz.csv";
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 1, "health", var_6b5e1783915835c1);
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 2, "ammo", var_6b5e1783915835c1);
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 1, 1, "plunder", var_6b5e1783915835c1);
-        } else {
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 1, "health");
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 2, "ammo");
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 1, 1, "plunder");
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 1, "health", var_6b5e1783915835c1);
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 2, "ammo", var_6b5e1783915835c1);
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 1, 1, "plunder", var_6b5e1783915835c1);
+            return;
         }
+        lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 1, "health");
+        lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 2, "ammo");
+        lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 1, 1, "plunder");
         return;
     }
     questtimerinit("timedrun", 1);
@@ -120,62 +120,61 @@ function takequestitem(pickupent) {
     params.plundervar = getquestplunderreward("timedrun", getquestrewardtier(self.team));
     displayplayersplash(self, "br_timedrun_quest_start_tablet_finder", params);
     displayteamsplash(instance.team, "br_timedrun_quest_start_team_notify", params);
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_timedrun_accept", instance.team, 1, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_timedrun_accept", instance.team, 1, 1);
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x38
 function checkforcorrectinstance(player) {
     if (player.team == self.subscribedinstances[0].team) {
         return 1;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa36
 // Size: 0x81
 function tr_vehiclesearchparams(searchcircleorigin) {
-    var_354d1457278b342c = spawnstruct();
-    var_354d1457278b342c.searchfunc = "GetEntitylessScriptableArray";
-    var_354d1457278b342c.searchcircleorigin = searchcircleorigin;
-    var_354d1457278b342c.searchradiusmax = 6000;
-    var_354d1457278b342c.searchradiusmin = 0;
-    var_354d1457278b342c.searchradiusidealmax = 4000;
-    var_354d1457278b342c.searchradiusidealmin = 0;
-    var_354d1457278b342c.mintime = 1;
-    return var_354d1457278b342c;
+    search_params = spawnstruct();
+    search_params.searchfunc = "GetEntitylessScriptableArray";
+    search_params.searchcircleorigin = searchcircleorigin;
+    search_params.searchradiusmax = 6000;
+    search_params.searchradiusmin = 0;
+    search_params.searchradiusidealmax = 4000;
+    search_params.searchradiusidealmin = 0;
+    search_params.mintime = 1;
+    return search_params;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xabf
 // Size: 0x11e
 function tr_kiosksearchparams(tablet) {
-    var_354d1457278b342c = spawnstruct();
-    var_354d1457278b342c.searchfunc = "getKiosks";
-    var_354d1457278b342c.partname = "br_plunder_box";
-    var_354d1457278b342c.statename = "visible";
-    var_354d1457278b342c.searchcircleorigin = tablet.origin;
-    var_354d1457278b342c.searchradiusmax = getquestdata("timedrun").kiosksearchradiusmax;
-    var_354d1457278b342c.searchradiusmin = getquestdata("timedrun").kiosksearchradiusmin;
-    var_354d1457278b342c.searchradiusidealmax = getquestdata("timedrun").kiosksearchradiusidealmax;
-    var_354d1457278b342c.searchradiusidealmin = getquestdata("timedrun").kiosksearchradiusidealmin;
-    var_354d1457278b342c.searchforcecirclecenter = 1;
-    var_354d1457278b342c.reservedplacement = tablet.reservedplacement;
-    var_354d1457278b342c.mintime = 1;
-    return var_354d1457278b342c;
+    search_params = spawnstruct();
+    search_params.searchfunc = "getKiosks";
+    search_params.partname = "br_plunder_box";
+    search_params.statename = "visible";
+    search_params.searchcircleorigin = tablet.origin;
+    search_params.searchradiusmax = getquestdata("timedrun").kiosksearchradiusmax;
+    search_params.searchradiusmin = getquestdata("timedrun").kiosksearchradiusmin;
+    search_params.searchradiusidealmax = getquestdata("timedrun").kiosksearchradiusidealmax;
+    search_params.searchradiusidealmin = getquestdata("timedrun").kiosksearchradiusidealmin;
+    search_params.searchforcecirclecenter = 1;
+    search_params.reservedplacement = tablet.reservedplacement;
+    search_params.mintime = 1;
+    return search_params;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbe5
 // Size: 0x1a8
-function tr_findvehicle(var_354d1457278b342c) {
+function tr_findvehicle(search_params) {
     /#
         function_d2caa40694d469ab();
     #/
@@ -186,13 +185,14 @@ function tr_findvehicle(var_354d1457278b342c) {
             }
         }
     }
-    var_bd572a35f03ced5b = getentarrayinradius("script_vehicle", "classname", var_354d1457278b342c.searchcircleorigin, var_354d1457278b342c.searchradiusmax);
-    var_bd572a35f03ced5b = sortbydistance(var_bd572a35f03ced5b, var_354d1457278b342c.searchcircleorigin);
-    foreach (vehicle in var_bd572a35f03ced5b) {
+    vehiclelist = getentarrayinradius("script_vehicle", "classname", search_params.searchcircleorigin, search_params.searchradiusmax);
+    vehiclelist = sortbydistance(vehiclelist, search_params.searchcircleorigin);
+    foreach (vehicle in vehiclelist) {
         if (vehicle.isempty) {
             self.targetvehicle = vehicle;
             break;
-        } else if (vehicle.ownerteam == self.team) {
+        }
+        if (vehicle.ownerteam == self.team) {
             break;
         }
     }
@@ -204,7 +204,7 @@ function tr_findvehicle(var_354d1457278b342c) {
     thread watchforentervehicle();
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd94
 // Size: 0xcd
@@ -221,7 +221,7 @@ function watchforentervehicle() {
     }
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe68
 // Size: 0x7a
@@ -231,7 +231,7 @@ function cleanupvehicleoutline() {
     #/
     level endon("game_ended");
     self endon("remove_TR_Outline");
-    while (1) {
+    while (true) {
         if (self.targetvehicle.isempty != 1 || gettime() > self.starttime + 60000) {
             outlinedisable(self.vehicleoutline, self.targetvehicle);
             self notify("remove_TR_Outline");
@@ -240,7 +240,7 @@ function cleanupvehicleoutline() {
     }
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xee9
 // Size: 0xe0
@@ -262,44 +262,44 @@ function tr_createquestlocale(placement) {
     return locale;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xfd1
 // Size: 0x1c3
-function setuplocalelocation(var_d8e9fe11ed726936) {
+function setuplocalelocation(placedorigin) {
     /#
         function_8b0829a8ce24f0aa();
     #/
-    if (!isdefined(var_d8e9fe11ed726936)) {
+    if (!isdefined(placedorigin)) {
         instance = self.subscribedinstances[0];
         foreach (player in getteamdata(instance.team, "players")) {
-            player namespace_58fb4f2e73fd41a0::setlowermessageomnvar("br_assassination_notargets", undefined, 5);
+            player scripts/mp/utility/lower_message::setlowermessageomnvar("br_assassination_notargets", undefined, 5);
         }
         instance.result = "no_locale";
-        var_e141356311900568 = spawnstruct();
-        var_e141356311900568.origin = self.curorigin;
-        var_e141356311900568.angles = (0, 0, 0);
-        dropstruct = namespace_cb965d2f71fefddc::function_7b9f3966a7a42003();
-        if (namespace_36f464722d326bbe::function_6c1fce6f6b8779d5() == "plunder") {
+        lootspawnpoint = spawnstruct();
+        lootspawnpoint.origin = self.curorigin;
+        lootspawnpoint.angles = (0, 0, 0);
+        dropstruct = scripts/mp/gametypes/br_pickups::function_7b9f3966a7a42003();
+        if (scripts/cp_mp/utility/game_utility::function_6c1fce6f6b8779d5() == "plunder") {
             var_6b5e1783915835c1 = "mp/loot_set_cache_contents_dmz.csv";
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 1, "health", var_6b5e1783915835c1);
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 2, "ammo", var_6b5e1783915835c1);
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 1, 1, "plunder", var_6b5e1783915835c1);
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 1, "health", var_6b5e1783915835c1);
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 2, "ammo", var_6b5e1783915835c1);
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 1, 1, "plunder", var_6b5e1783915835c1);
         } else {
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 1, "health");
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 0, 2, "ammo");
-            var_e141356311900568 namespace_1b7e64f50cca9321::chooseandspawnitems(dropstruct, 1, 1, "plunder");
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 1, "health");
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 0, 2, "ammo");
+            lootspawnpoint scripts/mp/gametypes/br_lootcache::chooseandspawnitems(dropstruct, 1, 1, "plunder");
         }
         instance removequestinstance();
-        return 0;
+        return false;
     }
-    self.targetkiosk = var_d8e9fe11ed726936;
+    self.targetkiosk = placedorigin;
     thread timedrun_finishlinevfx(self.targetkiosk.origin);
     updatetimedrunhud();
-    return 1;
+    return true;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x119c
 // Size: 0xe8
@@ -318,7 +318,7 @@ function timedrun_finishlinevfx(spawn_origin, team) {
     self.finishlinevfx = finishlinevfx;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x128b
 // Size: 0x1d
@@ -329,7 +329,7 @@ function tr_removequestinstance() {
     releaseteamonquest(self.team);
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12af
 // Size: 0x37
@@ -343,7 +343,7 @@ function tr_removelocaleinstance() {
     self.subscribedinstances = undefined;
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12ed
 // Size: 0x9f
@@ -358,7 +358,7 @@ function tr_detectwinners() {
     }
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1393
 // Size: 0x15c
@@ -369,14 +369,14 @@ function completetimedrunquest(kiosk) {
     params = spawnstruct();
     rewardtier = getquestrewardtier(self.team);
     missionid = getquestindex("timedrun");
-    var_11d65784f0b6afa2 = getquestrewardgroupindex(getquestrewardbuildgroupref("timedrun"));
-    params.packedbits = packsplashparambits(missionid, rewardtier, var_11d65784f0b6afa2);
+    rewardindex = getquestrewardgroupindex(getquestrewardbuildgroupref("timedrun"));
+    params.packedbits = packsplashparambits(missionid, rewardtier, rewardindex);
     displayteamsplash(self.team, "br_timedrun_quest_complete", params);
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_misc_success", self.team, 1, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_misc_success", self.team, 1, 1);
     squadmembers = getteamdata(self.team, "players");
     foreach (player in squadmembers) {
         if (isdefined(player) && !istrue(player.br_iseliminated)) {
-            namespace_a4b43c1cf86c6fe5::kiosksetupfiresaleforplayer(kiosk, player);
+            scripts/mp/gametypes/br_armory_kiosk::kiosksetupfiresaleforplayer(kiosk, player);
         }
     }
     self.rewardmodifier = undefined;
@@ -384,7 +384,7 @@ function completetimedrunquest(kiosk) {
     removequestinstance();
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14f6
 // Size: 0x52
@@ -393,25 +393,25 @@ function failtimedrunquest() {
         function_d2caa40694d469ab();
     #/
     displayteamsplash(self.team, "br_timedrun_quest_circle_failure");
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_obj_circle_fail", self.team, 1, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_obj_circle_fail", self.team, 1, 1);
     self.result = "fail";
     removequestinstance();
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x154f
 // Size: 0x33
 function tr_ontimerexpired() {
     displayteamsplash(self.team, "br_timedrun_quest_timer_expired");
-    level thread namespace_d3d40f75bb4e4c32::brleaderdialogteam("mission_timedrun_fail", self.team, 1, 1);
+    level thread scripts/mp/gametypes/br_public::brleaderdialogteam("mission_timedrun_fail", self.team, 1, 1);
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1589
 // Size: 0x10e
-function tr_circletick(var_819edacdacb810e4, var_e86632d645c137d0) {
+function tr_circletick(var_819edacdacb810e4, dangercircleradius) {
     /#
         function_8b0829a8ce24f0aa();
     #/
@@ -419,7 +419,7 @@ function tr_circletick(var_819edacdacb810e4, var_e86632d645c137d0) {
         assertex(isdefined(var_819edacdacb810e4), "Circle tick requires dangerCircleOrigin to be defined");
     #/
     /#
-        assertex(isdefined(var_e86632d645c137d0), "Circle tick requires dangerCircleRadius to be defined");
+        assertex(isdefined(dangercircleradius), "Circle tick requires dangerCircleRadius to be defined");
     #/
     /#
         assertex(isdefined(self.curorigin), "Circle tick requires self.curOrigin to be defined");
@@ -433,28 +433,28 @@ function tr_circletick(var_819edacdacb810e4, var_e86632d645c137d0) {
     }
     self.lastcircletick = currenttime;
     dist = distance2d(self.curorigin, var_819edacdacb810e4);
-    if (dist > var_e86632d645c137d0) {
+    if (dist > dangercircleradius) {
         foreach (instance in self.subscribedinstances) {
             instance failtimedrunquest();
         }
     }
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x169e
 // Size: 0x80
-function tr_playerdisconnect(var_345221032955c106) {
-    if (var_345221032955c106.team == self.team) {
+function tr_playerdisconnect(disconnectplayer) {
+    if (disconnectplayer.team == self.team) {
         getquestinstancedata("timedrun_locale", self.team).playerlist = getteamdata(self.team, "players");
-        if (!isteamvalid(var_345221032955c106.team)) {
+        if (!isteamvalid(disconnectplayer.team)) {
             self.result = "fail";
             removequestinstance();
         }
     }
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1725
 // Size: 0x31
@@ -469,7 +469,7 @@ function tr_entergulag(player) {
     hidequestobjiconfromplayer(player);
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x175d
 // Size: 0x46
@@ -484,7 +484,7 @@ function tr_respawn(player) {
     showquestobjicontoplayer(player);
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17aa
 // Size: 0x152
@@ -510,7 +510,7 @@ function updatetimedrunhud() {
     }
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1903
 // Size: 0x26
@@ -522,7 +522,7 @@ function hidetimedrunhudfromplayer(player) {
     player uiobjectivehide();
 }
 
-// Namespace namespace_d10869fbc73f98d7/namespace_d076143c5177e740
+// Namespace namespace_d10869fbc73f98d7 / namespace_d076143c5177e740
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1930
 // Size: 0x69

@@ -3,7 +3,7 @@
 #using scripts\common\utility.gsc;
 #using scripts\engine\math.gsc;
 #using scripts\engine\trace.gsc;
-#using script_5def7af2a9f04234;
+#using scripts\mp\poi.gsc;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using scripts\mp\damage.gsc;
 #using scripts\mp\utility\points.gsc;
@@ -13,7 +13,7 @@
 
 #namespace ai_sentry_turret;
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d2
 // Size: 0x3f0
@@ -22,9 +22,9 @@ function init() {
         return;
     }
     level.aisentryturrets = spawnstruct();
-    level.aisentryturrets.var_545db13b94c9e4d = getdvarint(@"hash_e2a4ecaa972fb581", 15);
+    level.aisentryturrets.maxtotal = getdvarint(@"hash_e2a4ecaa972fb581", 15);
     level.aisentryturrets.var_a4186f089a36d2f0 = getdvarint(@"hash_6a8c234b065d124c", 3);
-    level.aisentryturrets.var_a4cd5b9ae4a509f4 = [];
+    level.aisentryturrets.spawnedturrets = [];
     level.aisentryturrets.var_325f9f15252b4928 = &function_2d24ee630d6c37e2;
     level.sentrysettings["ai_sentry_turret"] = spawnstruct();
     level.sentrysettings["ai_sentry_turret"].health = 999999;
@@ -40,26 +40,26 @@ function init() {
     level.sentrysettings["ai_sentry_turret"].spinuptime = 1.5;
     level.sentrysettings["ai_sentry_turret"].overheattime = 8;
     level.sentrysettings["ai_sentry_turret"].cooldowntime = 0.3;
-    level.sentrysettings["ai_sentry_turret"].var_aa507124549d7490 = 4;
+    level.sentrysettings["ai_sentry_turret"].burstmaxtime = 4;
     level.sentrysettings["ai_sentry_turret"].var_6265b628c3ed1103 = 3;
     level.sentrysettings["ai_sentry_turret"].var_87d927a08cbfdf3f = 1;
     level.sentrysettings["ai_sentry_turret"].leftarc = 80;
     level.sentrysettings["ai_sentry_turret"].rightarc = 80;
     level.sentrysettings["ai_sentry_turret"].fxtime = 0.3;
-    level.sentrysettings["ai_sentry_turret"].var_951af53d31931d09 = 1024;
+    level.sentrysettings["ai_sentry_turret"].targetrange = 1024;
     level.sentrysettings["ai_sentry_turret"].weaponinfo = "sentry_turret_mp";
     level.sentrysettings["ai_sentry_turret"].playerweaponinfo = "sentry_turret_mp";
     level.sentrysettings["ai_sentry_turret"].modelbaseground = "wpn_wm_p45_mg_auto_sentry_v0_mp";
     level.sentrysettings["ai_sentry_turret"].modeldestroyedground = "wpn_wm_p45_mg_auto_sentry_v0_mp";
-    level.sentrysettings["ai_sentry_turret"].var_d7a3afc17fe9204b = "tag_flash";
+    level.sentrysettings["ai_sentry_turret"].bullettag = "tag_flash";
     level.sentrysettings["ai_sentry_turret"].scorepopup = "destroyed_sentry";
     level.sentrysettings["ai_sentry_turret"].lightfxtag = "tag_fx";
-    if (namespace_37f0fb6355a4618a::function_47d356083884f913()) {
-        namespace_37f0fb6355a4618a::function_44739fe1cf82e29a("aiSentryTurrets");
+    if (scripts/mp/poi::function_47d356083884f913()) {
+        scripts/mp/poi::function_44739fe1cf82e29a("aiSentryTurrets");
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7c9
 // Size: 0x2a1
@@ -67,9 +67,9 @@ function function_2d24ee630d6c37e2() {
     while (!flag_exist("create_script_initialized")) {
         if (!flag_exist("poi_initialized")) {
             waitframe();
-        } else {
-            break;
+            continue;
         }
+        break;
     }
     while (!flag_exist("poi_initialized")) {
         flag_wait("create_script_initialized");
@@ -77,60 +77,60 @@ function function_2d24ee630d6c37e2() {
     /#
         level thread function_fc46b0f912ca62f();
     #/
-    var_76bc16f4e15dec1c = namespace_37f0fb6355a4618a::function_47d356083884f913();
+    var_76bc16f4e15dec1c = scripts/mp/poi::function_47d356083884f913();
     poiname = undefined;
     level.aisentryturrets.var_fd5ea9cb37c309d3 = array_randomize(getstructarray("aiSentryTurret", "script_noteworthy"));
     foreach (spawnloc in level.aisentryturrets.var_fd5ea9cb37c309d3) {
         var_de58ca0235ee107b = 1;
-        if (level.aisentryturrets.var_a4cd5b9ae4a509f4.size >= level.aisentryturrets.var_545db13b94c9e4d) {
+        if (level.aisentryturrets.spawnedturrets.size >= level.aisentryturrets.maxtotal) {
             var_de58ca0235ee107b = 0;
         } else if (var_76bc16f4e15dec1c) {
             if (!isdefined(spawnloc.poi)) {
-                spawnloc.poi = namespace_37f0fb6355a4618a::function_6cc445c02b5effac(spawnloc.origin);
+                spawnloc.poi = scripts/mp/poi::function_6cc445c02b5effac(spawnloc.origin);
             }
-            if (!isdefined(spawnloc.poi) || !namespace_37f0fb6355a4618a::poi_ispoiactive(spawnloc.poi)) {
+            if (!isdefined(spawnloc.poi) || !scripts/mp/poi::poi_ispoiactive(spawnloc.poi)) {
                 var_de58ca0235ee107b = 0;
             } else if (level.poi[spawnloc.poi]["aiSentryTurrets"].size >= level.aisentryturrets.var_a4186f089a36d2f0) {
                 var_de58ca0235ee107b = 0;
             }
         }
         if (var_de58ca0235ee107b) {
-            if (namespace_3c37cb17ade254d::issharedfuncdefined("ai_sentry_turret", "additionalApproveSpawn")) {
-                var_de58ca0235ee107b = [[ namespace_3c37cb17ade254d::getsharedfunc("ai_sentry_turret", "additionalApproveSpawn") ]](spawnloc);
+            if (scripts/engine/utility::issharedfuncdefined("ai_sentry_turret", "additionalApproveSpawn")) {
+                var_de58ca0235ee107b = [[ scripts/engine/utility::getsharedfunc("ai_sentry_turret", "additionalApproveSpawn") ]](spawnloc);
             }
         }
         if (var_de58ca0235ee107b) {
             spawnloc.var_1b096843a2175f92 = 1;
-            turret = function_f33b0afadf9107eb(spawnloc);
-            level.aisentryturrets.var_a4cd5b9ae4a509f4[level.aisentryturrets.var_a4cd5b9ae4a509f4.size] = turret;
+            turret = turret_spawn(spawnloc);
+            level.aisentryturrets.spawnedturrets[level.aisentryturrets.spawnedturrets.size] = turret;
             if (var_76bc16f4e15dec1c && isdefined(spawnloc.poi)) {
                 level.poi[spawnloc.poi]["aiSentryTurrets"][level.poi[spawnloc.poi]["aiSentryTurrets"].size] = turret;
-                namespace_37f0fb6355a4618a::function_d0e7647e5538eb9d(spawnloc.poi, "aiSentryTurrets", turret);
+                scripts/mp/poi::function_d0e7647e5538eb9d(spawnloc.poi, "aiSentryTurrets", turret);
             }
         }
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa71
 // Size: 0x79
 function function_2dd8dd0ebc078f25() {
     wait(10);
     config = level.sentrysettings["ai_sentry_turret"];
-    var_b5deff62ba0378ca = spawnstruct();
-    var_b5deff62ba0378ca.origin = (2644, -4359, 10);
-    var_b5deff62ba0378ca.angles = (0, 180, 0);
-    if (isdefined(var_b5deff62ba0378ca)) {
-        turret = function_f33b0afadf9107eb(var_b5deff62ba0378ca);
+    turretstruct = spawnstruct();
+    turretstruct.origin = (2644, -4359, 10);
+    turretstruct.angles = (0, 180, 0);
+    if (isdefined(turretstruct)) {
+        turret = turret_spawn(turretstruct);
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaf1
 // Size: 0x3df
-function function_f33b0afadf9107eb(var_b5deff62ba0378ca, team) {
+function turret_spawn(turretstruct, team) {
     if (getdvarint(@"hash_70d8cba45c5014ec", 1) == 0) {
         return;
     }
@@ -138,11 +138,11 @@ function function_f33b0afadf9107eb(var_b5deff62ba0378ca, team) {
         team = "team_hundred_ninety_five";
     }
     config = level.sentrysettings["ai_sentry_turret"];
-    if (!isdefined(var_b5deff62ba0378ca.angles)) {
-        var_b5deff62ba0378ca.angles = (0, 0, 0);
+    if (!isdefined(turretstruct.angles)) {
+        turretstruct.angles = (0, 0, 0);
     }
-    turret = spawnturret("misc_turret", var_b5deff62ba0378ca.origin, config.weaponinfo);
-    turret.angles = var_b5deff62ba0378ca.angles;
+    turret = spawnturret("misc_turret", turretstruct.origin, config.weaponinfo);
+    turret.angles = turretstruct.angles;
     turret.health = 9999;
     turret.maxhealth = config.maxhealth;
     turret.ammocount = config.ammo;
@@ -162,10 +162,10 @@ function function_f33b0afadf9107eb(var_b5deff62ba0378ca, team) {
     turret setdefaultdroppitch(0);
     turret setautorotationdelay(0.5);
     turret maketurretinoperable();
-    leftarc = float(ter_op(isdefined(var_b5deff62ba0378ca.leftarc), var_b5deff62ba0378ca.leftarc, config.leftarc));
+    leftarc = float(ter_op(isdefined(turretstruct.leftarc), turretstruct.leftarc, config.leftarc));
     turret.leftarc = leftarc;
     turret setleftarc(leftarc);
-    rightarc = float(ter_op(isdefined(var_b5deff62ba0378ca.rightarc), var_b5deff62ba0378ca.rightarc, config.rightarc));
+    rightarc = float(ter_op(isdefined(turretstruct.rightarc), turretstruct.rightarc, config.rightarc));
     turret.rightarc = rightarc;
     turret setrightarc(rightarc);
     turret setbottomarc(50);
@@ -175,8 +175,8 @@ function function_f33b0afadf9107eb(var_b5deff62ba0378ca, team) {
     turret setconvergenceheightpercent(0.9);
     turret setdefaultdroppitch(-89);
     turret setturretmodechangewait(1);
-    turret namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&function_76189206d67bd21c);
-    turret namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&function_1ef2976b1357c651);
+    turret scripts/cp_mp/emp_debuff::set_start_emp_callback(&function_76189206d67bd21c);
+    turret scripts/cp_mp/emp_debuff::set_clear_emp_callback(&function_1ef2976b1357c651);
     turret laseron();
     turret.colmodel = spawn("script_model", turret.origin);
     turret.colmodel.team = turret.team;
@@ -184,8 +184,8 @@ function function_f33b0afadf9107eb(var_b5deff62ba0378ca, team) {
     turret.colmodel setmodel("weapon_vm_mg_sentry_turret_invis_base");
     turret.colmodel dontinterpolate();
     turret.colmodel hide();
-    turret thread namespace_3e725f3cc58bddd3::monitordamage(turret.maxhealth, "hitequip", &function_4424088da3075b69, &function_cb32fe838a62170f, 1);
-    turret thread function_b0faca885d335f8b(turret);
+    turret thread scripts/mp/damage::monitordamage(turret.maxhealth, "hitequip", &function_4424088da3075b69, &function_cb32fe838a62170f, 1);
+    turret thread turret_watchdeath(turret);
     turret thread function_f9dcbe0ab7aac5f6();
     turret thread function_9e099b94cb9fc336();
     turret thread function_352e4c58083275a4();
@@ -194,7 +194,7 @@ function function_f33b0afadf9107eb(var_b5deff62ba0378ca, team) {
     return turret;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xed8
 // Size: 0x172
@@ -212,9 +212,9 @@ function function_4424088da3075b69(data) {
     if (isdefined(attacker)) {
         guy = ter_op(isdefined(attacker.owner), attacker.owner, attacker);
         if (isplayer(guy)) {
-            var_7ec7671a1e0c788f = spawnstruct();
-            var_7ec7671a1e0c788f.var_b421b1d42317ccb2 = 1;
-            guy thread namespace_48a08c5037514e04::doscoreevent(#"hash_2b5885666af24123", objweapon, undefined, undefined, self, undefined, undefined, 0, var_7ec7671a1e0c788f, 1);
+            eventinfo = spawnstruct();
+            eventinfo.isdestroyedkillstreak = 1;
+            guy thread scripts/mp/utility/points::doScoreEvent(#"hash_2b5885666af24123", objweapon, undefined, undefined, self, undefined, undefined, 0, eventinfo, 1);
         }
     }
     self.var_1e0eb63ecb3f1e2 = 0;
@@ -223,7 +223,7 @@ function function_4424088da3075b69(data) {
     self notify("kill_turret", explosivedamage);
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1051
 // Size: 0x7b
@@ -236,7 +236,7 @@ function function_cb32fe838a62170f(data) {
     return damage;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10d4
 // Size: 0xf0
@@ -244,12 +244,12 @@ function function_f9dcbe0ab7aac5f6() {
     self endon("death");
     self endon("kill_turret");
     config = level.sentrysettings[self.sentrytype];
-    while (1) {
+    while (true) {
         if (!istrue(self.turreton) || istrue(self.turretdisabled)) {
             waitframe();
             continue;
         }
-        besttarget = function_22deb1e23a622fff();
+        besttarget = turret_getbesttarget();
         var_1b951c4e47ba5c35 = 1;
         if (isdefined(besttarget)) {
             if (issharedfuncdefined("player", "isReallyAlive")) {
@@ -258,16 +258,16 @@ function function_f9dcbe0ab7aac5f6() {
                 }
             }
             if (var_1b951c4e47ba5c35) {
-                thread namespace_f2ffc0540883e1ad::drawline(besttarget.origin, self.origin, 5, (0, 0, 1));
+                thread scripts/cp_mp/utility/debug_utility::drawline(besttarget.origin, self.origin, 5, (0, 0, 1));
                 function_eb48fdf891a4e9ee(besttarget);
-                namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(config.cooldowntime);
+                scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(config.cooldowntime);
             }
         }
         waitframe();
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11cb
 // Size: 0xad
@@ -276,87 +276,87 @@ function function_eb48fdf891a4e9ee(besttarget) {
     while (istrue(self.turreton) && !istrue(self.stopfiring) && function_c5754fdac13fc2a5(besttarget)) {
         self settargetentity(besttarget);
         if (isplayer(besttarget)) {
-            var_6e7b6acdc197a7ec = config.var_6265b628c3ed1103;
+            pauseinterval = config.var_6265b628c3ed1103;
         } else {
-            var_6e7b6acdc197a7ec = config.var_87d927a08cbfdf3f;
+            pauseinterval = config.var_87d927a08cbfdf3f;
         }
-        function_ba7df6eeacb835f6(config.var_aa507124549d7490, besttarget);
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(var_6e7b6acdc197a7ec);
+        function_ba7df6eeacb835f6(config.burstmaxtime, besttarget);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(pauseinterval);
         self cleartargetentity(besttarget);
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x127f
 // Size: 0x140
-function function_22deb1e23a622fff() {
+function turret_getbesttarget() {
     config = level.sentrysettings[self.sentrytype];
-    var_951af53d31931d09 = config.var_951af53d31931d09;
-    var_52edc18a611b938d = var_951af53d31931d09 * var_951af53d31931d09;
-    var_b80dbedf22c6d394 = utility::playersinsphere(self.origin, var_951af53d31931d09);
+    targetrange = config.targetrange;
+    var_52edc18a611b938d = targetrange * targetrange;
+    potentialtargetlist = utility::playersinsphere(self.origin, targetrange);
     besttarget = undefined;
-    var_b3f7f2ddf0fd4828 = undefined;
-    foreach (potentialtarget in var_b80dbedf22c6d394) {
-        var_e85a3b23195a0fe0 = function_10f997ed68f4fcef(potentialtarget);
-        if (!istrue(var_e85a3b23195a0fe0)) {
+    bestrange = undefined;
+    foreach (potentialtarget in potentialtargetlist) {
+        validtarget = function_10f997ed68f4fcef(potentialtarget);
+        if (!istrue(validtarget)) {
             continue;
         }
         startpoint = self gettagorigin("tag_flash");
         endpoint = potentialtarget.origin;
-        var_5e048634c072b43b = distancesquared(startpoint, endpoint);
-        if (var_5e048634c072b43b <= var_52edc18a611b938d) {
-            if (!isdefined(besttarget) && !isdefined(var_b3f7f2ddf0fd4828) || var_5e048634c072b43b < var_b3f7f2ddf0fd4828) {
+        currentrange = distancesquared(startpoint, endpoint);
+        if (currentrange <= var_52edc18a611b938d) {
+            if (!isdefined(besttarget) && !isdefined(bestrange) || currentrange < bestrange) {
                 besttarget = potentialtarget;
-                var_b3f7f2ddf0fd4828 = var_5e048634c072b43b;
+                bestrange = currentrange;
             }
         }
     }
     return besttarget;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13c7
 // Size: 0x73
 function function_10f997ed68f4fcef(potentialtarget) {
     if (issharedfuncdefined("player", "isReallyAlive")) {
         if (![[ getsharedfunc("player", "isReallyAlive") ]](potentialtarget)) {
-            return 0;
+            return false;
         }
     }
     if (istrue(potentialtarget.notarget)) {
-        return 0;
+        return false;
     }
     if (istrue(potentialtarget.var_f6f8549c6fd27e85)) {
-        return 0;
+        return false;
     }
     if (!function_bc0708b3cc5719c9(potentialtarget)) {
-        return 0;
+        return false;
     }
-    if (!function_f6f04fc4e42cf2c4(potentialtarget)) {
-        return 0;
+    if (!turret_canseetarget(potentialtarget)) {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1442
 // Size: 0x7c
 function function_c5754fdac13fc2a5(besttarget) {
     config = level.sentrysettings[self.sentrytype];
-    maxrangesq = config.var_951af53d31931d09 * config.var_951af53d31931d09;
+    maxrangesq = config.targetrange * config.targetrange;
     if (distancesquared(self gettagorigin("tag_flash"), besttarget.origin) > maxrangesq) {
-        return 0;
+        return false;
     }
     if (!function_10f997ed68f4fcef(besttarget)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14c6
 // Size: 0x53
@@ -366,16 +366,16 @@ function function_bc0708b3cc5719c9(potentialtarget) {
     return dotproduct < 0;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1521
 // Size: 0xc9
-function function_f6f04fc4e42cf2c4(potentialtarget) {
-    var_c3fbb6661b91750f = namespace_2a184fc4902783dc::create_contents(0, 1, 0, 1, 0, 1, 0, 1, 1);
-    var_7e7a5a3c0a297a0b = [0:"j_mainroot", 1:"tag_origin", 2:"j_head"];
+function turret_canseetarget(potentialtarget) {
+    contentsoverride = scripts/engine/trace::create_contents(0, 1, 0, 1, 0, 1, 0, 1, 1);
+    targetpoints = ["j_mainroot", "tag_origin", "j_head"];
     canseetarget = 0;
-    foreach (point in var_7e7a5a3c0a297a0b) {
-        canseetarget = namespace_2a184fc4902783dc::ray_trace_passed(self gettagorigin("tag_flash"), potentialtarget gettagorigin(point), self, var_c3fbb6661b91750f);
+    foreach (point in targetpoints) {
+        canseetarget = scripts/engine/trace::ray_trace_passed(self gettagorigin("tag_flash"), potentialtarget gettagorigin(point), self, contentsoverride);
         if (istrue(canseetarget)) {
             break;
         }
@@ -383,21 +383,21 @@ function function_f6f04fc4e42cf2c4(potentialtarget) {
     return canseetarget;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15f2
 // Size: 0x12c
-function function_b0faca885d335f8b(turret) {
-    var_4fac8b8ce36e09f1 = var_b2797481a55c620 = turret waittill("kill_turret");
+function turret_watchdeath(turret) {
+    skipshutdown, wasdestroyed = turret waittill("kill_turret");
     turret.killed = 1;
     turret function_caea36dc6c3ce373("destroyed");
     turret setturretowner(undefined);
-    if (!istrue(var_b2797481a55c620)) {
+    if (!istrue(skipshutdown)) {
         turret playsound("sentry_explode_smoke");
         turret setscriptablepartstate("shutdown", "on");
         turret.turreton = 0;
         turret.turretdisabled = 1;
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(2);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(2);
         turret setscriptablepartstate("explode", "regular");
     } else {
         turret setscriptablepartstate("explode", "violent");
@@ -407,27 +407,27 @@ function function_b0faca885d335f8b(turret) {
         turret.colmodel delete();
     }
     wait(0.2);
-    if (0) {
+    if (false) {
         level thread function_92fa86c7825c72e1(turret.origin, turret.angles, turret.leftarc, turret.rightarc, 4);
     }
     turret delete();
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1725
 // Size: 0x85
 function function_92fa86c7825c72e1(origin, angles, leftarc, rightarc, var_68faa79e3e6058fb) {
     wait(var_68faa79e3e6058fb);
-    var_b5deff62ba0378ca = spawnstruct();
-    var_b5deff62ba0378ca.origin = origin;
-    var_b5deff62ba0378ca.angles = angles;
-    var_b5deff62ba0378ca.leftarc = leftarc;
-    var_b5deff62ba0378ca.rightarc = rightarc;
-    turret = function_f33b0afadf9107eb(var_b5deff62ba0378ca);
+    turretstruct = spawnstruct();
+    turretstruct.origin = origin;
+    turretstruct.angles = angles;
+    turretstruct.leftarc = leftarc;
+    turretstruct.rightarc = rightarc;
+    turret = turret_spawn(turretstruct);
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17b1
 // Size: 0x59
@@ -442,7 +442,7 @@ function function_caea36dc6c3ce373(type) {
     self setmodel(turretmodel);
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1811
 // Size: 0x2d
@@ -455,7 +455,7 @@ function function_9e099b94cb9fc336() {
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1845
 // Size: 0x3d
@@ -469,23 +469,22 @@ function function_1279fb3b42ff8e1() {
     self playsound("sentry_gun_target_lock_beep");
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1889
 // Size: 0x1fd
-function function_ba7df6eeacb835f6(var_be9fa813c1afa2c8, potentialtarget) {
-    function_38edcf00cfd7f099();
+function function_ba7df6eeacb835f6(maxbursttime, potentialtarget) {
+    turret_spinup();
     config = level.sentrysettings[self.sentrytype];
     firetime = weaponfiretime(config.weaponinfo);
-    var_3746ec1befd86ae8 = config.burstmin;
-    var_3e92cd336a99ce02 = config.burstmax;
-    var_5f622c39d6661b23 = config.pausemin;
-    var_42ae243cd994c3bd = config.pausemax;
+    minshots = config.burstmin;
+    maxshots = config.burstmax;
+    minpause = config.pausemin;
+    maxpause = config.pausemax;
     lockstrength = config.lockstrength;
     currenttime = 0;
-    var_1b951c4e47ba5c35 = 1;
-    while (istrue(self.turreton) && !istrue(self.stopfiring) && currenttime < var_be9fa813c1afa2c8 && var_1b951c4e47ba5c35) {
-        numshots = randomintrange(var_3746ec1befd86ae8, var_3e92cd336a99ce02 + 1);
+    for (var_1b951c4e47ba5c35 = 1; istrue(self.turreton) && !istrue(self.stopfiring) && currenttime < maxbursttime && var_1b951c4e47ba5c35; var_1b951c4e47ba5c35 = [[ getsharedfunc("player", "isReallyAlive") ]](potentialtarget)) {
+        numshots = randomintrange(minshots, maxshots + 1);
         for (i = 0; i < numshots && !self.overheated; i++) {
             if (!istrue(self.turreton) || istrue(self.stopfiring)) {
                 break;
@@ -501,17 +500,16 @@ function function_ba7df6eeacb835f6(var_be9fa813c1afa2c8, potentialtarget) {
         if (!istrue(self.turreton) || istrue(self.stopfiring)) {
             break;
         }
-        var_43559afed713d177 = randomfloatrange(var_5f622c39d6661b23, var_42ae243cd994c3bd);
-        wait(var_43559afed713d177);
-        currenttime = currenttime + var_43559afed713d177;
+        randwait = randomfloatrange(minpause, maxpause);
+        wait(randwait);
+        currenttime = currenttime + randwait;
         if (issharedfuncdefined("player", "isReallyAlive")) {
-            var_1b951c4e47ba5c35 = [[ getsharedfunc("player", "isReallyAlive") ]](potentialtarget);
         }
     }
     function_e711849fbc474180();
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a8d
 // Size: 0xa
@@ -519,11 +517,11 @@ function function_afe3c3af7cb5e39e() {
     function_e711849fbc474180();
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a9e
 // Size: 0x70
-function function_38edcf00cfd7f099() {
+function turret_spinup() {
     config = level.sentrysettings[self.sentrytype];
     thread function_1279fb3b42ff8e1();
     while (istrue(self.turreton) && self.momentum < config.spinuptime) {
@@ -532,7 +530,7 @@ function function_38edcf00cfd7f099() {
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b15
 // Size: 0xd
@@ -540,14 +538,14 @@ function function_e711849fbc474180() {
     self.momentum = 0;
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b29
 // Size: 0x40
 function function_352e4c58083275a4() {
     self endon("kill_turret");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         wait(3);
         if (self isfiringturret()) {
             waitframe();
@@ -557,22 +555,22 @@ function function_352e4c58083275a4() {
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b70
 // Size: 0xd5
-function function_704307eb2f1581ac(var_73d512f6ffef310d) {
+function function_704307eb2f1581ac(turrettrigger) {
     self endon("death");
     self endon("kill_turret");
     config = level.sentrysettings[self.sentrytype];
     self setmode(config.sentrymodeoff);
     self.turreton = 0;
-    while (1) {
-        player = var_73d512f6ffef310d waittill("trigger");
+    while (true) {
+        player = turrettrigger waittill("trigger");
         if (!istrue(self.turreton)) {
             self.turreton = 1;
             self setmode(config.sentrymodeon);
-            while (isalive(player) && player istouching(var_73d512f6ffef310d)) {
+            while (isalive(player) && player istouching(turrettrigger)) {
                 waitframe();
             }
             self.turreton = 0;
@@ -582,7 +580,7 @@ function function_704307eb2f1581ac(var_73d512f6ffef310d) {
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c4c
 // Size: 0x80
@@ -598,7 +596,7 @@ function function_76189206d67bd21c(data) {
     function_e3217606f8218ae();
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cd3
 // Size: 0x3f
@@ -612,23 +610,25 @@ function function_1ef2976b1357c651(isdeath) {
     function_e3217606f8218ae();
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d19
 // Size: 0x80
 function function_e3217606f8218ae() {
-    if (namespace_5a51aa78ea0b1b9f::is_empd()) {
+    if (scripts/cp_mp/emp_debuff::is_empd()) {
         self turretfiredisable();
         self setmode(level.sentrysettings[self.sentrytype].sentrymodeoff);
         self laseroff();
-    } else if (!istrue(self.killed)) {
+        return;
+    }
+    if (!istrue(self.killed)) {
         self turretfireenable();
         self setmode(level.sentrysettings[self.sentrytype].sentrymodeon);
         self laseron();
     }
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1da0
 // Size: 0x169
@@ -636,7 +636,7 @@ function function_fc46b0f912ca62f() {
     /#
         level endon("isReallyAlive");
         setdvarifuninitialized(@"hash_46a2f7c9bc7efd38", 0);
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_46a2f7c9bc7efd38", 0) == 1) {
                 foreach (loc in level.aisentryturrets.var_fd5ea9cb37c309d3) {
                     color = (1, 0, 0);
@@ -645,7 +645,7 @@ function function_fc46b0f912ca62f() {
                         leftarc = level.sentrysettings["violent"].leftarc;
                         rightarc = level.sentrysettings["violent"].rightarc;
                         startpoint = loc.origin + (0, 0, 60);
-                        namespace_91707ccc3e1bf8ff::function_ab68b8f1b9191d70(startpoint, 0 - rightarc, leftarc, loc.angles, 100, 1, 5, color);
+                        scripts/stealth/debug::function_ab68b8f1b9191d70(startpoint, 0 - rightarc, leftarc, loc.angles, 100, 1, 5, color);
                     }
                     /#
                         sphere(loc.origin, 64, color);
@@ -657,7 +657,7 @@ function function_fc46b0f912ca62f() {
     #/
 }
 
-// Namespace ai_sentry_turret/namespace_4338aec4322f6fdd
+// Namespace ai_sentry_turret / namespace_4338aec4322f6fdd
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f10
 // Size: 0x58

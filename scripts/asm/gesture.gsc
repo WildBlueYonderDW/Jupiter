@@ -7,18 +7,18 @@
 
 #namespace gesture;
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x39
-function ai_request_gesture(gesture, target_obj, var_25163a76776676d, notify_name) {
-    if (!isdefined(var_25163a76776676d)) {
-        var_25163a76776676d = 1000;
+function ai_request_gesture(gesture, target_obj, timeout_ms, notify_name) {
+    if (!isdefined(timeout_ms)) {
+        timeout_ms = 1000;
     }
-    ai_request_gesture_internal(gesture, target_obj, var_25163a76776676d, notify_name);
+    ai_request_gesture_internal(gesture, target_obj, timeout_ms, notify_name);
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x234
 // Size: 0x74
@@ -32,22 +32,22 @@ function ai_cancel_gesture() {
     self._blackboard.gesturerequest = undefined;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2af
 // Size: 0x1a3
 function handlegesturenotetrack(flagname) {
     notes = self waittill(flagname);
     if (!isdefined(notes)) {
-        notes = [0:"undefined"];
+        notes = ["undefined"];
     }
     if (!isarray(notes)) {
-        notes = [0:notes];
+        notes = [notes];
     }
     /#
         assert(isdefined(self.fnasm_handlenotetrack));
     #/
-    var_fc9a12fe1f57542a = undefined;
+    defined_val = undefined;
     foreach (note in notes) {
         if (note == "start_gundown") {
             self.gunposeoverride_internal = undefined;
@@ -69,13 +69,13 @@ function handlegesturenotetrack(flagname) {
             val = [[ self.fnasm_handlenotetrack ]](note, flagname);
         }
         if (isdefined(val)) {
-            var_fc9a12fe1f57542a = val;
+            defined_val = val;
         }
     }
-    return var_fc9a12fe1f57542a;
+    return defined_val;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45a
 // Size: 0x44
@@ -91,17 +91,17 @@ function gesturedonotetracks(animlength) {
     self notify("gesture_finished");
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x1d
-function gesturenotetracktimeoutthread(var_cf54c5297431fef6) {
+function gesturenotetracktimeoutthread(timeout_sec) {
     self endon("gesture_finished");
-    wait(var_cf54c5297431fef6);
+    wait(timeout_sec);
     self notify("gesture_timeout");
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c9
 // Size: 0x343
@@ -111,14 +111,14 @@ function gesture(asmname) {
     /#
         assertex(!isdefined(self._blackboard.gesturerequest), "Gesture requested before gesture service started");
     #/
-    while (1) {
+    while (true) {
         if (!isdefined(self._blackboard.gesturerequest)) {
             self waittill("gesture_requested");
         }
         /#
             assert(isdefined(self._blackboard.gesturerequest));
         #/
-        while (1) {
+        while (true) {
             if (!isdefined(self._blackboard.gesturerequest)) {
                 break;
             }
@@ -126,7 +126,7 @@ function gesture(asmname) {
                 ai_cancel_gesture();
                 break;
             }
-            if (namespace_28edc79fcf2fe234::bb_moverequested()) {
+            if (scripts/asm/asm_bb::bb_moverequested()) {
                 target_speed = self aigettargetspeed();
                 if (!istrue(self.allowrunninggesture) && target_speed > 135) {
                     wait(0.1);
@@ -138,15 +138,15 @@ function gesture(asmname) {
                 }
             }
             self._blackboard.gesturerequest.latestalias = get_gesture_alias(self._blackboard.gesturerequest.gesture, self._blackboard.gesturerequest.target);
-            var_4edb516a81e6b468 = self aiplaygesture(self._blackboard.gesturerequest.latestalias);
-            if (!isdefined(var_4edb516a81e6b468)) {
+            gesture_anim = self aiplaygesture(self._blackboard.gesturerequest.latestalias);
+            if (!isdefined(gesture_anim)) {
                 wait(0.1);
                 continue;
             }
             /#
                 if (getdvarint(@"hash_7528066c9678d0a0", 0) == 1) {
-                    var_228c1f2f3a2d92f1 = getanimlength(var_4edb516a81e6b468);
-                    print3d(self.origin + (0, 0, 72), self._blackboard.gesturerequest.gesture + "<unknown string>", (1, 1, 1), 1, 1, int(var_228c1f2f3a2d92f1 * 20));
+                    anim_length = getanimlength(gesture_anim);
+                    print3d(self.origin + (0, 0, 72), self._blackboard.gesturerequest.gesture + "<unknown string>", (1, 1, 1), 1, 1, int(anim_length * 20));
                 }
             #/
             self.gunposeoverride_internal = "disable";
@@ -158,7 +158,7 @@ function gesture(asmname) {
             notify_name = self._blackboard.gesturerequest.notifyname;
             self._blackboard.gesturerequest = undefined;
             self._blackboard.partialgestureplaying = 1;
-            gesturedonotetracks(getanimlength(var_4edb516a81e6b468));
+            gesturedonotetracks(getanimlength(gesture_anim));
             self._blackboard.partialgestureplaying = 0;
             if (isdefined(notify_name)) {
                 self notify(notify_name, "gesture_finish");
@@ -172,44 +172,44 @@ function gesture(asmname) {
     }
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x813
 // Size: 0x8a
 function gesture_should_disable_lookat(gesture) {
-    var_a0ac7796b5ece550 = [0:"casual_point", 1:"military_point", 2:"beckon", 3:"nvg_on", 4:"nvg_off", 5:"wrist_com_lower", 6:"wrist_com_raise"];
+    var_a0ac7796b5ece550 = ["casual_point", "military_point", "beckon", "nvg_on", "nvg_off", "wrist_com_lower", "wrist_com_raise"];
     if (isdefined(self._blackboard.civilianfocuscurvalue) && gesture == "beckon") {
-        return 0;
+        return false;
     }
     if (array_contains(var_a0ac7796b5ece550, gesture)) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8a5
 // Size: 0x163
-function ai_request_gesture_internal(gesture, var_5110585bd4e933fe, var_25163a76776676d, notify_name) {
+function ai_request_gesture_internal(gesture, target_object, timeout_ms, notify_name) {
     if (isdefined(self._blackboard.gesturerequest)) {
         ai_cancel_gesture();
     }
     /#
         if (getdvarint(@"hash_7528066c9678d0a0", 0) == 1) {
-            print3d(self.origin + (0, 0, 84), gesture + "<unknown string>", (1, 1, 1), 1, 1, int(var_25163a76776676d / 50));
+            print3d(self.origin + (0, 0, 84), gesture + "<unknown string>", (1, 1, 1), 1, 1, int(timeout_ms / 50));
         }
     #/
     self._blackboard.gesturerequest = spawnstruct();
     self._blackboard.gesturerequest.gesture = gesture;
-    self._blackboard.gesturerequest.target = var_5110585bd4e933fe;
-    self._blackboard.gesturerequest.timeoutms = gettime() + var_25163a76776676d;
+    self._blackboard.gesturerequest.target = target_object;
+    self._blackboard.gesturerequest.timeoutms = gettime() + timeout_ms;
     self._blackboard.gesturerequest.notifyname = notify_name;
     self._blackboard.gesturerequest.disablelookat = gesture_should_disable_lookat(gesture);
     self notify("gesture_requested");
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0f
 // Size: 0x19
@@ -217,7 +217,7 @@ function civisfocusingleft() {
     return self._blackboard.civilianfocusstate == 3;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa30
 // Size: 0x19
@@ -225,7 +225,7 @@ function civisfocusingright() {
     return self._blackboard.civilianfocusstate == 4;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa51
 // Size: 0x1a8
@@ -256,13 +256,13 @@ function get_gesture_alias(gesture, gesture_target) {
         var_935ce979bb3ef270 = vectortoyaw(targetorigin - self.origin);
         anglediff = angleclamp180(var_935ce979bb3ef270 - self.angles[1]);
         angleindex = getangleindex(anglediff, 22.5);
-        angleindex = namespace_34bf5965727c0922::mapangleindextonumpad(angleindex);
+        angleindex = scripts/asm/shared/utility::mapangleindextonumpad(angleindex);
         return (gesture + angleindex);
     }
     return gesture;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc01
 // Size: 0x79
@@ -276,7 +276,7 @@ function ai_finish_gesture() {
     self._blackboard.gesturerequest = undefined;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc81
 // Size: 0x74
@@ -284,14 +284,14 @@ function chooseanim_gesture(asmname, statename, params) {
     /#
         assert(isdefined(self._blackboard.gesturerequest));
     #/
-    var_4edb516a81e6b468 = asm_lookupanimfromalias(statename, self._blackboard.gesturerequest.latestalias);
+    gesture_anim = asm_lookupanimfromalias(statename, self._blackboard.gesturerequest.latestalias);
     /#
-        assert(isdefined(var_4edb516a81e6b468));
+        assert(isdefined(gesture_anim));
     #/
-    return var_4edb516a81e6b468;
+    return gesture_anim;
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xcfd
 // Size: 0x1cb
@@ -300,10 +300,10 @@ function playcoveranim_gesture(asmname, statename, params) {
     self._blackboard.activegesturenotify = self._blackboard.gesturerequest.notifyname;
     self setuseanimgoalweight(0.2);
     var_d6dd63cefb3c4ee = asm_getanim(asmname, statename);
-    var_66aebe1d33f3b18 = asm_getxanim(statename, var_d6dd63cefb3c4ee);
+    myxanim = asm_getxanim(statename, var_d6dd63cefb3c4ee);
     self orientmode("face current");
     if (asm_currentstatehasflag(asmname, "notetrackAim")) {
-        angledelta = getangledelta(var_66aebe1d33f3b18, 0, 1);
+        angledelta = getangledelta(myxanim, 0, 1);
         self.stepoutyaw = self.angles[1] + angledelta;
     }
     /#
@@ -313,7 +313,7 @@ function playcoveranim_gesture(asmname, statename, params) {
     #/
     self._blackboard.gesturerequest = undefined;
     self aisetanim(statename, var_d6dd63cefb3c4ee);
-    asm_playfacialanim(asmname, statename, var_66aebe1d33f3b18);
+    asm_playfacialanim(asmname, statename, myxanim);
     asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
     self orientmode("face current");
     if (isdefined(self._blackboard.activegesturenotify)) {
@@ -322,7 +322,7 @@ function playcoveranim_gesture(asmname, statename, params) {
     }
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xecf
 // Size: 0x61
@@ -333,20 +333,20 @@ function cleargestureanim(asmname, statename, params) {
     }
 }
 
-// Namespace gesture/namespace_d3b312ec98e9299b
+// Namespace gesture / scripts/asm/gesture
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xf37
 // Size: 0xeb
-function gesture_finishearly(asmname, statename, var_f2b19b25d457c2a6, gesture) {
+function gesture_finishearly(asmname, statename, tostatename, gesture) {
     if (bb_moverequested() && istrue(self.gestureinterruptible)) {
         if (isdefined(self.gestureinterruptibleifplayerwithindist)) {
             if (distancesquared(self.origin, level.player.origin) < self.gestureinterruptibleifplayerwithindist * self.gestureinterruptibleifplayerwithindist) {
                 self asmfireephemeralevent("gesture", "end");
-                return 1;
+                return true;
             }
         } else {
             self asmfireephemeralevent("gesture", "end");
-            return 1;
+            return true;
         }
     }
     if (asm_eventfired(asmname, "finish_early") && bb_moverequested()) {

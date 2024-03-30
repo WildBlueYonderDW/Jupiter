@@ -11,12 +11,12 @@
 
 #namespace namespace_afa5810d94c388dc;
 
-// Namespace namespace_afa5810d94c388dc/namespace_4c67b6490a5b3bcb
+// Namespace namespace_afa5810d94c388dc / namespace_4c67b6490a5b3bcb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37d
 // Size: 0x2d3
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_79c181708dd11469");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_79c181708dd11469");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_d4c1580d6bc10b4");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 300;
@@ -24,30 +24,30 @@ function main() {
     self.behaviortreeasset = "soldier_agent";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "soldier";
-    switch (namespace_ac7e8770abb7eb1::get_random_weapon(6)) {
+    switch (scripts/code/character::get_random_weapon(6)) {
     case 0:
-        var_fea750d6814b803d = "iw9_lm_ngolf7, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_lm_ngolf7, [ none, none, none, none, none, none ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 1:
-        var_fea750d6814b803d = "iw9_lm_kilo21, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_lm_kilo21, [ none, none, none, none, none, none ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 2:
-        var_fea750d6814b803d = "iw9_ar_akilo74, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_ar_akilo74, [ none, none, none, none, none, none ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 3:
-        var_fea750d6814b803d = "iw9_ar_akilo105, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_ar_akilo105, [ none, none, none, none, none, none ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 4:
-        var_fea750d6814b803d = "iw9_ar_akilo74, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_ar_akilo74, [ none, none, none, none, none, none ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     case 5:
-        var_fea750d6814b803d = "iw9_ar_akilo105, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+        primaryweaponhash = "iw9_ar_akilo105, [ none, none, none, none, none, none ], none, none";
+        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
         break;
     }
     self giveweapon(self.weapon);
@@ -56,8 +56,8 @@ function main() {
     self.primaryweapon = self.weapon;
     var_4f04b9c326eb7400 = "iw9_pi_papa220, [ none, none, none, none, none, none ], none, none";
     self.sidearm = level.var_67b54180a55f70e1[var_4f04b9c326eb7400];
-    var_a68442ebadb66eb1 = "frag_grenade_mp";
-    self.grenadeweapon = level.var_67b54180a55f70e1[var_a68442ebadb66eb1];
+    grenadeweaponhash = "frag_grenade_mp";
+    self.grenadeweapon = level.var_67b54180a55f70e1[grenadeweaponhash];
     self.grenadeammo = 2;
     setup_model();
     /#
@@ -71,13 +71,13 @@ function main() {
     #/
     self.var_a942dd31d55102c9 = self.asmasset;
     self.a = spawnstruct();
-    namespace_bf5a1761a8d1bb07::asm_init_blackboard();
-    namespace_f08e04b63067d27f::bt_init();
-    namespace_28d7bb9fcf17949d::asm_init(self.asmasset, self.animationarchetype);
-    namespace_6205bc7c5e394598::ai_init();
+    scripts/asm/asm::asm_init_blackboard();
+    scripts/aitypes/bt_util::bt_init();
+    scripts/asm/asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts/common/ai::ai_init();
 }
 
-// Namespace namespace_afa5810d94c388dc/namespace_4c67b6490a5b3bcb
+// Namespace namespace_afa5810d94c388dc / namespace_4c67b6490a5b3bcb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x657
 // Size: 0x57
@@ -91,7 +91,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_afa5810d94c388dc/namespace_4c67b6490a5b3bcb
+// Namespace namespace_afa5810d94c388dc / namespace_4c67b6490a5b3bcb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b5
 // Size: 0x42
@@ -102,11 +102,10 @@ function function_9ac26a51c94ccf52() {
     switch (self.var_e2682e6f1838391e) {
     default:
         return namespace_d83fb0ce0a8be1b8::main();
-        break;
     }
 }
 
-// Namespace namespace_afa5810d94c388dc/namespace_4c67b6490a5b3bcb
+// Namespace namespace_afa5810d94c388dc / namespace_4c67b6490a5b3bcb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6fe
 // Size: 0xcf
@@ -123,17 +122,17 @@ function precache() {
         level.agent_definition[agent_type]["subclass"] = getscriptbundle(%"hash_d4c1580d6bc10b4");
         namespace_d83fb0ce0a8be1b8::function_8168fbf6282d398b();
     }
-    namespace_e8f3f30f2d3e4a89::agent_init();
-    namespace_f08e04b63067d27f::init();
-    namespace_8bef0f00d6d36a69::soldier();
-    thread function_e8cf870298e36bdc();
+    scripts/cp_mp/agents/agent_init::agent_init();
+    scripts/aitypes/bt_util::init();
+    scripts/aitypes/assets::soldier();
+    thread setup_weapons();
 }
 
-// Namespace namespace_afa5810d94c388dc/namespace_4c67b6490a5b3bcb
+// Namespace namespace_afa5810d94c388dc / namespace_4c67b6490a5b3bcb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x3a5
-function function_e8cf870298e36bdc() {
+function setup_weapons() {
     while (!isdefined(level.weaponmapdata)) {
         waitframe();
     }
@@ -142,35 +141,35 @@ function function_e8cf870298e36bdc() {
     }
     var_5576d3be590a9a64 = "iw9_lm_ngolf7, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d3be590a9a64])) {
-        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_lm_ngolf7", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = scripts/mp/class::function_e83615f8a92e4378("iw9_lm_ngolf7", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
     var_5576d6be590aa0fd = "iw9_lm_kilo21, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d6be590aa0fd])) {
-        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_lm_kilo21", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = scripts/mp/class::function_e83615f8a92e4378("iw9_lm_kilo21", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
     var_5576d5be590a9eca = "iw9_ar_akilo74, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d5be590a9eca])) {
-        level.var_67b54180a55f70e1[var_5576d5be590a9eca] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_ar_akilo74", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d5be590a9eca] = scripts/mp/class::function_e83615f8a92e4378("iw9_ar_akilo74", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
     var_5576d0be590a93cb = "iw9_ar_akilo105, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d0be590a93cb])) {
-        level.var_67b54180a55f70e1[var_5576d0be590a93cb] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_ar_akilo105", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d0be590a93cb] = scripts/mp/class::function_e83615f8a92e4378("iw9_ar_akilo105", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
     var_5576cfbe590a9198 = "iw9_ar_akilo74, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576cfbe590a9198])) {
-        level.var_67b54180a55f70e1[var_5576cfbe590a9198] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_ar_akilo74", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576cfbe590a9198] = scripts/mp/class::function_e83615f8a92e4378("iw9_ar_akilo74", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
     var_5576d2be590a9831 = "iw9_ar_akilo105, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_5576d2be590a9831])) {
-        level.var_67b54180a55f70e1[var_5576d2be590a9831] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_ar_akilo105", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_5576d2be590a9831] = scripts/mp/class::function_e83615f8a92e4378("iw9_ar_akilo105", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
     var_4f04b9c326eb7400 = "iw9_pi_papa220, [ none, none, none, none, none, none ], none, none";
     if (!isdefined(level.var_67b54180a55f70e1[var_4f04b9c326eb7400])) {
-        level.var_67b54180a55f70e1[var_4f04b9c326eb7400] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_pi_papa220", [0:"none", 1:"none", 2:"none", 3:"none", 4:"none", 5:"none"], "none", "none");
+        level.var_67b54180a55f70e1[var_4f04b9c326eb7400] = scripts/mp/class::function_e83615f8a92e4378("iw9_pi_papa220", ["none", "none", "none", "none", "none", "none"], "none", "none");
     }
-    var_a68442ebadb66eb1 = "frag_grenade_mp";
-    if (!isdefined(level.var_67b54180a55f70e1[var_a68442ebadb66eb1])) {
-        level.var_67b54180a55f70e1[var_a68442ebadb66eb1] = makeweapon("frag_grenade_mp");
+    grenadeweaponhash = "frag_grenade_mp";
+    if (!isdefined(level.var_67b54180a55f70e1[grenadeweaponhash])) {
+        level.var_67b54180a55f70e1[grenadeweaponhash] = makeweapon("frag_grenade_mp");
     }
 }
 

@@ -3,12 +3,12 @@
 
 #namespace flags;
 
-// Namespace flags/namespace_2ca3a93161121e96
+// Namespace flags / scripts/engine/flags
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83
 // Size: 0x53
 function init_flags() {
-    if (!namespace_3c37cb17ade254d::add_init_script("init_flags", &init_flags)) {
+    if (!scripts/engine/utility::add_init_script("init_flags", &init_flags)) {
         return;
     }
     level.flag = [];
@@ -18,7 +18,7 @@ function init_flags() {
     level.flag_struct assign_unique_id();
 }
 
-// Namespace flags/namespace_2ca3a93161121e96
+// Namespace flags / scripts/engine/flags
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdd
 // Size: 0x25

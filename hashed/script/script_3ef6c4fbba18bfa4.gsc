@@ -26,7 +26,7 @@
 
 #namespace butterfly_mine;
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x434
 // Size: 0x19
@@ -34,16 +34,16 @@ function autoexec main() {
     registersharedfunc("equip_butterfly_mine", "init", &function_843dde4bf96b6965);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x454
 // Size: 0x2c
 function function_843dde4bf96b6965() {
-    minetriggerdata = namespace_739a1beacdad3457::vehicle_mines_getleveldataformine("equip_butterfly_mine", 1);
+    minetriggerdata = scripts/cp_mp/vehicles/vehicle_mines::vehicle_mines_getleveldataformine("equip_butterfly_mine", 1);
     minetriggerdata.triggercallback = &function_4751713f978b6416;
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x487
 // Size: 0x1af
@@ -52,11 +52,11 @@ function function_539f38f444d5b41a(grenade) {
     grenade setcandamage(0);
     grenade hudoutlinedisable();
     grenade setscriptablepartstate("visibility", "show", 0);
-    grenade.var_c63a7f2980c7d596 = [];
-    grenade.var_698a77ddf33b65d0 = 0;
+    grenade.playerhits = [];
+    grenade.givenscore = 0;
     ref = namespace_4fb9dddfb8c1a67a::function_7f245729fcb6414d(grenade.weapon_name);
-    grenade.var_8bf83d28be4c2d4f = namespace_4fb9dddfb8c1a67a::getequipmenttableinfo(ref);
-    if (!isdefined(grenade.var_8bf83d28be4c2d4f.bundle)) {
+    grenade.tableinfo = namespace_4fb9dddfb8c1a67a::getequipmenttableinfo(ref);
+    if (!isdefined(grenade.tableinfo.bundle)) {
         /#
             assertmsg("Butterfly Mine needs a bundle.");
         #/
@@ -67,58 +67,58 @@ function function_539f38f444d5b41a(grenade) {
     stuckto = grenade waittill("missile_stuck");
     grenade setscriptablepartstate("plant", "active", 0);
     traveltime = (gettime() - var_8011cffb839e8243) / 1000;
-    var_ceab23e7a7e95404 = launchvelocity + (0, 0, -800 * traveltime);
+    impactvelocity = launchvelocity + (0, 0, -800 * traveltime);
     onequipmentplanted(grenade, "equip_butterfly_mine", &function_f1ccd9eaaa39e87c);
-    wait(grenade.var_8bf83d28be4c2d4f.bundle.var_13e889d695d426d0);
-    grenade function_a1a46255fbfac86c(grenade, var_6951cf1f43bc8ebe, var_ceab23e7a7e95404);
+    wait(grenade.tableinfo.bundle.scatterdelay);
+    grenade function_a1a46255fbfac86c(grenade, var_6951cf1f43bc8ebe, impactvelocity);
     grenade setscriptablepartstate("launch", "land", 0);
     wait(0.25);
     grenade setscriptablepartstate("visibility", "hide", 0);
     grenade hide();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63d
 // Size: 0x5d
-function function_a1a46255fbfac86c(grenade, var_6951cf1f43bc8ebe, var_ceab23e7a7e95404) {
-    grenade.var_ec07522d4a88f026 = [];
-    grenade function_33f76685d61ffb0(grenade.var_8bf83d28be4c2d4f.bundle.var_e2a7d54c199db889, 3, var_ceab23e7a7e95404, 45, 120, 35, 360, 0);
+function function_a1a46255fbfac86c(grenade, var_6951cf1f43bc8ebe, impactvelocity) {
+    grenade.ownedmines = [];
+    grenade function_33f76685d61ffb0(grenade.tableinfo.bundle.damageweapons, 3, impactvelocity, 45, 120, 35, 360, 0);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0x27e
-function function_33f76685d61ffb0(var_47a3cfd1f03dea91, var_e39d0ef75da9bc05, var_ceab23e7a7e95404, var_fcf98315fcc13307, var_ec8c077b88a3003e, var_450483a591a06439, var_66049dbda29a511f, var_4d1e3f4a23058445) {
+function function_33f76685d61ffb0(minename, nummines, impactvelocity, stepstartradius, var_ec8c077b88a3003e, var_450483a591a06439, fandegrees, var_4d1e3f4a23058445) {
     var_4b65413211af7033 = undefined;
-    forward = vectornormalize(var_ceab23e7a7e95404);
+    forward = vectornormalize(impactvelocity);
     up = anglestoup(self.angles);
     var_4b65413211af7033 = function_5f9ffc69b9bd0ab3(up, forward);
-    for (var_461f79a7e3bae49e = 0; var_461f79a7e3bae49e < var_e39d0ef75da9bc05; var_461f79a7e3bae49e++) {
-        var_a1e0f56139f09662 = "0" + var_461f79a7e3bae49e;
-        var_7dd38127390a8ba9 = self gettagorigin("j_mine_" + var_a1e0f56139f09662, 1);
-        if (!isdefined(var_7dd38127390a8ba9)) {
+    for (mineindex = 0; mineindex < nummines; mineindex++) {
+        minenum = "0" + mineindex;
+        launchlocation = self gettagorigin("j_mine_" + minenum, 1);
+        if (!isdefined(launchlocation)) {
             continue;
         }
-        var_4bb748152aa75ddf = vectornormalize(var_7dd38127390a8ba9 - self.origin);
-        var_4bb748152aa75ddf = function_70fd9ddef68b9ae3(var_4bb748152aa75ddf, var_7dd38127390a8ba9, 10);
-        var_f2da0ac5a61a699e = randomfloatrange(-1, 1) * 5 + var_450483a591a06439;
-        var_a1261dd532409e7f = randomfloatrange(-1, 1) * 15;
-        var_441fb78a71e1b458 = 360 - var_f2da0ac5a61a699e - var_a1261dd532409e7f;
-        var_154ef61b7a7f747a = randomfloatrange(var_fcf98315fcc13307, var_ec8c077b88a3003e);
-        var_6951cf1f43bc8ebe = vectortoangles(var_4bb748152aa75ddf) + (var_441fb78a71e1b458, 0, 0);
-        var_7061804b4efabe16 = sqrt(800 * var_154ef61b7a7f747a / sin(2 * var_f2da0ac5a61a699e));
+        launchdirection = vectornormalize(launchlocation - self.origin);
+        launchdirection = function_70fd9ddef68b9ae3(launchdirection, launchlocation, 10);
+        verticalangle = randomfloatrange(-1, 1) * 5 + var_450483a591a06439;
+        angledeviation = randomfloatrange(-1, 1) * 15;
+        var_441fb78a71e1b458 = 360 - verticalangle - angledeviation;
+        targetradius = randomfloatrange(stepstartradius, var_ec8c077b88a3003e);
+        var_6951cf1f43bc8ebe = vectortoangles(launchdirection) + (var_441fb78a71e1b458, 0, 0);
+        totalvelocity = sqrt(800 * targetradius / sin(2 * verticalangle));
         var_b571a1c1c33fc4b = vectornormalize(anglestoforward(var_6951cf1f43bc8ebe));
-        var_6e17d9fbf3b64b04 = var_7061804b4efabe16 * var_b571a1c1c33fc4b;
+        velocityvec = totalvelocity * var_b571a1c1c33fc4b;
         if (isdefined(self) && isdefined(self.owner)) {
-            var_b81b2c0ed28d097 = _launchgrenade(var_47a3cfd1f03dea91, var_7dd38127390a8ba9, var_6e17d9fbf3b64b04, self.var_8bf83d28be4c2d4f.bundle.var_8af7c7441da0d0f6);
-            function_6300c632dc21b15a(var_b81b2c0ed28d097, self.owner, self);
-            self.var_ec07522d4a88f026[var_461f79a7e3bae49e + var_4d1e3f4a23058445] = var_b81b2c0ed28d097;
-            var_b81b2c0ed28d097 thread function_ffa6fec05cb3637a(self.var_8bf83d28be4c2d4f.bundle);
-            if (namespace_3c37cb17ade254d::issharedfuncdefined("entity", "trackEntityLimit")) {
-                [[ namespace_3c37cb17ade254d::getsharedfunc("entity", "trackEntityLimit") ]](var_b81b2c0ed28d097, self.owner);
-                var_b81b2c0ed28d097 thread function_1575acb1c3533196();
+            scatteredmine = _launchgrenade(minename, launchlocation, velocityvec, self.tableinfo.bundle.scatterlifetime);
+            function_6300c632dc21b15a(scatteredmine, self.owner, self);
+            self.ownedmines[mineindex + var_4d1e3f4a23058445] = scatteredmine;
+            scatteredmine thread function_ffa6fec05cb3637a(self.tableinfo.bundle);
+            if (scripts/engine/utility::issharedfuncdefined("entity", "trackEntityLimit")) {
+                [[ scripts/engine/utility::getsharedfunc("entity", "trackEntityLimit") ]](scatteredmine, self.owner);
+                scatteredmine thread function_1575acb1c3533196();
                 waitframe();
             }
         }
@@ -126,33 +126,33 @@ function function_33f76685d61ffb0(var_47a3cfd1f03dea91, var_e39d0ef75da9bc05, va
     thread function_ebc941d7484bb7a9();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x926
 // Size: 0x4f
 function function_ebc941d7484bb7a9() {
     level endon("game_ended");
     self.owner endon("disconnect");
-    thread delaythread(1, &namespace_aad14af462a74d08::function_b0f754c8a379154e, "equip_butterfly_mine", self.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
+    thread delaythread(1, &scripts/cp_mp/challenges::function_b0f754c8a379154e, "equip_butterfly_mine", self.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x97c
 // Size: 0x1dd
-function function_70fd9ddef68b9ae3(var_4bb748152aa75ddf, var_7dd38127390a8ba9, var_6bcf02b3fa907d47) {
-    var_7c2f0a987752b57e = var_4bb748152aa75ddf;
-    var_9e1171a935066689 = (var_4bb748152aa75ddf[0], var_4bb748152aa75ddf[1], 0);
+function function_70fd9ddef68b9ae3(launchdirection, launchlocation, raycastdistance) {
+    var_7c2f0a987752b57e = launchdirection;
+    var_9e1171a935066689 = (launchdirection[0], launchdirection[1], 0);
     var_9f6125e568a9cc37 = self.origin + (0, 0, 1);
-    var_65f2273b33f07faa = self.origin + (0, 0, 1) + var_9e1171a935066689 * var_6bcf02b3fa907d47;
-    var_68e6f05a4ee24dee = physics_createcontents([0:"physicscontents_clipshot", 1:"physicscontents_missileclip", 2:"physicscontents_glass", 3:"physicscontents_vehicle", 4:"physicscontents_characterproxy"]);
+    var_65f2273b33f07faa = self.origin + (0, 0, 1) + var_9e1171a935066689 * raycastdistance;
+    var_68e6f05a4ee24dee = physics_createcontents(["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_glass", "physicscontents_vehicle", "physicscontents_characterproxy"]);
     hitents = physics_raycast(var_9f6125e568a9cc37, var_65f2273b33f07faa, var_68e6f05a4ee24dee, undefined, 0, "physicsquery_all");
     i = 0;
     var_e1c117e37f2a0513 = var_9e1171a935066689;
     var_f7d4e3b374ebbcfc = 0;
     while (hitents.size > 0 && i < 3) {
         var_9f6125e568a9cc37 = self.origin + (0, 0, 1);
-        var_65f2273b33f07faa = self.origin + (0, 0, 1) + var_e1c117e37f2a0513 * var_6bcf02b3fa907d47;
+        var_65f2273b33f07faa = self.origin + (0, 0, 1) + var_e1c117e37f2a0513 * raycastdistance;
         var_6221dd5fd704b1dc = physics_raycast(var_9f6125e568a9cc37, var_65f2273b33f07faa, var_68e6f05a4ee24dee, undefined, 0, "physicsquery_all");
         if (hitents.size > 0) {
             if (i == 0) {
@@ -169,68 +169,67 @@ function function_70fd9ddef68b9ae3(var_4bb748152aa75ddf, var_7dd38127390a8ba9, v
         i++;
     }
     if (istrue(var_f7d4e3b374ebbcfc)) {
-        return (var_e1c117e37f2a0513 + (0, 0, var_4bb748152aa75ddf[2]));
-    } else {
-        return var_7c2f0a987752b57e;
+        return (var_e1c117e37f2a0513 + (0, 0, launchdirection[2]));
     }
+    return var_7c2f0a987752b57e;
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb60
 // Size: 0x364
-function function_6300c632dc21b15a(var_2133b29d81649793, owner, var_93083caf1530fefa, lifetimeoverride) {
-    var_2133b29d81649793.owner = owner;
-    var_2133b29d81649793.team = owner.team;
-    var_2133b29d81649793.ownerid = owner getxuid();
-    var_2133b29d81649793.health = 99999;
-    var_2133b29d81649793.maxhealth = self.var_8bf83d28be4c2d4f.bundle.var_4f6c7074ac33dde7;
-    var_2133b29d81649793.lifetime = self.var_8bf83d28be4c2d4f.bundle.var_8af7c7441da0d0f6;
-    var_2133b29d81649793.explosionradius = self.var_8bf83d28be4c2d4f.bundle.var_5eea1ec7cb11510e;
-    var_2133b29d81649793.var_ed91f3ec33af8c15 = self.var_8bf83d28be4c2d4f.bundle.var_891e3bfe74f59aa0;
-    var_2133b29d81649793.var_8516b2bf8f4da6d7 = self.var_8bf83d28be4c2d4f.bundle.var_edb2fd8da69874f2;
-    var_2133b29d81649793.equipmentref = "equip_butterfly_mine";
-    if (isdefined(lifetimeoverride)) {
-        var_2133b29d81649793.lifetime = lifetimeoverride;
+function function_6300c632dc21b15a(butterflymine, owner, sourcegrenade, lifetimeOverride) {
+    butterflymine.owner = owner;
+    butterflymine.team = owner.team;
+    butterflymine.ownerid = owner getxuid();
+    butterflymine.health = 99999;
+    butterflymine.maxhealth = self.tableinfo.bundle.scatterhealth;
+    butterflymine.lifetime = self.tableinfo.bundle.scatterlifetime;
+    butterflymine.explosionradius = self.tableinfo.bundle.scatterexplosionradius;
+    butterflymine.mindmg = self.tableinfo.bundle.var_891e3bfe74f59aa0;
+    butterflymine.maxdmg = self.tableinfo.bundle.var_edb2fd8da69874f2;
+    butterflymine.equipmentref = "equip_butterfly_mine";
+    if (isdefined(lifetimeOverride)) {
+        butterflymine.lifetime = lifetimeOverride;
     }
-    if (isdefined(var_93083caf1530fefa)) {
-        var_2133b29d81649793.var_93083caf1530fefa = var_93083caf1530fefa;
+    if (isdefined(sourcegrenade)) {
+        butterflymine.sourcegrenade = sourcegrenade;
     }
-    var_2133b29d81649793 enableplayermarks("equipment");
+    butterflymine enableplayermarks("equipment");
     if (level.teambased) {
-        var_2133b29d81649793 filteroutplayermarks(var_2133b29d81649793.owner.team);
+        butterflymine filteroutplayermarks(butterflymine.owner.team);
     } else {
-        var_2133b29d81649793 filteroutplayermarks(var_2133b29d81649793.owner);
+        butterflymine filteroutplayermarks(butterflymine.owner);
     }
-    var_2133b29d81649793.damagetaken = 0;
-    var_2133b29d81649793 namespace_2a9588dfac284b77::registerspawn(1, &function_435b53c90ec01143);
-    var_2133b29d81649793.headiconid = var_2133b29d81649793 namespace_7bdde15c3500a23f::setheadicon_factionimage(0, 2, undefined, undefined, undefined, undefined, 1);
-    var_2133b29d81649793 setentityowner(owner);
-    var_2133b29d81649793 setotherent(owner);
-    var_2133b29d81649793 setcandamage(1);
-    entnum = var_2133b29d81649793 getentitynumber();
-    level.mines[entnum] = var_2133b29d81649793;
-    var_2133b29d81649793 thread namespace_3e725f3cc58bddd3::monitordamage(1, "hitequip", &function_ca00c87cb0a3d308, &function_31cc0ad55f88e7f3);
-    namespace_5a51aa78ea0b1b9f::add_emp_ent(var_2133b29d81649793);
-    var_2133b29d81649793 namespace_5a51aa78ea0b1b9f::set_apply_emp_callback(&function_692167ff37e7ef8);
+    butterflymine.damagetaken = 0;
+    butterflymine scripts/cp_mp/ent_manager::registerspawn(1, &function_435b53c90ec01143);
+    butterflymine.headiconid = butterflymine scripts/cp_mp/entityheadicons::setheadicon_factionimage(0, 2, undefined, undefined, undefined, undefined, 1);
+    butterflymine setentityowner(owner);
+    butterflymine setotherent(owner);
+    butterflymine setcandamage(1);
+    entnum = butterflymine getentitynumber();
+    level.mines[entnum] = butterflymine;
+    butterflymine thread scripts/mp/damage::monitordamage(1, "hitequip", &function_ca00c87cb0a3d308, &function_31cc0ad55f88e7f3);
+    scripts/cp_mp/emp_debuff::add_emp_ent(butterflymine);
+    butterflymine scripts/cp_mp/emp_debuff::set_apply_emp_callback(&function_692167ff37e7ef8);
     if (issharedfuncdefined("emp", "setEMP_Started_Callback")) {
-        var_2133b29d81649793 [[ getsharedfunc("emp", "setEMP_Started_Callback") ]](&function_b86eee224cc33fc);
+        butterflymine [[ getsharedfunc("emp", "setEMP_Started_Callback") ]](&function_b86eee224cc33fc);
     }
     if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
-        var_2133b29d81649793 [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&function_692167ff37e7ef8);
+        butterflymine [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&function_692167ff37e7ef8);
     }
     if (issharedfuncdefined("emp", "setEMP_Cleared_Callback")) {
-        var_2133b29d81649793 [[ getsharedfunc("emp", "setEMP_Cleared_Callback") ]](&function_d2c4655c7d6a3331);
+        butterflymine [[ getsharedfunc("emp", "setEMP_Cleared_Callback") ]](&function_d2c4655c7d6a3331);
     }
-    var_2133b29d81649793.dangerzone = namespace_b2d5aa2baf2b5701::addspawndangerzone(var_2133b29d81649793.origin, namespace_b2d5aa2baf2b5701::getdefaultminedangerzoneradiussize(), 50, var_2133b29d81649793.owner.team, undefined, var_2133b29d81649793.owner, 0, var_2133b29d81649793, 1);
-    var_2133b29d81649793 thread function_b540d1d357522929();
-    var_2133b29d81649793 setscriptablepartstate("visibility", "show", 0);
-    var_2133b29d81649793 namespace_b6b4a3ac458ab6e2::function_172d848d58051fdf(&function_f92200134f4ce696);
-    var_2133b29d81649793 namespace_5a51aa78ea0b1b9f::set_start_emp_callback(&function_b86eee224cc33fc);
-    var_2133b29d81649793 namespace_5a51aa78ea0b1b9f::set_clear_emp_callback(&function_d2c4655c7d6a3331);
+    butterflymine.dangerzone = scripts/mp/spawnlogic::addspawndangerzone(butterflymine.origin, scripts/mp/spawnlogic::getdefaultminedangerzoneradiussize(), 50, butterflymine.owner.team, undefined, butterflymine.owner, 0, butterflymine, 1);
+    butterflymine thread function_b540d1d357522929();
+    butterflymine setscriptablepartstate("visibility", "show", 0);
+    butterflymine namespace_b6b4a3ac458ab6e2::function_172d848d58051fdf(&function_f92200134f4ce696);
+    butterflymine scripts/cp_mp/emp_debuff::set_start_emp_callback(&function_b86eee224cc33fc);
+    butterflymine scripts/cp_mp/emp_debuff::set_clear_emp_callback(&function_d2c4655c7d6a3331);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xecb
 // Size: 0x1fe
@@ -238,23 +237,23 @@ function function_ffa6fec05cb3637a(bundle) {
     self endon("death");
     self endon("explode");
     level endon("game_ended");
-    contents = physics_createcontents([0:"physicscontents_missileclip", 1:"physicscontents_item", 2:"physicscontents_vehicle", 3:"physicscontents_glass", 4:"physicscontents_water"]);
+    contents = physics_createcontents(["physicscontents_missileclip", "physicscontents_item", "physicscontents_vehicle", "physicscontents_glass", "physicscontents_water"]);
     wait(bundle.var_d96b1862158576e0);
-    while (1) {
+    while (true) {
         self setscriptablepartstate("arm", "active", 0);
-        var_f9b008542cd70a05 = self waittill("trigger_grenade");
+        entarr = self waittill("trigger_grenade");
         /#
-            assert(isdefined(var_f9b008542cd70a05));
+            assert(isdefined(entarr));
         #/
-        foreach (ent in var_f9b008542cd70a05) {
+        foreach (ent in entarr) {
             if (ent.classname == "script_vehicle") {
-                if (ent namespace_739a1beacdad3457::vehicle_mines_isfriendlytomine(self)) {
+                if (ent scripts/cp_mp/vehicles/vehicle_mines::vehicle_mines_isfriendlytomine(self)) {
                     continue;
                 }
-                if (!namespace_739a1beacdad3457::vehicle_mines_shouldvehicletriggermine(ent, self)) {
+                if (!scripts/cp_mp/vehicles/vehicle_mines::vehicle_mines_shouldvehicletriggermine(ent, self)) {
                     continue;
                 }
-                namespace_739a1beacdad3457::vehicle_mines_minetrigger(ent, self);
+                scripts/cp_mp/vehicles/vehicle_mines::vehicle_mines_minetrigger(ent, self);
                 break;
             }
             if (isagent(ent) || isplayer(ent)) {
@@ -266,10 +265,10 @@ function function_ffa6fec05cb3637a(bundle) {
                 }
                 forward = anglestoforward(self.angles);
                 up = anglestoup(self.angles);
-                var_2cc97e113610ca14 = self.origin + up * 35;
-                ignorelist = [0:self];
-                var_e021c2744cc7ed68 = physics_raycast(var_2cc97e113610ca14, ent.origin, contents, ignorelist, 0, "physicsquery_closest", 1);
-                if (isdefined(var_e021c2744cc7ed68) && var_e021c2744cc7ed68.size > 0) {
+                castorigin = self.origin + up * 35;
+                ignorelist = [self];
+                castresults = physics_raycast(castorigin, ent.origin, contents, ignorelist, 0, "physicsquery_closest", 1);
+                if (isdefined(castresults) && castresults.size > 0) {
                     continue;
                 }
                 thread function_fb430131c2697d67(ent);
@@ -279,7 +278,7 @@ function function_ffa6fec05cb3637a(bundle) {
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10d0
 // Size: 0x244
@@ -297,41 +296,41 @@ function function_fb430131c2697d67(attacker) {
         attackerid = attacker getxuid();
     }
     if (isplayer(attacker)) {
-        if (attacker namespace_82dcd1d5ae30ff7::_hasperk("specialty_delaymine")) {
+        if (attacker scripts/mp/utility/perk::_hasperk("specialty_delaymine")) {
             self setscriptablepartstate("trigger", "active", 0);
         }
     }
     explosivetrigger(attacker, 0);
-    if (isdefined(self.var_93083caf1530fefa.var_c63a7f2980c7d596[attackerid])) {
-        self.var_93083caf1530fefa.var_c63a7f2980c7d596[attackerid] = self.var_93083caf1530fefa.var_c63a7f2980c7d596[attackerid] + 1;
+    if (isdefined(self.sourcegrenade.playerhits[attackerid])) {
+        self.sourcegrenade.playerhits[attackerid] = self.sourcegrenade.playerhits[attackerid] + 1;
     } else {
-        self.var_93083caf1530fefa.var_c63a7f2980c7d596[attackerid] = 1;
+        self.sourcegrenade.playerhits[attackerid] = 1;
     }
-    var_d4f79d3788e388fb = "";
-    switch (self.var_93083caf1530fefa.var_c63a7f2980c7d596[attackerid]) {
+    statestring = "";
+    switch (self.sourcegrenade.playerhits[attackerid]) {
     case 1:
-        var_d4f79d3788e388fb = "fromPlayer";
+        statestring = "fromPlayer";
         break;
     case 2:
-        var_d4f79d3788e388fb = "fromPlayerSecond";
+        statestring = "fromPlayerSecond";
         break;
     case 3:
-        var_d4f79d3788e388fb = "fromPlayerThird";
+        statestring = "fromPlayerThird";
         break;
     }
     if (game_utility::function_21322da268e71c19()) {
-        var_d4f79d3788e388fb = var_d4f79d3788e388fb + "_hc";
+        statestring = statestring + "_hc";
     }
     if (isplayer(attacker)) {
-        self.var_93083caf1530fefa.owner updatedamagefeedback("hitequip");
+        self.sourcegrenade.owner updatedamagefeedback("hitequip");
     }
     self setscriptablepartstate("arm", "neutral", 0);
-    self setscriptablepartstate("explode", var_d4f79d3788e388fb, 0);
-    self radiusdamage(self.origin, self.explosionradius, self.var_8516b2bf8f4da6d7, self.var_ed91f3ec33af8c15, attacker, "MOD_EXPLOSIVE", "butterfly_mine_mp");
-    namespace_aad14af462a74d08::function_b0f754c8a379154e("equip_butterfly_mine", self.var_93083caf1530fefa.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"hit"));
+    self setscriptablepartstate("explode", statestring, 0);
+    self radiusdamage(self.origin, self.explosionradius, self.maxdmg, self.mindmg, attacker, "MOD_EXPLOSIVE", "butterfly_mine_mp");
+    scripts/cp_mp/challenges::function_b0f754c8a379154e("equip_butterfly_mine", self.sourcegrenade.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"hit"));
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x131b
 // Size: 0x1e
@@ -339,7 +338,7 @@ function function_4751713f978b6416(vehicle, mine) {
     mine thread function_fb430131c2697d67(vehicle);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1340
 // Size: 0x3a
@@ -349,7 +348,7 @@ function function_435b53c90ec01143(attacker) {
     self setscriptablepartstate("destroy", "active", 0);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1381
 // Size: 0x33
@@ -359,7 +358,7 @@ function function_e7e5214ee3b16fb1() {
     self setscriptablepartstate("visibility", "hide", 0);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13bb
 // Size: 0x13e
@@ -367,7 +366,7 @@ function function_56ae4ffb25eb1168(var_cbf7be4f62a0ddb2, var_6c3c372dfdf70054) {
     self notify("death");
     self setcandamage(0);
     if (isdefined(self.headiconid)) {
-        namespace_7bdde15c3500a23f::setheadicon_deleteicon(self.headiconid);
+        scripts/cp_mp/entityheadicons::setheadicon_deleteicon(self.headiconid);
     }
     self.headiconid = undefined;
     if (isdefined(var_6c3c372dfdf70054)) {
@@ -378,56 +377,56 @@ function function_56ae4ffb25eb1168(var_cbf7be4f62a0ddb2, var_6c3c372dfdf70054) {
         self.exploding = 1;
     }
     if (isdefined(self.dangerzone)) {
-        namespace_b2d5aa2baf2b5701::removespawndangerzone(self.dangerzone);
+        scripts/mp/spawnlogic::removespawndangerzone(self.dangerzone);
         self.dangerzone = undefined;
     }
-    if (isdefined(self.var_93083caf1530fefa)) {
-        if (isdefined(self.var_93083caf1530fefa.var_ec07522d4a88f026)) {
-            self.var_93083caf1530fefa.var_ec07522d4a88f026 = array_remove(self.var_93083caf1530fefa.var_ec07522d4a88f026, self);
+    if (isdefined(self.sourcegrenade)) {
+        if (isdefined(self.sourcegrenade.ownedmines)) {
+            self.sourcegrenade.ownedmines = array_remove(self.sourcegrenade.ownedmines, self);
         }
     }
     cleanupequipment(self getentitynumber());
     if (isdefined(var_cbf7be4f62a0ddb2)) {
         wait(var_cbf7be4f62a0ddb2);
     }
-    namespace_2a9588dfac284b77::deregisterspawn();
-    if (isdefined(self.var_93083caf1530fefa)) {
-        if (self.var_93083caf1530fefa.var_ec07522d4a88f026.size == 0) {
-            self.var_93083caf1530fefa function_f1ccd9eaaa39e87c();
+    scripts/cp_mp/ent_manager::deregisterspawn();
+    if (isdefined(self.sourcegrenade)) {
+        if (self.sourcegrenade.ownedmines.size == 0) {
+            self.sourcegrenade function_f1ccd9eaaa39e87c();
         }
     }
     self delete();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1500
 // Size: 0x74
 function function_f1ccd9eaaa39e87c() {
-    if (isdefined(self.var_ec07522d4a88f026)) {
-        foreach (mine in self.var_ec07522d4a88f026) {
+    if (isdefined(self.ownedmines)) {
+        foreach (mine in self.ownedmines) {
             mine thread function_e7e5214ee3b16fb1();
         }
     }
-    namespace_2a9588dfac284b77::deregisterspawn();
+    scripts/cp_mp/ent_manager::deregisterspawn();
     self delete();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x157b
 // Size: 0x74
 function function_81ddc6ea59046dcb() {
-    if (isdefined(self.var_ec07522d4a88f026)) {
-        foreach (mine in self.var_ec07522d4a88f026) {
+    if (isdefined(self.ownedmines)) {
+        foreach (mine in self.ownedmines) {
             mine thread function_435b53c90ec01143();
         }
     }
-    namespace_2a9588dfac284b77::deregisterspawn();
+    scripts/cp_mp/ent_manager::deregisterspawn();
     self delete();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15f6
 // Size: 0xe3
@@ -440,10 +439,10 @@ function function_31cc0ad55f88e7f3(data) {
     if (isbulletdamage(meansofdeath)) {
         if (isdefined(objweapon)) {
             hits = 1;
-            if (damage >= namespace_3bbb5a98b932c46f::minegettwohitthreshold()) {
+            if (damage >= scripts/mp/weapons::minegettwohitthreshold()) {
                 hits = hits + 1;
             }
-            if (namespace_a12dc1d0c8a64946::isfmjdamage(objweapon, meansofdeath)) {
+            if (scripts/mp/utility/damage::isfmjdamage(objweapon, meansofdeath)) {
                 hits = hits * 2;
             }
             damage = hits * 5;
@@ -451,11 +450,11 @@ function function_31cc0ad55f88e7f3(data) {
     } else if (function_76df7cd7c6105e46(meansofdeath)) {
         damage = 1;
     }
-    namespace_3bbb5a98b932c46f::equipmenthit(self.owner, attacker, objweapon, meansofdeath);
+    scripts/mp/weapons::equipmenthit(self.owner, attacker, objweapon, meansofdeath);
     return damage;
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16e1
 // Size: 0x56
@@ -468,63 +467,62 @@ function function_76df7cd7c6105e46(meansofdeath) {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x173e
 // Size: 0xce
 function function_ca00c87cb0a3d308(data) {
     attacker = data.attacker;
     if (isdefined(attacker)) {
-        if (namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker)) {
+        if (scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, attacker)) {
             attacker notify("destroyed_equipment");
-            if (!istrue(self.var_93083caf1530fefa.var_698a77ddf33b65d0)) {
-                attacker namespace_58a74e7d54b56e8d::givescoreforequipment(self, data.objweapon);
-                self.var_93083caf1530fefa.var_698a77ddf33b65d0 = 1;
+            if (!istrue(self.sourcegrenade.givenscore)) {
+                attacker scripts/mp/killstreaks/killstreaks::givescoreforequipment(self, data.objweapon);
+                self.sourcegrenade.givenscore = 1;
             }
         }
         if (isbulletdamage(data.meansofdeath) || function_76df7cd7c6105e46(data.meansofdeath)) {
-            thread function_92c9dde336b60a46(self.var_93083caf1530fefa, self.origin);
+            thread function_92c9dde336b60a46(self.sourcegrenade, self.origin);
         }
     }
     thread function_435b53c90ec01143();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1813
 // Size: 0x10a
-function function_92c9dde336b60a46(var_93083caf1530fefa, var_6f787df1640ddee3) {
+function function_92c9dde336b60a46(sourcegrenade, previousexplosionpoint) {
     wait(0.35);
-    var_99adc79da01c03cb = self;
-    var_cf6a004a681e3e4e = 250000;
-    var_a00a9c7b1ee599d = 0;
-    if (isdefined(var_93083caf1530fefa) && isdefined(var_93083caf1530fefa.var_ec07522d4a88f026)) {
-        foreach (mine in var_93083caf1530fefa.var_ec07522d4a88f026) {
+    closestmine = self;
+    closestdistsqr = 250000;
+    minesinrange = 0;
+    if (isdefined(sourcegrenade) && isdefined(sourcegrenade.ownedmines)) {
+        foreach (mine in sourcegrenade.ownedmines) {
             if (!isdefined(mine)) {
                 continue;
             }
             if (mine == self) {
                 continue;
             }
-            var_a2110d248c0d418d = distancesquared(mine.origin, var_6f787df1640ddee3);
-            if (var_a2110d248c0d418d < var_cf6a004a681e3e4e) {
-                var_99adc79da01c03cb = mine;
-                var_cf6a004a681e3e4e = var_a2110d248c0d418d;
-                var_a00a9c7b1ee599d = 1;
+            thisdistsqr = distancesquared(mine.origin, previousexplosionpoint);
+            if (thisdistsqr < closestdistsqr) {
+                closestmine = mine;
+                closestdistsqr = thisdistsqr;
+                minesinrange = 1;
             }
         }
     }
-    if (istrue(var_a00a9c7b1ee599d)) {
-        var_99adc79da01c03cb thread function_92c9dde336b60a46(var_93083caf1530fefa, var_99adc79da01c03cb.origin);
-        var_99adc79da01c03cb thread function_435b53c90ec01143();
+    if (istrue(minesinrange)) {
+        closestmine thread function_92c9dde336b60a46(sourcegrenade, closestmine.origin);
+        closestmine thread function_435b53c90ec01143();
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1924
 // Size: 0xa3
@@ -533,11 +531,11 @@ function function_692167ff37e7ef8(data) {
         return;
     }
     attacker = data.attacker;
-    if (istrue(namespace_f8065cafc523dba5::playersareenemies(self.owner, attacker))) {
+    if (istrue(scripts/cp_mp/utility/player_utility::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
-        if (!istrue(self.var_93083caf1530fefa.var_698a77ddf33b65d0)) {
-            attacker namespace_58a74e7d54b56e8d::givescoreforequipment(self, undefined, 1);
-            self.var_93083caf1530fefa.var_698a77ddf33b65d0 = 1;
+        if (!istrue(self.sourcegrenade.givenscore)) {
+            attacker scripts/mp/killstreaks/killstreaks::givescoreforequipment(self, undefined, 1);
+            self.sourcegrenade.givenscore = 1;
         }
     }
     if (isplayer(attacker)) {
@@ -546,7 +544,7 @@ function function_692167ff37e7ef8(data) {
     thread function_435b53c90ec01143();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19ce
 // Size: 0x1e
@@ -558,7 +556,7 @@ function function_b540d1d357522929() {
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x19f3
 // Size: 0x40
@@ -567,12 +565,12 @@ function function_1ba54174ee9ab40f() {
     self.owner endon("joined_team");
     self.owner endon("joined_spectators");
     level endon("game_ended");
-    while (1) {
+    while (true) {
         waitframe();
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a3a
 // Size: 0x1f
@@ -584,12 +582,12 @@ function function_1575acb1c3533196() {
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a60
 // Size: 0x44
 function function_f92200134f4ce696(data) {
-    if (istrue(self.var_3621873dccbde4b5)) {
+    if (istrue(self.isexploding)) {
         return 0;
     }
     if (isdefined(data.attacker)) {
@@ -598,29 +596,29 @@ function function_f92200134f4ce696(data) {
     thread function_435b53c90ec01143();
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aab
 // Size: 0x3c
 function function_b86eee224cc33fc(data) {
-    if (isdefined(self) && !istrue(self.var_3621873dccbde4b5)) {
+    if (isdefined(self) && !istrue(self.isexploding)) {
         self.isdisabled = 1;
         self setscriptablepartstate("empd", "active", 0);
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aee
 // Size: 0x3b
 function function_d2c4655c7d6a3331(data) {
-    if (isdefined(self) || !istrue(self.var_3621873dccbde4b5)) {
+    if (isdefined(self) || !istrue(self.isexploding)) {
         self.isdisabled = undefined;
         self setscriptablepartstate("empd", "neutral", 0);
     }
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b30
 // Size: 0x3c
@@ -630,32 +628,32 @@ function function_5f9ffc69b9bd0ab3(up, forward) {
     return axistoangles(forward, right, up);
 }
 
-// Namespace butterfly_mine/namespace_b96a346cb4f3959c
+// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b74
 // Size: 0x19e
-function function_e1d976fb5e329d97(var_c0f9139ffd72e62d) {
+function function_e1d976fb5e329d97(oldowner) {
     if (istrue(self.exploding)) {
         return;
     }
     if (isdefined(self.owner)) {
-        if (isdefined(self.var_ec07522d4a88f026)) {
-            foreach (var_4d5235cfc004aa2a in self.var_ec07522d4a88f026) {
-                var_4d5235cfc004aa2a.owner = self.owner;
-                var_4d5235cfc004aa2a.team = self.owner.team;
-                var_4d5235cfc004aa2a.ownerid = self.owner getxuid();
-                var_4d5235cfc004aa2a setentityowner(self.owner);
-                var_4d5235cfc004aa2a setotherent(self.owner);
-                if (isdefined(var_4d5235cfc004aa2a.dangerzone)) {
-                    namespace_b2d5aa2baf2b5701::removespawndangerzone(var_4d5235cfc004aa2a.dangerzone);
-                    var_4d5235cfc004aa2a.dangerzone = undefined;
+        if (isdefined(self.ownedmines)) {
+            foreach (submine in self.ownedmines) {
+                submine.owner = self.owner;
+                submine.team = self.owner.team;
+                submine.ownerid = self.owner getxuid();
+                submine setentityowner(self.owner);
+                submine setotherent(self.owner);
+                if (isdefined(submine.dangerzone)) {
+                    scripts/mp/spawnlogic::removespawndangerzone(submine.dangerzone);
+                    submine.dangerzone = undefined;
                 }
-                var_4d5235cfc004aa2a.dangerzone = namespace_b2d5aa2baf2b5701::addspawndangerzone(var_4d5235cfc004aa2a.origin, namespace_b2d5aa2baf2b5701::getdefaultminedangerzoneradiussize(), 50, var_4d5235cfc004aa2a.owner.team, undefined, var_4d5235cfc004aa2a.owner, 0, var_4d5235cfc004aa2a, 1);
+                submine.dangerzone = scripts/mp/spawnlogic::addspawndangerzone(submine.origin, scripts/mp/spawnlogic::getdefaultminedangerzoneradiussize(), 50, submine.owner.team, undefined, submine.owner, 0, submine, 1);
                 if (level.teambased) {
-                    var_4d5235cfc004aa2a filteroutplayermarks(self.owner.team);
-                } else {
-                    var_4d5235cfc004aa2a filteroutplayermarks(self.owner);
+                    submine filteroutplayermarks(self.owner.team);
+                    continue;
                 }
+                submine filteroutplayermarks(self.owner);
             }
         }
     }

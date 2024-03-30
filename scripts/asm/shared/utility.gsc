@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\asm\asm.gsc;
 #using scripts\asm\asm_bb.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\anim\utility_common.gsc;
@@ -12,7 +12,7 @@
 
 #namespace utility;
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d0
 // Size: 0x8d
@@ -28,7 +28,7 @@ function chooseanimshoot(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, params);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x765
 // Size: 0x80
@@ -47,7 +47,7 @@ function choosedemeanoranimwithoverride(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, demeanor);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ed
 // Size: 0xc4
@@ -61,17 +61,17 @@ function choosedemeanoranimwithoverridevariants(asmname, statename, params) {
         return override;
     }
     if (!asm_hasalias(statename, demeanor)) {
-        var_d3ebb1fd79cbe1d2 = [];
-        var_d3ebb1fd79cbe1d2[0] = asm_lookupanimfromalias(statename, "trans_to_one_hand_run");
-        var_d3ebb1fd79cbe1d2[1] = asm_lookupanimfromalias(statename, "one_hand_run");
-        var_d3ebb1fd79cbe1d2[2] = asm_lookupanimfromalias(statename, "trans_to_two_hand_run");
-        var_d3ebb1fd79cbe1d2[3] = asm_lookupanimfromalias(statename, "two_hand_run");
-        return var_d3ebb1fd79cbe1d2;
+        moveanims = [];
+        moveanims[0] = asm_lookupanimfromalias(statename, "trans_to_one_hand_run");
+        moveanims[1] = asm_lookupanimfromalias(statename, "one_hand_run");
+        moveanims[2] = asm_lookupanimfromalias(statename, "trans_to_two_hand_run");
+        moveanims[3] = asm_lookupanimfromalias(statename, "two_hand_run");
+        return moveanims;
     }
     return asm_lookupanimfromalias(statename, demeanor);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8b9
 // Size: 0x57
@@ -82,32 +82,32 @@ function overridecovercrouchnodetype(node) {
     return node.type;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x918
 // Size: 0xb6
 function allowlmgarrival() {
     if (istrue(self.disablelmgmount)) {
-        return 0;
+        return false;
     }
-    var_e02db7b70d9b56d9 = weaponclass(self.weapon) == "mg";
-    if (var_e02db7b70d9b56d9) {
+    ismg = weaponclass(self.weapon) == "mg";
+    if (ismg) {
         if (!isdefined(self.node) || self.node isnodelmgmountable()) {
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
     if (isdefined(self._blackboard.deployedlmgnode) && isdefined(self.node) && self.node == self._blackboard.deployedlmgnode && self.node isnodelmgmountable()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d6
 // Size: 0x68
-function getnodeforwardyaw(node, var_e7d9cb9558cb8470, var_83ca7917ee6a88e8) {
+function getnodeforwardyaw(node, poseoverride, var_83ca7917ee6a88e8) {
     /#
         assert(isai(self));
     #/
@@ -117,11 +117,11 @@ function getnodeforwardyaw(node, var_e7d9cb9558cb8470, var_83ca7917ee6a88e8) {
     if (!isdefined(var_83ca7917ee6a88e8)) {
         var_83ca7917ee6a88e8 = 1;
     }
-    offset = self getnodeyawoffset(node, var_e7d9cb9558cb8470, var_83ca7917ee6a88e8);
+    offset = self getnodeyawoffset(node, poseoverride, var_83ca7917ee6a88e8);
     return node.angles[1] + offset;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa46
 // Size: 0x2a
@@ -129,23 +129,23 @@ function nodeiscoverstand3dtype(node) {
     if (node.type == "Cover Stand 3D") {
         return !nodeiscoverexposed3dtype(node);
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa78
 // Size: 0x48
 function nodeiscoverexposed3dtype(node) {
     if (node.type == "Cover Stand 3D") {
         if (isdefined(node.script_parameters) && node.script_parameters == "exposed") {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xac8
 // Size: 0x35
@@ -160,7 +160,7 @@ function getnodetypename(node) {
     return "undefined";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb05
 // Size: 0xba
@@ -182,21 +182,21 @@ function choosestrongdamagedeath(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, alias);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc7
 // Size: 0xa
 function isatcovernode() {
-    return isdefined(namespace_28edc79fcf2fe234::bb_getcovernode());
+    return isdefined(scripts/asm/asm_bb::bb_getcovernode());
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xbd9
 // Size: 0xaa
-function shouldleaveanimscripted(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldleaveanimscripted(asmname, statename, tostatename, params) {
     if (bb_isanimscripted()) {
-        return 0;
+        return false;
     }
     if (isdefined(params)) {
         /#
@@ -205,19 +205,19 @@ function shouldleaveanimscripted(asmname, statename, var_f2b19b25d457c2a6, param
         var_c33b7d825b24a8bb = params;
         if (var_c33b7d825b24a8bb) {
             if (self.a.movement == "stop") {
-                return 0;
+                return false;
             }
             if (!bb_moverequested()) {
-                return 0;
+                return false;
             }
         } else if (bb_moverequested() && self.a.movement != "stop") {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc8b
 // Size: 0x7d
@@ -230,12 +230,12 @@ function animscriptedaction(asmname, statename, params) {
     asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename));
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0f
 // Size: 0xe1
-function randomizepassthroughchildren(asmname, statename, var_f2b19b25d457c2a6, params) {
-    var_4826b510746869c3 = anim.asm[asmname].states[var_f2b19b25d457c2a6];
+function randomizepassthroughchildren(asmname, statename, tostatename, params) {
+    var_4826b510746869c3 = anim.asm[asmname].states[tostatename];
     /#
         assert(isdefined(var_4826b510746869c3));
     #/
@@ -247,30 +247,30 @@ function randomizepassthroughchildren(asmname, statename, var_f2b19b25d457c2a6, 
                 var_4826b510746869c3.transitions[1] = temp;
             }
         } else {
-            var_4826b510746869c3.transitions = namespace_3c37cb17ade254d::array_randomize(var_4826b510746869c3.transitions);
+            var_4826b510746869c3.transitions = scripts/engine/utility::array_randomize(var_4826b510746869c3.transitions);
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf8
 // Size: 0x5c
 function nodeshouldfaceangles(node) {
     if (!isdefined(node)) {
-        return 0;
+        return false;
     }
     if (isdefined(node.angles)) {
-        return 1;
+        return true;
     }
     if (isstruct(node)) {
-        return 0;
+        return false;
     }
     return isdefined(node.type) && node.type != "Path" && !isnodeexposed3d(node);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe5c
 // Size: 0x4e
@@ -278,15 +278,15 @@ function choosecrouchorstand(guy, node) {
     return int(node.origin[0] + node.origin[1] + node.origin[2] + guy getentitynumber()) % 2;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb2
 // Size: 0x35
-function choosecrouchorstandtac(guy, var_8e98a1b3e95386a5) {
-    return int(abs(var_8e98a1b3e95386a5[0] + var_8e98a1b3e95386a5[1] + var_8e98a1b3e95386a5[2] + guy getentitynumber())) % 2;
+function choosecrouchorstandtac(guy, tacorigin) {
+    return int(abs(tacorigin[0] + tacorigin[1] + tacorigin[2] + guy getentitynumber())) % 2;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeef
 // Size: 0xd4
@@ -312,16 +312,16 @@ function getarrivalnode() {
     return self.last_set_goalent;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xfcb
 // Size: 0x37f
-function isarrivaltypecivilian(asmname, var_8695dc19ef4c8376) {
+function isarrivaltypecivilian(asmname, arrivaltype) {
     if (isdefined(self.var_a57082fdf62bc898)) {
-        return (var_8695dc19ef4c8376 == "Custom");
+        return (arrivaltype == "Custom");
     }
     if (bb_smartobjectrequested()) {
-        return (var_8695dc19ef4c8376 == "Exposed");
+        return (arrivaltype == "Exposed");
     }
     node = getarrivalnode();
     if (isdefined(node) && isnode(node) && node iscovermultinode()) {
@@ -330,40 +330,40 @@ function isarrivaltypecivilian(asmname, var_8695dc19ef4c8376) {
             node setcovermultinodetype(var_bc81741e5658c761);
         }
     }
-    if (!isdefined(node) || !isdefined(node.type) || node.type == "struct" || !self function_ea13d460afb9afb3()) {
-        return (var_8695dc19ef4c8376 == "Exposed");
+    if (!isdefined(node) || !isdefined(node.type) || node.type == "struct" || !self canusecover()) {
+        return (arrivaltype == "Exposed");
     }
     if (isdefined(node) && node.type == "Cover Crouch") {
         covertype = getdvar(@"hash_f72dde9792b94cc9");
         if (covertype != "") {
-            return (var_8695dc19ef4c8376 == covertype);
+            return (arrivaltype == covertype);
         }
         if (isdefined(self._blackboard.croucharrivaltype)) {
-            return (var_8695dc19ef4c8376 == self._blackboard.croucharrivaltype);
+            return (arrivaltype == self._blackboard.croucharrivaltype);
         } else if (isdefined(node.covercrouchtype)) {
-            return (var_8695dc19ef4c8376 == node.covercrouchtype);
+            return (arrivaltype == node.covercrouchtype);
         }
     }
     demeanor = asm_getdemeanor();
-    var_775bd34dfd0c192f = (!isnode(node) || node doesnodeallowstance("stand")) && self isstanceallowed("stand");
-    var_2030158f5eb8b187 = (!isnode(node) || node doesnodeallowstance("crouch")) && self isstanceallowed("crouch") && demeanor != "casual" && demeanor != "casual_gun";
-    switch (var_8695dc19ef4c8376) {
+    canstand = (!isnode(node) || node doesnodeallowstance("stand")) && self isstanceallowed("stand");
+    cancrouch = (!isnode(node) || node doesnodeallowstance("crouch")) && self isstanceallowed("crouch") && demeanor != "casual" && demeanor != "casual_gun";
+    switch (arrivaltype) {
     case #"hash_cf178f370da8b13":
         if (node.type != "Path" && node.type != "Exposed") {
             return 0;
         }
-        if (var_2030158f5eb8b187 && choosecrouchorstand(self, node)) {
+        if (cancrouch && choosecrouchorstand(self, node)) {
             return 0;
         }
-        return var_775bd34dfd0c192f;
+        return canstand;
     case #"hash_78bfa3258dd84af":
         if (node.type != "Path" && node.type != "Exposed") {
             return 0;
         }
-        if (var_775bd34dfd0c192f && !choosecrouchorstand(self, node)) {
+        if (canstand && !choosecrouchorstand(self, node)) {
             return 0;
         }
-        return var_2030158f5eb8b187;
+        return cancrouch;
     case #"hash_c3b74422dec48736":
         return (node.type == "Cover Crouch" || node.type == "Conceal Crouch" || node.type == "Cover Crouch Window" || node.type == "Cover Stand" || node.type == "Conceal Stand" || node.type == "Cover Prone" || node.type == "Conceal Prone");
     case #"hash_e1d8e1adebed5a61":
@@ -372,56 +372,55 @@ function isarrivaltypecivilian(asmname, var_8695dc19ef4c8376) {
         return (node.type == "Cover Right");
     case #"hash_a85b3cf9ab13da63":
         return (node.type == "Exposed Moving");
-        break;
     }
-    return var_8695dc19ef4c8376 == node.type;
+    return arrivaltype == node.type;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1352
 // Size: 0x73c
-function isarrivaltype(asmname, statename, var_f2b19b25d457c2a6, params) {
-    var_8695dc19ef4c8376 = params;
+function isarrivaltype(asmname, statename, tostatename, params) {
+    arrivaltype = params;
     if (isdefined(self.var_a57082fdf62bc898)) {
-        return (var_8695dc19ef4c8376 == "Custom");
+        return (arrivaltype == "Custom");
     }
     if (bb_smartobjectrequested()) {
-        return (var_8695dc19ef4c8376 == "Exposed");
+        return (arrivaltype == "Exposed");
     }
     node = getarrivalnode();
     if (isdefined(node) && isnode(node) && node iscovermultinode()) {
         var_bc81741e5658c761 = getbestcovermultinodetype(node);
-        if (isdefined(var_bc81741e5658c761) && node.type != var_bc81741e5658c761 && var_8695dc19ef4c8376 == var_bc81741e5658c761) {
+        if (isdefined(var_bc81741e5658c761) && node.type != var_bc81741e5658c761 && arrivaltype == var_bc81741e5658c761) {
             node setcovermultinodetype(var_bc81741e5658c761);
         }
     }
-    if (!isdefined(node) || !isdefined(node.type) || node.type == "struct" || !self function_ea13d460afb9afb3()) {
+    if (!isdefined(node) || !isdefined(node.type) || node.type == "struct" || !self canusecover()) {
         if (actor_is3d()) {
-            return (var_8695dc19ef4c8376 == "Exposed 3D");
+            return (arrivaltype == "Exposed 3D");
         } else {
-            return (var_8695dc19ef4c8376 == "Exposed");
+            return (arrivaltype == "Exposed");
         }
     }
-    lmg = namespace_34bf5965727c0922::allowlmgarrival();
+    lmg = scripts/asm/shared/utility::allowlmgarrival();
     if (isdefined(node) && node.type == "Cover Crouch" && !lmg) {
         covertype = getdvar(@"hash_f72dde9792b94cc9");
         if (covertype != "") {
-            return (var_8695dc19ef4c8376 == covertype);
+            return (arrivaltype == covertype);
         }
         if (isdefined(self._blackboard.croucharrivaltype)) {
-            return (var_8695dc19ef4c8376 == self._blackboard.croucharrivaltype);
+            return (arrivaltype == self._blackboard.croucharrivaltype);
         } else if (isdefined(node.covercrouchtype)) {
-            return (var_8695dc19ef4c8376 == node.covercrouchtype);
+            return (arrivaltype == node.covercrouchtype);
         }
     }
     demeanor = asm_getdemeanor();
-    var_775bd34dfd0c192f = (!isnode(node) || node doesnodeallowstance("stand")) && self isstanceallowed("stand");
-    var_2030158f5eb8b187 = (!isnode(node) || node doesnodeallowstance("crouch")) && self isstanceallowed("crouch") && demeanor != "casual" && demeanor != "casual_gun";
+    canstand = (!isnode(node) || node doesnodeallowstance("stand")) && self isstanceallowed("stand");
+    cancrouch = (!isnode(node) || node doesnodeallowstance("crouch")) && self isstanceallowed("crouch") && demeanor != "casual" && demeanor != "casual_gun";
     if (asmname == "zero_gravity_space") {
-        switch (var_8695dc19ef4c8376) {
+        switch (arrivaltype) {
         case #"hash_4626de3588a73d7e":
-            return (isnodeexposed3d(node) && var_775bd34dfd0c192f);
+            return (isnodeexposed3d(node) && canstand);
         case #"hash_b786e406d37a0dd7":
             return (node.type == "Cover 3D");
         case #"hash_bdacbb6eaaa538c7":
@@ -438,16 +437,16 @@ function isarrivaltype(asmname, statename, var_f2b19b25d457c2a6, params) {
         case #"hash_e1d8e1adebed5a61":
         case #"hash_fd7cd04a31eca976":
             /#
-                assertmsg(var_8695dc19ef4c8376 + " node type not supported in zero-gravity.");
+                assertmsg(arrivaltype + " node type not supported in zero-gravity.");
             #/
             break;
         }
     } else if (asmname == "zero_gravity") {
-        switch (var_8695dc19ef4c8376) {
+        switch (arrivaltype) {
         case #"hash_cf178f370da8b13":
-            return ((node.type == "Path" || node.type == "Exposed") && var_775bd34dfd0c192f);
+            return ((node.type == "Path" || node.type == "Exposed") && canstand);
         case #"hash_78bfa3258dd84af":
-            return ((node.type == "Path" || node.type == "Exposed") && var_2030158f5eb8b187);
+            return ((node.type == "Path" || node.type == "Exposed") && cancrouch);
         case #"hash_c3b74422dec48736":
             return (node.type == "Cover Crouch" || node.type == "Conceal Crouch");
         case #"hash_78b110033ccb68b0":
@@ -458,28 +457,28 @@ function isarrivaltype(asmname, statename, var_f2b19b25d457c2a6, params) {
         case #"hash_cd3ffe799551db82":
         case #"hash_e1d8e1adebed5a61":
             /#
-                assertmsg(var_8695dc19ef4c8376 + " node type not supported in zero-gravity.");
+                assertmsg(arrivaltype + " node type not supported in zero-gravity.");
             #/
             break;
         }
     } else {
-        switch (var_8695dc19ef4c8376) {
+        switch (arrivaltype) {
         case #"hash_cf178f370da8b13":
             if (node.type != "Path" && node.type != "Exposed") {
                 return 0;
             }
-            if (var_2030158f5eb8b187 && choosecrouchorstand(self, node)) {
+            if (cancrouch && choosecrouchorstand(self, node)) {
                 return 0;
             }
-            return var_775bd34dfd0c192f;
+            return canstand;
         case #"hash_78bfa3258dd84af":
             if (node.type != "Path" && node.type != "Exposed") {
                 return 0;
             }
-            if (var_775bd34dfd0c192f && !choosecrouchorstand(self, node)) {
+            if (canstand && !choosecrouchorstand(self, node)) {
                 return 0;
             }
-            return var_2030158f5eb8b187;
+            return cancrouch;
         case #"hash_c3b74422dec48736":
             return (node.type == "Cover Crouch" || node.type == "Conceal Crouch" || node.type == "Cover Crouch Window");
         case #"hash_78b110033ccb68b0":
@@ -490,47 +489,46 @@ function isarrivaltype(asmname, statename, var_f2b19b25d457c2a6, params) {
             if (node.type != "Cover Left") {
                 return 0;
             }
-            if (var_2030158f5eb8b187 && choosecrouchorstand(self, node)) {
+            if (cancrouch && choosecrouchorstand(self, node)) {
                 return 0;
             }
-            return var_775bd34dfd0c192f;
+            return canstand;
         case #"hash_55ed607005f12d49":
             if (node.type != "Cover Left") {
                 return 0;
             }
-            if (var_775bd34dfd0c192f && !choosecrouchorstand(self, node)) {
+            if (canstand && !choosecrouchorstand(self, node)) {
                 return 0;
             }
-            return var_2030158f5eb8b187;
+            return cancrouch;
         case #"hash_cd3ffe799551db82":
             if (node.type != "Cover Right") {
                 return 0;
             }
-            if (var_2030158f5eb8b187 && choosecrouchorstand(self, node)) {
+            if (cancrouch && choosecrouchorstand(self, node)) {
                 return 0;
             }
-            return var_775bd34dfd0c192f;
+            return canstand;
         case #"hash_667bc7e605903a6c":
             if (node.type != "Cover Right") {
                 return 0;
             }
-            if (var_775bd34dfd0c192f && !choosecrouchorstand(self, node)) {
+            if (canstand && !choosecrouchorstand(self, node)) {
                 return 0;
             }
-            return var_2030158f5eb8b187;
+            return cancrouch;
         case #"hash_5478c96ea12827c6":
-            return ((node.type == "Cover Crouch" || node.type == "Cover Prone") && namespace_34bf5965727c0922::allowlmgarrival());
+            return ((node.type == "Cover Crouch" || node.type == "Cover Prone") && scripts/asm/shared/utility::allowlmgarrival());
         case #"hash_bfb9a0387a2536f4":
-            return (node.type == "Cover Stand" && namespace_34bf5965727c0922::allowlmgarrival());
+            return (node.type == "Cover Stand" && scripts/asm/shared/utility::allowlmgarrival());
         case #"hash_a85b3cf9ab13da63":
             return (node.type == "Exposed Moving");
-            break;
         }
     }
-    return var_8695dc19ef4c8376 == node.type;
+    return arrivaltype == node.type;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a96
 // Size: 0x61
@@ -543,7 +541,7 @@ function playmoveloop(asmname, statename, params) {
     function_fb56c9527636713f(asmname, statename, rate, 1);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1afe
 // Size: 0x26
@@ -551,7 +549,7 @@ function playmoveloopcasual(asmname, statename, params) {
     playmoveloop(asmname, statename, params);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2b
 // Size: 0x3c
@@ -561,7 +559,7 @@ function playanimwithdooropen(asmname, statename, params) {
     playanim(asmname, statename, params);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b6e
 // Size: 0x1c
@@ -569,7 +567,7 @@ function playmoveloopcasualcleanup(asmname, statename, params) {
     
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b91
 // Size: 0x67
@@ -590,7 +588,7 @@ function calcdooropenspeed() {
     return t;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c00
 // Size: 0x15c
@@ -606,13 +604,13 @@ function opendooratreasonabletime() {
     self endon("path_has_door");
     doorcenter = self [[ self.fngetdoorcenter ]](door);
     var_f195bad2134db294 = distance2dsquared(doorcenter, self.origin);
-    var_9f24038fd2e04755 = 5476;
+    opendistsq = 5476;
     if (!issp()) {
-        var_b2c29e3fba2e1d31 = 0.8 * length(self.velocity);
-        var_b2c29e3fba2e1d31 = var_b2c29e3fba2e1d31 * 0.9;
-        var_9f24038fd2e04755 = max(var_b2c29e3fba2e1d31 * var_b2c29e3fba2e1d31, var_9f24038fd2e04755);
+        opendist = 0.8 * length(self.velocity);
+        opendist = opendist * 0.9;
+        opendistsq = max(opendist * opendist, opendistsq);
     }
-    while (var_f195bad2134db294 > var_9f24038fd2e04755) {
+    while (var_f195bad2134db294 > opendistsq) {
         if (isdefined(self._blackboard.doortoopen) && door != self._blackboard.doortoopen) {
             return;
         }
@@ -625,7 +623,7 @@ function opendooratreasonabletime() {
     return t;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d64
 // Size: 0x4c
@@ -640,7 +638,7 @@ function opendooratreasonabletime_waitforabort(statename) {
     self notify("opening_door_done");
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1db7
 // Size: 0x3d
@@ -653,7 +651,7 @@ function closedoorifnecessary(door) {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dfb
 // Size: 0x9d
@@ -664,19 +662,19 @@ function function_b6a072e9e59fb82e(asmname, statename, var_d6e02014cb6c5b06) {
         var_eb8ea5fef7306d32 = function_7e553ea72ae6828a();
         if (var_eb8ea5fef7306d32) {
             self._blackboard.doortoopen = undefined;
-        } else {
-            var_b09e54ca84b4af9 = 0;
-            if (!self.facemotion) {
-                var_b09e54ca84b4af9 = function_ff35aef6aed32425(statename);
-            }
-            if (!var_b09e54ca84b4af9) {
-                function_4d06ccc14a583480(asmname, statename, var_d6e02014cb6c5b06);
-            }
+            return;
+        }
+        bdooropen = 0;
+        if (!self.facemotion) {
+            bdooropen = function_ff35aef6aed32425(statename);
+        }
+        if (!bdooropen) {
+            function_4d06ccc14a583480(asmname, statename, var_d6e02014cb6c5b06);
         }
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e9f
 // Size: 0x88
@@ -693,14 +691,14 @@ function function_7e553ea72ae6828a() {
     return var_eb8ea5fef7306d32;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f2f
 // Size: 0xd4
 function function_ff35aef6aed32425(statename) {
     self endon(statename + "_finished");
     self endon("death");
-    var_b09e54ca84b4af9 = 0;
+    bdooropen = 0;
     lookaheaddir = self.lookaheaddir;
     lookaheaddir = vectornormalize((lookaheaddir[0], lookaheaddir[1], 0));
     facingdir = anglestoforward(self.angles);
@@ -715,12 +713,12 @@ function function_ff35aef6aed32425(statename) {
         self notify("opening_door_done");
         self._blackboard.doortoopen = undefined;
         self.isopeningdoor = 0;
-        var_b09e54ca84b4af9 = 1;
+        bdooropen = 1;
     }
-    return var_b09e54ca84b4af9;
+    return bdooropen;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x200b
 // Size: 0x204
@@ -730,18 +728,18 @@ function function_4d06ccc14a583480(asmname, statename, var_d6e02014cb6c5b06) {
     door = self._blackboard.doortoopen;
     self._blackboard.door_opened = undefined;
     var_36effa6a4b76959f = 1;
-    var_e3897a292b9511dd = 160;
+    cdooroffset = 160;
     var_ccd231d7c8137213 = 2;
     targetspeed = length2d(self.velocity);
     if (!istrue(var_d6e02014cb6c5b06)) {
         var_9db8509018bbb8a = function_20962146e1a2e0dd(statename, targetspeed);
         if (isdefined(var_9db8509018bbb8a[1])) {
-            var_e3897a292b9511dd = function_e183019dcea5b774(var_9db8509018bbb8a[0], var_9db8509018bbb8a[1], targetspeed);
+            cdooroffset = function_e183019dcea5b774(var_9db8509018bbb8a[0], var_9db8509018bbb8a[1], targetspeed);
         } else {
             var_d6e02014cb6c5b06 = 1;
         }
     }
-    var_76c751e661fc569f = var_36effa6a4b76959f + var_e3897a292b9511dd + var_ccd231d7c8137213;
+    var_76c751e661fc569f = var_36effa6a4b76959f + cdooroffset + var_ccd231d7c8137213;
     doorcenter = self [[ self.fngetdoorcenter ]](door);
     var_8a2d1a3f463dffac = distance2d(doorcenter, self.origin);
     if (var_8a2d1a3f463dffac < var_76c751e661fc569f) {
@@ -764,82 +762,84 @@ function function_4d06ccc14a583480(asmname, statename, var_d6e02014cb6c5b06) {
             self notify("opening_door_done");
             self._blackboard.doortoopen = undefined;
             self.isopeningdoor = 0;
-        } else {
-            self setupdooropen(door, var_76c751e661fc569f, getdooropenspeedlookup());
-            thread handledooropennotetrack(asmname, statename);
-            thread handledooropenterminate(asmname, statename);
-            self waittill("opening_door_done");
+            return;
         }
+        self setupdooropen(door, var_76c751e661fc569f, getdooropenspeedlookup());
+        thread handledooropennotetrack(asmname, statename);
+        thread handledooropenterminate(asmname, statename);
+        self waittill("opening_door_done");
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2216
 // Size: 0xbd
 function function_e183019dcea5b774(doorstate, var_60caa01062501fdc, targetspeed) {
-    var_9605cbcca5366f66 = asm_getxanim(doorstate, var_60caa01062501fdc);
+    doorxanim = asm_getxanim(doorstate, var_60caa01062501fdc);
     /#
-        assertex(animhasnotetrack(var_9605cbcca5366f66, "door_touch"), var_9605cbcca5366f66 + " missing door_touch notetrack");
+        assertex(animhasnotetrack(doorxanim, "door_touch"), doorxanim + " missing door_touch notetrack");
     #/
-    var_9f5284e7925797fd = getnotetracktimes(var_9605cbcca5366f66, "door_touch");
+    opentimes = getnotetracktimes(doorxanim, "door_touch");
     /#
-        assert(var_9f5284e7925797fd.size > 0);
+        assert(opentimes.size > 0);
     #/
-    var_eb1c18bb49d8770c = (var_9f5284e7925797fd[0] * getanimlength(var_9605cbcca5366f66) + 3 * level.framedurationseconds) * targetspeed;
-    var_e3897a292b9511dd = var_eb1c18bb49d8770c + 24;
+    animdist = (opentimes[0] * getanimlength(doorxanim) + 3 * level.framedurationseconds) * targetspeed;
+    cdooroffset = animdist + 24;
     /#
-        assertex(animhasnotetrack(var_9605cbcca5366f66, "door_open"), var_9605cbcca5366f66 + " missing door_open notetrack");
+        assertex(animhasnotetrack(doorxanim, "door_open"), doorxanim + " missing door_open notetrack");
     #/
-    return var_e3897a292b9511dd;
+    return cdooroffset;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22db
 // Size: 0xbb
 function function_20962146e1a2e0dd(statename, targetspeed) {
     doorstate = statename;
-    var_7f980e69def745b8 = asm_lookupanimfromaliasifexists(statename, "2");
-    if (!isdefined(var_7f980e69def745b8)) {
+    dooranim = asm_lookupanimfromaliasifexists(statename, "2");
+    if (!isdefined(dooranim)) {
         targetspeed = self aigettargetspeed();
-        var_8707d88b63f131d1 = getnearestspeedthresholdname(self.basearchetype, targetspeed);
-        if (isdefined(var_8707d88b63f131d1)) {
-            var_d6cf89a3e47ada1f = var_8707d88b63f131d1 + "2";
-            var_7f980e69def745b8 = asm_lookupanimfromaliasifexists(statename, var_d6cf89a3e47ada1f);
-            if (!isdefined(var_7f980e69def745b8)) {
+        speedstate = getnearestspeedthresholdname(self.basearchetype, targetspeed);
+        if (isdefined(speedstate)) {
+            var_d6cf89a3e47ada1f = speedstate + "2";
+            dooranim = asm_lookupanimfromaliasifexists(statename, var_d6cf89a3e47ada1f);
+            if (!isdefined(dooranim)) {
                 doorstate = "door_open";
-                var_7f980e69def745b8 = asm_lookupanimfromaliasifexists("door_open", var_d6cf89a3e47ada1f);
+                dooranim = asm_lookupanimfromaliasifexists("door_open", var_d6cf89a3e47ada1f);
             }
         }
     }
-    if (!isdefined(var_7f980e69def745b8)) {
-        var_7f980e69def745b8 = asm_lookupanimfromaliasifexists("door_open", "2");
+    if (!isdefined(dooranim)) {
+        dooranim = asm_lookupanimfromaliasifexists("door_open", "2");
     }
-    return [0:doorstate, 1:var_7f980e69def745b8];
+    return [doorstate, dooranim];
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x239e
 // Size: 0x127
 function handledooropennotetrack(asmname, statename) {
     self endon(statename + "_finished");
     self endon("opening_door_done");
-    while (1) {
+    while (true) {
         notes = self waittill("door_open");
         if (!isarray(notes)) {
-            notes = [0:notes];
+            notes = [notes];
         }
-        for (var_e30613a25cef86a4 = 0; var_e30613a25cef86a4 < notes.size; var_e30613a25cef86a4++) {
-            if (notes[var_e30613a25cef86a4] == "door_open") {
+        for (inote = 0; inote < notes.size; inote++) {
+            if (notes[inote] == "door_open") {
                 if (isdefined(self.fndooropen) && isdefined(self._blackboard.doortoopen)) {
                     self notify("opening_door");
                     t = calcdooropenspeed();
                     self thread [[ self.fndooropen ]](self._blackboard.doortoopen, t);
                     self._blackboard.door_opened = 1;
                 }
-            } else if (notes[var_e30613a25cef86a4] == "end") {
+                continue;
+            }
+            if (notes[inote] == "end") {
                 self._blackboard.doortoopen = undefined;
                 self.isopeningdoor = 0;
                 self cleardooropen();
@@ -850,7 +850,7 @@ function handledooropennotetrack(asmname, statename) {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24cc
 // Size: 0x79
@@ -868,37 +868,38 @@ function handledooropenterminate(asmname, statename) {
     self cleardooropen();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x254c
 // Size: 0x53
 function function_4dd19bfd2ee610f1(statename) {
     self endon("opening_door_done");
     self endon("death");
-    var_ceaf8d53bc34c60d = statename + "_finished";
-    msg = waittill_any_return_2(var_ceaf8d53bc34c60d, "opening_door");
-    if (msg == var_ceaf8d53bc34c60d) {
+    statefinish = statename + "_finished";
+    msg = waittill_any_return_2(statefinish, "opening_door");
+    if (msg == statefinish) {
         self.isopeningdoor = 0;
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25a6
 // Size: 0x5a
 function getdooropenspeedlookup() {
-    if (self.var_ae3ea15396b65c1f == "civilian_panic") {
+    if (self.animsetname == "civilian_panic") {
         return "civilian_panic";
-    } else if (self.unittype == "civilian") {
+    }
+    if (self.unittype == "civilian") {
         return "civilian";
-    } else if (self.var_ae3ea15396b65c1f == "juggernaut") {
-        return "soldier";
-    } else {
+    }
+    if (self.animsetname == "juggernaut") {
         return "soldier";
     }
+    return "soldier";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2607
 // Size: 0x26
@@ -906,7 +907,7 @@ function playanim(asmname, statename, params) {
     asm_playanimstate(asmname, statename, params);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2634
 // Size: 0x2e
@@ -915,7 +916,7 @@ function playanimwithsound(asmname, statename, params) {
     asm_playanimstate(asmname, statename, params);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2669
 // Size: 0x2a
@@ -923,7 +924,7 @@ function loopanim(asmname, statename, params) {
     function_fb56c9527636713f(asmname, statename, 1);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x269a
 // Size: 0xbb
@@ -944,7 +945,7 @@ function chooseanimidle(asmname, statename, params) {
     return chooseanim_weaponclassprepended(asmname, statename, params);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x275d
 // Size: 0xc0
@@ -962,13 +963,13 @@ function chooseanim_weaponclassprepended(asmname, statename, params) {
     if (!asm_hasalias(statename, weapclass + alias)) {
         weapclass = "rifle";
         /#
-            assertex(asm_hasalias(statename, weapclass + alias), "Archetype " + self.var_ae3ea15396b65c1f + " State " + statename + " doesn't have " + weapclass + alias + " anims");
+            assertex(asm_hasalias(statename, weapclass + alias), "Archetype " + self.animsetname + " State " + statename + " doesn't have " + weapclass + alias + " anims");
         #/
     }
     return asm_lookupanimfromalias(statename, weapclass + alias);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2825
 // Size: 0x26c
@@ -980,12 +981,12 @@ function getarrivaltype() {
         return "Exposed";
     }
     node = getarrivalnode();
-    if (!isdefined(node) || !isnode(node) || !isdefined(node.type) || node.type == "struct" || !self function_ea13d460afb9afb3()) {
-        var_d707fa69a5dae9b6 = self getcovertacpoint();
-        if (isdefined(var_d707fa69a5dae9b6)) {
+    if (!isdefined(node) || !isnode(node) || !isdefined(node.type) || node.type == "struct" || !self canusecover()) {
+        tac_origin = self getcovertacpoint();
+        if (isdefined(tac_origin)) {
             demeanor = asm_getdemeanor();
-            var_2030158f5eb8b187 = self isstanceallowed("crouch") && demeanor == "combat";
-            if (var_2030158f5eb8b187 && choosecrouchorstandtac(self, var_d707fa69a5dae9b6)) {
+            cancrouch = self isstanceallowed("crouch") && demeanor == "combat";
+            if (cancrouch && choosecrouchorstandtac(self, tac_origin)) {
                 return "Exposed Crouch";
             }
             return "Exposed";
@@ -1011,7 +1012,7 @@ function getarrivaltype() {
         }
     }
     nodetype = node.type;
-    lmg = namespace_34bf5965727c0922::allowlmgarrival();
+    lmg = scripts/asm/shared/utility::allowlmgarrival();
     if (lmg) {
         switch (nodetype) {
         case #"hash_c051a32186a33cae":
@@ -1019,7 +1020,6 @@ function getarrivaltype() {
             return "Cover Crouch LMG";
         case #"hash_78b110033ccb68b0":
             return "Cover Stand LMG";
-            break;
         }
     }
     if (isdefined(self._blackboard.croucharrivaltype) && !lmg) {
@@ -1028,32 +1028,32 @@ function getarrivaltype() {
     return self choosearrivaltype(node, nodetype);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a99
 // Size: 0x44
-function shouldstrafe(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldstrafe(asmname, statename, tostatename, params) {
     return bb_moverequested() && !self.facemotion && self.allowstrafe;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ae5
 // Size: 0x52
-function shouldabortstrafe(asmname, statename, var_f2b19b25d457c2a6, params) {
-    if (!shouldstrafe(asmname, statename, var_f2b19b25d457c2a6, params)) {
-        return 1;
+function shouldabortstrafe(asmname, statename, tostatename, params) {
+    if (!shouldstrafe(asmname, statename, tostatename, params)) {
+        return true;
     }
     if (!bb_movetyperequested("combat")) {
-        return 1;
+        return true;
     }
     if (bb_meleechargerequested()) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b3f
 // Size: 0x4a
@@ -1065,53 +1065,53 @@ function chooseanimmovetype(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, demeanor);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b91
 // Size: 0x2a
-function transition_isflashed(asmname, statename, var_f2b19b25d457c2a6, params) {
+function transition_isflashed(asmname, statename, tostatename, params) {
     return isflashed();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bc3
 // Size: 0x2a
-function function_2c4c65a1362c43f6(asmname, statename, var_f2b19b25d457c2a6, params) {
+function transition_isstunned(asmname, statename, tostatename, params) {
     return isstunned();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bf5
 // Size: 0x46
-function transition_isburning(asmname, statename, var_f2b19b25d457c2a6, params) {
+function transition_isburning(asmname, statename, tostatename, params) {
     return isdefined(self._blackboard.isburning) && !istrue(self.damageshield);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c43
 // Size: 0x58
-function function_5129b58498c1a96f(asmname, statename, var_f2b19b25d457c2a6, params) {
-    return isdefined(self._blackboard.var_453b42f68499e7fc) && gettime() - self._blackboard.var_453b42f68499e7fc < 100;
+function function_5129b58498c1a96f(asmname, statename, tostatename, params) {
+    return isdefined(self._blackboard.lastpopuptime) && gettime() - self._blackboard.lastpopuptime < 100;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ca3
 // Size: 0x6c
-function shouldreacttolight(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldreacttolight(asmname, statename, tostatename, params) {
     if (isdefined(self.lightreaction_requesttime) && self.lightreaction_requesttime >= gettime() - 1000) {
         archetype = self getbasearchetype();
         if (isspeedwithincqbrange(archetype, self aigetdesiredspeed())) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d17
 // Size: 0x14e
@@ -1121,16 +1121,16 @@ function chooselightreactionanim(asmname, statename, params) {
         return asm_lookupanimfromalias(statename, direction);
     }
     if (isdefined(self.covernode)) {
-        var_22a308b658761b73 = anglestoright(self.covernode.angles);
-        var_8d39b8ad31508804 = anglestoforward(self.covernode.angles);
+        myright = anglestoright(self.covernode.angles);
+        myforward = anglestoforward(self.covernode.angles);
         var_4a01d3a5d7389412 = vectornormalize(self.lightreaction_lightorigin - self.origin);
     } else {
-        var_22a308b658761b73 = anglestoright(self.angles);
-        var_8d39b8ad31508804 = anglestoforward(self.angles);
+        myright = anglestoright(self.angles);
+        myforward = anglestoforward(self.angles);
         var_4a01d3a5d7389412 = vectornormalize(self.lightreaction_lightorigin - self.origin);
     }
-    var_52809b82c18e7907 = vectordot(var_22a308b658761b73, var_4a01d3a5d7389412) >= 0;
-    var_1e3ac8ad87f9f410 = vectordot(var_8d39b8ad31508804, var_4a01d3a5d7389412);
+    var_52809b82c18e7907 = vectordot(myright, var_4a01d3a5d7389412) >= 0;
+    var_1e3ac8ad87f9f410 = vectordot(myforward, var_4a01d3a5d7389412);
     if (var_1e3ac8ad87f9f410 >= 0.866) {
         direction = "center";
     } else if (var_52809b82c18e7907) {
@@ -1141,29 +1141,29 @@ function chooselightreactionanim(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, direction);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e6d
 // Size: 0xe3
 function isshocked(asmname, currentstate, var_caae90accdd1699c, params) {
     if (isdefined(self.damagemod) && self.damagemod == "MOD_IMPACT") {
-        return 0;
+        return false;
     }
     if (isdamageweapon(makeweapon("emp"))) {
-        return 1;
+        return true;
     }
     if (self.unittype == "c6" || self.unittype == "c8") {
         if (isdamageweapon(makeweapon("iw7_sonic")) && isweaponepic(self.damageweapon)) {
-            return 1;
+            return true;
         }
     }
     if (isdamageweapon(makeweapon("iw7_atomizer")) && self.damagemod != "MOD_MELEE" && self.health <= 0) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f58
 // Size: 0x95
@@ -1173,19 +1173,18 @@ function getdamagedirstring() {
     dot = vectordot(facingdir, damagedir);
     if (dot > 0.707) {
         return "front";
-    } else if (dot < -0.707) {
-        return "back";
-    } else {
-        cross = vectorcross(facingdir, damagedir);
-        if (cross[2] > 0) {
-            return "left";
-        } else {
-            return "right";
-        }
     }
+    if (dot < -0.707) {
+        return "back";
+    }
+    cross = vectorcross(facingdir, damagedir);
+    if (cross[2] > 0) {
+        return "left";
+    }
+    return "right";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ff4
 // Size: 0x53
@@ -1194,12 +1193,12 @@ function gethumandamagedirstring() {
     facingdir = anglestoforward(self.angles);
     dot = vectordot(facingdir, damagedir);
     if (dot < -0.5) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x304f
 // Size: 0x31
@@ -1208,7 +1207,7 @@ function playanimandusegoalweight(asmname, statename, params) {
     asm_playanimstate(asmname, statename);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3087
 // Size: 0x75
@@ -1224,7 +1223,7 @@ function animscriptedaction_terminate(asmname, statename, params) {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3103
 // Size: 0x5f
@@ -1238,7 +1237,7 @@ function animsriptedactioncivilian_terminate(asmname, statename, params) {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3169
 // Size: 0x14
@@ -1247,7 +1246,7 @@ function cleanupanimscriptedheadlook() {
     lookatentity();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3184
 // Size: 0x2d
@@ -1256,7 +1255,7 @@ function animscriptedstartup(asmname, statename, params) {
     self stoplookat();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x31b8
 // Size: 0x30
@@ -1265,7 +1264,7 @@ function animscriptedcleanup(asmname, statename, params) {
     self aisettargetspeed(self aigetdesiredspeed());
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x31ef
 // Size: 0x23
@@ -1273,27 +1272,27 @@ function animscriptedaction_cleanup(asmname, statename, params) {
     cleanupanimscriptedheadlook();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3219
 // Size: 0x87
-function disabledefaultfacialanims(var_49f31e97fe6a3857) {
+function disabledefaultfacialanims(bdisable) {
     if (!isdefined(self.headknob)) {
         self.headknob = asm_getxanim("knobs", asm_lookupanimfromalias("knobs", "head"));
     }
-    if (!isdefined(var_49f31e97fe6a3857) || var_49f31e97fe6a3857) {
+    if (!isdefined(bdisable) || bdisable) {
         setfacialstate("animscripted");
         if (isai(self)) {
             self setfacialindex("none");
         } else {
             setfacialindexfornonai("none");
         }
-    } else {
-        clearfacialstate("animscripted");
+        return;
     }
+    clearfacialstate("animscripted");
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32a7
 // Size: 0x153
@@ -1324,33 +1323,33 @@ function setfacialindexfornonai(state) {
     #/
     self setcustomnodegameparameter("animtime", self getentitynumber());
     self setcustomnodegameparameterbyte("facialindex", states[state]);
-    var_7c2e7606fe2f4b3d = asm_lookupanimfromalias("knobs", "head");
+    facialknob = asm_lookupanimfromalias("knobs", "head");
     if (state == "none") {
-        self clearanim(asm_getxanim("knobs", var_7c2e7606fe2f4b3d), 0.2);
-    } else {
-        self setanim(asm_getxanim("knobs", var_7c2e7606fe2f4b3d), 1, 0.2, 1);
+        self clearanim(asm_getxanim("knobs", facialknob), 0.2);
+        return;
     }
+    self setanim(asm_getxanim("knobs", facialknob), 1, 0.2, 1);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3401
 // Size: 0xac
 function function_ee3e5d584e317d35(state) {
     if (state == "none") {
-        var_7c2e7606fe2f4b3d = asm_lookupanimfromalias("knobs", "head_fakeactor");
-        self clearanim(asm_getxanim("knobs", var_7c2e7606fe2f4b3d), 0.2);
+        facialknob = asm_lookupanimfromalias("knobs", "head_fakeactor");
+        self clearanim(asm_getxanim("knobs", facialknob), 0.2);
         return;
     }
-    var_a8b3655415e2cd1 = asm_lookupanimfromalias("facial_animation_fakeactor", state);
-    if (!isdefined(var_a8b3655415e2cd1)) {
-        iprintln("Missing facial: " + self.var_ae3ea15396b65c1f + " " + state);
+    facialanimid = asm_lookupanimfromalias("facial_animation_fakeactor", state);
+    if (!isdefined(facialanimid)) {
+        iprintln("Missing facial: " + self.animsetname + " " + state);
     }
-    var_bc15003c3e2cd832 = asm_getxanim("facial_animation_fakeactor", var_a8b3655415e2cd1);
-    self setanimknob(var_bc15003c3e2cd832, 1, 0.2);
+    facialxanim = asm_getxanim("facial_animation_fakeactor", facialanimid);
+    self setanimknob(facialxanim, 1, 0.2);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34b4
 // Size: 0x16
@@ -1358,7 +1357,7 @@ function setfacialstate(state) {
     self.facialstate = state;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34d1
 // Size: 0x3c
@@ -1369,13 +1368,13 @@ function clearfacialstate(state) {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3514
 // Size: 0xa8
 function isfacialstateallowed(state) {
     if (!isai(self) && (!isdefined(self.fakeactor_face_anim) || !self.fakeactor_face_anim)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.facialstate)) {
         self.facialstate = "asm";
@@ -1388,12 +1387,12 @@ function isfacialstateallowed(state) {
         assertex(isdefined(priorities[state]), "Facial anim state " + state + " is invalid");
     #/
     if (priorities[state] >= priorities[self.facialstate]) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35c4
 // Size: 0x19
@@ -1403,7 +1402,7 @@ function decrementbulletsinclip() {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35e4
 // Size: 0xc
@@ -1411,7 +1410,7 @@ function grenadelauncherfirerate() {
     return randomfloatrange(5, 8);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35f8
 // Size: 0x2d
@@ -1419,13 +1418,13 @@ function shotgunfirerate() {
     if (weapon_pump_action_shotgun()) {
         return 1;
     }
-    if (namespace_192c166ad8ed6432::usingautomaticweapon()) {
-        return (namespace_192c166ad8ed6432::autoshootanimrate() * 0.7);
+    if (scripts/anim/weaponlist::usingautomaticweapon()) {
+        return (scripts/anim/weaponlist::autoshootanimrate() * 0.7);
     }
     return 0.4;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x362d
 // Size: 0xc3
@@ -1449,24 +1448,23 @@ function melee_checktimer(unittype, checkplayer) {
             return 1;
         }
         return (gettime() > anim.meleechargeplayertimers[unittype]);
-    } else {
-        if (!isdefined(anim.meleechargetimers)) {
-            return 1;
-        }
-        if (!isdefined(anim.meleechargetimers[unittype])) {
-            return 1;
-        }
-        return (gettime() > anim.meleechargetimers[unittype]);
     }
+    if (!isdefined(anim.meleechargetimers)) {
+        return 1;
+    }
+    if (!isdefined(anim.meleechargetimers[unittype])) {
+        return 1;
+    }
+    return gettime() > anim.meleechargetimers[unittype];
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36f7
 // Size: 0x232
 function setupsoldierdefaults() {
     curtime = gettime();
-    self.var_14070a5a0597bf51 = 0;
+    self.laserenabled = 0;
     self.primaryweapon = self.weapon;
     self.agentname = "MP/HOSTILE_SOLDIER";
     if (isdefined(level.gametype) && level.gametype == "gwtdm") {
@@ -1494,7 +1492,7 @@ function setupsoldierdefaults() {
     }
     self.chatinitialized = 0;
     self.defaultturnthreshold = 55;
-    namespace_34bf5965727c0922::setfacialstate("asm");
+    scripts/asm/shared/utility::setfacialstate("asm");
     self.speedscalemult = 0.95 + randomfloat(0.15);
     self.script_forcegrenade = 0;
     self.lastenemysighttime = 0;
@@ -1511,28 +1509,28 @@ function setupsoldierdefaults() {
     self.var_20d73f2e5569b90f = 75;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3930
 // Size: 0x95
-function getspeedmatchanimrate(xanim, var_fc5f278cd84bd79, var_10c9a5d419c90668) {
+function getspeedmatchanimrate(xanim, samplestart, sampleend) {
     /#
-        assert(var_fc5f278cd84bd79 < var_10c9a5d419c90668);
+        assert(samplestart < sampleend);
     #/
     currentspeed = length(self.velocity);
     if (currentspeed < 1) {
         return 1;
     }
-    var_eb1c18bb49d8770c = length(getmovedelta(xanim, var_fc5f278cd84bd79, var_10c9a5d419c90668));
-    if (var_eb1c18bb49d8770c < 1) {
+    animdist = length(getmovedelta(xanim, samplestart, sampleend));
+    if (animdist < 1) {
         return 1;
     }
-    animtime = getanimlength(xanim) * (var_10c9a5d419c90668 - var_fc5f278cd84bd79);
-    var_f9060dc3720a1b67 = var_eb1c18bb49d8770c / animtime;
-    return currentspeed / var_f9060dc3720a1b67;
+    animtime = getanimlength(xanim) * (sampleend - samplestart);
+    animspeed = animdist / animtime;
+    return currentspeed / animspeed;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39cd
 // Size: 0x25
@@ -1540,7 +1538,7 @@ function isentasoldier() {
     return self.unittype == "soldier" || self.unittype == "juggernaut";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x39fa
 // Size: 0x25
@@ -1548,7 +1546,7 @@ function isentnotabomber() {
     return self.asmname != "suicidebomber" && self.asmname != "suicidebomber_cp";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a27
 // Size: 0x1b
@@ -1557,18 +1555,18 @@ function demeanorhasblendspace() {
     return demeanor == "combat";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a4a
 // Size: 0x59
 function isfixednodeinbadplaceandshouldcrouch() {
     if (self.fixednode && !isdefined(self.node) && isdefined(self.color_node) && self isnodeinbadplace(self.color_node) && self.color_node doesnodeallowstance("crouch")) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3aab
 // Size: 0x289
@@ -1581,7 +1579,7 @@ function gethighestallowedstance() {
         var_58b5e042653e4c9 = self.node doesnodeallowstance("stand");
         var_1462639ed10c0aa5 = self.node doesnodeallowstance("crouch");
         var_fbc7d1fe7086d737 = self.node doesnodeallowstance("prone");
-    } else if (!namespace_28edc79fcf2fe234::bb_moverequested() && istrue(self._blackboard.shootparams_valid) && isdefined(self._blackboard.shootparams_pos)) {
+    } else if (!scripts/asm/asm_bb::bb_moverequested() && istrue(self._blackboard.shootparams_valid) && isdefined(self._blackboard.shootparams_pos)) {
         var_6e728f1543cfb7bf = self isstanceallowed("crouch");
         if (var_6e728f1543cfb7bf && isfixednodeinbadplaceandshouldcrouch()) {
             return "crouch";
@@ -1599,7 +1597,7 @@ function gethighestallowedstance() {
             }
         }
     }
-    while (1) {
+    while (true) {
         if (self isstanceallowed("stand") && var_58b5e042653e4c9) {
             return "stand";
         }
@@ -1623,44 +1621,44 @@ function gethighestallowedstance() {
     return "crouch";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d3c
 // Size: 0x14d
 function determinerequestedstance() {
     higheststance = gethighestallowedstance();
-    var_55372344a55a6d53 = bb_getrequestedstance();
+    requestedstance = bb_getrequestedstance();
     stances = [];
     stances["prone"] = 0;
     stances["crouch"] = 1;
     stances["stand"] = 2;
-    demeanor = self function_869f129f31d72088();
+    demeanor = self getdemeanor();
     if (isdefined(self.pathgoalpos) && distance2dsquared(self.pathgoalpos, self.origin) > 1) {
-        var_55372344a55a6d53 = "stand";
+        requestedstance = "stand";
     }
     if (self._blackboard.bgrenadereturnthrow) {
-        var_55372344a55a6d53 = "stand";
+        requestedstance = "stand";
     }
     if (!isdefined(higheststance)) {
-        higheststance = var_55372344a55a6d53;
+        higheststance = requestedstance;
     }
     if (demeanor == "casual" || demeanor == "casual_gun") {
-        var_55372344a55a6d53 = "stand";
+        requestedstance = "stand";
     } else if (higheststance == "prone" && self.unittype == "c6") {
-        var_55372344a55a6d53 = "crouch";
-    } else if (stances[higheststance] < stances[var_55372344a55a6d53]) {
-        var_55372344a55a6d53 = higheststance;
-    } else if (var_55372344a55a6d53 == "prone" && higheststance != var_55372344a55a6d53) {
-        var_55372344a55a6d53 = higheststance;
-    } else if (var_55372344a55a6d53 == "crouch" && stances[higheststance] > stances["crouch"]) {
+        requestedstance = "crouch";
+    } else if (stances[higheststance] < stances[requestedstance]) {
+        requestedstance = higheststance;
+    } else if (requestedstance == "prone" && higheststance != requestedstance) {
+        requestedstance = higheststance;
+    } else if (requestedstance == "crouch" && stances[higheststance] > stances["crouch"]) {
         if (bb_isinbadcrouchspot()) {
-            var_55372344a55a6d53 = "stand";
+            requestedstance = "stand";
         }
     }
-    return var_55372344a55a6d53;
+    return requestedstance;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e91
 // Size: 0x54
@@ -1680,7 +1678,7 @@ function function_87d74491d0318ba3(archetype) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3eec
 // Size: 0x70
@@ -1693,7 +1691,7 @@ function function_d6919795e4b24d3a(asmname, statename, xanim, note) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f63
 // Size: 0x70
@@ -1706,43 +1704,43 @@ function function_37064c5f2a8f68ef(asmname, statename, xanim, note) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fda
 // Size: 0xa3
-function function_6893c43c1838f552(asmname, statename, xanim, var_48fc94ce2fec8aa8, var_48fc97ce2fec9141) {
+function function_6893c43c1838f552(asmname, statename, xanim, note1, note2) {
     /#
-        if (!animhasnotetrack(xanim, var_48fc94ce2fec8aa8) || !animhasnotetrack(xanim, var_48fc97ce2fec9141)) {
+        if (!animhasnotetrack(xanim, note1) || !animhasnotetrack(xanim, note2)) {
             return;
         }
-        if (getnotetracktimes(xanim, var_48fc94ce2fec8aa8)[0] >= getnotetracktimes(xanim, var_48fc97ce2fec9141)[0]) {
-            print("<unknown string>" + var_48fc94ce2fec8aa8 + "<unknown string>" + var_48fc97ce2fec9141 + "angry" + asmname + "asm" + statename + "suicidebomber_cp" + function_3c8848a3a11b2553(getanimname(xanim)) + "poiauto_glanceend");
+        if (getnotetracktimes(xanim, note1)[0] >= getnotetracktimes(xanim, note2)[0]) {
+            print("<unknown string>" + note1 + "<unknown string>" + note2 + "angry" + asmname + "asm" + statename + "suicidebomber_cp" + function_3c8848a3a11b2553(getanimname(xanim)) + "poiauto_glanceend");
             level.var_e941151b3a81c996 = 0;
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4084
 // Size: 0x9b
-function function_3474c2003e05a5e0(asmname, statename, xanim, var_e68e984de4e68ee7) {
+function function_3474c2003e05a5e0(asmname, statename, xanim, min_translation) {
     /#
         movedelta = getmovedelta(xanim);
         d = length(movedelta);
-        if (d < var_e68e984de4e68ee7) {
-            println("<unknown string>" + var_e68e984de4e68ee7 + "<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
+        if (d < min_translation) {
+            println("<unknown string>" + min_translation + "<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
             level.var_e941151b3a81c996 = 0;
             println("<unknown string>" + function_3c8848a3a11b2553(getanimname(xanim)) + "<unknown string>" + d);
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4126
 // Size: 0x19d
-function function_481385c3b908b994(asmname, statename, xanim, var_d43784c16c429ec1) {
+function function_481385c3b908b994(asmname, statename, xanim, max_translation) {
     /#
         stop_time = 1;
         if (animhasnotetrack(xanim, "<unknown string>") || animhasnotetrack(xanim, "<unknown string>")) {
@@ -1750,26 +1748,26 @@ function function_481385c3b908b994(asmname, statename, xanim, var_d43784c16c429e
             foreach (note in var_ad9ba4beee7c6c8e) {
                 stop_time = min(stop_time, note);
             }
-            var_ec92f7e363a1800 = getnotetracktimes(xanim, "<unknown string>");
-            foreach (note in var_ec92f7e363a1800) {
+            finish_notes = getnotetracktimes(xanim, "<unknown string>");
+            foreach (note in finish_notes) {
                 stop_time = min(stop_time, note);
             }
         }
         movedelta = getmovedelta(xanim, 0, stop_time);
         d = length(movedelta);
-        if (d > var_d43784c16c429ec1) {
-            println("<unknown string>" + var_d43784c16c429ec1 + "<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
+        if (d > max_translation) {
+            println("<unknown string>" + max_translation + "<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
             level.var_e941151b3a81c996 = 0;
             println("<unknown string>" + function_3c8848a3a11b2553(getanimname(xanim)) + "<unknown string>" + d);
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x42ca
 // Size: 0x1fa
-function function_7329f095ddbdb229(asmname, statename, xanim, notetrack, var_d43784c16c429ec1) {
+function function_7329f095ddbdb229(asmname, statename, xanim, notetrack, max_translation) {
     /#
         stop_time = 1;
         if (animhasnotetrack(xanim, "<unknown string>")) {
@@ -1780,11 +1778,11 @@ function function_7329f095ddbdb229(asmname, statename, xanim, notetrack, var_d43
             stop_time = var_ad9ba4beee7c6c8e[0];
         }
         if (animhasnotetrack(xanim, "<unknown string>")) {
-            var_ec92f7e363a1800 = getnotetracktimes(xanim, "<unknown string>");
-            if (var_ec92f7e363a1800.size != 1) {
+            finish_notes = getnotetracktimes(xanim, "<unknown string>");
+            if (finish_notes.size != 1) {
                 println("<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>" + function_3c8848a3a11b2553(getanimname(xanim)));
             }
-            stop_time = min(stop_time, var_ec92f7e363a1800[0]);
+            stop_time = min(stop_time, finish_notes[0]);
         }
         start_time = 0;
         if (animhasnotetrack(xanim, notetrack)) {
@@ -1798,15 +1796,15 @@ function function_7329f095ddbdb229(asmname, statename, xanim, notetrack, var_d43
         }
         movedelta = getmovedelta(xanim, start_time, stop_time);
         d = length(movedelta);
-        if (d > var_d43784c16c429ec1) {
-            println("<unknown string>" + var_d43784c16c429ec1 + "<unknown string>" + notetrack + "<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
+        if (d > max_translation) {
+            println("<unknown string>" + max_translation + "<unknown string>" + notetrack + "<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
             level.var_e941151b3a81c996 = 0;
             println("<unknown string>" + function_3c8848a3a11b2553(getanimname(xanim)) + "<unknown string>" + d);
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x44cb
 // Size: 0x8c
@@ -1815,14 +1813,14 @@ function function_96b38b91937c6971(asmname, statename, note) {
         if (isagent(self)) {
             return;
         }
-        var_6fa083eab22dac63 = asm_getallanimsforstate(statename);
-        foreach (xanim in var_6fa083eab22dac63) {
+        xanims = asm_getallanimsforstate(statename);
+        foreach (xanim in xanims) {
             function_d6919795e4b24d3a(asmname, statename, xanim, note);
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x455e
 // Size: 0x90
@@ -1831,14 +1829,14 @@ function function_2376c1e1ca3ac68e(asmname, statename, params) {
         if (isagent(self)) {
             return;
         }
-        var_6fa083eab22dac63 = asm_getallanimsforstate(statename);
-        foreach (xanim in var_6fa083eab22dac63) {
+        xanims = asm_getallanimsforstate(statename);
+        foreach (xanim in xanims) {
             function_481385c3b908b994(asmname, statename, xanim, 0.1);
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x45f5
 // Size: 0x98
@@ -1850,14 +1848,14 @@ function function_6421e5a82688da9d(asmname, statename, tolerance) {
         if (!isdefined(tolerance)) {
             tolerance = 8;
         }
-        var_6fa083eab22dac63 = asm_getallanimsforstate(statename);
-        foreach (xanim in var_6fa083eab22dac63) {
+        xanims = asm_getallanimsforstate(statename);
+        foreach (xanim in xanims) {
             function_3474c2003e05a5e0(asmname, statename, xanim, tolerance);
         }
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4694
 // Size: 0x14a
@@ -1867,12 +1865,12 @@ function function_fb8af5455aa10890(asmname, statename, params) {
             return;
         }
         tolerance = 0.1;
-        var_67d6da562a00e06b = 0.1;
-        var_6fa083eab22dac63 = asm_getallanimsforstate(statename);
-        foreach (xanim in var_6fa083eab22dac63) {
+        samplefrac = 0.1;
+        xanims = asm_getallanimsforstate(statename);
+        foreach (xanim in xanims) {
             t = 0;
             while (t < 1) {
-                t = min(t + var_67d6da562a00e06b, 1);
+                t = min(t + samplefrac, 1);
                 movedelta = getmovedelta(xanim, 0, t);
                 d = length(movedelta);
                 if (d > tolerance) {
@@ -1886,7 +1884,7 @@ function function_fb8af5455aa10890(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x47e5
 // Size: 0x2da
@@ -1896,12 +1894,12 @@ function function_e291a61d131cb535(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         if (!isdefined(aliases)) {
-            println("<unknown string>" + self.var_ae3ea15396b65c1f + "<unknown string>" + statename + "<unknown string>");
+            println("<unknown string>" + self.animsetname + "<unknown string>" + statename + "<unknown string>");
             return;
         }
         foreach (alias in aliases) {
@@ -1925,20 +1923,20 @@ function function_e291a61d131cb535(asmname, statename, params) {
                 if (isarray(var_fb34eb17f76fc7a1.anims)) {
                     anims = var_fb34eb17f76fc7a1.anims;
                 } else {
-                    anims = [0:var_fb34eb17f76fc7a1.anims];
+                    anims = [var_fb34eb17f76fc7a1.anims];
                 }
                 if (isarray(var_3a8e690b2371c6d2.anims)) {
                     var_3a8e690b2371c6d2 = var_3a8e690b2371c6d2.anims;
                 } else {
-                    var_3a8e690b2371c6d2 = [0:var_3a8e690b2371c6d2.anims];
+                    var_3a8e690b2371c6d2 = [var_3a8e690b2371c6d2.anims];
                 }
-                var_6fa083eab22dac63 = namespace_3c37cb17ade254d::array_combine_unique(anims, var_3a8e690b2371c6d2);
-                foreach (xanim in var_6fa083eab22dac63) {
-                    var_45d925e78e0e783a = getnotetracktimes(xanim, "<unknown string>");
-                    if (var_45d925e78e0e783a.size < var_a401bfc2f3617031) {
+                xanims = scripts/engine/utility::array_combine_unique(anims, var_3a8e690b2371c6d2);
+                foreach (xanim in xanims) {
+                    shoottimes = getnotetracktimes(xanim, "<unknown string>");
+                    if (shoottimes.size < var_a401bfc2f3617031) {
                         println("<unknown string>" + asmname + "<unknown string>" + statename + "<unknown string>");
                         level.var_e941151b3a81c996 = 0;
-                        println("<unknown string>" + alias + "<unknown string>" + function_3c8848a3a11b2553(getanimname(xanim)) + "<unknown string>" + var_45d925e78e0e783a.size + "<unknown string>" + var_a401bfc2f3617031);
+                        println("<unknown string>" + alias + "<unknown string>" + function_3c8848a3a11b2553(getanimname(xanim)) + "<unknown string>" + shoottimes.size + "<unknown string>" + var_a401bfc2f3617031);
                     }
                 }
             }
@@ -1946,7 +1944,7 @@ function function_e291a61d131cb535(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ac6
 // Size: 0x1f
@@ -1955,7 +1953,7 @@ function function_3668c851be298257(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4aec
 // Size: 0x1f
@@ -1964,7 +1962,7 @@ function function_e7680ae9c1ad905c(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b12
 // Size: 0xad
@@ -1980,7 +1978,7 @@ function function_291d962b22a07e21(asmname, statename, alias, xanim) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bc6
 // Size: 0x185
@@ -1990,9 +1988,9 @@ function function_5ac3e08bd8b8783b(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             if (issubstr(alias, "<unknown string>")) {
@@ -2013,7 +2011,7 @@ function function_5ac3e08bd8b8783b(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d52
 // Size: 0x1a2
@@ -2023,9 +2021,9 @@ function function_498119c92072487f(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             if (issubstr(alias, "<unknown string>")) {
@@ -2048,7 +2046,7 @@ function function_498119c92072487f(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4efb
 // Size: 0x1fa
@@ -2058,9 +2056,9 @@ function function_9a500dc0cc17d6da(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         pistol_pickup = "<unknown string>";
         var_9232727e455493f7 = "<unknown string>";
@@ -2085,7 +2083,7 @@ function function_9a500dc0cc17d6da(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x50fc
 // Size: 0x1a7
@@ -2095,9 +2093,9 @@ function function_5cfc0f7a00ff16ae(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             if (issubstr(alias, "<unknown string>")) {
@@ -2120,7 +2118,7 @@ function function_5cfc0f7a00ff16ae(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x52aa
 // Size: 0x1fe
@@ -2130,9 +2128,9 @@ function function_d63d29d0192b914(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             if (issubstr(alias, "<unknown string>")) {
@@ -2144,8 +2142,8 @@ function function_d63d29d0192b914(asmname, statename, params) {
                     function_d6919795e4b24d3a(asmname, statename, xanim, "<unknown string>");
                     if (animhasnotetrack(xanim, "<unknown string>")) {
                         var_acfa015f21c55596 = 0.05 / max(getanimlength(xanim), 0.05);
-                        var_d8b09ba073e85d21 = getnotetracktimes(xanim, "<unknown string>");
-                        foreach (note in var_d8b09ba073e85d21) {
+                        ragdoll_times = getnotetracktimes(xanim, "<unknown string>");
+                        foreach (note in ragdoll_times) {
                             if (note > var_acfa015f21c55596) {
                                 print("<unknown string>" + asmname + "asm" + statename + "suicidebomber_cp" + function_3c8848a3a11b2553(getanimname(xanim)) + "poiauto_glanceend");
                                 level.var_e941151b3a81c996 = 0;
@@ -2158,7 +2156,7 @@ function function_d63d29d0192b914(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x54af
 // Size: 0x1aa
@@ -2168,9 +2166,9 @@ function function_a61779d8c4b66cda(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             if (issubstr(alias, "<unknown string>")) {
@@ -2193,7 +2191,7 @@ function function_a61779d8c4b66cda(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5660
 // Size: 0x15b
@@ -2203,9 +2201,9 @@ function function_a92ee440c129eb3b(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             if (issubstr(alias, "<unknown string>")) {
@@ -2225,7 +2223,7 @@ function function_a92ee440c129eb3b(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x57c2
 // Size: 0x137
@@ -2235,10 +2233,10 @@ function function_7f7e506dee7aa8c2(asmname, statename, params) {
             return;
         }
         /#
-            assert(isdefined(self.var_ae3ea15396b65c1f));
+            assert(isdefined(self.animsetname));
         #/
         function_6421e5a82688da9d(asmname, statename, params);
-        arc = self.var_ae3ea15396b65c1f;
+        arc = self.animsetname;
         aliases = archetypegetaliases(arc, statename);
         foreach (alias in aliases) {
             anims = asm_getallanimsforalias(arc, statename, alias);
@@ -2252,36 +2250,36 @@ function function_7f7e506dee7aa8c2(asmname, statename, params) {
     #/
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5900
 // Size: 0x51
 function mapangleindextonumpad(idx) {
-    mapping = [0:2, 1:3, 2:6, 3:9, 4:8, 5:7, 6:4, 7:1, 8:2];
+    mapping = [2, 3, 6, 9, 8, 7, 4, 1, 2];
     return mapping[idx];
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x5959
 // Size: 0x8e
-function toggle_poiauto(var_f17895b3929d1bf5, yawmin, yawmax, pitchmin, pitchmax) {
-    if (var_f17895b3929d1bf5) {
+function toggle_poiauto(shouldenable, yawmin, yawmax, pitchmin, pitchmax) {
+    if (shouldenable) {
         if (!isdefined(self.poiauto)) {
             poiauto_init(yawmin, yawmax, pitchmin, pitchmax);
             thread poiauto_think();
-            namespace_6205bc7c5e394598::set_gunpose("disable");
+            scripts/common/ai::set_gunpose("disable");
         }
-    } else {
-        self notify("poiauto_disable");
-        self.poiauto = undefined;
-        self.var_7731804dd640d78d = 0;
-        namespace_6205bc7c5e394598::set_gunpose("automatic");
-        self stoplookat();
+        return;
     }
+    self notify("poiauto_disable");
+    self.poiauto = undefined;
+    self.var_7731804dd640d78d = 0;
+    scripts/common/ai::set_gunpose("automatic");
+    self stoplookat();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x59ee
 // Size: 0x183
@@ -2307,7 +2305,7 @@ function set_poiauto_constraints(yawmax, yawmin, pitchmin, pitchmax) {
     self.poiauto.pitchmax = pitchmax;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b78
 // Size: 0xeb
@@ -2330,23 +2328,23 @@ function reset_poiauto_constraints() {
     self.poiauto.pitchmax = self.poiauto.og_pitchmax;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c6a
 // Size: 0x21c
-function toggle_poi(var_f17895b3929d1bf5, firstpoint) {
+function toggle_poi(shouldenable, firstpoint) {
     /#
-        assertex(var_f17895b3929d1bf5 == 1 || var_f17895b3929d1bf5 == 0, "shouldEnable needs to be either true or false");
+        assertex(shouldenable == 1 || shouldenable == 0, "shouldEnable needs to be either true or false");
     #/
     self.currentpoi = undefined;
     self.nextpoi = undefined;
-    self.doingpoi = var_f17895b3929d1bf5;
-    self.disablelookdownpath = var_f17895b3929d1bf5;
+    self.doingpoi = shouldenable;
+    self.disablelookdownpath = shouldenable;
     if (isdefined(self.cqb_point_of_interest)) {
         self.cqb_point_of_interest = undefined;
         self function_f7d83c92f61dcc31(0);
     }
-    if (!var_f17895b3929d1bf5) {
+    if (!shouldenable) {
         /#
             assertex(isdefined(level.poi_activeai), "Can't disable from POI if POIs have never been enabled!!!!");
         #/
@@ -2357,32 +2355,32 @@ function toggle_poi(var_f17895b3929d1bf5, firstpoint) {
         self._blackboard.forcestrafe = 0;
         self.gunposeoverride = undefined;
         self stoplookat();
-    } else {
-        currentspeed = self aigetdesiredspeed();
-        archetype = self getbasearchetype();
-        var_1e5343d5beae9c26 = getanimspeedthreshold(archetype, "fast");
-        self aisetdesiredspeed(min(currentspeed, var_1e5343d5beae9c26));
-        if (!isdefined(level.poi_activeai)) {
-            level.poi_activeai = [];
-        }
-        level.poi_activeai[level.poi_activeai.size] = self;
-        if (isdefined(level.fnfindcqbpointsofinterest) && !istrue(level.alreadyfindingpoi)) {
-            level thread [[ level.fnfindcqbpointsofinterest ]]();
-            level.alreadyfindingpoi = 1;
-        }
-        /#
-            assert(!isdefined(firstpoint) || isstruct(firstpoint));
-        #/
-        self.poi_oldturnrate = self.turnrate;
-        self.turnrate = 0.25;
-        self.leftaimlimit = 90;
-        self.rightaimlimit = -90;
-        self.poi_firstpoint = firstpoint;
-        self.gunposeoverride = "disable";
+        return;
     }
+    currentspeed = self aigetdesiredspeed();
+    archetype = self getbasearchetype();
+    var_1e5343d5beae9c26 = getanimspeedthreshold(archetype, "fast");
+    self aisetdesiredspeed(min(currentspeed, var_1e5343d5beae9c26));
+    if (!isdefined(level.poi_activeai)) {
+        level.poi_activeai = [];
+    }
+    level.poi_activeai[level.poi_activeai.size] = self;
+    if (isdefined(level.fnfindcqbpointsofinterest) && !istrue(level.alreadyfindingpoi)) {
+        level thread [[ level.fnfindcqbpointsofinterest ]]();
+        level.alreadyfindingpoi = 1;
+    }
+    /#
+        assert(!isdefined(firstpoint) || isstruct(firstpoint));
+    #/
+    self.poi_oldturnrate = self.turnrate;
+    self.turnrate = 0.25;
+    self.leftaimlimit = 90;
+    self.rightaimlimit = -90;
+    self.poi_firstpoint = firstpoint;
+    self.gunposeoverride = "disable";
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e8d
 // Size: 0x1f
@@ -2390,7 +2388,7 @@ function shouldinitiallyattackfromexposed(node) {
     return self._blackboard.shouldinitiallyattackfromexposed;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5eb4
 // Size: 0x1e9
@@ -2414,11 +2412,11 @@ function cover_canattackfromexposed(enemyorigin, node) {
         return 0;
     }
     higheststance = gethighestallowedstance();
-    var_639828dc8bac6376 = 56;
+    zheight = 56;
     if (higheststance != "stand") {
-        var_639828dc8bac6376 = 32;
+        zheight = 32;
     }
-    startorigin = node.origin + (0, 0, var_639828dc8bac6376);
+    startorigin = node.origin + (0, 0, zheight);
     if (!isdefined(enemyorigin)) {
         if (isai(self.enemy) && !isbot(self.enemy)) {
             enemyorigin = self.enemy getapproxeyepos();
@@ -2442,7 +2440,7 @@ function cover_canattackfromexposed(enemyorigin, node) {
     return self._blackboard.canattackfromexposed;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60a5
 // Size: 0x34
@@ -2450,7 +2448,7 @@ function cover_canattackfromexposedcached() {
     return isdefined(self._blackboard.canattackfromexposedtime) && self._blackboard.canattackfromexposedtime > gettime();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60e1
 // Size: 0x16
@@ -2458,7 +2456,7 @@ function cover_canattackfromexposedgetcache() {
     return self._blackboard.canattackfromexposed;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x60ff
 // Size: 0xb4
@@ -2483,7 +2481,7 @@ function poiauto_init(yawmin, yawmax, pitchmin, pitchmax) {
     self.var_7731804dd640d78d = 1;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x61ba
 // Size: 0x152
@@ -2497,7 +2495,7 @@ function poiauto_think() {
     if (!isdefined(self.poiauto)) {
         poiauto_init();
     }
-    while (1) {
+    while (true) {
         var_d74b916a1980d11a = 0;
         if (var_46de370fcb18a1b0 <= gettime()) {
             self.poiauto_angles = (0, 0, 0);
@@ -2523,19 +2521,19 @@ function poiauto_think() {
     }
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6313
 // Size: 0x5d
 function poiauto_relativeangletopos(angles) {
     forward = anglestoforward(angles);
-    var_c568587f2f09cb94 = rotatevector(forward, self.angles);
+    worldforward = rotatevector(forward, self.angles);
     eye = self getapproxeyepos();
-    pos = eye + var_c568587f2f09cb94 * 128;
+    pos = eye + worldforward * 128;
     return pos;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6378
 // Size: 0x5b
@@ -2548,7 +2546,7 @@ function poiauto_glancerandom() {
     self glanceatpos(pos);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x63da
 // Size: 0x22
@@ -2559,7 +2557,7 @@ function poiauto_glanceend() {
     self.var_8ce6d9fc1435dd86 = 0;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6403
 // Size: 0xd
@@ -2567,7 +2565,7 @@ function poiauto_isglancing() {
     return istrue(self.var_8ce6d9fc1435dd86);
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6418
 // Size: 0xf6
@@ -2591,21 +2589,21 @@ function poiauto_setnewaimangle(var_d74b916a1980d11a) {
     self.poiauto_nextaimtime = randomintrange(100, 300) + gettime();
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6515
 // Size: 0x36
 function function_2285421dfc79c4d5() {
-    var_38548703ea2bdadc = undefined;
+    arcname = undefined;
     if (isdefined(self.animationarchetype)) {
-        var_38548703ea2bdadc = self.animationarchetype;
+        arcname = self.animationarchetype;
     } else {
-        var_38548703ea2bdadc = self.var_ae3ea15396b65c1f;
+        arcname = self.animsetname;
     }
-    return var_38548703ea2bdadc;
+    return arcname;
 }
 
-// Namespace utility/namespace_34bf5965727c0922
+// Namespace utility / scripts/asm/shared/utility
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6553
 // Size: 0xc8

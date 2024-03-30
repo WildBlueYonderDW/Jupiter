@@ -14,11 +14,11 @@
 
 #namespace smartobject;
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0x71
-function smartobjectinit(asmname, var_9b08cc0ca316e788, params) {
+function smartobjectinit(asmname, startname, params) {
     /#
         assert(!isdefined(self.asm.smartobject));
     #/
@@ -28,7 +28,7 @@ function smartobjectinit(asmname, var_9b08cc0ca316e788, params) {
     #/
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x84
@@ -40,7 +40,7 @@ function smartobjectcomplete(asmname, statename, params) {
     asm_fireephemeralevent("smartobject", "finished");
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ff
 // Size: 0x3e
@@ -49,97 +49,97 @@ function getsmartobjectinfo() {
     return [[ type.fngetinfo ]]();
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x345
 // Size: 0x48
-function smartobjecthasintro(asmname, statename, var_f2b19b25d457c2a6, params) {
+function smartobjecthasintro(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     if (!isdefined(info.hasintro)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x395
 // Size: 0x26
-function smartobjecthaslogic(asmname, statename, var_f2b19b25d457c2a6, params) {
-    return 1;
+function smartobjecthaslogic(asmname, statename, tostatename, params) {
+    return true;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c3
 // Size: 0x48
-function smartobjecthasoutro(asmname, statename, var_f2b19b25d457c2a6, params) {
+function smartobjecthasoutro(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     if (!isdefined(info.hasoutro)) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x413
 // Size: 0x41
-function smartobjecthasexits(asmname, statename, var_f2b19b25d457c2a6, params) {
+function smartobjecthasexits(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.hasexits);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x41
-function shouldplaysmartobjectpain(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldplaysmartobjectpain(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.haspain);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a5
 // Size: 0x41
-function shouldplaysmartobjectdeath(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldplaysmartobjectdeath(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.hasdeath);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x41
-function shouldplaysmartobjectreact(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldplaysmartobjectreact(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.hasreact);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x537
 // Size: 0xa0
-function shouldsmartobjectreact(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldsmartobjectreact(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     if (istrue(info.bdonotreact)) {
-        return 0;
+        return false;
     }
     if (self function_a4a9e73b2d25ff8b()) {
-        return 1;
+        return true;
     }
     if (isdefined(info.fninterrupt) && self [[ info.fninterrupt ]]()) {
         if (!isdefined(self.var_fd01ad49b4e38ae8)) {
             self.var_fd01ad49b4e38ae8 = "med";
         }
         self.var_df902e311df99de7 = gettime();
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5df
 // Size: 0x6c
@@ -151,7 +151,7 @@ function playsmartobjectintro(asmname, statename, params) {
     playsmartobjectanim(asmname, statename);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x652
 // Size: 0xbc
@@ -169,7 +169,7 @@ function playsmartobjectlogic(asmname, statename, params) {
     self asmfireevent(asmname, "smartobject_finished");
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x715
 // Size: 0x9c
@@ -185,44 +185,44 @@ function choosesmartobjectanim(asmname, statename, params) {
     return data;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x13a
-function playsmartobjectanim(asmname, statename, var_8352485f68c78819, var_6c79d6772822f969) {
+function playsmartobjectanim(asmname, statename, earlytime, earlynotify) {
     self endon(statename + "_finished");
-    var_5ec185bb9e766d14 = asm_getanim(asmname, statename);
-    if (!isdefined(var_5ec185bb9e766d14)) {
+    animdata = asm_getanim(asmname, statename);
+    if (!isdefined(animdata)) {
         self waittill("forever");
     }
-    self aisetanim(var_5ec185bb9e766d14.statename, var_5ec185bb9e766d14.animindex);
-    asm_playfacialanim(asmname, var_5ec185bb9e766d14.statename, asm_getxanim(var_5ec185bb9e766d14.statename, var_5ec185bb9e766d14.animindex));
-    if (isdefined(var_8352485f68c78819) && isdefined(var_6c79d6772822f969)) {
-        xanim = asm_getxanim(var_5ec185bb9e766d14.statename, var_5ec185bb9e766d14.animindex);
-        waittime = getanimlength(xanim) - var_8352485f68c78819;
-        childthread smartobject_earlynotifier(waittime, var_6c79d6772822f969);
+    self aisetanim(animdata.statename, animdata.animindex);
+    asm_playfacialanim(asmname, animdata.statename, asm_getxanim(animdata.statename, animdata.animindex));
+    if (isdefined(earlytime) && isdefined(earlynotify)) {
+        xanim = asm_getxanim(animdata.statename, animdata.animindex);
+        waittime = getanimlength(xanim) - earlytime;
+        childthread smartobject_earlynotifier(waittime, earlynotify);
     }
-    endnote = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename), undefined, var_5ec185bb9e766d14.statename);
+    endnote = asm_donotetracks(asmname, statename, asm_getnotehandler(asmname, statename), undefined, animdata.statename);
     if (endnote == "code_move") {
-        endnote = asm_donotetracks(asmname, statename, undefined, undefined, var_5ec185bb9e766d14.statename);
+        endnote = asm_donotetracks(asmname, statename, undefined, undefined, animdata.statename);
     }
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8fa
 // Size: 0x23
-function smartobject_earlynotifier(waittime, var_6c79d6772822f969) {
+function smartobject_earlynotifier(waittime, earlynotify) {
     wait(waittime);
-    asm_fireephemeralevent("smartobject", var_6c79d6772822f969);
+    asm_fireephemeralevent("smartobject", earlynotify);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x924
 // Size: 0x47
 function smartobject_notetrackhandler(note) {
-    if (namespace_a4081f3d58d76916::notetrack_prefix_handler(note)) {
+    if (scripts/anim/notetracks::notetrack_prefix_handler(note)) {
         return;
     }
     info = getsmartobjectinfo();
@@ -231,15 +231,15 @@ function smartobject_notetrackhandler(note) {
     }
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x972
 // Size: 0x43
-function smartobject_shouldexitintomove(asmname, statename, var_f2b19b25d457c2a6, params) {
+function smartobject_shouldexitintomove(asmname, statename, tostatename, params) {
     return isdefined(self.pathgoalpos) && length2dsquared(self.velocity) > 1;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9bd
 // Size: 0x68
@@ -250,28 +250,28 @@ function playsmartobjectexit(asmname, statename, params) {
         asm_fireevent(asmname, "abort");
         return;
     }
-    namespace_d09b117bc1b1d73e::playstartanim(asmname, info.animstatename, exitanim, 0);
+    scripts/asm/soldier/move::playstartanim(asmname, info.animstatename, exitanim, 0);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xa2c
 // Size: 0x40
 function choosesmartobjectexitanim(asmname, statename, params) {
     info = getsmartobjectinfo();
-    return namespace_d09b117bc1b1d73e::chooseanim_exit(asmname, info.animstatename, params);
+    return scripts/asm/soldier/move::chooseanim_exit(asmname, info.animstatename, params);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xa74
 // Size: 0x41
 function playsmartobjectreactanim(asmname, statename, params) {
     info = getsmartobjectinfo();
-    namespace_58609e68adef6b3d::playanim_patrolreact_internal(asmname, statename, info.animstatename);
+    scripts/asm/soldier/patrol::playanim_patrolreact_internal(asmname, statename, info.animstatename);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xabc
 // Size: 0xfd
@@ -283,24 +283,24 @@ function choosesmartobjectreactanim(asmname, statename, params) {
         #/
         return asm_lookupanimfromalias(info.animstatename, info.animlist[statename]);
     }
-    var_394efcef72c7ebea = namespace_58609e68adef6b3d::getpatrolreactdirindex();
-    alias = "react_med_" + var_394efcef72c7ebea;
+    directionindex = scripts/asm/soldier/patrol::getpatrolreactdirindex();
+    alias = "react_med_" + directionindex;
     /#
         assertex(asm_hasalias(info.animstatename, alias), "Smart object reaction aliases for " + info.animstatename + " set up incorrectly.  Unable to find alias " + alias);
     #/
     return asm_lookupanimfromalias(info.animstatename, alias);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc1
 // Size: 0x45
 function playsmartobjectpainanim(asmname, statename, params) {
     info = getsmartobjectinfo();
-    namespace_7eac13b458714f13::playpainaniminternal(asmname, statename, params, 0, 1, info.animstatename);
+    scripts/asm/soldier/pain::playpainaniminternal(asmname, statename, params, 0, 1, info.animstatename);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc0d
 // Size: 0x5a
@@ -308,10 +308,10 @@ function playsmartobjectdeathanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     self.deathstate = info.animstatename;
     self.deathalias = choosesmartobjectdeathalias(statename);
-    namespace_f0a0c13f724da4b::playdeathanim(asmname, statename);
+    scripts/asm/soldier/death::playdeathanim(asmname, statename);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6e
 // Size: 0xf1
@@ -330,7 +330,7 @@ function choosesmartobjectpainanim(asmname, statename, params) {
     return asm_lookupanimfromalias(info.animstatename, var_7b9fb896860064ab);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd67
 // Size: 0x6f
@@ -338,18 +338,20 @@ function smtobjgetdamagedir() {
     anglediff = angleclamp180(self.damageyaw - self.angles[1]);
     if (anglediff < -135) {
         return "2";
-    } else if (anglediff < -45) {
-        return "4";
-    } else if (anglediff > 135) {
-        return "2";
-    } else if (anglediff > 45) {
-        return "6";
-    } else {
-        return "8";
     }
+    if (anglediff < -45) {
+        return "4";
+    }
+    if (anglediff > 135) {
+        return "2";
+    }
+    if (anglediff > 45) {
+        return "6";
+    }
+    return "8";
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xddd
 // Size: 0x51
@@ -359,7 +361,7 @@ function choosesmartobjectdeathanim(asmname, statename, params) {
     return asm_lookupanimfromalias(info.animstatename, deathalias);
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe36
 // Size: 0xbf
@@ -378,23 +380,23 @@ function choosesmartobjectdeathalias(statename) {
     return deathalias;
 }
 
-// Namespace smartobject/namespace_738087d4bfdfdfef
+// Namespace smartobject / scripts/asm/soldier/smartobject
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xefd
 // Size: 0x8d
 function needtoturntosmartobject(asmname, statename, params) {
-    var_6c66de307018dfe3 = bb_getrequestedsmartobject();
-    if (!isdefined(var_6c66de307018dfe3)) {
-        return 0;
+    smartobj = bb_getrequestedsmartobject();
+    if (!isdefined(smartobj)) {
+        return false;
     }
-    if (!isdefined(var_6c66de307018dfe3.angles)) {
-        return 0;
+    if (!isdefined(smartobj.angles)) {
+        return false;
     }
-    anglediff = angleclamp180(var_6c66de307018dfe3.angles[1] - self.angles[1]);
+    anglediff = angleclamp180(smartobj.angles[1] - self.angles[1]);
     if (-45 < anglediff && anglediff < 45) {
-        return 0;
+        return false;
     }
     self.desiredturnyaw = anglediff;
-    return 1;
+    return true;
 }
 

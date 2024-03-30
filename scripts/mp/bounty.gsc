@@ -9,32 +9,32 @@
 
 #namespace bounty;
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13c
 // Size: 0x4c
 function init() {
     level.bounty_index = [];
     level._effect["vfx_mo_money_cash_exp"] = loadfx("vfx/iw7/_requests/mp/vfx_mo_money_cash_exp.vfx");
-    if (1) {
+    if (true) {
         thread onplayerconnect();
-        namespace_f1d40c362677777e::registerondisconnecteventcallback(&onplayerdisconnect);
-        namespace_1309ce202b9aa92b::registeronplayerjointeamcallback(&onplayerjoinedteam);
+        scripts/mp/utility/disconnect_event_aggregator::registerondisconnecteventcallback(&onplayerdisconnect);
+        scripts/mp/utility/join_team_aggregator::registeronplayerjointeamcallback(&onplayerjoinedteam);
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x18f
 // Size: 0x26
 function onplayerconnect() {
-    while (1) {
+    while (true) {
         player = level waittill("connected");
         player bountyinit();
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1bc
 // Size: 0x25
@@ -46,7 +46,7 @@ function bountyinit() {
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e8
 // Size: 0x30
@@ -56,12 +56,12 @@ function onplayerdisconnect(player) {
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f
 // Size: 0x30
 function onplayerjoinedspectators(player) {
-    if (1) {
+    if (true) {
         if (isdefined(player.bounty_index)) {
             player playerresetbountypoints();
             player playerresetbountystreak();
@@ -69,12 +69,12 @@ function onplayerjoinedspectators(player) {
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x256
 // Size: 0x30
 function onplayerjoinedteam(player) {
-    if (1) {
+    if (true) {
         if (isdefined(player.bounty_index)) {
             player playerresetbountypoints();
             player playerresetbountystreak();
@@ -82,7 +82,7 @@ function onplayerjoinedteam(player) {
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x3b
@@ -93,7 +93,7 @@ function playerregisterbountyindex() {
     self.bounty_index = index;
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cf
 // Size: 0x24
@@ -104,7 +104,7 @@ function playergetbountypoints() {
     return self.bountypoints;
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2fb
 // Size: 0x50
@@ -116,12 +116,12 @@ function playersetbountypoints(bountypoints) {
     level.bounty_index[self.bounty_index] setbountycount(self.bountypoints);
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x352
 // Size: 0x25
 function playerresetbountypoints(wait_time) {
-    if (0) {
+    if (false) {
         return;
     }
     if (isdefined(wait_time)) {
@@ -132,12 +132,12 @@ function playerresetbountypoints(wait_time) {
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x27
 function playerresetbountystreak(wait_time) {
-    if (0) {
+    if (false) {
         return;
     }
     if (isdefined(wait_time)) {
@@ -148,12 +148,12 @@ function playerresetbountystreak(wait_time) {
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x35
 function bountyincreasestreak(amount) {
-    if (0) {
+    if (false) {
         return;
     }
     if (!isdefined(amount)) {
@@ -163,35 +163,35 @@ function bountyincreasestreak(amount) {
     bountyconvert();
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e8
 // Size: 0x50
 function bountyconvert() {
-    if (0) {
+    if (false) {
         return;
     }
-    var_350b780c8443d4 = playergetbountypoints();
-    var_fddc6d6d48703985 = int(floor(self.bountystreak / 3));
-    if (var_fddc6d6d48703985 > var_350b780c8443d4 && var_fddc6d6d48703985 <= 5) {
-        playersetbountypoints(var_fddc6d6d48703985);
+    old_bounty = playergetbountypoints();
+    new_bounty = int(floor(self.bountystreak / 3));
+    if (new_bounty > old_bounty && new_bounty <= 5) {
+        playersetbountypoints(new_bounty);
     }
 }
 
-// Namespace bounty/namespace_7ff762d1c2a7da35
+// Namespace bounty / scripts/mp/bounty
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43f
 // Size: 0x8b
-function bountycollect(var_d55dc1ee4d799341, var_11fbc6946af7e858) {
-    if (0) {
+function bountycollect(victim_bounty, victim_pos) {
+    if (false) {
         return;
     }
     if (_hasperk("specialty_bounty")) {
-        if (var_d55dc1ee4d799341 > 0) {
-            for (i = 0; i < var_d55dc1ee4d799341; i++) {
-                thread doscoreevent(#"bounty");
+        if (victim_bounty > 0) {
+            for (i = 0; i < victim_bounty; i++) {
+                thread doScoreEvent(#"bounty");
                 bountyincreasestreak();
-                playfx(getfx("vfx_mo_money_cash_exp"), var_11fbc6946af7e858 + (0, 0, 45));
+                playfx(getfx("vfx_mo_money_cash_exp"), victim_pos + (0, 0, 45));
             }
             thread teamplayercardsplash("callout_bounty_collected", self);
         }

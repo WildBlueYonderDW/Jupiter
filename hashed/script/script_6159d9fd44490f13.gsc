@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\engine\scriptable.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
@@ -11,30 +11,30 @@
 
 #namespace equipment_interact;
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x357
 // Size: 0x48
 function equipmentinteract_init() {
     level.useobjs = [];
     flag_init("equipment_interact");
-    namespace_3c37cb17ade254d::registersharedfunc("equipment", "deployHackTablet", &deployhacktablet);
-    namespace_17c25f0877bfb620::scriptable_addusedcallbackbypart("hack_usable", &equipmentscriptableused);
+    scripts/engine/utility::registersharedfunc("equipment", "deployHackTablet", &deployHackTablet);
+    scripts/engine/scriptable::scriptable_addusedcallbackbypart("hack_usable", &equipmentscriptableused);
     thread _updateuseobjs();
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x57
-function equipmentscriptableused(instance, part, state, player, var_a5b2c541413aa895, var_cc38472e36be1b61) {
+function equipmentscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     /#
         assert(part == "hack_usable");
     #/
     equipmentuse(instance.entity, player);
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x404
 // Size: 0xb0
@@ -50,47 +50,47 @@ function equipmentuse(instance, player) {
         }
         player.iscapturingcrate = 0;
         player.ishacking = 1;
-        streakinfo = player namespace_9abe40d2af041eb2::createstreakinfo("", player);
+        streakinfo = player scripts/cp_mp/utility/killstreak_utility::createstreakinfo("", player);
         streakinfo.interactstate = 0;
-        player thread deployhacktablet(function_be0c3a067da1e72d(equipment), equipment, streakinfo);
+        player thread deployHackTablet(function_be0c3a067da1e72d(equipment), equipment, streakinfo);
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4bb
 // Size: 0x161
 function _updateuseobjs() {
     level endon("game_ended");
-    while (1) {
+    while (true) {
         wait(0.2);
         foreach (useobj in level.useobjs) {
             if (!isdefined(useobj)) {
                 continue;
             }
-            var_ef269077a28646eb = utility::playersnear(useobj.origin, 300);
-            foreach (player in var_ef269077a28646eb) {
-                if (!istrue(namespace_f8065cafc523dba5::playersareenemies(player, useobj.owner)) || istrue(useobj.isbeingused) || issharedfuncdefined("perk", "hasPerk") && !player [[ getsharedfunc("perk", "hasPerk") ]]("specialty_hack") || player namespace_5a51aa78ea0b1b9f::is_empd() || player namespace_53fc9ddbb516e6e1::function_c4d8558fc1592cd6() || level.gameended) {
+            nearplayers = utility::playersnear(useobj.origin, 300);
+            foreach (player in nearplayers) {
+                if (!istrue(scripts/cp_mp/utility/player_utility::playersareenemies(player, useobj.owner)) || istrue(useobj.isbeingused) || issharedfuncdefined("perk", "hasPerk") && !player [[ getsharedfunc("perk", "hasPerk") ]]("specialty_hack") || player scripts/cp_mp/emp_debuff::is_empd() || player namespace_53fc9ddbb516e6e1::function_c4d8558fc1592cd6() || level.gameended) {
                     useobj disablescriptableplayeruse(player);
-                } else {
-                    useobj enablescriptableplayeruse(player);
+                    continue;
                 }
+                useobj enablescriptableplayeruse(player);
             }
         }
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x623
 // Size: 0x2f
-function remoteinteractsetup(var_3012ab4936b3fdec, var_6e8de967563c281c, var_93af2771622642d7) {
-    if (isdefined(var_93af2771622642d7) || var_93af2771622642d7) {
+function remoteinteractsetup(var_3012ab4936b3fdec, allowdefuse, allowhack) {
+    if (isdefined(allowhack) || allowhack) {
         thread _hacksetup(var_3012ab4936b3fdec);
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x659
 // Size: 0x84
@@ -102,7 +102,7 @@ function _hacksetup(remotedefusecallback) {
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e4
 // Size: 0x13e
@@ -128,21 +128,21 @@ function _processusethink(equipment) {
     if (isdefined(equipment.var_f980def4500c0769)) {
         var_6daefc1a691b701d = equipment.var_f980def4500c0769;
     }
-    var_fbc7cce627cb4d4f = (var_25979fcd6ca24291 - var_6daefc1a691b701d) * 1000;
-    var_b8cf204dd62d457f = gettime() + var_fbc7cce627cb4d4f;
+    interactduration = (var_25979fcd6ca24291 - var_6daefc1a691b701d) * 1000;
+    var_b8cf204dd62d457f = gettime() + interactduration;
     if (isdefined(equipment.var_2c080d51c26d0785)) {
         self thread [[ equipment.var_2c080d51c26d0785 ]]();
     }
     while (var_b8cf204dd62d457f > gettime()) {
         if (!self usebuttonpressed()) {
-            return 0;
+            return false;
         }
         waitframe();
     }
-    return 1;
+    return true;
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x82a
 // Size: 0x136
@@ -186,7 +186,7 @@ function _startusethink(equipment, streakinfo) {
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x967
 // Size: 0xe2
@@ -213,11 +213,11 @@ function function_be0c3a067da1e72d(equipment) {
     return index;
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa51
 // Size: 0x1b9
-function deployhacktablet(index, equipment, streakinfo) {
+function deployHackTablet(index, equipment, streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
     flag_set("equipment_interact");
@@ -231,9 +231,9 @@ function deployhacktablet(index, equipment, streakinfo) {
     if (isdefined(equipment.var_58dec9951efefbed)) {
         var_58dec9951efefbed = equipment.var_58dec9951efefbed;
     }
-    var_819c14e9dc86b8c8 = &_waituntilinteractfinished;
+    cleanupwaitfunc = &_waituntilinteractfinished;
     if (isdefined(equipment.var_af6b61c84f019e58)) {
-        var_819c14e9dc86b8c8 = equipment.var_af6b61c84f019e58;
+        cleanupwaitfunc = equipment.var_af6b61c84f019e58;
     }
     var_28801f64e1d308be = undefined;
     if (isdefined(equipment.var_28801f64e1d308be)) {
@@ -242,44 +242,44 @@ function deployhacktablet(index, equipment, streakinfo) {
     childthread function_60fbd6e6fc195e7b(equipment);
     thread function_c9ada01dc3eac7f3(index, var_c9f381a81d2b42ed, var_58dec9951efefbed, var_28801f64e1d308be);
     self playlocalsound("iw9_ks_tablet_foly_raise_plr");
-    var_41bf9bf4918115ac = namespace_b3d24e921998a8b::switchtodeployweapon(weaponobj, streakinfo, var_819c14e9dc86b8c8, &_ontabletgiven, undefined, undefined, &_ontabletputaway);
-    if (istrue(var_41bf9bf4918115ac)) {
+    switchresult = scripts/cp_mp/killstreaks/killstreakdeploy::switchtodeployweapon(weaponobj, streakinfo, cleanupwaitfunc, &_ontabletgiven, undefined, undefined, &_ontabletputaway);
+    if (istrue(switchresult)) {
         thread _startusethink(equipment, streakinfo);
-    } else {
-        self notify("interact_cancelled");
-        flag_clear("equipment_interact");
+        return;
+    }
+    self notify("interact_cancelled");
+    flag_clear("equipment_interact");
+    if (iscp()) {
+        self setclientomnvar("ui_hack_index", 0);
+        self setclientomnvar("ui_hack_progress", 0);
+    }
+    if (isdefined(equipment)) {
+        equipment.isbeingused = 0;
         if (iscp()) {
-            self setclientomnvar("ui_hack_index", 0);
-            self setclientomnvar("ui_hack_progress", 0);
-        }
-        if (isdefined(equipment)) {
-            equipment.isbeingused = 0;
-            if (iscp()) {
-                equipment enablescriptableplayeruse(self);
-            }
+            equipment enablescriptableplayeruse(self);
         }
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc11
 // Size: 0x34
 function function_60fbd6e6fc195e7b(equipment) {
     self endon("interact_cancelled");
     self endon("interact_finished");
-    equipment namespace_3c37cb17ade254d::waittill_any_2("death", "makeExplosiveUnusable");
+    equipment scripts/engine/utility::waittill_any_2("death", "makeExplosiveUnusable");
     self notify("cancel_all_killstreak_deployments");
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc4c
 // Size: 0x8a
-function function_c9ada01dc3eac7f3(var_c9f312275b852ab0, var_c9f381a81d2b42ed, var_58dec9951efefbed, var_28801f64e1d308be) {
+function function_c9ada01dc3eac7f3(hackindex, var_c9f381a81d2b42ed, var_58dec9951efefbed, var_28801f64e1d308be) {
     level endon("game_ended");
     self endon("disconnect");
-    self setclientomnvar("ui_hack_index", var_c9f312275b852ab0);
+    self setclientomnvar("ui_hack_index", hackindex);
     self playlocalsound("iw9_spotter_perk_tablet_ui");
     _updatehackprogressomnvar(var_c9f381a81d2b42ed, var_58dec9951efefbed);
     if (isdefined(var_28801f64e1d308be)) {
@@ -291,7 +291,7 @@ function function_c9ada01dc3eac7f3(var_c9f312275b852ab0, var_c9f381a81d2b42ed, v
     self setclientomnvar("ui_hack_index", 0);
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0x132
@@ -306,17 +306,17 @@ function _updatehackprogressomnvar(var_c9f381a81d2b42ed, var_58dec9951efefbed) {
     if (isdefined(var_c9f381a81d2b42ed)) {
         var_84fdeec8cd47b94c = var_c9f381a81d2b42ed * 1000;
     }
-    var_6cda039f5c3a871c = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5) * 1000;
+    successduration = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5) * 1000;
     if (isdefined(var_58dec9951efefbed)) {
-        var_6cda039f5c3a871c = var_58dec9951efefbed * 1000;
+        successduration = var_58dec9951efefbed * 1000;
     }
-    var_38ccc24fe3351b52 = var_84fdeec8cd47b94c - var_2646e75e629259a6 - var_6cda039f5c3a871c;
+    barduration = var_84fdeec8cd47b94c - var_2646e75e629259a6 - successduration;
     var_b8cf204dd62d457f = gettime() + var_84fdeec8cd47b94c + var_137d951e4d233a68;
     var_b7eb0c292517d42d = gettime() + var_2646e75e629259a6;
-    while (1) {
-        var_a8f34796fc188f71 = (gettime() - var_b7eb0c292517d42d) / var_38ccc24fe3351b52;
-        var_a8f34796fc188f71 = clamp(var_a8f34796fc188f71, 0, 1);
-        self setclientomnvar("ui_hack_progress", var_a8f34796fc188f71);
+    while (true) {
+        barprogress = (gettime() - var_b7eb0c292517d42d) / barduration;
+        barprogress = clamp(barprogress, 0, 1);
+        self setclientomnvar("ui_hack_progress", barprogress);
         wait(0.05);
         if (gettime() > var_b8cf204dd62d457f) {
             break;
@@ -324,17 +324,17 @@ function _updatehackprogressomnvar(var_c9f381a81d2b42ed, var_58dec9951efefbed) {
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe16
 // Size: 0x27
-function _ontabletgiven(streakinfo, var_41bf9bf4918115ac) {
+function _ontabletgiven(streakinfo, switchresult) {
     _toggletabletallows(1);
     thread _cleanuptabletallows();
-    return 1;
+    return true;
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe45
 // Size: 0x3e
@@ -342,7 +342,7 @@ function _cancelputawayonuseend(streakinfo) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     streakinfo endon("deploy_weapon_switch_ended");
-    while (1) {
+    while (true) {
         if (!self usebuttonpressed()) {
             break;
         }
@@ -351,7 +351,7 @@ function _cancelputawayonuseend(streakinfo) {
     self notify("cancel_all_killstreak_deployments");
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe8a
 // Size: 0x20
@@ -360,7 +360,7 @@ function _ontabletputaway(streakinfo) {
     self playlocalsound("iw9_ks_tablet_foly_lower_plr");
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xeb1
 // Size: 0x77
@@ -374,12 +374,12 @@ function _waituntilinteractfinished(streakinfo) {
     self waittill("interact_finished");
     flag_clear("equipment_interact");
     if (streakinfo.interactstate == 2) {
-        var_3504d7a7f76ad9d5 = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5);
-        wait(var_3504d7a7f76ad9d5);
+        successtime = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5);
+        wait(successtime);
     }
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf2f
 // Size: 0x2f
@@ -390,7 +390,7 @@ function _cleanuptabletallows() {
     _toggletabletallows(0);
 }
 
-// Namespace equipment_interact/namespace_eff8aaa83987a595
+// Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf65
 // Size: 0xa7
@@ -404,9 +404,9 @@ function _toggletabletallows(var_da3010af8f6be463) {
             val::set("tablet", "offhand_weapons", 0);
             val::set("tablet", "fire", 0);
             val::set("tablet", "freezecontrols_allowlook", 1);
-        } else {
-            val::function_c9d0b43701bdba00("tablet");
+            return;
         }
+        val::reset_all("tablet");
     }
 }
 

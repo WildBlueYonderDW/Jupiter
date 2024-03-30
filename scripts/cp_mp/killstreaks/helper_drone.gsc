@@ -1,8 +1,8 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\values.gsc;
+#using scripts\common\callbacks.gsc;
 #using script_3db04fd1b466bdba;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
@@ -16,7 +16,7 @@
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using scripts\cp_mp\hostmigration.gsc;
 #using scripts\mp\sentientpoolmanager.gsc;
-#using script_5f903436642211af;
+#using scripts\common\elevators.gsc;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using scripts\cp_mp\killstreaks\helper_drone.gsc;
 #using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
@@ -29,7 +29,7 @@
 
 #namespace helper_drone;
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x130e
 // Size: 0xb45
@@ -88,17 +88,17 @@ function init() {
     level.helperdronesettings["scrambler_drone_guard"].premoddamagefunc = undefined;
     level.helperdronesettings["scrambler_drone_guard"].postmoddamagefunc = undefined;
     level.helperdronesettings["scrambler_drone_guard"].deathfunc = undefined;
-    level.helperdronesettings["scrambler_drone_guard"].var_5d9d3e47b1b88b84 = &function_e89890de385d2d9e;
+    level.helperdronesettings["scrambler_drone_guard"].explodefunc = &function_e89890de385d2d9e;
     level.helperdronesettings["scrambler_drone_guard"].damagemonitorfunc = &helperdrone_watchdamage;
     level.helperdronesettings["scrambler_drone_guard"].deployweaponname = "ks_gesture_phone_mp";
-    level.helperdronesettings["scrambler_drone_guard"].var_5c6a7212bf9fcbea = 1;
+    level.helperdronesettings["scrambler_drone_guard"].voontimeout = 1;
     level.helperdronesettings["scrambler_drone_guard"].dropfunc = &function_dd2172321d232563;
     gametype = "";
     if (issharedfuncdefined("game", "getGameType")) {
         gametype = [[ getsharedfunc("game", "getGameType") ]]();
     }
-    var_e005d4b70d6f2611 = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
-    if (var_e005d4b70d6f2611 || gametype == "cp_survival") {
+    isbr = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
+    if (isbr || gametype == "cp_survival") {
         level.helperdronesettings["radar_drone_recon"].diewithowner = 1;
         level.helperdronesettings["scrambler_drone_guard"].diewithowner = 1;
         level.helperdronesettings["radar_drone_overwatch"].diewithowner = 1;
@@ -150,7 +150,7 @@ function init() {
     #/
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e5a
 // Size: 0x4e
@@ -160,7 +160,7 @@ function init_helper_drone_vo() {
     game["dialog"]["scrambler_drone_guard_destroyed"] = "killstreak_remote_operator" + "_crash";
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1eaf
 // Size: 0x34
@@ -169,7 +169,7 @@ function init_helper_drone_anim() {
     level.scr_anim["scrambler_drone_guard"]["rotor_spin"] = script_model%mp_cuniform_rotor_spin;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1eea
 // Size: 0x1b
@@ -178,15 +178,15 @@ function function_82d9de71444f6e33() {
     function_c0b0a582ff9e4d57("recon_drone_color_dark_mp");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f0c
 // Size: 0xe
 function weapongivenhelperdrone(streakinfo) {
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f22
 // Size: 0xa1
@@ -197,7 +197,7 @@ function function_29eacadfa638edc1(streakinfo) {
     level.incominghelperdrones[level.incominghelperdrones.size - 1].team = self.team;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fca
 // Size: 0xb3
@@ -215,61 +215,61 @@ function function_c3786c4fba09c2f2(streakinfo) {
     level.incominghelperdrones = var_811e1aa75ba89a34;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2084
 // Size: 0x33
-function function_e4ea3048d91b5eb1(streakinfo, var_d7f72825d583f8fe) {
+function function_e4ea3048d91b5eb1(streakinfo, showerror) {
     function_29eacadfa638edc1(streakinfo);
     if (function_289ddd64ec5b3010(streakinfo, self)) {
         function_c3786c4fba09c2f2(streakinfo);
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20bf
 // Size: 0xe3
-function function_4acd3de63e55eb6c(streakinfo, var_d7f72825d583f8fe) {
+function function_4acd3de63e55eb6c(streakinfo, showerror) {
     if (issharedfuncdefined("killstreak", "currentActiveVehicleCount") && issharedfuncdefined("killstreak", "maxVehiclesAllowed")) {
         if ([[ getsharedfunc("killstreak", "currentActiveVehicleCount") ]]() >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]() || level.fauxvehiclecount + 1 >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]()) {
-            if (istrue(var_d7f72825d583f8fe)) {
+            if (istrue(showerror)) {
                 if (issharedfuncdefined("hud", "showErrorMessage")) {
                     self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/TOO_MANY_VEHICLES");
                 }
             }
-            return 0;
+            return false;
         }
     }
     if (issharedfuncdefined("vehicle", "incrementFauxVehicleCount")) {
         [[ getsharedfunc("vehicle", "incrementFauxVehicleCount") ]](1);
     }
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21aa
 // Size: 0x46
-function tryusehelperdrone(streakname, var_c40a367d39f7f1e2) {
-    if (!isdefined(var_c40a367d39f7f1e2)) {
-        var_c40a367d39f7f1e2 = 1000;
+function tryusehelperdrone(streakname, abilityrange) {
+    if (!isdefined(abilityrange)) {
+        abilityrange = 1000;
     }
     streakinfo = createstreakinfo(streakname, self);
-    streakinfo.var_c40a367d39f7f1e2 = var_c40a367d39f7f1e2;
+    streakinfo.abilityrange = abilityrange;
     return tryusehelperdronefromstruct(streakinfo);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21f8
 // Size: 0x842
 function tryusehelperdronefromstruct(streakinfo) {
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
-            return 0;
+            return false;
         }
     }
     helperdronetype = streakinfo.streakname;
@@ -278,23 +278,23 @@ function tryusehelperdronefromstruct(streakinfo) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NOT_ENOUGH_SPACE");
         }
-        return 0;
+        return false;
     }
     config = level.helperdronesettings[helperdronetype];
-    var_9b1deb5e9d32bbe3 = undefined;
+    deployresult = undefined;
     var_52a5be2e2f91d710 = undefined;
     var_8e9bce85fbf3f459 = 0;
     if (isdefined(config.var_1c606430b81b28ff)) {
         var_8e9bce85fbf3f459 = 1;
-        var_9b1deb5e9d32bbe3 = self [[ config.var_1c606430b81b28ff ]](streakinfo);
+        deployresult = self [[ config.var_1c606430b81b28ff ]](streakinfo);
     } else {
         nonvehicle = !isdefined(config.vehicleinfo);
         if (!nonvehicle) {
-            if (!namespace_f64231d5b7a2c3c4::reservevehicle()) {
-                return 0;
+            if (!scripts/cp_mp/vehicles/vehicle_tracking::reservevehicle()) {
+                return false;
             }
         }
-        if (namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73()) {
+        if (scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73()) {
             deployweaponname = "ks_gesture_generic_mp";
         } else {
             deployweaponname = level.helperdronesettings[streakinfo.streakname].deployweaponname;
@@ -302,62 +302,62 @@ function tryusehelperdronefromstruct(streakinfo) {
         if (isplayer(self)) {
             deployweaponobj = makeweapon(deployweaponname);
             if (function_9deb86c4684340e1(deployweaponobj)) {
-                var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponswitchdeploy(streakinfo, deployweaponobj, 1, &weapongivenhelperdrone);
+                deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweaponswitchdeploy(streakinfo, deployweaponobj, 1, &weapongivenhelperdrone);
             } else if (function_3ffc7fd85f5754e9(deployweaponobj)) {
-                var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweaponswitchdeploy(streakinfo, deployweaponobj, 1, &weapongivenhelperdrone);
-            } else if (function_92ab1470f48812c2(deployweaponobj)) {
-                var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_dogesturedeploy(streakinfo, deployweaponobj);
+                deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweaponswitchdeploy(streakinfo, deployweaponobj, 1, &weapongivenhelperdrone);
+            } else if (iskillstreakgestureweapon(deployweaponobj)) {
+                deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_dogesturedeploy(streakinfo, deployweaponobj);
             } else if (function_6c58c6fdcc87e387(deployweaponobj)) {
-                var_9b1deb5e9d32bbe3 = namespace_b3d24e921998a8b::streakdeploy_doweapontabletdeploy(streakinfo);
+                deployresult = scripts/cp_mp/killstreaks/killstreakdeploy::streakdeploy_doweapontabletdeploy(streakinfo);
             } else {
-                var_9b1deb5e9d32bbe3 = 0;
+                deployresult = 0;
                 /#
                     assertmsg("Error: Helper Drone using an unsupported deploy weapon");
                 #/
             }
         } else {
-            var_9b1deb5e9d32bbe3 = 1;
+            deployresult = 1;
         }
-        if (!istrue(var_9b1deb5e9d32bbe3)) {
+        if (!istrue(deployresult)) {
             if (!nonvehicle) {
-                namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
             }
-            return 0;
+            return false;
         }
         if (isdefined(level.killstreakbeginusefunc)) {
             if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
                 if (!nonvehicle) {
-                    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
                 }
                 if (deployweaponname != "ks_gesture_generic_mp") {
                     streakinfo notify("killstreak_finished_with_deploy_weapon");
                 }
-                return 0;
+                return false;
             }
         }
         if (helperdronetype != "scrambler_drone_guard" || deployweaponname == "ks_gesture_generic_mp") {
             var_ce7e572ba798f2f7 = tryusehelperdroneearlyout(streakinfo, 1);
             if (var_ce7e572ba798f2f7) {
                 if (!nonvehicle) {
-                    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
                 }
                 if (deployweaponname != "ks_gesture_generic_mp") {
                     streakinfo notify("killstreak_finished_with_deploy_weapon");
                 }
-                return 0;
+                return false;
             }
         }
         startpos = function_34280b807c23a453(helperdronetype);
         if (deployweaponname == "ks_remote_device_mp") {
             if (!isdefined(startpos)) {
                 if (!nonvehicle) {
-                    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
                 }
                 if (issharedfuncdefined("hud", "showErrorMessage")) {
                     self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NOT_ENOUGH_SPACE");
                 }
                 streakinfo notify("killstreak_finished_with_deploy_weapon");
-                return 0;
+                return false;
             }
         }
         if (deployweaponname == "ks_remote_drone_mp") {
@@ -366,10 +366,10 @@ function tryusehelperdronefromstruct(streakinfo) {
             result = waittill_any_timeout_2(var_fc4aa9db408d9420, "death", "weapon_switch_started");
             if (!isdefined(result) || result != "timeout") {
                 if (!nonvehicle) {
-                    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
                 }
                 streakinfo notify("killstreak_finished_with_deploy_weapon");
-                return 0;
+                return false;
             }
             if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
                 var_8e9bce85fbf3f459 = 1;
@@ -380,13 +380,13 @@ function tryusehelperdronefromstruct(streakinfo) {
             result = waittill_any_timeout_1(var_e5c7ffb094dc9eec - var_fc4aa9db408d9420, "death");
             if (!isdefined(result) || result != "timeout") {
                 if (!nonvehicle) {
-                    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
                 }
-                val::function_c9d0b43701bdba00("helperDrone");
+                val::reset_all("helperDrone");
                 streakinfo notify("killstreak_finished_with_deploy_weapon");
-                return 0;
+                return false;
             }
-            val::function_c9d0b43701bdba00("helperDrone");
+            val::reset_all("helperDrone");
         }
         mappointinfo = undefined;
         if (deployweaponname == "ks_remote_map_mp") {
@@ -396,30 +396,30 @@ function tryusehelperdronefromstruct(streakinfo) {
             }
             if (!isdefined(mappointinfo)) {
                 if (!nonvehicle) {
-                    namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+                    scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
                 }
                 if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
                     [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
                 }
-                return 0;
+                return false;
             }
         } else if (helperdronetype == "scrambler_drone_guard") {
             location = self.origin;
             if (isdefined(level.traceselectedmaplocation)) {
-                var_bdf908d5d1aae9f2 = [[ level.traceselectedmaplocation ]](self.origin);
-                location = var_bdf908d5d1aae9f2["position"];
+                tracedata = [[ level.traceselectedmaplocation ]](self.origin);
+                location = tracedata["position"];
             }
-            var_b21e2e887c161b9 = spawnstruct();
-            var_b21e2e887c161b9.location = location;
+            mappoint = spawnstruct();
+            mappoint.location = location;
             mappointinfo = [];
-            mappointinfo[0] = var_b21e2e887c161b9;
+            mappointinfo[0] = mappoint;
         }
         startang = self.angles;
         if (isdefined(mappointinfo)) {
             if (helperdronetype == "scrambler_drone_guard") {
                 killstreak_dangernotifyplayersinrange(self, self.team, 15000, helperdronetype, mappointinfo[0].location);
-                var_f4ba81ddfb51eebf = mappointinfo[0].location + (0, 0, 3000);
-                helperdrone = createhelperdrone(var_f4ba81ddfb51eebf, startang, helperdronetype, streakinfo, nonvehicle, !nonvehicle);
+                scramblerspawnpos = mappointinfo[0].location + (0, 0, 3000);
+                helperdrone = createhelperdrone(scramblerspawnpos, startang, helperdronetype, streakinfo, nonvehicle, !nonvehicle);
                 if (!isdefined(helperdrone)) {
                     if (issharedfuncdefined("hud", "showErrorMessage")) {
                         self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/UNAVAILABLE");
@@ -428,7 +428,7 @@ function tryusehelperdronefromstruct(streakinfo) {
                         [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
                     }
                     function_c3786c4fba09c2f2(streakinfo);
-                    return 0;
+                    return false;
                 }
                 helperdrone.mappointinfo = mappointinfo;
                 helperdrone thread perkengineer_manageminimap();
@@ -453,7 +453,7 @@ function tryusehelperdronefromstruct(streakinfo) {
                     [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
                 }
                 function_c3786c4fba09c2f2(streakinfo);
-                return 0;
+                return false;
             }
             if (helperdronetype == "assault_drone") {
                 thread helperdrone_giveplayerfauxremote(streakinfo);
@@ -462,8 +462,8 @@ function tryusehelperdronefromstruct(streakinfo) {
             thread starthelperdrone(helperdrone);
         }
     }
-    if (!istrue(var_9b1deb5e9d32bbe3)) {
-        return 0;
+    if (!istrue(deployresult)) {
+        return false;
     }
     if (isplayer(self) && !istrue(var_8e9bce85fbf3f459)) {
         if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
@@ -482,73 +482,73 @@ function tryusehelperdronefromstruct(streakinfo) {
         }
     }
     level notify("helper_drone_started", self);
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a42
 // Size: 0x74
-function helperdronecreationfailedfx(helperdronetype, var_39c9ec41466da42e) {
-    if (!isdefined(var_39c9ec41466da42e)) {
-        var_39c9ec41466da42e = self geteye() + (0, 0, 80);
+function helperdronecreationfailedfx(helperdronetype, failposition) {
+    if (!isdefined(failposition)) {
+        failposition = self geteye() + (0, 0, 80);
     }
-    fxent = spawn("script_model", var_39c9ec41466da42e);
+    fxent = spawn("script_model", failposition);
     fxent setmodel("ks_" + helperdronetype + "_mp");
     fxent setscriptablepartstate("exit", "on", 0);
     fxent thread delay_deletescriptable();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2abd
 // Size: 0x121
-function tryusehelperdroneearlyout(streakinfo, var_d7f72825d583f8fe) {
+function tryusehelperdroneearlyout(streakinfo, showerror) {
     if (isusingremote()) {
-        return 1;
+        return true;
     }
     if (istrue(self.drones_disabled)) {
-        if (istrue(var_d7f72825d583f8fe)) {
+        if (istrue(showerror)) {
             if (issharedfuncdefined("hud", "showErrorMessage")) {
                 self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/UNAVAILABLE");
             }
         }
-        return 1;
+        return true;
     }
     if (streakinfo.streakname == "radar_drone_recon") {
-        var_234bea9eaddc1edc = !isdefined(namespace_b3d24e921998a8b::candeploykillstreakweapon(streakinfo));
-        if (!istrue(var_234bea9eaddc1edc) && istrue(var_d7f72825d583f8fe)) {
+        var_234bea9eaddc1edc = !isdefined(scripts/cp_mp/killstreaks/killstreakdeploy::candeploykillstreakweapon(streakinfo));
+        if (!istrue(var_234bea9eaddc1edc) && istrue(showerror)) {
             if (issharedfuncdefined("hud", "showErrorMessage")) {
                 self [[ getsharedfunc("hud", "showErrorMessage") ]]("MP/CANNOT_USE_GENERIC");
             }
-            return 1;
+            return true;
         }
     }
-    var_9c16986ec4a8ff68 = function_4acd3de63e55eb6c(streakinfo, var_d7f72825d583f8fe);
+    var_9c16986ec4a8ff68 = function_4acd3de63e55eb6c(streakinfo, showerror);
     if (!var_9c16986ec4a8ff68) {
-        return 1;
+        return true;
     }
-    var_f2e9119c4fba561a = function_e4ea3048d91b5eb1(streakinfo, var_d7f72825d583f8fe);
+    var_f2e9119c4fba561a = function_e4ea3048d91b5eb1(streakinfo, showerror);
     if (!var_f2e9119c4fba561a) {
         if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
             [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]](1);
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2be6
 // Size: 0x1a
 function delay_deletescriptable() {
     level endon("game_ended");
-    namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(2);
+    scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(2);
     self delete();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2c07
 // Size: 0x69d
@@ -556,22 +556,22 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
     clearvehiclereservation = !istrue(nonvehicle) && istrue(vehiclereserved);
     if (!isdefined(startpos)) {
         if (!istrue(clearvehiclereservation)) {
-            namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+            scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
         }
         return;
     }
     config = level.helperdronesettings[helperdronetype];
-    var_b923287498a8519a = config.modelbase;
+    dronemodel = config.modelbase;
     drone = undefined;
     if (istrue(nonvehicle)) {
         drone = spawn("script_model", startpos);
-        drone setmodel(var_b923287498a8519a);
+        drone setmodel(dronemodel);
         drone.nonvehicle = 1;
     } else {
         if (clearvehiclereservation) {
-            namespace_f64231d5b7a2c3c4::clearvehiclereservation();
+            scripts/cp_mp/vehicles/vehicle_tracking::clearvehiclereservation();
         }
-        drone = namespace_f64231d5b7a2c3c4::_spawnhelicopter(self, startpos, startang, config.vehicleinfo, var_b923287498a8519a);
+        drone = scripts/cp_mp/vehicles/vehicle_tracking::_spawnhelicopter(self, startpos, startang, config.vehicleinfo, dronemodel);
         /#
             var_aded1f99ce13821a = getdvarint(@"hash_b23e7bb60bbe76a6", 0);
             if (var_aded1f99ce13821a) {
@@ -598,7 +598,7 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
     drone.combatmode = config.primarymode;
     drone.currentstring = config.secondarymodestring;
     drone.streakinfo = streakinfo;
-    drone.var_d0d1af898acdc9af = "default";
+    drone.camerastate = "default";
     drone.var_52c3b4bc88132aee = config.var_52c3b4bc88132aee;
     drone.timeout = config.timeout;
     drone function_49197cd063a740ea(&function_ba1c5496f8fc5f67);
@@ -614,11 +614,11 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
             drone.timeout = 9999;
         }
     #/
-    var_7164f727caf950ce = 0;
+    delaysentient = 0;
     if (istrue(drone.nonvehicle)) {
-        drone namespace_6d9917c3dc05dbe9::registersentient("Tactical_Moving", self, undefined, undefined, 0, 1);
+        drone scripts/mp/sentientpoolmanager::registersentient("Tactical_Moving", self, undefined, undefined, 0, 1);
     } else {
-        var_7164f727caf950ce = 1;
+        delaysentient = 1;
         drone thread function_7c5c7844eb8db8bb();
         drone setvehicleteam(drone.team);
     }
@@ -639,10 +639,10 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
         drone vehicle_invoketriggers(1);
         drone vehicle_breakglass(1);
     }
-    var_5ae5e6cd7f0cc727 = 12;
+    iconoffset = 12;
     switch (helperdronetype) {
     case #"hash_f64c697bfb4c6b54":
-        var_5ae5e6cd7f0cc727 = 60;
+        iconoffset = 60;
         break;
     case #"hash_e10937962ef20946":
         scrambler = drone helperdrone_spawnnewscrambler("medium");
@@ -653,13 +653,13 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
             scrambler = drone helperdrone_spawnnewscrambler("large");
             drone.scrambler = scrambler;
         }
-        var_5ae5e6cd7f0cc727 = 100;
+        iconoffset = 100;
         break;
     default:
         break;
     }
     if (issharedfuncdefined("killstreak", "addToActiveKillstreakList")) {
-        drone [[ getsharedfunc("killstreak", "addToActiveKillstreakList") ]](streakinfo.streakname, "Killstreak_Air", drone.owner, 0, 1, var_5ae5e6cd7f0cc727);
+        drone [[ getsharedfunc("killstreak", "addToActiveKillstreakList") ]](streakinfo.streakname, "Killstreak_Air", drone.owner, 0, 1, iconoffset);
     }
     drone.attract_strength = 10000;
     drone.attract_range = 150;
@@ -678,16 +678,16 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
             drone.owner [[ getsharedfunc("killstreak", "logKillstreakEvent") ]](config.streakname, drone.targetpos);
         }
     }
-    thread function_4dcb82341876e985(var_7164f727caf950ce, drone);
+    thread function_4dcb82341876e985(delaysentient, drone);
     if (isdefined(level.elevators)) {
         foreach (elevators in level.elevators) {
-            elevators thread namespace_272931699e2fe8e9::function_5c07037726ae5001(drone);
+            elevators thread scripts/common/elevators::function_5c07037726ae5001(drone);
         }
     }
     return drone;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x32ac
 // Size: 0x4e
@@ -698,11 +698,11 @@ function function_7c5c7844eb8db8bb() {
         return;
     }
     wait(5);
-    namespace_6d9917c3dc05dbe9::registersentient("Drone", self.owner);
+    scripts/mp/sentientpoolmanager::registersentient("Drone", self.owner);
     self notify("registered_sentient");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3301
 // Size: 0x31
@@ -712,37 +712,36 @@ function function_c76228a77a70c9ea() {
         return 1;
     default:
         return 0;
-        break;
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3339
 // Size: 0x37
-function function_4dcb82341876e985(var_7164f727caf950ce, drone) {
+function function_4dcb82341876e985(delaysentient, drone) {
     drone endon("death");
     self endon("disconnect");
-    if (istrue(var_7164f727caf950ce)) {
+    if (istrue(delaysentient)) {
         drone waittill("registered_sentient");
     }
-    self function_fd165588822885f4(drone);
+    self setplayerusingdrone(drone);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3377
 // Size: 0x39a
-function function_99e1189114e8419a(startpos, startang, helperdronetype, streakinfo, var_f88fb7783beaa918, var_53385b6be5f6c52f) {
+function function_99e1189114e8419a(startpos, startang, helperdronetype, streakinfo, dronevel, dronehealth) {
     config = level.helperdronesettings[helperdronetype];
     if (getdvarint(@"hash_1253e99612575321", 0) && isdefined(config.var_f69f6bdde236401a)) {
-        var_b923287498a8519a = config.var_f69f6bdde236401a;
+        dronemodel = config.var_f69f6bdde236401a;
     } else {
-        var_b923287498a8519a = config.modelbase;
+        dronemodel = config.modelbase;
     }
     drone = undefined;
     drone = spawn("script_model", startpos);
-    drone setmodel(var_b923287498a8519a);
+    drone setmodel(dronemodel);
     drone.nonvehicle = 0;
     if (!isdefined(drone)) {
         return;
@@ -750,9 +749,9 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
     drone setnodeploy(1);
     drone.health = config.maxhealth;
     drone.maxhealth = config.maxhealth;
-    drone.currenthealth = var_53385b6be5f6c52f;
+    drone.currenthealth = dronehealth;
     drone.ispiloted = 0;
-    drone.damagetaken = config.maxhealth - var_53385b6be5f6c52f;
+    drone.damagetaken = config.maxhealth - dronehealth;
     drone.angles = startang;
     drone.owner = self;
     drone.team = self.team;
@@ -760,7 +759,7 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
     drone.combatmode = config.primarymode;
     drone.currentstring = config.secondarymodestring;
     drone.streakinfo = streakinfo;
-    drone.var_d0d1af898acdc9af = "default";
+    drone.camerastate = "default";
     drone.var_52c3b4bc88132aee = 0;
     drone.timeout = config.timeout;
     drone.dropped = 1;
@@ -770,7 +769,7 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
             drone.timeout = 9999;
         }
     #/
-    drone namespace_6d9917c3dc05dbe9::registersentient("Tactical_Moving", self, undefined, undefined, 0, 1);
+    drone scripts/mp/sentientpoolmanager::registersentient("Tactical_Moving", self, undefined, undefined, 0, 1);
     drone function_1a4f935ba283ab0f();
     if (isdefined(config.damagemonitorfunc)) {
         drone thread [[ config.damagemonitorfunc ]](1);
@@ -782,7 +781,7 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
     drone setcandamage(1);
     drone scriptmoveroutline();
     drone scriptmoverthermal();
-    var_5ae5e6cd7f0cc727 = 12;
+    iconoffset = 12;
     drone.stunned = 0;
     drone.inactive = 1;
     data = spawnstruct();
@@ -791,8 +790,8 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
     if (issharedfuncdefined("game", "handlemovingplatforms")) {
         drone [[ getsharedfunc("game", "handlemovingplatforms") ]](data);
     }
-    if (isdefined(var_f88fb7783beaa918)) {
-        drone physics_takecontrol(1, drone.origin, var_f88fb7783beaa918 * 25);
+    if (isdefined(dronevel)) {
+        drone physics_takecontrol(1, drone.origin, dronevel * 25);
     } else {
         drone physics_takecontrol(1);
     }
@@ -802,23 +801,23 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
     drone setuseholdduration("duration_none");
     drone sethintrequiresholding(0);
     drone setusefov(90);
-    drone thread function_c36d4585d380430f(streakinfo.var_ebec497ff8b18a45);
+    drone thread function_c36d4585d380430f(streakinfo.superref);
     return drone;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3719
 // Size: 0xa7
-function function_c36d4585d380430f(var_ebec497ff8b18a45) {
+function function_c36d4585d380430f(superref) {
     self endon("death");
     self endon("explode");
     self endon("pickup");
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
         if (isdefined(player) && isalive(player)) {
             if (issharedfuncdefined("player", "forceGiveSuper")) {
-                player [[ getsharedfunc("player", "forceGiveSuper") ]](var_ebec497ff8b18a45, 1, 0);
+                player [[ getsharedfunc("player", "forceGiveSuper") ]](superref, 1, 0);
             }
             if (issharedfuncdefined("player", "playPickupFeedback")) {
                 player [[ getsharedfunc("player", "playPickupFeedback") ]](self, 0);
@@ -829,21 +828,21 @@ function function_c36d4585d380430f(var_ebec497ff8b18a45) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37c7
 // Size: 0xc6
 function helperdrone_notifyenemyplayersinrange(helperdronetype) {
     var_b43d19b33263e16f = level.teamdata[self.team]["players"];
-    var_e7c0ffd00e9cfe51 = utility::playersincylinder(self.origin, 3000, var_b43d19b33263e16f);
-    foreach (enemyplayer in var_e7c0ffd00e9cfe51) {
+    enemyplayersinrange = utility::playersincylinder(self.origin, 3000, var_b43d19b33263e16f);
+    foreach (enemyplayer in enemyplayersinrange) {
         if (issharedfuncdefined("killstreak", "dangerNotifyPlayer")) {
             self.owner [[ getsharedfunc("killstreak", "dangerNotifyPlayer") ]](enemyplayer, helperdronetype, 1);
         }
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3894
 // Size: 0xad
@@ -859,7 +858,7 @@ function helperdrone_handleteamvisibility() {
     #/
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3948
 // Size: 0x72
@@ -868,24 +867,24 @@ function helperdrone_managevisibilityonteamjoin() {
     self endon("leaving");
     self endon("explode");
     self endon("drop");
-    while (1) {
+    while (true) {
         player = level waittill("joined_team");
         if (level.teambased && player.team == self.team) {
             self hidefromplayer(player);
-        } else {
-            self showtoplayer(player);
+            continue;
         }
+        self showtoplayer(player);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x39c1
 // Size: 0x191
 function function_cc4dd1078cf1b365(streakname) {
     config = level.helperdronesettings[self.helperdronetype];
     if (!istrue(self.nonvehicle)) {
-        var_e25f9b0de2cc7b81 = self;
+        killstreakvehicle = self;
         scorepopup = config.scorepopup;
         vodestroyed = config.vodestroyed;
         destroyedsplash = config.destroyedsplash;
@@ -894,8 +893,8 @@ function function_cc4dd1078cf1b365(streakname) {
         var_bacc6dd14316758c = config.premoddamagefunc;
         var_7da88d9c69433487 = config.postmoddamagefunc;
         deathcallback = config.deathfunc;
-        killstreak_setupvehicledamagefunctionality(streakname, var_e25f9b0de2cc7b81, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
-        namespace_f64231d5b7a2c3c4::vehicle_tracking_registerinstance(self, self.owner, self.owner.team);
+        killstreak_setupVehicleDamageFunctionality(streakname, killstreakvehicle, scorepopup, vodestroyed, destroyedsplash, var_8dfc256103cce53e, var_191284e2e2837328, var_bacc6dd14316758c, var_7da88d9c69433487, deathcallback);
+        scripts/cp_mp/vehicles/vehicle_tracking::vehicle_tracking_registerinstance(self, self.owner, self.owner.team);
     }
     function_cfc5e3633ef950fd(1, self.maxhealth * 0.75, &function_f6914d06b20aee20);
     function_cfc5e3633ef950fd(2, self.maxhealth * 0.5, &function_3ad98c4f7524b525);
@@ -903,23 +902,23 @@ function function_cc4dd1078cf1b365(streakname) {
     self.var_96419179a661cf96 = &function_1a4b3b6063ec7390;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b59
 // Size: 0x3b
-function function_1a4b3b6063ec7390(var_1a914c651971e2f5, impulse) {
-    if (!isdefined(var_1a914c651971e2f5)) {
+function function_1a4b3b6063ec7390(dronevictim, impulse) {
+    if (!isdefined(dronevictim)) {
         return;
     }
     if (impulse > 0) {
-        if (istrue(var_1a914c651971e2f5.isdestroyed)) {
+        if (istrue(dronevictim.isdestroyed)) {
             return;
         }
-        var_1a914c651971e2f5 thread function_6edfda4764129e3(1);
+        dronevictim thread function_6edfda4764129e3(1);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b9b
 // Size: 0x1d6
@@ -929,15 +928,15 @@ function function_9d01452d8baca7a0() {
         self endon("killstreak");
         self endon("Error: Helper Drone using an unsupported deploy weapon");
         self endon("sound");
-        self.var_c0b807f1243ad7b9 = 0;
-        while (1) {
-            var_c0b807f1243ad7b9 = getdvarint(@"hash_4ec1877ac00842c0", 0);
+        self.togglevisibility = 0;
+        while (true) {
+            togglevisibility = getdvarint(@"hash_4ec1877ac00842c0", 0);
             if (self.helperdronetype == "decrementFauxVehicleCount") {
-                var_c0b807f1243ad7b9 = getdvarint(@"hash_ac7f6a636682c52f", 0);
+                togglevisibility = getdvarint(@"hash_ac7f6a636682c52f", 0);
             }
-            if (var_c0b807f1243ad7b9) {
-                if (!istrue(self.var_c0b807f1243ad7b9)) {
-                    self.var_c0b807f1243ad7b9 = 1;
+            if (togglevisibility) {
+                if (!istrue(self.togglevisibility)) {
+                    self.togglevisibility = 1;
                     foreach (player in level.players) {
                         if (player.team == self.team) {
                             self showtoplayer(player);
@@ -948,8 +947,8 @@ function function_9d01452d8baca7a0() {
                         }
                     }
                 }
-            } else if (istrue(self.var_c0b807f1243ad7b9)) {
-                self.var_c0b807f1243ad7b9 = 0;
+            } else if (istrue(self.togglevisibility)) {
+                self.togglevisibility = 0;
                 foreach (player in level.players) {
                     if (player.team == self.team) {
                         self hidefromplayer(player);
@@ -965,20 +964,20 @@ function function_9d01452d8baca7a0() {
     #/
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d78
 // Size: 0x3c
-function function_988c532b8c5a4ec0(var_a2aa6ce7e3a5ac0c) {
-    if (isdefined(var_a2aa6ce7e3a5ac0c)) {
-        if (isdefined(var_a2aa6ce7e3a5ac0c.owner)) {
-            var_a2aa6ce7e3a5ac0c = var_a2aa6ce7e3a5ac0c.owner;
+function function_988c532b8c5a4ec0(enemyent) {
+    if (isdefined(enemyent)) {
+        if (isdefined(enemyent.owner)) {
+            enemyent = enemyent.owner;
         }
-        var_a2aa6ce7e3a5ac0c notify("scramble_off" + self getentitynumber());
+        enemyent notify("scramble_off" + self getentitynumber());
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3dbb
 // Size: 0xfb
@@ -998,7 +997,7 @@ function helperdrone_endscramblereffect() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ebd
 // Size: 0x297
@@ -1012,63 +1011,67 @@ function helperdrone_watchscramblereffectdist(owner) {
         owner = self.owner;
     }
     self.var_88f72d2c0421f8b1 = [];
-    var_4efaf0d84225539 = 0;
+    skipteamcheck = 0;
     /#
-        var_4efaf0d84225539 = getdvarint(@"hash_7786353439eb384c", 0);
+        skipteamcheck = getdvarint(@"hash_7786353439eb384c", 0);
     #/
-    var_105fca5e47d7ee56 = getdvarfloat(@"hash_97a2272a19ad3843", 1000);
-    var_f3b7cc3138382dfb = var_105fca5e47d7ee56 * var_105fca5e47d7ee56;
-    var_556db0b72a96514e = physics_createcontents([0:"physicscontents_characterproxy"]);
+    scramblerradius = getdvarfloat(@"hash_97a2272a19ad3843", 1000);
+    var_f3b7cc3138382dfb = scramblerradius * scramblerradius;
+    playercontents = physics_createcontents(["physicscontents_characterproxy"]);
     var_863c619037f3ac74 = self.origin - (0, 0, 3000);
-    var_b65b7aeab526e1ac = (var_105fca5e47d7ee56, var_105fca5e47d7ee56, 3000);
-    var_80745cf3e2877df5 = var_863c619037f3ac74 - var_b65b7aeab526e1ac;
-    var_809746f3e2ad954b = var_863c619037f3ac74 + var_b65b7aeab526e1ac;
-    while (1) {
-        var_e5b984fc3e961023 = physics_aabbbroadphasequery(var_80745cf3e2877df5, var_809746f3e2ad954b, var_556db0b72a96514e, []);
-        foreach (var_d5db6d3276688d8f in var_e5b984fc3e961023) {
-            var_780166328e815d00 = 0;
+    radiusvector = (scramblerradius, scramblerradius, 3000);
+    aabbmin = var_863c619037f3ac74 - radiusvector;
+    aabbmax = var_863c619037f3ac74 + radiusvector;
+    while (true) {
+        var_e5b984fc3e961023 = physics_aabbbroadphasequery(aabbmin, aabbmax, playercontents, []);
+        foreach (scrambledent in var_e5b984fc3e961023) {
+            isimmune = 0;
             if (issharedfuncdefined("perk", "hasPerk")) {
-                var_780166328e815d00 = var_d5db6d3276688d8f [[ getsharedfunc("perk", "hasPerk") ]]("specialty_scrambler_resist");
+                isimmune = scrambledent [[ getsharedfunc("perk", "hasPerk") ]]("specialty_scrambler_resist");
             }
-            if (isdefined(var_d5db6d3276688d8f) && var_d5db6d3276688d8f namespace_f8065cafc523dba5::_isalive() && !var_780166328e815d00) {
-                if (distance2dsquared(self.origin, var_d5db6d3276688d8f.origin) > var_f3b7cc3138382dfb) {
+            if (isdefined(scrambledent) && scrambledent scripts/cp_mp/utility/player_utility::_isalive() && !isimmune) {
+                if (distance2dsquared(self.origin, scrambledent.origin) > var_f3b7cc3138382dfb) {
                     continue;
                 }
-                if (var_4efaf0d84225539 || level.teambased && var_d5db6d3276688d8f.team != self.team && var_d5db6d3276688d8f.team != "spectator" || !level.teambased && var_d5db6d3276688d8f != self.owner) {
-                    if (var_d5db6d3276688d8f isusingremote()) {
+                if (skipteamcheck || level.teambased && scrambledent.team != self.team && scrambledent.team != "spectator" || !level.teambased && scrambledent != self.owner) {
+                    if (scrambledent isusingremote()) {
                         continue;
                     }
-                    if (var_d5db6d3276688d8f helperdrone_entaffectedbyscramble(self, var_4efaf0d84225539)) {
+                    if (scrambledent helperdrone_entaffectedbyscramble(self, skipteamcheck)) {
                         continue;
                     }
-                    var_d5db6d3276688d8f helperdrone_setscramblerjammed(1, self, var_4efaf0d84225539);
+                    scrambledent helperdrone_setscramblerjammed(1, self, skipteamcheck);
                 }
-            } else if (isdefined(var_d5db6d3276688d8f.scrambledby) && array_contains(var_d5db6d3276688d8f.scrambledby, self)) {
-                var_d5db6d3276688d8f notify("scramble_off" + self getentitynumber());
+                continue;
+            }
+            if (isdefined(scrambledent.scrambledby) && array_contains(scrambledent.scrambledby, self)) {
+                scrambledent notify("scramble_off" + self getentitynumber());
             }
         }
         waitframe();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x415b
 // Size: 0x105
-function helperdrone_setscramblerplayerbuffs(var_2327284215f2eb30, var_5e3a489f0b2b59a5) {
-    if (helperdrone_entaffectedbyscramble(var_5e3a489f0b2b59a5) && istrue(var_2327284215f2eb30)) {
+function helperdrone_setscramblerplayerbuffs(buff, buffent) {
+    if (helperdrone_entaffectedbyscramble(buffent) && istrue(buff)) {
         return;
     }
-    if (istrue(var_2327284215f2eb30)) {
-        var_5e3a489f0b2b59a5.friendliesaffectedbyscrambler[var_5e3a489f0b2b59a5.friendliesaffectedbyscrambler.size] = self;
-        thread helperdrone_managescramblerplayerbuff(var_5e3a489f0b2b59a5);
+    if (istrue(buff)) {
+        buffent.friendliesaffectedbyscrambler[buffent.friendliesaffectedbyscrambler.size] = self;
+        thread helperdrone_managescramblerplayerbuff(buffent);
         if (issharedfuncdefined("perk", "givePerk")) {
             self [[ getsharedfunc("perk", "givePerk") ]]("specialty_blindeye");
         }
         if (issharedfuncdefined("perk", "givePerk")) {
             self [[ getsharedfunc("perk", "givePerk") ]]("specialty_noscopeoutline");
         }
-    } else if (isdefined(self)) {
+        return;
+    }
+    if (isdefined(self)) {
         if (issharedfuncdefined("perk", "removePerk")) {
             self [[ getsharedfunc("perk", "removePerk") ]]("specialty_blindeye");
         }
@@ -1078,129 +1081,133 @@ function helperdrone_setscramblerplayerbuffs(var_2327284215f2eb30, var_5e3a489f0
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4267
 // Size: 0x2d
-function helperdrone_managescramblerplayerbuff(var_5e3a489f0b2b59a5) {
-    waittill_any_2("death_or_disconnect", "scramble_off" + var_5e3a489f0b2b59a5 getentitynumber());
-    helperdrone_setscramblerplayerbuffs(0, var_5e3a489f0b2b59a5);
+function helperdrone_managescramblerplayerbuff(buffent) {
+    waittill_any_2("death_or_disconnect", "scramble_off" + buffent getentitynumber());
+    helperdrone_setscramblerplayerbuffs(0, buffent);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x429b
 // Size: 0x167
-function helperdrone_setscramblerjammed(var_28e6df0414cb4897, var_479e3f358a1f244e, var_4efaf0d84225539, var_699323575339379a) {
+function helperdrone_setscramblerjammed(jam, jammerent, skipteamcheck, var_699323575339379a) {
     var_682bf17fa458886c = self;
-    if (istrue(var_28e6df0414cb4897)) {
-        var_682bf17fa458886c.scrambledby = function_53c4c53197386572(var_682bf17fa458886c.scrambledby, []);
-        var_682bf17fa458886c.scrambledby = function_6d6af8144a5131f1(var_682bf17fa458886c.scrambledby, var_479e3f358a1f244e);
-        if (!array_contains(var_479e3f358a1f244e.var_88f72d2c0421f8b1, var_682bf17fa458886c)) {
-            var_479e3f358a1f244e.var_88f72d2c0421f8b1[var_479e3f358a1f244e.var_88f72d2c0421f8b1.size] = var_682bf17fa458886c;
+    if (istrue(jam)) {
+        var_682bf17fa458886c.scrambledby = default_to(var_682bf17fa458886c.scrambledby, []);
+        var_682bf17fa458886c.scrambledby = function_6d6af8144a5131f1(var_682bf17fa458886c.scrambledby, jammerent);
+        if (!array_contains(jammerent.var_88f72d2c0421f8b1, var_682bf17fa458886c)) {
+            jammerent.var_88f72d2c0421f8b1[jammerent.var_88f72d2c0421f8b1.size] = var_682bf17fa458886c;
         }
-        var_682bf17fa458886c thread helperdrone_managescramblereffect(var_479e3f358a1f244e, var_4efaf0d84225539, var_699323575339379a);
-        var_682bf17fa458886c thread helperdrone_watchscramblestrength(var_479e3f358a1f244e, var_699323575339379a);
-    } else if (isdefined(var_479e3f358a1f244e) && isdefined(var_682bf17fa458886c) && isdefined(var_682bf17fa458886c.scrambledby)) {
-        if (array_contains(var_682bf17fa458886c.scrambledby, var_479e3f358a1f244e)) {
-            var_682bf17fa458886c.scrambledby = array_remove(var_682bf17fa458886c.scrambledby, var_479e3f358a1f244e);
-            if (isdefined(var_479e3f358a1f244e.var_ef42676d437ab065)) {
-                var_8ce1abd1a0602291 = var_479e3f358a1f244e.var_ef42676d437ab065[self getentitynumber()];
-                if (isdefined(var_8ce1abd1a0602291)) {
-                    var_479e3f358a1f244e.var_ef42676d437ab065[self getentitynumber()] = undefined;
-                    var_682bf17fa458886c namespace_5a51aa78ea0b1b9f::stop_scramble(var_8ce1abd1a0602291, var_699323575339379a);
-                    var_479e3f358a1f244e.var_ef42676d437ab065[var_682bf17fa458886c getentitynumber()] = undefined;
+        var_682bf17fa458886c thread helperdrone_managescramblereffect(jammerent, skipteamcheck, var_699323575339379a);
+        var_682bf17fa458886c thread helperdrone_watchscramblestrength(jammerent, var_699323575339379a);
+        return;
+    }
+    if (isdefined(jammerent) && isdefined(var_682bf17fa458886c) && isdefined(var_682bf17fa458886c.scrambledby)) {
+        if (array_contains(var_682bf17fa458886c.scrambledby, jammerent)) {
+            var_682bf17fa458886c.scrambledby = array_remove(var_682bf17fa458886c.scrambledby, jammerent);
+            if (isdefined(jammerent.var_ef42676d437ab065)) {
+                scramblerstrength = jammerent.var_ef42676d437ab065[self getentitynumber()];
+                if (isdefined(scramblerstrength)) {
+                    jammerent.var_ef42676d437ab065[self getentitynumber()] = undefined;
+                    var_682bf17fa458886c scripts/cp_mp/emp_debuff::stop_scramble(scramblerstrength, var_699323575339379a);
+                    jammerent.var_ef42676d437ab065[var_682bf17fa458886c getentitynumber()] = undefined;
                 }
             }
         }
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4409
 // Size: 0xb3
-function helperdrone_managescramblereffect(var_479e3f358a1f244e, var_4efaf0d84225539, var_699323575339379a) {
+function helperdrone_managescramblereffect(jammerent, skipteamcheck, var_699323575339379a) {
     level endon("game_ended");
-    waittill_any_2("death", "scramble_off" + var_479e3f358a1f244e getentitynumber());
+    waittill_any_2("death", "scramble_off" + jammerent getentitynumber());
     if (isdefined(self)) {
-        helperdrone_setscramblerjammed(0, var_479e3f358a1f244e, var_4efaf0d84225539, var_699323575339379a);
-        if (isdefined(var_479e3f358a1f244e) && isdefined(var_479e3f358a1f244e.var_88f72d2c0421f8b1)) {
-            var_479e3f358a1f244e.var_88f72d2c0421f8b1 = array_remove(var_479e3f358a1f244e.var_88f72d2c0421f8b1, self);
+        helperdrone_setscramblerjammed(0, jammerent, skipteamcheck, var_699323575339379a);
+        if (isdefined(jammerent) && isdefined(jammerent.var_88f72d2c0421f8b1)) {
+            jammerent.var_88f72d2c0421f8b1 = array_remove(jammerent.var_88f72d2c0421f8b1, self);
         }
-    } else if (isdefined(var_479e3f358a1f244e) && isdefined(var_479e3f358a1f244e.var_88f72d2c0421f8b1)) {
-        var_479e3f358a1f244e.var_88f72d2c0421f8b1 = array_removeundefined(var_479e3f358a1f244e.var_88f72d2c0421f8b1);
+        return;
+    }
+    if (isdefined(jammerent) && isdefined(jammerent.var_88f72d2c0421f8b1)) {
+        jammerent.var_88f72d2c0421f8b1 = array_removeundefined(jammerent.var_88f72d2c0421f8b1);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x44c3
 // Size: 0x5e
-function helperdrone_watchremotescrambledent(var_479e3f358a1f244e, var_4efaf0d84225539) {
-    var_479e3f358a1f244e endon("death");
+function helperdrone_watchremotescrambledent(jammerent, skipteamcheck) {
+    jammerent endon("death");
     level endon("game_ended");
     self waittill("death");
     if (isdefined(self.owner)) {
-        if (self.owner helperdrone_entaffectedbyscramble(var_479e3f358a1f244e, var_4efaf0d84225539)) {
-            self.owner helperdrone_setscramblerjammed(0, var_479e3f358a1f244e, var_4efaf0d84225539);
+        if (self.owner helperdrone_entaffectedbyscramble(jammerent, skipteamcheck)) {
+            self.owner helperdrone_setscramblerjammed(0, jammerent, skipteamcheck);
         }
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4528
 // Size: 0x1b1
-function helperdrone_watchscramblestrength(var_479e3f358a1f244e, var_699323575339379a) {
+function helperdrone_watchscramblestrength(jammerent, var_699323575339379a) {
     self endon("death");
     self endon("scramble_off" + self getentitynumber());
     self endon("disconnect");
-    var_479e3f358a1f244e endon("death");
-    var_479e3f358a1f244e.var_ef42676d437ab065 = function_53c4c53197386572(var_479e3f358a1f244e.var_ef42676d437ab065, []);
-    var_d0f37ccce4e88c3d = 0;
-    var_8ce1abd1a0602291 = 0;
-    var_105fca5e47d7ee56 = getdvarfloat(@"hash_97a2272a19ad3843", 1000);
-    if (isdefined(var_479e3f358a1f244e.var_32efb854df6d5296)) {
-        var_105fca5e47d7ee56 = var_479e3f358a1f244e.var_32efb854df6d5296;
+    jammerent endon("death");
+    jammerent.var_ef42676d437ab065 = default_to(jammerent.var_ef42676d437ab065, []);
+    previousstrength = 0;
+    scramblerstrength = 0;
+    scramblerradius = getdvarfloat(@"hash_97a2272a19ad3843", 1000);
+    if (isdefined(jammerent.var_32efb854df6d5296)) {
+        scramblerradius = jammerent.var_32efb854df6d5296;
     }
-    var_f3b7cc3138382dfb = var_105fca5e47d7ee56 * var_105fca5e47d7ee56;
-    while (1) {
-        var_3bf809e113ae4c12 = 0;
-        if (istrue(var_479e3f358a1f244e.var_ce8ef6e68df034c7)) {
-            var_3bf809e113ae4c12 = distancesquared(var_479e3f358a1f244e.origin, self.origin);
+    var_f3b7cc3138382dfb = scramblerradius * scramblerradius;
+    while (true) {
+        distancechecksq = 0;
+        if (istrue(jammerent.var_ce8ef6e68df034c7)) {
+            distancechecksq = distancesquared(jammerent.origin, self.origin);
         } else {
-            var_3bf809e113ae4c12 = distance2dsquared(var_479e3f358a1f244e.origin, self.origin);
+            distancechecksq = distance2dsquared(jammerent.origin, self.origin);
         }
-        if (var_3bf809e113ae4c12 > var_f3b7cc3138382dfb) {
-            var_8ce1abd1a0602291 = 0;
-        } else if (var_3bf809e113ae4c12 >= var_f3b7cc3138382dfb * 0.8) {
-            var_8ce1abd1a0602291 = 1;
-        } else if (var_3bf809e113ae4c12 >= var_f3b7cc3138382dfb * 0.6) {
-            var_8ce1abd1a0602291 = 2;
-        } else if (var_3bf809e113ae4c12 >= var_f3b7cc3138382dfb * 0.4) {
-            var_8ce1abd1a0602291 = 3;
-        } else if (var_3bf809e113ae4c12 >= var_f3b7cc3138382dfb * 0.2) {
-            var_8ce1abd1a0602291 = 4;
+        if (distancechecksq > var_f3b7cc3138382dfb) {
+            scramblerstrength = 0;
+        } else if (distancechecksq >= var_f3b7cc3138382dfb * 0.8) {
+            scramblerstrength = 1;
+        } else if (distancechecksq >= var_f3b7cc3138382dfb * 0.6) {
+            scramblerstrength = 2;
+        } else if (distancechecksq >= var_f3b7cc3138382dfb * 0.4) {
+            scramblerstrength = 3;
+        } else if (distancechecksq >= var_f3b7cc3138382dfb * 0.2) {
+            scramblerstrength = 4;
         } else {
-            var_8ce1abd1a0602291 = 5;
+            scramblerstrength = 5;
         }
-        var_4893b9a18cf47d6c = var_8ce1abd1a0602291 != var_d0f37ccce4e88c3d;
-        if (var_d0f37ccce4e88c3d == 0 || var_4893b9a18cf47d6c) {
-            var_479e3f358a1f244e.var_ef42676d437ab065[self getentitynumber()] = var_8ce1abd1a0602291;
-            namespace_5a51aa78ea0b1b9f::stop_scramble(var_d0f37ccce4e88c3d, var_699323575339379a);
-            namespace_5a51aa78ea0b1b9f::play_scramble(var_8ce1abd1a0602291, var_699323575339379a);
-            var_d0f37ccce4e88c3d = var_8ce1abd1a0602291;
+        var_4893b9a18cf47d6c = scramblerstrength != previousstrength;
+        if (previousstrength == 0 || var_4893b9a18cf47d6c) {
+            jammerent.var_ef42676d437ab065[self getentitynumber()] = scramblerstrength;
+            scripts/cp_mp/emp_debuff::stop_scramble(previousstrength, var_699323575339379a);
+            scripts/cp_mp/emp_debuff::play_scramble(scramblerstrength, var_699323575339379a);
+            previousstrength = scramblerstrength;
         }
         waitframe();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x46e0
 // Size: 0x1be
-function helperdrone_entaffectedbyscramble(var_4bd0ce1c61384825, var_4efaf0d84225539) {
+function helperdrone_entaffectedbyscramble(scramblerent, skipteamcheck) {
     scrambled = 0;
     var_be77424d6ef051c = undefined;
     if (isdefined(level.supportdrones) && level.supportdrones.size > 0) {
@@ -1209,12 +1216,12 @@ function helperdrone_entaffectedbyscramble(var_4bd0ce1c61384825, var_4efaf0d8422
                 continue;
             }
             if (level.teambased) {
-                if (!isdefined(var_4efaf0d84225539) && drone.team == self.team) {
+                if (!isdefined(skipteamcheck) && drone.team == self.team) {
                     var_be77424d6ef051c = drone.friendliesaffectedbyscrambler;
                 } else {
                     var_be77424d6ef051c = drone.var_88f72d2c0421f8b1;
                 }
-            } else if (!isdefined(var_4efaf0d84225539) && drone.owner == self) {
+            } else if (!isdefined(skipteamcheck) && drone.owner == self) {
                 var_be77424d6ef051c = drone.friendliesaffectedbyscrambler;
             } else {
                 var_be77424d6ef051c = drone.var_88f72d2c0421f8b1;
@@ -1238,7 +1245,7 @@ function helperdrone_entaffectedbyscramble(var_4bd0ce1c61384825, var_4efaf0d8422
     return scrambled;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x48a6
 // Size: 0xc3
@@ -1257,7 +1264,7 @@ function helperdrone_enableradar(radartype) {
     radar linkto(self);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4970
 // Size: 0x1f
@@ -1267,24 +1274,24 @@ function helperdrone_disableradar() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4996
 // Size: 0xc2
-function helperdrone_spawnnewscrambler(var_7f0bbc79e1dae81, var_e9ffa55994e4c9be, link) {
+function helperdrone_spawnnewscrambler(scramblersize, spawnoverridepos, link) {
     scrambler = spawn("script_model", self.origin);
     scrambler.team = self.owner.team;
-    if (isdefined(self.streakinfo) && isdefined(self.streakinfo.var_c40a367d39f7f1e2)) {
-        var_8ec43e4243c37e70 = int(self.streakinfo.var_c40a367d39f7f1e2);
+    if (isdefined(self.streakinfo) && isdefined(self.streakinfo.abilityrange)) {
+        var_8ec43e4243c37e70 = int(self.streakinfo.abilityrange);
     } else {
         var_8ec43e4243c37e70 = 0;
     }
-    scrambler makescrambler(self.owner, var_7f0bbc79e1dae81, var_8ec43e4243c37e70);
+    scrambler makescrambler(self.owner, scramblersize, var_8ec43e4243c37e70);
     scrambler linkto(self);
     return scrambler;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4a60
 // Size: 0x47
@@ -1294,7 +1301,7 @@ function helperdrone_moving_platform_death(data) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4aae
 // Size: 0x48
@@ -1307,7 +1314,7 @@ function helperdrone_play_lightfx() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4afd
 // Size: 0x93
@@ -1325,7 +1332,7 @@ function function_56966b077270a18e() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b97
 // Size: 0x21a
@@ -1357,14 +1364,14 @@ function starthelperdrone(helperdrone, var_72c27359aaac97f4) {
         helperdrone thread function_1d24e8f818e18244();
         if (issharedfuncdefined("game", "getGameType")) {
             gametype = [[ getsharedfunc("game", "getGameType") ]]();
-            if (namespace_36f464722d326bbe::isbrstylegametype() || iscp()) {
+            if (scripts/cp_mp/utility/game_utility::isbrstylegametype() || iscp()) {
                 helperdrone thread helperdrone_watchaltitude(self);
             }
         }
         if (issharedfuncdefined("game", "registerEntForOOB")) {
             [[ getsharedfunc("game", "registerEntForOOB") ]](helperdrone, "killstreak");
         }
-        helperdrone thread namespace_bba8bc8532aa4913::function_b25ced7f149be057();
+        helperdrone thread scripts/cp_mp/killstreaks/helper_drone::function_b25ced7f149be057();
     }
     helperdrone thread [[ config.primarymodefunc ]](config);
     if (iscp() && isdefined(self.oob) && istrue(self.oob)) {
@@ -1374,11 +1381,11 @@ function starthelperdrone(helperdrone, var_72c27359aaac97f4) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4db8
 // Size: 0xdf
-function helperdrone_followplayer(var_42a0537f1ae3e42e) {
+function helperdrone_followplayer(offsetoverride) {
     level endon("game_ended");
     self endon("death");
     self endon("leaving");
@@ -1390,20 +1397,20 @@ function helperdrone_followplayer(var_42a0537f1ae3e42e) {
     }
     self.owner endon("disconnect");
     self endon("owner_gone");
-    while (1) {
+    while (true) {
         currentstance = self.owner getstance();
         if (!isdefined(self.last_owner_stance) || currentstance != self.last_owner_stance || istrue(self.stoppedatlocation)) {
             if (istrue(self.stoppedatlocation)) {
                 self.stoppedatlocation = undefined;
             }
             self.last_owner_stance = currentstance;
-            helperdrone_movetoplayer(self.owner, var_42a0537f1ae3e42e);
+            helperdrone_movetoplayer(self.owner, offsetoverride);
         }
         wait(0.5);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4e9e
 // Size: 0x207
@@ -1416,38 +1423,38 @@ function helperdrone_overwatchplayer() {
     }
     self.owner.showuavminimaponspawn = 1;
     self.owner thread helperdrone_showminimaponspawn(self);
-    var_bb89186dc852508 = 1;
+    introspeed = 1;
     self vehicle_setspeed(200, 50, 10);
-    while (1) {
-        var_691aa1d5da533612 = undefined;
-        if (istrue(var_bb89186dc852508)) {
+    while (true) {
+        obstructiontrace = undefined;
+        if (istrue(introspeed)) {
             currentpos = self.origin;
-            var_2eca7b12d2ee27ba = self.owner.origin * (1, 1, 0) + (0, 0, self.origin[2]);
-            var_691aa1d5da533612 = ray_trace(currentpos, var_2eca7b12d2ee27ba, self);
+            initialgoalpos = self.owner.origin * (1, 1, 0) + (0, 0, self.origin[2]);
+            obstructiontrace = ray_trace(currentpos, initialgoalpos, self);
         }
         xpos = self.owner.origin[0];
         ypos = self.owner.origin[1];
-        if (isdefined(var_691aa1d5da533612)) {
-            if (var_691aa1d5da533612["hittype"] != "hittype_none") {
-                xpos = var_691aa1d5da533612["position"][0];
-                ypos = var_691aa1d5da533612["position"][1];
+        if (isdefined(obstructiontrace)) {
+            if (obstructiontrace["hittype"] != "hittype_none") {
+                xpos = obstructiontrace["position"][0];
+                ypos = obstructiontrace["position"][1];
             }
         }
-        var_7504c8791e34dc73 = getcorrectheight(xpos, ypos, 20);
-        var_6e281dbd69fc980e = (xpos, ypos, var_7504c8791e34dc73);
+        properz = getcorrectheight(xpos, ypos, 20);
+        newgoal = (xpos, ypos, properz);
         self setlookatent(self.owner);
-        self setvehgoalpos(var_6e281dbd69fc980e, 1);
+        self setvehgoalpos(newgoal, 1);
         waittill_any_2("goal", "begin_evasive_maneuvers");
-        if (istrue(var_bb89186dc852508)) {
-            var_bb89186dc852508 = undefined;
+        if (istrue(introspeed)) {
+            introspeed = undefined;
             self vehicle_setspeed(level.helperdronesettings[self.helperdronetype].speed, 10, 10);
         }
         self clearlookatent();
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(0.1);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(0.1);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x50ac
 // Size: 0x79
@@ -1457,13 +1464,13 @@ function getcorrectheight(x, y, rand) {
         var_13c46a6715142436 = getdvarint(@"hash_166b0ad3d56b43f", 0);
         var_dc8bb6300463cf1e = var_dc8bb6300463cf1e + var_13c46a6715142436;
     #/
-    var_e7a7d619f927d791 = tracegroundpoint(x, y);
-    var_1dc672cfe0f0128e = var_e7a7d619f927d791 + var_dc8bb6300463cf1e;
-    var_1dc672cfe0f0128e = var_1dc672cfe0f0128e + randomint(rand);
-    return var_1dc672cfe0f0128e;
+    groundheight = tracegroundpoint(x, y);
+    trueheight = groundheight + var_dc8bb6300463cf1e;
+    trueheight = trueheight + randomint(rand);
+    return trueheight;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x512d
 // Size: 0xc1
@@ -1471,19 +1478,19 @@ function tracegroundpoint(x, y) {
     self endon("death");
     self endon("leaving");
     z = -99999;
-    var_e531afbe1391f499 = self.origin[2] + 2000;
+    currz = self.origin[2] + 2000;
     minz = level.averagealliesz;
-    ignorelist = [0:self];
-    var_e96577032a7740fc = sphere_trace((x, y, var_e531afbe1391f499), (x, y, z), 256, ignorelist, undefined, 1);
-    if (var_e96577032a7740fc["position"][2] < minz) {
-        var_fa83e3a4c4e6902 = minz;
+    ignorelist = [self];
+    trc = sphere_trace((x, y, currz), (x, y, z), 256, ignorelist, undefined, 1);
+    if (trc["position"][2] < minz) {
+        hightrace = minz;
     } else {
-        var_fa83e3a4c4e6902 = var_e96577032a7740fc["position"][2];
+        hightrace = trc["position"][2];
     }
-    return var_fa83e3a4c4e6902;
+    return hightrace;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51f6
 // Size: 0x1aa
@@ -1491,16 +1498,16 @@ function helperdrone_pingnearbyenemies() {
     self endon("death");
     self endon("leaving");
     self.owner endon("disconnect");
-    var_91b19adf7d92417c = 300;
+    pingsize = 300;
     radarrange = 1200;
     if (islargemap()) {
-        var_91b19adf7d92417c = 1000;
+        pingsize = 1000;
         radarrange = 2500;
     }
     self.pingedenemies = [];
-    while (1) {
-        var_ef269077a28646eb = utility::playersinsphere(self.owner.origin, radarrange);
-        foreach (player in var_ef269077a28646eb) {
+    while (true) {
+        nearplayers = utility::playersinsphere(self.owner.origin, radarrange);
+        foreach (player in nearplayers) {
             if (player == self.owner) {
                 continue;
             }
@@ -1508,26 +1515,26 @@ function helperdrone_pingnearbyenemies() {
                 continue;
             }
             if (issharedfuncdefined("player", "isReallyAlive")) {
-                jumpiftrue([[ getsharedfunc("player", "isReallyAlive") ]](player)) LOC_00000123;
-            } else {
-            LOC_00000123:
-                if (player helperdrone_isbeingpingedbydrone(self)) {
+                if (![[ getsharedfunc("player", "isReallyAlive") ]](player)) {
                     continue;
                 }
-                if (issharedfuncdefined("perk", "hasPerk")) {
-                    jumpiffalse(player [[ getsharedfunc("perk", "hasPerk") ]]("specialty_ghost")) LOC_00000162;
-                } else {
-                LOC_00000162:
-                    triggerportableradarping(player.origin, self.owner, var_91b19adf7d92417c, 3000);
-                    thread helperdrone_watchpingedstatus(player, self.owner);
+            }
+            if (player helperdrone_isbeingpingedbydrone(self)) {
+                continue;
+            }
+            if (issharedfuncdefined("perk", "hasPerk")) {
+                if (player [[ getsharedfunc("perk", "hasPerk") ]]("specialty_ghost")) {
+                    continue;
                 }
             }
+            triggerportableradarping(player.origin, self.owner, pingsize, 3000);
+            thread helperdrone_watchpingedstatus(player, self.owner);
         }
         waitframe();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53a7
 // Size: 0x79
@@ -1543,7 +1550,7 @@ function helperdrone_watchpingedstatus(var_77380882ccbfe2f5, var_2d1828e3f6df9c2
     self.pingedenemies = array_remove(self.pingedenemies, var_77380882ccbfe2f5);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5427
 // Size: 0x7b
@@ -1558,14 +1565,14 @@ function helperdrone_isbeingpingedbydrone(drone) {
     return var_5000bb58f1128c5c;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54aa
 // Size: 0x99
 function helperdrone_getheightoffset(config) {
     heightoffset = config.standupoffset;
-    var_e8be66aec958de65 = self.owner getstance();
-    switch (var_e8be66aec958de65) {
+    owner_stance = self.owner getstance();
+    switch (owner_stance) {
     case #"hash_c6775c88e38f7803":
         heightoffset = config.standupoffset;
         break;
@@ -1579,30 +1586,30 @@ function helperdrone_getheightoffset(config) {
     return heightoffset;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x554b
 // Size: 0x12e
 function helperdrone_guardlocation() {
     self.stoppedatlocation = 1;
-    var_1fa6573b990bcd4a = int(self.origin[2] * 0.65);
-    var_1becbc015340bf8d = self.mappointinfo[0].location + (0, 0, var_1fa6573b990bcd4a);
-    var_2113d7b30b4928ce = sphere_trace(self.origin, var_1becbc015340bf8d, 200, self);
-    if (isdefined(var_2113d7b30b4928ce)) {
-        if (isdefined(var_2113d7b30b4928ce["entity"])) {
-            var_1becbc015340bf8d = var_2113d7b30b4928ce["entity"].origin + (0, 0, randomintrange(100, 200));
-            if (isdefined(var_2113d7b30b4928ce["entity"].guardlocation)) {
-                var_1becbc015340bf8d = var_2113d7b30b4928ce["entity"].guardlocation + (0, 0, randomintrange(100, 200));
+    newzoffset = int(self.origin[2] * 0.65);
+    var_1becbc015340bf8d = self.mappointinfo[0].location + (0, 0, newzoffset);
+    dronetrace = sphere_trace(self.origin, var_1becbc015340bf8d, 200, self);
+    if (isdefined(dronetrace)) {
+        if (isdefined(dronetrace["entity"])) {
+            var_1becbc015340bf8d = dronetrace["entity"].origin + (0, 0, randomintrange(100, 200));
+            if (isdefined(dronetrace["entity"].guardlocation)) {
+                var_1becbc015340bf8d = dronetrace["entity"].guardlocation + (0, 0, randomintrange(100, 200));
             }
-        } else if (isdefined(var_2113d7b30b4928ce["hittype"]) && isdefined(var_2113d7b30b4928ce["position"]) && var_2113d7b30b4928ce["hittype"] != "hittype_none") {
-            var_1becbc015340bf8d = var_2113d7b30b4928ce["position"] + (0, 0, randomintrange(300, 500));
+        } else if (isdefined(dronetrace["hittype"]) && isdefined(dronetrace["position"]) && dronetrace["hittype"] != "hittype_none") {
+            var_1becbc015340bf8d = dronetrace["position"] + (0, 0, randomintrange(300, 500));
         }
     }
     thread helperdrone_moveintoplace(var_1becbc015340bf8d);
     self.guardlocation = var_1becbc015340bf8d;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5680
 // Size: 0x10d
@@ -1612,22 +1619,22 @@ function helperdrone_moveintoplace(var_1becbc015340bf8d) {
     self setscriptablepartstate("rotors", "on", 0);
     self playloopsound("veh_scrambler_drone_idle_high");
     self moveto(var_1becbc015340bf8d - (0, 0, 20), 3, 2, 1);
-    namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(3.2);
+    scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(3.2);
     self moveto(var_1becbc015340bf8d, 1, 0.5, 0.5);
-    namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(1.2);
-    while (1) {
+    scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(1.2);
+    while (true) {
         var_803270b249d3fe99 = randomintrange(-35, 35);
         var_5fe85daeec942414 = randomintrange(-15, 15);
-        var_12b839d2a79160e2 = var_1becbc015340bf8d[0] + var_803270b249d3fe99;
-        var_12b83ad2a7916315 = var_1becbc015340bf8d[1] + var_803270b249d3fe99;
-        var_12b837d2a7915c7c = var_1becbc015340bf8d[2] + var_5fe85daeec942414;
-        var_7cd652e507bf980 = (var_12b839d2a79160e2, var_12b83ad2a7916315, var_12b837d2a7915c7c);
+        randomx = var_1becbc015340bf8d[0] + var_803270b249d3fe99;
+        randomy = var_1becbc015340bf8d[1] + var_803270b249d3fe99;
+        randomz = var_1becbc015340bf8d[2] + var_5fe85daeec942414;
+        var_7cd652e507bf980 = (randomx, randomy, randomz);
         self moveto(var_7cd652e507bf980, 3, 2, 1);
-        namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(3.2);
+        scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(3.2);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5794
 // Size: 0x57
@@ -1635,29 +1642,29 @@ function helperdrone_watchradarpulse() {
     self endon("death");
     self endon("leaving");
     self.owner endon("disconnect");
-    while (1) {
+    while (true) {
         triggerportableradarping(self.origin, self.owner);
         self.owner playsound("oracle_radar_pulse_npc");
         wait(3);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57f2
 // Size: 0x57
-function helperdrone_movetoplayer(player, var_42a0537f1ae3e42e) {
+function helperdrone_movetoplayer(player, offsetoverride) {
     self setlookatent(player);
     targetoffset = helperdrone_gettargetoffset(self, player);
-    if (isdefined(var_42a0537f1ae3e42e)) {
-        targetoffset = var_42a0537f1ae3e42e;
+    if (isdefined(offsetoverride)) {
+        targetoffset = offsetoverride;
     }
     self setdronegoalent(player, targetoffset, 16, 10);
     self.intransit = 1;
     thread helperdrone_watchforgoal();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5850
 // Size: 0x2bd
@@ -1671,7 +1678,7 @@ function helperdrone_watchmodeswitch() {
     if (issharedfuncdefined("killstreak", "setKillstreakControlPriority")) {
         self.useobj [[ getsharedfunc("killstreak", "setKillstreakControlPriority") ]](self.owner, self.currentstring, 360, 360, 30000, 30000, 3);
     }
-    while (1) {
+    while (true) {
         player = self.useobj waittill("trigger");
         if (player != self.owner) {
             continue;
@@ -1695,24 +1702,24 @@ function helperdrone_watchmodeswitch() {
             if (timeused > 0.1) {
                 self notify("switch_modes");
                 newmode = getothermode(self.combatmode, self.streakinfo);
-                var_e30ee4ae67d05d90 = "Empty String";
+                newstring = "Empty String";
                 /#
                     assertex(isdefined(config.primarymode) && isdefined(config.secondarymode), "Switching modes requires that the drone has a primary and secondary settings in its config");
                 #/
                 if (newmode == config.primarymode) {
                     result = [[ config.primarymodefunc ]](config);
-                    var_e30ee4ae67d05d90 = config.secondarymodestring;
+                    newstring = config.secondarymodestring;
                 } else {
                     result = [[ config.secondarymodefunc ]](config);
-                    var_e30ee4ae67d05d90 = config.primarymodestring;
+                    newstring = config.primarymodestring;
                 }
                 if (!istrue(result)) {
                     return;
                 }
                 self.combatmode = newmode;
-                self.currentstring = var_e30ee4ae67d05d90;
+                self.currentstring = newstring;
                 self.useobj makeunusable();
-                namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(1);
+                scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(1);
                 if (issharedfuncdefined("killstreak", "setKillstreakControlPriority")) {
                     self.useobj [[ getsharedfunc("killstreak", "setKillstreakControlPriority") ]](self.owner, self.currentstring, 360, 360, 30000, 30000, 3);
                 }
@@ -1724,7 +1731,7 @@ function helperdrone_watchmodeswitch() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b14
 // Size: 0x60
@@ -1738,7 +1745,7 @@ function getothermode(mode, streakinfo) {
     return mode;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b7c
 // Size: 0xb8
@@ -1755,10 +1762,10 @@ function setescortmodesettings(config) {
     self.owner thread helperdrone_showminimaponspawn(self);
     helperdrone_enableradar("escort_radar");
     thread helperdrone_followplayer();
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5c3c
 // Size: 0xcc
@@ -1774,33 +1781,33 @@ function function_207c13cdc424e93b() {
     }
     self.owner setclientomnvar("ui_killstreak_countdown", 100);
     while (timeelapsed < timeoutduration) {
-        var_77b3f0514a25c019 = (timeoutduration - timeelapsed) / timeoutduration;
-        var_77b3f0514a25c019 = int(ceil(clamp(var_77b3f0514a25c019, 0, 1) * 100));
+        timepercent = (timeoutduration - timeelapsed) / timeoutduration;
+        timepercent = int(ceil(clamp(timepercent, 0, 1) * 100));
         if (istrue(self.ispiloted)) {
-            self.owner setclientomnvar("ui_killstreak_countdown", var_77b3f0514a25c019);
+            self.owner setclientomnvar("ui_killstreak_countdown", timepercent);
         }
         timeelapsed = timeelapsed + level.framedurationseconds;
         waitframe();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d0f
 // Size: 0x1d
 function helperdrone_lockedoncallback() {
-    namespace_84cff6185e39aa66::vehomn_showwarning("missileLocking", self.owner, "killstreak");
+    scripts/cp_mp/utility/vehicle_omnvar_utility::vehomn_showwarning("missileLocking", self.owner, "killstreak");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d33
 // Size: 0x1d
 function helperdrone_lockedonremovedcallback() {
-    namespace_84cff6185e39aa66::vehomn_hidewarning("missileLocking", self.owner, "killstreak");
+    scripts/cp_mp/utility/vehicle_omnvar_utility::vehomn_hidewarning("missileLocking", self.owner, "killstreak");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d57
 // Size: 0x25
@@ -1808,19 +1815,19 @@ function setoverwatchmodesettings(config) {
     thread helperdrone_overwatchplayer();
     thread helperdrone_pingnearbyenemies();
     helperdrone_handleteamvisibility();
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d84
 // Size: 0x16
 function setfollowmode(config) {
     thread helperdrone_followplayer();
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5da2
 // Size: 0x4f
@@ -1832,10 +1839,10 @@ function setguardmode(config) {
         self scriptmodelplayanim(level.scr_anim["scrambler_drone_guard"]["rotor_spin"]);
     }
     scramblerdrone_counteruavmodeon();
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5df9
 // Size: 0x27
@@ -1844,16 +1851,16 @@ function function_1532eae4fc92c4d3() {
     self setscriptablepartstate("scramble_sfx", "on", 0);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e27
 // Size: 0x17
 function setdeliverymodesettings(config) {
     thread helperdrone_deliver(config);
-    return 1;
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5e46
 // Size: 0x1f4
@@ -1865,14 +1872,14 @@ function helperdrone_deliver(config) {
     speed = level.helperdronesettings[self.helperdronetype].speed;
     accel = level.helperdronesettings[self.helperdronetype].accel;
     self vehicle_setspeed(speed, accel, accel);
-    var_14e71b3b3dbf761c = self.deliverytarget + (0, 0, 4000);
+    abovepos = self.deliverytarget + (0, 0, 4000);
     startpos = self.deliverytarget + (0, 0, 2500);
     endpos = self.deliverytarget + (0, 0, 100);
     halfsize = level.helperdronesettings[self.helperdronetype].halfsize;
     ignoreents = [];
     ignoreents[0] = self;
-    contentoverride = namespace_2a184fc4902783dc::create_contents(1, 1, 1, 1);
-    traceresult = namespace_2a184fc4902783dc::sphere_trace(startpos, endpos, halfsize, ignoreents, contentoverride, 0);
+    contentoverride = scripts/engine/trace::create_contents(1, 1, 1, 1);
+    traceresult = scripts/engine/trace::sphere_trace(startpos, endpos, halfsize, ignoreents, contentoverride, 0);
     droppos = traceresult["shape_position"] + (0, 0, 100);
     self setvehgoalpos(droppos, 1);
     self waittill("goal");
@@ -1882,12 +1889,12 @@ function helperdrone_deliver(config) {
     self vehicle_setspeed(0.1, 1, 1);
     wait(0.5);
     self vehicle_setspeed(speed, accel, accel);
-    self setvehgoalpos(var_14e71b3b3dbf761c, 0);
+    self setvehgoalpos(abovepos, 0);
     self waittill("goal");
     function_608250000fbfc89a(self.helperdronetype, config, 0);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6041
 // Size: 0xd7
@@ -1895,7 +1902,7 @@ function helperdrone_watchearlyexit(config, var_72c27359aaac97f4) {
     self.owner endon("disconnect");
     self endon("death");
     self endon("explode");
-    while (1) {
+    while (true) {
         if (issharedfuncdefined("killstreak", "allowRideKillstreakPlayerExit")) {
             if (iscp()) {
                 self thread [[ getsharedfunc("killstreak", "allowRideKillstreakPlayerExit") ]]("leaving", undefined, var_72c27359aaac97f4);
@@ -1907,90 +1914,90 @@ function helperdrone_watchearlyexit(config, var_72c27359aaac97f4) {
         if (!istrue(self.ispiloted)) {
             continue;
         }
-        if (isdefined(config.var_be3314f77fef5d6b)) {
+        if (isdefined(config.exitfunc)) {
             self notify("drone_exit");
-            self [[ config.var_be3314f77fef5d6b ]]();
-        } else {
-            helperdrone_leave();
+            self [[ config.exitfunc ]]();
+            continue;
         }
+        helperdrone_leave();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x611f
 // Size: 0x6c
 function function_1d24e8f818e18244() {
     level endon("game_ended");
-    var_6d5a295ae3c46554 = self.owner;
-    var_6d5a295ae3c46554 endon("disconnect");
+    droneowner = self.owner;
+    droneowner endon("disconnect");
     var_b2d2806c761e0c98 = 1;
     /#
-        var_655a3c232c1650bb = getdvarint(@"hash_b23e7bb60bbe76a6", 0);
-        if (var_655a3c232c1650bb) {
+        cammode = getdvarint(@"hash_b23e7bb60bbe76a6", 0);
+        if (cammode) {
             var_b2d2806c761e0c98 = 0;
         }
     #/
     if (istrue(var_b2d2806c761e0c98)) {
-        var_6d5a295ae3c46554 function_6a275656141ac8d6(self);
+        droneowner function_6a275656141ac8d6(self);
     }
     thread helperdrone_handlethermalswitchinternal();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6192
 // Size: 0x107
 function helperdrone_handlethermalswitchinternal() {
-    var_6d5a295ae3c46554 = self.owner;
-    var_6d5a295ae3c46554 endon("disconnect");
+    droneowner = self.owner;
+    droneowner endon("disconnect");
     self endon("death");
     self endon("leaving");
     self endon("explode");
     self endon("drop");
     self.isthermalenabled = 0;
-    var_93b54405fda960c = function_44e0bd95b98288ab();
+    thermalvisionset = function_44e0bd95b98288ab();
     if (isnightmap()) {
         self.isthermalenabled = 1;
-        var_6d5a295ae3c46554 killstreak_setmainvision(var_93b54405fda960c);
-        var_6d5a295ae3c46554 setthermalvision(1, 12, 1000);
+        droneowner killstreak_setMainVision(thermalvisionset);
+        droneowner setthermalvision(1, 12, 1000);
     }
-    while (1) {
-        var_6d5a295ae3c46554 waittill("switch_thermal_mode");
+    while (true) {
+        droneowner waittill("switch_thermal_mode");
         if (!istrue(self.ispiloted)) {
             continue;
         }
         if (self.isthermalenabled) {
             self.isthermalenabled = 0;
-            var_6d5a295ae3c46554 setthermalvision(0);
-            var_6d5a295ae3c46554 function_6a275656141ac8d6(self);
-            var_6d5a295ae3c46554 playlocalsound("weap_thermal_toggle_click");
-        } else {
-            self.isthermalenabled = 1;
-            var_6d5a295ae3c46554 killstreak_setmainvision(var_93b54405fda960c);
-            var_6d5a295ae3c46554 setthermalvision(1, 12, 1000);
-            var_6d5a295ae3c46554 playlocalsound("weap_thermal_toggle_click");
+            droneowner setthermalvision(0);
+            droneowner function_6a275656141ac8d6(self);
+            droneowner playlocalsound("weap_thermal_toggle_click");
+            continue;
         }
+        self.isthermalenabled = 1;
+        droneowner killstreak_setMainVision(thermalvisionset);
+        droneowner setthermalvision(1, 12, 1000);
+        droneowner playlocalsound("weap_thermal_toggle_click");
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x62a0
 // Size: 0x82
 function function_6a275656141ac8d6(drone) {
     var_143ba8c547269a07 = level.helperdronesettings[drone.helperdronetype];
     if (level.mapname == "mp_hideout") {
-        killstreak_setmainvision(var_143ba8c547269a07.var_2215fa459d8250c0);
+        killstreak_setMainVision(var_143ba8c547269a07.var_2215fa459d8250c0);
     }
     if (isdefined(level.var_6d129920246627ba)) {
-        killstreak_setmainvision(level.var_6d129920246627ba);
-    } else {
-        killstreak_setmainvision(var_143ba8c547269a07.var_a117852275e49e64);
+        killstreak_setMainVision(level.var_6d129920246627ba);
+        return;
     }
+    killstreak_setMainVision(var_143ba8c547269a07.colorvision);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6329
 // Size: 0x128
@@ -2000,15 +2007,15 @@ function helperdrone_monitorcollision(config) {
     self endon("leaving");
     self endon("explode");
     self endon("drop");
-    while (1) {
+    while (true) {
         ent = self waittill("touch");
         if (!isdefined(ent)) {
             continue;
         }
         vehicle = undefined;
-        if (ent namespace_1f188a13f7e79610::isvehicle()) {
+        if (ent scripts/cp_mp/vehicles/vehicle::isvehicle()) {
             vehicle = ent;
-        } else if (ent namespace_f8065cafc523dba5::isinvehicle()) {
+        } else if (ent scripts/cp_mp/utility/player_utility::isinvehicle()) {
             vehicle = ent.vehicle;
         }
         if (!isdefined(vehicle)) {
@@ -2017,7 +2024,7 @@ function helperdrone_monitorcollision(config) {
         attacker = undefined;
         inflictor = undefined;
         if (istrue(playersareenemies(self.owner, vehicle.owner))) {
-            currentvehicle = vehicle.owner namespace_f8065cafc523dba5::getvehicle();
+            currentvehicle = vehicle.owner scripts/cp_mp/utility/player_utility::getvehicle();
             if (isdefined(currentvehicle) && currentvehicle == vehicle) {
                 attacker = vehicle.owner;
                 inflictor = vehicle;
@@ -2028,7 +2035,7 @@ function helperdrone_monitorcollision(config) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6458
 // Size: 0x14b
@@ -2038,18 +2045,18 @@ function function_109f8639aebf2da9(config) {
     self endon("leaving");
     self endon("explode");
     self endon("drop");
-    var_741196a281686ee = [0:"physicscontents_water"];
-    contentoverride = physics_createcontents(var_741196a281686ee);
+    watercontents = ["physicscontents_water"];
+    contentoverride = physics_createcontents(watercontents);
     self.inwater = 0;
-    while (1) {
-        var_b4331a150334bf61 = physics_querypoint(self.origin, 0, contentoverride, self, "physicsquery_any");
-        if (istrue(var_b4331a150334bf61) && !istrue(self.inwater)) {
+    while (true) {
+        hitwater = physics_querypoint(self.origin, 0, contentoverride, self, "physicsquery_any");
+        if (istrue(hitwater) && !istrue(self.inwater)) {
             self.inwater = 1;
             attacker = self.owner;
             inflictor = self;
             self dodamage(10000, self.origin, attacker, inflictor, "MOD_CRUSH");
             break;
-        } else if (!istrue(var_b4331a150334bf61) && istrue(self.inwater)) {
+        } else if (!istrue(hitwater) && istrue(self.inwater)) {
             self.inwater = 0;
             self vehicle_setspeed(100, 10);
             self setyawspeed(120, 90);
@@ -2061,7 +2068,7 @@ function function_109f8639aebf2da9(config) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x65aa
 // Size: 0x87
@@ -2081,7 +2088,7 @@ function helperdrone_watchforgoal() {
     self notify("hit_goal");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6638
 // Size: 0x371
@@ -2093,11 +2100,11 @@ function helperdrone_watchdamage(var_292694740d43f466) {
     self endon("owner_gone");
     self.health = 2147483647;
     config = level.helperdronesettings[self.helperdronetype];
-    while (1) {
-        inflictor = normal = angles = origin = objweapon = idflags = partname = tagname = modelname = meansofdeath = point = direction_vec = attacker = amount = self waittill("damage");
-        var_1faa3d3dec8d49bd = undefined;
+    while (true) {
+        amount, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, objweapon, origin, angles, normal, inflictor = self waittill("damage");
+        debugdamage = undefined;
         /#
-            var_1faa3d3dec8d49bd = istrue(self.var_1faa3d3dec8d49bd);
+            debugdamage = istrue(self.debugdamage);
         #/
         if (isdefined(attacker)) {
             if (isdefined(attacker.owner)) {
@@ -2108,18 +2115,13 @@ function helperdrone_watchdamage(var_292694740d43f466) {
             }
         }
         if (isdefined(objweapon)) {
-            if (istrue(var_1faa3d3dec8d49bd)) {
-                goto LOC_00000203;
-            }
-            if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
+            if (istrue(debugdamage)) {
+            } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
                 amount = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, meansofdeath, amount, config.maxhealth, 1, 1, 1);
-            LOC_00000203:
             }
-        LOC_00000203:
         }
-    LOC_00000203:
         self.currenthealth = self.currenthealth - amount;
-        killstreak_updatedamagestate(self.currenthealth);
+        killstreak_updateDamageState(self.currenthealth);
         if (isplayer(attacker)) {
             if (issharedfuncdefined("damage", "updateDamageFeedback")) {
                 attacker [[ getsharedfunc("damage", "updateDamageFeedback") ]]("");
@@ -2135,10 +2137,10 @@ function helperdrone_watchdamage(var_292694740d43f466) {
                 damage = amount;
                 streakname = self.streakinfo.streakname;
                 damagetype = undefined;
-                var_dc695757f69ed065 = 1;
+                skipdeathnotify = 1;
                 if (isdefined(objweapon)) {
-                    if (namespace_3c37cb17ade254d::issharedfuncdefined("damage", "onKillstreakKilled")) {
-                        var_3737240cefe2c793 = self [[ namespace_3c37cb17ade254d::getsharedfunc("damage", "onKillstreakKilled") ]](self.helperdronetype, attacker, objweapon, damagetype, damage, config.scorepop, config.vodestroyed, config.destroyedsplash, var_dc695757f69ed065);
+                    if (scripts/engine/utility::issharedfuncdefined("damage", "onKillstreakKilled")) {
+                        var_3737240cefe2c793 = self [[ scripts/engine/utility::getsharedfunc("damage", "onKillstreakKilled") ]](self.helperdronetype, attacker, objweapon, damagetype, damage, config.scorepop, config.vodestroyed, config.destroyedsplash, skipdeathnotify);
                     }
                 }
                 thread function_6edfda4764129e3(1);
@@ -2147,7 +2149,7 @@ function helperdrone_watchdamage(var_292694740d43f466) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x69b0
 // Size: 0x10f
@@ -2165,7 +2167,7 @@ function helperdrone_watchtimeout() {
     if (self.timeout > 0) {
         wait(self.timeout);
     }
-    if (istrue(config.var_5c6a7212bf9fcbea)) {
+    if (istrue(config.voontimeout)) {
         if (self.helperdronetype == "radar_drone_recon") {
             function_8959c1606f65e65(self.streakinfo.streakname, self.streakinfo.streakname + "_timeout");
         } else {
@@ -2175,7 +2177,7 @@ function helperdrone_watchtimeout() {
     thread helperdrone_leave(1);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ac6
 // Size: 0x70
@@ -2194,19 +2196,19 @@ function helperdrone_watchownerloss() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b3d
 // Size: 0x4f
-function helperdrone_watchownerstatus(var_70687e0cc558a009) {
-    self.owner waittill(var_70687e0cc558a009);
+function helperdrone_watchownerstatus(notifymsg) {
+    self.owner waittill(notifymsg);
     if (!iscp() || iscp() && self.owner isusingremote()) {
         self notify("owner_gone");
         thread helperdrone_leave();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b93
 // Size: 0x52
@@ -2215,7 +2217,7 @@ function helperdrone_watchownerdeath() {
     self endon("death");
     self endon("explode");
     self endon("owner_gone");
-    while (1) {
+    while (true) {
         self.owner waittill_any_2("death", "last_stand_start");
         if (function_7ac8fccbfd39d8b9()) {
             thread helperdrone_leave();
@@ -2223,34 +2225,33 @@ function helperdrone_watchownerdeath() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6bec
 // Size: 0xae
 function function_7ac8fccbfd39d8b9() {
     config = level.helperdronesettings[self.helperdronetype];
     if (istrue(config.diewithowner)) {
-        return 1;
+        return true;
     }
     if (function_6ae03efb52c52c29(self.owner) || getdvarint(@"hash_896b182fbfa8d9de", 0)) {
         if (istrue(self.ispiloted)) {
             switch (self.helperdronetype) {
             case #"hash_e40585107590f016":
-                if (!istrue(config.var_8316e01be4051639)) {
-                    return 1;
+                if (!istrue(config.repeatuse)) {
+                    return true;
                 }
                 self notify("killstreakExit");
-                return 0;
+                return false;
             default:
-                return 1;
-                break;
+                return true;
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ca2
 // Size: 0x54
@@ -2265,7 +2266,7 @@ function helperdrone_watchroundend() {
     thread helperdrone_leave();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6cfd
 // Size: 0x155
@@ -2274,9 +2275,11 @@ function helperdrone_leave(timeout) {
     self endon("explode");
     self endon("drop");
     config = level.helperdronesettings[self.helperdronetype];
-    if (isdefined(config.var_63a39d0cea63cbb2)) {
-        self thread [[ config.var_63a39d0cea63cbb2 ]](timeout);
-    } else if (self.helperdronetype == "radar_drone_overwatch") {
+    if (isdefined(config.leavefunc)) {
+        self thread [[ config.leavefunc ]](timeout);
+        return;
+    }
+    if (self.helperdronetype == "radar_drone_overwatch") {
         self clearlookatent();
         self setmaxpitchroll(0, 0);
         self notify("leaving");
@@ -2292,12 +2295,12 @@ function helperdrone_leave(timeout) {
         self waittill("goal");
         self notify("gone");
         function_608250000fbfc89a(self.helperdronetype, level.helperdronesettings[self.helperdronetype], 0);
-    } else {
-        thread function_6edfda4764129e3(0, 1, timeout);
+        return;
     }
+    thread function_6edfda4764129e3(0, 1, timeout);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6e59
 // Size: 0x62
@@ -2310,18 +2313,18 @@ function helperdrone_getpathend() {
     return endpoint;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ec3
 // Size: 0x129
 function perkengineer_manageminimap() {
-    var_30f120a1efc1dcbe = "hud_icon_minimap_killstreak_cuav";
+    enemyicon = "hud_icon_minimap_killstreak_cuav";
     createfunc = undefined;
-    if (namespace_3c37cb17ade254d::issharedfuncdefined("game", "createObjectiveEngineer")) {
-        createfunc = namespace_3c37cb17ade254d::getsharedfunc("game", "createObjectiveEngineer");
+    if (scripts/engine/utility::issharedfuncdefined("game", "createObjectiveEngineer")) {
+        createfunc = scripts/engine/utility::getsharedfunc("game", "createObjectiveEngineer");
     }
     if (isdefined(createfunc)) {
-        self.enemyobjid = self [[ createfunc ]](var_30f120a1efc1dcbe, 1, 1);
+        self.enemyobjid = self [[ createfunc ]](enemyicon, 1, 1);
     }
     foreach (player in level.players) {
         if (!isplayer(player)) {
@@ -2330,14 +2333,14 @@ function perkengineer_manageminimap() {
         if (issharedfuncdefined("perk", "hasPerk")) {
             if (player [[ getsharedfunc("perk", "hasPerk") ]]("specialty_engineer") && player.team != self.team) {
                 if (isdefined(self.enemyobjid) && self.enemyobjid != -1) {
-                    namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(self.enemyobjid, player);
+                    scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(self.enemyobjid, player);
                 }
             }
         }
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ff3
 // Size: 0x101
@@ -2356,11 +2359,11 @@ function function_caf721cb23374e2b(data) {
         }
     }
     self.currenthealth = self.currenthealth - damage;
-    killstreak_updatedamagestate(self.currenthealth);
-    return 1;
+    killstreak_updateDamageState(self.currenthealth);
+    return true;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x70fc
 // Size: 0xf7
@@ -2381,12 +2384,12 @@ function helperdrone_stunned(duration) {
         playfxontag(level.helperdronesettings[self.helperdronetype].fxid_sparks, self, "tag_origin");
     }
     playfxontag(getfx("emp_stun"), self, "tag_origin");
-    namespace_a05a5ef469174798::hostmigration_waitlongdurationwithpause(duration);
+    scripts/cp_mp/hostmigration::hostmigration_waitlongdurationwithpause(duration);
     stopfxontag(getfx("emp_stun"), self, "tag_origin");
     self.stunned = 0;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x71fa
 // Size: 0x313
@@ -2394,8 +2397,8 @@ function function_7017058e21ac030f(data) {
     self.isdestroyed = 1;
     self.var_d31453e33d3e34ca = 1;
     config = level.helperdronesettings[self.helperdronetype];
-    if (istrue(self.var_8316e01be4051639)) {
-        self.var_8316e01be4051639 = 0;
+    if (istrue(self.repeatuse)) {
+        self.repeatuse = 0;
     }
     if (self.ispiloted) {
         self.var_75bb433488d96804 = spawn("script_model", self.origin);
@@ -2412,22 +2415,22 @@ function function_7017058e21ac030f(data) {
         self clearlookatent();
     }
     var_ecb39c9eecbd70ad = 3000;
-    contents = namespace_2a184fc4902783dc::create_contents(0, 1, 1, 0, 0, 1, 0, 0, 0);
+    contents = scripts/engine/trace::create_contents(0, 1, 1, 0, 0, 1, 0, 0, 0);
     castend = self.origin + anglestoup(self.angles) * var_ecb39c9eecbd70ad * -1 + (randomintrange(-500, 500), 0, randomintrange(-500, 500));
-    trace = ray_trace(self.origin, castend, [0:self]);
+    trace = ray_trace(self.origin, castend, [self]);
     target_origin = trace["position"] + trace["normal"] * 5;
     maxvelocity = getdvarfloat(@"hash_44e62153228221f", 30.2);
     acceleration = getdvarfloat(@"hash_cdb03278c6d17e78", 13.8);
-    var_acdfcbf564707132 = getdvarfloat(@"hash_ed85baf3072c3fff", 17.2);
+    deceleration = getdvarfloat(@"hash_ed85baf3072c3fff", 17.2);
     var_f9ca3f557a387549 = getdvarfloat(@"hash_3f6d20d42a18063b", 2500);
     distance = distance(target_origin, self.origin);
     falltime = sqrt(2 * distance / acceleration);
     falltime = min(falltime, 2) - 0.2;
-    self vehicle_setspeed(maxvelocity, acceleration, var_acdfcbf564707132);
+    self vehicle_setspeed(maxvelocity, acceleration, deceleration);
     self setvehgoalpos(target_origin, 0);
     thread function_9bfdff1ee5a47652();
     time = 0;
-    while (1) {
+    while (true) {
         if (distancesquared(self.origin, target_origin) <= var_f9ca3f557a387549 || time >= falltime) {
             function_566780fd588dd54a(data);
             break;
@@ -2437,7 +2440,7 @@ function function_7017058e21ac030f(data) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7514
 // Size: 0x86
@@ -2453,7 +2456,7 @@ function function_566780fd588dd54a(data) {
     thread function_6edfda4764129e3(1);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75a1
 // Size: 0x6a
@@ -2463,14 +2466,14 @@ function function_9bfdff1ee5a47652() {
     self endon("drop");
     self setmaxpitchroll(60, 90);
     self setyawspeed(1000, 500, 500);
-    while (1) {
-        var_dee36ad33d9e9755 = randomintrange(140, 170);
-        self settargetyaw(self.angles[1] + var_dee36ad33d9e9755);
+    while (true) {
+        randyaw = randomintrange(140, 170);
+        self settargetyaw(self.angles[1] + randyaw);
         wait(0.25);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7612
 // Size: 0xa5
@@ -2486,7 +2489,7 @@ function function_ba1c5496f8fc5f67(data) {
     return 0;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76bf
 // Size: 0x14
@@ -2494,7 +2497,7 @@ function function_f6914d06b20aee20() {
     self setscriptablepartstate("body_damage_light", "on");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76da
 // Size: 0x14
@@ -2502,7 +2505,7 @@ function function_3ad98c4f7524b525() {
     self setscriptablepartstate("body_damage_medium", "on");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x76f5
 // Size: 0x14
@@ -2510,24 +2513,24 @@ function function_e68a206899cafbe5() {
     self setscriptablepartstate("body_damage_heavy", "on");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7710
 // Size: 0xe4
-function function_cc7fd8dc48c88e9e(var_3df9d9a1027fb9bc) {
-    tag_origin = spawn("script_model", var_3df9d9a1027fb9bc);
+function function_cc7fd8dc48c88e9e(cameraorigin) {
+    tag_origin = spawn("script_model", cameraorigin);
     tag_origin setmodel("tag_origin");
     direction = vectornormalize(self.origin - tag_origin.origin);
     right = vectorcross(direction, (0, 0, 1));
     up = vectorcross(right, direction);
-    var_4a89ff2e8d138d08 = axistoangles(direction, right, up);
-    tag_origin rotateto(var_4a89ff2e8d138d08, 0.01);
+    lookrotation = axistoangles(direction, right, up);
+    tag_origin rotateto(lookrotation, 0.01);
     self.owner cameraunlink();
     self.owner setplayerangles(tag_origin.angles);
     self.owner cameralinkto(tag_origin, "tag_origin", 0, 1);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x77fb
 // Size: 0x25
@@ -2535,64 +2538,64 @@ function function_886c327598c568db(traceresult) {
     return isdefined(traceresult["hittype"]) && traceresult["hittype"] != "hittype_none";
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7828
 // Size: 0xde
-function function_e3f077b1c512f372(testangles, var_b244ec4933d2a52e, upangles) {
+function function_e3f077b1c512f372(testangles, isback, upangles) {
     traceorigin = self gettagorigin("tag_undercam") - (0, 0, 15);
-    if (istrue(var_b244ec4933d2a52e)) {
+    if (istrue(isback)) {
         testangles = testangles * -1;
     }
-    var_f9fc2925c4f8dbe8 = anglestoforward(testangles + (15, 0, 0));
+    originforward = anglestoforward(testangles + (15, 0, 0));
     if (!isdefined(upangles)) {
-        traceresult = namespace_2a184fc4902783dc::ray_trace(traceorigin + var_f9fc2925c4f8dbe8, traceorigin + testangles, self);
-        thread namespace_f2ffc0540883e1ad::drawline(traceorigin + var_f9fc2925c4f8dbe8, traceorigin + testangles, 2.5, (1, 0, 0));
+        traceresult = scripts/engine/trace::ray_trace(traceorigin + originforward, traceorigin + testangles, self);
+        thread scripts/cp_mp/utility/debug_utility::drawline(traceorigin + originforward, traceorigin + testangles, 2.5, (1, 0, 0));
     } else {
-        traceresult = namespace_2a184fc4902783dc::ray_trace(traceorigin + testangles, traceorigin + testangles + upangles, self);
-        thread namespace_f2ffc0540883e1ad::drawline(traceorigin + testangles, traceorigin + testangles + upangles, 2.5, (1, 0, 0));
+        traceresult = scripts/engine/trace::ray_trace(traceorigin + testangles, traceorigin + testangles + upangles, self);
+        thread scripts/cp_mp/utility/debug_utility::drawline(traceorigin + testangles, traceorigin + testangles + upangles, 2.5, (1, 0, 0));
     }
     return traceresult;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x790e
 // Size: 0xaa
-function function_8c9a4bc6b72b3356(var_abc186fba0278306, var_b244ec4933d2a52e) {
+function function_8c9a4bc6b72b3356(traceangles, isback) {
     traceorigin = self gettagorigin("tag_undercam") - (0, 0, 15);
-    var_fbb712f106198b9f = anglestoup(self.angles) * 125;
-    var_175f053a7d781c8a = function_e3f077b1c512f372(var_abc186fba0278306, var_b244ec4933d2a52e);
-    if (!function_886c327598c568db(var_175f053a7d781c8a)) {
-        var_4de4971a7752cad = function_e3f077b1c512f372(var_abc186fba0278306, var_b244ec4933d2a52e, var_fbb712f106198b9f);
+    traceupangles = anglestoup(self.angles) * 125;
+    testtrace = function_e3f077b1c512f372(traceangles, isback);
+    if (!function_886c327598c568db(testtrace)) {
+        var_4de4971a7752cad = function_e3f077b1c512f372(traceangles, isback, traceupangles);
         if (!function_886c327598c568db(var_4de4971a7752cad)) {
-            if (istrue(var_b244ec4933d2a52e)) {
-                var_abc186fba0278306 = var_abc186fba0278306 * -1;
+            if (istrue(isback)) {
+                traceangles = traceangles * -1;
             }
-            function_cc7fd8dc48c88e9e(traceorigin + var_abc186fba0278306 + var_fbb712f106198b9f);
-            return 1;
+            function_cc7fd8dc48c88e9e(traceorigin + traceangles + traceupangles);
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x79c0
 // Size: 0x92
 function function_229259da45e71937() {
     traceorigin = self gettagorigin("tag_undercam") - (0, 0, 15);
-    var_fbb712f106198b9f = anglestoup(self.angles) * 125 * 3;
-    traceresult = namespace_2a184fc4902783dc::ray_trace(traceorigin, traceorigin + var_fbb712f106198b9f, self);
-    thread namespace_f2ffc0540883e1ad::drawline(traceorigin, traceorigin + var_fbb712f106198b9f, 2.5, (1, 0, 0));
+    traceupangles = anglestoup(self.angles) * 125 * 3;
+    traceresult = scripts/engine/trace::ray_trace(traceorigin, traceorigin + traceupangles, self);
+    thread scripts/cp_mp/utility/debug_utility::drawline(traceorigin, traceorigin + traceupangles, 2.5, (1, 0, 0));
     if (!function_886c327598c568db(traceresult)) {
-        function_cc7fd8dc48c88e9e(traceorigin + var_fbb712f106198b9f);
-        return 1;
+        function_cc7fd8dc48c88e9e(traceorigin + traceupangles);
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7a5a
 // Size: 0xab
@@ -2601,35 +2604,35 @@ function function_901f4a4041610043() {
     var_4fa29d6999cafd60 = anglestoright(self.angles) * 350;
     var_665c16bc6a6ac86f = anglestoleft(self.angles) * 350;
     if (function_8c9a4bc6b72b3356(var_881a65df3a7787df, 1)) {
-        return 1;
+        return true;
     }
     if (function_8c9a4bc6b72b3356(var_881a65df3a7787df)) {
-        return 1;
+        return true;
     }
     if (function_8c9a4bc6b72b3356(var_4fa29d6999cafd60)) {
-        return 1;
+        return true;
     }
     if (function_8c9a4bc6b72b3356(var_665c16bc6a6ac86f)) {
-        return 1;
+        return true;
     }
     if (function_229259da45e71937()) {
-        return 1;
+        return true;
     }
     /#
         announcement("duration_none");
     #/
-    return 0;
+    return false;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7b0d
 // Size: 0x3ef
-function function_6edfda4764129e3(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, var_28d4a6f776c18b73, var_bd21744eb1b623fe) {
+function function_6edfda4764129e3(wasdestroyed, wasexited, wastimedout, wasdetonated) {
     self.owner stopwatchingthermalinputchange();
     self.isdestroyed = 1;
     config = level.helperdronesettings[self.helperdronetype];
-    if (!istrue(var_d9b2677826930bf7) && !istrue(var_bd21744eb1b623fe)) {
+    if (!istrue(wasexited) && !istrue(wasdetonated)) {
         if (self.helperdronetype == "radar_drone_recon") {
             function_8959c1606f65e65(self.helperdronetype, self.helperdronetype + "_destroyed");
         } else {
@@ -2637,11 +2640,11 @@ function function_6edfda4764129e3(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, va
         }
     }
     if (isdefined(self.targetmarkergroup)) {
-        namespace_f48c22429667eba9::targetmarkergroup_off(self.targetmarkergroup);
+        scripts/cp_mp/targetmarkergroups::targetmarkergroup_off(self.targetmarkergroup);
         self.targetmarkergroup = undefined;
     }
     if (isdefined(self.minimapid)) {
-        namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.minimapid);
+        scripts/mp/objidpoolmanager::returnobjectiveid(self.minimapid);
         self.minimapid = undefined;
     }
     helperdrone_endscramblereffect();
@@ -2650,27 +2653,27 @@ function function_6edfda4764129e3(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, va
     } else {
         thirdperson = 0;
     }
-    if (isdefined(config.var_5d9d3e47b1b88b84) && !istrue(self.var_a9ce54bf6032822a)) {
-        self [[ config.var_5d9d3e47b1b88b84 ]](config, var_4fac8b8ce36e09f1, var_d9b2677826930bf7, var_28d4a6f776c18b73, var_bd21744eb1b623fe, thirdperson);
+    if (isdefined(config.explodefunc) && !istrue(self.dropdrone)) {
+        self [[ config.explodefunc ]](config, wasdestroyed, wasexited, wastimedout, wasdetonated, thirdperson);
     } else {
         function_24085a0230958938();
     }
-    namespace_5a51aa78ea0b1b9f::allow_emp(0);
+    scripts/cp_mp/emp_debuff::allow_emp(0);
     self notify("explode");
-    if (isdefined(self.streakinfo.var_ebec497ff8b18a45)) {
+    if (isdefined(self.streakinfo.superref)) {
         if (issharedfuncdefined("challenges", "onFieldUpgradeEnd")) {
-            self.owner [[ getsharedfunc("challenges", "onFieldUpgradeEnd") ]](self.streakinfo.var_ebec497ff8b18a45, self.usedcount);
+            self.owner [[ getsharedfunc("challenges", "onFieldUpgradeEnd") ]](self.streakinfo.superref, self.usedcount);
         }
     }
     if (isdefined(self.streakinfo.superid)) {
         if (issharedfuncdefined("dlog", "fieldUpgradeExpired")) {
-            [[ getsharedfunc("dlog", "fieldUpgradeExpired") ]](self.owner, self.streakinfo.superid, self.usedcount, istrue(var_4fac8b8ce36e09f1));
+            [[ getsharedfunc("dlog", "fieldUpgradeExpired") ]](self.owner, self.streakinfo.superid, self.usedcount, istrue(wasdestroyed));
         }
     }
     owner = self.owner;
     if (isdefined(owner)) {
         if (isdefined(owner.super) && owner.super.isinuse) {
-            if (isdefined(self.streakinfo.var_ebec497ff8b18a45) && self.streakinfo.var_ebec497ff8b18a45 == owner.super.staticdata.ref) {
+            if (isdefined(self.streakinfo.superref) && self.streakinfo.superref == owner.super.staticdata.ref) {
                 if (issharedfuncdefined("supers", "superUseFinished")) {
                     self.owner thread [[ getsharedfunc("supers", "superUseFinished") ]](0);
                 }
@@ -2688,65 +2691,65 @@ function function_6edfda4764129e3(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, va
     } else {
         wait(0.2);
     }
-    function_608250000fbfc89a(self.helperdronetype, level.helperdronesettings[self.helperdronetype], var_4fac8b8ce36e09f1);
-    if (!namespace_36f464722d326bbe::isbrstylegametype() && isdefined(owner) && issharedfuncdefined("br", "superSlotCleanUp")) {
+    function_608250000fbfc89a(self.helperdronetype, level.helperdronesettings[self.helperdronetype], wasdestroyed);
+    if (!scripts/cp_mp/utility/game_utility::isbrstylegametype() && isdefined(owner) && issharedfuncdefined("br", "superSlotCleanUp")) {
         [[ getsharedfunc("br", "superSlotCleanUp") ]](owner);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7f03
 // Size: 0xb9
 function function_ffbc19e1aef5943c(ison) {
     if (ison) {
-        namespace_84cff6185e39aa66::vehomn_showwarning("DDoSed", self.owner, self.vehiclename);
-        self.owner namespace_5a51aa78ea0b1b9f::play_emp_scramble(4);
+        scripts/cp_mp/utility/vehicle_omnvar_utility::vehomn_showwarning("DDoSed", self.owner, self.vehiclename);
+        self.owner scripts/cp_mp/emp_debuff::play_emp_scramble(4);
         self.owner _freezecontrols(1);
         self.owner _freezelookcontrols(1);
-    } else {
-        namespace_84cff6185e39aa66::vehomn_hidewarning("DDoSed", self.owner, self.vehiclename);
-        self.owner namespace_5a51aa78ea0b1b9f::stop_emp_scramble(4);
-        self.owner _freezecontrols(0);
-        self.owner _freezelookcontrols(0);
+        return;
     }
+    scripts/cp_mp/utility/vehicle_omnvar_utility::vehomn_hidewarning("DDoSed", self.owner, self.vehiclename);
+    self.owner scripts/cp_mp/emp_debuff::stop_emp_scramble(4);
+    self.owner _freezecontrols(0);
+    self.owner _freezelookcontrols(0);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7fc3
 // Size: 0x36f
-function function_dd2172321d232563(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, timedout) {
-    var_53385b6be5f6c52f = self.currenthealth;
-    var_f88fb7783beaa918 = undefined;
+function function_dd2172321d232563(wasdestroyed, wasexited, timedout) {
+    dronehealth = self.currenthealth;
+    dronevel = undefined;
     if (self.ispiloted) {
-        var_f88fb7783beaa918 = self getentityvelocity();
+        dronevel = self getentityvelocity();
     }
     config = level.helperdronesettings[self.helperdronetype];
     if (isdefined(self.targetmarkergroup)) {
-        namespace_f48c22429667eba9::targetmarkergroup_off(self.targetmarkergroup);
+        scripts/cp_mp/targetmarkergroups::targetmarkergroup_off(self.targetmarkergroup);
         self.targetmarkergroup = undefined;
     }
     if (isdefined(self.minimapid)) {
-        namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.minimapid);
+        scripts/mp/objidpoolmanager::returnobjectiveid(self.minimapid);
         self.minimapid = undefined;
     }
     helperdrone_endscramblereffect();
-    if (isdefined(config.dropfunc) && istrue(self.var_a9ce54bf6032822a)) {
-        self [[ config.dropfunc ]](config, var_4fac8b8ce36e09f1, var_d9b2677826930bf7, timedout);
+    if (isdefined(config.dropfunc) && istrue(self.dropdrone)) {
+        self [[ config.dropfunc ]](config, wasdestroyed, wasexited, timedout);
     } else {
         function_24085a0230958938();
     }
-    namespace_5a51aa78ea0b1b9f::allow_emp(0);
+    scripts/cp_mp/emp_debuff::allow_emp(0);
     self notify("drop");
-    if (isdefined(self.streakinfo.var_ebec497ff8b18a45)) {
+    if (isdefined(self.streakinfo.superref)) {
         if (issharedfuncdefined("challenges", "onFieldUpgradeEnd")) {
-            self.owner [[ getsharedfunc("challenges", "onFieldUpgradeEnd") ]](self.streakinfo.var_ebec497ff8b18a45, self.usedcount);
+            self.owner [[ getsharedfunc("challenges", "onFieldUpgradeEnd") ]](self.streakinfo.superref, self.usedcount);
         }
     }
     if (isdefined(self.streakinfo.superid)) {
         if (issharedfuncdefined("dlog", "fieldUpgradeExpired")) {
-            [[ getsharedfunc("dlog", "fieldUpgradeExpired") ]](self.owner, self.streakinfo.superid, self.usedcount, istrue(var_4fac8b8ce36e09f1));
+            [[ getsharedfunc("dlog", "fieldUpgradeExpired") ]](self.owner, self.streakinfo.superid, self.usedcount, istrue(wasdestroyed));
         }
     }
     if (istrue(self.inwater)) {
@@ -2762,35 +2765,35 @@ function function_dd2172321d232563(var_4fac8b8ce36e09f1, var_d9b2677826930bf7, t
     }
     owner = self.owner;
     if (isdefined(owner.super) && owner.super.isinuse) {
-        if (isdefined(self.streakinfo.var_ebec497ff8b18a45) && self.streakinfo.var_ebec497ff8b18a45 == owner.super.staticdata.ref) {
+        if (isdefined(self.streakinfo.superref) && self.streakinfo.superref == owner.super.staticdata.ref) {
             if (issharedfuncdefined("supers", "superUseFinished")) {
                 self.owner thread [[ getsharedfunc("supers", "superUseFinished") ]](0);
             }
         }
     }
-    function_608250000fbfc89a(self.helperdronetype, level.helperdronesettings[self.helperdronetype], var_4fac8b8ce36e09f1, var_f88fb7783beaa918, var_53385b6be5f6c52f);
+    function_608250000fbfc89a(self.helperdronetype, level.helperdronesettings[self.helperdronetype], wasdestroyed, dronevel, dronehealth);
     if (level.gametype != "br" && isdefined(owner) && issharedfuncdefined("br", "superSlotCleanUp")) {
         [[ getsharedfunc("br", "superSlotCleanUp") ]](owner);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8339
 // Size: 0x51
 function function_9fe87b841a44448f() {
     if (isent(self)) {
-        var_8f7dde4490939b87 = "on";
+        explodestate = "on";
         if (istrue(self.inwater)) {
             if (self getscriptableparthasstate("explode", "water")) {
-                var_8f7dde4490939b87 = "water";
+                explodestate = "water";
             }
         }
-        self setscriptablepartstate("explode", var_8f7dde4490939b87, 0);
+        self setscriptablepartstate("explode", explodestate, 0);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8391
 // Size: 0x51
@@ -2806,7 +2809,7 @@ function function_24085a0230958938() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x83e9
 // Size: 0x1e
@@ -2816,14 +2819,14 @@ function function_1a4f935ba283ab0f() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x840e
 // Size: 0x360
-function function_608250000fbfc89a(var_7c344645cc98e70d, config, var_4fac8b8ce36e09f1, var_f88fb7783beaa918, var_53385b6be5f6c52f) {
+function function_608250000fbfc89a(dronetype, config, wasdestroyed, dronevel, dronehealth) {
     helperdrone_disableradar();
     self.ispiloted = undefined;
-    self.var_8316e01be4051639 = undefined;
+    self.repeatuse = undefined;
     if (isdefined(self.useobj)) {
         self.useobj delete();
     }
@@ -2834,11 +2837,11 @@ function function_608250000fbfc89a(var_7c344645cc98e70d, config, var_4fac8b8ce36
         self.scrambler delete();
     }
     if (isdefined(self.enemyobjid)) {
-        namespace_5a22b6f3a56f7e9b::returnobjectiveid(self.enemyobjid);
+        scripts/mp/objidpoolmanager::returnobjectiveid(self.enemyobjid);
     }
     if (isdefined(self.pulsedarts) && self.pulsedarts.size > 0) {
-        foreach (var_334e9887a767ef7 in self.pulsedarts) {
-            var_334e9887a767ef7 notify("death");
+        foreach (pulsedart in self.pulsedarts) {
+            pulsedart notify("death");
         }
     }
     if (!istrue(self.streakinfo.issuper)) {
@@ -2852,36 +2855,36 @@ function function_608250000fbfc89a(var_7c344645cc98e70d, config, var_4fac8b8ce36
             self.owner clearsoundsubmix("mp_recon_drone", 1);
             self.owner notify("eng_drone_update", -1);
         } else {
-            self.owner notify("drone_destroyed", var_4fac8b8ce36e09f1);
+            self.owner notify("drone_destroyed", wasdestroyed);
         }
         self.owner stopwatchingthermalinputchange();
-        if (var_7c344645cc98e70d == "radar_drone_escort" || var_7c344645cc98e70d == "radar_drone_overwatch") {
+        if (dronetype == "radar_drone_escort" || dronetype == "radar_drone_overwatch") {
             if (issharedfuncdefined("player", "hideMiniMap")) {
                 self.owner [[ getsharedfunc("player", "hideMiniMap") ]]();
             }
         }
-        self.streakinfo.expiredbydeath = istrue(var_4fac8b8ce36e09f1);
-        self.owner namespace_9abe40d2af041eb2::recordkillstreakendstats(self.streakinfo);
+        self.streakinfo.expiredbydeath = istrue(wasdestroyed);
+        self.owner scripts/cp_mp/utility/killstreak_utility::recordkillstreakendstats(self.streakinfo);
     }
-    if (var_7c344645cc98e70d == "scrambler_drone_guard") {
+    if (dronetype == "scrambler_drone_guard") {
         scramblerdrone_counteruavmodeoff();
     }
     if (istrue(self.nonvehicle)) {
         self delete();
-    } else if (!var_4fac8b8ce36e09f1 && istrue(self.var_a9ce54bf6032822a) && !istrue(self.dropped)) {
+    } else if (!wasdestroyed && istrue(self.dropdrone) && !istrue(self.dropped)) {
         if (isdefined(self.owner)) {
-            var_26e951743d0f567d = self.owner function_99e1189114e8419a(self.origin, self.angles, var_7c344645cc98e70d, self.streakinfo, var_f88fb7783beaa918, var_53385b6be5f6c52f);
+            droppeddrone = self.owner function_99e1189114e8419a(self.origin, self.angles, dronetype, self.streakinfo, dronevel, dronehealth);
         }
-        namespace_f64231d5b7a2c3c4::_deletevehicle(self);
+        scripts/cp_mp/vehicles/vehicle_tracking::_deletevehicle(self);
     } else {
-        namespace_f64231d5b7a2c3c4::_deletevehicle(self);
+        scripts/cp_mp/vehicles/vehicle_tracking::_deletevehicle(self);
     }
     if (isplayer(self.owner) && issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
         self.owner setclientomnvar("ui_killstreak_countdown", 0);
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8775
 // Size: 0x4e
@@ -2897,7 +2900,7 @@ function function_f23d90f7483d67e4() {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x87ca
 // Size: 0x6f
@@ -2905,39 +2908,39 @@ function function_89af506d89aad6ed(state, drone) {
     /#
         assertex(0 <= state && state <= 4, "RCD Controls state must be in the range [0-4].");
     #/
-    var_27903296234d1638 = 0;
+    isassault = 0;
     if (isdefined(drone)) {
-        var_27903296234d1638 = drone.helperdronetype == "assault_drone";
+        isassault = drone.helperdronetype == "assault_drone";
     }
-    if (state > 0 && var_27903296234d1638) {
+    if (state > 0 && isassault) {
         state = state + 2;
     }
     self setclientomnvar("ui_rcd_controls", state);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8840
 // Size: 0x57
-function function_28368a23c20ff3e6(var_c8462289edfc0aca, target, state) {
-    var_7cbb905f3204b5d0 = (state >> 0) % 2 == 1;
-    var_1f6ff6a3877bf04 = (state >> 1) % 2 == 1;
-    targetmarkergroupsetentitystate(var_c8462289edfc0aca, target, var_7cbb905f3204b5d0);
-    targetmarkergroupsetextrastate(var_c8462289edfc0aca, target, var_1f6ff6a3877bf04);
+function function_28368a23c20ff3e6(markergroup, target, state) {
+    firstbit = (state >> 0) % 2 == 1;
+    secondbit = (state >> 1) % 2 == 1;
+    targetmarkergroupsetentitystate(markergroup, target, firstbit);
+    targetmarkergroupsetextrastate(markergroup, target, secondbit);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x889e
 // Size: 0x6f6
 function function_289ddd64ec5b3010(streakinfo, owner) {
     if (!isdefined(level.supportdrones)) {
-        return 0;
+        return false;
     }
     if (level.incominghelperdrones.size > 0) {
         if (issharedfuncdefined("killstreak", "maxVehiclesAllowed")) {
             if (level.incominghelperdrones.size >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]()) {
-                return 1;
+                return true;
             }
         }
         foreach (drone in level.incominghelperdrones) {
@@ -2947,28 +2950,34 @@ function function_289ddd64ec5b3010(streakinfo, owner) {
             if (streakinfo.streakname == "radar_drone_recon" && drone.type == streakinfo.streakname) {
                 if (level.teambased) {
                     if (isdefined(drone.owner) && isdefined(drone.owner.team) && drone.owner.team == owner.team) {
-                        return 1;
+                        return true;
                     }
                 }
-            } else if (streakinfo.streakname == "assault_drone" && drone.type == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "assault_drone" && drone.type == streakinfo.streakname) {
                 if (level.teambased) {
                     if (isdefined(drone.owner) && isdefined(drone.owner.team) && drone.owner.team == owner.team) {
-                        return 1;
+                        return true;
                     }
                 }
-            } else if (streakinfo.streakname == "radar_drone_overwatch" && drone.type == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "radar_drone_overwatch" && drone.type == streakinfo.streakname) {
                 if (level.teambased) {
                     if (helperdrone_getnumdrones("radar_drone_overwatch", level.incominghelperdrones, owner.team) >= 10) {
-                        return 1;
+                        return true;
                     }
                 }
                 if (helperdrone_getnumdrones("radar_drone_overwatch", level.incominghelperdrones) >= 20) {
-                    return 1;
+                    return true;
                 }
-            } else if (streakinfo.streakname == "scrambler_drone_guard" && drone.type == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "scrambler_drone_guard" && drone.type == streakinfo.streakname) {
                 if (level.teambased) {
                     if (helperdrone_getnumdrones("scrambler_drone_guard", level.incominghelperdrones, owner.team) >= 10) {
-                        return 1;
+                        return true;
                     }
                 }
             }
@@ -2977,7 +2986,7 @@ function function_289ddd64ec5b3010(streakinfo, owner) {
     if (level.supportdrones.size > 0) {
         if (issharedfuncdefined("killstreak", "maxVehiclesAllowed")) {
             if (level.supportdrones.size >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]()) {
-                return 1;
+                return true;
             }
         }
         foreach (drone in level.supportdrones) {
@@ -2986,94 +2995,103 @@ function function_289ddd64ec5b3010(streakinfo, owner) {
                     if (issharedfuncdefined("hud", "showErrorMessage")) {
                         owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/COMPANION_ALREADY_EXISTS");
                     }
-                    return 1;
+                    return true;
                 }
-            } else if (streakinfo.streakname == "radar_drone_recon" && drone.helperdronetype == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "radar_drone_recon" && drone.helperdronetype == streakinfo.streakname) {
                 if (level.teambased) {
                     if (drone.team == owner.team) {
                         if (issharedfuncdefined("hud", "showErrorMessage")) {
                             owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
                         }
-                        return 1;
+                        return true;
                     }
                 }
-            } else if (streakinfo.streakname == "assault_drone" && drone.helperdronetype == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "assault_drone" && drone.helperdronetype == streakinfo.streakname) {
                 if (level.teambased) {
                     if (drone.team == owner.team) {
                         if (issharedfuncdefined("hud", "showErrorMessage")) {
                             owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
                         }
-                        return 1;
+                        return true;
                     }
                 }
-            } else if (streakinfo.streakname == "radar_drone_overwatch" && drone.helperdronetype == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "radar_drone_overwatch" && drone.helperdronetype == streakinfo.streakname) {
                 if (helperdrone_getnumdrones("radar_drone_overwatch", level.supportdrones) >= 20) {
                     if (issharedfuncdefined("hud", "showErrorMessage")) {
                         owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
                     }
-                    return 1;
+                    return true;
                 }
                 if (level.teambased) {
                     if (helperdrone_getnumdrones("radar_drone_overwatch", level.supportdrones, owner.team) >= 10) {
                         if (issharedfuncdefined("hud", "showErrorMessage")) {
                             owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/MAX_FRIENDLY_PERSONAL_RADAR");
                         }
-                        return 1;
+                        return true;
                     }
                 }
                 if (helperdrone_getnumdrones("radar_drone_overwatch", level.supportdrones, owner) >= 1) {
                     if (issharedfuncdefined("hud", "showErrorMessage")) {
                         owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/PERSONAL_RADAR_ALREADY_ACTIVE");
                     }
-                    return 1;
+                    return true;
                 }
-            } else if (streakinfo.streakname == "scrambler_drone_guard" && drone.helperdronetype == streakinfo.streakname) {
+                continue;
+            }
+            if (streakinfo.streakname == "scrambler_drone_guard" && drone.helperdronetype == streakinfo.streakname) {
                 if (level.teambased) {
                     if (helperdrone_getnumdrones("scrambler_drone_guard", level.supportdrones, owner.team) >= 10) {
                         if (issharedfuncdefined("hud", "showErrorMessage")) {
                             owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/MAX_FRIENDLY_COUNTER_UAV");
                         }
-                        return 1;
+                        return true;
                     }
-                } else if (helperdrone_getnumdrones("scrambler_drone_guard", level.supportdrones, owner) >= 2) {
+                    continue;
+                }
+                if (helperdrone_getnumdrones("scrambler_drone_guard", level.supportdrones, owner) >= 2) {
                     if (issharedfuncdefined("hud", "showErrorMessage")) {
                         owner [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/MAX_FRIENDLY_COUNTER_UAV");
                     }
-                    return 1;
+                    return true;
                 }
             }
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f9c
 // Size: 0x115
-function helperdrone_getnumdrones(var_7c344645cc98e70d, var_ee9e55b40b28d806, var_bace6387b1d799ad) {
+function helperdrone_getnumdrones(dronetype, var_ee9e55b40b28d806, var_bace6387b1d799ad) {
     var_dc1a0178a2c53770 = 0;
     foreach (drone in var_ee9e55b40b28d806) {
-        if (isdefined(drone.type) && drone.type == var_7c344645cc98e70d || isdefined(drone.helperdronetype) && drone.helperdronetype == var_7c344645cc98e70d) {
+        if (isdefined(drone.type) && drone.type == dronetype || isdefined(drone.helperdronetype) && drone.helperdronetype == dronetype) {
             if (isdefined(var_bace6387b1d799ad)) {
                 if (isplayer(var_bace6387b1d799ad)) {
                     if (drone.owner != var_bace6387b1d799ad) {
                         continue;
                     }
-                    goto LOC_000000fd;
+                } else if (issharedfuncdefined("game", "isGameplayTeam") && [[ getsharedfunc("game", "isGameplayTeam") ]](var_bace6387b1d799ad)) {
+                    if (drone.team != var_bace6387b1d799ad) {
+                        continue;
+                    }
                 }
-                jumpiffalse(issharedfuncdefined("game", "isGameplayTeam") && [[ getsharedfunc("game", "isGameplayTeam") ]](var_bace6387b1d799ad)) LOC_000000fd;
-                jumpiffalse(drone.team != var_bace6387b1d799ad) LOC_000000fd;
-            } else {
-            LOC_000000fd:
-                var_dc1a0178a2c53770++;
             }
+            var_dc1a0178a2c53770++;
         }
     }
     return var_dc1a0178a2c53770;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90b9
 // Size: 0x31
@@ -3085,7 +3103,7 @@ function helperdrone_destroyongameend() {
     function_ba1c5496f8fc5f67();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x90f1
 // Size: 0x10a
@@ -3100,7 +3118,7 @@ function helperdrone_watchaltitude(player) {
     var_f203791de5ca7907 = var_a4e731e18a4e789b + var_4f8e491037dcdff7;
     var_176e0a0ae11d3a7b = 0;
     var_d7c5f779c1a8fc57 = 0;
-    while (1) {
+    while (true) {
         if (self.origin[2] > var_4f8e491037dcdff7) {
             if (self.origin[2] > var_f203791de5ca7907) {
                 player setclientomnvar("ui_out_of_range", 0);
@@ -3118,7 +3136,7 @@ function helperdrone_watchaltitude(player) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9202
 // Size: 0xa2
@@ -3134,7 +3152,7 @@ function helperdrone_gettargetoffset(helperdrone, player) {
     return targetoffset;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92ac
 // Size: 0x5bc
@@ -3146,46 +3164,46 @@ function function_34280b807c23a453(helperdronetype) {
     halfsize = level.helperdronesettings[helperdronetype].halfsize;
     forward = anglestoforward(self.angles);
     right = anglestoright(self.angles);
-    playerpos = namespace_f8065cafc523dba5::getstancetop();
+    playerpos = scripts/cp_mp/utility/player_utility::getstancetop();
     var_50203232dac6b01f = 50;
-    var_4eba8b5ab3b85e92 = 20;
-    if (namespace_9db09f982acd35b4::player_standing_on_train()) {
+    horizontaloffset = 20;
+    if (scripts/cp_mp/utility/train_utility::player_standing_on_train()) {
         heightoffset = heightoffset + (0, 0, 150);
         var_50203232dac6b01f = 120;
         spawndist = 150;
         halfsize = halfsize * 3;
-        var_4eba8b5ab3b85e92 = 120;
+        horizontaloffset = 120;
     } else if (function_f8789f15330de751(self)) {
         heightoffset = heightoffset + (0, 0, 100);
         var_50203232dac6b01f = 100;
         spawndist = 120;
         halfsize = halfsize * 2;
-        var_4eba8b5ab3b85e92 = 100;
+        horizontaloffset = 100;
     } else if (self isswimming()) {
         playerpos = self.origin + (0, 0, getdvarint(@"hash_d78c8ed504373ea5", 30));
     }
-    var_8604e40dae72edd = physics_createcontents([0:"physicscontents_glass", 1:"physicscontents_vehicleclip", 2:"physicscontents_missileclip", 3:"physicscontents_clipshot"]);
-    var_214d77bb9d513c28 = ray_trace(self.origin + (0, 0, 20), playerpos, self, var_8604e40dae72edd);
-    if (var_214d77bb9d513c28["hittype"] != "hittype_none") {
+    var_8604e40dae72edd = physics_createcontents(["physicscontents_glass", "physicscontents_vehicleclip", "physicscontents_missileclip", "physicscontents_clipshot"]);
+    raytrace = ray_trace(self.origin + (0, 0, 20), playerpos, self, var_8604e40dae72edd);
+    if (raytrace["hittype"] != "hittype_none") {
         return undefined;
     }
-    var_778f9ab8c1872412 = spawndist + var_4eba8b5ab3b85e92;
+    var_778f9ab8c1872412 = spawndist + horizontaloffset;
     if (self getstance() == "prone") {
         var_778f9ab8c1872412 = var_778f9ab8c1872412 + 25;
     }
     if (isplayer(self)) {
-        if (namespace_9db09f982acd35b4::player_standing_on_train()) {
+        if (scripts/cp_mp/utility/train_utility::player_standing_on_train()) {
             heightoffset = heightoffset + (0, 0, 150);
         }
     }
-    var_676798dc94029f6c = [0:heightoffset + spawndist * forward, 1:heightoffset - spawndist * forward, 2:heightoffset + spawndist * right, 3:heightoffset - spawndist * right, 4:heightoffset, 5:heightoffset + 0.707 * spawndist * (forward + right), 6:heightoffset + 0.707 * spawndist * (forward - right), 7:heightoffset + 0.707 * spawndist * (right - forward), 8:heightoffset + 0.707 * spawndist * (-1 * forward - right), 9:var_778f9ab8c1872412 * forward, 10:-1 * var_778f9ab8c1872412 * forward, 11:var_778f9ab8c1872412 * right, 12:-1 * var_778f9ab8c1872412 * right, 13:0.707 * var_778f9ab8c1872412 * (forward + right), 14:0.707 * var_778f9ab8c1872412 * (forward - right), 15:0.707 * var_778f9ab8c1872412 * (right - forward), 16:0.707 * var_778f9ab8c1872412 * (-1 * forward - right)];
-    var_cca213f58a72d7b7 = 0;
-    for (i = 0; i < var_676798dc94029f6c.size; i++) {
-        if (4 <= var_cca213f58a72d7b7) {
-            var_cca213f58a72d7b7 = 0;
+    spawnoffsets = [heightoffset + spawndist * forward, heightoffset - spawndist * forward, heightoffset + spawndist * right, heightoffset - spawndist * right, heightoffset, heightoffset + 0.707 * spawndist * (forward + right), heightoffset + 0.707 * spawndist * (forward - right), heightoffset + 0.707 * spawndist * (right - forward), heightoffset + 0.707 * spawndist * (-1 * forward - right), var_778f9ab8c1872412 * forward, -1 * var_778f9ab8c1872412 * forward, var_778f9ab8c1872412 * right, -1 * var_778f9ab8c1872412 * right, 0.707 * var_778f9ab8c1872412 * (forward + right), 0.707 * var_778f9ab8c1872412 * (forward - right), 0.707 * var_778f9ab8c1872412 * (right - forward), 0.707 * var_778f9ab8c1872412 * (-1 * forward - right)];
+    currentchecks = 0;
+    for (i = 0; i < spawnoffsets.size; i++) {
+        if (4 <= currentchecks) {
+            currentchecks = 0;
             wait(0.05);
         }
-        spawnoffset = var_676798dc94029f6c[i];
+        spawnoffset = spawnoffsets[i];
         spawnpos = playerpos + spawnoffset;
         if (issharedfuncdefined("game", "isBRStyleGameType")) {
             if ([[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
@@ -3197,44 +3215,44 @@ function function_34280b807c23a453(helperdronetype) {
                 }
             }
         }
-        var_719da4aa69a9fc90 = vectornormalize(spawnoffset) * var_50203232dac6b01f;
-        var_965c36fe7c010b3 = playerpos + var_719da4aa69a9fc90;
-        var_1bfa180c6fdd09dd = physics_createcontents([0:"physicscontents_glass", 1:"physicscontents_vehicleclip", 2:"physicscontents_missileclip", 3:"physicscontents_clipshot", 4:"physicscontents_water"]);
-        var_214d77bb9d513c28 = ray_trace(playerpos, var_965c36fe7c010b3, self, var_1bfa180c6fdd09dd);
+        rayoffset = vectornormalize(spawnoffset) * var_50203232dac6b01f;
+        raypos = playerpos + rayoffset;
+        collisioncontents = physics_createcontents(["physicscontents_glass", "physicscontents_vehicleclip", "physicscontents_missileclip", "physicscontents_clipshot", "physicscontents_water"]);
+        raytrace = ray_trace(playerpos, raypos, self, collisioncontents);
         /#
             if (getdvarint(@"hash_7d1382405485d79f", 0)) {
-                line(playerpos, var_965c36fe7c010b3, (0, 0, 1), 1, 0, 1000);
+                line(playerpos, raypos, (0, 0, 1), 1, 0, 1000);
             }
         #/
-        if (var_214d77bb9d513c28["hittype"] != "hittype_none") {
+        if (raytrace["hittype"] != "hittype_none") {
             continue;
         }
-        var_e5354be82a7990d5 = sphere_trace(var_965c36fe7c010b3, spawnpos, halfsize, self, var_1bfa180c6fdd09dd);
-        fraction = var_e5354be82a7990d5["fraction"];
-        var_84d0c5c148da4a7a = fraction * (spawnpos - var_965c36fe7c010b3);
-        var_6e3f1a360851a19a = var_965c36fe7c010b3 + var_84d0c5c148da4a7a;
+        spheretrace = sphere_trace(raypos, spawnpos, halfsize, self, collisioncontents);
+        fraction = spheretrace["fraction"];
+        maxoffset = fraction * (spawnpos - raypos);
+        maxposition = raypos + maxoffset;
         /#
             if (getdvarint(@"hash_7d1382405485d79f", 0)) {
-                line(var_965c36fe7c010b3, spawnpos, (1, 0, 0), 1, 0, 1000);
-                sphere(var_965c36fe7c010b3, 5, (1, 1, 0), 0, 1000);
+                line(raypos, spawnpos, (1, 0, 0), 1, 0, 1000);
+                sphere(raypos, 5, (1, 1, 0), 0, 1000);
                 sphere(spawnpos, 5, (0, 1, 1), 0, 1000);
             }
         #/
         if (fraction > 0) {
             /#
                 if (getdvarint(@"hash_7d1382405485d79f", 0)) {
-                    sphere(var_6e3f1a360851a19a, halfsize, (0, 1, 0), 0, 1000);
+                    sphere(maxposition, halfsize, (0, 1, 0), 0, 1000);
                 }
             #/
-            self.recondronesafespawn = var_6e3f1a360851a19a;
-            return var_6e3f1a360851a19a;
+            self.recondronesafespawn = maxposition;
+            return maxposition;
         }
-        var_cca213f58a72d7b7++;
+        currentchecks++;
     }
     return undefined;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9870
 // Size: 0xad
@@ -3251,7 +3269,7 @@ function helperdrone_showminimaponspawn(drone) {
     if (istrue(level.istacops)) {
         return;
     }
-    while (1) {
+    while (true) {
         self waittill("spawned_player");
         if (issharedfuncdefined("player", "showMiniMap")) {
             self [[ getsharedfunc("player", "showMiniMap") ]]();
@@ -3260,7 +3278,7 @@ function helperdrone_showminimaponspawn(drone) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9924
 // Size: 0x177
@@ -3272,7 +3290,7 @@ function deliverydrone_delivertopoint(targetpos, ondelivercallback) {
     streakinfo.streakname = "ammo_drop";
     streakinfo.issuper = 1;
     streakinfo.superid = level.superglobals.staticsuperdata["super_weapon_drop"].id;
-    streakinfo.var_ebec497ff8b18a45 = level.superglobals.staticsuperdata["super_weapon_drop"].ref;
+    streakinfo.superref = level.superglobals.staticsuperdata["super_weapon_drop"].ref;
     if (tryusehelperdroneearlyout(streakinfo, 1)) {
         if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
             [[ getsharedfunc("vehicle", "decrementFauxVehicleCount") ]]();
@@ -3292,48 +3310,48 @@ function deliverydrone_delivertopoint(targetpos, ondelivercallback) {
     return var_446db1dc2fd8e89d;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9aa3
 // Size: 0x12
 function scramblerdrone_counteruavmodeon() {
-    namespace_f1fe279354a7da2::function_24d8b56676d4d3d1();
+    scripts/cp_mp/killstreaks/uav::function_24d8b56676d4d3d1();
     level notify("uav_update");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9abc
 // Size: 0x28
 function scramblerdrone_counteruavmodeoff() {
-    namespace_f1fe279354a7da2::function_e02b5390559e651a();
+    scripts/cp_mp/killstreaks/uav::uav_removeactivecounteruav();
     /#
         self.owner.var_f39d717b31ec5af9 = undefined;
     #/
     level notify("uav_update");
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9aeb
 // Size: 0x201
 function function_b25ced7f149be057() {
     self.owner endon("disconnect");
     self endon("death");
-    var_2f344609bbdba105 = 0;
-    self.var_97da68f6abb8ec80 = 0;
+    interferencefrac = 0;
+    self.oobdistortion = 0;
     var_39b61d1f526b47d7 = 0;
-    var_5bef4d0c7c1d06a8 = undefined;
-    while (1) {
+    touchingtrigger = undefined;
+    while (true) {
         if (isdefined(level.outofboundstriggers)) {
-            self.var_97da68f6abb8ec80 = 0;
+            self.oobdistortion = 0;
             foreach (trigger in level.outofboundstriggers) {
                 if (self istouching(trigger)) {
                     if (isdefined(trigger.script_team) && self.team != trigger.script_team) {
                         continue;
                     }
-                    self.var_97da68f6abb8ec80 = 1;
-                    var_5bef4d0c7c1d06a8 = trigger;
+                    self.oobdistortion = 1;
+                    touchingtrigger = trigger;
                     if (istrue(var_39b61d1f526b47d7) && (!isdefined(self.oobtriggers) || self.oobtriggers.size == 0)) {
                         var_39b61d1f526b47d7 = 0;
                     }
@@ -3344,44 +3362,44 @@ function function_b25ced7f149be057() {
                     break;
                 }
             }
-            if (self.var_97da68f6abb8ec80) {
-                var_2f344609bbdba105 = var_2f344609bbdba105 + 1 * level.framedurationseconds;
-                if (!istrue(var_39b61d1f526b47d7) && isdefined(var_5bef4d0c7c1d06a8)) {
+            if (self.oobdistortion) {
+                interferencefrac = interferencefrac + 1 * level.framedurationseconds;
+                if (!istrue(var_39b61d1f526b47d7) && isdefined(touchingtrigger)) {
                     if (issharedfuncdefined("game", "onEnterOOBTrigger")) {
-                        [[ getsharedfunc("game", "onEnterOOBTrigger") ]](var_5bef4d0c7c1d06a8, self);
+                        [[ getsharedfunc("game", "onEnterOOBTrigger") ]](touchingtrigger, self);
                     }
                     var_39b61d1f526b47d7 = 1;
                 }
             } else {
-                var_2f344609bbdba105 = var_2f344609bbdba105 - 2 * level.framedurationseconds;
-                if (istrue(var_39b61d1f526b47d7) && isdefined(var_5bef4d0c7c1d06a8)) {
+                interferencefrac = interferencefrac - 2 * level.framedurationseconds;
+                if (istrue(var_39b61d1f526b47d7) && isdefined(touchingtrigger)) {
                     var_39b61d1f526b47d7 = 0;
-                    var_5bef4d0c7c1d06a8 = undefined;
+                    touchingtrigger = undefined;
                 }
             }
-            var_2f344609bbdba105 = clamp(var_2f344609bbdba105, 0, 0.5);
-            self.owner setclientomnvar("ui_out_of_range", var_2f344609bbdba105);
+            interferencefrac = clamp(interferencefrac, 0, 0.5);
+            self.owner setclientomnvar("ui_out_of_range", interferencefrac);
         }
         waitframe();
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9cf3
 // Size: 0x41
 function function_de3c015e3c7130e7(helperdronetype) {
-    var_17bcb5a652ec6088 = 0;
+    isremotecontrolhelper = 0;
     switch (helperdronetype) {
     case #"hash_9e36e3bd3a9dd00d":
     case #"hash_e40585107590f016":
-        var_17bcb5a652ec6088 = 1;
+        isremotecontrolhelper = 1;
         break;
     }
-    return var_17bcb5a652ec6088;
+    return isremotecontrolhelper;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d3c
 // Size: 0x25
@@ -3390,7 +3408,7 @@ function helperdrone_giveplayerfauxremote(streakinfo) {
     setusingremote(streakinfo.streakname);
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9d68
 // Size: 0x45
@@ -3403,26 +3421,26 @@ function helperdrone_takeplayerfauxremote(streakinfo) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9db4
 // Size: 0x289
 function function_f9c33df98457a9a2(target, var_b2cc25676b34bf9) {
-    var_27b697504d9397d = 0;
-    var_bfd06d83fea8d89a = self.owner getvieworigin();
+    icansee = 0;
+    useorigin = self.owner getvieworigin();
     if (istrue(var_b2cc25676b34bf9)) {
-        var_bfd06d83fea8d89a = self.origin;
+        useorigin = self.origin;
     }
     if (isdefined(target.recondronetracecontents)) {
         contents = target.recondronetracecontents;
     } else {
-        contents = physics_createcontents([0:"physicscontents_itemclip", 1:"physicscontents_item", 2:"physicscontents_clipshot", 3:"physicscontents_missileclip", 4:"physicscontents_vehicle", 5:"physicscontents_ainosight"]);
+        contents = physics_createcontents(["physicscontents_itemclip", "physicscontents_item", "physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle", "physicscontents_ainosight"]);
     }
-    var_8a4ea3a3baa22e4 = target.origin;
+    defaultorigin = target.origin;
     if (isdefined(target.recondronetraceoffset)) {
-        var_8a4ea3a3baa22e4 = var_8a4ea3a3baa22e4 + target.recondronetraceoffset;
+        defaultorigin = defaultorigin + target.recondronetraceoffset;
     }
-    tracepoints = [0:var_8a4ea3a3baa22e4];
+    tracepoints = [defaultorigin];
     if (isplayer(target)) {
         headpos = (0, 0, 0);
         if (issharedfuncdefined("player", "isReallyAlive")) {
@@ -3432,38 +3450,38 @@ function function_f9c33df98457a9a2(target, var_b2cc25676b34bf9) {
         if (issharedfuncdefined("player", "isReallyAlive")) {
             centerpos = target [[ getsharedfunc("player", "getStanceCenter") ]]();
         }
-        tracepoints = [0:headpos, 1:centerpos, 2:var_8a4ea3a3baa22e4];
+        tracepoints = [headpos, centerpos, defaultorigin];
     } else if (isagent(target)) {
-        tracepoints = [0:var_8a4ea3a3baa22e4 + (0, 0, 1)];
+        tracepoints = [defaultorigin + (0, 0, 1)];
     }
-    ignorelist = [0:self, 1:target];
+    ignorelist = [self, target];
     vehicle = target getvehicle();
     if (isdefined(vehicle)) {
         ignorelist[ignorelist.size] = vehicle;
-        var_bb7ac665413117fc = vehicle getlinkedchildren(1);
-        foreach (child in var_bb7ac665413117fc) {
+        vehiclechildren = vehicle getlinkedchildren(1);
+        foreach (child in vehiclechildren) {
             ignorelist[ignorelist.size] = vehicle;
         }
     }
     for (i = 0; i < tracepoints.size; i++) {
-        if (!namespace_2a184fc4902783dc::ray_trace_passed(var_bfd06d83fea8d89a, tracepoints[i], ignorelist, contents)) {
+        if (!scripts/engine/trace::ray_trace_passed(useorigin, tracepoints[i], ignorelist, contents)) {
             continue;
         }
-        var_27b697504d9397d = 1;
+        icansee = 1;
         break;
     }
-    return var_27b697504d9397d;
+    return icansee;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa045
 // Size: 0x3b
-function function_e89890de385d2d9e(config, var_4fac8b8ce36e09f1, var_d9b2677826930bf7, var_28d4a6f776c18b73, var_bd21744eb1b623fe, thirdperson) {
+function function_e89890de385d2d9e(config, wasdestroyed, wasexited, wastimedout, wasdetonated, thirdperson) {
     function_9fe87b841a44448f();
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa087
 // Size: 0x41
@@ -3476,7 +3494,7 @@ function ishelperdrone() {
     return 0;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa0d0
 // Size: 0x47
@@ -3484,7 +3502,7 @@ function function_8c4ab0a7799e7ab8(weapon) {
     return weapon.basename == "ks_remote_drone_mp" || weapon.basename == "ks_assault_drone_mp" || weapon.basename == "ks_assault_drone_cp";
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa11f
 // Size: 0x16
@@ -3492,7 +3510,7 @@ function function_49197cd063a740ea(callbackfunction) {
     self.var_d1659ed0a33bf98f = callbackfunction;
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa13c
 // Size: 0x28
@@ -3502,7 +3520,7 @@ function helperdrone_empapplied(data) {
     }
 }
 
-// Namespace helper_drone/namespace_bba8bc8532aa4913
+// Namespace helper_drone / scripts/cp_mp/killstreaks/helper_drone
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa16b
 // Size: 0xcc
@@ -3512,12 +3530,12 @@ function function_5fbdbc50f271cfdf() {
         self endon("begin_evasive_maneuvers");
         self notify("setKillstreakControlPriority");
         self endon("setKillstreakControlPriority");
-        while (1) {
-            var_9f207219355d1982 = getnodesonpath(self.owner.origin, self.origin);
-            if (isdefined(var_9f207219355d1982)) {
-                for (i = 0; i < var_9f207219355d1982.size; i++) {
-                    if (isdefined(var_9f207219355d1982[i + 1])) {
-                        line(var_9f207219355d1982[i].origin + (0, 0, 80), var_9f207219355d1982[i + 1].origin + (0, 0, 80), (1, 0, 0));
+        while (true) {
+            nodepath = getnodesonpath(self.owner.origin, self.origin);
+            if (isdefined(nodepath)) {
+                for (i = 0; i < nodepath.size; i++) {
+                    if (isdefined(nodepath[i + 1])) {
+                        line(nodepath[i].origin + (0, 0, 80), nodepath[i + 1].origin + (0, 0, 80), (1, 0, 0));
                     }
                 }
             }

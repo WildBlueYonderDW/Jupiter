@@ -11,12 +11,12 @@
 
 #namespace namespace_c93bcd6863c1196b;
 
-// Namespace namespace_c93bcd6863c1196b/namespace_9a2277de2fa644a6
+// Namespace namespace_c93bcd6863c1196b / namespace_9a2277de2fa644a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e3
 // Size: 0x1ca
 function main() {
-    self.var_9d26ac1e325367ce = function_2336488258354fbc(#"aitype", %"hash_d827a909fa7361c");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_d827a909fa7361c");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_6648bd5f43597e7d");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 300;
@@ -25,14 +25,14 @@ function main() {
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_aggressive";
     self.asmasset = "soldier";
     namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_soldier_base_ob");
-    var_fea750d6814b803d = "iw9_lm_rkilo, [ holo04, grip_angled05 ], none, none";
-    self.weapon = level.var_67b54180a55f70e1[var_fea750d6814b803d];
+    primaryweaponhash = "iw9_lm_rkilo, [ holo04, grip_angled05 ], none, none";
+    self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
     self giveweapon(self.weapon);
     self setspawnweapon(self.weapon);
     self.bulletsinclip = weaponclipsize(self.weapon);
     self.primaryweapon = self.weapon;
-    var_a68442ebadb66eb1 = "gas_grenade_exgm_chemist";
-    self.grenadeweapon = level.var_67b54180a55f70e1[var_a68442ebadb66eb1];
+    grenadeweaponhash = "gas_grenade_exgm_chemist";
+    self.grenadeweapon = level.var_67b54180a55f70e1[grenadeweaponhash];
     self.grenadeammo = 5;
     setup_model();
     /#
@@ -46,13 +46,13 @@ function main() {
     #/
     self.var_a942dd31d55102c9 = self.asmasset;
     self.a = spawnstruct();
-    namespace_bf5a1761a8d1bb07::asm_init_blackboard();
-    namespace_f08e04b63067d27f::bt_init();
-    namespace_28d7bb9fcf17949d::asm_init(self.asmasset, self.animationarchetype);
-    namespace_6205bc7c5e394598::ai_init();
+    scripts/asm/asm::asm_init_blackboard();
+    scripts/aitypes/bt_util::bt_init();
+    scripts/asm/asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts/common/ai::ai_init();
 }
 
-// Namespace namespace_c93bcd6863c1196b/namespace_9a2277de2fa644a6
+// Namespace namespace_c93bcd6863c1196b / namespace_9a2277de2fa644a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b4
 // Size: 0x57
@@ -66,7 +66,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_c93bcd6863c1196b/namespace_9a2277de2fa644a6
+// Namespace namespace_c93bcd6863c1196b / namespace_9a2277de2fa644a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x412
 // Size: 0x9
@@ -74,7 +74,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_2afe43695205fd58::main();
 }
 
-// Namespace namespace_c93bcd6863c1196b/namespace_9a2277de2fa644a6
+// Namespace namespace_c93bcd6863c1196b / namespace_9a2277de2fa644a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x423
 // Size: 0xcf
@@ -91,30 +91,30 @@ function precache() {
         level.agent_definition[agent_type]["subclass"] = getscriptbundle(%"hash_6648bd5f43597e7d");
         namespace_2afe43695205fd58::function_8168fbf6282d398b();
     }
-    namespace_e8f3f30f2d3e4a89::agent_init();
-    namespace_f08e04b63067d27f::init();
-    namespace_8bef0f00d6d36a69::soldier();
-    thread function_e8cf870298e36bdc();
+    scripts/cp_mp/agents/agent_init::agent_init();
+    scripts/aitypes/bt_util::init();
+    scripts/aitypes/assets::soldier();
+    thread setup_weapons();
 }
 
-// Namespace namespace_c93bcd6863c1196b/namespace_9a2277de2fa644a6
+// Namespace namespace_c93bcd6863c1196b / namespace_9a2277de2fa644a6
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4f9
 // Size: 0xb3
-function function_e8cf870298e36bdc() {
+function setup_weapons() {
     while (!isdefined(level.weaponmapdata)) {
         waitframe();
     }
     if (!isdefined(level.var_67b54180a55f70e1)) {
         level.var_67b54180a55f70e1 = [];
     }
-    var_fea750d6814b803d = "iw9_lm_rkilo, [ holo04, grip_angled05 ], none, none";
-    if (!isdefined(level.var_67b54180a55f70e1[var_fea750d6814b803d])) {
-        level.var_67b54180a55f70e1[var_fea750d6814b803d] = namespace_d19129e4fa5d176::function_e83615f8a92e4378("iw9_lm_rkilo", [0:"holo04", 1:"grip_angled05"], "none", "none");
+    primaryweaponhash = "iw9_lm_rkilo, [ holo04, grip_angled05 ], none, none";
+    if (!isdefined(level.var_67b54180a55f70e1[primaryweaponhash])) {
+        level.var_67b54180a55f70e1[primaryweaponhash] = scripts/mp/class::function_e83615f8a92e4378("iw9_lm_rkilo", ["holo04", "grip_angled05"], "none", "none");
     }
-    var_a68442ebadb66eb1 = "gas_grenade_exgm_chemist";
-    if (!isdefined(level.var_67b54180a55f70e1[var_a68442ebadb66eb1])) {
-        level.var_67b54180a55f70e1[var_a68442ebadb66eb1] = makeweapon("gas_grenade_exgm_chemist");
+    grenadeweaponhash = "gas_grenade_exgm_chemist";
+    if (!isdefined(level.var_67b54180a55f70e1[grenadeweaponhash])) {
+        level.var_67b54180a55f70e1[grenadeweaponhash] = makeweapon("gas_grenade_exgm_chemist");
     }
 }
 

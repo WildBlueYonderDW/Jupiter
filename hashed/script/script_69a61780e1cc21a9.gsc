@@ -20,7 +20,7 @@
 
 #namespace namespace_e5887d7e575ef250;
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2a2
 // Size: 0x14
@@ -28,7 +28,7 @@ function main() {
     function_c0b3ddc9a6bdcc46("little_bird", &little_bird_init);
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2bd
 // Size: 0x1bd
@@ -58,7 +58,7 @@ function private little_bird_init() {
     little_bird_initomnvars();
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x481
 // Size: 0x2d
@@ -67,7 +67,7 @@ function private little_bird_initomnvars() {
     var_e2818ad39a3341b4.ammoids["flares"] = 1;
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4b5
 // Size: 0x42
@@ -77,20 +77,20 @@ function private little_bird_initdamage() {
     var_d2e455d494f8d46e.onexitcallback = &little_bird_onexitheavydamagestate;
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4fe
 // Size: 0x152
-function private little_bird_create(spawndata, var_ee8da5624236dc89) {
+function private little_bird_create(spawndata, faildata) {
     spawndata.cannotbesuspended = 1;
-    vehicle = function_bba34cf920370ff4("little_bird", spawndata, var_ee8da5624236dc89);
+    vehicle = function_bba34cf920370ff4("little_bird", spawndata, faildata);
     if (!isdefined(vehicle)) {
         return undefined;
     }
     vehicle.borntime = gettime();
     vehicle.flareslive = [];
     vehicle.flareready = 1;
-    if (namespace_36f464722d326bbe::isbrstylegametype()) {
+    if (scripts/cp_mp/utility/game_utility::isbrstylegametype()) {
         vehicle.flarecooldown = 35;
     } else {
         vehicle.flarecooldown = 10;
@@ -98,20 +98,20 @@ function private little_bird_create(spawndata, var_ee8da5624236dc89) {
     vehicle thread vehicle_handleflarerecharge();
     vehicle thread collision_damage_watcher();
     vehicledata = function_29b4292c92443328("little_bird");
-    if (istrue(vehicledata.ai.var_289df80e1ded586f) && istrue(spawndata.var_f16652e1462a3739)) {
+    if (istrue(vehicledata.ai.var_289df80e1ded586f) && istrue(spawndata.initai)) {
         vehicle.unload_land_offset = 112;
         vehicle.unload_hover_offset = 120;
         vehicle.script_badplace = 0;
         vehicle vehicle_setspeed(60, 20, 10);
-        vehicle.var_22aa4aa0cf0aa6bb = 1;
+        vehicle.preventrespawn = 1;
         vehicle.var_a8f4bb03b366aa80 = 1;
         vehicle.deathfunc = &vehicle_death;
-        vehicle namespace_1fbd40990ee60ede::function_a91927df280e94e4();
+        vehicle scripts/cp_mp/vehicles/vehicle_occupancy::function_a91927df280e94e4();
     }
     return vehicle;
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x658
 // Size: 0x9c
@@ -132,36 +132,36 @@ function private function_403e79a58ca142a3(damageinfo, damagefactor) {
     #/
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x6fb
 // Size: 0x41e
 function private collision_damage_watcher() {
     self endon("death");
     self vehphys_enablecollisioncallback(1);
-    while (1) {
-        partenum = ent = normalspeed = normal = position = flag1 = flag0 = body1 = body0 = self waittill("collision");
+    while (true) {
+        body0, body1, flag0, flag1, position, normal, normalspeed, ent, partenum = self waittill("collision");
         if (gettime() - self.borntime < 5000) {
             /#
-                function_1ebf8c6ee94601db(position, normal, normalspeed, 0, "<unknown string>");
+                collision_debug(position, normal, normalspeed, 0, "<unknown string>");
             #/
             continue;
         }
         if (isdefined(ent) && istrue(ent.iscrossbowbolt)) {
             /#
-                function_1ebf8c6ee94601db(position, normal, normalspeed, 0, "<unknown string>");
+                collision_debug(position, normal, normalspeed, 0, "<unknown string>");
             #/
             continue;
         }
         if (isdefined(ent) && isdefined(ent.helperdronetype) && ent.helperdronetype == "radar_drone_recon") {
             /#
-                function_1ebf8c6ee94601db(position, normal, normalspeed, 0, "<unknown string>");
+                collision_debug(position, normal, normalspeed, 0, "<unknown string>");
             #/
             continue;
         }
         if (istrue(self.var_a1a5d39c25c6d70b)) {
             /#
-                function_1ebf8c6ee94601db(position, normal, normalspeed, 0, "<unknown string>");
+                collision_debug(position, normal, normalspeed, 0, "<unknown string>");
             #/
             continue;
         }
@@ -189,55 +189,55 @@ function private collision_damage_watcher() {
             function_403e79a58ca142a3(damageinfo, level.lb_pitch_roll_dmg_factor);
         }
         down = anglestoup(self.angles) * -1;
-        var_a0b3ff39f28efa53 = vectornormalize(position - self.origin);
-        if (vectordot(var_a0b3ff39f28efa53, down) > level.var_18cd46c9f47ec9fe) {
+        toposition = vectornormalize(position - self.origin);
+        if (vectordot(toposition, down) > level.var_18cd46c9f47ec9fe) {
             function_403e79a58ca142a3(damageinfo, level.var_78575fd6a5acb7d3);
         }
-        var_2d65c754072c9542 = 0;
+        dmgval = 0;
         damagefactor = damageinfo.damagefactor;
         if (damagefactor > level.lb_impulse_dmg_threshold_top) {
-            var_2d65c754072c9542 = self.maxhealth;
+            dmgval = self.maxhealth;
         } else if (damagefactor > level.lb_impulse_dmg_threshold_mid) {
             range = level.lb_impulse_dmg_threshold_top - level.lb_impulse_dmg_threshold_mid;
-            var_6d3017665ec227e0 = (damagefactor - level.lb_impulse_dmg_threshold_mid) / range;
-            var_ed91f3ec33af8c15 = self.maxhealth * level.lb_impulse_dmg_factor_mid_low;
-            var_8516b2bf8f4da6d7 = self.maxhealth * level.lb_impulse_dmg_factor_mid_high;
-            var_2d65c754072c9542 = math::lerp(var_ed91f3ec33af8c15, var_8516b2bf8f4da6d7, var_6d3017665ec227e0);
+            factorscale = (damagefactor - level.lb_impulse_dmg_threshold_mid) / range;
+            mindmg = self.maxhealth * level.lb_impulse_dmg_factor_mid_low;
+            maxdmg = self.maxhealth * level.lb_impulse_dmg_factor_mid_high;
+            dmgval = math::lerp(mindmg, maxdmg, factorscale);
         } else if (damagefactor > level.lb_impulse_dmg_threshold_low) {
-            var_2d65c754072c9542 = self.maxhealth * level.lb_impulse_dmg_factor_low;
+            dmgval = self.maxhealth * level.lb_impulse_dmg_factor_low;
         }
-        if (var_2d65c754072c9542 > 0) {
+        if (dmgval > 0) {
             if (isdefined(driver) && flag1 == 11534336) {
-                var_2d65c754072c9542 = var_2d65c754072c9542 * level.lb_wood_surf_dmg_scalar;
+                dmgval = dmgval * level.lb_wood_surf_dmg_scalar;
             }
             vehicle_damage_disablestatedamagefloor(1);
-            self dodamage(var_2d65c754072c9542, position, undefined, undefined, "MOD_CRUSH");
+            self dodamage(dmgval, position, undefined, undefined, "MOD_CRUSH");
             vehicle_damage_disablestatedamagefloor(0);
         }
         /#
-            function_1ebf8c6ee94601db(position, normal, normalspeed, var_2d65c754072c9542, "<unknown string>" + damagefactor + "<unknown string>" + damageinfo.debugstring + "<unknown string>");
+            collision_debug(position, normal, normalspeed, dmgval, "<unknown string>" + damagefactor + "<unknown string>" + damageinfo.debugstring + "<unknown string>");
         #/
         wait(0.5);
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb20
 // Size: 0x1d
-function private little_bird_onenterheavydamagestate(var_1ae0aeb37c917298, data) {
-    namespace_5a0f3ca265d3a4c8::vehicle_damage_onenterstateheavy(var_1ae0aeb37c917298, data);
+function private little_bird_onenterheavydamagestate(oldstateref, data) {
+    scripts/cp_mp/vehicles/vehicle_damage::vehicle_damage_onenterstateheavy(oldstateref, data);
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb44
 // Size: 0x1d
-function private little_bird_onexitheavydamagestate(var_1ae0aeb37c917298, data) {
-    namespace_5a0f3ca265d3a4c8::vehicle_damage_onexitstateheavy(var_1ae0aeb37c917298, data);
+function private little_bird_onexitheavydamagestate(oldstateref, data) {
+    scripts/cp_mp/vehicles/vehicle_damage::vehicle_damage_onexitstateheavy(oldstateref, data);
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb68
 // Size: 0x15e
@@ -245,28 +245,28 @@ function private little_bird_enterstart(vehicle, seatid, var_fc7c7a874b43a31a, p
     if (istrue(vehicle.israllypointvehicle)) {
         foreach (plr in level.players) {
             if (istrue(vehicle.revealed) || is_equal(plr.team, vehicle.team)) {
-                namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(vehicle.marker.objidnum, plr);
+                scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(vehicle.marker.objidnum, plr);
             }
         }
         foreach (occupant in vehicle.occupants) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(vehicle.marker.objidnum, occupant);
+            scripts/mp/objidpoolmanager::objective_playermask_hidefrom(vehicle.marker.objidnum, occupant);
         }
-        namespace_5a22b6f3a56f7e9b::objective_playermask_hidefrom(vehicle.marker.objidnum, player);
+        scripts/mp/objidpoolmanager::objective_playermask_hidefrom(vehicle.marker.objidnum, player);
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xccd
 // Size: 0x4f
 function private little_bird_enterend(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (istrue(data.success)) {
-        player namespace_5078ee98abb32db9::parachutecleanup();
+        player scripts/cp_mp/parachute::parachutecleanup();
         little_bird_enterendinternal(vehicle, seatid, var_fc7c7a874b43a31a, player, data);
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xd23
 // Size: 0x94
@@ -283,7 +283,7 @@ function private little_bird_enterendinternal(vehicle, seatid, var_fc7c7a874b43a
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xdbe
 // Size: 0x47
@@ -293,7 +293,7 @@ function private little_bird_exitend(vehicle, seatid, var_7558f98f3236963d, play
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xe0c
 // Size: 0xd2
@@ -310,20 +310,20 @@ function private little_bird_exitendinternal(vehicle, seatid, var_7558f98f323696
                 player suicide();
             }
         } else if (istrue(vehicle.israllypointvehicle)) {
-            namespace_5a22b6f3a56f7e9b::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
+            scripts/mp/objidpoolmanager::objective_playermask_addshowplayer(vehicle.marker.objidnum, player);
         }
     }
     vehomn_updateomnvarsonseatexit(vehicle, seatid, var_7558f98f3236963d, player);
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xee5
 // Size: 0xe1
 function private vehicle_handleflarerecharge() {
     var_e9227a816ed1d671 = 1.05;
     self endon("death");
-    while (1) {
+    while (true) {
         driver = vehicle_occupancy_getdriver(self);
         if (self.flareready) {
             if (isdefined(driver)) {
@@ -349,7 +349,7 @@ function private vehicle_handleflarerecharge() {
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xfcd
 // Size: 0x209
@@ -360,7 +360,7 @@ function private vehicle_handleflarefire(player) {
     player endon("vehicle_exit");
     player notifyonplayercommand("shoot_flare", "+attack");
     vehomn_setammo("little_bird", "flares", ter_op(self.flareready, 1, 0), player);
-    while (1) {
+    while (true) {
         player waittill("shoot_flare");
         if (!self.flareready) {
             self playsoundtoplayer("lbravo_noflares_warning", player);
@@ -395,11 +395,11 @@ function private vehicle_handleflarefire(player) {
     }
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x11dd
 // Size: 0x66
-function function_1ebf8c6ee94601db(position, normal, normalspeed, damage, debugstring) {
+function collision_debug(position, normal, normalspeed, damage, debugstring) {
     /#
         if (!getdvarint(@"hash_e1b0993f344fdd75", 0)) {
             return;
@@ -411,7 +411,7 @@ function function_1ebf8c6ee94601db(position, normal, normalspeed, damage, debugs
     #/
 }
 
-// Namespace namespace_e5887d7e575ef250/namespace_d8c2d739478db8bb
+// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x124a
 // Size: 0x1b0
@@ -428,7 +428,7 @@ function function_6ae603e37e7a394f(position, normal, normalspeed, damage, debugs
         up = anglestoup(self.angles);
         org = self.origin;
         ang = self.angles;
-        while (1) {
+        while (true) {
             if (damage > 0) {
                 color = (1, 0, 0);
             } else {

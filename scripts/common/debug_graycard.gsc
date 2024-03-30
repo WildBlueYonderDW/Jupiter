@@ -2,13 +2,13 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 
-#namespace namespace_fd42327191633154;
+#namespace debug_graycard;
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x78
 // Size: 0xe2
-function init_graycard(var_8fbd94c423b673ec) {
+function init_graycard(handleplayerconnect) {
     /#
         setdevdvarifuninitialized(@"hash_a6381f8c58314102", "<unknown string>");
         setdevdvarifuninitialized(@"hash_1dfb6641a37c41f1", "<unknown string>");
@@ -24,16 +24,16 @@ function init_graycard(var_8fbd94c423b673ec) {
         if (!isdefined(level.debug)) {
             level.debug = spawnstruct();
         }
-        level.debug.var_b860ed6fc754953c = 0;
-        if (isdefined(var_8fbd94c423b673ec)) {
+        level.debug.graycard = 0;
+        if (isdefined(handleplayerconnect)) {
             thread onplayerconnect();
-        } else {
-            thread spplayerconnect();
+            return;
         }
+        thread spplayerconnect();
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x161
 // Size: 0x2c
@@ -46,7 +46,7 @@ function spplayerconnect() {
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x194
 // Size: 0x46
@@ -57,12 +57,12 @@ function onplayerconnect() {
     /#
         for (;;) {
             player = level waittill("<unknown string>");
-            player namespace_3c37cb17ade254d::add_frame_event(&debug_gray_card_mp);
+            player scripts/engine/utility::add_frame_event(&debug_gray_card_mp);
         }
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e1
 // Size: 0xf
@@ -72,7 +72,7 @@ function debug_gray_card_mp() {
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f7
 // Size: 0x1bf
@@ -82,15 +82,15 @@ function debug_gray_card(ismp) {
             ismp = 0;
         }
         if (getdvar(@"hash_a6381f8c58314102") == "<unknown string>") {
-            if (level.debug.var_b860ed6fc754953c != 1) {
+            if (level.debug.graycard != 1) {
                 remove_graycard_objects();
                 create_graycard_object();
-                level.debug.var_b860ed6fc754953c = 1;
+                level.debug.graycard = 1;
             }
             debug_graycard_buttons(ismp);
-        } else if (getdvar(@"hash_a6381f8c58314102") == "<unknown string>" && level.debug.var_b860ed6fc754953c != 0) {
+        } else if (getdvar(@"hash_a6381f8c58314102") == "<unknown string>" && level.debug.graycard != 0) {
             remove_graycard_objects();
-            level.debug.var_b860ed6fc754953c = 0;
+            level.debug.graycard = 0;
         }
         switch (getdvar(@"hash_1dfb6641a37c41f1")) {
         case #"hash_311010bc01bd3a0f":
@@ -123,7 +123,7 @@ function debug_gray_card(ismp) {
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bd
 // Size: 0xa2
@@ -140,7 +140,7 @@ function set_debug_models(model) {
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x466
 // Size: 0xaa
@@ -158,7 +158,7 @@ function remove_graycard_objects() {
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x517
 // Size: 0x75
@@ -167,13 +167,13 @@ function create_graycard_object() {
         self.var_56868152de824f45 = spawn_graycard();
         object = self.var_56868152de824f45;
         object.offset = 100;
-        object.var_bc76553194b8964a = object.offset;
-        object.var_ff9715c11af7c6ee = 1;
+        object.lastoffset = object.offset;
+        object.copy_released = 1;
         object.offsetangles = (0, 0, 0);
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x593
 // Size: 0x32
@@ -185,7 +185,7 @@ function spawn_graycard() {
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x27e
@@ -216,13 +216,13 @@ function debug_graycard_buttons(ismp) {
         if (self buttonpressed("<unknown string>")) {
             object.offsetangles = (0, 0, 0);
         }
-        if (object.var_ff9715c11af7c6ee) {
+        if (object.copy_released) {
             if (self buttonpressed("<unknown string>")) {
                 create_copy(object);
-                object.var_ff9715c11af7c6ee = 0;
+                object.copy_released = 0;
             }
         } else if (!self buttonpressed("<unknown string>")) {
-            object.var_ff9715c11af7c6ee = 1;
+            object.copy_released = 1;
         }
         if (object.offset > 1000) {
             object.offset = 1000;
@@ -235,31 +235,31 @@ function debug_graycard_buttons(ismp) {
         }
         object.origin = self geteye() + anglestoforward(self getplayerangles()) * object.offset;
         object.angles = combineangles(self getplayerangles(), object.offsetangles);
-        object.var_bc76553194b8964a = object.offset;
+        object.lastoffset = object.offset;
         if (!ismp) {
             object linkto(self);
         }
     #/
 }
 
-// Namespace namespace_fd42327191633154/namespace_8dabb6a882da0927
+// Namespace debug_graycard / scripts/common/debug_graycard
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x851
 // Size: 0x10e
 function create_copy(object) {
     /#
-        var_145013d32b5a222f = spawn_graycard();
-        var_145013d32b5a222f.origin = object.origin;
-        var_145013d32b5a222f.angles = object.angles;
+        copyobject = spawn_graycard();
+        copyobject.origin = object.origin;
+        copyobject.angles = object.angles;
         if (!isdefined(level.debug.var_286073a8108cd67f)) {
-            level.debug.var_286073a8108cd67f = [0:var_145013d32b5a222f];
-        } else {
-            if (level.debug.var_286073a8108cd67f.size > 50) {
-                level.debug.var_286073a8108cd67f[0] delete();
-                level.debug.var_286073a8108cd67f = array_removeundefined(level.debug.var_286073a8108cd67f);
-            }
-            level.debug.var_286073a8108cd67f[level.debug.var_286073a8108cd67f.size] = var_145013d32b5a222f;
+            level.debug.var_286073a8108cd67f = [copyobject];
+            return;
         }
+        if (level.debug.var_286073a8108cd67f.size > 50) {
+            level.debug.var_286073a8108cd67f[0] delete();
+            level.debug.var_286073a8108cd67f = array_removeundefined(level.debug.var_286073a8108cd67f);
+        }
+        level.debug.var_286073a8108cd67f[level.debug.var_286073a8108cd67f.size] = copyobject;
     #/
 }
 

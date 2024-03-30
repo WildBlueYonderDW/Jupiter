@@ -6,7 +6,7 @@
 
 #namespace namespace_b0ade278d3496f7;
 
-// Namespace namespace_b0ade278d3496f7/namespace_a5c3c313b4f6886a
+// Namespace namespace_b0ade278d3496f7 / namespace_a5c3c313b4f6886a
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x99
 // Size: 0x14
@@ -14,7 +14,7 @@ function main() {
     function_c0b3ddc9a6bdcc46("veh9_pickup_2014", &function_ef5d5f963f4b6c14);
 }
 
-// Namespace namespace_b0ade278d3496f7/namespace_a5c3c313b4f6886a
+// Namespace namespace_b0ade278d3496f7 / namespace_a5c3c313b4f6886a
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xb4
 // Size: 0x1e

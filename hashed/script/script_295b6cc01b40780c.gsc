@@ -12,11 +12,11 @@
 
 #namespace assault_drone_mp;
 
-// Namespace assault_drone_mp/namespace_7b540f1008fe7830
+// Namespace assault_drone_mp / namespace_7b540f1008fe7830
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x14
 function function_c260cd16a5c5a2d9() {
-    namespace_58a74e7d54b56e8d::registerkillstreak("assault_drone", &tryusehelperdronefromstruct);
+    scripts/mp/killstreaks/killstreaks::registerkillstreak("assault_drone", &tryusehelperdronefromstruct);
 }
 

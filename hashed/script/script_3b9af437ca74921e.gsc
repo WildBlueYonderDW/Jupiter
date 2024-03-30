@@ -7,73 +7,72 @@
 
 #namespace namespace_2711c9ad461eb709;
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x150
 // Size: 0x51
-function function_fe852f92145c24a6() {
+function inittask() {
     function_ac97a4f2ab8c2d53("movement", "tryAssignTask", &function_851152959e7c1c87);
-    function_ac97a4f2ab8c2d53("movement", "tryBindObjective", &trybindobjective);
-    namespace_71073fa38f11492::registerbrgametypefunc("onInfilJumpCompleted", &oninfiljumpcompleted);
-    namespace_71073fa38f11492::registerbrgametypefunc("onPlayerEnterVehicle", &onplayerentervehicle);
+    function_ac97a4f2ab8c2d53("movement", "tryBindObjective", &tryBindObjective);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("onInfilJumpCompleted", &onInfilJumpCompleted);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("onPlayerEnterVehicle", &onPlayerEnterVehicle);
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a8
 // Size: 0x15
-function function_851152959e7c1c87(var_17953215dd7c5f9b) {
-    thread function_4da8fcef740e954f(var_17953215dd7c5f9b);
+function function_851152959e7c1c87(taskinstance) {
+    thread function_4da8fcef740e954f(taskinstance);
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c4
 // Size: 0x101
-function function_4da8fcef740e954f(var_17953215dd7c5f9b) {
-    if (!isdefined(var_17953215dd7c5f9b.info.targetnum)) {
+function function_4da8fcef740e954f(taskinstance) {
+    if (!isdefined(taskinstance.info.targetnum)) {
         return;
     }
     level endon("game_ended");
-    var_17953215dd7c5f9b endon("task_end");
-    while (var_17953215dd7c5f9b.currentvalue < var_17953215dd7c5f9b.info.targetnum) {
-        foreach (player in level.teamdata[var_17953215dd7c5f9b.team]["players"]) {
-            isvalid = player function_17aae3fd2c16468(var_17953215dd7c5f9b);
+    taskinstance endon("task_end");
+    while (taskinstance.currentvalue < taskinstance.info.targetnum) {
+        foreach (player in level.teamdata[taskinstance.team]["players"]) {
+            isvalid = player function_17aae3fd2c16468(taskinstance);
             if (isvalid) {
-                var_ff65e066242c67b1 = function_fb5759bf8fc4e733(var_17953215dd7c5f9b, player);
-                function_89b8bce3baa45edc(var_17953215dd7c5f9b, var_ff65e066242c67b1);
-            } else {
-                player.var_7f4e080484f571f6 = undefined;
+                taskvalue = updateprogress(taskinstance, player);
+                function_89b8bce3baa45edc(taskinstance, taskvalue);
+                continue;
             }
+            player.var_7f4e080484f571f6 = undefined;
         }
         wait(0.1);
     }
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0x84
-function function_fb5759bf8fc4e733(var_17953215dd7c5f9b, player) {
+function updateprogress(taskinstance, player) {
     if (isdefined(player.var_7f4e080484f571f6)) {
-        var_3572671d48fb48ab = distance(player.origin, player.var_7f4e080484f571f6);
+        movedistance = distance(player.origin, player.var_7f4e080484f571f6);
         player.var_7f4e080484f571f6 = player.origin;
-        return (var_3572671d48fb48ab * 0.0254);
-    } else {
-        player.var_7f4e080484f571f6 = player.origin;
-        return 0;
+        return (movedistance * 0.0254);
     }
+    player.var_7f4e080484f571f6 = player.origin;
+    return 0;
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x357
 // Size: 0xb9
-function function_17aae3fd2c16468(var_17953215dd7c5f9b) {
+function function_17aae3fd2c16468(taskinstance) {
     if (!istrue(self.var_da8de99c15dd631e) && getdvarint(@"hash_25ad2925d6075c8f", 0) != 2) {
         return 0;
     }
-    switch (var_17953215dd7c5f9b.info.ref) {
+    switch (taskinstance.info.ref) {
     case #"hash_dbbbdac18e6db00d":
         return self isonground();
     case #"hash_a38d380991002d3b":
@@ -82,64 +81,64 @@ function function_17aae3fd2c16468(var_17953215dd7c5f9b) {
         return self isparachuting();
     default:
         /#
-            assertmsg("Champion task reference is not found: " + var_17953215dd7c5f9b.info.ref);
+            assertmsg("Champion task reference is not found: " + taskinstance.info.ref);
         #/
         break;
     }
     return 0;
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x418
 // Size: 0xe
-function oninfiljumpcompleted() {
+function onInfilJumpCompleted() {
     self.var_da8de99c15dd631e = 1;
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x42d
 // Size: 0x11e
-function onplayerentervehicle(vehicle, target) {
+function onPlayerEnterVehicle(vehicle, target) {
     if (!isdefined(vehicle)) {
         return;
     }
-    if (isdefined(target.var_b8abadd2c4d56fd8) && target.var_b8abadd2c4d56fd8.item namespace_dbbb37eb352edf96::isvehicle()) {
+    if (isdefined(target.objectiveinfo) && target.objectiveinfo.item scripts/common/vehicle::isvehicle()) {
         target removeobjectiveinfo();
     }
     foreach (player in level.players) {
-        var_600955d039b2fd47 = isdefined(player.var_b8abadd2c4d56fd8) && isdefined(player.var_b8abadd2c4d56fd8.item) && player.var_b8abadd2c4d56fd8.item == vehicle;
+        vehiclemarked = isdefined(player.objectiveinfo) && isdefined(player.objectiveinfo.item) && player.objectiveinfo.item == vehicle;
         var_618adc4f1f1c1872 = target.team != player.team;
-        if (var_600955d039b2fd47 && var_618adc4f1f1c1872) {
+        if (vehiclemarked && var_618adc4f1f1c1872) {
             player function_8fd21242a694aa72();
         }
     }
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x552
 // Size: 0x98
-function function_59c1dbdc2ad03ad6(var_17953215dd7c5f9b, vehicle) {
-    if (isdefined(vehicle.team) && vehicle.team != var_17953215dd7c5f9b.team && vehicle.team != "neutral") {
-        return 0;
+function function_59c1dbdc2ad03ad6(taskinstance, vehicle) {
+    if (isdefined(vehicle.team) && vehicle.team != taskinstance.team && vehicle.team != "neutral") {
+        return false;
     }
-    if (isdefined(vehicle.ownerteam) && vehicle.ownerteam != var_17953215dd7c5f9b.team && vehicle.ownerteam != "neutral") {
-        return 0;
+    if (isdefined(vehicle.ownerteam) && vehicle.ownerteam != taskinstance.team && vehicle.ownerteam != "neutral") {
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_2711c9ad461eb709/namespace_a7d5183f69e271b0
+// Namespace namespace_2711c9ad461eb709 / namespace_a7d5183f69e271b0
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5f2
 // Size: 0x63
-function trybindobjective(var_17953215dd7c5f9b) {
-    if (var_17953215dd7c5f9b.info.ref != "travelvehicle" || self function_793f941d7dff15ed()) {
+function tryBindObjective(taskinstance) {
+    if (taskinstance.info.ref != "travelvehicle" || self function_793f941d7dff15ed()) {
         return;
     }
     items = vehicle_getarrayinradius(self.origin, 50000);
-    function_2e55101ffd0d483c(var_17953215dd7c5f9b, items, &function_59c1dbdc2ad03ad6, 100, 1);
+    function_2e55101ffd0d483c(taskinstance, items, &function_59c1dbdc2ad03ad6, 100, 1);
 }
 

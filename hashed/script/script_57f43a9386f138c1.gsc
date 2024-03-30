@@ -16,7 +16,7 @@
 
 #namespace namespace_6e2885422769ed48;
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1aa
 // Size: 0x14
@@ -24,7 +24,7 @@ function main() {
     function_c0b3ddc9a6bdcc46("veh9_jltv_cargo", &function_70158a7bb3fb0665);
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x66
@@ -41,7 +41,7 @@ function private function_70158a7bb3fb0665() {
     function_917ec65924280ade();
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x232
 // Size: 0x70
@@ -53,7 +53,7 @@ function private function_917ec65924280ade() {
     var_e2818ad39a3341b4.rotationrefsbyseatandweapon["gunner"][function_ae5d72405e841a0a()] = 1;
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2a9
 // Size: 0x3b
@@ -65,45 +65,47 @@ function private function_ae5d72405e841a0a() {
     return "iw9_mg_jltv_mp";
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0x54
-function private function_247eed998b5b5c0b(spawndata, var_ee8da5624236dc89) {
-    vehicle = function_bba34cf920370ff4("veh9_jltv_cargo", spawndata, var_ee8da5624236dc89);
+function private function_247eed998b5b5c0b(spawndata, faildata) {
+    vehicle = function_bba34cf920370ff4("veh9_jltv_cargo", spawndata, faildata);
     turret = function_7ee2d23e7c9bfa52(vehicle, spawndata);
     vehicle_registerturret(vehicle, turret, makeweapon(function_ae5d72405e841a0a()));
     return vehicle;
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x348
 // Size: 0x88
 function private function_24dfb5aeadd19f3c(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (istrue(data.success)) {
         thread function_d7d50e8f657a7c25(vehicle, seatid, var_fc7c7a874b43a31a, player, data);
-    } else if (!istrue(data.playerdisconnect) && !istrue(data.playerdeath)) {
+        return;
+    }
+    if (!istrue(data.playerdisconnect) && !istrue(data.playerdeath)) {
         if (seatid == "gunner") {
             thread vehicle_occupancy_taketurret(player, vehicle, function_ae5d72405e841a0a(), data, 1);
         }
     }
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x3d7
 // Size: 0x82
 function private function_d7d50e8f657a7c25(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (seatid == "gunner") {
         level thread vehicle_occupancy_disablefirefortime(player, ter_op(istrue(vehicle.var_ecc491f42aaceaf4), 850, 2200));
-        player thread namespace_1fbd40990ee60ede::vehicle_occupancy_giveturret(player, vehicle, function_ae5d72405e841a0a());
+        player thread scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_giveturret(player, vehicle, function_ae5d72405e841a0a());
         vehicle.var_ecc491f42aaceaf4 = 1;
     }
     vehomn_updateomnvarsonseatenter(vehicle, var_fc7c7a874b43a31a, seatid, player);
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x460
 // Size: 0x47
@@ -113,7 +115,7 @@ function private function_c9a25e0722ada0f8(vehicle, seatid, var_7558f98f3236963d
     }
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4ae
 // Size: 0x12e
@@ -146,7 +148,7 @@ function private function_41e2ee710223cf99(vehicle, seatid, var_7558f98f3236963d
     vehomn_updateomnvarsonseatexit(vehicle, seatid, var_7558f98f3236963d, player);
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5e3
 // Size: 0x4f
@@ -156,7 +158,7 @@ function private function_c9e01ef8817d753c(vehicle, var_9de41f2ee77c33ba, var_3f
     }
 }
 
-// Namespace namespace_6e2885422769ed48/namespace_124a01010aeb4093
+// Namespace namespace_6e2885422769ed48 / namespace_124a01010aeb4093
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x639
 // Size: 0xbf

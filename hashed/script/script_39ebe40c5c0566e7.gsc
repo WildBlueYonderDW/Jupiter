@@ -1,7 +1,7 @@
 // mwiii decomp prototype
-#namespace namespace_2aac6f2ecc3a310f;
+#namespace perk_shared;
 
-// Namespace namespace_2aac6f2ecc3a310f/namespace_475c6252a691eb85
+// Namespace perk_shared / namespace_475c6252a691eb85
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x68
 // Size: 0x2c

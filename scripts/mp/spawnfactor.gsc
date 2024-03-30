@@ -1,8 +1,8 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\values.gsc;
+#using scripts\common\callbacks.gsc;
 #using scripts\mp\gameobjects.gsc;
 #using scripts\mp\utility\game.gsc;
 #using scripts\mp\utility\player.gsc;
@@ -15,9 +15,9 @@
 #using scripts\mp\spawnlogic.gsc;
 #using script_d17503f56b92539;
 
-#namespace namespace_164d533d51098167;
+#namespace spawnfactor;
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x805
 // Size: 0x386
@@ -48,28 +48,28 @@ function init_spawn_factors() {
     registerfactor("preferOccupiedLanes", undefined, 0, undefined);
     registerfactor("preferToBalanceLanes", undefined, 0, undefined);
     registerfactor("avoidClosestEnemy", undefined, 0, undefined);
-    registerfactor("scriptOnlyTest", &scriptonlytest, 1, [0:"test"]);
-    registerfactor("avoidClosestEnemyByDistance", &avoidclosestenemybydistance, 1, [0:"closestEnemyInfluenceDistSq"]);
-    registerfactor("preferNearSinglePoint", &prefernearsinglepoint, 1, [0:"singlePointPos", 1:"minDistToSinglePointSq", 2:"maxDistToSinglePointSq", 3:"distRangeToSinglePointSq"]);
-    registerfactor("avoidCurrentSpawnTraps", &avoidcurrentspawntraps, 1, undefined);
-    registerfactor("preferDomPoints", &preferdompoints, 1, [0:"preferredDomPoints", 1:"secondaryDomPoints"]);
-    registerfactor("preferShortestDistToZone", &prefershortestdisttozone, 1, [0:#"hash_80b230f7f3b6e958", 1:#"hash_ff12ea926c094dde"]);
-    registerfactor("avoidCloseToZone", &avoidclosetozone, 1, [0:#"hash_80b230f7f3b6e958", 1:#"hash_ccf425b826e8654b"]);
-    registerfactor("preferClosePoints", &preferclosepoints, 1, [0:"closestPoints"]);
-    registerfactor("avoidRugbyOffsides", &avoidrugbyoffsides, 1, [0:"juggPos", 1:"rugbyFieldDir2D"]);
+    registerfactor("scriptOnlyTest", &scriptonlytest, 1, ["test"]);
+    registerfactor("avoidClosestEnemyByDistance", &avoidclosestenemybydistance, 1, ["closestEnemyInfluenceDistSq"]);
+    registerfactor("preferNearSinglePoint", &prefernearsinglepoint, 1, ["singlePointPos", "minDistToSinglePointSq", "maxDistToSinglePointSq", "distRangeToSinglePointSq"]);
+    registerfactor("avoidCurrentSpawnTraps", &avoidCurrentSpawnTraps, 1, undefined);
+    registerfactor("preferDomPoints", &preferdompoints, 1, ["preferredDomPoints", "secondaryDomPoints"]);
+    registerfactor("preferShortestDistToZone", &preferShortestDistToZone, 1, [#"hash_80b230f7f3b6e958", #"hash_ff12ea926c094dde"]);
+    registerfactor("avoidCloseToZone", &avoidCloseToZone, 1, [#"hash_80b230f7f3b6e958", #"hash_ccf425b826e8654b"]);
+    registerfactor("preferClosePoints", &preferclosepoints, 1, ["closestPoints"]);
+    registerfactor("avoidRugbyOffsides", &avoidrugbyoffsides, 1, ["juggPos", "rugbyFieldDir2D"]);
     registerfactor("oneUseSpawns", &oneusespawns, 1, undefined);
-    registerfactor("avoidCloseToDefenderFlag", &avoidclosetodefenderflag, 1, [0:"activeCarrierPosition", 1:"defenderFlagPosition", 2:"avoidDefenderFlagDeadZoneDistSq"]);
-    registerfactor("avoidCloseToDefenderFlagSpawn", &avoidclosetodefenderflagspawn, 1, [0:"avoidDefenderFlagDeadZoneDistSq"]);
-    registerfactor("avoidFrontlineOffsides", &avoidfrontlineoffsides, 1, undefined);
-    registerfactor("preferOptimalFrontlineDist", &preferoptimalfrontlinedist, 1, undefined);
-    registerfactor("preferUnoccupiedLanes", &preferunoccupiedlanes, 1, undefined);
+    registerfactor("avoidCloseToDefenderFlag", &avoidclosetodefenderflag, 1, ["activeCarrierPosition", "defenderFlagPosition", "avoidDefenderFlagDeadZoneDistSq"]);
+    registerfactor("avoidCloseToDefenderFlagSpawn", &avoidclosetodefenderflagspawn, 1, ["avoidDefenderFlagDeadZoneDistSq"]);
+    registerfactor("avoidFrontlineOffsides", &avoidFrontlineOffsides, 1, undefined);
+    registerfactor("preferOptimalFrontlineDist", &preferOptimalFrontlineDist, 1, undefined);
+    registerfactor("preferUnoccupiedLanes", &preferUnoccupiedLanes, 1, undefined);
     initfrontline();
     callback::add("player_spawned", &on_player_spawned);
     callback::add("player_damaged", &on_player_damaged);
     callback::add("player_death", &on_player_death);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x6f
@@ -85,133 +85,133 @@ function function_28565316737536aa() {
     function_9c933a291dda6e8e("scriptCriticalFactor");
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc08
 // Size: 0xbc
-function registerfactor(var_7be5a2e10a013091, var_a4e8f07b48bde65e, isscriptonly, paramreflist) {
+function registerfactor(factorname, factorfunction, isscriptonly, paramreflist) {
     if (!isdefined(level.spawnglobals.factors)) {
         level.spawnglobals.factors = [];
     }
     /#
-        assertex(!isfactorregistered(var_7be5a2e10a013091), "Attempting to register spawn factor twice: "" + var_7be5a2e10a013091 + """);
+        assertex(!isfactorregistered(factorname), "Attempting to register spawn factor twice: "" + factorname + """);
     #/
-    var_36247ced4a30872 = spawnstruct();
-    level.spawnglobals.factors[var_7be5a2e10a013091] = var_36247ced4a30872;
-    var_36247ced4a30872.function = var_a4e8f07b48bde65e;
-    var_36247ced4a30872.paramreflist = paramreflist;
-    var_36247ced4a30872.isscriptonly = isscriptonly;
+    factorinfo = spawnstruct();
+    level.spawnglobals.factors[factorname] = factorinfo;
+    factorinfo.function = factorfunction;
+    factorinfo.paramreflist = paramreflist;
+    factorinfo.isscriptonly = isscriptonly;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xccb
 // Size: 0x6e
-function function_9c933a291dda6e8e(var_7be5a2e10a013091) {
-    if (!isdefined(level.spawnglobals.var_a9e770068a1e3964)) {
-        level.spawnglobals.var_a9e770068a1e3964 = [];
+function function_9c933a291dda6e8e(factorname) {
+    if (!isdefined(level.spawnglobals.criticalfactors)) {
+        level.spawnglobals.criticalfactors = [];
     }
     /#
-        assertex(!function_c0ba4b08188a6d33(var_7be5a2e10a013091), "Attempting to register spawn critical factor twice: "" + var_7be5a2e10a013091 + """);
+        assertex(!function_c0ba4b08188a6d33(factorname), "Attempting to register spawn critical factor twice: "" + factorname + """);
     #/
-    level.spawnglobals.var_a9e770068a1e3964[var_7be5a2e10a013091] = 1;
+    level.spawnglobals.criticalfactors[factorname] = 1;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd40
 // Size: 0x22
-function isfactorregistered(var_7be5a2e10a013091) {
-    return isdefined(level.spawnglobals.factors[var_7be5a2e10a013091]);
+function isfactorregistered(factorname) {
+    return isdefined(level.spawnglobals.factors[factorname]);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd6a
 // Size: 0x22
-function function_c0ba4b08188a6d33(var_7be5a2e10a013091) {
-    return isdefined(level.spawnglobals.var_a9e770068a1e3964[var_7be5a2e10a013091]);
+function function_c0ba4b08188a6d33(factorname) {
+    return isdefined(level.spawnglobals.criticalfactors[factorname]);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd94
 // Size: 0x48
-function isfactorscriptonly(var_7be5a2e10a013091) {
+function isfactorscriptonly(factorname) {
     /#
-        assertex(isfactorregistered(var_7be5a2e10a013091), "isFactorScriptOnly() called for unknown spawn factor "" + var_7be5a2e10a013091 + """);
+        assertex(isfactorregistered(factorname), "isFactorScriptOnly() called for unknown spawn factor "" + factorname + """);
     #/
-    return level.spawnglobals.factors[var_7be5a2e10a013091].isscriptonly;
+    return level.spawnglobals.factors[factorname].isscriptonly;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xde4
 // Size: 0x48
-function getfactorfunction(var_7be5a2e10a013091) {
+function getfactorfunction(factorname) {
     /#
-        assertex(isfactorregistered(var_7be5a2e10a013091), "getFactorFunction() called for unknown spawn factor "" + var_7be5a2e10a013091 + """);
+        assertex(isfactorregistered(factorname), "getFactorFunction() called for unknown spawn factor "" + factorname + """);
     #/
-    return level.spawnglobals.factors[var_7be5a2e10a013091].function;
+    return level.spawnglobals.factors[factorname].function;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe34
 // Size: 0x48
-function getfactorparamreflist(var_7be5a2e10a013091) {
+function getfactorparamreflist(factorname) {
     /#
-        assertex(isfactorregistered(var_7be5a2e10a013091), "getFactorParamRefList() called for unknown spawn factor "" + var_7be5a2e10a013091 + """);
+        assertex(isfactorregistered(factorname), "getFactorParamRefList() called for unknown spawn factor "" + factorname + """);
     #/
-    return level.spawnglobals.factors[var_7be5a2e10a013091].paramreflist;
+    return level.spawnglobals.factors[factorname].paramreflist;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe84
 // Size: 0x21f
-function calculatefactorscore(spawnpoint, var_7be5a2e10a013091, weight) {
-    if (!isfactorregistered(var_7be5a2e10a013091)) {
+function calculatefactorscore(spawnpoint, factorname, weight) {
+    if (!isfactorregistered(factorname)) {
         return 0;
     }
-    var_a4e8f07b48bde65e = getfactorfunction(var_7be5a2e10a013091);
-    var_ff2d79932540d96c = getfactorparamreflist(var_7be5a2e10a013091);
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
+    factorfunction = getfactorfunction(factorname);
+    var_ff2d79932540d96c = getfactorparamreflist(factorname);
+    spawncontext = level.spawnglobals.activespawncontext;
     if (isdefined(var_ff2d79932540d96c)) {
-        if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams)) {
+        if (!isdefined(spawncontext.factorparams)) {
             /#
-                assertmsg("Spawn Factor "" + var_7be5a2e10a013091 + "" expects a parameter but no parameters were passed to getSpawnpoint()");
+                assertmsg("Spawn Factor "" + factorname + "" expects a parameter but no parameters were passed to getSpawnpoint()");
             #/
         }
         /#
-            var_6797b39a58eb7b6e = [];
-            foreach (var_963149f1c7d80f1f in var_ff2d79932540d96c) {
-                foreach (var_8437e2a35e8d84c9, var_19b8bfffd5a5cbad in var_4db3cfd2ea2d7b8f.factorparams) {
-                    if (var_8437e2a35e8d84c9 == var_963149f1c7d80f1f) {
-                        var_6797b39a58eb7b6e[var_963149f1c7d80f1f] = var_19b8bfffd5a5cbad;
+            outputparams = [];
+            foreach (paramref in var_ff2d79932540d96c) {
+                foreach (var_8437e2a35e8d84c9, var_19b8bfffd5a5cbad in spawncontext.factorparams) {
+                    if (var_8437e2a35e8d84c9 == paramref) {
+                        outputparams[paramref] = var_19b8bfffd5a5cbad;
                         break;
                     }
                 }
                 /#
-                    assertex(isdefined(var_6797b39a58eb7b6e[var_963149f1c7d80f1f]), "preferNearSinglePoint" + var_7be5a2e10a013091 + "avoidDefenderFlagDeadZoneDistSq" + var_963149f1c7d80f1f + "locale");
+                    assertex(isdefined(outputparams[paramref]), "preferNearSinglePoint" + factorname + "avoidDefenderFlagDeadZoneDistSq" + paramref + "locale");
                 #/
             }
         #/
     }
-    score = [[ var_a4e8f07b48bde65e ]](spawnpoint);
+    score = [[ factorfunction ]](spawnpoint);
     score = clamp(score, 0, 100);
     score = score * weight;
     spawnpoint.totalpossiblescore = spawnpoint.totalpossiblescore + 100 * weight;
     spawnpoint.lastscore[self.team] = spawnpoint.lastscore[self.team] + score;
     spawnpoint.totalscore = spawnpoint.totalscore + score;
     /#
-        spawnpoint.var_54cd879162b8b086[var_7be5a2e10a013091] = score;
-        spawnpoint.var_6531ac2ff1a37628[var_7be5a2e10a013091] = 100 * weight;
+        spawnpoint.debugscoredata[factorname] = score;
+        spawnpoint.var_6531ac2ff1a37628[factorname] = 100 * weight;
     #/
     return score;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10ab
 // Size: 0x5b
@@ -226,7 +226,7 @@ function critical_factor(var_e2cadc5bf4175e47, spawnpoint) {
     return scorefactor;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x110e
 // Size: 0x87
@@ -242,7 +242,7 @@ function avoidcarepackages(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x119d
 // Size: 0x114
@@ -262,7 +262,7 @@ function avoidbradleys(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x12b9
 // Size: 0xa6
@@ -278,7 +278,7 @@ function function_5fdeed44e6029789(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1367
 // Size: 0xe1
@@ -298,30 +298,28 @@ function function_63d3482ba43b656c(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1450
 // Size: 0x94
 function isexplosivedangeroustoplayer(player) {
     if (!level.teambased || level.friendlyfire || !isdefined(player.team)) {
         return 1;
-    } else {
-        var_567fbb57b0fbcaf9 = undefined;
-        if (isdefined(self.owner)) {
-            if (player == self.owner) {
-                return 1;
-            }
-            var_567fbb57b0fbcaf9 = self.owner.team;
-        }
-        if (isdefined(var_567fbb57b0fbcaf9)) {
-            return (var_567fbb57b0fbcaf9 != player.team);
-        } else {
+    }
+    explosiveteam = undefined;
+    if (isdefined(self.owner)) {
+        if (player == self.owner) {
             return 1;
         }
+        explosiveteam = self.owner.team;
     }
+    if (isdefined(explosiveteam)) {
+        return (explosiveteam != player.team);
+    }
+    return 1;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14eb
 // Size: 0x67
@@ -339,7 +337,7 @@ function function_5e47ef2aeed10cf1(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x155a
 // Size: 0x67
@@ -357,22 +355,22 @@ function function_22b490a6df990a49(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15c9
 // Size: 0x12c
 function function_4546108b3957a698(spawnpoint) {
-    var_b0c33d224b825287 = [];
+    enemyteams = [];
     var_ad5a67fe096d8b1 = [];
     /#
         assert(spawnpoint.hasdistdata);
     #/
     if (level.teambased) {
-        var_b0c33d224b825287[0] = getenemyteams(self.team)[0];
+        enemyteams[0] = getenemyteams(self.team)[0];
     } else {
-        var_b0c33d224b825287[var_b0c33d224b825287.size] = "all";
+        enemyteams[enemyteams.size] = "all";
     }
-    foreach (enemyteam in var_b0c33d224b825287) {
+    foreach (enemyteam in enemyteams) {
         if (spawnpoint.totalplayers[enemyteam] == 0) {
             continue;
         }
@@ -389,7 +387,7 @@ function function_4546108b3957a698(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x16fd
 // Size: 0xe
@@ -397,32 +395,32 @@ function avoidtelefrag(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1713
 // Size: 0x2c
-function function_968c2af9d13680e3(spawnpoint) {
+function avoidsamespawn_legacy(spawnpoint) {
     if (isdefined(self.lastspawnpoint) && self.lastspawnpoint == spawnpoint) {
         return 0;
     }
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1747
 // Size: 0x78
 function function_bcea4ae71a95bddd(spawnpoint) {
     if (isdefined(self.team) && isdefined(spawnpoint.lastspawnteam) && (!level.teambased || spawnpoint.lastspawnteam != self.team)) {
-        var_2ffc2ebc035d0c54 = spawnpoint.lastspawntime + 500;
-        if (gettime() < var_2ffc2ebc035d0c54) {
+        allowspawntime = spawnpoint.lastspawntime + 500;
+        if (gettime() < allowspawntime) {
             return 0;
         }
     }
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17c7
 // Size: 0xab
@@ -439,7 +437,7 @@ function function_442824d1095bc118(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x187a
 // Size: 0x68
@@ -455,7 +453,7 @@ function function_45dd31709c43b20a(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18ea
 // Size: 0x5
@@ -463,7 +461,7 @@ function function_11609ea550ebe0fa() {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x18f7
 // Size: 0x63
@@ -475,11 +473,11 @@ function function_97e260aa456c2f73(spawnpoint) {
     if (distsq > 810000) {
         return 100;
     }
-    var_6dca750cc7c96662 = distsq / 810000;
-    return var_6dca750cc7c96662 * 100;
+    percentdist = distsq / 810000;
+    return percentdist * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1962
 // Size: 0x9b
@@ -494,11 +492,11 @@ function function_679bed421f1818e4(spawnpoint) {
     if (distsq > 810000) {
         return 100;
     }
-    var_6dca750cc7c96662 = distsq / 810000;
-    return var_6dca750cc7c96662 * 100;
+    percentdist = distsq / 810000;
+    return percentdist * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a05
 // Size: 0x329
@@ -507,7 +505,7 @@ function initfrontline() {
     if (getdvarint(@"hash_8f796eb7d29945d9", 0) == 1) {
         return;
     }
-    var_35f37345312ece32 = [];
+    anchorents = [];
     yaw = getdvarfloat(@"hash_f0fc1446b9ab706d", -1);
     if (yaw != -1) {
         frontlineinfo.usinganchors = 1;
@@ -518,7 +516,9 @@ function initfrontline() {
         } else {
             frontlineinfo.primaryanchorpos = (0, 0, 0);
         }
-    } else if (istrue(level.testtdmanywhere)) {
+        return;
+    }
+    if (istrue(level.testtdmanywhere)) {
         y = getdvarfloat(@"hash_aa7892bb1de8f27d", randomfloatrange(0, 359));
         frontlineinfo.usinganchors = 1;
         frontlineinfo.anchordir = anglestoforward((0, y, 0));
@@ -527,38 +527,38 @@ function initfrontline() {
             frontlineinfo.primaryanchorpos = (level.mapcenter[0], level.mapcenter[1], 0);
         }
         level.tdmanywherefrontline = frontlineinfo;
-    } else {
-        var_35f37345312ece32 = getentarray("mp_frontline_anchor", "classname");
-        if (isdefined(namespace_36f464722d326bbe::getlocaleid())) {
-            var_b5c65d27dfc53f84 = [];
-            foreach (ent in var_35f37345312ece32) {
-                if (isdefined(ent.script_noteworthy) && ent.script_noteworthy == level.localeid) {
-                    var_b5c65d27dfc53f84[var_b5c65d27dfc53f84.size] = ent;
-                } else {
-                    ent delete();
-                }
+        return;
+    }
+    anchorents = getentarray("mp_frontline_anchor", "classname");
+    if (isdefined(scripts/cp_mp/utility/game_utility::getlocaleid())) {
+        filteredents = [];
+        foreach (ent in anchorents) {
+            if (isdefined(ent.script_noteworthy) && ent.script_noteworthy == level.localeid) {
+                filteredents[filteredents.size] = ent;
+                continue;
             }
-            var_35f37345312ece32 = var_b5c65d27dfc53f84;
-        } else if (var_35f37345312ece32.size != 1) {
-            var_2a427a24184b5b49 = [];
-            foreach (ent in var_35f37345312ece32) {
-                if (!isdefined(ent.script_noteworthy) || !issubstr(ent.script_noteworthy, "locale")) {
-                    var_2a427a24184b5b49[var_2a427a24184b5b49.size] = ent;
-                } else {
-                    ent delete();
-                }
+            ent delete();
+        }
+        anchorents = filteredents;
+    } else if (anchorents.size != 1) {
+        var_2a427a24184b5b49 = [];
+        foreach (ent in anchorents) {
+            if (!isdefined(ent.script_noteworthy) || !issubstr(ent.script_noteworthy, "locale")) {
+                var_2a427a24184b5b49[var_2a427a24184b5b49.size] = ent;
+                continue;
             }
-            var_35f37345312ece32 = var_2a427a24184b5b49;
+            ent delete();
         }
-        if (var_35f37345312ece32.size != 0) {
-            frontlineinfo.usinganchors = 1;
-            frontlineinfo.anchordir = anglestoforward(var_35f37345312ece32[0].angles);
-            frontlineinfo.primaryanchorpos = (var_35f37345312ece32[0].origin[0], var_35f37345312ece32[0].origin[1], 0);
-        }
+        anchorents = var_2a427a24184b5b49;
+    }
+    if (anchorents.size != 0) {
+        frontlineinfo.usinganchors = 1;
+        frontlineinfo.anchordir = anglestoforward(anchorents[0].angles);
+        frontlineinfo.primaryanchorpos = (anchorents[0].origin[0], anchorents[0].origin[1], 0);
     }
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d35
 // Size: 0x25
@@ -570,13 +570,13 @@ function updatefrontline(team) {
     updatefrontlinedebug();
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d61
 // Size: 0x3f7
 function updatefrontlineposition() {
     if (!currentspawnlogicsupportsfrontline()) {
-        return 0;
+        return false;
     }
     frontlineinfo = getglobalfrontlineinfo();
     curtime = gettime();
@@ -587,18 +587,18 @@ function updatefrontlineposition() {
     } else {
         frontlineinfo.downtime = frontlineinfo.downtime + frontlineinfo.lastupdatetimedelta;
     }
-    var_f4c2de4526f2e59d = (curtime - frontlineinfo.lastupdatetime) / 1000;
+    updatetimedelta = (curtime - frontlineinfo.lastupdatetime) / 1000;
     frontlineinfo.lastupdatetime = curtime;
-    frontlineinfo.lastupdatetimedelta = var_f4c2de4526f2e59d;
+    frontlineinfo.lastupdatetimedelta = updatetimedelta;
     alliesaverage = getfrontlineteamcenter("allies");
     if (!isdefined(alliesaverage)) {
-        return 0;
+        return false;
     }
     alliesaverage = (alliesaverage[0], alliesaverage[1], 0);
     frontlineinfo.alliesaverage = alliesaverage;
     axisaverage = getfrontlineteamcenter("axis");
     if (!isdefined(axisaverage)) {
-        return 0;
+        return false;
     }
     axisaverage = (axisaverage[0], axisaverage[1], 0);
     frontlineinfo.axisaverage = axisaverage;
@@ -624,27 +624,27 @@ function updatefrontlineposition() {
         var_3c847766177e2a2c = axisaverage - alliesaverage;
         var_dd247cc43dd18627 = vectortoyaw(var_3c847766177e2a2c);
         frontlineinfo.teamdiffyaw = var_dd247cc43dd18627;
-        var_24f96794cbb5cf52 = alliesaverage + var_3c847766177e2a2c * 0.5;
-        frontlineinfo.midpoint = var_24f96794cbb5cf52;
+        idealmidpoint = alliesaverage + var_3c847766177e2a2c * 0.5;
+        frontlineinfo.midpoint = idealmidpoint;
     }
     var_f237c6bc0ca5c62c = anglestoforward((0, frontlineinfo.teamdiffyaw, 0));
     spawnpoints = level.spawnpoints;
-    spawnpoints = namespace_90f75d3fdf89a43e::checkdynamicspawns(spawnpoints);
+    spawnpoints = scripts/mp/spawnscoring::checkdynamicspawns(spawnpoints);
     foreach (spawnpoint in spawnpoints) {
         var_7e2df766bce34b1 = frontlineinfo.midpoint - spawnpoint.origin;
-        var_4d2d882316198c95 = vectordot(var_7e2df766bce34b1, var_f237c6bc0ca5c62c);
-        spawnpoint.frontlineteam = ter_op(var_4d2d882316198c95 > 0, "allies", "axis");
+        dotvalue = vectordot(var_7e2df766bce34b1, var_f237c6bc0ca5c62c);
+        spawnpoint.frontlineteam = ter_op(dotvalue > 0, "allies", "axis");
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2160
 // Size: 0x247
 function updatefrontlinedebug() {
     var_d8cce60415de6332 = isdefined(level.matchrecording_logevent) && isdefined(level.matchrecording_generateid);
-    analyticslogenabled = namespace_bd0162aedd8c8594::analyticslogenabled();
+    analyticslogenabled = scripts/mp/analyticslog::analyticslogenabled();
     if (!var_d8cce60415de6332 && !analyticslogenabled) {
         return;
     }
@@ -657,9 +657,9 @@ function updatefrontlinedebug() {
     if (!frontlineinfo.isactive["allies"] && !frontlineinfo.isactive["axis"]) {
         return;
     }
-    var_499f398b1ca169d3 = (frontlineinfo.midpoint[0], frontlineinfo.midpoint[1], level.mapcenter[2]);
+    drawmidpoint = (frontlineinfo.midpoint[0], frontlineinfo.midpoint[1], level.mapcenter[2]);
     var_4e8e12d3c7a4d029 = anglestoright((0, frontlineinfo.teamdiffyaw, 0));
-    logfrontlinetomatchrecording(var_499f398b1ca169d3, var_4e8e12d3c7a4d029, frontlineinfo.isactive["allies"], frontlineinfo.isactive["axis"]);
+    logfrontlinetomatchrecording(drawmidpoint, var_4e8e12d3c7a4d029, frontlineinfo.isactive["allies"], frontlineinfo.isactive["axis"]);
     if (isdefined(level.matchrecording_logevent)) {
         axisaverage = ter_op(frontlineinfo.isactive["axis"], frontlineinfo.axisaverage, (10000, 10000, 10000));
         [[ level.matchrecording_logevent ]](frontlineinfo.logids["axisCenter"], "axis", "ANCHOR", axisaverage[0], axisaverage[1], gettime());
@@ -668,7 +668,7 @@ function updatefrontlinedebug() {
     }
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23ae
 // Size: 0xd9
@@ -679,17 +679,17 @@ function logfrontlinetomatchrecording(midpoint, direction, var_f3c3c5c8db76b4f0,
         if (!isdefined(level.matchrecording_frontlinelogid)) {
             level.matchrecording_frontlinelogid = [[ level.matchrecording_generateid ]]();
         }
-        var_1cc0a856dbf7d44e = undefined;
+        frontlinetag = undefined;
         if (var_f3c3c5c8db76b4f0 && var_dbbd5b5e90b7c2eb) {
-            var_1cc0a856dbf7d44e = "FRONT_LINE";
+            frontlinetag = "FRONT_LINE";
         } else {
-            var_1cc0a856dbf7d44e = ter_op(var_f3c3c5c8db76b4f0, "FRONT_LINE_ALLIES", "FRONT_LINE_AXIS");
+            frontlinetag = ter_op(var_f3c3c5c8db76b4f0, "FRONT_LINE_ALLIES", "FRONT_LINE_AXIS");
         }
-        [[ level.matchrecording_logevent ]](level.matchrecording_frontlinelogid, "allies", var_1cc0a856dbf7d44e, var_26eef3c170b9e66[0], var_26eef3c170b9e66[1], gettime(), undefined, var_26eee3c170b9c33[0], var_26eee3c170b9c33[1]);
+        [[ level.matchrecording_logevent ]](level.matchrecording_frontlinelogid, "allies", frontlinetag, var_26eef3c170b9e66[0], var_26eef3c170b9e66[1], gettime(), undefined, var_26eee3c170b9c33[0], var_26eee3c170b9c33[1]);
     }
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x248e
 // Size: 0xbe
@@ -712,11 +712,11 @@ function getfrontlineteamcenter(team) {
     if (players.size == 0) {
         return undefined;
     }
-    var_8fb9617f0786bca7 = getaverageorigin(players);
-    return var_8fb9617f0786bca7;
+    playersorigin = getaverageorigin(players);
+    return playersorigin;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2554
 // Size: 0x1c6
@@ -736,7 +736,7 @@ function runfrontlinespawntrapchecks(team) {
     enemyteam = getotherteam(team)[0];
     var_7efd0c35c23e92b4 = 0;
     spawnpoints = level.spawnpoints;
-    spawnpoints = namespace_90f75d3fdf89a43e::checkdynamicspawns(spawnpoints);
+    spawnpoints = scripts/mp/spawnscoring::checkdynamicspawns(spawnpoints);
     foreach (spawnpoint in spawnpoints) {
         if (!isdefined(spawnpoint.frontlineteam) || spawnpoint.frontlineteam != team) {
             continue;
@@ -759,7 +759,7 @@ function runfrontlinespawntrapchecks(team) {
     }
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2721
 // Size: 0x2b
@@ -767,7 +767,7 @@ function currentspawnlogicsupportsfrontline() {
     return istrue(level.spawnglobals.frontlinelogictypes[level.spawnglobals.activespawnlogic]);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2754
 // Size: 0xce
@@ -785,7 +785,7 @@ function getglobalfrontlineinfo() {
     return level.frontlineinfo;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x282a
 // Size: 0xaf
@@ -799,11 +799,11 @@ function function_847f7e218feb35bb(spawnpoint) {
     allyaveragedist = spawnpoint.distsumsquared[self.team] / spawnpoint.totalplayers[self.team];
     allyaveragedist = min(allyaveragedist, 3240000);
     spawnpoint.analytics.allyaveragedist = allyaveragedist;
-    var_b64b2f018346f72a = 1 - allyaveragedist / 3240000;
-    return var_b64b2f018346f72a * 100;
+    scoringpercentage = 1 - allyaveragedist / 3240000;
+    return scoringpercentage * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x28e1
 // Size: 0x63
@@ -811,27 +811,27 @@ function function_e308442afd51b334(spawnpoint) {
     /#
         assert(spawnpoint.hasdistdata);
     #/
-    var_a924b793b93423f3 = min(spawnpoint.mindistsquared[self.team], 3240000);
-    var_b64b2f018346f72a = 1 - var_a924b793b93423f3 / 3240000;
-    return var_b64b2f018346f72a * 100;
+    allydist = min(spawnpoint.mindistsquared[self.team], 3240000);
+    scoringpercentage = 1 - allydist / 3240000;
+    return scoringpercentage * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x294c
 // Size: 0x1ed
 function function_e495981bf91ab716(spawnpoint) {
-    var_b0c33d224b825287 = [];
+    enemyteams = [];
     var_ad5a67fe096d8b1 = [];
     /#
         assert(spawnpoint.hasdistdata);
     #/
     if (level.teambased) {
-        var_b0c33d224b825287[0] = getenemyteams(self.team)[0];
+        enemyteams[0] = getenemyteams(self.team)[0];
     } else {
-        var_b0c33d224b825287[var_b0c33d224b825287.size] = "all";
+        enemyteams[enemyteams.size] = "all";
     }
-    foreach (enemyteam in var_b0c33d224b825287) {
+    foreach (enemyteam in enemyteams) {
         if (spawnpoint.totalplayers[enemyteam] == 0) {
             continue;
         }
@@ -853,12 +853,12 @@ function function_e495981bf91ab716(spawnpoint) {
     }
     var_42e18c11c58f15f1 = totaldistance / totalenemies;
     var_42e18c11c58f15f1 = min(var_42e18c11c58f15f1, 7290000);
-    var_b64b2f018346f72a = var_42e18c11c58f15f1 / 7290000;
+    scoringpercentage = var_42e18c11c58f15f1 / 7290000;
     spawnpoint.analytics.enemyaveragedist = var_42e18c11c58f15f1;
-    return var_b64b2f018346f72a * 100;
+    return scoringpercentage * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b41
 // Size: 0x73
@@ -878,7 +878,7 @@ function function_255be0a9b59dfc89(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bbc
 // Size: 0x17a
@@ -886,14 +886,14 @@ function function_2d8badc9970dc4bf(spawnpoint) {
     /#
         assert(spawnpoint.hasdistdata);
     #/
-    var_b0c33d224b825287 = [];
+    enemyteams = [];
     var_ad5a67fe096d8b1 = [];
     if (level.teambased) {
-        var_b0c33d224b825287[0] = getenemyteams(self.team)[0];
+        enemyteams[0] = getenemyteams(self.team)[0];
     } else {
-        var_b0c33d224b825287[var_b0c33d224b825287.size] = "all";
+        enemyteams[enemyteams.size] = "all";
     }
-    foreach (enemyteam in var_b0c33d224b825287) {
+    foreach (enemyteam in enemyteams) {
         if (spawnpoint.totalplayers[enemyteam] == 0) {
             continue;
         }
@@ -902,24 +902,24 @@ function function_2d8badc9970dc4bf(spawnpoint) {
     if (var_ad5a67fe096d8b1.size == 0) {
         return 100;
     }
-    var_4862098ee5021db9 = 0;
+    scoretotal = 0;
     foreach (enemyteam in var_ad5a67fe096d8b1) {
         if (spawnpoint.mindistsquared[enemyteam] < 250000) {
             return 0;
         }
-        var_4d932f368b6ffda6 = min(spawnpoint.mindistsquared[enemyteam], 3240000);
-        var_b64b2f018346f72a = var_4d932f368b6ffda6 / 3240000;
-        var_4862098ee5021db9 = var_4862098ee5021db9 + var_b64b2f018346f72a * 100;
+        minenemydistsquared = min(spawnpoint.mindistsquared[enemyteam], 3240000);
+        scoringpercentage = minenemydistsquared / 3240000;
+        scoretotal = scoretotal + scoringpercentage * 100;
     }
-    return var_4862098ee5021db9 / var_ad5a67fe096d8b1.size;
+    return scoretotal / var_ad5a67fe096d8b1.size;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2d3e
 // Size: 0x133
 function avoidclosestenemybydistance(spawnpoint) {
-    var_da40d465f5d6c5a6 = level.spawnglobals.activespawncontext.factorparams[#"closestenemyinfluencedistsq"];
+    var_da40d465f5d6c5a6 = level.spawnglobals.activespawncontext.factorparams[#"closestEnemyInfluenceDistSq"];
     enemyteam = "all";
     if (level.teambased) {
         enemyteam = getenemyteams(self.team)[0];
@@ -934,12 +934,12 @@ function avoidclosestenemybydistance(spawnpoint) {
     if (closestdist < 250000) {
         return 0;
     }
-    var_4d932f368b6ffda6 = min(closestdist, var_da40d465f5d6c5a6);
-    var_b64b2f018346f72a = var_4d932f368b6ffda6 / var_da40d465f5d6c5a6;
-    return var_b64b2f018346f72a * 100;
+    minenemydistsquared = min(closestdist, var_da40d465f5d6c5a6);
+    scoringpercentage = minenemydistsquared / var_da40d465f5d6c5a6;
+    return scoringpercentage * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e79
 // Size: 0x33
@@ -950,7 +950,7 @@ function function_5647d0dca50a2d4d(var_a72a53d107c0b04c, var_1e5e6e5f60f12427) {
     return var_ba0a9fd614a3f6ee;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2eb4
 // Size: 0xba
@@ -968,13 +968,13 @@ function preferdompoints(spawnpoint) {
     return 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f76
 // Size: 0x89
 function preferclosepoints(spawnpoint) {
-    closestpoints = level.spawnglobals.activespawncontext.factorparams["closestPoints"];
-    foreach (point in closestpoints) {
+    closestPoints = level.spawnglobals.activespawncontext.factorparams["closestPoints"];
+    foreach (point in closestPoints) {
         if (spawnpoint == point) {
             return 100;
         }
@@ -982,7 +982,7 @@ function preferclosepoints(spawnpoint) {
     return 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3007
 // Size: 0x38
@@ -993,7 +993,7 @@ function function_c7a9633168e5110(spawnpoint, team) {
     return 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3047
 // Size: 0xbe
@@ -1005,19 +1005,18 @@ function function_dc410c59b390813b(spawnpoint) {
     /#
         assert(spawnpoint.hassightdata[enemyteam]);
     #/
-    var_af25ee969f7edd48 = 1 - spawnpoint.maxsightvalue[enemyteam];
-    var_cd9f4a27303d749e = namespace_b2d5aa2baf2b5701::getmaxdistancetolos();
-    var_1c88bc619924142f = var_af25ee969f7edd48 * var_cd9f4a27303d749e;
+    sightfraction = 1 - spawnpoint.maxsightvalue[enemyteam];
+    var_cd9f4a27303d749e = scripts/mp/spawnlogic::getmaxdistancetolos();
+    var_1c88bc619924142f = sightfraction * var_cd9f4a27303d749e;
     if (var_1c88bc619924142f > 1200) {
-        var_b1a0228d2ebc8326 = (var_cd9f4a27303d749e - var_1c88bc619924142f) / (var_cd9f4a27303d749e - 1200);
-        return (100 * var_b1a0228d2ebc8326);
-    } else {
-        var_b1a0228d2ebc8326 = var_1c88bc619924142f / 1200;
-        return (100 * var_b1a0228d2ebc8326);
+        scorepercent = (var_cd9f4a27303d749e - var_1c88bc619924142f) / (var_cd9f4a27303d749e - 1200);
+        return (100 * scorepercent);
     }
+    scorepercent = var_1c88bc619924142f / 1200;
+    return 100 * scorepercent;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x310c
 // Size: 0x94
@@ -1029,12 +1028,12 @@ function function_ce101e91e4df4ca9(spawnpoint) {
     /#
         assert(spawnpoint.hassightdata[enemyteam]);
     #/
-    var_af25ee969f7edd48 = 1 - spawnpoint.maxsightvalue[enemyteam];
-    spawnpoint.analytics.maxenemysightfraction = var_af25ee969f7edd48;
-    return (1 - var_af25ee969f7edd48) * 0 + var_af25ee969f7edd48 * 100;
+    sightfraction = 1 - spawnpoint.maxsightvalue[enemyteam];
+    spawnpoint.analytics.maxenemysightfraction = sightfraction;
+    return (1 - sightfraction) * 0 + sightfraction * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x31a8
 // Size: 0x94
@@ -1046,12 +1045,12 @@ function function_52c5a5db586622c5(spawnpoint) {
     /#
         assert(spawnpoint.hassightdata[enemyteam]);
     #/
-    var_af25ee969f7edd48 = 1 - spawnpoint.maxjumpsightvalue[enemyteam];
-    spawnpoint.analytics.maxjumpingenemysightfraction = var_af25ee969f7edd48;
-    return (1 - var_af25ee969f7edd48) * 0 + var_af25ee969f7edd48 * 100;
+    sightfraction = 1 - spawnpoint.maxjumpsightvalue[enemyteam];
+    spawnpoint.analytics.maxjumpingenemysightfraction = sightfraction;
+    return (1 - sightfraction) * 0 + sightfraction * 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3244
 // Size: 0x92
@@ -1063,16 +1062,15 @@ function function_1bd88f01ef678809(spawnpoint) {
     /#
         assert(spawnpoint.hassightdata[enemyteam]);
     #/
-    var_af25ee969f7edd48 = 1 - spawnpoint.maxjumpsightvalue[enemyteam];
-    var_6d87052f9222032e = var_af25ee969f7edd48 * namespace_b2d5aa2baf2b5701::getmaxdistancetolos();
+    sightfraction = 1 - spawnpoint.maxjumpsightvalue[enemyteam];
+    var_6d87052f9222032e = sightfraction * scripts/mp/spawnlogic::getmaxdistancetolos();
     if (var_6d87052f9222032e < 300) {
         return 0;
-    } else {
-        return 100;
     }
+    return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x32dd
 // Size: 0x3f
@@ -1081,7 +1079,7 @@ function randomspawnscore(spawnpoint) {
     return spawnpoint.analytics.randomscore;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3324
 // Size: 0x11
@@ -1089,60 +1087,60 @@ function maxplayerspawninfluencedistsquared(spawnpoint) {
     return 3240000;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x333d
 // Size: 0x65
-function function_75c03ed937b75b22(entitynum, var_38331ab92460d731, var_eb31d5343c6abc39, closestenemyinfluencedistsq) {
+function function_75c03ed937b75b22(entitynum, var_38331ab92460d731, var_eb31d5343c6abc39, closestEnemyInfluenceDistSq) {
     var_ba0a9fd614a3f6ee = [];
     var_ba0a9fd614a3f6ee[#"hash_80b230f7f3b6e958"] = entitynum;
     var_ba0a9fd614a3f6ee[#"hash_ff12ea926c094dde"] = var_38331ab92460d731;
     var_ba0a9fd614a3f6ee[#"hash_ccf425b826e8654b"] = var_eb31d5343c6abc39;
-    var_ba0a9fd614a3f6ee[#"closestenemyinfluencedistsq"] = closestenemyinfluencedistsq;
+    var_ba0a9fd614a3f6ee[#"closestEnemyInfluenceDistSq"] = closestEnemyInfluenceDistSq;
     return var_ba0a9fd614a3f6ee;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33aa
 // Size: 0xa6
-function prefershortestdisttozone(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    var_653a7e504d42846a = var_4db3cfd2ea2d7b8f.factorparams[#"hash_80b230f7f3b6e958"];
+function preferShortestDistToZone(spawnpoint) {
+    spawncontext = level.spawnglobals.activespawncontext;
+    var_653a7e504d42846a = spawncontext.factorparams[#"hash_80b230f7f3b6e958"];
     distsq = spawnpoint.scriptdata.var_c7e3d9e2f0dd4e7[var_653a7e504d42846a];
-    var_9799f8752d4ae4bf = var_4db3cfd2ea2d7b8f.factorparams[#"hash_ff12ea926c094dde"];
-    percent = 1 - distsq / var_9799f8752d4ae4bf;
+    maxdistancesquared = spawncontext.factorparams[#"hash_ff12ea926c094dde"];
+    percent = 1 - distsq / maxdistancesquared;
     return 100 * percent + 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3458
 // Size: 0x98
-function avoidclosetozone(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    var_653a7e504d42846a = var_4db3cfd2ea2d7b8f.factorparams[#"hash_80b230f7f3b6e958"];
+function avoidCloseToZone(spawnpoint) {
+    spawncontext = level.spawnglobals.activespawncontext;
+    var_653a7e504d42846a = spawncontext.factorparams[#"hash_80b230f7f3b6e958"];
     distsq = spawnpoint.scriptdata.var_c7e3d9e2f0dd4e7[var_653a7e504d42846a];
-    var_eb31d5343c6abc39 = var_4db3cfd2ea2d7b8f.factorparams[#"hash_ccf425b826e8654b"];
+    var_eb31d5343c6abc39 = spawncontext.factorparams[#"hash_ccf425b826e8654b"];
     return ter_op(distsq < var_eb31d5343c6abc39, 0, 100);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x34f8
 // Size: 0x91
 function function_82fb03c7e6eddf4f(spawnpoint) {
-    var_a77c3f8dacea618b = level.spawnglobals.lastteamspawnpoints[self.team];
-    if (!isdefined(var_a77c3f8dacea618b)) {
+    lastteamspawnpoint = level.spawnglobals.lastteamspawnpoints[self.team];
+    if (!isdefined(lastteamspawnpoint)) {
         return 0;
     }
-    distsq = distancesquared(var_a77c3f8dacea618b.origin, spawnpoint.origin);
+    distsq = distancesquared(lastteamspawnpoint.origin, spawnpoint.origin);
     distsq = int(min(distsq, 9000000));
     percent = 1 - distsq / 9000000;
     return 100 * percent + 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3591
 // Size: 0x16a
@@ -1175,7 +1173,7 @@ function function_1c2a13eb67207b15(spawnpoint) {
     return 100 * percent + 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3703
 // Size: 0xc7
@@ -1199,12 +1197,11 @@ function function_f450413956d6d6c4(spawnpoint) {
     }
     if ((spawnpoint.lanemask & spawnglobals.occupiedlanemasks[enemyteam]) != 0) {
         return 100;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37d1
 // Size: 0x116
@@ -1219,67 +1216,66 @@ function function_d20f88ca67f03009(spawnpoint) {
     /#
         assert(isdefined(spawnpoint.lanemask));
     #/
-    var_ac6ca28a64718193 = namespace_b2d5aa2baf2b5701::getspawnteam(self);
+    friendlyteam = scripts/mp/spawnlogic::getspawnteam(self);
     enemyteam = "all";
     if (level.teambased) {
-        enemyteam = getenemyteams(var_ac6ca28a64718193)[0];
+        enemyteam = getenemyteams(friendlyteam)[0];
     }
     if (!isdefined(spawnglobals.occupiedlanemasks[enemyteam])) {
         return 0;
     }
     var_e5c11a1b96be1d3c = spawnpoint.lanemask & spawnglobals.occupiedlanemasks[enemyteam];
-    var_5e132bcebfcc07b2 = isdefined(spawnglobals.occupiedlanemasks[var_ac6ca28a64718193]) && spawnpoint.lanemask & spawnglobals.occupiedlanemasks[var_ac6ca28a64718193];
+    var_5e132bcebfcc07b2 = isdefined(spawnglobals.occupiedlanemasks[friendlyteam]) && spawnpoint.lanemask & spawnglobals.occupiedlanemasks[friendlyteam];
     if (var_e5c11a1b96be1d3c && !var_5e132bcebfcc07b2) {
         return 100;
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38ee
 // Size: 0xd
 function scriptonlytest(spawnpoint) {
-    return 0;
+    return false;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3903
 // Size: 0x104
 function prefernearsinglepoint(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    var_e7c16a7d72e19271 = var_4db3cfd2ea2d7b8f.factorparams["singlePointPos"];
-    mindistsq = var_4db3cfd2ea2d7b8f.factorparams["minDistToSinglePointSq"];
-    maxdistsq = var_4db3cfd2ea2d7b8f.factorparams["maxDistToSinglePointSq"];
-    var_9e3a315d4f55afc6 = var_4db3cfd2ea2d7b8f.factorparams["distRangeToSinglePointSq"];
+    spawncontext = level.spawnglobals.activespawncontext;
+    pointpos = spawncontext.factorparams["singlePointPos"];
+    mindistsq = spawncontext.factorparams["minDistToSinglePointSq"];
+    maxdistsq = spawncontext.factorparams["maxDistToSinglePointSq"];
+    var_9e3a315d4f55afc6 = spawncontext.factorparams["distRangeToSinglePointSq"];
     /#
         assert(var_9e3a315d4f55afc6 + 0.1 <= maxdistsq - mindistsq && var_9e3a315d4f55afc6 - 0.1 >= maxdistsq - mindistsq);
     #/
-    distsq = distance2dsquared(var_e7c16a7d72e19271, spawnpoint.origin);
+    distsq = distance2dsquared(pointpos, spawnpoint.origin);
     if (distsq >= maxdistsq) {
         return 0;
     }
     if (distsq <= mindistsq) {
         return 100;
     }
-    var_b1a0228d2ebc8326 = 1 - (distsq - mindistsq) / var_9e3a315d4f55afc6;
-    return 100 * var_b1a0228d2ebc8326;
+    scorepercent = 1 - (distsq - mindistsq) / var_9e3a315d4f55afc6;
+    return 100 * scorepercent;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a0f
 // Size: 0x61
-function avoidcurrentspawntraps(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    var_8bb6b9b919c2c19d = function_b9e20b2afd68e3c1(spawnpoint, var_4db3cfd2ea2d7b8f.team);
-    var_249e56cba357903c = pow(0.25, var_8bb6b9b919c2c19d);
-    return 100 * var_249e56cba357903c;
+function avoidCurrentSpawnTraps(spawnpoint) {
+    spawncontext = level.spawnglobals.activespawncontext;
+    combo = function_b9e20b2afd68e3c1(spawnpoint, spawncontext.team);
+    pointratio = pow(0.25, combo);
+    return 100 * pointratio;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a78
 // Size: 0x23
@@ -1287,15 +1283,15 @@ function function_32368b70c6aa5729(spawnpoint) {
     spawnpoint.scriptdata.var_1a11950b5795681f = [];
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3aa2
 // Size: 0xa7
-function function_158cc75a8c974987(player, var_ba669c07247b5ab0, attacker) {
+function function_158cc75a8c974987(player, callbackparams, attacker) {
     if (isdefined(player.var_edfdb2994e4d6040)) {
         return;
     }
-    if (isdefined(attacker) && issentient(attacker) && !player namespace_e47104b48662385b::isenemy(attacker)) {
+    if (isdefined(attacker) && issentient(attacker) && !player player_utility::isenemy(attacker)) {
         return;
     }
     if (gettime() - player.lastspawntime > function_a0a31e5b8e6a394d()) {
@@ -1307,88 +1303,88 @@ function function_158cc75a8c974987(player, var_ba669c07247b5ab0, attacker) {
     }
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b50
 // Size: 0x115
 function function_fac896d21fc67e84(spawnpoint, team) {
-    var_4a93a86de50c6977 = gettime();
+    currenttimems = gettime();
     if (!istrue(level.teambased)) {
         team = "none";
     }
     scriptdata = level.spawnglobals.spawnpointscriptdata[spawnpoint.index];
-    var_1cc5d9e71b667f58 = function_53c4c53197386572(scriptdata.var_1a11950b5795681f[team], undefined);
-    if (!isdefined(var_1cc5d9e71b667f58)) {
-        var_1cc5d9e71b667f58 = spawnstruct();
-        var_1cc5d9e71b667f58.var_7bf1255a3715a632 = var_4a93a86de50c6977;
-        var_1cc5d9e71b667f58.var_3b5af4bbbc57de2b = var_4a93a86de50c6977;
-        var_1cc5d9e71b667f58.var_c2ca09e1949e8765 = 1;
-        scriptdata.var_1a11950b5795681f[team] = var_1cc5d9e71b667f58;
-    } else {
-        if (var_4a93a86de50c6977 - var_1cc5d9e71b667f58.var_3b5af4bbbc57de2b > function_513d4a1188d51465()) {
-            var_1cc5d9e71b667f58.var_7bf1255a3715a632 = var_4a93a86de50c6977;
-            var_1cc5d9e71b667f58.var_c2ca09e1949e8765 = 1;
-        } else {
-            var_1cc5d9e71b667f58.var_c2ca09e1949e8765++;
-        }
-        var_1cc5d9e71b667f58.var_3b5af4bbbc57de2b = var_4a93a86de50c6977;
+    combostruct = default_to(scriptdata.var_1a11950b5795681f[team], undefined);
+    if (!isdefined(combostruct)) {
+        combostruct = spawnstruct();
+        combostruct.starttimems = currenttimems;
+        combostruct.var_3b5af4bbbc57de2b = currenttimems;
+        combostruct.trapcount = 1;
+        scriptdata.var_1a11950b5795681f[team] = combostruct;
+        return;
     }
+    if (currenttimems - combostruct.var_3b5af4bbbc57de2b > function_513d4a1188d51465()) {
+        combostruct.starttimems = currenttimems;
+        combostruct.trapcount = 1;
+    } else {
+        combostruct.trapcount++;
+    }
+    combostruct.var_3b5af4bbbc57de2b = currenttimems;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c6c
 // Size: 0xaa
 function function_b9e20b2afd68e3c1(spawnpoint, team) {
-    var_4a93a86de50c6977 = gettime();
+    currenttimems = gettime();
     if (!istrue(level.teambased)) {
         team = "none";
     }
     scriptdata = level.spawnglobals.spawnpointscriptdata[spawnpoint.index];
-    var_1cc5d9e71b667f58 = function_53c4c53197386572(scriptdata.var_1a11950b5795681f[team], undefined);
-    if (isdefined(var_1cc5d9e71b667f58)) {
-        if (var_4a93a86de50c6977 - var_1cc5d9e71b667f58.var_3b5af4bbbc57de2b < function_513d4a1188d51465()) {
-            return var_1cc5d9e71b667f58.var_c2ca09e1949e8765;
+    combostruct = default_to(scriptdata.var_1a11950b5795681f[team], undefined);
+    if (isdefined(combostruct)) {
+        if (currenttimems - combostruct.var_3b5af4bbbc57de2b < function_513d4a1188d51465()) {
+            return combostruct.trapcount;
         }
     }
     return 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d1e
 // Size: 0x3d
 function function_a0a31e5b8e6a394d() {
     timems = 2000;
-    var_5d42346f7be30e5c = getdvarfloat(@"hash_851a3f508adcd1dd", -1);
-    if (var_5d42346f7be30e5c > 0) {
-        timems = var_5d42346f7be30e5c * 1000;
+    dvaroverride = getdvarfloat(@"hash_851a3f508adcd1dd", -1);
+    if (dvaroverride > 0) {
+        timems = dvaroverride * 1000;
     }
     return timems;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3d63
 // Size: 0x3d
 function function_513d4a1188d51465() {
     timems = 6000;
-    var_5d42346f7be30e5c = getdvarfloat(@"hash_3b2062ace30035", -1);
-    if (var_5d42346f7be30e5c > 0) {
-        timems = var_5d42346f7be30e5c * 1000;
+    dvaroverride = getdvarfloat(@"hash_3b2062ace30035", -1);
+    if (dvaroverride > 0) {
+        timems = dvaroverride * 1000;
     }
     return timems;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3da8
 // Size: 0xa4
 function avoidrugbyoffsides(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    juggpos = var_4db3cfd2ea2d7b8f.factorparams["juggPos"];
-    var_3cb9f8eb3125d3b4 = var_4db3cfd2ea2d7b8f.factorparams["rugbyFieldDir2D"];
-    var_9c6453d1f660c3dc = (spawnpoint.origin - juggpos) * (1, 1, 0);
+    spawncontext = level.spawnglobals.activespawncontext;
+    juggPos = spawncontext.factorparams["juggPos"];
+    var_3cb9f8eb3125d3b4 = spawncontext.factorparams["rugbyFieldDir2D"];
+    var_9c6453d1f660c3dc = (spawnpoint.origin - juggPos) * (1, 1, 0);
     dot = vectordot(var_9c6453d1f660c3dc, var_3cb9f8eb3125d3b4);
     if (dot >= 0) {
         return 0;
@@ -1396,7 +1392,7 @@ function avoidrugbyoffsides(spawnpoint) {
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e54
 // Size: 0x39
@@ -1404,90 +1400,88 @@ function oneusespawns(spawnpoint) {
     scriptdata = spawnpoint.scriptdata;
     if (istrue(scriptdata.used)) {
         return 0;
-    } else {
-        return 100;
     }
+    return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e94
 // Size: 0x9d
-function avoidclosetodefenderflag(spawnpoint, var_b8ad7552ce2e1e5a) {
+function avoidclosetodefenderflag(spawnpoint, paramlist) {
     var_cc1acf45d269a8ac = undefined;
-    var_eb28d9f8d5a7784d = var_b8ad7552ce2e1e5a["activeCarrierPosition"];
-    var_c48319e73068aa11 = var_b8ad7552ce2e1e5a["defenderFlagPosition"];
-    var_eb31d5343c6abc39 = var_b8ad7552ce2e1e5a["avoidDefenderFlagDeadZoneDistSq"];
+    var_eb28d9f8d5a7784d = paramlist["activeCarrierPosition"];
+    var_c48319e73068aa11 = paramlist["defenderFlagPosition"];
+    var_eb31d5343c6abc39 = paramlist["avoidDefenderFlagDeadZoneDistSq"];
     if (isdefined(var_eb28d9f8d5a7784d)) {
         var_cc1acf45d269a8ac = var_eb28d9f8d5a7784d;
     } else if (isdefined(var_c48319e73068aa11)) {
         var_cc1acf45d269a8ac = var_c48319e73068aa11;
     }
     if (isdefined(var_cc1acf45d269a8ac)) {
-        var_8336f113929858a6 = distancesquared(var_cc1acf45d269a8ac, spawnpoint.origin);
-        return ter_op(var_8336f113929858a6 < var_eb31d5343c6abc39, 0, 100);
-    } else {
-        return 100;
+        distsquared = distancesquared(var_cc1acf45d269a8ac, spawnpoint.origin);
+        return ter_op(distsquared < var_eb31d5343c6abc39, 0, 100);
     }
+    return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f38
 // Size: 0x52
-function avoidclosetodefenderflagspawn(spawnpoint, var_b8ad7552ce2e1e5a) {
+function avoidclosetodefenderflagspawn(spawnpoint, paramlist) {
     distsq = spawnpoint.scriptdata.distsqtodefenderfalgstart;
-    var_eb31d5343c6abc39 = var_b8ad7552ce2e1e5a["avoidDefenderFlagDeadZoneDistSq"];
+    var_eb31d5343c6abc39 = paramlist["avoidDefenderFlagDeadZoneDistSq"];
     return ter_op(distsq < var_eb31d5343c6abc39, 0, 100);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f92
 // Size: 0xbc
-function avoidfrontlineoffsides(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams) || !isdefined(level.frontlinedata)) {
+function avoidFrontlineOffsides(spawnpoint) {
+    spawncontext = level.spawnglobals.activespawncontext;
+    if (!isdefined(spawncontext.factorparams) || !isdefined(level.frontlinedata)) {
         return 100;
     }
-    teamforward = var_4db3cfd2ea2d7b8f.factorparams["teamForward"];
-    var_8cc8093272818080 = namespace_fab382c89d62fd63::function_8964b48e4eba5797(spawnpoint.origin);
-    var_a620cb0e6444887f = vectornormalize(spawnpoint.origin - var_8cc8093272818080);
-    dot = vectordot(var_a620cb0e6444887f, teamforward);
+    teamforward = spawncontext.factorparams["teamForward"];
+    frontlinepoint = namespace_fab382c89d62fd63::function_8964b48e4eba5797(spawnpoint.origin);
+    tospawn = vectornormalize(spawnpoint.origin - frontlinepoint);
+    dot = vectordot(tospawn, teamforward);
     if (dot >= 0) {
         return 0;
     }
     return 100;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4056
 // Size: 0xb3
-function preferoptimalfrontlinedist(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    if (!isdefined(var_4db3cfd2ea2d7b8f.factorparams) || !isdefined(level.frontlinedata)) {
+function preferOptimalFrontlineDist(spawnpoint) {
+    spawncontext = level.spawnglobals.activespawncontext;
+    if (!isdefined(spawncontext.factorparams) || !isdefined(level.frontlinedata)) {
         return 100;
     }
-    idealdistsq = var_4db3cfd2ea2d7b8f.factorparams["idealDistSq"];
+    idealDistSq = spawncontext.factorparams["idealDistSq"];
     var_f6f8270f02b2b9bf = namespace_fab382c89d62fd63::function_99146672ec896efa(spawnpoint.origin);
-    percent = clamp(1 - abs(var_f6f8270f02b2b9bf - idealdistsq) / idealdistsq, 0, 1);
+    percent = clamp(1 - abs(var_f6f8270f02b2b9bf - idealDistSq) / idealDistSq, 0, 1);
     return 100 * percent + 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4111
 // Size: 0x88
-function preferunoccupiedlanes(spawnpoint) {
-    var_4db3cfd2ea2d7b8f = level.spawnglobals.activespawncontext;
-    var_9799f8752d4ae4bf = 67108864;
+function preferUnoccupiedLanes(spawnpoint) {
+    spawncontext = level.spawnglobals.activespawncontext;
+    maxdistancesquared = 67108864;
     var_f6f8270f02b2b9bf = namespace_fab382c89d62fd63::function_7855eb28c2d21061(spawnpoint.origin, self.team);
-    percent = clamp(1 - var_f6f8270f02b2b9bf / var_9799f8752d4ae4bf, 0, 1);
+    percent = clamp(1 - var_f6f8270f02b2b9bf / maxdistancesquared, 0, 1);
     return 100 * percent + 0;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x41a1
 // Size: 0x16
@@ -1495,7 +1489,7 @@ function private on_player_spawned(params) {
     self.var_edfdb2994e4d6040 = undefined;
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x41be
 // Size: 0x20
@@ -1503,7 +1497,7 @@ function private on_player_death(params) {
     function_158cc75a8c974987(self, params, params.attacker);
 }
 
-// Namespace namespace_164d533d51098167/namespace_b41002c7afebd276
+// Namespace spawnfactor / scripts/mp/spawnfactor
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x41e5
 // Size: 0x20

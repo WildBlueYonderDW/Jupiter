@@ -1,11 +1,11 @@
 // mwiii decomp prototype
 #using script_7ff3a914e6c698c5;
 #using scripts\engine\utility.gsc;
-#using script_4c770a9a4ad7659c;
+#using scripts\common\callbacks.gsc;
 
 #namespace namespace_824fdea5389ab963;
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe3
 // Size: 0xa8
@@ -19,16 +19,16 @@ function function_29b5fb70d7ea841() {
     function_3f5173a731bdfe2f("melee", function_28d26d7ead912662(1, undefined, undefined));
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x192
 // Size: 0x43
 function function_3ff40056b91b6e90() {
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_is_moving_melee_changed", &function_830afe26e7e7e559);
-    callback::function_e7fddda1f0b46b5e(self.var_ae3ea15396b65c1f) callback::add("on_move_speed_changed", &function_b06e7f5eb1e44850);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_is_moving_melee_changed", &function_830afe26e7e7e559);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_move_speed_changed", &function_b06e7f5eb1e44850);
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1dc
 // Size: 0xf
@@ -36,7 +36,7 @@ function function_bd41a979b3c3bcb6() {
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x1f2
 // Size: 0x18
@@ -44,7 +44,7 @@ function private function_830afe26e7e7e559(params) {
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x211
 // Size: 0x18
@@ -52,19 +52,19 @@ function private function_b06e7f5eb1e44850(params) {
     function_8626c13b5be18c1b("melee");
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x230
 // Size: 0x54
-function private function_28d26d7ead912662(var_f261c2f31d7de033, var_5096c84907869455, var_d90af5177d0db456) {
+function private function_28d26d7ead912662(var_f261c2f31d7de033, move_type, var_d90af5177d0db456) {
     struct = spawnstruct();
     struct.var_f261c2f31d7de033 = var_f261c2f31d7de033;
-    struct.var_5096c84907869455 = var_5096c84907869455;
+    struct.move_type = move_type;
     struct.var_d90af5177d0db456 = var_d90af5177d0db456;
     return struct;
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x28c
 // Size: 0x10d
@@ -76,9 +76,9 @@ function private function_79d559d24ce75889(struct) {
             return undefined;
         }
     }
-    if (isdefined(struct.var_5096c84907869455)) {
-        alias = alias + "_" + struct.var_5096c84907869455;
-        if (self._blackboard.movetype != struct.var_5096c84907869455) {
+    if (isdefined(struct.move_type)) {
+        alias = alias + "_" + struct.move_type;
+        if (self._blackboard.movetype != struct.move_type) {
             return undefined;
         }
     }
@@ -91,7 +91,7 @@ function private function_79d559d24ce75889(struct) {
     return alias;
 }
 
-// Namespace namespace_824fdea5389ab963/namespace_31f2d672614940ac
+// Namespace namespace_824fdea5389ab963 / namespace_31f2d672614940ac
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x19

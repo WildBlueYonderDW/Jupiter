@@ -5,16 +5,16 @@
 
 #namespace namespace_6ea38b6e0f4f1418;
 
-// Namespace namespace_6ea38b6e0f4f1418/namespace_f280858cfad8e545
+// Namespace namespace_6ea38b6e0f4f1418 / namespace_f280858cfad8e545
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab
 // Size: 0x1b
 function init() {
     namespace_bc0abb78a303bb78::function_8ece37593311858a(&onplayerconnect);
-    namespace_71eef510d7f364cf::registeronplayerspawncallback(&onplayerspawned);
+    scripts/mp/utility/spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
 }
 
-// Namespace namespace_6ea38b6e0f4f1418/namespace_f280858cfad8e545
+// Namespace namespace_6ea38b6e0f4f1418 / namespace_f280858cfad8e545
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcd
 // Size: 0x18
@@ -23,20 +23,20 @@ function onplayerconnect() {
     player thread function_ba61f4ee48e1b99();
 }
 
-// Namespace namespace_6ea38b6e0f4f1418/namespace_f280858cfad8e545
+// Namespace namespace_6ea38b6e0f4f1418 / namespace_f280858cfad8e545
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec
 // Size: 0x2d
 function function_ba61f4ee48e1b99() {
     player = self;
     player endon("death_or_disconnect");
-    while (1) {
+    while (true) {
         player iprintlnbold("juggermosh - remove me");
         wait(2);
     }
 }
 
-// Namespace namespace_6ea38b6e0f4f1418/namespace_f280858cfad8e545
+// Namespace namespace_6ea38b6e0f4f1418 / namespace_f280858cfad8e545
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x120
 // Size: 0x2e

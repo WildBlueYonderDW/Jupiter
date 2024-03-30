@@ -5,7 +5,7 @@
 
 #namespace dismember;
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf2
 // Size: 0x91
@@ -19,7 +19,7 @@ function initscriptablepart(part) {
     }
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x18a
 // Size: 0xfe
@@ -35,7 +35,7 @@ function set_scriptablepartinfo(part, state) {
     self._blackboard.scriptableparts[part].time = gettime();
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x28f
 // Size: 0xbd
@@ -48,23 +48,23 @@ function set_scriptablepartstate(part, state, waittime) {
     if (isdefined(self.scriptablecleanup)) {
         return 1;
     }
-    var_68d9e792fe9def4d = self._blackboard.scriptableparts[part].state;
+    partstate = self._blackboard.scriptableparts[part].state;
     if (isdefined(anim.dismemberheavyfx[self.unittype])) {
-        if (part != "head" && var_68d9e792fe9def4d != "dismember") {
+        if (part != "head" && partstate != "dismember") {
             if (usedismemberfxlite(self.unittype)) {
-                var_68d9e792fe9def4d = var_68d9e792fe9def4d + "_lite";
+                partstate = partstate + "_lite";
             }
         }
     }
-    self setscriptablepartstate(part, var_68d9e792fe9def4d);
+    self setscriptablepartstate(part, partstate);
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x353
 // Size: 0xad
 function setdismemberstatefx(part) {
-    var_bedc4a2a8ea9768d = part + "_dism_fx";
+    fx_part = part + "_dism_fx";
     state = get_scriptablepartinfo(part);
     if (state == "normal") {
         state = "undamaged";
@@ -78,10 +78,10 @@ function setdismemberstatefx(part) {
             }
         }
     }
-    self setscriptablepartstate(var_bedc4a2a8ea9768d, state);
+    self setscriptablepartstate(fx_part, state);
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x407
 // Size: 0x99
@@ -96,13 +96,13 @@ function usedismemberfxlite(type) {
     if (newarray.size < 0) {
         newarray[newarray.size] = gettime();
         anim.dismemberheavyfx[type] = newarray;
-        return 0;
+        return false;
     }
     anim.dismemberheavyfx[type] = newarray;
-    return 1;
+    return true;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a8
 // Size: 0x67
@@ -116,69 +116,69 @@ function get_scriptablepartinfo(part) {
     return self._blackboard.scriptableparts[part].state;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x517
 // Size: 0x30
 function anylegdismembered() {
     if (get_scriptablepartinfo("left_leg") == "dismember" || get_scriptablepartinfo("right_leg") == "dismember") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x54f
 // Size: 0x30
 function bothlegsdismembered() {
     if (get_scriptablepartinfo("left_leg") == "dismember" && get_scriptablepartinfo("right_leg") == "dismember") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x587
 // Size: 0x30
 function anyarmdismembered() {
     if (get_scriptablepartinfo("left_arm") == "dismember" || get_scriptablepartinfo("right_arm") == "dismember") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bf
 // Size: 0x1b
 function rightarmdismembered() {
     if (get_scriptablepartinfo("right_arm") == "dismember") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e2
 // Size: 0x1b
 function leftarmdismembered() {
     if (get_scriptablepartinfo("left_arm") == "dismember") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace dismember/namespace_3cb6c1a61c8d4846
+// Namespace dismember / scripts/aitypes/dismember
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x605
 // Size: 0x30
 function botharmsdismembered() {
-    if (namespace_3cb6c1a61c8d4846::get_scriptablepartinfo("left_arm") == "dismember" && namespace_3cb6c1a61c8d4846::get_scriptablepartinfo("right_arm") == "dismember") {
-        return 1;
+    if (scripts/aitypes/dismember::get_scriptablepartinfo("left_arm") == "dismember" && scripts/aitypes/dismember::get_scriptablepartinfo("right_arm") == "dismember") {
+        return true;
     }
-    return 0;
+    return false;
 }
 

@@ -3,7 +3,7 @@
 
 #namespace empty_heli;
 
-// Namespace empty_heli/namespace_c3d1727caca4beb
+// Namespace empty_heli / scripts/vehicle/empty_heli
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x84
 // Size: 0x37

@@ -5,27 +5,27 @@
 #using scripts\mp\bots\bots_gametype_common.gsc;
 #using scripts\mp\utility\entity.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
-#using script_26508f2de04c7a52;
+#using scripts\mp\gametypes\mgl_mp.gsc;
 #using script_27fdece778e999d8;
 #using scripts\mp\gameobjects.gsc;
 
-#namespace namespace_9289ca93797fb781;
+#namespace bots_gametype_koth;
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x183
 // Size: 0x40
 function main() {
     level.var_e6628286205f2ea7 = 1;
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587() && !getdvarint(@"hash_131a7029db1ed456", 0)) {
-        namespace_afbc0aa1b551667a::function_892db361940e142d();
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587() && !getdvarint(@"hash_131a7029db1ed456", 0)) {
+        scripts/mp/gametypes/mgl_mp::function_892db361940e142d();
         return;
     }
     setup_callbacks();
     setup_bot_koth();
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ca
 // Size: 0x6
@@ -34,20 +34,20 @@ function function_e45e46b7c35deadb() {
     #/
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d7
 // Size: 0x6c
 function setup_callbacks() {
     level.bot_funcs["gametype_think"] = &bot_koth_think;
     level.bot_funcs["should_start_cautious_approach"] = &should_start_cautious_approach_koth;
-    if (namespace_36f464722d326bbe::function_ba5574c7f287c587() && getdvarint(@"hash_131a7029db1ed456", 0)) {
+    if (scripts/cp_mp/utility/game_utility::function_ba5574c7f287c587() && getdvarint(@"hash_131a7029db1ed456", 0)) {
         level.bot_funcs["player_spawned_gamemode"] = &namespace_da125b44c190d236::function_5f51c5c13fd2911b;
         level.modifyplayerdamage = &namespace_da125b44c190d236::modifyplayerdamage;
     }
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x18a
@@ -81,34 +81,32 @@ function setup_bot_koth() {
         if (!isdefined(initial_zone)) {
             initial_zone = random(level.objectives);
         }
-        bot_cache_entrances_to_zones([0:initial_zone]);
+        bot_cache_entrances_to_zones([initial_zone]);
         level.bot_gametype_zones_precached[initial_zone.trigger getentitynumber()] = 1;
         level.bot_gametype_precaching_done = 1;
         thread bot_cache_entrances_to_other_zones(initial_zone);
     }
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3db
 // Size: 0xa5
-function bot_cache_entrances_to_other_zones(var_a39ba4e297c944ac) {
-    var_1af20a675dec3e10 = array_remove(level.objectives, var_a39ba4e297c944ac);
-    while (var_1af20a675dec3e10.size > 0) {
-        var_bfa517469dbf11ee = undefined;
+function bot_cache_entrances_to_other_zones(zone_done) {
+    for (zones_left = array_remove(level.objectives, zone_done); zones_left.size > 0; zones_left = array_remove(zones_left, zone_precaching)) {
+        zone_precaching = undefined;
         current_zone = level.zone;
-        if (isdefined(current_zone) && array_contains(var_1af20a675dec3e10, current_zone)) {
-            var_bfa517469dbf11ee = current_zone;
+        if (isdefined(current_zone) && array_contains(zones_left, current_zone)) {
+            zone_precaching = current_zone;
         } else {
-            var_bfa517469dbf11ee = random(var_1af20a675dec3e10);
+            zone_precaching = random(zones_left);
         }
-        bot_cache_entrances_to_zones([0:var_bfa517469dbf11ee]);
-        level.bot_gametype_zones_precached[var_bfa517469dbf11ee.trigger getentitynumber()] = 1;
-        var_1af20a675dec3e10 = array_remove(var_1af20a675dec3e10, var_bfa517469dbf11ee);
+        bot_cache_entrances_to_zones([zone_precaching]);
+        level.bot_gametype_zones_precached[zone_precaching.trigger getentitynumber()] = 1;
     }
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x487
 // Size: 0x344
@@ -124,7 +122,7 @@ function bot_koth_think() {
     self botsetflag("grenade_objectives", 1);
     var_f89468cd9a401388 = undefined;
     var_46aaec4ccf788dad = level.zone;
-    while (1) {
+    while (true) {
         /#
             if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
                 wait(0.05);
@@ -150,7 +148,7 @@ function bot_koth_think() {
         if (!istrue(level.zone.trigger.trigger_off) && isdefined(level.zoneendtime) && !isdefined(var_f89468cd9a401388) && !level.zonerandomlocationorder && level.bot_hp_allow_predictive_capping) {
             var_7a8ae257730d6c26 = level.zoneendtime - gettime();
             if (var_7a8ae257730d6c26 > 0 && var_7a8ae257730d6c26 < 10000) {
-                var_5f20a57c87fb6002 = level.zone namespace_19b4203b51d56488::getownerteam() == self.team;
+                var_5f20a57c87fb6002 = level.zone scripts/mp/gameobjects::getownerteam() == self.team;
                 if (!var_5f20a57c87fb6002) {
                     var_ce5bd620eeddf1aa = level.zone.zone_bounds.radius * 6;
                     if (var_7a8ae257730d6c26 < 5000) {
@@ -161,10 +159,10 @@ function bot_koth_think() {
                         var_f89468cd9a401388 = bot_should_cap_next_zone();
                     }
                 } else {
-                    var_6ace8681f94cdc7c = bot_get_max_players_on_team(self.team);
-                    var_9bbd8a880a88652e = ceil(var_6ace8681f94cdc7c / 2);
+                    team_limit = bot_get_max_players_on_team(self.team);
+                    var_9bbd8a880a88652e = ceil(team_limit / 2);
                     if (var_7a8ae257730d6c26 < 5000) {
-                        var_9bbd8a880a88652e = ceil(var_6ace8681f94cdc7c / 3);
+                        var_9bbd8a880a88652e = ceil(team_limit / 3);
                     }
                     var_66df858e06a4f668 = bot_get_num_teammates_capturing_zone(level.zone);
                     if (var_66df858e06a4f668 + 1 > var_9bbd8a880a88652e) {
@@ -187,28 +185,27 @@ function bot_koth_think() {
     }
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d2
 // Size: 0x73
 function bot_should_cap_next_zone() {
     if (level.zonerandomlocationorder) {
         return 0;
-    } else {
-        strategy_level = self botgetdifficultysetting("strategyLevel");
-        var_b79d6ac8174afeb = 0;
-        if (strategy_level == 1) {
-            var_b79d6ac8174afeb = 0.1;
-        } else if (strategy_level == 2) {
-            var_b79d6ac8174afeb = 0.5;
-        } else if (strategy_level == 3) {
-            var_b79d6ac8174afeb = 0.8;
-        }
-        return (randomfloat(1) < var_b79d6ac8174afeb);
     }
+    strategy_level = self botgetdifficultysetting("strategyLevel");
+    var_b79d6ac8174afeb = 0;
+    if (strategy_level == 1) {
+        var_b79d6ac8174afeb = 0.1;
+    } else if (strategy_level == 2) {
+        var_b79d6ac8174afeb = 0.5;
+    } else if (strategy_level == 3) {
+        var_b79d6ac8174afeb = 0.8;
+    }
+    return randomfloat(1) < var_b79d6ac8174afeb;
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x84c
 // Size: 0x14
@@ -216,7 +213,7 @@ function bot_get_num_teammates_capturing_zone(zone) {
     return bot_get_teammates_capturing_zone(zone).size;
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x868
 // Size: 0xba
@@ -234,18 +231,18 @@ function bot_get_teammates_capturing_zone(zone) {
     return var_25b7e3ea39cd9f57;
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x92a
 // Size: 0x22
 function bot_is_capturing_zone(zone) {
     if (!bot_is_capturing()) {
-        return 0;
+        return false;
     }
     return self.current_zone == zone;
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x954
 // Size: 0x78
@@ -256,17 +253,17 @@ function bot_capture_koth_zone(zone) {
     bot_capture_zone(zone.trigger.origin, zone.nodes, zone.trigger, optional_params);
 }
 
-// Namespace namespace_9289ca93797fb781/namespace_caeb3678a6202079
+// Namespace bots_gametype_koth / scripts/mp/bots/bots_gametype_koth
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9d3
 // Size: 0x4c
-function should_start_cautious_approach_koth(var_44770b14726e7a47) {
-    if (var_44770b14726e7a47) {
-        team = level.zone namespace_19b4203b51d56488::getownerteam();
+function should_start_cautious_approach_koth(firstcheck) {
+    if (firstcheck) {
+        team = level.zone scripts/mp/gameobjects::getownerteam();
         if (team == "neutral" || team == self.team) {
             return 0;
         }
     }
-    return should_start_cautious_approach_default(var_44770b14726e7a47);
+    return should_start_cautious_approach_default(firstcheck);
 }
 

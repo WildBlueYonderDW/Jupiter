@@ -6,7 +6,7 @@
 
 #namespace namespace_84b10fb1057ef47a;
 
-// Namespace namespace_84b10fb1057ef47a/namespace_55b161d83c1313ca
+// Namespace namespace_84b10fb1057ef47a / namespace_55b161d83c1313ca
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x88
 // Size: 0x69

@@ -13,7 +13,7 @@
 
 #namespace juggernaut;
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d0
 // Size: 0xa3
@@ -21,27 +21,27 @@ function juggernaut(asmname) {
     self endon("asm_terminated");
     self endon("death");
     if (isdefined(self.subclass) && self.subclass == "juggernaut" || isdefined(self.agent_type) && self.agent_type == "juggernaut") {
-        if (self.var_ae3ea15396b65c1f == "juggernaut" || self.var_ae3ea15396b65c1f == "juggernaut_cp" || self.var_ae3ea15396b65c1f == "juggernaut_lw") {
-            namespace_d663621620fc0601::initanimspeedthresholds_juggernaut(self.var_ae3ea15396b65c1f);
+        if (self.animsetname == "juggernaut" || self.animsetname == "juggernaut_cp" || self.animsetname == "juggernaut_lw") {
+            scripts/asm/juggernaut/juggernaut::initanimspeedthresholds_juggernaut(self.animsetname);
         }
     }
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x27a
 // Size: 0x4b
-function initanimspeedthresholds_juggernaut(var_ae3ea15396b65c1f) {
-    if (animspeedthresholdsexist(var_ae3ea15396b65c1f)) {
+function initanimspeedthresholds_juggernaut(animsetname) {
+    if (animspeedthresholdsexist(animsetname)) {
         return;
     }
     anim.juggernautspeedthreholdsinitialized = 1;
-    setspeedthreshold(var_ae3ea15396b65c1f, "walk", 40);
-    setspeedthreshold(var_ae3ea15396b65c1f, "jog", 113);
-    setspeedthreshold(var_ae3ea15396b65c1f, "run", 170);
+    setspeedthreshold(animsetname, "walk", 40);
+    setspeedthreshold(animsetname, "jog", 113);
+    setspeedthreshold(animsetname, "run", 170);
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cc
 // Size: 0x1e5
@@ -73,13 +73,13 @@ function enable_casual_killer() {
     self.pathenemyfightdist = 0;
     self.var_98add129a7ecb962 = 0;
     weapclass = weaponclass(self.weapon);
-    namespace_d663621620fc0601::initanimspeedthresholds_juggernaut("juggernaut");
+    scripts/asm/juggernaut/juggernaut::initanimspeedthresholds_juggernaut("juggernaut");
     self setbasearchetype("juggernaut");
-    var_c1ca5a5d2ddad8e8 = "casual_killer";
+    archetypeoverride = "casual_killer";
     if (weapclass == "mg") {
-        var_c1ca5a5d2ddad8e8 = "casual_killer_lmg";
+        archetypeoverride = "casual_killer_lmg";
     }
-    self setoverridearchetype("demeanor", var_c1ca5a5d2ddad8e8, 1);
+    self setoverridearchetype("demeanor", archetypeoverride, 1);
     thread casual_killer_targeting();
     if (weapclass == "mg" || weapclass == "rifle" || weapclass == "smg") {
         thread casual_killer_sweep();
@@ -90,7 +90,7 @@ function enable_casual_killer() {
     thread casual_killer_enemy_reaction();
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b8
 // Size: 0x18
@@ -100,7 +100,7 @@ function disable_casual_killer() {
     }
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d7
 // Size: 0x26a
@@ -163,12 +163,12 @@ function disable_casual_killer_internal() {
     if (isdefined(self.ck_combatmode)) {
         self.combatmode = self.ck_combatmode;
         self.ck_combatmode = undefined;
-    } else {
-        self.combatmode = "cover";
+        return;
     }
+    self.combatmode = "cover";
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x748
 // Size: 0x4c
@@ -176,14 +176,14 @@ function function_f8bf65b96ea0085e() {
     /#
         self endon("<unknown string>");
         self endon("<unknown string>");
-        while (1) {
+        while (true) {
             sphere(self.origin + (0, 0, 60), 4, (0, 1, 0), 0, 1);
             waitframe();
         }
     #/
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 10, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x79b
 // Size: 0x70
@@ -193,7 +193,7 @@ function casual_killer_damage_func(damage, attacker, direction_vec, point, type,
     }
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x812
 // Size: 0x67
@@ -210,7 +210,7 @@ function casual_killer_enemy_reaction() {
     self setthreatbiasgroup("axis");
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x880
 // Size: 0x472
@@ -222,9 +222,9 @@ function casual_killer_targeting() {
     thread delete_on_death(self.ck_target);
     currentenemy = undefined;
     var_47bccb924d51b014 = 0;
-    var_bf49e927a147e7ea = undefined;
+    enemydeathtime = undefined;
     var_d9f67b70125e4d15 = undefined;
-    while (1) {
+    while (true) {
         waitframe();
         if (!isdefined(self) || !isalive(self) || istrue(self.leavecasualkiller)) {
             return;
@@ -234,7 +234,7 @@ function casual_killer_targeting() {
         var_63a5b32b096323be = self getshootfrompos();
         if (var_47bccb924d51b014) {
             if (!isalive(currentenemy)) {
-                var_bf49e927a147e7ea = gettime();
+                enemydeathtime = gettime();
                 self setentitytarget(self.ck_target);
                 self forcethreatupdate();
                 var_47bccb924d51b014 = 0;
@@ -245,12 +245,12 @@ function casual_killer_targeting() {
         }
         framecount = int(gettime() / 50);
         if (self getentitynumber() % 4 != framecount % 4) {
-            if (isdefined(var_bf49e927a147e7ea) && var_bf49e927a147e7ea + 3000 > gettime()) {
+            if (isdefined(enemydeathtime) && enemydeathtime + 3000 > gettime()) {
                 totarget = self.ck_target.origin - self.origin;
                 if (length(totarget) > 100) {
                     totarget = vectornormalize(totarget);
                     var_b38f9f63c4ae4218 = abs(angleclamp180(acos(clamp(vectordot(forward, totarget), -1, 1))));
-                    if (var_b38f9f63c4ae4218 > 30 && gettime() < var_bf49e927a147e7ea + 1500) {
+                    if (var_b38f9f63c4ae4218 > 30 && gettime() < enemydeathtime + 1500) {
                         continue;
                     }
                     if (var_b38f9f63c4ae4218 < 90) {
@@ -258,7 +258,7 @@ function casual_killer_targeting() {
                     }
                 }
             }
-            var_bf49e927a147e7ea = undefined;
+            enemydeathtime = undefined;
             if (!isdefined(var_d9f67b70125e4d15) || gettime() > var_d9f67b70125e4d15 + 3000) {
                 self clearentitytarget();
                 self forcethreatupdate();
@@ -268,16 +268,16 @@ function casual_killer_targeting() {
                         toenemy = self.enemy.origin - self.origin;
                         toenemy = vectornormalize(toenemy);
                         dot = clamp(vectordot(forward, toenemy), -1, 1);
-                        var_7ef311e27099889b = abs(angleclamp180(acos(dot)));
-                        if (var_7ef311e27099889b > 70) {
-                            var_70f421a55d12e111 = self getsecondarytargets();
-                            if (isdefined(var_70f421a55d12e111)) {
-                                foreach (secondarytarget in var_70f421a55d12e111) {
+                        angletoenemy = abs(angleclamp180(acos(dot)));
+                        if (angletoenemy > 70) {
+                            secondarytargets = self getsecondarytargets();
+                            if (isdefined(secondarytargets)) {
+                                foreach (secondarytarget in secondarytargets) {
                                     totarget = secondarytarget.origin - self.origin;
                                     totarget = vectornormalize(totarget);
                                     var_b38f9f63c4ae4218 = abs(angleclamp180(acos(clamp(vectordot(forward, totarget), -1, 1))));
-                                    if (var_b38f9f63c4ae4218 < var_7ef311e27099889b) {
-                                        var_7ef311e27099889b = var_b38f9f63c4ae4218;
+                                    if (var_b38f9f63c4ae4218 < angletoenemy) {
+                                        angletoenemy = var_b38f9f63c4ae4218;
                                         potentialtarget = secondarytarget;
                                     }
                                 }
@@ -299,22 +299,21 @@ function casual_killer_targeting() {
                         currentenemy = undefined;
                     }
                     continue;
-                } else {
-                    self setentitytarget(self.ck_target);
-                    self forcethreatupdate();
-                    if (isdefined(var_bf49e927a147e7ea) && var_bf49e927a147e7ea + 7000 > gettime()) {
-                        if (vectordot(forward, self.ck_target.origin - var_63a5b32b096323be) > 0) {
-                            continue;
-                        }
-                    }
-                    self.ck_target.origin = self.origin + (0, 0, 40) + forward * 400;
                 }
+                self setentitytarget(self.ck_target);
+                self forcethreatupdate();
+                if (isdefined(enemydeathtime) && enemydeathtime + 7000 > gettime()) {
+                    if (vectordot(forward, self.ck_target.origin - var_63a5b32b096323be) > 0) {
+                        continue;
+                    }
+                }
+                self.ck_target.origin = self.origin + (0, 0, 40) + forward * 400;
             }
         }
     }
 }
 
-// Namespace juggernaut/namespace_d663621620fc0601
+// Namespace juggernaut / scripts/asm/juggernaut/juggernaut
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcf9
 // Size: 0x6bd
@@ -322,17 +321,17 @@ function casual_killer_sweep() {
     self endon("leaveCasualKiller");
     self endon("death");
     var_cc9867c158efea96 = 100;
-    var_f1f1bcb5c9023d10 = 1000;
+    sweepmaxdistance = 1000;
     var_455248ba6a05b7f6 = 20;
-    var_fe188ffdfbd991d8 = -1;
-    var_7bb1d92aef3fbb8b = [0:40, 1:50, 2:60];
-    var_6d41eacb164da117 = [0:20, 1:25, 2:30];
+    sweepdirection = -1;
+    sweepspeeds = [40, 50, 60];
+    var_6d41eacb164da117 = [20, 25, 30];
     var_4ac58fb63979cc4 = 0;
     var_728f77917e6cf88f = 0;
-    var_9b4a37baf5f7793a = random(var_7bb1d92aef3fbb8b);
-    var_6fd0de104684e9fe = random(var_6d41eacb164da117);
-    var_2e51cbd330774656 = 0;
-    var_5caf41274f960e0d = undefined;
+    sweepspeed = random(sweepspeeds);
+    sweepmaxangle = random(var_6d41eacb164da117);
+    sweepstoptime = 0;
+    shootatpos = undefined;
     var_3085bde8d3b9f336 = undefined;
     foreach (maxangle in var_6d41eacb164da117) {
         if (maxangle > var_4ac58fb63979cc4) {
@@ -348,12 +347,12 @@ function casual_killer_sweep() {
         var_63a5b32b096323be = self getshootfrompos();
         if (isdefined(self.enemy)) {
             if (!isdefined(self.pathgoalpos) || self.lookaheaddist > self aigetdesiredspeed()) {
-                var_5caf41274f960e0d = self.enemy getshootatpos();
+                shootatpos = self.enemy getshootatpos();
             }
         }
         var_7dff387edf36893b = asm_currentstatehasflag(self.var_a709fbd9fea148f6, "aim") || asm_currentstatehasflag(self.var_a709fbd9fea148f6, "notetrackAim");
         if (var_7dff387edf36893b) {
-            var_7dff387edf36893b = isdefined(var_5caf41274f960e0d);
+            var_7dff387edf36893b = isdefined(shootatpos);
         }
         currentstate = asm_getcurrentstate(self.asmname);
         if (currentstate == "exposed_arrival" || currentstate == "exposed_reload") {
@@ -361,17 +360,17 @@ function casual_killer_sweep() {
         }
         if (var_7dff387edf36893b) {
             var_f58d35ffffdf0e30 = self getposonpath(self aigetdesiredspeed());
-            var_778d002d5be90b60 = var_5caf41274f960e0d - var_f58d35ffffdf0e30;
+            var_778d002d5be90b60 = shootatpos - var_f58d35ffffdf0e30;
             var_778d002d5be90b60 = (var_778d002d5be90b60[0], var_778d002d5be90b60[1], 0);
             var_3c8323340d37bffd = vectornormalize(var_778d002d5be90b60);
-            var_4c3baabe5686a741 = self.leftaimlimit;
+            aimlimit = self.leftaimlimit;
             if (!istrue(var_3085bde8d3b9f336)) {
-                var_4c3baabe5686a741 = max(0, self.leftaimlimit - 20);
+                aimlimit = max(0, self.leftaimlimit - 20);
             }
             var_9625b7f28569e37a = abs(angleclamp180(acos(clamp(vectordot(var_3c8323340d37bffd, forward), -1, 1))));
-            if (var_9625b7f28569e37a >= var_4c3baabe5686a741) {
-                var_5caf41274f960e0d = undefined;
-                var_2e51cbd330774656 = 0;
+            if (var_9625b7f28569e37a >= aimlimit) {
+                shootatpos = undefined;
+                sweepstoptime = 0;
                 var_7dff387edf36893b = 0;
             }
         }
@@ -379,28 +378,28 @@ function casual_killer_sweep() {
             utility::lookatentity(undefined);
             utility::lookatpos(var_63a5b32b096323be + forward * 200);
             self.casualkillershootpos = var_63a5b32b096323be + forward * 200;
-            var_455248ba6a05b7f6 = 20 * var_fe188ffdfbd991d8;
-            var_fe188ffdfbd991d8 = var_fe188ffdfbd991d8 * -1;
-            var_2e51cbd330774656 = 0;
+            var_455248ba6a05b7f6 = 20 * sweepdirection;
+            sweepdirection = sweepdirection * -1;
+            sweepstoptime = 0;
             self.dontevershoot = 1;
             var_3085bde8d3b9f336 = 0;
             continue;
         }
         var_3085bde8d3b9f336 = 1;
         self.dontevershoot = 0;
-        if (isdefined(var_5caf41274f960e0d)) {
-            utility::lookatpos(var_5caf41274f960e0d);
+        if (isdefined(shootatpos)) {
+            utility::lookatpos(shootatpos);
             /#
                 if (getdvarint(@"hash_d7f290f0d986c37", 0) == 1) {
-                    line(var_63a5b32b096323be, var_5caf41274f960e0d, (1, 0, 0), 1, 0, 1);
-                    sphere(var_5caf41274f960e0d, 4, (1, 0, 0), 0, 1);
+                    line(var_63a5b32b096323be, shootatpos, (1, 0, 0), 1, 0, 1);
+                    sphere(shootatpos, 4, (1, 0, 0), 0, 1);
                 }
             #/
         } else {
             utility::lookatentity(undefined);
             utility::lookatpos(undefined);
         }
-        var_778d002d5be90b60 = var_5caf41274f960e0d - var_63a5b32b096323be;
+        var_778d002d5be90b60 = shootatpos - var_63a5b32b096323be;
         var_10f0ce3cffed6abb = length(var_778d002d5be90b60);
         var_3c8323340d37bffd = vectornormalize(var_778d002d5be90b60);
         var_9625b7f28569e37a = abs(angleclamp180(acos(clamp(vectordot(forward, var_3c8323340d37bffd), -1, 1))));
@@ -408,20 +407,20 @@ function casual_killer_sweep() {
         var_1d68d29c186725d1 = var_40577e9afa2538df[1];
         if (istrue(self.leavecasualkiller)) {
             if (var_455248ba6a05b7f6 > 0) {
-                var_455248ba6a05b7f6 = var_455248ba6a05b7f6 - min(var_455248ba6a05b7f6, var_9b4a37baf5f7793a * level.framedurationseconds);
-                var_fe188ffdfbd991d8 = -1;
+                var_455248ba6a05b7f6 = var_455248ba6a05b7f6 - min(var_455248ba6a05b7f6, sweepspeed * level.framedurationseconds);
+                sweepdirection = -1;
             } else if (var_455248ba6a05b7f6 < 0) {
-                var_455248ba6a05b7f6 = var_455248ba6a05b7f6 + min(var_455248ba6a05b7f6 * -1, var_9b4a37baf5f7793a * level.framedurationseconds);
-                var_fe188ffdfbd991d8 = 1;
+                var_455248ba6a05b7f6 = var_455248ba6a05b7f6 + min(var_455248ba6a05b7f6 * -1, sweepspeed * level.framedurationseconds);
+                sweepdirection = 1;
             }
-        } else if (var_9625b7f28569e37a + var_4ac58fb63979cc4 < abs(self.leftaimlimit) && var_9625b7f28569e37a + var_4ac58fb63979cc4 < abs(self.rightaimlimit) && var_10f0ce3cffed6abb > var_cc9867c158efea96 && (var_10f0ce3cffed6abb < var_f1f1bcb5c9023d10 || isdefined(self.enemy) && self.enemy == level.player)) {
+        } else if (var_9625b7f28569e37a + var_4ac58fb63979cc4 < abs(self.leftaimlimit) && var_9625b7f28569e37a + var_4ac58fb63979cc4 < abs(self.rightaimlimit) && var_10f0ce3cffed6abb > var_cc9867c158efea96 && (var_10f0ce3cffed6abb < sweepmaxdistance || isdefined(self.enemy) && self.enemy == level.player)) {
             if (gettime() > var_728f77917e6cf88f) {
-                var_f661d02c9f3036b = level.framedurationseconds * var_9b4a37baf5f7793a * var_fe188ffdfbd991d8;
+                var_f661d02c9f3036b = level.framedurationseconds * sweepspeed * sweepdirection;
                 var_455248ba6a05b7f6 = var_455248ba6a05b7f6 + var_f661d02c9f3036b;
-                if (sign(var_455248ba6a05b7f6) == sign(var_fe188ffdfbd991d8) && abs(var_455248ba6a05b7f6) > var_6fd0de104684e9fe) {
-                    var_fe188ffdfbd991d8 = var_fe188ffdfbd991d8 * -1;
-                    var_9b4a37baf5f7793a = random(var_7bb1d92aef3fbb8b);
-                    var_6fd0de104684e9fe = random(var_6d41eacb164da117);
+                if (sign(var_455248ba6a05b7f6) == sign(sweepdirection) && abs(var_455248ba6a05b7f6) > sweepmaxangle) {
+                    sweepdirection = sweepdirection * -1;
+                    sweepspeed = random(sweepspeeds);
+                    sweepmaxangle = random(var_6d41eacb164da117);
                     var_728f77917e6cf88f = gettime() + 350;
                 }
             }
@@ -441,7 +440,7 @@ function casual_killer_sweep() {
             }
             if (getdvarint(@"hash_960706093ece3d0c", 0) == 1) {
                 sphere(self.origin, var_cc9867c158efea96, (1, 1, 1), 0, 1);
-                sphere(self.origin, var_f1f1bcb5c9023d10, (0, 0, 0), 0, 1);
+                sphere(self.origin, sweepmaxdistance, (0, 0, 0), 0, 1);
             }
         #/
         if (istrue(self.leavecasualkiller) && var_455248ba6a05b7f6 == 0) {

@@ -14,7 +14,7 @@
 
 #namespace br_attraction_gulag;
 
-// Namespace br_attraction_gulag/namespace_57d499bebd60ffe5
+// Namespace br_attraction_gulag / scripts/mp/gametypes/br_attraction_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x196
 // Size: 0x3a
@@ -24,7 +24,7 @@ function init() {
     registerlocations();
 }
 
-// Namespace br_attraction_gulag/namespace_57d499bebd60ffe5
+// Namespace br_attraction_gulag / scripts/mp/gametypes/br_attraction_gulag
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1d7
 // Size: 0xb2
@@ -44,7 +44,7 @@ function registerlocations() {
     }
 }
 
-// Namespace br_attraction_gulag/namespace_57d499bebd60ffe5
+// Namespace br_attraction_gulag / scripts/mp/gametypes/br_attraction_gulag
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x290
 // Size: 0x11d
@@ -54,14 +54,14 @@ function registerlocation(origin, var_ccb00530d7a24ee3) {
     nextindex = level.brattractions["gulag"].locations.size;
     level.brattractions["gulag"].locations[nextindex] = spawnstruct();
     location = level.brattractions["gulag"].locations[nextindex];
-    location.icontrigger = namespace_8bbc300af6d3c2fb::createattractionicontrigger("gulag", 0, origin, var_f98843815888ea41, "ui_mp_br_mapmenu_icon_poi_sb_gulag", var_ccb00530d7a24ee3, undefined, undefined, "br_attraction_gulag");
-    location.icontrigger namespace_8bbc300af6d3c2fb::triggeraddobjectivetext("MP_BR_INGAME/ATTRACT_GULAG_AREA");
+    location.icontrigger = scripts/mp/gametypes/br_attractions::createattractionicontrigger("gulag", 0, origin, var_f98843815888ea41, "ui_mp_br_mapmenu_icon_poi_sb_gulag", var_ccb00530d7a24ee3, undefined, undefined, "br_attraction_gulag");
+    location.icontrigger scripts/mp/gametypes/br_attractions::triggeraddobjectivetext("MP_BR_INGAME/ATTRACT_GULAG_AREA");
     location.prompt = spawn("script_model", origin + (0, 0, var_9b6c8be6b3c1724f));
     location.prompt setmodel("tag_origin");
     location.prompt thread triggerpromptthink();
 }
 
-// Namespace br_attraction_gulag/namespace_57d499bebd60ffe5
+// Namespace br_attraction_gulag / scripts/mp/gametypes/br_attraction_gulag
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b4
 // Size: 0x4c
@@ -69,9 +69,9 @@ function triggerpromptthink(location) {
     self makeusable();
     self sethintstring("MP_BR_INGAME/ATTRACT_GULAG_PROMPT");
     self setusepriority(-1);
-    while (1) {
+    while (true) {
         player = self waittill("trigger");
-        player thread namespace_47fd1e79a44628cd::initplayerjail();
+        player thread scripts/mp/gametypes/br_gulag::initplayerjail();
     }
 }
 

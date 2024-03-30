@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_3b64eb40368c1450;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\mp\flags.gsc;
 #using scripts\engine\trace.gsc;
@@ -12,7 +12,7 @@
 
 #namespace gestures;
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x74c
 // Size: 0x104
@@ -20,7 +20,7 @@ function init() {
     level.gestureinfo = [];
     level.gestureinfobyindex = [];
     val::register("gesture", 1, 0, "$self", &function_9e06fa9c92578f0d, "$value");
-    for (row = 0; 1; row++) {
+    for (row = 0; true; row++) {
         ref = tablelookupbyrow("mp/gesturetable.csv", row, 0);
         if (!isdefined(ref) || ref == "") {
             break;
@@ -35,10 +35,10 @@ function init() {
         }
         level.gestureinfo[ref] = data;
     }
-    level.rockpaperscissors = [0:"ges_plyr_gesture043", 1:"ges_plyr_gesture114", 2:"ges_plyr_gesture115"];
+    level.rockpaperscissors = ["ges_plyr_gesture043", "ges_plyr_gesture114", "ges_plyr_gesture115"];
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x857
 // Size: 0x32
@@ -49,7 +49,7 @@ function getgesturedata(ref) {
     return level.gestureinfo[ref];
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x891
 // Size: 0x17
@@ -57,7 +57,7 @@ function getgesturedatabyindex(index) {
     return level.gestureinfobyindex[index];
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8b0
 // Size: 0x6b
@@ -71,14 +71,16 @@ function private function_9e06fa9c92578f0d(b_value) {
         } else {
             self setactionslot(7, "taunt");
         }
-    } else if (is_player_gamepad_enabled()) {
-        self setactionslot(1, "");
-    } else {
-        self setactionslot(7, "");
+        return;
     }
+    if (is_player_gamepad_enabled()) {
+        self setactionslot(1, "");
+        return;
+    }
+    self setactionslot(7, "");
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x922
 // Size: 0x83
@@ -97,7 +99,7 @@ function cleargesture() {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9ac
 // Size: 0x134
@@ -124,9 +126,9 @@ function givegesture(gestureweapon) {
                 gestureweapon = gesture_pickrockpaperscissors();
                 break;
             case #"hash_e3da89263fb7af49":
-                var_8c3771f0b13ac9bc = ter_op(cointoss(), "ges_plyr_gesture050", "ges_plyr_gesture052");
-                thread gesture_coinflipthink(var_8c3771f0b13ac9bc);
-                gestureweapon = var_8c3771f0b13ac9bc;
+                newgesture = ter_op(cointoss(), "ges_plyr_gesture050", "ges_plyr_gesture052");
+                thread gesture_coinflipthink(newgesture);
+                gestureweapon = newgesture;
                 break;
             }
             if (!self isconsoleplayer()) {
@@ -137,7 +139,7 @@ function givegesture(gestureweapon) {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xae7
 // Size: 0xa4
@@ -145,7 +147,7 @@ function monitorgamepadswitch() {
     self endon("clearGesture");
     self endon("disconnect");
     var_cca5d182ecca9e1a = is_player_gamepad_enabled();
-    while (1) {
+    while (true) {
         if (isdefined(self.disabledgesture) && self.disabledgesture > 0) {
             waitframe();
             continue;
@@ -165,18 +167,18 @@ function monitorgamepadswitch() {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x25
 function gesture_manage3rdperson() {
     self endon("disconnect");
-    while (1) {
+    while (true) {
         objweapon = self waittill("offhand_pullback");
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbbe
 // Size: 0x1d
@@ -184,7 +186,7 @@ function gesture_pickrockpaperscissors() {
     return level.rockpaperscissors[randomintrange(0, level.rockpaperscissors.size)];
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbe3
 // Size: 0xb8
@@ -194,18 +196,18 @@ function gesture_rockpaperscissorsthink() {
     level endon("game_ended");
     self notify("gesture_rockPaperScissorsThink()");
     self endon("gesture_rockPaperScissorsThink()");
-    while (1) {
+    while (true) {
         self waittill("used_cosmetic_gesture");
-        var_bff1e3c9ba212857 = undefined;
-        if (namespace_4b0406965e556711::gameflag("prematch_done") && getdvarint(@"hash_873992478b2f6deb", 0) == 0) {
+        canplay = undefined;
+        if (scripts/mp/flags::gameflag("prematch_done") && getdvarint(@"hash_873992478b2f6deb", 0) == 0) {
             self [[ level.showerrormessagefunc ]]("MP_INGAME_ONLY/RPS_TOO_LATE");
-            var_bff1e3c9ba212857 = 0;
+            canplay = 0;
         } else {
             self [[ level.showerrormessagefunc ]]("MP_INGAME_ONLY/RPS_START");
-            var_bff1e3c9ba212857 = 1;
+            canplay = 1;
         }
         self waittill("offhand_fired");
-        if (var_bff1e3c9ba212857) {
+        if (canplay) {
             thread gesture_playrockpaperscissors();
         }
         self waittill("offhand_end");
@@ -213,7 +215,7 @@ function gesture_rockpaperscissorsthink() {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xca2
 // Size: 0x16
@@ -222,7 +224,7 @@ function gesture_resetrockpaperscissorsgesture() {
     givegesture("ges_plyr_gesture043");
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcbf
 // Size: 0x110
@@ -253,29 +255,29 @@ function gesture_playrockpaperscissors() {
     self.rockpaperscissorschoice = undefined;
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdd6
 // Size: 0x130
 function gesture_getrockpaperscissorsplayers() {
     forward = anglestoforward(self getplayerangles());
-    var_ef269077a28646eb = utility::playersinsphere(self.origin, 500);
-    foreach (otherplayer in var_ef269077a28646eb) {
+    nearplayers = utility::playersinsphere(self.origin, 500);
+    foreach (otherplayer in nearplayers) {
         if (!isdefined(otherplayer) || otherplayer == self) {
             continue;
         }
         if (!isdefined(otherplayer.rockpaperscissorschoice)) {
             continue;
         }
-        var_7a25ddb41e7358db = otherplayer.origin - self.origin;
-        var_7a25ddb41e7358db = vectornormalize(var_7a25ddb41e7358db);
-        var_4a0d170010397660 = vectordot(var_7a25ddb41e7358db, forward);
+        tootherplayer = otherplayer.origin - self.origin;
+        tootherplayer = vectornormalize(tootherplayer);
+        var_4a0d170010397660 = vectordot(tootherplayer, forward);
         if (var_4a0d170010397660 < 0.707107) {
             continue;
         }
-        var_c1ff07becb2ad921 = anglestoforward(otherplayer getplayerangles());
-        var_577d4bc399877ae4 = var_7a25ddb41e7358db * -1;
-        var_a16efa238faeb70f = vectordot(var_577d4bc399877ae4, var_c1ff07becb2ad921);
+        otherplayerforward = anglestoforward(otherplayer getplayerangles());
+        fromotherplayer = tootherplayer * -1;
+        var_a16efa238faeb70f = vectordot(fromotherplayer, otherplayerforward);
         if (var_a16efa238faeb70f < 0.707107) {
             continue;
         }
@@ -283,26 +285,25 @@ function gesture_getrockpaperscissorsplayers() {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x89
-function gesture_determinerockpaperscissorswinner(player1, var_ce0996d6bd90c7d4, player2, var_5f15c93009bbde89) {
-    if (var_ce0996d6bd90c7d4 == var_5f15c93009bbde89) {
+function gesture_determinerockpaperscissorswinner(player1, player1choice, player2, player2choice) {
+    if (player1choice == player2choice) {
         return undefined;
     }
-    switch (var_ce0996d6bd90c7d4) {
+    switch (player1choice) {
     case #"hash_e3d706263fb4a279":
-        return ter_op(var_5f15c93009bbde89 == "ges_plyr_gesture114", player2, player1);
+        return ter_op(player2choice == "ges_plyr_gesture114", player2, player1);
     case #"hash_eaeaf42643537972":
-        return ter_op(var_5f15c93009bbde89 == "ges_plyr_gesture115", player2, player1);
+        return ter_op(player2choice == "ges_plyr_gesture115", player2, player1);
     case #"hash_eaeaf52643537b05":
-        return ter_op(var_5f15c93009bbde89 == "ges_plyr_gesture043", player2, player1);
-        break;
+        return ter_op(player2choice == "ges_plyr_gesture043", player2, player1);
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf9d
 // Size: 0x5e
@@ -312,9 +313,9 @@ function gesture_coinflipthink(gesture) {
     level endon("game_ended");
     self notify("gesture_coinFlipThink()");
     self endon("gesture_coinFlipThink()");
-    while (1) {
+    while (true) {
         self waittill("used_cosmetic_gesture");
-        while (1) {
+        while (true) {
             if (!self isgestureplaying(gesture)) {
                 break;
             }
@@ -324,7 +325,7 @@ function gesture_coinflipthink(gesture) {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1002
 // Size: 0x16
@@ -333,23 +334,23 @@ function gesture_resetcoinflipgesture() {
     givegesture("ges_plyr_gesture050");
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x101f
 // Size: 0x3a
 function haschangedarchetype() {
     if (isdefined(self.changedarchetypeinfo)) {
         if (!isdefined(self.lastarchetypeinfo)) {
-            return 1;
+            return true;
         }
         if (self.changedarchetypeinfo != self.lastarchetypeinfo) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1061
 // Size: 0x7e
@@ -369,13 +370,13 @@ function monitorcontextualcallout() {
     }
     waitframe();
     cleargesture();
-    while (1) {
+    while (true) {
         self waittill("activateGesture");
         processcontext();
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10e6
 // Size: 0x312
@@ -385,7 +386,7 @@ function processcontext() {
     fwd = anglestoforward(viewangles);
     mindot = cos(10);
     bestdot = undefined;
-    var_37088d8c2341bc50 = undefined;
+    bestent = undefined;
     var_69035efa489d7aa8 = [];
     if (isdefined(self.engstructks)) {
         foreach (ent in self.engstructks.outlinedents) {
@@ -406,65 +407,62 @@ function processcontext() {
         dot = vectordot(fwd, vectornormalize(ent.origin - startpos));
         if (!isdefined(bestdot) || bestdot < dot) {
             bestdot = dot;
-            var_37088d8c2341bc50 = ent;
+            bestent = ent;
         }
     }
-    if (isdefined(var_37088d8c2341bc50) && bestdot > mindot) {
-        if (isdefined(var_37088d8c2341bc50.vehicle)) {
-            var_37088d8c2341bc50 = var_37088d8c2341bc50.vehicle;
+    if (isdefined(bestent) && bestdot > mindot) {
+        if (isdefined(bestent.vehicle)) {
+            bestent = bestent.vehicle;
         }
-        thread applyoutlinecalloutsource(var_37088d8c2341bc50);
-    } else {
-        if (isdefined(level.gamemodegesturecalloutassign) && self thread [[ level.gamemodegesturecalloutassign ]]()) {
-            goto LOC_00000310;
-        }
-        content = [0:"physicscontents_clipshot", 1:"physicscontents_missileclip", 2:"physicscontents_vehicle", 3:"physicscontents_characterproxy", 4:"physicscontents_glass", 5:"physicscontents_itemclip"];
-        contentoverride = physics_createcontents(content);
-        endpos = startpos + fwd * 10000;
-        trace = namespace_2a184fc4902783dc::sphere_trace(startpos, endpos, 0.1, self, contentoverride, 0);
-        if (trace["fraction"] < 0.99) {
-            thread markworldposition(trace["position"]);
-        LOC_00000310:
-        }
-    LOC_00000310:
+        thread applyoutlinecalloutsource(bestent);
+        return;
     }
-LOC_00000310:
+    if (isdefined(level.gamemodegesturecalloutassign) && self thread [[ level.gamemodegesturecalloutassign ]]()) {
+        return;
+    }
+    content = ["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle", "physicscontents_characterproxy", "physicscontents_glass", "physicscontents_itemclip"];
+    contentoverride = physics_createcontents(content);
+    endpos = startpos + fwd * 10000;
+    trace = scripts/engine/trace::sphere_trace(startpos, endpos, 0.1, self, contentoverride, 0);
+    if (trace["fraction"] < 0.99) {
+        thread markworldposition(trace["position"]);
+    }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13ff
 // Size: 0x12b
 function markworldposition(org) {
     self.worldmarkerpos = org;
     if (!isdefined(self.worldmarkerid)) {
-        self.worldmarkerid = namespace_5a22b6f3a56f7e9b::requestobjectiveid(1);
+        self.worldmarkerid = scripts/mp/objidpoolmanager::requestobjectiveid(1);
         if (self.worldmarkerid != -1) {
-            namespace_5a22b6f3a56f7e9b::objective_add_objective(self.worldmarkerid, "invisible", org, "icon_waypoint_marker");
-            namespace_5a22b6f3a56f7e9b::objective_teammask_single(self.worldmarkerid, self.team);
-            namespace_5a22b6f3a56f7e9b::update_objective_setbackground(self.worldmarkerid, 1);
-            namespace_5a22b6f3a56f7e9b::objective_set_play_intro(self.worldmarkerid, 0);
-            namespace_5a22b6f3a56f7e9b::objective_set_play_outro(self.worldmarkerid, 0);
+            scripts/mp/objidpoolmanager::objective_add_objective(self.worldmarkerid, "invisible", org, "icon_waypoint_marker");
+            scripts/mp/objidpoolmanager::objective_teammask_single(self.worldmarkerid, self.team);
+            scripts/mp/objidpoolmanager::update_objective_setbackground(self.worldmarkerid, 1);
+            scripts/mp/objidpoolmanager::objective_set_play_intro(self.worldmarkerid, 0);
+            scripts/mp/objidpoolmanager::objective_set_play_outro(self.worldmarkerid, 0);
         } else {
             self.worldmarkerid = undefined;
             return;
         }
     } else {
-        namespace_5a22b6f3a56f7e9b::update_objective_position(self.worldmarkerid, org);
+        scripts/mp/objidpoolmanager::update_objective_position(self.worldmarkerid, org);
     }
     objid = self.worldmarkerid;
     self notify("markWorldPosition");
     self endon("markWorldPosition");
-    namespace_5a22b6f3a56f7e9b::objective_set_pulsate(objid, 1);
+    scripts/mp/objidpoolmanager::objective_set_pulsate(objid, 1);
     wait(3);
-    namespace_5a22b6f3a56f7e9b::objective_set_pulsate(objid, 0);
+    scripts/mp/objidpoolmanager::objective_set_pulsate(objid, 0);
     wait(5);
-    namespace_5a22b6f3a56f7e9b::returnobjectiveid(objid);
+    scripts/mp/objidpoolmanager::returnobjectiveid(objid);
     self.worldmarkerid = undefined;
     self.worldmarkerpos = undefined;
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1531
 // Size: 0x239
@@ -498,21 +496,21 @@ function applyoutlinecalloutsource(ent) {
     }
     ent.outlinecalloutsource[ent.outlinecalloutsource.size] = self;
     outlines[id] = ent;
-    var_c09f31c1c604eaef = 0;
+    tempoutline = 0;
     if (isdefined(ent.turret)) {
         id = undefined;
         if (issharedfuncdefined("outline", "outlineEnableForTeam")) {
             id = [[ getsharedfunc("outline", "outlineEnableForTeam") ]](ent.turret, self.team, "outline_nodepth_red", "perk_superior");
         }
         outlines[id] = ent.turret;
-        var_c09f31c1c604eaef = 1;
+        tempoutline = 1;
     }
-    if (var_c09f31c1c604eaef) {
+    if (tempoutline) {
         ent thread processtimeout(self, outlines);
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1771
 // Size: 0xdf
@@ -533,7 +531,7 @@ function processtimeout(attacker, outlines) {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1857
 // Size: 0x1e1
@@ -551,7 +549,7 @@ function processcalloutdeath(ent, attacker) {
         if (player == attacker) {
             continue;
         }
-        if (istrue(namespace_f8065cafc523dba5::playersareenemies(player, attacker))) {
+        if (istrue(scripts/cp_mp/utility/player_utility::playersareenemies(player, attacker))) {
             continue;
         }
         scoreevent = "assist_marked";
@@ -581,7 +579,7 @@ function processcalloutdeath(ent, attacker) {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a3f
 // Size: 0x28b
@@ -636,7 +634,7 @@ function applygamemodecallout(ent, msg, event) {
     self.gamemodecalloutent = undefined;
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cd1
 // Size: 0x21b
@@ -645,13 +643,13 @@ function waittillobjectiveevent(id, ent, event) {
     self endon("gamemode_callout_replaced");
     self endon("disconnect");
     team = self.team;
-    while (1) {
+    while (true) {
         player = ent waittill(event);
-        var_98da853291a33610 = 0;
+        giveconfirm = 0;
         if (isdefined(level.gamemodegesturecalloutverify)) {
-            var_98da853291a33610 = self [[ level.gamemodegesturecalloutverify ]](event, player);
+            giveconfirm = self [[ level.gamemodegesturecalloutverify ]](event, player);
         }
-        if (var_98da853291a33610) {
+        if (giveconfirm) {
             scoreevent = "assist_marked";
             points = 0;
             if (issharedfuncdefined("rank", "getScoreInfoValue")) {
@@ -687,7 +685,7 @@ function waittillobjectiveevent(id, ent, event) {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ef3
 // Size: 0x7e
@@ -703,7 +701,7 @@ function waittillobjectivereplaced(id, ent, event) {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f78
 // Size: 0x8e
@@ -711,13 +709,13 @@ function startholowatchvfx() {
     if (level.mapname == "mp_hackney_yard" || level.mapname == "mp_spear_pm" || level.mapname == "mp_runner_pm" || level.mapname == "mp_cave") {
         self setscriptablepartstate("watchVFXPlayer", "holoWatchOnNight");
         self setclientomnvar("ui_pet_watch_state", 1);
-    } else {
-        self setscriptablepartstate("watchVFXPlayer", "holoWatchOn");
-        self setclientomnvar("ui_pet_watch_state", 0);
+        return;
     }
+    self setscriptablepartstate("watchVFXPlayer", "holoWatchOn");
+    self setclientomnvar("ui_pet_watch_state", 0);
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x200d
 // Size: 0x4f
@@ -732,7 +730,7 @@ function startbluntwatchvfx() {
     thread function_a4f0da4979f60824();
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2063
 // Size: 0x46
@@ -747,7 +745,7 @@ function function_a4f0da4979f60824() {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20b0
 // Size: 0x8f
@@ -766,18 +764,18 @@ function tryreenablescriptablevfx() {
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2146
 // Size: 0x206
-function watchradialgestureactivation(var_d608d01a055671c9, gestureindex) {
-    if ((namespace_36f464722d326bbe::isbrstylegametype() || level.gametype == "dmz" || level.gametype == "exgm" || level.gametype == "plunder") && self hasweapon("iw9_armor_plate_deploy_mp")) {
+function watchradialgestureactivation(gesturenotify, gestureindex) {
+    if ((scripts/cp_mp/utility/game_utility::isbrstylegametype() || level.gametype == "dmz" || level.gametype == "exgm" || level.gametype == "plunder") && self hasweapon("iw9_armor_plate_deploy_mp")) {
         return;
     }
-    if (var_d608d01a055671c9 == "radial_menu_selection_gesture") {
-        var_3967a9dc0290fc08 = getgesturedatabyindex(gestureindex);
-        if (isdefined(var_3967a9dc0290fc08)) {
-            if (var_3967a9dc0290fc08 == "iw8_ges_plyr_gesture024") {
+    if (gesturenotify == "radial_menu_selection_gesture") {
+        gesturedata = getgesturedatabyindex(gestureindex);
+        if (isdefined(gesturedata)) {
+            if (gesturedata == "iw8_ges_plyr_gesture024") {
                 if (!isdefined(self.smartwatchinteract)) {
                     self.smartwatchinteract = 0;
                 }
@@ -792,7 +790,7 @@ function watchradialgestureactivation(var_d608d01a055671c9, gestureindex) {
                         }
                     }
                 }
-            } else if (var_3967a9dc0290fc08 == "iw8_ges_plyr_gesture023") {
+            } else if (gesturedata == "iw8_ges_plyr_gesture023") {
                 if (!isdefined(self.watchcheck)) {
                     self.watchcheck = 0;
                 }
@@ -804,29 +802,31 @@ function watchradialgestureactivation(var_d608d01a055671c9, gestureindex) {
                     }
                 }
             }
-            objweapon = makeweapon(var_3967a9dc0290fc08);
+            objweapon = makeweapon(gesturedata);
             if (isdefined(objweapon) && !isnullweapon(objweapon)) {
                 watchradialgesture(objweapon);
             }
         }
-    } else if (var_d608d01a055671c9 == "radial_menu_selection_spray") {
+        return;
+    }
+    if (gesturenotify == "radial_menu_selection_spray") {
         objweapon = makeweapon("iw8_ges_plyr_spray");
         if (isdefined(objweapon) && !isnullweapon(objweapon)) {
             thread watchspraygesturedosprayevent(gestureindex);
             watchradialgesture(objweapon);
-        } else {
-            /#
-                println("offhand_fired" + "supers" + "holoWatchOn");
-            #/
+            return;
         }
+        /#
+            println("offhand_fired" + "supers" + "holoWatchOn");
+        #/
     }
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2353
 // Size: 0x76
-function watchspraygesturedosprayevent(var_fb7362e3e2706612) {
+function watchspraygesturedosprayevent(sprayindex) {
     self endon("death");
     self endon("disconnect");
     self notify("watchSprayGestureDoSprayEvent");
@@ -835,8 +835,8 @@ function watchspraygesturedosprayevent(var_fb7362e3e2706612) {
     while (gettime() < endtime) {
         waitframe();
         if (self isgestureplaying("iw8_ges_plyr_spray")) {
-            self sprayevent(var_fb7362e3e2706612);
-            namespace_aad14af462a74d08::onspray();
+            self sprayevent(sprayindex);
+            scripts/cp_mp/challenges::onspray();
             return;
         }
     }
@@ -845,7 +845,7 @@ function watchspraygesturedosprayevent(var_fb7362e3e2706612) {
     #/
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23d0
 // Size: 0x71
@@ -866,7 +866,7 @@ function watchradialgesture(objweapon) {
     self.gestureweapon = objweapon.basename;
 }
 
-// Namespace gestures/namespace_46e9069d8502773a
+// Namespace gestures / scripts/cp_mp/gestures
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2448
 // Size: 0x24

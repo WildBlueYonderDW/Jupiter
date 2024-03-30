@@ -5,17 +5,17 @@
 
 #namespace compass;
 
-// Namespace compass/namespace_3e528bdeb387613a
+// Namespace compass / scripts/mp/compass
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x185
 // Size: 0x7cb
 function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
     requiredmapaspectratio = getdvarfloat(@"hash_24d7dc1cc026a63b", 1);
-    var_aba6558851409d7d = function_79404c2fcca1c184();
-    if (isdefined(var_aba6558851409d7d) && isdefined(var_aba6558851409d7d.var_cea11b0bd8f76b2d)) {
-        foreach (var_542076377ecb3d6c in var_aba6558851409d7d.var_cea11b0bd8f76b2d) {
-            if (var_542076377ecb3d6c.gametype == namespace_cd0b2d039510b38d::getgametype()) {
-                material = var_542076377ecb3d6c.var_bf768d8db892be1b;
+    mapinfo = function_79404c2fcca1c184();
+    if (isdefined(mapinfo) && isdefined(mapinfo.var_cea11b0bd8f76b2d)) {
+        foreach (minimapversion in mapinfo.var_cea11b0bd8f76b2d) {
+            if (minimapversion.gametype == scripts/mp/utility/game::getgametype()) {
+                material = minimapversion.var_bf768d8db892be1b;
             }
         }
     }
@@ -26,23 +26,23 @@ function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
         var_11f306b80ae0c39e = material;
     }
     corners = [];
-    var_6d476f1dea7803bb = function_f159c10d5cf8f0b4("noent_volume_minimap", "classname");
-    if (var_6d476f1dea7803bb.size > 0) {
-        if (var_6d476f1dea7803bb.size != 1) {
+    allvolumes = function_f159c10d5cf8f0b4("noent_volume_minimap", "classname");
+    if (allvolumes.size > 0) {
+        if (allvolumes.size != 1) {
             /#
                 println("<unknown string>");
             #/
             return;
         }
-        var_7640093a137c66ba = var_6d476f1dea7803bb[0] function_f69c3df4767470dc();
-        corners[0] = spawn("script_origin", var_7640093a137c66ba[0]);
-        corners[1] = spawn("script_origin", var_7640093a137c66ba[1]);
+        minimapcorners = allvolumes[0] function_f69c3df4767470dc();
+        corners[0] = spawn("script_origin", minimapcorners[0]);
+        corners[1] = spawn("script_origin", minimapcorners[1]);
     } else {
-        var_e8972ba2455ea052 = getentarray("minimap_corner", "targetname");
-        var_9454b445960cb2a3 = namespace_cd0b2d039510b38d::getgametype() == "war";
-        if (namespace_36f464722d326bbe::isdonetskmap() && !namespace_36f464722d326bbe::function_fa7bfcc1d68b7b73() && isdefined(level.var_2c81de0e95b02675)) {
+        allcorners = getentarray("minimap_corner", "targetname");
+        var_9454b445960cb2a3 = scripts/mp/utility/game::getgametype() == "war";
+        if (scripts/cp_mp/utility/game_utility::isdonetskmap() && !scripts/cp_mp/utility/game_utility::function_fa7bfcc1d68b7b73() && isdefined(level.mgl_mapname)) {
             corners = [];
-            switch (level.var_2c81de0e95b02675) {
+            switch (level.mgl_mapname) {
             case #"hash_490db84e1b08c326":
                 corners[0] = spawn("script_origin", (-29090, -7407, -52));
                 corners[1] = spawn("script_origin", (-22443, -13974, -52));
@@ -61,18 +61,18 @@ function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
                 #/
                 return;
             }
-        } else if (!var_9454b445960cb2a3 && isdefined(namespace_36f464722d326bbe::getlocaleid()) && !namespace_36f464722d326bbe::isdonetskmap()) {
+        } else if (!var_9454b445960cb2a3 && isdefined(scripts/cp_mp/utility/game_utility::getlocaleid()) && !scripts/cp_mp/utility/game_utility::isdonetskmap()) {
             if (level.localeid != "locale_6") {
-                corners = getcornersfromarray(var_e8972ba2455ea052, 1);
+                corners = getcornersfromarray(allcorners, 1);
                 if (corners.size != 2) {
-                    corners = getcornersfromarray(var_e8972ba2455ea052, 0);
+                    corners = getcornersfromarray(allcorners, 0);
                 }
             } else {
                 corners = [];
                 corners[0] = spawn("script_origin", (-1040, 12288, -136));
                 corners[1] = spawn("script_origin", (44016, -32768, -136));
             }
-            switch (namespace_cd0b2d039510b38d::getgametype()) {
+            switch (scripts/mp/utility/game::getgametype()) {
             case #"hash_ca6516c10db2c95":
             case #"hash_7f9c384a34cc392f":
             case #"hash_c065cef60f38490a":
@@ -83,12 +83,12 @@ function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
                 var_11f306b80ae0c39e = var_11f306b80ae0c39e + "_" + level.localeid;
                 break;
             }
-        } else if (namespace_36f464722d326bbe::isdonetskmap() || namespace_36f464722d326bbe::getmapname() == "mp_br_quarry") {
+        } else if (scripts/cp_mp/utility/game_utility::isdonetskmap() || scripts/cp_mp/utility/game_utility::getmapname() == "mp_br_quarry") {
             corners = [];
             corners[0] = spawn("script_origin", (-65536, 86016, 5400));
             corners[1] = spawn("script_origin", (81920, -61440, -2048));
         } else {
-            corners = getcornersfromarray(var_e8972ba2455ea052, 0);
+            corners = getcornersfromarray(allcorners, 0);
         }
     }
     if (corners.size != 2) {
@@ -101,9 +101,9 @@ function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
     corner1 = (corners[1].origin[0], corners[1].origin[1], 0);
     cornerdiff = corner1 - corner0;
     north = (cos(getnorthyaw()), sin(getnorthyaw()), 0);
-    if (var_6d476f1dea7803bb.size > 0) {
-        north = (cos(var_6d476f1dea7803bb[0].angles[1]), sin(var_6d476f1dea7803bb[0].angles[1]), 0);
-        function_148d3ec6861d8b59(var_6d476f1dea7803bb[0].angles[1]);
+    if (allvolumes.size > 0) {
+        north = (cos(allvolumes[0].angles[1]), sin(allvolumes[0].angles[1]), 0);
+        function_148d3ec6861d8b59(allvolumes[0].angles[1]);
     }
     west = (0 - north[1], north[0], 0);
     if (vectordot(cornerdiff, west) > 0) {
@@ -149,12 +149,12 @@ function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
         var_3b70dd7d0d5b9a8 = 1;
     }
     /#
-        level.var_1a316f3d164a8e19 = material;
+        level.minimapmaterial = material;
     #/
     setminimap(material, northwest[0], northwest[1], southeast[0], southeast[1], var_3b70dd7d0d5b9a8, var_11f306b80ae0c39e);
 }
 
-// Namespace compass/namespace_3e528bdeb387613a
+// Namespace compass / scripts/mp/compass
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x957
 // Size: 0x26
@@ -162,7 +162,7 @@ function vecscale(vec, scalar) {
     return (vec[0] * scalar, vec[1] * scalar, vec[2] * scalar);
 }
 
-// Namespace compass/namespace_3e528bdeb387613a
+// Namespace compass / scripts/mp/compass
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x985
 // Size: 0x119
@@ -184,15 +184,15 @@ function getcornersfromarray(array, var_c6f1388c16a82062) {
     return corners;
 }
 
-// Namespace compass/namespace_3e528bdeb387613a
+// Namespace compass / scripts/mp/compass
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xaa6
 // Size: 0x63
-function function_fb7bad834ce4b28c(var_89abf67ede66ecc) {
-    self setclientomnvar("ui_minimap_floor", var_89abf67ede66ecc);
+function function_fb7bad834ce4b28c(floornumber) {
+    self setclientomnvar("ui_minimap_floor", floornumber);
     map_name = tolower(getdvar(@"hash_ef237da69bb64ef6"));
-    minimap_image = "compass_map_" + map_name + "_floor_" + var_89abf67ede66ecc;
-    self.var_109a3bfd035f27be = var_89abf67ede66ecc;
+    minimap_image = "compass_map_" + map_name + "_floor_" + floornumber;
+    self.var_109a3bfd035f27be = floornumber;
     setupminimap(minimap_image);
 }
 

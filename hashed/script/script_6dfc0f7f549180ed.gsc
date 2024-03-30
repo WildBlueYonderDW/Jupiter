@@ -9,7 +9,7 @@
 
 #namespace namespace_1f456ca67a596eec;
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x263
 // Size: 0x14
@@ -17,17 +17,17 @@ function autoexec main() {
     function_c0b3ddc9a6bdcc46("veh_jup_jltv_mg", &function_36f3aa21fcac5b21);
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x27e
 // Size: 0x35
 function function_41840e7c1272c050(veh_spawner) {
     veh_spawner.spawnmethod = "airdrop_at_position_unsafe";
-    vehicle = namespace_1f188a13f7e79610::vehicle_spawn("veh_jup_jltv_mg", veh_spawner);
+    vehicle = scripts/cp_mp/vehicles/vehicle::vehicle_spawn("veh_jup_jltv_mg", veh_spawner);
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2bb
 // Size: 0x73
@@ -45,11 +45,11 @@ function private function_36f3aa21fcac5b21() {
     function_f2a24ca61d1563a();
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x335
 // Size: 0x19e
-function private function_d2a84209a50b34d2(spawndata, var_ee8da5624236dc89) {
+function private function_d2a84209a50b34d2(spawndata, faildata) {
     spawnposition = undefined;
     spawnangles = undefined;
     if (!isdefined(spawndata)) {
@@ -65,8 +65,8 @@ function private function_d2a84209a50b34d2(spawndata, var_ee8da5624236dc89) {
     spawnposition = spawndata.origin;
     spawnangles = spawndata.angles;
     if (isdefined(spawndata.owner) && istrue(spawndata.faceawayfromowner)) {
-        var_8423818ecf85a883 = spawnposition - spawndata.owner.origin;
-        if (length2dsquared(var_8423818ecf85a883) > 0) {
+        between = spawnposition - spawndata.owner.origin;
+        if (length2dsquared(between) > 0) {
             spawnangles = vectortoangles(spawnposition - spawndata.owner.origin);
         } else {
             spawnangles = spawndata.owner getplayerangles(1);
@@ -79,34 +79,34 @@ function private function_d2a84209a50b34d2(spawndata, var_ee8da5624236dc89) {
     }
     vehicle = undefined;
     if (isairdrop) {
-        vehicle = function_4c41d739b1eb8cd0(spawnposition, spawnangles, spawndata, var_ee8da5624236dc89);
+        vehicle = function_4c41d739b1eb8cd0(spawnposition, spawnangles, spawndata, faildata);
     } else {
-        vehicle = function_62204f70106947a6(spawnposition, spawnangles, spawndata, var_ee8da5624236dc89);
+        vehicle = function_62204f70106947a6(spawnposition, spawnangles, spawndata, faildata);
     }
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x4db
 // Size: 0x57
-function private function_4c41d739b1eb8cd0(position, angles, spawndata, var_ee8da5624236dc89) {
+function private function_4c41d739b1eb8cd0(position, angles, spawndata, faildata) {
     spawndata.origin = position;
     spawndata.angles = angles;
-    vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh_jup_jltv_mg", spawndata, var_ee8da5624236dc89);
+    vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh_jup_jltv_mg", spawndata, faildata);
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x53a
 // Size: 0xa0
-function private function_62204f70106947a6(spawnposition, spawnangles, spawndata, var_ee8da5624236dc89) {
+function private function_62204f70106947a6(spawnposition, spawnangles, spawndata, faildata) {
     oldorigin = spawndata.origin;
     oldangles = spawndata.angles;
     spawndata.origin = spawnposition;
     spawndata.angles = spawnangles;
-    vehicle = function_83972c0fabc82c9f(spawndata, var_ee8da5624236dc89);
+    vehicle = function_83972c0fabc82c9f(spawndata, faildata);
     spawndata.origin = oldorigin;
     spawndata.angles = oldangles;
     if (!isdefined(vehicle)) {
@@ -115,12 +115,12 @@ function private function_62204f70106947a6(spawnposition, spawnangles, spawndata
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x5e2
 // Size: 0x9a
-function private function_83972c0fabc82c9f(spawndata, var_ee8da5624236dc89) {
-    vehicle = function_bba34cf920370ff4("veh_jup_jltv_mg", spawndata, var_ee8da5624236dc89);
+function private function_83972c0fabc82c9f(spawndata, faildata) {
+    vehicle = function_bba34cf920370ff4("veh_jup_jltv_mg", spawndata, faildata);
     turret_weapon = function_edcae4b27a6f7abe();
     turret = function_9e1cb0f4ea79f09e(vehicle, spawndata, turret_weapon);
     vehicle_registerturret(vehicle, turret, makeweapon(turret_weapon));
@@ -132,7 +132,7 @@ function private function_83972c0fabc82c9f(spawndata, var_ee8da5624236dc89) {
     return vehicle;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x684
 // Size: 0x70
@@ -144,7 +144,7 @@ function private function_f2a24ca61d1563a() {
     var_e2818ad39a3341b4.rotationrefsbyseatandweapon["gunner"][function_edcae4b27a6f7abe()] = 1;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x6fb
 // Size: 0x5a
@@ -160,14 +160,16 @@ function private function_edcae4b27a6f7abe() {
     return "jup_mg_jltv_mp";
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x75d
 // Size: 0x94
 function private function_7abe06772f227330(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (istrue(data.success)) {
         thread function_2aa52f506944ea71(vehicle, seatid, var_fc7c7a874b43a31a, player, data);
-    } else if (!istrue(data.playerdisconnect) && !istrue(data.playerdeath)) {
+        return;
+    }
+    if (!istrue(data.playerdisconnect) && !istrue(data.playerdeath)) {
         if (seatid == "gunner") {
             turret_weapon = function_edcae4b27a6f7abe();
             thread vehicle_occupancy_taketurret(player, vehicle, turret_weapon, data, 1);
@@ -175,7 +177,7 @@ function private function_7abe06772f227330(vehicle, seatid, var_fc7c7a874b43a31a
     }
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x7f8
 // Size: 0x8e
@@ -183,13 +185,13 @@ function private function_2aa52f506944ea71(vehicle, seatid, var_fc7c7a874b43a31a
     if (seatid == "gunner") {
         level thread vehicle_occupancy_disablefirefortime(player, ter_op(istrue(vehicle.var_ecc491f42aaceaf4), 850, 2200));
         turret_weapon = function_edcae4b27a6f7abe();
-        player thread namespace_1fbd40990ee60ede::vehicle_occupancy_giveturret(player, vehicle, turret_weapon);
+        player thread scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_giveturret(player, vehicle, turret_weapon);
         vehicle.var_ecc491f42aaceaf4 = 1;
     }
     vehomn_updateomnvarsonseatenter(vehicle, var_fc7c7a874b43a31a, seatid, player);
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x88d
 // Size: 0x47
@@ -199,7 +201,7 @@ function private function_2fdd0e40db525024(vehicle, seatid, var_7558f98f3236963d
     }
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x8db
 // Size: 0x138
@@ -233,7 +235,7 @@ function private function_3d7fcd7f8aa45e0d(vehicle, seatid, var_7558f98f3236963d
     vehomn_updateomnvarsonseatexit(vehicle, seatid, var_7558f98f3236963d, player);
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xa1a
 // Size: 0x5b
@@ -244,7 +246,7 @@ function private function_4b1ad3b1d7810658(vehicle, var_9de41f2ee77c33ba, var_3f
     }
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 3, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xa7c
 // Size: 0x129
@@ -269,7 +271,7 @@ function private function_9e1cb0f4ea79f09e(vehicle, spawndata, turretweapon) {
     return turret;
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xbad
 // Size: 0x92
@@ -286,13 +288,13 @@ function private function_d09b279cd811f266(vehicle, var_7558f98f3236963d, player
     }
 }
 
-// Namespace namespace_1f456ca67a596eec/namespace_706b2d22847d9775
+// Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0xc46
 // Size: 0x49
 function private function_e1f107025762fca4(vehicle, var_7558f98f3236963d, player, data) {
     if (!istrue(data.playerdisconnect)) {
-        player.var_6d4d929e7c9d3e5c = undefined;
+        player.isdrivingvehicle = undefined;
     }
     vehicle.var_1ab6b61153087915 = undefined;
 }

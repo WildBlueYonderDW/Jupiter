@@ -5,9 +5,9 @@
 #using scripts\cp_mp\utility\damage_utility.gsc;
 #using script_24fbedba9a7a1ef4;
 
-#namespace namespace_cf0b1612db6434d3;
+#namespace agent_juggernaut;
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x202
 // Size: 0x35
@@ -16,52 +16,52 @@ function function_a414fbf48ae645f4() {
     level.var_d49c99ad85354bd6 = getdvarint(@"hash_a433661e4f79e427", 100);
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23e
 // Size: 0x176
 function function_93288f91f5aabd02() {
     juggcontext = spawnstruct();
-    juggcontext.var_46ad94f231cd4ef3 = [];
-    juggcontext.var_46ad94f231cd4ef3["head_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["damaged_helmet_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["torso_upper_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["torso_lower_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["right_upper_arm_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["right_lower_arm_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["left_upper_arm_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["left_lower_arm_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["right_leg_health"] = 100;
-    juggcontext.var_46ad94f231cd4ef3["left_leg_health"] = 100;
+    juggcontext.partshealth = [];
+    juggcontext.partshealth["head_health"] = 100;
+    juggcontext.partshealth["damaged_helmet_health"] = 100;
+    juggcontext.partshealth["torso_upper_health"] = 100;
+    juggcontext.partshealth["torso_lower_health"] = 100;
+    juggcontext.partshealth["right_upper_arm_health"] = 100;
+    juggcontext.partshealth["right_lower_arm_health"] = 100;
+    juggcontext.partshealth["left_upper_arm_health"] = 100;
+    juggcontext.partshealth["left_lower_arm_health"] = 100;
+    juggcontext.partshealth["right_leg_health"] = 100;
+    juggcontext.partshealth["left_leg_health"] = 100;
     juggcontext.var_5f03cad2b199e1bc = &function_f75bc5c067f4015;
     juggcontext.lastpaintime = 0;
     juggcontext.paindamage = 0;
     juggcontext.var_1bea7c00eb868a40 = 1000;
-    juggcontext.var_3d1bbef280ea37b4 = 5000;
-    juggcontext.var_a35692b629483499 = 10;
-    juggcontext.var_f8236448eb258010 = 0.1;
+    juggcontext.paincooldown = 5000;
+    juggcontext.paindecay = 10;
+    juggcontext.paindecaytime = 0.1;
     juggcontext.lastdamagedtime = 0;
     juggcontext.var_a4dceeab66ec6a3c = 1000;
     self.juggcontext = juggcontext;
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3bb
 // Size: 0xd8
 function function_f75bc5c067f4015(part, damage) {
-    if (isdefined(part) && part == "head_health" && !isdefined(self.juggcontext.var_46ad94f231cd4ef3[part])) {
-        if (isdefined(self.juggcontext.var_46ad94f231cd4ef3["damaged_helmet_health"])) {
-            self.juggcontext.var_46ad94f231cd4ef3["damaged_helmet_health"] = self.juggcontext.var_46ad94f231cd4ef3["damaged_helmet_health"] - damage;
-            if (self.juggcontext.var_46ad94f231cd4ef3["damaged_helmet_health"] <= 0) {
-                self.juggcontext.var_46ad94f231cd4ef3["damaged_helmet_health"] = undefined;
+    if (isdefined(part) && part == "head_health" && !isdefined(self.juggcontext.partshealth[part])) {
+        if (isdefined(self.juggcontext.partshealth["damaged_helmet_health"])) {
+            self.juggcontext.partshealth["damaged_helmet_health"] = self.juggcontext.partshealth["damaged_helmet_health"] - damage;
+            if (self.juggcontext.partshealth["damaged_helmet_health"] <= 0) {
+                self.juggcontext.partshealth["damaged_helmet_health"] = undefined;
                 function_fd38d13ec4cf6449("head_health", "destroyed");
             }
         }
     }
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49a
 // Size: 0xce
@@ -77,13 +77,13 @@ function function_fd38d13ec4cf6449(parts, state) {
         #/
         return;
     }
-    var_3d1c10f919cd5af0 = [];
+    partstoset = [];
     if (isarray(parts)) {
-        var_3d1c10f919cd5af0 = array_combine(var_3d1c10f919cd5af0, parts);
+        partstoset = array_combine(partstoset, parts);
     } else {
-        var_3d1c10f919cd5af0[var_3d1c10f919cd5af0.size] = parts;
+        partstoset[partstoset.size] = parts;
     }
-    foreach (part in var_3d1c10f919cd5af0) {
+    foreach (part in partstoset) {
         self setscriptablepartstate(part, state, 0);
         /#
             iprintln("<unknown string>" + part + "<unknown string>" + state + "<unknown string>");
@@ -91,7 +91,7 @@ function function_fd38d13ec4cf6449(parts, state) {
     }
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x157
@@ -100,21 +100,21 @@ function function_1cbb19fc0caeab00(subtype) {
     function_93288f91f5aabd02();
     thread function_ca2d7204b750d78b();
     if (!isdefined(level.var_ed61c38f5c8bb414)) {
-        level.var_ed61c38f5c8bb414 = [0:"pristine", 1:"damaged"];
+        level.var_ed61c38f5c8bb414 = ["pristine", "damaged"];
     }
     if (!isdefined(level.var_13819795c6ee9ff8)) {
-        level.var_13819795c6ee9ff8 = [0:"helmet", 1:"neckguard", 2:"backpack", 3:"shoulderpad_l", 4:"shoulderpad_r", 5:"forearmpad_l", 6:"forearmpad_r", 7:"qamis", 8:"thighpad_l", 9:"thighpad_r"];
+        level.var_13819795c6ee9ff8 = ["helmet", "neckguard", "backpack", "shoulderpad_l", "shoulderpad_r", "forearmpad_l", "forearmpad_r", "qamis", "thighpad_l", "thighpad_r"];
     }
     if (isdefined(subtype) && subtype == "merc") {
-        var_1d63afdad83bcdad = [0:"neckguard", 1:"backpack", 2:"shoulderpad_l", 3:"shoulderpad_r", 4:"forearmpad_l", 5:"forearmpad_r", 6:"qamis", 7:"thighpad_l", 8:"thighpad_r"];
+        partslist = ["neckguard", "backpack", "shoulderpad_l", "shoulderpad_r", "forearmpad_l", "forearmpad_r", "qamis", "thighpad_l", "thighpad_r"];
     } else {
-        var_1d63afdad83bcdad = level.var_13819795c6ee9ff8;
+        partslist = level.var_13819795c6ee9ff8;
     }
-    function_fd38d13ec4cf6449(var_1d63afdad83bcdad, "pristine");
+    function_fd38d13ec4cf6449(partslist, "pristine");
     self setperk("specialty_melee_invulnerable", 1);
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 13, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6cd
 // Size: 0x29f
@@ -138,7 +138,7 @@ function function_1ab798a528080db2(einflictor, eattacker, idamage, idflags, smea
             self notify(self.var_68c43b3ffee58999);
         }
     }
-    if (isdefined(self.juggcontext) && !istrue(self.juggcontext.var_d765edff7e15164b)) {
+    if (isdefined(self.juggcontext) && !istrue(self.juggcontext.ignorepain)) {
         self.juggcontext.lastdamagedtime = gettime();
         if (self.juggcontext.lastpaintime < gettime()) {
             if (self.allowpain == 0) {
@@ -147,7 +147,7 @@ function function_1ab798a528080db2(einflictor, eattacker, idamage, idflags, smea
             self.juggcontext.paindamage = self.juggcontext.paindamage + idamage;
         }
         if (self.juggcontext.paindamage > self.juggcontext.var_1bea7c00eb868a40) {
-            self.juggcontext.lastpaintime = gettime() + self.juggcontext.var_3d1bbef280ea37b4;
+            self.juggcontext.lastpaintime = gettime() + self.juggcontext.paincooldown;
             self.juggcontext.paindamage = 0;
             self asmevalpaintransition(self.asmname);
             self.allowpain = 0;
@@ -157,21 +157,21 @@ function function_1ab798a528080db2(einflictor, eattacker, idamage, idflags, smea
     namespace_daa149ca485fd50a::function_dffac413ed66bcd0(einflictor, eattacker, int(idamage), idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon);
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x973
 // Size: 0x97
 function function_ca2d7204b750d78b() {
     self endon("death");
-    while (1) {
+    while (true) {
         if (gettime() - self.juggcontext.lastdamagedtime > self.juggcontext.var_a4dceeab66ec6a3c) {
-            self.juggcontext.paindamage = max(self.juggcontext.paindamage - self.juggcontext.var_a35692b629483499, 0);
+            self.juggcontext.paindamage = max(self.juggcontext.paindamage - self.juggcontext.paindecay, 0);
         }
-        wait(self.juggcontext.var_f8236448eb258010);
+        wait(self.juggcontext.paindecaytime);
     }
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa11
 // Size: 0x6d
@@ -188,7 +188,7 @@ function function_fa4f1a412ab12028(damage, shitloc, smeansofdeath, attacker) {
     function_94b7ecf1273ba3c0(var_1f48003b8e69560c, damage);
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa85
 // Size: 0x112
@@ -221,7 +221,7 @@ function function_c0aa811f7b45687c(shitloc, smeansofdeath, attacker) {
     return var_1f48003b8e69560c;
 }
 
-// Namespace namespace_cf0b1612db6434d3/namespace_1f8384d33bfd1e13
+// Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb9f
 // Size: 0x213
@@ -229,42 +229,36 @@ function function_94b7ecf1273ba3c0(part, damage) {
     if (isdefined(self.juggcontext.var_5f03cad2b199e1bc)) {
         self [[ self.juggcontext.var_5f03cad2b199e1bc ]](part, damage);
     }
-    if (isdefined(self.juggcontext.var_46ad94f231cd4ef3[part])) {
+    if (isdefined(self.juggcontext.partshealth[part])) {
         if (part == "head_health") {
             if (isdefined(self.helmethealth) && isdefined(self.var_cfc69e5588a5bed6) && self.var_cfc69e5588a5bed6 > 0) {
-                self.juggcontext.var_46ad94f231cd4ef3[part] = self.helmethealth / self.var_cfc69e5588a5bed6 * 10;
+                self.juggcontext.partshealth[part] = self.helmethealth / self.var_cfc69e5588a5bed6 * 10;
             } else {
-                self.juggcontext.var_46ad94f231cd4ef3[part] = self.juggcontext.var_46ad94f231cd4ef3[part] - damage;
+                self.juggcontext.partshealth[part] = self.juggcontext.partshealth[part] - damage;
             }
-            if (self.juggcontext.var_46ad94f231cd4ef3[part] <= 0) {
-                self.juggcontext.var_46ad94f231cd4ef3[part] = undefined;
+            if (self.juggcontext.partshealth[part] <= 0) {
+                self.juggcontext.partshealth[part] = undefined;
                 if (issubstr(self.agent_type, "merc")) {
                     namespace_daa149ca485fd50a::function_59ea6b2f800cb082(self);
                 } else {
                     function_fd38d13ec4cf6449(part, "destroyed");
                 }
-            } else if (self.juggcontext.var_46ad94f231cd4ef3[part] <= 50) {
+            } else if (self.juggcontext.partshealth[part] <= 50) {
                 if (issubstr(self.agent_type, "merc")) {
-                    goto LOC_0000018c;
+                } else {
+                    function_fd38d13ec4cf6449(part, "damaged");
                 }
-                function_fd38d13ec4cf6449(part, "damaged");
-            LOC_0000018c:
             }
-        LOC_0000018c:
-        } else {
-            self.juggcontext.var_46ad94f231cd4ef3[part] = self.juggcontext.var_46ad94f231cd4ef3[part] - damage;
-            if (self.juggcontext.var_46ad94f231cd4ef3[part] <= 0) {
-                self.juggcontext.var_46ad94f231cd4ef3[part] = undefined;
-                if (issubstr(self.agent_type, "merc")) {
-                    goto LOC_00000211;
-                }
-                function_fd38d13ec4cf6449(part, "damaged");
-            LOC_00000211:
-            }
-        LOC_00000211:
+            return;
         }
-    LOC_00000211:
+        self.juggcontext.partshealth[part] = self.juggcontext.partshealth[part] - damage;
+        if (self.juggcontext.partshealth[part] <= 0) {
+            self.juggcontext.partshealth[part] = undefined;
+            if (issubstr(self.agent_type, "merc")) {
+                return;
+            }
+            function_fd38d13ec4cf6449(part, "damaged");
+        }
     }
-LOC_00000211:
 }
 

@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\asm\asm.gsc;
 
-#namespace namespace_8259b43da74930e4;
+#namespace bt_util;
 
-// Namespace namespace_8259b43da74930e4/namespace_f08e04b63067d27f
+// Namespace bt_util / scripts/aitypes/bt_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70
 // Size: 0x51
@@ -19,7 +19,7 @@ function init() {
     anim.invalid = 4;
 }
 
-// Namespace namespace_8259b43da74930e4/namespace_f08e04b63067d27f
+// Namespace bt_util / scripts/aitypes/bt_util
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc8
 // Size: 0x57
@@ -34,7 +34,7 @@ function bt_init() {
     self.bt.instancedata = [];
 }
 
-// Namespace namespace_8259b43da74930e4/namespace_f08e04b63067d27f
+// Namespace bt_util / scripts/aitypes/bt_util
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x126
 // Size: 0x32

@@ -1,7 +1,7 @@
 // mwiii decomp prototype
 #namespace namespace_b8f8e2f86acf53ed;
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_71eef510d7f364cf
+// Namespace namespace_b8f8e2f86acf53ed / scripts/mp/utility/spawn_event_aggregator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb7
 // Size: 0x23
@@ -12,7 +12,7 @@ function init() {
     level thread onplayerconnect();
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_71eef510d7f364cf
+// Namespace namespace_b8f8e2f86acf53ed / scripts/mp/utility/spawn_event_aggregator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x31
@@ -25,7 +25,7 @@ function onplayerconnect() {
     }
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_71eef510d7f364cf
+// Namespace namespace_b8f8e2f86acf53ed / scripts/mp/utility/spawn_event_aggregator
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x119
 // Size: 0x36
@@ -36,7 +36,7 @@ function registeronplayerspawncallback(callback) {
     level.onplayerspawncallbacks[level.onplayerspawncallbacks.size] = callback;
 }
 
-// Namespace namespace_b8f8e2f86acf53ed/namespace_71eef510d7f364cf
+// Namespace namespace_b8f8e2f86acf53ed / scripts/mp/utility/spawn_event_aggregator
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x156
 // Size: 0x67

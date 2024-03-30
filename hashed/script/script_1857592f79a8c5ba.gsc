@@ -1,22 +1,22 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\asm\asm_bb.gsc;
-#using script_4e1d4dd23699a8a4;
+#using scripts\asm\cap.gsc;
 
 #namespace cap_use_armor_plate_solo;
 
-// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x157
 // Size: 0x10a
 function function_6c3d4156dec73e1d(asmname, statename, params) {
-    stance = namespace_28edc79fcf2fe234::bb_getrequestedstance();
-    coverstate = namespace_28edc79fcf2fe234::bb_getrequestedcoverstate();
+    stance = scripts/asm/asm_bb::bb_getrequestedstance();
+    coverstate = scripts/asm/asm_bb::bb_getrequestedcoverstate();
     animname = "default";
     if (coverstate == "exposed") {
         animname = "exposed_" + stance;
     } else {
-        covernode = namespace_28edc79fcf2fe234::bb_getcovernode();
+        covernode = scripts/asm/asm_bb::bb_getcovernode();
         if (isdefined(covernode)) {
             covertype = covernode.type;
             switch (covertype) {
@@ -35,11 +35,11 @@ function function_6c3d4156dec73e1d(asmname, statename, params) {
             }
         }
     }
-    var_18e57011e29f452d = namespace_dd3a5c61bf082e18::function_18e6c36c02a94dbd(statename, animname);
+    var_18e57011e29f452d = scripts/asm/cap::function_18e6c36c02a94dbd(statename, animname);
     return var_18e57011e29f452d;
 }
 
-// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x269
 // Size: 0x43
@@ -50,11 +50,11 @@ function function_45dc5e082d9a020f(asmname, statename, params) {
     utility::function_f3bb4f4911a1beb2("ai", "onUsedArmorPlate");
 }
 
-// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 1, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0x40
-function private function_d74c84ce78cdd2b4(note) {
+function private isrighthand(note) {
     res = 1;
     hand = getsubstr(note, 7);
     if (isdefined(hand) && hand == "left") {
@@ -63,7 +63,7 @@ function private function_d74c84ce78cdd2b4(note) {
     return res;
 }
 
-// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 2, eflags: 0x6 linked
 // Checksum 0x0, Offset: 0x2fb
 // Size: 0x87
@@ -72,17 +72,19 @@ function private function_45dc0311bb854741(note, statename) {
     self endon(statename + "_finished");
     var_8a46c62f0a756dd3 = "armor_plate";
     if (isstartstr(note, "attach")) {
-        if (function_d74c84ce78cdd2b4(note)) {
+        if (isrighthand(note)) {
             self setscriptablepartstate(var_8a46c62f0a756dd3, "active_right");
         } else {
             self setscriptablepartstate(var_8a46c62f0a756dd3, "active_left");
         }
-    } else if (isstartstr(note, "detach")) {
+        return;
+    }
+    if (isstartstr(note, "detach")) {
         self setscriptablepartstate(var_8a46c62f0a756dd3, "default");
     }
 }
 
-// Namespace cap_use_armor_plate_solo/namespace_f8aba4f0ef4843d6
+// Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x389
 // Size: 0x5b

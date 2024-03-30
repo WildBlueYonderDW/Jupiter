@@ -22,18 +22,18 @@
 #using scripts\mp\gametypes\br_public.gsc;
 #using scripts\mp\gametypes\br_c130.gsc;
 
-#namespace namespace_4785fd2ee6d8a632;
+#namespace br_gametype_mini;
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ad
 // Size: 0x18
 function main() {
-    level.var_cdc15ee14362fbf = &namespace_22750b9631720d79::init;
-    namespace_d20f8ef223912e12::main();
+    level.var_cdc15ee14362fbf = &scripts/mp/gametypes/br_gametype_mini::init;
+    scripts/mp/gametypes/br::main();
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cc
 // Size: 0xe6
@@ -54,38 +54,38 @@ function init() {
     level.quest_scavdistmax = getdvarint(@"hash_e41f7abcea2352ea", 4000);
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b9
 // Size: 0xa8
 function brmini_initfeatures() {
     if (getdvarint(@"hash_16bd795a6d0dd17c", 0) == 1) {
-        namespace_71073fa38f11492::disablefeature("circle");
-        namespace_71073fa38f11492::disablefeature("gulag");
-        namespace_71073fa38f11492::disablefeature("dropbag");
-        namespace_71073fa38f11492::disablefeature("oneLife");
-        namespace_71073fa38f11492::enablefeature("allowLateJoiners");
+        scripts/mp/gametypes/br_gametypes::disablefeature("circle");
+        scripts/mp/gametypes/br_gametypes::disablefeature("gulag");
+        scripts/mp/gametypes/br_gametypes::disablefeature("dropbag");
+        scripts/mp/gametypes/br_gametypes::disablefeature("oneLife");
+        scripts/mp/gametypes/br_gametypes::enablefeature("allowLateJoiners");
     }
-    namespace_71073fa38f11492::disablefeature("plunderSites");
-    namespace_71073fa38f11492::disablefeature("randomizeCircleCenter");
-    namespace_71073fa38f11492::disablefeature("planeSnapToOOB");
-    namespace_71073fa38f11492::disablefeature("movingCircle");
-    namespace_71073fa38f11492::enablefeature("tabletReplace");
-    namespace_71073fa38f11492::enablefeature("planeUseCircleRadius");
-    namespace_71073fa38f11492::enablefeature("circleEarlyStart");
+    scripts/mp/gametypes/br_gametypes::disablefeature("plunderSites");
+    scripts/mp/gametypes/br_gametypes::disablefeature("randomizeCircleCenter");
+    scripts/mp/gametypes/br_gametypes::disablefeature("planeSnapToOOB");
+    scripts/mp/gametypes/br_gametypes::disablefeature("movingCircle");
+    scripts/mp/gametypes/br_gametypes::enablefeature("tabletReplace");
+    scripts/mp/gametypes/br_gametypes::enablefeature("planeUseCircleRadius");
+    scripts/mp/gametypes/br_gametypes::enablefeature("circleEarlyStart");
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x568
 // Size: 0x1fb
 function brmini_initpostmain() {
-    namespace_71073fa38f11492::registerbrgametypefunc("createC130PathStruct", &brmini_createc130pathstruct);
-    namespace_71073fa38f11492::registerbrgametypefunc("addToC130Infil", &brmini_addtoc130infil);
-    namespace_71073fa38f11492::registerbrgametypefunc("playerWelcomeSplashes", &brmini_playerwelcomesplashes);
-    dropplanedelay = getdvarint(@"hash_96c9be1f54511dfc", 375);
-    namespace_71073fa38f11492::registerbrgametypedata("dropPlaneDelay", dropplanedelay);
-    namespace_71073fa38f11492::registerbrgametypedata("dropBagDelay", 100);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("createC130PathStruct", &brmini_createc130pathstruct);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("addToC130Infil", &brmini_addtoc130infil);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypefunc("playerWelcomeSplashes", &brmini_playerwelcomesplashes);
+    dropPlaneDelay = getdvarint(@"hash_96c9be1f54511dfc", 375);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypedata("dropPlaneDelay", dropPlaneDelay);
+    scripts/mp/gametypes/br_gametypes::registerbrgametypedata("dropBagDelay", 100);
     waittillframeend();
     level.ontimelimit = &brmini_ontimelimit;
     brmini_cleanupents();
@@ -95,24 +95,24 @@ function brmini_initpostmain() {
     level.validautoassignquests[2] = "scavenger";
     circleindex = level waittill("br_circle_set");
     circleindex = level waittill("br_circle_set");
-    var_5d954f1724092f5a = getdvarfloat(@"hash_d6d1181cd67d957d", 1000);
-    var_819edacdacb810e4 = namespace_c5622898120e827f::getdangercircleorigin();
-    var_e86632d645c137d0 = namespace_c5622898120e827f::getdangercircleradius();
-    if (isdefined(level.var_41f4bc9ee8c7c9c6) && isdefined(level.var_41f4bc9ee8c7c9c6.activetablets)) {
-        if (istrue(level.var_41f4bc9ee8c7c9c6.activetablets.size > 0)) {
-            activetablets = level.var_41f4bc9ee8c7c9c6.activetablets;
+    thresholdradius = getdvarfloat(@"hash_d6d1181cd67d957d", 1000);
+    var_819edacdacb810e4 = scripts/mp/gametypes/br_circle::getdangercircleorigin();
+    dangercircleradius = scripts/mp/gametypes/br_circle::getdangercircleradius();
+    if (isdefined(level.contractmanager) && isdefined(level.contractmanager.activetablets)) {
+        if (istrue(level.contractmanager.activetablets.size > 0)) {
+            activetablets = level.contractmanager.activetablets;
             foreach (tablet in activetablets) {
-                if (distance2dsquared(var_819edacdacb810e4, tablet.origin) > var_e86632d645c137d0 * var_e86632d645c137d0) {
-                    namespace_cb965d2f71fefddc::loothide(tablet);
-                    namespace_c6ccccd95254983f::modify_plunder_itemsinworld("brloot_mission_tablet", -1);
+                if (distance2dsquared(var_819edacdacb810e4, tablet.origin) > dangercircleradius * dangercircleradius) {
+                    scripts/mp/gametypes/br_pickups::loothide(tablet);
+                    scripts/mp/gametypes/br_plunder::modify_plunder_itemsinworld("brloot_mission_tablet", -1);
                 }
             }
         }
     }
-    namespace_1eb3c4e0e28fac71::dangercircletick(var_819edacdacb810e4, var_e86632d645c137d0, var_5d954f1724092f5a);
+    namespace_1eb3c4e0e28fac71::dangercircletick(var_819edacdacb810e4, dangercircleradius, thresholdradius);
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x76a
 // Size: 0x12
@@ -121,18 +121,18 @@ function brmini_initdialog() {
     level waittill("br_dialog_initialized");
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x783
 // Size: 0x3e
 function brmini_cleanupents() {
-    namespace_36f464722d326bbe::removematchingents_bykey("delete_on_load", "targetname");
-    namespace_36f464722d326bbe::removematchingents_bymodel("door_prison_cell_metal_mp", 1);
-    namespace_36f464722d326bbe::removematchingents_bymodel("door_wooden_panel_mp_01", 1);
-    namespace_36f464722d326bbe::removematchingents_bymodel("me_electrical_box_street_01", 1);
+    scripts/cp_mp/utility/game_utility::removematchingents_bykey("delete_on_load", "targetname");
+    scripts/cp_mp/utility/game_utility::removematchingents_bymodel("door_prison_cell_metal_mp", 1);
+    scripts/cp_mp/utility/game_utility::removematchingents_bymodel("door_wooden_panel_mp_01", 1);
+    scripts/cp_mp/utility/game_utility::removematchingents_bymodel("me_electrical_box_street_01", 1);
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7c8
 // Size: 0x3
@@ -140,7 +140,7 @@ function brmini_initexternalfeatures() {
     
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d2
 // Size: 0x70
@@ -148,7 +148,7 @@ function brmini_playerwelcomesplashes(data) {
     self endon("disconnect");
     self waittill("spawned_player");
     wait(1);
-    namespace_44abc05161e2e2cb::showsplash("br_gametype_mini_prematch_welcome");
+    scripts/mp/hud_message::showsplash("br_gametype_mini_prematch_welcome");
     if (!istrue(level.br_infils_disabled)) {
         self waittill("br_jump");
         while (!self isonground()) {
@@ -157,23 +157,23 @@ function brmini_playerwelcomesplashes(data) {
     } else {
         level waittill("prematch_done");
     }
-    namespace_a011fbf6d93f25e5::branalytics_landing(self);
+    scripts/mp/gametypes/br_analytics::branalytics_landing(self);
     wait(1);
-    namespace_d3d40f75bb4e4c32::brleaderdialogplayer("primary_objective", self, 0);
+    scripts/mp/gametypes/br_public::brleaderdialogplayer("primary_objective", self, 0);
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x849
 // Size: 0x25
 function brmini_ontimelimit() {
     if (isdefined(level.numendgame)) {
-        level thread namespace_d20f8ef223912e12::startendgame(1);
+        level thread scripts/mp/gametypes/br::startendgame(1);
     }
     level.numendgame = undefined;
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x875
 // Size: 0xbe
@@ -181,21 +181,21 @@ function brmini_createc130pathstruct() {
     /#
         assertex(isdefined(level.br_level) && isdefined(level.br_level.br_circlecenters) && isdefined(level.br_level.br_circleradii), "brMini_createC130PathStruct: Trying to create a C130 path within BR Mini, without level.br_level defined!");
     #/
-    var_f9cbff5134da960b = (level.br_level.br_circlecenters[1][0], level.br_level.br_circlecenters[1][1], 0);
-    var_e5bd279d3767139f = level.br_level.br_circleradii[1];
-    c130pathstruct = namespace_ad389306d44fc6b4::createtestc130path(var_f9cbff5134da960b, var_e5bd279d3767139f);
+    originoverride = (level.br_level.br_circlecenters[1][0], level.br_level.br_circlecenters[1][1], 0);
+    radiusoverride = level.br_level.br_circleradii[1];
+    c130pathstruct = scripts/mp/gametypes/br_c130::createtestc130path(originoverride, radiusoverride);
     return c130pathstruct;
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x93b
 // Size: 0x10
 function brmini_addtoc130infil() {
-    thread namespace_d3d40f75bb4e4c32::kickplayersatcircleedge(&function_b740ad755cfac3b);
+    thread scripts/mp/gametypes/br_public::kickplayersatcircleedge(&function_b740ad755cfac3b);
 }
 
-// Namespace namespace_4785fd2ee6d8a632/namespace_22750b9631720d79
+// Namespace br_gametype_mini / scripts/mp/gametypes/br_gametype_mini
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x952
 // Size: 0x22

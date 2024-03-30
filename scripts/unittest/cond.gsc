@@ -1,9 +1,9 @@
 // mwiii decomp prototype
 #using scripts\unittest\util.gsc;
 
-#namespace namespace_6d6ccf11835bebe0;
+#namespace unittest_cond;
 
-// Namespace namespace_6d6ccf11835bebe0/namespace_2daabfd41316c417
+// Namespace unittest_cond / scripts/unittest/cond
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e3
 // Size: 0x4d3
@@ -34,49 +34,49 @@ function vars() {
     test_print("!(!(x != y) || !(y != x)): " + a);
     a = 1 && x;
     test_print("ONE && x: " + a);
-    a = x && 1;
+    a = x && true;
     test_print("x && ONE: " + a);
     a = 1 || x;
     test_print("ONE || x: " + a);
-    a = x || 1;
+    a = x || true;
     test_print("x || ONE: " + a);
     a = 2 && x;
     test_print("TWOF && x: " + a);
-    a = x && 2;
+    a = x && true;
     test_print("x && TWOF: " + a);
     a = 2 || x;
     test_print("TWOF || x: " + a);
-    a = x || 2;
+    a = x || true;
     test_print("x || TWOF: " + a);
-    a = x && 0;
+    a = x && false;
     test_print("x && F: " + a);
     a = 0 && x;
     test_print("F && x: " + a);
-    a = x || 0;
+    a = x || false;
     test_print("x || F: " + a);
     a = 0 || x;
     test_print("F || x: " + a);
     a = 0 && x;
     test_print("!ONE && x: " + a);
-    a = x && 0;
+    a = x && false;
     test_print("x && !ONE: " + a);
     a = 0 || x;
     test_print("!ONE || x: " + a);
-    a = x || 0;
+    a = x || false;
     test_print("x || !ONE: " + a);
-    a = !2 && x;
+    a = !true && x;
     test_print("!TWOF && x: " + a);
-    a = x && !2;
+    a = x && !true;
     test_print("x && !TWOF: " + a);
-    a = !2 || x;
+    a = !true || x;
     test_print("!TWOF || x: " + a);
-    a = x || !2;
+    a = x || !true;
     test_print("x || !TWOF: " + a);
-    a = x && 1;
+    a = x && true;
     test_print("x && !F: " + a);
     a = 1 && x;
     test_print("!F && x: " + a);
-    a = x || 1;
+    a = x || true;
     test_print("x || !F: " + a);
     a = 1 || x;
     test_print("!F || x: " + a);
@@ -114,7 +114,7 @@ function vars() {
     test_print("!(!x || !y): " + a);
 }
 
-// Namespace namespace_6d6ccf11835bebe0/namespace_2daabfd41316c417
+// Namespace unittest_cond / scripts/unittest/cond
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbbd
 // Size: 0x512
@@ -161,62 +161,62 @@ function iftest() {
     } else {
         test_print("!(!(x < 0) != y): false");
     }
-    if (1) {
+    if (true) {
         test_print("ONE: true");
     } else {
         test_print("ONE: false");
     }
-    if (0) {
+    if (false) {
         test_print("!ONE: true");
     } else {
         test_print("!ONE: false");
     }
-    if (0) {
+    if (false) {
         test_print("F: true");
     } else {
         test_print("F: false");
     }
-    if (1) {
+    if (true) {
         test_print("!F: true");
     } else {
         test_print("!F: false");
     }
-    if (x && 1) {
+    if (x && true) {
         test_print("x && ONE: true");
     } else {
         test_print("x && ONE: false");
     }
-    if (!x && 1) {
+    if (!x && true) {
         test_print("!x && ONE: true");
     } else {
         test_print("!x && ONE: false");
     }
-    if (x && 0) {
+    if (x && false) {
         test_print("x && !ONE: true");
     } else {
         test_print("x && !ONE: false");
     }
-    if (!x && 0) {
+    if (!x && false) {
         test_print("!x && !ONE: true");
     } else {
         test_print("!x && !ONE: false");
     }
-    if (x || 1) {
+    if (x || true) {
         test_print("x || ONE: true");
     } else {
         test_print("x || ONE: false");
     }
-    if (!x || 1) {
+    if (!x || true) {
         test_print("!x || ONE: true");
     } else {
         test_print("!x || ONE: false");
     }
-    if (x || 0) {
+    if (x || false) {
         test_print("x || !ONE: true");
     } else {
         test_print("x || !ONE: false");
     }
-    if (!x || 0) {
+    if (!x || false) {
         test_print("!x || !ONE: true");
     } else {
         test_print("!x || !ONE: false");
@@ -298,12 +298,12 @@ function iftest() {
     }
     if (!(!x || !y)) {
         test_print("!(!x || !y): true");
-    } else {
-        test_print("!(!x || !y): false");
+        return;
     }
+    test_print("!(!x || !y): false");
 }
 
-// Namespace namespace_6d6ccf11835bebe0/namespace_2daabfd41316c417
+// Namespace unittest_cond / scripts/unittest/cond
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10d6
 // Size: 0x29

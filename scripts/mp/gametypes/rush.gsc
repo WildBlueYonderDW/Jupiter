@@ -24,7 +24,7 @@
 
 #namespace rush;
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5aa
 // Size: 0x1e1
@@ -32,10 +32,10 @@ function main() {
     if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
         return;
     }
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -59,14 +59,14 @@ function main() {
     game["dialog"]["gametype"] = "gametype_domination";
     if (getdvarint(@"hash_4a2b3d01a81655a6")) {
         game["dialog"]["gametype"] = "dh_" + game["dialog"]["gametype"];
-    } else if (getdvarint(function_2ef675c13ca1c4af(@"hash_d98c82b5a26dc973", getgametype(), "_promode"))) {
+    } else if (getdvarint(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_promode"))) {
         game["dialog"]["gametype"] = game["dialog"]["gametype"] + "_pro";
     }
     game["dialog"]["offense_obj"] = "capture_objs";
     game["dialog"]["defense_obj"] = "capture_objs";
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x792
 // Size: 0x64
@@ -77,7 +77,7 @@ function initializematchrules() {
     setdynamicdvar(@"hash_8b83e0f6e757f0c0", getmatchrulesdata("rushData", "extraTimeBonus"));
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7fd
 // Size: 0x65
@@ -91,7 +91,7 @@ function seticonnames() {
     level.icontarget = "hq_target";
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x869
 // Size: 0x1db
@@ -123,7 +123,7 @@ function onstartgametype() {
         game["attackers"] = ter_op(!istrue(game["switchedsides"]), "axis", "allies");
         game["defenders"] = ter_op(!istrue(game["switchedsides"]), "allies", "axis");
     }
-    level namespace_d576b6dc7cef9c62::enableovertimegameplay();
+    level scripts/mp/gamelogic::enableovertimegameplay();
     initspecatatorcameras();
     thread loopspectatorlocations();
     setupobjectives();
@@ -132,24 +132,24 @@ function onstartgametype() {
     thread manageovertimestate();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa4b
 // Size: 0x56
 function updategametypedvars() {
-    namespace_310ba947928891df::updatecommongametypedvars();
+    scripts/mp/gametypes/common::updatecommongametypedvars();
     level.activationdelay = dvarfloatvalue("activationDelay", 30, 0, 60);
     level.captureduration = dvarfloatvalue("captureDuration", 40, 0, 60);
     level.extratimebonus = dvarfloatvalue("extraTimeBonus", 60, 0, 300);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xaa8
 // Size: 0x2d4
 function setupobjectives() {
     primaryflags = getentarray("rush_flag", "targetname");
-    var_a9232bfe0bb02c00 = getentarray("rush_flag_override", "targetname");
+    flagoverrides = getentarray("rush_flag_override", "targetname");
     if (primaryflags.size == 0) {
         return;
     }
@@ -157,14 +157,14 @@ function setupobjectives() {
     for (index = 0; index < primaryflags.size; index++) {
         triggers[triggers.size] = primaryflags[index];
     }
-    var_1dc2b3dbb108241c = [];
-    if (var_a9232bfe0bb02c00.size > 0) {
-        foreach (trigger in var_a9232bfe0bb02c00) {
+    triggeroverrides = [];
+    if (flagoverrides.size > 0) {
+        foreach (trigger in flagoverrides) {
             /#
                 assert(isdefined(trigger.script_noteworthy));
             #/
             objectiveindex = trigger.script_noteworthy;
-            var_1dc2b3dbb108241c[objectiveindex] = trigger;
+            triggeroverrides[objectiveindex] = trigger;
         }
     }
     foreach (trigger in triggers) {
@@ -175,12 +175,12 @@ function setupobjectives() {
         if (objectiveindex == "0" || objectiveindex == "4") {
             continue;
         }
-        if (isdefined(var_1dc2b3dbb108241c[objectiveindex])) {
-            trigger = var_1dc2b3dbb108241c[objectiveindex];
+        if (isdefined(triggeroverrides[objectiveindex])) {
+            trigger = triggeroverrides[objectiveindex];
         }
         trigger.objectivekey = objectiveindex;
         trigger mapobjectiveicon(objectiveindex);
-        domflag = namespace_98b55913d2326ac8::setupobjective(trigger);
+        domflag = scripts/mp/gametypes/obj_dom::setupobjective(trigger);
         domflag dompoint_ondisableobjective();
         level.objectives[domflag.objectivekey] = domflag;
         domflag.onbeginuse = &dompoint_onbeginuse;
@@ -192,16 +192,16 @@ function setupobjectives() {
         domflag.ondisableobjective = &dompoint_ondisableobjective;
         domflag.onenableobjective = &dompoint_onenableobjective;
         domflag.onactivateobjective = &dompoint_onactivateobjective;
-        domflag thread namespace_98b55913d2326ac8::updateflagstate("off", 0);
+        domflag thread scripts/mp/gametypes/obj_dom::updateflagstate("off", 0);
         domflag.defaultownerteam = game["defenders"];
         domflag.overrideprogressteam = game["attackers"];
         domflag.ignorestomp = 1;
         domflag.decaygraceperiod = 5;
-        domflag.permcapturethresholds = [0:0.33, 1:0.66];
+        domflag.permcapturethresholds = [0.33, 0.66];
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd83
 // Size: 0x56
@@ -209,18 +209,18 @@ function startgame() {
     level endon("game_ended");
     setomnvar("ui_objective_timer_stopped", 1);
     setomnvar("ui_hardpoint_timer", 0);
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
+    scripts/mp/flags::gameflagwait("prematch_done");
     setomnvar("ui_objective_timer_stopped", 0);
     level.currentobjectiveindex = 1;
     updatecurrentobjective(level.currentobjectiveindex);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xde0
 // Size: 0x5a
 function manageovertimestate() {
-    while (1) {
+    while (true) {
         waitframe();
         if (istrue(level.timerstoppedforgamemode)) {
             level.canprocessot = 0;
@@ -232,7 +232,7 @@ function manageovertimestate() {
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe41
 // Size: 0x1b9
@@ -250,11 +250,11 @@ function updatecurrentobjective(newindex) {
         level.currentobjective [[ level.currentobjective.onenableobjective ]]();
     }
     if (level.activationdelay > 0) {
-        level namespace_d576b6dc7cef9c62::pausetimer();
-        var_ac61fd4c042a7fdb = int(gettime() + level.activationdelay * 1000);
-        setomnvar("ui_hardpoint_timer", var_ac61fd4c042a7fdb);
+        level scripts/mp/gamelogic::pausetimer();
+        zonedelaytime = int(gettime() + level.activationdelay * 1000);
+        setomnvar("ui_hardpoint_timer", zonedelaytime);
         wait(level.activationdelay);
-        level namespace_d576b6dc7cef9c62::resumetimer();
+        level scripts/mp/gamelogic::resumetimer();
     }
     if (isdefined(level.currentobjective.onactivateobjective)) {
         level.currentobjective [[ level.currentobjective.onactivateobjective ]]();
@@ -271,10 +271,10 @@ function updatecurrentobjective(newindex) {
         spawndelay = 10;
         break;
     }
-    namespace_d576b6dc7cef9c62::updatewavespawndelay(spawndelay);
+    scripts/mp/gamelogic::updatewavespawndelay(spawndelay);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1001
 // Size: 0x34b
@@ -282,15 +282,15 @@ function initspawns() {
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
     if (function_bff229a11ecd1e34()) {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic(#"default");
+        scripts/mp/spawnlogic::setactivespawnlogic(#"default");
     } else {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic("Default", "Crit_Default");
+        scripts/mp/spawnlogic::setactivespawnlogic("Default", "Crit_Default");
     }
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_rush_spawn_allies_start");
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_rush_spawn_axis_start");
-    namespace_b2d5aa2baf2b5701::addspawnpoints("allies", "mp_rush_spawn_allies", 1);
-    namespace_b2d5aa2baf2b5701::addspawnpoints("axis", "mp_rush_spawn_axis", 1);
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    scripts/mp/spawnlogic::addstartspawnpoints("mp_rush_spawn_allies_start");
+    scripts/mp/spawnlogic::addstartspawnpoints("mp_rush_spawn_axis_start");
+    scripts/mp/spawnlogic::addspawnpoints("allies", "mp_rush_spawn_allies", 1);
+    scripts/mp/spawnlogic::addspawnpoints("axis", "mp_rush_spawn_axis", 1);
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
     foreach (objective in level.objectives) {
         objective.spawnpoints = [];
@@ -305,7 +305,9 @@ function initspawns() {
             }
             if (spawnpoint.classname == "mp_rush_spawn_allies") {
                 level.objectives[index].spawnpoints["allies"][level.objectives[index].spawnpoints["allies"].size] = spawnpoint;
-            } else if (spawnpoint.classname == "mp_rush_spawn_axis") {
+                continue;
+            }
+            if (spawnpoint.classname == "mp_rush_spawn_axis") {
                 level.objectives[index].spawnpoints["axis"][level.objectives[index].spawnpoints["axis"].size] = spawnpoint;
             }
         }
@@ -314,12 +316,12 @@ function initspawns() {
         objective.spawnpointsets = [];
         objective.spawnpointsets["allies"] = "rush_allies_" + objid;
         objective.spawnpointsets["axis"] = "rush_axis_" + objid;
-        namespace_b2d5aa2baf2b5701::registerspawnset(objective.spawnpointsets["allies"], objective.spawnpoints["allies"]);
-        namespace_b2d5aa2baf2b5701::registerspawnset(objective.spawnpointsets["axis"], objective.spawnpoints["axis"]);
+        scripts/mp/spawnlogic::registerspawnset(objective.spawnpointsets["allies"], objective.spawnpoints["allies"]);
+        scripts/mp/spawnlogic::registerspawnset(objective.spawnpointsets["axis"], objective.spawnpoints["axis"]);
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1353
 // Size: 0x98
@@ -328,31 +330,31 @@ function getspawnpoint() {
     if (game["switchedsides"]) {
         spawnteam = getotherteam(spawnteam)[0];
     }
-    if (namespace_b2d5aa2baf2b5701::shoulduseteamstartspawn()) {
-        spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_rush_spawn_" + spawnteam + "_start");
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
+    if (scripts/mp/spawnlogic::shoulduseteamstartspawn()) {
+        spawnpoints = scripts/mp/spawnlogic::getspawnpointarray("mp_rush_spawn_" + spawnteam + "_start");
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints);
         self.startspawnpoint = spawnpoint;
     } else {
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, level.currentobjective.spawnpointsets[spawnteam]);
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, level.currentobjective.spawnpointsets[spawnteam]);
     }
     return spawnpoint;
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x13f3
 // Size: 0xa9
-function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00) {
+function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     if (!isplayer(attacker) || attacker.team == self.team) {
         return;
     }
     if (isdefined(objweapon) && namespace_e0ee43ef2dddadaa::iskillstreakweapon(objweapon.basename)) {
         return;
     }
-    namespace_98b55913d2326ac8::awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, var_61b5d0250b328f00);
+    scripts/mp/gametypes/obj_dom::awardgenericmedals(einflictor, attacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, deathanimduration, killid);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14a3
 // Size: 0x15
@@ -360,13 +362,13 @@ function onplayerconnect(player) {
     player thread onplayerspawned();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14bf
 // Size: 0x85
 function onplayerspawned(player) {
     self endon("disconnect");
-    while (1) {
+    while (true) {
         self waittill("spawned");
         setextrascore0(0);
         if (isdefined(self.pers["captures"])) {
@@ -379,7 +381,7 @@ function onplayerspawned(player) {
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x154b
 // Size: 0x1a
@@ -387,15 +389,15 @@ function mapobjectiveicon(index) {
     self.iconname = "";
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x156c
 // Size: 0x11
 function disabledomflagscriptable() {
-    thread namespace_98b55913d2326ac8::updateflagstate("off", 0);
+    thread scripts/mp/gametypes/obj_dom::updateflagstate("off", 0);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1584
 // Size: 0x11c
@@ -406,13 +408,11 @@ function awardcapturepoints() {
     seconds = 1;
     score = 1;
     while (!level.gameended) {
-        waittime = 0;
-        while (waittime < seconds) {
+        for (waittime = 0; waittime < seconds; waittime = 0) {
             waitframe();
-            namespace_e323c8674b44c8f4::waittillhostmigrationdone();
+            scripts/mp/hostmigration::waittillhostmigrationdone();
             waittime = waittime + level.framedurationseconds;
             if (self.stalemate) {
-                waittime = 0;
             }
         }
         team = self.claimteam;
@@ -421,27 +421,27 @@ function awardcapturepoints() {
         }
         if (!self.stalemate) {
             foreach (object in self.touchlist[team]) {
-                object.player thread doscoreevent(#"hash_b70d7c404342b807");
+                object.player thread doScoreEvent(#"hash_b70d7c404342b807");
             }
         }
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a7
 // Size: 0x1f
 function dompoint_onbeginuse(player) {
-    namespace_98b55913d2326ac8::dompoint_onusebegin(player);
+    scripts/mp/gametypes/obj_dom::dompoint_onusebegin(player);
     self.didstatusnotify = 1;
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x16cd
 // Size: 0xc4
-function dompoint_onuseupdate(team, progress, change, var_4b22e50e504339fe) {
-    namespace_98b55913d2326ac8::dompoint_onuseupdate(team, progress, change, var_4b22e50e504339fe);
+function dompoint_onuseupdate(team, progress, change, capplayer) {
+    scripts/mp/gametypes/obj_dom::dompoint_onuseupdate(team, progress, change, capplayer);
     if (inovertime()) {
         current = self.teamprogress[game["attackers"]] / self.usetime;
         if (current > game["overtimeProgressFrac"]) {
@@ -449,52 +449,52 @@ function dompoint_onuseupdate(team, progress, change, var_4b22e50e504339fe) {
         }
         score = game["overtimeProgress"] + game["overtimeProgressFrac"];
         if (game["overtimeRoundsPlayed"] == 1 && setscoretobeat(team, score * 60) == team) {
-            thread namespace_d576b6dc7cef9c62::endgame(team, game["end_reason"]["objective_completed"]);
+            thread scripts/mp/gamelogic::endgame(team, game["end_reason"]["objective_completed"]);
         }
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1798
 // Size: 0x17a
-function dompoint_onuse(var_22282e7d48ca3400) {
-    namespace_98b55913d2326ac8::dompoint_onuse(var_22282e7d48ca3400);
-    team = namespace_19b4203b51d56488::getownerteam();
+function dompoint_onuse(credit_player) {
+    scripts/mp/gametypes/obj_dom::dompoint_onuse(credit_player);
+    team = scripts/mp/gameobjects::getownerteam();
     level.usestartspawns = 0;
     /#
         assert(team != "neutral");
     #/
     otherteam = getotherteam(team)[0];
-    thread printandsoundoneveryone(team, otherteam, undefined, undefined, "mp_dom_flag_captured", "mp_dom_flag_lost", var_22282e7d48ca3400);
-    namespace_e8a49b70d0769b66::giveteamscoreforobjective(team, 1, 0);
+    thread printandsoundoneveryone(team, otherteam, undefined, undefined, "mp_dom_flag_captured", "mp_dom_flag_lost", credit_player);
+    scripts/mp/gamescore::giveteamscoreforobjective(team, 1, 0);
     newindex = level.currentobjectiveindex;
     newindex++;
     if (newindex == 4) {
-        timeleft = namespace_d576b6dc7cef9c62::gettimeremaining();
+        timeleft = scripts/mp/gamelogic::gettimeremaining();
         timeleft = timeleft / 60000;
         game["overtimeLimit"][team] = max(1, timeleft);
         if (inovertime()) {
             winner = setscoretobeat(team, 180);
-            thread namespace_d576b6dc7cef9c62::endgame(winner, game["end_reason"]["objective_completed"]);
+            thread scripts/mp/gamelogic::endgame(winner, game["end_reason"]["objective_completed"]);
         } else {
-            thread namespace_d576b6dc7cef9c62::endgame(team, game["end_reason"]["objective_completed"]);
+            thread scripts/mp/gamelogic::endgame(team, game["end_reason"]["objective_completed"]);
         }
-    } else {
-        if (level.extratimebonus > 0) {
-            level.extratime = level.currentobjectiveindex * level.extratimebonus;
-            timeleft = namespace_d576b6dc7cef9c62::gettimeremaining();
-            setgameendtime(gettime() + int(timeleft));
-        }
-        if (inovertime()) {
-            game["overtimeProgress"]++;
-            game["overtimeProgressFrac"] = 0;
-        }
-        updatecurrentobjective(newindex);
+        return;
     }
+    if (level.extratimebonus > 0) {
+        level.extratime = level.currentobjectiveindex * level.extratimebonus;
+        timeleft = scripts/mp/gamelogic::gettimeremaining();
+        setgameendtime(gettime() + int(timeleft));
+    }
+    if (inovertime()) {
+        game["overtimeProgress"]++;
+        game["overtimeProgressFrac"] = 0;
+    }
+    updatecurrentobjective(newindex);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1919
 // Size: 0x35
@@ -502,10 +502,10 @@ function dompoint_onenduse(team, player, success) {
     if (self != level.currentobjective) {
         return;
     }
-    namespace_98b55913d2326ac8::dompoint_onuseend(team, player, success);
+    scripts/mp/gametypes/obj_dom::dompoint_onuseend(team, player, success);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1955
 // Size: 0x19
@@ -513,10 +513,10 @@ function dompoint_oncontested() {
     if (self != level.currentobjective) {
         return;
     }
-    namespace_98b55913d2326ac8::dompoint_oncontested();
+    scripts/mp/gametypes/obj_dom::dompoint_oncontested();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1975
 // Size: 0x65
@@ -524,59 +524,59 @@ function dompoint_onuncontested(lastclaimteam) {
     if (self != level.currentobjective) {
         return;
     }
-    namespace_98b55913d2326ac8::dompoint_onuncontested(lastclaimteam);
+    scripts/mp/gametypes/obj_dom::dompoint_onuncontested(lastclaimteam);
     self.didstatusnotify = 1;
-    ownerteam = namespace_19b4203b51d56488::getownerteam();
+    ownerteam = scripts/mp/gameobjects::getownerteam();
     state = ter_op(ownerteam == "neutral", "idle", ownerteam);
-    ownerteam = namespace_19b4203b51d56488::getownerteam();
+    ownerteam = scripts/mp/gameobjects::getownerteam();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19e1
 // Size: 0x3d
 function dompoint_ondisableobjective() {
-    namespace_19b4203b51d56488::allowuse("none");
-    namespace_19b4203b51d56488::disableobject();
-    namespace_19b4203b51d56488::resetcaptureprogress();
-    namespace_19b4203b51d56488::releaseid();
+    scripts/mp/gameobjects::allowuse("none");
+    scripts/mp/gameobjects::disableobject();
+    scripts/mp/gameobjects::resetcaptureprogress();
+    scripts/mp/gameobjects::releaseid();
     self notify("useObjectDecay");
     delaythread(0.1, &disabledomflagscriptable);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a25
 // Size: 0x89
 function dompoint_onenableobjective() {
-    namespace_19b4203b51d56488::requestid(1, 1);
-    namespace_19b4203b51d56488::enableobject();
-    namespace_19b4203b51d56488::setvisibleteam("any");
-    namespace_19b4203b51d56488::allowuse("none");
-    namespace_19b4203b51d56488::setobjectivestatusicons(level.icontarget);
+    scripts/mp/gameobjects::requestid(1, 1);
+    scripts/mp/gameobjects::enableobject();
+    scripts/mp/gameobjects::setvisibleteam("any");
+    scripts/mp/gameobjects::allowuse("none");
+    scripts/mp/gameobjects::setobjectivestatusicons(level.icontarget);
     if (isdefined(self.defaultownerteam)) {
-        namespace_19b4203b51d56488::setownerteam(self.defaultownerteam);
-        thread namespace_98b55913d2326ac8::updateflagstate(self.defaultownerteam, 0);
-    } else {
-        namespace_19b4203b51d56488::setownerteam("neutral");
-        thread namespace_98b55913d2326ac8::updateflagstate("idle", 0);
+        scripts/mp/gameobjects::setownerteam(self.defaultownerteam);
+        thread scripts/mp/gametypes/obj_dom::updateflagstate(self.defaultownerteam, 0);
+        return;
     }
+    scripts/mp/gameobjects::setownerteam("neutral");
+    thread scripts/mp/gametypes/obj_dom::updateflagstate("idle", 0);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ab5
 // Size: 0x5e
 function dompoint_onactivateobjective() {
     playsoundonplayers("mp_combat_outpost_activateobj");
-    namespace_19b4203b51d56488::allowuse("enemy");
+    scripts/mp/gameobjects::allowuse("enemy");
     thread awardcapturepoints();
     level.flagcapturetime = level.captureduration;
-    namespace_19b4203b51d56488::setusetime(level.flagcapturetime);
-    namespace_19b4203b51d56488::setobjectivestatusicons(level.icondefend, level.iconcapture);
+    scripts/mp/gameobjects::setusetime(level.flagcapturetime);
+    scripts/mp/gameobjects::setobjectivestatusicons(level.icondefend, level.iconcapture);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b1a
 // Size: 0x145
@@ -586,39 +586,39 @@ function initspecatatorcameras() {
     var_84286554864313cb = getstructarray("tac_ops_map_config", "targetname");
     foreach (var_48380029fbb1007a in var_84286554864313cb) {
         var_ca2c833762e5466c = var_48380029fbb1007a.script_noteworthy;
-        var_84bd84deb891a915 = getstructarray(var_48380029fbb1007a.target, "targetname");
-        foreach (var_6a17713098332fe4 in var_84bd84deb891a915) {
-            switch (var_6a17713098332fe4.script_label) {
+        childstructs = getstructarray(var_48380029fbb1007a.target, "targetname");
+        foreach (childstruct in childstructs) {
+            switch (childstruct.script_label) {
             case #"hash_11e1630c6c429f23":
-                setteammapposition(var_ca2c833762e5466c, "allies", var_6a17713098332fe4);
+                setteammapposition(var_ca2c833762e5466c, "allies", childstruct);
                 break;
             case #"hash_e66f1db565904926":
-                setteammapposition(var_ca2c833762e5466c, "axis", var_6a17713098332fe4);
+                setteammapposition(var_ca2c833762e5466c, "axis", childstruct);
                 break;
             }
         }
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c66
 // Size: 0x47
-function setteammapposition(var_ca2c833762e5466c, team, var_20c18491aeb9a905) {
+function setteammapposition(var_ca2c833762e5466c, team, posinfo) {
     if (!isdefined(level.spectatorcameras[var_ca2c833762e5466c])) {
         level.spectatorcameras[var_ca2c833762e5466c] = [];
     }
-    level.spectatorcameras[var_ca2c833762e5466c][team] = var_20c18491aeb9a905;
+    level.spectatorcameras[var_ca2c833762e5466c][team] = posinfo;
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cb4
 // Size: 0x114
 function startspectatorview() {
     waitframe();
     updatesessionstate("spectator");
-    namespace_5aeecefc462876::setdisabled();
+    scripts/mp/spectating::setdisabled();
     if (isdefined(self.lastdeathangles)) {
         self setplayerangles(self.lastdeathangles);
     }
@@ -639,7 +639,7 @@ function startspectatorview() {
     cameraent movecameratomappos(self, var_dead2082432cecc, var_6788dc28320974a);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dcf
 // Size: 0x18
@@ -649,7 +649,7 @@ function dohalfwayflash() {
     applythermal();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dee
 // Size: 0x20
@@ -661,7 +661,7 @@ function endspectatorview() {
     thread runslamzoomonspawn();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e15
 // Size: 0x109
@@ -670,17 +670,17 @@ function updatespectatorcamera(var_ca2c833762e5466c) {
     foreach (player in level.players) {
         if (isdefined(player.spectatorcament)) {
             team = player.team;
-            var_b5ecd32577a250ad = getdvarint(@"hash_8bfd75900211e88b", -1);
-            if (var_b5ecd32577a250ad != -1) {
-                team = ter_op(var_b5ecd32577a250ad == 0, "allies", "axis");
+            forcedteam = getdvarint(@"hash_8bfd75900211e88b", -1);
+            if (forcedteam != -1) {
+                team = ter_op(forcedteam == 0, "allies", "axis");
             }
-            var_5940f376a254619d = level.spectatorcameras[level.currentspectatorcamref][team];
-            player.spectatorcament movecameratomappos(player, var_5940f376a254619d.origin, var_5940f376a254619d.angles);
+            cament = level.spectatorcameras[level.currentspectatorcamref][team];
+            player.spectatorcament movecameratomappos(player, cament.origin, cament.angles);
         }
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f25
 // Size: 0x10d
@@ -702,7 +702,7 @@ function movecameratomappos(player, var_9813182985677b23, finalangles) {
     }
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2039
 // Size: 0xe8
@@ -725,7 +725,7 @@ function runslamzoomonspawn() {
     self.spectatorcament delete();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2128
 // Size: 0xd8
@@ -747,7 +747,7 @@ function playslamzoomflash() {
     overlay destroy();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2207
 // Size: 0x18
@@ -757,7 +757,7 @@ function startoperatorsound() {
     wait(0.5);
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2226
 // Size: 0x16
@@ -766,7 +766,7 @@ function applythermal() {
     self thermalvisionon();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2243
 // Size: 0xa
@@ -774,20 +774,20 @@ function removethermal() {
     self thermalvisionoff();
 }
 
-// Namespace rush/namespace_dc84965548cacac8
+// Namespace rush / scripts/mp/gametypes/rush
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2254
 // Size: 0xdc
 function loopspectatorlocations() {
     index = 1;
-    while (1) {
+    while (true) {
         if (getdvarint(@"hash_4ac8d16ce8dd74fd", 0) == 1) {
             if (isalive(level.players[0])) {
                 level.players[0] suicide();
             }
-            var_7940dcde72827af7 = getdvarint(@"hash_885dea990259dafe", -1);
-            if (var_7940dcde72827af7 != -1) {
-                index = var_7940dcde72827af7;
+            overrideindex = getdvarint(@"hash_885dea990259dafe", -1);
+            if (overrideindex != -1) {
+                index = overrideindex;
             }
             updatespectatorcamera("rush_" + index);
             duration = getdvarfloat(@"hash_7d3ea16c514f408d", 1);
@@ -799,9 +799,9 @@ function loopspectatorlocations() {
             if (getdvarint(@"hash_4ac8d16ce8dd74fd", 0) == 0) {
                 level.players[0] notify("force_spawn");
             }
-        } else {
-            waitframe();
+            continue;
         }
+        waitframe();
     }
 }
 

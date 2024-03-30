@@ -3,7 +3,7 @@
 
 #namespace minefields;
 
-// Namespace minefields/namespace_44b1aed62e81ddc
+// Namespace minefields / scripts/mp/minefields
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd5
 // Size: 0x62
@@ -17,13 +17,13 @@ function minefields() {
     }
 }
 
-// Namespace minefields/namespace_44b1aed62e81ddc
+// Namespace minefields / scripts/mp/minefields
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13e
 // Size: 0x3d
 function minefield_think() {
-    namespace_4b0406965e556711::gameflagwait("prematch_done");
-    while (1) {
+    scripts/mp/flags::gameflagwait("prematch_done");
+    while (true) {
         other = self waittill("trigger");
         if (isplayer(other)) {
             other thread minefield_kill(self);
@@ -31,7 +31,7 @@ function minefield_think() {
     }
 }
 
-// Namespace minefields/namespace_44b1aed62e81ddc
+// Namespace minefields / scripts/mp/minefields
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x182
 // Size: 0x94

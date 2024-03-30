@@ -2,9 +2,9 @@
 #using scripts\asm\asm.gsc;
 #using scripts\engine\utility.gsc;
 
-#namespace namespace_a624a0178cc156e4;
+#namespace zombie_stun;
 
-// Namespace namespace_a624a0178cc156e4/namespace_ed7c38f3847343dc
+// Namespace zombie_stun / namespace_ed7c38f3847343dc
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0xa2
 // Size: 0x2f
@@ -13,11 +13,11 @@ function private autoexec init() {
     registersharedfunc("zombie", "clearStunZombie", &clear_stun);
 }
 
-// Namespace namespace_a624a0178cc156e4/namespace_ed7c38f3847343dc
+// Namespace zombie_stun / namespace_ed7c38f3847343dc
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd8
 // Size: 0x37
-function function_fd5292c44cbcbebe(taskid, params) {
+function processstun(taskid, params) {
     if (!is_stunned()) {
         return anim.failure;
     }
@@ -25,7 +25,7 @@ function function_fd5292c44cbcbebe(taskid, params) {
     return anim.running;
 }
 
-// Namespace namespace_a624a0178cc156e4/namespace_ed7c38f3847343dc
+// Namespace zombie_stun / namespace_ed7c38f3847343dc
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x117
 // Size: 0xe0
@@ -54,7 +54,7 @@ function function_2e4d3c67e63f83ac(duration) {
     function_ac90fa5cc0a80298("stun_in");
 }
 
-// Namespace namespace_a624a0178cc156e4/namespace_ed7c38f3847343dc
+// Namespace zombie_stun / namespace_ed7c38f3847343dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fe
 // Size: 0x34
@@ -62,7 +62,7 @@ function is_stunned() {
     return isdefined(self._blackboard.var_e42e5f8ee06d791d) && gettime() < self._blackboard.var_e42e5f8ee06d791d;
 }
 
-// Namespace namespace_a624a0178cc156e4/namespace_ed7c38f3847343dc
+// Namespace zombie_stun / namespace_ed7c38f3847343dc
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23a
 // Size: 0x3a

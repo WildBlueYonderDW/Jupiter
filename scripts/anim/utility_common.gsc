@@ -2,9 +2,9 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 
-#namespace namespace_152f3860b54f75e5;
+#namespace utility_common;
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ea
 // Size: 0x74
@@ -18,7 +18,7 @@ function print3dtime(timer, org, msg, color, alpha, scale) {
     }
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x265
 // Size: 0x91
@@ -35,7 +35,7 @@ function print3drise(org, msg, color, alpha, scale) {
     }
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fd
 // Size: 0x27
@@ -43,7 +43,7 @@ function crossproduct(vec1, vec2) {
     return vec1[0] * vec2[1] - vec1[1] * vec2[0] > 0;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32c
 // Size: 0x2f
@@ -53,7 +53,7 @@ function safemod(a, b) {
     return result % b;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x363
 // Size: 0x102
@@ -92,7 +92,7 @@ function quadrantanimweights(yaw) {
     return result;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x61
@@ -110,20 +110,20 @@ function getquadrant(angle) {
     return quadrant;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0x3c
 function isinset(input, set) {
     for (i = set.size - 1; i >= 0; i--) {
         if (input == set[i]) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x51a
 // Size: 0x2a
@@ -131,7 +131,7 @@ function weapon_genade_launcher() {
     return !isnullweapon(self.weapon) && weaponclass(self.weapon) == "grenade";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x54c
 // Size: 0x3c
@@ -139,15 +139,15 @@ function weapon_pump_action_shotgun() {
     return !isnullweapon(self.weapon) && weaponisboltaction(self.weapon) && weaponclass(self.weapon) == "spread";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x590
 // Size: 0x18
-function function_ad5cce92f62191eb(weapon) {
+function islmg(weapon) {
     return weaponclass(weapon) == "mg";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x18
@@ -155,7 +155,7 @@ function isshotgun(weapon) {
     return weaponclass(weapon) == "spread";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5d0
 // Size: 0x18
@@ -163,7 +163,7 @@ function issniperrifle(weapon) {
     return weaponclass(weapon) == "sniper";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f0
 // Size: 0x12
@@ -171,7 +171,7 @@ function isshotgunai() {
     return isshotgun(self.primaryweapon);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x13
@@ -179,7 +179,7 @@ function islongrangeai() {
     return self function_e8ca4080d02a0bb4() || usingrocketlauncher();
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x625
 // Size: 0x17
@@ -187,7 +187,7 @@ function usingpistol() {
     return weaponclass(self.weapon) == "pistol";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x644
 // Size: 0x17
@@ -195,7 +195,7 @@ function usingrocketlauncher() {
     return weaponclass(self.weapon) == "rocketlauncher";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x663
 // Size: 0x17
@@ -203,7 +203,7 @@ function usingmg() {
     return weaponclass(self.weapon) == "mg";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x682
 // Size: 0x17
@@ -211,7 +211,7 @@ function isusingshotgun() {
     return weaponclass(self.weapon) == "spread";
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a1
 // Size: 0x65
@@ -223,13 +223,12 @@ function usingriflelikeweapon() {
     case #"hash_8cdaf2e4ecfe5b51":
     case #"hash_900cb96c552c5e8e":
     case #"hash_fa24dff6bd60a12d":
-        return 1;
-        break;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x70e
 // Size: 0xfa
@@ -250,20 +249,20 @@ function repeater_headshot_ammo_passive(objweapon, attacker, victim) {
     if (victim.damagelocation != "head" && victim.damagelocation != "helmet") {
         return;
     }
-    var_a7be10e54a3a4b99 = weaponclipsize(objweapon);
-    var_d7724e7657d45522 = var_a7be10e54a3a4b99 * 1;
+    maxclipammo = weaponclipsize(objweapon);
+    var_d7724e7657d45522 = maxclipammo * 1;
     var_3dbc3b058135cbfb = attacker getweaponammoclip(objweapon);
-    newammo = min(var_3dbc3b058135cbfb + var_d7724e7657d45522, var_a7be10e54a3a4b99);
+    newammo = min(var_3dbc3b058135cbfb + var_d7724e7657d45522, maxclipammo);
     attacker setweaponammoclip(objweapon, int(newammo));
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x80f
 // Size: 0xbb
-function needtoreload(var_2ff260c3c7de486e) {
+function needtoreload(thresholdfraction) {
     if (isnullweapon(self.weapon)) {
-        return 0;
+        return false;
     }
     if (istrue(self.disablereload)) {
         if (self.bulletsinclip < weaponclipsize(self.weapon) * 0.5) {
@@ -272,20 +271,20 @@ function needtoreload(var_2ff260c3c7de486e) {
         if (self.bulletsinclip <= 0) {
             self.bulletsinclip = 0;
         }
-        return 0;
+        return false;
     }
-    if (self.bulletsinclip <= weaponclipsize(self.weapon) * var_2ff260c3c7de486e) {
-        if (var_2ff260c3c7de486e == 0) {
+    if (self.bulletsinclip <= weaponclipsize(self.weapon) * thresholdfraction) {
+        if (thresholdfraction == 0) {
             if (cheatammoifnecessary()) {
-                return 0;
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d2
 // Size: 0x11e
@@ -294,31 +293,31 @@ function cheatammoifnecessary() {
         assert(!self.bulletsinclip);
     #/
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     if (self.team != "allies") {
         if (!isplayer(self.enemy)) {
-            return 0;
+            return false;
         }
     }
     if (isusingsidearm() || usingrocketlauncher()) {
-        return 0;
+        return false;
     }
     if (gettime() - self.ammocheattime < self.ammocheatinterval) {
-        return 0;
+        return false;
     }
     if (!self cansee(self.enemy) && distancesquared(self.origin, self.enemy.origin) > 65536) {
-        return 0;
+        return false;
     }
     self.bulletsinclip = int(weaponclipsize(self.weapon) / 2);
     if (self.bulletsinclip > weaponclipsize(self.weapon)) {
         self.bulletsinclip = weaponclipsize(self.weapon);
     }
     self.ammocheattime = gettime();
-    return 1;
+    return true;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f8
 // Size: 0x28
@@ -326,7 +325,7 @@ function isusingprimary() {
     return self.weapon == self.primaryweapon && !isnullweapon(self.weapon);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa28
 // Size: 0x28
@@ -334,7 +333,7 @@ function isusingsecondary() {
     return self.weapon == self.secondaryweapon && !isnullweapon(self.weapon);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa58
 // Size: 0x28
@@ -342,7 +341,7 @@ function isusingsidearm() {
     return self.weapon == self.sidearm && !isnullweapon(self.weapon);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa88
 // Size: 0xc
@@ -350,7 +349,7 @@ function getclaimednode() {
     return self.node;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa9c
 // Size: 0x22
@@ -361,7 +360,7 @@ function shootenemywrapper(var_9bc9d0ee2a8a46f5) {
     [[ anim.shootenemywrapper_func ]](var_9bc9d0ee2a8a46f5);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xac5
 // Size: 0x74
@@ -378,7 +377,7 @@ function getnodeyawtoorigin(pos) {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb41
 // Size: 0xf2
@@ -407,7 +406,7 @@ function getnodeyawtoenemy() {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc3b
 // Size: 0x98
@@ -428,7 +427,7 @@ function getyawtoenemy() {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcdb
 // Size: 0x53
@@ -440,7 +439,7 @@ function getyaw2d(org) {
     return angles[1];
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd36
 // Size: 0x6c
@@ -459,7 +458,7 @@ function absyawtoenemy() {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdaa
 // Size: 0x6c
@@ -478,7 +477,7 @@ function absyawtoenemy2d() {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe1e
 // Size: 0x50
@@ -494,7 +493,7 @@ function absyawtoorigin(org) {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe76
 // Size: 0x4a
@@ -510,7 +509,7 @@ function absyawtoangles(angles) {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xec8
 // Size: 0x3b
@@ -522,7 +521,7 @@ function getyawfromorigin(org, start) {
     return angles[1];
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf0b
 // Size: 0x11
@@ -530,7 +529,7 @@ function getgrenademodel() {
     return getweaponmodel(self.grenadeweapon);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf24
 // Size: 0xf5
@@ -542,16 +541,16 @@ function getenemyeyepos(enemy) {
         self.a.lastenemypos = enemy getshootatpos();
         self.a.lastenemytime = gettime();
         return self.a.lastenemypos;
-    } else if (isdefined(self.a.lastenemytime) && isdefined(self.a.lastenemypos) && self.a.lastenemytime + 3000 < gettime()) {
-        return self.a.lastenemypos;
-    } else {
-        targetpos = self getshootatpos();
-        targetpos = targetpos + 196 * self.lookforward;
-        return targetpos;
     }
+    if (isdefined(self.a.lastenemytime) && isdefined(self.a.lastenemypos) && self.a.lastenemytime + 3000 < gettime()) {
+        return self.a.lastenemypos;
+    }
+    targetpos = self getshootatpos();
+    targetpos = targetpos + 196 * self.lookforward;
+    return targetpos;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1020
 // Size: 0xa7
@@ -563,13 +562,13 @@ function gettruenodeangles(node) {
         return node.angles;
     }
     var_f4b64b2e64700883 = node.angles;
-    var_5190f3ffc6e0ccde = angleclamp180(var_f4b64b2e64700883[0] + node.script_angles[0]);
-    var_5190f4ffc6e0cf11 = var_f4b64b2e64700883[1];
-    var_5190f1ffc6e0c878 = angleclamp180(var_f4b64b2e64700883[2] + node.script_angles[2]);
-    return (var_5190f3ffc6e0ccde, var_5190f4ffc6e0cf11, var_5190f1ffc6e0c878);
+    node_x = angleclamp180(var_f4b64b2e64700883[0] + node.script_angles[0]);
+    node_y = var_f4b64b2e64700883[1];
+    node_z = angleclamp180(var_f4b64b2e64700883[2] + node.script_angles[2]);
+    return (node_x, node_y, node_z);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x10cf
 // Size: 0xc7
@@ -580,9 +579,9 @@ function getyawtoorigin(org) {
     if (isdefined(self.type) && isnode3d(self)) {
         var_9cfe111ea9df5b56 = gettruenodeangles(self);
         forward = anglestoforward(var_9cfe111ea9df5b56);
-        var_9288e19c8dd51644 = rotatepointaroundvector(forward, org - self.origin, var_9cfe111ea9df5b56[2] * -1);
-        var_9288e19c8dd51644 = var_9288e19c8dd51644 + self.origin;
-        yaw = getyaw(var_9288e19c8dd51644) - var_9cfe111ea9df5b56[1];
+        rotatedorg = rotatepointaroundvector(forward, org - self.origin, var_9cfe111ea9df5b56[2] * -1);
+        rotatedorg = rotatedorg + self.origin;
+        yaw = getyaw(rotatedorg) - var_9cfe111ea9df5b56[1];
         yaw = angleclamp180(yaw);
         return yaw;
     }
@@ -591,25 +590,25 @@ function getyawtoorigin(org) {
     return yaw;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x119e
 // Size: 0x62
 function canseepointfromexposedatcorner(point, node) {
     yaw = node getyawtoorigin(point);
     if (yaw > 60 || yaw < -60) {
-        return 0;
+        return false;
     }
     if (isnodecoverleft(node) && yaw < -14) {
-        return 0;
+        return false;
     }
     if (isnodecoverright(node) && yaw > 12) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1208
 // Size: 0x2ba
@@ -670,11 +669,11 @@ function getnodeoffset(node) {
     return node.offset;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14ca
 // Size: 0x11b
-function getcover3dnodeoffset(node, var_55f2a89ea445dd80) {
+function getcover3dnodeoffset(node, leandir) {
     /#
         assert(isdefined(node) && node.type == "Cover 3D");
     #/
@@ -685,10 +684,10 @@ function getcover3dnodeoffset(node, var_55f2a89ea445dd80) {
     forward = anglestoforward(node.angles);
     up = anglestoup(node.angles);
     offset = var_d9091e7beb7128e8;
-    if (isdefined(var_55f2a89ea445dd80)) {
-        if (var_55f2a89ea445dd80 == "left") {
+    if (isdefined(leandir)) {
+        if (leandir == "left") {
             offset = var_6314194b648994a8;
-        } else if (var_55f2a89ea445dd80 == "right") {
+        } else if (leandir == "right") {
             offset = var_4ca040109b9f8c1d;
         } else {
             /#
@@ -699,7 +698,7 @@ function getcover3dnodeoffset(node, var_55f2a89ea445dd80) {
     return calculatenodeoffset(right, forward, up, offset);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x15ed
 // Size: 0x37
@@ -707,7 +706,7 @@ function calculatenodeoffset(right, forward, up, baseoffset) {
     return right * baseoffset[0] + forward * baseoffset[1] + up * baseoffset[2];
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x162c
 // Size: 0x4d
@@ -723,7 +722,7 @@ function persistentdebugline(start, end) {
     #/
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1680
 // Size: 0x114
@@ -749,7 +748,7 @@ function canseeenemyfromexposed() {
     return result;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x179c
 // Size: 0xad
@@ -779,7 +778,7 @@ function function_e28d706f2d3f4c65(enemy, node) {
     return result;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1851
 // Size: 0xb5
@@ -804,38 +803,38 @@ function function_a76836ca0f1172ab(enemy, point, node) {
     return 1;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x190e
 // Size: 0xf8
 function checkpitchvisibility(frompoint, topoint, atnode) {
     minpitch = self.upaimlimit - anim.aimpitchdifftolerance;
     maxpitch = self.downaimlimit + anim.aimpitchdifftolerance;
-    var_cac6b8b7efddb0e4 = topoint - frompoint;
+    directionvec = topoint - frompoint;
     if (actor_is3d()) {
         if (isdefined(atnode) && isnode3d(atnode)) {
             angles = atnode.angles;
         } else {
             angles = self.angles;
         }
-        var_cac6b8b7efddb0e4 = rotatevectorinverted(var_cac6b8b7efddb0e4, angles);
+        directionvec = rotatevectorinverted(directionvec, angles);
     }
-    pitch = angleclamp180(vectortopitch(var_cac6b8b7efddb0e4));
+    pitch = angleclamp180(vectortopitch(directionvec));
     if (pitch < minpitch) {
-        return 0;
+        return false;
     }
     if (pitch > maxpitch) {
         if (isdefined(atnode) && !isnodecovercrouch(atnode)) {
-            return 0;
+            return false;
         }
         if (pitch > anim.covercrouchleanpitch + maxpitch) {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a0e
 // Size: 0x11
@@ -845,7 +844,7 @@ function dontgiveuponsuppressionyet() {
     #/
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a26
 // Size: 0x9d
@@ -854,13 +853,13 @@ function cansuppressenemy() {
         self.goodshootpos = undefined;
         return 0;
     }
-    var_981e36835eec56c4 = istrue(self.var_51642e27c7e7d224);
+    suppressiondisabled = istrue(self.var_51642e27c7e7d224);
     if (!isplayer(self.enemy)) {
-        if (!var_981e36835eec56c4 || self.forcesuppressai) {
+        if (!suppressiondisabled || self.forcesuppressai) {
             return aisuppressai();
         }
     }
-    if (var_981e36835eec56c4) {
+    if (suppressiondisabled) {
         return 0;
     }
     if (!checkpitchvisibility(self geteye(), self.lastenemysightpos)) {
@@ -870,33 +869,33 @@ function cansuppressenemy() {
     return findgoodsuppressspot(startoffset);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1acb
 // Size: 0x48
 function hassuppressableenemy() {
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.lastenemysightpos)) {
-        return 0;
+        return false;
     }
     if (!self iscurrentenemyvalid()) {
-        return 0;
+        return false;
     }
     if (!isdefined(self.goodshootpos) && !needrecalculatesuppressspot()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b1b
 // Size: 0xbf
 function aisuppressai() {
     if (!self canattackenemynode() && !istrue(self.forcesuppressai)) {
-        return 0;
+        return false;
     }
     shootpos = undefined;
     if (isdefined(self.enemy.covernode)) {
@@ -906,13 +905,13 @@ function aisuppressai() {
         shootpos = self.enemy getshootatpos();
     }
     if (!self canshoot(shootpos) && !istrue(self.forcesuppressai)) {
-        return 0;
+        return false;
     }
     self.goodshootpos = shootpos;
-    return 1;
+    return true;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1be2
 // Size: 0x74
@@ -923,22 +922,22 @@ function canseeandshootpoint(point) {
     if (!sighttracepassed(self getshootatpos(), point, 0, undefined)) {
         return 0;
     }
-    var_528cdf0816c4001d = self getapproxeyepos();
-    return sighttracepassed(var_528cdf0816c4001d, point, 0, undefined);
+    gunpoint = self getapproxeyepos();
+    return sighttracepassed(gunpoint, point, 0, undefined);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c5e
 // Size: 0x6f
 function needrecalculatesuppressspot() {
     if (isdefined(self.goodshootpos) && !canseeandshootpoint(self.goodshootpos)) {
-        return 1;
+        return true;
     }
     return !isdefined(self.lastenemysightposold) || distancesquared(self.lastenemysightposold, self.lastenemysightpos) > 256 || distancesquared(self.lastenemysightposselforigin, self.origin) > 1024;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1cd5
 // Size: 0x153
@@ -955,8 +954,8 @@ function findgoodsuppressspot(startoffset) {
             self.goodshootpos = self.lastenemysightpos;
             return 1;
         }
-        var_bdcf463e5b27a0b8 = getenemyeyepos();
-        self.goodshootpos = self aicalcsuppressspot(startoffset, var_bdcf463e5b27a0b8, self.suppress_numgoodtracesneeded);
+        currentenemypos = getenemyeyepos();
+        self.goodshootpos = self aicalcsuppressspot(startoffset, currentenemypos, self.suppress_numgoodtracesneeded);
         return isdefined(self.goodshootpos);
     } else if (isdefined(self.goodshootpos) && isdefined(self.pathgoalpos) && distancesquared(self.origin, self.goodshootpos) < 1024) {
         self.goodshootpos = undefined;
@@ -964,24 +963,24 @@ function findgoodsuppressspot(startoffset) {
     return isdefined(self.goodshootpos);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e30
 // Size: 0x6a
-function canseeenemy(var_e6749c0530f0d0f1) {
+function canseeenemy(cacheduration) {
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
-    if (isdefined(var_e6749c0530f0d0f1) && self cansee(self.enemy, var_e6749c0530f0d0f1) || self cansee(self.enemy)) {
+    if (isdefined(cacheduration) && self cansee(self.enemy, cacheduration) || self cansee(self.enemy)) {
         if (!checkpitchvisibility(self geteye(), self.enemy getshootatpos())) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ea2
 // Size: 0x37
@@ -992,7 +991,7 @@ function recentlysawenemy(time) {
     return isdefined(self.enemy) && self seerecently(self.enemy, time);
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ee1
 // Size: 0x30
@@ -1006,31 +1005,31 @@ function issuppressedwrapper() {
     return self issuppressed();
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f19
 // Size: 0xd9
 function enemyishiding() {
     if (!isdefined(self.enemy)) {
-        return 0;
+        return false;
     }
     if (self.enemy isflashed()) {
-        return 1;
+        return true;
     }
     if (isplayer(self.enemy)) {
         if (isdefined(self.enemy.health) && self.enemy.health < self.enemy.maxhealth) {
-            return 1;
+            return true;
         }
     } else if (isai(self.enemy) && self.enemy issuppressedwrapper()) {
-        return 1;
+        return true;
     }
     if (isdefined(self.enemy.isreloading) && self.enemy.isreloading) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ffa
 // Size: 0x26
@@ -1039,15 +1038,15 @@ function shouldshootenemyent() {
         assert(isdefined(self));
     #/
     if (!canseeenemy()) {
-        return 0;
+        return false;
     }
     if (!self canshootenemy()) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2028
 // Size: 0xd2
@@ -1070,7 +1069,7 @@ function sortandcullanimstructarray(var_d4876c861b3d6be) {
     return var_28656d665cf2b0fa;
 }
 
-// Namespace namespace_152f3860b54f75e5/namespace_7843e1029b5c80e
+// Namespace utility_common / scripts/anim/utility_common
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2102
 // Size: 0x181
@@ -1091,8 +1090,8 @@ function player_can_see_ai(player, ai, latency) {
         return 0;
     }
     playereye = player geteye();
-    var_8588ce8cb050baf3 = ai.origin;
-    if (sighttracepassed(playereye, var_8588ce8cb050baf3, 1, player, ai)) {
+    feetorigin = ai.origin;
+    if (sighttracepassed(playereye, feetorigin, 1, player, ai)) {
         ai.playerseesme = 1;
         return 1;
     }
@@ -1101,8 +1100,8 @@ function player_can_see_ai(player, ai, latency) {
         ai.playerseesme = 1;
         return 1;
     }
-    var_59a0ba7c30f92d0b = (eyeorigin + var_8588ce8cb050baf3) * 0.5;
-    if (sighttracepassed(playereye, var_59a0ba7c30f92d0b, 1, player, ai)) {
+    midorigin = (eyeorigin + feetorigin) * 0.5;
+    if (sighttracepassed(playereye, midorigin, 1, player, ai)) {
         ai.playerseesme = 1;
         return 1;
     }

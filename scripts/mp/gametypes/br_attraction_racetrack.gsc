@@ -17,9 +17,9 @@
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 
-#namespace namespace_90ae26a1afd254c0;
+#namespace br_attraction_racetrack;
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x25b4
 // Size: 0x924
@@ -78,41 +78,41 @@ function init() {
     settings.values["teleport_to_start_velocity"] = (600, 0, 300);
     settings.values["use_track_origin_for_start_area"] = 0;
     settings.values["safe_area"] = getdvarint(@"hash_3c227920d2746253", 0);
-    var_1925f7a4c45f0652 = init_track_settings("default_loop", "default");
-    var_1925f7a4c45f0652.values["laps"] = 3;
-    var_ce5765235480c61c = init_track_settings("default_heli", "default");
-    var_ce5765235480c61c.values["icon"] = "ui_mp_br_mapmenu_icon_poi_sb_race_helo";
-    var_ce5765235480c61c.values["scriptable"] = "br_attraction_rt_h";
-    var_ce5765235480c61c.values["stop_speed"] = 6;
-    var_ce5765235480c61c.values["icon_trigger_z_offset"] = -300;
-    var_ce5765235480c61c.values["quest_type"] = "attraction_racetrack_heli";
-    var_ce5765235480c61c.values["reward_average_mph"][0] = 0;
-    var_ce5765235480c61c.values["reward_average_mph"][1] = 0;
-    var_ce5765235480c61c.values["reward_average_mph"][2] = 40;
-    var_ce5765235480c61c.values["reward_average_mph"][3] = 50;
-    var_ce5765235480c61c.values["debug_color"] = (1, 0.5, 0);
+    loopsettings = init_track_settings("default_loop", "default");
+    loopsettings.values["laps"] = 3;
+    helisettings = init_track_settings("default_heli", "default");
+    helisettings.values["icon"] = "ui_mp_br_mapmenu_icon_poi_sb_race_helo";
+    helisettings.values["scriptable"] = "br_attraction_rt_h";
+    helisettings.values["stop_speed"] = 6;
+    helisettings.values["icon_trigger_z_offset"] = -300;
+    helisettings.values["quest_type"] = "attraction_racetrack_heli";
+    helisettings.values["reward_average_mph"][0] = 0;
+    helisettings.values["reward_average_mph"][1] = 0;
+    helisettings.values["reward_average_mph"][2] = 40;
+    helisettings.values["reward_average_mph"][3] = 50;
+    helisettings.values["debug_color"] = (1, 0.5, 0);
     var_fa2a58009686b112 = init_track_settings("default_loop_heli", "default_heli");
     var_fa2a58009686b112.values["laps"] = 3;
-    var_e50ccb3bc5891581 = init_track_settings("default_player", "default");
-    var_e50ccb3bc5891581.values["vehicle_required"] = 0;
-    var_e50ccb3bc5891581.values["reward_average_mph"][0] = 0;
-    var_e50ccb3bc5891581.values["reward_average_mph"][1] = 0;
-    var_e50ccb3bc5891581.values["reward_average_mph"][2] = 8;
-    var_e50ccb3bc5891581.values["reward_average_mph"][3] = 10;
-    var_e50ccb3bc5891581.values["debug_color"] = (0.5, 0, 0.5);
-    var_a295bf0dd6849b85 = init_track_settings("parachute", "default_player");
-    var_a295bf0dd6849b85.values["icon"] = "ui_mp_br_mapmenu_icon_poi_sb_race_parachute";
-    var_a295bf0dd6849b85.values["scriptable"] = "br_attraction_rt_p";
-    var_a295bf0dd6849b85.values["quest_type"] = "attraction_racetrack_parachute";
-    var_a295bf0dd6849b85.values["checkpoint_radius"] = 150;
-    var_a295bf0dd6849b85.values["checkpoint_depth"] = 100;
-    var_a295bf0dd6849b85.values["checkpoint_go"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_go.vfx");
-    var_a295bf0dd6849b85.values["checkpoint_stop"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_stop.vfx");
-    var_a295bf0dd6849b85.values["checkpoint_next"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_next.vfx");
-    var_a295bf0dd6849b85.values["reward_average_mph"][0] = 0;
-    var_a295bf0dd6849b85.values["reward_average_mph"][1] = 0;
-    var_a295bf0dd6849b85.values["reward_average_mph"][2] = 30;
-    var_a295bf0dd6849b85.values["reward_average_mph"][3] = 40;
+    playersettings = init_track_settings("default_player", "default");
+    playersettings.values["vehicle_required"] = 0;
+    playersettings.values["reward_average_mph"][0] = 0;
+    playersettings.values["reward_average_mph"][1] = 0;
+    playersettings.values["reward_average_mph"][2] = 8;
+    playersettings.values["reward_average_mph"][3] = 10;
+    playersettings.values["debug_color"] = (0.5, 0, 0.5);
+    parachutesettings = init_track_settings("parachute", "default_player");
+    parachutesettings.values["icon"] = "ui_mp_br_mapmenu_icon_poi_sb_race_parachute";
+    parachutesettings.values["scriptable"] = "br_attraction_rt_p";
+    parachutesettings.values["quest_type"] = "attraction_racetrack_parachute";
+    parachutesettings.values["checkpoint_radius"] = 150;
+    parachutesettings.values["checkpoint_depth"] = 100;
+    parachutesettings.values["checkpoint_go"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_go.vfx");
+    parachutesettings.values["checkpoint_stop"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_stop.vfx");
+    parachutesettings.values["checkpoint_next"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_next.vfx");
+    parachutesettings.values["reward_average_mph"][0] = 0;
+    parachutesettings.values["reward_average_mph"][1] = 0;
+    parachutesettings.values["reward_average_mph"][2] = 30;
+    parachutesettings.values["reward_average_mph"][3] = 40;
     var_9d00076d15db1a96 = init_track_settings("parachute_offset", "parachute");
     var_9d00076d15db1a96.values["start_area"] = loadfx("vfx/_requests/br_gameplay/vfx_br_racetrack_checkpoint_go.vfx");
     var_9d00076d15db1a96.values["use_track_origin_for_start_area"] = 1;
@@ -122,18 +122,18 @@ function init() {
     var_a1212068a74b990e.values["teleport_to_start"] = 1;
     var_b9802cbcffc651c4 = init_track_settings("parkour", "default_player");
     var_b9802cbcffc651c4.values["checkpoint_radius"] = 100;
-    namespace_4bc0ead8d2af3d84::registerquestcategorytablevalues("attraction_racetrack");
-    namespace_4bc0ead8d2af3d84::registerquestcategorytablevalues("attraction_racetrack_heli");
-    namespace_4bc0ead8d2af3d84::registerquestcategorytablevalues("attraction_racetrack_parachute");
+    scripts/mp/gametypes/br_quest_util::registerquestcategorytablevalues("attraction_racetrack");
+    scripts/mp/gametypes/br_quest_util::registerquestcategorytablevalues("attraction_racetrack_heli");
+    scripts/mp/gametypes/br_quest_util::registerquestcategorytablevalues("attraction_racetrack_parachute");
     init_map_data();
     thread init_tracks();
     /#
         thread function_53ca8617fcc31a47();
-        namespace_e4c20df2c9115a56::registerhandlecommand(&function_d4a68f6a9703161c);
+        scripts/mp/gametypes/br_dev::registerhandlecommand(&function_d4a68f6a9703161c);
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2edf
 // Size: 0x67
@@ -152,7 +152,7 @@ function init_map_data() {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f4d
 // Size: 0xf53
@@ -293,7 +293,7 @@ function init_structs_mp_br_mechanics() {
     s struct_set_fields((5956.91, 391.48, 8.125), (0, 149.86, 0));
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ea7
 // Size: 0x4edf
@@ -994,7 +994,7 @@ function init_structs_mp_don3() {
     s struct_set_fields((6693.58, 17163, -639.875), (0, -75.6008, 0));
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8d8d
 // Size: 0x5c
@@ -1003,11 +1003,11 @@ function add_struct(targetname, target, script_noteworthy) {
     struct.targetname = targetname;
     struct.target = target;
     struct.script_noteworthy = script_noteworthy;
-    function_1f6c1a9b7564dc61(struct);
+    addstruct(struct);
     return struct;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8df1
 // Size: 0x3a
@@ -1017,7 +1017,7 @@ function struct_set_fields(origin, angles, script_parameters) {
     self.script_parameters = script_parameters;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8e32
 // Size: 0x5c
@@ -1029,7 +1029,7 @@ function init_track_settings(name, parent) {
     return settings;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8e96
 // Size: 0x85
@@ -1041,7 +1041,7 @@ function init_tracks() {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x8f22
 // Size: 0x36b
@@ -1084,7 +1084,7 @@ function init_track(track) {
     }
     track.locindex = get_track_location_index(track);
     track.startimes = get_track_star_times(track);
-    icontrigger = namespace_8bbc300af6d3c2fb::createattractionicontrigger("race", track.locindex, track.start_loc.origin, 128, get_track_setting(track, "icon"), 2000, &icon_trigger_enter, &icon_trigger_exit, get_track_setting(track, "scriptable"));
+    icontrigger = scripts/mp/gametypes/br_attractions::createattractionicontrigger("race", track.locindex, track.start_loc.origin, 128, get_track_setting(track, "icon"), 2000, &icon_trigger_enter, &icon_trigger_exit, get_track_setting(track, "scriptable"));
     icontrigger.origin = icontrigger.origin + (0, 0, get_track_setting(track, "icon_trigger_z_offset"));
     if (isdefined(icontrigger.scriptable)) {
         icontrigger.scriptable.participantplunder = 1;
@@ -1095,7 +1095,7 @@ function init_track(track) {
     icontrigger.track = track;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9294
 // Size: 0x57
@@ -1111,7 +1111,7 @@ function get_track_star_times(track) {
     return startimes;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x92f3
 // Size: 0x4f
@@ -1123,7 +1123,7 @@ function get_track_star_time_from_col(track, col) {
     return float(time);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x934a
 // Size: 0x4f
@@ -1137,7 +1137,7 @@ function get_track_location_index(track) {
     return locindex;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x93a1
 // Size: 0x42
@@ -1147,27 +1147,27 @@ function get_next_track_index() {
     return index;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x93eb
 // Size: 0x5c
 function delete_track(track) {
     track notify("track_delete");
-    namespace_8bbc300af6d3c2fb::shutdownattractionicontrigger(track.icontrigger);
+    scripts/mp/gametypes/br_attractions::shutdownattractionicontrigger(track.icontrigger);
     track.start_trigger delete();
     level.brattractions["rt"].tracks[track.index] = undefined;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x944e
 // Size: 0xa9
-function get_track_setting(track, var_9c97919e51b42e2b) {
+function get_track_setting(track, setting_name) {
     rt = level.brattractions["rt"];
     value = undefined;
     settings_group = track.settings_group;
-    while (1) {
-        setting = rt.track_settings[settings_group].values[var_9c97919e51b42e2b];
+    while (true) {
+        setting = rt.track_settings[settings_group].values[setting_name];
         if (isdefined(setting)) {
             value = setting;
             break;
@@ -1180,7 +1180,7 @@ function get_track_setting(track, var_9c97919e51b42e2b) {
     return value;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x94ff
 // Size: 0x66
@@ -1195,7 +1195,7 @@ function apply_track_settings(track, settings_group) {
     track.settings_group = settings_group;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x956c
 // Size: 0xea
@@ -1221,7 +1221,7 @@ function init_track_point(track) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x965d
 // Size: 0x137
@@ -1237,13 +1237,13 @@ function caclulate_track_distance(track) {
     track.dist_miles = track.dist_miles / 63360;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x979b
 // Size: 0x8b
 function add_track_points(track, start) {
     point = start;
-    while (1) {
+    while (true) {
         if (!isdefined(point)) {
             break;
         }
@@ -1259,7 +1259,7 @@ function add_track_points(track, start) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x982d
 // Size: 0x35
@@ -1268,7 +1268,7 @@ function icon_trigger_enter(player, trigger) {
     level thread create_race(track, player);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9869
 // Size: 0x39
@@ -1277,7 +1277,7 @@ function icon_trigger_exit(player, trigger) {
     track notify("exit_icon_trigger_" + player getentitynumber());
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x98a9
 // Size: 0x158
@@ -1287,8 +1287,8 @@ function create_race(track, player) {
     race.track = track;
     race.times = [];
     if (istrue(level.brgametype.useserverhud)) {
-        race.hud_racetrack_info = player namespace_8bbc300af6d3c2fb::createhudstring(0);
-        race.hud_racetrack_timer = player namespace_8bbc300af6d3c2fb::createhudtimer(1);
+        race.hud_racetrack_info = player scripts/mp/gametypes/br_attractions::createhudstring(0);
+        race.hud_racetrack_timer = player scripts/mp/gametypes/br_attractions::createhudtimer(1);
     }
     thread delete_on_exit_icon_trigger_pre_race(race);
     thread delete_on_death_or_dissconnect(race);
@@ -1307,7 +1307,7 @@ function create_race(track, player) {
     delete_race(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9a08
 // Size: 0xb5
@@ -1321,7 +1321,7 @@ function start_area_fx(race) {
     triggerfx(race.start_area_fx);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9ac4
 // Size: 0x2c
@@ -1331,7 +1331,7 @@ function start_area_fx_end(race) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9af7
 // Size: 0x151
@@ -1353,7 +1353,7 @@ function checkpoint_fx_set(race, fx_name) {
     race.checkpoint_fx.name = fx_name;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9c4f
 // Size: 0x1d
@@ -1361,7 +1361,7 @@ function checkpoint_fx_play(race) {
     triggerfx(race.checkpoint_fx);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9c73
 // Size: 0x153
@@ -1383,7 +1383,7 @@ function checkpoint_next_fx_set(race, fx_name) {
     race.checkpoint_next_fx.name = fx_name;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9dcd
 // Size: 0x1d
@@ -1391,17 +1391,17 @@ function checkpoint_next_fx_play(race) {
     triggerfx(race.checkpoint_next_fx);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9df1
 // Size: 0x110
 function checkpoint_objective(race) {
-    race.checkpoint_objective_id = namespace_5a22b6f3a56f7e9b::requestobjectiveid(1);
+    race.checkpoint_objective_id = scripts/mp/objidpoolmanager::requestobjectiveid(1);
     if (race.checkpoint_objective_id != -1) {
         current = race_get_current_checkpoint(race);
         origin = race.track.points[current].origin + (0, 0, 128);
-        namespace_5a22b6f3a56f7e9b::objective_add_objective(race.checkpoint_objective_id, "current", origin, "icon_waypoint_koth");
-        namespace_5a22b6f3a56f7e9b::update_objective_setbackground(race.checkpoint_objective_id, 0);
+        scripts/mp/objidpoolmanager::objective_add_objective(race.checkpoint_objective_id, "current", origin, "icon_waypoint_koth");
+        scripts/mp/objidpoolmanager::update_objective_setbackground(race.checkpoint_objective_id, 0);
         objective_removeallfrommask(race.checkpoint_objective_id);
         objective_showtoplayersinmask(race.checkpoint_objective_id);
         objective_setplayintro(race.checkpoint_objective_id, 0);
@@ -1410,34 +1410,33 @@ function checkpoint_objective(race) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f08
 // Size: 0x24
 function pre_race_needs_vehicle(race) {
     if (race_requires_vehicle(race)) {
         return !race_is_player_driving_vehicle(race);
-    } else {
-        return 0;
     }
+    return 0;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9f33
 // Size: 0x74c
 function pre_race(race) {
     var_d72464acae98ec62 = 0;
-    var_eff7e3fd1a1df469 = 3;
+    countdown_length = 3;
     hudstate = "none";
-    var_c8d776e41ecc6881 = "none";
+    playerstate = "none";
     if (race_requires_vehicle(race)) {
         race.race_ent = race.player.vehicle;
     } else {
         race.race_ent = race.player;
     }
     stopspeed = get_track_setting(race.track, "stop_speed");
-    while (1) {
+    while (true) {
         if (!pre_race_needs_vehicle(race)) {
             if (race_requires_vehicle(race)) {
                 race.race_ent = race.player.vehicle;
@@ -1452,9 +1451,9 @@ function pre_race(race) {
                         current_speed = length(race.player getvelocity());
                     }
                     if (current_speed < stopspeed) {
-                        if (var_c8d776e41ecc6881 != "countdown") {
-                            var_c8d776e41ecc6881 = "countdown";
-                            var_d72464acae98ec62 = gettime() + var_eff7e3fd1a1df469 * 1000;
+                        if (playerstate != "countdown") {
+                            playerstate = "countdown";
+                            var_d72464acae98ec62 = gettime() + countdown_length * 1000;
                         }
                         time_remaining = var_d72464acae98ec62 - gettime();
                         for (i = 0; i <= 3; i++) {
@@ -1466,81 +1465,81 @@ function pre_race(race) {
                             }
                         }
                         if (time_remaining <= 0) {
-                            var_c8d776e41ecc6881 = "go";
+                            playerstate = "go";
                         }
                     } else {
-                        var_c8d776e41ecc6881 = "stop";
+                        playerstate = "stop";
                     }
                 } else {
-                    var_c8d776e41ecc6881 = "backup";
+                    playerstate = "backup";
                 }
             } else {
-                var_c8d776e41ecc6881 = "get_to_start";
+                playerstate = "get_to_start";
             }
         } else {
-            var_c8d776e41ecc6881 = "needs_vehicle";
+            playerstate = "needs_vehicle";
         }
-        if (hudstate != var_c8d776e41ecc6881) {
+        if (hudstate != playerstate) {
             race notify("race_state_change");
             if (istrue(level.brgametype.useserverhud)) {
                 race.hud_racetrack_timer.alpha = 0;
             }
-            switch (var_c8d776e41ecc6881) {
+            switch (playerstate) {
             case #"hash_c85ed8f793170c65":
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_FIND_VEHICLE";
                 }
-                race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(0);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(0);
                 thread race_ui_show_record(race);
                 break;
             case #"hash_738f206182cb7472":
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_GET_TO_START";
                 }
-                race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(1);
-                race.player namespace_8bbc300af6d3c2fb::playersetattractionextradata(0);
-                race.player namespace_8bbc300af6d3c2fb::playersetattractiontime(0);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(1);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractionextradata(0);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractiontime(0);
                 thread race_ui_show_record(race);
                 break;
             case #"hash_438db4b5c649863f":
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_TOO_CLOSE";
                 }
-                race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(3);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(3);
                 thread race_ui_show_record(race);
                 break;
             case #"hash_23d3b48a2fabf145":
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_STOP";
                 }
-                race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(2);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(2);
                 thread race_ui_show_record(race);
                 break;
             case #"hash_d66e7ce5be771d00":
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_COUNTDOWN";
                 }
-                thread race_countdown_update(race, var_eff7e3fd1a1df469);
+                thread race_countdown_update(race, countdown_length);
                 race_ui_show_record_end(race);
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_timer.alpha = 1;
                     race.hud_racetrack_timer.label = "";
-                    race.hud_racetrack_timer settenthstimer(var_eff7e3fd1a1df469);
+                    race.hud_racetrack_timer settenthstimer(countdown_length);
                 }
                 break;
             case #"hash_fa11b7f6bd5157ab":
                 teleport_to_start = get_track_setting(race.track, "teleport_to_start");
                 if (teleport_to_start) {
-                    var_984863ba729a2641 = track_get_teleport_target(race.track);
-                    race.player setorigin(var_984863ba729a2641);
+                    teleport_origin = track_get_teleport_target(race.track);
+                    race.player setorigin(teleport_origin);
                     race.player setplayerangles(race.track.points[0].angles);
                     vel = track_get_teleport_velocity(race.track);
                     race.player setvelocity(vel);
                 } else {
-                    var_2a21fcae30f2c84e = get_track_setting(race.track, "launch_start_seconds");
-                    if (var_2a21fcae30f2c84e > 0) {
+                    launch_time = get_track_setting(race.track, "launch_start_seconds");
+                    if (launch_time > 0) {
                         race.player setorigin(race.player.origin + (0, 0, 20));
-                        vel = track_get_launch_velocity(race.track, race.player.origin, var_2a21fcae30f2c84e);
+                        vel = track_get_launch_velocity(race.track, race.player.origin, launch_time);
                         race.player setvelocity(vel);
                     }
                 }
@@ -1550,7 +1549,7 @@ function pre_race(race) {
                 if (istrue(level.brgametype.useserverhud)) {
                     race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_GO";
                 }
-                race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(5);
+                race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(5);
                 thread race_timer_update(race);
                 race_ui_show_record_end(race);
                 if (istrue(level.brgametype.useserverhud)) {
@@ -1558,27 +1557,28 @@ function pre_race(race) {
                     race.hud_racetrack_timer.label = "";
                     race.hud_racetrack_timer settenthstimerup(0);
                 }
+                return;
             default:
                 break;
             }
-            hudstate = var_c8d776e41ecc6881;
+            hudstate = playerstate;
         }
         waitframe();
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa686
 // Size: 0x5b
 function track_get_teleport_target(track) {
     race_start = track.points[0];
-    var_8d6e41c46ae5ae4 = get_track_setting(track, "teleport_to_start_offset");
-    var_8d6e41c46ae5ae4 = rotatevector(var_8d6e41c46ae5ae4, race_start.angles);
-    return race_start.origin + var_8d6e41c46ae5ae4;
+    launch_offset = get_track_setting(track, "teleport_to_start_offset");
+    launch_offset = rotatevector(launch_offset, race_start.angles);
+    return race_start.origin + launch_offset;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa6e9
 // Size: 0x4f
@@ -1589,18 +1589,18 @@ function track_get_teleport_velocity(track) {
     return velocity;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa740
 // Size: 0x5b
 function track_get_launch_target(track) {
     race_start = track.points[0];
-    var_8d6e41c46ae5ae4 = get_track_setting(track, "launch_start_offet");
-    var_8d6e41c46ae5ae4 = rotatevector(var_8d6e41c46ae5ae4, race_start.angles);
-    return race_start.origin + var_8d6e41c46ae5ae4;
+    launch_offset = get_track_setting(track, "launch_start_offet");
+    launch_offset = rotatevector(launch_offset, race_start.angles);
+    return race_start.origin + launch_offset;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa7a3
 // Size: 0x4f
@@ -1610,23 +1610,23 @@ function track_get_launch_velocity(track, start, time) {
     return vel;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa7fa
 // Size: 0x89
-function race_countdown_update(race, var_eff7e3fd1a1df469) {
+function race_countdown_update(race, countdown_length) {
     race endon("race_state_change");
     race.player endon("death_or_disconnect");
-    race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(4);
-    endtime = gettime() + var_eff7e3fd1a1df469 * 1000;
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(4);
+    endtime = gettime() + countdown_length * 1000;
     while (gettime() < endtime) {
         remainingtime = endtime - gettime();
-        race.player namespace_8bbc300af6d3c2fb::playersetattractiontime(remainingtime);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractiontime(remainingtime);
         waitframe();
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa88a
 // Size: 0x70
@@ -1636,14 +1636,14 @@ function race_timer_update(race) {
     race endon("race_state_change");
     race.player endon("death_or_disconnect");
     start = gettime();
-    while (1) {
+    while (true) {
         elapsed = gettime() - start;
-        race.player namespace_8bbc300af6d3c2fb::playersetattractiontime(elapsed);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractiontime(elapsed);
         waitframe();
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa901
 // Size: 0x25d
@@ -1660,16 +1660,16 @@ function race_ui_show_record(race) {
     race endon("race_delete");
     race endon("race_ui_show_record_end");
     race.showing_ui_record = 1;
-    race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(17);
-    var_4b9799ae70b95b1c = int(race.track.record.times[race.track.record.times.size - 1]);
-    race.player namespace_8bbc300af6d3c2fb::playersetattractionbesttime(var_4b9799ae70b95b1c);
-    race.player namespace_8bbc300af6d3c2fb::playersetattractionbestplayer(race.track.record.player);
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(17);
+    record_time = int(race.track.record.times[race.track.record.times.size - 1]);
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionbesttime(record_time);
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionbestplayer(race.track.record.player);
     if (istrue(level.brgametype.useserverhud)) {
-        while (1) {
+        while (true) {
             race.hud_racetrack_timer.alpha = 1;
-            var_4b9799ae70b95b1c = race.track.record.times[race.track.record.times.size - 1];
+            record_time = race.track.record.times[race.track.record.times.size - 1];
             race.hud_racetrack_timer.label = "MP_BR_INGAME/ATTRACT_RT_CURRENT_RECORD";
-            race.hud_racetrack_timer settenthstimerstatic(var_4b9799ae70b95b1c / 1000);
+            race.hud_racetrack_timer settenthstimerstatic(record_time / 1000);
             wait(2);
             if (isdefined(race.track.record.player)) {
                 race.hud_racetrack_timer.label = "MP_BR_INGAME/ATTRACT_RT_CURRENT_RECORD_HOLDER";
@@ -1680,7 +1680,7 @@ function race_ui_show_record(race) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab65
 // Size: 0x21
@@ -1689,14 +1689,14 @@ function race_ui_show_record_end(race) {
     race notify("race_ui_show_record_end");
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab8d
 // Size: 0x111
 function race(race) {
     race notify("race_active");
     race.critical_messages = [];
-    namespace_8bbc300af6d3c2fb::playersetignoreattractions(race.player, 1);
+    scripts/mp/gametypes/br_attractions::playersetignoreattractions(race.player, 1);
     checkpoint_objective(race);
     thread race_set_player_safe(race);
     thread race_monitor_oob(race);
@@ -1706,7 +1706,7 @@ function race(race) {
         thread race_monitor_out_of_vehicle(race);
     }
     race.start_time = gettime();
-    while (1) {
+    while (true) {
         race_wait_for_current_checkpoint(race);
         race.player playlocalsound(level.brattractions["rt"].sounds["checkpoint"]);
         race.times[race.times.size] = gettime() - race.start_time;
@@ -1718,7 +1718,7 @@ function race(race) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaca5
 // Size: 0x8f
@@ -1727,15 +1727,15 @@ function race_update_stars(race) {
     race endon("post_race");
     prev_time = 0;
     for (stars = 3; stars >= 2; stars--) {
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionextradata(stars);
-        var_f5dfb2f6a1955b77 = track_get_reward_time(race.track, stars) - prev_time;
-        wait(var_f5dfb2f6a1955b77);
-        prev_time = var_f5dfb2f6a1955b77;
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionextradata(stars);
+        rewardtime = track_get_reward_time(race.track, stars) - prev_time;
+        wait(rewardtime);
+        prev_time = rewardtime;
     }
-    race.player namespace_8bbc300af6d3c2fb::playersetattractionextradata(1);
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionextradata(1);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xad3b
 // Size: 0x2e
@@ -1746,7 +1746,7 @@ function race_set_player_safe(race) {
     race waittill("race_delete");
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xad70
 // Size: 0x34
@@ -1757,18 +1757,18 @@ function race_monitor_vehicle(race) {
     delete_race(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xadab
 // Size: 0x33
 function race_is_player_driving_vehicle(race) {
-    if (!race.player namespace_f8065cafc523dba5::isinvehicle()) {
+    if (!race.player scripts/cp_mp/utility/player_utility::isinvehicle()) {
         return 0;
     }
-    return namespace_1fbd40990ee60ede::vehicle_occupancy_occupantisvehicledriver(race.player);
+    return scripts/cp_mp/vehicles/vehicle_occupancy::vehicle_occupancy_occupantisvehicledriver(race.player);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xade6
 // Size: 0x98
@@ -1776,36 +1776,36 @@ function race_monitor_out_of_vehicle(race) {
     race endon("race_delete");
     race endon("post_race");
     var_6e4be7381f0cbdd0 = 0;
-    while (1) {
-        var_bdfbc2e0fd3ef58a = !race_is_player_driving_vehicle(race);
-        if (!var_bdfbc2e0fd3ef58a) {
-            var_bdfbc2e0fd3ef58a = race.race_ent != race.player.vehicle;
+    while (true) {
+        out_of_vehicle = !race_is_player_driving_vehicle(race);
+        if (!out_of_vehicle) {
+            out_of_vehicle = race.race_ent != race.player.vehicle;
         }
-        if (var_6e4be7381f0cbdd0 != var_bdfbc2e0fd3ef58a) {
-            if (var_bdfbc2e0fd3ef58a) {
+        if (var_6e4be7381f0cbdd0 != out_of_vehicle) {
+            if (out_of_vehicle) {
                 race_ui_add_critical_message(race, "oov");
             } else {
                 race_ui_remove_critical_message(race, "oov");
             }
-            var_6e4be7381f0cbdd0 = var_bdfbc2e0fd3ef58a;
+            var_6e4be7381f0cbdd0 = out_of_vehicle;
         }
         wait(0.05);
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xae85
 // Size: 0x19a
 function race_monitor_oob(race) {
     race endon("race_delete");
     race endon("post_race");
-    var_2a21fcae30f2c84e = get_track_setting(race.track, "launch_start_seconds");
-    if (var_2a21fcae30f2c84e > 0) {
-        wait(var_2a21fcae30f2c84e + 1);
+    launch_time = get_track_setting(race.track, "launch_start_seconds");
+    if (launch_time > 0) {
+        wait(launch_time + 1);
     }
     var_110ac52ba86e301 = 0;
-    while (1) {
+    while (true) {
         current = race_get_current_checkpoint(race);
         if (current) {
             previous = current - 1;
@@ -1831,7 +1831,7 @@ function race_monitor_oob(race) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb026
 // Size: 0x130
@@ -1864,7 +1864,7 @@ function race_ui_add_critical_message(race, type) {
     race_ui_critical_message_update(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb15d
 // Size: 0x29
@@ -1873,34 +1873,36 @@ function race_ui_remove_critical_message(race, type) {
     race_ui_critical_message_update(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb18d
 // Size: 0x141
 function race_ui_critical_message_update(race) {
     race notify("race_ui_critical_message_timer_end");
     if (race.critical_messages.size) {
-        var_683bfc29fc75937a = undefined;
+        most_critical = undefined;
         foreach (msg in race.critical_messages) {
-            if (!isdefined(var_683bfc29fc75937a)) {
-                var_683bfc29fc75937a = msg;
-            } else if (msg.endtime < var_683bfc29fc75937a.endtime) {
-                var_683bfc29fc75937a = msg;
+            if (!isdefined(most_critical)) {
+                most_critical = msg;
+                continue;
+            }
+            if (msg.endtime < most_critical.endtime) {
+                most_critical = msg;
             }
         }
-        time_remaining = (var_683bfc29fc75937a.endtime - gettime()) / 1000;
+        time_remaining = (most_critical.endtime - gettime()) / 1000;
         if (istrue(level.brgametype.useserverhud)) {
             race.hud_racetrack_info.alpha = 1;
-            race.hud_racetrack_info.label = var_683bfc29fc75937a.str;
+            race.hud_racetrack_info.label = most_critical.str;
             race.hud_racetrack_info settenthstimer(time_remaining);
         }
-        thread race_ui_critical_message_timer(race, time_remaining, var_683bfc29fc75937a);
-    } else {
-        race_ui_lap(race);
+        thread race_ui_critical_message_timer(race, time_remaining, most_critical);
+        return;
     }
+    race_ui_lap(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb2d5
 // Size: 0x10f
@@ -1910,10 +1912,10 @@ function race_ui_critical_message_timer(race, timeremaining, message) {
     race endon("race_ui_critical_message_timer_end");
     switch (message.type) {
     case #"hash_36839a6c261ac073":
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(12);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(12);
         break;
     case #"hash_3683ae6c261adfef":
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(13);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(13);
         break;
     default:
         /#
@@ -1924,13 +1926,13 @@ function race_ui_critical_message_timer(race, timeremaining, message) {
     endtime = int(gettime() + timeremaining * 1000);
     while (gettime() <= endtime) {
         remainingtime = endtime - gettime();
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionbesttime(remainingtime);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionbesttime(remainingtime);
         waitframe();
     }
     delete_race(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb3eb
 // Size: 0x1ea
@@ -1952,15 +1954,15 @@ function race_ui_checkpoint(race) {
             if (istrue(level.brgametype.useserverhud)) {
                 race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_SPLIT_NEG";
             }
-            race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(10);
+            race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(10);
         } else {
             if (istrue(level.brgametype.useserverhud)) {
                 race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_SPLIT_POS";
             }
-            race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(11);
+            race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(11);
         }
-        var_e8a61ef4edc64087 = int(abs(delta));
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionbesttime(var_e8a61ef4edc64087);
+        absdelta = int(abs(delta));
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionbesttime(absdelta);
         if (istrue(level.brgametype.useserverhud)) {
             delta = max(1, abs(delta));
             race.hud_racetrack_info settenthstimerstatic(delta / 1000);
@@ -1970,7 +1972,7 @@ function race_ui_checkpoint(race) {
     race_ui_lap(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb5dc
 // Size: 0x10f
@@ -1990,50 +1992,50 @@ function race_ui_lap(race) {
         } else if (lap == 3) {
             state = 9;
         }
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(state);
-    } else {
-        if (istrue(level.brgametype.useserverhud)) {
-            race.hud_racetrack_info.alpha = 0;
-        }
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(6);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(state);
+        return;
     }
+    if (istrue(level.brgametype.useserverhud)) {
+        race.hud_racetrack_info.alpha = 0;
+    }
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(6);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb6f2
 // Size: 0x3f2
 function post_race(race) {
     race notify("post_race");
-    var_4b9799ae70b95b1c = undefined;
+    record_time = undefined;
     if (isdefined(race.track.record.times)) {
-        var_4b9799ae70b95b1c = race.track.record.times[race.track.record.times.size - 1];
+        record_time = race.track.record.times[race.track.record.times.size - 1];
     }
     end_time = race.times[race.times.size - 1];
     if (istrue(level.brgametype.useserverhud)) {
         race.hud_racetrack_info.alpha = 1;
     }
-    if (!isdefined(var_4b9799ae70b95b1c) || end_time <= var_4b9799ae70b95b1c) {
+    if (!isdefined(record_time) || end_time <= record_time) {
         var_8973f7d500a9b0bb = race.track.record.player;
-        if (isdefined(var_4b9799ae70b95b1c)) {
+        if (isdefined(record_time)) {
             if (istrue(level.brgametype.useserverhud)) {
                 race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_FINISH_NEW_RECORD_SPLIT";
             }
-            race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(15);
-            delta = var_4b9799ae70b95b1c - end_time;
+            race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(15);
+            delta = record_time - end_time;
             delta = max(1, delta);
             if (istrue(level.brgametype.useserverhud)) {
                 race.hud_racetrack_info settenthstimerstatic(delta / 1000);
             }
-            var_e8a61ef4edc64087 = int(abs(delta));
-            race.player namespace_8bbc300af6d3c2fb::playersetattractionbesttime(var_e8a61ef4edc64087);
-            race.player namespace_8bbc300af6d3c2fb::playersetattractionbestplayer(race.player);
+            absdelta = int(abs(delta));
+            race.player scripts/mp/gametypes/br_attractions::playersetattractionbesttime(absdelta);
+            race.player scripts/mp/gametypes/br_attractions::playersetattractionbestplayer(race.player);
         } else {
             if (istrue(level.brgametype.useserverhud)) {
                 race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_FINISH_NEW_RECORD";
                 race.hud_racetrack_info settext("");
             }
-            race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(14);
+            race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(14);
         }
         race.track.record.player = race.player;
         race.track.record.times = race.times;
@@ -2041,15 +2043,15 @@ function post_race(race) {
         if (istrue(level.brgametype.useserverhud)) {
             race.hud_racetrack_info.label = "MP_BR_INGAME/ATTRACT_RT_FINISH_SPLIT";
         }
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionstateindex(16);
-        delta = end_time - var_4b9799ae70b95b1c;
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionstateindex(16);
+        delta = end_time - record_time;
         delta = max(1, delta);
         if (istrue(level.brgametype.useserverhud)) {
             race.hud_racetrack_info settenthstimerstatic(delta / 1000);
         }
-        var_e8a61ef4edc64087 = int(abs(delta));
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionbesttime(var_e8a61ef4edc64087);
-        race.player namespace_8bbc300af6d3c2fb::playersetattractionbestplayer(race.player);
+        absdelta = int(abs(delta));
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionbesttime(absdelta);
+        race.player scripts/mp/gametypes/br_attractions::playersetattractionbestplayer(race.player);
     }
     if (istrue(level.brgametype.useserverhud)) {
         race.hud_racetrack_timer.alpha = 1;
@@ -2057,11 +2059,11 @@ function post_race(race) {
     }
     stars = race_calculate_stars(race, end_time);
     giverewards(race.track, race.player, stars);
-    race.player namespace_8bbc300af6d3c2fb::playersetattractionextradata(stars);
+    race.player scripts/mp/gametypes/br_attractions::playersetattractionextradata(stars);
     wait(3);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbaeb
 // Size: 0x8e
@@ -2069,9 +2071,9 @@ function track_get_reward_time(track, stars) {
     if (isdefined(track.startimes)) {
         return track.startimes[stars];
     }
-    var_eb467922878a05c7 = get_track_setting(track, "reward_average_mph");
-    if (var_eb467922878a05c7[stars]) {
-        hours = track.dist_miles / var_eb467922878a05c7[stars];
+    avg_mph = get_track_setting(track, "reward_average_mph");
+    if (avg_mph[stars]) {
+        hours = track.dist_miles / avg_mph[stars];
     } else {
         return undefined;
     }
@@ -2080,7 +2082,7 @@ function track_get_reward_time(track, stars) {
     return seconds;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb81
 // Size: 0x43
@@ -2088,21 +2090,20 @@ function track_get_reward_time_string(track, stars) {
     value = track_get_reward_time(track, stars);
     if (isdefined(value)) {
         return ("" + value + " s");
-    } else {
-        return "any";
     }
+    return "any";
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbbcb
 // Size: 0x7a
 function race_calculate_stars(race, var_bdc35abb6749f2f9) {
     stars = 0;
-    var_80c3da24117c14fa = var_bdc35abb6749f2f9 / 1000;
+    racetimesec = var_bdc35abb6749f2f9 / 1000;
     for (i = 3; i > 0; i--) {
-        var_f5dfb2f6a1955b77 = track_get_reward_time(race.track, i);
-        if (!isdefined(var_f5dfb2f6a1955b77) || var_80c3da24117c14fa <= var_f5dfb2f6a1955b77) {
+        rewardtime = track_get_reward_time(race.track, i);
+        if (!isdefined(rewardtime) || racetimesec <= rewardtime) {
             stars = i;
             break;
         }
@@ -2110,7 +2111,7 @@ function race_calculate_stars(race, var_bdc35abb6749f2f9) {
     return stars;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc4d
 // Size: 0x17
@@ -2118,7 +2119,7 @@ function race_get_current_checkpoint(race) {
     return race.current_checkpoint;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc6c
 // Size: 0xc8
@@ -2138,14 +2139,15 @@ function race_get_next_checkpoint(race) {
         } else {
             return next;
         }
-    } else if (next < race.track.points.size) {
-        return next;
-    } else {
-        return -1;
+        return;
     }
+    if (next < race.track.points.size) {
+        return next;
+    }
+    return -1;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbd3b
 // Size: 0x6b
@@ -2153,7 +2155,7 @@ function race_set_next_checkpoint(race) {
     current = race_get_current_checkpoint(race);
     next = race_get_next_checkpoint(race);
     if (next < 0) {
-        return 1;
+        return true;
     }
     if (race.track.loop) {
         if (!current) {
@@ -2161,16 +2163,16 @@ function race_set_next_checkpoint(race) {
         }
     }
     race_set_checkpoint(race, next);
-    return 0;
+    return false;
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbdae
 // Size: 0x20c
-function race_set_checkpoint(race, var_a82e422a1e194da8) {
-    race.current_checkpoint = var_a82e422a1e194da8;
-    checkpoint = race.track.points[var_a82e422a1e194da8];
+function race_set_checkpoint(race, checkpoint_index) {
+    race.current_checkpoint = checkpoint_index;
+    checkpoint = race.track.points[checkpoint_index];
     if (isdefined(race.checkpoint_objective_id) && race.checkpoint_objective_id != -1) {
         objective_origin = checkpoint.origin + (0, 0, 128);
         objective_position(race.checkpoint_objective_id, objective_origin);
@@ -2190,23 +2192,23 @@ function race_set_checkpoint(race, var_a82e422a1e194da8) {
     }
     if (isdefined(race.checkpoint_next_fx)) {
         if (var_902ae1a7abbbec60 >= 0) {
-            var_d768e5c381fb68f3 = race.track.points[var_902ae1a7abbbec60];
-            race.checkpoint_next_fx.origin = var_d768e5c381fb68f3.origin;
-            race.checkpoint_next_fx.angles = var_d768e5c381fb68f3.angles;
+            next_checkpoint = race.track.points[var_902ae1a7abbbec60];
+            race.checkpoint_next_fx.origin = next_checkpoint.origin;
+            race.checkpoint_next_fx.angles = next_checkpoint.angles;
             checkpoint_next_fx_play(race);
-        } else {
-            race.checkpoint_next_fx delete();
+            return;
         }
+        race.checkpoint_next_fx delete();
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbfc1
 // Size: 0x4b
 function race_wait_for_current_checkpoint(race) {
     race endon("race_delete");
-    while (1) {
+    while (true) {
         race_ent = race.checkpoint_trigger waittill("trigger");
         if (race_ent == race.race_ent) {
             break;
@@ -2214,7 +2216,7 @@ function race_wait_for_current_checkpoint(race) {
     }
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc013
 // Size: 0x45
@@ -2225,7 +2227,7 @@ function delete_on_exit_icon_trigger_pre_race(race) {
     delete_race(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc05f
 // Size: 0x2d
@@ -2235,7 +2237,7 @@ function delete_on_death_or_dissconnect(race) {
     delete_race(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc093
 // Size: 0x2d
@@ -2245,7 +2247,7 @@ function delete_on_track_delete(race) {
     delete_race(race);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc0c7
 // Size: 0xf0
@@ -2266,14 +2268,14 @@ function delete_race(race) {
         race.checkpoint_next_fx delete();
     }
     start_area_fx_end(race);
-    namespace_5a22b6f3a56f7e9b::returnobjectiveid(race.checkpoint_objective_id);
+    scripts/mp/objidpoolmanager::returnobjectiveid(race.checkpoint_objective_id);
     if (isdefined(race.player)) {
-        namespace_8bbc300af6d3c2fb::playersetignoreattractions(race.player, 0);
+        scripts/mp/gametypes/br_attractions::playersetignoreattractions(race.player, 0);
     }
     race notify("race_delete");
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc1be
 // Size: 0x22
@@ -2281,7 +2283,7 @@ function race_requires_vehicle(race) {
     return get_track_setting(race.track, "vehicle_required");
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc1e8
 // Size: 0x163
@@ -2292,26 +2294,26 @@ function giverewards(track, player, stars) {
     splashname = splashes[stars];
     questtype = get_track_setting(track, "quest_type");
     params = spawnstruct();
-    missionid = namespace_4bc0ead8d2af3d84::getquesttableindex(questtype);
-    rewardtier = namespace_4bc0ead8d2af3d84::getquestrewardtier(player.team);
-    var_11d65784f0b6afa2 = namespace_4bc0ead8d2af3d84::getquestrewardgroupindex(rewardname);
-    params.packedbits = namespace_4bc0ead8d2af3d84::packsplashparambits(missionid, rewardtier, var_11d65784f0b6afa2);
-    namespace_4bc0ead8d2af3d84::displaysplashtoplayers([0:player], splashname, params);
+    missionid = scripts/mp/gametypes/br_quest_util::getquesttableindex(questtype);
+    rewardtier = scripts/mp/gametypes/br_quest_util::getquestrewardtier(player.team);
+    rewardindex = scripts/mp/gametypes/br_quest_util::getquestrewardgroupindex(rewardname);
+    params.packedbits = scripts/mp/gametypes/br_quest_util::packsplashparambits(missionid, rewardtier, rewardindex);
+    scripts/mp/gametypes/br_quest_util::displaysplashtoplayers([player], splashname, params);
     rewardorigin = player.origin;
     rewardangles = player.angles;
-    results = namespace_4bc0ead8d2af3d84::givequestrewardgroup(rewardname, player.team, rewardorigin, rewardangles, track.icontrigger.scriptable, [0:player]);
+    results = scripts/mp/gametypes/br_quest_util::givequestrewardgroup(rewardname, player.team, rewardorigin, rewardangles, track.icontrigger.scriptable, [player]);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc352
 // Size: 0x3a
 function project(v, u) {
     scale = vectordot(v, u) / lengthsquared(u);
-    return [0:u * scale, 1:scale];
+    return [u * scale, scale];
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc394
 // Size: 0x5b
@@ -2321,10 +2323,10 @@ function project_to_line(point, start, stop) {
     scale = var_57acedc40b2f974[1];
     point = var_57acedc40b2f974[0];
     point = point + start;
-    return [0:point, 1:scale];
+    return [point, scale];
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc3f7
 // Size: 0x55
@@ -2335,7 +2337,7 @@ function dist_to_line(point, start, stop) {
     return distance(var_a23e9279f1bf4aca, point);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc454
 // Size: 0x6d
@@ -2348,10 +2350,10 @@ function project_to_line_seg(point, start, stop) {
     } else if (scale > 1) {
         point = stop;
     }
-    return [0:point, 1:scale];
+    return [point, scale];
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc4c9
 // Size: 0x55
@@ -2362,7 +2364,7 @@ function dist_to_line_seg(point, start, stop) {
     return distance(var_a23e9279f1bf4aca, point);
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc526
 // Size: 0xb1
@@ -2390,7 +2392,7 @@ function function_d4a68f6a9703161c(command, args) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc5de
 // Size: 0xbd
@@ -2405,7 +2407,7 @@ function function_1d97ac4a5afd1642() {
             rt endon("fall_22");
             rt.var_45d5625806911f2c = 1;
         }
-        while (1) {
+        while (true) {
             foreach (track in rt.tracks) {
                 function_2a28c6ef9173079f(track);
             }
@@ -2414,7 +2416,7 @@ function function_1d97ac4a5afd1642() {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6a2
 // Size: 0x5fe
@@ -2438,19 +2440,19 @@ function function_2a28c6ef9173079f(track) {
         }
         teleport_to_start = get_track_setting(track, "heli_docks_8");
         if (teleport_to_start) {
-            var_984863ba729a2641 = track_get_teleport_target(track);
-            debugstar(var_984863ba729a2641, (1, 1, 0), 1);
+            teleport_origin = track_get_teleport_target(track);
+            debugstar(teleport_origin, (1, 1, 0), 1);
         } else {
-            var_cb3d8787d7ea5170 = get_track_setting(track, "heli_downtown_12");
-            if (var_cb3d8787d7ea5170 > 0) {
+            launch_sec = get_track_setting(track, "heli_downtown_12");
+            if (launch_sec > 0) {
                 gravity = -800;
                 target_origin = track_get_launch_target(track);
                 debugstar(target_origin, (0, 1, 0), 1);
                 start = track.start_loc.origin;
-                vel = track_get_launch_velocity(track, track.start_loc.origin, var_cb3d8787d7ea5170);
+                vel = track_get_launch_velocity(track, track.start_loc.origin, launch_sec);
                 last = start;
                 for (i = 0; i < 20; i++) {
-                    t = var_cb3d8787d7ea5170 * (i + 1) / 20;
+                    t = launch_sec * (i + 1) / 20;
                     next = (start[0] + vel[0] * t, start[1] + vel[1] * t, 0.5 * gravity * t * t + vel[2] * t + start[2]);
                     line(last, next, (1, 0, 0), 1, 0, 1);
                     last = next;
@@ -2464,7 +2466,7 @@ function function_2a28c6ef9173079f(track) {
         } else {
             end = last;
         }
-        var_2d901c509015e202 = 15;
+        startsize = 15;
         line(start, start + (0, 0, 2000), (0, 1, 0), 1, 0, 1);
         line(end, end + (0, 0, 1536), (1, 0, 0), 1, 0, 1);
         for (i = 0; i < track.points.size; i++) {
@@ -2485,7 +2487,7 @@ function function_2a28c6ef9173079f(track) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcca7
 // Size: 0x4e
@@ -2498,7 +2500,7 @@ function function_d08fe5f270307ab8(index) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xccfc
 // Size: 0x71
@@ -2514,7 +2516,7 @@ function function_7a092a5fc6e9c24b(index) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd74
 // Size: 0x78
@@ -2532,7 +2534,7 @@ function function_8bc70c14d65e3417(args) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcdf3
 // Size: 0xda
@@ -2553,7 +2555,7 @@ function function_33949707efb4fbb4(args) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xced4
 // Size: 0x62b
@@ -2562,7 +2564,7 @@ function function_53ca8617fcc31a47() {
         rt = level.brattractions["fall_19"];
         rt.var_f99815461b25f1eb = undefined;
         setdvarifuninitialized(@"hash_324951f72e619f36", "fall_42");
-        while (1) {
+        while (true) {
             waitframe();
             if (isdefined(rt.var_f99815461b25f1eb)) {
                 function_2a28c6ef9173079f(rt.var_f99815461b25f1eb);
@@ -2580,12 +2582,12 @@ function function_53ca8617fcc31a47() {
                     function_5ec615ca5f0e291b();
                     continue;
                 } else if (current == "gulag_glide_01_2" || current == "gulag_glide_01_7" || current == "mountain_track_1_3" || current == "mountain_track_1_12") {
-                    var_4c7850e610afaa6 = current == "gulag_glide_01_7" || current == "mountain_track_1_12";
-                    var_6c126b7e815541fa = current == "mountain_track_1_3" || current == "mountain_track_1_12";
+                    tofile = current == "gulag_glide_01_7" || current == "mountain_track_1_12";
+                    mapformat = current == "mountain_track_1_3" || current == "mountain_track_1_12";
                     file = undefined;
-                    if (var_4c7850e610afaa6) {
+                    if (tofile) {
                         filename = "mountain_track_1_29" + rt.var_f99815461b25f1eb.name;
-                        if (var_6c126b7e815541fa) {
+                        if (mapformat) {
                             filename = filename + "tv_station_parachute_5";
                         } else {
                             filename = filename + "tv_station_parachute_10";
@@ -2599,12 +2601,12 @@ function function_53ca8617fcc31a47() {
                             iprintlnbold("dam_para_high_5" + path + filename);
                         }
                     }
-                    if (var_6c126b7e815541fa) {
+                    if (mapformat) {
                         function_28c49f6d47613d0e(rt.var_f99815461b25f1eb, file);
                     } else {
                         function_ba2c486db215737b(rt.var_f99815461b25f1eb, file);
                     }
-                    if (var_4c7850e610afaa6) {
+                    if (tofile) {
                         closefile(file);
                     }
                     continue;
@@ -2681,7 +2683,7 @@ function function_53ca8617fcc31a47() {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd506
 // Size: 0x33
@@ -2693,7 +2695,7 @@ function function_5ec615ca5f0e291b() {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd540
 // Size: 0x172
@@ -2723,43 +2725,43 @@ function function_28c49f6d47613d0e(track, file) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd6b9
 // Size: 0x1d1
 function function_ba2c486db215737b(track, file) {
     /#
         function_8e9fc5e1a129b0d9("<unknown string>" + track.name + "<unknown string>" + track.name + "<unknown string>", file);
-        var_ce482778f59e640b = "<unknown string>";
-        var_ce482778f59e640b = var_ce482778f59e640b + track.origin + "<unknown string>";
-        var_ce482778f59e640b = var_ce482778f59e640b + track.angles + "<unknown string>";
-        var_ce482778f59e640b = var_ce482778f59e640b + track.settings_group + "<unknown string>";
-        function_8e9fc5e1a129b0d9(var_ce482778f59e640b, file);
+        ln = "<unknown string>";
+        ln = ln + track.origin + "<unknown string>";
+        ln = ln + track.angles + "<unknown string>";
+        ln = ln + track.settings_group + "<unknown string>";
+        function_8e9fc5e1a129b0d9(ln, file);
         function_8e9fc5e1a129b0d9("fall_42", file);
         foreach (i, point in track.points) {
-            var_ce482778f59e640b = "<unknown string>";
+            ln = "<unknown string>";
             if (i == track.points.size - 1) {
                 if (track.loop) {
-                    var_ce482778f59e640b = var_ce482778f59e640b + "<unknown string>" + track.name + "<unknown string>";
+                    ln = ln + "<unknown string>" + track.name + "<unknown string>";
                 }
             } else {
-                var_ce482778f59e640b = var_ce482778f59e640b + "<unknown string>" + track.name + "<unknown string>" + i + 1 + "<unknown string>";
+                ln = ln + "<unknown string>" + track.name + "<unknown string>" + i + 1 + "<unknown string>";
             }
             if (i == 0) {
-                var_ce482778f59e640b = var_ce482778f59e640b + "<unknown string>";
+                ln = ln + "<unknown string>";
             }
-            var_ce482778f59e640b = var_ce482778f59e640b + "<unknown string>";
-            function_8e9fc5e1a129b0d9(var_ce482778f59e640b, file);
-            var_ce482778f59e640b = "<unknown string>";
-            var_ce482778f59e640b = var_ce482778f59e640b + point.origin + "<unknown string>";
-            var_ce482778f59e640b = var_ce482778f59e640b + point.angles + "<unknown string>";
-            function_8e9fc5e1a129b0d9(var_ce482778f59e640b, file);
+            ln = ln + "<unknown string>";
+            function_8e9fc5e1a129b0d9(ln, file);
+            ln = "<unknown string>";
+            ln = ln + point.origin + "<unknown string>";
+            ln = ln + point.angles + "<unknown string>";
+            function_8e9fc5e1a129b0d9(ln, file);
             function_8e9fc5e1a129b0d9("fall_42", file);
         }
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0xd891
 // Size: 0xf2
@@ -2778,7 +2780,7 @@ function function_e2f6c761ac225375(file, entnum, classname, origin, angles, targ
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd98a
 // Size: 0x42
@@ -2791,44 +2793,44 @@ function function_3c4abd61ee73ba4f(key, value, file) {
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd9d3
 // Size: 0x30
-function function_b5e5e49b1002b1ab(var_24f7120356b22344) {
+function function_b5e5e49b1002b1ab(xyz) {
     /#
-        if (!isdefined(var_24f7120356b22344)) {
+        if (!isdefined(xyz)) {
             return undefined;
         }
-        return var_24f7120356b22344[0] + "river_heli_1_26" + var_24f7120356b22344[1] + "river_heli_1_26" + var_24f7120356b22344[2];
+        return xyz[0] + "river_heli_1_26" + xyz[1] + "river_heli_1_26" + xyz[2];
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xda0a
 // Size: 0x2e
-function function_8e9fc5e1a129b0d9(var_ce482778f59e640b, file) {
+function function_8e9fc5e1a129b0d9(ln, file) {
     /#
         if (isdefined(file)) {
-            fprintln(file, var_ce482778f59e640b);
-        } else {
-            println(var_ce482778f59e640b);
+            fprintln(file, ln);
+            return;
         }
+        println(ln);
     #/
 }
 
-// Namespace namespace_90ae26a1afd254c0/namespace_78c0387340392041
+// Namespace br_attraction_racetrack / scripts/mp/gametypes/br_attraction_racetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xda3f
 // Size: 0x88
-function function_533d2f624478039f(var_1a3e809d77076f4d) {
+function function_533d2f624478039f(auto_cmd) {
     /#
         level notify("<unknown string>");
         level endon("<unknown string>");
-        while (1) {
+        while (true) {
             last_origin = level.player.origin;
-            setdvar(@"hash_324951f72e619f36", var_1a3e809d77076f4d);
+            setdvar(@"hash_324951f72e619f36", auto_cmd);
             while (distance(last_origin, level.player.origin) < getdvarfloat(@"hash_a906719455727290", 750)) {
                 waitframe();
             }

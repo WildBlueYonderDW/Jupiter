@@ -5,7 +5,7 @@
 
 #namespace gameskill;
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcc
 // Size: 0x30
@@ -16,20 +16,20 @@ function get_skill_from_index(index) {
     return level.difficultytype[index];
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x104
 // Size: 0x56
-function apply_difficulty_settings_shared(var_64e5d13011016a93) {
+function apply_difficulty_settings_shared(current_frac) {
     /#
         assert(isplayer(self));
     #/
-    self.var_da4b6392c1bec6a1 = get_difficultysetting_frac("missTimeConstant", var_64e5d13011016a93);
-    self.var_cef700ed012e8981 = get_difficultysetting_frac("missTimeDistanceFactor", var_64e5d13011016a93);
+    self.var_da4b6392c1bec6a1 = get_difficultysetting_frac("missTimeConstant", current_frac);
+    self.var_cef700ed012e8981 = get_difficultysetting_frac("missTimeDistanceFactor", current_frac);
     function_38ae83992c7eb8a5(get_difficultysetting("double_grenades_allowed"));
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x161
 // Size: 0x1d
@@ -37,7 +37,7 @@ function get_difficultysetting_frac(setting, frac) {
     return get_difficultysetting(setting) * frac;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x186
 // Size: 0x37
@@ -48,7 +48,7 @@ function get_difficultysetting(setting, gameskill) {
     return level.difficultysettings[setting][get_skill_from_index(gameskill)];
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x27
@@ -56,50 +56,50 @@ function get_difficultysetting_global(setting) {
     return level.difficultysettings[setting][get_skill_from_index(level.gameskill)];
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x4
 function always_pain() {
-    return 0;
+    return false;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x200
 // Size: 0x18
 function pain_protection() {
     if (!pain_protection_check()) {
-        return 0;
+        return false;
     }
     return randomint(100) > 25;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x220
 // Size: 0xa3
 function pain_protection_check() {
     if (!isalive(self.enemy)) {
-        return 0;
+        return false;
     }
     if (!isplayer(self.enemy)) {
-        return 0;
+        return false;
     }
     if (!isalive(level.painai) || level.painai.script != "pain") {
         level.painai = self;
     }
     if (self == level.painai) {
-        return 0;
+        return false;
     }
     objweapon = self.damageweapon;
     if (!isnullweapon(objweapon) && objweapon.isbolt) {
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2cb
 // Size: 0xa4
@@ -121,7 +121,7 @@ function set_accuracy_based_on_situation() {
     }
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x376
 // Size: 0xd
@@ -129,7 +129,7 @@ function didsomethingotherthanshooting() {
     self.misstimedebounce = 0;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x15
@@ -137,7 +137,7 @@ function resetmissdebouncetime() {
     self.misstimedebounce = gettime() + 3000;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a6
 // Size: 0x5a
@@ -148,13 +148,13 @@ function default_door_node_flashbang_frequency() {
     if (self isbadguy()) {
         if (level.gameskill >= 2) {
             self.doorflashchance = 0.8;
-        } else {
-            self.doorflashchance = 0.6;
+            return;
         }
+        self.doorflashchance = 0.6;
     }
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x407
 // Size: 0x54
@@ -170,7 +170,7 @@ function grenadeawareness() {
     }
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x462
 // Size: 0x4d
@@ -187,7 +187,7 @@ function map_is_early_in_the_game() {
     return 0;
 }
 
-// Namespace gameskill/namespace_2f36c2cc5a44d845
+// Namespace gameskill / scripts/common/gameskill
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0xd

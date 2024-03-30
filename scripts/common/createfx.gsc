@@ -7,7 +7,7 @@
 
 #namespace createfx;
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xab8
 // Size: 0xf4
@@ -33,7 +33,7 @@ function createeffect(type, fxid, var_265e032b267abf38) {
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbb4
 // Size: 0x8
@@ -41,7 +41,7 @@ function getloopeffectdelaydefault() {
     return 0.5;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbc4
 // Size: 0x5
@@ -49,15 +49,15 @@ function getoneshoteffectdelaydefault() {
     return -4;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbd1
 // Size: 0x4
 function getexploderdelaydefault() {
-    return 0;
+    return false;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0x8
@@ -65,7 +65,7 @@ function getintervalsounddelaymindefault() {
     return 0.75;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbed
 // Size: 0x5
@@ -73,7 +73,7 @@ function getintervalsounddelaymaxdefault() {
     return 2;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xbfa
 // Size: 0x133
@@ -102,7 +102,7 @@ function createloopsound() {
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd35
 // Size: 0x5c
@@ -114,7 +114,7 @@ function createintervalsound() {
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd99
 // Size: 0x42
@@ -127,20 +127,20 @@ function createnewexploder() {
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xde3
 // Size: 0x4f
-function add_exploder(var_2724ea192f3e906d, ent) {
+function add_exploder(exploderid, ent) {
     array = [];
-    if (isdefined(level.createfxexploders[var_2724ea192f3e906d])) {
-        array = level.createfxexploders[var_2724ea192f3e906d];
+    if (isdefined(level.createfxexploders[exploderid])) {
+        array = level.createfxexploders[exploderid];
     }
     array[array.size] = ent;
-    level.createfxexploders[var_2724ea192f3e906d] = array;
+    level.createfxexploders[exploderid] = array;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe39
 // Size: 0x1fe
@@ -184,17 +184,17 @@ function createnewexploder_internal(ent) {
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x103f
 // Size: 0x3a
-function createexploderex(fxid, var_2724ea192f3e906d) {
+function createexploderex(fxid, exploderid) {
     ent = createexploder(fxid);
-    ent.v["exploder"] = var_2724ea192f3e906d;
+    ent.v["exploder"] = exploderid;
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1081
 // Size: 0xeb
@@ -217,7 +217,7 @@ function createreactiveent(fxid) {
     return ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1174
 // Size: 0x50
@@ -229,7 +229,7 @@ function set_origin_and_angles(origin, angles) {
     self.v["angles"] = angles;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11cb
 // Size: 0x4b
@@ -238,7 +238,7 @@ function set_forward_and_up_vectors() {
     self.v["forward"] = anglestoforward(self.v["angles"]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x121d
 // Size: 0x10b
@@ -261,7 +261,7 @@ function createfx_common() {
     level notify("createfx_common_done");
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x132f
 // Size: 0x180
@@ -277,7 +277,7 @@ function init_level_variables() {
     level._createfx.rate = 1;
     level._createfx.snap2normal = 0;
     level._createfx.snap2angle = 0;
-    level._createfx.snap2anglesnaps = [0:0, 1:90, 2:45, 3:15];
+    level._createfx.snap2anglesnaps = [0, 90, 45, 15];
     level._createfx.axismode = 0;
     level._createfx.select_by_name = 0;
     level._createfx.drawaxis = 1;
@@ -285,7 +285,7 @@ function init_level_variables() {
     set_player_speed_hud();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x14b6
 // Size: 0xc0
@@ -299,7 +299,7 @@ function init_locked_list() {
     level._createfx.lockedlist["rctrl"] = 1;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x157d
 // Size: 0x25b
@@ -329,7 +329,7 @@ function init_colors() {
     level._createfx.colors = colors;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17df
 // Size: 0x789
@@ -371,10 +371,10 @@ function createfxlogic() {
     level.createfx_draw_enabled = 1;
     level.last_displayed_ent = undefined;
     level.buttonisheld = [];
-    var_918cdf5248017e62 = (0, 0, 0);
+    lastplayerorigin = (0, 0, 0);
     flag_set("createfx_started");
     if (!level.mp_createfx) {
-        var_918cdf5248017e62 = level.player.origin;
+        lastplayerorigin = level.player.origin;
     }
     var_fad54797e80b2073 = undefined;
     level.fx_rotating = 0;
@@ -385,7 +385,7 @@ function createfxlogic() {
         ent post_entity_creation_function();
     }
     thread draw_distance();
-    var_ab4c4ff4c79448b2 = undefined;
+    lastselectentity = undefined;
     thread createfx_autosave();
     for (;;) {
         var_c42084c511513568 = 0;
@@ -394,22 +394,22 @@ function createfxlogic() {
         up = anglestoup(level.player getplayerangles());
         dot = 0.85;
         var_fc03616d10f9d715 = forward * 750;
-        level.createfxcursor = namespace_2a184fc4902783dc::_bullet_trace(level.player geteye(), level.player geteye() + var_fc03616d10f9d715, 0, undefined);
-        var_28a98862b74a27d7 = undefined;
+        level.createfxcursor = scripts/engine/trace::_bullet_trace(level.player geteye(), level.player geteye() + var_fc03616d10f9d715, 0, undefined);
+        highlightedent = undefined;
         level.buttonclick = [];
         level.button_is_kb = [];
         process_button_held_and_clicked();
-        var_1a5797ad0580e73f = button_is_held("lctrl", "rctrl", "BUTTON_LSHLDR");
-        var_8b0ae62edf960f34 = button_is_held("lshift", "rshift");
+        ctrlheld = button_is_held("lctrl", "rctrl", "BUTTON_LSHLDR");
+        shiftheld = button_is_held("lshift", "rshift");
         var_24762ec425490dd4 = button_is_clicked("mouse1", "BUTTON_A");
-        var_7aff3f1e76c5c9e3 = button_is_held("mouse1", "BUTTON_A");
+        leftheld = button_is_held("mouse1", "BUTTON_A");
         create_fx_menu();
-        var_b6499a03c15010eb = "F5";
+        btn = "F5";
         if (getdvarint(@"hash_1b7eec3c3206970b")) {
-            var_b6499a03c15010eb = "F4";
+            btn = "F4";
         }
         /#
-            if (button_is_clicked(var_b6499a03c15010eb)) {
+            if (button_is_clicked(btn)) {
                 setdevdvar(@"hash_47822f6cb09b386c", 1);
             }
             if (getdvarint(@"hash_47822f6cb09b386c")) {
@@ -439,11 +439,11 @@ function createfxlogic() {
             select_by_name_list();
         }
         modify_player_speed();
-        if (!var_1a5797ad0580e73f && !var_8b0ae62edf960f34 && button_is_clicked("g")) {
+        if (!ctrlheld && !shiftheld && button_is_clicked("g")) {
             select_all_exploders_of_currently_selected("exploder");
             select_all_exploders_of_currently_selected("flag");
         }
-        if (var_8b0ae62edf960f34) {
+        if (shiftheld) {
             if (button_is_clicked("g")) {
                 goto_selected();
             }
@@ -451,85 +451,85 @@ function createfxlogic() {
         if (button_is_held("h", "F1") && !level.mp_createfx) {
             show_help();
             waitframe();
-        } else {
-            if (button_is_clicked("BUTTON_LSTICK")) {
+            continue;
+        }
+        if (button_is_clicked("BUTTON_LSTICK")) {
+            copy_ents();
+        }
+        if (button_is_clicked("BUTTON_RSTICK")) {
+            paste_ents();
+        }
+        if (ctrlheld) {
+            if (button_is_clicked("c")) {
                 copy_ents();
             }
-            if (button_is_clicked("BUTTON_RSTICK")) {
+            if (button_is_clicked("v")) {
                 paste_ents();
             }
-            if (var_1a5797ad0580e73f) {
-                if (button_is_clicked("c")) {
-                    copy_ents();
-                }
-                if (button_is_clicked("v")) {
-                    paste_ents();
-                }
-                if (button_is_clicked("g")) {
-                    spawn_grenade();
-                }
-            }
-            if (isdefined(level._createfx.selected_fx_option_index)) {
-                menu_fx_option_set();
-            }
-            for (i = 0; i < level.createfxent.size; i++) {
-                ent = level.createfxent[i];
-                difference = vectornormalize(ent.v["origin"] - level.player.origin + (0, 0, 55));
-                newdot = vectordot(forward, difference);
-                if (newdot < dot) {
-                    continue;
-                }
-                dot = newdot;
-                var_28a98862b74a27d7 = ent;
-            }
-            level.fx_highlightedent = var_28a98862b74a27d7;
-            if (isdefined(var_28a98862b74a27d7)) {
-                if (isdefined(var_fad54797e80b2073)) {
-                    if (var_fad54797e80b2073 != var_28a98862b74a27d7) {
-                        if (!ent_is_selected(var_fad54797e80b2073)) {
-                            var_fad54797e80b2073 thread entity_highlight_disable();
-                        }
-                        if (!ent_is_selected(var_28a98862b74a27d7)) {
-                            var_28a98862b74a27d7 thread entity_highlight_enable();
-                        }
-                    }
-                } else if (!ent_is_selected(var_28a98862b74a27d7)) {
-                    var_28a98862b74a27d7 thread entity_highlight_enable();
-                }
-            }
-            manipulate_createfx_ents(var_28a98862b74a27d7, var_24762ec425490dd4, var_7aff3f1e76c5c9e3, var_1a5797ad0580e73f, right);
-            var_c42084c511513568 = handle_selected_ents(var_c42084c511513568);
-            waitframe();
-            if (var_c42084c511513568) {
-                update_selected_entities();
-            }
-            if (!level.mp_createfx) {
-                var_918cdf5248017e62 = [[ level.func_position_player_get ]](var_918cdf5248017e62);
-            }
-            var_fad54797e80b2073 = var_28a98862b74a27d7;
-            if (last_selected_entity_has_changed(var_ab4c4ff4c79448b2)) {
-                level.effect_list_offset = 0;
-                clear_settable_fx();
-                setmenu("none");
-            }
-            if (level._createfx.selected_fx_ents.size) {
-                var_ab4c4ff4c79448b2 = level._createfx.selected_fx_ents[level._createfx.selected_fx_ents.size - 1];
-            } else {
-                var_ab4c4ff4c79448b2 = undefined;
+            if (button_is_clicked("g")) {
+                spawn_grenade();
             }
         }
+        if (isdefined(level._createfx.selected_fx_option_index)) {
+            menu_fx_option_set();
+        }
+        for (i = 0; i < level.createfxent.size; i++) {
+            ent = level.createfxent[i];
+            difference = vectornormalize(ent.v["origin"] - level.player.origin + (0, 0, 55));
+            newdot = vectordot(forward, difference);
+            if (newdot < dot) {
+                continue;
+            }
+            dot = newdot;
+            highlightedent = ent;
+        }
+        level.fx_highlightedent = highlightedent;
+        if (isdefined(highlightedent)) {
+            if (isdefined(var_fad54797e80b2073)) {
+                if (var_fad54797e80b2073 != highlightedent) {
+                    if (!ent_is_selected(var_fad54797e80b2073)) {
+                        var_fad54797e80b2073 thread entity_highlight_disable();
+                    }
+                    if (!ent_is_selected(highlightedent)) {
+                        highlightedent thread entity_highlight_enable();
+                    }
+                }
+            } else if (!ent_is_selected(highlightedent)) {
+                highlightedent thread entity_highlight_enable();
+            }
+        }
+        manipulate_createfx_ents(highlightedent, var_24762ec425490dd4, leftheld, ctrlheld, right);
+        var_c42084c511513568 = handle_selected_ents(var_c42084c511513568);
+        waitframe();
+        if (var_c42084c511513568) {
+            update_selected_entities();
+        }
+        if (!level.mp_createfx) {
+            lastplayerorigin = [[ level.func_position_player_get ]](lastplayerorigin);
+        }
+        var_fad54797e80b2073 = highlightedent;
+        if (last_selected_entity_has_changed(lastselectentity)) {
+            level.effect_list_offset = 0;
+            clear_settable_fx();
+            setmenu("none");
+        }
+        if (level._createfx.selected_fx_ents.size) {
+            lastselectentity = level._createfx.selected_fx_ents[level._createfx.selected_fx_ents.size - 1];
+            continue;
+        }
+        lastselectentity = undefined;
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1f6f
 // Size: 0x1b3
 function modify_player_speed() {
-    var_2397885c1f2bcddb = 0;
-    var_c1977e8b68ed0d96 = button_is_held("lctrl", "rctrl");
+    modify_speed = 0;
+    ctrl_held = button_is_held("lctrl", "rctrl");
     if (button_is_held(".")) {
-        if (var_c1977e8b68ed0d96) {
+        if (ctrl_held) {
             if (level._createfx.player_speed < 190) {
                 level._createfx.player_speed = 190;
             } else {
@@ -538,9 +538,9 @@ function modify_player_speed() {
         } else {
             level._createfx.player_speed = level._createfx.player_speed + 5;
         }
-        var_2397885c1f2bcddb = 1;
+        modify_speed = 1;
     } else if (button_is_held(",")) {
-        if (var_c1977e8b68ed0d96) {
+        if (ctrl_held) {
             if (level._createfx.player_speed > 190) {
                 level._createfx.player_speed = 190;
             } else {
@@ -549,16 +549,16 @@ function modify_player_speed() {
         } else {
             level._createfx.player_speed = level._createfx.player_speed - 5;
         }
-        var_2397885c1f2bcddb = 1;
+        modify_speed = 1;
     }
-    if (var_2397885c1f2bcddb) {
+    if (modify_speed) {
         level._createfx.player_speed = clamp(level._createfx.player_speed, 5, 500);
         [[ level.func_player_speed ]]();
         set_player_speed_hud();
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2129
 // Size: 0x16c
@@ -590,7 +590,7 @@ function set_player_speed_hud() {
     level._createfx.player_speed_hud.hud_value setvalue(level._createfx.player_speed);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x229c
 // Size: 0x16
@@ -598,7 +598,7 @@ function toggle_createfx_drawing() {
     level.createfx_draw_enabled = !level.createfx_draw_enabled;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x22b9
 // Size: 0xcb
@@ -624,37 +624,37 @@ function insert_effect() {
     set_fx_hudelement("(x) Exit >");
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x238b
 // Size: 0xbe
 function is_ent_filtered_out(ent, filter) {
     if (filter != "") {
         if (isdefined(ent.v["type"]) && issubstr(ent.v["type"], filter)) {
-            return 0;
+            return false;
         } else if (isdefined(ent.v["fxid"]) && issubstr(ent.v["fxid"], filter)) {
-            return 0;
+            return false;
         } else if (isdefined(ent.v["soundalias"]) && issubstr(ent.v["soundalias"], filter)) {
-            return 0;
+            return false;
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2451
 // Size: 0x1ea
-function manipulate_createfx_ents(var_28a98862b74a27d7, var_24762ec425490dd4, var_7aff3f1e76c5c9e3, var_1a5797ad0580e73f, right) {
+function manipulate_createfx_ents(highlightedent, var_24762ec425490dd4, leftheld, ctrlheld, right) {
     if (!level.createfx_draw_enabled) {
         return;
     }
     if (level._createfx.select_by_name) {
         level._createfx.select_by_name = 0;
-        var_28a98862b74a27d7 = undefined;
+        highlightedent = undefined;
     } else if (select_by_substring()) {
-        var_28a98862b74a27d7 = undefined;
+        highlightedent = undefined;
     }
     for (i = 0; i < level.createfxent.size; i++) {
         ent = level.createfxent[i];
@@ -665,23 +665,23 @@ function manipulate_createfx_ents(var_28a98862b74a27d7, var_24762ec425490dd4, va
             continue;
         }
         scale = getdvarfloat(@"hash_af4eccdbca5a551c");
-        if (isdefined(var_28a98862b74a27d7) && ent == var_28a98862b74a27d7) {
+        if (isdefined(highlightedent) && ent == highlightedent) {
             if (!entities_are_selected()) {
                 display_fx_info(ent);
             }
             if (var_24762ec425490dd4) {
                 var_915bf244079e233e = index_is_selected(i);
                 level.createfx_selecting = !var_915bf244079e233e;
-                if (!var_1a5797ad0580e73f) {
-                    var_c3208e10b4c0c211 = level._createfx.selected_fx_ents.size;
+                if (!ctrlheld) {
+                    selectedsize = level._createfx.selected_fx_ents.size;
                     clear_entity_selection();
-                    if (var_915bf244079e233e && var_c3208e10b4c0c211 == 1) {
+                    if (var_915bf244079e233e && selectedsize == 1) {
                         select_entity(i, ent);
                     }
                 }
                 toggle_entity_selection(i, ent);
-            } else if (var_7aff3f1e76c5c9e3) {
-                if (var_1a5797ad0580e73f) {
+            } else if (leftheld) {
+                if (ctrlheld) {
                     if (level.createfx_selecting) {
                         select_entity(i, ent);
                     }
@@ -701,7 +701,7 @@ function manipulate_createfx_ents(var_28a98862b74a27d7, var_24762ec425490dd4, va
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2642
 // Size: 0x2f1
@@ -714,28 +714,28 @@ function draw_origin(scale, colorindex) {
     angles_offset = (0, 0, 0);
     isclose = distancesquared(view_origin, self.v["origin"]) < 36864;
     if (isclose) {
-        var_c810d827a05facc6 = distance(view_origin, self.v["origin"]);
-        var_997680ac56b8d5e3 = var_c810d827a05facc6 / 176;
-        var_94d86565c4d2c660 = 1 - clamp(var_997680ac56b8d5e3, 0, 1);
-        var_27ee0289d942057b = clamp(var_997680ac56b8d5e3, 0.333, 1);
-        var_e520906c5f9d7a67 = anglestoright(view_angles) * -4;
-        var_bff3e0f8dbdbb856 = anglestoup(view_angles) * -4.666;
-        angles_offset = var_e520906c5f9d7a67 + var_bff3e0f8dbdbb856;
+        view_distance = distance(view_origin, self.v["origin"]);
+        distance_delta = view_distance / 176;
+        var_94d86565c4d2c660 = 1 - clamp(distance_delta, 0, 1);
+        var_27ee0289d942057b = clamp(distance_delta, 0.333, 1);
+        offset_right = anglestoright(view_angles) * -4;
+        offset_up = anglestoup(view_angles) * -4.666;
+        angles_offset = offset_right + offset_up;
     }
     /#
         print3d(self.v["rainfx"] + angles_offset, "BUTTON_A", color, var_27ee0289d942057b, scale);
         if (var_94d86565c4d2c660 > 0) {
             iswithinfov = within_fov(view_origin, view_angles, self.v["rainfx"], 0.422618);
             if (iswithinfov) {
-                var_9221239482c742c7 = 2;
-                var_4f4e413f42197f3e = 4;
-                sphere(self.v["rainfx"], var_9221239482c742c7 * scale, color);
+                ssize = 2;
+                lsize = 4;
+                sphere(self.v["rainfx"], ssize * scale, color);
                 forward = anglestoforward(self.v["F4"]);
-                forward = forward * var_4f4e413f42197f3e * scale;
+                forward = forward * lsize * scale;
                 right = anglestoright(self.v["F4"]) * -1;
-                right = right * var_4f4e413f42197f3e * scale;
+                right = right * lsize * scale;
                 up = anglestoup(self.v["F4"]);
-                up = up * var_4f4e413f42197f3e * scale;
+                up = up * lsize * scale;
                 line(self.v["rainfx"] - forward, self.v["rainfx"] + forward, color, var_94d86565c4d2c660);
                 line(self.v["rainfx"] - right, self.v["rainfx"] + right, color, var_94d86565c4d2c660);
                 line(self.v["rainfx"] - up, self.v["rainfx"] + up, color, var_94d86565c4d2c660);
@@ -744,23 +744,23 @@ function draw_origin(scale, colorindex) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x293a
 // Size: 0x195
 function createfx_print3d(colorindex, scale, right) {
     draw_origin(scale, colorindex);
     if (self.textalpha > 0) {
-        var_354cb4170c837683 = get_print3d_text();
-        var_19eace9a3f672446 = right * var_354cb4170c837683[0].size * -2.93;
+        texts = get_print3d_text();
+        printright = right * texts[0].size * -2.93;
         color = level._createfx.colors[self.v["type"]][colorindex];
         if (isdefined(self.is_playing)) {
             color = (1, 0.5, 0);
         }
         height = 15;
-        foreach (text in var_354cb4170c837683) {
+        foreach (text in texts) {
             /#
-                print3d(self.v["rainfx"] + var_19eace9a3f672446 + (0, 0, height), text, color, self.textalpha, scale);
+                print3d(self.v["rainfx"] + printright + (0, 0, height), text, color, self.textalpha, scale);
             #/
             height = height - 13;
         }
@@ -774,28 +774,27 @@ function createfx_print3d(colorindex, scale, right) {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2ad6
 // Size: 0xbe
 function get_print3d_text() {
     switch (self.v["type"]) {
     case #"hash_46a741fcf24ab59":
-        var_354cb4170c837683[0] = "reactive sound: " + self.v["soundalias"];
+        texts[0] = "reactive sound: " + self.v["soundalias"];
         if (!level.mp_createfx) {
-            var_354cb4170c837683[1] = "reactive FX: " + self.v["fxid"];
+            texts[1] = "reactive FX: " + self.v["fxid"];
         }
-        return var_354cb4170c837683;
+        return texts;
     case #"hash_c9ec51ce0335258e":
     case #"hash_fbc4edc91b6c146a":
-        return [0:self.v["soundalias"]];
+        return [self.v["soundalias"]];
     default:
-        return [0:self.v["fxid"]];
-        break;
+        return [self.v["fxid"]];
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2b9b
 // Size: 0x27
@@ -806,7 +805,7 @@ function select_by_name_list() {
     draw_effects_list();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bc9
 // Size: 0x297
@@ -857,7 +856,7 @@ function handle_selected_ents(var_c42084c511513568) {
     return var_c42084c511513568;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2e68
 // Size: 0xb2
@@ -887,17 +886,17 @@ function selected_ent_buttons(var_c42084c511513568) {
     return var_c42084c511513568;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2f22
 // Size: 0x21b
 function modify_rate() {
-    var_91b4dbb6a5b68013 = button_is_held("lshift", "rshift");
-    var_c1977e8b68ed0d96 = button_is_held("lctrl", "rctrl");
+    shift_held = button_is_held("lshift", "rshift");
+    ctrl_held = button_is_held("lctrl", "rctrl");
     if (button_is_clicked("=")) {
-        if (var_91b4dbb6a5b68013) {
+        if (shift_held) {
             level._createfx.rate = level._createfx.rate + 1;
-        } else if (var_c1977e8b68ed0d96) {
+        } else if (ctrl_held) {
             if (level._createfx.rate < 1) {
                 level._createfx.rate = 1;
             } else {
@@ -907,9 +906,9 @@ function modify_rate() {
             level._createfx.rate = level._createfx.rate + 0.1;
         }
     } else if (button_is_clicked("-")) {
-        if (var_91b4dbb6a5b68013) {
+        if (shift_held) {
             level._createfx.rate = level._createfx.rate - 1;
-        } else if (var_c1977e8b68ed0d96) {
+        } else if (ctrl_held) {
             if (level._createfx.rate > 1) {
                 level._createfx.rate = 1;
             } else {
@@ -923,7 +922,7 @@ function modify_rate() {
     set_tool_hudelem("Rate:", level._createfx.rate);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3144
 // Size: 0x2b
@@ -931,7 +930,7 @@ function toggle_axismode() {
     level._createfx.axismode = !level._createfx.axismode;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3176
 // Size: 0x4a
@@ -940,7 +939,7 @@ function toggle_snap2normal() {
     set_tool_hudelem("Snap2Normal:", level._createfx.snap2normal);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x31c7
 // Size: 0xa0
@@ -952,7 +951,7 @@ function toggle_snap2angle() {
     set_tool_hudelem("Snap2Angle:", level._createfx.snap2anglesnaps[level._createfx.snap2angle]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x326e
 // Size: 0xb2
@@ -966,7 +965,7 @@ function copy_angles_of_selected_ents() {
     update_selected_entities();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3327
 // Size: 0x84
@@ -980,34 +979,34 @@ function reset_axis_of_selected_ents() {
     update_selected_entities();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33b2
 // Size: 0x54
-function last_selected_entity_has_changed(var_ab4c4ff4c79448b2) {
-    if (isdefined(var_ab4c4ff4c79448b2)) {
+function last_selected_entity_has_changed(lastselectentity) {
+    if (isdefined(lastselectentity)) {
         if (!entities_are_selected()) {
             return 1;
         }
     } else {
         return entities_are_selected();
     }
-    return var_ab4c4ff4c79448b2 != level._createfx.selected_fx_ents[level._createfx.selected_fx_ents.size - 1];
+    return lastselectentity != level._createfx.selected_fx_ents[level._createfx.selected_fx_ents.size - 1];
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x340e
 // Size: 0xaa
 function drop_selection_to_ground() {
     for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
         ent = level._createfx.selected_fx_ents[i];
-        trace = namespace_2a184fc4902783dc::_bullet_trace(ent.v["origin"], ent.v["origin"] + (0, 0, -2048), 0, undefined);
+        trace = scripts/engine/trace::_bullet_trace(ent.v["origin"], ent.v["origin"] + (0, 0, -2048), 0, undefined);
         ent.v["origin"] = trace["position"];
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x34bf
 // Size: 0xe7
@@ -1024,7 +1023,7 @@ function set_off_exploders() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x35ad
 // Size: 0xe6
@@ -1053,7 +1052,7 @@ function draw_distance() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x369a
 // Size: 0x52
@@ -1069,11 +1068,11 @@ function createfx_autosave() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x36f3
 // Size: 0x13c
-function rotate_over_time(org, var_f768bf61e5636b2c) {
+function rotate_over_time(org, rotater) {
     level endon("new_ent_selection");
     timer = 0.1;
     for (p = 0; p < timer * 20; p++) {
@@ -1091,13 +1090,13 @@ function rotate_over_time(org, var_f768bf61e5636b2c) {
             if (isdefined(ent.model)) {
                 continue;
             }
-            ent.v["origin"] = var_f768bf61e5636b2c[i].origin;
-            ent.v["angles"] = var_f768bf61e5636b2c[i].angles;
+            ent.v["origin"] = rotater[i].origin;
+            ent.v["angles"] = rotater[i].angles;
         }
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3836
 // Size: 0x1e
@@ -1109,7 +1108,7 @@ function delete_pressed() {
     delete_selection();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x385b
 // Size: 0xae
@@ -1129,7 +1128,7 @@ function remove_selected_option() {
     clear_settable_fx();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3910
 // Size: 0x17
@@ -1137,7 +1136,7 @@ function remove_option(name) {
     self.v[name] = undefined;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x392e
 // Size: 0xf4
@@ -1154,9 +1153,9 @@ function delete_selection() {
                 ent.looper delete();
             }
             ent notify("stop_loop");
-        } else {
-            newarray[newarray.size] = ent;
+            continue;
         }
+        newarray[newarray.size] = ent;
     }
     level.createfxent = newarray;
     level._createfx.selected_fx = [];
@@ -1165,7 +1164,7 @@ function delete_selection() {
     remove_axis_model();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3a29
 // Size: 0x13a
@@ -1190,7 +1189,7 @@ function move_selection_to_cursor() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3b6a
 // Size: 0xff
@@ -1198,24 +1197,24 @@ function convert_selection_to_exploder() {
     if (level._createfx.selected_fx_ents.size < 1) {
         return;
     }
-    var_998be083dda4ba35 = 0;
+    converted = 0;
     foreach (ent in level._createfx.selected_fx_ents) {
         if (ent.v["type"] == "oneshotfx") {
-            var_998be083dda4ba35 = 1;
+            converted = 1;
             createnewexploder_internal(ent);
-        } else {
-            /#
-                println("Mode:" + ent.v["V               Copy the angles from the most recently selected fx onto all selected fx."] + "F2              Toggle createfx dot and text drawing" + ent.v["rainfx"]);
-            #/
+            continue;
         }
+        /#
+            println("Mode:" + ent.v["V               Copy the angles from the most recently selected fx onto all selected fx."] + "F2              Toggle createfx dot and text drawing" + ent.v["rainfx"]);
+        #/
     }
-    if (var_998be083dda4ba35) {
+    if (converted) {
         setmenu("none");
         display_fx_info(get_last_selected_ent());
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3c70
 // Size: 0x2e
@@ -1223,20 +1222,20 @@ function select_last_entity() {
     select_entity(level.createfxent.size - 1, level.createfxent[level.createfxent.size - 1]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ca5
 // Size: 0x16d
 function select_all_exploders_of_currently_selected(key) {
-    var_2a7f5b00fe422c65 = [];
+    selected_exploders = [];
     foreach (ent in level._createfx.selected_fx_ents) {
         if (!isdefined(ent.v[key])) {
             continue;
         }
         value = ent.v[key];
-        var_2a7f5b00fe422c65[value] = 1;
+        selected_exploders[value] = 1;
     }
-    foreach (value, _ in var_2a7f5b00fe422c65) {
+    foreach (value, _ in selected_exploders) {
         foreach (index, ent in level.createfxent) {
             if (index_is_selected(index)) {
                 continue;
@@ -1253,7 +1252,7 @@ function select_all_exploders_of_currently_selected(key) {
     update_selected_entities();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3e19
 // Size: 0xb3
@@ -1272,7 +1271,7 @@ function copy_ents() {
     level.stored_ents = array;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ed3
 // Size: 0x18
@@ -1281,7 +1280,7 @@ function post_entity_creation_function() {
     self.drawn = 1;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3ef2
 // Size: 0x6a
@@ -1299,7 +1298,7 @@ function paste_ents() {
     copy_ents();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f63
 // Size: 0x29
@@ -1308,7 +1307,7 @@ function add_and_select_entity(ent) {
     select_last_entity();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3f93
 // Size: 0xa4
@@ -1320,7 +1319,7 @@ function get_center_of_array(array) {
     return (center[0] / array.size, center[1] / array.size, center[2] / array.size);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x403f
 // Size: 0xf2
@@ -1343,7 +1342,7 @@ function goto_selected() {
     level.player setplayerangles(vectortoangles(origin - new_origin));
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4138
 // Size: 0x15
@@ -1355,21 +1354,21 @@ function ent_draw_axis() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4154
 // Size: 0x30
 function rotation_is_occuring() {
     if (level.selectedrotate_roll != 0) {
-        return 1;
+        return true;
     }
     if (level.selectedrotate_pitch != 0) {
-        return 1;
+        return true;
     }
     return level.selectedrotate_yaw != 0;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x418c
 // Size: 0x213
@@ -1391,8 +1390,11 @@ function print_fx_options(ent, tab, autosave) {
                 continue;
             }
             key = ent.v["type"] + "/" + optionname;
-            jumpiffalse(isdefined(level._createfx.defaults[key]) && level._createfx.defaults[key] == ent.v[optionname]) LOC_0000017a;
-        } else if (option["type"] == "string") {
+            if (isdefined(level._createfx.defaults[key]) && level._createfx.defaults[key] == ent.v[optionname]) {
+                continue;
+            }
+        }
+        if (option["type"] == "string") {
             stringvalue = ent.v[optionname] + "";
             if (stringvalue == "nil") {
                 continue;
@@ -1400,15 +1402,15 @@ function print_fx_options(ent, tab, autosave) {
             /#
                 cfxprintln(tab + "<unknown string>" + optionname + "<unknown string>" + ent.v[optionname] + "<unknown string>");
             #/
-        } else {
-            /#
-                cfxprintln(tab + "<unknown string>" + optionname + "<unknown string>" + ent.v[optionname] + "<unknown string>");
-            #/
+            continue;
         }
+        /#
+            cfxprintln(tab + "<unknown string>" + optionname + "<unknown string>" + ent.v[optionname] + "<unknown string>");
+        #/
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x43a6
 // Size: 0x66
@@ -1426,7 +1428,7 @@ function entity_highlight_disable() {
     self.textalpha = 0;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4413
 // Size: 0x63
@@ -1444,7 +1446,7 @@ function entity_highlight_enable() {
     self.textalpha = 1;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x447d
 // Size: 0x3e
@@ -1457,7 +1459,7 @@ function clear_settable_fx() {
     reset_fx_hud_colors();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x44c2
 // Size: 0x5c
@@ -1467,19 +1469,19 @@ function reset_fx_hud_colors() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4525
 // Size: 0x42
 function toggle_entity_selection(index, ent) {
     if (isdefined(level._createfx.selected_fx[index])) {
         deselect_entity(index, ent);
-    } else {
-        select_entity(index, ent);
+        return;
     }
+    select_entity(index, ent);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x456e
 // Size: 0x88
@@ -1494,18 +1496,18 @@ function select_entity(index, ent) {
     level._createfx.selected_fx_ents[level._createfx.selected_fx_ents.size] = ent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x45fd
 // Size: 0x26
 function ent_is_highlighted(ent) {
     if (!isdefined(level.fx_highlightedent)) {
-        return 0;
+        return false;
     }
     return ent == level.fx_highlightedent;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x462b
 // Size: 0xe5
@@ -1528,7 +1530,7 @@ function deselect_entity(index, ent) {
     level._createfx.selected_fx_ents = newarray;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4717
 // Size: 0x22
@@ -1536,20 +1538,20 @@ function index_is_selected(index) {
     return isdefined(level._createfx.selected_fx[index]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4741
 // Size: 0x55
 function ent_is_selected(ent) {
     for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
         if (level._createfx.selected_fx_ents[i] == ent) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x479e
 // Size: 0x93
@@ -1563,7 +1565,7 @@ function clear_entity_selection() {
     level._createfx.selected_fx_ents = [];
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4838
 // Size: 0x220
@@ -1591,19 +1593,21 @@ function draw_axis() {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a5f
 // Size: 0x8d
 function set_axis_model(model) {
     if (!isdefined(level._createfx.axis)) {
         level._createfx.axis = spawn("script_model", (0, 0, 0));
-    } else if (level._createfx.axis.model != model) {
+        return;
+    }
+    if (level._createfx.axis.model != model) {
         level._createfx.axis setmodel(model);
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4af3
 // Size: 0x34
@@ -1614,7 +1618,7 @@ function remove_axis_model() {
     level._createfx.axis delete();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4b2e
 // Size: 0x138
@@ -1624,7 +1628,9 @@ function draw_cross() {
             set_axis_model("<unknown string>");
             level._createfx.axis.origin = self.v["rainfx"];
             level._createfx.axis.angles = self.v["F4"];
-        } else if (level._createfx.drawaxis == 2) {
+            return;
+        }
+        if (level._createfx.drawaxis == 2) {
             range = 4;
             line(self.v["rainfx"] - (0, 0, range), self.v["rainfx"] + (0, 0, range));
             line(self.v["rainfx"] - (0, range, 0), self.v["rainfx"] + (0, range, 0));
@@ -1633,7 +1639,7 @@ function draw_cross() {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4c6d
 // Size: 0x65
@@ -1647,7 +1653,7 @@ function toggle_createfx_axis() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cd9
 // Size: 0x15
@@ -1655,7 +1661,7 @@ function createfx_centerprint(text) {
     thread createfx_centerprint_thread(text);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4cf5
 // Size: 0x48
@@ -1669,7 +1675,7 @@ function createfx_centerprint_thread(text) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4d44
 // Size: 0x275
@@ -1679,7 +1685,7 @@ function get_selected_move_vector() {
     right = anglestoright(angles);
     forward = anglestoforward(angles);
     up = anglestoup(angles);
-    var_e3a465f047abd9fe = 0;
+    keypressed = 0;
     rate = level._createfx.rate;
     if (buttondown("kp_uparrow", "DPAD_UP")) {
         if (level.selectedmove_forward < 0) {
@@ -1727,7 +1733,7 @@ function get_selected_move_vector() {
     return vector;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x4fc1
 // Size: 0x208
@@ -1768,17 +1774,19 @@ function set_anglemod_move_vector() {
             level.selectedrotate_roll = 0;
         }
         level.selectedrotate_roll = level.selectedrotate_roll + snap + rate;
-    } else if (buttondown("BUTTON_B")) {
+        return;
+    }
+    if (buttondown("BUTTON_B")) {
         if (level.selectedrotate_roll > 0) {
             level.selectedrotate_roll = 0;
         }
         level.selectedrotate_roll = level.selectedrotate_roll - snap - rate;
-    } else {
-        level.selectedrotate_roll = 0;
+        return;
     }
+    level.selectedrotate_roll = 0;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51d0
 // Size: 0x9c
@@ -1795,7 +1803,7 @@ function update_selected_entities() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5273
 // Size: 0x26
@@ -1806,7 +1814,7 @@ function stop_fx_looper() {
     stop_loopsound();
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52a0
 // Size: 0xb
@@ -1814,7 +1822,7 @@ function stop_loopsound() {
     self notify("stop_loop");
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x52b2
 // Size: 0x90
@@ -1838,7 +1846,7 @@ function func_get_level_fx() {
     return keys;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x534a
 // Size: 0x80
@@ -1861,7 +1869,7 @@ function restart_fx_looper() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x53d1
 // Size: 0x8d
@@ -1875,7 +1883,7 @@ function refresh_reactive_fx_ents() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5465
 // Size: 0x28e
@@ -1893,36 +1901,36 @@ function process_fx_rotater() {
         org = spawn("script_origin", center);
         org.v["angles"] = level._createfx.selected_fx_ents[0].v["angles"];
         org.v["origin"] = center;
-        var_f768bf61e5636b2c = [];
+        rotater = [];
         for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
-            var_f768bf61e5636b2c[i] = spawn("script_origin", level._createfx.selected_fx_ents[i].v["origin"]);
-            var_f768bf61e5636b2c[i].angles = level._createfx.selected_fx_ents[i].v["angles"];
-            var_f768bf61e5636b2c[i] linkto(org);
+            rotater[i] = spawn("script_origin", level._createfx.selected_fx_ents[i].v["origin"]);
+            rotater[i].angles = level._createfx.selected_fx_ents[i].v["angles"];
+            rotater[i] linkto(org);
         }
-        rotate_over_time(org, var_f768bf61e5636b2c);
+        rotate_over_time(org, rotater);
         org delete();
-        for (i = 0; i < var_f768bf61e5636b2c.size; i++) {
-            var_f768bf61e5636b2c[i] delete();
+        for (i = 0; i < rotater.size; i++) {
+            rotater[i] delete();
         }
     } else if (level._createfx.selected_fx_ents.size == 1) {
         ent = level._createfx.selected_fx_ents[0];
-        var_f768bf61e5636b2c = spawn("script_origin", (0, 0, 0));
-        var_f768bf61e5636b2c.angles = ent.v["angles"];
+        rotater = spawn("script_origin", (0, 0, 0));
+        rotater.angles = ent.v["angles"];
         if (level.selectedrotate_pitch != 0) {
-            var_f768bf61e5636b2c addpitch(level.selectedrotate_pitch);
+            rotater addpitch(level.selectedrotate_pitch);
         } else if (level.selectedrotate_yaw != 0) {
-            var_f768bf61e5636b2c addyaw(level.selectedrotate_yaw);
+            rotater addyaw(level.selectedrotate_yaw);
         } else {
-            var_f768bf61e5636b2c addroll(level.selectedrotate_roll);
+            rotater addroll(level.selectedrotate_roll);
         }
-        ent.v["angles"] = var_f768bf61e5636b2c.angles;
-        var_f768bf61e5636b2c delete();
+        ent.v["angles"] = rotater.angles;
+        rotater delete();
         waitframe();
     }
     level.fx_rotating = 0;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x56fa
 // Size: 0xdc
@@ -1933,7 +1941,7 @@ function spawn_grenade() {
     level notify("code_damageradius", undefined);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x57dd
 // Size: 0x14e
@@ -1968,7 +1976,7 @@ function show_help() {
     set_fx_hudelement("F11             Toggle FX Profile");
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5932
 // Size: 0x161
@@ -2000,7 +2008,7 @@ function generate_fx_log(autosave) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a9a
 // Size: 0x426
@@ -2054,18 +2062,15 @@ function write_log(array, type, autosave, var_331d6624ff42ad58) {
             if (e.v["V               Copy the angles from the most recently selected fx onto all selected fx."] == "<unknown string>") {
                 if (type == "<unknown string>" && e.v["4. Exploder"] != "4. One Shot Sound" && !level.mp_createfx) {
                     cfxprintln(tab + "<unknown string>" + e.v["4. Exploder"] + "<unknown string>");
-                    goto LOC_0000039b;
-                }
-                if (type == "<unknown string>" && e.v["4. Exploder"] == "4. One Shot Sound") {
+                } else if (type == "<unknown string>" && e.v["4. Exploder"] == "4. One Shot Sound") {
                     cfxprintln(tab + "<unknown string>");
-                    goto LOC_0000039b;
+                } else {
+                    continue;
                 }
-            } else {
-            LOC_0000039b:
-                cfxprintln(tab + "<unknown string>" + e.v["rainfx"] + "<unknown string>" + e.v["F4"] + "<unknown string>");
-                print_fx_options(e, tab, autosave);
-                cfxprintln("escape");
             }
+            cfxprintln(tab + "<unknown string>" + e.v["rainfx"] + "<unknown string>" + e.v["F4"] + "<unknown string>");
+            print_fx_options(e, tab, autosave);
+            cfxprintln("escape");
         }
         cfxprintln("<unknown string>");
         cfxprintln("<unknown string>");
@@ -2073,7 +2078,7 @@ function write_log(array, type, autosave, var_331d6624ff42ad58) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ec7
 // Size: 0x131
@@ -2097,7 +2102,7 @@ function createfx_adjust_array() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fff
 // Size: 0x19e
@@ -2108,12 +2113,12 @@ function get_createfx_array(type) {
         array[index] = [];
     }
     foreach (ent in level.createfxent) {
-        var_36ffcee6c004b3a4 = 0;
+        found_type = 0;
         foreach (index, type in types) {
             if (ent.v["type"] != type) {
                 continue;
             }
-            var_36ffcee6c004b3a4 = 1;
+            found_type = 1;
             array[index][array[index].size] = ent;
             break;
         }
@@ -2127,7 +2132,7 @@ function get_createfx_array(type) {
     return new_array;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x61a5
 // Size: 0x6a
@@ -2146,21 +2151,21 @@ function get_createfx_types(type) {
     return types;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6217
 // Size: 0x65
 function check_reactive_fx_type(ent, type) {
     if (ent.v["fxid"] != "No FX" && type == "fx") {
-        return 1;
+        return true;
     }
     if (ent.v["fxid"] == "No FX" && type == "sound") {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6284
 // Size: 0xb2
@@ -2168,20 +2173,20 @@ function is_createfx_type(ent, type) {
     types = get_createfx_types(type);
     if (ent.v["type"] == "reactive_fx") {
         if (check_reactive_fx_type(ent, type)) {
-            return 1;
+            return true;
         } else {
-            return 0;
+            return false;
         }
     }
     foreach (t in types) {
         if (ent.v["type"] == t) {
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x633e
 // Size: 0x20f
@@ -2200,17 +2205,17 @@ function createfx_filter_types() {
         array[index] = [];
     }
     foreach (ent in level.createfxent) {
-        var_36ffcee6c004b3a4 = 0;
+        found_type = 0;
         foreach (index, type in types) {
             if (ent.v["type"] != type) {
                 continue;
             }
-            var_36ffcee6c004b3a4 = 1;
+            found_type = 1;
             array[index][array[index].size] = ent;
             break;
         }
         /#
-            assertex(var_36ffcee6c004b3a4, "Unsupported CreateFX Type: " + ent.v["type"]);
+            assertex(found_type, "Unsupported CreateFX Type: " + ent.v["type"]);
         #/
     }
     new_array = [];
@@ -2222,7 +2227,7 @@ function createfx_filter_types() {
     level.createfxent = new_array;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6554
 // Size: 0xd
@@ -2232,7 +2237,7 @@ function cfxprintlnstart() {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6568
 // Size: 0x17
@@ -2242,7 +2247,7 @@ function cfxprintln(string) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x6586
 // Size: 0x101
@@ -2269,33 +2274,32 @@ function cfxprintlnend(autosave, var_331d6624ff42ad58, type) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x668e
 // Size: 0x2c
 function get_raw_or_devraw_subdir() {
     if (isdefined(level.createfx_devraw_map) && level.createfx_devraw_map) {
         return "devraw";
-    } else {
-        return "raw";
     }
+    return "raw";
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x66c1
 // Size: 0x2d
 function get_gamemode_subdir() {
     if (utility::iscp()) {
         return "cp";
-    } else if (utility::issp()) {
-        return "sp";
-    } else {
-        return "mp";
     }
+    if (utility::issp()) {
+        return "sp";
+    }
+    return "mp";
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x66f5
 // Size: 0x30f
@@ -2367,7 +2371,7 @@ function process_button_held_and_clicked() {
     add_kb_button("downarrow");
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a0b
 // Size: 0x2e
@@ -2378,7 +2382,7 @@ function locked(name) {
     return kb_locked(name);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a41
 // Size: 0x25
@@ -2386,7 +2390,7 @@ function kb_locked(name) {
     return level.createfx_inputlocked && isdefined(level.button_is_kb[name]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6a6e
 // Size: 0x74
@@ -2399,12 +2403,14 @@ function add_button(name) {
             level.buttonisheld[name] = 1;
             level.buttonclick[name] = 1;
         }
-    } else if (!level.player buttonpressed(name)) {
+        return;
+    }
+    if (!level.player buttonpressed(name)) {
         level.buttonisheld[name] = undefined;
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6ae9
 // Size: 0x22
@@ -2413,15 +2419,15 @@ function add_kb_button(name) {
     add_button(name);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b12
 // Size: 0x26
-function buttondown(button, var_f60f56f759583ab5) {
-    return buttonpressed_internal(button) || buttonpressed_internal(var_f60f56f759583ab5);
+function buttondown(button, button2) {
+    return buttonpressed_internal(button) || buttonpressed_internal(button2);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b40
 // Size: 0x2e
@@ -2435,7 +2441,7 @@ function buttonpressed_internal(button) {
     return level.player buttonpressed(button);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6b76
 // Size: 0x56
@@ -2453,7 +2459,7 @@ function button_is_held(name, name2, name3) {
     return isdefined(level.buttonisheld[name]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6bd4
 // Size: 0x56
@@ -2471,7 +2477,7 @@ function button_is_clicked(name, name2, name3) {
     return isdefined(level.buttonclick[name]);
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6c32
 // Size: 0x2c1
@@ -2481,18 +2487,18 @@ function init_huds() {
     if (level.mp_createfx) {
         level._createfx.hudelem_count = 16;
     }
-    var_33d665a8348c47bd = [];
-    var_33d664a8348c458a = [];
-    var_33d665a8348c47bd[0] = 0;
-    var_33d664a8348c458a[0] = 0;
-    var_33d665a8348c47bd[1] = 1;
-    var_33d664a8348c458a[1] = 1;
-    var_33d665a8348c47bd[2] = -2;
-    var_33d664a8348c458a[2] = 1;
-    var_33d665a8348c47bd[3] = 1;
-    var_33d664a8348c458a[3] = -1;
-    var_33d665a8348c47bd[4] = -2;
-    var_33d664a8348c458a[4] = -1;
+    stroffsetx = [];
+    stroffsety = [];
+    stroffsetx[0] = 0;
+    stroffsety[0] = 0;
+    stroffsetx[1] = 1;
+    stroffsety[1] = 1;
+    stroffsetx[2] = -2;
+    stroffsety[2] = 1;
+    stroffsetx[3] = 1;
+    stroffsety[3] = -1;
+    stroffsetx[4] = -2;
+    stroffsety[4] = -1;
     level.cleartextmarker = newhudelem();
     level.cleartextmarker.alpha = 0;
     level.cleartextmarker.archived = 0;
@@ -2510,8 +2516,8 @@ function init_huds() {
             newstr.fontscale = 1.4;
             newstr.sort = 20 - p;
             newstr.alpha = 1;
-            newstr.x = 0 + var_33d665a8348c47bd[p];
-            newstr.y = 60 + var_33d664a8348c458a[p] + i * 15;
+            newstr.x = 0 + stroffsetx[p];
+            newstr.y = 60 + stroffsety[p] + i * 15;
             if (p > 0) {
                 newstr.color = (0, 0, 0);
             }
@@ -2532,7 +2538,7 @@ function init_huds() {
     level.createfx_centerprint = hud;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6efa
 // Size: 0xb3
@@ -2553,7 +2559,7 @@ function init_crosshair() {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x6fb4
 // Size: 0x84
@@ -2569,7 +2575,7 @@ function clear_fx_hudelements() {
     level.fxhudelements = 0;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x703f
 // Size: 0x7e
@@ -2585,7 +2591,7 @@ function set_fx_hudelement(text) {
     #/
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x70c4
 // Size: 0x8c
@@ -2601,7 +2607,7 @@ function init_tool_hud() {
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7157
 // Size: 0xb4
@@ -2616,7 +2622,7 @@ function new_tool_hud(name) {
     level._createfx.tool_hud = name;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7212
 // Size: 0x21
@@ -2624,7 +2630,7 @@ function current_mode_hud(name) {
     return level._createfx.tool_hud == name;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x723b
 // Size: 0xf
@@ -2632,7 +2638,7 @@ function clear_tool_hud() {
     new_tool_hud("");
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7251
 // Size: 0x96
@@ -2649,7 +2655,7 @@ function new_tool_hudelem(n) {
     return hud;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x72ef
 // Size: 0x3c
@@ -2660,7 +2666,7 @@ function get_tool_hudelem(name) {
     return undefined;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7333
 // Size: 0x143
@@ -2679,69 +2685,69 @@ function set_tool_hudelem(var, value) {
     }
     if (isdefined(value)) {
         if (isdefined(hud.value_hudelem)) {
-            var_194685c0017ba3c8 = hud.value_hudelem;
+            value_hud = hud.value_hudelem;
         } else {
-            var_194685c0017ba3c8 = new_tool_hudelem(level._createfx.tool_hudelems.size);
-            var_194685c0017ba3c8.x = var_194685c0017ba3c8.x + 100;
-            var_194685c0017ba3c8.y = hud.y;
-            hud.value_hudelem = var_194685c0017ba3c8;
+            value_hud = new_tool_hudelem(level._createfx.tool_hudelems.size);
+            value_hud.x = value_hud.x + 100;
+            value_hud.y = hud.y;
+            hud.value_hudelem = value_hud;
         }
-        if (isdefined(var_194685c0017ba3c8.text) && var_194685c0017ba3c8.text == value) {
+        if (isdefined(value_hud.text) && value_hud.text == value) {
             return;
         }
         /#
-            var_194685c0017ba3c8 setdevtext(value);
+            value_hud setdevtext(value);
         #/
-        var_194685c0017ba3c8.text = value;
+        value_hud.text = value;
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x747d
 // Size: 0x168
 function select_by_substring() {
-    var_848ab95939dca3cc = getdvar(@"hash_4200f2db2e550f3e");
-    if (var_848ab95939dca3cc == "") {
-        return 0;
+    substring = getdvar(@"hash_4200f2db2e550f3e");
+    if (substring == "") {
+        return false;
     }
     setdvar(@"hash_4200f2db2e550f3e", "");
-    var_9eab1f284573cc85 = [];
+    index_array = [];
     foreach (i, ent in level.createfxent) {
-        if (issubstr(ent.v["fxid"], var_848ab95939dca3cc)) {
-            var_9eab1f284573cc85[var_9eab1f284573cc85.size] = i;
+        if (issubstr(ent.v["fxid"], substring)) {
+            index_array[index_array.size] = i;
         }
     }
-    if (var_9eab1f284573cc85.size == 0) {
+    if (index_array.size == 0) {
         /#
-            println("<unknown string>" + var_848ab95939dca3cc + "<unknown string>");
+            println("<unknown string>" + substring + "<unknown string>");
         #/
-        return 0;
+        return false;
     }
     deselect_all_ents();
-    select_index_array(var_9eab1f284573cc85);
-    foreach (index in var_9eab1f284573cc85) {
+    select_index_array(index_array);
+    foreach (index in index_array) {
         ent = level.createfxent[index];
         select_entity(index, ent);
     }
     /#
-        println("<unknown string>" + var_848ab95939dca3cc + "<unknown string>" + var_9eab1f284573cc85.size + "<unknown string>");
+        println("<unknown string>" + substring + "<unknown string>" + index_array.size + "<unknown string>");
     #/
-    return 1;
+    return true;
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75ed
 // Size: 0x70
-function select_index_array(var_9eab1f284573cc85) {
-    foreach (index in var_9eab1f284573cc85) {
+function select_index_array(index_array) {
+    foreach (index in index_array) {
         ent = level.createfxent[index];
         select_entity(index, ent);
     }
 }
 
-// Namespace createfx/namespace_321fdd8ad2993260
+// Namespace createfx / scripts/common/createfx
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7664
 // Size: 0x63

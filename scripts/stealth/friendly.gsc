@@ -8,25 +8,25 @@
 
 #namespace friendly;
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13b
 // Size: 0x57
 function main() {
     if (!isdefined(level.stealth)) {
-        namespace_833595e973766257::main();
+        scripts/stealth/manager::main();
     }
     init_settings();
-    self.var_d7f4a1b60f84e53f = self.script_stealthgroup;
+    self.stealth_groupname = self.script_stealthgroup;
     thread spotted_thread();
     thread visibility_thread();
     self function_95d5375059c2a022("mp_stealth");
     /#
-        thread function_3c165dbd67e4c5aa();
+        thread debug_friendly();
     #/
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x199
 // Size: 0x80
@@ -39,12 +39,12 @@ function init_settings() {
     ent_flag_init("stealth_enabled");
     ent_flag_set("stealth_enabled");
     ent_flag_init("stealth_in_shadow");
-    namespace_e124d8b75dab4be0::group_flag_init("stealth_spotted");
-    namespace_e124d8b75dab4be0::group_add();
+    scripts/stealth/utility::group_flag_init("stealth_spotted");
+    scripts/stealth/utility::group_add();
     self.var_fe5ebefa740c7106 = 0;
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x220
 // Size: 0x95
@@ -52,15 +52,15 @@ function spotted_thread() {
     self endon("death");
     self notify("spotted_thread");
     self endon("spotted_thread");
-    while (1) {
+    while (true) {
         ent_flag_wait("stealth_enabled");
-        namespace_e124d8b75dab4be0::group_flag_waitopen("stealth_spotted");
+        scripts/stealth/utility::group_flag_waitopen("stealth_spotted");
         if (!ent_flag("stealth_enabled")) {
             ent_flag_wait("stealth_enabled");
         }
         thread state_hidden();
         ent_flag_wait("stealth_enabled");
-        namespace_e124d8b75dab4be0::group_flag_wait("stealth_spotted");
+        scripts/stealth/utility::group_flag_wait("stealth_spotted");
         if (!ent_flag("stealth_enabled")) {
             ent_flag_wait("stealth_enabled");
         }
@@ -68,12 +68,12 @@ function spotted_thread() {
     }
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2bc
 // Size: 0x7c
 function state_hidden() {
-    thread namespace_e124d8b75dab4be0::setbattlechatter(0);
+    thread scripts/stealth/utility::setbattlechatter(0);
     self.stealth.oldgrenadeammo = self.grenadeammo;
     self.grenadeammo = 0;
     self.forcesidearm = 0;
@@ -84,7 +84,7 @@ function state_hidden() {
     }
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x33f
 // Size: 0xa3
@@ -92,7 +92,7 @@ function state_spotted() {
     /#
         assert(!isplayer(self));
     #/
-    thread namespace_e124d8b75dab4be0::setbattlechatter(1);
+    thread scripts/stealth/utility::setbattlechatter(1);
     if (isdefined(self.stealth.oldgrenadeammo)) {
         self.grenadeammo = self.stealth.oldgrenadeammo;
     } else {
@@ -106,7 +106,7 @@ function state_spotted() {
     }
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e9
 // Size: 0xa
@@ -114,14 +114,14 @@ function getup_from_prone() {
     self endon("death");
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x3fa
 // Size: 0x51
 function visibility_thread() {
     self endon("death");
     self endon("long_death");
-    while (1) {
+    while (true) {
         ent_flag_wait("stealth_enabled");
         if (!isdefined(self.stealth.ignore_visibility)) {
             self.maxvisibledist = get_detect_range();
@@ -130,7 +130,7 @@ function visibility_thread() {
     }
 }
 
-// Namespace friendly/namespace_d611598f63dea5a7
+// Namespace friendly / scripts/stealth/friendly
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x452
 // Size: 0x89
@@ -139,7 +139,7 @@ function get_detect_range() {
     if (stance == "back") {
         stance = "prone";
     }
-    if (namespace_e124d8b75dab4be0::group_spotted_flag()) {
+    if (scripts/stealth/utility::group_spotted_flag()) {
         detection = "spotted";
     } else {
         detection = "hidden";

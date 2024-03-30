@@ -9,21 +9,21 @@
 
 #namespace patrol;
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x26
 function function_3aba5f22b60d37f5() {
-    namespace_f5226b7f82a415af::initstealthfunctions();
-    self.var_5221cb0637cd44e7 = &namespace_58609e68adef6b3d::attachflashlight;
-    self.fnstealthflashlightdetach = &namespace_58609e68adef6b3d::detachflashlight;
+    scripts/aitypes/stealth::initstealthfunctions();
+    self.var_5221cb0637cd44e7 = &scripts/asm/soldier/patrol::attachflashlight;
+    self.fnstealthflashlightdetach = &scripts/asm/soldier/patrol::detachflashlight;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1e2
 // Size: 0x195
-function playanim_patrolreact_internal(asmname, statename, var_4ef793291a6a73) {
+function playanim_patrolreact_internal(asmname, statename, arcstatename) {
     /#
         assert(isdefined(self.stealth));
     #/
@@ -37,39 +37,39 @@ function playanim_patrolreact_internal(asmname, statename, var_4ef793291a6a73) {
     /#
         assert(isdefined(var_93a2c35bc9547955));
     #/
-    var_9319232e93b989ed = asm_getxanim(var_4ef793291a6a73, var_93a2c35bc9547955);
+    reactxanim = asm_getxanim(arcstatename, var_93a2c35bc9547955);
     animrate = 1;
     if (isdefined(self.var_aebf462ec3f3362d)) {
         endtime = 1;
-        var_1cf3cc2bfbd90835 = getnotetracktimes(var_9319232e93b989ed, "code_move");
+        var_1cf3cc2bfbd90835 = getnotetracktimes(reactxanim, "code_move");
         if (var_1cf3cc2bfbd90835.size > 0) {
             endtime = var_1cf3cc2bfbd90835[0];
         }
-        animlength = getanimlength(var_9319232e93b989ed) * endtime;
-        var_e01c6c89a1eb3d21 = 0.05 + (self.var_aebf462ec3f3362d - gettime()) / 1000;
-        if (var_e01c6c89a1eb3d21 < 0.2) {
-            var_e01c6c89a1eb3d21 = 0.2;
+        animlength = getanimlength(reactxanim) * endtime;
+        desiredlength = 0.05 + (self.var_aebf462ec3f3362d - gettime()) / 1000;
+        if (desiredlength < 0.2) {
+            desiredlength = 0.2;
         }
-        animrate = clamp(animlength / var_e01c6c89a1eb3d21, 0.8, 1.3);
+        animrate = clamp(animlength / desiredlength, 0.8, 1.3);
         self.var_aebf462ec3f3362d = undefined;
     }
-    self aisetanim(var_4ef793291a6a73, var_93a2c35bc9547955, animrate);
-    self function_df303d9c05757e6b(var_93a2c35bc9547955, var_4ef793291a6a73);
-    asm_donotetrackswithinterceptor(asmname, statename, &flashlightreactionnotehandler, undefined, var_4ef793291a6a73);
+    self aisetanim(arcstatename, var_93a2c35bc9547955, animrate);
+    self function_df303d9c05757e6b(var_93a2c35bc9547955, arcstatename);
+    asm_donotetrackswithinterceptor(asmname, statename, &flashlightreactionnotehandler, undefined, arcstatename);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x46
-function shouldpatrolreactaim(asmname, statename, var_f2b19b25d457c2a6, params) {
+function shouldpatrolreactaim(asmname, statename, tostatename, params) {
     /#
         assert(isdefined(self.var_fd01ad49b4e38ae8));
     #/
     return self.var_fd01ad49b4e38ae8 == "med";
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cc
 // Size: 0x5f
@@ -81,7 +81,7 @@ function chooseanim_patrolreactlookaround(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, string(alias));
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x433
 // Size: 0x63
@@ -93,47 +93,47 @@ function chooseanim_patrolreactlookaround_checkflashlight(asmname, statename, pa
     return chooseanim_patrol_checkflashlight(asmname, statename, alias);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x49e
 // Size: 0x74
 function getpatrolreactdirindex() {
-    var_c5e576cf2978534b = 0;
+    reactyaw = 0;
     if (isdefined(self.var_1c9ed4a46d13edc9)) {
         delta = self.var_1c9ed4a46d13edc9 - self.origin;
         if (length2dsquared(delta) < 36) {
-            var_c5e576cf2978534b = 0;
+            reactyaw = 0;
         } else {
             deltayaw = vectortoyaw(delta);
-            var_c5e576cf2978534b = self.angles[1] - deltayaw;
+            reactyaw = self.angles[1] - deltayaw;
         }
     }
-    return getreactangleindex(var_c5e576cf2978534b);
+    return getreactangleindex(reactyaw);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x51a
 // Size: 0xbb
 function function_a23a26adcf97fdd0() {
-    var_c5e576cf2978534b = 0;
+    reactyaw = 0;
     if (isdefined(self.var_1c9ed4a46d13edc9)) {
         delta = self.var_1c9ed4a46d13edc9 - self.origin;
         deltayaw = vectortoyaw(delta);
-        var_c5e576cf2978534b = self.angles[1] - deltayaw;
+        reactyaw = self.angles[1] - deltayaw;
     }
-    var_c5e576cf2978534b = angleclamp180(var_c5e576cf2978534b);
-    var_394efcef72c7ebea = function_de2aa7eb339a432c(var_c5e576cf2978534b);
-    suffix = string(var_394efcef72c7ebea);
-    if (var_c5e576cf2978534b < -120 && var_c5e576cf2978534b > -180) {
+    reactyaw = angleclamp180(reactyaw);
+    directionindex = function_de2aa7eb339a432c(reactyaw);
+    suffix = string(directionindex);
+    if (reactyaw < -120 && reactyaw > -180) {
         suffix = suffix + "l";
-    } else if (var_c5e576cf2978534b > 120 && var_c5e576cf2978534b < 180) {
+    } else if (reactyaw > 120 && reactyaw < 180) {
         suffix = suffix + "r";
     }
     return suffix;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x5dd
 // Size: 0x66
@@ -150,7 +150,7 @@ function getpatrolreactalias() {
     return alias;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x64b
 // Size: 0x72
@@ -167,7 +167,7 @@ function chooseanim_patrolreact(asmname, statename, params) {
     return animindex;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c5
 // Size: 0x36
@@ -176,7 +176,7 @@ function chooseanim_patrolreact_checkflashlight(asmname, statename, params) {
     return chooseanim_patrol_checkflashlight(asmname, statename, alias);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x703
 // Size: 0x54
@@ -194,7 +194,7 @@ function getreactangleindex(angle) {
     return index;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x75f
 // Size: 0x54
@@ -212,22 +212,22 @@ function function_de2aa7eb339a432c(angle) {
     return index;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x8c
-function function_7889a8a760c6e02(turnanim, desiredyaw, var_b8b42fee0a565ee5, endtime) {
+function function_7889a8a760c6e02(turnanim, desiredyaw, beyondyaw, endtime) {
     currentanimtime = self aigetanimtime(turnanim);
     /#
         assert(currentanimtime < endtime);
     #/
-    var_61f0e2ac4fda97c7 = getangledelta(turnanim, currentanimtime, endtime) + var_b8b42fee0a565ee5;
-    var_397e17331b6dfe74 = self.angles[1] + var_61f0e2ac4fda97c7;
-    turnyaw = angleclamp180(desiredyaw - angleclamp(var_397e17331b6dfe74));
+    animyaw = getangledelta(turnanim, currentanimtime, endtime) + beyondyaw;
+    totalyaw = self.angles[1] + animyaw;
+    turnyaw = angleclamp180(desiredyaw - angleclamp(totalyaw));
     return turnyaw;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x84f
 // Size: 0x20f
@@ -235,7 +235,7 @@ function handlefacegoalnotetrack(statename, note, params) {
     if (note == "face_goal" && isdefined(self.var_1c9ed4a46d13edc9)) {
         xanim = asm_getxanim(self.var_39798b565de83c7b, self.var_d1a6890d054957e7);
         if (!isdefined(xanim)) {
-            return 0;
+            return false;
         }
         finishtime = getnotetracktimes(xanim, "finish");
         if (finishtime.size == 0) {
@@ -263,76 +263,76 @@ function handlefacegoalnotetrack(statename, note, params) {
         if (animrate == 0) {
             animrate = 1;
         }
-        var_228c1f2f3a2d92f1 = getanimlength(xanim) / animrate;
-        var_43530de5f95f2f7 = endtime[0] - animtime;
-        var_43530de5f95f2f7 = var_43530de5f95f2f7 * var_228c1f2f3a2d92f1;
-        var_b8b42fee0a565ee5 = 0;
+        anim_length = getanimlength(xanim) / animrate;
+        turntime = endtime[0] - animtime;
+        turntime = turntime * anim_length;
+        beyondyaw = 0;
         if (!var_53c95344c2ab768f && endtime[0] < finishtime[0]) {
-            var_b8b42fee0a565ee5 = getangledelta(xanim, endtime[0], finishtime[0]);
+            beyondyaw = getangledelta(xanim, endtime[0], finishtime[0]);
         }
         var_63cc85541246c7b4 = self.var_1c9ed4a46d13edc9 - self.origin;
-        var_1402d870c92df1af = vectortoyaw(var_63cc85541246c7b4);
-        turnyaw = function_7889a8a760c6e02(xanim, var_1402d870c92df1af, var_b8b42fee0a565ee5, endtime[0]);
-        thread facegoalthread(statename, turnyaw, var_b8b42fee0a565ee5, self.var_1c9ed4a46d13edc9, var_1402d870c92df1af, var_43530de5f95f2f7, xanim, endtime[0]);
-        return 1;
+        reactworldyaw = vectortoyaw(var_63cc85541246c7b4);
+        turnyaw = function_7889a8a760c6e02(xanim, reactworldyaw, beyondyaw, endtime[0]);
+        thread facegoalthread(statename, turnyaw, beyondyaw, self.var_1c9ed4a46d13edc9, reactworldyaw, turntime, xanim, endtime[0]);
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 8, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa66
 // Size: 0x29d
-function facegoalthread(statename, turnyaw, var_b8b42fee0a565ee5, var_45c909cecc77138a, var_1402d870c92df1af, var_43530de5f95f2f7, turnanim, endtime) {
+function facegoalthread(statename, turnyaw, beyondyaw, reactpos, reactworldyaw, turntime, turnanim, endtime) {
     self notify("FaceGoalThread");
     self endon("FaceGoalThread");
     self endon("death");
     self endon(statename + "_finished");
-    frames = ceil(var_43530de5f95f2f7 * 1000 / level.frameduration);
+    frames = ceil(turntime * 1000 / level.frameduration);
     var_d00ab4a1a5f59a50 = turnyaw / frames;
     var_72c012a18c9e68f9 = undefined;
-    var_3c240b5d60b82fc4 = 0;
+    stopyaw = 0;
     while (frames > 0) {
-        var_5436f99da0ab0d6 = self.enemy;
-        if (!isdefined(var_5436f99da0ab0d6)) {
+        overrideent = self.enemy;
+        if (!isdefined(overrideent)) {
             if (isdefined(self.var_33107dcb50df3cde) && isplayer(self.var_33107dcb50df3cde)) {
-                var_5436f99da0ab0d6 = self.var_33107dcb50df3cde;
+                overrideent = self.var_33107dcb50df3cde;
             }
         }
         bcansee = 0;
-        if (isdefined(var_5436f99da0ab0d6) && issentient(var_5436f99da0ab0d6)) {
-            var_47203c042b64f03c = self lastknownpos(var_5436f99da0ab0d6);
-            var_77e1544bd35826e5 = self lastknowntime(var_5436f99da0ab0d6);
+        if (isdefined(overrideent) && issentient(overrideent)) {
+            lkp = self lastknownpos(overrideent);
+            lktime = self lastknowntime(overrideent);
             if (!bcansee) {
-                bcansee = self cansee(var_5436f99da0ab0d6);
+                bcansee = self cansee(overrideent);
             }
             var_522f11c665d62df = 0;
             if (bcansee) {
-                if (distancesquared(self.var_1c9ed4a46d13edc9, var_5436f99da0ab0d6.origin) >= 225) {
-                    self.var_1c9ed4a46d13edc9 = var_5436f99da0ab0d6.origin;
+                if (distancesquared(self.var_1c9ed4a46d13edc9, overrideent.origin) >= 225) {
+                    self.var_1c9ed4a46d13edc9 = overrideent.origin;
                     var_522f11c665d62df = 1;
                 }
             } else if (!bcansee) {
-                if (isdefined(var_47203c042b64f03c) && var_77e1544bd35826e5 > 0) {
-                    self.var_1c9ed4a46d13edc9 = var_47203c042b64f03c;
+                if (isdefined(lkp) && lktime > 0) {
+                    self.var_1c9ed4a46d13edc9 = lkp;
                     var_522f11c665d62df = 1;
                 }
             }
             if (var_522f11c665d62df) {
                 var_63cc85541246c7b4 = self.var_1c9ed4a46d13edc9 - self.origin;
                 var_b5c1dd0e7b0b043b = vectortoyaw(var_63cc85541246c7b4);
-                turnyaw = angleclamp180(var_b5c1dd0e7b0b043b - var_1402d870c92df1af - var_b8b42fee0a565ee5);
-                var_1402d870c92df1af = var_b5c1dd0e7b0b043b;
+                turnyaw = angleclamp180(var_b5c1dd0e7b0b043b - reactworldyaw - beyondyaw);
+                reactworldyaw = var_b5c1dd0e7b0b043b;
                 var_d00ab4a1a5f59a50 = var_d00ab4a1a5f59a50 + turnyaw / frames;
             }
         }
         self orientmode("face angle", angleclamp(self.angles[1] + var_d00ab4a1a5f59a50));
         frames = frames - 1;
         if (frames < 1) {
-            if (isdefined(var_5436f99da0ab0d6)) {
-                if (absangleclamp180(self.angles[1] - var_1402d870c92df1af) <= 10) {
-                    if (!self [[ self.fnisinstealthcombat ]]() && isplayer(var_5436f99da0ab0d6) && bcansee) {
-                        self aieventlistenerevent("sight", var_5436f99da0ab0d6, var_5436f99da0ab0d6.origin);
+            if (isdefined(overrideent)) {
+                if (absangleclamp180(self.angles[1] - reactworldyaw) <= 10) {
+                    if (!self [[ self.fnisinstealthcombat ]]() && isplayer(overrideent) && bcansee) {
+                        self aieventlistenerevent("sight", overrideent, overrideent.origin);
                     }
                 } else {
                     self glanceatpos(self.var_1c9ed4a46d13edc9);
@@ -343,7 +343,7 @@ function facegoalthread(statename, turnyaw, var_b8b42fee0a565ee5, var_45c909cecc
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0a
 // Size: 0x44
@@ -353,21 +353,21 @@ function patrol_playanim_idlecurious(asmname, statename, params) {
     asm_playanimstate(asmname, statename);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd55
 // Size: 0x6a
 function patrol_playanim_idlecurious_facelastknownhelper(statename, target) {
     self endon(statename + "_finished");
     while (isdefined(target) && isalive(target)) {
-        var_4fc502b1a10006cc = self lastknownpos(target);
-        var_b1dae7cae8885fb1 = var_4fc502b1a10006cc - self.origin;
+        lastknown = self lastknownpos(target);
+        var_b1dae7cae8885fb1 = lastknown - self.origin;
         self orientmode("face angle", vectortoyaw(var_b1dae7cae8885fb1));
         waitframe();
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc6
 // Size: 0x6f
@@ -380,7 +380,7 @@ function patrol_magicflashlightdetach(asmname, statename, params) {
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe3c
 // Size: 0x40
@@ -390,7 +390,7 @@ function patrol_magicflashlighton(asmname, statename, params) {
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe83
 // Size: 0x5e
@@ -405,7 +405,7 @@ function chooseanim_patrol_checkflashlight(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, alias);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xee9
 // Size: 0xd6
@@ -413,7 +413,9 @@ function flashlightnotehandler(note) {
     if (note == "attach") {
         var_343b33980a5007b1 = self function_76d6356c94f30473();
         attachflashlight(var_343b33980a5007b1);
-    } else if (note == "detach") {
+        return;
+    }
+    if (note == "detach") {
         /#
             assert(isdefined(self.fnstealthflashlighton));
         #/
@@ -421,14 +423,18 @@ function flashlightnotehandler(note) {
         if (asm_getdemeanor() != "patrol" && isdefined(self._blackboard.bflashlight) && self._blackboard.bflashlight) {
             self [[ self.fnstealthflashlighton ]]();
         }
-    } else if (note == "flashlight_on") {
+        return;
+    }
+    if (note == "flashlight_on") {
         self [[ self.fnstealthflashlighton ]]();
-    } else if (note == "flashlight_off") {
+        return;
+    }
+    if (note == "flashlight_off") {
         self [[ self.fnstealthflashlightoff ]](0);
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfc6
 // Size: 0x46
@@ -442,7 +448,7 @@ function setflashlightmodel(flashlightmodel) {
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1013
 // Size: 0x47
@@ -456,7 +462,7 @@ function getflashlightmodel() {
     return modelname;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1062
 // Size: 0xb2
@@ -478,7 +484,7 @@ function attachflashlight(var_4d65db1b45602939) {
     }
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x111b
 // Size: 0x72
@@ -498,7 +504,7 @@ function detachflashlight() {
     self.flashlightfxoverridetag = undefined;
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1194
 // Size: 0x2d
@@ -507,7 +513,7 @@ function flashlightreactionnotehandler(statename, note, params) {
     return handlefacegoalnotetrack(statename, note, params);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x11c9
 // Size: 0x26
@@ -515,7 +521,7 @@ function function_2be03b6fc63e8c8b(asmname, statename, params) {
     return istrue(level.var_da217073b223521a);
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f7
 // Size: 0x5f
@@ -527,7 +533,7 @@ function function_70d280c57c0cfee9(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, string(alias));
 }
 
-// Namespace patrol/namespace_58609e68adef6b3d
+// Namespace patrol / scripts/asm/soldier/patrol
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x125e
 // Size: 0x41

@@ -1,8 +1,8 @@
 // mwiii decomp prototype
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
-#using script_38eb8f4be20d54f4;
-#using script_3b64eb40368c1450;
+#using scripts\common\devgui.gsc;
+#using scripts\common\values.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\mp\supers.gsc;
 #using script_38db8bccc9eb301f;
@@ -10,12 +10,12 @@
 
 #namespace namespace_24a6e4eec2adc745;
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x26f
 // Size: 0x1ce
 function init() {
-    namespace_85d036cb78063c4a::function_53110a12409d01da("super_aether_shroud", undefined, undefined, &function_d3ff64a0b2474cca, &function_cf7110293e2d063e, undefined);
+    scripts/mp/supers::function_53110a12409d01da("super_aether_shroud", undefined, undefined, &function_d3ff64a0b2474cca, &function_cf7110293e2d063e, undefined);
     /#
         function_6e7290c8ee4f558b("<unknown string>");
         function_a2fe753948998c89("<unknown string>", "<unknown string>");
@@ -27,11 +27,11 @@ function init() {
     var_6f0c028c94328ae3 = namespace_e23f629a8349dfaf::function_e7b6474ebd683537("super_aether_shroud", #"hash_da26bdf3857515de");
     var_9462543a62d56ae0 = namespace_e23f629a8349dfaf::function_e7b6474ebd683537("super_aether_shroud", #"hash_2f0b226efbc9fa82");
     var_21ecbfef71b4de59 = namespace_e23f629a8349dfaf::function_e7b6474ebd683537("super_aether_shroud", #"hash_3605e6a6954477e7");
-    level._effect["aether_shroud_1p_effect"] = loadfx(function_53c4c53197386572(var_6f0c028c94328ae3, ""));
-    level._effect["aether_shroud_3p_head_effect"] = loadfx(function_53c4c53197386572(var_9462543a62d56ae0, ""));
-    level._effect["aether_shroud_3p_torso_effect"] = loadfx(function_53c4c53197386572(var_21ecbfef71b4de59, ""));
-    var_7c7b046a6b9536fc = getscriptbundle(level.var_7c7b046a6b9536fc);
-    foreach (super in var_7c7b046a6b9536fc.var_63b618614d288401) {
+    level._effect["aether_shroud_1p_effect"] = loadfx(default_to(var_6f0c028c94328ae3, ""));
+    level._effect["aether_shroud_3p_head_effect"] = loadfx(default_to(var_9462543a62d56ae0, ""));
+    level._effect["aether_shroud_3p_torso_effect"] = loadfx(default_to(var_21ecbfef71b4de59, ""));
+    supertable = getscriptbundle(level.supertable);
+    foreach (super in supertable.super_list) {
         if (super.ref == "super_aether_shroud") {
             level.var_f04301db8ca5ecfa["super_aether_shroud"] = getscriptbundle("super:" + super.bundle);
             break;
@@ -39,7 +39,7 @@ function init() {
     }
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x444
 // Size: 0x6c
@@ -51,7 +51,7 @@ function function_86417e1aaa5f1a7d(v_position, n_radius, var_7c572f708cdf5ef5) {
     level.var_4f96195d350ff960 = array_add_safe(level.var_4f96195d350ff960, var_1c15eb881886a8b7);
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b7
 // Size: 0xf1
@@ -69,33 +69,33 @@ function function_7a23d1e9435c166d(var_7c572f708cdf5ef5) {
     }
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5af
 // Size: 0x44
-function function_81fd5ce82ea52d2b(var_31e53fd96b460b56) {
-    if (isstring(var_31e53fd96b460b56)) {
-        var_31e53fd96b460b56 = getent(var_31e53fd96b460b56, "targetname");
+function function_81fd5ce82ea52d2b(vol_forced) {
+    if (isstring(vol_forced)) {
+        vol_forced = getent(vol_forced, "targetname");
     }
-    if (isent(var_31e53fd96b460b56)) {
-        level.var_4e33240295d7bdc2 = array_add_safe(level.var_4e33240295d7bdc2, var_31e53fd96b460b56);
+    if (isent(vol_forced)) {
+        level.var_4e33240295d7bdc2 = array_add_safe(level.var_4e33240295d7bdc2, vol_forced);
     }
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fa
 // Size: 0x44
-function function_bf84ffa9f6668166(var_31e53fd96b460b56) {
-    if (isstring(var_31e53fd96b460b56)) {
-        var_31e53fd96b460b56 = getent(var_31e53fd96b460b56, "targetname");
+function function_bf84ffa9f6668166(vol_forced) {
+    if (isstring(vol_forced)) {
+        vol_forced = getent(vol_forced, "targetname");
     }
-    if (isent(var_31e53fd96b460b56)) {
-        level.var_4e33240295d7bdc2 = array_remove(level.var_4e33240295d7bdc2, var_31e53fd96b460b56);
+    if (isent(vol_forced)) {
+        level.var_4e33240295d7bdc2 = array_remove(level.var_4e33240295d7bdc2, vol_forced);
     }
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x645
 // Size: 0x1b4
@@ -103,39 +103,39 @@ function function_911c48a329a02364(v_destination) {
     foreach (var_1c15eb881886a8b7 in level.var_4f96195d350ff960) {
         if (isdefined(var_1c15eb881886a8b7.v_position) && isdefined(var_1c15eb881886a8b7.n_radius)) {
             if (distancesquared(v_destination, var_1c15eb881886a8b7.v_position) <= var_1c15eb881886a8b7.n_radius * var_1c15eb881886a8b7.n_radius) {
-                return 1;
+                return true;
             }
         }
         if (isstring(var_1c15eb881886a8b7.var_7c572f708cdf5ef5)) {
             var_fd32a267f73f2457 = getentarray(var_1c15eb881886a8b7.var_7c572f708cdf5ef5, "targetname");
             foreach (var_774845f9562d0f6b in var_fd32a267f73f2457) {
-                if (var_774845f9562d0f6b function_dbad28172d90c1aa(v_destination)) {
-                    return 1;
+                if (var_774845f9562d0f6b istouchingpoint(v_destination)) {
+                    return true;
                 }
             }
         }
     }
     level.var_4e33240295d7bdc2 = array_removeundefined(level.var_4e33240295d7bdc2);
     if (level.var_4e33240295d7bdc2.size > 0) {
-        foreach (var_31e53fd96b460b56 in level.var_4e33240295d7bdc2) {
-            if (var_31e53fd96b460b56 function_dbad28172d90c1aa(v_destination)) {
-                return 0;
+        foreach (vol_forced in level.var_4e33240295d7bdc2) {
+            if (vol_forced istouchingpoint(v_destination)) {
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x801
 // Size: 0x166
 function function_d3ff64a0b2474cca() {
     if (isdefined(level.var_f04301db8ca5ecfa["super_aether_shroud"])) {
         var_8dcc5d0cbc133cf9 = level.var_f04301db8ca5ecfa["super_aether_shroud"].offhandweapon;
-        var_d54d53eaf955518d = namespace_e23f629a8349dfaf::function_75abcff430ed00b7(var_8dcc5d0cbc133cf9);
-        if (var_d54d53eaf955518d) {
+        deploysuccess = namespace_e23f629a8349dfaf::function_75abcff430ed00b7(var_8dcc5d0cbc133cf9);
+        if (deploysuccess) {
             self setscriptablepartstate("wand_fx", "wand_on_aether_shroud", 0);
             var_45b3d22c6cca7734 = namespace_e23f629a8349dfaf::function_dabbdf1761a23f5c();
             switch (var_45b3d22c6cca7734) {
@@ -169,23 +169,23 @@ function function_d3ff64a0b2474cca() {
                 thread function_412f7ef9dbae113d();
                 break;
             }
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x96f
 // Size: 0x29
-function function_cf7110293e2d063e(var_fcef8d217a441961, attacker) {
+function function_cf7110293e2d063e(fromdeath, attacker) {
     self notify("end_aether_shroud");
     ent_flag_clear("field_upgrade_in_use");
-    return 0;
+    return false;
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9a0
 // Size: 0x104
@@ -200,36 +200,36 @@ function function_f2f5db77ae69537f() {
     } else {
         val::set("aether_shroud", "ignoreme", 1);
     }
-    thread function_dd3e24972903398e(n_duration);
+    thread apply_effects(n_duration);
     s_waitresult = waittill_any_timeout_3(n_duration, "player_downed", "death", "end_aether_shroud");
     if (isdefined(level.var_6a36f59e08b56ed7)) {
         self [[ level.var_6a36f59e08b56ed7 ]](0);
     } else {
         val::reset("aether_shroud", "ignoreme");
     }
-    thread function_ccc62e267507ffdc();
+    thread remove_effects();
     self.var_f2f5db77ae69537f = undefined;
     ent_flag_clear("field_upgrade_in_use");
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaab
 // Size: 0x6e
 function function_b65531559070a5b() {
-    var_4a8f5643e919524 = self getcurrentprimaryweapon();
-    var_deab3af8d6303b6c = self getammocount(var_4a8f5643e919524);
-    clip_size = int(min(var_deab3af8d6303b6c, weaponclipsize(var_4a8f5643e919524)));
-    var_55f9d1c63b74482e = var_deab3af8d6303b6c - clip_size;
-    if (var_55f9d1c63b74482e < 0) {
-        var_55f9d1c63b74482e = 0;
-        clip_size = var_deab3af8d6303b6c;
+    curweap = self getcurrentprimaryweapon();
+    total_ammo = self getammocount(curweap);
+    clip_size = int(min(total_ammo, weaponclipsize(curweap)));
+    remaining_stock = total_ammo - clip_size;
+    if (remaining_stock < 0) {
+        remaining_stock = 0;
+        clip_size = total_ammo;
     }
-    self setweaponammoclip(var_4a8f5643e919524, clip_size);
-    self setweaponammostock(var_4a8f5643e919524, var_55f9d1c63b74482e);
+    self setweaponammoclip(curweap, clip_size);
+    self setweaponammostock(curweap, remaining_stock);
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb20
 // Size: 0x222
@@ -277,7 +277,7 @@ function function_958362f296f71e8e() {
     }
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd49
 // Size: 0x114
@@ -298,11 +298,11 @@ function function_412f7ef9dbae113d(var_c00a90770505e4b2, n_duration) {
     self.var_6bc3ec77e73ba9d5 = undefined;
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe64
 // Size: 0x62
-function function_dd3e24972903398e(n_duration) {
+function apply_effects(n_duration) {
     thread function_3e7ec946182e3969(n_duration);
     visionset = level.var_f04301db8ca5ecfa["super_aether_shroud"].var_1ffaeb4cd78e4a67;
     namespace_6c72573a48881070::function_27a921508cb04613(visionset, 0.5);
@@ -312,7 +312,7 @@ function function_dd3e24972903398e(n_duration) {
     }
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xecd
 // Size: 0x52
@@ -328,11 +328,11 @@ function function_3e7ec946182e3969(n_duration) {
     self lerpfovbypreset("default_2seconds");
 }
 
-// Namespace namespace_24a6e4eec2adc745/namespace_6ac5b64d7fe68733
+// Namespace namespace_24a6e4eec2adc745 / namespace_6ac5b64d7fe68733
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf26
 // Size: 0x41
-function function_ccc62e267507ffdc() {
+function remove_effects() {
     visionset = level.var_f04301db8ca5ecfa["super_aether_shroud"].var_1ffaeb4cd78e4a67;
     namespace_6c72573a48881070::function_9a92ae402e209ecc(visionset);
     self setscriptablepartstate("aether_shroud_fx", "super_fx_deactivate", 0);

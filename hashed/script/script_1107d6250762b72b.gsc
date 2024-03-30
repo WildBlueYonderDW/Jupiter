@@ -4,7 +4,7 @@
 
 #namespace mp_jup_st_e_ob_activities_mrp_challenges_cs;
 
-// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs/namespace_7505bd48eaef63fb
+// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs / namespace_7505bd48eaef63fb
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x11c
 // Size: 0x6d
@@ -23,42 +23,42 @@ function main(unused, us) {
     }
 }
 
-// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs/namespace_7505bd48eaef63fb
+// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs / namespace_7505bd48eaef63fb
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x190
 // Size: 0x68
-function cs_return_and_wait_for_flag(us, s, var_ce173d78f5680530) {
+function cs_return_and_wait_for_flag(us, s, cf) {
     level endon("game_ended");
-    wait_for_cs_flag(var_ce173d78f5680530);
+    wait_for_cs_flag(cf);
     if (!isdefined(us)) {
         us = "pfx";
     }
     s cs_setup_arrays(us, "mp_jup_st_e_ob_activities_mrp_challenges_cs");
     cs_flags_init(s);
-    level thread createstructs(s, us, var_ce173d78f5680530);
+    level thread createstructs(s, us, cf);
     level thread wait_for_flags(s, "mp_jup_st_e_ob_activities_mrp_challenges_cs");
 }
 
-// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs/namespace_7505bd48eaef63fb
+// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs / namespace_7505bd48eaef63fb
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ff
 // Size: 0x113
-function createstructs(var_ce2d3c78f5803630, us, var_ce173d78f5680530) {
+function createstructs(fe, us, cf) {
     f = &strike_additem;
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_e_ob_activities_mrp_challenges_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-5572, 1172, 2208), (0, 150, 0), "cspf_0_auto15876721927107115881", "cspf_0_auto12278475722300310701");
+    fe [[ f ]](s, us, cf, (-5572, 1172, 2208), (0, 150, 0), "cspf_0_auto15876721927107115881", "cspf_0_auto12278475722300310701");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_e_ob_activities_mrp_challenges_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-5688, 1288, 2207.5), (0, 0, 0), "cspf_0_auto12278475722300310701");
+    fe [[ f ]](s, us, cf, (-5688, 1288, 2207.5), (0, 0, 0), "cspf_0_auto12278475722300310701");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_e_ob_activities_mrp_challenges_cs";
-    var_ce2d3c78f5803630 [[ f ]](s, us, var_ce173d78f5680530, (-5768, 1312, 2254.5), (0, 315, 0), "mrp_respect_challenge", "cspf_0_auto15876721927107115881");
-    var_ce2d3c78f5803630 ent_flag_set("cs_objects_created");
+    fe [[ f ]](s, us, cf, (-5768, 1312, 2254.5), (0, 315, 0), "mrp_respect_challenge", "cspf_0_auto15876721927107115881");
+    fe ent_flag_set("cs_objects_created");
     function_7af6d59eef91a7dd();
 }
 
-// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs/namespace_7505bd48eaef63fb
+// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs / namespace_7505bd48eaef63fb
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x319
 // Size: 0x3
@@ -66,7 +66,7 @@ function function_7af6d59eef91a7dd() {
     
 }
 
-// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs/namespace_7505bd48eaef63fb
+// Namespace mp_jup_st_e_ob_activities_mrp_challenges_cs / namespace_7505bd48eaef63fb
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x323
 // Size: 0xf

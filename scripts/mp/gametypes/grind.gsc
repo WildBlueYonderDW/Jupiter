@@ -29,16 +29,16 @@
 
 #namespace grind;
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x826
 // Size: 0x216
 function main() {
-    namespace_77cb23aada5edffd::init();
-    namespace_77cb23aada5edffd::setupcallbacks();
+    scripts/mp/globallogic::init();
+    scripts/mp/globallogic::setupcallbacks();
     allowed[0] = getgametype();
     allowed[1] = "dom";
-    namespace_19b4203b51d56488::main(allowed);
+    scripts/mp/gameobjects::main(allowed);
     if (isusingmatchrulesdata()) {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
@@ -63,7 +63,7 @@ function main() {
     level.modeonspawnplayer = &onspawnplayer;
     level.modeonsuicidedeath = &onsuicidedeath;
     level.conf_fx["vanish"] = loadfx("vfx/core/impacts/small_snowhit");
-    if (namespace_36f464722d326bbe::function_b2c4b42f9236924()) {
+    if (scripts/cp_mp/utility/game_utility::function_b2c4b42f9236924()) {
         game["dialog"]["gametype"] = "iw9_grnd_mode_uktl_gnt1";
     } else {
         game["dialog"]["gametype"] = "iw9_grnd_mode_uktl_gdnm";
@@ -77,7 +77,7 @@ function main() {
     game["dialog"]["grind_inactive_b"] = "iw9_grnd_mode_uktl_gdib";
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x145
@@ -97,7 +97,7 @@ function initializematchrules() {
     setdynamicdvar(@"hash_4d24505ea8f90528", 0);
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xb8f
 // Size: 0x114
@@ -131,7 +131,7 @@ function onstartgametype() {
     #/
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xcaa
 // Size: 0x147
@@ -149,23 +149,25 @@ function updategametypedvars() {
     scorelimit = getwatcheddvar("scorelimit");
     if (scorelimit == 0 && level.bankdisabletags == 0) {
         level.bankdisable = 0;
-    } else if (level.bankdisabletags == 0 && scorelimit > 0) {
+        return;
+    }
+    if (level.bankdisabletags == 0 && scorelimit > 0) {
         level.bankdisabletags = int(scorelimit);
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xdf8
 // Size: 0x3a
-function onspawnplayer(var_9156b53bcf7ce573) {
-    namespace_44abc05161e2e2cb::function_f004ef4606b9efdc("bank_tags");
+function onspawnplayer(revivespawn) {
+    scripts/mp/hud_message::function_f004ef4606b9efdc("bank_tags");
     if (isdefined(self.tagscarried)) {
         self setclientomnvar("ui_grind_tags", self.tagscarried);
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe39
 // Size: 0x23
@@ -174,7 +176,7 @@ function onsuicidedeath(victim) {
     level thread droptags(victim);
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x21c
@@ -183,8 +185,8 @@ function createtags() {
     for (i = 0; i < 50; i++) {
         visuals[0] = spawn("script_model", (0, 0, 0));
         visuals[1] = spawn("script_model", (0, 0, 0));
-        visuals[0] setmodel(namespace_ba880bc821ba2f06::function_c8a7bf223baf8a6c());
-        visuals[1] setmodel(namespace_ba880bc821ba2f06::function_1e4c1c053ea20dd5());
+        visuals[0] setmodel(scripts/mp/gametypes/obj_dogtag::function_c8a7bf223baf8a6c());
+        visuals[1] setmodel(scripts/mp/gametypes/obj_dogtag::function_1e4c1c053ea20dd5());
         visuals[0] scriptmodelplayanim("mp_dogtag_spin");
         visuals[1] scriptmodelplayanim("mp_dogtag_spin");
         if (visuals[0] isscriptable()) {
@@ -202,28 +204,28 @@ function createtags() {
         trigger = spawn("trigger_radius", (0, 0, 0), 0, 32, 32);
         trigger.targetname = "trigger_dogtag";
         trigger hide();
-        var_34744859ad58739b = spawnstruct();
-        var_34744859ad58739b.type = "useObject";
-        var_34744859ad58739b.curorigin = trigger.origin;
-        var_34744859ad58739b.entnum = trigger getentitynumber();
-        var_34744859ad58739b.lastusedtime = 0;
-        var_34744859ad58739b.visuals = visuals;
-        var_34744859ad58739b.offset3d = (0, 0, 16);
-        var_34744859ad58739b.trigger = trigger;
-        var_34744859ad58739b.trigger enablelinkto();
-        var_34744859ad58739b.triggertype = "proximity";
-        var_34744859ad58739b namespace_19b4203b51d56488::allowuse("none");
-        level.dogtags[level.dogtags.size] = var_34744859ad58739b;
+        newtag = spawnstruct();
+        newtag.type = "useObject";
+        newtag.curorigin = trigger.origin;
+        newtag.entnum = trigger getentitynumber();
+        newtag.lastusedtime = 0;
+        newtag.visuals = visuals;
+        newtag.offset3d = (0, 0, 16);
+        newtag.trigger = trigger;
+        newtag.trigger enablelinkto();
+        newtag.triggertype = "proximity";
+        newtag scripts/mp/gameobjects::allowuse("none");
+        level.dogtags[level.dogtags.size] = newtag;
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1086
 // Size: 0xf6
 function gettag() {
-    var_5d32298b837dff31 = level.dogtags[0];
-    var_3071102f98cbed33 = gettime();
+    besttag = level.dogtags[0];
+    oldesttime = gettime();
     foreach (tag in level.dogtags) {
         if (!isdefined(tag.lastusedtime)) {
             continue;
@@ -232,27 +234,27 @@ function gettag() {
             continue;
         }
         if (tag.interactteam == "none") {
-            var_5d32298b837dff31 = tag;
+            besttag = tag;
             break;
         }
-        if (tag.lastusedtime < var_3071102f98cbed33) {
-            var_3071102f98cbed33 = tag.lastusedtime;
-            var_5d32298b837dff31 = tag;
+        if (tag.lastusedtime < oldesttime) {
+            oldesttime = tag.lastusedtime;
+            besttag = tag;
         }
     }
-    var_5d32298b837dff31 notify("reset");
-    var_5d32298b837dff31 namespace_19b4203b51d56488::initializetagpathvariables();
-    var_5d32298b837dff31.lastusedtime = gettime();
-    return var_5d32298b837dff31;
+    besttag notify("reset");
+    besttag scripts/mp/gameobjects::initializetagpathvariables();
+    besttag.lastusedtime = gettime();
+    return besttag;
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1184
 // Size: 0x225
 function spawntag(victim) {
     droplocation = victim.origin;
-    var_f835c152b2f0f136 = victim.team;
+    tagteam = victim.team;
     startpos = droplocation + (0, 0, 14);
     zoffset = 35;
     stance = victim getstance();
@@ -262,53 +264,53 @@ function spawntag(victim) {
     if (stance == "crouch") {
         zoffset = 25;
     }
-    var_9c19496ce8106e6b = droplocation + namespace_ba880bc821ba2f06::function_4b5bf3a3091d471e();
+    movetostartpos = droplocation + scripts/mp/gametypes/obj_dogtag::function_4b5bf3a3091d471e();
     randomangle = (0, randomfloat(360), 0);
-    var_a76189155f382805 = anglestoforward(randomangle);
-    var_a73587155f07bd39 = randomfloatrange(30, 150);
-    var_57c87883ae437750 = 0.5;
-    testpos = startpos + var_a73587155f07bd39 * var_a76189155f382805;
-    var_b809b8f732448a84 = playerphysicstrace(startpos, testpos);
-    var_34744859ad58739b = gettag();
-    var_34744859ad58739b.curorigin = var_9c19496ce8106e6b;
-    var_34744859ad58739b.trigger.origin = var_9c19496ce8106e6b;
-    var_34744859ad58739b.visuals[0].origin = var_9c19496ce8106e6b;
-    var_34744859ad58739b.visuals[1].origin = var_9c19496ce8106e6b;
-    var_34744859ad58739b.team = victim.team;
-    var_34744859ad58739b.interactteam = "any";
-    var_34744859ad58739b.trigger show();
-    var_34744859ad58739b.trigger linkto(var_34744859ad58739b.visuals[0], "tag_origin");
-    var_34744859ad58739b.trigger linkto(var_34744859ad58739b.visuals[1], "tag_origin");
+    randomdir = anglestoforward(randomangle);
+    randomdst = randomfloatrange(30, 150);
+    movetotime = 0.5;
+    testpos = startpos + randomdst * randomdir;
+    movetoendpos = playerphysicstrace(startpos, testpos);
+    newtag = gettag();
+    newtag.curorigin = movetostartpos;
+    newtag.trigger.origin = movetostartpos;
+    newtag.visuals[0].origin = movetostartpos;
+    newtag.visuals[1].origin = movetostartpos;
+    newtag.team = victim.team;
+    newtag.interactteam = "any";
+    newtag.trigger show();
+    newtag.trigger linkto(newtag.visuals[0], "tag_origin");
+    newtag.trigger linkto(newtag.visuals[1], "tag_origin");
     playsoundatpos(startpos, "mp_grind_token_drop");
-    namespace_ba880bc821ba2f06::function_f793a9fd32c1a72b(var_34744859ad58739b);
-    var_34744859ad58739b thread tagmoveto(var_f835c152b2f0f136, var_9c19496ce8106e6b, var_b809b8f732448a84, var_57c87883ae437750);
-    return var_34744859ad58739b;
+    scripts/mp/gametypes/obj_dogtag::function_f793a9fd32c1a72b(newtag);
+    newtag thread tagmoveto(tagteam, movetostartpos, movetoendpos, movetotime);
+    return newtag;
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x13b1
 // Size: 0x148
-function tagmoveto(var_f835c152b2f0f136, var_9c19496ce8106e6b, var_b809b8f732448a84, time) {
-    namespace_19b4203b51d56488::allowuse("any");
-    self.visuals[0] showtoteam(self, getotherteam(var_f835c152b2f0f136)[0]);
-    self.visuals[1] showtoteam(self, var_f835c152b2f0f136);
+function tagmoveto(tagteam, movetostartpos, movetoendpos, time) {
+    scripts/mp/gameobjects::allowuse("any");
+    self.visuals[0] showtoteam(self, getotherteam(tagteam)[0]);
+    self.visuals[1] showtoteam(self, tagteam);
     self.visuals[0] setasgametypeobjective();
     self.visuals[1] setasgametypeobjective();
     gravity = getdvarint(@"hash_b5d7d39d32720e78");
-    dist = distance(var_9c19496ce8106e6b, var_b809b8f732448a84);
-    delta = var_b809b8f732448a84 - var_9c19496ce8106e6b;
+    dist = distance(movetostartpos, movetoendpos);
+    delta = movetoendpos - movetostartpos;
     drop = 0.5 * gravity * squared(time) * -1;
     vel = (delta[0] / time, delta[1] / time, (delta[2] - drop) / time);
-    self.var_7454869824e72aae = 1;
+    self.tag_moving = 1;
     self.visuals[0] movegravity(vel, time);
     self.visuals[1] movegravity(vel, time);
     wait(1);
-    self.curorigin = var_b809b8f732448a84;
-    self.var_7454869824e72aae = undefined;
+    self.curorigin = movetoendpos;
+    self.tag_moving = undefined;
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1500
 // Size: 0x47
@@ -317,12 +319,12 @@ function showtoteam(gameobject, team) {
     gameobject endon("reset");
     if (self isscriptable()) {
         self setscriptablepartstate("visibility", "show", 0);
-    } else {
-        self show();
+        return;
     }
+    self show();
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x154e
 // Size: 0x27a
@@ -330,7 +332,7 @@ function monitortaguse(tag) {
     level endon("game_ended");
     tag endon("deleted");
     tag endon("reset");
-    while (1) {
+    while (true) {
         player = tag.trigger waittill("trigger");
         if (!isreallyalive(player)) {
             continue;
@@ -359,22 +361,22 @@ function monitortaguse(tag) {
         tag.trigger.origin = (0, 0, 1000);
         tag.visuals[0].origin = (0, 0, 1000);
         tag.visuals[1].origin = (0, 0, 1000);
-        tag namespace_19b4203b51d56488::allowuse("none");
+        tag scripts/mp/gameobjects::allowuse("none");
         player playersettagcount(player.tagscarried + 1);
-        player thread doscoreevent(#"hash_b89e7559b23a1287");
+        player thread doScoreEvent(#"tag_collected");
         player playsound("mp_grind_token_pickup");
         if (function_f698bfd3efa33302() || function_e9f3a160bbefe208(player)) {
             if (isdefined(player.cranked) && player.cranked) {
-                player namespace_58012cf453ba1014::setcrankedplayerbombtimer("kill");
+                player scripts/mp/cranked::setcrankedplayerbombtimer("kill");
             } else {
-                player namespace_58012cf453ba1014::oncranked(undefined, player);
+                player scripts/mp/cranked::oncranked(undefined, player);
             }
         }
         break;
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17cf
 // Size: 0x22
@@ -383,43 +385,43 @@ function onplayerconnect(player) {
     player thread monitorjointeam();
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0x3a
-function playersettagcount(var_d86673173e8641be) {
-    self.tagscarried = var_d86673173e8641be;
-    self.game_extrainfo = var_d86673173e8641be;
-    if (var_d86673173e8641be > 999) {
-        var_d86673173e8641be = 999;
+function playersettagcount(tagcount) {
+    self.tagscarried = tagcount;
+    self.game_extrainfo = tagcount;
+    if (tagcount > 999) {
+        tagcount = 999;
     }
-    self setclientomnvar("ui_grind_tags", var_d86673173e8641be);
+    self setclientomnvar("ui_grind_tags", tagcount);
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1839
 // Size: 0x2b
 function monitorjointeam() {
     self endon("disconnect");
-    while (1) {
+    while (true) {
         waittill_any_2("joined_team", "joined_spectators");
         playersettagcount(0);
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x186b
 // Size: 0x26
-function hidehudelementongameend(var_6b53a43e91b3d1a2) {
+function hidehudelementongameend(hudelement) {
     level waittill("game_ended");
-    if (isdefined(var_6b53a43e91b3d1a2)) {
-        var_6b53a43e91b3d1a2.alpha = 0;
+    if (isdefined(hudelement)) {
+        hudelement.alpha = 0;
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1898
 // Size: 0x1ef
@@ -434,45 +436,45 @@ function createzones() {
         level.objectives[zone.objectivekey] = zone;
     }
     if (level.mapname == "mp_deadzone") {
-        var_91e3043c367e21f8 = spawnstruct();
-        var_91e3043c367e21f8.origin = (1416, 1368, 300);
-        var_91e3043c367e21f8.angles = (0, 0, 0);
-        var_91e3043c367e21f8.script_label = "b";
-        zone = namespace_74694cc3e6d15844::setupobjective(var_91e3043c367e21f8, 1, 1);
+        hacktrigger = spawnstruct();
+        hacktrigger.origin = (1416, 1368, 300);
+        hacktrigger.angles = (0, 0, 0);
+        hacktrigger.script_label = "b";
+        zone = scripts/mp/gametypes/obj_grindzone::setupobjective(hacktrigger, 1, 1);
         zone thread runzonethink();
         level.objectives[zone.objectivekey] = zone;
     }
-    if (!namespace_4b0406965e556711::gameflag("prematch_done")) {
+    if (!scripts/mp/flags::gameflag("prematch_done")) {
         level waittill_any_2("prematch_done", "start_mode_setup");
     }
     foreach (zone in level.objectives) {
         var_3c2389ba69e5822b = getreservedobjid(zone.objectivekey);
-        zone namespace_19b4203b51d56488::requestid(1, 1, var_3c2389ba69e5822b);
-        zone namespace_19b4203b51d56488::setvisibleteam("any");
+        zone scripts/mp/gameobjects::requestid(1, 1, var_3c2389ba69e5822b);
+        zone scripts/mp/gameobjects::setvisibleteam("any");
         zone setobjectivecallbacks();
         zone setneutral();
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a8e
 // Size: 0x52
 function isinzone(player, zone) {
     if (isreallyalive(player) && player istouching(zone.trigger) && zone.ownerteam == player.team) {
-        return 1;
+        return true;
     }
-    return 0;
+    return false;
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1ae8
 // Size: 0x9e
 function runzonethink() {
     level endon("game_ended");
     self endon("stop_trigger" + self.objectivekey);
-    while (1) {
+    while (true) {
         player = self.trigger waittill("trigger");
         if (self.disabled) {
             continue;
@@ -494,7 +496,7 @@ function runzonethink() {
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1b8d
 // Size: 0x7f
@@ -511,7 +513,7 @@ function removetagsongameended() {
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1c13
 // Size: 0x1d7
@@ -520,12 +522,12 @@ function processscoring(player, zone) {
         if (player.tagscarried >= level.megabanklimit) {
             player playsoundtoplayer("mp_grind_token_banked_large", player);
             scoreamount(player, level.megabanklimit, zone);
-            points = namespace_62c556437da28f50::getscoreinfovalue(#"hash_bc82bd9caa5693ce");
+            points = scripts/mp/rank::getscoreinfovalue(#"tag_score");
             points = points * level.megabanklimit;
-            if (!player namespace_82dcd1d5ae30ff7::_hasperk("specialty_killstreak_to_scorestreak")) {
-                player namespace_58a74e7d54b56e8d::givestreakpoints(#"capture", level.megabankbonusks);
+            if (!player scripts/mp/utility/perk::_hasperk("specialty_killstreak_to_scorestreak")) {
+                player scripts/mp/killstreaks/killstreaks::givestreakpoints(#"capture", level.megabankbonusks);
             }
-            player thread doscoreevent(#"hash_32d643f803437aaa", undefined, points + level.megabankbonus);
+            player thread doScoreEvent(#"mega_bank", undefined, points + level.megabankbonus);
             player incpersstat("tagsMegaBanked", 1);
         } else {
             player playsoundtoplayer("mp_grind_token_banked", player);
@@ -535,11 +537,11 @@ function processscoring(player, zone) {
             }
             scoreamount(player, var_1b445873b17eaa71, zone);
             for (i = 0; i < var_1b445873b17eaa71; i++) {
-                player thread doscoreevent(#"hash_bc82bd9caa5693ce");
+                player thread doScoreEvent(#"tag_score");
             }
         }
         if ((function_f698bfd3efa33302() || function_e9f3a160bbefe208(player)) && isdefined(player.cranked) && player.cranked) {
-            player namespace_58012cf453ba1014::setcrankedplayerbombtimer("kill");
+            player scripts/mp/cranked::setcrankedplayerbombtimer("kill");
         }
         wait(level.banktime);
     }
@@ -547,53 +549,50 @@ function processscoring(player, zone) {
     player.isscoring = 0;
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1df1
 // Size: 0x1b5
-function scoreamount(player, var_c1b3d6b48e668752, zone) {
-    player playersettagcount(player.tagscarried - var_c1b3d6b48e668752);
-    namespace_e8a49b70d0769b66::giveteamscoreforobjective(player.team, var_c1b3d6b48e668752, 0);
-    player incpersstat("confirmed", var_c1b3d6b48e668752);
-    player namespace_2685ec368e022695::statsetchild("round", "confirmed", player.pers["confirmed"]);
+function scoreamount(player, numtags, zone) {
+    player playersettagcount(player.tagscarried - numtags);
+    scripts/mp/gamescore::giveteamscoreforobjective(player.team, numtags, 0);
+    player incpersstat("confirmed", numtags);
+    player scripts/mp/persistence::statsetchild("round", "confirmed", player.pers["confirmed"]);
     player setextrascore0(player.pers["confirmed"]);
     if (level.bankdisable) {
-        zone.tagsdeposited = zone.tagsdeposited + var_c1b3d6b48e668752;
+        zone.tagsdeposited = zone.tagsdeposited + numtags;
         if (zone.tagsdeposited >= level.bankdisabletags) {
-            zone namespace_19b4203b51d56488::allowuse("none");
+            zone scripts/mp/gameobjects::allowuse("none");
             zone thread waitthensetvisibleteam();
             zone.disabled = 1;
             zone.scriptable setscriptablepartstate("flag", "off");
             zone.scriptable setscriptablepartstate("pulse", "off");
             if (isdefined(zone.objectivekey)) {
                 foreach (entry in level.teamnamelist) {
-                    namespace_944ddf7b8df1b0e3::statusdialog("grind_disable_" + zone.objectivekey, entry);
+                    scripts/mp/utility/dialog::statusdialog("grind_disable_" + zone.objectivekey, entry);
                 }
             }
             if (level.bankdisabletime == 0) {
-                goto LOC_000001b3;
+                return;
             }
             zone thread waitthenenablezone();
-        LOC_000001b3:
         }
-    LOC_000001b3:
     }
-LOC_000001b3:
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1fad
 // Size: 0x6e
 function waitthensetvisibleteam() {
     foreach (player in level.players) {
-        namespace_5a22b6f3a56f7e9b::objective_unpin_player(self.objidnum, player);
+        scripts/mp/objidpoolmanager::objective_unpin_player(self.objidnum, player);
     }
     waitframe();
-    namespace_19b4203b51d56488::setvisibleteam("none");
+    scripts/mp/gameobjects::setvisibleteam("none");
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2022
 // Size: 0xc0
@@ -602,48 +601,48 @@ function waitthenenablezone() {
     wait(level.bankdisabletime);
     self.disabled = 0;
     self.scriptable setscriptablepartstate("flag", "idle");
-    namespace_19b4203b51d56488::allowuse("any");
-    namespace_19b4203b51d56488::setvisibleteam("any");
+    scripts/mp/gameobjects::allowuse("any");
+    scripts/mp/gameobjects::setvisibleteam("any");
     if (isdefined(self.objectivekey)) {
         foreach (entry in level.teamnamelist) {
-            namespace_944ddf7b8df1b0e3::statusdialog("grind_enable_" + self.objectivekey, entry);
+            scripts/mp/utility/dialog::statusdialog("grind_enable_" + self.objectivekey, entry);
         }
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x20e9
 // Size: 0x1a5
 function initspawns() {
     if (function_bff229a11ecd1e34()) {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic(#"default");
+        scripts/mp/spawnlogic::setactivespawnlogic(#"default");
     } else {
-        namespace_b2d5aa2baf2b5701::setactivespawnlogic("Default", "Crit_Frontline");
+        scripts/mp/spawnlogic::setactivespawnlogic("Default", "Crit_Frontline");
     }
     level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
     level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_tdm_spawn_allies_start");
-    namespace_b2d5aa2baf2b5701::addstartspawnpoints("mp_tdm_spawn_axis_start");
-    namespace_b2d5aa2baf2b5701::addspawnpoints(game["attackers"], "mp_tdm_spawn_allies_start");
-    namespace_b2d5aa2baf2b5701::addspawnpoints(game["defenders"], "mp_tdm_spawn_axis_start");
-    attackers = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_tdm_spawn_allies_start");
-    defenders = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_tdm_spawn_axis_start");
-    namespace_b2d5aa2baf2b5701::registerspawnset("start_attackers", attackers);
-    namespace_b2d5aa2baf2b5701::registerspawnset("start_defenders", defenders);
-    namespace_b2d5aa2baf2b5701::addspawnpoints("allies", "mp_tdm_spawn");
-    namespace_b2d5aa2baf2b5701::addspawnpoints("axis", "mp_tdm_spawn");
-    namespace_b2d5aa2baf2b5701::addspawnpoints("allies", "mp_tdm_spawn_secondary", 1, 1);
-    namespace_b2d5aa2baf2b5701::addspawnpoints("axis", "mp_tdm_spawn_secondary", 1, 1);
-    spawns = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_tdm_spawn");
-    var_3a5288f40c8be099 = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_tdm_spawn_secondary");
-    namespace_b2d5aa2baf2b5701::registerspawnset("normal", spawns);
-    namespace_b2d5aa2baf2b5701::registerspawnset("fallback", var_3a5288f40c8be099);
-    level.mapcenter = namespace_b2d5aa2baf2b5701::findboxcenter(level.spawnmins, level.spawnmaxs);
+    scripts/mp/spawnlogic::addstartspawnpoints("mp_tdm_spawn_allies_start");
+    scripts/mp/spawnlogic::addstartspawnpoints("mp_tdm_spawn_axis_start");
+    scripts/mp/spawnlogic::addspawnpoints(game["attackers"], "mp_tdm_spawn_allies_start");
+    scripts/mp/spawnlogic::addspawnpoints(game["defenders"], "mp_tdm_spawn_axis_start");
+    attackers = scripts/mp/spawnlogic::getspawnpointarray("mp_tdm_spawn_allies_start");
+    defenders = scripts/mp/spawnlogic::getspawnpointarray("mp_tdm_spawn_axis_start");
+    scripts/mp/spawnlogic::registerspawnset("start_attackers", attackers);
+    scripts/mp/spawnlogic::registerspawnset("start_defenders", defenders);
+    scripts/mp/spawnlogic::addspawnpoints("allies", "mp_tdm_spawn");
+    scripts/mp/spawnlogic::addspawnpoints("axis", "mp_tdm_spawn");
+    scripts/mp/spawnlogic::addspawnpoints("allies", "mp_tdm_spawn_secondary", 1, 1);
+    scripts/mp/spawnlogic::addspawnpoints("axis", "mp_tdm_spawn_secondary", 1, 1);
+    spawns = scripts/mp/spawnlogic::getspawnpointarray("mp_tdm_spawn");
+    spawnssecondary = scripts/mp/spawnlogic::getspawnpointarray("mp_tdm_spawn_secondary");
+    scripts/mp/spawnlogic::registerspawnset("normal", spawns);
+    scripts/mp/spawnlogic::registerspawnset("fallback", spawnssecondary);
+    level.mapcenter = scripts/mp/spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
     setmapcenter(level.mapcenter);
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2295
 // Size: 0x83
@@ -652,16 +651,16 @@ function getspawnpoint() {
     if (game["switchedsides"]) {
         spawnteam = getotherteam(spawnteam)[0];
     }
-    if (namespace_b2d5aa2baf2b5701::shoulduseteamstartspawn()) {
-        spawnpoints = namespace_b2d5aa2baf2b5701::getspawnpointarray("mp_tdm_spawn_" + spawnteam + "_start");
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint_startspawn(spawnpoints);
+    if (scripts/mp/spawnlogic::shoulduseteamstartspawn()) {
+        spawnpoints = scripts/mp/spawnlogic::getspawnpointarray("mp_tdm_spawn_" + spawnteam + "_start");
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint_startspawn(spawnpoints);
     } else {
-        spawnpoint = namespace_b2d5aa2baf2b5701::getspawnpoint(self, spawnteam, "normal", "fallback");
+        spawnpoint = scripts/mp/spawnlogic::getspawnpoint(self, spawnteam, "normal", "fallback");
     }
     return spawnpoint;
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 6, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2320
 // Size: 0x4c
@@ -670,7 +669,7 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
     level thread droptags(victim, attacker);
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2373
 // Size: 0xff
@@ -679,26 +678,26 @@ function droptags(victim, attacker) {
         return;
     }
     if (victim.tagscarried > 49) {
-        var_a28b6fb6a6902689 = 49;
+        dropnumber = 49;
     } else if (victim.tagscarried > 0) {
-        var_a28b6fb6a6902689 = victim.tagscarried;
+        dropnumber = victim.tagscarried;
     } else {
-        var_a28b6fb6a6902689 = 0;
+        dropnumber = 0;
     }
-    for (counter = 0; counter < var_a28b6fb6a6902689; counter++) {
-        var_34744859ad58739b = spawntag(victim);
-        var_34744859ad58739b.team = victim.team;
-        var_34744859ad58739b.victim = victim;
-        var_34744859ad58739b.attacker = attacker;
-        level notify("new_tag_spawned", var_34744859ad58739b);
-        level thread monitortaguse(var_34744859ad58739b);
+    for (counter = 0; counter < dropnumber; counter++) {
+        newtag = spawntag(victim);
+        newtag.team = victim.team;
+        newtag.victim = victim;
+        newtag.attacker = attacker;
+        level notify("new_tag_spawned", newtag);
+        level thread monitortaguse(newtag);
     }
-    var_70bd2c443105990a = victim.tagscarried - var_a28b6fb6a6902689;
+    var_70bd2c443105990a = victim.tagscarried - dropnumber;
     var_70bd2c443105990a = int(max(0, var_70bd2c443105990a));
     victim playersettagcount(var_70bd2c443105990a);
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 1, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x2479
 // Size: 0x2e
@@ -708,48 +707,48 @@ function dogtagallyonusecb(player) {
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x24ae
 // Size: 0x113
 function setupwaypointicons() {
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_bank_a", 0, "neutral", "MP_INGAME_ONLY/OBJ_BANK_CAPS", "icon_waypoint_dom_a", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_bank_b", 0, "neutral", "MP_INGAME_ONLY/OBJ_BANK_CAPS", "icon_waypoint_dom_b", 0);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_scoring_foe_a", 2, "enemy", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_a", 1);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_scoring_foe_b", 2, "enemy", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_b", 1);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_scoring_friend_a", 2, "friendly", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_a", 1);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_scoring_friend_b", 2, "friendly", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_b", 1);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_contested_a", 0, "contest", "MP_INGAME_ONLY/OBJ_CONTESTED_CAPS", "icon_waypoint_dom_a", 1);
-    namespace_d576b6dc7cef9c62::setwaypointiconinfo("waypoint_contested_b", 0, "contest", "MP_INGAME_ONLY/OBJ_CONTESTED_CAPS", "icon_waypoint_dom_b", 1);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_bank_a", 0, "neutral", "MP_INGAME_ONLY/OBJ_BANK_CAPS", "icon_waypoint_dom_a", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_bank_b", 0, "neutral", "MP_INGAME_ONLY/OBJ_BANK_CAPS", "icon_waypoint_dom_b", 0);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_scoring_foe_a", 2, "enemy", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_a", 1);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_scoring_foe_b", 2, "enemy", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_b", 1);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_scoring_friend_a", 2, "friendly", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_a", 1);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_scoring_friend_b", 2, "friendly", "MP_INGAME_ONLY/OBJ_SCORING_CAPS", "icon_waypoint_dom_b", 1);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_contested_a", 0, "contest", "MP_INGAME_ONLY/OBJ_CONTESTED_CAPS", "icon_waypoint_dom_a", 1);
+    scripts/mp/gamelogic::setwaypointiconinfo("waypoint_contested_b", 0, "contest", "MP_INGAME_ONLY/OBJ_CONTESTED_CAPS", "icon_waypoint_dom_b", 1);
     var_8586a09e62c831f5 = "MP_INGAME_ONLY/OBJ_BANK_CAPS";
     var_8586a09e62c831f5 = "MP_INGAME_ONLY/OBJ_SCORING_CAPS";
     var_8586a09e62c831f5 = "MP_INGAME_ONLY/OBJ_CONTESTED_CAPS";
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x25c8
 // Size: 0x1aa
 function removepoint() {
     self endon("game_ended");
-    while (1) {
+    while (true) {
         if (getdvar(@"hash_6ce167f2cdc8ef7c", "") != "") {
-            var_45360a7a32781f43 = getdvar(@"hash_6ce167f2cdc8ef7c", "");
+            flaglabel = getdvar(@"hash_6ce167f2cdc8ef7c", "");
             foreach (zone in level.objectives) {
-                if (isdefined(zone.objectivekey) && zone.objectivekey == var_45360a7a32781f43) {
+                if (isdefined(zone.objectivekey) && zone.objectivekey == flaglabel) {
                     zone notify("stop_trigger" + zone.objectivekey);
-                    zone namespace_19b4203b51d56488::allowuse("none");
+                    zone scripts/mp/gameobjects::allowuse("none");
                     zone.trigger = undefined;
                     zone notify("deleted");
                     zone.visibleteam = "none";
-                    zone namespace_19b4203b51d56488::setobjectivestatusicons(undefined, undefined);
-                    var_3dabce211c987a42 = [];
+                    zone scripts/mp/gameobjects::setobjectivestatusicons(undefined, undefined);
+                    tempflags = [];
                     foreach (objective in level.objectives) {
-                        if (objective.objectivekey != var_45360a7a32781f43) {
-                            var_3dabce211c987a42[objective.objectivekey] = objective;
+                        if (objective.objectivekey != flaglabel) {
+                            tempflags[objective.objectivekey] = objective;
                         }
                     }
-                    level.objectives = var_3dabce211c987a42;
+                    level.objectives = tempflags;
                     break;
                 }
             }
@@ -759,53 +758,53 @@ function removepoint() {
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2779
 // Size: 0x4a2
 function placepoint() {
     self endon("game_ended");
-    while (1) {
+    while (true) {
         if (getdvar(@"hash_29d45d6822a1cf6d", "") != "") {
-            var_45360a7a32781f43 = getdvar(@"hash_29d45d6822a1cf6d", "");
+            flaglabel = getdvar(@"hash_29d45d6822a1cf6d", "");
             trigger = undefined;
-            var_fd3c4aa0cf99af2c = getentarray("grind_location", "targetname");
-            foreach (var_ed25d2268d25175b in var_fd3c4aa0cf99af2c) {
-                if ("_" + var_ed25d2268d25175b.script_label == var_45360a7a32781f43) {
-                    trigger = var_ed25d2268d25175b;
+            grindtriggers = getentarray("grind_location", "targetname");
+            foreach (grindzone in grindtriggers) {
+                if ("_" + grindzone.script_label == flaglabel) {
+                    trigger = grindzone;
                 }
             }
             trigger.origin = level.players[0].origin;
             trigger.ownerteam = "neutral";
             tracestart = trigger.origin + (0, 0, 32);
             traceend = trigger.origin + (0, 0, -32);
-            trace = namespace_2a184fc4902783dc::ray_trace(tracestart, traceend, undefined, namespace_2a184fc4902783dc::create_default_contents(1));
+            trace = scripts/engine/trace::ray_trace(tracestart, traceend, undefined, scripts/engine/trace::create_default_contents(1));
             trigger.origin = trace["position"];
             trigger.upangles = vectortoangles(trace["normal"]);
             trigger.forward = anglestoforward(trigger.upangles);
             trigger.right = anglestoright(trigger.upangles);
             visuals[0] = spawn("script_model", trigger.origin);
             visuals[0].angles = trigger.angles;
-            var_25d213b4714288ce = spawn("trigger_radius", trigger.origin, 0, 90, 128);
-            var_25d213b4714288ce.script_label = trigger.script_label;
-            trigger = var_25d213b4714288ce;
-            zone = namespace_19b4203b51d56488::createuseobject("neutral", trigger, visuals, (0, 0, 100));
+            clonetrigger = spawn("trigger_radius", trigger.origin, 0, 90, 128);
+            clonetrigger.script_label = trigger.script_label;
+            trigger = clonetrigger;
+            zone = scripts/mp/gameobjects::createuseobject("neutral", trigger, visuals, (0, 0, 100));
             if (isdefined(trigger.objectivekey)) {
                 zone.objectivekey = trigger.objectivekey;
             } else {
-                zone.objectivekey = zone namespace_19b4203b51d56488::getlabel();
+                zone.objectivekey = zone scripts/mp/gameobjects::getlabel();
             }
             if (isdefined(trigger.iconname)) {
                 zone.iconname = trigger.iconname;
             } else {
-                zone.iconname = zone namespace_19b4203b51d56488::getlabel();
+                zone.iconname = zone scripts/mp/gameobjects::getlabel();
             }
             zone thread runzonethink();
-            zone namespace_19b4203b51d56488::allowuse("enemy");
-            zone namespace_19b4203b51d56488::setusetime(level.bankcapturetime);
-            zone namespace_19b4203b51d56488::setobjectivestatusicons("waypoint_defend", "waypoint_bank");
-            zone namespace_19b4203b51d56488::setvisibleteam("any");
-            zone namespace_19b4203b51d56488::cancontestclaim(1);
+            zone scripts/mp/gameobjects::allowuse("enemy");
+            zone scripts/mp/gameobjects::setusetime(level.bankcapturetime);
+            zone scripts/mp/gameobjects::setobjectivestatusicons("waypoint_defend", "waypoint_bank");
+            zone scripts/mp/gameobjects::setvisibleteam("any");
+            zone scripts/mp/gameobjects::cancontestclaim(1);
             zone.onuse = &zone_onuse;
             zone.onbeginuse = &zone_onusebegin;
             zone.onunoccupied = &zone_onunoccupied;
@@ -814,9 +813,9 @@ function placepoint() {
             zone.claimgracetime = level.bankcapturetime * 1000;
             tracestart = zone.visuals[0].origin + (0, 0, 32);
             traceend = zone.visuals[0].origin + (0, 0, -32);
-            contentoverride = namespace_2a184fc4902783dc::create_contents(1, 1, 1, 1, 0, 1, 1);
+            contentoverride = scripts/engine/trace::create_contents(1, 1, 1, 1, 0, 1, 1);
             ignoreents = [];
-            trace = namespace_2a184fc4902783dc::ray_trace(tracestart, traceend, ignoreents, contentoverride);
+            trace = scripts/engine/trace::ray_trace(tracestart, traceend, ignoreents, contentoverride);
             zone.baseeffectpos = trace["position"];
             upangles = vectortoangles(trace["normal"]);
             upangles = -1 * upangles;
@@ -829,30 +828,30 @@ function placepoint() {
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c22
 // Size: 0xb6
-function function_6e31fb115404c96d(var_6830baf45d9bf3cc, vorigin) {
-    var_5d8560bd09196d7e = getentarray("grind_location", "targetname");
+function function_6e31fb115404c96d(slabel, vorigin) {
+    grind_locations = getentarray("grind_location", "targetname");
     /#
-        assertex(isdefined(var_6830baf45d9bf3cc) && (var_6830baf45d9bf3cc == "a" || var_6830baf45d9bf3cc == "b"), "Unexpected label, label need to be 'a' or 'b' ");
+        assertex(isdefined(slabel) && (slabel == "a" || slabel == "b"), "Unexpected label, label need to be 'a' or 'b' ");
     #/
-    foreach (obj in var_5d8560bd09196d7e) {
-        if (obj.script_label == var_6830baf45d9bf3cc) {
+    foreach (obj in grind_locations) {
+        if (obj.script_label == slabel) {
             obj.origin = vorigin;
         }
     }
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cdf
 // Size: 0x1a2
 function function_cd969857178097d0() {
     /#
         self endon("megaBankBonus");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_ec6d489d470bc2ad") != 0) {
                 foreach (player in level.players) {
                     if (player.team == "ui_grind_tags") {
@@ -878,19 +877,19 @@ function function_cd969857178097d0() {
     #/
 }
 
-// Namespace grind/namespace_ca106a843d09cdd4
+// Namespace grind / scripts/mp/gametypes/grind
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e88
 // Size: 0xa5
 function function_d859ebf3629052fb() {
     /#
         self endon("megaBankBonus");
-        while (1) {
+        while (true) {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
-                namespace_e8a49b70d0769b66::giveteamscoreforobjective("ui_grind_tags", getdvarint(@"hash_46a6b424af6acbc2"), 0);
+                scripts/mp/gamescore::giveteamscoreforobjective("ui_grind_tags", getdvarint(@"hash_46a6b424af6acbc2"), 0);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
-                namespace_e8a49b70d0769b66::giveteamscoreforobjective("script_vehicle", getdvarint(@"hash_86e14326e43c0115"), 0);
+                scripts/mp/gamescore::giveteamscoreforobjective("script_vehicle", getdvarint(@"hash_86e14326e43c0115"), 0);
                 break;
             }
             wait(1);

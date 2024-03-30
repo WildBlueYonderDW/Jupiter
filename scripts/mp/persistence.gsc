@@ -11,7 +11,7 @@
 
 #namespace persistence;
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x520
 // Size: 0x31
@@ -23,7 +23,7 @@ function init() {
     level thread writekdhistorystats();
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x558
 // Size: 0x47d
@@ -76,7 +76,7 @@ function initbufferedstats() {
     initbestscorestatstable();
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x9dc
 // Size: 0x7f
@@ -84,7 +84,7 @@ function initbestscorestatstable() {
     table = "mp/bestscorestatsTable.csv";
     self.bestscorestats = [];
     self.bufferedbestscorestats = [];
-    for (row = 0; 1; row++) {
+    for (row = 0; true; row++) {
         statname = tablelookupbyrow(table, row, 0);
         if (statname == "") {
             break;
@@ -93,19 +93,18 @@ function initbestscorestatstable() {
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xa62
 // Size: 0x41
 function statgetchild(parent, child) {
     if (parent == "round") {
         return self getplayerdata("common", parent, child);
-    } else {
-        return self getplayerdata(level.var_5d69837cf4db0407, parent, child);
     }
+    return self getplayerdata(level.var_5d69837cf4db0407, parent, child);
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xaaa
 // Size: 0x82
@@ -122,12 +121,12 @@ function statsetchild(parent, child, value, ignorekdrstats) {
     if (parent == "round") {
         self setplayerdata("common", parent, child, value);
         setbestscore(child, value);
-    } else {
-        self setplayerdata(level.var_5d69837cf4db0407, parent, child, value);
+        return;
     }
+    self setplayerdata(level.var_5d69837cf4db0407, parent, child, value);
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb33
 // Size: 0x6e
@@ -142,7 +141,7 @@ function stataddchild(parent, child, value) {
     self setplayerdata(level.var_5d69837cf4db0407, parent, child, curvalue + value);
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xba8
 // Size: 0x52
@@ -156,7 +155,7 @@ function statgetchildbuffered(parent, child, force) {
     return self.bufferedchildstats[parent][child];
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc02
 // Size: 0x5b
@@ -170,7 +169,7 @@ function statsetchildbuffered(parent, child, value, force) {
     self.bufferedchildstats[parent][child] = value;
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xc64
 // Size: 0x6d
@@ -185,7 +184,7 @@ function stataddchildbuffered(parent, child, value, force) {
     statsetchildbuffered(parent, child, curvalue + value, force);
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd8
 // Size: 0x7d
@@ -206,7 +205,7 @@ function stataddchildbufferedwithmax(parent, child, value, max) {
     statsetchildbuffered(parent, child, newvalue);
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xd5c
 // Size: 0x79
@@ -214,7 +213,7 @@ function updatebufferedstats() {
     wait(0.15);
     nexttoupdate = 0;
     while (!level.gameended) {
-        namespace_e323c8674b44c8f4::waittillhostmigrationdone();
+        scripts/mp/hostmigration::waittillhostmigrationdone();
         nexttoupdate++;
         if (nexttoupdate >= level.players.size) {
             nexttoupdate = 0;
@@ -227,7 +226,7 @@ function updatebufferedstats() {
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xddc
 // Size: 0x7a
@@ -241,7 +240,7 @@ function updatebufferedstatsatgameend() {
     level.disableweaponstats = 1;
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xe5d
 // Size: 0x64
@@ -256,49 +255,51 @@ function setbestscore(statname, newvalue) {
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xec8
 // Size: 0xc6
 function writebestscores() {
     foreach (player in level.players) {
         if (isdefined(player) && player onlinestatsenabled()) {
-            foreach (statname, var_b1f473a47e479cc2 in player.bufferedbestscorestats) {
-                player setplayerdata(level.var_5d69837cf4db0407, "bestScores", statname, var_b1f473a47e479cc2);
+            foreach (statname, statval in player.bufferedbestscorestats) {
+                player setplayerdata(level.var_5d69837cf4db0407, "bestScores", statname, statval);
             }
         }
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0xf95
 // Size: 0x198
 function writebufferedstats() {
     rankingenabled = onlinestatsenabled();
     if (rankingenabled) {
-        foreach (statname, var_b1f473a47e479cc2 in self.bufferedstats) {
-            self setplayerdata(level.var_5d69837cf4db0407, statname, var_b1f473a47e479cc2);
+        foreach (statname, statval in self.bufferedstats) {
+            self setplayerdata(level.var_5d69837cf4db0407, statname, statval);
         }
         if (!isai(self)) {
-            foreach (statname, var_b1f473a47e479cc2 in self.squadmemberbufferedstats) {
-                self setplayerdata(level.loadoutsgroup, "squadMembers", statname, var_b1f473a47e479cc2);
+            foreach (statname, statval in self.squadmemberbufferedstats) {
+                self setplayerdata(level.loadoutsgroup, "squadMembers", statname, statval);
             }
         }
     }
-    foreach (statname, var_b1f473a47e479cc2 in self.bufferedchildstats) {
-        foreach (var_af5410e8aacb5fe8, var_74224fe98d0679d2 in var_b1f473a47e479cc2) {
+    foreach (statname, statval in self.bufferedchildstats) {
+        foreach (childstatname, var_74224fe98d0679d2 in statval) {
             if (statname == "round") {
-                self setplayerdata("common", statname, var_af5410e8aacb5fe8, var_74224fe98d0679d2);
-                setbestscore(var_af5410e8aacb5fe8, var_74224fe98d0679d2);
-            } else if (rankingenabled) {
-                self setplayerdata(level.var_5d69837cf4db0407, statname, var_af5410e8aacb5fe8, var_74224fe98d0679d2);
+                self setplayerdata("common", statname, childstatname, var_74224fe98d0679d2);
+                setbestscore(childstatname, var_74224fe98d0679d2);
+                continue;
+            }
+            if (rankingenabled) {
+                self setplayerdata(level.var_5d69837cf4db0407, statname, childstatname, var_74224fe98d0679d2);
             }
         }
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1134
 // Size: 0x15c
@@ -324,7 +325,7 @@ function writekdhistorystats() {
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 5, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1297
 // Size: 0x1f2
@@ -351,11 +352,11 @@ function incrementrankedreservedhistory(kills, deaths, headshots, accuracy, dama
     self setplayerdata(level.var_5d69837cf4db0407, "damageHistory", 4, damage);
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1490
 // Size: 0x174
-function incrementweaponstat(weaponname, stat, var_a1d4e7d5ef9da660) {
+function incrementweaponstat(weaponname, stat, incvalue) {
     if (iskillstreakweapon(weaponname)) {
         return;
     }
@@ -367,24 +368,24 @@ function incrementweaponstat(weaponname, stat, var_a1d4e7d5ef9da660) {
     }
     if (onlinestatsenabled()) {
         oldval = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", "weaponStats", weaponname, stat);
-        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "weaponStats", weaponname, stat, oldval + var_a1d4e7d5ef9da660);
+        self setplayerdata(level.var_5d69837cf4db0407, "playerStats", "weaponStats", weaponname, stat, oldval + incvalue);
         if (stat == "kills") {
-            foreach (scope in [0:"lifetimeStats", 1:"seasonalStats"]) {
+            foreach (scope in ["lifetimeStats", "seasonalStats"]) {
                 oldval = 0;
                 if (self hasplayerdata(level.var_5d69837cf4db0407, "playerStats", scope, function_f6bad1d33ad22078(), "weaponStats", weaponname, "kills")) {
                     oldval = self getplayerdata(level.var_5d69837cf4db0407, "playerStats", scope, function_f6bad1d33ad22078(), "weaponStats", weaponname, "kills");
                 }
-                self setplayerdata(level.var_5d69837cf4db0407, "playerStats", scope, function_f6bad1d33ad22078(), "weaponStats", weaponname, "kills", oldval + var_a1d4e7d5ef9da660);
+                self setplayerdata(level.var_5d69837cf4db0407, "playerStats", scope, function_f6bad1d33ad22078(), "weaponStats", weaponname, "kills", oldval + incvalue);
             }
         }
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 4, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x160b
 // Size: 0x47
-function incrementattachmentstat(attachmentname, stat, var_a1d4e7d5ef9da660, weapon) {
+function incrementattachmentstat(attachmentname, stat, incvalue, weapon) {
     if (istrue(level.disableweaponstats)) {
         return;
     }
@@ -395,7 +396,7 @@ function incrementattachmentstat(attachmentname, stat, var_a1d4e7d5ef9da660, wea
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1659
 // Size: 0x1fa
@@ -406,8 +407,8 @@ function updateweaponbufferedstats() {
     if (isnullweapon(self.trackingweapon)) {
         return;
     }
-    if (namespace_68e641469fde3fa7::issuperweapon(self.trackingweapon)) {
-        if (!istrue(namespace_85d036cb78063c4a::shouldtracksuperweaponstats(self.trackingweapon))) {
+    if (scripts/mp/utility/weapon::issuperweapon(self.trackingweapon)) {
+        if (!istrue(scripts/mp/supers::shouldtracksuperweaponstats(self.trackingweapon))) {
             return;
         }
     }
@@ -415,44 +416,44 @@ function updateweaponbufferedstats() {
         return;
     }
     weapon = self.trackingweapon;
-    var_fe4ff31502b2826 = undefined;
+    weapstat = undefined;
     if (weapon.isalternate) {
-        var_1439f86640d42e34 = function_7c612ac92ba98dcb(weapon, weapon.underbarrel);
-        if (var_1439f86640d42e34 == "altfire") {
-            var_fe4ff31502b2826 = weapon.underbarrel;
-            perslog_attachmentstats(var_fe4ff31502b2826, weapon);
+        basetype = function_7c612ac92ba98dcb(weapon, weapon.underbarrel);
+        if (basetype == "altfire") {
+            weapstat = weapon.underbarrel;
+            perslog_attachmentstats(weapstat, weapon);
             persclear_stats();
             return;
         }
     }
-    if (!isdefined(var_fe4ff31502b2826)) {
-        var_fe4ff31502b2826 = getweaponrootname(weapon);
+    if (!isdefined(weapstat)) {
+        weapstat = getweaponrootname(weapon);
     }
     /#
-        assertex(isdefined(var_fe4ff31502b2826), "updateWeaponBufferedStats() failed to get weapon name for stats.");
+        assertex(isdefined(weapstat), "updateWeaponBufferedStats() failed to get weapon name for stats.");
     #/
-    if (!iscacprimaryweapon(var_fe4ff31502b2826) && !iscacsecondaryweapon(var_fe4ff31502b2826)) {
+    if (!iscacprimaryweapon(weapstat) && !iscacsecondaryweapon(weapstat)) {
         return;
     }
     variantid = getweaponvariantindex(weapon);
-    persincrement_weaponstats(var_fe4ff31502b2826, variantid);
+    persincrement_weaponstats(weapstat, variantid);
     fullweaponname = getcompleteweaponname(weapon);
-    perslog_weaponstats(var_fe4ff31502b2826, fullweaponname, variantid);
+    perslog_weaponstats(weapstat, fullweaponname, variantid);
     attachments = getweaponattachments(weapon);
-    foreach (var_ff180c307f2bafd3 in attachments) {
-        if (!attachmentlogsstats(var_ff180c307f2bafd3, weapon)) {
+    foreach (attachname in attachments) {
+        if (!attachmentlogsstats(attachname, weapon)) {
             continue;
         }
-        var_1439f86640d42e34 = function_7c612ac92ba98dcb(weapon, var_ff180c307f2bafd3);
-        if (var_1439f86640d42e34 == "altfire") {
+        basetype = function_7c612ac92ba98dcb(weapon, attachname);
+        if (basetype == "altfire") {
             continue;
         }
-        perslog_attachmentstats(var_ff180c307f2bafd3, weapon);
+        perslog_attachmentstats(attachname, weapon);
     }
     persclear_stats();
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x185a
 // Size: 0xbb
@@ -477,7 +478,7 @@ function persclear_stats() {
     self.var_bf617879def40524 = 0;
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x191c
 // Size: 0x10e
@@ -499,184 +500,184 @@ function persincrement_weaponstats(weaponname, variantid) {
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 3, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x1a31
 // Size: 0x78b
 function perslog_weaponstats(weaponname, fullweaponname, variantid) {
     var_7e2c53b0bcf117d9 = spawnstruct();
-    if (function_53c4c53197386572(self.trackingweaponshots, 0) > 0) {
+    if (default_to(self.trackingweaponshots, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "shots";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.trackingweaponshots;
+        var_7e2c53b0bcf117d9.incvalue = self.trackingweaponshots;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.trackingweaponkills, 0) > 0) {
+    if (default_to(self.trackingweaponkills, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "kills";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.trackingweaponkills;
+        var_7e2c53b0bcf117d9.incvalue = self.trackingweaponkills;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_e16d751a51153a7b, 0) > 0) {
+    if (default_to(self.var_e16d751a51153a7b, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "ads_kills";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_e16d751a51153a7b;
+        var_7e2c53b0bcf117d9.incvalue = self.var_e16d751a51153a7b;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_2bf7b072e416002a, 0) > 0) {
+    if (default_to(self.var_2bf7b072e416002a, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "ai_ads_kills";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_2bf7b072e416002a;
+        var_7e2c53b0bcf117d9.incvalue = self.var_2bf7b072e416002a;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_1fe884779e5f4dbe, 0) > 0) {
+    if (default_to(self.var_1fe884779e5f4dbe, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "player_ads_kills";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_1fe884779e5f4dbe;
+        var_7e2c53b0bcf117d9.incvalue = self.var_1fe884779e5f4dbe;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.trackingweaponhits, 0) > 0) {
+    if (default_to(self.trackingweaponhits, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "hits";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.trackingweaponhits;
+        var_7e2c53b0bcf117d9.incvalue = self.trackingweaponhits;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_a00eddcf879bdbc3, 0) > 0) {
+    if (default_to(self.var_a00eddcf879bdbc3, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "ai_hits";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_a00eddcf879bdbc3;
+        var_7e2c53b0bcf117d9.incvalue = self.var_a00eddcf879bdbc3;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_ca6e0d389c0ca0a7, 0) > 0) {
+    if (default_to(self.var_ca6e0d389c0ca0a7, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "player_hits";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_ca6e0d389c0ca0a7;
+        var_7e2c53b0bcf117d9.incvalue = self.var_ca6e0d389c0ca0a7;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.trackingweaponheadshots, 0) > 0) {
+    if (default_to(self.trackingweaponheadshots, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "headshots";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.trackingweaponheadshots;
+        var_7e2c53b0bcf117d9.incvalue = self.trackingweaponheadshots;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_9a2fd6f8771f2e58, 0) > 0) {
+    if (default_to(self.var_9a2fd6f8771f2e58, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "ai_headshots";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_9a2fd6f8771f2e58;
+        var_7e2c53b0bcf117d9.incvalue = self.var_9a2fd6f8771f2e58;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_5fac5778fe3fdc1c, 0) > 0) {
+    if (default_to(self.var_5fac5778fe3fdc1c, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "player_headshots";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_5fac5778fe3fdc1c;
+        var_7e2c53b0bcf117d9.incvalue = self.var_5fac5778fe3fdc1c;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.trackingweapondeaths, 0) > 0) {
+    if (default_to(self.trackingweapondeaths, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "deaths";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.trackingweapondeaths;
+        var_7e2c53b0bcf117d9.incvalue = self.trackingweapondeaths;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_f00517aa8f668932, 0) > 0) {
+    if (default_to(self.var_f00517aa8f668932, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "ai_deaths";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_f00517aa8f668932;
+        var_7e2c53b0bcf117d9.incvalue = self.var_f00517aa8f668932;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_14cec2ba65099256, 0) > 0) {
+    if (default_to(self.var_14cec2ba65099256, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "player_deaths";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_14cec2ba65099256;
+        var_7e2c53b0bcf117d9.incvalue = self.var_14cec2ba65099256;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_883957b1c1ef6745, 0) > 0) {
+    if (default_to(self.var_883957b1c1ef6745, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "damage";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_883957b1c1ef6745;
+        var_7e2c53b0bcf117d9.incvalue = self.var_883957b1c1ef6745;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_7b522bf6f7aeca98, 0) > 0) {
+    if (default_to(self.var_7b522bf6f7aeca98, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "ai_damage";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_7b522bf6f7aeca98;
+        var_7e2c53b0bcf117d9.incvalue = self.var_7b522bf6f7aeca98;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
-    if (function_53c4c53197386572(self.var_bf617879def40524, 0) > 0) {
+    if (default_to(self.var_bf617879def40524, 0) > 0) {
         var_7e2c53b0bcf117d9.weaponname = weaponname;
         var_7e2c53b0bcf117d9.fullweaponname = fullweaponname;
         var_7e2c53b0bcf117d9.statname = "player_damage";
-        var_7e2c53b0bcf117d9.var_a1d4e7d5ef9da660 = self.var_bf617879def40524;
+        var_7e2c53b0bcf117d9.incvalue = self.var_bf617879def40524;
         var_7e2c53b0bcf117d9.variantid = variantid;
         namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_update_weapon_stats", var_7e2c53b0bcf117d9);
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 2, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x21c3
 // Size: 0x1de
-function perslog_attachmentstats(var_ff180c307f2bafd3, weapon) {
-    if (!attachmentlogsstats(var_ff180c307f2bafd3, weapon)) {
+function perslog_attachmentstats(attachname, weapon) {
+    if (!attachmentlogsstats(attachname, weapon)) {
         return;
     }
-    if (self.trackingweaponshots > 0 && var_ff180c307f2bafd3 != "tactical") {
-        incrementattachmentstat(var_ff180c307f2bafd3, "shots", self.trackingweaponshots, weapon);
-        utility::trycall(level.matchdata_logattachmentstat, var_ff180c307f2bafd3, "shots", self.trackingweaponshots, weapon);
+    if (self.trackingweaponshots > 0 && attachname != "tactical") {
+        incrementattachmentstat(attachname, "shots", self.trackingweaponshots, weapon);
+        utility::trycall(level.matchdata_logattachmentstat, attachname, "shots", self.trackingweaponshots, weapon);
     }
-    if (self.trackingweaponkills > 0 && var_ff180c307f2bafd3 != "tactical") {
-        incrementattachmentstat(var_ff180c307f2bafd3, "kills", self.trackingweaponkills, weapon);
-        utility::trycall(level.matchdata_logattachmentstat, var_ff180c307f2bafd3, "kills", self.trackingweaponkills, weapon);
+    if (self.trackingweaponkills > 0 && attachname != "tactical") {
+        incrementattachmentstat(attachname, "kills", self.trackingweaponkills, weapon);
+        utility::trycall(level.matchdata_logattachmentstat, attachname, "kills", self.trackingweaponkills, weapon);
     }
-    if (self.var_e16d751a51153a7b > 0 && var_ff180c307f2bafd3 != "tactical") {
-        utility::trycall(level.matchdata_logattachmentstat, var_ff180c307f2bafd3, "ads_kills", self.var_e16d751a51153a7b, weapon);
+    if (self.var_e16d751a51153a7b > 0 && attachname != "tactical") {
+        utility::trycall(level.matchdata_logattachmentstat, attachname, "ads_kills", self.var_e16d751a51153a7b, weapon);
     }
-    if (self.trackingweaponhits > 0 && var_ff180c307f2bafd3 != "tactical") {
-        incrementattachmentstat(var_ff180c307f2bafd3, "hits", self.trackingweaponhits, weapon);
-        utility::trycall(level.matchdata_logattachmentstat, var_ff180c307f2bafd3, "hits", self.trackingweaponhits, weapon);
+    if (self.trackingweaponhits > 0 && attachname != "tactical") {
+        incrementattachmentstat(attachname, "hits", self.trackingweaponhits, weapon);
+        utility::trycall(level.matchdata_logattachmentstat, attachname, "hits", self.trackingweaponhits, weapon);
     }
-    if (self.trackingweaponheadshots > 0 && var_ff180c307f2bafd3 != "tactical") {
-        incrementattachmentstat(var_ff180c307f2bafd3, "headShots", self.trackingweaponheadshots, weapon);
-        utility::trycall(level.matchdata_logattachmentstat, var_ff180c307f2bafd3, "headShots", self.trackingweaponheadshots, weapon);
+    if (self.trackingweaponheadshots > 0 && attachname != "tactical") {
+        incrementattachmentstat(attachname, "headShots", self.trackingweaponheadshots, weapon);
+        utility::trycall(level.matchdata_logattachmentstat, attachname, "headShots", self.trackingweaponheadshots, weapon);
     }
     if (self.trackingweapondeaths > 0) {
-        incrementattachmentstat(var_ff180c307f2bafd3, "deaths", self.trackingweapondeaths, weapon);
-        utility::trycall(level.matchdata_logattachmentstat, var_ff180c307f2bafd3, "deaths", self.trackingweapondeaths, weapon);
+        incrementattachmentstat(attachname, "deaths", self.trackingweapondeaths, weapon);
+        utility::trycall(level.matchdata_logattachmentstat, attachname, "deaths", self.trackingweapondeaths, weapon);
     }
 }
 
-// Namespace persistence/namespace_2685ec368e022695
+// Namespace persistence / scripts/mp/persistence
 // Params 0, eflags: 0x2 linked
 // Checksum 0x0, Offset: 0x23a8
 // Size: 0x23b
@@ -688,13 +689,13 @@ function uploadglobalstatcounters() {
     totalkills = 0;
     totaldeaths = 0;
     var_74ba9cc277cbe543 = 0;
-    var_6e9e8acae1c9b574 = 0;
-    var_43390b25454afa28 = 0;
+    totalheadshots = 0;
+    totalsuicides = 0;
     totaltimeplayed = 0;
     foreach (player in level.players) {
         totaltimeplayed = totaltimeplayed + player.timeplayed["total"];
     }
-    dlog_recordevent("dlog_event_global_minutes", [0:"increment", 1:int(totaltimeplayed / 60)]);
+    dlog_recordevent("dlog_event_global_minutes", ["increment", int(totaltimeplayed / 60)]);
     if (isroundbased() && !waslastround()) {
         return;
     }
@@ -703,16 +704,16 @@ function uploadglobalstatcounters() {
         totalkills = totalkills + player.kills;
         totaldeaths = totaldeaths + player.deaths;
         var_74ba9cc277cbe543 = var_74ba9cc277cbe543 + player.assists;
-        var_6e9e8acae1c9b574 = var_6e9e8acae1c9b574 + player namespace_3c5a4254f2b957ea::getpersstat("headshots");
-        var_43390b25454afa28 = var_43390b25454afa28 + player namespace_3c5a4254f2b957ea::getpersstat("suicides");
+        totalheadshots = totalheadshots + player scripts/mp/utility/stats::getpersstat("headshots");
+        totalsuicides = totalsuicides + player scripts/mp/utility/stats::getpersstat("suicides");
     }
-    dlog_recordevent("dlog_event_global_kills", [0:"increment", 1:totalkills]);
-    dlog_recordevent("dlog_event_global_deaths", [0:"increment", 1:totaldeaths]);
-    dlog_recordevent("dlog_event_global_headshots", [0:"increment", 1:var_6e9e8acae1c9b574]);
-    dlog_recordevent("dlog_event_global_suicides", [0:"increment", 1:var_43390b25454afa28]);
-    dlog_recordevent("dlog_event_global_games", [0:"increment", 1:1]);
+    dlog_recordevent("dlog_event_global_kills", ["increment", totalkills]);
+    dlog_recordevent("dlog_event_global_deaths", ["increment", totaldeaths]);
+    dlog_recordevent("dlog_event_global_headshots", ["increment", totalheadshots]);
+    dlog_recordevent("dlog_event_global_suicides", ["increment", totalsuicides]);
+    dlog_recordevent("dlog_event_global_games", ["increment", 1]);
     if (!isdefined(level.assists_disabled)) {
-        dlog_recordevent("dlog_event_global_assists", [0:"increment", 1:var_74ba9cc277cbe543]);
+        dlog_recordevent("dlog_event_global_assists", ["increment", var_74ba9cc277cbe543]);
     }
 }
 

@@ -1,0 +1,15 @@
+#using scripts\mp\utility\game.gsc;
+#using script_38b3797023002a4a;
+#using scripts\mp\gamelogic.gsc;
+#using scripts\mp\utility\teams.gsc;
+
+#namespace warrior_lts;
+
+// Namespace warrior_lts / namespace_50d2fd0b3bec9c66
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xb7
+// Size: 0xf
+function function_22096e1dcb46edfa() {
+    thread function_492b4dec632917ec("warrior_lts");
+}
+

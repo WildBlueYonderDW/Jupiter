@@ -1,0 +1,62 @@
+#namespace debug;
+
+/#
+
+    // Namespace debug / scripts\mp\utility\debug
+    // Params 5, eflags: 0x0
+    // Checksum 0x0, Offset: 0x68
+    // Size: 0xa5
+    function drawent(ent, radius, forwardlen, drawtimeseconds, color) {
+        drawframes = int(drawtimeseconds / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
+            sphere(ent.origin, radius, color);
+            line(ent.origin, ent.origin + anglestoforward(ent.angles) * forwardlen, color);
+            waitframe();
+        }
+    }
+
+    // Namespace debug / scripts\mp\utility\debug
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x0, Offset: 0x115
+    // Size: 0x63
+    function drawline(start, end, drawtimeseconds, color) {
+        drawframes = int(drawtimeseconds / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
+            line(start, end, color);
+            waitframe();
+        }
+    }
+
+    // Namespace debug / scripts\mp\utility\debug
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x0, Offset: 0x180
+    // Size: 0x63
+    function drawsphere(origin, radius, drawtimeseconds, color) {
+        drawframes = int(drawtimeseconds / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
+            sphere(origin, radius, color);
+            waitframe();
+        }
+    }
+
+    // Namespace debug / scripts\mp\utility\debug
+    // Params 4, eflags: 0x2 linked
+    // Checksum 0x0, Offset: 0x1eb
+    // Size: 0xf4
+    function drawangles(origin, angles, var_3e6845817408f87e, scalar) {
+        if (!isdefined(scalar)) {
+            scalar = 1;
+        }
+        drawframes = int(var_3e6845817408f87e / level.framedurationseconds);
+        for (frame = 0; frame < drawframes; frame++) {
+            fwd = anglestoforward(angles);
+            right = anglestoright(angles);
+            up = anglestoup(angles);
+            line(origin, origin + fwd * 12 * scalar, (1, 0, 0));
+            line(origin, origin + right * 12 * scalar, (0, 1, 0));
+            line(origin, origin + up * 12 * scalar, (0, 0, 1));
+            waitframe();
+        }
+    }
+
+#/

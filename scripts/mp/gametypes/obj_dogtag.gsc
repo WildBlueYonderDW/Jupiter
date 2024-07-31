@@ -114,7 +114,7 @@ function spawndogtags(victim, attacker, victimnotification, meansofdeath) {
     } else {
         visuals[0] = spawn("script_model", (0, 0, 0));
         visuals[1] = spawn("script_model", (0, 0, 0));
-        if (getdvar(@"hash_e65e9a96eb2ff62b", "conf") == "conf_v") {
+        if (getdvar(@"ui_gametype", "conf") == "conf_v") {
             visuals[0] setmodel("jup_accessory_compound_vial_01");
             visuals[1] setmodel("jup_accessory_compound_vial_01");
             visuals[0] hudoutlineenable("outline_nodepth_green");
@@ -646,7 +646,7 @@ function function_4b5bf3a3091d471e() {
     if (getdvarint(@"hash_669ae0558e9a0a64", 0) == 1) {
         return (0, 0, 36);
     }
-    if (getdvar(@"hash_e65e9a96eb2ff62b", "conf") == "conf_v") {
+    if (getdvar(@"ui_gametype", "conf") == "conf_v") {
         return (0, 0, 20);
     }
     if (level.var_642e0047d274650a) {

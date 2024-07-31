@@ -95,7 +95,7 @@ function bot_arena_think() {
     self.var_51e08ee04ef3bdbc = 0;
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -126,7 +126,7 @@ function arena_bot_think_seek_dropped_weapons() {
     var_7ba262cc7ab5e283 = "throwingknife_mp";
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -431,7 +431,7 @@ function bot_dom_think() {
     self botsetflag("use_obj_path_style", 1);
     for (;;) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

@@ -1,0 +1,24 @@
+{
+    "#hash_12db460b6bf36594": "",
+    "#hash_a1a9be5dd973583d": "",
+    "#hash_da490276f40d2a1c": {
+        "#hash_bd6189272603bb1c": "",
+        "#hash_24d4ba21d4c1cb81": "#",
+        "#hash_ac2ac65ebc86bcbc": "",
+        "#hash_1ffffcadf503cb61": "#"
+    },
+    "#elementpartname": "",
+    "#hash_be816838784d6db": "",
+    "#elementstringlist": {
+        "#heldreference": "&",
+        "#securedreference": "&",
+        "#protectreference": "&",
+        "#locatereference": "&"
+    },
+    "#elementid": "nuk",
+    "#hash_d10723bdc6d74fa0": "",
+    "#elementicon": "hud_icon_objective_elite_radioactive",
+    "#trackernumber": 0,
+    "#elementcontainer": "",
+    "#hash_f391bf01090b356c": ""
+}

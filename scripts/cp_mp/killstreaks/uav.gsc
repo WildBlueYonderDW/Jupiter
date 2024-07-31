@@ -835,7 +835,7 @@ function function_dc407442aceae01e(enemyaffected) {
 // Checksum 0x0, Offset: 0x2d84
 // Size: 0x82
 function function_5ec24d236512fd7a(team) {
-    forcedradar = getdvarint(@"hash_f16ba8db72f34fc3", 0);
+    forcedradar = getdvarint(@"scr_game_forceuav", 0);
     if (forcedradar) {
         return forcedradar;
     }
@@ -1505,7 +1505,7 @@ function function_c11936b9c6c3a076(player, waittime) {
     if (isdefined(waittime)) {
         wait waittime;
     }
-    forceradarstrength = getdvarint(@"hash_f16ba8db72f34fc3");
+    forceradarstrength = getdvarint(@"scr_game_forceuav");
     radartype = "normal_radar";
     activeuav = 1;
     activeadvanceduavs = 0;

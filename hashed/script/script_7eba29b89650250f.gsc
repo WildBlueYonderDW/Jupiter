@@ -32,7 +32,7 @@ function main() {
     level.kill_border_triggers = getentarray("kill_border_trigger", "targetname");
     namespace_5633828963c62e57::function_57d6a393b90824dc(350);
     scripts\mp\compass::setupminimap("compass_map_mp_farm_18");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
@@ -76,7 +76,7 @@ function play_movie(bink) {
         if (flag("nuke_bink_done")) {
             break;
         }
-        setdvar(@"hash_d3ee5a6578fe61de", "0");
+        setdvar(@"bg_cinematicFullscreen", "0");
         playcinematicforalllooping(bink);
         wait 3;
     }

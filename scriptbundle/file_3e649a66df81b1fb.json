@@ -1,0 +1,29 @@
+{
+    "#id": 45,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_battlemap_sector_reward_id"
+        },
+        {
+            "#key": "iw9_battlemap_sector_ae_id"
+        },
+        {
+            "#key": "iw9_battlemap_sector_spend_max"
+        },
+        {
+            "#key": "iw9_season"
+        },
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_battlemap_batch_spend"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_f3e98ba9ce14fbaa",
+    "#sharedname": "#hash_7cb997d167b8a302"
+}

@@ -15,7 +15,7 @@
 // Size: 0xec
 function init() {
     level.lootitems = [];
-    SetDvars();
+    function_5e14a7d3ebf537a3();
     level.var_82b5ecc31717c4d4 = getdvarint(@"hash_fba804ece774767a", 0) == 1;
     level.conf_fx["vanish"] = loadfx("vfx/core/impacts/small_snowhit");
     level.var_78a0087bea386662 = spawnstruct();
@@ -31,7 +31,7 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ca
 // Size: 0x52
-function SetDvars() {
+function function_5e14a7d3ebf537a3() {
     setdvarifuninitialized(@"hash_74822a7ee2049480", 0.25);
     setdvarifuninitialized(@"hash_ce850e1d9a8797f5", 0.25);
     setdvarifuninitialized(@"hash_8fae92f7f71f88d2", 0.25);

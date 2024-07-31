@@ -1,0 +1,597 @@
+{
+    "#hash_424335f05309b940": "iw9_battlemap_sector_observer_s1",
+    "#season": 1,
+    "#hash_1fd45459f19f4c74": "",
+    "#hash_dfd5402800a91341": "bm_season1_tokengrind",
+    "#hash_fc0e6edd6cbc9f8e": "icon_branding_season01",
+    "#hash_41195f1bce677619": [
+    ],
+    "#hash_226256ed1c796856": 9971,
+    "#hash_59884f98d7c14d1e": "",
+    "#sectors": [
+        {
+            "#hash_9bd6519bdebe479f": [
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector00",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector02"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector03"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 2,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 3,
+                "#down": 0
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector01",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector01"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector03"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector04"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 4,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 3,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector02",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector01"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector02"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector05"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector06"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 8,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 2,
+                "#hash_48e2454833185779": 6,
+                "#hash_69ca317ec8157428": 1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 5,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector03",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector02"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector07"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector08"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 7,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 8,
+                "#down": 2
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector04",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector03"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector06"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector09"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector10"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 9,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 10,
+                "#hash_69ca317ec8157428": 3,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 6
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector05",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector03"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector05"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector10"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 5,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 3,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 10,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector06",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector04"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector08"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector11"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 8,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 11,
+                "#down": 4
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector07",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector04"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector07"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector09"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector11"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 11,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 7,
+                "#hash_48e2454833185779": 9,
+                "#hash_69ca317ec8157428": 4,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 3
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector08",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector05"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector08"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector12"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 14,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 8,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 12,
+                "#down": 5
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector09",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector05"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector06"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector13"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 12,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 5,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 6,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 13,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector10",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector07"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector08"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector14"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 7,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 14,
+                "#down": 8
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector11",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector09"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector15"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector16"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 15,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 9,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 16,
+                "#down": 10
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector12",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector10"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector17"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 16,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 10,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 17,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector13",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector11"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector15"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector18"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 15,
+                "#hash_69ca317ec8157428": 11,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 18,
+                "#down": 9
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector14",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector12"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector14"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector16"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector18"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector19"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 18,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 14,
+                "#hash_48e2454833185779": 16,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 19,
+                "#down": 12
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector15",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector12"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector15"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector19"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector20"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 19,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 15,
+                "#hash_48e2454833185779": 20,
+                "#hash_69ca317ec8157428": 12,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 21,
+                "#down": 13
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector16",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector13"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector20"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 20,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 13,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector17",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector14"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector15"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector19"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 19,
+                "#hash_69ca317ec8157428": 14,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 15
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector18",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector15"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector16"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector18"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 18,
+                "#hash_48e2454833185779": 21,
+                "#hash_69ca317ec8157428": 15,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 21,
+                "#down": 16
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector19",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector16"
+                },
+                {
+                    "#hash_faac756f76d3affe": "bm_season1_sector17"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 21,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 16,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 17
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector20",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": 19,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 19,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 20
+            },
+            "#hash_faac756f76d3affe": "bm_season1_sector21",
+            "#hash_26aba497e74300eb": -1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        }
+    ],
+    "#hash_a30a3eb1b99597fd": "",
+    "#hash_2799561e804e2d29": 0
+}

@@ -99,12 +99,12 @@ function main() {
 // Size: 0xf8
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_d1d5e42ea50e97bd", getmatchrulesdata("ctfData", "winRule"));
-    setdynamicdvar(@"hash_a2d431c4aaa9315c", getmatchrulesdata("ctfData", "captureCondition"));
-    setdynamicdvar(@"hash_5cec825b941e1a68", getmatchrulesdata("ctfData", "returnTime"));
-    setdynamicdvar(@"hash_f4a43cc54d1c9b3a", getmatchrulesdata("carryData", "showEnemyCarrier"));
-    setdynamicdvar(@"hash_58c0e8ca6390c725", getmatchrulesdata("carryData", "idleResetTime"));
-    setdynamicdvar(@"hash_97ede3296a3d49d2", getmatchrulesdata("carryData", "pickupTime"));
+    setdynamicdvar(@"scr_ctf_winrule", getmatchrulesdata("ctfData", "winRule"));
+    setdynamicdvar(@"scr_ctf_capturecondition", getmatchrulesdata("ctfData", "captureCondition"));
+    setdynamicdvar(@"scr_ctf_returntime", getmatchrulesdata("ctfData", "returnTime"));
+    setdynamicdvar(@"scr_ctf_showenemycarrier", getmatchrulesdata("carryData", "showEnemyCarrier"));
+    setdynamicdvar(@"scr_ctf_idleresettime", getmatchrulesdata("carryData", "idleResetTime"));
+    setdynamicdvar(@"scr_ctf_pickuptime", getmatchrulesdata("carryData", "pickupTime"));
     setdynamicdvar(@"hash_82f42dfd88cbacad", getmatchrulesdata("carryData", "manualDropEnabled"));
     setdynamicdvar(@"hash_95c5d19271613c1f", 0);
     registerhalftimedvar("ctf", 0);
@@ -142,11 +142,11 @@ function onstartgametype() {
         game["switchedsides"] = 0;
     }
     if (inovertime()) {
-        setdvar(@"hash_8ecb43b0c41972de", 0);
+        setdvar(@"ui_override_halftime", 0);
     } else if (game["switchedsides"]) {
-        setdvar(@"hash_8ecb43b0c41972de", 2);
+        setdvar(@"ui_override_halftime", 2);
     } else {
-        setdvar(@"hash_8ecb43b0c41972de", 1);
+        setdvar(@"ui_override_halftime", 1);
     }
     if (!isdefined(game["original_defenders"])) {
         game["original_defenders"] = game["defenders"];

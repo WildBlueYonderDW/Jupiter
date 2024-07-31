@@ -1,0 +1,14 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#hash_a3db0f73eed70c99": 1,
+    "#pingvo": "#hash_b22fb671a7077a22",
+    "#hash_c03c4ef51659ba4c": 1,
+    "#hash_359e971d09addafc": "#hash_c72336194b518b35",
+    "#titlestring": "&JUP_OB_OBJECTIVES/BIGBOUNTY_TITLE",
+    "#descstring": "&JUP_OB_OBJECTIVES/BIGBOUNTY_DESC",
+    "#type": "activitystarter",
+    "#subtype": "bigbounty",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#icon": "jup_ui_icon_contract_big_bounty",
+    "#scriptable": "%hash_220c4095f3a5d3ef"
+}

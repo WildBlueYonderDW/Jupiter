@@ -1,0 +1,114 @@
+{
+    "#hash_f0570e644ddd76ff": [
+        {
+            "#event": "jup_publicevent_traincircle",
+            "#weight": 0
+        }
+    ],
+    "#hash_66d81af498488598": 1,
+    "#hash_68f213b65ed34b12": [
+    ],
+    "#hash_bff1bf1b8c888d19": 0,
+    "#hash_4d41fcdf331d7c7": 0,
+    "#hash_9a340a5b7388b5c6": "0 0 0 0 0 0",
+    "#hash_19514771c45f18e3": 8,
+    "#hash_47dc5a64efcc13d8": "0 1 0.5 0.5 0.5 0.75 1 0",
+    "#hash_b57c449da2d093c3": [
+        {
+            "#event": "iw9_publicevent_firesale",
+            "#weight": 1,
+            "#circleweights": "0 0 10 10 10 0 0 0",
+            "#maxtimes": 2
+        },
+        {
+            "#event": "iw9_publicevent_restock",
+            "#weight": 1,
+            "#circleweights": "0 0 10 0 10 0 10 0",
+            "#maxtimes": 2
+        },
+        {
+            "#event": "iw9_publicevent_jailbreak",
+            "#weight": 1,
+            "#circleweights": "0 0 0 0 10 10 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "iw9_publicevent_lootcratedrop",
+            "#weight": 0,
+            "#circleweights": "0.5 0 0.4 0 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "jup_publicevent_loadoutdrop",
+            "#weight": 1,
+            "#circleweights": "0 0 0 0 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "iw9_publicevent_auavscan",
+            "#weight": 1,
+            "#circleweights": "0 0 0 0 0 0.15 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "jup_publicevent_stronghold",
+            "#weight": 1,
+            "#circleweights": "0.375 0 0 0 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "jup_publicevent_flybuy",
+            "#weight": 1,
+            "#circleweights": "0 0 0 0.2 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "jup_publicevent_heavyarmor",
+            "#weight": 0,
+            "#circleweights": "0 0 0 0 0 0 0 0",
+            "#maxtimes": 0
+        },
+        {
+            "#event": "iw9_publicevent_doublexp_crate",
+            "#weight": 0,
+            "#circleweights": "0 0 0 0 0 0 0 0",
+            "#maxtimes": 0
+        },
+        {
+            "#event": "jup_publicevent_roguesignal",
+            "#weight": 1,
+            "#circleweights": "0 0 0.2 0.2 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "jup_publicevent_traincircle",
+            "#weight": 1,
+            "#circleweights": "0 0 0 0 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#event": "iw9_publicevent_contractor",
+            "#weight": 1,
+            "#circleweights": "0.1 0 0.4 0.4 0 0 0 0",
+            "#maxtimes": 1
+        },
+        {
+            "#weight": 1,
+            "#circleweights": "0 0 0 0 0 0 0 0",
+            "#maxtimes": 0
+        },
+        {
+            "#event": "jup_publicevent_bountyroyale",
+            "#weight": 1,
+            "#circleweights": "0 0 0 0 0 0 0 0",
+            "#maxtimes": 0
+        },
+        {
+            "#event": "iw9_publicevent_dataheist",
+            "#weight": 1,
+            "#circleweights": "0 1 0 0 0 0 0 0",
+            "#maxtimes": 1
+        }
+    ],
+    "#initialdelay": 5
+}

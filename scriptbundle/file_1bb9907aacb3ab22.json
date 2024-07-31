@@ -1,0 +1,193 @@
+{
+    "#raritydef": "%hash_36f23a5bf7d635bb",
+    "#pingvo": "#hash_f0b69038ddb805b5",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 2,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/SN_MROMEO",
+    "#worldmodel": "weapon_wm_sn_alpha50_brprop_nophys",
+    "#rarity": 1,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "fourxtherm01"
+                },
+                {
+                    "#attachment": "fourxtherm02"
+                },
+                {
+                    "#attachment": "fourxtherm03"
+                },
+                {
+                    "#attachment": "fourxtherm04"
+                },
+                {
+                    "#attachment": "hybrid02"
+                },
+                {
+                    "#attachment": "hybrid03"
+                },
+                {
+                    "#attachment": "hybrid05_le_tall"
+                },
+                {
+                    "#attachment": "hybrid06"
+                },
+                {
+                    "#attachment": "hybridrange01"
+                },
+                {
+                    "#attachment": "hybridtherm01"
+                },
+                {
+                    "#attachment": "hybridtherm02_le_tall"
+                },
+                {
+                    "#attachment": "arscope01"
+                },
+                {
+                    "#attachment": "arscope02"
+                },
+                {
+                    "#attachment": "arscope_vz01"
+                },
+                {
+                    "#attachment": "arscope_vz02"
+                },
+                {
+                    "#attachment": "arscope_nvgvz01"
+                },
+                {
+                    "#attachment": "arscope_therm01"
+                },
+                {
+                    "#attachment": "hybridscope_ar01"
+                },
+                {
+                    "#attachment": "dmscope01"
+                },
+                {
+                    "#attachment": "dmscope02"
+                },
+                {
+                    "#attachment": "dmscope_vz01"
+                },
+                {
+                    "#attachment": "dmscope_vz02"
+                },
+                {
+                    "#attachment": "dmscope_therm01"
+                },
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "fourx02"
+                },
+                {
+                    "#attachment": "fourx01"
+                },
+                {
+                    "#attachment": "fourx06"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "bar_sn_long_p21"
+                },
+                {
+                    "#attachment": "bar_sn_short_p21"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#slot": "backpiece",
+            "#includeall": 1
+        },
+        {
+            "#slot": "magazine",
+            "#includeall": 1
+        },
+        {
+            "#slot": "muzzle"
+        },
+        {
+            "#slot": "reargrip",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "bipod01"
+                },
+                {
+                    "#attachment": "bipod02"
+                },
+                {
+                    "#attachment": "bipod03"
+                }
+            ],
+            "#slot": "trigger",
+            "#includeall": 1
+        },
+        {
+            "#slot": "extra",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "ammo_338nm_ap"
+                },
+                {
+                    "#attachment": "ammo_338nm_db"
+                },
+                {
+                    "#attachment": "ammo_338nm_fr"
+                },
+                {
+                    "#attachment": "ammo_338nm_hp"
+                },
+                {
+                    "#attachment": "ammo_338nm_hv"
+                },
+                {
+                    "#attachment": "ammo_338nm_op"
+                }
+            ],
+            "#slot": "modifier",
+            "#includeall": 1
+        }
+    ],
+    "#descstring": "&WEAPON/SN_MROMEO",
+    "#ref": "iw9_sn_mromeo",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "sn",
+    "#baseweapon": "iw9_sn_mromeo_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_sn_mromeo",
+    "#scriptable": "%hash_14ed1159673df1f1",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SN_BOLT"
+}

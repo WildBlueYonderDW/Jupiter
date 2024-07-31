@@ -62,7 +62,7 @@ function function_e85a33353200a325() {
     foreach (team in level.teamnamelist) {
         level.requiredplayercount[team] = 0;
     }
-    level.prematchperiod = getdvarint(@"hash_c653d32c30815d2b", 60);
+    level.prematchperiod = getdvarint(@"scr_game_graceperiod", 60);
     infilduration = 15.0333;
     level.matchcountdowntime = infilduration + level.var_eb7998aaa13bd57 + getdvarint(@"hash_7061556e5a6fcbc7", 1);
     level.prematchperiodend = infilduration + level.var_eb7998aaa13bd57 + getdvarint(@"hash_7061556e5a6fcbc7", 1);

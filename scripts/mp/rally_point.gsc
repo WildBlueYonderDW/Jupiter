@@ -31,7 +31,7 @@ function makerallypoint(object) {
     }
     object.israllypoint = 1;
     object.registeredrallypointplayers = [];
-    object.autorespawntime = getdvarint(@"hash_546d8a10bb4e83de");
+    object.autorespawntime = getdvarint(@"scr_player_lastStandTimer");
     if (!isdefined(level.rallypoints)) {
         level.rallypoints = [];
     }

@@ -1,0 +1,31 @@
+{
+    "#hash_3a63a007eddc1215": 0,
+    "#hash_cf0d15e5f0eb2107": 0,
+    "#hash_18b36fb35735d10c": "",
+    "#hash_840bdd190d829b1": [
+        {
+            "#hash_a378feb9e48528f8": "jup_bm_season06_reward096"
+        },
+        {
+            "#hash_a378feb9e48528f8": "jup_bm_season06_reward097"
+        },
+        {
+            "#hash_a378feb9e48528f8": "jup_bm_season06_reward098"
+        },
+        {
+            "#hash_a378feb9e48528f8": "jup_bm_season06_reward099"
+        },
+        {
+            "#hash_a378feb9e48528f8": "jup_bm_season06_reward100"
+        }
+    ],
+    "#hash_1f62e3530328d927": 1,
+    "#hash_5c833c3085be55b1": "bp_a20_mask_jup",
+    "#hash_143794541aa7078c": [
+    ],
+    "#type": "Base",
+    "#border": "bp_a20_border_jup",
+    "#hash_54b329fdfc565502": 29708,
+    "#hash_2bddd6b03ee2a29b": "bp_a20_ray_jup",
+    "#hash_8476e80ef26688f7": "None"
+}

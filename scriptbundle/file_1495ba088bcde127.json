@@ -1,0 +1,39 @@
+{
+    "#hash_c7869d0bac81698c": "",
+    "#hash_3157f395d3232adf": "",
+    "#hash_bc738540dd23fe15": [
+        {
+            "#hash_6c79abbdb334433": [
+            ],
+            "#moderef": "CERBERUS_REVEAL_VAULT",
+            "#hash_de3845efe782a9ab": "",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_reveal_vault",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_next_cod_vault_edition_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "",
+            "#modename": "&"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+            ],
+            "#moderef": "CERBERUS_REVEAL_STANDARD",
+            "#hash_de3845efe782a9ab": "",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_next_cod_standard_edition_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "",
+            "#modename": "&"
+        }
+    ],
+    "#hash_d0b3919dd53932b2": "T10SP.MenuHighlight",
+    "#hash_c3720967a7dd8d3c": "@hash_9c4506bf1a93e4bd",
+    "#hash_cba8dd786b0d6e40": "next_cod_reveal_background",
+    "#gametitle": "&MENU/STORE_CAT_GAME",
+    "#hash_376d1cab867aa95c": "",
+    "#hash_2da2279eef0c4d40": "",
+    "#hash_ce11ea145891ed24": "REVEAL"
+}

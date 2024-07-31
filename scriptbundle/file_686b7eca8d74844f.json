@@ -1,0 +1,54 @@
+{
+    "#elements": [
+        {
+            "#id": 1,
+            "#value": "",
+            "#name": "#hash_f6d9ab890a8d20d2",
+            "#sharedname": "#hash_d95cc210940c8c32"
+        },
+        {
+            "#id": 2,
+            "#value": "",
+            "#name": "#hash_3afd0bf6cfdfdeb4",
+            "#sharedname": "#hash_52fd4a8354c04514"
+        },
+        {
+            "#id": 3,
+            "#value": "",
+            "#name": "#hash_624e0af6551b1d01",
+            "#sharedname": "#hash_7a4e4982d9fb8361"
+        },
+        {
+            "#id": 4,
+            "#value": "",
+            "#name": "#hash_dad0cd562136f104",
+            "#sharedname": "#hash_4cf71176d6df29e4"
+        },
+        {
+            "#id": 5,
+            "#value": "",
+            "#name": "#hash_a6f635f67bcf8b12",
+            "#sharedname": "#hash_c25d74830394cd72"
+        },
+        {
+            "#id": 6,
+            "#value": "",
+            "#name": "#hash_8c7254e5a8fd093b",
+            "#sharedname": "#hash_d52c387f3dd4c59b"
+        },
+        {
+            "#id": 7,
+            "#value": "",
+            "#name": "#hash_9f072ad606c5b990",
+            "#sharedname": "#hash_c8cb911dd900a070"
+        },
+        {
+            "#id": 8,
+            "#value": "",
+            "#name": "#hash_49815bc65dbd1dc1",
+            "#sharedname": "#hash_6d8b0c31a3aa6b21"
+        }
+    ],
+    "#name": "#hash_b90b175140ef74cb",
+    "#sharedname": "#weaponclass"
+}

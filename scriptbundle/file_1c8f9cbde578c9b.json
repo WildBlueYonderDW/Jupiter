@@ -1,0 +1,57 @@
+{
+    "#id": 91,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#enemy_player",
+            "#sharedname": "#enemy_player"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_b7d4384f34a1807f",
+            "#sharedname": "#hash_b7d4384f34a1807f"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_e57057f8c389d76",
+            "#sharedname": "#hash_e57057f8c389d76"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#pc_cache",
+            "#sharedname": "#pc_cache"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#supply_drop",
+            "#sharedname": "#supply_drop"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_8f2ebe6038c7957d",
+            "#sharedname": "#hash_8f2ebe6038c7957d"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_bc50426fe5f0eab1",
+            "#sharedname": "#hash_bc50426fe5f0eab1"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#weapon_locker",
+            "#sharedname": "#weapon_locker"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#duffel_bag",
+            "#sharedname": "#duffel_bag"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#cash_register",
+            "#sharedname": "#cash_register"
+        }
+    ],
+    "#name": "#hash_b58d6cbd32072825",
+    "#sharedname": "#loot_source"
+}

@@ -737,7 +737,7 @@ function function_cf193b9f9be4558a() {
 function function_e11ba21269ccd5aa() {
     self endon("death");
     self endon("missile_stuck");
-    hideduration = getdvarfloat(@"hash_64483ec1fd3d3c77", 0);
+    hideduration = getdvarfloat(@"scr_trophy_proj_hide_duration", 0);
     self setscriptablepartstate("visibility", "hide", 0);
     wait hideduration;
     self setscriptablepartstate("visibility", "show", 0);

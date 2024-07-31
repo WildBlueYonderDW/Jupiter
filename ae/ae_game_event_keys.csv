@@ -27,10 +27,10 @@
 10,iw9_leagueplay_ladder_penalty,number,
 11,iw9_kill_amount,number,
 11,iw9_leagueplay_sr_penalty,number,
-12,iw9_kill_bitfield1,bitfield,headshot=0|victimsprinting=1|laststand=10|victimlaststand=11|recondroneexplosive=12|quickscope=13|weaponswap=14|backfire=15|melee=16|execution=17|lastbullet=18|buzzkill=19|ads=2|1shot1kill=20|enemystunned=21|enemyinsmoke=22|invehicle=23|recentreload=24|enemywithuav=25|lowhealth=26|usingsecondaryweapon=27|equipmentimpact=28|fire=29|hipfire=3|victiminvehicle=30|backstab=31|slide=32|firstblood=33|grenadestuck=34|assaulting=35|defending=36|cooking=37|comeback=38|posthumous=39|longrange=4|revenge=40|verylongrange=41|kingslayer=42|vehicleexplosive=43|avenger=44|nemesis=45|quadfeed=46|crush=47|killenemyteam=48|defender=49|recentweaponpickup=5|holdbreath=50|gunbutt=51|swimming=52|withoutnvgs=53|choppergunner=54|vehiclelean=55|vehiclesurf=56|infastvehicle=57|ontrain=58|wearingarmor=59|mounted=6|fullarmor=60|victiminstronghold=61|victiminlockedstronghold=62|thirdperson=63|crouch=7|prone=8|shortrange=9
+12,iw9_kill_bitfield1,bitfield,<invalid>
 12,iw9_leagueplay_event_season,number,
 13,iw9_disconnect_reason,number,
-13,iw9_enemy_type_bitfield,bitfield,player=0|killstreak=1|suicidebomber=10|elite=11|soldier=12|civilian=13|combatant=14|tier1=15|tier2=16|tier3=17|veh9_jltv_mg=18|armored=19|agent=2|elim_target=20|boss=21|juggernaut_boss=22|chemist_boss=23|chopper_boss=24|reinforcement_chopper=25|ai_vehicle=26|enemy_vehicle=27|atv=28|light_tank=29|aerial=3|little_bird=30|veh9_acv_6x6=31|veh9_apc_8x8=32|veh9_blima=33|veh9_chopped_pickup=34|veh9_cougar=35|veh9_hummer=36|veh9_jltv=37|veh9_mil_cargo_truck=38|veh9_overland_2016=39|ground=4|veh9_palfa=40|veh9_patrol_boat=41|veh9_pickup_2014=42|veh9_pwc=43|veh9_rhib=44|veh9_sedan_hatchback_1985=45|veh9_suv_1996=46|veh9_techo_rebel_armor=47|veh9_utv=48|wheelson_boss=49|support=5|velikan_boss=50|trapper_boss=51|aq=52|shadow_company=53|cartel=54|pyro_boss=55|scav_boss=56|train_safe_heli=57|firebug=58|sniper_boss=59|vehicle=6|rusher_boss=60|getaway_boss=61|russian=62|rat=63|equipment=7|juggernaut=8|riotshield=9
+13,iw9_enemy_type_bitfield,bitfield,<invalid>
 13,iw9_leagueplay_on_ladder,bool,
 14,iw9_kill_operator_id,itemID,
 14,iw9_leagueplay_current_top250_placement,number,
@@ -104,7 +104,7 @@
 69,iw9_zm_round_number,number,
 70,iw9_zm_status_effect_bitfield,bitfield,brain_rot=0|stun=1|slow=2|ignite=3
 71,iw9_squad_event,bool,
-72,iw9_location_bitfield,bitfield,mp_saba=0|mp_sealion=1|saba_oilfield=10|saba_caves=11|saba_fort=12|saba_observatory=13|saba_wartorn=14|saba_marshland=15|saba_oldtwn=16|saba_mtntwn=17|saba_exhume=18|saba_cemetery=19|mp_bio_lab=2|saba_hydro=20|sira_mall=21|saba_suburbs_01=22|saba_suburbs_02=23|saba_suburbs_03=24|saba_suburbs_04=25|saba_suburbs_05=26|saba_suburbs_06=27|saba_suburbs_07=28|saba_suburbs_08=29|saba_airport=3|saba_suburbs_09=30|saba_suburbs_10=31|saba_suburbs_11=32|saba_suburbs_12=33|saba_suburbs_13=34|saba_suburbs_14=35|sealion_apartments=36|sealion_beachclub=37|sealion_castle=38|sealion_coastalruins=39|saba_moderncity=4|sealion_port=40|sealion_culdesac=41|sealion_powerplant=42|sealion_residential=43|sealion_shipwreck=44|sealion_towncenter=45|sealion_watertreatment=46|sealion_waterways=47|delta_castle=48|delta_cemetary=49|saba_lone=5|delta_cityhall=50|delta_firestation=51|delta_fleamarket=52|delta_floatinghouses=53|delta_library=54|delta_marina=55|delta_museum=56|delta_nemo=57|delta_policestation=58|delta_shoppingcenter=59|saba_fishtwn=6|delta_stadium=60|delta_station=61|delta_terminal=62|mp_delta=63|saba_sira=7|saba_sunken=8|saba_oasis=9
+72,iw9_location_bitfield,bitfield,<invalid>
 73,iw9_pool_id,number,
 74,iw9_activate_id,number,
 75,iw9_deactivate_id,number,
@@ -115,7 +115,7 @@
 78,iw9_loot_method_bitfield,bitfield,loot=0|extract=1|place=10|ground=2|cache=3|backpack=4|exfil=5|extract_balloon=6|dead_drop=7|final_exfil=8|starting_loadout=9
 79,iw9_cp_stars,number,
 80,iw9_cp_mission_id,itemID,
-81,iw9_perk_bitfield1,bitfield,iw9_specialty_survivor=0|iw9_specialty_extra_tactical=1|iw9_specialty_huntmaster=10|iw9_specialty_tactical_recon=11|iw9_specialty_hustle=12|iw9_specialty_covert_ops=13|iw9_specialty_grenade_expert=14|iw9_specialty_eod=15|iw9_specialty_restock=16|iw9_speciality_tac_resist=17|iw9_speciality_surveillance=18|iw9_speciality_quick_fix=19|iw9_specialty_overwatch=2|iw9_speciality_null=20|iw9_specialty_focus=3|iw9_specialty_overcharge_field_upgrade=4|iw9_specialty_warhead=5|iw9_specialty_munitions_2=6|iw9_specialty_scavenger=7|iw9_specialty_guerrilla=8|iw9_specialty_hardline=9
+81,iw9_perk_bitfield1,bitfield,<invalid>
 82,iw9_cp_role,itemID,
 83,iw9_playlist_id,number,
 84,iw9_mgl_edge_item_id,number,
@@ -135,7 +135,7 @@
 98,iw9_product_id,number,
 99,iw9_sp_progression,number,
 100,iw9_kill_bitfield2,bitfield,ledgehanging=0|sentry_kill=1|on_passenger_train=10|from_helicopter=11|used_enemy_weapon=12|silenced=13|cover_kill=14|detected_impaired=15|victim_impaired=16|helicopter_explosive=17|in_gulag=18|standing=19|cluster_mine_kill=2|from_palfa=20|victim_hvt=21|clean_kill=22|popcorn=23|isaltmode=24|victim_in_radiation=25|vehiclelean_sedan=26|from_mrap=27|unaware=28|victim_has_dmz_bounty=29|victim_is_gulag_jailer=3|underwater=4|radio_pinged=5|uav_tower_pinged=6|holding_hostage=7|pinged=8|on_cargo_train=9
-100,iw9_kill_bitfield2,bitfield,ledgehanging=0|sentry_kill=1|on_passenger_train=10|from_helicopter=11|used_enemy_weapon=12|silenced=13|cover_kill=14|detected_impaired=15|victim_impaired=16|helicopter_explosive=17|in_gulag=18|standing=19|cluster_mine_kill=2|from_palfa=20|victim_hvt=21|clean_kill=22|popcorn=23|isaltmode=24|victim_in_radiation=25|vehiclelean_sedan=26|from_mrap=27|unaware=28|victim_has_dmz_bounty=29|victim_is_gulag_jailer=3|in_radiation=30|underwater=4|radio_pinged=5|uav_tower_pinged=6|holding_hostage=7|pinged=8|on_cargo_train=9
+100,iw9_kill_bitfield2,bitfield,<invalid>
 100,iw9_kill_bitfield2,bitfield,ledgehanging=0|sentry_kill=1|on_passenger_train=10|from_helicopter=11|used_enemy_weapon=12|silenced=13|cover_kill=14|detected_impaired=15|victim_impaired=16|helicopter_explosive=17|in_gulag=18|standing=19|cluster_mine_kill=2|from_palfa=20|victim_hvt=21|victim_has_dmz_bounty=29|victim_is_gulag_jailer=3|underwater=4|radio_pinged=5|uav_tower_pinged=6|holding_hostage=7|pinged=8|on_cargo_train=9|isaltmode=24|victim_in_radiation=25|vehiclelean_sedan=26|from_mrap=27|unaware=28|in_radiation=60
 101,iw9_damage,number,
 102,iw9_weapon_camo,number,

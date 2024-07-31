@@ -1,0 +1,78 @@
+{
+    "#elements": [
+        {
+            "#id": 0,
+            "#value": "",
+            "#name": "#hash_a4fc3844622026f3",
+            "#sharedname": "#hash_ddb46339bf74db13"
+        },
+        {
+            "#id": 1,
+            "#value": "",
+            "#name": "#hash_1b8b6dedccc0d59e",
+            "#sharedname": "#hash_422bfacdcb0cebbe"
+        },
+        {
+            "#id": 2,
+            "#value": "",
+            "#name": "#hash_1b2559edcc6a0070",
+            "#sharedname": "#hash_41c5e6cdcab61690"
+        },
+        {
+            "#id": 4,
+            "#value": "",
+            "#name": "#hash_1b546dedcc91932e",
+            "#sharedname": "#hash_41f5facdcadf5c4e"
+        },
+        {
+            "#id": 8,
+            "#value": "",
+            "#name": "#hash_1b5875edcc95899d",
+            "#sharedname": "#hash_41f902cdcae19fbd"
+        },
+        {
+            "#id": 16,
+            "#value": "",
+            "#name": "#hash_1b5873edcc958637",
+            "#sharedname": "#hash_41f900cdcae19c57"
+        },
+        {
+            "#id": 32,
+            "#value": "",
+            "#name": "#hash_1b3684edcc78bcb4",
+            "#sharedname": "#hash_41d711cdcac4d2d4"
+        },
+        {
+            "#id": 64,
+            "#value": "",
+            "#name": "#hash_745cb596f792aa7",
+            "#sharedname": "#hash_3a546a4ab2f51587"
+        },
+        {
+            "#id": 128,
+            "#value": "",
+            "#name": "#hash_712b3596f4da846",
+            "#sharedname": "#hash_3a21524ab2c99326"
+        },
+        {
+            "#id": 256,
+            "#value": "",
+            "#name": "#hash_d6734a128298a0d8",
+            "#sharedname": "#hash_c8be8aafa0c4f578"
+        },
+        {
+            "#id": 512,
+            "#value": "",
+            "#name": "#hash_1b2c53edcc7014ec",
+            "#sharedname": "#hash_41cce0cdcabc2b0c"
+        },
+        {
+            "#id": 1024,
+            "#value": "",
+            "#name": "#hash_c8f175f7d364c0a4",
+            "#sharedname": "#hash_6b4a9ed7ef54804"
+        }
+    ],
+    "#name": "#hash_1fcd9cbf437d15e0",
+    "#sharedname": "#gamemode"
+}

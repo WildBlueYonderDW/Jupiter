@@ -1,0 +1,27 @@
+{
+    "#id": "pause_rendering",
+    "#description": "&OPTIONS/PAUSE_RENDERING_DESC",
+    "#dvar": "@hash_7efbc10ab3a863ee",
+    "#hash_ea45bc5a5e9ac302": 5,
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "sustainabilityPauseRendering",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#hash_15963d81d6fd6dac": 100,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 5,
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/PAUSE_RENDERING"
+}

@@ -1,0 +1,14 @@
+{
+    "#cost": 10000,
+    "#description": "&LUA_MENU_ZM/PAP_DESC_2",
+    "#hash_1091bcba788cb280": "jup_ui_icons_pap_level2",
+    "#tier": 2,
+    "#hash_bb03964ce5707e99": "&LUA_MENU_ZM/TIER_2",
+    "#lootitemtype": "NONE",
+    "#displayname": "&LUA_MENU_ZM/PAP_LEVEL_2",
+    "#itemref": "level2",
+    "#currency": "%hash_229c022abe3707c5",
+    "#hash_57ed5639dea3c1e0": "&LUA_MENU_ZM/PAP_LOCKED_2",
+    "#maxstack": 1,
+    "#icon": "v_ui_icon_pap_white"
+}

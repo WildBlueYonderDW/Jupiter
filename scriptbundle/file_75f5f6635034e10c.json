@@ -1,0 +1,144 @@
+{
+    "#raritydef": "%hash_2b13ac750c6bead0",
+    "#pingvo": "#hash_80d611a10adce102",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 4,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&JUP_WEAPON/JUP_JP20_LM_EVICTOR",
+    "#worldmodel": "weapon_wm_lm_lima86_brprop_nophys",
+    "#rarity": 3,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "iw9_minireddot02_tall"
+                },
+                {
+                    "#attachment": "jup_minireddot01_tall"
+                },
+                {
+                    "#attachment": "jup_twofivex02"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp20_lm_evictor_bar_heavy"
+                },
+                {
+                    "#attachment": "jup_jp20_lm_evictor_bar_long"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#slot": "backpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp20_lm_evictor_belt_200_556n"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#slot": "muzzle"
+        },
+        {
+            "#slot": "reargrip"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "grip_vert03"
+                },
+                {
+                    "#attachment": "grip_vert02"
+                },
+                {
+                    "#attachment": "grip_vert01"
+                }
+            ],
+            "#slot": "trigger"
+        },
+        {
+            "#slot": "extra"
+        },
+        {
+            "#slot": "modifier"
+        }
+    ],
+    "#descstring": "&JUP_WEAPON/JUP_JP20_LM_EVICTOR",
+    "#ref": "jup_jp20_lm_evictor",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "lm",
+    "#baseweapon": "jup_jp20_lm_evictor_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_jup_jp20_lm_evictor_mp",
+    "#scriptable": "%hash_262cddda9113105e",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_LM"
+}

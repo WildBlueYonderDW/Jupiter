@@ -1,0 +1,28 @@
+{
+    "#id": "target_assist",
+    "#description": "&MENU/TARGET_ASSIST_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "targetAssist",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&MENU/TARGET_ASSIST",
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -1,0 +1,18 @@
+{
+    "#id": "dismemberment_option",
+    "#description": "&OPTIONS/DISMEMBERMENT_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "gore",
+    "#hash_58d61dc3eef940dc": "ACCOUNT",
+    "#type": "ToggleButton",
+    "#name": "&OPTIONS/DISMEMBERMENT",
+    "#hash_dce5ffe0a6970f5d": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

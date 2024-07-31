@@ -491,7 +491,7 @@ function createremoteuav(lifeid, owner, streakname, origin, angles) {
 function remoteuav_ride(lifeid, remoteuav, streakname) {
     remoteuav.playerlinked = 1;
     self.restoreangles = self.angles;
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdPerson")) {
         setthirdpersondof(0);
     }
     self cameralinkto(remoteuav, "tag_origin");
@@ -529,7 +529,7 @@ function remoteuav_endride(remoteuav) {
         remoteuav.playerlinked = 0;
         remoteuav notify("end_remote");
         clearusingremote();
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             setthirdpersondof(1);
         }
         self cameraunlink(remoteuav);

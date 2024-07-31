@@ -1,0 +1,42 @@
+{
+    "#raritydef": "%hash_2b13ac750c6bead0",
+    "#pingvo": "#hash_7c509a84250d2df4",
+    "#hash_ff1750b480636dc9": 1,
+    "#weaponblueprint": "%hash_293284745a46064c",
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&JUP_WEAPON/JUP_JP09_SH_OROMEO12_V106",
+    "#worldmodel": "wpn_jup_wm_jp09_sh_oromeo12",
+    "#rarity": 3,
+    "#attachmentslots": [
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#slot": "scope"
+        }
+    ],
+    "#descstring": "&JUP_WEAPON/JUP_JP09_SH_OROMEO12_V106_DESC",
+    "#ref": "jup_jp09_sh_oromeo12_v106",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "sh",
+    "#baseweapon": "jup_jp09_sh_oromeo12_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_jup_jp09_sh_oromeo12_mp",
+    "#scriptable": "%hash_66eb1b7bbbced35c",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SH"
+}

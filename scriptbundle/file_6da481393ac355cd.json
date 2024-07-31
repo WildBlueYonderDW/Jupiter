@@ -1,0 +1,32 @@
+{
+    "#id": "particle_quality",
+    "#description": "&OPTIONS/PARTICLE_QUALITY_DESC",
+    "#dvar": "@hash_75386e2ad496a07a",
+    "#image": "jup_ui_options_image_particleresolution",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/QUALITY_VERY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_NORMAL"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_HIGH"
+        }
+    ],
+    "#hash_c20f27f948a7810": "Medium",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_9c921e1f5e226484": 1,
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#hash_ea4e62cd3b96c8c6": "Low",
+    "#name": "&OPTIONS/PARTICLE_QUALITY"
+}

@@ -1,0 +1,8 @@
+{
+    "#id": "frag_action_button_swap",
+    "#description": "&OPTIONS/USE_LETHAL_DESC",
+    "#action": "+frag",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "GamepadSwapButton",
+    "#name": "&OPTIONS/USE_LETHAL"
+}

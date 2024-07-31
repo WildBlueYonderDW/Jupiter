@@ -1,0 +1,7 @@
+{
+    "#id": "codcaster_option_team_setting_substitute_color",
+    "#description": "&CODCASTER/TEAM_SUBSTITUTE_COLOR_DESC",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#name": "&CODCASTER/TEAM_SUBSTITUTE_COLOR_COLON"
+}

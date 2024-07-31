@@ -1,0 +1,26 @@
+{
+    "#id": "depth_of_field_console",
+    "#description": "&PLATFORM_UI/DEPTH_OF_FIELD_DESC",
+    "#image": "jup_ui_options_image_depthoffield",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "DofEnable",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_cd05aa1b839553ad": 1,
+            "#hash_cd05a31b83954448": 1,
+            "#hash_434da1af138bf52": 1,
+            "#hash_434db1af138c185": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&PLATFORM_UI/DEPTH_OF_FIELD"
+}

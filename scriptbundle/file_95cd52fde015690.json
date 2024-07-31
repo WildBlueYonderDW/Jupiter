@@ -1,0 +1,30 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 50,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_turret_trap_circuit"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_turret_trap_circuit_brainrot"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_turret_trap_circuit_cryofreeze"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_turret_trap_circuit_deadwire"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_turret_trap_circuit_napalmburst"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_turret_trap_circuit_shatterblast"
+        }
+    ]
+}

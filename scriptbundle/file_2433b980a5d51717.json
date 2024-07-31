@@ -1,0 +1,49 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#hash_7c509a84250d2df4",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 1,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/SH_TSIERRA12",
+    "#worldmodel": "weapon_wm_sh_romeo870_brprop_nophys",
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "bar_sh_hvylong_p44"
+                },
+                {
+                    "#attachment": "bar_sh_long_p44"
+                }
+            ],
+            "#slot": "frontpiece"
+        }
+    ],
+    "#descstring": "&WEAPON/SH_TSIERRA12",
+    "#ref": "iw9_sh_tsierra12",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "sh",
+    "#baseweapon": "iw9_sh_tsierra12_mp",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_sh_tsierra12",
+    "#scriptable": "%hash_3168d52df04c1e21",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SH"
+}

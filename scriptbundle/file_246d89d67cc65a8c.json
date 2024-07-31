@@ -1,0 +1,9 @@
+{
+    "#description": "&VEHICLES/CARGO_TRUCK_DESC",
+    "#defaultimage": "ui_default_white",
+    "#hash_7ffb238c68bddf60": "ui_veh_cargo_truck_v000_preview",
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,MGL,JUP",
+    "#ref": "veh9_mil_cargo_truck",
+    "#name": "&VEHICLES/CARGO_TRUCK",
+    "#icon": "hud_icon_vehicle_mil_cargo_truck"
+}

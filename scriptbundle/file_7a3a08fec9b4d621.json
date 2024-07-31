@@ -1,0 +1,22 @@
+{
+    "#id": "codcaster_option_jersey_numbers",
+    "#description": "&CODCASTER/PLAYER_NUMBERS_TYPE_DESC",
+    "#labels": [
+        {
+            "#reference": "&CODCASTER/PLAYER_NUMBERS_TYPE_DEFAULT"
+        },
+        {
+            "#reference": "&CODCASTER/PLAYER_NUMBERS_TYPE_JERSEY"
+        }
+    ],
+    "#hash_a20785232d9c4057": "codcaster_jerseynumbers",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#type": "EXEC",
+            "#hash_9f7f559f6a34c36c": 1
+        }
+    ],
+    "#name": "&CODCASTER/PLAYER_NUMBERS_TYPE"
+}

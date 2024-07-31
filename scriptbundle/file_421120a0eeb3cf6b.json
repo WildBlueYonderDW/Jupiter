@@ -1,0 +1,34 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_harddrive"
+        },
+        {
+            "#weight": 80,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_electrical_tape"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_thumb_drive"
+        },
+        {
+            "#weight": 50,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_screwdriver"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_electroniccomponents"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_harddrive_encrypted"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_gpu"
+        }
+    ]
+}

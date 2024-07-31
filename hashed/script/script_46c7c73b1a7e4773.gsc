@@ -5146,7 +5146,7 @@ function function_3875d2b5b87e7e7d(victimstruct, objweapon, meansofdeath, inflic
                     }
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
                 }
             } else if (weapongroup == "weapon_wonder") {
                 if (scripts\mp\utility\player::isplayerads()) {
@@ -5154,7 +5154,7 @@ function function_3875d2b5b87e7e7d(victimstruct, objweapon, meansofdeath, inflic
                     self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"ads"));
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
                 }
             }
             if (scripts\mp\weapons::isstunnedorblinded()) {
@@ -5197,7 +5197,7 @@ function function_3875d2b5b87e7e7d(victimstruct, objweapon, meansofdeath, inflic
                     self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"ads"));
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
                 }
             }
         }

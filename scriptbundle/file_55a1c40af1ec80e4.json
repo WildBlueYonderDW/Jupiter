@@ -1,0 +1,31 @@
+{
+    "#id": "low_latency",
+    "#description": "&OPTIONS/NVIDIA_REFLEX_DESC",
+    "#dvar": "@hash_d061a40f5413985e",
+    "#labels": [
+        {
+            "#reference": "&MENU/OFF"
+        },
+        {
+            "#reference": "&MENU/ON"
+        },
+        {
+            "#reference": "&MENU/ON_BOOST"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        },
+        {
+            "#dvarname": "@hash_41a95ebcec7e400c",
+            "#hash_82b937762bcf4810": 1,
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/NVIDIA_REFLEX",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/NVIDIA_REFLEX_DISABLED_DESC"
+}

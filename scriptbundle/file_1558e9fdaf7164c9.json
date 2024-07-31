@@ -1,0 +1,2105 @@
+{
+    "#splash_list": [
+        {
+            "#splashbundle": "splash_br_pe_jailbreak_active_iw9_mp",
+            "#ref": "#hash_62b8b1528bf949fc"
+        },
+        {
+            "#splashbundle": "splash_br_kiosks_disabled_iw9_mp",
+            "#ref": "#hash_835187cc5d18b2e7"
+        },
+        {
+            "#splashbundle": "splash_br_pe_jailbreak_incoming_iw9_mp",
+            "#ref": "#hash_2dff33308fc085a2"
+        },
+        {
+            "#splashbundle": "splash_dmz_exfil_inbound_final_iw9_mp",
+            "#ref": "#hash_4688a15656f52e1a"
+        },
+        {
+            "#splashbundle": "splash_br_airdrop_incoming_iw9_mp",
+            "#ref": "#hash_2fd822926d4d3454"
+        },
+        {
+            "#splashbundle": "splash_br_airdrop_landed_iw9_mp",
+            "#ref": "#hash_bf0ee0a9dc4fff8c"
+        },
+        {
+            "#splashbundle": "splash_br_c130airdrop_incoming_iw9_mp",
+            "#ref": "#hash_fb7b6b620703aed7"
+        },
+        {
+            "#splashbundle": "splash_br_juggdrop_incoming_iw9_mp",
+            "#ref": "#hash_70ca93d52d2d6be1"
+        },
+        {
+            "#splashbundle": "splash_br_lootchopper_incoming_iw9_mp",
+            "#ref": "#hash_5a66e206d990cf18"
+        },
+        {
+            "#splashbundle": "splash_br_loot_chopper_destroyed_iw9_mp",
+            "#ref": "#hash_916af74a28436e1c"
+        },
+        {
+            "#splashbundle": "splash_br_loot_chopper_destroyed_assist_iw9_mp",
+            "#ref": "#hash_59b8198b31baf7ea"
+        },
+        {
+            "#splashbundle": "splash_br_pe_restock_active_iw9_mp",
+            "#ref": "#hash_83923650c8f6fa22"
+        },
+        {
+            "#splashbundle": "splash_br_pe_restock_incoming_iw9_mp",
+            "#ref": "#hash_8928cf008f08d3fc"
+        },
+        {
+            "#splashbundle": "splash_br_pe_firesale_start_iw9_mp",
+            "#ref": "#hash_c645db2cee234a7a"
+        },
+        {
+            "#splashbundle": "splash_br_pe_firesale_end_iw9_mp",
+            "#ref": "#hash_21bfe5e59af1ecef"
+        },
+        {
+            "#splashbundle": "splash_br_pe_choppers_start_iw9_mp",
+            "#ref": "#hash_17f3dc55b9a451d1"
+        },
+        {
+            "#splashbundle": "splash_br_pe_firesale_start_for_mobile_iw9_mp",
+            "#ref": "#hash_7a0acfdae508b401"
+        },
+        {
+            "#splashbundle": "splash_br_pe_firesale_end_for_mobile_iw9_mp",
+            "#ref": "#hash_f2b4ff44b4bd20da"
+        },
+        {
+            "#splashbundle": "splash_br_pe_jailbreak_incoming_for_mobile_iw9_mp",
+            "#ref": "#hash_a13088d6861a6ec9"
+        },
+        {
+            "#splashbundle": "splash_br_pe_jailbreak_active_for_mobile_iw9_mp",
+            "#ref": "#hash_48156b72b61d016b"
+        },
+        {
+            "#splashbundle": "splash_high_pos_iw9_mp",
+            "#ref": "#high_pos"
+        },
+        {
+            "#splashbundle": "splash_high_neu_iw9_mp",
+            "#ref": "#hash_a9cd422ed6d2abb6"
+        },
+        {
+            "#splashbundle": "splash_high_neg_iw9_mp",
+            "#ref": "#hash_a9cd302ed6d28d20"
+        },
+        {
+            "#splashbundle": "splash_high_cq_iw9_mp",
+            "#ref": "#hash_92dbb43640050bea"
+        },
+        {
+            "#splashbundle": "splash_high_neupos_iw9_mp",
+            "#ref": "#hash_548202369bdba45c"
+        },
+        {
+            "#splashbundle": "splash_high_neuneg_iw9_mp",
+            "#ref": "#hash_f2e4f036f644e2f0"
+        },
+        {
+            "#splashbundle": "splash_med_pos_iw9_mp",
+            "#ref": "#hash_3ddf8d90de2688e8"
+        },
+        {
+            "#splashbundle": "splash_med_neu_iw9_mp",
+            "#ref": "#hash_1e27ad915ceb79c2"
+        },
+        {
+            "#splashbundle": "splash_med_neg_iw9_mp",
+            "#ref": "#hash_1e279b915ceb5b2c"
+        },
+        {
+            "#splashbundle": "splash_med_cq_iw9_mp",
+            "#ref": "#hash_5ae4335d514e32d6"
+        },
+        {
+            "#splashbundle": "splash_med_neupos_iw9_mp",
+            "#ref": "#hash_6f13b5ac4a999c98"
+        },
+        {
+            "#splashbundle": "splash_med_neuneg_iw9_mp",
+            "#ref": "#hash_3be0c3ac2dd2841c"
+        },
+        {
+            "#splashbundle": "splash_low_pos_iw9_mp",
+            "#ref": "#hash_6471d8a695e3bb90"
+        },
+        {
+            "#splashbundle": "splash_low_neu_iw9_mp",
+            "#ref": "#hash_bb3288a6c71061aa"
+        },
+        {
+            "#splashbundle": "splash_low_neg_iw9_mp",
+            "#ref": "#hash_bb3296a6c7107974"
+        },
+        {
+            "#splashbundle": "splash_low_cq_iw9_mp",
+            "#ref": "#hash_77eb77453d2136de"
+        },
+        {
+            "#splashbundle": "splash_low_neupos_iw9_mp",
+            "#ref": "#hash_5e6bff38eb830640"
+        },
+        {
+            "#splashbundle": "splash_low_neuneg_iw9_mp",
+            "#ref": "#hash_a2897d3881d9aa64"
+        },
+        {
+            "#splashbundle": "splash_stronghold_active_blacksite_iw9_mp",
+            "#ref": "#hash_b507978cf83a8cc1"
+        },
+        {
+            "#splashbundle": "splash_stronghold_active_normal_iw9_mp",
+            "#ref": "#hash_ac4a0a10cb5ffd74"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_bomb_disposal_completed_iw9_mp",
+            "#ref": "#hash_38979e8707c7710a"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_bomb_disposal_failed_iw9_mp",
+            "#ref": "#hash_6640e106e79a2acc"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_bomb_disposal_iw9_mp",
+            "#ref": "#hash_d925c5f75be5b8f0"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_person_of_interest_completed_iw9_mp",
+            "#ref": "#hash_bc4903e18d34aade"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_person_of_interest_failed_iw9_mp",
+            "#ref": "#hash_4f2514de0b625e30"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_person_of_interest_iw9_mp",
+            "#ref": "#hash_55929e59eeb28db4"
+        },
+        {
+            "#splashbundle": "splash_high_cq_noicon_iw9_mp",
+            "#ref": "#hash_7e79be04d0b0b575"
+        },
+        {
+            "#splashbundle": "splash_gwtdm_vehicles_inc_iw9_mp",
+            "#ref": "#hash_6431c7fbd64819ed"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_iw9_mp",
+            "#ref": "#hash_c59e9ca0b3050aca"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_key_dropped_iw9_mp",
+            "#ref": "#hash_34267386081f7dc"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_key_spawned_center_iw9_mp",
+            "#ref": "#hash_e5390970380cac2c"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_got_key_ally_iw9_mp",
+            "#ref": "#hash_86a6f942b3f4a96f"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_got_key_enemy_iw9_mp",
+            "#ref": "#hash_f178c2a5dbe947e3"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_one_enemy_left_iw9_mp",
+            "#ref": "#hash_bf87d4527ba31cf3"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_lost_death_iw9_mp",
+            "#ref": "#hash_638b8f4f37939a55"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_lost_door_iw9_mp",
+            "#ref": "#hash_6c05bba1d44036d1"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_lost_timeout_iw9_mp",
+            "#ref": "#hash_fd4165563a028710"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_door_iw9_mp",
+            "#ref": "#hash_79ae67a950ee29ad"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_overtime_iw9_mp",
+            "#ref": "#hash_e15ec39998abfd3a"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_v_jailer_gulag_start_iw9_mp",
+            "#ref": "#hash_51eb40393c2ef23f"
+        },
+        {
+            "#splashbundle": "splash_br_new_circle_iw9_mp",
+            "#ref": "#hash_79f6a52d79a277d9"
+        },
+        {
+            "#splashbundle": "splash_br_final_circle_iw9_mp",
+            "#ref": "#hash_304d47a35f716547"
+        },
+        {
+            "#splashbundle": "splash_br_circle_moving_iw9_mp",
+            "#ref": "#hash_b110d9d85d33b7c5"
+        },
+        {
+            "#splashbundle": "splash_br_multi_circle_split_open_iw9_mp",
+            "#ref": "#hash_bfb93fc59afc0008"
+        },
+        {
+            "#splashbundle": "splash_br_multi_circle_split_close_iw9_mp",
+            "#ref": "#hash_fa80306a86fd5c44"
+        },
+        {
+            "#splashbundle": "splash_br_multi_circle_merge_open_iw9_mp",
+            "#ref": "#hash_16d36044df15c8f4"
+        },
+        {
+            "#splashbundle": "splash_br_multi_circle_merge_close_iw9_mp",
+            "#ref": "#hash_ad5ccce21a39c408"
+        },
+        {
+            "#splashbundle": "splash_br_multi_circle_winner_iw9_mp",
+            "#ref": "#hash_9eee03fd583976ea"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_bomb_disposal_poached_iw9_mp",
+            "#ref": "#hash_70f4d53eb14c5e11"
+        },
+        {
+            "#splashbundle": "splash_stronghold_complete_blacksite_iw9_mp",
+            "#ref": "#hash_1148c96802c7ee64"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_iw9_mp",
+            "#ref": "#hash_10a7b506b4e040c4"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_jailer_gulag_win_iw9_mp",
+            "#ref": "#hash_d601ec054818b43e"
+        },
+        {
+            "#splashbundle": "splash_br_enemy_interrogated_center_iw9_mp",
+            "#ref": "#hash_a0ce7087027eaebf"
+        },
+        {
+            "#splashbundle": "splash_br_enemy_interrogated_iw9_mp",
+            "#ref": "#hash_a01938ef9eae9811"
+        },
+        {
+            "#splashbundle": "splash_br_interrogated_iw9_mp",
+            "#ref": "#hash_bace3f8c4c94649c"
+        },
+        {
+            "#splashbundle": "splash_br_teammate_interrogated_center_iw9_mp",
+            "#ref": "#hash_1c3b0337ea9f2537"
+        },
+        {
+            "#splashbundle": "splash_br_teammate_interrogated_iw9_mp",
+            "#ref": "#hash_29b7f0596309eaf9"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_jailer_spawn_iw9_mp",
+            "#ref": "#hash_732558ed5e0bd5a9"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_match_intro_iw9_mp",
+            "#ref": "#hash_f55ae7734de1ba16"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_available_iw9_mp",
+            "#ref": "#hash_333b95dc26fa468e"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_bomb_defend_iw9_mp",
+            "#ref": "#hash_a70133104d7fe08c"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_bomb_defuse_iw9_mp",
+            "#ref": "#hash_1aabc80ffd84cf16"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_bomb_revealed_global_iw9_mp",
+            "#ref": "#hash_21330719f66d3cca"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_bomb_revealed_iw9_mp",
+            "#ref": "#hash_239a5c7ac1917564"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_element_acquired_global_iw9_mp",
+            "#ref": "#hash_50121c2c14c0aa44"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_elements_acquired_iw9_mp",
+            "#ref": "#hash_f20a23a35be65283"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_failed_global_iw9_mp",
+            "#ref": "#hash_cc17d845a76825f4"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_pickup_beryllium_iw9_mp",
+            "#ref": "#hash_59b88106de8af7d5"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_pickup_plutonium_iw9_mp",
+            "#ref": "#hash_7ed5cc81e7cddc95"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_pickup_tritium_iw9_mp",
+            "#ref": "#hash_b8486b0376fdc9c0"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_started_global_iw9_mp",
+            "#ref": "#hash_a67a369ac25347f2"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_started_iw9_mp",
+            "#ref": "#hash_c0cd868e4fab717c"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_one_v_one_gulag_start_iw9_mp",
+            "#ref": "#hash_b9c26325c7c5ba63"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_one_v_one_gulag_match_intro_iw9_mp",
+            "#ref": "#hash_44ec47ffbedd093b"
+        },
+        {
+            "#splashbundle": "splash_br_two_plate_broken_iw9_mp",
+            "#ref": "#hash_7053e047df12f10d"
+        },
+        {
+            "#splashbundle": "splash_br_one_plate_broken_iw9_mp",
+            "#ref": "#hash_3070d7c5107d0d57"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_d02092a4433cfa24"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_quest_start_hunter_team_iw9_mp",
+            "#ref": "#hash_815e240ed320dd03"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_quest_start_target_player_iw9_mp",
+            "#ref": "#hash_60e16c39f5d1bc82"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_quest_start_target_team_iw9_mp",
+            "#ref": "#hash_d03109f00cbd0e5a"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_targets_remaining_single_iw9_mp",
+            "#ref": "#hash_6cbed9d640560fa7"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_targets_remaining_mulitple_iw9_mp",
+            "#ref": "#hash_1b395543339dfd51"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_target_killed_target_player_iw9_mp",
+            "#ref": "#hash_9efb176832a3e978"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_target_killed_target_team_iw9_mp",
+            "#ref": "#hash_3f92f706cd1cae34"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_hunters_result_0_iw9_mp",
+            "#ref": "#hash_ef67ae15f621a609"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_hunters_result_1_iw9_mp",
+            "#ref": "#hash_ef67ad15f621a456"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_hunters_result_2_iw9_mp",
+            "#ref": "#hash_ef67ac15f621a2a3"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_hunters_result_3_iw9_mp",
+            "#ref": "#hash_ef67ab15f621a0f0"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_hunters_result_4_iw9_mp",
+            "#ref": "#hash_ef67b215f621acd5"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_targets_win_iw9_mp",
+            "#ref": "#hash_d6c357aeb1a82"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_timer_expire_targets_win_iw9_mp",
+            "#ref": "#hash_60fcf65113599724"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_hunters_win_iw9_mp",
+            "#ref": "#hash_906a319a291ac89f"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_complete_target_vanished_iw9_mp",
+            "#ref": "#hash_816576e90e272201"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_timer_expire_hunters_lose_iw9_mp",
+            "#ref": "#hash_9ac804d383976d98"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_ba68159b7f4a965a"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_start_tablet_finder_noplunder_iw9_mp",
+            "#ref": "#hash_7bbdb17626e0a976"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_start_team_iw9_mp",
+            "#ref": "#hash_1ad96429b36c5f20"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_start_team_noplunder_iw9_mp",
+            "#ref": "#hash_a04bac0519ef90f8"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_next_location_iw9_mp",
+            "#ref": "#hash_a8d6766d50c53ba1"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_complete_iw9_mp",
+            "#ref": "#hash_93c6afbecf139cdf"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_complete_noplunder_iw9_mp",
+            "#ref": "#hash_b509c0adda768e37"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_3720e382d49cac9d"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_d10b5d1a7964e9f3"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_start_team_iw9_mp",
+            "#ref": "#hash_465ba6c37225cba"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_complete_iw9_mp",
+            "#ref": "#hash_65337265ee68c275"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_failure_iw9_mp",
+            "#ref": "#hash_9635f98d1fb30a4"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_552b94671041edeb"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_47e787cd9ae24c51"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_next_location_iw9_mp",
+            "#ref": "#hash_2543963c46ff1d23"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_start_team_iw9_mp",
+            "#ref": "#hash_147e7e57e355a1a4"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_complete_iw9_mp",
+            "#ref": "#hash_4b5d9f30a8225623"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_failure_iw9_mp",
+            "#ref": "#hash_b4d81ad55c7962e6"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_af5d439a669d5749"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_3a3dcf03922f89b7"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_2f7cd97270bc7c3e"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_start_tablet_finder_noplunder_iw9_mp",
+            "#ref": "#hash_2aea0424158cc3a"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_start_team_iw9_mp",
+            "#ref": "#hash_613c0707c87d2f2c"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_start_team_noplunder_iw9_mp",
+            "#ref": "#hash_f250a44edc50ff04"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_complete_iw9_mp",
+            "#ref": "#hash_f7c2a5d63ecf9b7b"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_complete_noplunder_iw9_mp",
+            "#ref": "#hash_f52b535520d08be3"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_failure_iw9_mp",
+            "#ref": "#hash_b940a5ef52e843de"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_2e2eb09242b9d521"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_3d0c2dc33fd6a1ff"
+        },
+        {
+            "#splashbundle": "splash_br_domination_quest_alert_iw9_mp",
+            "#ref": "#hash_f7112b09ed882ff2"
+        },
+        {
+            "#splashbundle": "splash_br_demolition_quest_start_team_iw9_mp",
+            "#ref": "#hash_4454084897351cfe"
+        },
+        {
+            "#splashbundle": "splash_br_demolition_quest_complete_iw9_mp",
+            "#ref": "#hash_30fb0a3eb961bce9"
+        },
+        {
+            "#splashbundle": "splash_br_demolition_quest_failure_iw9_mp",
+            "#ref": "#hash_9e075f93715f8720"
+        },
+        {
+            "#splashbundle": "splash_br_demolition_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_d92512f0987b72a7"
+        },
+        {
+            "#splashbundle": "splash_br_demolition_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_7c2bb9d03e4d075"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_511dfdb0c316cd21"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_start_tablet_finder_noplunder_iw9_mp",
+            "#ref": "#hash_b1a3d4e0e8d8c37d"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_start_vip_team_iw9_mp",
+            "#ref": "#hash_c1e1625d5e3b92f9"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_start_vip_team_noplunder_iw9_mp",
+            "#ref": "#hash_a0e6534665451125"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_complete_iw9_mp",
+            "#ref": "#hash_e57ad0057d7e6436"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_complete_noplunder_iw9_mp",
+            "#ref": "#hash_bedfeeeca094ad42"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_you_killed_the_vip_iw9_mp",
+            "#ref": "#hash_8f0b2d4a8bb1ba2c"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_you_killed_the_vip_noplunder_iw9_mp",
+            "#ref": "#hash_4ac0efd1f0c2a204"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_vip_spawn_alert_iw9_mp",
+            "#ref": "#hash_9272e37e37b3636d"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_vip_spawn_alert_noplunder_iw9_mp",
+            "#ref": "#hash_a74512b9e86de459"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_failure_iw9_mp",
+            "#ref": "#hash_ef74fda4ad52168d"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_813445fa227bd8b6"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_start_tablet_finder_noplunder_iw9_mp",
+            "#ref": "#hash_86cb2eeb3e53e5c2"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_start_team_notify_iw9_mp",
+            "#ref": "#hash_339b992c054e52a8"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_start_team_notify_noplunder_iw9_mp",
+            "#ref": "#hash_dcbf02674733030"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_complete_iw9_mp",
+            "#ref": "#hash_bb310430f9da45c3"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_complete_noplunder_iw9_mp",
+            "#ref": "#hash_fcb030c69eebb31b"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_4ba8247f18a4e129"
+        },
+        {
+            "#splashbundle": "splash_br_timedrun_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_7ea8418feae3df17"
+        },
+        {
+            "#splashbundle": "splash_br_secretstash_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_dc92af411276911f"
+        },
+        {
+            "#splashbundle": "splash_br_secretstash_quest_start_team_notify_iw9_mp",
+            "#ref": "#hash_fdfdafca6f11dced"
+        },
+        {
+            "#splashbundle": "splash_br_secretstash_quest_complete_iw9_mp",
+            "#ref": "#hash_f9420a82dce659c8"
+        },
+        {
+            "#splashbundle": "splash_br_smokinggun_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_c05b85606cb69b62"
+        },
+        {
+            "#splashbundle": "splash_br_smokinggun_quest_start_team_notify_iw9_mp",
+            "#ref": "#hash_d4e785b551a3368c"
+        },
+        {
+            "#splashbundle": "splash_br_smokinggun_quest_complete_iw9_mp",
+            "#ref": "#hash_8595258141340237"
+        },
+        {
+            "#splashbundle": "splash_br_smokinggun_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_4cdbcc3036dde95b"
+        },
+        {
+            "#splashbundle": "splash_br_smokinggun_quest_failure_iw9_mp",
+            "#ref": "#hash_af671218cbd7a812"
+        },
+        {
+            "#splashbundle": "splash_br_history_quest_start_team_notify_iw9_mp",
+            "#ref": "#hash_48c5deecdfc732e8"
+        },
+        {
+            "#splashbundle": "splash_br_history_quest_next_destination_iw9_mp",
+            "#ref": "#hash_571ec122e1501092"
+        },
+        {
+            "#splashbundle": "splash_br_history_quest_complete_iw9_mp",
+            "#ref": "#hash_360bc0a7c2aa6803"
+        },
+        {
+            "#splashbundle": "splash_br_history_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_c17f85f12d7b9f57"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_spawned_iw9_mp",
+            "#ref": "#hash_a0e9093b1e6eb963"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_start_tablet_finder_iw9_mp",
+            "#ref": "#hash_33fb8c150d3b9d23"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_start_team_iw9_mp",
+            "#ref": "#hash_5c1e1b2712d07d8f"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_complete_iw9_mp",
+            "#ref": "#hash_711a00aa6d55f014"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_failure_iw9_mp",
+            "#ref": "#hash_5925099a725047ef"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_circle_failure_iw9_mp",
+            "#ref": "#hash_561328099815e652"
+        },
+        {
+            "#splashbundle": "splash_br_blueprint_extract_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_1c3550438eea0466"
+        },
+        {
+            "#splashbundle": "splash_dmz_geiger_assigned_iw9_mp",
+            "#ref": "#hash_9ffb201b6c81452b"
+        },
+        {
+            "#splashbundle": "splash_dmz_geiger_first_found_iw9_mp",
+            "#ref": "#hash_56460227a26b2adc"
+        },
+        {
+            "#splashbundle": "splash_dmz_geiger_second_found_iw9_mp",
+            "#ref": "#hash_6b08280594856560"
+        },
+        {
+            "#splashbundle": "splash_dmz_geiger_third_found_iw9_mp",
+            "#ref": "#hash_5e9ddfe2e414acfb"
+        },
+        {
+            "#splashbundle": "splash_dmz_geiger_first_found_out_of_two_iw9_mp",
+            "#ref": "#hash_b6430156e8550e4c"
+        },
+        {
+            "#splashbundle": "splash_dmz_geiger_complete_iw9_mp",
+            "#ref": "#hash_af7f8d5e1ec21d70"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_assigned_iw9_mp",
+            "#ref": "#hash_50066dda1dc91041"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_assigned_others_iw9_mp",
+            "#ref": "#hash_b0e56789376693c1"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_lost_time_iw9_mp",
+            "#ref": "#hash_9b1bdbfbc7237f1"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_won_iw9_mp",
+            "#ref": "#hash_b5a7e1ec77286e13"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_eliminated_external_iw9_mp",
+            "#ref": "#hash_c95a887d9bdf19d9"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_no_targets_iw9_mp",
+            "#ref": "#hash_4db260b686ab12df"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_lost_assimilation_iw9_mp",
+            "#ref": "#hash_d70697955ec14d5b"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_target_survived_iw9_mp",
+            "#ref": "#hash_6e8ec9a1ae90e05f"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_target_over_iw9_mp",
+            "#ref": "#hash_c0156906e21e404b"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_reminder_iw9_mp",
+            "#ref": "#hash_f30fa0f35b8e6d8a"
+        },
+        {
+            "#splashbundle": "splash_dmz_elim_complete_iw9_mp",
+            "#ref": "#hash_d16b233a15513468"
+        },
+        {
+            "#splashbundle": "splash_dmz_search_complete_iw9_mp",
+            "#ref": "#hash_55b1ab8cfd6ee7f1"
+        },
+        {
+            "#splashbundle": "splash_dmz_dom_assigned_iw9_mp",
+            "#ref": "#hash_ed4931e896c599ec"
+        },
+        {
+            "#splashbundle": "splash_dmz_located_intel_iw9_mp",
+            "#ref": "#hash_6b8698f3448a96f2"
+        },
+        {
+            "#splashbundle": "splash_dmz_upload_complete_iw9_mp",
+            "#ref": "#hash_e3e0852325d1b09e"
+        },
+        {
+            "#splashbundle": "splash_dmz_survive_unlocked_iw9_mp",
+            "#ref": "#hash_69d7c42f587638e3"
+        },
+        {
+            "#splashbundle": "splash_dmz_survive_complete_iw9_mp",
+            "#ref": "#hash_33ad2d3695dca40d"
+        },
+        {
+            "#splashbundle": "splash_dmz_clear_fort_complete_iw9_mp",
+            "#ref": "#hash_54b3c7568529271c"
+        },
+        {
+            "#splashbundle": "splash_dmz_destroy_sam_defused_win_iw9_mp",
+            "#ref": "#hash_1e717c92a6266d21"
+        },
+        {
+            "#splashbundle": "splash_dmz_destroy_sam_defused_lose_iw9_mp",
+            "#ref": "#hash_ccbbfb6afe2202f0"
+        },
+        {
+            "#splashbundle": "splash_dmz_destroy_sam_exploded_iw9_mp",
+            "#ref": "#hash_6c593e94a7a6c3f5"
+        },
+        {
+            "#splashbundle": "splash_dmz_elim_assigned_iw9_mp",
+            "#ref": "#hash_417d660e9c800233"
+        },
+        {
+            "#splashbundle": "splash_dmz_generic_combat_mission_assigned_iw9_mp",
+            "#ref": "#hash_d17977d4bc1ff11b"
+        },
+        {
+            "#splashbundle": "splash_dmz_generic_recon_mission_assigned_iw9_mp",
+            "#ref": "#hash_52b68753ec9fa60"
+        },
+        {
+            "#splashbundle": "splash_dmz_generic_recover_mission_assigned_iw9_mp",
+            "#ref": "#hash_e1bccfa1c349cead"
+        },
+        {
+            "#splashbundle": "splash_dmz_generic_rescue_mission_assigned_iw9_mp",
+            "#ref": "#hash_528c1254c265b988"
+        },
+        {
+            "#splashbundle": "splash_dmz_generic_sabotage_mission_assigned_iw9_mp",
+            "#ref": "#hash_8acf770e5728921b"
+        },
+        {
+            "#splashbundle": "splash_dmz_trap_assigned_iw9_mp",
+            "#ref": "#hash_cb7a27e7c768b927"
+        },
+        {
+            "#splashbundle": "splash_dmz_clear_fort_assigned_iw9_mp",
+            "#ref": "#hash_f9c005bc503894c7"
+        },
+        {
+            "#splashbundle": "splash_dmz_destroy_sam_assigned_iw9_mp",
+            "#ref": "#hash_47d2810225ecc956"
+        },
+        {
+            "#splashbundle": "splash_dmz_hostage_assigned_iw9_mp",
+            "#ref": "#hash_dd3e0d96a75e335b"
+        },
+        {
+            "#splashbundle": "splash_dmz_hostage_success_iw9_mp",
+            "#ref": "#hash_c13746fc6bd74fe"
+        },
+        {
+            "#splashbundle": "splash_dmz_hostage_failure_iw9_mp",
+            "#ref": "#hash_34d71b48e0b18fb3"
+        },
+        {
+            "#splashbundle": "splash_dmz_hostage_exfilled_iw9_mp",
+            "#ref": "#hash_76727e7e853534b2"
+        },
+        {
+            "#splashbundle": "splash_dmz_vehicledrive_assigned_iw9_mp",
+            "#ref": "#hash_395e320a5478ac8e"
+        },
+        {
+            "#splashbundle": "splash_dmz_vehicledrive_fail_stolen_iw9_mp",
+            "#ref": "#hash_a8de9a5c661708f8"
+        },
+        {
+            "#splashbundle": "splash_dmz_vehicledrive_fail_destroyed_iw9_mp",
+            "#ref": "#hash_4e70ed7db4a0f962"
+        },
+        {
+            "#splashbundle": "splash_dmz_vehicledrive_complete_iw9_mp",
+            "#ref": "#hash_2ec1dccde86375bd"
+        },
+        {
+            "#splashbundle": "splash_dmz_boatdrive_accept_iw9_mp",
+            "#ref": "#hash_b7e9e2c532757ed2"
+        },
+        {
+            "#splashbundle": "splash_dmz_boatdrive_fail_stolen_iw9_mp",
+            "#ref": "#hash_351043cd454ad93c"
+        },
+        {
+            "#splashbundle": "splash_dmz_boatdrive_fail_destroyed_iw9_mp",
+            "#ref": "#hash_9c5745067f43d506"
+        },
+        {
+            "#splashbundle": "splash_dmz_boatdrive_complete_iw9_mp",
+            "#ref": "#hash_e110ddd0218838a9"
+        },
+        {
+            "#splashbundle": "splash_dmz_demo_defused_win_iw9_mp",
+            "#ref": "#hash_31a67d5ec7bb561a"
+        },
+        {
+            "#splashbundle": "splash_dmz_demo_defused_lose_iw9_mp",
+            "#ref": "#hash_d2e12dbf11046605"
+        },
+        {
+            "#splashbundle": "splash_dmz_demo_win_iw9_mp",
+            "#ref": "#hash_967fe9e70356f5a3"
+        },
+        {
+            "#splashbundle": "splash_dmz_demo_first_explosion_iw9_mp",
+            "#ref": "#hash_ec0ee1155e40b8ef"
+        },
+        {
+            "#splashbundle": "splash_dmz_demo_accept_iw9_mp",
+            "#ref": "#hash_40362d341971237"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_kills_iw9_mp",
+            "#ref": "#hash_be1be5ccaede78f2"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_defused_iw9_mp",
+            "#ref": "#hash_efa51592ec4e2fe7"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_victory_iw9_mp",
+            "#ref": "#hash_3d6f565430d3ab53"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_failed_center_iw9_mp",
+            "#ref": "#hash_7d0f8db9344df7c2"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_kiosk_redeploy_iw9_mp",
+            "#ref": "#hash_4654580d75b51519"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_teammate_out_iw9_mp",
+            "#ref": "#hash_8fe6de64217c33f8"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_winner_redeploy_iw9_mp",
+            "#ref": "#hash_99d39f70ed8bb163"
+        },
+        {
+            "#splashbundle": "splash_stronghold_reinforcement_iw9_mp",
+            "#ref": "#hash_adb965da4ef2673d"
+        },
+        {
+            "#splashbundle": "splash_stronghold_complete_iw9_mp",
+            "#ref": "#hash_f0ce960d783523db"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_jail_timeout_iw9_mp",
+            "#ref": "#hash_7e4e7a81f8a0f269"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_beryllium_acquired_global_iw9_mp",
+            "#ref": "#hash_4c0d4d12cbb3c419"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_plutonium_acquired_global_iw9_mp",
+            "#ref": "#hash_b5a6b4e0c48a0905"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_tritium_acquired_global_iw9_mp",
+            "#ref": "#hash_2751a964f68324c"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_used_iw9_mp",
+            "#ref": "#hash_7923d7df1a5a7f7a"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_used_join_on_target_iw9_mp",
+            "#ref": "#hash_a64a45fe6a2507e3"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_requested_iw9_mp",
+            "#ref": "#hash_c5d0508222c8ca55"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_requested_join_on_target_iw9_mp",
+            "#ref": "#hash_83098e7125079912"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_request_denied_join_on_target_iw9_mp",
+            "#ref": "#hash_21420117866b6f13"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_request_you_denied_join_on_target_iw9_mp",
+            "#ref": "#hash_113d3e72d77c4f17"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_request_denied_iw9_mp",
+            "#ref": "#hash_c2ba5b91e135b44a"
+        },
+        {
+            "#splashbundle": "splash_dmz_team_assimilation_request_you_denied_iw9_mp",
+            "#ref": "#hash_8eca12d6acd6fd4e"
+        },
+        {
+            "#splashbundle": "splash_player_team_switched_iw9_mp",
+            "#ref": "#hash_2303b6ea5607d194"
+        },
+        {
+            "#splashbundle": "splash_player_joined_team_iw9_mp",
+            "#ref": "#player_joined_team"
+        },
+        {
+            "#splashbundle": "splash_player_left_team_iw9_mp",
+            "#ref": "#hash_e28b295c17a9e49c"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_elements_acquired_global_iw9_mp",
+            "#ref": "#hash_e08376696b54c23b"
+        },
+        {
+            "#splashbundle": "splash_bounty_hvt_marked_iw9_mp",
+            "#ref": "#hash_7cf06693fd83d0ac"
+        },
+        {
+            "#splashbundle": "splash_bounty_hvt_unmarked_iw9_mp",
+            "#ref": "#hash_a08a6efc89f4d3eb"
+        },
+        {
+            "#splashbundle": "splash_bounty_hvt_warn_change_iw9_mp",
+            "#ref": "#hash_e65edd2481177a6d"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_jailbreak_redeploy_iw9_mp",
+            "#ref": "#hash_860300837343e69d"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_allies_blue_iw9_mp",
+            "#ref": "#hash_e1f4258b9dd0ea32"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_allies_red_iw9_mp",
+            "#ref": "#hash_1cbb8fc6f6520391"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_allies_yellow_iw9_mp",
+            "#ref": "#hash_c7ac00ca749279d2"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_axis_blue_iw9_mp",
+            "#ref": "#hash_10beffeaec7ddd8f"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_axis_green_iw9_mp",
+            "#ref": "#hash_7bb6ab4fd628f2aa"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_axis_red_iw9_mp",
+            "#ref": "#hash_dbc4ab85d8b28cba"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_friendly_blue_iw9_mp",
+            "#ref": "#hash_1cbeef7f063e6205"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_friendly_green_iw9_mp",
+            "#ref": "#hash_573e0dd0b6c9ac44"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_friendly_yellow_iw9_mp",
+            "#ref": "#hash_f7ea4f1a25026c71"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_enemy_green_iw9_mp",
+            "#ref": "#hash_58d5fb5fbfc10bcd"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_enemy_red_iw9_mp",
+            "#ref": "#hash_71622ec963408249"
+        },
+        {
+            "#splashbundle": "splash_ballmode_goal_score_enemy_yellow_iw9_mp",
+            "#ref": "#hash_ffaa6f40b431105a"
+        },
+        {
+            "#splashbundle": "splash_ballmode_rammed_by_player_iw9_mp",
+            "#ref": "#hash_f53f784b36c6320a"
+        },
+        {
+            "#splashbundle": "splash_ballmode_stunned_by_player_iw9_mp",
+            "#ref": "#hash_365cb3594580123b"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_obj_circle_iw9_mp",
+            "#ref": "#hash_d96b5890590fa082"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_obj_circle_iw9_mp",
+            "#ref": "#hash_a9cc9e7b969e9650"
+        },
+        {
+            "#ref": "#hash_385bd3300754aabd"
+        },
+        {
+            "#ref": "#hash_80b8a3bf8ad0419f"
+        },
+        {
+            "#ref": "#hash_8de9088eddb46fd9"
+        },
+        {
+            "#ref": "#hash_8f5239890fcf1f74"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_flag_iw9_mp",
+            "#ref": "#hash_5d2829ba59aad25b"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_lost_flag_iw9_mp",
+            "#ref": "#hash_d267b5af30b496cf"
+        },
+        {
+            "#splashbundle": "splash_br_vip_quest_pending_iw9_mp",
+            "#ref": "#hash_37a5a2baad3d1bc0"
+        },
+        {
+            "#splashbundle": "splash_br_assassination_quest_pending_iw9_mp",
+            "#ref": "#hash_ac4bac134ec84709"
+        },
+        {
+            "#splashbundle": "splash_br_safecracker_quest_pending_iw9_mp",
+            "#ref": "#hash_2dd65fa354ca0611"
+        },
+        {
+            "#splashbundle": "splash_br_intel_quest_pending_iw9_mp",
+            "#ref": "#hash_3f600ffc5382f2d7"
+        },
+        {
+            "#splashbundle": "splash_br_scavenger_quest_pending_iw9_mp",
+            "#ref": "#hash_253e314eaf521343"
+        },
+        {
+            "#splashbundle": "splash_br_searchseizure_quest_pending_iw9_mp",
+            "#ref": "#hash_164d6ebe3d0ae010"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_vip_iw9_mp",
+            "#ref": "#hash_6022f05c0aa3b530"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_assassination_iw9_mp",
+            "#ref": "#hash_2986da5949240b91"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_safecracker_iw9_mp",
+            "#ref": "#hash_c92ff7a71d20e0c9"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_intel_iw9_mp",
+            "#ref": "#hash_6a4a1bb1a90e5c97"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_scavenger_iw9_mp",
+            "#ref": "#hash_de403a9c3949a63b"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_searchseizure_iw9_mp",
+            "#ref": "#hash_34c726c58cd2289c"
+        },
+        {
+            "#splashbundle": "splash_stronghold_boss_kill_challenge_complete_iw9_mp",
+            "#ref": "#hash_cfdeae89be8614aa"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_winner_redeploy_mogulag_iw9_mp",
+            "#ref": "#hash_d8cca26581ed850c"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_alert_iw9_mp",
+            "#ref": "#hash_30d2d6064bcb38e3"
+        },
+        {
+            "#splashbundle": "splash_gun_final_kill_iw9_mp",
+            "#ref": "#hash_d97c497bea55973f"
+        },
+        {
+            "#splashbundle": "splash_br_killstreak_purchased_iw9_mp",
+            "#ref": "#hash_1f6d918422c0f62"
+        },
+        {
+            "#splashbundle": "splash_br_respawn_token_pickup_iw9_mp",
+            "#ref": "#hash_b6bf2c84b0f7be35"
+        },
+        {
+            "#splashbundle": "splash_br_respawn_token_disabled_iw9_mp",
+            "#ref": "#hash_1a4c1cdc603f2db5"
+        },
+        {
+            "#splashbundle": "splash_br_self_revive_token_pickup_iw9_mp",
+            "#ref": "#hash_b8e91e18da03857f"
+        },
+        {
+            "#splashbundle": "splash_br_vehicle_purchased_iw9_mp",
+            "#ref": "#hash_75cccbb6c0200b34"
+        },
+        {
+            "#splashbundle": "splash_br_loadout_purchased_iw9_mp",
+            "#ref": "#hash_41a8c996613952d4"
+        },
+        {
+            "#splashbundle": "splash_br_field_upgrade_purchased_iw9_mp",
+            "#ref": "#hash_bdc7e08ecef3f87b"
+        },
+        {
+            "#splashbundle": "splash_br_item_purchased_iw9_mp",
+            "#ref": "#hash_129f5c934c2088fb"
+        },
+        {
+            "#splashbundle": "splash_br_squadmate_revived_iw9_mp",
+            "#ref": "#hash_f1453292ac31da45"
+        },
+        {
+            "#splashbundle": "splash_br_plate_pouch_pickup_iw9_mp",
+            "#ref": "#hash_501826346f20aaf3"
+        },
+        {
+            "#splashbundle": "splash_high_event_iw9_mp",
+            "#ref": "#hash_58a7a74f86484a92"
+        },
+        {
+            "#splashbundle": "splash_med_event_iw9_mp",
+            "#ref": "#hash_4b7853309b25308e"
+        },
+        {
+            "#splashbundle": "splash_low_event_iw9_mp",
+            "#ref": "#hash_8de4e2e923b36516"
+        },
+        {
+            "#splashbundle": "splash_dmz_exfil_inbound_iw9_mp",
+            "#ref": "#hash_12539eafb65863f5"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_token_pickup_iw9_mp",
+            "#ref": "#hash_57574002d306b5a9"
+        },
+        {
+            "#ref": "#hash_3ee7fd0b390d3737"
+        },
+        {
+            "#ref": "#hash_94d937142f2464d2"
+        },
+        {
+            "#ref": "#hash_2cb76dca11923e36"
+        },
+        {
+            "#ref": "#hash_b185f8d0abc6cf23"
+        },
+        {
+            "#ref": "#hash_6e98926c60ca0b1c"
+        },
+        {
+            "#ref": "#hash_17d2016e93ee1efc"
+        },
+        {
+            "#ref": "#hash_17d2046e93ee2415"
+        },
+        {
+            "#ref": "#hash_d7da1966ac5ac5dc"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_hold_the_line_iw9_mp",
+            "#ref": "#hash_662530a1b31fc126"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_hold_the_line_completed_iw9_mp",
+            "#ref": "#hash_7f528e1300ff6804"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_hold_the_line_failed_iw9_mp",
+            "#ref": "#hash_c895349e4a20d096"
+        },
+        {
+            "#splashbundle": "splash_br_airdrop_incoming_squad_iw9_mp",
+            "#ref": "#hash_aff9e9007417855"
+        },
+        {
+            "#splashbundle": "splash_br_plunder_first_pickup_iw9_mp",
+            "#ref": "#hash_ddfd371e7f50f58a"
+        },
+        {
+            "#splashbundle": "splash_bm_your_squad_wiped_iw9_mp",
+            "#ref": "#hash_d47c66c21bcf3f69"
+        },
+        {
+            "#ref": "#hash_7dbc19f6e3a99c85"
+        },
+        {
+            "#ref": "#hash_9f61e96a1b31b97e"
+        },
+        {
+            "#ref": "#hash_827b2890fbf882ad"
+        },
+        {
+            "#splashbundle": "splash_stronghold_active_blacksite_enemy_iw9_mp",
+            "#ref": "#hash_23543725829d7fe6"
+        },
+        {
+            "#ref": "#hash_5b81e48908fbcfb9"
+        },
+        {
+            "#ref": "#hash_2d2fc6e9f3b415de"
+        },
+        {
+            "#splashbundle": "splash_br_deployable_kiosk_incoming_iw9_mp",
+            "#ref": "#hash_4f94ecbfd0e3ba76"
+        },
+        {
+            "#splashbundle": "splash_stronghold_complete_no_gametags_blacksite_iw9_mp",
+            "#ref": "#hash_6539aa5db85b6472"
+        },
+        {
+            "#splashbundle": "splash_br_gulag_prison_riot_in_progress_iw9_mp",
+            "#ref": "#hash_80b3fb0262c20c53"
+        },
+        {
+            "#splashbundle": "splash_stronghold_operation_hold_the_line_stolen_iw9_mp",
+            "#ref": "#hash_e77a3cc8ea2cd578"
+        },
+        {
+            "#splashbundle": "splash_br_contract_cancelled_hacker_phone_iw9_mp",
+            "#ref": "#hash_6f85ff8410e7977c"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_complete_iw9_mp",
+            "#ref": "#hash_c3bf9d178e3e8c10"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_failure_iw9_mp",
+            "#ref": "#hash_f59a2b8c13317a03"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_payment_expired_iw9_mp",
+            "#ref": "#hash_31b320d1dce5da39"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_payment_expiring_iw9_mp",
+            "#ref": "#hash_f09f269a1f213e90"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_pending_iw9_mp",
+            "#ref": "#hash_89120e0d52e26192"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_start_team_iw9_mp",
+            "#ref": "#hash_e161df302bbc5b5b"
+        },
+        {
+            "#splashbundle": "splash_br_hacker_phone_quest_timer_expired_iw9_mp",
+            "#ref": "#hash_97d399cc74461c42"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_win_cod20_iw9_mp",
+            "#ref": "#hash_42b687c9ada78277"
+        },
+        {
+            "#splashbundle": "splash_br_the_boys_event_power_super_jump_alt_iw9_mp",
+            "#ref": "#hash_8db847040b30a1ba"
+        },
+        {
+            "#splashbundle": "splash_br_s5_reveal_observatory_bunker_open_iw9_mp",
+            "#ref": "#hash_af481f9816cc0ae4"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_ai_invasion_iw9_mp",
+            "#ref": "#hash_c88187abed3e542d"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_ammo_feeder_iw9_mp",
+            "#ref": "#hash_e319bb795d703585"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_armored_executioner_iw9_mp",
+            "#ref": "#hash_1c1796c4f155b3a5"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_cache_pinata_iw9_mp",
+            "#ref": "#hash_197adb03acfb6649"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_cranked_iw9_mp",
+            "#ref": "#hash_710c8d0cd99f2a0f"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_equip_mayhem_iw9_mp",
+            "#ref": "#hash_1ab9be47378786d3"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_eyes_on_iw9_mp",
+            "#ref": "#hash_960d6027f03ea2f"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_flame_on_iw9_mp",
+            "#ref": "#hash_9300862b535c89fe"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_fragile_iw9_mp",
+            "#ref": "#hash_2a0914ef60185e6d"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_gun_cycle_iw9_mp",
+            "#ref": "#hash_370344aec3bace5e"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_headshot_only_iw9_mp",
+            "#ref": "#hash_b7c882bc7d20f904"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_hero_drop_iw9_mp",
+            "#ref": "#hash_67c15fa71bb0477d"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_kill_snap_iw9_mp",
+            "#ref": "#hash_1031bea611d69d50"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_low_gravity_iw9_mp",
+            "#ref": "#hash_5d7a45ed89e2b4d2"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_lucky_killstreak_iw9_mp",
+            "#ref": "#hash_ba6f03f0e99de908"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_random_crates_iw9_mp",
+            "#ref": "#hash_fb62ae44c7a440e5"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_semtex_surprise_iw9_mp",
+            "#ref": "#hash_784a91d9b6a0b6f7"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_silent_assassin_iw9_mp",
+            "#ref": "#hash_56eb34fbc0496e82"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_system_reroll_iw9_mp",
+            "#ref": "#hash_26357b2382b7c319"
+        },
+        {
+            "#splashbundle": "splash_mp_gametype_havoc_mod_third_person_iw9_mp",
+            "#ref": "#hash_3cfd9125cd6b6a64"
+        },
+        {
+            "#splashbundle": "splash_br_s5_reveal_observatory_missile_strike_iw9_mp",
+            "#ref": "#hash_73f790835e0a8415"
+        },
+        {
+            "#splashbundle": "splash_dmz_friendly_faction_turned_sc_iw9_mp",
+            "#ref": "#hash_5b869b9038cf73bf"
+        },
+        {
+            "#splashbundle": "splash_dmz_friendly_faction_warning_sc_iw9_mp",
+            "#ref": "#hash_12583e47e89e3d65"
+        },
+        {
+            "#splashbundle": "splash_br_s5_reveal_observatory_attack_initiated_iw9_mp",
+            "#ref": "#hash_c8faf7c77e209c9c"
+        },
+        {
+            "#splashbundle": "splash_dmz_samsite_lost_iw9_mp",
+            "#ref": "#hash_12290791126ad976"
+        },
+        {
+            "#splashbundle": "splash_dmz_samsite_captured_iw9_mp",
+            "#ref": "#hash_d071f62d836c3fd2"
+        },
+        {
+            "#splashbundle": "splash_dmz_samsite_captured_others_iw9_mp",
+            "#ref": "#hash_9d4a5c26c19d1ff0"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_purchase_iw9_mp",
+            "#ref": "#hash_5ea74e2a6a6fa50b"
+        },
+        {
+            "#ref": "#hash_58004ed3bfc7c213"
+        },
+        {
+            "#ref": "#hash_58004fd3bfc7c3c6"
+        },
+        {
+            "#ref": "#hash_580050d3bfc7c579"
+        },
+        {
+            "#ref": "#hash_580051d3bfc7c72c"
+        },
+        {
+            "#ref": "#hash_580052d3bfc7c8df"
+        },
+        {
+            "#splashbundle": "splash_br_sv_exfil_inbound",
+            "#ref": "#hash_42717b38670aac46"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_event_iw9_mp",
+            "#ref": "#hash_c1b656b0baf843cd"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_event_locked_and_loaded_iw9_mp",
+            "#ref": "#hash_d8c76ffd74a0ed5a"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_event_cash_overflow_iw9_mp",
+            "#ref": "#hash_e3a9f88df4014c58"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_event_go_again_iw9_mp",
+            "#ref": "#hash_ca96a4d0ef097423"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_event_rocket_arena_iw9_mp",
+            "#ref": "#hash_91dea4f777c6a68a"
+        },
+        {
+            "#splashbundle": "splash_br_twotwo_gulag_start_event_war_machine_iw9_mp",
+            "#ref": "#hash_716c54e2f58f5742"
+        },
+        {
+            "#splashbundle": "splash_gulag_event_complete_iw9_mp",
+            "#ref": "#hash_1572bb448270bbca"
+        },
+        {
+            "#splashbundle": "splash_br_secondary_victory_exfil_in_progress_iw9_mp",
+            "#ref": "#hash_882f456e1d9aef8a"
+        },
+        {
+            "#splashbundle": "splash_br_secondary_victory_exfil_inbound_exit_iw9_mp",
+            "#ref": "#hash_30565d539bf5f3c1"
+        },
+        {
+            "#splashbundle": "splash_br_secondary_victory_exfil_inbound_iw9_mp",
+            "#ref": "#hash_51e396e019c1a04"
+        },
+        {
+            "#splashbundle": "splash_dmz_plea_help_request_iw9_mp",
+            "#ref": "#hash_ea7db7db4150f56c"
+        },
+        {
+            "#ref": "#hash_1c3f5c83d447a59d"
+        },
+        {
+            "#ref": "#hash_e82441ad2cad43db"
+        },
+        {
+            "#ref": "#hash_66078e5afee5517c"
+        },
+        {
+            "#ref": "#hash_9b9eafc92c571f7"
+        },
+        {
+            "#ref": "#hash_3306d023478dc47e"
+        },
+        {
+            "#ref": "#hash_d84b8a7e537fc130"
+        },
+        {
+            "#ref": "#hash_925e4d4089610a45"
+        },
+        {
+            "#ref": "#hash_42057aa794c501bf"
+        },
+        {
+            "#ref": "#hash_45db9c647ae5ea92"
+        },
+        {
+            "#ref": "#hash_cd0f51801ae89eed"
+        },
+        {
+            "#ref": "#hash_1bee565946e674ec"
+        },
+        {
+            "#ref": "#hash_c8d1ded2b512a0ce"
+        },
+        {
+            "#ref": "#hash_76ea074ce5826b6a"
+        },
+        {
+            "#ref": "#hash_21434adf5c2997c7"
+        },
+        {
+            "#ref": "#hash_a6b95068f2234328"
+        },
+        {
+            "#ref": "#hash_d83d82d6aa8fd87a"
+        },
+        {
+            "#ref": "#hash_3df6bfdc87a2b604"
+        },
+        {
+            "#ref": "#hash_c00ab2a8c061485a"
+        },
+        {
+            "#ref": "#hash_abf06a152dcf3841"
+        },
+        {
+            "#ref": "#hash_504250a81cfdf1ab"
+        },
+        {
+            "#ref": "#hash_7cab2f0744a888be"
+        },
+        {
+            "#ref": "#hash_314aa955d554b730"
+        },
+        {
+            "#ref": "#hash_ae4e75b23c8a59ae"
+        },
+        {
+            "#ref": "#hash_882e738b382fbfa3"
+        },
+        {
+            "#ref": "#hash_5e200d8999bd035"
+        },
+        {
+            "#ref": "#hash_f3d3bbcc5afc2d9c"
+        },
+        {
+            "#ref": "#hash_4a1320f9cb94362"
+        },
+        {
+            "#ref": "#hash_4c1f7b6b3fe5674f"
+        },
+        {
+            "#ref": "#hash_4888dfef50d65371"
+        },
+        {
+            "#ref": "#hash_e3629a13ebc59627"
+        },
+        {
+            "#ref": "#hash_b383e5dfe94284ae"
+        },
+        {
+            "#ref": "#hash_6a86e430e9f37b40"
+        },
+        {
+            "#ref": "#hash_613f62c2ec65e699"
+        },
+        {
+            "#ref": "#hash_a6fe2b308d8f1cf3"
+        },
+        {
+            "#ref": "#hash_9dde1c0fbad9637a"
+        },
+        {
+            "#ref": "#hash_fd42b5dabc987e30"
+        },
+        {
+            "#splashbundle": "splash_slam_execution",
+            "#ref": "#hash_2f29154036a952b2"
+        },
+        {
+            "#splashbundle": "splash_slam_execution_caramel",
+            "#ref": "#hash_169fa041069ea74c"
+        },
+        {
+            "#splashbundle": "splash_slam_execution_chair",
+            "#ref": "#hash_a8c194033dec3830"
+        },
+        {
+            "#splashbundle": "splash_slam_execution_gelato",
+            "#ref": "#hash_118bae30a1d31479"
+        },
+        {
+            "#splashbundle": "splash_slam_execution_mochi",
+            "#ref": "#hash_11c40d31d028c5bb"
+        },
+        {
+            "#splashbundle": "splash_slam_execution_powerbomb",
+            "#ref": "#hash_c5077025da6deef9"
+        },
+        {
+            "#splashbundle": "splash_br_gulagbreak_active_iw9_mp",
+            "#ref": "#hash_74b872cc85bf27fc"
+        },
+        {
+            "#splashbundle": "splash_br_gulagbreak_got_key_iw9_mp",
+            "#ref": "#hash_7cb9c45d6ae8db33"
+        },
+        {
+            "#splashbundle": "splash_dmz_weapon_case_transfer_iw9_mp",
+            "#ref": "#hash_8474349147d3dc27"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_drop_incoming_iw9_mp",
+            "#ref": "#hash_ddd6f5f20f7204f2"
+        },
+        {
+            "#splashbundle": "splash_dmz_radiation_expanding_iw9_mp",
+            "#ref": "#hash_9f558a9687b90a3a"
+        },
+        {
+            "#splashbundle": "splash_dmz_weapon_case_pickup_iw9_mp",
+            "#ref": "#hash_2ad5987299178fde"
+        },
+        {
+            "#ref": "#hash_f50a6c130616b448"
+        },
+        {
+            "#ref": "#hash_548bf228c4fbdae1"
+        },
+        {
+            "#ref": "#hash_a8b72a216b2175be"
+        },
+        {
+            "#ref": "#hash_345d8cc49f1e684e"
+        },
+        {
+            "#ref": "#hash_237ed3c41c00e7cf"
+        },
+        {
+            "#ref": "#hash_a17114110ce23b34"
+        },
+        {
+            "#ref": "#hash_54dfe874cfaa8226"
+        },
+        {
+            "#ref": "#hash_8f52fa1875d88f2b"
+        },
+        {
+            "#ref": "#hash_719e16ca4d9f154a"
+        },
+        {
+            "#ref": "#hash_594c178e43130fbb"
+        },
+        {
+            "#ref": "#hash_dd24f7ae72c0b856"
+        },
+        {
+            "#ref": "#hash_2dc578e122aa599"
+        },
+        {
+            "#ref": "#hash_9d76cbf2831b24a2"
+        },
+        {
+            "#ref": "#hash_84a6dc6a313bc033"
+        },
+        {
+            "#ref": "#hash_a6e3f2fcab13c796"
+        },
+        {
+            "#ref": "#hash_325bc52795fc95d9"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_boatdrive_mp",
+            "#ref": "#hash_40aa6363772e7efa"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_combat_mp",
+            "#ref": "#hash_7a1c5d80e54dac28"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_hunt_mp",
+            "#ref": "#hash_d87225b174e128f5"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_intel_mp",
+            "#ref": "#hash_cadfc18f618cc3c8"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_radiation_mp",
+            "#ref": "#hash_347fb9baa43a73d7"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_rescue_mp",
+            "#ref": "#hash_bfb202610d3356f1"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_sabotage_mp",
+            "#ref": "#hash_fed8b9b47f6e7624"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_trap_mp",
+            "#ref": "#hash_aa5dfa931fee790b"
+        },
+        {
+            "#splashbundle": "splash_dmz_contract_cancelled_vehicledrive_mp",
+            "#ref": "#hash_f55b954adf08c1a0"
+        },
+        {
+            "#splashbundle": "splash_dmz_hunt_lost_exfilled_iw9_mp",
+            "#ref": "#hash_a37520e64ce38181"
+        },
+        {
+            "#ref": "#hash_9f026d92ee34fde4"
+        },
+        {
+            "#ref": "#hash_9f027092ee3502fd"
+        },
+        {
+            "#ref": "#hash_9f026f92ee35014a"
+        },
+        {
+            "#ref": "#hash_9f026a92ee34f8cb"
+        },
+        {
+            "#ref": "#hash_9f026992ee34f718"
+        },
+        {
+            "#splashbundle": "splash_dmz_weapon_case_pickup_biolab_iw9_mp",
+            "#ref": "#hash_ff0de30b9ad71842"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_assigned_iw9_mp",
+            "#ref": "#hash_ef5ae7298917d8c3"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_fired_iw9_mp",
+            "#ref": "#hash_63d0d936c454c59"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_secured_iw9_mp",
+            "#ref": "#hash_63595abaa66b6b7a"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_secured_1_2_iw9_mp",
+            "#ref": "#hash_3a654d79f3018263"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_secured_1_3_iw9_mp",
+            "#ref": "#hash_3a654c79f30180b0"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_secured_2_3_iw9_mp",
+            "#ref": "#hash_2fb0bb79ec5d524d"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_lost_time_iw9_mp",
+            "#ref": "#hash_49f18de2d7a47fb3"
+        },
+        {
+            "#splashbundle": "splash_dmz_supply_comprimised_iw9_mp",
+            "#ref": "#hash_f91e97603beb2cb1"
+        },
+        {
+            "#splashbundle": "splash_dmz_convoy_attack_assigned_iw9_mp",
+            "#ref": "#hash_cdef32ace197562d"
+        },
+        {
+            "#splashbundle": "splash_dmz_convoy_attack_lost_time_iw9_mp",
+            "#ref": "#hash_b9233e191390a5fd"
+        },
+        {
+            "#splashbundle": "splash_dmz_convoy_attack_success_iw9_mp",
+            "#ref": "#hash_c229134d524e9200"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_pickup_gallium_iw9_mp",
+            "#ref": "#hash_f5e4cf052c1f17e1"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_gallium_acquired_global_iw9_mp",
+            "#ref": "#hash_38b54c32e0e56155"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_neptunium_acquired_global_iw9_mp",
+            "#ref": "#hash_5d89fc93f5dd8cf7"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_pickup_neptunium_iw9_mp",
+            "#ref": "#hash_be1fc1ddb8333d67"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_deuterium_acquired_global_iw9_mp",
+            "#ref": "#hash_b6fc483fb2e379ee"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_pickup_deuterium_iw9_mp",
+            "#ref": "#hash_8382eaea5563baa2"
+        },
+        {
+            "#splashbundle": "splash_dmz_laser_reset_iw9_mp",
+            "#ref": "#hash_28b8214b3f45853c"
+        },
+        {
+            "#splashbundle": "splash_dmz_laser_tripped_iw9_mp",
+            "#ref": "#hash_fa158329ba1d225b"
+        },
+        {
+            "#splashbundle": "splash_dmz_getaway_exfil_iw9_mp",
+            "#ref": "#hash_d29f20fc14d8620e"
+        },
+        {
+            "#splashbundle": "splash_dmz_bunker_exit_secured_iw9_mp",
+            "#ref": "#hash_a42e690ae2b131e5"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_exfil_canister_root_iw9_mp",
+            "#ref": "#hash_5d3874d3e3fda130"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_exfil_yourself_root_iw9_mp",
+            "#ref": "#hash_ffc9edba6d6b12cc"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_find_canister_root_iw9_mp",
+            "#ref": "#hash_bc56c810eababdd9"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_observatory_destroyed_root_iw9_mp",
+            "#ref": "#hash_af84915ae4f4e488"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_silo_captured_root_iw9_mp",
+            "#ref": "#hash_1022d754075005c8"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_silo_revealed_root_iw9_mp",
+            "#ref": "#hash_61cae92fa1309182"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_missiles_firing_root_iw9_mp",
+            "#ref": "#hash_ff16e16e0987c9cd"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_find_more_canisters_root_iw9_mp",
+            "#ref": "#hash_cd7e928780b04ad8"
+        },
+        {
+            "#splashbundle": "splash_truckwar_gas_is_approaching_close_iw9_mp",
+            "#ref": "#hash_ffe464ed38a85a7b"
+        },
+        {
+            "#splashbundle": "splash_truckwar_gas_is_approaching_far_iw9_mp",
+            "#ref": "#hash_37223790f1951ee6"
+        },
+        {
+            "#splashbundle": "splash_truckwar_gas_is_approaching_medium_iw9_mp",
+            "#ref": "#hash_1fdb0d91d71c1c8e"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_armor_upgraded_iw9_mp",
+            "#ref": "#hash_ce8fc37a07837cfe"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_destroyed_iw9_mp",
+            "#ref": "#hash_fa341c3b9dd3dbc9"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_engine_upgraded_iw9_mp",
+            "#ref": "#hash_d6ddf7606277818d"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_portable_radar_upgraded_iw9_mp",
+            "#ref": "#hash_6cab75b054df31d3"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_spawn_disabled_iw9_mp",
+            "#ref": "#hash_686795e497793056"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_spawn_enabled_iw9_mp",
+            "#ref": "#hash_895de148bf76831b"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_trophy_no_ammo_iw9_mp",
+            "#ref": "#hash_2fc2d2594566384d"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_trophy_upgraded_iw9_mp",
+            "#ref": "#hash_1c81769fd3cfc5c1"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_trophy_refilled_iw9_mp",
+            "#ref": "#hash_91841a0fc9899090"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_turret_upgraded_iw9_mp",
+            "#ref": "#hash_f1eb7f4d227c55c1"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_under_attack_iw9_mp",
+            "#ref": "#hash_3140de8dd050ac75"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_barrel_upgraded_iw9_mp",
+            "#ref": "#hash_40ad88a278900b7"
+        },
+        {
+            "#splashbundle": "splash_truckwar_vehicle_smoke_upgraded_iw9_mp",
+            "#ref": "#hash_34572e0ab17ae1c8"
+        },
+        {
+            "#splashbundle": "splash_truckwar_spawn_disabled_iw9_mp",
+            "#ref": "#hash_709be3040096d377"
+        },
+        {
+            "#splashbundle": "splash_truckwar_welcome_iw9_mp",
+            "#ref": "#hash_972872489c0b8d6d"
+        },
+        {
+            "#splashbundle": "splash_truckwar_ally_left_improvement_root_mp",
+            "#ref": "#hash_ae250a9c81a30ac4"
+        },
+        {
+            "#splashbundle": "splash_truckwar_ally_rejoin_improvement_root_mp",
+            "#ref": "#hash_26085390a543c3f4"
+        },
+        {
+            "#splashbundle": "splash_truckwar_left_behind_improvement_root_mp",
+            "#ref": "#hash_d8265b02e038d0cc"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_exfil_canister_root_iw9_mp",
+            "#ref": "#hash_5d3874d3e3fda130"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_exfil_yourself_root_iw9_mp",
+            "#ref": "#hash_ffc9edba6d6b12cc"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_find_canister_root_iw9_mp",
+            "#ref": "#hash_bc56c810eababdd9"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_observatory_destroyed_root_iw9_mp",
+            "#ref": "#hash_af84915ae4f4e488"
+        },
+        {
+            "#splashbundle": "splash_s5_reveal_silo_captured_root_iw9_mp",
+            "#ref": "#hash_1022d754075005c8"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_team_wipe_iw9_mp",
+            "#ref": "#hash_bb3d064c273a5dc8"
+        },
+        {
+            "#splashbundle": "splash_br_elite_chopper_start_iw9_mp",
+            "#ref": "#hash_670985797c98a5ba"
+        },
+        {
+            "#splashbundle": "splash_br_elite_chopper_end_iw9_mp",
+            "#ref": "#hash_fd9835343a8a592f"
+        },
+        {
+            "#splashbundle": "splash_br_elite_geiger_start_iw9_mp",
+            "#ref": "#hash_c67a65bb308b5fee"
+        },
+        {
+            "#splashbundle": "splash_br_elite_geiger_end_iw9_mp",
+            "#ref": "#hash_f1cecf6f41454fdb"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_dropped_global_iw9_mp",
+            "#ref": "#hash_b10c905cd6d46ee4"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_stolen_global_iw9_mp",
+            "#ref": "#hash_18b63ddd58f2e7aa"
+        },
+        {
+            "#splashbundle": "splash_br_elite_arrow_stolen_iw9_mp",
+            "#ref": "#hash_4e3180a7a4c54084"
+        }
+    ]
+}

@@ -84,7 +84,7 @@ function main() {
             wait 1;
         }
         while (true) {
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -498,7 +498,7 @@ function refresh_existing_bots() {
         level.var_d65b83156825b08c = 0;
         setdevdvarifuninitialized(@"hash_886b3374b1579604", "<dev string:x41>");
         for (;;) {
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -1900,7 +1900,7 @@ function bot_3d_sighting_model_thread(associatedent) {
     level endon("game_ended");
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -2168,7 +2168,7 @@ function bot_restart_think_threads() {
         self endon("<dev string:x513>");
         level endon("<dev string:x1c>");
         while (true) {
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -2289,7 +2289,7 @@ function bot_think_watch_enemy(bendondeath) {
     self.last_enemy_sight_time = 0;
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -2316,7 +2316,7 @@ function bot_think_seek_dropped_weapons() {
     var_7ba262cc7ab5e283 = "throwingknife_mp";
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -2733,7 +2733,7 @@ function bot_think_crate() {
     var_ebd58f81541d9efb = getdvarfloat(@"hash_a62badf83a03d925");
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -3124,7 +3124,7 @@ function bot_think_crate_blocking_path() {
     radius = getdvarfloat(@"hash_a62badf83a03d925");
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -3171,7 +3171,7 @@ function bot_think_usable_objects() {
     level endon("game_ended");
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

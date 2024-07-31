@@ -1,0 +1,22 @@
+{
+    "#id": "online_cloud_saving",
+    "#description": "&OPTIONS/ONLINE_CLOUD_SAVING_DESC",
+    "#dvar": "@online_cloud_files_sync",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "ACCOUNT",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/ONLINE_CLOUD_SAVING"
+}

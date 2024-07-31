@@ -1,0 +1,66 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_decho"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_dechoauto"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_glima21"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_golf17"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_golf18"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_mike93"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_papa220"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_rsierra12"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_swhiskey"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_tango9"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_uzulum"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_mike2011"
+        }
+    ]
+}

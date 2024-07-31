@@ -49,7 +49,7 @@ function main() {
         return;
     }
     level.isgroundwarsiege = 0;
-    matchmakingmatch = getdvarint(@"hash_962400405f9f3c0b") && !getdvarint(@"hash_485ef1ed1d39d3a3");
+    matchmakingmatch = getdvarint(@"onlinegame") && !getdvarint(@"xblive_privatematch");
     if (matchmakingmatch) {
         level.isgroundwarsiege = getdvarint(@"hash_f2d9a572db1504f1", 0);
     }
@@ -133,35 +133,35 @@ function main() {
         if (!isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
             switch (mapname) {
             case #"hash_32eaa112f8caa7e4": 
-                setdvar(@"hash_6beec004cdf37c0", 6);
+                setdvar(@"scr_localeID", 6);
                 break;
             case #"hash_7a28db3c5928c489": 
-                setdvar(@"hash_6beec004cdf37c0", 5);
+                setdvar(@"scr_localeID", 5);
                 break;
             case #"hash_50de71be6e7469ff":
             case #"hash_863773b8960b3944": 
-                setdvar(@"hash_6beec004cdf37c0", 9);
+                setdvar(@"scr_localeID", 9);
                 break;
             case #"hash_12f3765ef24b4037": 
-                setdvar(@"hash_6beec004cdf37c0", 3);
+                setdvar(@"scr_localeID", 3);
                 break;
             case #"hash_924a3fbe9fbe15c6": 
-                setdvar(@"hash_6beec004cdf37c0", 4);
+                setdvar(@"scr_localeID", 4);
                 break;
             case #"hash_a8b272dba33a4aed": 
-                setdvar(@"hash_6beec004cdf37c0", 17);
+                setdvar(@"scr_localeID", 17);
                 break;
             case #"hash_1bc93b88575e82eb": 
-                setdvar(@"hash_6beec004cdf37c0", 18);
+                setdvar(@"scr_localeID", 18);
                 break;
             case #"hash_e4ca6b73b5022b26": 
-                setdvar(@"hash_6beec004cdf37c0", 10);
+                setdvar(@"scr_localeID", 10);
                 break;
             case #"hash_3a8b050ff58578ad": 
-                setdvar(@"hash_6beec004cdf37c0", 19);
+                setdvar(@"scr_localeID", 19);
                 break;
             default: 
-                setdvar(@"hash_6beec004cdf37c0", 0);
+                setdvar(@"scr_localeID", 0);
                 break;
             }
         }

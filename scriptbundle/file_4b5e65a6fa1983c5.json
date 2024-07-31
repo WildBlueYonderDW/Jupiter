@@ -1,0 +1,14 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_monkey_bomb"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_blackhole_bomb"
+        }
+    ]
+}

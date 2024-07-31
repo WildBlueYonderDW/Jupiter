@@ -1,0 +1,567 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_sm_papa90",
+    "#hash_79839b907716ac41": "icon_weapon_sm_papa90",
+    "#platform": "platform_iw9_sm_papa90",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_2",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_sm_papa90_v1",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_sm_papa90",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_smg",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_sm_papa90_v6",
+    "#category": "&WEAPON/SUBCLASS_ID_2",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1500,
+    "#lootid": 11374,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 4,
+    "#ref": "iw9_sm_papa90",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/SM_PAPA90",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/SM_PAPA90",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front mag selectsemi ironsdefault",
+    "#asset": "iw9_sm_papa90_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_smg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_short_p07",
+                    "#lootid": 2818,
+                    "#challengeid": 9276,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "papa90_frontpieces",
+                    "#lootid": 11526,
+                    "#challengeid": 18758,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_aim_p07",
+                    "#lootid": 3291,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_reargrips",
+                    "#lootid": 11520,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "lasercyl_hip03",
+                    "#lootid": 3504,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_extras",
+                    "#lootid": 11523,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_tactical_p07",
+                    "#lootid": 1755,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_backpieces",
+                    "#lootid": 11522,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "railreflex_sm_p07",
+                    "#lootid": 2155,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_rails",
+                    "#lootid": 11527,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "flash_sm_01",
+                    "#lootid": 1346,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_muzzles",
+                    "#lootid": 11521,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_5x28_ap",
+                    "#lootid": 3297,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_gunperks",
+                    "#lootid": 11528,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_long_p07",
+                    "#lootid": 2272,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_ergo_p07",
+                    "#lootid": 1144,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_combs",
+                    "#lootid": 11529,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_heavy_p07",
+                    "#lootid": 720,
+                    "#challengeid": 9002,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_ob_2",
+                    "#challengeid": 18825
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "holotherm01",
+                    "#lootid": 2041,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_optics",
+                    "#lootid": 11524,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "silencer01_sm",
+                    "#lootid": 3390,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rail_sm_small_p07",
+                    "#lootid": 3361,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_hvylong_p07",
+                    "#lootid": 1301,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_vertshort02",
+                    "#lootid": 2046,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "papa90_undermounts",
+                    "#lootid": 11519,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_5x28_op",
+                    "#lootid": 2133,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ass_p07",
+                    "#lootid": 3559,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_assault_p07",
+                    "#lootid": 1435,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_heavy_p07",
+                    "#lootid": 769,
+                    "#challengeid": 9055,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_ob_3",
+                    "#challengeid": 18892
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_5x28_fr",
+                    "#lootid": 3247,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled11",
+                    "#lootid": 599,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_tactical_p07",
+                    "#lootid": 3749,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "barsil_sm_p07",
+                    "#lootid": 685,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p07",
+                    "#lootid": 2030,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_heavy_p07",
+                    "#lootid": 2055,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_p07",
+                    "#lootid": 3441,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "barsil_sm_long_p07",
+                    "#lootid": 1726,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 27
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "comp_sm_01",
+                    "#lootid": 1076,
+                    "#challengeid": 9095,
+                    "#bucket": 6
+                },
+                {
+                    "#challengeref": "iw9_sm_papa90_camo_ob_4",
+                    "#challengeid": 18959
+                }
+            ],
+            "#level": 28
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_sm_papa90_tuning",
+                    "#lootid": 11763,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 29
+        }
+    ],
+    "#displayorder": 40,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

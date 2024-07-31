@@ -66,7 +66,7 @@ function function_a3b11047212a9bbd() {
     namespace_56b9cc3deb6e3f5e::initializeupdate();
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1") || self.sessionstate == "<dev string:x1c>") {
+            if (getdvarint(@"bot_DisableAllAI") || self.sessionstate == "<dev string:x1c>") {
                 wait 0.05;
                 continue;
             }

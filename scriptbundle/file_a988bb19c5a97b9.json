@@ -1,0 +1,327 @@
+{
+    "#id": 100,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#hash_dfcd95b32f523f82",
+            "#sharedname": "#hash_dfcd95b32f523f82"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_94a37e9ce9ff6a5f",
+            "#sharedname": "#hash_94a37e9ce9ff6a5f"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_fd28ad4e105d2472",
+            "#sharedname": "#hash_fd28ad4e105d2472"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_df17df92939ae42d",
+            "#sharedname": "#hash_df17df92939ae42d"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#underwater",
+            "#sharedname": "#underwater"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_ebe31a17688c2e8c",
+            "#sharedname": "#hash_ebe31a17688c2e8c"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_761c8b5df6d221f",
+            "#sharedname": "#hash_761c8b5df6d221f"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#holding_hostage",
+            "#sharedname": "#holding_hostage"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#pinged",
+            "#sharedname": "#pinged"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#hash_7d4ca6b82b853a92",
+            "#sharedname": "#hash_7d4ca6b82b853a92"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#hash_8345a13afbaa0f66",
+            "#sharedname": "#hash_8345a13afbaa0f66"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#from_helicopter",
+            "#sharedname": "#from_helicopter"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#hash_13530691b902b58",
+            "#sharedname": "#hash_13530691b902b58"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#silenced",
+            "#sharedname": "#silenced"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#cover_kill",
+            "#sharedname": "#cover_kill"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#hash_9a9737f7fd4326f",
+            "#sharedname": "#hash_9a9737f7fd4326f"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#hash_c7bef9ff3af2dead",
+            "#sharedname": "#hash_c7bef9ff3af2dead"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#helicopter_explosive",
+            "#sharedname": "#helicopter_explosive"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#hash_5e9fb943b0757651",
+            "#sharedname": "#hash_5e9fb943b0757651"
+        },
+        {
+            "#bitindex": 19,
+            "#name": "#standing",
+            "#sharedname": "#standing"
+        },
+        {
+            "#bitindex": 20,
+            "#name": "#hash_71e5f339792a9ef6",
+            "#sharedname": "#hash_71e5f339792a9ef6"
+        },
+        {
+            "#bitindex": 21,
+            "#name": "#hash_9a466248c901ec58",
+            "#sharedname": "#hash_9a466248c901ec58"
+        },
+        {
+            "#bitindex": 22,
+            "#name": "#clean_kill",
+            "#sharedname": "#clean_kill"
+        },
+        {
+            "#bitindex": 23,
+            "#name": "#popcorn",
+            "#sharedname": "#popcorn"
+        },
+        {
+            "#bitindex": 24,
+            "#name": "#isaltmode",
+            "#sharedname": "#isaltmode"
+        },
+        {
+            "#bitindex": 25,
+            "#name": "#hash_bdb8870aac1e8299",
+            "#sharedname": "#hash_bdb8870aac1e8299"
+        },
+        {
+            "#bitindex": 26,
+            "#name": "#hash_69b07a456b22e26b",
+            "#sharedname": "#hash_69b07a456b22e26b"
+        },
+        {
+            "#bitindex": 27,
+            "#name": "#hash_dbaf3685f1412e50",
+            "#sharedname": "#hash_dbaf3685f1412e50"
+        },
+        {
+            "#bitindex": 28,
+            "#name": "#unaware",
+            "#sharedname": "#unaware"
+        },
+        {
+            "#bitindex": 29,
+            "#name": "#hash_d8f4697a14a1eb28",
+            "#sharedname": "#hash_d8f4697a14a1eb28"
+        },
+        {
+            "#bitindex": 30,
+            "#name": "#hash_2e7e9e81db8b7c76",
+            "#sharedname": "#hash_2e7e9e81db8b7c76"
+        },
+        {
+            "#bitindex": 31,
+            "#name": "#hash_bfcd99db994fdc69",
+            "#sharedname": "#hash_bfcd99db994fdc69"
+        },
+        {
+            "#bitindex": 32,
+            "#name": "#hash_bfcd98db994fdab6",
+            "#sharedname": "#hash_bfcd98db994fdab6"
+        },
+        {
+            "#bitindex": 33,
+            "#name": "#hash_bfcd9bdb994fdfcf",
+            "#sharedname": "#hash_bfcd9bdb994fdfcf"
+        },
+        {
+            "#bitindex": 34,
+            "#name": "#hash_bfcd9adb994fde1c",
+            "#sharedname": "#hash_bfcd9adb994fde1c"
+        },
+        {
+            "#bitindex": 35,
+            "#name": "#hash_bfcd9ddb994fe335",
+            "#sharedname": "#hash_bfcd9ddb994fe335"
+        },
+        {
+            "#bitindex": 36,
+            "#name": "#hash_efa8718cf03a1110",
+            "#sharedname": "#hash_efa8718cf03a1110"
+        },
+        {
+            "#bitindex": 37,
+            "#name": "#hash_bfcd97db994fd903",
+            "#sharedname": "#hash_bfcd97db994fd903"
+        },
+        {
+            "#bitindex": 38,
+            "#name": "#hash_5b4eb501eaf86d4e",
+            "#sharedname": "#hash_5b4eb501eaf86d4e"
+        },
+        {
+            "#bitindex": 39,
+            "#name": "#hash_f2983746271435a7",
+            "#sharedname": "#hash_f2983746271435a7"
+        },
+        {
+            "#bitindex": 40,
+            "#name": "#hash_4001c9dbc7ee0d94",
+            "#sharedname": "#hash_4001c9dbc7ee0d94"
+        },
+        {
+            "#bitindex": 41,
+            "#name": "#hash_8368a43e439d8a67",
+            "#sharedname": "#hash_8368a43e439d8a67"
+        },
+        {
+            "#bitindex": 42,
+            "#name": "#throwback_grenade",
+            "#sharedname": "#throwback_grenade"
+        },
+        {
+            "#bitindex": 43,
+            "#name": "#hash_6fe2b9cf17c7b420",
+            "#sharedname": "#hash_6fe2b9cf17c7b420"
+        },
+        {
+            "#bitindex": 44,
+            "#name": "#hash_14a3735ca2c04b6e",
+            "#sharedname": "#hash_14a3735ca2c04b6e"
+        },
+        {
+            "#bitindex": 45,
+            "#name": "#hash_4fa581d565c006ba",
+            "#sharedname": "#hash_4fa581d565c006ba"
+        },
+        {
+            "#bitindex": 46,
+            "#name": "#hash_b6f6dfe62b07725d",
+            "#sharedname": "#hash_b6f6dfe62b07725d"
+        },
+        {
+            "#bitindex": 47,
+            "#name": "#hash_d7b16a9c232a632c",
+            "#sharedname": "#hash_d7b16a9c232a632c"
+        },
+        {
+            "#bitindex": 48,
+            "#name": "#hash_c009ccb571734f3f",
+            "#sharedname": "#hash_c009ccb571734f3f"
+        },
+        {
+            "#bitindex": 49,
+            "#name": "#hash_57607c872b10ce42",
+            "#sharedname": "#hash_57607c872b10ce42"
+        },
+        {
+            "#bitindex": 50,
+            "#name": "#hash_bfcd96db994fd750",
+            "#sharedname": "#hash_bfcd96db994fd750"
+        },
+        {
+            "#bitindex": 51,
+            "#name": "#hash_fbf026161c1d9738",
+            "#sharedname": "#hash_fbf026161c1d9738"
+        },
+        {
+            "#bitindex": 52,
+            "#name": "#hash_5a2b5a68d5137719",
+            "#sharedname": "#hash_5a2b5a68d5137719"
+        },
+        {
+            "#bitindex": 53,
+            "#name": "#hash_61d3f9296ff84917",
+            "#sharedname": "#hash_61d3f9296ff84917"
+        },
+        {
+            "#bitindex": 54,
+            "#name": "#hash_20630165c19e7248",
+            "#sharedname": "#hash_20630165c19e7248"
+        },
+        {
+            "#bitindex": 55,
+            "#name": "#strafing_kill",
+            "#sharedname": "#strafing_kill"
+        },
+        {
+            "#bitindex": 56,
+            "#name": "#hash_c1ffd4ce40e85b7c",
+            "#sharedname": "#hash_c1ffd4ce40e85b7c"
+        },
+        {
+            "#bitindex": 57,
+            "#name": "#hash_c1ffd7ce40e86095",
+            "#sharedname": "#hash_c1ffd7ce40e86095"
+        },
+        {
+            "#bitindex": 58,
+            "#name": "#hash_c1ffd6ce40e85ee2",
+            "#sharedname": "#hash_c1ffd6ce40e85ee2"
+        },
+        {
+            "#bitindex": 59,
+            "#name": "#hash_c1ffd1ce40e85663",
+            "#sharedname": "#hash_c1ffd1ce40e85663"
+        },
+        {
+            "#bitindex": 60,
+            "#name": "#hash_d5f7402ac6e6fc0c",
+            "#sharedname": "#hash_d5f7402ac6e6fc0c"
+        },
+        {
+            "#bitindex": 61,
+            "#name": "#hand",
+            "#sharedname": "#hand"
+        },
+        {
+            "#bitindex": 62,
+            "#name": "#hash_cc2e07fca456b0a1",
+            "#sharedname": "#hash_cc2e07fca456b0a1"
+        },
+        {
+            "#bitindex": 63,
+            "#name": "#hash_3d20b9f56f230af1",
+            "#sharedname": "#hash_3d20b9f56f230af1"
+        }
+    ],
+    "#name": "#hash_fbfb9566bbdbe59f",
+    "#sharedname": "#hash_7f94e71c1787fdc7"
+}

@@ -1,0 +1,38 @@
+{
+    "#pointsneeded": 15,
+    "#icons": [
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_bronze_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_bronze"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_silver_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_silver"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_gold_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_gold"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_platinum_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_platinum"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_diamond_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_diamond"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_crimson_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_crimson"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_15_iridescent_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_15_iridescent"
+        },
+        {
+            "#iconlarge": "iw9_ui_icon_leagueplay_rank_0_top250_large",
+            "#icon": "iw9_ui_icon_leagueplay_rank_0_top250"
+        }
+    ],
+    "#rankname": "&LP/RANK_X"
+}

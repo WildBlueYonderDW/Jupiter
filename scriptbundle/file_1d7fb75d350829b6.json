@@ -1,0 +1,22 @@
+{
+    "#id": 61,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#pacifist",
+            "#sharedname": "#pacifist"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_c98892eade7bdf9a",
+            "#sharedname": "#hash_c98892eade7bdf9a"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_e29cd3a4a8253f74",
+            "#sharedname": "#hash_e29cd3a4a8253f74"
+        }
+    ],
+    "#name": "#hash_b29d236ccf522d1c",
+    "#sharedname": "#hash_f1da7bc4bdd97eb4"
+}

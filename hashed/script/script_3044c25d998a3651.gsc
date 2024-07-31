@@ -393,7 +393,7 @@ function function_8c158c00964032fb(player, streakinfo) {
     if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
         thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_missile_drone", player);
     }
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdPerson")) {
         if (issharedfuncdefined("player", "setThirdPersonDOF")) {
             player [[ getsharedfunc("player", "setThirdPersonDOF") ]](0);
         }
@@ -722,7 +722,7 @@ function function_cf067ca1169bed53(player, crashing) {
         player waittill("missileDrone_fadeScreenComplete");
         player notify("returning_killstreak_player");
         player.var_2bd14eb14d3e8f41 = undefined;
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             if (issharedfuncdefined("player", "setThirdPersonDOF")) {
                 player [[ getsharedfunc("player", "setThirdPersonDOF") ]](1);
             }

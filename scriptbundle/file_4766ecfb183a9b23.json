@@ -1,0 +1,28 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 2,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_aether_tools_yellow",
+            "#mincount": 1
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_caches_zombie_high_value_yellow_pvpve",
+            "#mincount": 1
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_caches_low_value_yellow_pvpve"
+        },
+        {
+            "#weight": 65
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

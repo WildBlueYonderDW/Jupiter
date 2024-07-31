@@ -1,0 +1,12 @@
+{
+    "#id": "mantle_action",
+    "#description": "&OPTIONS/MANTLE_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_5a83cf3b96c5d4fb"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/MANTLE"
+}

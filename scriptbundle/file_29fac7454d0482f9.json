@@ -1,0 +1,15 @@
+{
+    "#id": "subtitles_background_opacity",
+    "#description": "&OPTIONS/SUBTITLES_BACKING_OPACITY_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_subtitlesbackgroundopacity",
+    "#hash_ea45bc5a5e9ac302": 5,
+    "#hash_a20785232d9c4057": "subtitlesBgOpacity",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_15963d81d6fd6dac": 100,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 5,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&OPTIONS/SUBTITLES_BACKING_OPACITY",
+    "#hash_c55c746ff4d8929b": 1
+}

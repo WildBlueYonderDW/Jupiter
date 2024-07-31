@@ -1,0 +1,96 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#hash_6b8874a19007433b",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 5,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/SM_SDELTA",
+    "#worldmodel": "wpn_jup_wm_jp04_sm_umike45",
+    "#rarity": 4,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "barsil_sm_long_p02"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "stockno_sm_p02"
+                }
+            ],
+            "#slot": "backpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "drum_sm_p02"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_grip_vert_01"
+                },
+                {
+                    "#attachment": "jup_grip_vert_02"
+                },
+                {
+                    "#attachment": "jup_grip_vert_03"
+                }
+            ],
+            "#slot": "trigger"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "lasercyl_ads01"
+                },
+                {
+                    "#attachment": "lasercyl_ads02"
+                },
+                {
+                    "#attachment": "lasercyl_ads03"
+                }
+            ],
+            "#slot": "extra"
+        }
+    ],
+    "#descstring": "&WEAPON/SM_SDELTA",
+    "#ref": "iw9_sm_sdelta",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "sm",
+    "#baseweapon": "iw9_sm_sdelta_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_ec30c0c679067308",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_sm_sdelta",
+    "#scriptable": "%hash_7b90505966289ce4",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SM"
+}

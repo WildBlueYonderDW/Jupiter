@@ -460,7 +460,7 @@ function private modifyunifiedpoints(event, points, objweapon) {
 // Checksum 0x0, Offset: 0x14e6
 // Size: 0x11a
 function displayscoreeventpoints(points, event) {
-    if (getdvarint(@"hash_a3a1cab75dca6cc6", 0) == 1) {
+    if (getdvarint(@"scr_disableScoreSplash", 0) == 1) {
         return;
     }
     if (istrue(level.codcasterenabled)) {

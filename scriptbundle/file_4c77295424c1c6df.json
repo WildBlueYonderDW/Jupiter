@@ -1,0 +1,6 @@
+{
+    "#settext": "&LUA_MENU/PLAYLIST_TAG_SINGLE_LIFE_SET",
+    "#type": "YES_NO",
+    "#style": "NONE",
+    "#text": "&LUA_MENU/PLAYLIST_TAG_SINGLE_LIFE"
+}

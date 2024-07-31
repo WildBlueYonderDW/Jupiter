@@ -261,7 +261,7 @@ function blima_chief_play_sound_func(alias, notification, var_9a0afe8ff3d2508f) 
 // Checksum 0x0, Offset: 0x15d4
 // Size: 0x28c
 function infilthink(team, scene_name) {
-    var_e026a614f7467557 = getdvarfloat(@"hash_ea4c44a08cd23d5d", 0.2);
+    var_e026a614f7467557 = getdvarfloat(@"r_mbVelocityScale", 0.2);
     foreach (ent in getentarray("infil_delete", "script_noteworthy")) {
         ent delete();
     }
@@ -272,15 +272,15 @@ function infilthink(team, scene_name) {
     foreach (ent in gates) {
         ent hide();
     }
-    setdvar(@"hash_dc64fb89118cae31", 1);
-    setdvar(@"hash_ea4c44a08cd23d5d", 1);
+    setdvar(@"r_spotLightEntityShadows", 1);
+    setdvar(@"r_mbVelocityScale", 1);
     level notify("start_scene");
     level waittill("prematch_over");
     foreach (ent in gates) {
         ent show();
     }
-    setdvar(@"hash_dc64fb89118cae31", 0);
-    setdvar(@"hash_ea4c44a08cd23d5d", var_e026a614f7467557);
+    setdvar(@"r_spotLightEntityShadows", 0);
+    setdvar(@"r_mbVelocityScale", var_e026a614f7467557);
     var_330b9ced435f328d = getentarray("van_hackney_infil_alpha_probe", "targetname");
     var_93c53aca7d492296 = getentarray("van_probe", "script_noteworthy");
     var_f7200b59912b6dd6 = getentarray("van_probe_fallback", "script_noteworthy");

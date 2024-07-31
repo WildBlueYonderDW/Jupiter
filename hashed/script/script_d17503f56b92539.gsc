@@ -97,7 +97,7 @@ function main() {
     setdvar(@"hash_405e7e20d91344cc", 0);
     setdvar(@"hash_42eece3f15e35b3d", 1);
     setdvar(@"hash_a22f98e2c5b506ce", 30);
-    setdvar(@"hash_cbc195ec2129279", 0);
+    setdvar(@"cg_friendlyReviveNameplateEnabled", 0);
     enablegroundwarspawnlogic(400, 1200);
     updategametypedvars();
     scripts\mp\utility\join_team_aggregator::registeronplayerjointeamcallback(&onjoinedteam);
@@ -2779,7 +2779,7 @@ function function_ff46cb0a3bc4b055(agent, team, laneKey) {
 // Checksum 0x0, Offset: 0xb58c
 // Size: 0x2b4
 function initai() {
-    if (getdvarint(@"hash_279375a0bfb2862f", 120) == 0) {
+    if (getdvarint(@"scr_default_maxagents", 120) == 0) {
         return;
     }
     level.var_72e8a99508b7be1b = getdvarint(@"hash_55d8273e8c59f973", 45);
@@ -3261,7 +3261,7 @@ function function_c9189ff5d2e5af61(team, helireinforcements, var_c0e1f16535e4fa1
         return;
     }
     var_6749ab538ec0ddeb = 0;
-    if (getdvarint(@"hash_7194076ab4888f2b", 0) == 1) {
+    if (getdvarint(@"scr_game_infilSkip", 0) == 1) {
         var_6749ab538ec0ddeb = 12;
     }
     var_50ba4037bbd61cff = 20 - var_6749ab538ec0ddeb;

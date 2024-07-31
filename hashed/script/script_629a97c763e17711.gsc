@@ -304,7 +304,7 @@ function forfeit_match(forfeitteamname) {
 function cancel_match() {
     level.leagueplaymatchcancelled = 1;
     level.var_7ebde40af908fcf8 = 0;
-    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
         foreach (player in level.players) {
             if (!isdefined(player.clientmatchdataid)) {
                 scripts\mp\gamelogic::assignclientmatchdataid(player);

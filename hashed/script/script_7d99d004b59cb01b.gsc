@@ -568,10 +568,10 @@ function function_e85b1519c1f2e485(tank) {
         if (tank == vehicle && !isalive(player) && player.sessionstate != "spectator") {
             newpos = player.origin + (0, 0, 50);
             player setorigin(newpos);
-            old = getdvar(@"hash_de4b3f11f23b95c2");
-            setdvar(@"hash_de4b3f11f23b95c2", 0);
+            old = getdvar(@"deathCameraFailsafe");
+            setdvar(@"deathCameraFailsafe", 0);
             wait 1;
-            setdvar(@"hash_de4b3f11f23b95c2", old);
+            setdvar(@"deathCameraFailsafe", old);
         }
     }
 }

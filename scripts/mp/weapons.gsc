@@ -151,10 +151,10 @@ function init() {
     level.var_b2b35840c12ce55c = utility::default_to(level.var_b2b35840c12ce55c, []);
     level.scavenger_altmode = 1;
     level.scavenger_secondary = 1;
-    level.maxperplayerexplosives = max(dvars::getintproperty(@"hash_b62eac49cca8c84b", 2), 1);
-    level.riotshieldxpbullets = dvars::getintproperty(@"hash_ecd162ffa953cac1", 15);
+    level.maxperplayerexplosives = max(dvars::getintproperty(@"scr_maxperplayerexplosives", 2), 1);
+    level.riotshieldxpbullets = dvars::getintproperty(@"scr_riotshieldxpbullets", 15);
     level.var_34777cc7c85edbe6 = getdvarint(@"hash_17eb9db052738f30", 96);
-    switch (dvars::getintproperty(@"hash_efe12003ddfaa46e", 0)) {
+    switch (dvars::getintproperty(@"perk_scavengermode", 0)) {
     case 1: 
         level.scavenger_altmode = 0;
         break;
@@ -200,7 +200,7 @@ function init() {
     level.onweapondroppickedup = callback_group::callback_create();
     level.var_30b163d5fb8dc7d9 = scripts\engine\throttle::throttle_initialize("DroneLauncher", 10, level.framedurationseconds, 50);
     level.weaponnone = makeweapon("none");
-    if (getdvarint(@"hash_eb1e94069d5150f2") == 1) {
+    if (getdvarint(@"perk_graverobber_enabled") == 1) {
         level thread savegraverobberammo();
     }
     registersharedfunc("weapons", "recommendedStatusBySeason", &recommendedStatusBySeason);
@@ -1673,7 +1673,7 @@ function watchpickup(droppingplayer) {
         } else {
             previousweapon = player getcurrentweapon();
         }
-        var_fee12400d8814b47 = player _hasperk("specialty_scrap_weapons") && getdvarint(@"hash_eb1e94069d5150f2") == 1;
+        var_fee12400d8814b47 = player _hasperk("specialty_scrap_weapons") && getdvarint(@"perk_graverobber_enabled") == 1;
         player thread watchpickupcomplete(weaponobj, previousweapon, var_fee12400d8814b47);
         level.onweapondroppickedup callback_trigger(self, player, weaponobj);
         player notify("weapon_pickup", weaponobj, droppeditem);
@@ -2530,7 +2530,7 @@ function scavengebagthink() {
         player.iscapturingcrate = 1;
         useent = createuseent();
         useent.id = "use";
-        result = useent useholdthink(player, getdvarfloat(@"hash_e9cbdb751424e4ab"));
+        result = useent useholdthink(player, getdvarfloat(@"perk_nonScavenger_scavenge_time"));
         if (!isdefined(player)) {
             return;
         }

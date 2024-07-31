@@ -1,0 +1,192 @@
+{
+    "#raritydef": "%hash_77dfb32d5fc2bc15",
+    "#pingvo": "#hash_f856404f7930d595",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 3,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&JUP_WEAPON/JUP_JP34_AR_BALPHA27",
+    "#worldmodel": "wpn_jup_jp34_ar_balpha27",
+    "#rarity": 2,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "jup_las_minireddot01"
+                },
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                },
+                {
+                    "#attachment": "jup_las_fourx01"
+                },
+                {
+                    "#attachment": "jup_las_dmscope01"
+                },
+                {
+                    "#attachment": "jup_las_twofivex01"
+                },
+                {
+                    "#attachment": "holotherm01"
+                },
+                {
+                    "#attachment": "jup_twofivex01"
+                },
+                {
+                    "#attachment": "jup_twofivex02"
+                },
+                {
+                    "#attachment": "jup_twofivextherm01"
+                },
+                {
+                    "#attachment": "fourxtherm01"
+                },
+                {
+                    "#attachment": "fourxtherm02"
+                },
+                {
+                    "#attachment": "fourxtherm03"
+                },
+                {
+                    "#attachment": "fourxtherm04"
+                },
+                {
+                    "#attachment": "hybridtherm02"
+                },
+                {
+                    "#attachment": "jup_hybridtherm01"
+                },
+                {
+                    "#attachment": "jup_hybridtherm02"
+                },
+                {
+                    "#attachment": "arscope_therm01"
+                },
+                {
+                    "#attachment": "arscope_nvgvz01"
+                },
+                {
+                    "#attachment": "arscope_vz02"
+                },
+                {
+                    "#attachment": "arscope_vz01"
+                },
+                {
+                    "#attachment": "hybridtherm02"
+                },
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "iw9_minireddot02_tall"
+                },
+                {
+                    "#attachment": "jup_reflex04_tall"
+                },
+                {
+                    "#attachment": "jup_moscar_minidot_global"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp34_ar_balpha27_bar_heavy"
+                },
+                {
+                    "#attachment": "jup_jp34_ar_balpha27_bar_long"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#slot": "backpiece",
+            "#includeall": 1
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp25_ar_balpha27_mag_large"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#slot": "muzzle",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#slot": "reargrip",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "bipod01"
+                },
+                {
+                    "#attachment": "bipod02"
+                },
+                {
+                    "#attachment": "bipod03"
+                }
+            ],
+            "#slot": "trigger",
+            "#includeall": 1
+        },
+        {
+            "#slot": "extra",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#slot": "modifier",
+            "#includeall": 1
+        }
+    ],
+    "#descstring": "&JUP_WEAPON/JUP_JP34_AR_BALPHA27",
+    "#ref": "jup_jp34_ar_balpha27",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "ar",
+    "#baseweapon": "jup_jp34_ar_balpha27_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_jup_jp34_ar_balpha27_mp",
+    "#scriptable": "%hash_227510bd8e682a70",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_AR"
+}

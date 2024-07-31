@@ -8,7 +8,7 @@ function main() {
     level._effect["vfx_rhib_infil_splashes"] = loadfx("vfx/iw9/infil/vfx_rhib_infil_splashes.vfx");
     level._effect["vfx_farm_sunflare"] = loadfx("vfx/jup/level/mp_jup_subbase/vfx_subbase_sunflare.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

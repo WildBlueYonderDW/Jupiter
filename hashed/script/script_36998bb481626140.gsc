@@ -62,7 +62,7 @@ function main() {
     level._effect["vfx_global_trash_flies"] = loadfx("vfx/iw9/level/_global/vfx_global_trash_flies.vfx");
     level._effect["vfx_global_vent_med"] = loadfx("vfx/iw9/level/_global/vfx_global_vent_med.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

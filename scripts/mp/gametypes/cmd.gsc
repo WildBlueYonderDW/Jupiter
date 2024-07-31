@@ -229,7 +229,7 @@ function updategametypedvars() {
         level.bombtimer = 3;
     }
     level.controltoprogress = 1;
-    setdvar(@"hash_60f76e342fa97cce", 200);
+    setdvar(@"cg_buttonHintNaturalDistance", 200);
     level.forcedobjectiveindex = getdvarint(@"hash_1bee917b434ddca6", -1);
     if (level.forcedobjectiveindex != -1) {
         setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_roundLimit"), 2);
@@ -1728,7 +1728,7 @@ function dompoint_onenableobjective() {
     if (level.currentobjectiveindex == 0 || level.currentobjectiveindex == 4) {
         thread bombzone_warningklaxon();
     }
-    if (getdvarint(@"hash_3bfe19e3234d5dff", 0) != 0) {
+    if (getdvarint(@"scr_bradley_spawner", 0) != 0) {
         scripts\mp\gametypes\bradley_spawner::tryspawnneutralbradleycmd(level.currentobjectiveindex);
     }
     foreach (player in level.players) {

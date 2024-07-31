@@ -1,0 +1,7 @@
+{
+    "#id": "keyboard_preview",
+    "#description": "&OPTIONS/KEYBOARD_PREVIEW_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/KEYBOARD_PREVIEW"
+}

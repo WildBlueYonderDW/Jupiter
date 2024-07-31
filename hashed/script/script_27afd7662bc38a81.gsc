@@ -529,7 +529,7 @@ function function_f3ae4b41df047ba0(array) {
                 var_69ff9b8be936ac16 = var_e92aed86e7dd8b76;
             }
             foreach (player in players) {
-                player setclientdvar(@"hash_df1dc712c4a91588", var_69ff9b8be936ac16);
+                player setclientdvar(@"cg_fov", var_69ff9b8be936ac16);
                 player setclientdvar(@"hash_71c6c0b8428e44a7", 1);
             }
         }
@@ -1370,7 +1370,7 @@ function function_dc0bc83a31193177() {
         self.var_1f0a019572c9f8e2 = undefined;
         self disablephysicaldepthoffieldscripting();
     }
-    self setclientdvar(@"hash_df1dc712c4a91588", 65);
+    self setclientdvar(@"cg_fov", 65);
     self setclientdvar(@"hash_86bf34d5f48fa435", 65);
     self setclientdvar(@"hash_71c6c0b8428e44a7", 0);
 }

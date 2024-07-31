@@ -1,0 +1,17 @@
+{
+    "#id": 104,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#win",
+            "#sharedname": "#win"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#loss",
+            "#sharedname": "#loss"
+        }
+    ],
+    "#name": "#hash_987891037416d566",
+    "#sharedname": "#hash_2614881933cc996e"
+}

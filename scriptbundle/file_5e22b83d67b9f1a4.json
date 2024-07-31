@@ -1,0 +1,10 @@
+{
+    "#cost": 2000,
+    "#description": "&ZOMBIE_PERKS/DEADSHOT_DESC",
+    "#lootitemtype": "NONE",
+    "#displayname": "&ZOMBIE_PERKS/DEADSHOT",
+    "#itemref": "specialty_deadshot",
+    "#currency": "%hash_229c022abe3707c5",
+    "#maxstack": 1,
+    "#icon": "ui_icon_zm_purchasemenu_perk_deadshot"
+}

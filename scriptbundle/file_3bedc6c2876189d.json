@@ -1,0 +1,7 @@
+{
+    "#id": "codcaster_option_team_settings_acronym",
+    "#description": "&CODCASTER/TEAM_ACRONYM_DESC",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "GenericButton",
+    "#name": "&CODCASTER/TEAM_ACRONYM_COLON"
+}

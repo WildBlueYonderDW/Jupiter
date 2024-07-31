@@ -1,0 +1,88 @@
+{
+    "#description": "&JUP_STORE/DESCRIPTION_CERBERUS_VAULT_UPGRADE",
+    "#visionset": "",
+    "#hash_b7a3c605445dd11d": 0,
+    "#hash_2c7a35a889135d75": "&STORE/BUTTON_UPGRADE_NOW_NO_PROMPT",
+    "#product": {
+        "#hash_394bc3f49eb71d96": 64506,
+        "#productid": 29980,
+        "#hash_65c30d4f9a9374ec": [
+            {
+                "#itemid": 64506,
+                "#quantity": 1,
+                "#hash_9a45d6a4c38549c7": "COD_POINTS",
+                "#hash_3d7ffadeef043c6": 0,
+                "#hash_7cb1e5fdcfa7365a": 0
+            }
+        ],
+        "#loots": [
+        ]
+    },
+    "#maxquantity": 1,
+    "#hash_22a784e9358316d6": 0,
+    "#children": [
+    ],
+    "#hash_ba385fbc80eec1c7": 1,
+    "#hash_6aefc7a60a1d7764": {
+        "#hash_d5c91f016dac7116": [
+            {
+                "#itemid": 64498
+            }
+        ],
+        "#hash_d243470335a22d90": [
+            {
+                "#itemid": 64502
+            }
+        ]
+    },
+    "#sku": [
+        {
+            "#skuid": 3401,
+            "#hash_9a45d6a4c38549c7": "COD_POINTS",
+            "#hash_a2aeb510eac5e54b": 0,
+            "#hash_29b275583f5d9005": 1,
+            "#hash_f2ec1fb4ecf7e037": 0
+        }
+    ],
+    "#hash_f700039c49840af3": [
+    ],
+    "#hash_8f7d4523811a0eab": {
+        "#hash_3d231fd1339d1c9e": 1
+    },
+    "#hash_466e93a705d3e7ac": 0,
+    "#hash_68b2e64f78c8ca74": {
+        "#hash_7d255ffa4f2c3181": "next_cod_bundle_informational_c",
+        "#hash_1085c904d9c57a04": "Frontend.BlackOpsOrange",
+        "#hash_dac41fad1277d70e": 1,
+        "#hash_c85062188b755e50": "next_cod_bundle_informational",
+        "#hash_6be410503a7c4d62": "&JUP_STORE/INSTAGRAT_UNLOCK"
+    },
+    "#isconsumable": 0,
+    "#hash_ccd7a91b458bd796": 0,
+    "#name": "&",
+    "#hash_bd25fe985c8afad": 0,
+    "#title": "&JUP_STORE/NAME_CERBERUS_VAULT_UPGRADE",
+    "#group": "",
+    "#hash_1ddccb0f21cd4c1a": {
+        "#hash_27eaabbbb730cb95": "",
+        "#hash_2588089bc45fa258": "jup_bundle_billboard_cerberus_vault_button",
+        "#hash_2588169bc45fc122": "",
+        "#hash_2588179bc45fc355": "",
+        "#hash_e9b72490de39898f": "",
+        "#hash_43a059f09b785eab": "",
+        "#hash_de6724bf6a6bb362": "jup_bundle_title_cerberus_vault_upgrade",
+        "#previewimage": "jup_bundle_billboard_cerberus_vault_upgrade"
+    },
+    "#hash_5c40ae358296a998": {
+        "#hash_cfb006c31cba286b": "",
+        "#hash_b0ca25c3ccc7056a": 0,
+        "#store": "psn",
+        "#hash_2574146b133d43db": "lead_sku",
+        "#hash_d86da5b0e65c1de6": "title_cerberus_upgrade_standard_to_ultimate",
+        "#hash_b36465514eb99557": "",
+        "#hash_4d8269fb45defd84": "",
+        "#hash_1d00f4a869590413": "",
+        "#hash_ae80b070f58f4bbb": "",
+        "#hash_404d161683f58985": 3401
+    }
+}

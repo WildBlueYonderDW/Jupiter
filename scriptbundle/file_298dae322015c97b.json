@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_S3/RIFT_OBJECT_VISION_NAME",
+    "#worldmodel": "jup_accessory_zombie_hand_01",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_S3/RIFT_OBJECT_VISION_DESC",
+    "#ref": "jup_rift_object_vision_season3",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_93c7462b2c0afb2f",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "personal",
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_181d01400c22b61",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_loot_zombie_vision",
+    "#scriptable": "%hash_5886929a7aa5e227",
+    "#lifetime": 3600,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_S3/ZOMBIE_OBJECT_TYPE"
+}

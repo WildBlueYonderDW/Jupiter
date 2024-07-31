@@ -28,17 +28,17 @@ function main() {
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     level.kill_border_triggers = getentarray("kill_border_trigger", "targetname");
     scripts\mp\compass::setupminimap("compass_map_mp_jup_subbase");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
-    setdvar(@"hash_2e38c6027743fefc", 1024);
-    setdvar(@"hash_71fe8b216d50a24c", 0.68);
-    setdvar(@"hash_402173c7dbee15d9", 3);
-    setdvar(@"hash_656131a98e0d2c9d", 100);
-    setdvar(@"hash_6a4705943fd574b8", 0.4);
-    setdvar(@"hash_d0658156fb7f2311", 2);
-    setdvar(@"hash_595f2292597ec0c7", (0.3, -1, 0));
-    setdvar(@"hash_43a74b2ca0523ded", 1);
-    setdvar(@"hash_a7d3d16432fa5feb", 1);
-    setdvar(@"hash_ed0c0ee0926e1d16", 1500);
+    setdvar(@"r_umbraMinObjectContribution", 8);
+    setdvar(@"r_umbraAccurateOcclusionThreshold", 1024);
+    setdvar(@"cg_defaultWindFrequencyScale", 0.68);
+    setdvar(@"cg_defaultWindAmplitudeScale", 3);
+    setdvar(@"cg_defaultWindAreaScale", 100);
+    setdvar(@"cg_defaultWindNoiseScale", 0.4);
+    setdvar(@"cg_defaultWindStrength", 2);
+    setdvar(@"cg_defaultWindDir", (0.3, -1, 0));
+    setdvar(@"r_dof_tweak", 1);
+    setdvar(@"r_dof_physical_fstop", 1);
+    setdvar(@"r_dof_physical_focusDistance", 1500);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
@@ -58,9 +58,9 @@ function function_b1262e3cb659add1() {
         var_ee23f0b1f42da962 hide();
         level waittill("prematch_over");
         var_ee23f0b1f42da962 show();
-        setdvar(@"hash_43a74b2ca0523ded", 1);
-        setdvar(@"hash_ed0c0ee0926e1d16", 29.31);
-        setdvar(@"hash_a7d3d16432fa5feb", 22);
+        setdvar(@"r_dof_tweak", 1);
+        setdvar(@"r_dof_physical_focusDistance", 29.31);
+        setdvar(@"r_dof_physical_fstop", 22);
     }
 }
 

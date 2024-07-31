@@ -151,7 +151,7 @@ function initializematchrules() {
     level.killsperweapon = getmatchrulesdata("gunData", "killsPerWeapon");
     level.ladderindex = getmatchrulesdata("gunData", "ladderIndex");
     level.useLadderIndex = getmatchrulesdata("gunData", "useLadderIndex");
-    setdynamicdvar(@"hash_d35ca3409324ec94", 0);
+    setdynamicdvar(@"scr_gun_promode", 0);
 }
 
 // Namespace gun / scripts\mp\gametypes\gun

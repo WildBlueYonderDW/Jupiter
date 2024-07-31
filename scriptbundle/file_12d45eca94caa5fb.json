@@ -1,0 +1,27 @@
+{
+    "#id": "input_related_prompts",
+    "#description": "&PLATFORM_UI/OPTION_MENU_PROMPTS_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/AUTOMATIC"
+        },
+        {
+            "#reference": "&PLATFORM_UI/GAMEPAD"
+        },
+        {
+            "#reference": "&OPTIONS/KBM"
+        }
+    ],
+    "#hash_a20785232d9c4057": "inputRelatedPrompts",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#type": "EXEC"
+        }
+    ],
+    "#name": "&OPTIONS/MENU_PROMPTS",
+    "#hash_5d30c39665a86e5d": "&PLATFORM/INPUT_RELATED_DISABLED_DESC",
+    "#hash_dce5ffe0a6970f5d": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

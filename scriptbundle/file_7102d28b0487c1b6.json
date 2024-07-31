@@ -1,0 +1,20 @@
+{
+    "#description": "&JUP_OB/ACT1_DESC",
+    "#unlockdescription": "&PMC/DEFAULT_UNLOCK_FACTION",
+    "#hash_10f770c91979d9e1": "ui_jup_menu_prematch_bg",
+    "#displayname": "&MENU/ACT_I",
+    "#hash_5b51928a466218f0": "ui_jup_menu_mission_select_header_backer",
+    "#iconsmall": "icon_dmz_faction_legion_48",
+    "#hash_b8bc45a173c7cc84": "&JUP_OB/ACT1_NAME",
+    "#hash_9b629b39923ec87b": "icon_dmz_faction_legion_bw_748",
+    "#iconlarge": "icon_dmz_faction_legion_bw_280",
+    "#ref": "jup_factionmission_ob_act1",
+    "#hash_ca31277de2502d47": "ui_menu_missions_act01_button",
+    "#hash_ae5a51595bbd4f8b": "&JUP_OB/ACT1_CINEMATIC_PROMPT",
+    "#hash_6e7c0dd8bcf39eb": "ui_menu_missions_act03_billboard",
+    "#hash_be5a3dbcdbf55dee": "29998",
+    "#hash_c2c642b40be891af": "ui_menu_missions_act01_lobby_button",
+    "#hash_b273b8a6aa2f2dc3": "icon_dmz_faction_legion_bw_748_stroke",
+    "#hash_186dcefb33fb41d9": "icon_dmz_faction_legion_story_mission",
+    "#icon": "icon_dmz_faction_legion_120"
+}

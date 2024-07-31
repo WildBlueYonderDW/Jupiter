@@ -1,0 +1,20 @@
+{
+    "#id": 116,
+    "#keys": [
+        {
+            "#key": "iw9_zm_armor_tier"
+        },
+        {
+            "#key": "iw9_zm_armor_repair"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_version"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_522f59fe119e0e54",
+    "#sharedname": "#zm_armor"
+}

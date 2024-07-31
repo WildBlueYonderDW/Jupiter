@@ -1,0 +1,454 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_cp05_lm_halpha_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_cp05_lm_halpha_mp",
+    "#platform": "platform_jup_lm_halpha",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_4",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_cp05_lm_halpha_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_cp05_lm_halpha_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_lmg",
+    "#category": "&WEAPON/SUBCLASS_ID_4",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 3000,
+    "#botpersonality": "camper|run_and_gun",
+    "#lootid": 29641,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 4,
+    "#ref": "jup_cp05_lm_halpha",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/HALPHA_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_cp05_LM_HALPHA",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "2",
+            "#priority": 1
+        },
+        {
+            "#season": "3",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault",
+    "#asset": "jup_cp05_lm_halpha_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_lmg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_bar_bipod",
+                    "#lootid": 35475,
+                    "#challengeid": 17039
+                },
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_frontpieces",
+                    "#lootid": 32823,
+                    "#challengeid": 17956
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_stock_hvy",
+                    "#lootid": 32841
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_backpieces",
+                    "#lootid": 32824
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "holo02",
+                    "#lootid": 1203
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_optics",
+                    "#lootid": 32826
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_762n_hv",
+                    "#lootid": 1682
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_gunperks",
+                    "#lootid": 32832
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_pgrip_aim",
+                    "#lootid": 46354
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_reargrips",
+                    "#lootid": 32829
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_vert05",
+                    "#lootid": 1138
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_undermounts",
+                    "#lootid": 32827
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_stock_tac",
+                    "#lootid": 32842
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_bar_short",
+                    "#lootid": 32837,
+                    "#challengeid": 17040
+                },
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_ob_2",
+                    "#challengeid": 17992
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_br_07",
+                    "#lootid": 22453
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_muzzles",
+                    "#lootid": 32828
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_mag_45_762n",
+                    "#lootid": 32844
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_magazines",
+                    "#lootid": 32825
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "laserbox_ads01",
+                    "#lootid": 3036
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_extras",
+                    "#lootid": 32831
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_stock_ass",
+                    "#lootid": 32840
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_pgrip_ass",
+                    "#lootid": 46355
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_twofivex03",
+                    "#lootid": 21766,
+                    "#challengeid": 17041
+                },
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_ob_3",
+                    "#challengeid": 18028
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_bar_long",
+                    "#lootid": 32838
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_pgrip_snp",
+                    "#lootid": 46357
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_bar_light",
+                    "#lootid": 32836
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_stock_lgt",
+                    "#lootid": 32843
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_br_05",
+                    "#lootid": 32460
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_pgrip_tac",
+                    "#lootid": 46356
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_drum_150_762n",
+                    "#lootid": 32846,
+                    "#challengeid": 17042
+                },
+                {
+                    "#challengeref": "jup_cp05_lm_halpha_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_tuning",
+                    "#lootid": 32833,
+                    "#challengeid": 18064
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp05_lm_halpha_amps",
+                    "#lootid": 47197
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        }
+    ],
+    "#displayorder": 16,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.85,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

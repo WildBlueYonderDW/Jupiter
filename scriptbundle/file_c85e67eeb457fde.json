@@ -1,0 +1,62 @@
+{
+    "#hash_3cc3f266eac78a38": 23,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#description": "&EQUIPMENT/THERMOBARIC_GRENADE_DESC",
+    "#hash_65bf5b5f2601ced1": 1,
+    "#hash_d1b32d9e6e3d5f0b": "vfx/jup/equipment/vfx_equip_thermo_exp_air.vfx",
+    "#hash_8f12276f936aa42": 5.25,
+    "#image": "jup_hud_icon_equipment_thermobaric_grenade",
+    "#hash_79839b907716ac41": "jup_icon_equipment_thermobaric_grenade",
+    "#imagelarge": "jup_hud_icon_equipment_thermobaric_grenade",
+    "#hash_b077008c7b62a49b": 0,
+    "#hash_3cfd2fe37308a19c": 1.2,
+    "#hash_f09a1a099e0824ef": 0,
+    "#hash_a1d921d11e0991fd": 2.5,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_d9f404803ed8ba5": [
+    ],
+    "#hash_fedb584266557d46": 200,
+    "#hash_d96d3e6ceed581fd": {
+        "#blueprints": [
+            {
+                "#hash_f12611dab527d6b1": "%hash_79695a85d1d54e31"
+            }
+        ],
+        "#blueprint_default": "%hash_79695985d1d54c7e"
+    },
+    "#hash_908692e6c3d0fb58": "vfx/jup/equipment/vfx_equip_thermo_exp.vfx",
+    "#rarity": "COMMON",
+    "#hash_f29dbc0a7d318f92": 500,
+    "#hash_63988e1bfb3a94c5": 0.5,
+    "#scavengerammo": 1,
+    "#lootid": 27313,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#useweapon": "thermobaric_grenade_jup_mp",
+    "#hash_77509210e986b76e": "mp_equipment_tutorial_frag",
+    "#yawoffset": 25,
+    "#hash_1422c913669eec7b": 1,
+    "#hash_b1f129e220b4dd5": 30,
+    "#model": "vm_jup_1h_grenade_thermobaric_00",
+    "#hash_5e4f661ca09750d8": 2.5,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_5f1da0fe731d593e": [
+    ],
+    "#hash_85753d23074e3618": 0.2,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_947ae0321588cb2e": 1,
+    "#name": "&EQUIPMENT/THERMOBARIC_GRENADE",
+    "#ispassive": 0,
+    "#equipmenttype": "lethal",
+    "#uislot": 1,
+    "#hash_adf466e3a48e821f": 15,
+    "#uiorder": 22,
+    "#hash_1025dff40f62ddf2": 0,
+    "#hash_1d2551f4185c4b6a": 0,
+    "#hash_225f848c094326a4": 5,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_9d78b5e0ec40e9ed": 6.5
+}

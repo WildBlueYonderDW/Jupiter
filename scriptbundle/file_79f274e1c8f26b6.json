@@ -1,0 +1,58 @@
+{
+    "#hash_4869dccb0bd30d1b": [
+        {
+            "#isinverted": 1,
+            "#condition": "IsMagmaGameMode"
+        },
+        {
+            "#isinverted": 0,
+            "#condition": "IsMPPrivateMatchEnabled"
+        },
+        {
+            "#isinverted": 1,
+            "#condition": "IsClosedInternalAlphaBuild"
+        }
+    ],
+    "#name": "&MENU/PRIVATE_MATCH",
+    "#buttons": [
+        {
+            "#hash_b1f6e7f37c9b34c5": "privatematch",
+            "#hash_b1eda3bc435dc651": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "DoesPartyContainNonPremiumPlayers"
+                }
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "PrivateMatchMenu"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "createPrivateMatch",
+            "#hash_b1eda3bc435dc651": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "DoesPartyContainNonPremiumPlayers"
+                }
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "CreatePrivateMatch"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "joinPrivateMatch",
+            "#hash_b1eda3bc435dc651": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "DoesPartyContainNonPremiumPlayers"
+                }
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "JoinPrivateMatch"
+        }
+    ]
+}

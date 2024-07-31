@@ -1,0 +1,19 @@
+{
+    "#id": "edit_button_layout",
+    "#description": "&PLATFORM/EDIT_BUTTON_LAYOUT_DESC",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#type": "EXEC"
+        },
+        {
+            "#dvarname": "@hash_f1667767b1283a06",
+            "#hash_82b937762bcf4810": 1,
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&PLATFORM/EDIT_BUTTON_LAYOUT",
+    "#hash_c55c746ff4d8929b": 1
+}

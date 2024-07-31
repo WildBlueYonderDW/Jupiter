@@ -1,0 +1,21 @@
+{
+    "#id": "tactical_sprint_behavior_gpad",
+    "#description": "&OPTIONS/TAC_SPRINT_BEHAVIOR_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/DOUBLE_TAP"
+        },
+        {
+            "#reference": "&OPTIONS/SINGLE_TAP_SPRINT"
+        },
+        {
+            "#reference": "&OPTIONS/SINGLE_TAP_RUN"
+        }
+    ],
+    "#hash_a20785232d9c4057": "tacticalSprintGpad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/TAC_SPRINT_BEHAVIOR",
+    "#hash_c55c746ff4d8929b": 1
+}

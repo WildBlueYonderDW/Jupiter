@@ -112,10 +112,10 @@ function init() {
     if (scorelimit > 0) {
         scorelimit *= 10;
         scorelimit *= 100;
-        setdvar(@"hash_163241713430bfed", scorelimit);
+        setdvar(@"scr_br_scorelimit", scorelimit);
         registerscorelimitdvar(getgametype(), scorelimit);
     }
-    setdvar(@"hash_da4f64f6eb4d97da", 3);
+    setdvar(@"scr_br_magcount", 3);
     setdvar(@"hash_f6f24e020168ade8", "nothing");
     setdvarifuninitialized(@"hash_8d9ad523f40be455", 12000);
     setomnvar("ui_br_circle_state", 4);
@@ -356,7 +356,7 @@ function changecirclestateatlowtime() {
     }
     level endon("end_circlestate_timer");
     scripts\mp\flags::gameflagwait("prematch_done");
-    timer = getdvarint(@"hash_e022fd0199a95f84");
+    timer = getdvarint(@"scr_br_timelimit");
     setomnvar("ui_br_circle_state", 5);
     setomnvar("ui_hardpoint_timer", gettime() + int(timer * 1000));
     wait int(max(timer - 300, 0));
@@ -370,7 +370,7 @@ function changecirclestateatlowtime() {
 function changetimertoovertimetimer() {
     level endon("game_ended");
     scripts\mp\flags::gameflagwait("prematch_done");
-    timer = getdvarint(@"hash_e022fd0199a95f84");
+    timer = getdvarint(@"scr_br_timelimit");
     waittime = int(max(timer - level.doendofmatchotsequence, 0));
     if (waittime <= 0) {
         return;
@@ -1496,8 +1496,8 @@ function playerdropplunderondeath(dropstruct, attacker) {
         bonuscash = 0;
         if (istrue(self.wasexecuted)) {
             executionmod = level.executioncashmultiplier;
-            if (scripts\mp\gametypes\br_publicevents::ispubliceventoftypeactive(%"bloodmoney")) {
-                executionmod *= level.br_pe_data[%"bloodmoney"].var_ee5fb771f83add5e;
+            if (scripts\mp\gametypes\br_publicevents::ispubliceventoftypeactive(%"hash_657d12ba1bb9791a")) {
+                executionmod *= level.br_pe_data[%"hash_657d12ba1bb9791a"].var_ee5fb771f83add5e;
             }
             finalmod *= executionmod;
         }
@@ -2469,7 +2469,7 @@ function updatecirclepulse(startval, endval, duration) {
         currenttime = gettime();
         t = clamp(1 - (endtime - currenttime) / duration, 0, 1);
         frac = ter_op(startval < endval, diff * t + startval, startval - diff * t);
-        setdvar(@"hash_1256574652334627", frac);
+        setdvar(@"compassBRCirclePulseDuration", frac);
         if (t == 1) {
             break;
         }

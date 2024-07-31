@@ -194,8 +194,8 @@ function main() {
     level.disconnectpathsfunction = &disconnectpaths;
     level.fnbuildweapon = &namespace_e0ee43ef2dddadaa::buildweapon;
     level.fngetweaponrootname = &namespace_e0ee43ef2dddadaa::getweaponrootname;
-    setdvar(@"hash_b3298e0bfb0e29bc", 1);
-    setdvar(@"hash_6aed1079deb9c76f", 1);
+    setdvar(@"ui_showInfo", 1);
+    setdvar(@"ui_showMinimap", 1);
     level thread setupdestructiblekillcaments();
     level.fauxvehiclecount = 0;
     level thread scripts\engine\scriptable_door::system_init();

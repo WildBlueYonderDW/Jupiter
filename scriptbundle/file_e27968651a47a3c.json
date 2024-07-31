@@ -1,0 +1,21 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#hash_5b60e9678ce1d3a",
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_fc73a1fa4f6cac3b",
+    "#titlestring": "&MP_BR_INGAME/KIOSK_ITEM_SELF_REVIVE",
+    "#worldmodel": "lm_heal_stim_syringe_01_blue",
+    "#rarity": 4,
+    "#ref": "brloot_self_revive",
+    "#dropsfx": "#hash_a4a91670e89a5cc4",
+    "#lootidtype": "consumable",
+    "#hash_8464122fb6575536": 1,
+    "#type": "revive",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_5982dacabfe49a0f",
+    "#inventorytype": "Loadout",
+    "#icon": "ui_mp_br_loot_icon_revive_item",
+    "#scriptable": "%hash_756561f45de971c4",
+    "#denialsfx": "#hash_afeb34a87e316add"
+}

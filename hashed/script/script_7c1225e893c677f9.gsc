@@ -23,8 +23,8 @@ function main() {
     scripts\cp_mp\utility\game_utility::registerarenamap();
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     scripts\mp\compass::setupminimap("compass_map_mp_m_alley");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
-    setdvar(@"hash_2e38c6027743fefc", 512);
+    setdvar(@"r_umbraMinObjectContribution", 8);
+    setdvar(@"r_umbraAccurateOcclusionThreshold", 512);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
@@ -38,7 +38,7 @@ function main() {
 // Checksum 0x0, Offset: 0x2c7
 // Size: 0x3e
 function function_da7c9335e454c032(player) {
-    if (getdvarint(@"hash_c00e244ea59d530e") == 1 || istrue(level.thirdpersonmode)) {
+    if (getdvarint(@"camera_thirdPerson") == 1 || istrue(level.thirdpersonmode)) {
         setdvar(@"hash_31f818870138cd26", 1);
     }
 }

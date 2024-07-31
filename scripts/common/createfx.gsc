@@ -280,7 +280,7 @@ function init_level_variables() {
     level._createfx.axismode = 0;
     level._createfx.select_by_name = 0;
     level._createfx.drawaxis = 1;
-    level._createfx.player_speed = getdvarfloat(@"hash_11a6aaf18b50047b");
+    level._createfx.player_speed = getdvarfloat(@"g_speed");
     set_player_speed_hud();
 }
 

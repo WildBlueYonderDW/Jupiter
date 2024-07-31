@@ -330,7 +330,7 @@ function steerfallinginternal(controlentity, var_d051bb0593db1e4) {
     airresistance = level.framedurationseconds * airdrag;
     controlentity.vel = (0, 0, var_b16089157712c28d);
     waitframe();
-    gamegravity = getdvarint(@"hash_b5d7d39d32720e78");
+    gamegravity = getdvarint(@"bg_gravity");
     horizontalvel = (0, 0, 0);
     while (true) {
         movementinput = self getnormalizedmovement();

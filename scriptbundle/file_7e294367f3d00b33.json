@@ -1,0 +1,7 @@
+{
+    "#id": "contextual_open_menu",
+    "#description": "&OPTIONS/CONTEXTUAL_OPEN_MENU_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/CONTEXTUAL_OPEN_MENU"
+}

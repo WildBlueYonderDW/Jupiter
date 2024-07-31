@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_9163bc19dbb168d",
+    "#hash_87c8865341705b25": "jup_ui_frontend_acquisition_riftrun",
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_S1/GATE_KEY_S1_ICE_ATTUNED_NAME",
+    "#worldmodel": "jup_zm_relic_hunt_diary",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_S1/GATE_KEY_S1_ICE_ATTUNED_DESC",
+    "#ref": "jup_rift_gate_key_season1_ice_attuned",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_df6cc0d53f88e0c4",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "key",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_relic_surveillance_diary",
+    "#scriptable": "%hash_5b8df7f4e6bf3d7e",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KEY"
+}

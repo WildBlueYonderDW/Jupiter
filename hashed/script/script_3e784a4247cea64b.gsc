@@ -133,7 +133,7 @@ function function_45d01d27e99f49d7() {
     if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19()) {
         game_type += " hc";
     }
-    sub_game_type = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
+    var_32ae710bd6009c5d = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
     playlist_id = 0;
     playlist_name = "";
     if (istrue(level.matchmakingmatch)) {
@@ -144,6 +144,6 @@ function function_45d01d27e99f49d7() {
     if (utility::function_f3bb4f4911a1beb2("game", "isRoundBased")) {
         var_65f62e5d09e2cd00 = game["roundsPlayed"];
     }
-    return [level.script, game_type, sub_game_type, playlist_id, playlist_name, var_65f62e5d09e2cd00];
+    return [level.script, game_type, var_32ae710bd6009c5d, playlist_id, playlist_name, var_65f62e5d09e2cd00];
 }
 

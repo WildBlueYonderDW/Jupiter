@@ -1,0 +1,28 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_lethals"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_tacticals"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_zm_tacticals"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_field_upgrades"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_zm_lethals"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 6,
+            "#itemspawnentry": "ob_jup_item_revive_self_revive"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "#id": "deadzone_tester",
+    "#description": "&PLATFORM/TEST_STICK_DEADZONE_DESC",
+    "#labels": [
+        {
+            "#reference": "&MENU/OFF"
+        },
+        {
+            "#reference": "&MENU/ON"
+        }
+    ],
+    "#type": "ToggleButton",
+    "#name": "&PLATFORM/TEST_STICK_DEADZONE"
+}

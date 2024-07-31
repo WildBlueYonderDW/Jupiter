@@ -1,0 +1,69 @@
+{
+    "#raritydef": "%hash_77dfb32d5fc2bc15",
+    "#pingvo": "#hash_7c509a84250d2df4",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 3,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/SH_MIKE1014",
+    "#worldmodel": "weapon_wm_sh_romeo870_brprop_nophys",
+    "#rarity": 2,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "bar_sh_heavy_p12"
+                },
+                {
+                    "#attachment": "bar_sh_light_p12"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "stockno_sh_p12"
+                }
+            ],
+            "#slot": "backpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "tube_10_12g_mike1014"
+                }
+            ],
+            "#slot": "magazine"
+        }
+    ],
+    "#descstring": "&WEAPON/SH_MIKE1014",
+    "#ref": "iw9_sh_mike1014",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "sh",
+    "#baseweapon": "iw9_sh_mike1014_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_sh_mbravo",
+    "#scriptable": "%hash_7994687c5b38b381",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SH_COMBAT"
+}

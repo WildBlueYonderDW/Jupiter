@@ -22,7 +22,7 @@ function main() {
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     scripts\mp\compass::setupminimap("compass_map_mp_jup_trainingfacility");
     scripts\cp_mp\utility\game_utility::registerarenamap();
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";

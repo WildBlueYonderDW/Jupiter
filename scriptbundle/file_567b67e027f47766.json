@@ -1,0 +1,31 @@
+{
+    "#id": "toggle_ads_interruption_keyboard",
+    "#description": "&OPTIONS/TOGGLE_ADS_INTERRUPTION_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/RESUME"
+        },
+        {
+            "#reference": "&OPTIONS/INTERRUPT"
+        }
+    ],
+    "#hash_a20785232d9c4057": "toggleADSInterruptionKeyboard",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_7b81eabc234eb32d"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_2b5f5bb2195bfead"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_4dd4ae6916e7ba85",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/TOGGLE_ADS_INTERRUPTION",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/TOGGLE_ADS_INTERRUPTION_DISABLED_DESC"
+}

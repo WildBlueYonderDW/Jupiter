@@ -1,0 +1,413 @@
+{
+    "#hash_ded947577ba0ee4a": "zombie_base_armored",
+    "#hash_667ab99889e6c59f": "scripts/aitypes/zombie_base/zombie_base_armored_metabones.gsc",
+    "#metabones": [
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "right_hand"
+                },
+                {
+                    "#hitlocation": "right_arm_lower"
+                }
+            ],
+            "#name": "armored_arm_right_lower",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.05,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "head"
+                },
+                {
+                    "#hitlocation": "helmet"
+                },
+                {
+                    "#hitlocation": "neck"
+                }
+            ],
+            "#name": "armored_head",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.25,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#additionaldamagemod": 0
+                            },
+                            "#variant_type": "Types_Weakspot"
+                        }
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "right_arm_upper"
+                }
+            ],
+            "#name": "armored_arm_right_upper",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.05,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "left_hand"
+                },
+                {
+                    "#hitlocation": "left_arm_lower"
+                }
+            ],
+            "#name": "armored_arm_left_lower",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.05,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "left_arm_upper"
+                }
+            ],
+            "#name": "armored_arm_left_upper",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.05,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "left_foot"
+                },
+                {
+                    "#hitlocation": "left_leg_lower"
+                }
+            ],
+            "#name": "armored_leg_left_lower",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.1,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "left_leg_upper"
+                }
+            ],
+            "#name": "armored_leg_left_upper",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.25,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "right_foot"
+                },
+                {
+                    "#hitlocation": "right_leg_lower"
+                }
+            ],
+            "#name": "armored_leg_right_lower",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.1,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "right_leg_upper"
+                }
+            ],
+            "#name": "armored_leg_right_upper",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.25,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+                {
+                    "#hitlocation": "torso_lower"
+                },
+                {
+                    "#hitlocation": "torso_upper"
+                }
+            ],
+            "#name": "armored_torso",
+            "#states": [
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#damagemod": 0.35
+                            },
+                            "#variant_type": "Types_Armor"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.5,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "armored"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "exposed"
+                }
+            ],
+            "#tags": [
+            ]
+        }
+    ]
+}

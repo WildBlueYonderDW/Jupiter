@@ -1,0 +1,10 @@
+{
+    "#cost": 2500,
+    "#description": "&ZOMBIE_PERKS/JUGGERNOG_JUP_DESC",
+    "#lootitemtype": "NONE",
+    "#displayname": "&ZOMBIE_PERKS/JUGGERNOG",
+    "#itemref": "specialty_juggernog",
+    "#currency": "%hash_229c022abe3707c5",
+    "#maxstack": 1,
+    "#icon": "ui_icon_zm_purchasemenu_perk_juggernog"
+}

@@ -9,7 +9,7 @@
 // Checksum 0x0, Offset: 0x1b9
 // Size: 0x7b5
 function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8) {
-    requiredmapaspectratio = getdvarfloat(@"hash_24d7dc1cc026a63b", 1);
+    requiredmapaspectratio = getdvarfloat(@"scr_requiredmapaspectratio", 1);
     mapinfo = function_79404c2fcca1c184();
     if (isdefined(mapinfo) && isdefined(mapinfo.var_cea11b0bd8f76b2d)) {
         foreach (minimapversion in mapinfo.var_cea11b0bd8f76b2d) {
@@ -183,7 +183,7 @@ function getcornersfromarray(array, var_c6f1388c16a82062) {
 // Size: 0x62
 function function_fb7bad834ce4b28c(floornumber) {
     self setclientomnvar("ui_minimap_floor", floornumber);
-    map_name = tolower(getdvar(@"hash_ef237da69bb64ef6"));
+    map_name = tolower(getdvar(@"ui_mapname"));
     minimap_image = "compass_map_" + map_name + "_floor_" + floornumber;
     self.var_109a3bfd035f27be = floornumber;
     setupminimap(minimap_image);

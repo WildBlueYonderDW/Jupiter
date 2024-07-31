@@ -342,16 +342,16 @@
         setdevdvarifuninitialized(@"hash_1deddbedb2075add", 0);
         setdevdvarifuninitialized(@"hash_c9ec8ca2b7a146c4", 0);
         setdevdvarifuninitialized(@"hash_6711d09c824e3cc9", 0);
-        setdevdvarifuninitialized(@"hash_c85a7135dce00903", 0);
+        setdevdvarifuninitialized(@"scr_game_lethalDelay", 0);
         setdevdvarifuninitialized(@"hash_6d6e240a9ede976e", 0);
-        setdevdvarifuninitialized(@"hash_2748b78a2910ca11", 0);
+        setdevdvarifuninitialized(@"scr_superdelay", 0);
         setdevdvarifuninitialized(@"hash_be71443f47c8632f", 0);
         setdevdvarifuninitialized(@"hash_86a6152b9a0381fc", "<dev string:xc5>");
         setdevdvarifuninitialized(@"hash_cd901aea9e9e7eeb", "<dev string:xc5>");
         setdevdvarifuninitialized(@"hash_95efa6aea863b082", "<dev string:xc5>");
         setdevdvarifuninitialized(@"hash_1e72609fde690bbc", 0);
-        setdevdvarifuninitialized(@"hash_c6492f4edd9202d3", 0);
-        setdevdvarifuninitialized(@"hash_68cba91a675a2f76", 0);
+        setdevdvarifuninitialized(@"scr_eom_combat", 0);
+        setdevdvarifuninitialized(@"scr_eom_slowmo", 0);
         setdevdvarifuninitialized(@"hash_7a5e31b62cb508b0", 0);
         setdevdvarifuninitialized(@"hash_914bb3dc853c47c4", 0);
         setdevdvarifuninitialized(@"hash_b34a0bfcf1e59832", 0);
@@ -460,7 +460,7 @@
         setdevdvarifuninitialized(@"hash_8b814398a3af5d7f", 180);
         setdevdvarifuninitialized(@"hash_2fd14545a1a6803c", 0);
         setdevdvarifuninitialized(@"hash_20d07e52d0c613fb", 0);
-        setdevdvarifuninitialized(@"hash_7194076ab4888f2b", 0);
+        setdevdvarifuninitialized(@"scr_game_infilSkip", 0);
         setdevdvarifuninitialized(@"hash_68874851dce750fe", 0);
         setdevdvarifuninitialized(@"hash_cccba423c010c957", 0);
         setdevdvarifuninitialized(@"hash_45dd70c0ac1afda2", 0);
@@ -474,7 +474,7 @@
         setdevdvarifuninitialized(@"hash_3c6c485214ca7673", 0);
         setdevdvarifuninitialized(@"hash_827901421ad0679", 1);
         setdevdvarifuninitialized(@"hash_be65e45de358ca06", "<dev string:xc5>");
-        setdevdvarifuninitialized(@"hash_715685dae50de688", 0);
+        setdevdvarifuninitialized(@"scr_runlean_playerthread_count", 0);
         setdevdvarifuninitialized(@"hash_fecec194bb60af48", 1);
         setdevdvarifuninitialized(@"hash_cf0fa0390ef7a109", 0);
         setdevdvarifuninitialized(@"hash_99ed34bc5a345aff", 0);
@@ -1196,8 +1196,8 @@
     // Checksum 0x0, Offset: 0x4416
     // Size: 0x19a
     function function_7346ecd3666450e3(pathnode, ttlos) {
-        lowerlimitfullsights = getdvarfloat(@"hash_ba77e8f37223f218");
-        lowerlimitcornersights = getdvarfloat(@"hash_f055530a90c953bc");
+        lowerlimitfullsights = getdvarfloat(@"scr_lowerlimitfullsights");
+        lowerlimitcornersights = getdvarfloat(@"scr_lowerlimitcornersights");
         color = (0, 1, 0);
         if (ttlos[0] > lowerlimitfullsights) {
             color = (1, 0, 0);
@@ -2759,11 +2759,11 @@
             self unlink();
             self.replaycam delete();
         }
-        self setclientdvar(@"hash_df1dc712c4a91588", 65);
-        setdvar(@"hash_ed28298c207316ae", 0);
-        setdvar(@"hash_979b5474be3b9b47", 0);
-        setdvar(@"hash_960ef00238357bbc", 0);
-        setdvar(@"hash_83bbe73116f488d6", 0);
+        self setclientdvar(@"cg_fov", 65);
+        setdvar(@"r_mbRadialOverrideDistortion", 0);
+        setdvar(@"r_mbRadialOverrideRadius", 0);
+        setdvar(@"r_mbRadialOverrideStrength", 0);
+        setdvar(@"r_mbRadialOverrideChromaticAberration", 0);
         if (isdefined(self.goprooverlay)) {
             self.goprooverlay destroy();
         }
@@ -2785,11 +2785,11 @@
         } else {
             vecaway = (camdata.up, camdata.forward, camdata.right);
         }
-        self setclientdvar(@"hash_df1dc712c4a91588", camdata.fov);
-        setdvar(@"hash_ed28298c207316ae", 0.203);
-        setdvar(@"hash_979b5474be3b9b47", -0.478);
-        setdvar(@"hash_960ef00238357bbc", 0.011);
-        setdvar(@"hash_83bbe73116f488d6", 0.7);
+        self setclientdvar(@"cg_fov", camdata.fov);
+        setdvar(@"r_mbRadialOverrideDistortion", 0.203);
+        setdvar(@"r_mbRadialOverrideRadius", -0.478);
+        setdvar(@"r_mbRadialOverrideStrength", 0.011);
+        setdvar(@"r_mbRadialOverrideChromaticAberration", 0.7);
         if (!isdefined(self.goprooverlay)) {
             self.goprooverlay = newclienthudelem(self);
             self.goprooverlay.sort = 0;
@@ -3279,12 +3279,12 @@
     // Checksum 0x0, Offset: 0xad28
     // Size: 0xa7
     function testendgameupdate(promotion) {
-        self setclientdvars(@"hash_6f0411143e4432e0", "<dev string:xe6d>", @"hash_5b32a696c1d93305", "<dev string:xe7d>", @"hash_b381b15150201be6", "<dev string:xe93>", @"hash_7a8a3eca3135fc23", "<dev string:xeaa>", @"hash_989b23a655566eec", "<dev string:xeb4>", @"hash_6291ab02dce7a81", "<dev string:xeca>", @"hash_3369f827e13404c2", "<dev string:xedc>");
+        self setclientdvars(@"ui_challenge_1_ref", "<dev string:xe6d>", @"ui_challenge_2_ref", "<dev string:xe7d>", @"ui_challenge_3_ref", "<dev string:xe93>", @"ui_challenge_4_ref", "<dev string:xeaa>", @"ui_challenge_5_ref", "<dev string:xeb4>", @"ui_challenge_6_ref", "<dev string:xeca>", @"ui_challenge_7_ref", "<dev string:xedc>");
         if (isdefined(promotion) && promotion) {
-            self setclientdvar(@"hash_803bee4022a48b56", 1);
+            self setclientdvar(@"ui_promotion", 1);
             return;
         }
-        self setclientdvar(@"hash_803bee4022a48b56", 0);
+        self setclientdvar(@"ui_promotion", 0);
     }
 
     // Namespace dev / scripts\mp\dev
@@ -3352,7 +3352,7 @@
     // Checksum 0x0, Offset: 0xafa9
     // Size: 0x51d
     function updateminimapsetting() {
-        requiredmapaspectratio = getdvarfloat(@"hash_24d7dc1cc026a63b", 1);
+        requiredmapaspectratio = getdvarfloat(@"scr_requiredmapaspectratio", 1);
         if (!isdefined(level.minimapheight)) {
             setdevdvar(@"hash_7ce3fa1fabfd4530", "<dev string:xc5>");
             level.minimapheight = 0;
@@ -3442,7 +3442,7 @@
                         waitframe();
                         player setplayerangles(origin.angles);
                         setdvar(@"hash_e33eff4545d6dcfb", 0);
-                        setdvar(@"hash_94d94e451d01da61", 0);
+                        setdvar(@"handheldCameraRotationScale", 0);
                     } else {
                         println("<dev string:xfec>");
                     }
@@ -6209,12 +6209,12 @@
         self notifyonplayercommand("<dev string:x1f74>", "<dev string:xbb9>");
         thirdpersonelem = createfontstring("<dev string:x1f81>", 1.5);
         thirdpersonelem setpoint("<dev string:x1f8c>", "<dev string:x1f8c>", 0, 332);
-        thirdpersonelem settext("<dev string:x1f98>" + getdvarint(@"hash_c00e244ea59d530e") + "<dev string:x1fa8>");
+        thirdpersonelem settext("<dev string:x1f98>" + getdvarint(@"camera_thirdPerson") + "<dev string:x1fa8>");
         thread destroyondeath(thirdpersonelem);
         for (;;) {
             self waittill("<dev string:x1f74>");
-            setdvar(@"hash_c00e244ea59d530e", !getdvarint(@"hash_c00e244ea59d530e"));
-            thirdpersonelem settext("<dev string:x1f98>" + getdvarint(@"hash_c00e244ea59d530e") + "<dev string:x1fa8>");
+            setdvar(@"camera_thirdPerson", !getdvarint(@"camera_thirdPerson"));
+            thirdpersonelem settext("<dev string:x1f98>" + getdvarint(@"camera_thirdPerson") + "<dev string:x1fa8>");
         }
     }
 
@@ -11615,7 +11615,7 @@ function rangefinder() {
         fixedspawndata = spawnstruct();
         fixedspawndata.origin = spawnorigin;
         fixedspawndata.angles = spawnangles;
-        setdvar(@"hash_c2de8ca6dc8512c1", 1);
+        setdvar(@"bot_DisableAllAI", 1);
         level [[ level.bot_funcs["<dev string:x3329>"] ]](var_cc3e8bc1bf3118b9, hostteam, undefined, undefined, "<dev string:x3f9b>", undefined, fixedspawndata);
         level waittill_any_timeout_1(5, "<dev string:x3f9b>");
         level [[ level.bot_funcs["<dev string:x3329>"] ]](var_cc3e8bc1bf3118b9, hostenemyteam, undefined, undefined, "<dev string:x3fb7>", undefined, fixedspawndata);

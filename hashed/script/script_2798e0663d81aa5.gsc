@@ -36,12 +36,12 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "soldier";
-    self.voice = #"alqatala";
+    self.voice = #"hash_5b83ef004494812e";
     self.bhasthighholster = 1;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("bodies_iw9_enemy_aq_tier2_1", namespace_68ea2f962c7c8afc::main());
     scripts\code\character::attachhead("heads_iw9_enemy_aq_tier2_1", namespace_5250b934b89c6ddf::main());
-    self setclothtype(#"flowing");
+    self setclothtype(#"hash_1a818f5c875adf8b");
     self function_8abe5a968cc3c220(#"millghtgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {

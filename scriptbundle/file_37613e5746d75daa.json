@@ -1,0 +1,19 @@
+{
+    "#hash_fe35ca9b37873aa2": 8,
+    "#anchors": [
+    ],
+    "#archetypes": [
+    ],
+    "#hash_348f35d05ac9a37e": 8,
+    "#hash_44c1d0100b18dd6d": [
+        {
+            "#scripted_widget": "scripted_widget_objective_tracker_jup_wm"
+        },
+        {
+            "#scripted_widget": "scripted_widget_objective_tracker_jup_wm_launch_facility"
+        },
+        {
+            "#scripted_widget": "scripted_widget_objective_tracker_jup_wm_skydiving"
+        }
+    ]
+}

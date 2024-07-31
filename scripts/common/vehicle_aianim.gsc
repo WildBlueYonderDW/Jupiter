@@ -2038,7 +2038,7 @@ function guy_blowup(guy) {
     wait animlength * fraction;
     force = (0, 0, 1);
     org = guy.origin;
-    if (getdvar(@"hash_17141fbd31e36b09") == "0") {
+    if (getdvar(@"ragdoll_enable") == "0") {
         guy delete();
         return;
     }

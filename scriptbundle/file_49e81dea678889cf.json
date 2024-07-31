@@ -1,0 +1,18 @@
+{
+    "#id": "center_vehicle_camera",
+    "#description": "&OPTIONS/CENTER_VEHICLE_CAMERA_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_7f6078a0b6a033e0"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_25fd5994f09827f2"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_3ea40948e66b7335"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/CENTER_VEHICLE_CAMERA"
+}

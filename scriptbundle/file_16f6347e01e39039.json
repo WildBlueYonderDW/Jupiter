@@ -1,0 +1,155 @@
+{
+    "#hash_13a8bce3a0b4279e": "outbreak_loadouts",
+    "#hash_26cb68d514ad2106": 0,
+    "#hash_a3f121ced843d5e": 1,
+    "#teambased": 1,
+    "#hash_7dfb2f7ad76e0d5": "outbreak_loadouts",
+    "#hash_459c1608ab5e08b": 0.2,
+    "#hash_d651598a91f20ae3": 1,
+    "#finalkillcamtype": 0,
+    "#hash_3f9b0fde4d94c4e1": 1,
+    "#hash_1685d95f041d2a96": 1,
+    "#hash_e61e7212585decdd": [
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER1",
+            "#hash_667f60c9646f6e9": "ui_icons_zombie_essence",
+            "#hash_7401bd57f180cbb1": 2
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER2",
+            "#hash_667f60c9646f6e9": "hud_icon_loot_armor",
+            "#hash_7401bd57f180cbb1": 5
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER3",
+            "#hash_667f60c9646f6e9": "ui_icons_zombie_essence",
+            "#hash_7401bd57f180cbb1": 8
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER4",
+            "#hash_667f60c9646f6e9": "jup_ui_map_icon_poi_perk_machine",
+            "#hash_7401bd57f180cbb1": 12
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER5",
+            "#hash_667f60c9646f6e9": "ui_icons_zombie_essence",
+            "#hash_7401bd57f180cbb1": 20
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER6",
+            "#hash_667f60c9646f6e9": "jup_tac_contract_phone",
+            "#hash_7401bd57f180cbb1": 30
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER7",
+            "#hash_667f60c9646f6e9": "ui_icons_zombie_essence",
+            "#hash_7401bd57f180cbb1": 40
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER8",
+            "#hash_667f60c9646f6e9": "jup_ui_map_icon_mysterybox",
+            "#hash_7401bd57f180cbb1": 50
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER9",
+            "#hash_667f60c9646f6e9": "ui_icons_zombie_essence",
+            "#hash_7401bd57f180cbb1": 75
+        },
+        {
+            "#hash_9c4ad4448d459e06": "&JUP_LUA_MENU/EXFIL_STREAK_TIER10",
+            "#hash_667f60c9646f6e9": "jup_ui_map_icon_weaponupgrade",
+            "#hash_7401bd57f180cbb1": 100
+        }
+    ],
+    "#image": "jup_icon_mode_ob_wmz",
+    "#hash_2078dc99d4296ca4": "&LUA_MENU_MP/OB",
+    "#hash_cd13e71e53f5e9fd": [
+    ],
+    "#hash_be8f52532f236cf2": 3,
+    "#hash_5880a79f0328330b": 1,
+    "#hash_aaff84cee7edcbaf": 1,
+    "#hash_63e50e7024bc663e": 38,
+    "#hash_8683439bb5dbb09c": 1,
+    "#hash_5f52715067c4453c": "None",
+    "#hash_ba549e75850aa2bf": 1,
+    "#hash_589e0c2e2afab4ea": "&",
+    "#hash_589e062e2afaa7b8": "&",
+    "#hash_589e072e2afaa9eb": "&",
+    "#hash_589e092e2afaae51": "&",
+    "#hash_94b34756413246bd": 1,
+    "#hash_4f29dbd56f01de57": 1,
+    "#hash_fa35afda033c6691": 1,
+    "#backpackkey": "dmzBackpack",
+    "#hash_ef1173b4978600f9": [
+    ],
+    "#hash_61b9f20a7c31ed0d": [
+        {
+            "#image": "jup_ui_menu_keyart_tdm_button"
+        },
+        {
+            "#image": "jup_ui_menu_keyart_tdm_button"
+        }
+    ],
+    "#hash_450e532402110cd0": "ZMInteractiveLootCard",
+    "#category": "Alternate",
+    "#hash_4c371bf313812c95": {
+        "#hash_2b60e5280dfc35cd": 1,
+        "#hash_abd731ee6e3696c": {
+            "#hash_48ac18e1bc53712b": {
+                "#hash_a5db0b3d50ceba8e": 2500,
+                "#movedist": 1000
+            },
+            "#hash_2e618e1d6d46f6fb": 3
+        }
+    },
+    "#hash_5ef55807c3fc8da3": 1,
+    "#hash_2f37493dac81d735": 5,
+    "#hash_3c836934a83182a5": 1,
+    "#hash_c837fd49542eec31": 1,
+    "#hash_1609c0ff0b876e9f": 0,
+    "#hash_315c56db76139cdd": "%hash_17847c5dcaf99f6a",
+    "#hash_d54a02ac762f8ea8": 2,
+    "#hash_f98f33b716aaa516": "%hash_6dc2dff296764eff",
+    "#hash_dc7ab0a22b829f8b": 1,
+    "#hash_a9ffb4dcf1c85e0f": "#hash_98cdb9f71144ed0f",
+    "#issquadmode": 1,
+    "#hash_c687320dd80c7473": "@hash_755b700eca7c0231",
+    "#hash_4bee1515a16c956": 1000,
+    "#hash_cc58ee2d53dcf5b6": 1,
+    "#hash_3259dcbad0273516": 1,
+    "#hash_713cf903b125c101": "outbreak_loadouts",
+    "#hash_328f56c2f24c4831": "ob_jup_items_zone_list",
+    "#hash_bfcff306e50ddf4": "&JUP_OB/WELCOME_SPLASH_SUBHEADER",
+    "#hash_df5e6a3d7e67d4de": 2000,
+    "#hash_8ddd411d615e56fa": 1,
+    "#hash_3d1f074daf608448": "outbreak_loadouts",
+    "#hash_e4db1f07df5076a0": 6,
+    "#hash_b0455df76d97746a": 1,
+    "#hash_23ba38ccbb4217c5": 0,
+    "#hash_664628601763fe81": 0.5,
+    "#hash_7414261752817c0": 0,
+    "#hash_383d2fae80ff311e": "jup_ob",
+    "#backpacksize": 5,
+    "#namekey": "ob",
+    "#hash_317a568b4ba1496a": 48,
+    "#hash_68d6debb01863622": "&",
+    "#hash_68d6d8bb018628f0": "&",
+    "#hash_68d6d9bb01862b23": "&",
+    "#hash_68d6dbbb01862f89": "&",
+    "#hash_37a9e3fbc7a53a96": 1,
+    "#hash_a005e276e98e5ed8": 1,
+    "#hash_6615fee3cfcc9303": {
+        "#hash_2b60e5280dfc35cd": 1
+    },
+    "#hash_d8a6002d5eaba519": 0,
+    "#scoreeventlist": "score_event_list_ob_jup_mp",
+    "#hash_53476efc09bcd4d4": 1,
+    "#xpscalar": 1,
+    "#hash_17b1f7abbf0c2aa0": "&JUP_OB/WELCOME_SPLASH_SUBHEADER",
+    "#contractlist": "%hash_e921a882197419d",
+    "#hash_d98341b1a105c7af": 60,
+    "#hash_685cdcc5467c8bce": 1,
+    "#hash_d0414fbb847802b": "&LUA_MENU_MP/OB_DESC",
+    "#hash_eaca66bea536a108": "",
+    "#hash_60b6f212711b8dca": "%hash_772d4cbcec76447f"
+}

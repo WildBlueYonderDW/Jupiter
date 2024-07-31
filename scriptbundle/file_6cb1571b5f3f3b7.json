@@ -1,0 +1,16 @@
+{
+    "#id": "skip_intro",
+    "#description": "&OPTIONS/SKIPINTRO_DESC",
+    "#dvar": "@cg_autoSkipSplashScreen",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#name": "&OPTIONS/SKIPINTRO"
+}

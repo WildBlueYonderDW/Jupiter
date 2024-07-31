@@ -1,0 +1,20 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#ping_intel",
+    "#hash_c03c4ef51659ba4c": 1,
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_ITEM_GENERICS/AVA_INTEL_AETHER_NEST",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_ITEM_GENERICS/AVA_INTEL_AETHER_NEST",
+    "#ref": "jup_ava_intel_aether_nest",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "consumable",
+    "#type": "quest",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Pooled",
+    "#icon": "hud_icon_loot_intel_02",
+    "#scriptable": "%hash_67bb99075ab2850",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/QUEST_ITEM"
+}

@@ -67,7 +67,7 @@ function main() {
     level._effect["vfx_grandprix_building_fire_long"] = loadfx("vfx/iw9/level/mp_grandprix/vfx_grandprix_building_fire_long.vfx");
     level._effect["vfx_grandprix_building_fire_sml"] = loadfx("vfx/iw9/level/mp_grandprix/vfx_grandprix_building_fire_sml.vfx");
     level._effect["vfx_grandprix_building_fire_periph"] = loadfx("vfx/iw9/level/mp_grandprix/vfx_grandprix_building_fire_periph.vfx");
-    setdvar(@"hash_5a83a561cb4970b2", "4000");
+    setdvar(@"r_volumetricDepth", "4000");
     setdvar(@"hash_81b9a5d52e0be6ac", 10);
     setdvar(@"hash_3b399a1604643dec", "1 0 0");
     setdvar(@"hash_aead3f0db524f5d", 0);
@@ -75,7 +75,7 @@ function main() {
     setdvar(@"hash_dab366f405822e6c", 1);
     setdvar(@"hash_a04dd064784d0939", -0.1);
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

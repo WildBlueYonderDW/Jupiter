@@ -1,0 +1,36 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_rpapa7_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_gromeo_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_mike32_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_kgolf_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_juliet_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_dromeo_orange"
+        }
+    ]
+}

@@ -311,7 +311,7 @@ function abortlevel() {
     level.callbackhostmigration = &callbackvoid;
     level.var_42d9b617bbca6a42 = &callbackvoid;
     level.var_935c97aa3757676f = &callbackvoid;
-    setdvar(@"hash_8fe3271cd74f65a2", "dm");
+    setdvar(@"g_gametype", "dm");
     exitlevel(0);
 }
 

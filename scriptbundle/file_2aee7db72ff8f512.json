@@ -1,0 +1,11 @@
+{
+    "#id": "toggle_tactical_ads",
+    "#description": "&OPTIONS/TACTICAL_ADS_KEY_DESC",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_316ee0c55b798c2e"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/TACTICAL_ADS_KEY"
+}

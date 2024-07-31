@@ -1,0 +1,22 @@
+{
+    "#id": "auto_door_bash_kbm",
+    "#description": "&OPTIONS/SPRINTING_DOOR_BASH_KBM_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "autoDoorBashKbm",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_d18c45b7bf74bafd",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/SPRINTING_DOOR_BASH"
+}

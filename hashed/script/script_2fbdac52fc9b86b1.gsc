@@ -349,7 +349,7 @@ function function_86a17f877dcf5dc2(ents, remover) {
 // Size: 0xb1
 function fake_physicslaunch(target_pos, power) {
     start_pos = self.origin;
-    gravity = getdvarint(@"hash_b5d7d39d32720e78", 0) * -1;
+    gravity = getdvarint(@"bg_gravity", 0) * -1;
     dist = distance(start_pos, target_pos);
     time = dist / power;
     delta = target_pos - start_pos;
@@ -389,7 +389,7 @@ function function_dfbb96391a405a3e() {
     level.var_af44283616b35663 = default_to(level.var_af44283616b35663, spawnstruct());
     level.var_af44283616b35663.var_3af726873b4b5c1 = default_to(level.var_af44283616b35663.var_3af726873b4b5c1, spawnstruct());
     level.var_af44283616b35663.var_fd03e124c44775e1 = default_to(level.var_af44283616b35663.var_fd03e124c44775e1, spawnstruct());
-    mapname = getdvar(@"hash_ef237da69bb64ef6");
+    mapname = getdvar(@"ui_mapname");
     var_edae6049f4f0016c = "cer_zm_inventory_" + mapname;
     if (isdefined(var_edae6049f4f0016c)) {
         var_eb707d7d55148f2f = getscriptbundle("zminventory:" + var_edae6049f4f0016c);

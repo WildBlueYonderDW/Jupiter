@@ -149,7 +149,7 @@ function initializematchrules() {
     setdynamicdvar(function_3514ae5d09f47ed2("manualDropEnabled"), getmatchrulesdata("carryData", "manualDropEnabled"));
     setdynamicdvar(@"hash_9fa05b5e31137511", 0);
     registerhalftimedvar("sd", 0);
-    setdynamicdvar(@"hash_53af16043399cecf", 0);
+    setdynamicdvar(@"scr_sd_promode", 0);
 }
 
 // Namespace sd / scripts\mp\gametypes\sd

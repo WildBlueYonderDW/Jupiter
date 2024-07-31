@@ -1,0 +1,9 @@
+{
+    "#description": "&VEHICLES/RAZORBACK_DESC",
+    "#defaultimage": "ui_default_white",
+    "#hash_7ffb238c68bddf60": "ui_veh_jup_razorback_v000_preview",
+    "#hash_64ecb2fb1eb743a6": "WZ2,JUP",
+    "#ref": "veh_jup_razorback",
+    "#name": "&VEHICLES/RAZORBACK",
+    "#icon": "hud_icon_vehicle_razorback"
+}

@@ -1,0 +1,46 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_blow_torch"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_electroniccomponents"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_personal_heartlocket"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_lighter"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_mre"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_freshwater"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_comicbook"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_liquor"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_soothinglotion"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_watch"
+        }
+    ]
+}

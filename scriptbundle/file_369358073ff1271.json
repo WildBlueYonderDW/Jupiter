@@ -1,0 +1,18 @@
+{
+    "#id": "text_public_chat",
+    "#description": "&OPTIONS/TEXT_PUBLIC_CHAT_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#type": "EXEC"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/TEXT_PUBLIC_CHAT"
+}

@@ -520,7 +520,7 @@ function function_a5426cbe311426c0(player, var_751df20fceaee5, var_1a32758b94076
     if (isdefined(player.matchbonus)) {
         player setclientomnvar("ui_round_end_match_bonus", player.matchbonus);
     }
-    player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+    player setclientdvar(@"ui_opensummary", 1);
     if (getdvarint(@"hash_c68e810840841e3a", 0)) {
         player thread function_a7b7a88c16c74042();
     }
@@ -590,7 +590,7 @@ function function_a740433902d7fab1(var_751df20fceaee5) {
 // Checksum 0x0, Offset: 0x264c
 // Size: 0x4a
 function processlobbydata() {
-    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
         if (matchmakinggame() && !privatematch()) {
             setclientmatchdata("isPublicMatch", 1);
         } else {

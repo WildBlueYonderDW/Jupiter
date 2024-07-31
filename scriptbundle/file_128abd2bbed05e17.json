@@ -1,0 +1,29 @@
+{
+    "#id": 52,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_operator_id"
+        },
+        {
+            "#key": "iw9_location_bitfield"
+        },
+        {
+            "#key": "iw9_location_bitfield2"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_c18f64a3dda61c40",
+    "#sharedname": "#hash_c5b29e319cca7cd8"
+}

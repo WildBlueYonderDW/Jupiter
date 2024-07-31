@@ -48,8 +48,8 @@ function init() {
     level.scramblers = [];
     level.ugvs = [];
     level.playerkillstreaks = [];
-    level.spawnglobals.lowerlimitfullsights = getdvarfloat(@"hash_ba77e8f37223f218");
-    level.spawnglobals.lowerlimitcornersights = getdvarfloat(@"hash_f055530a90c953bc");
+    level.spawnglobals.lowerlimitfullsights = getdvarfloat(@"scr_lowerlimitfullsights");
+    level.spawnglobals.lowerlimitcornersights = getdvarfloat(@"scr_lowerlimitcornersights");
     level.spawnglobals.lastteamspawnpoints = [];
     level.spawnglobals.lastbadspawntime = [];
     level.spawnglobals.influencenodealloccounts = [];
@@ -2061,7 +2061,7 @@ function checkttlosloaded() {
 // Checksum 0x0, Offset: 0x6303
 // Size: 0x2c
 function shoulduseprecomputedlos() {
-    return getdvarint(@"hash_d7358339b14a448f", 0) == 1 && !isdefined(level.disableprecomputedlos) && !generatinglosdata();
+    return getdvarint(@"sv_usePrecomputedLOSData", 0) == 1 && !isdefined(level.disableprecomputedlos) && !generatinglosdata();
 }
 
 // Namespace spawnlogic / scripts\mp\spawnlogic

@@ -1,0 +1,31 @@
+{
+    "#id": "channels_mute_on_join_party",
+    "#description": "&OPTIONS/CHANNELS_MUTE_ON_JOIN_PARTY_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "AUDIO",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_cd05aa1b839553ad": 1,
+            "#hash_cd05a31b83954448": 1,
+            "#hash_434da1af138bf52": 1,
+            "#hash_434db1af138c185": 1,
+            "#type": "PLATFORM"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/CHANNELS_MUTE_ON_JOIN_PARTY",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/MUTE_YOURSELF_WHEN_CONNECTING_DISABLE_DESC"
+}

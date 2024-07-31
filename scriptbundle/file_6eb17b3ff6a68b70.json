@@ -1,0 +1,16 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_token_high"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_token_low"
+        }
+    ]
+}

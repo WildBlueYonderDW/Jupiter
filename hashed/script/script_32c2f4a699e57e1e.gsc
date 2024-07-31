@@ -1012,7 +1012,7 @@ function function_656db5d67b419da6() {
     droploop = 0;
     var_87bd779b6eb7ebb5 = 0.5;
     delaycounter = var_87bd779b6eb7ebb5;
-    var_29c3e7e659ebd38c = getdvarint(@"hash_de79e5c6b8a17221");
+    var_29c3e7e659ebd38c = getdvarint(@"bg_fallDamageMinHeight");
     if (!isdefined(var_29c3e7e659ebd38c)) {
         var_29c3e7e659ebd38c = 225;
     }

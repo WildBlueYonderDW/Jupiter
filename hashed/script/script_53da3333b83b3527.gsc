@@ -228,7 +228,7 @@ function setglobaldifficulty() {
     anim.pain_test = get_difficultysetting_global("pain_test");
     function_4afdefc72472a638(get_difficultysetting_global("min_sniper_burst_delay_time"));
     function_5eddc94e0785d7a2(get_difficultysetting_global("max_sniper_burst_delay_time"));
-    setsaveddvar(@"hash_25f40faa68cfe5d6", get_difficultysetting_global("accuracyDistScale"));
+    setsaveddvar(@"ai_accuracyDistScale", get_difficultysetting_global("accuracyDistScale"));
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47
@@ -334,7 +334,7 @@ function wave_difficulty_update(difficulty) {
     function_5eddc94e0785d7a2(level.difficultysettings["max_sniper_burst_delay_time"][setting]);
     function_113dc070d175daff(level.difficultysettings["min_sniper_burst_delay_time"][setting]);
     function_87e4ff0e078152e9(level.difficultysettings["max_sniper_burst_delay_time"][setting]);
-    setsaveddvar(@"hash_25f40faa68cfe5d6", level.difficultysettings["accuracyDistScale"][setting]);
+    setsaveddvar(@"ai_accuracyDistScale", level.difficultysettings["accuracyDistScale"][setting]);
 }
 
 // Namespace namespace_3dfa6eb6c5741630 / namespace_310bdaa3cf041c47

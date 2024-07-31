@@ -39,15 +39,15 @@ function main() {
         setcommonrulesfrommatchrulesdata();
     } else {
         setdynamicdvar(@"hash_127490a7577f169f", 0);
-        setdynamicdvar(@"hash_a54edeed7c5b587f", 0);
+        setdynamicdvar(@"scr_game_onlyheadshots", 0);
     }
     if (issubstr(getdvar(@"hash_687fb8f9b7a23245"), "mp_t_")) {
-        setdvar(@"hash_2a4effcaf5954d38", 0);
+        setdvar(@"scr_game_enableMinimap", 0);
     }
     if (getdvar(@"hash_a1767cfd7ede043b") == "1") {
         setdvar(@"hash_4d8ed5d95d54900a", 1);
     } else {
-        setdvar(@"hash_ec7061888c9ec27f", 1);
+        setdvar(@"lui_trial_ending", 1);
     }
     setdvar(@"hash_84bca47b0009d424", 0);
     setdvar(@"hash_704afe6f6c582ee0", 0);
@@ -215,7 +215,7 @@ function trialendgame(winner, endreasontext) {
 function trial_mission_data_init() {
     mission_table = trial_fetch_mission_table();
     assert(tableexists(mission_table));
-    missionid = getdvarint(@"hash_b93f834a6e6a8b21", 0);
+    missionid = getdvarint(@"bg_trial_mission_id", 0);
     if (missionid == 0) {
         fallbackid = tablelookup(mission_table, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
         if (fallbackid != "") {

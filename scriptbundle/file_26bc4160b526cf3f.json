@@ -1,0 +1,358 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_sh_vecho",
+    "#hash_79839b907716ac41": "icon_weapon_sh_vecho",
+    "#platform": "platform_iw9_sh_vecho",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_1",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_sh_vecho_v2",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_sh_vecho",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+        {
+            "#category": "GUARD"
+        },
+        {
+            "#category": "PUMPGRIP"
+        },
+        {
+            "#category": "PUMP"
+        }
+    ],
+    "#menuclass": "weapon_shotgun",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_sh_vecho_v3",
+    "#category": "&WEAPON/SUBCLASS_ID_1",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1200,
+    "#lootid": 13531,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#ref": "iw9_sh_vecho",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&PERKS/SH_VECHO",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/SH_VECHO",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "3",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault ",
+    "#asset": "iw9_sh_vecho_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_shotgun",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bolt_p04",
+                    "#lootid": 13530
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sh_light_p04",
+                    "#lootid": 13528
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_p04_vecho",
+                    "#lootid": 13526
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sh_p04",
+                    "#lootid": 15434
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_p04",
+                    "#lootid": 13525
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_vecho",
+                    "#lootid": 13527
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_extras",
+                    "#lootid": 19636,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_lgtshort_p04",
+                    "#lootid": 15443,
+                    "#challengeid": 11518,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "vecho_frontpieces",
+                    "#lootid": 19639,
+                    "#challengeid": 18793,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_sh_04",
+                    "#lootid": 16992,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_muzzles",
+                    "#lootid": 19634,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_light_p04",
+                    "#lootid": 15442,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_undermounts",
+                    "#lootid": 19642,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sh_large_p04",
+                    "#lootid": 15437,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_magazines",
+                    "#lootid": 19640,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_lgtlong_p04",
+                    "#lootid": 15441,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "stock_sh_tactical_p04",
+                    "#lootid": 15446,
+                    "#challengeid": 11519,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "vecho_backpieces",
+                    "#lootid": 19641,
+                    "#challengeid": 18860,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_short_p04",
+                    "#lootid": 15440,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_optics",
+                    "#lootid": 19635,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bolt_hvy_p04",
+                    "#lootid": 15436,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_bolts",
+                    "#lootid": 19643,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_sh_05",
+                    "#lootid": 15447,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_hvyshort_p04",
+                    "#lootid": 15439,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "vecho_gunperks",
+                    "#lootid": 19638,
+                    "#challengeid": 11520,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_ob_3",
+                    "#challengeid": 18927
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_hvylong_p04",
+                    "#lootid": 15433,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "drum_sh_p04",
+                    "#lootid": 13524,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_long_p04",
+                    "#lootid": 15435,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_snp_p04",
+                    "#lootid": 15438,
+                    "#bucket": 4
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "vecho_reargrips",
+                    "#lootid": 19637,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_hvylong2_p04",
+                    "#lootid": 15444,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "bolt_lgt_p04",
+                    "#lootid": 15445,
+                    "#challengeid": 11521,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_sh_vecho_camo_ob_4",
+                    "#challengeid": 18994
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_sh_vecho_tuning",
+                    "#lootid": 16893,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 21
+        }
+    ],
+    "#displayorder": 1,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

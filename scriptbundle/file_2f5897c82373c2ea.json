@@ -1,0 +1,408 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_d43f9c4f6b647ba4": 1,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_sh_charlie725",
+    "#hash_79839b907716ac41": "icon_weapon_sh_charlie725",
+    "#platform": "platform_iw9_sh_charlie725",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_sh_charlie725_v4",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_sh_charlie725",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+        {
+            "#category": "PUMP"
+        },
+        {
+            "#category": "PUMPGRIP"
+        },
+        {
+            "#category": "REARGRIP"
+        }
+    ],
+    "#menuclass": "weapon_shotgun",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_sh_charlie725_v6",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1200,
+    "#hash_1328c6a635d409bf": {
+        "#xoffset": 4.5,
+        "#priority": 1
+    },
+    "#lootid": 11313,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 3,
+    "#ref": "iw9_sh_charlie725",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "doublebarrel_fire_mode",
+    "#desc": "&PERKS/SH_CHARLIE725",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/SH_CHARLIE725",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag guardrail ironsdefault",
+    "#asset": "iw9_sh_charlie725_mp",
+    "#hash_a576fed8a47105fb": {
+        "#xoffset": 4.5,
+        "#priority": 1
+    },
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_shotgun",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "silencer1_charlie725",
+                    "#lootid": 3429,
+                    "#challengeid": 9287,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "charlie725_muzzles",
+                    "#lootid": 12806,
+                    "#challengeid": 18767,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockr_sh_assault_p14",
+                    "#lootid": 2669,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_backpieces",
+                    "#lootid": 12803,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "lasercyl_ads02",
+                    "#lootid": 639,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_extras",
+                    "#lootid": 12804,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_long_p14",
+                    "#lootid": 811,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_frontpieces",
+                    "#lootid": 12801,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "shscope02",
+                    "#lootid": 825,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_optics",
+                    "#lootid": 12800,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_choke01",
+                    "#lootid": 3088,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled06",
+                    "#lootid": 2033,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_undermounts",
+                    "#lootid": 12799,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockr_sh_heavy_p14",
+                    "#lootid": 3269,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "comp_charlie725_02",
+                    "#lootid": 3336,
+                    "#challengeid": 8962,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_ob_2",
+                    "#challengeid": 18834
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_hvylong_p14",
+                    "#lootid": 2578,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "silencer2_charlie725",
+                    "#lootid": 2700,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "guard_tactical_p14",
+                    "#lootid": 1118,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_guards",
+                    "#lootid": 12802,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_xlong_p14",
+                    "#lootid": 3159,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_choke02",
+                    "#lootid": 3689,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "guard_heavy_p14",
+                    "#lootid": 1436,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_charlie725_03",
+                    "#lootid": 1550,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockr_sh_tactical_p14",
+                    "#lootid": 3587,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "charlie725_choke03",
+                    "#lootid": 3080,
+                    "#challengeid": 8979,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_ob_3",
+                    "#challengeid": 18901
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sh_short_p14",
+                    "#lootid": 3697,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_charlie725_01",
+                    "#lootid": 3819,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "breacher_charlie725_01",
+                    "#lootid": 740,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockno_sh_p14",
+                    "#lootid": 2722,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "silencer3_charlie725",
+                    "#lootid": 3647,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "guard_light_p14",
+                    "#lootid": 1590,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "charlie725_choke04",
+                    "#lootid": 2556,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "ammo_12g_sl",
+                    "#lootid": 2497,
+                    "#challengeid": 9050,
+                    "#bucket": 6
+                },
+                {
+                    "#challengeref": "iw9_sh_charlie725_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "charlie725_gunperks",
+                    "#lootid": 12805,
+                    "#challengeid": 18968,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_sh_charlie725_tuning",
+                    "#lootid": 11756,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 27
+        }
+    ],
+    "#displayorder": 49,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

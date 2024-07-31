@@ -1,0 +1,82 @@
+{
+    "#hash_7e39414ce66b7776": {
+        "#fieldupgrade1": "super_emp_pulse",
+        "#hash_7e39824ce66c0669": "none"
+    },
+    "#hash_c0936af6fe335d3c": {
+        "#fieldupgrade1": 1,
+        "#hash_7e39824ce66c0669": 1
+    },
+    "#hash_b3cbb30eb9cdf347": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none"
+    },
+    "#execution": "neck_stab",
+    "#gesture": "iw8_ges_plyr_gesture000",
+    "#perks": {
+        "#perk1": "specialty_null",
+        "#perk3": "specialty_null",
+        "#perk2": "specialty_null",
+        "#perkbonus": "specialty_null"
+    },
+    "#secondaryweapon": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "jup_jp02_sm_scharlie3",
+        "#camo": "none",
+        "#attachment1": "jup_jp02_sm_scharlie3_stock_taclight",
+        "#attachment2": "jup_jp02_sm_scharlie3_barsil",
+        "#attachment3": "jup_jp02_sm_scharlie3_mag_40_9mm",
+        "#attachment4": "jup_jp02_sm_scharlie3_pgrip_ass",
+        "#attachment5": "grip_vert01",
+        "#attachment6": "none"
+    },
+    "#role": "role_medic",
+    "#hash_ca76bf5089783ef3": 1,
+    "#extrapower": {
+    },
+    "#equipment": {
+        "#primary": "equip_semtex",
+        "#secondary": "equip_battlerage"
+    },
+    "#loadoutname": "&JUP_PERKS/JUP_DCLASS_12",
+    "#wildcard": {
+        "#wildcard": "wildcard_none"
+    },
+    "#hash_d29422aa859a9c6": {
+    },
+    "#super": "none",
+    "#primaryweapon": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "jup_jp19_br_acharlie450",
+        "#camo": "none",
+        "#attachment1": "jup_jp19_br_acharlie450_stock_tac",
+        "#attachment2": "iw9_minireddot02_tall",
+        "#attachment3": "jup_comp_br_06",
+        "#attachment4": "jup_jp19_br_acharlie450_pgrip_ass",
+        "#attachment5": "jup_grip_angled_01",
+        "#attachment6": "none"
+    },
+    "#extraperks": {
+        "#perk1": "specialty_null",
+        "#perk3": "specialty_null",
+        "#perk2": "specialty_null"
+    },
+    "#hash_d72c73f8cdd98f5d": {
+        "#perk5": "specialty_null",
+        "#perk4": "specialty_tac_mask",
+        "#perk7": "specialty_null",
+        "#perk6": "specialty_null",
+        "#perk1": "specialty_gunner_vest",
+        "#perk3": "specialty_null",
+        "#perk2": "specialty_scavenger_plus"
+    }
+}

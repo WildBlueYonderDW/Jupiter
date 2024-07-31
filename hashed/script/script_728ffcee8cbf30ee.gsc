@@ -141,7 +141,7 @@ function getcontractdata(data) {
 function function_2c472b5af1a9287d() {
     level.arrow.dvars = spawnstruct();
     level.arrow.dvars.enabled = getdvarint(@"hash_74abb928ab13113b", 0);
-    level.arrow.dvars.tabletfiltered = issubstr(getdvar(@"hash_90b976de573aecf2", ""), "brloot_elite_arrow_laptop");
+    level.arrow.dvars.tabletfiltered = issubstr(getdvar(@"loot_table_filter", ""), "brloot_elite_arrow_laptop");
     level.arrow.dvars.version = getdvarint(@"hash_cda1dd0709c4d180", 0);
     level.arrow.dvars.var_60ea877e814ee1a8 = getdvarfloat(@"hash_e943bd1371a994c1", 50);
     /#
@@ -2200,7 +2200,7 @@ function function_d26703ef0bdc9106() {
     }
     if (isdefined(level.arrow.dvars.var_60ea877e814ee1a8) && level.arrow.dvars.var_60ea877e814ee1a8 > 0) {
         percentage = level.arrow.dvars.var_60ea877e814ee1a8 / 100;
-        maxplayers = getdvarint(@"hash_818c699a5caaee4f");
+        maxplayers = getdvarint(@"party_maxplayers");
         var_69ba742900b5b3a2 = maxplayers * percentage;
         if (level.totalplayers < var_69ba742900b5b3a2) {
             scripts\mp\gametypes\br_analytics::function_77814c1b523fd8a3(level.totalplayers, "not_enough_players_in_match", -1);

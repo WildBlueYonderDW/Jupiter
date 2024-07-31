@@ -1,0 +1,26 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_lethals"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_ground_loot_orange_pvpve"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_essence_low"
+        },
+        {
+            "#weight": 40,
+            "#itemspawnlist": "ob_jup_items_armor"
+        }
+    ],
+    "#itementries": [
+    ]
+}

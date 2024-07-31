@@ -1,0 +1,524 @@
+{
+    "#hash_d919bdd7cad3c0c2": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "5|STOCK"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 11,
+        "#left": [
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "9|RECEIVER"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            }
+        ],
+        "#right": [
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "9|RECEIVER"
+            }
+        ]
+    },
+    "#hash_1937210bd31ead45": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            },
+            {
+                "#attachmentcategory": "5|STOCK"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 12,
+        "#left": [
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "6|UNDERBARREL"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            }
+        ]
+    },
+    "#hash_5001fe0fd971afcf": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "3|LASER"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 7,
+        "#left": [
+            {
+                "#attachmentcategory": "6|UNDERBARREL"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            }
+        ]
+    },
+    "#hash_6331ebffae649ffb": {
+        "#inuse": 1,
+        "#up": [
+        ],
+        "#hash_26a65b57881bb2c0": 2,
+        "#left": [
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "3|LASER"
+            },
+            {
+                "#attachmentcategory": "4|OPTIC"
+            },
+            {
+                "#attachmentcategory": "5|STOCK"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "6|UNDERBARREL"
+            },
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            }
+        ]
+    },
+    "#hash_89324bf340997829": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "4|OPTIC"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 13,
+        "#left": [
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "6|UNDERBARREL"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "12|AMP"
+            }
+        ]
+    },
+    "#hash_b697bdb4d5d503c1": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "4|OPTIC"
+            },
+            {
+                "#attachmentcategory": "3|LASER"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 8,
+        "#left": [
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "6|UNDERBARREL"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "9|RECEIVER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            }
+        ]
+    },
+    "#hash_fc0a1fe1b434158b": {
+        "#inuse": 1,
+        "#up": [
+        ],
+        "#hash_26a65b57881bb2c0": 3,
+        "#left": [
+            {
+                "#attachmentcategory": "2|BARREL"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "4|OPTIC"
+            },
+            {
+                "#attachmentcategory": "5|STOCK"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "9|RECEIVER"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            }
+        ]
+    },
+    "#hash_f580c8fad9bd6d59": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "11|COMB"
+            },
+            {
+                "#attachmentcategory": "5|STOCK"
+            },
+            {
+                "#attachmentcategory": "4|OPTIC"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 10,
+        "#left": [
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            }
+        ]
+    },
+    "#hash_494ce1f13f4eac6e": {
+        "#inuse": 0,
+        "#up": [
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "4|OPTIC"
+            },
+            {
+                "#attachmentcategory": "5|STOCK"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 9,
+        "#left": [
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+        ]
+    },
+    "#hash_5ed43b512f3f9f28": {
+        "#inuse": 1,
+        "#up": [
+        ],
+        "#hash_26a65b57881bb2c0": 4,
+        "#left": [
+            {
+                "#attachmentcategory": "3|LASER"
+            },
+            {
+                "#attachmentcategory": "2|BARREL"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "5|STOCK"
+            },
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "9|RECEIVER"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ]
+    },
+    "#hash_c8834cc75516e5a": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "2|BARREL"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 1,
+        "#left": [
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "2|BARREL"
+            },
+            {
+                "#attachmentcategory": "3|LASER"
+            },
+            {
+                "#attachmentcategory": "4|OPTIC"
+            },
+            {
+                "#attachmentcategory": "5|STOCK"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "6|UNDERBARREL"
+            },
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            }
+        ]
+    },
+    "#hash_96a9553e95033eac": {
+        "#inuse": 1,
+        "#up": [
+            {
+                "#attachmentcategory": "2|BARREL"
+            }
+        ],
+        "#hash_26a65b57881bb2c0": 6,
+        "#left": [
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "7|AMMUNITION"
+            },
+            {
+                "#attachmentcategory": "8|MAGAZINE"
+            },
+            {
+                "#attachmentcategory": "13|TRIGGER"
+            },
+            {
+                "#attachmentcategory": "12|AMP"
+            }
+        ]
+    },
+    "#hash_e1455a626bbc7b52": {
+        "#inuse": 1,
+        "#up": [
+        ],
+        "#hash_26a65b57881bb2c0": 5,
+        "#left": [
+            {
+                "#attachmentcategory": "4|OPTIC"
+            },
+            {
+                "#attachmentcategory": "3|LASER"
+            },
+            {
+                "#attachmentcategory": "2|BARREL"
+            },
+            {
+                "#attachmentcategory": "1|MUZZLE"
+            }
+        ],
+        "#right": [
+            {
+                "#attachmentcategory": "11|COMB"
+            }
+        ],
+        "#down": [
+            {
+                "#attachmentcategory": "11|COMB"
+            },
+            {
+                "#attachmentcategory": "10|REAR_GRIP"
+            },
+            {
+                "#attachmentcategory": "9|RECEIVER"
+            }
+        ]
+    }
+}

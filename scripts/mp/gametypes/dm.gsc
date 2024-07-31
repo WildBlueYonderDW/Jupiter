@@ -105,13 +105,13 @@ function main() {
 // Size: 0xde
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata(1);
-    setdynamicdvar(@"hash_ccb8b9b501a1e460", getmatchrulesdata("dmData", "aonRules"));
-    setdynamicdvar(@"hash_e7b601c3f8858884", getmatchrulesdata("dmData", "scoreOnTargetPlayer"));
-    setdynamicdvar(@"hash_84488474c027d449", getmatchrulesdata("dmData", "targetPlayerCycle"));
-    setdynamicdvar(@"hash_7baf2b035b5f6bd4", getmatchrulesdata("dmData", "showTargetTime"));
-    setdynamicdvar(@"hash_85c3e7d7cf2f2af8", 1);
+    setdynamicdvar(@"scr_dm_aonrules", getmatchrulesdata("dmData", "aonRules"));
+    setdynamicdvar(@"scr_dm_scoreontargetplayer", getmatchrulesdata("dmData", "scoreOnTargetPlayer"));
+    setdynamicdvar(@"scr_dm_targetplayercycle", getmatchrulesdata("dmData", "targetPlayerCycle"));
+    setdynamicdvar(@"scr_dm_showtargettime", getmatchrulesdata("dmData", "showTargetTime"));
+    setdynamicdvar(@"scr_dm_winlimit", 1);
     registerwinlimitdvar("dm", 1);
-    setdynamicdvar(@"hash_4cfd4f3e5a0eba56", 1);
+    setdynamicdvar(@"scr_dm_roundlimit", 1);
     registerroundlimitdvar("dm", 1);
     setdynamicdvar(@"hash_eaf0f00090744c95", 0);
     registerhalftimedvar("dm", 0);
@@ -638,7 +638,7 @@ function newtargetmessage() {
 // Checksum 0x0, Offset: 0x21d8
 // Size: 0x1b
 function function_59bc1a507006dcb1() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "dm") == "gold_gun";
+    return getdvar(@"ui_gametype", "dm") == "gold_gun";
 }
 
 // Namespace dm / scripts\mp\gametypes\dm
@@ -646,7 +646,7 @@ function function_59bc1a507006dcb1() {
 // Checksum 0x0, Offset: 0x21fc
 // Size: 0x1b
 function function_5be859df8ee33a38() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "dm") == "high";
+    return getdvar(@"ui_gametype", "dm") == "high";
 }
 
 /#
@@ -669,7 +669,7 @@ function function_5be859df8ee33a38() {
                     points = var_f104804091b9dedf;
                 }
                 if (var_ff962a1182d547dc == -1 || var_f104804091b9dedf == -1) {
-                    points = getdvarint(@"hash_dba1d87860792cd4") - 1;
+                    points = getdvarint(@"scr_dm_scorelimit") - 1;
                 }
                 foreach (player in level.players) {
                     for (i = 0; i < points; i++) {

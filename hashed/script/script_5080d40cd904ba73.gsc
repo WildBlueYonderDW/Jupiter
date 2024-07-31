@@ -664,7 +664,7 @@ function function_bf01aba31e9023d1(var_ec133e81bf98bedc, a_players, var_a6b3fae0
         if (isdefined(player.matchbonus)) {
             player setclientomnvar("ui_round_end_match_bonus", player.matchbonus);
         }
-        player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+        player setclientdvar(@"ui_opensummary", 1);
     }
 }
 

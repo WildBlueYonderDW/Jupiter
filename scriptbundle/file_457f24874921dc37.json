@@ -1,0 +1,41 @@
+{
+    "#id": "automatic_airborne_mantle_gamepad",
+    "#description": "&OPTIONS/AUTOMATIC_AIRBORNE_MANTLE_DESC",
+    "#image": "jup_ui_options_image_automaticairbornemantle",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&OPTIONS/PARTIAL"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "autoMantleAirborneGamepad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_3b1c10ec1ec5b387"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_42076bcd8a4dd559"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_1c3f55ef82bc2cd",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/AUTOMATIC_AIRBORNE_MANTLE",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_3b1c10ec1ec5b387"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

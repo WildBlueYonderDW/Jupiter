@@ -1,0 +1,61 @@
+{
+    "#presets": [
+        {
+            "#precache": "NeverPrecache",
+            "#size": 18
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 20
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 24
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 28
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 30
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 32
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 34
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 36
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 44
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 48
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 54.4
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 64
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 70
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 80
+        }
+    ],
+    "#hash_bffd626f4a3adb09": 0
+}

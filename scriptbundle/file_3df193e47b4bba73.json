@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#hash_245861c5723d77c1",
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_1042a177138ba2e",
+    "#titlestring": "&KILLSTREAKS/JUGGERNAUT",
+    "#worldmodel": "prop_uav_radio",
+    "#rarity": 4,
+    "#ref": "juggernaut",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "killstreak",
+    "#hash_8464122fb6575536": 1,
+    "#type": "killstreak",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_2a99b99f6c9b3113",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_killstreak_juggernaut",
+    "#scriptable": "%hash_64987c3d744a237c",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KILLSTREAK"
+}

@@ -175,7 +175,7 @@ function function_c1f42ed707642a04(fstop, focusspeed, aperturespeed) {
     level.dyndof.var_d453b380dfd6161d = 0;
     level.dyndof.issp = utility::issp();
     if (level.dyndof.issp) {
-        setsaveddvar(@"hash_62c917f9692eb820", 1);
+        setsaveddvar(@"r_dof_physical_enable", 1);
         function_db7bae3d5d2e993(level.player);
     } else {
         function_db7bae3d5d2e993(function_cb47153207fc68d2(getdvarint(@"hash_7dc7c389e33f9f1c")));
@@ -316,8 +316,8 @@ function function_ddd1e6b7bd85c6d1() {
 // Checksum 0x0, Offset: 0xf07
 // Size: 0x293
 function function_8ec129ee5a53f0bc() {
-    basefovdvar = getdvarint(@"hash_b38fcf293d1e91a8");
-    if (getdvarint(@"hash_b38fcf293d1e91a8") == level.dyndof.var_d453b380dfd6161d) {
+    basefovdvar = getdvarint(@"cg_targetBaseFov");
+    if (getdvarint(@"cg_targetBaseFov") == level.dyndof.var_d453b380dfd6161d) {
         return;
     }
     x_segments = 8;
@@ -441,7 +441,7 @@ function function_b23eb6ebe631ccdc(playereyeorigin, playerviewangles) {
 function function_50c7801fc0abbd3a() {
     if (gettime() > level.dyndof.var_a94780cfbefad9ce) {
         level.dyndof.var_a94780cfbefad9ce = gettime() + 1000;
-        level.dyndof.cosfov = cos(getdvarfloat(@"hash_b38fcf293d1e91a8"));
+        level.dyndof.cosfov = cos(getdvarfloat(@"cg_targetBaseFov"));
         level.dyndof.var_4cc8f2b112cadde0 = level.dyndof.cosfov * 50;
     }
 }
@@ -808,7 +808,7 @@ function dyndof(fstop, targetentity, focusspeed, aperturespeed, angles, var_3870
         setdvarifuninitialized(@"hash_93ca035fa3964d3d", 0);
     #/
     if (utility::issp()) {
-        setsaveddvar(@"hash_62c917f9692eb820", 1);
+        setsaveddvar(@"r_dof_physical_enable", 1);
     }
     player enablephysicaldepthoffieldscripting();
     if (isdefined(player.dyndof)) {
@@ -965,7 +965,7 @@ function dyndof_distance(targetentity) {
             closesttrace["position"] = targetentity.origin;
             pos = closesttrace["position"];
         }
-        if (isdefined(player worldpointtoscreenpos(pos, getdvarint(@"hash_b38fcf293d1e91a8"))) && dyndof_trace_target(pos)) {
+        if (isdefined(player worldpointtoscreenpos(pos, getdvarint(@"cg_targetBaseFov"))) && dyndof_trace_target(pos)) {
             if (player.dyndof.prevorigin == pos) {
                 return -1;
             }

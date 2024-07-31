@@ -1,0 +1,52 @@
+{
+    "#id": 153,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#foot",
+            "#sharedname": "#foot"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#neck",
+            "#sharedname": "#neck"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#torso",
+            "#sharedname": "#torso"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_52348973affcd544",
+            "#sharedname": "#hash_52348973affcd544"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hash_f9b754255057f953",
+            "#sharedname": "#hash_f9b754255057f953"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_a54fc4135b502045",
+            "#sharedname": "#hash_a54fc4135b502045"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_b440422e92a1b715",
+            "#sharedname": "#hash_b440422e92a1b715"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#hash_3a1a90afd1211ffa",
+            "#sharedname": "#hash_3a1a90afd1211ffa"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#explosive_damage",
+            "#sharedname": "#explosive_damage"
+        }
+    ],
+    "#name": "#hash_fbfb9466bbdbe3ec",
+    "#sharedname": "#hash_7f94e61c1787fc14"
+}

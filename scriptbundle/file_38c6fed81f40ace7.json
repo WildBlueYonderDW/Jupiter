@@ -1,0 +1,12 @@
+{
+    "#id": "ground_vehicle_auto_forward",
+    "#description": "&OPTIONS/GR_VEH_AUTO_FORWARD_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_acc11b1f51d803"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/GR_VEH_AUTO_FORWARD"
+}

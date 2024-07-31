@@ -33,9 +33,9 @@ function main() {
     if (function_a7caa13ebe4c4ba5() || isgroundwarcoremode()) {
         if (!isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
             if (getgametype() == "gwtdm") {
-                setdvar(@"hash_6beec004cdf37c0", 991);
+                setdvar(@"scr_localeID", 991);
             } else {
-                setdvar(@"hash_6beec004cdf37c0", 999);
+                setdvar(@"scr_localeID", 999);
             }
         }
         scripts\mp\gametypes\arm::arm_initoutofbounds();
@@ -52,7 +52,7 @@ function main() {
         volume delete();
     }
     scripts\mp\compass::setupminimap("compass_map_mp_jup_gw_fallout");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
@@ -62,7 +62,7 @@ function main() {
         scripts\mp\gametypes\wm_objectives::function_333f4c66e6305891(1, "_b", "zone_2", "jup_dam_wb_capture_zone_b");
         scripts\mp\gametypes\wm_objectives::function_333f4c66e6305891(1, "_c", "zone_3", "jup_dam_wb_capture_zone_c");
     }
-    setdvar(@"hash_be80c9650d91b8ac", 4000);
+    setdvar(@"fd_helicopter_altitude_limiter", 4000);
     function_274cd16d0af35466();
 }
 

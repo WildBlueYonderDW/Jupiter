@@ -1,0 +1,186 @@
+{
+    "#raritydef": "%hash_2b13ac750c6bead0",
+    "#pingvo": "#hash_f856404f7930d595",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 4,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/AR_GOLF3",
+    "#worldmodel": "weapon_wm_ar_mike4_brprop_nophys",
+    "#rarity": 3,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "jup_las_minireddot01"
+                },
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                },
+                {
+                    "#attachment": "jup_las_fourx01"
+                },
+                {
+                    "#attachment": "jup_las_dmscope01"
+                },
+                {
+                    "#attachment": "jup_las_twofivex01"
+                },
+                {
+                    "#attachment": "jup_twofivextherm01"
+                },
+                {
+                    "#attachment": "jup_twofivex02"
+                },
+                {
+                    "#attachment": "jup_twofivex05"
+                },
+                {
+                    "#attachment": "jup_hybridtherm02"
+                },
+                {
+                    "#attachment": "jup_hybridtherm01"
+                },
+                {
+                    "#attachment": "arscope_therm01"
+                },
+                {
+                    "#attachment": "arscope_nvgvz01"
+                },
+                {
+                    "#attachment": "hybridtherm02"
+                },
+                {
+                    "#attachment": "hybridtherm01"
+                },
+                {
+                    "#attachment": "fourxtherm04"
+                },
+                {
+                    "#attachment": "fourxtherm03"
+                },
+                {
+                    "#attachment": "fourxtherm02"
+                },
+                {
+                    "#attachment": "fourxtherm01"
+                },
+                {
+                    "#attachment": "holotherm01"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "reflex02_tall"
+                },
+                {
+                    "#attachment": "iw9_minireddot02_tall"
+                },
+                {
+                    "#attachment": "iw9_minireddot03_tall"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "bar_lm_long_p02_golf3"
+                },
+                {
+                    "#attachment": "bar_br_light_p02_golf3"
+                },
+                {
+                    "#attachment": "bar_lm_short_p02_golf3"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#slot": "backpiece",
+            "#includeall": 1
+        },
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "mag_sn_large_p02_golf3"
+                },
+                {
+                    "#attachment": "mag_sn_p02_golf3"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "drum_br_p02"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#slot": "muzzle",
+            "#includeall": 1
+        },
+        {
+            "#slot": "reargrip",
+            "#includeall": 1
+        },
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "bipod01"
+                },
+                {
+                    "#attachment": "bipod02"
+                },
+                {
+                    "#attachment": "bipod03"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "jup_grip_angled_05"
+                },
+                {
+                    "#attachment": "jup_grip_angled_04"
+                },
+                {
+                    "#attachment": "jup_grip_angled_03"
+                }
+            ],
+            "#slot": "trigger"
+        },
+        {
+            "#slot": "extra",
+            "#includeall": 1
+        },
+        {
+            "#slot": "modifier",
+            "#includeall": 1
+        }
+    ],
+    "#descstring": "&WEAPON/AR_GOLF3",
+    "#ref": "iw9_ar_golf3",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "ar",
+    "#baseweapon": "iw9_ar_golf3_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_ar_golf3",
+    "#scriptable": "%hash_1791a4bf37683efd",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_AR"
+}

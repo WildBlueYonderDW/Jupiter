@@ -73,7 +73,7 @@ function callback_playerconnect() {
 function func_player_speed() {
     scale = level._createfx.player_speed / 190;
     level.player setmovespeedscale(scale);
-    setdvar(@"hash_11a6aaf18b50047b", level._createfx.player_speed);
+    setdvar(@"g_speed", level._createfx.player_speed);
 }
 
 // Namespace createfx / scripts\mp\createfx

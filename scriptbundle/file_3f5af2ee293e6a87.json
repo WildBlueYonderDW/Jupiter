@@ -1,0 +1,23 @@
+{
+    "#id": "crosshair_dot_enabler",
+    "#description": "&OPTIONS/CROSSHAIR_DOT_DESC",
+    "#image": "jup_ui_options_image_crosshairdot",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "CrosshairDotEnabled",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#type": "EXEC"
+        }
+    ],
+    "#name": "&OPTIONS/CROSSHAIR_DOT",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/CROSSHAIR_DOT_DISABLE_DESC"
+}

@@ -1,0 +1,209 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_iw9_ar_ralpha",
+    "#hash_79839b907716ac41": "icon_weapon_iw9_ar_ralpha",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_6",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_ar_ralpha_v1",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_iw9_ar_ralpha",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_assault",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_ar_ralpha_v2",
+    "#category": "&WEAPON/SUBCLASS_ID_6",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2000,
+    "#lootid": 30679,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#ref": "iw9_ar_ralpha",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab751e309d92890": "semi_auto_fire_mode",
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/AR_RALPHA",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/AR_RALPHA",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag selectsemi ironsdefault",
+    "#asset": "iw9_ar_ralpha_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_assault",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_ralpha",
+                    "#lootid": 30669
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_short2_p08",
+                    "#lootid": 30672
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_lgt_tactical_p08",
+                    "#lootid": 30670
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_heavy2_p08",
+                    "#lootid": 30673
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_p08_ralpha",
+                    "#lootid": 30677
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "ralpha_optics",
+                    "#lootid": 32889,
+                    "#challengeid": 17821,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_ob_1",
+                    "#challengeid": 22428
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ralpha_gunperks",
+                    "#lootid": 32894,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockno_ar_p08",
+                    "#lootid": 30671,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "ralpha_backpieces",
+                    "#lootid": 32891,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "ralpha_extras",
+                    "#lootid": 32890,
+                    "#challengeid": 17822,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_ob_2",
+                    "#challengeid": 22433
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ralpha_undermounts",
+                    "#lootid": 32895,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ralpha_muzzles",
+                    "#lootid": 32896,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "ralpha_magazines",
+                    "#lootid": 32893,
+                    "#challengeid": 17823,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_ob_3",
+                    "#challengeid": 22438
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ralpha_frontpieces",
+                    "#lootid": 32897,
+                    "#challengeid": 17823,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "ralpha_reargrips",
+                    "#lootid": 32892,
+                    "#challengeid": 17824,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_ar_ralpha_camo_ob_4",
+                    "#challengeid": 22443
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_ar_ralpha_tuning",
+                    "#lootid": 30678,
+                    "#challengeid": 17824,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        }
+    ],
+    "#displayorder": 85,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

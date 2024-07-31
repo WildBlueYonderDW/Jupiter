@@ -1,0 +1,17 @@
+{
+    "#id": 773,
+    "#keys": [
+        {
+            "#key": "iw9_winback_cheat_action"
+        },
+        {
+            "#key": "iw9_winback_achievement_id"
+        },
+        {
+            "#key": "iw9_winback_progress_value"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_1c333ef1156e1492",
+    "#sharedname": "#hash_d1993f8c573a969a"
+}

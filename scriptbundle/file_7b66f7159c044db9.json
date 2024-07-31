@@ -1,0 +1,36 @@
+{
+    "#id": "color_customization_filter_mode",
+    "#description": "&OPTIONS/COLOR_CUSTOMIZATION_FILTER_MODE_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/NONE"
+        },
+        {
+            "#reference": "&OPTIONS/FILTER_1"
+        },
+        {
+            "#reference": "&OPTIONS/FILTER_2"
+        },
+        {
+            "#reference": "&OPTIONS/FILTER_3"
+        }
+    ],
+    "#hash_a20785232d9c4057": "colorCustomizationScreenFilterPalette",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/COLOR_CUSTOMIZATION_FILTER_MODE",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_73d5b60133282b20"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_485c16ec23070556"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_7675607c1ece5b40"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

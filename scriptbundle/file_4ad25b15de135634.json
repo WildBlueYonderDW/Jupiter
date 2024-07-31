@@ -1,0 +1,178 @@
+{
+    "#hash_12ed9627baf65e6d": 12,
+    "#hash_26cb68d514ad2106": 0,
+    "#hash_bec2a148f302146a": "&LUA_MENU_MP_BR_RECIPE_NAME",
+    "#teambased": 1,
+    "#hash_ecae0490a5f1f04c": 1,
+    "#finalkillcamtype": 0,
+    "#hash_3f9b0fde4d94c4e1": 1,
+    "#hash_e90a3f156c711c2d": "&LUA_MENU_MP_BR_RECIPE_DESC",
+    "#hash_e61e7212585decdd": [
+    ],
+    "#image": "jup_icon_mode_wz_br_mini",
+    "#hash_2078dc99d4296ca4": "&LUA_MENU_MP/BRMINI",
+    "#hash_cd13e71e53f5e9fd": [
+    ],
+    "#hash_597e7a2e7fd129b": 1,
+    "#hash_651047db5ba78359": 1,
+    "#hash_ef9df421d2eb6f44": "%hash_6c9f9c06c241ba15",
+    "#hash_63e50e7024bc663e": 43,
+    "#hash_5f52715067c4453c": "None",
+    "#hash_589e0c2e2afab4ea": "&",
+    "#hash_589e062e2afaa7b8": "&",
+    "#hash_589e072e2afaa9eb": "&",
+    "#hash_589e092e2afaae51": "&",
+    "#hash_94b34756413246bd": 1,
+    "#hash_4f29dbd56f01de57": 0,
+    "#hash_ef1173b4978600f9": [
+    ],
+    "#hash_61b9f20a7c31ed0d": [
+        {
+            "#image": "menu_keyart_wz_layer_00"
+        },
+        {
+            "#image": "menu_keyart_wz_layer_01"
+        }
+    ],
+    "#hash_96820798d03fb9ce": 50,
+    "#category": "Battle_royale",
+    "#hash_4c371bf313812c95": {
+        "#hash_2b60e5280dfc35cd": 1,
+        "#hash_abd731ee6e3696c": {
+            "#hash_48ac18e1bc53712b": {
+                "#hash_a5db0b3d50ceba8e": 2500,
+                "#movedist": 1000
+            },
+            "#hash_2e618e1d6d46f6fb": 3,
+            "#hash_e3a4942cefb60974": [
+                {
+                    "#hash_a85640a8d2256218": 15,
+                    "#hash_88414606541a6379": 15,
+                    "#hash_d626a1e8c8874d8f": 20,
+                    "#hash_cbf8ca656557adc8": 25
+                },
+                {
+                    "#hash_a85640a8d2256218": 20,
+                    "#hash_88414606541a6379": 20,
+                    "#hash_d626a1e8c8874d8f": 30,
+                    "#hash_cbf8ca656557adc8": 35
+                },
+                {
+                    "#hash_a85640a8d2256218": 30,
+                    "#hash_88414606541a6379": 30,
+                    "#hash_d626a1e8c8874d8f": 40,
+                    "#hash_cbf8ca656557adc8": 45
+                }
+            ]
+        }
+    },
+    "#hash_2f37493dac81d735": 3,
+    "#hash_67de886abb1a6fe3": [
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "atv"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "little_bird"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "tac_rover"
+        },
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "veh9_rhib"
+        },
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "veh9_acv_6x6"
+        },
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "veh9_jltv"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_jltv_mg"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_sedan_hatchback_1985"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_suv_1996"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_patrol_boat"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_mil_cargo_truck"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_palfa"
+        },
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "veh9_hummer"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh9_overland_2016"
+        },
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "veh9_utv"
+        },
+        {
+            "#hash_81fb9913371aaaa1": 1,
+            "#hash_f7a73a78711ebde5": "veh9_pwc"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh_jup_techo_rebel_armor"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh_jup_razorback"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh_jup_orav"
+        },
+        {
+            "#hash_f7a73a78711ebde5": "veh_jup_polaris_utv"
+        }
+    ],
+    "#hash_3c836934a83182a5": 1,
+    "#hash_a9305d57d96184fe": "bots_gametype_br",
+    "#isbrstylegametype": 1,
+    "#hash_315c56db76139cdd": "%hash_3d2388c3e29050e9",
+    "#hash_f98f33b716aaa516": "%mp/brmissions.csv",
+    "#issquadmode": 1,
+    "#hash_c687320dd80c7473": "@hash_b2e5f85e08135499",
+    "#hash_4bee1515a16c956": 2200,
+    "#hash_cc58ee2d53dcf5b6": 1,
+    "#hash_bfcff306e50ddf4": "&OBJECTIVES/DM_HINT",
+    "#hash_df5e6a3d7e67d4de": 0,
+    "#hash_7414261752817c0": 0,
+    "#backpacksize": 8,
+    "#namekey": "mini_trios",
+    "#hash_317a568b4ba1496a": 48,
+    "#hash_68d6debb01863622": "&",
+    "#hash_68d6d8bb018628f0": "&",
+    "#hash_68d6d9bb01862b23": "&",
+    "#hash_68d6dbbb01862f89": "&",
+    "#defaultmap": "mp_jup_bigmap_wz2",
+    "#hash_23274688e75c2144": 15,
+    "#brsubgametype": "mini",
+    "#splashlist": "%hash_1558e9fdaf7164c9",
+    "#hash_e77038812bc72875": 1,
+    "#hash_6615fee3cfcc9303": {
+        "#hash_2b60e5280dfc35cd": 1
+    },
+    "#agentmaxdamage": 15,
+    "#hash_f68a98ed3087ea80": 1,
+    "#hash_d8a6002d5eaba519": 0,
+    "#scoreeventlist": "score_event_list_br_jup_mp",
+    "#xpscalar": 2.5,
+    "#hash_17b1f7abbf0c2aa0": "&OBJECTIVES/DM_HINT",
+    "#contractlist": "%hash_e921a882197419d",
+    "#hash_d98341b1a105c7af": 20,
+    "#hash_d0414fbb847802b": "&PLAYLIST/MINIBR_DESC",
+    "#hash_eaca66bea536a108": "gulag_twotwo",
+    "#hash_c68ef90d352f43f6": "gametype_br",
+    "#hash_d20acad05758f0d8": "br"
+}

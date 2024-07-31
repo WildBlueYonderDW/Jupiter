@@ -59,7 +59,7 @@ function main() {
         registerwinlimitdvar(getgametype(), 1);
         registernumlivesdvar(getgametype(), 0);
         registerhalftimedvar(getgametype(), 0);
-        setdvar(@"hash_e723cc761de7b161", 1);
+        setdvar(@"scr_player_lastStand", 1);
     }
     updategametypedvars();
     initdialog();

@@ -1,0 +1,22 @@
+{
+    "#id": "windows_key_minimize",
+    "#description": "&OPTIONS/SYSTEM_KEY_MINIMIZE_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/OPERATING_SYSTEM"
+        },
+        {
+            "#reference": "&OPTIONS/WINDOWSKEY_GAME"
+        }
+    ],
+    "#hash_a20785232d9c4057": "disableWinKey",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/SYSTEM_KEY_MINIMIZE"
+}

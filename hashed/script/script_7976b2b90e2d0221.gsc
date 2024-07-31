@@ -69,7 +69,7 @@ function main() {
     namespace_c87bd66a4597ef5a::main();
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     scripts\mp\compass::setupminimap("compass_map_mp_jup_launchfacility");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";

@@ -1,0 +1,61 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_aromeo410_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_charlie725_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_mbravo_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_mike1014_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_mviktor_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_oromeo12_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_recho870_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_vecho_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_tsierra_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_oromeo12_v106_green"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sh_spapa12_green"
+        }
+    ]
+}

@@ -70,7 +70,7 @@ function function_fefa23bed4e70fb2(struct, model, turretweapon) {
     turret setscriptablepartstate("rocket1", "hidden");
     turret setscriptablepartstate("rocket2", "hidden");
     turret setscriptablepartstate("rocket3", "hidden");
-    if (utility::iscp() || getdvar(@"hash_e65e9a96eb2ff62b", "") == "wm" || getdvar(@"hash_e65e9a96eb2ff62b", "") == "ob") {
+    if (utility::iscp() || getdvar(@"ui_gametype", "") == "wm" || getdvar(@"ui_gametype", "") == "ob") {
         turret setscriptablepartstate("usable_left", "usable");
         turret setscriptablepartstate("usable_right", "usable");
         turret setscriptablepartstate("usable_front", "usable");

@@ -1,0 +1,30 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 30,
+            "#itemspawnentry": "ob_jup_item_generic_personal_aspirin"
+        },
+        {
+            "#weight": 30,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_bandage"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_liquor"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_mre"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_freshwater"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_soothinglotion"
+        }
+    ]
+}

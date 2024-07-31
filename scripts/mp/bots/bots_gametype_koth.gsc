@@ -126,7 +126,7 @@ function bot_koth_think() {
     var_46aaec4ccf788dad = level.zone;
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

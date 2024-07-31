@@ -356,7 +356,7 @@ function private function_ad18e63086fa6a51(race) {
         namespace_6c8a837ec98fe0b8::update_objective_position(race.var_bd1202e11a5ae264, next_checkpoint.origin);
     }
     thread function_e10c44c9089e645(next_checkpoint);
-    race.player thread namespace_6aa38109e829c5b::powerup_apply_zombie_legs(namespace_a6fd08b4fff3efc9::function_d07ae154834833b0("checkpoint_timer_duration"));
+    race.player thread namespace_6aa38109e829c5b::function_5f5cc115a0b7d069(namespace_a6fd08b4fff3efc9::function_d07ae154834833b0("checkpoint_timer_duration"));
     race.var_b8489c213c070264 = namespace_a6fd08b4fff3efc9::function_d07ae154834833b0("checkpoint_timer_duration");
 }
 

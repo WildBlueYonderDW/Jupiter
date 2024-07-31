@@ -1,0 +1,14 @@
+{
+    "#id": 111,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_equipment_bitfield1"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_e2a680bee27985e9",
+    "#sharedname": "#stun"
+}

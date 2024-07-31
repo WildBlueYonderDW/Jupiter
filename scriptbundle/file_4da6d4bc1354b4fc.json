@@ -1,0 +1,436 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_9241762813aaa86c": {
+        "#xoffset": 9,
+        "#priority": 1
+    },
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp01_lm_mgolf36_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp01_lm_mgolf36_mp",
+    "#platform": "platform_jup_ar_golf36",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp01_lm_mgolf36_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp01_lm_mgolf36_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_lmg",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 3000,
+    "#botpersonality": "camper|run_and_gun",
+    "#lootid": 17207,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 1,
+    "#ref": "jup_jp01_lm_mgolf36",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/MGOLF36_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP01_LM_MGOLF36",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault",
+    "#asset": "jup_jp01_lm_mgolf36_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_lmg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_bar_heavy",
+                    "#lootid": 21823,
+                    "#challengeid": 13181
+                },
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_frontpieces",
+                    "#lootid": 21747,
+                    "#challengeid": 17953
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled06",
+                    "#lootid": 2033
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_undermounts",
+                    "#lootid": 21751
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_stock_heavy",
+                    "#lootid": 21828
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_backpieces",
+                    "#lootid": 21748
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_556n_lg",
+                    "#lootid": 26671
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_gunperks",
+                    "#lootid": 23234
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_pgrip_aim",
+                    "#lootid": 21844
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_reargrips",
+                    "#lootid": 21753
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_optics",
+                    "#lootid": 21750
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_twofivex_golf36",
+                    "#lootid": 23431
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_mag_40_556n",
+                    "#lootid": 21839
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_magazines",
+                    "#lootid": 21749
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_stock_assault",
+                    "#lootid": 21830,
+                    "#challengeid": 13182
+                },
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_ob_2",
+                    "#challengeid": 17989
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_pgrip_tac",
+                    "#lootid": 21848
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "laserbox_hip01",
+                    "#lootid": 1671
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_extras",
+                    "#lootid": 21755
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_ar_08",
+                    "#lootid": 21810
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_muzzles",
+                    "#lootid": 21752
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_bar_heavy_long",
+                    "#lootid": 21826
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_pgrip_ske",
+                    "#lootid": 21847,
+                    "#challengeid": 13183
+                },
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_ob_3",
+                    "#challengeid": 18025
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_twofivex01",
+                    "#lootid": 21764
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_bar_fusion",
+                    "#lootid": 21820
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_stock_tac",
+                    "#lootid": 21831
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_pgrip_snp",
+                    "#lootid": 21845
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_drum_100_556n",
+                    "#lootid": 21842
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_bar_heavy_bipod",
+                    "#lootid": 21825,
+                    "#challengeid": 13184
+                },
+                {
+                    "#challengeref": "jup_jp01_lm_mgolf36_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_tuning",
+                    "#lootid": 22262,
+                    "#challengeid": 18061
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp01_lm_mgolf36_amps",
+                    "#lootid": 47201
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        }
+    ],
+    "#displayorder": 31,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.85,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

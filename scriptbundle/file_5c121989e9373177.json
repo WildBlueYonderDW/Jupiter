@@ -1,0 +1,119 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_alpha57"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_apapa"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_aviktor"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_beta"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_coscar635"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_lwhiskey"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_mpapa5"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_mpapa7"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_mpapax"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_papa90"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_pmike"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_scharlie3"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_umike"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_uzulu"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_uzulup"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_victor"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_acharlie45"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_acharlie9"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_sdelta"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_talpham"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_mpapa9"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_sm_pcharlie9"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_weapon_sm_kpappa50"
+        }
+    ]
+}

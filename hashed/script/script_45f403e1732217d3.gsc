@@ -96,7 +96,7 @@ function function_393baf20db478c0d() {
     if (istrue(level.var_ec2fb549b15ad827) || istrue(level.var_77907d733abe8b63)) {
         is_ranked = 1;
     }
-    max_players_allowed = getdvarint(@"hash_818c699a5caaee4f", -1);
+    max_players_allowed = getdvarint(@"party_maxplayers", -1);
     frame_duration = function_676cfe2ab64ea758();
     dlog_recordevent("dlog_event_mp_server_match_start", ["utc_start_time_s", utc_start_time_s, "map", level.script, "game_type", game_type, "is_playtest", getdvarint(@"hash_2e58447fa1ca4f20") && getdvarint(@"hash_51f11c2e135abc7"), "experiment_name", getdvar(@"hash_409a139e3e0eb905"), "dedi_server_guid", getdediserverguid(), "sub_game_type", sub_game_type, "playlist_id", playlist_id, "playlist_name", playlist_name, "is_offline", !level.onlinegame, "max_players_allowed", max_players_allowed, "frame_duration", frame_duration, "is_ranked", is_ranked]);
     var_37aab353fe84a505 = "{\"game_type\":\"" + game_type + "\",\"sub_game_type\":\"" + sub_game_type + "\",\"map\":\"" + level.script + "\"}";
@@ -148,7 +148,7 @@ function function_f5f91665fe4dba94(data) {
             team_three_score = getteamscore("team_three");
         }
     }
-    max_players_allowed = getdvarint(@"hash_818c699a5caaee4f", -1);
+    max_players_allowed = getdvarint(@"party_maxplayers", -1);
     is_ranked = 0;
     if (istrue(level.var_ec2fb549b15ad827) || istrue(level.var_77907d733abe8b63)) {
         is_ranked = 1;
@@ -596,7 +596,7 @@ function function_6447f24addc0137e(data) {
         if (!isdefined(lobby_id)) {
             lobby_id = "";
         }
-        current_season = getdvarint(@"hash_71ef9b867531fea1", -1);
+        current_season = getdvarint(@"current_season", -1);
         current_team = "unset";
         if (isdefined(player.sessionteam)) {
             current_team = player.sessionteam;

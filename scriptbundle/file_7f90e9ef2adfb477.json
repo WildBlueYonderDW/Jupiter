@@ -1,0 +1,6 @@
+{
+    "#id": "streaming_debug",
+    "#description": "&OPTIONS/STREAMING_DEBUG_DESC",
+    "#type": "GenericButton",
+    "#name": "&OPTIONS/STREAMING_DEBUG"
+}

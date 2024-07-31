@@ -1,0 +1,11 @@
+{
+    "#id": "mouse_monitor_distance_coef_option",
+    "#description": "&OPTIONS/MOUSE_MONITOR_DISTANCE_COEF_DESC",
+    "#hash_ea45bc5a5e9ac302": 0.05,
+    "#hash_a20785232d9c4057": "mouseMonitorDistanceCoef",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_15963d81d6fd6dac": 5,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&OPTIONS/MOUSE_MONITOR_DISTANCE_COEF",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/MONITOR_DISTANCE_COE_DISABLE_DESC"
+}

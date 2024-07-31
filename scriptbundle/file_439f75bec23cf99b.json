@@ -1,0 +1,14 @@
+{
+    "#id": 464,
+    "#keys": [
+        {
+            "#key": "iw9_autospend_enabled"
+        },
+        {
+            "#key": "iw9_version"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_d07930d9255faf12",
+    "#sharedname": "#hash_70ec12dfc977723a"
+}

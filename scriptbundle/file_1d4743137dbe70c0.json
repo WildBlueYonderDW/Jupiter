@@ -1,0 +1,431 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_9241762813aaa86c": {
+        "#zoffset": 0.6,
+        "#priority": 1
+    },
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp08_ar_qbravo97_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp08_ar_qbravo97_mp",
+    "#platform": "platform_jup_ar_qbravo95",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_2",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp08_ar_qbravo97_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp08_ar_qbravo97_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_assault",
+    "#category": "&WEAPON/SUBCLASS_ID_2",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2000,
+    "#hash_1328c6a635d409bf": {
+        "#zoffset": -0.5,
+        "#yoffset": 1,
+        "#xoffset": 1,
+        "#priority": 1
+    },
+    "#lootid": 17214,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 8,
+    "#ref": "jup_jp08_ar_qbravo97",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab751e309d92890": "semi_auto_fire_mode",
+    "#hash_2ab754e309d92f29": "burst_fire_mode",
+    "#desc": "&JUP_WEAPON/QBRAVO97_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP08_AR_QBRAVO95",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault ",
+    "#asset": "jup_jp08_ar_qbravo97_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_assault",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_bar_hvylong",
+                    "#lootid": 23093,
+                    "#challengeid": 12666
+                },
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_frontpieces",
+                    "#lootid": 23061,
+                    "#challengeid": 20285
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_stock_ergo",
+                    "#lootid": 23096
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_backpieces",
+                    "#lootid": 23062
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_twofivex04",
+                    "#lootid": 21767
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_optics",
+                    "#lootid": 23064
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_mag_20_556n",
+                    "#lootid": 23103
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_magazines",
+                    "#lootid": 23063
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_pgrip_aim",
+                    "#lootid": 26564
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_reargrips",
+                    "#lootid": 23067
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_comb_ergo",
+                    "#lootid": 23112
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_combs",
+                    "#lootid": 47225
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_ar_04",
+                    "#lootid": 21806
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_muzzles",
+                    "#lootid": 23066
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_stock_reduc",
+                    "#lootid": 23098
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "laserbox_hip04",
+                    "#lootid": 2168
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_extras",
+                    "#lootid": 23069
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_bar_long",
+                    "#lootid": 23089,
+                    "#challengeid": 12735
+                },
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_ob_2",
+                    "#challengeid": 20286
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_mag_40_556n",
+                    "#lootid": 23105
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled03",
+                    "#lootid": 1302
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_undermounts",
+                    "#lootid": 23065
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_556n_db",
+                    "#lootid": 3268
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_gunperks",
+                    "#lootid": 23249
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_comb_ammo",
+                    "#lootid": 23111
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_stock_rubber",
+                    "#lootid": 23099
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_bar_hvyshort",
+                    "#lootid": 23092,
+                    "#challengeid": 12736
+                },
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_ob_3",
+                    "#challengeid": 20287
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_pgrip_ass",
+                    "#lootid": 26565
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_comb_pouch",
+                    "#lootid": 32204
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_stock_padded",
+                    "#lootid": 23097
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_comb_tac",
+                    "#lootid": 26045
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_bar_light",
+                    "#lootid": 23094
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_pgrip_tac",
+                    "#lootid": 26566
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_drum_60_556n",
+                    "#lootid": 23106
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_ub_gl_qbravo_he_01",
+                    "#lootid": 23910,
+                    "#challengeid": 12737
+                },
+                {
+                    "#challengeref": "jup_jp08_ar_qbravo97_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_tuning",
+                    "#lootid": 23070,
+                    "#challengeid": 20288
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp08_ar_qbravo97_amps",
+                    "#lootid": 47209
+                }
+            ],
+            "#level": 24
+        }
+    ],
+    "#displayorder": 24,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

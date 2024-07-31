@@ -1,0 +1,16 @@
+{
+    "#collections": [
+        {
+            "#asset": "jup_storebundlecollection_dune"
+        },
+        {
+            "#asset": "jup_storebundlecollection_japanesefood"
+        },
+        {
+            "#asset": "jup_storebundlecollection_gxk"
+        },
+        {
+            "#asset": "jup_storebundlecollection_konnigroup"
+        }
+    ]
+}

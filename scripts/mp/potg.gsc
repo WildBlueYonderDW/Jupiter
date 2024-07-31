@@ -61,14 +61,14 @@ function init() {
             level thread function_e14b5f1aa08d9caa();
         }
     } else {
-        setdvarifuninitialized(@"hash_8606ee05fd13fa87", 8000);
-        setdvarifuninitialized(@"hash_8629fc05fd3a6109", 3000);
-        setdvarifuninitialized(@"hash_54872a63f6b7a88a", 3500);
-        setdvarifuninitialized(@"hash_81e3c31a787ce483", 420);
+        setdvarifuninitialized(@"potg_action_duration_max", 8000);
+        setdvarifuninitialized(@"potg_action_duration_min", 3000);
+        setdvarifuninitialized(@"potg_buffer_duration", 3500);
+        setdvarifuninitialized(@"potg_min_scene_score", 420);
     }
-    setdvarifuninitialized(@"hash_1354f825daa8fdd3", 1000);
+    setdvarifuninitialized(@"potg_debug_archive", 1000);
     /#
-        setdevdvarifuninitialized(@"hash_ffd4a481b33d985a", 0);
+        setdevdvarifuninitialized(@"potg_debug_print", 0);
         setdevdvarifuninitialized(@"hash_a8d6f0b654204b81", 0);
         setdevdvarifuninitialized(@"hash_1fd181ebeebe83bf", 0);
         setdevdvarifuninitialized(@"hash_ba2d7c5976a9ec58", 0);
@@ -88,7 +88,7 @@ function getminimumscorerequired() {
     if (function_acab8b716476b589()) {
         return game["potg"].var_2d7dbb87afd5e11;
     }
-    return getdvarint(@"hash_81e3c31a787ce483");
+    return getdvarint(@"potg_min_scene_score");
 }
 
 // Namespace potg / scripts\mp\potg
@@ -99,7 +99,7 @@ function getactionscenedurationmax() {
     if (function_acab8b716476b589()) {
         return game["potg"].var_f15f1ae1f182d55f;
     }
-    return getdvarint(@"hash_8606ee05fd13fa87");
+    return getdvarint(@"potg_action_duration_max");
 }
 
 // Namespace potg / scripts\mp\potg
@@ -110,7 +110,7 @@ function getactionscenedurationmin() {
     if (function_acab8b716476b589()) {
         return game["potg"].var_f13c08e1f15c6611;
     }
-    return getdvarint(@"hash_8629fc05fd3a6109");
+    return getdvarint(@"potg_action_duration_min");
 }
 
 // Namespace potg / scripts\mp\potg
@@ -121,7 +121,7 @@ function getscenebufferduration() {
     if (function_acab8b716476b589()) {
         return game["potg"].bufferduration;
     }
-    return getdvarint(@"hash_54872a63f6b7a88a");
+    return getdvarint(@"potg_buffer_duration");
 }
 
 // Namespace potg / scripts\mp\potg
@@ -132,7 +132,7 @@ function function_c32dbde9550fc4d5() {
     if (function_acab8b716476b589()) {
         return game["potg"].var_1754edabe7fe6405;
     }
-    return getdvarint(@"hash_54872a63f6b7a88a");
+    return getdvarint(@"potg_buffer_duration");
 }
 
 // Namespace potg / scripts\mp\potg
@@ -321,7 +321,7 @@ function function_6ccc879a30fe522c() {
     if (function_acab8b716476b589()) {
         return level.gametypebundle.finalkillcamtype;
     }
-    return getoverridedvarintexceptmatchrulesvalues(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_killcamType"), @"hash_769d7362e31fdf55");
+    return getoverridedvarintexceptmatchrulesvalues(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_killcamType"), @"scr_game_killcamType");
 }
 
 // Namespace potg / scripts\mp\potg
@@ -1271,7 +1271,7 @@ function datalog_newevent(event, id, entity) {
 // Checksum 0x0, Offset: 0x30d3
 // Size: 0x105
 function datalog_archivesaved(requesttime, archiveStartTime, archiveDuration, desiredSceneStartTime, desiredSceneEndTime) {
-    if (getdvarint(@"hash_1354f825daa8fdd3", 0) == 0) {
+    if (getdvarint(@"potg_debug_archive", 0) == 0) {
         return;
     }
     version = datalog_getlogversion();
@@ -1295,7 +1295,7 @@ function debug_watcharchivesize(prevstarttime, scene) {
 function debug_watcharchivefinished(requesttime, prevstarttime, scene) {
     level notify("watching_potg_archive_request");
     level endon("watching_potg_archive_request");
-    if (getdvarint(@"hash_1354f825daa8fdd3") == 0) {
+    if (getdvarint(@"potg_debug_archive") == 0) {
         return;
     }
     while (true) {
@@ -1351,7 +1351,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x341d
     // Size: 0x6b
     function debug_print(text, entity) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         entitytext = function_b5fc4169a40984f4(entity);
@@ -1383,7 +1383,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x34fb
     // Size: 0x39
     function function_931a8f6e47923a14(entity, registered) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         debug_print("<dev string:x4d9>" + registered, entity);
@@ -1394,7 +1394,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x353c
     // Size: 0x6a
     function function_4f8540de8b6894db(entity, changetype) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         filterid = getdvarint(@"hash_c50427c6f2e00c08", -1);
@@ -1409,7 +1409,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x35ae
     // Size: 0x25
     function function_58af25849b7e7eee() {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         debug_print("<dev string:x4f8>");
@@ -1420,7 +1420,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x35db
     // Size: 0xb1
     function function_89e809869ae732cc(entity, eventref, eventscore, starttime, endtime) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         filterid = getdvarint(@"hash_c50427c6f2e00c08", -1);
@@ -1438,7 +1438,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x3694
     // Size: 0xa2
     function function_db2034a316b2f949(entity, score, eventcount) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         filterid = getdvarint(@"hash_c50427c6f2e00c08", -1);
@@ -1456,7 +1456,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x373e
     // Size: 0xf1
     function function_2f99c1774457a61a(entity, scene, reason) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         filterid = getdvarint(@"hash_c50427c6f2e00c08", -1);
@@ -1477,7 +1477,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x3837
     // Size: 0x90
     function function_6d136a77e61ca284(scene, text) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         filterid = getdvarint(@"hash_c50427c6f2e00c08", -1);
@@ -1492,7 +1492,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x38cf
     // Size: 0x92
     function function_eab0b74dcbef7e9c(scene) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         debug_print("<dev string:x5ad>" + scene.sceneid + "<dev string:x5c2>" + scene.score + "<dev string:x5cf>" + function_b5fc4169a40984f4(scene.primaryentity));
@@ -1507,7 +1507,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x3969
     // Size: 0x92
     function function_434562c57a231693(scene) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         debug_print("<dev string:x5dd>" + scene.sceneid + "<dev string:x5c2>" + scene.score + "<dev string:x5cf>" + function_b5fc4169a40984f4(scene.primaryentity));
@@ -1571,7 +1571,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x3cdd
     // Size: 0x36
     function function_6e0f018a9e890127(waittime) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         debug_print("<dev string:x787>" + waittime + "<dev string:x7ac>");
@@ -1582,7 +1582,7 @@ function debug_logarchiveresult(result, scene, requesttime, finalstarttime, fina
     // Checksum 0x0, Offset: 0x3d1b
     // Size: 0x3c
     function function_1483fe96ec345b56(timesincelastarchive) {
-        if (getdvarint(@"hash_ffd4a481b33d985a") == 0) {
+        if (getdvarint(@"potg_debug_print") == 0) {
             return;
         }
         debug_print("<dev string:x7b2>" + timesincelastarchive / 1000 + "<dev string:x343>");

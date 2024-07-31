@@ -1,0 +1,24 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 2,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_aether_tools_green",
+            "#mincount": 1
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_caches_zombie_high_value_green",
+            "#mincount": 1
+        },
+        {
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_caches_low_value_green"
+        },
+        {
+            "#weight": 70
+        }
+    ],
+    "#itementries": [
+    ]
+}

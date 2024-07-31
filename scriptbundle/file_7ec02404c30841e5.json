@@ -1,0 +1,31 @@
+{
+    "#id": "weapon_mounting_movement_exit_controller",
+    "#description": "&OPTIONS/WEAPON_MOUNTING_MOVEMENT_EXIT_DESC_CONTROLLER",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/ADS"
+        },
+        {
+            "#reference": "&OPTIONS/CONTROLLER_SUB_MOVEMENT"
+        }
+    ],
+    "#hash_a20785232d9c4057": "mountPullAwayEnabledGamepad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_1096c04feb3ccd31"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/WEAPON_MOUNTING_MOVEMENT_EXIT"
+}

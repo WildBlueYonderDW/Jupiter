@@ -1,0 +1,111 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&OPTIONS/MENU_ADVANCED_SETTINGS",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/SHORTCUTS_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_1367b6b568a2f2a0"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_9cab46146e84b79"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7ced4739e0f96be4"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6091cf57d69cf841"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_23f5ec38a05a247"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1f3853bae99aef7f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6412ac626b8179a5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6cc81d82ffb9784"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/NAVIGATION_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_5c28ab5c10407a6d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5b4967763aeb002e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_340b880064759039"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7f4c085814e48485"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6088f010903a44e9"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2718f653526a207d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2fe25d2a7473ecb6"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_56a9c7331c39a781"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_22c097ac1cdfdea6"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_54f0c1c24c8b2009"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7e294367f3d00b33"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_40ab9e3470394099"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/MENU_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d59c0c545c64"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d89c0c54617d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d79c0c545fca"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d29c0c54574b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d19c0c545598"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d49c0c545ab1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522d39c0c5458fe"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522ce9c0c54507f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7522cd9c0c544ecc"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

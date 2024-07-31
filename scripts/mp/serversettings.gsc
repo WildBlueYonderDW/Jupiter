@@ -80,7 +80,7 @@ function constraingametype(gametype) {
 // Size: 0x35
 function setfriendlyfire(enabled) {
     level.friendlyfire = enabled;
-    setdvar(@"hash_8a35d4526ee9dc2e", enabled);
-    setdvar(@"hash_11420719fff4b2a2", enabled);
+    setdvar(@"ui_friendlyfire", enabled);
+    setdvar(@"cg_drawFriendlyHUDGrenades", enabled);
 }
 

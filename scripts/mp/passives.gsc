@@ -38,7 +38,7 @@ function passiveparsetable() {
         if (attachmentref != "") {
             struct.attachmentref = attachmentref;
         }
-        if (getdvar(@"hash_e65e9a96eb2ff62b") == "zombie") {
+        if (getdvar(@"ui_gametype") == "zombie") {
             var_4c1a232672db4b7f = tablelookupbyrow("mp/passivetable.csv", row, 22);
             if (var_4c1a232672db4b7f != "") {
                 struct.attachmentref = var_4c1a232672db4b7f;

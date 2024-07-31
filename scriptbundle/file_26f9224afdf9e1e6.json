@@ -1,0 +1,126 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 5,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&JUP_WEAPON/JUP_CP08_BR_XMIKE5",
+    "#worldmodel": "wpn_wm_cp08_br_xmike5",
+    "#rarity": 4,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "iw9_minireddot02_tall"
+                },
+                {
+                    "#attachment": "iw9_minireddot04_tall"
+                },
+                {
+                    "#attachment": "iw9_minireddot06_tall"
+                },
+                {
+                    "#attachment": "jup_reflex03_tall"
+                },
+                {
+                    "#attachment": "jup_reflex04_tall"
+                },
+                {
+                    "#attachment": "reflex02_tall"
+                },
+                {
+                    "#attachment": "holo02"
+                },
+                {
+                    "#attachment": "holo03"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_cp08_br_xmike5_bar_long"
+                },
+                {
+                    "#attachment": "jup_cp08_br_xmike5_bar_lgtlong"
+                },
+                {
+                    "#attachment": "jup_cp08_br_xmike5_bar_long"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_cp08_br_xmike5_mag_45_277f"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_cp08_br_xmike5_stock_hvyprecision"
+                },
+                {
+                    "#attachment": "jup_cp08_br_xmike5_stock_heavy"
+                },
+                {
+                    "#attachment": "jup_cp08_br_xmike5_stock_lgtprecision"
+                }
+            ],
+            "#slot": "backpiece",
+            "#includeall": 1
+        },
+        {
+            "#includelist": [
+                {
+                    "#attachment": "jup_comp_br_06"
+                },
+                {
+                    "#attachment": "jup_comp_br_07"
+                },
+                {
+                    "#attachment": "jup_comp_br_08"
+                }
+            ],
+            "#slot": "muzzle",
+            "#includeall": 1
+        },
+        {
+            "#slot": "gametype"
+        }
+    ],
+    "#descstring": "&JUP_WEAPON/JUP_CP08_BR_XMIKE5",
+    "#ref": "jup_cp08_br_xmike5",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "br",
+    "#baseweapon": "jup_cp08_br_xmike5_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_ec30c0c679067308",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_jup_cp08_br_xmike5_mp",
+    "#scriptable": "%hash_53595d641293523c",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_BR"
+}

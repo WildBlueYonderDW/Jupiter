@@ -1,0 +1,41 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_acharlie450_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_bromeo2_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_msecho_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_ngsierra_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_soscar14_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_xmike5_orange"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_br_aromeo200_orange"
+        }
+    ]
+}

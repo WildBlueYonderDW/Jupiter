@@ -2861,7 +2861,7 @@ function function_ae3f61dab7aa5fec(player) {
     if (scripts\mp\gameobjects::function_21f4c6f630b17fc4(player)) {
         return false;
     }
-    gametype = getdvar(@"hash_e65e9a96eb2ff62b", "");
+    gametype = getdvar(@"ui_gametype", "");
     if (gametype == "conf") {
         return false;
     }
@@ -5566,7 +5566,7 @@ function requestid(minimap, world, reservedid, showoncompass, dointro, iconsize,
             objectivestate = "invisible";
         }
         scripts\mp\objidpoolmanager::objective_add_objective(self.objidnum, objectivestate, self.curorigin + self.offset3d, undefined, iconsize);
-        if (getdvarint(@"hash_5fb9811d17b52a04", 0) == 1) {
+        if (getdvarint(@"scr_game_objOnNavBar", 0) == 1) {
             if (isdefined(showoncompass) && showoncompass == 0) {
                 objective_setshowoncompass(self.objidnum, 0);
                 self.showoncompass = 0;

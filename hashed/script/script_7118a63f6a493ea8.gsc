@@ -23,8 +23,8 @@
 // Checksum 0x0, Offset: 0x6cf
 // Size: 0x168
 function init() {
-    setdvar(@"hash_1fc47d6f68e1faf", 1);
-    setdvar(@"hash_633e1a62bb5ceeb2", 1);
+    setdvar(@"sm_spotUpdateMoreDynEnt", 1);
+    setdvar(@"sm_spotShadowScoreSystem", 1);
     if (!isdefined(level.players)) {
         level.players = [];
     }

@@ -1,0 +1,63 @@
+{
+    "#hash_4869dccb0bd30d1b": [
+        {
+            "#isinverted": 0,
+            "#condition": "IsLeaguePlayEnabled"
+        }
+    ],
+    "#name": "&PLAYLIST/LEAGUEPLAY",
+    "#buttons": [
+        {
+            "#hash_b1f6e7f37c9b34c5": "leagueplay_play",
+            "#hash_b1eda3bc435dc651": [
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "IsLeaguePlayEnabled"
+                }
+            ],
+            "#hash_53104dbc69ac0ff": "LeaguePlayMenu"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "leagueplay_career",
+            "#hash_b1eda3bc435dc651": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "IsLeaguePlayCareerDisabled"
+                }
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "LeaguePlayCareer"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "leagueplay_top250",
+            "#hash_b1eda3bc435dc651": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "IsLeaguePlayTop250Disabled"
+                }
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "LeaguePlayT250"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "leagueplay_cdlchannel",
+            "#hash_b1eda3bc435dc651": [
+                {
+                    "#isinverted": 0,
+                    "#condition": "IsLeaguePlayCDLDisabled"
+                }
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "LeaguePlayCDL"
+        }
+    ]
+}

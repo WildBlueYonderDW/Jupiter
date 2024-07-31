@@ -1,0 +1,34 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 2,
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_green",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 4,
+            "#weight": 400,
+            "#itemspawnlist": "ob_jup_items_caches_merc_high_value_green_pvpve",
+            "#mincount": 1
+        },
+        {
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_caches_low_value_green_pvpve"
+        },
+        {
+            "#weight": 548
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_field_upgrades_ob_pvpve"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

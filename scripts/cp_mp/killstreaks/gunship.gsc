@@ -390,7 +390,7 @@ function gunship_startuse(player, streakinfo) {
     if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
         thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_gunship", player);
     }
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdPerson")) {
         if (issharedfuncdefined("player", "setThirdPersonDOF")) {
             player [[ getsharedfunc("player", "setThirdPersonDOF") ]](0);
         }
@@ -841,7 +841,7 @@ function gunship_returnplayer(player, crashing) {
         player val::reset("gunship_weap_swap_safety", "weapon_switch");
         player notify("returning_killstreak_player");
         player.usinggunship = undefined;
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             if (issharedfuncdefined("player", "setThirdPersonDOF")) {
                 player [[ getsharedfunc("player", "setThirdPersonDOF") ]](1);
             }

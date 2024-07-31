@@ -1,0 +1,18 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_container_dresser_sublist",
+            "#mincount": 1
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_essence_low"
+        },
+        {
+            "#weight": 70
+        }
+    ],
+    "#itementries": [
+    ]
+}

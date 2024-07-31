@@ -20,7 +20,7 @@
 // Checksum 0x0, Offset: 0x5d9
 // Size: 0x17
 function autoexec main() {
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"auavscan", &init);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_74e845d541163fc2", &init);
 }
 
 // Namespace namespace_da9f1409042cc7a2 / namespace_c9be9d71376e4a5f
@@ -550,7 +550,7 @@ function isplayerhidden() {
     // Checksum 0x0, Offset: 0x178d
     // Size: 0x17
     function function_db70bae7732f5204() {
-        level thread scripts\mp\gametypes\br_publicevents::function_e37ee072d95a7c98(%"auavscan");
+        level thread scripts\mp\gametypes\br_publicevents::function_e37ee072d95a7c98(%"hash_74e845d541163fc2");
     }
 
 #/

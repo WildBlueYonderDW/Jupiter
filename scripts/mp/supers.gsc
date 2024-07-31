@@ -387,7 +387,7 @@ function function_9d0de1f8996c57f8(superref) {
 // Checksum 0x0, Offset: 0x2382
 // Size: 0x463
 function givesuper(superref, var_6c70bf5ad211f464, immediate, blueprintindex) {
-    if (getdvarint(@"hash_64156ad0392158e4") != 0) {
+    if (getdvarint(@"scr_supers_killswitch") != 0) {
         return;
     }
     clearsuper(var_6c70bf5ad211f464, superref);
@@ -833,7 +833,7 @@ function givesuperpoints(points, scoreevent, var_b4b593facaa83af7, pointsmultipl
         if (isdefined(self.perktunables) && isnumber(self.perktunables.var_d7d948c55db143ae)) {
             points *= self.perktunables.var_d7d948c55db143ae;
         } else {
-            points *= getdvarfloat(@"hash_28e84932a9fb43fd");
+            points *= getdvarfloat(@"perk_faster_field_upgrade_rate");
         }
     }
     modifiedpoints = points;
@@ -1099,7 +1099,7 @@ function handlepointdecay() {
     self endon("remove_super");
     level endon("game_ended");
     superinfo = getcurrentsuper();
-    pointreduction = getdvarfloat(@"hash_e1d7f49648b75f36", 6) * level.framedurationseconds;
+    pointreduction = getdvarfloat(@"scr_super_decay_rate", 6) * level.framedurationseconds;
     while (true) {
         if (!issupercharging()) {
             waitframe();
@@ -3021,7 +3021,7 @@ function watchsuperdelay() {
     if (isanymlgmatch()) {
         level.superdelay = 0;
     } else {
-        level.superdelay = getdvarfloat(@"hash_2748b78a2910ca11", 0);
+        level.superdelay = getdvarfloat(@"scr_superdelay", 0);
     }
     if (!scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
         scripts\mp\flags::gameflagwait("prematch_done");
@@ -4127,7 +4127,7 @@ function initsuperdvars() {
         setdevdvarifuninitialized(@"hash_ee86355538b107dc", 90);
         setdevdvarifuninitialized(@"hash_71b04bfc490e137a", 0);
     #/
-    setdvarifuninitialized(@"hash_e1d7f49648b75f36", 6);
+    setdvarifuninitialized(@"scr_super_decay_rate", 6);
     var_25303120c23ade8d = getdvarint(@"hash_71b04bfc490e137a", 0);
     if (var_25303120c23ade8d) {
         level.superglobals.var_2652b1ba218bbaf5 = var_25303120c23ade8d;

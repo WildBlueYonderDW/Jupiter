@@ -319,7 +319,7 @@ function bot_dom_think() {
     self botsetflag("use_obj_path_style", 1);
     for (;;) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

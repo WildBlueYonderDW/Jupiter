@@ -1,0 +1,23 @@
+{
+    "#id": 737,
+    "#keys": [
+        {
+            "#key": "iw9_plunder_total_deposited"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_amount_deposited"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_86ec8806b14c49d4",
+    "#sharedname": "#hash_d58b81f7202281bc"
+}

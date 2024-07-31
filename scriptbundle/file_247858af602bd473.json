@@ -1,0 +1,72 @@
+{
+    "#id": 134,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#hash_8a58c8cf9ceca4a6",
+            "#sharedname": "#hash_8a58c8cf9ceca4a6"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_523eb625a0f903bb",
+            "#sharedname": "#hash_523eb625a0f903bb"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#ob_exfil",
+            "#sharedname": "#ob_exfil"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_93d0e602e5a78e4",
+            "#sharedname": "#hash_93d0e602e5a78e4"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hash_7fb53371fdda18a7",
+            "#sharedname": "#hash_7fb53371fdda18a7"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_f59f1d6b0604345b",
+            "#sharedname": "#hash_f59f1d6b0604345b"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_b920b9928dd9e32c",
+            "#sharedname": "#hash_b920b9928dd9e32c"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#hash_f5c05bc30a5a5449",
+            "#sharedname": "#hash_f5c05bc30a5a5449"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#hash_870a7904b4b47578",
+            "#sharedname": "#hash_870a7904b4b47578"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#hash_4a0da0d91779763a",
+            "#sharedname": "#hash_4a0da0d91779763a"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#hash_48863dfe39c6c091",
+            "#sharedname": "#hash_48863dfe39c6c091"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#hash_b89c027518935485",
+            "#sharedname": "#hash_b89c027518935485"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#hash_70856ba527d43cc4",
+            "#sharedname": "#hash_70856ba527d43cc4"
+        }
+    ],
+    "#name": "#hash_d33941ba347dd8bd",
+    "#sharedname": "#hash_152317d21c601575"
+}

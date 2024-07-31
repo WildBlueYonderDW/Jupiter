@@ -1,0 +1,38 @@
+{
+    "#id": "hdr",
+    "#description": "&OPTIONS/HDR_DESC",
+    "#dvar": "@r_allowHDR",
+    "#hash_be58efbf74db62a8": 1,
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        },
+        {
+            "#reference": "&OPTIONS/AUTOMATIC"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/HDR",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_66c20cf9373a2f25"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_35c1e5b34291e0b2"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_212cb5858d72590e"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_36432cef5fdbe061"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_5a4cc0f93f2ee26b"
+        }
+    ],
+    "#hash_5d30c39665a86e5d": "&PLATFORM/HDR_LOCKED_DESC"
+}

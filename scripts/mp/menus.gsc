@@ -221,7 +221,7 @@ function onclasseditcallback(newclass) {
 // Size: 0x153
 function onclasschoicecallback(newclass, var_f01f8e178ff54eda) {
     self notify("loadout_class_selected", newclass);
-    if (level.systemlink && getdvarint(@"hash_9cc8c81329e0bdbf") && self iscodcaster()) {
+    if (level.systemlink && getdvarint(@"xblive_competitionmatch") && self iscodcaster()) {
         self setclientomnvar("ui_options_menu", 0);
         return;
     }
@@ -634,7 +634,7 @@ function function_788bcfab4101649a(player) {
         return true;
     }
     /#
-        if (getdvarint(@"hash_955ca650f9a9bdef") != 0) {
+        if (getdvarint(@"unlockAllItems") != 0) {
             return true;
         }
     #/

@@ -29,8 +29,8 @@ function main() {
     scripts\mp\load::main();
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     scripts\mp\compass::setupminimap("compass_map_mp_jup_shipment_xmas");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
-    setdvar(@"hash_2e38c6027743fefc", 384);
+    setdvar(@"r_umbraMinObjectContribution", 8);
+    setdvar(@"r_umbraAccurateOcclusionThreshold", 384);
     scripts\cp_mp\utility\game_utility::registersmallmap();
     if (level.gametype == "arena") {
         scripts\cp_mp\utility\game_utility::registerarenamap();

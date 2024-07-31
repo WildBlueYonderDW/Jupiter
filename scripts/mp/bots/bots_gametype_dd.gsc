@@ -117,7 +117,7 @@ function bot_dd_think() {
     self.defuser_bad_path_counter = 0;
     for (;;) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

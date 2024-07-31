@@ -1,0 +1,30 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_killstreak_sentrygun"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_killstreak_cluster_spike"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_killstreak_precision_airstrike"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_killstreak_juggernaut"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_killstreak_clusterstrike"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_killstreak_remote_turret"
+        }
+    ]
+}

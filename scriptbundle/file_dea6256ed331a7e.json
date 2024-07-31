@@ -1,0 +1,20 @@
+{
+    "#id": "speaker_output",
+    "#description": "&OPTIONS/SPEAKER_OUTPUT_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/WINDOWS_DEFAULT"
+        },
+        {
+            "#reference": "&LUA_MENU/STEREO"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/SPEAKER_OUTPUT"
+}

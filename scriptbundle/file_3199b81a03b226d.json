@@ -1,0 +1,16 @@
+{
+    "#hash_cc0786e90a5e30b7": "icon_faction_allegiance",
+    "#hash_14cb910d2ad612dc": "icon_faction_allegiance",
+    "#hash_8dae64535e1b947f": "icon_faction_allegiance",
+    "#headicon": "hud_icon_faction_pacd_fx",
+    "#hash_6dd7ff9df06b9821": "#hash_d8a70253017b1b64",
+    "#shortname": "&MENU/FACTION_KORTAC",
+    "#hash_c7bc2e58e789bef4": "icon_faction_allegiance",
+    "#color": "",
+    "#hash_47eff39aeeb815fb": "&LUA_MENU/THE_EAST",
+    "#hash_d5fbbcddd0fdfe3b": "ru",
+    "#eliminated": "&MENU/FACTION_KORTAC_ELIMINATED",
+    "#ref": "KORTAC",
+    "#name": "&MENU/FACTION_KORTAC",
+    "#hash_66692aa75077712d": "&MENU/FACTION_KORTAC_FORFEIT"
+}

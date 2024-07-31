@@ -1,0 +1,19 @@
+{
+    "#id": "input_method",
+    "#description": "&PLATFORM/INPUT_DEVICE_DESC",
+    "#image": "jup_ui_options_image_aiminginputdevice",
+    "#labels": [
+        {
+            "#reference": "&PLATFORM_UI/GAMEPAD"
+        },
+        {
+            "#reference": "&OPTIONS/MOUSE"
+        }
+    ],
+    "#hash_a20785232d9c4057": "gpadEnabled",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "Dropdown",
+    "#name": "&LUA_MENU/INPUT_METHOD",
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -37,7 +37,7 @@ function function_d963b1c1ea4328e6() {
             waitframe();
         }
         crystal.var_f6f86c3af9ca88a0 = 1;
-        crystal setscriptablepartstate(#"loot_crystal", #"dead");
+        crystal setscriptablepartstate(#"hash_5839d424446cf8ea", #"dead");
     }
     var_45b5395bf31775c7 = getentitylessscriptablearray(%"hash_1c8652bc1468292");
     foreach (index, crystal in var_45b5395bf31775c7) {
@@ -45,7 +45,7 @@ function function_d963b1c1ea4328e6() {
             waitframe();
         }
         crystal.var_f6f86c3af9ca88a0 = 1;
-        crystal setscriptablepartstate(#"loot_crystal", #"dead");
+        crystal setscriptablepartstate(#"hash_5839d424446cf8ea", #"dead");
         waitframe();
     }
 }

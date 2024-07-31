@@ -1,0 +1,18 @@
+{
+    "#id": "ground_vehicle_lean_forward",
+    "#description": "&OPTIONS/GR_VEH_LEAN_FORWARD_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_173c4e8772c9bacf"
+        }
+    ],
+    "#type": "keyBinding",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_f32a2d4a486d768f": 1,
+            "#type": "EXEC"
+        }
+    ],
+    "#name": "&OPTIONS/GR_VEH_LEAN_FORWARD"
+}

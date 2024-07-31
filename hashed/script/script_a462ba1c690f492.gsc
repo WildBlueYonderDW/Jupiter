@@ -1512,7 +1512,7 @@ function function_b38a73fc6aa9721f(s_quest) {
 function function_bf01aba31e9023d1() {
     foreach (player in level.players) {
         setmusicstate("gameover");
-        player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+        player setclientdvar(@"ui_opensummary", 1);
         scripts\mp\gamelogic::processlobbydataforclient(player);
         namespace_cddd3ad399b210ff::processlobbydata();
         scripts\mp\scoreboard::processcommonplayerdataforplayer(player);

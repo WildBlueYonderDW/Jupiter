@@ -48,7 +48,7 @@ function function_209b4f3cbe639411() {
     foreach (team in level.teamnamelist) {
         level.requiredplayercount[team] = 0;
     }
-    level.prematchperiod = getdvarint(@"hash_c653d32c30815d2b", 60);
+    level.prematchperiod = getdvarint(@"scr_game_graceperiod", 60);
     infilduration = getanimlength(script_model%iw9_mp_dmz_infil_player1_cam);
     level.matchcountdowntime = infilduration + level.var_2d08577efb11dacb;
     level.prematchperiodend = infilduration + level.var_2d08577efb11dacb;
@@ -248,7 +248,7 @@ function function_7114995a34df9681() {
 function function_ef949b68ad626c8e() {
     timer = 0;
     if (level.var_8bb73eb201b171e2) {
-        maxplayers = getdvarint(@"hash_818c699a5caaee4f", 0);
+        maxplayers = getdvarint(@"party_maxplayers", 0);
         while (level.players.size < maxplayers) {
             timer += level.framedurationseconds;
             if (timer > level.var_9474fd9f170eb8bb) {
@@ -547,7 +547,7 @@ function function_67ad64ccfb9082a8(animstruct, animref, camerastructstart) {
     self cameraunlink();
     animstruct scripts\common\anim::anim_first_frame_solo(self.player_rig, animref + "intro");
     self cameralinkto(animstruct.cam, "tag_origin", 1, 1);
-    self setclientdvar(@"hash_df1dc712c4a91588", 40);
+    self setclientdvar(@"cg_fov", 40);
     if (isdefined(camerastructstart) && getdvarint(@"hash_5bda28fa688a245c", 0) == 1) {
         campath = [camerastructstart];
         curnode = camerastructstart;

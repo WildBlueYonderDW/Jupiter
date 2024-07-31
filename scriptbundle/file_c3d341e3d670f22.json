@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_9163bc19dbb168d",
+    "#pingvo": "#hash_c4245f93518dbd73",
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_26e8c7ff3e310366",
+    "#titlestring": "&JUP_OB_S5/RIFT_LOOT_SKULL_NAME",
+    "#hash_bbae53787b1abf3e": 1,
+    "#hash_13fc3679e0d849db": 1,
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_S5/RIFT_LOOT_SKULL_DESC",
+    "#ref": "jup_rr_s5_gold_skull",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "valuable",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Stored",
+    "#icon": "hud_icon_loot_skull",
+    "#scriptable": "%hash_a21ed565e9e90dc",
+    "#denialsfx": "#hash_afeb34a87e316add"
+}

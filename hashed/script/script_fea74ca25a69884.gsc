@@ -160,9 +160,9 @@ function function_8032016446156bad() {
     level.ignorescoring = 0;
     level.allowprematchdamage = 1;
     level.ingraceperiod = 0;
-    setdvar(@"hash_c2de8ca6dc8512c1", 1);
-    setdvar(@"hash_faf1db5754891b2d", 150);
-    setdvar(@"hash_cb2d56d085e5a9b9", 150);
+    setdvar(@"bot_DisableAllAI", 1);
+    setdvar(@"br_minplayers", 150);
+    setdvar(@"live_lobby_minplayers_start", 150);
     setdvar(@"hash_2c879521333c4987", 0);
     level.var_c3a1ed2db43ce5a = 3;
     scripts\mp\spawnlogic::function_182c52d5da69684d();
@@ -1169,7 +1169,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         /#
             setdevdvar(@"hash_7a1447160ba151fe", 1);
         #/
-        setdvar(@"hash_faf1db5754891b2d", 2);
+        setdvar(@"br_minplayers", 2);
         level.gulag.maxuses = 0;
         wait 1;
         killplayerinstant(host, enemyteammates[0]);
@@ -1355,7 +1355,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         killplayerinstant(host, enemyteammates[0]);
     }
     if (argshave(args, "reconGulag1")) {
-        setdvar(@"hash_faf1db5754891b2d", 9);
+        setdvar(@"br_minplayers", 9);
         wait 5;
         enemy1 = enemyteammates[0][0];
         enemy2 = enemyteammates[1][0];
@@ -1416,7 +1416,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         killplayerinstant(friendly1, enemy2);
     }
     if (argshave(args, "endGameTwoDie")) {
-        setdvar(@"hash_faf1db5754891b2d", 8);
+        setdvar(@"br_minplayers", 8);
         wait 5;
         scripts\mp\gametypes\br_gulag::shutdowngulag("circle_index", 0);
         enemy1 = enemyteammates[0][0];
@@ -1968,7 +1968,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
     }
     if (argshave(args, "endGameTeam")) {
         level.br_infils_disabled = 1;
-        setdvar(@"hash_faf1db5754891b2d", 8);
+        setdvar(@"br_minplayers", 8);
         wait 5;
         scripts\mp\gametypes\br_gulag::shutdowngulag("circle_index", 0);
         enemy1 = enemyteammates[0][0];

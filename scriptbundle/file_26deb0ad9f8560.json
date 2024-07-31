@@ -1,0 +1,9 @@
+{
+    "#perks": {
+        "#ultimateperk": "specialty_survivor",
+        "#bonusperk": "specialty_tactical_recon",
+        "#baseperk1": "specialty_munitions_2",
+        "#baseperk2": "specialty_grenade_expert"
+    },
+    "#name": "&PERKS/PERK_PACKAGE_BR_WEAPONSPECIALIST"
+}

@@ -1,0 +1,16 @@
+{
+    "#id": "safe_area",
+    "#description": "&LUA_MENU/SAFE_AREA_DESC",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_cd05aa1b839553ad": 1,
+            "#hash_cd05a31b83954448": 1,
+            "#hash_434da1af138bf52": 1,
+            "#hash_434db1af138c185": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&LUA_MENU/SAFE_AREA"
+}

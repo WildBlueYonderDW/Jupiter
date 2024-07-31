@@ -25,7 +25,7 @@
 // Checksum 0x0, Offset: 0x55a
 // Size: 0x52
 function autoexec main() {
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"doublexp_crate", &init);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_638f8e5869440fa3", &init);
     if (getdvarint(@"hash_ce6e92b818a2a324", 0) == 0 && getdvarint(@"hash_da7fe1bcdf3005b7", 1) != 0) {
         scripts\cp_mp\killstreaks\airdrop::function_a594839d4da1bcae("airdrop_doublexp_crate", &function_daa510e2d1ce6f2f);
     }
@@ -454,7 +454,7 @@ function function_e9e2cf1181eb7177() {
     // Checksum 0x0, Offset: 0x1920
     // Size: 0x17
     function function_db70bae7732f5204() {
-        level thread scripts\mp\gametypes\br_publicevents::function_e37ee072d95a7c98(%"doublexp_crate");
+        level thread scripts\mp\gametypes\br_publicevents::function_e37ee072d95a7c98(%"hash_638f8e5869440fa3");
     }
 
     // Namespace namespace_7f96036adeb34fc3 / namespace_23cf3e2af85d0dda

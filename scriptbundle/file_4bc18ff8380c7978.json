@@ -1,0 +1,17 @@
+{
+    "#id": "codcaster_option_player_nameplates_number",
+    "#description": "&CODCASTER/PLAYERNAMEPLATES_NUMBER_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU_MP/HIDE"
+        },
+        {
+            "#reference": "&LUA_MENU_MP/SHOW"
+        }
+    ],
+    "#hash_a20785232d9c4057": "codcaster_nameplates_number",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "ToggleButton",
+    "#name": "&CODCASTER/PLAYERNAMEPLATES",
+    "#hash_5d30c39665a86e5d": "&CODCASTER/PLAYER_NUMBERS_DESC_LOCKED"
+}

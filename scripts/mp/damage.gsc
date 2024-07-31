@@ -898,8 +898,8 @@ function isshrapnelsource(objweapon, meansofdeath) {
 // Size: 0x1fd
 function meleestagger(attacker) {
     self endon("death_or_disconnect");
-    var_989ea0994c0bafe0 = getdvarfloat(@"hash_5bf99b34984d4d30");
-    var_c0d3d09fb36a355e = getdvarfloat(@"hash_6c326257f3d446e8");
+    var_989ea0994c0bafe0 = getdvarfloat(@"melee_stagger_shock_duration");
+    var_c0d3d09fb36a355e = getdvarfloat(@"melee_stagger_aftershock_duration");
     var_e501fdb86740b153 = self getviewkickscale();
     if (isdefined(level.gamemodeoverridemeleeviewkickscale)) {
         self setviewkickscale(utility::ter_op(attacker perk::_hasperk("specialty_hardmelee"), level.gamemodeoverridemeleeviewkickscale * 2, level.gamemodeoverridemeleeviewkickscale));
@@ -942,7 +942,7 @@ function meleedofroutine(attacker) {
     farstart = 350;
     farend = 1024;
     self setdepthoffield(nearstart, nearend, farstart, farend, 10, 9);
-    var_989ea0994c0bafe0 = getdvarfloat(@"hash_5bf99b34984d4d30");
+    var_989ea0994c0bafe0 = getdvarfloat(@"melee_stagger_shock_duration");
     wait utility::ter_op(attacker perk::_hasperk("specialty_hardmelee"), var_989ea0994c0bafe0 * 3, var_989ea0994c0bafe0);
     while (farend > 350) {
         nearstart = clamp(nearstart - 100, 0, 10000);
@@ -2319,7 +2319,7 @@ function modifydamagegeneral(einflictor, eattacker, victim, idamage, idflags, sm
         }
     }
     if (smeansofdeath == "MOD_EXPLOSIVE_BULLET" && idamage != 1) {
-        idamage *= getdvarfloat(@"hash_a881f1ebdab09002");
+        idamage *= getdvarfloat(@"scr_explbulletmod");
         idamage = int(idamage);
     }
     if (smeansofdeath == "MOD_IMPACT" && idamage != 1) {
@@ -3031,7 +3031,7 @@ function playerkilled_initdeathdata(inflictor, attacker, victim, damage, damagef
     deathdata.var_bfcdebee0e8a3189 = undefined;
     deathdata.weaponfullstring = undefined;
     deathdata.isnukekill = 0;
-    deathdata.deathscenetimesec = getdvarfloat(@"hash_ac849f1ec300d19c", 1.75);
+    deathdata.deathscenetimesec = getdvarfloat(@"scr_death_scene_time", 1.75);
     deathdata.deathscenetimems = int(deathdata.deathscenetimesec * 1000);
     deathdata.deathtime = gettime();
     deathdata.brvictiminlaststand = undefined;
@@ -3776,7 +3776,7 @@ function playerkilled_handlecorpse(deathdata) {
                 }
             }
             if (var_e707f0032fa7b4bb.size > 0 || var_b8f254d4fd3f46a2.size > 0) {
-                thread deathicons::addenemydeathicon(victim.body, victim, var_e707f0032fa7b4bb, var_b8f254d4fd3f46a2, getdvarfloat(@"hash_77d5a9878cbf3172"), 1);
+                thread deathicons::addenemydeathicon(victim.body, victim, var_e707f0032fa7b4bb, var_b8f254d4fd3f46a2, getdvarfloat(@"perk_kill_report_icon_time"), 1);
             }
         }
         if (!istrue(self.liveragdoll)) {

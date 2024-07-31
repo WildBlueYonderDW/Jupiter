@@ -1,0 +1,40 @@
+{
+    "#idleanim": {
+        "#name": "chr_menu_raven_idle_01@sbundle",
+        "#id": "anim#"
+    },
+    "#ref": "raven",
+    "#body": "raven_perch",
+    "#hash_6bb978021bb6b6e6": [
+        {
+            "#anim": {
+                "#name": "chr_menu_mp_squad_raven_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        {
+            "#anim": {
+                "#name": "chr_menu_mp_squad_raven_02@sbundle",
+                "#id": "anim#"
+            }
+        },
+        {
+            "#anim": {
+                "#name": "chr_menu_mp_squad_raven_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        {
+            "#anim": {
+                "#name": "chr_menu_mp_squad_raven_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        {
+            "#anim": {
+                "#name": "chr_menu_mp_squad_raven_03@sbundle",
+                "#id": "anim#"
+            }
+        }
+    ]
+}

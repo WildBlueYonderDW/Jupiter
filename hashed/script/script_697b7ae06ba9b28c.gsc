@@ -29,7 +29,7 @@ function init() {
     level.var_c8001f5313a05589 = getdvarint(@"hash_b5256fb3f4ed76af", 0);
     level.var_7272c293f31c587c = getdvarint(@"hash_a94c6ed8a414196", 0);
     level.var_8eed04dc7bdc9766 = getdvarint(@"hash_b77c6c674502ad38", 60);
-    level.var_764459b234d5c391 = getdvarint(@"hash_cb2d56d085e5a9b9", 0);
+    level.var_764459b234d5c391 = getdvarint(@"live_lobby_minplayers_start", 0);
     level.var_58bec65ec9494d11 = getdvarint(@"hash_7fd4184e42f5d97d", 60);
     level.var_8a4997ca061aa1e5 = getdvarint(@"hash_683c426d1ee9a40b", 3);
     level.var_809aa817d70fd977 = getdvarint(@"hash_4aabee233fac8dba", 99);
@@ -339,7 +339,7 @@ function function_9502b0bb442142b6(string) {
         logstring("<dev string:x2b>" + string + "<dev string:x3c>");
         logstring("<dev string:x4b>");
         logstring("<dev string:x66>" + level.var_764459b234d5c391);
-        logstring("<dev string:x9d>" + getdvarint(@"hash_faf1db5754891b2d", 1));
+        logstring("<dev string:x9d>" + getdvarint(@"br_minplayers", 1));
         logstring("<dev string:xd4>" + getdvarint(@"hash_42b032b7e139b113", 1));
         logstring("<dev string:x10b>" + getdvarint(@"hash_520364dd384db9e7", 1));
         logstring("<dev string:x142>" + level.var_58bec65ec9494d11);
@@ -513,7 +513,7 @@ function function_562f080949959cfc() {
     if (getdvarint(@"hash_42b032b7e139b113", 1) == 0) {
         return;
     }
-    minplayers = getdvarint(@"hash_faf1db5754891b2d", 1);
+    minplayers = getdvarint(@"br_minplayers", 1);
     while (function_5a7cb04f2683c1df() >= minplayers) {
         wait 1;
     }
@@ -618,7 +618,7 @@ function cancel_match() {
     level.var_7ebde40af908fcf8 = 0;
     level.brdisablefinalkillcam = 1;
     wait warningtime;
-    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
         foreach (player in level.players) {
             if (!isdefined(player.clientmatchdataid)) {
                 scripts\mp\gamelogic::assignclientmatchdataid(player);
@@ -629,7 +629,7 @@ function cancel_match() {
     if (!getdvarint(@"hash_b42271f0cb794f9e", 1)) {
         scripts\mp\gamescore::updateplacement();
         scripts\mp\gamelogic::processlobbydata();
-    } else if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+    } else if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
         sendclientmatchdata();
     }
     if (!scripts\mp\flags::gameflag("prematch_done")) {

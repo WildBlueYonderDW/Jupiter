@@ -300,7 +300,7 @@ function function_920c1da6479ae205() {
     level.brgametype.var_bb9b77186cb79ae6 = 1;
     level.brgametype.var_4a8a68afccfa6692 = "zc_resurgence_respawn";
     level.brgametype.var_748a99415228de0e = "splash_list_iw9_br_zonecontrol";
-    setdvar(@"hash_da4f64f6eb4d97da", 3);
+    setdvar(@"scr_br_magcount", 3);
     level.brgametype.var_65c42f3ac6958818 = function_cc65ff69b7798d8a();
     level.brgametype.var_2d08e0f710460f75 = function_4b142266db88b16f();
     level.brgametype.var_9429aeba8918c5ca = getdvarint(@"hash_99b1db027dff38c6", 60);

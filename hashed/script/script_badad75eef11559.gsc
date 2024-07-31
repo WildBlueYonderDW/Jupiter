@@ -77,7 +77,7 @@ function function_429e921f8ad411ff() {
     if (is_equal(mapname, "mp_jup_resort_gw")) {
         level thread scripts\mp\music_and_dialog::disablemusic();
         scripts\cp_mp\vehicles\vehicle::vehicle_forceinit("veh_jup_ob_tank_escort");
-        setdvar(@"hash_6beec004cdf37c0", 187);
+        setdvar(@"scr_localeID", 187);
         namespace_134d54e39331ee45::function_af4cc6b8e4e57940();
         flag_set("jup_quest_init");
         callback::add("player_spawned", &on_player_spawned);
@@ -3068,7 +3068,7 @@ function quest_complete() {
                 player notify("last_stand_revived");
             }
             player setsoundsubmix("jup_ob_endgame");
-            player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+            player setclientdvar(@"ui_opensummary", 1);
         }
         play_movie("jup_ob_act2_cine_outro");
         level.battlechatterdisabled = 0;

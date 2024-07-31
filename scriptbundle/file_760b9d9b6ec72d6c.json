@@ -1,0 +1,13 @@
+{
+    "#description": "&PMC/BRITISH_DESC",
+    "#unlockdescription": "&PMC/UNLOCK_S2_CROWN",
+    "#displayname": "&PMC/CROWN_NAME",
+    "#iconsmall": "icon_dmz_faction_white_lotus_48",
+    "#hash_9b629b39923ec87b": "icon_dmz_faction_white_lotus_bw_748",
+    "#iconlarge": "icon_dmz_faction_white_lotus_bw_280",
+    "#ref": "crown",
+    "#hash_be5a3dbcdbf55dee": "19250",
+    "#hash_b273b8a6aa2f2dc3": "icon_dmz_faction_white_lotus_bw_748_stroke",
+    "#hash_186dcefb33fb41d9": "icon_dmz_faction_crown_story_mission",
+    "#icon": "icon_dmz_faction_white_lotus_120"
+}

@@ -1879,7 +1879,7 @@ function function_73bdf8b18e29b13f(players) {
     }
     if (!scripts\mp\gametypes\br_gametypes::isfeaturedisabled("oneLife")) {
         level.disablespawning = 1;
-        setdynamicdvar(@"hash_6dc954f6c8bf5237", 1);
+        setdynamicdvar(@"scr_br_numlives", 1);
     }
     scripts\mp\deathicons::removealldeathicons();
     scripts\mp\flags::gameflaginit("trucks_spawn_complete", 0);

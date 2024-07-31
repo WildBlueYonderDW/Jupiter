@@ -1,0 +1,22 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_weaponcase_dg2"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_weaponcase_plasmagun"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_weaponcase_raygun"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_weaponcase_vr11"
+        }
+    ]
+}

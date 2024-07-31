@@ -1,0 +1,340 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp02_dm_bromeop_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp02_dm_bromeop_mp",
+    "#hash_ae0f82b51ecd0ce8": "noscope",
+    "#platform": "platform_jup_ar_bromeo805",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_6",
+    "#hash_c4cf6deda5b42f55": "cable|arms",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp02_dm_bromeop_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp02_dm_bromeop_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_dmr",
+    "#category": "&WEAPON/SUBCLASS_ID_6",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2500,
+    "#lootid": 17180,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 6,
+    "#ref": "jup_jp02_dm_bromeop",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/BROMEOP_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP02_DM_BROMEOP",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front guard back mag trig ironsdefault",
+    "#asset": "jup_jp02_dm_bromeop_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_dmr",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_pgrip_grooved",
+                    "#lootid": 22498,
+                    "#challengeid": 13333
+                },
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_reargrips",
+                    "#lootid": 22419,
+                    "#challengeid": 17959
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_stock_weighted",
+                    "#lootid": 22477
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_backpieces",
+                    "#lootid": 22414
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_bar_heavy_xlong",
+                    "#lootid": 47416
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_frontpieces",
+                    "#lootid": 22413
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_mag_20_762n",
+                    "#lootid": 22485
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_magazines",
+                    "#lootid": 22415
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_twofivex02",
+                    "#lootid": 21765
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_optics",
+                    "#lootid": 22416
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_dm_01",
+                    "#lootid": 23530
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_muzzles",
+                    "#lootid": 22418
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_pgrip_ass",
+                    "#lootid": 22497,
+                    "#challengeid": 13334
+                },
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_ob_2",
+                    "#challengeid": 17995
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_stock_heavy",
+                    "#lootid": 22473
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled05",
+                    "#lootid": 2109
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_undermounts",
+                    "#lootid": 22417
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "laserbox_ads04",
+                    "#lootid": 2407
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_extras",
+                    "#lootid": 22421
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_pgrip",
+                    "#lootid": 22496,
+                    "#challengeid": 13335
+                },
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_ob_3",
+                    "#challengeid": 18031
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_dm_05",
+                    "#lootid": 23533
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_bar_heavy_long",
+                    "#lootid": 47415
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_dm_07",
+                    "#lootid": 32215
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_762n_hg",
+                    "#lootid": 29386
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_gunperks",
+                    "#lootid": 23238
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_stock_heavyskel",
+                    "#lootid": 22474
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_dm_08",
+                    "#lootid": 23535,
+                    "#challengeid": 13336
+                },
+                {
+                    "#challengeref": "jup_jp02_dm_bromeop_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_tuning",
+                    "#lootid": 22422,
+                    "#challengeid": 18067
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp02_dm_bromeop_amps",
+                    "#lootid": 47203
+                }
+            ],
+            "#level": 17
+        }
+    ],
+    "#displayorder": 38,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_container_list_pictures"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_personal_aspirin"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_bandage"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_personal_smalldoll"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_battery"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_personal_brokenglasses"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_personal_toyknife"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_lightbulb"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_personal_oldwatch"
+        },
+        {
+            "#weight": 8,
+            "#itemspawnentry": "ob_jup_item_generic_personal_heartlocket"
+        },
+        {
+            "#weight": 8,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_lighter"
+        },
+        {
+            "#weight": 8,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_watch"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_personal_origamihorse"
+        }
+    ]
+}

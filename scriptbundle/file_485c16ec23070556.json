@@ -1,0 +1,15 @@
+{
+    "#id": "color_customization_filter_ui_intensity",
+    "#description": "&OPTIONS/COLOR_CUSTOMIZATION_FILTER_INTENSITY_UI_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#hash_ea45bc5a5e9ac302": 1,
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#hash_15963d81d6fd6dac": 100,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 1,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&OPTIONS/COLOR_CUSTOMIZATION_FILTER_INTENSITY_UI",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/FILTER_UI_INTENSITY_DISABLED_DESC",
+    "#hash_c55c746ff4d8929b": 1
+}

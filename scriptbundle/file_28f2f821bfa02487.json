@@ -1,0 +1,36 @@
+{
+    "#id": "quick_inventory",
+    "#description": "&OPTIONS/QUICK_INVENTORY_DESC",
+    "#labels": [
+        {
+            "#reference": "&GAME/HOLD"
+        },
+        {
+            "#reference": "&OPTIONS/MIXED"
+        },
+        {
+            "#reference": "&GAME/TOGGLE"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_5ec7c470f6689cb4"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/QUICK_INVENTORY",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_4430f22be32fec73"
+        }
+    ]
+}

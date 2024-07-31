@@ -1,0 +1,28 @@
+{
+    "#id": "color_customization_custom_color_mode",
+    "#description": "&OPTIONS/COLOR_CUSTOMIZATION_CUSTOM_COLOR_MODE_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/DEFAULT"
+        },
+        {
+            "#reference": "&OPTIONS/PROTANOPIA"
+        },
+        {
+            "#reference": "&OPTIONS/DEUTERANOPIA"
+        },
+        {
+            "#reference": "&OPTIONS/TRITANOPIA"
+        },
+        {
+            "#reference": "&MENU/CUSTOM"
+        }
+    ],
+    "#hash_a20785232d9c4057": "colorCustomizationPalette",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/COLOR_CUSTOMIZATION_CUSTOM_COLOR_MODE",
+    "#hash_c55c746ff4d8929b": 1
+}

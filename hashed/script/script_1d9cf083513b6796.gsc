@@ -94,7 +94,7 @@ function function_13ace45be109698e(cachestruct) {
     if (!isdefined(level.var_8ccc53d3eec3626f)) {
         level.var_8ccc53d3eec3626f = [];
     }
-    cache = spawnCacheSingleBase(cachestruct.origin, cachestruct.angles);
+    cache = function_84a9a18653459d3(cachestruct.origin, cachestruct.angles);
     level.var_8ccc53d3eec3626f[level.var_8ccc53d3eec3626f.size] = cache;
     return cache;
 }
@@ -103,7 +103,7 @@ function function_13ace45be109698e(cachestruct) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x45f
 // Size: 0x3d
-function spawnCacheSingleBase(origin, angles) {
+function function_84a9a18653459d3(origin, angles) {
     cache = spawnscriptable("br_breakable_loot_cache", origin, angles);
     cache setscriptablepartstate("base", "visible");
     return cache;

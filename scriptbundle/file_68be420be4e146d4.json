@@ -1,0 +1,14 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 95,
+            "#itemspawnentry": "ob_jup_item_backpack_medium"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_backpack_large"
+        }
+    ]
+}

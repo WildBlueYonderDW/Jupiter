@@ -10,11 +10,11 @@
 // Checksum 0x0, Offset: 0xa8
 // Size: 0x68
 function main() {
-    setdvar(@"hash_8667c0bb90c5bfc3", 1500);
-    setdvar(@"hash_63eb1893f96ac98d", 6);
-    setdvar(@"hash_1dde331a8e0153d8", 8);
-    setdvar(@"hash_633e1a62bb5ceeb2", 1);
-    setdvar(@"hash_1fc47d6f68e1faf", 1);
-    setdvar(@"hash_5b1b5bd738a5436f", 0);
+    setdvar(@"sm_spotDistCull", 1500);
+    setdvar(@"sm_spotUpdateLimit", 6);
+    setdvar(@"sm_roundRobinPrioritySpotShadows", 8);
+    setdvar(@"sm_spotShadowScoreSystem", 1);
+    setdvar(@"sm_spotUpdateMoreDynEnt", 1);
+    setdvar(@"sm_spotUpdateMoreDynObj", 0);
 }
 

@@ -1,0 +1,20 @@
+{
+    "#id": 515,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_season"
+        },
+        {
+            "#key": "iw9_battlepass_revoke_flags"
+        },
+        {
+            "#key": "iw9_value"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_2ba1a1975cdb4f76",
+    "#sharedname": "#hash_f3738982e534c78e"
+}

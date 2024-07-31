@@ -753,7 +753,7 @@ function function_c7dfae8ed27c166() {
 // Checksum 0x0, Offset: 0x2761
 // Size: 0xc9
 function function_cac1f36baae94d71(start_pos, end_pos, var_b5cfefcc1a4db88, speed_override) {
-    gravity = getdvarint(@"hash_b5d7d39d32720e78", 800) * -1;
+    gravity = getdvarint(@"bg_gravity", 800) * -1;
     var_4fe0d6d913d802c0 = (0, 0, gravity);
     max_speed = getdvarfloat(@"hash_393af4a8a9128536", 850);
     var_1b7cec4cc41b92f9 = float(isdefined(speed_override) ? speed_override : max_speed);
@@ -1025,7 +1025,7 @@ function function_79029536ae439038() {
             line(start_pos, end_pos, color);
             return;
         }
-        gravity = getdvarint(@"hash_b5d7d39d32720e78", 800) * 1;
+        gravity = getdvarint(@"bg_gravity", 800) * 1;
         var_1b7cec4cc41b92f9 = float(isdefined(pad.velocity) ? pad.velocity : getdvarfloat(@"hash_393af4a8a9128536", 850));
         dist = distance(start_pos, end_pos);
         time = dist / var_1b7cec4cc41b92f9;

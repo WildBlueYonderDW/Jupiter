@@ -117,7 +117,7 @@ function initializematchrules() {
 // Size: 0x284
 function onstartgametype() {
     function_73d0c187f5ec8c7c();
-    setdvar(@"hash_5fb9811d17b52a04", 1);
+    setdvar(@"scr_game_objOnNavBar", 1);
     level.wingamebytype = "roundsWon";
     attacking_team = game["attackers"];
     defending_team = game["defenders"];

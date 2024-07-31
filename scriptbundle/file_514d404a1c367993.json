@@ -1,0 +1,619 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&OPTIONS/MOUSE",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/GENERAL_SUB_INPUT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_386d67630fd71b1",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_12d45eca94caa5fb"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/MOUSE",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_1de3fd8155c21c6d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5b61b069fe6d64a2",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4a9b0589ed34873c"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_2dbacd0d1f861dac"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_c2b9a37367282a1"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_175163a88d004a84"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_234d6c6732cf4f25"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4e342e77b6124c4f",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_32121b7fe56d95cd"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_6b3e25cd67c563b8"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5126fe2ebdf33253"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_63c17ed9aa0311ba"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5b912705a1d0d051"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a4eb7ecf31bfe8b",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_21d93bf4d1cae228"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_61f826008caddc13"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_491fd9a7deaea735"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_500bd7e042972e2f"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3e45ff76049fce11"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4e5c3e97010a5d32"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_438bd0b97e23e8f4",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_18cc4db2662d0a23"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_62d18c650486558d"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4b1fe149984ee94c"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_35794122f3119310"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_19ee468bb207b8f3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_40db0ae8e1c78e8f",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7de87f37c386e635"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5c79bfa97dbe7c5b"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3b3d578dc2905aff"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3eb463f2e4d978f4"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_743dfa3d9bc8f4b2"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5e990b2bc6a57ac"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "#name": "&LUA_MENU/KEYBINDS",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&LUA_MENU/KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_29a7cf0d1ed5b44a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_474bf8bea5f924c7"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_52017266a79c3c9f"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/MOVEMENT_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_7e5c921fbbda4b29"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_96068d08f96d9ef"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_35423cb66d661b37"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_517c7e49f20af534"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_34a8e7621fbe5cc3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_acc11b1f51d803"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_b94eb1b0cffea07"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7356ce9e2d5d3467"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2bcda515745f6d18"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_173c4e8772c9bacf"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7ae8a707e174f667"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_542725c61cb62a3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7651f90dfc4a0eed"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7129b10ffaf7e199",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/COMBAT_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_116519c6d7451368"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7b81eabc234eb32d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2be578bc47804567"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_325b1f14e4391853"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_456cdd7cb457c0c1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2aee7db72ff8f512"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6c3c96ded269f5cd"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_46482e4efdb2318a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_66fab727f57ab69e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_53ba7daca0d47550"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3ea40948e66b7335"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5751127028ca496b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_78fb77b46535ba6b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_676ff57302a03e54",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/VEHICLE_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_13f706fb3f833fc6",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/OVERLAYS_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_41859cb5453bd19c",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_72b3119bfe5ac944"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_573b861d7d1774c0"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_502302e80464f494"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_f4a630d3bf0e856"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5ec7c470f6689cb4",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_54a7f1dd257a93d7"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_57b4ac0fa27af0b6"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_1502e85da67840b"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_355ec52da9537cc9"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7a1b3ce781dc82f3"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4ac6fb9d834f9cb0",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_294255199f778718"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_687e019b969e25c8"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_b396677f05bbf60"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7738c3a0daf91a2f"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_697118898f1b4717"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7220c23203ab17d1"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5450bcdcc3b1234a"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_54251ac2c3ca635"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5285ca4e88a2957c"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_363b29fb01397e88"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7c8a757d79957f2c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_665881fd2bbc1cd4"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_443dfdbb7962a87e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_31e36683923de086",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_369358073ff1271"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_74d20e6cbf849cdd"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_27c19f2fc6afd604"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_17ede9937e273bf9",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17ede6937e2736e0"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17ede7937e273893"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17edec937e274112"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17eded937e2742c5"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17edea937e273dac"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17edeb937e273f5f"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17edf0937e2747de"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_17edf1937e274991"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_507fae9f5caa968b"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1afdf3c22940bb84"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_779314a08060f26b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_69aec38b1c7033f4"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/MENU_KEYBINDS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_2b669770d643fd94"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6373da9f6c211a69"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5eb153d7e18db954"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_35f6b6b895cf047d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3dced20a57da6408"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4630c3877833e2f",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "#name": "&LUA_MENU/RULES_GAMEPLAY_OPTIONS",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/MOVEMENT_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_726925cad160a0af"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_638601f92d1dee39"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a9c98f2ea5c3bd8",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_149ce44c22e6d852"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1fbd46752ed8f5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_31b5cf5dbaa4b140"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_66786af120d15857"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1a96222ddc0c45fb"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5b31fa06bdf6911d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_30b2b1246150dd2b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2ea7c6225f56c231",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3c28441543782a81"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_6f07ae79a90171a2"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5374a05cf572d65c"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_6ae51ba95a398ea7"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5a83cf3b96c5d4fb"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4703fc484edbf3b7"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1d76a00eb93773c7"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_792517085e02ecef"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_8e2dafdb2a22475",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/COMBAT_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_2b5f5bb2195bfead"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2116199820eee9c6"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_568c98b9f87d3493"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_189abb6af5d47bc1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5a6abe0c5d42970a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a3c592b06882916"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_316ee0c55b798c2e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5d591458abdbeafb"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_79c24bd424bb64f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7f546d65d46c937"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_380b8241098f795c",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/VEHICLE_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_74574056fbfcd499"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_25fd5994f09827f2"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7f6078a0b6a033e0"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_64ed373ba40f48ca"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_17bd84eccfe24f3a"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/OVERLAYS_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_4b5f6a37820f90eb",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5a6e1f1552c9c844"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_28f2f821bfa02487"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4430f22be32fec73"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4bb74d44231b97cc"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_e68a85d6853801f"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5a73a6442ab8b096"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_13cc74783f558c13"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7be339b3b5e32274"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4c8837de9405f313"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4ca094d8e501ba94"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_23bafd0b526d9cea"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_79e1e5c48876c612"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

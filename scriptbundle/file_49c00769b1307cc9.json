@@ -1,0 +1,58 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 7831,
+            "#itemspawnlist": "ob_jup_items_ground_sublist_common"
+        },
+        {
+            "#weight": 1891,
+            "#itemspawnlist": "ob_jup_items_ground_sublist_uncommon"
+        },
+        {
+            "#weight": 229,
+            "#itemspawnlist": "ob_jup_items_ground_sublist_rare"
+        },
+        {
+            "#weight": 48,
+            "#itemspawnlist": "ob_jup_items_ground_sublist_epic"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnlist": "ob_jup_items_ground_sublist_legendary"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_zm_perks"
+        },
+        {
+            "#weight": 2000,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_lethals"
+        },
+        {
+            "#weight": 2000,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals"
+        },
+        {
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals_zm"
+        },
+        {
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_turret_circuits"
+        },
+        {
+            "#weight": 500,
+            "#itemspawnlist": "ob_jup_items_military_gear_green"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_revive_self_revive"
+        },
+        {
+            "#weight": 3000,
+            "#itemspawnentry": "ob_jup_item_armor_plate"
+        }
+    ]
+}

@@ -1564,14 +1564,14 @@ function inithelirepository() {
         var_464eb48901113eb0.type = 1;
         var_464eb48901113eb0.usetime = 0;
         var_464eb48901113eb0.useeventtype = 3;
-        var_464eb48901113eb0.useeventamount = getdvarint(@"hash_7fd9b532b02bcf1e", 20000);
+        var_464eb48901113eb0.useeventamount = getdvarint(@"scr_plunderHeliUseAmount", 20000);
         var_464eb48901113eb0.teamuseonly = 0;
         var_464eb48901113eb0.usefailcapacitymsg = "MP/CANNOT_DEPOSIT_CASH_HELI_FULL";
         var_464eb48901113eb0.usefailextractingmsg = "MP/CANNOT_DEPOSIT_CASH_HELI_LEAVING";
         var_464eb48901113eb0.scriptableusestate = "activedepositcurrent";
         var_464eb48901113eb0.scriptablenousestate = "visiblecurrent";
         var_464eb48901113eb0.extractcountdown = 0;
-        var_464eb48901113eb0.extractsilentcountdown = getdvarint(@"hash_88ca7322cb6bc51a", 30);
+        var_464eb48901113eb0.extractsilentcountdown = getdvarint(@"scr_plunderHeliCountdown", 30);
         var_464eb48901113eb0.extractcountdownmsg = "MP/CASH_HELI_LEAVING_IN_N";
         var_464eb48901113eb0.capacity = 0;
         var_464eb48901113eb0.countdownendcallback = &helicountdownendcallback;
@@ -1580,8 +1580,8 @@ function inithelirepository() {
         var_464eb48901113eb0.extractionmethod = "little_bird";
     }
     /#
-        setdevdvarifuninitialized(@"hash_7fd9b532b02bcf1e", 20000);
-        setdevdvarifuninitialized(@"hash_88ca7322cb6bc51a", 30);
+        setdevdvarifuninitialized(@"scr_plunderHeliUseAmount", 20000);
+        setdevdvarifuninitialized(@"scr_plunderHeliCountdown", 30);
     #/
 }
 

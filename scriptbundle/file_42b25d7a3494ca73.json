@@ -1,0 +1,12 @@
+{
+    "#id": "left_action",
+    "#description": "&OPTIONS/TURN_LEFT_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_36fd46ced4123adf"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/TURN_LEFT"
+}

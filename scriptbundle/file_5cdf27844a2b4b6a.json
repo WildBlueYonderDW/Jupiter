@@ -1,0 +1,8 @@
+{
+    "#id": "breath_sprint_action_button_swap",
+    "#description": "&OPTIONS/GAMEPAD_SPRINT_HOLD_BREATH_DESC",
+    "#action": "+breath_sprint",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "GamepadSwapButton",
+    "#name": "&OPTIONS/SPRINT_HOLD_BREATH"
+}

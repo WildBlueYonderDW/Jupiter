@@ -1,0 +1,74 @@
+{
+    "#hash_373ff0906d8ba8e0": "weapon_sniper",
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "cp_wepbuild_sr_icon",
+    "#weaponindex": 6,
+    "#hash_a3d83bb30fd0549c": "loadout_showcase_preview_large",
+    "#hash_3974f58db0ab0fe5": [
+        {
+            "#category": "CONVERSIONKIT"
+        },
+        {
+            "#category": "OPTIC"
+        },
+        {
+            "#category": "CARRYHANDLE"
+        },
+        {
+            "#category": "MUZZLE"
+        },
+        {
+            "#category": "FRONTPIECE"
+        },
+        {
+            "#category": "UNDERMOUNT"
+        },
+        {
+            "#category": "MAGAZINE"
+        },
+        {
+            "#category": "REARGRIP"
+        },
+        {
+            "#category": "BACKPIECE"
+        },
+        {
+            "#category": "EXTRA"
+        },
+        {
+            "#category": "GUNPERK"
+        },
+        {
+            "#category": "BOLT"
+        },
+        {
+            "#category": "BOLTACTION"
+        },
+        {
+            "#category": "COMB"
+        },
+        {
+            "#category": "GUARD"
+        },
+        {
+            "#category": "REARGRIPTWO"
+        },
+        {
+            "#category": "GUARDTHREE"
+        },
+        {
+            "#category": "UNIQUE"
+        }
+    ],
+    "#hash_98928b4f8b31479f": "sniper",
+    "#hash_807531dc9afcec58": 1,
+    "#hash_c136648969a2fee0": "icon_weapon_sn_alpha50",
+    "#hash_c713f8b2b1509025": 1,
+    "#hash_6669d0edc1e69489": "weapon_preview_large",
+    "#weaponslot": 1,
+    "#weaponname": "&LUA_MENU/WEAPTYPE_SINGLE_SNIPER",
+    "#hash_8ec4aa2a82dfa7d2": "bundle_preview_large",
+    "#hash_1f4b07dba78ee341": 1,
+    "#hash_2a43a8f6c62bd5d4": "&LUA_MENU/WEAPTYPE_SNIPER",
+    "#hash_733b5518b3dac01": 1
+}

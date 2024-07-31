@@ -38,10 +38,10 @@ function init() {
 // Checksum 0x0, Offset: 0xb3f
 // Size: 0xb2
 function onstartgametype() {
-    setdvar(@"hash_de79e5c6b8a17221", 1000000);
-    setdvar(@"hash_18e2dda6aaf07dc3", 1000001);
-    setdvar(@"hash_180a6f432cfb6644", 1000000);
-    setdvar(@"hash_5dfbfd642e45b4b2", 1000001);
+    setdvar(@"bg_fallDamageMinHeight", 1000000);
+    setdvar(@"bg_fallDamageMaxHeight", 1000001);
+    setdvar(@"bg_softLandingMinHeight", 1000000);
+    setdvar(@"bg_softLandingMaxHeight", 1000001);
     function_8b645c00ced7e3aa();
     function_ccf85d7e826d2c58();
     level thread function_4cd8f5379d59a1dc();

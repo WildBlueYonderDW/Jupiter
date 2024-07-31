@@ -1,0 +1,527 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_9241762813aaa86c": {
+        "#zoffset": 0.3,
+        "#yoffset": 2.2,
+        "#priority": 1
+    },
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp06_lm_pkilop_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp06_lm_pkilop_mp",
+    "#platform": "platform_jup_lm_pkilop",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_4",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp06_lm_pkilop_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp06_lm_pkilop_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_lmg",
+    "#category": "&WEAPON/SUBCLASS_ID_4",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 3000,
+    "#botpersonality": "camper|run_and_gun",
+    "#lootid": 17210,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 4,
+    "#ref": "jup_jp06_lm_pkilop",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/PKILOP_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP06_LM_PKILOP",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "4",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault",
+    "#asset": "jup_jp06_lm_pkilop_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_lmg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_bar_heavy",
+                    "#lootid": 22579,
+                    "#challengeid": 13219
+                },
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_frontpieces",
+                    "#lootid": 22557,
+                    "#challengeid": 17954
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_pkilob_bipod",
+                    "#lootid": 22571
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_undermounts",
+                    "#lootid": 22561
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_stock_heavy2",
+                    "#lootid": 22586
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_backpieces",
+                    "#lootid": 22558
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_reflex02",
+                    "#lootid": 32194
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_optics",
+                    "#lootid": 22560
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_pgrip_snp",
+                    "#lootid": 22599
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_reargrips",
+                    "#lootid": 22563
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_bar_bulllong",
+                    "#lootid": 22575
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_pgrip_aim",
+                    "#lootid": 22596
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_belt_150_762n",
+                    "#lootid": 23934
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_magazines",
+                    "#lootid": 22559
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_br_07",
+                    "#lootid": 32462
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_muzzles",
+                    "#lootid": 22562
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_stock_tac",
+                    "#lootid": 22588
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "flashlight_box02",
+                    "#lootid": 3576,
+                    "#challengeid": 13220
+                },
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_extras",
+                    "#lootid": 22565,
+                    "#challengeid": 17990
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "kilo21_sidegrip",
+                    "#lootid": 2373
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_stock_sp",
+                    "#lootid": 22590
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_bar_light",
+                    "#lootid": 22574
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_grip_akilo",
+                    "#lootid": 23935
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_belt_75_762n",
+                    "#lootid": 23933
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_stock_pdhv",
+                    "#lootid": 22589
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_762r_db",
+                    "#lootid": 23898,
+                    "#challengeid": 13221
+                },
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_ob_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_gunperks",
+                    "#lootid": 23244,
+                    "#challengeid": 18026
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "kilo21_sidegrip02",
+                    "#lootid": 8635
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_belt_200_762n",
+                    "#lootid": 22593
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_pgrip_ass",
+                    "#lootid": 22597
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_stock_heavy3",
+                    "#lootid": 22591
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_br_06",
+                    "#lootid": 32461
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_pgrip_tac",
+                    "#lootid": 22598
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "kilo21_sidegrip03",
+                    "#lootid": 8640
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_bar_short",
+                    "#lootid": 22577
+                },
+                {
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_br_04",
+                    "#lootid": 22450,
+                    "#challengeid": 13222
+                },
+                {
+                    "#challengeref": "jup_jp06_lm_pkilop_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_tuning",
+                    "#lootid": 22566,
+                    "#challengeid": 18062
+                },
+                {
+                    "#challengeref": "jup_pkilop_amp_bull_chal",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp06_lm_pkilop_amps",
+                    "#lootid": 46497,
+                    "#challengeid": 21718
+                },
+                {
+                }
+            ],
+            "#level": 27
+        }
+    ],
+    "#displayorder": 6,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.85,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

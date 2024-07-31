@@ -1,0 +1,30 @@
+{
+    "#id": "tactical_ads_behavior",
+    "#description": "&OPTIONS/TACTICAL_ADS_BEHAVIOR_DESC",
+    "#image": "jup_ui_options_image_tacticalstance",
+    "#hash_ea45bc5a5e9ac302": 0.1,
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/TOGGLE"
+        },
+        {
+            "#reference": "&OPTIONS/ON_RESPAWN"
+        },
+        {
+            "#reference": "&OPTIONS/RELEASE_ADS"
+        }
+    ],
+    "#hash_a20785232d9c4057": "TacticalADSResetBehaviorGpad",
+    "#hash_15963d81d6fd6dac": 4,
+    "#hash_df2c0bf51d7fb6ea": 0.1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_27d9b85248b3401c",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/TACTICAL_ADS_BEHAVIOR",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/TACTICAL_ADS_ACTIVATION_DISABLED_DESC",
+    "#hash_530fe36dfbb8c732": 0.1
+}

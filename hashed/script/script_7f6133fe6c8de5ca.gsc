@@ -7,7 +7,7 @@
 function main() {
     level._effect["vfx_elevated_train_01"] = loadfx("vfx/jup/level/mp_jup_elevated/vfx_elevated_train_01.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

@@ -1,0 +1,40 @@
+{
+    "#id": "auto_ground_mantle_gpad",
+    "#description": "&OPTIONS/AUTO_SHORT_MANTLE_DESC",
+    "#image": "jup_ui_options_image_groundedmantle",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&OPTIONS/LOW_EDGES_ONLY"
+        },
+        {
+            "#reference": "&OPTIONS/HIGH_EDGES"
+        },
+        {
+            "#reference": "&OPTIONS/AUTO_MANTLE_HANG"
+        }
+    ],
+    "#hash_a20785232d9c4057": "autoGroundMantleGamepad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_457f24874921dc37"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_ed79c2010ede607",
+            "#type": "DVAR"
+        },
+        {
+            "#dvarname": "@hash_23778731e4dc2c58",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/AUTO_SHORT_MANTLE",
+    "#hash_c55c746ff4d8929b": 1
+}

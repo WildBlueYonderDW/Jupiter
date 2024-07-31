@@ -1583,7 +1583,7 @@ function bot_think_tactical_goals() {
     self.tactical_goal_in_action_thread = 0;
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

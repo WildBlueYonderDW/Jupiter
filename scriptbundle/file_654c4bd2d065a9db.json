@@ -1,0 +1,24 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_caches_merc_high_value_green"
+        },
+        {
+            "#weight": 50,
+            "#itemspawnlist": "ob_jup_items_caches_low_value_green",
+            "#mincount": 1
+        },
+        {
+            "#weight": 20
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_green"
+        }
+    ],
+    "#itementries": [
+    ]
+}

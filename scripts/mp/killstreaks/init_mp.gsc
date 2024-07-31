@@ -94,7 +94,7 @@ function init() {
     if (isdefined(level.mapcustomkillstreakfunc)) {
         [[ level.mapcustomkillstreakfunc ]]();
     }
-    level.killstreakrounddelay = getintproperty(@"hash_336f868b4d4b223", 12);
+    level.killstreakrounddelay = getintproperty(@"scr_game_killstreakdelay", 12);
     level.killstreakactivatedtime = [];
     if (function_f24e99a2f548d0b8() && getdvarint(@"hash_4d5bd224f3f2f0bf", 1)) {
         level.var_44815c2275fee420 = 1;

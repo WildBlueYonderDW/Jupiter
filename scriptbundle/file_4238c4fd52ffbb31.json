@@ -1,0 +1,74 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 3,
+            "#itemspawnlist": "ob_jup_items_container_list_pictures"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_personal_aspirin"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_bandage"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_battery"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_personal_brokenglasses"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_cannedfood"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_electrical_tape"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_thumb_drive"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_harddrive"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_folder"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_lightbulb"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_personal_oldwatch"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_screwdriver"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_personal_smalldoll"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_personal_toyknife"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_personal_wornnecklace"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_wrench"
+        }
+    ]
+}

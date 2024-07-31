@@ -184,7 +184,7 @@ function private function_3c80d46239ce0a0e(dmg_struct, shitloc, var_29a8ba8c9dd4
 // Checksum 0x0, Offset: 0xad0
 // Size: 0x465
 function soldier_damage(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
-    if (getdvar(@"hash_e65e9a96eb2ff62b", "") == "gwtdm") {
+    if (getdvar(@"ui_gametype", "") == "gwtdm") {
         attackerishittingteammate = scripts\mp\utility\damage::attackerishittingteam(self, eattacker);
         if (attackerishittingteammate) {
             return 0;

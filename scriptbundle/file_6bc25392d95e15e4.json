@@ -1,0 +1,37 @@
+{
+    "#hash_46ac167746854604": [
+        {
+            "#hash_667ab99889e6c59f": "scripts/cp_mp/powerups/full_ammo.gsc"
+        },
+        {
+            "#hash_667ab99889e6c59f": "scripts/cp_mp/powerups/full_armor.gsc"
+        },
+        {
+            "#hash_667ab99889e6c59f": "scripts/cp_mp/powerups/insta_kill.gsc"
+        },
+        {
+            "#hash_667ab99889e6c59f": "scripts/cp_mp/powerups/nuke.gsc"
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        },
+        {
+        }
+    ],
+    "#hash_5cd8087abc90c2b1": [
+        {
+            "#hash_ac7a9f5ecc0b2bf8": "scripts/common/powerups.gsc"
+        },
+        {
+            "#hash_ac7a9f5ecc0b2bf8": "scripts/cp_mp/powerups/powerups.gsc"
+        },
+        {
+            "#hash_ac7a9f5ecc0b2bf8": "scripts/ob/ob_powerups.gsc"
+        }
+    ]
+}

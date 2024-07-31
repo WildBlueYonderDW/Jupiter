@@ -1,0 +1,23 @@
+{
+    "#id": 592,
+    "#keys": [
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_squad_event"
+        },
+        {
+            "#key": "iw9_squad_wipe_streak"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_f30778ed7ccd7a17",
+    "#sharedname": "#hash_b4b41fbe3398f1ef"
+}

@@ -1,0 +1,603 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_lm_slima",
+    "#hash_79839b907716ac41": "icon_weapon_lm_slima",
+    "#platform": "platform_iw9_lm_slima",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_lm_slima_v1",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_lm_slima",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_lmg",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_lm_slima_v3",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 3000,
+    "#botpersonality": "camper|run_and_gun",
+    "#lootid": 11314,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 1,
+    "#ref": "iw9_lm_slima",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/LM_SLIMA",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/LM_SLIMA",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "2",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault",
+    "#asset": "iw9_lm_slima_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_lmg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_slima_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "bipod_slima",
+                    "#lootid": 1906,
+                    "#challengeid": 9179,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_lm_slima_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "slima_undermounts",
+                    "#lootid": 12851,
+                    "#challengeid": 18768,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_assault_p16",
+                    "#lootid": 3290,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_backpieces",
+                    "#lootid": 12834,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "flashlight_box02",
+                    "#lootid": 3576,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_extras",
+                    "#lootid": 12818,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_338nm_ap",
+                    "#lootid": 1807,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_gunperks",
+                    "#lootid": 12833,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "hybridrange01",
+                    "#lootid": 1329,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_optics",
+                    "#lootid": 12830,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_338nm_hv",
+                    "#lootid": 2090,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ass_p16",
+                    "#lootid": 1342,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_reargrips",
+                    "#lootid": 12835,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_hvy_p16",
+                    "#lootid": 1321,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_frontpieces",
+                    "#lootid": 12850,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_slima_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "flash_dm_03",
+                    "#lootid": 623,
+                    "#challengeid": 9325,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_lm_slima_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "slima_muzzles",
+                    "#lootid": 12847,
+                    "#challengeid": 18835,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "belt_lm_large_p16",
+                    "#lootid": 880,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "slima_magazines",
+                    "#lootid": 12848,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_338nm_op",
+                    "#lootid": 1473,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "gripside_med_p16",
+                    "#lootid": 1954,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_tactical_p16",
+                    "#lootid": 2828,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_dm_05",
+                    "#lootid": 2585,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_aim_p16",
+                    "#lootid": 3163,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_short_p16",
+                    "#lootid": 3423,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_338nm_fr",
+                    "#lootid": 1904,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_slima_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "gripside_large_p16",
+                    "#lootid": 3026,
+                    "#challengeid": 8958,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_lm_slima_camo_ob_3",
+                    "#challengeid": 18902
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_long_p16",
+                    "#lootid": 2750,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "silencer06_dm",
+                    "#lootid": 662,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_338nm_hp",
+                    "#lootid": 2114,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_light_p16",
+                    "#lootid": 1357,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "belt_lm_small_p16",
+                    "#lootid": 2480,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "gripside_small_p16",
+                    "#lootid": 1847,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_338nm_db",
+                    "#lootid": 3813,
+                    "#bucket": 6
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_slima_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p16",
+                    "#lootid": 3783,
+                    "#challengeid": 9021,
+                    "#bucket": 6
+                },
+                {
+                    "#challengeref": "iw9_lm_slima_camo_ob_4",
+                    "#challengeid": 18969
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_lm_slima_tuning",
+                    "#lootid": 11775,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 27
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockno_lm_p16",
+                    "#lootid": 7958,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 28
+        }
+    ],
+    "#displayorder": 1,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.85,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

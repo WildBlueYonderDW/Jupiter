@@ -59,7 +59,7 @@ function main() {
     level.denyclasschoice = 1;
     level.bypassclasschoicefunc = &scripts\mp\class::alwaysgamemodeclass;
     function_e88d9ec1d5270bad();
-    setdvar(@"hash_3c4d1d9e67d42b87", 0);
+    setdvar(@"r_identifyOldMaterial", 0);
     setdvar(@"hash_365d77262b3a350e", 0);
     namespace_bfef6903bca5845d::init();
     level.var_289df80e1ded586f = 1;
@@ -157,7 +157,7 @@ function function_2a1ce8d7b1f21db9(player) {
 function find_player() {
     ai = self;
     ai endon("death");
-    setdvar(@"hash_fd64b1a4770cd47c", 0);
+    setdvar(@"ragdoll_max_simulating", 0);
     while (true) {
         ai setgoalpos(getclosestpointonnavmesh(level.player.origin), 16);
         ai.var_d4ae052f5bda013 = 0;
@@ -194,7 +194,7 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
 }
 
 // Namespace arcade / scripts\mp\gametypes\arcade
@@ -505,14 +505,14 @@ function ontimelimit() {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
                 points = getdvarint(@"hash_46a6b424af6acbc2");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x12f>", points, 0);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
                 points = getdvarint(@"hash_86e14326e43c0115");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x139>", points, 0);
                 break;

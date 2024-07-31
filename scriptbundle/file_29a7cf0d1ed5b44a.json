@@ -1,0 +1,15 @@
+{
+    "#id": "keybinds_preset",
+    "#description": "&OPTIONS/KEYBOARD_PREVIEW_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_b8d6f980460460c7": "BindingPreview",
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#type": "EXEC"
+        }
+    ],
+    "#name": "&OPTIONS/BINDING_PREVIEW_TITLE",
+    "#hash_dce5ffe0a6970f5d": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

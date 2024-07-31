@@ -115,7 +115,7 @@ function updatehide(task) {
     // Size: 0x51
     function function_a7f24f5dd4325ccf() {
         var_8a31cf5f87747a = getdvarint(@"hash_cc4c9095ab9f206f", 0);
-        debugentindex = getdvarint(@"hash_932e9550632df2cb");
+        debugentindex = getdvarint(@"ai_debugEntIndex");
         return var_8a31cf5f87747a == 1 && (debugentindex == -1 || debugentindex == self getentitynumber());
     }
 

@@ -55,7 +55,7 @@ function main() {
     level._effect["wall_explode"] = loadfx("vfx/jup/level/mp_jup_launchfacility/vfx_jup_lf_buildwall_exp.vfx");
     level._effect["vision_in_gas_zm"] = loadfx("vfx/jup/ob/gameplay/zm/vfx_phase_crystal_screen.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

@@ -1,0 +1,46 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_ar_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_sm_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_sn_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_lm_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_dm_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_pi_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_sh_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_la_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_me_purple"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_br_purple"
+        }
+    ],
+    "#itementries": [
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "#id": 112,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#none",
+            "#sharedname": "#none"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#helmet",
+            "#sharedname": "#helmet"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#head",
+            "#sharedname": "#head"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#neck",
+            "#sharedname": "#neck"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hash_2ebe91e33d923733",
+            "#sharedname": "#hash_2ebe91e33d923733"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_1e4c3dd17f38c79a",
+            "#sharedname": "#hash_1e4c3dd17f38c79a"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#left_upper_arm",
+            "#sharedname": "#left_upper_arm"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#right_upper_arm",
+            "#sharedname": "#right_upper_arm"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#left_lower_arm",
+            "#sharedname": "#left_lower_arm"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#right_lower_arm",
+            "#sharedname": "#right_lower_arm"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#left_hand",
+            "#sharedname": "#left_hand"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#right_hand",
+            "#sharedname": "#right_hand"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#left_upper_leg",
+            "#sharedname": "#left_upper_leg"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#right_upper_leg",
+            "#sharedname": "#right_upper_leg"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#left_lower_leg",
+            "#sharedname": "#left_lower_leg"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#right_lower_leg",
+            "#sharedname": "#right_lower_leg"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#left_foot",
+            "#sharedname": "#left_foot"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#right_foot",
+            "#sharedname": "#right_foot"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#gun",
+            "#sharedname": "#gun"
+        },
+        {
+            "#bitindex": 19,
+            "#name": "#shield",
+            "#sharedname": "#shield"
+        },
+        {
+            "#bitindex": 20,
+            "#name": "#armor",
+            "#sharedname": "#armor"
+        },
+        {
+            "#bitindex": 21,
+            "#name": "#hash_6016dd18f0a125f5",
+            "#sharedname": "#hash_6016dd18f0a125f5"
+        }
+    ],
+    "#name": "#hash_97223bee5e58b2ab",
+    "#sharedname": "#hit_loc"
+}

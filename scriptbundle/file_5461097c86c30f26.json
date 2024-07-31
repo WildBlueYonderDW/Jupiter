@@ -1,0 +1,639 @@
+{
+    "#hash_424335f05309b940": "jup_battlemap_sector_observer_s5",
+    "#season": 5,
+    "#hash_1fd45459f19f4c74": "jup_battlemap_visuals_straight_yellow",
+    "#hash_dfd5402800a91341": "jup_bm_season5_tokengrind",
+    "#hash_fc0e6edd6cbc9f8e": "seasons_banner_large",
+    "#hash_41195f1bce677619": [
+    ],
+    "#hash_226256ed1c796856": 29666,
+    "#hash_59884f98d7c14d1e": "JupBPSpecialMinimapSectorsWidget_s5",
+    "#sectors": [
+        {
+            "#hash_9bd6519bdebe479f": [
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 33,
+                "#left": 22,
+                "#hash_e5696636fe696e21": 23,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 21,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector00",
+            "#hash_26aba497e74300eb": 0,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 0
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector02"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector03"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 2,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 6,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 6,
+                "#hash_c6fc9e3972a6e08c": 23,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector01",
+            "#hash_26aba497e74300eb": 1,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 1
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector01"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector04"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 3,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 11,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 22,
+                "#hash_c6fc9e3972a6e08c": 19,
+                "#down": 1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector02",
+            "#hash_26aba497e74300eb": 2,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 2
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector01"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector05"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 9,
+                "#left": 1,
+                "#hash_e5696636fe696e21": 1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 16,
+                "#hash_c6fc9e3972a6e08c": 11,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector03",
+            "#hash_26aba497e74300eb": 6,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 3
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector02"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector07"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector08"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 4,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 17,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 9,
+                "#hash_c6fc9e3972a6e08c": 9,
+                "#down": 2
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector04",
+            "#hash_26aba497e74300eb": 3,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 4
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector03"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector06"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector09"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 15,
+                "#left": 6,
+                "#hash_e5696636fe696e21": 2,
+                "#hash_48e2454833185779": 16,
+                "#hash_69ca317ec8157428": 6,
+                "#right": 17,
+                "#hash_c6fc9e3972a6e08c": 17,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector05",
+            "#hash_26aba497e74300eb": 11,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 5
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector05"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector09"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector10"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 17,
+                "#left": 11,
+                "#hash_e5696636fe696e21": 11,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 21,
+                "#hash_c6fc9e3972a6e08c": 21,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector06",
+            "#hash_26aba497e74300eb": 16,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 6
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector04"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector08"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector11"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 39,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 9,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 9,
+                "#hash_c6fc9e3972a6e08c": 10,
+                "#down": 3
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector07",
+            "#hash_26aba497e74300eb": 4,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 7
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector04"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector07"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector11"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 10,
+                "#left": 4,
+                "#hash_e5696636fe696e21": 4,
+                "#hash_48e2454833185779": 22,
+                "#hash_69ca317ec8157428": 3,
+                "#right": 19,
+                "#hash_c6fc9e3972a6e08c": 20,
+                "#down": 6
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector08",
+            "#hash_26aba497e74300eb": 9,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 8
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector05"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector06"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector10"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector12"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 19,
+                "#left": 11,
+                "#hash_e5696636fe696e21": 3,
+                "#hash_48e2454833185779": 21,
+                "#hash_69ca317ec8157428": 11,
+                "#right": 21,
+                "#hash_c6fc9e3972a6e08c": 22,
+                "#down": 16
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector09",
+            "#hash_26aba497e74300eb": 17,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 9
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector06"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector09"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector12"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 22,
+                "#left": 17,
+                "#hash_e5696636fe696e21": 17,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 16,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": 0,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector10",
+            "#hash_26aba497e74300eb": 21,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 10
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector07"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector08"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector15"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": 4,
+                "#hash_e5696636fe696e21": 39,
+                "#hash_48e2454833185779": 19,
+                "#hash_69ca317ec8157428": 4,
+                "#right": 15,
+                "#hash_c6fc9e3972a6e08c": 15,
+                "#down": 9
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector11",
+            "#hash_26aba497e74300eb": 10,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 11
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector09"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector10"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector13"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 23,
+                "#left": 17,
+                "#hash_e5696636fe696e21": 9,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 17,
+                "#right": 0,
+                "#hash_c6fc9e3972a6e08c": 33,
+                "#down": 21
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector12",
+            "#hash_26aba497e74300eb": 22,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 12
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector12"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector14"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector17"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 37,
+                "#left": 19,
+                "#hash_e5696636fe696e21": 19,
+                "#hash_48e2454833185779": 0,
+                "#hash_69ca317ec8157428": 1,
+                "#right": 29,
+                "#hash_c6fc9e3972a6e08c": 29,
+                "#down": 22
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector13",
+            "#hash_26aba497e74300eb": 23,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 13
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector13"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector16"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 20,
+                "#left": 9,
+                "#hash_e5696636fe696e21": 10,
+                "#hash_48e2454833185779": 23,
+                "#hash_69ca317ec8157428": 2,
+                "#right": 23,
+                "#hash_c6fc9e3972a6e08c": 30,
+                "#down": 17
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector14",
+            "#hash_26aba497e74300eb": 19,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 14
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector11"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector16"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": 10,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 20,
+                "#hash_69ca317ec8157428": 10,
+                "#right": 20,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 11
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector15",
+            "#hash_26aba497e74300eb": 15,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 15
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector14"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector15"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": 15,
+                "#hash_e5696636fe696e21": 15,
+                "#hash_48e2454833185779": 29,
+                "#hash_69ca317ec8157428": 9,
+                "#right": 37,
+                "#hash_c6fc9e3972a6e08c": 37,
+                "#down": 19
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector16",
+            "#hash_26aba497e74300eb": 20,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 16
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector18"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector20"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector19"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector13"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 30,
+                "#left": 23,
+                "#hash_e5696636fe696e21": 20,
+                "#hash_48e2454833185779": 33,
+                "#hash_69ca317ec8157428": 23,
+                "#right": 33,
+                "#hash_c6fc9e3972a6e08c": 34,
+                "#down": -1
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector17",
+            "#hash_26aba497e74300eb": 29,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 17
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector17"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector20"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": 37,
+                "#hash_e5696636fe696e21": 37,
+                "#hash_48e2454833185779": 34,
+                "#hash_69ca317ec8157428": 19,
+                "#right": 34,
+                "#hash_c6fc9e3972a6e08c": 36,
+                "#down": 29
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector18",
+            "#hash_26aba497e74300eb": 30,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 18
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector17"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector20"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 34,
+                "#left": 29,
+                "#hash_e5696636fe696e21": 29,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 22,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 0
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector19",
+            "#hash_26aba497e74300eb": 33,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 19
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector17"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector18"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector19"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 36,
+                "#left": 29,
+                "#hash_e5696636fe696e21": 30,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 29,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 33
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector20",
+            "#hash_26aba497e74300eb": 34,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 20
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": 30,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": -1,
+                "#hash_69ca317ec8157428": 30,
+                "#right": -1,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 34
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector21_final",
+            "#hash_26aba497e74300eb": 36,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 21
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector16"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector18"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": 20,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 30,
+                "#hash_69ca317ec8157428": 20,
+                "#right": 30,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 23
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector22_blackcell",
+            "#hash_26aba497e74300eb": 37,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 22
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector08"
+                },
+                {
+                    "#hash_faac756f76d3affe": "jup_bm_season5_sector14"
+                }
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": 15,
+                "#left": 9,
+                "#hash_e5696636fe696e21": 9,
+                "#hash_48e2454833185779": 22,
+                "#hash_69ca317ec8157428": 2,
+                "#right": 19,
+                "#hash_c6fc9e3972a6e08c": 19,
+                "#down": 11
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector23_limited_time",
+            "#hash_26aba497e74300eb": 38,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 23
+        },
+        {
+            "#hash_9bd6519bdebe479f": [
+            ],
+            "#hash_84aeb9aded8cfd81": {
+                "#up": -1,
+                "#left": -1,
+                "#hash_e5696636fe696e21": -1,
+                "#hash_48e2454833185779": 10,
+                "#hash_69ca317ec8157428": -1,
+                "#right": 10,
+                "#hash_c6fc9e3972a6e08c": -1,
+                "#down": 4
+            },
+            "#hash_faac756f76d3affe": "jup_bm_season5_sector24_event",
+            "#hash_26aba497e74300eb": 39,
+            "#isenabled": 0,
+            "#hash_681b0595d876c6cf": 24
+        }
+    ],
+    "#hash_a30a3eb1b99597fd": "JupBPSpecialMapSectorsWidget_s5",
+    "#hash_2799561e804e2d29": 1
+}

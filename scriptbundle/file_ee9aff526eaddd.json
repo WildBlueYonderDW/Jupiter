@@ -1,0 +1,12 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#ping_cache",
+    "#hash_359e971d09addafc": "#hash_75cf71f7876029a7",
+    "#titlestring": "&MP/BR_LOOT_CACHE",
+    "#descstring": "&MP/BR_LOOT_CACHE_DESC",
+    "#type": "cache",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#icon": "ui_mp_br_loot_icon_generic_crate",
+    "#scriptable": "%hash_199abd792bc05b5c"
+}

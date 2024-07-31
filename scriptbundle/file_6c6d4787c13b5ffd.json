@@ -1,0 +1,16 @@
+{
+    "#hash_cc0786e90a5e30b7": "jup_icon_faction_rangers",
+    "#hash_14cb910d2ad612dc": "jup_icon_faction_rangers",
+    "#hash_8dae64535e1b947f": "jup_icon_faction_rangers",
+    "#headicon": "hud_icon_faction_pacd_fx",
+    "#hash_6dd7ff9df06b9821": "#hash_d8a70253017b1b64",
+    "#shortname": "&MENU/FACTION_RANGERS_SHORT",
+    "#hash_c7bc2e58e789bef4": "jup_icon_faction_rangers",
+    "#color": "",
+    "#hash_47eff39aeeb815fb": "&LUA_MENU/THE_WEST",
+    "#hash_d5fbbcddd0fdfe3b": "rang",
+    "#eliminated": "&MENU/FACTION_RANGERS_ELIMINATED",
+    "#ref": "RANGERS",
+    "#name": "&MENU/FACTION_RANGERS",
+    "#hash_66692aa75077712d": "&MENU/FACTION_RANGERS_FORFEIT"
+}

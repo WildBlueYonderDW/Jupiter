@@ -1,0 +1,40 @@
+{
+    "#id": "display_mode",
+    "#description": "&OPTIONS/DISPLAY_MODE_DESC",
+    "#dvar": "@r_fullscreen",
+    "#hash_be58efbf74db62a8": 1,
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/MODE_WINDOWED"
+        },
+        {
+            "#reference": "&OPTIONS/MODE_FULLSCREEN"
+        },
+        {
+            "#reference": "&OPTIONS/MODE_FULLSCREEN_BORDERLESS"
+        },
+        {
+            "#reference": "&OPTIONS/MODE_FULLSCREEN_EXTENDED_WINDOW"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/DISPLAY_MODE",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_220596a0c1571fd8"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_5b9170d4a1216a3d"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_2f94961be50af527"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_1fe37d0dc1e1465b"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_1806b00bc14bb28e"
+        }
+    ]
+}

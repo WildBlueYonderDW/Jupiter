@@ -1,0 +1,29 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_generic_personal"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_generic_valuable"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weaponcases"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_schematics"
+        }
+    ],
+    "#itementries": [
+        {
+            "#itemspawnentry": "ob_jup_item_ammo"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_plea_prompt"
+        }
+    ]
+}

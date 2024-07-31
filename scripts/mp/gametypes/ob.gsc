@@ -1575,7 +1575,7 @@ function function_ffe061106577a7fb() {
 // Checksum 0x0, Offset: 0x5b45
 // Size: 0x1c
 function function_71e0f441c3360430() {
-    setdvar(@"hash_e54438e2751cac0d", 5000);
+    setdvar(@"compassMaxRange", 5000);
     thread function_c9df5c5a772438cf();
 }
 
@@ -2387,7 +2387,7 @@ function function_922c3629c545df86() {
     if (isdefined(player.matchbonus)) {
         player setclientomnvar("ui_round_end_match_bonus", player.matchbonus);
     }
-    player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+    player setclientdvar(@"ui_opensummary", 1);
 }
 
 // Namespace ob / scripts\mp\gametypes\ob

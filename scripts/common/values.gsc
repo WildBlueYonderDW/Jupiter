@@ -1875,7 +1875,7 @@ function private function_782c9cfc7f78e416(b_value) {
     if (!isdefined(b_value)) {
         b_value = 0;
     }
-    setsaveddvar(@"hash_4771e9353baf9732", !b_value);
+    setsaveddvar(@"bg_disableWeaponFirstRaiseAnims", !b_value);
 }
 
 // Namespace val / scripts\common\values

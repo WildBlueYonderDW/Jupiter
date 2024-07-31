@@ -906,7 +906,7 @@ function function_d7c7ab3572deb50a(playeroverride) {
         playeroverride function_666f6c8f489ca946();
         return;
     }
-    level.blastshieldclamp = getfloatproperty(@"hash_171bcebcaa849d95", 0.8) * 30;
+    level.blastshieldclamp = getfloatproperty(@"perk_blastshieldclamphp", 0.8) * 30;
     level.maxallowedteamkills = -1;
     function_722a88b02b9c6a83("team", "fftype", 1);
     function_722a88b02b9c6a83("team", "teamkillspawndelay", 0);

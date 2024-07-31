@@ -175,7 +175,7 @@ function function_e38335c47f60d959(grenade) {
             continue;
         }
         data = packdamagedata(self, player, 1, objweapon, "MOD_EXPLOSIVE", grenade, position);
-        thread empPulse_apply_player(data, 4);
+        thread function_42a2e5c40023cdb(data, 4);
     }
 }
 

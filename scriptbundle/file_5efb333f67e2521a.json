@@ -1,0 +1,9 @@
+{
+    "#id": "color_customization",
+    "#description": "&OPTIONS/COLOR_CUSTOMIZATION_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "GenericButton",
+    "#name": "&OPTIONS/COLOR_CUSTOMIZATION",
+    "#hash_c55c746ff4d8929b": 1
+}

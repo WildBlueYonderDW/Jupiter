@@ -32,7 +32,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "juggernaut";
-    self.voice = #"alqatala";
+    self.voice = #"hash_5b83ef004494812e";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self setmodel("body_sp_opforce_aq_jugg_basebody");

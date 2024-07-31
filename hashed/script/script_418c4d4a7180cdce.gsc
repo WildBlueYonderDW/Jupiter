@@ -95,7 +95,7 @@ function autotestCommandMonitor() {
                 break;
             case #"hash_7ec851a874a319f5": 
                 if (!isdefined(level.gametype)) {
-                    level.gametype = getdvar(@"hash_8fe3271cd74f65a2");
+                    level.gametype = getdvar(@"g_gametype");
                 }
                 function_a0a53a7922de9fb5(isdefined(level.gametype) ? level.gametype : "None");
                 break;

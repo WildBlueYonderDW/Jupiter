@@ -1,0 +1,18 @@
+{
+    "#hash_cc0786e90a5e30b7": "icon_faction_coalition",
+    "#hash_14cb910d2ad612dc": "icon_faction_coalition",
+    "#hash_8dae64535e1b947f": "icon_faction_coalition",
+    "#headicon": "hud_icon_faction_pacd_fx",
+    "#hash_6dd7ff9df06b9821": "#hash_d8a70253017b1b64",
+    "#hash_67151685509e0290": "spetsnaz",
+    "#shortname": "&MENU/FACTION_ONE_SHORT",
+    "#hash_c7bc2e58e789bef4": "icon_faction_coalition",
+    "#color": "red",
+    "#hash_47eff39aeeb815fb": "&LUA_MENU/THE_WEST",
+    "#hash_d5fbbcddd0fdfe3b": "de",
+    "#eliminated": "&MP/FACTION_ONE_ELIMINATED",
+    "#ref": "GRP9",
+    "#name": "&MENU/FACTION_ONE_SHORT",
+    "#challengeid": 1000006,
+    "#hash_66692aa75077712d": "&MP/FACTION_ONE_FORFEITED"
+}

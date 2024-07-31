@@ -1,0 +1,14 @@
+{
+    "#id": "controller_right_trigger_deadzone",
+    "#description": "&PLATFORM_UI/CONTROLLER_RIGHT_TRIGGER_DEADZONE_DESC",
+    "#hash_ea45bc5a5e9ac302": 1,
+    "#hash_a20785232d9c4057": "gpadRightTrigDeadzone",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_15963d81d6fd6dac": 75,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 1,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&PLATFORM_UI/CONTROLLER_RIGHT_TRIGGER_DEADZONE",
+    "#hash_c55c746ff4d8929b": 1
+}

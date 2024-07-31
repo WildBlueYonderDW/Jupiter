@@ -1,0 +1,28 @@
+{
+    "#id": "armor_plate_apply_method_gamepad",
+    "#description": "&OPTIONS/ARMOR_PLATE_BEHAVIOR_GAMEPAD_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/APPLY_ONE"
+        },
+        {
+            "#reference": "&OPTIONS/APPLY_ALL"
+        }
+    ],
+    "#hash_a20785232d9c4057": "armorPlateApplyGamepad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/ARMOR_PLATE_BEHAVIOR",
+    "#hash_c55c746ff4d8929b": 1
+}

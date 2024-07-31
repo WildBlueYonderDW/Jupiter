@@ -1,0 +1,64 @@
+{
+    "#hash_b97a4f96e35d62fc": 450,
+    "#hash_395669381b27230b": 3500,
+    "#hash_dda4d45d11713be": 0,
+    "#hash_6ad8008df08f66a8": 14,
+    "#hash_c11f84610a177815": 1.5,
+    "#hash_7bee7ebf3e0c6628": 1,
+    "#hash_495b2246709c1ebd": "vfx/jup/ob/gameplay/zm_ai/vfx_zai_soo_drain_camera.vfx",
+    "#hash_9a210253ad180bce": 1,
+    "#hash_15ca0d607bd0f65d": 1000,
+    "#hash_1edd3815011a08bd": 1,
+    "#hash_80680f186a663a85": 20,
+    "#hash_f561f27619209f1c": 1,
+    "#healthstatemodels": [
+        {
+            "#modelname": "c_jup_zmb_disciple_body_s3_rr"
+        },
+        {
+            "#modelname": "c_jup_zmb_disciple_exposed_1_s3_rr"
+        },
+        {
+            "#modelname": "c_jup_zmb_disciple_exposed_2_s3_rr"
+        }
+    ],
+    "#hash_6f2acd144e3c3fca": 0,
+    "#hash_efbd87396988298c": 1,
+    "#hash_6a5b8f242f11c38": 7,
+    "#sweepcooldown": 8,
+    "#hash_23c1773c98bbea52": 19,
+    "#hash_119f8409b2099b1c": 0,
+    "#hash_7e21c2fc64b1a2da": "vfx/jup/ob/gameplay/riftrun/s3_5/zm_ai/vfx_zai_aether_disciple_weak_point_hand.vfx",
+    "#hash_65f99a67b50617f5": 1,
+    "#hash_e881202df9147e0f": 0.01,
+    "#hash_735914b3360cf610": "vfx/jup/ob/gameplay/riftrun/s3_5/zm_ai/vfx_zai_aether_disciple_weak_point_hand_impact.vfx",
+    "#bosshealthbar": "rr_disciple_healthbar_s3_quest",
+    "#hash_f765675f1055f2eb": [
+        {
+            "#hash_1d92b5675b8f9bd": 1,
+            "#hash_b0469108aa1c5aa": "jup_spawner_zombie_mimic_s3_rr_quest",
+            "#hash_aed5f72cc5d12c0e": 0,
+            "#hash_68d9b038985f1aa5": 1
+        },
+        {
+            "#hash_1d92b5675b8f9bd": 1,
+            "#hash_b0469108aa1c5aa": "jup_spawner_zombie_mangler_s3_rr_quest",
+            "#hash_aed5f72cc5d12c0e": 0,
+            "#hash_68d9b038985f1aa5": 1
+        }
+    ],
+    "#hash_e82fcf3a743fc4f8": 7,
+    "#hash_6dafdc9373f06676": 10,
+    "#hash_1de95697972bd8c7": 0.01,
+    "#hash_c164f56da4c8b950": "vfx/jup/ob/gameplay/riftrun/s3_5/zm_ai/vfx_zai_aether_disciple_blood_beam.vfx",
+    "#sweepmovespeed": 8,
+    "#hash_c8bcab8c1ce580a4": 8,
+    "#hash_64673f9cba520069": "vfx/jup/ob/gameplay/riftrun/s3_5/zm_ai/vfx_zai_aether_disciple_drain_kill.vfx",
+    "#hash_c366369faa4886e5": 1,
+    "#hash_49e28583f4085c3": 1,
+    "#hash_11513ec3b3dded73": 1,
+    "#hash_5f17af25ee7aca56": 0.5,
+    "#hash_11dc5994234c3df6": "vfx/jup/ob/gameplay/riftrun/s3_5/zm_ai/vfx_aether_disciple_bind_trail.vfx",
+    "#hash_5704bf989f7424ad": "vfx/jup/ob/gameplay/riftrun/s3_5/zm_ai/vfx_zai_aether_disciple_weak_point_impact.vfx",
+    "#hash_1a818e0dcbfc15b2": 800
+}

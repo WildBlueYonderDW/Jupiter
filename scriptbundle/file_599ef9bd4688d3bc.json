@@ -1,0 +1,29 @@
+{
+    "#id": "ads_stick_swap",
+    "#description": "&PLATFORM/ADS_STICK_SWAP_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/INSTANT"
+        },
+        {
+            "#reference": "&LUA_MENU/AFTERZOOM"
+        }
+    ],
+    "#hash_a20785232d9c4057": "adsStickSwap",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_2463b1f12b9f0b13"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_23719c869c917512"
+        }
+    ],
+    "#type": "Dropdown",
+    "#name": "&PLATFORM/ADS_STICK_SWAP",
+    "#hash_c55c746ff4d8929b": 1
+}

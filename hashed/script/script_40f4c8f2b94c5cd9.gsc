@@ -389,7 +389,7 @@ function allplayers_setphysicaldof(fstop, focusdist, focusspeed, aperturespeed, 
 // Size: 0x7a
 function allplayers_setfov(fov) {
     foreach (player in level.players) {
-        player setclientdvar(@"hash_df1dc712c4a91588", fov);
+        player setclientdvar(@"cg_fov", fov);
         player setclientdvar(@"hash_71c6c0b8428e44a7", 1);
     }
 }
@@ -400,7 +400,7 @@ function allplayers_setfov(fov) {
 // Size: 0x89
 function function_cf47ab3f9defe35b() {
     foreach (player in level.players) {
-        player setclientdvar(@"hash_df1dc712c4a91588", 65);
+        player setclientdvar(@"cg_fov", 65);
         player setclientdvar(@"hash_86bf34d5f48fa435", 65);
         player setclientdvar(@"hash_71c6c0b8428e44a7", 0);
     }

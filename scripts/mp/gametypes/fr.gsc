@@ -90,7 +90,7 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
 }
 
 // Namespace fr / scripts\mp\gametypes\fr

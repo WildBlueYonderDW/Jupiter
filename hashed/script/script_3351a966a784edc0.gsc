@@ -3271,7 +3271,7 @@ function function_4c3b4b4059b45fba() {
     wait 1;
     foreach (player in level.players) {
         if (isalive(player)) {
-            player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+            player setclientdvar(@"ui_opensummary", 1);
             level thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(player, 0, 0);
             player thread scripts\common\utility::letterbox_enable(1);
             player.var_59e5ea44ba5aff1 = 1;

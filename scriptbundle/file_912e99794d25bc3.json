@@ -1,0 +1,52 @@
+{
+    "#factors": [
+        {
+            "#factor": "preferOptimalTTLOS",
+            "#weight": 1
+        },
+        {
+            "#factor": "avoidSameSpawn",
+            "#weight": 0.25
+        },
+        {
+            "#factor": "avoidRecentlyUsedByAnyone",
+            "#weight": 0.2
+        },
+        {
+            "#factor": "randomSpawnScore",
+            "#weight": 0.05
+        },
+        {
+            "#factor": "avoidCurrentSpawnTraps",
+            "#weight": 5
+        },
+        {
+            "#factor": "avoidShortTimeToEnemySight",
+            "#weight": 3
+        },
+        {
+            "#factor": "avoidRecentlyUsedByEnemies",
+            "#weight": 1
+        },
+        {
+            "#factor": "avoidEnemiesByDistance",
+            "#weight": 1.5
+        },
+        {
+            "#factor": "avoidLastDeathLocation",
+            "#weight": 1
+        },
+        {
+            "#factor": "avoidLastAttackerLocation",
+            "#weight": 2
+        },
+        {
+            "#factor": "avoidClosestEnemy",
+            "#weight": 3
+        },
+        {
+            "#factor": "avoidFrontlineOffsides",
+            "#weight": 2.5
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "#id": 107,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#hash_972a0e505ecce104",
+            "#sharedname": "#hash_972a0e505ecce104"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_33af2318f82518f3",
+            "#sharedname": "#hash_33af2318f82518f3"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_98a1756fa620ee8a",
+            "#sharedname": "#hash_98a1756fa620ee8a"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_a9ef6731563a6c84",
+            "#sharedname": "#hash_a9ef6731563a6c84"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hash_504069de7a2717ea",
+            "#sharedname": "#hash_504069de7a2717ea"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_b61bf94e55be1986",
+            "#sharedname": "#hash_b61bf94e55be1986"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_fc6bbe49f6870e38",
+            "#sharedname": "#hash_fc6bbe49f6870e38"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#hash_1b0035e08fb67716",
+            "#sharedname": "#hash_1b0035e08fb67716"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#hash_3ae0778104575f4a",
+            "#sharedname": "#hash_3ae0778104575f4a"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#hash_85bf1c06ebe9374d",
+            "#sharedname": "#hash_85bf1c06ebe9374d"
+        }
+    ],
+    "#name": "#hash_e7ac6c5a8a9cea0d",
+    "#sharedname": "#hash_ecf2f40148801ac5"
+}

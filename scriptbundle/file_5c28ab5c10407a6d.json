@@ -1,0 +1,7 @@
+{
+    "#id": "unbind_key",
+    "#description": "&OPTIONS/UNBIND_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/UNBIND"
+}

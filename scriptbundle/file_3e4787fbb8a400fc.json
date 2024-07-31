@@ -1,0 +1,22 @@
+{
+    "#id": "telemetry_gpu_clock",
+    "#description": "&OPTIONS/TELEMETRY_GPU_CLOCK_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/OFF"
+        },
+        {
+            "#reference": "&LUA_MENU/ON"
+        }
+    ],
+    "#hash_a20785232d9c4057": "displayTelemetryGpuClock",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/TELEMETRY_GPU_CLOCK_OPTION"
+}

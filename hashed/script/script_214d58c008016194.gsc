@@ -28,7 +28,7 @@ function main() {
     level._effect["vfx_global_dust_move_slow_2_med"] = loadfx("vfx/iw9/level/_global/vfx_global_dust_move_slow_2_med.vfx");
     level._effect["vfx_global_dust_move_slow_2"] = loadfx("vfx/iw9/level/_global/vfx_global_dust_move_slow_2.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

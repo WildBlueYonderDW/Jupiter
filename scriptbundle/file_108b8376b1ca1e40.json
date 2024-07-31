@@ -1,0 +1,23 @@
+{
+    "#id": 48,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_loot_id"
+        },
+        {
+            "#key": "iw9_playlist_id"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_c299f8d6b69ccc69",
+    "#sharedname": "#capture"
+}

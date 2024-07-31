@@ -1,0 +1,9 @@
+{
+    "#description": "&VEHICLES/SEDAN_1985_DESC",
+    "#defaultimage": "ui_default_white",
+    "#hash_7ffb238c68bddf60": "ui_veh_sedan_hatchback_1985_v000_preview",
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,MGL,JUP",
+    "#ref": "veh9_sedan_hatchback_1985",
+    "#name": "&VEHICLES/SEDAN_1985",
+    "#icon": "hud_icon_vehicle_sedan_hatchback_1985"
+}

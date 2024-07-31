@@ -36,7 +36,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "rebel";
-    self.voice = #"alqatala";
+    self.voice = #"hash_5b83ef004494812e";
     self.bhasthighholster = 1;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("bodies_iw9_enemy_aq_ar_4", namespace_2f49b067cb2435ea::main());

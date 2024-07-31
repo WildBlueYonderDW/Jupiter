@@ -1,0 +1,16 @@
+{
+    "#hash_688e7cc2c44075ef": [
+        {
+            "#hash_b2844694882d284d": "icon_waypoint_base_pulse",
+            "#hash_776aedbce5178fef": "NEUTRAL"
+        },
+        {
+            "#hash_b2844694882d284d": "icon_waypoint_friendly_pulse",
+            "#hash_776aedbce5178fef": "FRIENDLY"
+        },
+        {
+            "#hash_b2844694882d284d": "icon_waypoint_enemy_pulse",
+            "#hash_776aedbce5178fef": "ENEMY"
+        }
+    ]
+}

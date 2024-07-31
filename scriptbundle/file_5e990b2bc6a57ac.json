@@ -1,0 +1,30 @@
+{
+    "#id": "cursor_resize",
+    "#description": "&OPTIONS/CURSOR_RESIZING_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#labels": [
+        {
+            "#reference": "&MENU/SMALL"
+        },
+        {
+            "#reference": "&MENU/MEDIUM"
+        },
+        {
+            "#reference": "&MENU/LARGE"
+        },
+        {
+            "#reference": "&OPTIONS/EXTRA_LARGE"
+        }
+    ],
+    "#hash_a20785232d9c4057": "CursorResizing",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_f32a2d4a486d768f": 1,
+            "#type": "EXEC"
+        }
+    ],
+    "#name": "&OPTIONS/CURSOR_RESIZING",
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -819,15 +819,15 @@ function function_a9811e9d60c20505(newplayer) {
 // Checksum 0x0, Offset: 0x6498
 // Size: 0x2c5
 function initperkdvars() {
-    maxhealth = getdvarint(@"hash_b1d561f9a9241e09", 150);
+    maxhealth = getdvarint(@"scr_player_maxhealth", 150);
     level.graceperiodgrenademod = 0.08;
     level.armorpiercingmod = 1.5;
     level.var_3395494b137909bb = 1.5;
     level.var_f83dd54fb01d0b92 = 1.75;
-    level.regenfasterhealthmod = getintproperty(@"hash_8e7c2be7678f7efc", 2);
+    level.regenfasterhealthmod = getintproperty(@"perk_fastregenrate", 2);
     level.explosivedamagemod = getintproperty(@"hash_ba7635c20c20da2b", 40) / 100;
-    level.blastshieldmod = getfloatproperty(@"hash_fdc1e088cb180fc", 0.65);
-    level.blastshieldclamp = getfloatproperty(@"hash_171bcebcaa849d95", 0.8) * maxhealth;
+    level.blastshieldmod = getfloatproperty(@"perk_blastshieldscale", 0.65);
+    level.blastshieldclamp = getfloatproperty(@"perk_blastshieldclamphp", 0.8) * maxhealth;
     level.riotshieldmod = getintproperty(@"hash_44dd0d59d214ae0c", 100) / 100;
     level.armorvestbulletdelta = getintproperty(@"hash_f5552d1367ce77c8", 1);
     level.var_ddc10ba2983b0b0c = dvars::getfloatproperty(@"hash_811e77d419715fbc", 0.8);
@@ -842,8 +842,8 @@ function initperkdvars() {
         level.var_eeccf9e10242815 = getdvarint(@"hash_de884e7ed943c255", 1);
     }
     if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19()) {
-        level.blastshieldmod = getfloatproperty(@"hash_323beb481f9f3500", 0.65);
-        level.blastshieldclamp = getfloatproperty(@"hash_580844a0ede1b0f3", 0.66) * maxhealth;
+        level.blastshieldmod = getfloatproperty(@"perk_blastshieldscale_hc", 0.65);
+        level.blastshieldclamp = getfloatproperty(@"perk_blastshieldclamphp_hc", 0.66) * maxhealth;
     }
     if (scripts\mp\utility\game::getgametype() == "arena") {
         level.blastshieldmod = dvarfloatvalue("blastShieldMod", 0.65, 0, 1);

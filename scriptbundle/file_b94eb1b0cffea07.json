@@ -1,0 +1,13 @@
+{
+    "#id": "go_stand_action",
+    "#description": "&OPTIONS/STANDJUMP_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_7651f90dfc4a0eed"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/STANDJUMP",
+    "#hash_6cc29e2aa276fd0f": 1
+}

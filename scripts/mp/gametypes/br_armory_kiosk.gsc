@@ -1684,8 +1684,8 @@ function armorykioskused(instance, part, state, player, var_a5b2c541413aa895, us
         instance.playersusing = [];
     }
     instance.playersusing[instance.playersusing.size] = player;
-    if (scripts\engine\utility::issharedfuncdefined(#"biometricScan", #"reportKeycardCount")) {
-        [[ scripts\engine\utility::getsharedfunc(#"biometricScan", #"reportKeycardCount") ]](player);
+    if (scripts\engine\utility::issharedfuncdefined(#"hash_ad70e3e9fcd18b68", #"hash_32f3544032634fc7")) {
+        [[ scripts\engine\utility::getsharedfunc(#"hash_ad70e3e9fcd18b68", #"hash_32f3544032634fc7") ]](player);
     }
     if (istrue(var_a5b2c541413aa895)) {
         if (!player.armorykioskpurchaseallowed) {
@@ -3769,8 +3769,8 @@ function onarmorykioskpurchase(channel, purchaseindex) {
         return;
     }
     if (channel == "br_biometric_scan_keycard_exchange") {
-        if (scripts\engine\utility::issharedfuncdefined(#"biometricScan", #"handleKeycardExchange")) {
-            itemdata = [[ scripts\engine\utility::getsharedfunc(#"biometricScan", #"handleKeycardExchange") ]](player, kiosk, purchaseindex, var_452130d9d126e506);
+        if (scripts\engine\utility::issharedfuncdefined(#"hash_ad70e3e9fcd18b68", #"hash_2d49323ebb03685d")) {
+            itemdata = [[ scripts\engine\utility::getsharedfunc(#"hash_ad70e3e9fcd18b68", #"hash_2d49323ebb03685d") ]](player, kiosk, purchaseindex, var_452130d9d126e506);
         }
         if (isdefined(itemdata)) {
             function_a573b91325f9ea32(player, itemdata, itemdata.type, "br_item_purchased", 1);
@@ -3859,8 +3859,8 @@ function _makekioskpurchase(itemdata) {
         response = 2;
     }
     if (itemdata.type != "biometric_scan_keycard") {
-        if (scripts\engine\utility::issharedfuncdefined(#"biometricScan", #"updateFreeItemCount")) {
-            [[ scripts\engine\utility::getsharedfunc(#"biometricScan", #"updateFreeItemCount") ]](player, -1);
+        if (scripts\engine\utility::issharedfuncdefined(#"hash_ad70e3e9fcd18b68", #"hash_73108d24cbb57078")) {
+            [[ scripts\engine\utility::getsharedfunc(#"hash_ad70e3e9fcd18b68", #"hash_73108d24cbb57078") ]](player, -1);
         }
     }
     player function_c8bd59cde912455f(response);

@@ -1,0 +1,327 @@
+{
+    "#id": 12,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#headshot",
+            "#sharedname": "#headshot"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#victimsprinting",
+            "#sharedname": "#victimsprinting"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#ads",
+            "#sharedname": "#ads"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_78c8378471850322",
+            "#sharedname": "#hash_78c8378471850322"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#longrange",
+            "#sharedname": "#longrange"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_30a2422996add07a",
+            "#sharedname": "#hash_30a2422996add07a"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#mounted",
+            "#sharedname": "#mounted"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#crouch",
+            "#sharedname": "#crouch"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#prone",
+            "#sharedname": "#prone"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#shortrange",
+            "#sharedname": "#shortrange"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#laststand",
+            "#sharedname": "#laststand"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#victimlaststand",
+            "#sharedname": "#victimlaststand"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#recondroneexplosive",
+            "#sharedname": "#recondroneexplosive"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#hash_3a06b872e825db38",
+            "#sharedname": "#hash_3a06b872e825db38"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#weaponswap",
+            "#sharedname": "#weaponswap"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#backfire",
+            "#sharedname": "#backfire"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#melee",
+            "#sharedname": "#melee"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#execution",
+            "#sharedname": "#execution"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#lastbullet",
+            "#sharedname": "#lastbullet"
+        },
+        {
+            "#bitindex": 19,
+            "#name": "#buzzkill",
+            "#sharedname": "#buzzkill"
+        },
+        {
+            "#bitindex": 20,
+            "#name": "#hash_603a0dde50c94e47",
+            "#sharedname": "#hash_603a0dde50c94e47"
+        },
+        {
+            "#bitindex": 21,
+            "#name": "#enemystunned",
+            "#sharedname": "#enemystunned"
+        },
+        {
+            "#bitindex": 22,
+            "#name": "#enemyinsmoke",
+            "#sharedname": "#enemyinsmoke"
+        },
+        {
+            "#bitindex": 23,
+            "#name": "#invehicle",
+            "#sharedname": "#invehicle"
+        },
+        {
+            "#bitindex": 24,
+            "#name": "#recentreload",
+            "#sharedname": "#recentreload"
+        },
+        {
+            "#bitindex": 25,
+            "#name": "#hash_9a860a2c838066cd",
+            "#sharedname": "#hash_9a860a2c838066cd"
+        },
+        {
+            "#bitindex": 26,
+            "#name": "#lowhealth",
+            "#sharedname": "#lowhealth"
+        },
+        {
+            "#bitindex": 27,
+            "#name": "#usingsecondaryweapon",
+            "#sharedname": "#usingsecondaryweapon"
+        },
+        {
+            "#bitindex": 28,
+            "#name": "#equipmentimpact",
+            "#sharedname": "#equipmentimpact"
+        },
+        {
+            "#bitindex": 29,
+            "#name": "#fire",
+            "#sharedname": "#fire"
+        },
+        {
+            "#bitindex": 30,
+            "#name": "#victiminvehicle",
+            "#sharedname": "#victiminvehicle"
+        },
+        {
+            "#bitindex": 31,
+            "#name": "#hash_aceee63cb46a233a",
+            "#sharedname": "#hash_aceee63cb46a233a"
+        },
+        {
+            "#bitindex": 32,
+            "#name": "#slide",
+            "#sharedname": "#slide"
+        },
+        {
+            "#bitindex": 33,
+            "#name": "#firstblood",
+            "#sharedname": "#firstblood"
+        },
+        {
+            "#bitindex": 34,
+            "#name": "#hash_685308eaa4b0c603",
+            "#sharedname": "#hash_685308eaa4b0c603"
+        },
+        {
+            "#bitindex": 35,
+            "#name": "#assaulting",
+            "#sharedname": "#assaulting"
+        },
+        {
+            "#bitindex": 36,
+            "#name": "#defending",
+            "#sharedname": "#defending"
+        },
+        {
+            "#bitindex": 37,
+            "#name": "#hash_9deee49047a8c2f7",
+            "#sharedname": "#hash_9deee49047a8c2f7"
+        },
+        {
+            "#bitindex": 38,
+            "#name": "#comeback",
+            "#sharedname": "#comeback"
+        },
+        {
+            "#bitindex": 39,
+            "#name": "#posthumous",
+            "#sharedname": "#posthumous"
+        },
+        {
+            "#bitindex": 40,
+            "#name": "#revenge",
+            "#sharedname": "#revenge"
+        },
+        {
+            "#bitindex": 41,
+            "#name": "#hash_72a2c2883e780324",
+            "#sharedname": "#hash_72a2c2883e780324"
+        },
+        {
+            "#bitindex": 42,
+            "#name": "#kingslayer",
+            "#sharedname": "#kingslayer"
+        },
+        {
+            "#bitindex": 43,
+            "#name": "#vehicleexplosive",
+            "#sharedname": "#vehicleexplosive"
+        },
+        {
+            "#bitindex": 44,
+            "#name": "#avenger",
+            "#sharedname": "#avenger"
+        },
+        {
+            "#bitindex": 45,
+            "#name": "#nemesis",
+            "#sharedname": "#nemesis"
+        },
+        {
+            "#bitindex": 46,
+            "#name": "#quadfeed",
+            "#sharedname": "#quadfeed"
+        },
+        {
+            "#bitindex": 47,
+            "#name": "#crush",
+            "#sharedname": "#crush"
+        },
+        {
+            "#bitindex": 48,
+            "#name": "#hash_4c878f7952c43e6",
+            "#sharedname": "#hash_4c878f7952c43e6"
+        },
+        {
+            "#bitindex": 49,
+            "#name": "#defender",
+            "#sharedname": "#defender"
+        },
+        {
+            "#bitindex": 50,
+            "#name": "#holdbreath",
+            "#sharedname": "#holdbreath"
+        },
+        {
+            "#bitindex": 51,
+            "#name": "#gunbutt",
+            "#sharedname": "#gunbutt"
+        },
+        {
+            "#bitindex": 52,
+            "#name": "#swimming",
+            "#sharedname": "#swimming"
+        },
+        {
+            "#bitindex": 53,
+            "#name": "#hash_5d803a1a05ffb79d",
+            "#sharedname": "#hash_5d803a1a05ffb79d"
+        },
+        {
+            "#bitindex": 54,
+            "#name": "#choppergunner",
+            "#sharedname": "#choppergunner"
+        },
+        {
+            "#bitindex": 55,
+            "#name": "#hash_40cc48b919c7ce73",
+            "#sharedname": "#hash_40cc48b919c7ce73"
+        },
+        {
+            "#bitindex": 56,
+            "#name": "#hash_240241891b0a870f",
+            "#sharedname": "#hash_240241891b0a870f"
+        },
+        {
+            "#bitindex": 57,
+            "#name": "#hash_9f4c88800f02ab3c",
+            "#sharedname": "#hash_9f4c88800f02ab3c"
+        },
+        {
+            "#bitindex": 58,
+            "#name": "#hash_58b185451852f662",
+            "#sharedname": "#hash_58b185451852f662"
+        },
+        {
+            "#bitindex": 59,
+            "#name": "#hash_4687e1d052d29979",
+            "#sharedname": "#hash_4687e1d052d29979"
+        },
+        {
+            "#bitindex": 60,
+            "#name": "#hash_d65d7b3bc5219bfb",
+            "#sharedname": "#hash_d65d7b3bc5219bfb"
+        },
+        {
+            "#bitindex": 61,
+            "#name": "#hash_5d9ce730f916ac7c",
+            "#sharedname": "#hash_5d9ce730f916ac7c"
+        },
+        {
+            "#bitindex": 62,
+            "#name": "#hash_fdccf1ff2edad88e",
+            "#sharedname": "#hash_fdccf1ff2edad88e"
+        },
+        {
+            "#bitindex": 63,
+            "#name": "#thirdperson",
+            "#sharedname": "#thirdperson"
+        }
+    ],
+    "#name": "#hash_fbfb9666bbdbe752",
+    "#sharedname": "#hash_7f94e81c1787ff7a"
+}

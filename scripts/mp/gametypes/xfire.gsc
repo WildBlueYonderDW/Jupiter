@@ -85,7 +85,7 @@ function main() {
     game["dialog"]["gametype"] = "dx_mp_mcut_mode_t141_name";
     if (scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924()) {
         game["dialog"]["gametype"] = "hc_" + game["dialog"]["gametype"];
-    } else if (getdvarint(@"hash_c00e244ea59d530e")) {
+    } else if (getdvarint(@"camera_thirdPerson")) {
         game["dialog"]["gametype"] = "thirdp_" + game["dialog"]["gametype"];
     }
     game["dialog"]["boost"] = "iw9_mtdm_mode_uktl_bost";
@@ -159,7 +159,7 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
     setdynamicdvar(@"hash_54b0839b770554b3", getmatchrulesdata("arenaData", "blastShieldMod"));
     setdynamicdvar(@"hash_928b4e51b473632c", getmatchrulesdata("arenaData", "blastShieldClamp"));
     setdynamicdvar(@"hash_9ad50234c5ffaf1d", getmatchrulesdata("arenaData", "winCondition"));
@@ -489,7 +489,7 @@ function onspawnfinished() {
 // Checksum 0x0, Offset: 0x2412
 // Size: 0x383
 function setteamhealthhud(isdisconnect) {
-    var_586dc9dc0cf668ad = getdvarint(@"hash_b1d561f9a9241e09", 100);
+    var_586dc9dc0cf668ad = getdvarint(@"scr_player_maxhealth", 100);
     alliesplayers = getteamdata("allies", "teamCount");
     if (alliesplayers) {
         level.alliesmaxhealth = getteamdata("allies", "teamCount") * var_586dc9dc0cf668ad;
@@ -975,14 +975,14 @@ function ontimelimitot() {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
                 points = getdvarint(@"hash_46a6b424af6acbc2");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x125>", points, 0);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
                 points = getdvarint(@"hash_86e14326e43c0115");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x12f>", points, 0);
                 break;

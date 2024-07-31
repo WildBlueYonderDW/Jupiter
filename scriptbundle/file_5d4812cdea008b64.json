@@ -1,0 +1,44 @@
+{
+    "#id": 121,
+    "#keys": [
+        {
+            "#key": "iw9_zm_round_number"
+        },
+        {
+            "#key": "iw9_zm_armor_tier"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_zm_legendary_covenants"
+        },
+        {
+            "#key": "iw9_zm_damage_covenants"
+        },
+        {
+            "#key": "iw9_ob_exfil_bitfield"
+        },
+        {
+            "#key": "iw9_essence_extracted"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_loot_id"
+        },
+        {
+            "#key": "iw9_zm_rarity"
+        },
+        {
+            "#key": "iw9_essence_spent"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_f092b02f3e8e2f",
+    "#sharedname": "#zm_exfil"
+}

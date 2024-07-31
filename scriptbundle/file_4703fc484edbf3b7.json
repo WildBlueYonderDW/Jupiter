@@ -1,0 +1,29 @@
+{
+    "#id": "slide_dive_shared_input_kbm",
+    "#description": "&OPTIONS/SLIDE_DIVE_SHARED_INPUT_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/INDEPENDENT"
+        },
+        {
+            "#reference": "&OPTIONS/SHARED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "slideDiveSharedInputKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_173c4e8772c9bacf"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_6b64be26edfc8205"
+        }
+    ],
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/SLIDE_DIVE_SHARED_INPUT",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_1d76a00eb93773c7"
+        }
+    ]
+}

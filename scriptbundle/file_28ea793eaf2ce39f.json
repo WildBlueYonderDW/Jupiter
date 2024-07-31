@@ -1,0 +1,329 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_ar_fecho",
+    "#hash_79839b907716ac41": "icon_weapon_ar_fecho",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_ar_fecho_v4",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_ar_fecho",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_assault",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_ar_fecho_v6",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2000,
+    "#botpersonality": "run_and_gun|cqb|camper",
+    "#lootid": 29324,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 1,
+    "#ref": "iw9_ar_fecho",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab751e309d92890": "semi_auto_fire_mode",
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/AR_FECHO",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/AR_FECHO",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault selectsemi ironsdefault",
+    "#asset": "iw9_ar_fecho_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_assault",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_fecho",
+                    "#lootid": 3392
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_p06",
+                    "#lootid": 1308
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_heavy_p06",
+                    "#lootid": 1007
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_p06",
+                    "#lootid": 850
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_p06",
+                    "#lootid": 947
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_p06",
+                    "#lootid": 3418
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "fecho_optics",
+                    "#lootid": 34381,
+                    "#challengeid": 18628,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_ob_1",
+                    "#challengeid": 22430
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_long_p06",
+                    "#lootid": 3637,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_frontpieces",
+                    "#lootid": 34382,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_p06",
+                    "#lootid": 3542,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_backpieces",
+                    "#lootid": 34383,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ass_p06",
+                    "#lootid": 3284,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_reargrips",
+                    "#lootid": 34384,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_heavy_p06",
+                    "#lootid": 1524,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_combs",
+                    "#lootid": 34385,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "fecho_gunperks",
+                    "#lootid": 34386,
+                    "#challengeid": 18629,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_ob_2",
+                    "#challengeid": 22435
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bipod_sml_p06",
+                    "#lootid": 34345,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_undermounts",
+                    "#lootid": 34387,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_muzzles",
+                    "#lootid": 34388,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_large_p06",
+                    "#lootid": 1860,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_magazines",
+                    "#lootid": 34389,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "fecho_extras",
+                    "#lootid": 34390,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_short_p06",
+                    "#lootid": 2529,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_aim_p06",
+                    "#lootid": 2920,
+                    "#challengeid": 18630,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_ob_3",
+                    "#challengeid": 22440
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_ergo_p06",
+                    "#lootid": 3485,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_tactical_p06",
+                    "#lootid": 2521,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_short2_p06",
+                    "#lootid": 1448,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_tactical_p06",
+                    "#lootid": 2630,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_xlarge_p06",
+                    "#lootid": 886,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p06",
+                    "#lootid": 3473,
+                    "#challengeid": 18631,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_ar_fecho_camo_ob_4",
+                    "#challengeid": 22445
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_ar_fecho_tuning",
+                    "#lootid": 32114,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        }
+    ],
+    "#displayorder": 84,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

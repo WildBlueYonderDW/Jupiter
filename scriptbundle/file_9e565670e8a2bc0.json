@@ -1,0 +1,14 @@
+{
+    "#hash_a726a2c00ca3bdad": 0,
+    "#hash_fe0b0c4257304fd0": 0,
+    "#hash_abcf20703f519ec7": 0,
+    "#starterloot": "brloot_domination_tablet",
+    "#cashreward": 100,
+    "#contracttime": 100,
+    "#hash_92e42e850baa0f1f": "0",
+    "#hash_2ecf8061caac39ca": "&MP_BR_INGAME/DOMINATION_CONTRACT",
+    "#enabled": 1,
+    "#hash_c0d0e22c4fa4799d": "ui_map_icon_ph_recon",
+    "#name": "dom_legacy",
+    "#rewardgroup": "domination"
+}

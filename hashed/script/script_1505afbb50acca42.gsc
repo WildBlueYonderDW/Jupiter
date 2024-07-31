@@ -14,7 +14,7 @@
 // Checksum 0x0, Offset: 0x16b
 // Size: 0x17
 function autoexec main() {
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"flybuy", &init);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_323498ba7f33cc71", &init);
 }
 
 // Namespace namespace_5efcec8ad1769dd1 / namespace_f562c6bd50b011a0

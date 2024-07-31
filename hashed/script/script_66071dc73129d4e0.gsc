@@ -18,7 +18,7 @@
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x15f
 // Size: 0x2a
-function autoexec callback_init() {
+function autoexec function_1a508c7664d1f6c1() {
     level waittill("mp_equipment_init");
     function_2fe1faaffe9ed832();
     level callback::add("force_field_deploy", &force_field_deploy);

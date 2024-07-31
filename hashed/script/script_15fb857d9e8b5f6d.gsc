@@ -30,8 +30,8 @@ function main() {
     var_18fd95d2dc389573 = &scripts\mp\gametypes\xfire::main;
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     scripts\mp\compass::setupminimap();
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
-    setdvar(@"hash_52e4ca82ec45d480", 0);
+    setdvar(@"r_umbraMinObjectContribution", 8);
+    setdvar(@"r_tessellationOverride", 0);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";

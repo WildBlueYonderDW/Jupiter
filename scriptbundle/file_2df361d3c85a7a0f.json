@@ -1,0 +1,23 @@
+{
+    "#id": 104,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_operator_id"
+        },
+        {
+            "#key": "iw9_revive_bitfield"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_1b8223d79b2ba5d8",
+    "#sharedname": "#revive"
+}

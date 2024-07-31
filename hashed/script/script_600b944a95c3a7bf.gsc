@@ -210,7 +210,7 @@ function function_793e8a72cedb8ef3(lootid) {
         itemref = lootinfo.itemref;
     }
     if (!isdefined(itemref)) {
-        if (getdvarint(@"hash_6d4a21dadd19744d", 0) == 1 && getdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv") == "mp/loot/br/default/loot_item_defs.csv") {
+        if (getdvarint(@"hash_6d4a21dadd19744d", 0) == 1 && getdvar(@"loot_table_name", "mp/loot/br/default/loot_item_defs.csv") == "mp/loot/br/default/loot_item_defs.csv") {
             itemref = "";
             if (isdefined(level.br_pickups.var_b13dc7e63676bbe7[lootid])) {
                 itemref = level.br_pickups.var_b13dc7e63676bbe7[lootid];
@@ -405,7 +405,7 @@ function function_9ca10c69808b00a5(var_25978461c6e4f61b) {
     if (!isdefined(var_25978461c6e4f61b)) {
         return false;
     }
-    return issubstr(getdvar(@"hash_90b976de573aecf2", ""), var_25978461c6e4f61b) || issubstr(getdvar(@"hash_ac347c5a6346b8ac", ""), var_25978461c6e4f61b);
+    return issubstr(getdvar(@"loot_table_filter", ""), var_25978461c6e4f61b) || issubstr(getdvar(@"hash_ac347c5a6346b8ac", ""), var_25978461c6e4f61b);
 }
 
 // Namespace loot / namespace_38b993c4618e76cd

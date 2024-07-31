@@ -464,7 +464,7 @@ function function_3eb69e3deebb567(owner, streakinfo, explodepos, traveltime, nuk
     }
     level.nukeinfo.bombs = [];
     drone = level.nukeinfo.drone;
-    nukegravity = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
+    nukegravity = (0, 0, -1 * getdvarint(@"bg_gravity", 800));
     explodeposlist = [explodepos - anglestoforward(drone.angles) * 2500, explodepos - anglestoforward(drone.angles) * 1000, explodepos + anglestoforward(drone.angles) * 1000, explodepos + anglestoforward(drone.angles) * 2500, explodepos];
     tracecontents = scripts\engine\trace::create_contents(0, 1, 1, 1);
     rightoffset = 500;
@@ -636,7 +636,7 @@ function nuke_launchmissile(owner, streakinfo, launchpos, explodepos, traveltime
             level thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_nuke", owner);
         }
     }
-    nukegravity = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
+    nukegravity = (0, 0, -1 * getdvarint(@"bg_gravity", 800));
     nukevelocity = (explodepos - 0.5 * nukegravity * squared(traveltime) - launchpos) / traveltime;
     level.nukeinfo.missile = magicgrenademanual(nukeweapon, launchpos, nukevelocity, traveltime);
     level.nukeinfo.missile setscriptablepartstate("launch", "on", 0);
@@ -662,7 +662,7 @@ function nuke_findunobstructedfiringinfo(nukestart, nukeend, var_cf90f734f1c3452
     collisioncontents = physics_createcontents(["physicscontents_vehicleclip", "physicscontents_missileclip", "physicscontents_clipshot"]);
     currentmin = -2000;
     currentmax = 2000;
-    nukegravity = (0, 0, -1 * getdvarint(@"hash_b5d7d39d32720e78", 800));
+    nukegravity = (0, 0, -1 * getdvarint(@"bg_gravity", 800));
     while (true) {
         var_be819573448d27bc = nukestart;
         var_969bf3922a5aa40b = var_be819573448d27bc + (0, 0, 5000);

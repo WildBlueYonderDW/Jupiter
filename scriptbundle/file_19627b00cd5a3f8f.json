@@ -1,0 +1,41 @@
+{
+    "#presets": [
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 16
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 18
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 22
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 26
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 28
+        },
+        {
+            "#precache": "MobileOnly",
+            "#size": 30
+        },
+        {
+            "#precache": "MobileOnly",
+            "#size": 34
+        },
+        {
+            "#precache": "AlwaysPrecache",
+            "#size": 70
+        },
+        {
+            "#precache": "AlwaysPrecacheSDF",
+            "#size": 54.4
+        }
+    ],
+    "#hash_bffd626f4a3adb09": 0
+}

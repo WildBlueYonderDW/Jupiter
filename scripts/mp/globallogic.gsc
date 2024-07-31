@@ -40,17 +40,17 @@ function init() {
         }
         scripts\mp\gamestaterestore::setupcallbacks();
     }
-    level.leanthread = getdvarint(@"hash_715685dae50de688", 0) == 1;
+    level.leanthread = getdvarint(@"scr_runlean_playerthread_count", 0) == 1;
     level.script = tolower(getdvar(@"hash_687fb8f9b7a23245"));
     level.gametype = scripts\cp_mp\utility\game_utility::getgametype();
-    level.systemlink = getdvarint(@"hash_a3ddb961100b5f47", 0) == 1;
+    level.systemlink = getdvarint(@"systemlink", 0) == 1;
     level.codcasterenabled = function_4e3caadf7e0c8a7a();
-    level.playermaxhealth = getdvarint(@"hash_b1d561f9a9241e09");
+    level.playermaxhealth = getdvarint(@"scr_player_maxhealth");
     level.splitscreen = issplitscreen();
-    level.onlinegame = getdvarint(@"hash_962400405f9f3c0b");
+    level.onlinegame = getdvarint(@"onlinegame");
     level.forcerankxp = getdvarint(@"hash_9c2d59c1962cac50", 0) == 1;
-    level.rankedmatch = level.onlinegame && !getdvarint(@"hash_485ef1ed1d39d3a3") || level.forcerankxp;
-    level.matchmakingmatch = level.onlinegame && !getdvarint(@"hash_485ef1ed1d39d3a3");
+    level.rankedmatch = level.onlinegame && !getdvarint(@"xblive_privatematch") || level.forcerankxp;
+    level.matchmakingmatch = level.onlinegame && !getdvarint(@"xblive_privatematch");
     level.playerxpenabled = level.matchmakingmatch || getdvarint(@"hash_37acf332efd205cc");
     level.weaponxpenabled = level.playerxpenabled;
     level.challengesallowed = level.playerxpenabled || getdvarint(@"hash_37acf332efd205cc");
@@ -67,7 +67,7 @@ function init() {
     level.objectivebased = 0;
     level.endgameontimelimit = 1;
     level.showingfinalkillcam = 0;
-    level.tispawndelay = getdvarint(@"hash_690fab6ee98f9bfa", 5);
+    level.tispawndelay = getdvarint(@"scr_tispawndelay", 5);
     level.halftimetype = "halftime";
     level.lastscorestatustime = 0;
     level.waswinning = "none";
@@ -145,10 +145,10 @@ function registerdvars() {
     if (getdvar(@"hash_e6afce2cf5cf7515") != "1") {
         setomnvar("ui_nuke_end_milliseconds", 0);
     }
-    setdvar(@"hash_a19c6a194a53f076", "");
-    setdvar(@"hash_a8ee1540ced18a88", 0);
-    setdvar(@"hash_8ecb43b0c41972de", 0);
-    setdvar(@"hash_e54438e2751cac0d", 1750);
+    setdvar(@"ui_danger_team", "");
+    setdvar(@"ui_inhostmigration", 0);
+    setdvar(@"ui_override_halftime", 0);
+    setdvar(@"compassMaxRange", 1750);
     setdvar(@"hash_687f6fe472201df1", 1);
     setdvar(@"hash_4e5b353bf84974a9", 1);
     var_ca395a3d2156b928 = getdvarint(@"hash_ff21d0d18916f3a1", 0);
@@ -156,10 +156,10 @@ function registerdvars() {
     case 0:
     case 2:
     case 3: 
-        setdvar(@"hash_c00e244ea59d530e", 0);
+        setdvar(@"camera_thirdPerson", 0);
         break;
     case 1: 
-        setdvar(@"hash_c00e244ea59d530e", 1);
+        setdvar(@"camera_thirdPerson", 1);
         break;
     }
     registerfalldamagedvars();
@@ -174,28 +174,28 @@ function registerfalldamagedvars() {
     if (function_e417d8ef1c70cbcb()) {
         if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
             if (getdvarint(@"hash_12ca000dd2976ebc", 0)) {
-                setdvar(@"hash_de79e5c6b8a17221", 100000000);
-                setdvar(@"hash_18e2dda6aaf07dc3", 100000001);
-                setdvar(@"hash_180a6f432cfb6644", 100000000);
-                setdvar(@"hash_5dfbfd642e45b4b2", 100000001);
+                setdvar(@"bg_fallDamageMinHeight", 100000000);
+                setdvar(@"bg_fallDamageMaxHeight", 100000001);
+                setdvar(@"bg_softLandingMinHeight", 100000000);
+                setdvar(@"bg_softLandingMaxHeight", 100000001);
             } else {
-                setdvar(@"hash_de79e5c6b8a17221", getdvarint(@"hash_94069a337a93a89b", 225));
-                setdvar(@"hash_18e2dda6aaf07dc3", getdvarint(@"hash_d11490616a51a529", 560));
-                setdvar(@"hash_180a6f432cfb6644", getdvarint(@"hash_99d9497632f068ba", 225));
-                setdvar(@"hash_5dfbfd642e45b4b2", getdvarint(@"hash_93f558c7badc14dc", 560));
+                setdvar(@"bg_fallDamageMinHeight", getdvarint(@"hash_94069a337a93a89b", 225));
+                setdvar(@"bg_fallDamageMaxHeight", getdvarint(@"hash_d11490616a51a529", 560));
+                setdvar(@"bg_softLandingMinHeight", getdvarint(@"hash_99d9497632f068ba", 225));
+                setdvar(@"bg_softLandingMaxHeight", getdvarint(@"hash_93f558c7badc14dc", 560));
             }
         } else {
-            setdvar(@"hash_de79e5c6b8a17221", getdvarint(@"hash_94069a337a93a89b", 225));
-            setdvar(@"hash_18e2dda6aaf07dc3", getdvarint(@"hash_d11490616a51a529", 590));
-            setdvar(@"hash_180a6f432cfb6644", getdvarint(@"hash_99d9497632f068ba", 225));
-            setdvar(@"hash_5dfbfd642e45b4b2", getdvarint(@"hash_93f558c7badc14dc", 590));
+            setdvar(@"bg_fallDamageMinHeight", getdvarint(@"hash_94069a337a93a89b", 225));
+            setdvar(@"bg_fallDamageMaxHeight", getdvarint(@"hash_d11490616a51a529", 590));
+            setdvar(@"bg_softLandingMinHeight", getdvarint(@"hash_99d9497632f068ba", 225));
+            setdvar(@"bg_softLandingMaxHeight", getdvarint(@"hash_93f558c7badc14dc", 590));
         }
         return;
     }
-    setdvar(@"hash_de79e5c6b8a17221", 225);
-    setdvar(@"hash_18e2dda6aaf07dc3", 375);
-    setdvar(@"hash_180a6f432cfb6644", 225);
-    setdvar(@"hash_5dfbfd642e45b4b2", 375);
+    setdvar(@"bg_fallDamageMinHeight", 225);
+    setdvar(@"bg_fallDamageMaxHeight", 375);
+    setdvar(@"bg_softLandingMinHeight", 225);
+    setdvar(@"bg_softLandingMaxHeight", 375);
 }
 
 // Namespace globallogic / scripts\mp\globallogic

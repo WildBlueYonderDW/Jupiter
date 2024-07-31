@@ -1,0 +1,17 @@
+{
+    "#id": 142,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#hash_d478bf9743727f",
+            "#sharedname": "#hash_d478bf9743727f"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_d477bf974370cc",
+            "#sharedname": "#hash_d477bf974370cc"
+        }
+    ],
+    "#name": "#hash_ff4ea58f59825909",
+    "#sharedname": "#hash_4a7f054e87253ca1"
+}

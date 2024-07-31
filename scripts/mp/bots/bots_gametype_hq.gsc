@@ -118,7 +118,7 @@ function bot_hq_think() {
     self botsetflag("grenade_objectives", 1);
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

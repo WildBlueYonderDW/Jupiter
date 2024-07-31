@@ -1,0 +1,22 @@
+{
+    "#hash_3d8dd5eabd3c3fb1": [
+        {
+            "#challengeref": "jup_wz_s5_redacted_1",
+            "#hash_13efca28714bb3df": "&CHALLENGE/WZ_S5_REDACTED_1_DESC"
+        },
+        {
+            "#challengeref": "jup_wz_s5_redacted_2",
+            "#hash_13efca28714bb3df": "&CHALLENGE/WZ_S5_REDACTED_2_DESC"
+        },
+        {
+            "#challengeref": "jup_wz_s5_redacted_3",
+            "#hash_13efca28714bb3df": "&CHALLENGE/WZ_S5_REDACTED_3_DESC"
+        },
+        {
+            "#challengeref": "jup_wz_s5_redacted_4",
+            "#hash_13efca28714bb3df": "&CHALLENGE/WZ_S5_REDACTED_4_DESC"
+        }
+    ],
+    "#name": "&MP_BR_FRONTEND/WZ_CHALLENGE_TYPE_REDACTED",
+    "#hash_9e6896b3dba79fd2": "icon_wz_challenges_redacted"
+}

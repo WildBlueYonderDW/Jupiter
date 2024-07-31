@@ -1,0 +1,96 @@
+{
+    "#objects": [
+        {
+            "#variant_object": {
+                "#xmodelname": "veh9_mil_air_jet_fighter_scale",
+                "#aligntarget": "scripted_node",
+                "#deletetype": "DeleteAlways",
+                "#animtree": {
+                    "#name": "script_model",
+                    "#id": 0
+                },
+                "#name": "Prop 1",
+                "#globaltype": "targetname",
+                "#shots": [
+                    {
+                        "#hash_e608c28a92676233": [
+                        ],
+                        "#hash_45d86f20e184e36a": [
+                            {
+                                "#hash_813e52880409c89d": {
+                                    "#name": "wz_br_jup_infil_s3_outro_default_jet_01@sbundle",
+                                    "#id": "anim#"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "#variant_type": "Types_Prop"
+        },
+        {
+            "#variant_object": {
+                "#xmodelname": "military_dmz_sam_site_missile_scripted_event",
+                "#aligntarget": "scripted_node",
+                "#deletetype": "DeleteAlways",
+                "#animtree": {
+                    "#name": "script_model",
+                    "#id": 0
+                },
+                "#name": "Prop 4",
+                "#globaltype": "targetname",
+                "#shots": [
+                    {
+                        "#hash_e608c28a92676233": [
+                        ],
+                        "#hash_45d86f20e184e36a": [
+                            {
+                                "#hash_813e52880409c89d": {
+                                    "#name": "wz_br_jup_infil_s3_outro_default_samsite_missile_01@sbundle",
+                                    "#id": "anim#"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "#variant_type": "Types_Prop"
+        },
+        {
+            "#variant_object": {
+                "#xmodelname": "veh9_mil_air_jet_fighter_scale",
+                "#aligntarget": "scripted_node",
+                "#deletetype": "DeleteAlways",
+                "#animtree": {
+                    "#name": "script_model",
+                    "#id": 0
+                },
+                "#name": "Prop 2",
+                "#globaltype": "targetname",
+                "#shots": [
+                    {
+                        "#hash_e608c28a92676233": [
+                        ],
+                        "#hash_45d86f20e184e36a": [
+                            {
+                                "#hash_813e52880409c89d": {
+                                    "#name": "wz_br_jup_infil_s3_outro_default_jet_02@sbundle",
+                                    "#id": "anim#"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "#variant_type": "Types_Prop"
+        }
+    ],
+    "#shots": [
+        {
+            "#variant_object": {
+                "#name": "shot_010"
+            },
+            "#variant_type": "Types_Shot"
+        }
+    ]
+}

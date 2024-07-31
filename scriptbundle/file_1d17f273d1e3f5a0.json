@@ -1,0 +1,44 @@
+{
+    "#hash_783f9e0d052b7007": [
+        {
+            "#hash_d8c79ee51c9021b6": "mp/compass_regions/compassregions_fogofwar_bigmap_default.csv",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_bigmap_default",
+            "#mapname": "#hash_258eaec5ec6cbbd5"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_smallmap_default",
+            "#mapname": "#hash_2086c3347385bdfd"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_sandbox_default",
+            "#mapname": "#hash_caad5c3575bf5fa3"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_sandbox_default",
+            "#mapname": "#hash_624132478a40c85b"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_sandbox_default",
+            "#mapname": "#hash_36bf6047718e729a"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_sandbox_default",
+            "#mapname": "#hash_14049b4c2975a4f7"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_sandbox_default",
+            "#mapname": "#hash_3066def43cd44694"
+        },
+        {
+            "#hash_d8c79ee51c9021b6": "",
+            "#hash_e65f27eeb523535f": "fogofwar_mapconfig_sandbox_default",
+            "#mapname": "#hash_1c1b0092ef7311ca"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "#id": "mantle_assist_tac_sprint_only_gamepad",
+    "#description": "&NULL/EMPTY",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "mantleAssistTacSprintOnlyGamepad",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        },
+        {
+            "#dvarname": "@hash_7e15ac7b143fb477",
+            "#type": "DVAR"
+        },
+        {
+            "#dvarname": "@hash_37469c5bbd6a1bcb",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&NULL/EMPTY"
+}

@@ -1,0 +1,41 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_green"
+        },
+        {
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_lethals",
+            "#mincount": 1
+        },
+        {
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals"
+        },
+        {
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals_zm"
+        },
+        {
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_container_duffel_bag_sublist",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_plate_carriers_green"
+        },
+        {
+            "#weight": 1200
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 300,
+            "#itemspawnentry": "ob_jup_item_armor_plate"
+        }
+    ]
+}

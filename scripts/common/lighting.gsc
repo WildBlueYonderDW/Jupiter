@@ -1354,9 +1354,9 @@ function function_9ce312d3d1b90fc4(var_d17bc90beaceba66, var_235ac5072a1ae788, v
             /#
                 level.var_9f347f3156d0dee3 = "<dev string:x4eb>";
             #/
-            done1 = function_830e692e8b173603(@"hash_960ef00238357bbc", state, var_6030244e11bf3e1b, strength_goal, var_235ac5072a1ae788, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
-            done2 = function_830e692e8b173603(@"hash_ed28298c207316ae", state, var_6030244e11bf3e1b, distortion_goal, var_d17bc90beaceba66, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
-            done3 = function_830e692e8b173603(@"hash_979b5474be3b9b47", state, var_6030244e11bf3e1b, radius_goal, var_b3c4e0e491f9176b, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
+            done1 = function_830e692e8b173603(@"r_mbRadialOverrideStrength", state, var_6030244e11bf3e1b, strength_goal, var_235ac5072a1ae788, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
+            done2 = function_830e692e8b173603(@"r_mbRadialOverrideDistortion", state, var_6030244e11bf3e1b, distortion_goal, var_d17bc90beaceba66, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
+            done3 = function_830e692e8b173603(@"r_mbRadialOverrideRadius", state, var_6030244e11bf3e1b, radius_goal, var_b3c4e0e491f9176b, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
             var_3b7da3be0a320c51 = done1 && done2 && done3;
             /#
                 if (var_3b7da3be0a320c51) {
@@ -1404,7 +1404,7 @@ function function_830e692e8b173603(dvar_name, state, var_6030244e11bf3e1b, stren
     is_done = 0;
     curr_strength = getdvarfloat(dvar_name);
     if (true) {
-        var_9fc794ffae3a33b6 = var_6030244e11bf3e1b / getdvarfloat(@"hash_11a6aaf18b50047b");
+        var_9fc794ffae3a33b6 = var_6030244e11bf3e1b / getdvarfloat(@"g_speed");
     } else {
         var_9fc794ffae3a33b6 = var_6030244e11bf3e1b / 340;
     }
@@ -1439,10 +1439,10 @@ function function_830e692e8b173603(dvar_name, state, var_6030244e11bf3e1b, stren
     /#
         if (var_235ac5072a1ae788 > 0) {
             dvar_short = "<dev string:x516>";
-            if (dvar_name == @"hash_ed28298c207316ae") {
+            if (dvar_name == @"r_mbRadialOverrideDistortion") {
                 dvar_short = "<dev string:x51d>";
             }
-            if (dvar_name == @"hash_979b5474be3b9b47") {
+            if (dvar_name == @"r_mbRadialOverrideRadius") {
                 dvar_short = "<dev string:x524>";
             }
             level.var_9f347f3156d0dee3 = dvar_short + "<dev string:x52b>" + var_9e9430cfada07d0e + "<dev string:x511>" + var_65ce6f8a79b7508 + "<dev string:x502>" + level.var_9f347f3156d0dee3;
@@ -1515,12 +1515,12 @@ function function_31c01ed170a03ed6(var_3ab4fd4794242e73, var_8a618ecfa14c2858, v
         var_896a8c43ef2cd38b[7] = (0, 0.5, 0.5);
     }
     if (isdefined(var_8a618ecfa14c2858)) {
-        noself_func("setsaveddvar", @"hash_63eb1893f96ac98d", var_c3b392000803f5c4);
-        noself_func("setsaveddvar", @"hash_e08232af8b8b695c", 6);
-        noself_func("setsaveddvar", @"hash_1dde331a8e0153d8", var_c3b392000803f5c4);
+        noself_func("setsaveddvar", @"sm_spotUpdateLimit", var_c3b392000803f5c4);
+        noself_func("setsaveddvar", @"sm_spotUpdateLimitDynLight", 6);
+        noself_func("setsaveddvar", @"sm_roundRobinPrioritySpotShadows", var_c3b392000803f5c4);
     }
     if (isdefined(spotdistcull)) {
-        noself_func("setsaveddvar", @"hash_8667c0bb90c5bfc3", spotdistcull);
+        noself_func("setsaveddvar", @"sm_spotDistCull", spotdistcull);
     }
     lights = getentarray(var_3ab4fd4794242e73, "script_noteworthy");
     permanent_lights = [];
@@ -1596,7 +1596,7 @@ function function_4bcc2f384d0be5d8() {
 // Checksum 0x0, Offset: 0x428d
 // Size: 0x66
 function dazed_effect(intensity, time) {
-    noself_func("setsaveddvar", @"hash_8fef9b7e4f880571", 1);
+    noself_func("setsaveddvar", @"r_mbEnable", 1);
     if (!isdefined(time)) {
         time = 3;
     }
@@ -1616,15 +1616,15 @@ function dazed_effect(intensity, time) {
 // Checksum 0x0, Offset: 0x42fb
 // Size: 0xb3
 function function_e1f5d98cfa1ab7a(time) {
-    noself_func("setsaveddvar", @"hash_ea4c44a08cd23d5d", 1);
-    noself_func("setsaveddvar", @"hash_c7590c5a3289a2d", 3);
-    noself_func("setsaveddvar", @"hash_960ef00238357bbc", 0.07);
+    noself_func("setsaveddvar", @"r_mbVelocityScale", 1);
+    noself_func("setsaveddvar", @"r_mbVelocityScaleViewModel", 3);
+    noself_func("setsaveddvar", @"r_mbRadialOverrideStrength", 0.07);
     wait time;
-    noself_func("setsaveddvar", @"hash_ea4c44a08cd23d5d", 0);
-    noself_func("setsaveddvar", @"hash_c7590c5a3289a2d", 0);
-    noself_func("setsaveddvar", @"hash_960ef00238357bbc", 0);
+    noself_func("setsaveddvar", @"r_mbVelocityScale", 0);
+    noself_func("setsaveddvar", @"r_mbVelocityScaleViewModel", 0);
+    noself_func("setsaveddvar", @"r_mbRadialOverrideStrength", 0);
     wait 0.05;
-    noself_func("setsaveddvar", @"hash_8fef9b7e4f880571", 0);
+    noself_func("setsaveddvar", @"r_mbEnable", 0);
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -1632,17 +1632,17 @@ function function_e1f5d98cfa1ab7a(time) {
 // Checksum 0x0, Offset: 0x43b6
 // Size: 0xd5
 function function_1a6f8798d7db1402(time) {
-    noself_func("setsaveddvar", @"hash_ea4c44a08cd23d5d", 2);
-    noself_func("setsaveddvar", @"hash_c7590c5a3289a2d", 2);
-    noself_func("setsaveddvar", @"hash_960ef00238357bbc", 0.05);
+    noself_func("setsaveddvar", @"r_mbVelocityScale", 2);
+    noself_func("setsaveddvar", @"r_mbVelocityScaleViewModel", 2);
+    noself_func("setsaveddvar", @"r_mbRadialOverrideStrength", 0.05);
     wait 0.1;
-    noself_func("setsaveddvar", @"hash_ea4c44a08cd23d5d", 1);
-    noself_func("setsaveddvar", @"hash_c7590c5a3289a2d", 1);
-    noself_func("setsaveddvar", @"hash_960ef00238357bbc", 0.007);
+    noself_func("setsaveddvar", @"r_mbVelocityScale", 1);
+    noself_func("setsaveddvar", @"r_mbVelocityScaleViewModel", 1);
+    noself_func("setsaveddvar", @"r_mbRadialOverrideStrength", 0.007);
     wait time;
-    noself_func("setsaveddvar", @"hash_960ef00238357bbc", 0);
+    noself_func("setsaveddvar", @"r_mbRadialOverrideStrength", 0);
     wait 0.05;
-    noself_func("setsaveddvar", @"hash_8fef9b7e4f880571", 0);
+    noself_func("setsaveddvar", @"r_mbEnable", 0);
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -1660,10 +1660,10 @@ function function_4593f6ae7d958614(time) {
 // Checksum 0x0, Offset: 0x44c5
 // Size: 0x76
 function function_c62d87226808cd1c(end_value, duration) {
-    start_value = getdvarfloat(@"hash_960ef00238357bbc");
+    start_value = getdvarfloat(@"r_mbRadialOverrideStrength");
     for (t = 0; t <= duration; t += 0.05) {
         time_fraction = t / duration;
-        noself_func("setsaveddvar", @"hash_960ef00238357bbc", math::lerp(start_value, end_value, time_fraction));
+        noself_func("setsaveddvar", @"r_mbRadialOverrideStrength", math::lerp(start_value, end_value, time_fraction));
         waitframe();
     }
 }
@@ -2204,19 +2204,19 @@ function function_24468c3e7aa94338() {
 // Checksum 0x0, Offset: 0x5aa4
 // Size: 0xbb
 function function_1fce2623d8fec063(time, targetsample) {
-    noself_func("setsaveddvar", @"hash_1048f749a8b7aa91", 1);
+    noself_func("setsaveddvar", @"sm_sunMoving", 1);
     currframe = 0;
     numframes = time * 20;
     var_93c5968061111907 = numframes - 1;
-    currsample = getdvarfloat(@"hash_9ab6a766fc4e0c06");
+    currsample = getdvarfloat(@"sm_sunSampleSizeNear");
     while (currframe < numframes) {
         var_c3c8ead438d06ca0 = (targetsample - currsample) * currframe / var_93c5968061111907;
         var_c3c8ead438d06ca0 += currsample;
-        noself_func("setsaveddvar", @"hash_9ab6a766fc4e0c06", var_c3c8ead438d06ca0);
+        noself_func("setsaveddvar", @"sm_sunSampleSizeNear", var_c3c8ead438d06ca0);
         currframe++;
         waitframe();
     }
-    noself_func("setsaveddvar", @"hash_1048f749a8b7aa91", 0);
+    noself_func("setsaveddvar", @"sm_sunMoving", 0);
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -2226,7 +2226,7 @@ function function_1fce2623d8fec063(time, targetsample) {
 function function_395761b4520b0c62(time, target_value) {
     level notify("changing_volumetricDepth");
     level endon("changing_volumetricDepth");
-    old_value = getdvar(@"hash_5a83a561cb4970b2");
+    old_value = getdvar(@"r_volumetricDepth");
     if (!isdefined(old_value) || target_value == old_value) {
         return;
     }
@@ -2236,10 +2236,10 @@ function function_395761b4520b0c62(time, target_value) {
     while (gettime() <= end_time_ms) {
         time_percentage = 1 - (end_time_ms - gettime()) / time_ms;
         var_f7c220750e1ce883 = math::lerp(old_value, target_value, time_percentage);
-        noself_func("setsaveddvar", @"hash_5a83a561cb4970b2", var_f7c220750e1ce883);
+        noself_func("setsaveddvar", @"r_volumetricDepth", var_f7c220750e1ce883);
         waitframe();
     }
-    noself_func("setsaveddvar", @"hash_5a83a561cb4970b2", target_value);
+    noself_func("setsaveddvar", @"r_volumetricDepth", target_value);
 }
 
 // Namespace lighting / scripts\common\lighting

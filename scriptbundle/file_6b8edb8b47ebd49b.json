@@ -1,0 +1,26 @@
+{
+    "#id": "joystick_inventory_navigation",
+    "#description": "&PLATFORM/JOYSTICK_INVENTORY_NAVIGATION_DESC",
+    "#labels": [
+        {
+            "#reference": "&PLATFORM/DPAD"
+        },
+        {
+            "#reference": "&PLATFORM/STICK"
+        }
+    ],
+    "#hash_a20785232d9c4057": "joystickInventoryNavEnabled",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/JOYSTICK_INVENTORY_NAVIGATION",
+    "#hash_c55c746ff4d8929b": 1
+}

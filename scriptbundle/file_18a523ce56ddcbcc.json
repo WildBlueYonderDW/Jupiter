@@ -1,0 +1,141 @@
+{
+    "#raritydef": "%hash_77dfb32d5fc2bc15",
+    "#pingvo": "#hash_c5eb56a131ee4d21",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 3,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/JUP_JP37_DM_KAPPA98",
+    "#worldmodel": "wpn_jup_wm_jp37_dm_kappa98",
+    "#rarity": 2,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                },
+                {
+                    "#attachment": "iw9_minireddot05_tall"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp37_dm_kappa98_scope"
+                },
+                {
+                    "#attachment": "jup_twofivex05"
+                },
+                {
+                    "#attachment": "fourx05"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp37_dm_kappa98_bar_hvy"
+                },
+                {
+                    "#attachment": "jup_jp37_dm_kappa98_bar_long"
+                },
+                {
+                    "#attachment": "jup_jp37_dm_kappa98_bar_short"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp37_dm_kappa98_stock_tac"
+                },
+                {
+                    "#attachment": "jup_jp37_dm_kappa98_stockno"
+                }
+            ],
+            "#slot": "backpiece"
+        },
+        {
+            "#includelist": [
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#slot": "muzzle"
+        },
+        {
+            "#slot": "reargrip"
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "comb_tactical_p18"
+                },
+                {
+                    "#attachment": "comb_ammo_p18"
+                },
+                {
+                    "#attachment": "comb_ergo_p18"
+                }
+            ],
+            "#slot": "trigger"
+        },
+        {
+            "#slot": "extra"
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "ammo_762n_fr"
+                },
+                {
+                    "#attachment": "ammo_762n_hp"
+                },
+                {
+                    "#attachment": "ammo_762n_tr"
+                },
+                {
+                    "#attachment": "ammo_762n_ap"
+                },
+                {
+                    "#attachment": "ammo_762n_op"
+                },
+                {
+                    "#attachment": "ammo_762n_hv"
+                },
+                {
+                    "#attachment": "ammo_762n_db"
+                }
+            ],
+            "#slot": "modifier"
+        }
+    ],
+    "#descstring": "&WEAPON/JUP_JP37_DM_KAPPA98",
+    "#ref": "jup_jp37_dm_kappa98",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "dm",
+    "#baseweapon": "jup_jp37_dm_kappa98_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_jup_jp37_dm_kappa98_mp",
+    "#scriptable": "%hash_54a7c84e362d13c5",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SN_BOLT_RIFLE"
+}

@@ -79,9 +79,9 @@ function main() {
 // Size: 0x66
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata(1);
-    setdynamicdvar(@"hash_85c3e7d7cf2f2af8", 1);
+    setdynamicdvar(@"scr_dm_winlimit", 1);
     registerwinlimitdvar("dm", 1);
-    setdynamicdvar(@"hash_4cfd4f3e5a0eba56", 1);
+    setdynamicdvar(@"scr_dm_roundlimit", 1);
     registerroundlimitdvar("dm", 1);
     setdynamicdvar(@"hash_eaf0f00090744c95", 0);
     registerhalftimedvar("dm", 0);
@@ -310,7 +310,7 @@ function onplayerconnect(player) {
                     points = var_f104804091b9dedf;
                 }
                 if (var_ff962a1182d547dc == -1 || var_f104804091b9dedf == -1) {
-                    points = getdvarint(@"hash_dba1d87860792cd4") - 1;
+                    points = getdvarint(@"scr_dm_scorelimit") - 1;
                 }
                 foreach (player in level.players) {
                     for (i = 0; i < points; i++) {

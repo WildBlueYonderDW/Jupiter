@@ -12,7 +12,7 @@ function main() {
     level._effect["vfx_museum_waterfall_mist"] = loadfx("vfx/iw9/level/mp_museum/vfx_museum_waterfall_mist.vfx");
     level._effect["vfx_museum_waterfall_top"] = loadfx("vfx/iw9/level/mp_museum/vfx_museum_waterfall_top.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

@@ -1,0 +1,82 @@
+{
+    "#hash_7e39414ce66b7776": {
+        "#fieldupgrade1": "super_recon_drone",
+        "#hash_7e39824ce66c0669": "none"
+    },
+    "#hash_c0936af6fe335d3c": {
+        "#fieldupgrade1": 1,
+        "#hash_7e39824ce66c0669": 1
+    },
+    "#hash_b3cbb30eb9cdf347": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none"
+    },
+    "#execution": "neck_stab",
+    "#gesture": "iw8_ges_plyr_gesture000",
+    "#perks": {
+        "#perk1": "specialty_huntmaster",
+        "#perk3": "specialty_covert_ops",
+        "#perk2": "specialty_scavenger_plus",
+        "#perkbonus": "specialty_null"
+    },
+    "#secondaryweapon": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "iw9_pi_decho",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    },
+    "#role": "role_demolition",
+    "#extrapower": {
+    },
+    "#equipment": {
+        "#primary": "equip_claymore",
+        "#secondary": "equip_hb_sensor"
+    },
+    "#loadoutname": "&MP_INGAME_ONLY/DEFAULT_CLASS_NAME_7",
+    "#wildcard": {
+        "#wildcard": "wildcard_none"
+    },
+    "#hash_d29422aa859a9c6": {
+    },
+    "#super": "none",
+    "#primaryweapon": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "iw9_sn_limax",
+        "#camo": "none",
+        "#attachment1": "bar_sn_long_p22",
+        "#attachment2": "mag_sn_large_p22",
+        "#attachment3": "pgrip_tac_p22",
+        "#attachment4": "stock_sn_heavy_p22",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    },
+    "#extraperks": {
+        "#perk1": "specialty_overwatch",
+        "#perk3": "none",
+        "#perk2": "none"
+    },
+    "#specialist": 1,
+    "#hash_d72c73f8cdd98f5d": {
+        "#perk5": "specialty_null",
+        "#perk4": "specialty_null",
+        "#perk7": "specialty_null",
+        "#perk6": "specialty_null",
+        "#perk1": "specialty_null",
+        "#perk3": "specialty_null",
+        "#perk2": "specialty_null"
+    }
+}

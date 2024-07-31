@@ -1,0 +1,23 @@
+{
+    "#id": "br_button_layout",
+    "#description": "&MENU/COLOR_INDICATOR_DESC",
+    "#hash_a20785232d9c4057": "gpadBRButtonsConfig",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        },
+        {
+            "#dvarname": "@hash_4fc3c7c8f1f1d020",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/BR_BUTTON_LAYOUT",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/BR_BUTTON_LAYOUT_DISABLED_DESC"
+}

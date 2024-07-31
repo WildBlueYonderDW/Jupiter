@@ -130,7 +130,7 @@ function main() {
     setomnvar("ui_bomb_timer_endtime_a", 0);
     /#
         if (getgametypenumlives() == 1) {
-            setdvar(@"hash_e723cc761de7b161", 2);
+            setdvar(@"scr_player_lastStand", 2);
         }
         setdevdvarifuninitialized(@"hash_3f3a15fb7e7c9b0", 0);
         thread function_8598880f9b913b55();
@@ -147,17 +147,17 @@ function main() {
 // Size: 0x18e
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_a38528b401241da8", getmatchrulesdata("cyberData", "empSpawn"));
-    setdynamicdvar(@"hash_75c66152feeaf80e", getmatchrulesdata("cyberData", "radarPingTime"));
-    setdynamicdvar(@"hash_c0a25843c920c4ce", getmatchrulesdata("cyberData", "persBombTimer"));
-    setdynamicdvar(@"hash_b00ce75fd0d5d769", getmatchrulesdata("cyberData", "detonateScore"));
-    setdynamicdvar(@"hash_b4c3a376c3c7fb9e", getmatchrulesdata("bombData", "bombTimer"));
-    setdynamicdvar(@"hash_ac70a9da7ed6e503", getmatchrulesdata("bombData", "plantTime"));
-    setdynamicdvar(@"hash_2267b7060ff04c06", getmatchrulesdata("bombData", "defuseTime"));
-    setdynamicdvar(@"hash_f020a63fa5f08136", getmatchrulesdata("bombData", "multiBomb"));
-    setdynamicdvar(@"hash_a2739716dc4f6e7c", getmatchrulesdata("carryData", "showEnemyCarrier"));
-    setdynamicdvar(@"hash_89e70fdb949bff03", getmatchrulesdata("carryData", "idleResetTime"));
-    setdynamicdvar(@"hash_2e66964b7b7ff414", getmatchrulesdata("carryData", "pickupTime"));
+    setdynamicdvar(@"scr_cyber_empspawn", getmatchrulesdata("cyberData", "empSpawn"));
+    setdynamicdvar(@"scr_cyber_radarpingtime", getmatchrulesdata("cyberData", "radarPingTime"));
+    setdynamicdvar(@"scr_cyber_persbombtimer", getmatchrulesdata("cyberData", "persBombTimer"));
+    setdynamicdvar(@"scr_cyber_detonatescore", getmatchrulesdata("cyberData", "detonateScore"));
+    setdynamicdvar(@"scr_cyber_bombtimer", getmatchrulesdata("bombData", "bombTimer"));
+    setdynamicdvar(@"scr_cyber_planttime", getmatchrulesdata("bombData", "plantTime"));
+    setdynamicdvar(@"scr_cyber_defusetime", getmatchrulesdata("bombData", "defuseTime"));
+    setdynamicdvar(@"scr_cyber_multibomb", getmatchrulesdata("bombData", "multiBomb"));
+    setdynamicdvar(@"scr_cyber_showenemycarrier", getmatchrulesdata("carryData", "showEnemyCarrier"));
+    setdynamicdvar(@"scr_cyber_idleresettime", getmatchrulesdata("carryData", "idleResetTime"));
+    setdynamicdvar(@"scr_cyber_pickuptime", getmatchrulesdata("carryData", "pickupTime"));
     setdynamicdvar(@"hash_484e617d6f7b7fa7", getmatchrulesdata("carryData", "manualDropEnabled"));
     setdynamicdvar(@"hash_4df16047bc4718d5", 0);
     registerhalftimedvar("cyber", 0);
@@ -1249,7 +1249,7 @@ function bombplanted(destroyedobj, team) {
     }
     explosionorigin = destroyedobj.visuals[0].origin;
     level.bombexploded = 1;
-    setdvar(@"hash_a19c6a194a53f076", "BombExploded");
+    setdvar(@"ui_danger_team", "BombExploded");
     if (isdefined(level.bombowner)) {
         destroyedobj.visuals[0] radiusdamage(explosionorigin, 512, 1, 1, level.bombowner, "MOD_EXPLOSIVE", "bomb_site_mp");
         level.bombowner incpersstat("destructions", 1);

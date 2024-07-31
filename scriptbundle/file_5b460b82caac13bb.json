@@ -1,0 +1,165 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_c0cb2eeb684c835c": 1,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_la_mike32",
+    "#hash_79839b907716ac41": "icon_weapon_la_mike32",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_5",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_la_mike32",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_projectile",
+    "#category": "&WEAPON/SUBCLASS_ID_5",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1500,
+    "#lootid": 11333,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 3,
+    "#ref": "iw9_la_mike32",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&PERKS/LA_MIKE32",
+    "#hash_696d08f2d8ca06f4": 0,
+    "#speedscale": 1,
+    "#name": "&WEAPON/LA_MIKE32",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "2",
+            "#priority": 1
+        },
+        {
+            "#season": "3",
+            "#priority": 1
+        },
+        {
+            "#season": "4",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "scope fastreload",
+    "#asset": "iw9_la_mike32_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_projectile",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_la_mike32_camo_1",
+                    "#bucket": 3
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 14
+        }
+    ],
+    "#displayorder": -1,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.9,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

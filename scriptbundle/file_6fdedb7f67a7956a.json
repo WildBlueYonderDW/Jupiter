@@ -1,0 +1,19 @@
+{
+    "#hash_56e33ad9fdf64080": 3,
+    "#challengeref": "jup_collection_bundle_japanesefood_mastery",
+    "#hash_fec27d5199cb14a5": "",
+    "#largeicon": "jup_store_collection_japanese_food_icon",
+    "#color": "0.94902 0.34902 0.294118 1",
+    "#hash_542e06b061849d85": 48469,
+    "#name": "&JUP_STORE/JUP_COLLECTION_JAPANESEFOOD",
+    "#bundles": [
+        {
+            "#asset": "jup_store_2041_weapon_marbled_wagyu_beef"
+        },
+        {
+            "#asset": "jup_store_2036_weapon_acrylic_ramen"
+        }
+    ],
+    "#icon": "jup_store_collection_japanese_food_icon_small",
+    "#visible": 1
+}

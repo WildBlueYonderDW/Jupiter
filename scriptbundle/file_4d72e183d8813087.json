@@ -1,0 +1,702 @@
+{
+    "#hash_2429767640c81111": [
+        {
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_02_unarmed"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 2,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_02_unarmed"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 3,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_02_unarmed"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 4,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter4",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_04_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_04_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_04_idle_02_unarmed"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 5,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter4",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_04_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_04_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_04_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter5",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_05_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_05_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_05_idle_02_unarmed"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 6,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter4",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_04_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_04_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_04_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter5",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_05_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_05_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_05_idle_02_unarmed"
+                },
+                {
+                    "#characterindex": "LobbyCharacter6",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_06_idle_02_unarmed",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_06_idle_02_unarmed",
+                    "#idleanim": "jup_fe_lobby_plow_player_06_idle_02_unarmed"
+                }
+            ]
+        }
+    ],
+    "#hash_3545fe1f66d59d82": [
+    ],
+    "#hash_87c1b89c42066265": [
+    ],
+    "#hash_d89d3ebfdac1eb9e": [
+        {
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_01"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 2,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_01"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 3,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_01"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 4,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter4",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_04_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_04_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_04_idle_01"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 5,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter4",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_04_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_04_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_04_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter5",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_05_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_05_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_05_idle_01"
+                }
+            ]
+        },
+        {
+            "#hash_4ad56e88e277012f": 6,
+            "#hash_c6b51ea04628b326": [
+                {
+                    "#characterindex": "LobbyCharacter1",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_01_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_01_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter2",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_02_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_02_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter3",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_03_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_03_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter4",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_04_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_04_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_04_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter5",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_05_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_05_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_05_idle_01"
+                },
+                {
+                    "#characterindex": "LobbyCharacter6",
+                    "#hash_3809f5435f2d5f58": "jup_fe_lobby_plow_player_06_idle_01",
+                    "#hash_6c0eb7f6116a44f2": "jup_fe_lobby_plow_player_06_idle_01",
+                    "#idleanim": "jup_fe_lobby_plow_player_06_idle_01"
+                }
+            ]
+        }
+    ],
+    "#hash_cec10f7f1c16f0e0": [
+        {
+            "#hash_f448ea3b08ec49f9": [
+                {
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 2,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 3,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 4,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter4",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 5,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter4",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter5",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 6,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter4",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter5",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter6",
+                            "#hash_3809f5435f2d5f58": "iw9_fe_lobby_dog_intro_sitting_01",
+                            "#hash_6c0eb7f6116a44f2": "iw9_fe_lobby_dog_mm_sitting_01",
+                            "#idleanim": "iw9_fe_lobby_dog_idle_sitting_01"
+                        }
+                    ]
+                }
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+                {
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 2,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 3,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 4,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter4",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 5,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter4",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter5",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        }
+                    ]
+                },
+                {
+                    "#hash_4ad56e88e277012f": 6,
+                    "#hash_c6b51ea04628b326": [
+                        {
+                            "#characterindex": "LobbyCharacter1",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter2",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter3",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter4",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter5",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        },
+                        {
+                            "#characterindex": "LobbyCharacter6",
+                            "#hash_3809f5435f2d5f58": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#hash_6c0eb7f6116a44f2": "jup_fe_mp_lobby_servo_skull_idle_01",
+                            "#idleanim": "jup_fe_mp_lobby_servo_skull_idle_01"
+                        }
+                    ]
+                }
+            ],
+            "#hash_706926c9b858067c": "servo_skull"
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        },
+        {
+            "#hash_f448ea3b08ec49f9": [
+            ],
+            "#hash_706926c9b858067c": ""
+        }
+    ]
+}

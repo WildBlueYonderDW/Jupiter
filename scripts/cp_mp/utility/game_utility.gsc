@@ -52,7 +52,7 @@ function getgametype() {
         if (isbrstylegametype()) {
             level.gametype = "br";
         } else {
-            level.gametype = tolower(getdvar(@"hash_8fe3271cd74f65a2"));
+            level.gametype = tolower(getdvar(@"g_gametype"));
         }
     }
     if (isinfectedgametype()) {
@@ -747,7 +747,7 @@ function shouldskipfirstraise() {
 // Size: 0x10b
 function getlocaleid() {
     if (!isdefined(level.localeid)) {
-        localeid = getdvarint(@"hash_6beec004cdf37c0", 0);
+        localeid = getdvarint(@"scr_localeID", 0);
         println("<dev string:x4d>" + localeid);
         if (localeid > 0) {
             level.localeid = "locale_" + localeid;

@@ -1,0 +1,23 @@
+{
+    "#id": 57,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_team_size"
+        },
+        {
+            "#key": "iw9_in_prematch"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_c4c51189f064dc65",
+    "#sharedname": "#death"
+}

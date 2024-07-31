@@ -10,6 +10,6 @@
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x13
 function main() {
-    setdvar(@"hash_2d74914ecc30bb62", 16);
+    setdvar(@"r_corpse_lighting_hack", 16);
 }
 

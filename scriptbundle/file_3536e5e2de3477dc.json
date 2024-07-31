@@ -1,0 +1,78 @@
+{
+    "#rendertarget": "None",
+    "#parameters": [
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "move",
+                        "#value": "&[{+GOSTAND}]",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "camera",
+                        "#value": "&[{+WEAPNEXT}]",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                }
+            ],
+            "#name": "actions"
+        }
+    ],
+    "#hash_679a5fd22385af82": [
+    ],
+    "#children": [
+    ],
+    "#hash_ef7dacdcddcfbf7f": 1024,
+    "#hash_a35573938e7a51c8": 1024,
+    "#widget": "MovementWidget",
+    "#states": [
+        {
+            "#animation": "Node",
+            "#name": "Node"
+        },
+        {
+            "#animation": "Prompt",
+            "#name": "Prompt"
+        },
+        {
+            "#animation": "PingSystem",
+            "#name": "PingSystem"
+        },
+        {
+            "#animation": "DefaultSequence",
+            "#name": "DefaultSequence"
+        },
+        {
+            "#animation": "CameraNode",
+            "#name": "CameraNode"
+        },
+        {
+            "#animation": "CameraNodeInteract",
+            "#name": "CameraNodeInteract"
+        },
+        {
+            "#animation": "Drop",
+            "#name": "Drop"
+        },
+        {
+            "#animation": "Drop2",
+            "#name": "Drop2"
+        },
+        {
+            "#animation": "DropInteract",
+            "#name": "DropInteract"
+        },
+        {
+            "#animation": "Drop2Interact",
+            "#name": "Drop2Interact"
+        }
+    ],
+    "#hash_363bada5bd71005e": 1,
+    "#assets": [
+    ]
+}

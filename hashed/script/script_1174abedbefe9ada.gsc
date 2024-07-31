@@ -304,7 +304,7 @@ function private function_68d3d5b73680c590() {
 // Checksum 0x0, Offset: 0x1421
 // Size: 0x33
 function private function_3cb6790904a3c7d1() {
-    wait max(180, getdvarint(@"hash_e022fd0199a95f84", 1800) - 180);
+    wait max(180, getdvarint(@"scr_br_timelimit", 1800) - 180);
     namespace_446fc987a980892f::playevent("radiation_winds_picking_up", level.players);
 }
 

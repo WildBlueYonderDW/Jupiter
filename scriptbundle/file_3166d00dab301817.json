@@ -1,0 +1,406 @@
+{
+    "#superfaction": "EAST",
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_bc01042053db4d10": "ui_select_confirm_aksel",
+    "#hash_b19983c46f4840dd": "ui_loot_operator_east_aksel_1_1",
+    "#image": "ui_operator_east_aksel_portrait_1_1_lg",
+    "#hash_445c00cff207c7fb": "&OPERATORS/WYATT_CODENAME",
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_3ccb25ac20637277": "2021-8-11 0-0-0 9",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_75399c3a44b02ed": "&OPERATORS/CITIZENSHIP_NORWEGIAN",
+    "#hash_47f268ee4202a95d": [
+    ],
+    "#rarity": "COMMON",
+    "#hash_5ffa5afe149a3c3e": "IW9|IW8|T9",
+    "#iconlarge": "ui_operator_east_aksel_portrait_1_1_lg",
+    "#hash_eb2aab5f94f4ff00": "KORTAC",
+    "#hash_6d3a791d65787ade": "jup_icon_operator_select_side_east_logo_med",
+    "#lootid": 11389,
+    "#voice": "wyat",
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,MGL",
+    "#fullname": "&OPERATORS/FULLNAME_ASKEL",
+    "#hash_5a44f25e9c36ec13": "BPOS",
+    "#hash_1422c913669eec7b": 1,
+    "#skins": [
+        {
+            "#skin": "aksel_eastern_a"
+        },
+        {
+            "#skin": "aksel_eastern_wrath"
+        },
+        {
+            "#skin": "aksel_eastern_guerrilla"
+        },
+        {
+            "#skin": "aksel_eastern_s3bp"
+        },
+        {
+            "#skin": "aksel_eastern_bc"
+        },
+        {
+            "#skin": "aksel_eastern_techno"
+        },
+        {
+            "#skin": "aksel_eastern_unmasked"
+        },
+        {
+            "#skin": "aksel_eastern_police"
+        },
+        {
+            "#skin": "heist_western_1"
+        },
+        {
+            "#skin": "og_eastern_1"
+        },
+        {
+            "#skin": "aksel_7_eastern"
+        }
+    ],
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_e71a77380dea8bd4": "mp_operator_wyatt",
+    "#hash_696d08f2d8ca06f4": 0,
+    "#suit": "iw9_suit_aksel_mp",
+    "#defaultquip": "wyatt_western_quip_3",
+    "#name": "&OPERATORS/AKSEL_EASTERN",
+    "#status": 1,
+    "#hash_fa30167859258cd": {
+        "#hash_abea7a88a20ffeee": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_idle_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_a5a96d45e0c88f99": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_r_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_886a4ddaa8b9f450": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_l_04@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_94b27d1a57d32442": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_l_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_200ae682f5505c57": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_r_02@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_d995cec47ea75535": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_r_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5048dd89b5bc9f03": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_l_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_c8a327ed4426576c": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_idle_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_6221f44d8fe4faea": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_l_02@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_cc69e3165175fb0": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_turn_r_04@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5a8b7778c7a43257": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_idle_04@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_383d55d17c9e08e": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_idle_02@sbundle",
+                "#id": "anim#"
+            }
+        }
+    },
+    "#hash_c7332df7c3119e67": "chr_menu_male_idle_01_AR",
+    "#faction": "%hash_3199b81a03b226d",
+    "#hash_1025dff40f62ddf2": 0,
+    "#icon": "ui_operator_east_aksel_portrait_1_1",
+    "#hash_2f61d452c5c6c955": {
+        "#hash_abea7a88a20ffeee": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_idle_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_a5a96d45e0c88f99": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_r_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_886a4ddaa8b9f450": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_l_04@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_94b27d1a57d32442": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_l_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_200ae682f5505c57": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_r_02@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_d995cec47ea75535": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_r_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5048dd89b5bc9f03": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_l_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_c8a327ed4426576c": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_idle_03@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_6221f44d8fe4faea": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_l_02@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_cc69e3165175fb0": {
+            "#starttime": 0,
+            "#blendtime": 0.3,
+            "#notetrack": "turn_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_turn_r_04@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5a8b7778c7a43257": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_idle_04@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_383d55d17c9e08e": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_hl_bundle_idle_02@sbundle",
+                "#id": "anim#"
+            }
+        }
+    },
+    "#background": "&OPERATORS/AKSEL_BIO",
+    "#hash_eb26157eab1f0c54": {
+        "#hash_3be34d362a26eb5c": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "fe_op_crib_male_01_killstreak_01_in@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_a9d0292b5bd85345": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "fe_op_crib_male_01_killstreak_01_out@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5c04ade49099de01": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "jup_fe_weapon_tab_player_01_idle_01_unarmed@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_a66db3a1af6f9e15": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "jup_fe_weapon_tab_player_01_idle_01_unarmed@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_76742ee6b70bb163": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "jup_fe_weapon_tab_player_01_idle_01_unarmed@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_90bd3ed023894cd0": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "jup_fe_weapon_tab_player_01_idle_01_unarmed@sbundle",
+                "#id": "anim#"
+            }
+        }
+    },
+    "#hash_f91a44e31cde7d97": "aksel_eastern_a",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#displayorder": 64,
+    "#hash_eb03d26087a4f62c": "ui_loot_operator_east_aksel_1_1_lg",
+    "#hash_e9f90ffd97e5f3bb": "&OPERATORS/LANGUAGE_NORWEGIAN",
+    "#defaultexecution": "execution_028",
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_921d80f0de7a996": {
+        "#hash_c1630c2b9fcfdb26": "iw9_fe_op_select_generic_male_east_intro_01_xcam",
+        "#hash_b3b7dfafb812f2c8": {
+            "#starttime": 0,
+            "#blendtime": 0.35,
+            "#anim": {
+                "#name": "iw9_fe_op_male_bundle_idle_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_fb0a57ac4315fddd": {
+            "#starttime": 0,
+            "#blendtime": 1,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_select_aksel_east_confirm_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_8ecd168a37d1eeed": {
+            "#starttime": 0,
+            "#blendtime": 0,
+            "#anim": {
+                "#name": "iw9_fe_op_select_aksel_east_intro_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_94ff54dd56740626": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_select_aksel_east_confirm_idle_out_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#weapon": "iw9_ar_schotel_mp+rec_schotel+bar_br_p05+stock_ar_p05_schotel+mag_br_p05+pgrip_p05+ammo_762n",
+        "#hash_76742ee6b70bb163": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_select_aksel_east_idle_01@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_d8152f093eba2748": {
+            "#starttime": 0,
+            "#blendtime": 0.4,
+            "#notetrack": "idle_blend",
+            "#anim": {
+                "#name": "iw9_fe_op_select_aksel_east_confirm_idle_01@sbundle",
+                "#id": "anim#"
+            }
+        }
+    }
+}

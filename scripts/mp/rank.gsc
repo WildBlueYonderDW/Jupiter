@@ -302,7 +302,7 @@ function onplayerconnect() {
         player.scorepointsqueue = 0;
         player.scoreeventqueue = [];
         player.postgamepromotion = 0;
-        player setclientdvar(@"hash_803bee4022a48b56", 0);
+        player setclientdvar(@"ui_promotion", 0);
         if (!isdefined(player.pers["summary"])) {
             player.pers["summary"] = [];
             player.pers["summary"]["xp"] = 0;
@@ -325,12 +325,12 @@ function onplayerconnect() {
             player.pers["aarData"]["recon_xp"] = 0;
             player.pers["aarData"]["use_featured_operator_skin_xp"] = 0;
         }
-        player setclientdvar(@"hash_cbb22e2fb1a57873", 0);
+        player setclientdvar(@"ui_opensummary", 0);
         if (isdefined(level.gametypebundle) && isdefined(level.gametypebundle.var_d20acad05758f0d8)) {
             player setclientdvar(@"hash_6662b40ecc02a63c", level.gametypebundle.var_d20acad05758f0d8 == "battleroyale_ftue");
         }
         if (level.playerxpenabled) {
-            partyxpscale = getdvarint(@"hash_4562364e09176965");
+            partyxpscale = getdvarint(@"online_mp_party_xpscale");
             isinparty = player getprivatepartysize() > 1;
             if (isinparty) {
                 player addrankxpmultiplier(partyxpscale, "online_mp_party_xpscale");
@@ -1122,7 +1122,7 @@ function flushscoreeventpopupqueueonspawn() {
 // Checksum 0x0, Offset: 0x3cf5
 // Size: 0x46
 function getscoreeventpriority(event) {
-    if (getdvarint(@"hash_a3a1cab75dca6cc6", 0) == 1) {
+    if (getdvarint(@"scr_disableScoreSplash", 0) == 1) {
         return 0;
     }
     value = getscoreinfocategory(event, #"priority");
@@ -1137,7 +1137,7 @@ function getscoreeventpriority(event) {
 // Checksum 0x0, Offset: 0x3d44
 // Size: 0x57
 function scoreeventalwaysshowassplash(event) {
-    if (getdvarint(@"hash_a3a1cab75dca6cc6", 0) == 1) {
+    if (getdvarint(@"scr_disableScoreSplash", 0) == 1) {
         return false;
     }
     if (istrue(level.var_488d247ae51e8eeb)) {
@@ -1155,7 +1155,7 @@ function scoreeventalwaysshowassplash(event) {
 // Checksum 0x0, Offset: 0x3da4
 // Size: 0x3a
 function scoreeventhastext(event) {
-    if (getdvarint(@"hash_a3a1cab75dca6cc6", 0) == 1) {
+    if (getdvarint(@"scr_disableScoreSplash", 0) == 1) {
         return false;
     }
     if (!istrue(getscoreinfocategory(event, #"hastext"))) {
@@ -1169,7 +1169,7 @@ function scoreeventhastext(event) {
 // Checksum 0x0, Offset: 0x3de7
 // Size: 0x2f1
 function scoreeventpopup(event, extraparam) {
-    if (getdvarint(@"hash_a3a1cab75dca6cc6", 0) == 1) {
+    if (getdvarint(@"scr_disableScoreSplash", 0) == 1) {
         return;
     }
     if (istrue(level.var_bb8596fb319eb83e)) {

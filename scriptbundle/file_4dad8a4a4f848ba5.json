@@ -1,0 +1,32 @@
+{
+    "#equipment2": "equip_smoke",
+    "#equipment1": "equip_frag",
+    "#fieldupgrade1": "none",
+    "#hash_7e39824ce66c0669": "none",
+    "#perk4": "specialty_null",
+    "#perk1": "specialty_blastshield",
+    "#perk3": "specialty_null",
+    "#perk2": "specialty_null",
+    "#secondaryweapon": {
+        "#hash_a5e6a8a5e3c7b581": "arena_weapon_pistol_jup_jp12_pi_mike93",
+        "#reticle": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    },
+    "#primaryweapon": {
+        "#hash_a5e6a8a5e3c7b581": "arena_weapon_ar_jup_jp25_ar_talpha95",
+        "#reticle": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    }
+}

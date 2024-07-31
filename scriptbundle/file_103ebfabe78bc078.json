@@ -1,0 +1,11 @@
+{
+    "#id": "film_grain_atten",
+    "#description": "&OPTIONS/FILM_GRAIN_ATTEN_DESC",
+    "#image": "jup_ui_options_image_filmgrain",
+    "#hash_ea45bc5a5e9ac302": 0.05,
+    "#hash_a20785232d9c4057": "filmGrainAttenuation",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#hash_df2c0bf51d7fb6ea": 0.05,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&OPTIONS/FILM_GRAIN_ATTEN"
+}

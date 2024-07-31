@@ -1,0 +1,42 @@
+{
+    "#elements": [
+        {
+            "#id": 1,
+            "#value": "bp_rubberbanding_cohort_season_3",
+            "#name": "#hash_53288f72a1030483",
+            "#sharedname": "#hash_23b978ff8f7c67e3"
+        },
+        {
+            "#id": 2,
+            "#value": "bp_rubberbanding_cohort_season_4",
+            "#name": "#hash_53289472a1030d02",
+            "#sharedname": "#hash_23b97dff8f7c7062"
+        },
+        {
+            "#id": 3,
+            "#value": "bp_token_grind_season_1",
+            "#name": "#hash_7192097302409fae",
+            "#sharedname": "#hash_af5c07793230128e"
+        },
+        {
+            "#id": 4,
+            "#value": "bp_token_grind_season_2",
+            "#name": "#hash_7192087302409dfb",
+            "#sharedname": "#hash_af5c0679323010db"
+        },
+        {
+            "#id": 5,
+            "#value": "fieldrep_challenge",
+            "#name": "#hash_de57b55ec5d3cc26",
+            "#sharedname": "#hash_93bf26019e59bbc6"
+        },
+        {
+            "#id": 6,
+            "#value": "bp_token_weekly_season_5",
+            "#name": "#hash_dc8f6b62438a892d",
+            "#sharedname": "#hash_485ba1468dde890d"
+        }
+    ],
+    "#name": "#hash_8765fea6a0e6a77c",
+    "#sharedname": "#hash_344b9ed84b668c5c"
+}

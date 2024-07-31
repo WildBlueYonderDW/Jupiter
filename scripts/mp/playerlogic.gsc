@@ -477,10 +477,10 @@ function waitandspawnclient(revivespawn) {
                         scripts\mp\utility\dialog::leaderdialogonplayer("hp_dead");
                         var_bcf42b30ba361835 = "waiting_for_hq";
                         if (isdefined(self.suicidespawndelay)) {
-                            timeuntilspawn -= getdvarfloat(@"hash_7f95444a17ecdec5");
+                            timeuntilspawn -= getdvarfloat(@"scr_hq_suicidespawndelay");
                             timeuntilspawn = max(0, timeuntilspawn);
                         }
-                    } else if (isdefined(self.suicidespawndelay) && getdvarfloat(@"hash_7f95444a17ecdec5") > 0 && level.zone.ownerteam == "neutral") {
+                    } else if (isdefined(self.suicidespawndelay) && getdvarfloat(@"scr_hq_suicidespawndelay") > 0 && level.zone.ownerteam == "neutral") {
                         var_bcf42b30ba361835 = "waiting_suicide_delay";
                         self.suicidespawndelay = undefined;
                     }
@@ -1074,7 +1074,7 @@ function spawnplayer(fauxspawn, revivespawn) {
     self.scorestreakvariantattackerinfo = undefined;
     self.cratemantle = undefined;
     self.var_4a2f2f50a9020e2e = undefined;
-    if (getdvarint(@"hash_f16ba8db72f34fc3", 0) != 0) {
+    if (getdvarint(@"scr_game_forceuav", 0) != 0) {
         level thread scripts\cp_mp\killstreaks\uav::function_c11936b9c6c3a076(self);
     }
     /#
@@ -1233,7 +1233,7 @@ function spawnplayer(fauxspawn, revivespawn) {
     thread scripts\cp_mp\challenges::onspawn();
     sfov = getdvar(@"hash_f2bdd0a9974968aa", "65");
     if (self isconsoleplayer()) {
-        self setclientdvar(@"hash_df1dc712c4a91588", sfov);
+        self setclientdvar(@"cg_fov", sfov);
     }
     if (isdefined(self.spawndata.spawnpoint)) {
         if (!istrue(self.shouldgetnewspawnpoint)) {
@@ -1339,7 +1339,7 @@ function spawnplayer(fauxspawn, revivespawn) {
             game["life_count"]++;
         }
         self.lastmatchdatakillstreakindex = -1;
-        if (getdvarint(@"hash_4ba1427c86b79dc5") != 0) {
+        if (getdvarint(@"online_matchdata_enabled") != 0) {
             setmatchdata("lifeCount", game["life_count"]);
         }
     }
@@ -1392,7 +1392,7 @@ function spawnplayer(fauxspawn, revivespawn) {
             }
         }
     }
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdPerson")) {
         setthirdpersondof(1);
     }
     if (isai(self)) {
@@ -1880,9 +1880,9 @@ function spawnspectatormapcam(cameraoverride) {
         return;
     }
     if (level.splitscreen || self issplitscreenplayer()) {
-        self setclientdvars(@"hash_682a9bc40f96ca4a", "0.65");
+        self setclientdvars(@"cg_fovScale", "0.65");
     } else {
-        self setclientdvars(@"hash_682a9bc40f96ca4a", "1");
+        self setclientdvars(@"cg_fovScale", "1");
     }
     self setclientomnvar("ui_mapshot_camera", 1);
     self lerpfovbypreset("mapflyover");
@@ -2360,7 +2360,7 @@ function spawnintermission(spawnpoint, sessionstate, everyonehearseveryone) {
         _freezecontrols(1, undefined, "spawnIntermission");
     }
     if (everyonehearseveryone) {
-        self setclientdvar(@"hash_cc2997fd2acb23e0", 1);
+        self setclientdvar(@"cg_everyoneHearsEveryone", 1);
     }
     if (isdefined(level.finalkillcam_winner) && level.finalkillcam_winner != "none" && isdefined(level.match_end_delay) && waslastround() && !istrue(level.var_286c2c7b34d03b04)) {
         wait level.match_end_delay;
@@ -2473,7 +2473,7 @@ function callback_playerdisconnect(reason) {
     self.disconnecting = 1;
     playerstats = function_358a3ae71b7d1935(self);
     self function_fe84f716b4611373(playerstats);
-    if (getdvarint(@"hash_4ba1427c86b79dc5") != 0) {
+    if (getdvarint(@"online_matchdata_enabled") != 0) {
         playercountleft = getmatchdata("commonMatchData", "player_count_left");
         playercountleft++;
         setmatchdata("commonMatchData", "player_count_left", playercountleft);
@@ -2626,11 +2626,11 @@ function removeplayerondisconnect() {
 // Size: 0x55
 function initclientdvarssplitscreenspecific() {
     if (level.splitscreen || self issplitscreenplayer()) {
-        self setclientdvars(@"hash_682a9bc40f96ca4a", "0.75");
+        self setclientdvars(@"cg_fovScale", "0.75");
         setdvar(@"hash_d18838f3e4b65d16", 0);
         return;
     }
-    self setclientdvars(@"hash_682a9bc40f96ca4a", "1");
+    self setclientdvars(@"cg_fovScale", "1");
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic
@@ -2638,33 +2638,33 @@ function initclientdvarssplitscreenspecific() {
 // Checksum 0x0, Offset: 0x8fbc
 // Size: 0x1fe
 function initclientdvars() {
-    setdvar(@"hash_5d474d39e096f8f1", 1);
-    setdvar(@"hash_f17e1982c2ef27b", 1);
+    setdvar(@"cg_drawCrosshair", 1);
+    setdvar(@"cg_drawCrosshairNames", 1);
     if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19()) {
-        setdvar(@"hash_5d474d39e096f8f1", 0);
-        setdvar(@"hash_f17e1982c2ef27b", 1);
+        setdvar(@"cg_drawCrosshair", 0);
+        setdvar(@"cg_drawCrosshairNames", 1);
     }
     if (isdefined(level.alwaysdrawfriendlynames) && level.alwaysdrawfriendlynames) {
-        setdvar(@"hash_721a6fa1822b17d9", 1);
+        setdvar(@"cg_drawFriendlyNamesAlways", 1);
     } else {
-        setdvar(@"hash_721a6fa1822b17d9", 0);
+        setdvar(@"cg_drawFriendlyNamesAlways", 0);
     }
-    self setclientdvars(@"hash_9cb529b37532dcc4", 1);
+    self setclientdvars(@"cg_drawSpectatorMessages", 1);
     initclientdvarssplitscreenspecific();
     if (getgametypenumlives()) {
         if (level.teambased) {
-            self setclientdvars(@"hash_dec9da49c06646d3", 0, @"hash_db351fce243e78e8", 1, @"hash_7cbab070003d0ed7", 1, @"hash_e1cd4a058f3ed363", 0);
+            self setclientdvars(@"cg_deadChatWithDead", 0, @"cg_deadChatWithTeam", 1, @"cg_deadHearTeamLiving", 1, @"cg_deadHearAllLiving", 0);
         } else {
-            self setclientdvars(@"hash_dec9da49c06646d3", 1, @"hash_db351fce243e78e8", 0, @"hash_7cbab070003d0ed7", 0, @"hash_e1cd4a058f3ed363", 0);
+            self setclientdvars(@"cg_deadChatWithDead", 1, @"cg_deadChatWithTeam", 0, @"cg_deadHearTeamLiving", 0, @"cg_deadHearAllLiving", 0);
         }
     } else {
-        self setclientdvars(@"hash_dec9da49c06646d3", 0, @"hash_db351fce243e78e8", 1, @"hash_7cbab070003d0ed7", 1, @"hash_e1cd4a058f3ed363", 0);
+        self setclientdvars(@"cg_deadChatWithDead", 0, @"cg_deadChatWithTeam", 1, @"cg_deadHearTeamLiving", 1, @"cg_deadHearAllLiving", 0);
     }
     if (level.teambased) {
-        self setclientdvars(@"hash_cc2997fd2acb23e0", 0);
+        self setclientdvars(@"cg_everyoneHearsEveryone", 0);
     }
     self setclientdvar(@"hash_b21f1157c582ff15", 1);
-    self setclientdvar(@"hash_df1dc712c4a91588", 65);
+    self setclientdvar(@"cg_fov", 65);
     self setclientdvar(@"hash_71c6c0b8428e44a7", 0);
     if (getdvarint(@"hash_8662c4d785d46fd6")) {
         for (i = 0; i < 6; i++) {
@@ -3146,7 +3146,7 @@ function callback_playerconnect() {
         analyticsstreamerlogfilewritetobuffer("J;" + self.guid + ";" + self getentitynumber() + ";" + self.name + "\n");
     }
     self logstatmatchguid();
-    if (getdvarint(@"hash_4ba1427c86b79dc5") != 0) {
+    if (getdvarint(@"online_matchdata_enabled") != 0) {
         playercount = getmatchdata("commonMatchData", "player_count");
         if (firstconnect) {
             playercount++;
@@ -3223,7 +3223,7 @@ function callback_playerconnect() {
     scripts\cp_mp\utility\player_utility::addtodismembermentlist();
     if (game["state"] == "postgame") {
         self.connectedpostgame = 1;
-        self setclientdvars(@"hash_9cb529b37532dcc4", 0);
+        self setclientdvars(@"cg_drawSpectatorMessages", 0);
         self visionsetfadetoblackforplayer("", 0.25);
         spawnintermission();
         return;
@@ -4132,7 +4132,7 @@ function resetuiomnvarscommon() {
 // Size: 0x5f
 function resetuidvarsonconnect() {
     resetuiomnvarscommon();
-    self setclientdvar(@"hash_37165bc532972906", 0);
+    self setclientdvar(@"ui_eyes_on_end_milliseconds", 0);
     scripts\mp\hud_message::function_f004ef4606b9efdc("hide_match_hint");
     self setclientomnvar("post_game_state", 0);
     if (gameflag("prematch_done")) {
@@ -4148,7 +4148,7 @@ function resetuidvarsonconnect() {
 // Size: 0x1a
 function resetuidvarsonspectate() {
     resetuiomnvarscommon();
-    self setclientdvar(@"hash_37165bc532972906", 0);
+    self setclientdvar(@"ui_eyes_on_end_milliseconds", 0);
 }
 
 // Namespace playerlogic / scripts\mp\playerlogic

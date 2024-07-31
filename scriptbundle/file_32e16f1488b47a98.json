@@ -1,0 +1,43 @@
+{
+    "#hash_b497f796764b5aca": "icon_social_game_jupiter",
+    "#description": "&PLAYLIST/EXPERIMENTAL_DESC",
+    "#hash_4c7b2029c057b03d": "&",
+    "#hash_985a69068a5abc2e": -98,
+    "#hash_c57e43bae5ee857e": "&LUA_MENU/MP",
+    "#hash_2d1f0b41beab8eec": [
+        {
+            "#image": "jup_ui_menu_keyart_experimental_button",
+            "#hash_585d7c32dd1ecf2d": "",
+            "#squareimage": "jup_ui_menu_keyart_experimental_button_square"
+        }
+    ],
+    "#hash_8c46ff817297a0ad": 0,
+    "#hash_87dafe6557cd72d0": -238,
+    "#hash_a3f56ed5036d2873": 100,
+    "#hash_a025432b1c6225d6": 1,
+    "#hash_3530d0f6f254fa16": "Right",
+    "#hash_61b9f20a7c31ed0d": [
+        {
+            "#image": "jup_ui_menu_keyart_experimental_00"
+        }
+    ],
+    "#hash_2735670779551179": 1000,
+    "#hash_a0740a16d2fe9191": "hud_splash_gamemode_circle",
+    "#hash_629546280460f50c": 0,
+    "#hash_cd578f853f67617c": 0,
+    "#ref": "experimental",
+    "#hash_2708adbf112c01a4": "&",
+    "#hash_da1880c9fc78a998": "&LUA_MENU/SELECT",
+    "#flavortext": "&LUA_MENU/NEW_FOR_MWIII",
+    "#hash_2a25db28eb74417e": "None",
+    "#hash_c65a1a36959daa2": 1,
+    "#hash_82bf6e650fe3a724": 0.05,
+    "#video": "jup_menu_backplate_experimental",
+    "#name": "&PLAYLIST/EXPERIMENTAL_NAME",
+    "#hash_daef6899e21bce61": 0,
+    "#hash_6dbccf3b3727d94f": 0,
+    "#hash_42f7cfb8e3887d50": "Common.TechnicalWhite",
+    "#icon": "jup_icon_mode_mp_experimental",
+    "#modename": "&MENU/MULTIPLAYER",
+    "#hash_21b5bb981fd4f9f3": 0
+}

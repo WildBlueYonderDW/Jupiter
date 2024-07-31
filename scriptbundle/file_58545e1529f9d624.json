@@ -1,0 +1,21 @@
+{
+    "#raritydef": "%hash_9163bc19dbb168d",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxcount": 1,
+    "#titlestring": "&MP_DMZ_LOCKS/OB_S5_RIFT_RUN_TOWER_ROOF_KEY_NAME",
+    "#rarity": 4,
+    "#descstring": "&MP_DMZ_LOCKS/OB_S5_RIFT_RUN_TOWER_ROOF_DESC",
+    "#ref": "loot_key_tower_roof_worn",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_c45ab86564429b52",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "key",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_e605c78dcec01abb",
+    "#inventorytype": "Stored",
+    "#icon": "hud_icon_loot_key_01_worn",
+    "#scriptable": "%hash_336845c7a196721e",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KEY"
+}

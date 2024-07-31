@@ -41,7 +41,7 @@ function threat_sight_set_dvar(enabled) {
     if (enabled && !function_7a21aa652f0613b0()) {
         return;
     }
-    setsaveddvar(@"hash_a9f8dfe902285d4a", enabled);
+    setsaveddvar(@"ai_threatSight", enabled);
     level thread threat_sight_set_dvar_display(enabled);
 }
 
@@ -56,7 +56,7 @@ function threat_sight_set_dvar_display(enabled) {
         wait 1;
     }
     if (getdvarint(@"hash_5b6bd7dba9e1513e", 0)) {
-        setsaveddvar(@"hash_dfbef9bc86d93b90", enabled);
+        setsaveddvar(@"ai_threatSightDisplay", enabled);
     }
     setdvar(@"hash_21b72d8c9ff7a1b3", enabled);
 }
@@ -66,7 +66,7 @@ function threat_sight_set_dvar_display(enabled) {
 // Checksum 0x0, Offset: 0x389
 // Size: 0x38
 function threat_sight_enabled() {
-    if (!getdvarint(@"hash_a9f8dfe902285d4a")) {
+    if (!getdvarint(@"ai_threatSight")) {
         return 0;
     }
     if (self == level) {
@@ -169,7 +169,7 @@ function function_468da1365698eabf() {
         waitframe();
     }
     while (true) {
-        if (getdvarfloat(@"hash_cc254dc67e7fede3") <= 0) {
+        if (getdvarfloat(@"ai_threatSightFakeThreat") <= 0) {
             foreach (player in level.players) {
                 if (!isalive(player) || !isdefined(player.stealth)) {
                     continue;
@@ -195,7 +195,7 @@ function function_3e245e55717e286a() {
         waitframe();
     }
     while (true) {
-        if (getdvarfloat(@"hash_cc254dc67e7fede3") <= 0) {
+        if (getdvarfloat(@"ai_threatSightFakeThreat") <= 0) {
             foreach (player in level.players) {
                 if (!isalive(player) || !isdefined(player.stealth)) {
                     continue;
@@ -214,10 +214,10 @@ function function_3e245e55717e286a() {
 function threat_sight_fake(origin, amount) {
     self notify("threat_sight_fake");
     self endon("threat_sight_fake");
-    setsaveddvar(@"hash_cc254dc67e7fede3", amount);
-    setsaveddvar(@"hash_8c00dc8a5bc93079", origin[0]);
-    setsaveddvar(@"hash_8c00db8a5bc92e46", origin[1]);
-    setsaveddvar(@"hash_8c00da8a5bc92c13", origin[2]);
+    setsaveddvar(@"ai_threatSightFakeThreat", amount);
+    setsaveddvar(@"ai_threatSightFakeX", origin[0]);
+    setsaveddvar(@"ai_threatSightFakeY", origin[1]);
+    setsaveddvar(@"ai_threatSightFakeZ", origin[2]);
     var_3d4b09d94df0885a = function_910a912f327b8d34(self);
     while (amount > 0) {
         thread threat_sight_player_sight_audio(1, max(var_3d4b09d94df0885a, amount));

@@ -1,0 +1,286 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp38_sh_spapa12_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp38_sh_spapa12_mp",
+    "#platform": "platform_iw9_sh_mbravo",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_1",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_sh_mbravo_v4",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp38_sh_spapa12_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+        {
+            "#category": "PUMPGRIP"
+        },
+        {
+            "#category": "PUMP"
+        }
+    ],
+    "#menuclass": "weapon_shotgun",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_sh_mbravo_v6",
+    "#category": "&WEAPON/SUBCLASS_ID_1",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1200,
+    "#lootid": 58072,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 4,
+    "#ref": "jup_jp38_sh_spapa12",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "pump_action_fire_mode",
+    "#desc": "&PERKS/JUP_JP38_SH_SPAPA12",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/JUP_JP38_SH_SPAPA12",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "4",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag guardrail ironsdefault",
+    "#asset": "jup_jp38_sh_spapa12_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_shotgun",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_bar_long_hvy",
+                    "#lootid": 58062,
+                    "#challengeid": 36396
+                },
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_frontpieces",
+                    "#lootid": 58027,
+                    "#challengeid": 36417
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_optics",
+                    "#lootid": 58030
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_pgrip_aim",
+                    "#lootid": 58066
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_reargrips",
+                    "#lootid": 58033
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_stock_hvy",
+                    "#lootid": 65847
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_backpieces",
+                    "#lootid": 58028
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_vert_09",
+                    "#lootid": 57062
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_undermounts",
+                    "#lootid": 58031
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_choke_sh05",
+                    "#lootid": 30267,
+                    "#challengeid": 36397
+                },
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_muzzles",
+                    "#lootid": 58032,
+                    "#challengeid": 36418
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_gunperks",
+                    "#lootid": 58036
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_spapa12_ammo_12g_br",
+                    "#lootid": 47739
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_spapa12_ammo_12g_he",
+                    "#lootid": 978
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_spapa12_ammo_12g_sl",
+                    "#lootid": 2497
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_extras",
+                    "#lootid": 58035
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_pgrip_ass",
+                    "#lootid": 58067,
+                    "#challengeid": 36398
+                },
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_ob_3",
+                    "#challengeid": 36419
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_stockno",
+                    "#lootid": 65849
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_bar_short_hvy",
+                    "#lootid": 65845
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_pgrip_tac",
+                    "#lootid": 58068
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_bar_long",
+                    "#lootid": 65844
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp38_sh_spapa12_stock_light",
+                    "#lootid": 65848,
+                    "#challengeid": 36399
+                },
+                {
+                    "#challengeref": "jup_jp38_sh_spapa12_camo_ob_4",
+                    "#challengeid": 36420
+                },
+                {
+                }
+            ],
+            "#level": 14
+        }
+    ],
+    "#displayorder": 1,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "#id": "scoreboard_kbm",
+    "#description": "&OPTIONS/SCOREBOARD_DESC",
+    "#labels": [
+        {
+            "#reference": "&GAME/HOLD"
+        },
+        {
+            "#reference": "&GAME/TOGGLE"
+        }
+    ],
+    "#hash_a20785232d9c4057": "toggleScoreboardKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_41859cb5453bd19c"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&MENU/SCOREBOARD_SETTING",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/SCOREBOARD_DISABLED_DESC"
+}

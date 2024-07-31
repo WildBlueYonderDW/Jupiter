@@ -1,0 +1,20 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_sublist_chemist_bodyguard",
+            "#mincount": 1
+        },
+        {
+            "#weight": 90
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_tactical_snapshot",
+            "#mincount": 1
+        }
+    ]
+}

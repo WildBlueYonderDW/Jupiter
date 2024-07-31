@@ -466,14 +466,14 @@ function function_42b070fb8d72b5f8() {
         function_414b65c7174581d1("mp_mode_get_high", "axis");
         return;
     }
-    if (self.musicpack != 1 && getdvarint(@"hash_71ef9b867531fea1") > 4) {
-        if (getdvarint(@"hash_71ef9b867531fea1") == 5) {
+    if (self.musicpack != 1 && getdvarint(@"current_season") > 4) {
+        if (getdvarint(@"current_season") == 5) {
             function_414b65c7174581d1("mp_season05", "allies");
             function_414b65c7174581d1("mp_season05", "axis");
             if (getgametype() == "xfire" || getgametype() == "warrior") {
                 function_414b65c7174581d1("mp_season05", "team_three");
             }
-        } else if (getdvarint(@"hash_71ef9b867531fea1") == 6) {
+        } else if (getdvarint(@"current_season") == 6) {
             function_414b65c7174581d1("mp_season06", "allies");
             function_414b65c7174581d1("mp_season06", "axis");
             if (getgametype() == "xfire" || getgametype() == "warrior") {
@@ -1616,7 +1616,7 @@ function gamewinnerdialog() {
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
         return;
     }
-    if (getdvar(@"hash_e65e9a96eb2ff62b") == "wm") {
+    if (getdvar(@"ui_gametype") == "wm") {
         return;
     }
     if (isplayer(winner) && !level.teambased) {

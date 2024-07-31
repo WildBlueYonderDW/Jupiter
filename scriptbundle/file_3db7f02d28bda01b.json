@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_77dfb32d5fc2bc15",
+    "#pingvo": "#hash_3d21579f0eb6fdb",
+    "#hash_88aff7a87289757d": 0,
+    "#maxcount": 1,
+    "#titlestring": "&EQUIPMENT/GEIGER_COUNTER",
+    "#hash_bbae53787b1abf3e": 1,
+    "#hash_13fc3679e0d849db": 1,
+    "#rarity": 5,
+    "#descstring": "&EQUIPMENT/GEIGER_COUNTER_DESC",
+    "#ref": "equip_geigercounter",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_617eac73db6652c2",
+    "#lootidtype": "equipment",
+    "#hash_8464122fb6575536": 1,
+    "#type": "tactical",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_eb3e145cf5d8b49e",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_equipment_geiger",
+    "#scriptable": "%hash_153ed170fe2d98c5"
+}

@@ -1,0 +1,28 @@
+{
+    "#visibilitylist": [
+        {
+            "#visibility": "STANDARD",
+            "#hash_9128096ee0aff295": "#weapons"
+        },
+        {
+            "#visibility": "STANDARD",
+            "#hash_9128096ee0aff295": "#challenges"
+        },
+        {
+            "#visibility": "STANDARD",
+            "#hash_9128096ee0aff295": "#operators"
+        },
+        {
+            "#visibility": "STANDARD",
+            "#hash_9128096ee0aff295": "#barracks"
+        },
+        {
+            "#visibility": "STANDARD",
+            "#hash_9128096ee0aff295": "#hash_1c5d758624c9b051"
+        },
+        {
+            "#visibility": "STANDARD",
+            "#hash_9128096ee0aff295": "#store"
+        }
+    ]
+}

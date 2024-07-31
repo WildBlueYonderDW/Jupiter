@@ -151,7 +151,7 @@ function function_d5db49ed7a7d77c5() {
     wait 30;
     function_aa2a76e5b30b25da("br_peak", 30);
     wait 31;
-    maxplayers = getdvarint(@"hash_818c699a5caaee4f", 0);
+    maxplayers = getdvarint(@"party_maxplayers", 0);
     playercount = getintorzero(level.players.size);
     if (playercount > maxplayers - 20 || getdvarint(@"hash_cd9d15d61f6e2380", 0) > 0) {
         function_efaab797904d13e8("br_peak", 1);

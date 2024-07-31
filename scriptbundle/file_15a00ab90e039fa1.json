@@ -1,0 +1,20 @@
+{
+    "#id": 723,
+    "#keys": [
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_playlist_id"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_d90d1ab46db92ffa",
+    "#sharedname": "#hash_a5f40934b63acf12"
+}

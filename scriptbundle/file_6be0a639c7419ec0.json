@@ -1,0 +1,21 @@
+{
+    "#id": "gyro_invert_horizontal",
+    "#description": "&OPTIONS/GYRO_INVERT_HORIZONTAL_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "GyroInvertHorizontal",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_601f46e92f432ffa",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/GYRO_INVERT_HORIZONTAL"
+}

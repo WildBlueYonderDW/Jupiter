@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#hash_87c8865341705b25": "jup_ui_frontend_acquisition_riftrun",
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_S1/RIFT_TOKEN_LOW_NAME",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_S1/RIFT_TOKEN_LOW_DESC",
+    "#ref": "jup_rift_gate_key_token_low",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_7db563716eca466c",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "key",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_f3cebd1a4ee83204",
+    "#inventorytype": "Stored",
+    "#icon": "jup_ui_icon_power_token_low",
+    "#scriptable": "%hash_6de25ff149eb3000",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KEY"
+}

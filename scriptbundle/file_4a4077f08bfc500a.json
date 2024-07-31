@@ -1,0 +1,114 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#hash_c5eb56a131ee4d21",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 5,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&JUP_WEAPON/JUP_JP01_DM_SLIMA8",
+    "#worldmodel": "weapon_wm_sn_alpha50_brprop_nophys",
+    "#rarity": 4,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "jup_reflex02_tall"
+                },
+                {
+                    "#attachment": "jup_reflex03_tall"
+                },
+                {
+                    "#attachment": "jup_reflex04_tall"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp01_dm_slima8_bar_short_marksman"
+                },
+                {
+                    "#attachment": "jup_jp01_dm_slima8_bar_heavy"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp01_dm_slima8_stock_marksman_ergo"
+                },
+                {
+                    "#attachment": "jup_jp01_dm_slima8_stock_marksman_padded"
+                }
+            ],
+            "#slot": "backpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_jp01_dm_slima8_mag_40_556n"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_silencer_ar_01"
+                },
+                {
+                    "#attachment": "jup_silencer_ar_02"
+                },
+                {
+                    "#attachment": "jup_silencer_ar_04"
+                }
+            ],
+            "#slot": "muzzle"
+        },
+        {
+            "#slot": "reargrip"
+        },
+        {
+            "#slot": "trigger"
+        },
+        {
+            "#slot": "extra"
+        },
+        {
+            "#slot": "modifier"
+        }
+    ],
+    "#descstring": "&JUP_WEAPON/JUP_JP01_DM_SLIMA8",
+    "#ref": "jup_jp01_dm_slima8",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "dm",
+    "#baseweapon": "jup_jp01_dm_slima8_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_ec30c0c679067308",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_jup_jp01_dm_slima8_mp",
+    "#scriptable": "%hash_4ed9087c34755c30",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_DM"
+}

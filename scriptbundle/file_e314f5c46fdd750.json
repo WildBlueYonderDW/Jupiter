@@ -1,0 +1,14 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 75,
+            "#itemspawnentry": "ob_jup_item_gasmask"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnentry": "ob_jup_item_gasmask_durable"
+        }
+    ]
+}

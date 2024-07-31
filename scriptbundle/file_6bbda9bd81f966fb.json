@@ -1,0 +1,20 @@
+{
+    "#hash_67e1293a5d611839": [
+        {
+            "#optionvalue": "1",
+            "#optionname": "AutoSprintKBM"
+        },
+        {
+            "#optionvalue": "1",
+            "#optionname": "AutoSprintGamepad"
+        },
+        {
+            "#optionvalue": "0",
+            "#optionname": "TacticalSprintBehaviorGpad"
+        },
+        {
+            "#optionvalue": "0",
+            "#optionname": "TacticalSprintBehaviorKBM"
+        }
+    ]
+}

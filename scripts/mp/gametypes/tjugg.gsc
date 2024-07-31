@@ -93,8 +93,8 @@ function initializematchrules() {
     registerhalftimedvar("tjugg", 0);
     setdynamicdvar(@"hash_cfc79c8d140c710d", 0);
     setdynamicdvar(@"hash_9cadb51d661e162d", 0);
-    setdynamicdvar(@"hash_5d64cd3b24cf883a", 1);
-    setdynamicdvar(@"hash_e5a33d679c26221f", 0);
+    setdynamicdvar(@"scr_player_forcerespawn", 1);
+    setdynamicdvar(@"scr_team_fftype", 0);
     setdynamicdvar(@"hash_3d9b2dcdb77fe161", 0);
 }
 

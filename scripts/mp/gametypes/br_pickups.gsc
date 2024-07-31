@@ -118,7 +118,7 @@ function br_pickups_init() {
     level.var_3d804d3022029476 = getdvarint(@"hash_581d0f4c51272920", 1);
     level.br_pickups.var_5bbd561a9aa69746 = getdvarint(@"hash_ec4c4df4cf064acf", 1) == 1;
     level.var_a9350d89a2e4d752 = getdvarint(@"hash_6d4a21dadd19744d", 0);
-    if (getdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv") != "mp/loot/br/default/loot_item_defs.csv") {
+    if (getdvar(@"loot_table_name", "mp/loot/br/default/loot_item_defs.csv") != "mp/loot/br/default/loot_item_defs.csv") {
         level.var_a9350d89a2e4d752 = 0;
     }
     initarrays();
@@ -815,14 +815,14 @@ function function_ec07a134a6ed91fd(rarity, var_14004b68ddacb781) {
 // Checksum 0x0, Offset: 0x5cec
 // Size: 0x152c
 function function_e5528af9b712723f() {
-    level.brloottablename = getdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv");
+    level.brloottablename = getdvar(@"loot_table_name", "mp/loot/br/default/loot_item_defs.csv");
     if (level.brloottablename == "") {
         level.brloottablename = "mp/loot/br/default/loot_item_defs.csv";
     }
     level.var_6178ce645aeeb787 = getdvar(@"hash_496705f4c6403e66", "mp/loot/br/default/loot_table_zones.csv");
     if (level.var_6178ce645aeeb787 == "") {
         level.var_6178ce645aeeb787 = "mp/loot/br/default/loot_table_zones.csv";
-        setdvar(@"hash_add02e4fff48882f", level.var_6178ce645aeeb787);
+        setdvar(@"loot_table_zones", level.var_6178ce645aeeb787);
     }
     var_6a537ee3949585f4 = [];
     var_5c845b7a0ef0780f = 0;

@@ -1,0 +1,38 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_concussion"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_adrenaline"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_shockstick"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_butterflymine"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_smoke"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_decoy"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_gas"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_snapshot"
+        }
+    ]
+}

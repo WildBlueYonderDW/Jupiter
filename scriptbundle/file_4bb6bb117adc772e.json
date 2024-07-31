@@ -1,0 +1,22 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 35,
+            "#itemspawnlist": "ob_jup_items_essence_low"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 50,
+            "#itemspawnlist": "ob_jup_items_armor"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_tactical_shockstick",
+            "#mincount": 1
+        }
+    ]
+}

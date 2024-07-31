@@ -394,7 +394,7 @@ function trophy_deployanimation() {
 function trophy_hideandshowaftertime() {
     self endon("death");
     self endon("missile_stuck");
-    hideduration = getdvarfloat(@"hash_64483ec1fd3d3c77", 0);
+    hideduration = getdvarfloat(@"scr_trophy_proj_hide_duration", 0);
     self setscriptablepartstate("visibility", "hide", 0);
     wait hideduration;
     self setscriptablepartstate("visibility", "show", 0);
@@ -1278,7 +1278,7 @@ function trophy_modifieddamage(attacker, victim, sweapon, damage, damageadd) {
         case #"hash_5e3fa526a48eaaa5":
         case #"hash_6f08e94ea93bfaf9":
         case #"hash_f085b57dce639767": 
-            maxhealth = getdvarint(@"hash_b1d561f9a9241e09", 150);
+            maxhealth = getdvarint(@"scr_player_maxhealth", 150);
             damageclamp = 0.66 * maxhealth;
             break;
         }

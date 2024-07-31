@@ -1,0 +1,327 @@
+{
+    "#id": 81,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#hash_fe11ce3cb5b41782",
+            "#sharedname": "#hash_9feda0b5af90390a"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_289dbf60475fb132",
+            "#sharedname": "#hash_4185f13dbd9184ba"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_bd7f4c3037122409",
+            "#sharedname": "#hash_4742be1129c646c1"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_a811e6df858c4500",
+            "#sharedname": "#hash_7824420b0c64b328"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hash_7269368e53d8eb7a",
+            "#sharedname": "#hash_383fbd542841c902"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_27e88785d0ff87b",
+            "#sharedname": "#hash_f502678c2101afdb"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_db14342d3cdbd788",
+            "#sharedname": "#hash_d673dd3c1c227628"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#hash_1cd6f59859addf38",
+            "#sharedname": "#specialty_scavenger"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#hash_65d3c79f248bacc9",
+            "#sharedname": "#hash_bcd44974e95477a9"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#hash_ee6c5fffc603bd97",
+            "#sharedname": "#hash_5c82420be052387f"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#hash_9cfb11d39985b33b",
+            "#sharedname": "#hash_6df84f941da7779b"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#hash_fa673089bfe4189",
+            "#sharedname": "#hash_20d9467bc1c9641"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#hash_fd0c4c9e5c01df93",
+            "#sharedname": "#hash_60c8363dd93cd73b"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#hash_57f4a6ba261a90fe",
+            "#sharedname": "#hash_85c9bf0e73e11496"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#hash_cfcb35703a340983",
+            "#sharedname": "#hash_afac54ed08c361db"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#hash_16800469f47c4224",
+            "#sharedname": "#hash_cf06323655bd688c"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#hash_56fa84666d9bbdd9",
+            "#sharedname": "#hash_6190afec54ec74d1"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#hash_c2df2791e3ec69e",
+            "#sharedname": "#hash_228c132d78456c6"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#hash_79e77a5707c67704",
+            "#sharedname": "#hash_b3aa7c0a8c7ed3ac"
+        },
+        {
+            "#bitindex": 19,
+            "#name": "#hash_340b1f4bc1463e48",
+            "#sharedname": "#hash_b7589c37d759ad90"
+        },
+        {
+            "#bitindex": 20,
+            "#name": "#hash_6ad7e1063d3e7570",
+            "#sharedname": "#hash_208442e5e74e8368"
+        },
+        {
+            "#bitindex": 21,
+            "#name": "#hash_4dbbd0409ea576b5",
+            "#sharedname": "#hash_cb584c8514892f15"
+        },
+        {
+            "#bitindex": 22,
+            "#name": "#hash_2f1cd9d01fa68ddf",
+            "#sharedname": "#hash_2ad7c308e93e3eff"
+        },
+        {
+            "#bitindex": 23,
+            "#name": "#hash_2d4b5fd2e71a1482",
+            "#sharedname": "#hash_3daa71b93466d922"
+        },
+        {
+            "#bitindex": 24,
+            "#name": "#hash_27d15850e6ede583",
+            "#sharedname": "#hash_86cae7f3413323e3"
+        },
+        {
+            "#bitindex": 25,
+            "#name": "#hash_b94ca8a4db2aa7fa",
+            "#sharedname": "#hash_35899001be90bada"
+        },
+        {
+            "#bitindex": 26,
+            "#name": "#hash_314673a5e5cb96ed",
+            "#sharedname": "#hash_9c1fc2b78e8bf24d"
+        },
+        {
+            "#bitindex": 27,
+            "#name": "#hash_36f927f5f66f8fa9",
+            "#sharedname": "#hash_5252b63f19071109"
+        },
+        {
+            "#bitindex": 28,
+            "#name": "#hash_1f8a9a95ab0c365d",
+            "#sharedname": "#hash_14d952745274ad3d"
+        },
+        {
+            "#bitindex": 29,
+            "#name": "#hash_dcb875e77db1fb20",
+            "#sharedname": "#hash_9468f4ac06ef7a80"
+        },
+        {
+            "#bitindex": 30,
+            "#name": "#hash_23720913314af0da",
+            "#sharedname": "#hash_1b7dcaa4cf45033a"
+        },
+        {
+            "#bitindex": 31,
+            "#name": "#hash_6e07dcb05ecb72b8",
+            "#sharedname": "#hash_d2182920853ee298"
+        },
+        {
+            "#bitindex": 32,
+            "#name": "#hash_ab7e543812d8e359",
+            "#sharedname": "#hash_deb509dc0687b9b9"
+        },
+        {
+            "#bitindex": 33,
+            "#name": "#hash_53e98c622de6eb98",
+            "#sharedname": "#hash_40064635f3d3b9f8"
+        },
+        {
+            "#bitindex": 34,
+            "#name": "#hash_5990f34e622b778f",
+            "#sharedname": "#hash_1e9ee859b593382f"
+        },
+        {
+            "#bitindex": 35,
+            "#name": "#hash_d772a49c5cc51f6e",
+            "#sharedname": "#hash_86be7bd14ddc0ace"
+        },
+        {
+            "#bitindex": 36,
+            "#name": "#hash_b2359d75ab1cec58",
+            "#sharedname": "#hash_33006c390ccef538"
+        },
+        {
+            "#bitindex": 37,
+            "#name": "#hash_ae18891bde4c5553",
+            "#sharedname": "#hash_854fb8dba138ea33"
+        },
+        {
+            "#bitindex": 38,
+            "#name": "#hash_be0fdb3821d15001",
+            "#sharedname": "#hash_e1c96629fd669a61"
+        },
+        {
+            "#bitindex": 39,
+            "#name": "#hash_5bf5410356625726",
+            "#sharedname": "#hash_275f599c766e4546"
+        },
+        {
+            "#bitindex": 40,
+            "#name": "#hash_7882095f4e9e7433",
+            "#sharedname": "#hash_71be114eaa2efe93"
+        },
+        {
+            "#bitindex": 41,
+            "#name": "#hash_b85eb61c49b84615",
+            "#sharedname": "#hash_caf3232e8e47c175"
+        },
+        {
+            "#bitindex": 42,
+            "#name": "#hash_34ac8adf27d539f",
+            "#sharedname": "#hash_a83cd8f8e1249eff"
+        },
+        {
+            "#bitindex": 43,
+            "#name": "#hash_1bb9fc6ea6b5dc90",
+            "#sharedname": "#hash_17fb5abdd22a2d70"
+        },
+        {
+            "#bitindex": 44,
+            "#name": "#hash_449f3cff47ec6b69",
+            "#sharedname": "#hash_1d134e8268687e49"
+        },
+        {
+            "#bitindex": 45,
+            "#name": "#hash_2ef2e0f0a6657d06",
+            "#sharedname": "#hash_6b794638736a1ce6"
+        },
+        {
+            "#bitindex": 46,
+            "#name": "#hash_98a0f6c33eafef4c",
+            "#sharedname": "#hash_11cef3324535fcac"
+        },
+        {
+            "#bitindex": 47,
+            "#name": "#hash_7825a91a74689ea7",
+            "#sharedname": "#hash_60c8a1fc52148907"
+        },
+        {
+            "#bitindex": 48,
+            "#name": "#hash_8d65e66229e4e07a",
+            "#sharedname": "#hash_a8bf74ab4c7c61da"
+        },
+        {
+            "#bitindex": 49,
+            "#name": "#hash_86c803e61a543ca7",
+            "#sharedname": "#hash_5aea8025a83afd07"
+        },
+        {
+            "#bitindex": 50,
+            "#name": "#hash_32c9191f03bc1b4",
+            "#sharedname": "#hash_6028eaffec3e8b14"
+        },
+        {
+            "#bitindex": 51,
+            "#name": "#hash_2e322cff4e2b330f",
+            "#sharedname": "#hash_e65e84e5d1ad8def"
+        },
+        {
+            "#bitindex": 52,
+            "#name": "#hash_cbe0218762a3c3df",
+            "#sharedname": "#hash_4adc529afbc66d3f"
+        },
+        {
+            "#bitindex": 53,
+            "#name": "#hash_d5f0f62e36722c34",
+            "#sharedname": "#hash_c801732d8730ad94"
+        },
+        {
+            "#bitindex": 54,
+            "#name": "#hash_55f1cceec935cf90",
+            "#sharedname": "#hash_96065b0f4e96eb70"
+        },
+        {
+            "#bitindex": 55,
+            "#name": "#hash_6187ee5f7e9a2088",
+            "#sharedname": "#hash_f54c4c05d61e91e8"
+        },
+        {
+            "#bitindex": 56,
+            "#name": "#hash_b8c724ba9413675",
+            "#sharedname": "#hash_50f4f815f8e5c155"
+        },
+        {
+            "#bitindex": 57,
+            "#name": "#hash_70cc130bfa1c7619",
+            "#sharedname": "#hash_1c8087f67d0bdf9"
+        },
+        {
+            "#bitindex": 58,
+            "#name": "#hash_f9f20f16d23a4d4f",
+            "#sharedname": "#hash_778e8b5b481e05af"
+        },
+        {
+            "#bitindex": 59,
+            "#name": "#hash_cb30b6a9530c63fb",
+            "#sharedname": "#hash_c21b8be23f8fa29b"
+        },
+        {
+            "#bitindex": 60,
+            "#name": "#hash_ed20d1d98cff26da",
+            "#sharedname": "#hash_e95f6c7735b18e3a"
+        },
+        {
+            "#bitindex": 61,
+            "#name": "#hash_24554fc5e384d041",
+            "#sharedname": "#hash_af8f7fb14321b121"
+        },
+        {
+            "#bitindex": 62,
+            "#name": "#hash_decb6185891d7a36",
+            "#sharedname": "#hash_3dc580abbf28c396"
+        },
+        {
+            "#bitindex": 63,
+            "#name": "#hash_b7513c750bf6df5a",
+            "#sharedname": "#hash_7592cd07a15feeba"
+        }
+    ],
+    "#name": "#hash_5d3f7fa1405098e6",
+    "#sharedname": "#hash_bd518e95df4103fe"
+}

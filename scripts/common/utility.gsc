@@ -1553,7 +1553,7 @@ function is_map_using_locales_only() {
 // Checksum 0x0, Offset: 0x44e1
 // Size: 0x14
 function iswegameplatform() {
-    return getdvarint(@"hash_4d1e25100e19b858", 0) == 1;
+    return getdvarint(@"g_wegame_platform", 0) == 1;
 }
 
 // Namespace utility / scripts\common\utility
@@ -2404,9 +2404,9 @@ function dof_enable(fstop, focusdistance, targetentity, focusspeed, aperturespee
     player notify("stop_dyndof");
     player notify("stop_dyndof_debug");
     if (issp()) {
-        setsaveddvar(@"hash_62c917f9692eb820", 1);
+        setsaveddvar(@"r_dof_physical_enable", 1);
     } else {
-        setdvar(@"hash_62c917f9692eb820", 1);
+        setdvar(@"r_dof_physical_enable", 1);
     }
     player enablephysicaldepthoffieldscripting();
     if (isdefined(targetentity)) {
@@ -2518,7 +2518,7 @@ function is_trial(trialname) {
 // Checksum 0x0, Offset: 0x64d7
 // Size: 0x35
 function function_a10967d736dc56e5() {
-    return issp() || iscp() || istrue(level.var_289df80e1ded586f) || getdvarint(@"hash_279375a0bfb2862f", 0) > 0;
+    return issp() || iscp() || istrue(level.var_289df80e1ded586f) || getdvarint(@"scr_default_maxagents", 0) > 0;
 }
 
 // Namespace utility / scripts\common\utility

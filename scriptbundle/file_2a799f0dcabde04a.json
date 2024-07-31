@@ -1,0 +1,14 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 80,
+            "#itemspawnentry": "ob_jup_item_plate_carrier_2"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_plate_carrier_3"
+        }
+    ]
+}

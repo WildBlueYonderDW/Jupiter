@@ -1,0 +1,10 @@
+{
+    "#idleanim": {
+        "#name": "iw9_fe_lobby_dog_idle_sitting_01@sbundle",
+        "#id": "anim#"
+    },
+    "#ref": "universal_dog_darpa",
+    "#body": "body_mp_exec_dog_darpa_iw9_1_1",
+    "#hash_6bb978021bb6b6e6": [
+    ]
+}

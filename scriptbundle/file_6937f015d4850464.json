@@ -1,0 +1,17 @@
+{
+    "#id": 735,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_f6308fc56d05b9bd",
+    "#sharedname": "#hash_8e95685b91087d05"
+}

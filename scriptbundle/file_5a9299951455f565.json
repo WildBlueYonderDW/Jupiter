@@ -1,0 +1,7 @@
+{
+    "#id": "ground_vehicle_prev_seat",
+    "#description": "&OPTIONS/GR_VEH_PREV_SEAT_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/GR_VEH_PREV_SEAT"
+}

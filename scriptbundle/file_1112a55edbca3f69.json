@@ -1,0 +1,357 @@
+{
+    "#mtx": [
+    ],
+    "#ai": {
+        "#hash_cdb848190a1b2f99": "default"
+    },
+    "#id": 7,
+    "#occupancy": {
+        "#exittopcastoffset": 30,
+        "#threatbiasgroup": "Level_Vehicle",
+        "#damagefeedbackgroupheavy": "all",
+        "#roofexittype": "no_roof_exit",
+        "#camera": "none",
+        "#damagefeedbackgrouplight": "driver",
+        "#hash_4b92043c00e4e91b": 1
+    },
+    "#hash_7c19cae9edc84d70": [
+    ],
+    "#horns": [
+    ],
+    "#aifastrope": [
+    ],
+    "#lights": [
+    ],
+    "#spawn": {
+        "#maxinstancecount": 2,
+        "#clearancecheckradius": 105,
+        "#hash_32b659cdf8f93ae2": "",
+        "#clearancecheckheight": 90,
+        "#hash_1ad50a59da38c8f5": 1,
+        "#priority": 75
+    },
+    "#hash_3ef9b41093f5752": {
+        "#earthquakeradius": 800,
+        "#hash_d6dbd39dbd5ab5fc": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        },
+        "#physicsscale": 0.5,
+        "#realvehicleanim": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        },
+        "#planesound": "",
+        "#vfx": "",
+        "#earthquakeduration": 0.7,
+        "#hash_96a21e181f0221f5": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5c73f15ed471884d": "",
+        "#hash_e01db00d1ccb42ea": 0,
+        "#earthquakescale": 0.3,
+        "#hash_98cf00a549d2c206": "",
+        "#physicsinnerradius": 400,
+        "#physicsouterradius": 800,
+        "#planeparts": [
+        ],
+        "#hash_6a32dee944eb39ad": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        }
+    },
+    "#targetname": "chopped_pickup_spawn",
+    "#huskexplosion": {
+        "#earthquakeradius": 385,
+        "#physicsscale": 1,
+        "#maxdamage": 60,
+        "#tag": "tag_origin",
+        "#earthquakeduration": 1.5,
+        "#damageoffset": {
+        },
+        "#radius": 256,
+        "#earthquakescale": 0.8,
+        "#mindamage": 30,
+        "#physicsinnerradius": 200,
+        "#scriptable": "veh9_chopped_pickup_explosion",
+        "#physicsouterradius": 500
+    },
+    "#hash_c13950f54f2498b0": "hud_icon_vehicle_pickup_1992_chop",
+    "#damage": {
+        "#falldamagemultiplier": 1,
+        "#hash_3259f2f4faf8eaa8": 5,
+        "#hash_98277a386e38941f": 0,
+        "#hash_d59ddc542fb76578": 1,
+        "#mineextents": {
+            "#left": 36,
+            "#front": 98,
+            "#right": 36,
+            "#back": 89
+        },
+        "#distancetobottom": 38,
+        "#hash_5c7f497b7ee6ee55": 1,
+        "#hash_10175926aeb1591e": 2304,
+        "#agentdamagemultiplier": 0.5,
+        "#health": 1250,
+        "#explosionextents": {
+            "#left": 50,
+            "#front": 125,
+            "#top": 50,
+            "#right": 50,
+            "#back": 130,
+            "#bottom": 50
+        },
+        "#hash_6c10b5dc07fd6459": 1,
+        "#hash_c3b0005f41b92649": 2,
+        "#scrapassist": 1,
+        "#deathanims": 1,
+        "#hash_8e266d8413972567": {
+        },
+        "#class": "medium_light",
+        "#heavystatehealthadd": 350,
+        "#hash_96f121d1edfdb0cb": 1,
+        "#maxhits": 9
+    },
+    "#seats": [
+        {
+            "#onenterbattlechatter": "driver",
+            "#animtag": "tag_seat_0",
+            "#exitids": [
+                {
+                    "#exitdirection": "driver"
+                },
+                {
+                    "#exitdirection": "back_left"
+                },
+                {
+                    "#exitdirection": "back"
+                },
+                {
+                    "#exitdirection": "front_right"
+                },
+                {
+                    "#exitdirection": "front"
+                }
+            ],
+            "#hidestowedweapon": 1,
+            "#ref": "driver",
+            "#restrictions": "driver",
+            "#damagemodifier": -1,
+            "#spawnpriority": 10,
+            "#hash_dcfc487f4ef1103c": -1
+        }
+    ],
+    "#husk": {
+        "#hash_c1a04b9d422db491": 1,
+        "#timeout": 60,
+        "#vdef": "vehicle/husk_sink_immediately.vdef",
+        "#ref": "veh9_chopped_pickup_husk",
+        "#model": "veh9_civ_lnd_pickup_1992_chop_vehphys_hsk_mp",
+        "#hash_71df88882a7ec721": 1.5,
+        "#weapon": "chopped_pickup_mp",
+        "#momentumthreshold": 20
+    },
+    "#hash_22dfbca89a3af942": 100,
+    "#ref": "veh9_chopped_pickup",
+    "#damageableparts": [
+        {
+            "#hash_da9f4cd603f44758": "tag_hood",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 15,
+            "#isonpristine": 1,
+            "#healthvalue": 150
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_wheel_center_front_left",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_f0b290e6673ef286": 65,
+            "#enabled": 1,
+            "#ref": "row1_left_wheel",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 5,
+            "#isonpristine": 1,
+            "#healthvalue": 70
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_wheel_center_front_right",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_f0b290e6673ef286": 65,
+            "#enabled": 1,
+            "#ref": "row1_right_wheel",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 5,
+            "#isonpristine": 1,
+            "#healthvalue": 70
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_wheel_center_back_left",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_f0b290e6673ef286": 65,
+            "#enabled": 1,
+            "#ref": "row2_left_wheel",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 5,
+            "#isonpristine": 1,
+            "#healthvalue": 70
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_wheel_center_back_right",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_f0b290e6673ef286": 65,
+            "#enabled": 1,
+            "#ref": "row2_right_wheel",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 5,
+            "#isonpristine": 1,
+            "#healthvalue": 70
+        }
+    ],
+    "#model": "veh9_civ_lnd_pickup_1992_chop_vehphys_mp",
+    "#weapon": "chopped_pickup_mp",
+    "#pristineexplosion": {
+        "#earthquakeradius": 385,
+        "#physicsscale": 1,
+        "#maxdamage": 140,
+        "#tag": "tag_body_animate",
+        "#earthquakeduration": 1.5,
+        "#damageoffset": {
+        },
+        "#radius": 256,
+        "#earthquakescale": 0.8,
+        "#mindamage": 70,
+        "#physicsinnerradius": 200,
+        "#physicsouterradius": 500
+    },
+    "#hash_b01f9533413e14ec": 0,
+    "#hash_372bf6f67db5151a": "hud_icon_minimap_vehicle_pickup_1992_chop",
+    "#name": "&VEHICLES/CHOPPED_PICKUP",
+    "#extraexits": [
+        {
+            "#offset": {
+                "#x": 75,
+                "#z": 65
+            },
+            "#ref": "front",
+            "#direction": "front"
+        },
+        {
+            "#offset": {
+                "#x": -90,
+                "#z": 65
+            },
+            "#ref": "back",
+            "#direction": "back"
+        },
+        {
+            "#offset": {
+                "#y": 19,
+                "#x": 17,
+                "#z": 65
+            },
+            "#ref": "driver",
+            "#direction": "left"
+        },
+        {
+            "#offset": {
+                "#y": -19,
+                "#x": 17,
+                "#z": 65
+            },
+            "#ref": "front_right",
+            "#direction": "right"
+        },
+        {
+            "#offset": {
+                "#y": 19,
+                "#x": -24,
+                "#z": 65
+            },
+            "#ref": "back_left",
+            "#direction": "left"
+        },
+        {
+            "#offset": {
+                "#y": -19,
+                "#x": -24,
+                "#z": 65
+            },
+            "#ref": "back_right",
+            "#direction": "right"
+        }
+    ],
+    "#hash_539862aa827974a3": 0,
+    "#aiseats": [
+    ],
+    "#unloadgroups": [
+    ],
+    "#interact": {
+        "#hash_c57febc7e53e3276": 0,
+        "#hash_18f075aaf63a3da": 0,
+        "#hash_ba70a83be9b6b59c": 90,
+        "#maxfuel": 180,
+        "#depththreshold": 20,
+        "#hash_4c6d695d0920df19": 130,
+        "#hash_4c4a7b5d08fabef7": 170,
+        "#hash_b1fc50342f9a99dd": 135,
+        "#hash_591de85cd0986f8d": 0,
+        "#bctypename": "truck",
+        "#floattime": 6,
+        "#hash_23f37e83b1cafb10": 30
+    },
+    "#transitionparts": [
+        {
+            "#hash_1fb6b56a662df98": "floor_fire"
+        },
+        {
+            "#hash_1fb6b56a662df98": "damage_transition"
+        }
+    ],
+    "#exitextents": {
+        "#left": 50,
+        "#front": 125,
+        "#top": 35,
+        "#right": 50,
+        "#back": 130,
+        "#bottom": 50
+    },
+    "#vehicle": "veh9_civ_lnd_pickup_1992_chop_physics_mp"
+}

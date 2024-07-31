@@ -1,0 +1,345 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&LUA_MENU/DISPLAY",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&LUA_MENU/VIDEO_SUB_DISPLAY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_294228f6bda9e621"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5b9170d4a1216a3d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_b25fd3c57613fb8"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2f94961be50af527"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_220596a0c1571fd8"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_57fa517aa86a45f5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_d429b3a2c75e513"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6648b8700cd390cb",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4ab5f707b52eb0a2"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_36432cef5fdbe061"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5a4cc0f93f2ee26b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1806b00bc14bb28e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_55a1c40af1ec80e4"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/SUSTAINABILITY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_52ef0f7c2f305438"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_368066edd476e555"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_367cf2a05ddda411"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_662366314ae11d24",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_61f2f95a126f17ae"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_2befd8222efead8"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_33607b57a56c268c"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1f2d5a4e2352acd0"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_f753c775dc5118a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5e5b09ddab3e350d"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/GENERAL_SUB_HDR_CAPS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_eb1be851d4a84a5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_66c20cf9373a2f25"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_35c1e5b34291e0b2"
+                        }
+                    ]
+                }
+            ],
+            "#hash_99bd2d974f2e5813": 1
+        },
+        {
+            "#name": "&LUA_MENU/QUALITY",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&LUA_MENU/GLOBAL_QUALITY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_20382a79a7155048"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1fe37d0dc1e1465b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_642c1e58e19a1795",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7346b4d984a2886f"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_8f77812ef9cf511",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_338be5077589344d"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3dfc90df0fb6b515"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7612af713bc368f9"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_40f3ff69f2cd851e"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_2c202d07933949c4"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_2c202e0793394b77"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_22c5bc24b7b59432"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_421aefa2826442f9"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3813baa81fcb22e9"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4640b7baf8b83977"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_6db6530431256bda"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_18d91d08de98d479",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_6a640ed9b1ffeb3"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4c8642d303daf01b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_12bd9b85b0a290da"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_22297d7e1cdb3818"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/VIDEO_SUB_DETAILS_TEXTURES",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_215229fca2c12a19"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_f8ff76b86074b2e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2a494181411c31fb"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2c5aac0afc7649e8"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6da481393ac355cd"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_42521ed9e7aa97f4"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7af1f54eba3332cb"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6dc4997b9f974c1a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_a2e5c3907c1195f",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_36f5180f098240b0"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3070b6162d666987"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5ad111e2286cf237"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_40e9581c9c8d2554"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_73b1debc9f3aa32d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_656f732710be86c1"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/VIDEO_SUB_SHADOW_LIGHTING",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_3c57f5d3cbb81893"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5bd984db3c28a83e"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_73edba8555dc967d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3966393e783acac1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6763bf8598117c2f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_24d840e1f996d568"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/ENVIRONMENT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_661620f55b4e0b18"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_77419dabfa97124c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_14bbd90e0a991ec6"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_79601472aa373809"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_720da33edb271572"
+                        }
+                    ]
+                }
+            ],
+            "#hash_99bd2d974f2e5813": 1
+        },
+        {
+            "#name": "&LUA_MENU/GENERAL_SUB_SCREEN",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/TELEMETRY_FOV_OPTION",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_60ff685605ca700"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5c66b22f79e1f1d9"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1176f6820fc1d568"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_39b7be1e7ec930d6"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6447f9deb6db7b02"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/CAMERA",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_5b0b6abbdea299f3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_10e59b7c7b146729"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_103ebfabe78bc078"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5742affd9b35d18d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_603af7802834b88f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_64f5881e9741ac33"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_175305270c57b740"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4af6e9a81ee89dd5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3dc3fb186d9a4b10"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -2207,7 +2207,7 @@ function function_8b641361a4134788(value, attacker) {
 // Checksum 0x0, Offset: 0x5d05
 // Size: 0xa3
 function cashmoveto(movetostartpos, movetoendpos, time) {
-    gravity = getdvarint(@"hash_b5d7d39d32720e78");
+    gravity = getdvarint(@"bg_gravity");
     dist = distance(movetostartpos, movetoendpos);
     delta = movetoendpos - movetostartpos;
     drop = 0.5 * gravity * squared(time) * -1;

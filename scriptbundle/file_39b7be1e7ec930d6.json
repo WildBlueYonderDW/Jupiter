@@ -1,0 +1,27 @@
+{
+    "#id": "third_person_fov",
+    "#description": "&PLATFORM_UI/THIRD_PERSON_FOV_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#hash_ea45bc5a5e9ac302": 1,
+    "#hash_a20785232d9c4057": "TargetThirdPersonHorizontalFoV",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#hash_15963d81d6fd6dac": 90,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 1,
+    "#type": "SliderBarWithEditBox",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&PLATFORM_UI/THIRD_PERSON_FOV",
+    "#hash_530fe36dfbb8c732": 70,
+    "#hash_c55c746ff4d8929b": 1
+}

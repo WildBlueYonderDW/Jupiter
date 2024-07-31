@@ -29,7 +29,7 @@ function main() {
     game["allies_outfit"] = "urban";
     game["axis_outfit"] = "woodland";
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     thread scripts\mp\animation_suite::animationsuite();
     scripts\cp_mp\utility\game_utility::registersmallmap();
     scripts\cp_mp\utility\game_utility::registerarenamap();
@@ -41,7 +41,7 @@ function main() {
 // Checksum 0x0, Offset: 0x2df
 // Size: 0x3e
 function function_da7c9335e454c032(player) {
-    if (getdvarint(@"hash_c00e244ea59d530e") == 1 || istrue(level.thirdpersonmode)) {
+    if (getdvarint(@"camera_thirdPerson") == 1 || istrue(level.thirdpersonmode)) {
         setdvar(@"hash_31f818870138cd26", 1);
     }
 }

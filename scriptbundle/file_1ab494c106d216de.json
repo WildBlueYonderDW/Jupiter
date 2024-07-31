@@ -1,0 +1,313 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp35_sn_moscar_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp35_sn_moscar_mp",
+    "#hash_ae0f82b51ecd0ce8": "noscope",
+    "#platform": "platform_jup_sn_moscar",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_6",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp35_sn_moscar_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+        {
+            "#category": "ARMS"
+        },
+        {
+            "#category": "CABLE"
+        }
+    ],
+    "#menuclass": "weapon_sniper",
+    "#category": "&WEAPON/SUBCLASS_ID_6",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2500,
+    "#lootid": 49948,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 6,
+    "#ref": "jup_jp35_sn_moscar",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "bolt_action_fire_mode",
+    "#desc": "&JUP_WEAPON/JUP_JP35_SN_MOSCAR_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP35_SN_MOSCAR",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "3",
+            "#priority": 1
+        },
+        {
+            "#season": "4",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front guardrail back mag boltaction ironsdefault",
+    "#asset": "jup_jp35_sn_moscar_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_sniper",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bar_short",
+                    "#lootid": 49928,
+                    "#challengeid": 34551
+                },
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_frontpieces",
+                    "#lootid": 49910,
+                    "#challengeid": 34572
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_moscar_minidot_global",
+                    "#lootid": 58299
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_moscar_scope_global",
+                    "#lootid": 58020
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_optics",
+                    "#lootid": 49913
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_pgrip_ass",
+                    "#lootid": 49944
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_reargrips",
+                    "#lootid": 49916
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_stockno",
+                    "#lootid": 49937
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_backpieces",
+                    "#lootid": 49911
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_undermounts",
+                    "#lootid": 49914
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_stock_lgt",
+                    "#lootid": 49934
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bolt_light",
+                    "#lootid": 49940,
+                    "#challengeid": 34552
+                },
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bolts",
+                    "#lootid": 60656,
+                    "#challengeid": 34573
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bar_light",
+                    "#lootid": 49932
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_rail_hv",
+                    "#lootid": 49924
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_gunperks",
+                    "#lootid": 49919
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_extras",
+                    "#lootid": 49918
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_stock_hvy",
+                    "#lootid": 49935
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_rail_he",
+                    "#lootid": 49925,
+                    "#challengeid": 34553
+                },
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_ob_3",
+                    "#challengeid": 34574
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bar_heavy",
+                    "#lootid": 49927
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_pgrip_aim",
+                    "#lootid": 49942
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bar_long",
+                    "#lootid": 49929
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_bolt_hvy",
+                    "#lootid": 49939
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_pgrip_tac",
+                    "#lootid": 49943
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp35_sn_moscar_stock_tac",
+                    "#lootid": 49936,
+                    "#challengeid": 34554
+                },
+                {
+                    "#challengeref": "jup_jp35_sn_moscar_camo_ob_4",
+                    "#challengeid": 34575
+                },
+                {
+                    "#challengeref": "moscar_convert_chal",
+                    "#challengeid": 36452
+                }
+            ],
+            "#level": 18
+        }
+    ],
+    "#displayorder": 1,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

@@ -1,0 +1,533 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp19_br_acharlie450_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp19_br_acharlie450_mp",
+    "#platform": "platform_jup_ar_acharlie",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp19_br_acharlie450_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp19_br_acharlie450_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_battle",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2000,
+    "#lootid": 17192,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 1,
+    "#ref": "jup_jp19_br_acharlie450",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/ACHARLIE450_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP19_BR_ACHARLIE450",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "2",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag selectsemi ironsdefault",
+    "#asset": "jup_jp19_br_acharlie450_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_battle",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_bar_hvyshort2",
+                    "#lootid": 22982,
+                    "#challengeid": 13165
+                },
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_frontpieces",
+                    "#lootid": 22929,
+                    "#challengeid": 17952
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_stock_tac",
+                    "#lootid": 22996
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_backpieces",
+                    "#lootid": 22930
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_mag_10_450b",
+                    "#lootid": 22998
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_magazines",
+                    "#lootid": 22931
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_pgrip_aim",
+                    "#lootid": 23014
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_reargrips",
+                    "#lootid": 22935
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_optics",
+                    "#lootid": 22932
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_450b_rn",
+                    "#lootid": 29432
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_gunperks",
+                    "#lootid": 23260
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_bar_marksman",
+                    "#lootid": 22983
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_stock_precision",
+                    "#lootid": 22992
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_flash_br_01",
+                    "#lootid": 22457
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_muzzles",
+                    "#lootid": 22934
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_stop_02",
+                    "#lootid": 21789
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_undermounts",
+                    "#lootid": 22933
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_mag_15_450b",
+                    "#lootid": 22999,
+                    "#challengeid": 13166
+                },
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_ob_2",
+                    "#challengeid": 17988
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_pgrip_snp",
+                    "#lootid": 23018
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_bar",
+                    "#lootid": 22978
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_stock_tacheavy",
+                    "#lootid": 22994
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_bar_hvymarksman",
+                    "#lootid": 22985
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_stock_heavy",
+                    "#lootid": 22995
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_laserbox_jump",
+                    "#lootid": 32202
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_extras",
+                    "#lootid": 22937
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_450b_xp",
+                    "#lootid": 29433,
+                    "#challengeid": 13167
+                },
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_ob_3",
+                    "#challengeid": 18024
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_bar_heavy2",
+                    "#lootid": 22984
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_br_10",
+                    "#lootid": 21816
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_barsil",
+                    "#lootid": 47414
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_450b_lg",
+                    "#lootid": 29430
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_450b_hg",
+                    "#lootid": 29431
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_bar_heavy",
+                    "#lootid": 22979
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_stock_light",
+                    "#lootid": 22993
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_pgrip",
+                    "#lootid": 23013
+                },
+                {
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_drum_30_450b",
+                    "#lootid": 23001,
+                    "#challengeid": 13168
+                },
+                {
+                    "#challengeref": "jup_jp19_br_acharlie450_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_tuning",
+                    "#lootid": 22938,
+                    "#challengeid": 18060
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp19_br_acharlie450_amps",
+                    "#lootid": 47217
+                }
+            ],
+            "#level": 27
+        }
+    ],
+    "#displayorder": 26,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "#raritydef": "%hash_2b13ac750c6bead0",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 4,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/BR_MSECHO",
+    "#worldmodel": "weapon_vm_ar_akilo47_brprop_nophys",
+    "#rarity": 3,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "jup_minireddot01_tall"
+                },
+                {
+                    "#attachment": "jup_risr_minireddot01"
+                },
+                {
+                    "#attachment": "jup_las_minireddot01"
+                },
+                {
+                    "#attachment": "jup_reflex01_tall"
+                },
+                {
+                    "#attachment": "jup_reflex02_tall"
+                },
+                {
+                    "#attachment": "jup_reflex03_tall"
+                },
+                {
+                    "#attachment": "jup_reflex04_tall"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "bar_ar_light_p01_msecho"
+                },
+                {
+                    "#attachment": "bar_ar_lgtshort_p01_msecho"
+                },
+                {
+                    "#attachment": "bar_ar_long_p01_msecho"
+                },
+                {
+                    "#attachment": "bar_br_heavy_p01"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "mag_br_large_p01"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "stock_ar_assault_p01_msecho"
+                },
+                {
+                    "#attachment": "stock_ar_tactical_p01_msecho"
+                }
+            ],
+            "#slot": "backpiece"
+        }
+    ],
+    "#descstring": "&WEAPON/BR_MSECHO",
+    "#ref": "iw9_br_msecho",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "br",
+    "#baseweapon": "iw9_br_msecho_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_dm_msecho",
+    "#scriptable": "%hash_69e426ce225376f6",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_BR"
+}

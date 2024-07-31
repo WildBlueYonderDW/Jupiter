@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#hash_87c8865341705b25": "jup_ui_frontend_acquisition_classified_ammo_box_gold",
+    "#maxcount": 1,
+    "#titlestring": "&SHARED_HINTSTRINGS/GOLDEN_AMMO",
+    "#worldmodel": "lm_ammo_box_ar_01",
+    "#rarity": 4,
+    "#descstring": "&SHARED_HINTSTRINGS/GOLDEN_AMMO_DESC",
+    "#ref": "jup_golden_ammo",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_12182d96c987c034",
+    "#lootidtype": "consumable",
+    "#type": "upgrade",
+    "#subtype": "golden_ammo",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_12182d96c987c034",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_acquisition_ammo_box",
+    "#scriptable": "%hash_40a252044d80e012",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/ACQUISITION"
+}

@@ -1,0 +1,389 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_d43f9c4f6b647ba4": 1,
+    "#image": "hud_icon_weapon_jup_jp44_ar_stango44_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp44_ar_stango44_mp",
+    "#platform": "platform_iw9_ar_acharlie300",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_8",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_jup_jp44_ar_stango44_mp",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp44_ar_stango44_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_assault",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_jup_jp44_ar_stango44_mp",
+    "#category": "&WEAPON/SUBCLASS_ID_8",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2000,
+    "#botpersonality": "run_and_gun|cqb|camper",
+    "#lootid": 60287,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#ref": "jup_jp44_ar_stango44",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab751e309d92890": "semi_auto_fire_mode",
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/JUP_JP44_AR_STANGO44",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/JUP_JP44_AR_STANGO44",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault selectsemi ironsdefault",
+    "#asset": "jup_jp44_ar_stango44_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_assault",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_bar_hvy",
+                    "#lootid": 60269
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_frontpieces",
+                    "#lootid": 60255
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_optics",
+                    "#lootid": 60258,
+                    "#challengeid": 41704
+                },
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_ob_1",
+                    "#challengeid": 41725
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_mag_50",
+                    "#lootid": 60282
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_magazines",
+                    "#lootid": 60257
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_pgrip_skelsnp",
+                    "#lootid": 69096
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_reargrips",
+                    "#lootid": 60261
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_stockr",
+                    "#lootid": 60277
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_backpieces",
+                    "#lootid": 60256
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_undermounts",
+                    "#lootid": 60259
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_muzzles",
+                    "#lootid": 60260
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_bar_short",
+                    "#lootid": 60270,
+                    "#challengeid": 41705
+                },
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_ob_2",
+                    "#challengeid": 41726
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792",
+                    "#lootid": 66345
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_gunperks",
+                    "#lootid": 60264
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_ap",
+                    "#lootid": 66346
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_db",
+                    "#lootid": 66347
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_fr",
+                    "#lootid": 66348
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_hg",
+                    "#lootid": 66349
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_hp",
+                    "#lootid": 66350
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_hv",
+                    "#lootid": 66351
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_lg",
+                    "#lootid": 66352
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_op",
+                    "#lootid": 66353
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_rn",
+                    "#lootid": 66354
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_xp",
+                    "#lootid": 66356
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_792_tr",
+                    "#lootid": 66355
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_extras",
+                    "#lootid": 60263
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_pgrip_ass2",
+                    "#lootid": 72106
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_bar_long",
+                    "#lootid": 60272
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_mag_40",
+                    "#lootid": 60281,
+                    "#challengeid": 41706
+                },
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_ob_3",
+                    "#challengeid": 41727
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_pgrip_ass",
+                    "#lootid": 72105
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_stock_ass",
+                    "#lootid": 60276
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_bar_hvy_long",
+                    "#lootid": 60273
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_stock_tac",
+                    "#lootid": 60275
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_pgrip_skeltac",
+                    "#lootid": 60285
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_stock_stockno",
+                    "#lootid": 60279,
+                    "#challengeid": 41707
+                },
+                {
+                    "#challengeref": "jup_jp44_ar_stango44_camo_ob_4",
+                    "#challengeid": 41728
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp44_ar_stango44_barsil",
+                    "#lootid": 60271
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        }
+    ],
+    "#displayorder": 1,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

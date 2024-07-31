@@ -1,0 +1,6 @@
+{
+    "#settext": "&LUA_MENU/PLAYLIST_TAG_LOADOUT_DROP_SET",
+    "#type": "ON_OFF",
+    "#style": "NONE",
+    "#text": "&LUA_MENU/PLAYLIST_TAG_LOADOUT_DROP"
+}

@@ -1,0 +1,22 @@
+{
+    "#id": "mute_audio_while_out_of_focus",
+    "#description": "&OPTIONS/MUTE_AUDIO_WHILE_OUT_OF_FOCUS_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "snd_muteAudioWhileOutOfFocus",
+    "#hash_58d61dc3eef940dc": "AUDIO",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/MUTE_AUDIO_WHILE_OUT_OF_FOCUS"
+}

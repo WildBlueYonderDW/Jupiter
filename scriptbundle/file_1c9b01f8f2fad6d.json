@@ -1,0 +1,760 @@
+{
+    "#mtx": [
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v001",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v003",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v004",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v005",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v007",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v006",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v008",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v009",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v420",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "drweedlov",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v010",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v006",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v012",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v011",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v013",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "vj001",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v014",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v016",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v015",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#vehiclehorn": ""
+        }
+    ],
+    "#ai": {
+        "#hash_cdb848190a1b2f99": "default"
+    },
+    "#id": 13,
+    "#hash_2594a36faa0c951b": "scripts\quaked\script_struct_mp_iw9_palfa.gsc",
+    "#occupancy": {
+        "#exittopcastoffset": 50,
+        "#allowairexit": 1,
+        "#threatbiasgroup": "Level_Vehicle",
+        "#damagefeedbackgroupheavy": "all",
+        "#roofexittype": "no_roof_exit",
+        "#camera": "cam_palfa_passenger",
+        "#damagefeedbackgrouplight": "driver",
+        "#hash_4b92043c00e4e91b": 0
+    },
+    "#canfly": 1,
+    "#hash_7c19cae9edc84d70": [
+    ],
+    "#horns": [
+    ],
+    "#aifastrope": [
+    ],
+    "#lights": [
+    ],
+    "#spawn": {
+        "#maxinstancecount": 5,
+        "#clearancecheckradius": 500,
+        "#hash_32b659cdf8f93ae2": "",
+        "#clearancecheckheight": 300,
+        "#hash_51b047bd40d984fe": "rally_spawn_heli",
+        "#hash_328c7313a47e3c6b": "gw_palfa_respawn",
+        "#priority": 100
+    },
+    "#hash_3ef9b41093f5752": {
+        "#earthquakeradius": 800,
+        "#hash_d6dbd39dbd5ab5fc": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        },
+        "#physicsscale": 0.5,
+        "#realvehicleanim": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        },
+        "#planesound": "",
+        "#vfx": "",
+        "#earthquakeduration": 0.7,
+        "#hash_96a21e181f0221f5": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5c73f15ed471884d": "",
+        "#hash_e01db00d1ccb42ea": 0,
+        "#earthquakescale": 0.3,
+        "#hash_98cf00a549d2c206": "",
+        "#physicsinnerradius": 400,
+        "#physicsouterradius": 800,
+        "#planeparts": [
+        ],
+        "#hash_6a32dee944eb39ad": {
+            "#animtree": {
+                "#name": "",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "",
+                "#id": "anim#"
+            }
+        }
+    },
+    "#targetname": "palfa_spawn",
+    "#huskexplosion": {
+        "#earthquakeradius": 385,
+        "#physicsscale": 1,
+        "#maxdamage": 140,
+        "#tag": "tag_origin",
+        "#earthquakeduration": 1.5,
+        "#damageoffset": {
+        },
+        "#radius": 256,
+        "#earthquakescale": 0.8,
+        "#mindamage": 70,
+        "#physicsinnerradius": 200,
+        "#physicsouterradius": 500
+    },
+    "#hash_c13950f54f2498b0": "hud_icon_vehicle_palfa",
+    "#damage": {
+        "#falldamagemultiplier": 1,
+        "#hash_3259f2f4faf8eaa8": 2,
+        "#hash_98277a386e38941f": 1,
+        "#hash_d59ddc542fb76578": 1,
+        "#mineextents": {
+            "#left": 55,
+            "#front": 78,
+            "#right": 55,
+            "#back": 28
+        },
+        "#distancetobottom": 300,
+        "#hash_5c7f497b7ee6ee55": 1,
+        "#hash_10175926aeb1591e": 2304,
+        "#agentdamagemultiplier": 0.5,
+        "#health": 18000,
+        "#explosionextents": {
+            "#left": 130,
+            "#front": 330,
+            "#top": 50,
+            "#right": 130,
+            "#back": 700,
+            "#bottom": 250
+        },
+        "#hash_6c10b5dc07fd6459": 1,
+        "#hash_c3b0005f41b92649": 4,
+        "#scrapassist": 1,
+        "#hash_8e266d8413972567": {
+        },
+        "#class": "super_heavy",
+        "#heavystatehealthadd": 2700,
+        "#hash_96f121d1edfdb0cb": 1,
+        "#maxhits": 32
+    },
+    "#seats": [
+        {
+            "#onenterbattlechatter": "driver",
+            "#animtag": "tag_seat_0",
+            "#exitids": [
+                {
+                    "#exitdirection": "driver"
+                },
+                {
+                    "#exitdirection": "front"
+                },
+                {
+                    "#exitdirection": "left"
+                },
+                {
+                    "#exitdirection": "right"
+                },
+                {
+                    "#exitdirection": "front_left"
+                }
+            ],
+            "#hidestowedweapon": 1,
+            "#ref": "driver",
+            "#restrictions": "driver",
+            "#damagemodifier": -1,
+            "#spawnpriority": 10,
+            "#hash_dcfc487f4ef1103c": 0.2
+        }
+    ],
+    "#husk": {
+        "#hash_c1a04b9d422db491": 1,
+        "#timeout": 60,
+        "#vdef": "vehicle/husk_sink_immediately.vdef",
+        "#hash_71df88882a7ec721": 1.5,
+        "#momentumthreshold": 20
+    },
+    "#hash_22dfbca89a3af942": 72,
+    "#ref": "veh9_palfa",
+    "#damageableparts": [
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_front",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 500,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 500
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_left1",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 500,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 500
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_left2",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 200,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 200
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_left3",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 500,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 500
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_left4",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 200,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 200
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_right1",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 500,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 500
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_right2",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 200,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 200
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_right3",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 500,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 500
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_right4",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 200,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 200
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_cockpit_top",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 200,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 0,
+            "#damagereduction": 10,
+            "#isonpristine": 1,
+            "#healthvalue": 200
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_left1",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_left2",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_left3",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_left4",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_left5",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_right1",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_right2",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_right3",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_right4",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_right5",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_door_left",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        },
+        {
+            "#hash_da9f4cd603f44758": "tag_window_door_right",
+            "#isonhusk": 1,
+            "#hash_92894ef28e2b8800": 20,
+            "#hash_30beabb585e60744": 1,
+            "#enabled": 1,
+            "#ref": "generic_window",
+            "#inactive": 0,
+            "#blockbulletdamage": 1,
+            "#damagereduction": 0,
+            "#isonpristine": 1,
+            "#healthvalue": 100
+        }
+    ],
+    "#compositemodel": "veh9_mil_air_heli_palfa_doors_open_x_vehphys_mp",
+    "#weapon": "palfa_mp",
+    "#pristineexplosion": {
+        "#earthquakeradius": 385,
+        "#physicsscale": 1,
+        "#maxdamage": 140,
+        "#tag": "tag_origin",
+        "#earthquakeduration": 1.5,
+        "#damageoffset": {
+            "#z": -150
+        },
+        "#radius": 550,
+        "#earthquakescale": 0.8,
+        "#mindamage": 70,
+        "#physicsinnerradius": 200,
+        "#scriptable": "veh9_palfa_explosion",
+        "#physicsouterradius": 500
+    },
+    "#hash_b01f9533413e14ec": 0,
+    "#hash_372bf6f67db5151a": "hud_icon_minimap_vehicle_palfa",
+    "#name": "&VEHICLES/PALFA",
+    "#extraexits": [
+        {
+            "#offset": {
+                "#x": 120,
+                "#z": -220
+            },
+            "#ref": "driver",
+            "#direction": "inside"
+        },
+        {
+            "#offset": {
+                "#z": -220
+            },
+            "#ref": "front",
+            "#direction": "inside"
+        },
+        {
+            "#offset": {
+                "#y": 10,
+                "#x": -130,
+                "#z": -220
+            },
+            "#ref": "right",
+            "#direction": "inside"
+        },
+        {
+            "#offset": {
+                "#y": -10,
+                "#x": -220,
+                "#z": -220
+            },
+            "#ref": "left",
+            "#direction": "inside"
+        },
+        {
+            "#offset": {
+                "#y": -80,
+                "#x": 160,
+                "#z": -250
+            },
+            "#ref": "front_left",
+            "#direction": "left"
+        },
+        {
+            "#offset": {
+                "#y": 80,
+                "#x": 160,
+                "#z": -250
+            },
+            "#ref": "front_right",
+            "#direction": "right"
+        },
+        {
+            "#offset": {
+                "#y": 80,
+                "#x": -200,
+                "#z": -250
+            },
+            "#ref": "back_right",
+            "#direction": "right"
+        },
+        {
+            "#offset": {
+                "#y": -80,
+                "#x": -200,
+                "#z": -250
+            },
+            "#ref": "back_left",
+            "#direction": "left"
+        },
+        {
+            "#offset": {
+                "#x": -400,
+                "#z": -250
+            },
+            "#ref": "back",
+            "#direction": "back"
+        }
+    ],
+    "#hash_539862aa827974a3": 1,
+    "#aiseats": [
+    ],
+    "#unloadgroups": [
+    ],
+    "#interact": {
+        "#hash_c57febc7e53e3276": 0,
+        "#hash_18f075aaf63a3da": 1,
+        "#hash_ba70a83be9b6b59c": 40,
+        "#maxfuel": 190,
+        "#depththreshold": 20,
+        "#hash_4c6d695d0920df19": 90,
+        "#hash_4c4a7b5d08fabef7": 110,
+        "#hash_b1fc50342f9a99dd": 90,
+        "#hash_591de85cd0986f8d": 0,
+        "#bctypename": "bigheli",
+        "#floattime": 8,
+        "#hash_23f37e83b1cafb10": 70
+    },
+    "#transitionparts": [
+    ],
+    "#exitextents": {
+        "#left": 100,
+        "#front": 300,
+        "#top": -215,
+        "#right": 100,
+        "#back": 350,
+        "#bottom": 253
+    },
+    "#vehicle": "veh9_mil_air_heli_palfa_physics_mp"
+}

@@ -1,0 +1,29 @@
+{
+    "#id": 374,
+    "#keys": [
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_operator_id"
+        },
+        {
+            "#key": "iw9_champions_quest_bitfield1"
+        },
+        {
+            "#key": "iw9_location_bitfield"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_location_bitfield2"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_87e5eeff9f5f68ba",
+    "#sharedname": "#hash_6a5ad49f1800e512"
+}

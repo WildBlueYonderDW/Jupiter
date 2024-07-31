@@ -1,0 +1,66 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_ammo_drop_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_dead_silence_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_emp_pulse_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_recon_drone_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_sonar_pulse_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_sound_veil_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_suppression_rounds_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_deployed_decoy_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_hb_sensor_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_med_box_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_tac_camera_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_trophy_ob_pvpve"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_super_tac_cover_ob_pvpve"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnentry": "ob_jup_item_super_armor_drop_ob_pvpve"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_super_stimpistol_ob_pvpve"
+        }
+    ]
+}

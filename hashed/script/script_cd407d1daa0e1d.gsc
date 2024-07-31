@@ -19,7 +19,7 @@
 // Checksum 0x0, Offset: 0x3f9
 // Size: 0x17
 function autoexec main() {
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"lootcratedrop", &function_a84cf6614b8b31e);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_356a265cf1b0654e", &function_a84cf6614b8b31e);
 }
 
 // Namespace namespace_d2cdf0e410334eae / namespace_633a83e541ee30e5

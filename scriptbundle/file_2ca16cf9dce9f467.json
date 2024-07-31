@@ -1,0 +1,23 @@
+{
+    "#hash_373ff0906d8ba8e0": "weapon_projectile",
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#weaponindex": 1,
+    "#hash_a3d83bb30fd0549c": "loadout_showcase_preview_large",
+    "#hash_3974f58db0ab0fe5": [
+        {
+            "#category": "CONVERSIONKIT"
+        },
+        {
+            "#category": "GUNPERK"
+        }
+    ],
+    "#hash_98928b4f8b31479f": "projectile",
+    "#hash_807531dc9afcec58": 1,
+    "#hash_c136648969a2fee0": "icon_weapon_la_rpapa7",
+    "#hash_6669d0edc1e69489": "weapon_preview_large",
+    "#weaponslot": 2,
+    "#weaponname": "&LUA_MENU/WEAPTYPE_SINGLE_LAUNCHER",
+    "#hash_8ec4aa2a82dfa7d2": "bundle_preview_large",
+    "#hash_2a43a8f6c62bd5d4": "&LUA_MENU/WEAPTYPE_LAUNCHERS",
+    "#hash_733b5518b3dac01": 1
+}

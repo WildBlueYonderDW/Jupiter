@@ -1,0 +1,20 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#hash_bed158a6dfac230d": 3,
+    "#pingvo": "#hash_cd5ffc7fee9f5a1b",
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_c6a6f1925f37e796",
+    "#titlestring": "&MP/BR_PLATE_CARRIER_3",
+    "#ref": "brloot_plate_carrier_3",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "consumable",
+    "#hash_8464122fb6575536": 1,
+    "#type": "plate_carrier",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Upgrade",
+    "#icon": "hud_icon_loot_armor_heavy",
+    "#scriptable": "%hash_4667199708297d5a",
+    "#typestring": "&SHARED_HINTSTRINGS/OB_PLATE_CARRIER_UPGRADE"
+}

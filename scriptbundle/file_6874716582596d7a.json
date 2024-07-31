@@ -1,0 +1,10 @@
+{
+    "#description": "&VEHICLES/DIRT_BIKE_DESC",
+    "#defaultimage": "ui_default_white",
+    "#hash_7ffb238c68bddf60": "ui_veh_dirt_bike_v000_preview",
+    "#hash_64ecb2fb1eb743a6": "IW9",
+    "#ref": "veh9_civ_lnd_dirt_bike",
+    "#hash_95439b09d4d1900c": 1,
+    "#name": "&VEHICLES/DIRT_BIKE",
+    "#icon": "hud_icon_vehicle_dirt_bike"
+}

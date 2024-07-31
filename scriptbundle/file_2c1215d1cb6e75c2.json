@@ -1,0 +1,17 @@
+{
+    "#id": 118,
+    "#keys": [
+        {
+            "#key": "iw9_zm_covenant_type"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_version"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_8d322d4be7d62335",
+    "#sharedname": "#hash_122c42d708c3ae3d"
+}

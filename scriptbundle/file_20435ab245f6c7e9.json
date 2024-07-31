@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#hash_87c8865341705b25": "jup_ui_frontend_acquisition_beret",
+    "#maxcount": 1,
+    "#titlestring": "&SHARED_HINTSTRINGS/WARLORD_AFO_BERET",
+    "#worldmodel": "lm_ammo_box_ar_01",
+    "#rarity": 4,
+    "#descstring": "&SHARED_HINTSTRINGS/WARLORD_AFO_BERET_DESC",
+    "#ref": "jup_warlord_afo_beret",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_12182d96c987c034",
+    "#lootidtype": "consumable",
+    "#type": "upgrade",
+    "#subtype": "warlord_afo_beret",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_12182d96c987c034",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_acquisition_warlord_beret",
+    "#scriptable": "%hash_496acc284fd7b877",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/ACQUISITION"
+}

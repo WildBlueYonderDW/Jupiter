@@ -81,13 +81,13 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
     level.gametype = "training_course";
     setdvar(@"hash_c11db9baa9e5bc9b", 1);
     setdvar(@"hash_c55dc89ef275cdaa", 1);
-    setdvar(@"hash_c653d32c30815d2b", 15);
+    setdvar(@"scr_game_graceperiod", 15);
     setdvar(@"hash_704afe6f6c582ee0", 6);
-    setdvar(@"hash_94af58bec500b3b9", 1);
+    setdvar(@"scr_game_disableAnnouncer", 1);
     setdvar(@"hash_b773758221a0c100", 5);
     setdvar(@"hash_e4187d1543c7477e", 0);
     setdvar(@"hash_a2e7d8fdf5d91dd9", 1);

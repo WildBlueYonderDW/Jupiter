@@ -1,0 +1,456 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp07_sm_uzulup_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp07_sm_uzulup_mp",
+    "#platform": "platform_jup_sm_uzulup",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_8",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp07_sm_uzulup_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp07_sm_uzulup_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_smg",
+    "#category": "&WEAPON/SUBCLASS_ID_8",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1500,
+    "#hash_1328c6a635d409bf": {
+        "#zoffset": 0.75,
+        "#yoffset": -1,
+        "#xoffset": 8,
+        "#priority": 1
+    },
+    "#lootid": 17194,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 9,
+    "#ref": "jup_jp07_sm_uzulup",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/UZULUP_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP07_SM_UZULUP",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag selectsemi ironsdefault",
+    "#asset": "jup_jp07_sm_uzulup_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_smg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_bar_short",
+                    "#lootid": 17793,
+                    "#challengeid": 12843
+                },
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_frontpieces",
+                    "#lootid": 22620,
+                    "#challengeid": 17945
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_stock_heavytac",
+                    "#lootid": 17806
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_backpieces",
+                    "#lootid": 22621
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_pgrip_aim",
+                    "#lootid": 17797
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_reargrips",
+                    "#lootid": 22626
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_uzulup2",
+                    "#lootid": 22641
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_undermounts",
+                    "#lootid": 22624
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_bar_hvylong",
+                    "#lootid": 17791
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_mag_20_9mm",
+                    "#lootid": 17789
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_magazines",
+                    "#lootid": 22622
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_minireddot04",
+                    "#lootid": 2465
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_optics",
+                    "#lootid": 22623
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_bar_long",
+                    "#lootid": 17790
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_stock_wire",
+                    "#lootid": 17787
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_lasercyl_slide",
+                    "#lootid": 32800,
+                    "#challengeid": 12844
+                },
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_extras",
+                    "#lootid": 22628,
+                    "#challengeid": 17981
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_pgrip",
+                    "#lootid": 17804
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_mag_25_9mm",
+                    "#lootid": 17807
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_sm_03",
+                    "#lootid": 22310
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_muzzles",
+                    "#lootid": 22625
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_bar_long2",
+                    "#lootid": 17809
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_9p_fr",
+                    "#lootid": 1679
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_gunperks",
+                    "#lootid": 23247
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_mag_50_9mm",
+                    "#lootid": 17800
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_bar_heavy",
+                    "#lootid": 17813,
+                    "#challengeid": 12845
+                },
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_ob_3",
+                    "#challengeid": 18017
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_stock_rod",
+                    "#lootid": 17810
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_stock_skeltac",
+                    "#lootid": 17785
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_bar_shortcomp",
+                    "#lootid": 17814
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_mag_40_9mm",
+                    "#lootid": 17794
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_barsil",
+                    "#lootid": 17796
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_stop_03",
+                    "#lootid": 21790
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_pgrip_tac",
+                    "#lootid": 17801
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_stockno",
+                    "#lootid": 17799
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_jp07",
+                    "#lootid": 32797
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_drum_100_9mm",
+                    "#lootid": 17815,
+                    "#challengeid": 12846
+                },
+                {
+                    "#challengeref": "jup_jp07_sm_uzulup_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_tuning",
+                    "#lootid": 22629,
+                    "#challengeid": 18053
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp07_sm_uzulup_amps",
+                    "#lootid": 47208
+                }
+            ],
+            "#level": 26
+        }
+    ],
+    "#displayorder": 9,
+    "#hash_6aa5a80660e7666a": "MP,OB,MOBILE,BR",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

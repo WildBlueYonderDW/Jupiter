@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_9163bc19dbb168d",
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_S2/GATE_KEY_S2_MIRROR_ATTUNED_NAME",
+    "#worldmodel": "jup_zm_relic_hunt_mirror",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_S2/GATE_KEY_S2_MIRROR_ATTUNED_DESC",
+    "#ref": "jup_rift_gate_key_season2_mirror_attuned",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_df6cc0d53f88e0c4",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "key",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_relic_hand_mirror",
+    "#scriptable": "%hash_7706ec7531c877db",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KEY"
+}

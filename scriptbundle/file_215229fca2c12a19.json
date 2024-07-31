@@ -1,0 +1,25 @@
+{
+    "#id": "texture_res",
+    "#description": "&OPTIONS/TEX_RES_DESC",
+    "#dvar": "@r_picmip",
+    "#image": "jup_ui_options_image_textureresolution",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/QUALITY_VERY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_NORMAL"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_HIGH"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_ea4e62cd3b96c8c6": "High",
+    "#name": "&OPTIONS/TEX_RES",
+    "#hash_fa6f16a2d91cbd14": "Medium"
+}

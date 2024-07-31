@@ -1,0 +1,12 @@
+{
+    "#id": "flying_vehicle_forward",
+    "#description": "&OPTIONS/FL_VEH_MOVE_FORWARD_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_7e5c921fbbda4b29"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/FL_VEH_MOVE_FORWARD"
+}

@@ -1,0 +1,13 @@
+{
+    "#id": "mouse_acceleration",
+    "#description": "&OPTIONS/MOUSEACCELERATION_DESC",
+    "#hash_ea45bc5a5e9ac302": 0.05,
+    "#hash_a20785232d9c4057": "mouseAccel",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_15963d81d6fd6dac": 10,
+    "#hash_df2c0bf51d7fb6ea": 0.05,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&OPTIONS/MOUSEACCELERATION",
+    "#hash_c55c746ff4d8929b": 1
+}

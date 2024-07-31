@@ -1,0 +1,20 @@
+{
+    "#id": 575,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_weapon_loot_id"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_89f15219e3f4fa8d",
+    "#sharedname": "#hash_372efa96b8695b65"
+}

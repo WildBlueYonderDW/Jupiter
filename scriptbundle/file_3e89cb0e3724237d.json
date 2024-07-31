@@ -1,0 +1,16 @@
+{
+    "#id": "swim_dive_from_non_sprint_kbm",
+    "#description": "&OPTIONS/SWIM_DIVE_BEHAVIOR_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/SWIM_DIVE_BEHAVIOR_SPRINT"
+        },
+        {
+            "#reference": "&OPTIONS/SWIM_DIVE_BEHAVIOR_PLUNGE"
+        }
+    ],
+    "#hash_a20785232d9c4057": "swimDiveFromNonSprintKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/SWIM_DIVE_BEHAVIOR"
+}

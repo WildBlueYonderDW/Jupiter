@@ -1,0 +1,8 @@
+{
+    "#id": "attack_action_button_swap",
+    "#description": "&OPTIONS/ATTACK_ACTION_BUTTON_SWAP_DESC",
+    "#action": "+attack",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "GamepadSwapButton",
+    "#name": "&OPTIONS/FIRE_WEAPON"
+}

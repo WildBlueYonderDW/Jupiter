@@ -82,7 +82,7 @@ function main() {
     setdvar(@"hash_405e7e20d91344cc", 0);
     setdvar(@"hash_42eece3f15e35b3d", 1);
     setdvar(@"hash_a22f98e2c5b506ce", 30);
-    setdvar(@"hash_cbc195ec2129279", 0);
+    setdvar(@"cg_friendlyReviveNameplateEnabled", 0);
     setomnvar("ui_num_dom_flags", 6);
     enablegroundwarspawnlogic(400, 1200);
     updategametypedvars();

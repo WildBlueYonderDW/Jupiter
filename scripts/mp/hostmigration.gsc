@@ -26,7 +26,7 @@ function callback_hostmigration() {
         character.hostmigrationcontrolsfrozen = 0;
     }
     level.hostmigrationtimer = 1;
-    setdvar(@"hash_a8ee1540ced18a88", 1);
+    setdvar(@"ui_inhostmigration", 1);
     level.hostmigration = 1;
     level notify("host_migration_begin");
     scripts\mp\gamelogic::updatetimerpausedness();
@@ -42,7 +42,7 @@ function callback_hostmigration() {
     level endon("host_migration_begin");
     hostmigrationwait();
     level.hostmigrationtimer = undefined;
-    setdvar(@"hash_a8ee1540ced18a88", 0);
+    setdvar(@"ui_inhostmigration", 0);
     println("<dev string:x65>" + gettime());
     visionsetthermal(game["thermal_vision"]);
     level.hostmigration = 0;

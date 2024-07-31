@@ -1322,7 +1322,7 @@ function playac130animinternal(animstruct, players) {
         animstruct.cameraentlinktag = "j_prop_" + player.infilanimindex;
         player cameraunlink();
         player cameralinkto(animstruct.cameraent, animstruct.cameraentlinktag, 1, 1);
-        player setclientdvar(@"hash_df1dc712c4a91588", var_e74da054403180a2);
+        player setclientdvar(@"cg_fov", var_e74da054403180a2);
         player enablephysicaldepthoffieldscripting();
         player setphysicaldepthoffield(var_5eea6039c4f26fdf, var_108437a9e3168337, var_63916e6c46c30b92, var_5004850b0ec526a1);
         player _freezelookcontrols(1);
@@ -1395,7 +1395,7 @@ function transitionac130tomovinganim(animstruct, players) {
             animstruct.cameraentlinktag = "j_prop_" + player.infilanimindex;
             player cameraunlink();
             player cameralinkto(animstruct.cameraentmoving, animstruct.cameraentlinktag, 1, 1);
-            player setclientdvar(@"hash_df1dc712c4a91588", var_d69c3085d8cf2730);
+            player setclientdvar(@"cg_fov", var_d69c3085d8cf2730);
             player setphysicaldepthoffield(var_decc5773bf6d2dc5, var_6642ae82a680f3e9, var_ce7b1c2d2f4235c0, var_5e0f870c68f3cfab);
             player notify("infil_move");
         }
@@ -1485,7 +1485,7 @@ function endac130infilanimsinternal(animstruct, players) {
         }
         player setallstreamloaddist(0);
         player cameraunlink();
-        player setclientdvar(@"hash_df1dc712c4a91588", 65);
+        player setclientdvar(@"cg_fov", 65);
         player disablephysicaldepthoffieldscripting();
         player setdof_default();
     }
@@ -1595,21 +1595,21 @@ function cloud_cover(animstruct) {
 // Checksum 0x0, Offset: 0x57d7
 // Size: 0x145
 function infil_light_dvars(animstruct) {
-    var_c3ed855fe7c983e3 = getdvarfloat(@"hash_8667c0bb90c5bfc3");
-    var_1800e53d66415e2d = getdvarint(@"hash_63eb1893f96ac98d");
-    var_5506432d2291c178 = getdvarint(@"hash_1dde331a8e0153d8");
-    var_488f9b9fe1ead0a6 = getdvarfloat(@"hash_9ab6a766fc4e0c06");
+    var_c3ed855fe7c983e3 = getdvarfloat(@"sm_spotDistCull");
+    var_1800e53d66415e2d = getdvarint(@"sm_spotUpdateLimit");
+    var_5506432d2291c178 = getdvarint(@"sm_roundRobinPrioritySpotShadows");
+    var_488f9b9fe1ead0a6 = getdvarfloat(@"sm_sunSampleSizeNear");
     var_99598b81ba0f7519 = getdvarfloat(@"hash_a589d43a51d526df");
-    setdvar(@"hash_8667c0bb90c5bfc3", 1000);
-    setdvar(@"hash_63eb1893f96ac98d", 6);
-    setdvar(@"hash_1dde331a8e0153d8", 8);
-    setdvar(@"hash_9ab6a766fc4e0c06", 0.25);
+    setdvar(@"sm_spotDistCull", 1000);
+    setdvar(@"sm_spotUpdateLimit", 6);
+    setdvar(@"sm_roundRobinPrioritySpotShadows", 8);
+    setdvar(@"sm_sunSampleSizeNear", 0.25);
     setdvar(@"hash_a589d43a51d526df", 0.5);
     animstruct waittill_either("infil_reset_light_dvars", "stopScene");
-    setdvar(@"hash_8667c0bb90c5bfc3", var_c3ed855fe7c983e3);
-    setdvar(@"hash_63eb1893f96ac98d", var_1800e53d66415e2d);
-    setdvar(@"hash_1dde331a8e0153d8", var_5506432d2291c178);
-    setdvar(@"hash_9ab6a766fc4e0c06", var_488f9b9fe1ead0a6);
+    setdvar(@"sm_spotDistCull", var_c3ed855fe7c983e3);
+    setdvar(@"sm_spotUpdateLimit", var_1800e53d66415e2d);
+    setdvar(@"sm_roundRobinPrioritySpotShadows", var_5506432d2291c178);
+    setdvar(@"sm_sunSampleSizeNear", var_488f9b9fe1ead0a6);
     setdvar(@"hash_a589d43a51d526df", var_99598b81ba0f7519);
 }
 

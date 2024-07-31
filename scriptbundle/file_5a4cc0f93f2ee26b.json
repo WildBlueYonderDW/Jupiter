@@ -1,0 +1,10 @@
+{
+    "#id": "brightness_button",
+    "#description": "&OPTIONS/BRIGHTNESS_DESC1",
+    "#hash_c14e7031105de2ff": 1,
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "GenericButton",
+    "#name": "&OPTIONS/BRIGHTNESS",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/BRIGHTNESS_DISABLED_DESC",
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -93,7 +93,7 @@ function bot_br_think() {
     thread ammo_manager();
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1") || self.sessionstate == "<dev string:x1c>") {
+            if (getdvarint(@"bot_DisableAllAI") || self.sessionstate == "<dev string:x1c>") {
                 wait 0.05;
                 continue;
             }

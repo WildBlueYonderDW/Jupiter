@@ -69,7 +69,7 @@ function main() {
         registerwinbytwoenableddvar(getgametype(), 1);
         registerwinbytwomaxroundsdvar(getgametype(), 4);
         registernumrevivesdvar(getgametype(), 0);
-        setdvar(@"hash_e723cc761de7b161", 2);
+        setdvar(@"scr_player_lastStand", 2);
     }
     updategametypedvars();
     level.objectivebased = 1;

@@ -204,7 +204,7 @@ function function_b2841b0708f2b5d4() {
     // Checksum 0x0, Offset: 0x8b1
     // Size: 0x54
     function function_745ac044fcee731b(value) {
-        if (getdvarint(@"hash_932e9550632df2cb") == -1 || getdvarint(@"hash_932e9550632df2cb") == self getentitynumber()) {
+        if (getdvarint(@"ai_debugEntIndex") == -1 || getdvarint(@"ai_debugEntIndex") == self getentitynumber()) {
             if (getdvarint(@"hash_3a76c9f686d280fc", 0) == value) {
                 return 1;
             }

@@ -1,0 +1,9 @@
+{
+    "#description": "&VEHICLES/TRUCK_TECH_HMG_DESC",
+    "#defaultimage": "ui_default_white",
+    "#hash_7ffb238c68bddf60": "ui_preview_veh_jup_truck_tech_hmg",
+    "#hash_64ecb2fb1eb743a6": "WZ2,JUP",
+    "#ref": "veh_jup_truck_tech_hmg",
+    "#name": "&VEHICLES/TRUCK_TECH_HMG",
+    "#icon": "hud_icon_vehicle_truck_tech_hmg"
+}

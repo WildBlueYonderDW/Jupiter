@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_36f23a5bf7d635bb",
+    "#pingvo": "#hash_c4245f93518dbd73",
+    "#maxcount": 3,
+    "#hash_359e971d09addafc": "#hash_26e8c7ff3e310366",
+    "#titlestring": "&MP/BR_VALUABLE_MRE",
+    "#hash_bbae53787b1abf3e": 1,
+    "#hash_13fc3679e0d849db": 1,
+    "#rarity": 1,
+    "#ref": "brloot_valuable_mre",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_a4a91670e89a5cc4",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "valuable",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_89d4811c04333741",
+    "#inventorytype": "Stored",
+    "#icon": "hud_icon_loot_mre",
+    "#scriptable": "%hash_666379cc26db6756",
+    "#denialsfx": "#hash_afeb34a87e316add"
+}

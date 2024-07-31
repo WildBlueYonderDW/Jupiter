@@ -183,7 +183,7 @@ function registerscorelimitdvar(dvarstring, defaultvalue) {
 // Size: 0x35
 function registertimelimitdvar(dvarstring, defaultvalue) {
     registerwatchdvarfloat("timelimit", defaultvalue);
-    setdvar(@"hash_308aa4aa717d1b73", gettimelimit());
+    setdvar(@"ui_timelimit", gettimelimit());
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -192,7 +192,7 @@ function registertimelimitdvar(dvarstring, defaultvalue) {
 // Size: 0x35
 function registerhalftimedvar(dvarstring, defaultvalue) {
     registerwatchdvarint("halftime", defaultvalue);
-    setdvar(@"hash_39ee97c0c58089e1", gethalftime());
+    setdvar(@"ui_halftime", gethalftime());
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -224,7 +224,7 @@ function function_704789086c9ad943(dvarstring, defaultvalue) {
 // Checksum 0x0, Offset: 0x1989
 // Size: 0x1b
 function setovertimelimitdvar(value) {
-    setdvar(@"hash_c7938f963b6cdb73", value);
+    setdvar(@"overtimeTimeLimit", value);
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -981,7 +981,7 @@ function gettimelimit() {
         if (istrue(game["timeToBeat"])) {
             return game["timeToBeat"];
         } else {
-            overtimelimit = getdvarfloat(@"hash_c7938f963b6cdb73");
+            overtimelimit = getdvarfloat(@"overtimeTimeLimit");
             if (overtimelimit > 0) {
                 return overtimelimit;
             } else {
@@ -1085,7 +1085,7 @@ function onlinestatsenabled() {
 // Checksum 0x0, Offset: 0x3031
 // Size: 0x1d
 function privatematch() {
-    return level.onlinegame && getdvarint(@"hash_485ef1ed1d39d3a3");
+    return level.onlinegame && getdvarint(@"xblive_privatematch");
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -1093,7 +1093,7 @@ function privatematch() {
 // Checksum 0x0, Offset: 0x3057
 // Size: 0x31
 function lobbyteamselectenabled() {
-    return level.systemlink || privatematch() && getdvarint(@"hash_eb8b825937d54d97", 0) || function_1eb7d2791d3c536f();
+    return level.systemlink || privatematch() && getdvarint(@"lobby_team_select", 0) || function_1eb7d2791d3c536f();
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -1349,17 +1349,17 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
     numrevives = getmatchrulesdata("commonOption", "numRevives");
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_numRevives"), numrevives);
     registernumrevivesdvar(getgametype(), numrevives);
-    setdynamicdvar(@"hash_b1d561f9a9241e09", getmatchrulesdata("commonOption", "maxHealth"));
-    setdynamicdvar(@"hash_2922210021914dd7", getmatchrulesdata("commonOption", "healthRegen"));
+    setdynamicdvar(@"scr_player_maxhealth", getmatchrulesdata("commonOption", "maxHealth"));
+    setdynamicdvar(@"scr_player_healthregentime", getmatchrulesdata("commonOption", "healthRegen"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_healthregentime"), getmatchrulesdata("commonOption", "healthRegen"));
     setdynamicdvar(@"hash_a4d532f42d919827", getmatchrulesdata("commonOption", "allowArmor"));
     setdynamicdvar(@"hash_d75d5638785f3b09", getmatchrulesdata("commonOption", "spawnArmor"));
     setdynamicdvar(@"hash_a6a3fd965485d4bc", getmatchrulesdata("commonOption", "spawnArmorPlates"));
     setdynamicdvar(@"hash_8ad1ab9436bccca", getmatchrulesdata("commonOption", "dropArmorOnDeath"));
     setdynamicdvar(@"hash_28d450f7f28644b7", getmatchrulesdata("commonOption", "armorDropAmount"));
-    setdynamicdvar(@"hash_dfc97948abf22f64", getmatchrulesdata("commonOption", "disableSuperSprint"));
-    setdynamicdvar(@"hash_215eb9aef94dd47e", getmatchrulesdata("commonOption", "disableMount"));
-    setdynamicdvar(@"hash_e723cc761de7b161", getmatchrulesdata("commonOption", "lastStand"));
+    setdynamicdvar(@"scr_player_disableSuperSprint", getmatchrulesdata("commonOption", "disableSuperSprint"));
+    setdynamicdvar(@"scr_player_disableMount", getmatchrulesdata("commonOption", "disableMount"));
+    setdynamicdvar(@"scr_player_lastStand", getmatchrulesdata("commonOption", "lastStand"));
     setdynamicdvar(@"hash_e4f93d764d11874d", getmatchrulesdata("commonOption", "deathsDoorEnterPct"));
     setdynamicdvar(@"hash_b84edc242cc61abf", getmatchrulesdata("commonOption", "deathsDoorExitPct"));
     laststandhealth = getmatchrulesdata("commonOption", "lastStandHealth");
@@ -1379,22 +1379,22 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
     registerlaststandsuicidetimerdvar(laststandsuicidetimer);
     setdynamicdvar(@"hash_df1ae5a11f519ab5", getmatchrulesdata("commonOption", "reviveUseWeapon"));
     level.matchrules_damagemultiplier = 0;
-    setdynamicdvar(@"hash_b5e336c86438398c", getmatchrulesdata("commonOption", "vampirism"));
-    setdynamicdvar(@"hash_df992051d6fe8149", getmatchrulesdata("commonOption", "spectateModeAllowed"));
-    setdynamicdvar(@"hash_399f13d1217738fe", getmatchrulesdata("commonOption", "showKillcam"));
+    setdynamicdvar(@"scr_game_vampirism", getmatchrulesdata("commonOption", "vampirism"));
+    setdynamicdvar(@"scr_game_spectatetype", getmatchrulesdata("commonOption", "spectateModeAllowed"));
+    setdynamicdvar(@"scr_game_allowkillcam", getmatchrulesdata("commonOption", "showKillcam"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_killcamType"), getmatchrulesdata("commonOption", "killcamType"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_allow3rdspectate"), getmatchrulesdata("commonOption", "spectate3rdAllowed"));
-    setdynamicdvar(@"hash_2a4effcaf5954d38", getmatchrulesdata("commonOption", "enableMinimap"));
-    setdynamicdvar(@"hash_f16ba8db72f34fc3", getmatchrulesdata("commonOption", "radarAlwaysOn"));
-    setdynamicdvar(@"hash_36d4f05a3801af7b", getmatchrulesdata("commonOption", "radarHideShots"));
-    setdynamicdvar(@"hash_cc12cd6acff9b720", getmatchrulesdata("commonOption", "compassHideEnemy"));
-    setdynamicdvar(@"hash_9498c88902801ed5", getmatchrulesdata("commonOption", "compassHidePings"));
+    setdynamicdvar(@"scr_game_enableMinimap", getmatchrulesdata("commonOption", "enableMinimap"));
+    setdynamicdvar(@"scr_game_forceuav", getmatchrulesdata("commonOption", "radarAlwaysOn"));
+    setdynamicdvar(@"scr_game_radarHidePings", getmatchrulesdata("commonOption", "radarHideShots"));
+    setdynamicdvar(@"scr_game_navBarHideEnemy", getmatchrulesdata("commonOption", "compassHideEnemy"));
+    setdynamicdvar(@"scr_game_navBarHidePings", getmatchrulesdata("commonOption", "compassHidePings"));
     setdynamicdvar(@"hash_5fc696f5bbb3ca62", getmatchrulesdata("commonOption", "disableSpawnCamera"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_playerrespawndelay"), getmatchrulesdata("commonOption", "respawnDelay"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_suicidespawndelay"), getmatchrulesdata("commonOption", "suicideSpawnDelay"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_waverespawndelay"), getmatchrulesdata("commonOption", "waveRespawnDelay"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_waverespawndelay_alt"), getmatchrulesdata("commonOption", "waveRespawnDelayAlt"));
-    setdynamicdvar(@"hash_5d64cd3b24cf883a", getmatchrulesdata("commonOption", "forceRespawn"));
+    setdynamicdvar(@"scr_player_forcerespawn", getmatchrulesdata("commonOption", "forceRespawn"));
     level.matchrules_allowcustomclasses = getmatchrulesdata("commonOption", "allowCustomClasses");
     level.supportintel = getmatchrulesdata("commonOption", "allowIntel");
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_allowKillstreaks"), getmatchrulesdata("commonOption", "allowKillstreaks"));
@@ -1404,23 +1404,23 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_ffPunishDamageLimit"), getmatchrulesdata("commonOption", "ffPunishDamageLimit"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_ffKickKillLimit"), getmatchrulesdata("commonOption", "ffKickKillLimit"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_ffKickDamageLimit"), getmatchrulesdata("commonOption", "ffKickDamageLimit"));
-    setdynamicdvar(@"hash_66c38b5b61297ac1", getmatchrulesdata("commonOption", "thirdPerson"));
+    setdynamicdvar(@"scr_thirdperson", getmatchrulesdata("commonOption", "thirdPerson"));
     if (getdvarint(@"hash_ff21d0d18916f3a1", 0) == 1) {
-        setdynamicdvar(@"hash_c00e244ea59d530e", getmatchrulesdata("commonOption", "thirdPerson"));
+        setdynamicdvar(@"camera_thirdPerson", getmatchrulesdata("commonOption", "thirdPerson"));
     }
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_roundRetainStreaks"), getmatchrulesdata("commonOption", "roundRetainStreaks"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_roundRetainStreakProg"), getmatchrulesdata("commonOption", "roundRetainStreakProg"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_deathRetainStreaks"), getmatchrulesdata("commonOption", "deathRetainStreaks"));
-    setdynamicdvar(@"hash_a69e3d30bf0c5ff6", getmatchrulesdata("commonOption", "casualScoreStreaks"));
+    setdynamicdvar(@"scr_game_casualScoreStreaks", getmatchrulesdata("commonOption", "casualScoreStreaks"));
     setdynamicdvar(@"hash_614165a37ac2db61", getmatchrulesdata("commonOption", "wrapKillstreaks"));
-    setdynamicdvar(@"hash_7d44bfc04e9b62b9", getmatchrulesdata("commonOption", "superFastChargeRate"));
-    setdynamicdvar(@"hash_913a338c84e2f2f6", getmatchrulesdata("commonOption", "superPointsMod"));
+    setdynamicdvar(@"scr_game_superFastChargeRate", getmatchrulesdata("commonOption", "superFastChargeRate"));
+    setdynamicdvar(@"scr_game_superPointsMod", getmatchrulesdata("commonOption", "superPointsMod"));
     setdynamicdvar(@"hash_fbc77dbb0cf44cc7", getmatchrulesdata("commonOption", "spawnProtectionTimer"));
-    setdynamicdvar(@"hash_c85a7135dce00903", getmatchrulesdata("commonOption", "equipmentDelay"));
-    setdynamicdvar(@"hash_9072002890a9a121", getmatchrulesdata("commonOption", "equipmentMSProtect"));
-    setdynamicdvar(@"hash_b8a0aa5681c2aa39", getmatchrulesdata("commonOption", "disableBattleChatter"));
-    setdynamicdvar(@"hash_94af58bec500b3b9", getmatchrulesdata("commonOption", "disableAnnouncer"));
-    setdynamicdvar(@"hash_29e6b70603680941", getmatchrulesdata("commonOption", "inGameLoot"));
+    setdynamicdvar(@"scr_game_lethalDelay", getmatchrulesdata("commonOption", "equipmentDelay"));
+    setdynamicdvar(@"scr_game_equipmentMSProtect", getmatchrulesdata("commonOption", "equipmentMSProtect"));
+    setdynamicdvar(@"scr_game_disableBattleChatter", getmatchrulesdata("commonOption", "disableBattleChatter"));
+    setdynamicdvar(@"scr_game_disableAnnouncer", getmatchrulesdata("commonOption", "disableAnnouncer"));
+    setdynamicdvar(@"scr_game_inGameLoot", getmatchrulesdata("commonOption", "inGameLoot"));
     var_c84f9319fe9e602f = 0;
     /#
         if (!istrue(level.onlinegame) && getdvarint(@"hash_c55dc89ef275cdaa", 0)) {
@@ -1431,9 +1431,9 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
         }
     #/
     if (var_c84f9319fe9e602f || function_8cc09267ba72c7f7()) {
-        setdynamicdvar(@"hash_7194076ab4888f2b", 1);
+        setdynamicdvar(@"scr_game_infilSkip", 1);
     } else {
-        setdynamicdvar(@"hash_7194076ab4888f2b", getmatchrulesdata("commonOption", "infilSkip"));
+        setdynamicdvar(@"scr_game_infilSkip", getmatchrulesdata("commonOption", "infilSkip"));
     }
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_practiceRound"), getmatchrulesdata("commonOption", "practiceRound"));
     setdynamicdvar(@"hash_d2de59939486bd5a", getmatchrulesdata("commonOption", "postGameExfil"));
@@ -1443,14 +1443,14 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_crankedBombTimer"), level.crankedbombtimer);
     scripts\mp\cranked::registercrankedtimerdvar(getgametype(), level.crankedbombtimer);
     setdynamicdvar(@"hash_72fe29aa713ea21e", getmatchrulesdata("commonOption", "classTableOverride"));
-    setdynamicdvar(@"hash_fbde2817a4a94998", getmatchrulesdata("commonOption", "magCount"));
+    setdynamicdvar(@"scr_game_magcount", getmatchrulesdata("commonOption", "magCount"));
     setdynamicdvar(@"hash_127490a7577f169f", getmatchrulesdata("commonOption", "tier1ModeEnabled"));
     setdynamicdvar(@"hash_a2c2c2007177185e", getmatchrulesdata("commonOption", "hardcoreModeOn"));
-    setdynamicdvar(@"hash_a54edeed7c5b587f", getmatchrulesdata("commonOption", "headshotsOnly"));
+    setdynamicdvar(@"scr_game_onlyheadshots", getmatchrulesdata("commonOption", "headshotsOnly"));
     if (!isdefined(skipfriendlyfire)) {
-        setdynamicdvar(@"hash_e5a33d679c26221f", getmatchrulesdata("commonOption", "friendlyFire"));
+        setdynamicdvar(@"scr_team_fftype", getmatchrulesdata("commonOption", "friendlyFire"));
     }
-    setdvar(@"hash_8ed4dff39f3251f5", getdvarint(@"hash_f16ba8db72f34fc3") == 1);
+    setdvar(@"bg_compassShowEnemies", getdvarint(@"scr_game_forceuav") == 1);
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_pointsPerKill"), getmatchrulesdata("commonOption", "pointsPerKill"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_pointsPerDeath"), getmatchrulesdata("commonOption", "pointsPerDeath"));
     setdynamicdvar(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_pointsHeadshotBonus"), getmatchrulesdata("commonOption", "pointsHeadshotBonus"));
@@ -1461,7 +1461,7 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
         setdynamicdvar(@"hash_704afe6f6c582ee0", getmatchrulesdata("commonOption", "matchStartTime"));
         setdynamicdvar(@"hash_da33635b62d4e5b3", getmatchrulesdata("commonOption", "roundStartTime"));
     }
-    setdvar(@"hash_336f868b4d4b223", getmatchrulesdata("commonOption", "killstreakDelay"));
+    setdvar(@"scr_game_killstreakdelay", getmatchrulesdata("commonOption", "killstreakDelay"));
     if (getdvarint(@"hash_f06ae50014e12fe5") == 1) {
         setdvar(@"hash_8610ccd25560c117", getmatchrulesdata("commonOption", "dynamicMapElementsDisabled"));
     }
@@ -1566,7 +1566,7 @@ function isanymlgmatch() {
             return 1;
         }
     }
-    return getdvarint(@"hash_9cc8c81329e0bdbf");
+    return getdvarint(@"xblive_competitionmatch");
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -1574,7 +1574,7 @@ function isanymlgmatch() {
 // Checksum 0x0, Offset: 0x4a13
 // Size: 0x24
 function ismlgsystemlink() {
-    if (level.systemlink && getdvarint(@"hash_9cc8c81329e0bdbf")) {
+    if (level.systemlink && getdvarint(@"xblive_competitionmatch")) {
         return true;
     }
     return false;
@@ -1585,7 +1585,7 @@ function ismlgsystemlink() {
 // Checksum 0x0, Offset: 0x4a40
 // Size: 0x21
 function ismlgprivatematch() {
-    if (privatematch() && getdvarint(@"hash_9cc8c81329e0bdbf")) {
+    if (privatematch() && getdvarint(@"xblive_competitionmatch")) {
         return true;
     }
     return false;
@@ -1782,7 +1782,7 @@ function function_f24e99a2f548d0b8() {
 // Checksum 0x0, Offset: 0x4e42
 // Size: 0x1b
 function function_d75b73c443421047() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "") == "limbo";
+    return getdvar(@"ui_gametype", "") == "limbo";
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -1951,21 +1951,21 @@ function getmaxoutofboundsbrtime() {
 // Size: 0x104
 function updateobjectivetext() {
     if (self.pers["team"] == "spectator") {
-        self setclientdvar(@"hash_e059919397a99593", "");
+        self setclientdvar(@"cg_objectiveText", "");
         return;
     }
     if (level.roundscorelimit > 0 && !isobjectivebased()) {
         if (isdefined(getobjectivescoretext(self.pers["team"]))) {
             if (level.splitscreen) {
-                self setclientdvar(@"hash_e059919397a99593", getobjectivescoretext(self.pers["team"]));
+                self setclientdvar(@"cg_objectiveText", getobjectivescoretext(self.pers["team"]));
             } else {
-                self setclientdvar(@"hash_e059919397a99593", getobjectivescoretext(self.pers["team"]), level.roundscorelimit);
+                self setclientdvar(@"cg_objectiveText", getobjectivescoretext(self.pers["team"]), level.roundscorelimit);
             }
         }
         return;
     }
     if (isdefined(getobjectivetext(self.pers["team"]))) {
-        self setclientdvar(@"hash_e059919397a99593", getobjectivetext(self.pers["team"]));
+        self setclientdvar(@"cg_objectiveText", getobjectivetext(self.pers["team"]));
     }
 }
 

@@ -1,0 +1,36 @@
+{
+    "#hash_f340c0e6a7e586f3": [
+        {
+            "#maxsize": 80,
+            "#hash_3f3747c38c39e091": "",
+            "#hash_b7a114b1c7acb8a": 72,
+            "#tracking": 0,
+            "#hash_9fdbbb4d7b1ad45": 0,
+            "#name": "LBodyTextLight"
+        },
+        {
+            "#maxsize": 48,
+            "#hash_3f3747c38c39e091": "",
+            "#hash_b7a114b1c7acb8a": 40,
+            "#tracking": 0,
+            "#hash_9fdbbb4d7b1ad45": 0,
+            "#name": "MBodyTextLight"
+        },
+        {
+            "#maxsize": 36,
+            "#hash_3f3747c38c39e091": "",
+            "#hash_b7a114b1c7acb8a": 32,
+            "#tracking": 0,
+            "#hash_9fdbbb4d7b1ad45": 0,
+            "#name": "SBodyTextLight"
+        },
+        {
+            "#maxsize": 28,
+            "#hash_3f3747c38c39e091": "",
+            "#hash_b7a114b1c7acb8a": 24,
+            "#tracking": 0,
+            "#hash_9fdbbb4d7b1ad45": 0,
+            "#name": "XSBodyTextLight"
+        }
+    ]
+}

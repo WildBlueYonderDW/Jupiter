@@ -1,0 +1,19 @@
+{
+    "#id": "codcaster_option_datacenter",
+    "#description": "&CODCASTER/DATACENTER_DESC",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_ca9640daf7dc7918",
+            "#type": "DVAR"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#type": "GAMEMODE",
+            "#hash_2eaee088dca87ab0": 1
+        }
+    ],
+    "#name": "&CODCASTER/DATACENTER"
+}

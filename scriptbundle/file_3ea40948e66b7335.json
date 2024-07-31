@@ -1,0 +1,15 @@
+{
+    "#id": "smoke_action",
+    "#description": "&OPTIONS/USE_TACTICAL_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_189abb6af5d47bc1"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/USE_TACTICAL",
+    "#hash_6cc29e2aa276fd0f": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

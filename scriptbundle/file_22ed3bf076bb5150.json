@@ -1,0 +1,21 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#ping_intel",
+    "#hash_ff1750b480636dc9": 1,
+    "#hash_c03c4ef51659ba4c": 1,
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_ITEM_GENERICS/AVA_INTEL_MERC_STRONGHOLD",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_ITEM_GENERICS/AVA_INTEL_MERC_STRONGHOLD",
+    "#ref": "jup_ava_intel_merc_stronghold",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "consumable",
+    "#type": "quest",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Pooled",
+    "#icon": "hud_icon_loot_intel_02",
+    "#scriptable": "%hash_234f369b6f9a8f80",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/QUEST_ITEM"
+}

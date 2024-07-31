@@ -1,0 +1,6 @@
+{
+    "#settext": "&",
+    "#type": "PLAYER_SIZE",
+    "#style": "NONE",
+    "#text": "&LUA_MENU/PLAYLIST_TAG_MAX_PLAYERS"
+}

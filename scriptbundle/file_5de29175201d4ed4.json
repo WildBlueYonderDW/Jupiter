@@ -1,0 +1,13 @@
+{
+    "#id": "shoulder_swap_action",
+    "#description": "&OPTIONS/CHANGE_CAMERA_SIDE_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#action": "+shoulderswap",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_143fc92f976a1eff"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/CHANGE_CAMERA_SIDE"
+}

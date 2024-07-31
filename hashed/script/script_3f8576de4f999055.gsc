@@ -31,10 +31,10 @@ function main() {
     if (function_a7caa13ebe4c4ba5() || isgroundwarcoremode()) {
         if (!isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
             if (getgametype() == "gwtdm") {
-                setdvar(@"hash_6beec004cdf37c0", 188);
+                setdvar(@"scr_localeID", 188);
                 thread function_40066db0bee45b43("locale_188");
             } else {
-                setdvar(@"hash_6beec004cdf37c0", 187);
+                setdvar(@"scr_localeID", 187);
                 thread function_40066db0bee45b43("locale_187");
             }
         }
@@ -49,12 +49,12 @@ function main() {
     scripts\common\create_script_utility::initialize_create_script();
     level thread namespace_cea3a630d232b3cc::main();
     scripts\mp\compass::setupminimap("compass_map_mp_jup_resort_gw");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
     game["axis_outfit"] = "woodland";
-    setdvar(@"hash_be80c9650d91b8ac", 5000);
+    setdvar(@"fd_helicopter_altitude_limiter", 5000);
     level.var_56bcdc219d432f80["axis"] = 15;
     level.var_56bcdc219d432f80["allies"] = 15;
 }

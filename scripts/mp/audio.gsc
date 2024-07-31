@@ -25,7 +25,7 @@ function init_audio() {
 // Size: 0x3e
 function onplayerconnectaudioinit() {
     apply_reverb("default");
-    if (getdvarint(@"hash_66c38b5b61297ac1") == 1) {
+    if (getdvarint(@"scr_thirdperson") == 1) {
         setglobalsoundcontext("thirdpersonmode", "on");
     }
     self setsoundsubmix("hit_indicator_hipfire");

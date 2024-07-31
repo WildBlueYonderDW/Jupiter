@@ -417,7 +417,7 @@ function setupkillcamui(attacker, victim, objweapon, killcamtimes, var_53c65e436
     }
     function_b07f44c04a1ab4d2(attacker);
     function_64266f65b359ad7(attacker);
-    forceRespawn = getdvarint(@"hash_5d64cd3b24cf883a");
+    forceRespawn = getdvarint(@"scr_player_forcerespawn");
     if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forceRespawn == 0 && !level.gameended) {
         self setclientomnvar("ui_killcam_text", "skip");
     } else if (!level.gameended) {

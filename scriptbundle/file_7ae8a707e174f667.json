@@ -1,0 +1,21 @@
+{
+    "#id": "breath_sprint_action",
+    "#description": "&OPTIONS/SPRINT_HOLD_BREATH_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_31b5cf5dbaa4b140"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_3a9c98f2ea5c3bd8"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_568c98b9f87d3493"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/SPRINT_HOLD_BREATH",
+    "#hash_6cc29e2aa276fd0f": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

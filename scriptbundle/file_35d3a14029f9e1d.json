@@ -1,0 +1,564 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_cp01_sm_coscar635_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_cp01_sm_coscar635_mp",
+    "#platform": "platform_jup_sm_coscar635",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_5",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_cp01_sm_coscar635_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_cp01_sm_coscar635_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_smg",
+    "#category": "&WEAPON/SUBCLASS_ID_5",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1500,
+    "#hash_1328c6a635d409bf": {
+        "#zoffset": 1,
+        "#yoffset": -1,
+        "#xoffset": 3,
+        "#priority": 1
+    },
+    "#lootid": 17183,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 2,
+    "#ref": "jup_cp01_sm_coscar635",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/COSCAR635_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_CP01_SM_COSCAR635",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault selectsemi ironsdefault",
+    "#asset": "jup_cp01_sm_coscar635_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_smg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_pgrip_ass",
+                    "#lootid": 22343,
+                    "#challengeid": 12750
+                },
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_reargrips",
+                    "#lootid": 22300,
+                    "#challengeid": 17940
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_risr_minireddot01",
+                    "#lootid": 21780
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_optics",
+                    "#lootid": 22297
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_sm_01",
+                    "#lootid": 22308
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_muzzles",
+                    "#lootid": 22299
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock_ultlight2",
+                    "#lootid": 22332
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_backpieces",
+                    "#lootid": 22295
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_bar_long_mike4",
+                    "#lootid": 30278
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_frontpieces",
+                    "#lootid": 22294
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock",
+                    "#lootid": 22324
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_9p_lg",
+                    "#lootid": 29394
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_gunperks",
+                    "#lootid": 23230
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_mag_20_9mm",
+                    "#lootid": 22340
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_magazines",
+                    "#lootid": 22296
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_extras",
+                    "#lootid": 22302
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock_precision",
+                    "#lootid": 22336
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_pgrip_skelsnp",
+                    "#lootid": 30005,
+                    "#challengeid": 12751
+                },
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_ob_2",
+                    "#challengeid": 17976
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_stop_04",
+                    "#lootid": 21791
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_undermounts",
+                    "#lootid": 22298
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_mag_50_9mm",
+                    "#lootid": 22338
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock_carbine",
+                    "#lootid": 22334
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_barsil2",
+                    "#lootid": 22321
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock_taclight",
+                    "#lootid": 22333
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_pgrip_tac",
+                    "#lootid": 22344
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_hybridtherm01",
+                    "#lootid": 21760,
+                    "#challengeid": 12752
+                },
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_ob_3",
+                    "#challengeid": 18012
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock_ultlight",
+                    "#lootid": 22331
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_bar_light_mike4",
+                    "#lootid": 22318
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_drum_100_9mm",
+                    "#lootid": 22339
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stock_hvycarbine",
+                    "#lootid": 22335
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_flash_sm_01",
+                    "#lootid": 22315
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_pgrip_skelass",
+                    "#lootid": 30006
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_bar_lgtshort_mike4",
+                    "#lootid": 27035
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_stockno",
+                    "#lootid": 22328
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_barsil3",
+                    "#lootid": 30004
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 27
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_9p_hg",
+                    "#lootid": 29393,
+                    "#challengeid": 12753
+                },
+                {
+                    "#challengeref": "jup_cp01_sm_coscar635_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_tuning",
+                    "#lootid": 22303,
+                    "#challengeid": 18048
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sm_coscar635_amps",
+                    "#lootid": 47196
+                }
+            ],
+            "#level": 28
+        }
+    ],
+    "#displayorder": 3,
+    "#hash_6aa5a80660e7666a": "MP,OB,MOBILE,BR",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

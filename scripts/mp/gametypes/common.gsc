@@ -107,7 +107,7 @@ function function_6b6ab19619b97010() {
     setdynamicdvar(@"hash_a88f1329561bc6e1", getmatchrulesdata("commonOption", "carePackageDropTime"));
     setdynamicdvar(@"hash_127490a7577f169f", getmatchrulesdata("commonOption", "tier1ModeEnabled"));
     setdynamicdvar(@"hash_a2c2c2007177185e", getmatchrulesdata("commonOption", "hardcoreModeOn"));
-    setdynamicdvar(@"hash_58f6ddd5e5892406", getmatchrulesdata("commonOption", "allowCalloutMarkerPing"));
+    setdynamicdvar(@"calloutmarkerping_enabled", getmatchrulesdata("commonOption", "allowCalloutMarkerPing"));
     setdynamicdvar(@"hash_d20b1b97fdefa92a", getmatchrulesdata("commonOption", "allowCalloutMarkerPing"));
     if (getdvarint(@"hash_969da081cdd3cead", 0)) {
         setdynamicdvar(@"hash_8d99f31dd75fcf9c", 1);
@@ -128,7 +128,7 @@ function private function_1ad07a0f83834639(params) {
 // Checksum 0x0, Offset: 0x1ae9
 // Size: 0x5b
 function commononstartgametype() {
-    level.usepingsystem = getdvarint(@"hash_58f6ddd5e5892406", 1);
+    level.usepingsystem = getdvarint(@"calloutmarkerping_enabled", 1);
     if (istrue(level.usepingsystem)) {
         scripts\mp\calloutmarkerping_mp::calloutmarkerping_init();
     }
@@ -716,9 +716,9 @@ function function_88b47710bece931f() {
     /#
         setdvar(@"hash_a4d532f42d919827", 1);
     #/
-    setdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv");
-    setdvar(@"hash_add02e4fff48882f", " mp/loot/core/risk/loot_table_zones.csv");
-    setdvar(@"hash_ce882ca282c2f85e", 1);
+    setdvar(@"loot_table_name", "mp/loot/br/default/loot_item_defs.csv");
+    setdvar(@"loot_table_zones", " mp/loot/core/risk/loot_table_zones.csv");
+    setdvar(@"bg_piggybackArmorOnNVG", 1);
     scripts\mp\gametypes\br_armory_kiosk::function_b38f5ffe645943c3("core");
     if (level.var_1e17e3480b1d264d) {
         level.var_9c1e3c18b99409e9 = &function_9c1e3c18b99409e9;
@@ -1432,7 +1432,7 @@ function function_484f1a4bdb5cda1e(attacker, victim) {
 // Size: 0x1a7
 function function_36532a1506f2c161() {
     var_ec3de47ac260ea33 = undefined;
-    if (getdvar(@"hash_e65e9a96eb2ff62b") == "arena") {
+    if (getdvar(@"ui_gametype") == "arena") {
         objmodifier = 0;
         if (isusingmatchrulesdata()) {
             objmodifier = getmatchrulesdata("arenaData", "objModifier");
@@ -1444,7 +1444,7 @@ function function_36532a1506f2c161() {
         }
     }
     level.var_c3a5ecc6db827a75 = 0;
-    matchmakingmatch = getdvarint(@"hash_962400405f9f3c0b") && !getdvarint(@"hash_485ef1ed1d39d3a3");
+    matchmakingmatch = getdvarint(@"onlinegame") && !getdvarint(@"xblive_privatematch");
     if (matchmakingmatch) {
         level.var_c3a5ecc6db827a75 = getdvarint(@"hash_750e151e9a3727e7", 0);
     }
@@ -1500,7 +1500,7 @@ function setupsoccerball() {
         }
         spawnpositions = array_randomize(spawnpositions);
         spawnpos = spawnpositions[0];
-        if (getdvar(@"hash_ef237da69bb64ef6") == "mp_firingrange") {
+        if (getdvar(@"ui_mapname") == "mp_firingrange") {
             spawnpos = (-194, -858, 90);
         }
     }
@@ -1545,7 +1545,7 @@ function createball(spawnpos, waittime) {
     angles = (0, 30, 0);
     up = anglestoup(angles);
     forward = anglestoforward(angles);
-    if (getdvar(@"hash_ef237da69bb64ef6") == "mp_m_stadium") {
+    if (getdvar(@"ui_mapname") == "mp_m_stadium") {
         force = up * 500 + (0, 0, 80);
     } else {
         force = up * 50 + (0, 0, 80);
@@ -2442,10 +2442,10 @@ function function_1513c3f71e935d73() {
         return;
     }
     if (!isusingmatchrulesdata()) {
-        setdvar(@"hash_399f13d1217738fe", 0);
-        setdvar(@"hash_2922210021914dd7", 0);
-        setdvar(@"hash_b1d561f9a9241e09", 30);
-        setdvar(@"hash_e5a33d679c26221f", 4);
+        setdvar(@"scr_game_allowkillcam", 0);
+        setdvar(@"scr_player_healthregentime", 0);
+        setdvar(@"scr_player_maxhealth", 30);
+        setdvar(@"scr_team_fftype", 4);
     }
 }
 

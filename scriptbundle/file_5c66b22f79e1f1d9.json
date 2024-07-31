@@ -1,0 +1,33 @@
+{
+    "#id": "ads_fov",
+    "#description": "&PLATFORM_UI/ADS_FOV_DESCRIPTION",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_adsfieldofview",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/INDEPENDENT"
+        },
+        {
+            "#reference": "&LUA_MENU/AFFECTED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "UseADSFovScaling",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&PLATFORM_UI/ADS_FOV",
+    "#hash_c55c746ff4d8929b": 1
+}

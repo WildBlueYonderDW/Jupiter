@@ -1,0 +1,601 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_dm_sbeta",
+    "#hash_79839b907716ac41": "icon_weapon_dm_sbeta",
+    "#hash_ae0f82b51ecd0ce8": "noscope",
+    "#platform": "platform_iw9_dm_sbeta",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_6",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_dm_sbeta_v2",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_dm_sbeta",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+        {
+            "#category": "ARMS"
+        },
+        {
+            "#category": "CABLE"
+        }
+    ],
+    "#menuclass": "weapon_dmr",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_dm_sbeta_v3",
+    "#category": "&WEAPON/SUBCLASS_ID_6",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2500,
+    "#lootid": 11329,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 6,
+    "#ref": "iw9_dm_sbeta",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&PERKS/DM_SBETA",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/DM_SBETA",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "3",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front guard back mag trig ironsdefault",
+    "#asset": "iw9_dm_sbeta_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_dmr",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "silencer05_dm",
+                    "#lootid": 3263,
+                    "#challengeid": 9044,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "sbeta_muzzles",
+                    "#lootid": 12857,
+                    "#challengeid": 18772,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockno_dm_p19",
+                    "#lootid": 2223,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_backpieces",
+                    "#lootid": 12887,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_45gvt_fr",
+                    "#lootid": 3300,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_gunperks",
+                    "#lootid": 12879,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_p19",
+                    "#lootid": 2994,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_combs",
+                    "#lootid": 12874,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_dm_short_p19",
+                    "#lootid": 2401,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_frontpieces",
+                    "#lootid": 12876
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "arscope_vz01",
+                    "#lootid": 1019,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_optics",
+                    "#lootid": 12864
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "lever_heavy_p19",
+                    "#lootid": 3059,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_levers",
+                    "#lootid": 12859
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled03",
+                    "#lootid": 1302,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_undermounts",
+                    "#lootid": 12891
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_45gvt_hv",
+                    "#lootid": 1831,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "lasercyl_ads03",
+                    "#lootid": 595,
+                    "#challengeid": 9262,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "sbeta_extras",
+                    "#lootid": 12853,
+                    "#challengeid": 18839
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_dm_long_p19",
+                    "#lootid": 2504,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "guard_heavy_p19",
+                    "#lootid": 2638,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "sbeta_guards",
+                    "#lootid": 12855
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_dm_01",
+                    "#lootid": 1204,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockr_dm_tactical_p19",
+                    "#lootid": 3233,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_tactical_p19",
+                    "#lootid": 1361,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_dm_light_p19",
+                    "#lootid": 1930,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_45gvt_op",
+                    "#lootid": 3264,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "stockr_dm_light_p19",
+                    "#lootid": 3213,
+                    "#challengeid": 9046,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_ob_3",
+                    "#challengeid": 18906
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "guard_light_p19",
+                    "#lootid": 2762,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_45gvt_ap",
+                    "#lootid": 2254,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "lever_light_p19",
+                    "#lootid": 1390,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_dm_hvylong_p19",
+                    "#lootid": 3246,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_45gvt_hp",
+                    "#lootid": 1544,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "guard_tactical_p19",
+                    "#lootid": 2730,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_ammo_p19",
+                    "#lootid": 1404,
+                    "#bucket": 5
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "barsil_dm_p19",
+                    "#lootid": 845,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "ammo_45gvt_db",
+                    "#lootid": 3239,
+                    "#challengeid": 9099,
+                    "#bucket": 6
+                },
+                {
+                    "#challengeref": "iw9_dm_sbeta_camo_ob_4",
+                    "#challengeid": 18973
+                }
+            ],
+            "#level": 27
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_dm_sbeta_tuning",
+                    "#lootid": 11766,
+                    "#bucket": 6
+                }
+            ],
+            "#level": 28
+        }
+    ],
+    "#displayorder": 55,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

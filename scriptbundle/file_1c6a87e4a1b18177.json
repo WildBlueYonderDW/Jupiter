@@ -1,0 +1,26 @@
+{
+    "#id": 117,
+    "#keys": [
+        {
+            "#key": "iw9_weapon_loot_id"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_zm_elimination_bitfield"
+        },
+        {
+            "#key": "iw9_zm_pap_level"
+        },
+        {
+            "#key": "iw9_zm_zombie_type"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_e3a070b7b5a936ee",
+    "#sharedname": "#hash_c63d9b7781e231e6"
+}

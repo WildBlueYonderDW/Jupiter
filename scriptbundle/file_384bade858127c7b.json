@@ -1,0 +1,24 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 4,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_ww"
+        },
+        {
+            "#maxcount": 3,
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_caches_zombie_high_value_red",
+            "#mincount": 1
+        },
+        {
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_caches_low_value_red"
+        },
+        {
+            "#weight": 300
+        }
+    ],
+    "#itementries": [
+    ]
+}

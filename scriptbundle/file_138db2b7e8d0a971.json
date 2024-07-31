@@ -1,0 +1,41 @@
+{
+    "#id": 66,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_squad_event"
+        },
+        {
+            "#key": "iw9_loot_id"
+        },
+        {
+            "#key": "iw9_loadout_item_method"
+        },
+        {
+            "#key": "iw9_field_upgrade_bitfield1"
+        },
+        {
+            "#key": "iw9_location_bitfield"
+        },
+        {
+            "#key": "iw9_location_bitfield2"
+        },
+        {
+            "#key": "iw9_perk_bitfield1"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_663d835ace431c3c",
+    "#sharedname": "#field_upgrade"
+}

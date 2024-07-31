@@ -82,18 +82,18 @@ function main() {
 // Size: 0x144
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_321f8596b4664c1b", getmatchrulesdata("grindData", "bankTime"));
-    setdynamicdvar(@"hash_9e94490fff00dd08", getmatchrulesdata("grindData", "bankRate"));
+    setdynamicdvar(@"scr_grind_banktime", getmatchrulesdata("grindData", "bankTime"));
+    setdynamicdvar(@"scr_grind_bankrate", getmatchrulesdata("grindData", "bankRate"));
     setdynamicdvar(@"hash_722cc2fa81e65d71", getmatchrulesdata("grindData", "bankCaptureTime"));
-    setdynamicdvar(@"hash_2a57704ca0d525a2", getmatchrulesdata("grindData", "bankDisable"));
-    setdynamicdvar(@"hash_1b7905642c6df9ab", getmatchrulesdata("grindData", "bankDisableTags"));
-    setdynamicdvar(@"hash_8e8e4f64806e8e03", getmatchrulesdata("grindData", "bankDisableTime"));
-    setdynamicdvar(@"hash_ebc3ddc40b45d8c7", getmatchrulesdata("grindData", "megaBankLimit"));
-    setdynamicdvar(@"hash_9d6f595dbf232f59", getmatchrulesdata("grindData", "megaBankBonusKS"));
+    setdynamicdvar(@"scr_grind_bankDisable", getmatchrulesdata("grindData", "bankDisable"));
+    setdynamicdvar(@"scr_grind_bankDisableTags", getmatchrulesdata("grindData", "bankDisableTags"));
+    setdynamicdvar(@"scr_grind_bankDisableTime", getmatchrulesdata("grindData", "bankDisableTime"));
+    setdynamicdvar(@"scr_grind_megabanklimit", getmatchrulesdata("grindData", "megaBankLimit"));
+    setdynamicdvar(@"scr_grind_megabankbonusks", getmatchrulesdata("grindData", "megaBankBonusKS"));
     setdynamicdvar(@"hash_a25f426674b2ea4d", getmatchrulesdata("grindData", "megaBankBonus"));
     setdynamicdvar(@"hash_44442340f98878c", 0);
     registerhalftimedvar("grind", 0);
-    setdynamicdvar(@"hash_4d24505ea8f90528", 0);
+    setdynamicdvar(@"scr_grind_promode", 0);
 }
 
 // Namespace grind / scripts\mp\gametypes\grind
@@ -296,7 +296,7 @@ function tagmoveto(tagteam, movetostartpos, movetoendpos, time) {
     self.visuals[1] showtoteam(self, tagteam);
     self.visuals[0] setasgametypeobjective();
     self.visuals[1] setasgametypeobjective();
-    gravity = getdvarint(@"hash_b5d7d39d32720e78");
+    gravity = getdvarint(@"bg_gravity");
     dist = distance(movetostartpos, movetoendpos);
     delta = movetoendpos - movetostartpos;
     drop = 0.5 * gravity * squared(time) * -1;

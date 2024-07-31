@@ -1,0 +1,24 @@
+{
+    "#id": "codcaster_option_free_cam_exit_behavior",
+    "#description": "&CODCASTER/FREE_CAMERA_EXIT_BEHAVIOR_DESC",
+    "#labels": [
+        {
+            "#reference": "&CODCASTER/FREE_CAMERA_EXIT_BEHAVIOR_LAST_SPECTATED_PLAYER"
+        },
+        {
+            "#reference": "&CODCASTER/FREE_CAMERA_EXIT_BEHAVIOR_NEAREST_PLAYER"
+        }
+    ],
+    "#hash_a20785232d9c4057": "freecam_br_exit_closest_behavior_enabled",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE",
+            "#hash_2eaee088dca87ab0": 1
+        }
+    ],
+    "#name": "&CODCASTER/FREE_CAMERA_EXIT_BEHAVIOR"
+}

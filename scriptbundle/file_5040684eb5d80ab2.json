@@ -1,0 +1,21 @@
+{
+    "#id": "subtitles_font_size",
+    "#description": "&OPTIONS/SUBTITLES_SIZE_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#labels": [
+        {
+            "#reference": "&MENU/DEFAULT"
+        },
+        {
+            "#reference": "&OPTIONS/TEXTSIZE_BIGGER"
+        },
+        {
+            "#reference": "&OPTIONS/TEXTSIZE_BIGGEST"
+        }
+    ],
+    "#hash_a20785232d9c4057": "subtitlesFontSize",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/SUBTITLES_SIZE",
+    "#hash_c55c746ff4d8929b": 1
+}

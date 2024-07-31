@@ -131,7 +131,7 @@ function movemortar(model, start, end, time, height) {
     setdvarifuninitialized(@"hash_7a0d2f4714304d2b", "0 ");
     if (getdvarint(@"hash_7a0d2f4714304d2b")) {
         model.origin = start;
-        gravity = getdvarint(@"hash_b5d7d39d32720e78");
+        gravity = getdvarint(@"bg_gravity");
         dist = distance(start, end);
         delta = end - start;
         drop = 0.5 * gravity * squared(time) * -1;

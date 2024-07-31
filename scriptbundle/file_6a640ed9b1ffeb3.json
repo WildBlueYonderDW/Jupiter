@@ -1,0 +1,38 @@
+{
+    "#id": "nvidia_dlssrr_quality",
+    "#description": "&OPTIONS/RAY_RECONSTRUCTION_DESC",
+    "#dvar": "@hash_521fd85d070540c5",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/ULTRA_PERFORMANCE"
+        },
+        {
+            "#reference": "&OPTIONS/PERFORMANCE"
+        },
+        {
+            "#reference": "&OPTIONS/BALANCED"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY"
+        },
+        {
+            "#reference": "&OPTIONS/DLAA"
+        }
+    ],
+    "#hash_a20785232d9c4057": "armorPlateApplyKBM",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_a085177b45ffc883": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/RAY_RECONSTRUCTION",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/RAY_RECONSTRUCTION_DISABLED_DESC"
+}

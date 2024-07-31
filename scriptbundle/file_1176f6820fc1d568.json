@@ -1,0 +1,28 @@
+{
+    "#id": "weapon_fov_scale",
+    "#description": "&OPTIONS/WEAPON_FOV_SCALE_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_weaponfieldofview",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/NARROW"
+        },
+        {
+            "#reference": "&LUA_MENU/DEFAULT"
+        },
+        {
+            "#reference": "&LUA_MENU/WIDE"
+        }
+    ],
+    "#hash_a20785232d9c4057": "weaponFovScale",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/WEAPON_FOV_SCALE",
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -1,0 +1,14 @@
+{
+    "#id": 606,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_loot_id"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_d8559b3fbfe98977",
+    "#sharedname": "#hash_98cdb9f71144ed0f"
+}

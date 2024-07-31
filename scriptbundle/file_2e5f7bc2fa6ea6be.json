@@ -1,0 +1,32 @@
+{
+    "#id": 78,
+    "#keys": [
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_kill_operator_id"
+        },
+        {
+            "#key": "iw9_weapon_loot_id"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_kill_amount"
+        },
+        {
+            "#key": "iw9_killstreak_bitfield1"
+        },
+        {
+            "#key": "iw9_perk_bitfield1"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_afa0fac6da43dbf5",
+    "#sharedname": "#killstreak_end"
+}

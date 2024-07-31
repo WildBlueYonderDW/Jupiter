@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#hash_87c8865341705b25": "jup_ui_frontend_acquisition_golden_mask",
+    "#maxcount": 1,
+    "#titlestring": "&SHARED_HINTSTRINGS/WARLORD_CHEMIST_MASK",
+    "#worldmodel": "lm_ammo_box_ar_01",
+    "#rarity": 4,
+    "#descstring": "&SHARED_HINTSTRINGS/WARLORD_CHEMIST_MASK_DESC",
+    "#ref": "jup_warlord_chemist_mask",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_12182d96c987c034",
+    "#lootidtype": "consumable",
+    "#type": "upgrade",
+    "#subtype": "warlord_chemist_mask",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_12182d96c987c034",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_acquisition_warlord_goldenmask",
+    "#scriptable": "%hash_24fe229c62da344",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/ACQUISITION"
+}

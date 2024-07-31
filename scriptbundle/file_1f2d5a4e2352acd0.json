@@ -1,0 +1,31 @@
+{
+    "#id": "menu_scene_resolution",
+    "#description": "&OPTIONS/MENU_SCENE_RESOLUTION_DESC",
+    "#dvar": "@hash_fce63a227b3fa0dd",
+    "#labels": [
+        {
+            "#reference": "&MENU/QUALITY_NATIVE"
+        },
+        {
+            "#reference": "&MENU/OPTIMAL"
+        },
+        {
+            "#reference": "&MENU/MAXIMAL"
+        }
+    ],
+    "#hash_a20785232d9c4057": "sustainabilityDropSceneResolution",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_33edde91de797254",
+            "#hash_82b937762bcf4810": 1,
+            "#type": "DVAR"
+        },
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/MENU_SCENE_RESOLUTION"
+}

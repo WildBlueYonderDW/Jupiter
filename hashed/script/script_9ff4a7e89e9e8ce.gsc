@@ -9,7 +9,7 @@ function main() {
     level._effect["swim_exit_water"] = loadfx("vfx/iw9/core/swimming/vfx_swim_exit_water_screen.vfx");
     level._effect["swim_enter_water"] = loadfx("vfx/iw9/core/swimming/vfx_swim_submerge_bubbles_2.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

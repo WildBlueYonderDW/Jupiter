@@ -1,0 +1,17 @@
+{
+    "#id": "slide_dive_behavior_kbm",
+    "#description": "&OPTIONS/SLIDE_DIVE_INVERT_HOLD_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/STANDARD"
+        },
+        {
+            "#reference": "&OPTIONS/INVERTED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "slideDiveInvertHoldKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/SLIDE_DIVE_BEHAVIOR",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/SLIDE_DIVE_INVERT_HOLD_DISABLED_DESC"
+}

@@ -1,0 +1,2106 @@
+{
+    "#rendertarget": "None",
+    "#parameters": [
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "useDynamicIcons",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "useCounter",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "useProgressBar",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "useTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_backing_friendly",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_backing_enemy",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDark",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDark",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "INIT"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_OPEN_HATCH_ATTACKERS_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_OPEN_HATCH_ATTACKERS_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_hack",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#value": 3,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_HACK_BOMB_ATTACK_PHASE_1"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_OPEN_HATCH_DEFENDERS_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_OPEN_HATCH_DEFENDERS_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_hack",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#value": 4,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_HACK_BOMB_DEFEND_PHASE_1"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_PLANT_BOMB_ATTACKERS_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_PLANT_BOMB_ATTACKERS_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "hud_icon_objective_bomb",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#value": 1,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_HACK_BOMB_ATTACK_PHASE_2"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_PLANT_BOMB_DEFENDERS_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_PLANT_BOMB_DEFENDERS_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "hud_icon_objective_bomb",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#value": 2,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_HACK_BOMB_DEFEND_PHASE_2"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_ESCORT_WHEELSON_ATTACKERS_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_ESCORT_WHEELSON_ATTACKERS_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_wheelson",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_ESCORT_WHEELSON_ATTACK"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_ESCORT_WHEELSON_DEFENDERS_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_ESCORT_WHEELSON_DEFENDERS_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_wheelson",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_ESCORT_WHEELSON_DEFEND"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_CAPTURE_FLAG_ATTACK_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_CAPTURE_FLAG_ATTACK_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_filter",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#value": 9,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_CAPTURE_FLAG_ATTACK_PHASE_1"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_CAPTURE_FLAG_DEFEND_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_CAPTURE_FLAG_DEFEND_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_filter",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#value": 10,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_CAPTURE_FLAG_DEFEND_PHASE_1"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_DEFEND_EXTRACTION_ATTACKER_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_DEFEND_EXTRACTION_ATTACKER_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_rescue_extract",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#value": 7,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_CAPTURE_FLAG_ATTACK_PHASE_2"
+        },
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "title",
+                        "#value": "&JUP_MP/WM_OBJ_DEFEND_EXTRACTION_DEFENDER_TITLE_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "description",
+                        "#value": "&JUP_MP/WM_OBJ_DEFEND_EXTRACTION_DEFENDER_DESC_SKYDIVING",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "animSequence",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "icon",
+                        "#value": "icon_waypoint_rescue_extract",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBacking",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "timeLimitedDisplay",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "secondsOnScreen",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconTintSwatchPath",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "backingTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasCounter",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasProgressBar",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "hasTimer",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isAllyTeam",
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "isEnemyTeam",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingSuccess",
+                        "#value": "icon_waypoint_friendly_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "iconBackingFailure",
+                        "#value": "icon_waypoint_enemy_plate",
+                        "#type": "ImageProperty"
+                    },
+                    "#variant_type": "Types_ImageProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "successTintSwatchPath",
+                        "#value": "MatchIndicators.AllyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "failureTintSwatchPath",
+                        "#value": "MatchIndicators.EnemyDefault",
+                        "#type": "RawStringProperty"
+                    },
+                    "#variant_type": "Types_RawStringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCompletedMessage",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "showCounterAfterDescription",
+                        "#value": 1,
+                        "#type": "BoolProperty"
+                    },
+                    "#variant_type": "Types_BoolProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "prevPhase",
+                        "#value": 8,
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "nextPhase",
+                        "#type": "IntProperty"
+                    },
+                    "#variant_type": "Types_IntProperty"
+                }
+            ],
+            "#name": "WAR_CAPTURE_FLAG_DEFEND_PHASE_2"
+        }
+    ],
+    "#hash_679a5fd22385af82": [
+        {
+            "#variant_object": {
+                "#property": "title",
+                "#type": "StringProperty"
+            },
+            "#variant_type": "Types_StringProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "description",
+                "#type": "StringProperty"
+            },
+            "#variant_type": "Types_StringProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "animSequence",
+                "#type": "RawStringProperty"
+            },
+            "#variant_type": "Types_RawStringProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "icon",
+                "#type": "ImageProperty"
+            },
+            "#variant_type": "Types_ImageProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "iconBacking",
+                "#type": "ImageProperty"
+            },
+            "#variant_type": "Types_ImageProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "timeLimitedDisplay",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "secondsOnScreen",
+                "#type": "IntProperty"
+            },
+            "#variant_type": "Types_IntProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "iconTintSwatchPath",
+                "#type": "RawStringProperty"
+            },
+            "#variant_type": "Types_RawStringProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "backingTintSwatchPath",
+                "#type": "RawStringProperty"
+            },
+            "#variant_type": "Types_RawStringProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "hasCounter",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "hasProgressBar",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "hasTimer",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "isAllyTeam",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "isEnemyTeam",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolProperty"
+        },
+        {
+            "#variant_object": {
+                "#property": "iconBackingSuccess",
+                "#type": "ImageProperty"
+            },
+            "#variant_type": "Types_ImagePropertyTemplate"
+        },
+        {
+            "#variant_object": {
+                "#property": "iconBackingFailure",
+                "#type": "ImageProperty"
+            },
+            "#variant_type": "Types_ImagePropertyTemplate"
+        },
+        {
+            "#variant_object": {
+                "#property": "successTintSwatchPath",
+                "#type": "RawStringProperty"
+            },
+            "#variant_type": "Types_RawStringPropertyTemplate"
+        },
+        {
+            "#variant_object": {
+                "#property": "failureTintSwatchPath",
+                "#type": "RawStringProperty"
+            },
+            "#variant_type": "Types_RawStringPropertyTemplate"
+        },
+        {
+            "#variant_object": {
+                "#property": "showCounterAfterDescription",
+                "#type": "BoolProperty"
+            },
+            "#variant_type": "Types_BoolPropertyTemplate"
+        },
+        {
+            "#variant_object": {
+                "#property": "prevPhase",
+                "#type": "IntProperty"
+            },
+            "#variant_type": "Types_IntPropertyTemplate"
+        },
+        {
+            "#variant_object": {
+                "#property": "nextPhase",
+                "#type": "IntProperty"
+            },
+            "#variant_type": "Types_IntPropertyTemplate"
+        }
+    ],
+    "#children": [
+    ],
+    "#hash_ef7dacdcddcfbf7f": 1024,
+    "#hash_a35573938e7a51c8": 1024,
+    "#widget": "ObjectiveTracker",
+    "#states": [
+        {
+            "#name": "FADE_OUT"
+        },
+        {
+            "#name": "FADE_IN_SUCCESSFUL"
+        },
+        {
+            "#name": "FADE_IN_INCOMPLETE"
+        },
+        {
+            "#name": "INCOMPLETE_TO_SUCCESSFUL"
+        },
+        {
+            "#name": "INCOMPLETE_TO_FAILURE"
+        },
+        {
+            "#name": "FADE_IN_FAILURE"
+        },
+        {
+            "#name": "UPDATE"
+        },
+        {
+            "#name": "SUB_OBJECTIVE_UPDATE"
+        }
+    ],
+    "#hash_363bada5bd71005e": 1,
+    "#assets": [
+    ]
+}

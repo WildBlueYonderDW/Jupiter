@@ -1,0 +1,8 @@
+{
+    "#id": "channel_alerts_expander",
+    "#description": "&OPTIONS/CHANNEL_ALERTS_EXPANDER_DESC",
+    "#hash_58d61dc3eef940dc": "ACCOUNT",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "ParentlessExpander",
+    "#name": "&OPTIONS/CHANNEL_ALERTS_EXPANDER"
+}

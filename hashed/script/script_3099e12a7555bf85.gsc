@@ -11,14 +11,14 @@
 // Checksum 0x0, Offset: 0x210
 // Size: 0xa
 function autoexec main() {
-    thread _main();
+    thread function_f5edd804b04d1b23();
 }
 
 // Namespace namespace_11161030531bb10d / namespace_781727f0de488c93
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x222
 // Size: 0x86
-function _main() {
+function function_f5edd804b04d1b23() {
     if (getdvarint(@"hash_4059e9a29bbb06e7", 1) == 1) {
         if (isbr()) {
             moodset = getdvar(@"hash_814a58e4f810f2d8", "");

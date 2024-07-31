@@ -1,0 +1,28 @@
+{
+    "#id": "shadow_quality",
+    "#description": "&OPTIONS/SHADOW_QUALITY_DESC",
+    "#dvar": "@hash_874e1f1710e250d0",
+    "#image": "jup_ui_options_image_shadowquality",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/QUALITY_VERY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_NORMAL"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_HIGH"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_ULTRA"
+        }
+    ],
+    "#hash_c20f27f948a7810": "Medium",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_ea4e62cd3b96c8c6": "Medium",
+    "#name": "&OPTIONS/SHADOW_QUALITY"
+}

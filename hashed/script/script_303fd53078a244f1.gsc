@@ -175,7 +175,7 @@ function function_3ced6a64b51063f9() {
         }
         function_adb2f998089074a2(event.eventref, event.score);
         event.processedscoreevent = 1;
-        wait getdvarfloat(@"hash_1eb32d180bc7cff8", 0.3);
+        wait getdvarfloat(@"scr_splash_kill_buffer", 0.3);
     }
     self.var_488ed33e4875a0c1 = undefined;
 }

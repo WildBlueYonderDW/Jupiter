@@ -1,0 +1,14 @@
+{
+    "#id": 120,
+    "#keys": [
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_version"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_d53bb122f838fe49",
+    "#sharedname": "#hash_7d002774b845e1e1"
+}

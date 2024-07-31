@@ -1,0 +1,10 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_armor"
+        }
+    ],
+    "#itementries": [
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "#hash_12db460b6bf36594": "container_gal",
+    "#hash_a1a9be5dd973583d": "gallium_block",
+    "#hash_da490276f40d2a1c": {
+        "#hash_bd6189272603bb1c": "splash_br_elite_arrow_pickup_gallium_jup_mp",
+        "#hash_24d4ba21d4c1cb81": "#hash_38b54c32e0e56155",
+        "#hash_ac2ac65ebc86bcbc": "splash_br_elite_arrow_gallium_acquired_global_jup_mp",
+        "#hash_1ffffcadf503cb61": "#hash_f5e4cf052c1f17e1"
+    },
+    "#elementpartname": "brloot_elite_arrow_gallium",
+    "#hash_be816838784d6db": "Gallium_Br",
+    "#elementstringlist": {
+        "#heldreference": "&BR_ELITE_BROKEN_ARROW/LOCATE_GAL",
+        "#securedreference": "&BR_ELITE_BROKEN_ARROW/SECURED_GAL",
+        "#protectreference": "&BR_ELITE_BROKEN_ARROW/PROTECT_GAL",
+        "#locatereference": "&BR_ELITE_BROKEN_ARROW/LOCATE_GAL"
+    },
+    "#elementid": "gal",
+    "#hash_d10723bdc6d74fa0": "gallium",
+    "#elementicon": "hud_icon_objective_elite_gallium",
+    "#trackernumber": 3,
+    "#elementcontainer": "brloot_elite_arrow_container_gallium",
+    "#hash_f391bf01090b356c": "brloot_elite_arrow_gallium"
+}

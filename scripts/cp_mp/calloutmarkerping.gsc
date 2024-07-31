@@ -26,7 +26,7 @@
 // Size: 0x70
 function calloutmarkerping_initcommon() {
     if (!isdefined(level.brloottablename)) {
-        level.brloottablename = getdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv");
+        level.brloottablename = getdvar(@"loot_table_name", "mp/loot/br/default/loot_item_defs.csv");
         if (level.brloottablename == "") {
             level.brloottablename = "mp/loot/br/default/loot_item_defs.csv";
         }

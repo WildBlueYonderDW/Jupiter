@@ -12,28 +12,28 @@
 // Checksum 0x0, Offset: 0x31f
 // Size: 0x41
 function autoexec main() {
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"bloodmoney", &function_9aa5ae7661a3a913);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_657d12ba1bb9791a", &function_9aa5ae7661a3a913);
     scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"contractor", &initcontractor);
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"moneysiphon", &function_1cac290201dd47fc);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_77d08a9fd73b164f", &function_1cac290201dd47fc);
 }
 
 // Namespace namespace_cf78b6cd5dc7768c / namespace_babd9ed67c85ef19
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x368
 // Size: 0xe1
-function function_9aa5ae7661a3a913(bloodmoney) {
+function function_9aa5ae7661a3a913(var_9cd269534ffd4dc9) {
     if (!isdefined(level.var_16ef52214ac3a63f)) {
         level.var_16ef52214ac3a63f = spawnstruct();
     }
-    bloodmoney.validatefunc = &function_e7a80b9a5971257a;
-    bloodmoney.activatefunc = &function_41b1afbe1c7af99;
-    bloodmoney.waitfunc = &function_aec5c0a5b73ae7c5;
-    bloodmoney.postinitfunc = &function_adc3e7f53e3456d0;
-    bloodmoney.timertype = 10;
-    bloodmoney.var_45620a2820463e6e = getdvarint(@"hash_290bf19648dc8eb2", 2);
-    bloodmoney.var_ee5fb771f83add5e = getdvarfloat(@"hash_8685285f3db98a1c", 2);
-    bloodmoney.duration = getdvarint(@"hash_4e87bb76afe4eb45", 120);
-    bloodmoney.type = %"bloodmoney";
+    var_9cd269534ffd4dc9.validatefunc = &function_e7a80b9a5971257a;
+    var_9cd269534ffd4dc9.activatefunc = &function_41b1afbe1c7af99;
+    var_9cd269534ffd4dc9.waitfunc = &function_aec5c0a5b73ae7c5;
+    var_9cd269534ffd4dc9.postinitfunc = &function_adc3e7f53e3456d0;
+    var_9cd269534ffd4dc9.timertype = 10;
+    var_9cd269534ffd4dc9.var_45620a2820463e6e = getdvarint(@"hash_290bf19648dc8eb2", 2);
+    var_9cd269534ffd4dc9.var_ee5fb771f83add5e = getdvarfloat(@"hash_8685285f3db98a1c", 2);
+    var_9cd269534ffd4dc9.duration = getdvarint(@"hash_4e87bb76afe4eb45", 120);
+    var_9cd269534ffd4dc9.type = %"hash_657d12ba1bb9791a";
 }
 
 // Namespace namespace_cf78b6cd5dc7768c / namespace_babd9ed67c85ef19
@@ -96,14 +96,14 @@ function function_ae81543a21ecadd3() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x700
 // Size: 0x6a
-function function_1cac290201dd47fc(moneysiphon) {
+function function_1cac290201dd47fc(var_a5b707e79d910ef6) {
     if (!isdefined(level.var_16ef52214ac3a63f)) {
         level.var_16ef52214ac3a63f = spawnstruct();
     }
-    moneysiphon.validatefunc = &function_98e0aab5f4a07947;
-    moneysiphon.activatefunc = &function_8645e7ba0e3942c0;
-    moneysiphon.waitfunc = &function_b44e7b12bcdc2c14;
-    moneysiphon.postinitfunc = &function_ef3989dd64896a91;
+    var_a5b707e79d910ef6.validatefunc = &function_98e0aab5f4a07947;
+    var_a5b707e79d910ef6.activatefunc = &function_8645e7ba0e3942c0;
+    var_a5b707e79d910ef6.waitfunc = &function_b44e7b12bcdc2c14;
+    var_a5b707e79d910ef6.postinitfunc = &function_ef3989dd64896a91;
 }
 
 // Namespace namespace_cf78b6cd5dc7768c / namespace_babd9ed67c85ef19
@@ -190,7 +190,7 @@ function function_aec5c0a5b73ae7c5() {
 // Size: 0x28
 function function_41b1afbe1c7af99() {
     level endon("game_ended");
-    function_ca6e399c0a8a91b6(level.br_pe_data[%"bloodmoney"], "blood_money");
+    function_ca6e399c0a8a91b6(level.br_pe_data[%"hash_657d12ba1bb9791a"], "blood_money");
 }
 
 // Namespace namespace_cf78b6cd5dc7768c / namespace_babd9ed67c85ef19
@@ -265,17 +265,17 @@ function function_23bcdfa42a7b068b() {
 // Size: 0x113
 function function_ef3989dd64896a91() {
     game["dialog"]["public_events_money_siphon_active"] = "csht_grav_boos";
-    moneysiphon = spawnstruct();
-    moneysiphon.type = %"moneysiphon";
-    moneysiphon.timertype = 13;
-    moneysiphon.active = 0;
-    moneysiphon.var_e8fb817a73e06aba = getdvarint(@"hash_55d165f2f9e49694", 2);
-    moneysiphon.var_9714ddda6a6df159 = getdvarint(@"hash_1cc3febe5f5f8883", 100);
-    moneysiphon.depositinterval = getdvarfloat(@"hash_23750ae04694dc22", 3);
-    moneysiphon.duration = getdvarint(@"hash_1a720e1709ceabf0", 120);
-    moneysiphon.var_f9b722c9edce3106 = getdvarint(@"hash_74f7c2602fc10dd8", 120);
-    moneysiphon.var_2f1ee623e7fc5c8c = getdvarint(@"hash_2ac717f48aef9bd0", 1);
-    level.var_16ef52214ac3a63f.moneysiphon = moneysiphon;
+    var_a5b707e79d910ef6 = spawnstruct();
+    var_a5b707e79d910ef6.type = %"hash_77d08a9fd73b164f";
+    var_a5b707e79d910ef6.timertype = 13;
+    var_a5b707e79d910ef6.active = 0;
+    var_a5b707e79d910ef6.var_e8fb817a73e06aba = getdvarint(@"hash_55d165f2f9e49694", 2);
+    var_a5b707e79d910ef6.var_9714ddda6a6df159 = getdvarint(@"hash_1cc3febe5f5f8883", 100);
+    var_a5b707e79d910ef6.depositinterval = getdvarfloat(@"hash_23750ae04694dc22", 3);
+    var_a5b707e79d910ef6.duration = getdvarint(@"hash_1a720e1709ceabf0", 120);
+    var_a5b707e79d910ef6.var_f9b722c9edce3106 = getdvarint(@"hash_74f7c2602fc10dd8", 120);
+    var_a5b707e79d910ef6.var_2f1ee623e7fc5c8c = getdvarint(@"hash_2ac717f48aef9bd0", 1);
+    level.var_16ef52214ac3a63f.var_a5b707e79d910ef6 = var_a5b707e79d910ef6;
 }
 
 // Namespace namespace_cf78b6cd5dc7768c / namespace_babd9ed67c85ef19
@@ -300,7 +300,7 @@ function function_b44e7b12bcdc2c14() {
 // Size: 0x28
 function function_8645e7ba0e3942c0() {
     level endon("game_ended");
-    function_ca6e399c0a8a91b6(level.var_16ef52214ac3a63f.moneysiphon, "money_siphon");
+    function_ca6e399c0a8a91b6(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6, "money_siphon");
 }
 
 // Namespace namespace_cf78b6cd5dc7768c / namespace_babd9ed67c85ef19

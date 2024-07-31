@@ -1,0 +1,23 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 300,
+            "#itemspawnlist": "ob_jup_items_container_computer_tower_sublist",
+            "#mincount": 1
+        },
+        {
+            "#weight": 669
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_aether_tools_green"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

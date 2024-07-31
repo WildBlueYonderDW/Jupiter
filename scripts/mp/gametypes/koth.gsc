@@ -1522,7 +1522,7 @@ function function_1134d3068749d68e() {
         if (isdefined(level.var_2db03438253fa6e2) && level.var_2db03438253fa6e2) {
             level.zoneduration = 10000;
         } else {
-            level.zoneduration = getdvarint(@"hash_cb81f537c99c9657");
+            level.zoneduration = getdvarint(@"scr_koth_zonelifetime");
         }
         thread function_bed0f399bee034f8();
         self notify("<dev string:x237>");
@@ -1537,7 +1537,7 @@ function function_1134d3068749d68e() {
         while (true) {
             if (getdvarint(@"hash_4c260c16d548430f") != 0) {
                 level notify("<dev string:x225>");
-                level.zoneduration = getdvarint(@"hash_cb81f537c99c9657");
+                level.zoneduration = getdvarint(@"scr_koth_zonelifetime");
                 break;
             }
             wait 1;

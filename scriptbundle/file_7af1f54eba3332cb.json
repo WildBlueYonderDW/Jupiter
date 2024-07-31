@@ -1,0 +1,23 @@
+{
+    "#id": "persistent_damage_layers",
+    "#description": "&OPTIONS/PERSISTENT_DAMAGE_LAYERS_DESC",
+    "#dvar": "@hash_6c43e90d258dd0f5",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#hash_ea4e62cd3b96c8c6": "Medium",
+    "#name": "&OPTIONS/PERSISTENT_DAMAGE_LAYERS"
+}

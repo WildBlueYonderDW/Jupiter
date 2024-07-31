@@ -1,0 +1,29 @@
+{
+    "#id": "open_mic_recording_sensitivity_console",
+    "#description": "&OPTIONS/OPEN_MIC_RECORDING_THRESHOLD_DESC",
+    "#hash_ea45bc5a5e9ac302": 1,
+    "#hash_a20785232d9c4057": "OpenMicThreshold",
+    "#hash_58d61dc3eef940dc": "AUDIO",
+    "#hash_15963d81d6fd6dac": 100,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 1,
+    "#type": "SliderBarWithEditBox",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        },
+        {
+            "#hash_cd05aa1b839553ad": 1,
+            "#hash_cd05a31b83954448": 1,
+            "#hash_434da1af138bf52": 1,
+            "#hash_434db1af138c185": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/OPEN_MIC_RECORDING_THRESHOLD",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/OPEN_MIC_REC_THRESHOLD_DISABLE_DESC",
+    "#hash_530fe36dfbb8c732": 4
+}

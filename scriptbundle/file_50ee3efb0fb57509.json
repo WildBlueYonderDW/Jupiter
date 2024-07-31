@@ -1,0 +1,390 @@
+{
+    "#mtx": [
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v001",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#turretcamo": "veh9_mil_lnd_tank_turret_gun_v001",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v003",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#turretcamo": "veh9_mil_lnd_tank_turret_gun_v003",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v004",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#turretcamo": "veh9_mil_lnd_tank_turret_gun_v004",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v005",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#turretcamo": "veh9_mil_lnd_tank_turret_gun_v005",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v006",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#turretcamo": "veh9_mil_lnd_tank_turret_gun_v006",
+            "#vehiclehorn": ""
+        },
+        {
+            "#hash_c3606975ab404c5c": "",
+            "#hash_9c6d62e1c42be80a": [
+            ],
+            "#ref": "v007",
+            "#hash_87cc39e9260d5bcf": 1,
+            "#vehicletrail": "",
+            "#turretcamo": "veh9_mil_lnd_tank_turret_gun_v007",
+            "#vehiclehorn": ""
+        }
+    ],
+    "#ai": {
+        "#hash_cdb848190a1b2f99": "default"
+    },
+    "#id": 14,
+    "#occupancy": {
+        "#exittopcastoffset": -15,
+        "#threatbiasgroup": "Level_Vehicle",
+        "#damagefeedbackgroupheavy": "all",
+        "#roofexittype": "no_roof_exit",
+        "#camera": "none",
+        "#damagefeedbackgrouplight": "driver",
+        "#hash_4b92043c00e4e91b": 0,
+        "#hash_bd169af9b46727ef": 1
+    },
+    "#hash_7c19cae9edc84d70": [
+    ],
+    "#horns": [
+    ],
+    "#aifastrope": [
+    ],
+    "#lights": [
+    ],
+    "#spawn": {
+        "#maxinstancecount": 4,
+        "#clearancecheckradius": 130,
+        "#hash_32b659cdf8f93ae2": "light_tank_point_spawn",
+        "#clearancecheckheight": 1000,
+        "#hash_1ad50a59da38c8f5": 1,
+        "#priority": 75
+    },
+    "#hash_3ef9b41093f5752": {
+        "#earthquakeradius": 800,
+        "#hash_d6dbd39dbd5ab5fc": {
+            "#animtree": {
+                "#name": "script_model",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "iw9_mp_bromeo_drop_acharlie130@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#physicsscale": 0.5,
+        "#realvehicleanim": {
+            "#animtree": {
+                "#name": "mp_vehicles_always_loaded",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "iw9_mp_bromeo_drop_bromeo_drop@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#planesound": "iw8_bradley_drop_c130",
+        "#vfx": "vfx/iw8_mp/killstreak/vfx_tank_dropoff_dust.vfx",
+        "#earthquakeduration": 0.7,
+        "#hash_96a21e181f0221f5": {
+            "#animtree": {
+                "#name": "mp_vehicles_always_loaded",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "iw9_mp_bromeo_drop_bromeo_fly_in@sbundle",
+                "#id": "anim#"
+            }
+        },
+        "#hash_5c73f15ed471884d": "iw9_tank_land",
+        "#parachutemodel": "veh8_mil_lnd_bromeo_parachute_green",
+        "#planemodel": "veh9_mil_air_cargo_plane_wm",
+        "#hash_e01db00d1ccb42ea": 1,
+        "#earthquakescale": 0.3,
+        "#hash_98cf00a549d2c206": "iw9_drop_chute_release_whoosh",
+        "#physicsinnerradius": 400,
+        "#physicsouterradius": 800,
+        "#planeparts": [
+            {
+                "#hash_8a46c62f0a756dd3": "lights2"
+            },
+            {
+                "#hash_8a46c62f0a756dd3": "contrails"
+            }
+        ],
+        "#hash_6a32dee944eb39ad": {
+            "#animtree": {
+                "#name": "script_model",
+                "#id": 0
+            },
+            "#animname": {
+                "#name": "iw9_mp_bromeo_tank_drop_parachute@sbundle",
+                "#id": "anim#"
+            }
+        }
+    },
+    "#targetname": "lighttank_spawn",
+    "#huskexplosion": {
+        "#earthquakeradius": 385,
+        "#physicsscale": 1,
+        "#maxdamage": 60,
+        "#tag": "body_animate_jnt",
+        "#earthquakeduration": 1.5,
+        "#damageoffset": {
+        },
+        "#radius": 350,
+        "#earthquakescale": 0.8,
+        "#mindamage": 30,
+        "#physicsinnerradius": 200,
+        "#scriptable": "light_tank_explosion",
+        "#physicsouterradius": 500
+    },
+    "#hash_c13950f54f2498b0": "hud_icon_vehicle_tank_coscar",
+    "#damage": {
+        "#falldamagemultiplier": 1,
+        "#hash_3259f2f4faf8eaa8": 5,
+        "#hash_98277a386e38941f": 0,
+        "#hash_d59ddc542fb76578": 0.8,
+        "#mineextents": {
+            "#left": 60,
+            "#front": 115,
+            "#right": 60,
+            "#back": 110
+        },
+        "#distancetobottom": 50,
+        "#hash_5c7f497b7ee6ee55": -1,
+        "#hash_10175926aeb1591e": 2304,
+        "#agentdamagemultiplier": 0.5,
+        "#health": 4500,
+        "#explosionextents": {
+            "#left": 50,
+            "#front": 125,
+            "#top": 50,
+            "#right": 50,
+            "#back": 130,
+            "#bottom": 50
+        },
+        "#hash_6c10b5dc07fd6459": -1,
+        "#hash_c3b0005f41b92649": 3,
+        "#scrapassist": 1,
+        "#hash_8e266d8413972567": {
+            "#z": 30
+        },
+        "#class": "heavy",
+        "#heavystatehealthadd": 675,
+        "#hash_96f121d1edfdb0cb": 1,
+        "#maxhits": 15
+    },
+    "#seats": [
+        {
+            "#onenterbattlechatter": "driver",
+            "#animtag": "tag_seat_0",
+            "#exitids": [
+                {
+                    "#exitdirection": "driver"
+                },
+                {
+                    "#exitdirection": "gunner"
+                },
+                {
+                    "#exitdirection": "back_left"
+                },
+                {
+                    "#exitdirection": "back_right"
+                },
+                {
+                    "#exitdirection": "front"
+                }
+            ],
+            "#hideoccupant": 1,
+            "#ref": "driver",
+            "#restrictions": "driver_can_fire",
+            "#damagemodifier": 0,
+            "#hash_dcfc487f4ef1103c": -1
+        },
+        {
+            "#onenterbattlechatter": "gunner",
+            "#animtag": "tag_turret",
+            "#exitids": [
+                {
+                    "#exitdirection": "gunner"
+                },
+                {
+                    "#exitdirection": "back_left"
+                },
+                {
+                    "#exitdirection": "back_right"
+                },
+                {
+                    "#exitdirection": "driver"
+                },
+                {
+                    "#exitdirection": "front"
+                }
+            ],
+            "#hidestowedweapon": 1,
+            "#turretweapon": "iw9_mg_light_tank_mp",
+            "#ref": "gunner",
+            "#restrictions": "turret_passenger",
+            "#damagemodifier": -1,
+            "#hash_dcfc487f4ef1103c": -1,
+            "#hash_3e99c59055b3de67": 1
+        }
+    ],
+    "#husk": {
+        "#hash_c1a04b9d422db491": 1,
+        "#timeout": 20,
+        "#vdef": "vehicle/husk_sink_immediately.vdef",
+        "#health": 750,
+        "#ref": "light_tank_hsk",
+        "#compositemodel": "veh9_mil_lnd_tank_x_vehphys_hsk_mp",
+        "#hash_71df88882a7ec721": 1.5,
+        "#weapon": "lighttank_mp",
+        "#momentumthreshold": 20,
+        "#hashusk": 1
+    },
+    "#hash_22dfbca89a3af942": 72,
+    "#ref": "light_tank",
+    "#damageableparts": [
+    ],
+    "#compositemodel": "veh9_mil_lnd_tank_x_vehphys_mp",
+    "#weapon": "lighttank_mp",
+    "#pristineexplosion": {
+        "#earthquakeradius": 385,
+        "#physicsscale": 1,
+        "#maxdamage": 140,
+        "#tag": "body_animate_jnt",
+        "#earthquakeduration": 1.5,
+        "#damageoffset": {
+        },
+        "#radius": 350,
+        "#earthquakescale": 0.8,
+        "#mindamage": 70,
+        "#physicsinnerradius": 200,
+        "#physicsouterradius": 500
+    },
+    "#hash_b01f9533413e14ec": 0,
+    "#hash_372bf6f67db5151a": "hud_icon_minimap_vehicle_tank_coscar",
+    "#name": "&VEHICLES/LIGHT_TANK",
+    "#extraexits": [
+        {
+            "#offset": {
+                "#x": 90,
+                "#z": 40
+            },
+            "#ref": "front",
+            "#direction": "front"
+        },
+        {
+            "#offset": {
+                "#y": 30,
+                "#x": -90,
+                "#z": 60
+            },
+            "#ref": "back_left",
+            "#direction": "left"
+        },
+        {
+            "#offset": {
+                "#y": -30,
+                "#x": -90,
+                "#z": 40
+            },
+            "#ref": "back_right",
+            "#direction": "right"
+        },
+        {
+            "#offset": {
+                "#y": -12,
+                "#x": -90,
+                "#z": 40
+            },
+            "#ref": "back",
+            "#direction": "back"
+        },
+        {
+            "#offset": {
+                "#y": 15,
+                "#x": 35,
+                "#z": 40
+            },
+            "#ref": "driver",
+            "#direction": "left"
+        },
+        {
+            "#offset": {
+                "#y": -12,
+                "#x": -90,
+                "#z": 40
+            },
+            "#ref": "gunner",
+            "#direction": "back"
+        }
+    ],
+    "#hash_539862aa827974a3": 1,
+    "#aiseats": [
+    ],
+    "#unloadgroups": [
+    ],
+    "#interact": {
+        "#hash_c57febc7e53e3276": 0,
+        "#hash_18f075aaf63a3da": 0,
+        "#hash_ba70a83be9b6b59c": 90,
+        "#maxfuel": 180,
+        "#depththreshold": 20,
+        "#hash_4c6d695d0920df19": 130,
+        "#hash_4c4a7b5d08fabef7": 170,
+        "#hash_b1fc50342f9a99dd": 135,
+        "#hash_591de85cd0986f8d": 0,
+        "#bctypename": "tank",
+        "#floattime": 1,
+        "#hash_23f37e83b1cafb10": 30
+    },
+    "#transitionparts": [
+        {
+            "#hash_1fb6b56a662df98": "husk_constant_fire"
+        },
+        {
+            "#hash_1fb6b56a662df98": "damage_transition"
+        }
+    ],
+    "#exitextents": {
+        "#left": 80,
+        "#front": 125,
+        "#top": 120,
+        "#right": 80,
+        "#back": 130
+    },
+    "#vehicle": "veh9_mil_lnd_tank_physics_mp"
+}

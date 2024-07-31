@@ -1,0 +1,295 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_lm_mkilo3",
+    "#hash_79839b907716ac41": "icon_weapon_ar_mike4",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_6",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_lm_mkilo3",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_lmg",
+    "#category": "&WEAPON/SUBCLASS_ID_6",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 3000,
+    "#lootid": 11319,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 6,
+    "#ref": "iw9_lm_mkilo3",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/LM_MKILO3",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/LM_MKILO3",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag ironsdefault",
+    "#asset": "iw9_lm_mkilo3_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_lmg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_rec_mkilo3",
+                    "#lootid": 3584
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_p15",
+                    "#lootid": 2466
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "belt_lm_p15",
+                    "#lootid": 1217
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_heavy_p15",
+                    "#lootid": 2019
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_p15",
+                    "#lootid": 1569
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_optics",
+                    "#lootid": 39670,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_muzzles",
+                    "#lootid": 39671,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_heavy_p15",
+                    "#lootid": 2354,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_frontpieces",
+                    "#lootid": 39672,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_light_p15",
+                    "#lootid": 1629,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_backpieces",
+                    "#lootid": 39673,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_lm_small_p15",
+                    "#lootid": 3265,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_magazines",
+                    "#lootid": 39674,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_extras",
+                    "#lootid": 39675,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_tactical_p15",
+                    "#lootid": 3742,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_undermounts",
+                    "#lootid": 39676,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p15",
+                    "#lootid": 1925,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_reargrips",
+                    "#lootid": 39677,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mkilo3_gunperks",
+                    "#lootid": 39678,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_light_p15",
+                    "#lootid": 2488,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_lgttactical_p15",
+                    "#lootid": 1299,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_aim_p15",
+                    "#lootid": 3499,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_short_p15",
+                    "#lootid": 1132,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_lm_p15",
+                    "#lootid": 3797,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "belt_lm_large_p15",
+                    "#lootid": 2316,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ass_p15",
+                    "#lootid": 724,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_long_p15",
+                    "#lootid": 2883,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stockno_lm_p15",
+                    "#lootid": 3374,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_lm_mkilo3_tuning",
+                    "#lootid": 11760,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 20
+        }
+    ],
+    "#displayorder": 5,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.85,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

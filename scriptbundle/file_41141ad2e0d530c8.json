@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#hash_b4e5d4709fde95ac",
+    "#hash_88aff7a87289757d": 0,
+    "#maxcount": 2,
+    "#titlestring": "&EQUIPMENT/C4",
+    "#hash_bbae53787b1abf3e": 1,
+    "#hash_13fc3679e0d849db": 1,
+    "#descstring": "&EQUIPMENT/C4_DESC",
+    "#ref": "equip_c4",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_722e4cf33d49cac9",
+    "#lootidtype": "equipment",
+    "#hash_8464122fb6575536": 1,
+    "#type": "lethal",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_50ae7abf59625c3d",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_equipment_c4",
+    "#scriptable": "%hash_2af96ed893de4e57"
+}

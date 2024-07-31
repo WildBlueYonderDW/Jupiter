@@ -184,7 +184,7 @@ function at_mine_plant(grenade, surfacetype) {
     grenade thread scripts\mp\equipment_interact::remoteinteractsetup(&at_mine_explode_from_player_trigger, 1, 1);
     grenade setscriptablepartstate("arm", "active", 0);
     grenade thread at_mine_watch_trigger();
-    if (!(getdvar(@"hash_e65e9a96eb2ff62b", "") == "mines")) {
+    if (!(getdvar(@"ui_gametype", "") == "mines")) {
         grenade thread makeexplosiveusabletag("tag_use", 1);
         thread scripts\mp\weapons::outlineequipmentforowner(grenade);
     }

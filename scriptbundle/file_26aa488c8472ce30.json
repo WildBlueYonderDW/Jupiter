@@ -1,0 +1,25 @@
+{
+    "#id": "codcaster_option_social_menu_toggle",
+    "#description": "&CODCASTER/SOCIAL_SHORTCUT_TOGGLE_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "codcaster_socialshortcut",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE",
+            "#hash_2eaee088dca87ab0": 1
+        }
+    ],
+    "#name": "&CODCASTER/SOCIAL_SHORTCUT_TOGGLE"
+}

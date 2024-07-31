@@ -1,0 +1,27 @@
+{
+    "#id": "text_scaling",
+    "#description": "&OPTIONS/TEXTSIZE_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/DEFAULT"
+        },
+        {
+            "#reference": "&OPTIONS/TEXTSIZE_BIGGER"
+        },
+        {
+            "#reference": "&OPTIONS/TEXTSIZE_BIGGEST"
+        }
+    ],
+    "#hash_a20785232d9c4057": "TextScaling",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_6936f9de9c943c40",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/TEXTSIZE",
+    "#hash_c55c746ff4d8929b": 1
+}

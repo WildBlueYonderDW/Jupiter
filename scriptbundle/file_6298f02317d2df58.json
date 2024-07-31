@@ -1,0 +1,45 @@
+{
+    "#id": "high_visibility_mode",
+    "#description": "&MENU/HIGH_VISIBILITY_MODE_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_highcontrast",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        },
+        {
+            "#reference": "&OPTIONS/HIGH_CONTRAST_ENEMIES_ONLY"
+        },
+        {
+            "#reference": "&OPTIONS/HIGH_CONTRAST_ALLIES_ONLY"
+        }
+    ],
+    "#hash_a20785232d9c4057": "highVisibilityMode",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_33a01af682caae50",
+            "#type": "DVAR"
+        },
+        {
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&MENU/HIGH_VISIBILITY_MODE",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_5b4d13c9a6098fc6"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_f04a52abc0bda9d"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

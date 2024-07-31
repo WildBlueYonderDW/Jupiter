@@ -139,7 +139,7 @@
     // Checksum 0x0, Offset: 0x51d
     // Size: 0x14
     function function_f1c3d8f46961ed52() {
-        return getdvarint(@"hash_932e9550632df2cb");
+        return getdvarint(@"ai_debugEntIndex");
     }
 
     // Namespace debug / scripts\stealth\debug

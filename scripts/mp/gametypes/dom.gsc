@@ -479,7 +479,7 @@ function domflags() {
             }
         }
         primaryflags = selectedflags;
-        level.changenumdomflags = getdvarint(@"hash_f9faada5b0dcc0d3", 3);
+        level.changenumdomflags = getdvarint(@"scr_dom_flagcount", 3);
     } else {
         if (isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
             var_85e038319fbafcf9 = getentarray("flag_primary", "targetname");
@@ -491,7 +491,7 @@ function domflags() {
                 flag delete();
             }
         } else {
-            level.changenumdomflags = getdvarint(@"hash_f9faada5b0dcc0d3", 0);
+            level.changenumdomflags = getdvarint(@"scr_dom_flagcount", 0);
             primaryflags = getentarray("flag_primary", "targetname");
         }
         secondaryflags = getentarray("flag_secondary", "targetname");

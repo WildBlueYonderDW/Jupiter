@@ -1,0 +1,37 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 20
+        },
+        {
+            "#weight": 65,
+            "#itemspawnlist": "ob_jup_items_essence_high"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_turret_circuits"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_military_gear_yellow"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_killstreaks_yellow"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_plate_carriers_yellow"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_backpacks_yellow"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_revive_self_revive"
+        }
+    ]
+}

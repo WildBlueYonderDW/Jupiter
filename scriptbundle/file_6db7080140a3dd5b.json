@@ -1,0 +1,28 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 270,
+            "#itemspawnlist": "ob_jup_items_container_filing_cabinet_sublist",
+            "#mincount": 1
+        },
+        {
+            "#weight": 639
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 70,
+            "#itemspawnlist": "ob_jup_items_field_upgrades_ob_pvpve"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_aether_tools_green"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#hash_c5eb56a131ee4d21",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 1,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/DM_MIKE24",
+    "#worldmodel": "weapon_wm_sn_mike14_brprop_nophys",
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                },
+                {
+                    "#attachment": "iw9_minireddot05_tall"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "arscope01"
+                },
+                {
+                    "#attachment": "jup_hybridscope_01"
+                },
+                {
+                    "#attachment": "fourx05"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#slot": "frontpiece",
+            "#includeall": 1
+        },
+        {
+            "#slot": "backpiece",
+            "#includeall": 1
+        },
+        {
+            "#slot": "magazine",
+            "#includeall": 1
+        },
+        {
+            "#slot": "muzzle",
+            "#includeall": 1
+        },
+        {
+            "#slot": "reargrip",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "comb_tactical_p18"
+                },
+                {
+                    "#attachment": "comb_ammo_p18"
+                },
+                {
+                    "#attachment": "comb_ergo_p18"
+                }
+            ],
+            "#slot": "trigger",
+            "#includeall": 1
+        },
+        {
+            "#slot": "extra",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "ammo_762n_fr"
+                },
+                {
+                    "#attachment": "ammo_762n_hp"
+                },
+                {
+                    "#attachment": "ammo_762n_tr"
+                },
+                {
+                    "#attachment": "ammo_762n_ap"
+                },
+                {
+                    "#attachment": "ammo_762n_op"
+                },
+                {
+                    "#attachment": "ammo_762n_hv"
+                },
+                {
+                    "#attachment": "ammo_762n_db"
+                }
+            ],
+            "#slot": "modifier",
+            "#includeall": 1
+        }
+    ],
+    "#descstring": "&WEAPON/DM_MIKE24",
+    "#ref": "iw9_dm_mike24",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "dm",
+    "#baseweapon": "iw9_dm_mike24_mp",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_dm_mike24",
+    "#scriptable": "%hash_519f7f101495a03b",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SN_BOLT_RIFLE"
+}

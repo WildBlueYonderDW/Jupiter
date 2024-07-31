@@ -1,0 +1,25 @@
+{
+    "#id": "backpack_drag_and_drop",
+    "#description": "&OPTIONS/BACKPACK_DRAG_AND_DROP_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "backpackDragAndDrop",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_83e82f05a3c8684f",
+            "#type": "DVAR"
+        },
+        {
+            "#hash_f32a2d4a486d768f": 1,
+            "#type": "EXEC"
+        }
+    ],
+    "#name": "&OPTIONS/BACKPACK_DRAG_AND_DROP"
+}

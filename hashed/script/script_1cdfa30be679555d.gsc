@@ -76,7 +76,7 @@ function bot_wm_think() {
     self botsetflag("enable_deploy_parachute", 1);
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }
@@ -470,7 +470,7 @@ function function_4473b5af345c0b75(startheight) {
             }
             var_6a8da31c699ef658 = 1;
             var_b8996303b685a203 = 800;
-            gravity = getdvarint(@"hash_b5d7d39d32720e78", var_b8996303b685a203);
+            gravity = getdvarint(@"bg_gravity", var_b8996303b685a203);
             velocity = self getvelocity();
             var_966b732f6569a932 = abs(velocity[2]) * var_6a8da31c699ef658 + gravity * var_6a8da31c699ef658 * var_6a8da31c699ef658 * 0.5;
             var_ef86ab5709584341 = max(abs(velocity[2]) * var_6a8da31c699ef658, var_e5fef95b22eec246);

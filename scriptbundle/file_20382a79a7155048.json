@@ -1,0 +1,32 @@
+{
+    "#id": "quality_preset",
+    "#description": "&OPTIONS/QUALITY_PRESETS_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/RESET_DEFAULT"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_MINIMAL"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_BASIC"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_BALANCED"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_ULTRA"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_EXTREME"
+        },
+        {
+            "#reference": "&OPTIONS/RECOMMENDED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "qualityPreset",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/GRAPHIC_PRESET"
+}

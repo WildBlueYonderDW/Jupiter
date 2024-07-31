@@ -1,0 +1,387 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&PLATFORM_UI/GAMEPAD",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/GENERAL_SUB_INPUT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_386d67630fd71b1",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_12d45eca94caa5fb"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/INPUTS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_77e2acf0d91eed81",
+                            "#hash_affa2a45c1006c76": 1
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4afba81ded3903fd"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_63caa01f2538ee84"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6b751354eb2f5062"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_148d4c4390549081"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3b42abb86f5f5178",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_43c01c90127f8c0c"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1187e35ff4b6def"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7caa89113d8ee939",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_62ee69fe2a84bb35"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4bcc1c02bb6ee505"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_38b66e692dcde533"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_1f28c930e83e969e"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_52be94dc264853bc"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_7a3f6d243ba42405"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_66b56baac4730cb0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "#name": "&LUA_MENU/AIMING_TAB_SETTING",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/AIM_CATEGORY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_5e023c281a850fc4",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_541d45ee455f0ac2"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_62fcb0600e31233a",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_459e9a764fb94b34"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3fa566ed72912c2c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a81a04f88245b51",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_e72fb2ab9fa101d"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_50ff63f8e4ffffd0"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_60f45641619c8298"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5357bea0421f0566"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_52c786257d515d7b",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_aca9544a7e2e449"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_1c64082b03c831c2"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_66b1ec9ce1a618a3"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_20dd6fb976f94d2f"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7f757fa9313766d1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_540d61636e0e8f4d",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_63ac706a787bf681"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_251fada81564805b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_382365a248afd59b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_77cf8c7da4b893a3",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_36f94da538818e41"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_44206edf1f37eb66"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_f674460283c3c8c"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_4e0a30e66dfd56ca"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_522d5f5a5bc49300"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_69e50bd6bb458fa7"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "#name": "&MENU/AIM_ASSIST_SETTINGS_EXPANDER",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_74c3d0af33d21eca"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6b4dbfc311b9ab21"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_44f243c824ac587f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3ad827cda8514e8"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/GYRO_AIMING",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_1b90b606c384a369"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_385b27351f417aef",
+                            "#hash_affa2a45c1006c76": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "#name": "&LUA_MENU/GAMEPLAY_TAB_SETTING",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/MOVEMENT_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_38c5ce60a34b4b87",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_6a8c4ee268a4fbb5"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5aebc4ec443841fa"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1f4f4a3c5f7d6570"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2c480f46e7d758da"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_360b80da000500df"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3b1c10ec1ec5b387"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_457f24874921dc37"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_42076bcd8a4dd559",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_29a962d6ceec524e"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_72085ea1126d9e25"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_20167b23ec923753"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_f7579e2f08a9d2f"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5bd894a75fd0730"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_50d2f1ef05486152"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6536e7f2f7ea6f28"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_57fabdd1243cccc1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6a1533e064942c7d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7c721ac06a862a59"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/COMBAT_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_2463b1f12b9f0b13"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_d27bc9097361fd1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1c55aab35c97a9ee"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_64a82806361aedc6"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_437ddfcda6ea1c61"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1096c04feb3ccd31"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a270389f058565b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5129ea97e1ea1db5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_68dad854f574cd64"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4eea2d0627e29d5c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3174b9ca63d53d88"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_599ef9bd4688d3bc"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6b8edb8b47ebd49b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_23719c869c917512"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7817394a49b48502"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3c214764a392e53f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_69ce3dd79dba7fbc"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_50c9115d1124ccea"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/VEHICLE_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_5c766aaed84d1b9d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5101765c198c2bfd"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_42d1de3bc8ff2ccd"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_74574056fbfcd499"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/OVERLAYS_BEHAVIORS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_3e5c50f57575f59f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_29028e9d25ca48f8"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_59d266f2ab020fa2"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7110bee84403ef75"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

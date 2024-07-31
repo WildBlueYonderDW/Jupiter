@@ -111,14 +111,14 @@ function _processusethink(equipment) {
     }
     self endon("death_or_disconnect");
     self endon("emp_started");
-    var_25979fcd6ca24291 = getdvarfloat(@"hash_b22bb1a48299003b", 3);
+    var_25979fcd6ca24291 = getdvarfloat(@"perk_hack_equipment_time", 3);
     if (isdefined(equipment.var_c9f381a81d2b42ed)) {
         var_25979fcd6ca24291 = equipment.var_c9f381a81d2b42ed;
     }
     if (isdefined(equipment.var_bf11ca1f75257311)) {
         var_25979fcd6ca24291 = equipment.var_bf11ca1f75257311;
     }
-    var_6daefc1a691b701d = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5);
+    var_6daefc1a691b701d = getdvarfloat(@"perk_hack_equipment_success_time", 0.5);
     if (isdefined(equipment.var_58dec9951efefbed)) {
         var_6daefc1a691b701d = equipment.var_58dec9951efefbed;
     }
@@ -297,11 +297,11 @@ function _updatehackprogressomnvar(var_c9f381a81d2b42ed, var_58dec9951efefbed) {
     self waittill("interact_started");
     var_2646e75e629259a6 = 1000;
     var_137d951e4d233a68 = 500;
-    var_84fdeec8cd47b94c = getdvarfloat(@"hash_b22bb1a48299003b", 3) * 1000;
+    var_84fdeec8cd47b94c = getdvarfloat(@"perk_hack_equipment_time", 3) * 1000;
     if (isdefined(var_c9f381a81d2b42ed)) {
         var_84fdeec8cd47b94c = var_c9f381a81d2b42ed * 1000;
     }
-    successduration = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5) * 1000;
+    successduration = getdvarfloat(@"perk_hack_equipment_success_time", 0.5) * 1000;
     if (isdefined(var_58dec9951efefbed)) {
         successduration = var_58dec9951efefbed * 1000;
     }
@@ -369,7 +369,7 @@ function _waituntilinteractfinished(streakinfo) {
     self waittill("interact_finished");
     flag_clear("equipment_interact");
     if (streakinfo.interactstate == 2) {
-        successtime = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5);
+        successtime = getdvarfloat(@"perk_hack_equipment_success_time", 0.5);
         wait successtime;
     }
 }

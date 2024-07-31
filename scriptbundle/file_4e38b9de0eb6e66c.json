@@ -1,0 +1,129 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_equipment"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_all"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_ammomods"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_armor"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_zm_perks"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weapons_ww"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_cache"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_upgrades"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_generic"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_gear"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_essence_containers"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_keys"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_weaponcases"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_activity_armoredconvoy_green"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_activity_armoredconvoy_yellow"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_activitystarters"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_schematics"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_valuables_common"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_valuables_uncommon"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_valuables_rare"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_valuables_epic"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_valuables_legendary"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_chemist_bodyguard"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_quest"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_missions"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnlist": "ob_jup_items_killstreaks"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_ammo"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_br_plunder_box"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_ammo"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_custom"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_ww_custom"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_car_battery"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_gunoil"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_harddrive_encrypted"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_folder_sensitive"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_importedtea"
+        }
+    ]
+}

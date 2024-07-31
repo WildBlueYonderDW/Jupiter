@@ -3116,7 +3116,7 @@ function processAgentSpawned(agent, var_80f4bde7090a4773) {
         agent setscriptablepartstate("loop_sounds", "music", 0);
         var_f0eff45e6fd10d70 = 0;
     }
-    if (getdvar(@"hash_e65e9a96eb2ff62b", "") == "gwtdm" || !isdefined(level.gamemodebundle) || istrue(level.gamemodebundle.var_99eef12e9fe7e8f4)) {
+    if (getdvar(@"ui_gametype", "") == "gwtdm" || !isdefined(level.gamemodebundle) || istrue(level.gamemodebundle.var_99eef12e9fe7e8f4)) {
         if (issubstr(agent.agent_type, "tier1")) {
             overridetier1(agent);
         } else if (issubstr(agent.agent_type, "tier2")) {

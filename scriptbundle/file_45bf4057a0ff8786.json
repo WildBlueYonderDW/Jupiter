@@ -1,0 +1,26 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 60,
+            "#itemspawnlist": "ob_jup_items_weapons_base"
+        },
+        {
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_weapons_green"
+        },
+        {
+            "#weight": 15,
+            "#itemspawnlist": "ob_jup_items_weapons_blue"
+        },
+        {
+            "#weight": 7,
+            "#itemspawnlist": "ob_jup_items_weapons_purple"
+        },
+        {
+            "#weight": 4,
+            "#itemspawnlist": "ob_jup_items_weapons_orange"
+        }
+    ],
+    "#itementries": [
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "#id": "invert_pitch_vehicle_ground_kbm",
+    "#description": "&OPTIONS/INVERT_VERTICAL_LOOK_GROUND_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/STANDARD"
+        },
+        {
+            "#reference": "&OPTIONS/INVERTED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "invertPitchVehicleGroundKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/INVERT_VERTICAL_LOOK_GROUND"
+}

@@ -96,7 +96,7 @@ function function_6436c089f777048b(deathdata) {
 function function_f5fd598a80445d04(player) {
     var_92247b35cd23dbec = level.players.size - level.var_a4dab5000eca4682;
     if (var_92247b35cd23dbec > 0) {
-        var_e4762082ef346678 = level.var_8ed22c88753f7445 / getdvarint(@"hash_818c699a5caaee4f", 1);
+        var_e4762082ef346678 = level.var_8ed22c88753f7445 / getdvarint(@"party_maxplayers", 1);
     } else {
         var_e4762082ef346678 = 0;
     }

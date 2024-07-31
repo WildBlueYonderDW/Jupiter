@@ -1,0 +1,79 @@
+{
+    "#hash_ef8fe4f81b324297": [
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_lethal"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_tactical"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_armor"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_gun_primary"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_medical"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_cash"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_fieldupgrade"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_killstreak"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_dogtag"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_key"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_gasmask"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_empty_gun_secondary"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_team_revive_0"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_team_revive_1"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_team_revive_2"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_team_revive_3"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_team_revive_4"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_team_revive_5"
+        },
+        {
+            "#hash_9a914262b416fd8a": "iw9_calloutmarkerpingitem_redeploy_token"
+        },
+        {
+            "#hash_9a914262b416fd8a": "jup_calloutmarkerpingitem_empty_perk_package"
+        },
+        {
+            "#hash_9a914262b416fd8a": "jup_calloutmarkerpingitem_empty_ammo_small"
+        },
+        {
+            "#hash_9a914262b416fd8a": "jup_calloutmarkerpingitem_empty_ammo_shells"
+        },
+        {
+            "#hash_9a914262b416fd8a": "jup_calloutmarkerpingitem_empty_ammo_medium"
+        },
+        {
+            "#hash_9a914262b416fd8a": "jup_calloutmarkerpingitem_empty_ammo_large"
+        },
+        {
+            "#hash_9a914262b416fd8a": "jup_calloutmarkerpingitem_empty_ammo_rockets"
+        }
+    ]
+}

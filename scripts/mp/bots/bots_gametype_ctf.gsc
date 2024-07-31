@@ -110,7 +110,7 @@ function bot_ctf_think() {
     var_a4775e629f031993 = 0;
     for (;;) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

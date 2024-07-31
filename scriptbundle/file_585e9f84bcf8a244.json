@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_2b13ac750c6bead0",
+    "#pingvo": "#hash_245861c5723d77c1",
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_1042a177138ba2e",
+    "#titlestring": "&KILLSTREAKS/PRECISION_AIRSTRIKE",
+    "#worldmodel": "prop_uav_radio",
+    "#rarity": 4,
+    "#ref": "precision_airstrike",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "killstreak",
+    "#hash_8464122fb6575536": 1,
+    "#type": "killstreak",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_2a99b99f6c9b3113",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_killstreak_airstrike",
+    "#scriptable": "%hash_1c1113c591365291",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KILLSTREAK"
+}

@@ -1,0 +1,26 @@
+{
+    "#id": "minimap_rotation",
+    "#description": "&OPTIONS/MINIMAP_ROTATION_DESC",
+    "#image": "jup_ui_options_image_minimaprotation",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "minimapStyle",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/MINIMAP_ROTATION"
+}

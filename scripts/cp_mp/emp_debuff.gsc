@@ -689,7 +689,7 @@ function private function_3839fb2d04a8d30e(data, disablehud, var_88cc62362fd687a
         val::set("emp", "killstreaks", 0);
         val::set("emp", "supers", 0);
     }
-    thread watch_checkForLauncherWeapons();
+    thread function_8f356fd498d7a733();
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
@@ -728,7 +728,7 @@ function private function_879c1eec976b6d33() {
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x1800
 // Size: 0x55
-function private watch_checkForLauncherWeapons() {
+function private function_8f356fd498d7a733() {
     self endon("death_or_disconnect");
     self endon("stopLauncherCheck");
     level endon("game_ended");

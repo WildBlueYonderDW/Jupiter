@@ -1,0 +1,32 @@
+{
+    "#id": 89,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#buy",
+            "#sharedname": "#buy"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#sell",
+            "#sharedname": "#sell"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#upgrade",
+            "#sharedname": "#upgrade"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#trade",
+            "#sharedname": "#trade"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#remove_attachment",
+            "#sharedname": "#remove_attachment"
+        }
+    ],
+    "#name": "#hash_f22cc5cbf7f6b236",
+    "#sharedname": "#hash_80f9b45ba3e6882e"
+}

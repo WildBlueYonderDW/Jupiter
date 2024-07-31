@@ -391,6 +391,6 @@ function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, e
 // Checksum 0x0, Offset: 0xf5a
 // Size: 0x10
 function function_1d0abf2c82b32237() {
-    return getdvarint(@"hash_932e9550632df2cb");
+    return getdvarint(@"ai_debugEntIndex");
 }
 

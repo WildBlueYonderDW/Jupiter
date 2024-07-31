@@ -1,0 +1,13 @@
+{
+    "#hash_8eb973d3ec175c8b": "JupStyleGuide.ZMRegionDifficultyNormalLight",
+    "#hash_904707a3c4e35165": "JupStyleGuide.ZMRegionDifficultyNormalDark",
+    "#hash_399e579a7695fc1": "difficulty_normal",
+    "#displayname": "&JUP_OB/DIFFICULTY_NORMAL",
+    "#outlinecolor": "JupStyleGuide.ZMRegionDifficultyNormalLight",
+    "#hash_daea076dd9df7db5": "Static_Tone_Normal",
+    "#hash_b7335eac2b5d920c": "difficulty_enemy_outline",
+    "#hash_23387b98f1abc71f": "jup_hud_minimap_region_difficulty_2_normal",
+    "#hash_69bc42a14a8942a3": "JupStyleGuide.ZMRegionDifficultyNormalLight",
+    "#hash_e9a0384adbe5568f": "difficulty_enemy_outline_backer",
+    "#icon": "difficulty_2_normal_icon"
+}

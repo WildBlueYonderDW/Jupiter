@@ -1,0 +1,17 @@
+{
+    "#id": "texture_download_delete_cache",
+    "#description": "&OPTIONS/TEXTURE_DOWNLOAD_CACHE_DELETE",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_f32a2d4a486d768f": 1,
+            "#type": "EXEC"
+        },
+        {
+            "#dvarname": "@hash_2c194523e26f4307",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/TEXTURE_DOWNLOAD_CACHE_DELETE"
+}

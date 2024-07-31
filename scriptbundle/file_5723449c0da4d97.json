@@ -1,0 +1,112 @@
+{
+    "#id": 87,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#elimination",
+            "#sharedname": "#elimination"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#domination",
+            "#sharedname": "#domination"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#geiger_search",
+            "#sharedname": "#geiger_search"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#trap",
+            "#sharedname": "#trap"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hostage",
+            "#sharedname": "#hostage"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_d1c69f3aee40f235",
+            "#sharedname": "#hash_d1c69f3aee40f235"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hunt",
+            "#sharedname": "#hunt"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#boatdrive",
+            "#sharedname": "#boatdrive"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#demolition",
+            "#sharedname": "#demolition"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#safe",
+            "#sharedname": "#safe"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#samsite",
+            "#sharedname": "#samsite"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#bomb",
+            "#sharedname": "#bomb"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#hash_3cfb50e48ebdfe5b",
+            "#sharedname": "#hash_3cfb50e48ebdfe5b"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#hash_cf97389bc63dae3c",
+            "#sharedname": "#hash_cf97389bc63dae3c"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#supply",
+            "#sharedname": "#supply"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#scav",
+            "#sharedname": "#scav"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#hash_5ab6191cb08ef6d0",
+            "#sharedname": "#hash_5ab6191cb08ef6d0"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#hash_81ebff92b418d2c8",
+            "#sharedname": "#hash_81ebff92b418d2c8"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#train_safe",
+            "#sharedname": "#train_safe"
+        },
+        {
+            "#bitindex": 31,
+            "#name": "#hash_52fcfafbe0f7161f",
+            "#sharedname": "#hash_52fcfafbe0f7161f"
+        },
+        {
+            "#bitindex": 32,
+            "#name": "#hash_90ee07f28c459aed",
+            "#sharedname": "#hash_90ee07f28c459aed"
+        }
+    ],
+    "#name": "#hash_1df1a4b536feeb9",
+    "#sharedname": "#activity_type"
+}

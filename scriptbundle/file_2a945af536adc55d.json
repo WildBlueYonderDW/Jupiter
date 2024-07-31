@@ -1,0 +1,19 @@
+{
+    "#hash_56e33ad9fdf64080": 5,
+    "#challengeref": "jup_collection_bundle_konnigroup_mastery",
+    "#hash_fec27d5199cb14a5": "",
+    "#largeicon": "jup_store_collection_konnigroup_icon",
+    "#color": "0.85098 0.12549 0.0470588 1",
+    "#hash_542e06b061849d85": 58322,
+    "#name": "&JUP_STORE/JUP_COLLECTION_KONNIGROUP",
+    "#bundles": [
+        {
+            "#asset": "jup_store_3044_s3_op_makarov_urban"
+        },
+        {
+            "#asset": "jup_store_3045_s3_op_banshee_geisha"
+        }
+    ],
+    "#icon": "jup_store_collection_konnigroup_icon_small",
+    "#visible": 1
+}

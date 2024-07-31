@@ -7,7 +7,7 @@
 // Checksum 0x0, Offset: 0xab
 // Size: 0x1b
 function function_c1cddd7ae3bc2698() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "gun") == "team_gun";
+    return getdvar(@"ui_gametype", "gun") == "team_gun";
 }
 
 // Namespace team_gun / scripts\mp\gametypes\team_gun

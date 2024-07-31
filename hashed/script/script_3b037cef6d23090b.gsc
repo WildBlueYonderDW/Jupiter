@@ -245,7 +245,7 @@ function private function_786907b8e0e31227(v_target, b_invert) {
     self waittill("bunny_launch_time");
     time = 4;
     v_start = self.origin;
-    gravity = getdvarint(@"hash_b5d7d39d32720e78", 0) * -1;
+    gravity = getdvarint(@"bg_gravity", 0) * -1;
     dist = distance(v_start, v_target);
     power = dist / time;
     delta = v_target - v_start;

@@ -1,0 +1,35 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#image": "hud_icon_weapon_jup_me_zombie_hellhound_mp",
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_me_zombie_hellhound_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_melee",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#lootid": 17196,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_f79f436c85df92d0": 3,
+    "#ref": "jup_me_zombie_hellhound",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#asset": "jup_me_zombie_hellhound_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_melee",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+    ],
+    "#displayorder": -1,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_799361e53b3b5b94": [
+    ]
+}

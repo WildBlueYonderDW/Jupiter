@@ -1,0 +1,24 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#itemspawnentry": "ob_jup_item_super_aether_shroud"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_super_energy_mine"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_super_frenzied_guard"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_super_frost_blast"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_super_healing_aura"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_super_tesla_storm"
+        }
+    ]
+}

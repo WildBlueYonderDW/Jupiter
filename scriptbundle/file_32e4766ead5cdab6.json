@@ -1,0 +1,32 @@
+{
+    "#id": 511,
+    "#keys": [
+        {
+            "#key": "iw9_weapon_class_bitfield"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_jup_ob_enemy_type"
+        },
+        {
+            "#key": "iw9_loot_id"
+        },
+        {
+            "#key": "iw9_weapon_loot_id"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_9e01a5efbda480bf",
+    "#sharedname": "#weapon_damage"
+}

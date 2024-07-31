@@ -1,0 +1,23 @@
+{
+    "#id": "horizontal_compass",
+    "#description": "&OPTIONS/HORIZONTAL_COMPASS_DESC",
+    "#image": "jup_ui_options_image_horizontalcompass",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "horizontalCompassEnabled",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_14ce398c76fbc9de",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/HORIZONTAL_COMPASS"
+}

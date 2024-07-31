@@ -1568,14 +1568,14 @@ function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskill
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
                 points = getdvarint(@"hash_46a6b424af6acbc2");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x15a>", points, 0);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
                 points = getdvarint(@"hash_86e14326e43c0115");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x164>", points, 0);
                 break;

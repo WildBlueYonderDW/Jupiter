@@ -1,0 +1,22 @@
+{
+    "#id": "gyro_advanced_settings",
+    "#description": "&OPTIONS/GYRO_ADVANCED_SETTINGS_DESC",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "AdvancedTab",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#hash_434da1af138bf52": 1,
+            "#hash_434db1af138c185": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#hash_d81ae6cf273e4269": "%hash_59825a6d6ffe0103",
+    "#name": "&OPTIONS/GYRO_ADVANCED_SETTINGS",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_5e5b09ddab3e350d"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

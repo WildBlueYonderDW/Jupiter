@@ -1,0 +1,55 @@
+{
+    "#id": "gyro_uses_ads_stick_sensitivity",
+    "#description": "&PLATFORM/GYRO_USES_ADS_STICK_SENSITIVITY_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "GyroUsesAdsStickSensitivity",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_601f46e92f432ffa",
+            "#type": "DVAR"
+        },
+        {
+            "#dvarname": "@hash_610651b40ed1cfb0",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&PLATFORM/GYRO_USES_ADS_STICK_SENSITIVITY",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_ca6bb225376aa93"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_3b6e15d3b35a29b2"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_321902d2e32db167"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_c9aa905f7866ee1"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_7a8da6db81ea268b"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_3c401a5df6f0bc95"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_508cde7fadddffa4"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_4371e67dcee6d392"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_7ae11fa225cfda8a"
+        }
+    ]
+}

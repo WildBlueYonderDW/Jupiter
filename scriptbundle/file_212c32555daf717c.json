@@ -1,0 +1,87 @@
+{
+    "#id": 149,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#rat_boss",
+            "#sharedname": "#rat_boss"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_e016c28fc0fa9c90",
+            "#sharedname": "#hash_e016c28fc0fa9c90"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_529b2a005c09f2a4",
+            "#sharedname": "#hash_529b2a005c09f2a4"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_d3d79e53ba73ecf1",
+            "#sharedname": "#hash_d3d79e53ba73ecf1"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#zombie",
+            "#sharedname": "#zombie"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#hash_23ef4ebb68948f22",
+            "#sharedname": "#hash_23ef4ebb68948f22"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#hash_d8bc5dbbe845033",
+            "#sharedname": "#hash_d8bc5dbbe845033"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#hash_b5db3f5f667140e5",
+            "#sharedname": "#hash_b5db3f5f667140e5"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#hash_f56b6b0fcad9f6bf",
+            "#sharedname": "#hash_f56b6b0fcad9f6bf"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#hash_c91380bde3ee5aaf",
+            "#sharedname": "#hash_c91380bde3ee5aaf"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#hash_c6029bb2a7ed9dd7",
+            "#sharedname": "#hash_c6029bb2a7ed9dd7"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#hash_600923f71dda19c4",
+            "#sharedname": "#hash_600923f71dda19c4"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#hash_6370c70666411dde",
+            "#sharedname": "#hash_6370c70666411dde"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#hash_48bbae067d189af4",
+            "#sharedname": "#hash_48bbae067d189af4"
+        },
+        {
+            "#bitindex": 19,
+            "#name": "#auto_killstreak",
+            "#sharedname": "#auto_killstreak"
+        },
+        {
+            "#bitindex": 20,
+            "#name": "#hash_26588836ee582767",
+            "#sharedname": "#hash_26588836ee582767"
+        }
+    ],
+    "#name": "#hash_cea9642c2ed3d3e",
+    "#sharedname": "#hash_22d8c6e760626656"
+}

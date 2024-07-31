@@ -1,0 +1,66 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_tactical_adrenaline"
+        },
+        {
+            "#weight": 200,
+            "#itemspawnentry": "ob_jup_item_tactical_concussion"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_monkey_bomb"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_shockstick"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_tactical_blackhole_bomb"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_geigercounter"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_tactical_inhibitor"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_aethercounter"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_butterflymine"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_smoke"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_decoy"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_gas"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_inhibitor_stack"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_tactical_snapshot"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_thermal_phone"
+        }
+    ]
+}

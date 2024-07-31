@@ -541,7 +541,7 @@ function function_bad0139fc2b1a50a(streakinfo, target, targetisplayer, chargeind
     charge.killcament = killcament;
     explodepos = charge waittill("explode");
     timetotarget = getdvarfloat(@"hash_db9763666846c7b2", bundle.var_be7e2889fb89c2d);
-    gravity = (0, 0, getdvarint(@"hash_b5d7d39d32720e78") * -1);
+    gravity = (0, 0, getdvarint(@"bg_gravity") * -1);
     velocity = trajectorycalculateinitialvelocity(explodepos, targetstruct function_cf9631cd88628853(), gravity, timetotarget);
     explosive = owner launchgrenade(bundle.var_d5103347b49b5137, explodepos, velocity, timetotarget);
     explosive.streakinfo = streakinfo;

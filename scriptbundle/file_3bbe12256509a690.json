@@ -1,0 +1,24 @@
+{
+    "#splash_list": [
+        {
+            "#splashbundle": "splash_br_pe_dataheist_start_root_mp",
+            "#ref": "#hash_b270ee07e7fb29b0"
+        },
+        {
+            "#splashbundle": "splash_br_pe_dataheist_end_root_mp",
+            "#ref": "#hash_a2d660bccc021591"
+        },
+        {
+            "#splashbundle": "splash_br_pe_dataheist_defend_root_mp",
+            "#ref": "#hash_be32cd9cdd7363b0"
+        },
+        {
+            "#splashbundle": "splash_br_pe_dataheist_success_root_mp",
+            "#ref": "#hash_7f99f86f8a4c7af7"
+        },
+        {
+            "#splashbundle": "splash_br_pe_dataheist_stolen_root_mp",
+            "#ref": "#hash_cf6d893e81e01c63"
+        }
+    ]
+}

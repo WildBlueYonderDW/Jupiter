@@ -1,0 +1,22 @@
+{
+    "#id": "voice_chat",
+    "#description": "&OPTIONS/VOICE_CHAT_BUTTON_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "keyBinding",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/VOICE_CHAT_BUTTON",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/VOICE_CHAT_PUSH_TO_TALK_DISABLE_DESC",
+    "#hash_c55c746ff4d8929b": 1
+}

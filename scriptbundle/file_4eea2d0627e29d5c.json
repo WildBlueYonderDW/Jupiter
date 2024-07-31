@@ -1,0 +1,22 @@
+{
+    "#id": "gamepad_reload_behaviors",
+    "#description": "&PLATFORM/GAMEPAD_RELOAD_BEHAVIORS_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/GAMEPAD_RELOAD_BEHAVIORS_TAP_RELOAD"
+        },
+        {
+            "#reference": "&OPTIONS/GAMEPAD_RELOAD_BEHAVIORS_TAP_USE"
+        },
+        {
+            "#reference": "&OPTIONS/GAMEPAD_RELOAD_BEHAVIORS_CONTEXTUAL_TAP"
+        },
+        {
+            "#reference": "&OPTIONS/GAMEPAD_RELOAD_BEHAVIORS_CONTEXTUAL_RELOAD"
+        }
+    ],
+    "#hash_a20785232d9c4057": "gpadUseReloadProfile",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/GAMEPAD_RELOAD_BEHAVIORS"
+}

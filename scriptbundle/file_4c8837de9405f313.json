@@ -1,0 +1,39 @@
+{
+    "#id": "danger_ping_double_tap",
+    "#description": "&MENU/DANGER_PING_DOUBLE_TAP_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/DEDICATED_KEYBIND"
+        },
+        {
+            "#reference": "&LUA_MENU/DOUBLE_TAP"
+        }
+    ],
+    "#hash_a20785232d9c4057": "dangerPingDoubleTap",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_7c8a757d79957f2c"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_443dfdbb7962a87e"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&MENU/DANGER_PING_DOUBLE_TAP",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_4ca094d8e501ba94"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

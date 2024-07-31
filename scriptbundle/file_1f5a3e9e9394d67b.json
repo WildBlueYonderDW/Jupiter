@@ -1,0 +1,176 @@
+{
+    "#hash_26cb68d514ad2106": 0,
+    "#hash_bec2a148f302146a": "&LUA_MENU_MP/HAVOC_RECIPE_NAME",
+    "#teambased": 1,
+    "#finalkillcamtype": 0,
+    "#hash_e069f902132e3ff6": 1,
+    "#hash_e90a3f156c711c2d": "&LUA_MENU_MP/HAVOC_RECIPE_DESC",
+    "#hash_e61e7212585decdd": [
+    ],
+    "#image": "jup_icon_mode_mp_havoc",
+    "#hash_2078dc99d4296ca4": "&LUA_MENU_MP/HAVOC",
+    "#hash_cd13e71e53f5e9fd": [
+        {
+            "#hash_a646fdc2088d8209": 0.75,
+            "#slowdown": 1,
+            "#hash_e6b71d6e6bbe2fb3": 250,
+            "#transitiontime": 1,
+            "#hash_14840030012609f3": "&MP/DEFEAT",
+            "#hash_77f55449dd20f777": 0.25,
+            "#hash_a06cf960502d5a78": 250,
+            "#hash_c26d9e0ec7e33301": 1,
+            "#hash_995b727315758892": 1,
+            "#hash_c5d0fcbf9cedaad9": "&MP/VICTORY",
+            "#transitiontype": "#outcome",
+            "#hash_fdcea034f75600dc": "&MP/DRAW"
+        },
+        {
+            "#transitiontime": 4,
+            "#freezeplayers": 1,
+            "#hash_14840030012609f3": "&MP/DEFEAT",
+            "#hash_a269b0b3c4a6991": 450,
+            "#hash_d5c18c36d82070f8": 1,
+            "#hash_c5d0fcbf9cedaad9": "&MP/VICTORY",
+            "#transitiontype": "#outcome_with_score",
+            "#hash_fdcea034f75600dc": "&MP/DRAW"
+        },
+        {
+            "#transitiontype": "#play_of_the_match"
+        },
+        {
+            "#transitiontime": 15,
+            "#freezeplayers": 1,
+            "#hash_9f588a88a9f1e3a0": 1,
+            "#transitiontype": "#high_value_operatives"
+        },
+        {
+            "#transitiontype": "#winners_circle"
+        },
+        {
+            "#hash_9f588a88a9f1e3a0": 1,
+            "#hash_14840030012609f3": "&MP/PLAY_OF_THE_MATCH",
+            "#hash_dc241f81939273e": "&MP/PLAY_OF_THE_MATCH",
+            "#hash_c5d0fcbf9cedaad9": "&MP/PLAY_OF_THE_MATCH",
+            "#transitiontype": "#hero_pose",
+            "#hash_fdcea034f75600dc": "&MP/PLAY_OF_THE_MATCH"
+        }
+    ],
+    "#hash_f609acb8d6f7eddb": 2,
+    "#hash_fd6ad9506987a3a9": 10,
+    "#hash_fd47eb5069618387": 5,
+    "#allowclasschoice": 1,
+    "#hash_63e50e7024bc663e": 14,
+    "#hash_5f52715067c4453c": "None",
+    "#hash_589e0c2e2afab4ea": "&",
+    "#hash_589e062e2afaa7b8": "&",
+    "#hash_589e072e2afaa9eb": "&",
+    "#hash_589e092e2afaae51": "&",
+    "#hash_952b41a694c9d00b": "winners_circle_mp",
+    "#hash_4f29dbd56f01de57": 0,
+    "#hash_ef1173b4978600f9": [
+        {
+            "#hash_a646fdc2088d8209": 0.75,
+            "#slowdown": 1,
+            "#hash_e6b71d6e6bbe2fb3": 250,
+            "#hash_95019b79d9a7dffa": 1,
+            "#transitiontime": 1,
+            "#hash_14840030012609f3": "&MP/ROUND_LOSS",
+            "#hash_77f55449dd20f777": 0.25,
+            "#hash_995b727315758892": 1,
+            "#hash_c5d0fcbf9cedaad9": "&MP/ROUND_WIN",
+            "#transitiontype": "#outcome",
+            "#hash_fdcea034f75600dc": "&MP/ROUND_DRAW"
+        },
+        {
+            "#hash_cf504d08907ce8b3": 1,
+            "#transitiontime": 4,
+            "#freezeplayers": 1,
+            "#hash_14840030012609f3": "&MP/ROUND_LOSS",
+            "#hash_8053e169bd51ee4a": 1,
+            "#hash_c5d0fcbf9cedaad9": "&MP/ROUND_WIN",
+            "#transitiontype": "#outcome_with_score",
+            "#hash_fdcea034f75600dc": "&MP/ROUND_DRAW"
+        },
+        {
+            "#hash_14840030012609f3": "&MP/PLAY_OF_THE_MATCH",
+            "#hash_c5d0fcbf9cedaad9": "&MP/PLAY_OF_THE_MATCH",
+            "#transitiontype": "#play_of_the_match",
+            "#hash_fdcea034f75600dc": "&MP/PLAY_OF_THE_MATCH"
+        },
+        {
+            "#transitiontime": 3,
+            "#hash_a5fb68203c490a32": 1,
+            "#hash_14840030012609f3": "&MP/SWITCHING_SIDES",
+            "#hash_8053e169bd51ee4a": 1,
+            "#hash_104eb44bbefea5cb": 1,
+            "#hash_c5d0fcbf9cedaad9": "&MP/SWITCHING_SIDES",
+            "#transitiontype": "#switch_sides",
+            "#hash_fdcea034f75600dc": "&MP/SWITCHING_SIDES"
+        }
+    ],
+    "#hash_61b9f20a7c31ed0d": [
+        {
+            "#image": "jup_ui_menu_keyart_tdm_00"
+        },
+        {
+            "#image": "jup_ui_menu_keyart_tdm_00"
+        }
+    ],
+    "#category": "Standard",
+    "#hash_4c371bf313812c95": {
+        "#hash_2b60e5280dfc35cd": 1,
+        "#hash_abd731ee6e3696c": {
+            "#hash_48ac18e1bc53712b": {
+                "#hash_a5db0b3d50ceba8e": 2500,
+                "#movedist": 1000
+            },
+            "#hash_2e618e1d6d46f6fb": 3
+        }
+    },
+    "#displayroundswitch": 1,
+    "#hash_c0bcb92698db94ff": 1.5,
+    "#hash_2f37493dac81d735": 0,
+    "#hash_3c836934a83182a5": 1,
+    "#displayroundend": 1,
+    "#hash_315c56db76139cdd": "%hash_17847c5dcaf99f6a",
+    "#hash_466145510d447d04": "random",
+    "#hash_31d1a6c4b76ee73a": 1,
+    "#hash_71b14066991700ec": 1,
+    "#hash_95439b09d4d1900c": 1,
+    "#hash_bfcff306e50ddf4": "&OBJECTIVES/HAVOC_HINT",
+    "#hash_df5e6a3d7e67d4de": 0,
+    "#hash_7414261752817c0": 0,
+    "#backpacksize": 8,
+    "#namekey": "havoc",
+    "#hash_317a568b4ba1496a": 19,
+    "#hash_68d6debb01863622": "&",
+    "#hash_68d6d8bb018628f0": "&",
+    "#hash_68d6d9bb01862b23": "&",
+    "#hash_68d6dbbb01862f89": "&",
+    "#defaultmap": "mp_hackney_am",
+    "#hash_7b8c8e7087d2e518": 165,
+    "#hash_6615fee3cfcc9303": {
+        "#hash_2b60e5280dfc35cd": 1
+    },
+    "#hash_c2ae38b58d8126f9": 0.5,
+    "#hash_d8a6002d5eaba519": 0,
+    "#scoreeventlist": "score_event_list_war_iw9_mp",
+    "#xpscalar": 1,
+    "#hash_7b4496518c2be4e7": [
+        {
+            "#alias": "start",
+            "#criticalbundle": "%hash_3b4b285c42f0133b",
+            "#factorbundle": "%hash_4e31b4759b3ee20a"
+        },
+        {
+            "#alias": "default",
+            "#criticalbundle": "%hash_74031b73c541fceb",
+            "#factorbundle": "%hash_55fe13b5c496f1c8"
+        }
+    ],
+    "#hash_17b1f7abbf0c2aa0": "&OBJECTIVES/HAVOC_HINT",
+    "#hash_d98341b1a105c7af": 60,
+    "#hash_d0414fbb847802b": "&LUA_MENU_MP/HAVOC_DESC",
+    "#hash_eaca66bea536a108": "",
+    "#hash_d20acad05758f0d8": "havoc"
+}

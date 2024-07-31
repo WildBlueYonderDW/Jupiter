@@ -1,0 +1,130 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&LUA_MENU/GRAPHICS",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&LUA_MENU/VIDEO_SUB_DETAILS_TEXTURES",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_2fd7a3013581170b",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_236d93e66f41cb52"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_77e723be922ab263"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3070b6162d666987"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_316d9ae26ba7ca33"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_40e9581c9c8d2554"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_656f732710be86c1"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/VIDEO_SUB_POST_PROCESSING_EFFECTS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_2db8a2ca330cc4df"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3121b9a3df7e6339"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_103ebfabe78bc078"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_12a302db233d6097"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_58f2add04adee6f4"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_e25571ffcf64c4"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/SUSTAINABILITY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_23e49d24903816bc"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/GENERAL_SUB_SCREEN",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_1982d2ccbeb1b575"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3e43eb7da04e1082",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_5931722a1dd31648"
+                                },
+                                {
+                                    "#hash_25c581c24953920f": "%hash_3632f8a4f178f5ab"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_46ccd87f14b383b9",
+                            "#hash_62b558ab69e4add6": 1,
+                            "#hash_4f500183a3defd55": [
+                                {
+                                    "#hash_25c581c24953920f": "%hash_fffd9af66c7c09d"
+                                }
+                            ]
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5742affd9b35d18d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_603af7802834b88f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4af6e9a81ee89dd5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_64f5881e9741ac33"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_175305270c57b740"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/VIDEO_SUB_DISPLAY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_eb1be851d4a84a5"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_66c20cf9373a2f25"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5a4cc0f93f2ee26b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_17ffcdcf21f8ad60"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

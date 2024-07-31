@@ -1,0 +1,354 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#image": "hud_icon_weapon_ar_helima",
+    "#hash_79839b907716ac41": "icon_weapon_ar_helima",
+    "#platform": "platform_iw9_ar_helima",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_ar_helima_v4",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_ar_helima",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_assault",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_ar_helima_v7",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#botpersonality": "run_and_gun|cqb|camper",
+    "#lootid": 26647,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#ref": "iw9_ar_helima",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_cc6c9112f9a80ac": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab751e309d92890": "semi_auto_fire_mode",
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/AR_HELIMA",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/AR_HELIMA",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault selectsemi ironsdefault",
+    "#asset": "iw9_ar_helima_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_assault",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_helima",
+                    "#lootid": 26641
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_p52",
+                    "#lootid": 26642
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_p52",
+                    "#lootid": 26643
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_p52",
+                    "#lootid": 26645
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_p52",
+                    "#lootid": 26646
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_p52",
+                    "#lootid": 26644
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_helima_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "helima_extras",
+                    "#lootid": 29906,
+                    "#challengeid": 15544,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_ar_helima_camo_ob_1",
+                    "#challengeid": 18800
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_heavy_p52",
+                    "#lootid": 27486,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_frontpieces",
+                    "#lootid": 29913,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_optics",
+                    "#lootid": 29905,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_heavy_p52",
+                    "#lootid": 27493,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_backpieces",
+                    "#lootid": 29907,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_angled_p52",
+                    "#lootid": 27500,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_undermounts",
+                    "#lootid": 29911,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_muzzles",
+                    "#lootid": 29912,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_large_p52",
+                    "#lootid": 27498,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_magazines",
+                    "#lootid": 29909,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_helima_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_erg_p52",
+                    "#lootid": 27497,
+                    "#challengeid": 15545,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_ar_helima_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "helima_reargrips",
+                    "#lootid": 29908,
+                    "#challengeid": 18867,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_gunperks",
+                    "#lootid": 29910,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_hvy_p52",
+                    "#lootid": 27503,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "helima_combs",
+                    "#lootid": 29914,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_tactical_p52",
+                    "#lootid": 27494,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p52",
+                    "#lootid": 27495,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_long_p52",
+                    "#lootid": 27487,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_helima_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "comb_erg_p52",
+                    "#lootid": 27502,
+                    "#challengeid": 15546,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_ar_helima_camo_ob_3",
+                    "#challengeid": 18934
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_light_p52",
+                    "#lootid": 27492,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_short_p52",
+                    "#lootid": 27488,
+                    "#bucket": 4
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_short_reflex_p52",
+                    "#lootid": 27489,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ske_p52",
+                    "#lootid": 27496,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_longhvy_p52",
+                    "#lootid": 27490,
+                    "#bucket": 4
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_longhvy_scope_p52",
+                    "#lootid": 27491,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comb_tac_p52",
+                    "#lootid": 27501,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_ar_helima_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "mag_ar_xlarge_p52",
+                    "#lootid": 27499,
+                    "#challengeid": 15547,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_ar_helima_camo_ob_4",
+                    "#challengeid": 19001
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_ar_helima_tuning",
+                    "#lootid": 26708,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 21
+        }
+    ],
+    "#displayorder": 77,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

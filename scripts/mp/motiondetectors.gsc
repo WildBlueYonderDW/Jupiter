@@ -507,7 +507,7 @@ function lightswitchinteraction(player, struct) {
     self.scenenode thread anim_single_solo(self, animname);
     animlength = getanimlength(level.scr_anim["lightswitch"][animname]);
     wait animlength;
-    setdvar(@"hash_7eb1641737ab83b7", 0);
+    setdvar(@"depthSortViewmodel", 0);
     self notify("interaction_complete");
     return true;
 }

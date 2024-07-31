@@ -1,0 +1,24 @@
+{
+    "#id": "inventory_show_action",
+    "#description": "&OPTIONS/INVENTORY_SHOW_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_41859cb5453bd19c"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_28f2f821bfa02487"
+        }
+    ],
+    "#type": "keyBinding",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/INVENTORY_SHOW",
+    "#hash_6cc29e2aa276fd0f": 1
+}

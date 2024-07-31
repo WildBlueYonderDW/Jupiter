@@ -1,0 +1,20 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#itemspawnentry": "ob_jup_item_aether_tool"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_aether_tool_2"
+        },
+        {
+            "#weight": 35,
+            "#itemspawnentry": "ob_jup_item_aether_tool_3"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_aether_tool_4"
+        }
+    ]
+}

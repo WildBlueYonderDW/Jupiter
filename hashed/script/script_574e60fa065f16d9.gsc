@@ -34,9 +34,9 @@ function main() {
     if (function_a7caa13ebe4c4ba5() || isgroundwarcoremode()) {
         if (!isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
             if (getgametype() == "gwtdm") {
-                setdvar(@"hash_6beec004cdf37c0", 142);
+                setdvar(@"scr_localeID", 142);
             } else {
-                setdvar(@"hash_6beec004cdf37c0", 141);
+                setdvar(@"scr_localeID", 141);
             }
         }
         scripts\mp\gametypes\arm::arm_initoutofbounds();
@@ -52,7 +52,7 @@ function main() {
         volume delete();
     }
     scripts\mp\compass::setupminimap("compass_map_mp_jup_st_c_gw");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     setdvar(@"hash_9365c7a237edaa2f", 1);
     scripts\common\create_script_utility::initialize_create_script();
     level thread namespace_4c970d44ea63fd32::main();
@@ -60,6 +60,6 @@ function main() {
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
     game["axis_outfit"] = "woodland";
-    setdvar(@"hash_be80c9650d91b8ac", 3500);
+    setdvar(@"fd_helicopter_altitude_limiter", 3500);
 }
 

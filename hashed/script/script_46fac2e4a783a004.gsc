@@ -253,7 +253,7 @@ function function_569aec3f2378f201() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xce3
 // Size: 0xe2
-function grandprix_fire_flicker(lower, higher, full, min_time, max_time) {
+function grandprix_fire_flicker(lower, var_ef51947aa5ac420a, full, min_time, max_time) {
     self notify("grandprix_fire_flicker");
     self endon("grandprix_fire_flicker");
     level endon("game_ended");
@@ -262,7 +262,7 @@ function grandprix_fire_flicker(lower, higher, full, min_time, max_time) {
         return;
     }
     for (old_intensity = full; ; old_intensity = intensity) {
-        intensity = randomfloatrange(full * lower, full * higher);
+        intensity = randomfloatrange(full * lower, full * var_ef51947aa5ac420a);
         timer = randomfloatrange(min_time, max_time);
         timer *= 20;
         for (i = 0; i < timer; i++) {

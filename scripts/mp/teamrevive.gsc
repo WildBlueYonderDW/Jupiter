@@ -923,7 +923,7 @@ function revivetriggerholdonusebegin(player, ignoreallows) {
         }
     }
     if (player _hasperk("specialty_medic")) {
-        level.revivetriggers[deadplayer.guid].usetime = level.revivetriggers[deadplayer.guid].usetime * getdvarfloat(@"hash_6f08a22fd52e004c");
+        level.revivetriggers[deadplayer.guid].usetime = level.revivetriggers[deadplayer.guid].usetime * getdvarfloat(@"perk_medicReviveSpeedRatio");
     }
     self setscriptablepartstate("cyber_revive_icon", "unusable");
     deadplayer.reviver = player;

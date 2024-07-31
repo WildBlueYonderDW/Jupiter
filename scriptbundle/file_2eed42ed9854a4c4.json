@@ -1,0 +1,82 @@
+{
+    "#hash_7e39414ce66b7776": {
+        "#fieldupgrade1": "super_tac_cover",
+        "#hash_7e39824ce66c0669": "none"
+    },
+    "#hash_c0936af6fe335d3c": {
+        "#fieldupgrade1": 1,
+        "#hash_7e39824ce66c0669": 1
+    },
+    "#hash_b3cbb30eb9cdf347": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none"
+    },
+    "#execution": "neck_stab",
+    "#gesture": "iw8_ges_plyr_gesture000",
+    "#perks": {
+        "#perk1": "specialty_grenade_expert",
+        "#perk3": "specialty_restock",
+        "#perk2": "specialty_munitions_2",
+        "#perkbonus": "specialty_null"
+    },
+    "#secondaryweapon": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "iw9_sh_mike1014",
+        "#camo": "none",
+        "#attachment1": "bar_sh_short_p12",
+        "#attachment2": "grip_angled01",
+        "#attachment3": "pgrip_aim_p12",
+        "#attachment4": "none",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    },
+    "#role": "role_demolition",
+    "#extrapower": {
+    },
+    "#equipment": {
+        "#primary": "equip_c4",
+        "#secondary": "equip_snapshot_grenade"
+    },
+    "#loadoutname": "&MP_INGAME_ONLY/GWPLUS_CLASS4",
+    "#wildcard": {
+        "#wildcard": "wildcard_none"
+    },
+    "#hash_d29422aa859a9c6": {
+    },
+    "#super": "none",
+    "#primaryweapon": {
+        "#variantid": "-1",
+        "#reticle": "none",
+        "#weapon": "iw9_lm_ngolf7",
+        "#camo": "none",
+        "#attachment1": "holotherm01",
+        "#attachment2": "bar_lm_long_p17",
+        "#attachment3": "belt_lm_xlarge_p17",
+        "#attachment4": "bipod_ngolf7",
+        "#attachment5": "stock_lm_heavy_p17",
+        "#attachment6": "none"
+    },
+    "#extraperks": {
+        "#perk1": "specialty_overcharge_field_upgrade",
+        "#perk3": "none",
+        "#perk2": "none"
+    },
+    "#specialist": 1,
+    "#hash_d72c73f8cdd98f5d": {
+        "#perk5": "specialty_null",
+        "#perk4": "specialty_null",
+        "#perk7": "specialty_null",
+        "#perk6": "specialty_null",
+        "#perk1": "specialty_null",
+        "#perk3": "specialty_null",
+        "#perk2": "specialty_null"
+    }
+}

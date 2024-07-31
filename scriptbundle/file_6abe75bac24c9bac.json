@@ -1,0 +1,33 @@
+{
+    "#hash_4869dccb0bd30d1b": [
+        {
+            "#isinverted": 0,
+            "#condition": "IsDevRowEnabled"
+        },
+        {
+            "#isinverted": 1,
+            "#condition": "IsClosedInternalAlphaBuild"
+        }
+    ],
+    "#name": "&LUA_MENU/DEVELOPMENT",
+    "#buttons": [
+        {
+            "#hash_b1f6e7f37c9b34c5": "playlistselect",
+            "#hash_b1eda3bc435dc651": [
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "PlaylistSelect"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "cpprivatematch",
+            "#hash_b1eda3bc435dc651": [
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "CPPrivateMatch"
+        }
+    ]
+}

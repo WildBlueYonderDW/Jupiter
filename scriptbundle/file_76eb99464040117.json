@@ -1,0 +1,26 @@
+{
+    "#id": 90,
+    "#keys": [
+        {
+            "#key": "iw9_day_override"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_user_info"
+        },
+        {
+            "#key": "iw9_sp_progression"
+        },
+        {
+            "#key": "iw9_login_bitfield1"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_c9fd2680050dd1a",
+    "#sharedname": "#login"
+}

@@ -1,0 +1,23 @@
+{
+    "#hash_2b682716d65beee": 0,
+    "#hash_51a535c2510cde8a": 1,
+    "#boundsradius": 15,
+    "#hash_aaf0465944b061ed": "zombie_kia_special",
+    "#height": 108,
+    "#hash_19d949438b5d19": 0,
+    "#goalheight": 80,
+    "#hash_90936cd2d6771517": 1,
+    "#hash_d9f86989ad15047e": 1,
+    "#boundsheight": 72,
+    "#hash_e4e004eb4bd09291": 0,
+    "#hash_6510edfacf0baeaf": 500,
+    "#disableexecutionvictim": 1,
+    "#radius": 48,
+    "#hash_4975344f645984a6": "zombie_default",
+    "#hash_994ad2292fc29de6": 1,
+    "#lookaheadtime": 1,
+    "#hash_836834377fb9b633": 1,
+    "#goalradius": 32,
+    "#supporthealthbar": 1,
+    "#hash_c9cbc4a3332e44c6": 1
+}

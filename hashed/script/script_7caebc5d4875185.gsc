@@ -168,7 +168,7 @@ function threat_sight_set_dvar(enabled) {
     if (enabled && !function_7a21aa652f0613b0()) {
         return;
     }
-    setdvar(@"hash_a9f8dfe902285d4a", enabled);
+    setdvar(@"ai_threatSight", enabled);
 }
 
 // Namespace manager / namespace_42207369e7a21b21

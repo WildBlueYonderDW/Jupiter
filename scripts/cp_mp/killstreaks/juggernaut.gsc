@@ -165,10 +165,10 @@ function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex)
     var_a1aa2d822e933d07 = function_b9ff4b6230995332(var_9b32d1936831f5aa, #"primaryweapon");
     secondaryweaponname = function_8df651a1b2728b15(var_9b32d1936831f5aa, #"secondaryweapon");
     var_e426ac0fd477f647 = function_b9ff4b6230995332(var_9b32d1936831f5aa, #"secondaryweapon");
-    lethalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"lethalEquipment");
-    tacticalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"tacticalEquipment");
-    lethalEquipmentBlueprintIndex = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"lethalEquipmentBlueprintIndex");
-    tacticalEquipmentBlueprintIndex = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"tacticalEquipmentBlueprintIndex");
+    lethalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_91c3c100f6d2b185");
+    tacticalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_c2b55f5a6e182854");
+    var_514cd4a1f1acc710 = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_9f0aa6a1f007d51c");
+    var_35d418426dcae761 = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_5cc290cec89c815");
     suitname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"suit", #"suit");
     executionname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"execution", #"execution");
     bodymodel = function_29e16a88682086b2(var_9b32d1936831f5aa, #"xmodel", #"bodymodel");
@@ -195,12 +195,12 @@ function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex)
         config.classstruct.loadoutequipmentsecondary = tacticalequipmentname;
     }
     config.classstruct.var_b68e3a0a9c628d23 = 0;
-    if (isdefined(lethalEquipmentBlueprintIndex)) {
-        config.classstruct.var_b68e3a0a9c628d23 = int(lethalEquipmentBlueprintIndex);
+    if (isdefined(var_514cd4a1f1acc710)) {
+        config.classstruct.var_b68e3a0a9c628d23 = int(var_514cd4a1f1acc710);
     }
     config.classstruct.var_a1dfc5ce15795a3 = 0;
-    if (isdefined(tacticalEquipmentBlueprintIndex)) {
-        config.classstruct.var_a1dfc5ce15795a3 = int(tacticalEquipmentBlueprintIndex);
+    if (isdefined(var_35d418426dcae761)) {
+        config.classstruct.var_a1dfc5ce15795a3 = int(var_35d418426dcae761);
     }
     config.execution = executionname;
     config.suit = suitname;

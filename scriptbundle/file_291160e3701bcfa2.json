@@ -1,0 +1,12 @@
+{
+    "#id": "flying_vehicle_descend2",
+    "#description": "&OPTIONS/FL_VEH_DESCENDALT_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_2bcda515745f6d18"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/FL_VEH_DESCENDALT"
+}

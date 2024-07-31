@@ -1,0 +1,141 @@
+{
+    "#hash_ded947577ba0ee4a": "zombie_abom",
+    "#hash_667ab99889e6c59f": "scripts/aitypes/zombie_abom/zombie_abom_metabones.gsc",
+    "#metabones": [
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+            ],
+            "#name": "head_mid",
+            "#states": [
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "closed"
+                },
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#additionaldamagemod": 0
+                            },
+                            "#variant_type": "Types_Weakspot"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.15,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "open"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "destroyed"
+                }
+            ],
+            "#tags": [
+                {
+                    "#maxangle": 220,
+                    "#tagname": "tag_fx_jaw_center",
+                    "#radius": 45
+                }
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+            ],
+            "#name": "head_ri",
+            "#states": [
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "closed"
+                },
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#additionaldamagemod": 0
+                            },
+                            "#variant_type": "Types_Weakspot"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.1,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "open"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "destroyed"
+                }
+            ],
+            "#tags": [
+                {
+                    "#maxangle": 220,
+                    "#tagname": "tag_fx_jaw_ri",
+                    "#radius": 45
+                }
+            ]
+        },
+        {
+            "#metadata": [
+            ],
+            "#activebydefault": 1,
+            "#hitlocations": [
+            ],
+            "#name": "head_le",
+            "#states": [
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "closed"
+                },
+                {
+                    "#metadata": [
+                        {
+                            "#variant_object": {
+                                "#additionaldamagemod": 0
+                            },
+                            "#variant_type": "Types_Weakspot"
+                        },
+                        {
+                            "#variant_object": {
+                                "#health": 0.1,
+                                "#absolutehealth": 0
+                            },
+                            "#variant_type": "Types_Damageable"
+                        }
+                    ],
+                    "#name": "open"
+                },
+                {
+                    "#metadata": [
+                    ],
+                    "#name": "destroyed"
+                }
+            ],
+            "#tags": [
+                {
+                    "#maxangle": 220,
+                    "#tagname": "tag_fx_jaw_le",
+                    "#radius": 45
+                }
+            ]
+        }
+    ]
+}

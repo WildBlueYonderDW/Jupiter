@@ -158,7 +158,7 @@ function init() {
         level thread function_b0d036699b334631();
     #/
     level thread function_e1fa80f536692a32();
-    setdvar(@"hash_da4f64f6eb4d97da", 3);
+    setdvar(@"scr_br_magcount", 3);
     setdvar(@"hash_f6f24e020168ade8", "nothing");
     setdvar(@"hash_a85ba82ffd9faefe", 0);
     setdvar(@"hash_2c9195a6f431585d", 1);
@@ -2899,12 +2899,12 @@ function autoassignquest(player) {
 function function_11750957aa915a23() {
     level endon("game_ended");
     scripts\mp\flags::gameflagwait("prematch_done");
-    timer = getdvarint(@"hash_e022fd0199a95f84");
+    timer = getdvarint(@"scr_br_timelimit");
     level thread function_18f66bbf9aa3c9af(timer);
     /#
         timechanged = timer;
         while (timechanged == timer) {
-            timechanged = getdvarint(@"hash_e022fd0199a95f84");
+            timechanged = getdvarint(@"scr_br_timelimit");
             wait 1;
         }
         level notify("<dev string:x6a2>");

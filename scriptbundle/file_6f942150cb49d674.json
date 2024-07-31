@@ -1,0 +1,38 @@
+{
+    "#id": 531,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_operator_id"
+        },
+        {
+            "#key": "iw9_location_bitfield"
+        },
+        {
+            "#key": "iw9_location_bitfield2"
+        },
+        {
+            "#key": "iw9_game_flags_cmd"
+        },
+        {
+            "#key": "iw9_game_flags_bitfield1"
+        },
+        {
+            "#key": "iw9_game_flags_bitfield2"
+        },
+        {
+            "#key": "iw9_game_flags_user"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_4df9a28d54513a3",
+    "#sharedname": "#game_flags"
+}

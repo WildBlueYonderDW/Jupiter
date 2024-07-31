@@ -1,0 +1,46 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 3,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_caches_zombie_high_value_orange",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_aether_tools_orange"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_zm_perks",
+            "#mincount": 1
+        },
+        {
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals_zm"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 8,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_ww"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnlist": "ob_jup_items_weaponcases_droplist"
+        },
+        {
+            "#weight": 60
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_goldbar",
+            "#mincount": 1
+        }
+    ]
+}

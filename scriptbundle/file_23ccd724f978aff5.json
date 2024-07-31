@@ -1,0 +1,150 @@
+{
+    "#hash_c7869d0bac81698c": "icon_mw2_logo_hq_row",
+    "#hash_3157f395d3232adf": "hq_seasonal_ka_mwii",
+    "#hash_bc738540dd23fe15": [
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&LUA_MENU/ACTION_PACKED"
+                },
+                {
+                    "#tag": "&LUA_MENU/PLAYLIST_TAG_SMALL_TEAMS"
+                }
+            ],
+            "#moderef": "MP",
+            "#hash_de3845efe782a9ab": "icon_mode_mp_quickplay",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_multiplayer",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_multiplayer_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_circle",
+            "#modename": "&MENU/MULTIPLAYER",
+            "#gamemode": "mp_iw9"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&LUA_MENU/PLAYLIST_TAG_LARGE_MAPS"
+                },
+                {
+                    "#tag": "&LUA_MENU/PLAYLIST_TAG_LARGE_TEAMS"
+                }
+            ],
+            "#moderef": "MASSIVE_MP",
+            "#hash_de3845efe782a9ab": "icon_mode_mp_gw_invasion",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_ground_war",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_ground_war_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_homeplate",
+            "#modename": "&LUA_MENU_MP/ARMSRACE",
+            "#gamemode": "massive_mp_iw9"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&MENU_SP/STORY_CAPS"
+                },
+                {
+                    "#tag": "&LUA_MENU_MP/RULES_TEAMS_SQUADS"
+                }
+            ],
+            "#moderef": "RAID",
+            "#hash_de3845efe782a9ab": "icon_mode_cp_raid",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_cp_raid",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_cp_raid_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_homeplate",
+            "#modename": "&LUA_MENU/PLAYLIST_TAG_COOP_RAID",
+            "#gamemode": "raid_iw9"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&LUA_MENU/PLAYLIST_TAG_COOP"
+                },
+                {
+                    "#tag": "&LUA_MENU_MP/RULES_TEAMS_SQUADS"
+                }
+            ],
+            "#moderef": "COOP",
+            "#hash_de3845efe782a9ab": "icon_mode_cp",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_cp_mission",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_cp_mission_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_homeplate",
+            "#modename": "&LUA_MENU/COOP_CAPS",
+            "#gamemode": "cp_iw9"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&LUA_MENU/LFP_COMPETITIVE"
+                },
+                {
+                    "#tag": "&LUA_MENU/PLAYLIST_TAG_SMALL_TEAMS"
+                }
+            ],
+            "#moderef": "RANKED",
+            "#hash_de3845efe782a9ab": "icon_mode_mp_ranked",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_ranked",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_ranked_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_hexagon_rotated",
+            "#modename": "&MENU/RANKEDPLAY",
+            "#gamemode": "mp_iw9"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&MENU_SP/STORY_CAPS"
+                },
+                {
+                    "#tag": "&MENU/SINGLE_PLAYER_CAPS"
+                }
+            ],
+            "#moderef": "SP",
+            "#hash_de3845efe782a9ab": "icon_mode_sp",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_campaign",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_campaign_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_homeplate",
+            "#modename": "&MENU/CAMPAIGN",
+            "#gamemode": "sp_iw9"
+        },
+        {
+            "#hash_6c79abbdb334433": [
+                {
+                    "#tag": "&MENU/CUSTOM_MATCH"
+                }
+            ],
+            "#moderef": "PRIVATE_MATCH",
+            "#hash_de3845efe782a9ab": "icon_mode_mp_custom",
+            "#hash_4a4dbf35ecd0838f": "&",
+            "#hash_6f93f64a96a5fd6d": "hq_plate_mwii_private_match",
+            "#tutorial": "",
+            "#hash_a6948e7ea34cd22c": "hq_plate_mwii_private_match_layer00",
+            "#hash_a6948f7ea34cd45f": "",
+            "#hash_2d081f34715f85b4": "hud_splash_gamemode_circle",
+            "#modename": "&LUA_MENU/PRIVATE_MATCH_CAPS",
+            "#gamemode": "private_match_iw9"
+        }
+    ],
+    "#hash_d0b3919dd53932b2": "",
+    "#hash_c3720967a7dd8d3c": "@hash_9994f11d98915dee",
+    "#hash_cba8dd786b0d6e40": "hq_bg_mwii",
+    "#gametitle": "&LUA_MENU/MODERN_WARFARE_II",
+    "#hash_376d1cab867aa95c": "IW9StyleGuide.styleGuideAccentMain",
+    "#hash_2da2279eef0c4d40": "",
+    "#hash_ce11ea145891ed24": "MW2"
+}

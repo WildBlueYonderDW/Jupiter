@@ -1,0 +1,17 @@
+{
+    "#id": "blocked_player",
+    "#description": "&OPTIONS/BLOCKED_PLAYERS_DESC",
+    "#hash_58d61dc3eef940dc": "ACCOUNT",
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&LUA_MENU/BLOCKED_PLAYER",
+    "#hash_dce5ffe0a6970f5d": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

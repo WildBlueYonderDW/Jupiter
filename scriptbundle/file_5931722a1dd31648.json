@@ -1,0 +1,35 @@
+{
+    "#id": "ads_fov_consoles",
+    "#description": "&PLATFORM_UI/ADS_FOV_DESCRIPTION",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_adsfieldofview",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/INDEPENDENT"
+        },
+        {
+            "#reference": "&LUA_MENU/AFFECTED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "UseADSFovScaling",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_cd05aa1b839553ad": 1,
+            "#hash_cd05a31b83954448": 1,
+            "#hash_434da1af138bf52": 1,
+            "#hash_434db1af138c185": 1,
+            "#type": "PLATFORM"
+        },
+        {
+            "#type": "EXEC"
+        },
+        {
+            "#dvarname": "@hash_b1c6fb5cbec11e33",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&PLATFORM_UI/ADS_FOV",
+    "#hash_c55c746ff4d8929b": 1
+}

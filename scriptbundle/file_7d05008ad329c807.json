@@ -1,0 +1,562 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp14_pi_rsierra12_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp14_pi_rsierra12_mp",
+    "#platform": "platform_jup_pi_rsierra12",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_5",
+    "#hash_c4cf6deda5b42f55": "undermount|backpiece",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp14_pi_rsierra12_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp14_pi_rsierra12_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_pistol",
+    "#category": "&WEAPON/SUBCLASS_ID_5",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1000,
+    "#botpersonality": "run_and_gun|cqb|camper",
+    "#lootid": 17197,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 4,
+    "#hash_f79f436c85df92d0": 5,
+    "#ref": "jup_jp14_pi_rsierra12",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/RSIERRA12_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP14_PI_RSIERRA12",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "5",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front mag triggrip ironsdefault",
+    "#asset": "jup_jp14_pi_rsierra12_mp",
+    "#hash_a576fed8a47105fb": {
+        "#xoffset": 5
+    },
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_pistol",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_laslight_pstl_01",
+                    "#lootid": 22363,
+                    "#challengeid": 12910
+                },
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_extras",
+                    "#lootid": 22788,
+                    "#challengeid": 17949
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_br_03",
+                    "#lootid": 1376
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_muzzles",
+                    "#lootid": 22785
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_pgrip_ass",
+                    "#lootid": 22804
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_reargrips",
+                    "#lootid": 22786
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_trigger_hair",
+                    "#lootid": 23977
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_triggers",
+                    "#lootid": 22787
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_reflex02",
+                    "#lootid": 32194
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_optics",
+                    "#lootid": 22783
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_bar_hvylong",
+                    "#lootid": 22795
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_frontpieces",
+                    "#lootid": 22780
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_trigger_heavy",
+                    "#lootid": 23978
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_stock_precision",
+                    "#lootid": 22799
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_backpieces",
+                    "#lootid": 22781
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_127_hp",
+                    "#lootid": 23973
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_gunperks",
+                    "#lootid": 23255
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_pgrip_aim",
+                    "#lootid": 22805,
+                    "#challengeid": 12911
+                },
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_ob_2",
+                    "#challengeid": 17985
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_127_ap",
+                    "#lootid": 23971
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_trigger_light",
+                    "#lootid": 24024
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_stop_05",
+                    "#lootid": 21792
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_undermounts",
+                    "#lootid": 22784
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_127_hg",
+                    "#lootid": 29428
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_bar_short",
+                    "#lootid": 22794
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_pgrip_tac",
+                    "#lootid": 22806
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_127_fr",
+                    "#lootid": 23972,
+                    "#challengeid": 12912
+                },
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_ob_3",
+                    "#challengeid": 18021
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_bar_heavy",
+                    "#lootid": 22797
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_127_lg",
+                    "#lootid": 29429
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_pgrip_stippled",
+                    "#lootid": 22807
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_laserpstl_cs",
+                    "#lootid": 32209
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_stock_heavy",
+                    "#lootid": 22798
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_bar_light",
+                    "#lootid": 23527
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_127_op",
+                    "#lootid": 23974
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_rsierra12_akimbo",
+                    "#lootid": 30011
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_tuning",
+                    "#lootid": 22789
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp14_pi_rsierra12_amps",
+                    "#lootid": 47214
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_piscope01_rsierra",
+                    "#lootid": 51301,
+                    "#challengeid": 12913
+                },
+                {
+                    "#challengeref": "jup_jp14_pi_rsierra12_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_arscope_vz01_rsierra",
+                    "#lootid": 51302,
+                    "#challengeid": 18057
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_arscope_vz02_rsierra",
+                    "#lootid": 51303
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_hybridscope_01_rsierra",
+                    "#lootid": 49778
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_hybridscope_02_rsierra",
+                    "#lootid": 49779
+                }
+            ],
+            "#level": 26
+        }
+    ],
+    "#displayorder": 22,
+    "#hash_6aa5a80660e7666a": "MP,OB,MOBILE,BR",
+    "#hash_505a36358120024b": 0.98,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

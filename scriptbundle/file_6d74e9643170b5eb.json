@@ -1,0 +1,53 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 4,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_orange",
+            "#mincount": 2
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_plate_carriers_orange"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_backpacks_orange"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_killstreaks_orange_pvpve"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_military_gear_orange"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals_zm"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 2,
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_revive_self_revive",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_goldbar",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

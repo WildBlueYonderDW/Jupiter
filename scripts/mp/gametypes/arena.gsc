@@ -117,7 +117,7 @@ function main() {
     level.allowlatecomers = 0;
     level.removekilleventsplash = 1;
     if (matchmakinggame()) {
-        teamsize = getdvarint(@"hash_818c699a5caaee4f", 4) / 2;
+        teamsize = getdvarint(@"party_maxplayers", 4) / 2;
         level.requiredplayercountoveride = 1;
         level.requiredplayercount["allies"] = teamsize;
         level.requiredplayercount["axis"] = teamsize;
@@ -138,7 +138,7 @@ function main() {
         level.gamemodeoverriderestockrechargeperupdate = 0.05;
     }
     if (istrue(level.snowballfight)) {
-        level.alwayssnowfight = getdvarint(@"hash_f9511aeb46157a2", 0);
+        level.alwayssnowfight = getdvarint(@"scr_always_snowfight", 0);
         setdvarifuninitialized(@"hash_10d9bf7945521aa4", 1);
         setdvarifuninitialized(@"hash_525526c06343abd1", "loadscreenhintoverlay_snowball_gunfight");
         if (level.alwayssnowfight) {
@@ -220,27 +220,27 @@ function function_955eeef49ba8fef9() {
 // Size: 0x2d9
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_f3cb432a241a7ea3", getmatchrulesdata("arenaData", "arenaLoadouts"));
-    setdynamicdvar(@"hash_b2d6a287c0521607", getmatchrulesdata("arenaData", "loadoutChangeRound"));
-    setdynamicdvar(@"hash_9555be126d6bdcab", getmatchrulesdata("arenaData", "switchSpawns"));
-    setdynamicdvar(@"hash_a4a7060aad657090", getmatchrulesdata("arenaData", "winCondition"));
-    setdynamicdvar(@"hash_1b3b0369b76395a5", getmatchrulesdata("arenaData", "objModifier"));
+    setdynamicdvar(@"scr_arena_arenaloadouts", getmatchrulesdata("arenaData", "arenaLoadouts"));
+    setdynamicdvar(@"scr_arena_loadoutchangeround", getmatchrulesdata("arenaData", "loadoutChangeRound"));
+    setdynamicdvar(@"scr_arena_switchspawns", getmatchrulesdata("arenaData", "switchSpawns"));
+    setdynamicdvar(@"scr_arena_winCondition", getmatchrulesdata("arenaData", "winCondition"));
+    setdynamicdvar(@"scr_arena_objmodifier", getmatchrulesdata("arenaData", "objModifier"));
     setdynamicdvar(@"hash_c4dd1397da8407be", getmatchrulesdata("arenaData", "overtimeFlag"));
-    setdynamicdvar(@"hash_385f68623c04c6dc", getmatchrulesdata("arenaData", "flagCaptureTime"));
+    setdynamicdvar(@"scr_arena_flagcapturetime", getmatchrulesdata("arenaData", "flagCaptureTime"));
     setdynamicdvar(@"hash_ca4cdfbc3778abed", getmatchrulesdata("arenaData", "flagHoldTimer"));
     setdynamicdvar(@"hash_bc7f17452d7d2bc4", getmatchrulesdata("arenaData", "flagActivationDelay"));
-    setdynamicdvar(@"hash_f86716e8c7f46afd", getmatchrulesdata("arenaData", "tacticalTimeMod"));
-    setdynamicdvar(@"hash_44fc747f238c17da", getmatchrulesdata("arenaData", "blastShieldMod"));
-    setdynamicdvar(@"hash_4dcb3bff6478bb0d", getmatchrulesdata("arenaData", "blastShieldClamp"));
-    setdynamicdvar(@"hash_84ab96fa2f04c271", getmatchrulesdata("arenaData", "startWeapon"));
-    setdynamicdvar(@"hash_54f31afe6345346a", getmatchrulesdata("arenaData", "weaponTier1"));
-    setdynamicdvar(@"hash_54f319fe63453237", getmatchrulesdata("arenaData", "weaponTier2"));
-    setdynamicdvar(@"hash_54f318fe63453004", getmatchrulesdata("arenaData", "weaponTier3"));
-    setdynamicdvar(@"hash_54f317fe63452dd1", getmatchrulesdata("arenaData", "weaponTier4"));
-    setdynamicdvar(@"hash_54f316fe63452b9e", getmatchrulesdata("arenaData", "weaponTier5"));
-    setdynamicdvar(@"hash_54f315fe6345296b", getmatchrulesdata("arenaData", "weaponTier6"));
-    setdynamicdvar(@"hash_54f314fe63452738", getmatchrulesdata("arenaData", "weaponTier7"));
-    setdynamicdvar(@"hash_54f313fe63452505", getmatchrulesdata("arenaData", "weaponTier8"));
+    setdynamicdvar(@"scr_arena_tacticaltimemod", getmatchrulesdata("arenaData", "tacticalTimeMod"));
+    setdynamicdvar(@"scr_arena_blastshieldmod", getmatchrulesdata("arenaData", "blastShieldMod"));
+    setdynamicdvar(@"scr_arena_blastshieldclamp", getmatchrulesdata("arenaData", "blastShieldClamp"));
+    setdynamicdvar(@"scr_arena_startWeapon", getmatchrulesdata("arenaData", "startWeapon"));
+    setdynamicdvar(@"scr_arena_weapontier1", getmatchrulesdata("arenaData", "weaponTier1"));
+    setdynamicdvar(@"scr_arena_weapontier2", getmatchrulesdata("arenaData", "weaponTier2"));
+    setdynamicdvar(@"scr_arena_weapontier3", getmatchrulesdata("arenaData", "weaponTier3"));
+    setdynamicdvar(@"scr_arena_weapontier4", getmatchrulesdata("arenaData", "weaponTier4"));
+    setdynamicdvar(@"scr_arena_weapontier5", getmatchrulesdata("arenaData", "weaponTier5"));
+    setdynamicdvar(@"scr_arena_weapontier6", getmatchrulesdata("arenaData", "weaponTier6"));
+    setdynamicdvar(@"scr_arena_weapontier7", getmatchrulesdata("arenaData", "weaponTier7"));
+    setdynamicdvar(@"scr_arena_weapontier8", getmatchrulesdata("arenaData", "weaponTier8"));
     setdynamicdvar(@"hash_ce087f3b0e67c668", getmatchrulesdata("arenaData", "arenaAttachments"));
     setdynamicdvar(@"hash_193cc5a02ee3d815", getmatchrulesdata("arenaData", "arenaSuper"));
     setdynamicdvar(@"hash_c110a01fb151da3", 0);
@@ -478,15 +478,15 @@ function updategametypedvars() {
     level.arenaweapont6 = spawnstruct();
     level.arenaweapont7 = spawnstruct();
     level.arenaweapont8 = spawnstruct();
-    level.startweapon.weapon = getdvar(@"hash_84ab96fa2f04c271", "none");
-    level.arenaweapont1.weapon = getdvar(@"hash_54f31afe6345346a", "iw9_pi_golf17");
-    level.arenaweapont2.weapon = getdvar(@"hash_54f319fe63453237", "iw9_sh_mike1014");
-    level.arenaweapont3.weapon = getdvar(@"hash_54f318fe63453004", "iw9_sm_mpapa5");
-    level.arenaweapont4.weapon = getdvar(@"hash_54f317fe63452dd1", "iw9_ar_mike4");
-    level.arenaweapont5.weapon = getdvar(@"hash_54f316fe63452b9e", "iw9_sn_alpha50");
-    level.arenaweapont6.weapon = getdvar(@"hash_54f315fe6345296b", "equip_frag");
-    level.arenaweapont7.weapon = getdvar(@"hash_54f314fe63452738", "equip_concussion");
-    level.arenaweapont8.weapon = getdvar(@"hash_54f313fe63452505", "equip_adrenaline");
+    level.startweapon.weapon = getdvar(@"scr_arena_startWeapon", "none");
+    level.arenaweapont1.weapon = getdvar(@"scr_arena_weapontier1", "iw9_pi_golf17");
+    level.arenaweapont2.weapon = getdvar(@"scr_arena_weapontier2", "iw9_sh_mike1014");
+    level.arenaweapont3.weapon = getdvar(@"scr_arena_weapontier3", "iw9_sm_mpapa5");
+    level.arenaweapont4.weapon = getdvar(@"scr_arena_weapontier4", "iw9_ar_mike4");
+    level.arenaweapont5.weapon = getdvar(@"scr_arena_weapontier5", "iw9_sn_alpha50");
+    level.arenaweapont6.weapon = getdvar(@"scr_arena_weapontier6", "equip_frag");
+    level.arenaweapont7.weapon = getdvar(@"scr_arena_weapontier7", "equip_concussion");
+    level.arenaweapont8.weapon = getdvar(@"scr_arena_weapontier8", "equip_adrenaline");
     level.arenapickupattachments = getdvarint(@"hash_ce087f3b0e67c668", 0);
     if (level.arenaloadouts == 1) {
         setdvar(@"hash_3c357661cd222b4d", 1);
@@ -980,7 +980,7 @@ function onspawnfinished() {
 // Checksum 0x0, Offset: 0x6f96
 // Size: 0x266
 function setteamhealthhud(isdisconnect) {
-    var_586dc9dc0cf668ad = getdvarint(@"hash_b1d561f9a9241e09", 100);
+    var_586dc9dc0cf668ad = getdvarint(@"scr_player_maxhealth", 100);
     alliesplayers = getteamdata("allies", "teamCount");
     if (alliesplayers) {
         level.alliesmaxhealth = getteamdata("allies", "teamCount") * var_586dc9dc0cf668ad;

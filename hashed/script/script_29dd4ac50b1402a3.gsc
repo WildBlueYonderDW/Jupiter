@@ -58,8 +58,8 @@ function function_813f575ebec2810e(taskid) {
     self forcenetfieldhighlod(1);
     self.var_256e6f5113f1d484 = self.zombieaisettings.var_e58a65b7a8f5973c.healthstatemodels;
     self.fnshouldplaypainanim = &function_76bf4ecde7d398cf;
-    setdvar(@"hash_5ac1aab2783db731", 15000);
-    setdvar(@"hash_5ac1a9b2783db4fe", 15000);
+    setdvar(@"sv_entitiesPartitioningNearbyRangeX", 15000);
+    setdvar(@"sv_entitiesPartitioningNearbyRangeY", 15000);
     setdvarifuninitialized(@"hash_52e1c16a2453da68", 0);
     function_a449d4ca4b975db5();
     thread function_ab8fa8a2c59b92c3();

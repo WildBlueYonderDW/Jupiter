@@ -1,0 +1,15 @@
+{
+    "#id": "vehicle_ads_leanout_gamepad",
+    "#description": "&OPTIONS/VEHICLE_ADS_LEANOUT_GAMEPAD_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/MELEEZOOM"
+        },
+        {
+            "#reference": "&OPTIONS/ADS"
+        }
+    ],
+    "#hash_a20785232d9c4057": "VehicleADSLeanOutGamepad",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/VEHICLE_ADS_LEANOUT"
+}

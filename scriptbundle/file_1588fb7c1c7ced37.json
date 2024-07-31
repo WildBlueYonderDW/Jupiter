@@ -1,0 +1,41 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_targets"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_gloves"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_mirror"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_drums_attuned"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_gloves_attuned"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_targets_attuned"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season2_mirror_attuned"
+        }
+    ]
+}

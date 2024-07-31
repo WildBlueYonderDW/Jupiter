@@ -1,0 +1,29 @@
+{
+    "#presets": [
+        {
+            "#precache": "NeverPrecache",
+            "#size": 20
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 40
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 80
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 90
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 140
+        },
+        {
+            "#precache": "NeverPrecache",
+            "#size": 180
+        }
+    ],
+    "#hash_bffd626f4a3adb09": 0
+}

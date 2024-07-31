@@ -1,0 +1,31 @@
+{
+    "#factors": [
+        {
+            "#factor": "avoidCloseEnemies"
+        },
+        {
+            "#factor": "avoidCornerVisibleEnemies"
+        },
+        {
+            "#factor": "avoidEnemySpawn"
+        },
+        {
+            "#factor": "avoidFullVisibleEnemies"
+        },
+        {
+            "#factor": "avoidTelefrag"
+        },
+        {
+            "#factor": "considerInfluencePoints"
+        },
+        {
+            "#factor": "avoidSpawnTrap"
+        },
+        {
+            "#factor": "respectFrontline"
+        },
+        {
+            "#factor": "scriptCriticalFactor"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "#id": "action_slot4_button_swap",
+    "#description": "&MENU/DPAD_RIGHT_SWAP_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#action": "+actionslot 4",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "GamepadSwapButton",
+    "#name": "&MENU/DPAD_RIGHT_DESC"
+}

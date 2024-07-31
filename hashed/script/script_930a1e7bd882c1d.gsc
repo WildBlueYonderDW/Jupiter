@@ -367,7 +367,7 @@ function allplayers_setfov(fov) {
         if (!isdefined(player)) {
             continue;
         }
-        player setclientdvar(@"hash_df1dc712c4a91588", fov);
+        player setclientdvar(@"cg_fov", fov);
         player setclientdvar(@"hash_71c6c0b8428e44a7", 1);
     }
 }
@@ -382,7 +382,7 @@ function function_cf47ab3f9defe35b() {
             if (!isdefined(player)) {
                 continue;
             }
-            player setclientdvar(@"hash_df1dc712c4a91588", 65);
+            player setclientdvar(@"cg_fov", 65);
             player setclientdvar(@"hash_86bf34d5f48fa435", 65);
         }
         return;
@@ -391,7 +391,7 @@ function function_cf47ab3f9defe35b() {
         if (!isdefined(player)) {
             continue;
         }
-        player setclientdvar(@"hash_df1dc712c4a91588", 65);
+        player setclientdvar(@"cg_fov", 65);
         player setclientdvar(@"hash_86bf34d5f48fa435", 65);
         player setclientdvar(@"hash_71c6c0b8428e44a7", 0);
     }

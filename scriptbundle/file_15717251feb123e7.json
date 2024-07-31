@@ -1,0 +1,14 @@
+{
+    "#id": 84,
+    "#keys": [
+        {
+            "#key": "iw9_leagueplay_gametype"
+        },
+        {
+            "#key": "iw9_gamemode"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_fe2f1c986ad43c2a",
+    "#sharedname": "#hash_208f393d15a04d12"
+}

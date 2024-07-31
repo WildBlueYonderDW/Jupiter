@@ -23,7 +23,7 @@
 // Checksum 0x0, Offset: 0x1eb
 // Size: 0x11f
 function init() {
-    healthregendelay = scripts\mp\utility\dvars::getoverridedvarfloatexceptmatchrulesvalues(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_healthregentime"), @"hash_2922210021914dd7");
+    healthregendelay = scripts\mp\utility\dvars::getoverridedvarfloatexceptmatchrulesvalues(hashcat(@"hash_d98c82b5a26dc973", getgametype(), "_healthregentime"), @"scr_player_healthregentime");
     scripts\mp\tweakables::settweakablevalue("player", "healthregentime", healthregendelay);
     scripts\mp\tweakables::settweakablelastvalue("player", "healthregentime", healthregendelay);
     level.healthregendelay = scripts\mp\tweakables::gettweakablevalue("player", "healthregentime");

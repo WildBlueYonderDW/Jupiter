@@ -1,0 +1,22 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_gasmask"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_gasmask_durable"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_backpack_medium"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_backpack_large"
+        }
+    ]
+}

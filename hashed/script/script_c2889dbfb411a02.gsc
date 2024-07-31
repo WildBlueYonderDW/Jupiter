@@ -28,7 +28,7 @@ function main() {
     level._effect["infil_heli_crashed"] = loadfx("vfx/jup/level/mp_jup_launchfacility/vfx_jup_lf_scrap_blima_fire.vfx");
     level._effect["attacker_outro_icbm_explo"] = loadfx("vfx/jup/level/mp_jup_launchfacility/vfx_jup_lf_missile_icbm_exp.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

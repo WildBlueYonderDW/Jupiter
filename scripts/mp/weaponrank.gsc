@@ -38,7 +38,7 @@ function onplayerconnect() {
         player = level waittill("connected");
         if (!isai(player)) {
             if (level.weaponxpenabled) {
-                var_69a07d6024aeb70b = getdvarint(@"hash_2bdc03077e6414dc");
+                var_69a07d6024aeb70b = getdvarint(@"online_mp_party_weapon_xpscale");
                 isinparty = player getprivatepartysize() > 1;
                 if (isinparty) {
                     player addweaponrankxpmultiplier(var_69a07d6024aeb70b, "online_mp_party_weapon_xpscale");

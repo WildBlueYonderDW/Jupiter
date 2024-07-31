@@ -1,0 +1,110 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#hash_c5eb56a131ee4d21",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 1,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/DM_CROSSBOW",
+    "#worldmodel": "weapon_wm_sn_mike14_brprop_nophys",
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                },
+                {
+                    "#attachment": "iw9_minireddot05_tall"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "iw9_minireddot01_tall"
+                },
+                {
+                    "#attachment": "jup_reflex02_tall"
+                },
+                {
+                    "#attachment": "jup_reflex03_tall"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#slot": "frontpiece",
+            "#includeall": 1
+        },
+        {
+            "#slot": "backpiece",
+            "#includeall": 1
+        },
+        {
+            "#slot": "magazine",
+            "#includeall": 1
+        },
+        {
+            "#slot": "muzzle",
+            "#includeall": 1
+        },
+        {
+            "#slot": "reargrip",
+            "#includeall": 1
+        },
+        {
+            "#slot": "trigger",
+            "#includeall": 1
+        },
+        {
+            "#slot": "extra",
+            "#includeall": 1
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "ammo_762n_fr"
+                },
+                {
+                    "#attachment": "ammo_762n_hp"
+                },
+                {
+                    "#attachment": "ammo_762n_tr"
+                },
+                {
+                    "#attachment": "ammo_762n_ap"
+                },
+                {
+                    "#attachment": "ammo_762n_op"
+                },
+                {
+                    "#attachment": "ammo_762n_hv"
+                },
+                {
+                    "#attachment": "ammo_762n_db"
+                }
+            ],
+            "#slot": "modifier",
+            "#includeall": 1
+        }
+    ],
+    "#descstring": "&WEAPON/DM_CROSSBOW",
+    "#ref": "iw9_dm_crossbow",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "dm",
+    "#baseweapon": "iw9_dm_crossbow_mp",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_b5059413ad647316",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_dm_crossbow",
+    "#scriptable": "%hash_1d7c76526068b963",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_SN_CB"
+}

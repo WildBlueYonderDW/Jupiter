@@ -737,7 +737,7 @@ function private function_25a0c882b7e8bb02() {
     self setallstreamloaddist(0);
     scripts\mp\gametypes\br_public::playerclearstreamhintorigin();
     if (!istrue(level.infilstruct.var_eb0e85a583f21b9d)) {
-        self setclientdvar(@"hash_df1dc712c4a91588", 65);
+        self setclientdvar(@"cg_fov", 65);
         self setclientdvar(@"hash_86bf34d5f48fa435", 65);
         if (!istrue(level.infilstruct.var_12c912ee9672fa1)) {
             self setclientdvar(@"hash_71c6c0b8428e44a7", 0);
@@ -1837,7 +1837,7 @@ function private function_7e1bbc382ad810f9() {
     _freezelookcontrols(0, 1);
     self cameraunlink();
     self stopxcam();
-    self setclientdvar(@"hash_df1dc712c4a91588", 65);
+    self setclientdvar(@"cg_fov", 65);
     self setclientdvar(@"hash_86bf34d5f48fa435", 65);
     self setclientdvar(@"hash_71c6c0b8428e44a7", 0);
     self disablephysicaldepthoffieldscripting();
@@ -1941,7 +1941,7 @@ function function_60597da56f99d304(player) {
         }
         wait 1;
         foreach (player in level.players) {
-            player setclientdvar(@"hash_df1dc712c4a91588", 65);
+            player setclientdvar(@"cg_fov", 65);
             player setclientdvar(@"hash_86bf34d5f48fa435", 65);
             player setclientdvar(@"hash_71c6c0b8428e44a7", 0);
         }
@@ -2147,7 +2147,7 @@ function function_60597da56f99d304(player) {
                 }
                 wait 1;
                 foreach (player in level.players) {
-                    player setclientdvar(@"hash_df1dc712c4a91588", 65);
+                    player setclientdvar(@"cg_fov", 65);
                     player setclientdvar(@"hash_71c6c0b8428e44a7", 0);
                 }
             } else {

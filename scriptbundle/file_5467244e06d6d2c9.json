@@ -1,0 +1,38 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&MENU/GRAPHICS",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_3ebdeaddf4c21e17"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/DISPLAY_CATEGORY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_294228f6bda9e621"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_220596a0c1571fd8"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&MENU/VOICECHAT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_37628303107bb636"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_69003458363b2ef6"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

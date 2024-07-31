@@ -1,0 +1,14 @@
+{
+    "#id": 77,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_string_ref"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_702310c49e9cf8db",
+    "#sharedname": "#killstreak_available"
+}

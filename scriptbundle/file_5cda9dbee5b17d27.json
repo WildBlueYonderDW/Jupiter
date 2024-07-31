@@ -1,0 +1,19 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#maxcount": 1,
+    "#titlestring": "&SUPER_ZM/AETHER_SHROUD",
+    "#rarity": 2,
+    "#descstring": "&SUPER_ZM/AETHER_SHROUD_DESC",
+    "#ref": "super_aether_shroud",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_a4a91670e89a5cc4",
+    "#lootidtype": "super",
+    "#hash_8464122fb6575536": 1,
+    "#type": "zmsuper",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_2a99b99f6c9b3113",
+    "#inventorytype": "Loadout",
+    "#icon": "ui_icon_fieldupgrade_zm_aether_shroud",
+    "#scriptable": "%hash_7db49e1e9d7f18b8"
+}

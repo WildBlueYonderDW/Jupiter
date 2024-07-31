@@ -1,0 +1,7 @@
+{
+    "#id": "navigate_right_action",
+    "#description": "&OPTIONS/NAVIGATE_RIGHT_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/NAVIGATE_RIGHT"
+}

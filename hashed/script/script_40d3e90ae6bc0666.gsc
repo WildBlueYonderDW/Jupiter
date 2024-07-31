@@ -20,11 +20,11 @@ function main() {
 // Checksum 0x0, Offset: 0x145
 // Size: 0x79
 function function_a520347b8e7b8543() {
-    setdvar(@"hash_402173c7dbee15d9", 5);
-    setdvar(@"hash_656131a98e0d2c9d", 10);
-    setdvar(@"hash_595f2292597ec0c7", (0, 1, 0));
-    setdvar(@"hash_71fe8b216d50a24c", 1.5);
-    setdvar(@"hash_6a4705943fd574b8", 0.25);
-    setdvar(@"hash_d0658156fb7f2311", 25);
+    setdvar(@"cg_defaultWindAmplitudeScale", 5);
+    setdvar(@"cg_defaultWindAreaScale", 10);
+    setdvar(@"cg_defaultWindDir", (0, 1, 0));
+    setdvar(@"cg_defaultWindFrequencyScale", 1.5);
+    setdvar(@"cg_defaultWindNoiseScale", 0.25);
+    setdvar(@"cg_defaultWindStrength", 25);
 }
 

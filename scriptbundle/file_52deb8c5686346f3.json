@@ -1,0 +1,19 @@
+{
+    "#hash_56e33ad9fdf64080": 1,
+    "#challengeref": "jup_collection_bundle_dune_mastery",
+    "#hash_fec27d5199cb14a5": "",
+    "#largeicon": "jup_store_collection_dune_icon",
+    "#color": "0.85098 0.501961 0.215686 1",
+    "#hash_542e06b061849d85": 51105,
+    "#name": "&STORE/COLLECTION_NAME_DUNE_PART_TWO",
+    "#bundles": [
+        {
+            "#asset": "jup_store_1002_tracer_pack_dune_paul"
+        },
+        {
+            "#asset": "jup_store_2080_operator_pone_tama"
+        }
+    ],
+    "#icon": "jup_store_collection_dune_icon_small",
+    "#visible": 1
+}

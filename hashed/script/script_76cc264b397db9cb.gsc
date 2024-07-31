@@ -11,7 +11,7 @@
 // Checksum 0x0, Offset: 0x246
 // Size: 0x8c
 function init() {
-    level.maxsquadsize = getdvarint(@"hash_15115ef896ca26f2", 1);
+    level.maxsquadsize = getdvarint(@"party_maxSquadSize", 1);
     if (level.maxsquadsize && function_a9cb1bbce9eb3d1b()) {
         level.maxsquadsize = level.maxteamsize;
     }

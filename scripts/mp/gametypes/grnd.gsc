@@ -96,18 +96,18 @@ function main() {
 // Size: 0x144
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_5ba53b16e2b96ecd", getmatchrulesdata("grndData", "dropTime"));
+    setdynamicdvar(@"scr_grnd_droptime", getmatchrulesdata("grndData", "dropTime"));
     setdynamicdvar(@"hash_b19899b52321b991", getmatchrulesdata("grndData", "enableVariantDZ"));
-    setdynamicdvar(@"hash_e394adcc9f5c4ddc", getmatchrulesdata("kothData", "zoneLifetime"));
-    setdynamicdvar(@"hash_8d0b337fd3d7011e", getmatchrulesdata("kothData", "zoneCaptureTime"));
-    setdynamicdvar(@"hash_25ad50e5cdfaf602", getmatchrulesdata("kothData", "firstZoneActivationDelay"));
-    setdynamicdvar(@"hash_bbf8317503ce49c6", getmatchrulesdata("kothData", "zoneActivationDelay"));
-    setdynamicdvar(@"hash_6495e30f8aa00d93", getmatchrulesdata("kothData", "randomLocationOrder"));
-    setdynamicdvar(@"hash_518afd934bd7f3ce", getmatchrulesdata("kothData", "additiveScoring"));
-    setdynamicdvar(@"hash_c6311ea83485b20c", getmatchrulesdata("kothData", "pauseTime"));
+    setdynamicdvar(@"scr_grnd_zonelifetime", getmatchrulesdata("kothData", "zoneLifetime"));
+    setdynamicdvar(@"scr_grnd_zonecapturetime", getmatchrulesdata("kothData", "zoneCaptureTime"));
+    setdynamicdvar(@"scr_grnd_firstzoneactivationdelay", getmatchrulesdata("kothData", "firstZoneActivationDelay"));
+    setdynamicdvar(@"scr_grnd_zoneactivationdelay", getmatchrulesdata("kothData", "zoneActivationDelay"));
+    setdynamicdvar(@"scr_grnd_randomlocationorder", getmatchrulesdata("kothData", "randomLocationOrder"));
+    setdynamicdvar(@"scr_grnd_additivescoring", getmatchrulesdata("kothData", "additiveScoring"));
+    setdynamicdvar(@"scr_grnd_pausetime", getmatchrulesdata("kothData", "pauseTime"));
     setdynamicdvar(@"hash_4aab4c2d3976a925", 0);
     registerhalftimedvar("grnd", 0);
-    setdynamicdvar(@"hash_796f6d676d387bcb", 0);
+    setdynamicdvar(@"scr_grnd_promode", 0);
 }
 
 // Namespace grnd / scripts\mp\gametypes\grnd

@@ -1,0 +1,61 @@
+{
+    "#rendertarget": "None",
+    "#parameters": [
+    ],
+    "#hash_679a5fd22385af82": [
+    ],
+    "#children": [
+    ],
+    "#hash_ef7dacdcddcfbf7f": 1024,
+    "#hash_a35573938e7a51c8": 1024,
+    "#widget": "rulesofengagement",
+    "#states": [
+        {
+            "#animation": "TakedownHover",
+            "#name": "TakedownHover"
+        },
+        {
+            "#animation": "TakedownSelected",
+            "#name": "TakedownSelected"
+        },
+        {
+            "#animation": "OutOfSight",
+            "#name": "OutOfSight"
+        },
+        {
+            "#animation": "ShootHover",
+            "#name": "ShootHover"
+        },
+        {
+            "#animation": "ShootSelected",
+            "#name": "ShootSelected"
+        },
+        {
+            "#animation": "ArmoredHover",
+            "#name": "ArmoredHover"
+        },
+        {
+            "#animation": "ArmoredSelected",
+            "#name": "ArmoredSelected"
+        },
+        {
+            "#animation": "ArmoredOoS",
+            "#name": "ArmoredOoS"
+        },
+        {
+            "#animation": "DefaultSequence",
+            "#name": "DefaultSequence"
+        },
+        {
+            "#animation": "ShootCancel",
+            "#name": "ShootCancel"
+        },
+        {
+            "#animation": "TakeDownCancel",
+            "#name": "TakeDownCancel"
+        }
+    ],
+    "#hash_363bada5bd71005e": 1,
+    "#assets": [
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#hash_fde567d3fc721a08",
+    "#hash_88aff7a87289757d": 0,
+    "#maxcount": 2,
+    "#titlestring": "&EQUIPMENT/DECOY_BR",
+    "#worldmodel": "lm_offhand_wm_grenade_decoy",
+    "#hash_bbae53787b1abf3e": 1,
+    "#hash_13fc3679e0d849db": 1,
+    "#descstring": "&EQUIPMENT/DECOY_DESC",
+    "#ref": "equip_decoy",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_617eac73db6652c2",
+    "#lootidtype": "equipment",
+    "#hash_8464122fb6575536": 1,
+    "#type": "tactical",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_eb3e145cf5d8b49e",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_equipment_decoy",
+    "#scriptable": "%hash_288c72c03efc9644"
+}

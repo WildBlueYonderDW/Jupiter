@@ -209,7 +209,7 @@ function onenter() {
         if (!isusingmatchrulesdata()) {
             healthvalue = getwatcheddvar("<dev string:x4b>");
             if (!isdefined(healthvalue)) {
-                healthvalue = getdvarint(@"hash_984461a4d8ff9473", 50);
+                healthvalue = getdvarint(@"scr_player_lastStandHealth", 50);
             }
             if (healthvalue > scripts\mp\tweakables::gettweakablevalue("<dev string:x5e>", "<dev string:x68>")) {
                 healthvalue = scripts\mp\tweakables::gettweakablevalue("<dev string:x5e>", "<dev string:x68>");
@@ -269,7 +269,7 @@ function onenter() {
         if (!isusingmatchrulesdata()) {
             laststandweapon = getwatcheddvar("<dev string:x75>");
             if (!isdefined(laststandweapon)) {
-                laststandweapon = getdvar(@"hash_ab99ad42c8f9d6fd", "<dev string:x88>");
+                laststandweapon = getdvar(@"scr_player_lastStandWeapon", "<dev string:x88>");
             }
         }
     #/
@@ -393,7 +393,7 @@ function handlelaststandweapongivepipeline(laststandweapon) {
             if (!isusingmatchrulesdata()) {
                 laststandweapondelay = getwatcheddvar("<dev string:xb7>");
                 if (!isdefined(laststandweapondelay)) {
-                    laststandweapondelay = getdvarint(@"hash_c47411f597dae120", 0);
+                    laststandweapondelay = getdvarint(@"scr_player_lastStandWeaponDelay", 0);
                 }
             }
         #/
@@ -505,14 +505,14 @@ function dodamagewhiledown() {
         if (!isusingmatchrulesdata()) {
             basehealth = getwatcheddvar("<dev string:x4b>");
             if (!isdefined(basehealth)) {
-                basehealth = getdvarint(@"hash_984461a4d8ff9473", 50);
+                basehealth = getdvarint(@"scr_player_lastStandHealth", 50);
             }
             if (basehealth > scripts\mp\tweakables::gettweakablevalue("<dev string:x5e>", "<dev string:x68>")) {
                 basehealth = scripts\mp\tweakables::gettweakablevalue("<dev string:x5e>", "<dev string:x68>");
             }
             bleedouttime = getwatcheddvar("<dev string:xcf>");
             if (!isdefined(bleedouttime)) {
-                bleedouttime = getdvarfloat(@"hash_546d8a10bb4e83de", 10);
+                bleedouttime = getdvarfloat(@"scr_player_lastStandTimer", 10);
             }
         }
     #/
@@ -568,13 +568,13 @@ function stucktime(var_276b87b88716c2a5) {
     self.stuckinlaststand = 0;
     timeleft = level.laststandtimer;
     /#
-        if (getdvarint(@"hash_312c93a94bab8ee", 0) != 0 || getdvarfloat(@"hash_546d8a10bb4e83de", 10) == -1) {
+        if (getdvarint(@"hash_312c93a94bab8ee", 0) != 0 || getdvarfloat(@"scr_player_lastStandTimer", 10) == -1) {
             return;
         }
         if (!isusingmatchrulesdata()) {
             timeleft = getwatcheddvar("<dev string:xcf>");
             if (!isdefined(timeleft)) {
-                timeleft = getdvarfloat(@"hash_546d8a10bb4e83de", 10);
+                timeleft = getdvarfloat(@"scr_player_lastStandTimer", 10);
             }
         }
     #/
@@ -978,7 +978,7 @@ function onrevive(var_4920bf02df960be9, var_d07b7dcc79b24490) {
         if (!isusingmatchrulesdata()) {
             laststandweapon = getwatcheddvar("<dev string:x75>");
             if (!isdefined(laststandweapon)) {
-                laststandweapon = getdvar(@"hash_ab99ad42c8f9d6fd", "<dev string:x88>");
+                laststandweapon = getdvar(@"scr_player_lastStandWeapon", "<dev string:x88>");
             }
         }
     #/
@@ -993,7 +993,7 @@ function onrevive(var_4920bf02df960be9, var_d07b7dcc79b24490) {
             if (!isusingmatchrulesdata()) {
                 healthvalue = getwatcheddvar("<dev string:x115>");
                 if (!isdefined(healthvalue)) {
-                    healthvalue = getdvarint(@"hash_984461a4d8ff9473", 50);
+                    healthvalue = getdvarint(@"scr_player_lastStandHealth", 50);
                 }
                 if (healthvalue > scripts\mp\tweakables::gettweakablevalue("<dev string:x5e>", "<dev string:x68>")) {
                     healthvalue = scripts\mp\tweakables::gettweakablevalue("<dev string:x5e>", "<dev string:x68>");
@@ -2258,7 +2258,7 @@ function decayreviveprogress() {
         if (!isusingmatchrulesdata()) {
             decayscale = getwatcheddvar("<dev string:x2db>");
             if (!isdefined(decayscale)) {
-                decayscale = getdvarfloat(@"hash_e0f04861824e8440", 0.5);
+                decayscale = getdvarfloat(@"scr_player_lastStandReviveDecayScale", 0.5);
             }
         }
     #/
@@ -2893,7 +2893,7 @@ function useholdthink(reviver, usetime, interrogation) {
         if (isdefined(revivee.var_c101ccd3d5f8bd81)) {
             self.usetime = revivee.var_c101ccd3d5f8bd81 * 1000;
         } else if (reviver _hasperk("specialty_medic")) {
-            self.usetime = getwatcheddvar("lastStandReviveTimer") * 1000 * getdvarfloat(@"hash_6f08a22fd52e004c");
+            self.usetime = getwatcheddvar("lastStandReviveTimer") * 1000 * getdvarfloat(@"perk_medicReviveSpeedRatio");
         } else {
             self.usetime = getwatcheddvar("lastStandReviveTimer") * 1000;
         }

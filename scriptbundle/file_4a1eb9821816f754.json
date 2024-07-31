@@ -1,0 +1,500 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_dm_msecho",
+    "#hash_79839b907716ac41": "icon_weapon_dm_msecho",
+    "#platform": "platform_iw9_br_msecho",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_dm_msecho_v5",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_dm_msecho",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_battle",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_dm_msecho_v8",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2000,
+    "#lootid": 11357,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 1,
+    "#ref": "iw9_br_msecho",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&PERKS/BR_MSECHO",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/BR_MSECHO",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag selectsemi ironsdefault",
+    "#asset": "iw9_br_msecho_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_battle",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_br_msecho_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "msecho_optics",
+                    "#lootid": 11008,
+                    "#challengeid": 9278,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_br_msecho_camo_ob_1",
+                    "#challengeid": 18739
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_br_small_p01",
+                    "#lootid": 3808,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_magazines",
+                    "#lootid": 11133,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_458s_fr",
+                    "#lootid": 2095,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_gunperks",
+                    "#lootid": 11113,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "silencer02_dm",
+                    "#lootid": 3454,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_muzzles",
+                    "#lootid": 11080,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_long_p01",
+                    "#lootid": 3138,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_frontpieces",
+                    "#lootid": 11122,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_reargrips",
+                    "#lootid": 10640,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_tactical_p01",
+                    "#lootid": 1868,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_backpieces",
+                    "#lootid": 11117,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_br_msecho_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "ammo_458s_op",
+                    "#lootid": 2680,
+                    "#challengeid": 9212,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_br_msecho_camo_ob_2",
+                    "#challengeid": 18806
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_undermounts",
+                    "#lootid": 10889,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_dm_03",
+                    "#lootid": 2584,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "arscope_therm01",
+                    "#lootid": 2905,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_458s_hv",
+                    "#lootid": 3285,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "msecho_extras",
+                    "#lootid": 10951,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_br_msecho_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_snp_p01",
+                    "#lootid": 1622,
+                    "#challengeid": 9223,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_br_msecho_camo_ob_3",
+                    "#challengeid": 18873
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_alpha57",
+                    "#lootid": 1660,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_sm_alpha57",
+                    "#lootid": 11365,
+                    "#bucket": 3,
+                    "#loottype": "WEAPON"
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_p01",
+                    "#lootid": 3510,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sm_p01",
+                    "#lootid": 675,
+                    "#bucket": 3
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_458s_hp",
+                    "#lootid": 3918,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_ar_lgtshort_p01",
+                    "#lootid": 1306,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "flash_dm_04",
+                    "#lootid": 3032,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_br_large_p01",
+                    "#lootid": 879,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_458s_ap",
+                    "#lootid": 620,
+                    "#bucket": 4
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_br_msecho_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "bar_br_heavy_p01",
+                    "#lootid": 2117,
+                    "#challengeid": 8961,
+                    "#bucket": 5
+                },
+                {
+                    "#challengeref": "iw9_br_msecho_camo_ob_4",
+                    "#challengeid": 18940
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_br_msecho_tuning",
+                    "#lootid": 11774,
+                    "#bucket": 5
+                }
+            ],
+            "#level": 22
+        }
+    ],
+    "#displayorder": 94,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

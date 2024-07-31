@@ -37,9 +37,9 @@ function main() {
         setdvarifuninitialized(@"hash_301100a436cfdb2c", 0);
     #/
     setdvarifuninitialized(@"hash_af4553a66846825b", 1);
-    setsaveddvar(@"hash_3b07e69e1cd8b041", 100);
-    setsaveddvar(@"hash_579c12ad813fa4a8", 640);
-    setsaveddvar(@"hash_5e6c29a5c2de1adf", 384);
+    setsaveddvar(@"scripted_melee_range", 100);
+    setsaveddvar(@"scripted_melee_width", 640);
+    setsaveddvar(@"scripted_melee_height", 384);
     if (!isdefined(level.scripted_melee.has_precached) || !level.scripted_melee.has_precached) {
         precache();
     }

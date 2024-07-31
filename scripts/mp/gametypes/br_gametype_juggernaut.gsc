@@ -46,7 +46,7 @@ function init() {
         setdevdvarifuninitialized(@"hash_6033e70c81d4b924", 20);
         setdevdvarifuninitialized(@"hash_53800bc3e7ab723d", 1);
         setdvar(@"hash_f79cd84983250eda", 0);
-        setdvar(@"hash_f77b78837563fb9a", 1);
+        setdvar(@"scr_live_lobby", 1);
     #/
 }
 

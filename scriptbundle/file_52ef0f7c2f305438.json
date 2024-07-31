@@ -1,0 +1,31 @@
+{
+    "#id": "eco_mode_pc",
+    "#description": "&PLATFORM/ECO_MODE_DESCRIPTION",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/CUSTOM"
+        },
+        {
+            "#reference": "&LUA_MENU/ECO_MODE_EFFICIENCY"
+        },
+        {
+            "#reference": "&LUA_MENU/ECO_MODE_LOW"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#hash_9c921e1f5e226484": 1,
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/ECO_MODE",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_2befd8222efead8"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "#id": 369,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_operator_id"
+        },
+        {
+            "#key": "iw9_gulag_end_bitfield1"
+        },
+        {
+            "#key": "iw9_team_size"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_4f927e0bdbe987c5",
+    "#sharedname": "#hash_994db9edf20fed8d"
+}

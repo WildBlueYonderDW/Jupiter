@@ -1,0 +1,30 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_lethals"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals_zm"
+        },
+        {
+            "#weight": 35,
+            "#itemspawnlist": "ob_jup_items_essence_low"
+        },
+        {
+            "#weight": 50,
+            "#itemspawnlist": "ob_jup_items_armor"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

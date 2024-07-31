@@ -68,7 +68,7 @@ function infil_add(type, subtype, seat_count, var_aa0773494f0d374d, fill_order, 
 // Size: 0x33
 function infil_is_interactive() {
     if (!isdefined(level.interactiveinfil)) {
-        level.interactiveinfil = getdvarint(@"hash_bafe5b24255dff94", 0) == 1;
+        level.interactiveinfil = getdvarint(@"scr_infil_interactive", 0) == 1;
     }
     return level.interactiveinfil;
 }
@@ -91,7 +91,7 @@ function infil_init() {
         gameflagset("infil_setup_complete");
         return;
     }
-    if (game["roundsPlayed"] > 0 && !scripts\cp_mp\utility\game_utility::function_8b6131109e66d962() || getdvarint(@"hash_7194076ab4888f2b", 0) == 1 || scripts\cp_mp\utility\game_utility::isbrstylegametype() || getdvarint(@"hash_704afe6f6c582ee0") < 15 || getgametype() == "war" && scripts\cp_mp\utility\game_utility::isdonetskmap()) {
+    if (game["roundsPlayed"] > 0 && !scripts\cp_mp\utility\game_utility::function_8b6131109e66d962() || getdvarint(@"scr_game_infilSkip", 0) == 1 || scripts\cp_mp\utility\game_utility::isbrstylegametype() || getdvarint(@"hash_704afe6f6c582ee0") < 15 || getgametype() == "war" && scripts\cp_mp\utility\game_utility::isdonetskmap()) {
         game["infil"] = undefined;
         level.requiredplayercount["allies"] = 0;
         level.requiredplayercount["axis"] = 0;
@@ -100,7 +100,7 @@ function infil_init() {
     } else if (scripts\cp_mp\utility\game_utility::function_8b6131109e66d962()) {
         game["infil"] = undefined;
         level.var_d0074a54d755766b = 1;
-        setdvar(@"hash_c653d32c30815d2b", 5);
+        setdvar(@"scr_game_graceperiod", 5);
     }
     if (!isdefined(level.prematchperiodend) || level.prematchperiodend == 0) {
         game["infil"] = undefined;
@@ -200,7 +200,7 @@ function infil_init() {
     if (gamehasinfil() && isdefined(infilduration)) {
         level thread onplayerspawned();
         level thread function_3c075bf6eade7262();
-        level.prematchperiod = getdvarint(@"hash_c653d32c30815d2b", 15);
+        level.prematchperiod = getdvarint(@"scr_game_graceperiod", 15);
         level.matchcountdowntime = level.prematchperiod + level.infilstartdelay + level.var_333fbccf73785411;
         level.prematchperiodend = infilduration + level.infilstartdelay + level.var_333fbccf73785411;
         level.var_2a15d29e8890b785 = 0;
@@ -929,12 +929,12 @@ function infil_setup_ui() {
         level.bypassclasschoicefunc = undefined;
     }
     level thread infil_show_countdown();
-    cg_drawcrosshair = getdvarint(@"hash_5d474d39e096f8f1");
-    cg_drawcrosshairnames = getdvarint(@"hash_f17e1982c2ef27b");
-    var_c3f949f19ad560e2 = getdvarint(@"hash_721a6fa1822b17d9");
-    setdvar(@"hash_5d474d39e096f8f1", 0);
-    setdvar(@"hash_f17e1982c2ef27b", 1);
-    setdvar(@"hash_721a6fa1822b17d9", 1);
+    cg_drawcrosshair = getdvarint(@"cg_drawCrosshair");
+    cg_drawcrosshairnames = getdvarint(@"cg_drawCrosshairNames");
+    var_c3f949f19ad560e2 = getdvarint(@"cg_drawFriendlyNamesAlways");
+    setdvar(@"cg_drawCrosshair", 0);
+    setdvar(@"cg_drawCrosshairNames", 1);
+    setdvar(@"cg_drawFriendlyNamesAlways", 1);
     level waittill("prematch_done");
     var_ae38d1b160669269 = scripts\mp\utility\player::alwaysshowminimap();
     foreach (player in level.players) {
@@ -950,9 +950,9 @@ function infil_setup_ui() {
     }
     setomnvar("ui_in_infil", -1);
     setomnvar("ui_always_show_nameplates", ui_always_show_nameplates);
-    setdvar(@"hash_5d474d39e096f8f1", cg_drawcrosshair);
-    setdvar(@"hash_f17e1982c2ef27b", cg_drawcrosshairnames);
-    setdvar(@"hash_721a6fa1822b17d9", var_c3f949f19ad560e2);
+    setdvar(@"cg_drawCrosshair", cg_drawcrosshair);
+    setdvar(@"cg_drawCrosshairNames", cg_drawcrosshairnames);
+    setdvar(@"cg_drawFriendlyNamesAlways", var_c3f949f19ad560e2);
 }
 
 // Namespace infilexfil / scripts\mp\infilexfil\infilexfil
@@ -1500,8 +1500,8 @@ function function_3c075bf6eade7262() {
     // Size: 0x6c
     function private function_2445244fc2466b13(team) {
         setdvar(@"hash_aea3ac32a07685ba", team);
-        setdvar(@"hash_7194076ab4888f2b", 0);
-        setdvar(@"hash_c653d32c30815d2b", 15);
+        setdvar(@"scr_game_infilSkip", 0);
+        setdvar(@"scr_game_graceperiod", 15);
         setdvar(@"hash_704afe6f6c582ee0", 15);
         setdvar(@"hash_9d06e62e59d8f04a", 1);
         wait 1;
@@ -1536,8 +1536,8 @@ function function_3c075bf6eade7262() {
         iprintlnbold("<dev string:x41a>");
         level.var_e6fbdd8917189dfb = 0;
         level.var_114dd6baa6068929 = 0;
-        setdvar(@"hash_7194076ab4888f2b", 0);
-        setdvar(@"hash_c653d32c30815d2b", 15);
+        setdvar(@"scr_game_infilSkip", 0);
+        setdvar(@"scr_game_graceperiod", 15);
         setdvar(@"hash_704afe6f6c582ee0", 15);
         hostplayer = scripts\mp\gamelogic::gethostplayer();
         if (!isdefined(hostplayer)) {
@@ -1547,8 +1547,8 @@ function function_3c075bf6eade7262() {
             if (getdvarint(@"hash_8f57a5a96fe91b32", 1) == 0) {
                 function_dc2f945aa7bdd07a();
             } else if (hostplayer buttonpressed("<dev string:x434>")) {
-                setdvar(@"hash_7194076ab4888f2b", 0);
-                setdvar(@"hash_c653d32c30815d2b", 15);
+                setdvar(@"scr_game_infilSkip", 0);
+                setdvar(@"scr_game_graceperiod", 15);
                 setdvar(@"hash_704afe6f6c582ee0", 15);
                 iprintlnbold("<dev string:x441>");
                 wait 1;

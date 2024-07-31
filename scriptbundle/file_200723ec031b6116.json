@@ -1,0 +1,23 @@
+{
+    "#raritydef": "%hash_2b13ac750c6bead0",
+    "#hash_87c8865341705b25": "jup_ui_frontend_acquisition_journal",
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_S3/GATE_KEY_S3_JOURNAL_NAME",
+    "#worldmodel": "jup_zm_relic_hunt_journal",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_S3/GATE_KEY_S3_JOURNAL_DESC",
+    "#ref": "jup_rift_gate_key_season3_journal",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_df6cc0d53f88e0c4",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "key",
+    "#hash_72340ceb276c0f64": 1,
+    "#hash_95d6d970efccc96d": "acquisition",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Stored",
+    "#icon": "jup_hud_icon_relic_journal",
+    "#scriptable": "%hash_2b5d8387e8103cc2",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KEY"
+}

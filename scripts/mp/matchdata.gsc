@@ -20,7 +20,7 @@
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x251
 function init() {
-    if (getdvarint(@"hash_4ba1427c86b79dc5") != 0 && !isdefined(game["gamestarted"])) {
+    if (getdvarint(@"online_matchdata_enabled") != 0 && !isdefined(game["gamestarted"])) {
         setmatchdatadef("ddl/mp/matchdata.ddl");
         setmatchdata("commonMatchData", "map", level.script);
         if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19()) {
@@ -37,7 +37,7 @@ function init() {
             setmatchdata("codESportsRules", 1);
         }
     }
-    if (getdvarint(@"hash_4ba1427c86b79dc5") != 0) {
+    if (getdvarint(@"online_matchdata_enabled") != 0) {
         if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
             level.maxlogclients = 200;
         } else {
@@ -88,7 +88,7 @@ function onroundend() {
 // Checksum 0x0, Offset: 0x7ae
 // Size: 0x2e
 function getmatchstarttimeutc() {
-    if (getdvarint(@"hash_4ba1427c86b79dc5") == 0) {
+    if (getdvarint(@"online_matchdata_enabled") == 0) {
         return level.starttimeutcseconds;
     }
     return getmatchdata("commonMatchData", "utc_start_time_s");
@@ -99,7 +99,7 @@ function getmatchstarttimeutc() {
 // Checksum 0x0, Offset: 0x7e5
 // Size: 0x2e
 function getmatchendtimeutc() {
-    if (getdvarint(@"hash_4ba1427c86b79dc5") == 0) {
+    if (getdvarint(@"online_matchdata_enabled") == 0) {
         return level.endtimeutcseconds;
     }
     return getmatchdata("commonMatchData", "utc_end_time_s");

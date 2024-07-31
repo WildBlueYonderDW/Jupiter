@@ -286,7 +286,7 @@ function function_58a7c3eb64d82c49() {
             continue;
         }
         data = packdamagedata(self, player, 1, objweapon, "MOD_EXPLOSIVE", self, position);
-        thread empPulse_apply_player(data, 4);
+        thread function_42a2e5c40023cdb(data, 4);
     }
 }
 
@@ -373,15 +373,15 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction, startoffse
         ground_pitch = angleclamp180(var_829ceac2f5ec057b[0]);
         min_pitch = -85;
         max_pitch = ground_pitch;
-        player_pitch = player_angles[0];
-        if (player_pitch > ground_pitch) {
-            player_pitch = ground_pitch;
+        var_5a112b1311cf05e5 = player_angles[0];
+        if (var_5a112b1311cf05e5 > ground_pitch) {
+            var_5a112b1311cf05e5 = ground_pitch;
         }
         var_e6bc250926c6d64d = getdvarfloat(@"hash_9ec479015407c245", -45);
         var_e6980f09269e2b33 = getdvarfloat(@"hash_9ee78301542e1ffb", 0);
-        frac = (player_pitch - min_pitch) / (max_pitch - min_pitch);
+        frac = (var_5a112b1311cf05e5 - min_pitch) / (max_pitch - min_pitch);
         var_aee49e405bf58492 = var_e6980f09269e2b33 + frac * (var_e6bc250926c6d64d - var_e6980f09269e2b33);
-        player_angles = (player_pitch + var_aee49e405bf58492, player_angles[1], player_angles[2]);
+        player_angles = (var_5a112b1311cf05e5 + var_aee49e405bf58492, player_angles[1], player_angles[2]);
     }
     var_179db9acb8f30e85 = getdvarfloat(@"hash_cf56037c34ea141f", 0);
     if (var_179db9acb8f30e85 != 0) {

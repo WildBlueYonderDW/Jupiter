@@ -1,0 +1,44 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/LEGACY_SETTINGS_CATEGORY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_7940ddf8e80d9720"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1404726134f955b0"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/INPUT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_386d67630fd71b1"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&LUA_MENU/ACCESSIBILITY",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a2764d3d4fe0aea"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2479b10ddd8cf840"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2f7a039d66127a8a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_157afe180ce0fe9d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

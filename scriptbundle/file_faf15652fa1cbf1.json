@@ -1,0 +1,27 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 75,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_orange"
+        },
+        {
+            "#weight": 48,
+            "#itemspawnlist": "ob_jup_items_caches_merc_high_value_orange_pvpve"
+        },
+        {
+            "#weight": 55,
+            "#itemspawnlist": "ob_jup_items_caches_low_value_orange_pvpve",
+            "#mincount": 1
+        },
+        {
+            "#weight": 87
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

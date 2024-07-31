@@ -1,0 +1,8 @@
+{
+    "#id": "vote_yes_action",
+    "#description": "&OPTIONS/VOTE_YES_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/VOTE_YES",
+    "#hash_fe98f37c2339f963": "ZOMBIE"
+}

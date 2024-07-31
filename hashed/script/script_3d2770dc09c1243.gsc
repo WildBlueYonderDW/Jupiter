@@ -170,7 +170,7 @@ function private function_744dfabb8f946331() {
 // Size: 0x71
 function private function_ba26c6f0f3861ea2() {
     level waittill("player_spawned");
-    setdvar(@"hash_8c74085973b14303", 0);
+    setdvar(@"scr_war_numlives", 0);
     setdvar(@"hash_89556297eaab6b6a", 0);
     result = level waittill_any_timeout_1(10, "spawned_bots");
     if (result == "timeout") {

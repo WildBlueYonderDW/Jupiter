@@ -1,0 +1,17 @@
+{
+    "#pingvo": "#hash_130c2cbd6eb5fce2",
+    "#maxcount": 10000,
+    "#titlestring": "&CP_ZMB/ESSENCE",
+    "#hash_13fc3679e0d849db": 1,
+    "#ref": "jup_currency_essence",
+    "#dropsfx": "#hash_828277e51db438e7",
+    "#lootidtype": "consumable",
+    "#type": "currency",
+    "#subtype": "essence",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_aacc44b9a2663ce1",
+    "#inventorytype": "Pooled",
+    "#icon": "jup_ui_map_icon_poi_essence_vial",
+    "#spawncount": 0,
+    "#scriptable": "%hash_3d17d60dc1c9bb6c"
+}

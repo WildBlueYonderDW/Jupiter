@@ -130,7 +130,7 @@ function function_ffa68c72485da6cc(var_cbfc3ba10cefc8ce) {
 // Checksum 0x0, Offset: 0xd81
 // Size: 0x99
 function function_bb2daf72d16fc6a7() {
-    setdvar(@"hash_5d474d39e096f8f1", 0);
+    setdvar(@"cg_drawCrosshair", 0);
     /#
         if (istrue(self.istemp)) {
             function_982f2d6d032119f6();

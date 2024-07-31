@@ -39,7 +39,7 @@ function main() {
     self attach("head_c_jup_zmb_fletcher", "", 1);
     self.headmodel = "head_c_jup_zmb_fletcher";
     self setclothtype(#"vestlight");
-    self function_8abe5a968cc3c220(#"milmedgr");
+    self function_8abe5a968cc3c220(#"hash_466ad932e56afc50");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

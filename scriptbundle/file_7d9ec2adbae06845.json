@@ -1,0 +1,64 @@
+{
+    "#hash_26cb68d514ad2106": 0,
+    "#teambased": 1,
+    "#finalkillcamtype": 0,
+    "#hash_e61e7212585decdd": [
+    ],
+    "#image": "icon_cp_mode_classic",
+    "#hash_2078dc99d4296ca4": "&LUA_MENU_CP/DUNGEONS",
+    "#hash_cd13e71e53f5e9fd": [
+    ],
+    "#hash_63e50e7024bc663e": 9,
+    "#hash_5f52715067c4453c": "None",
+    "#hash_589e0c2e2afab4ea": "&",
+    "#hash_589e062e2afaa7b8": "&",
+    "#hash_589e072e2afaa9eb": "&",
+    "#hash_589e092e2afaae51": "&",
+    "#hash_94b34756413246bd": 1,
+    "#hash_4f29dbd56f01de57": 0,
+    "#hash_ef1173b4978600f9": [
+    ],
+    "#hash_61b9f20a7c31ed0d": [
+        {
+            "#image": "menu_keyart_quickplay_layer_00"
+        },
+        {
+            "#image": "menu_keyart_quickplay_layer_01"
+        }
+    ],
+    "#category": "Alternate",
+    "#hash_4c371bf313812c95": {
+        "#hash_2b60e5280dfc35cd": 1,
+        "#hash_abd731ee6e3696c": {
+            "#hash_48ac18e1bc53712b": {
+                "#hash_a5db0b3d50ceba8e": 2500,
+                "#movedist": 1000
+            },
+            "#hash_2e618e1d6d46f6fb": 3
+        }
+    },
+    "#hash_2f37493dac81d735": 0,
+    "#hash_3c836934a83182a5": 1,
+    "#hash_315c56db76139cdd": "%hash_17847c5dcaf99f6a",
+    "#hash_df5e6a3d7e67d4de": 0,
+    "#hash_7414261752817c0": 0,
+    "#backpacksize": 8,
+    "#namekey": "dungeons",
+    "#hash_317a568b4ba1496a": 13,
+    "#hash_68d6debb01863622": "&",
+    "#hash_68d6d8bb018628f0": "&",
+    "#hash_68d6d9bb01862b23": "&",
+    "#hash_68d6dbbb01862f89": "&",
+    "#defaultmap": "cp_jup_ranch",
+    "#hash_6615fee3cfcc9303": {
+        "#hash_2b60e5280dfc35cd": 1
+    },
+    "#hash_d8a6002d5eaba519": 0,
+    "#scoreeventlist": "score_event_list_dungeons_jup_cp",
+    "#xpscalar": 1,
+    "#hash_d98341b1a105c7af": 60,
+    "#hash_d0414fbb847802b": "&LUA_MENU_CP/DUNGEONS_DESC",
+    "#hash_eaca66bea536a108": "",
+    "#hash_60b6f212711b8dca": "%hash_770556bcec550369",
+    "#hash_d20acad05758f0d8": "dungeons"
+}

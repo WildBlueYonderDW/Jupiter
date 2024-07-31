@@ -1,0 +1,29 @@
+{
+    "#id": 108,
+    "#keys": [
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_activity_type"
+        },
+        {
+            "#key": "iw9_location_bitfield"
+        },
+        {
+            "#key": "iw9_location_bitfield2"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_b2746f5636418d55",
+    "#sharedname": "#start_activity"
+}

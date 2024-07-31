@@ -257,7 +257,7 @@ function maphint_debugthink() {
 function init_season3_intel_challenges() {
     level.intelchallengesdata = [];
     gameflaginit("intel_challenges_setup_complete", 0);
-    currentweek = getdvarint(@"hash_67078a9b140dd8a0", 0);
+    currentweek = getdvarint(@"online_challenge_season_and_week", 0);
     for (row = 0; true; row++) {
         ref = tablelookupbyrow("mp/intel_challenges.csv", row, 0);
         if (!isdefined(ref) || ref == "") {

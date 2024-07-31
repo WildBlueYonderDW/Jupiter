@@ -1,0 +1,80 @@
+{
+    "#hash_8fd13818a31a01ba": [
+        {
+            "#hash_3c85425284934a4f": [
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                    },
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_8092f9bb258a5e4f"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                    },
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_ead6801df7b32e6e"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                        "#hash_ffcfa1d2741472f1": 4,
+                        "#hash_be4e19aac3ecfae9": 2,
+                        "#perplayer": 1
+                    },
+                    "#hash_8ff5c508700ace25": 1,
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_8ba0a60af450330f"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                        "#hash_ffcfa1d2741472f1": 1,
+                        "#hash_be4e19aac3ecfae9": 1,
+                        "#perplayer": 1
+                    },
+                    "#hash_8ff5c508700ace25": 1,
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_fe6d7d60155e7a94"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                        "#hash_ffcfa1d2741472f1": 2,
+                        "#hash_be4e19aac3ecfae9": 1,
+                        "#perplayer": 1
+                    },
+                    "#hash_8ff5c508700ace25": 1,
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_24a90f3419d3f73"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                        "#hash_ffcfa1d2741472f1": 1,
+                        "#hash_be4e19aac3ecfae9": 1,
+                        "#perplayer": 1
+                    },
+                    "#hash_8ff5c508700ace25": 1,
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_c1c0f16aff7f302f"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                        "#hash_ffcfa1d2741472f1": 1,
+                        "#hash_be4e19aac3ecfae9": 1,
+                        "#perplayer": 1
+                    },
+                    "#hash_8ff5c508700ace25": 1,
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_d983bd800140c11d"
+                },
+                {
+                    "#hash_2c1ee79078c7bc2a": {
+                        "#hash_ffcfa1d2741472f1": 4,
+                        "#hash_be4e19aac3ecfae9": 2,
+                        "#perplayer": 1
+                    },
+                    "#type": "#hash_4af11b8034b04aea",
+                    "#name": "#hash_bf7eec0c0673d347"
+                }
+            ],
+            "#groupname": "Killstreaks"
+        }
+    ]
+}

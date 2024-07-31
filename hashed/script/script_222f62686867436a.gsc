@@ -3967,7 +3967,7 @@ function function_4c3b4b4059b45fba() {
         }
         if (isalive(player)) {
             level thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(player, 0, 0);
-            player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+            player setclientdvar(@"ui_opensummary", 1);
             player thread scripts\common\utility::letterbox_enable(1);
         }
     }

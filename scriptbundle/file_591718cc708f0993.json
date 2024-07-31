@@ -1,0 +1,348 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_sm_aviktor",
+    "#hash_79839b907716ac41": "icon_weapon_sm_aviktor",
+    "#platform": "platform_iw9_sm_aviktor",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_5",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_sm_aviktor_v1",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_sm_aviktor",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_smg",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_sm_aviktor_v2",
+    "#category": "&WEAPON/SUBCLASS_ID_5",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1500,
+    "#lootid": 11364,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 2,
+    "#ref": "iw9_sm_aviktor",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/SM_AVIKTOR",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/SM_AVIKTOR",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "3",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault selectsemi ironsdefault",
+    "#asset": "iw9_sm_aviktor_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_smg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "aviktor_undermounts",
+                    "#lootid": 11480,
+                    "#challengeid": 9299,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_ob_1",
+                    "#challengeid": 18752
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_optics",
+                    "#lootid": 11474,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_sm_02",
+                    "#lootid": 1202,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_muzzles",
+                    "#lootid": 11487,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_light_p04",
+                    "#lootid": 3453,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_backpieces",
+                    "#lootid": 11438,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "aviktor_extras",
+                    "#lootid": 11473,
+                    "#challengeid": 9191,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_ob_2",
+                    "#challengeid": 18819
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_light_p04",
+                    "#lootid": 1832,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_frontpieces",
+                    "#lootid": 11454,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_reargrips",
+                    "#lootid": 11466,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "grip_angled14",
+                    "#lootid": 843,
+                    "#challengeid": 8998,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_ob_3",
+                    "#challengeid": 18886
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p04",
+                    "#lootid": 2245,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sm_large_p04",
+                    "#lootid": 1970,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_magazines",
+                    "#lootid": 11448,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_9p_ap",
+                    "#lootid": 693,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "aviktor_gunperks",
+                    "#lootid": 11442,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_long_p04",
+                    "#lootid": 2397,
+                    "#challengeid": 9031,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_sm_aviktor_camo_ob_4",
+                    "#challengeid": 18953
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_sm_aviktor_tuning",
+                    "#lootid": 11764,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "holo01",
+                    "#lootid": 3133,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 14
+        }
+    ],
+    "#displayorder": 111,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

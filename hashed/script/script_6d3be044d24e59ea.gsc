@@ -7,7 +7,7 @@
 function main() {
     level._effect["vfx_scrap_trash_flies_alt"] = loadfx("vfx/jup/level/mp_jup_scrap_alt/vfx_scrap_trash_flies_alt.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

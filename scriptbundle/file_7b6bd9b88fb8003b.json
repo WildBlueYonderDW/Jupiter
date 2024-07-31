@@ -1,0 +1,38 @@
+{
+    "#rendertarget": "None",
+    "#parameters": [
+    ],
+    "#hash_679a5fd22385af82": [
+    ],
+    "#archetype": "scripted_widget_archetype_powerup",
+    "#children": [
+    ],
+    "#hash_ef7dacdcddcfbf7f": 1024,
+    "#hash_a35573938e7a51c8": 1024,
+    "#widget": "ZmPowerupTimer",
+    "#states": [
+        {
+            "#animation": "DefaultSequence",
+            "#name": "default"
+        },
+        {
+            "#animation": "Show",
+            "#name": "show"
+        },
+        {
+            "#animation": "Hide",
+            "#name": "hide"
+        },
+        {
+            "#animation": "Blink",
+            "#name": "blink"
+        },
+        {
+            "#animation": "BlinkFast",
+            "#name": "blinkfast"
+        }
+    ],
+    "#hash_363bada5bd71005e": 1,
+    "#assets": [
+    ]
+}

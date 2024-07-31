@@ -1,0 +1,41 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_diary"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_diary_attuned"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_giraffe"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_giraffe_attuned"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_drum"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_drum_attuned"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_key_rift_gate_season5_peeks_attuned"
+        }
+    ]
+}

@@ -17,7 +17,7 @@
 // Size: 0xa8
 function init() {
     level.caches = [];
-    SetDvars();
+    function_5e14a7d3ebf537a3();
     level.var_64fb1ddb76bd394d = getdvarint(@"hash_797157733a7b374c", 0) == 1;
     level.var_8fc6518a9ad097d7 = getdvarint(@"hash_f13fc58fe94f1229", 0) == 1;
     level.var_5b9a9d990a538d42 = getdvarint(@"hash_9946ed5634cbd5ad", 0) == 1;
@@ -30,7 +30,7 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35a
 // Size: 0x14a
-function SetDvars() {
+function function_5e14a7d3ebf537a3() {
     setdvarifuninitialized(@"hash_f13fc58fe94f1229", 1);
     setdvarifuninitialized(@"hash_9946ed5634cbd5ad", 1);
     setdvarifuninitialized(@"hash_8f34a6f6c29064d", 0);

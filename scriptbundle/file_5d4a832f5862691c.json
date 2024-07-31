@@ -1,0 +1,58 @@
+{
+    "#hash_abc4423f36fa4418": {
+        "#hash_55f7d697d6e1ea55": {
+            "#hash_78c0b4475543d52f": "",
+            "#hash_78c0b5475543d762": "",
+            "#hash_78c0b6475543d995": "transition_wz2_still",
+            "#waittime": 1500,
+            "#video": "",
+            "#logo": ""
+        },
+        "#hash_465384483aa4442f": {
+            "#hash_78c0b4475543d52f": "",
+            "#hash_78c0b5475543d762": "",
+            "#hash_78c0b6475543d995": "transition_wz2_still",
+            "#waittime": 200,
+            "#video": "",
+            "#logo": ""
+        },
+        "#hash_c3adea4db7020ce3": 1,
+        "#hash_463e0f30b5daa4ee": {
+            "#hash_78c0b4475543d52f": "",
+            "#hash_78c0b5475543d762": "",
+            "#hash_78c0b6475543d995": "transition_wz2_still",
+            "#waittime": 200,
+            "#video": "",
+            "#logo": ""
+        },
+        "#blendout": 1
+    },
+    "#hash_22c7cab5e0406e86": {
+        "#hash_55f7d697d6e1ea55": {
+            "#hash_78c0b4475543d52f": "",
+            "#hash_78c0b5475543d762": "",
+            "#hash_78c0b6475543d995": "jup_hq_wz__dive_still",
+            "#waittime": 1500,
+            "#video": "",
+            "#logo": ""
+        },
+        "#hash_465384483aa4442f": {
+            "#hash_78c0b4475543d52f": "",
+            "#hash_78c0b5475543d762": "",
+            "#hash_78c0b6475543d995": "",
+            "#waittime": 0,
+            "#video": "jup_hq_wz_dive_outro",
+            "#logo": ""
+        },
+        "#hash_c3adea4db7020ce3": 0,
+        "#hash_463e0f30b5daa4ee": {
+            "#hash_78c0b4475543d52f": "",
+            "#hash_78c0b5475543d762": "",
+            "#hash_78c0b6475543d995": "",
+            "#waittime": 0,
+            "#video": "jup_hq_wz_dive_intro",
+            "#logo": ""
+        },
+        "#blendout": 0
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "#id": "codcaster_option_team_identity",
+    "#description": "&CODCASTER/TEAM_IDENTITY_DESC",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#hash_b8d6f980460460c7": "CodcasterTeamIdentity",
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#type": "GAMEMODE",
+            "#hash_2eaee088dca87ab0": 1
+        }
+    ],
+    "#name": "&CODCASTER/TEAM_IDENTITY"
+}

@@ -1,0 +1,16 @@
+{
+    "#id": "quick_onboarding",
+    "#description": "&OPTIONS/QUICK_ONBOARDING_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "ftueFrontendTipsEnabled",
+    "#type": "ToggleButton",
+    "#hash_9c921e1f5e226484": 1,
+    "#name": "&OPTIONS/QUICK_ONBOARDING"
+}

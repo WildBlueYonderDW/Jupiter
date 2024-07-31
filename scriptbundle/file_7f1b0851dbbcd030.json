@@ -1,0 +1,18 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_sublist_chemist_cache",
+            "#mincount": 1
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 2,
+            "#weight": 50,
+            "#itemspawnentry": "ob_jup_item_tactical_snapshot",
+            "#mincount": 1
+        }
+    ]
+}

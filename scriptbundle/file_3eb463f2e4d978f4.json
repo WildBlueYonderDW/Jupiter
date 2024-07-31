@@ -1,0 +1,14 @@
+{
+    "#id": "mouse_wheel_delay",
+    "#description": "&OPTIONS/MOUSE_WHEEL_DELAY_DESC",
+    "#hash_ea45bc5a5e9ac302": 5,
+    "#hash_a20785232d9c4057": "mouseWheelDelay",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_15963d81d6fd6dac": 500,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 5,
+    "#type": "SliderBarWithEditBox",
+    "#name": "&OPTIONS/MOUSE_WHEEL_DELAY",
+    "#hash_c55c746ff4d8929b": 1
+}

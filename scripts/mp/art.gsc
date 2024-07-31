@@ -23,7 +23,7 @@
     // Checksum 0x0, Offset: 0xed
     // Size: 0x49
     function inittweaks() {
-        setdevdvar(@"hash_4296464306ab31a8", 1);
+        setdevdvar(@"r_artUseTweaks", 1);
         if (!isdefined(level.buttons)) {
             level.buttons = [];
         }
@@ -61,7 +61,7 @@
     // Checksum 0x0, Offset: 0x1d3
     // Size: 0x11d
     function tess_init() {
-        var_75e889a96a1e1e5 = getdvar(@"hash_3914a6109ddfa630");
+        var_75e889a96a1e1e5 = getdvar(@"r_tessellation");
         if (var_75e889a96a1e1e5 == "<dev string:x3d>") {
             return;
         }
@@ -71,8 +71,8 @@
         level.tess.cutoff_falloff_current = 587;
         level.tess.cutoff_falloff_goal = level.tess.cutoff_falloff_current;
         level.tess.time_remaining = 0;
-        setdvar(@"hash_24a1cc28fae4c8e2", level.tess.cutoff_distance_current);
-        setdvar(@"hash_d786b6ac5e30f145", level.tess.cutoff_falloff_current);
+        setdvar(@"r_tessellationCutoffDistance", level.tess.cutoff_distance_current);
+        setdvar(@"r_tessellationCutoffFalloff", level.tess.cutoff_falloff_current);
         thread tess_update();
     }
 
@@ -107,10 +107,10 @@
                 level.tess.cutoff_falloff_current = level.tess.cutoff_falloff_goal;
             }
             if (var_8e82e2ee78f6c824 != level.tess.cutoff_distance_current) {
-                setdvar(@"hash_24a1cc28fae4c8e2", level.tess.cutoff_distance_current);
+                setdvar(@"r_tessellationCutoffDistance", level.tess.cutoff_distance_current);
             }
             if (var_7d417327139f9f5f != level.tess.cutoff_falloff_current) {
-                setdvar(@"hash_d786b6ac5e30f145", level.tess.cutoff_falloff_current);
+                setdvar(@"r_tessellationCutoffFalloff", level.tess.cutoff_falloff_current);
             }
         }
     }

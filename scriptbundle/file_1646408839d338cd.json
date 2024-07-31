@@ -1,0 +1,20 @@
+{
+    "#raritydef": "%hash_77dfb32d5fc2bc15",
+    "#maxcount": 1,
+    "#titlestring": "&MP_DMZ_LOCKS/ANTIQUITIES_OFFICE_KEY_NAME_WORN",
+    "#rarity": 1,
+    "#descstring": "&MP_DMZ_LOCKS/ANTIQUITIES_OFFICE_KEY_DESC",
+    "#ref": "loot_key_antiquities_office_rr_worn_jup",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_c45ab86564429b52",
+    "#lootidtype": "consumable",
+    "#type": "generic",
+    "#subtype": "key",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_4f8561551040bac4",
+    "#inventorytype": "Stored",
+    "#icon": "hud_icon_loot_key_01_worn",
+    "#scriptable": "%hash_74bb9c6eca1d2879",
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/KEY"
+}

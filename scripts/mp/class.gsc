@@ -4178,7 +4178,7 @@ function loadout_lognewlygivenloadout(globalstruct, struct, class) {
     if (istrue(level.codcasterenabled)) {
         thread setmlgspectatorclientloadoutdata(self, struct);
     }
-    if (getdvarint(@"hash_4ba1427c86b79dc5") == 0) {
+    if (getdvarint(@"online_matchdata_enabled") == 0) {
         return;
     }
     if (istrue(self.var_2676523c73704bb0)) {

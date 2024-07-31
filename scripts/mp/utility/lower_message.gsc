@@ -5,7 +5,7 @@
 // Checksum 0x0, Offset: 0x158
 // Size: 0xab
 function setlowermessageomnvar(ref, timer, var_c84f97acad5b2088) {
-    gamemode = getdvar(@"hash_e65e9a96eb2ff62b");
+    gamemode = getdvar(@"ui_gametype");
     if (gamemode != "cp_survival" && gamemode != "cp_wave_sv" && gamemode != "cp_specops") {
         var_d861f893072a477e = game["lowerMessageIndex"][ref];
         if (!isdefined(var_d861f893072a477e)) {
@@ -31,7 +31,7 @@ function clearomnvarsaftertime(var_c84f97acad5b2088) {
     self endon("message_cleared");
     self endon("death_or_disconnect");
     wait var_c84f97acad5b2088;
-    gamemode = getdvar(@"hash_e65e9a96eb2ff62b");
+    gamemode = getdvar(@"ui_gametype");
     if (gamemode != "cp_survival" && gamemode != "cp_wave_sv" && gamemode != "cp_specops") {
         self setclientomnvar("ui_lower_message", 0);
     }

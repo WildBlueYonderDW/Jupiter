@@ -223,13 +223,13 @@ function logallplayerposthink() {
 // Size: 0x252
 function recordbreadcrumbdata() {
     level endon("game_ended");
-    if (getdvarint(@"hash_35bfb8187f185ae7", 1) == 0) {
+    if (getdvarint(@"online_breadcrumbing_enabled", 1) == 0) {
         return;
     }
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        var_2fe6a798e49f4de6 = getdvarfloat(@"hash_7c8bee10dba43fe7", 4);
+        var_2fe6a798e49f4de6 = getdvarfloat(@"online_br_breadcrumbing_frequency", 4);
     } else {
-        var_2fe6a798e49f4de6 = getdvarfloat(@"hash_246c8305339e703e", 2);
+        var_2fe6a798e49f4de6 = getdvarfloat(@"online_mp_breadcrumbing_frequency", 2);
     }
     scripts\mp\flags::gameflagwait("prematch_done");
     var_db5e61a22ce91ab9 = getdvarint(@"hash_9361b1490151da6f", 20);
@@ -451,7 +451,7 @@ function logevent_playerdeath(attacker, meansofdeath, weaponname) {
         victimteam = "l";
     }
     dlog_recordevent("gamemp_" + "death", ["playerid", self.analyticslog.playerid, "x", self.origin[0], "y", self.origin[1], "z", self.origin[2], "gun_orientx", var_53f4b69ae494195a[0], "gun_orienty", var_53f4b69ae494195a[1], "gun_orientz", var_53f4b69ae494195a[2], "weapon", weaponname, "mean_of_death", ter_op(isdefined(meansofdeath), meansofdeath, "None"), "attackerid", var_77295bbd7b1b8155, "action", buildkilldeathactionvalue(), "server_death_id", deathid, "victim_life_index", self.lifeid, "attacker_life_index", attackerlifeid, "victim_team", victimteam, "attacker_team", attackerteam, "attacker_pos_x", attackerposx, "attacker_pos_y", attackerposy, "attacker_pos_z", attackerposz, "attacker_gun_orientx", var_40cfb0f1536d4858, "attacker_gun_orienty", var_40cfb1f1536d4a8b, "attacker_gun_orientz", var_40cfb2f1536d4cbe, "victim_weapon", self.primaryweapon]);
-    if (getdvarint(@"hash_eea95a7206a9ebeb")) {
+    if (getdvarint(@"mount_bb_analytics")) {
         attackermounttype = "NO_ATTACKER";
         if (isdefined(attacker) && isplayer(attacker)) {
             attackermounttype = attacker playermounttype();
@@ -642,11 +642,11 @@ function logmatchtags() {
         logevent_tag("OnlineMatch");
         return;
     }
-    if (getdvarint(@"hash_485ef1ed1d39d3a3")) {
+    if (getdvarint(@"xblive_privatematch")) {
         logevent_tag("PrivateMatch");
         return;
     }
-    if (!getdvarint(@"hash_962400405f9f3c0b")) {
+    if (!getdvarint(@"onlinegame")) {
         logevent_tag("OfflineMatch");
     }
 }
@@ -808,7 +808,7 @@ function analyticsinitspawndata() {
     level.spawncount = 0;
     level.spawnidstobeinstrumented = [];
     level.nextspawntobeinstrumented = 0;
-    var_9b5e7bbe7bbe2095 = getdvarint(@"hash_883352c04ceb60d0");
+    var_9b5e7bbe7bbe2095 = getdvarint(@"analytics_spawn_event_log_count");
     var_f173d241cde30ed5 = scripts\mp\analyticslog::analytics_getmaxspawneventsforcurrentmode();
     var_ed9bcf1d68316223 = [];
     for (var_f7b3db25022143df = 0; var_f7b3db25022143df < var_9b5e7bbe7bbe2095; var_f7b3db25022143df++) {

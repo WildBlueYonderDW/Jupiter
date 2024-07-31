@@ -1,0 +1,130 @@
+{
+    "#hash_1a5292afd59d7f73": [
+    ],
+    "#hash_49e76e3080f0998e": -20,
+    "#hash_dba18fe06d1b6b6b": -100,
+    "#hash_1198a81ef687a7e2": 0,
+    "#hash_a9440baf75362a23": "",
+    "#hash_31f8f99b4333b957": "",
+    "#hash_4bbd85ce26566dca": 1,
+    "#hash_9cf03deaf22281": 0,
+    "#hash_c43193ec5074c3fe": 16,
+    "#hash_f2d0c9a47ad54fd8": -200,
+    "#hash_1c2ab528d3cc1868": 0,
+    "#hash_e6ad64023f816985": "",
+    "#hash_da0fe318c94271d3": 80,
+    "#hash_421cc4ac3ea9f7bc": 20,
+    "#lootids": [
+        {
+            "#lootid": 35260,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35219,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35251,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35252,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35253,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35254,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35255,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35256,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35257,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35258,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35259,
+            "#hash_d89310a3af2bae54": 0,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35207,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35208,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35209,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35210,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35211,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35212,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35213,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35214,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        },
+        {
+            "#lootid": 35215,
+            "#hash_d89310a3af2bae54": 1,
+            "#quantity": 1
+        }
+    ],
+    "#hash_4157bff8abdfdfb5": 69,
+    "#hash_7a784da1db11223": 10,
+    "#hash_b3bfd7e9c5c6cd15": "",
+    "#hash_9ed91aef5b36df39": "",
+    "#hash_a1e3843ea5e73b2": "",
+    "#hash_4484983d62c239b2": "",
+    "#hash_67edc3a38baa8ec6": 14,
+    "#hash_c2e537c7db9e3c6e": [
+    ],
+    "#ishero": 1,
+    "#hash_36aade61592305b7": "shimmer_battlepass_unlock_s3"
+}

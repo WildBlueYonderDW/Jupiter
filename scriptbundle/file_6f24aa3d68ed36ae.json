@@ -1,0 +1,9 @@
+{
+    "#perks": {
+        "#ultimateperk": "specialty_guerrilla",
+        "#bonusperk": "specialty_covert_ops",
+        "#baseperk1": "specialty_grenade_expert",
+        "#baseperk2": "specialty_scavenger_plus"
+    },
+    "#name": "&PERKS/PERK_PACKAGE_BR_INSURGENT"
+}

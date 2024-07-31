@@ -115,7 +115,7 @@ function function_7c798f6cb0754110(min_value, max_value, pause_time, var_5d90785
     max_value = default_to(max_value, 7);
     pause = default_to(pause_time, 10);
     var_5d90785217baaeff = default_to(var_5d90785217baaeff, 25);
-    thread function_3bf9ed80166e5b45(@"hash_402173c7dbee15d9", min_value, max_value, pause, var_5d90785217baaeff);
+    thread function_3bf9ed80166e5b45(@"cg_defaultWindAmplitudeScale", min_value, max_value, pause, var_5d90785217baaeff);
 }
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
@@ -180,7 +180,7 @@ function stop_wind(var_776c17b6fb9755d0) {
 // Checksum 0x0, Offset: 0x10c7
 // Size: 0x1b
 function set_wind_amplitude(amplitude) {
-    setsaveddvar(@"hash_402173c7dbee15d9", amplitude);
+    setsaveddvar(@"cg_defaultWindAmplitudeScale", amplitude);
 }
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
@@ -188,7 +188,7 @@ function set_wind_amplitude(amplitude) {
 // Checksum 0x0, Offset: 0x10ea
 // Size: 0x1b
 function set_wind_frequency(frequency) {
-    setsaveddvar(@"hash_71fe8b216d50a24c", frequency);
+    setsaveddvar(@"cg_defaultWindFrequencyScale", frequency);
 }
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
@@ -196,7 +196,7 @@ function set_wind_frequency(frequency) {
 // Checksum 0x0, Offset: 0x110d
 // Size: 0x1b
 function set_wind_area_scale(var_4353af4a5fbba84a) {
-    setsaveddvar(@"hash_656131a98e0d2c9d", var_4353af4a5fbba84a);
+    setsaveddvar(@"cg_defaultWindAreaScale", var_4353af4a5fbba84a);
 }
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind

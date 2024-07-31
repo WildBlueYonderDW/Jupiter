@@ -1,0 +1,30 @@
+{
+    "#id": "telemetry",
+    "#description": "&PLATFORM/TELEMETRY_PRESET_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/ESSENTIALS"
+        },
+        {
+            "#reference": "&OPTIONS/ALL_OFF_DEFAULT"
+        },
+        {
+            "#reference": "&LUA_MENU/ALL_ON"
+        },
+        {
+            "#reference": "&LUA_MENU/CUSTOM"
+        }
+    ],
+    "#hash_a20785232d9c4057": "telemetryPreset",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#hash_9c921e1f5e226484": 1,
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/TELEMETRY_PRESET"
+}

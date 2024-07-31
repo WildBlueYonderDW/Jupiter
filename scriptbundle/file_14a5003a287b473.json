@@ -1,0 +1,17 @@
+{
+    "#id": 74,
+    "#keys": [
+        {
+            "#key": "iw9_clan_id"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_22712718e38ff886",
+    "#sharedname": "#hash_ede50c658856e12e"
+}

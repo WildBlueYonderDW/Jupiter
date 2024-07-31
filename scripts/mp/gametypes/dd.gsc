@@ -113,15 +113,15 @@ function main() {
 // Size: 0xea
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_8851eccfcb6cbd95", getmatchrulesdata("bombData", "bombTimer"));
-    setdynamicdvar(@"hash_ba0a2161e1a0d920", getmatchrulesdata("bombData", "plantTime"));
-    setdynamicdvar(@"hash_5b309742f9cbd98b", getmatchrulesdata("bombData", "defuseTime"));
+    setdynamicdvar(@"scr_dd_bombtimer", getmatchrulesdata("bombData", "bombTimer"));
+    setdynamicdvar(@"scr_dd_planttime", getmatchrulesdata("bombData", "plantTime"));
+    setdynamicdvar(@"scr_dd_defusetime", getmatchrulesdata("bombData", "defuseTime"));
     setdynamicdvar(@"hash_ba454753d970e1aa", getmatchrulesdata("bombData", "silentPlant"));
-    setdynamicdvar(@"hash_ad7b476595b0c3b3", getmatchrulesdata("demData", "extraTime"));
-    setdynamicdvar(@"hash_da793e325bd82aa", getmatchrulesdata("demData", "overtimeLimit"));
+    setdynamicdvar(@"scr_dd_extratime", getmatchrulesdata("demData", "extraTime"));
+    setdynamicdvar(@"scr_dd_overtimelimit", getmatchrulesdata("demData", "overtimeLimit"));
     setdynamicdvar(@"hash_6d1378f0e89dc70c", 0);
     registerhalftimedvar("dd", 0);
-    setdynamicdvar(@"hash_def21766b9ba47a8", 0);
+    setdynamicdvar(@"scr_dd_promode", 0);
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
@@ -141,7 +141,7 @@ function onstartgametype() {
     setomnvar("ui_victory_condition_completed", 0);
     if (game["roundsPlayed"] == 2) {
         game["status"] = "overtime";
-        setdvar(@"hash_caa6faec79f2c4c2", 1);
+        setdvar(@"ui_overtime", 1);
     }
     if (inovertime()) {
         setomnvar("ui_round_hint_override_attackers", 1);

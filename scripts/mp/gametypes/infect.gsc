@@ -57,7 +57,7 @@
 function main() {
     scripts\mp\globallogic::init();
     scripts\mp\globallogic::setupcallbacks();
-    matchmakingmatch = getdvarint(@"hash_962400405f9f3c0b") && !getdvarint(@"hash_485ef1ed1d39d3a3");
+    matchmakingmatch = getdvarint(@"onlinegame") && !getdvarint(@"xblive_privatematch");
     if (matchmakingmatch) {
         level.isgroundwarinfected = getdvarint(@"hash_119729a5fcbd2aab", 0);
     } else {
@@ -149,126 +149,126 @@ function waitthensetstatgroupreadonly() {
 // Size: 0x967
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_8a9bb4f19c32d953", getmatchrulesdata("infectData", "numInitialInfected"));
-    setdynamicdvar(@"hash_a44ac0c52a7bffdd", getmatchrulesdata("infectData", "weaponSurvivorPrimary"));
+    setdynamicdvar(@"scr_infect_numinitialinfected", getmatchrulesdata("infectData", "numInitialInfected"));
+    setdynamicdvar(@"scr_infect_weaponsurvivorprimary", getmatchrulesdata("infectData", "weaponSurvivorPrimary"));
     setdynamicdvar(@"hash_343635a44dbb0762", "none");
     setdynamicdvar(@"hash_8e3f4856f25114f0", "none");
-    setdynamicdvar(@"hash_c4b02863872af0bd", getmatchrulesdata("infectData", "weaponSurvivorSecondary"));
+    setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", getmatchrulesdata("infectData", "weaponSurvivorSecondary"));
     setdynamicdvar(@"hash_ee2fe9638607a1ee", "none");
     setdynamicdvar(@"hash_db0021dfc2c8f6d4", "none");
-    setdynamicdvar(@"hash_d1b3309408a1e897", getmatchrulesdata("infectData", "lethalSurvivor"));
-    setdynamicdvar(@"hash_a305fa9e69c31190", getmatchrulesdata("infectData", "tacticalSurvivor"));
-    setdynamicdvar(@"hash_a3c1a41ff13c5bac", getmatchrulesdata("infectData", "superSurvivor"));
-    setdynamicdvar(@"hash_b0950d9d807b3bc6", getmatchrulesdata("infectData", "superSurvivorTwo"));
-    setdynamicdvar(@"hash_6c5a93985d33efc8", getmatchrulesdata("infectData", "weaponInfectPrimary"));
+    setdynamicdvar(@"scr_infect_lethalsurvivor", getmatchrulesdata("infectData", "lethalSurvivor"));
+    setdynamicdvar(@"scr_infect_tacticalsurvivor", getmatchrulesdata("infectData", "tacticalSurvivor"));
+    setdynamicdvar(@"scr_infect_supersurvivor", getmatchrulesdata("infectData", "superSurvivor"));
+    setdynamicdvar(@"scr_infect_supersurvivortwo", getmatchrulesdata("infectData", "superSurvivorTwo"));
+    setdynamicdvar(@"scr_infect_weaponinfectprimary", getmatchrulesdata("infectData", "weaponInfectPrimary"));
     setdynamicdvar(@"hash_cb5a2ba18d38eaeb", "none");
     setdynamicdvar(@"hash_7038cd49942c7b3b", "none");
-    setdynamicdvar(@"hash_94cd061650f7ce18", getmatchrulesdata("infectData", "weaponInfectSecondary"));
-    setdynamicdvar(@"hash_a4d8476ca2b3de70", getmatchrulesdata("infectData", "lethalInfect"));
-    setdynamicdvar(@"hash_cf7a6e0ed93c9277", getmatchrulesdata("infectData", "tacticalInfect"));
-    setdynamicdvar(@"hash_8a3e30cc9f0d0c79", getmatchrulesdata("infectData", "weaponInitialPrimary"));
-    setdynamicdvar(@"hash_b7be534f7d1f6c91", getmatchrulesdata("infectData", "weaponInitialSecondary"));
-    setdynamicdvar(@"hash_c8c77b5a2a21af33", getmatchrulesdata("infectData", "superInfect"));
+    setdynamicdvar(@"scr_infect_weaponinfectsecondary", getmatchrulesdata("infectData", "weaponInfectSecondary"));
+    setdynamicdvar(@"scr_infect_lethalinfect", getmatchrulesdata("infectData", "lethalInfect"));
+    setdynamicdvar(@"scr_infect_tacticalinfect", getmatchrulesdata("infectData", "tacticalInfect"));
+    setdynamicdvar(@"scr_infect_weaponinitialprimary", getmatchrulesdata("infectData", "weaponInitialPrimary"));
+    setdynamicdvar(@"scr_infect_weaponinitialsecondary", getmatchrulesdata("infectData", "weaponInitialSecondary"));
+    setdynamicdvar(@"scr_infect_superinfect", getmatchrulesdata("infectData", "superInfect"));
     setdynamicdvar(@"hash_bfad61c7edf9ba5b", getmatchrulesdata("infectData", "superInfectTwo"));
-    setdynamicdvar(@"hash_d3681002af892cec", getmatchrulesdata("infectData", "infectExtraTimePerKill"));
-    setdynamicdvar(@"hash_b980fb4575156410", getmatchrulesdata("infectData", "survivorAliveScore"));
-    setdynamicdvar(@"hash_f3aaaf0edb2a8638", getmatchrulesdata("infectData", "survivorScoreTime"));
-    setdynamicdvar(@"hash_91860bcbb6b5c57d", getmatchrulesdata("infectData", "survivorScorePerTick"));
-    setdynamicdvar(@"hash_e775b68a991f7e43", getmatchrulesdata("infectData", "infectStreakBonus"));
-    setdynamicdvar(@"hash_5e198c75ec20c248", getmatchrulesdata("infectData", "enableInfectedTracker"));
-    setdynamicdvar(@"hash_4c708658ae44448", getmatchrulesdata("infectData", "enablePing"));
-    setdynamicdvar(@"hash_6292876408549d8c", getmatchrulesdata("infectData", "giveTKOnTISpawn"));
-    setdynamicdvar(@"hash_e5a33d679c26221f", 0);
-    setdynamicdvar(@"hash_cbed990d7208a0a5", 0);
+    setdynamicdvar(@"scr_infect_infectextratimeperkill", getmatchrulesdata("infectData", "infectExtraTimePerKill"));
+    setdynamicdvar(@"scr_infect_survivoralivescore", getmatchrulesdata("infectData", "survivorAliveScore"));
+    setdynamicdvar(@"scr_infect_survivorscoretime", getmatchrulesdata("infectData", "survivorScoreTime"));
+    setdynamicdvar(@"scr_infect_survivorscorepertick", getmatchrulesdata("infectData", "survivorScorePerTick"));
+    setdynamicdvar(@"scr_infect_infectstreakbonus", getmatchrulesdata("infectData", "infectStreakBonus"));
+    setdynamicdvar(@"scr_infect_enableinfectedtracker", getmatchrulesdata("infectData", "enableInfectedTracker"));
+    setdynamicdvar(@"scr_infect_enableping", getmatchrulesdata("infectData", "enablePing"));
+    setdynamicdvar(@"scr_infect_giveTKOnTISpawn", getmatchrulesdata("infectData", "giveTKOnTISpawn"));
+    setdynamicdvar(@"scr_team_fftype", 0);
+    setdynamicdvar(@"scr_infect_promode", 0);
     if (getdvarint(@"hash_708473a41b11b061", 0)) {
-        setdynamicdvar(@"hash_8a3e30cc9f0d0c79", "jup_jp16_sh_recho870");
-        setdynamicdvar(@"hash_b7be534f7d1f6c91", "jup_jp12_pi_mike93");
-        setdynamicdvar(@"hash_6c5a93985d33efc8", "jup_jp23_me_knife");
+        setdynamicdvar(@"scr_infect_weaponinitialprimary", "jup_jp16_sh_recho870");
+        setdynamicdvar(@"scr_infect_weaponinitialsecondary", "jup_jp12_pi_mike93");
+        setdynamicdvar(@"scr_infect_weaponinfectprimary", "jup_jp23_me_knife");
         switch (randomint(6)) {
         case 0: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_jp09_sh_oromeo12");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_cp24_pi_glima21");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "equip_thermobaric_grenade");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "equip_snapshot_grenade");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "super_sonar_pulse");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_jp09_sh_oromeo12");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_cp24_pi_glima21");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "equip_thermobaric_grenade");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "equip_snapshot_grenade");
+            setdynamicdvar(@"scr_infect_supersurvivor", "super_sonar_pulse");
             break;
         case 1: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_jp16_sh_recho870");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_jp16_sh_recho870");
             setdynamicdvar(@"hash_343635a44dbb0762", "jup_las_twofivex01");
             setdynamicdvar(@"hash_8e3f4856f25114f0", "jup_recho870_ammo_12g_sl");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_cp24_pi_glima21");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_cp24_pi_glima21");
             setdynamicdvar(@"hash_ee2fe9638607a1ee", "jup_glima21_akimbo");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "equip_bunkerbuster");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "equip_gas_grenade");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "super_tac_cover");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "equip_bunkerbuster");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "equip_gas_grenade");
+            setdynamicdvar(@"scr_infect_supersurvivor", "super_tac_cover");
             break;
         case 2: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_jp07_sm_uzulup");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_jp23_me_knife");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "equip_c4");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "equip_battlerage");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "super_ammo_drop");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_jp07_sm_uzulup");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_jp23_me_knife");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "equip_c4");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "equip_battlerage");
+            setdynamicdvar(@"scr_infect_supersurvivor", "super_ammo_drop");
             break;
         case 3: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_cp06_ar_falpha");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_cp06_ar_falpha");
             setdynamicdvar(@"hash_343635a44dbb0762", "jup_minireddot01_tall");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_jp14_pi_rsierra12");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "equip_at_mine");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "equip_decoy");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "super_ammo_drop");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_jp14_pi_rsierra12");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "equip_at_mine");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "equip_decoy");
+            setdynamicdvar(@"scr_infect_supersurvivor", "super_ammo_drop");
             break;
         case 4: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_jp17_sn_hsierra");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_jp17_sn_hsierra");
             setdynamicdvar(@"hash_343635a44dbb0762", "jup_jp17_sn_hsierra_bolt_light");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_jp12_pi_mike93");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_jp12_pi_mike93");
             setdynamicdvar(@"hash_ee2fe9638607a1ee", "jup_mike93_akimbo");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "equip_claymore");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "equip_concussion");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "super_ammo_drop");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "equip_claymore");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "equip_concussion");
+            setdynamicdvar(@"scr_infect_supersurvivor", "super_ammo_drop");
             break;
         case 5: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "iw9_me_riotshield");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_jp14_pi_rsierra12");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "iw9_me_riotshield");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_jp14_pi_rsierra12");
             setdynamicdvar(@"hash_ee2fe9638607a1ee", "jup_piscope01_rsierra");
             setdynamicdvar(@"hash_db0021dfc2c8f6d4", "jup_rsierra12_akimbo");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "equip_semtex");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "equip_butterfly_mine");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "super_sound_veil");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "equip_semtex");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "equip_butterfly_mine");
+            setdynamicdvar(@"scr_infect_supersurvivor", "super_sound_veil");
             break;
         default: 
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_jp16_sh_recho870");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_jp12_pi_mike93");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_jp16_sh_recho870");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_jp12_pi_mike93");
             break;
         }
         if (level.gametypebundle.namekey == "infect_holiday") {
-            setdynamicdvar(@"hash_6c5a93985d33efc8", "jup_jp23_me_knife");
-            setdynamicdvar(@"hash_a4d8476ca2b3de70", "equip_pball");
+            setdynamicdvar(@"scr_infect_weaponinfectprimary", "jup_jp23_me_knife");
+            setdynamicdvar(@"scr_infect_lethalinfect", "equip_pball");
         }
         if (level.gametypebundle.namekey == "infect_phishing") {
             setdvar(@"hash_c9e3e2c3666bb281", 1);
             setdvar(@"hash_c997af43c2e9cad1", "jup_mp_sierra_18_skin");
             setdvar(@"hash_ce84811e8f772df7", 1);
             setdvar(@"hash_ff1e67478325c867", "jup_mp_november_23_skin");
-            setdynamicdvar(@"hash_a44ac0c52a7bffdd", "jup_jp31_dm_compound_mp");
-            setdynamicdvar(@"hash_c4b02863872af0bd", "jup_jp23_me_knife_mp");
+            setdynamicdvar(@"scr_infect_weaponsurvivorprimary", "jup_jp31_dm_compound_mp");
+            setdynamicdvar(@"scr_infect_weaponsurvivorsecondary", "jup_jp23_me_knife_mp");
             setdynamicdvar(@"hash_343635a44dbb0762", "none");
             setdynamicdvar(@"hash_8e3f4856f25114f0", "none");
             setdynamicdvar(@"hash_ee2fe9638607a1ee", "none");
             setdynamicdvar(@"hash_db0021dfc2c8f6d4", "none");
-            setdynamicdvar(@"hash_8a3e30cc9f0d0c79", "jup_jp23_me_spear_mp");
-            setdynamicdvar(@"hash_b7be534f7d1f6c91", "jup_jp23_me_knife_mp");
+            setdynamicdvar(@"scr_infect_weaponinitialprimary", "jup_jp23_me_spear_mp");
+            setdynamicdvar(@"scr_infect_weaponinitialsecondary", "jup_jp23_me_knife_mp");
             level.attachmentinitialprimary = "jup_me_spear";
             level.var_941fbbdf885c0804 = "jup_axefist";
-            setdynamicdvar(@"hash_6c5a93985d33efc8", "jup_jp23_me_spear_mp");
-            setdynamicdvar(@"hash_94cd061650f7ce18", "jup_jp23_me_knife_mp");
+            setdynamicdvar(@"scr_infect_weaponinfectprimary", "jup_jp23_me_spear_mp");
+            setdynamicdvar(@"scr_infect_weaponinfectsecondary", "jup_jp23_me_knife_mp");
             setdynamicdvar(@"hash_cb5a2ba18d38eaeb", "jup_me_spear");
             setdynamicdvar(@"hash_7038cd49942c7b3b", "jup_axefist");
-            setdynamicdvar(@"hash_d1b3309408a1e897", "none");
-            setdynamicdvar(@"hash_a305fa9e69c31190", "none");
-            setdynamicdvar(@"hash_a3c1a41ff13c5bac", "none");
-            setdynamicdvar(@"hash_a4d8476ca2b3de70", "none");
-            setdynamicdvar(@"hash_cf7a6e0ed93c9277", "none");
-            setdynamicdvar(@"hash_c8c77b5a2a21af33", "none");
+            setdynamicdvar(@"scr_infect_lethalsurvivor", "none");
+            setdynamicdvar(@"scr_infect_tacticalsurvivor", "none");
+            setdynamicdvar(@"scr_infect_supersurvivor", "none");
+            setdynamicdvar(@"scr_infect_lethalinfect", "none");
+            setdynamicdvar(@"scr_infect_tacticalinfect", "none");
+            setdynamicdvar(@"scr_infect_superinfect", "none");
         }
     }
 }
@@ -328,25 +328,25 @@ function onstartgametype() {
 function updategametypedvars() {
     scripts\mp\gametypes\common::updatecommongametypedvars();
     level.numinitialinfected = dvarintvalue("numInitialInfected", 1, 1, 9);
-    level.survivorprimaryweapon = getdvar(@"hash_a44ac0c52a7bffdd", "iw9_sh_mbravo_mp");
+    level.survivorprimaryweapon = getdvar(@"scr_infect_weaponsurvivorprimary", "iw9_sh_mbravo_mp");
     level.attachmentsurvivorprimary = getdvar(@"hash_343635a44dbb0762", "none");
     level.var_c98cf0863525b3c6 = getdvar(@"hash_8e3f4856f25114f0", "none");
-    level.survivorsecondaryweapon = getdvar(@"hash_c4b02863872af0bd", "iw9_pi_golf17_mp");
+    level.survivorsecondaryweapon = getdvar(@"scr_infect_weaponsurvivorsecondary", "iw9_pi_golf17_mp");
     level.attachmentsurvivorsecondary = getdvar(@"hash_ee2fe9638607a1ee", "none");
     level.var_12db5fcda223636 = getdvar(@"hash_db0021dfc2c8f6d4", "none");
-    level.survivorlethal = getdvar(@"hash_d1b3309408a1e897", "equip_claymore");
-    level.survivortactical = getdvar(@"hash_a305fa9e69c31190", "equip_concussion");
-    level.survivorsuper = getdvar(@"hash_a3c1a41ff13c5bac", "super_tac_cover");
-    level.survivorsupertwo = getdvar(@"hash_b0950d9d807b3bc6", "none");
-    level.infectedprimaryweapon = getdvar(@"hash_6c5a93985d33efc8", "iw9_me_knife_mp");
+    level.survivorlethal = getdvar(@"scr_infect_lethalsurvivor", "equip_claymore");
+    level.survivortactical = getdvar(@"scr_infect_tacticalsurvivor", "equip_concussion");
+    level.survivorsuper = getdvar(@"scr_infect_supersurvivor", "super_tac_cover");
+    level.survivorsupertwo = getdvar(@"scr_infect_supersurvivortwo", "none");
+    level.infectedprimaryweapon = getdvar(@"scr_infect_weaponinfectprimary", "iw9_me_knife_mp");
     level.var_ae93d2e53f551ff5 = getdvar(@"hash_cb5a2ba18d38eaeb", "none");
     level.var_4438952a4834e2a5 = getdvar(@"hash_7038cd49942c7b3b", "none");
-    level.infectedsecondaryweapon = getdvar(@"hash_94cd061650f7ce18", "iw9_me_fists_mp");
-    level.initialprimaryweapon = getdvar(@"hash_8a3e30cc9f0d0c79", "iw9_sh_mbravo_mp");
-    level.initialsecondaryweapon = getdvar(@"hash_b7be534f7d1f6c91", "iw9_pi_golf17_mp");
-    level.infectedlethal = getdvar(@"hash_a4d8476ca2b3de70", "equip_throwing_knife");
-    level.infectedtactical = getdvar(@"hash_cf7a6e0ed93c9277", "equip_tac_insert");
-    level.infectedsuper = getdvar(@"hash_c8c77b5a2a21af33", "super_deadsilence");
+    level.infectedsecondaryweapon = getdvar(@"scr_infect_weaponinfectsecondary", "iw9_me_fists_mp");
+    level.initialprimaryweapon = getdvar(@"scr_infect_weaponinitialprimary", "iw9_sh_mbravo_mp");
+    level.initialsecondaryweapon = getdvar(@"scr_infect_weaponinitialsecondary", "iw9_pi_golf17_mp");
+    level.infectedlethal = getdvar(@"scr_infect_lethalinfect", "equip_throwing_knife");
+    level.infectedtactical = getdvar(@"scr_infect_tacticalinfect", "equip_tac_insert");
+    level.infectedsuper = getdvar(@"scr_infect_superinfect", "super_deadsilence");
     level.infectedsupertwo = getdvar(@"hash_bfad61c7edf9ba5b", "none");
     level.infectextratimeperkill = dvarfloatvalue("infectExtraTimePerKill", 30, 0, 60);
     level.survivoralivescore = dvarintvalue("survivorAliveScore", 25, 0, 100);
@@ -356,7 +356,7 @@ function updategametypedvars() {
     level.enableinfectedtracker = dvarintvalue("enableInfectedTracker", 0, 0, 1);
     level.enableping = dvarintvalue("enablePing", 0, 0, 1);
     level.givetkontispawn = dvarintvalue("giveTKOnTISpawn", 0, 0, 1);
-    level.infectbonusscore = getdvarint(@"hash_c9034fcb93f29981", 150);
+    level.infectbonusscore = getdvarint(@"scr_infect_infectBonusScore", 150);
     level.infectbonussuperonspawn = getdvarint(@"hash_3cf02ba1288e7934", 0);
     level.infectbonussuperontacinsert = getdvarint(@"hash_21521abc03c44042", 0);
     level.var_5b8eacb759c64658 = getdvarint(@"hash_79432649c9607465", 20);
@@ -1346,7 +1346,7 @@ function delayedprocesskill(attacker, wassuicide) {
         if (!wassuicide) {
             thread teamplayercardsplash("callout_infected", attacker, "axis");
             if (!isdefined(level.survivorscoreevent)) {
-                var_a5d020aa6adb222f = getdvarint(@"hash_1ca4603781cb4d9b", 50);
+                var_a5d020aa6adb222f = getdvarint(@"scr_infect_survivorinitialscore", 50);
                 if (var_a5d020aa6adb222f > 0) {
                     level.survivorscoreevent = var_a5d020aa6adb222f;
                 } else {

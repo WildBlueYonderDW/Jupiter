@@ -42,9 +42,9 @@ function deathwatcher() {
 // Checksum 0x0, Offset: 0x818
 // Size: 0x282
 function function_ab13526d8a324001() {
-    escortData = spawnstruct();
-    escortData.state = "Initial_Phase";
-    level.escortData = escortData;
+    var_e54818dfc9648219 = spawnstruct();
+    var_e54818dfc9648219.state = "Initial_Phase";
+    level.var_e54818dfc9648219 = var_e54818dfc9648219;
     flag_wait("create_script_initialized");
     spawndata = getstruct("acv_spawn", "script_noteworthy");
     spawndata.initai = 0;
@@ -485,17 +485,17 @@ function function_3706bfdc9306bb23() {
 // Size: 0xe3
 function function_45db14db9e1d13bd(startangles, endangles) {
     startx = startangles[0];
-    endx = endangles[0];
+    var_688f97559bf04d6a = endangles[0];
     starty = startangles[1];
     endy = endangles[1];
     startz = startangles[2];
     endz = endangles[2];
-    while (abs(endx - startx) > 180) {
-        if (endx > startx) {
-            endx -= 360;
+    while (abs(var_688f97559bf04d6a - startx) > 180) {
+        if (var_688f97559bf04d6a > startx) {
+            var_688f97559bf04d6a -= 360;
             continue;
         }
-        endx += 360;
+        var_688f97559bf04d6a += 360;
     }
     while (abs(endy - starty) > 180) {
         if (endy > starty) {
@@ -511,7 +511,7 @@ function function_45db14db9e1d13bd(startangles, endangles) {
         }
         endz += 360;
     }
-    return (endx, endy, endz);
+    return (var_688f97559bf04d6a, endy, endz);
 }
 
 // Namespace namespace_3bba63e428117813 / namespace_a1cde428d7647a68

@@ -79,7 +79,7 @@ function printdisplaceinfo() {
     // Checksum 0x0, Offset: 0x5d8
     // Size: 0x34
     function isdebugon() {
-        return getdvarint(@"hash_e5888a4dbf301822") == 1 || isdefined(anim.debugent) && anim.debugent == self;
+        return getdvarint(@"animDebug") == 1 || isdefined(anim.debugent) && anim.debugent == self;
     }
 
     // Namespace utility / namespace_f87a4b6569ce73b2

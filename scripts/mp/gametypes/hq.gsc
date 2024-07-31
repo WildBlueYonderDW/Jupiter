@@ -1628,7 +1628,7 @@ function writecurrentrotationteamscore() {
         if (isdefined(level.var_2db03438253fa6e2) && level.var_2db03438253fa6e2) {
             level.zoneduration = 10000;
         } else {
-            level.zoneduration = getdvarint(@"hash_cb81f537c99c9657");
+            level.zoneduration = getdvarint(@"scr_koth_zonelifetime");
         }
         thread function_bed0f399bee034f8();
         self notify("<dev string:x1b1>");
@@ -1643,7 +1643,7 @@ function writecurrentrotationteamscore() {
         while (true) {
             if (getdvarint(@"hash_4c260c16d548430f") != 0) {
                 level notify("<dev string:x19f>");
-                level.zoneduration = getdvarint(@"hash_cb81f537c99c9657");
+                level.zoneduration = getdvarint(@"scr_koth_zonelifetime");
                 break;
             }
             wait 1;

@@ -1,0 +1,29 @@
+{
+    "#id": "ambient_occlusion",
+    "#description": "&OPTIONS/SSAO_DESC",
+    "#dvar": "@r_ssao",
+    "#image": "jup_ui_options_image_ambientocclusion",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/GTAO"
+        },
+        {
+            "#reference": "&LUA_MENU/MDAO"
+        },
+        {
+            "#reference": "&MENU/BOTH"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/SSAO"
+}

@@ -98,7 +98,7 @@ function function_950c2d7fd506dfe9(infil, spot_index) {
     infil anim_player_solo(self, self.player_rig, "elevator_infil");
     scripts\mp\class::unblockclasschange();
     if (isdefined(level.scr_viewmodelanim[self.animname]) && isdefined(level.scr_viewmodelanim[self.animname]["elevator_infil" + "_" + infil.subtype + "_intro"])) {
-        setdvar(@"hash_7eb1641737ab83b7", 0);
+        setdvar(@"depthSortViewmodel", 0);
     }
     thread clear_infil_ambient_zone();
     if (isdefined(self.player_rig) && self.player_rig islinked()) {
@@ -183,7 +183,7 @@ function player_infil_end() {
     self lerpfovscalefactor(1, 2);
     self clearclienttriggeraudiozone(1);
     scripts\mp\utility\player::setdof_default();
-    setdvar(@"hash_7eb1641737ab83b7", 0);
+    setdvar(@"depthSortViewmodel", 0);
 }
 
 // Namespace elevator_infil / namespace_3194e7560630dae2
@@ -213,10 +213,10 @@ function infilthink(team, scene_name) {
     thread vehiclethink(team, self.scene_node, scene_name);
     thread actorthink(team, self.scene_node, scene_name);
     level waittill("infil_started");
-    setdvar(@"hash_dc64fb89118cae31", 1);
+    setdvar(@"r_spotLightEntityShadows", 1);
     level notify("start_scene");
     level waittill("prematch_over");
-    setdvar(@"hash_dc64fb89118cae31", 0);
+    setdvar(@"r_spotLightEntityShadows", 0);
     while (isdefined(self.actors)) {
         waitframe();
     }

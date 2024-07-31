@@ -1,0 +1,21 @@
+{
+    "#id": "enable_equipment_minimal_mode",
+    "#description": "&OPTIONS/ENABLE_EQUIPMENT_MINIMAL_MODE_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/DEFAULT"
+        },
+        {
+            "#reference": "&OPTIONS/MINIMAL"
+        }
+    ],
+    "#hash_a20785232d9c4057": "EnableEquipmentMinimalMode",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_7dbb6f8fffd55024",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/ENABLE_EQUIPMENT_MINIMAL_MODE"
+}

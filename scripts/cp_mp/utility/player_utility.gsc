@@ -684,7 +684,7 @@ function function_fdff38028c016239() {
     assert(istrue(self.liveragdoll));
     cameraentity = function_6d606d81ea9ab50b(0, 0);
     self.var_7c813e50ff75be27 = undefined;
-    wait getdvarfloat(@"hash_ac849f1ec300d19c", 1.75);
+    wait getdvarfloat(@"scr_death_scene_time", 1.75);
     function_7a8a04d15ad052d5();
     self allowspectateteam(self.team, 1);
     self cameraunlink();

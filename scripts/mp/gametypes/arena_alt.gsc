@@ -89,7 +89,7 @@ function main() {
     registerhalftimedvar(getgametype(), 0);
     registerwinbytwoenableddvar(getgametype(), 1);
     registerwinbytwomaxroundsdvar(getgametype(), 4);
-    setdvar(@"hash_4871f220778a4649", 0);
+    setdvar(@"camera_allow3rdspectate", 0);
     if (!isdefined(level.tweakablesinitialized)) {
         scripts\mp\tweakables::init();
     }
@@ -201,7 +201,7 @@ function main() {
         level.previewbuildfirstallies = 1;
         level.previewbuildfirstaxis = 1;
     }
-    setdvar(@"hash_818c699a5caaee4f", 4);
+    setdvar(@"party_maxplayers", 4);
     level.teambased = 1;
     level.objectivebased = 1;
     level.ontimelimit = &ontimelimit;
@@ -311,25 +311,25 @@ function launchchunkbotspawning() {
 // Size: 0x261
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_f3cb432a241a7ea3", getmatchrulesdata("arenaData", "arenaLoadouts"));
-    setdynamicdvar(@"hash_b2d6a287c0521607", getmatchrulesdata("arenaData", "loadoutChangeRound"));
-    setdynamicdvar(@"hash_9555be126d6bdcab", getmatchrulesdata("arenaData", "switchSpawns"));
-    setdynamicdvar(@"hash_a4a7060aad657090", getmatchrulesdata("arenaData", "winCondition"));
-    setdynamicdvar(@"hash_1b3b0369b76395a5", getmatchrulesdata("arenaData", "objModifier"));
-    setdynamicdvar(@"hash_92027746d0937564", getmatchrulesdata("arenaData", "spawnFlag"));
-    setdynamicdvar(@"hash_385f68623c04c6dc", getmatchrulesdata("domData", "flagCaptureTime"));
-    setdynamicdvar(@"hash_f86716e8c7f46afd", getmatchrulesdata("arenaData", "tacticalTimeMod"));
-    setdynamicdvar(@"hash_44fc747f238c17da", getmatchrulesdata("arenaData", "blastShieldMod"));
-    setdynamicdvar(@"hash_4dcb3bff6478bb0d", getmatchrulesdata("arenaData", "blastShieldClamp"));
-    setdynamicdvar(@"hash_84ab96fa2f04c271", getmatchrulesdata("arenaData", "startWeapon"));
-    setdynamicdvar(@"hash_54f31afe6345346a", getmatchrulesdata("arenaData", "weaponTier1"));
-    setdynamicdvar(@"hash_54f319fe63453237", getmatchrulesdata("arenaData", "weaponTier2"));
-    setdynamicdvar(@"hash_54f318fe63453004", getmatchrulesdata("arenaData", "weaponTier3"));
-    setdynamicdvar(@"hash_54f317fe63452dd1", getmatchrulesdata("arenaData", "weaponTier4"));
-    setdynamicdvar(@"hash_54f316fe63452b9e", getmatchrulesdata("arenaData", "weaponTier5"));
-    setdynamicdvar(@"hash_54f315fe6345296b", getmatchrulesdata("arenaData", "weaponTier6"));
-    setdynamicdvar(@"hash_54f314fe63452738", getmatchrulesdata("arenaData", "weaponTier7"));
-    setdynamicdvar(@"hash_54f313fe63452505", getmatchrulesdata("arenaData", "weaponTier8"));
+    setdynamicdvar(@"scr_arena_arenaloadouts", getmatchrulesdata("arenaData", "arenaLoadouts"));
+    setdynamicdvar(@"scr_arena_loadoutchangeround", getmatchrulesdata("arenaData", "loadoutChangeRound"));
+    setdynamicdvar(@"scr_arena_switchspawns", getmatchrulesdata("arenaData", "switchSpawns"));
+    setdynamicdvar(@"scr_arena_winCondition", getmatchrulesdata("arenaData", "winCondition"));
+    setdynamicdvar(@"scr_arena_objmodifier", getmatchrulesdata("arenaData", "objModifier"));
+    setdynamicdvar(@"scr_arena_spawnflag", getmatchrulesdata("arenaData", "spawnFlag"));
+    setdynamicdvar(@"scr_arena_flagcapturetime", getmatchrulesdata("domData", "flagCaptureTime"));
+    setdynamicdvar(@"scr_arena_tacticaltimemod", getmatchrulesdata("arenaData", "tacticalTimeMod"));
+    setdynamicdvar(@"scr_arena_blastshieldmod", getmatchrulesdata("arenaData", "blastShieldMod"));
+    setdynamicdvar(@"scr_arena_blastshieldclamp", getmatchrulesdata("arenaData", "blastShieldClamp"));
+    setdynamicdvar(@"scr_arena_startWeapon", getmatchrulesdata("arenaData", "startWeapon"));
+    setdynamicdvar(@"scr_arena_weapontier1", getmatchrulesdata("arenaData", "weaponTier1"));
+    setdynamicdvar(@"scr_arena_weapontier2", getmatchrulesdata("arenaData", "weaponTier2"));
+    setdynamicdvar(@"scr_arena_weapontier3", getmatchrulesdata("arenaData", "weaponTier3"));
+    setdynamicdvar(@"scr_arena_weapontier4", getmatchrulesdata("arenaData", "weaponTier4"));
+    setdynamicdvar(@"scr_arena_weapontier5", getmatchrulesdata("arenaData", "weaponTier5"));
+    setdynamicdvar(@"scr_arena_weapontier6", getmatchrulesdata("arenaData", "weaponTier6"));
+    setdynamicdvar(@"scr_arena_weapontier7", getmatchrulesdata("arenaData", "weaponTier7"));
+    setdynamicdvar(@"scr_arena_weapontier8", getmatchrulesdata("arenaData", "weaponTier8"));
     setdynamicdvar(@"hash_c110a01fb151da3", 0);
     registerhalftimedvar(getgametype(), 0);
 }
@@ -488,15 +488,15 @@ function updategametypedvars() {
         level.canprocessot = 1;
     }
     level.tacticaltimemod = dvarfloatvalue("tacticalTimeMod", 2.5, 0.5, 5);
-    level.startweapon = getdvar(@"hash_84ab96fa2f04c271", "none");
-    level.arenaweapont1 = getdvar(@"hash_54f31afe6345346a", "iw8_pi_golf21_mp");
-    level.arenaweapont2 = getdvar(@"hash_54f319fe63453237", "iw8_sh_dpapa12_mp");
-    level.arenaweapont3 = getdvar(@"hash_54f318fe63453004", "iw8_sm_mpapa5_mp");
-    level.arenaweapont4 = getdvar(@"hash_54f317fe63452dd1", "iw8_ar_mike4_mp");
-    level.arenaweapont5 = getdvar(@"hash_54f316fe63452b9e", "iw8_sn_alpha50_mp");
-    level.arenaweapont6 = getdvar(@"hash_54f315fe6345296b", "equip_frag");
-    level.arenaweapont7 = getdvar(@"hash_54f314fe63452738", "equip_concussion");
-    level.arenaweapont8 = getdvar(@"hash_54f313fe63452505", "equip_adrenaline");
+    level.startweapon = getdvar(@"scr_arena_startWeapon", "none");
+    level.arenaweapont1 = getdvar(@"scr_arena_weapontier1", "iw8_pi_golf21_mp");
+    level.arenaweapont2 = getdvar(@"scr_arena_weapontier2", "iw8_sh_dpapa12_mp");
+    level.arenaweapont3 = getdvar(@"scr_arena_weapontier3", "iw8_sm_mpapa5_mp");
+    level.arenaweapont4 = getdvar(@"scr_arena_weapontier4", "iw8_ar_mike4_mp");
+    level.arenaweapont5 = getdvar(@"scr_arena_weapontier5", "iw8_sn_alpha50_mp");
+    level.arenaweapont6 = getdvar(@"scr_arena_weapontier6", "equip_frag");
+    level.arenaweapont7 = getdvar(@"scr_arena_weapontier7", "equip_concussion");
+    level.arenaweapont8 = getdvar(@"scr_arena_weapontier8", "equip_adrenaline");
     if (game["launchChunkRuleSet"] == 2) {
         level.arenaloadouts = 3;
         level.loadoutchangeround = 3;
@@ -923,7 +923,7 @@ function onjoinedteam() {
     level endon("game_ended");
     for (;;) {
         waittill_any_2("joined_team", "joined_spectators");
-        var_586dc9dc0cf668ad = getdvarint(@"hash_b1d561f9a9241e09", 100);
+        var_586dc9dc0cf668ad = getdvarint(@"scr_player_maxhealth", 100);
         if (isbot(self)) {
             wait 0.1;
         }

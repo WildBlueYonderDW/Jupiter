@@ -1,0 +1,16 @@
+{
+    "#id": "stamina_bar",
+    "#description": "&OPTIONS/STAMINA_BAR_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "toggleStaminaBar",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#name": "&OPTIONS/STAMINA_BAR"
+}

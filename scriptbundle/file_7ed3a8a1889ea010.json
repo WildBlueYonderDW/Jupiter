@@ -1,0 +1,46 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_c4"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_claymore"
+        },
+        {
+            "#weight": 80,
+            "#itemspawnentry": "ob_jup_item_lethal_frag"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_semtex"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_thermite"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_lethal_throwingknife"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_molotov"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_breacher_drone"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_bunkerbuster"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_lethal_snowball"
+        }
+    ]
+}

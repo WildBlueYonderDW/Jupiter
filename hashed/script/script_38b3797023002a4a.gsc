@@ -123,7 +123,7 @@ function onstartgametype() {
 // Checksum 0x0, Offset: 0x7d6
 // Size: 0x19
 function updategametypedvars() {
-    setdvar(@"hash_58f6ddd5e5892406", 0);
+    setdvar(@"calloutmarkerping_enabled", 0);
     scripts\mp\gametypes\common::updatecommongametypedvars();
 }
 

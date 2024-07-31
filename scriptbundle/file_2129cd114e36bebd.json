@@ -1,0 +1,505 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_cp01_sh_aromeo410_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_cp01_sh_aromeo410_mp",
+    "#platform": "platform_jup_sm_coscar635",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_5",
+    "#hash_c4cf6deda5b42f55": "wpn_wm_jup_cp01_sh_aromeo410",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_cp01_sh_aromeo410_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_cp01_sh_aromeo410_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_shotgun",
+    "#category": "&WEAPON/SUBCLASS_ID_5",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 1500,
+    "#hash_1328c6a635d409bf": {
+        "#zoffset": -0.1,
+        "#priority": 1
+    },
+    "#lootid": 30275,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 2,
+    "#ref": "jup_cp01_sh_aromeo410",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&JUP_WEAPON/AROMEO410_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_CP01_SH_AROMEO410",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "4",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault selectsemi ironsdefault",
+    "#asset": "jup_cp01_sh_aromeo410_mp",
+    "#hash_a576fed8a47105fb": {
+        "#zoffset": 1,
+        "#yoffset": -2,
+        "#priority": 1
+    },
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_shotgun",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_risr_reflex01",
+                    "#lootid": 21763,
+                    "#challengeid": 17109
+                },
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_optics",
+                    "#lootid": 30255,
+                    "#challengeid": 17964
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_bar_long",
+                    "#lootid": 30274
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_frontpieces",
+                    "#lootid": 30252
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_pgrip_ass",
+                    "#lootid": 22343
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_reargrips",
+                    "#lootid": 30258
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stock_hvycarbine",
+                    "#lootid": 22335
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_backpieces",
+                    "#lootid": 30253
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_sh_410",
+                    "#lootid": 32594
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_muzzles",
+                    "#lootid": 30257
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_grip_vert_03",
+                    "#lootid": 21795
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_undermounts",
+                    "#lootid": 30256
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_mag_8_410g",
+                    "#lootid": 29777
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_magazines",
+                    "#lootid": 30254
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stock_assault",
+                    "#lootid": 30279
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_410g_sl",
+                    "#lootid": 36930,
+                    "#challengeid": 17110
+                },
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_gunperks",
+                    "#lootid": 30261,
+                    "#challengeid": 18000
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_extras",
+                    "#lootid": 30260
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_pgrip_skelass",
+                    "#lootid": 30006
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stock_taclight",
+                    "#lootid": 22333
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stock_ultlight",
+                    "#lootid": 22331
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_pgrip_skelsnp",
+                    "#lootid": 30005
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_bar_shorthvy",
+                    "#lootid": 22320,
+                    "#challengeid": 17113
+                },
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_ob_3",
+                    "#challengeid": 18036
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stock_carbine",
+                    "#lootid": 22334
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_pgrip_tac",
+                    "#lootid": 22344
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_mag_32_410g",
+                    "#lootid": 30281
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stock_ultlight2",
+                    "#lootid": 22332
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_410g_ball",
+                    "#lootid": 36929
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_stockno",
+                    "#lootid": 22328
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_410g_db",
+                    "#lootid": 36931
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_barsil",
+                    "#lootid": 31600,
+                    "#challengeid": 17112
+                },
+                {
+                    "#challengeref": "jup_cp01_sh_aromeo410_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_tuning",
+                    "#lootid": 30262,
+                    "#challengeid": 18072
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_cp01_sh_aromeo410_amps",
+                    "#lootid": 47195
+                }
+            ],
+            "#level": 23
+        }
+    ],
+    "#displayorder": 34,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

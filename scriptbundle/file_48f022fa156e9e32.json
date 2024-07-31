@@ -1,0 +1,12 @@
+{
+    "#id": "ground_vehicle_fire",
+    "#description": "&OPTIONS/GR_VEH_FIRE_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_116519c6d7451368"
+        }
+    ],
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/GR_VEH_FIRE"
+}

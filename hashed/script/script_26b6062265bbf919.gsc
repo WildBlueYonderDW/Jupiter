@@ -86,7 +86,7 @@ function function_5a3e8cbaff52f088(infil, spot_index) {
     }
     self lerpfovscalefactor(0, 0);
     if (isdefined(level.scr_viewmodelanim[self.animname]) && isdefined(level.scr_viewmodelanim[self.animname]["defender_infil" + "_" + infil.subtype + "_intro"])) {
-        setdvar(@"hash_7eb1641737ab83b7", 0);
+        setdvar(@"depthSortViewmodel", 0);
     }
     self lerpviewangleclamp(1, 0.25, 0.25, 0, 0, 0, 0);
     thread resetfov();
@@ -139,7 +139,7 @@ function player_infil_end() {
     self lerpfovbypreset("default_2seconds");
     self clearclienttriggeraudiozone(1);
     scripts\mp\utility\player::setdof_default();
-    setdvar(@"hash_7eb1641737ab83b7", 0);
+    setdvar(@"depthSortViewmodel", 0);
 }
 
 // Namespace defender_infil / namespace_61fc244810dffc67
@@ -168,10 +168,10 @@ function infilthink(team, scene_name) {
     }
     thread vehiclethink(team, self.scene_node, scene_name);
     level waittill("infil_started");
-    setdvar(@"hash_dc64fb89118cae31", 1);
+    setdvar(@"r_spotLightEntityShadows", 1);
     level notify("start_scene");
     level waittill("prematch_over");
-    setdvar(@"hash_dc64fb89118cae31", 0);
+    setdvar(@"r_spotLightEntityShadows", 0);
     while (isdefined(self.actors)) {
         waitframe();
     }

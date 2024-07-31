@@ -227,7 +227,7 @@ function supportbox_used(grenade) {
 function supportbox_hideandshowaftertime(time) {
     self endon("death");
     self endon("missile_stuck");
-    hideduration = getdvarfloat(@"hash_ed9a51db36904e30", 0);
+    hideduration = getdvarfloat(@"scr_support_box_proj_hide_duration", 0);
     self setscriptablepartstate("visibility", "hide", 0);
     wait hideduration;
     self.madedamageable = 1;

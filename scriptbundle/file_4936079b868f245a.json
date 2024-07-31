@@ -1,0 +1,27 @@
+{
+    "#id": "codcaster_option_team_identity_cycling",
+    "#description": "&CODCASTER/SWAP_TEAMS_DEFAULT",
+    "#labels": [
+        {
+            "#reference": "&CODCASTER/SWAP_TEAMS_DEFAULT"
+        },
+        {
+            "#reference": "&CODCASTER/TEAM_IDENTITY_CUSTOM"
+        }
+    ],
+    "#hash_a20785232d9c4057": "codcaster_team_identity",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "Dropdown",
+    "#name": "&CODCASTER/TEAM_IDENTITY",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_51ecad79fa86080f"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_51ecae79fa8609c2"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_187046fbc04e6956"
+        }
+    ]
+}

@@ -1,0 +1,371 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_lm_foxtrot",
+    "#hash_79839b907716ac41": "icon_weapon_lm_foxtrot",
+    "#platform": "platform_iw9_lm_foxtrot",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_3",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_lm_foxtrot_v1",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_lm_foxtrot",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_lmg",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_lm_foxtrot_v2",
+    "#category": "&WEAPON/SUBCLASS_ID_3",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 3000,
+    "#botpersonality": "camper|run_and_gun",
+    "#lootid": 11331,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 1,
+    "#ref": "iw9_lm_foxtrot",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/LM_FOXTROT",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/LM_FOXTROT",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault ironsdefault",
+    "#asset": "iw9_lm_foxtrot_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_lmg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_undermounts",
+                    "#lootid": 10620,
+                    "#challengeid": 9259,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_ob_1",
+                    "#challengeid": 18738
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_muzzles",
+                    "#lootid": 11006,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_long_p01",
+                    "#lootid": 929,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_frontpieces",
+                    "#lootid": 11101,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_optics",
+                    "#lootid": 10764,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "belt_lm_large_p01",
+                    "#lootid": 1825,
+                    "#challengeid": 9251,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_magazines",
+                    "#lootid": 11128,
+                    "#challengeid": 18805,
+                    "#bucket": 1
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_extras",
+                    "#lootid": 10741,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_ar_assault_p01",
+                    "#lootid": 1856,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_backpieces",
+                    "#lootid": 11123,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "fourx04",
+                    "#lootid": 2743,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "comp_ar_06",
+                    "#lootid": 3821,
+                    "#bucket": 2
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_reargrips",
+                    "#lootid": 10617,
+                    "#challengeid": 9316,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_ob_3",
+                    "#challengeid": 18872
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_lm_short_p01",
+                    "#lootid": 951,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_mike16",
+                    "#lootid": 1532,
+                    "#bucket": 3
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_ar_mike16",
+                    "#lootid": 11325,
+                    "#bucket": 3,
+                    "#loottype": "WEAPON"
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "grip_vert05",
+                    "#lootid": 1138,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "foxtrot_gunperks",
+                    "#lootid": 11115,
+                    "#challengeid": 9074,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_lm_foxtrot_camo_ob_4",
+                    "#challengeid": 18939
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_lm_foxtrot_tuning",
+                    "#lootid": 11792,
+                    "#bucket": 3
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        }
+    ],
+    "#displayorder": 101,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.85,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

@@ -1,0 +1,313 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#image": "hud_icon_weapon_sm_acharlie45",
+    "#hash_79839b907716ac41": "icon_weapon_sm_acharlie45",
+    "#platform": "platform_iw9_sm_acharlie45",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_sm_acharlie45_v2",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_sm_acharlie45",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_smg",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_sm_acharlie45_v3",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#botpersonality": "run_and_gun|cqb",
+    "#lootid": 26710,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#ref": "iw9_sm_acharlie45",
+    "#botdifficulty": "recruit|regular|hardened|veteran",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_cc6c9112f9a80ac": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "full_auto_fire_mode",
+    "#desc": "&PERKS/SM_ACHARLIE45",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/SM_ACHARLIE45",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag selectsemi gripdefault ironsdefault",
+    "#asset": "iw9_sm_acharlie45_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_smg",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_acharlie45",
+                    "#lootid": 26701
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_p43",
+                    "#lootid": 26709
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_p43",
+                    "#lootid": 26703
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sm_p43",
+                    "#lootid": 26704
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_sm_p43",
+                    "#lootid": 26705
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "selectsemi_acharlie45",
+                    "#lootid": 30817
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_heavy_p43",
+                    "#lootid": 27555,
+                    "#challengeid": 15561,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_backpieces",
+                    "#lootid": 30022,
+                    "#challengeid": 18801,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_optics",
+                    "#lootid": 30020,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_sm_ass_p43",
+                    "#lootid": 27564,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_reargrips",
+                    "#lootid": 30023,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_gunperks",
+                    "#lootid": 30025,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_heavy_p43",
+                    "#lootid": 27559,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_frontpieces",
+                    "#lootid": 30028,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_muzzles",
+                    "#lootid": 30027,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sm_small_p43",
+                    "#lootid": 27565,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_magazines",
+                    "#lootid": 30024,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_undermounts",
+                    "#lootid": 30026,
+                    "#challengeid": 15562,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_ob_2",
+                    "#challengeid": 18868
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_long_p43",
+                    "#lootid": 27560,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "acharlie45_extras",
+                    "#lootid": 30021,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_assault_p43",
+                    "#lootid": 27557,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_sm_erg_p43",
+                    "#lootid": 27562,
+                    "#challengeid": 15563,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_ob_3",
+                    "#challengeid": 18935
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_sm_large_p43",
+                    "#lootid": 27566,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_sm_short_p43",
+                    "#lootid": 27558,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_light_p43",
+                    "#lootid": 27556,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_sm_tac_p43",
+                    "#lootid": 27563,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "barsil_sm_p43",
+                    "#lootid": 27561,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "stock_sm_lgt_tactical_p43",
+                    "#lootid": 27554,
+                    "#challengeid": 15564,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_sm_acharlie45_camo_ob_4",
+                    "#challengeid": 19002
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "iw9_sm_acharlie45_tuning",
+                    "#lootid": 26707,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        }
+    ],
+    "#displayorder": 24,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.95,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

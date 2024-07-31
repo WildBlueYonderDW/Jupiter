@@ -92,7 +92,7 @@ function inittankspawns() {
     level.tankspawncmd_2 = getstructarray("cmd_bradley_2", "targetname");
     level.tankspawncmd_3 = getstructarray("cmd_bradley_3", "targetname");
     level.tankspawncmd_1 = getstructarray("cmd_bradley_1", "targetname");
-    if (getdvarint(@"hash_3bfe19e3234d5dff", 0) == 0) {
+    if (getdvarint(@"scr_bradley_spawner", 0) == 0) {
         return;
     }
     gametypes = ["cmd", "dom", "war", "arm", "conflict", "risk"];

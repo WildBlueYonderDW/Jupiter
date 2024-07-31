@@ -442,7 +442,7 @@ function function_dc0bc83a31193177() {
         self.var_1f0a019572c9f8e2 = undefined;
         self disablephysicaldepthoffieldscripting();
     }
-    self setclientdvar(@"hash_df1dc712c4a91588", 65);
+    self setclientdvar(@"cg_fov", 65);
     self setclientdvar(@"hash_71c6c0b8428e44a7", 0);
 }
 

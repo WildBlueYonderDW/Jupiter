@@ -1,0 +1,31 @@
+{
+    "#id": "toggle_hold_sprint_gamepad",
+    "#description": "&OPTIONS/SPRINT_GAMEPAD_DESC",
+    "#labels": [
+        {
+            "#reference": "&GAME/TOGGLE"
+        },
+        {
+            "#reference": "&GAME/HOLD"
+        }
+    ],
+    "#hash_a20785232d9c4057": "holdSprintGamepad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_38c5ce60a34b4b87"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_2c480f46e7d758da"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_ca9ecff9d1de5a91",
+            "#type": "DVAR"
+        }
+    ],
+    "#name": "&OPTIONS/SPRINT_SUPERSPRINT",
+    "#hash_5d30c39665a86e5d": "&OPTIONS/SPRINT_DISABLED_DESC"
+}

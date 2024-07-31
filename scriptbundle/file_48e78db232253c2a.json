@@ -1,0 +1,28 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 200,
+            "#itemspawnlist": "ob_jup_items_container_clothing_sublist",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_essence_low"
+        },
+        {
+            "#weight": 669
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_aether_tools_yellow"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

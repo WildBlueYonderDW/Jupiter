@@ -1,0 +1,33 @@
+{
+    "#hash_4869dccb0bd30d1b": [
+        {
+            "#isinverted": 0,
+            "#condition": "IsCrossLaunchJUPToIW9Enabled"
+        },
+        {
+            "#isinverted": 1,
+            "#condition": "IsClosedInternalAlphaBuild"
+        }
+    ],
+    "#name": "&LUA_MENU/TEXTCHAT_GAMENAME_MW2",
+    "#buttons": [
+        {
+            "#hash_b1f6e7f37c9b34c5": "crosslaunch_iw9_mp",
+            "#hash_b1eda3bc435dc651": [
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "CrossLaunch_IW9_MP"
+        },
+        {
+            "#hash_b1f6e7f37c9b34c5": "crosslaunch_iw9_sp",
+            "#hash_b1eda3bc435dc651": [
+            ],
+            "#hash_a03063f70c2c1c1": 0,
+            "#hash_4869dccb0bd30d1b": [
+            ],
+            "#hash_53104dbc69ac0ff": "CrossLaunch_IW9_SP"
+        }
+    ]
+}

@@ -40,7 +40,7 @@ function function_9fcc9920ba3dbe3() {
     function_9399e094c1c4b1e9();
     function_e15ac3a5829a9bcf();
     function_68c858c6e63409f3(#"JumpMaster");
-    function_68c858c6e63409f3(#"biometricScan");
+    function_68c858c6e63409f3(#"hash_ad70e3e9fcd18b68");
     function_68c858c6e63409f3(#"hash_c4248c397610045f");
     function_68c858c6e63409f3(#"hash_5bb2faff54a876d5");
     function_68c858c6e63409f3(#"hash_be105437211ef09c");

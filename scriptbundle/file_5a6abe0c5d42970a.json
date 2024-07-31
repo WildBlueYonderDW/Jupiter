@@ -1,0 +1,57 @@
+{
+    "#id": "mount_config_kbm",
+    "#description": "&PLATFORM/MOUNT_CONFIG_DESC",
+    "#image": "jup_ui_options_image_weaponmount",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&OPTIONS/DOUBLE_TAP_ADS"
+        },
+        {
+            "#reference": "&OPTIONS/ADS_PLUS_MELEE"
+        },
+        {
+            "#reference": "&OPTIONS/ADS"
+        },
+        {
+            "#reference": "&OPTIONS/AUTO_MOUNT_TOGGLE"
+        },
+        {
+            "#reference": "&OPTIONS/AUTO_MOUNT_HOLD"
+        },
+        {
+            "#reference": "&OPTIONS/ADS_PLUS_INTERACT"
+        }
+    ],
+    "#hash_a20785232d9c4057": "mountButtonConfigKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_456cdd7cb457c0c1"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_6c525e44b6b751d7"
+        }
+    ],
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95c572a655d9b5af": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_960c72a65628781f": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/MOUNT_CONFIG",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_6c525e44b6b751d7"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -1,0 +1,22 @@
+{
+    "#raritydef": "%hash_47748ff97b0f469c",
+    "#pingvo": "#hash_b7b1235979dd3d61",
+    "#hash_88aff7a87289757d": 0,
+    "#maxcount": 2,
+    "#titlestring": "&EQUIPMENT/GAS_BR",
+    "#hash_bbae53787b1abf3e": 1,
+    "#hash_13fc3679e0d849db": 1,
+    "#descstring": "&EQUIPMENT/GAS_OB_DESC",
+    "#ref": "equip_gas_grenade",
+    "#inventoryslot": "Generic",
+    "#dropsfx": "#hash_617eac73db6652c2",
+    "#lootidtype": "equipment",
+    "#hash_8464122fb6575536": 1,
+    "#type": "tactical",
+    "#subtype": "",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_eb3e145cf5d8b49e",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_equipment_gas",
+    "#scriptable": "%hash_6f13203567f31ed"
+}

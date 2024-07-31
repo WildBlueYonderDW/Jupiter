@@ -1,0 +1,38 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 20,
+            "#itemspawnlist": "ob_jup_items_container_list_pictures"
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 2,
+            "#weight": 120,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_folder"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 30,
+            "#itemspawnentry": "ob_jup_item_generic_personal_brokenglasses"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 30,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_comicbook"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_folder_sensitive"
+        },
+        {
+            "#weight": 3,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_comicbook_firsted"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_folder_classified"
+        }
+    ]
+}

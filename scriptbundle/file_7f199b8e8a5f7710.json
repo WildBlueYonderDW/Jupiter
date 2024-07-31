@@ -1,0 +1,17 @@
+{
+    "#id": 59,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_gamemode"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_e5eaa469da4ba03f",
+    "#sharedname": "#defuse"
+}

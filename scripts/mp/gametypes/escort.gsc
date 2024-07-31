@@ -176,7 +176,7 @@ function onstartgametype() {
         game["defenders"] = oldattackers;
         if (istrue(game["firstRoundAllZonesHacked"])) {
             setoverridewatchdvar("timelimit", game["timePassedInSeconds"][game["defenders"]]);
-            setdvar(@"hash_308aa4aa717d1b73", gettimelimit());
+            setdvar(@"ui_timelimit", gettimelimit());
         }
     }
     foreach (entry in level.teamnamelist) {
@@ -469,7 +469,7 @@ function spawnescortvehicle(startnode) {
     vehicle.speedmultiplier = 1;
     vehicle.var_20eb6b3f6aa4f46f = 0.5;
     vehicle.currnodeindex = startnode;
-    vehicle.useP2P = 0;
+    vehicle.var_abeceaa25490ff4a = 0;
     level thread function_3129b5cf1b77c634(vehicle);
     thread scripts\cp_mp\vehicles\vehicle_collision::vehicle_collision_updateinstance(vehicle);
     return vehicle;
@@ -495,7 +495,7 @@ function function_7706e4552129710c(startnode) {
         vehicle thread function_7318c4542deb6762(level.var_bccbe1ff8f6ea962);
     }
     if (istrue(level.var_b5b193ddb90ac26)) {
-        vehicle.canStopByDefenders = 1;
+        vehicle.var_6028c8ac807409c0 = 1;
     }
     if (istrue(level.var_d64a2d9f18e2a1b6)) {
         vehicle.demigodmode = 1;
@@ -518,7 +518,7 @@ function function_7706e4552129710c(startnode) {
     endnode = pathnodes[pathnodes.size - 1];
     vehicle.pathnodes = pathnodes;
     if (istrue(level.var_9c7ce92ca0bfa182) || isstruct(startnode)) {
-        vehicle.useP2P = 1;
+        vehicle.var_abeceaa25490ff4a = 1;
         vehicle addcomponent("p2p");
         vehicle thread function_c1bc249b0499979e();
     } else {
@@ -652,7 +652,7 @@ function function_367f87c96dccaf2() {
             var_8fb02da86884df3f = 0;
         }
         if (var_8fb02da86884df3f >= 2) {
-            if (!istrue(self.useP2P) && isdefined(self.pathnodes[self.var_6bb0ab1fe092bd5d - 1])) {
+            if (!istrue(self.var_abeceaa25490ff4a) && isdefined(self.pathnodes[self.var_6bb0ab1fe092bd5d - 1])) {
                 self startpath(self.pathnodes[self.var_6bb0ab1fe092bd5d - 1]);
                 var_8fb02da86884df3f = 0;
             }
@@ -712,7 +712,7 @@ function function_7d5057db2f8ddb6f(tank, objidnum) {
             player.var_3a9ae1fe9210a5b7 = array_contains(nearbydefenders, player);
         }
         tank.contested = 0;
-        if (istrue(tank.canStopByDefenders)) {
+        if (istrue(tank.var_6028c8ac807409c0)) {
             if (shouldmove && nearbydefenders.size > 0) {
                 tank.contested = 1;
                 shouldmove = 0;
@@ -816,7 +816,7 @@ function function_221a50fb1dadfc46(speed) {
     } else {
         setomnvar("ui_wm_escort_dir", ter_op(self.veh_pathdir == "forward", 1, -1));
     }
-    if (self.useP2P) {
+    if (self.var_abeceaa25490ff4a) {
         if (speed == 0) {
             self function_a7fac0397762d7a6("p2p", "pause", 1);
         } else {
@@ -833,7 +833,7 @@ function function_221a50fb1dadfc46(speed) {
 // Checksum 0x0, Offset: 0x3f0f
 // Size: 0x2f
 function function_796a1097d8a12f6a() {
-    if (self.useP2P) {
+    if (self.var_abeceaa25490ff4a) {
         return ips_to_mph(self function_210ad508dfc813a2("p2p", "manualSpeed"));
     }
     return self vehicle_getspeed();
@@ -1132,7 +1132,7 @@ function function_b63c307e88f55d86(vehicle, objidnum) {
     var_b8d9c602e284684e = 900;
     while (vehicle.progress != 1) {
         waitframe();
-        if (!istrue(vehicle.useP2P)) {
+        if (!istrue(vehicle.var_abeceaa25490ff4a)) {
             if (!isdefined(vehicle.var_6bb0ab1fe092bd5d)) {
                 vehicle.var_6bb0ab1fe092bd5d = 1;
             }

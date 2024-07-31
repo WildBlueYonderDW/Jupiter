@@ -115,7 +115,7 @@ function _processusethink(equipment) {
     }
     self endon("death_or_disconnect");
     self endon("emp_started");
-    interactduration = (getdvarfloat(@"hash_b22bb1a48299003b", 3) - getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5)) * 1000;
+    interactduration = (getdvarfloat(@"perk_hack_equipment_time", 3) - getdvarfloat(@"perk_hack_equipment_success_time", 0.5)) * 1000;
     var_b8cf204dd62d457f = gettime() + interactduration;
     while (var_b8cf204dd62d457f > gettime()) {
         if (!self usebuttonpressed()) {
@@ -236,8 +236,8 @@ function _updatehackprogressomnvar() {
     self waittill("interact_started");
     var_2646e75e629259a6 = 1000;
     var_137d951e4d233a68 = 500;
-    var_84fdeec8cd47b94c = getdvarfloat(@"hash_b22bb1a48299003b", 3) * 1000;
-    successduration = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5) * 1000;
+    var_84fdeec8cd47b94c = getdvarfloat(@"perk_hack_equipment_time", 3) * 1000;
+    successduration = getdvarfloat(@"perk_hack_equipment_success_time", 0.5) * 1000;
     barduration = var_84fdeec8cd47b94c - var_2646e75e629259a6 - successduration;
     var_b8cf204dd62d457f = gettime() + var_84fdeec8cd47b94c + var_137d951e4d233a68;
     var_b7eb0c292517d42d = gettime() + var_2646e75e629259a6;
@@ -300,7 +300,7 @@ function _waituntilinteractfinished(streakinfo) {
     }
     self waittill("interact_finished");
     if (streakinfo.interactstate == 2) {
-        successtime = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5);
+        successtime = getdvarfloat(@"perk_hack_equipment_success_time", 0.5);
         wait successtime;
     }
 }

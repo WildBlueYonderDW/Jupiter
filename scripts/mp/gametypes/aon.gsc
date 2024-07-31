@@ -80,7 +80,7 @@ function initializematchrules() {
     setdynamicdvar(@"hash_9ce4576a217f3616", getmatchrulesdata("aonData", "perkKills4"));
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
 }
 
 // Namespace aon / scripts\mp\gametypes\aon

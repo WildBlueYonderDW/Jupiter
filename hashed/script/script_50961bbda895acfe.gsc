@@ -56,7 +56,7 @@ function main() {
     level._effect["vfx_lux_blowing_leaves"] = loadfx("vfx/iw9/level/mp_luxury/vfx_lux_blowing_leaves.vfx");
     level._effect["vfx_lux_falling_leaves"] = loadfx("vfx/iw9/level/mp_luxury/vfx_lux_falling_leaves.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

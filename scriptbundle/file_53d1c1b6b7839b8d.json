@@ -1,0 +1,67 @@
+{
+    "#hash_fef5d84db3c8e7f7": "%hash_139b2e08bbbf2ed7",
+    "#hash_204e8fd8424a6542": 0,
+    "#hash_289be7ed6a138df8": 1,
+    "#hash_96e932e5fc805af8": [
+        {
+            "#movetype": "wander",
+            "#speedthreshold": 30
+        },
+        {
+            "#movetype": "walk",
+            "#speedthreshold": 56
+        },
+        {
+            "#movetype": "run",
+            "#speedthreshold": 120
+        },
+        {
+            "#movetype": "sprint",
+            "#speedthreshold": 170
+        },
+        {
+            "#movetype": "super_sprint",
+            "#speedthreshold": 256
+        }
+    ],
+    "#hash_4cd89215083d17cd": 1,
+    "#hash_9d5b50c4ecfbf11f": 1,
+    "#hash_4f4c7fe3debb81dd": 1,
+    "#hash_fbb461f12b47eaa3": 2000,
+    "#hash_106f0eccad94d9fa": 300,
+    "#enablemelee": 1,
+    "#hash_e2b91916dda5f27f": [
+    ],
+    "#hash_f42bfa0e947d5b2b": 0,
+    "#hash_658057c64a5cf3f1": 0,
+    "#aicategory": "normal",
+    "#hash_d0ede1e06e380f47": 67.5,
+    "#healthscriptbundle": "health_zombie_hellhound",
+    "#hash_333751673b2281dc": 65,
+    "#hash_691b16f55274b1c5": [
+        {
+            "#elementtype": "cold"
+        }
+    ],
+    "#hash_23731ac359988186": 0,
+    "#hash_7410c30336739540": 1,
+    "#hash_b9d7534a5c901857": 0,
+    "#hash_878a9f80b05effb": 1,
+    "#hash_96a98119d705d6c2": 0,
+    "#hash_d1ded916cc30d50c": [
+    ],
+    "#metabones": "metabones_zombie_hellhound",
+    "#hash_f6fe19952d45625e": 1,
+    "#biterange": 64,
+    "#meleedamage": 20,
+    "#hash_e39c9bda85ea5d4e": 1,
+    "#hash_3a54f74770e61046": 30,
+    "#hash_4e3307a692b95a11": 1,
+    "#hash_3630efe5619a6064": 60,
+    "#hash_8d29cdf5f3f3dd2c": 750,
+    "#hash_a18e13a8f1d43f20": 0,
+    "#meleerange": 65,
+    "#hash_a98faeef4a48e76": 16.25,
+    "#hash_68efc88ffa0aa2c2": 5000,
+    "#hash_b9a7a1856c211959": 1
+}

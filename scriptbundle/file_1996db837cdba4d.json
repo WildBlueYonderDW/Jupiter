@@ -1,0 +1,22 @@
+{
+    "#hash_3d8dd5eabd3c3fb1": [
+        {
+            "#challengeref": "jup_wz_chase_economy_1",
+            "#hash_13efca28714bb3df": "&"
+        },
+        {
+            "#challengeref": "jup_wz_chase_economy_2",
+            "#hash_13efca28714bb3df": "&"
+        },
+        {
+            "#challengeref": "jup_wz_chase_economy_3",
+            "#hash_13efca28714bb3df": "&"
+        },
+        {
+            "#challengeref": "jup_wz_chase_economy_4",
+            "#hash_13efca28714bb3df": "&"
+        }
+    ],
+    "#name": "&MP_BR_FRONTEND/WZ_CHALLENGE_TYPE_ECONOMY",
+    "#hash_9e6896b3dba79fd2": "icon_wz_challenges_econ"
+}

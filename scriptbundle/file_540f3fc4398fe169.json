@@ -1,0 +1,33 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 60,
+            "#itemspawnlist": "ob_jup_items_container_medical_box_sublist",
+            "#mincount": 1
+        },
+        {
+            "#weight": 400
+        }
+    ],
+    "#itementries": [
+        {
+            "#maxcount": 2,
+            "#weight": 40,
+            "#itemspawnentry": "ob_jup_item_tactical_adrenaline",
+            "#mincount": 1
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_revive_self_revive"
+        },
+        {
+            "#maxcount": 2,
+            "#weight": 25,
+            "#itemspawnentry": "ob_jup_item_gasmask"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_gasmask_durable"
+        }
+    ]
+}

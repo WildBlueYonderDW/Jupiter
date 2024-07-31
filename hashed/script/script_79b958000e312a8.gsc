@@ -40,7 +40,7 @@ function function_4c70ed79848813ab(musicstate) {
 // Checksum 0x0, Offset: 0x18f
 // Size: 0x6e
 function function_aadc3bf2875b3408(volume) {
-    if (getdvarint(@"hash_4b32f268c08cd4e8", 0) == 1) {
+    if (getdvarint(@"snd_volume_mute", 0) == 1) {
         return;
     }
     clamp(volume, 0, 1);

@@ -1,0 +1,38 @@
+{
+    "#hash_5fa2f1ef669d2826": [
+        {
+            "#hash_d9a25092bed9b107": 267,
+            "#startround": 1
+        },
+        {
+            "#hash_d9a25092bed9b107": 472,
+            "#startround": 11
+        },
+        {
+            "#hash_d9a25092bed9b107": 1306,
+            "#startround": 16
+        },
+        {
+            "#hash_d9a25092bed9b107": 3333,
+            "#startround": 21
+        },
+        {
+            "#hash_d9a25092bed9b107": 6250,
+            "#startround": 26
+        },
+        {
+            "#hash_d9a25092bed9b107": 7777,
+            "#startround": 31
+        },
+        {
+            "#hash_d9a25092bed9b107": 5417,
+            "#startround": 36
+        }
+    ],
+    "#hash_de69a4842af7b496": 0.3,
+    "#hash_cc7ba2d487d8c0de": 1,
+    "#hash_a9749b946a7f794b": 1,
+    "#maxhealth": 240000,
+    "#hash_88ce9d03e551718a": 55,
+    "#hash_46452b34108df46a": 667
+}

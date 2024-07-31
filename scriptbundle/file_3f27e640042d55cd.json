@@ -1,0 +1,22 @@
+{
+    "#hash_5267b7b6ac48c6c9": "time",
+    "#hash_d49649109607c847": "ArchetypeGeneric",
+    "#fields": [
+        {
+            "#step_increment": 1,
+            "#field_name": "bundle_index",
+            "#max_value": 16
+        },
+        {
+            "#step_increment": 1,
+            "#field_name": "time",
+            "#max_value": 1000
+        },
+        {
+            "#step_increment": 1,
+            "#field_name": "progress_display_type_index",
+            "#max_value": 4
+        }
+    ],
+    "#hash_1cb0703efcfa15d4": "SetPowerupFields"
+}

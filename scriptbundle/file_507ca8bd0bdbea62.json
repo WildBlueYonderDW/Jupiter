@@ -1,0 +1,23 @@
+{
+    "#id": "sound_mono",
+    "#description": "&OPTIONS/MONO_AUDIO_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "SoundMono",
+    "#hash_58d61dc3eef940dc": "AUDIO",
+    "#type": "ToggleButton",
+    "#name": "&OPTIONS/MONO_AUDIO",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_485f73c908564b83"
+        }
+    ],
+    "#hash_66f8d4776faaa59c": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -1,0 +1,21 @@
+{
+    "#id": "shoulder_swap_shared_input_kbm",
+    "#description": "&OPTIONS/CHANGE_CAMERA_SIDE_SHARED_INPUT_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/DEDICATED_KEYBIND"
+        },
+        {
+            "#reference": "&OPTIONS/SPRINT_TACTICALSPRINT_STEADYAIM_KEYBIND"
+        }
+    ],
+    "#hash_a20785232d9c4057": "shoulderSwapSharedInputKBM",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_5de29175201d4ed4"
+        }
+    ],
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/CHANGE_CAMERA_SIDE_SHARED_INPUT"
+}

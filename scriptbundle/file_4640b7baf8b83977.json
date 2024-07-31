@@ -1,0 +1,18 @@
+{
+    "#id": "nvidia_nis_sharpness",
+    "#description": "&OPTIONS/NVIDIA_NIS_SHARPNESS_DESC",
+    "#dvar": "@hash_13952d25a0331393",
+    "#hash_ea45bc5a5e9ac302": 1,
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#hash_15963d81d6fd6dac": 100,
+    "#hash_5460095effa6dac7": 0,
+    "#hash_df2c0bf51d7fb6ea": 1,
+    "#type": "SliderBarWithEditBox",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/NVIDIA_NIS_SHARPNESS"
+}

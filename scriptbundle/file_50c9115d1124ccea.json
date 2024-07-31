@@ -1,0 +1,16 @@
+{
+    "#id": "akimbo_behavior_gpad",
+    "#description": "&PLATFORM/AKIMBO_BEHAVIOR_DESC",
+    "#image": "jup_ui_options_image_akimbo",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/INDEPENDENT"
+        },
+        {
+            "#reference": "&LUA_MENU/PAIRED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "akimboBehaviorGpad",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/AKIMBO_BEHAVIOR"
+}

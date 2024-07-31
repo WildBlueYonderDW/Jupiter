@@ -1,0 +1,61 @@
+{
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#cost": 1,
+    "#description": "&PERKS/UNDERKILL_DESC",
+    "#hash_b8ab91f0df3fbc22": 0,
+    "#hash_d3b7c0b32f108b2c": "&PERKS/UNDERKILL_DESC",
+    "#image": "icon_perk_slot_underkill_ui",
+    "#hash_79839b907716ac41": "icon_perk_underkill",
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_70774aeb81261100": "none",
+    "#hash_fc9d926ab41cd40f": "icon_perk_slot_underkill_ui",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_927281985a41a6f0": "icon_perk_slot_underkill_ui",
+    "#hash_673e66d59cd548eb": [
+    ],
+    "#hash_5b12006b920a1b6c": "",
+    "#rarity": "COMMON",
+    "#hash_f832c1a2263bb575": "accessory_ui_perk_patch_01_quick_fix_special",
+    "#lootid": 9195,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_1422c913669eec7b": 1,
+    "#model": "accessory_ui_perk_pouch_03_patch_graverobber",
+    "#hash_698d9660aa86750f": [
+    ],
+    "#hash_dea75a49e78d5e7f": 0,
+    "#zombiesextraperks": [
+    ],
+    "#hash_35e7bace987f7fb3": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_4eb4d9f70bdf5432": [
+    ],
+    "#hash_ba12045354dd234f": [
+    ],
+    "#name": "&PERKS/UNDERKILL",
+    "#hash_ff67d6722fb5c557": [
+    ],
+    "#hash_1025dff40f62ddf2": 0,
+    "#hash_885724e5007453be": {
+        "#tacticaltwo": 1,
+        "#hash_578a24222c1dac7b": 1,
+        "#lethaltwo": 1,
+        "#hash_a56823ef95a73f1e": 1,
+        "#geartwo": 1,
+        "#tactical": 1,
+        "#helmet": 1,
+        "#gearone": 1,
+        "#primary": 1,
+        "#lethal": 1,
+        "#super": 1,
+        "#secondary": 1
+    },
+    "#hash_90d691af1d7be5e6": 0,
+    "#hash_1d2551f4185c4b6a": 0,
+    "#hash_c8becf2a1e794ff3": "&LUA_MENU_CP/QUICK_FIX_DESC",
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_9ef1717b1c6de25b": 0,
+    "#hash_9a02cd492767b33": 0
+}

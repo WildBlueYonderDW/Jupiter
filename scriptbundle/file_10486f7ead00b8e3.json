@@ -1,0 +1,22 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 50,
+            "#itemspawnentry": "ob_jup_item_essence_small"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_essence_medium"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_essence_medium2"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_essence_large"
+        }
+    ]
+}

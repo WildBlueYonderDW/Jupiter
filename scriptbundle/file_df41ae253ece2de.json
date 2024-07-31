@@ -1,0 +1,9 @@
+{
+    "#perks": {
+        "#ultimateperk": "specialty_ghost_camo",
+        "#bonusperk": "specialty_quick_fix",
+        "#baseperk1": "specialty_survivor",
+        "#baseperk2": "specialty_tac_gloves"
+    },
+    "#name": "&PERKS/PERK_PACKAGE_BR_TESTPACK_JUP"
+}

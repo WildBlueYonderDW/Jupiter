@@ -1,0 +1,164 @@
+{
+    "#raritydef": "%hash_63ab8ef48c989062",
+    "#pingvo": "#hash_c5eb56a131ee4d21",
+    "#hash_ff1750b480636dc9": 1,
+    "#maxattachments": 5,
+    "#maxcount": 1,
+    "#hash_359e971d09addafc": "#hash_d40e9c698c76a57f",
+    "#titlestring": "&WEAPON/DM_PGOLF1",
+    "#worldmodel": "weapon_wm_sn_mike14_brprop_nophys",
+    "#rarity": 4,
+    "#attachmentslots": [
+        {
+            "#forced": 1,
+            "#excludelist": [
+                {
+                    "#attachment": "arscope_nvg01"
+                },
+                {
+                    "#attachment": "arscope_nvg02"
+                },
+                {
+                    "#attachment": "iw9_minireddot05_tall"
+                }
+            ],
+            "#includelist": [
+                {
+                    "#attachment": "jup_minireddot01_tall"
+                },
+                {
+                    "#attachment": "jup_reflex02_tall"
+                },
+                {
+                    "#attachment": "reflex02_tall"
+                }
+            ],
+            "#slot": "scope"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": "bar_br_p02_pgolf1"
+                },
+                {
+                    "#attachment": "bar_ar_p02_pgolf1"
+                }
+            ],
+            "#slot": "frontpiece"
+        },
+        {
+            "#slot": "backpiece"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "mag_br_p02_pgolf1"
+                }
+            ],
+            "#slot": "magazine"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "jup_silencer_br_02"
+                },
+                {
+                    "#attachment": "jup_silencer_br_01"
+                },
+                {
+                    "#attachment": "jup_silencer_br_04"
+                }
+            ],
+            "#slot": "muzzle"
+        },
+        {
+            "#forced": 1,
+            "#includelist": [
+                {
+                    "#attachment": "pgrip_dm_ass_p02"
+                },
+                {
+                    "#attachment": ""
+                },
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#slot": "reargrip"
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "comb_tactical_p18"
+                },
+                {
+                    "#attachment": "comb_ammo_p18"
+                },
+                {
+                    "#attachment": "comb_ergo_p18"
+                }
+            ],
+            "#slot": "trigger",
+            "#includeall": 1
+        },
+        {
+            "#includelist": [
+                {
+                    "#attachment": ""
+                }
+            ],
+            "#slot": "extra"
+        },
+        {
+            "#excludelist": [
+                {
+                    "#attachment": "ammo_762n_fr"
+                },
+                {
+                    "#attachment": "ammo_762n_hp"
+                },
+                {
+                    "#attachment": "ammo_762n_tr"
+                },
+                {
+                    "#attachment": "ammo_762n_ap"
+                },
+                {
+                    "#attachment": "ammo_762n_op"
+                },
+                {
+                    "#attachment": "ammo_762n_hv"
+                },
+                {
+                    "#attachment": "ammo_762n_db"
+                }
+            ],
+            "#slot": "modifier",
+            "#includeall": 1
+        }
+    ],
+    "#descstring": "&WEAPON/DM_PGOLF1",
+    "#ref": "iw9_dm_pgolf1",
+    "#inventoryslot": "Weapon",
+    "#dropsfx": "#hash_23339f32a414a102",
+    "#lootidtype": "weapon",
+    "#hash_8464122fb6575536": 1,
+    "#type": "weapon",
+    "#subtype": "dm",
+    "#baseweapon": "iw9_dm_pgolf1_mp",
+    "#hash_5a5e50bc261c907a": 1,
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_ec30c0c679067308",
+    "#inventorytype": "Loadout",
+    "#icon": "hud_icon_weapon_dm_pgolf1",
+    "#scriptable": "%hash_316e94da5b235405",
+    "#lifetime": 300,
+    "#denialsfx": "#hash_afeb34a87e316add",
+    "#typestring": "&MP/BR_TYPE_DM"
+}

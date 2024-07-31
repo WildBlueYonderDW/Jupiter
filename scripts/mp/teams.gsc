@@ -75,8 +75,8 @@ function init() {
         function_dd622cd64f483958(team);
     }
     level.teambased = activeteamcount > 1 || getdvarint(@"hash_6bfddbbc0765d353", 0) == 1;
-    setdvar(@"hash_afb03e72b1770af", level.teamnamelist.size);
-    if (getdvarint(@"hash_f16ba8db72f34fc3", 0) != 0 && level.teambased) {
+    setdvar(@"ui_numteams", level.teamnamelist.size);
+    if (getdvarint(@"scr_game_forceuav", 0) != 0 && level.teambased) {
         level thread scripts\cp_mp\killstreaks\uav::function_c11936b9c6c3a076(undefined, 1);
     }
     scripts\mp\utility\spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);

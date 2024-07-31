@@ -28,14 +28,14 @@ function validationerror(errortype, slot, item) {
         errorstring = errorstring + " - " + item;
     }
     /#
-        if (getdvarint(@"hash_58bbcc3e1ff538d1", 0) == 1) {
+        if (getdvarint(@"scr_validate_print", 0) == 1) {
             println(errorstring);
         }
     #/
-    if (getdvarint(@"hash_49f347129c31c40c", 0) == 1) {
+    if (getdvarint(@"scr_validate_assert", 0) == 1) {
         assertmsg(errorstring);
     }
-    if (getdvarint(@"hash_93c750a2b4a79e93", 0) == 1) {
+    if (getdvarint(@"scr_validate_record", 0) == 1) {
         scripts\mp\class::recordvalidationinfraction();
     }
 }
@@ -255,7 +255,7 @@ function function_5a92673db4ece37f(classstruct) {
 // Size: 0x187c
 function validateloadout(loadout) {
     /#
-        if (getdvarint(@"hash_955ca650f9a9bdef", 0) == 1) {
+        if (getdvarint(@"unlockAllItems", 0) == 1) {
             return loadout;
         }
     #/

@@ -170,7 +170,7 @@ function function_443d890d24291fd5(interval, limit) {
             level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371] = array_add(level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371], currentyaw);
         }
     }
-    if (function_b55532d2305486b8() && istrue(level.var_16ef52214ac3a63f.moneysiphon.var_2f1ee623e7fc5c8c)) {
+    if (function_b55532d2305486b8() && istrue(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_2f1ee623e7fc5c8c)) {
         level.var_ed20ae31a47f989f.var_1a5aa18908f2d6b1[self.var_2954ef0ba3ca0371] = [];
         currentyaw = startingyaw;
         currentyaw -= var_f638ffb0f773a822;
@@ -189,8 +189,8 @@ function function_443d890d24291fd5(interval, limit) {
     while (true) {
         var_bd34286de6dc8ec6 = interval;
         var_c36f5a77e92e0b92 = function_946fffe773a4b030();
-        if (var_c36f5a77e92e0b92 && level.var_16ef52214ac3a63f.moneysiphon.depositinterval != 0) {
-            var_bd34286de6dc8ec6 = level.var_16ef52214ac3a63f.moneysiphon.depositinterval;
+        if (var_c36f5a77e92e0b92 && level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.depositinterval != 0) {
+            var_bd34286de6dc8ec6 = level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.depositinterval;
         }
         wait var_bd34286de6dc8ec6;
         var_2403c90e287805e0 = function_946fffe773a4b030();
@@ -200,23 +200,23 @@ function function_443d890d24291fd5(interval, limit) {
                 enabled = 1;
             }
             self setscriptablepartstate("broken_atm", "visible_event");
-            if (istrue(level.var_16ef52214ac3a63f.moneysiphon.var_2f1ee623e7fc5c8c)) {
+            if (istrue(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_2f1ee623e7fc5c8c)) {
                 level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371] = array_combine(level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371], level.var_ed20ae31a47f989f.var_1a5aa18908f2d6b1[self.var_2954ef0ba3ca0371]);
             }
         }
         if (!var_2403c90e287805e0 && var_c36f5a77e92e0b92) {
-            if (istrue(level.var_16ef52214ac3a63f.moneysiphon.var_2f1ee623e7fc5c8c)) {
+            if (istrue(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_2f1ee623e7fc5c8c)) {
                 foreach (bonusyaw in level.var_ed20ae31a47f989f.var_1a5aa18908f2d6b1[self.var_2954ef0ba3ca0371]) {
                     level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371] = array_remove(level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371], bonusyaw);
                 }
             }
             enabled = 0;
             self setscriptablepartstate("broken_atm", "disabled");
-            nextrestart = gettime() + level.var_16ef52214ac3a63f.moneysiphon.var_f9b722c9edce3106 * 1000;
+            nextrestart = gettime() + level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_f9b722c9edce3106 * 1000;
             instancesspawned = level.var_ed20ae31a47f989f.var_c9beeaf4e87bbf73;
             continue;
         }
-        if (var_ed0deab380d4f7e9 >= ter_op(var_2403c90e287805e0 && istrue(level.var_16ef52214ac3a63f.moneysiphon.var_2f1ee623e7fc5c8c), limit * 2, limit)) {
+        if (var_ed0deab380d4f7e9 >= ter_op(var_2403c90e287805e0 && istrue(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_2f1ee623e7fc5c8c), limit * 2, limit)) {
             continue;
         }
         if (!var_2403c90e287805e0 && level.var_ed20ae31a47f989f.var_c9beeaf4e87bbf73 > 0 && instancesspawned >= level.var_ed20ae31a47f989f.var_c9beeaf4e87bbf73) {
@@ -244,9 +244,9 @@ function function_443d890d24291fd5(interval, limit) {
         yawused = level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371][level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371].size - 1];
         level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371] = array_remove_index(level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371], level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371].size - 1);
         if (function_b55532d2305486b8()) {
-            var_f90d0e006a1f717b = ter_op(var_2403c90e287805e0, level.var_16ef52214ac3a63f.moneysiphon.var_e8fb817a73e06aba, getdvarint(@"hash_4483c0761071ff04", 1));
+            var_f90d0e006a1f717b = ter_op(var_2403c90e287805e0, level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_e8fb817a73e06aba, getdvarint(@"hash_4483c0761071ff04", 1));
             var_f90d0e006a1f717b = int(clamp(var_f90d0e006a1f717b, 0, level.br_plunder.quantity.size - 1));
-            var_9714ddda6a6df159 = ter_op(var_2403c90e287805e0, level.var_16ef52214ac3a63f.moneysiphon.var_9714ddda6a6df159, getdvarint(@"hash_c27965972eaeb818", 50));
+            var_9714ddda6a6df159 = ter_op(var_2403c90e287805e0, level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.var_9714ddda6a6df159, getdvarint(@"hash_c27965972eaeb818", 50));
         } else {
             var_f90d0e006a1f717b = int(clamp(getdvarint(@"hash_4483c0761071ff04", 1), 0, level.br_plunder.quantity.size - 1));
             var_9714ddda6a6df159 = getdvarint(@"hash_c27965972eaeb818", 50);
@@ -322,7 +322,7 @@ function function_2cac9989e2b5559a() {
 // Checksum 0x0, Offset: 0x12d3
 // Size: 0x2a
 function function_946fffe773a4b030() {
-    return function_b55532d2305486b8() && istrue(level.var_16ef52214ac3a63f.moneysiphon.active);
+    return function_b55532d2305486b8() && istrue(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6.active);
 }
 
 // Namespace namespace_bbd71179be099380 / namespace_ba90759e150897e3
@@ -330,7 +330,7 @@ function function_946fffe773a4b030() {
 // Checksum 0x0, Offset: 0x1306
 // Size: 0x24
 function function_b55532d2305486b8() {
-    return isdefined(level.var_16ef52214ac3a63f) && isdefined(level.var_16ef52214ac3a63f.moneysiphon);
+    return isdefined(level.var_16ef52214ac3a63f) && isdefined(level.var_16ef52214ac3a63f.var_a5b707e79d910ef6);
 }
 
 /#

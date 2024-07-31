@@ -42,7 +42,7 @@ function main() {
     level._effect["vfx_global_pipe_steam_pressure"] = loadfx("vfx/iw9/level/_global/vfx_global_pipe_steam_pressure.vfx");
     level._effect["vfx_global_trash_flies"] = loadfx("vfx/iw9/level/_global/vfx_global_trash_flies.vfx");
     /#
-        if (getdvar(@"hash_cadf250daffab004") != "<dev string:x1c>") {
+        if (getdvar(@"clientSideEffects") != "<dev string:x1c>") {
         }
     #/
 }

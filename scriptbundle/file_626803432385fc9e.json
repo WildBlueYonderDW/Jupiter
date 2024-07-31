@@ -1,0 +1,27 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_container_locker_sublist",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_backpacks_yellow"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_plate_carriers_yellow"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_essence_low"
+        },
+        {
+            "#weight": 500
+        }
+    ],
+    "#itementries": [
+    ]
+}

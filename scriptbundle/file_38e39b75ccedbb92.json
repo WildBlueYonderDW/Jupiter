@@ -1,0 +1,14 @@
+{
+    "#id": 93,
+    "#keys": [
+        {
+            "#key": "iw9_mgl_edge_item_id"
+        },
+        {
+            "#key": "iw9_mgl_edge_item_count"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_f124f2110601745d",
+    "#sharedname": "#hash_3971fbf1d7a8c855"
+}

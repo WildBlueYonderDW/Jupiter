@@ -131,8 +131,8 @@ function function_208501a7029ab500(instance, part, state, player, var_a5b2c54141
         instance.playersusing = [];
     }
     instance.playersusing[instance.playersusing.size] = player;
-    if (scripts\engine\utility::issharedfuncdefined(#"biometricScan", #"reportKeycardCount")) {
-        [[ scripts\engine\utility::getsharedfunc(#"biometricScan", #"reportKeycardCount") ]](player);
+    if (scripts\engine\utility::issharedfuncdefined(#"hash_ad70e3e9fcd18b68", #"hash_32f3544032634fc7")) {
+        [[ scripts\engine\utility::getsharedfunc(#"hash_ad70e3e9fcd18b68", #"hash_32f3544032634fc7") ]](player);
     }
     instance.var_746c06c00cd6bdc5 = 1;
     player thread scripts\mp\gametypes\br_armory_kiosk::_runpurchasemenu(instance);

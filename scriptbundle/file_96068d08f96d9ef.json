@@ -1,0 +1,10 @@
+{
+    "#id": "backward_action",
+    "#description": "&OPTIONS/MOVE_BACK_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "keyBinding",
+    "#name": "&OPTIONS/MOVE_BACK",
+    "#hash_6cc29e2aa276fd0f": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

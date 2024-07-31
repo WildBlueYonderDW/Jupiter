@@ -259,8 +259,8 @@ function main() {
         registerlaststandweapondvar("iw9_gunless");
         registerlaststandrevivedecayscaledvar(0.5);
         registerlaststandweapondelaydvar(1);
-        setdvar(@"hash_8236ed50fad3839d", 5);
-        setdvar(@"hash_b1dd4b297385282c", 1);
+        setdvar(@"scr_br_spawnprotectiontimer", 5);
+        setdvar(@"scr_br_allowkillstreaks", 1);
         setdvarifuninitialized(@"hash_ddd02929770fcc8c", 0);
         setdvarifuninitialized(@"hash_7a493092f8a1c04c", getdvarint(@"hash_ddd02929770fcc8c", 0));
         setdvarifuninitialized(@"hash_bba79eeb1c990103", 1);
@@ -1843,7 +1843,7 @@ function handlematchscoreboardinfo() {
         return;
     }
     scripts\mp\scoreboard::processmatchscoreboardinfo();
-    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
         if (matchmakinggame() && !privatematch()) {
             setclientmatchdata("isPublicMatch", 1);
         } else {
@@ -2173,7 +2173,7 @@ function watchprematchdone() {
     setomnvar("scriptable_loot_hide", 0);
     level notify("scriptable_loot_hide_off");
     foreach (player in level.players) {
-        player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+        player setclientdvar(@"ui_opensummary", 1);
         if (isalive(player)) {
             player.health = player.maxhealth;
             player startchallengetimer("alive_not_downed");
@@ -3721,7 +3721,7 @@ function function_ad8c1e6228a10058() {
 function updateclientmatchdata(player) {
     scripts\mp\gamelogic::processlobbydataforclient(player);
     scripts\mp\scoreboard::processcommonplayerdataforplayer(player);
-    var_877e2fc32734dd14 = getdvarint(@"hash_1bc373211683e0b6", 0);
+    var_877e2fc32734dd14 = getdvarint(@"online_mp_clientmatchdata_enabled", 0);
     if (var_877e2fc32734dd14) {
         player sendclientmatchdataforclient();
     }
@@ -4621,7 +4621,7 @@ function handlebrdefeatedpostgamestate(teamplacement) {
     player setclientomnvar("ui_br_squad_eliminated_active", 1);
     player setclientomnvar("ui_round_end_title", game["round_end"]["defeat"]);
     player setclientomnvar("ui_round_end_reason", game["end_reason"]["br_eliminated"]);
-    player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+    player setclientdvar(@"ui_opensummary", 1);
     if (istrue(level.var_82ef5f20ebbf6b59)) {
         player scripts\mp\gametypes\br_gametype_dmz::function_1a425272955d5f75();
         player scripts\mp\gametypes\br_gametype_dmz::function_865b1a5a62c49d7();
@@ -8036,7 +8036,7 @@ function playersleftloop(numplayers, f_threshold) {
     if (istrue(level.brgametype.var_c435bc516c8091ca)) {
         return;
     }
-    if (getdvarint(@"hash_818c699a5caaee4f", 20) * f_threshold < numplayers) {
+    if (getdvarint(@"party_maxplayers", 20) * f_threshold < numplayers) {
         return;
     }
     level endon("game_ended");
@@ -8060,7 +8060,7 @@ function playersleftloop(numplayers, f_threshold) {
 // Checksum 0x0, Offset: 0x18479
 // Size: 0x234
 function function_773c7f13e1254d74(numplayers, f_threshold) {
-    if (getdvarint(@"hash_818c699a5caaee4f", 20) * f_threshold < numplayers) {
+    if (getdvarint(@"party_maxplayers", 20) * f_threshold < numplayers) {
         return;
     }
     level endon("game_ended");

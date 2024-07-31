@@ -829,7 +829,7 @@ function function_99347dc58ab12b57(center) {
 // Checksum 0x0, Offset: 0x2d74
 // Size: 0x24b
 function findunobstructedfiringinfo(var_27c77d35f1de2019, var_a0edd3f59d938fb1, var_d77253c873d2b420, ownerforward, ownerright) {
-    gravity = getdvarint(@"hash_b5d7d39d32720e78", 800);
+    gravity = getdvarint(@"bg_gravity", 800);
     if (getdvarint(@"hash_12ca000dd2976ebc", 0)) {
         gravity = getdvarfloat(@"hash_2f4cf62df1af9a6", 125);
     }
@@ -1146,7 +1146,7 @@ function toma_strike_watch_stuck(explosiontype, var_6951cf1f43bc8ebe, var_8011cf
         return;
     }
     wait 0.05;
-    var_53705575ed27c4d7 = -1 * getdvarint(@"hash_b5d7d39d32720e78", 800);
+    var_53705575ed27c4d7 = -1 * getdvarint(@"bg_gravity", 800);
     traveltime = (gettime() - var_8011cffb839e8243) / 1000;
     impactvelocity = launchvelocity + (0, 0, var_53705575ed27c4d7 * traveltime);
     if (isdefined(stuckto) && isplayer(stuckto)) {
@@ -1220,7 +1220,7 @@ function toma_strike_stuck_player(explosiontype, grenade, stuckto, var_6951cf1f4
         var_a95d04f8f906e839 = castresults[0]["normal"];
         casthitent = castresults[0]["entity"];
         castend -= var_a95d04f8f906e839 * 1;
-        var_53705575ed27c4d7 = -1 * getdvarint(@"hash_b5d7d39d32720e78", 800);
+        var_53705575ed27c4d7 = -1 * getdvarint(@"bg_gravity", 800);
         d = vectordot(castend - caststart, castdir);
         t = sqrt(2 * d / -1 * var_53705575ed27c4d7);
         up = var_a95d04f8f906e839;

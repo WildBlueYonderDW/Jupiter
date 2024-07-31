@@ -112,7 +112,7 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
     if (function_2898a9c3d425a919()) {
         function_f3bb4f4911a1beb2("slam", "initializeMatchRules");
     }
@@ -380,14 +380,14 @@ function ontimelimit() {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
                 points = getdvarint(@"hash_46a6b424af6acbc2");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x103>", points, 0);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
                 points = getdvarint(@"hash_86e14326e43c0115");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x10d>", points, 0);
                 break;
@@ -554,7 +554,7 @@ function shouldgamelobbyremainintact() {
 // Checksum 0x0, Offset: 0x1bc2
 // Size: 0x1b
 function function_22ba3797e41fc607() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "war") == "mines";
+    return getdvar(@"ui_gametype", "war") == "mines";
 }
 
 // Namespace war / scripts\mp\gametypes\war
@@ -562,7 +562,7 @@ function function_22ba3797e41fc607() {
 // Checksum 0x0, Offset: 0x1be6
 // Size: 0x1b
 function function_d7731b03489e8384() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "war") == "war_cranked";
+    return getdvar(@"ui_gametype", "war") == "war_cranked";
 }
 
 // Namespace war / scripts\mp\gametypes\war
@@ -570,6 +570,6 @@ function function_d7731b03489e8384() {
 // Checksum 0x0, Offset: 0x1c0a
 // Size: 0x1b
 function function_2898a9c3d425a919() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "war") == "slam";
+    return getdvar(@"ui_gametype", "war") == "slam";
 }
 

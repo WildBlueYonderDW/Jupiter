@@ -1,0 +1,21 @@
+{
+    "#itemlistentries": [
+        {
+            "#itemspawnlist": "ob_jup_items_weapons_lootable_green"
+        },
+        {
+            "#weight": 70,
+            "#itemspawnlist": "ob_jup_items_weapons_lootable_blue"
+        },
+        {
+            "#weight": 25,
+            "#itemspawnlist": "ob_jup_items_weapons_lootable_purple"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnlist": "ob_jup_items_weapons_lootable_orange"
+        }
+    ],
+    "#itementries": [
+    ]
+}

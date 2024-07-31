@@ -1,0 +1,26 @@
+{
+    "#id": "ping_action",
+    "#description": "&OPTIONS/PING_PLACE_MARKER_DESC",
+    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
+    "#hash_ec8bcd9f8f7b5619": [
+        {
+            "#hash_e6d7d846e3020328": "%hash_4ca094d8e501ba94"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_23bafd0b526d9cea"
+        },
+        {
+            "#hash_e6d7d846e3020328": "%hash_4c8837de9405f313"
+        }
+    ],
+    "#type": "keyBinding",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/PING_PLACE_MARKER"
+}

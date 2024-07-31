@@ -1,0 +1,20 @@
+{
+    "#id": 447,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_season"
+        },
+        {
+            "#key": "iw9_battlemap_sector_ae_id"
+        },
+        {
+            "#key": "iw9_value"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_cfe410126e8ac1fc",
+    "#sharedname": "#hash_196c7abf7b9ff234"
+}

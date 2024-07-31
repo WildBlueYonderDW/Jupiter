@@ -1,0 +1,112 @@
+{
+    "#id": 5,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#potg",
+            "#sharedname": "#potg"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#vote",
+            "#sharedname": "#vote"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_f55af9fea5f5b68c",
+            "#sharedname": "#hash_f55af9fea5f5b68c"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_aa0df804f5f7db56",
+            "#sharedname": "#hash_aa0df804f5f7db56"
+        },
+        {
+            "#bitindex": 4,
+            "#name": "#hash_7a9874275f05bb36",
+            "#sharedname": "#hash_7a9874275f05bb36"
+        },
+        {
+            "#bitindex": 5,
+            "#name": "#hash_a541cf87dd09864d",
+            "#sharedname": "#hash_a541cf87dd09864d"
+        },
+        {
+            "#bitindex": 6,
+            "#name": "#hash_a9a467e5c960ad0a",
+            "#sharedname": "#hash_a9a467e5c960ad0a"
+        },
+        {
+            "#bitindex": 7,
+            "#name": "#hash_b691e6d13cadb57d",
+            "#sharedname": "#hash_b691e6d13cadb57d"
+        },
+        {
+            "#bitindex": 8,
+            "#name": "#hash_7a83b0cdfabd91c8",
+            "#sharedname": "#hash_7a83b0cdfabd91c8"
+        },
+        {
+            "#bitindex": 9,
+            "#name": "#hash_a02ff71215416a62",
+            "#sharedname": "#hash_a02ff71215416a62"
+        },
+        {
+            "#bitindex": 10,
+            "#name": "#hash_c2a437fb4240d6b0",
+            "#sharedname": "#hash_c2a437fb4240d6b0"
+        },
+        {
+            "#bitindex": 11,
+            "#name": "#hash_f19eccdd7c2bdc77",
+            "#sharedname": "#hash_f19eccdd7c2bdc77"
+        },
+        {
+            "#bitindex": 12,
+            "#name": "#15kills",
+            "#sharedname": "#15kills"
+        },
+        {
+            "#bitindex": 13,
+            "#name": "#hash_4f5ea2cfeb163c9d",
+            "#sharedname": "#hash_4f5ea2cfeb163c9d"
+        },
+        {
+            "#bitindex": 14,
+            "#name": "#hash_f04084f13423c3b4",
+            "#sharedname": "#hash_f04084f13423c3b4"
+        },
+        {
+            "#bitindex": 15,
+            "#name": "#hash_cca3beee360a3bdd",
+            "#sharedname": "#hash_cca3beee360a3bdd"
+        },
+        {
+            "#bitindex": 16,
+            "#name": "#hash_65ecff89121dd351",
+            "#sharedname": "#hash_65ecff89121dd351"
+        },
+        {
+            "#bitindex": 17,
+            "#name": "#hash_e4efa895facf6b7b",
+            "#sharedname": "#hash_e4efa895facf6b7b"
+        },
+        {
+            "#bitindex": 18,
+            "#name": "#hash_600ba733abaa2896",
+            "#sharedname": "#hash_600ba733abaa2896"
+        },
+        {
+            "#bitindex": 19,
+            "#name": "#hash_16c4738561824b4b",
+            "#sharedname": "#hash_16c4738561824b4b"
+        },
+        {
+            "#bitindex": 21,
+            "#name": "#hash_de6c2ec52bf2a850",
+            "#sharedname": "#hash_de6c2ec52bf2a850"
+        }
+    ],
+    "#name": "#hash_d29ec1dfce5a9a8f",
+    "#sharedname": "#hash_8dd9828579063e7"
+}

@@ -1,0 +1,24 @@
+{
+    "#id": "hud_layout",
+    "#description": "&OPTIONS/HUD_LAYOUT",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/HUD_DEFAULT"
+        },
+        {
+            "#reference": "&OPTIONS/HUD_FOCUSED"
+        },
+        {
+            "#reference": "&OPTIONS/HUD_CLASSIC"
+        },
+        {
+            "#reference": "&OPTIONS/HUD_LEFT_HAND_MODE"
+        },
+        {
+            "#reference": "&OPTIONS/HUDLESS"
+        }
+    ],
+    "#hash_a20785232d9c4057": "HudLayoutIndex",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/HUD_LAYOUT"
+}

@@ -1,0 +1,13 @@
+{
+    "#id": "hud_bounds_pc",
+    "#description": "&OPTIONS/HUD_BOUNDS_DESC",
+    "#hash_b8d6f980460460c7": "HUDBoundsMenu",
+    "#type": "GenericButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/HUD_BOUNDS"
+}

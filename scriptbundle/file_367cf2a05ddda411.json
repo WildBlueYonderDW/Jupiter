@@ -1,0 +1,36 @@
+{
+    "#id": "v_sync_menu",
+    "#description": "&OPTIONS/VSYNC_MENU_DESC",
+    "#dvar": "@hash_6a1c8fbc66a0ee50",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&OPTIONS/100_PERCENT"
+        },
+        {
+            "#reference": "&OPTIONS/50_PERCENT"
+        },
+        {
+            "#reference": "&OPTIONS/33_PERCENT"
+        },
+        {
+            "#reference": "&OPTIONS/25_PERCENT"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/VSYNC_MENU",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_52ef0f7c2f305438"
+        }
+    ]
+}

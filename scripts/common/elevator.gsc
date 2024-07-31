@@ -245,7 +245,7 @@ function get_floor(player) {
         self.moveto_floor = !curfloor;
         return;
     }
-    player setclientdvar(@"hash_1cdbc3f4c0889e48", get_curfloor());
+    player setclientdvar(@"player_current_floor", get_curfloor());
     while (true) {
         menu, response = player waittill("menuresponse");
         if (menu == "elevator_floor_selector") {

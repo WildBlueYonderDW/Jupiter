@@ -1,0 +1,125 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&OPTIONS/VEHICLE_ADVANCED_SETTINGS",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/KBM_SUB_GROUND_VEHICLE_MOVE",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_3cb697981b4ba413"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3a26542d0979de7b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_55fa1fc95db5a7bb"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_50871bca6b8dad04"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7bcb2ef1db16d276"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_711308f747c7498c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_7a1c78643327e744"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_17196635cddcea4a"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5ceaeee5aeba2545"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5a9299951455f565"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_38c6fed81f40ace7"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_49e81dea678889cf"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/KBM_SUB_GROUND_VEHICLE_COMBAT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_48f022fa156e9e32"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_71552ac2518b6afa"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_796827f5d7fada3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_64a43591d1e0c14d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3d9d5826e8245e9b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_57fc7d74c9876746"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2857e83c92734058"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/KBM_SUB_AIR_VEHICLE_MOVEMENT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_dc9a8a5eb4a819b"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2a7e56842d0f16d3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5f74b19957802673"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_2d6a7fae154a85fc"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3dfb4db1965c6990"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3c30db3e50e20ce4"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_291160e3701bcfa2"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_41b2e594979b9d4d"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_ddaf30c948c82ed"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_490a7202e5bcf9ff"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/KBM_SUB_AIR_VEHICLE_COMBAT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_5539f53c4f36d24f"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4a9eb3f5fb9c3cee"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3afc2dcfd4927640"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

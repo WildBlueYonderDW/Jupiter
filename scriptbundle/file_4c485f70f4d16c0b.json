@@ -1,0 +1,484 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_9241762813aaa86c": {
+        "#zoffset": 6.5,
+        "#yoffset": 14,
+        "#xoffset": 7.5,
+        "#priority": 1
+    },
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_jup_jp17_sn_hsierra_mp",
+    "#hash_79839b907716ac41": "icon_weapon_jup_jp17_sn_hsierra_mp",
+    "#hash_ae0f82b51ecd0ce8": "noscope",
+    "#platform": "platform_jup_sn_hsierra",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_4",
+    "#hash_c4cf6deda5b42f55": "cable|arms|bolt|boltaction",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_293a9cb5a5a37078": "jup_jp17_sn_hsierra_tuning",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_jup_jp17_sn_hsierra_mp",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_sniper",
+    "#category": "&WEAPON/SUBCLASS_ID_4",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 2500,
+    "#hash_1328c6a635d409bf": {
+        "#zoffset": 0.3,
+        "#xoffset": -6,
+        "#priority": 1
+    },
+    "#lootid": 17184,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 5,
+    "#hash_f79f436c85df92d0": 6,
+    "#ref": "jup_jp17_sn_hsierra",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "bolt_action_fire_mode",
+    "#desc": "&JUP_WEAPON/HSIERRA_DESC",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&JUP_WEAPON/JUP_JP17_SN_HSIERRA",
+    "#hash_26755ea5f1d38138": [
+        {
+            "#season": "0",
+            "#priority": 1
+        },
+        {
+            "#season": "1",
+            "#priority": 1
+        },
+        {
+            "#season": "2",
+            "#priority": 1
+        }
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front back mag gripdefault scope",
+    "#asset": "jup_jp17_sn_hsierra_mp",
+    "#hash_a576fed8a47105fb": {
+        "#xoffset": -3,
+        "#priority": 1
+    },
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_sniper",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_sn_01",
+                    "#lootid": 26048,
+                    "#challengeid": 13453
+                },
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_ob_1",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_muzzles",
+                    "#lootid": 22855,
+                    "#challengeid": 17966
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_hsierra_scope_global",
+                    "#lootid": 47192
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "fourx01",
+                    "#lootid": 2253
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_optics",
+                    "#lootid": 22853
+                },
+                {
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_50b_hg",
+                    "#lootid": 29420
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_gunperks",
+                    "#lootid": 23257
+                },
+                {
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_sn_06",
+                    "#lootid": 32596
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_pgrip_snp",
+                    "#lootid": 22879
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_reargrips",
+                    "#lootid": 22856
+                },
+                {
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_bar_hvylong",
+                    "#lootid": 22865
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_frontpieces",
+                    "#lootid": 22850
+                },
+                {
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_sn_10",
+                    "#lootid": 22746
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_mag_7_50b",
+                    "#lootid": 22872
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_magazines",
+                    "#lootid": 22852
+                },
+                {
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_stock_heavy",
+                    "#lootid": 22867
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_backpieces",
+                    "#lootid": 22851
+                },
+                {
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_50b_bb",
+                    "#lootid": 29423
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_bolt_light",
+                    "#lootid": 30827,
+                    "#challengeid": 13454
+                },
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_bolts",
+                    "#lootid": 49402,
+                    "#challengeid": 18002
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_pgrip_ass",
+                    "#lootid": 22875
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_bar_short",
+                    "#lootid": 22863
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_hybridtherm02",
+                    "#lootid": 21761
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_pgrip_ske",
+                    "#lootid": 22878
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_sn_02",
+                    "#lootid": 22747
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_bar_long",
+                    "#lootid": 22864
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_stock_precision",
+                    "#lootid": 22868,
+                    "#challengeid": 13455
+                },
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_ob_3",
+                    "#challengeid": 18038
+                },
+                {
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_50b_lg",
+                    "#lootid": 29421
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_pgrip_tac",
+                    "#lootid": 22877
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 20
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_sn_05",
+                    "#lootid": 32595
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 21
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_stock_tac",
+                    "#lootid": 22869
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 22
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_bolt_heavy",
+                    "#lootid": 30826
+                }
+            ],
+            "#level": 23
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_ammo_50b_xp",
+                    "#lootid": 29422
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 24
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_silencer_sn_03",
+                    "#lootid": 22748
+                }
+            ],
+            "#level": 25
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_stock_light",
+                    "#lootid": 22870
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 26
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_pgrip_aim",
+                    "#lootid": 22874
+                },
+                {
+                },
+                {
+                }
+            ],
+            "#level": 27
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_comp_sn_03",
+                    "#lootid": 22745,
+                    "#challengeid": 13456
+                },
+                {
+                    "#challengeref": "jup_jp17_sn_hsierra_camo_ob_4",
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_tuning",
+                    "#lootid": 22859,
+                    "#challengeid": 18074
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "jup_jp17_sn_hsierra_amps",
+                    "#lootid": 47216
+                }
+            ],
+            "#level": 28
+        }
+    ],
+    "#displayorder": 7,
+    "#hash_6aa5a80660e7666a": "MP",
+    "#hash_505a36358120024b": 0.92,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

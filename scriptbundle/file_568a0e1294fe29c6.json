@@ -1,0 +1,67 @@
+{
+    "#itemlistentries": [
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_zombie_control"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_sabotage"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_escort"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_weaponstash"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_mercdefend"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_outlast"
+        },
+        {
+            "#itemspawnlist": "ob_jup_items_quest_loot_aethernest"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act1_tier5_frenzied_guard_intel_tablet"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act1_tier5_armored_zombie_intel_tablet"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act1_tier5_aether_nest_intel_tablet"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act1_tier5_soldier_intel_tablet"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act3_tier4_zm_stronghold_intel_tablet"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act3_tier4_aether_storm_disciple"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act2_tier3_bazaar_essence"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act2_tier3_retail_essence"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act2_tier3_shops_essence"
+        },
+        {
+            "#weight": 100,
+            "#itemspawnentry": "ob_jup_item_act3_tier3_strauss_research_tablet"
+        }
+    ]
+}

@@ -720,10 +720,10 @@ function runfrontlinespawntrapchecks(team) {
     }
     frontlineinfo = getglobalfrontlineinfo();
     frontlineinfo.isactive[team] = 1;
-    if (getdvarint(@"hash_db79f8163bfa1586") == 0) {
+    if (getdvarint(@"scr_frontline_trap_checks") == 0) {
         return;
     }
-    var_a0417b1dddc7acd3 = getdvarint(@"hash_30fb9fe7456a83a4", 0);
+    var_a0417b1dddc7acd3 = getdvarint(@"scr_frontline_min_spawns", 0);
     if (var_a0417b1dddc7acd3 == 0) {
         var_a0417b1dddc7acd3 = 4;
     }

@@ -1,0 +1,17 @@
+{
+    "#id": 106,
+    "#keys": [
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_83a730b86febbf2b",
+    "#sharedname": "#hash_ef0e7f185e63e463"
+}

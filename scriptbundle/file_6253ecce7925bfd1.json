@@ -1,0 +1,27 @@
+{
+    "#id": 237,
+    "#bitfield": [
+        {
+            "#bitindex": 0,
+            "#name": "#hash_c0c756ce39258e55",
+            "#sharedname": "#hash_c0c756ce39258e55"
+        },
+        {
+            "#bitindex": 1,
+            "#name": "#hash_9825f19f390e340f",
+            "#sharedname": "#hash_9825f19f390e340f"
+        },
+        {
+            "#bitindex": 2,
+            "#name": "#hash_1bf73ab9872f28cb",
+            "#sharedname": "#hash_1bf73ab9872f28cb"
+        },
+        {
+            "#bitindex": 3,
+            "#name": "#hash_11c8e20aa1709429",
+            "#sharedname": "#hash_11c8e20aa1709429"
+        }
+    ],
+    "#name": "#hash_db4fd3ee786862b7",
+    "#sharedname": "#hash_1384ba8ab1971c0f"
+}

@@ -1,0 +1,18 @@
+{
+    "#id": "subtitles_mp",
+    "#description": "&PLATFORM/OPTIONS_SUBTITLES_DESC",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "subtitlesMP",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#name": "&LUA_MENU/SUBTITLES_MP",
+    "#hash_66f8d4776faaa59c": 1,
+    "#hash_c55c746ff4d8929b": 1
+}

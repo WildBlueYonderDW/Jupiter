@@ -90,7 +90,7 @@ function main() {
     setdvar(@"hash_405e7e20d91344cc", 0);
     setdvar(@"hash_42eece3f15e35b3d", 1);
     setdvar(@"hash_a22f98e2c5b506ce", 30);
-    setdvar(@"hash_cbc195ec2129279", 0);
+    setdvar(@"cg_friendlyReviveNameplateEnabled", 0);
     setomnvar("ui_num_dom_flags", 5);
     setdvar(@"hash_e547fe8dfe1679f6", 30);
     setdvar(@"hash_36374c04e23480b6", 1);
@@ -166,7 +166,7 @@ function main() {
     level.var_8e9daba162280a8e = getdvarint(@"hash_19e5cada53ccf044", 0) == 1;
     level.var_eaa760f325371803 = getdvarint(@"hash_67a32114ce80b58f", 0) == 1;
     level.var_7f5be0207e7457b1 = getdvarint(@"hash_27abaa55d7ec8eb9", 1) == 1;
-    level.var_a6954a050d77d75c = getdvarint(@"hash_7194076ab4888f2b", 0) == 1 || getdvarint(@"hash_ff5233fcf546c6b1", 0) == 1;
+    level.var_a6954a050d77d75c = getdvarint(@"scr_game_infilSkip", 0) == 1 || getdvarint(@"hash_ff5233fcf546c6b1", 0) == 1;
     level.var_d23c7c1add9fb181 = &function_d23c7c1add9fb181;
     level.var_4de8052758f986f3 = &function_4de8052758f986f3;
     level.var_3ce1055115edcbbb = &function_3ce1055115edcbbb;

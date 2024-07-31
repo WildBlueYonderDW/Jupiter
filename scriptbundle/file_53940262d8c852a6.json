@@ -1,0 +1,9 @@
+{
+    "#description": "&VEHICLES/RHIB_DESC",
+    "#defaultimage": "ui_default_white",
+    "#hash_7ffb238c68bddf60": "ui_veh_rhib_v000_preview",
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#ref": "veh9_rhib",
+    "#name": "&VEHICLES/RHIB",
+    "#icon": "hud_icon_vehicle_rhib"
+}

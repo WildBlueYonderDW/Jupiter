@@ -534,7 +534,7 @@ function bot_think_watch_aerial_killstreak() {
     var_6de804c7fc796da8 = randomfloatrange(0.05, 4);
     while (true) {
         /#
-            if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
+            if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
                 continue;
             }

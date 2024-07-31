@@ -202,7 +202,7 @@ function missileeyes(player, rocket) {
         player thread delayedfofoverlay();
         player cameralinkto(rocket, "tag_origin");
         player controlslinkto(rocket);
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             player setthirdpersondof(0);
         }
         rocket waittill("death");
@@ -217,7 +217,7 @@ function missileeyes(player, rocket) {
         }
         wait 0.5;
         player cameraunlink();
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             player setthirdpersondof(1);
         }
     }
@@ -246,7 +246,7 @@ function player_cleanuponteamchange(rocket) {
     if (self.team != "spectator") {
         self controlsunlink();
         self cameraunlink();
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             setthirdpersondof(1);
         }
     }
@@ -276,7 +276,7 @@ function player_cleanupongameended(rocket) {
     level waittill("game_ended");
     self controlsunlink();
     self cameraunlink();
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdPerson")) {
         setthirdpersondof(1);
     }
 }

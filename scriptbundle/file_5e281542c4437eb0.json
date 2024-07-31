@@ -1,0 +1,27 @@
+{
+    "#id": "center_dot",
+    "#description": "&OPTIONS/CENTER_DOT_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_centerdot",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "centerDotEnabled",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "ToggleButton",
+    "#name": "&OPTIONS/CENTER_DOT",
+    "#hash_3ba5e20df268538c": [
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_8a5b1ae028fcc49"
+        },
+        {
+            "#hash_1ddfec5e6a67b2e8": "%hash_3f5af2ee293e6a87"
+        }
+    ],
+    "#hash_c55c746ff4d8929b": 1
+}

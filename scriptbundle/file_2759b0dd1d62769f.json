@@ -1,0 +1,55 @@
+{
+    "#itemlistentries": [
+        {
+            "#maxcount": 1,
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_caches_weapons_yellow"
+        },
+        {
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_lethals",
+            "#mincount": 1
+        },
+        {
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals"
+        },
+        {
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_equipment_droplist_tacticals_zm"
+        },
+        {
+            "#weight": 250,
+            "#itemspawnlist": "ob_jup_items_container_duffel_bag_sublist",
+            "#mincount": 1
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 100,
+            "#itemspawnlist": "ob_jup_items_plate_carriers_yellow"
+        },
+        {
+            "#weight": 1017
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 160,
+            "#itemspawnlist": "ob_jup_items_field_upgrades_ob_pvpve"
+        },
+        {
+            "#maxcount": 1,
+            "#weight": 60,
+            "#itemspawnlist": "ob_jup_items_aether_tools_yellow"
+        }
+    ],
+    "#itementries": [
+        {
+            "#weight": 360,
+            "#itemspawnentry": "ob_jup_item_armor_plate"
+        },
+        {
+            "#maxcount": 1,
+            "#itemspawnentry": "ob_jup_item_recon_points"
+        }
+    ]
+}

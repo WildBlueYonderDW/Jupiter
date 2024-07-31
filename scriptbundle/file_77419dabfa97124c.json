@@ -1,0 +1,29 @@
+{
+    "#id": "volumetrics_quality",
+    "#description": "&OPTIONS/VOLUMETRIC_QUALITY_DESC",
+    "#dvar": "@hash_e2a59f0fde9284d8",
+    "#image": "jup_ui_options_image_volumetricquality",
+    "#labels": [
+        {
+            "#reference": "&MENU/LOW"
+        },
+        {
+            "#reference": "&MENU/MEDIUM"
+        },
+        {
+            "#reference": "&MENU/HIGH"
+        }
+    ],
+    "#hash_c20f27f948a7810": "Medium",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#hash_ea4e62cd3b96c8c6": "Medium",
+    "#name": "&OPTIONS/VOLUMETRIC_QUALITY",
+    "#hash_fa6f16a2d91cbd14": "Low"
+}

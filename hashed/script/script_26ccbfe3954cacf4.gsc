@@ -806,7 +806,7 @@ function private function_49ed1adad9307ce5(var_b12d06a2613ef1a1) {
 // Size: 0x292
 function private function_a0e0c0e1e94630f6() {
     tablename = "mp/br_bot_survival_curve.csv";
-    partymaxplayers = getdvarint(@"hash_818c699a5caaee4f", 150);
+    partymaxplayers = getdvarint(@"party_maxplayers", 150);
     var_cb2737353ad087da = tableexists(tablename);
     assert(var_cb2737353ad087da, "<dev string:x85>");
     level.var_de1b021064d0f5bb = spawnstruct();
@@ -1373,7 +1373,7 @@ function function_5b81a287d0eff6ad() {
                 }
                 x = 600;
                 y = 900;
-                printtoscreen2d(x, 600, "<dev string:x546>" + getdvarint(@"hash_818c699a5caaee4f", 0) + "<dev string:x574>" + timeleftsec, (1, 0, 0), 1.5);
+                printtoscreen2d(x, 600, "<dev string:x546>" + getdvarint(@"party_maxplayers", 0) + "<dev string:x574>" + timeleftsec, (1, 0, 0), 1.5);
                 printtoscreen2d(x, 650, "<dev string:x58a>" + point[1] + "<dev string:x593>" + var_8b49e0c7718e511c + "<dev string:x59c>" + msg, (1, 0, 0), 1.5);
                 printtoscreen2d(x, 700, "<dev string:x5a2>" + function_e3b7c7a52e05ac10(point) + "<dev string:x5b0>" + function_94f7fcf9188a0a81(point), (1, 0, 0), 1.5);
                 printtoscreen2d(x, y, "<dev string:x5bf>", (1, 1, 1), 1);

@@ -1,0 +1,16 @@
+{
+    "#killstreak_list": [
+        {
+            "#ref": "cruise_predator",
+            "#bundle": "%hash_1f9b8c7a4e6ca66c"
+        },
+        {
+            "#ref": "none",
+            "#bundle": "%hash_6c0bd35c2f752777"
+        },
+        {
+            "#ref": "none",
+            "#bundle": "%hash_6c0bd35c2f752777"
+        }
+    ]
+}

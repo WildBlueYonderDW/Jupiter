@@ -94,12 +94,12 @@ function main() {
 // Size: 0x90
 function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_1e36286c8a32c90", getmatchrulesdata("confData", "pointsPerConfirm"));
-    setdynamicdvar(@"hash_2db4a6681a9b932", getmatchrulesdata("confData", "pointsPerDeny"));
+    setdynamicdvar(@"scr_conf_pointsperconfirm", getmatchrulesdata("confData", "pointsPerConfirm"));
+    setdynamicdvar(@"scr_conf_pointsperdeny", getmatchrulesdata("confData", "pointsPerDeny"));
     setdynamicdvar(@"hash_bf39ade48cf2d6c1", getmatchrulesdata("confData", "killstreakConfirmed"));
     setdynamicdvar(@"hash_8412d62137fbce7a", 0);
     registerhalftimedvar("conf", 0);
-    setdynamicdvar(@"hash_1952d99344f2932a", 0);
+    setdynamicdvar(@"scr_conf_promode", 0);
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
@@ -445,7 +445,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
 // Checksum 0x0, Offset: 0x15da
 // Size: 0x1b
 function function_75eb145bbb9d4d95() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "conf") == "conf_tw";
+    return getdvar(@"ui_gametype", "conf") == "conf_tw";
 }
 
 // Namespace conf / scripts\mp\gametypes\conf
@@ -453,7 +453,7 @@ function function_75eb145bbb9d4d95() {
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0x1b
 function function_acfcdd7f0c4401ca() {
-    return getdvar(@"hash_e65e9a96eb2ff62b", "conf") == "conf_v";
+    return getdvar(@"ui_gametype", "conf") == "conf_v";
 }
 
 // Namespace conf / scripts\mp\gametypes\conf

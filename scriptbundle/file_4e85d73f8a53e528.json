@@ -1,0 +1,8 @@
+{
+    "#id": "frag_action_button_swap",
+    "#description": "&OPTIONS/SWITCH_EQUIPMENT_DESC",
+    "#action": "+smoke",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "GamepadSwapButton",
+    "#name": "&OPTIONS/SWITCH_EQUIPMENT"
+}

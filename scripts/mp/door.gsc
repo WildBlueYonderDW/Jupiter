@@ -38,7 +38,7 @@ function door_dynamic_setup(starthidden) {
         setdevdvarifuninitialized(@"hash_a35456ddcb0a6051", 0);
         setdevdvarifuninitialized(@"hash_b75e6afff090e790", 0);
     #/
-    setdvar(@"hash_60f76e342fa97cce", 150);
+    setdvar(@"cg_buttonHintNaturalDistance", 150);
     level.doors = [];
     level.doorsetupstarted = 0;
     thread door_dynamic_setup_adapter("dynamic_door", 0);

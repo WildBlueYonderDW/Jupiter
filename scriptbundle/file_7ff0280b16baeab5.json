@@ -1,0 +1,70 @@
+{
+    "#rendertarget": "None",
+    "#parameters": [
+        {
+            "#properties": [
+                {
+                    "#variant_object": {
+                        "#property": "electronic",
+                        "#value": "&[{+ACTIVATE}] Turn off",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                },
+                {
+                    "#variant_object": {
+                        "#property": "bomb",
+                        "#value": "&[{+ACTIVATE}] Plant bomb",
+                        "#type": "StringProperty"
+                    },
+                    "#variant_type": "Types_StringProperty"
+                }
+            ],
+            "#name": "actions"
+        }
+    ],
+    "#hash_679a5fd22385af82": [
+    ],
+    "#children": [
+    ],
+    "#hash_ef7dacdcddcfbf7f": 1024,
+    "#hash_a35573938e7a51c8": 1024,
+    "#widget": "CCTVInteract",
+    "#states": [
+        {
+            "#animation": "DefaultSequence",
+            "#name": "DefaultSequence"
+        },
+        {
+            "#animation": "ElectronicInteract",
+            "#name": "ElectronicInteract"
+        },
+        {
+            "#animation": "ShowElectronic",
+            "#name": "ShowElectronic"
+        },
+        {
+            "#animation": "BombInteract",
+            "#name": "BombInteract"
+        },
+        {
+            "#animation": "ShowBomb",
+            "#name": "ShowBomb"
+        },
+        {
+            "#animation": "IconElectronic",
+            "#name": "IconElectronic"
+        },
+        {
+            "#animation": "IconBomb",
+            "#name": "IconBomb"
+        },
+        {
+            "#animation": "FenceInteract",
+            "#name": "FenceInteract"
+        }
+    ],
+    "#hash_363bada5bd71005e": 1,
+    "#assets": [
+    ]
+}

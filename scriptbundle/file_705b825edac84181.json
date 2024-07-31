@@ -1,0 +1,38 @@
+{
+    "#id": 362,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        },
+        {
+            "#key": "iw9_score"
+        },
+        {
+            "#key": "iw9_damage"
+        },
+        {
+            "#key": "iw9_operator_id"
+        },
+        {
+            "#key": "iw9_team_size"
+        },
+        {
+            "#key": "iw9_time_alive_not_downed"
+        },
+        {
+            "#key": "iw9_time_driving"
+        },
+        {
+            "#key": "iw9_value"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_2ca525b0fb4f974",
+    "#sharedname": "#stats"
+}

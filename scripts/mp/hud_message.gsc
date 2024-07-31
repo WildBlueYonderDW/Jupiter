@@ -243,7 +243,7 @@ function showsplashwithkillcheckhack(ref, optionalnumber, playerforplayercard, a
     self endon("disconnect");
     waitframe();
     if (isdefined(self.lastkilltime)) {
-        maxdelaytime = getdvarfloat(@"hash_1eb32d180bc7cff8", 0.5) * 1000;
+        maxdelaytime = getdvarfloat(@"scr_splash_kill_buffer", 0.5) * 1000;
         delaytime = int(max(maxdelaytime - gettime() - self.lastkilltime, 0));
         wait delaytime / 1000;
     }
@@ -921,10 +921,10 @@ function eventsplashesthink() {
         if (var_19323a94e0c59dfb) {
             wait 2;
         }
-        if (scripts\cp_mp\utility\game_utility::function_e3ef0908b595e8e1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_4562364e09176965") == 2 || self isps4player() && getdvarfloat(@"hash_10f733902fb6e20") == 2) {
+        if (scripts\cp_mp\utility\game_utility::function_e3ef0908b595e8e1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"online_mp_party_xpscale") == 2 || self isps4player() && getdvarfloat(@"hash_10f733902fb6e20") == 2) {
             showsplash("event_double_xp", undefined, self);
         }
-        if (scripts\cp_mp\utility\game_utility::function_7d04fc91bee2ccd1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_2bdc03077e6414dc") == 2) {
+        if (scripts\cp_mp\utility\game_utility::function_7d04fc91bee2ccd1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"online_mp_party_weapon_xpscale") == 2) {
             showsplash("event_double_weapon_xp", undefined, self);
         }
         if (scripts\cp_mp\utility\game_utility::function_6d29dcaf4fd78604() == 2) {
@@ -933,7 +933,7 @@ function eventsplashesthink() {
         if (getdvarint(@"hash_5b7fd81267302dcc") > 0) {
             showsplash("event_double_keys", undefined, self);
         }
-        if (getdvarint(@"hash_4c37ee9fba93ff82") == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_5023ebb6627f862d") == 2) {
+        if (getdvarint(@"online_mp_missionteam_xpscale") == 2 || var_9bfbc8300ed86a03 && getdvarint(@"online_mp_party_missionteam_xpscale") == 2) {
             showsplash("event_double_xp_teams", undefined, self);
         }
     }

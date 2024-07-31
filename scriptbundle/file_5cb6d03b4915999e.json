@@ -1,0 +1,22 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_gold_skull"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_folder_classified"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_gpu"
+        },
+        {
+            "#weight": 1,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_goldbar"
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "#hash_eba498255a3e0031": 0,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_c0cb2eeb684c835c": 1,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#image": "hud_icon_weapon_me_kamas",
+    "#hash_79839b907716ac41": "icon_weapon_me_kamas",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_me_kamas",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+    ],
+    "#menuclass": "weapon_melee2",
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_1328c6a635d409bf": {
+        "#xoffset": -8,
+        "#priority": 1
+    },
+    "#lootid": 36905,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#ref": "iw9_me_kamas",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#desc": "&WEAPON/ME_KAMAS_DESC",
+    "#botarchetype": "assault",
+    "#hash_696d08f2d8ca06f4": 0,
+    "#speedscale": 1,
+    "#name": "&WEAPON/ME_KAMAS",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec",
+    "#asset": "iw9_me_kamas_mp",
+    "#hash_a576fed8a47105fb": {
+        "#xoffset": -8,
+        "#priority": 1
+    },
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_melee2",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_me_kamas_camo_1",
+                    "#challengeid": 21910
+                },
+                {
+                    "#challengeref": "iw9_me_kamas_camo_ob_1",
+                    "#challengeid": 25893
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                },
+                {
+                }
+            ],
+            "#level": 14
+        }
+    ],
+    "#displayorder": 88,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_799361e53b3b5b94": [
+    ]
+}

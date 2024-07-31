@@ -130,11 +130,11 @@ function onstartgametype() {
         game["switchedsides"] = 0;
     }
     if (inovertime()) {
-        setdvar(@"hash_8ecb43b0c41972de", 0);
+        setdvar(@"ui_override_halftime", 0);
     } else if (game["switchedsides"]) {
-        setdvar(@"hash_8ecb43b0c41972de", 2);
+        setdvar(@"ui_override_halftime", 2);
     } else {
-        setdvar(@"hash_8ecb43b0c41972de", 1);
+        setdvar(@"ui_override_halftime", 1);
     }
     if (!isdefined(game["original_defenders"])) {
         game["original_defenders"] = game["defenders"];

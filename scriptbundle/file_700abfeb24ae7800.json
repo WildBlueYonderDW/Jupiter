@@ -1,0 +1,11 @@
+{
+    "#rootname": "jup_jp20_lm_evictor",
+    "#blueprintlist": [
+        {
+            "#blueprintname": "jup_jp20_lm_evictor_v201"
+        },
+        {
+            "#blueprintname": "jup_jp20_lm_evictor_v2033"
+        }
+    ]
+}

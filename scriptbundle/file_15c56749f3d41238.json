@@ -1,0 +1,10 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_lethal_aether_blade"
+        }
+    ]
+}

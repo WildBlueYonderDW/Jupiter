@@ -1,0 +1,20 @@
+{
+    "#id": 115,
+    "#keys": [
+        {
+            "#key": "iw9_zm_all_areas_unlocked"
+        },
+        {
+            "#key": "iw9_zm_areas_unlocked"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_version"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_ae1f263372eab501",
+    "#sharedname": "#hash_9715d8e8bd15a609"
+}

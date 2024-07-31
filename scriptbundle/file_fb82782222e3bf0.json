@@ -1,0 +1,84 @@
+{
+    "#hash_4f500183a3defd55": [
+        {
+            "#name": "&OPTIONS/ACTION_KEYBINDS",
+            "#hash_4f500183a3defd55": [
+                {
+                    "#name": "&OPTIONS/ADVANCED_KEYBINDS_WEAPON",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_43c1b8a84b6364a0"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4f5e57f0c2bb90c1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_49c43662c6c52bf3"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_34d6d3c613594889"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_414a78bf06e34a55"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_19f1e2d6b216a06a"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/ADVANCED_KEYBINDS_EQUIPMENT",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_78c675877af58df1"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5592acbf24f3a706"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5592abbf24f3a553"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_564914afa0fc3e75"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_564913afa0fc3cc2"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5592aebf24f3aa6c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3bf51cfa6bdf54fc"
+                        }
+                    ]
+                },
+                {
+                    "#name": "&OPTIONS/ADVANCED_KEYBINDS_KILLSTREAK",
+                    "#hash_4f500183a3defd55": [
+                        {
+                            "#hash_25c581c24953920f": "%hash_1ffb50d49c8ba8e2"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_5c51eb2820f43575"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_4f73a61f97dbd82c"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_6ed325f166875bff"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_3171fe54a972be67"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_1d7fe65c4f2c3416"
+                        },
+                        {
+                            "#hash_25c581c24953920f": "%hash_501f73b16b4c7b6d"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "#id": 221,
+    "#keys": [
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_squad_event"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_gametype"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_7a4aee21f68bd674",
+    "#sharedname": "#downed"
+}

@@ -1066,7 +1066,7 @@ function handleplayerexfildone(player) {
         player setclientomnvar("ui_br_squad_eliminated_active", 1);
         player setclientomnvar("ui_round_end_title", game["round_end"]["victory"]);
         player setclientomnvar("ui_round_end_reason", game["end_reason"]["objective_completed"]);
-        player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+        player setclientdvar(@"ui_opensummary", 1);
     }
     level thread scripts\mp\gametypes\br_gametype_dmz::function_da0fa1afaa8835cf();
 }
@@ -1387,7 +1387,7 @@ function function_9a7567a2d46b857a() {
             assertex(var_8438f4a482da474a.size == level.var_858dba9da8dc5419, "<dev string:x214>");
             level.var_aa174df565129c2b = var_8438f4a482da474a[0];
         }
-        timer = getdvarint(@"hash_e022fd0199a95f84");
+        timer = getdvarint(@"scr_br_timelimit");
         waittime = int(max(timer - level.var_b8457c8044b2ee02, 0));
         if (waittime <= 0) {
             return;
@@ -1458,7 +1458,7 @@ function function_9a7567a2d46b857a() {
             }
         }
     }
-    timer = getdvarint(@"hash_e022fd0199a95f84");
+    timer = getdvarint(@"scr_br_timelimit");
     waittime = int(max(timer - level.var_b8457c8044b2ee02, 0));
     if (waittime <= 0) {
         return;

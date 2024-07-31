@@ -1,0 +1,16 @@
+{
+    "#id": "invert_pitch_vehicle_flying_gamepad",
+    "#description": "&OPTIONS/INVERT_VERTICAL_LOOK_FLYING_DESC",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/STANDARD"
+        },
+        {
+            "#reference": "&OPTIONS/INVERTED"
+        }
+    ],
+    "#hash_a20785232d9c4057": "invertPitchFlyingGamepad",
+    "#hash_58d61dc3eef940dc": "CONTROLLER",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/INVERT_VERTICAL_LOOK_FLYING"
+}

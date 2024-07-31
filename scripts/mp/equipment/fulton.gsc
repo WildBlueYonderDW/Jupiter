@@ -31,10 +31,10 @@ function fulton_init() {
     /#
         setdevdvarifuninitialized(@"hash_480475a0dec18661", 1);
         setdevdvarifuninitialized(@"hash_491b43c08b40fe8c", 1);
-        setdevdvarifuninitialized(@"hash_6bcaa107055e7a7f", 0.75);
-        setdevdvarifuninitialized(@"hash_f28eeaada0889d3a", 250);
-        setdevdvarifuninitialized(@"hash_de5cf9b63e5508db", 1500);
-        setdevdvarifuninitialized(@"hash_3fed2bee9823c2be", 20);
+        setdevdvarifuninitialized(@"scr_fultonUseTime", 0.75);
+        setdevdvarifuninitialized(@"scr_fultonUseAmount", 250);
+        setdevdvarifuninitialized(@"scr_fultonCapacity", 1500);
+        setdevdvarifuninitialized(@"scr_fultonCountdown", 20);
     #/
 }
 
@@ -56,9 +56,9 @@ function fulton_initanims() {
 function fulton_initrepository() {
     var_464eb48901113eb0 = plunder_getleveldataforrepository("equip_mp_fulton", 1);
     var_464eb48901113eb0.type = 0;
-    var_464eb48901113eb0.usetime = getdvarfloat(@"hash_6bcaa107055e7a7f", 0.75);
+    var_464eb48901113eb0.usetime = getdvarfloat(@"scr_fultonUseTime", 0.75);
     var_464eb48901113eb0.useeventtype = 2;
-    var_464eb48901113eb0.useeventamount = getdvarint(@"hash_f28eeaada0889d3a", 250);
+    var_464eb48901113eb0.useeventamount = getdvarint(@"scr_fultonUseAmount", 250);
     var_464eb48901113eb0.teamuseonly = 1;
     var_464eb48901113eb0.teamanchoredwidget = 1;
     var_464eb48901113eb0.usefailcapacitymsg = "MP/CANNOT_DEPOSIT_CASH_BALLOON_FULL";
@@ -66,9 +66,9 @@ function fulton_initrepository() {
     var_464eb48901113eb0.scriptableusepart = "fulton_use_cache";
     var_464eb48901113eb0.scriptableusestate = "usable";
     var_464eb48901113eb0.scriptablenousestate = "unusable";
-    var_464eb48901113eb0.extractcountdown = getdvarint(@"hash_3fed2bee9823c2be", 20);
+    var_464eb48901113eb0.extractcountdown = getdvarint(@"scr_fultonCountdown", 20);
     var_464eb48901113eb0.extractcountdownmsg = "MP/CASH_BALLOON_LEAVING_IN_N";
-    var_464eb48901113eb0.capacity = getdvarint(@"hash_de5cf9b63e5508db", 1500);
+    var_464eb48901113eb0.capacity = getdvarint(@"scr_fultonCapacity", 1500);
     var_464eb48901113eb0.countdownendcallback = &fulton_repositorycountdownendcallback;
     var_464eb48901113eb0.extractcallback = &fulton_repositoryextractcallback;
     var_464eb48901113eb0.atcapacitycallback = &fulton_repositoryatcapacitycallback;

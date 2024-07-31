@@ -841,7 +841,7 @@ function shouldrunserversideeffects() {
     if (level.createfx_enabled) {
         return 1;
     }
-    return getdvar(@"hash_cadf250daffab004") != "1";
+    return getdvar(@"clientSideEffects") != "1";
 }
 
 // Namespace exploder / scripts\common\exploder

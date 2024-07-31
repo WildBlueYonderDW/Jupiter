@@ -1,0 +1,32 @@
+{
+    "#equipment2": "equip_concussion",
+    "#equipment1": "equip_breacher_drone",
+    "#fieldupgrade1": "none",
+    "#hash_7e39824ce66c0669": "none",
+    "#perk4": "specialty_null",
+    "#perk1": "specialty_blastshield",
+    "#perk3": "specialty_null",
+    "#perk2": "specialty_null",
+    "#secondaryweapon": {
+        "#hash_a5e6a8a5e3c7b581": "arena_weapon_dmr_jup_jp19_dm_acharlied",
+        "#reticle": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    },
+    "#primaryweapon": {
+        "#hash_a5e6a8a5e3c7b581": "arena_weapon_smg_jup_jp02_sm_scharlie3",
+        "#reticle": "none",
+        "#camo": "none",
+        "#attachment1": "none",
+        "#attachment2": "none",
+        "#attachment3": "none",
+        "#attachment4": "none",
+        "#attachment5": "none",
+        "#attachment6": "none"
+    }
+}

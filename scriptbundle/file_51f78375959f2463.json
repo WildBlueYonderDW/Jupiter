@@ -1,0 +1,17 @@
+{
+    "#id": "enemy_color_selection_widget",
+    "#description": "&OPTIONS/COLOR_CUSTOMIZATION_ENEMY_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#hash_a20785232d9c4057": "colorCustomizationEnemyIndex",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#hash_3c2a9730de8f2a5f": 1,
+    "#type": "ColorSelection",
+    "#hash_49cf17a01499da60": [
+        {
+            "#disabledstring": "&LUA_MENU/ENEMY"
+        }
+    ],
+    "#name": "&LUA_MENU/ENEMY",
+    "#hash_5d30c39665a86e5d": "&VDV",
+    "#hash_c55c746ff4d8929b": 1
+}

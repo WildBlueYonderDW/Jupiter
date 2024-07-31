@@ -1,0 +1,22 @@
+{
+    "#id": "crosshairs",
+    "#description": "&OPTIONS/CROSSHAIRS_DESC",
+    "#hash_c14e7031105de2ff": 1,
+    "#image": "jup_ui_options_image_crosshair",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/STATIC"
+        }
+    ],
+    "#hash_a20785232d9c4057": "CrosshairEnabled",
+    "#hash_58d61dc3eef940dc": "GENERAL",
+    "#type": "Dropdown",
+    "#name": "&OPTIONS/CROSSHAIRS",
+    "#hash_c55c746ff4d8929b": 1
+}

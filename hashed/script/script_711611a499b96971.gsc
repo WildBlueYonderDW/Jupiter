@@ -294,7 +294,7 @@ function function_318b48abdb777ed0() {
     self.var_a897d5b8c6afdc34 = spawnscriptable("jup_ob_outlast_pnd_s2_5_mission", var_a1edc937cb84ab35.origin, var_a1edc937cb84ab35.angles);
     self.var_a897d5b8c6afdc34 setscriptablepartstate("body", "off");
     self.var_a897d5b8c6afdc34.instance = self;
-    namespace_29b5250e9959ea::function_3cec1b2981075936("jup_hacking_device_ob", self.var_a897d5b8c6afdc34, &namespace_edd624734aa27359::pnd_activated);
+    namespace_29b5250e9959ea::function_3cec1b2981075936("jup_hacking_device_ob", self.var_a897d5b8c6afdc34, &namespace_edd624734aa27359::function_a62affb2262fbd05);
 }
 
 /#

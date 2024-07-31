@@ -1,0 +1,302 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_lege"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_obj_reward"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_golden"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_doghouse"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_01"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_02"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_03"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_04"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_inhibitor_toolbox"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_aether_counter_toolbox"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_convoy_01"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_turret_trap_panel"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_bar_cabinet"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_cash_register"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_comm_fridge_01"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_comm_fridge_02"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_computer_tower"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_crate_wood"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_dresser"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_duffel_bag_01"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_duffel_bag_02"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_fridge_a"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_fridge_b"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_fridge_mini"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_fridge_old"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_hanging_clothes"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_hidden_container"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_mail_kiosk"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_medical_box_wall"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_medicine_cabinet"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_metal_briefcase"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_office_cabinet"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_pelican_case_rifle"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_school_locker_a"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_school_locker_b"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_toolbox"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_utility_metal_crate"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_weapon_locker"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_crate"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_safe"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_weapon_stash"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_zm_medium"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_zm_large"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_merc_medium"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_merc_large"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_acv"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_mrp_grave"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_rift_gate_pedestal_container"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_05"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_06"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_07"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_08"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_09"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_10"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_11"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_12"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_13"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_14"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_15"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_16"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_17"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_18"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_19"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_20"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_21"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_22"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_23"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_tombstone_24"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_snowball_pile"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_rift_gate_pedestal_container_s3"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_rift_gate_s2_pedestal_container"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_unstable_rift_tombstone"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_cache_rift_gate_pedestal_container_s5"
+        }
+    ]
+}

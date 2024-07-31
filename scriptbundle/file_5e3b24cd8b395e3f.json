@@ -1,0 +1,20 @@
+{
+    "#id": 399,
+    "#keys": [
+        {
+            "#key": "iw9_season"
+        },
+        {
+            "#key": "iw9_version"
+        },
+        {
+            "#key": "iw9_value"
+        },
+        {
+            "#key": "iw9_loot_id"
+        }
+    ],
+    "#source": "client",
+    "#name": "#hash_4a31af4cee657d1e",
+    "#sharedname": "#hash_e1b6cff37fe73fd6"
+}

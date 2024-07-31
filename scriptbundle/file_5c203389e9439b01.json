@@ -1,0 +1,22 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_pi_raygun"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_ar_dg2"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_plasmagun"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_weapon_la_humangun"
+        }
+    ]
+}

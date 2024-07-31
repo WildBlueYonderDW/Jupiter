@@ -44,7 +44,7 @@ function function_3885e1d74c6f11eb() {
     registersharedfunc("escort", "isZombie", &iszombie);
     registersharedfunc("escort", "isDogZombie", &isDogZombie);
     level.var_5622bf44905e2b1a = &function_89e10e876c0c0447;
-    setdvar(@"hash_3c4d1d9e67d42b87", 0);
+    setdvar(@"r_identifyOldMaterial", 0);
     setdvar(@"hash_6db0c7f59c294cb4", 20);
     level thread spawn_zombies();
     /#

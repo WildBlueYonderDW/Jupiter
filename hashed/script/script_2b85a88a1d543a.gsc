@@ -930,7 +930,7 @@ function private handleplayerexfildone(endingid, var_394aebba88e4e8c2) {
     player setclientomnvar("ui_br_squad_eliminated_active", 1);
     player setclientomnvar("ui_round_end_title", game["round_end"]["secondary_victory"]);
     player setclientomnvar("ui_round_end_reason", game["end_reason"]["covert_exfil"]);
-    player setclientdvar(@"hash_cbb22e2fb1a57873", 1);
+    player setclientdvar(@"ui_opensummary", 1);
     if (getdvarint(@"hash_14f8aed437e5e3b1", 0) == 1) {
         player kill();
         return;

@@ -1,0 +1,335 @@
+{
+    "#hash_eba498255a3e0031": 1,
+    "#hash_7dd53930896082d8": 0,
+    "#hash_e10b5af3eb8b75c5": 0,
+    "#hash_9241762813aaa86c": {
+        "#zoffset": -3,
+        "#priority": 1
+    },
+    "#hash_b0ae127b7ec2cc64": 1,
+    "#image": "hud_icon_weapon_pi_mike2011",
+    "#hash_79839b907716ac41": "icon_weapon_pi_mike2011",
+    "#hash_6f6c20f2b0d0c976": "WEAPON/SUBCLASS_ID_2",
+    "#maxrank": 100,
+    "#hash_d0fe304f345ec9f0": 0,
+    "#hash_d1072a4f3468db6c": 0,
+    "#hash_d1404c4f34a7a11d": 0,
+    "#hash_47576563fbb68ac": "hud_icon_weapon_pi_mike2011_v1",
+    "#hash_fc9d926ab41cd40f": "hud_icon_weapon_pi_mike2011",
+    "#hash_3ef0f8fc654d1f79": "NONE",
+    "#hash_a14ab3c871d11f13": [
+        {
+            "#category": "BACKPIECE"
+        },
+        {
+            "#category": "UNDERMOUNT"
+        }
+    ],
+    "#menuclass": "weapon_pistol",
+    "#hash_2ba8010cdcc06f19": "hud_icon_weapon_pi_mike2011_v2",
+    "#category": "&WEAPON/SUBCLASS_ID_2",
+    "#hash_5c340605811ef737": 1,
+    "#rarity": "COMMON",
+    "#isdefault": 0,
+    "#hash_f29dbc0a7d318f92": 700,
+    "#lootid": 32914,
+    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
+    "#hash_b39b0c46cc86be1d": 4,
+    "#hash_f79f436c85df92d0": 3,
+    "#ref": "iw9_pi_mike2011",
+    "#hash_1422c913669eec7b": 1,
+    "#hash_dea75a49e78d5e7f": 0,
+    "#hash_2ab754e309d92f29": "semi_auto_fire_mode",
+    "#desc": "&PERKS/PI_MIKE2011",
+    "#botarchetype": "assault",
+    "#hash_bca4e5890b0eedf6": 1,
+    "#hash_696d08f2d8ca06f4": 0,
+    "#hash_3f53e2b3788c8f17": 1,
+    "#speedscale": 1,
+    "#name": "&WEAPON/PI_MIKE2011",
+    "#hash_26755ea5f1d38138": [
+    ],
+    "#hash_46b27fcd54c13cfe": "rec front mag triggrip gripdefault ironsdefault",
+    "#asset": "iw9_pi_mike2011_mp",
+    "#hash_1025dff40f62ddf2": 0,
+    "#group": "weapon_pistol",
+    "#hash_1d2551f4185c4b6a": 0,
+    "#weaponprogression": [
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "trigger_p55",
+                    "#lootid": 32910
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_p55",
+                    "#lootid": 32908
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_pi_p55",
+                    "#lootid": 32909
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_pi_p55",
+                    "#lootid": 32907
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "rec_mike2011",
+                    "#lootid": 32906
+                }
+            ]
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_1",
+                    "#hash_c2ebfd2a212d7be2": "mike2011_muzzles",
+                    "#lootid": 37332,
+                    "#challengeid": 21549,
+                    "#bucket": 1
+                },
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_ob_1",
+                    "#challengeid": 22431
+                }
+            ],
+            "#level": 1
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mike2011_optics",
+                    "#lootid": 37333,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 2
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_pi_light_p55",
+                    "#lootid": 36866,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mike2011_frontpieces",
+                    "#lootid": 37334,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 3
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mike2011_extras",
+                    "#lootid": 37335,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 4
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "mag_pi_large_p55",
+                    "#lootid": 34613,
+                    "#bucket": 1
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mike2011_magazines",
+                    "#lootid": 37336,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 5
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "trigger_heavy_p55",
+                    "#lootid": 36877,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mike2011_triggers",
+                    "#lootid": 37337,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 6
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_2",
+                    "#hash_c2ebfd2a212d7be2": "pgrip_aim_p55",
+                    "#lootid": 36874,
+                    "#challengeid": 21550,
+                    "#bucket": 2
+                },
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_ob_2",
+                    "#hash_c2ebfd2a212d7be2": "mike2011_reargrips",
+                    "#lootid": 37338,
+                    "#challengeid": 22436,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 7
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_pi_heavy_p55",
+                    "#lootid": 36867,
+                    "#bucket": 1
+                }
+            ],
+            "#level": 8
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "ammo_9p_hv",
+                    "#lootid": 37340,
+                    "#bucket": 2
+                },
+                {
+                    "#hash_c2ebfd2a212d7be2": "mike2011_gunperks",
+                    "#lootid": 37339,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 9
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ass_p55",
+                    "#lootid": 36872,
+                    "#bucket": 2
+                }
+            ],
+            "#level": 10
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "trigger_light_p55",
+                    "#lootid": 36878,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 11
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "barcomp_pi_p55",
+                    "#lootid": 36868,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 12
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_3",
+                    "#hash_c2ebfd2a212d7be2": "mag_pi_xlarge_p55",
+                    "#lootid": 34612,
+                    "#challengeid": 21551,
+                    "#bucket": 3
+                },
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_ob_3",
+                    "#challengeid": 22441
+                }
+            ],
+            "#level": 13
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_pi_short_p55",
+                    "#lootid": 36870,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 14
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_tac_p55",
+                    "#lootid": 36875,
+                    "#bucket": 3
+                }
+            ],
+            "#level": 15
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "trigger_hair_p55",
+                    "#lootid": 36876,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 16
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "bar_pi_long_p55",
+                    "#lootid": 36871,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 17
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "pgrip_ske_p55",
+                    "#lootid": 36873,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 18
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#hash_c2ebfd2a212d7be2": "akimbo_mike2011",
+                    "#lootid": 32912,
+                    "#bucket": 4
+                }
+            ],
+            "#level": 19
+        },
+        {
+            "#hash_b54cc3ba93f9077e": [
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_4",
+                    "#hash_c2ebfd2a212d7be2": "iw9_pi_mike2011_tuning",
+                    "#lootid": 32913,
+                    "#challengeid": 21552,
+                    "#bucket": 4
+                },
+                {
+                    "#challengeref": "iw9_pi_mike2011_camo_ob_4",
+                    "#challengeid": 22446
+                }
+            ],
+            "#level": 20
+        }
+    ],
+    "#displayorder": 86,
+    "#hash_6aa5a80660e7666a": "",
+    "#hash_505a36358120024b": 0.98,
+    "#hash_799361e53b3b5b94": [
+    ]
+}

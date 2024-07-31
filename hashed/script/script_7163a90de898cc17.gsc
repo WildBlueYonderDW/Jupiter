@@ -48,7 +48,7 @@ function function_a84504e876b9bfdd() {
     var_91beb5c3a5ab6910.victim = self;
     var_91beb5c3a5ab6910.objweapon = self getcurrentweapon();
     if (isagent(self)) {
-        thread namespace_742e7eca5294ecdc::shockStick_haywireAgent(var_91beb5c3a5ab6910);
+        thread namespace_742e7eca5294ecdc::function_9b443e9c3e29f880(var_91beb5c3a5ab6910);
         return;
     }
     if (isplayer(self)) {

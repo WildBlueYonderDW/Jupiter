@@ -81,7 +81,7 @@ function main() {
         level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     }
     setupminimap("compass_map_mp_jup_skydiving", undefined, undefined, "zone_1");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
+    setdvar(@"r_umbraMinObjectContribution", 8);
     setdvar(@"hash_9365c7a237edaa2f", 1);
     level.parachutecancutautodeploy = 1;
     level.parachutecancutparachute = 1;
@@ -611,7 +611,7 @@ function function_2825d48b0ba8d908() {
     }
     level.var_53dde20ce19c6235 = &function_96c67c16e4e1963b;
     level.var_72e0f43095476f99 = &function_16421f61ca024019;
-    if (getdvarint(@"hash_7194076ab4888f2b", 0) == 0) {
+    if (getdvarint(@"scr_game_infilSkip", 0) == 0) {
         scripts\mp\flags::gameflagwait("prematch_done");
     }
     foreach (door in elevatordoors) {
@@ -1436,7 +1436,7 @@ function function_7d25484659308d59() {
 // Checksum 0x0, Offset: 0x5222
 // Size: 0x4b1
 function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8, zonename) {
-    requiredmapaspectratio = getdvarfloat(@"hash_24d7dc1cc026a63b", 1);
+    requiredmapaspectratio = getdvarfloat(@"scr_requiredmapaspectratio", 1);
     mapinfo = function_79404c2fcca1c184();
     if (isdefined(mapinfo) && isdefined(mapinfo.var_cea11b0bd8f76b2d)) {
         foreach (minimapversion in mapinfo.var_cea11b0bd8f76b2d) {
@@ -1521,7 +1521,7 @@ function setupminimap(material, var_11f306b80ae0c39e, var_3b70dd7d0d5b9a8, zonen
 // Size: 0x6d
 function function_fb7bad834ce4b28c(floornumber, zonename) {
     self setclientomnvar("ui_minimap_floor", floornumber);
-    map_name = tolower(getdvar(@"hash_ef237da69bb64ef6"));
+    map_name = tolower(getdvar(@"ui_mapname"));
     minimap_image = "compass_map_" + map_name + "_floor_" + floornumber;
     self.var_109a3bfd035f27be = floornumber;
     setupminimap(minimap_image, undefined, undefined, zonename);

@@ -1,0 +1,29 @@
+{
+    "#id": "toggle_radial_wheel_gamepad",
+    "#description": "&PLATFORM/RADIAL_WHEEL_BEHAVIOR_GAMEPAD_DESC",
+    "#labels": [
+        {
+            "#reference": "&GAME/HOLD"
+        },
+        {
+            "#reference": "&GAME/TOGGLE"
+        }
+    ],
+    "#hash_a20785232d9c4057": "toggleRadialWidgetGamepad",
+    "#hash_f2cfe5ce9896ad90": 1,
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#dvarname": "@hash_5b477b0e2517826",
+            "#type": "DVAR"
+        },
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/RADIAL_WHEEL_BEHAVIOR",
+    "#hash_c55c746ff4d8929b": 1
+}

@@ -1,0 +1,37 @@
+{
+    "#objects": [
+        {
+            "#variant_object": {
+                "#xmodelname": "tag_origin",
+                "#animtree": {
+                    "#name": "script_model",
+                    "#id": 0
+                },
+                "#name": "Prop 1",
+                "#shots": [
+                    {
+                        "#hash_e608c28a92676233": [
+                        ],
+                        "#hash_45d86f20e184e36a": [
+                            {
+                                "#hash_813e52880409c89d": {
+                                    "#name": "iw8_mp_end_game_mercy_us_winner_1st@sbundle",
+                                    "#id": "anim#"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "#variant_type": "Types_Prop"
+        }
+    ],
+    "#shots": [
+        {
+            "#variant_object": {
+                "#name": "emote_attack"
+            },
+            "#variant_type": "Types_Shot"
+        }
+    ]
+}

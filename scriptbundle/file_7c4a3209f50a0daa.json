@@ -1,0 +1,50 @@
+{
+    "#id": 50,
+    "#keys": [
+        {
+            "#key": "iw9_leagueplay_is_disconnect"
+        },
+        {
+            "#key": "iw9_leagueplay_match_id"
+        },
+        {
+            "#key": "iw9_leagueplay_ladder_penalty"
+        },
+        {
+            "#key": "iw9_leagueplay_sr_penalty"
+        },
+        {
+            "#key": "iw9_leagueplay_event_season"
+        },
+        {
+            "#key": "iw9_rejoin_is_active"
+        },
+        {
+            "#key": "iw9_rejoin_lobby_id"
+        },
+        {
+            "#key": "iw9_rejoin_expiry"
+        },
+        {
+            "#key": "iw9_disconnect_reason"
+        },
+        {
+            "#key": "iw9_leagueplay_rejoin_enabled"
+        },
+        {
+            "#key": "iw9_playlist_version"
+        },
+        {
+            "#key": "iw9_leagueplay_lobby_id"
+        },
+        {
+            "#key": "iw9_gamemode"
+        },
+        {
+            "#key": "iw9_leagueplay_gametype"
+        }
+    ],
+    "#source": "server",
+    "#name": "#hash_7ed0b682cac70d63",
+    "#sharedname": "#connection_update"
+}

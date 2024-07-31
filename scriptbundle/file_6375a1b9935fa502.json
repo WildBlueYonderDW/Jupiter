@@ -1,0 +1,29 @@
+{
+    "#id": "channel_invites_privacy",
+    "#description": "&OPTIONS/CHANNEL_INVITES_PRIVACY_DESC",
+    "#labels": [
+        {
+            "#reference": "&MENU/PARTY_PRIVACY_PUBLIC"
+        },
+        {
+            "#reference": "&MENU/PARTY_PRIVACY_FRIENDS_AND_CHANNELS"
+        },
+        {
+            "#reference": "&MENU/PARTY_PRIVACY_FRIENDS_ONLY"
+        },
+        {
+            "#reference": "&MENU/PARTY_PRIVACY_CLOSED"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "ACCOUNT",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_95c16aa655d5ae40": 1,
+            "#hash_95ce7ea655e3eec1": 1,
+            "#hash_bfa22cf92abad899": 1,
+            "#type": "GAMEMODE"
+        }
+    ],
+    "#name": "&OPTIONS/CHANNEL_INVITES_PRIVACY"
+}

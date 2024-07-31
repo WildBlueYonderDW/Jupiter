@@ -1,0 +1,33 @@
+{
+    "#id": "print_weapon_attributes",
+    "#description": "&MENU/PRINT_WEAPON_ATTRIBUTES_DESC",
+    "#dvar": "@hash_afacf05347f9d8d7",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ALL"
+        },
+        {
+            "#reference": "&LUA_MENU/CURRENT_PRIMARY"
+        },
+        {
+            "#reference": "&LUA_MENU/PRIMARIES"
+        },
+        {
+            "#reference": "&LUA_MENU/OFFHANDS"
+        },
+        {
+            "#reference": "&LUA_MENU/ITEMS"
+        },
+        {
+            "#reference": "&LUA_MENU/ALT_MODE"
+        },
+        {
+            "#reference": "&LUA_MENU/EXCLUSIVE"
+        }
+    ],
+    "#type": "Dropdown",
+    "#name": "&MENU/PRINT_WEAPON_ATTRIBUTES"
+}

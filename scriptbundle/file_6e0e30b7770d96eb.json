@@ -1,0 +1,14 @@
+{
+    "#itemlistentries": [
+        {
+            "#weight": 30,
+            "#itemspawnlist": "ob_jup_items_container_computer_tower_sublist",
+            "#mincount": 1
+        },
+        {
+            "#weight": 70
+        }
+    ],
+    "#itementries": [
+    ]
+}

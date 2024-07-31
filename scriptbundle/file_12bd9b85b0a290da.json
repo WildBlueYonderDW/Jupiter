@@ -1,0 +1,16 @@
+{
+    "#id": "vrs",
+    "#description": "&OPTIONS/VRS_DESC",
+    "#dvar": "@r_vrs",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "ToggleButton",
+    "#name": "&OPTIONS/VRS"
+}

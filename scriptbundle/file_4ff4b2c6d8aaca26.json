@@ -1,0 +1,16 @@
+{
+    "#idleanim": {
+        "#name": "chr_menu_hyena_idle_01@sbundle",
+        "#id": "anim#"
+    },
+    "#ref": "universal_hyena",
+    "#body": "mp_hyena_rig_skeleton",
+    "#hash_6bb978021bb6b6e6": [
+        {
+            "#anim": {
+                "#name": "chr_menu_mp_squad_hyena_01@sbundle",
+                "#id": "anim#"
+            }
+        }
+    ]
+}

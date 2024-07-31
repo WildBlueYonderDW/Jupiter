@@ -1,0 +1,67 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_tool"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_crystal"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_crystal_2"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_crystal_3"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_tool_2"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_tool_3"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_aether_tool_4"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_golden_armor_plate"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_dog_whistle"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_golden_ammo"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_warlord_afo_beret"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_warlord_chemist_mask"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_warlord_maestro_mod"
+        },
+        {
+            "#weight": 10
+        },
+        {
+            "#weight": 10
+        },
+        {
+            "#weight": 10
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "#id": "reflection_probes_quality",
+    "#description": "&OPTIONS/REFLECTION_PROBES_QUALITY_DESC",
+    "#dvar": "@hash_e6aaf13953f7816d",
+    "#image": "jup_ui_options_image_staticreflectionquality",
+    "#labels": [
+        {
+            "#reference": "&OPTIONS/QUALITY_LOW"
+        },
+        {
+            "#reference": "&OPTIONS/QUALITY_HIGH"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#hash_ea4e62cd3b96c8c6": "Medium",
+    "#name": "&OPTIONS/REFLECTION_PROBES_QUALITY"
+}

@@ -36,7 +36,7 @@ function processmatchscoreboardinfo() {
         alliesscore = getteamscore("allies");
         axisscore = getteamscore("axis");
         team3Score = getteamscore("team_three");
-        if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+        if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
             setclientmatchdata("alliesScore", alliesscore);
             setclientmatchdata("axisScore", axisscore);
             setclientmatchdata("team3Score", team3Score);
@@ -61,7 +61,7 @@ function processmatchscoreboardinfo() {
         if (inovertime()) {
             if (istimetobeatrulegametype()) {
                 if (game["timeToBeatTeam"] == "none") {
-                    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+                    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
                         setclientmatchdata("alliesTTB", 0);
                         setclientmatchdata("axisTTB", 0);
                     }
@@ -72,7 +72,7 @@ function processmatchscoreboardinfo() {
                     } else {
                         axisscore++;
                     }
-                    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+                    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
                         setclientmatchdata("alliesTTB", ter_op("allies" == game["timeToBeatTeam"], game["timeToBeat"], game["timeToBeatOld"]));
                         setclientmatchdata("axisTTB", ter_op("axis" == game["timeToBeatTeam"], game["timeToBeat"], game["timeToBeatOld"]));
                     }
@@ -87,7 +87,7 @@ function processmatchscoreboardinfo() {
         } else {
             winner = "axis";
         }
-        if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+        if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
             setclientmatchdata("alliesScore", alliesscore);
             setclientmatchdata("axisScore", axisscore);
             setclientmatchdata("scoreProgressLimit", getomnvar("ui_scorelimit"));
@@ -120,7 +120,7 @@ function processmatchscoreboardinfo() {
     foreach (player in level.players) {
         player setplayerdata("common", "round", "scoreboardType", "neutral");
     }
-    if (getdvarint(@"hash_1bc373211683e0b6") != 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") != 0) {
         setclientmatchdata("alliesScore", -1);
         setclientmatchdata("axisScore", -1);
         setclientmatchdata("scoreProgressLimit", getomnvar("ui_scorelimit"));
@@ -160,7 +160,7 @@ function processcommonplayerdataforplayer(player) {
 // Checksum 0x0, Offset: 0xc9d
 // Size: 0xb42
 function setplayerscoreboardinfo() {
-    if (getdvarint(@"hash_1bc373211683e0b6") == 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") == 0) {
         return;
     }
     scoreboardPlayerCount = getclientmatchdata("scoreboardPlayerCount");
@@ -299,7 +299,7 @@ function setplayerscoreboardinfo() {
         scoreboardPlayerCount++;
         setclientmatchdata("scoreboardPlayerCount", scoreboardPlayerCount);
         println("<dev string:x187>" + scoreboardPlayerCount);
-        maxplayercount = getdvarint(@"hash_818c699a5caaee4f", 0);
+        maxplayercount = getdvarint(@"party_maxplayers", 0);
         setclientmatchdata("maxPlayerCount", maxplayercount);
         return;
     }
@@ -334,7 +334,7 @@ function computescoreboardslot(team, index) {
 // Checksum 0x0, Offset: 0x1851
 // Size: 0x3d8
 function buildscoreboardtype(team) {
-    if (getdvarint(@"hash_1bc373211683e0b6") == 0) {
+    if (getdvarint(@"online_mp_clientmatchdata_enabled") == 0) {
         return;
     }
     assert(team == "<dev string:x1f0>" || team == "<dev string:x1fa>" || team == "<dev string:x202>" || team == "<dev string:x20d>");

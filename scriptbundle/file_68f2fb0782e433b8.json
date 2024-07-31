@@ -1,0 +1,17 @@
+{
+    "#factionmissiontable": [
+        {
+            "#factionmission": "factionmission_jup_ob_act1"
+        },
+        {
+            "#factionmission": "factionmission_jup_ob_act2"
+        },
+        {
+            "#factionmission": "factionmission_jup_ob_act3"
+        },
+        {
+            "#factionmission": "factionmission_jup_ob_act4"
+        }
+    ],
+    "#hash_847dc5a98178ad30": "jup_outbreak_questlines.csv"
+}

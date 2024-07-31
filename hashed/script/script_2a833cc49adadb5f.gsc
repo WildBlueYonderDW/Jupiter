@@ -28,8 +28,8 @@ function main() {
     level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
     level.kill_border_triggers = getentarray("kill_border_trigger", "targetname");
     scripts\mp\compass::setupminimap("compass_map_mp_jup_delayed");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
-    setdvar(@"hash_2e38c6027743fefc", 1024);
+    setdvar(@"r_umbraMinObjectContribution", 8);
+    setdvar(@"r_umbraAccurateOcclusionThreshold", 1024);
     game["attackers"] = "allies";
     game["defenders"] = "axis";
     game["allies_outfit"] = "urban";
@@ -76,7 +76,7 @@ function play_movie(bink) {
         if (flag("nuke_bink_done")) {
             break;
         }
-        setdvar(@"hash_d3ee5a6578fe61de", "0");
+        setdvar(@"bg_cinematicFullscreen", "0");
         playcinematicforalllooping(bink);
         wait 3;
     }

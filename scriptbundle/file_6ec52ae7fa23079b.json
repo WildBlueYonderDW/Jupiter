@@ -1,0 +1,20 @@
+{
+    "#pingvo": "#hash_130c2cbd6eb5fce2",
+    "#hash_ff1750b480636dc9": 1,
+    "#hash_c03c4ef51659ba4c": 1,
+    "#maxcount": 1,
+    "#titlestring": "&JUP_OB_ITEM_GENERICS/ESSENCE_CONTAINER_BAZAAR",
+    "#rarity": 4,
+    "#descstring": "&JUP_OB_ITEM_GENERICS/ESSENCE_CONTAINER_BAZAAR",
+    "#ref": "jup_quest_a2t3_bazaar_essence",
+    "#dropsfx": "#hash_20104b3e6a346112",
+    "#lootidtype": "consumable",
+    "#type": "quest",
+    "#subtype": "quest_essence",
+    "#hash_95d6d970efccc96d": "common_unrestricted",
+    "#pickupsfx": "#hash_280421d34909d7d3",
+    "#inventorytype": "Pooled",
+    "#icon": "jup_ui_map_icon_poi_essence_container",
+    "#scriptable": "%hash_2c0702a3a9a969df",
+    "#typestring": "&JUP_OB_ITEM_GENERICS/QUEST_ITEM"
+}

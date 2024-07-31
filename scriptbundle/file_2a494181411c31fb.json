@@ -1,0 +1,25 @@
+{
+    "#id": "depth_of_field_pc",
+    "#description": "&PLATFORM_UI/DEPTH_OF_FIELD_DESC",
+    "#dvar": "@r_dof_enable",
+    "#image": "jup_ui_options_image_depthoffield",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        }
+    ],
+    "#hash_c20f27f948a7810": "Low",
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "ToggleButton",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#hash_ea4e62cd3b96c8c6": "Low",
+    "#name": "&PLATFORM_UI/DEPTH_OF_FIELD"
+}

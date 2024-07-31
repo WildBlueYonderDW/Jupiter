@@ -1,0 +1,34 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 120,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_cannedfood"
+        },
+        {
+            "#weight": 120,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_wine"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_mre"
+        },
+        {
+            "#weight": 50,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_freshwater"
+        },
+        {
+            "#weight": 20,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_liquor"
+        },
+        {
+            "#weight": 10,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_wine_aged"
+        },
+        {
+            "#weight": 2,
+            "#itemspawnentry": "ob_jup_item_generic_valuable_wine_vintage"
+        }
+    ]
+}

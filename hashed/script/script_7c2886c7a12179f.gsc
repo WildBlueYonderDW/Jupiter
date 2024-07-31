@@ -395,7 +395,7 @@ function private function_ee03790495df57f(starter) {
 // Size: 0xb8
 function private gravity_launch(target_pos, time) {
     start_pos = self.origin;
-    gravity = getdvarint(@"hash_b5d7d39d32720e78", 0) * -1;
+    gravity = getdvarint(@"bg_gravity", 0) * -1;
     dist = distance(start_pos, target_pos);
     power = dist / time;
     delta = target_pos - start_pos;

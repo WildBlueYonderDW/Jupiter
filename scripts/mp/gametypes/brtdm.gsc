@@ -117,7 +117,7 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
 }
 
 // Namespace brtdm / scripts\mp\gametypes\brtdm
@@ -165,10 +165,10 @@ function onstartgametype() {
 // Size: 0x320
 function updategametypedvars() {
     scripts\mp\gametypes\common::updatecommongametypedvars();
-    setdvar(@"hash_de79e5c6b8a17221", getdvarint(@"hash_29a2aab7afd7a31a", 225));
-    setdvar(@"hash_18e2dda6aaf07dc3", getdvarint(@"hash_6f3ca3679ac76b3c", 590));
-    setdvar(@"hash_180a6f432cfb6644", getdvarint(@"hash_2cfd86efae0c680d", 225));
-    setdvar(@"hash_5dfbfd642e45b4b2", getdvarint(@"hash_7f04d2bb2f5714a7", 590));
+    setdvar(@"bg_fallDamageMinHeight", getdvarint(@"hash_29a2aab7afd7a31a", 225));
+    setdvar(@"bg_fallDamageMaxHeight", getdvarint(@"hash_6f3ca3679ac76b3c", 590));
+    setdvar(@"bg_softLandingMinHeight", getdvarint(@"hash_2cfd86efae0c680d", 225));
+    setdvar(@"bg_softLandingMaxHeight", getdvarint(@"hash_7f04d2bb2f5714a7", 590));
     level.autorespawnwaittime = getdvarint(@"hash_4beac336193a373d", 3);
     level.parachutedeploydelay = getdvarfloat(@"hash_12027360b079c1db", 0.5);
     level.brtdm_config = spawnstruct();

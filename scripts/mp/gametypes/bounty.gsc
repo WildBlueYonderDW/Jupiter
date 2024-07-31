@@ -98,7 +98,7 @@ function initializematchrules() {
     setcommonrulesfrommatchrulesdata();
     setdynamicdvar(@"hash_6e7da31aae47b8e0", 0);
     registerhalftimedvar(getgametype(), 0);
-    setdynamicdvar(@"hash_bb6e8f8d9be104f4", 0);
+    setdynamicdvar(@"scr_war_promode", 0);
     setdynamicdvar(@"hash_5d63372846c76438", getmatchrulesdata("bountyData", "hvtsPerTeam"));
     setdynamicdvar(@"hash_dd0cfb059eb759f1", getmatchrulesdata("bountyData", "pointsPerHVTKill"));
     if (getdvarint(@"hash_708473a41b11b061", 0)) {
@@ -399,14 +399,14 @@ function ontimelimit() {
             if (getdvarint(@"hash_46a6b424af6acbc2") != 0) {
                 points = getdvarint(@"hash_46a6b424af6acbc2");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x102>", points, 0);
                 break;
             } else if (getdvarint(@"hash_86e14326e43c0115") != 0) {
                 points = getdvarint(@"hash_86e14326e43c0115");
                 if (points == -1) {
-                    points = getdvarint(@"hash_f20234a548c56c11") - 1;
+                    points = getdvarint(@"scr_war_scorelimit") - 1;
                 }
                 scripts\mp\gamescore::giveteamscoreforobjective("<dev string:x10c>", points, 0);
                 break;

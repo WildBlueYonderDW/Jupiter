@@ -98,7 +98,7 @@ function main() {
     setdvar(@"hash_405e7e20d91344cc", 0);
     setdvar(@"hash_42eece3f15e35b3d", 1);
     setdvar(@"hash_a22f98e2c5b506ce", 30);
-    setdvar(@"hash_cbc195ec2129279", 0);
+    setdvar(@"cg_friendlyReviveNameplateEnabled", 0);
     updategametypedvars();
     level.scoreperplayer = undefined;
     level.teambased = 1;
@@ -3566,7 +3566,7 @@ function function_fb11675119ade7d4() {
     if (getdvarint(@"hash_8a1945c94d5092c2") == 1) {
         return;
     }
-    level.brloottablename = getdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv");
+    level.brloottablename = getdvar(@"loot_table_name", "mp/loot/br/default/loot_item_defs.csv");
     if (!isdefined(level.br_pickups)) {
         level.br_pickups = spawnstruct();
     }

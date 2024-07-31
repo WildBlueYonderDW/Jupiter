@@ -2178,7 +2178,7 @@ function function_e64438bcaad08d5c() {
         navbounds.halfsize *= 0.8;
         worldmin = navbounds.midpoint - navbounds.halfsize;
         worldmax = navbounds.midpoint + navbounds.halfsize;
-        player_count = getdvarint(@"hash_818c699a5caaee4f", 48);
+        player_count = getdvarint(@"party_maxplayers", 48);
         switch (test_name) {
         case #"hash_8b3de9dcd39c0dc6": 
             function_f681aebd2ee59625(player_count, should_move, worldmin, worldmax);

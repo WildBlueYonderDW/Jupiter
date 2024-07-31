@@ -745,7 +745,7 @@ function bot_allowed_to_use_killstreaks() {
         return false;
     }
     /#
-        if (getdvarint(@"hash_c2de8ca6dc8512c1") || getdvarint(@"hash_fefb65986b76a7e7")) {
+        if (getdvarint(@"bot_DisableAllAI") || getdvarint(@"hash_fefb65986b76a7e7")) {
             return false;
         }
     #/
@@ -1637,7 +1637,7 @@ function bot_get_team_limit() {
 // Checksum 0x0, Offset: 0x3e8e
 // Size: 0x36
 function bot_get_client_limit() {
-    maxplayers = getdvarint(@"hash_818c699a5caaee4f", 0);
+    maxplayers = getdvarint(@"party_maxplayers", 0);
     if (maxplayers > level.maxclients) {
         return level.maxclients;
     }

@@ -1,0 +1,17 @@
+{
+    "#itemlistentries": [
+    ],
+    "#itementries": [
+        {
+            "#weight": 95,
+            "#itemspawnentry": "ob_jup_item_aether_crystal"
+        },
+        {
+            "#weight": 5,
+            "#itemspawnentry": "ob_jup_item_aether_crystal_2"
+        },
+        {
+            "#itemspawnentry": "ob_jup_item_aether_crystal_3"
+        }
+    ]
+}

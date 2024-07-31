@@ -545,7 +545,7 @@ function unsetregenfaster() {
 function timeoutregenfaster() {
     self.hasregenfaster = undefined;
     perk::removeperk("specialty_regenfaster");
-    self setclientdvar(@"hash_c0673d13f0144bfb", 0);
+    self setclientdvar(@"ui_regen_faster_end_milliseconds", 0);
     self notify("timeOutRegenFaster");
 }
 
@@ -2843,7 +2843,7 @@ function sixthsense_think_internal() {
     /#
         sixthsensedebug = getdvarint(@"hash_3a87475a75de0350") == 1;
     #/
-    var_139c4666448ffeac = getdvarint(@"hash_423b0fbeb5f130c5") == 1;
+    var_139c4666448ffeac = getdvarint(@"scr_sixth_sense_use_eyes_on") == 1;
     process = 0;
     tootherplayer = undefined;
     var_746071ab06f38fd = undefined;
@@ -6129,9 +6129,9 @@ function perk_adsmarktarget_confirmtargetandmark(target) {
     level endon("game_ended");
     self endon("ADSTargetMarkUnset");
     outlineid = undefined;
-    waittime = getdvarfloat(@"hash_3e533d050b224320");
+    waittime = getdvarfloat(@"perk_ads_mark_target_hold_time_req");
     if (perk::_hasperk("specialty_improved_target_mark")) {
-        waittime *= getdvarfloat(@"hash_9bcdf0887b3696ad");
+        waittime *= getdvarfloat(@"perk_faster_target_mark_rate");
     }
     wait waittime;
     markheadicon = "hud_icon_new_marked";
@@ -6161,9 +6161,9 @@ function perk_trackadsmarktargetoutline(markicon, markedent, outlineid, markedpl
     if (isdefined(markedplayer)) {
         markedplayer outline::_hudoutlineviewmodeldisable();
     }
-    markedtimeremaining = getdvarfloat(@"hash_54bdba56629eb6d4");
+    markedtimeremaining = getdvarfloat(@"perk_ads_mark_target_highlight_time");
     if (perk::_hasperk("specialty_improved_target_mark")) {
-        markedtimeremaining *= getdvarfloat(@"hash_db82bf037e180634");
+        markedtimeremaining *= getdvarfloat(@"perk_target_marked_longer_rate");
     }
     wait markedtimeremaining - 0.6;
     entityheadicons::setheadicon_deleteicon(markicon);
@@ -6406,7 +6406,7 @@ function unsetchainkillstreaks() {
 // Checksum 0x0, Offset: 0xc5ca
 // Size: 0x24
 function setscrapweapons() {
-    if (getdvarint(@"hash_eb1e94069d5150f2") == 1) {
+    if (getdvarint(@"perk_graverobber_enabled") == 1) {
         self setclientomnvar("ui_graverobber", 1);
     }
 }
@@ -6458,7 +6458,7 @@ function proximityrevivethink() {
     self endon("unset_revive_use_weapon");
     if (!isdefined(self.proximityrevivefauxtrigger)) {
         var_d72d6d8c00a1b78f = spawnstruct();
-        var_d72d6d8c00a1b78f.usetime = getdvarfloat(@"hash_6f08a22fd52e004c") * dvars::getwatcheddvar("lastStandReviveTimer");
+        var_d72d6d8c00a1b78f.usetime = getdvarfloat(@"perk_medicReviveSpeedRatio") * dvars::getwatcheddvar("lastStandReviveTimer");
         var_d72d6d8c00a1b78f.curprogress = 0;
         var_d72d6d8c00a1b78f.owner = undefined;
         var_d72d6d8c00a1b78f.id = "laststand_reviver";
@@ -7126,11 +7126,11 @@ function markequipment_updatestate() {
     lasttime = gettime();
     maxdist = 0;
     if (self entityhasmark("air_killstreak", self.markequipmentstate.markingent)) {
-        maxdist = getdvarint(@"hash_1641bba59e207f8e");
+        maxdist = getdvarint(@"perk_see_air_killstreak_distance");
     } else if (self entityhasmark("killstreak", self.markequipmentstate.markingent)) {
-        maxdist = getdvarint(@"hash_26ab663a769726a9");
+        maxdist = getdvarint(@"perk_see_killstreak_distance");
     } else if (self entityhasmark("equipment", self.markequipmentstate.markingent)) {
-        maxdist = getdvarint(@"hash_6a6e4f9ae2a2a1");
+        maxdist = getdvarint(@"perk_see_equipment_distance");
     } else {
         assert(0, "<dev string:xcb>");
     }
@@ -7206,7 +7206,7 @@ function unmarkafterduration(markedent) {
     self endon("mark_equip_ended");
     self endon("unmarkEnt_" + self getentitynumber());
     markedent endon("death");
-    timeoutduration = getdvarint(@"hash_6a381b8385734e4e");
+    timeoutduration = getdvarint(@"perk_mark_equipment_duration");
     utility::waittill_any_timeout_no_endon_death_1(timeoutduration, "disconnect");
     unmarkent(markedent);
 }
@@ -10866,7 +10866,7 @@ function function_1665d49ac1a4f08e(mindistoverride, maxdistoverride) {
     if (originoffsetdist != 0) {
         originoffsetdir = anglestoforward((0, randomfloat(359), 0));
         targetposition = droporigin + originoffsetdir * originoffsetdist;
-        gravity = (0, 0, getdvarint(@"hash_b5d7d39d32720e78") * -1);
+        gravity = (0, 0, getdvarint(@"bg_gravity") * -1);
         velocity = trajectorycalculateinitialvelocity(droporigin, targetposition, gravity, 0.5);
     }
     grenade = self launchgrenade("jup_smoke_grenade_mp", droporigin, velocity, 0.5);

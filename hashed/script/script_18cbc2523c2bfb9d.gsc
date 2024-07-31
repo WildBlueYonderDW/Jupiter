@@ -269,19 +269,19 @@ function spawnactors(team, scene_name, extra_crew) {
 // Checksum 0x0, Offset: 0x1464
 // Size: 0x140
 function infilthink(team, scene_name) {
-    var_e026a614f7467557 = getdvarfloat(@"hash_ea4c44a08cd23d5d", 0.2);
+    var_e026a614f7467557 = getdvarfloat(@"r_mbVelocityScale", 0.2);
     foreach (ent in getentarray("infil_delete", "script_noteworthy")) {
         ent delete();
     }
     thread vehiclethink(team, self.scene_node, scene_name);
     thread actorthink(team, self.scene_node, scene_name);
     gameflagwait("infil_started");
-    setdvar(@"hash_dc64fb89118cae31", 1);
-    setdvar(@"hash_ea4c44a08cd23d5d", 1);
+    setdvar(@"r_spotLightEntityShadows", 1);
+    setdvar(@"r_mbVelocityScale", 1);
     level notify("start_scene");
     level waittill("prematch_over");
-    setdvar(@"hash_dc64fb89118cae31", 0);
-    setdvar(@"hash_ea4c44a08cd23d5d", var_e026a614f7467557);
+    setdvar(@"r_spotLightEntityShadows", 0);
+    setdvar(@"r_mbVelocityScale", var_e026a614f7467557);
     while (isdefined(self.linktoent) || isdefined(self.actors)) {
         waitframe();
     }

@@ -1,0 +1,25 @@
+{
+    "#id": "dxr",
+    "#description": "&OPTIONS/DIRECT_RAYTRACING_DESC",
+    "#dvar": "@r_dxrEnabledMenuOption",
+    "#labels": [
+        {
+            "#reference": "&LUA_MENU/DISABLED"
+        },
+        {
+            "#reference": "&LUA_MENU/ENABLED"
+        },
+        {
+            "#reference": "&MENU/QUALITY_ULTRA"
+        }
+    ],
+    "#hash_58d61dc3eef940dc": "GRAPHICS",
+    "#type": "Dropdown",
+    "#hash_6158fef2a07d0451": [
+        {
+            "#hash_a085177b45ffc883": 1,
+            "#type": "PLATFORM"
+        }
+    ],
+    "#name": "&OPTIONS/DIRECT_RAYTRACING"
+}

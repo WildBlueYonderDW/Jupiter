@@ -164,7 +164,7 @@ function function_b33e50ed017d5ace(player, array) {
     player setsoundsubmix("mp_br_infil_music", 0);
     player setsoundsubmix("mp_br_infil_ac130", 0);
     player setclienttriggeraudiozone("mp_br_c130_infil_int", 1);
-    player setclientdvar(@"hash_df1dc712c4a91588", var_28844396b0024faf);
+    player setclientdvar(@"cg_fov", var_28844396b0024faf);
     player enablephysicaldepthoffieldscripting();
     player setphysicaldepthoffield(var_d1c04ff6328d20d6, var_95288242e2d19a2, var_8a3ce4d151659d21, var_9b5197cc4bb4356a);
     self.doorchief showtoplayer(player);
@@ -345,7 +345,7 @@ function private transitionfunc(c130) {
             }
             player cameraunlink();
             player cameralinkto(cameraent, cameratag, 1, 1);
-            player setclientdvar(@"hash_df1dc712c4a91588", var_1992f143059ac1d5);
+            player setclientdvar(@"cg_fov", var_1992f143059ac1d5);
             player setphysicaldepthoffield(var_e49fe50208c2823c, var_60a2fccf1c5e6d84, var_af0267d0ec57107f, var_92de264f62389db4);
         }
         level thread clearsoundsubmixfadetoblackamb();
@@ -366,19 +366,19 @@ function private transitionfunc(c130) {
 // Checksum 0x0, Offset: 0x229e
 // Size: 0xff
 function private infil_light_dvars() {
-    var_c3ed855fe7c983e3 = getdvarfloat(@"hash_8667c0bb90c5bfc3");
-    var_1800e53d66415e2d = getdvarint(@"hash_63eb1893f96ac98d");
-    var_5506432d2291c178 = getdvarint(@"hash_1dde331a8e0153d8");
-    var_488f9b9fe1ead0a6 = getdvarfloat(@"hash_9ab6a766fc4e0c06");
-    setdvar(@"hash_8667c0bb90c5bfc3", 1000);
-    setdvar(@"hash_63eb1893f96ac98d", 6);
-    setdvar(@"hash_1dde331a8e0153d8", 8);
-    setdvar(@"hash_9ab6a766fc4e0c06", 0.25);
+    var_c3ed855fe7c983e3 = getdvarfloat(@"sm_spotDistCull");
+    var_1800e53d66415e2d = getdvarint(@"sm_spotUpdateLimit");
+    var_5506432d2291c178 = getdvarint(@"sm_roundRobinPrioritySpotShadows");
+    var_488f9b9fe1ead0a6 = getdvarfloat(@"sm_sunSampleSizeNear");
+    setdvar(@"sm_spotDistCull", 1000);
+    setdvar(@"sm_spotUpdateLimit", 6);
+    setdvar(@"sm_roundRobinPrioritySpotShadows", 8);
+    setdvar(@"sm_sunSampleSizeNear", 0.25);
     waittill_either("infil_reset_light_dvars", "stopScene");
-    setdvar(@"hash_8667c0bb90c5bfc3", var_c3ed855fe7c983e3);
-    setdvar(@"hash_63eb1893f96ac98d", var_1800e53d66415e2d);
-    setdvar(@"hash_1dde331a8e0153d8", var_5506432d2291c178);
-    setdvar(@"hash_9ab6a766fc4e0c06", var_488f9b9fe1ead0a6);
+    setdvar(@"sm_spotDistCull", var_c3ed855fe7c983e3);
+    setdvar(@"sm_spotUpdateLimit", var_1800e53d66415e2d);
+    setdvar(@"sm_roundRobinPrioritySpotShadows", var_5506432d2291c178);
+    setdvar(@"sm_sunSampleSizeNear", var_488f9b9fe1ead0a6);
 }
 
 // Namespace namespace_82162455806f6229 / namespace_6b61356959df5986

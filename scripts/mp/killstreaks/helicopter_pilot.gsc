@@ -186,7 +186,7 @@ function starthelipilot(heli) {
     level endon("game_ended");
     heli endon("death");
     setusingremote(heli.helipilottype);
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdPerson")) {
         setthirdpersondof(0);
     }
     self.restoreangles = self.angles;
@@ -464,7 +464,7 @@ function helipilot_endride(heli) {
         if (isusingremote()) {
             clearusingremote();
         }
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdPerson")) {
             setthirdpersondof(1);
         }
         self remotecontrolvehicleoff(heli);

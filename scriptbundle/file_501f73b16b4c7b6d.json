@@ -1,8 +1,0 @@
-{
-    "#id": "loitering_munition_trigger",
-    "#description": "&OPTIONS/TRIGGER_LOITERING_MUNITION_DESC",
-    "#hash_f2cfe5ce9896ad90": 1,
-    "#type": "keyBinding",
-    "#name": "&OPTIONS/TRIGGER_LOITERING_MUNITION",
-    "#hash_c55c746ff4d8929b": 1
-}

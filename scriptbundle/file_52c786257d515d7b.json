@@ -1,8 +1,0 @@
-{
-    "#id": "vertical_aim_settings_expander_gamepad",
-    "#description": "&OPTIONS/VERTICAL_AIM_AXIS_EXPANDER",
-    "#hash_58d61dc3eef940dc": "CONTROLLER",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "ParentlessExpander",
-    "#name": "&MENU/VERTICAL_AIM_SETTINGS_EXPANDER"
-}

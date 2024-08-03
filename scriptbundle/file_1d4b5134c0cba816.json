@@ -1,6 +1,0 @@
-{
-    "#id": "stream_http_debug",
-    "#description": "&OPTIONS/STREAM_HTTP_DEBUG_DESC",
-    "#type": "GenericButton",
-    "#name": "&OPTIONS/STREAM_HTTP_DEBUG"
-}

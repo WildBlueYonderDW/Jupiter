@@ -1,9 +1,0 @@
-{
-    "#perks": {
-        "#ultimateperk": "specialty_lr_detector",
-        "#bonusperk": "specialty_covert_ops",
-        "#baseperk1": "specialty_tac_resist",
-        "#baseperk2": "specialty_eod_vest"
-    },
-    "#name": "&PERKS/PERK_PACKAGE_BR_TESTPACK_JUP"
-}

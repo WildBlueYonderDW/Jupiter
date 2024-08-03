@@ -1,9 +1,0 @@
-{
-    "#id": "color_customization_squad_expander",
-    "#description": "&OPTIONS/COLOR_CUSTOMIZATION_SQUAD_EXPANDER_DESC",
-    "#hash_a20785232d9c4057": "colorCustomizationYouIndex",
-    "#hash_58d61dc3eef940dc": "GENERAL",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "ParentlessExpander",
-    "#name": "&OPTIONS/COLOR_CUSTOMIZATION_SQUAD_EXPANDER"
-}

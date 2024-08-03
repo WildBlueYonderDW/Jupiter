@@ -1,9 +1,0 @@
-{
-    "#id": "action_slot1_button_swap",
-    "#description": "&MENU/DPAD_UP_DESC",
-    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
-    "#action": "+actionslot 1",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "GamepadSwapButton",
-    "#name": "&MENU/LAYOUT_DPAD_UP"
-}

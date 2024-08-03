@@ -1,9 +1,0 @@
-{
-    "#id": "nvidia_dlss",
-    "#description": "&OPTIONS/DLSS_DESC",
-    "#dvar": "@hash_bf5fe69be014d989",
-    "#hash_58d61dc3eef940dc": "GRAPHICS",
-    "#type": "Dropdown",
-    "#name": "&OPTIONS/DLSS_PRESET",
-    "#hash_5d30c39665a86e5d": "&OPTIONS/DLSS_DRIVER_DISABLED_DESC"
-}

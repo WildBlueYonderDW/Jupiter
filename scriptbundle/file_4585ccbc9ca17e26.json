@@ -1,8 +1,0 @@
-{
-    "#id": "use_reload_action_button_swap",
-    "#description": "&OPTIONS/USE_RELOAD_DESC",
-    "#action": "+usereload",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "GamepadSwapButton",
-    "#name": "&MENU/USE_RELOAD"
-}

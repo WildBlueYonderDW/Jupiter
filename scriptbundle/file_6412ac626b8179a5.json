@@ -1,7 +1,0 @@
-{
-    "#id": "notification_quick_action",
-    "#description": "&OPTIONS/QUICK_ACTION_NOTIFICATIONS_DESC",
-    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
-    "#type": "keyBinding",
-    "#name": "&OPTIONS/QUICK_ACTION_NOTIFICATIONS"
-}

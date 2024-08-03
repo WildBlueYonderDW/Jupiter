@@ -1,8 +1,0 @@
-{
-    "#id": "smoke_action_button_swap",
-    "#description": "&OPTIONS/SMOKE_ACTION_BUTTON_SWAP_DESC",
-    "#action": "+smoke",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "GamepadSwapButton",
-    "#name": "&OPTIONS/USE_TACTICAL"
-}

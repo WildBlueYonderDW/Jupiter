@@ -1,8 +1,0 @@
-{
-    "#id": "do_not_sell_my_data",
-    "#description": "&OPTIONS/PRIVACY_CHOICES_DESC",
-    "#hash_58d61dc3eef940dc": "ACCOUNT",
-    "#hash_b8d6f980460460c7": "PrivacyChoices",
-    "#type": "GenericButton",
-    "#name": "&OPTIONS/PRIVACY_CHOICES_NAME"
-}

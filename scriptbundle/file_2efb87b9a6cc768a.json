@@ -1,8 +1,0 @@
-{
-    "#id": "go_stand_action_button_swap",
-    "#description": "&OPTIONS/GAMEPAD_STANDJUMP_DESC",
-    "#action": "+gostand",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "GamepadSwapButton",
-    "#name": "&OPTIONS/STANDJUMP"
-}

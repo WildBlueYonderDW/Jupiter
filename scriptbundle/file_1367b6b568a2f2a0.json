@@ -1,7 +1,0 @@
-{
-    "#id": "menu_dismiss_action",
-    "#description": "&OPTIONS/DISMISS_MENU_SHORTCUT_DESC",
-    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
-    "#type": "keyBinding",
-    "#name": "&OPTIONS/DISMISS_MENU_SHORTCUT"
-}

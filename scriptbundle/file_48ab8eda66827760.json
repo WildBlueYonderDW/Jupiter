@@ -1,9 +1,0 @@
-{
-    "#perks": {
-        "#ultimateperk": "specialty_quick_fix",
-        "#bonusperk": "specialty_focus",
-        "#baseperk1": "specialty_hustle",
-        "#baseperk2": "specialty_scavenger_plus"
-    },
-    "#name": "&PERKS/PERK_PACKAGE_BR_RESERVES"
-}

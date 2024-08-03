@@ -14,5 +14,5 @@ Pools dumped
 | ------------------ | --- | ------------------------ |
 | gscobj             | 69  | `/`                      |
 | stringtable        | 70  | `/`                      |
-| scripbbundle       | 115 | `/scripbbundle/`         |
+| ddl                | 72  | `/`                      |
 

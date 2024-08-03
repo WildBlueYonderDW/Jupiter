@@ -1,7 +1,0 @@
-{
-    "#id": "action_slot1",
-    "#description": "&OPTIONS/MISSION_ABILITY_DESC",
-    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
-    "#type": "keyBinding",
-    "#name": "&OPTIONS/MISSION_ABILITY"
-}

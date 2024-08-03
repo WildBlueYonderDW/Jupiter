@@ -1,9 +1,0 @@
-{
-    "#perks": {
-        "#ultimateperk": "specialty_surveillance",
-        "#bonusperk": "specialty_restock",
-        "#baseperk1": "specialty_hustle",
-        "#baseperk2": "specialty_eod"
-    },
-    "#name": "&PERKS/PERK_PACKAGE_BR_VANGUARD"
-}

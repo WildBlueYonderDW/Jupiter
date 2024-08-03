@@ -1,9 +1,0 @@
-{
-    "#description": "&VEHICLES/OVERLAND_2016_DESC",
-    "#defaultimage": "ui_default_white",
-    "#hash_7ffb238c68bddf60": "ui_veh_suv_overland_cage_v000_preview",
-    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,MGL,JUP",
-    "#ref": "veh9_overland_2016",
-    "#name": "&VEHICLES/OVERLAND_2016",
-    "#icon": "hud_icon_vehicle_suv_overland_2016_cage"
-}

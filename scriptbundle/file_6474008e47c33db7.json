@@ -1,8 +1,0 @@
-{
-    "#id": "melee_zoom_action_button_swap",
-    "#description": "&OPTIONS/MELEE_ZOOM_ACTION_BUTTON_SWAP_DESC",
-    "#action": "+melee_zoom",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "GamepadSwapButton",
-    "#name": "&OPTIONS/MELEEZOOM"
-}

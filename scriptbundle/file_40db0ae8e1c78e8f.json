@@ -1,9 +1,0 @@
-{
-    "#id": "mouse_calibration_expander",
-    "#description": "&OPTIONS/MOUSE_CALIBRATION_EXPANDER_DESC",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#hash_f2cfe5ce9896ad90": 1,
-    "#type": "ParentlessExpander",
-    "#name": "&MENU/MOUSE_CALIBRATION_EXPANDER",
-    "#hash_c55c746ff4d8929b": 1
-}

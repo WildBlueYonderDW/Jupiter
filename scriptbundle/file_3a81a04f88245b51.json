@@ -1,8 +1,0 @@
-{
-    "#id": "sensivity_settings_expander",
-    "#description": "&PLATFORM/STICK_SENSITIVITY_EXPANDER_DESC",
-    "#hash_58d61dc3eef940dc": "CONTROLLER",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "ParentlessExpander",
-    "#name": "&PLATFORM/SENSITIVITY_SETTINGS_EXPANDER"
-}

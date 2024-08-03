@@ -1,9 +1,0 @@
-{
-    "#description": "&VEHICLES/JLTV_DESC",
-    "#defaultimage": "ui_default_white",
-    "#hash_7ffb238c68bddf60": "ui_veh_jltv_mg_v000_preview",
-    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,MGL,JUP",
-    "#ref": "veh9_jltv_mg",
-    "#name": "&VEHICLES/JLTV",
-    "#icon": "hud_icon_vehicle_jltv_mg"
-}

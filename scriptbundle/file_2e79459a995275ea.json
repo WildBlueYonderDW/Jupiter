@@ -1,9 +1,0 @@
-{
-    "#description": "&VEHICLES/POLARIS_UTV_DESC",
-    "#defaultimage": "ui_default_white",
-    "#hash_7ffb238c68bddf60": "ui_veh_utv_polaris_rzr_vj000_preview",
-    "#hash_64ecb2fb1eb743a6": "WZ2",
-    "#ref": "veh_jup_polaris_utv",
-    "#name": "&VEHICLES/POLARIS_UTV",
-    "#icon": "hud_icon_vehicle_utv_sm"
-}

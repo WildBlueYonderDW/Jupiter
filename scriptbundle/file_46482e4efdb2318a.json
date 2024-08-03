@@ -1,7 +1,0 @@
-{
-    "#id": "toggle_weapon_alt",
-    "#description": "&OPTIONS/TOGGLE_ALT_MODE_DESC",
-    "#hash_58d61dc3eef940dc": "KEYBINDS_GAMEPLAY",
-    "#type": "keyBinding",
-    "#name": "&OPTIONS/TOGGLE_ALT_MODE"
-}

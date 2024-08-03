@@ -1,9 +1,0 @@
-{
-    "#perks": {
-        "#ultimateperk": "specialty_survivor",
-        "#bonusperk": "specialty_tactical_recon",
-        "#baseperk1": "specialty_hustle",
-        "#baseperk2": "specialty_tac_resist"
-    },
-    "#name": "&PERKS/PERK_PACKAGE_BR_SWAT"
-}

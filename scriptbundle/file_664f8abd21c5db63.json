@@ -1,9 +1,0 @@
-{
-    "#description": "&VEHICLES/TECHO_REBEL_ARMOR_DESC",
-    "#defaultimage": "ui_default_white",
-    "#hash_7ffb238c68bddf60": "ui_veh_techo_rebel_armor_v000_preview",
-    "#hash_64ecb2fb1eb743a6": "WZ2,IW9,JUP",
-    "#ref": "veh9_techo_rebel_armor",
-    "#name": "&VEHICLES/TECHO_REBEL_ARMOR",
-    "#icon": "hud_icon_vehicle_techo_rebel_armor"
-}

@@ -1,9 +1,0 @@
-{
-    "#perks": {
-        "#ultimateperk": "specialty_overwatch",
-        "#bonusperk": "specialty_restock_br",
-        "#baseperk1": "specialty_scavenger",
-        "#baseperk2": "specialty_eod"
-    },
-    "#name": "&PERKS/PERK_PACKAGE_BR_AIRMAN_JUP"
-}

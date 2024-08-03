@@ -1,8 +1,0 @@
-{
-    "#id": "stance_action_button_swap",
-    "#description": "&OPTIONS/GAMEPAD_CHANGE_STANCE_DESC",
-    "#action": "+stance",
-    "#hash_3c2a9730de8f2a5f": 1,
-    "#type": "GamepadSwapButton",
-    "#name": "&OPTIONS/CHANGE_STANCE"
-}

@@ -1,8 +1,0 @@
-{
-    "#id": "button_layout_splitscreen",
-    "#description": "&OPTIONS/DISPLAY_LAYOUTS",
-    "#hash_a20785232d9c4057": "gpadButtonsConfig",
-    "#hash_58d61dc3eef940dc": "CONTROLLER",
-    "#type": "Dropdown",
-    "#name": "&OPTIONS/BUTTON_LAYOUT"
-}

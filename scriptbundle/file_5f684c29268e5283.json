@@ -1,6 +1,0 @@
-{
-    "#id": "spam_removal",
-    "#description": "&OPTIONS/SPAM_REMOVAL",
-    "#type": "GenericButton",
-    "#name": "&OPTIONS/SPAM_REMOVAL"
-}

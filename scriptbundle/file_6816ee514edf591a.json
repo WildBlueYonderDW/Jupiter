@@ -1,6 +1,0 @@
-{
-    "#id": "hud_editor",
-    "#description": "&HUD_EDITOR/HUD_EDITOR_OPTION_DESC",
-    "#type": "GenericButton",
-    "#name": "&HUD_EDITOR/HUD_EDITOR_OPTION_NAME"
-}

@@ -1,9 +1,0 @@
-{
-    "#perks": {
-        "#ultimateperk": "specialty_survivor",
-        "#bonusperk": "specialty_restock",
-        "#baseperk1": "specialty_eod",
-        "#baseperk2": "specialty_grenade_expert"
-    },
-    "#name": "&PERKS/PERK_PACKAGE_BR_DEMOLITIONIST"
-}
